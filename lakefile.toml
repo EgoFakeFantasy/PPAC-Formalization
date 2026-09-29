@@ -1,0 +1,6 @@
+name = "ppac_formalization"
+version = "0.1.0"
+defaultTargets = ["PPAC"]
+
+[[lean_lib]]
+name = "PPAC"

@@ -1,0 +1,11 @@
+.lake/
+.local/
+*.olean
+*.ilean
+*.c
+*.o
+__pycache__/
+AGENTS.md
+docs/DELEGATED_TASKS.json
+docs/FORMALIZATION_SCOPE.md
+docs/BATCH*_IMPLEMENTATION.md

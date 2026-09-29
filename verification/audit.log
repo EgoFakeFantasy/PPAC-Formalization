@@ -1,0 +1,144 @@
+'PPAC.image' does not depend on any axioms
+'PPAC.preimage' does not depend on any axioms
+'PPAC.image_preimage_iff' does not depend on any axioms
+'PPAC.image_preimage_eq' depends on axioms: [propext, Quot.sound]
+'PPAC.ImageClosed' does not depend on any axioms
+'PPAC.notOld_preimage' depends on axioms: [propext, Quot.sound]
+'PPAC.two_point_surjection_example' does not depend on any axioms
+'PPAC.pullback_identity_example' depends on axioms: [propext, Quot.sound]
+'PPAC.image_closed_empty_example' does not depend on any axioms
+'PPAC.notOld_example' does not depend on any axioms
+'PPAC.ssub' does not depend on any axioms
+'PPAC.StageTransitive' does not depend on any axioms
+'PPAC.StageMonotone' does not depend on any axioms
+'PPAC.FinalSubsetsInFinal' does not depend on any axioms
+'PPAC.CofinallyFresh' does not depend on any axioms
+'PPAC.single_stage_capture' does not depend on any axioms
+'PPAC.eventual_stability' does not depend on any axioms
+'PPAC.not_cofinal_fresh' does not depend on any axioms
+'PPAC.not_cofinal_fresh_of_stability' does not depend on any axioms
+'PPAC.example_stage_transitive' does not depend on any axioms
+'PPAC.example_captured' does not depend on any axioms
+'PPAC.example_final_subsets_in_final' does not depend on any axioms
+'PPAC.example_monotone' does not depend on any axioms
+'PPAC.example_single_capture' does not depend on any axioms
+'PPAC.example_no_cofinal_fresh' does not depend on any axioms
+'PPAC.Choice.Trich' does not depend on any axioms
+'PPAC.Choice.WO' does not depend on any axioms
+'PPAC.Choice.wo_empty' does not depend on any axioms
+'PPAC.Choice.wo_subsingleton' does not depend on any axioms
+'PPAC.Choice.least_unique' does not depend on any axioms
+'PPAC.Choice.PP' does not depend on any axioms
+'PPAC.Choice.OrdIndex' does not depend on any axioms
+'PPAC.Choice.AC_WO' does not depend on any axioms
+'PPAC.Choice.SVC' does not depend on any axioms
+'PPAC.Choice.FiberRel' does not depend on any axioms
+'PPAC.Choice.rho_transport' does not depend on any axioms
+'PPAC.Choice.spliceRel' does not depend on any axioms
+'PPAC.Choice.spliceRel_index' does not depend on any axioms
+'PPAC.Choice.spliceRel_fiber' does not depend on any axioms
+'PPAC.Choice.splice_trich' does not depend on any axioms
+'PPAC.Choice.splice_wf' does not depend on any axioms
+'PPAC.Choice.partition_splice_wo' does not depend on any axioms
+'PPAC.Choice.sec' does not depend on any axioms
+'PPAC.Choice.Fiber' does not depend on any axioms
+'PPAC.Choice.BlockMem' does not depend on any axioms
+'PPAC.Choice.Block' does not depend on any axioms
+'PPAC.Choice.blockFwd' does not depend on any axioms
+'PPAC.Choice.blockFwd_inj' does not depend on any axioms
+'PPAC.Choice.pullback_trich' does not depend on any axioms
+'PPAC.Choice.pullback_wf' does not depend on any axioms
+'PPAC.Choice.fiber_wo_of_block_wo' does not depend on any axioms
+'PPAC.Choice.block_disjoint' does not depend on any axioms
+'PPAC.Choice.badFiberExists' does not depend on any axioms
+'PPAC.Choice.minBadIdx' does not depend on any axioms
+'PPAC.Choice.minBadIdx_bad' does not depend on any axioms
+'PPAC.Choice.nonwo_splitting' does not depend on any axioms
+'PPAC.Choice.countable_blocks' does not depend on any axioms
+'PPAC.Choice.svc_pp_splitting' does not depend on any axioms
+'PPAC.Repair.AC_omega_count' does not depend on any axioms
+'PPAC.Repair.Countable' does not depend on any axioms
+'PPAC.Repair.countable_sum' depends on axioms: [propext, Quot.sound]
+'PPAC.Repair.countable_of_injective' does not depend on any axioms
+'PPAC.Repair.jrelOf' does not depend on any axioms
+'PPAC.Repair.jrelOf_fun' does not depend on any axioms
+'PPAC.Repair.jrelOf_sec' does not depend on any axioms
+'PPAC.Repair.jrelOf_inj' does not depend on any axioms
+'PPAC.Repair.jrelOf_injDir' does not depend on any axioms
+'PPAC.Repair.jrelOf_total' does not depend on any axioms
+'PPAC.Repair.SecList' does not depend on any axioms
+'PPAC.Repair.SecListLe' does not depend on any axioms
+'PPAC.Repair.secList_grow' depends on axioms: [propext]
+'PPAC.Repair.Cover' does not depend on any axioms
+'PPAC.Repair.SecCnt' does not depend on any axioms
+'PPAC.Repair.SecCntLe' does not depend on any axioms
+'PPAC.Repair.CntPartFun' does not depend on any axioms
+'PPAC.Repair.CPFLe' does not depend on any axioms
+'PPAC.Repair.SwapCoding' does not depend on any axioms
+'PPAC.Repair.jrelSec' does not depend on any axioms
+'PPAC.Repair.projRel' does not depend on any axioms
+'PPAC.Repair.projRel_mono' does not depend on any axioms
+'PPAC.Repair.denseD_r' depends on axioms: [propext, Quot.sound]
+'PPAC.Repair.collapse_fin' does not depend on any axioms
+'PPAC.Repair.collapse_fin_fun' does not depend on any axioms
+'PPAC.Repair.BitCoding' does not depend on any axioms
+'PPAC.Repair.BlockCoding' does not depend on any axioms
+'PPAC.Repair.jrelCnt' does not depend on any axioms
+'PPAC.Repair.projCnt' does not depend on any axioms
+'PPAC.Repair.projCnt_mono' does not depend on any axioms
+'PPAC.Repair.denseBlock' depends on axioms: [propext, Quot.sound]
+'PPAC.Repair.collapse_cnt' does not depend on any axioms
+'PPAC.Repair.collapse_cnt_fun' does not depend on any axioms
+'PPAC.Repair.WOrd' does not depend on any axioms
+'PPAC.Repair.prodLex' does not depend on any axioms
+'PPAC.Repair.fiberTrich' does not depend on any axioms
+'PPAC.Repair.prodLex_trich' does not depend on any axioms
+'PPAC.Repair.prodLex_wf' does not depend on any axioms
+'PPAC.Repair.prodLexLeast' does not depend on any axioms
+'PPAC.Repair.svc_name_eval' does not depend on any axioms
+'PPAC.Repair.wo_of_surjection' does not depend on any axioms
+'PPAC.Repair.InjCnt' does not depend on any axioms
+'PPAC.Repair.InjCntLe' does not depend on any axioms
+'PPAC.Repair.jrelInj' does not depend on any axioms
+'PPAC.Repair.FreshPool' does not depend on any axioms
+'PPAC.Repair.denseD_s' depends on axioms: [propext, Quot.sound]
+'PPAC.Repair.collapse_free' does not depend on any axioms
+'PPAC.Repair.collapse_free_fun' does not depend on any axioms
+'PPAC.ClassObstruction.PredFamily' does not depend on any axioms
+'PPAC.ClassObstruction.countable_unit' does not depend on any axioms
+'PPAC.ClassObstruction.RCond' does not depend on any axioms
+'PPAC.ClassObstruction.RCondLe' does not depend on any axioms
+'PPAC.ClassObstruction.DomFresh' does not depend on any axioms
+'PPAC.ClassObstruction.SliceFresh' does not depend on any axioms
+'PPAC.ClassObstruction.RCond.pairExt' depends on axioms: [propext, Quot.sound]
+'PPAC.ClassObstruction.RCond.forbidExt' depends on axioms: [propext, Quot.sound]
+'PPAC.ClassObstruction.denseTwoBranch' depends on axioms: [propext, Quot.sound]
+'PPAC.ClassObstruction.RanG' does not depend on any axioms
+'PPAC.ClassObstruction.TG' does not depend on any axioms
+'PPAC.ClassObstruction.FGRan_false' does not depend on any axioms
+'PPAC.ClassObstruction.trace_not_old' does not depend on any axioms
+'PPAC.ClassObstruction.Upred' does not depend on any axioms
+'PPAC.ClassObstruction.pollution_pullback' depends on axioms: [propext]
+'PPAC.ClassObstruction.StageFreeze' does not depend on any axioms
+'PPAC.ClassObstruction.stage_freeze_contra' does not depend on any axioms
+'PPAC.Cohen.CohenLocality' does not depend on any axioms
+'PPAC.Cohen.wf_desc_false' does not depend on any axioms
+'PPAC.Cohen.RankAux' does not depend on any axioms
+'PPAC.Cohen.HFamily' does not depend on any axioms
+'PPAC.Cohen.rank_contra' does not depend on any axioms
+'PPAC.Random.FinBit' does not depend on any axioms
+'PPAC.Random.FinBitLe' does not depend on any axioms
+'PPAC.Random.finBit_grow' depends on axioms: [propext]
+'PPAC.Random.list_le_foldr_max' depends on axioms: [propext, Quot.sound]
+'PPAC.Random.exists_fresh_nat' depends on axioms: [propext, Quot.sound]
+'PPAC.Random.rand_finite_approx' depends on axioms: [propext]
+'PPAC.Random.support_localize' depends on axioms: [propext]
+'PPAC.Random.choice_recovery' does not depend on any axioms
+'PPAC.Random.CategoryAcc' does not depend on any axioms
+'PPAC.FuchsPrikry.DC' does not depend on any axioms
+'PPAC.FuchsPrikry.PosIdeal' does not depend on any axioms
+'PPAC.FuchsPrikry.IdealMax' does not depend on any axioms
+'PPAC.FuchsPrikry.OrbitFamily' does not depend on any axioms
+'PPAC.FuchsPrikry.ordIndexUnit' does not depend on any axioms
+'PPAC.FuchsPrikry.criterion_forward' does not depend on any axioms
+'PPAC.FuchsPrikry.dc_empty' does not depend on any axioms

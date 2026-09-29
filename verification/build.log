@@ -1,0 +1,29 @@
+⚠ [8/16] Replayed PPAC.Repair.Projection
+warning: PPAC/Repair/Projection.lean:94:5: Variable name `hdir` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdir
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9/16] Replayed PPAC.Repair.Parity
+warning: PPAC/Repair/Parity.lean:53:49: Variable name `BC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _BC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [10/16] Replayed PPAC.Repair.NameEval
+warning: PPAC/Repair/NameEval.lean:219:5: Variable name `FP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _FP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [12/16] Replayed PPAC.Cohen.Locality
+warning: PPAC/Cohen/Locality.lean:106:32: Variable name `hHStar` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hHStar
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (16 jobs).
