@@ -1,5 +1,7 @@
 # PPAC-Formalization
 
+**English** | [简体中文](README.zh-CN.md)
+
 Lean 4 proof components and interface prototypes from research on the Partition Principle (PP) and the Axiom of Choice (AC).
 
 **This is a partial formalization. It does not prove ZF + PP implies AC, construct a model of ZF + PP + not AC, or formalize the complete Cohen, random, or Fuchs-Prikry model theorems.**
@@ -43,4 +45,4 @@ Background sources (not imported formal dependencies):
 - C. Ryan-Smith, *Local reflections of choice*, Acta Math. Hungar. 176 (2025), 244–257: [DOI](https://doi.org/10.1007/s10474-025-01533-3).
 - A. Karagila, *Iterating Symmetric Extensions*, JSL 84 (2019): [arXiv](https://arxiv.org/abs/1606.06718).
 
-Local task-bus records, private source manuscripts and earlier implementation reports are not included in the public repository.
+Local task-bus records, private source manuscripts and earlier implementation reports are not included in this repository.
