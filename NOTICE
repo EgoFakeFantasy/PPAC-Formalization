@@ -1,0 +1,7 @@
+This migration includes syntax and set-language definitions adapted from OpenAI math,
+commit 1581d4cbdd69a0faf34b2089614fe2a814316a6a,
+lean/ComparatorChallenges/PartitionConsistency.lean.
+Copyright OpenAI contributors. Licensed under Apache License 2.0; see third_party/openai/LICENSE.
+Changes: Mathlib vector notation replaced by finite functions; module namespaces and imports changed.
+Original PPAC auxiliary code and authorship are preserved in Git history.
+YesMetaZFC is an independently pinned Apache-2.0 dependency; its own LICENSE and NOTICE apply.

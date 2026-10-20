@@ -1,49 +1,25 @@
-# PPAC-Formalization
+# PPAC 向 YesMetaZFC 迁移
+[English](README.md)
 
-[English](README.md) | **简体中文**
+本分支实现第一步：原始有限变量语法 → YesMetaZFC 原生纯集合论语法的翻译，
+证明任意关系结构上的全公式真值保持，并固定原 ZF、PP、ACwo、¬AC 与原 Derives 核的合同。
+未完成推导传输、ZF 呈现对应、对称模型或相对一致性主定理。
 
-本仓库收录划分原理（Partition Principle，PP）与选择公理（Axiom of Choice，AC）研究中的 Lean 4 证明组件和接口原型。
+第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
+默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。
+旧宿主 PP 不当作对象 PP，旧研究候选与旧验收已移出活动主线。
+清理之前保留了完整 Git bundle 和源码备份，未删除 Git 历史。
 
-**这是一份部分形式化成果。它没有证明 ZF + PP 蕴含 AC，没有构造 ZF + PP + ¬AC 的模型，也没有完成 Cohen、随机或 Fuchs–Prikry 模型相关定理的整体形式化。**
+运行 python scripts/verify.py；Lean 4.33.1，唯一依赖为固定提交的 YesMetaZFC。
+脚本串行构建、trust=0 检查、公理与缺口扫描，记录真实退出码和文件哈希。
+verification/ 是本地生成结果，不作为远端验收或自动发布材料。
 
-仓库包含已通过检查的证明项，涉及拉回、传递阶段中的捕获、良基关系拼接、关系式部分条件的扩张、编码稠密性论证，以及带显式假设的矛盾推导。较高层模块的名称表示研究动机，不表示相应的模型论应用已经完成。
+阅读：
+- [可行性与完整边界](docs/FEASIBILITY.zh-CN.md)
+- [名下13仓库的用途评估](docs/REPOSITORY_MAP.zh-CN.md)
+- [工程流程与逐步验收门](docs/AGENT_WORKFLOW.zh-CN.md)
+- [清理决定](docs/CLEANUP.zh-CN.md)
+- [当前缺口](GAPS.md)
 
-## 构建与审计
 
-Lean 版本固定为 `leanprover/lean4:v4.33.1`，不依赖外部 Lean 包。
-
-```sh
-lake build
-lake env lean Audit.lean
-python3 scripts/verify.py
-```
-
-验证脚本会重新构建证明库，逐项检查 `Audit.lean` 中列出的声明，拒绝不允许的公理依赖和占位证明，并将源码哈希与日志写入 `verification/`。允许的公理依赖仅限于 `propext` 和 `Quot.sound`。统计数量指受审计的声明（包括定义），不表示有同样数量的独立数学定理。
-
-## 形式化范围
-
-| 模块 | 已检查的内容 | 尚缺的内容 |
-|---|---|---|
-| `Pullback`、`StageCapture` | 满射的拉回恒等式；由传递性与显式类幂集对象推出捕获；最终稳定性 | 与模型内部集合、真类阶段链的衔接 |
-| `Choice` | Lean 宿主类型上的良基关系拼接，以及带假设的拆分论证 | 良序化、PP、SVC 和选择原则在模型内部的忠实解释 |
-| `Repair` | 关系式条件扩张、编码稠密性，以及依赖显式输入数据的覆盖蕴含 | 真正的力迫语义、旧／新宇宙的区分、具体编码与新鲜性实例、完整的投影提升性质 |
-| `ClassObstruction` | 双分支迹分离、拉回，以及显式冻结／新鲜性假设之间的矛盾 | SVC 切片及整体模型层面的障碍论证 |
-| `Cohen` | 良基下降，以及秩构成二循环时的矛盾 | 布尔代数、Borel 映射、加速、混合，以及从局部性构造秩的过程 |
-| `Random` | 有限列表扩张与支撑引理、良序的转移 | 测度代数、随机力迫、研究笔记 R139 中的反例 |
-| `FuchsPrikry` | 抽象数据结构、沿满射转移良序 | 模有限包含关系下的支撑理想、群与滤子的构造，以及实际的等价判据 |
-
-**语义边界。** `PPAC.Choice.WO X` 对 Lean 类型上的所有宿主关系量化，并未把关系限制为某个不满足选择公理的内部模型中的元素。因此，即使一个以 `not WO X` 为假设的条件证明没有公理依赖，也不能据此确认存在满足该假设的 ZF 模型。同样，即使 `#print axioms` 没有列出 `Classical.choice`，显式提供的选择数据参数仍可能携带选择原则的内容。`Repair` 模块目前使用宿主类型 `Nat -> Bool`；真正表示旧模型实数的类型及其模型解释仍然缺失。
-
-具体限制与发布前的修正见[证明覆盖表](THEOREM_COVERAGE.md)、[待补证明清单](GAPS.md)和[发布核查记录](docs/PUBLICATION_REVIEW.md)（这三份文档目前为英文）。
-
-## 来源与参考文献
-
-初始实现：glm5.3f。发布核查、修正与可复现验证：Codex。AI 的实现与核查不等于独立的人类数学认证。本仓库不主张数学成果的优先权。
-
-背景文献（不是已导入的形式化依赖）：
-
-- Thomas Jech，*The Axiom of Choice*（1973），§2.4、Example 2.4.1 与 Lemma 2.7：[原文](https://gwern.net/doc/math/1973-jech-theaxiomofchoice.pdf)。
-- C. Ryan-Smith，*Local reflections of choice*，Acta Math. Hungar. **176**（2025），244–257：[DOI](https://doi.org/10.1007/s10474-025-01533-3)。
-- A. Karagila，*Iterating Symmetric Extensions*，JSL **84**（2019）：[arXiv](https://arxiv.org/abs/1606.06718)。
-
-本地任务平台记录、私有研究原稿和早期实现报告不包含在本仓库中。
+公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。当前检查精确守住此基线，不标成“仅三项标准公理”；未修改底座，也未添加新的自定义公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。

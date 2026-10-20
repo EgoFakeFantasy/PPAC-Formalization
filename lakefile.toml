@@ -1,6 +1,11 @@
 name = "ppac_formalization"
 version = "0.1.0"
-defaultTargets = ["PPAC"]
+defaultTargets = ["PPAC", "PPAC.Auxiliary"]
 
 [[lean_lib]]
 name = "PPAC"
+
+[[require]]
+name = "YesMetaZFC"
+git = "https://github.com/EgoFakeFantasy/YesMetaZFC.git"
+rev = "039c8e132cc19671d73a3933c66b4799d2599dd6"

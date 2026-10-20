@@ -1,0 +1,92 @@
+[
+  {
+    "path": "PPAC/Pullback.lean",
+    "action": "keep_auxiliary",
+    "reason": "全秩归约与旧/新子集比较的纯关系辅助，尚无内部集合适配。"
+  },
+  {
+    "path": "PPAC/StageCapture.lean",
+    "action": "keep_auxiliary",
+    "reason": "阶段覆盖/稳定性辅助，不能替代强迫中实际捕获证明。"
+  },
+  {
+    "path": "PPAC/Choice/Basic.lean",
+    "action": "keep_auxiliary",
+    "reason": "保留 Splice/Splitting 所需宿主接口，明确不是对象 PP/AC。"
+  },
+  {
+    "path": "PPAC/Choice/Splice.lean",
+    "action": "keep_auxiliary",
+    "reason": "全局 PP 归约中按良序指标拼接的辅助原型。"
+  },
+  {
+    "path": "PPAC/Choice/Splitting.lean",
+    "action": "keep_auxiliary",
+    "reason": "SVC 与非良序分块的条件原型；不是新模型证明。"
+  },
+  {
+    "path": "PPAC/Repair/Forcing.lean",
+    "action": "extract_then_remove",
+    "reason": "仅提取 jrelOf 及功能/单射/全域性；截面强迫/可数条件不是选定图式强迫。"
+  },
+  {
+    "path": "PPAC/Repair/Projection.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/Repair/Parity.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/Repair/NameEval.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/ClassObstruction/Obstruction.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/Cohen/Locality.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/Random/Approx.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "PPAC/FuchsPrikry/Criterion.lean",
+    "action": "remove",
+    "reason": "旧固定种子/截面/局部 Cohen/Random/Prikry 候选，不在本次 OpenAI monoid+diagram 相对一致性路线。"
+  },
+  {
+    "path": "verification/audit.log",
+    "action": "remove",
+    "reason": "旧批次验收或发布过程材料，不是本次结果。原始版本已归档。"
+  },
+  {
+    "path": "verification/build.log",
+    "action": "remove",
+    "reason": "旧批次验收或发布过程材料，不是本次结果。原始版本已归档。"
+  },
+  {
+    "path": "verification/lean-version.log",
+    "action": "remove",
+    "reason": "旧批次验收或发布过程材料，不是本次结果。原始版本已归档。"
+  },
+  {
+    "path": "verification/summary.json",
+    "action": "remove",
+    "reason": "旧批次验收或发布过程材料，不是本次结果。原始版本已归档。"
+  },
+  {
+    "path": "docs/PUBLICATION_REVIEW.md",
+    "action": "remove",
+    "reason": "旧批次验收或发布过程材料，不是本次结果。原始版本已归档。"
+  }
+]

@@ -1,6 +1,16 @@
 {"version": "1.2.0",
  "packagesDir": ".lake/packages",
- "packages": [],
+ "packages":
+ [{"url": "https://github.com/EgoFakeFantasy/YesMetaZFC.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+   "name": "YesMetaZFC",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+   "inherited": false,
+   "configFile": "lakefile.toml"}],
  "name": "ppac_formalization",
  "lakeDir": ".lake",
  "fixedToolchain": false}
