@@ -171,4 +171,42 @@ example : FirstOrder.Derives nativeZF []
     (Translation.sentence (Source.SetLanguage.replacement
       (Source.Formula.all (.ex ((Source.Formula.mem 5 0).conj ((Source.Formula.mem 3 4).imp (.equal 1 2)))) : Source.Formula 4))) :=
   ReplacementFromCollection.native_replacement _
+/-- 六规则总接口，包括任意开放结论、局部假设和非单射变量编号。 -/
+theorem native_open_reverse {T : FirstOrder.Theory ℒ} {free : Syntax.Ctx}
+    {Γ : FirstOrder.Context ℒ free} {p : Syntax.Fm [] free}
+    (d : FirstOrder.Derives T Γ p) {n} (default : Fin n) (f : Reverse.Vars free n) :
+    Source.Derives (ReverseCompile.context T f Γ) (Reverse.formula ReverseSubstitution.empty f p) :=
+  ReverseCompile.derives d default f
+
+theorem every_native_logical_mode {free : Syntax.Ctx} {p : Syntax.Fm [] free}
+    (h : HilbertBaseAxiom ℒ p) {n} {Γ : Source.Context n} (f : Reverse.Vars free n) :
+    Source.Derives Γ (Reverse.formula ReverseSubstitution.empty f p) :=
+  ReverseLogicalAxioms.replay h f
+
+/-- 无函数常元的纯语言：存在对象由原核强化规则证明，回译不能假定Fin 0有变量。 -/
+def inhabited : FirstOrder.Sentence ℒ := .existsE .set (.equal (.bvar .here) (.bvar .here))
+
+def inhabitedCertificate : HilbertDerivation noAxioms [] inhabited := by
+  apply HilbertDerivation.free_strengthening (sort := SetSort.set)
+  change HilbertDerivation noAxioms [SetSort.set]
+    (.existsE SetSort.set (.equal (.bvar .here) (.bvar .here)))
+  exact .modus_ponens (.logical_axiom (.equality_reflexivity (.fvar .here)))
+    (.logical_axiom (.exists_introduction (σ := ℒ) (free := [SetSort.set]) SetSort.set (.equal (.bvar .here) (.bvar .here)) (.fvar .here)))
+
+example : Source.Derives ((Presentation.source noAxioms).at 1)
+    ((Reverse.sentence inhabited).rename Fin.elim0) :=
+  ReverseCompile.sentence ⟨inhabitedCertificate⟩
+
+/-- 直接在源空理论的一个变量环境证明确切回译句，没有非空公理。 -/
+example : Source.Derives (Source.Theory.at (fun _ : Source.Sentence => False) 1)
+    ((Reverse.sentence inhabited).rename Fin.elim0) := by
+  have h := ReverseCompile.sentence ⟨inhabitedCertificate⟩
+  apply Source.Derives.weaken _ h
+  rintro q ⟨_, ⟨_, hfalse, _⟩, _⟩
+  exact False.elim hfalse
+
+theorem arbitrary_source_sentence_roundtrip {T : Source.Theory} {p : Source.Sentence} :
+    FirstOrder.Derives (TheoryTransport.theory T) [] (Translation.sentence p) ↔
+      Source.Derives (T.at 1) (p.rename Fin.elim0) :=
+  ReverseCompile.source_sentence_iff
 end PPAC.Migration.Step3Checks

@@ -91,7 +91,7 @@ def main() -> None:
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
         is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
-            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
+            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
         if name == "PPAC.Migration.ReplacementFromCollection.native_replacement" or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
@@ -124,7 +124,12 @@ def main() -> None:
         "full_source_target_derivations_replayed_in_original_native_target": True,
         "native_Collection_proved_in_source_Replacement_ZF": False,
         "full_ZF_equivalence_proved": False,
-        "reverse_native_to_source_derivation_compiler_proved": False,
+        "reverse_native_to_source_derivation_compiler_proved": True,
+        "reverse_native_kernel_constructors_covered": 6,
+        "reverse_native_logical_modes_covered": 27,
+        "reverse_compiler_requires_nonempty_external_variable_context": True,
+        "source_closed_sentence_reverse_context_size": 1,
+        "internal_reverse_compiler_representation_proved": False,
         "choice_presentations_equivalent_proved": False,
         "source_rule_count": 19,
         "source_rules_match_pinned_excerpt": True,
@@ -141,7 +146,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. Reverse Collection/AC equivalences, reverse source-calculus compiler and internal Con proof remain pending.",
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }
