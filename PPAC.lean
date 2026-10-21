@@ -53,3 +53,4 @@ import PPAC.Migration.Internal.ObjectNaturalAdditionOrder
 import PPAC.Migration.Internal.ObjectNaturalMultiplicationAlgebra
 
 import PPAC.Migration.Internal.ObjectNaturalNumericBounds
+import PPAC.Migration.Internal.ObjectGodelPair

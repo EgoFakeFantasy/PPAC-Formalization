@@ -223,4 +223,38 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectNaturalNume
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectNaturalNumericBounds.squareInjectiveSentence) := ObjectNaturalNumericBounds.native_squareInjective
 
+/-- 固定原配数分支及实际中间值；这些是对象AST等式。 -/
+example {m} (w a b p : Fin m) : GodelPairSyntax.code w a b p =
+    ((Source.Formula.mem a b).conj (GodelPairSyntax.lower w a b p)).disj
+      ((Source.Formula.mem a b).neg.conj (GodelPairSyntax.upper w a b p)) := rfl
+
+example {m} (w a b p : Fin m) : GodelPairSyntax.lower w a b p = .ex
+    ((NaturalMultiplicationSyntax.product w.castSucc b.castSucc b.castSucc (Fin.last m)).conj
+      (NaturalAdditionSyntax.sum w.castSucc (Fin.last m) a.castSucc p.castSucc)) := rfl
+
+example {m} (w a b p : Fin m) : GodelPairSyntax.upper w a b p = .ex (.ex
+    ((NaturalMultiplicationSyntax.product w.castSucc.castSucc a.castSucc.castSucc a.castSucc.castSucc (Fin.last m).castSucc).conj
+      ((NaturalAdditionSyntax.sum w.castSucc.castSucc (Fin.last m).castSucc a.castSucc.castSucc (Fin.last (m+1))).conj
+        (NaturalAdditionSyntax.sum w.castSucc.castSucc (Fin.last (m+1)) b.castSucc.castSucc p.castSucc.castSucc)))) := rfl
+
+/-- 单值性不把候选编码值限制在外部标准自然数；源闭句保留全部对象量词。 -/
+example : ObjectGodelPair.injectiveSentence = ((OmegaSyntax.omega (0 : Fin 6)).imp
+    ((Source.Formula.mem 1 0).imp ((Source.Formula.mem 2 0).imp ((Source.Formula.mem 3 0).imp
+      ((Source.Formula.mem 4 0).imp ((GodelPairSyntax.code 0 1 2 5).imp
+        ((GodelPairSyntax.code 0 3 4 5).imp ((Source.Formula.equal 1 3).conj (.equal 2 4))))))))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.fiberSentence) := ObjectGodelPair.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.closureSentence) := ObjectGodelPair.native_closure
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.valueUniqueSentence) := ObjectGodelPair.native_valueUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.componentsSentence) := ObjectGodelPair.native_components
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.injectiveSentence) := ObjectGodelPair.native_injective
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.lowerBandSentence) := ObjectGodelPair.native_lowerBand
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelPair.upperBandSentence) := ObjectGodelPair.native_upperBand
+
 end PPAC.Migration.Step4Checks
