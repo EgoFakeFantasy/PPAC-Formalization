@@ -305,3 +305,15 @@ Term(w,b,f,n):=Ctx(w,b,f)∧(Branch_bound(w,b,n)∨Branch_free(w,f,n))。
 27个完整闭句模式的Source.Derives/sourceZF核/nativeZF核证书和验收见STEP4_SYNTAX_TERM_SCOPE_ACCEPTANCE.zh-CN.md。
 这是纯项关系及其对象正确性；全部11公式局部分支、量词上下文状态、内部替换、ProofZF/U及最终Con仍未完成。
 未知标签t本身也为内部对象变量：t∈ω且不满足对象数码0/1时，任意自然payload的raw节点不是纯项；覆盖非标准标签。
+
+2026-10-22原子局部类型更新（4c.a.iii.a）：
+原ZeroScalar(w,s)恰为Num_2(s)；给定Scalar(w,i,s)时恰好要求Num_0(i)。
+Membership保留关系scalar叶和两个同上下文Term；Equality保留两个同上下文Term。
+两个零字段常量保留Ctx；四个Atomic分支有精确已知构造双条件、实际自然码存在和范围。
+同输入码唯一，同码恢复所有字段；真实内部全称唯一性不预先限制候选字段的scope。
+Membership/Equality恰好对应包含原码、合法类型和所有内部候选唯一性的实际解码纤维。
+任意内部自然标签t不满足Num_0/1/2/3时，任意自然payload的raw节点均非Atomic。
+25个完整闭句模式均有原Source/sourceZF/nativeZF推导；详见STEP4_SYNTAX_ATOM_TYPING_ACCEPTANCE.zh-CN.md。
+下一项是其余七种逻辑/量词局部分支。完整类型递归须保留所有内部(b,f)状态，
+量词体在实际Succ(b',b)下读取(b',f)，不能以固定初始bound的树二值递归替代。
+ProofZF/U、任意内部证明码正确性、内部替换/编译器及最终Con依旧未完成。

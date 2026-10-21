@@ -1,13 +1,13 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：原ZF呈现互导、外部双向推导传输、原两种AC对象等价及完整递归列表检查已完成。
-本批完成所有域内字段的严格原码/父码界，并构造具体树二值算子在全部内部序数上的实际唯一完整递归图。
-原Total/Deterministic义务和真实零/单位标志存在均已消去；14个新增完整闭句有原nativeZF推导。
-完整验收515个构建任务、4511项声明审计、0警告；484份源码哈希复核一致。
-详见[树算子实际递归图验收](docs/STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md)和[当前状态](docs/STATUS.zh-CN.md)。
-下一主项是实际树求值、前段子码值对齐及完整树接受/拒绝正确性与解码，再接入全公式语法和ZF/U专用检查器。
-最终目标仍是对象核Derives nativeZF [] (Con_ZF→Con_target)；内部Proof/Con及任意内部证明码正确性仍未完成。
+当前进展：本批完成原falsum/truth、membership、equal四种原子公式的精确局部类型。
+原关系编号0须为scalar叶，其树数值为内部2；原子项使用同一完整bound/free上下文。
+实际码构造、同码字段恢复、内部量词唯一解码和未知内部标签拒绝均有原推导核证书。
+新增25个完整闭句模式；全仓566个构建任务、5304项声明审计、0警告，535份源码哈希独立复核无差异。
+详见[原子类型与解码验收](docs/STEP4_SYNTAX_ATOM_TYPING_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项为七种逻辑/量词构造的局部分支，再实际构造全内部上下文类型状态递归；量词体bound取真实后继。
+最终目标仍是对象核Derives nativeZF [] (Con_ZF→Con_target)；完整公式类型、内部替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

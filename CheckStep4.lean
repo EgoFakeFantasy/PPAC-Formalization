@@ -1215,4 +1215,107 @@ example {m} (w b f t p n : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxTerms.rawRejectUnknownTagSentence w b f t p n)) :=
   ObjectSyntaxTerms.native_rawRejectUnknownTag w b f t p n
 
+/-! 四个原子构造的全内部局部类型与实际唯一解码验收。 -/
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.zeroTwoSentence w n)) := ObjectSyntaxAtoms.native_zeroTwo w n
+
+example {m} (w i s : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.zeroIndexSentence w i s)) := ObjectSyntaxAtoms.native_zeroIndex w i s
+
+example {m} (truth : Bool) (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.nullaryContextsSentence truth w b f n)) := ObjectSyntaxAtoms.native_nullaryContexts truth w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.falseTwoSentence w b f n)) := ObjectSyntaxAtoms.native_falseTwo w b f n
+
+example {m} (w b f s x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberTypesSentence w b f s x y n)) := ObjectSyntaxAtoms.native_memberTypes w b f s x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalTypesSentence w b f x y n)) := ObjectSyntaxAtoms.native_equalTypes w b f x y n
+
+example {m} (truth : Bool) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.nullaryExistsSentence truth w b f)) := ObjectSyntaxAtoms.native_nullaryExists truth w b f
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberExistsSentence w b f x y)) := ObjectSyntaxAtoms.native_memberExists w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalExistsSentence w b f x y)) := ObjectSyntaxAtoms.native_equalExists w b f x y
+
+example {m} (w s x y t u v n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberFieldsSentence w s x y t u v n)) := ObjectSyntaxAtoms.native_memberFields w s x y t u v n
+
+example {m} (w x y u v n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalFieldsSentence w x y u v n)) := ObjectSyntaxAtoms.native_equalFields w x y u v n
+
+example {m} (w b f s t x y n r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberValueUniqueSentence w b f s t x y n r)) := ObjectSyntaxAtoms.native_memberValueUnique w b f s t x y n r
+
+example {m} (w b f x y n r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalValueUniqueSentence w b f x y n r)) := ObjectSyntaxAtoms.native_equalValueUnique w b f x y n r
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberDecodeSentence w b f n)) := ObjectSyntaxAtoms.native_memberDecode w b f n
+
+example {m} (w n s x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberFiberSentence w n s x y)) := ObjectSyntaxAtoms.native_memberFiber w n s x y
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalDecodeSentence w b f n)) := ObjectSyntaxAtoms.native_equalDecode w b f n
+
+example {m} (w n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalFiberSentence w n x y)) := ObjectSyntaxAtoms.native_equalFiber w n x y
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.atomicContextsSentence w b f n)) := ObjectSyntaxAtoms.native_atomicContexts w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.atomicRangeSentence w b f n)) := ObjectSyntaxAtoms.native_atomicRange w b f n
+
+example {m} (truth : Bool) (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.nullaryAtomicSentence truth w b f n)) := ObjectSyntaxAtoms.native_nullaryAtomic truth w b f n
+
+example {m} (w b f s x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.memberAtomicSentence w b f s x y n)) := ObjectSyntaxAtoms.native_memberAtomic w b f s x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.equalAtomicSentence w b f x y n)) := ObjectSyntaxAtoms.native_equalAtomic w b f x y n
+
+example {m} (w b f i s x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.symbolCheckSentence w b f i s x y n)) := ObjectSyntaxAtoms.native_symbolCheck w b f i s x y n
+
+example {m} (w b f i s x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.badSymbolSentence w b f i s x y n)) := ObjectSyntaxAtoms.native_badSymbol w b f i s x y n
+
+example {m} (w b f t p n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.unknownAtomicTagSentence w b f t p n)) := ObjectSyntaxAtoms.native_unknownAtomicTag w b f t p n
+
+example {m} (w s x y n : Fin m) : SyntaxAtomSyntax.memberCode w s x y n =
+    SyntaxNodeSyntax.constructor 3 2 w (SyntaxAtomSyntax.three s x y) n := rfl
+
+example {m} (w x y n : Fin m) : SyntaxAtomSyntax.equalCode w x y n =
+    SyntaxNodeSyntax.constructor 2 3 w (SyntaxAtomSyntax.two x y) n := rfl
+
+example {m} (w n : Fin m) : SyntaxAtomSyntax.zeroScalar w n =
+    SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 n := rfl
+
+example {m} (w b f s x y : Fin m) : SyntaxAtomSyntax.memberTypes w b f s x y =
+    (SyntaxAtomSyntax.zeroScalar w s).conj ((SyntaxTermSyntax.term w b f x).conj (SyntaxTermSyntax.term w b f y)) := rfl
+
+/-- 量词绑定的候选字段不设外部标准范围或scope限制。 -/
+example {m} (w n s x y : Fin m) : SyntaxAtomDecode.memberUnique w n s x y =
+    Source.Formula.all (.all (.all ((SyntaxAtomSyntax.memberCode w.castSucc.castSucc.castSucc
+      (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2)) n.castSucc.castSucc.castSucc).imp
+        ((Source.Formula.equal (Fin.last m).castSucc.castSucc s.castSucc.castSucc.castSucc).conj
+          ((Source.Formula.equal (Fin.last (m+1)).castSucc x.castSucc.castSucc.castSucc).conj
+            (.equal (Fin.last (m+2)) y.castSucc.castSucc.castSucc)))))) := rfl
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.nullaryAtomicSentence false w b f n)) := ObjectSyntaxAtoms.native_nullaryAtomic false w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxAtoms.nullaryAtomicSentence true w b f n)) := ObjectSyntaxAtoms.native_nullaryAtomic true w b f n
+
 end PPAC.Migration.Step4Checks

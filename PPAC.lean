@@ -83,3 +83,5 @@ import PPAC.Migration.Internal.ObjectStructuralTreeEncode
 import PPAC.Migration.Internal.ObjectSyntaxConstructors
 
 import PPAC.Migration.Internal.ObjectSyntaxTerms
+
+import PPAC.Migration.Internal.ObjectSyntaxAtoms
