@@ -1051,4 +1051,66 @@ example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectRankCover.coverSente
 
 example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectRankCover.rankSentence := ObjectRankCover.source_rank
 
+
+/-- 全Collection前提只要求原关系逐输入存在，原见证不要求唯一。 -/
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (a : Fin m) :
+    ReplacementPredicates.totalRelation p ρ a = .all
+      ((Source.Formula.mem (Fin.last m) a.castSucc).imp (.ex
+        (ReplacementPredicates.rel p (ReplacementPredicates.paramsUp (ReplacementPredicates.paramsUp ρ))
+          (Fin.last m).castSucc (Fin.last (m+1))))) := rfl
+
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (x a : Fin m) :
+    WitnessRankSyntax.witness p ρ x a = .ex
+      ((ReplacementPredicates.rel p (ReplacementPredicates.paramsUp ρ) x.castSucc (Fin.last m)).conj
+        (LayerRankSyntax.rank (Fin.last m) a.castSucc)) := rfl
+
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (x : Fin m) :
+    ReplacementPredicates.fiber (WitnessRankSyntax.matrix p) ρ x = WitnessRankSyntax.fiber p ρ x := WitnessRankSyntax.matrix_fiber p ρ x
+
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (a c : Fin m) :
+    ReplacementPredicates.exactImage (WitnessRankSyntax.matrix p) ρ a c = WitnessRankSyntax.range p ρ c a :=
+  WitnessRankSyntax.matrix_range p ρ a c
+
+/-- 结论严格是原Collection全参数闭句，不以秩集合存在替代关系见证收集。 -/
+example {n} (p : Source.Formula (n+2)) : CollectionSyntax.collection p =
+    (Source.Formula.all ((ReplacementPredicates.totalRelation p Fin.castSucc (Fin.last n)).imp
+      (ReplacementPredicates.collects p Fin.castSucc (Fin.last n)))).close := by
+  rw [CollectionSyntax.collection, ReplacementInstances.collection_core]
+  rfl
+
+example {n} (p : Source.Formula (n+2)) : Source.Derives (Source.SetLanguage.ZF.at 0)
+    (CollectionSyntax.collection p) := CollectionFromReplacement.source_collection p
+
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives ZFEquivalence.sourceZF []
+    (Translation.sentence (CollectionSyntax.collection p)) := CollectionFromReplacement.kernel_certificate p
+
+example {n} (s : Definitional.Project.BinarySchema n) : FirstOrder.Derives ZFEquivalence.sourceZF []
+    (Definitional.Project.fo_sentence (Axioms.Schema.collection s)) := CollectionFromReplacement.native_project_matrix s
+
+/-- 非函数关系实例：正文y=y，不向输入前提增加唯一性。 -/
+example : Source.Derives (Source.SetLanguage.ZF.at 0)
+    (CollectionSyntax.collection (Source.Formula.equal (1 : Fin 2) 1)) := CollectionFromReplacement.source_collection _
+
+example {free : Syntax.Ctx} {Γ : FirstOrder.Context ℒ free} {p : Syntax.Fm [] free}
+    (h : FirstOrder.Derives nativeZF Γ p) : FirstOrder.Derives ZFEquivalence.sourceZF Γ p := ReverseZFReplay.replay h
+
+example {free : Syntax.Ctx} {Γ : FirstOrder.Context ℒ free} {p : Syntax.Fm [] free} :
+    FirstOrder.Derives nativeZF Γ p ↔ FirstOrder.Derives ZFEquivalence.sourceZF Γ p := ReverseZFReplay.derives_iff
+
+example {q : Definitional.Project.Sentence} (hq : YesMetaZFC.SetTheory.ZF q) :
+    FirstOrder.Derives ZFEquivalence.sourceZF [] (Definitional.Project.fo_sentence q) := ReverseZFReplay.replay_project_axiom hq
+
+example {p : Source.Sentence} (h : FirstOrder.Derives nativeZF [] (Translation.sentence p)) :
+    Source.Derives (Source.SetLanguage.ZF.at 1) (p.rename Fin.elim0) := ReverseZFReplay.source_sentence h
+
+example {p : FirstOrder.Sentence ℒ} (h : FirstOrder.Derives nativeZF [] p) :
+    Source.Derives (Source.SetLanguage.ZF.at 1) ((Reverse.sentence p).rename Fin.elim0) := ReverseZFReplay.source_native_sentence h
+
+example {free : Syntax.Ctx} {Γ : FirstOrder.Context ℒ free} {p : Syntax.Fm [] free}
+    (h : FirstOrder.Derives targetTheory Γ p) :
+    FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.targetTheory) Γ p := ReverseZFReplay.target_replay h
+
+example {p : Source.Sentence} : FirstOrder.Derives targetTheory [] (Translation.sentence p) ↔
+    Source.Derives (Source.SetLanguage.targetTheory.at 1) (p.rename Fin.elim0) := ReverseZFReplay.source_target_sentence_iff
+
 end PPAC.Migration.Step3Checks

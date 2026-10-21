@@ -10,7 +10,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 1 | 原语言与原核接口 | SourceSyntax、SourceStatements、Translation、Contract | 全8构造器语义保真；正确对象句子 | 完成，中间层 |
 | 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
-| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
+| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence、CollectionFromReplacement、ReverseZFReplay | 七固定公理、全参数Separation与Collection/Replacement两个方向的实际Derives，完整开放推导回放 | 完成；内部证明码表示仍归步骤5 |
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
 | 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 内部有限迭代、末值精确族及每集合传递覆盖完成；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
@@ -48,12 +48,16 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.3f.iv.a | 实际Layer、任意参数序数最小元及原Replacement接口 | LayerCoverSyntax、LayerRankSyntax、LayerCoverClosedInstances | 定义x⊆Vα及其唯一最小内部序数索引；唯一秩纤维逐式匹配原Replacement矩阵 | 完成；归纳步内仅从成员覆盖前提取得唯一秩 |
 | 3b.3f.iv.b | 上项唯一纤维、全Replacement及序数族严格界 | LayerRankCollection、LayerRankBound | 实际收集所有成员的唯一秩，取共同严格序数界和实际层值，证明原集合包含于该层 | 完成；精确秩像、序数性及全部内部成员覆盖均已证明 |
 | 3b.3f.iv.c | 上项进步步、对象全体集合归纳及后继PowerOf | LayerCoverInduction、LayerCoverMembership、ObjectRankCover | 全内部层包含、实际唯一秩、实际成员覆盖及成员秩精确族；六条原核闭句 | 完成；无未证归纳/算子前提残留 |
-| 3b.4 | 已证全内部集合秩覆盖、序数最小元、全Replacement与层成员递归 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，实际Vα统一容纳见证；完整原Collection句子 | 下一项，尚未实现 |
-| 3b.4.a | 任意参数关系p、全体集合唯一秩、最小序数模式 | WitnessRankSyntax/Fibers | 定义∃y(p(x,y)∧Rank(y,α))；从每个x的实际见证取得唯一最小见证秩，匹配原Replacement矩阵 | 待做；不能选择宿主见证y |
-| 3b.4.b | 上项唯一纤维、原Replacement和任意内部序数族严格界 | WitnessRankBounds | 实际收集最小见证秩；共同界层内对每个x重新取得实际p见证，证明原Collection的完整覆盖公式 | 待做；保留全部参数和无唯一性要求的原关系 |
-| 3b.4.c | 上项全Collection模式、已证完整双向Separation及固定公理 | ZFEquivalence/ReverseZFReplay | 任意源矩阵和任意原生Project矩阵的原Collection句子推导；接合完整ZF反向回放 | 待做；此后才验收完整ZF呈现等价 |
+| 3b.4 | 已证全内部集合秩覆盖、序数最小元、全Replacement与层成员递归 | WitnessRankSyntax/Fibers/Collection/Bounds、CollectionFromReplacement | 取唯一最小见证秩，实际共同界层给真实原关系见证；完整原Collection句子 | 完成；见STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md |
+| 3b.4.a | 任意参数关系p、全体集合唯一秩、最小序数模式 | WitnessRankSyntax/Fibers | 定义∃y(p(x,y)∧Rank(y,α))；从实际见证取得唯一最小见证秩，匹配原Replacement矩阵 | 完成；不要求原见证唯一，不选择宿主见证族 |
+| 3b.4.b | 上项唯一纤维、原Replacement和任意内部序数族严格界 | WitnessRankCollection/Bounds | 实际精确秩族、共同严格界及真实层值；对每个x取得层内原p见证，证明原Collection完整覆盖 | 完成；全部原参数、内部量词和非函数关系均保留 |
+| 3b.4.c | 上项全Collection模式、已证完整双向Separation及固定公理 | CollectionFromReplacement、ReverseZFReplay | 任意源/原生Project矩阵的完整Collection；原ZF九类公理及ZF/目标理论任意开放推导双向回放 | 完成；闭句可实际回到源19规则，外部变量环境为1 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
-| 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
+| 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 下一项，尚未实现 |
+| 3d.a | 原Source.choiceOn/AC与原Axioms.choice | ChoiceSyntax/Instances | 严格对应两种原公式及任意内部族实例，保留完整functionOn和原选择集唯一交点公式 | 待做；先锁定对象闭句与两个蕴含方向 |
+| 3d.b | 完整选择图、实际函数值精确像及不交性 | GraphChoiceToSelector | 实际构造选择图的精确值集合；对每个非空不交族成员证明交点存在唯一 | 待做；不能用含多余元素的收集界代替精确像 |
+| 3d.c | 原Pairing/Replacement、Kuratowski分量唯一性及任意内部非空族 | TaggedChoiceFamilies | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 待做；不得预设标签族存在或选择纤维见证 |
+| 3d.d | 原选择集公式、实际标签族的并及Separation | SelectorToGraphChoice | 将选择集限制到实际标签族并，构造完整原functionOn选择图及逐成员输出；接合AC互导的原核闭句 | 待做；允许原选择集含并域外元素，必须实际排除杂项 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
 | 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
 | 6 | 原OpenAI 4.34.1环境 | 原源码定向构建、两个Comparator记录 | 分开普通Con与带不可达传递模型；真实命令与允许公理 | 待做 |
@@ -379,3 +383,17 @@ ObjectRankCover六个闭句给全体集合包含覆盖、实际唯一秩、实�
 下一项按3b.4.a–3b.4.c对任意原关系的见证取唯一最小秩，实际共同层给完整Collection覆盖，再接合ZF反向回放。
 全局ω图及最小传递闭包仍是独立未完成辅助项，本批未将它们作为反向Collection的额外前置门。
 两种AC等价、内部ProofZF/U/Con及最终内部Con蕴含的原核主句仍待实现。
+
+完整Collection及ZF呈现互导完成更新：WitnessRankSyntax对任意原关系p及参数ρ定义
+WitnessRank(x,α):=∃y(Rel_p(ρ,x,y)∧Rank(y,α))，原y仍在内部存在量词中，不要求唯一。
+WitnessRankFibers从全体集合实际秩及已证最小序数模式取得唯一最小见证秩纤维；
+WitnessRankCollection用一个明确原Replacement实例实际取得精确序数族C。
+WitnessRankBounds对C取实际严格界δ和Layer(δ,v)，逐输入消去其最小见证秩和真实y，
+用已证层成员递归取得y∈v，故满足原Collection的完整覆盖公式。
+CollectionFromReplacement.source_collection对每个任意参数矩阵返回Source.Derives (ZF.at 0) (collection p)，
+kernel_certificate回传原核，native_project_matrix覆盖任意原生Project.BinarySchema，未增加Collection输入或对象AC。
+ReverseZFReplay逐原ZF九类公理回放，给任意自由上下文和局部假设下ZF及目标理论的双向实际原核推导；
+闭句通过既有六构造/27逻辑模式反向编译器回到原19规则，保留一个未用外部变量环境。
+该完成状态指对象公理逐模式互导与外部证书回放；不是任意内部Proof码的正确性，更不是内部Con主句。
+实际验收见STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md。下一项按3d.a–3d.d实现原图AC与不交族选择集AC的对象互导；
+两端均固定原完整公式，不能把反向单射当满射截面或在宿主选一族内部见证。

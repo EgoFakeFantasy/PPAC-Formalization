@@ -115,3 +115,9 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 对象集合归纳中以原Replacement实际收集全部成员的唯一秩，取实际共同严格界和层值，随后用实际后继幂集提升为成员覆盖。
 [六条闭句实际验收](docs/STEP3_RANK_COVER_ACCEPTANCE.zh-CN.md)通过；源证明没有Collection或对象AC输入。
 下一项由见证最小秩证明完整反向Collection；两种AC、内部ProofZF/U/Con及最终对象主句仍未完成。
+
+完整ZF呈现互导更新：任意关系、全部参数的原Collection均已在源Replacement版ZF中实际推导，
+原见证不要求唯一；唯一最小见证秩的实际精确像及共同层界给完整原Collection覆盖。
+任意原生Project矩阵也已覆盖，原ZF九类公理和ZF/目标理论的任意开放推导均可双向原核回放；闭句可实际回到源19规则。
+[实际验收](docs/STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md)通过。内部Proof码上的编译器正确性尚未实现，内部Con主句仍未完成。
+下一项是原图AC与原不交族选择集AC的对象互导。

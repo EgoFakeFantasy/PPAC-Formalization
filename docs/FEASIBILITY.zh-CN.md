@@ -25,7 +25,7 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 
 ## 主要缺口
 1. 源开放自然演绎规则（无限假设集、末自由变量）到目标有限上下文 Hilbert 核的双向传输；须用有限支撑。
-2. 源 Replacement 与目标 Collection 及两种 AC 呈现的逐模式推导对应。
+2. 两种 AC 呈现的对象互导。源 Replacement 与目标 Collection 的完整双向逐模式推导及ZF/目标理论回放已完成，内部证明码表示仍待实现。
 3. 元层纯集合、布尔值、商、全部 HS 名字的 universe 对应；不能强行固定名字秩界。
 4. 可构造解释如走论文路径，应逐公理证明 ZF ⊢ α^L；语义 L 模型或文档提及 GCH 不够。
 5. 将强迫系统、逻辑规则、ZF 全模式、SVC、ACwo、非选择见证及全秩 PP 装配为原核可检查接口。
@@ -56,3 +56,8 @@ Replacement实质更新：原Collection加分离已对任意参数/矩阵证明�
 两实例原核证书不依赖底座7个固定句子证书，原ZF回放仍按既有基线审计。
 源ZF九类公理及源目标理论的完整正向推导回放现已完成；
 反向Collection方向、内部码编译正确性和内部Con对象主句仍未完成。
+
+完整ZF呈现互导更新：CollectionFromReplacement已为任意关系矩阵和任意有限参数提供源Replacement版ZF中的完整原Collection推导，
+并经原核传输覆盖任意原生Project矩阵。ReverseZFReplay逐原ZF九类公理回放，给ZF和目标理论任意开放推导的双向原核传输，
+及闭句到原19条源规则的实际反向编译。见STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md。
+这里仍是对象公理逐模式证明和外部证书回放；任意内部码的Proof检查器、内部编译正确性与最终Con蕴含主句未完成。
