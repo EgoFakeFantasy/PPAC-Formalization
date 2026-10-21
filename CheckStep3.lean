@@ -559,4 +559,33 @@ example : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
 example : ObjectTransitiveCover.coverSentence =
     (TransitiveCoverSyntax.coverExists (0 : Fin 1)).close := rfl
 
+/-- 两个任意公式模式的每个实例都有全参数闭句及原核推导。 -/
+theorem all_object_set_induction {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SetInductionSyntax.sentence p)) := SetInduction.native_induction p
+
+theorem all_object_global_member_minimal {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (GlobalMinimalSyntax.sentence p)) := GlobalMinimal.native_minimal p
+
+example {n} (p : Source.Formula (n+1)) :
+    Source.Derives (Source.SetLanguage.ZF.at 0) (SetInductionSyntax.sentence p) := SetInduction.source_induction p
+
+example {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+      (Translation.sentence (GlobalMinimalSyntax.sentence p)) := GlobalMinimal.kernel_certificate p
+
+/-- 任意参数与交错对象量词实例，并包含无参数实例。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (SetInductionSyntax.sentence parameterMatrix)) :=
+  SetInduction.native_induction parameterMatrix
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (GlobalMinimalSyntax.sentence parameterMatrix)) :=
+  GlobalMinimal.native_minimal parameterMatrix
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (SetInductionSyntax.sentence (Source.Formula.equal (0 : Fin 1) 0))) :=
+  SetInduction.native_induction _
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (GlobalMinimalSyntax.sentence (Source.Formula.equal (0 : Fin 1) 0))) :=
+  GlobalMinimal.native_minimal _
+
 end PPAC.Migration.Step3Checks

@@ -29,7 +29,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 相容/唯一完成；实际存在见下一行 |
 | 3b.2b.3b.iii | 对象图扩展、ω归纳、Extensionality/Pairing/Union/Foundation与四个完整Separation实例 | FiniteIterationSyntax/Uniqueness、IterationBase/Existence、IterationExtension*、IterationExistence、ObjectFiniteIteration | 全部内部n∈ω的实际有限图存在；后继域与图唯一；原完整functionOn/种子/递推条件；源ZF与原核Derives | 完成 |
 | 3b.2b.3b.iv | 上项全内部存在唯一、原Replacement与Union | IterationContext、IterationValue*/Range*、TransitiveCover*、ObjectTransitiveCover | 实际取得全部内部n末值的精确集合并取并；无额外前提的∀a∃b(a⊆b∧Transitive(b))，源ZF和原核Derives | 完成 |
-| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
+| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 全体集合归纳/无界成员极小元完成；序数/递归/秩待做，不使用宿主WellFounded |
+| 3b.3a | 实际传递覆盖、有界成员归纳、Foundation及相应完整Separation实例 | SetInductionSyntax/Logic、SetInduction、GlobalMinimalSyntax、GlobalMinimal | 每个任意参数公式有全体集合归纳与无界成员极小元的完整对象闭句；源ZF和原核Derives；不引入统一真值谓词 | 完成 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
@@ -205,3 +206,13 @@ ObjectTransitiveCover消去原ZF中实际ω与空集见证，最终得到无额�
 IterationContext.Evidence只包装既有八句对象公理的Derives证书；没有加入新可信规则或假定覆盖结论。
 下一主项为内部序数、递归、秩/累积层和反向Collection；全局ω函数图及传递覆盖的最小性亦未声称完成。
 实际验收见STEP3_TRANSITIVE_COVER_ACCEPTANCE.zh-CN.md，内部ProofZF/U/Con与最终主句仍未完成。
+
+全体集合归纳更新：SetInductionSyntax固定Below(p,x):=∀y(y∈x→p(y))、
+Progressive(p):=∀x(Below(p,x)→p(x))及Holds(p):=∀x p(x)。
+SetInductionLogic在实际传递覆盖中将有界成员归纳提升到全部成员归纳；再由a⊆b得到a的全部成员满足p，
+应用全局进步性取得p(a)。SetInduction对每个外部p : Formula(n+1)给出全参数闭句及源ZF/原核实际推导。
+GlobalMinimal以该模式作用于¬p，证明∃x p(x)→∃x(p(x)∧∀y∈x ¬p(y))；没有增加对象类或内部统一真值谓词。
+外部模式索引只描述有限公式与参数数目，不是将外部标准实例当作模型内的统一真值断言。
+源证明沿用Replacement版ZF中已证传递覆盖，无Collection或对象AC输入；未假定模型外部良基性。
+实际验收见STEP3_SET_INDUCTION_ACCEPTANCE.zh-CN.md。下一项核对并保持原Source.ordinal的传递性、严格线性及
+全内部子集极小元定义，继续内部序数比较/递归/秩；最终内部Con主句仍未完成。

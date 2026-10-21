@@ -1145,3 +1145,37 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ObjectTransitiveCover.native_range
 #print axioms PPAC.Migration.ObjectTransitiveCover.native_properties
 #print axioms PPAC.Migration.ObjectTransitiveCover.native_cover
+
+-- 任意参数公式的全体集合归纳及无界成员极小元模式。
+#print axioms PPAC.Migration.SetInductionSyntax.below
+#print axioms PPAC.Migration.SetInductionSyntax.progressive
+#print axioms PPAC.Migration.SetInductionSyntax.holds
+#print axioms PPAC.Migration.SetInductionSyntax.sentence
+#print axioms PPAC.Migration.SetInductionSyntax.below_rename
+#print axioms PPAC.Migration.SetInductionSyntax.progressive_rename
+#print axioms PPAC.Migration.SetInductionSyntax.holds_rename
+#print axioms PPAC.Migration.SetInductionSyntax.below_at
+#print axioms PPAC.Migration.SetInductionSyntax.progressive_at
+#print axioms PPAC.Migration.SetInductionSyntax.holds_at
+#print axioms PPAC.Migration.SetInductionLogic.bounded_below_at
+#print axioms PPAC.Migration.SetInductionLogic.bounded_holds_at
+#print axioms PPAC.Migration.SetInductionLogic.below_on_transitive
+#print axioms PPAC.Migration.SetInductionLogic.bounded_progressive
+#print axioms PPAC.Migration.SetInductionLogic.below_from_cover
+#print axioms PPAC.Migration.SetInductionLogic.at_element
+#print axioms PPAC.Migration.SetInduction.all_holds
+#print axioms PPAC.Migration.SetInduction.source_induction
+#print axioms PPAC.Migration.SetInduction.kernel_certificate
+#print axioms PPAC.Migration.SetInduction.native_induction
+#print axioms PPAC.Migration.GlobalMinimalSyntax.has
+#print axioms PPAC.Migration.GlobalMinimalSyntax.minimal
+#print axioms PPAC.Migration.GlobalMinimalSyntax.minimalExists
+#print axioms PPAC.Migration.GlobalMinimalSyntax.sentence
+#print axioms PPAC.Migration.GlobalMinimalSyntax.has_rename
+#print axioms PPAC.Migration.GlobalMinimalSyntax.minimal_rename
+#print axioms PPAC.Migration.GlobalMinimalSyntax.minimalExists_rename
+#print axioms PPAC.Migration.GlobalMinimal.progressive_negation
+#print axioms PPAC.Migration.GlobalMinimal.minimal_exists
+#print axioms PPAC.Migration.GlobalMinimal.source_minimal
+#print axioms PPAC.Migration.GlobalMinimal.kernel_certificate
+#print axioms PPAC.Migration.GlobalMinimal.native_minimal

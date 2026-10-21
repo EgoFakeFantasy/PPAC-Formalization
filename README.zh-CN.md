@@ -27,10 +27,11 @@ Foundation和Pairing也给出任意内部集合不自属。完整函数图的逐
 现已定义实际并集递推轨迹，并用对象ω归纳证明给定轨迹的全部内部共同输入一致、相容及同域唯一；
 这些给定轨迹结果现已用于全部内部n∈ω长度的实际轨迹构造，后继域及图唯一性也已完成。
 原Replacement现已实际收集全部内部末值的精确集合；其并集给出∀a∃b(a⊆b∧Transitive(b))的源ZF与原核推导。
+任意参数、任意公式的全体集合归纳及无界成员极小元模式现已在源ZF和原核中证明，未假定宿主良基性。
 全局ω函数图、最小传递闭包、序数/秩/累积层、
 源Replacement到Collection的反向数学方向、两种AC与内部Con仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[精确末值集合及对象传递覆盖验收](docs/STEP3_TRANSITIVE_COVER_ACCEPTANCE.zh-CN.md)、[全部内部有限迭代存在唯一验收](docs/STEP3_FINITE_ITERATION_ACCEPTANCE.zh-CN.md)、[给定迭代轨迹唯一性验收](docs/STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md)、[完整函数图逐点外延性验收](docs/STEP3_GRAPH_POINTWISE_ACCEPTANCE.zh-CN.md)、[对象ω结构验收](docs/STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md)、[对象ω及归纳模式验收](docs/STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md)、[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[全体集合归纳及无界成员极小元验收](docs/STEP3_SET_INDUCTION_ACCEPTANCE.zh-CN.md)、[精确末值集合及对象传递覆盖验收](docs/STEP3_TRANSITIVE_COVER_ACCEPTANCE.zh-CN.md)、[全部内部有限迭代存在唯一验收](docs/STEP3_FINITE_ITERATION_ACCEPTANCE.zh-CN.md)、[给定迭代轨迹唯一性验收](docs/STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md)、[完整函数图逐点外延性验收](docs/STEP3_GRAPH_POINTWISE_ACCEPTANCE.zh-CN.md)、[对象ω结构验收](docs/STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md)、[对象ω及归纳模式验收](docs/STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md)、[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。
