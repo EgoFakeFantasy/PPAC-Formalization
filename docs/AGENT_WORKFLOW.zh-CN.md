@@ -99,7 +99,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.iv.c.ii | 全内部实际逆编码、原Nil/Cons反演/单射、指定长度与内部ω归纳 | StructuralListCodeSyntax/Length/Fields/Step/Induction/Graph、StructuralListRoundTripSyntax/RoundTrip、ObjectStructuralListRoundTrip | 同实际长度且所有域内字段相同的列表码相等；实际唯一编码纤维；解码后重新编码恢复原码 | 完成；10个源ZF及原nativeZF完整闭句，见STEP4_INTERNAL_LIST_ROUNDTRIP_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.v | 上项唯一字段解码、有效性关系及严格子码界 | StructuralListCheck*、后续StructuralTree* | 全内部码的列表/树检查、接受/拒绝正确性与实际解码 | 列表检查完成；树检查及树有效性待做 |
 | 4b.c.4c.v.a | 原实际tail递归/移位、严格尾码界、Foundation/Separation及对象ω归纳 | StructuralListCheckSyntax/Termination*/Minimal/Unique/PreservationStep/Invariant*/Correctness、ObjectStructuralListCheck | 全内部自然码真实执行的首个Nil/空集终端存在唯一；接受↔Valid、拒绝↔¬Valid、互斥分类及接受后实际解码 | 完成；16个源ZF及原nativeZF完整闭句，见STEP4_INTERNAL_LIST_CHECK_ACCEPTANCE.zh-CN.md |
-| 4b.c.4c.v.b | 原完整字段图、Cons严格子码界及raw_node载荷界 | 计划StructuralListFieldBounds、StructuralTreeSyntax/Check/Decode | 先证全部域内字段严格属于原列表码，再组合父码界构造全内部树递归检查；实际存在唯一及有效/无效对应 | 下一主项；字段为自然数不自动表示其为有效语法树 |
+| 4b.c.4c.v.b | 原完整字段图、严格子码界及具体前段算子 | StructuralListFieldBounds、StructuralTreeOperator*、后续TreeEvaluation/Check/Decode | 全内部树递归检查、实际存在唯一及有效/无效对应 | 字段严格界和实际树算子全序数递归图完成；完整树正确性/解码待做 |
+| 4b.c.4c.v.b.i | 原Cons头/尾界、精确长度反演和字段零/后继规律 | StructuralListFieldBoundsSyntax/Step/FieldBounds、ObjectStructuralFieldBounds | 全部域内字段严格属于原列表码；完整图边界和父raw码界 | 完成；4个源ZF及原nativeZF闭句 |
+| 4b.c.4c.v.b.ii | 上项严格子码界、真实字段图和原对象超限递归 | StructuralTreeOperatorSyntax/Logic/Step、StructuralTreeRecursors、ObjectStructuralTreeOperator | 原raw树具体二值算子仅查询严格较小子码；Total/Deterministic实际消去；全内部序数唯一完整递归图及真实零/单位标志 | 完成；10个源ZF及原nativeZF闭句，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md |
+| 4b.c.4c.v.b.iii | 上项实际递归图、初段相容和严格子码界 | 计划StructuralTreeEvaluation/History/Check/Decode | 实际后继域/图/边的唯一求值；子码前段值一致；完整递归接受/拒绝对应与实际唯一树解码 | 下一主项；实际图存在不替代完整树正确性 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
 | 4e | 上项完整语法、公理识别与有限序列 | Internal/ProofZF、ProofTarget | 全6原核规则及27逻辑模式；前驱索引严格更小、完整结论和上下文核验；全部内部ω码 | 待做 |
@@ -665,3 +668,12 @@ Valid(w,n)实际解码为内部长度和完整字段图；反向有效性及长�
 16个原nativeZF完整闭句；全仓506任务、4397审计、0警告、475哈希差异0。
 下一项v.b先证明全部域内字段值严格属于原列表码，再组合raw_node载荷界，推进树递归有效性/解码。
 树、专用ProofZF/U和最终内部Con仍未完成；不得把列表接受结果升级为树有效性。
+
+
+2026-10-22字段严格界及树算子实际递归批次：v.b.i–ii完成。
+对象ω长度归纳覆盖全部内部字段；完整图边及raw载荷严格界组合为父码下的全部子字段界。
+具体树Good实际取得标签/载荷/长度/完整字段图，H查询带严格子码界，并已在Shape下证明等价于原Marks。
+算子总单值义务已实际消去，原对象超限递归给全部内部序数上的唯一完整图，Ω还取得真实零/单位标志。
+四个字段及十个树闭句有原nativeZF推导；全仓515任务、4511审计、0警告、484哈希差异0。
+下一项v.b.iii实际构造自然码的唯一求值，证明前段子码值一致及Good的完整递归刻画，完成树检查/解码。
+当前完整树接受/拒绝、专用ProofZF/U及最终内部Con仍未完成；背景及对象Derives规格不变。

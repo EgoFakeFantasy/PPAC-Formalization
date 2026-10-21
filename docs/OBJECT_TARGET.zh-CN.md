@@ -241,3 +241,14 @@ Before(w,n,r)排除全部更早内部索引上的终端事件，CheckValue保留
 十六个新增完整闭句有源ZF及原nativeZF实际Derives；见STEP4_INTERNAL_LIST_CHECK_ACCEPTANCE.zh-CN.md。
 列表有效性/解码总门禁现为True，树、专用ProofZF/U、任意内部证明码正确性及最终Con仍为False。
 本文件锁定的原背景、内部Con展开、全部六条规则/27逻辑模式及全内部ω量词范围不变。
+
+
+2026-10-22全内部字段严格界和实际树算子递归图更新：
+HasLength(w,n,l)、i∈l和Field(w,n,i,y)下，原对象ω长度归纳实际推出y∈n。
+完整Fields图的每条边继承此严格界，组合原Raw载荷界后得到全部子字段严格属于父码。
+具体树前段算子Good保留实际自然标签、raw载荷、长度、完整图；H查询只涉及严格较小子码。
+该额外显式界已在Shape下证明等价于原Marks；不引用树有效性或宿主判定器。
+原对象递归定理的Total/Deterministic义务已实际消去，取得全部内部序数的唯一完整递归图，及真实零/单位标志见证。
+四个字段界和十个树算子完整闭句有源ZF及原nativeZF实际Derives，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md。
+前段图子码值对齐、完整树接受/拒绝正确性及实际树解码仍待证明。
+专用ProofZF/U、任意内部证明码正确性和最终内部Con仍False；最初锁定的原背景、六规则/27逻辑模式及全内部ω量词不变。

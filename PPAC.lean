@@ -73,3 +73,5 @@ import PPAC.Migration.Internal.ObjectStructuralListEncode
 import PPAC.Migration.Internal.ObjectStructuralListRoundTrip
 
 import PPAC.Migration.Internal.ObjectStructuralListCheck
+
+import PPAC.Migration.Internal.ObjectStructuralTreeOperator

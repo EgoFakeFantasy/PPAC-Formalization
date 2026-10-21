@@ -800,4 +800,77 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.classificationSentence) := ObjectStructuralListCheck.native_classification
 
+/-- 字段严格界性质量化所有原码、域内索引及任意字段输出。 -/
+example {m} (w r : Fin m) : StructuralListFieldBoundsSyntax.property w r = .all (.all (.all
+    ((StructuralListLengthSyntax.hasLength w.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc r.castSucc.castSucc.castSucc).imp
+      ((Source.Formula.mem (Fin.last (m+1)).castSucc r.castSucc.castSucc.castSucc).imp
+        ((StructuralListFieldSyntax.field w.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2))).imp
+          (.mem (Fin.last (m+2)) (Fin.last m).castSucc.castSucc)))))) := rfl
+
+/-- 最终字段界没有归纳性质或预设子码界前提。 -/
+example : ObjectStructuralFieldBounds.fieldBoundSentence = ((OmegaSyntax.omega (0 : Fin 5)).imp
+    ((StructuralListLengthSyntax.hasLength 0 1 2).imp ((Source.Formula.mem 3 2).imp
+      ((StructuralListFieldSyntax.field 0 1 3 4).imp (.mem 4 1))))).close := rfl
+
+/-- 原节点形状保留实际自然标签、raw载荷、原长度迹和完整精确字段图。 -/
+example {m} (w n tag p l f : Fin m) : StructuralTreeOperatorSyntax.shape w n tag p l f =
+    ((Source.Formula.mem tag w).conj (StructuralNodeSyntax.raw w tag p n)).conj
+      ((StructuralListLengthSyntax.hasLength w p l).conj (StructuralListFieldGraphSyntax.fields w p l f)) := rfl
+
+/-- 历史查询显式限制到严格小于当前码的子字段，覆盖全部边。 -/
+example {m} (e n f h : Fin m) : StructuralTreeOperatorSyntax.children e n f h = .all (.all
+    ((GraphSyntax.edge f.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).imp
+      ((Source.Formula.mem (Fin.last (m+1)) n.castSucc.castSucc).conj
+        (GraphSyntax.edge h.castSucc.castSucc (Fin.last (m+1)) e.castSucc.castSucc)))) := rfl
+
+/-- 树局部条件实际量化标签、载荷、长度及字段图四个内部见证。 -/
+example {m} (w e n h : Fin m) : StructuralTreeOperatorSyntax.good w e n h = .ex (.ex (.ex (.ex
+    ((StructuralTreeOperatorSyntax.shape w.castSucc.castSucc.castSucc.castSucc n.castSucc.castSucc.castSucc.castSucc
+      (Fin.last m).castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc.castSucc (Fin.last (m+2)).castSucc (Fin.last (m+3))).conj
+      (StructuralTreeOperatorSyntax.children e.castSucc.castSucc.castSucc.castSucc n.castSucc.castSucc.castSucc.castSucc
+        (Fin.last (m+3)) h.castSucc.castSucc.castSucc.castSucc))))) := rfl
+
+example {m} (w z e n h y : Fin m) : StructuralTreeOperatorSyntax.step w z e n h y =
+    ((StructuralTreeOperatorSyntax.good w e n h).conj (.equal y e)).disj
+      ((StructuralTreeOperatorSyntax.good w e n h).neg.conj (.equal y z)) := rfl
+
+/-- 全序数递归图的实际存在唯一句不残留算子总性/单值性假设。 -/
+example : ObjectStructuralTreeOperator.recursorsSentence = (StructuralTreeOperatorSyntax.recursors (0 : Fin 3) 1 2).close := rfl
+
+/-- 原Omega实际取得内部零与单位标志，再取得全序数唯一递归图。 -/
+example {m} (w : Fin m) : StructuralTreeOperatorSyntax.actualRecursors w = .ex (.ex
+    (((OmegaSyntax.empty (Fin.last m).castSucc).conj (OmegaSyntax.successor (Fin.last (m+1)) (Fin.last m).castSucc)).conj
+      (OrdinalRecursionExistenceSyntax.allUnique StructuralTreeOperatorSyntax.matrix
+        (NaturalAdditionTransport.params3 w.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1)))))) := rfl
+
+example : ObjectStructuralTreeOperator.actualUnitsSentence = ((OmegaSyntax.omega (0 : Fin 1)).imp (StructuralTreeOperatorSyntax.actualRecursors 0)).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralFieldBounds.fieldBoundSentence) := ObjectStructuralFieldBounds.native_fieldBound
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralFieldBounds.edgeBoundSentence) := ObjectStructuralFieldBounds.native_edgeBound
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralFieldBounds.rawFieldBoundSentence) := ObjectStructuralFieldBounds.native_rawFieldBound
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralFieldBounds.rawEdgeBoundSentence) := ObjectStructuralFieldBounds.native_rawEdgeBound
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.shapeBoundSentence) := ObjectStructuralTreeOperator.native_shapeBound
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.childrenIffSentence) := ObjectStructuralTreeOperator.native_childrenIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.leafGoodSentence) := ObjectStructuralTreeOperator.native_leafGood
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.positiveGoodSentence) := ObjectStructuralTreeOperator.native_positiveGood
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.rangeSentence) := ObjectStructuralTreeOperator.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.zeroSentence) := ObjectStructuralTreeOperator.native_zero
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.functionalSentence) := ObjectStructuralTreeOperator.native_functional
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.recursorsSentence) := ObjectStructuralTreeOperator.native_recursors
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.ordinalFiberSentence) := ObjectStructuralTreeOperator.native_ordinalFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.actualUnitsSentence) := ObjectStructuralTreeOperator.native_actualUnits
+
 end PPAC.Migration.Step4Checks
