@@ -34,7 +34,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.3b | 原Source.ordinal、Foundation/EmptySet/Pairing/Union | OrdinalSyntax/Foundation/Transitivity/Restriction/Empty/Successor、ObjectOrdinalBasic | 原定义严格rfl；全内部子集极小元、不自属、成员闭包、实际空/后继序数；源ZF与原核Derives | 完成 |
 | 3b.3c | 原序数基础、Extensionality、Foundation及正文x∉b的一个Separation | OrdinalDifference、OrdinalInitialSegment、OrdinalComparison/Trichotomy、ObjectOrdinalComparison | 内部传递子集为初段或相等；任意两个原序数三歧比较及两两排斥，保留全部对象序数量词；六条原核闭句 | 完成 |
 | 3b.3d | 原序数比较、Extensionality/Foundation/Union与一个Separation；严格界加Pairing | OrdinalFamilySyntax/Order、UnionUpperBounds、OrdinalUnion/StrictBound、ObjectOrdinalUnion | 任意内部序数集合的实际并是原序数，且在全部内部集合上界中最小唯一；实际严格序数上界；六条原核闭句 | 完成 |
-| 3b.3e | 原序数比较、完整图限制/扩展/相容族并、对象集合归纳及全Replacement | OrdinalRecursionSyntax/Compatibility/Existence | 任意参数公式给出的单值总递推算子，在全部内部序数上的完整递归图存在唯一；先证共同初段相容，再构造实际图；不以宿主递归替代 | 下一项，尚未实现 |
+| 3b.3e | 原序数比较、完整图限制/扩展/相容族并、对象集合归纳及全Replacement | OrdinalRecursionSyntax/Compatibility/Existence | 任意参数公式给出的单值总递推算子，在全部内部序数上的完整递归图存在唯一；先证共同初段相容，再构造实际图；不以宿主递归替代 | 限制/给定图相容及唯一完成；全部序数实际存在待做 |
+| 3b.3e.i | 原完整functionOn、实际历史限制、Extensionality/Foundation与两个Separation | RestrictionHistory、OrdinalRecursionSyntax/Restriction/Determinism/History/Values/Compatibility、ObjectOrdinalRecursion | 每个任意参数递推公式有四个完整闭句：传递初段保持、实际限制图、给定原序数域图相容与同域唯一 | 完成；以前提中实际递归图为条件 |
+| 3b.3e.ii | 上项相容/唯一、原图新鲜扩展、算子有效前段上的总性、全Replacement及相容族并 | OrdinalRecursionExtension/Existence | 实际后继域扩展；对象集合归纳中收集唯一扩展图并合并，取得全部内部序数上的实际递归图 | 下一项，尚未实现 |
 | 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 待做 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -263,3 +265,16 @@ OrdinalStrictBound实际构造该并的后继，利用初段性质将每个族�
 Replacement收集这些唯一扩展图，再用已证任意内部相容图族并及精确域/边规律构造α上的递归图。
 此处不能把未界定的所有候选图当作集合，不能直接假定所有前段图存在或在宿主选择一族图。
 后继域扩展使同一路线同时覆盖α为零、后继和极限的情形；这些递归证明尚未实现，不能由本批上界验收代替。
+
+递归图限制与给定图相容更新：Φ的最后三槽依次为内部索引x、实际历史图h和输出y，任意外部有限参数数目保留为模式索引。
+Rec(f,d)包含原完整functionOn(f,d)以及∀x∈d∀y[edge(f,x,y)→∃h(restrict(h,f,x)∧Φ(x,h,y))]。
+限制到传递b⊆d时，RestrictionHistory.through把同一个实际h传到限制图g，无需重新选择历史图；
+OrdinalRecursionRestriction以一个Separation实际构造g并证明Rec(g,b)。
+单值性只对原Ord(x)且完整functionOn(h,x)的有效输入要求；没有要求宿主算子或假定其总性。
+共同初段输出相容时，完整图外延性先给两个实际历史集合相等，再由Φ单值性给当前输出相等。
+以agreementMatrix在实际域d上作对象有界成员归纳，取得任意原序数域d,e的给定递归图相容及同域唯一。
+ObjectOrdinalRecursion为每个Φ给出四个全参数闭句及有限四句理论、源ZF和原核推导；实际验收见STEP3_ORDINAL_RECURSION_COMPATIBILITY_ACCEPTANCE.zh-CN.md。
+本批不含全部内部序数上的递归图实际存在，不含算子总性到实际输出/扩展的证明，不以条件唯一性替代完整递归。
+下一步先固定有效前段上的总性公式，用β上的实际递归图作为历史取得Φ(β,f,y)的真实输出，
+再利用β∉β和原图新鲜扩展实际构造后继域图，并验证旧历史在新图中的限制关系与全部旧/新输出方程。
+随后才在对象集合归纳内以Replacement收集唯一后继扩展图，实际合并并校验精确域和每个历史方程。

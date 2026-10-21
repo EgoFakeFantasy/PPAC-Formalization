@@ -679,4 +679,50 @@ example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOrdinalUnion.strictS
 example {n} (c b : Fin n) : OrdinalStrictBound.strictUpper c b = .all
     ((Source.Formula.mem (Fin.last n) c.castSucc).imp (.mem (Fin.last n) b.castSucc)) := rfl
 
+/-- 每个任意三元递推矩阵及任意参数数目，均有完整对象闭句和原核证书。 -/
+theorem all_recursion_preservation {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.preservationSentence p)) := ObjectOrdinalRecursion.native_preservation p
+
+theorem all_recursion_restrictions {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.restrictionSentence p)) := ObjectOrdinalRecursion.native_restriction p
+
+theorem all_given_recursors_compatible {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.compatibilitySentence p)) := ObjectOrdinalRecursion.native_compatibility p
+
+theorem all_given_recursors_unique {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.uniquenessSentence p)) := ObjectOrdinalRecursion.native_uniqueness p
+
+/-- 两个参数、索引/历史/输出和交错对象量词；不是仅检验固定无参数矩阵。 -/
+def recursionMatrix : Source.Formula 5 := (Source.Formula.mem 2 0).conj (.all
+    ((Source.Formula.mem (Fin.last 5) (3 : Fin 5).castSucc).imp (.ex
+      ((Source.Formula.mem (Fin.last 6) (1 : Fin 5).castSucc.castSucc).conj
+        (.equal (Fin.last 5).castSucc (4 : Fin 5).castSucc.castSucc)))))
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.compatibilitySentence recursionMatrix)) :=
+  ObjectOrdinalRecursion.native_compatibility recursionMatrix
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursion.restrictionSentence recursionMatrix)) :=
+  ObjectOrdinalRecursion.native_restriction recursionMatrix
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectOrdinalRecursion.uniquenessSentence (Source.Formula.equal (2 : Fin 3) 0))) :=
+  ObjectOrdinalRecursion.native_uniqueness _
+
+/-- 每步显式存在真实历史集合；完整原functionOn保留entriesOn与总单值性。 -/
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (f d : Fin m) :
+    OrdinalRecursionSyntax.recursor p ρ f d =
+      (Source.SetLanguage.functionOn f d).conj (OrdinalRecursionSyntax.equations p ρ f d) := by
+  rw [GraphSyntax.functionOn_original]
+  rfl
+
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (f x y : Fin m) :
+    OrdinalRecursionSyntax.history p ρ f x y = .ex
+      ((RestrictionSyntax.restrict (Fin.last m) f.castSucc x.castSucc).conj
+        (OrdinalRecursionSyntax.operator p (ReplacementPredicates.paramsUp ρ) x.castSucc (Fin.last m) y.castSucc)) := rfl
+
+example {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalRecursion.assumptions) []
+      (Translation.sentence (ObjectOrdinalRecursion.compatibilitySentence p)) := ObjectOrdinalRecursion.compatibility_kernel_certificate p
+
+example {n} (p : Source.Formula (n+3)) :
+    Source.Derives (Source.SetLanguage.ZF.at 0) (ObjectOrdinalRecursion.uniquenessSentence p) := ObjectOrdinalRecursion.source_ZF_uniqueness p
+
 end PPAC.Migration.Step3Checks

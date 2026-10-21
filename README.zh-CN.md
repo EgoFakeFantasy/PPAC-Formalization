@@ -66,3 +66,11 @@ OrdinalComparison/Trichotomy给出任意内部序数的三分支比较及两两�
 并集/最小上界的有限理论为Extensionality、Foundation、Union和一个分离实例；严格上界再加入Pairing。
 六条完整闭句均有源ZF和原YesMetaZFC核的实际Derives；见[序数族并与上界验收](docs/STEP3_ORDINAL_UNION_ACCEPTANCE.zh-CN.md)。
 内部递归、秩/累积层、反向Collection及内部ProofZF/U/Con和最终一致性主句仍未完成。
+
+任意参数递归模式更新：OrdinalRecursionSyntax保留原完整functionOn，每条输出边显式存在实际历史限制集合并在其上满足递推公式。
+传递初段限制保持递推条件，并用原Separation实际构造受限递归图；算子在原序数索引及有效完整前段图上单值时，
+对象有界成员归纳证明给定递归图在所有共同内部位置相容，同域图实际相等。
+每个任意参数矩阵都有四个完整闭句及源ZF/原核Derives，有限理论只含Extensionality、Foundation和两个明确Separation实例。
+见[递归图限制与相容性验收](docs/STEP3_ORDINAL_RECURSION_COMPATIBILITY_ACCEPTANCE.zh-CN.md)。
+这批以前提中的实际递归图为条件；全部内部序数上递归图的存在仍未证明，不能由唯一性代替。
+下一项为总算子下实际后继扩展，再以Replacement收集唯一前段图并实际合并；秩及内部Con主句仍未完成。
