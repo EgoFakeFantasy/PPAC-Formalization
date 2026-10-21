@@ -925,3 +925,27 @@ R1、R2、R3、R4的对象推导已实现，实际正式验收结果见STEP4_TYP
 每个工作单元先冻结纯对象公式和全部参数，再实现原Source推导、TheoryTransport及ZFReplay原核闭句。
 构建串行；每批运行scripts/verify.py，检查5个trust=0入口、全声明覆盖、精确原核足迹和源码哈希。
 Source/sourceZF/nativeZF证书是中间公式的真实对象证明，但以上未完成工作仍不得由本批的完整类型识别代替。
+
+
+2026-10-22内部纯项重命名批次：
+已落实4c.c.1/4c.c.2的项分支；不是整个公式rename或替换关卡。
+IndexMap(w,r,a,c):=Ctx(w,a,c)∧Sequence(r,a,c)，保留原完整functionOn及所有边的目标范围。
+Maps分别记录bound与free实际图，内部长度、图、变量码和索引均为对象集合；不要求单射。
+RenameTerm实际绑定源/目标索引并检查原bvar/fvar码、输入范围和真实图边，禁止跨类变换。
+原ZF证明源/目标类型保持、每个合法内部输入实际唯一输出及实际唯一类型纤维，
+并在给定原变量码时证明精确图边双条件。给定两个实际对角映射图，还证明原码不变及实际自重命名。
+31个完整Source/sourceZF/nativeZF原核闭句模式；正式结果见STEP4_INTERNAL_TERM_RENAME_ACCEPTANCE.zh-CN.md。
+这里只消费给定完整映射图；没有交付任意映射图的量词提升或组合图构造。
+
+| 下一单元 | 固定对象合同/输入 | 必须证明的原核交付 |
+|---|---|---|
+| L1 关系图构造或直接LiftBound构造 | 原Replacement的任意参数矩阵，或给定实际IndexMap r:b→B | 实际输出完整函数图及全内部边双条件；拒绝杂项，存在唯一，不能只给AST |
+| L2 量词下LiftBound | 原native VariableRenaming.lift：新槽here→here，旧there(i)→there(r(i)) | 在u=Succ(b)、U=Succ(B)上实际构造r↑；Edge(r↑,i,j)精确等价于(Zero(i)∧Zero(j))∨∃k,l(k∈b∧Edge(r,k,l)∧Succ(i,k)∧Succ(j,l))，free图原样保留 |
+| L3 提升与项关系兼容 | 任意实际量词后继、原新/旧变量码和已验收RenameTerm | 新绑定变量固定，所有旧bound索引和目标索引同步后继；free原映射不变；全部内部范围保持 |
+| F1 完整公式rename | 原11构造标签及全部内部码/作用域，L2/L3，已有原Code树有效和类型递归 | 在严格子码上定义实际对象递归；量词分支必须使用正确提升；存在唯一、类型保持及所有原构造精确式 |
+| F2 映射恒等/复合及原核规则接入 | 完整实际图，允许非单射；所有bound/free参数 | 公式rename的对象恒等/复合、free_strengthening兼容；每模式真实原核闭句 |
+| S及以后 | 捕获规避替换、专用ProofZF/U、内部编译器 | 保留上表4c.c.3至6的完整交付目标；最终原核内部Con蕴含仍未完成 |
+
+LiftBound的0/后继索引约定已核对固定依赖原Logic/Syntax.lean中VariableRenaming.lift。
+外部Source的末变量绑定翻译不能改变原native头槽绑定约定。
+内部非标准自然数及所有完整图仍在上述量化范围内；外部Bool只索引两个固定模式。

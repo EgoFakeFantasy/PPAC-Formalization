@@ -2458,4 +2458,146 @@ example {m} (w n b f t p l g : Fin m) : ObjectFormulaCodeTypedDecode.dataCodeSen
     ((OmegaSyntax.omega w).imp ((FormulaCodeTypedDataSyntax.typedData w n b f t p l g).imp
       (FormulaCodeSyntax.formulaCode w n b f))).close := rfl
 
+example {m} (w r s a b c d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.sourceContextsSentence w r s a b c d)) :=
+  ObjectSyntaxRenameTerm.native_sourceContexts w r s a b c d
+
+example {m} (w r s a b c d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.targetContextsSentence w r s a b c d)) :=
+  ObjectSyntaxRenameTerm.native_targetContexts w r s a b c d
+
+example {m} (bound : Bool) (w r s a b c d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.selectedMapSentence bound w r s a b c d)) :=
+  ObjectSyntaxRenameTerm.native_selectedMap bound w r s a b c d
+
+example {m} (w r a c i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.edgeSourceSentence w r a c i j)) :=
+  ObjectSyntaxRenameTerm.native_edgeSource w r a c i j
+
+example {m} (w r a c i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.edgeTargetSentence w r a c i j)) :=
+  ObjectSyntaxRenameTerm.native_edgeTarget w r a c i j
+
+example {m} (w r a c i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.valueExistsSentence w r a c i)) :=
+  ObjectSyntaxRenameTerm.native_valueExists w r a c i
+
+example {m} (bound : Bool) (w r a n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.introBranchSentence bound w r a n q i j)) :=
+  ObjectSyntaxRenameTerm.native_introBranch bound w r a n q i j
+
+example {m} (bound : Bool) (w r a n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.sourceBranchSentence bound w r a n q)) :=
+  ObjectSyntaxRenameTerm.native_sourceBranch bound w r a n q
+
+example {m} (bound : Bool) (w r a c n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.targetBranchSentence bound w r a c n q)) :=
+  ObjectSyntaxRenameTerm.native_targetBranch bound w r a c n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.sourceTermSentence w r s a b c d n q)) :=
+  ObjectSyntaxRenameTerm.native_sourceTerm w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.targetTermSentence w r s a b c d n q)) :=
+  ObjectSyntaxRenameTerm.native_targetTerm w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.outputNaturalSentence w r s a b c d n q)) :=
+  ObjectSyntaxRenameTerm.native_outputNatural w r s a b c d n q
+
+example {m} (w r s a b n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.oppositeBranchesSentence w r s a b n q v)) :=
+  ObjectSyntaxRenameTerm.native_oppositeBranches w r s a b n q v
+
+example {m} (bound : Bool) (w r a n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.branchUniqueSentence bound w r a n q v)) :=
+  ObjectSyntaxRenameTerm.native_branchUnique bound w r a n q v
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.uniqueSentence w r s a b c d n q v)) :=
+  ObjectSyntaxRenameTerm.native_unique w r s a b c d n q v
+
+example {m} (bound : Bool) (w r a c n i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.existsAtIndexSentence bound w r a c n i)) :=
+  ObjectSyntaxRenameTerm.native_existsAtIndex bound w r a c n i
+
+example {m} (bound : Bool) (w r a c n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.existsBranchSentence bound w r a c n)) :=
+  ObjectSyntaxRenameTerm.native_existsBranch bound w r a c n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.existsTermSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_existsTerm w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.fiberSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_fiber w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.termOfExistsSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_termOfExists w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.termOfFiberSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_termOfFiber w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.existsIffSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_existsIff w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.fiberIffSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_fiberIff w r s a b c d n
+
+example {m} (bound : Bool) (w r a n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.knownBranchSentence bound w r a n q i j)) :=
+  ObjectSyntaxRenameTerm.native_knownBranch bound w r a n q i j
+
+example {m} (bound : Bool) (w r s a b c d n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.knownTermSentence bound w r s a b c d n q i j)) :=
+  ObjectSyntaxRenameTerm.native_knownTerm bound w r s a b c d n q i j
+
+example {m} (bound : Bool) (w r s a b c d n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.rejectEdgeSentence bound w r s a b c d n q i j)) :=
+  ObjectSyntaxRenameTerm.native_rejectEdge bound w r s a b c d n q i j
+
+example {m} (r i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.diagonalAtSentence r i j)) :=
+  ObjectSyntaxRenameTerm.native_diagonalAt r i j
+
+example {m} (bound : Bool) (w r a n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.branchIdentitySentence bound w r a n q)) :=
+  ObjectSyntaxRenameTerm.native_branchIdentity bound w r a n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.identitySentence w r s a b c d n q)) :=
+  ObjectSyntaxRenameTerm.native_identity w r s a b c d n q
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.outputSubstSentence w r s a b c d n q v)) :=
+  ObjectSyntaxRenameTerm.native_outputSubst w r s a b c d n q v
+
+example {m} (w r s a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.reflexiveSentence w r s a b c d n)) :=
+  ObjectSyntaxRenameTerm.native_reflexive w r s a b c d n
+
+example {m} (w r a c : Fin m) : SyntaxIndexMapSyntax.indexMap w r a c =
+    (SyntaxTermSyntax.contexts w a c).conj (SequenceSyntax.sequence r a c) := rfl
+
+example {m} (w r s a b c d n : Fin m) : ObjectSyntaxRenameTerm.fiberIffSentence w r s a b c d n =
+    ((OmegaSyntax.omega w).imp ((SyntaxIndexMapSyntax.maps w r s a b c d).imp
+      ((SyntaxTermSyntax.term w a b n).iff (SyntaxRenameTermSyntax.fiber w r s a b c d n)))).close := rfl
+
+example {m} (w r s a b c d n q : Fin m) : SyntaxRenameTermSyntax.renamed w r s a b c d n q =
+    (SyntaxIndexMapSyntax.maps w r s a b c d).conj
+      ((SyntaxRenameTermSyntax.branch true w r a n q).disj (SyntaxRenameTermSyntax.branch false w s b n q)) := rfl
+
+example {m} (w r s a b c d n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.knownTermSentence true w r s a b c d n q i j)) :=
+  ObjectSyntaxRenameTerm.native_knownTerm true w r s a b c d n q i j
+example {m} (w r s a b c d n q i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTerm.knownTermSentence false w r s a b c d n q i j)) :=
+  ObjectSyntaxRenameTerm.native_knownTerm false w r s a b c d n q i j
+
 end PPAC.Migration.Step4Checks
