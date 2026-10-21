@@ -328,3 +328,14 @@ Read(h,x,b,f):=∃S(Edge(h,x,S)∧Edge(S,b,f))，S为内部上下文对集合。
 33个新增完整闭句模式有原Source/sourceZF/nativeZF证书；详见STEP4_SYNTAX_LOGICAL_CONTEXT_ACCEPTANCE.zh-CN.md。
 组合局部状态的实际Separation、集合值算子和完整类型递归仍待做。
 内部替换、ZF/U专用Proof检查及任意内部码正确性、内部编译器和最终Con依旧未完成。
+
+2026-10-22实际类型状态及原递归更新：
+Local组合全部11个原构造；Row(p):=∃b∃f(Ordered(p,b,f)∧Local(w,b,f,h,n))。
+State:=∀p(p∈V↔p∈C∧Row(p))由原Separation实际构造唯一，逐对成员恰好对应完整Local。
+集合值算子实际总单值，已消去原递归前提，全部内部原序数域上有实际唯一完整递归图。
+每个内部自然码有真实后继域状态值，任意前段图边与实际值精确等价；值有实际统一载体界。
+Typed(w,C,n,b,f):=n∈w∧Ctx(w,b,f)∧∃V(Evaluation(w,C,n,V)∧Edge(V,b,f))。
+给定实际值，Typed恰为其上下文对成员；完整历史自然域内的Read恰为Typed。
+35个完整闭句模式均有原Source/sourceZF/nativeZF证书；详见STEP4_ACTUAL_TYPE_STATES_ACCEPTANCE.zh-CN.md。
+这完成实际状态存在、递归图与读取对应；完整11构造的历史无关类型递归式和原编码识别正确性仍待证。
+完整类型门禁仍False；内部替换、ProofZF/U及任意内部证明码正确性、内部编译器和最终Con均未完成。

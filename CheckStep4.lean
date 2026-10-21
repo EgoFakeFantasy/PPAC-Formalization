@@ -1504,4 +1504,150 @@ example {m} (w b f h x : Fin m) : FirstOrder.Derives nativeZF []
 example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxLogical.singleDecodeSentence 4 false w b f h n)) := ObjectSyntaxLogical.native_singleDecode 4 false w b f h n
 
+/-! 全11局部分支的实际Separation状态、原递归图与全部内部自然码状态值。 -/
+
+example {m}  (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.localContextSentence  w b f h n)) := ObjectSyntaxTypeStates.native_localContext  w b f h n
+
+example {m}  (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.localRangeSentence  w b f h n)) := ObjectSyntaxTypeStates.native_localRange  w b f h n
+
+example {m}  (w n h p b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.rowAtPairSentence  w n h p b f)) := ObjectSyntaxTypeStates.native_rowAtPair  w n h p b f
+
+example {m}  (w c n h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateExistsSentence  w c n h)) := ObjectSyntaxTypeStates.native_stateExists  w c n h
+
+example {m}  (w c n h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateFiberSentence  w c n h)) := ObjectSyntaxTypeStates.native_stateFiber  w c n h
+
+example {m}  (w c n h v t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateUniqueSentence  w c n h v t)) := ObjectSyntaxTypeStates.native_stateUnique  w c n h v t
+
+example {m}  (w c n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateSubsetSentence  w c n h v)) := ObjectSyntaxTypeStates.native_stateSubset  w c n h v
+
+example {m}  (w c u n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateUniverseSentence  w c u n h v)) := ObjectSyntaxTypeStates.native_stateUniverse  w c u n h v
+
+example {m}  (w c n h v p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.noJunkSentence  w c n h v p)) := ObjectSyntaxTypeStates.native_noJunk  w c n h v p
+
+example {m}  (w a c n h v b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.stateEdgeSentence  w a c n h v b f)) := ObjectSyntaxTypeStates.native_stateEdge  w a c n h v b f
+
+example {m}  (w c n h v b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.badContextSentence  w c n h v b f)) := ObjectSyntaxTypeStates.native_badContext  w c n h v b f
+
+example {m}  (w c n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.offNaturalSentence  w c n h v)) := ObjectSyntaxTypeStates.native_offNatural  w c n h v
+
+example {m}  (w c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.totalSentence  w c)) := ObjectSyntaxTypeStates.native_total  w c
+
+example {m}  (w c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.deterministicSentence  w c)) := ObjectSyntaxTypeStates.native_deterministic  w c
+
+example {m}  (w c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.recursorsSentence  w c)) := ObjectSyntaxTypeStates.native_recursors  w c
+
+example {m}  (w c d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.ordinalFiberSentence  w c d)) := ObjectSyntaxTypeStates.native_ordinalFiber  w c d
+
+example {m}  (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.actualCarriersSentence  w)) := ObjectSyntaxTypeStates.native_actualCarriers  w
+
+example {m}  (w c n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationExistsSentence  w c n)) := ObjectSyntaxTypeStates.native_evaluationExists  w c n
+
+example {m}  (w c n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.naturalEvaluationSentence  w c n)) := ObjectSyntaxTypeStates.native_naturalEvaluation  w c n
+
+example {m}  (w c n v t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationUniqueSentence  w c n v t)) := ObjectSyntaxTypeStates.native_evaluationUnique  w c n v t
+
+example {m}  (w c n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationFiberSentence  w c n)) := ObjectSyntaxTypeStates.native_evaluationFiber  w c n
+
+example {m}  (w c f g d t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.graphsAgreeSentence  w c f g d t)) := ObjectSyntaxTypeStates.native_graphsAgree  w c f g d t
+
+example {m}  (w c f d n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.graphValueSentence  w c f d n v)) := ObjectSyntaxTypeStates.native_graphValue  w c f d n v
+
+example {m}  (w c n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.historySentence  w c n v)) := ObjectSyntaxTypeStates.native_history  w c n v
+
+example {m}  (w c n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationSubsetSentence  w c n v)) := ObjectSyntaxTypeStates.native_evaluationSubset  w c n v
+
+example {m}  (w c u n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationUniverseSentence  w c u n v)) := ObjectSyntaxTypeStates.native_evaluationUniverse  w c u n v
+
+example {m}  (w c n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.evaluationOffNaturalSentence  w c n v)) := ObjectSyntaxTypeStates.native_evaluationOffNatural  w c n v
+
+example {m}  (w c n b f v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.typedAtValueSentence  w c n b f v)) := ObjectSyntaxTypeStates.native_typedAtValue  w c n b f v
+
+example {m}  (w c h d x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.readTypedSentence  w c h d x b f)) := ObjectSyntaxTypeStates.native_readTyped  w c h d x b f
+
+example {m}  (w c n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.typedRejectCodeSentence  w c n b f)) := ObjectSyntaxTypeStates.native_typedRejectCode  w c n b f
+
+example {m}  (w c n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.typedRejectContextSentence  w c n b f)) := ObjectSyntaxTypeStates.native_typedRejectContext  w c n b f
+
+example {m}  (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceAtomicSentence  w b f h n)) := ObjectSyntaxTypeStates.native_introduceAtomic  w b f h n
+
+example {m}  (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceNegationSentence  w b f h n)) := ObjectSyntaxTypeStates.native_introduceNegation  w b f h n
+
+example {m} (kind : Fin 4) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceBinarySentence kind w b f h n)) := ObjectSyntaxTypeStates.native_introduceBinary kind w b f h n
+
+example {m} (universal : Bool) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceQuantifierSentence universal w b f h n)) := ObjectSyntaxTypeStates.native_introduceQuantifier universal w b f h n
+
+/-- 局部判据精确保留四个原子构造和七个原逻辑构造，没有默认接受分支。 -/
+example {m} (w b f h n : Fin m) : SyntaxFormulaLocalSyntax.localType w b f h n =
+    (SyntaxAtomSyntax.atomic w b f n).disj ((SyntaxLogicalSyntax.negation w b f h n).disj
+      ((SyntaxLogicalSyntax.binary 0 w b f h n).disj ((SyntaxLogicalSyntax.binary 1 w b f h n).disj
+        ((SyntaxLogicalSyntax.binary 2 w b f h n).disj ((SyntaxLogicalSyntax.binary 3 w b f h n).disj
+          ((SyntaxLogicalSyntax.quantified true w b f h n).disj (SyntaxLogicalSyntax.quantified false w b f h n))))))) := rfl
+
+/-- 类型公式保留自然码和两侧自然上下文守卫；状态值是内部存在量词。 -/
+example {m} (w c n b f : Fin m) : SyntaxTypeJudgmentSyntax.typed w c n b f =
+    (Source.Formula.mem n w).conj ((SyntaxTermSyntax.contexts w b f).conj (Source.Formula.ex
+      ((SyntaxTypeEvaluationSyntax.evaluation w.castSucc c.castSucc n.castSucc (Fin.last m)).conj
+        (GraphSyntax.edge (Fin.last m) b.castSucc f.castSucc)))) := rfl
+
+example {m} (ρ : Fin 2 → Fin m) (n h v : Fin m) :
+    OrdinalRecursionSyntax.operator SyntaxTypeRecursionSyntax.matrix ρ n h v =
+      SyntaxTypeStateSyntax.state (ρ 0) (ρ 1) n h v := SyntaxTypeRecursionSyntax.matrix_operator ρ n h v
+
+/-- 值保留真实后继域、完整原递归图和实际边，不以宿主输出代替。 -/
+example {m} (w c d g n v : Fin m) : SyntaxTypeEvaluationSyntax.data w c d g n v =
+    (OmegaSyntax.successor d n).conj ((SyntaxTypeRecursionSyntax.graph w c g d).conj (GraphSyntax.edge g n v)) := rfl
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceBinarySentence 0 w b f h n)) := ObjectSyntaxTypeStates.native_introduceBinary 0 w b f h n
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceBinarySentence 1 w b f h n)) := ObjectSyntaxTypeStates.native_introduceBinary 1 w b f h n
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceBinarySentence 2 w b f h n)) := ObjectSyntaxTypeStates.native_introduceBinary 2 w b f h n
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceBinarySentence 3 w b f h n)) := ObjectSyntaxTypeStates.native_introduceBinary 3 w b f h n
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceQuantifierSentence true w b f h n)) := ObjectSyntaxTypeStates.native_introduceQuantifier true w b f h n
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeStates.introduceQuantifierSentence false w b f h n)) := ObjectSyntaxTypeStates.native_introduceQuantifier false w b f h n
+
 end PPAC.Migration.Step4Checks

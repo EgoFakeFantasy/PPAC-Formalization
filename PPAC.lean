@@ -87,3 +87,5 @@ import PPAC.Migration.Internal.ObjectSyntaxTerms
 import PPAC.Migration.Internal.ObjectSyntaxAtoms
 
 import PPAC.Migration.Internal.ObjectSyntaxContextCarrier
+
+import PPAC.Migration.Internal.ObjectSyntaxTypeStates
