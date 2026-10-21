@@ -647,4 +647,36 @@ example (q : Source.Sentence) : ObjectOrdinalComparison.assumptions q ↔
     (q = Source.SetLanguage.extensionality ∨ q = Source.SetLanguage.foundation ∨
       q = Source.SetLanguage.separation OrdinalDifference.outsideMatrix) := Iff.rfl
 
+/-- 任意内部序数族的并，直接检查原Source.ordinal而非宿主Ordinal。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (((OrdinalFamilySyntax.ordinals (0 : Fin 2)).imp
+      ((InsertSyntax.unionOf 1 0).imp (Source.SetLanguage.ordinal 1))).close)) := by
+  simpa only [ObjectOrdinalUnion.unionSentence, OrdinalSyntax.ordinal_original] using ObjectOrdinalUnion.native_union
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalUnion.familySentence) := ObjectOrdinalUnion.native_family
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalUnion.leastSentence) := ObjectOrdinalUnion.native_least
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalUnion.uniqueSentence) := ObjectOrdinalUnion.native_unique
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalUnion.existenceSentence) := ObjectOrdinalUnion.native_existence
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalUnion.strictSentence) := ObjectOrdinalUnion.native_strict
+
+/-- 最小性量化全部内部集合上界；不额外要求该上界是序数。 -/
+example {n} (u c : Fin n) : OrdinalFamilySyntax.leastUpper u c =
+    (OrdinalFamilySyntax.upperBound c u).conj (.all
+      ((OrdinalFamilySyntax.upperBound c.castSucc (Fin.last n)).imp
+        (RestrictionSyntax.subset u.castSucc (Fin.last n)))) := rfl
+
+/-- 序数族参数是一个内部集合；未限制外部有限、可数、非空或序数已给界。 -/
+example {n} (c : Fin n) : OrdinalFamilySyntax.ordinals c = .all
+    ((Source.Formula.mem (Fin.last n) c.castSucc).imp (Source.SetLanguage.ordinal (Fin.last n))) := rfl
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalUnion.assumptions) []
+    (Translation.sentence ObjectOrdinalUnion.existenceSentence) := ObjectOrdinalUnion.existence_kernel_certificate
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalUnion.strictAssumptions) []
+    (Translation.sentence ObjectOrdinalUnion.strictSentence) := ObjectOrdinalUnion.strict_kernel_certificate
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOrdinalUnion.strictSentence := ObjectOrdinalUnion.source_ZF_strict
+
+/-- 严格上界必须含族中每个序数作为成员；仅证明子集上界不足以通过此接口。 -/
+example {n} (c b : Fin n) : OrdinalStrictBound.strictUpper c b = .all
+    ((Source.Formula.mem (Fin.last n) c.castSucc).imp (.mem (Fin.last n) b.castSucc)) := rfl
+
 end PPAC.Migration.Step3Checks

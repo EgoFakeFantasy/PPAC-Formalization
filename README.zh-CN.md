@@ -59,3 +59,10 @@ OrdinalComparison/Trichotomy给出任意内部序数的三分支比较及两两�
 无需Replacement、Collection、传递覆盖或对象AC输入。六条完整闭句均有源Replacement版ZF和原YesMetaZFC核的实际Derives。
 实际验收见[对象序数比较验收](docs/STEP3_ORDINAL_COMPARISON_ACCEPTANCE.zh-CN.md)。
 内部序数族并集、递归/秩和内部ProofZF/U/Con及最终相对一致性对象主句仍未完成。
+
+任意内部序数族上界更新：OrdinalFamilyOrder证明原序数集合传递时即为原序数；OrdinalUnion实际构造任意内部序数族的并，
+并保持原序数定义。UnionUpperBounds证明它在全部内部集合上界中最小且唯一，OrdinalStrictBound以实际后继取得严格序数上界，
+使族中每个序数都作为成员属于上界。族可为空，不假设外部有限、可数或已给序数界。
+并集/最小上界的有限理论为Extensionality、Foundation、Union和一个分离实例；严格上界再加入Pairing。
+六条完整闭句均有源ZF和原YesMetaZFC核的实际Derives；见[序数族并与上界验收](docs/STEP3_ORDINAL_UNION_ACCEPTANCE.zh-CN.md)。
+内部递归、秩/累积层、反向Collection及内部ProofZF/U/Con和最终一致性主句仍未完成。

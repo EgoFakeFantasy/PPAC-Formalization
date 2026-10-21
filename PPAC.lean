@@ -25,3 +25,4 @@ import PPAC.Migration.ObjectTransitiveCover
 import PPAC.Migration.GlobalMinimal
 import PPAC.Migration.ObjectOrdinalBasic
 import PPAC.Migration.ObjectOrdinalComparison
+import PPAC.Migration.ObjectOrdinalUnion
