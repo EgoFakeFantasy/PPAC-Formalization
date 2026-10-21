@@ -97,3 +97,9 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 全部结果有源Replacement版ZF及原YesMetaZFC核中的Derives；见[实际递归层值验收](docs/STEP3_HIERARCHY_LAYERS_ACCEPTANCE.zh-CN.md)。
 后继/极限层公式、层单调/传递及秩覆盖尚未证明；不能以本批实际层值存在唯一替代这些后续目标。
 反向完整Collection、两种AC呈现、内部Proof/Con及最终一致性对象主句仍未完成。
+
+层成员递归及层代数更新：已证明全部内部原序数上的历史早期值与实际Layer严格等价，
+以及Layer(α,y)→∀z[z∈y↔∃β∈α∃v(Layer(β,v)∧z⊆v)]。
+任意内部索引包含的层单调性、较早层是较晚层的实际成员、层传递性及后继层的原PowerOf等式均有源ZF/原核证书。
+七条闭句的实际验收见[层成员递归及层代数验收](docs/STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md)。
+极限层并式、任意集合秩覆盖、反向Collection、两种AC及内部Con主句仍待实现。

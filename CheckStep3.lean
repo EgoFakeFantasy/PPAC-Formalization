@@ -879,4 +879,54 @@ example : FirstOrder.Derives (TheoryTransport.theory ObjectPowerUnion.assumption
 
 example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectCumulativeHierarchy.uniquenessSentence := ObjectCumulativeHierarchy.source_uniqueness
 
+
+/-- 历史输出等价覆盖任意内部原序数和每个内部早期索引；没有外部标准索引。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (((Source.SetLanguage.ordinal (0 : Fin 4)).imp ((HierarchyLayerSyntax.graph 1 0).imp
+      ((Source.Formula.mem 2 0).imp ((GraphSyntax.edge 1 2 3).iff (HierarchyLayerSyntax.layer 2 3))))).close)) := by
+  simpa only [ObjectHierarchyAlgebra.historySentence, OrdinalSyntax.ordinal_original] using ObjectHierarchyAlgebra.native_history
+
+/-- 完整双存在见证：β∈α、实际Layer(β,v)和全部内部子集量词。 -/
+example {m} (a z : Fin m) : HierarchyMemberSyntax.layerMember a z = .ex (.ex
+    ((Source.Formula.mem (Fin.last m).castSucc a.castSucc.castSucc).conj
+      ((HierarchyLayerSyntax.layer (Fin.last m).castSucc (Fin.last (m+1))).conj
+        (Source.SetLanguage.subset z.castSucc.castSucc (Fin.last (m+1)))))) := rfl
+
+example : ObjectHierarchyAlgebra.membershipSentence = ((OrdinalSyntax.ordinal (0 : Fin 2)).imp
+    ((HierarchyLayerSyntax.layer 0 1).imp (.all ((Source.Formula.mem (Fin.last 2) (1 : Fin 2).castSucc).iff
+      (HierarchyMemberSyntax.layerMember (0 : Fin 2).castSucc (Fin.last 2)))))).close := rfl
+
+/-- 后继层结论是全内部子集式PowerOf，不以宿主幂集等式代替。 -/
+example : ObjectHierarchyAlgebra.successorSentence = ((OrdinalSyntax.ordinal (0 : Fin 4)).imp
+    ((OmegaSyntax.successor 1 0).imp ((HierarchyLayerSyntax.layer 0 2).imp
+      ((HierarchyLayerSyntax.layer 1 3).imp (.all
+        ((Source.Formula.mem (Fin.last 4) (3 : Fin 4).castSucc).iff
+          (Source.SetLanguage.subset (Fin.last 4) (2 : Fin 4).castSucc))))))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.historySentence) :=
+  ObjectHierarchyAlgebra.native_history
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.operationSentence) :=
+  ObjectHierarchyAlgebra.native_operation
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.membershipSentence) :=
+  ObjectHierarchyAlgebra.native_membership
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.monotoneSentence) :=
+  ObjectHierarchyAlgebra.native_monotone
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.memberSentence) :=
+  ObjectHierarchyAlgebra.native_member
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.transitiveSentence) :=
+  ObjectHierarchyAlgebra.native_transitive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyAlgebra.successorSentence) :=
+  ObjectHierarchyAlgebra.native_successor
+
+example : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+    (Translation.sentence ObjectHierarchyAlgebra.transitiveSentence) := ObjectHierarchyAlgebra.transitive_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectHierarchyAlgebra.successorSentence := ObjectHierarchyAlgebra.source_successor
+
 end PPAC.Migration.Step3Checks

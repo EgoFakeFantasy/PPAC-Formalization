@@ -30,3 +30,5 @@ import PPAC.Migration.ObjectOrdinalRecursion
 import PPAC.Migration.ObjectOrdinalRecursionSuccessor
 import PPAC.Migration.ObjectTransfiniteRecursionIdentity
 import PPAC.Migration.ObjectCumulativeHierarchy
+
+import PPAC.Migration.ObjectHierarchyAlgebra

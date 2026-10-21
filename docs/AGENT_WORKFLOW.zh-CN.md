@@ -38,9 +38,11 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.3e.i | 原完整functionOn、实际历史限制、Extensionality/Foundation与两个Separation | RestrictionHistory、OrdinalRecursionSyntax/Restriction/Determinism/History/Values/Compatibility、ObjectOrdinalRecursion | 每个任意参数递推公式有四个完整闭句：传递初段保持、实际限制图、给定原序数域图相容与同域唯一 | 完成；以前提中实际递归图为条件 |
 | 3b.3e.ii | 原图新鲜扩展、有效序数/完整历史上的总性；Extensionality/Foundation/Pairing/Union和一个Separation | GraphInsertRestriction/Elimination、OrdinalRecursionTotal/ExtensionAlgebra/Extension/SuccessorSyntax/SuccessorExistence/SuccessorUnique、ObjectOrdinalRecursionSuccessor | 实际下一值、保留旧前段的实际后继递归扩展、实际唯一后继图纤维及原Replacement接口；六个原核模式 | 完成 |
 | 3b.3e.iii | 实际后继唯一纤维、全Replacement、相容图族并和对象集合归纳 | OrdinalRecursionCollection/Union/Existence | Replacement收集全部内部前驱的实际唯一后继图，合并并校验精确域和历史方程，取得全部内部序数上的递归图存在唯一 | 完成 |
-| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 实际层值存在唯一完成；层代数/秩覆盖待做 |
+| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 实际层值、成员递归、单调/传递和后继层完成；极限层/秩覆盖待做 |
 | 3b.3f.i | 原对象PowerSet、完整超限递归、精确图值域及原Replacement | PowerSetOperation、HierarchyRecursion | 实际构造并证明有效历史上算子F(h)=∪{P(z):z为h的值}总单值；实例化递归，取得全部内部α的实际Vα | 完成；算子前提已实际消去，零层为空亦证明 |
-| 3b.3f.ii | 原完整图限制/相容、实际幂集并算子和层值、序数比较与对象归纳 | HierarchyMembership、HierarchyAlgebra | 历史图早期值与相应Layer严格对应；层成员递归公式、后继/极限层公式、层单调/传递 | 下一项，尚未实现 |
+| 3b.3f.ii | 原完整图限制/相容、实际幂集并算子和层值、序数比较与对象归纳 | HierarchyMembership、HierarchyAlgebra | 历史图早期值与相应Layer严格对应；层成员递归公式、后继/极限层公式、层单调/传递 | 历史对应、成员递归、单调/传递与后继幂集完成；极限式待做 |
+| 3b.3f.ii.a | 实际后继域限制、递归图相容、PowerSet及精确像/并 | HierarchyHistory、HierarchyMemberSyntax/Transfer、PowerUnionMembership、HierarchyMembership/Algebra/Successor、ObjectHierarchyAlgebra | 全部内部α/β的早期值双向对应、完整成员递归、包含单调、早层实际成员、层传递及后继PowerOf；七条原核闭句 | 完成；见STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md |
+| 3b.3f.ii.b | 已证成员递归、后继幂集、层存在唯一 | HierarchyLimit | 定义纯对象极限索引条件；实际证明极限层恰为全部早层的并，保留全内部量词和实际层值见证 | 下一项，尚未实现 |
 | 3b.3f.iii | 原序数比较、全参数成员极小元 | OrdinalLeast | 任意可定义非空序数性质的实际唯一最小序数；源ZF与原核全参数模式 | 待做 |
 | 3b.3f.iv | 实际层代数、序数最小元、全Replacement和序数族严格界 | RankCover | 任意内部集合实际属于某层，或具有等价的秩覆盖；不得假定覆盖已存在 | 待做 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
@@ -328,3 +330,17 @@ ObjectCumulativeHierarchy的存在、唯一、值相等和零层闭句均有源Z
 正向需实际构造β后继及其限制递归图，反向以任意域递归图相容性和h的实际总输出相等传输。
 再消去实际幂集像/并见证，取得Layer的成员递归公式，并据此推导层单调、传递和后继/极限方程。
 秩覆盖仍须后续唯一最小序数模式与Replacement，最终内部Con目标未改变。
+
+层成员递归及层代数完成更新：HierarchyHistory正向实际构造β后继域s和原Separation给出的限制图g，
+验证完整Recursor(g,s)及β处原边，从而得到Layer(β,v)；反向以任意原序数域图相容和精确边传输回h。
+HierarchyMemberSyntax的双存在式保留β∈α、实际层值v及z⊆v中的全部内部集合量词。
+PowerUnionMembership消去实际像/并/幂集见证，证明Φ(α,h,y)的精确成员等价；反向调用原PowerSet取得实际幂集。
+HierarchyMemberTransfer在成员存在式中双向替换历史输出和Layer，HierarchyMembership从实际递归历史及其限制图取得
+Layer(α,y)→∀z[z∈y↔∃β∈α∃v(Layer(β,v)∧z⊆v)]。
+HierarchyAlgebra对内部索引包含β⊆α证明相应层包含，证明β∈α时Vβ∈Vα，并由较早层包含得到Vα传递。
+HierarchySuccessor把β∈α+1严格分成β∈α或β=α，以传递性处理旧位置、层唯一性和等词替换处理新位置，
+取得后继层的原PowerOf公式。ObjectHierarchyAlgebra七个闭句均有源Replacement版ZF、句子像原核和nativeZF证书。
+source_*证明没有Collection或对象AC输入；nativeZF回放仍按已记录底座证书基线审计。
+实际验收见STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md；该批不含极限并式或任意集合秩覆盖。
+下一项对内部极限α证明Vα的成员恰来自某β∈α的实际层值，再推进可定义序数唯一最小元和秩覆盖；
+不得把已证层传递性当作全体集合已经进入某层。反向完整Collection、两种AC及最终内部Con仍待实现。
