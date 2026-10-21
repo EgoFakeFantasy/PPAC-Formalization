@@ -437,4 +437,36 @@ example : FirstOrder.Derives (TheoryTransport.theory ObjectOmega.assumptions) []
 /-- 多参数、交错对象量词的实际归纳模式实例。 -/
 example : FirstOrder.Derives nativeZF [] (Translation.sentence (OmegaInductionSyntax.sentence parameterMatrix)) :=
   OmegaInduction.native_induction parameterMatrix
+/-- 全部内部集合不自属，不预设宿主成员关系良基。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectIrreflexivity.sentence) := ObjectIrreflexivity.native_proof
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.decompositionSentence) := ObjectOmegaStructure.native_decomposition
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.transitiveSentence) := ObjectOmegaStructure.native_transitive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.elementsSentence) := ObjectOmegaStructure.native_elements
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.zeroSentence) := ObjectOmegaStructure.native_zero
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.successorSentence) := ObjectOmegaStructure.native_successor
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.nonzeroSentence) := ObjectOmegaStructure.native_nonzero
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.injectiveSentence) := ObjectOmegaStructure.native_injective
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmegaStructure.freshSentence) := ObjectOmegaStructure.native_fresh
+
+/-- 结构证书的有限公理集合没有加入Infinity、Replacement、Collection或AC。 -/
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOmegaStructure.assumptions) []
+    (Translation.sentence ObjectOmegaStructure.injectiveSentence) := ObjectOmegaStructure.injective_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOmegaStructure.freshSentence := ObjectOmegaStructure.source_ZF_fresh
+
+/-- 全对象成员版本：归纳结果直接提供图扩展所需的新输入不自属见证。 -/
+theorem internal_fresh_successor {n} {Γ : Source.Context n} (w x : Fin n)
+    (hf : Source.Derives Γ (Source.SetLanguage.foundation.rename Fin.elim0))
+    (hp : Source.Derives Γ (Source.SetLanguage.pairing.rename Fin.elim0))
+    (hw : Source.Derives Γ (OmegaSyntax.omega w)) (hx : Source.Derives Γ (.mem x w)) :
+    Source.Derives Γ (ObjectOmegaStructure.freshSuccessor w x) := ObjectOmegaStructure.fresh_successor w x hf hp hw hx
+
 end PPAC.Migration.Step3Checks

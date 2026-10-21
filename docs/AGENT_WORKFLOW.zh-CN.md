@@ -21,10 +21,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.2b | 全Separation、Union与Extensionality | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 图限制及任意内部相容族合并完成 |
 | 3b.2b.2b.i | Extensionality及一个完整Separation实例 | RestrictionSyntax/Edges/Function/Algebra/Existence、ObjectRestriction | 任意图的限制集合实际存在；子域上的原functionOn、精确边、唯一/恒等/组合闭句 | 完成 |
 | 3b.2b.2b.ii | 原对象Kuratowski编码、Union、Extensionality与一个Separation实例 | GraphDomain*、GraphFamily*、ObjectGraphFamily | 任意图定义域实际存在唯一；任意内部相容图集合族（含空族）并图存在唯一；完整原functionOn和精确边关系 | 完成 |
-| 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | ω存在/唯一/归纳完成；结构与迭代/覆盖待做 |
+| 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | ω存在/唯一/归纳及结构完成；迭代/覆盖待做 |
 | 3b.2b.3a | 原Infinity、Extensionality及完整Separation | OmegaSyntax/Universal/Cut/Existence/Algebra、OmegaInduction*、ObjectOmega | 实际最小归纳集合ω存在唯一；任意参数公式的每个模式实例均有完整对象ω归纳闭句及原核Derives | 完成 |
-| 3b.2b.3a.i | 对象ω归纳及原Foundation/集合图设施 | OmegaStructure | 内部0/后继分解、成员闭包/传递性及迭代图所需的新输入不在旧域事实；均保留对象量词 | 下一项 |
-| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | FiniteIteration、TransitiveCover | 在对象ω归纳中构造全部内部n的唯一迭代图；再由Replacement取得实际集合族并合并 | 待做 |
+| 3b.2b.3a.i | 对象ω归纳及原Foundation/集合图设施 | OmegaStructureSyntax/Induction/Algebra、OmegaElementary、ObjectIrreflexivity、ObjectOmegaStructure | 内部0/后继分解、成员闭包/传递性、后继消去及迭代图所需的新输入不在旧域事实；均保留对象量词 | 完成 |
+| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 先证明完整函数图逐点相等推出图相等；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 下一项 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -146,3 +146,12 @@ OmegaInduction对任意p : Source.Formula (n+1)构造全参数闭句，并以该
 外部n只索引有限变量数与定理模式；不是把每个外部标准n的实例当作全部内部ω结论。
 下一项为ω结构与全部内部n上的唯一迭代图；ProofZF/U/Con内部化仍未完成。
 实际验收见STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md。
+
+对象ω结构更新：以三个明确的分离矩阵分别实例化上轮完整ω归纳，取得
+∀n∈ω(Empty(n)∨∃m∈ω Succ(n,m))、Transitive(ω)、∀n∈ω Transitive(n)。
+Foundation在实际单元集上给出∀x x∉x；未使用宿主WellFounded。
+ObjectOmegaStructure还给出零/后继成员闭包、非零前驱、后继消去以及
+∀n∈ω∃s∈ω(Succ(s,n)∧s∉s)的完整原核闭句。给定Omega前提的结构证书
+只以Extensionality、Foundation、Pairing和三个Separation实例为理论输入，未调用Collection。
+下一项先补完整函数图的逐点外延性，再定义内部有限迭代图及其存在唯一；不能把后继新鲜性
+或现有相容族合并单独计为内部迭代定理完成。实际验收见STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md。

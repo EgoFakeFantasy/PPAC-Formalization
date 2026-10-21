@@ -17,3 +17,4 @@ import PPAC.Migration.ObjectGraphInsert
 import PPAC.Migration.ObjectRestriction
 import PPAC.Migration.ObjectGraphFamily
 import PPAC.Migration.ObjectOmega
+import PPAC.Migration.ObjectOmegaStructure
