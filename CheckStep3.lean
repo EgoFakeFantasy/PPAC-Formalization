@@ -271,4 +271,37 @@ theorem arbitrary_ordered_pair_characterization {n} {Γ : Source.Context n} (p q
     (hp : Source.Derives Γ (PairSyntax.ordered p x y)) (hq : Source.Derives Γ (PairSyntax.ordered q a b)) :
     Source.Derives Γ ((Source.Formula.equal p q).iff ((Source.Formula.equal x a).conj (.equal y b))) :=
   OrderedPairLogic.characterization p q x y a b he hp hq
+/-- 源edge/functionOn的完整AST严格保留，未删去无杂项或精确定义域条件。 -/
+example {n} (f x y : Fin n) : Source.SetLanguage.edge f x y = GraphSyntax.edge f x y :=
+  GraphSyntax.edge_original f x y
+
+example {n} (f d : Fin n) : Source.SetLanguage.functionOn f d = GraphSyntax.functionOn f d :=
+  GraphSyntax.functionOn_original f d
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.singletonSentence) := ObjectGraphs.native_singleton
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.evaluationSentence) := ObjectGraphs.native_evaluation
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.domainSentence) := ObjectGraphs.native_domain
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.singleValuedSentence) := ObjectGraphs.native_single_valued
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectGraphs.singletonSentence := ObjectGraphs.source_ZF_singleton
+example : FirstOrder.Derives (TheoryTransport.theory ObjectGraphs.assumptions) []
+    (Translation.sentence ObjectGraphs.singletonSentence) := ObjectGraphs.singleton_kernel_certificate
+
+/-- 开放接口直接证明源原functionOn，包括定义域/图的所有原量词。 -/
+theorem singleton_is_original_function {n} {Γ : Source.Context n} (f p d x y : Fin n)
+    (he : Source.Derives Γ (Source.SetLanguage.extensionality.rename Fin.elim0))
+    (hf : Source.Derives Γ (PairSyntax.pair f p p)) (hp : Source.Derives Γ (PairSyntax.ordered p x y))
+    (hd : Source.Derives Γ (PairSyntax.pair d x x)) : Source.Derives Γ (Source.SetLanguage.functionOn f d) := by
+  rw [GraphSyntax.functionOn_original]
+  exact SingletonGraphLogic.function_on_singleton f p d x y he hf hp hd
+
+/-- 重复输入/输出槽也走同一原核证书；不存在暗加的不同性前提。 -/
+def diagonalSingletonMap : Source.Sentence := (SingletonMap.existsMap (0 : Fin 1) 0).close
+
+theorem diagonal_singleton_map : FirstOrder.Derives nativeZF [] (Translation.sentence diagonalSingletonMap) := by
+  apply ObjectPairs.native_replay
+  apply TheoryTransport.sentence
+  apply SourceAlgebra.close_derives
+  exact SingletonMap.exists_map 0 0 (.hyp ⟨_, Or.inl rfl, rfl⟩) (.hyp ⟨_, Or.inr rfl, rfl⟩)
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.totalSentence) := ObjectGraphs.native_total
 end PPAC.Migration.Step3Checks

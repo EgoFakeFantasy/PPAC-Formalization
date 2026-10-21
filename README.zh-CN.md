@@ -16,10 +16,11 @@
 覆盖任意有限局部假设，闭句在一个未用源变量的环境中回译。内部编译器表示仍待完成。
 对象秩前置已完成全参数的有界极小元和集合内成员归纳模式，源ZF与原生ZF均有实际推导；
 每个模式只用Foundation与一个分离实例。原Kuratowski对的全对象存在唯一性与分量刻画亦已完成，
-严格匹配源PP/AC编码，只用配对与外延公理。对象图操作、ω迭代、传递闭包/秩/累积层、
+严格匹配源PP/AC编码，只用配对与外延公理。单点函数图已实际构造，原edge/functionOn完整保留，
+任意函数图的边输入定义域、域内输出存在及单值性亦有对象推导。一般图扩展、ω迭代、传递闭包/秩/累积层、
 源Replacement到Collection的反向数学方向、两种AC与内部Con仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。

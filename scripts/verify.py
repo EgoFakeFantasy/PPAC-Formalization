@@ -91,11 +91,14 @@ def main() -> None:
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
         is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
-            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "PairSyntax.", "UnorderedPairLogic.", "OrderedPairExistence.", "OrderedPairElimination.", "OrderedPairWitnesses.", "OrderedPairLogic.", "ObjectPairs.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
+            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "PairSyntax.", "UnorderedPairLogic.", "OrderedPairExistence.", "OrderedPairElimination.", "OrderedPairWitnesses.", "OrderedPairLogic.", "ObjectPairs.", "GraphSyntax.", "GraphLogic.", "GraphProperties.", "SingletonGraphLogic.", "SingletonMap.", "ObjectGraphs.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
         if name in {"PPAC.Migration.ReplacementFromCollection.native_replacement",
                     "PPAC.Migration.BoundedMinimal.native_minimal", "PPAC.Migration.BoundedInduction.native_induction",
                     "PPAC.Migration.ObjectPairs.native_replay", "PPAC.Migration.ObjectPairs.native_exists_unique",
-                    "PPAC.Migration.ObjectPairs.native_characterization"} or name.startswith((
+                    "PPAC.Migration.ObjectPairs.native_characterization",
+                    "PPAC.Migration.ObjectGraphs.native_singleton", "PPAC.Migration.ObjectGraphs.native_evaluation",
+                    "PPAC.Migration.ObjectGraphs.native_domain", "PPAC.Migration.ObjectGraphs.native_single_valued",
+                    "PPAC.Migration.ObjectGraphs.native_total"} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -132,6 +135,10 @@ def main() -> None:
         "pure_object_Kuratowski_pair_components_characterized_proved": True,
         "Kuratowski_encoding_strictly_matches_original_source_PP_AC": True,
         "Kuratowski_pair_certificates_use_only_Pairing_and_Extensionality": True,
+        "original_source_edge_and_full_functionOn_strictly_preserved": True,
+        "pure_object_singleton_function_graph_constructed_in_source_and_native_ZF": True,
+        "arbitrary_function_graph_edge_domain_and_single_valuedness_proved": True,
+        "object_function_graph_extension_proved": False,
         "object_omega_iteration_proved": False,
         "object_transitive_closure_proved": False,
         "object_rank_hierarchy_proved": False,
@@ -160,7 +167,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Full pure-object Kuratowski pair existence, uniqueness and component characterization use only Pairing and Extensionality and strictly match the original source PP/AC encoding. Object omega iteration/transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Full pure-object Kuratowski pair existence, uniqueness and component characterization use only Pairing and Extensionality and strictly match the original source PP/AC encoding. Original source edge and full functionOn are strictly preserved; singleton function graphs are constructed and evaluated internally, and arbitrary function graphs have exact edge-input domains and single-valuedness. Function-graph extension, object omega iteration/transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

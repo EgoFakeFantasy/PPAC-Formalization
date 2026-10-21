@@ -14,7 +14,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
 | 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
-| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 待做；不把有序对唯一性称作函数图递归已完成 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图及任意图基本性质完成；图扩展/ω/传递闭包待做 |
+| 3b.2b.1 | 原edge/functionOn与对象有序对 | GraphSyntax、GraphLogic、GraphProperties、SingletonGraphLogic、SingletonMap、ObjectGraphs | 完整原公式严格对应；单点函数图实际存在；任意图的边定义域、域内输出存在及单值性；原核Derives | 完成 |
+| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 待做 |
+| 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | 待做 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -90,3 +93,11 @@ native_characterization返回全量词K(p,x,y)与K(q,a,b)下p=q ↔ (x=a∧y=b)�
 全部存在见证由原exI/exE处理；无对象Choice、宿主有序对函数或外部良基前提。
 3b.2尚未整体完成；图操作、内部ω与迭代/传递闭包仍是下一工作。
 实际验收见STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md。
+
+对象图前置更新：GraphSyntax严格证明edge/functionOn与源PP/AC完整公式相等；
+没有删去“每个图成员是定义域内的有序对”或“定义域每点有唯一输出”的任一部分。
+SingletonMap.exists_map用Pairing与Extensionality实际构造域{x}和图{<x,y>}，证明完整functionOn。
+ObjectGraphs的单点存在、全部边取值刻画、任意函数图边输入属于定义域、域内点存在输出及同输入输出相等
+均有源Replacement版ZF证明和实际nativeZF闭句Derives；两公理理论上也有kernel_certificate。
+图扩展、内部ω迭代与传递闭包仍未完成；本批不是有限迭代或Collection的最终证明。
+实际验收见STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md。
