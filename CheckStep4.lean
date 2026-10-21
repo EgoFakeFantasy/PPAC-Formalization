@@ -501,4 +501,49 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructural
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.nextSentence false)) := ObjectStructuralListProjection.native_next false
 
+/-- 终端性质比较所有实际长度与真实tail求值，无外部标准长度限制。 -/
+example {m} (w n : Fin m) : StructuralListEndSyntax.ends w n = .all (.all
+    ((StructuralListLengthSyntax.hasLength w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc).imp
+      ((StructuralListProjectionSyntax.iteration false w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).imp
+        (StructuralListSyntax.nilCode w.castSucc.castSucc (Fin.last (m+1)))))) := rfl
+
+/-- 闭句中已消去成员归纳假设，只保留实际长度与求值。 -/
+example : ObjectStructuralListEnd.terminalSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp
+    ((StructuralListLengthSyntax.hasLength 0 1 2).imp ((StructuralListProjectionSyntax.iteration false 0 1 2 3).imp (StructuralListSyntax.nilCode 0 3)))).close := rfl
+
+/-- 原完整迹的Nil种子由同一个实际长度下的真实tail递归恢复。 -/
+example : ObjectStructuralListEnd.traceRecoverySentence = ((OmegaSyntax.omega (0 : Fin 7)).imp
+    ((StructuralListTraceSyntax.trace 0 1 2 3 4 5 6).imp (StructuralListProjectionSyntax.iteration false 0 6 3 2))).close := rfl
+
+/-- 端点见证同时保留内部长度、完整构造迹、真实递归图求值和Nil。 -/
+example {m} (w n : Fin m) : StructuralListEndSyntax.existsTerminal w n = .ex (.ex
+    ((((Source.Formula.mem (Fin.last m).castSucc w.castSucc.castSucc).conj
+      (StructuralListLengthSyntax.hasLength w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc)).conj
+      (StructuralListProjectionSyntax.iteration false w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1)))).conj
+      (StructuralListSyntax.nilCode w.castSucc.castSucc (Fin.last (m+1))))) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.coupledSentence true)) := ObjectStructuralListEnd.native_coupled true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.coupledSentence false)) := ObjectStructuralListEnd.native_coupled false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.shiftEqualSentence true)) := ObjectStructuralListEnd.native_shiftEqual true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.shiftEqualSentence false)) := ObjectStructuralListEnd.native_shiftEqual false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.shiftIffSentence true)) := ObjectStructuralListEnd.native_shiftIff true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.shiftIffSentence false)) := ObjectStructuralListEnd.native_shiftIff false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.consShiftSentence)) := ObjectStructuralListEnd.native_consShift
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.terminalSentence)) := ObjectStructuralListEnd.native_terminal
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.existsTerminalSentence)) := ObjectStructuralListEnd.native_existsTerminal
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.uniquePairSentence)) := ObjectStructuralListEnd.native_uniquePair
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.traceSeedSentence)) := ObjectStructuralListEnd.native_traceSeed
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.traceRecoverySentence)) := ObjectStructuralListEnd.native_traceRecovery
+
 end PPAC.Migration.Step4Checks

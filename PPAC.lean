@@ -61,3 +61,5 @@ import PPAC.Migration.Internal.ObjectStructuralListTrace
 import PPAC.Migration.Internal.ObjectStructuralListLength
 
 import PPAC.Migration.Internal.ObjectStructuralListProjection
+
+import PPAC.Migration.Internal.ObjectStructuralListEnd
