@@ -361,4 +361,46 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.leafZeroSentence) := ObjectStructuralList.native_leafZero
 
+/-- 实际内部长度、后继域、完整序列图、Nil种子和相邻Cons步均属于公开纯公式。 -/
+example {m} (w z e l d f n : Fin m) : StructuralListTraceSyntax.trace w z e l d f n =
+    (((OmegaSyntax.empty z).conj (StructuralListSyntax.nilCode w e)).conj (((Source.Formula.mem l w).conj (OmegaSyntax.successor d l)).conj ((SequenceSyntax.sequence f d w).conj ((GraphSyntax.edge f z e).conj (StructuralListTraceSyntax.links w l f))))).conj (GraphSyntax.edge f l n) := rfl
+
+/-- 有效性存在量化五个内部对象；不以宿主有限列表或外部长度范围代替。 -/
+example {m} (w n : Fin m) : StructuralListTraceSyntax.valid w n = .ex (.ex (.ex (.ex (.ex
+    (StructuralListTraceSyntax.trace w.castSucc.castSucc.castSucc.castSucc.castSucc
+      (Fin.last m).castSucc.castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc.castSucc.castSucc
+      (Fin.last (m+2)).castSucc.castSucc (Fin.last (m+3)).castSucc (Fin.last (m+4))
+      n.castSucc.castSucc.castSucc.castSucc.castSucc))))) := rfl
+
+/-- 精确分解保留有效尾码和实际自然head；不是只解析原始节点。 -/
+example {m} (w n : Fin m) : StructuralListDecodeSyntax.decomposition w n =
+    (StructuralListSyntax.nilCode w n).disj (.ex
+      ((StructuralListTraceSyntax.valid w.castSucc (Fin.last m)).conj (.ex
+        ((Source.Formula.mem (Fin.last (m+1)) w.castSucc.castSucc).conj
+          (StructuralListSyntax.consCode w.castSucc.castSucc (Fin.last (m+1)) (Fin.last m).castSucc n.castSucc.castSucc))))) := rfl
+
+example : ObjectStructuralListTrace.consIffSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp ((Source.Formula.mem 1 0).imp ((Source.Formula.mem 2 0).imp ((StructuralListSyntax.consCode 0 1 2 3).imp ((StructuralListTraceSyntax.valid 0 3).iff (StructuralListTraceSyntax.valid 0 2)))))).close := rfl
+
+example : ObjectStructuralListTrace.zeroRejectedSentence = ((OmegaSyntax.omega (0 : Fin 2)).imp ((OmegaSyntax.empty 1).imp ((StructuralListTraceSyntax.valid 0 1).neg))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.baseSentence) := ObjectStructuralListTrace.native_base
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.appendSentence) := ObjectStructuralListTrace.native_append
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.nilValidSentence) := ObjectStructuralListTrace.native_nilValid
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.consValidSentence) := ObjectStructuralListTrace.native_consValid
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.rangeSentence) := ObjectStructuralListTrace.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.recursiveSentence) := ObjectStructuralListTrace.native_recursive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.consIffSentence) := ObjectStructuralListTrace.native_consIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.positiveSentence) := ObjectStructuralListTrace.native_positive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.zeroRejectedSentence) := ObjectStructuralListTrace.native_zeroRejected
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.prefixSentence) := ObjectStructuralListTrace.native_prefix
+
 end PPAC.Migration.Step4Checks

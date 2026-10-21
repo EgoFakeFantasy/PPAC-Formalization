@@ -118,3 +118,15 @@ Cons(w,h,t,n)为∃z∃e(Empty(z)∧Succ(e,z)∧∃q(Pair(w,h,t,q)∧Raw(w,e,q,n
 本批九个完整闭句均有源ZF及原nativeZF实际推导。
 这些是构造器数值层结果，不预设tail已是有效列表；全内部列表/树递归有效性、专用ProofZF/U和Con仍未完成。
 详见STEP4_STRUCTURAL_LIST_CONSTRUCTORS_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22内部有限列表轨迹对象推导更新：trace(w,z,e,l,d,f,n)包含实际Empty(z)、Nil(w,e)、
+l∈w、Succ(d,l)、原完整sequence(f,d,w)、种子edge(f,z,e)、末值edge(f,l,n)和每个i∈l的相邻Cons行。
+每行实际存在后继索引j、前后值a,b和自然head，使Succ(j,i)、两条图边及Cons(w,head,a,b)成立。
+Valid(w,n)存在量化z,e,l,d,f共五个内部对象，没有宿主List或外部标准长度限制。
+实际Nil种子、Cons追加及前缀图构造给出完整对象双条件：
+Valid(w,n)↔Nil(w,n)∨∃t(Valid(w,t)∧∃h(h∈w∧Cons(w,h,t,n)))。
+已知自然Cons(w,h,t,n)下，Valid(w,n)↔Valid(w,t)；有效码属于w且非零，实际零码被排除。
+本批十个闭句均有源ZF及原nativeZF推导。唯一内部长度、实际完整字段图及原顺序往返尚未实现，
+因此完整列表解码、树语法、专用ProofZF/U和最终Con的完成标志仍为False。
+详见STEP4_INTERNAL_LIST_TRACES_ACCEPTANCE.zh-CN.md。
