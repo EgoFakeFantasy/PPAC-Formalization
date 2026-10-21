@@ -104,8 +104,11 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.v.b.ii | 上项严格子码界、真实字段图和原对象超限递归 | StructuralTreeOperatorSyntax/Logic/Step、StructuralTreeRecursors、ObjectStructuralTreeOperator | 原raw树具体二值算子仅查询严格较小子码；Total/Deterministic实际消去；全内部序数唯一完整递归图及真实零/单位标志 | 完成；10个源ZF及原nativeZF闭句，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.v.b.iii | 上项实际递归图、初段相容和严格子码界 | StructuralTreeEvaluation*/GraphValues/History、StructuralTreeRecursive*/Check/Canonical/Recursion/Decode、ObjectStructuralTreeCheck | 实际后继域/图/边的唯一求值；子码前段值一致；完整递归接受/拒绝对应与实际唯一树解码 | 完成；20个源ZF及原nativeZF闭句；所有内部码/字段，见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.vi | 实际树解码、全内部列表唯一逆编码及原raw节点 | StructuralTreeEncodeSyntax/ShapeUnique/Encode/EncodeReadback、ObjectStructuralTreeEncode | 任意内部标签及完整字段序列实际唯一树码；无有效性预设的Shape唯一；精确tag/长度/全图回读、原码恢复和构造有效性反射 | 完成；8个源ZF及原nativeZF完整闭句，见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md |
-| 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
-| 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 下一主项；一般树Valid不代替类型正确 |
+| 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 标签/字段/scalar及变量构造前置完成；全内部类型/作用域/替换待做 |
+| 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 构造前置a.i完成；类型/作用域见a.ii–iii及4c.b |
+| 4c.a.i | 真实内部数码、原Nil/Cons及raw节点 | SyntaxNumeralSyntax/Numerals、SyntaxForestSyntax/Forests/ForestLength、SyntaxNodeSyntax/Nodes/Constructors、SyntaxVariableSyntax/Variables、ObjectSyntaxConstructors | 有限标签存在唯一/顺序/互斥；精确字段数/实际长度/严格界；scalar全内部索引单射；bvar/fvar实际存在唯一/互斥；11标签/字段数构造实例 | 完成；18个源ZF/原nativeZF闭句模式，见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md |
+| 4c.a.ii | 上项精确字段、原raw/Cons输入单射性 | 计划SyntaxForestInjective、SyntaxVariableDecode、SyntaxTerm | 同一变量码反推出同一内部索引；真实索引解码唯一；纯项只允许bvar/fvar且内部索引严格属于对应bound/free长度；存在/反射/错域排除的原核证书 | 下一主项；同索引编码唯一不等于反向索引单射 |
+| 4c.a.iii | 纯项实际作用域检查、原11构造标签及字段数 | 计划SyntaxFormulaLocal、TypedSyntaxOperator | membership编号0必须为scalar叶；原关系/等词项类型；五个联结词及两个量词的精确类型分支；量词子式bound真实后继 | 待做；当前原码构造实例不计类型正确性 |
 | 4c.b | 上项具体类型算子、实际内部序数递归和严格子码界 | 计划Internal/TypedSyntaxRecursion/Check | 实际构造类型状态及任意内部上下文上的总单值检查；量词体bound长度真实后继；接受/拒绝双条件及类型正确码实际解码 | 待做；不能只验外部标准quotation |
 | 4c.c | 全11构造及全内部类型检查 | 计划Internal/SyntaxTransform | 全部重命名、提升、加强和非单射统一替换的实际内部图与正确性；保持捕获规避和bound/free槽位；原核推导 | 待做；步骤2的外部编译器仅作参考 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -699,3 +702,15 @@ Valid/Invalid消去标志参数但保留自然守卫和实际见证；不同实�
 5个新模块60项声明；8个完整源ZF及原nativeZF闭句。全仓534任务、4767审计、0警告、503哈希差异0。
 累计227对核心/native精确依赖通过；验收见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md。
 下一项4c.a保持全部11种原生公式构造、纯签名符号表及内部索引/作用域边界；尚未实现类型检查或ProofZF/U。
+
+2026-10-22有限语法标签/字段/变量构造批次：4c.a.i完成。
+数码是有限公式模式，候选标签/字段值为对象量词；scalar和bvar/fvar的索引覆盖全部内部自然数。
+精确向量森林实际存在唯一并有真实数码长度；原节点/有限标签构造器实际存在唯一、异标签互斥及严格子码界。
+scalar索引单射已证明；原bvar/fvar编码的存在唯一和两类互斥已证明，反向变量索引单射仍待完成。
+11个新模块149项显式声明，18个完整源ZF/原nativeZF闭句模式及全部11标签/字段数构造实例通过。
+全仓545任务、4916审计、0警告、514哈希差异0，累计245对核心/native精确足迹通过。
+见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md。下一项4c.a.ii，再装配4c.a.iii和4c.b的全内部上下文类型状态。
+量词体所需bound后继随节点变化；固定原始bound参数的单个二值树递归不能直接给完整类型检查。
+可用实际P(P(ω))覆盖Kuratowski上下文对，按原Separation构造局部类型状态，再以原序数递归构造真实状态图；
+该路线的集合覆盖、总单值性、全部前段对应及量词分支均仍须对象推导，尚未实现。
+ProofZF/U、内部替换/编译器及最终Con目标不变，完成状态保持False。

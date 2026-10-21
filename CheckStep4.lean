@@ -951,4 +951,136 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralT
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.codeRecoverySentence) := ObjectStructuralTreeEncode.native_codeRecovery
 
+/-- 内部scalar索引是零字段原节点；保留实际自然标签和原Nil载荷。 -/
+example {m} (w i n : Fin m) : SyntaxNodeSyntax.scalar w i n = .ex
+    ((Source.Formula.mem i.castSucc w.castSucc).conj
+      ((StructuralListSyntax.nilCode w.castSucc (Fin.last m)).conj
+        (StructuralNodeSyntax.raw w.castSucc i.castSucc (Fin.last m) n.castSucc))) := rfl
+
+/-- 原变量编码单个字段为scalar，bound/free分别取0/1，不能把索引值直接当子树码。 -/
+example {m} (w i n : Fin m) : SyntaxVariableSyntax.code true w i n = .ex
+    ((SyntaxNodeSyntax.scalar w.castSucc i.castSucc (Fin.last m)).conj
+      (SyntaxNodeSyntax.constructor 1 0 w.castSucc (fun _ => Fin.last m) n.castSucc)) := rfl
+
+example {m} (w i n : Fin m) : SyntaxVariableSyntax.code false w i n = .ex
+    ((SyntaxNodeSyntax.scalar w.castSucc i.castSucc (Fin.last m)).conj
+      (SyntaxNodeSyntax.constructor 1 1 w.castSucc (fun _ => Fin.last m) n.castSucc)) := rfl
+
+example {m} (k : Nat) (w : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.numeralExistsSentence k w)) :=
+  ObjectSyntaxConstructors.native_numeralExists k w
+
+example {m} (k : Nat) (x y : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.numeralUniqueSentence k x y)) :=
+  ObjectSyntaxConstructors.native_numeralUnique k x y
+
+example {m} (k : Nat) (w x : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.numeralRangeSentence k w x)) :=
+  ObjectSyntaxConstructors.native_numeralRange k w x
+
+example {m} (i j : Nat) (x y : Fin m) (hij : i < j) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.numeralLessSentence i j x y)) :=
+  ObjectSyntaxConstructors.native_numeralLess i j x y hij
+
+example {m} (i j : Nat) (x y : Fin m) (hij : i ≠ j) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.numeralDifferentSentence i j x y)) :=
+  ObjectSyntaxConstructors.native_numeralDifferent i j x y hij
+
+example {m} (k : Nat) (w : Fin m) (xs : Fin k → Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.forestExistsSentence k w xs)) :=
+  ObjectSyntaxConstructors.native_forestExists k w xs
+
+example {m} (k : Nat) (w : Fin m) (xs : Fin k → Fin m) (n s : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.forestUniqueSentence k w xs n s)) :=
+  ObjectSyntaxConstructors.native_forestUnique k w xs n s
+
+example {m} (k : Nat) (w : Fin m) (xs : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.forestMemberSentence k w xs n i)) :=
+  ObjectSyntaxConstructors.native_forestMember k w xs n i
+
+example {m} (k : Nat) (w : Fin m) (xs : Fin k → Fin m) (n l : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.forestLengthSentence k w xs n l)) :=
+  ObjectSyntaxConstructors.native_forestLength k w xs n l
+
+example {m} (k : Nat) (w tag : Fin m) (xs : Fin k → Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.nodeFiberSentence k w tag xs)) :=
+  ObjectSyntaxConstructors.native_nodeFiber k w tag xs
+
+example {m} (k : Nat) (w tag : Fin m) (xs : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.nodeMemberSentence k w tag xs n i)) :=
+  ObjectSyntaxConstructors.native_nodeMember k w tag xs n i
+
+example {m} (k tag : Nat) (w : Fin m) (xs : Fin k → Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.constructorFiberSentence k tag w xs)) :=
+  ObjectSyntaxConstructors.native_constructorFiber k tag w xs
+
+example {m} (k l a b : Nat) (w : Fin m) (xs : Fin k → Fin m) (ys : Fin l → Fin m) (n : Fin m) (hab : a ≠ b) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.constructorDisjointSentence k l a b w xs ys n)) :=
+  ObjectSyntaxConstructors.native_constructorDisjoint k l a b w xs ys n hab
+
+example {m} (k tag : Nat) (w : Fin m) (xs : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.constructorMemberSentence k tag w xs n i)) :=
+  ObjectSyntaxConstructors.native_constructorMember k tag w xs n i
+
+example {m} (w i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.scalarFiberSentence w i)) :=
+  ObjectSyntaxConstructors.native_scalarFiber w i
+
+example {m} (w i j n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.scalarInjectiveSentence w i j n)) :=
+  ObjectSyntaxConstructors.native_scalarInjective w i j n
+
+example {m} (bound : Bool) (w i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.variableFiberSentence bound w i)) :=
+  ObjectSyntaxConstructors.native_variableFiber bound w i
+
+example {m} (w i j n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxConstructors.variableDisjointSentence w i j n)) :=
+  ObjectSyntaxConstructors.native_variableDisjoint w i j n
+
+/-! 原生公式构造标签/字段数逐一实例化；这是构造存在唯一，不冒充类型/作用域检查。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 0 0 (0 : Fin 1) Fin.elim0)) :=
+  ObjectSyntaxConstructors.native_constructorFiber 0 0 0 Fin.elim0
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 0 1 (0 : Fin 1) Fin.elim0)) :=
+  ObjectSyntaxConstructors.native_constructorFiber 0 1 0 Fin.elim0
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 3 2 (0 : Fin 4) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 3 2 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 2 3 (0 : Fin 3) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 2 3 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 1 4 (0 : Fin 2) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 1 4 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 2 5 (0 : Fin 3) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 2 5 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 2 6 (0 : Fin 3) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 2 6 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 2 7 (0 : Fin 3) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 2 7 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 2 8 (0 : Fin 3) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 2 8 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 1 9 (0 : Fin 2) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 1 9 0 (fun i => i.succ)
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectSyntaxConstructors.constructorFiberSentence 1 10 (0 : Fin 2) (fun i => i.succ))) :=
+  ObjectSyntaxConstructors.native_constructorFiber 1 10 0 (fun i => i.succ)
+
 end PPAC.Migration.Step4Checks

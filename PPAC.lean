@@ -79,3 +79,5 @@ import PPAC.Migration.Internal.ObjectStructuralTreeOperator
 import PPAC.Migration.Internal.ObjectStructuralTreeCheck
 
 import PPAC.Migration.Internal.ObjectStructuralTreeEncode
+
+import PPAC.Migration.Internal.ObjectSyntaxConstructors

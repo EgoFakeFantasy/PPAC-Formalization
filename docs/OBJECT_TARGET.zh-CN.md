@@ -277,3 +277,17 @@ Shape四分量唯一性不预设子树Valid，因此任意实际解码均恢复�
 这两个方向都量化全部内部码、全部内部有限长度及所有图边；非标准内部序列未被排除。
 8个完整闭句的源ZF及原nativeZF证书、完整验收见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md。
 这些是通用树构造与关系式恢复；全部11构造类型检查、替换内部化、ProofZF/U及Con仍未完成。
+
+2026-10-22有限语法构造及全部内部变量索引更新：
+Num_0(x):=Empty(x)；Num_{k+1}(x):=∃p(Num_k(p)∧Succ(x,p))。
+k为外部有限公式索引，每个实例有原核证明；候选x及变量索引i仍为全部内部对象/ω成员。
+原ZF证明每个有限数码实际存在唯一，i<j的两个数码满足严格成员关系，不同有限数码互斥。
+Forest_k(w,xs,p)保留精确k个原Cons字段及末端原Nil；实际构造唯一并满足HasLength(w,p,l)于Num_k(l)。
+Node_k实际存在该payload，保留自然标签和原raw；有限标签Constructor_{k,t}另实际取得Num_t标签见证。
+所有构造器有实际唯一原自然码、异标签互斥和每个字段严格子码界。
+Scalar(w,i,n):=Node_0(w,i,[],n)，对全部内部自然i存在唯一并在索引上单射。
+Var_bound/free(w,i,n)是标签0/1的原单字段节点，其字段必须为Scalar(w,i,s)的实际叶码s。
+这两个编码模式在所有内部自然i上实际存在唯一，并证明两类在同一码处互斥。
+全部11个公式标签/字段数实例已通过构造存在唯一；类型限制、membership编号0字段和作用域仍待核验。
+18个闭句模式的source/sourceZF核/nativeZF核证书和验收见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md。
+变量码反向索引单射、纯项bound/free检查、全部公式类型、非单射捕获规避替换、ProofZF/U及Con仍未完成。
