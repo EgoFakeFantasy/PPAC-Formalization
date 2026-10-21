@@ -12,16 +12,18 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
 | 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
-| 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
+| 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 有序对/图操作完成；内部ω/迭代/传递覆盖待做；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
-| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图、新点扩展及图限制完成；相容合并/ω/传递闭包待做 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图、新点扩展、限制及任意内部相容族合并完成；内部ω/传递覆盖待做 |
 | 3b.2b.1 | 原edge/functionOn与对象有序对 | GraphSyntax、GraphLogic、GraphProperties、SingletonGraphLogic、SingletonMap、ObjectGraphs | 完整原公式严格对应；单点函数图实际存在；任意图的边定义域、域内输出存在及单值性；原核Derives | 完成 |
-| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 新点插入及图限制完成；相容族合并待做 |
+| 3b.2b.2 | 源集合图和Pairing/Union/Extensionality/Separation | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 图插入、限制及任意内部相容族合并完成 |
 | 3b.2b.2a | Pairing、Union、Extensionality及原functionOn | InsertSyntax/Logic/Existence、GraphInsert*、ObjectGraphInsert | 任意旧函数图与x∉d下的实际扩展图存在唯一；完整functionOn及全部边刻画；源ZF与原核Derives | 完成 |
-| 3b.2b.2b | 全Separation、Union及必要Replacement | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 图限制完成；相容族合并待做 |
+| 3b.2b.2b | 全Separation、Union与Extensionality | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 图限制及任意内部相容族合并完成 |
 | 3b.2b.2b.i | Extensionality及一个完整Separation实例 | RestrictionSyntax/Edges/Function/Algebra/Existence、ObjectRestriction | 任意图的限制集合实际存在；子域上的原functionOn、精确边、唯一/恒等/组合闭句 | 完成 |
-| 3b.2b.2b.ii | 原对象Kuratowski编码、Union与Separation | 图定义域构造及任意内部相容图族合并 | 从图G的编码证明输入落在∪∪G，在其上分离实际定义域；对任意内部图集合族合并并证明完整functionOn | 待做 |
+| 3b.2b.2b.ii | 原对象Kuratowski编码、Union、Extensionality与一个Separation实例 | GraphDomain*、GraphFamily*、ObjectGraphFamily | 任意图定义域实际存在唯一；任意内部相容图集合族（含空族）并图存在唯一；完整原functionOn和精确边关系 | 完成 |
 | 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | 待做 |
+| 3b.2b.3a | 原Infinity、集合插入/后继及完整Separation | OmegaSyntax、OmegaExistence、OmegaInduction | 实际最小归纳集合ω存在唯一；每个外部模式矩阵产生内部ω归纳闭句及原核Derives | 下一项 |
+| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | FiniteIteration、TransitiveCover | 在对象ω归纳中构造全部内部n的唯一迭代图；再由Replacement取得实际集合族并合并 | 待做 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -124,3 +126,13 @@ ObjectRestriction的六个闭句覆盖任意对象f/b、子域b⊆d下的完整�
 和上述一个Separation实例为输入；没有使用Collection/Replacement或抽取宿主数据。
 下一项为实际图定义域构造和任意内部相容图集合族合并，继而内部ω/传递覆盖。
 实际验收见STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md。
+
+任意内部相容族合并更新：GraphDomainBound直接从原Kuratowski编码证明图输入落在∪∪G；
+GraphDomainExistence用两次Union和一个完整Separation实例构造实际定义域D。
+GraphFamilyExistence对任意内部集合F，在每个成员为完整函数图且逐输入相容时，
+实际构造G=∪F及定义域D，证明完整原functionOn(G,D)、精确逐成员边刻画以及G/D唯一。
+空族单独取得原对象闭句证书；没有添加族非空、有限或外部可数前提。
+ObjectGraphFamily的六个原核闭句只以Union、Extensionality及上述一个Separation实例为输入，
+源Replacement版ZF与实际nativeZF均有推导；不需要选择成员定义域或使用Collection/Replacement。
+下一项为内部最小归纳集ω及对象ω归纳模式，不能以外部Lean.Nat归纳替代全部内部ω成员。
+实际验收见STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md。

@@ -15,3 +15,4 @@ import PPAC.Migration.ObjectPairs
 import PPAC.Migration.ObjectGraphs
 import PPAC.Migration.ObjectGraphInsert
 import PPAC.Migration.ObjectRestriction
+import PPAC.Migration.ObjectGraphFamily

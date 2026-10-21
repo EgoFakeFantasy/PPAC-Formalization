@@ -385,4 +385,30 @@ theorem self_restriction : FirstOrder.Derives nativeZF [] (Translation.sentence 
   have hb : Source.Derives (Source.Context.add (GraphSyntax.functionOn 0 1) (ObjectRestriction.assumptions.at 2))
       (RestrictionSyntax.subset (1 : Fin 2) 1) := .allI (.impI (.hyp (Or.inl rfl)))
   exact RestrictionExistence.exists_function_restriction 0 1 1 (SourceLogic.add hs _) (SourceLogic.add he _) (.hyp (Or.inl rfl)) hb
+/-- 任意内部集合族并图与实际定义域的六个原核闭句，包含空族。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.domainSentence) := ObjectGraphFamily.native_domain
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.domainUniqueSentence) := ObjectGraphFamily.native_domain_unique
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.unionSentence) := ObjectGraphFamily.native_union
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.uniqueSentence) := ObjectGraphFamily.native_unique
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.edgeSentence) := ObjectGraphFamily.native_edge
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphFamily.emptySentence) := ObjectGraphFamily.native_empty
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectGraphFamily.unionSentence := ObjectGraphFamily.source_ZF_union
+example : FirstOrder.Derives (TheoryTransport.theory ObjectGraphFamily.assumptions) []
+    (Translation.sentence ObjectGraphFamily.unionSentence) := ObjectGraphFamily.union_kernel_certificate
+
+/-- 返回完整原functionOn，不把相容族并图弱化为单值关系。 -/
+theorem family_union_is_original_function {n} {Γ : Source.Context n} (g d f : Fin n)
+    (hu : Source.Derives Γ (InsertSyntax.unionOf g f)) (hd : Source.Derives Γ (GraphDomainSyntax.domain d g))
+    (hf : Source.Derives Γ (GraphFamilySyntax.graphs f)) (hc : Source.Derives Γ (GraphFamilySyntax.compatible f)) :
+    Source.Derives Γ (Source.SetLanguage.functionOn g d) := by
+  rw [GraphSyntax.functionOn_original]
+  exact GraphFamilyFunction.function_on g d f hu hd hf hc
+
+/-- 输入界直接针对原Kuratowski/edge，不假设外部秩、良基或图有限。 -/
+theorem edge_input_in_double_union {n} {Γ : Source.Context n} (g u v x y : Fin n)
+    (hu : Source.Derives Γ (InsertSyntax.unionOf u g)) (hv : Source.Derives Γ (InsertSyntax.unionOf v u))
+    (he : Source.Derives Γ (Source.SetLanguage.edge g x y)) : Source.Derives Γ (.mem x v) := by
+  rw [GraphSyntax.edge_original] at he
+  exact GraphDomainBound.edge_bound g u v x y hu hv he
 end PPAC.Migration.Step3Checks
