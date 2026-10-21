@@ -346,4 +346,43 @@ theorem diagonal_graph_extension : FirstOrder.Derives nativeZF [] (Translation.s
     (SourceLogic.add (SourceLogic.add hu _) _) (SourceLogic.add (SourceLogic.add he _) _)
     (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.uniquenessSentence) := ObjectGraphInsert.native_uniqueness
+/-- 图限制的六个完整原核闭句，覆盖任意对象集合而非有限域。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.setSentence) := ObjectRestriction.native_set
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.functionSentence) := ObjectRestriction.native_function
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.edgeSentence) := ObjectRestriction.native_edge
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.uniqueSentence) := ObjectRestriction.native_unique
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.identitySentence) := ObjectRestriction.native_identity
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRestriction.composeSentence) := ObjectRestriction.native_compose
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectRestriction.functionSentence := ObjectRestriction.source_ZF_function
+example : FirstOrder.Derives (TheoryTransport.theory ObjectRestriction.assumptions) []
+    (Translation.sentence ObjectRestriction.functionSentence) := ObjectRestriction.function_kernel_certificate
+
+example {n} (b d : Fin n) : Source.SetLanguage.subset b d = RestrictionSyntax.subset b d := RestrictionSyntax.subset_original b d
+
+/-- 返回完整原functionOn，子域条件也使用原subset，均未作弱化。 -/
+theorem restriction_is_original_function {n} {Γ : Source.Context n} (g f d b : Fin n)
+    (hf : Source.Derives Γ (Source.SetLanguage.functionOn f d))
+    (hb : Source.Derives Γ (Source.SetLanguage.subset b d))
+    (hr : Source.Derives Γ (RestrictionSyntax.restrict g f b)) : Source.Derives Γ (Source.SetLanguage.functionOn g b) := by
+  rw [GraphSyntax.functionOn_original] at hf ⊢
+  rw [RestrictionSyntax.subset_original] at hb
+  exact RestrictionFunction.function_restrict g f d b hf hb hr
+
+/-- 相同变量槽的子域限制，不暗加b与d不同的条件。 -/
+def selfRestrictionSentence : Source.Sentence :=
+  ((GraphSyntax.functionOn (0 : Fin 2) 1).imp (RestrictionSyntax.existsRestriction 0 1)).close
+
+theorem self_restriction : FirstOrder.Derives nativeZF [] (Translation.sentence selfRestrictionSentence) := by
+  apply ObjectRestriction.native_replay
+  apply TheoryTransport.sentence
+  apply SourceAlgebra.close_derives
+  apply Source.Derives.impI
+  have he : Source.Derives (ObjectRestriction.assumptions.at 2) (Source.SetLanguage.extensionality.rename Fin.elim0) :=
+    .hyp ⟨_, Or.inl rfl, rfl⟩
+  have hs : Source.Derives (ObjectRestriction.assumptions.at 2)
+      ((Source.SetLanguage.separation RestrictionSyntax.matrix).rename Fin.elim0) := .hyp ⟨_, Or.inr rfl, rfl⟩
+  have hb : Source.Derives (Source.Context.add (GraphSyntax.functionOn 0 1) (ObjectRestriction.assumptions.at 2))
+      (RestrictionSyntax.subset (1 : Fin 2) 1) := .allI (.impI (.hyp (Or.inl rfl)))
+  exact RestrictionExistence.exists_function_restriction 0 1 1 (SourceLogic.add hs _) (SourceLogic.add he _) (.hyp (Or.inl rfl)) hb
 end PPAC.Migration.Step3Checks

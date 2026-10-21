@@ -91,7 +91,7 @@ def main() -> None:
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
         is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
-            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "PairSyntax.", "UnorderedPairLogic.", "OrderedPairExistence.", "OrderedPairElimination.", "OrderedPairWitnesses.", "OrderedPairLogic.", "ObjectPairs.", "GraphSyntax.", "GraphLogic.", "GraphProperties.", "SingletonGraphLogic.", "SingletonMap.", "ObjectGraphs.", "InsertSyntax.", "InsertLogic.", "InsertExistence.", "GraphInsertEdges.", "GraphInsertEntries.", "GraphInsertValues.", "GraphInsertFunction.", "GraphInsertSyntax.", "GraphInsertExistence.", "ObjectGraphInsert.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
+            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "PairSyntax.", "UnorderedPairLogic.", "OrderedPairExistence.", "OrderedPairElimination.", "OrderedPairWitnesses.", "OrderedPairLogic.", "ObjectPairs.", "GraphSyntax.", "GraphLogic.", "GraphProperties.", "SingletonGraphLogic.", "SingletonMap.", "ObjectGraphs.", "InsertSyntax.", "InsertLogic.", "InsertExistence.", "GraphInsertEdges.", "GraphInsertEntries.", "GraphInsertValues.", "GraphInsertFunction.", "GraphInsertSyntax.", "GraphInsertExistence.", "ObjectGraphInsert.", "RestrictionSyntax.", "RestrictionEdges.", "RestrictionFunction.", "RestrictionAlgebra.", "RestrictionExistence.", "ObjectRestriction.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
         if name in {"PPAC.Migration.ReplacementFromCollection.native_replacement",
                     "PPAC.Migration.BoundedMinimal.native_minimal", "PPAC.Migration.BoundedInduction.native_induction",
                     "PPAC.Migration.ObjectPairs.native_replay", "PPAC.Migration.ObjectPairs.native_exists_unique",
@@ -101,7 +101,10 @@ def main() -> None:
                     "PPAC.Migration.ObjectGraphs.native_total", "PPAC.Migration.ObjectGraphInsert.native_replay",
                     "PPAC.Migration.ObjectGraphInsert.native_insert", "PPAC.Migration.ObjectGraphInsert.native_successor",
                     "PPAC.Migration.ObjectGraphInsert.native_extension", "PPAC.Migration.ObjectGraphInsert.native_edge_law",
-                    "PPAC.Migration.ObjectGraphInsert.native_uniqueness"} or name.startswith((
+                    "PPAC.Migration.ObjectGraphInsert.native_uniqueness", "PPAC.Migration.ObjectRestriction.native_replay",
+                    "PPAC.Migration.ObjectRestriction.native_set", "PPAC.Migration.ObjectRestriction.native_function",
+                    "PPAC.Migration.ObjectRestriction.native_edge", "PPAC.Migration.ObjectRestriction.native_unique",
+                    "PPAC.Migration.ObjectRestriction.native_identity", "PPAC.Migration.ObjectRestriction.native_compose"} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -147,7 +150,11 @@ def main() -> None:
         "object_graph_extension_preserves_full_functionOn_and_exact_edges": True,
         "object_graph_extension_witness_uniqueness_proved": True,
         "object_general_compatible_graph_union_proved": False,
-        "object_graph_restriction_proved": False,
+        "object_graph_restriction_proved": True,
+        "object_graph_restriction_requires_subset_domain": True,
+        "object_graph_restriction_exact_edges_and_uniqueness_proved": True,
+        "object_graph_restriction_identity_and_composition_proved": True,
+        "object_graph_restriction_uses_one_Separation_instance_and_Extensionality": True,
         "object_omega_iteration_proved": False,
         "object_transitive_closure_proved": False,
         "object_rank_hierarchy_proved": False,
@@ -176,7 +183,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Full pure-object Kuratowski pair existence, uniqueness and component characterization use only Pairing and Extensionality and strictly match the original source PP/AC encoding. Original source edge and full functionOn are strictly preserved; singleton function graphs are constructed and evaluated internally, and arbitrary function graphs have exact edge-input domains and single-valuedness. Set insertion and original source successor are constructed. Arbitrary function graphs extend at any fresh input outside the old domain, preserving full functionOn and an exact all-edge law, with actual object existence and three-axiom certificates. General compatible graph union/restriction, object omega iteration/transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Full pure-object Kuratowski pair existence, uniqueness and component characterization use only Pairing and Extensionality and strictly match the original source PP/AC encoding. Original source edge and full functionOn are strictly preserved; singleton function graphs are constructed and evaluated internally, and arbitrary function graphs have exact edge-input domains and single-valuedness. Set insertion and original source successor are constructed. Arbitrary function graphs extend at any fresh input outside the old domain, preserving full functionOn and an exact all-edge law, with actual object existence and three-axiom certificates. Arbitrary object graph restrictions are constructed by one Separation instance and Extensionality; full functionOn, exact edge law, uniqueness, identity and nested-restriction composition are proved in source ZF and the original native kernel. Compatible graph-family union, object omega iteration/transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

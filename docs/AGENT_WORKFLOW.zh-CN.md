@@ -14,11 +14,13 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
 | 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
-| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图、任意图基本性质及新点扩展完成；相容合并/限制/ω/传递闭包待做 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图、新点扩展及图限制完成；相容合并/ω/传递闭包待做 |
 | 3b.2b.1 | 原edge/functionOn与对象有序对 | GraphSyntax、GraphLogic、GraphProperties、SingletonGraphLogic、SingletonMap、ObjectGraphs | 完整原公式严格对应；单点函数图实际存在；任意图的边定义域、域内输出存在及单值性；原核Derives | 完成 |
-| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 新点插入完成；相容合并/限制待做 |
+| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 新点插入及图限制完成；相容族合并待做 |
 | 3b.2b.2a | Pairing、Union、Extensionality及原functionOn | InsertSyntax/Logic/Existence、GraphInsert*、ObjectGraphInsert | 任意旧函数图与x∉d下的实际扩展图存在唯一；完整functionOn及全部边刻画；源ZF与原核Derives | 完成 |
-| 3b.2b.2b | 全Separation、Union及必要Replacement | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 待做 |
+| 3b.2b.2b | 全Separation、Union及必要Replacement | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 图限制完成；相容族合并待做 |
+| 3b.2b.2b.i | Extensionality及一个完整Separation实例 | RestrictionSyntax/Edges/Function/Algebra/Existence、ObjectRestriction | 任意图的限制集合实际存在；子域上的原functionOn、精确边、唯一/恒等/组合闭句 | 完成 |
+| 3b.2b.2b.ii | 原对象Kuratowski编码、Union与Separation | 图定义域构造及任意内部相容图族合并 | 从图G的编码证明输入落在∪∪G，在其上分离实际定义域；对任意内部图集合族合并并证明完整functionOn | 待做 |
 | 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | 待做 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
@@ -113,3 +115,12 @@ ObjectGraphInsert在三个原始闭公理（Pairing/Union/Extensionality）的�
 不要求旧图有限，也不要求新输出y与输入或旧对象不同。
 相容族合并/限制、内部ω迭代与传递闭包仍未完成。
 实际验收见STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md。
+
+图限制更新：RestrictionSyntax用一个完整原Separation实例实际构造
+R(g,f,b) := ∀p(p∈g ↔ (p∈f ∧ ∃x∈b∃y K(p,x,y)))。
+ObjectRestriction的六个闭句覆盖任意对象f/b、子域b⊆d下的完整原functionOn、
+∀x∀y(E(g,x,y)↔(E(f,x,y)∧x∈b))、限制唯一性、限制到自身定义域的恒等律和子域组合律。
+源Replacement版ZF及实际nativeZF都有正式推导，原核kernel_certificate只以Extensionality
+和上述一个Separation实例为输入；没有使用Collection/Replacement或抽取宿主数据。
+下一项为实际图定义域构造和任意内部相容图集合族合并，继而内部ω/传递覆盖。
+实际验收见STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md。
