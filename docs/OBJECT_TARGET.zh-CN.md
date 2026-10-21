@@ -252,3 +252,17 @@ HasLength(w,n,l)、i∈l和Field(w,n,i,y)下，原对象ω长度归纳实际推�
 四个字段界和十个树算子完整闭句有源ZF及原nativeZF实际Derives，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md。
 前段图子码值对齐、完整树接受/拒绝正确性及实际树解码仍待证明。
 专用ProofZF/U、任意内部证明码正确性和最终内部Con仍False；最初锁定的原背景、六规则/27逻辑模式及全内部ω量词不变。
+
+2026-10-22全部内部树检查与唯一解码更新：
+Eval(w,z,e,n,y):=∃s∃f(Succ(s,n)∧Recursor_Step(w,z,e,f,s)∧edge(f,n,y))，合取结合以源码为准。
+每个内部原序数n均实际存在唯一y；任意原序数域d、n∈d及对应实际图f下，edge(f,n,y)↔Eval(w,z,e,n,y)。
+保留真实限制历史，局部Good↔存在Shape且每个字段Eval为实际单位。
+Empty(z)、Succ(e,z)下，接受Eval(...,e)恰为该递归分支，拒绝Eval(...,z)恰为其否定；输出实际属于ω且为零或单位。
+Valid(w,n):=n∈w∧∃z∃e((Empty(z)∧Succ(e,z))∧Eval(w,z,e,n,e))；Invalid同式末值换为z。
+二者与任意实际零/单位选择一致，并在所有内部自然码上完整互斥。
+Recursive实际存在tag,p,l,f，要求Shape及∀i∀y(edge(f,i,y)→Valid(w,y))。
+原ZF证明Recursive↔Valid；DecodedFiber保留上述四个真实见证及所有候选四分量相等的唯一式，且DecodedFiber↔Valid。
+这两个双条件量化任意内部候选对象，内部自然性由Shape实际推出，没有外部标准码限制。
+20个完整闭句有Source.Derives、sourceZF原核及nativeZF原核证书；实际验收见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md。
+此门禁只完成通用结构树；全部11公式构造、bound/free、纯签名membership编号0、捕获规避替换及ProofZF/U仍待做。
+对象背景、Con全内部ω量词和最终原核Derives规格不变，最终Con标志仍False。

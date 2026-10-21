@@ -873,4 +873,62 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralT
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeOperator.actualUnitsSentence) := ObjectStructuralTreeOperator.native_actualUnits
 
+/-- 实际树值保留原后继域、完整递归图及真实边，不用宿主自然数求值。 -/
+example {m} (w z e n y : Fin m) : StructuralTreeEvaluationSyntax.evaluation w z e n y = .ex (.ex
+    (StructuralTreeEvaluationSyntax.data w.castSucc.castSucc z.castSucc.castSucc e.castSucc.castSucc
+      (Fin.last m).castSucc (Fin.last (m+1)) n.castSucc.castSucc y.castSucc.castSucc)) := rfl
+
+/-- 原自然码守卫与实际零/单位见证均保留；无任意指定真假标记。 -/
+example {m} (w n : Fin m) : StructuralTreeValiditySyntax.valid w n =
+    (Source.Formula.mem n w).conj (.ex (.ex (StructuralTreeValiditySyntax.validWitness w n))) := rfl
+
+/-- 子字段检查覆盖全部边，不限定外部标准索引。 -/
+example {m} (w f : Fin m) : StructuralTreeValiditySyntax.validChildren w f = .all (.all
+    ((GraphSyntax.edge f.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).imp
+      (StructuralTreeValiditySyntax.valid w.castSucc.castSucc (Fin.last (m+1))))) := rfl
+
+/-- 树解码递归句保留四个实际对象见证及完整字段图。 -/
+example {m} (w n : Fin m) : StructuralTreeValiditySyntax.recursive w n =
+    .ex (.ex (.ex (.ex (StructuralTreeValiditySyntax.dataBody w n)))) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.fiberSentence) := ObjectStructuralTreeCheck.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.naturalValueSentence) := ObjectStructuralTreeCheck.native_naturalValue
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.valueUniqueSentence) := ObjectStructuralTreeCheck.native_valueUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.edgeIffSentence) := ObjectStructuralTreeCheck.native_edgeIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.historySentence) := ObjectStructuralTreeCheck.native_history
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.rangeSentence) := ObjectStructuralTreeCheck.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.goodIffSentence) := ObjectStructuralTreeCheck.native_goodIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.acceptsIffSentence) := ObjectStructuralTreeCheck.native_acceptsIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.rejectsIffSentence) := ObjectStructuralTreeCheck.native_rejectsIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.fixedClassificationSentence) := ObjectStructuralTreeCheck.native_fixedClassification
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.validAcceptsSentence) := ObjectStructuralTreeCheck.native_validAccepts
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.invalidRejectsSentence) := ObjectStructuralTreeCheck.native_invalidRejects
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.markerTransportSentence) := ObjectStructuralTreeCheck.native_markerTransport
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.classificationSentence) := ObjectStructuralTreeCheck.native_classification
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.exclusiveSentence) := ObjectStructuralTreeCheck.native_exclusive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.invalidIffNotSentence) := ObjectStructuralTreeCheck.native_invalidIffNot
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.recursiveIffSentence) := ObjectStructuralTreeCheck.native_recursiveIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.decodedFiberSentence) := ObjectStructuralTreeCheck.native_decodedFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.decodedIffSentence) := ObjectStructuralTreeCheck.native_decodedIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.decodeUniqueSentence) := ObjectStructuralTreeCheck.native_decodeUnique
+
 end PPAC.Migration.Step4Checks
