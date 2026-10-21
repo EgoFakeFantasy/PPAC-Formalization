@@ -1,0 +1,39 @@
+inductive Derives : {n : ℕ} → Set (Formula n) → Formula n → Prop where
+  | hyp {n} {Γ : Set (Formula n)} {p} : p ∈ Γ → Derives Γ p
+  | weaken {n} {Γ Δ : Set (Formula n)} {p} :
+      Γ ⊆ Δ → Derives Γ p → Derives Δ p
+  | impI {n} {Γ : Set (Formula n)} {p q} :
+      Derives (insert p Γ) q → Derives Γ (.imp p q)
+  | impE {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ (.imp p q) → Derives Γ p → Derives Γ q
+  | botE {n} {Γ : Set (Formula n)} {p} : Derives Γ .bot → Derives Γ p
+  | classical {n} {Γ : Set (Formula n)} {p} :
+      Derives (insert p.neg Γ) .bot → Derives Γ p
+  | conjI {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ p → Derives Γ q → Derives Γ (.conj p q)
+  | conjL {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ (.conj p q) → Derives Γ p
+  | conjR {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ (.conj p q) → Derives Γ q
+  | disjL {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ p → Derives Γ (.disj p q)
+  | disjR {n} {Γ : Set (Formula n)} {p q} :
+      Derives Γ q → Derives Γ (.disj p q)
+  | disjE {n} {Γ : Set (Formula n)} {p q r} :
+      Derives Γ (.disj p q) → Derives (insert p Γ) r →
+      Derives (insert q Γ) r → Derives Γ r
+  | allI {n} {Γ : Set (Formula n)} {p : Formula (n + 1)} :
+      Derives (Formula.raise '' Γ) p → Derives Γ (.all p)
+  | allE {n} {Γ : Set (Formula n)} {p : Formula (n + 1)} (t : Fin n) :
+      Derives Γ (.all p) → Derives Γ (p.instantiate t)
+  | exI {n} {Γ : Set (Formula n)} {p : Formula (n + 1)} (t : Fin n) :
+      Derives Γ (p.instantiate t) → Derives Γ (.ex p)
+  | exE {n} {Γ : Set (Formula n)} {p : Formula (n + 1)} {q : Formula n} :
+      Derives Γ (.ex p) → Derives (insert p (Formula.raise '' Γ)) q.raise →
+      Derives Γ q
+  | eqRefl {n} {Γ : Set (Formula n)} (t : Fin n) : Derives Γ (.equal t t)
+  | eqSubst {n} {Γ : Set (Formula n)} {s t : Fin n} (p : Formula (n + 1)) :
+      Derives Γ (.equal s t) → Derives Γ (p.instantiate s) →
+      Derives Γ (p.instantiate t)
+  | rename {n m} {Γ : Set (Formula n)} {p : Formula n} (r : Fin n → Fin m) :
+      Derives Γ p → Derives (Formula.rename r '' Γ) (Formula.rename r p)

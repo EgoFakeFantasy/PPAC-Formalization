@@ -5,3 +5,5 @@ Copyright OpenAI contributors. Licensed under Apache License 2.0; see third_part
 Changes: Mathlib vector notation replaced by finite functions; module namespaces and imports changed.
 Original PPAC auxiliary code and authorship are preserved in Git history.
 YesMetaZFC is an independently pinned Apache-2.0 dependency; its own LICENSE and NOTICE apply.
+
+Step 2 also adapts the 19 source derivation rules from that fixed ComparatorChallenges file; Set notation is unfolded to predicates. The new transport proofs target the unmodified YesMetaZFC Hilbert kernel.

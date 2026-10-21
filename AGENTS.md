@@ -1,7 +1,7 @@
 # PPAC migration instructions
 Use the original YesMetaZFC pure-set signature and FirstOrder.Derives; no new proof kernel.
 Read docs/FEASIBILITY.zh-CN.md and docs/AGENT_WORKFLOW.zh-CN.md before continuing.
-Main goal is native syntactic consistency transfer. RelativeConsistencyGoal is pending, not a theorem.
+Final goal is an object derivation in native ZF: Derives B [] (Con_ZF → Con_target). Read docs/OBJECT_TARGET.zh-CN.md. External consistency transfer is intermediate only; neither it nor ExternalConsistencyGoal is the final deliverable.
 Step 1 truth preservation is an intermediate language result and must not be presented as the main theorem.
 Keep SourceStatements graph definitions, arbitrary schema parameters, binder order and all-set quantifiers exact.
 Source Replacement/native Collection and the two AC presentations require actual derivation equivalences.

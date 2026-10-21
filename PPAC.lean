@@ -1,2 +1,4 @@
 /- 对象语言与原核合同；宿主辅助请单独 import PPAC.Auxiliary。 -/
 import PPAC.Migration.Contract
+
+import PPAC.Migration.TheoryTransport

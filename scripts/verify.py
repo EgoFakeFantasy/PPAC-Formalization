@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import sys
 import hashlib
 import json
 import re
@@ -55,7 +56,7 @@ def run(command: list[str], log: str) -> str:
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
-    sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", *ROOT.glob("PPAC/**/*.lean")])
+    sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", *ROOT.glob("PPAC/**/*.lean")])
     forbidden = re.compile(r"\b(sorry|admit|axiom|unsafe|native_decide)\b")
     for path in sources:
         if forbidden.search(strip_comments(path.read_text(encoding="utf-8-sig"))):
@@ -64,9 +65,11 @@ def main() -> None:
     expected = re.findall(r"^#print axioms (\S+)", audit_source, re.MULTILINE)
     if not expected or len(expected) != len(set(expected)):
         raise RuntimeError("Empty or duplicate audit declarations")
+    run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
     build = run(["lake", "--no-cache", "--wfail", "build"], "build.log")
     run(["lake", "env", "lean", "--trust=0", "Check.lean"], "check.log")
+    run(["lake", "env", "lean", "--trust=0", "CheckStep2.lean"], "step2-check.log")
     audit = run(["lake", "env", "lean", "--trust=0", "Audit.lean"], "audit.log")
     footprints: dict[str, list[str]] = {}
     for name, empty, dependencies in re.findall(
@@ -83,14 +86,24 @@ def main() -> None:
     for name, dependencies in footprints.items():
         extra = set(dependencies) - allowed
         expected_extra = inherited if name in contracts else ({"Classical.choice"} if name.startswith("PPAC.Migration.Translation.") else set())
+        is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
+            ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
+        if is_step2:
+            if not set(dependencies) <= allowed | {"Classical.choice"}:
+                raise RuntimeError(f"Unexpected step-2 axiom dependency: {name}: {dependencies}")
+            continue
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
-    hashed = sources + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "docs/TRUST_BASELINE.json"]]
+    hashed = sources + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json"]]
     summary = {
         "lean_version": version,
         "build_passed": True,
         "audit_passed": True,
         "check_passed": True,
+        "step2_check_passed": True,
+        "source_rule_count": 19,
+        "source_rules_match_pinned_excerpt": True,
+        "object_Con_theorem_proved": False,
         "trust_level": 0,
         "original_openai_build_run": False,
         "relative_consistency_proved": False,
@@ -103,7 +116,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for line in (build + audit).splitlines()),
-        "scope": "Step 1 language preservation and native target contract; selected declaration audit; no relative consistency theorem or forcing model.",
+        "scope": "Steps 1-2: syntax preservation, all 19 source rules to original Derives, finite axiom support; internal Con specification only, not its final object derivation.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

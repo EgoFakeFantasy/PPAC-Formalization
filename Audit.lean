@@ -16,3 +16,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Repair.jrelOf_fun
 #print axioms PPAC.Repair.jrelOf_injDir
 #print axioms PPAC.Repair.jrelOf_total
+
+#print axioms PPAC.Migration.Syntax.rename
+#print axioms PPAC.Migration.Syntax.substitute
+#print axioms PPAC.Migration.Syntax.native_rename
+#print axioms PPAC.Migration.Syntax.instantiate
+#print axioms PPAC.Migration.Syntax.fresh_raise
+#print axioms PPAC.Migration.Syntax.fresh_abstract
+#print axioms PPAC.Migration.Syntax.forall_fresh
+#print axioms PPAC.Migration.Syntax.exists_fresh
+#print axioms PPAC.Migration.Syntax.old_formula
+#print axioms PPAC.Migration.Syntax.closed_fromSentence
+#print axioms PPAC.Migration.Compile.weaken_free
+#print axioms PPAC.Migration.Compile.neg_as_imp
+#print axioms PPAC.Migration.Compile.derives
+#print axioms PPAC.Migration.FiniteSupport.certificate
+#print axioms PPAC.Migration.FiniteSupport.derives
+#print axioms PPAC.Migration.TheoryTransport.derives_at
+#print axioms PPAC.Migration.TheoryTransport.sentence
+#print axioms PPAC.Migration.TheoryTransport.finite_support
+#print axioms PPAC.Migration.TheoryTransport.clear_falsum
+#print axioms PPAC.Migration.TheoryTransport.clear_closed
+#print axioms PPAC.Migration.TheoryTransport.closed_at
+#print axioms PPAC.Migration.TheoryTransport.consistent_source_of_native

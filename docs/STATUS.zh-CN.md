@@ -1,21 +1,15 @@
 # 当前交付状态
-2026-10-21；分支 migration/yesmeta-step1；原提交721d331a4ddd3c1d759a719a55f09388ade4fa30。
+2026-10-21；当前分支migration/yesmeta-step2；前一步提交f28b033。
 
-已完成：前置研究、仓库复用地图、逐阶段流程、备份与清理、第一步语法/语义桥和原核合同。
-实际命令：
-- lake --no-cache --wfail build：退出0。
-- lake env lean --trust=0 Check.lean：退出0。
-- lake env lean --trust=0 Audit.lean：退出0。
-- python scripts/verify.py：退出0；16项列举声明；0警告；7项无公理依赖。
-完整原始日志与文件哈希在本地 verification/，不跟踪进Git。
-声明依赖包括原底座的7个 native_decide 证书，见 TRUST_BASELINE.json；没有新自定义公理。
-源OpenAI开发未在本轮编译或Comparator复验。PPAC主相对一致性定理尚未完成。
+步骤0–1保持完成；步骤2的正向源推导传输已完成，详见STEP2_ACCEPTANCE。
+最终对象背景及内部Con规格已固定于OBJECT_TARGET，工程流程已全面修订。
+最终目标是原对象ZF中的Derives证书；内部Con主句及专用检查器仍待实现。
 
-下一最小任务：步骤2，先对 source Formula.rename / instantiate 与目标变量重命名/替换
-建立句法交换，再处理源自然演绎规则和无限假设的有限支撑。不得用语义保真冒充句法传输。
+本批统一验收退出0：65构建任务，38项列举公理审计，0警告。
+两份Check与Audit均使用--trust=0；19条输入规则与固定原文摘录一致。
+新增22项关键传输声明只依赖标准三公理；旧底座7个native证书依赖仍单独登记。
+日志与哈希留在本地verification/；没有上传GitHub。
 
-恢复原版：
-外部 scratch/ppac-migration-20261021/ppac-before-migration.bundle 包含原提交完整历史，
-并有源码tar.gz、SHA256清单与成功的git bundle verify日志。
-本轮只在新的独立克隆内修改；原研究目录和其他YesMetaZFC工作副本未修改。
-尚未推送GitHub。
+下一步为步骤3的ZF/AC呈现对应与反向传输，之后进行内部检查器和转换器内部化。
+原始PPAC清理备份仍位于scratch/ppac-migration-20261021/，未改动其他研究工作副本。
+Agent广场本轮连接被拒绝，未能回写共享经验；启动后可补录，不影响本地验收。

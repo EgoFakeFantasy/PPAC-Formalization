@@ -24,8 +24,8 @@ def targetTheory : FirstOrder.Theory ℒ :=
 def Consistent (T : FirstOrder.Theory ℒ) : Prop :=
   FirstOrder.Derives.Consistent T ([] : FirstOrder.Context ℒ [])
 
-/-- 待证明的目标类型；此定义不提供该命题的证明。 -/
-def RelativeConsistencyGoal : Prop := Consistent nativeZF → Consistent targetTheory
+/-- 中间的外部一致性任务；最终目标是对象Con闭句的原核推导，见OBJECT_TARGET。 -/
+def ExternalConsistencyGoal : Prop := Consistent nativeZF → Consistent targetTheory
 
 theorem target_extends_ZF (p : FirstOrder.Sentence ℒ) (h : nativeZF p) :
     targetTheory p := Or.inl h

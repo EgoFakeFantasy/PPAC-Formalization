@@ -20,7 +20,7 @@ PP、AC、ACwo 使用源的集合图形式，函数是结构内部的 Kuratowski
 Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头。须显式变换并证明保真。
 原生目标理论是 ZF+PP+ACwo+¬AC。语义保真不自动给出推导传输。
 第一步只交付原生句子与理论合同、全语法翻译及真值保持、最小对象推导接入检查。
-后续终点：原核的一致性传输；若要对象理论内部的 Con 公式，另固定算术化与背景理论并证明 Derives，不把 Lean Prop 冒充对象句子。
+最终终点已按用户要求固定为对象ZF中的内部Con蕴含的Derives证书；背景与编码见OBJECT_TARGET.zh-CN.md。外部一致性传输仅是中间层。
 不以 ZFC 的普通推导证明 ¬AC；模型解释的结论和解释所处的元理论必须区分。
 
 ## 主要缺口
@@ -36,3 +36,5 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。当前检查精确守住此基线，不标成“仅三项标准公理”；未修改底座，也未添加新的自定义公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。
 
 语义桥的 Classical.choice 已定位到 Lean 核心定理 Fin.lastCases_castSucc，只用于 Prop 中的绑定等式证明；未向对象ZF加入AC，也未抽取内部集合选择函数。旧宿主辅助维持原先无 Classical.choice 的依赖范围。
+
+第二步进度：源19规则正向传输、AST重命名/替换、任意变量环境的闭句传输和有限原核公理支撑已完成；源/目标ZF呈现等价、反向传输与对象内部化尚未完成。

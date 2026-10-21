@@ -2,9 +2,9 @@
 [简体中文](README.zh-CN.md)
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
-Only step 1 (language translation and target contract) is implemented. No relative-consistency theorem, symmetric model, or PP/AC separation is delivered by this branch.
+Steps 1 and 2 are implemented: language preservation, strict AST renaming/substitution, all 19 source rules into original Derives, arbitrary-variable closed-sentence transfer, and finite axiom support. No relative-consistency theorem, symmetric model, or PP/AC separation is delivered by this branch.
 
-The intended endpoint is syntactic consistency transfer for native ZF and ZF+PP+ACwo+¬AC.
+The final endpoint is an object derivation in native ZF of the internal sentence Con(ZF) → Con(ZF+PP+ACwo+¬AC). The internal proof-checker ASTs and internalization remain pending; external consistency transfer is intermediate only. See docs/OBJECT_TARGET.zh-CN.md.
 Native ZF uses full Collection; the source uses full Replacement. Their proof-theoretic correspondence is pending.
 The source uses graph Choice; YesMetaZFC's built-in axiom uses disjoint-family selection. Their correspondence is pending too.
 

@@ -1,29 +1,29 @@
-# Agent 友好工程流程
-每行具有明确输入、产物、验收门。只允许一个 Lean/Lake 构建进程。
-完成一行后更新状态与真实日志；未实现目标写在文档，不添加占位定理。
-角色是职责划分，不要求并行启动 agent。
+# 对象层迁移工程流程
+最终交付：Derives B [] (Formula.imp Con_ZF Con_target)。
+B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)。
+内部Con的展开、编码与全内部ω范围见[对象目标规格](OBJECT_TARGET.zh-CN.md)。
+这里只按明确工作单元推进，不要求并行启动agent；Lean/Lake构建始终串行。
 
-| 步骤 | 负责角色与输入 | 产物 | 验收门 | 状态 |
+| 步骤 | 输入与负责职责 | 必须交付的模块/结果 | 验收门 | 状态 |
 |---|---|---|---|---|
-| 0 | 来源审查：OpenAI 244、账号仓库、原 PPAC | SOURCE_LOCK、FEASIBILITY、REPOSITORY_MAP、CLEANUP | 固定 SHA；两条路线分开；备份后清理 | 已完成 |
-| 1 | 语言桥接：源语法，原生 ℒ、ZF、Derives | Migration/SourceSyntax、SourceStatements、Translation、Contract | 全8构造器真值保持；末/首 binder；原核接入；build、trust=0、审计 | 已完成 |
-| 2 | 句法传输：步骤1、源 Derives | Renaming、Substitution、Derivation | rename/instantiate/generalize/equality 全规则；有限理论支撑；两向 bot 传输 | 待做 |
-| 3 | 理论对应：步骤2、原 ZF/源 ZF | ZFEquivalence、ChoiceEquivalence | 全参数全公式 Replacement↔Collection、两种 AC；无新选择公理 | 待做 |
-| 4 | 外部基线：原4.34.1环境 | 原 Comparator 复现、依赖闭包 | 两个 comparator 分开；精确公理；只定向编译；记录未验部分 | 待做 |
-| 5 | 内部构造：原生集合构造、BMS可选工具 | Names、Pairs、Tuples、Recursion | 内部图与赋值；递归唯一性；覆盖非标准模型 | 待做 |
-| 6 | 解释路线评审：论文相对化或元模型 | Background、Constructible（如采用） | 固定背景与 universe；逐实例 Derives；不加不可达 | 待做 |
-| 7 | 强迫前端：源 Forcing | Atomic、Truth、Symmetry、ZF | 实际 poset/正规滤子/HS；全部ZF模式；无混合/支持缺口 | 待做 |
-| 8 | 构造核心：Algebra+Construction | Monoid、Placement、ConservativeHull | 局部存在给实际构造和不变量；不以字段假定核心结论 | 待做 |
-| 9 | 模型应用：Models全部文件 | SVC、ACwo、Quotient、NotAC | 全秩内部集合；商单射属于同一HS模型；非选择见证 | 待做 |
-| 10 | 全局装配：步骤7–9 | PP、Consistency/Main | 空集分支；所有满射反单射；原核一致性传输 | 待做 |
-| 11 | 终验与发布评审 | 量词/公理/依赖对照、全量验收 | 无缺口；精确命题；外部日志；发布单独范围 | 待做 |
+| 0 | 来源审查：固定OpenAI244/YesMetaZFC/PPAC | SOURCE_LOCK、REPOSITORY_MAP、CLEANUP | 来源/前提分开；备份可恢复 | 完成 |
+| 1 | 原语言与原核接口 | SourceSyntax、SourceStatements、Translation、Contract | 全8构造器语义保真；正确对象句子 | 完成，中间层 |
+| 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
+| 3 | 源Replacement版ZF、原Collection版ZF及两种AC | ZFEquivalence、ChoiceEquivalence、反向句法对应 | 任意公式/参数模式；实际Derives；不直接假设理论相等 | 待做 |
+| 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
+| 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
+| 6 | 原OpenAI 4.34.1环境 | 原源码定向构建、两个Comparator记录 | 分开普通Con与带不可达传递模型；真实命令与允许公理 | 待做 |
+| 7 | 原生集合构造与递归 | Internal/Names、Pairs、Tuples、Recursion | 内部图与唯一性；不假定外部良基或标准ω | 待做 |
+| 8 | 论文的内部解释路线 | Interpretation/Constructible、Background | 在对象ZF中逐公理证明L相对化；背景/语言/universe对应明确 | 待做 |
+| 9 | 实际对称强迫系统 | Forcing/Atomic、Truth、Symmetry、ZF | 实际poset/正规滤子/HS、混合、全部ZF模式的对象证明 | 待做 |
+| 10 | 单子与图式构造 | Geometry/Monoid、Placement、ConservativeHull | 核心局部存在性实际证明，不以结构字段假定结论 | 待做 |
+| 11 | 模型应用 | Models/SVC、ACwo、Quotient、NotAC | 任意秩集合、同一HS模型内商双射及非选择见证 | 待做 |
+| 12 | 全局装配与内部化结果 | Consistency/ObjectMain | 实际 Derives B [] (Con_ZF → Con_target)，原量词与前提不变 | 待做 |
+| 13 | 最终验收 | 量词/编码/可信基/完整依赖审计 | 全build、无缺口、完整对象主句；源与目标一致性边界分开 | 待做 |
 
-每单元交接：输入固定提交、允许改动模块、目标完整 Lean 类型、依赖、
-命令/退出码、剩余义务、禁止的强假设、下一步最小任务。
+每单元交接必须记录：固定提交、允许文件、目标完整Lean类型、实际命令/退出码、
+剩余义务、禁止强假设和下一最小工作。外部Consistent传输不替代对象Con推导。
 
-
-第一步验收已经完成：严格构建、trust=0 的 Check 与 Audit 均退出0；16个列举声明，
-7个无公理依赖，9个依赖已记录的可信基，0警告。
-这是第一步合同与语义桥的验收，不是全迁移或原OpenAI库的验收。
-当前底座7个 native_decide 证书依赖见 TRUST_BASELINE.json；它们不是新增对象公理。
-如后续要求只有标准逻辑公理的完整可信基，应先做独立底座证书修复批次再升级验收标签。
+第二步只实现正向传输。反向对应、ZF/U内部检查公式和完整内部化没有被偷偷列为完成。
+当前原生ZF合同仍继承底座7个native_decide句子闭合证书，见TRUST_BASELINE.json；
+新增第二步传输关键声明的公理审计只允许标准propext/Classical.choice/Quot.sound。
