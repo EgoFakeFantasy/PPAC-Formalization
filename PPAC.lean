@@ -99,3 +99,5 @@ import PPAC.Migration.Internal.ObjectFormulaCodeConstruction
 import PPAC.Migration.Internal.ObjectSyntaxTypedFields
 
 import PPAC.Migration.Internal.ObjectFormulaCodeTreeValidity
+
+import PPAC.Migration.Internal.ObjectFormulaCodeTypedDecode

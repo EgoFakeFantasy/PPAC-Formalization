@@ -395,3 +395,12 @@ Code在任意同根Shape上推出TypedData，并实际存在唯一完整TypedFib
 Tree.valid比纯语言类型宽，因此不把Code→Tree.valid误写成双条件。
 原背景、原核和原Con的全内部ω、六规则/27模式要求不变；
 内部替换、ProofZF/U、任意内部证明码正确性、内部编译器和最终Con仍未完成。
+
+
+2026-10-22完整类型识别更新：
+内部公式码的完整11类类型识别及实际唯一TypedData解码现有双向对象推导。
+其闭句由ObjectFormulaCodeTypedDecode.native_dataCode/native_dataIff/native_fiberIff等返回原FirstOrder.Derives。
+所有内部候选、bound/free上下文、完整图边与真实量词后继均保留；反向不假定已知Constructor。
+这完成内部证明检查器的公式识别前提，并没有给出内部rename/替换或ProofZF/U。
+上述背景B及Con_T数学定义保持不变；最终Con闭句AST与任意内部证明码正确性、对象Con蕴含仍未交付。
+后续工作单元见AGENT_WORKFLOW.zh-CN.md最后的4c.c至6表。

@@ -899,3 +899,29 @@ Code在任意同根Shape上推出TypedData，并实际存在唯一tag/payload/�
 新增12模块174项显式声明、28个完整Source/sourceZF核/nativeZF核闭句模式。
 原树有效性和实际正向TypedData各有True门禁；反向识别、完整类型总关卡、替换、ProofZF/U及最终Con保持False。
 实际验收见STEP4_TREE_VALIDITY_TYPED_DATA_FORWARD_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22完整TypedData双向识别批次：
+R1、R2、R3、R4的对象推导已实现，实际正式验收结果见STEP4_TYPED_DECODE_EQUIVALENCE_ACCEPTANCE.zh-CN.md。
+新Slot合取只枚举原有限字段位置，内部图索引和值始终全部量化。
+原functionOn给真实定义域和单值性，Num_k成员分类和数码唯一性恢复所有内部边的GraphLaw。
+实际Forest存在及同长度真实完整图，再经图外延性和原列表码唯一性恢复同一个原payload；无Constructor前提。
+所有RootCheck通过原exE取得真实字段，只为恢复构造器临时遗忘字段谓词，原完整类型检查在上下文中保留。
+重建Constructor后对原类型双条件反向实例化，得到同根Code；没有用外部标准输入抽样替代全内部命题。
+给定Shape下Code↔TypedData及Code↔Cases成立；任意候选上Code↔实际唯一TypedFiber成立，
+并有否定双条件和正负完整分类。原11类类型识别/构造总关卡在本批原核验收通过后提升。
+内部rename/替换、ProofZF/U、内部编译器与最终Con仍是待完成目标。
+
+| 顺序与工作单元 | 对象输入/固定范围 | 必须产生的原推导及验收条件 |
+|---|---|---|
+| 4c.c.1 内部Rename合同 | 内部ω、原FormulaCode、bound/free上下文和两个实际完整索引映射图；允许非单射 | 定义有限纯成员RenameTerm/RenameFormula关系，绑定位置与自由位置分别变换；量词下真实Succ扩展bound映射并保持free映射 |
+| 4c.c.2 Rename存在唯一与类型 | 所有内部合法码、长度和范围正确的完整映射图 | 原ZF推导每个候选的正确性及实际唯一输出纤维；原11类逐分支，原零符号保持；实际图相等、恒等与复合定律，不能只证明宿主AST等式 |
+| 4c.c.3 内部Subst合同与实现 | 任意内部自由替换序列及所有合法源/目标作用域；保留bound/free分工 | 有限纯成员SubstTerm/SubstFormula；对象后继下提升替换项和bound重命名，明确捕获规避；允许非单射和重复/未用项 |
+| 4c.c.4 内部替换完整验收 | 上述实际检查图、任意内部输入及上下文 | 原核存在唯一、类型保持、恒等/复合/rename兼容，并正式覆盖原free_substitution和free_strengthening所需关系 |
+| 5a ProofZF/U完整AST | 原6规则、27逻辑模式、七固定ZF公理及全部Separation/Collection；精确PP/ACwo/notAC码 | 纯成员AxZF/AxU/ProofZF/ProofU；全ω有限序列/前驱和作用域检查，不限制外部标准证明码 |
+| 5b 内部证明传输 | 既有外部源19规则/原核6规则双向传输的实际内部表示 | 内部编译器及全内部Proof正确性；所有语言/理论转换逐实例证明，不能仅引用外部Lean递归 |
+| 6 解释与最终Con | B为原nativeZF，不额外加入AC、不可达或Con(B) | 内部解释所需集合构造及证明变换；最终FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)，内部Con量化所有内部ω证明码 |
+
+每个工作单元先冻结纯对象公式和全部参数，再实现原Source推导、TheoryTransport及ZFReplay原核闭句。
+构建串行；每批运行scripts/verify.py，检查5个trust=0入口、全声明覆盖、精确原核足迹和源码哈希。
+Source/sourceZF/nativeZF证书是中间公式的真实对象证明，但以上未完成工作仍不得由本批的完整类型识别代替。

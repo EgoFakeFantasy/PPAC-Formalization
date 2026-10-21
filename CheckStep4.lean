@@ -3,6 +3,7 @@ import PPAC
 /-! 第四步当前验收内部有限序列、自然递推及基本数值加乘；不是完整ProofZF/U或Con验收。 -/
 namespace PPAC.Migration.Step4Checks
 open Source GraphSyntax OmegaSyntax Internal
+open FormulaCodeAllowedAritySyntax (expectedArity)
 open YesMetaZFC YesMetaZFC.Logic YesMetaZFC.Logic.FirstOrder YesMetaZFC.SetTheory
 attribute [local implicit_reducible] SetTheory.signature
 
@@ -2348,5 +2349,113 @@ example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
 example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence 3 w n b f)) :=
   ObjectFormulaCodeTreeValidity.native_binaryCase 3 w n b f
+
+example {m} (j : Nat) (g y i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.slotIndexSentence j g y i)) :=
+  ObjectFormulaCodeTypedDecode.native_slotIndex j g y i
+
+example {m} (j : Nat) (g w y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.slotNaturalSentence j g w y)) :=
+  ObjectFormulaCodeTypedDecode.native_slotNatural j g w y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.slotInputsSentence k xs w p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_slotInputs k xs w p l g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p l g i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.slotsFullSentence k xs w p l g i y)) :=
+  ObjectFormulaCodeTypedDecode.native_slotsFull k xs w p l g i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.slotsAllSentence k xs w p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_slotsAll k xs w p l g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (g h d e : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.graphEqualitySentence k xs g h d e)) :=
+  ObjectFormulaCodeTypedDecode.native_graphEquality k xs g h d e
+
+example {m} (w p l g h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.fieldsGraphSubstSentence w p l g h)) :=
+  ObjectFormulaCodeTypedDecode.native_fieldsGraphSubst w p l g h
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.forestRecoverSentence k xs w p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_forestRecover k xs w p l g
+
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (w n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.constructorRecoverSentence k tag xs w n t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_constructorRecover k tag xs w n t p l g
+
+example {m} (tag : Nat) (xs : Fin (expectedArity tag) → Fin m) (w n b f t p l g : Fin m) (ht : tag < 11) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.knownTypesSentence tag xs w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_knownTypes tag xs w n b f t p l g ht
+
+example {m} (tag : Nat) (xs : Fin (expectedArity tag) → Fin m) (w n b f t p l g : Fin m) (ht : tag < 11) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.codeFromSlotsSentence tag xs w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_codeFromSlots tag xs w n b f t p l g ht
+
+example {m} (k tag : Nat) (j : Fin k) (w g b f : Fin m) (ht : tag < 11) (hk : k = expectedArity tag) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.rootSlotSentence k tag j w g b f)) :=
+  ObjectFormulaCodeTypedDecode.native_rootSlot k tag j w g b f ht hk
+
+example {m} (tag : Nat) (w n b f t p l g : Fin m) (ht : tag < 11) (hk : 0 = expectedArity tag) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.arity0Sentence tag w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_arity0 tag w n b f t p l g ht hk
+
+example {m} (tag : Nat) (w n b f t p l g : Fin m) (ht : tag < 11) (hk : 1 = expectedArity tag) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.arity1Sentence tag w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_arity1 tag w n b f t p l g ht hk
+
+example {m} (tag : Nat) (w n b f t p l g : Fin m) (ht : tag < 11) (hk : 2 = expectedArity tag) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.arity2Sentence tag w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_arity2 tag w n b f t p l g ht hk
+
+example {m} (tag : Nat) (w n b f t p l g : Fin m) (ht : tag < 11) (hk : 3 = expectedArity tag) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.arity3Sentence tag w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_arity3 tag w n b f t p l g ht hk
+
+example {m} (tag : Nat) (w n b f t p l g : Fin m) (ht : tag < 11) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.rootCheckSentence tag w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_rootCheck tag w n b f t p l g ht
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.casesCodeSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_casesCode w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.dataCodeSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_dataCode w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.dataIffSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_dataIff w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.casesIffSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTypedDecode.native_casesIff w n b f t p l g
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.fiberCodeSentence w n b f)) :=
+  ObjectFormulaCodeTypedDecode.native_fiberCode w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.fiberIffSentence w n b f)) :=
+  ObjectFormulaCodeTypedDecode.native_fiberIff w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.rejectFiberIffSentence w n b f)) :=
+  ObjectFormulaCodeTypedDecode.native_rejectFiberIff w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTypedDecode.classificationSentence w n b f)) :=
+  ObjectFormulaCodeTypedDecode.native_classification w n b f
+
+example {m} (w n b f : Fin m) : ObjectFormulaCodeTypedDecode.fiberIffSentence w n b f =
+    ((OmegaSyntax.omega w).imp
+      ((FormulaCodeSyntax.formulaCode w n b f).iff (FormulaCodeTypedDataSyntax.typedFiber w n b f))).close := rfl
+
+example {m} (w n b f t p l g : Fin m) : ObjectFormulaCodeTypedDecode.dataCodeSentence w n b f t p l g =
+    ((OmegaSyntax.omega w).imp ((FormulaCodeTypedDataSyntax.typedData w n b f t p l g).imp
+      (FormulaCodeSyntax.formulaCode w n b f))).close := rfl
 
 end PPAC.Migration.Step4Checks
