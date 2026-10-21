@@ -579,4 +579,61 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructural
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.reverseExistsSentence)) := ObjectStructuralListPositions.native_reverseExists
 
+/-- 字段值保留实际tail求值和原head投影的内部见证。 -/
+example {m} (w n i y : Fin m) : StructuralListFieldSyntax.field w n i y = .ex
+    ((StructuralListProjectionSyntax.iteration false w.castSucc n.castSucc i.castSucc (Fin.last m)).conj
+      (StructuralListProjectionSyntax.step true w.castSucc (Fin.last m) y.castSucc)) := rfl
+
+/-- 图成员为精确原Kuratowski索引对像，覆盖所有对象且排除杂项。 -/
+example {m} (w n l g : Fin m) : StructuralListFieldPairSyntax.graph w n l g = .all
+    ((Source.Formula.mem (Fin.last m) g.castSucc).iff (.ex
+      ((Source.Formula.mem (Fin.last (m+1)) l.castSucc.castSucc).conj (.ex
+        ((StructuralListFieldSyntax.field w.castSucc.castSucc.castSucc n.castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2))).conj
+          (PairSyntax.ordered (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2)))))))) := rfl
+
+/-- 完整合同同时含原完整有界序列、精确图像及全边双条件。 -/
+example {m} (w n l g : Fin m) : StructuralListFieldGraphSyntax.fields w n l g =
+    (SequenceSyntax.sequence g l w).conj ((StructuralListFieldPairSyntax.graph w n l g).conj
+      (StructuralListFieldGraphSyntax.edgeLaw w n l g)) := rfl
+
+/-- 实际唯一图纤维不把完整函数图或算子总单值性作为额外前提。 -/
+example : ObjectStructuralListFields.fiberSentence = ((OmegaSyntax.omega (0 : Fin 3)).imp
+    ((Source.Formula.mem 2 0).imp (StructuralListFieldGraphSyntax.fieldsFiber 0 1 2))).close := rfl
+
+/-- 解码实际量化内部长度和完整图，保留原HasLength构造迹。 -/
+example {m} (w n : Fin m) : StructuralListFieldGraphSyntax.decoded w n = .ex (.ex
+    (((Source.Formula.mem (Fin.last m).castSucc w.castSucc.castSucc).conj
+      (StructuralListLengthSyntax.hasLength w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc)).conj
+      (StructuralListFieldGraphSyntax.fields w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))))) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.valueFiberSentence) := ObjectStructuralListFields.native_valueFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.valueRangeSentence) := ObjectStructuralListFields.native_valueRange
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.zeroSentence) := ObjectStructuralListFields.native_zero
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.successorSentence) := ObjectStructuralListFields.native_successor
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.pairFiberSentence) := ObjectStructuralListFields.native_pairFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.rawExistsSentence) := ObjectStructuralListFields.native_rawExists
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.edgeLawSentence) := ObjectStructuralListFields.native_edgeLaw
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.completeSentence) := ObjectStructuralListFields.native_complete
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.graphUniqueSentence) := ObjectStructuralListFields.native_graphUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.fiberSentence) := ObjectStructuralListFields.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.atLengthSentence) := ObjectStructuralListFields.native_atLength
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.decodeSentence) := ObjectStructuralListFields.native_decode
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.decodeIffSentence) := ObjectStructuralListFields.native_decodeIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.decodeUniqueSentence) := ObjectStructuralListFields.native_decodeUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.traceHeadSentence) := ObjectStructuralListFields.native_traceHead
+
 end PPAC.Migration.Step4Checks

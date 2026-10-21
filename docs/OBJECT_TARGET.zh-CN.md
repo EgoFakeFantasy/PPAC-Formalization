@@ -188,3 +188,20 @@ edge(f,k,y)↔Iteration_tail(w,n,r,y)，y为任意内部对象。
 八个闭句/模式、九个实例均有原nativeZF推导；详见STEP4_INTERNAL_LIST_POSITIONS_ACCEPTANCE.zh-CN.md。
 全部位置对应完成；实际完整有序head字段图、字段往返和完整语法树解码仍未完成。
 最终内部ProofZF/U及Con的对象层规格和完成标志保持不变。
+
+
+2026-10-22实际完整字段图对象推导更新：
+Field(w,n,i,y):=∃t(Iteration_tail(w,n,i,t)∧Step_head(w,t,y))。
+Entry(w,n,i,p):=∃y(Field(w,n,i,y)∧Ordered(p,i,y))，Ordered为原Kuratowski纯公式。
+Graph(w,n,l,g):=∀p(p∈g↔∃i(i∈l∧Entry(w,n,i,p)))。
+Fields(w,n,l,g)包含原完整Sequence(g,l,w)、Graph及∀i∀y(edge(g,i,y)↔(i∈l∧Field(w,n,i,y)))。
+Ω(w)、l∈w下，任意内部种子n都有实际唯一完整Fields图；图由原Replacement精确像实际构造。
+比较候选图仅要求Graph，未假定其functionOn或值域；这些性质均已证明。
+
+Decoded(w,n):=∃l∃g((l∈w∧HasLength(w,n,l))∧Fields(w,n,l,g))。
+Ω(w)下Valid(w,n)↔Decoded(w,n)，且任意两组实际长度/Fields图均有l=k及g=h。
+原Cons下实际空索引读取head；实际后继索引读取tail的前驱字段，均为双条件并覆盖全部内部自然索引。
+原迹中的Cons head与对应字段读取也有直接的对象双条件。
+15个完整闭句有源ZF、sourceZF原核核心及原nativeZF证明，见STEP4_INTERNAL_LIST_FIELDS_ACCEPTANCE.zh-CN.md。
+该解码保留实际HasLength构造迹；任意字段序列的逆编码、码唯一性及双向往返仍未完成。
+内部专用ProofZF/U和最终Con规格不变，不能由当前图解码或编译通过宣称最终目标完成。

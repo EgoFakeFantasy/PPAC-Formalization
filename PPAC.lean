@@ -65,3 +65,5 @@ import PPAC.Migration.Internal.ObjectStructuralListProjection
 import PPAC.Migration.Internal.ObjectStructuralListEnd
 
 import PPAC.Migration.Internal.ObjectStructuralListPositions
+
+import PPAC.Migration.Internal.ObjectStructuralListFields
