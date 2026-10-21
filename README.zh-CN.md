@@ -25,10 +25,11 @@
 Foundation和Pairing也给出任意内部集合不自属。完整函数图的逐点外延性、相容图的域包含到图包含、
 同域图相等以及实际定义域唯一性现已仅用Extensionality取得原核推导。
 现已定义实际并集递推轨迹，并用对象ω归纳证明给定轨迹的全部内部共同输入一致、相容及同域唯一；
-这些是以给定轨迹为前提的条件结果，轨迹存在性仍未证明。内部迭代图的存在、传递闭包/秩/累积层、
+这些给定轨迹结果现已用于全部内部n∈ω长度的实际轨迹构造，后继域及图唯一性也已完成。
+全轨迹族的收集与合并、传递闭包/秩/累积层、
 源Replacement到Collection的反向数学方向、两种AC与内部Con仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[给定迭代轨迹唯一性验收](docs/STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md)、[完整函数图逐点外延性验收](docs/STEP3_GRAPH_POINTWISE_ACCEPTANCE.zh-CN.md)、[对象ω结构验收](docs/STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md)、[对象ω及归纳模式验收](docs/STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md)、[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[全部内部有限迭代存在唯一验收](docs/STEP3_FINITE_ITERATION_ACCEPTANCE.zh-CN.md)、[给定迭代轨迹唯一性验收](docs/STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md)、[完整函数图逐点外延性验收](docs/STEP3_GRAPH_POINTWISE_ACCEPTANCE.zh-CN.md)、[对象ω结构验收](docs/STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md)、[对象ω及归纳模式验收](docs/STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md)、[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。

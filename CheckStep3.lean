@@ -518,4 +518,24 @@ theorem tracks_agree_on_all_internal_inputs {n} {Γ : Source.Context n} (f g d e
     (hd : Source.Derives Γ (OmegaStructureSyntax.transitive d)) (hc : Source.Derives Γ (OmegaStructureSyntax.transitive e)) :
     Source.Derives Γ (IterationSyntax.allCommon f g d e w) := IterationInduction.all_common f g d e z a w he hs hw hz hf hg hd hc
 
+/-- 实际有限轨迹的域是对象长度的后继，图保留完整原functionOn及递推规律。 -/
+example {n} (f d k z a : Fin n) : FiniteIterationSyntax.witness f d k z a =
+    (OmegaSyntax.successor d k).conj (IterationSyntax.track f d z a) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectFiniteIteration.baseSentence) := ObjectFiniteIteration.native_base
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectFiniteIteration.existenceSentence) := ObjectFiniteIteration.native_existence
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectFiniteIteration.uniquenessSentence) := ObjectFiniteIteration.native_uniqueness
+
+/-- 存在结论已覆盖全部内部ω长度，且有源Replacement版ZF的实际推导。 -/
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectFiniteIteration.existenceSentence := ObjectFiniteIteration.source_ZF_existence
+
+/-- 八句有限公理理论内的原核证书；未调用Replacement、Collection或对象AC。 -/
+example : FirstOrder.Derives (TheoryTransport.theory ObjectFiniteIteration.assumptions) []
+    (Translation.sentence ObjectFiniteIteration.existenceSentence) := ObjectFiniteIteration.existence_kernel_certificate
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectFiniteIteration.assumptions) []
+    (Translation.sentence ObjectFiniteIteration.uniquenessSentence) := ObjectFiniteIteration.uniqueness_kernel_certificate
+
 end PPAC.Migration.Step3Checks

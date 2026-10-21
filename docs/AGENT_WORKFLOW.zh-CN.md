@@ -12,21 +12,23 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
 | 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
-| 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 有序对/图操作及ω存在/归纳完成；内部迭代/传递覆盖待做；不使用Collection作为输入 |
+| 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 对象内部有限迭代存在唯一完成；全族收集/传递覆盖待做；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
-| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 图操作及内部ω存在/归纳完成；内部迭代/传递覆盖待做 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 图操作及内部有限迭代存在唯一完成；全族收集/传递覆盖待做 |
 | 3b.2b.1 | 原edge/functionOn与对象有序对 | GraphSyntax、GraphLogic、GraphProperties、SingletonGraphLogic、SingletonMap、ObjectGraphs | 完整原公式严格对应；单点函数图实际存在；任意图的边定义域、域内输出存在及单值性；原核Derives | 完成 |
 | 3b.2b.2 | 源集合图和Pairing/Union/Extensionality/Separation | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 图插入、限制及任意内部相容族合并完成 |
 | 3b.2b.2a | Pairing、Union、Extensionality及原functionOn | InsertSyntax/Logic/Existence、GraphInsert*、ObjectGraphInsert | 任意旧函数图与x∉d下的实际扩展图存在唯一；完整functionOn及全部边刻画；源ZF与原核Derives | 完成 |
 | 3b.2b.2b | 全Separation、Union与Extensionality | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 图限制及任意内部相容族合并完成 |
 | 3b.2b.2b.i | Extensionality及一个完整Separation实例 | RestrictionSyntax/Edges/Function/Algebra/Existence、ObjectRestriction | 任意图的限制集合实际存在；子域上的原functionOn、精确边、唯一/恒等/组合闭句 | 完成 |
 | 3b.2b.2b.ii | 原对象Kuratowski编码、Union、Extensionality与一个Separation实例 | GraphDomain*、GraphFamily*、ObjectGraphFamily | 任意图定义域实际存在唯一；任意内部相容图集合族（含空族）并图存在唯一；完整原functionOn和精确边关系 | 完成 |
-| 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | ω存在/唯一/归纳及结构完成；迭代/覆盖待做 |
+| 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | 内部有限迭代存在唯一完成；全族收集/覆盖待做 |
 | 3b.2b.3a | 原Infinity、Extensionality及完整Separation | OmegaSyntax/Universal/Cut/Existence/Algebra、OmegaInduction*、ObjectOmega | 实际最小归纳集合ω存在唯一；任意参数公式的每个模式实例均有完整对象ω归纳闭句及原核Derives | 完成 |
 | 3b.2b.3a.i | 对象ω归纳及原Foundation/集合图设施 | OmegaStructureSyntax/Induction/Algebra、OmegaElementary、ObjectIrreflexivity、ObjectOmegaStructure | 内部0/后继分解、成员闭包/传递性、后继消去及迭代图所需的新输入不在旧域事实；均保留对象量词 | 完成 |
-| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 完整函数图逐点外延性；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 图逐点外延性及给定轨迹相容/同域唯一完成；实际全内部存在下一项 |
+| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 完整函数图逐点外延性；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 全部内部有限轨迹存在、后继域及图唯一完成；Replacement收集与传递覆盖待做 |
 | 3b.2b.3b.i | 原完整functionOn、Kuratowski边和Extensionality | GraphPointwiseSyntax/Entries/Domain、GraphPointwise、ObjectGraphPointwise | 逐边相等推出实际图相等；相容函数域包含推出图包含；同域图相等；实际定义域唯一；源ZF与原核Derives | 完成 |
-| 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 条件相容/唯一完成；存在性待做 |
+| 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 相容/唯一完成；实际存在见下一行 |
+| 3b.2b.3b.iii | 对象图扩展、ω归纳、Extensionality/Pairing/Union/Foundation与四个完整Separation实例 | FiniteIterationSyntax/Uniqueness、IterationBase/Existence、IterationExtension*、IterationExistence、ObjectFiniteIteration | 全部内部n∈ω的实际有限图存在；后继域与图唯一；原完整functionOn/种子/递推条件；源ZF与原核Derives | 完成 |
+| 3b.2b.3b.iv | 上项全内部存在唯一、原Replacement与相容图族并 | IterationCollection、TransitiveCover | 实际取得全部内部n的轨迹/末值集合，再合并并证明每个集合有传递覆盖；不得只定义族谓词 | 下一项 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -182,3 +184,14 @@ ObjectIterationUniqueness有三个完整闭句及源ZF/原核Derives，理论输
 以上以前提中的实际轨迹为条件，尚未构造每个内部n的轨迹，不能把唯一性当作存在唯一性。
 下一项从零长度单点图和新鲜后继扩展出发，验证完整递推条件，证明所有内部n的实际图存在；
 随后装配n的后继域、相容性和唯一性，再Replacement收集并合并。实际验收见STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md。
+
+全部内部有限迭代更新：FiniteIterationSyntax.witness(f,d,n,z,a)精确为Succ(d,n)∧Track(f,d,z,a)。
+IterationBaseExistence由实际单点图与原存在消去构造空集索引的∃d∃f见证；
+IterationExtensionAlgebra检查旧/新边的四种组合，IterationExtensionExistence先从原Union取得下一值，
+再实际构造图扩展并保留全部递推条件。IterationExistence以两个种子参数的完整公式
+实例化对象ω归纳，取得∀n∈ω∃d∃f witness(f,d,n,z,a)。
+FiniteIterationUniqueness将后继域的传递性及包含于ω接入已有轨迹相容/图外延性，证明域与图都唯一。
+ObjectFiniteIteration有基础存在、全部内部长度存在和全部域/图唯一性的原核闭句及源ZF推导。
+有限八句公理理论包含Extensionality、Pairing、Union、Foundation和四个Separation实例，未调用Replacement/Collection/AC。
+现在可推进Replacement收集全部内部轨迹/末值及实际合并；全族集合、全局并图与传递覆盖仍未构造。
+实际验收见STEP3_FINITE_ITERATION_ACCEPTANCE.zh-CN.md；最终内部Con状态仍未完成。
