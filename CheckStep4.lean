@@ -1318,4 +1318,190 @@ example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
 example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxAtoms.nullaryAtomicSentence true w b f n)) := ObjectSyntaxAtoms.native_nullaryAtomic true w b f n
 
+/-! 七种逻辑局部分支及真实上下文集合值/幂集载体验收。 -/
+
+example {m}  (h d x v b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.readAtValueSentence  h d x v b f)) := ObjectSyntaxLogical.native_readAtValue  h d x v b f
+
+example {m}  (h x b f k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.advancedAtSuccessorSentence  h x b f k)) := ObjectSyntaxLogical.native_advancedAtSuccessor  h x b f k
+
+example {m}  (w b f k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.successorContextSentence  w b f k)) := ObjectSyntaxLogical.native_successorContext  w b f k
+
+example {m} (tag : Nat) (advance : Bool) (w b f h x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleTypesSentence tag advance w b f h x n)) := ObjectSyntaxLogical.native_singleTypes tag advance w b f h x n
+
+example {m}  (w b f h x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.negationTypesSentence  w b f h x n)) := ObjectSyntaxLogical.native_negationTypes  w b f h x n
+
+example {m} (kind : Fin 4) (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryTypesSentence kind w b f h x y n)) := ObjectSyntaxLogical.native_binaryTypes kind w b f h x y n
+
+example {m} (universal : Bool) (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierTypesSentence universal w b f h x n k)) := ObjectSyntaxLogical.native_quantifierTypes universal w b f h x n k
+
+example {m} (tag : Nat) (advance : Bool) (w b f h x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleExistsSentence tag advance w b f h x)) := ObjectSyntaxLogical.native_singleExists tag advance w b f h x
+
+example {m} (kind : Fin 4) (w b f h x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryExistsSentence kind w b f h x y)) := ObjectSyntaxLogical.native_binaryExists kind w b f h x y
+
+example {m} (universal : Bool) (w b f h x k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierExistsSentence universal w b f h x k)) := ObjectSyntaxLogical.native_quantifierExists universal w b f h x k
+
+example {m} (tag : Nat) (w x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleFieldsSentence tag w x y n)) := ObjectSyntaxLogical.native_singleFields tag w x y n
+
+example {m} (kind : Fin 4) (w x y u v n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryFieldsSentence kind w x y u v n)) := ObjectSyntaxLogical.native_binaryFields kind w x y u v n
+
+example {m} (tag : Nat) (w x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleBoundSentence tag w x n)) := ObjectSyntaxLogical.native_singleBound tag w x n
+
+example {m} (kind : Fin 4) (w x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryBoundsSentence kind w x y n)) := ObjectSyntaxLogical.native_binaryBounds kind w x y n
+
+example {m} (tag : Nat) (w x n r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleUniqueSentence tag w x n r)) := ObjectSyntaxLogical.native_singleUnique tag w x n r
+
+example {m} (kind : Fin 4) (w x y n r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryUniqueSentence kind w x y n r)) := ObjectSyntaxLogical.native_binaryUnique kind w x y n r
+
+example {m} (tag : Nat) (advance : Bool) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleRangeSentence tag advance w b f h n)) := ObjectSyntaxLogical.native_singleRange tag advance w b f h n
+
+example {m} (tag : Nat) (advance : Bool) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleDecodeSentence tag advance w b f h n)) := ObjectSyntaxLogical.native_singleDecode tag advance w b f h n
+
+example {m} (kind : Fin 4) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryRangeSentence kind w b f h n)) := ObjectSyntaxLogical.native_binaryRange kind w b f h n
+
+example {m} (kind : Fin 4) (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryDecodeSentence kind w b f h n)) := ObjectSyntaxLogical.native_binaryDecode kind w b f h n
+
+example {m} (tag : Nat) (w n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleFiberSentence tag w n x)) := ObjectSyntaxLogical.native_singleFiber tag w n x
+
+example {m} (kind : Fin 4) (w n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryFiberSentence kind w n x y)) := ObjectSyntaxLogical.native_binaryFiber kind w n x y
+
+example {m} (tag : Nat) (advance : Bool) (w b f h x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleNotCheckSentence tag advance w b f h x n)) := ObjectSyntaxLogical.native_singleNotCheck tag advance w b f h x n
+
+example {m} (kind : Fin 4) (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryNotReadsSentence kind w b f h x y n)) := ObjectSyntaxLogical.native_binaryNotReads kind w b f h x y n
+
+example {m} (universal : Bool) (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierNotReadSentence universal w b f h x n k)) := ObjectSyntaxLogical.native_quantifierNotRead universal w b f h x n k
+
+example {m} (tag : Nat) (advance : Bool) (w b f h t p n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleUnknownTagSentence tag advance w b f h t p n)) := ObjectSyntaxLogical.native_singleUnknownTag tag advance w b f h t p n
+
+example {m} (kind : Fin 4) (w b f h t p n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryUnknownTagSentence kind w b f h t p n)) := ObjectSyntaxLogical.native_binaryUnknownTag kind w b f h t p n
+
+example {m}  (p b f w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.pairSubsetSentence  p b f w)) := ObjectSyntaxContextCarrier.native_pairSubset  p b f w
+
+example {m}  (w a c b f p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.orderedMemberSentence  w a c b f p)) := ObjectSyntaxContextCarrier.native_orderedMember  w a c b f p
+
+example {m}  (w a c b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.pairExistsSentence  w a c b f)) := ObjectSyntaxContextCarrier.native_pairExists  w a c b f
+
+example {m}  (c u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.stateMemberSentence  c u v)) := ObjectSyntaxContextCarrier.native_stateMember  c u v
+
+example {m}  (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.existsSentence  w)) := ObjectSyntaxContextCarrier.native_exists  w
+
+example {m}  (w a c u v d t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxContextCarrier.uniqueSentence  w a c u v d t)) := ObjectSyntaxContextCarrier.native_unique  w a c u v d t
+
+example : SyntaxLogicalSyntax.binaryTag 0 = 5 := rfl
+example : SyntaxLogicalSyntax.binaryTag 1 = 6 := rfl
+example : SyntaxLogicalSyntax.binaryTag 2 = 7 := rfl
+example : SyntaxLogicalSyntax.binaryTag 3 = 8 := rfl
+example : SyntaxLogicalSyntax.quantifierTag true = 9 := rfl
+example : SyntaxLogicalSyntax.quantifierTag false = 10 := rfl
+
+/-- 两个量词体读取实际后继bound，不沿用父式bound；free保持原槽位。 -/
+example {m} (h x b f : Fin m) : SyntaxContextReadSyntax.advanced h x b f =
+    Source.Formula.ex ((OmegaSyntax.successor (Fin.last m) b.castSucc).conj
+      (SyntaxContextReadSyntax.read h.castSucc x.castSucc (Fin.last m) f.castSucc)) := rfl
+
+example {m} (w a c u : Fin m) : SyntaxContextCarrierSyntax.tower w a c u =
+    (PowerSetSyntax.powerOf a w).conj ((PowerSetSyntax.powerOf c a).conj (PowerSetSyntax.powerOf u c)) := rfl
+
+example {m} (h x b f : Fin m) : SyntaxContextReadSyntax.read h x b f =
+    Source.Formula.ex ((GraphSyntax.edge h.castSucc x.castSucc (Fin.last m)).conj
+      (GraphSyntax.edge (Fin.last m) b.castSucc f.castSucc)) := rfl
+
+example {m} (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryTypesSentence 0 w b f h x y n)) := ObjectSyntaxLogical.native_binaryTypes 0 w b f h x y n
+
+example {m} (w b f h x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryExistsSentence 0 w b f h x y)) := ObjectSyntaxLogical.native_binaryExists 0 w b f h x y
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryDecodeSentence 0 w b f h n)) := ObjectSyntaxLogical.native_binaryDecode 0 w b f h n
+
+example {m} (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryTypesSentence 1 w b f h x y n)) := ObjectSyntaxLogical.native_binaryTypes 1 w b f h x y n
+
+example {m} (w b f h x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryExistsSentence 1 w b f h x y)) := ObjectSyntaxLogical.native_binaryExists 1 w b f h x y
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryDecodeSentence 1 w b f h n)) := ObjectSyntaxLogical.native_binaryDecode 1 w b f h n
+
+example {m} (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryTypesSentence 2 w b f h x y n)) := ObjectSyntaxLogical.native_binaryTypes 2 w b f h x y n
+
+example {m} (w b f h x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryExistsSentence 2 w b f h x y)) := ObjectSyntaxLogical.native_binaryExists 2 w b f h x y
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryDecodeSentence 2 w b f h n)) := ObjectSyntaxLogical.native_binaryDecode 2 w b f h n
+
+example {m} (w b f h x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryTypesSentence 3 w b f h x y n)) := ObjectSyntaxLogical.native_binaryTypes 3 w b f h x y n
+
+example {m} (w b f h x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryExistsSentence 3 w b f h x y)) := ObjectSyntaxLogical.native_binaryExists 3 w b f h x y
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.binaryDecodeSentence 3 w b f h n)) := ObjectSyntaxLogical.native_binaryDecode 3 w b f h n
+
+example {m} (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierTypesSentence true w b f h x n k)) := ObjectSyntaxLogical.native_quantifierTypes true w b f h x n k
+
+example {m} (w b f h x k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierExistsSentence true w b f h x k)) := ObjectSyntaxLogical.native_quantifierExists true w b f h x k
+
+example {m} (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierNotReadSentence true w b f h x n k)) := ObjectSyntaxLogical.native_quantifierNotRead true w b f h x n k
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleDecodeSentence (SyntaxLogicalSyntax.quantifierTag true) true w b f h n)) := ObjectSyntaxLogical.native_singleDecode (SyntaxLogicalSyntax.quantifierTag true) true w b f h n
+
+example {m} (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierTypesSentence false w b f h x n k)) := ObjectSyntaxLogical.native_quantifierTypes false w b f h x n k
+
+example {m} (w b f h x k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierExistsSentence false w b f h x k)) := ObjectSyntaxLogical.native_quantifierExists false w b f h x k
+
+example {m} (w b f h x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.quantifierNotReadSentence false w b f h x n k)) := ObjectSyntaxLogical.native_quantifierNotRead false w b f h x n k
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleDecodeSentence (SyntaxLogicalSyntax.quantifierTag false) true w b f h n)) := ObjectSyntaxLogical.native_singleDecode (SyntaxLogicalSyntax.quantifierTag false) true w b f h n
+
+example {m} (w b f h x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleExistsSentence 4 false w b f h x)) := ObjectSyntaxLogical.native_singleExists 4 false w b f h x
+
+example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxLogical.singleDecodeSentence 4 false w b f h n)) := ObjectSyntaxLogical.native_singleDecode 4 false w b f h n
+
 end PPAC.Migration.Step4Checks

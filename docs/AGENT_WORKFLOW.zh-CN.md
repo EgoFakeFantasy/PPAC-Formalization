@@ -108,9 +108,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 构造a.i及纯项作用域a.ii完成；公式类型见a.iii及4c.b |
 | 4c.a.i | 真实内部数码、原Nil/Cons及raw节点 | SyntaxNumeralSyntax/Numerals、SyntaxForestSyntax/Forests/ForestLength、SyntaxNodeSyntax/Nodes/Constructors、SyntaxVariableSyntax/Variables、ObjectSyntaxConstructors | 有限标签存在唯一/顺序/互斥；精确字段数/实际长度/严格界；scalar全内部索引单射；bvar/fvar实际存在唯一/互斥；11标签/字段数构造实例 | 完成；18个源ZF/原nativeZF闭句模式，见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md |
 | 4c.a.ii | 上项精确字段、原raw/Cons输入单射性 | SyntaxForestInjective/Arity、SyntaxNodeInjective/Arity、SyntaxVariableDecodeSyntax/Decode、SyntaxTermSyntax/Branches/Terms/Reject、ObjectSyntaxTerms | 同码字段/内部索引恢复；实际唯一解码；纯项完整scope双条件与实际构造；空/错域、错字段及任意内部payload函数标签拒绝 | 完成；27个源ZF/原nativeZF闭句模式，见STEP4_SYNTAX_TERM_SCOPE_ACCEPTANCE.zh-CN.md |
-| 4c.a.iii | 纯项实际作用域检查、原11构造标签及字段数 | 计划SyntaxFormulaLocal、TypedSyntaxOperator | membership编号0必须为scalar叶；原关系/等词项类型；五个联结词及两个量词的精确类型分支；量词子式bound真实后继 | 原子局部分支a已完成；逻辑及量词分支b待做 |
+| 4c.a.iii | 纯项实际作用域检查、原11构造标签及字段数 | 计划SyntaxFormulaLocal、TypedSyntaxOperator | membership编号0必须为scalar叶；原关系/等词项类型；五个联结词及两个量词的精确类型分支；量词子式bound真实后继 | a/b局部分支完成；完整递归类型仍待4c.b |
 | 4c.a.iii.a | 上项纯项scope及实际scalar/数码 | SyntaxAtomSyntax/Logic/Typing/Existence/Unique/Decode/Cases/Reject、SyntaxZeroScalar、ObjectSyntaxAtoms | 原关系唯一编号0的scalar字段；falsum/truth空分支、membership三个字段、equal两个字段；原子项在相同内部bound/free长度检查；原核证书 | 完成；25个闭句模式，见STEP4_SYNTAX_ATOM_TYPING_ACCEPTANCE.zh-CN.md |
-| 4c.a.iii.b | 原精确字段及局部前段状态读取 | 计划SyntaxFormulaLogical/Local | neg/conj/disj/imp/iff子式保持上下文；forall/exists子式bound取实际后继，free不变；全部真实子码严格界 | 待做 |
+| 4c.a.iii.b | 原精确字段及局部前段状态读取 | SyntaxContextReadSyntax/Read、SyntaxLogicalSyntax/Typing/Existence/Fields/Decode/Reject、ObjectSyntaxLogical | neg/conj/disj/imp/iff子式保持上下文；forall/exists子式bound取实际后继，free不变；全部真实子码严格界 | 完成；27个闭句模式，见STEP4_SYNTAX_LOGICAL_CONTEXT_ACCEPTANCE.zh-CN.md |
 | 4c.b | 上项具体类型算子、实际内部序数递归和严格子码界 | 计划Internal/TypedSyntaxRecursion/Check | 实际构造类型状态及任意内部上下文上的总单值检查；量词体bound长度真实后继；接受/拒绝双条件及类型正确码实际解码 | 待做；不能只验外部标准quotation |
 | 4c.c | 全11构造及全内部类型检查 | 计划Internal/SyntaxTransform | 全部重命名、提升、加强和非单射统一替换的实际内部图与正确性；保持捕获规避和bound/free槽位；原核推导 | 待做；步骤2的外部编译器仅作参考 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -737,11 +737,25 @@ Term保留两个内部自然上下文长度和严格索引成员关系；已知�
 
 | 后续工作单元 | 实现输入与交付 | 对象层验收条件 | 当前状态 |
 |---|---|---|---|
-| 4c.a.iii.b.1 | neg/conj/disj/imp/iff的精确原字段AST与前段类型状态读取 | 全部子码严格界；同一(b,f)读取；字段数/标签和解码唯一性 | 待做 |
-| 4c.a.iii.b.2 | forall/exists的原单字段及实际后继bound见证 | Succ(b',b)，读取(b',f)；free不变；禁止将原b直接传给量词体 | 待做 |
-| 4c.b.1 | 实际构造ω的两次幂集C及上下文对guard | Kuratowski(b,f)在b,f∈ω时属于C；类型状态由C上Separation实际构造，且属于P(C) | 待做 |
+| 4c.a.iii.b.1 | neg/conj/disj/imp/iff的精确原字段AST与前段类型状态读取 | 全部子码严格界；同一(b,f)读取；字段数/标签和解码唯一性 | 本批完成 |
+| 4c.a.iii.b.2 | forall/exists的原单字段及实际后继bound见证 | Succ(b',b)，读取(b',f)；free不变；禁止将原b直接传给量词体 | 本批完成 |
+| 4c.b.1a | 实际构造三层幂集A/C/U及Kuratowski上下文对 | 三层幂集真实存在唯一；上下文对属于C；任意状态子集属于U | 本批完成；6个闭句模式 |
+| 4c.b.1b | 组合11个局部判据，在实际C上Separation构造状态 | 排除非上下文对杂项；每对成员精确双条件；实际状态唯一且属于U | 下一主项 |
 | 4c.b.2 | 原子/逻辑/量词组合的上下文集合值算子 | 实际有效历史上的总单值性，含非自然输入默认值；不以宿主递归给状态 | 待做 |
 | 4c.b.3 | 实例化原对象超限递归并证明全前段读取对应 | 每个内部自然原码有实际唯一状态；全部11分支精确类型双条件 | 待做 |
 | 4c.c | 任意内部非单射rename/替换图与捕获规避 | 全部内部码及真实上下文下对象推导；不只检查标准宿主证书 | 待做 |
 
 原子局部门禁通过不改变完整11公式类型/上下文递归/替换/ProofZF/U/内部Con的False状态。
+
+2026-10-22逻辑局部分支与实际上下文载体批次：
+4c.a.iii.b完成；Read查询实际历史的集合值，量词体明确在真实Succ(k,b)下查询(k,f)。
+七种分支有精确原码类型双条件、实际码构造、严格子码界、唯一解码和所需状态缺失的拒绝。
+4c.b.1a同时完成：三层幂集真实存在唯一；全部内部上下文对和状态子集有实际统一载体。
+12个模块231项显式声明，33个新增完整闭句模式；578任务、5535审计、0警告、547哈希差异0。
+累计330对核心/native精确足迹；见STEP4_SYNTAX_LOGICAL_CONTEXT_ACCEPTANCE.zh-CN.md。
+
+下一项4c.b.1b先组合原子和七种逻辑分支，再对载体C上的上下文对执行实际Separation。
+局部判据只读取严格较小子码的前段状态；量词体通过实际后继bound变化，不能固定初始上下文。
+状态必须排除非上下文对杂项，保留两侧自然守卫，证明逐对成员双条件及属于U。
+之后证明算子实际总单值性并实例化原对象递归，核验全部前段读取和11构造完整递归类型式。
+未构造该状态/算子/递归图；完整类型、内部替换、ProofZF/U及最终Con完成门禁仍False。

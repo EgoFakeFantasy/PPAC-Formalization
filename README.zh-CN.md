@@ -1,13 +1,13 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：本批完成原falsum/truth、membership、equal四种原子公式的精确局部类型。
-原关系编号0须为scalar叶，其树数值为内部2；原子项使用同一完整bound/free上下文。
-实际码构造、同码字段恢复、内部量词唯一解码和未知内部标签拒绝均有原推导核证书。
-新增25个完整闭句模式；全仓566个构建任务、5304项声明审计、0警告，535份源码哈希独立复核无差异。
-详见[原子类型与解码验收](docs/STEP4_SYNTAX_ATOM_TYPING_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项为七种逻辑/量词构造的局部分支，再实际构造全内部上下文类型状态递归；量词体bound取真实后继。
-最终目标仍是对象核Derives nativeZF [] (Con_ZF→Con_target)；完整公式类型、内部替换及Proof/Con尚未完成。
+当前进展：七种逻辑/量词构造的精确局部类型、实际码构造和唯一内部解码已完成。
+类型状态是内部上下文对集合；量词体读取真实后继bound，free保持不变。
+另实际构造了所有内部上下文对及状态子集的三层幂集载体，并证明唯一性。
+新增33个完整原核闭句模式；全仓578任务、5535声明审计、0警告，547份源码哈希独立复核无差异。
+详见[逻辑分支与上下文载体验收](docs/STEP4_SYNTAX_LOGICAL_CONTEXT_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项组合全部11个局部判据，用实际Separation构造上下文状态，再证明集合值递归算子的总单值性和完整类型正确性。
+最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整状态递归、内部替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

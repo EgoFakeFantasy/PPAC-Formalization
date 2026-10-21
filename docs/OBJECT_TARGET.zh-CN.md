@@ -317,3 +317,14 @@ Membership/Equality恰好对应包含原码、合法类型和所有内部候选�
 下一项是其余七种逻辑/量词局部分支。完整类型递归须保留所有内部(b,f)状态，
 量词体在实际Succ(b',b)下读取(b',f)，不能以固定初始bound的树二值递归替代。
 ProofZF/U、任意内部证明码正确性、内部替换/编译器及最终Con依旧未完成。
+
+2026-10-22逻辑局部类型及实际上下文载体更新：
+Read(h,x,b,f):=∃S(Edge(h,x,S)∧Edge(S,b,f))，S为内部上下文对集合。
+历史为实际原函数图时，读取恰好对应其真实输出状态的上下文对成员。
+两个量词使用Advanced:=∃k(Succ(k,b)∧Read(h,x,k,f))；原核证明给定真实后继k时恰为Read(h,x,k,f)。
+否定及四种二元联结词保持原(b,f)；所有分支保留Ctx、精确原字段及严格子码界。
+实际自然码构造、原字段恢复、编码唯一性、真实内部量词解码双条件和缺失状态拒绝均证明。
+三层幂集Tower(w,A,C,U)实际存在唯一；b,f∈w的Kuratowski对属于C=P(P(w))，所有状态子集属于U=P(C)。
+33个新增完整闭句模式有原Source/sourceZF/nativeZF证书；详见STEP4_SYNTAX_LOGICAL_CONTEXT_ACCEPTANCE.zh-CN.md。
+组合局部状态的实际Separation、集合值算子和完整类型递归仍待做。
+内部替换、ZF/U专用Proof检查及任意内部码正确性、内部编译器和最终Con依旧未完成。
