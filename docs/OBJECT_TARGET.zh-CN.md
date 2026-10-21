@@ -96,3 +96,13 @@ fiber实际取得a,b并给出此双向刻画，boundedFiber另外给出a≤p和b
 六个完整闭句均有源ZF及原nativeZF实际推导。没有外部标准ω、宿主平方根或语义模型假设。
 原配数与逆解码已经完成；原结构列表/树码、专用ProofZF/U与最终Con主句仍未完成。
 详见STEP4_GODEL_UNPAIR_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22原始结构节点对象推导更新：StructuralNodeSyntax.raw(w,tag,payload,n)为
+∃q(Pair(w,tag,payload,q)∧Succ(n,q))，严格保留原raw_node的后继配数约定。
+实际全内部自然输入有唯一正自然编码值，且tag∈n和payload∈n。
+内部自然码n有raw_node分解当且仅当¬Empty(n)；每个正码实际取得自然标签和载荷，
+任意候选对满足解码关系当且仅当它们等于实际分量，并有两个严格成员子码界。
+九个完整闭句均有源ZF及原nativeZF实际推导。原始数值节点分解尚不检查有效标签或字段，
+Nil/Cons、有效列表/树、专用ProofZF/U与最终Con仍未完成。
+详见STEP4_STRUCTURAL_NODE_ACCEPTANCE.zh-CN.md。

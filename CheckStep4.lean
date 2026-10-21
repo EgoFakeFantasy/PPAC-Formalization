@@ -284,4 +284,40 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelUnpair
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGodelUnpair.boundedSentence) := ObjectGodelUnpair.native_bounded
 
+/-- 原raw_node严格是先原配数、再对象后继，未交换参数或省去见证。 -/
+example {m} (w tag payload n : Fin m) : StructuralNodeSyntax.raw w tag payload n = .ex
+    ((GodelPairSyntax.code w.castSucc tag.castSucc payload.castSucc (Fin.last m)).conj
+      (OmegaSyntax.successor n.castSucc (Fin.last m))) := rfl
+
+/-- 节点解码候选均在内部ω；有界纤维保存严格成员子码界。 -/
+example {m} (w n a b : Fin m) : StructuralNodeDecodeSyntax.witness w n a b =
+    ((Source.Formula.mem a w).conj (.mem b w)).conj (StructuralNodeSyntax.raw w a b n) := rfl
+
+example {m} (w n : Fin m) : StructuralNodeDecodeSyntax.boundedFiber w n = .ex (.ex
+    (((StructuralNodeDecodeSyntax.witness w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).conj
+      (StructuralNodeDecodeSyntax.exactAt w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1)))).conj
+        ((Source.Formula.mem (Fin.last m).castSucc n.castSucc.castSucc).conj (.mem (Fin.last (m+1)) n.castSucc.castSucc)))) := rfl
+
+/-- 仅正码是raw_node；不能将原始节点分解等同于有效语法树检查。 -/
+example : ObjectStructuralNode.positiveIffSentence = ((OmegaSyntax.omega (0 : Fin 2)).imp
+    ((Source.Formula.mem 1 0).imp ((OmegaSyntax.empty 1).neg.iff (StructuralNodeDecodeSyntax.preimage 0 1)))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.encodeFiberSentence) := ObjectStructuralNode.native_encodeFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.closureSentence) := ObjectStructuralNode.native_closure
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.positiveSentence) := ObjectStructuralNode.native_positive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.componentsSentence) := ObjectStructuralNode.native_components
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.injectiveSentence) := ObjectStructuralNode.native_injective
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.positiveIffSentence) := ObjectStructuralNode.native_positiveIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.decodeTotalSentence) := ObjectStructuralNode.native_decodeTotal
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.decodeFiberSentence) := ObjectStructuralNode.native_decodeFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.decodeBoundsSentence) := ObjectStructuralNode.native_decodeBounds
+
 end PPAC.Migration.Step4Checks
