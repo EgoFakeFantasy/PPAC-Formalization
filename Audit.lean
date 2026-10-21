@@ -4215,3 +4215,96 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.Internal.ObjectStructuralListEncode.source_readback
 #print axioms PPAC.Migration.Internal.ObjectStructuralListEncode.readback_kernel_certificate
 #print axioms PPAC.Migration.Internal.ObjectStructuralListEncode.native_readback
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.agree
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.property
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.matrix
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.consViewBody
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.consView
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.agree_rename
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.property_rename
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.consView_rename
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.matrix_pred
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.agree_at
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.property_at
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.intro_view
+#print axioms PPAC.Migration.Internal.StructuralListCodeSyntax.eliminate_view
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeLength.predecessor_unique
+#print axioms PPAC.Migration.Internal.StructuralListCodeLength.tail_length
+#print axioms PPAC.Migration.Internal.StructuralListCodeLength.nil_successor_absurd
+#print axioms PPAC.Migration.Internal.StructuralListCodeLength.successor_view
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeFields.head_subst
+#print axioms PPAC.Migration.Internal.StructuralListCodeFields.tail_subst
+#print axioms PPAC.Migration.Internal.StructuralListCodeFields.heads_equal
+#print axioms PPAC.Migration.Internal.StructuralListCodeFields.tail_point
+#print axioms PPAC.Migration.Internal.StructuralListCodeFields.agree_tails
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeStep.point
+#print axioms PPAC.Migration.Internal.StructuralListCodeStep.property_successor
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.empty_point
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.property_empty
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.base
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.step
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.all_unique
+#print axioms PPAC.Migration.Internal.StructuralListCodeInduction.unique
+
+#print axioms PPAC.Migration.Internal.StructuralListCodeGraph.same_fields_point
+#print axioms PPAC.Migration.Internal.StructuralListCodeGraph.from_common_fields
+#print axioms PPAC.Migration.Internal.StructuralListCodeGraph.same_fields_unique
+#print axioms PPAC.Migration.Internal.StructuralListCodeGraph.encoded_unique
+
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.encodingFiber
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.roundTripBody
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.roundTrip
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.encodingFiber_rename
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.roundTrip_rename
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.intro_fiber
+#print axioms PPAC.Migration.Internal.StructuralListRoundTripSyntax.intro_roundTrip
+
+#print axioms PPAC.Migration.Internal.StructuralListRoundTrip.exists_unique_encoding
+#print axioms PPAC.Migration.Internal.StructuralListRoundTrip.decode_then_encode
+#print axioms PPAC.Migration.Internal.StructuralListRoundTrip.reencode_exists
+
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.predecessorSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.consViewSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.headsSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.tailsSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.codeUniqueSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.sameGraphSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.encodedUniqueSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.encodingFiberSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.decodeThenEncodeSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.roundTripSentence
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_predecessor
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.predecessor_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_predecessor
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_consView
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.consView_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_consView
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_heads
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.heads_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_heads
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_tails
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.tails_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_tails
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_codeUnique
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.codeUnique_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_codeUnique
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_sameGraph
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.sameGraph_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_sameGraph
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_encodedUnique
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.encodedUnique_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_encodedUnique
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_encodingFiber
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.encodingFiber_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_encodingFiber
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_decodeThenEncode
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.decodeThenEncode_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_decodeThenEncode
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.source_roundTrip
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.roundTrip_kernel_certificate
+#print axioms PPAC.Migration.Internal.ObjectStructuralListRoundTrip.native_roundTrip

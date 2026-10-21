@@ -682,4 +682,51 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.readbackSentence) := ObjectStructuralListEncode.native_readback
 
+/-- 同字段比较对每个实际域内索引及任意输出对象给双条件。 -/
+example {m} (w r a b : Fin m) : StructuralListCodeSyntax.agree w r a b = .all (.all
+    ((Source.Formula.mem (Fin.last m).castSucc r.castSucc.castSucc).imp
+      ((StructuralListFieldSyntax.field w.castSucc.castSucc a.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).iff
+        (StructuralListFieldSyntax.field w.castSucc.castSucc b.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1)))))) := rfl
+
+/-- 最终单射闭句没有归纳性质或码相等作为前提。 -/
+example : ObjectStructuralListRoundTrip.codeUniqueSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp
+    ((StructuralListLengthSyntax.hasLength 0 2 1).imp ((StructuralListLengthSyntax.hasLength 0 3 1).imp
+      ((StructuralListCodeSyntax.agree 0 1 2 3).imp (Source.Formula.equal 2 3))))).close := rfl
+
+/-- 实际编码唯一纤维比较全部内部候选码。 -/
+example {m} (w f r : Fin m) : StructuralListRoundTripSyntax.encodingFiber w f r = .ex
+    ((StructuralListEncodeSyntax.encoding w.castSucc f.castSucc r.castSucc (Fin.last m)).conj (.all
+      ((StructuralListEncodeSyntax.encoding w.castSucc.castSucc f.castSucc.castSucc r.castSucc.castSucc (Fin.last (m+1))).imp
+        (.equal (Fin.last (m+1)) (Fin.last m).castSucc)))) := rfl
+
+/-- 往返实际取得长度、完整原图和重编码值，并证明该值等于原码。 -/
+example {m} (w n : Fin m) : StructuralListRoundTripSyntax.roundTrip w n = .ex (.ex (.ex
+    ((((StructuralListLengthSyntax.hasLength w.castSucc.castSucc.castSucc n.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc).conj
+      (StructuralListFieldGraphSyntax.fields w.castSucc.castSucc.castSucc n.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc)).conj
+      (StructuralListEncodeSyntax.encoding w.castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last m).castSucc.castSucc (Fin.last (m+2)))).conj
+      (.equal (Fin.last (m+2)) n.castSucc.castSucc.castSucc)))) := rfl
+
+example : ObjectStructuralListRoundTrip.roundTripSentence = ((OmegaSyntax.omega (0 : Fin 2)).imp
+    ((StructuralListTraceSyntax.valid 0 1).imp (StructuralListRoundTripSyntax.roundTrip 0 1))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.predecessorSentence) := ObjectStructuralListRoundTrip.native_predecessor
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.consViewSentence) := ObjectStructuralListRoundTrip.native_consView
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.headsSentence) := ObjectStructuralListRoundTrip.native_heads
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.tailsSentence) := ObjectStructuralListRoundTrip.native_tails
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.codeUniqueSentence) := ObjectStructuralListRoundTrip.native_codeUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.sameGraphSentence) := ObjectStructuralListRoundTrip.native_sameGraph
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.encodedUniqueSentence) := ObjectStructuralListRoundTrip.native_encodedUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.encodingFiberSentence) := ObjectStructuralListRoundTrip.native_encodingFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.decodeThenEncodeSentence) := ObjectStructuralListRoundTrip.native_decodeThenEncode
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.roundTripSentence) := ObjectStructuralListRoundTrip.native_roundTrip
+
 end PPAC.Migration.Step4Checks

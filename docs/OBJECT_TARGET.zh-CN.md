@@ -219,3 +219,14 @@ Encoding实际推出Valid；任意HasLength(w,n,k)、Fields(w,n,k,g)的解码读
 13个完整闭句有源ZF及原nativeZF推导，见STEP4_INTERNAL_LIST_ENCODE_ACCEPTANCE.zh-CN.md。
 这完成任意序列逆编码存在性和编码后图读回；不同候选码的唯一性、解码后原码恢复及完整双向往返仍未完成。
 内部专用ProofZF/U、任意内部证明码正确性和最终Con的目标与未完成标志保持不变。
+
+
+2026-10-22原列表码单射及完整双向往返对象推导更新：
+Agree(w,r,a,b):=∀i∀y(i∈r→(Field(w,a,i,y)↔Field(w,b,i,y)))。
+Ω(w)、HasLength(w,a,r)、HasLength(w,b,r)和Agree推出a=b，原对象ω归纳覆盖全部内部长度。
+任意内部完整ω值序列实际取得唯一Encoding纤维，比较全部候选内部码。
+Valid(w,n)下实际取得L,F,a，满足HasLength(w,n,L)、Fields(w,n,L,F)、Encoding(w,F,L,a)及a=n。
+这是实际解码再编码的原码恢复；结合上一批编码后解码恢复原长度/图，两个方向均已完成。
+十个新增闭句有源ZF及原nativeZF实际Derives；见STEP4_INTERNAL_LIST_ROUNDTRIP_ACCEPTANCE.zh-CN.md。
+这些是列表层的关系式往返，尚未交付实际递归语法检查算法及树有效性。
+专用ProofZF/U、任意内部证明码正确性、内部编译器及最终内部Con仍未完成；本文件最初锁定的Con展开和背景不变。
