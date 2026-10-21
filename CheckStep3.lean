@@ -786,4 +786,53 @@ example {n} (p : Source.Formula (n+3)) :
     Source.Derives (Source.SetLanguage.ZF.at 0) (ObjectOrdinalRecursionSuccessor.extensionSentence p) :=
   ObjectOrdinalRecursionSuccessor.source_ZF_extension p
 
+/-- 全对象超限递归：每个矩阵实例均覆盖全部内部原序数，实际存在与唯一均已证明。 -/
+theorem all_transfinite_recursion_collection {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectTransfiniteRecursion.collectionSentence p)) :=
+  ObjectTransfiniteRecursion.native_collection p
+
+theorem all_transfinite_recursion_union {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectTransfiniteRecursion.unionSentence p)) :=
+  ObjectTransfiniteRecursion.native_union p
+
+theorem all_transfinite_recursion_existence {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectTransfiniteRecursion.existenceSentence p)) :=
+  ObjectTransfiniteRecursion.native_existence p
+
+theorem all_transfinite_recursion_uniqueness {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectTransfiniteRecursion.uniquenessSentence p)) :=
+  ObjectTransfiniteRecursion.native_uniqueness p
+
+/-- 直接核对原Source.ordinal与完整内部全称-存在量词，避免把外部标准实例当全序数递归。 -/
+example {n} (p : Source.Formula (n+3)) : ObjectTransfiniteRecursion.existenceSentence p =
+    ((OrdinalRecursionTotal.total p (id : Fin n → Fin n)).imp
+      ((OrdinalRecursionDeterminism.deterministic p id).imp (.all
+        ((Source.SetLanguage.ordinal (Fin.last n)).imp
+          (OrdinalRecursionSyntax.recursorExists p Fin.castSucc (Fin.last n)))))).close := rfl
+
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (a : Fin m) :
+    OrdinalRecursionExistenceSyntax.fiber p ρ a = .ex
+      ((OrdinalRecursionSyntax.recursor p (ReplacementPredicates.paramsUp ρ) (Fin.last m) a.castSucc).conj
+        (OrdinalRecursionExistenceSyntax.uniqueAt p (ReplacementPredicates.paramsUp ρ) a.castSucc (Fin.last m))) := rfl
+
+/-- 实际收集族同时保留精确像和逐内部前驱覆盖，没有假设所有候选图构成集合。 -/
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (c a : Fin m) :
+    OrdinalRecursionFamilySyntax.family p ρ c a =
+      (OrdinalRecursionFamilySyntax.range p ρ c a).conj (OrdinalRecursionFamilySyntax.coverage p ρ c a) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectTransfiniteRecursion.uniquenessSentence recursionMatrix)) :=
+  ObjectTransfiniteRecursion.native_uniqueness recursionMatrix
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectTransfiniteRecursion.existenceSentence (Source.Formula.equal (2 : Fin 3) 0))) := ObjectTransfiniteRecursion.native_existence _
+
+/-- 具体算子y=x已实际消去总性/单值性前提，仍覆盖全部内部原序数。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectTransfiniteRecursionIdentity.sentence) :=
+  ObjectTransfiniteRecursionIdentity.native_proof
+
+example {n} (p : Source.Formula (n+3)) : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+    (Translation.sentence (ObjectTransfiniteRecursion.uniquenessSentence p)) := ObjectTransfiniteRecursion.uniqueness_kernel_certificate p
+
+example {n} (p : Source.Formula (n+3)) : Source.Derives (Source.SetLanguage.ZF.at 0)
+    (ObjectTransfiniteRecursion.existenceSentence p) := ObjectTransfiniteRecursion.source_existence p
+
 end PPAC.Migration.Step3Checks

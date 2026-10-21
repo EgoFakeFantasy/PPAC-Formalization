@@ -28,3 +28,4 @@ import PPAC.Migration.ObjectOrdinalComparison
 import PPAC.Migration.ObjectOrdinalUnion
 import PPAC.Migration.ObjectOrdinalRecursion
 import PPAC.Migration.ObjectOrdinalRecursionSuccessor
+import PPAC.Migration.ObjectTransfiniteRecursionIdentity

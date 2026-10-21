@@ -82,3 +82,11 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 六个全参数模式有源ZF与原核Derives；有限理论只含Extensionality、Foundation、Pairing、Union和一个Separation实例，
 未调用Replacement或Collection。实际验收见[后继递归扩展验收](docs/STEP3_ORDINAL_RECURSION_SUCCESSOR_ACCEPTANCE.zh-CN.md)。
 全内部前段图的Replacement收集/实际合并和全部内部序数上的递归图存在仍未完成；秩及内部Con主句继续待做。
+
+完整对象超限递归更新：原Replacement实际收集所有内部前驱的唯一后继图，并取得精确值域和逐前驱覆盖。
+已证明全族相容、并图在精确目标序数域上的原完整functionOn，以及每个历史限制和递推方程的传输。
+对P(α):=Ord(α)→∃f Recursor(f,α)应用对象全体集合归纳，取得全部内部原序数上的实际递归图存在唯一。
+每个任意参数矩阵都产生完整对象闭句及源Replacement版ZF/原YesMetaZFC核的Derives；总性与单值性是有效输入上的对象前提。
+具体算子Φ(x,h,y):=y=x的两个前提已由原逻辑规则消去，得到无残留总性/单值性前提的全内部序数实例。
+实际验收见[完整对象超限递归验收](docs/STEP3_TRANSFINITE_RECURSION_ACCEPTANCE.zh-CN.md)。
+此处递归图收集辅助句不等于反向完整Collection公理；秩/累积层、两种AC、内部Proof/Con及最终一致性主句仍未完成。
