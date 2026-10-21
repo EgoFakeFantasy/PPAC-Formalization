@@ -2192,4 +2192,161 @@ example {m} (w n b f x t p l g u : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxTypedFields.quantifierSuccessorSentence true w n b f x t p l g u)) :=
   ObjectSyntaxTypedFields.native_quantifierSuccessor true w n b f x t p l g u
 
+
+/-! 原树有效性全内部成员归纳及无Constructor前提的实际TypedData正向解码。 -/
+example {m} (k : Nat) (xs : Fin k → Fin m) (w g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.graphChildrenSentence k xs w g)) :=
+  ObjectFormulaCodeTreeValidity.native_graphChildren k xs w g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w a n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.nodeSentence k xs w a n)) :=
+  ObjectFormulaCodeTreeValidity.native_node k xs w a n
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.constructorSentence k tag xs w n)) :=
+  ObjectFormulaCodeTreeValidity.native_constructor k tag xs w n
+
+example {m} (w i n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.scalarSentence w i n)) :=
+  ObjectFormulaCodeTreeValidity.native_scalar w i n
+
+example {m} (bound : Bool) (w i n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.variableSentence bound w i n)) :=
+  ObjectFormulaCodeTreeValidity.native_variable bound w i n
+
+example {m} (bound : Bool) (w l n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.termBranchSentence bound w l n)) :=
+  ObjectFormulaCodeTreeValidity.native_termBranch bound w l n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.termSentence w b f n)) :=
+  ObjectFormulaCodeTreeValidity.native_term w b f n
+
+example {m} (truth : Bool) (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.nullarySentence truth w b f n)) :=
+  ObjectFormulaCodeTreeValidity.native_nullary truth w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.memberSentence w b f n)) :=
+  ObjectFormulaCodeTreeValidity.native_member w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.equalSentence w b f n)) :=
+  ObjectFormulaCodeTreeValidity.native_equal w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.atomicSentence w b f n)) :=
+  ObjectFormulaCodeTreeValidity.native_atomic w b f n
+
+example {m} (w n x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.advancedChildSentence w n x b f)) :=
+  ObjectFormulaCodeTreeValidity.native_advancedChild w n x b f
+
+example {m} (tag : Nat) (advance : Bool) (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.singleCaseSentence tag advance w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_singleCase tag advance w n b f
+
+example {m} (kind : Fin 4) (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence kind w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_binaryCase kind w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.atContextSentence w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_atContext w n b f
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.propertySentence w n)) :=
+  ObjectFormulaCodeTreeValidity.native_property w n
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.progressiveSentence w)) :=
+  ObjectFormulaCodeTreeValidity.native_progressive w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.allPropertiesSentence w)) :=
+  ObjectFormulaCodeTreeValidity.native_allProperties w
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.codeSentence w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_code w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.rejectNonTreeSentence w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_rejectNonTree w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.decodedTreeSentence w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_decodedTree w n b f
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.treeChildrenSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_treeChildren w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.typedCasesSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_typedCases w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.typedDataSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_typedData w n b f t p l g
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.typedFiberSentence w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_typedFiber w n b f
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.rejectCasesSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_rejectCases w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.rejectDataSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_rejectData w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.dataTreeValidSentence w n b f t p l g)) :=
+  ObjectFormulaCodeTreeValidity.native_dataTreeValid w n b f t p l g
+
+example {m} (w n : Fin m) : FormulaCodeTreeValiditySyntax.property w n =
+    Source.Formula.all (.all
+      ((FormulaCodeSyntax.formulaCode w.castSucc.castSucc n.castSucc.castSucc
+        (Fin.last m).castSucc (Fin.last (m+1))).imp
+        (StructuralTreeValiditySyntax.valid w.castSucc.castSucc n.castSucc.castSucc))) := rfl
+
+example {m} (w n b f : Fin m) : ObjectFormulaCodeTreeValidity.codeSentence w n b f =
+    ((OmegaSyntax.omega w).imp ((FormulaCodeSyntax.formulaCode w n b f).imp
+      (StructuralTreeValiditySyntax.valid w n))).close := rfl
+
+example {m} (w n b f t p l g : Fin m) : FormulaCodeTypedDataSyntax.typedData w n b f t p l g =
+    (StructuralTreeValiditySyntax.nodeData w n t p l g).conj
+      ((SyntaxTermSyntax.contexts w b f).conj (FormulaCodeTypedDataSyntax.cases 11 w t l g b f)) := rfl
+
+example {m} (w g b f : Fin m) : FormulaCodeTypedDataSyntax.rootCheck 9 w g b f =
+    FormulaCodeGraphTyping.singleCheck true w g b f := rfl
+example {m} (w g b f : Fin m) : FormulaCodeTypedDataSyntax.rootCheck 10 w g b f =
+    FormulaCodeGraphTyping.singleCheck true w g b f := rfl
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.singleCaseSentence 9 true w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_singleCase 9 true w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.singleCaseSentence 10 true w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_singleCase 10 true w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence 0 w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_binaryCase 0 w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence 1 w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_binaryCase 1 w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence 2 w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_binaryCase 2 w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeTreeValidity.binaryCaseSentence 3 w n b f)) :=
+  ObjectFormulaCodeTreeValidity.native_binaryCase 3 w n b f
+
 end PPAC.Migration.Step4Checks

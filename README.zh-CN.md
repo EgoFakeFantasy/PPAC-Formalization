@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：原forest与同根真实字段图已对全部内部索引和值证明完整边双条件，真实槽位精确恢复原字段。
-任意外部纯公式模式及FormulaCode/Term/真实后继bound/原0符号四类检查已传输；已知原构造的父类型精确对应真实图检查。
-新增22个完整原核闭句模式；全仓644任务、6504声明审计、0警告，613份源码哈希独立复核一致。
-详见[全内部位置与字段图类型验收](docs/STEP4_ALL_POSITION_TYPED_FIELDS_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是对象ω归纳下的原树有效性，再装配完整TypedData双向识别、消去已知Constructor前提。
-最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整递归类型解码、内部替换及Proof/Con尚未完成。
+当前进展：原Foundation和Separation已关闭内部ω上的全上下文成员归纳，证明所有FormulaCode及完整Term原树有效。
+接受码现实际唯一解码为完整TypedData，正向接口没有Constructor前提；失败同根类型数据正式拒绝。
+新增28个完整原核闭句模式；全仓656任务、6678声明审计、0警告，625份源码哈希独立复核一致。
+详见[原树有效性与TypedData正向解码验收](docs/STEP4_TREE_VALIDITY_TYPED_DATA_FORWARD_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是从实际槽位/全图恢复原forest，再完成TypedData反向识别和完整类型双条件。
+最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；反向类型识别、内部替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

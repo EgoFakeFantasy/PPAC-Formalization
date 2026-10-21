@@ -806,7 +806,7 @@ object_bound_free_context_type_recursion_proved现True；完整原编码类型�
 | 紧接工作单元 | 输入/实现 | 对象层验收 | 状态 |
 |---|---|---|---|
 | 4c.b.3d.2a | 全11已知码类型双条件、原实际构造纤维 | 对所有合法内部子码实际取得n，保留原Constructor、FormulaCode和对所有候选的唯一性 | 完成；membership实际构造编号0符号，无额外符号存在前提 |
-| 4c.b.3d.2b | 原完整字段恢复、实际长度及同码唯一性 | 已接受FormulaCode的实际唯一标签/payload/完整字段图；重编码恢复原根码并保留类型 | 根数据及逐位置类型传输完成；完整递归TypedData/反向识别待做 |
+| 4c.b.3d.2b | 原完整字段恢复、实际长度及同码唯一性 | 已接受FormulaCode的实际唯一标签/payload/完整字段图；重编码恢复原根码并保留类型 | 根数据、逐位置类型传输及正向TypedData完成；反向识别待做 |
 | 4c.b.3d.2c | 标签、实际字段数和内部上下文守卫 | 完整错字段数/符号/作用域排除及可接受/拒绝分类 | 全内部标签/字段数配对分类及非匹配Shape拒绝完成；完整递归操作数/作用域分类待装配 |
 | 4c.b.3d.3 | 以上全部对象证书 | 原编码完整识别/构造正确性，覆盖全部内部候选；再允许提升总关卡 | 待做 |
 | 4c.c | 内部rename/捕获规避替换图 | 任意内部非单射映射/所有上下文的完整原核对象推导 | 待做 |
@@ -861,8 +861,8 @@ Shape包含真实HasLength、完整functionOn/range/全边精确式；不是截�
 
 | 后续优先级 | 实现输入 | 必须产生的对象证据 |
 |---|---|---|
-| 下一主项：4c.b.3d.2b.ii | 原scalar/变量构造、全部Term解码、当前完整字段边定律、原Tree.valid递归双条件 | Term→Tree.valid；对全部内部n及所有bound/free参数作对象ω成员归纳，证明FormulaCode→Tree.valid；不能用宿主WellFounded或模型外部良基性 |
-| 4c.b.3d.2c.i正向 | 当前Code↔完整递归Criterion和已知构造的图检查双条件 | 接受码实际唯一解码为无预设Constructor前提的完整TypedData，保留原全部字段和真实后继scope |
+| 4c.b.3d.2b.ii（完成） | SyntaxTreeValidity / SyntaxTermTreeValidity / FormulaCodeTreeValidity | 纯项及所有内部FormulaCode蕴含原Tree.valid；Foundation+Separation关闭对象成员归纳，性质内部量化全部bound/free |
+| 4c.b.3d.2c.i正向（完成） | FormulaCodeTypedDataSyntax / Cases / Forward | 接受码实际唯一解码为不含Constructor前提的完整TypedData，保留原字段、所有子树有效性、精确图检查及真实后继scope |
 | 4c.b.3d.2c.i反向 | 实际槽位、完整函数图、全部带类型原构造唯一纤维和原编码唯一性 | 从TypedData重建原构造，消去当前已知Constructor前提，正式回到FormulaCode |
 | 4c.b.3d.3 | 以上完整双向TypedData及原树有效性 | 完整识别/构造关卡实际验收后才可提升总门禁 |
 | 4c.c及以后 | 任意内部rename/替换图；原六规则/27逻辑模式和全ZF公理模式 | 内部捕获规避替换、ProofZF/U和全内部证明码正确性；最终原核Con_ZF→Con_target |
@@ -871,3 +871,31 @@ Shape包含真实HasLength、完整functionOn/range/全边精确式；不是截�
 上述同根图类型定理仍带已知原Constructor前提，不把它们称作已经消去该前提的完整TypedData解码。
 完整类型识别、原树递归有效性、内部替换、ProofZF/U及最终Con的未完成状态不变。
 实际验收见STEP4_ALL_POSITION_TYPED_FIELDS_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22原树有效性与实际TypedData正向解码批次：
+4c.b.3d.2b.ii完成。原Node/Constructor在有效输入合取下树有效，任意内部scalar叶和bvar/fvar封装均树有效；
+原完整Term通过真实分支存在见证得到原Tree.valid，不限制外部标准索引。
+归纳性质P(w,n)为对象∀b∀f(FormulaCode(w,n,b,f)→Tree.valid(w,n))；
+Earlier量化全部内部x∈ω且x∈n，量词分支在真实Succ(k,b)下对(k,f)调用对象归纳假设。
+原Foundation和P否定矩阵的原Separation在内部ω上关闭成员归纳；最终Code→Tree.valid无剩余Earlier前提。
+这里只证明单向蕴含，不能把任意结构树当作纯语言类型正确的公式。
+
+4c.b.3d.2c.i正向也完成。TypedData是有限纯对象公式：
+原NodeData（Shape及所有真实图边子树有效）、完整Ctx、原11标签/字段数及实际递归图字段检查。
+Code在任意同根Shape上推出TypedData，并实际存在唯一tag/payload/内部长度/完整字段图的TypedFiber。
+接口只假定Ω及FormulaCode，不假定任何Constructor存在；所有原字段见证通过正式存在规则消去。
+失败同根Cases/TypedData正式推出¬FormulaCode。TypedData定义不直接包含父FormulaCode；
+反向TypedData→FormulaCode仍未证明，完整双向总门禁保持False。
+
+| 下一工作单元 | 输入/建议模块 | 必须验收的对象证据 |
+|---|---|---|
+| R1：由真实槽位恢复全图 | FieldsFromSlots：实际Fields、Num_k长度及每个有限原位置的对象Slot | ∀内部i,y的GraphLaw；使用原函数图单值性与数码唯一性，禁止从Prop抽取宿主字段数组 |
+| R2：从实际字段图恢复原forest | ForestFromFields：实际forest构造、全图唯一性和原列表编解码唯一性 | 给定真实payload和全边对应，正式恢复原Forest；不能假定Constructor或只比较标准样本 |
+| R3：逐标签反向识别 | FormulaCodeTypedDataReverse：11类TypedData、R1/R2及原精确构造/图类型双条件 | 对全部内部候选证明TypedData→FormulaCode；保留真实量词后继、原0符号和完整项作用域 |
+| R4：完整识别/拒绝汇总 | TypedData/TypedFiber双向桥及已证实际正向唯一解码 | Code↔实际TypedFiber，给定Shape下Code↔TypedData；原核验收后才提升完整类型识别总关卡 |
+| 4c.c及以后 | 任意内部rename/捕获规避替换图；ProofZF/U原六规则/27模式和全ZF模式 | 全内部证明码正确性及内部编译器，最终Derives nativeZF [] (Con_ZF→Con_target) |
+
+新增12模块174项显式声明、28个完整Source/sourceZF核/nativeZF核闭句模式。
+原树有效性和实际正向TypedData各有True门禁；反向识别、完整类型总关卡、替换、ProofZF/U及最终Con保持False。
+实际验收见STEP4_TREE_VALIDITY_TYPED_DATA_FORWARD_ACCEPTANCE.zh-CN.md。

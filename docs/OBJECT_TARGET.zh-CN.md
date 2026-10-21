@@ -383,3 +383,15 @@ FormulaCode、Term、真实后继bound的AdvancedCode和原ZeroScalar四个实�
 完整TypedData解码/反向识别仍需消去当前已知Constructor前提；原树递归有效性仍需对象ω归纳。
 完整类型识别、内部捕获规避替换、ProofZF/U、任意内部证明码正确性及最终Con仍未完成。
 对象背景、原核、内部Con的原六规则/27模式和全内部ω范围不变。
+
+
+2026-10-22原树有效性及TypedData正向解码批次：
+原ZF已通过内部ω上的对象成员归纳证明所有FormulaCode均满足原StructuralTree.valid。
+归纳性质内部全称量化全部bound/free参数，量词体使用真实后继作用域；归纳由原Foundation及完整Separation关闭。
+任意内部scalar/bvar/fvar及完整Term的树有效性、所有实际图边子树有效性和原树实际唯一解码均已证明。
+TypedData有限纯公式保留原NodeData、Ctx、11类真实标签/字段数及递归图字段检查。
+Code在任意同根Shape上推出TypedData，并实际存在唯一完整TypedFiber；正向终点没有Constructor前提。
+失败同根类型数据正式拒绝；反向TypedData→FormulaCode及完整双向识别仍未证明。
+Tree.valid比纯语言类型宽，因此不把Code→Tree.valid误写成双条件。
+原背景、原核和原Con的全内部ω、六规则/27模式要求不变；
+内部替换、ProofZF/U、任意内部证明码正确性、内部编译器和最终Con仍未完成。
