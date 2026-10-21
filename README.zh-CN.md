@@ -103,3 +103,9 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 任意内部索引包含的层单调性、较早层是较晚层的实际成员、层传递性及后继层的原PowerOf等式均有源ZF/原核证书。
 七条闭句的实际验收见[层成员递归及层代数验收](docs/STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md)。
 极限层并式、任意集合秩覆盖、反向Collection、两种AC及内部Con主句仍待实现。
+
+零/极限层和可定义序数最小元更新：已证全部内部零或极限索引上的早层并成员公式，
+并由一个原Replacement实例实际构造全部早层的精确集合C，证明该层值满足原UnionOf(y,C)。
+任意带有限参数的非空可定义序数性质均有实际唯一最小序数；存在、唯一纤维和值相等三个模式逐实例给完整对象闭句及原核Derives。
+[实际验收](docs/STEP3_LIMIT_AND_ORDINAL_LEAST_ACCEPTANCE.zh-CN.md)覆盖六条层闭句及三个全参数模式。
+任意集合秩覆盖仍待完成，下一项在对象集合归纳内收集各成员的唯一层索引并取共同界；反向Collection、两种AC和内部Con主句仍未完成。

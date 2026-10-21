@@ -32,3 +32,6 @@ import PPAC.Migration.ObjectTransfiniteRecursionIdentity
 import PPAC.Migration.ObjectCumulativeHierarchy
 
 import PPAC.Migration.ObjectHierarchyAlgebra
+
+import PPAC.Migration.ObjectHierarchyLimit
+import PPAC.Migration.ObjectOrdinalLeast

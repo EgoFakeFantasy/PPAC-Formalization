@@ -29,7 +29,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 相容/唯一完成；实际存在见下一行 |
 | 3b.2b.3b.iii | 对象图扩展、ω归纳、Extensionality/Pairing/Union/Foundation与四个完整Separation实例 | FiniteIterationSyntax/Uniqueness、IterationBase/Existence、IterationExtension*、IterationExistence、ObjectFiniteIteration | 全部内部n∈ω的实际有限图存在；后继域与图唯一；原完整functionOn/种子/递推条件；源ZF与原核Derives | 完成 |
 | 3b.2b.3b.iv | 上项全内部存在唯一、原Replacement与Union | IterationContext、IterationValue*/Range*、TransitiveCover*、ObjectTransitiveCover | 实际取得全部内部n末值的精确集合并取并；无额外前提的∀a∃b(a⊆b∧Transitive(b))，源ZF和原核Derives | 完成 |
-| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 集合归纳/极小元、原序数比较、内部族上界、完整对象超限递归及实际递归层值存在唯一完成；层代数与秩覆盖待做，不使用宿主WellFounded |
+| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 集合归纳、原序数比较/族上界、完整对象超限递归、零/后继/极限层代数和可定义序数唯一最小元完成；秩覆盖待做，不使用宿主WellFounded |
 | 3b.3a | 实际传递覆盖、有界成员归纳、Foundation及相应完整Separation实例 | SetInductionSyntax/Logic、SetInduction、GlobalMinimalSyntax、GlobalMinimal | 每个任意参数公式有全体集合归纳与无界成员极小元的完整对象闭句；源ZF和原核Derives；不引入统一真值谓词 | 完成 |
 | 3b.3b | 原Source.ordinal、Foundation/EmptySet/Pairing/Union | OrdinalSyntax/Foundation/Transitivity/Restriction/Empty/Successor、ObjectOrdinalBasic | 原定义严格rfl；全内部子集极小元、不自属、成员闭包、实际空/后继序数；源ZF与原核Derives | 完成 |
 | 3b.3c | 原序数基础、Extensionality、Foundation及正文x∉b的一个Separation | OrdinalDifference、OrdinalInitialSegment、OrdinalComparison/Trichotomy、ObjectOrdinalComparison | 内部传递子集为初段或相等；任意两个原序数三歧比较及两两排斥，保留全部对象序数量词；六条原核闭句 | 完成 |
@@ -38,13 +38,16 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.3e.i | 原完整functionOn、实际历史限制、Extensionality/Foundation与两个Separation | RestrictionHistory、OrdinalRecursionSyntax/Restriction/Determinism/History/Values/Compatibility、ObjectOrdinalRecursion | 每个任意参数递推公式有四个完整闭句：传递初段保持、实际限制图、给定原序数域图相容与同域唯一 | 完成；以前提中实际递归图为条件 |
 | 3b.3e.ii | 原图新鲜扩展、有效序数/完整历史上的总性；Extensionality/Foundation/Pairing/Union和一个Separation | GraphInsertRestriction/Elimination、OrdinalRecursionTotal/ExtensionAlgebra/Extension/SuccessorSyntax/SuccessorExistence/SuccessorUnique、ObjectOrdinalRecursionSuccessor | 实际下一值、保留旧前段的实际后继递归扩展、实际唯一后继图纤维及原Replacement接口；六个原核模式 | 完成 |
 | 3b.3e.iii | 实际后继唯一纤维、全Replacement、相容图族并和对象集合归纳 | OrdinalRecursionCollection/Union/Existence | Replacement收集全部内部前驱的实际唯一后继图，合并并校验精确域和历史方程，取得全部内部序数上的递归图存在唯一 | 完成 |
-| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 实际层值、成员递归、单调/传递和后继层完成；极限层/秩覆盖待做 |
+| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 实际层值、完整层代数及可定义序数唯一最小元完成；秩覆盖待做 |
 | 3b.3f.i | 原对象PowerSet、完整超限递归、精确图值域及原Replacement | PowerSetOperation、HierarchyRecursion | 实际构造并证明有效历史上算子F(h)=∪{P(z):z为h的值}总单值；实例化递归，取得全部内部α的实际Vα | 完成；算子前提已实际消去，零层为空亦证明 |
-| 3b.3f.ii | 原完整图限制/相容、实际幂集并算子和层值、序数比较与对象归纳 | HierarchyMembership、HierarchyAlgebra | 历史图早期值与相应Layer严格对应；层成员递归公式、后继/极限层公式、层单调/传递 | 历史对应、成员递归、单调/传递与后继幂集完成；极限式待做 |
+| 3b.3f.ii | 原完整图限制/相容、实际幂集并算子和层值、序数比较与对象归纳 | HierarchyMembership、HierarchyAlgebra | 历史图早期值与相应Layer严格对应；层成员递归公式、后继/极限层公式、层单调/传递 | 完成；历史对应、成员递归、单调/传递与零/后继/极限式均有原核闭句 |
 | 3b.3f.ii.a | 实际后继域限制、递归图相容、PowerSet及精确像/并 | HierarchyHistory、HierarchyMemberSyntax/Transfer、PowerUnionMembership、HierarchyMembership/Algebra/Successor、ObjectHierarchyAlgebra | 全部内部α/β的早期值双向对应、完整成员递归、包含单调、早层实际成员、层传递及后继PowerOf；七条原核闭句 | 完成；见STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md |
-| 3b.3f.ii.b | 已证成员递归、后继幂集、层存在唯一 | HierarchyLimit | 定义纯对象极限索引条件；实际证明极限层恰为全部早层的并，保留全内部量词和实际层值见证 | 下一项，尚未实现 |
-| 3b.3f.iii | 原序数比较、全参数成员极小元 | OrdinalLeast | 任意可定义非空序数性质的实际唯一最小序数；源ZF与原核全参数模式 | 待做 |
-| 3b.3f.iv | 实际层代数、序数最小元、全Replacement和序数族严格界 | RankCover | 任意内部集合实际属于某层，或具有等价的秩覆盖；不得假定覆盖已存在 | 待做 |
+| 3b.3f.ii.b | 已证成员递归、后继幂集、层存在唯一及一个原Replacement实例 | HierarchyLimitSyntax/Membership、HierarchyFamilySyntax/Union、HierarchyLayerCollection、ObjectHierarchyLimit | 全内部零或极限索引的成员并式；实际精确早层集合和原UnionOf；六条原核闭句 | 完成；见STEP3_LIMIT_AND_ORDINAL_LEAST_ACCEPTANCE.zh-CN.md |
+| 3b.3f.iii | 原序数比较、全参数成员极小元、对象传递覆盖 | OrdinalLeastSyntax/Logic/Existence、ObjectOrdinalLeast | 任意可定义非空序数性质的实际唯一最小序数；源ZF与原核全参数存在/唯一纤维/值相等三个模式 | 完成；外部模式索引保留，每个实例有实际闭句Derives |
+| 3b.3f.iv | 实际层代数、序数最小元、全Replacement和序数族严格界 | RankCover | 任意内部集合实际属于某层，或具有等价的秩覆盖；不得假定覆盖已存在 | 下一项，尚未实现 |
+| 3b.3f.iv.a | 实际Layer、任意参数序数最小元及原Replacement接口 | LayerCoverSyntax、LeastLayerFibers | 定义x所属层的内部索引性质，从已有覆盖取得唯一最小索引纤维；逐式匹配原Replacement矩阵 | 待做；只在对象归纳前提内取得各成员的覆盖 |
+| 3b.3f.iv.b | 上项唯一纤维、全Replacement及序数族严格界 | LayerCoverBounds | 实际收集所有成员的唯一层索引，取共同严格序数界，实际构造共同层并证明原集合包含其中 | 待做；不得选择宿主见证族或预设共同界 |
+| 3b.3f.iv.c | 上项进步步、对象全体集合归纳及后继PowerOf | ObjectRankCover | 完整∀x∃α∃v(Ord(α)∧Layer(α,v)∧x∈v)的源ZF与原核推导；随后定义实际唯一秩 | 待做；不以有限外部实例替代全内部集合量词 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
@@ -344,3 +347,19 @@ source_*证明没有Collection或对象AC输入；nativeZF回放仍按已记录�
 实际验收见STEP3_HIERARCHY_ALGEBRA_ACCEPTANCE.zh-CN.md；该批不含极限并式或任意集合秩覆盖。
 下一项对内部极限α证明Vα的成员恰来自某β∈α的实际层值，再推进可定义序数唯一最小元和秩覆盖；
 不得把已证层传递性当作全体集合已经进入某层。反向完整Collection、两种AC及最终内部Con仍待实现。
+
+极限层与序数最小元完成更新：HierarchyClosedInstances把已证层闭句实例化到任意对象上下文。
+HierarchyLimitSyntax的limitIndex(α)明确表示Ord(α)且每个β∈α的实际后继仍在α中；该条件包含零，
+不是只处理外部标准极限序数。HierarchyLimitMembership从实际后继及其实际层值，把z⊆Vβ转成z∈Vβ+1，
+得到Vα的成员恰来自某个内部早层；反向用已证层包含单调性。
+HierarchyFamilySyntax.matrix严格对应Layer(β,v)，唯一纤维严格对应layerFiber。
+HierarchyLayerCollection用原Replacement实际构造全部早层的精确像C，并以Extensionality证明其唯一。
+HierarchyFamilyUnion证明成员式与原UnionOf严格相接，ObjectHierarchyLimit有极限成员式、实际族存在/唯一、
+给定精确族的UnionOf、实际族/并联合存在及零索引覆盖六条原核闭句。
+OrdinalLeastSyntax对任意外部有限参数和任意正文p保留原参数，定义Ord(a)∧p(a)及全内部候选最小性。
+OrdinalLeastLogic将对象全局成员极小元用原序数比较提升为全部内部候选中的最小元，
+由序数不对称性证明唯一，并给包含界；OrdinalLeastExistence实际消去极小元见证。
+ObjectOrdinalLeast为每个p提供存在、唯一纤维、最小值相等三个完整闭句模式及源ZF/原核证明。
+没有新增对象类、宿主序数选择函数或内部统一真值断言；全参数模式索引属于外部接口，每个实例本身是对象证明。
+验收见STEP3_LIMIT_AND_ORDINAL_LEAST_ACCEPTANCE.zh-CN.md。下一项按iv.a–iv.c在对象集合归纳内推进全体集合秩覆盖，
+再处理反向完整Collection；内部ProofZF/U/Con及最终主句仍未完成。

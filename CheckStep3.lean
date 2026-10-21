@@ -929,4 +929,69 @@ example : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
 
 example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectHierarchyAlgebra.successorSentence := ObjectHierarchyAlgebra.source_successor
 
+
+/-- 零或极限条件量化全部内部前驱，且实际存在其原后继。 -/
+example {m} (a : Fin m) : HierarchyLimitSyntax.limitIndex a =
+    (Source.SetLanguage.ordinal a).conj (.all ((Source.Formula.mem (Fin.last m) a.castSucc).imp (.ex
+      ((Source.SetLanguage.successor (Fin.last (m+1)) (Fin.last m).castSucc).conj
+        (.mem (Fin.last (m+1)) a.castSucc.castSucc))))) := rfl
+
+/-- 极限成员式的每个早层值均为实际内部见证，全部内部量词保留。 -/
+example {m} (a z : Fin m) : HierarchyLimitSyntax.unionMember a z = .ex (.ex
+    ((Source.Formula.mem (Fin.last m).castSucc a.castSucc.castSucc).conj
+      ((HierarchyLayerSyntax.layer (Fin.last m).castSucc (Fin.last (m+1))).conj
+        (.mem z.castSucc.castSucc (Fin.last (m+1)))))) := rfl
+
+/-- 精确Replacement像与原UnionOf的实际集合见证，不只有类成员描述。 -/
+example {m} (a y : Fin m) : HierarchyFamilySyntax.assembled a y = .ex
+    ((HierarchyFamilySyntax.range (Fin.last m) a.castSucc).conj (InsertSyntax.unionOf y.castSucc (Fin.last m))) := rfl
+
+example {m} (ρ : Fin 0 → Fin m) (b : Fin m) :
+    ReplacementPredicates.fiber HierarchyFamilySyntax.matrix ρ b = HierarchyLayerSyntax.layerFiber b :=
+  HierarchyFamilySyntax.matrix_fiber ρ b
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.equationSentence) :=
+  ObjectHierarchyLimit.native_equation
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.rangeSentence) :=
+  ObjectHierarchyLimit.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.rangeEqualitySentence) :=
+  ObjectHierarchyLimit.native_rangeEquality
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.unionSentence) :=
+  ObjectHierarchyLimit.native_union
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.assembledSentence) :=
+  ObjectHierarchyLimit.native_assembled
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectHierarchyLimit.zeroSentence) :=
+  ObjectHierarchyLimit.native_zero
+
+/-- 任意外部有限参数数目及任意公式实例都给完整闭句与实际原核证明。 -/
+example {n} (p : Source.Formula (n+1)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectOrdinalLeast.uniquenessSentence p)) := ObjectOrdinalLeast.native_uniqueness p
+
+example {n} (p : Source.Formula (n+1)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectOrdinalLeast.existenceSentence p)) := ObjectOrdinalLeast.native_existence p
+
+example {n} (p : Source.Formula (n+1)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectOrdinalLeast.equalitySentence p)) := ObjectOrdinalLeast.native_equality p
+
+/-- 最小性比较全部内部满足同一原参数性质的序数，不是外部成员枚举。 -/
+example {n m} (p : Source.Formula (n+1)) (ρ : Fin n → Fin m) (a : Fin m) :
+    OrdinalLeastSyntax.least p ρ a =
+      ((Source.SetLanguage.ordinal a).conj (MinimalPredicates.pred p ρ a)).conj (.all
+        (((Source.SetLanguage.ordinal (Fin.last m)).conj
+          (MinimalPredicates.pred p (ReplacementPredicates.paramsUp ρ) (Fin.last m))).imp
+          ((Source.Formula.equal a.castSucc (Fin.last m)).disj (.mem a.castSucc (Fin.last m))))) := rfl
+
+example {n} (p : Source.Formula (n+1)) : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+    (Translation.sentence (ObjectOrdinalLeast.uniquenessSentence p)) := ObjectOrdinalLeast.uniqueness_kernel_certificate p
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectOrdinalLeast.uniquenessSentence (Source.Formula.equal (0 : Fin 1) 0))) := ObjectOrdinalLeast.native_uniqueness _
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectHierarchyLimit.assembledSentence := ObjectHierarchyLimit.source_assembled
+
 end PPAC.Migration.Step3Checks
