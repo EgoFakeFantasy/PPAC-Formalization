@@ -62,12 +62,13 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4a.1 | 原完整functionOn、对象ω归纳及原图插入/限制 | Internal/SequenceSyntax、SequenceLogic、SequenceContext | 内部有界值序列的完整图AST；空序列及每个域内点的实际唯一有界值 | 完成；无宿主序列或外部长度限制 |
 | 4a.2 | 外延/配对/并/基础及两个明确Separation实例 | Internal/SequenceAppend、SequenceExistence、SequencePrefix、ObjectSequences | 实际唯一追加、旧图精确限制、实际唯一前缀、全部内部ω长度的实际序列；八个完整原核闭句 | 完成；六句有限背景、源ZF及nativeZF实际证书 |
 | 4a.3 | 任意参数纯公式行条件及上项精确边 | Internal/CheckedSequence、ObjectCheckedSequences | 每个矩阵的完整对象追加/前缀保持闭句及原核Derives；不把测试谓词作为新公理 | 完成；此通用接口不替代ZF/U专用检查器 |
-| 4b | 全内部序列、自然数递归和原Gödel/结构列表约定 | Internal/NaturalArithmetic、GodelPairing、StructuralCode | 全内部数值运算实际存在唯一、编码/解码/界性质及原核Derives；紧凑quotation避免展开巨大一元数值 | 4b.a通用递推及具体后继迭代完成；数值算术/编码仍待做 |
+| 4b | 全内部序列、自然数递归和原Gödel/结构列表约定 | Internal/NaturalArithmetic、GodelPairing、StructuralCode | 全内部数值运算实际存在唯一、编码/解码/界性质及原核Derives；紧凑quotation避免展开巨大一元数值 | 4b.a及4b.b.1基本加乘完成；代数/次序/编码界及结构码仍待做 |
 | 4b.a.1 | Foundation、一个序数正文Separation及对象ω归纳 | Internal/OmegaOrdinals | 每个内部ω成员满足原完整ordinal定义；有限两句背景及原核闭句 | 完成 |
 | 4b.a.2 | 任意参数总单值步进关系、实际自然前驱与完整历史图 | Internal/NaturalRecursionSyntax/Total/Determinism、NaturalRecursion | 对任意有效历史实际证明算子总单值；原超限递归给实际存在唯一递归图；四个完整原核模式 | 完成；不假定历史已经符合递推 |
 | 4b.a.3 | 上项真实递归图、后继域及图唯一性 | Internal/NaturalEvaluationSyntax/Existence/Uniqueness/Fiber、ObjectNaturalRecursion、NaturalRecursionLaws | 每个内部n∈ω有实际唯一末值；算子零点/后继方程和求值零点律；保留所有对象量词和公式参数 | 完成；步进公式是外部模式索引，每个实例有原核闭句 |
 | 4b.a.4 | 原Pairing/Union/Extensionality的后继总单值证明 | Internal/SuccessorRecursion | 具体原后继关系消去所有算子前提，给全内部自然长度唯一后继迭代及零点求值方程 | 完成；不据此声称完整自然数加法/乘法或ω值域闭包 |
-| 4b.b | 上项通用递推与具体后继实例 | Internal/NaturalArithmetic | 证明数值始终属于内部ω，完整加法零/后继方程、乘法与必要界性质；全部内部自然数上的实际原核Derives | 下一主项，未完成 |
+| 4b.b.1 | 通用递推、实际前段限制及ω归纳 | Internal/NaturalEvaluationRange/Step、NaturalSuccessorStep、NaturalAddition*、NaturalMultiplication*、ObjectNaturalAddition/Multiplication | 全部内部自然索引上的加乘实际自然值存在唯一、ω闭包、零点和双向后继方程、左零律；十个完整原核闭句 | 完成；见STEP4_BASIC_ARITHMETIC_ACCEPTANCE.zh-CN.md |
+| 4b.b.2 | 上项基本加乘、内部ω归纳、原序数比较 | Internal/NaturalArithmeticAlgebra/Order | 加法与乘法所需交换/结合/分配、抵消、次序及编码界性质；每项有原核闭句 | 下一主项，未完成 |
 | 4b.c | 内部算术、全部内部有限序列及原编码约定 | Internal/GodelPairing、StructuralCode | 配数/结构列表的实际内部存在唯一、解码/界与正确性；区分树数值和字节传输码 | 待做 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -459,5 +460,14 @@ NaturalRecursion消去两项算子义务后调用已证对象超限递归，取�
 NaturalEvaluation显式消去实际后继域、完整原递归图和末值；ObjectNaturalRecursion给每个内部n∈ω实际唯一末值的完整模式。
 SuccessorRecursion实际证明原后继关系总单值，具体实例不保留外加R总性/单值性前提。
 模式p仍为外部有限公式索引，每一实例覆盖全部内部索引；这不等于内部语法码或统一真值谓词已经实现。
-下一步仍须证明ω值域闭包和完整加法/乘法，再推进原数值结构码；专用ZF/U检查器及内部Con主句未完成。
+基本加乘及ω闭包见4b.b.1；下一步补代数/次序/编码界，再推进原数值结构码；专用ZF/U检查器及内部Con主句未完成。
 实际验收见STEP4_NATURAL_RECURSION_ACCEPTANCE.zh-CN.md。
+
+
+4b.b.1更新：NaturalEvaluationRange对实际内部历史输出归纳求值范围；NaturalEvaluationStep实际限制后继图的前段，再由原唯一值定理对齐旧值。
+自然后继步在ω外总化为空集，并已证明在内部自然输入上严格等于原Succ；所有步输出属于ω。
+加法的递推初值为内部参数a∈ω；乘法存在量化实际Empty(e)零初值，使用已经证明的加法关系步进。
+两个零见证的对齐通过原Extensionality和eqSubst完成，未固定宿主零对象。
+ObjectNaturalAddition和ObjectNaturalMultiplication各有存在唯一、ω闭包、零点、双向后继和左零五个原nativeZF闭句。
+中间的hAdd/hMul参数实际由先前NaturalRecursion.source_uniqueness闭句消去，不作为新背景假设。
+算术代数/次序/编码界、ProofZF/U专用检查器、内部编译器及Con完成门不变。

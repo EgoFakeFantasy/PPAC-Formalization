@@ -45,3 +45,5 @@ import PPAC.Migration.ChoiceNativeBridge
 import PPAC.Migration.Internal.ObjectCheckedSequences
 
 import PPAC.Migration.Internal.SuccessorRecursion
+
+import PPAC.Migration.Internal.ObjectNaturalMultiplication
