@@ -56,3 +56,4 @@ import PPAC.Migration.Internal.ObjectNaturalNumericBounds
 import PPAC.Migration.Internal.ObjectGodelPair
 import PPAC.Migration.Internal.ObjectGodelUnpair
 import PPAC.Migration.Internal.ObjectStructuralNode
+import PPAC.Migration.Internal.ObjectStructuralList

@@ -320,4 +320,45 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralN
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralNode.decodeBoundsSentence) := ObjectStructuralNode.native_decodeBounds
 
+/-- 原Nil保留零标签及零载荷；Cons保留单位标签与内层原配数。 -/
+example {m} (w n : Fin m) : StructuralListSyntax.nilCode w n = .ex
+    ((OmegaSyntax.empty (Fin.last m)).conj (StructuralNodeSyntax.raw w.castSucc (Fin.last m) (Fin.last m) n.castSucc)) := rfl
+
+example {m} (w h t n : Fin m) : StructuralListSyntax.consCode w h t n = .ex (.ex
+    ((OmegaSyntax.empty (Fin.last m).castSucc).conj ((OmegaSyntax.successor (Fin.last (m+1)) (Fin.last m).castSucc).conj (.ex
+      ((GodelPairSyntax.code w.castSucc.castSucc.castSucc h.castSucc.castSucc.castSucc t.castSucc.castSucc.castSucc (Fin.last (m+2))).conj
+        (StructuralNodeSyntax.raw w.castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2)) n.castSucc.castSucc.castSucc)))))) := rfl
+
+/-- 头尾是任意内部自然对象；原构造器值定理没有预设尾码已是有效列表。 -/
+example : ObjectStructuralList.boundsSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp
+    ((Source.Formula.mem 1 0).imp ((Source.Formula.mem 2 0).imp ((StructuralListSyntax.consCode 0 1 2 3).imp
+      ((Source.Formula.mem 1 3).conj (.mem 2 3)))))).close := rfl
+
+/-- Nil/Cons互斥不需要额外自然头尾前提。 -/
+example : ObjectStructuralList.disjointSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp
+    ((StructuralListSyntax.nilCode 0 3).imp ((StructuralListSyntax.consCode 0 1 2 3).imp Source.Formula.bot))).close := rfl
+
+/-- 实际内部零、单位及单位后继给出空字段列与叶零的数值封装。 -/
+example : ObjectStructuralList.leafZeroSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp
+    ((OmegaSyntax.empty 1).imp ((OmegaSyntax.successor 2 1).imp ((OmegaSyntax.successor 3 2).imp
+      ((StructuralListSyntax.nilCode 0 2).conj (StructuralNodeSyntax.raw 0 1 2 3)))))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.nilValueSentence) := ObjectStructuralList.native_nilValue
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.nilFiberSentence) := ObjectStructuralList.native_nilFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.consTagSentence) := ObjectStructuralList.native_consTag
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.consFiberSentence) := ObjectStructuralList.native_consFiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.closureSentence) := ObjectStructuralList.native_closure
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.boundsSentence) := ObjectStructuralList.native_bounds
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.injectiveSentence) := ObjectStructuralList.native_injective
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.disjointSentence) := ObjectStructuralList.native_disjoint
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralList.leafZeroSentence) := ObjectStructuralList.native_leafZero
+
 end PPAC.Migration.Step4Checks

@@ -106,3 +106,15 @@ fiber实际取得a,b并给出此双向刻画，boundedFiber另外给出a≤p和b
 九个完整闭句均有源ZF及原nativeZF实际推导。原始数值节点分解尚不检查有效标签或字段，
 Nil/Cons、有效列表/树、专用ProofZF/U与最终Con仍未完成。
 详见STEP4_STRUCTURAL_NODE_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22原Nil/Cons构造器对象推导更新：Nil(w,n)为∃z(Empty(z)∧Raw(w,z,z,n))。
+Cons(w,h,t,n)为∃z∃e(Empty(z)∧Succ(e,z)∧∃q(Pair(w,h,t,q)∧Raw(w,e,q,n)))。
+实际零/单位见证全部在对象层取得并消去，原内外配数参数次序保持不变。
+原Nil恰为实际内部单位且有实际唯一纤维；所有内部自然head/tail有实际唯一Cons值，
+两个输入严格属于该值，Cons输入单射且与Nil互斥。互斥句不额外要求head/tail自然。
+实际Empty(z)、Succ(e,z)、Succ(two,e)下，Nil(w,e)和Raw(w,z,e,two)均有原核证书，
+固定原空字段列数值1及零叶封装数值2的对象关系；完整语法quotation及矛盾句码正确性仍待接入。
+本批九个完整闭句均有源ZF及原nativeZF实际推导。
+这些是构造器数值层结果，不预设tail已是有效列表；全内部列表/树递归有效性、专用ProofZF/U和Con仍未完成。
+详见STEP4_STRUCTURAL_LIST_CONSTRUCTORS_ACCEPTANCE.zh-CN.md。
