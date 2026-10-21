@@ -104,11 +104,13 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.v.b.ii | 上项严格子码界、真实字段图和原对象超限递归 | StructuralTreeOperatorSyntax/Logic/Step、StructuralTreeRecursors、ObjectStructuralTreeOperator | 原raw树具体二值算子仅查询严格较小子码；Total/Deterministic实际消去；全内部序数唯一完整递归图及真实零/单位标志 | 完成；10个源ZF及原nativeZF闭句，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.v.b.iii | 上项实际递归图、初段相容和严格子码界 | StructuralTreeEvaluation*/GraphValues/History、StructuralTreeRecursive*/Check/Canonical/Recursion/Decode、ObjectStructuralTreeCheck | 实际后继域/图/边的唯一求值；子码前段值一致；完整递归接受/拒绝对应与实际唯一树解码 | 完成；20个源ZF及原nativeZF闭句；所有内部码/字段，见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.vi | 实际树解码、全内部列表唯一逆编码及原raw节点 | StructuralTreeEncodeSyntax/ShapeUnique/Encode/EncodeReadback、ObjectStructuralTreeEncode | 任意内部标签及完整字段序列实际唯一树码；无有效性预设的Shape唯一；精确tag/长度/全图回读、原码恢复和构造有效性反射 | 完成；8个源ZF及原nativeZF完整闭句，见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md |
-| 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 标签/字段/scalar及变量构造前置完成；全内部类型/作用域/替换待做 |
-| 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 构造前置a.i完成；类型/作用域见a.ii–iii及4c.b |
+| 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 标签/字段/变量构造及纯项作用域/唯一索引解码完成；公式类型/上下文递归/替换待做 |
+| 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 构造a.i及纯项作用域a.ii完成；公式类型见a.iii及4c.b |
 | 4c.a.i | 真实内部数码、原Nil/Cons及raw节点 | SyntaxNumeralSyntax/Numerals、SyntaxForestSyntax/Forests/ForestLength、SyntaxNodeSyntax/Nodes/Constructors、SyntaxVariableSyntax/Variables、ObjectSyntaxConstructors | 有限标签存在唯一/顺序/互斥；精确字段数/实际长度/严格界；scalar全内部索引单射；bvar/fvar实际存在唯一/互斥；11标签/字段数构造实例 | 完成；18个源ZF/原nativeZF闭句模式，见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md |
-| 4c.a.ii | 上项精确字段、原raw/Cons输入单射性 | 计划SyntaxForestInjective、SyntaxVariableDecode、SyntaxTerm | 同一变量码反推出同一内部索引；真实索引解码唯一；纯项只允许bvar/fvar且内部索引严格属于对应bound/free长度；存在/反射/错域排除的原核证书 | 下一主项；同索引编码唯一不等于反向索引单射 |
-| 4c.a.iii | 纯项实际作用域检查、原11构造标签及字段数 | 计划SyntaxFormulaLocal、TypedSyntaxOperator | membership编号0必须为scalar叶；原关系/等词项类型；五个联结词及两个量词的精确类型分支；量词子式bound真实后继 | 待做；当前原码构造实例不计类型正确性 |
+| 4c.a.ii | 上项精确字段、原raw/Cons输入单射性 | SyntaxForestInjective/Arity、SyntaxNodeInjective/Arity、SyntaxVariableDecodeSyntax/Decode、SyntaxTermSyntax/Branches/Terms/Reject、ObjectSyntaxTerms | 同码字段/内部索引恢复；实际唯一解码；纯项完整scope双条件与实际构造；空/错域、错字段及任意内部payload函数标签拒绝 | 完成；27个源ZF/原nativeZF闭句模式，见STEP4_SYNTAX_TERM_SCOPE_ACCEPTANCE.zh-CN.md |
+| 4c.a.iii | 纯项实际作用域检查、原11构造标签及字段数 | 计划SyntaxFormulaLocal、TypedSyntaxOperator | membership编号0必须为scalar叶；原关系/等词项类型；五个联结词及两个量词的精确类型分支；量词子式bound真实后继 | 下一主项；纯项scope已证，全部公式类型分支待做 |
+| 4c.a.iii.a | 上项纯项scope及实际scalar/数码 | 计划SyntaxFormulaAtoms/Local | 原关系唯一编号0的scalar字段；falsum/truth空分支、membership三个字段、equal两个字段；原子项在相同内部bound/free长度检查；原核证书 | 下一最小项 |
+| 4c.a.iii.b | 原精确字段及局部前段状态读取 | 计划SyntaxFormulaLogical/Local | neg/conj/disj/imp/iff子式保持上下文；forall/exists子式bound取实际后继，free不变；全部真实子码严格界 | 待做 |
 | 4c.b | 上项具体类型算子、实际内部序数递归和严格子码界 | 计划Internal/TypedSyntaxRecursion/Check | 实际构造类型状态及任意内部上下文上的总单值检查；量词体bound长度真实后继；接受/拒绝双条件及类型正确码实际解码 | 待做；不能只验外部标准quotation |
 | 4c.c | 全11构造及全内部类型检查 | 计划Internal/SyntaxTransform | 全部重命名、提升、加强和非单射统一替换的实际内部图与正确性；保持捕获规避和bound/free槽位；原核推导 | 待做；步骤2的外部编译器仅作参考 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -714,3 +716,14 @@ scalar索引单射已证明；原bvar/fvar编码的存在唯一和两类互斥�
 可用实际P(P(ω))覆盖Kuratowski上下文对，按原Separation构造局部类型状态，再以原序数递归构造真实状态图；
 该路线的集合覆盖、总单值性、全部前段对应及量词分支均仍须对象推导，尚未实现。
 ProofZF/U、内部替换/编译器及最终Con目标不变，完成状态保持False。
+
+2026-10-22反向变量解码及纯项作用域批次：4c.a.ii完成。
+同码森林/节点/构造器反向恢复字段；不同有限字段数由实际数码长度及原长度唯一性排除。
+同码变量索引相等、实际唯一索引纤维及识别双条件均有原核证书；候选索引遍历全部内部集合。
+Term保留两个内部自然上下文长度和严格索引成员关系；已知变量码的Term↔Scope及合法索引实际项码构造完成。
+实际唯一解码的bound/free分支互斥；空/错域、裸scalar和错字段数被排除。
+函数标签2还有任意内部自然payload的完整拒绝句，覆盖内部非标准长度，不依赖固定外部字段向量。
+11个新模块188项声明、27个闭句模式；全仓556任务、5104审计、0警告、525哈希差异0，累计272对精确足迹。
+验收见STEP4_SYNTAX_TERM_SCOPE_ACCEPTANCE.zh-CN.md。下一项4c.a.iii.a固定membership编号0及原子式/等词局部项类型，
+再做所有联结词和真实后继bound的量词局部分支；全部公式类型、上下文状态递归、替换、ProofZF/U及Con仍未完成。
+任意内部未知标签的拒绝句也已证明：t∈ω、¬Num_0(t)、¬Num_1(t)下，任意自然payload的raw节点均非纯项；无外部标签数值上限。

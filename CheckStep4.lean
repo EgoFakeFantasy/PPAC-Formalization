@@ -1083,4 +1083,136 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence
     (ObjectSyntaxConstructors.constructorFiberSentence 1 10 (0 : Fin 2) (fun i => i.succ))) :=
   ObjectSyntaxConstructors.native_constructorFiber 1 10 0 (fun i => i.succ)
 
+/-- 纯项同时保留两个内部上下文自然长度，并按对应内部索引域识别原变量。 -/
+example {m} (w b f n : Fin m) : SyntaxTermSyntax.term w b f n =
+    ((Source.Formula.mem b w).conj (.mem f w)).conj
+      ((Source.Formula.ex ((Source.Formula.mem (Fin.last m) b.castSucc).conj
+        (SyntaxVariableSyntax.code true w.castSucc (Fin.last m) n.castSucc))).disj
+      (.ex ((Source.Formula.mem (Fin.last m) f.castSucc).conj
+        (SyntaxVariableSyntax.code false w.castSucc (Fin.last m) n.castSucc)))) := rfl
+
+/-- 解码的唯一索引条件遍历所有内部候选，不限于当前作用域中的候选。 -/
+example {m} (bound : Bool) (w n i : Fin m) : SyntaxVariableDecodeSyntax.uniqueIndex bound w n i = .all
+    ((SyntaxVariableSyntax.code bound w.castSucc (Fin.last m) n.castSucc).imp (.equal (Fin.last m) i.castSucc)) := rfl
+
+example {m} (k : Nat) (w : Fin m) (xs ys : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.forestInputSentence k w xs ys n i)) :=
+  ObjectSyntaxTerms.native_forestInput k w xs ys n i
+
+example {m} (k : Nat) (w a b : Fin m) (xs ys : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.nodeInputSentence k w a b xs ys n i)) :=
+  ObjectSyntaxTerms.native_nodeInput k w a b xs ys n i
+
+example {m} (k a b : Nat) (w : Fin m) (xs ys : Fin k → Fin m) (n : Fin m) (i : Fin k)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.constructorInputSentence k a b w xs ys n i)) :=
+  ObjectSyntaxTerms.native_constructorInput k a b w xs ys n i
+
+example {m} (k l : Nat) (w : Fin m) (xs : Fin k → Fin m) (ys : Fin l → Fin m) (n : Fin m) (hkl : k ≠ l) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.forestAritySentence k l w xs ys n)) :=
+  ObjectSyntaxTerms.native_forestArity k l w xs ys n hkl
+
+example {m} (k l : Nat) (w a b : Fin m) (xs : Fin k → Fin m) (ys : Fin l → Fin m) (n : Fin m) (hkl : k ≠ l) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.nodeAritySentence k l w a b xs ys n)) :=
+  ObjectSyntaxTerms.native_nodeArity k l w a b xs ys n hkl
+
+example {m} (bound : Bool) (w i n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.indexNaturalSentence bound w i n)) :=
+  ObjectSyntaxTerms.native_indexNatural bound w i n
+
+example {m} (bound : Bool) (w i j n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.indexInjectiveSentence bound w i j n)) :=
+  ObjectSyntaxTerms.native_indexInjective bound w i j n
+
+example {m} (bound : Bool) (w n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.variableDecodeSentence bound w n)) :=
+  ObjectSyntaxTerms.native_variableDecode bound w n
+
+example {m} (bound : Bool) (w n i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.indexFiberSentence bound w n i)) :=
+  ObjectSyntaxTerms.native_indexFiber bound w n i
+
+example {m} (bound : Bool) (w l n i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.branchScopeSentence bound w l n i)) :=
+  ObjectSyntaxTerms.native_branchScope bound w l n i
+
+example {m} (bound : Bool) (w l n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.branchDecodeSentence bound w l n)) :=
+  ObjectSyntaxTerms.native_branchDecode bound w l n
+
+example {m} (bound : Bool) (w b f n i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.scopeSentence bound w b f n i)) :=
+  ObjectSyntaxTerms.native_scope bound w b f n i
+
+example {m} (bound : Bool) (w b f i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.termExistsSentence bound w b f i)) :=
+  ObjectSyntaxTerms.native_termExists bound w b f i
+
+example {m} (w b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.termRangeSentence w b f n)) :=
+  ObjectSyntaxTerms.native_termRange w b f n
+
+example {m} (w b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.termDecodeSentence w b f n)) :=
+  ObjectSyntaxTerms.native_termDecode w b f n
+
+example {m} (w b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.branchExclusiveSentence w b f n)) :=
+  ObjectSyntaxTerms.native_branchExclusive w b f n
+
+example {m} (w b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.decodedExclusiveSentence w b f n)) :=
+  ObjectSyntaxTerms.native_decodedExclusive w b f n
+
+example {m} (bound : Bool) (w b f n i : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectScopeSentence bound w b f n i)) :=
+  ObjectSyntaxTerms.native_rejectScope bound w b f n i
+
+example {m} (w b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectEmptySentence w b f n)) :=
+  ObjectSyntaxTerms.native_rejectEmpty w b f n
+
+example {m} (k label : Nat) (w b f n : Fin m) (xs : Fin k → Fin m) (h0 : label ≠ 0) (h1 : label ≠ 1) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectTagSentence k label w b f n xs)) :=
+  ObjectSyntaxTerms.native_rejectTag k label w b f n xs h0 h1
+
+example {m} (k : Nat) (w b f n : Fin m) (xs : Fin k → Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectFunctionSentence k w b f n xs)) :=
+  ObjectSyntaxTerms.native_rejectFunction k w b f n xs
+
+example {m} (k : Nat) (w a b f n : Fin m) (xs : Fin k → Fin m) (hk : k ≠ 1) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectAritySentence k w a b f n xs)) :=
+  ObjectSyntaxTerms.native_rejectArity k w a b f n xs hk
+
+example {m} (w a b f n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rejectScalarSentence w a b f n)) :=
+  ObjectSyntaxTerms.native_rejectScalar w a b f n
+
+example {m} (bound : Bool) (w l n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.branchEmptySentence bound w l n)) :=
+  ObjectSyntaxTerms.native_branchEmpty bound w l n
+
+example {m} (label : Nat) (w b f t p n : Fin m) (h0 : label ≠ 0) (h1 : label ≠ 1) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rawRejectTagSentence label w b f t p n)) :=
+  ObjectSyntaxTerms.native_rawRejectTag label w b f t p n h0 h1
+
+example {m} (w b f t p n : Fin m)  : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rawRejectFunctionSentence w b f t p n)) :=
+  ObjectSyntaxTerms.native_rawRejectFunction w b f t p n
+
+/-- 函数应用标签2的拒绝量化任意内部自然payload，无外部固定字段数。 -/
+example {m} (w b f t p n : Fin m) : ObjectSyntaxTerms.rawRejectFunctionSentence w b f t p n =
+    ((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 2 t).imp ((Source.Formula.mem p w).imp
+      ((StructuralNodeSyntax.raw w t p n).imp (SyntaxTermSyntax.term w b f n).neg)))).close := rfl
+
+example {m} (w b f n i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.scopeSentence true w b f n i)) := ObjectSyntaxTerms.native_scope true w b f n i
+
+example {m} (w b f n i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.scopeSentence false w b f n i)) := ObjectSyntaxTerms.native_scope false w b f n i
+
+/-- 未知标签的拒绝直接量化内部t，不以外部Nat标签模式代替非标准候选。 -/
+example {m} (w b f t p n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTerms.rawRejectUnknownTagSentence w b f t p n)) :=
+  ObjectSyntaxTerms.native_rawRejectUnknownTag w b f t p n
+
 end PPAC.Migration.Step4Checks

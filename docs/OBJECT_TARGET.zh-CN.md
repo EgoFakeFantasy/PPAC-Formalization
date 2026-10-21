@@ -291,3 +291,17 @@ Var_bound/free(w,i,n)是标签0/1的原单字段节点，其字段必须为Scala
 全部11个公式标签/字段数实例已通过构造存在唯一；类型限制、membership编号0字段和作用域仍待核验。
 18个闭句模式的source/sourceZF核/nativeZF核证书和验收见STEP4_SYNTAX_CONSTRUCTORS_ACCEPTANCE.zh-CN.md。
 变量码反向索引单射、纯项bound/free检查、全部公式类型、非单射捕获规避替换、ProofZF/U及Con仍未完成。
+
+2026-10-22实际变量反向解码及纯项scope更新：
+同一码的精确森林/节点/构造器恢复所有字段；变量的单scalar字段实际恢复唯一内部索引。
+Recognized_bound/free(w,n):=∃i Var_bound/free(w,i,n)，原ZF证明其恰为实际唯一自然索引纤维。
+该唯一性对所有内部候选j要求Var(w,j,n)→j=i，不只在某个作用域内比较。
+Ctx(w,b,f):=b∈w∧f∈w；Branch_mode(w,l,n):=∃i(i∈l∧Var_mode(w,i,n))。
+Term(w,b,f,n):=Ctx(w,b,f)∧(Branch_bound(w,b,n)∨Branch_free(w,f,n))。
+已知Var_mode(w,i,n)及Ω(w)下，原核证明Term↔(Ctx∧i∈相应的b或f)。
+每个合法内部索引实际产生自然项码；Term与实际唯一索引解码双条件成立，bound/free解码分支互斥。
+空上下文、错索引域、不同字段数及裸scalar被正式拒绝。
+函数标签2的排除量化任意内部自然payload p，不限外部标准字段长度；纯签名确实没有函数项分支。
+27个完整闭句模式的Source.Derives/sourceZF核/nativeZF核证书和验收见STEP4_SYNTAX_TERM_SCOPE_ACCEPTANCE.zh-CN.md。
+这是纯项关系及其对象正确性；全部11公式局部分支、量词上下文状态、内部替换、ProofZF/U及最终Con仍未完成。
+未知标签t本身也为内部对象变量：t∈ω且不满足对象数码0/1时，任意自然payload的raw节点不是纯项；覆盖非标准标签。
