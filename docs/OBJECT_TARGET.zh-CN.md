@@ -43,3 +43,16 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 其外部归纳证明必须返回真正的原核Derives证书。
 之后还要将代码转换器表示到B内，证明内部Check关系的传输；
 只对外部标准证书成立不足以证明Con_S→Con_U。
+
+
+## 内部化前置进度及编码核对
+4a已经实现实际有限序列：完整functionOn、值域限制、每点实际有界唯一值、实际唯一追加与精确前缀，
+并在对象ω归纳内证明所有内部长度的实际序列存在。任意纯公式行测试有追加和前缀保持模式的原核证书。
+这些是Proof关系所需前置，不是本规格的ProofZF/U AST或内部Con已经实现。
+
+源码核对的数值约定以ProofT/IntrinsicQuotationEvaluation.treeValue/forestValue及SyntaxEncode为准：
+forestValue([])=pair(0,0)+1=1；treeValue(node(tag,children))=pair(tag,forestValue(children))+1。
+故保留全部原生构造的falsum是leaf(0)，其树数值是2。
+ProofCode中普通自然数序列的空码0、NatPacket字节传输码及旧QuineEncoding.quote_hilbert均不是此树数值格式。
+后续纯签名编码需保留无函数符号、membership编号0及原生11构造，不能直接拿扩展签名的符号表代替。
+这些核对尚未取得内部算术化的对象正确性证书；4b–4f仍须实际实现。

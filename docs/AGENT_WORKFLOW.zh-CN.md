@@ -58,7 +58,15 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3d.b | 完整选择图、实际函数值精确像及不交性 | GraphRangeSyntax/Collection、ChoiceLogic/SelectorPoints、GraphChoiceToSelector、ObjectGraphChoiceSelector | 一个明确Replacement实例实际取得精确值集合；逐成员交点存在唯一；图AC→原选择集AC原核闭句 | 完成；源有限理论核心仅标准三项依赖 |
 | 3d.c | 原Pairing/Extensionality及两个明确Replacement、Kuratowski分量唯一性 | TaggedRowSyntax/Existence/Logic、TaggedFamilySyntax/Context/Collection/Logic | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 完成；行及族均从原公理取得，覆盖全部内部非空族 |
 | 3d.d | 原选择集公式、实际标签族及第三个明确Replacement | SelectedPairSyntax/Fiber、SelectedGraphLogic/Choice、SelectorChoiceToGraph、ObjectSelectorGraphChoice | 精确收集每个输入的唯一被选标签对，排除原选择集杂项；完整原functionOn/choiceOn及原核AC双向蕴含/双条件 | 完成；反向五句有限背景，核心证书仅标准三项，原choice桥接可信基仍隔离 |
-| 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
+| 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 4a有限序列前置完成；专用检查器与Con未完成 |
+| 4a.1 | 原完整functionOn、对象ω归纳及原图插入/限制 | Internal/SequenceSyntax、SequenceLogic、SequenceContext | 内部有界值序列的完整图AST；空序列及每个域内点的实际唯一有界值 | 完成；无宿主序列或外部长度限制 |
+| 4a.2 | 外延/配对/并/基础及两个明确Separation实例 | Internal/SequenceAppend、SequenceExistence、SequencePrefix、ObjectSequences | 实际唯一追加、旧图精确限制、实际唯一前缀、全部内部ω长度的实际序列；八个完整原核闭句 | 完成；六句有限背景、源ZF及nativeZF实际证书 |
+| 4a.3 | 任意参数纯公式行条件及上项精确边 | Internal/CheckedSequence、ObjectCheckedSequences | 每个矩阵的完整对象追加/前缀保持闭句及原核Derives；不把测试谓词作为新公理 | 完成；此通用接口不替代ZF/U专用检查器 |
+| 4b | 全内部序列、自然数递归和原Gödel/结构列表约定 | Internal/NaturalArithmetic、GodelPairing、StructuralCode | 全内部数值运算实际存在唯一、编码/解码/界性质及原核Derives；紧凑quotation避免展开巨大一元数值 | 下一主项；未实现 |
+| 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
+| 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
+| 4e | 上项完整语法、公理识别与有限序列 | Internal/ProofZF、ProofTarget | 全6原核规则及27逻辑模式；前驱索引严格更小、完整结论和上下文核验；全部内部ω码 | 待做 |
+| 4f | 专用Proof关系、唯一内部ω及原矛盾句码 | Internal/ConFormula | 实际有限纯语言Con闭句，精确展开¬∃p∈ω Proof_T(p,code(⊥))；语言/原核对应 | 待做；规格文档不计实现 |
 | 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
 | 6 | 原OpenAI 4.34.1环境 | 原源码定向构建、两个Comparator记录 | 分开普通Con与带不可达传递模型；真实命令与允许公理 | 待做 |
 | 7 | 原生集合构造与递归 | Internal/Names、Pairs、Tuples、Recursion | 内部图与唯一性；不假定外部良基或标准ω | 待做 |
@@ -425,3 +433,14 @@ ChoiceNativeBridge现在给原nativeZF内两方向及原AC与原Axioms.choice的
 本批验收见STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md。下一主项为步骤4：ZF/U专用纯语言Proof/Con AST，
 须核验原六规则、27逻辑模式及全Separation/Collection，随后步骤5内部表示任意内部证明码上的转换器。
 内部Con主句和相对一致性最终定理仍未完成；继续以该主句作为全工程完成门。
+
+
+第四步有限序列前置完成更新：内部SequenceSyntax.sequence保留完整原functionOn，另以全部内部输入/输出量词限制值域。
+SequenceAppend实际取得唯一新图并记录旧图恰为旧域限制；SequencePrefix用原分离实际取得精确前缀及唯一性。
+SequenceExistence在对象ω归纳中证明每个内部n∈ω有实际序列，没有改成外部Lean.Nat逐实例构造。
+ObjectSequences的八个闭句有六句有限公理背景、源ZF和原nativeZF证书；Infinity不是这些条件于Omega(w)的闭句的额外输入。
+CheckedSequence对任意参数纯公式给逐行条件；ObjectCheckedSequences为每个公式提供完整追加和前缀保持闭句与原核证书。
+这些仅完成4a前置；完整专用ProofZF/U AST、全内部码正确性、内部编译器和Con主句仍未完成。
+下一步按4b补内部自然数算术与原结构码，再按4c–4f装配原核检查；不得直接套用ZFC专用ReducedProofPresentation/PureProvability。
+原IntrinsicQuotation的结构列表空码为1，叶0的树数值为2；不能与ProofCode的普通列表空码0或旧Hilbert化quotation混用。
+实际验收见STEP4_INTERNAL_SEQUENCES_ACCEPTANCE.zh-CN.md。

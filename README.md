@@ -31,3 +31,5 @@ This branch has not compiled or run Comparator on the original OpenAI developmen
 
 Latest AC milestone: [full object Choice equivalence acceptance](docs/STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md).
 The next gate is the dedicated pure-language ZF/U proof-checker AST and correctness for arbitrary internal proof codes; the internal Con theorem remains unproved.
+
+Internalization prerequisites now include actual bounded-value finite sequence graphs, unique append with exact old restriction, precise unique prefixes and actual sequences at every internal omega length, all with original-kernel proofs. Arbitrary-parameter row formulas have closed append/prefix preservation certificates. See [internal finite-sequence acceptance](docs/STEP4_INTERNAL_SEQUENCES_ACCEPTANCE.zh-CN.md). Dedicated ZF/U checker ASTs, arithmetic coding and internal Con remain pending.

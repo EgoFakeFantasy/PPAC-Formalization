@@ -3,7 +3,8 @@
 
 当前进展：原nativeZF推导核已证明原图AC与原Axioms.choice的双向蕴含及双条件，
 见[完整对象AC等价验收](docs/STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md)。
-下一主项是ZF/U专用内部Proof/Con AST及任意内部码正确性；最终内部Con主句仍未完成。
+内部Proof/Con的有限序列前置已完成：全部内部长度的实际序列、唯一追加、精确前缀及逐行公式保持均有原核证书。
+下一主项是内部自然数算术／结构码，再装配ZF/U专用检查器；最终内部Con主句仍未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
@@ -139,3 +140,7 @@ AC反向及等价更新：实际构造标签行{〈x,y〉:y∈x}和精确非空�
 反向背景仅外延、配对与三个明确Replacement；原AC只在蕴含前件，未加入ZF。
 本批全仓验收305个构建任务、2305项声明审计、0警告；[实际验收](docs/STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md)。
 原choice额外闭性证书隔离规则没有扩大；内部Con和相对一致性最终定理仍未完成。
+
+内部化4a前置更新：[内部有限序列实际验收](docs/STEP4_INTERNAL_SEQUENCES_ACCEPTANCE.zh-CN.md)。
+本批没有把外部标准有限列表当作全部内部ω；八个基础闭句和两类任意参数行公式保持模式都返回原核Derives。
+专用ZF/U检查器AST、任意内部证明码正确性和内部Con仍未完成。

@@ -1,19 +1,20 @@
 # 当前交付状态
-2026-10-21；分支migration/yesmeta-step3；本批基点9bafd927c25cba5f836389d9f995da59856e40cf。
+2026-10-21；分支migration/yesmeta-step3；本批基点2040ffb404a1691d1488f123a033cc736abf5263。
 
-步骤0–2、3a–3c及3d均已完成各自对象推导验收；步骤4及后续仍待实现。
-全ZF的两种公理呈现、全部开放推导双向回放及原两种AC的对象等价现已完成。
-原nativeZF核已有Derives nativeZF [] (AC ↔ Project.fo_sentence Axioms.choice)。
-反向AC实际构造标签行、精确非空不交族和精确选择对图；背景仅外延、配对及三个Replacement实例。
+步骤0–2及3a–3d保持完成各自验收：完整ZF呈现、外部推导双向传输及原两种AC对象等价已证。
+本批完成4a内部有限序列前置：实际空序列、完整域内求值、实际唯一追加和精确唯一前缀，
+并以对象ω归纳证明每个内部长度有实际序列；任意参数行公式有完整追加/前缀保持模式。
+八个基础闭句、两个任意参数模式均有源ZF和原nativeZF的实际Derives证书。
+详见STEP4_INTERNAL_SEQUENCES_ACCEPTANCE.zh-CN.md。
 
-本批完整验收退出0：305个构建任务，2305项声明审计，0警告。
-8条正式命令全部退出0；Check/CheckStep2/CheckStep3/Audit均使用--trust=0。
-180项无公理依赖，2125项允许依赖；273个文件SHA256实际复核一致。
-源有限背景两个核心证书及源ZF等价证书均仅标准三项依赖。
-原ZF七个证书基线及上批原choice额外闭性证书隔离均未改，本批无新增自定义公理。
-实际验收详见STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md；日志和哈希保留在本地verification/。
-本批只提交本地，没有推送GitHub；原始清理备份仍保留。
+最终验收退出0：314个构建任务、2434项声明审计、0警告。
+9条正式命令全部退出0；Check/CheckStep2/CheckStep3/CheckStep4/Audit均使用--trust=0。
+193项无公理依赖，2241项允许依赖；283个文件SHA256实际复核一致。
+十个新增源核心证书恰为标准三项依赖；原nativeZF端点仍按七个既有闭性证书基线审计。
+原choice额外证书隔离未扩大，两份可信基JSON未改；本批没有自定义公理、对象AC或Collection输入。
+日志/哈希只保留本地verification/；没有推送GitHub。
 
-下一主项是ZF/U专用纯成员语言Proof/Con AST，随后证明任意内部码上的转换器正确性。
-最终要求仍是原对象ZF内Derives B [] (Con_ZF → Con_target)；该主句及对称强迫/解释仍未完成。
-原OpenAI源码构建与Comparator未运行；不据本批AC等价宣称PP/AC分离或相对一致性定理完成。
+下一主项为4b内部自然数算术和原结构树码，随后4c–4f专用ZF/U语法/公理/证明检查器和Con公式。
+这批有限序列及通用行条件接口不等于专用ProofZF/U AST或任意内部码正确性；验证器保持相关标志为False。
+最终仍要求原对象ZF内Derives B [] (Con_ZF → Con_target)，该主句和内部解释/对称强迫尚未完成。
+原OpenAI源码构建和Comparator仍未运行；持续目标保持开启。
