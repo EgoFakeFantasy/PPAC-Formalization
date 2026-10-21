@@ -9,7 +9,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 0 | 来源审查：固定OpenAI244/YesMetaZFC/PPAC | SOURCE_LOCK、REPOSITORY_MAP、CLEANUP | 来源/前提分开；备份可恢复 | 完成 |
 | 1 | 原语言与原核接口 | SourceSyntax、SourceStatements、Translation、Contract | 全8构造器语义保真；正确对象句子 | 完成，中间层 |
 | 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
-| 3 | 源Replacement版ZF、原Collection版ZF及两种AC | ZFEquivalence、ChoiceEquivalence、反向句法对应 | 任意公式/参数模式；实际Derives；不直接假设理论相等 | 待做 |
+| 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
+| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 已完成外延/空集/配对/并集/幂集；其余待做 |
+| 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 原核→源演绎；明确额外非空变量环境及闭句回落，不能把原核内呈现回放当作本项 | 待做 |
+| 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
 | 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
 | 6 | 原OpenAI 4.34.1环境 | 原源码定向构建、两个Comparator记录 | 分开普通Con与带不可达传递模型；真实命令与允许公理 | 待做 |
@@ -27,3 +30,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 第二步只实现正向传输。反向对应、ZF/U内部检查公式和完整内部化没有被偷偷列为完成。
 当前原生ZF合同仍继承底座7个native_decide句子闭合证书，见TRUST_BASELINE.json；
 新增第二步传输关键声明的公理审计只允许标准propext/Classical.choice/Quot.sound。
+
+第三步边界：Presentation.theory T 是任意原理论T经回译再正向翻译的规范化呈现，
+并不等于OpenAI源Replacement版ZF。Presentation.derives_iff 的两端都使用原FirstOrder.Derives；
+它不是返回Source.Derives的反向编译器。源Source.Consistent量化全部变量环境，
+后续反向接口必须核对源末变量规则与原free_strengthening的非空环境要求，不能默认n=0逐条对齐。
+第三步验收与下一最小工作见STEP3_ACCEPTANCE.zh-CN.md。

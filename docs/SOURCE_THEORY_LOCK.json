@@ -1,0 +1,11 @@
+{
+  "openai_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_path": "lean/OAI/SetTheory/PartitionConsistency/Logic/SetLanguage.lean",
+  "source_sha256": "9a0016c85b5c1a0ba2391f11e616c7c0a2a16ae8419153be4a3a4e072ac8dc37",
+  "excerpt_sha256": "f66d1246b8bc339772445d73323ce590dd9257e90851f1800805955e8c38e867",
+  "axiom_constructors": 9,
+  "schemas": [
+    "separation",
+    "replacement"
+  ]
+}

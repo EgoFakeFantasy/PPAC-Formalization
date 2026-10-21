@@ -1,0 +1,10 @@
+inductive IsZFAxiom : Sentence → Prop where
+  | extensionality : IsZFAxiom extensionality
+  | emptySet : IsZFAxiom emptySet
+  | pairing : IsZFAxiom pairing
+  | union : IsZFAxiom union
+  | powerSet : IsZFAxiom powerSet
+  | infinity : IsZFAxiom infinity
+  | foundation : IsZFAxiom foundation
+  | separation {n} (p : Formula (n + 1)) : IsZFAxiom (separation p)
+  | replacement {n} (p : Formula (n + 2)) : IsZFAxiom (replacement p)

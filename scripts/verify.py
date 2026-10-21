@@ -56,7 +56,7 @@ def run(command: list[str], log: str) -> str:
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
-    sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", *ROOT.glob("PPAC/**/*.lean")])
+    sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", ROOT / "CheckStep3.lean", *ROOT.glob("PPAC/**/*.lean")])
     forbidden = re.compile(r"\b(sorry|admit|axiom|unsafe|native_decide)\b")
     for path in sources:
         if forbidden.search(strip_comments(path.read_text(encoding="utf-8-sig"))):
@@ -66,10 +66,12 @@ def main() -> None:
     if not expected or len(expected) != len(set(expected)):
         raise RuntimeError("Empty or duplicate audit declarations")
     run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
+    run([sys.executable, "scripts/check_source_theory.py"], "source-theory.log")
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
     build = run(["lake", "--no-cache", "--wfail", "build"], "build.log")
     run(["lake", "env", "lean", "--trust=0", "Check.lean"], "check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep2.lean"], "step2-check.log")
+    run(["lake", "env", "lean", "--trust=0", "CheckStep3.lean"], "step3-check.log")
     audit = run(["lake", "env", "lean", "--trust=0", "Audit.lean"], "audit.log")
     footprints: dict[str, list[str]] = {}
     for name, empty, dependencies in re.findall(
@@ -88,19 +90,33 @@ def main() -> None:
         expected_extra = inherited if name in contracts else ({"Classical.choice"} if name.startswith("PPAC.Migration.Translation.") else set())
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
-        if is_step2:
+        is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
+            ["Normalization.", "Reverse.", "Presentation."])
+        if name.startswith("PPAC.Migration.ZFEquivalence."):
+            if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
+                raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
+            continue
+        if is_step2 or is_step3_logic:
             if not set(dependencies) <= allowed | {"Classical.choice"}:
-                raise RuntimeError(f"Unexpected step-2 axiom dependency: {name}: {dependencies}")
+                raise RuntimeError(f"Unexpected syntax/transport axiom dependency: {name}: {dependencies}")
             continue
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
-    hashed = sources + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json"]]
     summary = {
         "lean_version": version,
         "build_passed": True,
         "audit_passed": True,
         "check_passed": True,
         "step2_check_passed": True,
+        "step3_check_passed": True,
+        "source_ZF_axiom_constructors": 9,
+        "source_ZF_matches_pinned_excerpt": True,
+        "native_formula_normalization_object_equivalence": True,
+        "fixed_ZF_axioms_with_bidirectional_derivations": ["extensionality", "emptySet", "pairing", "union", "powerSet"],
+        "full_ZF_equivalence_proved": False,
+        "reverse_native_to_source_derivation_compiler_proved": False,
+        "choice_presentations_equivalent_proved": False,
         "source_rule_count": 19,
         "source_rules_match_pinned_excerpt": True,
         "object_Con_theorem_proved": False,
@@ -115,8 +131,8 @@ def main() -> None:
         "inherited_native_certificate_axioms": sorted(inherited),
         "standard_axiom_only": False,
         "new_custom_axioms": [],
-        "warning_lines": sum("warning:" in line for line in (build + audit).splitlines()),
-        "scope": "Steps 1-2: syntax preservation, all 19 source rules to original Derives, finite axiom support; internal Con specification only, not its final object derivation.",
+        "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; five fixed ZF axioms in both directions. Full ZF/AC equivalences, reverse source-calculus compiler and internal Con proof remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

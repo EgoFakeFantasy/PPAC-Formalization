@@ -11,6 +11,7 @@ inductive Formula : Nat → Type where
   | disj {n} (p q : Formula n) : Formula n
   | all {n} (p : Formula (n + 1)) : Formula n
   | ex {n} (p : Formula (n + 1)) : Formula n
+  deriving DecidableEq
 
 namespace Formula
 

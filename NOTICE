@@ -7,3 +7,9 @@ Original PPAC auxiliary code and authorship are preserved in Git history.
 YesMetaZFC is an independently pinned Apache-2.0 dependency; its own LICENSE and NOTICE apply.
 
 Step 2 also adapts the 19 source derivation rules from that fixed ComparatorChallenges file; Set notation is unfolded to predicates. The new transport proofs target the unmodified YesMetaZFC Hilbert kernel.
+
+Step 3 additionally adapts the nine IsZFAxiom constructors from
+lean/OAI/SetTheory/PartitionConsistency/Logic/SetLanguage.lean at the same pinned commit.
+The ZF and target-theory Set predicates are unfolded to proposition-valued functions.
+The source formula AST now has a generated DecidableEq instance; its constructors are unchanged.
+Normalization, reverse translation, and presentation-replay proofs are new migration code.
