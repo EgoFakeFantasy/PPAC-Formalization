@@ -61,3 +61,10 @@ Replacement实质更新：原Collection加分离已对任意参数/矩阵证明�
 并经原核传输覆盖任意原生Project矩阵。ReverseZFReplay逐原ZF九类公理回放，给ZF和目标理论任意开放推导的双向原核传输，
 及闭句到原19条源规则的实际反向编译。见STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md。
 这里仍是对象公理逐模式证明和外部证书回放；任意内部码的Proof检查器、内部编译正确性与最终Con蕴含主句未完成。
+
+AC正向及可信基更新：原图AC到原不交族选择集AC已完成实际对象推导；反向尚未实现。
+源有限理论核心仅使用一个图值域Replacement实例，原核核心依赖仍为标准三项。
+ChoiceNativeBridge引用未修改原Axioms.choice，因此额外激活该库声明已有的FreeClosed语法证书
+YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1；仅桥接模块和原choice声明允许这项依赖，
+单独来源/原文件SHA锁定见CHOICE_TRUST_BASELINE.json，不混入原ZF的七项基线，不声称引用原choice后可信基没有变化。
+未新增自定义axiom声明或对象AC背景公理；完整AC互导、内部Proof/Con和最终主句仍待完成。

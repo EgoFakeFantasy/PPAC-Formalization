@@ -1113,4 +1113,38 @@ example {free : Syntax.Ctx} {Γ : FirstOrder.Context ℒ free} {p : Syntax.Fm []
 example {p : Source.Sentence} : FirstOrder.Derives targetTheory [] (Translation.sentence p) ↔
     Source.Derives (Source.SetLanguage.targetTheory.at 1) (p.rename Fin.elim0) := ReverseZFReplay.source_target_sentence_iff
 
+
+/-- 原图AC严格对应，保留完整functionOn而不是外部选择函数。 -/
+example : Source.SetLanguage.AC = ((ChoiceSyntax.familyNonempty (0 : Fin 1)).imp (ChoiceSyntax.graphExists 0)).close :=
+  ChoiceSyntax.graphAC_original
+
+example {m} (f a : Fin m) : Source.SetLanguage.choiceOn f a = ChoiceSyntax.choiceOn f a := ChoiceSyntax.choiceOn_original f a
+
+/-- 原选择集唯一交点公式允许集合有族并之外的元素；没有额外子集前提。 -/
+example {m} (c a : Fin m) : ChoiceSyntax.selector c a = .all
+    ((Source.Formula.mem (Fin.last m) a.castSucc).imp (.ex
+      (((Source.Formula.mem (Fin.last (m+1)) c.castSucc.castSucc).conj
+        (.mem (Fin.last (m+1)) (Fin.last m).castSucc)).conj (.all
+          (((Source.Formula.mem (Fin.last (m+2)) c.castSucc.castSucc.castSucc).conj
+            (.mem (Fin.last (m+2)) (Fin.last m).castSucc.castSucc)).imp
+            (.equal (Fin.last (m+2)) (Fin.last (m+1)).castSucc)))))) := rfl
+
+example {m} (ρ : Fin 1 → Fin m) (x : Fin m) :
+    ReplacementPredicates.fiber GraphRangeSyntax.matrix ρ x = GraphSyntax.valueExists (ρ 0) x := GraphRangeSyntax.matrix_fiber ρ x
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectGraphChoiceSelector.assumptions) []
+    (Translation.sentence ObjectGraphChoiceSelector.forwardSentence) := ObjectGraphChoiceSelector.forward_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectGraphChoiceSelector.forwardSentence := ObjectGraphChoiceSelector.source_ZF_forward
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphChoiceSelector.rangeSentence) := ObjectGraphChoiceSelector.native_range
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphChoiceSelector.selectorSentence) := ObjectGraphChoiceSelector.native_selector
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphChoiceSelector.forwardSentence) := ObjectGraphChoiceSelector.native_forward
+
+/-- 与未修改原Axioms.choice的全AST接合；桥接依赖单列CHOICE_TRUST_BASELINE。 -/
+example : Translation.sentence ChoiceSyntax.selectorAC =
+    Normalization.formula (Definitional.Project.fo_sentence Axioms.choice) := ChoiceNativeBridge.selector_ast
+
+example : FirstOrder.Derives nativeZF [] (.imp AC (Definitional.Project.fo_sentence Axioms.choice)) := ChoiceNativeBridge.native_forward
+
 end PPAC.Migration.Step3Checks

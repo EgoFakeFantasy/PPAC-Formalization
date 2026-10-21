@@ -121,3 +121,9 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 任意原生Project矩阵也已覆盖，原ZF九类公理和ZF/目标理论的任意开放推导均可双向原核回放；闭句可实际回到源19规则。
 [实际验收](docs/STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md)通过。内部Proof码上的编译器正确性尚未实现，内部Con主句仍未完成。
 下一项是原图AC与原不交族选择集AC的对象互导。
+
+AC正向更新：已从原完整选择图实际构造精确输出集合，证明它与每个不交族成员恰交一点，
+取得Source.AC→原Axioms.choice的原核对象蕴含；逆向仍待构造带标签族及完整选择图。
+[实际验收](docs/STEP3_GRAPH_CHOICE_FORWARD_ACCEPTANCE.zh-CN.md)通过；源有限理论核心仅一个Replacement实例，三个核心证书仅标准三项依赖。
+原选择公理公式桥接额外继承其已有的语法闭性证书，限域记录于CHOICE_TRUST_BASELINE.json；原ZF七项基线保持不变。
+完整AC等价与最终内部Con主句仍未完成。

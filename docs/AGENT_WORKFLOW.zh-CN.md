@@ -53,10 +53,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.4.b | 上项唯一纤维、原Replacement和任意内部序数族严格界 | WitnessRankCollection/Bounds | 实际精确秩族、共同严格界及真实层值；对每个x取得层内原p见证，证明原Collection完整覆盖 | 完成；全部原参数、内部量词和非函数关系均保留 |
 | 3b.4.c | 上项全Collection模式、已证完整双向Separation及固定公理 | CollectionFromReplacement、ReverseZFReplay | 任意源/原生Project矩阵的完整Collection；原ZF九类公理及ZF/目标理论任意开放推导双向回放 | 完成；闭句可实际回到源19规则，外部变量环境为1 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
-| 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 下一项，尚未实现 |
-| 3d.a | 原Source.choiceOn/AC与原Axioms.choice | ChoiceSyntax/Instances | 严格对应两种原公式及任意内部族实例，保留完整functionOn和原选择集唯一交点公式 | 待做；先锁定对象闭句与两个蕴含方向 |
-| 3d.b | 完整选择图、实际函数值精确像及不交性 | GraphChoiceToSelector | 实际构造选择图的精确值集合；对每个非空不交族成员证明交点存在唯一 | 待做；不能用含多余元素的收集界代替精确像 |
-| 3d.c | 原Pairing/Replacement、Kuratowski分量唯一性及任意内部非空族 | TaggedChoiceFamilies | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 待做；不得预设标签族存在或选择纤维见证 |
+| 3d | 源图选择与原生不交族选择集 | ChoiceSyntax、ChoiceNativeBridge及ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 正向完成；选择集→图AC仍待实现 |
+| 3d.a | 原Source.choiceOn/AC与原Axioms.choice | ChoiceSyntax、ChoiceNativeBridge | 两种原公式严格对应；完整functionOn、全内部族和唯一交点；原Axioms.choice AST精确接合 | 完成；原choice闭性证书额外依赖单列CHOICE_TRUST_BASELINE.json |
+| 3d.b | 完整选择图、实际函数值精确像及不交性 | GraphRangeSyntax/Collection、ChoiceLogic/SelectorPoints、GraphChoiceToSelector、ObjectGraphChoiceSelector | 一个明确Replacement实例实际取得精确值集合；逐成员交点存在唯一；图AC→原选择集AC原核闭句 | 完成；源有限理论核心仅标准三项依赖 |
+| 3d.c | 原Pairing/Replacement、Kuratowski分量唯一性及任意内部非空族 | TaggedChoiceFamilies | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 下一项，尚未实现；不得预设标签族存在或选择纤维见证 |
 | 3d.d | 原选择集公式、实际标签族的并及Separation | SelectorToGraphChoice | 将选择集限制到实际标签族并，构造完整原functionOn选择图及逐成员输出；接合AC互导的原核闭句 | 待做；允许原选择集含并域外元素，必须实际排除杂项 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
 | 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
@@ -397,3 +397,18 @@ ReverseZFReplay逐原ZF九类公理回放，给任意自由上下文和局部假
 该完成状态指对象公理逐模式互导与外部证书回放；不是任意内部Proof码的正确性，更不是内部Con主句。
 实际验收见STEP3_FULL_ZF_EQUIVALENCE_ACCEPTANCE.zh-CN.md。下一项按3d.a–3d.d实现原图AC与不交族选择集AC的对象互导；
 两端均固定原完整公式，不能把反向单射当满射截面或在宿主选一族内部见证。
+
+图AC到原选择集AC正向完成更新：ChoiceSyntax严格保持原Source.choiceOn/AC及全部内部量词，
+并展开原不交族选择集公式，包括逐成员唯一交点；选择集没有被额外要求包含于族并。
+GraphRangeSyntax/Collection将完整functionOn的真实唯一输出纤维接到一个明确原Replacement实例，实际取得精确输出集合C。
+ChoiceLogic在已知域内输入上用原valueAt取得输出唯一，无需追加Extensionality作为本步前提；
+选择图的任意域内输出确实属于对应族成员。ChoiceSelectorPoints消去C成员的实际输入，
+相交的不交族成员相等，转回同一输入后取得唯一输出，故C与每个族成员恰交一点。
+ObjectGraphChoiceSelector给函数值域、给定选择图的选择集存在以及Source.AC→selectorAC三个闭句，
+均有只含该Replacement实例的有限理论证书、源ZF和nativeZF回放；AC只作为对象蕴含前件。
+ChoiceNativeBridge以decide +kernel严格核对原Axioms.choice的全AST，给原生图AC→原选择集AC的实际原核蕴含。
+可信基变化单独记录：原ZF七个固定句子证书基线未改；引用原Axioms.choice激活其既有FreeClosed证书，
+仅原公式桥接及原choice声明允许这第八项库证书，来源/原文件SHA见CHOICE_TRUST_BASELINE.json。
+源核心三个有限理论原核证书仍仅有propext/Classical.choice/Quot.sound；没有新增对象AC公理或自定义axiom声明。
+实际验收见STEP3_GRAPH_CHOICE_FORWARD_ACCEPTANCE.zh-CN.md。完整两种AC等价仍为False：下一项按3d.c–3d.d实际构造带标签不交族，
+再把原选择集限制到该族实际并以构造完整选择图。内部Proof/Con及最终主句仍未完成。
