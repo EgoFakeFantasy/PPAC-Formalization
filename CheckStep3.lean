@@ -538,4 +538,25 @@ example : FirstOrder.Derives (TheoryTransport.theory ObjectFiniteIteration.assum
 example : FirstOrder.Derives (TheoryTransport.theory ObjectFiniteIteration.assumptions) []
     (Translation.sentence ObjectFiniteIteration.uniquenessSentence) := ObjectFiniteIteration.uniqueness_kernel_certificate
 
+/-- 每个末值必须由实际有限轨迹见证，不以宿主迭代函数替代。 -/
+example {n} (f d k z a r : Fin n) {Γ : Source.Context n}
+    (hf : Source.Derives Γ (FiniteIterationSyntax.witness f d k z a)) (hr : Source.Derives Γ (GraphSyntax.edge f k r)) :
+    Source.Derives Γ (IterationValueSyntax.value k z a r) := IterationValueSyntax.intro_value f d k z a r hf hr
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectTransitiveCover.rangeSentence) := ObjectTransitiveCover.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectTransitiveCover.propertiesSentence) := ObjectTransitiveCover.native_properties
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectTransitiveCover.coverSentence) := ObjectTransitiveCover.native_cover
+
+/-- 原Replacement版ZF中真正的全对象传递覆盖；不存在Collection前提。 -/
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectTransitiveCover.coverSentence := ObjectTransitiveCover.source_cover
+
+example : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+    (Translation.sentence ObjectTransitiveCover.coverSentence) := ObjectTransitiveCover.cover_kernel_certificate
+
+/-- 完整闭句的对象内容，全部集合a都存在实际传递覆盖b。 -/
+example : ObjectTransitiveCover.coverSentence =
+    (TransitiveCoverSyntax.coverExists (0 : Fin 1)).close := rfl
+
 end PPAC.Migration.Step3Checks

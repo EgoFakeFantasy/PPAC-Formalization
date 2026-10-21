@@ -21,3 +21,4 @@ import PPAC.Migration.ObjectOmegaStructure
 import PPAC.Migration.ObjectGraphPointwise
 import PPAC.Migration.ObjectIterationUniqueness
 import PPAC.Migration.ObjectFiniteIteration
+import PPAC.Migration.ObjectTransitiveCover
