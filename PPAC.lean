@@ -13,3 +13,4 @@ import PPAC.Migration.ReverseDerivation
 import PPAC.Migration.BoundedInduction
 import PPAC.Migration.ObjectPairs
 import PPAC.Migration.ObjectGraphs
+import PPAC.Migration.ObjectGraphInsert

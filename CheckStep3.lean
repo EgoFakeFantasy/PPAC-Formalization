@@ -304,4 +304,46 @@ theorem diagonal_singleton_map : FirstOrder.Derives nativeZF [] (Translation.sen
   apply SourceAlgebra.close_derives
   exact SingletonMap.exists_map 0 0 (.hyp ⟨_, Or.inl rfl, rfl⟩) (.hyp ⟨_, Or.inr rfl, rfl⟩)
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphs.totalSentence) := ObjectGraphs.native_total
+/-- 实际集合插入、原successor、一般新点图扩展及全部边刻画。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.insertSentence) := ObjectGraphInsert.native_insert
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.successorSentence) := ObjectGraphInsert.native_successor
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.extensionSentence) := ObjectGraphInsert.native_extension
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.edgeLawSentence) := ObjectGraphInsert.native_edge_law
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectGraphInsert.extensionSentence := ObjectGraphInsert.source_ZF_extension
+example : FirstOrder.Derives (TheoryTransport.theory ObjectGraphInsert.assumptions) []
+    (Translation.sentence ObjectGraphInsert.extensionSentence) := ObjectGraphInsert.extension_kernel_certificate
+
+example {n} (b a : Fin n) : Source.SetLanguage.successor b a = InsertSyntax.insert b a a := InsertSyntax.successor_original b a
+
+/-- 开放扩展结论仍是完整源functionOn，而不是只保留边的单值性。 -/
+theorem extension_is_original_function {n} {Γ : Source.Context n} (g e f d p x y : Fin n)
+    (he : Source.Derives Γ (Source.SetLanguage.extensionality.rename Fin.elim0))
+    (hf : Source.Derives Γ (Source.SetLanguage.functionOn f d)) (hn : Source.Derives Γ (Source.Formula.mem x d).neg)
+    (hg : Source.Derives Γ (InsertSyntax.insert g f p)) (hd : Source.Derives Γ (InsertSyntax.insert e d x))
+    (hp : Source.Derives Γ (PairSyntax.ordered p x y)) : Source.Derives Γ (Source.SetLanguage.functionOn g e) := by
+  rw [GraphSyntax.functionOn_original] at hf ⊢
+  exact GraphInsertFunction.function_insert g e f d p x y he hf hn hg hd hp
+
+/-- 新点的输出可等于输入；原前提仅为输入不在旧域。 -/
+def diagonalGraphExtension : Source.Sentence :=
+  ((GraphSyntax.functionOn (0 : Fin 3) 1).imp ((Source.Formula.mem 2 1).neg.imp
+    (GraphInsertSyntax.existsExtension 0 1 2 2))).close
+
+theorem diagonal_graph_extension : FirstOrder.Derives nativeZF [] (Translation.sentence diagonalGraphExtension) := by
+  apply ObjectGraphInsert.native_replay
+  apply TheoryTransport.sentence
+  apply SourceAlgebra.close_derives
+  apply Source.Derives.impI
+  apply Source.Derives.impI
+  have hp : Source.Derives (ObjectGraphInsert.assumptions.at 3) (Source.SetLanguage.pairing.rename Fin.elim0) :=
+    .hyp ⟨_, Or.inl rfl, rfl⟩
+  have hu : Source.Derives (ObjectGraphInsert.assumptions.at 3) (Source.SetLanguage.union.rename Fin.elim0) :=
+    .hyp ⟨_, Or.inr (Or.inl rfl), rfl⟩
+  have he : Source.Derives (ObjectGraphInsert.assumptions.at 3) (Source.SetLanguage.extensionality.rename Fin.elim0) :=
+    .hyp ⟨_, Or.inr (Or.inr rfl), rfl⟩
+  exact GraphInsertExistence.exists_extension 0 1 2 2 (SourceLogic.add (SourceLogic.add hp _) _)
+    (SourceLogic.add (SourceLogic.add hu _) _) (SourceLogic.add (SourceLogic.add he _) _)
+    (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphInsert.uniquenessSentence) := ObjectGraphInsert.native_uniqueness
 end PPAC.Migration.Step3Checks

@@ -14,9 +14,11 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
 | 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
 | 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
-| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图及任意图基本性质完成；图扩展/ω/传递闭包待做 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 单点图、任意图基本性质及新点扩展完成；相容合并/限制/ω/传递闭包待做 |
 | 3b.2b.1 | 原edge/functionOn与对象有序对 | GraphSyntax、GraphLogic、GraphProperties、SingletonGraphLogic、SingletonMap、ObjectGraphs | 完整原公式严格对应；单点函数图实际存在；任意图的边定义域、域内输出存在及单值性；原核Derives | 完成 |
-| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 待做 |
+| 3b.2b.2 | 源集合图和Pairing/Union/Replacement | 图插入、相容图合并、限制、定义域/求值 | 实际构造集合图，证明完整原functionOn及边刻画，保持全部对象参数 | 新点插入完成；相容合并/限制待做 |
+| 3b.2b.2a | Pairing、Union、Extensionality及原functionOn | InsertSyntax/Logic/Existence、GraphInsert*、ObjectGraphInsert | 任意旧函数图与x∉d下的实际扩展图存在唯一；完整functionOn及全部边刻画；源ZF与原核Derives | 完成 |
+| 3b.2b.2b | 全Separation、Union及必要Replacement | 图限制、任意内部相容图集合族的合并 | 对象域/图的存在唯一及精确边关系；覆盖任意内部集合族 | 待做 |
 | 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | 待做 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
@@ -101,3 +103,13 @@ ObjectGraphs的单点存在、全部边取值刻画、任意函数图边输入�
 均有源Replacement版ZF证明和实际nativeZF闭句Derives；两公理理论上也有kernel_certificate。
 图扩展、内部ω迭代与传递闭包仍未完成；本批不是有限迭代或Collection的最终证明。
 实际验收见STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md。
+
+新点图扩展更新：InsertExistence从Pairing与Union构造A∪{x}，Source.successor逐式相同。
+ObjectGraphInsert在三个原始闭公理（Pairing/Union/Extensionality）的理论像中给出实际原核证书，
+并回放到源Replacement版ZF和实际nativeZF。
+对任意原functionOn(f,d)及对象x∉d、任意y，实际构造p=<x,y>、e=d∪{x}、g=f∪{p}，
+证明完整原functionOn(g,e)及∀a∀b(E(g,a,b)↔(E(f,a,b)∨(a=x∧b=y)))。
+相同f/d/x/y的编码、扩展域和扩展图在对象层唯一；没有抽取宿主选择函数。
+不要求旧图有限，也不要求新输出y与输入或旧对象不同。
+相容族合并/限制、内部ω迭代与传递闭包仍未完成。
+实际验收见STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md。
