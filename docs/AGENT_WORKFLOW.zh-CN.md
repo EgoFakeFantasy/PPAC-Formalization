@@ -29,7 +29,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 相容/唯一完成；实际存在见下一行 |
 | 3b.2b.3b.iii | 对象图扩展、ω归纳、Extensionality/Pairing/Union/Foundation与四个完整Separation实例 | FiniteIterationSyntax/Uniqueness、IterationBase/Existence、IterationExtension*、IterationExistence、ObjectFiniteIteration | 全部内部n∈ω的实际有限图存在；后继域与图唯一；原完整functionOn/种子/递推条件；源ZF与原核Derives | 完成 |
 | 3b.2b.3b.iv | 上项全内部存在唯一、原Replacement与Union | IterationContext、IterationValue*/Range*、TransitiveCover*、ObjectTransitiveCover | 实际取得全部内部n末值的精确集合并取并；无额外前提的∀a∃b(a⊆b∧Transitive(b))，源ZF和原核Derives | 完成 |
-| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 集合归纳/极小元、原序数比较、内部族上界和完整对象超限递归完成；秩/累积层待做，不使用宿主WellFounded |
+| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 集合归纳/极小元、原序数比较、内部族上界、完整对象超限递归及实际递归层值存在唯一完成；层代数与秩覆盖待做，不使用宿主WellFounded |
 | 3b.3a | 实际传递覆盖、有界成员归纳、Foundation及相应完整Separation实例 | SetInductionSyntax/Logic、SetInduction、GlobalMinimalSyntax、GlobalMinimal | 每个任意参数公式有全体集合归纳与无界成员极小元的完整对象闭句；源ZF和原核Derives；不引入统一真值谓词 | 完成 |
 | 3b.3b | 原Source.ordinal、Foundation/EmptySet/Pairing/Union | OrdinalSyntax/Foundation/Transitivity/Restriction/Empty/Successor、ObjectOrdinalBasic | 原定义严格rfl；全内部子集极小元、不自属、成员闭包、实际空/后继序数；源ZF与原核Derives | 完成 |
 | 3b.3c | 原序数基础、Extensionality、Foundation及正文x∉b的一个Separation | OrdinalDifference、OrdinalInitialSegment、OrdinalComparison/Trichotomy、ObjectOrdinalComparison | 内部传递子集为初段或相等；任意两个原序数三歧比较及两两排斥，保留全部对象序数量词；六条原核闭句 | 完成 |
@@ -38,9 +38,11 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.3e.i | 原完整functionOn、实际历史限制、Extensionality/Foundation与两个Separation | RestrictionHistory、OrdinalRecursionSyntax/Restriction/Determinism/History/Values/Compatibility、ObjectOrdinalRecursion | 每个任意参数递推公式有四个完整闭句：传递初段保持、实际限制图、给定原序数域图相容与同域唯一 | 完成；以前提中实际递归图为条件 |
 | 3b.3e.ii | 原图新鲜扩展、有效序数/完整历史上的总性；Extensionality/Foundation/Pairing/Union和一个Separation | GraphInsertRestriction/Elimination、OrdinalRecursionTotal/ExtensionAlgebra/Extension/SuccessorSyntax/SuccessorExistence/SuccessorUnique、ObjectOrdinalRecursionSuccessor | 实际下一值、保留旧前段的实际后继递归扩展、实际唯一后继图纤维及原Replacement接口；六个原核模式 | 完成 |
 | 3b.3e.iii | 实际后继唯一纤维、全Replacement、相容图族并和对象集合归纳 | OrdinalRecursionCollection/Union/Existence | Replacement收集全部内部前驱的实际唯一后继图，合并并校验精确域和历史方程，取得全部内部序数上的递归图存在唯一 | 完成 |
-| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 下一项 |
-| 3b.3f.i | 原对象PowerSet、完整超限递归、精确图值域及原Replacement | PowerSetOperation、HierarchyRecursion | 实际构造并证明有效历史上算子F(h)=∪{P(z):z为h的值}总单值；实例化递归，取得全部内部α的实际Vα | 下一项，尚未实现 |
-| 3b.3f.ii | 原序数比较/极小元、实际Vα、完整Replacement及序数族严格界 | OrdinalLeast、HierarchyAlgebra、RankCover | 非空可定义序数性质的唯一最小元；层单调/传递和任意集合的实际秩覆盖；不能假定每集合已在某层 | 待做 |
+| 3b.3f | 内部序数递归、PowerSet、序数族严格界与全Replacement | Rank、CumulativeHierarchy | 实际Vα及秩覆盖；每个需要模式均提供完整对象句子和原核Derives | 实际层值存在唯一完成；层代数/秩覆盖待做 |
+| 3b.3f.i | 原对象PowerSet、完整超限递归、精确图值域及原Replacement | PowerSetOperation、HierarchyRecursion | 实际构造并证明有效历史上算子F(h)=∪{P(z):z为h的值}总单值；实例化递归，取得全部内部α的实际Vα | 完成；算子前提已实际消去，零层为空亦证明 |
+| 3b.3f.ii | 原完整图限制/相容、实际幂集并算子和层值、序数比较与对象归纳 | HierarchyMembership、HierarchyAlgebra | 历史图早期值与相应Layer严格对应；层成员递归公式、后继/极限层公式、层单调/传递 | 下一项，尚未实现 |
+| 3b.3f.iii | 原序数比较、全参数成员极小元 | OrdinalLeast | 任意可定义非空序数性质的实际唯一最小序数；源ZF与原核全参数模式 | 待做 |
+| 3b.3f.iv | 实际层代数、序数最小元、全Replacement和序数族严格界 | RankCover | 任意内部集合实际属于某层，或具有等价的秩覆盖；不得假定覆盖已存在 | 待做 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
@@ -311,3 +313,18 @@ Context.Evidence仅包装五个既有原公理的Derives证书，类型/构造�
 下一项先实际构造完整图历史值的幂集像及其并，用原Replacement/PowerSet/Union给算子总单值，
 再实例化本批完整递归构造实际Vα，证明层单调、传递及唯一性。秩覆盖还须以可定义序数性质的唯一最小元消除见证选择，
 Replacement收集唯一界，再用实际序数族严格上界取得全族共同层界。不能先假定秩存在或预设Vα宇宙。
+
+实际幂集并算子和递归层值完成更新：PowerSetSyntax逐字对应原PowerSet闭句，PowerSetLogic证明实际幂集唯一、相等传输及幂集单调性。
+PowerValueLogic从原完整FunctionOn取得每个输入的实际输出，再由PowerSet取得实际幂集，证明唯一纤维；
+PowerValueCollection用一个明确的原Replacement矩阵取得历史输出幂集的精确像集合C，不使用Collection或对象AC。
+PowerUnionOperation以原Union取得y=∪C，精确像唯一与Union唯一给输出唯一。
+ObjectPowerUnion在外延、幂集、并集和该Replacement实例的四句有限理论内证明对象Total/Deterministic；
+HierarchyRecursion实际消去这两个前提，实例化全对象超限递归取得每个内部原序数上的唯一层序列。
+HierarchyLayerSyntax以实际后继域上的递归图在α处的输出定义Layer(α,y)；HierarchyLayerExistence/Unique取得实际层值并证明不同域/图见证给同一个值。
+PowerUnionEmpty/HierarchyLayerZero证明空索引的精确幂集像及其并为空，从而空索引层值为空，核对递归索引。
+ObjectCumulativeHierarchy的存在、唯一、值相等和零层闭句均有源ZF/原核Derives；实际验收见STEP3_HIERARCHY_LAYERS_ACCEPTANCE.zh-CN.md。
+本批尚未证明后继/极限层公式、层单调/传递或任意集合秩覆盖；实际递归层值不能代替这些后续目标。
+下一步先对α上的完整递归图h证明：β∈α时，Edge(h,β,v)与Layer(β,v)严格对应；
+正向需实际构造β后继及其限制递归图，反向以任意域递归图相容性和h的实际总输出相等传输。
+再消去实际幂集像/并见证，取得Layer的成员递归公式，并据此推导层单调、传递和后继/极限方程。
+秩覆盖仍须后续唯一最小序数模式与Replacement，最终内部Con目标未改变。

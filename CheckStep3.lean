@@ -835,4 +835,48 @@ example {n} (p : Source.Formula (n+3)) : FirstOrder.Derives (TheoryTransport.the
 example {n} (p : Source.Formula (n+3)) : Source.Derives (Source.SetLanguage.ZF.at 0)
     (ObjectTransfiniteRecursion.existenceSentence p) := ObjectTransfiniteRecursion.source_existence p
 
+/-- 原幂集公理严格对应；所有子集量词在对象语言内。 -/
+example : Source.SetLanguage.powerSet = (PowerSetSyntax.powerExists (0 : Fin 1)).close := PowerSetSyntax.power_core
+
+example {n} (w v : Fin n) : PowerSetSyntax.powerOf w v = .all
+    ((Source.Formula.mem (Fin.last n) w.castSucc).iff (Source.SetLanguage.subset (Fin.last n) v.castSucc)) := rfl
+
+/-- 实际历史幂集像集合和实际Union见证，不用宿主powerset运算符。 -/
+example {n} (a h y : Fin n) : PowerUnionSyntax.operation a h y = .ex
+    ((PowerValueSyntax.range (Fin.last n) a.castSucc h.castSucc).conj (InsertSyntax.unionOf y.castSucc (Fin.last n))) := rfl
+
+example {n} (ρ : Fin 0 → Fin n) (a h y : Fin n) :
+    OrdinalRecursionSyntax.operator PowerUnionSyntax.matrix ρ a h y = PowerUnionSyntax.operation a h y :=
+  PowerUnionSyntax.matrix_operator ρ a h y
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPowerUnion.rangeSentence) := ObjectPowerUnion.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPowerUnion.operationSentence) := ObjectPowerUnion.native_operation
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPowerUnion.totalSentence) := ObjectPowerUnion.native_total
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPowerUnion.deterministicSentence) := ObjectPowerUnion.native_deterministic
+
+/-- 层序列的总性/单值性前提已经由原ZF中的真实证明消去。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence HierarchyRecursion.existenceSentence) := HierarchyRecursion.native_existence
+example : FirstOrder.Derives nativeZF [] (Translation.sentence HierarchyRecursion.uniquenessSentence) := HierarchyRecursion.native_uniqueness
+
+/-- 直接使用原Source.ordinal检查全部内部序数的实际唯一层值。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (((Source.SetLanguage.ordinal (0 : Fin 1)).imp (HierarchyLayerSyntax.layerFiber 0)).close)) := by
+  simpa only [ObjectCumulativeHierarchy.uniquenessSentence, OrdinalSyntax.ordinal_original] using ObjectCumulativeHierarchy.native_uniqueness
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectCumulativeHierarchy.existenceSentence) := ObjectCumulativeHierarchy.native_existence
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectCumulativeHierarchy.equalitySentence) := ObjectCumulativeHierarchy.native_equality
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectCumulativeHierarchy.zeroSentence) := ObjectCumulativeHierarchy.native_zero
+
+/-- 层值由实际后继域上的完整递归图及真实输出边见证；不存在宿主序数索引。 -/
+example {n} (a y : Fin n) : HierarchyLayerSyntax.layer a y = .ex (.ex
+    (HierarchyLayerSyntax.data (Fin.last n).castSucc (Fin.last (n+1)) a.castSucc.castSucc y.castSucc.castSucc)) := rfl
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectPowerUnion.assumptions) []
+    (Translation.sentence ObjectPowerUnion.totalSentence) := ObjectPowerUnion.total_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectCumulativeHierarchy.uniquenessSentence := ObjectCumulativeHierarchy.source_uniqueness
+
 end PPAC.Migration.Step3Checks

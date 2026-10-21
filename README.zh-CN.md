@@ -90,3 +90,10 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 具体算子Φ(x,h,y):=y=x的两个前提已由原逻辑规则消去，得到无残留总性/单值性前提的全内部序数实例。
 实际验收见[完整对象超限递归验收](docs/STEP3_TRANSFINITE_RECURSION_ACCEPTANCE.zh-CN.md)。
 此处递归图收集辅助句不等于反向完整Collection公理；秩/累积层、两种AC、内部Proof/Con及最终一致性主句仍未完成。
+
+实际递归层值更新：原PowerSet提供每个历史输出的实际幂集，完整图单值性与外延性给唯一纤维，原Replacement构造精确幂集像，Union给实际并。
+具体算子Φ(α,h,y)的对象总性和单值性已证明并消去，取得全部内部原序数上的实际唯一层序列。
+以α实际后继域递归图在α处的值定义Layer(α,y)，已证明∀α(Ord(α)→∃!y Layer(α,y))，并证明空索引的层值为空。
+全部结果有源Replacement版ZF及原YesMetaZFC核中的Derives；见[实际递归层值验收](docs/STEP3_HIERARCHY_LAYERS_ACCEPTANCE.zh-CN.md)。
+后继/极限层公式、层单调/传递及秩覆盖尚未证明；不能以本批实际层值存在唯一替代这些后续目标。
+反向完整Collection、两种AC呈现、内部Proof/Con及最终一致性对象主句仍未完成。
