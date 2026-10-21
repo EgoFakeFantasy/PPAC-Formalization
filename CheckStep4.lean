@@ -1850,4 +1850,218 @@ example {m} (w b f x n k : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectFormulaCode.quantifierTypesSentence false w b f x n k)) :=
   ObjectFormulaCode.native_quantifierTypes false w b f x n k
 
+
+/-! 原实际构造、接受根完整字段及所有内部标签/长度候选的对象核验。 -/
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.fiberSentence k tag xs w b f)) :=
+  ObjectFormulaCodeConstruction.native_fiber k tag xs w b f
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.existsOfFiberSentence k tag xs w b f)) :=
+  ObjectFormulaCodeConstruction.native_existsOfFiber k tag xs w b f
+
+example {m} (truth : Bool) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nullaryLawSentence truth w b f)) :=
+  ObjectFormulaCodeConstruction.native_nullaryLaw truth w b f
+
+example {m} (truth : Bool) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nullaryFiberSentence truth w b f)) :=
+  ObjectFormulaCodeConstruction.native_nullaryFiber truth w b f
+
+example {m} (truth : Bool) (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nullaryExistsSentence truth w b f)) :=
+  ObjectFormulaCodeConstruction.native_nullaryExists truth w b f
+
+example {m} (w b f s x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.memberLawSentence w b f s x y)) :=
+  ObjectFormulaCodeConstruction.native_memberLaw w b f s x y
+
+example {m} (w b f s x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.memberFiberSentence w b f s x y)) :=
+  ObjectFormulaCodeConstruction.native_memberFiber w b f s x y
+
+example {m} (w b f s x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.memberExistsSentence w b f s x y)) :=
+  ObjectFormulaCodeConstruction.native_memberExists w b f s x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.equalLawSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_equalLaw w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.equalFiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_equalFiber w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.equalExistsSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_equalExists w b f x y
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.negationLawSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_negationLaw w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.negationFiberSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_negationFiber w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.negationExistsSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_negationExists w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.forallLawSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_forallLaw w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.forallFiberSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_forallFiber w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.forallExistsSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_forallExists w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.existsLawSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_existsLaw w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.existsFiberSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_existsFiber w b f x
+
+example {m} (w b f x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.existsExistsSentence w b f x)) :=
+  ObjectFormulaCodeConstruction.native_existsExists w b f x
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary0LawSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary0Law w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary0FiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary0Fiber w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary0ExistsSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary0Exists w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary1LawSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary1Law w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary1FiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary1Fiber w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary1ExistsSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary1Exists w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary2LawSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary2Law w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary2FiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary2Fiber w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary2ExistsSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary2Exists w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary3LawSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary3Law w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary3FiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary3Fiber w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.binary3ExistsSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_binary3Exists w b f x y
+
+example {m} (w b f x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.membershipFiberSentence w b f x y)) :=
+  ObjectFormulaCodeConstruction.native_membershipFiber w b f x y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.forestValidSentence k xs w p)) :=
+  ObjectFormulaCodeConstruction.native_forestValid k xs w p
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w t n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nodeShapeSentence k xs w t n)) :=
+  ObjectFormulaCodeConstruction.native_nodeShape k xs w t n
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.constructorShapeSentence k tag xs w n)) :=
+  ObjectFormulaCodeConstruction.native_constructorShape k tag xs w n
+
+example {m} (w n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.shapeUniqueSentence w n t p l g)) :=
+  ObjectFormulaCodeConstruction.native_shapeUnique w n t p l g
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.acceptedShapeSentence w n b f)) :=
+  ObjectFormulaCodeConstruction.native_acceptedShape w n b f
+
+example {m} (w n b f t p l g r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.reencodingSentence w n b f t p l g r)) :=
+  ObjectFormulaCodeConstruction.native_reencoding w n b f t p l g r
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.roundTripSentence w n b f t p l g)) :=
+  ObjectFormulaCodeConstruction.native_roundTrip w n b f t p l g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w p l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.forestAritySentence k xs w p l)) :=
+  ObjectFormulaCodeConstruction.native_forestArity k xs w p l
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w t n a p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nodeAritySentence k xs w t n a p l g)) :=
+  ObjectFormulaCodeConstruction.native_nodeArity k xs w t n a p l g
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w n a p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.constructorAritySentence k tag xs w n a p l g)) :=
+  ObjectFormulaCodeConstruction.native_constructorArity k tag xs w n a p l g
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w n a p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.constructorTagSentence k tag xs w n a p l g)) :=
+  ObjectFormulaCodeConstruction.native_constructorTag k tag xs w n a p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.allowedAritySentence w n b f t p l g)) :=
+  ObjectFormulaCodeConstruction.native_allowedArity w n b f t p l g
+
+example {m} (w n b f t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.rejectAritySentence w n b f t p l g)) :=
+  ObjectFormulaCodeConstruction.native_rejectArity w n b f t p l g
+
+example {m} (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nullaryFiberSentence false w b f)) :=
+  ObjectFormulaCodeConstruction.native_nullaryFiber false w b f
+
+example {m} (w b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCodeConstruction.nullaryFiberSentence true w b f)) :=
+  ObjectFormulaCodeConstruction.native_nullaryFiber true w b f
+
+example {m} (w : Fin m) (xs : Fin 1 → Fin m) (b f : Fin m) :
+    FormulaCodeConstructSyntax.typedFiber 1 9 w xs b f = Source.Formula.ex
+      (((Source.Formula.mem (Fin.last m) w.castSucc).conj
+        ((SyntaxNodeSyntax.constructor 1 9 w.castSucc (fun i => (xs i).castSucc) (Fin.last m)).conj
+          (FormulaCodeSyntax.formulaCode w.castSucc (Fin.last m) b.castSucc f.castSucc))).conj
+        (.all ((SyntaxNodeSyntax.constructor 1 9 w.castSucc.castSucc (fun i => (xs i).castSucc.castSucc)
+          (Fin.last (m+1))).imp (.equal (Fin.last (m+1)) (Fin.last m).castSucc)))) := rfl
+
+example : FormulaCodeAllowedAritySyntax.expectedArity 0 = 0 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 1 = 0 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 2 = 3 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 3 = 2 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 4 = 1 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 5 = 2 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 6 = 2 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 7 = 2 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 8 = 2 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 9 = 1 := rfl
+example : FormulaCodeAllowedAritySyntax.expectedArity 10 = 1 := rfl
+
 end PPAC.Migration.Step4Checks
