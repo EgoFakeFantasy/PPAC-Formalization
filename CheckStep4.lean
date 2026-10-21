@@ -729,4 +729,75 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListRoundTrip.roundTripSentence) := ObjectStructuralListRoundTrip.native_roundTrip
 
+/-- 检查定义的停止条件仅为空集或原Nil构造器。 -/
+example {m} (w b : Fin m) : StructuralListCheckSyntax.terminal w b =
+    (OmegaSyntax.empty b).disj (StructuralListSyntax.nilCode w b) := rfl
+
+/-- 内部索引的终端事件保留真实tail递归值，没有Valid测试前提。 -/
+example {m} (w n r : Fin m) : StructuralListCheckSyntax.occurs w n r = .ex
+    ((StructuralListProjectionSyntax.iteration false w.castSucc n.castSucc r.castSucc (Fin.last m)).conj
+      (StructuralListCheckSyntax.terminal w.castSucc (Fin.last m))) := rfl
+
+/-- 首次停止排除所有更早内部索引上的终端事件。 -/
+example {m} (w n r : Fin m) : StructuralListCheckSyntax.before w n r = .all
+    ((Source.Formula.mem (Fin.last m) r.castSucc).imp (StructuralListCheckSyntax.occurs w.castSucc n.castSucc (Fin.last m)).neg) := rfl
+
+example {m} (w n r b : Fin m) : StructuralListCheckSyntax.checkedAt w n r b =
+    ((((Source.Formula.mem r w).conj (StructuralListProjectionSyntax.iteration false w n r b)).conj
+      ((OmegaSyntax.empty b).disj (StructuralListSyntax.nilCode w b))).conj (StructuralListCheckSyntax.before w n r)) := rfl
+
+example {m} (w n b : Fin m) : StructuralListCheckSyntax.checkValue w n b = .ex
+    (StructuralListCheckSyntax.checkedAt w.castSucc n.castSucc (Fin.last m) b.castSucc) := rfl
+
+/-- 唯一纤维实际取得检查值并比较任意对象候选，不预设输出或算法总性。 -/
+example {m} (w n : Fin m) : StructuralListCheckSyntax.checkFiber w n = .ex
+    ((StructuralListCheckSyntax.checkValue w.castSucc n.castSucc (Fin.last m)).conj (.all
+      ((StructuralListCheckSyntax.checkValue w.castSucc.castSucc n.castSucc.castSucc (Fin.last (m+1))).imp
+        (.equal (Fin.last (m+1)) (Fin.last m).castSucc)))) := rfl
+
+example {m} (w n : Fin m) : StructuralListCheckSyntax.accepts w n = .ex
+    ((StructuralListCheckSyntax.checkValue w.castSucc n.castSucc (Fin.last m)).conj (StructuralListSyntax.nilCode w.castSucc (Fin.last m))) := rfl
+
+example {m} (w n : Fin m) : StructuralListCheckSyntax.rejects w n = .ex
+    ((StructuralListCheckSyntax.checkValue w.castSucc n.castSucc (Fin.last m)).conj (OmegaSyntax.empty (Fin.last m))) := rfl
+
+/-- 正确性闭句覆盖每个内部自然码，前件没有终止性、有效性或递归不变量。 -/
+example : ObjectStructuralListCheck.acceptsIffSentence = ((OmegaSyntax.omega (0 : Fin 2)).imp
+    ((Source.Formula.mem 1 0).imp ((StructuralListTraceSyntax.valid 0 1).iff (StructuralListCheckSyntax.accepts 0 1)))).close := rfl
+
+example : ObjectStructuralListCheck.rejectsIffSentence = ((OmegaSyntax.omega (0 : Fin 2)).imp
+    ((Source.Formula.mem 1 0).imp ((StructuralListTraceSyntax.valid 0 1).neg.iff (StructuralListCheckSyntax.rejects 0 1)))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.terminationSentence) := ObjectStructuralListCheck.native_termination
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.existsSentence) := ObjectStructuralListCheck.native_exists
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.fiberSentence) := ObjectStructuralListCheck.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.indexUniqueSentence) := ObjectStructuralListCheck.native_indexUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.valueUniqueSentence) := ObjectStructuralListCheck.native_valueUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.preservesStepSentence) := ObjectStructuralListCheck.native_preservesStep
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.invariantSentence) := ObjectStructuralListCheck.native_invariant
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.acceptValueSentence) := ObjectStructuralListCheck.native_acceptValue
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.rejectValueSentence) := ObjectStructuralListCheck.native_rejectValue
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.acceptsIffSentence) := ObjectStructuralListCheck.native_acceptsIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.rejectsIffSentence) := ObjectStructuralListCheck.native_rejectsIff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.exclusiveSentence) := ObjectStructuralListCheck.native_exclusive
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.decodeAcceptedSentence) := ObjectStructuralListCheck.native_decodeAccepted
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.nilAcceptsSentence) := ObjectStructuralListCheck.native_nilAccepts
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.zeroRejectsSentence) := ObjectStructuralListCheck.native_zeroRejects
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListCheck.classificationSentence) := ObjectStructuralListCheck.native_classification
+
 end PPAC.Migration.Step4Checks

@@ -230,3 +230,14 @@ Valid(w,n)下实际取得L,F,a，满足HasLength(w,n,L)、Fields(w,n,L,F)、Enco
 十个新增闭句有源ZF及原nativeZF实际Derives；见STEP4_INTERNAL_LIST_ROUNDTRIP_ACCEPTANCE.zh-CN.md。
 这些是列表层的关系式往返，尚未交付实际递归语法检查算法及树有效性。
 专用ProofZF/U、任意内部证明码正确性、内部编译器及最终内部Con仍未完成；本文件最初锁定的Con展开和背景不变。
+
+
+2026-10-22全内部递归列表检查对象推导更新：
+Terminal(w,b):=Empty(b)∨Nil(w,b)，Occurs(w,n,r)实际量化真实tail递归值。
+Before(w,n,r)排除全部更早内部索引上的终端事件，CheckValue保留实际首个索引、完整递归见证和终端值。
+定义不引用Valid；严格尾码对象归纳证明全部内部自然码终止，原Foundation/Separation给首个终端存在唯一。
+停止前有效性不变量经对象ω归纳闭合，得到接受↔原Valid、拒绝↔¬Valid及完整互斥分类。
+每个内部自然码有实际唯一检查值；原Nil/零边界和接受后的实际内部长度/完整图解码也已证明。
+十六个新增完整闭句有源ZF及原nativeZF实际Derives；见STEP4_INTERNAL_LIST_CHECK_ACCEPTANCE.zh-CN.md。
+列表有效性/解码总门禁现为True，树、专用ProofZF/U、任意内部证明码正确性及最终Con仍为False。
+本文件锁定的原背景、内部Con展开、全部六条规则/27逻辑模式及全内部ω量词范围不变。
