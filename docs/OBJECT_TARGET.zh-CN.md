@@ -143,3 +143,18 @@ Nil迹长度为空，Cons迹长度为尾的实际长度的后继，成员归纳�
 九个新完整闭句均有源ZF、sourceZF原核核心和原nativeZF证明；具体见STEP4_INTERNAL_LIST_LENGTH_ACCEPTANCE.zh-CN.md。
 实际有序字段图、字段往返和完整列表解码尚未完成；专用ProofZF/U及最终内部Con仍为False。
 原语言、原背景ZF、完整六条核规则/27种逻辑模式和全内部ω证明码的Con规格保持不变。
+
+
+2026-10-22内部Cons投影及实际递归对象推导更新：
+Selected_head(w,x,y):=∃a((y∈w∧a∈w)∧Cons(w,y,a,x))；
+Selected_tail(w,x,y):=∃a((y∈w∧a∈w)∧Cons(w,a,y,x))。
+HasCons_h(w,x):=∃y Selected_h(w,x,y)；
+Step_h(w,x,y):=Selected_h(w,x,y)∨(¬HasCons_h(w,x)∧Empty(y))。
+Ω(w)下每个内部集合x都有实际唯一Step_h值，且值属于w；输入不预设自然或有效列表。
+原自然Cons输入分别返回实际head/tail，Nil和无Cons输入返回实际空集。
+h为两个外部公式模式索引，不是新增对象排序、对象函数符号或对象布尔变量。
+Iteration_h仍为原NaturalEvaluationSyntax.evaluation，即实际后继域、完整原递归图和实际边的存在公式。
+原算子义务已实际消去；任意内部种子a与r∈w有实际唯一Iteration_h(w,a,r,y)。
+另有实际唯一递归图、零点和后继方程；a∈w时所有求值属于w。
+11个完整闭句模式/22个head-tail实例均有原nativeZF推导，见STEP4_INTERNAL_LIST_PROJECTION_ACCEPTANCE.zh-CN.md。
+尚未把该递推与原列表构造迹逐步对齐，故实际完整有序字段图、往返、ProofZF/U和Con仍为False。

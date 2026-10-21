@@ -437,4 +437,68 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.existsSentence) := ObjectStructuralListLength.native_exists
 
+/-- 两个模式实例明确是原head/tail分量，Bool仅为外部公式模式索引。 -/
+example {m} (w x y a : Fin m) : StructuralListProjectionSyntax.body true w x y a =
+    ((Source.Formula.mem y w).conj (.mem a w)).conj (StructuralListSyntax.consCode w y a x) := rfl
+
+example {m} (w x y a : Fin m) : StructuralListProjectionSyntax.body false w x y a =
+    ((Source.Formula.mem y w).conj (.mem a w)).conj (StructuralListSyntax.consCode w a y x) := rfl
+
+/-- 非Cons的任何内部集合输入均有原空集分支，不要求输入有效或自然。 -/
+example {m} (head : Bool) (w x y : Fin m) : StructuralListProjectionSyntax.step head w x y =
+    (StructuralListProjectionSyntax.selected head w x y).disj
+      ((StructuralListProjectionSyntax.hasCons head w x).neg.conj (OmegaSyntax.empty y)) := rfl
+
+/-- 实际迭代仍由后继域与完整原递归图见证。 -/
+example {m} (head : Bool) (w a r y : Fin m) : StructuralListProjectionSyntax.iteration head w a r y =
+    NaturalEvaluationSyntax.evaluation (StructuralListProjectionSyntax.matrix head) (fun _ : Fin 1 => w) w a r y := rfl
+
+/-- 全内部自然索引纤维没有把算子总性或单值性留作闭句前提。 -/
+example (head : Bool) : ObjectStructuralListProjection.fiberSentence head =
+    ((OmegaSyntax.omega (0 : Fin 3)).imp ((Source.Formula.mem 2 0).imp (StructuralListProjectionSyntax.iterationFiber head 0 1 2))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.totalSentence true)) := ObjectStructuralListProjection.native_total true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.totalSentence false)) := ObjectStructuralListProjection.native_total false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.functionalSentence true)) := ObjectStructuralListProjection.native_functional true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.functionalSentence false)) := ObjectStructuralListProjection.native_functional false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.rangeSentence true)) := ObjectStructuralListProjection.native_range true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.rangeSentence false)) := ObjectStructuralListProjection.native_range false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.consSentence true)) := ObjectStructuralListProjection.native_cons true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.consSentence false)) := ObjectStructuralListProjection.native_cons false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.nilSentence true)) := ObjectStructuralListProjection.native_nil true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.nilSentence false)) := ObjectStructuralListProjection.native_nil false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.offConsSentence true)) := ObjectStructuralListProjection.native_offCons true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.offConsSentence false)) := ObjectStructuralListProjection.native_offCons false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.recursorsSentence true)) := ObjectStructuralListProjection.native_recursors true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.recursorsSentence false)) := ObjectStructuralListProjection.native_recursors false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.fiberSentence true)) := ObjectStructuralListProjection.native_fiber true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.fiberSentence false)) := ObjectStructuralListProjection.native_fiber false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.closureSentence true)) := ObjectStructuralListProjection.native_closure true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.closureSentence false)) := ObjectStructuralListProjection.native_closure false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.zeroSentence true)) := ObjectStructuralListProjection.native_zero true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.zeroSentence false)) := ObjectStructuralListProjection.native_zero false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.nextSentence true)) := ObjectStructuralListProjection.native_next true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListProjection.nextSentence false)) := ObjectStructuralListProjection.native_next false
+
 end PPAC.Migration.Step4Checks

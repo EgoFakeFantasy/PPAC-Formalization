@@ -91,7 +91,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.ii | 实际空序列、追加及精确旧边关系 | StructuralListTraceRows/Base/Append、StructuralListValidity | 实际Nil种子与Cons追加；旧相邻步逐见证迁移，新末步单独构造 | 完成；真实Derives，无宿主有限深度限制 |
 | 4b.c.4c.iii | 实际前驱/前缀、Nil/Cons互斥及输入单射 | StructuralListTraceOrder/Prefix/Invert、StructuralListDecodeSyntax/Decode、ObjectStructuralListTrace | 有效码精确Nil或Cons有效尾双向式、已知Cons的有效尾反射、范围及零码排除 | 完成；十个源ZF及原nativeZF闭句，见STEP4_INTERNAL_LIST_TRACES_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.iv.a | 精确前驱长度前缀、Nil/Cons反演、严格尾码界；内部ω上的成员归纳 | StructuralListLengthSyntax/Basic/Rules/Step/Unique/Fiber、StructuralListTerminal、ObjectStructuralListLength | 任意实际长度候选相等、任意同码轨迹长度相等、每个有效码的实际唯一内部自然长度纤维 | 完成；九个源ZF及原nativeZF闭句，见STEP4_INTERNAL_LIST_LENGTH_ACCEPTANCE.zh-CN.md |
-| 4b.c.4c.iv.b | 原Cons输入单射性、原自然递归及原Replacement | 计划StructuralListProjection/Fields | 在所有内部集合上总单值的head/tail步关系；实际有序字段图及其唯一性 | 下一主项；先以原Cons输入关系定义算子，非Cons输入返回实际空集 |
+| 4b.c.4c.iv.b.i | 原Cons输入单射性、内部空集、原自然递归 | StructuralListProjectionSyntax/Projection/Recursion、ObjectStructuralListProjection | 全内部集合上实际总单值head/tail投影；全内部自然索引唯一求值、真实递归图、零点/后继/值域规律 | 完成；11个闭句模式、head/tail共22个原nativeZF实例 |
+| 4b.c.4c.iv.b.ii | 上项实际tail递归、head投影、唯一列表长度及原Replacement | 计划StructuralListFields | tail求值与原迹逐步对齐、唯一长度处到达Nil；构造原字段顺序的实际唯一完整图 | 下一主项；全内部量词和真实图见证保留 |
 | 4b.c.4c.iv.c | 唯一实际长度、实际有序字段图、全部内部相邻步 | 计划StructuralListRoundTrip | 原字段顺序的编码/解码往返，保持全部内部ω量词 | 待做；实际构造迹的方向与原字段顺序分别核对 |
 | 4b.c.4c.v | 上项唯一字段解码、有效性关系及严格子码界 | 计划StructuralListCheck/TreeCode | 全内部码的有效解码/拒绝及递归正确性，再接入树字段有效性 | 待做；列表码有效不自动表示字段是有效语法树 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
@@ -573,3 +574,14 @@ Nil的每条实际迹长度为空；Cons的每条实际迹长度为尾的某个�
 再用已证自然递归从完整码向尾递推，按原字段顺序取得实际图。此路线避免先反转构造迹，
 仍须实际证明与迹的逐步对应、在唯一长度处止于Nil和由Replacement取得完整字段图。
 这些字段图、往返、树、专用ProofZF/U与最终Con尚未完成。
+
+
+2026-10-22内部投影批次：4b.c.4c.iv.b.i完成。外部Bool仅选择head/tail两个纯公式模式。
+Selected_h(w,x,y)存在自然分量a，原Cons分量顺序按模式选择；Step_h为该关系或无Cons时的Empty(y)。
+已证所有内部集合输入的实际总性、单值性、ω值域、已知Cons的精确分量和Nil/非Cons的空值。
+原自然递归的总性/单值性前提均已消去，获得实际唯一递归图及全内部自然索引的实际唯一求值。
+零点返回原种子；后继求值满足原Step_h；自然种子下全部值属于ω。
+11个完整闭句模式均有源ZF、sourceZF原核核心与原nativeZF证书，CheckStep4逐一检查两个方向共22实例。
+完整验收442任务、3762审计、0警告、411份源码哈希差异0；Internal具名覆盖1447项。
+下一主项4b.c.4c.iv.b.ii仍须证明尾递推与原构造迹逐步对应、终止点和实际完整字段图。
+完整字段图/往返、树、专用ProofZF/U与最终内部Con仍未完成。
