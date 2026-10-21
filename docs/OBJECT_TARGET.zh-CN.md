@@ -65,5 +65,8 @@ ProofCode中普通自然数序列的空码0、NatPacket字节传输码及旧Quin
 两个实际零见证通过原Extensionality在对象核内对齐；原nativeZF有十个完整闭句证书，不残留未证递推假设。
 加法已有双向左后继律、交换、双向结合、两侧抵消、两加数不降界、正加数严格成员界及和值为零刻画。
 这些九个额外完整闭句均有原nativeZF推导；顺序界为真实对象相等/成员关系。
-下一项为乘法代数、次序差分及编码界、Gödel配数与结构码。ProofZF/U AST和内部Con的完成状态没有改变。
+乘法现有两侧分配双向式、左参数后继双向式、交换/结合和两侧单位律；内部单位由Empty(z)及Succ(e,z)指定。
+三项/四项加法重排及六个乘法代数闭句均有源ZF及原nativeZF推导；ZFContext仅封装原ZF公理包含关系。
+加乘关系的半环律已经完成，但全ω运算图、次序差分及完整编码界、Gödel配数与结构码仍待做。
+ProofZF/U AST和最终内部Con的完成状态没有改变。
 详见STEP4_BASIC_ARITHMETIC_ACCEPTANCE.zh-CN.md。

@@ -49,3 +49,5 @@ import PPAC.Migration.Internal.SuccessorRecursion
 import PPAC.Migration.Internal.ObjectNaturalMultiplication
 
 import PPAC.Migration.Internal.ObjectNaturalAdditionOrder
+
+import PPAC.Migration.Internal.ObjectNaturalMultiplicationAlgebra
