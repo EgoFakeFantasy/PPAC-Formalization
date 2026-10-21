@@ -1650,4 +1650,82 @@ example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
 example {m} (w b f h n : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxTypeStates.introduceQuantifierSentence false w b f h n)) := ObjectSyntaxTypeStates.native_introduceQuantifier false w b f h n
 
+/-! 历史无关11构造递归式及无额外存在前提的实际内部类型系统。 -/
+
+example {m}  (w c h n x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.readSentence  w c h n x b f)) := ObjectSyntaxTypeRecursive.native_read  w c h n x b f
+
+example {m}  (w c h n x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.advancedSentence  w c h n x b f)) := ObjectSyntaxTypeRecursive.native_advanced  w c h n x b f
+
+example {m} (advance : Bool) (w c h n x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.checkSentence advance w c h n x b f)) := ObjectSyntaxTypeRecursive.native_check advance w c h n x b f
+
+example {m} (tag : Nat) (advance : Bool) (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.singleSentence tag advance w c b f h n)) := ObjectSyntaxTypeRecursive.native_single tag advance w c b f h n
+
+example {m} (kind : Fin 4) (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.binarySentence kind w c b f h n)) := ObjectSyntaxTypeRecursive.native_binary kind w c b f h n
+
+example {m}  (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.localSentence  w c b f h n)) := ObjectSyntaxTypeRecursive.native_local  w c b f h n
+
+example {m}  (w a c b f h n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.atStateSentence  w a c b f h n v)) := ObjectSyntaxTypeRecursive.native_atState  w a c b f h n v
+
+example {m}  (w a c n v b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.atValueSentence  w a c n v b f)) := ObjectSyntaxTypeRecursive.native_atValue  w a c n v b f
+
+example {m}  (w a c n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.recursiveSentence  w a c n b f)) := ObjectSyntaxTypeRecursive.native_recursive  w a c n b f
+
+example {m}  (w a c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.universalSentence  w a c)) := ObjectSyntaxTypeRecursive.native_universal  w a c
+
+example {m}  (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.actualSystemSentence  w)) := ObjectSyntaxTypeRecursive.native_actualSystem  w
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectSyntaxTypeRecursive.existenceSentence) := ObjectSyntaxTypeRecursive.native_existence
+
+/-- 两个量词体保留实际后继bound；此处没有历史参数。 -/
+example {m} (w c x b f : Fin m) : SyntaxTypeRecursiveSyntax.advancedTyped w c x b f =
+    Source.Formula.ex ((OmegaSyntax.successor (Fin.last m) b.castSucc).conj
+      (SyntaxTypeJudgmentSyntax.typed w.castSucc c.castSucc x.castSucc (Fin.last m) f.castSucc)) := rfl
+
+/-- 全内部候选n,b,f；不把模式限制为标准码。 -/
+example {m} (w c : Fin m) : SyntaxTypeSystemSyntax.universalLaw w c =
+    Source.Formula.all (.all (.all
+      ((SyntaxTypeJudgmentSyntax.typed w.castSucc.castSucc.castSucc c.castSucc.castSucc.castSucc
+        (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2))).iff
+       (SyntaxTypeRecursiveSyntax.criterion w.castSucc.castSucc.castSucc c.castSucc.castSucc.castSucc
+        (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2)))))) := rfl
+
+example : ObjectSyntaxTypeRecursive.existenceSentence = Source.Formula.ex
+    ((OmegaSyntax.omega (Fin.last 0)).conj (SyntaxTypeSystemSyntax.system (Fin.last 0))) := rfl
+
+/-- 自然根码守卫在完整历史无关判据中显式保留。 -/
+example {m} (w c n b f : Fin m) : SyntaxTypeRecursiveSyntax.criterion w c n b f =
+    (Source.Formula.mem n w).conj (SyntaxTypeRecursiveSyntax.allCases w c n b f) := rfl
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.binarySentence 0 w c b f h n)) := ObjectSyntaxTypeRecursive.native_binary 0 w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.binarySentence 1 w c b f h n)) := ObjectSyntaxTypeRecursive.native_binary 1 w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.binarySentence 2 w c b f h n)) := ObjectSyntaxTypeRecursive.native_binary 2 w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.binarySentence 3 w c b f h n)) := ObjectSyntaxTypeRecursive.native_binary 3 w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.singleSentence 4 false w c b f h n)) := ObjectSyntaxTypeRecursive.native_single 4 false w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.singleSentence 9 true w c b f h n)) := ObjectSyntaxTypeRecursive.native_single 9 true w c b f h n
+
+example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypeRecursive.singleSentence 10 true w c b f h n)) := ObjectSyntaxTypeRecursive.native_single 10 true w c b f h n
+
 end PPAC.Migration.Step4Checks

@@ -339,3 +339,12 @@ Typed(w,C,n,b,f):=n∈w∧Ctx(w,b,f)∧∃V(Evaluation(w,C,n,V)∧Edge(V,b,f))�
 35个完整闭句模式均有原Source/sourceZF/nativeZF证书；详见STEP4_ACTUAL_TYPE_STATES_ACCEPTANCE.zh-CN.md。
 这完成实际状态存在、递归图与读取对应；完整11构造的历史无关类型递归式和原编码识别正确性仍待证。
 完整类型门禁仍False；内部替换、ProofZF/U及任意内部证明码正确性、内部编译器和最终Con均未完成。
+
+2026-10-22全11历史无关类型递归式更新：
+Criterion保留n∈w和原11构造精确析取，所有严格子码的Read已等价替换为Typed。
+量词体为∃k(Succ(k,b)∧Typed(w,C,child,k,f))，free不变，不冻结父式bound。
+原核证明Ω(w)、A=P(w)、C=P(A)下，对全部内部n,b,f有Typed↔Criterion，非自然候选也正式处理。
+进一步实际取得ω、A/C/U、完整状态递归和∀n∀b∀f定律，闭句存在证书无额外存在前提。
+12个新增完整原核模式及验收见STEP4_HISTORY_FREE_TYPE_RECURSION_ACCEPTANCE.zh-CN.md。
+内部bound/free类型递归关卡现True；原编码识别/构造仍待验收，完整类型识别关卡仍False。
+内部替换、ZF/U专用Proof及任意内部码正确性、内部编译器和最终Con依旧未完成。

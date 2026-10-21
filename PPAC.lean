@@ -89,3 +89,5 @@ import PPAC.Migration.Internal.ObjectSyntaxAtoms
 import PPAC.Migration.Internal.ObjectSyntaxContextCarrier
 
 import PPAC.Migration.Internal.ObjectSyntaxTypeStates
+
+import PPAC.Migration.Internal.ObjectSyntaxTypeRecursive
