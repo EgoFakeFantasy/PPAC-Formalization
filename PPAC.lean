@@ -19,3 +19,4 @@ import PPAC.Migration.ObjectGraphFamily
 import PPAC.Migration.ObjectOmega
 import PPAC.Migration.ObjectOmegaStructure
 import PPAC.Migration.ObjectGraphPointwise
+import PPAC.Migration.ObjectIterationUniqueness

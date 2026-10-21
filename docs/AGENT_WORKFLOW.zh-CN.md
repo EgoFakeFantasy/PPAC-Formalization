@@ -24,8 +24,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | ω存在/唯一/归纳及结构完成；迭代/覆盖待做 |
 | 3b.2b.3a | 原Infinity、Extensionality及完整Separation | OmegaSyntax/Universal/Cut/Existence/Algebra、OmegaInduction*、ObjectOmega | 实际最小归纳集合ω存在唯一；任意参数公式的每个模式实例均有完整对象ω归纳闭句及原核Derives | 完成 |
 | 3b.2b.3a.i | 对象ω归纳及原Foundation/集合图设施 | OmegaStructureSyntax/Induction/Algebra、OmegaElementary、ObjectIrreflexivity、ObjectOmegaStructure | 内部0/后继分解、成员闭包/传递性、后继消去及迭代图所需的新输入不在旧域事实；均保留对象量词 | 完成 |
-| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 完整函数图逐点外延性；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 图逐点外延性完成；内部迭代下一项 |
+| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 完整函数图逐点外延性；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 图逐点外延性及给定轨迹相容/同域唯一完成；实际全内部存在下一项 |
 | 3b.2b.3b.i | 原完整functionOn、Kuratowski边和Extensionality | GraphPointwiseSyntax/Entries/Domain、GraphPointwise、ObjectGraphPointwise | 逐边相等推出实际图相等；相容函数域包含推出图包含；同域图相等；实际定义域唯一；源ZF与原核Derives | 完成 |
+| 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 条件相容/唯一完成；存在性待做 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -171,3 +172,13 @@ ObjectOmegaStructure还给出零/后继成员闭包、非零前驱、后继消�
 从后继输入属于两个域推出前驱也属于两个域，归纳步再用UnionOf唯一性。
 再以本批逐点外延性推出同一n的图唯一；存在步用新鲜后继扩展并核对全部旧/新边的递推关系。
 最终用Replacement收集全部内部n的图或末值，实际合并并证明传递覆盖；这些步骤仍待实施。
+
+给定迭代轨迹唯一性更新：IterationSyntax.track(f,d,z,a)精确展开为完整functionOn(f,d)、
+edge(f,z,a)和∀j,k,u,v[Succ(k,j)→edge(f,j,u)→edge(f,k,v)→UnionOf(v,u)]。
+完整functionOn已保证每条边的输入属于实际域；局部递推条件覆盖全部对象输入/输出，
+没有用结构字段直接假定两个图相容或相等。四参数矩阵commonAt(f,g,d,e,x)在对象ω归纳中
+给出所有内部共同索引的输出一致。传递域及d⊆ω下两图相容，同域时由完整图外延性推出相等。
+ObjectIterationUniqueness有三个完整闭句及源ZF/原核Derives，理论输入仅Extensionality和一个Separation实例。
+以上以前提中的实际轨迹为条件，尚未构造每个内部n的轨迹，不能把唯一性当作存在唯一性。
+下一项从零长度单点图和新鲜后继扩展出发，验证完整递推条件，证明所有内部n的实际图存在；
+随后装配n的后继域、相容性和唯一性，再Replacement收集并合并。实际验收见STEP3_ITERATION_UNIQUENESS_ACCEPTANCE.zh-CN.md。

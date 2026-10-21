@@ -493,4 +493,29 @@ theorem compatible_graph_subset {n} {Γ : Source.Context n} (f g d e : Fin n)
     (hd : Source.Derives Γ (RestrictionSyntax.subset d e)) (ha : Source.Derives Γ (GraphFamilySyntax.agrees f g)) :
     Source.Derives Γ (RestrictionSyntax.subset f g) := GraphPointwise.subset_of_agrees f g d e he hf hg hd ha
 
+/-- 轨迹实际包含原functionOn和全部对象输入/输出的并集递推约束。 -/
+example {n} (f d z a : Fin n) : IterationSyntax.track f d z a =
+    (GraphSyntax.functionOn f d).conj ((GraphSyntax.edge f z a).conj (IterationSyntax.next f)) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectIterationUniqueness.commonSentence) := ObjectIterationUniqueness.native_common
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectIterationUniqueness.compatibleSentence) := ObjectIterationUniqueness.native_compatible
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectIterationUniqueness.uniqueSentence) := ObjectIterationUniqueness.native_unique
+
+/-- 两公理核心证书不调用Collection/Replacement，结论是给定轨迹的唯一性。 -/
+example : FirstOrder.Derives (TheoryTransport.theory ObjectIterationUniqueness.assumptions) []
+    (Translation.sentence ObjectIterationUniqueness.uniqueSentence) := ObjectIterationUniqueness.unique_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectIterationUniqueness.commonSentence := ObjectIterationUniqueness.source_ZF_common
+
+/-- 全部内部ω成员上的共同输入模式，不以外部标准长度列表代替。 -/
+theorem tracks_agree_on_all_internal_inputs {n} {Γ : Source.Context n} (f g d e z a w : Fin n)
+    (he : Source.Derives Γ (Source.SetLanguage.extensionality.rename Fin.elim0))
+    (hs : Source.Derives Γ ((Source.SetLanguage.separation IterationSyntax.agreementMatrix).rename Fin.elim0))
+    (hw : Source.Derives Γ (OmegaSyntax.omega w)) (hz : Source.Derives Γ (OmegaSyntax.empty z))
+    (hf : Source.Derives Γ (IterationSyntax.track f d z a)) (hg : Source.Derives Γ (IterationSyntax.track g e z a))
+    (hd : Source.Derives Γ (OmegaStructureSyntax.transitive d)) (hc : Source.Derives Γ (OmegaStructureSyntax.transitive e)) :
+    Source.Derives Γ (IterationSyntax.allCommon f g d e w) := IterationInduction.all_common f g d e z a w he hs hw hz hf hg hd hc
+
 end PPAC.Migration.Step3Checks
