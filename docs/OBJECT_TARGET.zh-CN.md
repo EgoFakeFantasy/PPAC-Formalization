@@ -86,3 +86,13 @@ ProofZF/U AST和最终内部Con的完成状态没有改变。
 区间中的平方与后继仍由对象量词关系指定；不固定宿主max、sqrt或Nat.pair。
 全内部编码上的逆解码总性尚未证明，结构列表/树值正确性、专用ProofZF/U和最终Con主句仍未完成。
 详细公式、实际验收和下一关见STEP4_GODEL_PAIR_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22全内部解码对象推导更新：GodelUnpairSyntax.witness(w,p,a,b)明确为
+(a∈w∧b∈w)∧Pair(w,a,b,p)，preimage是实际存在两个分量。
+在编码p上作对象ω归纳：空码有实际零分量；两支内部推进和两处边界跳转均返回原配数关系证书。
+故每个内部p∈w均实际可解码。exactAt为∀c∀d(witness(w,p,c,d)↔(c=a∧d=b))，
+fiber实际取得a,b并给出此双向刻画，boundedFiber另外给出a≤p和b≤p。
+六个完整闭句均有源ZF及原nativeZF实际推导。没有外部标准ω、宿主平方根或语义模型假设。
+原配数与逆解码已经完成；原结构列表/树码、专用ProofZF/U与最终Con主句仍未完成。
+详见STEP4_GODEL_UNPAIR_ACCEPTANCE.zh-CN.md。
