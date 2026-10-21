@@ -91,8 +91,8 @@ def main() -> None:
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
         is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
-            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization."])
-        if name.startswith(("PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.")):
+            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse."])
+        if name.startswith(("PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
             continue
@@ -115,7 +115,9 @@ def main() -> None:
         "native_formula_normalization_object_equivalence": True,
         "fixed_ZF_axioms_with_bidirectional_derivations": ["extensionality", "emptySet", "pairing", "union", "powerSet", "infinity", "foundation"],
         "all_source_Separation_instances_transported": True,
-        "all_native_Project_Separation_instances_reverse_transported": False,
+        "all_native_Project_Separation_instances_reverse_transported": True,
+        "all_source_Collection_instances_proved_in_native_ZF": True,
+        "arbitrary_native_Collection_presentation_object_equivalent": True,
         "full_ZF_equivalence_proved": False,
         "reverse_native_to_source_derivation_compiler_proved": False,
         "choice_presentations_equivalent_proved": False,
@@ -134,7 +136,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and all source Separation instances. Full ZF/AC equivalences, reverse source-calculus compiler and internal Con proof remain pending.",
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation and arbitrary Collection presentations. Full ZF/AC equivalences, reverse source-calculus compiler and internal Con proof remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

@@ -111,4 +111,31 @@ def parameterMatrix : Source.Formula 4 :=
 example : FirstOrder.Derives nativeZF []
     (Translation.sentence (Source.SetLanguage.separation parameterMatrix)) :=
   SeparationSyntax.source_separation parameterMatrix
+/-- 任意原生矩阵的反向分离模式，不再只限于ProjectSyntax.unary p。 -/
+theorem arbitrary_native_separation {n} (s : SetTheory.Definitional.Project.UnarySchema n) :
+    FirstOrder.Derives ZFEquivalence.sourceZF []
+      (SetTheory.Definitional.Project.fo_sentence (SetTheory.Axioms.Schema.separation s)) :=
+  SeparationReverse.native_separation s
+
+def projectMatrix : SetTheory.Definitional.Project.UnarySchema 2 where
+  body := .iff .truth (.forallE (.imp
+    (SetTheory.Definitional.Project.Formula.subset (.bound 0) (.bound 1))
+    (.neg (SetTheory.Definitional.Project.Formula.extensionalEq (.bound 2) (.bound 3)))))
+  freeClosed := by simp [SetTheory.Definitional.Formula.FreeClosed]
+
+/-- 子集原子、独立连接词、多个参数和量词同时出现的实际原核回放。 -/
+example : FirstOrder.Derives ZFEquivalence.sourceZF []
+    (SetTheory.Definitional.Project.fo_sentence (SetTheory.Axioms.Schema.separation projectMatrix)) :=
+  SeparationReverse.native_separation projectMatrix
+
+/-- 全参数Collection的源呈现只从原Collection版ZF取得，没有假定源ZF已经证明它。 -/
+theorem collection_source_presentation {n} (p : Source.Formula (n+2)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (CollectionSyntax.collection p)) :=
+  CollectionSyntax.source_collection p
+
+theorem arbitrary_collection_roundtrip {n} (s : SetTheory.Definitional.Project.BinarySchema n) :
+    FirstOrder.Derives noAxioms [] (.iff
+      (SetTheory.Definitional.Project.fo_sentence (SetTheory.Axioms.Schema.collection s))
+      (Translation.sentence (CollectionSyntax.collection (ProjectDecode.reverse s.body s.freeClosed)))) :=
+  CollectionSyntax.native_collection_equivalent s
 end PPAC.Migration.Step3Checks

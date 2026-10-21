@@ -10,7 +10,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 1 | 原语言与原核接口 | SourceSyntax、SourceStatements、Translation、Contract | 全8构造器语义保真；正确对象句子 | 完成，中间层 |
 | 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
-| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理及所有源分离实例完成；原生任意矩阵反向覆盖/Collection/Replacement待做 |
+| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理及全分离双向完成；Collection呈现完成；Collection/Replacement实质推导待做 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 原核→源演绎；明确额外非空变量环境及闭句回落，不能把原核内呈现回放当作本项 | 待做 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
@@ -42,3 +42,9 @@ SeparationSyntax.source_separation对任意n与p : Source.Formula (n+1)返回原
 native_separation_of_source_matrix返回同一矩阵对应的原生分离实例在源ZF句子像中的Derives。
 任意原生Project矩阵的反向覆盖尚未证明；后续不得把这一受限反向接口当作完整分离模式等价。
 本批验收见STEP3_SCHEMAS_ACCEPTANCE.zh-CN.md；完整内部Con主句仍为最终完成门。
+
+全分离覆盖更新：SeparationReverse.native_separation现对任意原生Project.UnarySchema n返回原核推导，
+任意原生矩阵的反向覆盖缺口已关闭。ProjectDecode展开子集原子，并证明两侧rename与参数闭合交换。
+CollectionSyntax已给出任意源矩阵的原ZF收集推导，以及任意原生二元矩阵的完整回译/原核逻辑等价；
+尚未从源Replacement版ZF证明Collection，也未从Collection与Separation证明源Replacement。
+本批验收见STEP3_FULL_SEPARATION_ACCEPTANCE.zh-CN.md；持续目标仍为内部Con对象主句。
