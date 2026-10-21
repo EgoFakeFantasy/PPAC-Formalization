@@ -636,4 +636,50 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListFields.traceHeadSentence) := ObjectStructuralListFields.native_traceHead
 
+/-- 任意原内部完整ω值序列的逆编码实际保留自然码、原构造迹长度及给定源图。 -/
+example {m} (w f l : Fin m) : StructuralListEncodeSyntax.existsEncoding w f l = .ex
+    (((Source.Formula.mem (Fin.last m) w.castSucc).conj
+      (StructuralListLengthSyntax.hasLength w.castSucc (Fin.last m) l.castSucc)).conj
+      (StructuralListFieldGraphSyntax.fields w.castSucc (Fin.last m) l.castSucc f.castSucc)) := rfl
+
+/-- 后缀归纳性质量化全部内部偏移，最终编码前提不假定源序列已经有列表码。 -/
+example {m} (w f l r : Fin m) : StructuralListSuffixSyntax.property w f l r = .all
+    ((Source.Formula.mem (Fin.last m) w.castSucc).imp
+      ((NaturalAdditionSyntax.sum w.castSucc r.castSucc (Fin.last m) l.castSucc).imp
+        (StructuralListSuffixSyntax.existsCode w.castSucc f.castSucc (Fin.last m) r.castSucc))) := rfl
+
+example : ObjectStructuralListEncode.existsSentence = ((OmegaSyntax.omega (0 : Fin 3)).imp
+    ((SequenceSyntax.sequence 1 2 0).imp ((Source.Formula.mem 2 0).imp (StructuralListEncodeSyntax.existsEncoding 0 1 2)))).close := rfl
+
+/-- 读回比较任意实际长度及完整图，没有假定外部标准性或输出图预先相等。 -/
+example : ObjectStructuralListEncode.readbackSentence = ((OmegaSyntax.omega (0 : Fin 6)).imp
+    ((StructuralListEncodeSyntax.encoding 0 1 2 3).imp ((StructuralListLengthSyntax.hasLength 0 3 4).imp
+      ((StructuralListFieldGraphSyntax.fields 0 3 4 5).imp ((Source.Formula.equal 4 2).conj (.equal 5 1)))))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.nilLengthSentence) := ObjectStructuralListEncode.native_nilLength
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.consLengthSentence) := ObjectStructuralListEncode.native_consLength
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.emptyLengthSentence) := ObjectStructuralListEncode.native_emptyLength
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.offsetSentence) := ObjectStructuralListEncode.native_offset
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.suffixZeroSentence) := ObjectStructuralListEncode.native_suffixZero
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.suffixConsSentence) := ObjectStructuralListEncode.native_suffixCons
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.suffixSentence) := ObjectStructuralListEncode.native_suffix
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.fullSuffixSentence) := ObjectStructuralListEncode.native_fullSuffix
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.graphRecoverySentence) := ObjectStructuralListEncode.native_graphRecovery
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.zeroFieldsSentence) := ObjectStructuralListEncode.native_zeroFields
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.existsSentence) := ObjectStructuralListEncode.native_exists
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.validSentence) := ObjectStructuralListEncode.native_valid
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListEncode.readbackSentence) := ObjectStructuralListEncode.native_readback
+
 end PPAC.Migration.Step4Checks

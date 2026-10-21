@@ -205,3 +205,17 @@ Decoded(w,n):=∃l∃g((l∈w∧HasLength(w,n,l))∧Fields(w,n,l,g))。
 15个完整闭句有源ZF、sourceZF原核核心及原nativeZF证明，见STEP4_INTERNAL_LIST_FIELDS_ACCEPTANCE.zh-CN.md。
 该解码保留实际HasLength构造迹；任意字段序列的逆编码、码唯一性及双向往返仍未完成。
 内部专用ProofZF/U和最终Con规格不变，不能由当前图解码或编译通过宣称最终目标完成。
+
+
+2026-10-22任意内部字段序列逆编码对象推导更新：
+Encoding(w,F,L,n):=(n∈w∧HasLength(w,n,L))∧Fields(w,n,L,F)。
+Ω(w)、L∈w和原完整sequence(F,L,w)实际推出∃n Encoding(w,F,L,n)。
+不预设序列已有编码，也不限制为外部标准长度；F,L,n均为内部集合对象。
+后缀匹配Aligned(w,F,k,r,n)量化所有i∈r和q，Sum(w,k,i,q)时Field(w,n,i,y)↔edge(F,q,y)。
+固定F,L，对全部内部r作原Separation支持的ω归纳，量化所有自然偏移k且r+k=L，
+实际构造HasLength为r且满足Aligned的自然码，再取零偏移全长实例。
+源F的原完整functionOn将逐边对应提升为精确Kuratowski图像，证明完整Fields就是给定F。
+Encoding实际推出Valid；任意HasLength(w,n,k)、Fields(w,n,k,g)的解码读回均有k=L且g=F。
+13个完整闭句有源ZF及原nativeZF推导，见STEP4_INTERNAL_LIST_ENCODE_ACCEPTANCE.zh-CN.md。
+这完成任意序列逆编码存在性和编码后图读回；不同候选码的唯一性、解码后原码恢复及完整双向往返仍未完成。
+内部专用ProofZF/U、任意内部证明码正确性和最终Con的目标与未完成标志保持不变。

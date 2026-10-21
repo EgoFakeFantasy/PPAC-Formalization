@@ -67,3 +67,5 @@ import PPAC.Migration.Internal.ObjectStructuralListEnd
 import PPAC.Migration.Internal.ObjectStructuralListPositions
 
 import PPAC.Migration.Internal.ObjectStructuralListFields
+
+import PPAC.Migration.Internal.ObjectStructuralListEncode
