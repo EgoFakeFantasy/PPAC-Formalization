@@ -588,4 +588,34 @@ example : FirstOrder.Derives nativeZF []
     (Translation.sentence (GlobalMinimalSyntax.sentence (Source.Formula.equal (0 : Fin 1) 0))) :=
   GlobalMinimal.native_minimal _
 
+/-- 原序数与其全部内部子集良基条件严格保持，未改成宿主WellFounded。 -/
+example {n} (a : Fin n) : Source.SetLanguage.ordinal a = OrdinalSyntax.ordinal a := rfl
+example {n} (a : Fin n) : Source.SetLanguage.membershipLinear a = OrdinalSyntax.linear a := rfl
+example {n} (a : Fin n) : Source.SetLanguage.membershipWellFounded a = OrdinalSyntax.wellFounded a := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.wellFoundedSentence) := ObjectOrdinalBasic.native_wellFounded
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.noSelfSentence) := ObjectOrdinalBasic.native_noSelf
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.emptySentence) := ObjectOrdinalBasic.native_empty
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.memberSentence) := ObjectOrdinalBasic.native_member
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.successorSentence) := ObjectOrdinalBasic.native_successor
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.existsEmptySentence) := ObjectOrdinalBasic.native_existsEmpty
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalBasic.existsSuccessorSentence) := ObjectOrdinalBasic.native_existsSuccessor
+
+/-- 直接使用原Source.ordinal的实际原核成员闭包接口。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (((Source.SetLanguage.ordinal (0 : Fin 2)).imp ((Source.Formula.mem 1 0).imp (Source.SetLanguage.ordinal 1))).close)) := by
+  simpa only [ObjectOrdinalBasic.memberSentence, OrdinalSyntax.ordinal_original] using ObjectOrdinalBasic.native_member
+
+/-- 基础有限理论只含Foundation、EmptySet、Pairing和Union。 -/
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalBasic.assumptions) []
+    (Translation.sentence ObjectOrdinalBasic.existsSuccessorSentence) := ObjectOrdinalBasic.existsSuccessor_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOrdinalBasic.existsEmptySentence := ObjectOrdinalBasic.source_ZF_existsEmpty
+
 end PPAC.Migration.Step3Checks

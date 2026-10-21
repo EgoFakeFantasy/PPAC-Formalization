@@ -29,8 +29,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3b.ii | 对象ω归纳、Extensionality和一个四参数Separation实例 | IterationSyntax/Values/Step/Induction/Compatibility、ObjectIterationUniqueness | 给定并集递推轨迹在全部内部共同输入相等、相容及同域唯一；实际轨迹存在另外验收 | 相容/唯一完成；实际存在见下一行 |
 | 3b.2b.3b.iii | 对象图扩展、ω归纳、Extensionality/Pairing/Union/Foundation与四个完整Separation实例 | FiniteIterationSyntax/Uniqueness、IterationBase/Existence、IterationExtension*、IterationExistence、ObjectFiniteIteration | 全部内部n∈ω的实际有限图存在；后继域与图唯一；原完整functionOn/种子/递推条件；源ZF与原核Derives | 完成 |
 | 3b.2b.3b.iv | 上项全内部存在唯一、原Replacement与Union | IterationContext、IterationValue*/Range*、TransitiveCover*、ObjectTransitiveCover | 实际取得全部内部n末值的精确集合并取并；无额外前提的∀a∃b(a⊆b∧Transitive(b))，源ZF和原核Derives | 完成 |
-| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 全体集合归纳/无界成员极小元完成；序数/递归/秩待做，不使用宿主WellFounded |
+| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 集合归纳/极小元及原序数基础完成；两序数比较/递归/秩待做，不使用宿主WellFounded |
 | 3b.3a | 实际传递覆盖、有界成员归纳、Foundation及相应完整Separation实例 | SetInductionSyntax/Logic、SetInduction、GlobalMinimalSyntax、GlobalMinimal | 每个任意参数公式有全体集合归纳与无界成员极小元的完整对象闭句；源ZF和原核Derives；不引入统一真值谓词 | 完成 |
+| 3b.3b | 原Source.ordinal、Foundation/EmptySet/Pairing/Union | OrdinalSyntax/Foundation/Transitivity/Restriction/Empty/Successor、ObjectOrdinalBasic | 原定义严格rfl；全内部子集极小元、不自属、成员闭包、实际空/后继序数；源ZF与原核Derives | 完成 |
+| 3b.3c | 原序数基础、全参数成员极小元、Extensionality及相应Separation | OrdinalInitialSegment、OrdinalComparison | 内部传递子集为初段或相等；任意两个原序数三歧比较，保留全部对象序数量词 | 下一项 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
@@ -216,3 +218,18 @@ GlobalMinimal以该模式作用于¬p，证明∃x p(x)→∃x(p(x)∧∀y∈x �
 源证明沿用Replacement版ZF中已证传递覆盖，无Collection或对象AC输入；未假定模型外部良基性。
 实际验收见STEP3_SET_INDUCTION_ACCEPTANCE.zh-CN.md。下一项核对并保持原Source.ordinal的传递性、严格线性及
 全内部子集极小元定义，继续内部序数比较/递归/秩；最终内部Con主句仍未完成。
+
+原序数基础更新：OrdinalSyntax逐字保持Source.transitiveSet、membershipLinear、membershipWellFounded与ordinal，
+四项对应均由rfl验证。内部良基条件量化每个内部非空子集，未替换为宿主WellFounded。
+OrdinalFoundation由原Foundation正规元条件逐点推出源定义所需的成员极小元；
+OrdinalRestriction证明线性/内部子集极小元条件沿子集传输，并证明原序数成员仍为原序数。
+OrdinalEmpty/Successor保留全部线性条件，分别处理后继中的旧/新成员；ObjectOrdinalBasic实际构造空序数及后继序数。
+七条完整原核闭句的有限理论仅含Foundation、EmptySet、Pairing、Union；未用Extensionality、Separation、Replacement、Collection或对象AC。
+下一项对差性质x∈a∧x∉b应用已证全参数成员极小元，证明传递子集的初段性质，再取得任意两序数比较。
+序数内部元素的线性与任意两序数比较是不同结论，后者仍待证明。实际验收见STEP3_ORDINAL_BASIC_ACCEPTANCE.zh-CN.md。
+
+两序数比较的下一证明路线：若b传递、b⊆a且Ord(a)，按a⊆b分类；双向包含时用Extensionality。
+否则对a中不属于b的性质取成员极小元u，证明u⊆b；再由a内的比较和b的传递性证明b⊆u，
+外延得到b=u∈a。对任意Ord(a),Ord(b)，若a⊆b则直接用该初段结论；否则取a\b的成员极小元u，
+证明u⊆b且Ord(u)，再次用初段结论；u∈b与差性质矛盾，故u=b且b∈a。
+这些均须实现为完整对象Derives，不能只给宿主集合论论证。
