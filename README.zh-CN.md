@@ -20,10 +20,11 @@
 任意函数图的边输入定义域、域内输出存在及单值性亦有对象推导。任意函数图的新点扩展现已在对象层构造并证明唯一，保留完整functionOn与精确边关系；
 前提为新输入x不在旧域。任意图限制亦已实际构造，证明完整原functionOn、精确边、唯一性、恒等及组合律。
 任意图的实际定义域以及任意内部相容图集合族（含空族）的并图现已构造并证明唯一，保留完整functionOn和精确边。
-内部最小归纳集ω、ω归纳/迭代、传递闭包/秩/累积层、
+内部最小归纳集ω现已实际构造并证明唯一，任意参数公式的对象ω归纳模式及成员刻画已完成。
+进一步ω结构、内部迭代图、传递闭包/秩/累积层、
 源Replacement到Collection的反向数学方向、两种AC与内部Con仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[对象ω及归纳模式验收](docs/STEP3_OBJECT_OMEGA_ACCEPTANCE.zh-CN.md)、[内部相容图族合并验收](docs/STEP3_GRAPH_FAMILY_ACCEPTANCE.zh-CN.md)、[对象图限制验收](docs/STEP3_GRAPH_RESTRICTION_ACCEPTANCE.zh-CN.md)、[一般新点图扩展验收](docs/STEP3_GRAPH_INSERT_ACCEPTANCE.zh-CN.md)、[对象函数图验收](docs/STEP3_OBJECT_GRAPHS_ACCEPTANCE.zh-CN.md)、[对象有序对验收](docs/STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md)、[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。

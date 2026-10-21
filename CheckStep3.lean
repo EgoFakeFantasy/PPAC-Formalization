@@ -411,4 +411,30 @@ theorem edge_input_in_double_union {n} {Γ : Source.Context n} (g u v x y : Fin 
     (he : Source.Derives Γ (Source.SetLanguage.edge g x y)) : Source.Derives Γ (.mem x v) := by
   rw [GraphSyntax.edge_original] at he
   exact GraphDomainBound.edge_bound g u v x y hu hv he
+/-- 原Infinity严格接入对象归纳集，未将宿主Nat作为对象ω。 -/
+example : Source.SetLanguage.infinity = .ex (OmegaSyntax.isInductive (0 : Fin 1)) := OmegaSyntax.infinity_original
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence OmegaSyntax.omegaExists) := ObjectOmega.native_existence
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmega.uniqueSentence) := ObjectOmega.native_unique
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOmega.characterizationSentence) := ObjectOmega.native_characterization
+example : Source.Derives (Source.SetLanguage.ZF.at 0) OmegaSyntax.omegaExists := ObjectOmega.source_ZF_existence
+
+/-- 每个任意公式模式索引都有实际全参数闭句及原核推导。 -/
+theorem all_object_omega_induction {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (OmegaInductionSyntax.sentence p)) := OmegaInduction.native_induction p
+
+example {n} (p : Source.Formula (n+1)) :
+    Source.Derives (Source.SetLanguage.ZF.at 0) (OmegaInductionSyntax.sentence p) := OmegaInduction.source_ZF_induction p
+
+/-- 归纳逻辑核心只用该矩阵的一个分离实例；存在性三公理证书另行验收。 -/
+example {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives (TheoryTransport.theory (OmegaInduction.assumptions p)) []
+      (Translation.sentence (OmegaInductionSyntax.sentence p)) := OmegaInduction.kernel_certificate p
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOmega.assumptions) []
+    (Translation.sentence OmegaSyntax.omegaExists) := ObjectOmega.existence_kernel_certificate
+
+/-- 多参数、交错对象量词的实际归纳模式实例。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (OmegaInductionSyntax.sentence parameterMatrix)) :=
+  OmegaInduction.native_induction parameterMatrix
 end PPAC.Migration.Step3Checks
