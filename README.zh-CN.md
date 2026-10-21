@@ -74,3 +74,11 @@ OrdinalComparison/Trichotomy给出任意内部序数的三分支比较及两两�
 见[递归图限制与相容性验收](docs/STEP3_ORDINAL_RECURSION_COMPATIBILITY_ACCEPTANCE.zh-CN.md)。
 这批以前提中的实际递归图为条件；全部内部序数上递归图的存在仍未证明，不能由唯一性代替。
 下一项为总算子下实际后继扩展，再以Replacement收集唯一前段图并实际合并；秩及内部Con主句仍未完成。
+
+实际后继递归扩展更新：有效序数/完整历史上的对象总性给实际下一值，GraphInsertRestriction证明旧完整图恰为扩展图在旧域上的限制。
+旧位置用同一历史与限制复合保持递推方程，新位置直接以旧图为实际历史，并由精确新值规律校验全部输出。
+Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完整functionOn及旧域限制关系。
+后继域唯一加给定递归图唯一取得实际唯一后继图纤维，并与原Replacement矩阵逐式对应。
+六个全参数模式有源ZF与原核Derives；有限理论只含Extensionality、Foundation、Pairing、Union和一个Separation实例，
+未调用Replacement或Collection。实际验收见[后继递归扩展验收](docs/STEP3_ORDINAL_RECURSION_SUCCESSOR_ACCEPTANCE.zh-CN.md)。
+全内部前段图的Replacement收集/实际合并和全部内部序数上的递归图存在仍未完成；秩及内部Con主句继续待做。

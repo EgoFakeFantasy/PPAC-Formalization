@@ -725,4 +725,65 @@ example {n} (p : Source.Formula (n+3)) :
 example {n} (p : Source.Formula (n+3)) :
     Source.Derives (Source.SetLanguage.ZF.at 0) (ObjectOrdinalRecursion.uniquenessSentence p) := ObjectOrdinalRecursion.source_ZF_uniqueness p
 
+/-- 总性只要求全部内部有效序数/完整前段图，不假设宿主递推函数。 -/
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) : OrdinalRecursionTotal.total p ρ = .all (.all
+    (((Source.SetLanguage.ordinal (Fin.last m).castSucc).conj
+      (GraphSyntax.functionOn (Fin.last (m+1)) (Fin.last m).castSucc)).imp
+        (OrdinalRecursionTotal.hasValue p (ReplacementPredicates.paramsUp (ReplacementPredicates.paramsUp ρ))
+          (Fin.last m).castSucc (Fin.last (m+1))))) := rfl
+
+/-- 每个任意矩阵实例均返回完整对象闭句及原核证书。 -/
+theorem all_recursion_successor_evaluation {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.evaluationSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_evaluation p
+
+theorem all_recursion_successor_preservation {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.preservationSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_preservation p
+
+theorem all_recursion_successor_extension {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.extensionSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_extension p
+
+theorem all_recursion_successor_successor {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.successorSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_successor p
+
+theorem all_recursion_successor_unique {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.uniqueSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_unique p
+
+theorem all_recursion_successor_fiber {n} (p : Source.Formula (n+3)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.fiberSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.native_fiber p
+
+/-- 先前的双参数交错量词矩阵及无参数实例均可接入本批。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.extensionSentence recursionMatrix)) :=
+  ObjectOrdinalRecursionSuccessor.native_extension recursionMatrix
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectOrdinalRecursionSuccessor.fiberSentence recursionMatrix)) :=
+  ObjectOrdinalRecursionSuccessor.native_fiber recursionMatrix
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (ObjectOrdinalRecursionSuccessor.successorSentence (Source.Formula.equal (2 : Fin 3) 0))) :=
+  ObjectOrdinalRecursionSuccessor.native_successor _
+
+/-- 实际扩展须保留旧图作为旧域限制，且返回后继序数及完整递归图。 -/
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (g s f d : Fin m) :
+    OrdinalRecursionSuccessorSyntax.extension p ρ g s f d =
+      (OmegaSyntax.successor s d).conj ((Source.SetLanguage.ordinal s).conj
+        ((OrdinalRecursionSyntax.recursor p ρ g s).conj (RestrictionSyntax.restrict f g d))) := rfl
+
+/-- 原Replacement接口精确接收实际唯一后继图，不能用存在旧图或条件唯一替代纤维。 -/
+example {n m} (p : Source.Formula (n+3)) (ρ : Fin n → Fin m) (d : Fin m) :
+    ReplacementPredicates.fiber (OrdinalRecursionSuccessorUnique.successorMatrix p) ρ d =
+      OrdinalRecursionSuccessorUnique.uniqueFiber p ρ d := OrdinalRecursionSuccessorUnique.matrix_fiber p ρ d
+
+example {n} (p : Source.Formula (n+3)) : FirstOrder.Derives
+    (TheoryTransport.theory ObjectOrdinalRecursionSuccessor.assumptions) []
+      (Translation.sentence (ObjectOrdinalRecursionSuccessor.fiberSentence p)) :=
+  ObjectOrdinalRecursionSuccessor.fiber_kernel_certificate p
+
+example {n} (p : Source.Formula (n+3)) :
+    Source.Derives (Source.SetLanguage.ZF.at 0) (ObjectOrdinalRecursionSuccessor.extensionSentence p) :=
+  ObjectOrdinalRecursionSuccessor.source_ZF_extension p
+
 end PPAC.Migration.Step3Checks
