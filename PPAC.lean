@@ -35,3 +35,5 @@ import PPAC.Migration.ObjectHierarchyAlgebra
 
 import PPAC.Migration.ObjectHierarchyLimit
 import PPAC.Migration.ObjectOrdinalLeast
+
+import PPAC.Migration.ObjectRankCover

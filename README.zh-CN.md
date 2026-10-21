@@ -109,3 +109,9 @@ Pairing/Union实际构造后继域与扩展图，保留原Source.ordinal、完�
 任意带有限参数的非空可定义序数性质均有实际唯一最小序数；存在、唯一纤维和值相等三个模式逐实例给完整对象闭句及原核Derives。
 [实际验收](docs/STEP3_LIMIT_AND_ORDINAL_LEAST_ACCEPTANCE.zh-CN.md)覆盖六条层闭句及三个全参数模式。
 任意集合秩覆盖仍待完成，下一项在对象集合归纳内收集各成员的唯一层索引并取共同界；反向Collection、两种AC和内部Con主句仍未完成。
+
+全内部集合秩覆盖更新：已取得∀x∃α(Ord(α)∧∃v(Layer(α,v)∧x⊆v))、全部x的实际唯一最小包含层秩，
+以及完整∀x∃α∃v(Ord(α)∧Layer(α,v)∧x∈v)的源ZF与原核推导。
+对象集合归纳中以原Replacement实际收集全部成员的唯一秩，取实际共同严格界和层值，随后用实际后继幂集提升为成员覆盖。
+[六条闭句实际验收](docs/STEP3_RANK_COVER_ACCEPTANCE.zh-CN.md)通过；源证明没有Collection或对象AC输入。
+下一项由见证最小秩证明完整反向Collection；两种AC、内部ProofZF/U/Con及最终对象主句仍未完成。

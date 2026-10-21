@@ -994,4 +994,61 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence
 
 example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectHierarchyLimit.assembledSentence := ObjectHierarchyLimit.source_assembled
 
+
+/-- 覆盖完整内部集合：实际序数、实际层值和全部内部子集量词。 -/
+example {m} (x : Fin m) : LayerCoverSyntax.cover x = .ex
+    ((Source.SetLanguage.ordinal (Fin.last m)).conj (.ex
+      ((HierarchyLayerSyntax.layer (Fin.last m).castSucc (Fin.last (m+1))).conj
+        (Source.SetLanguage.subset x.castSucc.castSucc (Fin.last (m+1)))))) := rfl
+
+/-- 最终成员覆盖是∀x∃α∃v的完整句子，没有归纳前提残留。 -/
+example {m} (x : Fin m) : LayerCoverSyntax.memberCover x = .ex (.ex
+    ((Source.SetLanguage.ordinal (Fin.last m).castSucc).conj
+      ((HierarchyLayerSyntax.layer (Fin.last m).castSucc (Fin.last (m+1))).conj
+        (.mem x.castSucc.castSucc (Fin.last (m+1)))))) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    ((LayerCoverSyntax.memberCover (0 : Fin 1)).close)) := ObjectRankCover.native_member
+
+/-- 秩性质精确为x⊆某个实际Vα；最小序数的参数仍为原内部x。 -/
+example {m} (x a : Fin m) : LayerRankSyntax.rank x a =
+    OrdinalLeastSyntax.least LayerCoverSyntax.containsMatrix (fun _ => x) a := rfl
+
+example {m} (x a : Fin m) : OrdinalLeastSyntax.property LayerCoverSyntax.containsMatrix (fun _ => x) a =
+    (Source.SetLanguage.ordinal a).conj (.ex
+      ((HierarchyLayerSyntax.layer a.castSucc (Fin.last m)).conj
+        (Source.SetLanguage.subset x.castSucc (Fin.last m)))) := LayerCoverSyntax.contains_property x a
+
+/-- 原Replacement接收实际唯一秩纤维，精确像保留每个内部成员及其原秩关系。 -/
+example {m} (ρ : Fin 0 → Fin m) (x : Fin m) :
+    ReplacementPredicates.fiber LayerRankSyntax.matrix ρ x = LayerRankSyntax.fiber x := LayerRankSyntax.matrix_fiber ρ x
+
+example {m} (ρ : Fin 0 → Fin m) (x c : Fin m) :
+    ReplacementPredicates.exactImage LayerRankSyntax.matrix ρ x c = LayerRankSyntax.range c x := LayerRankSyntax.matrix_range ρ x c
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.coverSentence) :=
+  ObjectRankCover.native_cover
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.rankSentence) :=
+  ObjectRankCover.native_rank
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.memberSentence) :=
+  ObjectRankCover.native_member
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.rangeSentence) :=
+  ObjectRankCover.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.equalitySentence) :=
+  ObjectRankCover.native_equality
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectRankCover.propertySentence) :=
+  ObjectRankCover.native_property
+
+example : FirstOrder.Derives (TheoryTransport.theory Source.SetLanguage.ZF) []
+    (Translation.sentence ObjectRankCover.memberSentence) := ObjectRankCover.member_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectRankCover.coverSentence := ObjectRankCover.source_cover
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectRankCover.rankSentence := ObjectRankCover.source_rank
+
 end PPAC.Migration.Step3Checks
