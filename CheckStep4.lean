@@ -931,4 +931,24 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralT
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeCheck.decodeUniqueSentence) := ObjectStructuralTreeCheck.native_decodeUnique
 
+/-- 树构造保留给定完整字段图、实际长度和标签；只存在量化原payload。 -/
+example {m} (w tag l f n : Fin m) : StructuralTreeEncodeSyntax.encoding w tag l f n = .ex
+    (StructuralTreeOperatorSyntax.shape w.castSucc n.castSucc tag.castSucc (Fin.last m) l.castSucc f.castSucc) := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.existsSentence) := ObjectStructuralTreeEncode.native_exists
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.fiberSentence) := ObjectStructuralTreeEncode.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.rangeSentence) := ObjectStructuralTreeEncode.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.uniqueSentence) := ObjectStructuralTreeEncode.native_unique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.shapeUniqueSentence) := ObjectStructuralTreeEncode.native_shapeUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.validitySentence) := ObjectStructuralTreeEncode.native_validity
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.readbackSentence) := ObjectStructuralTreeEncode.native_readback
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralTreeEncode.codeRecoverySentence) := ObjectStructuralTreeEncode.native_codeRecovery
+
 end PPAC.Migration.Step4Checks

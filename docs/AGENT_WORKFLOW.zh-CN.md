@@ -103,8 +103,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.v.b.i | 原Cons头/尾界、精确长度反演和字段零/后继规律 | StructuralListFieldBoundsSyntax/Step/FieldBounds、ObjectStructuralFieldBounds | 全部域内字段严格属于原列表码；完整图边界和父raw码界 | 完成；4个源ZF及原nativeZF闭句 |
 | 4b.c.4c.v.b.ii | 上项严格子码界、真实字段图和原对象超限递归 | StructuralTreeOperatorSyntax/Logic/Step、StructuralTreeRecursors、ObjectStructuralTreeOperator | 原raw树具体二值算子仅查询严格较小子码；Total/Deterministic实际消去；全内部序数唯一完整递归图及真实零/单位标志 | 完成；10个源ZF及原nativeZF闭句，见STEP4_TREE_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.v.b.iii | 上项实际递归图、初段相容和严格子码界 | StructuralTreeEvaluation*/GraphValues/History、StructuralTreeRecursive*/Check/Canonical/Recursion/Decode、ObjectStructuralTreeCheck | 实际后继域/图/边的唯一求值；子码前段值一致；完整递归接受/拒绝对应与实际唯一树解码 | 完成；20个源ZF及原nativeZF闭句；所有内部码/字段，见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md |
+| 4b.c.4c.vi | 实际树解码、全内部列表唯一逆编码及原raw节点 | StructuralTreeEncodeSyntax/ShapeUnique/Encode/EncodeReadback、ObjectStructuralTreeEncode | 任意内部标签及完整字段序列实际唯一树码；无有效性预设的Shape唯一；精确tag/长度/全图回读、原码恢复和构造有效性反射 | 完成；8个源ZF及原nativeZF完整闭句，见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
-| 4c.a | 已证实际唯一树解码、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 下一主项；一般树Valid不代替类型正确 |
+| 4c.a | 已证实际唯一树编解码及恢复、原SyntaxEncode标签与纯签名 | 计划Internal/SyntaxCode、TypedSyntaxOperator | 锁定term的bvar/fvar及公式0–10全构造；函数符号表空，membership编号0；精确字段数、scalar叶和bound/free长度；原核闭句 | 下一主项；一般树Valid不代替类型正确 |
 | 4c.b | 上项具体类型算子、实际内部序数递归和严格子码界 | 计划Internal/TypedSyntaxRecursion/Check | 实际构造类型状态及任意内部上下文上的总单值检查；量词体bound长度真实后继；接受/拒绝双条件及类型正确码实际解码 | 待做；不能只验外部标准quotation |
 | 4c.c | 全11构造及全内部类型检查 | 计划Internal/SyntaxTransform | 全部重命名、提升、加强和非单射统一替换的实际内部图与正确性；保持捕获规避和bound/free槽位；原核推导 | 待做；步骤2的外部编译器仅作参考 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -690,3 +691,11 @@ Valid/Invalid消去标志参数但保留自然守卫和实际见证；不同实�
 全仓529任务、4707审计、0警告、498哈希差异0，累计219对核心/native证书精确核验。
 验收见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md。下一主项4c.a–c仍须全部11构造、内部作用域及非单射替换。
 通用结构树检查不能代替类型检查；ProofZF/U、内部编译器和最终对象Con主句仍未完成。
+
+2026-10-22实际树构造/字段恢复批次：4b.c.4c.vi完成。
+任意内部自然tag、长度及完整ω值序列实际取得唯一原树码；存在性先构造真实列表payload，再构造原raw节点。
+同一原码的Shape四分量唯一不假定子树有效；任意实际解码恢复原tag、长度及完整原输入图。
+解码后按同tag/长度/字段图重新构造所得码等于原码；构造有效性等价于全部输入字段Valid。
+5个新模块60项声明；8个完整源ZF及原nativeZF闭句。全仓534任务、4767审计、0警告、503哈希差异0。
+累计227对核心/native精确依赖通过；验收见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md。
+下一项4c.a保持全部11种原生公式构造、纯签名符号表及内部索引/作用域边界；尚未实现类型检查或ProofZF/U。

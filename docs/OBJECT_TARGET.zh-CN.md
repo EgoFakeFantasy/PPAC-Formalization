@@ -266,3 +266,14 @@ Recursive实际存在tag,p,l,f，要求Shape及∀i∀y(edge(f,i,y)→Valid(w,y)
 20个完整闭句有Source.Derives、sourceZF原核及nativeZF原核证书；实际验收见STEP4_INTERNAL_TREE_CHECK_ACCEPTANCE.zh-CN.md。
 此门禁只完成通用结构树；全部11公式构造、bound/free、纯签名membership编号0、捕获规避替换及ProofZF/U仍待做。
 对象背景、Con全内部ω量词和最终原核Derives规格不变，最终Con标志仍False。
+
+2026-10-22任意内部字段序列的实际树构造更新：
+TreeEncoding(w,tag,l,f,n):=∃p Shape(w,n,tag,p,l,f)。
+原ZF证明每个tag∈w、l∈w、完整Sequence(f,l,w)实际存在唯一自然码n；无需假定已存在编码。
+该Shape严格保留原raw标签/payload、实际HasLength和原完整Fields图。
+Shape四分量唯一性不预设子树Valid，因此任意实际解码均恢复原tag、长度和整个原输入图f。
+从实际解码Shape出发，任何同tag/长度/完整字段图的重编码结果等于原码。
+对任何TreeEncoding，原核证明Valid(w,n)↔∀i∀y(edge(f,i,y)→Valid(w,y))。
+这两个方向都量化全部内部码、全部内部有限长度及所有图边；非标准内部序列未被排除。
+8个完整闭句的源ZF及原nativeZF证书、完整验收见STEP4_INTERNAL_TREE_ENCODE_ACCEPTANCE.zh-CN.md。
+这些是通用树构造与关系式恢复；全部11构造类型检查、替换内部化、ProofZF/U及Con仍未完成。
