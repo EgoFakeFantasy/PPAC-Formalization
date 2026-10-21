@@ -11,6 +11,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
 | 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
+| 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
+| 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
+| 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
+| 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
@@ -23,6 +27,9 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 11 | 模型应用 | Models/SVC、ACwo、Quotient、NotAC | 任意秩集合、同一HS模型内商双射及非选择见证 | 待做 |
 | 12 | 全局装配与内部化结果 | Consistency/ObjectMain | 实际 Derives B [] (Con_ZF → Con_target)，原量词与前提不变 | 待做 |
 | 13 | 最终验收 | 量词/编码/可信基/完整依赖审计 | 全build、无缺口、完整对象主句；源与目标一致性边界分开 | 待做 |
+
+步骤编号标识工作单元，并非强制线性顺序。3b.2–3b.3提前实现步骤7中所需的
+集合构造与递归；不能先声称ZF等价，再用这个未证等价循环证明Collection。
 
 每单元交接必须记录：固定提交、允许文件、目标完整Lean类型、实际命令/退出码、
 剩余义务、禁止强假设和下一最小工作。外部Consistent传输不替代对象Con推导。
@@ -64,3 +71,11 @@ ReverseCompile.sentence在n=1回译闭句；source_sentence_iff对任意源理�
 这是外部有限证书变换，不包含内部非标准证明码上的表示/正确性；步骤4–5仍待做。
 源Replacement证明原Collection、两种AC及最终内部Con仍未完成。
 本批实际验收见STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md。
+
+对象秩前置更新：BoundedMinimal.native_minimal与BoundedInduction.native_induction
+分别对任意p : Source.Formula (n+1)返回原nativeZF内完整闭句的Derives。
+源Replacement版ZF亦有source_ZF_minimal/source_ZF_induction证书；各自只用Foundation与
+一个Separation实例（归纳使用反例矩阵p.neg），未使用Collection或Replacement。
+它们量化一个界集合A；没有据此声称无界集合归纳、全局类极小元、外部良基或内部递归已完成。
+下一最小工程为3b.2的纯对象集合图与内部ω/迭代/传递覆盖集，随后3b.3秩与累积层。
+实际验收见STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md。

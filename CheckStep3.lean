@@ -209,4 +209,34 @@ theorem arbitrary_source_sentence_roundtrip {T : Source.Theory} {p : Source.Sent
     FirstOrder.Derives (TheoryTransport.theory T) [] (Translation.sentence p) ↔
       Source.Derives (T.at 1) (p.rename Fin.elim0) :=
   ReverseCompile.source_sentence_iff
+/-- 极小元与有界归纳均返回原核Derives，矩阵和参数数目完全任意。 -/
+theorem full_bounded_minimal_schema {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedMinimal.sentence p)) :=
+  BoundedMinimal.native_minimal p
+
+theorem full_bounded_induction_schema {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedInduction.sentence p)) :=
+  BoundedInduction.native_induction p
+
+/-- 源Replacement版ZF端亦有证书，本引理没有使用源Collection。 -/
+theorem source_bounded_induction_without_collection {n} (p : Source.Formula (n+1)) :
+    Source.Derives (Source.SetLanguage.ZF.at 0) (BoundedInduction.sentence p) :=
+  BoundedInduction.source_ZF_induction p
+
+/-- 一个分离实例与Foundation足够，和原生ZF句子闭合可信基分开验收。 -/
+theorem bounded_minimal_two_instances {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives (TheoryTransport.theory (BoundedMinimal.assumptions p)) []
+      (Translation.sentence (BoundedMinimal.sentence p)) :=
+  BoundedMinimal.kernel_certificate p
+
+theorem bounded_induction_two_instances {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives (TheoryTransport.theory (BoundedMinimal.assumptions p.neg)) []
+      (Translation.sentence (BoundedInduction.sentence p)) :=
+  BoundedInduction.kernel_certificate p
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedMinimal.sentence parameterMatrix)) :=
+  BoundedMinimal.native_minimal parameterMatrix
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedInduction.sentence parameterMatrix)) :=
+  BoundedInduction.native_induction parameterMatrix
 end PPAC.Migration.Step3Checks

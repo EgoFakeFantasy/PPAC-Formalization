@@ -14,9 +14,11 @@
 源ZF与源目标理论的全部证明现在可正向回放到真正的原生ZF/目标理论。
 原核全部6种推导构造与27类逻辑公理现已反向回放到原19条源规则，实际返回Source.Derives；
 覆盖任意有限局部假设，闭句在一个未用源变量的环境中回译。内部编译器表示仍待完成。
+对象秩前置已完成全参数的有界极小元和集合内成员归纳模式，源ZF与原生ZF均有实际推导；
+每个模式只用Foundation与一个分离实例。对象传递闭包/秩/累积层、
 源Replacement到Collection的反向数学方向、两种AC与内部Con仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[有界正则模式验收](docs/STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md)、[反向演绎验收](docs/STEP3_REVERSE_DERIVATION_ACCEPTANCE.zh-CN.md)、[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。
