@@ -127,6 +127,19 @@ Valid(w,n)存在量化z,e,l,d,f共五个内部对象，没有宿主List或外部
 实际Nil种子、Cons追加及前缀图构造给出完整对象双条件：
 Valid(w,n)↔Nil(w,n)∨∃t(Valid(w,t)∧∃h(h∈w∧Cons(w,h,t,n)))。
 已知自然Cons(w,h,t,n)下，Valid(w,n)↔Valid(w,t)；有效码属于w且非零，实际零码被排除。
-本批十个闭句均有源ZF及原nativeZF推导。唯一内部长度、实际完整字段图及原顺序往返尚未实现，
+轨迹批次十个闭句均有源ZF及原nativeZF推导；该批次尚未实现唯一内部长度、实际字段图及往返，
 因此完整列表解码、树语法、专用ProofZF/U和最终Con的完成标志仍为False。
 详见STEP4_INTERNAL_LIST_TRACES_ACCEPTANCE.zh-CN.md。
+
+
+2026-10-22内部长度对象推导更新：
+HasLength(w,n,l):=∃z∃e∃d∃f Trace(w,z,e,l,d,f,n)。
+Ω(w)下，HasLength(w,n,l)∧HasLength(w,n,k)→l=k；此式没有归纳假设或已知唯一性前提。
+其前提自身给出n,l,k∈w，全部候选为内部对象，包含外部看来非标准的ω成员。
+Valid(w,n)给出实际纤维∃l((l∈w∧HasLength(w,n,l))∧∀k(HasLength(w,n,k)→k=l))。
+任意两条同码迹即使采用不同零、Nil种子、域和完整函数图，其实际长度仍相等。
+精确前缀存在式保留指定的前驱长度p与域l；已知Cons尾实际等于前驱边值。
+Nil迹长度为空，Cons迹长度为尾的实际长度的后继，成员归纳在w内沿严格尾码界下降。
+九个新完整闭句均有源ZF、sourceZF原核核心和原nativeZF证明；具体见STEP4_INTERNAL_LIST_LENGTH_ACCEPTANCE.zh-CN.md。
+实际有序字段图、字段往返和完整列表解码尚未完成；专用ProofZF/U及最终内部Con仍为False。
+原语言、原背景ZF、完整六条核规则/27种逻辑模式和全内部ω证明码的Con规格保持不变。

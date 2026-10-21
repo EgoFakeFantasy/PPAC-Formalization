@@ -79,18 +79,20 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.b.2b.v.a | 原内部序数比较、实际自然后继和值、对象ω归纳 | NaturalOrderBasic、NaturalDifferenceSyntax/Step/Positive、NaturalDifference | 全序/后继刻画；次序↔实际自然差分，严格次序↔非零差分；仅在内部ω候选内唯一 | 完成；八个闭句，见STEP4_NATURAL_ORDER_ACCEPTANCE.zh-CN.md |
 | 4b.b.2b.v.b | 上项实际差分及加乘分配/抵消 | NaturalAdditionMonotone、NaturalMultiplicationPositive/Monotone/OrderLaws | 两侧加法顺序等价；零因子刻画、含零乘数弱单调及非零乘数的严格等价/反射/消去 | 完成；十三个闭句，零乘数边界保持 |
 | 4b.b.2b.v.c | 实际内部空集/后继单位、上项单调与原序数传递 | NaturalArithmeticBounds、ObjectNaturalNumericBounds | 非零数至少为内部一，非零因子乘积下界，平方下界/严格单调/单射 | 完成；五个闭句，不据此声称已完成配数 |
-| 4b.c | 内部算术、全部内部有限序列及原编码约定 | Internal/GodelPair*、StructuralCode | 配数/结构列表的实际内部存在唯一、解码/界与正确性；区分树数值和字节传输码 | 原配数/节点/构造器及内部有限列表轨迹、有效性精确Nil/Cons式完成；唯一长度/字段图与树待做 |
+| 4b.c | 内部算术、全部内部有限序列及原编码约定 | Internal/GodelPair*、StructuralCode | 配数/结构列表的实际内部存在唯一、解码/界与正确性；区分树数值和字节传输码 | 原配数/节点/构造器、内部有限列表轨迹及唯一长度完成；实际字段图与树待做 |
 | 4b.c.1 | 固定原配数/结构列表数值约定、全部已证自然算术关系 | Internal/GodelPairSyntax | 严格a∈b时p=b*b+a，否则p=(a*a+a)+b；实际自然中间值与纯ℒ分支AST | 完成；原多项式AST有rfl核对，实际Derives见下一行 |
 | 4b.c.2 | 上项分支、实际加乘总单值、平方与顺序界 | GodelPairCore/Bounds/Intervals/Bands/BandUnique/Cancellation/Injective、ObjectGodelPair | 全内部a,b的实际唯一配数，分量界、平方区间及配数单射；七个原ZF闭句 | 完成；源ZF及原nativeZF实际Derives，见STEP4_GODEL_PAIR_ACCEPTANCE.zh-CN.md |
 | 4b.c.3 | 原配数四种后继转移、对象ω归纳及输入单射性 | GodelUnpairSyntax/Arithmetic/Transitions/Step/Existence/Unique、ObjectGodelUnpair | 全内部自然码的实际唯一解码、双向精确纤维及分量界；含非标准码 | 完成；六个源ZF及原nativeZF闭句，见STEP4_GODEL_UNPAIR_ACCEPTANCE.zh-CN.md |
 | 4b.c.4 | 原structural_list_code/节点后继约定及配数对象证明 | Internal/StructuralCode | 内部结构列表、节点与字段的实际编码/解码、子码界和递归正确性 | 原节点/构造器、内部列表轨迹及精确递归式完成；唯一字段解码和树待做 |
 | 4b.c.4a | 原raw_node=Succ(Pair(tag,payload))及上项全内部配数 | StructuralNodeSyntax/Existence/Properties/Core、StructuralNodeDecodeSyntax/Existence/Unique、ObjectStructuralNode | 原节点关系、全内部存在唯一、正码精确唯一分解及tag/payload严格子码界；九个源ZF与原nativeZF闭句 | 完成；见STEP4_STRUCTURAL_NODE_ACCEPTANCE.zh-CN.md |
 | 4b.c.4b | 原Nil标签0、Cons标签1及节点关系 | StructuralListSyntax/Units、StructuralNil、StructuralConsAt/Core/Unique、ObjectStructuralList | 原Nil精确单位值、Cons全内部实际唯一值、互斥/输入单射、严格head/tail界及零叶封装内部二值 | 完成；九个源ZF及原nativeZF闭句，见STEP4_STRUCTURAL_LIST_CONSTRUCTORS_ACCEPTANCE.zh-CN.md |
-| 4b.c.4c | 严格子码界、全部内部有限序列及相邻Cons关系 | StructuralListTrace*、StructuralListValidity/Decode*、后续TreeCode | 全内部码的有效/无效分支、有效列表/树的实际解码及递归正确性 | 内部轨迹、实际前缀与有效性双向式完成；长度/字段图唯一及树待做 |
+| 4b.c.4c | 严格子码界、全部内部有限序列及相邻Cons关系 | StructuralListTrace*、StructuralListValidity/Decode*、后续TreeCode | 全内部码的有效/无效分支、有效列表/树的实际解码及递归正确性 | 内部轨迹、精确前驱长度前缀、有效性双向式和唯一长度完成；实际字段图及树待做 |
 | 4b.c.4c.i | 原完整sequence图、内部长度l及其实际后继域 | StructuralListTraceSyntax/Properties | 纯公式轨迹：Nil种子、全部相邻步Cons、实际末值；Valid量化五个内部对象 | 完成；原完整函数图及全部内部长度 |
 | 4b.c.4c.ii | 实际空序列、追加及精确旧边关系 | StructuralListTraceRows/Base/Append、StructuralListValidity | 实际Nil种子与Cons追加；旧相邻步逐见证迁移，新末步单独构造 | 完成；真实Derives，无宿主有限深度限制 |
 | 4b.c.4c.iii | 实际前驱/前缀、Nil/Cons互斥及输入单射 | StructuralListTraceOrder/Prefix/Invert、StructuralListDecodeSyntax/Decode、ObjectStructuralListTrace | 有效码精确Nil或Cons有效尾双向式、已知Cons的有效尾反射、范围及零码排除 | 完成；十个源ZF及原nativeZF闭句，见STEP4_INTERNAL_LIST_TRACES_ACCEPTANCE.zh-CN.md |
-| 4b.c.4c.iv | 实际列表轨迹及精确前驱长度、Nil/Cons反演 | 计划StructuralListLength/Fields | 唯一内部长度、实际唯一字段图及按原顺序的编码/解码往返 | 下一主项；先提取固定前驱长度的实际前缀接口 |
+| 4b.c.4c.iv.a | 精确前驱长度前缀、Nil/Cons反演、严格尾码界；内部ω上的成员归纳 | StructuralListLengthSyntax/Basic/Rules/Step/Unique/Fiber、StructuralListTerminal、ObjectStructuralListLength | 任意实际长度候选相等、任意同码轨迹长度相等、每个有效码的实际唯一内部自然长度纤维 | 完成；九个源ZF及原nativeZF闭句，见STEP4_INTERNAL_LIST_LENGTH_ACCEPTANCE.zh-CN.md |
+| 4b.c.4c.iv.b | 原Cons输入单射性、原自然递归及原Replacement | 计划StructuralListProjection/Fields | 在所有内部集合上总单值的head/tail步关系；实际有序字段图及其唯一性 | 下一主项；先以原Cons输入关系定义算子，非Cons输入返回实际空集 |
+| 4b.c.4c.iv.c | 唯一实际长度、实际有序字段图、全部内部相邻步 | 计划StructuralListRoundTrip | 原字段顺序的编码/解码往返，保持全部内部ω量词 | 待做；实际构造迹的方向与原字段顺序分别核对 |
 | 4b.c.4c.v | 上项唯一字段解码、有效性关系及严格子码界 | 计划StructuralListCheck/TreeCode | 全内部码的有效解码/拒绝及递归正确性，再接入树字段有效性 | 待做；列表码有效不自动表示字段是有效语法树 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -556,6 +558,18 @@ ZFContext只映射原ZF假设到当前上下文；ZFArithmetic通过此前已证
 实际Nil轨迹、Cons追加与前缀限制给出Valid↔Nil∨存在有效尾及自然head的原Cons关系，
 已知自然Cons值的有效性当且仅当尾有效；零码被对象推导排除。
 十个完整闭句均有源ZF及原nativeZF证书，见STEP4_INTERNAL_LIST_TRACES_ACCEPTANCE.zh-CN.md。
-下一主项是4b.c.4c.iv：从现有valid_prefix证明提取固定前驱长度的实际前缀图，
-再在对象长度上归纳证明任意两条同码轨迹长度相等，构造实际唯一字段图和原顺序往返。
+上述为轨迹批次结束时的计划；精确前缀和长度唯一性现已按下述批次完成。
 完整字段解码、树、专用ProofZF/U与最终Con仍未完成；不能把当前一步分解当成完整解码。
+
+
+2026-10-22内部长度批次：4b.c.4c.iv.a已完成。hasLength保留四个实际内部迹见证，
+exists_prefix_trace保留给定前驱长度p和实际域l，而非只返回Valid。已知Cons的尾等于实际前驱图值。
+Nil的每条实际迹长度为空；Cons的每条实际迹长度为尾的某个实际长度的后继。
+唯一性使用内部w上的成员归纳：对码n假设所有t∈w∩n的长度唯一；Cons严格尾码界给t∈n。
+两条迹任意不同的零、Nil种子、域和图仍有相同长度；候选长度无外部标准性限制。
+此路线取代旧计划中的长度归纳，直接使用已证严格子码界及原Foundation/Separation。
+九个完整闭句均有原核Derives。完整验收438任务、3676审计、0警告、407份哈希差异0。
+下一主项4b.c.4c.iv.b先证明原Cons的head/tail投影在全部内部集合上总单值，非Cons输入取实际空集，
+再用已证自然递归从完整码向尾递推，按原字段顺序取得实际图。此路线避免先反转构造迹，
+仍须实际证明与迹的逐步对应、在唯一长度处止于Nil和由Replacement取得完整字段图。
+这些字段图、往返、树、专用ProofZF/U与最终Con尚未完成。

@@ -403,4 +403,38 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralL
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListTrace.prefixSentence) := ObjectStructuralListTrace.native_prefix
 
+/-- 实际长度关系保留四个内部轨迹见证，l始终是对象变量。 -/
+example {m} (w n l : Fin m) : StructuralListLengthSyntax.hasLength w n l =
+    .ex (.ex (.ex (.ex (StructuralListTraceSyntax.trace w.castSucc.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc.castSucc (Fin.last (m+1)).castSucc.castSucc l.castSucc.castSucc.castSucc.castSucc (Fin.last (m+2)).castSucc (Fin.last (m+3)) n.castSucc.castSucc.castSucc.castSucc)))) := rfl
+
+/-- 唯一性比较任意具有实际长度见证的对象候选，不限制为外部标准长度。 -/
+example {m} (w n : Fin m) : StructuralListLengthSyntax.fiber w n =
+    .ex (((Source.Formula.mem (Fin.last m) w.castSucc).conj (StructuralListLengthSyntax.hasLength w.castSucc n.castSucc (Fin.last m))).conj (.all ((StructuralListLengthSyntax.hasLength w.castSucc.castSucc n.castSucc.castSucc (Fin.last (m+1))).imp (Source.Formula.equal (Fin.last (m+1)) (Fin.last m).castSucc)))) := rfl
+
+/-- 归纳假设只覆盖内部w与当前码的实际成员。 -/
+example {m} (w n : Fin m) : StructuralListLengthStep.earlier w n =
+    .all ((Source.Formula.mem (Fin.last m) w.castSucc).imp ((Source.Formula.mem (Fin.last m) n.castSucc).imp (StructuralListLengthSyntax.property w.castSucc (Fin.last m)))) := rfl
+
+example : ObjectStructuralListLength.uniqueSentence = ((OmegaSyntax.omega (0 : Fin 4)).imp ((StructuralListLengthSyntax.hasLength 0 1 2).imp ((StructuralListLengthSyntax.hasLength 0 1 3).imp (Source.Formula.equal 2 3)))).close := rfl
+
+example : ObjectStructuralListLength.traceUniqueSentence = ((OmegaSyntax.omega (0 : Fin 12)).imp ((StructuralListTraceSyntax.trace 0 1 2 3 4 5 6).imp ((StructuralListTraceSyntax.trace 0 7 8 9 10 11 6).imp (Source.Formula.equal 3 9)))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.prefixTraceSentence) := ObjectStructuralListLength.native_prefixTrace
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.knownTailEdgeSentence) := ObjectStructuralListLength.native_knownTailEdge
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.nilEmptySentence) := ObjectStructuralListLength.native_nilEmpty
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.consPredecessorSentence) := ObjectStructuralListLength.native_consPredecessor
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.uniqueSentence) := ObjectStructuralListLength.native_unique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.traceUniqueSentence) := ObjectStructuralListLength.native_traceUnique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.fiberSentence) := ObjectStructuralListLength.native_fiber
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.rangeSentence) := ObjectStructuralListLength.native_range
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectStructuralListLength.existsSentence) := ObjectStructuralListLength.native_exists
+
 end PPAC.Migration.Step4Checks

@@ -44,9 +44,9 @@ theorem links_restrict {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w p l 
   have hil := InsertLogic.old_member _ _ _ _ hs1 hi
   exact row_restrict hZ1 _ _ _ _ _ _ hw1 (under hp M) hs1 hr1 hi (StructuralListTraceSyntax.links_at _ _ _ _ hl1 hil)
 
-theorem valid_prefix {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z e l d f n p a : Fin m)
+theorem exists_prefix_trace {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z e l d f n p a : Fin m)
     (hw : Derives Γ (omega w)) (hp : Derives Γ (.mem p w)) (hs : Derives Γ (successor l p))
-    (ht : Derives Γ (trace w z e l d f n)) (ha : Derives Γ (edge f p a)) : Derives Γ (valid w a) := by
+    (ht : Derives Γ (trace w z e l d f n)) (ha : Derives Γ (edge f p a)) : Derives Γ (existsTrace w z e p l a) := by
   have hsub := old_subset l d (successor_at _ _ _ _ _ _ _ ht)
   have hg := SequencePrefix.exists_prefix f d l w (ZFContext.separation hZ RestrictionSyntax.matrix)
     (ZFContext.arithmetic hZ).base.extensionality (sequence_at _ _ _ _ _ _ _ ht) hsub
@@ -68,6 +68,18 @@ theorem valid_prefix {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z e l 
   have hlinks := links_restrict hZ1 _ _ _ _ _ hw1 (under hp G) hs1 (links_at_trace _ _ _ _ _ _ _ ht1) hres
   have hnew := intro_trace _ _ _ _ _ _ _ (zero_at _ _ _ _ _ _ _ ht1) (nil_at _ _ _ _ _ _ _ ht1)
     (under hp G) hs1 (.conjL hG) hseed hlinks hlast
-  have hout := intro_valid _ _ _ _ _ _ _ hnew
+  have hout := intro_existsTrace _ _ _ _ _ _ _ hnew
+  simpa only [Formula.raise, existsTrace_rename] using hout
+theorem valid_prefix {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z e l d f n p a : Fin m)
+    (hw : Derives Γ (omega w)) (hp : Derives Γ (.mem p w)) (hs : Derives Γ (successor l p))
+    (ht : Derives Γ (trace w z e l d f n)) (ha : Derives Γ (edge f p a)) : Derives Γ (valid w a) := by
+  have hg := exists_prefix_trace hZ w z e l d f n p a hw hp hs ht ha
+  let G := trace w.castSucc z.castSucc e.castSucc p.castSucc l.castSucc (Fin.last m) a.castSucc
+  let Δ := Context.add G (Context.image Formula.raise Γ)
+  change Derives Γ (.ex G) at hg
+  apply Derives.exE (p := G) hg
+  have hG : Derives Δ G := .hyp (Or.inl rfl)
+  have hout := intro_valid _ _ _ _ _ _ _ hG
   simpa only [Formula.raise, valid_rename] using hout
+
 end PPAC.Migration.Internal.StructuralListTracePrefix

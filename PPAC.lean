@@ -58,3 +58,4 @@ import PPAC.Migration.Internal.ObjectGodelUnpair
 import PPAC.Migration.Internal.ObjectStructuralNode
 import PPAC.Migration.Internal.ObjectStructuralList
 import PPAC.Migration.Internal.ObjectStructuralListTrace
+import PPAC.Migration.Internal.ObjectStructuralListLength
