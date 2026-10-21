@@ -1,6 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
+当前进展：原nativeZF推导核已证明原图AC与原Axioms.choice的双向蕴含及双条件，
+见[完整对象AC等价验收](docs/STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md)。
+下一主项是ZF/U专用内部Proof/Con AST及任意内部码正确性；最终内部Con主句仍未完成。
+以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
+
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
 第二步覆盖19条源规则，直接给出原FirstOrder.Derives，不经过完备性或模型语义；
 闭句源证明可带任意有限变量环境，输出仍为空free上下文。原核证书的有限公理支撑已证明。
@@ -127,3 +132,10 @@ AC正向更新：已从原完整选择图实际构造精确输出集合，证明
 [实际验收](docs/STEP3_GRAPH_CHOICE_FORWARD_ACCEPTANCE.zh-CN.md)通过；源有限理论核心仅一个Replacement实例，三个核心证书仅标准三项依赖。
 原选择公理公式桥接额外继承其已有的语法闭性证书，限域记录于CHOICE_TRUST_BASELINE.json；原ZF七项基线保持不变。
 完整AC等价与最终内部Con主句仍未完成。
+
+AC反向及等价更新：实际构造标签行{〈x,y〉:y∈x}和精确非空不交族，
+从原选择集的唯一交点取得每个输入的唯一标签对，再用精确Replacement像构造完整原choiceOn图。
+原选择集允许含杂项；新图的所有成员、定义域及输出唯一性均有对象推导。
+反向背景仅外延、配对与三个明确Replacement；原AC只在蕴含前件，未加入ZF。
+本批全仓验收305个构建任务、2305项声明审计、0警告；[实际验收](docs/STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md)。
+原choice额外闭性证书隔离规则没有扩大；内部Con和相对一致性最终定理仍未完成。

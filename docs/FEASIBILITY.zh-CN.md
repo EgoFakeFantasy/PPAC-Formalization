@@ -1,5 +1,7 @@
 # PPAC 向 YesMetaZFC 迁移审查
 核查日期：2026-10-21。结论：可以分阶段实施，但不是改 import 的直接移植；完整迁移尚未完成。
+当前：完整ZF呈现互导、外部推导双向回放及原两种AC的对象等价均已验收；内部Proof/Con和最终主句仍待实现。
+最新AC验收见STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md；下列分批更新保留历史范围。
 
 ## 来源、结论和可信边界
 - [OpenAI family 244](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/244.md)。
@@ -16,7 +18,7 @@
 使用其原 FirstOrder.Derives / HilbertDerivation，禁止增加新的公理核。
 背景是原 SetTheory.ZF 经 Project.fo_theory 的纯语言像；该库使用全 Collection 模式，源用全 Replacement 模式。
 PP、AC、ACwo 使用源的集合图形式，函数是结构内部的 Kuratowski 对集合，量词遍历全部内部集合。
-源 AC 是一般非空集合族的选择函数式；YesMetaZFC 自带 AC 是不交族的选择集式，两者的 ZF 内推导等价尚待证明。
+源 AC 是一般非空集合族的选择函数式；YesMetaZFC 自带 AC 是不交族的选择集式，两者在原ZF核内的双向蕴含和双条件现已证明。
 Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头。须显式变换并证明保真。
 原生目标理论是 ZF+PP+ACwo+¬AC。语义保真不自动给出推导传输。
 第一步只交付原生句子与理论合同、全语法翻译及真值保持、最小对象推导接入检查。
@@ -25,7 +27,7 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 
 ## 主要缺口
 1. 源开放自然演绎规则（无限假设集、末自由变量）到目标有限上下文 Hilbert 核的双向传输；须用有限支撑。
-2. 两种 AC 呈现的对象互导。源 Replacement 与目标 Collection 的完整双向逐模式推导及ZF/目标理论回放已完成，内部证明码表示仍待实现。
+2. 两种AC呈现的对象互导、源Replacement与目标Collection完整逐模式互导及ZF/目标理论回放均已完成；内部证明码表示仍待实现。
 3. 元层纯集合、布尔值、商、全部 HS 名字的 universe 对应；不能强行固定名字秩界。
 4. 可构造解释如走论文路径，应逐公理证明 ZF ⊢ α^L；语义 L 模型或文档提及 GCH 不够。
 5. 将强迫系统、逻辑规则、ZF 全模式、SVC、ACwo、非选择见证及全秩 PP 装配为原核可检查接口。
@@ -68,3 +70,8 @@ ChoiceNativeBridge引用未修改原Axioms.choice，因此额外激活该库声�
 YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1；仅桥接模块和原choice声明允许这项依赖，
 单独来源/原文件SHA锁定见CHOICE_TRUST_BASELINE.json，不混入原ZF的七项基线，不声称引用原choice后可信基没有变化。
 未新增自定义axiom声明或对象AC背景公理；完整AC互导、内部Proof/Con和最终主句仍待完成。
+
+AC反向及完整等价更新：Extensionality、Pairing和三个明确原Replacement实例实际构造标签行、精确非空不交族与精确选择对图。
+原选择集允许含杂项；完整entriesOn/totalOn、唯一输出及输出成员性均有对象推导。
+ChoiceNativeBridge.native_equivalence给原nativeZF内AC与原Axioms.choice的实际双条件，源核心保持标准三项依赖；
+原choice额外闭性证书限域没有扩大。完整AC互导已完成，内部Proof/Con及最终主句仍未完成。

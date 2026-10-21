@@ -53,11 +53,11 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.4.b | 上项唯一纤维、原Replacement和任意内部序数族严格界 | WitnessRankCollection/Bounds | 实际精确秩族、共同严格界及真实层值；对每个x取得层内原p见证，证明原Collection完整覆盖 | 完成；全部原参数、内部量词和非函数关系均保留 |
 | 3b.4.c | 上项全Collection模式、已证完整双向Separation及固定公理 | CollectionFromReplacement、ReverseZFReplay | 任意源/原生Project矩阵的完整Collection；原ZF九类公理及ZF/目标理论任意开放推导双向回放 | 完成；闭句可实际回到源19规则，外部变量环境为1 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
-| 3d | 源图选择与原生不交族选择集 | ChoiceSyntax、ChoiceNativeBridge及ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 正向完成；选择集→图AC仍待实现 |
+| 3d | 源图选择与原生不交族选择集 | ChoiceSyntax、ObjectGraphChoiceSelector、ObjectSelectorGraphChoice、ChoiceNativeBridge | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 完成；原nativeZF核已有原AC与原Axioms.choice的双条件 |
 | 3d.a | 原Source.choiceOn/AC与原Axioms.choice | ChoiceSyntax、ChoiceNativeBridge | 两种原公式严格对应；完整functionOn、全内部族和唯一交点；原Axioms.choice AST精确接合 | 完成；原choice闭性证书额外依赖单列CHOICE_TRUST_BASELINE.json |
 | 3d.b | 完整选择图、实际函数值精确像及不交性 | GraphRangeSyntax/Collection、ChoiceLogic/SelectorPoints、GraphChoiceToSelector、ObjectGraphChoiceSelector | 一个明确Replacement实例实际取得精确值集合；逐成员交点存在唯一；图AC→原选择集AC原核闭句 | 完成；源有限理论核心仅标准三项依赖 |
-| 3d.c | 原Pairing/Replacement、Kuratowski分量唯一性及任意内部非空族 | TaggedChoiceFamilies | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 下一项，尚未实现；不得预设标签族存在或选择纤维见证 |
-| 3d.d | 原选择集公式、实际标签族的并及Separation | SelectorToGraphChoice | 将选择集限制到实际标签族并，构造完整原functionOn选择图及逐成员输出；接合AC互导的原核闭句 | 待做；允许原选择集含并域外元素，必须实际排除杂项 |
+| 3d.c | 原Pairing/Extensionality及两个明确Replacement、Kuratowski分量唯一性 | TaggedRowSyntax/Existence/Logic、TaggedFamilySyntax/Context/Collection/Logic | 实际构造每个成员x的带标签纤维{〈x,y〉:y∈x}及其精确族；证明非空及两两不交 | 完成；行及族均从原公理取得，覆盖全部内部非空族 |
+| 3d.d | 原选择集公式、实际标签族及第三个明确Replacement | SelectedPairSyntax/Fiber、SelectedGraphLogic/Choice、SelectorChoiceToGraph、ObjectSelectorGraphChoice | 精确收集每个输入的唯一被选标签对，排除原选择集杂项；完整原functionOn/choiceOn及原核AC双向蕴含/双条件 | 完成；反向五句有限背景，核心证书仅标准三项，原choice桥接可信基仍隔离 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
 | 5 | 句法转换器及步骤2–3 | Internal/CompilerRepresentation | 代码函数的内部表示及原核推导；覆盖非标准码，不能只列外部标准实例 | 待做 |
 | 6 | 原OpenAI 4.34.1环境 | 原源码定向构建、两个Comparator记录 | 分开普通Con与带不可达传递模型；真实命令与允许公理 | 待做 |
@@ -412,3 +412,16 @@ ChoiceNativeBridge以decide +kernel严格核对原Axioms.choice的全AST，给�
 源核心三个有限理论原核证书仍仅有propext/Classical.choice/Quot.sound；没有新增对象AC公理或自定义axiom声明。
 实际验收见STEP3_GRAPH_CHOICE_FORWARD_ACCEPTANCE.zh-CN.md。完整两种AC等价仍为False：下一项按3d.c–3d.d实际构造带标签不交族，
 再把原选择集限制到该族实际并以构造完整选择图。内部Proof/Con及最终主句仍未完成。
+
+
+AC反向及原公式等价完成更新（当前状态，取代上批的逆向待做说明）：
+TaggedRowExistence先用Pairing/Extensionality和原Replacement实际取得每个x的精确标签行，并证明行唯一。
+TaggedFamilyCollection用第二个原Replacement取得全部行的精确族；TaggedFamilyLogic证明该族逐项非空和两两不交。
+SelectedPairFiber从原选择集及每个实际行的唯一交点推出每个输入的唯一标签对纤维，第三个原Replacement收集精确图。
+此路线以精确像直接排除选择集杂项，不再要求另行构造族并并用Separation限制原选择集。
+SelectedGraphLogic/Choice证明完整entriesOn、totalOn、所有输出唯一以及逐输入输出属于x，不把原选择集预设为图。
+ObjectSelectorGraphChoice的有限背景仅Extensionality、Pairing和三个明确Replacement实例；AC只作为对象蕴含前件。
+ChoiceNativeBridge现在给原nativeZF内两方向及原AC与原Axioms.choice的实际双条件；原choice闭性证书限域没有扩大。
+本批验收见STEP3_CHOICE_EQUIVALENCE_ACCEPTANCE.zh-CN.md。下一主项为步骤4：ZF/U专用纯语言Proof/Con AST，
+须核验原六规则、27逻辑模式及全Separation/Collection，随后步骤5内部表示任意内部证明码上的转换器。
+内部Con主句和相对一致性最终定理仍未完成；继续以该主句作为全工程完成门。

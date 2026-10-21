@@ -1,4 +1,4 @@
-import PPAC.Migration.ObjectGraphChoiceSelector
+import PPAC.Migration.ObjectSelectorGraphChoice
 
 /-! 原Axioms.choice公式严格接合；仅本模块继承原choice闭性证书的额外既有依赖。 -/
 namespace PPAC.Migration.ChoiceNativeBridge
@@ -32,4 +32,22 @@ theorem forward_kernel_certificate : FirstOrder.Derives (TheoryTransport.theory 
 
 theorem native_forward : FirstOrder.Derives nativeZF [] (.imp AC (Definitional.Project.fo_sentence Axioms.choice)) :=
   ObjectGraphChoiceSelector.native_replay forward_kernel_certificate
+
+theorem reverse_kernel_certificate : FirstOrder.Derives (TheoryTransport.theory ObjectSelectorGraphChoice.assumptions) []
+    (.imp (Definitional.Project.fo_sentence Axioms.choice) AC) := by
+  apply FirstOrder.Derives.imp_intro
+  have hc : FirstOrder.Derives (TheoryTransport.theory ObjectSelectorGraphChoice.assumptions) []
+      (.imp (Translation.sentence ChoiceSyntax.selectorAC) AC) := ObjectSelectorGraphChoice.reverse_kernel_certificate
+  have hs : FirstOrder.Derives (TheoryTransport.theory ObjectSelectorGraphChoice.assumptions)
+      [Definitional.Project.fo_sentence Axioms.choice] (Translation.sentence ChoiceSyntax.selectorAC) :=
+    FirstOrder.Derives.iff_elim_left selector_equivalent (FirstOrder.Derives.assumption List.mem_cons_self)
+  exact FirstOrder.Derives.imp_elim hc.context_weaken_cons hs
+
+theorem native_reverse : FirstOrder.Derives nativeZF [] (.imp (Definitional.Project.fo_sentence Axioms.choice) AC) :=
+  ObjectSelectorGraphChoice.native_replay reverse_kernel_certificate
+
+theorem native_equivalence : FirstOrder.Derives nativeZF [] (.iff AC (Definitional.Project.fo_sentence Axioms.choice)) := by
+  apply FirstOrder.Derives.iff_intro
+  · exact FirstOrder.Derives.imp_elim native_forward.context_weaken_cons (FirstOrder.Derives.assumption List.mem_cons_self)
+  · exact FirstOrder.Derives.imp_elim native_reverse.context_weaken_cons (FirstOrder.Derives.assumption List.mem_cons_self)
 end PPAC.Migration.ChoiceNativeBridge

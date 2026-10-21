@@ -1147,4 +1147,27 @@ example : Translation.sentence ChoiceSyntax.selectorAC =
 
 example : FirstOrder.Derives nativeZF [] (.imp AC (Definitional.Project.fo_sentence Axioms.choice)) := ChoiceNativeBridge.native_forward
 
+
+/-- 实际标签行与所选标签对矩阵均精确接原Replacement纤维。 -/
+example {m} (ρ : Fin 0 → Fin m) (x : Fin m) :
+    ReplacementPredicates.fiber TaggedFamilySyntax.matrix ρ x = TaggedRowSyntax.rowFiber x := TaggedFamilySyntax.matrix_fiber ρ x
+
+example {m} (ρ : Fin 1 → Fin m) (x : Fin m) :
+    ReplacementPredicates.fiber SelectedPairSyntax.matrix ρ x = SelectedPairSyntax.fiber (ρ 0) x := SelectedPairSyntax.matrix_fiber ρ x
+
+example {m} (ρ : Fin 1 → Fin m) (a f : Fin m) :
+    ReplacementPredicates.exactImage SelectedPairSyntax.matrix ρ a f = SelectedPairSyntax.graph f (ρ 0) a := SelectedPairSyntax.matrix_graph ρ a f
+
+/-- 所选图仍含原entriesOn与totalOn，未把原选择集预设为函数。 -/
+example {m} (f a : Fin m) : Source.SetLanguage.choiceOn f a = ChoiceSyntax.choiceOn f a := ChoiceSyntax.choiceOn_original f a
+
+example : Source.Derives (ObjectSelectorGraphChoice.assumptions.at 0) ObjectSelectorGraphChoice.familySentence := ObjectSelectorGraphChoice.source_family
+example : Source.Derives (ObjectSelectorGraphChoice.assumptions.at 0) ObjectSelectorGraphChoice.reverseSentence := ObjectSelectorGraphChoice.source_reverse
+example : FirstOrder.Derives (TheoryTransport.theory ObjectSelectorGraphChoice.assumptions) []
+    (Translation.sentence ObjectSelectorGraphChoice.reverseSentence) := ObjectSelectorGraphChoice.reverse_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) (Source.SetLanguage.AC.iff ChoiceSyntax.selectorAC) := ObjectSelectorGraphChoice.source_ZF_equivalence
+example : FirstOrder.Derives nativeZF [] (.imp (Definitional.Project.fo_sentence Axioms.choice) AC) := ChoiceNativeBridge.native_reverse
+example : FirstOrder.Derives nativeZF [] (.iff AC (Definitional.Project.fo_sentence Axioms.choice)) := ChoiceNativeBridge.native_equivalence
+
 end PPAC.Migration.Step3Checks
