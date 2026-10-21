@@ -1,6 +1,6 @@
 # Remaining migration obligations
 1. Forward source-to-native transport is completed for all 19 rules and finite native axiom support. Full reverse syntax and original-kernel normalization/presentation replay are completed. Reverse derivation transport into Source.Derives remains pending; it must account for nonempty variable environments and native free_strengthening.
-2. Five fixed ZF axioms have bidirectional native derivations. Infinity, Foundation and full parameterized Replacement ↔ native Collection and graph Choice ↔ disjoint-family Choice.
+2. Seven fixed ZF axioms and all source Separation instances now have native derivations, with reverse replay for the same source matrices. Reverse coverage of arbitrary native Project matrices, full parameterized Replacement ↔ native Collection, and graph Choice ↔ disjoint-family Choice remain pending.
 3. Interpretations of all-rank names, model universes, relative truth and forcing certificates.
 4. Actual monoid/diagram forcing, normal supports, symmetry, mixing, ZF schemas, SVC, ordinal Choice, quotient bijections and failure of Choice.
 5. The final internal Con_ZF → Con_target sentence in object ZF is unproved. The exact proof-checker specification is fixed in docs/OBJECT_TARGET.zh-CN.md, but dedicated ZF/U checker ASTs and correctness for arbitrary internal codes remain to be constructed. ExternalConsistencyGoal is only an intermediate target.

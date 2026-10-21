@@ -8,10 +8,11 @@
 最终目标固定为对象ZF中的 Derives B [] (Con_ZF → Con_target)，
 参见[内部Con及背景规格](docs/OBJECT_TARGET.zh-CN.md)。
 内部ZF/U检查器完整AST、任意内部码正确性与对象主句尚未实现。
-第三步已完成外延、空集、配对、并集、幂集五条固定公理的双向原核推导。
-无穷、基础、任意参数Collection/Replacement模式、两种AC的完整对应，以及原核到源演绎的反向编译仍待完成。
+第三步已完成七条固定公理的双向原核推导，以及任意参数、任意矩阵的全部源分离模式在原ZF中的推导。
+同一源矩阵对应的原生分离实例也可反向回放；任意原生Project矩阵的反向覆盖尚未完成。
+完整Collection/Replacement对应、两种AC及原核到源演绎的反向编译仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[第三步阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[第三步模式推进验收](docs/STEP3_SCHEMAS_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。

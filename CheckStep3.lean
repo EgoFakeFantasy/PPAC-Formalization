@@ -86,4 +86,29 @@ example : FirstOrder.Derives ZFEquivalence.sourceZF []
     (SetTheory.Definitional.Project.fo_sentence SetTheory.Axioms.union) := ZFEquivalence.native_union
 example : FirstOrder.Derives ZFEquivalence.sourceZF []
     (SetTheory.Definitional.Project.fo_sentence SetTheory.Axioms.powerSet) := ZFEquivalence.native_powerSet
+/-- 七条固定公理已经双向覆盖；新增两条均为对象原核推导。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence Source.SetLanguage.infinity) := ZFEquivalence.source_infinity
+example : FirstOrder.Derives nativeZF [] (Translation.sentence Source.SetLanguage.foundation) := ZFEquivalence.source_foundation
+example : FirstOrder.Derives ZFEquivalence.sourceZF []
+    (SetTheory.Definitional.Project.fo_sentence SetTheory.Axioms.infinity) := ZFEquivalence.native_infinity
+example : FirstOrder.Derives ZFEquivalence.sourceZF []
+    (SetTheory.Definitional.Project.fo_sentence SetTheory.Axioms.foundation) := ZFEquivalence.native_foundation
+
+/-- 全分离模式，不限制参数个数和矩阵复杂度。 -/
+theorem separation_source_to_native {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (Source.SetLanguage.separation p)) :=
+  SeparationSyntax.source_separation p
+
+theorem separation_native_of_source_matrix {n} (p : Source.Formula (n+1)) :
+    FirstOrder.Derives ZFEquivalence.sourceZF []
+      (SetTheory.Definitional.Project.fo_sentence
+        (SetTheory.Axioms.Schema.separation (ProjectSyntax.unary p))) :=
+  SeparationSyntax.native_separation_of_source_matrix p
+
+/-- 多个参数和内嵌混合量词的实例也走同一个全模式定理。 -/
+def parameterMatrix : Source.Formula 4 :=
+  .all (.ex ((Source.Formula.mem 5 0).conj ((Source.Formula.mem 4 3).imp (.equal 1 2))))
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (Source.SetLanguage.separation parameterMatrix)) :=
+  SeparationSyntax.source_separation parameterMatrix
 end PPAC.Migration.Step3Checks
