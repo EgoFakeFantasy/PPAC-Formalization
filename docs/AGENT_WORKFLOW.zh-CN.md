@@ -93,8 +93,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4b.c.4c.iv.a | 精确前驱长度前缀、Nil/Cons反演、严格尾码界；内部ω上的成员归纳 | StructuralListLengthSyntax/Basic/Rules/Step/Unique/Fiber、StructuralListTerminal、ObjectStructuralListLength | 任意实际长度候选相等、任意同码轨迹长度相等、每个有效码的实际唯一内部自然长度纤维 | 完成；九个源ZF及原nativeZF闭句，见STEP4_INTERNAL_LIST_LENGTH_ACCEPTANCE.zh-CN.md |
 | 4b.c.4c.iv.b.i | 原Cons输入单射性、内部空集、原自然递归 | StructuralListProjectionSyntax/Projection/Recursion、ObjectStructuralListProjection | 全内部集合上实际总单值head/tail投影；全内部自然索引唯一求值、真实递归图、零点/后继/值域规律 | 完成；11个闭句模式、head/tail共22个原nativeZF实例 |
 | 4b.c.4c.iv.b.ii.a | 真实head/tail递归、内部ω归纳、精确前驱长度及严格尾码成员归纳 | StructuralListIterationTransport、StructuralListShift*、StructuralListEnd*、ObjectStructuralListEnd | 任意内部种子的一步移位双条件；实际列表长度处到达Nil，恢复原迹Nil种子；实际端点对存在唯一 | 完成；九个闭句/模式、12个原nativeZF实例 |
-| 4b.c.4c.iv.b.ii.b | 原迹相邻Cons行、内部加法r+k=l、ω归纳及完整图单值性 | 计划StructuralListPositions | 所有原迹位置与tail实际求值对应：r+k=l且edge(f,k,v)时Iteration_tail(w,n,r,v) | 下一主项；零点对齐末边，后继步用相邻Cons反向推进 |
-| 4b.c.4c.iv.b.ii.c | 全索引tail实际唯一求值、head总单值、原Replacement和完整functionOn | 计划StructuralListFields | 按原顺序的实际完整字段图、无多余图元、ω值域和唯一性；接入上项原迹逐位置对应 | 待做；字段不是宿主List，也不能只给公式AST |
+| 4b.c.4c.iv.b.ii.b | 原迹相邻Cons行、内部加法r+k=l、ω归纳、完整图单值性和实际自然差 | StructuralListPositionLogic/Arithmetic/Syntax/Base/Step/Induction、StructuralListPositions、ObjectStructuralListPositions | 原迹边与真实tail求值精确双条件；每个域内位置实际取得内部自然反向索引及全输出对象的双条件 | 完成；八个闭句/模式、九个原nativeZF实例 |
+| 4b.c.4c.iv.b.ii.c | 全索引tail实际唯一求值、head总单值、已证逐位置双条件、原Replacement及Kuratowski对 | 计划StructuralListFieldSyntax/Values/Pairs/Graph、ObjectStructuralListFields | Field(i,y)=存在真实tail第i值并取其head；实际收集全部索引对，取得完整functionOn、精确全边式、ω值域及图唯一性 | 下一主项；先证明原Cons的零/后继字段关系，再构造实际完整图 |
 | 4b.c.4c.iv.c | 唯一实际长度、实际有序字段图、全部内部相邻步 | 计划StructuralListRoundTrip | 原字段顺序的编码/解码往返，保持全部内部ω量词 | 待做；实际构造迹的方向与原字段顺序分别核对 |
 | 4b.c.4c.v | 上项唯一字段解码、有效性关系及严格子码界 | 计划StructuralListCheck/TreeCode | 全内部码的有效解码/拒绝及递归正确性，再接入树字段有效性 | 待做；列表码有效不自动表示字段是有效语法树 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
@@ -601,3 +601,17 @@ Cons尾的实际前驱长度与移位相接，再沿原严格尾码作内部成�
 下一关用加法反向索引r+k=l及原相邻Cons行，对全部内部自然r作ω归纳，
 逐位置对齐真实tail求值与原迹，而后由原Replacement构造完整有序head字段图。
 端点恢复不替代全部位置对应，完整字段图、往返、树、专用ProofZF/U和最终Con均未完成。
+
+
+2026-10-22全部位置批次：4b.c.4c.iv.b.ii.b完成。内部r+k=l下，原边edge(f,k,y)
+与Iteration_tail(w,n,r,y)精确双向对应，且对所有输出对象y成立。
+原Separation支持的ω归纳对全部内部r进行；零点由加法零律和末边单值性对齐，
+后继步实际取得原迹相邻Cons行、真实加法前驱和下一个递归值，保持全部对象见证。
+原完整函数图为反向方向实际取得k处的值，真实递归单值性给边值等词替换。
+给任意k∈d，内部自然差实际构造r∈w、r+k=l和∀y(edge(f,k,y)↔Iteration_tail(w,n,r,y))，
+不是把差存在性或仅外部标准位置留作前提。八个完整闭句/模式、九个原nativeZF实例已验收。
+实际验收461任务、3916审计、0警告、430哈希差异0，Internal具名覆盖1601项。
+下一主项ii.c定义Field(w,n,i,y):=∃t(Iteration_tail(w,n,i,t)∧Step_head(w,t,y))，
+证明全内部自然i的实际总单值、Cons零/后继关系，再以原Replacement收集全部实际Kuratowski索引对。
+利用精确像证明完整functionOn、无多余图元的全边式、ω值域与唯一性，然后接原顺序往返。
+现有逐位置对应不替代实际字段图；字段图、往返、树、专用ProofZF/U与最终Con仍未完成。

@@ -546,4 +546,37 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructural
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListEnd.traceRecoverySentence)) := ObjectStructuralListEnd.native_traceRecovery
 
+/-- 每个域内原位置实际取得一个内部自然反向索引和全值精确双条件。 -/
+example {m} (w l f n k : Fin m) : StructuralListPositionSyntax.reverseExists w l f n k = .ex
+    (((Source.Formula.mem (Fin.last m) w.castSucc).conj (NaturalAdditionSyntax.sum w.castSucc (Fin.last m) k.castSucc l.castSucc)).conj
+      (.all ((GraphSyntax.edge f.castSucc.castSucc k.castSucc.castSucc (Fin.last (m+1))).iff
+        (StructuralListProjectionSyntax.iteration false w.castSucc.castSucc n.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1)))))) := rfl
+
+/-- 完整位置双条件的闭句无归纳性质前提，求值对象y任意。 -/
+example : ObjectStructuralListPositions.iffSentence = ((OmegaSyntax.omega (0 : Fin 10)).imp
+    ((StructuralListTraceSyntax.trace 0 1 2 3 4 5 6).imp ((Source.Formula.mem 7 0).imp ((Source.Formula.mem 8 0).imp
+      ((NaturalAdditionSyntax.sum 0 7 8 3).imp ((GraphSyntax.edge 5 8 9).iff (StructuralListProjectionSyntax.iteration false 0 6 7 9))))))).close := rfl
+
+/-- 原迹每个域内索引的反向见证实际存在，不把自然差存在作为额外前提。 -/
+example : ObjectStructuralListPositions.reverseExistsSentence = ((OmegaSyntax.omega (0 : Fin 8)).imp
+    ((StructuralListTraceSyntax.trace 0 1 2 3 4 5 6).imp ((Source.Formula.mem 7 4).imp (StructuralListPositionSyntax.reverseExists 0 3 5 6 7)))).close := rfl
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.reverseStepSentence)) := ObjectStructuralListPositions.native_reverseStep
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.advanceSentence true)) := ObjectStructuralListPositions.native_advance true
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.advanceSentence false)) := ObjectStructuralListPositions.native_advance false
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.oldIndexSentence)) := ObjectStructuralListPositions.native_oldIndex
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.swapSentence)) := ObjectStructuralListPositions.native_swap
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.allPositionsSentence)) := ObjectStructuralListPositions.native_allPositions
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.atSentence)) := ObjectStructuralListPositions.native_at
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.iffSentence)) := ObjectStructuralListPositions.native_iff
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence (ObjectStructuralListPositions.reverseExistsSentence)) := ObjectStructuralListPositions.native_reverseExists
+
 end PPAC.Migration.Step4Checks

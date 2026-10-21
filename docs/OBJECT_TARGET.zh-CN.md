@@ -176,3 +176,15 @@ Valid(w,n)给实际内部l,y，同时满足l∈w、HasLength(w,n,l)、Iteration_
 九个闭句/模式、12个实例均有原nativeZF推导，详见STEP4_INTERNAL_LIST_END_ACCEPTANCE.zh-CN.md。
 这些是精确端点对应；全部原迹位置的对应、实际有序字段图及往返仍未实现。
 原背景ZF、全内部ω的ProofZF/U和最终Con规格保持不变，完整Con完成标志仍为False。
+
+
+2026-10-22全部原迹位置对象推导更新：
+Positions(w,l,f,n,r):=∀k∀y(((k∈w∧Sum(w,r,k,l))∧edge(f,k,y))→Iteration_tail(w,n,r,y))。
+原完整sequence、全部Links和末边下，Ω(w)、r∈w推出Positions。
+反向用原完整函数图实际取得k处的值，得Ω、原完整Trace、r,k∈w、Sum(w,r,k,l)下：
+edge(f,k,y)↔Iteration_tail(w,n,r,y)，y为任意内部对象。
+给原迹任意k∈d，实际证明∃r((r∈w∧Sum(w,r,k,l))∧∀y(edge(f,k,y)↔Iteration_tail(w,n,r,y)))。
+原内部自然差的存在前提已由原后继域成员关系与全内部自然差定理消去。
+八个闭句/模式、九个实例均有原nativeZF推导；详见STEP4_INTERNAL_LIST_POSITIONS_ACCEPTANCE.zh-CN.md。
+全部位置对应完成；实际完整有序head字段图、字段往返和完整语法树解码仍未完成。
+最终内部ProofZF/U及Con的对象层规格和完成标志保持不变。
