@@ -469,4 +469,28 @@ theorem internal_fresh_successor {n} {Γ : Source.Context n} (w x : Fin n)
     (hw : Source.Derives Γ (OmegaSyntax.omega w)) (hx : Source.Derives Γ (.mem x w)) :
     Source.Derives Γ (ObjectOmegaStructure.freshSuccessor w x) := ObjectOmegaStructure.fresh_successor w x hf hp hw hx
 
+/-- 任意集合图的全部成员由原entriesOn约束，逐边相同推出真正的图相等。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.subsetSentence) := ObjectGraphPointwise.native_subset
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.edgesSentence) := ObjectGraphPointwise.native_edges
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.inclusionSentence) := ObjectGraphPointwise.native_inclusion
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.equalitySentence) := ObjectGraphPointwise.native_equality
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.domainSentence) := ObjectGraphPointwise.native_domain
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectGraphPointwise.domainUniqueSentence) := ObjectGraphPointwise.native_domainUnique
+
+/-- 外延性单公理证书不引入选择或任何Collection/Replacement实例。 -/
+example : FirstOrder.Derives (TheoryTransport.theory ObjectGraphPointwise.assumptions) []
+    (Translation.sentence ObjectGraphPointwise.equalitySentence) := ObjectGraphPointwise.equality_kernel_certificate
+
+/-- 开放版本保留任意内部域包含，供有限迭代图的前缀一致性证明使用。 -/
+theorem compatible_graph_subset {n} {Γ : Source.Context n} (f g d e : Fin n)
+    (he : Source.Derives Γ (Source.SetLanguage.extensionality.rename Fin.elim0))
+    (hf : Source.Derives Γ (GraphSyntax.functionOn f d)) (hg : Source.Derives Γ (GraphSyntax.functionOn g e))
+    (hd : Source.Derives Γ (RestrictionSyntax.subset d e)) (ha : Source.Derives Γ (GraphFamilySyntax.agrees f g)) :
+    Source.Derives Γ (RestrictionSyntax.subset f g) := GraphPointwise.subset_of_agrees f g d e he hf hg hd ha
+
 end PPAC.Migration.Step3Checks

@@ -24,7 +24,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b.2b.3 | 3b.2b.2与Infinity/Separation | 内部ω、有限迭代、传递覆盖 | 覆盖全部内部ω成员；对象图存在唯一；不假设外部标准ω | ω存在/唯一/归纳及结构完成；迭代/覆盖待做 |
 | 3b.2b.3a | 原Infinity、Extensionality及完整Separation | OmegaSyntax/Universal/Cut/Existence/Algebra、OmegaInduction*、ObjectOmega | 实际最小归纳集合ω存在唯一；任意参数公式的每个模式实例均有完整对象ω归纳闭句及原核Derives | 完成 |
 | 3b.2b.3a.i | 对象ω归纳及原Foundation/集合图设施 | OmegaStructureSyntax/Induction/Algebra、OmegaElementary、ObjectIrreflexivity、ObjectOmegaStructure | 内部0/后继分解、成员闭包/传递性、后继消去及迭代图所需的新输入不在旧域事实；均保留对象量词 | 完成 |
-| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 先证明完整函数图逐点相等推出图相等；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 下一项 |
+| 3b.2b.3b | 3b.2b.3a、图扩展/限制/相容合并及Replacement | GraphPointwise、FiniteIteration、TransitiveCover | 完整函数图逐点外延性；在对象ω归纳中构造全部内部n的唯一迭代图，再由Replacement取得实际集合族并合并 | 图逐点外延性完成；内部迭代下一项 |
+| 3b.2b.3b.i | 原完整functionOn、Kuratowski边和Extensionality | GraphPointwiseSyntax/Entries/Domain、GraphPointwise、ObjectGraphPointwise | 逐边相等推出实际图相等；相容函数域包含推出图包含；同域图相等；实际定义域唯一；源ZF与原核Derives | 完成 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -155,3 +156,18 @@ ObjectOmegaStructure还给出零/后继成员闭包、非零前驱、后继消�
 只以Extensionality、Foundation、Pairing和三个Separation实例为理论输入，未调用Collection。
 下一项先补完整函数图的逐点外延性，再定义内部有限迭代图及其存在唯一；不能把后继新鲜性
 或现有相容族合并单独计为内部迭代定理完成。实际验收见STEP3_OMEGA_STRUCTURE_ACCEPTANCE.zh-CN.md。
+
+函数图逐点外延更新：保留完整entriesOn以排除图中的杂项，利用Kuratowski唯一性将
+边包含转为图集合包含，边相同转为图相等。任意相容完整函数图在域包含时得到图包含，
+同域时得到图相等；完整functionOn还确定实际边定义域并证明域唯一。
+六条全参数闭句仅以Extensionality为理论输入，均有源ZF和原核实际Derives。
+实际验收见STEP3_GRAPH_POINTWISE_ACCEPTANCE.zh-CN.md。
+
+内部迭代的下一目标仍未完成，约定如下：给定任意内部集合a、空集z和n∈ω，
+实际构造唯一图f，其域d满足Succ(d,n)、functionOn(f,d)、edge(f,z,a)，
+并对域内所有j,k,u,v满足[Succ(k,j)∧edge(f,j,u)∧edge(f,k,v)→UnionOf(v,u)]。
+所有n、图与中间值都在对象语言中量化，不采用外部标准有限长数组替代。
+先在对象ω归纳中证明任意两份迭代轨迹在共同输入处输出一致；利用域的传递性，
+从后继输入属于两个域推出前驱也属于两个域，归纳步再用UnionOf唯一性。
+再以本批逐点外延性推出同一n的图唯一；存在步用新鲜后继扩展并核对全部旧/新边的递推关系。
+最终用Replacement收集全部内部n的图或末值，实际合并并证明传递覆盖；这些步骤仍待实施。
