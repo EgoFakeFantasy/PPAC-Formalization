@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：原核已证明全部内部候选码/上下文上的全11构造历史无关类型递归式。
-量词体使用真实后继bound，非自然码由根守卫拒绝；ω、载体、状态递归和全称定律均已实际构造。
-新增12个完整原核闭句模式；全仓604任务、5874声明审计、0警告，573份源码哈希独立复核一致。
-详见[历史无关类型递归验收](docs/STEP4_HISTORY_FREE_TYPE_RECURSION_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是原编码精确识别/构造及载体参数消去，再推进内部替换与证明检查。
-最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；原编码类型识别、内部替换及Proof/Con尚未完成。
+当前进展：已在原核消去FormulaCode的额外载体参数，证明真实ω独立性及全内部候选的无载体递归双条件。
+全11已知原构造有精确FormulaCode类型分支；两个量词保留真实后继bound；未知任意内部标签对任意自然payload正式拒绝。
+新增29个完整原核闭句模式；全仓620任务、6090声明审计、0警告，589份源码哈希独立复核一致。
+详见[FormulaCode载体消去与已知构造验收](docs/STEP4_FORMULA_CODE_CARRIER_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是合法输入的实际带类型构造，再完成接受码字段解码和错误字段数/符号/作用域分类。
+最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整原编码识别/构造、内部替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

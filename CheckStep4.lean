@@ -1728,4 +1728,126 @@ example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
 example {m} (w c b f h n : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxTypeRecursive.singleSentence 10 true w c b f h n)) := ObjectSyntaxTypeRecursive.native_single 10 true w c b f h n
 
+
+/-! 无额外载体FormulaCode；全部原11已知构造、内部ω及任意内部候选。 -/
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.carrierExistsSentence w)) := ObjectFormulaCode.native_carrierExists w
+
+example {m} (w a c d t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.carrierUniqueSentence w a c d t)) := ObjectFormulaCode.native_carrierUnique w a c d t
+
+example {m} (w a c n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.atCarrierSentence w a c n b f)) := ObjectFormulaCode.native_atCarrier w a c n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.guardsSentence w n b f)) := ObjectFormulaCode.native_guards w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.rejectCodeSentence w n b f)) := ObjectFormulaCode.native_rejectCode w n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.rejectContextSentence w n b f)) := ObjectFormulaCode.native_rejectContext w n b f
+
+example {m} (w v n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.omegaIndependentSentence w v n b f)) := ObjectFormulaCode.native_omegaIndependent w v n b f
+
+example {m} (w n b f t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.rootTransportSentence w n b f t)) := ObjectFormulaCode.native_rootTransport w n b f t
+
+example {m} (w n b f t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.boundTransportSentence w n b f t)) := ObjectFormulaCode.native_boundTransport w n b f t
+
+example {m} (w n b f t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.freeTransportSentence w n b f t)) := ObjectFormulaCode.native_freeTransport w n b f t
+
+example {m} (w n b f t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.omegaTransportSentence w n b f t)) := ObjectFormulaCode.native_omegaTransport w n b f t
+
+example {m} (w a c x b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.advancedTransferSentence w a c x b f)) := ObjectFormulaCode.native_advancedTransfer w a c x b f
+
+example {m} (tag : Nat) (advance : Bool) (w a c b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.singleTransferSentence tag advance w a c b f n)) := ObjectFormulaCode.native_singleTransfer tag advance w a c b f n
+
+example {m} (kind : Fin 4) (w a c b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.binaryTransferSentence kind w a c b f n)) := ObjectFormulaCode.native_binaryTransfer kind w a c b f n
+
+example {m} (w a c n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.criterionTransferSentence w a c n b f)) := ObjectFormulaCode.native_criterionTransfer w a c n b f
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.recursiveSentence w n b f)) := ObjectFormulaCode.native_recursive w n b f
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.universalSentence w)) := ObjectFormulaCode.native_universal w
+
+example {m} (truth : Bool) (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.nullaryTypesSentence truth w b f n)) := ObjectFormulaCode.native_nullaryTypes truth w b f n
+
+example {m} (w b f s x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.memberTypesSentence w b f s x y n)) := ObjectFormulaCode.native_memberTypes w b f s x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.equalTypesSentence w b f x y n)) := ObjectFormulaCode.native_equalTypes w b f x y n
+
+example {m} (w b f x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.negationTypesSentence w b f x n)) := ObjectFormulaCode.native_negationTypes w b f x n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.binary0TypesSentence w b f x y n)) := ObjectFormulaCode.native_binary0Types w b f x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.binary1TypesSentence w b f x y n)) := ObjectFormulaCode.native_binary1Types w b f x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.binary2TypesSentence w b f x y n)) := ObjectFormulaCode.native_binary2Types w b f x y n
+
+example {m} (w b f x y n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.binary3TypesSentence w b f x y n)) := ObjectFormulaCode.native_binary3Types w b f x y n
+
+example {m} (w b f x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.forallTypesSentence w b f x n)) := ObjectFormulaCode.native_forallTypes w b f x n
+
+example {m} (w b f x n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.existsTypesSentence w b f x n)) := ObjectFormulaCode.native_existsTypes w b f x n
+
+example {m} (universal : Bool) (w b f x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.quantifierTypesSentence universal w b f x n k)) := ObjectFormulaCode.native_quantifierTypes universal w b f x n k
+
+example {m} (w b f t p n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.unknownTagSentence w b f t p n)) := ObjectFormulaCode.native_unknownTag w b f t p n
+
+example {m} (w n b f : Fin m) : FormulaCodeSyntax.formulaCode w n b f =
+    Source.Formula.ex (.ex ((FormulaCodeSyntax.carrier w.castSucc.castSucc
+        (Fin.last m).castSucc (Fin.last (m+1))).conj
+      (SyntaxTypeJudgmentSyntax.typed w.castSucc.castSucc (Fin.last (m+1))
+        n.castSucc.castSucc b.castSucc.castSucc f.castSucc.castSucc))) := rfl
+
+example {m} (w x b f : Fin m) : FormulaCodeRecursiveSyntax.advancedCode w x b f =
+    Source.Formula.ex ((OmegaSyntax.successor (Fin.last m) b.castSucc).conj
+      (FormulaCodeSyntax.formulaCode w.castSucc x.castSucc (Fin.last m) f.castSucc)) := rfl
+
+example {m} (w : Fin m) : FormulaCodeRecursive.universalLaw w =
+    Source.Formula.all (.all (.all
+      ((FormulaCodeSyntax.formulaCode w.castSucc.castSucc.castSucc
+        (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2))).iff
+       (FormulaCodeRecursiveSyntax.criterion w.castSucc.castSucc.castSucc
+        (Fin.last m).castSucc.castSucc (Fin.last (m+1)).castSucc (Fin.last (m+2)))))) := rfl
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.nullaryTypesSentence false w b f n)) :=
+  ObjectFormulaCode.native_nullaryTypes false w b f n
+
+example {m} (w b f n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.nullaryTypesSentence true w b f n)) :=
+  ObjectFormulaCode.native_nullaryTypes true w b f n
+
+example {m} (w b f x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.quantifierTypesSentence true w b f x n k)) :=
+  ObjectFormulaCode.native_quantifierTypes true w b f x n k
+
+example {m} (w b f x n k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectFormulaCode.quantifierTypesSentence false w b f x n k)) :=
+  ObjectFormulaCode.native_quantifierTypes false w b f x n k
+
 end PPAC.Migration.Step4Checks

@@ -348,3 +348,15 @@ Criterion保留n∈w和原11构造精确析取，所有严格子码的Read已等
 12个新增完整原核模式及验收见STEP4_HISTORY_FREE_TYPE_RECURSION_ACCEPTANCE.zh-CN.md。
 内部bound/free类型递归关卡现True；原编码识别/构造仍待验收，完整类型识别关卡仍False。
 内部替换、ZF/U专用Proof及任意内部码正确性、内部编译器和最终Con依旧未完成。
+
+
+2026-10-22无额外载体FormulaCode和已知原构造类型批次：
+对象公式FormulaCode(w,n,b,f)通过内部存在量词取得真实A=P(w)、C=P(A)及Typed。
+原ZF证明它与任意真实载体上的Typed等价，且实际ω见证无关。
+已消去递归双条件的额外载体前提，在Ω(w)下量化全内部n,b,f；量词体仍是实际后继bound。
+全11已知原构造的FormulaCode精确类型双条件及未知任意内部标签的完整拒绝也有原核证书。
+候选标签和payload都为内部自然，payload长度没有外部标准界；不只核验宿主标准码样本。
+合法输入实际带类型构造、完整字段解码和错码分类还需连接；完整识别总关卡不提升。
+背景仍为原ZF纯语言像，原FirstOrder.Derives及内部Con数学定义不变；
+没有新增对象AC、Con或不可达前提。内部ProofZF/U、替换、编译器及最终Con仍未完成。
+完整验收见STEP4_FORMULA_CODE_CARRIER_ACCEPTANCE.zh-CN.md。
