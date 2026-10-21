@@ -47,3 +47,5 @@ import PPAC.Migration.Internal.ObjectCheckedSequences
 import PPAC.Migration.Internal.SuccessorRecursion
 
 import PPAC.Migration.Internal.ObjectNaturalMultiplication
+
+import PPAC.Migration.Internal.ObjectNaturalAdditionOrder

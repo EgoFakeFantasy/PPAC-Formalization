@@ -62,13 +62,19 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 4a.1 | 原完整functionOn、对象ω归纳及原图插入/限制 | Internal/SequenceSyntax、SequenceLogic、SequenceContext | 内部有界值序列的完整图AST；空序列及每个域内点的实际唯一有界值 | 完成；无宿主序列或外部长度限制 |
 | 4a.2 | 外延/配对/并/基础及两个明确Separation实例 | Internal/SequenceAppend、SequenceExistence、SequencePrefix、ObjectSequences | 实际唯一追加、旧图精确限制、实际唯一前缀、全部内部ω长度的实际序列；八个完整原核闭句 | 完成；六句有限背景、源ZF及nativeZF实际证书 |
 | 4a.3 | 任意参数纯公式行条件及上项精确边 | Internal/CheckedSequence、ObjectCheckedSequences | 每个矩阵的完整对象追加/前缀保持闭句及原核Derives；不把测试谓词作为新公理 | 完成；此通用接口不替代ZF/U专用检查器 |
-| 4b | 全内部序列、自然数递归和原Gödel/结构列表约定 | Internal/NaturalArithmetic、GodelPairing、StructuralCode | 全内部数值运算实际存在唯一、编码/解码/界性质及原核Derives；紧凑quotation避免展开巨大一元数值 | 4b.a及4b.b.1基本加乘完成；代数/次序/编码界及结构码仍待做 |
+| 4b | 全内部序列、自然数递归和原Gödel/结构列表约定 | Internal/NaturalArithmetic、GodelPairing、StructuralCode | 全内部数值运算实际存在唯一、编码/解码/界性质及原核Derives；紧凑quotation避免展开巨大一元数值 | 4b.a、4b.b.1基本加乘及4b.b.2a加法代数/界完成；乘法代数/进一步次序和编码仍待做 |
 | 4b.a.1 | Foundation、一个序数正文Separation及对象ω归纳 | Internal/OmegaOrdinals | 每个内部ω成员满足原完整ordinal定义；有限两句背景及原核闭句 | 完成 |
 | 4b.a.2 | 任意参数总单值步进关系、实际自然前驱与完整历史图 | Internal/NaturalRecursionSyntax/Total/Determinism、NaturalRecursion | 对任意有效历史实际证明算子总单值；原超限递归给实际存在唯一递归图；四个完整原核模式 | 完成；不假定历史已经符合递推 |
 | 4b.a.3 | 上项真实递归图、后继域及图唯一性 | Internal/NaturalEvaluationSyntax/Existence/Uniqueness/Fiber、ObjectNaturalRecursion、NaturalRecursionLaws | 每个内部n∈ω有实际唯一末值；算子零点/后继方程和求值零点律；保留所有对象量词和公式参数 | 完成；步进公式是外部模式索引，每个实例有原核闭句 |
 | 4b.a.4 | 原Pairing/Union/Extensionality的后继总单值证明 | Internal/SuccessorRecursion | 具体原后继关系消去所有算子前提，给全内部自然长度唯一后继迭代及零点求值方程 | 完成；不据此声称完整自然数加法/乘法或ω值域闭包 |
 | 4b.b.1 | 通用递推、实际前段限制及ω归纳 | Internal/NaturalEvaluationRange/Step、NaturalSuccessorStep、NaturalAddition*、NaturalMultiplication*、ObjectNaturalAddition/Multiplication | 全部内部自然索引上的加乘实际自然值存在唯一、ω闭包、零点和双向后继方程、左零律；十个完整原核闭句 | 完成；见STEP4_BASIC_ARITHMETIC_ACCEPTANCE.zh-CN.md |
-| 4b.b.2 | 上项基本加乘、内部ω归纳、原序数比较 | Internal/NaturalArithmeticAlgebra/Order | 加法与乘法所需交换/结合/分配、抵消、次序及编码界性质；每项有原核闭句 | 下一主项，未完成 |
+| 4b.b.2a | 基本加法、原后继单射、对象ω归纳与明确Separation实例 | Internal/NaturalAdditionShift/Commutative/Associative/Cancellation/Bounds、ObjectNaturalAdditionAlgebra/Order | 双向左后继、交换、双向结合、两侧抵消、两加数不降界、正加数严格成员界及和值为零刻画；九个完整原核闭句 | 完成；见STEP4_ADDITION_ALGEBRA_ACCEPTANCE.zh-CN.md |
+| 4b.b.2b | 上项加法代数与基本乘法、内部ω归纳及原自然顺序 | Internal/NaturalMultiplicationAlgebra/Order、NaturalDifference | 乘法交换/结合/分配、自然次序差分及Gödel配数所需界；每项有原核闭句 | 下一主项，未完成 |
+| 4b.b.2b.i | 已证加法交换/结合及实际和存在唯一 | Internal/NaturalAdditionReassociation | 用原关系Add逐见证证明四项重排/重新结合；每次中间和实际存在于ω | 待做；为乘法归纳复用，不能直接化简宿主表达式 |
+| 4b.b.2b.ii | 基本乘法后继式、上项加法重排及对象ω归纳 | Internal/NaturalMultiplicationDistributive | 从Add(b,c,d)、Mul(a,b,p)、Mul(a,c,q)、Add(p,q,r)推出Mul(a,d,r)，保留全部内部自然数与见证 | 待做；原核完整闭句 |
+| 4b.b.2b.iii | 实际乘积/和及分配、加法左右后继 | Internal/NaturalMultiplicationShift/Commutative | 左参数后继乘积方程及Mul(a,b,p)↔Mul(b,a,p)，全内部ω归纳 | 待做；原核完整闭句 |
+| 4b.b.2b.iv | 已证分配与基本乘法递推、完整原核图和值 | Internal/NaturalMultiplicationAssociative | 以实际中间乘积见证给出双向结合式，所有原递归辅助证书由ZF消去 | 待做；原核完整闭句 |
+| 4b.b.2b.v | 加法抵消/基本顺序界、内部前驱分解与ω归纳 | Internal/NaturalDifference/Order | a=b∨a∈b与∃d∈ω Add(a,d,b)对应；严格差分非零、加乘所需单调及编码界 | 待做；不得假定内部ω外部标准 |
 | 4b.c | 内部算术、全部内部有限序列及原编码约定 | Internal/GodelPairing、StructuralCode | 配数/结构列表的实际内部存在唯一、解码/界与正确性；区分树数值和字节传输码 | 待做 |
 | 4c | 上项数值编码、纯语言唯一关系编号0及无函数符号 | Internal/SyntaxCode、SyntaxTransform | 全11公式构造、bound/free长度及全部非单射替换的内部关系和正确性；不得只覆盖标准码 | 待做 |
 | 4d | 七固定原ZF公理、全Separation/Collection及PP/ACwo/notAC | Internal/AxiomZF、AxiomTarget | 专用纯公式公理识别；完整模式任意参数正文；不混入ZFC选择公理 | 待做 |
@@ -460,7 +466,7 @@ NaturalRecursion消去两项算子义务后调用已证对象超限递归，取�
 NaturalEvaluation显式消去实际后继域、完整原递归图和末值；ObjectNaturalRecursion给每个内部n∈ω实际唯一末值的完整模式。
 SuccessorRecursion实际证明原后继关系总单值，具体实例不保留外加R总性/单值性前提。
 模式p仍为外部有限公式索引，每一实例覆盖全部内部索引；这不等于内部语法码或统一真值谓词已经实现。
-基本加乘及ω闭包见4b.b.1；下一步补代数/次序/编码界，再推进原数值结构码；专用ZF/U检查器及内部Con主句未完成。
+基本加乘及ω闭包见4b.b.1，加法代数/不降界见4b.b.2a；下一步补乘法代数/次序差分/编码界，再推进原数值结构码；专用ZF/U检查器及内部Con主句未完成。
 实际验收见STEP4_NATURAL_RECURSION_ACCEPTANCE.zh-CN.md。
 
 
@@ -471,3 +477,10 @@ SuccessorRecursion实际证明原后继关系总单值，具体实例不保留�
 ObjectNaturalAddition和ObjectNaturalMultiplication各有存在唯一、ω闭包、零点、双向后继和左零五个原nativeZF闭句。
 中间的hAdd/hMul参数实际由先前NaturalRecursion.source_uniqueness闭句消去，不作为新背景假设。
 算术代数/次序/编码界、ProofZF/U专用检查器、内部编译器及Con完成门不变。
+
+
+4b.b.2a更新：加法左参数后继律、交换、结合、两侧抵消通过全部内部ω上的正式归纳证明。
+结合律后继步实际取得两个旧和，右抵消后继步实际取得两个旧和并使用原后继单射；不以外部Nat归纳替代。
+两加数不大于和值使用纯对象a=y∨a∈y表达；非零另一加数给实际严格成员界，和值为空精确等价于两加数为空。
+ObjectNaturalAdditionAlgebra五句与ObjectNaturalAdditionOrder四句均有源ZF及原nativeZF证书。
+所有分离/递归辅助参数在source_*端点从原ZF公理和已证闭句消去；内部ProofZF/U与Con仍未实现。
