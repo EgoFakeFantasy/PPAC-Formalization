@@ -2064,4 +2064,132 @@ example : FormulaCodeAllowedAritySyntax.expectedArity 8 = 2 := rfl
 example : FormulaCodeAllowedAritySyntax.expectedArity 9 = 1 := rfl
 example : FormulaCodeAllowedAritySyntax.expectedArity 10 = 1 := rfl
 
+
+/-! 全内部索引字段对应、任意外部纯公式模式及真实量词后继类型。 -/
+example {m} (k : Nat) (l i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.numeralMembersSentence k l i)) :=
+  ObjectSyntaxTypedFields.native_numeralMembers k l i
+
+example {m} (k : Nat) (j : Fin k) (l i : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.indexMemberSentence k j l i)) :=
+  ObjectSyntaxTypedFields.native_indexMember k j l i
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.forestValueSentence k xs j w n i y)) :=
+  ObjectSyntaxTypedFields.native_forestValue k xs j w n i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n l g i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.forestEdgeSentence k xs j w n l g i y)) :=
+  ObjectSyntaxTypedFields.native_forestEdge k xs j w n l g i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w n l g i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.forestFullSentence k xs w n l g i y)) :=
+  ObjectSyntaxTypedFields.native_forestFull k xs w n l g i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w n l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.forestAllSentence k xs w n l g)) :=
+  ObjectSyntaxTypedFields.native_forestAll k xs w n l g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w a n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.nodeAllSentence k xs w a n t p l g)) :=
+  ObjectSyntaxTypedFields.native_nodeAll k xs w a n t p l g
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (j : Fin k) (w a n t p l g i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.nodeValueSentence k xs j w a n t p l g i y)) :=
+  ObjectSyntaxTypedFields.native_nodeValue k xs j w a n t p l g i y
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (w n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.constructorAllSentence k tag xs w n t p l g)) :=
+  ObjectSyntaxTypedFields.native_constructorAll k tag xs w n t p l g
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g i y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.constructorValueSentence k tag xs j w n t p l g i y)) :=
+  ObjectSyntaxTypedFields.native_constructorValue k tag xs j w n t p l g i y
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.slotSentence k tag xs j w n t p l g y)) :=
+  ObjectSyntaxTypedFields.native_slot k tag xs j w n t p l g y
+
+example {m} (q : Nat) (a : Formula (q+1)) (ρ : Fin q → Fin m) (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.checkedSentence q a ρ k tag xs j w n t p l g)) :=
+  ObjectSyntaxTypedFields.native_checked q a ρ k tag xs j w n t p l g
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.codeFieldSentence k tag xs j w n t p l g b f)) :=
+  ObjectSyntaxTypedFields.native_codeField k tag xs j w n t p l g b f
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.termFieldSentence k tag xs j w n t p l g b f)) :=
+  ObjectSyntaxTypedFields.native_termField k tag xs j w n t p l g b f
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.advancedFieldSentence k tag xs j w n t p l g b f)) :=
+  ObjectSyntaxTypedFields.native_advancedField k tag xs j w n t p l g b f
+
+example {m} (k : Nat) (tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.zeroFieldSentence k tag xs j w n t p l g)) :=
+  ObjectSyntaxTypedFields.native_zeroField k tag xs j w n t p l g
+
+example {m} (w n b f s x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.memberTypingSentence w n b f s x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_memberTyping w n b f s x y t p l g
+
+example {m} (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.equalTypingSentence w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_equalTyping w n b f x y t p l g
+
+example {m} (w n b f x t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.negationTypingSentence w n b f x t p l g)) :=
+  ObjectSyntaxTypedFields.native_negationTyping w n b f x t p l g
+
+example {m} (kind : Fin 4) (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.binaryTypingSentence kind w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_binaryTyping kind w n b f x y t p l g
+
+example {m} (universal : Bool) (w n b f x t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.quantifierTypingSentence universal w n b f x t p l g)) :=
+  ObjectSyntaxTypedFields.native_quantifierTyping universal w n b f x t p l g
+
+example {m} (universal : Bool) (w n b f x t p l g u : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.quantifierSuccessorSentence universal w n b f x t p l g u)) :=
+  ObjectSyntaxTypedFields.native_quantifierSuccessor universal w n b f x t p l g u
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (g : Fin m) : SyntaxForestFields.graphLaw k xs g =
+    Source.Formula.all (.all
+      ((GraphSyntax.edge g.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))).iff
+        (SyntaxPositionSyntax.positions k (fun j => (xs j).castSucc.castSucc)
+          (Fin.last m).castSucc (Fin.last (m+1))))) := rfl
+
+example {m} (w x b f : Fin m) : FormulaCodeRecursiveSyntax.advancedCode w x b f =
+    Source.Formula.ex ((OmegaSyntax.successor (Fin.last m) b.castSucc).conj
+      (FormulaCodeSyntax.formulaCode w.castSucc x.castSucc (Fin.last m) f.castSucc)) := rfl
+
+example {m} (g y : Fin m) (j : Nat) : SyntaxSlotSyntax.slot g j y =
+    Source.Formula.ex ((SyntaxNumeralSyntax.numeral j (Fin.last m)).conj
+      (GraphSyntax.edge g.castSucc (Fin.last m) y.castSucc)) := rfl
+
+example {m} (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.binaryTypingSentence 0 w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_binaryTyping 0 w n b f x y t p l g
+
+example {m} (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.binaryTypingSentence 1 w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_binaryTyping 1 w n b f x y t p l g
+
+example {m} (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.binaryTypingSentence 2 w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_binaryTyping 2 w n b f x y t p l g
+
+example {m} (w n b f x y t p l g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.binaryTypingSentence 3 w n b f x y t p l g)) :=
+  ObjectSyntaxTypedFields.native_binaryTyping 3 w n b f x y t p l g
+
+example {m} (w n b f x t p l g u : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.quantifierSuccessorSentence false w n b f x t p l g u)) :=
+  ObjectSyntaxTypedFields.native_quantifierSuccessor false w n b f x t p l g u
+
+example {m} (w n b f x t p l g u : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxTypedFields.quantifierSuccessorSentence true w n b f x t p l g u)) :=
+  ObjectSyntaxTypedFields.native_quantifierSuccessor true w n b f x t p l g u
+
 end PPAC.Migration.Step4Checks

@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：全部11合法内部输入已实际构造唯一带类型原码，membership实际取得原编号0符号。
-接受根实际解码唯一完整字段图并可重编码回原根、保留类型；全内部标签/字段数精确配对及非匹配Shape拒绝已证明。
-新增46个完整原核闭句模式；全仓632任务、6349声明审计、0警告，601份源码哈希独立复核一致。
-详见[实际带类型构造与根字段验收](docs/STEP4_FORMULA_CODE_CONSTRUCTION_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是完整字段图的逐位置递归类型对应，再装配原树有效性和完整TypedData接受/拒绝。
+当前进展：原forest与同根真实字段图已对全部内部索引和值证明完整边双条件，真实槽位精确恢复原字段。
+任意外部纯公式模式及FormulaCode/Term/真实后继bound/原0符号四类检查已传输；已知原构造的父类型精确对应真实图检查。
+新增22个完整原核闭句模式；全仓644任务、6504声明审计、0警告，613份源码哈希独立复核一致。
+详见[全内部位置与字段图类型验收](docs/STEP4_ALL_POSITION_TYPED_FIELDS_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是对象ω归纳下的原树有效性，再装配完整TypedData双向识别、消去已知Constructor前提。
 最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整递归类型解码、内部替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
