@@ -618,4 +618,33 @@ example : FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalBasic.assumpti
 
 example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOrdinalBasic.existsEmptySentence := ObjectOrdinalBasic.source_ZF_existsEmpty
 
+/-- 任意两个原Source.ordinal的比较，所有集合参数均在完整闭句内。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    (((Source.SetLanguage.ordinal (0 : Fin 2)).imp ((Source.SetLanguage.ordinal 1).imp
+      ((Source.Formula.equal 0 1).disj ((Source.Formula.mem 0 1).disj (.mem 1 0))))).close)) := by
+  simpa only [ObjectOrdinalComparison.comparisonSentence, OrdinalComparison.comparison,
+    OrdinalSyntax.ordinal_original] using ObjectOrdinalComparison.native_comparison
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalComparison.differenceSentence) := ObjectOrdinalComparison.native_difference
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalComparison.initialSentence) := ObjectOrdinalComparison.native_initial
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalComparison.trichotomySentence) := ObjectOrdinalComparison.native_trichotomy
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalComparison.subsetSentence) := ObjectOrdinalComparison.native_subset
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectOrdinalComparison.asymmetricSentence) := ObjectOrdinalComparison.native_asymmetric
+
+/-- 三分支的排斥也在对象公式内；不是Lean中对集合分类。 -/
+example {n} (a b : Fin n) : OrdinalTrichotomy.trichotomy a b =
+    (OrdinalComparison.comparison a b).conj
+      (((Source.Formula.equal a b).imp ((Source.Formula.mem a b).neg.conj (Source.Formula.mem b a).neg)).conj
+        ((Source.Formula.mem a b).imp (Source.Formula.mem b a).neg)) := rfl
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectOrdinalComparison.assumptions) []
+    (Translation.sentence ObjectOrdinalComparison.trichotomySentence) := ObjectOrdinalComparison.trichotomy_kernel_certificate
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectOrdinalComparison.comparisonSentence := ObjectOrdinalComparison.source_ZF_comparison
+
+/-- 比较所需有限理论精确为外延、Foundation和正文x∉b的一个分离实例。 -/
+example (q : Source.Sentence) : ObjectOrdinalComparison.assumptions q ↔
+    (q = Source.SetLanguage.extensionality ∨ q = Source.SetLanguage.foundation ∨
+      q = Source.SetLanguage.separation OrdinalDifference.outsideMatrix) := Iff.rfl
+
 end PPAC.Migration.Step3Checks

@@ -52,3 +52,10 @@ verification/ 是本地生成结果，不作为远端验收或自动发布材料
 
 
 公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。当前检查精确守住此基线，不标成“仅三项标准公理”；未修改底座，也未添加新的自定义公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。
+
+任意两原对象序数比较更新：OrdinalInitialSegment证明原序数的传递子集等于它或属于它，
+OrdinalComparison/Trichotomy给出任意内部序数的三分支比较及两两排斥，另有序数包含当且仅当相等或属于的刻画。
+差性质用界a上的有界成员极小元处理，实际有限理论仅含Extensionality、Foundation及正文x∉b的一个Separation实例；
+无需Replacement、Collection、传递覆盖或对象AC输入。六条完整闭句均有源Replacement版ZF和原YesMetaZFC核的实际Derives。
+实际验收见[对象序数比较验收](docs/STEP3_ORDINAL_COMPARISON_ACCEPTANCE.zh-CN.md)。
+内部序数族并集、递归/秩和内部ProofZF/U/Con及最终相对一致性对象主句仍未完成。
