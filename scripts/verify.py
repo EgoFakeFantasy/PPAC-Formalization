@@ -91,9 +91,11 @@ def main() -> None:
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
             ["Syntax.", "Compile.", "FiniteSupport.", "TheoryTransport."])
         is_step3_logic = any(name.startswith("PPAC.Migration." + prefix) for prefix in
-            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
+            ["Normalization.", "Reverse.", "Presentation.", "FormulaEquivalence.", "ProjectSyntax.", "ProjectNormalization.", "ProjectDecode.", "SeparationReverse.", "SourceAlgebra.", "SourceLogic.", "SourcePropositional.", "SourceQuantifiers.", "ReverseSubstitution.", "ReverseLogicalAxioms.", "ReverseCompile.", "MinimalPredicates.", "MinimalLogic.", "MinimalInstances.", "BoundedMinimal.", "BoundedInduction.", "PairSyntax.", "UnorderedPairLogic.", "OrderedPairExistence.", "OrderedPairElimination.", "OrderedPairWitnesses.", "OrderedPairLogic.", "ObjectPairs.", "ReplacementPredicates.", "ExactImage.", "ReplacementInstances.", "ReplacementFromCollection."])
         if name in {"PPAC.Migration.ReplacementFromCollection.native_replacement",
-                    "PPAC.Migration.BoundedMinimal.native_minimal", "PPAC.Migration.BoundedInduction.native_induction"} or name.startswith((
+                    "PPAC.Migration.BoundedMinimal.native_minimal", "PPAC.Migration.BoundedInduction.native_induction",
+                    "PPAC.Migration.ObjectPairs.native_replay", "PPAC.Migration.ObjectPairs.native_exists_unique",
+                    "PPAC.Migration.ObjectPairs.native_characterization"} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -126,6 +128,11 @@ def main() -> None:
         "full_bounded_membership_minimal_schema_proved_in_source_and_native_ZF": True,
         "full_bounded_membership_induction_schema_proved_in_source_and_native_ZF": True,
         "bounded_minimal_and_induction_use_only_Foundation_and_one_Separation_instance": True,
+        "pure_object_Kuratowski_pair_existence_uniqueness_proved_in_source_and_native_ZF": True,
+        "pure_object_Kuratowski_pair_components_characterized_proved": True,
+        "Kuratowski_encoding_strictly_matches_original_source_PP_AC": True,
+        "Kuratowski_pair_certificates_use_only_Pairing_and_Extensionality": True,
+        "object_omega_iteration_proved": False,
         "object_transitive_closure_proved": False,
         "object_rank_hierarchy_proved": False,
         "unbounded_object_set_induction_proved": False,
@@ -153,7 +160,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Object transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
+        "scope": "Steps 1-2 and step 3a: full reverse syntax, original-kernel normalization and presentation replay; all seven fixed ZF axioms in both directions and full bidirectional Separation, all source Replacement instances proved using Collection plus Separation, and full source ZF/target forward replay. All six native kernel constructors and 27 logical modes reverse-compile into the original 19 source rules, with arbitrary finite local contexts and a nonempty external variable context. Full bounded membership-minimal and induction schemas are proved in source ZF and the original native kernel using only Foundation and one Separation instance. Full pure-object Kuratowski pair existence, uniqueness and component characterization use only Pairing and Extensionality and strictly match the original source PP/AC encoding. Object omega iteration/transitive closure/ranks, reverse Collection/AC equivalences and internal Con/compiler representation remain pending.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

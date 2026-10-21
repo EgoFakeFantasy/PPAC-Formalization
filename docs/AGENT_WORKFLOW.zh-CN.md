@@ -13,6 +13,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
 | 3b.1 | Foundation与一个全分离实例 | MinimalPredicates、MinimalLogic、MinimalInstances、BoundedMinimal、BoundedInduction | 每个任意参数矩阵产生完整闭句；源Replacement版ZF及原nativeZF均有实际Derives | 完成：有界极小元和集合内成员归纳 |
 | 3b.2 | 纯对象集合图与内部ω迭代 | Pairs、Omega、FiniteIteration、TransitiveClosure | Kuratowski编码唯一性；内部ω的全部成员上迭代；源ZF证明每个集合有传递覆盖集 | 待做；不使用Collection作为输入 |
+| 3b.2a | 原源Kuratowski定义、Pairing与Extensionality | PairSyntax、UnorderedPairLogic、OrderedPairExistence/Elimination/Witnesses/Logic、ObjectPairs | 原源编码严格rfl；全对象存在唯一、分量相等刻画；源ZF和原核Derives；含重复分量 | 完成 |
+| 3b.2b | 3b.2a及源图定义 | Graphs、Omega、FiniteIteration、TransitiveClosure | 对象函数图操作；内部ω有限迭代；源Replacement版ZF内传递覆盖集 | 待做；不把有序对唯一性称作函数图递归已完成 |
 | 3b.3 | 3b.1–3b.2及全Replacement | Ordinals、Recursion、Rank、CumulativeHierarchy | 内部序数比较/极小秩、秩覆盖与Vα存在性；原推导核全参数证明 | 待做；不使用宿主WellFounded或假定秩函数 |
 | 3b.4 | 对象秩与累积层 | CollectionFromReplacement | 对每个输入x取唯一最小见证秩，Replacement收集秩，Vα统一容纳见证 | 待做；必须导出完整原Collection句子 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 全27逻辑模式/6构造→原源演绎；任意局部假设、非单射变量环境；闭句在一个未用变量中回译 | 完成，外部证书传输；内部码表示归步骤5 |
@@ -79,3 +81,12 @@ ReverseCompile.sentence在n=1回译闭句；source_sentence_iff对任意源理�
 它们量化一个界集合A；没有据此声称无界集合归纳、全局类极小元、外部良基或内部递归已完成。
 下一最小工程为3b.2的纯对象集合图与内部ω/迭代/传递覆盖集，随后3b.3秩与累积层。
 实际验收见STEP3_BOUNDED_FOUNDATION_ACCEPTANCE.zh-CN.md。
+
+Kuratowski对象构造更新：PairSyntax.pair_original/ordered_original以rfl确认与源PP/AC
+实际使用的无序对/有序对定义严格相同，没有更换编码约定。
+ObjectPairs.native_exists_unique返回∀x∀y∃!p K(p,x,y)的实际原核Derives；
+native_characterization返回全量词K(p,x,y)与K(q,a,b)下p=q ↔ (x=a∧y=b)的原核Derives。
+源Replacement版ZF端也有对应Source.Derives；仅Pairing与Extensionality两个闭公理已足够。
+全部存在见证由原exI/exE处理；无对象Choice、宿主有序对函数或外部良基前提。
+3b.2尚未整体完成；图操作、内部ω与迭代/传递闭包仍是下一工作。
+实际验收见STEP3_OBJECT_PAIRS_ACCEPTANCE.zh-CN.md。

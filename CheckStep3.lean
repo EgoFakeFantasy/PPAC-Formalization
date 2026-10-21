@@ -239,4 +239,36 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedMinimal.s
 
 example : FirstOrder.Derives nativeZF [] (Translation.sentence (BoundedInduction.sentence parameterMatrix)) :=
   BoundedInduction.native_induction parameterMatrix
+/-- 全部对象x/y都有唯一Kuratowski编码，输出实际原核闭句。 -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPairs.existenceSentence) :=
+  ObjectPairs.native_exists_unique
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ObjectPairs.characterizationSentence) :=
+  ObjectPairs.native_characterization
+
+example : Source.Derives (Source.SetLanguage.ZF.at 0) ObjectPairs.existenceSentence :=
+  ObjectPairs.source_ZF_exists_unique
+
+example : FirstOrder.Derives (TheoryTransport.theory ObjectPairs.assumptions) []
+    (Translation.sentence ObjectPairs.characterizationSentence) := ObjectPairs.characterization_kernel_certificate
+
+/-- 编码严格使用源PP/AC中同一个orderedPair定义。 -/
+example {n} (p x y : Fin n) : Source.SetLanguage.orderedPair p x y = PairSyntax.ordered p x y :=
+  PairSyntax.ordered_original p x y
+
+/-- 对象x=y也覆盖：同一个变量槽的实际全称闭句，不以分量不同为前提。 -/
+def diagonalOrderedPair : Source.Sentence := (ObjectPairs.existsUnique (0 : Fin 1) 0).close
+
+theorem diagonal_ordered_pair : FirstOrder.Derives nativeZF [] (Translation.sentence diagonalOrderedPair) := by
+  apply ObjectPairs.native_replay
+  apply TheoryTransport.sentence
+  apply SourceAlgebra.close_derives
+  exact ObjectPairs.exists_unique 0 0 (.hyp ⟨_, Or.inl rfl, rfl⟩) (.hyp ⟨_, Or.inr rfl, rfl⟩)
+
+/-- 任意非单射变量编号及任意局部假设的完整开放分量刻画。 -/
+theorem arbitrary_ordered_pair_characterization {n} {Γ : Source.Context n} (p q x y a b : Fin n)
+    (he : Source.Derives Γ (Source.SetLanguage.extensionality.rename Fin.elim0))
+    (hp : Source.Derives Γ (PairSyntax.ordered p x y)) (hq : Source.Derives Γ (PairSyntax.ordered q a b)) :
+    Source.Derives Γ ((Source.Formula.equal p q).iff ((Source.Formula.equal x a).conj (.equal y b))) :=
+  OrderedPairLogic.characterization p q x y a b he hp hq
 end PPAC.Migration.Step3Checks
