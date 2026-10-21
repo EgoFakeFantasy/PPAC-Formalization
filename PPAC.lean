@@ -43,3 +43,5 @@ import PPAC.Migration.ReverseZFReplay
 import PPAC.Migration.ChoiceNativeBridge
 
 import PPAC.Migration.Internal.ObjectCheckedSequences
+
+import PPAC.Migration.Internal.SuccessorRecursion

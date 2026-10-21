@@ -39,4 +39,34 @@ example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
 example {m k n} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (f d b : Fin m) (r : Fin m → Fin k) :
     (CheckedSequence.checked p ρ f d b).rename r = CheckedSequence.checked p (fun i => r (ρ i)) (r f) (r d) (r b) :=
   CheckedSequence.checked_rename p ρ f d b r
+
+/-- 步进总性量化全部内部集合，不借用宿主总函数。 -/
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) :
+    NaturalRecursionSyntax.relationTotal p ρ = Source.Formula.all (.ex
+      (ReplacementPredicates.rel p (ReplacementPredicates.paramsUp (ReplacementPredicates.paramsUp ρ))
+        (Fin.last m).castSucc (Fin.last (m+1)))) := rfl
+
+/-- 原递归矩阵确实展开成实际自然前驱/历史图算子。 -/
+example {n m} (p : Source.Formula (n+2)) (ρ : Fin n → Fin m) (w a x h y : Fin m) :
+    OrdinalRecursionSyntax.operator (NaturalRecursionSyntax.matrix p) (NaturalRecursionSyntax.extend ρ w a) x h y =
+      NaturalRecursionSyntax.operation p ρ w a x h y := NaturalRecursionSyntax.matrix_operator p ρ w a x h y
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence OmegaOrdinals.sentence) := OmegaOrdinals.native_proof
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (NaturalRecursion.totalSentence p)) := NaturalRecursion.native_total p
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (NaturalRecursion.deterministicSentence p)) := NaturalRecursion.native_deterministic p
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (NaturalRecursion.existenceSentence p)) := NaturalRecursion.native_existence p
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (NaturalRecursion.uniquenessSentence p)) := NaturalRecursion.native_uniqueness p
+example {n} (p : Source.Formula (n+2)) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectNaturalRecursion.sentence p)) := ObjectNaturalRecursion.native_proof p
+
+/-- 具体实例的步进是原后继定义，总性/单值义务已实际消去。 -/
+example {m} (ρ : Fin 0 → Fin m) (x y : Fin m) :
+    ReplacementPredicates.rel SuccessorRecursion.stepMatrix ρ x y = OmegaSyntax.successor y x := SuccessorRecursion.step_rel ρ x y
+example : FirstOrder.Derives nativeZF [] (Translation.sentence SuccessorRecursion.sentence) := SuccessorRecursion.native_proof
+example : FirstOrder.Derives nativeZF [] (Translation.sentence SuccessorRecursion.zeroSentence) := SuccessorRecursion.native_zero
+
 end PPAC.Migration.Step4Checks
