@@ -10,7 +10,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | 1 | 原语言与原核接口 | SourceSyntax、SourceStatements、Translation、Contract | 全8构造器语义保真；正确对象句子 | 完成，中间层 |
 | 2 | 19条源规则与原Hilbert核 | SyntaxTransport、SourceDerivation、DerivationTransport、TheoryTransport、FiniteSupport | 非单射rename、嵌套instantiate、fresh量词、等词、任意n闭句、有限公理支撑；原核回放与trust=0 | 完成，正向传输 |
 | 3a | 原生11构造器／源8构造器、原核theory_cut | Normalization、ReverseSyntax、Presentation、SourceTheory | 全公式严格往返/规范化；量词下任意替换；原核对象等价；任意理论与开放推导回放；源九类ZF溯源 | 完成，中间层 |
-| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理及全分离双向完成；Collection呈现完成；Collection/Replacement实质推导待做 |
+| 3b | 源Replacement版ZF与原Collection版ZF | ZFEquivalence | 七固定公理及任意参数的两种全模式，两个方向的实际Derives | 七固定公理/全分离双向及Collection→源Replacement完成；源ZF全正向回放完成；反向Collection待做 |
 | 3c | 原六规则Hilbert证书与源19规则 | ReverseDerivation | 原核→源演绎；明确额外非空变量环境及闭句回落，不能把原核内呈现回放当作本项 | 待做 |
 | 3d | 源图选择与原生不交族选择集 | ChoiceEquivalence | 原ZF内双向对象推导，内部集合图、全量词、无外加AC | 待做 |
 | 4 | 固定原核六规则及ZF/U公理识别 | Internal/ProofZF、ProofTarget、ConFormula | 完整纯ℒ公式AST；任意内部ω中的Proof/Con正确性；不得套用ZFC专用检查器 | 待做 |
@@ -48,3 +48,10 @@ native_separation_of_source_matrix返回同一矩阵对应的原生分离实例�
 CollectionSyntax已给出任意源矩阵的原ZF收集推导，以及任意原生二元矩阵的完整回译/原核逻辑等价；
 尚未从源Replacement版ZF证明Collection，也未从Collection与Separation证明源Replacement。
 本批验收见STEP3_FULL_SEPARATION_ACCEPTANCE.zh-CN.md；持续目标仍为内部Con对象主句。
+
+Replacement实质方向更新：ReplacementFromCollection.native_replacement对任意n和源矩阵p返回
+原FirstOrder.Derives nativeZF [] (Translation.sentence (Source.SetLanguage.replacement p))。
+该证明只回放一个Collection实例和一个Separation实例，不把Replacement作为输入。
+ZFReplay已覆盖源ZF九类公理及源目标理论的全部正向推导；此前“只到未对应理论像”的边界已解除。
+源Replacement版ZF→原Collection实例的反向数学方向、反向六规则编译和内部Con仍待完成。
+本批实际验收见STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md。

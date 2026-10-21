@@ -138,4 +138,37 @@ theorem arbitrary_collection_roundtrip {n} (s : SetTheory.Definitional.Project.B
       (SetTheory.Definitional.Project.fo_sentence (SetTheory.Axioms.Schema.collection s))
       (Translation.sentence (CollectionSyntax.collection (ProjectDecode.reverse s.body s.freeClosed)))) :=
   CollectionSyntax.native_collection_equivalent s
+/-- 任意参数及任意矩阵的原始Replacement句子，实际在原Collection版ZF内推导。 -/
+theorem all_source_replacement {n} (p : Source.Formula (n+2)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (Source.SetLanguage.replacement p)) :=
+  ReplacementFromCollection.native_replacement p
+
+/-- 两模式实例的原核证书与原ZF回放分开验收，防止循环假定Replacement。 -/
+theorem replacement_two_instances {n} (p : Source.Formula (n+2)) :
+    FirstOrder.Derives (TheoryTransport.theory (ReplacementFromCollection.assumptions p)) []
+      (Translation.sentence (Source.SetLanguage.replacement p)) :=
+  ReplacementFromCollection.kernel_certificate p
+
+theorem source_ZF_full_replay {n} {p : Source.Sentence}
+    (h : Source.Derives (Source.SetLanguage.ZF.at n) (p.rename Fin.elim0)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence p) := ZFReplay.source_closed_at h
+
+theorem source_target_full_replay {n} {p : Source.Sentence}
+    (h : Source.Derives (Source.SetLanguage.targetTheory.at n) (p.rename Fin.elim0)) :
+    FirstOrder.Derives targetTheory [] (Translation.sentence p) := ZFReplay.source_target_closed_at h
+
+/-- 实际源Replacement公理证书经完整源ZF接口回放；不再停留在未对应的理论像。 -/
+theorem replay_replacement_through_source_ZF {n} (p : Source.Formula (n+2)) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (Source.SetLanguage.replacement p)) := by
+  apply ZFReplay.source_closed_at (n := 1)
+  exact .hyp ⟨_, Source.SetLanguage.IsZFAxiom.replacement p, rfl⟩
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (Source.SetLanguage.replacement (Source.Formula.equal 0 1 : Source.Formula 2))) :=
+  ReplacementFromCollection.native_replacement _
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence (Source.SetLanguage.replacement
+      (Source.Formula.all (.ex ((Source.Formula.mem 5 0).conj ((Source.Formula.mem 3 4).imp (.equal 1 2)))) : Source.Formula 4))) :=
+  ReplacementFromCollection.native_replacement _
 end PPAC.Migration.Step3Checks

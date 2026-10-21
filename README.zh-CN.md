@@ -10,10 +10,11 @@
 内部ZF/U检查器完整AST、任意内部码正确性与对象主句尚未实现。
 第三步已完成七条固定公理的双向原核推导，以及任意参数、任意矩阵的全部源分离模式在原ZF中的推导。
 分离模式已覆盖两个方向的全部参数和矩阵，包括任意原生Project矩阵的反向回放。
-Collection的源呈现和任意原生矩阵回译也已完成；Collection/Replacement实质推导仍待完成。
-完整Collection/Replacement对应、两种AC及原核到源演绎的反向编译仍待完成。
+原Collection加分离已实质推出任意源Replacement实例，并取得原核Derives。
+源ZF与源目标理论的全部证明现在可正向回放到真正的原生ZF/目标理论。
+源Replacement到Collection的反向数学方向、两种AC及反向演绎编译仍待完成。
 Presentation中的双向回放两端都是原Derives，不能将它读成完整反向编译。
-详见[全分离模式验收](docs/STEP3_FULL_SEPARATION_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
+详见[Replacement及全正向回放验收](docs/STEP3_REPLACEMENT_FORWARD_ACCEPTANCE.zh-CN.md)及[先前阶段验收](docs/STEP3_ACCEPTANCE.zh-CN.md)。
 
 第一步中的目标理论公理推导只检查连线，不表示 ZF 已证明 PP，也不表示目标理论一致。
 默认 import PPAC 只导入迁移主线；旧宿主辅助单独 import PPAC.Auxiliary。

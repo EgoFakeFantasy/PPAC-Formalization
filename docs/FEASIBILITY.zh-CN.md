@@ -51,3 +51,8 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 全分离更新：任意原生Project矩阵的反向覆盖已证明，分离模式已在两个呈现中全参数双向对象推导。
 原Collection的任意源矩阵呈现与任意原生二元矩阵回译也已证明；
 这不等于Replacement/Collection实质推导已完成，内部Con主句状态仍未完成。
+
+Replacement实质更新：原Collection加分离已对任意参数/矩阵证明原始源Replacement实例。
+两实例原核证书不依赖底座7个固定句子证书，原ZF回放仍按既有基线审计。
+源ZF九类公理及源目标理论的完整正向推导回放现已完成；
+反向Collection方向、内部码编译正确性和内部Con对象主句仍未完成。
