@@ -1,23 +1,22 @@
 # 当前交付状态
-2026-10-22；分支migration/yesmeta-step3；本批基点c6c73bcbf83d0c9c7249ccf6a98ff5feaa8e86c6。
+2026-10-22；分支 migration/yesmeta-step3；本批基点 e45b6194169a982d78ad6c5b85048313199dcb3a。
 
-F1e.4b已验收：原11构造的正式RenameFormula精确端点双条件已完成。
-原同码字段单射对齐源/目标字段；成员式显式保留原ZeroScalar及两端符号相等。
-规范子判断恢复源Input，最终端点律没有额外Input、Earlier、载体或历史前提。
-逻辑律进一步消去解码图见证；两个量词在任意给定实际CodedLift下精确等价于提升后的体判断，free参数保持。
-此前所有合法内部公式的实际唯一输出、类型保持、完整递归双条件及成员归纳关闭继续有效。
-内部对象、非单射完整图、非标准码和独立目标范围均保留。
+F2.1–F2.2 已验收：实际完整恒等图及原自然映射码存在，binder 提升保持恒等，所有合法内部公式自重命名。
+在 Ω 与两个 IdCode 下，RenameFormula(w,R,S,a,b,a,b,n,q) 精确等价于 FormulaCode(w,n,a,b) ∧ n=q。
+原 Foundation 与完整 Separation 关闭四个内部参数的成员归纳；最终没有 Earlier、图解码或历史存在前提。
+量词使用实际内部后继与实际提升码，原 free 码和范围保持；内部非标准码及空域都保留。
+此前全输入实际唯一输出、类型保持及全 11 构造精确端点律继续有效。
 
-新增10模块139项显式声明和26个Source/sourceZF核/nativeZF核闭句模式。
-验收退出0：773构建任务、8562项审计、0警告；九命令退出0，五个trust=0入口通过。
-284项无公理依赖，8278项允许依赖；742份源码哈希独立回读差异0。
-Internal累计6247项显式声明全覆盖；累计799对核心/native精确足迹通过。
-七份锁未变；YesMetaZFC固定039c8e132cc19671d73a3933c66b4799d2599dd6，依赖工作区干净。
+新增 10 模块、131 项显式声明、16 个 Source/sourceZF核/nativeZF核闭句模式。
+实际验收退出 0：783 构建任务、8693 项审计、0 警告；九命令退出 0，五个 trust=0 入口通过。
+288 项无公理依赖，8405 项允许依赖；752 份源码哈希独立回读差异 0。
+Internal 累计 6378 项显式声明全覆盖；累计 815 对核心/native 精确足迹通过。
+七份锁未变；YesMetaZFC 固定 039c8e132cc19671d73a3933c66b4799d2599dd6，依赖工作区干净。
 
-见[原11构造精确端点律验收](STEP4_RENAME_EXACT_FIELDS_ACCEPTANCE.zh-CN.md)。
-原六规则/27模式、19源规则、九类ZF及choice额外证书限域保持；未推送。
-原OpenAI完整构建/Comparator未运行；日志和生成辅助留在忽略目录。
+见[实际恒等与公式恒等验收](STEP4_RENAME_IDENTITY_ACCEPTANCE.zh-CN.md)。
+原六规则/27 模式、19 源规则、九类 ZF 和 choice 额外证书限域保持；未推送。
+原 OpenAI 完整构建/Comparator 未运行；日志和生成辅助留在忽略目录。
 
-下一步F2：实际恒等码及提升恒等、公式恒等、实际图/码及公式复合；随后推进捕获规避替换。
-精确单构造接口和实际存在唯一已完成；映射代数、完整FormulaRename总门禁、替换、ProofZF/U、内部编译及解释仍未完成。
-最终仍要求原FirstOrder.Derives nativeZF [] (Formula.imp Con_ZF Con_target)，内部Con遍历全部内部ω证明码。
+下一步 F2.3a：实际非单射完整图复合、原自然码及全内部边双条件；随后项/提升复合兼容和公式复合。
+恒等专门门禁已完成；恒等与复合联合门禁、完整 FormulaRename、捕获规避替换、ProofZF/U、内部编译及解释仍未完成。
+最终仍要求原 FirstOrder.Derives nativeZF [] (Formula.imp Con_ZF Con_target)，内部 Con 遍历全部内部 ω 证明码。

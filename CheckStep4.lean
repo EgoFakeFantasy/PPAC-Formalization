@@ -3534,4 +3534,60 @@ example {m} (w r s a b c d z Z x y X Y : Fin m) : SyntaxRenameKnownFieldsSyntax.
     (SyntaxAtomSyntax.zeroScalar w z).conj ((Formula.equal z Z).conj
       (SyntaxRenameKnownFieldsSyntax.equalOperands w r s a b c d x y X Y)) := rfl
 
+
+-- Actual internal identity graphs/codes and all-code formula identity, in the original native kernel.
+example {m} (a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.graphExistsSentence a)) := ObjectSyntaxRenameIdentity.native_graphExists a
+
+example {m} (a r i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.graphEdgesSentence a r i j)) := ObjectSyntaxRenameIdentity.native_graphEdges a r i j
+
+example {m} (a r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.graphUniqueSentence a r s)) := ObjectSyntaxRenameIdentity.native_graphUnique a r s
+
+example {m} (a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.graphDiagonalSentence a r)) := ObjectSyntaxRenameIdentity.native_graphDiagonal a r
+
+example {m} (w a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.graphIndexMapSentence w a r)) := ObjectSyntaxRenameIdentity.native_graphIndexMap w a r
+
+example {m} (w a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.mapExistsSentence w a)) := ObjectSyntaxRenameIdentity.native_mapExists w a
+
+example {m} (w a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.codeExistsSentence w a)) := ObjectSyntaxRenameIdentity.native_codeExists w a
+
+example {m} (w a R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.codeMapSentence w a R)) := ObjectSyntaxRenameIdentity.native_codeMap w a R
+
+example {m} (w a R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.codeAtGraphSentence w a R r)) := ObjectSyntaxRenameIdentity.native_codeAtGraph w a R r
+
+example {m} (w a R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.codeEncodedIffSentence w a R r)) := ObjectSyntaxRenameIdentity.native_codeEncodedIff w a R r
+
+example {m} (r a i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.liftValueDiagonalSentence r a i j)) := ObjectSyntaxRenameIdentity.native_liftValueDiagonal r a i j
+
+example {m} (w r a c u v g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.liftGraphDiagonalSentence w r a c u v g)) := ObjectSyntaxRenameIdentity.native_liftGraphDiagonal w r a c u v g
+
+example {m} (w a R u v L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.liftCodeSentence w a R u v L)) := ObjectSyntaxRenameIdentity.native_liftCode w a R u v L
+
+example {m} (w R S a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.formulaReflexiveSentence w R S a b n)) := ObjectSyntaxRenameIdentity.native_formulaReflexive w R S a b n
+
+example {m} (w R S a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.formulaIdentitySentence w R S a b n q)) := ObjectSyntaxRenameIdentity.native_formulaIdentity w R S a b n q
+
+example {m} (w R S a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameIdentity.formulaIdentityIffSentence w R S a b n q)) := ObjectSyntaxRenameIdentity.native_formulaIdentityIff w R S a b n q
+
+example {m} (w R S a b n : Fin m) : SyntaxRenameIdentitySyntax.input w R S a b n =
+    (FormulaCodeSyntax.formulaCode w n a b).conj ((SyntaxIdentityMapSyntax.identityCode w a R).conj (SyntaxIdentityMapSyntax.identityCode w b S)) := rfl
+
+example {m} (w R S a b n : Fin m) : SyntaxRenameIdentitySyntax.self w R S a b n =
+    SyntaxRenameJudgmentSyntax.renamed w R S a b a b n n := rfl
+
 end PPAC.Migration.Step4Checks

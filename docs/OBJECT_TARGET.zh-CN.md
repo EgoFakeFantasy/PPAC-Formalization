@@ -495,3 +495,14 @@ Earlier合取守卫与原Below蕴含式守卫已用原规则显式转换，不�
 26类新增Source/sourceZF核/nativeZF核闭句均通过五个trust=0入口与精确足迹审计；见STEP4_RENAME_EXACT_FIELDS_ACCEPTANCE.zh-CN.md。
 前批全内部实际唯一输出和成员归纳继续有效；映射恒等/复合、捕获规避Subst、ProofZF/U及最终内部Con尚未完成。
 背景B、原规则/全模式及全部内部ω证明码上的Con定义保持不变，不以精确构造接口代替最终对象主句。
+
+
+2026-10-22 恒等进度：原 Replacement 已实际构造完整恒等图，内部自然长度实际取得原自然列表码。
+IdCode(w,a,R) 明确把源/目标范围都定为 a，并要求实际 Encoded 图的全边对角性；任意同码实际解码保持对角。
+任意真实 CodedLift(w,a,a,R,u,v,L) 在 Ω 与 IdCode 下推出 u=v 及 IdCode(w,u,L)。
+四参数 Property 内部量化 R,S,a,b；全 11 原构造推进后，原 Foundation 与 Property 否定矩阵的完整 Separation 关闭归纳。
+因此在 Ω 与两个实际恒等码下，所有内部 n,q 满足 RenameFormula(n,q) ↔ (FormulaCode(n) ∧ n=q)。
+没有标准 ω、外部良基、有限宿主深度、Earlier、解码图或历史存在前提；量词体使用真实内部后继/提升码，free 参数保持。
+16 类新增 Source/sourceZF核/nativeZF核闭句已通过完整脚本、五个 trust=0 及精确足迹审计；见 STEP4_RENAME_IDENTITY_ACCEPTANCE.zh-CN.md。
+恒等已完成；复合、完整 FormulaRename、捕获规避 Subst、ProofZF/U、全内部编译/解释和最终内部 Con 仍未完成。
+背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 定义保持不变。
