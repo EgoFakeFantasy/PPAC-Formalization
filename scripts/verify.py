@@ -1242,7 +1242,32 @@ def main() -> None:
                     "PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec.native_listFiberIff",
                     "PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec.native_atGraph",
                     "PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec.native_fieldAtCode",
-                    "PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec.native_fieldIsFree"} or name.startswith((
+                    "PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec.native_fieldIsFree",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_input",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_sourceType",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_targetType",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_outputNatural",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_existsOutput",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_atCodes",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_outputUnique",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_uniqueOutput",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_actualFiber",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_existsInputIff",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_fiberInputIff",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_negation",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_binary",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_quantified",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_forall",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_exists",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_nullary",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_equality",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_membership",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_boundTerm",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_freeTermField",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_actualCodes",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_internalNegation",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_internalBinary",
+                    "PPAC.Migration.Internal.ObjectFormulaFreeSubst.native_internalQuantified"} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -1310,6 +1335,7 @@ def main() -> None:
         "ObjectSyntaxFreeShift": ('graphExists', 'graphEdges', 'graphUnique', 'mapExists', 'mapFiber', 'mapUnique', 'mapEdges', 'codeExists', 'codeMap', 'codeNatural', 'codeInput', 'codeAtGraph', 'codeEncodedIff', 'codeUnique', 'codeFiber', 'codeInputIff', 'actualState', 'zeroState', 'codedEdges', 'freshAbsent', 'emptySource', 'emptyGraph', 'rangeUnique'),
         "ObjectSyntaxWeakenFree": ('identityUnique', 'identityLift', 'input', 'sourceType', 'targetType', 'outputNatural', 'existsOutput', 'atCodes', 'outputUnique', 'uniqueOutput', 'actualFiber', 'existsInputIff', 'fiberInputIff', 'actualState', 'negation', 'binary', 'quantified', 'forall', 'exists', 'nullary', 'equality', 'membership', 'boundTerm', 'freeTerm', 'freshFreeAbsent', 'emptyFreeAbsent', 'actualCodes', 'internalNegation', 'internalBinary', 'internalQuantified'),
         "ObjectSyntaxFreeSubstCodec": ('openTerm', 'decodedTarget', 'encodedNatural', 'encodedFree', 'decodedUnique', 'encodedUnique', 'decodedIndex', 'encodedTerms', 'decodeExists', 'encodeExists', 'decodeGraphUnique', 'encodeGraphUnique', 'encodedAtCode', 'decodedAtCode', 'encodedToDecoded', 'decodedToEncoded', 'indicesUnique', 'termsUnique', 'listProjection', 'mapProjection', 'fromList', 'fromMap', 'mapUnique', 'listUnique', 'mapFiber', 'mapExistsIff', 'mapFiberIff', 'listFiber', 'listExistsIff', 'listFiberIff', 'atGraph', 'fieldAtCode', 'fieldIsFree'),
+        "ObjectFormulaFreeSubst": ('input', 'sourceType', 'targetType', 'outputNatural', 'existsOutput', 'atCodes', 'outputUnique', 'uniqueOutput', 'actualFiber', 'existsInputIff', 'fiberInputIff', 'negation', 'binary', 'quantified', 'forall', 'exists', 'nullary', 'equality', 'membership', 'boundTerm', 'freeTermField', 'actualCodes', 'internalNegation', 'internalBinary', 'internalQuantified'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -1739,6 +1765,11 @@ def main() -> None:
         "object_internal_free_substitution_term_list_index_codec_proved": True,
         "object_internal_free_substitution_term_list_index_unique_fibers_proved": True,
         "object_internal_free_substitution_original_term_fields_exact_correspondence_proved": True,
+        "object_internal_original_term_list_formula_free_substitution_unique_total_proved": True,
+        "object_internal_original_term_list_formula_free_substitution_exact_input_iff_proved": True,
+        "object_internal_original_term_list_formula_free_substitution_eleven_endpoint_laws_proved": True,
+        "object_internal_original_term_list_formula_free_substitution_logical_laws_without_external_code_witnesses_proved": True,
+        "object_internal_original_term_list_formula_free_substitution_free_term_field_biconditional_proved": True,
         "object_original_free_strengthening_compatibility_proved": False,
         "object_internal_formula_arbitrary_index_graph_rename_proved": False,
         "object_internal_arbitrary_noninjective_capture_avoiding_substitution_proved": False,
@@ -1777,7 +1808,7 @@ def main() -> None:
         "standard_axiom_only": False,
         "new_custom_axioms": [],
         "warning_lines": sum("warning:" in line for item in COMMANDS for line in (OUT / item["log"]).read_text(encoding="utf-8").splitlines()),
-        "scope": "Current object milestone: the original pure-language free-substitution term-code list has a full-internal bidirectional unique conversion to an actual index MapCode. Pure OpenTerm with empty bound scope is exactly an actual fvar branch. Original Replacement constructs both complete graphs, retaining entriesOn, totalOn and natural value ranges. Every legal original term list yields an actual unique index code; every legal index code yields an actual unique original term list. Existence and unique fibers are equivalent to the exact respective input predicates. All witnesses, lengths and indices are internal objects; empty scopes and noninjective maps are allowed. On any actual map-code decode, every internal candidate index edge is exactly source-domain membership and the original list field at the corresponding actual fvar code. Thirty-three new source/source-image-kernel/nativeZF closed schema families are checked. Earlier all-internal formula renaming totality, identity, composition and free-head weakening remain verified. The background remains original pure nativeZF with full Collection, with proved source Replacement/Collection presentation replay, and target ZF+PP+ACwo+notAC. Core and native certificates retain exact standard-three and standard-three-plus-original-seven footprints, with the original choice bridge separately restricted. No object axiom, standard omega or model existence premise is added. This codec does not yet establish the original free_substitution rule checker compatibility, whole-formula substitution via the original term list, original weakenFree quotation correspondence or arbitrary-internal-proof free_strengthening compatibility. Mixed InstantiateTop/AbstractFreeTop and binder substitution, the dedicated pure six-rule/27-mode ZF/U checker ASTs, arbitrary-internal-proof correctness and compilation, internal interpretation and the final nativeZF Con implication remain unproved. Full internal omega proof-code quantification and full Separation/Collection remain required. NatDecode/NatPacket and annotated ProofTreeCode formats are not equated; extended BasicSetTheory terms are not reduced to pure indices. No original OpenAI full build or Comparator run is claimed.",
+        "scope": "Current object milestone: a pure full-internal formula free-substitution relation retains the original term-code list L. Its object witnesses are an actual bound-identity code R and an actual CodeConversion from L to free index code S, together with the established full formula Rename judgment. On every legal source FormulaCode and TermList input it has an actual unique output, exact source and target typing, and exact existence/unique-fiber input biconditionals. Any given valid actual identity and conversion codes identify the same relation exactly. All eleven original constructor modes have known-endpoint biconditionals, with real identity binder lifts and the same free term list under quantifiers. Bound variables stay fixed; free term renaming is exactly source membership and the original list field at the actual target term code. Negation, binary modes and quantifiers have interfaces acquiring and eliminating all code witnesses internally. Twenty-five new source/source-image-kernel/nativeZF closed schema families are checked. Earlier all-internal term-list/index-code bijection, formula rename totality, identity, composition and free-head weakening remain valid. No standard-depth bound, external standard-omega assumption, host data witness extraction, new object axiom or model premise is used. The background remains original pure nativeZF with full Collection and proved source Replacement presentation equivalence; target is ZF+PP+ACwo+notAC. Exact standard-three core and standard-three-plus-original-seven native footprints and the separately restricted choice bridge remain unchanged. Original numeric quotation correspondence and arbitrary-internal-proof checker compatibility for free_substitution and free_strengthening remain unproved. The full mixed bound/free capture-avoiding substitution, InstantiateTop/AbstractFreeTop, the dedicated pure six-rule/27-mode ZF/U checker ASTs, arbitrary-internal-proof correctness and compilation, internal interpretation and the final nativeZF Con implication remain pending. Full internal omega proof-code quantification and full Separation/Collection are required. Extended BasicSetTheory terms and distinct NatPacket/annotated-tree wrappers are not identified. No original OpenAI full build or Comparator run is claimed.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

@@ -126,3 +126,4 @@ import PPAC.Migration.Internal.ObjectSyntaxFormulaCompose
 import PPAC.Migration.Internal.ObjectSyntaxFreeShift
 import PPAC.Migration.Internal.ObjectSyntaxWeakenFree
 import PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec
+import PPAC.Migration.Internal.ObjectFormulaFreeSubst

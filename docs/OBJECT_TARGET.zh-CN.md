@@ -561,3 +561,12 @@ F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成�
 33个Source/sourceZF核/nativeZF核闭句通过完整验收，见STEP4_FREE_SUBSTITUTION_CODEC_ACCEPTANCE.zh-CN.md。
 全公式free替换、原free_substitution规则检查兼容、跨bound/free替换、专用ProofZF/U和最终Con仍未完成。
 原六规则/27模式、完整Separation/Collection、固定纯语言以及全部内部ω证明码量化没有改变。
+
+
+2026-10-22原列表参数全公式free替换进度：纯对象FormulaFreeSubst内部绑定实际IdCode和CodeConversion，
+在全部内部合法FormulaCode/TermList输入上实际取得唯一输出，准确类型及存在/唯一纤维输入双条件已证明。
+全11构造端点律、bound保持及free目标码为原列表实际字段的双条件均已证明；
+量词使用真实bound恒等提升并保持同一原free列表，逻辑码见证在对象量词内取得和消去。
+25个Source/sourceZF核/nativeZF核闭句通过完整验收，见STEP4_FORMULA_FREE_SUBSTITUTION_ACCEPTANCE.zh-CN.md。
+原substituteFree/weakenFree编码对应及规则检查兼容、一般混合bound/free替换、ProofZF/U和最终Con仍未完成。
+当前纯free项像不含bound变量，不能代替InstantiateTop/AbstractFreeTop；背景和全部内部ω量化不变。

@@ -4165,4 +4165,105 @@ example {m} (w a c L i t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF
     (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.fieldIsFreeSentence w a c L i t)) :=
   Internal.ObjectSyntaxFreeSubstCodec.native_fieldIsFree w a c L i t
 
+-- Formula free substitution from the original term-code list.
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.inputSentence w b a c L n q)) :=
+  Internal.ObjectFormulaFreeSubst.native_input w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.sourceTypeSentence w b a c L n q)) :=
+  Internal.ObjectFormulaFreeSubst.native_sourceType w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.targetTypeSentence w b a c L n q)) :=
+  Internal.ObjectFormulaFreeSubst.native_targetType w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.outputNaturalSentence w b a c L n q)) :=
+  Internal.ObjectFormulaFreeSubst.native_outputNatural w b a c L n q
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.existsOutputSentence w b a c L n)) :=
+  Internal.ObjectFormulaFreeSubst.native_existsOutput w b a c L n
+
+example {m} (w b a c L n q R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.atCodesSentence w b a c L n q R S)) :=
+  Internal.ObjectFormulaFreeSubst.native_atCodes w b a c L n q R S
+
+example {m} (w b a c L n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.outputUniqueSentence w b a c L n q v)) :=
+  Internal.ObjectFormulaFreeSubst.native_outputUnique w b a c L n q v
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.uniqueOutputSentence w b a c L n q)) :=
+  Internal.ObjectFormulaFreeSubst.native_uniqueOutput w b a c L n q
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.actualFiberSentence w b a c L n)) :=
+  Internal.ObjectFormulaFreeSubst.native_actualFiber w b a c L n
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.existsInputIffSentence w b a c L n)) :=
+  Internal.ObjectFormulaFreeSubst.native_existsInputIff w b a c L n
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.fiberInputIffSentence w b a c L n)) :=
+  Internal.ObjectFormulaFreeSubst.native_fiberInputIff w b a c L n
+
+example {m} (w b a c L n q x X R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.negationSentence w b a c L n q x X R S)) :=
+  Internal.ObjectFormulaFreeSubst.native_negation w b a c L n q x X R S
+
+example {m} (kind : Fin 4) (w b a c L n q x y X Y R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.binarySentence kind w b a c L n q x y X Y R S)) :=
+  Internal.ObjectFormulaFreeSubst.native_binary kind w b a c L n q x y X Y R S
+
+example {m} (universal : Bool) (w b a c L n q x X R S u K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.quantifiedSentence universal w b a c L n q x X R S u K)) :=
+  Internal.ObjectFormulaFreeSubst.native_quantified universal w b a c L n q x X R S u K
+
+example {m} (w b a c L n q x X R S u K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.forallSentence w b a c L n q x X R S u K)) :=
+  Internal.ObjectFormulaFreeSubst.native_forall w b a c L n q x X R S u K
+
+example {m} (w b a c L n q x X R S u K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.existsSentence w b a c L n q x X R S u K)) :=
+  Internal.ObjectFormulaFreeSubst.native_exists w b a c L n q x X R S u K
+
+example {m} (truth : Bool) (w b a c L n q R S r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.nullarySentence truth w b a c L n q R S r s)) :=
+  Internal.ObjectFormulaFreeSubst.native_nullary truth w b a c L n q R S r s
+
+example {m} (w b a c L n q R S r s x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.equalitySentence w b a c L n q R S r s x y X Y)) :=
+  Internal.ObjectFormulaFreeSubst.native_equality w b a c L n q R S r s x y X Y
+
+example {m} (w b a c L n q R S r s z Z x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.membershipSentence w b a c L n q R S r s z Z x y X Y)) :=
+  Internal.ObjectFormulaFreeSubst.native_membership w b a c L n q R S r s z Z x y X Y
+
+example {m} (w b a c R S r s n q i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.boundTermSentence w b a c R S r s n q i j)) :=
+  Internal.ObjectFormulaFreeSubst.native_boundTerm w b a c R S r s n q i j
+
+example {m} (w b a c L R S r s n q i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.freeTermFieldSentence w b a c L R S r s n q i j)) :=
+  Internal.ObjectFormulaFreeSubst.native_freeTermField w b a c L R S r s n q i j
+
+example {m} (w b a c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.actualCodesSentence w b a c L)) :=
+  Internal.ObjectFormulaFreeSubst.native_actualCodes w b a c L
+
+example {m} (w b a c L n q x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.internalNegationSentence w b a c L n q x X)) :=
+  Internal.ObjectFormulaFreeSubst.native_internalNegation w b a c L n q x X
+
+example {m} (kind : Fin 4) (w b a c L n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.internalBinarySentence kind w b a c L n q x y X Y)) :=
+  Internal.ObjectFormulaFreeSubst.native_internalBinary kind w b a c L n q x y X Y
+
+example {m} (universal : Bool) (w b a c L n q x X u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaFreeSubst.internalQuantifiedSentence universal w b a c L n q x X u)) :=
+  Internal.ObjectFormulaFreeSubst.native_internalQuantified universal w b a c L n q x X u
+
 end PPAC.Migration.Step4Checks

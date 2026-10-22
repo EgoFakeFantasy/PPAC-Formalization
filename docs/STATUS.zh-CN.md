@@ -1,21 +1,22 @@
 # 当前交付状态
-2026-10-22；分支migration/yesmeta-step3；本批基点06a22b358f58a229e218e95dbdc815ffd380b82f。
+2026-10-22；分支migration/yesmeta-step3；本批基点7f08049b2d399685cc8a4d1ae1074e73b657b290。
 
-S1已验收：原free替换term-code列表与实际索引MapCode的全内部双向唯一码转换。
-纯OpenTerm恢复真实fvar分支；原Replacement构造双向完整图，保留准确作用域与值域。
-双向实际唯一纤维与精确合法输入互为双条件；任意实际解码图的索引边精确对应原列表字段。
-33个Source/sourceZF核/nativeZF核闭句完成实际传输；全公式free替换及原规则兼容仍待完成。
-此前完整公式重命名总性、恒等、复合与F2.4b.1–b.2弱化验收继续有效。
+S2.1–S2.3已验收：原项码列表参数的全内部公式free替换实际存在唯一，保留准确源/目标范围。
+输出存在和实际唯一纤维均与FormulaCode及TermList输入互为双条件；准确类型和全11构造端点律已证明。
+bound项保持，free目标码精确来自原列表字段；量词使用真实bound恒等提升并保持同一原列表。
+逻辑律的全部实际码见证可在对象量词内取得和消去。
+25个Source/sourceZF核/nativeZF核闭句完成实际传输；原语法编码对应和原规则检查兼容仍未完成。
+此前S1原列表/索引码转换、公式Rename总性/恒等/复合和公式弱化验收继续有效。
 
-最终验收退出0：840构建任务、9730项审计、0警告；九命令及五trust=0入口全部退出0。
-本批12模块230声明；累计7415项Internal显式声明全覆盖。
-294项无公理依赖，9436项允许依赖；809份源哈希独立一致。
-累计981对核心/native精确足迹；七份锁未变，固定原库依赖工作区干净。
+最终验收退出0：848构建任务、9880项审计、0警告；九命令及五trust=0入口全部退出0。
+本批8模块150声明；累计7565项Internal显式声明全覆盖。
+294项无公理依赖、9586项允许依赖；817份源哈希独立一致。
+累计1006对核心/native精确足迹；七份锁未变，固定原依赖工作区干净。
 
-见[原free替换项列表转换验收](STEP4_FREE_SUBSTITUTION_CODEC_ACCEPTANCE.zh-CN.md)。
+见[全公式free替换验收](STEP4_FORMULA_FREE_SUBSTITUTION_ACCEPTANCE.zh-CN.md)。
 未推送；原OpenAI完整构建/Comparator未运行；生成辅助和日志仅留本地忽略目录。
 
-下一步S2：以原term-code列表为参数的全公式free替换及其准确Rename对应、存在唯一、类型和构造律。
-后续S3处理混合bound/free项像、InstantiateTop、AbstractFreeTop和真实binder提升。
-原weakenFree准确编码对应、专用六规则/27模式ProofZF/U、全内部编译/解释及最终内部Con仍未完成。
-最终目标保持原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)，遍历全部内部ω证明码。
+下一步保留S2.4/F2.4b.3的原substituteFree/weakenFree编码对应和全内部规则检查连接；
+S3实现混合bound/free项像、真实binder提升、InstantiateTop和AbstractFreeTop。
+专用六规则/27模式ProofZF/U、全内部编译/解释及最终内部Con仍未完成。
+最终仍要求原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)，遍历全部内部ω证明码。

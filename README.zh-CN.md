@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：原free替换项码列表与实际索引MapCode的全内部双向唯一码转换已完成。
-原Replacement构造实际完整图，任意实际解码图的全候选边精确对应原列表真实fvar字段；接受输入和唯一纤维均有双条件。
-新增33个Source/原核闭句已验收：840构建任务、9730项审计、0警告，五trust=0入口及809份独立哈希通过。
-见[原free替换项列表转换验收](docs/STEP4_FREE_SUBSTITUTION_CODEC_ACCEPTANCE.zh-CN.md)。
-全公式free替换、原规则检查兼容、跨bound/free替换、专用ProofZF/U及最终内部Con仍未完成。
-下文保留各批历史验收范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
+当前对象层进度：原项码列表参数的全内部公式free替换已完成实际唯一输出、准确类型和输入双条件。
+11类构造端点律、bound保持/free目标项取原列表字段、真实binder提升均已证明；逻辑律的码见证在对象量词内消去。
+新增25个Source/原核闭句已验收：848构建任务、9880项审计、0警告，五trust=0入口及817份独立哈希通过。
+见[全公式free替换验收](docs/STEP4_FORMULA_FREE_SUBSTITUTION_ACCEPTANCE.zh-CN.md)。
+原语法编码/规则检查兼容、混合bound/free替换、专用ProofZF/U及最终内部Con仍未完成。
+下文保留历史验收范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
 第二步覆盖19条源规则，直接给出原FirstOrder.Derives，不经过完备性或模型语义；
