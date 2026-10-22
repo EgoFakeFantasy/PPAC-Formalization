@@ -476,3 +476,13 @@ Property 内部量化全部 R,S,a,b,c,d，且无 Earlier 前提；这是四类�
 详见 STEP4_RENAME_ATOMIC_OUTPUT_ACCEPTANCE.zh-CN.md。
 七类逻辑推进、归纳关闭、完整 FormulaRename、替换、专用 ProofZF/U、全内部编译正确性与最终内部 Con 仍未完成。
 背景 B、原规则/模式和全部内部ω证明码上的 Con 定义保持不变。
+
+
+2026-10-22全内部公式输出进度：七类逻辑实际唯一输出推进已证明，包含真实后继/提升码的两个量词。
+Property(w,n)内部量化全部映射码与四个作用域；原Foundation及Property否定矩阵的原Separation关闭内部ω成员归纳。
+Earlier合取守卫与原Below蕴含式守卫已用原规则显式转换，不假定外部良基或标准ω。
+故所有合法Input实际存在唯一RenameFormula输出；任意内部候选下ExistsOutput↔Input和Fiber↔Input，并有非法输入拒绝。
+无Earlier、解码图、载体或历史存在前提；非单射完整图和非标准内部公式码均包含。
+40个新增Source/sourceZF核/nativeZF核闭句模式已通过五个trust=0入口和精确公理足迹审计；见STEP4_RENAME_TOTAL_OUTPUT_ACCEPTANCE.zh-CN.md。
+精确单构造律、映射恒等/复合、捕获规避Subst、专用ProofZF/U、全内部编译/解释及最终内部Con尚未完成。
+背景B、原规则/全模式和全部内部ω证明码上的Con定义保持不变；输出总性不能替代最终Con蕴含。

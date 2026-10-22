@@ -3318,4 +3318,134 @@ example {m} (w r s a b c d n q x y X Y : Fin m) :
           ((SyntaxRenameTermSyntax.renamed w r s a b c d x X).conj
             (SyntaxRenameTermSyntax.renamed w r s a b c d y Y))) := rfl
 
+example {m} (kind : Fin 11) (arity : Nat) (w R S r s a b c d n q : Fin m) (xs : Fin arity → Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.tagFilterSentence kind arity w R S r s a b c d n q xs)) := ObjectSyntaxRenameTotal.native_tagFilter kind arity w R S r s a b c d n q xs
+
+example {m} (kind : Fin 11) (arity : Nat) (w R S r s a b c d n q : Fin m) (xs : Fin arity → Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.tagJudgmentSentence kind arity w R S r s a b c d n q xs)) := ObjectSyntaxRenameTotal.native_tagJudgment kind arity w R S r s a b c d n q xs
+
+example {m} (w R S a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.fiberUniqueSentence w R S a b c d n q v)) := ObjectSyntaxRenameTotal.native_fiberUnique w R S a b c d n q v
+
+example {m} (w R S a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.propertyUniqueSentence w R S a b c d n q v)) := ObjectSyntaxRenameTotal.native_propertyUnique w R S a b c d n q v
+
+example {m} (advance : Bool) (w x R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.checkTargetSentence advance w x R S a b c d q)) := ObjectSyntaxRenameTotal.native_checkTarget advance w x R S a b c d q
+
+example {m} (advance : Bool) (w x R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.checkNaturalSentence advance w x R S a b c d q)) := ObjectSyntaxRenameTotal.native_checkNatural advance w x R S a b c d q
+
+example {m} (advance : Bool) (w x R S a b c d q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.checkUniqueSentence advance w x R S a b c d q v)) := ObjectSyntaxRenameTotal.native_checkUnique advance w x R S a b c d q v
+
+example {m} (advance : Bool) (w x R S a b c d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.checkExistsSentence advance w x R S a b c d)) := ObjectSyntaxRenameTotal.native_checkExists advance w x R S a b c d
+
+example {m} (tag : Nat) (advance : Bool) (w R S a b c d n q v x X u U : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.singleDataUniqueSentence tag advance w R S a b c d n q v x X u U)) := ObjectSyntaxRenameTotal.native_singleDataUnique tag advance w R S a b c d n q v x X u U
+
+example {m} (tag : Nat) (advance : Bool) (w R S a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.singleRelationUniqueSentence tag advance w R S a b c d n q v)) := ObjectSyntaxRenameTotal.native_singleRelationUnique tag advance w R S a b c d n q v
+
+example {m} (kind : Fin 4) (w R S a b c d n q v x y X Y u t U V : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryDataUniqueSentence kind w R S a b c d n q v x y X Y u t U V)) := ObjectSyntaxRenameTotal.native_binaryDataUnique kind w R S a b c d n q v x y X Y u t U V
+
+example {m} (kind : Fin 4) (w R S a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryRelationUniqueSentence kind w R S a b c d n q v)) := ObjectSyntaxRenameTotal.native_binaryRelationUnique kind w R S a b c d n q v
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.negationAtOutputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameTotal.native_negationAtOutput w R S r s a b c d n x X
+
+example {m} (w R S r s a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.negationExistsAtGraphsSentence w R S r s a b c d n x)) := ObjectSyntaxRenameTotal.native_negationExistsAtGraphs w R S r s a b c d n x
+
+example {m} (w R S a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.negationFiberSentence w R S a b c d n x)) := ObjectSyntaxRenameTotal.native_negationFiber w R S a b c d n x
+
+example {m} (w n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.negationPropertyStepSentence w n x)) := ObjectSyntaxRenameTotal.native_negationPropertyStep w n x
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.forallAtOutputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameTotal.native_forallAtOutput w R S r s a b c d n x X
+
+example {m} (w R S r s a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.forallExistsAtGraphsSentence w R S r s a b c d n x)) := ObjectSyntaxRenameTotal.native_forallExistsAtGraphs w R S r s a b c d n x
+
+example {m} (w R S a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.forallFiberSentence w R S a b c d n x)) := ObjectSyntaxRenameTotal.native_forallFiber w R S a b c d n x
+
+example {m} (w n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.forallPropertyStepSentence w n x)) := ObjectSyntaxRenameTotal.native_forallPropertyStep w n x
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.existsAtOutputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameTotal.native_existsAtOutput w R S r s a b c d n x X
+
+example {m} (w R S r s a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.existsExistsAtGraphsSentence w R S r s a b c d n x)) := ObjectSyntaxRenameTotal.native_existsExistsAtGraphs w R S r s a b c d n x
+
+example {m} (w R S a b c d n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.existsFiberSentence w R S a b c d n x)) := ObjectSyntaxRenameTotal.native_existsFiber w R S a b c d n x
+
+example {m} (w n x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.existsPropertyStepSentence w n x)) := ObjectSyntaxRenameTotal.native_existsPropertyStep w n x
+
+example {m} (kind : Fin 4) (w R S r s a b c d n x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryAtOutputsSentence kind w R S r s a b c d n x y X Y)) := ObjectSyntaxRenameTotal.native_binaryAtOutputs kind w R S r s a b c d n x y X Y
+
+example {m} (kind : Fin 4) (w R S r s a b c d n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryExistsAtGraphsSentence kind w R S r s a b c d n x y)) := ObjectSyntaxRenameTotal.native_binaryExistsAtGraphs kind w R S r s a b c d n x y
+
+example {m} (kind : Fin 4) (w R S a b c d n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryFiberSentence kind w R S a b c d n x y)) := ObjectSyntaxRenameTotal.native_binaryFiber kind w R S a b c d n x y
+
+example {m} (kind : Fin 4) (w n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.binaryPropertyStepSentence kind w n x y)) := ObjectSyntaxRenameTotal.native_binaryPropertyStep kind w n x y
+
+example {m} (w n b f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.codePropertyStepSentence w n b f)) := ObjectSyntaxRenameTotal.native_codePropertyStep w n b f
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.propertyStepSentence w n)) := ObjectSyntaxRenameTotal.native_propertyStep w n
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.progressiveSentence w)) := ObjectSyntaxRenameTotal.native_progressive w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.allPropertiesSentence w)) := ObjectSyntaxRenameTotal.native_allProperties w
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.naturalPropertySentence w n)) := ObjectSyntaxRenameTotal.native_naturalProperty w n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.actualFiberSentence w R S a b c d n)) := ObjectSyntaxRenameTotal.native_actualFiber w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.actualExistsSentence w R S a b c d n)) := ObjectSyntaxRenameTotal.native_actualExists w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.fiberIffInputSentence w R S a b c d n)) := ObjectSyntaxRenameTotal.native_fiberIffInput w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.existsIffInputSentence w R S a b c d n)) := ObjectSyntaxRenameTotal.native_existsIffInput w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.rejectInputSentence w R S a b c d n)) := ObjectSyntaxRenameTotal.native_rejectInput w R S a b c d n
+
+example {m} (w R S a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.uniqueSentence w R S a b c d n q v)) := ObjectSyntaxRenameTotal.native_unique w R S a b c d n q v
+
+example {m} (w R S a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameTotal.uniqueOutputSentence w R S a b c d n q)) := ObjectSyntaxRenameTotal.native_uniqueOutput w R S a b c d n q
+
+example : SyntaxRenameOutputInduction.matrix =
+    SyntaxRenameOutputSyntax.property (0 : Fin 1).castSucc (Fin.last 1) := rfl
+
+example {m} (w n : Fin m) : SyntaxRenameOutputInduction.curried w n = .all
+    ((Formula.mem (Fin.last m) w.castSucc).imp
+      ((Formula.mem (Fin.last m) n.castSucc).imp (SyntaxRenameOutputSyntax.property w.castSucc (Fin.last m)))) := rfl
+
+example {m} (advance : Bool) (w x R S a b c d : Fin m) : SyntaxRenameCheckExistence.existsCheck advance w x R S a b c d =
+    .ex (SyntaxRenameRecursiveSyntax.check advance w.castSucc x.castSucc R.castSucc S.castSucc a.castSucc b.castSucc c.castSucc d.castSucc (Fin.last m)) := rfl
+
 end PPAC.Migration.Step4Checks
