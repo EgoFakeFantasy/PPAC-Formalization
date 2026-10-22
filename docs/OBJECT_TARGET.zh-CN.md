@@ -526,3 +526,13 @@ CodedCompose 内部量化三幅实际图，保留 a,c,e 三个明确范围及全
 下一步全内部公式复合的 Property 必须内部量化六个映射码、六个作用域以及 q,v，原 Foundation/Separation 关闭成员归纳。
 公式复合、原核加强规则兼容、完整 FormulaRename、捕获规避 Subst、ProofZF/U、内部编译/解释和最终 Con 仍未完成。
 背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 规格不变。
+
+
+2026-10-22 全公式复合进度：原Foundation与完整Separation已关闭14内部参数Property的成员归纳。
+六个映射码、六个作用域和中间/最终公式码q,v均在对象全称量化内；全11构造复合推进已证明。
+给定两组实际CodedCompose，RenameFormula复合精确等价于存在内部中间公式码的两阶段判断，最终无Earlier前提。
+实际目标字段由对象存在量词取得，量词体用真实中间后继对齐及复合bound码提升；free码和范围保持。
+35类新增Source/sourceZF核/nativeZF核闭句通过完整脚本、五个trust=0及精确足迹审计；见STEP4_FORMULA_COMPOSITION_ACCEPTANCE.zh-CN.md。
+原核free_strengthening是删除未用fresh free头槽；下一步用b→Succ(b)的实际free位移图/码刻画其weakenFree前提链接，含空free上下文。
+恒等与复合联合门禁已完成；原核加强规则兼容、完整FormulaRename总门禁、捕获规避Subst、ProofZF/U、内部编译/解释及最终Con仍未完成。
+背景B、原六规则/27模式、完整Separation/Collection及全部内部ω证明码上的Con规格不变。

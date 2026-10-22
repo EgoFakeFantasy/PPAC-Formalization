@@ -3735,4 +3735,111 @@ example {m} (w a c e R T K A C D E Lr Lt Lk : Fin m) : FirstOrder.Derives native
 example {m} (w a c e R T K A C D E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxComposeLift.mixedIffSentence w a c e R T K A C D E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_mixedIff w a c e R T K A C D E Lr Lt Lk
 
+
+-- Full all-internal formula composition, including a closed fourteen-parameter object induction.
+example {m} (w R S r s a b c d n q x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetNegationSentence w R S r s a b c d n q x)) := ObjectSyntaxFormulaCompose.native_targetNegation w R S r s a b c d n q x
+
+example {m} (w R S r s a b c d n q x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetForallSentence w R S r s a b c d n q x)) := ObjectSyntaxFormulaCompose.native_targetForall w R S r s a b c d n q x
+
+example {m} (w R S r s a b c d n q x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetExistsSentence w R S r s a b c d n q x)) := ObjectSyntaxFormulaCompose.native_targetExists w R S r s a b c d n q x
+
+example {m} (kind : Fin 4) (w R S r s a b c d n q x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetBinarySentence kind w R S r s a b c d n q x y)) := ObjectSyntaxFormulaCompose.native_targetBinary kind w R S r s a b c d n q x y
+
+example {m} (w R S r s a b c d n q x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetEqualitySentence w R S r s a b c d n q x y)) := ObjectSyntaxFormulaCompose.native_targetEquality w R S r s a b c d n q x y
+
+example {m} (w R S r s a b c d n q z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.targetMembershipSentence w R S r s a b c d n q z x y)) := ObjectSyntaxFormulaCompose.native_targetMembership w R S r s a b c d n q z x y
+
+example {m} (w R S T U K L r s t u g h a b c d e f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.boundDiagramCodeSentence w R S T U K L r s t u g h a b c d e f)) := ObjectSyntaxFormulaCompose.native_boundDiagramCode w R S T U K L r s t u g h a b c d e f
+
+example {m} (w R S T U K L r s t u g h a b c d e f : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.freeDiagramCodeSentence w R S T U K L r s t u g h a b c d e f)) := ObjectSyntaxFormulaCompose.native_freeDiagramCode w R S T U K L r s t u g h a b c d e f
+
+example {m} (truth : Bool) (w R S T U K L r s t u g h a b c d e f n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.nullarySentence truth w R S T U K L r s t u g h a b c d e f n q v)) := ObjectSyntaxFormulaCompose.native_nullary truth w R S T U K L r s t u g h a b c d e f n q v
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.equalityFieldsSentence w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W)) := ObjectSyntaxFormulaCompose.native_equalityFields w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v z z1 z2 x y X Y Z W : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.membershipFieldsSentence w R S T U K L r s t u g h a b c d e f n q v z z1 z2 x y X Y Z W)) := ObjectSyntaxFormulaCompose.native_membershipFields w R S T U K L r s t u g h a b c d e f n q v z z1 z2 x y X Y Z W
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.equalitySentence w R S T U K L r s t u g h a b c d e f n q v x y)) := ObjectSyntaxFormulaCompose.native_equality w R S T U K L r s t u g h a b c d e f n q v x y
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.membershipSentence w R S T U K L r s t u g h a b c d e f n q v z x y)) := ObjectSyntaxFormulaCompose.native_membership w R S T U K L r s t u g h a b c d e f n q v z x y
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.atomicSentence w R S T U K L r s t u g h a b c d e f n q v)) := ObjectSyntaxFormulaCompose.native_atomic w R S T U K L r s t u g h a b c d e f n q v
+
+example {m} (w n x R S T U K L a b c d e f X Z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.advancedComposeSentence w n x R S T U K L a b c d e f X Z)) := ObjectSyntaxFormulaCompose.native_advancedCompose w n x R S T U K L a b c d e f X Z
+
+example {m} (advance : Bool) (w n x R S T U K L a b c d e f X Z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.checkComposeSentence advance w n x R S T U K L a b c d e f X Z)) := ObjectSyntaxFormulaCompose.native_checkCompose advance w n x R S T U K L a b c d e f X Z
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x X Z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.negationFieldsSentence w R S T U K L r s t u g h a b c d e f n q v x X Z)) := ObjectSyntaxFormulaCompose.native_negationFields w R S T U K L r s t u g h a b c d e f n q v x X Z
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x X Z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.forallFieldsSentence w R S T U K L r s t u g h a b c d e f n q v x X Z)) := ObjectSyntaxFormulaCompose.native_forallFields w R S T U K L r s t u g h a b c d e f n q v x X Z
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x X Z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.existsFieldsSentence w R S T U K L r s t u g h a b c d e f n q v x X Z)) := ObjectSyntaxFormulaCompose.native_existsFields w R S T U K L r s t u g h a b c d e f n q v x X Z
+
+example {m} (kind : Fin 4) (w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.binaryFieldsSentence kind w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W)) := ObjectSyntaxFormulaCompose.native_binaryFields kind w R S T U K L r s t u g h a b c d e f n q v x y X Y Z W
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.negationSentence w R S T U K L r s t u g h a b c d e f n q v x)) := ObjectSyntaxFormulaCompose.native_negation w R S T U K L r s t u g h a b c d e f n q v x
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.forallSentence w R S T U K L r s t u g h a b c d e f n q v x)) := ObjectSyntaxFormulaCompose.native_forall w R S T U K L r s t u g h a b c d e f n q v x
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.existsSentence w R S T U K L r s t u g h a b c d e f n q v x)) := ObjectSyntaxFormulaCompose.native_exists w R S T U K L r s t u g h a b c d e f n q v x
+
+example {m} (kind : Fin 4) (w R S T U K L r s t u g h a b c d e f n q v x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.binarySentence kind w R S T U K L r s t u g h a b c d e f n q v x y)) := ObjectSyntaxFormulaCompose.native_binary kind w R S T U K L r s t u g h a b c d e f n q v x y
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.codeStepSentence w R S T U K L r s t u g h a b c d e f n q v)) := ObjectSyntaxFormulaCompose.native_codeStep w R S T U K L r s t u g h a b c d e f n q v
+
+example {m} (w R S T U K L r s t u g h a b c d e f n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.diagramStepSentence w R S T U K L r s t u g h a b c d e f n q v)) := ObjectSyntaxFormulaCompose.native_diagramStep w R S T U K L r s t u g h a b c d e f n q v
+
+example {m} (w n R S T U K L a b c d e f q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.mapCodeStepSentence w n R S T U K L a b c d e f q v)) := ObjectSyntaxFormulaCompose.native_mapCodeStep w n R S T U K L a b c d e f q v
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.propertyStepSentence w n)) := ObjectSyntaxFormulaCompose.native_propertyStep w n
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.progressiveSentence w)) := ObjectSyntaxFormulaCompose.native_progressive w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.allPropertiesSentence w)) := ObjectSyntaxFormulaCompose.native_allProperties w
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.naturalPropertySentence w n)) := ObjectSyntaxFormulaCompose.native_naturalProperty w n
+
+example {m} (w R S T U K L a b c d e f n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.forwardSentence w R S T U K L a b c d e f n q v)) := ObjectSyntaxFormulaCompose.native_forward w R S T U K L a b c d e f n q v
+
+example {m} (w R S T U K L a b c d e f n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.factorSentence w R S T U K L a b c d e f n v)) := ObjectSyntaxFormulaCompose.native_factor w R S T U K L a b c d e f n v
+
+example {m} (w R S T U K L a b c d e f n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.collapseSentence w R S T U K L a b c d e f n v)) := ObjectSyntaxFormulaCompose.native_collapse w R S T U K L a b c d e f n v
+
+example {m} (w R S T U K L a b c d e f n v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFormulaCompose.composeIffSentence w R S T U K L a b c d e f n v)) := ObjectSyntaxFormulaCompose.native_composeIff w R S T U K L a b c d e f n v
+
 end PPAC.Migration.Step4Checks
