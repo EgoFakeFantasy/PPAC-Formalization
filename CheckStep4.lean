@@ -4032,4 +4032,137 @@ example {m} (universal : Bool) (w a b B n q x X u : Fin m) : YesMetaZFC.Logic.Fi
     (Translation.sentence (Internal.ObjectSyntaxWeakenFree.internalQuantifiedSentence universal w a b B n q x X u)) :=
   Internal.ObjectSyntaxWeakenFree.native_internalQuantified universal w a b B n q x X u
 
+-- All-internal original term-list / actual index-code conversion.
+example {m} (w z c t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.openTermSentence w z c t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_openTerm w z c t
+
+example {m} (w f a c i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodedTargetSentence w f a c i j)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodedTarget w f a c i j
+
+example {m} (w r i t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedNaturalSentence w r i t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedNatural w r i t
+
+example {m} (w r a c i t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedFreeSentence w r a c i t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedFree w r a c i t
+
+example {m} (w f a i j k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodedUniqueSentence w f a i j k)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodedUnique w f a i j k
+
+example {m} (w f a i j k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedUniqueSentence w f a i j k)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedUnique w f a i j k
+
+example {m} (w f a c r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodedIndexSentence w f a c r)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodedIndex w f a c r
+
+example {m} (w r a c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedTermsSentence w r a c f)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedTerms w r a c f
+
+example {m} (w f a c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodeExistsSentence w f a c)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodeExists w f a c
+
+example {m} (w r a c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodeExistsSentence w r a c)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodeExists w r a c
+
+example {m} (w f a r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodeGraphUniqueSentence w f a r s)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodeGraphUnique w f a r s
+
+example {m} (w r a f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodeGraphUniqueSentence w r a f g)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodeGraphUnique w r a f g
+
+example {m} (w r a c f i j t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedAtCodeSentence w r a c f i j t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedAtCode w r a c f i j t
+
+example {m} (w f a c r i j t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodedAtCodeSentence w f a c r i j t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodedAtCode w f a c r i j t
+
+example {m} (w r a c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.encodedToDecodedSentence w r a c f)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_encodedToDecoded w r a c f
+
+example {m} (w r a c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.decodedToEncodedSentence w r a c f)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_decodedToEncoded w r a c f
+
+example {m} (w f a c r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.indicesUniqueSentence w f a c r s)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_indicesUnique w f a c r s
+
+example {m} (w f g a c r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.termsUniqueSentence w f g a c r)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_termsUnique w f g a c r
+
+example {m} (w a c L S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.listProjectionSentence w a c L S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_listProjection w a c L S
+
+example {m} (w a c L S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.mapProjectionSentence w a c L S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_mapProjection w a c L S
+
+example {m} (w a c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.fromListSentence w a c L)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_fromList w a c L
+
+example {m} (w a c S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.fromMapSentence w a c S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_fromMap w a c S
+
+example {m} (w a c L S T : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.mapUniqueSentence w a c L S T)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_mapUnique w a c L S T
+
+example {m} (w a c L M S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.listUniqueSentence w a c L M S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_listUnique w a c L M S
+
+example {m} (w a c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.mapFiberSentence w a c L)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_mapFiber w a c L
+
+example {m} (w a c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.mapExistsIffSentence w a c L)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_mapExistsIff w a c L
+
+example {m} (w a c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.mapFiberIffSentence w a c L)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_mapFiberIff w a c L
+
+example {m} (w a c S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.listFiberSentence w a c S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_listFiber w a c S
+
+example {m} (w a c S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.listExistsIffSentence w a c S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_listExistsIff w a c S
+
+example {m} (w a c S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.listFiberIffSentence w a c S)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_listFiberIff w a c S
+
+example {m} (w a c L S r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.atGraphSentence w a c L S r)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_atGraph w a c L S r
+
+example {m} (w a c L S r i j t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.fieldAtCodeSentence w a c L S r i j t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_fieldAtCode w a c L S r i j t
+
+example {m} (w a c L i t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSyntaxFreeSubstCodec.fieldIsFreeSentence w a c L i t)) :=
+  Internal.ObjectSyntaxFreeSubstCodec.native_fieldIsFree w a c L i t
+
 end PPAC.Migration.Step4Checks

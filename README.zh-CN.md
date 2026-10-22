@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：全内部free头槽公式弱化已完成实际唯一输出、精确输入双条件及全11构造已知端点规律。
-bound索引保持、free索引取实际后继，量词使用真实binder提升；逻辑律的映射码见证全部在对象量词内取得和消去。
-新增30个Source/原核闭句已验收：828构建任务、9500项审计、0警告，五trust=0入口及797份独立哈希通过。
-见[全内部公式弱化验收](docs/STEP4_FORMULA_WEAKENING_ACCEPTANCE.zh-CN.md)。
-原weakenFree编码对应、内部加强规则兼容、捕获规避替换、专用ProofZF/U及最终内部Con仍未完成。
+当前对象层进度：原free替换项码列表与实际索引MapCode的全内部双向唯一码转换已完成。
+原Replacement构造实际完整图，任意实际解码图的全候选边精确对应原列表真实fvar字段；接受输入和唯一纤维均有双条件。
+新增33个Source/原核闭句已验收：840构建任务、9730项审计、0警告，五trust=0入口及809份独立哈希通过。
+见[原free替换项列表转换验收](docs/STEP4_FREE_SUBSTITUTION_CODEC_ACCEPTANCE.zh-CN.md)。
+全公式free替换、原规则检查兼容、跨bound/free替换、专用ProofZF/U及最终内部Con仍未完成。
 下文保留各批历史验收范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

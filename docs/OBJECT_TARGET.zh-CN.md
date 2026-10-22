@@ -553,3 +553,11 @@ F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成�
 30个新增Source/sourceZF核/nativeZF核对象闭句已完整验收，见STEP4_FORMULA_WEAKENING_ACCEPTANCE.zh-CN.md。
 原weakenFree编码对应、原六规则检查器中的全内部free_strengthening兼容、捕获规避替换、ProofZF/U、
 全内部编译/解释及最终Con仍未完成；没有据此改变固定背景、原六规则/27模式或全部内部ω量化范围。
+
+
+2026-10-22替换参数对象进度：纯OpenTerm在实际空bound域下精确等价实际fvar分支。
+原term-code列表与实际完整索引MapCode已全内部双向存在唯一，实际唯一纤维和接受输入互为双条件。
+任意实际MapCode解码图的索引边，精确等价源域成员关系与原列表真实字段对应；原参数格式和独立目标范围保留。
+33个Source/sourceZF核/nativeZF核闭句通过完整验收，见STEP4_FREE_SUBSTITUTION_CODEC_ACCEPTANCE.zh-CN.md。
+全公式free替换、原free_substitution规则检查兼容、跨bound/free替换、专用ProofZF/U和最终Con仍未完成。
+原六规则/27模式、完整Separation/Collection、固定纯语言以及全部内部ω证明码量化没有改变。
