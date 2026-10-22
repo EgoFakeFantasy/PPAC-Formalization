@@ -127,3 +127,4 @@ import PPAC.Migration.Internal.ObjectSyntaxFreeShift
 import PPAC.Migration.Internal.ObjectSyntaxWeakenFree
 import PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec
 import PPAC.Migration.Internal.ObjectFormulaFreeSubst
+import PPAC.Migration.Internal.ObjectMixedTerm

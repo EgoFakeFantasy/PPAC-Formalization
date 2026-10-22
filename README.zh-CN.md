@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：原项码列表参数的全内部公式free替换已完成实际唯一输出、准确类型和输入双条件。
-11类构造端点律、bound保持/free目标项取原列表字段、真实binder提升均已证明；逻辑律的码见证在对象量词内消去。
-新增25个Source/原核闭句已验收：848构建任务、9880项审计、0警告，五trust=0入口及817份独立哈希通过。
-见[全公式free替换验收](docs/STEP4_FORMULA_FREE_SUBSTITUTION_ACCEPTANCE.zh-CN.md)。
-原语法编码/规则检查兼容、混合bound/free替换、专用ProofZF/U及最终内部Con仍未完成。
+当前对象层进度：混合项替换已证明实际唯一输出、准确类型/输入和已知源码字段律。
+原Replacement实际构造完整项像表及其逐值重命名图；两类项像均变换，实际bound后移状态已取得。
+新增21组原核闭句已验收：862构建任务、10068项审计、0警告，五trust=0入口及831份独立哈希通过。
+见[混合项与实际项像表变换验收](docs/STEP4_MIXED_TERM_IMAGES_ACCEPTANCE.zh-CN.md)。
+新的源bound0行、完整mixed binder提升/公式替换、原规则检查兼容、专用ProofZF/U及最终内部Con仍未完成。
 下文保留历史验收范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
