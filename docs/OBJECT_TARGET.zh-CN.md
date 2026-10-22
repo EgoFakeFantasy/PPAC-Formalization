@@ -580,3 +580,13 @@ F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成�
 21组Source/sourceZF核/nativeZF核闭句通过完整验收，见STEP4_MIXED_TERM_IMAGES_ACCEPTANCE.zh-CN.md。
 后续必须补齐fresh行、旧bound源索引后移、混合公式递归及InstantiateTop/AbstractFreeTop。
 原编码与原规则检查兼容、专用ProofZF/U、全内部编译/解释及最终Con保持未完成；全部内部ω量化和固定背景不变。
+
+
+2026-10-23混合binder进度：新源bound0行及旧bound源索引后移已在原对象核实现。
+原Replacement实际构造完整prefix表，两个旧源类别的项像bound部分都经过目标后移。
+目标位移/恒等图、空索引、原bvar0码及中间表均为对象存在见证；规范见证在原核内唯一并对齐。
+最终两表实际存在唯一，存在及唯一纤维均与完整旧表及真实后继范围精确等价。
+准确目标类型、新零位/旧bound位/旧free位字段双条件均已证明；30组原核闭句通过完整验收。
+见STEP4_MIXED_BINDER_ACCEPTANCE.zh-CN.md。当前只交付实际项像表层binder提升，
+一般混合公式替换的纯AST、数值环境码和原编码对应、InstantiateTop/AbstractFreeTop仍待完成。
+原六规则/27模式及全部内部ω上的检查/编译/解释和最终内部Con保持未完成；背景未改变。

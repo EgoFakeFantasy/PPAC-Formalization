@@ -4350,4 +4350,124 @@ example {m} (w r s a b c d C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectMixedTerm.boundShiftExistsSentence w r s a b c d C)) :=
   Internal.ObjectMixedTerm.native_boundShiftExists w r s a b c d C
 
+example {m} (w f a c d z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.prefixExistsSentence w f a c d z A)) :=
+  Internal.ObjectMixedBinder.native_prefixExists w f a c d z A
+
+example {m} (w f a c d z A g h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.prefixUniqueSentence w f a c d z A g h)) :=
+  Internal.ObjectMixedBinder.native_prefixUnique w f a c d z A g h
+
+example {m} (w f a c d z A g i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.prefixEdgesSentence w f a c d z A g i q)) :=
+  Internal.ObjectMixedBinder.native_prefixEdges w f a c d z A g i q
+
+example {m} (w f a c d z A g i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.prefixZeroSentence w f a c d z A g i q)) :=
+  Internal.ObjectMixedBinder.native_prefixZero w f a c d z A g i q
+
+example {m} (w f a c d z A g i q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.prefixSuccessorSentence w f a c d z A g i q k)) :=
+  Internal.ObjectMixedBinder.native_prefixSuccessor w f a c d z A g i q k
+
+example {m} (w f a c d z i q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.valueUniqueSentence w f a c d z i q v)) :=
+  Internal.ObjectMixedBinder.native_valueUnique w f a c d z i q v
+
+example {m} (f a z i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.valueZeroSentence f a z i q)) :=
+  Internal.ObjectMixedBinder.native_valueZero f a z i q
+
+example {m} (w f a z i q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.valueSuccessorSentence w f a z i q k)) :=
+  Internal.ObjectMixedBinder.native_valueSuccessor w f a z i q k
+
+example {m} (w f a c d z i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.valueTargetSentence w f a c d z i q)) :=
+  Internal.ObjectMixedBinder.native_valueTarget w f a c d z i q
+
+example {m} (w f a z A i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.valueSourceSentence w f a z A i q)) :=
+  Internal.ObjectMixedBinder.native_valueSource w f a z A i q
+
+example {m} (w c C d z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.headTermSentence w c C d z n)) :=
+  Internal.ObjectMixedBinder.native_headTerm w c C d z n
+
+example {m} (w c C d z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.headCodeSentence w c C d z)) :=
+  Internal.ObjectMixedBinder.native_headCode w c C d z
+
+example {m} (w c C d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.headExistsSentence w c C d)) :=
+  Internal.ObjectMixedBinder.native_headExists w c C d
+
+example {m} (w C d z n Z N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.headUniqueSentence w C d z n Z N)) :=
+  Internal.ObjectMixedBinder.native_headUnique w C d z n Z N
+
+example {m} (w R S r s a b c d A C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.preparedExistsSentence w R S r s a b c d A C n)) :=
+  Internal.ObjectMixedBinder.native_preparedExists w R S r s a b c d A C n
+
+example {m} (w R S r s a b c d A C n k h K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.preparedUniqueSentence w R S r s a b c d A C n k h K H)) :=
+  Internal.ObjectMixedBinder.native_preparedUnique w R S r s a b c d A C n k h K H
+
+example {m} (w R S r s a b c d A C n k h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.preparedTargetSentence w R S r s a b c d A C n k h)) :=
+  Internal.ObjectMixedBinder.native_preparedTarget w R S r s a b c d A C n k h
+
+example {m} (w r s a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.actualStateSentence w r s a b c d A C)) :=
+  Internal.ObjectMixedBinder.native_actualState w r s a b c d A C
+
+example {m} (w r s a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderExistsSentence w r s a b c d A C)) :=
+  Internal.ObjectMixedBinder.native_binderExists w r s a b c d A C
+
+example {m} (w r s a b c d A C k h K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderUniqueSentence w r s a b c d A C k h K H)) :=
+  Internal.ObjectMixedBinder.native_binderUnique w r s a b c d A C k h K H
+
+example {m} (w r s a b c d A C k h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderTargetSentence w r s a b c d A C k h)) :=
+  Internal.ObjectMixedBinder.native_binderTarget w r s a b c d A C k h
+
+example {m} (w r s a b c d A C k h R S z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderAtWitnessesSentence w r s a b c d A C k h R S z n)) :=
+  Internal.ObjectMixedBinder.native_binderAtWitnesses w r s a b c d A C k h R S z n
+
+example {m} (w r s a b c d A C k h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderInputSentence w r s a b c d A C k h)) :=
+  Internal.ObjectMixedBinder.native_binderInput w r s a b c d A C k h
+
+example {m} (w r s a b c d A C k h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderUniquePairSentence w r s a b c d A C k h)) :=
+  Internal.ObjectMixedBinder.native_binderUniquePair w r s a b c d A C k h
+
+example {m} (w r s a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderFiberSentence w r s a b c d A C)) :=
+  Internal.ObjectMixedBinder.native_binderFiber w r s a b c d A C
+
+example {m} (w r s a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderExistsIffSentence w r s a b c d A C)) :=
+  Internal.ObjectMixedBinder.native_binderExistsIff w r s a b c d A C
+
+example {m} (w r s a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderFiberIffSentence w r s a b c d A C)) :=
+  Internal.ObjectMixedBinder.native_binderFiberIff w r s a b c d A C
+
+example {m} (w r s a b c d A C k h R S z n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderZeroSentence w r s a b c d A C k h R S z n q)) :=
+  Internal.ObjectMixedBinder.native_binderZero w r s a b c d A C k h R S z n q
+
+example {m} (w r s a b c d A C k h R S z n i j t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderBoundSentence w r s a b c d A C k h R S z n i j t q)) :=
+  Internal.ObjectMixedBinder.native_binderBound w r s a b c d A C k h R S z n i j t q
+
+example {m} (w r s a b c d A C k h R S z n j t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedBinder.binderFreeSentence w r s a b c d A C k h R S z n j t q)) :=
+  Internal.ObjectMixedBinder.native_binderFree w r s a b c d A C k h R S z n j t q
+
 end PPAC.Migration.Step4Checks
