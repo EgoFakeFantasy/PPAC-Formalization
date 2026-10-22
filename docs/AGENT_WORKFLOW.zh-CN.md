@@ -962,33 +962,30 @@ L1、L2、L3已验收。任意参数功能关系在任意内部域集合上实�
 实际验收见STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md。
 完整FormulaRename、捕获规避替换、ProofZF/U和最终Con仍未完成。
 
-2026-10-22 映射自然码/自然状态批次已验收 F1a、F1b，见 STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md。
-最新批次进一步验收 F1c、F1d 的实际状态算子与递归基础，
-见 [状态算子及全内部递归验收](STEP4_RENAME_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md)。
-新增 18 模块、326 项显式声明和 42 个原核闭句模式；
-720 构建任务、7794 声明审计、0 警告，689 份源码哈希独立回读一致。
-状态集合递归的存在唯一不等于目标公式码的存在唯一，F1e 总关卡仍未完成。
+最新批次已验收 F1e.1、F1e.2；实际对象证据见
+[判断与递归验收](STEP4_RENAME_JUDGMENT_RECURSION_ACCEPTANCE.zh-CN.md)。
+12 模块、150 项显式声明、21 个原核闭句模式；732 构建任务、7944 审计、0 警告，701 份哈希独立回读一致。
+完整递归判据不等于合法输入的实际唯一公式输出；完整 FormulaRename 总关卡仍未完成。
 
-| 单元与状态 | 对象输入/实际模块 | 必须交付的原推导及验收条件 |
+| 单元与状态 | 实际输入/模块 | 原对象证据及验收条件 |
 |---|---|---|
-| F1a 已验收：MapCode | SyntaxMapCodeSyntax/Code/Existence/Decode；实际 IndexMap 与原列表编解码 | 实际唯一自然编码及实际唯一完整图解码；同码恢复源长度和原图。目标作用域为额外参数，不能从图码推出两个目标范围相等 |
-| F1a.1 已验收：CodedLift | SyntaxMapLiftSyntax/Lift/Fiber；MapCode 和真实源/目标后继 | 实际原图、正确提升图和实际唯一输出码；原 free 码另行保持。编码提升存在接口保留给定后继 |
-| F1b 已验收：七自然状态 | SyntaxRenameStateSyntax/State/Decode/Existence/System | 原 Forest(7) 实际唯一状态、同码全字段恢复及实际唯一解码；源公式码留作递归索引 |
-| F1c.1 已验收：历史查询与矩阵 | SyntaxRenameQuerySyntax/Query、SyntaxRenameAtomSyntax/LogicalSyntax/LocalSyntax | 完整历史图上 Read 精确等价于实际状态码属于实际值；11类矩阵使用真实项重命名、原零符号、严格子码、真实 CodedLift 和不变 free 码 |
-| F1c.2 已验收：实际状态算子 | SyntaxRenameOperatorSyntax/Existence/Rows/Membership | 原 Separation 实际唯一 ω 子集；全候选成员双条件、同码七字段恢复、无杂项、非自然源拒绝和原幂集范围 |
-| F1d 已验收：实际 recursor | SyntaxRenameRecursionSyntax/Step/Recursors、SyntaxRenameEvaluation*、SyntaxRenameGraphValues/History | 具体 total/deterministic 前提消去；全内部原序数上实际唯一原图/值、自然输入唯一求值、真实前段和精确分离方程；实际 ω/载体/递归族联合存在 |
-| F1e.1 下一项：纯对象判断 | 建议 SyntaxRenameJudgmentSyntax/Judgment；实际 Evaluation 和七字段 Contains | 有限纯成员 RenameFormula，用实际集合值存在量词封装求值和状态成员；给定完整原前段及域内子码，证明 Read↔RenameFormula，保留全部映射码/作用域/目标候选 |
-| F1e.2 待完成：不带历史的递归 | 上述判断、原11类矩阵、严格子码及真实量词 CodedLift | 全11类局部分支逐一以判断替换历史查询，原核双向等价；当前码的判断与完整递归判据双条件；不残留实际值/前段存在前提 |
-| F1e.3 待完成：实际唯一公式输出 | 原 Code 实际解码、全类型识别、项重命名及原构造存在唯一纤维 | 对量化全部内部映射码和作用域的性质作对象成员归纳；每个合法内部输入实际唯一目标码，允许非单射，量词分支实际构造并重新编码提升图 |
-| F1e.4 待完成：完整重命名验收 | 上述实际判断及归纳；原11类/全部候选 | 两端类型、原零符号、各构造精确式、全部作用域和实际唯一输出均有原 nativeZF 闭句；通过后才提升完整 FormulaRename 门禁 |
-| F2 待完成：映射代数 | 原实际恒等/复合完整图、全部上下文 | 原核公式恒等、复合、free_strengthening 兼容，保留全内部量化 |
-| S 及后续待完成 | 捕获规避替换、原六规则/27模式、全部 Separation/Collection、内部编译器和解释 | 完整 ProofZF/U 及任意内部证明码正确性，最终原核 Con_ZF→Con_target |
+| F1a/F1b 已验收 | 原自然 MapCode、CodedLift 和原 Forest(7) 状态 | 实际唯一映射码/图恢复、给定真实后继的唯一编码提升、实际状态构造和内部七字段唯一解码；目标范围另存 |
+| F1c/F1d 已验收 | 实际查询、11类矩阵、原 Separation 和超限递归 | 实际唯一 ω 状态集合，精确成员/真实幂集范围；总单值前提消去，全内部递归图/值、真实前段及联合存在 |
+| F1e.1 已验收 | SyntaxRenameJudgmentSyntax/State/Judgment | 内部 n∈ω 守卫与实际 Evaluation/Contains；任意原序数前段的域内 Read↔判断；实际值上的精确状态成员双条件 |
+| F1e.2 已验收 | SyntaxRenameRecursiveSyntax、Read/Fields/Case/LocalTransfer、Recursive、SystemSyntax/System | 全11类消去历史，实际 CodedLift 和严格子码保持；全部内部候选的递归双条件和两端类型；八个内部全称参数的统一定律及实际系统 |
+| F1e.3a 下一项：输出合同和量词对齐 | 建议 SyntaxRenameOutputSyntax、SyntaxRenameAdvancedKnown；合法输入为源 FormulaCode 与两个 MapCode | 冻结实际 ∃!q 输出纤维及量化全部六个映射码/作用域参数的归纳性质；给定实际 CodedLift(u,v,L)，AdvancedRename↔对应固定提升参数的子判断，所有候选提升见证通过真实后继/码唯一性对齐 |
+| F1e.3b 待完成：原子实际唯一输出 | 原 Code 实际解码、原项重命名和原构造纤维 | 四类原子实际构造目标码；membership 保留原零符号；对全部候选输出用项唯一性和原构造单射证明唯一，不能假定 Constructor 存在 |
+| F1e.3c 待完成：逻辑归纳步骤 | 原严格子码及完整递归双条件、全内部归纳假设 | 否定/四类双字段构造实际唯一输出；量词在真实提升后的全部参数上实例化同一归纳假设，保留 free 码 |
+| F1e.3d 待完成：关闭内部归纳 | 原 Foundation/Separation 成员归纳，性质量化所有内部映射码及作用域 | 全内部合法源输入实际取得唯一目标码，允许非单射和内部非标准长度；无剩余 Earlier/归纳假设或递归存在前提 |
+| F1e.4 待完成：完整重命名验收 | 上述判断和实际唯一输出，原11类构造及全部候选 | 原核源/目标类型、原零符号、单构造精确律、真实作用域和实际唯一输出全部验收后，才提升完整 FormulaRename 门禁 |
+| F2 待完成 | 原实际恒等/复合完整图、全部上下文 | 原核公式恒等、复合、free_strengthening 兼容，保留全内部量化 |
+| S 及以后待完成 | 捕获规避替换、六规则/27模式、全 Separation/Collection、内部编译器与解释 | 完整 ProofZF/U、任意内部证明码正确性，最终原核 Con_ZF→Con_target |
 
-每单元先固定纯对象公式和全部参数，再提供 Source.Derives、TheoryTransport 和 ZFReplay 闭句。
-不得用宿主递归、只对标准码成立的定理或类大小历史替代对象推导。
-当前状态查询、11类矩阵、状态算子、实际 recursor/求值和联合系统门禁为 True；
-完整 FormulaRename、替换、ProofZF/U、内部证明码正确性和最终 Con 门禁均为 False。
+每单元先固定有限纯对象公式和全部参数，再给 Source.Derives、TheoryTransport 和 ZFReplay 闭句。
+不使用宿主递归、仅标准码定理或类大小历史代替对象推导。
+当前判断/历史消去/递归双条件/类型保持/实际统一系统门禁为 True；
+实际唯一公式输出、完整重命名、替换、ProofZF/U 和最终 Con 门禁均为 False。
 
-工程注意：对大型具体上下文，应只用已证明的公式等式转换结论，避免整条 Derives 的 simpa 展开。
-本批保留原规则和同一个对象矩阵，构建始终串行；每批执行 scripts/verify.py，
-并独立核对哈希、七份锁、全部显式声明覆盖以及精确公理依赖足迹。
+工程注意：Read 的源码位置早于映射参数，RenameFormula 的源码位置在四个作用域之后；
+迁移不能只改函数名。以实际原核双条件和显式字段排列检查验证，不能只验收 AST rename 等式。
+大型上下文用公式等式只转换结论；构建串行，每批 scripts/verify.py 并独立核对哈希、七份锁和精确依赖。

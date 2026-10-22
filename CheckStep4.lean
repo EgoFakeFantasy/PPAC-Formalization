@@ -3086,4 +3086,79 @@ example {m} (w h r s a b c d n q x X : Fin m) (universal : Bool) :
         ((Formula.mem x n).conj ((SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w X q).conj
           (SyntaxRenameQuerySyntax.advanced w h x r s a b c d X))) := rfl
 
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.introSentence w r s a b c d n q v)) := ObjectSyntaxRenameRecursive.native_intro w r s a b c d n q v
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.rejectCodeSentence w r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_rejectCode w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.legalSentence w r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_legal w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.targetTypeSentence w r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_targetType w r s a b c d n q
+
+example {m} (w n h v r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.containsCriterionSentence w n h v r s a b c d q)) := ObjectSyntaxRenameRecursive.native_containsCriterion w n h v r s a b c d q
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.atValueSentence w r s a b c d n q v)) := ObjectSyntaxRenameRecursive.native_atValue w r s a b c d n q v
+
+example {m} (w h D x r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.readSentence w h D x r s a b c d q)) := ObjectSyntaxRenameRecursive.native_read w h D x r s a b c d q
+
+example {m} (w h D x r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.advancedSentence w h D x r s a b c d q)) := ObjectSyntaxRenameRecursive.native_advanced w h D x r s a b c d q
+
+example {m} (advance : Bool) (w h D x r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.checkSentence advance w h D x r s a b c d q)) := ObjectSyntaxRenameRecursive.native_check advance w h D x r s a b c d q
+
+example {m} (tag : Nat) (advance : Bool) (w h r s a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.singleFieldsSentence tag advance w h r s a b c d n q x X)) := ObjectSyntaxRenameRecursive.native_singleFields tag advance w h r s a b c d n q x X
+
+example {m} (tag : Nat) (advance : Bool) (w h r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.singleCaseSentence tag advance w h r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_singleCase tag advance w h r s a b c d n q
+
+example {m} (kind : Fin 4) (w h r s a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.binaryFieldsSentence kind w h r s a b c d n q x y X Y)) := ObjectSyntaxRenameRecursive.native_binaryFields kind w h r s a b c d n q x y X Y
+
+example {m} (kind : Fin 4) (w h r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.binaryCaseSentence kind w h r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_binaryCase kind w h r s a b c d n q
+
+example {m} (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.allCasesSentence w R S r s a b c d h n q)) := ObjectSyntaxRenameRecursive.native_allCases w R S r s a b c d h n q
+
+example {m} (w R S a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.localSentence w R S a b c d h n q)) := ObjectSyntaxRenameRecursive.native_local w R S a b c d h n q
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.recursiveAtValueSentence w r s a b c d n q v)) := ObjectSyntaxRenameRecursive.native_recursiveAtValue w r s a b c d n q v
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.recursiveSentence w r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_recursive w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.sourceTypeSentence w r s a b c d n q)) := ObjectSyntaxRenameRecursive.native_sourceType w r s a b c d n q
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.universalSentence w)) := ObjectSyntaxRenameRecursive.native_universal w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameRecursive.actualSystemSentence w)) := ObjectSyntaxRenameRecursive.native_actualSystem w
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence ObjectSyntaxRenameRecursive.existenceSentence) := ObjectSyntaxRenameRecursive.native_existence
+
+example {m} (w r s a b c d n q : Fin m) : SyntaxRenameJudgmentSyntax.renamed w r s a b c d n q =
+    (Formula.mem n w).conj (.ex (SyntaxRenameJudgmentSyntax.body w r s a b c d n q)) := rfl
+
+example {m} (w x r s a b c d q : Fin m) : SyntaxRenameRecursiveSyntax.check false w x r s a b c d q =
+    SyntaxRenameJudgmentSyntax.renamed w r s a b c d x q := rfl
+
+example {m} (w r s a b c d n q x y X Y : Fin m) (kind : Fin 4) :
+    SyntaxRenameRecursiveSyntax.binaryData kind w r s a b c d n q x y X Y =
+      (SyntaxLogicalSyntax.binaryCode kind w x y n).conj ((Formula.mem x n).conj ((Formula.mem y n).conj
+        ((SyntaxLogicalSyntax.binaryCode kind w X Y q).conj
+          ((SyntaxRenameJudgmentSyntax.renamed w r s a b c d x X).conj (SyntaxRenameJudgmentSyntax.renamed w r s a b c d y Y))))) := rfl
+
 end PPAC.Migration.Step4Checks

@@ -1,14 +1,13 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：F1c/F1d 的实际重命名状态算子和递归基础已验收。
-原11类矩阵保留真实历史状态、原零符号、严格子源码、实际 bound 映射码提升和不变 free 码。
-原 Separation 构造唯一 ω 状态子集；算子总单值前提消去，全内部原序数上的原递归图与求值实际存在唯一，
-并有真实前段方程和原幂集范围；实际 ω/载体/完整递归族联合存在。
-新增 42 个原核闭句模式；720 构建任务、7794 声明审计、0 警告，689 份源码哈希独立复核一致。
-详见[状态算子及递归验收](docs/STEP4_RENAME_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项 F1e 是完整纯对象 RenameFormula 判断、递归正确性及实际唯一公式输出。
-最终仍是 Derives nativeZF [] (Con_ZF→Con_target)；完整公式重命名、替换及 Proof/Con 尚未完成。
+当前进展：F1e.1/F1e.2 已验收。纯对象 RenameFormula 实际绑定集合值与七字段状态成员，
+原完整前段查询与判断精确等价；全11类消去历史后，所有内部候选都有完整递归双条件。
+两端类型保持、八参数内部统一定律及实际 ω/载体/完整递归族联合存在均有原核证明。
+新增 21 个闭句模式；732 构建任务、7944 声明审计、0 警告，701 份源码哈希独立复核一致。
+详见[判断与递归验收](docs/STEP4_RENAME_JUDGMENT_RECURSION_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项 F1e.3 是全部合法输入的实际唯一目标公式码，需量化全部内部映射码/作用域作对象成员归纳。
+完整重命名、替换、ProofZF/U 及最终 Derives nativeZF [] (Con_ZF→Con_target) 尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
