@@ -1,24 +1,30 @@
 # 当前交付状态
-2026-10-22；分支migration/yesmeta-step3；本批基点75ba640a608dbd1f0b90174b12a9568918fd14a5。
+2026-10-22；分支 migration/yesmeta-step3；本批基点 4b59b0ac7d58173d6326d3bb70219216413f50a3。
 
-本批L1、L2、L3完成：任意参数对象功能关系实际存在唯一完整Kuratowski图，
-具体量词提升关系已关闭全部内部输入的总性、单值性和指定目标范围。
-只给Ω及原IndexMap，实际联合取得两个后继作用域和唯一提升图。
-全部图边精确对应零→零或旧边的同步后继；原零和真实后继点有精确双条件。
-新绑定变量实际固定，旧bound索引/映像同步后继，free保持原图，均返回实际RenameTerm。
-35个新增完整Source/sourceZF核/nativeZF核闭句模式；
-详见STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md。
-前批完整FormulaCode类型识别、TypedData双向解码及内部纯项重命名保持已完成。
+F1a、F1b 已完成对象表示：完整有限索引图实际唯一编码到原自然列表码，
+每个 MapCode 实际唯一解码回完整原图；同码恢复原源长度和原图。
+目标范围参数单独保存，不能由图码恢复唯一目标作用域。
+给定真实两个后继作用域，映射自然码的量词提升实际存在唯一。
 
-完整验收退出0：689构建任务，7234项声明审计，0警告。
-九条正式命令均退出0；五份--trust=0检查/审计入口通过。
-280项无公理依赖、6954项允许依赖；658份源码哈希独立回读差异0。
-本批15模块236项显式声明；Internal累计4919项全覆盖；累计593对核心/native证书或模式精确足迹通过。
-原19规则、九类ZF、两份可信基、choice额外证书限域、固定依赖及原核不变。
-YesMetaZFC固定039c8e132cc19671d73a3933c66b4799d2599dd6，依赖工作区干净。
-未推送；原OpenAI完整构建/Comparator未运行；日志及回读留在忽略目录。
+七字段状态依次记录两个映射码、源 bound/free、目标 bound/free 和目标公式码；
+源公式码作为后续递归索引。原 Forest(7) 实际给出唯一自然状态码，
+同码逐字段恢复、七字段内部全称唯一性及实际唯一解码均有原核推导。
+两个实际完整索引图和目标 FormulaCode 联合产生两个实际映射自然码和状态码。
+该状态只表示合法元数据，尚不表示完整公式重命名关系。
 
-下一主项：完整FormulaRename对象递归，先把实际有限索引图编码到原自然列表码，
-再构造自然状态元组、实际状态算子和全内部recursor，详见流程表F1a至S。
-完整公式rename、捕获规避替换、ProofZF/U、任意内部证明码正确性、内部编译器及最终Con仍未完成。
-最终仍要求原FirstOrder.Derives nativeZF [] (Formula.imp Con_ZF Con_target)。
+新增 13 模块、234 项显式声明和 35 个完整 Source/sourceZF 核/nativeZF 核闭句模式。
+正式验收退出 0：702 个构建任务、7468 项声明审计、0 警告。
+九条命令均退出 0；五个 --trust=0 入口通过。
+282 项无公理依赖，7186 项允许依赖；671 份源码哈希独立复核差异 0。
+Internal 累计 5153 项显式声明全覆盖；累计 628 对核心/native 精确足迹通过。
+七份理论/可信基/依赖锁未变；YesMetaZFC 固定 039c8e132cc19671d73a3933c66b4799d2599dd6，依赖工作区干净。
+
+详细公式、证书及边界见 STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md。
+原 19 规则、九类 ZF、固定原核和原 choice 额外证书限域保持不变。
+未推送；原 OpenAI 完整构建/Comparator 未运行；日志和独立回读留在忽略目录。
+
+下一步 F1c：冻结实际状态历史查询及 11 类重命名矩阵，
+由原 Separation 构造状态子集，证明实际状态算子的总性、单值性和范围。
+之后继续实际 recursor、完整 FormulaRename、捕获规避替换、ProofZF/U、内部编译器及解释。
+最终仍要求原 FirstOrder.Derives nativeZF [] (Formula.imp Con_ZF Con_target)；
+内部 Con 量化所有内部 ω 证明码。该主句尚未完成。

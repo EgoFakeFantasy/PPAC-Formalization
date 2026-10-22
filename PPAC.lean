@@ -105,3 +105,5 @@ import PPAC.Migration.Internal.ObjectFormulaCodeTypedDecode
 import PPAC.Migration.Internal.ObjectSyntaxRenameTerm
 
 import PPAC.Migration.Internal.ObjectSyntaxIndexLift
+
+import PPAC.Migration.Internal.ObjectSyntaxMapCodeState

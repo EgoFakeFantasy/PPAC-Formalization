@@ -2752,4 +2752,156 @@ example {m} (w r a c : Fin m) : ObjectSyntaxIndexLift.liftSystemSentence w r a c
     ((OmegaSyntax.omega w).imp ((SyntaxIndexMapSyntax.indexMap w r a c).imp
       (SyntaxIndexLiftSystem.system w r a c))).close := rfl
 
+example {m} (w r a c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.omegaSequenceSentence w r a c)) :=
+  ObjectSyntaxMapCodeState.native_omegaSequence w r a c
+
+example {m} (w r a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.codeNaturalSentence w r a c k)) :=
+  ObjectSyntaxMapCodeState.native_codeNatural w r a c k
+
+example {m} (w r a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.codeValidSentence w r a c k)) :=
+  ObjectSyntaxMapCodeState.native_codeValid w r a c k
+
+example {m} (w r a c k l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.uniqueCodeSentence w r a c k l)) :=
+  ObjectSyntaxMapCodeState.native_uniqueCode w r a c k l
+
+example {m} (w r s a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.uniqueGraphSentence w r s a c k)) :=
+  ObjectSyntaxMapCodeState.native_uniqueGraph w r s a c k
+
+example {m} (w r s a b c d k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.sourceGraphRecoverySentence w r s a b c d k)) :=
+  ObjectSyntaxMapCodeState.native_sourceGraphRecovery w r s a b c d k
+
+example {m} (w r a c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.existsMapCodeSentence w r a c)) :=
+  ObjectSyntaxMapCodeState.native_existsMapCode w r a c
+
+example {m} (w r a c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.codeFiberSentence w r a c)) :=
+  ObjectSyntaxMapCodeState.native_codeFiber w r a c
+
+example {m} (w a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.mapNaturalSentence w a c k)) :=
+  ObjectSyntaxMapCodeState.native_mapNatural w a c k
+
+example {m} (w a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.mapContextsSentence w a c k)) :=
+  ObjectSyntaxMapCodeState.native_mapContexts w a c k
+
+example {m} (w a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.mapValidSentence w a c k)) :=
+  ObjectSyntaxMapCodeState.native_mapValid w a c k
+
+example {m} (w a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.graphFiberSentence w a c k)) :=
+  ObjectSyntaxMapCodeState.native_graphFiber w a c k
+
+example {m} (w a c k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.mapFiberIffSentence w a c k)) :=
+  ObjectSyntaxMapCodeState.native_mapFiberIff w a c k
+
+example {m} (w r a c k u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftAtSourceSentence w r a c k u v l)) :=
+  ObjectSyntaxMapCodeState.native_liftAtSource w r a c k u v l
+
+example {m} (w r a c k u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftExistsAtSourceSentence w r a c k u v)) :=
+  ObjectSyntaxMapCodeState.native_liftExistsAtSource w r a c k u v
+
+example {m} (w a c k u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftExistsSentence w a c k u v)) :=
+  ObjectSyntaxMapCodeState.native_liftExists w a c k u v
+
+example {m} (w r a c k u v l q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftUniqueAtSourceSentence w r a c k u v l q)) :=
+  ObjectSyntaxMapCodeState.native_liftUniqueAtSource w r a c k u v l q
+
+example {m} (w a c k u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftInputCodeSentence w a c k u v l)) :=
+  ObjectSyntaxMapCodeState.native_liftInputCode w a c k u v l
+
+example {m} (w a c k u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftOutputCodeSentence w a c k u v l)) :=
+  ObjectSyntaxMapCodeState.native_liftOutputCode w a c k u v l
+
+example {m} (w a c k u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftOutputNaturalSentence w a c k u v l)) :=
+  ObjectSyntaxMapCodeState.native_liftOutputNatural w a c k u v l
+
+example {m} (w a c k u v l q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftCodeUniqueSentence w a c k u v l q)) :=
+  ObjectSyntaxMapCodeState.native_liftCodeUnique w a c k u v l q
+
+example {m} (w a c k u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.liftCodeFiberSentence w a c k u v)) :=
+  ObjectSyntaxMapCodeState.native_liftCodeFiber w a c k u v
+
+example {m} (w r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.stateInputsSentence w r s a b c d q)) :=
+  ObjectSyntaxMapCodeState.native_stateInputs w r s a b c d q
+
+example {m} (w r s a b c d q h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.cellNaturalSentence w r s a b c d q h)) :=
+  ObjectSyntaxMapCodeState.native_cellNatural w r s a b c d q h
+
+example {m} (w r s a b c d q h : Fin m) (j : Fin 7) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.fieldNaturalSentence w r s a b c d q h j)) :=
+  ObjectSyntaxMapCodeState.native_fieldNatural w r s a b c d q h j
+
+example {m} (w h r s a b c d q r1 s1 a1 b1 c1 d1 q1 : Fin m) (j : Fin 7) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.sameFieldSentence w h r s a b c d q r1 s1 a1 b1 c1 d1 q1 j)) :=
+  ObjectSyntaxMapCodeState.native_sameField w h r s a b c d q r1 s1 a1 b1 c1 d1 q1 j
+
+example {m} (w h r s a b c d q r1 s1 a1 b1 c1 d1 q1 : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.sameFieldsSentence w h r s a b c d q r1 s1 a1 b1 c1 d1 q1)) :=
+  ObjectSyntaxMapCodeState.native_sameFields w h r s a b c d q r1 s1 a1 b1 c1 d1 q1
+
+example {m} (w r s a b c d q h t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.uniqueCellSentence w r s a b c d q h t)) :=
+  ObjectSyntaxMapCodeState.native_uniqueCell w r s a b c d q h t
+
+example {m} (w r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.stateFiberSentence w r s a b c d q)) :=
+  ObjectSyntaxMapCodeState.native_stateFiber w r s a b c d q
+
+example {m} (w h r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.uniqueParamsSentence w h r s a b c d q)) :=
+  ObjectSyntaxMapCodeState.native_uniqueParams w h r s a b c d q
+
+example {m} (w h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.actualDecodeSentence w h)) :=
+  ObjectSyntaxMapCodeState.native_actualDecode w h
+
+example {m} (w h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.recognizedNaturalSentence w h)) :=
+  ObjectSyntaxMapCodeState.native_recognizedNatural w h
+
+example {m} (w h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.stateDecodeIffSentence w h)) :=
+  ObjectSyntaxMapCodeState.native_stateDecodeIff w h
+
+example {m} (w r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.actualStateSystemSentence w r s a b c d q)) :=
+  ObjectSyntaxMapCodeState.native_actualStateSystem w r s a b c d q
+
+example {m} (w h r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxMapCodeState.introStateRecognitionSentence w h r s a b c d q)) :=
+  ObjectSyntaxMapCodeState.native_introStateRecognition w h r s a b c d q
+
+example {m} (w r a c k : Fin m) : SyntaxMapCodeSyntax.encoded w r a c k =
+    (StructuralListEncodeSyntax.encoding w r a k).conj (SyntaxIndexMapSyntax.indexMap w r a c) := rfl
+
+example {m} (w r s a b c d q h : Fin m) : SyntaxRenameStateSyntax.state w r s a b c d q h =
+    (SyntaxRenameStateSyntax.cell w r s a b c d q h).conj
+      ((SyntaxMapCodeSyntax.mapCode w a c r).conj ((SyntaxMapCodeSyntax.mapCode w b d s).conj
+        (FormulaCodeSyntax.formulaCode w q c d))) := rfl
+
+example {m} (w r s a b c d q : Fin m) : ObjectSyntaxMapCodeState.stateFiberSentence w r s a b c d q =
+    ((OmegaSyntax.omega w).imp ((SyntaxRenameStateSyntax.legal w r s a b c d q).imp
+      (SyntaxRenameStateSyntax.stateFiber w r s a b c d q))).close := rfl
+
 end PPAC.Migration.Step4Checks

@@ -418,3 +418,15 @@ Tree.valid比纯语言类型宽，因此不把Code→Tree.valid误写成双条�
 原IndexMap的头槽量词提升已在全部内部零/后继域输入上证明总性、唯一性和范围，
 并实际联合取得两个后继作用域及唯一完整提升图；原项新/旧bound及free兼容性均有原核闭句。
 完整FormulaRename、捕获规避替换、ProofZF/U和最终内部Con仍未交付，背景B及Con定义保持不变。
+
+
+2026-10-22 映射自然码及状态更新：
+完整内部有限索引图已实际唯一编码到原 structural_list_code，自然码可实际唯一恢复完整图和源长度。
+目标范围为额外参数，码不决定唯一目标范围。给定真实两个后继作用域，bound 映射码实际唯一提升。
+原 Forest(7) 实际编码两个映射码、源/目标 bound/free 四个作用域和目标 FormulaCode；
+源码留作未来 recursor 索引。所有字段与状态均在内部 ω 中，实际唯一解码有七个内部量词。
+两个实际完整图与目标 FormulaCode 联合产生实际映射码和自然状态，35 个新增完整闭句均返回原 nativeZF Derives。
+见 STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md。
+这仍是对象状态表示，不是完整 FormulaRename、内部替换、ProofZF/U 或 Con 公式的正确性。
+下一步由原 Separation 构造实际重命名状态算子并接全内部递归，详见流程 F1c 至 F1e。
+最终背景、六条规则、27 类模式、完整 Separation/Collection 和全部内部 ω 证明码的 Con 范围保持不变。

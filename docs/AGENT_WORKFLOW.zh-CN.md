@@ -962,18 +962,31 @@ L1、L2、L3已验收。任意参数功能关系在任意内部域集合上实�
 实际验收见STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md。
 完整FormulaRename、捕获规避替换、ProofZF/U和最终Con仍未完成。
 
-后续公式递归建议将实际有限图再编码成原自然列表码，使递归状态留在内部集合ω内。
-这只是后续工程路线；以下单元均未完成，不能把合同或AST列为通过。
+2026-10-22 映射自然码和自然状态批次：F1a、F1b 已完成对象表示并实际验收，
+见 [映射码及状态验收](STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md)。
+新增 13 模块、234 项显式声明、35 个原核闭句模式；
+702 构建任务、7468 声明审计、0 警告，671 份源码哈希独立回读一致。
+状态表示不等于完整 FormulaRename；以下表格按剩余对象证据继续推进。
 
-| 下一单元 | 输入及建议实现 | 必须验收的对象证据 |
+| 单元与状态 | 对象输入/实际模块 | 必须交付的原推导及验收条件 |
 |---|---|---|
-| F1a MapCode | 原IndexMap(w,r,a,c)、已有任意序列原列表编解码；MapCode(k,a,c)实际绑定编码图r | 将r的c值域传入ω，实际唯一编码到原自然列表码k；反向恢复完整r及原域/范围；任何内部码候选的精确解码，不限制外部标准映射 |
-| F1b 自然状态元组 | 两个MapCode、源bound/free、目标bound/free、目标公式码，共7个内部自然输入；源码作为recursor索引 | 原Forest(7)实际存在唯一及反向逐字段恢复；所有状态码属于ω。不得只把宿主7元组当作对象状态 |
-| F1c rename状态算子 | 原11源/目标构造、F1b实际元组和严格子码历史；量词中原LiftBound及重新编码的bound图 | 原Separation实际构造唯一状态子集；全边历史读取精确，原0符号和项重命名保持；量词实际后继及free保持，无未证算子总性/单值性前提 |
-| F1d 实际recursor | 状态为内部ω子集，原PowerSet及已证全内部序数递归 | 实际所有内部输入上的唯一recursor/值与前缀方程，输出属于真实状态载体 |
-| F1e 完整FormulaRename | F1a至F1d、原Code严格子码有效性、完整类型识别和原构造实际唯一纤维 | 每个合法内部输入和完整非单射映射实际唯一输出；源/目标作用域、全部11类精确式、量词提升；对象成员归纳关闭全部假设 |
-| F2 公式映射代数 | 原实际恒等/复合完整图及全部上下文 | 原核恒等、复合、free_strengthening兼容，保留全内部量化 |
-| S及后续 | 原捕获规避替换、六规则/27模式、全Separation/Collection、内部编译器与解释 | 完整ProofZF/U检查器和任意内部证明码正确性，最终原核Con_ZF→Con_target |
+| F1a 已验收：MapCode | SyntaxMapCodeSyntax/Code/Existence/Decode；实际 IndexMap 和原列表编解码 | 实际唯一自然编码及实际唯一完整图解码；同码恢复源长度和原图。目标作用域是额外守卫参数，不能据此推出两个目标范围相等 |
+| F1a.1 已验收：CodedLift | SyntaxMapLiftSyntax/Lift/Fiber；MapCode 与真实源/目标后继 | 实际原图和提升图由对象存在量词保留；实际唯一输出映射码和正确目标作用域。当前存在接口保留给定后继，不冒称已交付无前提联合提升码系统 |
+| F1b 已验收：七自然状态 | SyntaxRenameStateSyntax/State/Decode/Existence/System；两个 MapCode、四个作用域、目标 FormulaCode | 原 Forest(7) 实际唯一自然状态、同码全字段恢复、内部七字段全称唯一性及实际唯一解码；两个实际完整图联合产生映射码和状态。源公式码留作递归索引 |
+| F1c.1 下一项：历史查询和具体矩阵 | 建议 SyntaxRenameQuerySyntax/Query、SyntaxRenameOperatorSyntax；原完整历史图、严格子码、F1b 状态 | 冻结有限纯成员查询关系和原 11 类分支；实际读取历史状态值和七字段 State，无宿主函数选择。量词用真实 CodedLift、两个后继及原 free 码；原零符号保持 |
+| F1c.2 待完成：实际状态算子 | 原 ω、上述矩阵及原完整 Separation；建议 SyntaxRenameOperator/Total、ObjectSyntaxRenameOperator | 实际构造恰含满足矩阵候选的 ω 子集，无杂项；证明全候选成员双条件、唯一性、实际幂集范围，以及全部内部有效历史上的总性/单值性。不能残留未证算子前提 |
+| F1d 待完成：实际 recursor | 状态值为内部 ω 子集，原 PowerSet 和已证全内部序数递归 | 实际取得全部内部输入上的唯一 recursor、值与精确前缀方程；输出属于真实状态载体，消去载体和 recursor 存在前提 |
+| F1e 待完成：完整 FormulaRename | F1a 至 F1d、原 Code 严格子码有效性、完整类型识别和原构造实际唯一纤维 | 每个合法内部输入和完整非单射映射实际唯一输出；源/目标类型、全部 11 类精确式、真实量词提升；对象成员归纳关闭全部假设 |
+| F2 待完成：公式映射代数 | 原实际恒等/复合完整图及全部上下文 | 原核恒等、复合、free_strengthening 兼容，保留全内部量化 |
+| S 及后续待完成 | 原捕获规避替换、六规则/27 模式、全部 Separation/Collection、内部编译器与解释 | 完整 ProofZF/U 检查器和任意内部证明码正确性，最终原核 Con_ZF→Con_target |
 
-F1路线可随实际证据调整，但不得用宿主递归、只对标准码成立的定理或类大小状态替代对象递归。
-实际提升图门禁现True；完整FormulaRename、捕获规避替换和最终Con门禁保持False。
+每单元先固定纯对象公式和所有参数，再提供 Source.Derives、TheoryTransport 和 ZFReplay 闭句。
+不得用宿主递归、仅标准码定理或类大小历史状态替代对象递归。
+当前只将映射码、编码提升和状态表示的五个门禁置 True；
+状态算子、完整 FormulaRename、替换、ProofZF/U 和最终 Con 门禁均为 False。
+
+工程注意：大型上下文中的整条 Derives 判断不宜反复 simpa 展开。
+对编码公式的变量提升和多重存在引入使用小型通用引理，
+末尾只通过已证明的公式等式转换结论；保持同一个对象公式和原规则。
+本批联合构造模块按此拆分后实际构建用时约 6 秒。
+构建始终串行，每批执行 scripts/verify.py 并独立核对哈希、锁及精确证书依赖。
