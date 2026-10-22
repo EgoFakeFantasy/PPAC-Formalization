@@ -465,3 +465,14 @@ Earlier 量化全部内部 x∈ω 且 x∈n；不改成外部标准码归纳。
 详见 STEP4_RENAME_OUTPUT_NULLARY_ACCEPTANCE.zh-CN.md。
 背景 B、原六规则/27模式、完整 Separation/Collection、全部内部ω码上的 Con 定义及最终原核目标保持不变。
 专用 ProofZF/U、全内部码编译正确性和最终内部 Con 蕴含仍未实现。
+
+
+2026-10-22四类原子实际输出进度：所有候选解码图现可精确对齐给定真实图。
+成员式/等式从实际重命名项和原构造器产生目标码；成员式保留源中同一个原 ZeroScalar 符号码。
+原同码字段恢复及项唯一性证明任意内部候选输出相等；两幅图及所有输出项见证均由原 exE 消去。
+假/真/成员/等式四类原子均已得到实际 ∃! Fiber，并证明 Ω(w)→Atomic(w,a,b,n)→Property(w,n)。
+Property 内部量化全部 R,S,a,b,c,d，且无 Earlier 前提；这是四类基础情形，未证明任意公式码的 Property。
+本批25个 Source/sourceZF核/nativeZF核闭句模式均通过五个 trust=0 入口与精确公理足迹审计。
+详见 STEP4_RENAME_ATOMIC_OUTPUT_ACCEPTANCE.zh-CN.md。
+七类逻辑推进、归纳关闭、完整 FormulaRename、替换、专用 ProofZF/U、全内部编译正确性与最终内部 Con 仍未完成。
+背景 B、原规则/模式和全部内部ω证明码上的 Con 定义保持不变。

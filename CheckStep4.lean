@@ -3228,4 +3228,94 @@ example {m} (w n : Fin m) : SyntaxRenameOutputSyntax.earlier w n = .all
     (((Formula.mem (Fin.last m) w.castSucc).conj (.mem (Fin.last m) n.castSucc)).imp
       (SyntaxRenameOutputSyntax.property w.castSucc (Fin.last m))) := rfl
 
+example {m} (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.graphCasesSentence w R S r s a b c d n q)) := ObjectSyntaxRenameAtomic.native_graphCases w R S r s a b c d n q
+
+example {m} (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.casesFromJudgmentSentence w R S r s a b c d n q)) := ObjectSyntaxRenameAtomic.native_casesFromJudgment w R S r s a b c d n q
+
+example {m} (kind : Fin 4) (arity : Nat) (w R S r s a b c d n q : Fin m) (xs : Fin arity → Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.atomicFromJudgmentSentence kind arity w R S r s a b c d n q xs)) := ObjectSyntaxRenameAtomic.native_atomicFromJudgment kind arity w R S r s a b c d n q xs
+
+example {m} (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.introFromCasesSentence w R S r s a b c d n q)) := ObjectSyntaxRenameAtomic.native_introFromCases w R S r s a b c d n q
+
+example {m} (w r s a b c d n q v x y X Y u z U V : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalDataUniqueSentence w r s a b c d n q v x y X Y u z U V)) := ObjectSyntaxRenameAtomic.native_equalDataUnique w r s a b c d n q v x y X Y u z U V
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalRelationUniqueSentence w r s a b c d n q v)) := ObjectSyntaxRenameAtomic.native_equalRelationUnique w r s a b c d n q v
+
+example {m} (w R S r s a b c d n x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalAtOutputsSentence w R S r s a b c d n x y X Y)) := ObjectSyntaxRenameAtomic.native_equalAtOutputs w R S r s a b c d n x y X Y
+
+example {m} (w R S r s a b c d n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalExistsAtGraphsSentence w R S r s a b c d n x y)) := ObjectSyntaxRenameAtomic.native_equalExistsAtGraphs w R S r s a b c d n x y
+
+example {m} (w R S r s a b c d n q v x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalUniqueAtGraphsSentence w R S r s a b c d n q v x y)) := ObjectSyntaxRenameAtomic.native_equalUniqueAtGraphs w R S r s a b c d n q v x y
+
+example {m} (w R S r s a b c d n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalFiberAtGraphsSentence w R S r s a b c d n x y)) := ObjectSyntaxRenameAtomic.native_equalFiberAtGraphs w R S r s a b c d n x y
+
+example {m} (w R S a b c d n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalFiberSentence w R S a b c d n x y)) := ObjectSyntaxRenameAtomic.native_equalFiber w R S a b c d n x y
+
+example {m} (w n x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalAllParametersSentence w n x y)) := ObjectSyntaxRenameAtomic.native_equalAllParameters w n x y
+
+example {m} (w a b n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.equalBasePropertySentence w a b n)) := ObjectSyntaxRenameAtomic.native_equalBaseProperty w a b n
+
+example {m} (w r s a b c d n q v z x y X Y j u t U V : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberDataUniqueSentence w r s a b c d n q v z x y X Y j u t U V)) := ObjectSyntaxRenameAtomic.native_memberDataUnique w r s a b c d n q v z x y X Y j u t U V
+
+example {m} (w r s a b c d n q v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberRelationUniqueSentence w r s a b c d n q v)) := ObjectSyntaxRenameAtomic.native_memberRelationUnique w r s a b c d n q v
+
+example {m} (w R S r s a b c d n z x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberAtOutputsSentence w R S r s a b c d n z x y X Y)) := ObjectSyntaxRenameAtomic.native_memberAtOutputs w R S r s a b c d n z x y X Y
+
+example {m} (w R S r s a b c d n z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberExistsAtGraphsSentence w R S r s a b c d n z x y)) := ObjectSyntaxRenameAtomic.native_memberExistsAtGraphs w R S r s a b c d n z x y
+
+example {m} (w R S r s a b c d n q v z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberUniqueAtGraphsSentence w R S r s a b c d n q v z x y)) := ObjectSyntaxRenameAtomic.native_memberUniqueAtGraphs w R S r s a b c d n q v z x y
+
+example {m} (w R S r s a b c d n z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberFiberAtGraphsSentence w R S r s a b c d n z x y)) := ObjectSyntaxRenameAtomic.native_memberFiberAtGraphs w R S r s a b c d n z x y
+
+example {m} (w R S a b c d n z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberFiberSentence w R S a b c d n z x y)) := ObjectSyntaxRenameAtomic.native_memberFiber w R S a b c d n z x y
+
+example {m} (w n z x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberAllParametersSentence w n z x y)) := ObjectSyntaxRenameAtomic.native_memberAllParameters w n z x y
+
+example {m} (w a b n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.memberBasePropertySentence w a b n)) := ObjectSyntaxRenameAtomic.native_memberBaseProperty w a b n
+
+example {m} (w a b n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.atomicPropertySentence w a b n)) := ObjectSyntaxRenameAtomic.native_atomicProperty w a b n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.atomicFiberSentence w R S a b c d n)) := ObjectSyntaxRenameAtomic.native_atomicFiber w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameAtomic.atomicExistsSentence w R S a b c d n)) := ObjectSyntaxRenameAtomic.native_atomicExists w R S a b c d n
+
+example {m} (w r s a b c d n q z x y X Y : Fin m) :
+    SyntaxRenameAtomSyntax.membershipData w r s a b c d n q z x y X Y =
+      (SyntaxAtomSyntax.zeroScalar w z).conj
+        ((SyntaxAtomSyntax.memberCode w z x y n).conj
+          ((SyntaxAtomSyntax.memberCode w z X Y q).conj
+            ((SyntaxRenameTermSyntax.renamed w r s a b c d x X).conj
+              (SyntaxRenameTermSyntax.renamed w r s a b c d y Y)))) := rfl
+
+example {m} (w r s a b c d n q x y X Y : Fin m) :
+    SyntaxRenameAtomSyntax.equalityData w r s a b c d n q x y X Y =
+      (SyntaxAtomSyntax.equalCode w x y n).conj
+        ((SyntaxAtomSyntax.equalCode w X Y q).conj
+          ((SyntaxRenameTermSyntax.renamed w r s a b c d x X).conj
+            (SyntaxRenameTermSyntax.renamed w r s a b c d y Y))) := rfl
+
 end PPAC.Migration.Step4Checks
