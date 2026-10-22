@@ -107,3 +107,5 @@ import PPAC.Migration.Internal.ObjectSyntaxRenameTerm
 import PPAC.Migration.Internal.ObjectSyntaxIndexLift
 
 import PPAC.Migration.Internal.ObjectSyntaxMapCodeState
+
+import PPAC.Migration.Internal.ObjectSyntaxRenameOperator

@@ -962,31 +962,33 @@ L1、L2、L3已验收。任意参数功能关系在任意内部域集合上实�
 实际验收见STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md。
 完整FormulaRename、捕获规避替换、ProofZF/U和最终Con仍未完成。
 
-2026-10-22 映射自然码和自然状态批次：F1a、F1b 已完成对象表示并实际验收，
-见 [映射码及状态验收](STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md)。
-新增 13 模块、234 项显式声明、35 个原核闭句模式；
-702 构建任务、7468 声明审计、0 警告，671 份源码哈希独立回读一致。
-状态表示不等于完整 FormulaRename；以下表格按剩余对象证据继续推进。
+2026-10-22 映射自然码/自然状态批次已验收 F1a、F1b，见 STEP4_MAP_CODE_STATE_ACCEPTANCE.zh-CN.md。
+最新批次进一步验收 F1c、F1d 的实际状态算子与递归基础，
+见 [状态算子及全内部递归验收](STEP4_RENAME_OPERATOR_RECURSORS_ACCEPTANCE.zh-CN.md)。
+新增 18 模块、326 项显式声明和 42 个原核闭句模式；
+720 构建任务、7794 声明审计、0 警告，689 份源码哈希独立回读一致。
+状态集合递归的存在唯一不等于目标公式码的存在唯一，F1e 总关卡仍未完成。
 
 | 单元与状态 | 对象输入/实际模块 | 必须交付的原推导及验收条件 |
 |---|---|---|
-| F1a 已验收：MapCode | SyntaxMapCodeSyntax/Code/Existence/Decode；实际 IndexMap 和原列表编解码 | 实际唯一自然编码及实际唯一完整图解码；同码恢复源长度和原图。目标作用域是额外守卫参数，不能据此推出两个目标范围相等 |
-| F1a.1 已验收：CodedLift | SyntaxMapLiftSyntax/Lift/Fiber；MapCode 与真实源/目标后继 | 实际原图和提升图由对象存在量词保留；实际唯一输出映射码和正确目标作用域。当前存在接口保留给定后继，不冒称已交付无前提联合提升码系统 |
-| F1b 已验收：七自然状态 | SyntaxRenameStateSyntax/State/Decode/Existence/System；两个 MapCode、四个作用域、目标 FormulaCode | 原 Forest(7) 实际唯一自然状态、同码全字段恢复、内部七字段全称唯一性及实际唯一解码；两个实际完整图联合产生映射码和状态。源公式码留作递归索引 |
-| F1c.1 下一项：历史查询和具体矩阵 | 建议 SyntaxRenameQuerySyntax/Query、SyntaxRenameOperatorSyntax；原完整历史图、严格子码、F1b 状态 | 冻结有限纯成员查询关系和原 11 类分支；实际读取历史状态值和七字段 State，无宿主函数选择。量词用真实 CodedLift、两个后继及原 free 码；原零符号保持 |
-| F1c.2 待完成：实际状态算子 | 原 ω、上述矩阵及原完整 Separation；建议 SyntaxRenameOperator/Total、ObjectSyntaxRenameOperator | 实际构造恰含满足矩阵候选的 ω 子集，无杂项；证明全候选成员双条件、唯一性、实际幂集范围，以及全部内部有效历史上的总性/单值性。不能残留未证算子前提 |
-| F1d 待完成：实际 recursor | 状态值为内部 ω 子集，原 PowerSet 和已证全内部序数递归 | 实际取得全部内部输入上的唯一 recursor、值与精确前缀方程；输出属于真实状态载体，消去载体和 recursor 存在前提 |
-| F1e 待完成：完整 FormulaRename | F1a 至 F1d、原 Code 严格子码有效性、完整类型识别和原构造实际唯一纤维 | 每个合法内部输入和完整非单射映射实际唯一输出；源/目标类型、全部 11 类精确式、真实量词提升；对象成员归纳关闭全部假设 |
-| F2 待完成：公式映射代数 | 原实际恒等/复合完整图及全部上下文 | 原核恒等、复合、free_strengthening 兼容，保留全内部量化 |
-| S 及后续待完成 | 原捕获规避替换、六规则/27 模式、全部 Separation/Collection、内部编译器与解释 | 完整 ProofZF/U 检查器和任意内部证明码正确性，最终原核 Con_ZF→Con_target |
+| F1a 已验收：MapCode | SyntaxMapCodeSyntax/Code/Existence/Decode；实际 IndexMap 与原列表编解码 | 实际唯一自然编码及实际唯一完整图解码；同码恢复源长度和原图。目标作用域为额外参数，不能从图码推出两个目标范围相等 |
+| F1a.1 已验收：CodedLift | SyntaxMapLiftSyntax/Lift/Fiber；MapCode 和真实源/目标后继 | 实际原图、正确提升图和实际唯一输出码；原 free 码另行保持。编码提升存在接口保留给定后继 |
+| F1b 已验收：七自然状态 | SyntaxRenameStateSyntax/State/Decode/Existence/System | 原 Forest(7) 实际唯一状态、同码全字段恢复及实际唯一解码；源公式码留作递归索引 |
+| F1c.1 已验收：历史查询与矩阵 | SyntaxRenameQuerySyntax/Query、SyntaxRenameAtomSyntax/LogicalSyntax/LocalSyntax | 完整历史图上 Read 精确等价于实际状态码属于实际值；11类矩阵使用真实项重命名、原零符号、严格子码、真实 CodedLift 和不变 free 码 |
+| F1c.2 已验收：实际状态算子 | SyntaxRenameOperatorSyntax/Existence/Rows/Membership | 原 Separation 实际唯一 ω 子集；全候选成员双条件、同码七字段恢复、无杂项、非自然源拒绝和原幂集范围 |
+| F1d 已验收：实际 recursor | SyntaxRenameRecursionSyntax/Step/Recursors、SyntaxRenameEvaluation*、SyntaxRenameGraphValues/History | 具体 total/deterministic 前提消去；全内部原序数上实际唯一原图/值、自然输入唯一求值、真实前段和精确分离方程；实际 ω/载体/递归族联合存在 |
+| F1e.1 下一项：纯对象判断 | 建议 SyntaxRenameJudgmentSyntax/Judgment；实际 Evaluation 和七字段 Contains | 有限纯成员 RenameFormula，用实际集合值存在量词封装求值和状态成员；给定完整原前段及域内子码，证明 Read↔RenameFormula，保留全部映射码/作用域/目标候选 |
+| F1e.2 待完成：不带历史的递归 | 上述判断、原11类矩阵、严格子码及真实量词 CodedLift | 全11类局部分支逐一以判断替换历史查询，原核双向等价；当前码的判断与完整递归判据双条件；不残留实际值/前段存在前提 |
+| F1e.3 待完成：实际唯一公式输出 | 原 Code 实际解码、全类型识别、项重命名及原构造存在唯一纤维 | 对量化全部内部映射码和作用域的性质作对象成员归纳；每个合法内部输入实际唯一目标码，允许非单射，量词分支实际构造并重新编码提升图 |
+| F1e.4 待完成：完整重命名验收 | 上述实际判断及归纳；原11类/全部候选 | 两端类型、原零符号、各构造精确式、全部作用域和实际唯一输出均有原 nativeZF 闭句；通过后才提升完整 FormulaRename 门禁 |
+| F2 待完成：映射代数 | 原实际恒等/复合完整图、全部上下文 | 原核公式恒等、复合、free_strengthening 兼容，保留全内部量化 |
+| S 及后续待完成 | 捕获规避替换、原六规则/27模式、全部 Separation/Collection、内部编译器和解释 | 完整 ProofZF/U 及任意内部证明码正确性，最终原核 Con_ZF→Con_target |
 
-每单元先固定纯对象公式和所有参数，再提供 Source.Derives、TheoryTransport 和 ZFReplay 闭句。
-不得用宿主递归、仅标准码定理或类大小历史状态替代对象递归。
-当前只将映射码、编码提升和状态表示的五个门禁置 True；
-状态算子、完整 FormulaRename、替换、ProofZF/U 和最终 Con 门禁均为 False。
+每单元先固定纯对象公式和全部参数，再提供 Source.Derives、TheoryTransport 和 ZFReplay 闭句。
+不得用宿主递归、只对标准码成立的定理或类大小历史替代对象推导。
+当前状态查询、11类矩阵、状态算子、实际 recursor/求值和联合系统门禁为 True；
+完整 FormulaRename、替换、ProofZF/U、内部证明码正确性和最终 Con 门禁均为 False。
 
-工程注意：大型上下文中的整条 Derives 判断不宜反复 simpa 展开。
-对编码公式的变量提升和多重存在引入使用小型通用引理，
-末尾只通过已证明的公式等式转换结论；保持同一个对象公式和原规则。
-本批联合构造模块按此拆分后实际构建用时约 6 秒。
-构建始终串行，每批执行 scripts/verify.py 并独立核对哈希、锁及精确证书依赖。
+工程注意：对大型具体上下文，应只用已证明的公式等式转换结论，避免整条 Derives 的 simpa 展开。
+本批保留原规则和同一个对象矩阵，构建始终串行；每批执行 scripts/verify.py，
+并独立核对哈希、七份锁、全部显式声明覆盖以及精确公理依赖足迹。

@@ -2904,4 +2904,186 @@ example {m} (w r s a b c d q : Fin m) : ObjectSyntaxMapCodeState.stateFiberSente
     ((OmegaSyntax.omega w).imp ((SyntaxRenameStateSyntax.legal w r s a b c d q).imp
       (SyntaxRenameStateSyntax.stateFiber w r s a b c d q))).close := rfl
 
+example {m} (w v r s a b c d q t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.containsAtStateSentence w v r s a b c d q t)) :=
+  ObjectSyntaxRenameOperator.native_containsAtState w v r s a b c d q t
+
+example {m} (w h D x v r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.queryAtValueSentence w h D x v r s a b c d q)) :=
+  ObjectSyntaxRenameOperator.native_queryAtValue w h D x v r s a b c d q
+
+example {m} (w h D x v r s a b c d q t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.queryAtStateSentence w h D x v r s a b c d q t)) :=
+  ObjectSyntaxRenameOperator.native_queryAtState w h D x v r s a b c d q t
+
+example {m} (w h x r s a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.advancedFreeMapSentence w h x r s a b c d q)) :=
+  ObjectSyntaxRenameOperator.native_advancedFreeMap w h x r s a b c d q
+
+example {m} (w h x r s a b c d q u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.advancedIntroSentence w h x r s a b c d q u v l)) :=
+  ObjectSyntaxRenameOperator.native_advancedIntro w h x r s a b c d q u v l
+
+example {m} (truth : Bool) (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.nullaryCaseSentence truth w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_nullaryCase truth w R S r s a b c d h n q
+
+example {m} (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.membershipCaseSentence w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_membershipCase w R S r s a b c d h n q
+
+example {m} (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.equalityCaseSentence w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_equalityCase w R S r s a b c d h n q
+
+example {m} (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.negationCaseSentence w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_negationCase w R S r s a b c d h n q
+
+example {m} (kind : Fin 4) (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.binaryCaseSentence kind w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_binaryCase kind w R S r s a b c d h n q
+
+example {m} (universal : Bool) (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.quantifierCaseSentence universal w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_quantifierCase universal w R S r s a b c d h n q
+
+example {m} (w R S r s a b c d h n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.localGraphsSentence w R S r s a b c d h n q)) :=
+  ObjectSyntaxRenameOperator.native_localGraphs w R S r s a b c d h n q
+
+example {m} (w n h p R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.rowIntroSentence w n h p R S a b c d q)) :=
+  ObjectSyntaxRenameOperator.native_rowIntro w n h p R S a b c d q
+
+example {m} (w n h p R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.rowAtStateSentence w n h p R S a b c d q)) :=
+  ObjectSyntaxRenameOperator.native_rowAtState w n h p R S a b c d q
+
+example {m} (w n h p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.rowRecognizedSentence w n h p)) :=
+  ObjectSyntaxRenameOperator.native_rowRecognized w n h p
+
+example {m} (w n h p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.rowSourceNaturalSentence w n h p)) :=
+  ObjectSyntaxRenameOperator.native_rowSourceNatural w n h p
+
+example {m} (w n h v p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueMemberSentence w n h v p)) :=
+  ObjectSyntaxRenameOperator.native_valueMember w n h v p
+
+example {m} (w n h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueExistsSentence w n h)) :=
+  ObjectSyntaxRenameOperator.native_valueExists w n h
+
+example {m} (w n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueSubsetSentence w n h v)) :=
+  ObjectSyntaxRenameOperator.native_valueSubset w n h v
+
+example {m} (w u n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueUniverseSentence w u n h v)) :=
+  ObjectSyntaxRenameOperator.native_valueUniverse w u n h v
+
+example {m} (w n h v t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueUniqueSentence w n h v t)) :=
+  ObjectSyntaxRenameOperator.native_valueUnique w n h v t
+
+example {m} (w n h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueFiberSentence w n h)) :=
+  ObjectSyntaxRenameOperator.native_valueFiber w n h
+
+example {m} (w n h v p : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.memberRecognizedSentence w n h v p)) :=
+  ObjectSyntaxRenameOperator.native_memberRecognized w n h v p
+
+example {m} (w n h v p R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.valueAtStateSentence w n h v p R S a b c d q)) :=
+  ObjectSyntaxRenameOperator.native_valueAtState w n h v p R S a b c d q
+
+example {m} (w n h v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.offNaturalSentence w n h v)) :=
+  ObjectSyntaxRenameOperator.native_offNatural w n h v
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.operatorTotalSentence w)) :=
+  ObjectSyntaxRenameOperator.native_operatorTotal w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.operatorDeterministicSentence w)) :=
+  ObjectSyntaxRenameOperator.native_operatorDeterministic w
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.recursorsSentence w)) :=
+  ObjectSyntaxRenameOperator.native_recursors w
+
+example {m} (w d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.graphFiberSentence w d)) :=
+  ObjectSyntaxRenameOperator.native_graphFiber w d
+
+example {m} (w : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.carrierRecursorsSentence w)) :=
+  ObjectSyntaxRenameOperator.native_carrierRecursors w
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationExistsSentence w n)) :=
+  ObjectSyntaxRenameOperator.native_evaluationExists w n
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.naturalEvaluationExistsSentence w n)) :=
+  ObjectSyntaxRenameOperator.native_naturalEvaluationExists w n
+
+example {m} (w n y u : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationUniqueSentence w n y u)) :=
+  ObjectSyntaxRenameOperator.native_evaluationUnique w n y u
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationFiberSentence w n)) :=
+  ObjectSyntaxRenameOperator.native_evaluationFiber w n
+
+example {m} (w n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.naturalEvaluationFiberSentence w n)) :=
+  ObjectSyntaxRenameOperator.native_naturalEvaluationFiber w n
+
+example {m} (w f g d t : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.graphAgreementSentence w f g d t)) :=
+  ObjectSyntaxRenameOperator.native_graphAgreement w f g d t
+
+example {m} (w f d n y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.graphEdgeValueSentence w f d n y)) :=
+  ObjectSyntaxRenameOperator.native_graphEdgeValue w f d n y
+
+example {m} (w n y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.prefixSentence w n y)) :=
+  ObjectSyntaxRenameOperator.native_prefix w n y
+
+example {m} (w n y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationSubsetSentence w n y)) :=
+  ObjectSyntaxRenameOperator.native_evaluationSubset w n y
+
+example {m} (w u n y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationUniverseSentence w u n y)) :=
+  ObjectSyntaxRenameOperator.native_evaluationUniverse w u n y
+
+example {m} (w n y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameOperator.evaluationOffNaturalSentence w n y)) :=
+  ObjectSyntaxRenameOperator.native_evaluationOffNatural w n y
+
+example : FirstOrder.Derives nativeZF []
+    (Translation.sentence ObjectSyntaxRenameOperator.existenceSentence) := ObjectSyntaxRenameOperator.native_existence
+
+example {m} (w n h v : Fin m) : SyntaxRenameOperatorSyntax.value w n h v =
+    MinimalPredicates.separated SyntaxRenameOperatorSyntax.selectionMatrix (SyntaxAtomSyntax.three w n h) w v := rfl
+
+example {m} (w r s a b c d n q z x y X Y : Fin m) :
+    SyntaxRenameAtomSyntax.membershipData w r s a b c d n q z x y X Y =
+      (SyntaxAtomSyntax.zeroScalar w z).conj ((SyntaxAtomSyntax.memberCode w z x y n).conj
+        ((SyntaxAtomSyntax.memberCode w z X Y q).conj ((SyntaxRenameTermSyntax.renamed w r s a b c d x X).conj
+          (SyntaxRenameTermSyntax.renamed w r s a b c d y Y)))) := rfl
+
+example {m} (w h r s a b c d n q x X : Fin m) (universal : Bool) :
+    SyntaxRenameLogicalSyntax.singleData (SyntaxLogicalSyntax.quantifierTag universal) true w h r s a b c d n q x X =
+      (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n).conj
+        ((Formula.mem x n).conj ((SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w X q).conj
+          (SyntaxRenameQuerySyntax.advanced w h x r s a b c d X))) := rfl
+
 end PPAC.Migration.Step4Checks
