@@ -117,3 +117,5 @@ import PPAC.Migration.Internal.ObjectSyntaxRenameOutput
 import PPAC.Migration.Internal.ObjectSyntaxRenameAtomic
 
 import PPAC.Migration.Internal.ObjectSyntaxRenameTotal
+
+import PPAC.Migration.Internal.ObjectSyntaxRenameFields

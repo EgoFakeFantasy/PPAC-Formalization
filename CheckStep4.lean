@@ -3448,4 +3448,90 @@ example {m} (w n : Fin m) : SyntaxRenameOutputInduction.curried w n = .all
 example {m} (advance : Bool) (w x R S a b c d : Fin m) : SyntaxRenameCheckExistence.existsCheck advance w x R S a b c d =
     .ex (SyntaxRenameRecursiveSyntax.check advance w.castSucc x.castSucc R.castSucc S.castSucc a.castSucc b.castSucc c.castSucc d.castSucc (Fin.last m)) := rfl
 
+example {m} (kind : Fin 11) (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.introBranchSentence kind w R S r s a b c d n q)) := ObjectSyntaxRenameFields.native_introBranch kind w R S r s a b c d n q
+
+example {m} (kind : Fin 11) (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.branchTargetSentence kind w R S r s a b c d n q)) := ObjectSyntaxRenameFields.native_branchTarget kind w R S r s a b c d n q
+
+example {m} (kind : Fin 11) (arity : Nat) (w R S r s a b c d n q : Fin m) (xs : Fin arity → Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.sourceCaseIffSentence kind arity w R S r s a b c d n q xs)) := ObjectSyntaxRenameFields.native_sourceCaseIff kind arity w R S r s a b c d n q xs
+
+example {m} (advance : Bool) (w x R S a b c d q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.checkSourceSentence advance w x R S a b c d q)) := ObjectSyntaxRenameFields.native_checkSource advance w x R S a b c d q
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.equalityRawIffSentence w r s a b c d n q x y X Y)) := ObjectSyntaxRenameFields.native_equalityRawIff w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q z Z x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.membershipRawIffSentence w r s a b c d n q z Z x y X Y)) := ObjectSyntaxRenameFields.native_membershipRawIff w r s a b c d n q z Z x y X Y
+
+example {m} (tag : Nat) (advance : Bool) (w r s a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.singleRawIffSentence tag advance w r s a b c d n q x X)) := ObjectSyntaxRenameFields.native_singleRawIff tag advance w r s a b c d n q x X
+
+example {m} (kind : Fin 4) (w r s a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.binaryRawIffSentence kind w r s a b c d n q x y X Y)) := ObjectSyntaxRenameFields.native_binaryRawIff kind w r s a b c d n q x y X Y
+
+example {m} (w R S r s a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.equalityIffSentence w R S r s a b c d n q x y X Y)) := ObjectSyntaxRenameFields.native_equalityIff w R S r s a b c d n q x y X Y
+
+example {m} (w R S r s a b c d n x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.equalityInputSentence w R S r s a b c d n x y X Y)) := ObjectSyntaxRenameFields.native_equalityInput w R S r s a b c d n x y X Y
+
+example {m} (w R S r s a b c d n q z Z x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.membershipIffSentence w R S r s a b c d n q z Z x y X Y)) := ObjectSyntaxRenameFields.native_membershipIff w R S r s a b c d n q z Z x y X Y
+
+example {m} (w R S r s a b c d n z Z x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.membershipInputSentence w R S r s a b c d n z Z x y X Y)) := ObjectSyntaxRenameFields.native_membershipInput w R S r s a b c d n z Z x y X Y
+
+example {m} (w R S r s a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.negationIffSentence w R S r s a b c d n q x X)) := ObjectSyntaxRenameFields.native_negationIff w R S r s a b c d n q x X
+
+example {m} (w R S a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.negationCodeIffSentence w R S a b c d n q x X)) := ObjectSyntaxRenameFields.native_negationCodeIff w R S a b c d n q x X
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.negationInputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameFields.native_negationInput w R S r s a b c d n x X
+
+example {m} (w R S r s a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.forallIffSentence w R S r s a b c d n q x X)) := ObjectSyntaxRenameFields.native_forallIff w R S r s a b c d n q x X
+
+example {m} (w R S a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.forallCodeIffSentence w R S a b c d n q x X)) := ObjectSyntaxRenameFields.native_forallCodeIff w R S a b c d n q x X
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.forallInputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameFields.native_forallInput w R S r s a b c d n x X
+
+example {m} (w R S r s a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.existsIffSentence w R S r s a b c d n q x X)) := ObjectSyntaxRenameFields.native_existsIff w R S r s a b c d n q x X
+
+example {m} (w R S a b c d n q x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.existsCodeIffSentence w R S a b c d n q x X)) := ObjectSyntaxRenameFields.native_existsCodeIff w R S a b c d n q x X
+
+example {m} (w R S r s a b c d n x X : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.existsInputSentence w R S r s a b c d n x X)) := ObjectSyntaxRenameFields.native_existsInput w R S r s a b c d n x X
+
+example {m} (kind : Fin 4) (w R S r s a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.binaryIffSentence kind w R S r s a b c d n q x y X Y)) := ObjectSyntaxRenameFields.native_binaryIff kind w R S r s a b c d n q x y X Y
+
+example {m} (kind : Fin 4) (w R S a b c d n q x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.binaryCodeIffSentence kind w R S a b c d n q x y X Y)) := ObjectSyntaxRenameFields.native_binaryCodeIff kind w R S a b c d n q x y X Y
+
+example {m} (kind : Fin 4) (w R S r s a b c d n x y X Y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.binaryInputSentence kind w R S r s a b c d n x y X Y)) := ObjectSyntaxRenameFields.native_binaryInput kind w R S r s a b c d n x y X Y
+
+example {m} (truth : Bool) (w R S r s a b c d n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.nullaryIffSentence truth w R S r s a b c d n q)) := ObjectSyntaxRenameFields.native_nullaryIff truth w R S r s a b c d n q
+
+example {m} (universal : Bool) (w R S a b c d n q x X u v l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxRenameFields.quantifiedAtLiftSentence universal w R S a b c d n q x X u v l)) := ObjectSyntaxRenameFields.native_quantifiedAtLift universal w R S a b c d n q x X u v l
+
+example {m} (w r s a b c d x y X Y : Fin m) : SyntaxRenameKnownFieldsSyntax.equalOperands w r s a b c d x y X Y =
+    (SyntaxRenameTermSyntax.renamed w r s a b c d x X).conj
+      (SyntaxRenameTermSyntax.renamed w r s a b c d y Y) := rfl
+
+example {m} (w r s a b c d z Z x y X Y : Fin m) : SyntaxRenameKnownFieldsSyntax.memberOperands w r s a b c d z Z x y X Y =
+    (SyntaxAtomSyntax.zeroScalar w z).conj ((Formula.equal z Z).conj
+      (SyntaxRenameKnownFieldsSyntax.equalOperands w r s a b c d x y X Y)) := rfl
+
 end PPAC.Migration.Step4Checks

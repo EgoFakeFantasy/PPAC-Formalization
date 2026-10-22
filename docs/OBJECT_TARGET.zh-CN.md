@@ -486,3 +486,12 @@ Earlier合取守卫与原Below蕴含式守卫已用原规则显式转换，不�
 40个新增Source/sourceZF核/nativeZF核闭句模式已通过五个trust=0入口和精确公理足迹审计；见STEP4_RENAME_TOTAL_OUTPUT_ACCEPTANCE.zh-CN.md。
 精确单构造律、映射恒等/复合、捕获规避Subst、专用ProofZF/U、全内部编译/解释及最终内部Con尚未完成。
 背景B、原规则/全模式和全部内部ω证明码上的Con定义保持不变；输出总性不能替代最终Con蕴含。
+
+
+2026-10-22精确构造接口进度：原11构造的正式RenameFormula端点双条件已取得原核证书。
+候选两端字段均由原同码单射对齐；成员式保留ZeroScalar及源/目标符号相等。
+规范子判断恢复源FormulaCode和Input，最终端点律无需额外Input、Earlier、载体或历史前提。
+逻辑律消去解码图见证；任意实际CodedLift下，两种量词精确等价于正确提升作用域内的体判断，free码/范围保持。
+26类新增Source/sourceZF核/nativeZF核闭句均通过五个trust=0入口与精确足迹审计；见STEP4_RENAME_EXACT_FIELDS_ACCEPTANCE.zh-CN.md。
+前批全内部实际唯一输出和成员归纳继续有效；映射恒等/复合、捕获规避Subst、ProofZF/U及最终内部Con尚未完成。
+背景B、原规则/全模式及全部内部ω证明码上的Con定义保持不变，不以精确构造接口代替最终对象主句。
