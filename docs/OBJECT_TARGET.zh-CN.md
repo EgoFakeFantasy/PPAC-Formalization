@@ -516,3 +516,13 @@ CodedCompose 内部量化三幅实际图，保留 a,c,e 三个明确范围及全
 28 类新增 Source/sourceZF核/nativeZF核闭句已通过完整脚本、五个 trust=0 与精确足迹审计；见 STEP4_COMPOSITION_MAP_TERM_ACCEPTANCE.zh-CN.md。
 真实 binder 提升与复合相容、公式复合、完整 FormulaRename、捕获规避 Subst、ProofZF/U、内部编译/解释及最终 Con 仍未完成。
 背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 定义不变。
+
+
+2026-10-22 提升复合进度：真实 binder 提升与实际完整图、原自然码的复合相容，均取得任意候选的识别双条件。
+零/后继点实际构造中间后继；原完整同域函数图相等取得完整 Composed 及全内部边双条件。
+给定原 CodedCompose 和两个输入提升，任意输出候选 Lk 满足 CodedLift(K,Lk) ↔ CodedCompose(Lr,Lt,Lk)，原作用域全部显式保留。
+独立中间后继 C,D 由原 Insert 唯一性证明相等，原等词替换对齐第二提升的源范围；不从列表码推断独立目标范围。
+17 类新增 Source/sourceZF核/nativeZF核闭句已通过完整脚本、五个 trust=0 与精确足迹审计；见 STEP4_BINDER_COMPOSITION_ACCEPTANCE.zh-CN.md。
+下一步全内部公式复合的 Property 必须内部量化六个映射码、六个作用域以及 q,v，原 Foundation/Separation 关闭成员归纳。
+公式复合、原核加强规则兼容、完整 FormulaRename、捕获规避 Subst、ProofZF/U、内部编译/解释和最终 Con 仍未完成。
+背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 规格不变。

@@ -121,3 +121,4 @@ import PPAC.Migration.Internal.ObjectSyntaxRenameTotal
 import PPAC.Migration.Internal.ObjectSyntaxRenameFields
 import PPAC.Migration.Internal.ObjectSyntaxRenameIdentity
 import PPAC.Migration.Internal.ObjectSyntaxCompose
+import PPAC.Migration.Internal.ObjectSyntaxComposeLift

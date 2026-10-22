@@ -3682,4 +3682,57 @@ example {m} (r t i j : Fin m) : SyntaxComposeSyntax.value r t i j = Source.Formu
 example {m} (w a c e R T K : Fin m) : SyntaxComposeCodeSyntax.coded w a c e R T K =
     Source.Formula.ex (.ex (.ex (SyntaxComposeCodeSyntax.body w a c e R T K))) := rfl
 
+
+-- Actual binder lifting commutes with complete graph/code composition on all internal candidates.
+example {m} (w r t a c e A C E ρ τ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.zeroSentence w r t a c e A C E ρ τ i j)) := ObjectSyntaxComposeLift.native_zero w r t a c e A C E ρ τ i j
+
+example {m} (w r t a c e g A C E ρ τ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.shiftedSentence w r t a c e g A C E ρ τ i j)) := ObjectSyntaxComposeLift.native_shifted w r t a c e g A C E ρ τ i j
+
+example {m} (w r t a c e g A C E ρ τ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.valueForwardSentence w r t a c e g A C E ρ τ i j)) := ObjectSyntaxComposeLift.native_valueForward w r t a c e g A C E ρ τ i j
+
+example {m} (w r t a c e g A C E ρ τ γ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.edgeForwardSentence w r t a c e g A C E ρ τ γ i j)) := ObjectSyntaxComposeLift.native_edgeForward w r t a c e g A C E ρ τ γ i j
+
+example {m} (f g d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.includedAgreementSentence f g d)) := ObjectSyntaxComposeLift.native_includedAgreement f g d
+
+example {m} (w r t a c e g A C E ρ τ γ k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.includedSentence w r t a c e g A C E ρ τ γ k)) := ObjectSyntaxComposeLift.native_included w r t a c e g A C E ρ τ γ k
+
+example {m} (w r t a c e g A C E ρ τ γ k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.equalGraphsSentence w r t a c e g A C E ρ τ γ k)) := ObjectSyntaxComposeLift.native_equalGraphs w r t a c e g A C E ρ τ γ k
+
+example {m} (w r t a c e g A C E ρ τ γ : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.graphCompositionSentence w r t a c e g A C E ρ τ γ)) := ObjectSyntaxComposeLift.native_graphComposition w r t a c e g A C E ρ τ γ
+
+example {m} (w r t a c e g A C E ρ τ γ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.graphEdgesSentence w r t a c e g A C E ρ τ γ i j)) := ObjectSyntaxComposeLift.native_graphEdges w r t a c e g A C E ρ τ γ i j
+
+example {m} (w r t a c e g A C E ρ τ γ i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.graphValuesSentence w r t a c e g A C E ρ τ γ i j)) := ObjectSyntaxComposeLift.native_graphValues w r t a c e g A C E ρ τ γ i j
+
+example {m} (w r t a c e g A C E ρ τ γ : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.liftedIffComposedSentence w r t a c e g A C E ρ τ γ)) := ObjectSyntaxComposeLift.native_liftedIffComposed w r t a c e g A C E ρ τ γ
+
+example {m} (w r t g a c e R T K A C E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.atSourcesSentence w r t g a c e R T K A C E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_atSources w r t g a c e R T K A C E Lr Lt Lk
+
+example {m} (w a c e R T K A C E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.codedCompositionSentence w a c e R T K A C E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_codedComposition w a c e R T K A C E Lr Lt Lk
+
+example {m} (w a c e R T K A C E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.codedIffSentence w a c e R T K A C E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_codedIff w a c e R T K A C E Lr Lt Lk
+
+example {m} (w a c e R T A C D E Lr Lt : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.middleEqualSentence w a c e R T A C D E Lr Lt)) := ObjectSyntaxComposeLift.native_middleEqual w a c e R T A C D E Lr Lt
+
+example {m} (w a c e R T K A C D E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.mixedMiddleSentence w a c e R T K A C D E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_mixedMiddle w a c e R T K A C D E Lr Lt Lk
+
+example {m} (w a c e R T K A C D E Lr Lt Lk : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxComposeLift.mixedIffSentence w a c e R T K A C D E Lr Lt Lk)) := ObjectSyntaxComposeLift.native_mixedIff w a c e R T K A C D E Lr Lt Lk
+
 end PPAC.Migration.Step4Checks
