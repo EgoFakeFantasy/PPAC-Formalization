@@ -536,3 +536,12 @@ CodedCompose 内部量化三幅实际图，保留 a,c,e 三个明确范围及全
 原核free_strengthening是删除未用fresh free头槽；下一步用b→Succ(b)的实际free位移图/码刻画其weakenFree前提链接，含空free上下文。
 恒等与复合联合门禁已完成；原核加强规则兼容、完整FormulaRename总门禁、捕获规避Subst、ProofZF/U、内部编译/解释及最终Con仍未完成。
 背景B、原六规则/27模式、完整Separation/Collection及全部内部ω证明码上的Con规格不变。
+
+
+2026-10-22 原free头槽位移进度：实际完整图i↦Succ(i)和原自然列表码已在原ZF对象核中构造。
+全部内部候选的边双条件、实际图码唯一纤维、任意实际解码识别和合法输入双条件均已证明。
+给定Ω及b∈ω实际取得后继B及唯一位移码，不残留后继存在前提；fresh零槽无入边且空源域实际图为空。
+Ω及Empty也直接给空上下文的实际后继/唯一码状态，未加非空上下文限制。
+23类Source/sourceZF核/nativeZF核闭句通过完整脚本、五个trust=0及精确足迹审计；见STEP4_FREE_SHIFT_ACCEPTANCE.zh-CN.md。
+F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成，完整FormulaRename总门禁继续False。
+捕获规避Subst、ProofZF/U、内部编译/解释及最终Con仍未完成；背景B、原六规则/27模式、全Separation/Collection和全内部ω量化不变。

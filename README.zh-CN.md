@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：全11构造的公式复合、14内部参数归纳关闭及实际中间公式码双条件已完成。
-原Foundation/Separation关闭内部成员归纳，最终无Earlier前提；全部作用域、非单射图和内部非标准码保持。
-恒等与复合联合门禁已通过；此前实际图/码、项复合和真实binder提升相容继续有效。
-新增35类原核闭句；813构建任务、9172声明审计、0警告，782份源码哈希独立复核一致。
-详见[实际验收](docs/STEP4_FORMULA_COMPOSITION_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是原核free_strengthening的free头槽位移兼容；完整Rename总门禁、替换、ProofZF/U和最终内部Con仍未完成。
+当前进展：原free头槽的实际上行位移图/自然码已构造，全部边精确为i∈b且j是i的内部后继。
+实际图码存在唯一、任意解码识别及合法输入双条件已证明；fresh零槽无入边，空上下文实际图为空且码仍存在。
+此前全11构造公式复合、14内部参数归纳、实际中间码双条件和恒等/复合联合验收保持。
+新增23类原核闭句；818构建任务、9316声明审计、0警告，787份源码哈希独立复核一致。
+详见[实际验收](docs/STEP4_FREE_SHIFT_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是全公式WeakenFree及原free_strengthening兼容；完整Rename总门禁、替换、ProofZF/U和最终内部Con仍未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

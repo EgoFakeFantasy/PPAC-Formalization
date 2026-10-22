@@ -3842,4 +3842,73 @@ example {m} (w R S T U K L a b c d e f n v : Fin m) : FirstOrder.Derives nativeZ
 example {m} (w R S T U K L a b c d e f n v : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxFormulaCompose.composeIffSentence w R S T U K L a b c d e f n v)) := ObjectSyntaxFormulaCompose.native_composeIff w R S T U K L a b c d e f n v
 
+example {m} (b : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.graphExistsSentence b)) := ObjectSyntaxFreeShift.native_graphExists b
+
+example {m} (b r i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.graphEdgesSentence b r i j)) := ObjectSyntaxFreeShift.native_graphEdges b r i j
+
+example {m} (b r s : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.graphUniqueSentence b r s)) := ObjectSyntaxFreeShift.native_graphUnique b r s
+
+example {m} (w b B : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.mapExistsSentence w b B)) := ObjectSyntaxFreeShift.native_mapExists w b B
+
+example {m} (w b B : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.mapFiberSentence w b B)) := ObjectSyntaxFreeShift.native_mapFiber w b B
+
+example {m} (w b B r s : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.mapUniqueSentence w b B r s)) := ObjectSyntaxFreeShift.native_mapUnique w b B r s
+
+example {m} (w b B r i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.mapEdgesSentence w b B r i j)) := ObjectSyntaxFreeShift.native_mapEdges w b B r i j
+
+example {m} (w b B : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeExistsSentence w b B)) := ObjectSyntaxFreeShift.native_codeExists w b B
+
+example {m} (w b B S : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeMapSentence w b B S)) := ObjectSyntaxFreeShift.native_codeMap w b B S
+
+example {m} (w b B S : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeNaturalSentence w b B S)) := ObjectSyntaxFreeShift.native_codeNatural w b B S
+
+example {m} (w b B S : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeInputSentence w b B S)) := ObjectSyntaxFreeShift.native_codeInput w b B S
+
+example {m} (w b B S r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeAtGraphSentence w b B S r)) := ObjectSyntaxFreeShift.native_codeAtGraph w b B S r
+
+example {m} (w b B S r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeEncodedIffSentence w b B S r)) := ObjectSyntaxFreeShift.native_codeEncodedIff w b B S r
+
+example {m} (w b B S T : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeUniqueSentence w b B S T)) := ObjectSyntaxFreeShift.native_codeUnique w b B S T
+
+example {m} (w b B : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeFiberSentence w b B)) := ObjectSyntaxFreeShift.native_codeFiber w b B
+
+example {m} (w b B : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codeInputIffSentence w b B)) := ObjectSyntaxFreeShift.native_codeInputIff w b B
+
+example {m} (w b : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.actualStateSentence w b)) := ObjectSyntaxFreeShift.native_actualState w b
+
+example {m} (w z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.zeroStateSentence w z)) := ObjectSyntaxFreeShift.native_zeroState w z
+
+example {m} (w b B S r i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.codedEdgesSentence w b B S r i j)) := ObjectSyntaxFreeShift.native_codedEdges w b B S r i j
+
+example {m} (w b B r i z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.freshAbsentSentence w b B r i z)) := ObjectSyntaxFreeShift.native_freshAbsent w b B r i z
+
+example {m} (w b B r i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.emptySourceSentence w b B r i j)) := ObjectSyntaxFreeShift.native_emptySource w b B r i j
+
+example {m} (w b B r : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.emptyGraphSentence w b B r)) := ObjectSyntaxFreeShift.native_emptyGraph w b B r
+
+example {m} (w b B C S T : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxFreeShift.rangeUniqueSentence w b B C S T)) := ObjectSyntaxFreeShift.native_rangeUnique w b B C S T
+
 end PPAC.Migration.Step4Checks
