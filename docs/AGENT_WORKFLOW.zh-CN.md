@@ -949,3 +949,31 @@ RenameTerm实际绑定源/目标索引并检查原bvar/fvar码、输入范围和
 LiftBound的0/后继索引约定已核对固定依赖原Logic/Syntax.lean中VariableRenaming.lift。
 外部Source的末变量绑定翻译不能改变原native头槽绑定约定。
 内部非标准自然数及所有完整图仍在上述量化范围内；外部Bool只索引两个固定模式。
+
+
+2026-10-22实际量词映射提升批次：
+L1、L2、L3已验收。任意参数功能关系在任意内部域集合上实际存在唯一完整Kuratowski图，
+保留无杂项、完整functionOn、全内部边双条件和给定目标范围。
+具体Value提升矩阵已关闭总性、单值性及目标范围，原Replacement实际给出唯一完整提升图。
+图边在所有内部候选上恰为零→零或旧边的同步后继；原0和实际后继点有精确双条件。
+只给原IndexMap及Ω，也实际联合取得两个后继上下文和唯一提升图。
+新bound固定、旧bound同步后继及free原图保持均有实际RenameTerm推导。
+新增15模块236项显式声明、35个完整Source/sourceZF/nativeZF闭句模式；
+实际验收见STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md。
+完整FormulaRename、捕获规避替换、ProofZF/U和最终Con仍未完成。
+
+后续公式递归建议将实际有限图再编码成原自然列表码，使递归状态留在内部集合ω内。
+这只是后续工程路线；以下单元均未完成，不能把合同或AST列为通过。
+
+| 下一单元 | 输入及建议实现 | 必须验收的对象证据 |
+|---|---|---|
+| F1a MapCode | 原IndexMap(w,r,a,c)、已有任意序列原列表编解码；MapCode(k,a,c)实际绑定编码图r | 将r的c值域传入ω，实际唯一编码到原自然列表码k；反向恢复完整r及原域/范围；任何内部码候选的精确解码，不限制外部标准映射 |
+| F1b 自然状态元组 | 两个MapCode、源bound/free、目标bound/free、目标公式码，共7个内部自然输入；源码作为recursor索引 | 原Forest(7)实际存在唯一及反向逐字段恢复；所有状态码属于ω。不得只把宿主7元组当作对象状态 |
+| F1c rename状态算子 | 原11源/目标构造、F1b实际元组和严格子码历史；量词中原LiftBound及重新编码的bound图 | 原Separation实际构造唯一状态子集；全边历史读取精确，原0符号和项重命名保持；量词实际后继及free保持，无未证算子总性/单值性前提 |
+| F1d 实际recursor | 状态为内部ω子集，原PowerSet及已证全内部序数递归 | 实际所有内部输入上的唯一recursor/值与前缀方程，输出属于真实状态载体 |
+| F1e 完整FormulaRename | F1a至F1d、原Code严格子码有效性、完整类型识别和原构造实际唯一纤维 | 每个合法内部输入和完整非单射映射实际唯一输出；源/目标作用域、全部11类精确式、量词提升；对象成员归纳关闭全部假设 |
+| F2 公式映射代数 | 原实际恒等/复合完整图及全部上下文 | 原核恒等、复合、free_strengthening兼容，保留全内部量化 |
+| S及后续 | 原捕获规避替换、六规则/27模式、全Separation/Collection、内部编译器与解释 | 完整ProofZF/U检查器和任意内部证明码正确性，最终原核Con_ZF→Con_target |
+
+F1路线可随实际证据调整，但不得用宿主递归、只对标准码成立的定理或类大小状态替代对象递归。
+实际提升图门禁现True；完整FormulaRename、捕获规避替换和最终Con门禁保持False。

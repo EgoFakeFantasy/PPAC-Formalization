@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：内部纯项在任意完整bound/free索引映射下，已证明实际唯一重命名输出及源/目标作用域保持。
-已知原变量码还满足精确图边双条件；给定实际对角图时原码不变。此前完整类型识别关卡保持已完成。
-新增31个完整原核闭句模式；全仓674任务、6998声明审计、0警告，643份源码哈希独立复核一致。
-详见[内部项重命名验收](docs/STEP4_INTERNAL_TERM_RENAME_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是量词下实际映射提升，再完成全11类FormulaRename与捕获规避替换。
-最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整公式重命名、内部替换及Proof/Con尚未完成。
+当前进展：量词下实际绑定映射提升已完成，原核联合构造两个后继作用域和唯一完整提升图。
+全部内部边、零/后继精确式及新旧bound/free的实际项兼容性均已证明；任意参数功能关系的完整图构造也已完成。
+新增35个完整原核闭句模式；全仓689任务、7234声明审计、0警告，658份源码哈希独立复核一致。
+详见[实际量词提升验收](docs/STEP4_INTERNAL_INDEX_LIFT_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是完整FormulaRename对象递归，先编码实际有限映射图和自然状态元组。
+最终仍是对象Derives nativeZF [] (Con_ZF→Con_target)；完整公式重命名、捕获规避替换及Proof/Con尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

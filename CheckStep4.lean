@@ -2600,4 +2600,156 @@ example {m} (w r s a b c d n q i j : Fin m) : FirstOrder.Derives nativeZF []
     (Translation.sentence (ObjectSyntaxRenameTerm.knownTermSentence false w r s a b c d n q i j)) :=
   ObjectSyntaxRenameTerm.native_knownTerm false w r s a b c d n q i j
 
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d x y z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.relationUniqueSentence P ρ d x y z)) :=
+  ObjectSyntaxIndexLift.native_relationUnique P ρ d x y z
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pairTotalSentence P ρ d)) :=
+  ObjectSyntaxIndexLift.native_pairTotal P ρ d
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pairGraphSentence P ρ d)) :=
+  ObjectSyntaxIndexLift.native_pairGraph P ρ d
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d g x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pairEdgeSentence P ρ d g x y)) :=
+  ObjectSyntaxIndexLift.native_pairEdge P ρ d g x y
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pairCompleteSentence P ρ d g)) :=
+  ObjectSyntaxIndexLift.native_pairComplete P ρ d g
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.graphExistsSentence P ρ d)) :=
+  ObjectSyntaxIndexLift.native_graphExists P ρ d
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.graphFiberSentence P ρ d)) :=
+  ObjectSyntaxIndexLift.native_graphFiber P ρ d
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d g h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.graphUniqueSentence P ρ d g h)) :=
+  ObjectSyntaxIndexLift.native_graphUnique P ρ d g h
+
+example {n m} (P : Source.Formula (n+2)) (ρ : Fin n → Fin m) (d c g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.graphSequenceSentence P ρ d c g)) :=
+  ObjectSyntaxIndexLift.native_graphSequence P ρ d c g
+
+example {m} (w a u z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.zeroMemberSentence w a u z)) :=
+  ObjectSyntaxIndexLift.native_zeroMember w a u z
+
+example {m} (w a b u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.successorMemberSentence w a b u v)) :=
+  ObjectSyntaxIndexLift.native_successorMember w a b u v
+
+example {m} (w a u i k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.predecessorMemberSentence w a u i k)) :=
+  ObjectSyntaxIndexLift.native_predecessorMember w a u i k
+
+example {m} (w i k l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.successorInjectiveSentence w i k l)) :=
+  ObjectSyntaxIndexLift.native_successorInjective w i k l
+
+example {m} (r a x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.zeroOutputSentence r a x y)) :=
+  ObjectSyntaxIndexLift.native_zeroOutput r a x y
+
+example {m} (w r a x y k : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.successorOutputSentence w r a x y k)) :=
+  ObjectSyntaxIndexLift.native_successorOutput w r a x y k
+
+example {m} (w r a u x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.sourceMemberSentence w r a u x y)) :=
+  ObjectSyntaxIndexLift.native_sourceMember w r a u x y
+
+example {m} (w r a c v x y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.targetMemberSentence w r a c v x y)) :=
+  ObjectSyntaxIndexLift.native_targetMember w r a c v x y
+
+example {m} (w r a c x y z : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.valueUniqueSentence w r a c x y z)) :=
+  ObjectSyntaxIndexLift.native_valueUnique w r a c x y z
+
+example {m} (ρ : Fin 2 → Fin m) (w c u x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pointExistsSentence ρ w c u x)) :=
+  ObjectSyntaxIndexLift.native_pointExists ρ w c u x
+
+example {m} (ρ : Fin 2 → Fin m) (w c u x : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.pointFiberSentence ρ w c u x)) :=
+  ObjectSyntaxIndexLift.native_pointFiber ρ w c u x
+
+example {m} (ρ : Fin 2 → Fin m) (w c u : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftTotalSentence ρ w c u)) :=
+  ObjectSyntaxIndexLift.native_liftTotal ρ w c u
+
+example {m} (ρ : Fin 2 → Fin m) (w c u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftOutputsSentence ρ w c u v)) :=
+  ObjectSyntaxIndexLift.native_liftOutputs ρ w c u v
+
+example {m} (w r a c u v g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.targetMapSentence w r a c u v g)) :=
+  ObjectSyntaxIndexLift.native_targetMap w r a c u v g
+
+example {m} (w r a c u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftExistsSentence w r a c u v)) :=
+  ObjectSyntaxIndexLift.native_liftExists w r a c u v
+
+example {m} (w r a c u v : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftFiberSentence w r a c u v)) :=
+  ObjectSyntaxIndexLift.native_liftFiber w r a c u v
+
+example {m} (w r a c u v g h : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftUniqueSentence w r a c u v g h)) :=
+  ObjectSyntaxIndexLift.native_liftUnique w r a c u v g h
+
+example {m} (w r a c u v g i j : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftEdgeSentence w r a c u v g i j)) :=
+  ObjectSyntaxIndexLift.native_liftEdge w r a c u v g i j
+
+example {m} (w r a c u v g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftAllSentence w r a c u v g)) :=
+  ObjectSyntaxIndexLift.native_liftAll w r a c u v g
+
+example {m} (w r a c u v g z y : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftZeroSentence w r a c u v g z y)) :=
+  ObjectSyntaxIndexLift.native_liftZero w r a c u v g z y
+
+example {m} (w r a c u v g i j k l : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftSuccessorSentence w r a c u v g i j k l)) :=
+  ObjectSyntaxIndexLift.native_liftSuccessor w r a c u v g i j k l
+
+example {m} (w r s a b c d u v g : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.mapsLiftedSentence w r s a b c d u v g)) :=
+  ObjectSyntaxIndexLift.native_mapsLifted w r s a b c d u v g
+
+example {m} (w r s a b c d u v g z n : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.newBoundFixedSentence w r s a b c d u v g z n)) :=
+  ObjectSyntaxIndexLift.native_newBoundFixed w r s a b c d u v g z n
+
+example {m} (w r s a b c d u v g i j k l n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.oldBoundShiftedSentence w r s a b c d u v g i j k l n q)) :=
+  ObjectSyntaxIndexLift.native_oldBoundShifted w r s a b c d u v g i j k l n q
+
+example {m} (w r s a b c d u v g i j n q : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.freePreservedSentence w r s a b c d u v g i j n q)) :=
+  ObjectSyntaxIndexLift.native_freePreserved w r s a b c d u v g i j n q
+
+example {m} (w r a c : Fin m) : FirstOrder.Derives nativeZF []
+    (Translation.sentence (ObjectSyntaxIndexLift.liftSystemSentence w r a c)) :=
+  ObjectSyntaxIndexLift.native_liftSystem w r a c
+
+example {m} (w r a c u v g : Fin m) : SyntaxIndexLiftSyntax.lifted w r a c u v g =
+    (SyntaxIndexMapSyntax.indexMap w r a c).conj ((OmegaSyntax.successor u a).conj
+      ((OmegaSyntax.successor v c).conj ((SyntaxIndexMapSyntax.indexMap w g u v).conj
+        (RelationGraphSyntax.edgeLaw SyntaxIndexLiftSyntax.matrix (Source.SetLanguage.args2 r a) u g)))) := rfl
+
+example {m} (r a i j : Fin m) : SyntaxIndexLiftSyntax.value r a i j =
+    ((OmegaSyntax.empty i).conj (OmegaSyntax.empty j)).disj (SyntaxIndexLiftSyntax.shifted r a i j) := rfl
+
+example {m} (w r a c : Fin m) : ObjectSyntaxIndexLift.liftSystemSentence w r a c =
+    ((OmegaSyntax.omega w).imp ((SyntaxIndexMapSyntax.indexMap w r a c).imp
+      (SyntaxIndexLiftSystem.system w r a c))).close := rfl
+
 end PPAC.Migration.Step4Checks
