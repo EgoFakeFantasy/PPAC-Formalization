@@ -454,3 +454,14 @@ RenameFormula 使用内部自然码守卫及实际 Evaluation/Contains 的对象
 见 STEP4_RENAME_JUDGMENT_RECURSION_ACCEPTANCE.zh-CN.md。
 这不证明合法输入上的实际唯一公式输出；其全内部成员归纳和单构造精确律仍待 F1e.3/F1e.4。
 完整重命名、替换、专用 ProofZF/U、内部编译/解释和最终 Con 主句仍未完成。
+
+
+2026-10-22实际输出合同及空原子进度：Property(w,n) 现为六个内部全称参数 R,S,a,b,c,d 下 Input→实际唯一输出 Fiber。
+Earlier 量化全部内部 x∈ω 且 x∈n；不改成外部标准码归纳。
+给定实际 CodedLift 的两个后继和输出码唯一，AdvancedRename 精确对齐其提升后的子判断，free参数保持。
+给定原子标签0–3可筛选全部11分支。假/真两个空原子实际自重命名并唯一；原核已经证明它们的完整六参数 Property。
+这不是任意公式码的 Property 定理；membership/equality 实际输出和七类逻辑推进、归纳关闭尚未完成。
+本批17个完整 sourceZF/nativeZF 闭句模式均已通过五个 trust=0 入口和精确公理足迹检查。
+详见 STEP4_RENAME_OUTPUT_NULLARY_ACCEPTANCE.zh-CN.md。
+背景 B、原六规则/27模式、完整 Separation/Collection、全部内部ω码上的 Con 定义及最终原核目标保持不变。
+专用 ProofZF/U、全内部码编译正确性和最终内部 Con 蕴含仍未实现。

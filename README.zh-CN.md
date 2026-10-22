@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：F1e.1/F1e.2 已验收。纯对象 RenameFormula 实际绑定集合值与七字段状态成员，
-原完整前段查询与判断精确等价；全11类消去历史后，所有内部候选都有完整递归双条件。
-两端类型保持、八参数内部统一定律及实际 ω/载体/完整递归族联合存在均有原核证明。
-新增 21 个闭句模式；732 构建任务、7944 声明审计、0 警告，701 份源码哈希独立复核一致。
-详见[判断与递归验收](docs/STEP4_RENAME_JUDGMENT_RECURSION_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项 F1e.3 是全部合法输入的实际唯一目标公式码，需量化全部内部映射码/作用域作对象成员归纳。
+当前进展：F1e.3a 及两个空原子模式已验收。实际输出纤维和六参数内部归纳合同已固定；
+真实 CodedLift 的两个后继及输出码唯一，量词子判断可对齐到该实际提升。
+完整11类矩阵在原标签0–3下筛回对应原子；假/真两个空原子已有实际唯一输出和全内部参数 Property。
+新增17个闭句模式；742构建任务、8067声明审计、0警告，711份源码哈希独立复核一致。
+详见[实际验收](docs/STEP4_RENAME_OUTPUT_NULLARY_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是 membership/equality 的实际唯一输出，再完成七类逻辑步骤并关闭全内部成员归纳。
 完整重命名、替换、ProofZF/U 及最终 Derives nativeZF [] (Con_ZF→Con_target) 尚未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 

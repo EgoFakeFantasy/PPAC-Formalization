@@ -111,3 +111,5 @@ import PPAC.Migration.Internal.ObjectSyntaxMapCodeState
 import PPAC.Migration.Internal.ObjectSyntaxRenameOperator
 
 import PPAC.Migration.Internal.ObjectSyntaxRenameRecursive
+
+import PPAC.Migration.Internal.ObjectSyntaxRenameOutput
