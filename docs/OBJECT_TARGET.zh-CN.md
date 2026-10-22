@@ -545,3 +545,11 @@ CodedCompose 内部量化三幅实际图，保留 a,c,e 三个明确范围及全
 23类Source/sourceZF核/nativeZF核闭句通过完整脚本、五个trust=0及精确足迹审计；见STEP4_FREE_SHIFT_ACCEPTANCE.zh-CN.md。
 F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成，完整FormulaRename总门禁继续False。
 捕获规避Subst、ProofZF/U、内部编译/解释及最终Con仍未完成；背景B、原六规则/27模式、全Separation/Collection和全内部ω量化不变。
+
+
+2026-10-22全内部公式弱化进度：WeakenFree内部存在量化bound恒等码和free位移码，
+从所有合法FormulaCode实际取得唯一输出；存在/唯一纤维与FormulaCode及实际后继输入精确等价。
+全11构造的已知端点双条件和真实binder提升已证明，逻辑律不再要求调用方提供映射码见证。
+30个新增Source/sourceZF核/nativeZF核对象闭句已完整验收，见STEP4_FORMULA_WEAKENING_ACCEPTANCE.zh-CN.md。
+原weakenFree编码对应、原六规则检查器中的全内部free_strengthening兼容、捕获规避替换、ProofZF/U、
+全内部编译/解释及最终Con仍未完成；没有据此改变固定背景、原六规则/27模式或全部内部ω量化范围。

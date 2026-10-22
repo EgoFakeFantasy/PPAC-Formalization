@@ -124,3 +124,4 @@ import PPAC.Migration.Internal.ObjectSyntaxCompose
 import PPAC.Migration.Internal.ObjectSyntaxComposeLift
 import PPAC.Migration.Internal.ObjectSyntaxFormulaCompose
 import PPAC.Migration.Internal.ObjectSyntaxFreeShift
+import PPAC.Migration.Internal.ObjectSyntaxWeakenFree

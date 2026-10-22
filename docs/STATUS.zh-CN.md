@@ -1,22 +1,21 @@
 # 当前交付状态
-2026-10-22；分支 migration/yesmeta-step3；本批基点 59bdf2f7761e2cebae68940b4890ec4387326411。
+2026-10-22；分支 migration/yesmeta-step3；本批基点 ee298e2ebefca9c25f3f703a1ad19e555e15af0a。
 
-F2.4a已验收：原free头槽上行位移b→Succ(b)的实际完整图与原自然列表码已经构造。
-全内部边精确为i∈b且j=Succ(i)的关系式；图/码实际存在唯一、任意解码识别和合法输入双条件均有原核证书。
-从Ω及b∈ω实际取得目标后继和唯一位移码纤维；fresh零头槽无入边，空源域的实际图为空且实际码仍存在。
-原free_strengthening的方向和原weakenFree定义已经逐字核对；完整公式Weakening及该规则兼容尚未实现。
-此前全11构造公式复合、14内部参数归纳关闭、实际中间码双条件、恒等与真实binder复合继续有效。
+F2.4b.1–b.2已验收：纯WeakenFree在全部内部合法公式码上有实际唯一输出，
+存在/唯一纤维均与精确输入互为双条件；从源公式码实际取得后继free域和输出。
+全11构造的已知端点规律、bound恒等/free后继项规律和真实binder提升均有对象证明。
+逻辑构造律另可在对象量词内取得并消去全部映射码见证。
+30个Source/sourceZF核/nativeZF核闭句完成实际传输；原weakenFree编码对应及内部加强规则兼容仍待完成。
 
-新增5模块、144项显式声明、23个Source/sourceZF核/nativeZF核闭句模式。
-实际验收退出0：818构建任务、9316项审计、0警告；九命令退出0，五个trust=0入口通过。
-294项无公理依赖、9022项允许依赖；787份源码哈希独立回读差异0。
-Internal累计7001项显式声明全覆盖；累计918对核心/native精确足迹通过。
-七份锁未变；YesMetaZFC固定039c8e132cc19671d73a3933c66b4799d2599dd6，依赖工作区干净。
+最终全仓验收退出0：828构建任务、9500项审计、0警告；九命令和五trust=0入口全部退出0。
+10个新模块、184项新声明；累计7185项Internal显式声明全覆盖。
+294项无公理依赖、9206项允许依赖；797份源哈希独立回读差异0。
+累计948对核心/native精确足迹通过；七份锁未变，固定YesMetaZFC依赖工作区干净。
 
-见[实际free位移验收](STEP4_FREE_SHIFT_ACCEPTANCE.zh-CN.md)及[全公式复合验收](STEP4_FORMULA_COMPOSITION_ACCEPTANCE.zh-CN.md)。
-原六规则/27模式、19源规则、九类ZF和choice额外证书限域保持；未推送。
-原OpenAI完整构建/Comparator未运行；日志和生成辅助留在忽略目录。
+见[全内部公式弱化验收](STEP4_FORMULA_WEAKENING_ACCEPTANCE.zh-CN.md)。
+原六规则/27模式、19源规则、完整ZF和choice额外证书限域保持；未推送。
+原OpenAI完整构建/Comparator未运行；日志和生成辅助仅留忽略目录。
 
-下一步F2.4b：用bound恒等码与上述free位移码定义纯WeakenFree，证明实际唯一输出及全11构造定律，接入原加强规则。
-位移细分门禁已True；原free_strengthening兼容、完整FormulaRename总门禁、捕获规避替换、ProofZF/U、内部编译与解释仍未完成。
-最终仍要求原FirstOrder.Derives nativeZF [] (Formula.imp Con_ZF Con_target)，内部Con规格遍历全部内部ω证明码。
+下一步：原weakenFree准确编码对应；保留原项码列表格式的内部替换和跨bound/free实例化；
+专用ProofZF/U及全内部编译/解释，最终仍要求原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。
+内部Con规格量化所有内部ω证明码；专用检查器及最终Con仍未完成。
