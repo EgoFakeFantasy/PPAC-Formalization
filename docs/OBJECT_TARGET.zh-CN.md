@@ -506,3 +506,13 @@ IdCode(w,a,R) 明确把源/目标范围都定为 a，并要求实际 Encoded 图
 16 类新增 Source/sourceZF核/nativeZF核闭句已通过完整脚本、五个 trust=0 及精确足迹审计；见 STEP4_RENAME_IDENTITY_ACCEPTANCE.zh-CN.md。
 恒等已完成；复合、完整 FormulaRename、捕获规避 Subst、ProofZF/U、全内部编译/解释和最终内部 Con 仍未完成。
 背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 定义保持不变。
+
+
+2026-10-22 复合进度：原 Replacement 已实际构造两幅完整索引图的唯一复合图，全部内部边有精确存在中间值双条件。
+CodedCompose 内部量化三幅实际图，保留 a,c,e 三个明确范围及全部原 Encoded 条件；任意实际解码恢复同一 Composed。
+在 Ω 下，可复合两个 MapCode 实际取得唯一输出码，实际存在与精确输入判据互为双条件。
+给定 bound/free 两组实际 Composed，TermRename 复合精确等价于存在内部中间项码的两阶段关系；六个作用域保持。
+允许非单射、空域和内部非标准码；没有宿主选择的中间图、值或项码。
+28 类新增 Source/sourceZF核/nativeZF核闭句已通过完整脚本、五个 trust=0 与精确足迹审计；见 STEP4_COMPOSITION_MAP_TERM_ACCEPTANCE.zh-CN.md。
+真实 binder 提升与复合相容、公式复合、完整 FormulaRename、捕获规避 Subst、ProofZF/U、内部编译/解释及最终 Con 仍未完成。
+背景 B、原六规则/27 模式、完整 Separation/Collection 及全部内部 ω 证明码上的 Con 定义不变。

@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前进展：实际恒等图/自然映射码、binder 提升恒等及全内部公式恒等已完成。
-在 Ω 与两个 IdCode 下，RenameFormula(n,q) 精确等价于 FormulaCode(n) ∧ n=q。
-原 Foundation/Separation 关闭四内部参数归纳，最终无 Earlier 前提；此前全输入实际唯一输出和 11 构造精确律保持。
-新增 16 类原核闭句；783 构建任务、8693 声明审计、0 警告，752 份源码哈希独立复核一致。
-详见[实际验收](docs/STEP4_RENAME_IDENTITY_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
-下一项是实际非单射图/码复合、项及量词提升复合兼容和公式复合；替换、ProofZF/U 和最终内部 Con 仍未完成。
+当前进展：实际完整图及原自然码的唯一复合、项重命名的精确两阶段复合已完成。
+复合边保留实际中间值和三个明确范围；项关系保留六个 bound/free 范围，中间项码由对象存在量词取得。
+此前实际恒等码、提升恒等、全内部公式恒等、全输入实际唯一输出和 11 构造精确律保持。
+新增 28 类原核闭句；794 构建任务、8864 声明审计、0 警告，763 份源码哈希独立复核一致。
+详见[实际验收](docs/STEP4_COMPOSITION_MAP_TERM_ACCEPTANCE.zh-CN.md)及[当前状态](docs/STATUS.zh-CN.md)。
+下一项是实际 binder 提升与图/码复合相容，随后关闭公式复合归纳；替换、ProofZF/U 和最终内部 Con 仍未完成。
 以下分批更新保留历史验收范围，最新状态见上链和工程流程表。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
