@@ -1,4 +1,17 @@
 # 当前交付状态
+2026-10-23；分支migration/yesmeta-step3；本批基点f7ab445f6f2a3f82deff839761e3cb4f71b31155。
+
+S3.4c.2b.2c.3b已验收：原自由替换列表L同码转换、实际bound恒等／free位移环境特化，以及自由替换／头槽弱化和独立固定公式程序的全内部双向对应。
+两个特化执行都有精确合法域、实际唯一有类型输出、全候选唯一性和五类拒绝性质；弱化从合法源码实际取得新后继上下文长度及输出纤维。39组新闭句返回原FirstOrder.Derives nativeZF []。
+1201构建任务、13511项声明审计、零警告；九命令及五trust=0入口退出0。11模块232声明；11167项Internal全覆盖、1099份工作区独立哈希一致、1471对精确证书足迹。七锁与固定底座不变、依赖干净。
+见[自由变量程序特化验收](STEP4_FREE_VARIABLE_PROGRAMS_ACCEPTANCE.zh-CN.md)。
+
+下一步3c处理原SyntaxTransform.lookup／boundValue／freeValue及完整公式的模式0／3严格Option数值接口，再闭合原规则5／4检查兼容。当前已完成的执行／规格双条件不能替代该接口。
+专用ProofZF/U、全内部ω证明检查／编译、完整内部解释和最终Con尚未完成。最终背景仍为原nativeZF完整Collection，目标ZF+PP+ACwo+¬AC；Con保留全部内部ω证明码、六规则／27模式及全Separation/Collection。
+
+以下为历史批次记录，各自数字仅对应当时基点。
+
+# 当前交付状态
 2026-10-23；分支migration/yesmeta-step3；本批基点68ced6d43553c501dfa75e5da7cba42cef2eb078。
 
 S3.4c.2b.2c.3a已验收：原索引列表到变量项像列表的实际唯一转换、项／原子对应、双环境量词提升交换、任意内部源码上的九参数对象成员归纳及公式正反向桥。

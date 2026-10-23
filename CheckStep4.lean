@@ -5970,4 +5970,160 @@ example {m} (w I J R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derive
     (Translation.sentence (Internal.ObjectIndexFormulaRename.formulaProgramIffSentence w I J R S a b c d n q)) :=
   Internal.ObjectIndexFormulaRename.native_formulaProgramIff w I J R S a b c d n q
 
+example {m} (w r f a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeImageGraphSentence w r f a c d)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeImageGraph w r f a c d
+
+example {m} (w a c d L J : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeSameListCodeSentence w a c d L J)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeSameListCode w a c d L J
+
+example {m} (w a c d L J T : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeSameListCodeUniqueSentence w a c d L J T)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeSameListCodeUnique w a c d L J T
+
+example {m} (w b c I : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.boundIdentityImageExistsSentence w b c I)) :=
+  Internal.ObjectFreeVariablePrograms.native_boundIdentityImageExists w b c I
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeForwardSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeForward w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeReverseSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeReverse w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeExecutionIffSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeExecutionIff w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeInputOfExecutionSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeInputOfExecution w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeSourceTypeSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeSourceType w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeTargetTypeSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeTargetType w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeOutputNaturalSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeOutputNatural w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeUniqueOutputSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeUniqueOutput w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeAtCandidateSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeAtCandidate w b a c L n q
+
+example {m} (w b a c L n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeUniqueSentence w b a c L n q v)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeUnique w b a c L n q v
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeActualFiberSentence w b a c L n)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeActualFiber w b a c L n
+
+example {m} (w b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeFiberIffInputSentence w b a c L n)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeFiberIffInput w b a c L n
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeRejectEnvironmentSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeRejectEnvironment w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeRejectSourceSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeRejectSource w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeRejectInputSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeRejectInput w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeRejectTargetSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeRejectTarget w b a c L n q
+
+example {m} (w b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.freeRejectOutputNaturalSentence w b a c L n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_freeRejectOutputNatural w b a c L n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakForwardSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakForward w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakReverseSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakReverse w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakExecutionIffSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakExecutionIff w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakInputOfExecutionSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakInputOfExecution w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakSourceTypeSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakSourceType w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakTargetTypeSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakTargetType w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakOutputNaturalSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakOutputNatural w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakUniqueOutputSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakUniqueOutput w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakAtCandidateSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakAtCandidate w a b B n q
+
+example {m} (w a b B n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakUniqueSentence w a b B n q v)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakUnique w a b B n q v
+
+example {m} (w a b B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakActualFiberSentence w a b B n)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakActualFiber w a b B n
+
+example {m} (w a b B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakFiberIffInputSentence w a b B n)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakFiberIffInput w a b B n
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakRejectEnvironmentSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakRejectEnvironment w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakRejectSourceSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakRejectSource w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakRejectInputSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakRejectInput w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakRejectTargetSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakRejectTarget w a b B n q
+
+example {m} (w a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakRejectOutputNaturalSentence w a b B n q)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakRejectOutputNatural w a b B n q
+
+example {m} (w a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakActualSuccessorStateSentence w a b n)) :=
+  Internal.ObjectFreeVariablePrograms.native_weakActualSuccessorState w a b n
+
 end PPAC.Migration.Step4Checks
