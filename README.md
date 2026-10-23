@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: all assignments for each original rule arity are object existential witnesses. Natural guards follow from the original search bound; exact successor-membership bounds and an actual successor search are proved. On tag-zero rows, the whole original table dispatches exactly to its two lookup rules, with all other original branches object-refuted. Thirteen closed families return original nativeZF certificates. Acceptance: 1301 build jobs, 14208 audited declarations, zero warnings; nine commands and five trust=0 entry points exiting zero; 1165 independent hashes and 1541 exact certificate pairs. Arbitrary internal traces, the full original numeric interface and final Con remain unproved. See [acceptance](docs/STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: relational compilation uses the actual upstream ObjectHorn.Expr/Rule ASTs. Object ZF proves actual unique values for every internal natural assignment, exact structural correspondence and bounds for all occurring variables. The actual lookupHead/lookupTail heads, premise and relational local matrices match original field rows. Seventeen closed families return original nativeZF certificates. Acceptance: 1289 build jobs, 14084 audited declarations, zero warnings; nine commands and five trust=0 entry points exiting zero; 1153 independently matching hashes and 1528 exact certificate pairs. Full quantified rule applications, original trace/numeric interface, modes0/3, rule checks and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_HORN_LOOKUP_ACCEPTANCE.zh-CN.md).
 
 The following entries retain earlier acceptance records.

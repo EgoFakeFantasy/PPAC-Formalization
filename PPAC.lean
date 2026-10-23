@@ -151,3 +151,5 @@ import PPAC.Migration.Internal.ObjectStrictLookup
 import PPAC.Migration.Internal.ObjectLookupTableProgram
 
 import PPAC.Migration.Internal.ObjectOriginalLookupRules
+
+import PPAC.Migration.Internal.ObjectBoundedLookupDispatch

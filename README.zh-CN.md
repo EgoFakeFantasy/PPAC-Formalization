@@ -1,6 +1,10 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
+最新对象进展：原规则全部赋值已由内部存在量词取得；原S(row)搜索界及自然守卫推导、实际后继搜索、完整原表在tag0行上的精确查找分派已证明。13组闭句回放原nativeZF；1301构建任务、14208项审计（368无公理／13840允许依赖）、零警告；九命令及五trust=0入口全部退出0；1165份工作区独立哈希一致、1541对精确证书足迹、11864项Internal显式声明覆盖。任意内部轨迹、原数字接口和最终Con仍未完成。见[验收](docs/STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收。
+
 最新对象进展：直接使用上游原Horn.Expr／Rule，已证明全部内部自然赋值的实际唯一求值、原结构对应及出现变量界；原lookupHead／lookupTail的头、前提与关系式局部矩阵已接到原字段行。17组闭句回放原nativeZF；1289构建任务、14084项审计（366无公理／13718允许依赖）、零警告；九命令及五trust=0入口全部退出0；1153份工作区独立哈希一致、1528对精确证书足迹、11740项Internal显式声明覆盖。原完整轨迹／数字接口及最终Con仍未完成。见[验收](docs/STEP4_ORIGINAL_HORN_LOOKUP_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

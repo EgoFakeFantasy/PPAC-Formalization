@@ -6354,4 +6354,56 @@ example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrde
     (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupTailAssignmentBoundSentence env w row)) :=
   Internal.ObjectOriginalLookupRules.native_originalLookupTailAssignmentBound env w row
 
+example {m} {n} (env : Fin n → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.naturalAssignmentFromSearchBoundSentence env w row)) :=
+  Internal.ObjectBoundedLookupDispatch.native_naturalAssignmentFromSearchBound env w row
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (env : Fin rule.arity → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.boundedRuleApplicationSentence rule env w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_boundedRuleApplication rule env w row trace
+
+example {m} (env : Fin 2 → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalLookupHeadApplicationSentence env w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalLookupHeadApplication env w row trace
+
+example {m} (env : Fin 4 → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalLookupTailApplicationSentence env w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalLookupTailApplication env w row trace
+
+example {m} {n} (env : Fin n → Fin m) (row s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.searchBoundMembershipIffSentence env row s)) :=
+  Internal.ObjectBoundedLookupDispatch.native_searchBoundMembershipIff env row s
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (env : Fin rule.arity → Fin m) (w row trace s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalBoundedMatrixIffSentence rule env w row trace s)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalBoundedMatrixIff rule env w row trace s
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (w row trace s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalQuantifiedApplicationIffSentence rule w row trace s)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalQuantifiedApplicationIff rule w row trace s
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w row trace s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.wholeRuleTableBoundedSearchIffSentence rules w row trace s)) :=
+  Internal.ObjectBoundedLookupDispatch.native_wholeRuleTableBoundedSearchIff rules w row trace s
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.wholeRuleTableActualSearchIffSentence rules w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_wholeRuleTableActualSearchIff rules w row trace
+
+example {m} {k} (xs : Fin k → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalOtherRulesRejectedSentence xs w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalOtherRulesRejected xs w row trace
+
+example {m} {k} (xs : Fin k → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalWholeTableLookupDispatchIffSentence xs w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalWholeTableLookupDispatchIff xs w row trace
+
+example {m} {k} (xs : Fin k → Fin m) (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalActualSearchLookupDispatchIffSentence xs w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalActualSearchLookupDispatchIff xs w row trace
+
+example {m} (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalLookupIntoWholeTableSentence w row trace)) :=
+  Internal.ObjectBoundedLookupDispatch.native_originalLookupIntoWholeTable w row trace
+
 end PPAC.Migration.Step4Checks
