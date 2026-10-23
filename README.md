@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+3f.2c.3b.2c.1已验收：kind4两个常量及等式规则已完成实际局部健全性和完整查询构造；常量原应用与nullary对象双向对应，等式从两个真实项前提恢复类型，反向实际构造子行／父行和公共闭轨迹并消去见证。7模块76声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1549构建任务、16765项审计（390无公理／16375允许依赖）、零警告；九命令及五trust=0入口全部退出0；1411份独立哈希一致、1896对精确证书足迹、14421项Internal显式声明覆盖。完整公式查询双条件、其余八种构造及全公式归纳尚未完成；原数值quotation、最终检查器、ProofZF/U、内部解释和Con仍未完成。见[验收](docs/STEP4_PURE_FORMULA_CONSTANT_EQUALITY_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2b.2已验收：专用纯十五规则的参数查询已对全部内部绑定界／自由界／长度／输入候选与TermList对象等价；全参数集合归纳消去IH，最终接口只有Ω前提。空绑定界实际查询与自由变量像列表双向对应，并接入原mode3全公式运行。9模块83声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1542构建任务、16689项审计（389无公理／16300允许依赖）、零警告；九命令及五trust=0入口全部退出0；1404份独立哈希一致、1886对精确证书足迹、14345项Internal显式声明覆盖。kind4公式查询桥、原数值quotation对应、最终检查器适用性、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_PURE_ARGUMENT_QUERY_INDUCTION_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

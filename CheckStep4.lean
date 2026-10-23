@@ -7856,4 +7856,57 @@ example {m} (w a z c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
       ((PureSyntaxTrace.arguments w z c a L).iff (SyntaxFreeSubstSyntax.termList w a c L)))).close)) :=
   ObjectPureSyntaxArgumentChecker.native_pureEmptyBoundArgumentsQueryIff w a z c L
 
+example {m} (truth : Bool) (w n e0 e1 : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.constantInputExpressionIffSentence truth w n e0 e1)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_constantInputExpressionIff truth w n e0 e1
+
+example {m} (truth : Bool) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.constantApplicationIffNullarySentence truth w b f n r R)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_constantApplicationIffNullary truth w b f n r R
+
+example {m} (truth : Bool) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.constantApplicationSoundSentence truth w b f n r R)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_constantApplicationSound truth w b f n r R
+
+example {m} (truth : Bool) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.constantQueryConstructedSentence truth w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_constantQueryConstructed truth w b f n
+
+example {m} (truth : Bool) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.typedConstantQueryConstructedSentence truth w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_typedConstantQueryConstructed truth w b f n
+
+example {m} (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.equalityInputExpressionIffSentence w b f x y n)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_equalityInputExpressionIff w b f x y n
+
+example {m} (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.equalityApplicationSoundSentence w b f n r R)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_equalityApplicationSound w b f n r R
+
+example {m} (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.equalityQueryConstructedSentence w b f x y n)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_equalityQueryConstructed w b f x y n
+
+example {m} (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.typedEqualityQueryConstructedSentence w b f x y n)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_typedEqualityQueryConstructed w b f x y n
+
+example {m} (w b f x y n r p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaAtoms.equalityActualChildTracesMergedSentence w b f x y n r p q)) :=
+  Internal.ObjectPureSyntaxFormulaAtoms.native_equalityActualChildTracesMerged w b f x y n r p q
+-- 展开原常量应用与nullary的局部双条件，不能误读为完整公式查询等价。
+example {m} (truth : Bool) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((PureSyntaxTrace.formulaRow w b f n r).imp
+      ((HornApplicationSyntax.application (YesMetaZFC.Automation.ObjectFormulaSyntax.constantRule (SyntaxAtomSyntax.nullaryTag truth)) w r R).iff
+        (SyntaxAtomSyntax.nullary truth w b f n)))).close)) :=
+  ObjectPureSyntaxFormulaAtoms.native_constantApplicationIffNullary truth w b f n r R
+
+-- 展开等式完整查询构造；两个合法项及实际等式码，全部行和轨迹见证消去。
+example {m} (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxTermSyntax.term w b f x).imp
+      ((SyntaxTermSyntax.term w b f y).imp ((SyntaxAtomSyntax.equalCode w x y n).imp
+        (PureSyntaxTrace.formula w b f n))))).close)) :=
+  ObjectPureSyntaxFormulaAtoms.native_equalityQueryConstructed w b f x y n
+
 end PPAC.Migration.Step4Checks
