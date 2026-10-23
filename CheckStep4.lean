@@ -6934,4 +6934,36 @@ example {m} (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOr
     (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.consAllCandidateRowMatrixIffSentence env w n q r)) :=
   Internal.ObjectOriginalArgumentMatrix.native_consAllCandidateRowMatrixIff env w n q r
 
+example {m} (kind : Nat) (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalRunInputNaturalSentence kind w mode depth parameter input output)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalRunInputNatural kind w mode depth parameter input output
+
+example {m} (kind : Nat) (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalRunOutputNaturalSentence kind w mode depth parameter input output)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalRunOutputNatural kind w mode depth parameter input output
+
+example {m} (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.actualOriginalArgumentRootSentence w mode depth parameter input output)) :=
+  Internal.ObjectOriginalArgumentRun.native_actualOriginalArgumentRoot w mode depth parameter input output
+
+example {m} (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalArgumentOutcomesNaturalSentence w mode depth parameter input output)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalArgumentOutcomesNatural w mode depth parameter input output
+
+example {m} (three : Bool) (w mode depth parameter input output r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalNilApplicationExactIffSentence three w mode depth parameter input output r V)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalNilApplicationExactIff three w mode depth parameter input output r V
+
+example {m} (w mode depth parameter input output r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalConsApplicationExactIffSentence w mode depth parameter input output r V)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalConsApplicationExactIff w mode depth parameter input output r V
+
+example {m} (three : Bool) (w mode depth parameter input output r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalArgumentTraceCasesExactIffSentence three w mode depth parameter input output r)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalArgumentTraceCasesExactIff three w mode depth parameter input output r
+
+example {m} (three : Bool) (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalArgumentWholeRunCasesExactIffSentence three w mode depth parameter input output)) :=
+  Internal.ObjectOriginalArgumentRun.native_originalArgumentWholeRunCasesExactIff three w mode depth parameter input output
+
 end PPAC.Migration.Step4Checks

@@ -7,6 +7,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 
 当前执行表（2026-10-24；下方保留既往单元记录）：
 
+原规则表关系式mode0／3参数列表的整体nil／cons运行方程已取得对象证明：原arity=3／7赋值块、共享轨迹前提和预给根行均已消去；在Omega、Num0／3及深度／参数自然守卫下，对任意内部输入／输出恰好等价于Nil／Nil或四个内部Cons组件和两个真实子运行。10模块66声明、8组新闭句回放原nativeZF。1386构建任务、15195项审计（378无公理／14817允许依赖）、零警告；九命令及五trust=0入口全部退出0；1250份工作区独立哈希一致、1681对精确证书足迹、12851项Internal显式声明覆盖。有类型列表的完整变换对应、实际输出总性／唯一性及全内部列表归纳尚未完成；全十一公式、扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con仍未完成。下一单元为有类型列表的内部归纳、完整对应及实际输出纤维。见[验收](STEP4_ARGUMENT_WHOLE_RUN_EQUATION_ACCEPTANCE.zh-CN.md)。
+
+上一批记录：
+
 原nil／cons的真实head、两个子前提与五字段数值行已经双向对应；Num0／Num3实际消去原nil的mode<4守卫。在真实候选行及原自然赋值下，完整局部矩阵精确刻画任意输入／输出候选的Nil／Cons结构和实际子轨迹，不预给候选结构合法性。7模块73声明、11组新闭句回放原nativeZF。1376构建任务、15129项审计（378无公理／14751允许依赖）、零警告；九命令及五trust=0入口全部退出0；1240份工作区独立哈希一致、1673对精确证书足迹、12785项Internal显式声明覆盖。原arity赋值块消去、去预给行码的整体运行方程和全内部列表归纳尚未完成；全十一公式、扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con仍未完成。下一单元消去arity赋值／预给行码，取得整体运行方程，再做内部列表归纳。见[验收](STEP4_ARGUMENT_NUMERIC_MATRIX_ACCEPTANCE.zh-CN.md)。
 
 上一批记录：
@@ -40,7 +44,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3c.2c.1 | 原kind1纯签名项的内部作用域、恒等／位移列表字段 | 全内部候选checked轨迹↔项程序↔数值替换；四组原nativeZF闭句 | 已完成，见[验收](STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2c.2a | 原表共享轨迹集合、kind2分派、原nil／cons子轨迹组合 | 实际分离集合与闭合、原一步展开、实际子轨迹引入及11组原核闭句 | 已完成，见[验收](STEP4_UNIVERSAL_ARGUMENT_TRACE_COMPOSITION_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2c.2b.1 | 原nil／cons实际数值矩阵、Num0／3 guard、候选行 | 完整局部双条件与任意候选结构恢复；11组原核闭句 | 已完成，见[验收](STEP4_ARGUMENT_NUMERIC_MATRIX_ACCEPTANCE.zh-CN.md) |
-| S3.4c.2b.2c.3c.2c.2b.2 | 原arity赋值块、模式／深度／参数对齐、根行存在 | 全内部整体nil／cons运行方程；再接列表归纳与项桥 | 下一步，未完成 |
+| S3.4c.2b.2c.3c.2c.2b.2 | 原arity=3／7、三元数据对齐、真实根行 | 全部内部候选的整体nil／cons运行方程，8组原核闭句 | 已完成，见[验收](STEP4_ARGUMENT_WHOLE_RUN_EQUATION_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c.2b.3 | 原有类型列表及原项程序桥 | 对象内部列表归纳、完整变换对应和实际输出总性／唯一性 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c.2b | 原nil／cons数值矩阵／精确输出、原列表码 | 全内部列表归纳与项桥；再接kind3全十一公式 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c.2 | 原kind2参数列表nil／cons及kind3十一公式 | 原实际列表与项桥的内部归纳、全公式／量词深度后继 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |

@@ -114,13 +114,13 @@ def main() -> None:
     # Inspect execution definitions, not the separate correctness/witness proofs.
     # The canonical Separation witness may use the proved program specification;
     # the independent trace condition and success graph cannot use that oracle.
-    lookup_trace_execution_defs = {'HornLookupRowSyntax': ['row', 'existsRow'], 'HornLookupSoundSyntax': ['closed'], 'HornLookupConditionSyntax': ['witness', 'condition'], 'HornLookupSearchCondition': ['closed', 'witness', 'condition'], 'HornLookupSomeSyntax': ['returned', 'hasOutput', 'noOutput'], 'HornLookupPowerCondition': ['atPower', 'condition'], 'FreeReplaceResultSyntax': ['root', 'existsRoot', 'run', 'returned', 'guard', 'hasOutput', 'noOutput'], 'FreeWeakenValueSyntax': ['shifted', 'hasShifted'], 'FreeWeakenResultSyntax': ['root', 'existsRoot', 'run', 'returned', 'guard', 'hasOutput', 'noOutput'], 'OriginalTermTraceSyntax': ['root', 'existsRoot', 'run', 'metadata', 'inputGuard', 'checked'], 'HornUniversalTraceRules': ['tracedPremise', 'tracedPremises', 'tracedMatrix'], 'OriginalTransformRowSyntax': ['row', 'run']}
+    lookup_trace_execution_defs = {'HornLookupRowSyntax': ['row', 'existsRow'], 'HornLookupSoundSyntax': ['closed'], 'HornLookupConditionSyntax': ['witness', 'condition'], 'HornLookupSearchCondition': ['closed', 'witness', 'condition'], 'HornLookupSomeSyntax': ['returned', 'hasOutput', 'noOutput'], 'HornLookupPowerCondition': ['atPower', 'condition'], 'FreeReplaceResultSyntax': ['root', 'existsRoot', 'run', 'returned', 'guard', 'hasOutput', 'noOutput'], 'FreeWeakenValueSyntax': ['shifted', 'hasShifted'], 'FreeWeakenResultSyntax': ['root', 'existsRoot', 'run', 'returned', 'guard', 'hasOutput', 'noOutput'], 'OriginalTermTraceSyntax': ['root', 'existsRoot', 'run', 'metadata', 'inputGuard', 'checked'], 'HornUniversalTraceRules': ['tracedPremise', 'tracedPremises', 'tracedMatrix'], 'OriginalTransformRowSyntax': ['row', 'run'], 'OriginalArgumentCaseSyntax': ['nilData', 'consData', 'consBody', 'consCase', 'outcomes']}
     for module, declarations in lookup_trace_execution_defs.items():
         body = strip_comments((ROOT / "PPAC/Migration/Internal" / (module + ".lean")).read_text(encoding="utf-8-sig"))
         for declaration in declarations:
             found = re.search(r"(?ms)^def " + re.escape(declaration) + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", body)
             term_oracle = re.compile(r"OriginalScalarValues\.valueSpec|TermTransformProgramSyntax\.|SyntaxCodedMixedTermSyntax\.|SyntaxTransform\.(?:boundValue|freeValue)")
-            if found is None or horn_oracle.search(found.group(0)) or (module in ("OriginalTermTraceSyntax", "HornUniversalTraceRules", "OriginalTransformRowSyntax") and term_oracle.search(found.group(0))):
+            if found is None or horn_oracle.search(found.group(0)) or (module in ("OriginalTermTraceSyntax", "HornUniversalTraceRules", "OriginalTransformRowSyntax", "OriginalArgumentCaseSyntax") and term_oracle.search(found.group(0))):
                 raise RuntimeError(f"Legacy/host oracle in lookup trace definition: {module}.{declaration}")
     run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
     run([sys.executable, "scripts/check_source_theory.py"], "source-theory.log")
@@ -1983,7 +1983,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalArgumentMatrix.native_consFullTracedMatrixNumericIff',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentMatrix.native_consOriginalMatrixNumericIff',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentMatrix.native_nilAllCandidateRowMatrixIff',
-                    'PPAC.Migration.Internal.ObjectOriginalArgumentMatrix.native_consAllCandidateRowMatrixIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentMatrix.native_consAllCandidateRowMatrixIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalRunInputNatural',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalRunOutputNatural',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_actualOriginalArgumentRoot',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalArgumentOutcomesNatural',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalNilApplicationExactIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalConsApplicationExactIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalArgumentTraceCasesExactIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentRun.native_originalArgumentWholeRunCasesExactIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2080,6 +2088,7 @@ def main() -> None:
         "ObjectOriginalTermProgram": ('replace_checked_iff', 'replace_coded_iff', 'weaken_checked_iff', 'weaken_coded_iff'),
         "ObjectOriginalArgumentsTrace": ('actualUniversalOriginalTrace', 'universalOriginalTraceMembershipIff', 'everyClosedOriginalTraceIncluded', 'universalOriginalTraceClosed', 'originalFullTraceOneStepIff', 'originalWholeTableRuleFromTraces', 'originalArgumentFullTableDispatchIff', 'originalArgumentTraceSelectedIff', 'originalNilArgumentsTrace', 'originalConsArgumentsTrace', 'originalConsArgumentActualChildTraces'),
         "ObjectOriginalArgumentMatrix": ('nilModeZeroThreeGuard', 'allCandidateEmptyExprNilIff', 'nilActualHeadNumericIff', 'consActualHeadNumericIff', 'headActualChildTraceNumericIff', 'tailActualChildTraceNumericIff', 'nilFullTracedMatrixNumericIff', 'consFullTracedMatrixNumericIff', 'consOriginalMatrixNumericIff', 'nilAllCandidateRowMatrixIff', 'consAllCandidateRowMatrixIff'),
+        "ObjectOriginalArgumentRun": ('originalRunInputNatural', 'originalRunOutputNatural', 'actualOriginalArgumentRoot', 'originalArgumentOutcomesNatural', 'originalNilApplicationExactIff', 'originalConsApplicationExactIff', 'originalArgumentTraceCasesExactIff', 'originalArgumentWholeRunCasesExactIff'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2580,6 +2589,11 @@ def main() -> None:
         "object_original_freeWeaken_has_output_iff_guard_no_output_iff_invalid_guard_proved": True,
         "object_original_freeWeaken_parameter_depth_input_output_rejection_and_unique_proved": True,
         "object_original_mode_0_3_all_four_variable_relational_trace_values_proved": True,
+        "object_original_nil_cons_arity_assignments_eliminated_proved": True,
+        "object_original_argument_trace_cases_without_shared_trace_premise_proved": True,
+        "object_original_argument_all_internal_whole_run_nil_cons_equation_proved": True,
+        "object_original_argument_root_rows_eliminated_from_whole_run_equation_proved": True,
+        "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": False,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,
         "object_original_nil_cons_full_local_matrices_numeric_iff_proved": True,
@@ -2715,6 +2729,7 @@ def main() -> None:
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",
+        "original_argument_whole_run_equation_scope": "Original nil/cons arity=3/7 object assignment blocks are eliminated in both directions. Exact original metadata equalities align all three parameters; four cons components are internally existentially quantified, and their naturality follows from actual child runs. Original whole-table relational Trace at any original kind2 row is exactly Nil/Nil or the cons case, without a shared-trace premise. Actual root construction eliminates the given row and preassumed input/output naturality: under Omega, Num0/3 and natural depth/parameter, Run2 is equivalent to those outcomes for every internal input/output. This is an exact recursive equation, not yet all-internal typed-list transformation correctness/totality/uniqueness, original extended-language quotation equivalence, full formulas, rules/Proof checker or Con.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }
