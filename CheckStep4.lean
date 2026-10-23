@@ -7090,4 +7090,44 @@ example {m} (w mode depth parameter a b B I J R S n k : Fin m) : YesMetaZFC.Logi
     (Translation.sentence (Internal.ObjectOriginalArgumentFiber.weakenAllInternalOriginalListFiberSentence w mode depth parameter a b B I J R S n k)) :=
   Internal.ObjectOriginalArgumentFiber.native_weakenAllInternalOriginalListFiber w mode depth parameter a b B I J R S n k
 
+example {m} (w mode depth parameter k c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.allCandidateOriginalListValueSentence w mode depth parameter k c d n q)) :=
+  Internal.ObjectOriginalArgumentFields.native_allCandidateOriginalListValue w mode depth parameter k c d n q
+
+example {m} (three : Bool) (w mode depth parameter a b n k q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.originalAllInternalArgumentFieldsSentence three w mode depth parameter a b n k q)) :=
+  Internal.ObjectOriginalArgumentFields.native_originalAllInternalArgumentFields three w mode depth parameter a b n k q
+
+example {m} (three : Bool) (w mode depth parameter a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.originalAllInternalFieldCodePropertiesSentence three w mode depth parameter a b)) :=
+  Internal.ObjectOriginalArgumentFields.native_originalAllInternalFieldCodeProperties three w mode depth parameter a b
+
+example {m} (w mode depth parameter a b c d k n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.allInternalFieldImageOutputUniqueSentence w mode depth parameter a b c d k n q r)) :=
+  Internal.ObjectOriginalArgumentFields.native_allInternalFieldImageOutputUnique w mode depth parameter a b c d k n q r
+
+example {m} (three : Bool) (w mode depth parameter a b c d n k q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.originalRunAllFieldImageIffSentence three w mode depth parameter a b c d n k q)) :=
+  Internal.ObjectOriginalArgumentFields.native_originalRunAllFieldImageIff three w mode depth parameter a b c d n k q
+
+example {m} (w mode depth a b c L I R n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.replaceAllInternalProgramFieldsIffSentence w mode depth a b c L I R n q k)) :=
+  Internal.ObjectOriginalArgumentFields.native_replaceAllInternalProgramFieldsIff w mode depth a b c L I R n q k
+
+example {m} (w mode depth a b c L I R n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.replaceWholeOriginalArgumentProgramIffSentence w mode depth a b c L I R n q k)) :=
+  Internal.ObjectOriginalArgumentFields.native_replaceWholeOriginalArgumentProgramIff w mode depth a b c L I R n q k
+
+example {m} (w mode depth parameter a b B I J R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.weakenAllInternalProgramFieldsIffSentence w mode depth parameter a b B I J R S n q k)) :=
+  Internal.ObjectOriginalArgumentFields.native_weakenAllInternalProgramFieldsIff w mode depth parameter a b B I J R S n q k
+
+example {m} (w mode depth parameter a b B I J R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.weakenWholeOriginalArgumentProgramIffSentence w mode depth parameter a b B I J R S n q k)) :=
+  Internal.ObjectOriginalArgumentFields.native_weakenWholeOriginalArgumentProgramIff w mode depth parameter a b B I J R S n q k
+
+example {m} (w mode depth parameter ell k h t H T n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFields.originalConsAllInternalFieldsSentence w mode depth parameter ell k h t H T n q)) :=
+  Internal.ObjectOriginalArgumentFields.native_originalConsAllInternalFields w mode depth parameter ell k h t H T n q
+
 end PPAC.Migration.Step4Checks

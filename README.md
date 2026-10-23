@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: numeric mode0/3 original argument runs are equivalent to independently specified all-index term-program field images. Under actual environments and a typed source list, the equivalence covers every internal output candidate, with exact target length/type and all internal indices. Forward field correctness closes original Separation/Foundation induction; the reverse uses actual field witnesses, term uniqueness and original list-code injectivity. Eleven modules, 80 declarations and ten new closed families replay to original nativeZF. Acceptance: 1416 jobs, 15495 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1280 hashes and 1722 exact certificate pairs. Full eleven-formula recursion, binder environments, quotation, the complete numeric Option interface, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_ARGUMENT_FIELD_CORRESPONDENCE_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: original Separation/Foundation close internal code-member induction for numeric mode0/3 argument lists. Every internally typed source list has an actual original Run2 output of the exact same internal length and target type, unique against every internal candidate. Earlier premises are eliminated, and both specialized modes discharge head promises using actual environments. Nine modules, 79 declarations and ten new closed families replay to original nativeZF. Acceptance: 1405 jobs, 15415 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1269 hashes and 1712 exact certificate pairs. Full all-internal field correspondence with the independent transform, eleven-formula recursion, quotation, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_ARGUMENT_LIST_FIBER_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:

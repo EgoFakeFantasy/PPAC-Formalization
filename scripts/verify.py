@@ -122,6 +122,14 @@ def main() -> None:
             term_oracle = re.compile(r"OriginalScalarValues\.valueSpec|TermTransformProgramSyntax\.|SyntaxCodedMixedTermSyntax\.|SyntaxTransform\.(?:boundValue|freeValue)")
             if found is None or horn_oracle.search(found.group(0)) or (module in ("OriginalTermTraceSyntax", "HornUniversalTraceRules", "OriginalTransformRowSyntax", "OriginalArgumentCaseSyntax") and term_oracle.search(found.group(0))):
                 raise RuntimeError(f"Legacy/host oracle in lookup trace definition: {module}.{declaration}")
+    # The independent all-index field-image specification may call the term program,
+    # but cannot define its answer using the original list run or its proofs.
+    argument_field_image_oracle = re.compile(r"OriginalTransformRowSyntax\.|OriginalArgument(?:Field|Value|Program|Full|Candidate|Mode)\w*\.|HornLookupConditionSyntax\.|SyntaxTransform\.|SyntaxCodedMixedTermSyntax\.")
+    argument_field_body = strip_comments((ROOT / "PPAC/Migration/Internal/ArgumentProgramFieldSyntax.lean").read_text(encoding="utf-8-sig"))
+    for declaration in ("fields", "mapped"):
+        found = re.search(r"(?ms)^def " + declaration + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", argument_field_body)
+        if not found or argument_field_image_oracle.search(found.group(0)):
+            raise RuntimeError(f"Original run/legacy oracle in independent argument field image: {declaration}")
     run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
     run([sys.executable, "scripts/check_source_theory.py"], "source-theory.log")
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
@@ -2022,7 +2030,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalAllInternalTypedListFiber',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalAllInternalListCodeProperties',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_replaceAllInternalOriginalListFiber',
-                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_weakenAllInternalOriginalListFiber'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_weakenAllInternalOriginalListFiber',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_allCandidateOriginalListValue',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_originalAllInternalArgumentFields',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_originalAllInternalFieldCodeProperties',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_allInternalFieldImageOutputUnique',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_originalRunAllFieldImageIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_replaceAllInternalProgramFieldsIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_replaceWholeOriginalArgumentProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_weakenAllInternalProgramFieldsIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_weakenWholeOriginalArgumentProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFields.native_originalConsAllInternalFields'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2123,6 +2141,7 @@ def main() -> None:
         "ObjectTypedArgumentList": ('numericTermModeRunIff', 'numericReplaceOnTypedTerm', 'numericWeakenOnTypedTerm', 'typedNilListIntroduction', 'typedConsListIntroduction', 'typedConsActualPredecessor', 'typedConsHead', 'typedConsTail', 'typedNilListIff', 'typedConsListIff', 'typedWholeListCasesIff'),
         "ObjectOriginalNumericTermFiber": ('replaceWholeTermAgreement', 'replaceActualOriginalTermFiber', 'replaceAllInternalTermPromise', 'weakenWholeTermAgreement', 'weakenActualOriginalTermFiber', 'weakenAllInternalTermPromise', 'originalTermValueTransfer', 'originalTermFiberTransfer', 'originalTermValueTargetType', 'originalTermAllCandidateUnique'),
         "ObjectOriginalArgumentFiber": ('originalRunInputSubstitution', 'originalRunOutputSubstitution', 'originalListValueTargetType', 'originalListAllCandidateUnique', 'originalNilListActualValue', 'originalConsListActualValue', 'originalAllInternalTypedListFiber', 'originalAllInternalListCodeProperties', 'replaceAllInternalOriginalListFiber', 'weakenAllInternalOriginalListFiber'),
+        "ObjectOriginalArgumentFields": ('allCandidateOriginalListValue', 'originalAllInternalArgumentFields', 'originalAllInternalFieldCodeProperties', 'allInternalFieldImageOutputUnique', 'originalRunAllFieldImageIff', 'replaceAllInternalProgramFieldsIff', 'replaceWholeOriginalArgumentProgramIff', 'weakenAllInternalProgramFieldsIff', 'weakenWholeOriginalArgumentProgramIff', 'originalConsAllInternalFields'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2638,7 +2657,11 @@ def main() -> None:
         "object_original_argument_all_internal_typed_list_actual_unique_outputs_proved": True,
         "object_original_argument_actual_output_target_list_exact_length_proved": True,
         "object_original_argument_mode_zero_three_term_promises_discharged_proved": True,
-        "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": False,
+        "object_original_argument_all_internal_index_field_soundness_proved": True,
+        "object_original_argument_all_internal_program_field_image_both_directions_proved": True,
+        "object_original_argument_field_image_reverse_by_actual_code_injectivity_proved": True,
+        "independent_argument_program_field_image_definitions_checked": True,
+        "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": True,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,
         "object_original_nil_cons_full_local_matrices_numeric_iff_proved": True,
@@ -2647,7 +2670,7 @@ def main() -> None:
         "object_original_whole_table_child_trace_composition_proved": True,
         "object_original_kind2_argument_full_table_dispatch_proved": True,
         "object_original_nil_cons_argument_trace_introduction_proved": True,
-        "object_original_argument_trace_all_internal_list_recursion_proved": False,
+        "object_original_argument_trace_all_internal_list_recursion_proved": True,
         "object_original_mode_0_3_pure_signature_typed_term_trace_program_bridge_proved": True,
         "object_original_mode_0_3_checked_term_trace_coded_substitution_iff_proved": True,
         "object_original_identity_shift_converted_term_list_fields_proved": True,

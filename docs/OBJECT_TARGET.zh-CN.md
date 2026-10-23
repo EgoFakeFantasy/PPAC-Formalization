@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原mode0／3参数列表与独立项程序字段像的完整双条件已取得对象证明：在实际环境和有类型源列表守卫下，对任意内部输出候选，原Run₂恰好等价于同长度目标列表类型及全部内部索引的独立项程序字段像。正向字段性质由原Separation／Foundation关闭成员归纳；反向用实际字段见证、项唯一性及原列表码字段单射性取得运行。11模块80声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1416构建任务、15495项审计（378无公理／15117允许依赖）、零警告；九命令及五trust=0入口全部退出0；1280份工作区独立哈希一致、1722对精确证书足迹、13151项Internal显式声明覆盖。全十一公式、量词环境提升、原扩展语言quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_ARGUMENT_FIELD_CORRESPONDENCE_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新辅助对象结果：原mode0／3参数列表的对象成员归纳已由原Separation／Foundation关闭：任意内部有类型源列表实际存在原Run₂输出，输出保持同一内部长度及目标项类型，并对全部内部候选唯一。Earlier／尾码归纳前提已消去，两个模式的头Promise由实际环境正式推导。9模块79声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1405构建任务、15415项审计（378无公理／15037允许依赖）、零警告；九命令及五trust=0入口全部退出0；1269份工作区独立哈希一致、1712对精确证书足迹、13071项Internal显式声明覆盖。全内部列表与独立变换的逐字段完整对应仍未完成；全十一公式、quotation总桥、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_ARGUMENT_LIST_FIBER_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
