@@ -7602,4 +7602,50 @@ example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives 
     (Translation.sentence (Internal.ObjectFormulaTransformRootStep.actualRootWholeProgramIffSentence w R S a b c d h n q)) :=
   Internal.ObjectFormulaTransformRootStep.native_actualRootWholeProgramIff w R S a b c d h n q
 
+example {m} (three : Bool) (w n mode depth P a b c I J R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.fullElevenProgramFromUniformIffSentence three w n mode depth P a b c I J R S h q)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_fullElevenProgramFromUniformIff three w n mode depth P a b c I J R S h q
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.wholeRunExecutedFromUniformIffSentence three w n mode depth P a b c I J R S q)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_wholeRunExecutedFromUniformIff three w n mode depth P a b c I J R S q
+
+example {m} (three : Bool) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.allParametersCorrectFromUniformSentence three w n)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_allParametersCorrectFromUniform three w n
+
+example {m} (three : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.allInternalRootsCorrectSentence three w)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_allInternalRootsCorrect three w
+
+example {m} (three : Bool) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.uniformInductionDischargedSentence three w n)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_uniformInductionDischarged three w n
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.allInternalWholeRunExecutedIffSentence three w n mode depth P a b c I J R S q)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_allInternalWholeRunExecutedIff three w n mode depth P a b c I J R S q
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.allInternalWholeProgramIffSentence three w n mode depth P a b c I J R S h q)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_allInternalWholeProgramIff three w n mode depth P a b c I J R S h q
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.actualHistoryAgreementDischargedSentence three w n mode depth P a b c I J R S h)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_actualHistoryAgreementDischarged three w n mode depth P a b c I J R S h
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaCorrectness.agreedActualHistoryExistsDischargedSentence three w n mode depth P a b c I J R S)) :=
+  Internal.ObjectOriginalFormulaCorrectness.native_agreedActualHistoryExistsDischarged three w n mode depth P a b c I J R S
+
+-- 直接展开对象闭句合同：只允许 Ω、frame、源 FormulaCode 三个前提。
+example {m} (three : Bool) (w n mode depth P a b c I J R S q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((OriginalOperationFrameSyntax.frame three w mode depth P a b c I J R S).imp
+          ((FormulaCodeSyntax.formulaCode w n a b).imp
+            ((OriginalTransformRowSyntax.run 3 w mode depth (OriginalOperationFrameSyntax.parameter three P S) n q).iff
+              (FormulaTransformExecutionSyntax.executed w R S a b a c n q))))).close)) :=
+  ObjectOriginalFormulaCorrectness.native_allInternalWholeRunExecutedIff three w n mode depth P a b c I J R S q
+
 end PPAC.Migration.Step4Checks

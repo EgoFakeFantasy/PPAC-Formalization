@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.2已验收：原mode0／3全部十一种源公式情况已接到同一个真实完整程序，实际递归图已在对象存在量词内消去；以十一参数correct公式完成原ZF集合归纳，消去allFramesIH，取得有效frame下任意内部有类型源码／候选输出的原Run₃↔executed双条件及实际历史对应。5模块62声明、9组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1512构建任务、16383项审计（385无公理／15998允许依赖）、零警告；九命令及五trust=0入口全部退出0；1376份独立哈希一致、1849对精确证书足迹、14039项Internal显式声明覆盖。额外的原核检查直接展开闭句，确认最终运行接口只有Ω、frame与源FormulaCode三个前提。frame仍要求绑定恒等表和自由变量像转换；模式3合同对原证明检查器全部调用的适用性尚未证明。quotation、Option、ProofZF/U、内部解释及最终内部Con仍未完成。见[验收](STEP4_FULL_FORMULA_INDUCTION_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.1已验收：完整十一种递归分支已统一推出目标FormulaCode，实际递归图把完整程序接到executed根方程；先保留n∈ω、环境／目标合法性守卫，再由合法输入和程序实际推出这些守卫，取得executed↔step及executed↔完整程序。2模块25声明、5组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1507构建任务、16321项审计（385无公理／15936允许依赖）、零警告；九命令及五trust=0入口全部退出0；1371份独立哈希一致、1840对精确证书足迹、13977项Internal显式声明覆盖。原Run₃与完整程序的十一情况装配、统一对象归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ACTUAL_ROOT_STEP_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

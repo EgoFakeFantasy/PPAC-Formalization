@@ -193,3 +193,4 @@ import PPAC.Migration.Internal.ObjectActualFormulaHistory
 import PPAC.Migration.Internal.ObjectUniformOperationFrames
 import PPAC.Migration.Internal.ObjectOriginalBinderProgram
 import PPAC.Migration.Internal.ObjectFormulaTransformRootStep
+import PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness
