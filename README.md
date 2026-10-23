@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: admissible original mode0/3 frames are closed under actual binder lifts, with independent depth and variable-bound successors. Ten changing environment parameters and every output are quantified inside one object correctness formula; the uniform induction premise yields current-frame and binder-child-frame prefix instances. Seven modules, 97 declarations and thirteen nativeZF certificate families; 1498 build jobs, 16251 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. Full induction and final-checker applicability of the mode3 free-image contract remain unproved, as does final internal Con. [Acceptance](docs/STEP4_UNIFORM_OPERATION_FRAMES_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 Latest accepted checkpoint: actual recursion graphs give read/executed equivalence. The typed strict-prefix object induction hypothesis now constructs the entire history agreement and proves an internal history carrying both the real graph and that agreement exists. Logical bridges use the actual graph and object induction premise. Five modules, 37 declarations and six nativeZF certificate families; 1491 build jobs, 16154 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The induction premise, full formula correctness and final internal Con remain unproved. [Acceptance](docs/STEP4_ACTUAL_HISTORY_FROM_INDUCTION_ACCEPTANCE.zh-CN.md).
 
 Historical checkpoints follow.

@@ -190,3 +190,4 @@ import PPAC.Migration.Internal.ObjectWholeAtomicInterfaces
 import PPAC.Migration.Internal.ObjectUnifiedAtomicProgram
 import PPAC.Migration.Internal.ObjectOriginalLogicalProgram
 import PPAC.Migration.Internal.ObjectActualFormulaHistory
+import PPAC.Migration.Internal.ObjectUniformOperationFrames

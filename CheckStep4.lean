@@ -7502,4 +7502,56 @@ example {m} (three : Bool) (kind : Fin 4) (w mode depth parameter h R S a b c d 
     (Translation.sentence (Internal.ObjectActualFormulaHistory.binaryActualHistoryFromInductionIffSentence three kind w mode depth parameter h R S a b c d n q x y)) :=
   Internal.ObjectActualFormulaHistory.native_binaryActualHistoryFromInductionIff three kind w mode depth parameter h R S a b c d n q x y
 
+example {m} (w J S b a c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.freeConversionFromActualConvertedSentence w J S b a c)) :=
+  Internal.ObjectUniformOperationFrames.native_freeConversionFromActualConverted w J S b a c
+
+example {m} (three : Bool) (w mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.frameEnvironmentSentence three w mode depth P a b c I J R S)) :=
+  Internal.ObjectUniformOperationFrames.native_frameEnvironment three w mode depth P a b c I J R S
+
+example {m} (w mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.weakenFrameFromExistingEnvironmentSentence w mode depth P a b c I J R S)) :=
+  Internal.ObjectUniformOperationFrames.native_weakenFrameFromExistingEnvironment w mode depth P a b c I J R S
+
+example {m} (w mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.replaceFrameFromFreeConversionSentence w mode depth P a b c I J R S)) :=
+  Internal.ObjectUniformOperationFrames.native_replaceFrameFromFreeConversion w mode depth P a b c I J R S
+
+example {m} (three : Bool) (w mode depth P a b c I J R S h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.frameAtomicWholeProgramIffSentence three w mode depth P a b c I J R S h n q)) :=
+  Internal.ObjectUniformOperationFrames.native_frameAtomicWholeProgramIff three w mode depth P a b c I J R S h n q
+
+example {m} (three : Bool) (w mode depth P a b c I J R S A C M K H D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.binderEnvironmentAtSentence three w mode depth P a b c I J R S A C M K H D)) :=
+  Internal.ObjectUniformOperationFrames.native_binderEnvironmentAt three w mode depth P a b c I J R S A C M K H D
+
+example {m} (three : Bool) (w mode depth P a b c I J R S A C K H D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.binderEnvironmentExistsSentence three w mode depth P a b c I J R S A C K H D)) :=
+  Internal.ObjectUniformOperationFrames.native_binderEnvironmentExists three w mode depth P a b c I J R S A C K H D
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.uniformCorrectAtSentence three w n mode depth P a b c I J R S q)) :=
+  Internal.ObjectUniformOperationFrames.native_uniformCorrectAt three w n mode depth P a b c I J R S q
+
+example {m} (three : Bool) (w n x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.uniformPrefixAtSentence three w n x)) :=
+  Internal.ObjectUniformOperationFrames.native_uniformPrefixAt three w n x
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.uniformPrefixAtFrameSentence three w n mode depth P a b c I J R S)) :=
+  Internal.ObjectUniformOperationFrames.native_uniformPrefixAtFrame three w n mode depth P a b c I J R S
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.actualHistoryAgreementAtUniformFrameSentence three w n mode depth P a b c I J R S h)) :=
+  Internal.ObjectUniformOperationFrames.native_actualHistoryAgreementAtUniformFrame three w n mode depth P a b c I J R S h
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.actualHistoryExistsAtUniformFrameSentence three w n mode depth P a b c I J R S)) :=
+  Internal.ObjectUniformOperationFrames.native_actualHistoryExistsAtUniformFrame three w n mode depth P a b c I J R S
+
+example {m} (three : Bool) (w n mode depth P a b c I J R S A C K H D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUniformOperationFrames.binderPrefixFromUniformInductionSentence three w n mode depth P a b c I J R S A C K H D)) :=
+  Internal.ObjectUniformOperationFrames.native_binderPrefixFromUniformInduction three w n mode depth P a b c I J R S A C K H D
+
 end PPAC.Migration.Step4Checks
