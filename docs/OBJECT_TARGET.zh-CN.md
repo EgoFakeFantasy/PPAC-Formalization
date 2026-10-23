@@ -612,3 +612,13 @@ InstantiateTop/AbstractFreeTop、原操作数值编码/规则检查对应、全�
 原操作编码对应、InstantiateTop/AbstractFreeTop、规则4/5任意内部码检查兼容仍未完成。
 专用ProofZF/U完整纯AST及最终内部Con尚未实现；上文Con规格、全部内部ω和完整Separation/Collection要求保持。
 见[验收](STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)和[最新流程](AGENT_WORKFLOW.zh-CN.md)。
+
+
+## 2026-10-23 S3.4a/b实际首槽环境边界
+
+InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实际存在唯一，准确输入/唯一纤维双条件和六条带源域守卫的原列表字段律已证明。
+恒等/后移索引图经明确变量项码矩阵转换，不能把索引图值直接当项码。
+两类数值码对均已接入全内部混合公式替换的实际唯一输出纤维。
+此结果只完成首槽环境及固定码下输出纤维；完整见证无关操作判断、原数值quotation和嵌套binder保护对应仍待证明。
+原规则5/4内部检查、专用ProofZF/U完整纯AST与最终内部Con仍未完成。
+详见[首槽实际环境验收](STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)及[流程](AGENT_WORKFLOW.zh-CN.md)。

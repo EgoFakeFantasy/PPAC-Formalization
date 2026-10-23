@@ -131,3 +131,4 @@ import PPAC.Migration.Internal.ObjectMixedTerm
 import PPAC.Migration.Internal.ObjectMixedBinder
 import PPAC.Migration.Internal.ObjectMixedEnvironment
 import PPAC.Migration.Internal.ObjectMixedFormula
+import PPAC.Migration.Internal.ObjectTopEnvironment

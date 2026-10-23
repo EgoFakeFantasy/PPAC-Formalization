@@ -4850,4 +4850,212 @@ example {m} (w r s a b c d n q x X A C K H : Fin m) : YesMetaZFC.Logic.FirstOrde
     (Translation.sentence (Internal.ObjectMixedFormula.existsAtLiftSentence w r s a b c d n q x X A C K H)) :=
   Internal.ObjectMixedFormula.native_existsAtLift w r s a b c d n q x X A C K H
 
+example {m} (bound : Bool) (w r a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.variableImageExistsSentence bound w r a c d)) :=
+  Internal.ObjectTopEnvironment.native_variableImageExists bound w r a c d
+
+example {m} (bound : Bool) (w r a c d f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.variableImageUniqueSentence bound w r a c d f g)) :=
+  Internal.ObjectTopEnvironment.native_variableImageUnique bound w r a c d f g
+
+example {m} (bound : Bool) (w r a c d f i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.variableImageEdgesSentence bound w r a c d f i q)) :=
+  Internal.ObjectTopEnvironment.native_variableImageEdges bound w r a c d f i q
+
+example {m} (bound : Bool) (w r a c d f i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.variableImageAtIndexSentence bound w r a c d f i j q)) :=
+  Internal.ObjectTopEnvironment.native_variableImageAtIndex bound w r a c d f i j q
+
+example {m} (bound : Bool) (w c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.identityTableExistsSentence bound w c d)) :=
+  Internal.ObjectTopEnvironment.native_identityTableExists bound w c d
+
+example {m} (bound : Bool) (w a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.shiftedTableExistsSentence bound w a c d)) :=
+  Internal.ObjectTopEnvironment.native_shiftedTableExists bound w a c d
+
+example {m} (bound : Bool) (w c d f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.identityTableUniqueSentence bound w c d f g)) :=
+  Internal.ObjectTopEnvironment.native_identityTableUnique bound w c d f g
+
+example {m} (bound : Bool) (w a c d f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.shiftedTableUniqueSentence bound w a c d f g)) :=
+  Internal.ObjectTopEnvironment.native_shiftedTableUnique bound w a c d f g
+
+example {m} (bound : Bool) (w c d f i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.identityTableAtSentence bound w c d f i q)) :=
+  Internal.ObjectTopEnvironment.native_identityTableAt bound w c d f i q
+
+example {m} (bound : Bool) (w a c d f i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.shiftedTableAtSentence bound w a c d f i j q)) :=
+  Internal.ObjectTopEnvironment.native_shiftedTableAt bound w a c d f i j q
+
+example {m} (w a b A t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualExistsSentence w a b A t)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualExists w a b A t
+
+example {m} (w a b A t f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualInputSentence w a b A t f g)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualInput w a b A t f g
+
+example {m} (w a b A t f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualMapsSentence w a b A t f g)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualMaps w a b A t f g
+
+example {m} (w a b A t f g F G : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualUniqueSentence w a b A t f g F G)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualUnique w a b A t f g F G
+
+example {m} (w a b A t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeExistsSentence w a b A t)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeExists w a b A t
+
+example {m} (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeInputSentence w a b A t R S)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeInput w a b A t R S
+
+example {m} (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeListsSentence w a b A t R S)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeLists w a b A t R S
+
+example {m} (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeNaturalSentence w a b A t R S)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeNatural w a b A t R S
+
+example {m} (w a b A t R S U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeUniqueSentence w a b A t R S U V)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeUnique w a b A t R S U V
+
+example {m} (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeUniqueOutputSentence w a b A t R S)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeUniqueOutput w a b A t R S
+
+example {m} (w a b A t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeFiberSentence w a b A t)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeFiber w a b A t
+
+example {m} (w a b A t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeExistsIffSentence w a b A t)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeExistsIff w a b A t
+
+example {m} (w a b A t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeFiberIffSentence w a b A t)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeFiberIff w a b A t
+
+example {m} (w a b A t R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateFormulaFiberSentence w a b A t R S n)) :=
+  Internal.ObjectTopEnvironment.native_instantiateFormulaFiber w a b A t R S n
+
+example {m} (w a b A t R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateFormulaExistsSentence w a b A t R S n)) :=
+  Internal.ObjectTopEnvironment.native_instantiateFormulaExists w a b A t R S n
+
+example {m} (w a b A t f g i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualZeroSentence w a b A t f g i q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualZero w a b A t f g i q
+
+example {m} (w a b A t R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeZeroSentence w a b A t R S i q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeZero w a b A t R S i q
+
+example {m} (w a b A t f g i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualBoundSentence w a b A t f g i j q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualBound w a b A t f g i j q
+
+example {m} (w a b A t R S i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeBoundSentence w a b A t R S i j q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeBound w a b A t R S i j q
+
+example {m} (w a b A t f g i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateActualFreeSentence w a b A t f g i q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateActualFree w a b A t f g i q
+
+example {m} (w a b A t R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.instantiateCodeFreeSentence w a b A t R S i q)) :=
+  Internal.ObjectTopEnvironment.native_instantiateCodeFree w a b A t R S i q
+
+example {m} (w a b A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualExistsSentence w a b A B)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualExists w a b A B
+
+example {m} (w a b A B f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualInputSentence w a b A B f g)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualInput w a b A B f g
+
+example {m} (w a b A B f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualMapsSentence w a b A B f g)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualMaps w a b A B f g
+
+example {m} (w a b A B f g F G : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualUniqueSentence w a b A B f g F G)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualUnique w a b A B f g F G
+
+example {m} (w a b A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeExistsSentence w a b A B)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeExists w a b A B
+
+example {m} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeInputSentence w a b A B R S)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeInput w a b A B R S
+
+example {m} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeListsSentence w a b A B R S)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeLists w a b A B R S
+
+example {m} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeNaturalSentence w a b A B R S)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeNatural w a b A B R S
+
+example {m} (w a b A B R S U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeUniqueSentence w a b A B R S U V)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeUnique w a b A B R S U V
+
+example {m} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeUniqueOutputSentence w a b A B R S)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeUniqueOutput w a b A B R S
+
+example {m} (w a b A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeFiberSentence w a b A B)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeFiber w a b A B
+
+example {m} (w a b A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeExistsIffSentence w a b A B)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeExistsIff w a b A B
+
+example {m} (w a b A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeFiberIffSentence w a b A B)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeFiberIff w a b A B
+
+example {m} (w a b A B R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractFormulaFiberSentence w a b A B R S n)) :=
+  Internal.ObjectTopEnvironment.native_abstractFormulaFiber w a b A B R S n
+
+example {m} (w a b A B R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractFormulaExistsSentence w a b A B R S n)) :=
+  Internal.ObjectTopEnvironment.native_abstractFormulaExists w a b A B R S n
+
+example {m} (w a b A B f g i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualZeroSentence w a b A B f g i q)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualZero w a b A B f g i q
+
+example {m} (w a b A B R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeZeroSentence w a b A B R S i q)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeZero w a b A B R S i q
+
+example {m} (w a b A B f g i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualBoundSentence w a b A B f g i j q)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualBound w a b A B f g i j q
+
+example {m} (w a b A B R S i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeBoundSentence w a b A B R S i j q)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeBound w a b A B R S i j q
+
+example {m} (w a b A B f g i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractActualFreeSentence w a b A B f g i j q)) :=
+  Internal.ObjectTopEnvironment.native_abstractActualFree w a b A B f g i j q
+
+example {m} (w a b A B R S i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTopEnvironment.abstractCodeFreeSentence w a b A B R S i j q)) :=
+  Internal.ObjectTopEnvironment.native_abstractCodeFree w a b A B R S i j q
+
 end PPAC.Migration.Step4Checks

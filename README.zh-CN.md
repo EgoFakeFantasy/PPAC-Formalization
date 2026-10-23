@@ -1,12 +1,12 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：一般混合公式替换在全部内部ω上实际总唯一，准确类型、输入/唯一纤维双条件和十一构造精确端点均已证明。
-量词同时更新两张原数值混合环境码；具体分离算子、递归历史和输出归纳均由原对象规则证明。
-50组原核闭句已验收：968构建任务、11222项审计、0警告，五trust=0入口及937份独立哈希通过。
-见[一般混合公式替换验收](docs/STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)。
-原操作编码对应、InstantiateTop/AbstractFreeTop、规则检查兼容、专用ProofZF/U及最终内部Con仍未完成。
-下文保留历史验收范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
+当前对象层进度：两类首槽操作的实际完整环境表与原数值码对已存在唯一，准确输入/纤维双条件及原列表字段律均已证明。
+InstantiateTop实际表实现bound0取项及旧bound前驱；AbstractFreeTop实际表实现free0取新bound0、其余free前驱和bound后移。
+已接入固定码对下的一般混合公式唯一输出纤维。52组新原核闭句验收：992构建任务、11603项审计、0警告，五trust=0入口及961份独立哈希通过。
+见[首槽实际环境验收](docs/STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)。
+原操作数值quotation、完整首槽公式判断、规则检查兼容、专用ProofZF/U和最终内部Con仍未完成。
+下文保留历史范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
 第二步覆盖19条源规则，直接给出原FirstOrder.Derives，不经过完备性或模型语义；

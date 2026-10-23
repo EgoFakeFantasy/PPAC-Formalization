@@ -1270,19 +1270,20 @@ S2.4的原编码/规则检查对应和S3的混合替换仍必须完成；本批�
 S3.2b只验收实际项像表层binder操作，不替代S3.3的公式递归或原数值编码对应。原Con背景与全部内部ω量化不变。
 
 
-2026-10-23 S3.3b已验收，见[报告](STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)。
-968构建任务、11222项审计、0警告；九命令和五个trust=0入口均退出0。
-本批67模块607显式声明、50组闭句；累计8907项Internal显式声明全覆盖，937份源哈希独立一致，1152对核心/native精确足迹。
+2026-10-23 S3.4a/b实际首槽表与原码对已验收，见[报告](STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)。
+992构建任务、11603项审计、0警告；九命令与五个trust=0入口均退出0。
+本批24模块381显式声明、52组闭句；累计9288项Internal声明全覆盖，961份源哈希独立一致，1204对核心/native精确足迹。
 
-| 单元 | 输入 | 必须取得的对象推导 | 状态 |
+| 单元 | 输入/依赖 | 必须交付的对象推导 | 状态 |
 |---|---|---|---|
-| S3.3b | 原自然混合环境码与完整原FormulaCode | 全内部ω实际唯一混合公式输出、输入/纤维双条件、11端点 | 已验收 |
-| S3.4a | 合法目标项码、内部后继与首槽表 | InstantiateTop：源bound0映为给定项，旧bound后继映回前驱，free保留；实际表/原码存在唯一 | 待完成 |
-| S3.4b | 内部bound/free范围与首槽表 | AbstractFreeTop：free0映为新bound0，其余free前驱重编号，旧bound移位；实际表/原码存在唯一 | 待完成 |
-| S3.4c | 两类特定环境与本批混合公式替换 | 原instantiate/abstract操作数值编码对应、嵌套binder保护及实际唯一输出 | 待完成 |
-| S2.4/F2.4b.3 | 原substituteFree/weakenFree数值语法 | 原规则5/4任意内部码检查兼容，保留原参数域与0元数据 | 待完成 |
-| 5a | 六原规则、27模式及完整ZF/U公理 | 专用ProofZF/U有限纯AST；精确原元数据和全部内部证明码量化 | 待完成 |
-| 5b | 内部语法操作与源证书转换器 | 全内部编译/检查正确性，覆盖完整Separation/Collection | 待完成 |
-| 6 | 内部解释与固定内部Con | 原Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+| S3.3b | 原混合环境码、完整FormulaCode | 全内部ω混合公式实际总唯一、11端点、输入/纤维双条件 | 已验收 |
+| S3.4a | 合法目标项、bound后继范围 | InstantiateTop实际完整表/原数值码对、真实唯一纤维、准确输入与零/后继/free字段 | 已验收 |
+| S3.4b | 两个内部后继范围 | AbstractFreeTop实际完整表/原码对、真实唯一纤维、准确输入与bound/free0/free后继字段 | 已验收 |
+| S3.4c.1 | 本批环境码及一般混合公式替换 | 环境见证无关的首槽公式判断、准确类型、存在唯一与内部递归端点 | 固定码下实际公式纤维已验收；完整操作判断待完成 |
+| S3.4c.2 | 原instantiate/abstract与原数值语法 | 原操作quotation对应及嵌套binder保护；两张像表都位移 | 待完成 |
+| S2.4/F2.4b.3 | 原substituteFree/weakenFree | 原数值编码对应及规则5/4任意内部证明码检查兼容 | 待完成 |
+| 5a | 六规则、27模式及完整ZF/U公理 | 专用有限纯ProofZF/U AST，精确原元数据，0合法且域检查准确 | 待完成 |
+| 5b | 原推导转换器和内部语法操作 | 全部内部ω码上的编译/检查正确性，完整Separation/Collection | 待完成 |
+| 6 | 内部解释和固定Con规格 | 原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
 
-本批一般混合替换与原操作编码对应分别验收，最终Con门保持未完成。
+原操作quotation与实际表/码存在唯一分别验收，最终Con门保持未完成。
