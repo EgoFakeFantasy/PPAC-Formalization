@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+3f.2c.3b.2b.2已验收：专用纯十五规则的参数查询已对全部内部绑定界／自由界／长度／输入候选与TermList对象等价；全参数集合归纳消去IH，最终接口只有Ω前提。空绑定界实际查询与自由变量像列表双向对应，并接入原mode3全公式运行。9模块83声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1542构建任务、16689项审计（389无公理／16300允许依赖）、零警告；九命令及五trust=0入口全部退出0；1404份独立哈希一致、1886对精确证书足迹、14345项Internal显式声明覆盖。kind4公式查询桥、原数值quotation对应、最终检查器适用性、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_PURE_ARGUMENT_QUERY_INDUCTION_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2b.1已验收：纯十五规则的真实闭轨迹可在对象ZF中合并并插入新根行；nil规则与类型合同相容，合法空参数列实际取得完整查询证书；cons局部步骤合并头项／尾列表轨迹后实际取得父行接受条件，公共轨迹见证已消去。7模块83声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1533构建任务、16606项审计（389无公理／16217允许依赖）、零警告；九命令及五trust=0入口全部退出0；1395份独立哈希一致、1876对精确证书足迹、14262项Internal显式声明覆盖。完整参数列健全性／对象归纳、公式查询、最终检查器、quotation／Option、ProofZF/U、内部解释及Con仍未完成。见[验收](docs/STEP4_PURE_LIST_LOCAL_STEPS_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

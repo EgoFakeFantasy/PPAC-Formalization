@@ -102,7 +102,7 @@ def check_pure_syntax_definition() -> dict:
         raise RuntimeError("Missing actual membership rule")
     return {"definitions": names, "independent_of_typing_oracles": True, "rules": 15,
             "term_query_scope": "all internal bound/free/input candidates under Omega",
-            "argument_query_correctness_proved": False, "formula_query_correctness_proved": False}
+            "argument_query_correctness_proved": True, "formula_query_correctness_proved": False}
 
 
 def main() -> None:
@@ -2279,7 +2279,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureNilChecked',
                     'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureTypedNilChecked',
                     'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureConsApplicationComplete',
-                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureConsConditionComplete'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureConsConditionComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureConsQueryComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureConsApplicationFromInductionSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsFromInductionIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureAllArgumentsCorrect',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsInductionDischarged',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQuerySound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQueryComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureEmptyBoundArgumentsQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker.native_pureModeThreeFromArgumentsQueryIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2386,6 +2396,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
         "ObjectPureSyntaxListSteps": ('binaryUnionExists', 'pureTraceInsertionCondition', 'pureTracePairCondition', 'pureNilExpressionIff', 'pureNilApplicationSound', 'pureNilApplicationComplete', 'pureNilChecked', 'pureTypedNilChecked', 'pureConsApplicationComplete', 'pureConsConditionComplete'),
         "ObjectPureSyntaxTermChecker": ('purePremiseFreeTraceExists', 'pureVariableExpressionIff', 'pureVariableApplicationSound', 'pureTermClosedTraceSound', 'pureTermCheckSound', 'pureTermCheckComplete', 'pureTermCheckIff', 'pureEmptyBoundTermCheckFree'),
         "ObjectOriginalFreeSubstFormula": ('emptyBoundTermFree', 'emptyBoundListsIff', 'emptyBoundConversionExists', 'modeThreeWholeSubstitutionIff', 'modeThreeWholeProgramIff', 'modeThreeEmptyBoundArgumentsIff', 'modeThreeOutputType', 'modeThreeOutputUnique', 'modeThreeActualOutput'),
@@ -2975,8 +2986,11 @@ def main() -> None:
         "object_pure_syntax_nil_rule_sound_and_complete_proved": True,
         "object_pure_syntax_nil_query_actual_trace_proved": True,
         "object_pure_syntax_cons_local_actual_trace_step_proved": True,
-        "object_pure_syntax_cons_query_soundness_induction_proved": False,
-        "object_pure_syntax_checker_arguments_query_bridge_proved": False,
+        "object_pure_syntax_cons_query_soundness_induction_proved": True,
+        "object_pure_syntax_checker_arguments_query_bridge_proved": True,
+        "object_pure_syntax_arguments_query_uniform_IH_discharged": True,
+        "object_pure_syntax_empty_bound_argument_query_free_list_iff_proved": True,
+        "object_original_mode_three_from_pure_argument_trace_proved": True,
         "object_pure_syntax_checker_formula_query_bridge_proved": False,
         "object_pure_syntax_checker_full_typing_query_bridge_proved": False,
         "pure_syntax_definition_guard": pure_syntax_definition,

@@ -7805,4 +7805,55 @@ example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
         (PureSyntaxTrace.arguments w b f k n))))).close)) :=
   ObjectPureSyntaxListSteps.native_pureNilChecked w b f k n
 
+example {m} (w b f ell k h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureConsQueryCompleteSentence w b f ell k h t n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureConsQueryComplete w b f ell k h t n
+
+example {m} (w b f k n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureConsApplicationFromInductionSoundSentence w b f k n r R)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureConsApplicationFromInductionSound w b f k n r R
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureArgumentsFromInductionIffSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsFromInductionIff w b f k n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureAllArgumentsCorrectSentence w)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureAllArgumentsCorrect w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureArgumentsInductionDischargedSentence w n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsInductionDischarged w n
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureArgumentsQueryIffSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQueryIff w b f k n
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureArgumentsQuerySoundSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQuerySound w b f k n
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureArgumentsQueryCompleteSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureArgumentsQueryComplete w b f k n
+
+example {m} (w a z c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureEmptyBoundArgumentsQueryIffSentence w a z c L)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureEmptyBoundArgumentsQueryIff w a z c L
+
+example {m} (w mode depth b a z c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxArgumentChecker.pureModeThreeFromArgumentsQueryIffSentence w mode depth b a z c L n q)) :=
+  Internal.ObjectPureSyntaxArgumentChecker.native_pureModeThreeFromArgumentsQueryIff w mode depth b a z c L n q
+-- 展开完整参数查询双条件：仅Omega前提，全部内部字段全称闭合，无IH。
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((PureSyntaxTrace.arguments w b f k n).iff (SyntaxMixedImageCodeSyntax.termList w k b f n))).close)) :=
+  ObjectPureSyntaxArgumentChecker.native_pureArgumentsQueryIff w b f k n
+
+-- 展开空绑定界实际查询到自由变量像列表的双条件。
+example {m} (w a z c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.SetLanguage.empty z).imp
+      ((PureSyntaxTrace.arguments w z c a L).iff (SyntaxFreeSubstSyntax.termList w a c L)))).close)) :=
+  ObjectPureSyntaxArgumentChecker.native_pureEmptyBoundArgumentsQueryIff w a z c L
+
 end PPAC.Migration.Step4Checks
