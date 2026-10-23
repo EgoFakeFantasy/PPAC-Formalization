@@ -7582,4 +7582,24 @@ example {m} (three universal : Bool) (w n mode depth P a b c I J R S h x q : Fin
     (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierWholeRunFromUniformInductionIffSentence three universal w n mode depth P a b c I J R S h x q)) :=
   Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunFromUniformInductionIff three universal w n mode depth P a b c I J R S h x q
 
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaTransformRootStep.recursiveCasesTargetTypeSentence w R S a b c d n q)) :=
+  Internal.ObjectFormulaTransformRootStep.native_recursiveCasesTargetType w R S a b c d n q
+
+example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaTransformRootStep.actualProgramTargetTypeSentence w R S a b c d h n q)) :=
+  Internal.ObjectFormulaTransformRootStep.native_actualProgramTargetType w R S a b c d h n q
+
+example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaTransformRootStep.actualRootGuardedStepIffSentence w R S a b c d h n q)) :=
+  Internal.ObjectFormulaTransformRootStep.native_actualRootGuardedStepIff w R S a b c d h n q
+
+example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaTransformRootStep.actualRootStepIffSentence w R S a b c d h n q)) :=
+  Internal.ObjectFormulaTransformRootStep.native_actualRootStepIff w R S a b c d h n q
+
+example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFormulaTransformRootStep.actualRootWholeProgramIffSentence w R S a b c d h n q)) :=
+  Internal.ObjectFormulaTransformRootStep.native_actualRootWholeProgramIff w R S a b c d h n q
+
 end PPAC.Migration.Step4Checks

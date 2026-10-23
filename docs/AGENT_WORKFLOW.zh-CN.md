@@ -1,4 +1,10 @@
 # 对象层迁移工程流程
+
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.1已验收：完整十一种递归分支已统一推出目标FormulaCode，实际递归图把完整程序接到executed根方程；先保留n∈ω、环境／目标合法性守卫，再由合法输入和程序实际推出这些守卫，取得executed↔step及executed↔完整程序。2模块25声明、5组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1507构建任务、16321项审计（385无公理／15936允许依赖）、零警告；九命令及五trust=0入口全部退出0；1371份独立哈希一致、1840对精确证书足迹、13977项Internal显式声明覆盖。原Run₃与完整程序的十一情况装配、统一对象归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ACTUAL_ROOT_STEP_ACCEPTANCE.zh-CN.md)。
+
+下一单元3f.2c.3a.2：原Run₃全十一情况统一接到完整程序，再用本批根执行方程建立correct的对象归纳步；随后消去allFramesIH。
+
+以下保留历史验收记录。
 最终交付：Derives B [] (Formula.imp Con_ZF Con_target)。
 B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)。
 内部Con的展开、编码与全内部ω范围见[对象目标规格](OBJECT_TARGET.zh-CN.md)。

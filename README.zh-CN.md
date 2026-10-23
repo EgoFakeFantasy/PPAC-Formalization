@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.1已验收：完整十一种递归分支已统一推出目标FormulaCode，实际递归图把完整程序接到executed根方程；先保留n∈ω、环境／目标合法性守卫，再由合法输入和程序实际推出这些守卫，取得executed↔step及executed↔完整程序。2模块25声明、5组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1507构建任务、16321项审计（385无公理／15936允许依赖）、零警告；九命令及五trust=0入口全部退出0；1371份独立哈希一致、1840对精确证书足迹、13977项Internal显式声明覆盖。原Run₃与完整程序的十一情况装配、统一对象归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ACTUAL_ROOT_STEP_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新对象进展：两个量词的独立深度后继子运行已与真实advanced历史程序双向对应，实际绑定界和像表在对象存在量词内构造／消去；原binderCase与既有single(true)局部分支已对应，原十一分支中的其余十个分支已排除，取得mode0／3整条量词Run₃双条件。7模块45声明、7组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1505构建任务、16296项审计（385无公理／15911允许依赖）、零警告；九命令及五trust=0入口全部退出0；1369份独立哈希一致、1835对精确证书足迹、13952项Internal显式声明覆盖。统一对象归纳前提仍保留；完整十一情况装配、成员归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ORIGINAL_BINDER_PROGRAM_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

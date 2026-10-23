@@ -1,4 +1,8 @@
 # PPAC → YesMetaZFC
+
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.1已验收：完整十一种递归分支已统一推出目标FormulaCode，实际递归图把完整程序接到executed根方程；先保留n∈ω、环境／目标合法性守卫，再由合法输入和程序实际推出这些守卫，取得executed↔step及executed↔完整程序。2模块25声明、5组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1507构建任务、16321项审计（385无公理／15936允许依赖）、零警告；九命令及五trust=0入口全部退出0；1371份独立哈希一致、1840对精确证书足迹、13977项Internal显式声明覆盖。原Run₃与完整程序的十一情况装配、统一对象归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ACTUAL_ROOT_STEP_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
 [简体中文](README.zh-CN.md)
 
 Latest accepted checkpoint: both quantifiers now have complete original mode0/3 Run3 dispatch and actual single/advanced history-program correspondence under the explicit uniform object induction premise. Depth, bound and image witnesses are constructed and eliminated in object quantifiers. Seven modules, 45 declarations and seven nativeZF certificate families; 1505 build jobs, 16296 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. Full eleven-case assembly, induction discharge, final-checker applicability and internal Con remain unproved. [Acceptance](docs/STEP4_ORIGINAL_BINDER_PROGRAM_ACCEPTANCE.zh-CN.md).

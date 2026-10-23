@@ -2184,7 +2184,12 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalBinderProgram.native_quantifierStepAdvancedIff',
                     'PPAC.Migration.Internal.ObjectOriginalBinderProgram.native_quantifierLocalCaseIff',
                     'PPAC.Migration.Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunDispatchIff',
-                    'PPAC.Migration.Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunFromUniformInductionIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunFromUniformInductionIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformRootStep.native_recursiveCasesTargetType',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformRootStep.native_actualProgramTargetType',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformRootStep.native_actualRootGuardedStepIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformRootStep.native_actualRootStepIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformRootStep.native_actualRootWholeProgramIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2291,6 +2296,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectFormulaTransformRootStep": ('recursiveCasesTargetType', 'actualProgramTargetType', 'actualRootGuardedStepIff', 'actualRootStepIff', 'actualRootWholeProgramIff'),
         "ObjectOriginalBinderProgram": ('naturalSuccessorWitness', 'liftedChildExecutionAlignmentIff', 'quantifierChildReadAtLiftIff', 'quantifierStepAdvancedIff', 'quantifierLocalCaseIff', 'quantifierWholeRunDispatchIff', 'quantifierWholeRunFromUniformInductionIff'),
         "ObjectUniformOperationFrames": ('freeConversionFromActualConverted', 'frameEnvironment', 'weakenFrameFromExistingEnvironment', 'replaceFrameFromFreeConversion', 'frameAtomicWholeProgramIff', 'binderEnvironmentAt', 'binderEnvironmentExists', 'uniformCorrectAt', 'uniformPrefixAt', 'uniformPrefixAtFrame', 'actualHistoryAgreementAtUniformFrame', 'actualHistoryExistsAtUniformFrame', 'binderPrefixFromUniformInduction'),
         "ObjectActualFormulaHistory": ('actualHistoryReadExecutedIff', 'prefixInductionAt', 'actualHistoryAgreementFromInduction', 'agreedActualHistoryExists', 'negationActualHistoryFromInductionIff', 'binaryActualHistoryFromInductionIff'),
@@ -2864,6 +2870,9 @@ def main() -> None:
         "object_original_quantifier_local_case_actual_history_from_uniform_induction_proved": True,
         "object_original_quantifier_whole_run_dispatch_proved": True,
         "object_original_quantifier_whole_run_actual_history_from_uniform_induction_proved": True,
+        "object_formula_transform_full_program_target_type_on_actual_history_proved": True,
+        "object_formula_transform_actual_root_guarded_step_equation_proved": True,
+        "object_formula_transform_actual_root_execution_program_iff_proved": True,
         "object_original_full_eleven_formula_cases_with_uniform_induction_assembled_proved": False,
         "object_original_formula_actual_history_agreement_discharged_proved": False,
         "object_original_nonbinder_logical_program_cases_proved": False,
