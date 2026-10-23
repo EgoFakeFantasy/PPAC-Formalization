@@ -5490,4 +5490,84 @@ example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.
     (Translation.sentence (Internal.ObjectTermImageQuotation.shiftTermSentence input w U V c d C n q)) :=
   Internal.ObjectTermImageQuotation.native_shiftTerm input w U V c d C n q
 
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.readingsFromImagesSentence values w L)) :=
+  Internal.ObjectTermLiftQuotation.native_readingsFromImages values w L
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (j : Fin values.length) (w L i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.readingsAtSentence values j w L i q)) :=
+  Internal.ObjectTermLiftQuotation.native_readingsAt values j w L i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w a L V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.agreeFromReadingsSentence values w a L V)) :=
+  Internal.ObjectTermLiftQuotation.native_agreeFromReadings values w a L V
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w a L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.imagesFromReadingsSentence values w a L)) :=
+  Internal.ObjectTermLiftQuotation.native_imagesFromReadings values w a L
+
+example {m} (w R S a b c d A C K H U V z n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.zeroFieldSentence w R S a b c d A C K H U V z n q)) :=
+  Internal.ObjectTermLiftQuotation.native_zeroField w R S a b c d A C K H U V z n q
+
+example {m} (w R S a b c d A C K H U V z n i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.zeroAtNumeralSentence w R S a b c d A C K H U V z n i q)) :=
+  Internal.ObjectTermLiftQuotation.native_zeroAtNumeral w R S a b c d A C K H U V z n i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (j : Fin bs.length) (w R S a b c d A C K H U V z n i v t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.boundAtCodeSentence bs fs j w R S a b c d A C K H U V z n i v t q)) :=
+  Internal.ObjectTermLiftQuotation.native_boundAtCode bs fs j w R S a b c d A C K H U V z n i v t q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (j : Fin bs.length) (w R S a b c d A C K H U V z n i v q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.boundValueSentence bs fs j w R S a b c d A C K H U V z n i v q)) :=
+  Internal.ObjectTermLiftQuotation.native_boundValue bs fs j w R S a b c d A C K H U V z n i v q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (j : Fin bs.length) (w R S a b c d A C K H U V z n i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.boundAtNumeralSentence bs fs j w R S a b c d A C K H U V z n i q)) :=
+  Internal.ObjectTermLiftQuotation.native_boundAtNumeral bs fs j w R S a b c d A C K H U V z n i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.boundReadingsSentence bs fs w R S a b c d A C K H U V z n)) :=
+  Internal.ObjectTermLiftQuotation.native_boundReadings bs fs w R S a b c d A C K H U V z n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (j : Fin fs.length) (w R S a b c d A C K H U V z n v t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.freeAtCodeSentence bs fs j w R S a b c d A C K H U V z n v t q)) :=
+  Internal.ObjectTermLiftQuotation.native_freeAtCode bs fs j w R S a b c d A C K H U V z n v t q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (j : Fin fs.length) (w R S a b c d A C K H U V z n v q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.freeValueSentence bs fs j w R S a b c d A C K H U V z n v q)) :=
+  Internal.ObjectTermLiftQuotation.native_freeValue bs fs j w R S a b c d A C K H U V z n v q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.freeReadingsSentence bs fs w R S a b c d A C K H U V z n)) :=
+  Internal.ObjectTermLiftQuotation.native_freeReadings bs fs w R S a b c d A C K H U V z n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.environmentAtWitnessesSentence bs fs w R S a b c d A C K H U V z n)) :=
+  Internal.ObjectTermLiftQuotation.native_environmentAtWitnesses bs fs w R S a b c d A C K H U V z n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.environmentAtMapsSentence bs fs w R S a b c d A C K H U V)) :=
+  Internal.ObjectTermLiftQuotation.native_environmentAtMaps bs fs w R S a b c d A C K H U V
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.environmentAtLiftedSentence bs fs w R S a b c d A C K H)) :=
+  Internal.ObjectTermLiftQuotation.native_environmentAtLifted bs fs w R S a b c d A C K H
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.liftedFromEnvironmentSentence bs fs w R S a b c d A C K H)) :=
+  Internal.ObjectTermLiftQuotation.native_liftedFromEnvironment bs fs w R S a b c d A C K H
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.liftedIffEnvironmentSentence bs fs w R S a b c d A C K H)) :=
+  Internal.ObjectTermLiftQuotation.native_liftedIffEnvironment bs fs w R S a b c d A C K H
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.environmentFiberSentence bs fs w a b c d A C)) :=
+  Internal.ObjectTermLiftQuotation.native_environmentFiber bs fs w a b c d A C
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w R S a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermLiftQuotation.jointFiberSentence bs fs w R S a b c d A C)) :=
+  Internal.ObjectTermLiftQuotation.native_jointFiber bs fs w R S a b c d A C
+
 end PPAC.Migration.Step4Checks

@@ -663,3 +663,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 下一关仍须证明实际提升双表及全11公式/首槽quotation，再证明任意内部码原操作、专用ProofZF/U检查器与完整内部解释。
 最终Con的全部内部ω量化、六规则/27模式及完整Separation/Collection均保持原要求，主句尚未证明。
 详见[本批验收](STEP4_TERM_IMAGE_QUOTATION_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2a提升双表更新：原CodedMixedBinder.lifted在准确内部后继长度下与整张提升项像quotation环境双向等价。
+所有候选K/H仍为内部对象；后继/恒等图、bvar0头、旧像项码及前驱索引均实际在对象量词内取得、消去。
+同一对内部码联合满足原binder及整表Env，并对全部原lifted候选取得唯一性。
+20组闭句返回原nativeZF；1116构建任务、12447项审计、0警告，九命令及五trust=0入口全部退出0。
+外部有限项像列表仍为模式参数，不能替代全内部AST操作正确性。
+下一关全11公式/首槽quotation，后续仍须专用ProofZF/U、全部内部ω检查/编译与完整内部解释。
+最终Con、完整Collection/Separation及六规则/27模式的要求均不变，主句未证明。
+详见[本批验收](STEP4_TERM_LIFT_QUOTATION_ACCEPTANCE.zh-CN.md)。

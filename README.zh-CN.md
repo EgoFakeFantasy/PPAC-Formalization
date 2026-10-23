@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：原项像quotation实际构成合法环境，具有原长度、全内部域位置上的Term类型及实际唯一码对纤维。
-混合项替换精确对应所选目标项像的quotation；两类项像在实际后继/恒等图下的重命名精确计算weakenBound。
-19组新闭句返回原nativeZF核证书；1105构建任务、12322项审计、0警告，九命令和五trust=0入口全部退出0。
-1003份独立哈希一致，累计1312对精确证书足迹。见[项像quotation及项操作验收](docs/STEP4_TERM_IMAGE_QUOTATION_ACCEPTANCE.zh-CN.md)。
-这些逐外部有限项/列表模式的对象证明不替代任意内部AST的统一正确性；实际提升双表/全公式对应、内部检查器、完整内部解释及最终Con仍未完成。
+当前对象层进度：原CodedMixedBinder.lifted与整张提升项像quotation环境精确双向等价；bound新增bvar0，两张表均提升旧像的目标bound分量。
+后继/恒等图、新头部、旧项码及前驱索引均在对象推导中实际取得、消去；联合实际唯一纤维比较全部原lifted候选。
+20组新闭句返回原nativeZF核证书；1116构建任务、12447项审计、0警告，九命令和五trust=0入口全部退出0。
+1014份独立哈希一致，累计1332对精确证书足迹。见[提升双表quotation验收](docs/STEP4_TERM_LIFT_QUOTATION_ACCEPTANCE.zh-CN.md)。
+外部有限项像列表仍为模式索引；全11公式/首槽quotation、任意内部AST统一正确性、内部检查器、完整内部解释及最终Con仍未完成。
 下文保留历史范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
