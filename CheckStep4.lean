@@ -7130,4 +7130,68 @@ example {m} (w mode depth parameter ell k h t H T n q : Fin m) : YesMetaZFC.Logi
     (Translation.sentence (Internal.ObjectOriginalArgumentFields.originalConsAllInternalFieldsSentence w mode depth parameter ell k h t H T n q)) :=
   Internal.ObjectOriginalArgumentFields.native_originalConsAllInternalFields w mode depth parameter ell k h t H T n q
 
+example {m} (xs : Fin 5 → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalKindThreeWholeTableDispatchSentence xs w r R)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalKindThreeWholeTableDispatch xs w r R
+
+example {m} (xs : Fin 5 → Fin m) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalKindThreeTraceSelectedIffSentence xs w r V)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalKindThreeTraceSelectedIff xs w r V
+
+example {m} (a kind : Nat) (j0 j1 j2 : Fin a) (e f : YesMetaZFC.Automation.ObjectHorn.Expr a) (env : Fin a → Fin m) (w mode depth parameter n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaHeadMetadataSentence a kind j0 j1 j2 e f env w mode depth parameter n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaHeadMetadata a kind j0 j1 j2 e f env w mode depth parameter n q r
+
+example {m} (a : Nat) (i j : Fin a) (env : Fin a → Fin m) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaApplicationNumericIffSentence a i j env w n)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationNumericIff a i j env w n
+
+example {m} (three : Bool) (tag : Nat) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaConstantNumericMatrixSentence three tag env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaConstantNumericMatrix three tag env w n q r
+
+example {m} (tag kind : Nat) (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaBinaryNumericMatrixSentence tag kind env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinaryNumericMatrix tag kind env w n q r
+
+example {m} (tag : Nat) (env : Fin 5 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaNonbinderNumericMatrixSentence tag env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaNonbinderNumericMatrix tag env w n q r
+
+example {m} (tag : Nat) (env : Fin 5 → Fin m) (w n q r childDepth : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaBinderNumericMatrixSentence tag env w n q r childDepth)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinderNumericMatrix tag env w n q r childDepth
+
+example {m} (env : Fin 6 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaApplicationNumericMatrixSentence env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationNumericMatrix env w n q r
+
+example {m} (env : Fin 5 → Fin m) (w childDepth : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaBinderActualChildRunSentence env w childDepth)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinderActualChildRun env w childDepth
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (_hr : rule ∈ OriginalFormulaClasses.selected) (env : Fin rule.arity → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalElevenRuleTraceCompositionSentence rule _hr env w r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalElevenRuleTraceComposition rule _hr env w r
+
+example {m} (three : Bool) (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.constant tag) ∈ OriginalFormulaClasses.selected) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaConstantTraceFromDataSentence three tag _hr env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaConstantTraceFromData three tag _hr env w n q r
+
+example {m} (tag kind : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.binary tag kind) ∈ OriginalFormulaClasses.selected) (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaBinaryTraceFromDataSentence tag kind _hr env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinaryTraceFromData tag kind _hr env w n q r
+
+example {m} (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.unary tag false) ∈ OriginalFormulaClasses.selected) (env : Fin 5 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaNonbinderTraceFromDataSentence tag _hr env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaNonbinderTraceFromData tag _hr env w n q r
+
+example {m} (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.unary tag true) ∈ OriginalFormulaClasses.selected) (env : Fin 5 → Fin m) (w n q r childDepth : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaBinderTraceFromDataSentence tag _hr env w n q r childDepth)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinderTraceFromData tag _hr env w n q r childDepth
+
+example {m} (env : Fin 6 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaApplicationTraceFromDataSentence env w n q r)) :=
+  Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationTraceFromData env w n q r
+
 end PPAC.Migration.Step4Checks

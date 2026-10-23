@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: original kind3 rows dispatch exactly to all eleven formula rules in the unchanged 28-rule table. Pure numeric application structures, every local numeric matrix, real child-trace composition and actual successor binder depth have object proofs. Twelve modules, 143 declarations and sixteen new closed families replay to original nativeZF. Acceptance: 1428 jobs, 15638 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1292 hashes and 1738 exact certificate pairs. Local matrices still assume actual internal EnvNat assignments and original root rows. Arity elimination, whole Run3 cases, pure-membership atom linkage, full formula induction/binder environments, quotation, numeric Option interfaces, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_FORMULA_LOCAL_MATRIX_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: numeric mode0/3 original argument runs are equivalent to independently specified all-index term-program field images. Under actual environments and a typed source list, the equivalence covers every internal output candidate, with exact target length/type and all internal indices. Forward field correctness closes original Separation/Foundation induction; the reverse uses actual field witnesses, term uniqueness and original list-code injectivity. Eleven modules, 80 declarations and ten new closed families replay to original nativeZF. Acceptance: 1416 jobs, 15495 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1280 hashes and 1722 exact certificate pairs. Full eleven-formula recursion, binder environments, quotation, the complete numeric Option interface, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_ARGUMENT_FIELD_CORRESPONDENCE_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:
