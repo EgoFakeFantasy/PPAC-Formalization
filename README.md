@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: actual original nil/cons heads and both child premises correspond to numeric five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. Given a real candidate row and the original natural assignment, full local matrices exactly characterize arbitrary input/output Nil/Cons structure and child traces without preassuming candidate structure. Seven modules, 73 declarations and eleven new closed families replay to nativeZF. Acceptance: 1376 jobs, 15129 audits, zero warnings; nine commands and five trust=0 entries exit zero; 1240 matching hashes and 1673 exact certificate pairs. Original assignment-block/root-row elimination, whole argument-run equations, internal list induction, full formulas, quotation, rules/Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ARGUMENT_NUMERIC_MATRIX_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: object Separation constructs a shared set of all natural rows having an actual original closed trace. Every internal closed trace embeds in it, it remains closed under the full original table, and natural rows satisfy an original one-step unfolding equivalence. All 28 actual rules compose child traces. Kind2 argument rows dispatch exactly to original nil/cons rules, with positive trace introductions. Nine modules, 89 declarations and eleven new closed families replay to nativeZF. Acceptance: 1369 jobs, 15056 audits, zero warnings; nine commands and five trust=0 entries exit zero; 1233 matching hashes and 1662 exact certificate pairs. Exact argument output equations/internal list induction, full formulas, extended-language quotation, rule checking, ProofZF/U, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_UNIVERSAL_ARGUMENT_TRACE_COMPOSITION_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

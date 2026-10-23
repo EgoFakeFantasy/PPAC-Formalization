@@ -6890,4 +6890,48 @@ example {m} (env : Fin 7 → Fin m) (w r first rest : Fin m) : YesMetaZFC.Logic.
     (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalConsArgumentActualChildTracesSentence env w r first rest)) :=
   Internal.ObjectOriginalArgumentsTrace.native_originalConsArgumentActualChildTraces env w r first rest
 
+example {m} (three : Bool) (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.nilModeZeroThreeGuardSentence three env w)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_nilModeZeroThreeGuard three env w
+
+example {m} (arity : Nat) (env : Fin arity → Fin m) (w y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.allCandidateEmptyExprNilIffSentence arity env w y)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_allCandidateEmptyExprNilIff arity env w y
+
+example {m} (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.nilActualHeadNumericIffSentence env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_nilActualHeadNumericIff env w n q r
+
+example {m} (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.consActualHeadNumericIffSentence env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_consActualHeadNumericIff env w n q r
+
+example {m} (env : Fin 7 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.headActualChildTraceNumericIffSentence env w)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_headActualChildTraceNumericIff env w
+
+example {m} (env : Fin 7 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.tailActualChildTraceNumericIffSentence env w)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_tailActualChildTraceNumericIff env w
+
+example {m} (three : Bool) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.nilFullTracedMatrixNumericIffSentence three env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_nilFullTracedMatrixNumericIff three env w n q r
+
+example {m} (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.consFullTracedMatrixNumericIffSentence env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_consFullTracedMatrixNumericIff env w n q r
+
+example {m} (env : Fin 7 → Fin m) (w V n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.consOriginalMatrixNumericIffSentence env w V n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_consOriginalMatrixNumericIff env w V n q r
+
+example {m} (three : Bool) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.nilAllCandidateRowMatrixIffSentence three env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_nilAllCandidateRowMatrixIff three env w n q r
+
+example {m} (env : Fin 7 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentMatrix.consAllCandidateRowMatrixIffSentence env w n q r)) :=
+  Internal.ObjectOriginalArgumentMatrix.native_consAllCandidateRowMatrixIff env w n q r
+
 end PPAC.Migration.Step4Checks
