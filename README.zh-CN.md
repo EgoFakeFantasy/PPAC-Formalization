@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+最新对象进展：原mode0／3两参数Run₂已对所有内部输出候选取得独立项程序的精确双条件：实际输出为内部存在的两个有类型项、对应森林及两个独立项程序运行。输出森林、输出自然性和长度数码见证均未预给；全部内部字段规格与有限向量逐项运行的连接、实际长度2列表的双字段分解已证明。9模块77声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1453构建任务、15854项审计（380无公理／15474允许依赖）、零警告；九命令及五trust=0入口全部退出0；1317份工作区独立哈希一致、1766对精确证书足迹、13510项Internal显式声明覆盖。实际恒等／位移／转换列表环境仍显式保留，固定层的混合替换表不自动视为量词稳定。完整原子公式程序桥、完整公式内部归纳／实际量词环境提升、quotation总桥、数值Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ORIGINAL_ARGUMENT_PAIR_PROGRAM_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新对象进展：原App与首字段符号树码／实际参数森林的构造码已双向对应，并能在已知节点处反向恢复整条参数森林。纯成员码处，自然参数的App恰好等价于内部编号Num0及两个实际参数的森林；原applicationCase中的参数自然性由真实Run₂推出，已取得该分支的完整双条件，无额外参数自然性前提。6模块55声明、8组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1444构建任务、15777项审计（380无公理／15397允许依赖）、零警告；九命令及五trust=0入口全部退出0；1308份工作区独立哈希一致、1756对精确证书足迹、13433项Internal显式声明覆盖。完整原公式内部归纳／实际量词环境提升、有类型公式与独立程序总桥、quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ORIGINAL_PURE_MEMBER_APPLICATION_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

@@ -7266,4 +7266,44 @@ example {m} (w mode depth parameter s x y n q : Fin m) : YesMetaZFC.Logic.FirstO
     (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberApplicationCaseIffSentence w mode depth parameter s x y n q)) :=
   Internal.ObjectOriginalMemberApplication.native_originalMemberApplicationCaseIff w mode depth parameter s x y n q
 
+example {m} (k : Nat) (xs : Fin k → Fin m) (w len a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.finiteForestTypedListIffSentence k xs w len a b n)) :=
+  Internal.ObjectOriginalArgumentPair.native_finiteForestTypedListIff k xs w len a b n
+
+example {m} (k : Nat) (xs ys : Fin k → Fin m) (w R S len n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.finiteForestAllIndexProgramFieldsIffSentence k xs ys w R S len n q)) :=
+  Internal.ObjectOriginalArgumentPair.native_finiteForestAllIndexProgramFieldsIff k xs ys w R S len n q
+
+example {m} (k : Nat) (xs ys : Fin k → Fin m) (w R S len c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.finiteForestMappedProgramIffSentence k xs ys w R S len c d n q)) :=
+  Internal.ObjectOriginalArgumentPair.native_finiteForestMappedProgramIff k xs ys w R S len c d n q
+
+example {m} (k : Nat) (xs ys : Fin k → Fin m) (w mode depth a b c L I R n q len : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.replaceOriginalRunAtFiniteForestsIffSentence k xs ys w mode depth a b c L I R n q len)) :=
+  Internal.ObjectOriginalArgumentPair.native_replaceOriginalRunAtFiniteForestsIff k xs ys w mode depth a b c L I R n q len
+
+example {m} (k : Nat) (xs ys : Fin k → Fin m) (w mode depth parameter a b B I J R S n q len : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.weakenOriginalRunAtFiniteForestsIffSentence k xs ys w mode depth parameter a b B I J R S n q len)) :=
+  Internal.ObjectOriginalArgumentPair.native_weakenOriginalRunAtFiniteForestsIff k xs ys w mode depth parameter a b B I J R S n q len
+
+example {m} (w len a b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.twoArgumentListActualForestWitnessSentence w len a b q)) :=
+  Internal.ObjectOriginalArgumentPair.native_twoArgumentListActualForestWitness w len a b q
+
+example {m} (w R S len c d n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.twoArgumentMappedAllCandidatesIffSentence w R S len c d n q x y)) :=
+  Internal.ObjectOriginalArgumentPair.native_twoArgumentMappedAllCandidatesIff w R S len c d n q x y
+
+example {m} (w mode depth a b c L I R n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.replaceOriginalTwoArgumentAllCandidatesIffSentence w mode depth a b c L I R n q x y)) :=
+  Internal.ObjectOriginalArgumentPair.native_replaceOriginalTwoArgumentAllCandidatesIff w mode depth a b c L I R n q x y
+
+example {m} (w mode depth parameter a b B I J R S n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.weakenOriginalTwoArgumentAllCandidatesIffSentence w mode depth parameter a b B I J R S n q x y)) :=
+  Internal.ObjectOriginalArgumentPair.native_weakenOriginalTwoArgumentAllCandidatesIff w mode depth parameter a b B I J R S n q x y
+
+example {m} (w len z e x y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentPair.twoArgumentForestRecoveredFromActualFieldsSentence w len z e x y q)) :=
+  Internal.ObjectOriginalArgumentPair.native_twoArgumentForestRecoveredFromActualFields w len z e x y q
+
 end PPAC.Migration.Step4Checks

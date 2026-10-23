@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: Original mode0/3 two-argument Run2 is now equivalent at every internal output candidate to internally existential typed output components, their actual forest and both independent term-program runs. Output forest/naturality and the length-numeral witness are eliminated from endpoint premises. Finite-forest typing, all-internal-index field correspondence and actual length-two decomposition have object proofs. Nine modules, 77 declarations and ten closed families replay to original nativeZF. Acceptance: 1453 jobs, 15854 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1317 hashes and 1766 exact certificate pairs. Actual identity/shift/converted-list environments remain explicit; arbitrary fixed-bound mixed lists are not asserted binder-stable. Full atomic/formula-program bridges, actual binder lifting, quotation, numeric Option, Proof checking, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_ARGUMENT_PAIR_PROGRAM_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: Original App codes now correspond exactly to a scalar-head constructor with the actual argument forest, with reverse recovery at known codes. At pure membership codes, checked App is equivalent to internal symbol numeral0 and the exact two-argument forest; the original applicationCase discharges argument naturality from its real Run2 child and has an exact membership-case equation. Six modules, 55 declarations and eight closed families replay to original nativeZF. Acceptance: 1444 jobs, 15777 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1308 hashes and 1756 exact certificate pairs. Full original formula induction, actual binder environments, typed formula-program correspondence, quotation, numeric Option interfaces, Proof checking, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_PURE_MEMBER_APPLICATION_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:
