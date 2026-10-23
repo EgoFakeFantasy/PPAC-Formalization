@@ -6718,4 +6718,116 @@ example {m} (w d p x idx y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceOutputUniqueSentence w d p x idx y z)) :=
   Internal.ObjectFreeReplace.native_allInternalFreeReplaceOutputUnique w d p x idx y z
 
+example {m} (w idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.actualSuccessorVariableValueSentence w idx)) :=
+  Internal.ObjectFreeWeaken.native_actualSuccessorVariableValue w idx
+
+example {m} (w idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.successorVariableValueExactDomainSentence w idx)) :=
+  Internal.ObjectFreeWeaken.native_successorVariableValueExactDomain w idx
+
+example {m} (w idx y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.successorVariableValueAtActualSuccessorSentence w idx y s)) :=
+  Internal.ObjectFreeWeaken.native_successorVariableValueAtActualSuccessor w idx y s
+
+example {m} (w idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.successorVariableValueNaturalSentence w idx y)) :=
+  Internal.ObjectFreeWeaken.native_successorVariableValueNatural w idx y
+
+example {m} (w idx y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.successorVariableValueUniqueSentence w idx y z)) :=
+  Internal.ObjectFreeWeaken.native_successorVariableValueUnique w idx y z
+
+example {m} (env : Fin 3 → Fin m) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.originalFreeWeakenMatrixSoundSentence env xs w r R idx)) :=
+  Internal.ObjectFreeWeaken.native_originalFreeWeakenMatrixSound env xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.originalFreeWeakenApplicationSoundSentence xs w r R idx)) :=
+  Internal.ObjectFreeWeaken.native_originalFreeWeakenApplicationSound xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.originalFreeWeakenTraceValueIffSentence xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_originalFreeWeakenTraceValueIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.originalFreeWeakenPowerTraceValueIffSentence xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_originalFreeWeakenPowerTraceValueIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.originalFreeWeakenTraceCandidateRejectionIffSentence xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_originalFreeWeakenTraceCandidateRejectionIff xs w r idx
+
+example {m} (w d p x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.actualOriginalFreeWeakenRootSentence w d p x y)) :=
+  Internal.ObjectFreeWeaken.native_actualOriginalFreeWeakenRoot w d p x y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenReturnedIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenReturnedIff w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.validFreeWeakenReturnedValueIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeWeaken.native_validFreeWeakenReturnedValueIff w d p x idx y
+
+example {m} (w d p x idx y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.validFreeWeakenAtActualSuccessorIffSentence w d p x idx y s)) :=
+  Internal.ObjectFreeWeaken.native_validFreeWeakenAtActualSuccessorIff w d p x idx y s
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenCandidateRejectionIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenCandidateRejectionIff w d p x idx y
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenHasOutputIffSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenHasOutputIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenNoOutputIffSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenNoOutputIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.validFreeWeakenActualOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_validFreeWeakenActualOutput w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.invalidFreeWeakenGuardNoOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_invalidFreeWeakenGuardNoOutput w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.nonNaturalFreeWeakenParameterNoOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_nonNaturalFreeWeakenParameterNoOutput w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.nonNaturalFreeWeakenDepthNoOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_nonNaturalFreeWeakenDepthNoOutput w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.invalidFreeWeakenInputNoOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeWeaken.native_invalidFreeWeakenInputNoOutput w d p x idx
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenOutputNaturalSentence w d p x idx y)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenOutputNatural w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.nonNaturalFreeWeakenOutputRejectedSentence w d p x idx y)) :=
+  Internal.ObjectFreeWeaken.native_nonNaturalFreeWeakenOutputRejected w d p x idx y
+
+example {m} (w d p x idx y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allInternalFreeWeakenOutputUniqueSentence w d p x idx y z)) :=
+  Internal.ObjectFreeWeaken.native_allInternalFreeWeakenOutputUnique w d p x idx y z
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allFourOriginalVariableTraceValueIffSentence three bound xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_allFourOriginalVariableTraceValueIff three bound xs w r idx
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allFourOriginalVariablePowerTraceValueIffSentence three bound xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_allFourOriginalVariablePowerTraceValueIff three bound xs w r idx
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeWeaken.allFourOriginalVariableCandidateRejectionIffSentence three bound xs w r idx)) :=
+  Internal.ObjectFreeWeaken.native_allFourOriginalVariableCandidateRejectionIff three bound xs w r idx
+
 end PPAC.Migration.Step4Checks

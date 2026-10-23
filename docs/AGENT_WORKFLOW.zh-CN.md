@@ -7,7 +7,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 
 当前执行表（2026-10-24；下方保留既往单元记录）：
 
-原mode3自由替换freeReplace已完成任意内部闭轨迹可靠性／完备性；原成功图实际取得模式数码与原行码，对所有内部候选等价于精确深度／自由变量守卫及独立查找执行。对全部内部输出量化的有输出／无输出、严格自然接口、非法域／非自然输出拒绝及单值性均已证明。9模块143声明、22组新闭句回放原nativeZF。1343构建任务、14742项审计（375无公理／14367允许依赖）、零警告；九命令及五trust=0入口全部退出0；1207份工作区独立哈希一致、1619对精确证书足迹、12398项Internal显式声明覆盖。mode0自由变量freeWeaken、原扩展语言quotation总桥、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。下一单元完成freeWeaken的实际后继索引及全部内部双向成功／失败，不要求输出预先外部有效，也不以排中穷尽性代替执行正确性。
+原mode0自由变量freeWeaken已完成实际内部后继值、原任意闭轨迹双向对应及全部候选成功图；有输出恰好等价于深度自然／参数自然／输入自由变量码守卫，无输出恰好为其否定。非法参数／深度／输入／输出拒绝及自然输出单值性已证明。四个mode0／3变量分支取得统一Trace／P(ω)／候选拒绝对象接口。10模块178声明、28组新闭句回放原nativeZF。1353构建任务、14920项审计（375无公理／14545允许依赖）、零警告；九命令及五trust=0入口全部退出0；1217份工作区独立哈希一致、1647对精确证书足迹、12576项Internal显式声明覆盖。完整项／参数列表／十一公式递归、原扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。下一单元先把纯签名项的内部变量作用域接入统一原表接口，再处理原参数列表及十一公式；application分支须在对象守卫下处理／排除，扩展语言图消去仍为独立前置门。
 
 | 单元 | 实现责任与输入 | 对象推导验收 | 状态 |
 |---|---|---|---|
@@ -24,7 +24,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3c.2a | 原完整表轨迹单调性、实际根行插入及模式0／3四个变量正分支 | 任意内部闭轨迹保留、真实原head／premises及P(ω)搜索轨迹；15组原核闭句 | 正分支已完成，见[验收](STEP4_SCALAR_TRACE_EXTENSION_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2b.1 | 原完整表kind／mode／变量输入精确分派；绑定变量输出恒等 | 四个唯一原规则的双向分派、实际搜索及候选拒绝；两个绑定分支的全内部轨迹恒等双条件，16组原核闭句 | 已完成，见[验收](STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2b.2 | 原freeReplace查找前提与完整内部轨迹；消去预给行码 | 全部内部候选的精确守卫／执行／严格lookup对应，有输出／无输出、非法域拒绝及单值性，22组原核闭句 | freeReplace已完成，见[验收](STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md) |
-| S3.4c.2b.2c.3c.2b.3–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
+| S3.4c.2b.2c.3c.2b.3 | 原freeWeaken实际后继／精确域；四变量分支统一 | 全部内部成功／无输出及逐域拒绝／唯一性；四分支Trace／P(ω)双向接口，28组原核闭句 | 已完成，见[验收](STEP4_FREE_WEAKEN_ALL_VARIABLE_VALUES_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
 | 5 | 专用ProofZF/U纯AST，原六规则／27模式及完整Separation/Collection | 全部内部ω证明码的检查／编译正确性 | 待完成 |
 | 6 | 完整L／对称扩张及ZF+PP+ACwo+¬AC内部解释 | 原ZF内所有目标公理及证明翻译，不添加模型标准性或选择前提 | 待完成 |
 | 7 | 原内部Con句子及上述编译／解释 | 原FirstOrder.Derives nativeZF [] (Con_ZF → Con_target) | 未证明 |

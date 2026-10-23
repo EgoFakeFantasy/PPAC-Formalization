@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: original mode0 freeWeaken has actual internal successor values, arbitrary closed-trace soundness/completeness and an all-internal success graph. Has-output is exactly the depth/parameter/free-input guard; no-output is its negation. Invalid-domain/output rejection, natural range and uniqueness are proved. One object interface now covers all four original mode0/3 variable trace cases and actual Power(omega). Twenty-eight new closed families replay to original nativeZF. Acceptance: 1353 build jobs, 14920 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1217 independent hashes and 1647 exact certificate pairs. Full term/argument/formula recursion, extended-language quotation, original rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_FREE_WEAKEN_ALL_VARIABLE_VALUES_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: original mode3 freeReplace has soundness/completeness for arbitrary internal closed traces. Its success graph constructs actual mode/row witnesses and is equivalent, for every internal candidate under Omega, to the exact depth/free-variable guard and independent lookup execution. Has-output/no-output quantify all internal outputs; strict natural interfaces, invalid-domain/non-natural-output rejection and uniqueness are proved. Twenty-two new closed families replay to original nativeZF. Acceptance: 1343 build jobs, 14742 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1207 independent hashes and 1619 exact certificate pairs. Mode0 freeWeaken, extended-language quotation, full formula/rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.
