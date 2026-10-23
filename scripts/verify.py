@@ -78,12 +78,20 @@ def main() -> None:
         raise RuntimeError(f"Internal explicit declarations missing from Audit.lean: {sorted(missing_internal)}")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
-    formula_program_core_modules = ('FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
+    formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
     legacy_formula_oracle = re.compile(r"SyntaxMixedFormula(?:Judgment|Recursive|Local|Operator|Recursion|Evaluation)(?:Syntax)?\.|SyntaxCodedMixedTermSyntax\.")
     for module in formula_program_core_modules:
         body = strip_comments((ROOT / "PPAC/Migration/Internal" / (module + ".lean")).read_text(encoding="utf-8-sig"))
         if legacy_formula_oracle.search(body):
             raise RuntimeError(f"Legacy judgment used as independent program primitive: {module}")
+    # The compiled four-atom subprogram cannot call the original full trace or
+    # a legacy substitution judgment as an execution primitive.
+    atomic_core = strip_comments((ROOT / "PPAC/Migration/Internal/FormulaAtomicProgramSyntax.lean").read_text(encoding="utf-8-sig"))
+    atomic_oracle = re.compile(r"OriginalTransformRowSyntax\.|OriginalAtomic\w*\.|Expr\.eval|SyntaxTransform\.|SyntaxMixedFormula\w*\.|SyntaxCodedMixedTermSyntax\.")
+    for name in ("program", "run"):
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", atomic_core)
+        if not found or atomic_oracle.search(found.group(0)):
+            raise RuntimeError(f"Original/comparison oracle in independent atomic subprogram: {name}")
     # Strict lookup executes a real tail recursor and a partial Cons match;
     # it cannot use the old total-default field relation as an execution primitive.
     lookup_core = strip_comments((ROOT / "PPAC/Migration/Internal/StrictLookupSyntax.lean").read_text(encoding="utf-8-sig"))
@@ -2134,7 +2142,14 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectWholeAtomicInterfaces.native_wholeEqualityDispatchIff',
                     'PPAC.Migration.Internal.ObjectWholeAtomicInterfaces.native_replaceWholeEqualityExistingAtomIff',
                     'PPAC.Migration.Internal.ObjectWholeAtomicInterfaces.native_weakenWholeEqualityExistingAtomIff',
-                    'PPAC.Migration.Internal.ObjectWholeAtomicInterfaces.native_wholeConstantExistingAtomIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectWholeAtomicInterfaces.native_wholeConstantExistingAtomIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_compiledAtomicProgramSource',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_replaceTypedMembershipWholeRunIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_replaceTypedEqualityWholeRunIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_replaceUnifiedAtomicProgramIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_weakenTypedMembershipWholeRunIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_weakenTypedEqualityWholeRunIff',
+                    'PPAC.Migration.Internal.ObjectUnifiedAtomicProgram.native_weakenUnifiedAtomicProgramIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2241,6 +2256,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectUnifiedAtomicProgram": ('compiledAtomicProgramSource', 'replaceTypedMembershipWholeRunIff', 'replaceTypedEqualityWholeRunIff', 'replaceUnifiedAtomicProgramIff', 'weakenTypedMembershipWholeRunIff', 'weakenTypedEqualityWholeRunIff', 'weakenUnifiedAtomicProgramIff'),
         "ObjectWholeAtomicInterfaces": ('rawApplicationWrongTagRejected', 'applicationCaseWrongTagRejected', 'wholeFalseDispatchIff', 'wholeTrueDispatchIff', 'wholeEqualityDispatchIff', 'replaceWholeEqualityExistingAtomIff', 'weakenWholeEqualityExistingAtomIff', 'wholeConstantExistingAtomIff'),
         "ObjectExistingAtomicInterfaces": ('memberResultExistingAtomIff', 'replaceWholeMemberExistingAtomIff', 'weakenWholeMemberExistingAtomIff', 'replaceAllInternalCheckedTermAgreement', 'weakenAllInternalCheckedTermAgreement', 'equalityLocalCaseExistingAtomIff', 'replaceEqualityLocalExistingAtomIff', 'weakenEqualityLocalExistingAtomIff', 'constantDataExistingAtomIff'),
     }
@@ -2789,7 +2805,10 @@ def main() -> None:
         "object_original_application_actual_tag_two_exclusion_proved": True,
         "object_original_equality_whole_run_existing_atom_interface_iff_proved": True,
         "object_original_constants_whole_run_existing_atom_interface_iff_proved": True,
-        "object_original_all_atomic_formula_program_cases_proved": False,
+        "object_original_all_atomic_formula_program_cases_proved": True,
+        "object_original_atomic_internal_source_field_witnesses_eliminated_proved": True,
+        "object_original_atomic_compiled_program_all_candidates_iff_proved": True,
+        "independent_atomic_subprogram_definitions_checked": True,
         "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": True,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,
@@ -2921,8 +2940,8 @@ def main() -> None:
         "object_internal_formula_independent_program_uniform_correctness_proved": True,
         "object_internal_arbitrary_program_interpreter_correctness_proved": False,
         "independent_formula_program_core_reference_guard_checked": True,
-        "independent_formula_program_core_modules_checked": ['FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax'],
-        "scope": "Current milestone: complete original mode0/3 Run3 at known pure membership, equality and each constant input corresponds to the existing membership/equality/nullary atom interfaces for every internal output candidate. Actual App tag2 is rejected at different constructors using internal payload range, node injectivity and numeral inequality. All closed certificates replay into original nativeZF. Concrete environments and source constructor/type witnesses remain explicit. The unified theorem over the internally quantified source atomic predicate is still unproved; its coarse gate remains false. Full formula-program execution, correct binder applicability and formula induction, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con remain unproved.",
+        "independent_formula_program_core_modules_checked": ['FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax'],
+        "scope": "Current milestone: under the actual internal SyntaxAtomSyntax.atomic guard and concrete mode0/3 environments, complete original Run3 is equivalent for every internal input/output candidate to the existing Program compiler applied to the four-atom subprogram. Source member/equality fields are eliminated internally; reverse input typing is recovered from actual checked term calls. Seven new closed certificate families replay into original nativeZF. The atomic subprogram uses the existing four branch instructions and is checked independently of original traces or legacy comparison judgments. This proves all original atomic formula-program cases, while full eleven-branch formula-program execution, correct binder applicability and formula induction, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

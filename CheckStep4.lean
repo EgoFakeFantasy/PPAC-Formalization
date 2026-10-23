@@ -7414,4 +7414,32 @@ example {m} (three truth : Bool) (w mode depth parameter a b c d n q : Fin m) : 
     (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.wholeConstantExistingAtomIffSentence three truth w mode depth parameter a b c d n q)) :=
   Internal.ObjectWholeAtomicInterfaces.native_wholeConstantExistingAtomIff three truth w mode depth parameter a b c d n q
 
+example {m} (w R S a b c d h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.compiledAtomicProgramSourceSentence w R S a b c d h n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_compiledAtomicProgramSource w R S a b c d h n q
+
+example {m} (w mode depth a b c L I R n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.replaceTypedMembershipWholeRunIffSentence w mode depth a b c L I R n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_replaceTypedMembershipWholeRunIff w mode depth a b c L I R n q
+
+example {m} (w mode depth a b c L I R n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.replaceTypedEqualityWholeRunIffSentence w mode depth a b c L I R n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_replaceTypedEqualityWholeRunIff w mode depth a b c L I R n q
+
+example {m} (w mode depth a b c L I R h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.replaceUnifiedAtomicProgramIffSentence w mode depth a b c L I R h n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_replaceUnifiedAtomicProgramIff w mode depth a b c L I R h n q
+
+example {m} (w mode depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.weakenTypedMembershipWholeRunIffSentence w mode depth parameter a b B I J R S n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_weakenTypedMembershipWholeRunIff w mode depth parameter a b B I J R S n q
+
+example {m} (w mode depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.weakenTypedEqualityWholeRunIffSentence w mode depth parameter a b B I J R S n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_weakenTypedEqualityWholeRunIff w mode depth parameter a b B I J R S n q
+
+example {m} (w mode depth parameter a b B I J R S h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.weakenUnifiedAtomicProgramIffSentence w mode depth parameter a b B I J R S h n q)) :=
+  Internal.ObjectUnifiedAtomicProgram.native_weakenUnifiedAtomicProgramIff w mode depth parameter a b B I J R S h n q
+
 end PPAC.Migration.Step4Checks

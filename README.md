@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: under the internally quantified atomic input guard and concrete mode0/3 environments, complete original Run3 now corresponds to the existing Program compiler for all four atomic cases and every internal input/output candidate. Source-field witnesses are eliminated inside object derivations. Five modules, 45 declarations and seven nativeZF closed certificate families; 1480 build jobs, 16068 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The complete atomic gate is now true. Full formula execution and final internal Con remain unproved. [Acceptance](docs/STEP4_UNIFIED_ATOMIC_PROGRAM_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 Latest accepted checkpoint: complete original mode0/3 equality and both constant Run3 cases now correspond to the existing atom interfaces for every internal output candidate. Actual App tag2 exclusion is proved internally. Four new modules, 48 declarations and eight nativeZF closed certificate families; 1475 build jobs, 16023 audited declarations, zero warnings, all nine commands and five trust=0 entries passed. The unified internally quantified atomic theorem and final internal Con implication remain unproved. [Acceptance](docs/STEP4_ORIGINAL_EQUALITY_CONSTANT_WHOLE_RUN_ACCEPTANCE.zh-CN.md).
 
 Historical checkpoints follow.
