@@ -7753,4 +7753,56 @@ example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       ((PureSyntaxTrace.term w b f n).iff (SyntaxTermSyntax.term w b f n))).close)) :=
   ObjectPureSyntaxTermChecker.native_pureTermCheckIff w b f n
 
+example {m} (R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.binaryUnionExistsSentence R S)) :=
+  Internal.ObjectPureSyntaxListSteps.native_binaryUnionExists R S
+
+example {m} (w R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureTraceInsertionConditionSentence w R r)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureTraceInsertionCondition w R r
+
+example {m} (w r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureTracePairConditionSentence w r s)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureTracePairCondition w r s
+
+example {m} (w n e0 e1 : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureNilExpressionIffSentence w n e0 e1)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureNilExpressionIff w n e0 e1
+
+example {m} (w b f k n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureNilApplicationSoundSentence w b f k n r R)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureNilApplicationSound w b f k n r R
+
+example {m} (w b f k n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureNilApplicationCompleteSentence w b f k n r R)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureNilApplicationComplete w b f k n r R
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureNilCheckedSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureNilChecked w b f k n
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureTypedNilCheckedSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureTypedNilChecked w b f k n
+
+example {m} (w k n r R p q b f ell h t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureConsApplicationCompleteSentence w k n r R p q b f ell h t)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureConsApplicationComplete w k n r R p q b f ell h t
+
+example {m} (w k n r p q b f ell h t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxListSteps.pureConsConditionCompleteSentence w k n r p q b f ell h t)) :=
+  Internal.ObjectPureSyntaxListSteps.native_pureConsConditionComplete w k n r p q b f ell h t
+-- 展开真实闭轨迹合并，不预给公共轨迹见证。
+example {m} (w r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((PureSyntaxTrace.condition w r).imp
+      ((PureSyntaxTrace.condition w s).imp (PureSyntaxTraceMerge.pairCondition w r s))).close)) :=
+  ObjectPureSyntaxListSteps.native_pureTracePairCondition w r s
+
+-- 展开nil完整查询构造：空长度、内部上下文及真实Nil码。
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.SetLanguage.empty k).imp
+      ((SyntaxTermSyntax.contexts w b f).imp ((StructuralListSyntax.nilCode w n).imp
+        (PureSyntaxTrace.arguments w b f k n))))).close)) :=
+  ObjectPureSyntaxListSteps.native_pureNilChecked w b f k n
+
 end PPAC.Migration.Step4Checks

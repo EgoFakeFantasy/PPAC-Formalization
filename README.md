@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+3f.2c.3b.2b.1已验收：纯十五规则的真实闭轨迹可在对象ZF中合并并插入新根行；nil规则与类型合同相容，合法空参数列实际取得完整查询证书；cons局部步骤合并头项／尾列表轨迹后实际取得父行接受条件，公共轨迹见证已消去。7模块83声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1533构建任务、16606项审计（389无公理／16217允许依赖）、零警告；九命令及五trust=0入口全部退出0；1395份独立哈希一致、1876对精确证书足迹、14262项Internal显式声明覆盖。完整参数列健全性／对象归纳、公式查询、最终检查器、quotation／Option、ProofZF/U、内部解释及Con仍未完成。见[验收](docs/STEP4_PURE_LIST_LOCAL_STEPS_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 S3.4c.2b.2c.3c.2c.2b.3f.2c.3b.2a已验收：专用纯成员十五规则检查图已定义，并在对象ZF中证明全部内部绑定界／自由界／输入候选的项查询与纯Term等价，只有Ω前提；完备方向实际构造内部闭轨迹。8模块87声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1526构建任务、16523项审计（386无公理／16137允许依赖）、零警告；九命令及五trust=0入口全部退出0；1388份独立哈希一致、1866对精确证书足迹、14179项Internal显式声明覆盖。参数列表和公式查询已有AST，其正确性尚未证明；完整检查器适用性、quotation、Option、ProofZF/U、内部解释及最终内部Con仍未完成。见[验收](docs/STEP4_PURE_SYNTAX_TERM_CHECKER_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

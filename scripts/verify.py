@@ -2269,7 +2269,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckSound',
                     'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckComplete',
                     'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckIff',
-                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureEmptyBoundTermCheckFree'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureEmptyBoundTermCheckFree',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_binaryUnionExists',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureTraceInsertionCondition',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureTracePairCondition',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureNilExpressionIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureNilApplicationSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureNilApplicationComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureNilChecked',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureTypedNilChecked',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureConsApplicationComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxListSteps.native_pureConsConditionComplete'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2376,6 +2386,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectPureSyntaxListSteps": ('binaryUnionExists', 'pureTraceInsertionCondition', 'pureTracePairCondition', 'pureNilExpressionIff', 'pureNilApplicationSound', 'pureNilApplicationComplete', 'pureNilChecked', 'pureTypedNilChecked', 'pureConsApplicationComplete', 'pureConsConditionComplete'),
         "ObjectPureSyntaxTermChecker": ('purePremiseFreeTraceExists', 'pureVariableExpressionIff', 'pureVariableApplicationSound', 'pureTermClosedTraceSound', 'pureTermCheckSound', 'pureTermCheckComplete', 'pureTermCheckIff', 'pureEmptyBoundTermCheckFree'),
         "ObjectOriginalFreeSubstFormula": ('emptyBoundTermFree', 'emptyBoundListsIff', 'emptyBoundConversionExists', 'modeThreeWholeSubstitutionIff', 'modeThreeWholeProgramIff', 'modeThreeEmptyBoundArgumentsIff', 'modeThreeOutputType', 'modeThreeOutputUnique', 'modeThreeActualOutput'),
         "ObjectOriginalFormulaCorrectness": ('fullElevenProgramFromUniformIff', 'wholeRunExecutedFromUniformIff', 'allParametersCorrectFromUniform', 'allInternalRootsCorrect', 'uniformInductionDischarged', 'allInternalWholeRunExecutedIff', 'allInternalWholeProgramIff', 'actualHistoryAgreementDischarged', 'agreedActualHistoryExistsDischarged'),
@@ -2959,6 +2970,12 @@ def main() -> None:
         "object_pure_syntax_full_fifteen_rule_trace_AST_implemented": True,
         "object_pure_syntax_actual_premiseless_trace_constructed_proved": True,
         "object_pure_syntax_term_query_all_internal_iff_proved": True,
+        "object_pure_syntax_trace_insertion_actual_condition_proved": True,
+        "object_pure_syntax_two_actual_traces_joined_proved": True,
+        "object_pure_syntax_nil_rule_sound_and_complete_proved": True,
+        "object_pure_syntax_nil_query_actual_trace_proved": True,
+        "object_pure_syntax_cons_local_actual_trace_step_proved": True,
+        "object_pure_syntax_cons_query_soundness_induction_proved": False,
         "object_pure_syntax_checker_arguments_query_bridge_proved": False,
         "object_pure_syntax_checker_formula_query_bridge_proved": False,
         "object_pure_syntax_checker_full_typing_query_bridge_proved": False,
