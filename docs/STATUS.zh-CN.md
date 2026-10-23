@@ -1,4 +1,17 @@
 # 当前交付状态
+2026-10-23；分支migration/yesmeta-step3；本批基点ec44af2177e1d158be454871de2ff4755263de2f。
+
+S3.4c.2b.2c.3c.1a已验收：原自由替换表L在真实binder下严格不变，子执行重新满足同一特化接口；严格查表实际执行tail递归并要求最终Cons匹配，不调用旧默认字段关系。
+已用对象ω归纳证明空集吸收及全部内部合法列表长度／索引的准确成功／拒绝域、实际唯一值纤维，并接到原L实际索引边的目标fvar码。21组新闭句返回原FirstOrder.Derives nativeZF []。
+1213构建任务、13678项审计、零警告；九命令及五trust=0入口退出0。12模块167声明；11334项Internal全覆盖、1111份工作区独立哈希一致、1492对精确证书足迹。七锁与固定底座不变、依赖干净。
+见[严格查表验收](STEP4_STRICT_LOOKUP_ACCEPTANCE.zh-CN.md)。
+
+下一项3c.1b仍须证明固定原lookup数值程序码／Option结果与该操作核心的统一对应；随后是boundValue/freeValue模式0／3、全公式及原规则5／4检查兼容。当前操作核心及准确域不能替代这些接口。
+ProofZF/U、全部内部ω证明检查／编译、完整内部解释和最终Con仍未完成。背景原nativeZF完整Collection，目标ZF+PP+ACwo+¬AC；Con保留全部内部ω证明码、六规则／27模式及全Separation/Collection。
+
+以下为历史批次记录，各自数字仅对应当时基点。
+
+# 当前交付状态
 2026-10-23；分支migration/yesmeta-step3；本批基点f7ab445f6f2a3f82deff839761e3cb4f71b31155。
 
 S3.4c.2b.2c.3b已验收：原自由替换列表L同码转换、实际bound恒等／free位移环境特化，以及自由替换／头槽弱化和独立固定公式程序的全内部双向对应。

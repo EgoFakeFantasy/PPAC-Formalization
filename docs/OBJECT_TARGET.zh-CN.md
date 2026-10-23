@@ -714,3 +714,7 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 
 2026-10-23 S3.4c.2b.2c.3b更新：原自由替换列表L已证明转换后仍为同一码；bound恒等／free位移实际环境把原自由替换与头槽弱化接入独立固定公式程序，对全部内部元数据及候选码双向对应。两个操作的精确合法域、实际唯一有类型输出和拒绝性质均已对象证明；弱化还实际取得新后继上下文长度。39组新增闭句返回原nativeZF。
 1201构建任务、13511项审计、零警告，九命令与五trust=0入口退出0，1099份工作区独立哈希一致。原SyntaxTransform模式0／3的严格Option数值接口、原规则5／4检查兼容、ProofZF/U、内部解释和最终Con仍未完成。完整Collection/Separation、六规则／27模式和全部内部ω证明码的最终目标不变。见[本批验收](STEP4_FREE_VARIABLE_PROGRAMS_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2c.3c.1a更新：原自由替换表L已证明在实际量词binder提升下仍为同一码；新源／目标bound长度相等、bound恒等及子执行闭包均有对象推导。严格查表使用真实tail递归及最终Cons匹配，已闭合空集吸收和合法列表全部内部长度／索引的准确域归纳、实际唯一输出与拒绝，并接到原L实际边的目标变量码。
+21组新闭句返回原nativeZF；1213构建任务、13678项审计、零警告，九命令与五trust=0入口退出0，1111份工作区独立哈希一致。固定原lookup数值程序码／Option结果、模式0／3全公式接口、原规则兼容、ProofZF/U、内部解释及最终Con仍未完成。完整Collection/Separation、六规则／27模式和全部内部ω证明码的目标不变。见[本批验收](STEP4_STRICT_LOOKUP_ACCEPTANCE.zh-CN.md)。

@@ -6126,4 +6126,88 @@ example {m} (w a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectFreeVariablePrograms.weakActualSuccessorStateSentence w a b n)) :=
   Internal.ObjectFreeVariablePrograms.native_weakActualSuccessorState w a b n
 
+example {m} (w I J R S a b c d A C M K H L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.binderFreeCodeStableSentence w I J R S a b c d A C M K H L)) :=
+  Internal.ObjectStrictLookup.native_binderFreeCodeStable w I J R S a b c d A C M K H L
+
+example {m} (w b a c L I J R u v M K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.binderLiftedEnvironmentSentence w b a c L I J R u v M K H)) :=
+  Internal.ObjectStrictLookup.native_binderLiftedEnvironment w b a c L I J R u v M K H
+
+example {m} (w b a c L I J R u v M K H x q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.binderChildExecutionSentence w b a c L I J R u v M K H x q)) :=
+  Internal.ObjectStrictLookup.native_binderChildExecution w b a c L I J R u v M K H x q
+
+example {m} (w n z y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupZeroSelectedSentence w n z y)) :=
+  Internal.ObjectStrictLookup.native_lookupZeroSelected w n z y
+
+example {m} (w h t n r s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupConsSuccessorSentence w h t n r s y)) :=
+  Internal.ObjectStrictLookup.native_lookupConsSuccessor w h t n r s y
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupOuterRejectedSentence w n i)) :=
+  Internal.ObjectStrictLookup.native_lookupOuterRejected w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupNilRejectedSentence w n i)) :=
+  Internal.ObjectStrictLookup.native_lookupNilRejected w n i
+
+example {m} (w h t n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupConsZeroReturnsSentence w h t n z)) :=
+  Internal.ObjectStrictLookup.native_lookupConsZeroReturns w h t n z
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupEmptySinkSentence w n i y)) :=
+  Internal.ObjectStrictLookup.native_lookupEmptySink w n i y
+
+example {m} (w n r i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupExactDomainSentence w n r i y)) :=
+  Internal.ObjectStrictLookup.native_lookupExactDomain w n r i y
+
+example {m} (w n r i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupCheckedDomainSentence w n r i y)) :=
+  Internal.ObjectStrictLookup.native_lookupCheckedDomain w n r i y
+
+example {m} (w n i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupUniqueSentence w n i y z)) :=
+  Internal.ObjectStrictLookup.native_lookupUnique w n i y z
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupUniqueOutputSentence w n i y)) :=
+  Internal.ObjectStrictLookup.native_lookupUniqueOutput w n i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupAtCandidateSentence w n i y)) :=
+  Internal.ObjectStrictLookup.native_lookupAtCandidate w n i y
+
+example {m} (w n r i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupActualFiberSentence w n r i)) :=
+  Internal.ObjectStrictLookup.native_lookupActualFiber w n r i
+
+example {m} (w n r i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupFiberIffRangeSentence w n r i)) :=
+  Internal.ObjectStrictLookup.native_lookupFiberIffRange w n r i
+
+example {m} (w n r i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupHasOutputIffRangeSentence w n r i)) :=
+  Internal.ObjectStrictLookup.native_lookupHasOutputIffRange w n r i
+
+example {m} (w n r i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupRejectedIffNotRangeSentence w n r i)) :=
+  Internal.ObjectStrictLookup.native_lookupRejectedIffNotRange w n r i
+
+example {m} (w n r i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupOutOfBoundsRejectedSentence w n r i)) :=
+  Internal.ObjectStrictLookup.native_lookupOutOfBoundsRejected w n r i
+
+example {m} (w n r i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupInRangeFieldIffSentence w n r i y)) :=
+  Internal.ObjectStrictLookup.native_lookupInRangeFieldIff w n r i y
+
+example {m} (w a c L J r i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStrictLookup.lookupFreeImageAtEdgeSentence w a c L J r i j q)) :=
+  Internal.ObjectStrictLookup.native_lookupFreeImageAtEdge w a c L J r i j q
+
 end PPAC.Migration.Step4Checks

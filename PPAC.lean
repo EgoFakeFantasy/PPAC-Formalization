@@ -145,3 +145,5 @@ import PPAC.Migration.Internal.ObjectFormulaTransformProgram
 import PPAC.Migration.Internal.ObjectIndexFormulaRename
 
 import PPAC.Migration.Internal.ObjectFreeVariablePrograms
+
+import PPAC.Migration.Internal.ObjectStrictLookup
