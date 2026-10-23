@@ -7050,4 +7050,44 @@ example {m} (w mode depth parameter c d n q v : Fin m) : YesMetaZFC.Logic.FirstO
     (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.originalTermAllCandidateUniqueSentence w mode depth parameter c d n q v)) :=
   Internal.ObjectOriginalNumericTermFiber.native_originalTermAllCandidateUnique w mode depth parameter c d n q v
 
+example {m} (kind : Nat) (w mode depth parameter input output replacement : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalRunInputSubstitutionSentence kind w mode depth parameter input output replacement)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalRunInputSubstitution kind w mode depth parameter input output replacement
+
+example {m} (kind : Nat) (w mode depth parameter input output replacement : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalRunOutputSubstitutionSentence kind w mode depth parameter input output replacement)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalRunOutputSubstitution kind w mode depth parameter input output replacement
+
+example {m} (w mode depth parameter k c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalListValueTargetTypeSentence w mode depth parameter k c d n q)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalListValueTargetType w mode depth parameter k c d n q
+
+example {m} (w mode depth parameter k c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalListAllCandidateUniqueSentence w mode depth parameter k c d n q v)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalListAllCandidateUnique w mode depth parameter k c d n q v
+
+example {m} (three : Bool) (w mode depth parameter k c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalNilListActualValueSentence three w mode depth parameter k c d n q)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalNilListActualValue three w mode depth parameter k c d n q
+
+example {m} (three : Bool) (w mode depth parameter ell k c d n q h t H T : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalConsListActualValueSentence three w mode depth parameter ell k c d n q h t H T)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalConsListActualValue three w mode depth parameter ell k c d n q h t H T
+
+example {m} (three : Bool) (w mode depth parameter a b c d n k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalAllInternalTypedListFiberSentence three w mode depth parameter a b c d n k)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalAllInternalTypedListFiber three w mode depth parameter a b c d n k
+
+example {m} (three : Bool) (w mode depth parameter a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.originalAllInternalListCodePropertiesSentence three w mode depth parameter a b c d)) :=
+  Internal.ObjectOriginalArgumentFiber.native_originalAllInternalListCodeProperties three w mode depth parameter a b c d
+
+example {m} (w mode depth a b c L I R n k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.replaceAllInternalOriginalListFiberSentence w mode depth a b c L I R n k)) :=
+  Internal.ObjectOriginalArgumentFiber.native_replaceAllInternalOriginalListFiber w mode depth a b c L I R n k
+
+example {m} (w mode depth parameter a b B I J R S n k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentFiber.weakenAllInternalOriginalListFiberSentence w mode depth parameter a b B I J R S n k)) :=
+  Internal.ObjectOriginalArgumentFiber.native_weakenAllInternalOriginalListFiber w mode depth parameter a b B I J R S n k
+
 end PPAC.Migration.Step4Checks

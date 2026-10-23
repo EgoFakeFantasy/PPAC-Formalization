@@ -175,3 +175,5 @@ import PPAC.Migration.Internal.ObjectOriginalArgumentRun
 import PPAC.Migration.Internal.ObjectTypedArgumentList
 
 import PPAC.Migration.Internal.ObjectOriginalNumericTermFiber
+
+import PPAC.Migration.Internal.ObjectOriginalArgumentFiber

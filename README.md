@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: original Separation/Foundation close internal code-member induction for numeric mode0/3 argument lists. Every internally typed source list has an actual original Run2 output of the exact same internal length and target type, unique against every internal candidate. Earlier premises are eliminated, and both specialized modes discharge head promises using actual environments. Nine modules, 79 declarations and ten new closed families replay to original nativeZF. Acceptance: 1405 jobs, 15415 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1269 hashes and 1712 exact certificate pairs. Full all-internal field correspondence with the independent transform, eleven-formula recursion, quotation, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_ARGUMENT_LIST_FIBER_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: original numeric mode0/3 term runs have actual typed output fibers and all-internal-input promises. Each object value includes the original run, target term type, natural output and uniqueness against every internal candidate. Abstract program agreement is discharged in both specialized endpoints; actual environment premises remain explicit. Four modules, 65 declarations and ten new closed families replay to original nativeZF. Acceptance: 1396 jobs, 15336 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1260 hashes and 1702 exact certificate pairs. Whole-list output totality/uniqueness, internal list induction and field correspondence, full formulas, quotation, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_NUMERIC_TERM_FIBER_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:

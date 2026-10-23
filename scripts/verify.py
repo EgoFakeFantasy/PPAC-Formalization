@@ -2012,7 +2012,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTransfer',
                     'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermFiberTransfer',
                     'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTargetType',
-                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermAllCandidateUnique'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermAllCandidateUnique',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalRunInputSubstitution',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalRunOutputSubstitution',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalListValueTargetType',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalListAllCandidateUnique',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalNilListActualValue',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalConsListActualValue',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalAllInternalTypedListFiber',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_originalAllInternalListCodeProperties',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_replaceAllInternalOriginalListFiber',
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentFiber.native_weakenAllInternalOriginalListFiber'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2112,6 +2122,7 @@ def main() -> None:
         "ObjectOriginalArgumentRun": ('originalRunInputNatural', 'originalRunOutputNatural', 'actualOriginalArgumentRoot', 'originalArgumentOutcomesNatural', 'originalNilApplicationExactIff', 'originalConsApplicationExactIff', 'originalArgumentTraceCasesExactIff', 'originalArgumentWholeRunCasesExactIff'),
         "ObjectTypedArgumentList": ('numericTermModeRunIff', 'numericReplaceOnTypedTerm', 'numericWeakenOnTypedTerm', 'typedNilListIntroduction', 'typedConsListIntroduction', 'typedConsActualPredecessor', 'typedConsHead', 'typedConsTail', 'typedNilListIff', 'typedConsListIff', 'typedWholeListCasesIff'),
         "ObjectOriginalNumericTermFiber": ('replaceWholeTermAgreement', 'replaceActualOriginalTermFiber', 'replaceAllInternalTermPromise', 'weakenWholeTermAgreement', 'weakenActualOriginalTermFiber', 'weakenAllInternalTermPromise', 'originalTermValueTransfer', 'originalTermFiberTransfer', 'originalTermValueTargetType', 'originalTermAllCandidateUnique'),
+        "ObjectOriginalArgumentFiber": ('originalRunInputSubstitution', 'originalRunOutputSubstitution', 'originalListValueTargetType', 'originalListAllCandidateUnique', 'originalNilListActualValue', 'originalConsListActualValue', 'originalAllInternalTypedListFiber', 'originalAllInternalListCodeProperties', 'replaceAllInternalOriginalListFiber', 'weakenAllInternalOriginalListFiber'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2623,6 +2634,10 @@ def main() -> None:
         "object_original_numeric_term_typed_actual_unique_output_fibers_proved": True,
         "object_original_numeric_term_all_internal_source_term_promises_proved": True,
         "object_original_numeric_term_program_agreement_discharged_under_actual_environments_proved": True,
+        "object_original_argument_typed_code_member_induction_closed_proved": True,
+        "object_original_argument_all_internal_typed_list_actual_unique_outputs_proved": True,
+        "object_original_argument_actual_output_target_list_exact_length_proved": True,
+        "object_original_argument_mode_zero_three_term_promises_discharged_proved": True,
         "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": False,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,

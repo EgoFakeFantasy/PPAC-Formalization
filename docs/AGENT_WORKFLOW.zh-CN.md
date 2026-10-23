@@ -7,6 +7,12 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 
 当前执行表（2026-10-24；下方保留既往单元记录）：
 
+原mode0／3参数列表的对象成员归纳已由原Separation／Foundation关闭：任意内部有类型源列表实际存在原Run₂输出，输出保持同一内部长度及目标项类型，并对全部内部候选唯一。Earlier／尾码归纳前提已消去，两个模式的头Promise由实际环境正式推导。9模块79声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1405构建任务、15415项审计（378无公理／15037允许依赖）、零警告；九命令及五trust=0入口全部退出0；1269份工作区独立哈希一致、1712对精确证书足迹、13071项Internal显式声明覆盖。全内部列表与独立变换的逐字段完整对应仍未完成；全十一公式、quotation总桥、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_ARGUMENT_LIST_FIBER_ACCEPTANCE.zh-CN.md)。
+
+下一单元3d：全部内部索引上的逐字段变换对应及原Run₂与独立变换的完整双条件；随后继续原十一公式与量词环境提升。
+
+以下是已验收基础和历史记录：
+
 原mode0／3项运行已取得实际有类型唯一输出：全部候选上的原Run₁唯一性、输出自然性及目标项类型均包含在对象Value中；全内部输入项承诺∀n(Term(n)→∃q Value(n,q))已正式推导。实际恒等／位移／转换列表前提保留，抽象程序agreement前提已在两个模式的正式端点消去。4模块65声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1396构建任务、15336项审计（378无公理／14958允许依赖）、零警告；九命令及五trust=0入口全部退出0；1260份工作区独立哈希一致、1702对精确证书足迹、12992项Internal显式声明覆盖。任意内部列表的Run₂输出总性／唯一性、逐字段完整变换对应和内部列表归纳仍未完成；全十一公式、quotation总桥、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_NUMERIC_TERM_FIBER_ACCEPTANCE.zh-CN.md)。
 
 下一单元为3c：在对象ω上对列表码作成员归纳，取得原Run₂实际唯一有类型输出；3d仍须证明全部内部索引的逐字段对应。
@@ -19,7 +25,7 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 |---|---|---|---|
 | 3a 类型分解及数值项桥 | 原TermList、实际Nil／Cons、Num0／3 | 内部前驱／头尾类型、完整Cases双条件；原Run₁↔独立项程序 | 已验收；11组闭句回放原nativeZF，未扩大可信基 |
 | 3b 实际头项输出纤维 | 3a、实际恒等／位移／转换列表、既有TermProgramValue | 原Run₁的实际有类型唯一输出及∀n(Term(n)→Fiber(n)) | 已验收；10组闭句回放原nativeZF，实际环境前提明确，抽象agreement已消去 |
-| 3c 内部列表码归纳 | 3a／3b、原Run₂整体方程、尾码严格成员界 | 任意内部有类型列表的原Run₂实际有类型唯一输出 | 待证明；使用原Separation／Foundation，不用宿主List归纳 |
+| 3c 内部列表码归纳 | 3a／3b、原Run₂整体方程、尾码严格成员界 | 任意内部有类型列表的原Run₂实际有类型唯一输出，保持准确内部长度 | 已验收；原Separation／Foundation关闭成员归纳，10组新原核闭句，Earlier及模式头Promise均已消去 |
 | 3d 逐字段变换对应 | 3c及内部Field关系、原项程序双条件 | 全部内部长度／索引上的完整列表对应与拒绝接口 | 待证明；完成后才能通过完整列表变换正确性门 |
 | 后续原公式／Proof／Con | 全列表对应、原十一公式与量词提升、原六规则／27模式 | 内部ProofZF/U检查／编译及最终Con蕴含的原核推导 | 未完成；保持全部内部ω码和完整Separation／Collection |
 
