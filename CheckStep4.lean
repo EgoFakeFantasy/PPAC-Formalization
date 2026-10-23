@@ -7346,4 +7346,40 @@ example {m} (w mode depth parameter a b B I J R S n q x y s : Fin m) : YesMetaZF
     (Translation.sentence (Internal.ObjectOriginalMemberProgram.weakenOriginalMemberWholeRunProgramIffSentence w mode depth parameter a b B I J R S n q x y s)) :=
   Internal.ObjectOriginalMemberProgram.native_weakenOriginalMemberWholeRunProgramIff w mode depth parameter a b B I J R S n q x y s
 
+example {m} (w R S a b c d s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.memberResultExistingAtomIffSentence w R S a b c d s x y n q)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_memberResultExistingAtomIff w R S a b c d s x y n q
+
+example {m} (w mode depth a b c L I R n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.replaceWholeMemberExistingAtomIffSentence w mode depth a b c L I R n q x y s)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_replaceWholeMemberExistingAtomIff w mode depth a b c L I R n q x y s
+
+example {m} (w mode depth parameter a b B I J R S n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.weakenWholeMemberExistingAtomIffSentence w mode depth parameter a b B I J R S n q x y s)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_weakenWholeMemberExistingAtomIff w mode depth parameter a b B I J R S n q x y s
+
+example {m} (w mode depth a b c L I R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.replaceAllInternalCheckedTermAgreementSentence w mode depth a b c L I R)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_replaceAllInternalCheckedTermAgreement w mode depth a b c L I R
+
+example {m} (w mode depth parameter a b B I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.weakenAllInternalCheckedTermAgreementSentence w mode depth parameter a b B I J R S)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_weakenAllInternalCheckedTermAgreement w mode depth parameter a b B I J R S
+
+example {m} (w mode depth parameter R S a b c d x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.equalityLocalCaseExistingAtomIffSentence w mode depth parameter R S a b c d x y n q)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_equalityLocalCaseExistingAtomIff w mode depth parameter R S a b c d x y n q
+
+example {m} (w mode depth a b c L I R n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.replaceEqualityLocalExistingAtomIffSentence w mode depth a b c L I R n q x y)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_replaceEqualityLocalExistingAtomIff w mode depth a b c L I R n q x y
+
+example {m} (w mode depth parameter a b B I J R S n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.weakenEqualityLocalExistingAtomIffSentence w mode depth parameter a b B I J R S n q x y)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_weakenEqualityLocalExistingAtomIff w mode depth parameter a b B I J R S n q x y
+
+example {m} (truth : Bool) (w a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.constantDataExistingAtomIffSentence truth w a b c d n q)) :=
+  Internal.ObjectExistingAtomicInterfaces.native_constantDataExistingAtomIff truth w a b c d n q
+
 end PPAC.Migration.Step4Checks
