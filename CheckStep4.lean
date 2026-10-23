@@ -6210,4 +6210,80 @@ example {m} (w a c L J r i j q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives na
     (Translation.sentence (Internal.ObjectStrictLookup.lookupFreeImageAtEdgeSentence w a c L J r i j q)) :=
   Internal.ObjectStrictLookup.native_lookupFreeImageAtEdge w a c L J r i j q
 
+example {m} (w n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.operatorActualFiberSentence w n h)) :=
+  Internal.ObjectLookupTableProgram.native_operatorActualFiber w n h
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.actualCarrierRecursorsSentence w)) :=
+  Internal.ObjectLookupTableProgram.native_actualCarrierRecursors w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.allOrdinalRecursorsSentence w)) :=
+  Internal.ObjectLookupTableProgram.native_allOrdinalRecursors w
+
+example {m} (w d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.actualGraphSentence w d)) :=
+  Internal.ObjectLookupTableProgram.native_actualGraph w d
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.evaluationAtNaturalSentence w n)) :=
+  Internal.ObjectLookupTableProgram.native_evaluationAtNatural w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.evaluationUniqueFiberSentence w n)) :=
+  Internal.ObjectLookupTableProgram.native_evaluationUniqueFiber w n
+
+example {m} (w n h v i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.stateMembershipIffSentence w n h v i y)) :=
+  Internal.ObjectLookupTableProgram.native_stateMembershipIff w n h v i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.recursiveCriterionSentence w n i y)) :=
+  Internal.ObjectLookupTableProgram.native_recursiveCriterion w n i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.allInternalExecutionIffSentence w n i y)) :=
+  Internal.ObjectLookupTableProgram.native_allInternalExecutionIff w n i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.naturalExecutionIffSentence w n i y)) :=
+  Internal.ObjectLookupTableProgram.native_naturalExecutionIff w n i y
+
+example {m} (w P n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.encodedExecutionIffSentence w P n i y)) :=
+  Internal.ObjectLookupTableProgram.native_encodedExecutionIff w P n i y
+
+example {m} (w P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.uniformCorrectnessSentence w P)) :=
+  Internal.ObjectLookupTableProgram.native_uniformCorrectness w P
+
+example {m} (w P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.uniqueProgramCodeSentence w P)) :=
+  Internal.ObjectLookupTableProgram.native_uniqueProgramCode w P
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.existsCorrectProgramSentence w)) :=
+  Internal.ObjectLookupTableProgram.native_existsCorrectProgram w
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.hasOutputIffSentence w n i)) :=
+  Internal.ObjectLookupTableProgram.native_hasOutputIff w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.noOutputIffSentence w n i)) :=
+  Internal.ObjectLookupTableProgram.native_noOutputIff w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.outcomeExhaustiveSentence w n i)) :=
+  Internal.ObjectLookupTableProgram.native_outcomeExhaustive w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.outcomeIncompatibleSentence w n i)) :=
+  Internal.ObjectLookupTableProgram.native_outcomeIncompatible w n i
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTableProgram.uniqueOutputSentence w n i y)) :=
+  Internal.ObjectLookupTableProgram.native_uniqueOutput w n i y
+
 end PPAC.Migration.Step4Checks

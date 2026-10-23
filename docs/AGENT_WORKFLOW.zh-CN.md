@@ -14,13 +14,14 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3a | 索引列表码→变量项像列表；原全11递归与新程序 | 实际唯一环境、双表量词交换、内部源码归纳闭合、全内部双向公式桥及原nativeZF证书 | 已完成，见[验收](STEP4_INDEX_RENAME_BRIDGE_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3b | 原codeConversion／identityCode／freeShiftCode及一般重命名桥 | 原替换列表L同码转换，bound恒等／free位移环境特化，实际接入新程序 | 已完成，见[验收](STEP4_FREE_VARIABLE_PROGRAMS_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.1a | 严格查表实际tail递归、原Cons及原L | 全内部准确域／拒绝／实际唯一值、原L的binder稳定性及原nativeZF证书 | 已完成，见[验收](STEP4_STRICT_LOOKUP_ACCEPTANCE.zh-CN.md) |
-| S3.4c.2b.2c.3c.1b | 固定原lookup的数值程序码与Option结果表示 | 与严格操作核心统一对应，保留外壳／越界及未访问尾部行为 | 下一步 |
+| S3.4c.2b.2c.3c.1b.1 | 独立按表码递归lookup、实际状态集合／原递归图及固定描述码 | 全内部执行对应、唯一固定码与统一句子、成功／无输出对应及单值性 | 已完成，见[验收](STEP4_LOOKUP_TABLE_PROGRAM_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.1b.2 | 上游SyntaxTransform／ObjectSyntaxTransform原规则表及数字接口 | 全内部quotation／编译对应及严格失败分支，保留原未访问尾部行为 | 下一步 |
 | S3.4c.2b.2c.3c.2–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
 | 5 | 专用ProofZF/U纯AST，原六规则／27模式及完整Separation/Collection | 全部内部ω证明码的检查／编译正确性 | 待完成 |
 | 6 | 完整L／对称扩张及ZF+PP+ACwo+¬AC内部解释 | 原ZF内所有目标公理及证明翻译，不添加模型标准性或选择前提 | 待完成 |
 | 7 | 原内部Con句子及上述编译／解释 | 原FirstOrder.Derives nativeZF [] (Con_ZF → Con_target) | 未证明 |
 
-本批严格查表操作核心、准确域和原L的真实binder稳定性通过1213构建任务、13678项审计、零警告及五trust=0入口。原lookup程序码／Option结果、模式0／3全接口和规则检查总门仍未完成。
+本批按表码递归的独立查找程序通过1241构建任务、13943项审计（365无公理／13578允许依赖）、零警告；九命令与五trust=0入口退出0；1139份工作区独立哈希一致、1511对精确证书足迹、11599项Internal显式声明覆盖。上游原数字接口与规则表总门、模式0／3和规则检查仍未完成。
 
 当前程序是固定关系式DSL编译及实际规范码；已证明数值库子程序承担节点、类型、图边和双表提升。程序核心8模块不得调用旧完整公式判断／规格／算子／求值作为执行原语；独立对照证明可以引用旧规格。任意内部程序码通用解释器尚未实现，原宿主操作直接quotation仍是外部有限有效模式，不能据此提前通过规则、Proof检查器或最终Con总门。
 
