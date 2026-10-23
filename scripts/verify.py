@@ -86,7 +86,27 @@ def check_mode_three_scope() -> dict:
     return inventory
 
 
+def check_pure_syntax_definition() -> dict:
+    """Keep the actual pure Horn acceptance relation independent of its typing theorem."""
+    body = strip_comments((ROOT / "PPAC/Migration/Internal/PureSyntaxTrace.lean").read_text(encoding="utf-8"))
+    names = ["termRow", "argumentRow", "formulaRow", "closed", "witness", "condition", "term", "arguments", "formula"]
+    forbidden = re.compile(r"SyntaxTermSyntax\.|SyntaxMixedImageCodeSyntax\.|FormulaCodeSyntax\.|SyntaxRenameJudgmentSyntax\.|HornLookupConditionSyntax\.|SyntaxTransform\.|Expr\.eval")
+    for name in names:
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+        if not found or forbidden.search(found.group(0)):
+            raise RuntimeError(f"Pure checker definition uses a typing/transform oracle: {name}")
+    rules = strip_comments((ROOT / "PPAC/Migration/Internal/PureSyntaxRules.lean").read_text(encoding="utf-8"))
+    if "ObjectTermSyntax.applicationRule" in rules or "relationSymbols" in rules or "functionSymbols" in rules:
+        raise RuntimeError("Extended signature leaked into pure syntax rules")
+    if "ObjectFormulaSyntax.relationRule .membership" not in rules:
+        raise RuntimeError("Missing actual membership rule")
+    return {"definitions": names, "independent_of_typing_oracles": True, "rules": 15,
+            "term_query_scope": "all internal bound/free/input candidates under Omega",
+            "argument_query_correctness_proved": False, "formula_query_correctness_proved": False}
+
+
 def main() -> None:
+    pure_syntax_definition = check_pure_syntax_definition()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2241,7 +2261,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeEmptyBoundArgumentsIff',
                     'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputType',
                     'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputUnique',
-                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeActualOutput'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeActualOutput',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_purePremiseFreeTraceExists',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureVariableExpressionIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureVariableApplicationSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermClosedTraceSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxTermChecker.native_pureEmptyBoundTermCheckFree'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2348,6 +2376,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectPureSyntaxTermChecker": ('purePremiseFreeTraceExists', 'pureVariableExpressionIff', 'pureVariableApplicationSound', 'pureTermClosedTraceSound', 'pureTermCheckSound', 'pureTermCheckComplete', 'pureTermCheckIff', 'pureEmptyBoundTermCheckFree'),
         "ObjectOriginalFreeSubstFormula": ('emptyBoundTermFree', 'emptyBoundListsIff', 'emptyBoundConversionExists', 'modeThreeWholeSubstitutionIff', 'modeThreeWholeProgramIff', 'modeThreeEmptyBoundArgumentsIff', 'modeThreeOutputType', 'modeThreeOutputUnique', 'modeThreeActualOutput'),
         "ObjectOriginalFormulaCorrectness": ('fullElevenProgramFromUniformIff', 'wholeRunExecutedFromUniformIff', 'allParametersCorrectFromUniform', 'allInternalRootsCorrect', 'uniformInductionDischarged', 'allInternalWholeRunExecutedIff', 'allInternalWholeProgramIff', 'actualHistoryAgreementDischarged', 'agreedActualHistoryExistsDischarged'),
         "ObjectFormulaTransformRootStep": ('recursiveCasesTargetType', 'actualProgramTargetType', 'actualRootGuardedStepIff', 'actualRootStepIff', 'actualRootWholeProgramIff'),
@@ -2927,6 +2956,13 @@ def main() -> None:
         "object_original_mode_three_formula_actual_output_and_unique_proved": True,
         "original_mode_three_checker_call_sites_source_audited": True,
         "object_original_pure_syntax_checker_term_list_query_bridge_proved": False,
+        "object_pure_syntax_full_fifteen_rule_trace_AST_implemented": True,
+        "object_pure_syntax_actual_premiseless_trace_constructed_proved": True,
+        "object_pure_syntax_term_query_all_internal_iff_proved": True,
+        "object_pure_syntax_checker_arguments_query_bridge_proved": False,
+        "object_pure_syntax_checker_formula_query_bridge_proved": False,
+        "object_pure_syntax_checker_full_typing_query_bridge_proved": False,
+        "pure_syntax_definition_guard": pure_syntax_definition,
         "original_mode_three_checker_scope": mode_three_scope,
         "object_original_quantifier_child_step_advanced_iff_from_uniform_induction_proved": True,
         "object_original_quantifier_local_case_actual_history_from_uniform_induction_proved": True,

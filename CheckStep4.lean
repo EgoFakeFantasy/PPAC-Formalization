@@ -7697,4 +7697,60 @@ example {m} (w mode depth b a z c L n q : Fin m) :
                     (FreeSubstProgramSyntax.executed w b a c L n q)))))))).close)) :=
   ObjectOriginalFreeSubstFormula.native_modeThreeEmptyBoundArgumentsIff w mode depth b a z c L n q
 
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (hmem : rule ∈ PureSyntaxRules.rules) (hn : rule.premises = []) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.purePremiseFreeTraceExistsSentence rule hmem hn w r)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_purePremiseFreeTraceExists rule hmem hn w r
+
+example {m} (bound : Bool) (w n e0 e1 e2 : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureVariableExpressionIffSentence bound w n e0 e1 e2)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureVariableExpressionIff bound w n e0 e1 e2
+
+example {m} (bound : Bool) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureVariableApplicationSoundSentence bound w b f n r R)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureVariableApplicationSound bound w b f n r R
+
+example {m} (w b f n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureTermClosedTraceSoundSentence w b f n r)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureTermClosedTraceSound w b f n r
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureTermCheckSoundSentence w b f n)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckSound w b f n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureTermCheckCompleteSentence w b f n)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckComplete w b f n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureTermCheckIffSentence w b f n)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureTermCheckIff w b f n
+
+example {m} (w z f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxTermChecker.pureEmptyBoundTermCheckFreeSentence w z f n)) :=
+  Internal.ObjectPureSyntaxTermChecker.native_pureEmptyBoundTermCheckFree w z f n
+
+-- 原纯签名表的全部十五条规则；不加入函数应用或额外关系。
+example : PureSyntaxRules.rules =
+    [YesMetaZFC.Automation.ObjectTermSyntax.variableRule false,
+      YesMetaZFC.Automation.ObjectTermSyntax.variableRule true,
+      YesMetaZFC.Automation.ObjectTermSyntax.nilRule,
+      YesMetaZFC.Automation.ObjectTermSyntax.consRule,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.constantRule 0,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.constantRule 1,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.relationRule .membership,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.equalityRule,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.unaryRule 4 false,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.binaryRule 5,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.binaryRule 6,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.binaryRule 7,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.binaryRule 8,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.unaryRule 9 true,
+      YesMetaZFC.Automation.ObjectFormulaSyntax.unaryRule 10 true] := rfl
+
+-- 展开最终项查询对象合同：只有内部Omega前提，所有运行字段仍全称闭合。
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((PureSyntaxTrace.term w b f n).iff (SyntaxTermSyntax.term w b f n))).close)) :=
+  ObjectPureSyntaxTermChecker.native_pureTermCheckIff w b f n
+
 end PPAC.Migration.Step4Checks

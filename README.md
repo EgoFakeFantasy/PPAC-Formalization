@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3b.2a已验收：专用纯成员十五规则检查图已定义，并在对象ZF中证明全部内部绑定界／自由界／输入候选的项查询与纯Term等价，只有Ω前提；完备方向实际构造内部闭轨迹。8模块87声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1526构建任务、16523项审计（386无公理／16137允许依赖）、零警告；九命令及五trust=0入口全部退出0；1388份独立哈希一致、1866对精确证书足迹、14179项Internal显式声明覆盖。参数列表和公式查询已有AST，其正确性尚未证明；完整检查器适用性、quotation、Option、ProofZF/U、内部解释及最终内部Con仍未完成。见[验收](docs/STEP4_PURE_SYNTAX_TERM_CHECKER_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 S3.4c.2b.2c.3c.2c.2b.3f.2c.3b.1已验收：纯成员签名的空绑定界项列表已与自由变量像表对象等价，并实际取得转换索引码；原mode3整条公式运行已接到自由替换及其独立程序，不需预给frame、恒等表、转换表或归纳前提。全部内部合法输入取得实际输出、目标类型和全候选唯一性。3模块53声明、9组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1515构建任务、16436项审计（385无公理／16051允许依赖）、零警告；九命令及五trust=0入口全部退出0；1380份独立哈希一致、1858对精确证书足迹、14092项Internal显式声明覆盖。核对原六规则／27模式后确认模式3只在自由替换节点调用，但共享语法检查器使用扩展签名；纯成员检查关系与当前类型守卫的对象桥仍待证明。最终检查器适用性、quotation、Option、ProofZF/U、内部解释及内部Con仍未完成。见[验收](docs/STEP4_EMPTY_BOUND_MODE3_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
