@@ -7909,4 +7909,62 @@ example {m} (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF
         (PureSyntaxTrace.formula w b f n))))).close)) :=
   ObjectPureSyntaxFormulaAtoms.native_equalityQueryConstructed w b f x y n
 
+example {m} (w b f args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipInputDataIffSentence w b f args n)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipInputDataIff w b f args n
+
+example {m} (w s x y args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipAtForestIffSentence w s x y args n)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipAtForestIff w s x y args n
+
+example {m} (w b f args n len : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipTypedListSoundSentence w b f args n len)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipTypedListSound w b f args n len
+
+example {m} (w b f args R len : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipActualPremiseAtTwoSentence w b f args R len)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipActualPremiseAtTwo w b f args R len
+
+example {m} (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipApplicationSoundSentence w b f n r R)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipApplicationSound w b f n r R
+
+example {m} (w b f args n len : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipQueryFromListSentence w b f args n len)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipQueryFromList w b f args n len
+
+example {m} (w b f s x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.membershipQueryAtSentence w b f s x y n)) :=
+  Internal.ObjectPureSyntaxMembership.native_membershipQueryAt w b f s x y n
+
+example {m} (w b f s x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.typedMembershipQuerySentence w b f s x y n)) :=
+  Internal.ObjectPureSyntaxMembership.native_typedMembershipQuery w b f s x y n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.fullMembershipQuerySentence w b f n)) :=
+  Internal.ObjectPureSyntaxMembership.native_fullMembershipQuery w b f n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxMembership.allFourAtomicQueriesSentence w b f n)) :=
+  Internal.ObjectPureSyntaxMembership.native_allFourAtomicQueries w b f n
+-- 原membership规则确切字段及长度2参数前提，均由内核rfl核对。
+example : (YesMetaZFC.Automation.ObjectFormulaSyntax.relationRule .membership).head =
+    PureSyntaxFormulaGraph.head (0 : Fin 3) 1 PureSyntaxMembershipInput.input := rfl
+example : (YesMetaZFC.Automation.ObjectFormulaSyntax.relationRule .membership).premises =
+    [PureSyntaxMembershipPremise.head] := rfl
+
+-- 展开成员查询构造：全部实际码和轨迹见证已消去。
+example {m} (w b f s x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxAtomSyntax.zeroScalar w s).imp
+      ((SyntaxTermSyntax.term w b f x).imp ((SyntaxTermSyntax.term w b f y).imp
+        ((SyntaxAtomSyntax.memberCode w s x y n).imp (PureSyntaxTrace.formula w b f n)))))).close)) :=
+  ObjectPureSyntaxMembership.native_membershipQueryAt w b f s x y n
+
+-- 四种完整Source原子分支的统一查询构造；不冒充全kind4双条件。
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxAtomSyntax.atomic w b f n).imp
+      (PureSyntaxTrace.formula w b f n))).close)) :=
+  ObjectPureSyntaxMembership.native_allFourAtomicQueries w b f n
+
 end PPAC.Migration.Step4Checks

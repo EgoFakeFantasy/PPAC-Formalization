@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+3f.2c.3b.2c.2已验收：原membership规则的固定符号零载荷、长度2实际参数前提及完整成员查询构造已在对象层连接；其局部健全性不预给FormulaCode／IH。四种完整Source原子公式现统一推出真实纯公式查询，参数森林、编码行和轨迹见证均在对象存在量词中取得并消去。8模块74声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1557构建任务、16839项审计（390无公理／16449允许依赖）、零警告；九命令及五trust=0入口全部退出0；1419份独立哈希一致、1906对精确证书足迹、14495项Internal显式声明覆盖。七种逻辑构造、全公式归纳、任意kind4查询的反向健全性及最终Con仍未完成。见[验收](docs/STEP4_PURE_MEMBERSHIP_ATOMIC_QUERIES_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2c.1已验收：kind4两个常量及等式规则已完成实际局部健全性和完整查询构造；常量原应用与nullary对象双向对应，等式从两个真实项前提恢复类型，反向实际构造子行／父行和公共闭轨迹并消去见证。7模块76声明、10组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1549构建任务、16765项审计（390无公理／16375允许依赖）、零警告；九命令及五trust=0入口全部退出0；1411份独立哈希一致、1896对精确证书足迹、14421项Internal显式声明覆盖。完整公式查询双条件、其余八种构造及全公式归纳尚未完成；原数值quotation、最终检查器、ProofZF/U、内部解释和Con仍未完成。见[验收](docs/STEP4_PURE_FORMULA_CONSTANT_EQUALITY_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
