@@ -102,7 +102,7 @@ def check_pure_syntax_definition() -> dict:
         raise RuntimeError("Missing actual membership rule")
     return {"definitions": names, "independent_of_typing_oracles": True, "rules": 15,
             "term_query_scope": "all internal bound/free/input candidates under Omega",
-            "argument_query_correctness_proved": True, "formula_query_correctness_proved": False}
+            "argument_query_correctness_proved": True, "formula_query_correctness_proved": True, "formula_query_scope": "all internal root/bound/free candidates under Omega, object IH discharged"}
 
 
 def main() -> None:
@@ -2325,7 +2325,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPureSyntaxUnary.native_unaryActualChildTraceExtended',
                     'PPAC.Migration.Internal.ObjectPureSyntaxUnary.native_unaryQueryFromActualChild',
                     'PPAC.Migration.Internal.ObjectPureSyntaxUnary.native_unaryQueryFromInternalStep',
-                    'PPAC.Migration.Internal.ObjectPureSyntaxUnary.native_unaryQueryFromStrictInduction'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPureSyntaxUnary.native_unaryQueryFromStrictInduction',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaFromInductionIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaAllInternalCorrect',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaCorrectAtRoot',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaInductionDischarged',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQuerySound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryComplete',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_fullSyntaxTypingIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2434,6 +2442,7 @@ def main() -> None:
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
         "ObjectPureSyntaxBinary": ('formulaCorrectInstance', 'formulaStrictIHInstance', 'binaryInputExpressionIff', 'binaryKnownTypeIff', 'binaryActualApplicationSound', 'binaryActualChildTracesMerged', 'binaryQueryFromActualChildren', 'binaryQueryFromStrictInduction'),
         "ObjectPureSyntaxUnary": ('unaryInputExpressionIff', 'unaryKnownTypeIff', 'unaryActualApplicationSound', 'unaryActualChildTraceExtended', 'unaryQueryFromActualChild', 'unaryQueryFromInternalStep', 'unaryQueryFromStrictInduction'),
+        "ObjectPureSyntaxFormulaChecker": ('formulaFromInductionIff', 'formulaAllInternalCorrect', 'formulaCorrectAtRoot', 'formulaInductionDischarged', 'formulaQueryIff', 'formulaQuerySound', 'formulaQueryComplete', 'fullSyntaxTypingIff'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3035,14 +3044,14 @@ def main() -> None:
         "object_pure_syntax_formula_equality_rule_sound_and_query_constructed_proved": True,
         "object_pure_syntax_formula_membership_rule_sound_and_query_constructed_proved": True,
         "object_pure_syntax_all_four_atomic_queries_constructed_proved": True,
-        "object_pure_syntax_formula_membership_rule_query_bridge_proved": False,
+        "object_pure_syntax_formula_membership_rule_query_bridge_proved": True,
         "object_pure_syntax_formula_uniform_all_parameters_IH_AST_implemented": True,
         "object_pure_syntax_formula_binary_rules_under_uniform_IH_proved": True,
         "object_pure_syntax_formula_binary_actual_trace_constructed_proved": True,
-        "object_pure_syntax_formula_uniform_IH_discharged": False,
-        "object_pure_syntax_formula_logical_rule_queries_bridge_proved": False,
-        "object_pure_syntax_checker_formula_query_bridge_proved": False,
-        "object_pure_syntax_checker_full_typing_query_bridge_proved": False,
+        "object_pure_syntax_formula_uniform_IH_discharged": True,
+        "object_pure_syntax_formula_logical_rule_queries_bridge_proved": True,
+        "object_pure_syntax_checker_formula_query_bridge_proved": True,
+        "object_pure_syntax_checker_full_typing_query_bridge_proved": True,
         "pure_syntax_definition_guard": pure_syntax_definition,
         "original_mode_three_checker_scope": mode_three_scope,
         "object_original_quantifier_child_step_advanced_iff_from_uniform_induction_proved": True,
@@ -3194,6 +3203,7 @@ def main() -> None:
         "object_pure_syntax_unary_three_rules_actual_applications_proved": True,
         "object_pure_syntax_quantifier_bound_successor_internalized_proved": True,
         "object_pure_syntax_unary_complete_queries_under_uniform_IH_proved": True,
+        "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
         "scope": "Current milestone: both quantifiers have complete original mode0/3 Run3 dispatch and exact correspondence with the existing single/advanced history program under the explicit uniform object induction premise, real admissible frame, source FormulaCode and actual recursion graph. Independent depth-successor runs are equivalent to advanced reads; bound/index/image witnesses are constructed and eliminated inside object quantifiers, with actual field equalities aligning executions. Seven certificate families replay into original nativeZF. Full eleven-case assembly and discharge of uniform FormulaCode induction remain unproved, as do final-checker applicability of the mode3 contract, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",

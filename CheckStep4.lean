@@ -8048,4 +8048,47 @@ example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Der
         (PureSyntaxTrace.formula w b f n))))).close)) :=
   ObjectPureSyntaxUnary.native_unaryQueryFromStrictInduction kind w b f x n
 
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaFromInductionIffSentence w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaFromInductionIff w b f n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaAllInternalCorrectSentence w)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaAllInternalCorrect w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaCorrectAtRootSentence w n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaCorrectAtRoot w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaInductionDischargedSentence w n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaInductionDischarged w n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaQueryIffSentence w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryIff w b f n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaQuerySoundSentence w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaQuerySound w b f n
+
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.formulaQueryCompleteSentence w b f n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryComplete w b f n
+
+example {m} (w b f k n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxFormulaChecker.fullSyntaxTypingIffSentence w b f k n)) :=
+  Internal.ObjectPureSyntaxFormulaChecker.native_fullSyntaxTypingIff w b f k n
+-- 全部内部候选；本最终公式查询合同只有Omega，没有IH或预设合法性。
+example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((PureSyntaxTrace.formula w b f n).iff (FormulaCodeSyntax.formulaCode w n b f))).close)) :=
+  ObjectPureSyntaxFormulaChecker.native_formulaQueryIff w b f n
+
+-- 根码和两个内部上下文均在对象全称量词中，不仅逐外部标准quotation。
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      (.all (PureSyntaxFormulaInductionSyntax.correct w.castSucc (Fin.last m)))).close)) :=
+  ObjectPureSyntaxFormulaChecker.native_formulaAllInternalCorrect w
+
 end PPAC.Migration.Step4Checks

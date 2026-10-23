@@ -1,5 +1,18 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2c.3c已验收：纯十五规则的完整公式查询已对全部内部绑定界／自由界／输入候选与FormulaCode对象等价，最终接口只有Ω前提；十一构造的统一对象IH已由原ZF集合归纳消去。项、参数列和公式的独立纯查询现有联合类型双条件。4模块56声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1570构建任务、17003项审计（392无公理／16611允许依赖）、零警告；九命令及五trust=0入口全部退出0；1432份独立哈希一致、1929对精确证书足迹、14659项Internal显式声明覆盖。原数值quotation、共享扩展签名检查器适用性、ProofZF/U检查／编译、完整内部解释及最终Con仍未完成。见[验收](STEP4_PURE_FORMULA_QUERY_INDUCTION_ACCEPTANCE.zh-CN.md)。
+
+| 当前单元 | 实现动作 | 必须验收的对象合同 | 状态 |
+|---|---|---|---|
+| 3f.2c.3b.2c.3c | 十五规则分派、十一公式构造、原ZF集合归纳 | Ω→(PureFormulaQuery↔FormulaCode)，无IH／合法性前提；原核闭句 | 已验收 |
+| 3f.2c.3b.2d | 纯规则查询与原数值quotation、证明节点实际调用对齐 | 不把共享扩展签名检查器当纯语言；覆盖全部内部ω与无效候选 | 下一步 |
+| S2.4／F2.4b.3 | 原替换／弱化规则及元数据守卫 | 原规则5／4的任意内部码检查兼容 | 待完成 |
+| 5a／5b | 原六规则／27模式、完整ZF／目标公理检查和编译 | 专用ProofZF/U纯AST及全内部码正确性；完整Separation／Collection | 待完成 |
+| 6 | 内部解释及固定Con | FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2c.3b已验收：否定及两量词的实际原unary规则已完成统一对象IH下的可靠性与父查询构造；量词绑定界由对象后继公式给出，实际后继值、子行、父行和闭轨迹见证均内部构造并消去。4模块47声明、7组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1566构建任务、16947项审计（392无公理／16555允许依赖）、零警告；九命令及五trust=0入口全部退出0；1428份独立哈希一致、1921对精确证书足迹、14603项Internal显式声明覆盖。公式IH仍未消去；完整十五规则分派、全公式查询双条件、原数值检查器及最终Con仍待完成。见[验收](STEP4_PURE_UNARY_FORMULA_STEPS_ACCEPTANCE.zh-CN.md)。
 
 | 当前单元 | 实现动作 | 对象验收合同 | 状态 |
