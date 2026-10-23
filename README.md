@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: Original mode0/3 kind3 runs now satisfy the exact eleven-case equation at every internal input/output. Original arity=3/5/6/7 assignments, the shared canonical trace value and a pre-given root row are eliminated; components and actual successor binder depths remain internal existential witnesses. Ten modules, 84 declarations and ten new closed families replay to original nativeZF. Acceptance: 1438 jobs, 15722 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1302 hashes and 1748 exact certificate pairs. Pure-membership atom linkage, full formula induction and actual binder environments, quotation, numeric Option interfaces, Proof checking, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_FORMULA_WHOLE_RUN_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: original kind3 rows dispatch exactly to all eleven formula rules in the unchanged 28-rule table. Pure numeric application structures, every local numeric matrix, real child-trace composition and actual successor binder depth have object proofs. Twelve modules, 143 declarations and sixteen new closed families replay to original nativeZF. Acceptance: 1428 jobs, 15638 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1292 hashes and 1738 exact certificate pairs. Local matrices still assume actual internal EnvNat assignments and original root rows. Arity elimination, whole Run3 cases, pure-membership atom linkage, full formula induction/binder environments, quotation, numeric Option interfaces, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_FORMULA_LOCAL_MATRIX_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:

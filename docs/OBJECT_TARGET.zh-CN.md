@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原mode0／3的十一公式规则已完成arity=3／5／6／7实际赋值消去，以及全部内部输入／输出上的Run₃整体十一分支双条件。组件及量词后继深度均由对象存在量词绑定，共享轨迹集合V和预给根行已消去，输入／输出自然性由分支结构恢复。10模块84声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1438构建任务、15722项审计（380无公理／15342允许依赖）、零警告；九命令及五trust=0入口全部退出0；1302份工作区独立哈希一致、1748对精确证书足迹、13378项Internal显式声明覆盖。纯成员原子连接、完整公式内部归纳／实际量词环境提升、quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_FORMULA_WHOLE_RUN_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新辅助对象结果：原kind3的十一公式规则已完成原28规则表精确分派、全部局部数值矩阵及真实子运行合成；关系应用实际展开符号零字段码／Cons载荷／标签2节点，量词子深度由对象Successor指定。12模块143声明、16组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1428构建任务、15638项审计（380无公理／15258允许依赖）、零警告；九命令及五trust=0入口全部退出0；1292份工作区独立哈希一致、1738对精确证书足迹、13294项Internal显式声明覆盖。本批局部矩阵仍保留实际EnvNat赋值和原行前提，尚未消去arity块或取得Run₃整体十一分支方程；纯成员原子连接、完整公式归纳／量词环境提升、quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_FORMULA_LOCAL_MATRIX_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

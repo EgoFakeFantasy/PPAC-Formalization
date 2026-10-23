@@ -131,7 +131,7 @@ def main() -> None:
         if not found or argument_field_image_oracle.search(found.group(0)):
             raise RuntimeError(f"Original run/legacy oracle in independent argument field image: {declaration}")
     # Formula application and local case formulas stay independent of legacy answers.
-    formula_local_defs = {"OriginalFormulaApplicationSyntax": ("body", "application"), "OriginalFormulaLocalData": ("constant", "binary", "unary", "application")}
+    formula_local_defs = {"OriginalFormulaApplicationSyntax": ("body", "application"), "OriginalFormulaLocalData": ("constant", "binary", "unary", "application"), "OriginalFormulaCaseSyntax": ("binaryBody", "binaryCase", "unaryBody", "unaryCase", "binderBody", "binderCase", "applicationBody", "applicationCase"), "OriginalFormulaTraceEquation": ("outcomes",)}
     formula_local_oracle = re.compile(r"Expr\.eval|TermTransformProgramSyntax\.|FormulaTransform\w*Syntax\.|SyntaxCodedMixedTermSyntax\.|OriginalScalarValues\.valueSpec|SyntaxTransform\.(?:lookup|weaken|freeReplace|boundValue|freeValue)")
     for module, declarations in formula_local_defs.items():
         body = strip_comments((ROOT / "PPAC/Migration/Internal" / (module + ".lean")).read_text(encoding="utf-8-sig"))
@@ -2065,7 +2065,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinaryTraceFromData',
                     'PPAC.Migration.Internal.ObjectOriginalFormulaMatrix.native_originalFormulaNonbinderTraceFromData',
                     'PPAC.Migration.Internal.ObjectOriginalFormulaMatrix.native_originalFormulaBinderTraceFromData',
-                    'PPAC.Migration.Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationTraceFromData'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationTraceFromData',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaConstantAssignmentEliminated',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinaryAssignmentEliminated',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaNonbinderAssignmentEliminated',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinderAssignmentEliminated',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaApplicationAssignmentEliminated',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinderAtActualSuccessor',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesAtTraceValue',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesAtRow',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesInputOutputNatural',
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaEquation.native_originalFormulaWholeRunElevenCases'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2168,6 +2178,7 @@ def main() -> None:
         "ObjectOriginalArgumentFiber": ('originalRunInputSubstitution', 'originalRunOutputSubstitution', 'originalListValueTargetType', 'originalListAllCandidateUnique', 'originalNilListActualValue', 'originalConsListActualValue', 'originalAllInternalTypedListFiber', 'originalAllInternalListCodeProperties', 'replaceAllInternalOriginalListFiber', 'weakenAllInternalOriginalListFiber'),
         "ObjectOriginalArgumentFields": ('allCandidateOriginalListValue', 'originalAllInternalArgumentFields', 'originalAllInternalFieldCodeProperties', 'allInternalFieldImageOutputUnique', 'originalRunAllFieldImageIff', 'replaceAllInternalProgramFieldsIff', 'replaceWholeOriginalArgumentProgramIff', 'weakenAllInternalProgramFieldsIff', 'weakenWholeOriginalArgumentProgramIff', 'originalConsAllInternalFields'),
         "ObjectOriginalFormulaMatrix": ('originalKindThreeWholeTableDispatch', 'originalKindThreeTraceSelectedIff', 'originalFormulaHeadMetadata', 'originalFormulaApplicationNumericIff', 'originalFormulaConstantNumericMatrix', 'originalFormulaBinaryNumericMatrix', 'originalFormulaNonbinderNumericMatrix', 'originalFormulaBinderNumericMatrix', 'originalFormulaApplicationNumericMatrix', 'originalFormulaBinderActualChildRun', 'originalElevenRuleTraceComposition', 'originalFormulaConstantTraceFromData', 'originalFormulaBinaryTraceFromData', 'originalFormulaNonbinderTraceFromData', 'originalFormulaBinderTraceFromData', 'originalFormulaApplicationTraceFromData'),
+        "ObjectOriginalFormulaEquation": ('originalFormulaConstantAssignmentEliminated', 'originalFormulaBinaryAssignmentEliminated', 'originalFormulaNonbinderAssignmentEliminated', 'originalFormulaBinderAssignmentEliminated', 'originalFormulaApplicationAssignmentEliminated', 'originalFormulaBinderAtActualSuccessor', 'originalFormulaElevenCasesAtTraceValue', 'originalFormulaElevenCasesAtRow', 'originalFormulaElevenCasesInputOutputNatural', 'originalFormulaWholeRunElevenCases'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2693,8 +2704,8 @@ def main() -> None:
         "object_original_formula_binder_child_actual_successor_depth_proved": True,
         "object_original_formula_selected_real_child_trace_composition_proved": True,
         "object_original_formula_pure_numeric_local_definitions_checked": True,
-        "object_original_formula_arity_assignments_eliminated_proved": False,
-        "object_original_formula_whole_run_eleven_cases_equation_proved": False,
+        "object_original_formula_arity_assignments_eliminated_proved": True,
+        "object_original_formula_whole_run_eleven_cases_equation_proved": True,
         "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": True,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,
@@ -2827,7 +2838,7 @@ def main() -> None:
         "object_internal_arbitrary_program_interpreter_correctness_proved": False,
         "independent_formula_program_core_reference_guard_checked": True,
         "independent_formula_program_core_modules_checked": ['FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax'],
-        "scope": "Current milestone: original kind3 five-field rows dispatch exactly to all eleven unchanged formula rules. Pure numeric scalar/application structures, all local head/child matrices and actual successor binder depth have object proofs; actual selected child traces compose through original bounded applications. These local theorems still assume actual EnvNat assignments and root rows; arity elimination, whole Run3 cases, full formula induction and binder image-environment lifting remain incomplete. Prior accepted milestone: under actual mode0/3 environments and typed source-list guards, original Run2 is equivalent to exact-length target typing and independent all-internal term-program field images for every internal output candidate; actual typed unique outputs and list member induction are proved. Fixed original equality/member nativeZF full Collection and the inherited certificate baseline are unchanged. Extended-language quotation, complete numeric Option interfaces, rule/Proof checking and compilation, interpretation and final internal Con implication remain unproved.",
+        "scope": "Current milestone: original kind3 formula arity=3/5/6/7 assignment blocks are eliminated in both directions. Under Omega, Num0/3 and natural depth/parameter, Run3 at every internal input/output is equivalent to eleven pure numeric cases with actual child runs and internally quantified components/successor depths; no root row, canonical trace value or natural input/output is preassumed. All-internal original typed argument-list correspondence remains proved. Pure membership-atom linkage, full original formula induction and actual binder environment lifting, extended-language quotation, complete numeric Option interfaces, rule/Proof checking and compilation, interpretation and final internal Con implication remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

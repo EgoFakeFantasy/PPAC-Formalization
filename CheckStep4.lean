@@ -7194,4 +7194,44 @@ example {m} (env : Fin 6 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOr
     (Translation.sentence (Internal.ObjectOriginalFormulaMatrix.originalFormulaApplicationTraceFromDataSentence env w n q r)) :=
   Internal.ObjectOriginalFormulaMatrix.native_originalFormulaApplicationTraceFromData env w n q r
 
+example {m} (three : Bool) (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.constant tag) ∈ OriginalFormulaClasses.selected) (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaConstantAssignmentEliminatedSentence three tag _hr w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaConstantAssignmentEliminated three tag _hr w mode depth parameter n q r V
+
+example {m} (tag kind : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.binary tag kind) ∈ OriginalFormulaClasses.selected) (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaBinaryAssignmentEliminatedSentence tag kind _hr w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinaryAssignmentEliminated tag kind _hr w mode depth parameter n q r V
+
+example {m} (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.unary tag false) ∈ OriginalFormulaClasses.selected) (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaNonbinderAssignmentEliminatedSentence tag _hr w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaNonbinderAssignmentEliminated tag _hr w mode depth parameter n q r V
+
+example {m} (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.unary tag true) ∈ OriginalFormulaClasses.selected) (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaBinderAssignmentEliminatedSentence tag _hr w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinderAssignmentEliminated tag _hr w mode depth parameter n q r V
+
+example {m} (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaApplicationAssignmentEliminatedSentence w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaApplicationAssignmentEliminated w mode depth parameter n q r V
+
+example {m} (tag : Nat) (_hr : (YesMetaZFC.Automation.ObjectSyntaxTransform.unary tag true) ∈ OriginalFormulaClasses.selected) (w mode depth parameter n q r V childDepth : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaBinderAtActualSuccessorSentence tag _hr w mode depth parameter n q r V childDepth)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaBinderAtActualSuccessor tag _hr w mode depth parameter n q r V childDepth
+
+example {m} (three : Bool) (w mode depth parameter n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaElevenCasesAtTraceValueSentence three w mode depth parameter n q r V)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesAtTraceValue three w mode depth parameter n q r V
+
+example {m} (three : Bool) (w mode depth parameter n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaElevenCasesAtRowSentence three w mode depth parameter n q r)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesAtRow three w mode depth parameter n q r
+
+example {m} (w mode depth parameter n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaElevenCasesInputOutputNaturalSentence w mode depth parameter n q)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaElevenCasesInputOutputNatural w mode depth parameter n q
+
+example {m} (three : Bool) (w mode depth parameter n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaWholeRunElevenCasesSentence three w mode depth parameter n q)) :=
+  Internal.ObjectOriginalFormulaEquation.native_originalFormulaWholeRunElevenCases three w mode depth parameter n q
+
 end PPAC.Migration.Step4Checks
