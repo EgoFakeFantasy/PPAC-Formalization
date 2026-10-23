@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: actual recursion graphs give read/executed equivalence. The typed strict-prefix object induction hypothesis now constructs the entire history agreement and proves an internal history carrying both the real graph and that agreement exists. Logical bridges use the actual graph and object induction premise. Five modules, 37 declarations and six nativeZF certificate families; 1491 build jobs, 16154 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The induction premise, full formula correctness and final internal Con remain unproved. [Acceptance](docs/STEP4_ACTUAL_HISTORY_FROM_INDUCTION_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 Latest accepted checkpoint: complete original mode0/3 dispatch is proved for negation and all four binary connectives. Their complete runs correspond to actual logical-program history reads under an explicit internal agreement on strictly smaller, well-typed child codes. Six modules, 49 declarations and nine nativeZF closed certificate families; 1486 build jobs, 16117 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The history agreement still needs to be derived and its induction premise discharged; full formula execution and final internal Con remain unproved. [Acceptance](docs/STEP4_NONBINDER_LOGICAL_HISTORY_ACCEPTANCE.zh-CN.md).
 
 Historical checkpoints follow.

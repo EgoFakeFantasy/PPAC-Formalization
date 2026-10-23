@@ -7478,4 +7478,28 @@ example {m} (three : Bool) (kind : Fin 4) (w mode depth parameter h R S a b c d 
     (Translation.sentence (Internal.ObjectOriginalLogicalProgram.binaryWholeRunHistoryConditionalIffSentence three kind w mode depth parameter h R S a b c d n q x y)) :=
   Internal.ObjectOriginalLogicalProgram.native_binaryWholeRunHistoryConditionalIff three kind w mode depth parameter h R S a b c d n q x y
 
+example {m} (w h D x R S a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.actualHistoryReadExecutedIffSentence w h D x R S a b c d q)) :=
+  Internal.ObjectActualFormulaHistory.native_actualHistoryReadExecutedIff w h D x R S a b c d q
+
+example {m} (w mode depth parameter R S a b c d n x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.prefixInductionAtSentence w mode depth parameter R S a b c d n x X)) :=
+  Internal.ObjectActualFormulaHistory.native_prefixInductionAt w mode depth parameter R S a b c d n x X
+
+example {m} (w mode depth parameter h R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.actualHistoryAgreementFromInductionSentence w mode depth parameter h R S a b c d n)) :=
+  Internal.ObjectActualFormulaHistory.native_actualHistoryAgreementFromInduction w mode depth parameter h R S a b c d n
+
+example {m} (w mode depth parameter R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.agreedActualHistoryExistsSentence w mode depth parameter R S a b c d n)) :=
+  Internal.ObjectActualFormulaHistory.native_agreedActualHistoryExists w mode depth parameter R S a b c d n
+
+example {m} (three : Bool)  (w mode depth parameter h R S a b c d n q x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.negationActualHistoryFromInductionIffSentence three w mode depth parameter h R S a b c d n q x)) :=
+  Internal.ObjectActualFormulaHistory.native_negationActualHistoryFromInductionIff three w mode depth parameter h R S a b c d n q x
+
+example {m} (three : Bool) (kind : Fin 4) (w mode depth parameter h R S a b c d n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectActualFormulaHistory.binaryActualHistoryFromInductionIffSentence three kind w mode depth parameter h R S a b c d n q x y)) :=
+  Internal.ObjectActualFormulaHistory.native_binaryActualHistoryFromInductionIff three kind w mode depth parameter h R S a b c d n q x y
+
 end PPAC.Migration.Step4Checks
