@@ -6506,4 +6506,64 @@ example {m} (w n i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceOutputUniqueSentence w n i y z)) :=
   Internal.ObjectLookupTrace.native_allInternalTraceOutputUnique w n i y z
 
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (env : Fin rule.arity → Fin m) (w r R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.ruleMatrixTraceMonotoneSentence rule env w r R S)) :=
+  Internal.ObjectScalarTrace.native_ruleMatrixTraceMonotone rule env w r R S
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (w r R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.ruleApplicationTraceMonotoneSentence rule w r R S)) :=
+  Internal.ObjectScalarTrace.native_ruleApplicationTraceMonotone rule w r R S
+
+example {m} (w r R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.originalWholeTableTraceMonotoneSentence w r R S)) :=
+  Internal.ObjectScalarTrace.native_originalWholeTableTraceMonotone w r R S
+
+example {m} (R r S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.insertedTraceIncludesSentence R r S)) :=
+  Internal.ObjectScalarTrace.native_insertedTraceIncludes R r S
+
+example {m} (w R r S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.insertedTraceSubsetOmegaSentence w R r S)) :=
+  Internal.ObjectScalarTrace.native_insertedTraceSubsetOmega w R r S
+
+example {m} (w R r S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.insertedTraceClosedSentence w R r S)) :=
+  Internal.ObjectScalarTrace.native_insertedTraceClosed w R r S
+
+example {m} (w R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.insertedRootActualTraceSentence w R r)) :=
+  Internal.ObjectScalarTrace.native_insertedRootActualTrace w R r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.boundModeZeroTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_boundModeZeroTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.boundModeZeroPowerTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_boundModeZeroPowerTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.boundModeThreeTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_boundModeThreeTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.boundModeThreePowerTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_boundModeThreePowerTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.freeModeZeroTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_freeModeZeroTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.freeModeZeroPowerTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_freeModeZeroPowerTrace env w r
+
+example {m} (env : Fin 4 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.freeModeThreeTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_freeModeThreeTrace env w r
+
+example {m} (env : Fin 4 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarTrace.freeModeThreePowerTraceSentence env w r)) :=
+  Internal.ObjectScalarTrace.native_freeModeThreePowerTrace env w r
+
 end PPAC.Migration.Step4Checks

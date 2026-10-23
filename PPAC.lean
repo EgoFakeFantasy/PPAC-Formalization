@@ -155,3 +155,5 @@ import PPAC.Migration.Internal.ObjectOriginalLookupRules
 import PPAC.Migration.Internal.ObjectBoundedLookupDispatch
 
 import PPAC.Migration.Internal.ObjectLookupTrace
+
+import PPAC.Migration.Internal.ObjectScalarTrace

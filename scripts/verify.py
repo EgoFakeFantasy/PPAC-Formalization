@@ -1875,7 +1875,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectLookupTrace.native_allInternalTraceNoOutputIff',
                     'PPAC.Migration.Internal.ObjectLookupTrace.native_naturalTraceHasOutputStrictIff',
                     'PPAC.Migration.Internal.ObjectLookupTrace.native_naturalTraceNoOutputStrictIff',
-                    'PPAC.Migration.Internal.ObjectLookupTrace.native_allInternalTraceOutputUnique'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectLookupTrace.native_allInternalTraceOutputUnique',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_ruleMatrixTraceMonotone',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_ruleApplicationTraceMonotone',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_originalWholeTableTraceMonotone',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_insertedTraceIncludes',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_insertedTraceSubsetOmega',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_insertedTraceClosed',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_insertedRootActualTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_boundModeZeroTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_boundModeZeroPowerTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_boundModeThreeTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_boundModeThreePowerTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_freeModeZeroTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_freeModeZeroPowerTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_freeModeThreeTrace',
+                    'PPAC.Migration.Internal.ObjectScalarTrace.native_freeModeThreePowerTrace'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -1965,6 +1980,7 @@ def main() -> None:
         "ObjectOriginalLookupRules": ('expressionActualValue', 'expressionNaturalRange', 'expressionActualUniqueFiber', 'expressionUniqueValue', 'expressionCandidateIff', 'rawExpressionIff', 'consExpressionIff', 'premiseAtValue', 'guardAtValues', 'originalLookupHeadExpressionIff', 'originalLookupTailExpressionIff', 'originalLookupPremiseExpressionIff', 'originalLookupHeadMatrixIff', 'originalLookupTailMatrixIff', 'originalLookupChildMemberIff', 'originalLookupHeadAssignmentBound', 'originalLookupTailAssignmentBound'),
         "ObjectBoundedLookupDispatch": ('naturalAssignmentFromSearchBound', 'boundedRuleApplication', 'originalLookupHeadApplication', 'originalLookupTailApplication', 'searchBoundMembershipIff', 'originalBoundedMatrixIff', 'originalQuantifiedApplicationIff', 'wholeRuleTableBoundedSearchIff', 'wholeRuleTableActualSearchIff', 'originalOtherRulesRejected', 'originalWholeTableLookupDispatchIff', 'originalActualSearchLookupDispatchIff', 'originalLookupIntoWholeTable'),
         "ObjectLookupTrace": ('actualOriginalLookupRow', 'originalLookupRowNaturalFields', 'originalHeadApplicationSound', 'arbitraryClosedInternalTraceSound', 'canonicalTraceActualSet', 'canonicalTraceSubsetOmega', 'canonicalTraceSuccessfulMember', 'canonicalTraceClosed', 'compiledTraceComplete', 'compiledTraceExecutionIff', 'compiledTraceCandidateRejectionIff', 'originalBoundedSearchClosureIff', 'originalBoundedSearchTraceIff', 'originalBoundedSearchTraceExecutionIff', 'actualPowerTraceDomainIff', 'actualPowerTraceSearchIff', 'actualPowerTraceExecutionIff', 'allInternalTraceSomeExecutionIff', 'allInternalTraceSomeCheckedIff', 'naturalTraceSomeRawLookupIff', 'allInternalTraceHasOutputIff', 'allInternalTraceNoOutputIff', 'naturalTraceHasOutputStrictIff', 'naturalTraceNoOutputStrictIff', 'allInternalTraceOutputUnique'),
+        "ObjectScalarTrace": ('ruleMatrixTraceMonotone', 'ruleApplicationTraceMonotone', 'originalWholeTableTraceMonotone', 'insertedTraceIncludes', 'insertedTraceSubsetOmega', 'insertedTraceClosed', 'insertedRootActualTrace', 'boundModeZeroTrace', 'boundModeZeroPowerTrace', 'boundModeThreeTrace', 'boundModeThreePowerTrace', 'freeModeZeroTrace', 'freeModeZeroPowerTrace', 'freeModeThreeTrace', 'freeModeThreePowerTrace'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2457,6 +2473,10 @@ def main() -> None:
         "original_Horn_bounded_search_core_direct_oracle_reference_guard_checked": True,
         "object_compiled_original_lookup_quantified_Cons_index_child_extraction_proved": True,
         "object_compiled_original_lookup_arbitrary_internal_closed_trace_soundness_proved": True,
+        "object_original_Horn_all_rules_trace_membership_monotonicity_proved": True,
+        "object_original_Horn_actual_root_insertion_closed_trace_proved": True,
+        "object_compiled_original_modes_0_3_variable_positive_trace_branches_proved": True,
+        "object_compiled_original_freeReplace_actual_lookup_premise_and_power_trace_proved": True,
         "object_compiled_original_lookup_canonical_Separation_trace_actual_set_and_closure_proved": True,
         "object_compiled_original_full_table_lookup_trace_execution_positive_and_negative_equivalence_proved": True,
         "object_compiled_original_actual_successor_search_trace_equivalence_proved": True,

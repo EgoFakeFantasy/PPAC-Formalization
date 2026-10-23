@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原完整表的轨迹单调性与Pairing／Union实际根行插入已证明；模式0／3的四个变量正分支取得实际闭合轨迹，自由替换复用已验收内部查找子轨迹，含实际P(ω)域。4模块81声明、15组新闭句回放原nativeZF。完整变量双向数值接口、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成；原扩展语言quotation总桥继续为false。见[验收](STEP4_SCALAR_TRACE_EXTENSION_ACCEPTANCE.zh-CN.md)。
+
 最新辅助对象结果：完整原规则表关系式编译的任意内部轨迹与实际查找双向对应、规范轨迹实际构造、原S(row)／P(ω)域及成功／无输出均已回放原nativeZF。原扩展语言quotation总桥及最终Con未完成。见[验收](STEP4_INTERNAL_LOOKUP_TRACE_ACCEPTANCE.zh-CN.md)。
 
 最新辅助对象结果：原有界赋值块、实际S(row)搜索界及完整原规则表的tag0查找分派已回放原nativeZF。任意内部轨迹、原数字接口及最终Con未完成。见[验收](STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md)。
