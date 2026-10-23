@@ -7442,4 +7442,40 @@ example {m} (w mode depth parameter a b B I J R S h n q : Fin m) : YesMetaZFC.Lo
     (Translation.sentence (Internal.ObjectUnifiedAtomicProgram.weakenUnifiedAtomicProgramIffSentence w mode depth parameter a b B I J R S h n q)) :=
   Internal.ObjectUnifiedAtomicProgram.native_weakenUnifiedAtomicProgramIff w mode depth parameter a b B I J R S h n q
 
+example {m} (w mode depth parameter h R S a b c d n x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.logicalHistoryAgreementAtSentence w mode depth parameter h R S a b c d n x X)) :=
+  Internal.ObjectOriginalLogicalProgram.native_logicalHistoryAgreementAt w mode depth parameter h R S a b c d n x X
+
+example {m} (w a b n x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.negationChildFormulaCodeSentence w a b n x)) :=
+  Internal.ObjectOriginalLogicalProgram.native_negationChildFormulaCode w a b n x
+
+example {m} (kind : Fin 4) (w a b n x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.binaryChildrenFormulaCodeSentence kind w a b n x y)) :=
+  Internal.ObjectOriginalLogicalProgram.native_binaryChildrenFormulaCode kind w a b n x y
+
+example {m} (w mode depth parameter h R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.negationLocalHistoryIffSentence w mode depth parameter h R S a b c d n q)) :=
+  Internal.ObjectOriginalLogicalProgram.native_negationLocalHistoryIff w mode depth parameter h R S a b c d n q
+
+example {m} (three : Bool)  (w mode depth parameter n q x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.negationWholeRunDispatchIffSentence three w mode depth parameter n q x)) :=
+  Internal.ObjectOriginalLogicalProgram.native_negationWholeRunDispatchIff three w mode depth parameter n q x
+
+example {m} (three : Bool)  (w mode depth parameter h R S a b c d n q x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.negationWholeRunHistoryConditionalIffSentence three w mode depth parameter h R S a b c d n q x)) :=
+  Internal.ObjectOriginalLogicalProgram.native_negationWholeRunHistoryConditionalIff three w mode depth parameter h R S a b c d n q x
+
+example {m} (kind : Fin 4) (w mode depth parameter h R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.binaryLocalHistoryIffSentence kind w mode depth parameter h R S a b c d n q)) :=
+  Internal.ObjectOriginalLogicalProgram.native_binaryLocalHistoryIff kind w mode depth parameter h R S a b c d n q
+
+example {m} (three : Bool) (kind : Fin 4) (w mode depth parameter n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.binaryWholeRunDispatchIffSentence three kind w mode depth parameter n q x y)) :=
+  Internal.ObjectOriginalLogicalProgram.native_binaryWholeRunDispatchIff three kind w mode depth parameter n q x y
+
+example {m} (three : Bool) (kind : Fin 4) (w mode depth parameter h R S a b c d n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLogicalProgram.binaryWholeRunHistoryConditionalIffSentence three kind w mode depth parameter h R S a b c d n q x y)) :=
+  Internal.ObjectOriginalLogicalProgram.native_binaryWholeRunHistoryConditionalIff three kind w mode depth parameter h R S a b c d n q x y
+
 end PPAC.Migration.Step4Checks

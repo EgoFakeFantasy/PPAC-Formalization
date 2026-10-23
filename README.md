@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: complete original mode0/3 dispatch is proved for negation and all four binary connectives. Their complete runs correspond to actual logical-program history reads under an explicit internal agreement on strictly smaller, well-typed child codes. Six modules, 49 declarations and nine nativeZF closed certificate families; 1486 build jobs, 16117 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The history agreement still needs to be derived and its induction premise discharged; full formula execution and final internal Con remain unproved. [Acceptance](docs/STEP4_NONBINDER_LOGICAL_HISTORY_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 Latest accepted checkpoint: under the internally quantified atomic input guard and concrete mode0/3 environments, complete original Run3 now corresponds to the existing Program compiler for all four atomic cases and every internal input/output candidate. Source-field witnesses are eliminated inside object derivations. Five modules, 45 declarations and seven nativeZF closed certificate families; 1480 build jobs, 16068 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. The complete atomic gate is now true. Full formula execution and final internal Con remain unproved. [Acceptance](docs/STEP4_UNIFIED_ATOMIC_PROGRAM_ACCEPTANCE.zh-CN.md).
 
 Historical checkpoints follow.

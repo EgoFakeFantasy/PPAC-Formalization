@@ -188,3 +188,4 @@ import PPAC.Migration.Internal.ObjectOriginalMemberProgram
 import PPAC.Migration.Internal.ObjectExistingAtomicInterfaces
 import PPAC.Migration.Internal.ObjectWholeAtomicInterfaces
 import PPAC.Migration.Internal.ObjectUnifiedAtomicProgram
+import PPAC.Migration.Internal.ObjectOriginalLogicalProgram

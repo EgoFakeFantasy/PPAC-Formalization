@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+最新对象进展：原mode0／3否定及四种二元连接词的完整Run₃分派已消去；从实际源构造与父FormulaCode恢复子码完整类型，并在明确内部严格有类型子码history agreement前提下，证明与既有single(false)／binary实际read程序分支双向对应。6模块49声明、9组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1486构建任务、16117项审计（381无公理／15736允许依赖）、零警告；九命令及五trust=0入口全部退出0；1350份独立哈希一致、1809对精确证书足迹、13773项Internal显式声明覆盖。该归纳比较前提仍待实际历史和全公式归纳消去；统一原子门保持true，完整非量词／十一分支公式、量词适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_NONBINDER_LOGICAL_HISTORY_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新对象进展：在实际内部SyntaxAtomSyntax.atomic守卫及具体mode0／3环境下，原整条Run₃已对任意内部输入／输出候选双向对应既有Program编译器的四分支原子程序。源成员／等词字段存在块已在对象层全部消去，反向源类型由真实checked项调用恢复。5模块45声明、7组闭句实际经Source→TheoryTransport→ZFReplay返回原nativeZF。1480构建任务、16068项审计（381无公理／15687允许依赖）、零警告；九命令及五trust=0入口全部退出0；1344份独立哈希一致、1800对精确证书足迹、13724项Internal显式声明覆盖。完整原子门已开启；完整十一分支公式执行、实际量词环境、归纳、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_UNIFIED_ATOMIC_PROGRAM_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
