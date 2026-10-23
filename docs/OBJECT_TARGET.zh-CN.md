@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原App与首字段符号树码／实际参数森林的构造码已双向对应，并能在已知节点处反向恢复整条参数森林。纯成员码处，自然参数的App恰好等价于内部编号Num0及两个实际参数的森林；原applicationCase中的参数自然性由真实Run₂推出，已取得该分支的完整双条件，无额外参数自然性前提。6模块55声明、8组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1444构建任务、15777项审计（380无公理／15397允许依赖）、零警告；九命令及五trust=0入口全部退出0；1308份工作区独立哈希一致、1756对精确证书足迹、13433项Internal显式声明覆盖。完整原公式内部归纳／实际量词环境提升、有类型公式与独立程序总桥、quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_PURE_MEMBER_APPLICATION_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新辅助对象结果：原mode0／3的十一公式规则已完成arity=3／5／6／7实际赋值消去，以及全部内部输入／输出上的Run₃整体十一分支双条件。组件及量词后继深度均由对象存在量词绑定，共享轨迹集合V和预给根行已消去，输入／输出自然性由分支结构恢复。10模块84声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1438构建任务、15722项审计（380无公理／15342允许依赖）、零警告；九命令及五trust=0入口全部退出0；1302份工作区独立哈希一致、1748对精确证书足迹、13378项Internal显式声明覆盖。纯成员原子连接、完整公式内部归纳／实际量词环境提升、quotation总桥、完整数值Option接口、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_FORMULA_WHOLE_RUN_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

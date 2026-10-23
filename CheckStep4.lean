@@ -7234,4 +7234,36 @@ example {m} (three : Bool) (w mode depth parameter n q : Fin m) : YesMetaZFC.Log
     (Translation.sentence (Internal.ObjectOriginalFormulaEquation.originalFormulaWholeRunElevenCasesSentence three w mode depth parameter n q)) :=
   Internal.ObjectOriginalFormulaEquation.native_originalFormulaWholeRunElevenCases three w mode depth parameter n q
 
+example {m} (k : Nat) (xs : Fin k → Fin m) (w symbol s args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalAppHeadForestConstructorIffSentence k xs w symbol s args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalAppHeadForestConstructorIff k xs w symbol s args n
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w symbol s args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalAppHeadForestRecoveredSentence k xs w symbol s args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalAppHeadForestRecovered k xs w symbol s args n
+
+example {m} (w z s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberScalarAtZeroIndexSentence w z s)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberScalarAtZeroIndex w z s
+
+example {m} (w z s x y args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberAtTwoArgumentForestIffSentence w z s x y args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberAtTwoArgumentForestIff w z s x y args n
+
+example {m} (w symbol s x y args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberAppZeroAndTwoArgumentsRecoveredSentence w symbol s x y args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberAppZeroAndTwoArgumentsRecovered w symbol s x y args n
+
+example {m} (w symbol s x y args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberAppAtNaturalArgumentsIffSentence w symbol s x y args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberAppAtNaturalArgumentsIff w symbol s x y args n
+
+example {m} (w symbol s x y args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberCheckedAppIffSentence w symbol s x y args n)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberCheckedAppIff w symbol s x y args n
+
+example {m} (w mode depth parameter s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberApplication.originalMemberApplicationCaseIffSentence w mode depth parameter s x y n q)) :=
+  Internal.ObjectOriginalMemberApplication.native_originalMemberApplicationCaseIff w mode depth parameter s x y n q
+
 end PPAC.Migration.Step4Checks

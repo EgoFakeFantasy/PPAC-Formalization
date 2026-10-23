@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: Original App codes now correspond exactly to a scalar-head constructor with the actual argument forest, with reverse recovery at known codes. At pure membership codes, checked App is equivalent to internal symbol numeral0 and the exact two-argument forest; the original applicationCase discharges argument naturality from its real Run2 child and has an exact membership-case equation. Six modules, 55 declarations and eight closed families replay to original nativeZF. Acceptance: 1444 jobs, 15777 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1308 hashes and 1756 exact certificate pairs. Full original formula induction, actual binder environments, typed formula-program correspondence, quotation, numeric Option interfaces, Proof checking, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_PURE_MEMBER_APPLICATION_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: Original mode0/3 kind3 runs now satisfy the exact eleven-case equation at every internal input/output. Original arity=3/5/6/7 assignments, the shared canonical trace value and a pre-given root row are eliminated; components and actual successor binder depths remain internal existential witnesses. Ten modules, 84 declarations and ten new closed families replay to original nativeZF. Acceptance: 1438 jobs, 15722 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1302 hashes and 1748 exact certificate pairs. Pure-membership atom linkage, full formula induction and actual binder environments, quotation, numeric Option interfaces, Proof checking, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_FORMULA_WHOLE_RUN_ACCEPTANCE.zh-CN.md).
 
 Historical acceptance record:

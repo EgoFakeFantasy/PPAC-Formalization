@@ -182,3 +182,4 @@ import PPAC.Migration.Internal.ObjectOriginalArgumentFields
 
 import PPAC.Migration.Internal.ObjectOriginalFormulaMatrix
 import PPAC.Migration.Internal.ObjectOriginalFormulaEquation
+import PPAC.Migration.Internal.ObjectOriginalMemberApplication
