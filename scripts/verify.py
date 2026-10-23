@@ -53,7 +53,41 @@ def run(command: list[str], log: str) -> str:
     return result.stdout
 
 
+def check_mode_three_scope() -> dict:
+    """Audit pinned finite call sites; this does not prove internal checker applicability."""
+    inventory = json.loads((ROOT / "docs/MODE3_CHECKER_SCOPE.json").read_text(encoding="utf-8"))
+    base = ROOT / ".lake/packages/YesMetaZFC"
+    text = {}
+    for name, expected_hash in inventory["files"].items():
+        path = base / name
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected_hash:
+            raise RuntimeError(f"Mode3 source inventory changed: {name}")
+        text[Path(name).name] = strip_comments(path.read_text(encoding="utf-8-sig"))
+    node = text["ObjectProofNode.lean"]
+    logical = text["ObjectLogicalAxiom.lean"]
+    for body, expected in [(node, inventory["proof_shape_count"]), (logical, inventory["logical_shape_count"])]:
+        match = re.search(r"def shapes : List Shape :=\s*\[([^\]]*)\]", body)
+        if not match or len(match.group(1).split(",")) != expected:
+            raise RuntimeError("Mode3 shape inventory mismatch")
+    modes = lambda body: [int(x) for x in re.findall(r"\btransform\s+([0-3])\b", body)]
+    if modes(node) != [1, 0, 3] or modes(logical) != [2, 1, 1, 2, 1, 2, 2]:
+        raise RuntimeError("Unexpected transform call sites")
+    subst = re.search(r"(?ms)^abbrev substitutionShape : Shape where.*?(?=^def shapes)", node).group(0)
+    tight = re.sub(r"\s+", "", subst)
+    for clause in ["arity:=6", "formula(.var2)(.var5)", "(.syntax,node1[.literal0,.var0,.var2,.var3])", "transform3(.var3)(.var5)(.var1)"]:
+        if clause not in tight:
+            raise RuntimeError(f"Missing actual substitution guard: {clause}")
+    if "inductive FunctionSymbol where" not in text["Language.lean"] or "| emptySet" not in text["Language.lean"]:
+        raise RuntimeError("Shared extended signature inventory mismatch")
+    if "SyntaxDecode.functionSymbols.toList.map applicationRule" not in text["ObjectTermSyntax.lean"]:
+        raise RuntimeError("Shared term checker signature changed")
+    if inventory["full_internal_pure_syntax_checker_bridge_proved"] is not False:
+        raise RuntimeError("Source inventory must remain separate from internal checker proof")
+    return inventory
+
+
 def main() -> None:
+    mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
     sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", ROOT / "CheckStep3.lean", ROOT / "CheckStep4.lean", *ROOT.glob("PPAC/**/*.lean")])
@@ -2198,7 +2232,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness.native_allInternalWholeRunExecutedIff',
                     'PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness.native_allInternalWholeProgramIff',
                     'PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness.native_actualHistoryAgreementDischarged',
-                    'PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness.native_agreedActualHistoryExistsDischarged'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalFormulaCorrectness.native_agreedActualHistoryExistsDischarged',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundTermFree',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundListsIff',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundConversionExists',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeWholeSubstitutionIff',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeWholeProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeEmptyBoundArgumentsIff',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputType',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputUnique',
+                    'PPAC.Migration.Internal.ObjectOriginalFreeSubstFormula.native_modeThreeActualOutput'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2305,6 +2348,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectOriginalFreeSubstFormula": ('emptyBoundTermFree', 'emptyBoundListsIff', 'emptyBoundConversionExists', 'modeThreeWholeSubstitutionIff', 'modeThreeWholeProgramIff', 'modeThreeEmptyBoundArgumentsIff', 'modeThreeOutputType', 'modeThreeOutputUnique', 'modeThreeActualOutput'),
         "ObjectOriginalFormulaCorrectness": ('fullElevenProgramFromUniformIff', 'wholeRunExecutedFromUniformIff', 'allParametersCorrectFromUniform', 'allInternalRootsCorrect', 'uniformInductionDischarged', 'allInternalWholeRunExecutedIff', 'allInternalWholeProgramIff', 'actualHistoryAgreementDischarged', 'agreedActualHistoryExistsDischarged'),
         "ObjectFormulaTransformRootStep": ('recursiveCasesTargetType', 'actualProgramTargetType', 'actualRootGuardedStepIff', 'actualRootStepIff', 'actualRootWholeProgramIff'),
         "ObjectOriginalBinderProgram": ('naturalSuccessorWitness', 'liftedChildExecutionAlignmentIff', 'quantifierChildReadAtLiftIff', 'quantifierStepAdvancedIff', 'quantifierLocalCaseIff', 'quantifierWholeRunDispatchIff', 'quantifierWholeRunFromUniformInductionIff'),
@@ -2324,7 +2368,7 @@ def main() -> None:
                 raise RuntimeError(f"Unexpected arithmetic core certificate footprint: {core}")
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
-    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "lean_version": version,
         "build_passed": True,
@@ -2877,6 +2921,13 @@ def main() -> None:
         "object_original_uniform_formula_code_induction_discharged_proved": True,
         "object_original_formula_correctness_scope": "OriginalOperationFrameSyntax.frame mode0/3; bound identity and free-variable image conversion; all internal typed source codes and candidate outputs",
         "object_original_mode_three_free_variable_image_contract_final_checker_applicability_proved": False,
+        "object_pure_empty_bound_term_list_free_image_iff_proved": True,
+        "object_original_mode_three_free_substitution_whole_formula_typed_lists_proved": True,
+        "object_original_mode_three_empty_bound_argument_contract_proved": True,
+        "object_original_mode_three_formula_actual_output_and_unique_proved": True,
+        "original_mode_three_checker_call_sites_source_audited": True,
+        "object_original_pure_syntax_checker_term_list_query_bridge_proved": False,
+        "original_mode_three_checker_scope": mode_three_scope,
         "object_original_quantifier_child_step_advanced_iff_from_uniform_induction_proved": True,
         "object_original_quantifier_local_case_actual_history_from_uniform_induction_proved": True,
         "object_original_quantifier_whole_run_dispatch_proved": True,

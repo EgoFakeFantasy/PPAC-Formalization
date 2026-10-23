@@ -7648,4 +7648,53 @@ example {m} (three : Bool) (w n mode depth P a b c I J R S q : Fin m) :
               (FormulaTransformExecutionSyntax.executed w R S a b a c n q))))).close)) :=
   ObjectOriginalFormulaCorrectness.native_allInternalWholeRunExecutedIff three w n mode depth P a b c I J R S q
 
+example {m} (w z c t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.emptyBoundTermFreeSentence w z c t)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundTermFree w z c t
+
+example {m} (w a z c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.emptyBoundListsIffSentence w a z c L)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundListsIff w a z c L
+
+example {m} (w a z c L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.emptyBoundConversionExistsSentence w a z c L)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_emptyBoundConversionExists w a z c L
+
+example {m} (w mode depth b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeWholeSubstitutionIffSentence w mode depth b a c L n q)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeWholeSubstitutionIff w mode depth b a c L n q
+
+example {m} (w mode depth b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeWholeProgramIffSentence w mode depth b a c L n q)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeWholeProgramIff w mode depth b a c L n q
+
+example {m} (w mode depth b a z c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeEmptyBoundArgumentsIffSentence w mode depth b a z c L n q)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeEmptyBoundArgumentsIff w mode depth b a z c L n q
+
+example {m} (w mode depth b a c L n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeOutputTypeSentence w mode depth b a c L n q)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputType w mode depth b a c L n q
+
+example {m} (w mode depth b a c L n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeOutputUniqueSentence w mode depth b a c L n q v)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeOutputUnique w mode depth b a c L n q v
+
+example {m} (w mode depth b a c L n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalFreeSubstFormula.modeThreeActualOutputSentence w mode depth b a c L n)) :=
+  Internal.ObjectOriginalFreeSubstFormula.native_modeThreeActualOutput w mode depth b a c L n
+
+-- 直接展开真实空绑定界纯参数合同：不要求预给frame或转换码见证。
+example {m} (w mode depth b a z c L n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((SyntaxNumeralSyntax.numeral 3 mode).imp
+          ((OriginalTermTraceSyntax.metadata w depth L).imp
+            ((FormulaCodeSyntax.formulaCode w n b a).imp
+              ((OmegaSyntax.empty z).imp
+                ((SyntaxMixedImageCodeSyntax.termList w a z c L).imp
+                  ((OriginalTransformRowSyntax.run 3 w mode depth L n q).iff
+                    (FreeSubstProgramSyntax.executed w b a c L n q)))))))).close)) :=
+  ObjectOriginalFreeSubstFormula.native_modeThreeEmptyBoundArgumentsIff w mode depth b a z c L n q
+
 end PPAC.Migration.Step4Checks

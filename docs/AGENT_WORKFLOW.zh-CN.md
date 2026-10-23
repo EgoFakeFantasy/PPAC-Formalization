@@ -1,5 +1,11 @@
 # 对象层迁移工程流程
 
+S3.4c.2b.2c.3c.2c.2b.3f.2c.3b.1已验收：纯成员签名的空绑定界项列表已与自由变量像表对象等价，并实际取得转换索引码；原mode3整条公式运行已接到自由替换及其独立程序，不需预给frame、恒等表、转换表或归纳前提。全部内部合法输入取得实际输出、目标类型和全候选唯一性。3模块53声明、9组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1515构建任务、16436项审计（385无公理／16051允许依赖）、零警告；九命令及五trust=0入口全部退出0；1380份独立哈希一致、1858对精确证书足迹、14092项Internal显式声明覆盖。核对原六规则／27模式后确认模式3只在自由替换节点调用，但共享语法检查器使用扩展签名；纯成员检查关系与当前类型守卫的对象桥仍待证明。最终检查器适用性、quotation、Option、ProofZF/U、内部解释及内部Con仍未完成。见[验收](STEP4_EMPTY_BOUND_MODE3_ACCEPTANCE.zh-CN.md)。
+
+下一单元3f.2c.3b.2：构造专用纯成员kind0／1／4语法检查图，并证明与当前Term／TermList／FormulaCode守卫的全内部双条件；再对接原substitutionShape查询及本批模式3接口。共享扩展签名检查器不得直接代替专用纯语言验证。
+
+以下保留历史验收记录。
+
 S3.4c.2b.2c.3c.2c.2b.3f.2c.3a.2已验收：原mode0／3全部十一种源公式情况已接到同一个真实完整程序，实际递归图已在对象存在量词内消去；以十一参数correct公式完成原ZF集合归纳，消去allFramesIH，取得有效frame下任意内部有类型源码／候选输出的原Run₃↔executed双条件及实际历史对应。5模块62声明、9组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1512构建任务、16383项审计（385无公理／15998允许依赖）、零警告；九命令及五trust=0入口全部退出0；1376份独立哈希一致、1849对精确证书足迹、14039项Internal显式声明覆盖。额外的原核检查直接展开闭句，确认最终运行接口只有Ω、frame与源FormulaCode三个前提。frame仍要求绑定恒等表和自由变量像转换；模式3合同对原证明检查器全部调用的适用性尚未证明。quotation、Option、ProofZF/U、内部解释及最终内部Con仍未完成。见[验收](STEP4_FULL_FORMULA_INDUCTION_ACCEPTANCE.zh-CN.md)。
 
 下一单元3f.2c.3b：逐个定位原证明检查器模式3调用，证明实际输入满足frame合同，或扩展相应对象正确性证明；随后完成原数值quotation与Option对应。完整实现表见本批验收文档。

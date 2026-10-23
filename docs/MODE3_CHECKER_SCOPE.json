@@ -1,0 +1,37 @@
+{
+  "yesmeta_pin": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+  "files": {
+    "YesMetaZFC/Automation/ObjectProofNode.lean": "0876832d7ebed91a237d982c91203b7687afbdf3bd707adacbed9b36d8be5e8c",
+    "YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "9bd650055d9f37e7719975396d8e30ce203fad32bc0e882eab5e7ba3edb7ce07",
+    "YesMetaZFC/Automation/ObjectTermSyntax.lean": "3fe52577ca2b3506065815a292b6cb12a494dd3e5706a44f1d4a2135e09f5ccb",
+    "YesMetaZFC/Logic/FirstOrder/Nonlogical/BasicSetTheory/Language.lean": "a7e60fa3e0f09ca164d890329a6c4fdd8c621c58efbc322f693f73c30af670a1"
+  },
+  "proof_shape_count": 6,
+  "logical_shape_count": 27,
+  "proof_transform_modes": [
+    1,
+    0,
+    3
+  ],
+  "logical_transform_modes": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2
+  ],
+  "mode_three_shape": "substitutionShape",
+  "mode_three_parameter": "values 3",
+  "mode_three_input": "values 5",
+  "mode_three_output": "values 1",
+  "source_formula_bound": "literal 0",
+  "replacement_arguments_bound": "literal 0",
+  "replacement_target_free": "values 0",
+  "replacement_length": "values 2",
+  "replacement_list": "values 3",
+  "shared_checker_signature": "extended BasicSetTheory with function symbols",
+  "required_final_checker_signature": "pure equality and membership, no function symbols",
+  "full_internal_pure_syntax_checker_bridge_proved": false
+}
