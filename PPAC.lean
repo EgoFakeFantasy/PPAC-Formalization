@@ -129,3 +129,4 @@ import PPAC.Migration.Internal.ObjectSyntaxFreeSubstCodec
 import PPAC.Migration.Internal.ObjectFormulaFreeSubst
 import PPAC.Migration.Internal.ObjectMixedTerm
 import PPAC.Migration.Internal.ObjectMixedBinder
+import PPAC.Migration.Internal.ObjectMixedEnvironment

@@ -590,3 +590,13 @@ F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成�
 见STEP4_MIXED_BINDER_ACCEPTANCE.zh-CN.md。当前只交付实际项像表层binder提升，
 一般混合公式替换的纯AST、数值环境码和原编码对应、InstantiateTop/AbstractFreeTop仍待完成。
 原六规则/27模式及全部内部ω上的检查/编译/解释和最终内部Con保持未完成；背景未改变。
+
+
+2026-10-23数值混合环境进度：原完整ω值序列Encoding实际给混合项像表唯一原列表码，
+纯TermList保留原长度、两个独立目标范围和域内合法项字段；反向实际唯一解码图也已证明。
+混合项替换及binder现均以这些数值环境列表参数化，所有实际图见证在对象量词内。
+实际唯一输出、准确类型/输入/纤维及原列表字段双条件已在原核交付，见STEP4_MIXED_ENVIRONMENT_CODES_ACCEPTANCE.zh-CN.md。
+45组Source/sourceZF核/nativeZF核闭句通过完整验收；没有给项码误加目标变量数上界。
+下一步必须另建混合状态legal及同时更新两份环境码的量词查询，再完成一般混合公式递归。
+原RenameState的MapCode类型只允许同类索引映射，不能直接别名为混合替换状态。
+InstantiateTop/AbstractFreeTop、原操作数值编码/规则检查对应、全内部ProofZF/U及最终Con仍未完成；背景和量化范围不变。

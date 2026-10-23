@@ -4470,4 +4470,184 @@ example {m} (w r s a b c d A C k h R S z n j t q : Fin m) : YesMetaZFC.Logic.Fir
     (Translation.sentence (Internal.ObjectMixedBinder.binderFreeSentence w r s a b c d A C k h R S z n j t q)) :=
   Internal.ObjectMixedBinder.native_binderFree w r s a b c d A C k h R S z n j t q
 
+example {m} (w f a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.listTypeSentence w f a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_listType w f a c d L
+
+example {m} (w f a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.fromFieldsSentence w f a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_fromFields w f a c d L
+
+example {m} (w a c d L i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.fieldTypeSentence w a c d L i q)) :=
+  Internal.ObjectMixedEnvironment.native_fieldType w a c d L i q
+
+example {m} (w f a c d L i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.imageEdgesSentence w f a c d L i q)) :=
+  Internal.ObjectMixedEnvironment.native_imageEdges w f a c d L i q
+
+example {m} (w f a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.codeExistsSentence w f a c d)) :=
+  Internal.ObjectMixedEnvironment.native_codeExists w f a c d
+
+example {m} (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.graphExistsSentence w a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_graphExists w a c d L
+
+example {m} (w f a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.codeInputIffSentence w f a c d)) :=
+  Internal.ObjectMixedEnvironment.native_codeInputIff w f a c d
+
+example {m} (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.graphInputIffSentence w a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_graphInputIff w a c d L
+
+example {m} (w f a c d L M : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.codeUniqueSentence w f a c d L M)) :=
+  Internal.ObjectMixedEnvironment.native_codeUnique w f a c d L M
+
+example {m} (w f g a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.graphUniqueSentence w f g a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_graphUnique w f g a c d L
+
+example {m} (w f a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.atEncodingSentence w f a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_atEncoding w f a c d L
+
+example {m} (w f a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.codeFiberSentence w f a c d)) :=
+  Internal.ObjectMixedEnvironment.native_codeFiber w f a c d
+
+example {m} (w f a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.codeFiberIffSentence w f a c d)) :=
+  Internal.ObjectMixedEnvironment.native_codeFiberIff w f a c d
+
+example {m} (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.graphFiberSentence w a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_graphFiber w a c d L
+
+example {m} (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.graphFiberIffSentence w a c d L)) :=
+  Internal.ObjectMixedEnvironment.native_graphFiberIff w a c d L
+
+example {m} (w r s a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.pairCodesSentence w r s a b c d)) :=
+  Internal.ObjectMixedEnvironment.native_pairCodes w r s a b c d
+
+example {m} (w a b c d R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.pairGraphsSentence w a b c d R S)) :=
+  Internal.ObjectMixedEnvironment.native_pairGraphs w a b c d R S
+
+example {m} (w r s a b c d R S u v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.pairGraphUniqueSentence w r s a b c d R S u v)) :=
+  Internal.ObjectMixedEnvironment.native_pairGraphUnique w r s a b c d R S u v
+
+example {m} (w r s a b c d R S U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.pairCodeUniqueSentence w r s a b c d R S U V)) :=
+  Internal.ObjectMixedEnvironment.native_pairCodeUnique w r s a b c d R S U V
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termInputSentence w R S a b c d n q)) :=
+  Internal.ObjectMixedEnvironment.native_termInput w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termSourceSentence w R S a b c d n q)) :=
+  Internal.ObjectMixedEnvironment.native_termSource w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termTargetSentence w R S a b c d n q)) :=
+  Internal.ObjectMixedEnvironment.native_termTarget w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termNaturalSentence w R S a b c d n q)) :=
+  Internal.ObjectMixedEnvironment.native_termNatural w R S a b c d n q
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termExistsSentence w R S a b c d n)) :=
+  Internal.ObjectMixedEnvironment.native_termExists w R S a b c d n
+
+example {m} (w R S a b c d n q r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termAtGraphsSentence w R S a b c d n q r s)) :=
+  Internal.ObjectMixedEnvironment.native_termAtGraphs w R S a b c d n q r s
+
+example {m} (w R S a b c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termUniqueSentence w R S a b c d n q v)) :=
+  Internal.ObjectMixedEnvironment.native_termUnique w R S a b c d n q v
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termUniqueOutputSentence w R S a b c d n q)) :=
+  Internal.ObjectMixedEnvironment.native_termUniqueOutput w R S a b c d n q
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termFiberSentence w R S a b c d n)) :=
+  Internal.ObjectMixedEnvironment.native_termFiber w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termExistsIffSentence w R S a b c d n)) :=
+  Internal.ObjectMixedEnvironment.native_termExistsIff w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termFiberIffSentence w R S a b c d n)) :=
+  Internal.ObjectMixedEnvironment.native_termFiberIff w R S a b c d n
+
+example {m} (bound : Bool) (w R S a b c d n q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.termFieldSentence bound w R S a b c d n q i)) :=
+  Internal.ObjectMixedEnvironment.native_termField bound w R S a b c d n q i
+
+example {m} (w R S a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderExistsSentence w R S a b c d A C)) :=
+  Internal.ObjectMixedEnvironment.native_binderExists w R S a b c d A C
+
+example {m} (w R S a b c d A C K H U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderUniqueSentence w R S a b c d A C K H U V)) :=
+  Internal.ObjectMixedEnvironment.native_binderUnique w R S a b c d A C K H U V
+
+example {m} (w R S a b c d A C K H r s k h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderAtGraphsSentence w R S a b c d A C K H r s k h)) :=
+  Internal.ObjectMixedEnvironment.native_binderAtGraphs w R S a b c d A C K H r s k h
+
+example {m} (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderInputListsSentence w R S a b c d A C K H)) :=
+  Internal.ObjectMixedEnvironment.native_binderInputLists w R S a b c d A C K H
+
+example {m} (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderOutputListsSentence w R S a b c d A C K H)) :=
+  Internal.ObjectMixedEnvironment.native_binderOutputLists w R S a b c d A C K H
+
+example {m} (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderInputSentence w R S a b c d A C K H)) :=
+  Internal.ObjectMixedEnvironment.native_binderInput w R S a b c d A C K H
+
+example {m} (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderNaturalSentence w R S a b c d A C K H)) :=
+  Internal.ObjectMixedEnvironment.native_binderNatural w R S a b c d A C K H
+
+example {m} (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderUniqueOutputSentence w R S a b c d A C K H)) :=
+  Internal.ObjectMixedEnvironment.native_binderUniqueOutput w R S a b c d A C K H
+
+example {m} (w R S a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderFiberSentence w R S a b c d A C)) :=
+  Internal.ObjectMixedEnvironment.native_binderFiber w R S a b c d A C
+
+example {m} (w R S a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderExistsIffSentence w R S a b c d A C)) :=
+  Internal.ObjectMixedEnvironment.native_binderExistsIff w R S a b c d A C
+
+example {m} (w R S a b c d A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderFiberIffSentence w R S a b c d A C)) :=
+  Internal.ObjectMixedEnvironment.native_binderFiberIff w R S a b c d A C
+
+example {m} (w R S a b c d A C K H U V z n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderZeroSentence w R S a b c d A C K H U V z n q)) :=
+  Internal.ObjectMixedEnvironment.native_binderZero w R S a b c d A C K H U V z n q
+
+example {m} (w R S a b c d A C K H U V z n i j t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderBoundSentence w R S a b c d A C K H U V z n i j t q)) :=
+  Internal.ObjectMixedEnvironment.native_binderBound w R S a b c d A C K H U V z n i j t q
+
+example {m} (w R S a b c d A C K H U V z n j t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedEnvironment.binderFreeSentence w R S a b c d A C K H U V z n j t q)) :=
+  Internal.ObjectMixedEnvironment.native_binderFree w R S a b c d A C K H U V z n j t q
+
 end PPAC.Migration.Step4Checks
