@@ -7306,4 +7306,44 @@ example {m} (w len z e x y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectOriginalArgumentPair.twoArgumentForestRecoveredFromActualFieldsSentence w len z e x y q)) :=
   Internal.ObjectOriginalArgumentPair.native_twoArgumentForestRecoveredFromActualFields w len z e x y q
 
+example {m} (w mode depth a b c L I R x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.replaceMemberPairAllInternalAgreementSentence w mode depth a b c L I R x y)) :=
+  Internal.ObjectOriginalMemberProgram.native_replaceMemberPairAllInternalAgreement w mode depth a b c L I R x y
+
+example {m} (w mode depth parameter a b B I J R S x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.weakenMemberPairAllInternalAgreementSentence w mode depth parameter a b B I J R S x y)) :=
+  Internal.ObjectOriginalMemberProgram.native_weakenMemberPairAllInternalAgreement w mode depth parameter a b B I J R S x y
+
+example {m} (w mode depth parameter s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.originalMemberWholeElevenCaseDispatchIffSentence w mode depth parameter s x y n q)) :=
+  Internal.ObjectOriginalMemberProgram.native_originalMemberWholeElevenCaseDispatchIff w mode depth parameter s x y n q
+
+example {m} (three : Bool) (w mode depth parameter s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.originalMemberWholeRunApplicationIffSentence three w mode depth parameter s x y n q)) :=
+  Internal.ObjectOriginalMemberProgram.native_originalMemberWholeRunApplicationIff three w mode depth parameter s x y n q
+
+example {m} (w mode depth parameter R S c d s x y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.originalMembershipCaseProgramIffSentence w mode depth parameter R S c d s x y q)) :=
+  Internal.ObjectOriginalMemberProgram.native_originalMembershipCaseProgramIff w mode depth parameter R S c d s x y q
+
+example {m} (w mode depth parameter R S c d s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.originalMemberApplicationProgramIffSentence w mode depth parameter R S c d s x y n q)) :=
+  Internal.ObjectOriginalMemberProgram.native_originalMemberApplicationProgramIff w mode depth parameter R S c d s x y n q
+
+example {m} (w mode depth a b c L I R n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.replaceOriginalMemberApplicationProgramIffSentence w mode depth a b c L I R n q x y s)) :=
+  Internal.ObjectOriginalMemberProgram.native_replaceOriginalMemberApplicationProgramIff w mode depth a b c L I R n q x y s
+
+example {m} (w mode depth a b c L I R n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.replaceOriginalMemberWholeRunProgramIffSentence w mode depth a b c L I R n q x y s)) :=
+  Internal.ObjectOriginalMemberProgram.native_replaceOriginalMemberWholeRunProgramIff w mode depth a b c L I R n q x y s
+
+example {m} (w mode depth parameter a b B I J R S n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.weakenOriginalMemberApplicationProgramIffSentence w mode depth parameter a b B I J R S n q x y s)) :=
+  Internal.ObjectOriginalMemberProgram.native_weakenOriginalMemberApplicationProgramIff w mode depth parameter a b B I J R S n q x y s
+
+example {m} (w mode depth parameter a b B I J R S n q x y s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalMemberProgram.weakenOriginalMemberWholeRunProgramIffSentence w mode depth parameter a b B I J R S n q x y s)) :=
+  Internal.ObjectOriginalMemberProgram.native_weakenOriginalMemberWholeRunProgramIff w mode depth parameter a b B I J R S n q x y s
+
 end PPAC.Migration.Step4Checks

@@ -138,6 +138,12 @@ def main() -> None:
             found = re.search(r"(?ms)^def " + declaration + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", body)
             if not found or argument_field_image_oracle.search(found.group(0)) or re.search(r"FormulaTransform\w*Syntax\.", found.group(0)):
                 raise RuntimeError(f"Original/legacy answer oracle in independent argument forest specification: {module}.{declaration}")
+    # Member result specifications are independent of original formula runs and comparison premises.
+    member_program_body = strip_comments((ROOT / "PPAC/Migration/Internal/MemberProgramSyntax.lean").read_text(encoding="utf-8-sig"))
+    for declaration in ("body", "returned"):
+        found = re.search(r"(?ms)^def " + declaration + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", member_program_body)
+        if not found or re.search(r"OriginalTransformRowSyntax\.|OriginalFormula\w*\.|MemberPairAgreement\w*\.|HornLookupConditionSyntax\.|SyntaxTransform\.|SyntaxCodedMixedTermSyntax\.|FormulaTransform\w*Syntax\.", found.group(0)):
+            raise RuntimeError(f"Original/legacy answer oracle in independent member program: {declaration}")
     # Formula application and local case formulas stay independent of legacy answers.
     formula_local_defs = {"OriginalFormulaApplicationSyntax": ("body", "application"), "OriginalFormulaLocalData": ("constant", "binary", "unary", "application"), "OriginalFormulaCaseSyntax": ("binaryBody", "binaryCase", "unaryBody", "unaryCase", "binderBody", "binderCase", "applicationBody", "applicationCase"), "OriginalFormulaTraceEquation": ("outcomes",), "OriginalFormulaMemberCaseSyntax": ("body", "membershipCase")}
     formula_local_oracle = re.compile(r"Expr\.eval|TermTransformProgramSyntax\.|FormulaTransform\w*Syntax\.|SyntaxCodedMixedTermSyntax\.|OriginalScalarValues\.valueSpec|SyntaxTransform\.(?:lookup|weaken|freeReplace|boundValue|freeValue)")
@@ -2101,7 +2107,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectOriginalArgumentPair.native_twoArgumentMappedAllCandidatesIff',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentPair.native_replaceOriginalTwoArgumentAllCandidatesIff',
                     'PPAC.Migration.Internal.ObjectOriginalArgumentPair.native_weakenOriginalTwoArgumentAllCandidatesIff',
-                    'PPAC.Migration.Internal.ObjectOriginalArgumentPair.native_twoArgumentForestRecoveredFromActualFields'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectOriginalArgumentPair.native_twoArgumentForestRecoveredFromActualFields',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_replaceMemberPairAllInternalAgreement',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_weakenMemberPairAllInternalAgreement',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_originalMemberWholeElevenCaseDispatchIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_originalMemberWholeRunApplicationIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_originalMembershipCaseProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_originalMemberApplicationProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_replaceOriginalMemberApplicationProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_replaceOriginalMemberWholeRunProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_weakenOriginalMemberApplicationProgramIff',
+                    'PPAC.Migration.Internal.ObjectOriginalMemberProgram.native_weakenOriginalMemberWholeRunProgramIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2207,6 +2223,7 @@ def main() -> None:
         "ObjectOriginalFormulaEquation": ('originalFormulaConstantAssignmentEliminated', 'originalFormulaBinaryAssignmentEliminated', 'originalFormulaNonbinderAssignmentEliminated', 'originalFormulaBinderAssignmentEliminated', 'originalFormulaApplicationAssignmentEliminated', 'originalFormulaBinderAtActualSuccessor', 'originalFormulaElevenCasesAtTraceValue', 'originalFormulaElevenCasesAtRow', 'originalFormulaElevenCasesInputOutputNatural', 'originalFormulaWholeRunElevenCases'),
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
+        "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2741,6 +2758,12 @@ def main() -> None:
         "object_original_argument_pair_actual_output_forest_decomposition_proved": True,
         "object_original_argument_pair_mode_zero_three_all_candidate_program_iff_proved": True,
         "independent_argument_forest_pair_program_definitions_checked": True,
+        "object_original_member_formula_pair_agreement_discharged_for_modes_zero_three_proved": True,
+        "object_original_member_formula_argument_forest_witnesses_constructed_and_eliminated_proved": True,
+        "object_original_member_formula_other_ten_cases_rejected_proved": True,
+        "object_original_member_formula_whole_run_all_candidate_term_program_iff_proved": True,
+        "independent_member_term_program_definition_checked": True,
+        "object_original_all_atomic_formula_program_cases_proved": False,
         "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": True,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,
@@ -2873,7 +2896,7 @@ def main() -> None:
         "object_internal_arbitrary_program_interpreter_correctness_proved": False,
         "independent_formula_program_core_reference_guard_checked": True,
         "independent_formula_program_core_modules_checked": ['FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax'],
-        "scope": "Current milestone: finite typed forests correspond exactly to the original internal typed-list predicate and all-index independent term-program field images. For actual two-argument source forests, original mode0/3 Run2 is equivalent at every internal output candidate to an internal existential typed output pair, its actual forest and both independent term-program runs. Output forest, output naturality and length numeral witnesses are not preassumed at these pair endpoints. Actual identity/shift/converted-list environments remain explicit; fixed-bound mixed replacement lists are not asserted binder-stable. Whole Run3 case equations and pure member App links remain proved. Full original formula induction with the correct actual binder environment contract, typed formula-program correspondence, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con remain unproved.",
+        "scope": "Current milestone: on actual pure membership inputs, original complete mode0/3 Run3 is equivalent for every internal formula-output candidate to an independently defined existential typed member result and two independent term-program runs. All other ten formula cases are rejected by actual constructor disjointness; mode-specific all-internal pair agreements are proved, and source/target argument forests and numeral0 witnesses are constructed and eliminated. No given argument code, target shape/naturality or abstract agreement remains at the concrete endpoints. Actual identity/shift/converted-list environments remain explicit at a fixed bound frame. Equality/constants, the complete atomic/formula-program bridge, actual binder environment applicability and full formula induction, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

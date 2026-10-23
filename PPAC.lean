@@ -184,3 +184,4 @@ import PPAC.Migration.Internal.ObjectOriginalFormulaMatrix
 import PPAC.Migration.Internal.ObjectOriginalFormulaEquation
 import PPAC.Migration.Internal.ObjectOriginalMemberApplication
 import PPAC.Migration.Internal.ObjectOriginalArgumentPair
+import PPAC.Migration.Internal.ObjectOriginalMemberProgram
