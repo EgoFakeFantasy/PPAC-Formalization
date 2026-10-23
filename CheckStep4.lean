@@ -6846,4 +6846,48 @@ example {m} (w depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.Fir
     (Translation.sentence (Internal.ObjectOriginalTermProgram.weaken_coded_iffSentence w depth parameter a b B I J R S n q)) :=
   Internal.ObjectOriginalTermProgram.native_weaken_coded_iff w depth parameter a b B I J R S n q
 
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.actualUniversalOriginalTraceSentence w)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_actualUniversalOriginalTrace w
+
+example {m} (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.universalOriginalTraceMembershipIffSentence w V r)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_universalOriginalTraceMembershipIff w V r
+
+example {m} (w V R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.everyClosedOriginalTraceIncludedSentence w V R)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_everyClosedOriginalTraceIncluded w V R
+
+example {m} (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.universalOriginalTraceClosedSentence w V)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_universalOriginalTraceClosed w V
+
+example {m} (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalFullTraceOneStepIffSentence w V r)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalFullTraceOneStepIff w V r
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (_hr : rule ∈ YesMetaZFC.Automation.ObjectSyntaxTransform.rules) (env : Fin rule.arity → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalWholeTableRuleFromTracesSentence rule _hr env w r)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalWholeTableRuleFromTraces rule _hr env w r
+
+example {m} (xs : Fin 5 → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalArgumentFullTableDispatchIffSentence xs w r R)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalArgumentFullTableDispatchIff xs w r R
+
+example {m} (xs : Fin 5 → Fin m) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalArgumentTraceSelectedIffSentence xs w r V)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalArgumentTraceSelectedIff xs w r V
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalNilArgumentsTraceSentence env w r)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalNilArgumentsTrace env w r
+
+example {m} (env : Fin 7 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalConsArgumentsTraceSentence env w r)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalConsArgumentsTrace env w r
+
+example {m} (env : Fin 7 → Fin m) (w r first rest : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalArgumentsTrace.originalConsArgumentActualChildTracesSentence env w r first rest)) :=
+  Internal.ObjectOriginalArgumentsTrace.native_originalConsArgumentActualChildTraces env w r first rest
+
 end PPAC.Migration.Step4Checks

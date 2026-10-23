@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: object Separation constructs a shared set of all natural rows having an actual original closed trace. Every internal closed trace embeds in it, it remains closed under the full original table, and natural rows satisfy an original one-step unfolding equivalence. All 28 actual rules compose child traces. Kind2 argument rows dispatch exactly to original nil/cons rules, with positive trace introductions. Nine modules, 89 declarations and eleven new closed families replay to nativeZF. Acceptance: 1369 jobs, 15056 audits, zero warnings; nine commands and five trust=0 entries exit zero; 1233 matching hashes and 1662 exact certificate pairs. Exact argument output equations/internal list induction, full formulas, extended-language quotation, rule checking, ProofZF/U, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_UNIVERSAL_ARGUMENT_TRACE_COMPOSITION_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: original mode0/3 checked traces for pure-signature typed terms now correspond to the independent term program and coded mixed substitution on all internal candidates. Actual identity/shift maps and converted-list fields are aligned in the object kernel; internal variable witnesses are formally eliminated. Depth/parameter natural guards and explicit environment hypotheses are preserved. Seven modules, 47 declarations and four new closed families replay to original nativeZF. Acceptance: 1360 build jobs, 14967 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1224 matching hashes and 1651 exact certificate pairs. Original argument lists, full formula recursion, extended-language quotation, rule/checker compatibility, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

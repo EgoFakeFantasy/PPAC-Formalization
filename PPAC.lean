@@ -165,3 +165,5 @@ import PPAC.Migration.Internal.ObjectFreeReplace
 import PPAC.Migration.Internal.ObjectFreeWeaken
 
 import PPAC.Migration.Internal.ObjectOriginalTermProgram
+
+import PPAC.Migration.Internal.ObjectOriginalArgumentsTrace

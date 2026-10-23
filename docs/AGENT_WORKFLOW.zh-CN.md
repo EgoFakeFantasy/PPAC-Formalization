@@ -7,6 +7,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 
 当前执行表（2026-10-24；下方保留既往单元记录）：
 
+原完整表的通用轨迹集合已在对象ZF中由实际分离构造：每个内部闭轨迹都包含于该集合，该集合仍对原表闭合，并给出自然行上的原一步展开双条件。全部28原规则可组合真实子轨迹；kind2参数行精确分派到原nilArguments／consArguments，两条规则的轨迹引入均已证明。9模块89声明、11组新闭句回放原nativeZF。1369构建任务、15056项审计（378无公理／14678允许依赖）、零警告；九命令及五trust=0入口全部退出0；1233份工作区独立哈希一致、1662对精确证书足迹、12712项Internal显式声明覆盖。参数列表的精确输出方程／全内部列表归纳、十一公式递归、扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con仍未完成。下一单元取得原nil／cons精确输出方程、Num0／3守卫及全内部参数列表归纳。见[验收](STEP4_UNIVERSAL_ARGUMENT_TRACE_COMPOSITION_ACCEPTANCE.zh-CN.md)。
+
+上一批记录：
+
 原mode0／3的纯签名有类型项轨迹已接入既有独立项程序及数值混合替换关系。实际恒等／位移图及转换列表字段在对象核中对齐，内部bound／free变量见证经正式消去取得完整项作用域桥；任意内部候选输入／输出的checked双条件保留深度／参数自然守卫。7模块47声明、4组新闭句回放原nativeZF。1360构建任务、14967项审计（376无公理／14591允许依赖）、零警告；九命令及五trust=0入口全部退出0；1224份工作区独立哈希一致、1651对精确证书足迹、12623项Internal显式声明覆盖。原参数列表及十一公式递归、扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con仍未完成。下一单元是原kind2参数列表的nil／cons完整轨迹，再接原kind3全十一公式与量词深度后继。见[本批验收](STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md)。
 
 上一批记录：
@@ -30,6 +34,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3c.2b.2 | 原freeReplace查找前提与完整内部轨迹；消去预给行码 | 全部内部候选的精确守卫／执行／严格lookup对应，有输出／无输出、非法域拒绝及单值性，22组原核闭句 | freeReplace已完成，见[验收](STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2b.3 | 原freeWeaken实际后继／精确域；四变量分支统一 | 全部内部成功／无输出及逐域拒绝／唯一性；四分支Trace／P(ω)双向接口，28组原核闭句 | 已完成，见[验收](STEP4_FREE_WEAKEN_ALL_VARIABLE_VALUES_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2c.1 | 原kind1纯签名项的内部作用域、恒等／位移列表字段 | 全内部候选checked轨迹↔项程序↔数值替换；四组原nativeZF闭句 | 已完成，见[验收](STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c.2a | 原表共享轨迹集合、kind2分派、原nil／cons子轨迹组合 | 实际分离集合与闭合、原一步展开、实际子轨迹引入及11组原核闭句 | 已完成，见[验收](STEP4_UNIVERSAL_ARGUMENT_TRACE_COMPOSITION_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c.2b | 原nil／cons数值矩阵／精确输出、原列表码 | 全内部列表归纳与项桥；再接kind3全十一公式 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c.2 | 原kind2参数列表nil／cons及kind3十一公式 | 原实际列表与项桥的内部归纳、全公式／量词深度后继 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
 | 5 | 专用ProofZF/U纯AST，原六规则／27模式及完整Separation/Collection | 全部内部ω证明码的检查／编译正确性 | 待完成 |
