@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: original mode0/3 checked traces for pure-signature typed terms now correspond to the independent term program and coded mixed substitution on all internal candidates. Actual identity/shift maps and converted-list fields are aligned in the object kernel; internal variable witnesses are formally eliminated. Depth/parameter natural guards and explicit environment hypotheses are preserved. Seven modules, 47 declarations and four new closed families replay to original nativeZF. Acceptance: 1360 build jobs, 14967 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1224 matching hashes and 1651 exact certificate pairs. Original argument lists, full formula recursion, extended-language quotation, rule/checker compatibility, interpretation and final internal Con remain unproved. See [acceptance](docs/STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: original mode0 freeWeaken has actual internal successor values, arbitrary closed-trace soundness/completeness and an all-internal success graph. Has-output is exactly the depth/parameter/free-input guard; no-output is its negation. Invalid-domain/output rejection, natural range and uniqueness are proved. One object interface now covers all four original mode0/3 variable trace cases and actual Power(omega). Twenty-eight new closed families replay to original nativeZF. Acceptance: 1353 build jobs, 14920 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1217 independent hashes and 1647 exact certificate pairs. Full term/argument/formula recursion, extended-language quotation, original rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_FREE_WEAKEN_ALL_VARIABLE_VALUES_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

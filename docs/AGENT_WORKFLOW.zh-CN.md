@@ -7,6 +7,10 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 
 当前执行表（2026-10-24；下方保留既往单元记录）：
 
+原mode0／3的纯签名有类型项轨迹已接入既有独立项程序及数值混合替换关系。实际恒等／位移图及转换列表字段在对象核中对齐，内部bound／free变量见证经正式消去取得完整项作用域桥；任意内部候选输入／输出的checked双条件保留深度／参数自然守卫。7模块47声明、4组新闭句回放原nativeZF。1360构建任务、14967项审计（376无公理／14591允许依赖）、零警告；九命令及五trust=0入口全部退出0；1224份工作区独立哈希一致、1651对精确证书足迹、12623项Internal显式声明覆盖。原参数列表及十一公式递归、扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con仍未完成。下一单元是原kind2参数列表的nil／cons完整轨迹，再接原kind3全十一公式与量词深度后继。见[本批验收](STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md)。
+
+上一批记录：
+
 原mode0自由变量freeWeaken已完成实际内部后继值、原任意闭轨迹双向对应及全部候选成功图；有输出恰好等价于深度自然／参数自然／输入自由变量码守卫，无输出恰好为其否定。非法参数／深度／输入／输出拒绝及自然输出单值性已证明。四个mode0／3变量分支取得统一Trace／P(ω)／候选拒绝对象接口。10模块178声明、28组新闭句回放原nativeZF。1353构建任务、14920项审计（375无公理／14545允许依赖）、零警告；九命令及五trust=0入口全部退出0；1217份工作区独立哈希一致、1647对精确证书足迹、12576项Internal显式声明覆盖。完整项／参数列表／十一公式递归、原扩展语言quotation总桥、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。下一单元先把纯签名项的内部变量作用域接入统一原表接口，再处理原参数列表及十一公式；application分支须在对象守卫下处理／排除，扩展语言图消去仍为独立前置门。
 
 | 单元 | 实现责任与输入 | 对象推导验收 | 状态 |
@@ -25,6 +29,8 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3c.2b.1 | 原完整表kind／mode／变量输入精确分派；绑定变量输出恒等 | 四个唯一原规则的双向分派、实际搜索及候选拒绝；两个绑定分支的全内部轨迹恒等双条件，16组原核闭句 | 已完成，见[验收](STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2b.2 | 原freeReplace查找前提与完整内部轨迹；消去预给行码 | 全部内部候选的精确守卫／执行／严格lookup对应，有输出／无输出、非法域拒绝及单值性，22组原核闭句 | freeReplace已完成，见[验收](STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.2b.3 | 原freeWeaken实际后继／精确域；四变量分支统一 | 全部内部成功／无输出及逐域拒绝／唯一性；四分支Trace／P(ω)双向接口，28组原核闭句 | 已完成，见[验收](STEP4_FREE_WEAKEN_ALL_VARIABLE_VALUES_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c.1 | 原kind1纯签名项的内部作用域、恒等／位移列表字段 | 全内部候选checked轨迹↔项程序↔数值替换；四组原nativeZF闭句 | 已完成，见[验收](STEP4_ORIGINAL_TERM_SCOPE_BRIDGE_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.2c.2 | 原kind2参数列表nil／cons及kind3十一公式 | 原实际列表与项桥的内部归纳、全公式／量词深度后继 | 下一步，未完成 |
 | S3.4c.2b.2c.3c.2c–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
 | 5 | 专用ProofZF/U纯AST，原六规则／27模式及完整Separation/Collection | 全部内部ω证明码的检查／编译正确性 | 待完成 |
 | 6 | 完整L／对称扩张及ZF+PP+ACwo+¬AC内部解释 | 原ZF内所有目标公理及证明翻译，不添加模型标准性或选择前提 | 待完成 |

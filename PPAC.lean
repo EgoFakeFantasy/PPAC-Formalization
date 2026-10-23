@@ -163,3 +163,5 @@ import PPAC.Migration.Internal.ObjectScalarDispatch
 import PPAC.Migration.Internal.ObjectFreeReplace
 
 import PPAC.Migration.Internal.ObjectFreeWeaken
+
+import PPAC.Migration.Internal.ObjectOriginalTermProgram

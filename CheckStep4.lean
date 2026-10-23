@@ -6830,4 +6830,20 @@ example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesM
     (Translation.sentence (Internal.ObjectFreeWeaken.allFourOriginalVariableCandidateRejectionIffSentence three bound xs w r idx)) :=
   Internal.ObjectFreeWeaken.native_allFourOriginalVariableCandidateRejectionIff three bound xs w r idx
 
+example {m} (w depth a b c L I R n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalTermProgram.replace_checked_iffSentence w depth a b c L I R n q)) :=
+  Internal.ObjectOriginalTermProgram.native_replace_checked_iff w depth a b c L I R n q
+
+example {m} (w depth a b c L I R n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalTermProgram.replace_coded_iffSentence w depth a b c L I R n q)) :=
+  Internal.ObjectOriginalTermProgram.native_replace_coded_iff w depth a b c L I R n q
+
+example {m} (w depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalTermProgram.weaken_checked_iffSentence w depth parameter a b B I J R S n q)) :=
+  Internal.ObjectOriginalTermProgram.native_weaken_checked_iff w depth parameter a b B I J R S n q
+
+example {m} (w depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalTermProgram.weaken_coded_iffSentence w depth parameter a b B I J R S n q)) :=
+  Internal.ObjectOriginalTermProgram.native_weaken_coded_iff w depth parameter a b B I J R S n q
+
 end PPAC.Migration.Step4Checks
