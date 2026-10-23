@@ -76,6 +76,14 @@ def main() -> None:
     missing_internal = internal_explicit - set(expected)
     if missing_internal:
         raise RuntimeError(f"Internal explicit declarations missing from Audit.lean: {sorted(missing_internal)}")
+    # The independent compiler core may use proved numeric libraries, but cannot call
+    # the legacy full formula judgment, step specification, operator or evaluator.
+    formula_program_core_modules = ('FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
+    legacy_formula_oracle = re.compile(r"SyntaxMixedFormula(?:Judgment|Recursive|Local|Operator|Recursion|Evaluation)(?:Syntax)?\.|SyntaxCodedMixedTermSyntax\.")
+    for module in formula_program_core_modules:
+        body = strip_comments((ROOT / "PPAC/Migration/Internal" / (module + ".lean")).read_text(encoding="utf-8-sig"))
+        if legacy_formula_oracle.search(body):
+            raise RuntimeError(f"Legacy judgment used as independent program primitive: {module}")
     run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
     run([sys.executable, "scripts/check_source_theory.py"], "source-theory.log")
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
@@ -1651,7 +1659,37 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectTermTransformProgram.native_uniformCorrectness',
                     'PPAC.Migration.Internal.ObjectTermTransformProgram.native_uniqueCode',
                     'PPAC.Migration.Internal.ObjectTermTransformProgram.native_atCode',
-                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_existsCorrectProgram'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_existsCorrectProgram',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_membershipInstructionIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_equalityInstructionIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_compiledStepIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_operatorRowIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_operatorValueIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_graphIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_evaluationIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_executionIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_actualRecursors',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_graphExists',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_evaluationExists',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_inputOfExecution',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_sourceType',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_targetType',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_outputNatural',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_uniqueOutput',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_atCandidate',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_rejectEnvironment',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_rejectSource',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_rejectInput',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_rejectTarget',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_rejectOutputNatural',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_unique',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_actualFiber',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_fiberIffInput',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_encodedExecutionIff',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_uniformCorrectness',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_uniqueCode',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_atCode',
+                    'PPAC.Migration.Internal.ObjectFormulaTransformProgram.native_existsCorrectProgram'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -1733,6 +1771,7 @@ def main() -> None:
         "ObjectNativeFormulaQuotation": ('environmentExists', 'environmentFiber', 'environmentAtLifted', 'termIff', 'nullaryStep', 'equalityStep', 'membershipStep', 'negationStep', 'binaryStep', 'quantifiedStep', 'formulaConstruct', 'formulaIff', 'formulaAtCandidate', 'formulaValueUnique', 'formulaUniqueOutput', 'formulaFiber'),
         "ObjectNativeTopQuotation": ('instantiateBoundField', 'instantiateBoundReadings', 'instantiateFreeField', 'instantiateFreeReadings', 'abstractBoundField', 'abstractBoundReadings', 'abstractFreeField', 'abstractFreeReadings', 'instantiateEnvironment', 'abstractEnvironment', 'instantiateAtCodes', 'instantiateIff', 'instantiateOriginalIff', 'instantiateAtCandidate', 'instantiateFiber', 'abstractAtCodes', 'abstractIff', 'abstractOriginalIff', 'abstractAtCandidate', 'abstractFiber'),
         "ObjectTermTransformProgram": ('variableRun', 'defaultRun', 'checkedIff', 'rejectEnvironment', 'rejectSource', 'targetType', 'outputNatural', 'rejectTarget', 'rejectOutputNatural', 'unique', 'uniqueOutput', 'atCandidate', 'actualFiber', 'fiberIffInput', 'encodedCheckedIff', 'uniformCorrectness', 'uniqueCode', 'atCode', 'existsCorrectProgram'),
+        "ObjectFormulaTransformProgram": ('membershipInstructionIff', 'equalityInstructionIff', 'compiledStepIff', 'operatorRowIff', 'operatorValueIff', 'graphIff', 'evaluationIff', 'executionIff', 'actualRecursors', 'graphExists', 'evaluationExists', 'inputOfExecution', 'sourceType', 'targetType', 'outputNatural', 'uniqueOutput', 'atCandidate', 'rejectEnvironment', 'rejectSource', 'rejectInput', 'rejectTarget', 'rejectOutputNatural', 'unique', 'actualFiber', 'fiberIffInput', 'encodedExecutionIff', 'uniformCorrectness', 'uniqueCode', 'atCode', 'existsCorrectProgram'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2276,9 +2315,16 @@ def main() -> None:
         "object_fixed_pure_term_program_all_internal_checked_equivalence_proved": True,
         "object_fixed_pure_term_program_exact_domain_and_typed_unique_output_proved": True,
         "object_fixed_pure_term_program_actual_unique_code_uniform_sentence_proved": True,
-        "object_internal_formula_independent_program_uniform_correctness_proved": False,
+        "object_fixed_pure_formula_program_independent_compiled_eleven_branches_proved": True,
+        "object_fixed_pure_formula_program_actual_internal_recursors_and_evaluation_proved": True,
+        "object_fixed_pure_formula_program_all_internal_execution_equivalence_proved": True,
+        "object_fixed_pure_formula_program_exact_domain_and_typed_unique_output_proved": True,
+        "object_fixed_pure_formula_program_actual_unique_code_uniform_sentence_proved": True,
+        "object_internal_formula_independent_program_uniform_correctness_proved": True,
         "object_internal_arbitrary_program_interpreter_correctness_proved": False,
-        "scope": "Current object milestone: a fixed independent pure-term transformation DSL compiles ordered variable dispatch, actual numeric image-table reads and a default copy action compositionally into pure Source formulas. The core does not invoke CodedMixedTerm; the checked entry requires the original pure source-term type and actual image-list environments. Under Omega, checked execution is equivalent to the original coded mixed-term substitution for every internal R,S,a,b,c,d,n,q, including invalid-input rejection and exact input domain. Legal inputs have an actual output with original target-term type, natural-number range and uniqueness against all internal checked candidates. The fixed program has an actual unique original structural code P; one object sentence proves existence of P and universal equivalence over all eight runtime parameters, with original nativeZF certificates. This is a fixed compiled program, not a generic interpreter executing arbitrary internally coded programs. Pure terms have only bound/free variables; the guarded program rejects extended-signature app inputs and does not claim unguarded agreement with the original recursive app branch. External finite full-eleven formula and top-operation quotation correspondences remain accepted from earlier milestones. Independent all-internal formula evaluation/program correctness, substituteFree/weakenFree rule4/rule5 compatibility, six-rule/27-mode ZF/U proof-checker ASTs, all-internal checking/compilation, complete internal interpretation and final nativeZF Con implication remain unproved. Original full-Collection nativeZF, target ZF+PP+ACwo+notAC, all-internal omega proof quantification and full Separation/Collection remain fixed. No new object axiom, model or standardness premise, host witness extraction, depth bound, completeness shortcut or replacement kernel is introduced. Exact std3 core/std3-plus-original-seven native footprints, isolated choice bridge, seven locks and pinned YesMetaZFC remain unchanged. No original OpenAI full build or Comparator is claimed.",
+        "independent_formula_program_core_reference_guard_checked": True,
+        "independent_formula_program_core_modules_checked": ['FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax'],
+        "scope": "Current object milestone: a fixed eleven-branch pure-formula DSL independently compiles original node reconstruction, calls to the proved independent pure-term program, actual seven-field history reads and an explicit four-witness dual-environment binder lift. Its core does not call the legacy full formula judgment, local specification, operator or evaluator. A separate concrete Separation matrix builds actual program state sets; its own ordinal-recursion matrix, actual restricted history graphs, successor-domain evaluation and execution relation are defined. Object proofs transfer arbitrary-history step equivalence through state-set selection and full recursion equations. Under Omega, execution is equivalent to the legacy original mixed-formula specification for every internal R,S,a,b,c,d,n,q, with no external input formula, host tree induction, standardness or depth bound. Actual unique recursion graphs exist on all internal ordinals; actual evaluation exists at every internal natural source index. Legal formula inputs have an actual target FormulaCode output, internal-natural range and uniqueness against all internal execution candidates; their typed unique fiber is exactly equivalent to the full legal input. Invalid source, environment, combined input, target or non-natural output is rejected. A fixed program has an actual unique original structural code and a single object sentence quantifying all eight runtime parameters internally; thirty new closed families return original nativeZF certificates. The interpreter is fixed-program relational compilation over proved numeric libraries; it is not generic execution or universal compiler correctness for arbitrary internally encoded programs. Branches use original disjoint constructor shapes; the checked semantics rejects malformed inputs and does not claim the untyped raw-tree default behavior outside the pure signature. Direct original host-operation quotation remains an external finite valid-syntax schema from earlier milestones. Original substituteFree/weakenFree rule4/rule5 compatibility, dedicated six-rule/27-mode ZF/U proof-checker ASTs, all-internal checking/compilation, complete internal interpretation and final nativeZF Con implication remain unproved. Full-Collection nativeZF, target ZF+PP+ACwo+notAC, all-internal omega proof quantification and full Separation/Collection remain fixed. No new object axiom, model assumption, host witness extraction, replacement kernel or retired reflection implementation is introduced. Exact std3 core/std3-plus-original-seven native footprints, isolated choice bridge, seven locks and pinned YesMetaZFC remain unchanged. No original OpenAI full build or Comparator is claimed.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }
