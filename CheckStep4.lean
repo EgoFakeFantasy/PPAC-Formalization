@@ -5218,4 +5218,76 @@ example {m} (universal : Bool) (w a b A B n q x X : Fin m) : YesMetaZFC.Logic.Fi
     (Translation.sentence (Internal.ObjectTopFormula.abstractQuantifiedSentence universal w a b A B n q x X)) :=
   Internal.ObjectTopFormula.native_abstractQuantified universal w a b A B n q x X
 
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.treeExistsSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_treeExists input w
+
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.treeRangeSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_treeRange input w n
+
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.treeUniqueSentence input w n v)) :=
+  Internal.ObjectOriginalQuotation.native_treeUnique input w n v
+
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.treeUniqueOutputSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_treeUniqueOutput input w n
+
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.treeFiberSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_treeFiber input w
+
+example {m} (input : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.forestExistsSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_forestExists input w
+
+example {m} (input : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.forestRangeSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_forestRange input w n
+
+example {m} (input : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.forestUniqueSentence input w n v)) :=
+  Internal.ObjectOriginalQuotation.native_forestUnique input w n v
+
+example {m} (input : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.forestUniqueOutputSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_forestUniqueOutput input w n
+
+example {m} (input : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.forestFiberSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_forestFiber input w
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.termExistsSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_termExists input w
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.termRangeSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_termRange input w n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.termUniqueSentence input w n v)) :=
+  Internal.ObjectOriginalQuotation.native_termUnique input w n v
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.termFiberSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_termFiber input w
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.formulaExistsSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_formulaExists input w
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.formulaRangeSentence input w n)) :=
+  Internal.ObjectOriginalQuotation.native_formulaRange input w n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.formulaUniqueSentence input w n v)) :=
+  Internal.ObjectOriginalQuotation.native_formulaUnique input w n v
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalQuotation.formulaFiberSentence input w)) :=
+  Internal.ObjectOriginalQuotation.native_formulaFiber input w
+
 end PPAC.Migration.Step4Checks

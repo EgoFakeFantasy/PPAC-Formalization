@@ -632,3 +632,14 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 原操作数值quotation与完整嵌套binder对应尚未证明；扩展BasicSetTheory的11构造树、Hilbert六结构/末槽编码及纯语言编码须显式核对。
 原规则4/5任意内部码检查、专用ProofZF/U完整纯AST及最终内部Con仍未完成。背景、全内部ω量化和全Separation/Collection合同保持。
 见[首槽公式验收](STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。
+
+
+## 2026-10-23 原纯语法编码桥及quotation模式边界
+
+已显式嵌入纯签名并严格对齐原SyntaxEncode的全部11构造、成员编号0及头槽索引。
+原树统一替换、首bound槽实例化、首free槽抽象与纯语法AST严格交换，源末槽/native头槽桥也交换；这些是宿主语法中间引理。
+另有有限纯TreeQ/ForestQ模式按原后继配数/Nil/Cons在内部量词内实际构造自然码，证明各模式的输出唯一及实际唯一纤维，18组闭句返回原nativeZF核证书。
+此处外部树/公式只是模式索引；未提供所有内部公式码的统一操作正确性或真值断言。
+尚需quotation字段/作用域及Term/FormulaCode对应，再接原操作与MixedSubst/首槽判断。
+专用ProofZF/U、全内部检查/编译、完整内部解释与最终Con未完成；原背景及全内部ω/完整Separation/Collection要求不变。
+见[验收](STEP4_ORIGINAL_QUOTATION_SCHEMA_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。

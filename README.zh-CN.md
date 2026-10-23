@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：InstantiateTop/AbstractFreeTop 的首槽公式判断已消去外部环境见证，实际输出存在唯一，并具有准确类型、输入/存在/唯一纤维双条件及非法输入拒绝。
-11构造端点齐备，量词子查询内部实际提升两张环境表。40组新闭句已传输为原 nativeZF 核证书。
-验收：1002构建任务、11877项审计、0警告；九命令及五个trust=0入口全部退出0，971份独立哈希一致。
-见[首槽公式验收](docs/STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)。
-原操作数值quotation与完整嵌套binder对应、规则检查兼容、专用ProofZF/U和最终内部Con仍未完成。
+当前进度：纯签名已显式嵌入原11构造编码，原树替换、首槽实例化/抽象及源末槽/native头槽桥严格交换；这些属于宿主AST中间引理。
+对象层另已证明每个紧凑quotation模式有实际唯一内部自然码，18组新闭句取得原nativeZF核证书。
+验收：1082构建任务、12021项审计、0警告；九命令及五trust=0入口全部退出0，980份独立哈希一致。
+见[原编码桥及quotation模式验收](docs/STEP4_ORIGINAL_QUOTATION_SCHEMA_ACCEPTANCE.zh-CN.md)。
+这些外部有限模式不替代任意内部公式码的操作正确性。quotation作用域/字段、原数值操作对应、内部检查器、完整内部解释与最终Con仍未完成。
 下文保留历史范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
