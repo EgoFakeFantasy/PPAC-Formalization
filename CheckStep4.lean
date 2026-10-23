@@ -5634,4 +5634,84 @@ example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSynt
     (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaFiberSentence σ τ input w R S a b c d n)) :=
   Internal.ObjectNativeFormulaQuotation.native_formulaFiber σ τ input w R S a b c d n
 
+example {m} {bound free : PureSyntaxQuotation.Ctx} (replacement : PureSyntaxQuotation.Tm bound free) (entry : YesMetaZFC.Logic.FirstOrder.Variable (YesMetaZFC.SetTheory.SetSort.set :: bound) YesMetaZFC.SetTheory.SetSort.set) (w a b A t R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateBoundFieldSentence (bound := bound) (free := free) replacement entry w a b A t R S i q)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateBoundField (bound := bound) (free := free) replacement entry w a b A t R S i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateBoundReadingsSentence (bound := bound) (free := free) replacement w a b A t R S)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateBoundReadings (bound := bound) (free := free) replacement w a b A t R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (entry : YesMetaZFC.Logic.FirstOrder.Variable free YesMetaZFC.SetTheory.SetSort.set) (w a b A t R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateFreeFieldSentence (bound := bound) (free := free) entry w a b A t R S i q)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateFreeField (bound := bound) (free := free) entry w a b A t R S i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateFreeReadingsSentence (bound := bound) (free := free)  w a b A t R S)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateFreeReadings (bound := bound) (free := free)  w a b A t R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (entry : YesMetaZFC.Logic.FirstOrder.Variable bound YesMetaZFC.SetTheory.SetSort.set) (w a b A B R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractBoundFieldSentence (bound := bound) (free := free) entry w a b A B R S i q)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractBoundField (bound := bound) (free := free) entry w a b A B R S i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractBoundReadingsSentence (bound := bound) (free := free)  w a b A B R S)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractBoundReadings (bound := bound) (free := free)  w a b A B R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (entry : YesMetaZFC.Logic.FirstOrder.Variable (YesMetaZFC.SetTheory.SetSort.set :: free) YesMetaZFC.SetTheory.SetSort.set) (w a b A B R S i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractFreeFieldSentence (bound := bound) (free := free) entry w a b A B R S i q)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractFreeField (bound := bound) (free := free) entry w a b A B R S i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractFreeReadingsSentence (bound := bound) (free := free)  w a b A B R S)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractFreeReadings (bound := bound) (free := free)  w a b A B R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateEnvironmentSentence (bound := bound) (free := free) replacement w a b A t R S)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateEnvironment (bound := bound) (free := free) replacement w a b A t R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (w a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractEnvironmentSentence (bound := bound) (free := free)  w a b A B R S)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractEnvironment (bound := bound) (free := free)  w a b A B R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm (YesMetaZFC.SetTheory.SetSort.set :: bound) free) (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t n q R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateAtCodesSentence (bound := bound) (free := free) input replacement w a b A t n q R S)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateAtCodes (bound := bound) (free := free) input replacement w a b A t n q R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm (YesMetaZFC.SetTheory.SetSort.set :: bound) free) (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateIffSentence (bound := bound) (free := free) input replacement w a b A t n q)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateIff (bound := bound) (free := free) input replacement w a b A t n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm (YesMetaZFC.SetTheory.SetSort.set :: bound) free) (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateOriginalIffSentence (bound := bound) (free := free) input replacement w a b A t n q)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateOriginalIff (bound := bound) (free := free) input replacement w a b A t n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm (YesMetaZFC.SetTheory.SetSort.set :: bound) free) (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateAtCandidateSentence (bound := bound) (free := free) input replacement w a b A t n q)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateAtCandidate (bound := bound) (free := free) input replacement w a b A t n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm (YesMetaZFC.SetTheory.SetSort.set :: bound) free) (replacement : PureSyntaxQuotation.Tm bound free) (w a b A t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.instantiateFiberSentence (bound := bound) (free := free) input replacement w a b A t n)) :=
+  Internal.ObjectNativeTopQuotation.native_instantiateFiber (bound := bound) (free := free) input replacement w a b A t n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound (YesMetaZFC.SetTheory.SetSort.set :: free)) (w a b A B n q R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractAtCodesSentence (bound := bound) (free := free) input w a b A B n q R S)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractAtCodes (bound := bound) (free := free) input w a b A B n q R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound (YesMetaZFC.SetTheory.SetSort.set :: free)) (w a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractIffSentence (bound := bound) (free := free) input w a b A B n q)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractIff (bound := bound) (free := free) input w a b A B n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound (YesMetaZFC.SetTheory.SetSort.set :: free)) (w a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractOriginalIffSentence (bound := bound) (free := free) input w a b A B n q)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractOriginalIff (bound := bound) (free := free) input w a b A B n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound (YesMetaZFC.SetTheory.SetSort.set :: free)) (w a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractAtCandidateSentence (bound := bound) (free := free) input w a b A B n q)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractAtCandidate (bound := bound) (free := free) input w a b A B n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound (YesMetaZFC.SetTheory.SetSort.set :: free)) (w a b A B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractFiberSentence (bound := bound) (free := free) input w a b A B n)) :=
+  Internal.ObjectNativeTopQuotation.native_abstractFiber (bound := bound) (free := free) input w a b A B n
+
 end PPAC.Migration.Step4Checks

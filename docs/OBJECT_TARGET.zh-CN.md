@@ -683,3 +683,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 后续仍须规则5/4检查兼容、专用ProofZF/U、全部内部ω检查/编译和完整内部解释。
 完整Collection/Separation、六规则/27模式及最终Con要求均不变；主句未证明。
 详见[本批验收](STEP4_NATIVE_FORMULA_QUOTATION_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2b.2首槽更新：原实际InstantiateTop/AbstractFreeTop码表对应具体原生替换的完整quotation环境。
+原首槽公式判断对全部内部输出候选精确对应原生结果，并直接对应固定原SyntaxSubstitution树操作的quotation。
+全部前驱/后继和码表见证在对象量词内取得、消去，同一输出取得操作/quotation/目标FormulaCode及全原候选唯一性。
+20组闭句返回原nativeZF；1137构建任务、12670项审计、0警告，九命令及五trust=0入口全部退出0。
+外部有限有效公式模式部分完成；任意内部AST的独立程序表示、统一正确性及准确无效候选处理仍待证明。
+后续规则5/4、专用ProofZF/U、全部内部ω检查/编译与完整内部解释仍未完成。
+完整Collection/Separation、六规则/27模式和最终Con要求不变，主句尚未证明。
+详见[本批验收](STEP4_NATIVE_TOP_QUOTATION_ACCEPTANCE.zh-CN.md)。
