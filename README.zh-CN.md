@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：两类首槽操作的实际完整环境表与原数值码对已存在唯一，准确输入/纤维双条件及原列表字段律均已证明。
-InstantiateTop实际表实现bound0取项及旧bound前驱；AbstractFreeTop实际表实现free0取新bound0、其余free前驱和bound后移。
-已接入固定码对下的一般混合公式唯一输出纤维。52组新原核闭句验收：992构建任务、11603项审计、0警告，五trust=0入口及961份独立哈希通过。
-见[首槽实际环境验收](docs/STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)。
-原操作数值quotation、完整首槽公式判断、规则检查兼容、专用ProofZF/U和最终内部Con仍未完成。
+当前对象层进度：InstantiateTop/AbstractFreeTop 的首槽公式判断已消去外部环境见证，实际输出存在唯一，并具有准确类型、输入/存在/唯一纤维双条件及非法输入拒绝。
+11构造端点齐备，量词子查询内部实际提升两张环境表。40组新闭句已传输为原 nativeZF 核证书。
+验收：1002构建任务、11877项审计、0警告；九命令及五个trust=0入口全部退出0，971份独立哈希一致。
+见[首槽公式验收](docs/STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)。
+原操作数值quotation与完整嵌套binder对应、规则检查兼容、专用ProofZF/U和最终内部Con仍未完成。
 下文保留历史范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。

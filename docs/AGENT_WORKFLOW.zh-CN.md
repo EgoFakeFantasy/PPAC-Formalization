@@ -1270,20 +1270,22 @@ S2.4的原编码/规则检查对应和S3的混合替换仍必须完成；本批�
 S3.2b只验收实际项像表层binder操作，不替代S3.3的公式递归或原数值编码对应。原Con背景与全部内部ω量化不变。
 
 
-2026-10-23 S3.4a/b实际首槽表与原码对已验收，见[报告](STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)。
-992构建任务、11603项审计、0警告；九命令与五个trust=0入口均退出0。
-本批24模块381显式声明、52组闭句；累计9288项Internal声明全覆盖，961份源哈希独立一致，1204对核心/native精确足迹。
+2026-10-23 S3.4c.1 首槽公式判断已验收，见[报告](STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)。
+1002构建任务、11877项审计、0警告；九命令和五个trust=0入口全部退出0。
+10模块274声明、40组闭句；累计9562项Internal显式声明全覆盖、971份独立哈希一致、1244对精确证书足迹。
 
-| 单元 | 输入/依赖 | 必须交付的对象推导 | 状态 |
+| 单元 | 输入/前置 | 必须交付与验收 | 状态 |
 |---|---|---|---|
-| S3.3b | 原混合环境码、完整FormulaCode | 全内部ω混合公式实际总唯一、11端点、输入/纤维双条件 | 已验收 |
-| S3.4a | 合法目标项、bound后继范围 | InstantiateTop实际完整表/原数值码对、真实唯一纤维、准确输入与零/后继/free字段 | 已验收 |
-| S3.4b | 两个内部后继范围 | AbstractFreeTop实际完整表/原码对、真实唯一纤维、准确输入与bound/free0/free后继字段 | 已验收 |
-| S3.4c.1 | 本批环境码及一般混合公式替换 | 环境见证无关的首槽公式判断、准确类型、存在唯一与内部递归端点 | 固定码下实际公式纤维已验收；完整操作判断待完成 |
-| S3.4c.2 | 原instantiate/abstract与原数值语法 | 原操作quotation对应及嵌套binder保护；两张像表都位移 | 待完成 |
-| S2.4/F2.4b.3 | 原substituteFree/weakenFree | 原数值编码对应及规则5/4任意内部证明码检查兼容 | 待完成 |
-| 5a | 六规则、27模式及完整ZF/U公理 | 专用有限纯ProofZF/U AST，精确原元数据，0合法且域检查准确 | 待完成 |
-| 5b | 原推导转换器和内部语法操作 | 全部内部ω码上的编译/检查正确性，完整Separation/Collection | 待完成 |
-| 6 | 内部解释和固定Con规格 | 原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+| S3.4a/b | 原变量项码、真实环境表、原列表码 | 完整实际表与码对的存在唯一、准确类型/输入、六字段律 | 已验收 |
+| S3.4c.1 | 实际码对、一般混合公式总唯一 | 无环境见证的首槽公式判断、全内部总唯一、准确输入/纤维双条件、11 端点和原核闭句 | 本批已验收 |
+| S3.4c.2a | 固定原语法和编码实现 | 明确纯语言嵌入、源末槽/native 头槽映射、11 构造树与 Hilbert 规范码间的编码接口；逐条锁定待证对应，不能按名字认同编码 | 下一步 |
+| S3.4c.2b | 上一接口和实际双表 binder | 原数值操作与本判断的对象对应；原 instantiate/abstract 全部构造及嵌套 binder 保护，不能只交付宿主 quote 等式 | 待完成 |
+| S2.4/F2.4b.3 | 原 substituteFree/weakenFree 操作 | 原数值对应，以及规则 5/4 对任意内部码的检查兼容 | 待完成 |
+| 5a | 原六规则、27 模式、完整 ZF/U 公理 | 专用 ProofZF/U 有限纯 AST；精确原标量/列表元数据，0 合法及域检查准确 | 待完成 |
+| 5b | 内部语法操作及内部编译器 | 全内部 ω 码上的编译/检查正确性，覆盖完整 Separation/Collection | 待完成 |
+| 6 | 内部解释、上述检查器和锁定 Con | 原 FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
 
-原操作quotation与实际表/码存在唯一分别验收，最终Con门保持未完成。
+原库 ProofT.SyntaxEncode/SyntaxSubstitution 的 11 构造树使用 Variable.here=0 的列表头约定，但其签名是扩展 BasicSetTheory。
+QuineEncoding.AbstractFreeTopFormulaCorrectness 使用 expression_encoding_theory、quote_hilbert 的六结构节点和 abstractFreeTopLast；不能将它直接当纯 nativeZF 中本批头槽操作的证明。
+既有 SyntaxTransport 的源末槽到 native 头槽 AST 等式可作为编码接口的中间材料；最终对应仍须形成对象推导。
+原 Con、原操作 quotation、任意内部证明码检查与相对一致性总门保持未完成。

@@ -1,21 +1,20 @@
 # 当前交付状态
-2026-10-23；分支migration/yesmeta-step3；本批基点75f2697fb5536fef57c317424c1bc2f7c555c676。
+2026-10-23；分支 migration/yesmeta-step3；本批基点 7d17141bcf691e748b8158dcac4cc9cb35ce058a。
 
-S3.4a/S3.4b的实际首槽环境表及原自然列表码对已验收。
-InstantiateTop：bound0取给定合法项，旧bound后继取前驱bound码，free保持。
-AbstractFreeTop：旧bound后移，free0取新bound0码，其余free后继取前驱free码。
-两类完整表和原数值码对实际存在唯一，输入/存在/唯一纤维双条件及六条准确原列表字段律成立；域守卫保留。
-索引图经明确纯矩阵转为真正项码图，未把索引自然数直接当项码。
-固定码对下已接入全内部混合公式替换的实际唯一输出纤维。
-原操作数值quotation、完整操作判断和嵌套binder保护对应仍未完成；一般混合公式总唯一验收继续有效。
+S3.4c.1 的首槽公式判断已验收。
+InstantiateTop/AbstractFreeTop 的数值环境码全部由对象存在量词绑定，输出的存在唯一不依赖外部环境见证。
+准确源/目标 FormulaCode、自然码及输入守卫、非法输入拒绝、存在/唯一纤维与输入双条件均已证明。
+两类操作的 11 构造端点齐备；全称/存在递归内部实际提升两张像表的目标 bound 分量。
+40 组闭句已传输为原 FirstOrder.Derives nativeZF [] 证书，覆盖全部内部候选。
 
-992构建任务、11603项审计、0警告；九命令与五个trust=0入口均退出0。
-本批24模块381显式声明、52组闭句；累计9288项Internal声明全覆盖，961份源哈希独立一致，1204对核心/native精确足迹。
-308项无公理依赖、11295项允许依赖；七锁不变，固定依赖干净。
-见[首槽实际环境验收](STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)。
+1002 构建任务、11877 项审计、0 警告；九命令和五个 trust=0 入口全部退出 0。
+本批 10 模块274声明；累计9562项Internal声明全覆盖、971份独立哈希一致、1244对核心/native精确足迹。
+308 项无公理依赖、11569 项允许依赖；七锁不变，固定依赖干净。
+见[首槽公式验收](STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)。
 
-下一步S3.4c：消去唯一数值环境见证形成首槽公式判断，证明准确类型/实际总唯一/递归字段；再证明与原instantiate/abstract数值quotation的对应，尤其量词下同时移动两张像表。
-S2.4/F2.4b.3的原substituteFree/weakenFree quotation及规则5/4全部内部码检查兼容待完成。
-专用六规则/27模式ProofZF/U完整纯AST、全内部编译/检查正确性、内部解释及最终Con主句均未完成。
-最终背景仍为原nativeZF完整Collection，目标ZF+PP+ACwo+¬AC，Con遍历全部内部ω证明码。
-未推送；原OpenAI完整构建/Comparator未运行；生成辅助与日志只在本地忽略目录。
+下一步 S3.4c.2：显式核对原语法/编码与源末槽、native头槽约定，证明原 instantiate/abstract 的数值 quotation 对应及嵌套 binder 保护。
+原库扩展 BasicSetTheory 的 11 构造树与 expression_encoding_theory 下 Hilbert 六结构/末自由槽编码不可直接等同。
+S2.4/F2.4b.3 的 substituteFree/weakenFree 原数值对应、规则5/4全部内部码检查兼容仍未完成。
+专用六规则/27模式 ProofZF/U 完整纯 AST、全内部编译/检查正确性、内部解释及最终 Con 主句仍未完成。
+最终背景为原 nativeZF 完整 Collection；目标 ZF+PP+ACwo+¬AC；Con 遍历全部内部 ω 证明码。
+未推送；原 OpenAI 全构建/Comparator 未运行；生成辅助、日志、独立回读只在本地忽略目录。

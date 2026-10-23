@@ -622,3 +622,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 此结果只完成首槽环境及固定码下输出纤维；完整见证无关操作判断、原数值quotation和嵌套binder保护对应仍待证明。
 原规则5/4内部检查、专用ProofZF/U完整纯AST与最终内部Con仍未完成。
 详见[首槽实际环境验收](STEP4_TOP_ENVIRONMENT_ACCEPTANCE.zh-CN.md)及[流程](AGENT_WORKFLOW.zh-CN.md)。
+
+
+## 2026-10-23 S3.4c.1 首槽公式边界
+
+首槽公式判断已通过对象存在量词内化全部环境码，证明准确源/目标类型、实际输出存在唯一、准确输入与存在/唯一纤维双条件和非法输入拒绝。
+11构造端点及量词下实际双表提升查询均有对象推导；40组闭句取得原nativeZF核证书。
+本批不依赖外部提供环境见证，也不把集合级求值图唯一直接当作公式输出唯一。
+原操作数值quotation与完整嵌套binder对应尚未证明；扩展BasicSetTheory的11构造树、Hilbert六结构/末槽编码及纯语言编码须显式核对。
+原规则4/5任意内部码检查、专用ProofZF/U完整纯AST及最终内部Con仍未完成。背景、全内部ω量化和全Separation/Collection合同保持。
+见[首槽公式验收](STEP4_TOP_FORMULA_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。
