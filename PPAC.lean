@@ -149,3 +149,5 @@ import PPAC.Migration.Internal.ObjectFreeVariablePrograms
 import PPAC.Migration.Internal.ObjectStrictLookup
 
 import PPAC.Migration.Internal.ObjectLookupTableProgram
+
+import PPAC.Migration.Internal.ObjectOriginalLookupRules

@@ -6286,4 +6286,72 @@ example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectLookupTableProgram.uniqueOutputSentence w n i y)) :=
   Internal.ObjectLookupTableProgram.native_uniqueOutput w n i y
 
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.expressionActualValueSentence e env w)) :=
+  Internal.ObjectOriginalLookupRules.native_expressionActualValue e env w
+
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.expressionNaturalRangeSentence e env w y)) :=
+  Internal.ObjectOriginalLookupRules.native_expressionNaturalRange e env w y
+
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.expressionActualUniqueFiberSentence e env w)) :=
+  Internal.ObjectOriginalLookupRules.native_expressionActualUniqueFiber e env w
+
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.expressionUniqueValueSentence e env w y)) :=
+  Internal.ObjectOriginalLookupRules.native_expressionUniqueValue e env w y
+
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.expressionCandidateIffSentence e env w y z)) :=
+  Internal.ObjectOriginalLookupRules.native_expressionCandidateIff e env w y z
+
+example {m} {n} (e f : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w a b y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.rawExpressionIffSentence e f env w a b y)) :=
+  Internal.ObjectOriginalLookupRules.native_rawExpressionIff e f env w a b y
+
+example {m} {n} (e f : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w a b y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.consExpressionIffSentence e f env w a b y)) :=
+  Internal.ObjectOriginalLookupRules.native_consExpressionIff e f env w a b y
+
+example {m} {n} (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w trace y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.premiseAtValueSentence e env w trace y)) :=
+  Internal.ObjectOriginalLookupRules.native_premiseAtValue e env w trace y
+
+example {m} {n} (e f : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.guardAtValuesSentence e f env w a b)) :=
+  Internal.ObjectOriginalLookupRules.native_guardAtValues e f env w a b
+
+example {m} (env : Fin 2 → Fin m) (w n z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupHeadExpressionIffSentence env w n z row)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupHeadExpressionIff env w n z row
+
+example {m} (env : Fin 4 → Fin m) (w n s row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupTailExpressionIffSentence env w n s row)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupTailExpressionIff env w n s row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupPremiseExpressionIffSentence env w row)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupPremiseExpressionIff env w row
+
+example {m} (env : Fin 2 → Fin m) (w n z row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupHeadMatrixIffSentence env w n z row trace)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupHeadMatrixIff env w n z row trace
+
+example {m} (env : Fin 4 → Fin m) (w n s row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupTailMatrixIffSentence env w n s row trace)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupTailMatrixIff env w n s row trace
+
+example {m} (env : Fin 4 → Fin m) (w trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupChildMemberIffSentence env w trace)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupChildMemberIff env w trace
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupHeadAssignmentBoundSentence env w row)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupHeadAssignmentBound env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalLookupRules.originalLookupTailAssignmentBoundSentence env w row)) :=
+  Internal.ObjectOriginalLookupRules.native_originalLookupTailAssignmentBound env w row
+
 end PPAC.Migration.Step4Checks

@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：上游原Horn.Expr／Rule的关系式编译、全部内部赋值实际唯一求值、真实lookup局部矩阵及赋值界已回放原nativeZF。原量化规则应用／完整轨迹及最终Con未完成。见[验收](STEP4_ORIGINAL_HORN_LOOKUP_ACCEPTANCE.zh-CN.md)。
+
 最新辅助对象结果：独立按表码递归查找程序已完成实际图／值、全部内部运行时对应、唯一固定描述码与统一句子，并回放至原nativeZF。上游数字接口／规则表quotation仍待完成；最终背景理论、内部Con及原六规则／27模式目标不变。见[本批验收](STEP4_LOOKUP_TABLE_PROGRAM_ACCEPTANCE.zh-CN.md)。
 本工程背景 B 固定为原 YesMetaZFC 的 SetTheory.ZF 经 Project.fo_theory 的纯语言像。
 不加AC、不加不可达、不假定Con(B)。对象签名是单排序纯等词/成员语言ℒ；
