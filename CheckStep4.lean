@@ -5290,4 +5290,128 @@ example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.
     (Translation.sentence (Internal.ObjectOriginalQuotation.formulaFiberSentence input w)) :=
   Internal.ObjectOriginalQuotation.native_formulaFiber input w
 
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.fieldNaturalSentence children xs w)) :=
+  Internal.ObjectQuotationFields.native_fieldNatural children xs w
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (i : Fin children.length) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.fieldAtSentence children xs i w)) :=
+  Internal.ObjectQuotationFields.native_fieldAt children xs i w
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.forestOfFieldsSentence children xs w p)) :=
+  Internal.ObjectQuotationFields.native_forestOfFields children xs w p
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.forestToFieldsSentence children xs w p)) :=
+  Internal.ObjectQuotationFields.native_forestToFields children xs w p
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.forestIffSentence children xs w p)) :=
+  Internal.ObjectQuotationFields.native_forestIff children xs w p
+
+example {m} (tag : Nat) (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.treeOfConstructorSentence tag children xs w n)) :=
+  Internal.ObjectQuotationFields.native_treeOfConstructor tag children xs w n
+
+example {m} (tag : Nat) (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.treeToConstructorSentence tag children xs w n)) :=
+  Internal.ObjectQuotationFields.native_treeToConstructor tag children xs w n
+
+example {m} (tag : Nat) (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (xs : Fin children.length → Fin m) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.treeIffSentence tag children xs w n)) :=
+  Internal.ObjectQuotationFields.native_treeIff tag children xs w n
+
+example {m} (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.treeOfScalarSentence k w i n)) :=
+  Internal.ObjectQuotationFields.native_treeOfScalar k w i n
+
+example {m} (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.scalarOfTreeSentence k w i n)) :=
+  Internal.ObjectQuotationFields.native_scalarOfTree k w i n
+
+example {m} (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.scalarIffSentence k w i n)) :=
+  Internal.ObjectQuotationFields.native_scalarIff k w i n
+
+example {m} (bound : Bool) (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.treeOfVariableSentence bound k w i n)) :=
+  Internal.ObjectQuotationFields.native_treeOfVariable bound k w i n
+
+example {m} (bound : Bool) (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.variableOfTreeSentence bound k w i n)) :=
+  Internal.ObjectQuotationFields.native_variableOfTree bound k w i n
+
+example {m} (bound : Bool) (k : Nat) (w i n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.variableIffSentence bound k w i n)) :=
+  Internal.ObjectQuotationFields.native_variableIff bound k w i n
+
+example {m} (bLen fLen : Nat) (w b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.contextsOfLengthsSentence bLen fLen w b f)) :=
+  Internal.ObjectQuotationFields.native_contextsOfLengths bLen fLen w b f
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.termTypeSentence input w b f n)) :=
+  Internal.ObjectQuotationFields.native_termType input w b f n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.termTypedExistsSentence input w b f)) :=
+  Internal.ObjectQuotationFields.native_termTypedExists input w b f
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w b f n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.termTypedUniqueSentence input w b f n v)) :=
+  Internal.ObjectQuotationFields.native_termTypedUnique input w b f n v
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.termTypedUniqueOutputSentence input w b f n)) :=
+  Internal.ObjectQuotationFields.native_termTypedUniqueOutput input w b f n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.termTypedFiberSentence input w b f)) :=
+  Internal.ObjectQuotationFields.native_termTypedFiber input w b f
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.formulaTypeSentence input w b f n)) :=
+  Internal.ObjectQuotationFields.native_formulaType input w b f n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.formulaTypedExistsSentence input w b f)) :=
+  Internal.ObjectQuotationFields.native_formulaTypedExists input w b f
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w b f n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.formulaTypedUniqueSentence input w b f n v)) :=
+  Internal.ObjectQuotationFields.native_formulaTypedUnique input w b f n v
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.formulaTypedUniqueOutputSentence input w b f n)) :=
+  Internal.ObjectQuotationFields.native_formulaTypedUniqueOutput input w b f n
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm bound free) (w b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.formulaTypedFiberSentence input w b f)) :=
+  Internal.ObjectQuotationFields.native_formulaTypedFiber input w b f
+
+example {m} (truth : Bool) (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.nullaryTypeSentence truth w b f n)) :=
+  Internal.ObjectQuotationFields.native_nullaryType truth w b f n
+
+example {m} (left right : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w b f n x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.equalTypeSentence left right w b f n x y)) :=
+  Internal.ObjectQuotationFields.native_equalType left right w b f n x y
+
+example {m} (left right : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w b f n s x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.memberTypeSentence left right w b f n s x y)) :=
+  Internal.ObjectQuotationFields.native_memberType left right w b f n s x y
+
+example {m} (body : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w b f n x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.negationTypeSentence body w b f n x)) :=
+  Internal.ObjectQuotationFields.native_negationType body w b f n x
+
+example {m} (kind : Fin 4) (left right : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w b f n x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.binaryTypeSentence kind left right w b f n x y)) :=
+  Internal.ObjectQuotationFields.native_binaryType kind left right w b f n x y
+
+example {m} (universal : Bool) (body : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w b f n x k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectQuotationFields.quantifiedTypeSentence universal body w b f n x k)) :=
+  Internal.ObjectQuotationFields.native_quantifiedType universal body w b f n x k
+
 end PPAC.Migration.Step4Checks

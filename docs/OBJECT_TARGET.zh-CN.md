@@ -643,3 +643,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 尚需quotation字段/作用域及Term/FormulaCode对应，再接原操作与MixedSubst/首槽判断。
 专用ProofZF/U、全内部检查/编译、完整内部解释与最终Con未完成；原背景及全内部ω/完整Separation/Collection要求不变。
 见[验收](STEP4_ORIGINAL_QUOTATION_SCHEMA_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。
+
+
+## 2026-10-23 Quotation字段/作用域及带类型纤维边界
+
+原森林/节点quotation已在实际子quotation码守卫下与原完整字段/构造器双向等价，叶与变量quotation接入准确scalar/bvar/fvar关系。
+对每个外部纯项/公式索引，原上下文长度的内部numeral下，实际quotation码具有原Term/FormulaCode类型；全11构造齐备。
+量词取得真实内部后继长度及numeral；项/公式带类型quotation均实际存在唯一，31组闭句取得原nativeZF核证书。
+这是逐有限语法模式的对象证明，尚未给出原操作对任意内部公式码的统一正确性。
+完整原数值操作与混合/首槽判断对应、ProofZF/U、全内部检查/编译、完整内部解释及最终Con仍未完成；原背景和全部内部ω/全Separation/Collection合同不变。
+见[验收](STEP4_QUOTATION_FIELDS_SCOPE_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。

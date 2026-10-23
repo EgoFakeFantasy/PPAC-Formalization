@@ -134,3 +134,4 @@ import PPAC.Migration.Internal.ObjectMixedFormula
 import PPAC.Migration.Internal.ObjectTopEnvironment
 import PPAC.Migration.Internal.ObjectTopFormula
 import PPAC.Migration.Internal.ObjectOriginalQuotation
+import PPAC.Migration.Internal.ObjectQuotationFields
