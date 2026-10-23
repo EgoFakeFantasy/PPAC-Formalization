@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: both quantifiers now have complete original mode0/3 Run3 dispatch and actual single/advanced history-program correspondence under the explicit uniform object induction premise. Depth, bound and image witnesses are constructed and eliminated in object quantifiers. Seven modules, 45 declarations and seven nativeZF certificate families; 1505 build jobs, 16296 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. Full eleven-case assembly, induction discharge, final-checker applicability and internal Con remain unproved. [Acceptance](docs/STEP4_ORIGINAL_BINDER_PROGRAM_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 Latest accepted checkpoint: admissible original mode0/3 frames are closed under actual binder lifts, with independent depth and variable-bound successors. Ten changing environment parameters and every output are quantified inside one object correctness formula; the uniform induction premise yields current-frame and binder-child-frame prefix instances. Seven modules, 97 declarations and thirteen nativeZF certificate families; 1498 build jobs, 16251 audited declarations, zero warnings; all nine commands and five trust=0 entries passed. Full induction and final-checker applicability of the mode3 free-image contract remain unproved, as does final internal Con. [Acceptance](docs/STEP4_UNIFORM_OPERATION_FRAMES_ACCEPTANCE.zh-CN.md).
 
 Historical checkpoints follow.

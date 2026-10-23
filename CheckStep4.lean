@@ -7554,4 +7554,32 @@ example {m} (three : Bool) (w n mode depth P a b c I J R S A C K H D : Fin m) : 
     (Translation.sentence (Internal.ObjectUniformOperationFrames.binderPrefixFromUniformInductionSentence three w n mode depth P a b c I J R S A C K H D)) :=
   Internal.ObjectUniformOperationFrames.native_binderPrefixFromUniformInduction three w n mode depth P a b c I J R S A C K H D
 
+example {m} (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.naturalSuccessorWitnessSentence w x)) :=
+  Internal.ObjectOriginalBinderProgram.native_naturalSuccessorWitness w x
+
+example {m} (w K S H A b C c x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.liftedChildExecutionAlignmentIffSentence w K S H A b C c x X)) :=
+  Internal.ObjectOriginalBinderProgram.native_liftedChildExecutionAlignmentIff w K S H A b C c x X
+
+example {m} (three universal : Bool) (w n mode depth P a b c I J R S h x X A C K H D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierChildReadAtLiftIffSentence three universal w n mode depth P a b c I J R S h x X A C K H D)) :=
+  Internal.ObjectOriginalBinderProgram.native_quantifierChildReadAtLiftIff three universal w n mode depth P a b c I J R S h x X A C K H D
+
+example {m} (three universal : Bool) (w n mode depth P a b c I J R S h x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierStepAdvancedIffSentence three universal w n mode depth P a b c I J R S h x X)) :=
+  Internal.ObjectOriginalBinderProgram.native_quantifierStepAdvancedIff three universal w n mode depth P a b c I J R S h x X
+
+example {m} (three universal : Bool) (w n mode depth P a b c I J R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierLocalCaseIffSentence three universal w n mode depth P a b c I J R S h q)) :=
+  Internal.ObjectOriginalBinderProgram.native_quantifierLocalCaseIff three universal w n mode depth P a b c I J R S h q
+
+example {m} (three universal : Bool) (w mode depth parameter n q x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierWholeRunDispatchIffSentence three universal w mode depth parameter n q x)) :=
+  Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunDispatchIff three universal w mode depth parameter n q x
+
+example {m} (three universal : Bool) (w n mode depth P a b c I J R S h x q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalBinderProgram.quantifierWholeRunFromUniformInductionIffSentence three universal w n mode depth P a b c I J R S h x q)) :=
+  Internal.ObjectOriginalBinderProgram.native_quantifierWholeRunFromUniformInductionIff three universal w n mode depth P a b c I J R S h x q
+
 end PPAC.Migration.Step4Checks

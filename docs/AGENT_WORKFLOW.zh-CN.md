@@ -4,6 +4,12 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 内部Con的展开、编码与全内部ω范围见[对象目标规格](OBJECT_TARGET.zh-CN.md)。
 这里只按明确工作单元推进，不要求并行启动agent；Lean/Lake构建始终串行。
 
+最新对象进展：两个量词的独立深度后继子运行已与真实advanced历史程序双向对应，实际绑定界和像表在对象存在量词内构造／消去；原binderCase与既有single(true)局部分支已对应，原十一分支中的其余十个分支已排除，取得mode0／3整条量词Run₃双条件。7模块45声明、7组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1505构建任务、16296项审计（385无公理／15911允许依赖）、零警告；九命令及五trust=0入口全部退出0；1369份独立哈希一致、1835对精确证书足迹、13952项Internal显式声明覆盖。统一对象归纳前提仍保留；完整十一情况装配、成员归纳消去、模式3合同最终检查器适用性、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_BINDER_PROGRAM_ACCEPTANCE.zh-CN.md)。
+
+下一单元3f.2c.3a：装配全部十一情况与真实完整程序步骤，处理目标合法性及根executed方程；随后在原ZF核中完成全内部成员归纳，消去统一归纳前提，并验证最终检查器适用性。
+
+以下保留历史验收记录。
+
 最新对象进展：实际自由项像转换已推出自由变量codeConversion合同；模式0旧环境可实际接入新frame，真实量词提升保持自由像表并构造新的恒等绑定表，深度后继与绑定界分别处理。十个变化环境参数及任意输出已在同一对象全称公式中量化，统一成员归纳前提可实际推出当前环境及提升后环境的完整子码归纳实例。7模块97声明、13组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1498构建任务、16251项审计（384无公理／15867允许依赖）、零警告；九命令及五trust=0入口全部退出0；1362份独立哈希一致、1828对精确证书足迹、13907项Internal显式声明覆盖。统一归纳前提尚未消去，模式3合同对最终检查器的适用性待证；完整量词／十一分支公式、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_UNIFORM_OPERATION_FRAMES_ACCEPTANCE.zh-CN.md)。
 
 下一单元3f.2c.2b：使用已证明的统一归纳实例和真实量词环境闭包，连接原binderCase与实际advanced历史程序，再完成完整运行分派消去；随后装配全内部FormulaCode成员归纳并证明最终检查器适用性。
