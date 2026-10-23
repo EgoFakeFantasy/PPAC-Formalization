@@ -1632,7 +1632,26 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectNativeTopQuotation.native_abstractIff',
                     'PPAC.Migration.Internal.ObjectNativeTopQuotation.native_abstractOriginalIff',
                     'PPAC.Migration.Internal.ObjectNativeTopQuotation.native_abstractAtCandidate',
-                    'PPAC.Migration.Internal.ObjectNativeTopQuotation.native_abstractFiber'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectNativeTopQuotation.native_abstractFiber',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_variableRun',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_defaultRun',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_checkedIff',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_rejectEnvironment',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_rejectSource',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_targetType',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_outputNatural',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_rejectTarget',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_rejectOutputNatural',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_unique',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_uniqueOutput',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_atCandidate',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_actualFiber',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_fiberIffInput',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_encodedCheckedIff',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_uniformCorrectness',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_uniqueCode',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_atCode',
+                    'PPAC.Migration.Internal.ObjectTermTransformProgram.native_existsCorrectProgram'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -1713,6 +1732,7 @@ def main() -> None:
         "ObjectTermLiftQuotation": ('readingsFromImages', 'readingsAt', 'agreeFromReadings', 'imagesFromReadings', 'zeroField', 'zeroAtNumeral', 'boundAtCode', 'boundValue', 'boundAtNumeral', 'boundReadings', 'freeAtCode', 'freeValue', 'freeReadings', 'environmentAtWitnesses', 'environmentAtMaps', 'environmentAtLifted', 'liftedFromEnvironment', 'liftedIffEnvironment', 'environmentFiber', 'jointFiber'),
         "ObjectNativeFormulaQuotation": ('environmentExists', 'environmentFiber', 'environmentAtLifted', 'termIff', 'nullaryStep', 'equalityStep', 'membershipStep', 'negationStep', 'binaryStep', 'quantifiedStep', 'formulaConstruct', 'formulaIff', 'formulaAtCandidate', 'formulaValueUnique', 'formulaUniqueOutput', 'formulaFiber'),
         "ObjectNativeTopQuotation": ('instantiateBoundField', 'instantiateBoundReadings', 'instantiateFreeField', 'instantiateFreeReadings', 'abstractBoundField', 'abstractBoundReadings', 'abstractFreeField', 'abstractFreeReadings', 'instantiateEnvironment', 'abstractEnvironment', 'instantiateAtCodes', 'instantiateIff', 'instantiateOriginalIff', 'instantiateAtCandidate', 'instantiateFiber', 'abstractAtCodes', 'abstractIff', 'abstractOriginalIff', 'abstractAtCandidate', 'abstractFiber'),
+        "ObjectTermTransformProgram": ('variableRun', 'defaultRun', 'checkedIff', 'rejectEnvironment', 'rejectSource', 'targetType', 'outputNatural', 'rejectTarget', 'rejectOutputNatural', 'unique', 'uniqueOutput', 'atCandidate', 'actualFiber', 'fiberIffInput', 'encodedCheckedIff', 'uniformCorrectness', 'uniqueCode', 'atCode', 'existsCorrectProgram'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2252,7 +2272,13 @@ def main() -> None:
         'object_external_top_operations_original_numeric_quotation_correspondence_proved': True,
         'object_external_top_operations_typed_joint_unique_fibers_proved': True,
         "object_internal_top_formula_operation_original_numeric_quotation_proved": False,
-        "scope": "Current object milestone: for external finite well-typed pure native formulas and replacement terms, original InstantiateTop and AbstractFreeTop formula judgments are exactly equivalent to quotation of the corresponding native operations for every internal candidate output code. Original actual coded top environments are proved to be the complete quotation environments of the concrete native variable substitutions: instantiateBound/freeId and abstractBound/abstractFreeTop. Native here/there modes preserve all domain guards; predecessor and successor index witnesses are obtained and eliminated internally. Whole-table quotation uses original HasLength and complete internal field agreement, rather than a host list-value choice. The final specialized formula biconditionals actually obtain and eliminate their original environment-code pair; callers supply no future table correspondence. Additional biconditionals explicitly identify the quotation with the fixed original SyntaxSubstitution instantiateTree/abstractTop raw-tree operations on these valid finite modes. Each operation has a single actual typed joint output satisfying the original judgment, exact native quotation and original target FormulaCode, with uniqueness against all original internal top-operation candidates. Twenty new closed schema families return original source-image/nativeZF certificates. External finite formula/term/substitution modes and their context-length numerals remain schema indices; this is not uniform correctness on arbitrary internal ASTs. All-internal original numeric program/specification correctness and invalid-candidate handling, substituteFree/weakenFree rule4/rule5 compatibility, dedicated six-rule/27-mode ZF/U proof-checker ASTs, all-internal checker/compiler correctness, complete internal interpretation and final nativeZF Con implication remain unproved. The intrinsic structural tree encoding, full-Collection nativeZF background, target ZF+PP+ACwo+notAC, all-internal omega proof quantification and full Separation/Collection stay fixed. No new object axiom, host witness extraction, model/standardness premise, depth bound, completeness shortcut or replacement kernel is introduced. Exact std3 core/std3-plus-original-seven native footprints, isolated choice bridge, seven locks and pinned YesMetaZFC remain unchanged. No original OpenAI full build or Comparator is claimed.",
+        "object_fixed_pure_term_program_independent_compiled_control_flow_proved": True,
+        "object_fixed_pure_term_program_all_internal_checked_equivalence_proved": True,
+        "object_fixed_pure_term_program_exact_domain_and_typed_unique_output_proved": True,
+        "object_fixed_pure_term_program_actual_unique_code_uniform_sentence_proved": True,
+        "object_internal_formula_independent_program_uniform_correctness_proved": False,
+        "object_internal_arbitrary_program_interpreter_correctness_proved": False,
+        "scope": "Current object milestone: a fixed independent pure-term transformation DSL compiles ordered variable dispatch, actual numeric image-table reads and a default copy action compositionally into pure Source formulas. The core does not invoke CodedMixedTerm; the checked entry requires the original pure source-term type and actual image-list environments. Under Omega, checked execution is equivalent to the original coded mixed-term substitution for every internal R,S,a,b,c,d,n,q, including invalid-input rejection and exact input domain. Legal inputs have an actual output with original target-term type, natural-number range and uniqueness against all internal checked candidates. The fixed program has an actual unique original structural code P; one object sentence proves existence of P and universal equivalence over all eight runtime parameters, with original nativeZF certificates. This is a fixed compiled program, not a generic interpreter executing arbitrary internally coded programs. Pure terms have only bound/free variables; the guarded program rejects extended-signature app inputs and does not claim unguarded agreement with the original recursive app branch. External finite full-eleven formula and top-operation quotation correspondences remain accepted from earlier milestones. Independent all-internal formula evaluation/program correctness, substituteFree/weakenFree rule4/rule5 compatibility, six-rule/27-mode ZF/U proof-checker ASTs, all-internal checking/compilation, complete internal interpretation and final nativeZF Con implication remain unproved. Original full-Collection nativeZF, target ZF+PP+ACwo+notAC, all-internal omega proof quantification and full Separation/Collection remain fixed. No new object axiom, model or standardness premise, host witness extraction, depth bound, completeness shortcut or replacement kernel is introduced. Exact std3 core/std3-plus-original-seven native footprints, isolated choice bridge, seven locks and pinned YesMetaZFC remain unchanged. No original OpenAI full build or Comparator is claimed.",
         "footprints": footprints,
         "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
     }

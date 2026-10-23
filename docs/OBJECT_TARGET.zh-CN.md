@@ -693,3 +693,9 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 后续规则5/4、专用ProofZF/U、全部内部ω检查/编译与完整内部解释仍未完成。
 完整Collection/Separation、六规则/27模式和最终Con要求不变，主句尚未证明。
 详见[本批验收](STEP4_NATIVE_TOP_QUOTATION_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2c.1 更新：固定纯项程序已取得实际唯一内部码，并在同一对象句子内对全部八个运行时参数证明受检执行与原项替换等价；精确合法输入域、实际有类型唯一输出和拒绝性质均有原 nativeZF 核证书。
+这完成全内部纯项运行时单元，不是任意内部程序码通用解释器，也未完成全11公式程序、规则5/4、ProofZF/U、内部解释或最终 Con。未受检 DSL 的默认复制不代表原扩展签名递归 app 分支。
+1146 构建任务、12814 项审计、零警告；九命令和五 trust=0 入口全部退出0，1044份工作区独立哈希一致。完整 Collection/Separation、六规则／27模式、全部内部 ω 的 Con 范围和最终主句保持不变。
+详见[固定纯项程序验收](STEP4_FIXED_TERM_PROGRAM_ACCEPTANCE.zh-CN.md)。

@@ -5714,4 +5714,80 @@ example {m} {bound free : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.
     (Translation.sentence (Internal.ObjectNativeTopQuotation.abstractFiberSentence (bound := bound) (free := free) input w a b A B n)) :=
   Internal.ObjectNativeTopQuotation.native_abstractFiber (bound := bound) (free := free) input w a b A B n
 
+example {m} (isBound : Bool) (w R S n q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.variableRunSentence isBound w R S n q i)) :=
+  Internal.ObjectTermTransformProgram.native_variableRun isBound w R S n q i
+
+example {m} (w R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.defaultRunSentence w R S n q)) :=
+  Internal.ObjectTermTransformProgram.native_defaultRun w R S n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.checkedIffSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_checkedIff w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.rejectEnvironmentSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_rejectEnvironment w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.rejectSourceSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_rejectSource w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.targetTypeSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_targetType w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.outputNaturalSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_outputNatural w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.rejectTargetSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_rejectTarget w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.rejectOutputNaturalSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_rejectOutputNatural w R S a b c d n q
+
+example {m} (w R S a b c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.uniqueSentence w R S a b c d n q v)) :=
+  Internal.ObjectTermTransformProgram.native_unique w R S a b c d n q v
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.uniqueOutputSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_uniqueOutput w R S a b c d n q
+
+example {m} (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.atCandidateSentence w R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_atCandidate w R S a b c d n q
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.actualFiberSentence w R S a b c d n)) :=
+  Internal.ObjectTermTransformProgram.native_actualFiber w R S a b c d n
+
+example {m} (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.fiberIffInputSentence w R S a b c d n)) :=
+  Internal.ObjectTermTransformProgram.native_fiberIffInput w R S a b c d n
+
+example {m} (w P R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.encodedCheckedIffSentence w P R S a b c d n q)) :=
+  Internal.ObjectTermTransformProgram.native_encodedCheckedIff w P R S a b c d n q
+
+example {m} (w P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.uniformCorrectnessSentence w P)) :=
+  Internal.ObjectTermTransformProgram.native_uniformCorrectness w P
+
+example {m} (w P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.uniqueCodeSentence w P)) :=
+  Internal.ObjectTermTransformProgram.native_uniqueCode w P
+
+example {m} (w P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.atCodeSentence w P)) :=
+  Internal.ObjectTermTransformProgram.native_atCode w P
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermTransformProgram.existsCorrectProgramSentence w)) :=
+  Internal.ObjectTermTransformProgram.native_existsCorrectProgram w
+
 end PPAC.Migration.Step4Checks

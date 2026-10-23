@@ -139,3 +139,4 @@ import PPAC.Migration.Internal.ObjectTermImageQuotation
 import PPAC.Migration.Internal.ObjectTermLiftQuotation
 import PPAC.Migration.Internal.ObjectNativeFormulaQuotation
 import PPAC.Migration.Internal.ObjectNativeTopQuotation
+import PPAC.Migration.Internal.ObjectTermTransformProgram
