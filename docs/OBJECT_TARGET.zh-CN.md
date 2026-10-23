@@ -673,3 +673,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 下一关全11公式/首槽quotation，后续仍须专用ProofZF/U、全部内部ω检查/编译与完整内部解释。
 最终Con、完整Collection/Separation及六规则/27模式的要求均不变，主句未证明。
 详见[本批验收](STEP4_TERM_LIFT_QUOTATION_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2b.1原生全公式更新：原生变量替换的实际项像表、原变量index与binder提升精确对齐。
+原生项替换及全11公式替换与原数值判断在全部内部候选输出上精确双向对应；子码、内部后继长度及提升表见证均实际消去。
+同一内部输出码联合满足原操作、准确目标quotation、原FormulaCode及针对全部原候选的唯一性。
+16组闭句返回原nativeZF；1127构建任务、12546项审计、0警告，九命令及五trust=0入口全部退出0。
+公式/替换为外部有限模式索引；原首槽专门quotation及任意内部AST统一操作正确性尚未完成。
+后续仍须规则5/4检查兼容、专用ProofZF/U、全部内部ω检查/编译和完整内部解释。
+完整Collection/Separation、六规则/27模式及最终Con要求均不变；主句未证明。
+详见[本批验收](STEP4_NATIVE_FORMULA_QUOTATION_ACCEPTANCE.zh-CN.md)。

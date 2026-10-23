@@ -5570,4 +5570,68 @@ example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuot
     (Translation.sentence (Internal.ObjectTermLiftQuotation.jointFiberSentence bs fs w R S a b c d A C)) :=
   Internal.ObjectTermLiftQuotation.native_jointFiber bs fs w R S a b c d A C
 
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (w a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.environmentExistsSentence σ τ w a b c d)) :=
+  Internal.ObjectNativeFormulaQuotation.native_environmentExists σ τ w a b c d
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (w a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.environmentFiberSentence σ τ w a b c d)) :=
+  Internal.ObjectNativeFormulaQuotation.native_environmentFiber σ τ w a b c d
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (w R S a b c d A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.environmentAtLiftedSentence σ τ w R S a b c d A C K H)) :=
+  Internal.ObjectNativeFormulaQuotation.native_environmentAtLifted σ τ w R S a b c d A C K H
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm sb sf sort) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.termIffSentence σ τ input w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_termIff σ τ input w R S a b c d n q
+
+example {m} (truth : Bool) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.nullaryStepSentence truth w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_nullaryStep truth w R S a b c d n q
+
+example {m} (left right targetLeft targetRight : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w R S a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.equalityStepSentence left right targetLeft targetRight w R S a b c d n q x y X Y)) :=
+  Internal.ObjectNativeFormulaQuotation.native_equalityStep left right targetLeft targetRight w R S a b c d n q x y X Y
+
+example {m} (left right targetLeft targetRight : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w R S a b c d n q s x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.membershipStepSentence left right targetLeft targetRight w R S a b c d n q s x y X Y)) :=
+  Internal.ObjectNativeFormulaQuotation.native_membershipStep left right targetLeft targetRight w R S a b c d n q s x y X Y
+
+example {m} (body targetBody : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w R S a b c d n q x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.negationStepSentence body targetBody w R S a b c d n q x X)) :=
+  Internal.ObjectNativeFormulaQuotation.native_negationStep body targetBody w R S a b c d n q x X
+
+example {m} (kind : Fin 4) (left right targetLeft targetRight : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w R S a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.binaryStepSentence kind left right targetLeft targetRight w R S a b c d n q x y X Y)) :=
+  Internal.ObjectNativeFormulaQuotation.native_binaryStep kind left right targetLeft targetRight w R S a b c d n q x y X Y
+
+example {m} (universal : Bool) (body targetBody : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w R S a b c d n q x X A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.quantifiedStepSentence universal body targetBody w R S a b c d n q x X A C K H)) :=
+  Internal.ObjectNativeFormulaQuotation.native_quantifiedStep universal body targetBody w R S a b c d n q x X A C K H
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaConstructSentence σ τ input w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaConstruct σ τ input w R S a b c d n q
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaIffSentence σ τ input w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaIff σ τ input w R S a b c d n q
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaAtCandidateSentence σ τ input w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaAtCandidate σ τ input w R S a b c d n q
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaValueUniqueSentence σ τ input w R S a b c d n q v)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaValueUnique σ τ input w R S a b c d n q v
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaUniqueOutputSentence σ τ input w R S a b c d n q)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaUniqueOutput σ τ input w R S a b c d n q
+
+example {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (σ : NativeSubstitutionSyntax.Mapping sb tb tf) (τ : NativeSubstitutionSyntax.Mapping sf tb tf) (input : PureSyntaxQuotation.Fm sb sf) (w R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectNativeFormulaQuotation.formulaFiberSentence σ τ input w R S a b c d n)) :=
+  Internal.ObjectNativeFormulaQuotation.native_formulaFiber σ τ input w R S a b c d n
+
 end PPAC.Migration.Step4Checks
