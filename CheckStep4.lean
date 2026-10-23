@@ -7382,4 +7382,36 @@ example {m} (truth : Bool) (w a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder
     (Translation.sentence (Internal.ObjectExistingAtomicInterfaces.constantDataExistingAtomIffSentence truth w a b c d n q)) :=
   Internal.ObjectExistingAtomicInterfaces.native_constantDataExistingAtomIff truth w a b c d n q
 
+example {m} (k tag : Nat) (hne : tag ≠ 2) (xs : Fin k → Fin m) (w symbol args n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.rawApplicationWrongTagRejectedSentence k tag xs w symbol args n)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_rawApplicationWrongTagRejected k tag hne xs w symbol args n
+
+example {m} (k tag : Nat) (hne : tag ≠ 2) (xs : Fin k → Fin m) (w mode depth parameter n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.applicationCaseWrongTagRejectedSentence k tag xs w mode depth parameter n q)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_applicationCaseWrongTagRejected k tag hne xs w mode depth parameter n q
+
+example {m} (three : Bool) (w mode depth parameter n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.wholeFalseDispatchIffSentence three w mode depth parameter n q)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_wholeFalseDispatchIff three w mode depth parameter n q
+
+example {m} (three : Bool) (w mode depth parameter n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.wholeTrueDispatchIffSentence three w mode depth parameter n q)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_wholeTrueDispatchIff three w mode depth parameter n q
+
+example {m} (three : Bool) (w mode depth parameter n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.wholeEqualityDispatchIffSentence three w mode depth parameter n q x y)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_wholeEqualityDispatchIff three w mode depth parameter n q x y
+
+example {m} (w mode depth a b c L I R n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.replaceWholeEqualityExistingAtomIffSentence w mode depth a b c L I R n q x y)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_replaceWholeEqualityExistingAtomIff w mode depth a b c L I R n q x y
+
+example {m} (w mode depth parameter a b B I J R S n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.weakenWholeEqualityExistingAtomIffSentence w mode depth parameter a b B I J R S n q x y)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_weakenWholeEqualityExistingAtomIff w mode depth parameter a b B I J R S n q x y
+
+example {m} (three truth : Bool) (w mode depth parameter a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectWholeAtomicInterfaces.wholeConstantExistingAtomIffSentence three truth w mode depth parameter a b c d n q)) :=
+  Internal.ObjectWholeAtomicInterfaces.native_wholeConstantExistingAtomIff three truth w mode depth parameter a b c d n q
+
 end PPAC.Migration.Step4Checks

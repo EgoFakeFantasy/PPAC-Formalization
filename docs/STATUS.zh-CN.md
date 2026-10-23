@@ -1,5 +1,9 @@
 # 当前交付状态
 
+S3.4c.2b.2c.3c.2c.2b.3f.2b.2b已验收：原mode0／3完整等词及两个常量Run₃已对任意内部输出候选接入既有equality／nullary程序接口；实际App标签2与源构造器异标签的矛盾由内部Cons范围、节点单射及数码互斥推出。4模块48声明、8组新闭句实际经Source→TheoryTransport→ZFReplay返回原nativeZF。1475构建任务、16023项审计（380无公理／15643允许依赖）、零警告；九命令及五trust=0入口全部退出0；1339份独立哈希一致、1793对精确证书足迹、13679项Internal显式声明覆盖。具体环境及源字段／类型仍显式保留，统一内部atomic总桥尚未证明，完整原子门保持false；完整公式、量词适用性、归纳、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_ORIGINAL_EQUALITY_CONSTANT_WHOLE_RUN_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 S3.4c.2b.2c.3c.2c.2b.3f.2b.2a已验收：原mode0／3完整成员Run₃已对任意内部公式输出候选接入既有FormulaTransformAtomSyntax.membership接口；通过原构造器字段单射对齐源见证，并由实际受检项程序恢复目标类型。原等词局部binaryCase与常量数值数据也已分别与既有equality／nullary接口双向对应，两个模式的全内部受检项agreement已实际推导。9模块53声明、9组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1471构建任务、15975项审计（380无公理／15595允许依赖）、零警告；九命令及五trust=0入口全部退出0；1335份独立哈希一致、1785对精确证书足迹、13631项Internal显式声明覆盖。等词／常量尚缺完整Run₃分派消去，完整原子门保持false；完整公式执行／归纳、实际量词环境、quotation、Option、ProofZF/U、内部解释及最终Con仍未完成。见[验收](STEP4_EXISTING_ATOMIC_INTERFACES_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

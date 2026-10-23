@@ -1,6 +1,10 @@
 # PPAC → YesMetaZFC
 [简体中文](README.zh-CN.md)
 
+Latest accepted checkpoint: complete original mode0/3 equality and both constant Run3 cases now correspond to the existing atom interfaces for every internal output candidate. Actual App tag2 exclusion is proved internally. Four new modules, 48 declarations and eight nativeZF closed certificate families; 1475 build jobs, 16023 audited declarations, zero warnings, all nine commands and five trust=0 entries passed. The unified internally quantified atomic theorem and final internal Con implication remain unproved. [Acceptance](docs/STEP4_ORIGINAL_EQUALITY_CONSTANT_WHOLE_RUN_ACCEPTANCE.zh-CN.md).
+
+Historical checkpoints follow.
+
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
 Latest object milestone: Complete original mode0/3 membership Run3 now corresponds to the existing FormulaTransformAtomSyntax.membership interface for every internal output candidate. Actual constructor-field injectivity aligns source witnesses, and checked term-program proofs recover target typing. Original equality local binaryCase and constant numeric data also correspond to the existing equality/nullary interfaces; both concrete all-internal checked-term agreements are proved. Nine modules, 53 declarations and nine closed families replay to original nativeZF. Acceptance: 1471 jobs, 15975 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1335 hashes and 1785 exact certificate pairs. Equality/constants still need complete Run3 dispatch elimination, so the complete atomic gate remains false. Full formula execution/induction, binder applicability, quotation, Option, Proof checking, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_EXISTING_ATOMIC_INTERFACES_ACCEPTANCE.zh-CN.md).
