@@ -6566,4 +6566,68 @@ example {m} (env : Fin 4 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.
     (Translation.sentence (Internal.ObjectScalarTrace.freeModeThreePowerTraceSentence env w r)) :=
   Internal.ObjectScalarTrace.native_freeModeThreePowerTrace env w r
 
+example {m} {n} (tag target k : Nat) (hne : tag ≠ target) (p : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (xs : Fin k → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalDifferentNodeTagsSentence tag target k hne p env xs w r)) :=
+  Internal.ObjectScalarDispatch.native_originalDifferentNodeTags tag target k hne p env xs w r
+
+example {m} {n} (tag : Nat) (es : Fin 5 → YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (xs : Fin 5 → Fin m) (i : Fin 5) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalFiveFieldRecoverySentence tag es env xs i w r)) :=
+  Internal.ObjectScalarDispatch.native_originalFiveFieldRecovery tag es env xs i w r
+
+example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalModeWholeTableDispatchIffSentence three xs w r R)) :=
+  Internal.ObjectScalarDispatch.native_originalModeWholeTableDispatchIff three xs w r R
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalVariableWholeTableDispatchIffSentence three bound xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_originalVariableWholeTableDispatchIff three bound xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.boundModeZeroDispatchIffSentence xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_boundModeZeroDispatchIff xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.boundModeThreeDispatchIffSentence xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_boundModeThreeDispatchIff xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.freeModeZeroDispatchIffSentence xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_freeModeZeroDispatchIff xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.freeModeThreeDispatchIffSentence xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_freeModeThreeDispatchIff xs w r R idx
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalVariableActualSearchDispatchIffSentence three bound xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_originalVariableActualSearchDispatchIff three bound xs w r R idx
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalVariableCandidateRejectionIffSentence three bound xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_originalVariableCandidateRejectionIff three bound xs w r R idx
+
+example {m} (three bound : Bool) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.arbitraryClosedVariableTraceApplicationSentence three bound xs w r R idx)) :=
+  Internal.ObjectScalarDispatch.native_arbitraryClosedVariableTraceApplication three bound xs w r R idx
+
+example {m} {n} (bound : Bool) (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalVariableExprFromCodeSentence bound e env w idx y)) :=
+  Internal.ObjectScalarDispatch.native_originalVariableExprFromCode bound e env w idx y
+
+example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalBoundApplicationIdentitySentence three xs w r R)) :=
+  Internal.ObjectScalarDispatch.native_originalBoundApplicationIdentity three xs w r R
+
+example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalBoundTraceIdentityIffSentence three xs w r idx)) :=
+  Internal.ObjectScalarDispatch.native_originalBoundTraceIdentityIff three xs w r idx
+
+example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalBoundPowerTraceIdentityIffSentence three xs w r idx)) :=
+  Internal.ObjectScalarDispatch.native_originalBoundPowerTraceIdentityIff three xs w r idx
+
+example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectScalarDispatch.originalBoundTraceRejectionIffSentence three xs w r idx)) :=
+  Internal.ObjectScalarDispatch.native_originalBoundTraceRejectionIff three xs w r idx
+
 end PPAC.Migration.Step4Checks

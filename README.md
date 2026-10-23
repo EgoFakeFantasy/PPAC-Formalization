@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: exact object dispatch of the complete original 28-rule table selects its unique bound/free variable rule in mode0/3, including actual successor search and candidate rejection. For bound variables in both modes, full internal trace existence is equivalent to equality of output and input codes under the original row/mode/variable guards; actual Power(omega) and negative counterparts are proved. Sixteen new closed families replay to original nativeZF. Acceptance: 1334 build jobs, 14599 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1198 independent hashes and 1597 exact certificate pairs. Whole free-variable numeric equivalence, extended-language quotation, full formula/rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: object proofs establish trace monotonicity for the full original rule table and actual root insertion using original Pairing/Union. The four variable positive branches of modes 0/3 now construct closed traces; freeReplace uses the verified internal lookup subtrace. Fifteen new closed families replay to original nativeZF, including actual Power(omega) trace conclusions. Acceptance: 1326 build jobs, 14496 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1190 independently matching hashes and 1581 exact certificate pairs. Full variable/numeric equivalence, whole modes0/3, the native extended-language quotation bridge, Proofchecker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_SCALAR_TRACE_EXTENSION_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

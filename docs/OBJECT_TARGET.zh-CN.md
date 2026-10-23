@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原28规则表在mode0／3的绑定／自由变量输入上已精确双向分派到唯一原规则；实际S(row)搜索及候选拒绝分派也已证明。两个绑定变量分支在原行／模式／变量码守卫下，完整内部轨迹存在当且仅当输出码等于输入码，含实际P(ω)域及拒绝双条件。8模块103声明、16组新闭句回放原nativeZF。自由变量两支的完整数值对应、原扩展语言quotation总桥、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。见[验收](STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md)。
+
 最新辅助对象结果：原完整表的轨迹单调性与Pairing／Union实际根行插入已证明；模式0／3的四个变量正分支取得实际闭合轨迹，自由替换复用已验收内部查找子轨迹，含实际P(ω)域。4模块81声明、15组新闭句回放原nativeZF。完整变量双向数值接口、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成；原扩展语言quotation总桥继续为false。见[验收](STEP4_SCALAR_TRACE_EXTENSION_ACCEPTANCE.zh-CN.md)。
 
 最新辅助对象结果：完整原规则表关系式编译的任意内部轨迹与实际查找双向对应、规范轨迹实际构造、原S(row)／P(ω)域及成功／无输出均已回放原nativeZF。原扩展语言quotation总桥及最终Con未完成。见[验收](STEP4_INTERNAL_LOOKUP_TRACE_ACCEPTANCE.zh-CN.md)。
