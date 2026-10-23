@@ -7967,4 +7967,46 @@ example {m} (w b f n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       (PureSyntaxTrace.formula w b f n))).close)) :=
   ObjectPureSyntaxMembership.native_allFourAtomicQueries w b f n
 
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.formulaCorrectInstanceSentence w n b f)) :=
+  Internal.ObjectPureSyntaxBinary.native_formulaCorrectInstance w n b f
+
+example {m} (w n x b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.formulaStrictIHInstanceSentence w n x b f)) :=
+  Internal.ObjectPureSyntaxBinary.native_formulaStrictIHInstance w n x b f
+
+example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryInputExpressionIffSentence kind w b f x y n)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryInputExpressionIff kind w b f x y n
+
+example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryKnownTypeIffSentence kind w b f x y n)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryKnownTypeIff kind w b f x y n
+
+example {m} (kind : Fin 4) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryActualApplicationSoundSentence kind w b f n r R)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryActualApplicationSound kind w b f n r R
+
+example {m} (kind : Fin 4) (w b f x y n r p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryActualChildTracesMergedSentence kind w b f x y n r p q)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryActualChildTracesMerged kind w b f x y n r p q
+
+example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryQueryFromActualChildrenSentence kind w b f x y n)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryQueryFromActualChildren kind w b f x y n
+
+example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxBinary.binaryQueryFromStrictInductionSentence kind w b f x y n)) :=
+  Internal.ObjectPureSyntaxBinary.native_binaryQueryFromStrictInduction kind w b f x y n
+-- 四种二元规则的确切head，外部有限索引不能替代内部运行字段。
+example (kind : Fin 4) : (YesMetaZFC.Automation.ObjectFormulaSyntax.binaryRule (SyntaxLogicalSyntax.binaryTag kind)).head =
+    PureSyntaxFormulaGraph.head (0 : Fin 4) 1 (PureSyntaxBinaryRule.input kind) := rfl
+
+-- 展开严格对象IH下的二元完整查询构造，IH仍是明确前提。
+example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((PureSyntaxFormulaInductionSyntax.allIH w n).imp
+      ((FormulaCodeSyntax.formulaCode w n b f).imp ((SyntaxLogicalSyntax.binaryCode kind w x y n).imp
+        (PureSyntaxTrace.formula w b f n))))).close)) :=
+  ObjectPureSyntaxBinary.native_binaryQueryFromStrictInduction kind w b f x y n
+
 end PPAC.Migration.Step4Checks

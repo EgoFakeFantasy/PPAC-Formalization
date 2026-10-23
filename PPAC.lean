@@ -200,3 +200,4 @@ import PPAC.Migration.Internal.ObjectPureSyntaxListSteps
 import PPAC.Migration.Internal.ObjectPureSyntaxArgumentChecker
 import PPAC.Migration.Internal.ObjectPureSyntaxFormulaAtoms
 import PPAC.Migration.Internal.ObjectPureSyntaxMembership
+import PPAC.Migration.Internal.ObjectPureSyntaxBinary

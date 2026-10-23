@@ -2309,7 +2309,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPureSyntaxMembership.native_membershipQueryAt',
                     'PPAC.Migration.Internal.ObjectPureSyntaxMembership.native_typedMembershipQuery',
                     'PPAC.Migration.Internal.ObjectPureSyntaxMembership.native_fullMembershipQuery',
-                    'PPAC.Migration.Internal.ObjectPureSyntaxMembership.native_allFourAtomicQueries'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPureSyntaxMembership.native_allFourAtomicQueries',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_formulaCorrectInstance',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_formulaStrictIHInstance',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryInputExpressionIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryKnownTypeIff',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryActualApplicationSound',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryActualChildTracesMerged',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryQueryFromActualChildren',
+                    'PPAC.Migration.Internal.ObjectPureSyntaxBinary.native_binaryQueryFromStrictInduction'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2416,6 +2424,7 @@ def main() -> None:
         "ObjectOriginalMemberApplication": ('originalAppHeadForestConstructorIff', 'originalAppHeadForestRecovered', 'originalMemberScalarAtZeroIndex', 'originalMemberAtTwoArgumentForestIff', 'originalMemberAppZeroAndTwoArgumentsRecovered', 'originalMemberAppAtNaturalArgumentsIff', 'originalMemberCheckedAppIff', 'originalMemberApplicationCaseIff'),
         "ObjectOriginalArgumentPair": ('finiteForestTypedListIff', 'finiteForestAllIndexProgramFieldsIff', 'finiteForestMappedProgramIff', 'replaceOriginalRunAtFiniteForestsIff', 'weakenOriginalRunAtFiniteForestsIff', 'twoArgumentListActualForestWitness', 'twoArgumentMappedAllCandidatesIff', 'replaceOriginalTwoArgumentAllCandidatesIff', 'weakenOriginalTwoArgumentAllCandidatesIff', 'twoArgumentForestRecoveredFromActualFields'),
         "ObjectOriginalMemberProgram": ('replaceMemberPairAllInternalAgreement', 'weakenMemberPairAllInternalAgreement', 'originalMemberWholeElevenCaseDispatchIff', 'originalMemberWholeRunApplicationIff', 'originalMembershipCaseProgramIff', 'originalMemberApplicationProgramIff', 'replaceOriginalMemberApplicationProgramIff', 'replaceOriginalMemberWholeRunProgramIff', 'weakenOriginalMemberApplicationProgramIff', 'weakenOriginalMemberWholeRunProgramIff'),
+        "ObjectPureSyntaxBinary": ('formulaCorrectInstance', 'formulaStrictIHInstance', 'binaryInputExpressionIff', 'binaryKnownTypeIff', 'binaryActualApplicationSound', 'binaryActualChildTracesMerged', 'binaryQueryFromActualChildren', 'binaryQueryFromStrictInduction'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3018,6 +3027,10 @@ def main() -> None:
         "object_pure_syntax_formula_membership_rule_sound_and_query_constructed_proved": True,
         "object_pure_syntax_all_four_atomic_queries_constructed_proved": True,
         "object_pure_syntax_formula_membership_rule_query_bridge_proved": False,
+        "object_pure_syntax_formula_uniform_all_parameters_IH_AST_implemented": True,
+        "object_pure_syntax_formula_binary_rules_under_uniform_IH_proved": True,
+        "object_pure_syntax_formula_binary_actual_trace_constructed_proved": True,
+        "object_pure_syntax_formula_uniform_IH_discharged": False,
         "object_pure_syntax_formula_logical_rule_queries_bridge_proved": False,
         "object_pure_syntax_checker_formula_query_bridge_proved": False,
         "object_pure_syntax_checker_full_typing_query_bridge_proved": False,
