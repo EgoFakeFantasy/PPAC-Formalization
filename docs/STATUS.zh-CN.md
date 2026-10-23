@@ -1,27 +1,19 @@
 # 当前交付状态
-2026-10-23；分支migration/yesmeta-step3；本批基点a673fd0a70ad3bfcc998d4d4ac06d0725db23b6d。
+2026-10-23；分支migration/yesmeta-step3；本批基点31f897019a3de70d6b1ca35267c51ae4b8ecae11。
 
-S3.3a已验收：实际混合项像表与原自然列表码双向实际存在唯一，纯TermList类型保留原长度与独立目标范围。
-存在及实际唯一纤维分别精确匹配ImageMap/TermList输入；原完整边/字段双条件已证明。
-混合项替换现在直接以原数值环境列表参数化，实际输出唯一，准确类型及存在/纤维输入双条件成立。
-已知源变量码时，输出精确取所选原环境列表字段；源类别不限制目标项类别。
-数值binder内部绑定四张实际解码图，输出码对实际存在唯一，准确输入/输出列表类型和自然性已证明。
-任意有效实际解码图给出与原表Binder的精确双条件；新零/旧bound/旧free有带域守卫的原列表字段律。
-45组Source/sourceZF核/nativeZF核闭句已传输到原FirstOrder.Derives nativeZF []。
-一般混合公式递归及原操作/规则检查对应仍未完成；此前项像表binder和原列表全公式free替换验收继续有效。
+S3.3b.1–S3.3b.2已验收：一般混合公式替换在全部内部ω码上实际总唯一。
+新纯legal使用TermLists；量词在对象内部同时取得两个后继和两张提升环境码。
+具体原Separation算子、实际序数递归/历史、递归双条件、准确源/目标类型、存在/唯一纤维输入双条件和11构造精确端点均已证明。
+原Foundation/Separation关闭整个内部ω上的归纳，无Earlier、标准深度或模型语义前提。
+50组闭句已传输到原FirstOrder.Derives nativeZF []；公式输出唯一和求值集合唯一分别证明。
 
-实际验收退出0：901构建任务、10615项审计、0警告；九命令及五trust=0入口全部退出0。
-本批21模块311声明；累计8300项Internal显式声明全覆盖。
-303项无公理依赖、10312项允许依赖；870份源哈希独立一致。
-累计1102对核心/native精确足迹；七份锁未变，固定原依赖工作区干净。
+968构建任务、11222项审计、0警告；九命令和五个trust=0入口均退出0。
+本批67模块607显式声明、50组闭句；累计8907项Internal显式声明全覆盖，937份源哈希独立一致，1152对核心/native精确足迹。
+306项无公理依赖、10916项允许依赖；七锁不变、固定依赖工作区干净。
+见[一般混合公式替换验收](STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)。
 
-见[原数值混合环境、项替换及binder码验收](STEP4_MIXED_ENVIRONMENT_CODES_ACCEPTANCE.zh-CN.md)。
-未推送；原OpenAI完整构建/Comparator未运行；生成辅助和日志仅留本地忽略目录。
-
-下一步S3.3b：新状态合法性必须使用TermLists，不能沿用旧RenameState中仅IndexMap的MapCode条件。
-复用纯七字段cell编码，建设同时更新两个环境码的量词查询、完整11构造局部AST及全内部递归。
-随后完成一般混合公式替换、InstantiateTop/AbstractFreeTop；原编码与原规则5/4检查对应仍必须完成。
-专用六规则/27模式ProofZF/U、全内部编译/解释及最终内部Con仍未完成。
-最终仍要求原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)，遍历全部内部ω证明码。
-一般捕获规避公式替换和最终Con等总门禁仍为False；本批八项细分门禁不替代最终主句。
-对象语言、nativeZF完整Collection背景及全部内部ω量化保持；主agent独占串行构建与验收。
+下一步S3.4：构造InstantiateTop/AbstractFreeTop的实际完整环境表与原数值码，证明准确字段、作用域及实际唯一性，再取得原操作数值编码对应和嵌套binder保护。
+S2.4/F2.4b.3原操作编码及规则4/5全内部检查兼容仍待完成。
+专用六规则/27模式ProofZF/U纯AST、全内部证明编译/检查正确性、内部解释和最终Con主句均未完成。
+背景仍为原nativeZF完整Collection，目标ZF+PP+ACwo+¬AC；Con量化全部内部ω证明码。
+未推送；原OpenAI完整构建/Comparator未运行；生成器/日志/回读仅在本地忽略目录。

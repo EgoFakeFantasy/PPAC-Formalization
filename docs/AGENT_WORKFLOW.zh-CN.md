@@ -1270,23 +1270,19 @@ S2.4的原编码/规则检查对应和S3的混合替换仍必须完成；本批�
 S3.2b只验收实际项像表层binder操作，不替代S3.3的公式递归或原数值编码对应。原Con背景与全部内部ω量化不变。
 
 
-2026-10-23 S3.3a：原数值混合环境、项替换及binder码已验收，见[报告](STEP4_MIXED_ENVIRONMENT_CODES_ACCEPTANCE.zh-CN.md)。
-21模块311声明、45组原核闭句；901构建任务、10615项审计、0警告；870份独立哈希一致。
-以下是最新接续流程，一般混合公式递归仍未完成。
+2026-10-23 S3.3b已验收，见[报告](STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)。
+968构建任务、11222项审计、0警告；九命令和五个trust=0入口均退出0。
+本批67模块607显式声明、50组闭句；累计8907项Internal显式声明全覆盖，937份源哈希独立一致，1152对核心/native精确足迹。
 
-| 单元 | 输入与依赖 | 必须交付的对象推导 | 状态 |
+| 单元 | 输入 | 必须取得的对象推导 | 状态 |
 |---|---|---|---|
-| S2.1–S2.3 | 原TermList、恒等/转换码 | 原列表全公式free替换、唯一输出、准确输入与11端点律 | 已验收 |
-| S2.4/F2.4b.3 | 原substituteFree/weakenFree数值语法 | 原编码对应及原规则5/4任意内部证明码检查兼容 | 待完成 |
-| S3.1–S3.2b | 原实际完整项像表及真实后继 | 混合项替换、两表位移、完全内部化唯一binder提升 | 已验收 |
-| S3.3a | 原Encoding/Fields、混合ImageMap及Binder | 双向实际唯一环境码、纯类型/字段；数值混合项与binder实际总唯一、精确输入及原字段律 | 本批验收 |
-| S3.3b.1 | 原七字段自然cell及本批TermLists | 新混合状态合法性、实际状态码唯一性和有限纯查询/局部11构造AST | 下一步 |
-| S3.3b.2 | 新状态、CodedTermSubst、CodedBinder、原子/逻辑构造 | 实际状态算子与全部内部递归，原11构造的一般混合公式替换实际总唯一、准确类型/输入/端点律 | 待完成 |
-| S3.4 | 一般混合公式替换及首槽表 | InstantiateTop/AbstractFreeTop，嵌套binder保护及原数值编码对应 | 待完成 |
-| 5a | 原六规则/27模式及完整ZF/目标公理 | 专用ProofZF/U纯AST、准确原参数字段及全部内部证明码检查 | 待完成 |
-| 5b | 内部源/目标证书转换器 | 全内部编译及检查正确性，覆盖完整Separation/Collection | 待完成 |
-| 6 | 内部解释与固定Con | 原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+| S3.3b | 原自然混合环境码与完整原FormulaCode | 全内部ω实际唯一混合公式输出、输入/纤维双条件、11端点 | 已验收 |
+| S3.4a | 合法目标项码、内部后继与首槽表 | InstantiateTop：源bound0映为给定项，旧bound后继映回前驱，free保留；实际表/原码存在唯一 | 待完成 |
+| S3.4b | 内部bound/free范围与首槽表 | AbstractFreeTop：free0映为新bound0，其余free前驱重编号，旧bound移位；实际表/原码存在唯一 | 待完成 |
+| S3.4c | 两类特定环境与本批混合公式替换 | 原instantiate/abstract操作数值编码对应、嵌套binder保护及实际唯一输出 | 待完成 |
+| S2.4/F2.4b.3 | 原substituteFree/weakenFree数值语法 | 原规则5/4任意内部码检查兼容，保留原参数域与0元数据 | 待完成 |
+| 5a | 六原规则、27模式及完整ZF/U公理 | 专用ProofZF/U有限纯AST；精确原元数据和全部内部证明码量化 | 待完成 |
+| 5b | 内部语法操作与源证书转换器 | 全内部编译/检查正确性，覆盖完整Separation/Collection | 待完成 |
+| 6 | 内部解释与固定内部Con | 原Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
 
-
-新状态legal必须使用混合TermLists，旧RenameState只允许IndexMap，不能直接复用其state谓词。
-量词同时更新两个环境码；主agent独占串行构建。固定Con背景及全部内部ω量化保持。
+本批一般混合替换与原操作编码对应分别验收，最终Con门保持未完成。

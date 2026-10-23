@@ -600,3 +600,15 @@ F2.4a完成；纯WeakenFree全公式定律与原加强规则兼容仍待完成�
 下一步必须另建混合状态legal及同时更新两份环境码的量词查询，再完成一般混合公式递归。
 原RenameState的MapCode类型只允许同类索引映射，不能直接别名为混合替换状态。
 InstantiateTop/AbstractFreeTop、原操作数值编码/规则检查对应、全内部ProofZF/U及最终Con仍未完成；背景和量化范围不变。
+
+
+## 2026-10-23 S3.3b最新对象边界
+
+一般混合公式替换实际总唯一已由原Foundation/Separation对全部内部ω码证明。
+其有限纯AST使用原数值R/S环境与准确a/b、c/d范围，经具体分离和实际递归定义。
+量词同时绑定A/C/K/H四见证，两个源类别的像均移动目标bound分量。
+原11构造精确字段律、准确源/目标类型及存在/唯一纤维输入双条件已证明；50组闭句返回原nativeZF空free上下文证书。
+公式输出码唯一另有完整对象归纳，不能从求值集合唯一直接推出。
+原操作编码对应、InstantiateTop/AbstractFreeTop、规则4/5任意内部码检查兼容仍未完成。
+专用ProofZF/U完整纯AST及最终内部Con尚未实现；上文Con规格、全部内部ω和完整Separation/Collection要求保持。
+见[验收](STEP4_MIXED_FORMULA_ACCEPTANCE.zh-CN.md)和[最新流程](AGENT_WORKFLOW.zh-CN.md)。

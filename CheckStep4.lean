@@ -4650,4 +4650,204 @@ example {m} (w R S a b c d A C K H U V z n j t q : Fin m) : YesMetaZFC.Logic.Fir
     (Translation.sentence (Internal.ObjectMixedEnvironment.binderFreeSentence w R S a b c d A C K H U V z n j t q)) :=
   Internal.ObjectMixedEnvironment.native_binderFree w R S a b c d A C K H U V z n j t q
 
+example {m} (w r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateExistsSentence w r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_stateExists w r s a b c d q
+
+example {m} (w r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateInputIffSentence w r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_stateInputIff w r s a b c d q
+
+example {m} (w r s a b c d q t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateNaturalSentence w r s a b c d q t)) :=
+  Internal.ObjectMixedFormula.native_stateNatural w r s a b c d q t
+
+example {m} (w r s a b c d q t v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateUniqueSentence w r s a b c d q t v)) :=
+  Internal.ObjectMixedFormula.native_stateUnique w r s a b c d q t v
+
+example {m} (w t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateDecodeSentence w t)) :=
+  Internal.ObjectMixedFormula.native_stateDecode w t
+
+example {m} (w t r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.stateParamsUniqueSentence w t r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_stateParamsUnique w t r s a b c d q
+
+example {m} (w v r s a b c d q t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.containsAtStateSentence w v r s a b c d q t)) :=
+  Internal.ObjectMixedFormula.native_containsAtState w v r s a b c d q t
+
+example {m} (w h D x v r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.readAtValueSentence w h D x v r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_readAtValue w h D x v r s a b c d q
+
+example {m} (w h D x v r s a b c d q t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.readAtStateSentence w h D x v r s a b c d q t)) :=
+  Internal.ObjectMixedFormula.native_readAtState w h D x v r s a b c d q t
+
+example {m} (w h x r s a b c d q A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.advancedQuerySentence w h x r s a b c d q A C K H)) :=
+  Internal.ObjectMixedFormula.native_advancedQuery w h x r s a b c d q A C K H
+
+example {m} (w n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorExistsSentence w n h)) :=
+  Internal.ObjectMixedFormula.native_operatorExists w n h
+
+example {m} (w n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorFiberSentence w n h)) :=
+  Internal.ObjectMixedFormula.native_operatorFiber w n h
+
+example {m} (w n h v t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorUniqueSentence w n h v t)) :=
+  Internal.ObjectMixedFormula.native_operatorUnique w n h v t
+
+example {m} (w n h v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorSubsetSentence w n h v)) :=
+  Internal.ObjectMixedFormula.native_operatorSubset w n h v
+
+example {m} (w n h v p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorRecognizedSentence w n h v p)) :=
+  Internal.ObjectMixedFormula.native_operatorRecognized w n h v p
+
+example {m} (w n h v p r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.operatorMembershipSentence w n h v p r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_operatorMembership w n h v p r s a b c d q
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.recursorsSentence w)) :=
+  Internal.ObjectMixedFormula.native_recursors w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.carrierSentence w)) :=
+  Internal.ObjectMixedFormula.native_carrier w
+
+example {m} (w D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.graphExistsSentence w D)) :=
+  Internal.ObjectMixedFormula.native_graphExists w D
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.evaluationExistsSentence w n)) :=
+  Internal.ObjectMixedFormula.native_evaluationExists w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.evaluationFiberSentence w n)) :=
+  Internal.ObjectMixedFormula.native_evaluationFiber w n
+
+example {m} (w n v t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.evaluationUniqueSentence w n v t)) :=
+  Internal.ObjectMixedFormula.native_evaluationUnique w n v t
+
+example {m} (w n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.historySentence w n v)) :=
+  Internal.ObjectMixedFormula.native_history w n v
+
+example {m} (w h D x r s a b c d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.judgmentReadSentence w h D x r s a b c d q)) :=
+  Internal.ObjectMixedFormula.native_judgmentRead w h D x r s a b c d q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaSourceSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaSource w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaTargetSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaTarget w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaLegalSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaLegal w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaInputSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaInput w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaNaturalSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaNatural w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.recursiveIffSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_recursiveIff w r s a b c d n q
+
+example {m} (w r s a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaFiberSentence w r s a b c d n)) :=
+  Internal.ObjectMixedFormula.native_formulaFiber w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaExistsSentence w r s a b c d n)) :=
+  Internal.ObjectMixedFormula.native_formulaExists w r s a b c d n
+
+example {m} (w r s a b c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaUniqueSentence w r s a b c d n q v)) :=
+  Internal.ObjectMixedFormula.native_formulaUnique w r s a b c d n q v
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaUniqueOutputSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_formulaUniqueOutput w r s a b c d n q
+
+example {m} (w r s a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaExistsIffSentence w r s a b c d n)) :=
+  Internal.ObjectMixedFormula.native_formulaExistsIff w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaFiberIffSentence w r s a b c d n)) :=
+  Internal.ObjectMixedFormula.native_formulaFiberIff w r s a b c d n
+
+example {m} (w r s a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.formulaRejectInvalidSentence w r s a b c d n)) :=
+  Internal.ObjectMixedFormula.native_formulaRejectInvalid w r s a b c d n
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.nullaryFalseSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_nullaryFalse w r s a b c d n q
+
+example {m} (w r s a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.nullaryTrueSentence w r s a b c d n q)) :=
+  Internal.ObjectMixedFormula.native_nullaryTrue w r s a b c d n q
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.equalityFieldsSentence w r s a b c d n q x y X Y)) :=
+  Internal.ObjectMixedFormula.native_equalityFields w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q z Z x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.membershipFieldsSentence w r s a b c d n q z Z x y X Y)) :=
+  Internal.ObjectMixedFormula.native_membershipFields w r s a b c d n q z Z x y X Y
+
+example {m} (w r s a b c d n q x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.negationFieldsSentence w r s a b c d n q x X)) :=
+  Internal.ObjectMixedFormula.native_negationFields w r s a b c d n q x X
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.binary0FieldsSentence w r s a b c d n q x y X Y)) :=
+  Internal.ObjectMixedFormula.native_binary0Fields w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.binary1FieldsSentence w r s a b c d n q x y X Y)) :=
+  Internal.ObjectMixedFormula.native_binary1Fields w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.binary2FieldsSentence w r s a b c d n q x y X Y)) :=
+  Internal.ObjectMixedFormula.native_binary2Fields w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q x y X Y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.binary3FieldsSentence w r s a b c d n q x y X Y)) :=
+  Internal.ObjectMixedFormula.native_binary3Fields w r s a b c d n q x y X Y
+
+example {m} (w r s a b c d n q x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.forallFieldsSentence w r s a b c d n q x X)) :=
+  Internal.ObjectMixedFormula.native_forallFields w r s a b c d n q x X
+
+example {m} (w r s a b c d n q x X A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.forallAtLiftSentence w r s a b c d n q x X A C K H)) :=
+  Internal.ObjectMixedFormula.native_forallAtLift w r s a b c d n q x X A C K H
+
+example {m} (w r s a b c d n q x X : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.existsFieldsSentence w r s a b c d n q x X)) :=
+  Internal.ObjectMixedFormula.native_existsFields w r s a b c d n q x X
+
+example {m} (w r s a b c d n q x X A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectMixedFormula.existsAtLiftSentence w r s a b c d n q x X A C K H)) :=
+  Internal.ObjectMixedFormula.native_existsAtLift w r s a b c d n q x X A C K H
+
 end PPAC.Migration.Step4Checks
