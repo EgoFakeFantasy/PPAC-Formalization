@@ -1,5 +1,18 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2c.3b已验收：否定及两量词的实际原unary规则已完成统一对象IH下的可靠性与父查询构造；量词绑定界由对象后继公式给出，实际后继值、子行、父行和闭轨迹见证均内部构造并消去。4模块47声明、7组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1566构建任务、16947项审计（392无公理／16555允许依赖）、零警告；九命令及五trust=0入口全部退出0；1428份独立哈希一致、1921对精确证书足迹、14603项Internal显式声明覆盖。公式IH仍未消去；完整十五规则分派、全公式查询双条件、原数值检查器及最终Con仍待完成。见[验收](STEP4_PURE_UNARY_FORMULA_STEPS_ACCEPTANCE.zh-CN.md)。
+
+| 当前单元 | 实现动作 | 对象验收合同 | 状态 |
+|---|---|---|---|
+| 3f.2c.3b.2c.3b | 否定／全称／存在原unary规则、真实子前提及父轨迹 | 原核闭句保留ALL2统一IH；量词体使用内部后继界 | 已验收 |
+| 3f.2c.3b.2c.3c | 十五规则完整分派、十一公式构造合并、原ZF集合归纳 | 只有Ω前提的PureFormulaQuery↔FormulaCode；消去统一IH | 下一步 |
+| 3f.2c.3b.2d | 原数值quotation、substitutionShape及证明节点调用 | 原检查器与纯AST桥，覆盖任意内部ω码及无效候选 | 待完成 |
+| 5a／5b | 原六规则／27模式、完整ZF与目标公理检查和编译 | 任意内部ProofZF/U码正确性，完整Separation／Collection | 待完成 |
+| 6 | 完整内部解释及固定Con | FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2c.3a已验收：公式查询正确性已对内部绑定界／自由界统一量化，通用实际子公式前提已接入严格成员IH；四种二元规则已完成该对象IH前提下的局部健全性、真实子轨迹合并及完整父查询构造。5模块61声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1562构建任务、16900项审计（390无公理／16510允许依赖）、零警告；九命令及五trust=0入口全部退出0；1424份独立哈希一致、1914对精确证书足迹、14556项Internal显式声明覆盖。公式IH尚未消去；否定、两量词、完整十五规则分派、全公式查询双条件及最终Con仍未完成。见[验收](STEP4_PURE_BINARY_FORMULA_STEPS_ACCEPTANCE.zh-CN.md)。
 
 下一单元3f.2c.3b.2c.3b：将否定和两个量词的实际unary前提接到同一ALL2上下文IH；量词绑定后继必须内部EX构造。随后完成十一分支／十五规则统一分派与原ZF集合归纳，消去本批仍保留的IH。

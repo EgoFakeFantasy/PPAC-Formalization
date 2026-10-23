@@ -8009,4 +8009,43 @@ example {m} (kind : Fin 4) (w b f x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.D
         (PureSyntaxTrace.formula w b f n))))).close)) :=
   ObjectPureSyntaxBinary.native_binaryQueryFromStrictInduction kind w b f x y n
 
+example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryInputExpressionIffSentence kind w b f x n)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryInputExpressionIff kind w b f x n
+
+example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryKnownTypeIffSentence kind w b f x n)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryKnownTypeIff kind w b f x n
+
+example {m} (kind : Fin 3) (w b f n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryActualApplicationSoundSentence kind w b f n r R)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryActualApplicationSound kind w b f n r R
+
+example {m} (kind : Fin 3) (w b f x n r p B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryActualChildTraceExtendedSentence kind w b f x n r p B)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryActualChildTraceExtended kind w b f x n r p B
+
+example {m} (kind : Fin 3) (w b f x n B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryQueryFromActualChildSentence kind w b f x n B)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryQueryFromActualChild kind w b f x n B
+
+example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryQueryFromInternalStepSentence kind w b f x n)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryQueryFromInternalStep kind w b f x n
+
+example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureSyntaxUnary.unaryQueryFromStrictInductionSentence kind w b f x n)) :=
+  Internal.ObjectPureSyntaxUnary.native_unaryQueryFromStrictInduction kind w b f x n
+-- 原否定和量词head及真实子前提，保持绑定界表达式。
+example (kind : Fin 3) : (YesMetaZFC.Automation.ObjectFormulaSyntax.unaryRule (PureSyntaxUnarySyntax.tag kind) (PureSyntaxUnarySyntax.advance kind)).head =
+    PureSyntaxFormulaGraph.head (0 : Fin 3) 1 (PureSyntaxUnarySyntax.input kind) := rfl
+example (kind : Fin 3) : (YesMetaZFC.Automation.ObjectFormulaSyntax.unaryRule (PureSyntaxUnarySyntax.tag kind) (PureSyntaxUnarySyntax.advance kind)).premises =
+    [PureSyntaxFormulaPremise.head (PureSyntaxUnarySyntax.boundExpr (PureSyntaxUnarySyntax.advance kind)) (1 : Fin 3) 2] := rfl
+-- 展开原核闭句合同；统一对象IH在本批仍是明确前提。
+example {m} (kind : Fin 3) (w b f x n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((PureSyntaxFormulaInductionSyntax.allIH w n).imp
+      ((FormulaCodeSyntax.formulaCode w n b f).imp ((SyntaxLogicalSyntax.singleCode (PureSyntaxUnarySyntax.tag kind) w x n).imp
+        (PureSyntaxTrace.formula w b f n))))).close)) :=
+  ObjectPureSyntaxUnary.native_unaryQueryFromStrictInduction kind w b f x n
+
 end PPAC.Migration.Step4Checks
