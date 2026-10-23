@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: typed internal lists have an exact nil/cons case equation, with actual internal predecessor length, typed head and typed tail, and both constructors proved. Original numeric mode0/3 term runs also bridge to the existing independent term program. Six modules, 76 declarations and 11 new closed families replay to original nativeZF. Acceptance: 1392 jobs, 15271 audits, zero warnings; all nine commands and five trust=0 entries exit zero; 1256 hashes and 1692 exact certificate pairs. Whole-list transformation correctness, output totality/uniqueness and internal induction, full formulas, quotation, Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_TYPED_ARGUMENT_LIST_CASES_ACCEPTANCE.zh-CN.md).
+
+Historical acceptance record:
+
 Latest object milestone: the original relational mode0/3 argument run has an exact whole-run nil/cons equation for all internal input/output candidates under Omega, Num0/3 and natural depth/parameter. Actual arity=3/7 assignments, shared traces and given root rows are eliminated. The cons case existentially binds four internal components and retains both real child runs. Ten modules, 66 declarations and eight new closed families replay to nativeZF. Acceptance: 1386 jobs, 15195 audits, zero warnings; nine commands and five trust=0 entries exit zero; 1250 hashes and 1681 exact certificate pairs. Typed-list transformation correctness/totality/uniqueness and internal induction, full formulas, quotation, rules/Proof checker, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_ARGUMENT_WHOLE_RUN_EQUATION_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

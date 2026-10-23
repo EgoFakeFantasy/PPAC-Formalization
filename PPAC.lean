@@ -171,3 +171,5 @@ import PPAC.Migration.Internal.ObjectOriginalArgumentsTrace
 import PPAC.Migration.Internal.ObjectOriginalArgumentMatrix
 
 import PPAC.Migration.Internal.ObjectOriginalArgumentRun
+
+import PPAC.Migration.Internal.ObjectTypedArgumentList

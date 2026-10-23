@@ -6966,4 +6966,48 @@ example {m} (three : Bool) (w mode depth parameter input output : Fin m) : YesMe
     (Translation.sentence (Internal.ObjectOriginalArgumentRun.originalArgumentWholeRunCasesExactIffSentence three w mode depth parameter input output)) :=
   Internal.ObjectOriginalArgumentRun.native_originalArgumentWholeRunCasesExactIff three w mode depth parameter input output
 
+example {m} (three : Bool) (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.numericTermModeRunIffSentence three w mode depth parameter input output)) :=
+  Internal.ObjectTypedArgumentList.native_numericTermModeRunIff three w mode depth parameter input output
+
+example {m} (w mode depth a b c L I R n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.numericReplaceOnTypedTermSentence w mode depth a b c L I R n q)) :=
+  Internal.ObjectTypedArgumentList.native_numericReplaceOnTypedTerm w mode depth a b c L I R n q
+
+example {m} (w mode depth parameter a b B I J R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.numericWeakenOnTypedTermSentence w mode depth parameter a b B I J R S n q)) :=
+  Internal.ObjectTypedArgumentList.native_numericWeakenOnTypedTerm w mode depth parameter a b B I J R S n q
+
+example {m} (w z a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedNilListIntroductionSentence w z a b n)) :=
+  Internal.ObjectTypedArgumentList.native_typedNilListIntroduction w z a b n
+
+example {m} (w ell k a b h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedConsListIntroductionSentence w ell k a b h t n)) :=
+  Internal.ObjectTypedArgumentList.native_typedConsListIntroduction w ell k a b h t n
+
+example {m} (w k a b h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedConsActualPredecessorSentence w k a b h t n)) :=
+  Internal.ObjectTypedArgumentList.native_typedConsActualPredecessor w k a b h t n
+
+example {m} (w k a b h t n ell : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedConsHeadSentence w k a b h t n ell)) :=
+  Internal.ObjectTypedArgumentList.native_typedConsHead w k a b h t n ell
+
+example {m} (w k a b h t n ell : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedConsTailSentence w k a b h t n ell)) :=
+  Internal.ObjectTypedArgumentList.native_typedConsTail w k a b h t n ell
+
+example {m} (w k a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedNilListIffSentence w k a b n)) :=
+  Internal.ObjectTypedArgumentList.native_typedNilListIff w k a b n
+
+example {m} (w k a b n h t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedConsListIffSentence w k a b n h t)) :=
+  Internal.ObjectTypedArgumentList.native_typedConsListIff w k a b n h t
+
+example {m} (w k a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTypedArgumentList.typedWholeListCasesIffSentence w k a b n)) :=
+  Internal.ObjectTypedArgumentList.native_typedWholeListCasesIff w k a b n
+
 end PPAC.Migration.Step4Checks
