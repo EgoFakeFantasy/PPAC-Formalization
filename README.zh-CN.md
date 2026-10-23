@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+最新对象进展：原mode0／3项运行已取得实际有类型唯一输出：全部候选上的原Run₁唯一性、输出自然性及目标项类型均包含在对象Value中；全内部输入项承诺∀n(Term(n)→∃q Value(n,q))已正式推导。实际恒等／位移／转换列表前提保留，抽象程序agreement前提已在两个模式的正式端点消去。4模块65声明、10组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1396构建任务、15336项审计（378无公理／14958允许依赖）、零警告；九命令及五trust=0入口全部退出0；1260份工作区独立哈希一致、1702对精确证书足迹、12992项Internal显式声明覆盖。任意内部列表的Run₂输出总性／唯一性、逐字段完整变换对应和内部列表归纳仍未完成；全十一公式、quotation总桥、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_ORIGINAL_NUMERIC_TERM_FIBER_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 最新对象进展：有类型内部列表的完整Nil／Cons分解与重建已取得原核对象证明：Cons分支实际产生内部前驱长度、合法头项和有类型尾列表；所有索引及组件均由对象量词处理。原Num0／Num3项运行已接到既有独立项程序。6模块76声明、11组新闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1392构建任务、15271项审计（378无公理／14893允许依赖）、零警告；九命令及五trust=0入口全部退出0；1256份工作区独立哈希一致、1692对精确证书足迹、12927项Internal显式声明覆盖。任意内部列表的完整变换对应、实际输出总性／唯一性与内部归纳仍未完成；全十一公式、quotation总桥、ProofZF/U、内部解释及最终Con仍未完成。见[验收](docs/STEP4_TYPED_ARGUMENT_LIST_CASES_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

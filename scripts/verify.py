@@ -2002,7 +2002,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectTypedArgumentList.native_typedConsTail',
                     'PPAC.Migration.Internal.ObjectTypedArgumentList.native_typedNilListIff',
                     'PPAC.Migration.Internal.ObjectTypedArgumentList.native_typedConsListIff',
-                    'PPAC.Migration.Internal.ObjectTypedArgumentList.native_typedWholeListCasesIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectTypedArgumentList.native_typedWholeListCasesIff',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_replaceWholeTermAgreement',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_replaceActualOriginalTermFiber',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_replaceAllInternalTermPromise',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_weakenWholeTermAgreement',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_weakenActualOriginalTermFiber',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_weakenAllInternalTermPromise',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTransfer',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermFiberTransfer',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTargetType',
+                    'PPAC.Migration.Internal.ObjectOriginalNumericTermFiber.native_originalTermAllCandidateUnique'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2101,6 +2111,7 @@ def main() -> None:
         "ObjectOriginalArgumentMatrix": ('nilModeZeroThreeGuard', 'allCandidateEmptyExprNilIff', 'nilActualHeadNumericIff', 'consActualHeadNumericIff', 'headActualChildTraceNumericIff', 'tailActualChildTraceNumericIff', 'nilFullTracedMatrixNumericIff', 'consFullTracedMatrixNumericIff', 'consOriginalMatrixNumericIff', 'nilAllCandidateRowMatrixIff', 'consAllCandidateRowMatrixIff'),
         "ObjectOriginalArgumentRun": ('originalRunInputNatural', 'originalRunOutputNatural', 'actualOriginalArgumentRoot', 'originalArgumentOutcomesNatural', 'originalNilApplicationExactIff', 'originalConsApplicationExactIff', 'originalArgumentTraceCasesExactIff', 'originalArgumentWholeRunCasesExactIff'),
         "ObjectTypedArgumentList": ('numericTermModeRunIff', 'numericReplaceOnTypedTerm', 'numericWeakenOnTypedTerm', 'typedNilListIntroduction', 'typedConsListIntroduction', 'typedConsActualPredecessor', 'typedConsHead', 'typedConsTail', 'typedNilListIff', 'typedConsListIff', 'typedWholeListCasesIff'),
+        "ObjectOriginalNumericTermFiber": ('replaceWholeTermAgreement', 'replaceActualOriginalTermFiber', 'replaceAllInternalTermPromise', 'weakenWholeTermAgreement', 'weakenActualOriginalTermFiber', 'weakenAllInternalTermPromise', 'originalTermValueTransfer', 'originalTermFiberTransfer', 'originalTermValueTargetType', 'originalTermAllCandidateUnique'),
     }
     standard_core = {"propext", "Classical.choice", "Quot.sound"}
     for namespace, names in arithmetic_groups.items():
@@ -2609,6 +2620,9 @@ def main() -> None:
         "object_typed_argument_list_internal_nil_cons_construction_proved": True,
         "object_typed_argument_list_actual_predecessor_head_tail_proved": True,
         "object_typed_argument_list_all_internal_case_equation_proved": True,
+        "object_original_numeric_term_typed_actual_unique_output_fibers_proved": True,
+        "object_original_numeric_term_all_internal_source_term_promises_proved": True,
+        "object_original_numeric_term_program_agreement_discharged_under_actual_environments_proved": True,
         "object_original_argument_typed_list_transform_correctness_on_all_internal_lists_proved": False,
         "object_original_nil_arguments_mode_0_3_guard_discharged_proved": True,
         "object_original_argument_head_and_child_numeric_rows_proved": True,

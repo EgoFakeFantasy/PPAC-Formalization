@@ -7010,4 +7010,44 @@ example {m} (w k a b n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectTypedArgumentList.typedWholeListCasesIffSentence w k a b n)) :=
   Internal.ObjectTypedArgumentList.native_typedWholeListCasesIff w k a b n
 
+example {m} (w mode depth a b c L I R n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.replaceWholeTermAgreementSentence w mode depth a b c L I R n)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_replaceWholeTermAgreement w mode depth a b c L I R n
+
+example {m} (w mode depth a b c L I R n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.replaceActualOriginalTermFiberSentence w mode depth a b c L I R n)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_replaceActualOriginalTermFiber w mode depth a b c L I R n
+
+example {m} (w mode depth a b c L I R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.replaceAllInternalTermPromiseSentence w mode depth a b c L I R)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_replaceAllInternalTermPromise w mode depth a b c L I R
+
+example {m} (w mode depth parameter a b B I J R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.weakenWholeTermAgreementSentence w mode depth parameter a b B I J R S n)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_weakenWholeTermAgreement w mode depth parameter a b B I J R S n
+
+example {m} (w mode depth parameter a b B I J R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.weakenActualOriginalTermFiberSentence w mode depth parameter a b B I J R S n)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_weakenActualOriginalTermFiber w mode depth parameter a b B I J R S n
+
+example {m} (w mode depth parameter a b B I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.weakenAllInternalTermPromiseSentence w mode depth parameter a b B I J R S)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_weakenAllInternalTermPromise w mode depth parameter a b B I J R S
+
+example {m} (w mode depth parameter R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.originalTermValueTransferSentence w mode depth parameter R S a b c d n q)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTransfer w mode depth parameter R S a b c d n q
+
+example {m} (w mode depth parameter R S a b c d n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.originalTermFiberTransferSentence w mode depth parameter R S a b c d n)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_originalTermFiberTransfer w mode depth parameter R S a b c d n
+
+example {m} (w mode depth parameter c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.originalTermValueTargetTypeSentence w mode depth parameter c d n q)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_originalTermValueTargetType w mode depth parameter c d n q
+
+example {m} (w mode depth parameter c d n q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalNumericTermFiber.originalTermAllCandidateUniqueSentence w mode depth parameter c d n q v)) :=
+  Internal.ObjectOriginalNumericTermFiber.native_originalTermAllCandidateUnique w mode depth parameter c d n q v
+
 end PPAC.Migration.Step4Checks
