@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: the relational compilation of the whole original Horn table has all-internal lookup trace soundness and completeness. Object member induction handles arbitrary closed traces; Separation constructs the actual canonical successful-row set and proves its closure. Actual successor-search and power-of-omega domains agree, with coded-row success/no-output equivalence on all internal runtime candidates. Twenty-five closed families return original nativeZF certificates. Acceptance: 1322 build jobs, 14415 audited declarations, zero warnings; nine commands and five trust=0 entry points exiting zero; 1186 independent hashes and 1566 exact certificate pairs. The total native extended-language graph-elimination/quotation bridge, full original numeric interface and final Con remain unproved. See [acceptance](docs/STEP4_INTERNAL_LOOKUP_TRACE_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: all assignments for each original rule arity are object existential witnesses. Natural guards follow from the original search bound; exact successor-membership bounds and an actual successor search are proved. On tag-zero rows, the whole original table dispatches exactly to its two lookup rules, with all other original branches object-refuted. Thirteen closed families return original nativeZF certificates. Acceptance: 1301 build jobs, 14208 audited declarations, zero warnings; nine commands and five trust=0 entry points exiting zero; 1165 independent hashes and 1541 exact certificate pairs. Arbitrary internal traces, the full original numeric interface and final Con remain unproved. See [acceptance](docs/STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

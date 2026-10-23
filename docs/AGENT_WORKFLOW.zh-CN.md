@@ -17,13 +17,14 @@ B固定原YesMetaZFC的ZF纯语言像，不额外加入AC、不可达或Con(B)�
 | S3.4c.2b.2c.3c.1b.1 | 独立按表码递归lookup、实际状态集合／原递归图及固定描述码 | 全内部执行对应、唯一固定码与统一句子、成功／无输出对应及单值性 | 已完成，见[验收](STEP4_LOOKUP_TABLE_PROGRAM_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.1b.2a | 实际原Horn.Expr／Rule及两个lookup原局部矩阵 | 全内部实际唯一求值、原结构对应、赋值界及原nativeZF闭句 | 已完成，见[验收](STEP4_ORIGINAL_HORN_LOOKUP_ACCEPTANCE.zh-CN.md) |
 | S3.4c.2b.2c.3c.1b.2b.1 | 原arity存在赋值、S(row)实际搜索界和原完整表 | 全内部有界应用、自然守卫推导、全表tag0精确lookup分派及原nativeZF闭句 | 已完成，见[验收](STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md) |
-| S3.4c.2b.2c.3c.1b.2b.2 | 原量化lookup应用的Cons／索引／子行；任意内部轨迹 | 规范轨迹实际构造与table码成员归纳；扩展式函数消去总桥及原数字接口 | 下一步 |
+| S3.4c.2b.2c.3c.1b.2b.2 | 原量化应用实际见证；完整原表的关系式轨迹 | 任意内部轨迹可靠性、实际规范轨迹完备性、S(row)／P(ω)域及成功／拒绝双向对应 | 已完成，见[验收](STEP4_INTERNAL_LOOKUP_TRACE_ACCEPTANCE.zh-CN.md) |
+| S3.4c.2b.2c.3c.1b.2c | 原扩展语言公式整体、函数图消去及quotation接口 | 原数值接口总桥，保持全部内部数据及严格失败行为 | 下一步，总门未完成 |
 | S3.4c.2b.2c.3c.2–4 | 原boundValue/freeValue、全11公式模式0／3及规则5／4 | 原类型／参数守卫下strictOption接口及全内部检查兼容，不附加FreeClosed | 待完成 |
 | 5 | 专用ProofZF/U纯AST，原六规则／27模式及完整Separation/Collection | 全部内部ω证明码的检查／编译正确性 | 待完成 |
 | 6 | 完整L／对称扩张及ZF+PP+ACwo+¬AC内部解释 | 原ZF内所有目标公理及证明翻译，不添加模型标准性或选择前提 | 待完成 |
 | 7 | 原内部Con句子及上述编译／解释 | 原FirstOrder.Derives nativeZF [] (Con_ZF → Con_target) | 未证明 |
 
-本批原有界赋值与完整查找分派通过1301构建任务、14208项审计（368无公理／13840允许依赖）、零警告；九命令及五trust=0入口全部退出0；1165份工作区独立哈希一致、1541对精确证书足迹、11864项Internal显式声明覆盖。任意内部轨迹双向对应、原数字接口及最终Con仍未完成。
+本批完整原表的关系式内部轨迹通过1322构建任务、14415项审计（369无公理／14046允许依赖）、零警告；九命令及五trust=0入口全部退出0；1186份工作区独立哈希一致、1566对精确证书足迹、12071项Internal显式声明覆盖。原扩展语言函数图消去／quotation总桥、原完整数值接口及最终Con仍未完成。
 
 当前程序是固定关系式DSL编译及实际规范码；已证明数值库子程序承担节点、类型、图边和双表提升。程序核心8模块不得调用旧完整公式判断／规格／算子／求值作为执行原语；独立对照证明可以引用旧规格。任意内部程序码通用解释器尚未实现，原宿主操作直接quotation仍是外部有限有效模式，不能据此提前通过规则、Proof检查器或最终Con总门。
 

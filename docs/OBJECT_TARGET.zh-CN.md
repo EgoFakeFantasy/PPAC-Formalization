@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：完整原规则表关系式编译的任意内部轨迹与实际查找双向对应、规范轨迹实际构造、原S(row)／P(ω)域及成功／无输出均已回放原nativeZF。原扩展语言quotation总桥及最终Con未完成。见[验收](STEP4_INTERNAL_LOOKUP_TRACE_ACCEPTANCE.zh-CN.md)。
+
 最新辅助对象结果：原有界赋值块、实际S(row)搜索界及完整原规则表的tag0查找分派已回放原nativeZF。任意内部轨迹、原数字接口及最终Con未完成。见[验收](STEP4_BOUNDED_LOOKUP_DISPATCH_ACCEPTANCE.zh-CN.md)。
 
 最新辅助对象结果：上游原Horn.Expr／Rule的关系式编译、全部内部赋值实际唯一求值、真实lookup局部矩阵及赋值界已回放原nativeZF。原量化规则应用／完整轨迹及最终Con未完成。见[验收](STEP4_ORIGINAL_HORN_LOOKUP_ACCEPTANCE.zh-CN.md)。

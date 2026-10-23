@@ -6406,4 +6406,104 @@ example {m} (w row trace : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF
     (Translation.sentence (Internal.ObjectBoundedLookupDispatch.originalLookupIntoWholeTableSentence w row trace)) :=
   Internal.ObjectBoundedLookupDispatch.native_originalLookupIntoWholeTable w row trace
 
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.actualOriginalLookupRowSentence w n i y)) :=
+  Internal.ObjectLookupTrace.native_actualOriginalLookupRow w n i y
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.originalLookupRowNaturalFieldsSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_originalLookupRowNaturalFields w n i y r
+
+example {m} (w n i y r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.originalHeadApplicationSoundSentence w n i y r R)) :=
+  Internal.ObjectLookupTrace.native_originalHeadApplicationSound w n i y r R
+
+example {m} (w R n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.arbitraryClosedInternalTraceSoundSentence w R n i y r)) :=
+  Internal.ObjectLookupTrace.native_arbitraryClosedInternalTraceSound w R n i y r
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.canonicalTraceActualSetSentence w)) :=
+  Internal.ObjectLookupTrace.native_canonicalTraceActualSet w
+
+example {m} (w R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.canonicalTraceSubsetOmegaSentence w R)) :=
+  Internal.ObjectLookupTrace.native_canonicalTraceSubsetOmega w R
+
+example {m} (w R n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.canonicalTraceSuccessfulMemberSentence w R n i y r)) :=
+  Internal.ObjectLookupTrace.native_canonicalTraceSuccessfulMember w R n i y r
+
+example {m} (w R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.canonicalTraceClosedSentence w R)) :=
+  Internal.ObjectLookupTrace.native_canonicalTraceClosed w R
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.compiledTraceCompleteSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_compiledTraceComplete w n i y r
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.compiledTraceExecutionIffSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_compiledTraceExecutionIff w n i y r
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.compiledTraceCandidateRejectionIffSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_compiledTraceCandidateRejectionIff w n i y r
+
+example {m} (w R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.originalBoundedSearchClosureIffSentence w R)) :=
+  Internal.ObjectLookupTrace.native_originalBoundedSearchClosureIff w R
+
+example {m} (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.originalBoundedSearchTraceIffSentence w r)) :=
+  Internal.ObjectLookupTrace.native_originalBoundedSearchTraceIff w r
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.originalBoundedSearchTraceExecutionIffSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_originalBoundedSearchTraceExecutionIff w n i y r
+
+example {m} (w r P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.actualPowerTraceDomainIffSentence w r P)) :=
+  Internal.ObjectLookupTrace.native_actualPowerTraceDomainIff w r P
+
+example {m} (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.actualPowerTraceSearchIffSentence w r)) :=
+  Internal.ObjectLookupTrace.native_actualPowerTraceSearchIff w r
+
+example {m} (w n i y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.actualPowerTraceExecutionIffSentence w n i y r)) :=
+  Internal.ObjectLookupTrace.native_actualPowerTraceExecutionIff w n i y r
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceSomeExecutionIffSentence w n i y)) :=
+  Internal.ObjectLookupTrace.native_allInternalTraceSomeExecutionIff w n i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceSomeCheckedIffSentence w n i y)) :=
+  Internal.ObjectLookupTrace.native_allInternalTraceSomeCheckedIff w n i y
+
+example {m} (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.naturalTraceSomeRawLookupIffSentence w n i y)) :=
+  Internal.ObjectLookupTrace.native_naturalTraceSomeRawLookupIff w n i y
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceHasOutputIffSentence w n i)) :=
+  Internal.ObjectLookupTrace.native_allInternalTraceHasOutputIff w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceNoOutputIffSentence w n i)) :=
+  Internal.ObjectLookupTrace.native_allInternalTraceNoOutputIff w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.naturalTraceHasOutputStrictIffSentence w n i)) :=
+  Internal.ObjectLookupTrace.native_naturalTraceHasOutputStrictIff w n i
+
+example {m} (w n i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.naturalTraceNoOutputStrictIffSentence w n i)) :=
+  Internal.ObjectLookupTrace.native_naturalTraceNoOutputStrictIff w n i
+
+example {m} (w n i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLookupTrace.allInternalTraceOutputUniqueSentence w n i y z)) :=
+  Internal.ObjectLookupTrace.native_allInternalTraceOutputUnique w n i y z
+
 end PPAC.Migration.Step4Checks
