@@ -705,3 +705,8 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 固定程序取得实际唯一内部码和同一句子内的八参数统一正确性；这不是任意内部程序码通用解释器，也不扩大原宿主操作直接quotation的外部有限模式范围。
 1164构建任务、13102项审计、零警告；九命令和五trust=0入口全部退出0，1062份工作区独立哈希一致。下一步原规则5／4兼容；ProofZF/U、内部检查／编译、完整内部解释和最终Con均未完成。
 完整Collection/Separation、六规则／27模式、全部内部ω的Con范围及最终主句不变。详见[完整公式程序验收](STEP4_FIXED_FORMULA_PROGRAM_ACCEPTANCE.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.2c.3a更新：已在对象层构造旧索引列表到变量项像列表的实际唯一转换，证明双表binder交换，并用原Foundation／Separation闭合任意内部源码上的九参数归纳。原索引公式重命名与混合公式代入、独立公式程序执行对所有内部元数据和候选码双向对应；无需外部语法树、单射映射或标准ω。
+15组新增闭句返回原nativeZF；1190构建任务、13279项审计、零警告，九命令与五trust=0入口退出0，1088份独立工作区哈希一致。
+这仅完成规则5／4所需的一般桥；原替换项列表同码特化、SyntaxTransform模式0／3、规则检查兼容、ProofZF/U、内部解释和最终Con仍待完成。完整Collection/Separation、六规则／27模式和全部内部ω证明码的目标不变。见[本批验收](STEP4_INDEX_RENAME_BRIDGE_ACCEPTANCE.zh-CN.md)。

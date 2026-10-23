@@ -5910,4 +5910,64 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectFormulaTransformProgram.existsCorrectProgramSentence w)) :=
   Internal.ObjectFormulaTransformProgram.native_existsCorrectProgram w
 
+example {m} (isBound : Bool) (w I a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.convertedExistsSentence isBound w I a c d)) :=
+  Internal.ObjectIndexFormulaRename.native_convertedExists isBound w I a c d
+
+example {m} (isBound : Bool) (w I a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.convertedFiberSentence isBound w I a c d)) :=
+  Internal.ObjectIndexFormulaRename.native_convertedFiber isBound w I a c d
+
+example {m} (isBound : Bool) (w I a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.convertedDomainIffSentence isBound w I a c d)) :=
+  Internal.ObjectIndexFormulaRename.native_convertedDomainIff isBound w I a c d
+
+example {m} (isBound : Bool) (w I T U a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.convertedUniqueSentence isBound w I T U a c d)) :=
+  Internal.ObjectIndexFormulaRename.native_convertedUnique isBound w I T U a c d
+
+example {m} (w I J a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.environmentExistsSentence w I J a b c d)) :=
+  Internal.ObjectIndexFormulaRename.native_environmentExists w I J a b c d
+
+example {m} (w I J R S U V a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.environmentUniqueSentence w I J R S U V a b c d)) :=
+  Internal.ObjectIndexFormulaRename.native_environmentUnique w I J R S U V a b c d
+
+example {m} (w I J R S a b c d r s n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.termProgramIffSentence w I J R S a b c d r s n q)) :=
+  Internal.ObjectIndexFormulaRename.native_termProgramIff w I J R S a b c d r s n q
+
+example {m} (w I J R S a b c d r s n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.membershipIffSentence w I J R S a b c d r s n q)) :=
+  Internal.ObjectIndexFormulaRename.native_membershipIff w I J R S a b c d r s n q
+
+example {m} (w I J R S a b c d r s n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.equalityIffSentence w I J R S a b c d r s n q)) :=
+  Internal.ObjectIndexFormulaRename.native_equalityIff w I J R S a b c d r s n q
+
+example {m} (w I J R S a b c d A C L K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.binderEnvironmentSentence w I J R S a b c d A C L K H)) :=
+  Internal.ObjectIndexFormulaRename.native_binderEnvironment w I J R S a b c d A C L K H
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.allMetadataAtNaturalSentence w n)) :=
+  Internal.ObjectIndexFormulaRename.native_allMetadataAtNatural w n
+
+example {m} (w I J R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.formulaForwardSentence w I J R S a b c d n q)) :=
+  Internal.ObjectIndexFormulaRename.native_formulaForward w I J R S a b c d n q
+
+example {m} (w I J R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.formulaReverseSentence w I J R S a b c d n q)) :=
+  Internal.ObjectIndexFormulaRename.native_formulaReverse w I J R S a b c d n q
+
+example {m} (w I J R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.formulaRenameIffSentence w I J R S a b c d n q)) :=
+  Internal.ObjectIndexFormulaRename.native_formulaRenameIff w I J R S a b c d n q
+
+example {m} (w I J R S a b c d n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectIndexFormulaRename.formulaProgramIffSentence w I J R S a b c d n q)) :=
+  Internal.ObjectIndexFormulaRename.native_formulaProgramIff w I J R S a b c d n q
+
 end PPAC.Migration.Step4Checks

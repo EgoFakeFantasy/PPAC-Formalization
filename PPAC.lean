@@ -141,3 +141,5 @@ import PPAC.Migration.Internal.ObjectNativeFormulaQuotation
 import PPAC.Migration.Internal.ObjectNativeTopQuotation
 import PPAC.Migration.Internal.ObjectTermTransformProgram
 import PPAC.Migration.Internal.ObjectFormulaTransformProgram
+
+import PPAC.Migration.Internal.ObjectIndexFormulaRename
