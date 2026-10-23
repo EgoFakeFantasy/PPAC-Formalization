@@ -653,3 +653,13 @@ InstantiateTop/AbstractFreeTop所需的完整实际表和原数值码对已实�
 这是逐有限语法模式的对象证明，尚未给出原操作对任意内部公式码的统一正确性。
 完整原数值操作与混合/首槽判断对应、ProofZF/U、全内部检查/编译、完整内部解释及最终Con仍未完成；原背景和全部内部ω/全Separation/Collection合同不变。
 见[验收](STEP4_QUOTATION_FIELDS_SCOPE_ACCEPTANCE.zh-CN.md)和[流程](AGENT_WORKFLOW.zh-CN.md)。
+
+
+2026-10-23 S3.4c.2b.1对象项操作更新：项像quotation列表实际具有原长度和所有内部域位置上的Term类型；
+两表环境实际存在唯一，并取得实际唯一码对纤维。混合项替换在此实际环境中与所选目标项像的quotation精确等价。
+原Renamed在实际后继/恒等索引图下精确计算两类纯项的weakenBound，实际索引与输出见证在对象推导内消去。
+19组闭句返回原nativeZF；1105构建任务、12322项审计、0警告，九命令及五trust=0入口全部退出0。
+这是逐外部有限项/列表模式的对象证明，不是任意内部AST统一操作正确性。
+下一关仍须证明实际提升双表及全11公式/首槽quotation，再证明任意内部码原操作、专用ProofZF/U检查器与完整内部解释。
+最终Con的全部内部ω量化、六规则/27模式及完整Separation/Collection均保持原要求，主句尚未证明。
+详见[本批验收](STEP4_TERM_IMAGE_QUOTATION_ACCEPTANCE.zh-CN.md)。

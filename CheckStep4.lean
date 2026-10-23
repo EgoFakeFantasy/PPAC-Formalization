@@ -5414,4 +5414,80 @@ example {m} (universal : Bool) (body : YesMetaZFC.Logic.FirstOrder.FormalSystem.
     (Translation.sentence (Internal.ObjectQuotationFields.quantifiedTypeSentence universal body w b f n x k)) :=
   Internal.ObjectQuotationFields.native_quantifiedType universal body w b f n x k
 
+example {m} (input : YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree) (w n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.quotationAtValueSentence input w n q)) :=
+  Internal.ObjectTermImageQuotation.native_quotationAtValue input w n q
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (j : Fin children.length) (w n i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.forestReadSentence children j w n i q)) :=
+  Internal.ObjectTermImageQuotation.native_forestRead children j w n i q
+
+example {m} (children : List (YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree)) (w n l : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.forestLengthSentence children w n l)) :=
+  Internal.ObjectTermImageQuotation.native_forestLength children w n l
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (j : Fin values.length) (w L i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageFieldSentence values j w L i q)) :=
+  Internal.ObjectTermImageQuotation.native_imageField values j w L i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w L a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageLengthSentence values w L a)) :=
+  Internal.ObjectTermImageQuotation.native_imageLength values w L a
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageRangeSentence values w L)) :=
+  Internal.ObjectTermImageQuotation.native_imageRange values w L
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w L K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageUniqueSentence values w L K)) :=
+  Internal.ObjectTermImageQuotation.native_imageUnique values w L K
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageExistsSentence values w)) :=
+  Internal.ObjectTermImageQuotation.native_imageExists values w
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageTypedFieldsSentence values w a c d L)) :=
+  Internal.ObjectTermImageQuotation.native_imageTypedFields values w a c d L
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (values : List (PureSyntaxQuotation.Tm bound free)) (w a c d L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.imageTermListSentence values w a c d L)) :=
+  Internal.ObjectTermImageQuotation.native_imageTermList values w a c d L
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.environmentExistsSentence bs fs w a b c d)) :=
+  Internal.ObjectTermImageQuotation.native_environmentExists bs fs w a b c d
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w a b c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.environmentFiberSentence bs fs w a b c d)) :=
+  Internal.ObjectTermImageQuotation.native_environmentFiber bs fs w a b c d
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w a b c d R S U V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.environmentUniqueSentence bs fs w a b c d R S U V)) :=
+  Internal.ObjectTermImageQuotation.native_environmentUnique bs fs w a b c d R S U V
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (w a b c d R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.environmentUniqueOutputSentence bs fs w a b c d R S)) :=
+  Internal.ObjectTermImageQuotation.native_environmentUniqueOutput bs fs w a b c d R S
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (isBound : Bool) (j : Fin (TermQuotationSubstitution.selected isBound bs fs).length) (w a b c d R S n i q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.mixedAtIndexSentence bs fs isBound j w a b c d R S n i q)) :=
+  Internal.ObjectTermImageQuotation.native_mixedAtIndex bs fs isBound j w a b c d R S n i q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} (bs fs : List (PureSyntaxQuotation.Tm bound free)) (isBound : Bool) (j : Fin (TermQuotationSubstitution.selected isBound bs fs).length) (w a b c d R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.mixedTermSentence bs fs isBound j w a b c d R S n q)) :=
+  Internal.ObjectTermImageQuotation.native_mixedTerm bs fs isBound j w a b c d R S n q
+
+example {m} (isBound : Bool) (k bLen fLen : Nat) (hlt : k < (if isBound then bLen else fLen)) (w U V c d C n q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.shiftAtIndexSentence isBound k bLen fLen hlt w U V c d C n q i)) :=
+  Internal.ObjectTermImageQuotation.native_shiftAtIndex isBound k bLen fLen hlt w U V c d C n q i
+
+example {m} (isBound : Bool) (k bLen fLen : Nat) (hlt : k < (if isBound then bLen else fLen)) (w U V c d C n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.shiftVariableSentence isBound k bLen fLen hlt w U V c d C n q)) :=
+  Internal.ObjectTermImageQuotation.native_shiftVariable isBound k bLen fLen hlt w U V c d C n q
+
+example {m} {bound free : PureSyntaxQuotation.Ctx} {sort : YesMetaZFC.SetTheory.SetSort} (input : PureSyntaxQuotation.Tm bound free sort) (w U V c d C n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectTermImageQuotation.shiftTermSentence input w U V c d C n q)) :=
+  Internal.ObjectTermImageQuotation.native_shiftTerm input w U V c d C n q
+
 end PPAC.Migration.Step4Checks

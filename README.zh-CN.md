@@ -1,11 +1,11 @@
 # PPAC 向 YesMetaZFC 迁移
 [English](README.md)
 
-当前对象层进度：quotation已与原森林/构造器/scalar/变量字段精确对应；纯项/公式quotation具有原Term/FormulaCode作用域，覆盖全11构造。
-量词实际构造内部后继长度，项/公式模式均实际取得带类型唯一值。31组新闭句返回原nativeZF核证书。
-验收：1093构建任务、12202项审计、0警告；九命令和五trust=0入口全部退出0，991份独立哈希一致。
-见[字段及作用域验收](docs/STEP4_QUOTATION_FIELDS_SCOPE_ACCEPTANCE.zh-CN.md)。
-这些逐模式对象推导不替代任意内部公式码的原操作正确性；内部检查器、完整内部解释及最终Con仍未完成。
+当前对象层进度：原项像quotation实际构成合法环境，具有原长度、全内部域位置上的Term类型及实际唯一码对纤维。
+混合项替换精确对应所选目标项像的quotation；两类项像在实际后继/恒等图下的重命名精确计算weakenBound。
+19组新闭句返回原nativeZF核证书；1105构建任务、12322项审计、0警告，九命令和五trust=0入口全部退出0。
+1003份独立哈希一致，累计1312对精确证书足迹。见[项像quotation及项操作验收](docs/STEP4_TERM_IMAGE_QUOTATION_ACCEPTANCE.zh-CN.md)。
+这些逐外部有限项/列表模式的对象证明不替代任意内部AST的统一正确性；实际提升双表/全公式对应、内部检查器、完整内部解释及最终Con仍未完成。
 下文保留历史范围；最新状态以[当前状态](docs/STATUS.zh-CN.md)和上述报告为准。
 
 本分支已完成第一步语言桥、第二步正向句法传输，以及第三步中的反向语法/原核规范化呈现。
