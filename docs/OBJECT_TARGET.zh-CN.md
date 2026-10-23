@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+最新辅助对象结果：原mode3自由替换freeReplace已完成任意内部闭轨迹可靠性／完备性；原成功图实际取得模式数码与原行码，对所有内部候选等价于精确深度／自由变量守卫及独立查找执行。对全部内部输出量化的有输出／无输出、严格自然接口、非法域／非自然输出拒绝及单值性均已证明。9模块143声明、22组新闭句回放原nativeZF。mode0自由变量freeWeaken、原扩展语言quotation总桥、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。见[验收](STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md)。
+
 最新辅助对象结果：原28规则表在mode0／3的绑定／自由变量输入上已精确双向分派到唯一原规则；实际S(row)搜索及候选拒绝分派也已证明。两个绑定变量分支在原行／模式／变量码守卫下，完整内部轨迹存在当且仅当输出码等于输入码，含实际P(ω)域及拒绝双条件。8模块103声明、16组新闭句回放原nativeZF。自由变量两支的完整数值对应、原扩展语言quotation总桥、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成。见[验收](STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md)。
 
 最新辅助对象结果：原完整表的轨迹单调性与Pairing／Union实际根行插入已证明；模式0／3的四个变量正分支取得实际闭合轨迹，自由替换复用已验收内部查找子轨迹，含实际P(ω)域。4模块81声明、15组新闭句回放原nativeZF。完整变量双向数值接口、全11公式模式0／3、原规则检查、ProofZF/U、内部解释和最终Con均仍未完成；原扩展语言quotation总桥继续为false。见[验收](STEP4_SCALAR_TRACE_EXTENSION_ACCEPTANCE.zh-CN.md)。

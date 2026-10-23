@@ -3,6 +3,10 @@
 
 An in-progress migration of OpenAI family 244 to the original YesMetaZFC pure-set language and Hilbert derivation kernel.
 
+Latest object milestone: original mode3 freeReplace has soundness/completeness for arbitrary internal closed traces. Its success graph constructs actual mode/row witnesses and is equivalent, for every internal candidate under Omega, to the exact depth/free-variable guard and independent lookup execution. Has-output/no-output quantify all internal outputs; strict natural interfaces, invalid-domain/non-natural-output rejection and uniqueness are proved. Twenty-two new closed families replay to original nativeZF. Acceptance: 1343 build jobs, 14742 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1207 independent hashes and 1619 exact certificate pairs. Mode0 freeWeaken, extended-language quotation, full formula/rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_FREE_REPLACE_INTERNAL_OUTCOMES_ACCEPTANCE.zh-CN.md).
+
+The following entries retain historical acceptance records.
+
 Latest object milestone: exact object dispatch of the complete original 28-rule table selects its unique bound/free variable rule in mode0/3, including actual successor search and candidate rejection. For bound variables in both modes, full internal trace existence is equivalent to equality of output and input codes under the original row/mode/variable guards; actual Power(omega) and negative counterparts are proved. Sixteen new closed families replay to original nativeZF. Acceptance: 1334 build jobs, 14599 audited declarations, zero warnings; all nine commands and five trust=0 entries exit zero; 1198 independent hashes and 1597 exact certificate pairs. Whole free-variable numeric equivalence, extended-language quotation, full formula/rule/checker compatibility, interpretation and final Con remain unproved. See [acceptance](docs/STEP4_VARIABLE_DISPATCH_BOUND_IDENTITY_ACCEPTANCE.zh-CN.md).
 
 The following entries retain historical acceptance records.

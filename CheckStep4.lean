@@ -6630,4 +6630,92 @@ example {m} (three : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC
     (Translation.sentence (Internal.ObjectScalarDispatch.originalBoundTraceRejectionIffSentence three xs w r idx)) :=
   Internal.ObjectScalarDispatch.native_originalBoundTraceRejectionIff three xs w r idx
 
+example {m} {n} (bound : Bool) (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalVariableExprCodeIffSentence bound e env w idx y)) :=
+  Internal.ObjectFreeReplace.native_originalVariableExprCodeIff bound e env w idx y
+
+example {m} (bound : Bool) (w idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalVariableCodeNaturalSentence bound w idx y)) :=
+  Internal.ObjectFreeReplace.native_originalVariableCodeNatural bound w idx y
+
+example {m} (env : Fin 4 → Fin m) (w R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplaceLookupPremiseSoundSentence env w R)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplaceLookupPremiseSound env w R
+
+example {m} (env : Fin 4 → Fin m) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplaceMatrixSoundSentence env xs w r R idx)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplaceMatrixSound env xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplaceApplicationSoundSentence xs w r R idx)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplaceApplicationSound xs w r R idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplaceTraceExecutionIffSentence xs w r idx)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplaceTraceExecutionIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplacePowerTraceExecutionIffSentence xs w r idx)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplacePowerTraceExecutionIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.originalFreeReplaceTraceCandidateRejectionIffSentence xs w r idx)) :=
+  Internal.ObjectFreeReplace.native_originalFreeReplaceTraceCandidateRejectionIff xs w r idx
+
+example {m} (w d p x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.actualOriginalFreeReplaceRootSentence w d p x y)) :=
+  Internal.ObjectFreeReplace.native_actualOriginalFreeReplaceRoot w d p x y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceReturnedIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceReturnedIff w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceCheckedIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceCheckedIff w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.validFreeReplaceReturnedExecutionIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_validFreeReplaceReturnedExecutionIff w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.naturalFreeReplaceReturnedStrictIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_naturalFreeReplaceReturnedStrictIff w d p x idx y
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceCandidateRejectionIffSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceCandidateRejectionIff w d p x idx y
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceHasOutputGuardedIffSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceHasOutputGuardedIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceNoOutputGuardedIffSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceNoOutputGuardedIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.validFreeReplaceHasOutputIffSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_validFreeReplaceHasOutputIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.validFreeReplaceNoOutputIffSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_validFreeReplaceNoOutputIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.naturalFreeReplaceStrictNoOutputIffSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_naturalFreeReplaceStrictNoOutputIff w d p x idx
+
+example {m} (w d p x idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.invalidFreeReplaceGuardNoOutputSentence w d p x idx)) :=
+  Internal.ObjectFreeReplace.native_invalidFreeReplaceGuardNoOutput w d p x idx
+
+example {m} (w d p x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.nonNaturalFreeReplaceOutputRejectedSentence w d p x idx y)) :=
+  Internal.ObjectFreeReplace.native_nonNaturalFreeReplaceOutputRejected w d p x idx y
+
+example {m} (w d p x idx y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFreeReplace.allInternalFreeReplaceOutputUniqueSentence w d p x idx y z)) :=
+  Internal.ObjectFreeReplace.native_allInternalFreeReplaceOutputUnique w d p x idx y z
+
 end PPAC.Migration.Step4Checks
