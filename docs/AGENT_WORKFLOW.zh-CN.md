@@ -1,5 +1,30 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2d.6i已验收：实际mode1完整公式递归正确性已覆盖全部内部合法码、任意内部深度及全部11构造子。统一对象ALL10允许frame及候选输出变化，原ZF集合归纳消去公式IH，真实历史EX及binder的独立源／目标后继与提升表见证均已消去；实际AbstractFreeTop环境已提供根frame。14模块91声明、9组闭句返回原nativeZF。1763构建任务、18840项声明审计（399无公理／18441允许依赖）、零警告；九命令及五trust=0入口全部退出0；1598份独立哈希、2181对精确证书足迹、16496项Internal显式声明覆盖。原Hilbert全称化节点、共享quotation／Bool、专用ProofZF/U、内部解释及最终Con仍未完成。见[验收与后续工程表](STEP4_MODE_ONE_FULL_FORMULA_ACCEPTANCE.zh-CN.md)。
+
+完整Separation／Collection、六规则／27模式及全部内部ω的Con规格保持不变；最终目标仍是原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。
+
+以下保留历史验收记录，旧状态只代表对应历史基点。
+
+## 后续 agent 工程流程
+
+| 顺序 | 输入与实现工作 | 对象层交付及验收 | 当前状态 |
+|---|---|---|---|
+| 1 | 原核 rename／instantiate、源 19 规则及 ZF 公理传输 | 返回原 FirstOrder.Derives 证书；保留完整背景与语言 | 既有批次已验收 |
+| 2 | 实际 mode1 变量／项／参数列及 binder frame | 任意内部深度项／列表双条件，实际根及提升闭包；消去 Promise 与列表 IH | 既有批次已验收 |
+| 3 | 本批完整公式递归 | ALL10 统一谓词、原集合归纳、真实历史 EX 消去、全部 11 构造子、原核闭句 | 本批已验收 |
+| 4 | 原 Hilbert forall_generalization 节点 | 核对 arity=4、原嵌套头、4 条真实查询及全部赋值界；接实际 top 公式操作；返回完整节点双条件 | 下一步 |
+| 5 | 其余原规则／27 模式／完整理论检查及共享 quotation | 保留原字段与准确作用域，证明原数值关系／共享 Bool 对全部内部合法码对应 | 待完成 |
+| 6 | 专用 Proof_ZF／Proof_U 的有限纯 AST | 六规则、27 模式、完整 Separation／Collection；全部内部证明码的检查正确性 | 待完成 |
+| 7 | 内部证书转换与完整数学解释 | 对象内部编译／检查传输；目标 ZF、PP、ACwo、¬AC 的原核证明 | 待完成 |
+| 8 | 固定内部 Con 及最终蕴含 | 原 FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)，全内部 ω 证明码 | 尚未证明 |
+
+执行下一单元时先固定精确目标句及所需原查询；只修改该单元模块。每批按定向编译、闭句传输、全仓构建／禁止缺口审计／精确足迹、独立回读、本地提交及提交后 Git 字节核对验收。历史批次日志不充作当前验收；不恢复退役反射实现。
+
+公式构造中的全称／存在量词递归已经覆盖；原 Hilbert 全称化证明节点仍待完成。这两项不是同一验收目标。
+
+
+
 3f.2c.3b.2d.6h已验收：每个固定mode<4的原Run3已与未改写的十一outcomes精确等价，真实mode1实例已核查；任意内部深度frame上全部四原子输入已与既有原子程序等价。项／二参数agreement均实际推出，原长度及源字段EX见证已消去。10模块89声明、17组闭句返回原nativeZF。1749构建任务、18749项声明审计（399无公理／18350允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1584份工作文件独立哈希一致、2172对精确核／native证书足迹、16405项Internal显式声明覆盖。十一分支展开式保留原递归子Run，不等于完整公式正确性；全公式归纳／forall、专用ProofZF/U及最终Con仍未完成。见[验收](STEP4_SMALL_MODE_FORMULA_AND_MODE_ONE_ATOMIC_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 实现动作 | 对象验收合同 | 状态 |

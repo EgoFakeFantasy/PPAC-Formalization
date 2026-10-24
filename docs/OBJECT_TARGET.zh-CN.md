@@ -1,5 +1,12 @@
 # 对象层最终目标与内部Con规格
 
+3f.2c.3b.2d.6i已验收：实际mode1完整公式递归正确性已覆盖全部内部合法码、任意内部深度及全部11构造子。统一对象ALL10允许frame及候选输出变化，原ZF集合归纳消去公式IH，真实历史EX及binder的独立源／目标后继与提升表见证均已消去；实际AbstractFreeTop环境已提供根frame。14模块91声明、9组闭句返回原nativeZF。1763构建任务、18840项声明审计（399无公理／18441允许依赖）、零警告；九命令及五trust=0入口全部退出0；1598份独立哈希、2181对精确证书足迹、16496项Internal显式声明覆盖。原Hilbert全称化节点、共享quotation／Bool、专用ProofZF/U、内部解释及最终Con仍未完成。见[验收与后续工程表](STEP4_MODE_ONE_FULL_FORMULA_ACCEPTANCE.zh-CN.md)。
+
+完整Separation／Collection、六规则／27模式及全部内部ω的Con规格保持不变；最终目标仍是原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。
+
+以下保留历史验收记录，旧状态只代表对应历史基点。
+
+
 3f.2c.3b.2d.6h已验收：每个固定mode<4的原Run3已与未改写的十一outcomes精确等价，真实mode1实例已核查；任意内部深度frame上全部四原子输入已与既有原子程序等价。项／二参数agreement均实际推出，原长度及源字段EX见证已消去。10模块89声明、17组闭句返回原nativeZF。1749构建任务、18749项声明审计（399无公理／18350允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1584份工作文件独立哈希一致、2172对精确核／native证书足迹、16405项Internal显式声明覆盖。十一分支展开式保留原递归子Run，不等于完整公式正确性；全公式归纳／forall、专用ProofZF/U及最终Con仍未完成。见[验收](STEP4_SMALL_MODE_FORMULA_AND_MODE_ONE_ATOMIC_ACCEPTANCE.zh-CN.md)。
 
 内部Con的全部内部ω量化、六规则／27模式及完整Separation／Collection保持不变。本批只完成原Run3展开方程及全部四原子程序基例，完整递归公式和最终Con仍未证明。

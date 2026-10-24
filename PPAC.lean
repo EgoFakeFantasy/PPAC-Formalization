@@ -220,3 +220,4 @@ import PPAC.Migration.Internal.ObjectAbstractTopArguments
 import PPAC.Migration.Internal.ObjectAbstractOperationFrame
 import PPAC.Migration.Internal.ObjectAbstractFramePrograms
 import PPAC.Migration.Internal.ObjectAbstractAtomicFormula
+import PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness

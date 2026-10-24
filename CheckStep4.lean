@@ -9352,4 +9352,50 @@ example {m} (w mode depth P a b c e R S h n q : Fin m) :
               (Internal.FormulaTransformProgramSyntax.run Internal.FormulaAtomicProgramSyntax.program w R S a b c e h n q))))).close)) :=
   Internal.ObjectAbstractAtomicFormula.native_modeOneFrameAllAtomicProgramIff w mode depth P a b c e R S h n q
 
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneAllFormulaCorrectSentence w)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneAllFormulaCorrect w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneFormulaCorrectAtSentence w n)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneFormulaCorrectAt w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneAllFramesIHSentence w n)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneAllFramesIH w n
+
+example {m} (w n mode depth P a b c e R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneFullFormulaRunExecutionIffSentence w n mode depth P a b c e R S q)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneFullFormulaRunExecutionIff w n mode depth P a b c e R S q
+
+example {m} (w n mode depth P a b c e R S h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneActualHistoryAgreementSentence w n mode depth P a b c e R S h)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualHistoryAgreement w n mode depth P a b c e R S h
+
+example {m} (w n mode depth P a b c e R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneFullFormulaRunProgramIffSentence w n mode depth P a b c e R S h q)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneFullFormulaRunProgramIff w n mode depth P a b c e R S h q
+
+example {m} (w n mode depth P a b c e R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneAgreedHistoryExistsSentence w n mode depth P a b c e R S)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneAgreedHistoryExists w n mode depth P a b c e R S
+
+example {m} (w n mode z P a b A B R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneActualTopFullFormulaExecutionIffSentence w n mode z P a b A B R S q)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualTopFullFormulaExecutionIff w n mode z P a b A B R S q
+
+example {m} (w n mode z P a b A B R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFormulaCorrectness.modeOneActualTopFullFormulaProgramIffSentence w n mode z P a b A B R S h q)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualTopFullFormulaProgramIff w n mode z P a b A B R S h q
+
+-- Expanded final contract: the only premises are Omega, actual frame, typed source formula.
+example {m} (w n mode depth P a b c e R S q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.AbstractOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          ((Internal.FormulaCodeSyntax.formulaCode w n a b).imp
+            ((Internal.OriginalTransformRowSyntax.run 3 w mode depth P n q).iff
+              (Internal.FormulaTransformExecutionSyntax.executed w R S a b c e n q))))).close)) :=
+  Internal.ObjectAbstractFormulaCorrectness.native_modeOneFullFormulaRunExecutionIff w n mode depth P a b c e R S q
+
 end PPAC.Migration.Step4Checks
