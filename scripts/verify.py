@@ -755,6 +755,77 @@ def check_mode_two_full_formula() -> dict:
             "shared_original_quotation_checker_Proof_and_final_Con_proved": False}
 
 
+
+def check_logical_instantiation_nodes() -> dict:
+    """Exact original logical 20/23/25 queries, bounded assignments and numeric nested heads."""
+    directory = ROOT / "PPAC/Migration/Internal"
+    modules = ['LogicalInstantiateQueries', 'LogicalInstantiateSyntax', 'LogicalInstantiateAllQueries',
+               'LogicalRule20Head', 'LogicalRule23Head', 'LogicalRule25Head',
+               'LogicalInstantiateNodeSyntax', 'LogicalInstantiateNode', 'ObjectLogicalInstantiate']
+    texts = {n: strip_comments((directory / (n + '.lean')).read_text(encoding='utf-8')) for n in modules}
+    contracts = [('LogicalInstantiateQueries', 'typed_transform_iff', {'hw','hn','hz','hA','hp','hf'}),
+                 ('LogicalInstantiateAllQueries', 'bundle4_iff', {'hw','hn','hz'}),
+                 ('LogicalInstantiateAllQueries', 'bundle6_iff', {'hw','hn','hz'}),
+                 ('LogicalInstantiateNode', 'normalized_node4_iff', {'hw','hz'}),
+                 ('LogicalInstantiateNode', 'normalized_node6_iff', {'hw','hz'})]
+    contracts += [(n, 'head_iff', {'hw','hn'}) for n in ['LogicalRule20Head','LogicalRule23Head','LogicalRule25Head']]
+    for module, theorem, premises in contracts:
+        header = re.search(r'(?ms)^theorem ' + theorem + r'\b.*?(?=:=)', texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(', header.group(0))) != premises:
+            raise RuntimeError('Logical instantiation contract changed: ' + module + '.' + theorem)
+        if re.search(r'Promise|Model|Consistent|Classical\.choose|hIH\s*:', header.group(0)):
+            raise RuntimeError('Unproved logical node premise: ' + module)
+    for module, text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|axiom|unsafe|native_decide)\b', text):
+            raise RuntimeError('Forbidden logical instantiation shortcut: ' + module)
+    required = {
+        'LogicalInstantiateQueries': ['grammar false (.literal 1)', 'grammar true (.literal 0)',
+            'ObjectLogicalAxiom.transform 2', 'SyntaxNumerals.exists_numeral hZ 2 w hw',
+            'InstantiateTopFormulaOperation.run_iff', 'OriginalTransformExprQuery.constructor_query_iff hZ 5 3'],
+        'LogicalInstantiateSyntax': ['same_twenty_twenty_three_queries', 'transformQuery 2 1 3',
+            'transformQuery 1 3 4', 'transformQuery 2 3 5', 'ObjectLogicalAxiom.rule25.queries[4]'],
+        'LogicalInstantiateAllQueries': ['InsertExistence.exists_insert', 'typed_transform_iff', 'intro_specification4', 'intro_specification6'],
+        'LogicalInstantiateNodeSyntax': ['HornExprBounds.variable_bound', 'actual_rule20_arity', 'actual_rule23_arity',
+            'actual_rule25_arity', 'actual_rule20_queries', 'actual_rule23_queries', 'actual_rule25_queries',
+            'actual_head20', 'actual_head23', 'actual_head25', '(true, LogicalInstantiateSyntax.leftTransform6)',
+            '(true, LogicalInstantiateSyntax.rightTransform6)', 'existsMany 4', 'existsMany 6'],
+        'LogicalInstantiateNode': ['HornApplicationBounds.existsMany_congr 4', 'HornApplicationBounds.existsMany_congr 6',
+            'head4_bounds', 'head6_bounds', 'specification4_normalized_iff', 'specification6_normalized_iff']}
+    for rule, count in [(20,3),(23,3),(25,4)]:
+        required['LogicalRule'+str(rule)+'Head'] = ['HornExprExistence', 'SyntaxNodeSyntax.constructor', 'existsMany '+str(count), 'head_iff']
+    for module, clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:
+                raise RuntimeError('Missing exact logical node derivation: ' + module + ': ' + clause)
+    def definition(module, name):
+        match = re.search(r'(?ms)^def '+name+r'\b.*?(?=^def |^theorem |^end |\Z)', texts[module])
+        if not match: raise RuntimeError('Missing definition: ' + module + '.' + name)
+        return match.group(0)
+    for n in [4,6]:
+        bundle = definition('LogicalInstantiateSyntax','bundle'+str(n))
+        if re.search(r'formulaCode|SyntaxTermSyntax|instantiated|specification|atBound', bundle):
+            raise RuntimeError('Specification smuggled into accepting queries')
+        for name in ['queryMatrix','boundedMatrix','body','node']:
+            accepting = definition('LogicalInstantiateNodeSyntax',name+str(n))
+            if re.search(r'formulaCode|SyntaxTermSyntax|instantiated|specification|normalized', accepting):
+                raise RuntimeError('Specification smuggled into accepting node')
+    for rule in [20,23,25]:
+        numeric = definition('LogicalRule'+str(rule)+'Head','atValues')
+        if re.search(r'\bgraph\b|specification|instantiated|formulaCode',numeric):
+            raise RuntimeError('Numeric nested head still assumes its graph/specification')
+    check = (ROOT / 'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in ['logicalTwentyTwentyThreeWholeNormalizedNodeIff universal w z row','logicalTwentyFiveWholeNormalizedNodeIff w z row']:
+        if 'ObjectLogicalInstantiate.native_'+name not in check:
+            raise RuntimeError('Missing expanded native logical node contract')
+    return {'exact_original_arity_heads_ordered_query_flags': True,
+            'mode2_literal_and_successor_witnesses_object_eliminated': True,
+            'rule25_both_actual_instantiation_parameters_proved': True,
+            'all_four_or_six_assignment_bounds_derived_from_actual_heads': True,
+            'all_nested_numeric_head_witnesses_object_quantified': True,
+            'complete_pure_relational_nodes_only_Omega_empty_premises': True,
+            'accepting_AST_independent_of_mathematical_specification': True,
+            'shared_original_quotation_Bool_Proof_compiler_and_Con_proved': False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -779,6 +850,7 @@ def main() -> None:
     mode_two_actual_root = check_mode_two_actual_root()
     mode_two_actual_binder = check_mode_two_actual_binder()
     mode_two_full_formula = check_mode_two_full_formula()
+    logical_instantiation_nodes = check_logical_instantiation_nodes()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3329,7 +3401,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopAtCodesIff',
                     'PPAC.Migration.Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopIff',
                     'PPAC.Migration.Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopSourceType',
-                    'PPAC.Migration.Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopGuardedIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopGuardedIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAtBoundQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAllQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeBoundedMatrixIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeWholeNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeWholeNormalizedNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAtBoundQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAllQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveBoundedMatrixIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNormalizedNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalRule20NestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalRule23NestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectLogicalInstantiate.native_logicalRule25NestedHeadIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3341,6 +3428,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectLogicalInstantiate": ('logicalTwentyTwentyThreeAtBoundQueriesIff', 'logicalTwentyTwentyThreeAllQueriesIff', 'logicalTwentyTwentyThreeAllAssignmentBounds', 'logicalTwentyTwentyThreeBoundedMatrixIff', 'logicalTwentyTwentyThreeWholeNodeIff', 'logicalTwentyTwentyThreeWholeNormalizedNodeIff', 'logicalTwentyFiveAtBoundQueriesIff', 'logicalTwentyFiveAllQueriesIff', 'logicalTwentyFiveAllAssignmentBounds', 'logicalTwentyFiveBoundedMatrixIff', 'logicalTwentyFiveWholeNodeIff', 'logicalTwentyFiveWholeNormalizedNodeIff', 'logicalRule20NestedHeadIff', 'logicalRule23NestedHeadIff', 'logicalRule25NestedHeadIff'),
         "ObjectInstantiateFormula": ('modeTwoAllTypedTermAgreement', 'modeTwoAllTypedTermUniqueFiber', 'modeTwoTermPromiseDerived', 'modeTwoArgumentFieldsProgramIff', 'modeTwoWholeArgumentProgramIff', 'modeTwoGuardedArgumentProgramIff', 'modeTwoFourAtomicRunIff', 'modeTwoFourAtomicProgramIff', 'modeTwoActualBinderPrefixFromInduction', 'modeTwoAllElevenProgramFromInductionIff', 'modeTwoUniformCorrectnessProgressive', 'modeTwoAllInternalFormulaCorrect', 'modeTwoAllInternalRootsCorrect', 'modeTwoAllInternalWholeFormulaExecutionIff', 'modeTwoAllInternalWholeFormulaProgramIff', 'modeTwoActualHistoryAgreementDischarged', 'modeTwoAgreedActualHistoryExistsDischarged', 'modeTwoActualRootWholeFormulaExecutionIff', 'modeTwoActualRootWholeFormulaProgramIff', 'modeTwoActualInstantiateTopAtCodesIff', 'modeTwoActualInstantiateTopIff', 'modeTwoActualInstantiateTopSourceType', 'modeTwoActualInstantiateTopGuardedIff'),
         "ObjectInstantiateBinder": ('modeTwoBinderSuccessorPoint', 'modeTwoBinderContextGeometry', 'modeTwoBinderBelowCaseIff', 'modeTwoBinderPointCaseIff', 'modeTwoBinderBoundCovarianceIff', 'modeTwoBinderFreeCovarianceIff', 'modeTwoBinderFreshZeroFieldIff', 'modeTwoBinderBoundSuccessorFieldIff', 'modeTwoBinderFreeFieldIff', 'modeTwoBinderVariableCompatibility', 'modeTwoBinderFrameAtWitnesses', 'modeTwoActualBinderFrame'),
         "ObjectInstantiateRoot": ('modeTwoClosedParameterBinderRenameIff', 'modeTwoVariableAtPointIff', 'modeTwoVariableBelowIff', 'modeTwoActualRootVariableFieldIff', 'modeTwoActualRootVariableCompatibility', 'modeTwoActualRootFrame', 'modeTwoActualRootTermProgramIff', 'modeTwoActualRootTermCodedIff', 'modeTwoActualRootGuardedTermCodedIff'),
@@ -4269,6 +4357,13 @@ def main() -> None:
         "mode_two_actual_root_guard": mode_two_actual_root,
         "mode_two_actual_binder_guard": mode_two_actual_binder,
         "mode_two_full_formula_guard": mode_two_full_formula,
+        "logical_instantiation_nodes_guard": logical_instantiation_nodes,
+        'object_original_logical_20_23_25_full_pure_relational_nodes_proved': True,
+        'object_original_logical_20_23_25_exact_queries_proved': True,
+        'object_original_logical_20_23_25_all_assignment_bounds_proved': True,
+        'object_original_logical_20_23_25_numeric_nested_heads_proved': True,
+        'object_original_logical_20_23_25_numeric_quotation_Bool_checker_correspondence_proved': False,
+
         "object_original_mode_two_typed_argument_program_proved": True,
         "object_original_mode_two_full_formula_run_proved": True,
         "object_original_mode_two_actual_InstantiateTop_proved": True,

@@ -9764,4 +9764,78 @@ example {m} (w mode z P b A n q : Fin m) :
                 (Internal.SyntaxTopFormulaSyntax.instantiated w z b A P n q)))))).close)) :=
   Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopGuardedIff w mode z P b A n q
 
+example {m} (env : Fin 4 → Fin m) (w z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeAtBoundQueriesIffSentence env w z A)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAtBoundQueriesIff env w z A
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeAllQueriesIffSentence env w z)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAllQueriesIff env w z
+
+example {m} (universal : Bool) (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeAllAssignmentBoundsSentence universal env w row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeAllAssignmentBounds universal env w row
+
+example {m} (universal : Bool) (env : Fin 4 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeBoundedMatrixIffSentence universal env w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeBoundedMatrixIff universal env w z row
+
+example {m} (universal : Bool) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeWholeNodeIffSentence universal w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeWholeNodeIff universal w z row
+
+example {m} (universal : Bool) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyTwentyThreeWholeNormalizedNodeIffSentence universal w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeWholeNormalizedNodeIff universal w z row
+
+example {m} (env : Fin 6 → Fin m) (w z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveAtBoundQueriesIffSentence env w z A)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAtBoundQueriesIff env w z A
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveAllQueriesIffSentence env w z)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAllQueriesIff env w z
+
+example {m} (env : Fin 6 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveAllAssignmentBounds env w row
+
+example {m} (env : Fin 6 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveBoundedMatrixIffSentence env w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveBoundedMatrixIff env w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveWholeNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNodeIff w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalTwentyFiveWholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalRule20NestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalRule20NestedHeadIff env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalRule23NestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalRule23NestedHeadIff env w row
+
+example {m} (env : Fin 6 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalInstantiate.logicalRule25NestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalRule25NestedHeadIff env w row
+
+-- Expanded complete logical node: only Omega and empty; every assignment and head witness is object-quantified.
+example {m} (universal : Bool) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalInstantiateNodeSyntax.node4 universal w row).iff
+        (Internal.LogicalInstantiateNodeSyntax.normalized4 universal w z row)))).close)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyTwentyThreeWholeNormalizedNodeIff universal w z row
+
+-- Expanded complete logical node: only Omega and empty; every assignment and head witness is object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalInstantiateNodeSyntax.node6 w row).iff
+        (Internal.LogicalInstantiateNodeSyntax.normalized6 w z row)))).close)) :=
+  Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNormalizedNodeIff w z row
+
 end PPAC.Migration.Step4Checks
