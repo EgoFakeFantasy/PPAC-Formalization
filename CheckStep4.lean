@@ -9025,4 +9025,78 @@ example {m} (w mode depth P a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Deriv
           (AbstractTermValueSyntax.value w a b depth n q))))).close)) :=
   ObjectSmallModeArguments.native_modeOnePureTermGuardedNumericIff w mode depth P a b n q
 
+
+
+example {m} (w z i j x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneBoundAtZeroDepthIffSentence w z i j x y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneBoundAtZeroDepthIff w z i j x y
+
+example {m} (w d i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneFreeAtZeroIndexIffSentence w d i y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneFreeAtZeroIndexIff w d i y
+
+example {m} (w d i k y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneFreeAtSuccessorIndexIffSentence w d i k y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneFreeAtSuccessorIndexIff w d i k y
+
+example {m} (w d i x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneBoundBelowDepthIffSentence w d i x y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneBoundBelowDepthIff w d i x y
+
+example {m} (w z a b A B R S i j x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneActualBoundTableAtSuccessorIffSentence w z a b A B R S i j x y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneActualBoundTableAtSuccessorIff w z a b A B R S i j x y
+
+example {m} (w z a b A B R S i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneActualFreeTableAtZeroIffSentence w z a b A B R S i y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneActualFreeTableAtZeroIff w z a b A B R S i y
+
+example {m} (w z a b A B R S i j y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneActualFreeTableAtSuccessorIffSentence w z a b A B R S i j y)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneActualFreeTableAtSuccessorIff w z a b A B R S i j y
+
+example {m} (bound : Bool) (w z a b A B R S i n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthActualVariableTableIffSentence bound w z a b A B R S i n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthActualVariableTableIff bound w z a b A B R S i n q
+
+example {m} (bound : Bool) (w mode z P a b A B R S n q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthActualVariableProgramIffSentence bound w mode z P a b A B R S n q i)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthActualVariableProgramIff bound w mode z P a b A B R S n q i
+
+example {m} (w mode z P a b A B R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthActualPureTermProgramIffSentence w mode z P a b A B R S n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthActualPureTermProgramIff w mode z P a b A B R S n q
+
+example {m} (w mode z P a b A B R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthActualCodedPureTermIffSentence w mode z P a b A B R S n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthActualCodedPureTermIff w mode z P a b A B R S n q
+
+example {m} (w mode z P a b A B R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthPureTermAtActualCodesIffSentence w mode z P a b A B R S n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthPureTermAtActualCodesIff w mode z P a b A B R S n q
+
+example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthPureTermActualOperationIffSentence w mode z P a b A B n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthPureTermActualOperationIff w mode z P a b A B n q
+
+example {m} (w a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.actualAbstractPureTermSourceTypeSentence w a b A B n q)) :=
+  Internal.ObjectAbstractTopTerm.native_actualAbstractPureTermSourceType w a b A B n q
+
+example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopTerm.modeOneZeroDepthGuardedPureTermActualOperationIffSentence w mode z P a b A B n q)) :=
+  Internal.ObjectAbstractTopTerm.native_modeOneZeroDepthGuardedPureTermActualOperationIff w mode z P a b A B n q
+
+-- 实际首槽纯项操作的两个码表均对象EX绑定；定义不调用原Run作为预言机。
+example {m} (w a b A B n q : Fin m) : AbstractTopTermSyntax.abstracted w a b A B n q =
+    Source.Formula.ex (.ex (AbstractTopTermSyntax.body w a b A B n q)) := rfl
+-- 最终类型守卫在结论内部，没有给定R/S码表、解码图、后继索引或比较程序一致性前提。
+example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 1 mode).imp
+      ((OriginalTermTraceSyntax.metadata w z P).imp ((OmegaSyntax.empty z).imp
+        ((SyntaxTopEnvironmentSyntax.abstractInput w a b A B).imp
+          (((SyntaxTermSyntax.term w a B n).conj (OriginalTransformRowSyntax.run 1 w mode z P n q)).iff
+            (AbstractTopTermSyntax.abstracted w a b A B n q))))))).close)) :=
+  ObjectAbstractTopTerm.native_modeOneZeroDepthGuardedPureTermActualOperationIff w mode z P a b A B n q
+
 end PPAC.Migration.Step4Checks

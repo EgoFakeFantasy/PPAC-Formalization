@@ -1,5 +1,9 @@
 # 当前交付状态
 
+3f.2c.3b.2d.6d已验收：原mode1零深度变量数值关系已接实际AbstractFreeTop两张码表；全部有效纯项已与既有独立项程序及原混合项操作对象等价。实际两码表由原存在性定理取得并在对象EX中消去，最终类型守卫保留在结论内部，无给定R/S／解码图／一致性前提。7模块84声明、15组闭句返回原nativeZF。1710构建任务、18432项审计（398无公理／18034允许依赖）、零警告；九命令及五trust=0入口全部退出0；1545份独立哈希一致、2121对精确证书足迹、16088项Internal显式声明覆盖。非零深度绑定提升、参数列实际映射、完整mode1公式及forall、共享quotation／Bool、ProofZF/U和最终Con仍未完成。见[验收](STEP4_MODE_ONE_ACTUAL_ABSTRACT_TERM_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2d.6c已验收：原参数列nil／cons完整方程已覆盖每个固定k<4，mode1／2实例已显式核验；真实原Run1／Run2子查询保持不变，nil赋值、全根集合及根行码见证已对象消去。mode1对全部有效纯项的数值双条件已证明，类型守卫保留在结论内部。8模块60声明、11组闭句返回原nativeZF。1703构建任务、18348项审计（398无公理／17950允许依赖）、零警告；九命令及五trust=0入口全部退出0；1538份独立哈希一致、2106对精确证书足迹、16004项Internal显式声明覆盖。实际抽象环境的项／列表映射、完整mode1公式及forall、共享quotation／Bool、ProofZF/U和最终Con仍未完成。见[验收](STEP4_SMALL_MODE_ARGUMENTS_PURE_TERM_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
