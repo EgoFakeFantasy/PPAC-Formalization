@@ -1,5 +1,7 @@
 # PPAC → YesMetaZFC
 
+mode2真实binder框架闭包已验收：独立源／目标后继经对象唯一性对齐；全部合法内部bound索引由真实source=succ(depth)分成below／point，point使用闭参数真实重命名保持，原参数P不变。新零／旧bound后继／free字段兼容及两层各四个提升见证全部在对象推导中消去；最终只需Ω／旧frame／实际深度后继／actualLift。8模块65声明、12组原nativeZF闭句；1797构建任务、19220声明审计（402无公理／18818允许依赖）、零警告，九命令及五trust=0入口全通过；1632哈希／2230对足迹／16876项Internal覆盖。mode2完整公式、完整InstantiateTop及最终内部Con仍未完成。见[本批验收与后续流程](docs/STEP4_MODE_TWO_BINDER_ACCEPTANCE.zh-CN.md)。
+
 mode2实际零深度根已验收：从原instantiateCoded推出frame，元数据／闭参数／变量兼容性均由原环境取得；全部内部合法纯项的Run1对应独立程序与coded mixed substitution，源类型守卫在结论内部。闭绑定参数经真实binder的bound后移／free恒等重命名保持原码也已证明。5模块49声明、9组原nativeZF闭句；1789构建任务、19155声明审计（400无公理／18755允许依赖）、零警告；九命令及五trust=0入口全通过，1624哈希／2218对足迹／16811项Internal覆盖。真实binder框架闭包、mode2完整公式及最终内部Con仍未完成。见[本批验收与后续流程](docs/STEP4_MODE_TWO_ACTUAL_ROOT_ACCEPTANCE.zh-CN.md)。
 
 mode2 变量与条件项框架已验收：原全部28规则分类、Num2的三个bound及一个free变量分支、实际五字段行与闭轨迹双向传输；完整变量Run1只需Ω／Num2／元数据／输入变量码。兼容frame前提下，全部内部合法纯项对应独立程序及coded mixed substitution。12模块145声明、14组原nativeZF闭句；1784构建任务、19106声明审计（400无公理／18706允许依赖）、零警告；九命令、五trust=0入口全通过，1619哈希／2209对精确足迹／16762项Internal覆盖。247个无用临时文件已按清单清理，未发现失效进程。实际根frame、binder闭包、mode2完整公式及最终内部Con仍未完成。见[本批验收与后续流程](docs/STEP4_MODE_TWO_VARIABLE_ACCEPTANCE.zh-CN.md)。

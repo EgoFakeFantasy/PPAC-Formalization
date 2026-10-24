@@ -9595,4 +9595,61 @@ example {m} (w mode z P b A R S n q : Fin m) :
                 (Internal.SyntaxCodedMixedTermSyntax.substituted w R S A b z b n q)))))).close)) :=
   Internal.ObjectInstantiateRoot.native_modeTwoActualRootGuardedTermCodedIff w mode z P b A R S n q
 
+example {m} (d i D I : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderSuccessorPointSentence d i D I)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderSuccessorPoint d i D I
+
+example {m} (d a b c e D A C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderContextGeometrySentence d a b c e D A C)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderContextGeometry d a b c e D A C
+
+example {m} (w d P i D I U V c e C X t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderBelowCaseIffSentence w d P i D I U V c e C X t q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderBelowCaseIff w d P i D I U V c e C X t q
+
+example {m} (w d P i D I U V c e C X t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderPointCaseIffSentence w d P i D I U V c e C X t q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderPointCaseIff w d P i D I U V c e C X t q
+
+example {m} (w d P a i D I U V c e C x X t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderBoundCovarianceIffSentence w d P a i D I U V c e C x X t q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderBoundCovarianceIff w d P a i D I U V c e C x X t q
+
+example {m} (w i U V c e C X t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderFreeCovarianceIffSentence w i U V c e C X t q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderFreeCovarianceIff w i U V c e C X t q
+
+example {m} (w depth P D R S a b c e A C K H U V z n i X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderFreshZeroFieldIffSentence w depth P D R S a b c e A C K H U V z n i X q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderFreshZeroFieldIff w depth P D R S a b c e A C K H U V z n i X q
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n i j X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderBoundSuccessorFieldIffSentence w mode depth P D R S a b c e A C K H U V z n i j X q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderBoundSuccessorFieldIff w mode depth P D R S a b c e A C K H U V z n i j X q
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n i X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderFreeFieldIffSentence w mode depth P D R S a b c e A C K H U V z n i X q)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderFreeFieldIff w mode depth P D R S a b c e A C K H U V z n i X q
+
+example {m} (boundTag : Bool) (w mode depth P D R S a b c e A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderVariableCompatibilitySentence boundTag w mode depth P D R S a b c e A C K H U V z n)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderVariableCompatibility boundTag w mode depth P D R S a b c e A C K H U V z n
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoBinderFrameAtWitnessesSentence w mode depth P D R S a b c e A C K H U V z n)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoBinderFrameAtWitnesses w mode depth P D R S a b c e A C K H U V z n
+
+example {m} (w mode depth P D R S a b c e A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateBinder.modeTwoActualBinderFrameSentence w mode depth P D R S a b c e A C K H)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoActualBinderFrame w mode depth P D R S a b c e A C K H
+-- Expanded actual mode2 binder endpoint: independent source/target successor witnesses are eliminated internally.
+example {m} (w mode depth P D R S a b c e A C K H : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.InstantiateOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          ((OmegaSyntax.successor D depth).imp
+            ((Internal.SyntaxCodedMixedBinderSyntax.lifted w R S a b c e A C K H).imp
+              (Internal.InstantiateOperationFrameSyntax.frame w mode D P A b C e K H))))).close)) :=
+  Internal.ObjectInstantiateBinder.native_modeTwoActualBinderFrame w mode depth P D R S a b c e A C K H
+
 end PPAC.Migration.Step4Checks
