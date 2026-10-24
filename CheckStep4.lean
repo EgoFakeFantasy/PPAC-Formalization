@@ -12565,4 +12565,59 @@ example {m} (w B n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
 example {m} (w B q t u d h n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketVarintPrefix.packetVarintContinuationPrefixAllCodeWitnessesEliminatedSentence w B q t u d h n a)) :=
   Internal.ObjectPacketVarintPrefix.native_packetVarintContinuationPrefixAllCodeWitnessesEliminated w B q t u d h n a
+example {m} (w B p l f g F G i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionBothGraphsFullOldRowRestrictionSentence w B p l f g F G i)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionBothGraphsFullOldRowRestriction w B p l f g F G i
+
+example {m} (w B p l f g F G : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionBothGraphsAllOldLinksRestrictionSentence w B p l f g F G)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionBothGraphsAllOldLinksRestriction w B p l f g F G
+
+example {m} (w B n t a z e l d f g p x u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionActualPrefixGraphsConstructedAndEliminatedSentence w B n t a z e l d f g p x u)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionActualPrefixGraphsConstructedAndEliminated w B n t a z e l d f g p x u
+
+example {m} (w B n t a z e l d f g p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionCompleteActualLastRowNormalizedSentence w B n t a z e l d f g p)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionCompleteActualLastRowNormalized w B n t a z e l d f g p
+
+example {m} (w B n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionAllInternalRawFoldReverseDecompositionSentence w B n t a)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionAllInternalRawFoldReverseDecomposition w B n t a
+
+example {m} (w B n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionAllInternalRawFoldExactRecursionSentence w B n t a)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionAllInternalRawFoldExactRecursion w B n t a
+
+example {m} (w B x z q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionNonzeroValueForcesActualNonemptySuffixSentence w B x z q)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionNonzeroValueForcesActualNonemptySuffix w B x z q
+
+example {m} (w B s n h x q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionCanonicalTerminalHeadAlignedSentence w B s n h x q)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionCanonicalTerminalHeadAligned w B s n h x q
+
+example {m} (w B n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionAllInternalCanonicalReverseDecompositionSentence w B n s)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionAllInternalCanonicalReverseDecomposition w B n s
+
+example {m} (w B n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionExactCanonicalRecursionAtNaturalRadixSentence w B n s)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionExactCanonicalRecursionAtNaturalRadix w B n s
+
+example {m} (w B n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionActual128CompleteSmallerGraphAlignmentSentence w B n s)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionActual128CompleteSmallerGraphAlignment w B n s
+
+example {m} (w B n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionActual128CanonicalExactRecursionSentence w B n s)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionActual128CanonicalExactRecursion w B n s
+
+example {m} (w n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionActualCanonicalExactRecursionOnlyOmegaSentence w n s)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionActualCanonicalExactRecursionOnlyOmega w n s
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionAllInternalActualCanonicalRecursionOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionAllInternalActualCanonicalRecursionOnlyOmega w
 end PPAC.Migration.Step4Checks

@@ -1,5 +1,9 @@
 # 当前交付状态
 
+独立规范varint的全内部准确递归已验收：原Separation构造双限制前缀图、保留全部旧行，两张原函数图归一完整末行。真实非零尾值与零seed证明较短列表非Nil，构造实际较小规范图；终止头字段经对象等号对齐。完整EX4延续分支和实际128见证双向对齐并消去外部前提，最终仅Ω取得ALL2 Canonical↔终止／延续精确条件。13模块129声明、14组原nativeZF闭句；2383构建、25792审计、零警告，九命令／五trust=0通过。反向递归顶层及对应旧guard子门false→true，其余旧布尔叶保持。全内部规范图总唯一／ByteList域、Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_VARINT_RECURSION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立规范LEB128图及准确tail前缀的构造闭包已验收：原列表轨迹与数值序列共用全部内部索引，终止步要求原Nil及零初值，延续步要求非零已有值及base128仿射／移位字节。两类步互斥、实际128／256字节界已证；原序列追加构造双图，消去零、图及列表码见证。独立Prefix由规范图和实际Bytes定义，终止／延续构造保留准确剩余tail。17模块168声明、20组原nativeZF闭句；2370构建、25663审计、零警告，九命令／五trust=0通过。全部旧布尔叶保持。反向递归、全内部规范图总唯一及ByteList域、Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_VARINT_PREFIX_CONSTRUCTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
