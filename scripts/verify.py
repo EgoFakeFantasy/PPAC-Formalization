@@ -1367,6 +1367,52 @@ def check_all_internal_forall_closure() -> dict:
             'original_Project_schema_and_Horn_condition_correspondence_proved':False,
             'complete_schema_test_Proof_interpretation_Con_proved':False}
 
+def check_three_schema_index_system() -> dict:
+    modules=['SchemaDoubleShiftSyntax', 'SchemaDoubleShiftPoint', 'SchemaDoubleShiftGraph', 'SchemaIndexSyntax', 'SchemaIndexGraphExistence', 'SchemaIndexFacts', 'SchemaIndexScopes', 'SchemaIndexCoded', 'SchemaIndexRenameSystem', 'SchemaIndexTail', 'SchemaIndexHead', 'SchemaIndexSites', 'ObjectSchemaIndex']
+    texts={n:strip_comments((ROOT/'PPAC/Migration/Internal'/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for name,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix',text):
+            raise RuntimeError('Forbidden schema-index shortcut: '+name)
+    required={
+      'SchemaDoubleShiftSyntax':['def displacement','successor (Fin.last m) i.castSucc','SyntaxComposeSyntax.composed','existsMany 2'],
+      'SchemaDoubleShiftPoint':['composite_value_iff','matrix_edge_iff','edge_target'],
+      'SchemaDoubleShiftGraph':['RelationGraph.unique_graph','SyntaxFreeShiftGraph.exists_map','SyntaxComposeGraph.exists_graph','Derives.exE','HornBinderRules.eliminate_many 2'],
+      'SchemaIndexSyntax':['def sourceScope','def targetScope','def chain','SyntaxFreeShiftSyntax.shiftMap','SyntaxIndexLiftSyntax.lifted','existsMany 5','existsMany 6','SyntaxMapCodeSyntax.encoded'],
+      'SchemaIndexGraphExistence':['theorem separation','theorem collection_premise','theorem collection_image','SchemaDoubleShiftGraph.exists_map','SyntaxIndexLift.exists_lift','Derives.exE'],
+      'SchemaIndexFacts':['SyntaxIndexLift.target_map','SyntaxIndexLiftEdges.zero_iff','graph_map','graph_zero_iff'],
+      'SchemaIndexScopes':['OmegaSyntax.step_at','HornBinderRules.intro_many 5','SchemaIndexGraphExistence.exists_graph','Derives.exE'],
+      'SchemaIndexCoded':['SyntaxMapCodeExistence.exists_code','HornBinderRules.intro_many 6','HornBinderRules.eliminate_many 5'],
+      'SchemaIndexRenameSystem':['def law','FormulaCodeSyntax.formulaCode w.castSucc (Fin.last m)','SyntaxRenameOutputSyntax.fiber','SyntaxRenameOutputClassify.fiber_iff_input','SyntaxIdentityCode.exists_code','existsMany 7','HornBinderRules.eliminate_many 6','theorem exists_system'],
+      'SchemaIndexTail':['SyntaxIndexLiftEdges.successor_iff','StructuralListTraceOrder.member_member','SyntaxIndexLiftOrder.successor_member','theorem separation_graph','theorem collection_graph'],
+      'SchemaIndexHead':['SyntaxIndexLiftEdges.zero_iff','SyntaxIndexLiftEdges.successor_iff','SyntaxNumeralSyntax.eliminate_succ','GraphProperties.single_valued','Derives.eqSubst','theorem one_iff'],
+      'SchemaIndexSites':['BoundEmbedding.unaryUnderTwo','BoundEmbedding.binaryUnderOne','BoundEmbedding.binaryUnderTwo','theorem scope_depths'],
+      'ObjectSchemaIndex':['TheoryTransport.sentence','ZFReplay.replay','native_schemaIndexSystemExists','native_schemaCollectionTailIff']}
+    for name,clauses in required.items():
+        missing=[c for c in clauses if c not in texts[name]]
+        if missing:raise RuntimeError('Schema-index proof drift: '+name+': '+repr(missing))
+    for module,name,premises in [('SchemaIndexScopes','exists_state',{'hw','hn'}),('SchemaIndexCoded','exists_coded_state',{'hw','hn'}),('SchemaIndexRenameSystem','exists_system',{'hw','hn','hz'})]:
+        header=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:raise RuntimeError('Schema-index hidden premise: '+name)
+        if re.search(r'hIH\s*:|Promise|Consistent|Model|Nat\)',header.group(0)):raise RuntimeError('Schema-index endpoint external premise')
+    if texts['SchemaIndexSyntax'].split('def matrix ',1)[1].split('def body ',1)[0].count('SyntaxIndexLiftSyntax.lifted')!=5:raise RuntimeError('Three schema binder diagrams changed')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for clause in ['ObjectSchemaIndex.native_schemaIndexSystemExists site w n z','Internal.SchemaIndexRenameSystem.existsSystem site w n z','ObjectSchemaIndex.native_schemaSeparationTailIff','ObjectSchemaIndex.native_schemaCollectionOneIff']:
+        if clause not in check:raise RuntimeError('Missing original-kernel schema-index check')
+    return {'all_parameter_counts_and_index_values_are_object_slots':True,
+            'actual_successor_scopes_n1_n2_n3_n4_constructed':True,
+            'separation_one_lift_of_double_shift_proved':True,
+            'collection_premise_two_lifts_of_shift_proved':True,
+            'collection_image_two_lifts_of_double_shift_proved':True,
+            'zero_and_second_head_and_arbitrary_internal_tail_edges_proved':True,
+            'complete_graph_and_original_natural_list_code_constructed':True,
+            'actual_free_identity_and_bound_codes_object_eliminated':True,
+            'all_internal_pure_formula_codes_have_unique_renamed_output':True,
+            'final_exists7_system_premises_only_Omega_count_and_empty':True,
+            'external_BoundEmbedding_metadata_alone_not_internal_correctness':True,
+            'Project_12_to_pure_11_body_translation_proved':False,
+            'complete_schema_test_Proof_interpretation_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1402,6 +1448,7 @@ def main() -> None:
     proof_tree_equation_unique = check_proof_tree_equation_unique()
     fixed_axiom_partial_test = check_fixed_axiom_partial_test()
     all_internal_forall_closure = check_all_internal_forall_closure()
+    three_schema_index_system = check_three_schema_index_system()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4124,7 +4171,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureTypingIff',
                     'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureClosedIff',
                     'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureClosedExistsUnique',
-                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureAllInternalCounts'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureAllInternalCounts',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_doubleShiftExists',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_doubleShiftMap',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_doubleShiftEdgesIff',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_doubleShiftUnique',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexGraphExists',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexMap',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexZeroIff',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaCollectionOneIff',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaSeparationTailIff',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaCollectionTailIff',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexStateExists',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexCodeExists',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexRenameLaw',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexRenameAt',
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexSystemExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4136,6 +4198,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectSchemaIndex": ('doubleShiftExists', 'doubleShiftMap', 'doubleShiftEdgesIff', 'doubleShiftUnique', 'schemaIndexGraphExists', 'schemaIndexMap', 'schemaIndexZeroIff', 'schemaCollectionOneIff', 'schemaSeparationTailIff', 'schemaCollectionTailIff', 'schemaIndexStateExists', 'schemaIndexCodeExists', 'schemaIndexRenameLaw', 'schemaIndexRenameAt', 'schemaIndexSystemExists'),
         "ObjectForallClosure": ('unaryIterationExistsUnique', 'unaryIterationNaturalRange', 'unaryIterationUnique', 'unaryIterationZeroIff', 'unaryIterationSuccessorIff', 'unaryIterationAllInternalCounts', 'forallClosureUniformTyping', 'forallClosureTypingIff', 'forallClosureClosedIff', 'forallClosureClosedExistsUnique', 'forallClosureAllInternalCounts'),
         "ObjectFixedAxiomTest": ('fixedPacketExists', 'fixedPacketNatural', 'fixedPacketUnique', 'fixedPacketTagsDisjoint', 'fixedPacketAtValue'),
         "ObjectProofTreeEquation": ('proofTreeEquationImpliesLocalClosure', 'proofTreeEquationReverseProgressive', 'proofTreeEquationAllCodeUnique', 'proofTreeEquationPointUnique', 'proofTreeEquationRootUnique', 'proofTreeEquationTwoSolutions', 'proofTreeEquationNodeNatural', 'proofTreeEquationSolutionNatural', 'proofTreeCanonicalNodeEquation'),
@@ -5086,6 +5149,10 @@ def main() -> None:
         "proof_tree_equation_unique_guard": proof_tree_equation_unique,
         "fixed_axiom_partial_test_guard": fixed_axiom_partial_test,
         "all_internal_forall_closure_guard": all_internal_forall_closure,
+        "three_schema_index_system_guard": three_schema_index_system,
+        'object_three_schema_index_complete_graphs_proved': True,
+        'object_three_schema_index_actual_list_codes_proved': True,
+        'object_three_schema_index_uniform_formula_renaming_proved': True,
         'object_all_internal_unary_node_iteration_proved': True,
         'object_all_internal_parameter_forall_closure_typed_proved': True,
         'object_all_internal_forall_closure_closed_unique_output_proved': True,

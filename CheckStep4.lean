@@ -10761,4 +10761,69 @@ example {m} (w a n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       ((Internal.FormulaCodeSyntax.formulaCode w a n z).imp (Internal.SyntaxForallClosureOutput.fiber w a n z)))).close)) :=
   Internal.ObjectForallClosure.native_forallClosureClosedExistsUnique w a n z
 
+example {m} (w n b c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.doubleShiftExistsSentence w n b c)) :=
+  Internal.ObjectSchemaIndex.native_doubleShiftExists w n b c
+
+example {m} (w n b c g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.doubleShiftMapSentence w n b c g)) :=
+  Internal.ObjectSchemaIndex.native_doubleShiftMap w n b c g
+
+example {m} (w n b c g i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.doubleShiftEdgesIffSentence w n b c g i j)) :=
+  Internal.ObjectSchemaIndex.native_doubleShiftEdgesIff w n b c g i j
+
+example {m} (w n b c g h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.doubleShiftUniqueSentence w n b c g h)) :=
+  Internal.ObjectSchemaIndex.native_doubleShiftUnique w n b c g h
+
+example {m} (site : Fin 3) (scopes : Fin 4 → Fin m) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexGraphExistsSentence site scopes w n)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexGraphExists site scopes w n
+
+example {m} (site : Fin 3) (scopes : Fin 4 → Fin m) (w n g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexMapSentence site scopes w n g)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexMap site scopes w n g
+
+example {m} (site : Fin 3) (scopes : Fin 4 → Fin m) (w n g z y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexZeroIffSentence site scopes w n g z y)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexZeroIff site scopes w n g z y
+
+example {m} (image : Bool) (scopes : Fin 4 → Fin m) (w n g p y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaCollectionOneIffSentence image scopes w n g p y)) :=
+  Internal.ObjectSchemaIndex.native_schemaCollectionOneIff image scopes w n g p y
+
+example {m} (scopes : Fin 4 → Fin m) (w n g i I j J : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaSeparationTailIffSentence scopes w n g i I j J)) :=
+  Internal.ObjectSchemaIndex.native_schemaSeparationTailIff scopes w n g i I j J
+
+example {m} (image : Bool) (scopes : Fin 4 → Fin m) (w n g i u I j v J : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaCollectionTailIffSentence image scopes w n g i u I j v J)) :=
+  Internal.ObjectSchemaIndex.native_schemaCollectionTailIff image scopes w n g i u I j v J
+
+example {m} (site : Fin 3) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexStateExistsSentence site w n)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexStateExists site w n
+
+example {m} (site : Fin 3) (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexCodeExistsSentence site w n)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexCodeExists site w n
+
+example {m} (site : Fin 3) (scopes : Fin 4 → Fin m) (w g R S z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexRenameLawSentence site scopes w g R S z)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexRenameLaw site scopes w g R S z
+
+example {m} (site : Fin 3) (scopes : Fin 4 → Fin m) (w R S z a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexRenameAtSentence site scopes w R S z a)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexRenameAt site scopes w R S z a
+
+example {m} (site : Fin 3) (w n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSchemaIndex.schemaIndexSystemExistsSentence site w n z)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexSystemExists site w n z
+-- Only object omega/count/zero premises; all scopes and code tables are existential.
+example {m} (site : Fin 3) (w n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Source.Formula.mem n w).imp ((empty z).imp
+      (Internal.SchemaIndexRenameSystem.existsSystem site w n z)))).close)) :=
+  Internal.ObjectSchemaIndex.native_schemaIndexSystemExists site w n z
+
 end PPAC.Migration.Step4Checks
