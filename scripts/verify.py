@@ -1850,6 +1850,42 @@ def check_Packet_original_affine_local_matrices() -> dict:
             'full_Proof_and_Con':False}
 
 
+def check_Packet_affine_bounded_applications() -> dict:
+    modules = ['PacketAffineApplicationBounds', 'PacketAffineApplicationSyntax', 'PacketAffineApplicationNatural', 'PacketAffineApplication', 'HornApplicationRange', 'PacketAffineApplicationLawSyntax', 'PacketAffineApplicationLaws', 'ObjectPacketAffineApplication']
+    schemas = ['packetAffineBaseHeadSearchBound', 'packetAffineBaseMatrixSuppliesBoundedApplication', 'packetAffineStepHeadSearchBound', 'packetAffineStepMatrixSuppliesBoundedApplication', 'packetAffineRowAssignmentsNatural', 'packetAffineEntryAssignmentsNatural', 'packetAffineBaseDigitNatural', 'packetAffineStepAssignmentsNatural', 'packetAffineWholeBaseApplicationIff', 'packetAffineWholeStepApplicationIff', 'packetAllInternalAffineApplicationsLaw', 'packetAffineLiteralApplicationSystemExists', 'originalRuleApplicationRowNatural', 'originalRuleRejectNonNaturalRow']
+    required = {'PacketAffineApplicationBounds': ['theorem base_variables', 'theorem step_variables', 'ObjectPacket.Expr.addConst_variables', 'variable_bound hZ (baseRule wide).head', 'variable_bound hZ (stepRule wide).head', 'HornApplicationRules.intro_application'], 'PacketAffineApplicationSyntax': ['def baseOutcome', 'def stepOutcomeBody', 'def stepOutcome', 'existsMany 3', 'theorem intro_base', 'theorem intro_step'], 'PacketAffineApplicationNatural': ['theorem row_environment', 'theorem entry_environment', 'theorem base_digit', 'theorem step_environment', 'SyntaxNodeInjective.constructor_range', 'SyntaxConstructors.child_member', 'StructuralListTraceOrder.member_member'], 'PacketAffineApplication': ['HornApplicationRules.eliminate_application (baseRule wide)', 'HornApplicationRules.eliminate_application (stepRule wide)', 'PacketAffineApplicationBounds.base_intro', 'PacketAffineApplicationBounds.step_intro', 'PacketAffineApplicationNatural.base_digit', 'PacketAffineApplicationNatural.step_environment', 'theorem base_iff', 'theorem step_iff', 'HornBinderRules.eliminate_many 3'], 'HornApplicationRange': ['theorem range', 'theorem reject', 'HornExprRange.range', 'HornApplicationRules.eliminate_application rule'], 'PacketAffineApplicationLawSyntax': ['OriginalUniversalBlock.allMany 2', 'def existsSystem', 'PacketAffineLiteralSyntax.frame', 'HornApplicationSyntax.application (baseRule wide)', 'HornApplicationSyntax.application (stepRule wide)'], 'PacketAffineApplicationLaws': ['theorem all_law', 'theorem exists_system', 'SyntaxNumerals.exists_numeral', 'PacketAffineApplication.base_iff', 'PacketAffineApplication.step_iff'], 'ObjectPacketAffineApplication': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|addConst_eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b', text):
+            raise RuntimeError('Packet affine bounded application forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Packet affine bounded application proof drift: '+mod+': '+clause)
+    signatures = [('PacketAffineApplicationBounds','base_bound',{'hw','hn','hh'}),('PacketAffineApplicationBounds','step_bound',{'hw','hn','hh'}),('PacketAffineApplication','base_iff',{'hw','hB'}),('PacketAffineApplication','step_iff',{'hw','hB'}),('PacketAffineApplicationNatural','step_environment',{'hw','hs'}),('PacketAffineApplicationLaws','all_law',{'hw','hB'}),('PacketAffineApplicationLaws','exists_system',{'hw'}),('HornApplicationRange','range',{'hw','ha'}),('HornApplicationRange','reject',{'hw','hr'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Packet affine bounded application hidden premise: '+mod+'.'+name)
+    outcome = texts['PacketAffineApplicationSyntax'].split('theorem baseOutcome_rename')[0]
+    if 'environmentNat' in outcome or 'environmentBound' in outcome:
+        raise RuntimeError('Structural outcomes must derive naturality and bounds, not assume them')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketAffineApplication.native_'+name not in check:
+            raise RuntimeError('Missing Packet affine bounded application native fixture: '+name)
+    return {'original_head_contains_all_arity_1_3_parameters':True,
+            'original_search_bounds_derived_from_actual_head_graph':True,
+            'full_original_arity_1_3_blocks_eliminated_both_directions':True,
+            'outcome_naturality_derived_from_actual_structural_rows_and_entries':True,
+            'exact_base_and_step_application_iff_for_all_internal_rows_traces':True,
+            'no_row_naturality_or_assignment_bound_oracle_in_final_iff':True,
+            'ALL2_both_application_laws_and_only_omega_literal_system':True,
+            'any_fixed_original_rule_rejects_non_natural_row':True,
+            'whole_Packet_condition_iff_affine_and_byte_tree_bridge':False,
+            'full_Proof_and_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1896,6 +1932,7 @@ def main() -> None:
     Project_compiler_source_validity = check_Project_compiler_source_validity()
     Packet_affine_arithmetic = check_Packet_affine_arithmetic()
     Packet_original_affine_local_matrices = check_Packet_original_affine_local_matrices()
+    Packet_affine_bounded_applications = check_Packet_affine_bounded_applications()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4763,7 +4800,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketHornAffine.native_packetOriginalAffineStepMatrixIff',
                     'PPAC.Migration.Internal.ObjectPacketHornAffine.native_packetOriginalAffineAllInternalBaseMatrixLaw',
                     'PPAC.Migration.Internal.ObjectPacketHornAffine.native_packetOriginalAffineAllInternalStepMatrixLaw',
-                    'PPAC.Migration.Internal.ObjectPacketHornAffine.native_packetOriginalAffineLiteralMatrixSystemExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketHornAffine.native_packetOriginalAffineLiteralMatrixSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineBaseHeadSearchBound',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineBaseMatrixSuppliesBoundedApplication',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineStepHeadSearchBound',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineStepMatrixSuppliesBoundedApplication',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineRowAssignmentsNatural',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineEntryAssignmentsNatural',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineBaseDigitNatural',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineStepAssignmentsNatural',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineWholeBaseApplicationIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineWholeStepApplicationIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAllInternalAffineApplicationsLaw',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineLiteralApplicationSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_originalRuleApplicationRowNatural',
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_originalRuleRejectNonNaturalRow'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4775,6 +4826,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketAffineApplication": ('packetAffineBaseHeadSearchBound', 'packetAffineBaseMatrixSuppliesBoundedApplication', 'packetAffineStepHeadSearchBound', 'packetAffineStepMatrixSuppliesBoundedApplication', 'packetAffineRowAssignmentsNatural', 'packetAffineEntryAssignmentsNatural', 'packetAffineBaseDigitNatural', 'packetAffineStepAssignmentsNatural', 'packetAffineWholeBaseApplicationIff', 'packetAffineWholeStepApplicationIff', 'packetAllInternalAffineApplicationsLaw', 'packetAffineLiteralApplicationSystemExists', 'originalRuleApplicationRowNatural', 'originalRuleRejectNonNaturalRow'),
         "ObjectPacketHornAffine": ('packetOriginalAddConstGraphIff', 'packetOriginalRadixAddConstGraphIff', 'packetOriginalAffineBaseHeadIff', 'packetOriginalAffineStepHeadIff', 'packetOriginalAffineBaseGuardIff', 'packetOriginalAffineStepPremiseIff', 'packetOriginalAffineBaseMatrixAtIff', 'packetOriginalAffineStepMatrixAtIff', 'packetOriginalAffineBaseMatrixIff', 'packetOriginalAffineStepMatrixIff', 'packetOriginalAffineAllInternalBaseMatrixLaw', 'packetOriginalAffineAllInternalStepMatrixLaw', 'packetOriginalAffineLiteralMatrixSystemExists'),
         "ObjectPacketAffine": ('packetAffineExistsUnique', 'packetAffineOutputsUnique', 'packetAffineZeroIff', 'packetAffineAdvance', 'packetAffineRecursiveIff', 'packetAffineAllInternalRecursiveLaw', 'packetAffineAllInternalFibers', 'packetAffineLiteralSystemExists', 'packetAffineLiteralFramesUnique', 'packetAffineZeroBelowLiteralBase', 'packetAffineTwoBelowLiteralBase', 'packetAffineRejectDigit', 'packetAffineRejectTail', 'packetAffineRejectOutput'),
         "ObjectProjectCompilerSourceValid": ('compilerSourceChildValidityFromMemberIH', 'compilerActualCasesRecoverSourceGrammar', 'compilerInputValidFromMemberIH', 'compilerSourceValidityProgressive', 'compilerAllInternalActualInputsValid', 'compilerActualInputValid', 'compilerSourceAcceptanceIff', 'compilerSourceTypedUniqueAcceptanceIff', 'compilerAllInternalSourceAcceptanceIff', 'compilerAllInternalSourceTypedUniqueAcceptanceIff', 'compilerClosedSourceTypedUniqueAcceptanceIff', 'compilerInvalidSourceRejected'),
@@ -5747,6 +5799,12 @@ def main() -> None:
         "Project_compiler_source_validity_guard": Project_compiler_source_validity,
         "Packet_affine_arithmetic_guard": Packet_affine_arithmetic,
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
+        "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
+        'object_Packet_original_affine_head_search_bounds_proved': True,
+        'object_Packet_original_affine_full_arity_application_iff_proved': True,
+        'object_Packet_original_affine_all_internal_application_law_proved': True,
+        'object_Packet_original_affine_literal_application_system_constructed': True,
+
         'object_Packet_original_addConst_graph_addition_correspondence_proved': True,
         'object_Packet_original_affine_local_matrix_equivalence_proved': True,
         'object_Packet_original_affine_all_internal_local_laws_proved': True,

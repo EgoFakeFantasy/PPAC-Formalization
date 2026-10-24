@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+原Packet仿射规则的完整有界赋值应用已验收：原head全部参数的内部搜索界实际推导，arity=1／3存在块双向消去；结构输出的自然性从真实行／前提取得，最终ALL2定律覆盖所有内部行和轨迹候选，实际128／256应用系统仅以Ω为前提对象存在。8模块96声明、14组原nativeZF闭句；2168构建、23304审计（458无公理／22846允许依赖）、零警告；九命令／五trust=0通过，1948哈希、2590对精确足迹、20960项Internal覆盖。完整Packet闭轨迹／原condition、字节包、schema、Proof／解释及内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_AFFINE_APPLICATION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原Packet仿射规则的表达式与完整局部矩阵已验收：原Expr.addConst求值图与内部Sum双向对应，base／step头、比较guard和真实递归前提准确传输；零元／后继／加法辅助见证均对象消去，并得到ALL3／ALL5全内部局部定律及仅Ω前提的实际128／256基数系统存在。8模块103声明、13组原nativeZF闭句；2160构建、23208审计（458无公理／22750允许依赖）、零警告；九命令／五trust=0通过，1940哈希、2576对精确足迹、20864项Internal覆盖。原arity有界赋值应用、完整Packet闭轨迹／字节包、schema、Proof／解释及内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_HORN_AFFINE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

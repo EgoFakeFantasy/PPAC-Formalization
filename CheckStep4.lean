@@ -11360,4 +11360,60 @@ example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectPacketHornAffine.packetOriginalAffineLiteralMatrixSystemExistsSentence wide w)) :=
   Internal.ObjectPacketHornAffine.native_packetOriginalAffineLiteralMatrixSystemExists wide w
 
+example {m} (wide : Bool) (env : Fin 1 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineBaseHeadSearchBoundSentence wide env w r)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineBaseHeadSearchBound wide env w r
+
+example {m} (wide : Bool) (env : Fin 1 → Fin m) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineBaseMatrixSuppliesBoundedApplicationSentence wide env w r V)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineBaseMatrixSuppliesBoundedApplication wide env w r V
+
+example {m} (wide : Bool) (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineStepHeadSearchBoundSentence wide env w r)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineStepHeadSearchBound wide env w r
+
+example {m} (wide : Bool) (env : Fin 3 → Fin m) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineStepMatrixSuppliesBoundedApplicationSentence wide env w r V)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineStepMatrixSuppliesBoundedApplication wide env w r V
+
+example {m} (wide : Bool) (w d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineRowAssignmentsNaturalSentence wide w d t n r)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineRowAssignmentsNatural wide w d t n r
+
+example {m} (wide : Bool) (w V d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineEntryAssignmentsNaturalSentence wide w V d t n)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineEntryAssignmentsNatural wide w V d t n
+
+example {m} (wide : Bool) (w B d r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineBaseDigitNaturalSentence wide w B d r)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineBaseDigitNatural wide w B d r
+
+example {m} (wide : Bool) (w B V d t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineStepAssignmentsNaturalSentence wide w B V d t a r)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineStepAssignmentsNatural wide w B V d t a r
+
+example {m} (wide : Bool) (w B r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineWholeBaseApplicationIffSentence wide w B r V)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineWholeBaseApplicationIff wide w B r V
+
+example {m} (wide : Bool) (w B r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineWholeStepApplicationIffSentence wide w B r V)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineWholeStepApplicationIff wide w B r V
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAllInternalAffineApplicationsLawSentence wide w B)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAllInternalAffineApplicationsLaw wide w B
+
+example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.packetAffineLiteralApplicationSystemExistsSentence wide w)) :=
+  Internal.ObjectPacketAffineApplication.native_packetAffineLiteralApplicationSystemExists wide w
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.originalRuleApplicationRowNaturalSentence rule w r V)) :=
+  Internal.ObjectPacketAffineApplication.native_originalRuleApplicationRowNatural rule w r V
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (w r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineApplication.originalRuleRejectNonNaturalRowSentence rule w r V)) :=
+  Internal.ObjectPacketAffineApplication.native_originalRuleRejectNonNaturalRow rule w r V
+
 end PPAC.Migration.Step4Checks
