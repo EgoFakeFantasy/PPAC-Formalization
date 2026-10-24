@@ -1787,6 +1787,37 @@ def check_Project_compiler_source_validity() -> dict:
             'original_NatPacket_Horn_schema_Proof_interpretation_Con_proved':False}
 
 
+def check_Packet_affine_arithmetic() -> dict:
+    modules = ['PacketAffineSyntax', 'PacketAffineTransport', 'PacketAffineCore', 'PacketAffineZero', 'PacketAffineFiber', 'PacketAffineStep', 'PacketAffineRecursive', 'PacketAffineRuleData', 'PacketAffineLiteralSyntax', 'PacketAffineLiteral', 'ObjectPacketAffine']
+    schemas = ['packetAffineExistsUnique', 'packetAffineOutputsUnique', 'packetAffineZeroIff', 'packetAffineAdvance', 'packetAffineRecursiveIff', 'packetAffineAllInternalRecursiveLaw', 'packetAffineAllInternalFibers', 'packetAffineLiteralSystemExists', 'packetAffineLiteralFramesUnique', 'packetAffineZeroBelowLiteralBase', 'packetAffineTwoBelowLiteralBase', 'packetAffineRejectDigit', 'packetAffineRejectTail', 'packetAffineRejectOutput']
+    required = {'PacketAffineSyntax': ['def affine', 'Formula.mem B w', 'Formula.mem d B', 'Formula.mem t w', 'Formula.mem n w', 'NaturalMultiplicationSyntax.product', 'NaturalAdditionSyntax.sum', 'def criterion'], 'PacketAffineCore': ['theorem exists_value', 'theorem equation_unique', 'theorem unique', 'mul_exists', 'add_exists'], 'PacketAffineStep': ['theorem advance', 'theorem retreat', 'mul_succ_backward', 'mul_succ_forward'], 'PacketAffineRecursive': ['theorem recursive_iff', 'theorem all_law', 'OriginalUniversalBlock.allMany 3', 'OmegaStructureInduction.decomposition', 'PacketAffineZero.zero_iff'], 'PacketAffineRuleData': ['rulesFor ObjectPacket.rules (relation wide) = [baseRule wide,stepRule wide]', 'if wide then 256 else 128', 'ObjectPacket.Expr.addConst (radix wide) (.var 2)'], 'PacketAffineLiteralSyntax': ['def frame', 'def totalLaw', 'def system', 'def existsSystem'], 'PacketAffineLiteral': ['theorem exists_system', 'SyntaxNumerals.exists_numeral', 'PacketAffineRecursive.all_law', 'theorem all_fibers'], 'ObjectPacketAffine': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b', text):
+            raise RuntimeError('Packet affine forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required.get(mod, []):
+            if clause not in text: raise RuntimeError('Packet affine proof drift: '+mod+': '+clause)
+    for mod,name,expected in [('PacketAffineLiteral','exists_system',{'hw'}),('PacketAffineRecursive','all_law',{'hw','hB'}),('PacketAffineLiteral','all_fibers',{'hw','hB'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Packet affine hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketAffine.native_'+name not in check:
+            raise RuntimeError('Missing Packet affine native fixture: '+name)
+    return {'all_internal_affine_existence_and_unique_output':True,
+            'all_internal_zero_successor_and_recursive_equation':True,
+            'actual_128_256_literal_system_witnesses_object_existentially_eliminated':True,
+            'original_four_affine_rule_metadata_exact':True,
+            'invalid_digit_tail_output_candidates_explicitly_rejected':True,
+            'original_Horn_condition_affine_correspondence':False,
+            'full_NatPacket_byte_tree_bridge':False,
+            'varint_inverse_quotient_digit_totality':False,
+            'full_Proof_and_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1831,6 +1862,7 @@ def main() -> None:
     Project_compiler_source_completeness = check_Project_compiler_source_completeness()
     Project_compiler_scalar_uniqueness = check_Project_compiler_scalar_uniqueness()
     Project_compiler_source_validity = check_Project_compiler_source_validity()
+    Packet_affine_arithmetic = check_Packet_affine_arithmetic()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4671,7 +4703,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceAcceptanceIff',
                     'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceTypedUniqueAcceptanceIff',
                     'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerClosedSourceTypedUniqueAcceptanceIff',
-                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineExistsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineOutputsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineZeroIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineAdvance',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineRecursiveIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineAllInternalRecursiveLaw',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineAllInternalFibers',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineLiteralSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineLiteralFramesUnique',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineZeroBelowLiteralBase',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineTwoBelowLiteralBase',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineRejectDigit',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineRejectTail',
+                    'PPAC.Migration.Internal.ObjectPacketAffine.native_packetAffineRejectOutput'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4683,6 +4729,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketAffine": ('packetAffineExistsUnique', 'packetAffineOutputsUnique', 'packetAffineZeroIff', 'packetAffineAdvance', 'packetAffineRecursiveIff', 'packetAffineAllInternalRecursiveLaw', 'packetAffineAllInternalFibers', 'packetAffineLiteralSystemExists', 'packetAffineLiteralFramesUnique', 'packetAffineZeroBelowLiteralBase', 'packetAffineTwoBelowLiteralBase', 'packetAffineRejectDigit', 'packetAffineRejectTail', 'packetAffineRejectOutput'),
         "ObjectProjectCompilerSourceValid": ('compilerSourceChildValidityFromMemberIH', 'compilerActualCasesRecoverSourceGrammar', 'compilerInputValidFromMemberIH', 'compilerSourceValidityProgressive', 'compilerAllInternalActualInputsValid', 'compilerActualInputValid', 'compilerSourceAcceptanceIff', 'compilerSourceTypedUniqueAcceptanceIff', 'compilerAllInternalSourceAcceptanceIff', 'compilerAllInternalSourceTypedUniqueAcceptanceIff', 'compilerClosedSourceTypedUniqueAcceptanceIff', 'compilerInvalidSourceRejected'),
         "ObjectProjectCompilerUnique": ('compilerGuardedChildScalarUnique', 'compilerSuccessorChildScalarUnique', 'compilerAllCasesScalarUnique', 'compilerOutputsUniqueFromMemberIH', 'compilerScalarFunctionalityProgressive', 'compilerAllInternalOutputsScalarUnique', 'compilerActualOutputsScalarUnique', 'compilerActualUniqueOutputFiber', 'compilerSourceActualTypedUniqueOutputExists', 'compilerAllInternalSourceTypedUniqueOutputExists'),
         "ObjectProjectCompilerComplete": ('compilerSourceAtomsActualOutput', 'compilerSourceChildOutputFromMemberIH', 'compilerSourceOutputFromMemberIH', 'compilerCompletenessPropertyStep', 'compilerCompletenessProgressive', 'compilerAllInternalCompletenessProperty', 'compilerSourceInputActualOutputExists', 'compilerAllInternalSourceOutputsExist', 'compilerSourceInputActualTypedOutputExists'),
@@ -5651,6 +5698,14 @@ def main() -> None:
         "Project_compiler_source_completeness_guard": Project_compiler_source_completeness,
         "Project_compiler_scalar_uniqueness_guard": Project_compiler_scalar_uniqueness,
         "Project_compiler_source_validity_guard": Project_compiler_source_validity,
+        "Packet_affine_arithmetic_guard": Packet_affine_arithmetic,
+        'object_Packet_128_256_affine_arithmetic_total_unique_proved': True,
+        'object_Packet_affine_all_internal_recursive_equation_proved': True,
+        'object_Packet_actual_literal_radix_systems_constructed': True,
+        'object_Packet_actual_Horn_affine_condition_correspondence_proved': False,
+        'object_full_NatPacket_byte_tree_bridge_proved': False,
+        'object_full_varint_internal_program_proved': False,
+
         'object_Project_compiler_source_validation_member_IH_Foundation_discharged': True,
         'object_Project_structural_compiler_exact_source_acceptance_proved': True,
         'object_Project_structural_compiler_exact_typed_unique_acceptance_proved': True,

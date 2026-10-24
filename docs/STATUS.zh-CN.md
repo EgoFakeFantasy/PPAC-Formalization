@@ -1,5 +1,9 @@
 # 当前交付状态
 
+原Packet的128／256仿射算术单元已验收：全部内部digit／tail／output候选的零点、后继及递归方程，合法输入的输出存在唯一，以及仅Ω前提下实际128／256基数系统的对象存在性。11模块139声明、14组原nativeZF闭句；2152构建、23105审计（458无公理／22647允许依赖）、零警告；九命令／五trust=0通过，1932哈希、2563对精确足迹、20761项Internal覆盖。原四条affine规则的有限元数据已精确核对，但原Horn条件与算术的等价、完整NatPacket字节包、schema、Proof／解释及最终内部Con仍未完成。见[实际验收及工程流程](STEP4_PACKET_AFFINE_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 Project结构树码的完整十二构造编译接口已验收：实际Compiled在任意内部自然源上下文中反推SourceCode，原Foundation／完整Separation／TransitiveCover消去IH；仅Ω推出ALL3准确源接受双条件，f∈ω保留在右侧合取处理全部无效上下文候选；ALL4给出准确类型唯一接受接口及闭源特例。10模块99声明、12组原nativeZF闭句；2138构建、22966审计（452无公理／22514允许依赖）、零警告；九命令／五trust=0通过，1921哈希、2549对精确足迹、20622项Internal覆盖。原ProjectEncode／NatPacket字节包、Horn、完整schema、Proof／解释及最终内部Con仍未完成。见[验收与后续工程表](STEP4_PROJECT_COMPILER_SOURCE_VALID_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

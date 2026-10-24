@@ -11252,4 +11252,60 @@ example {m} (w n b z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w n b q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerInvalidSourceRejectedSentence w n b q f)) :=
   Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected w n b q f
+example {m} (w B d t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineExistsUniqueSentence w B d t)) :=
+  Internal.ObjectPacketAffine.native_packetAffineExistsUnique w B d t
+
+example {m} (w B d t n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineOutputsUniqueSentence w B d t n a)) :=
+  Internal.ObjectPacketAffine.native_packetAffineOutputsUnique w B d t n a
+
+example {m} (w B d z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineZeroIffSentence w B d z n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineZeroIff w B d z n
+
+example {m} (w B d t a s n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineAdvanceSentence w B d t a s n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineAdvance w B d t a s n
+
+example {m} (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineRecursiveIffSentence w B d t n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineRecursiveIff w B d t n
+
+example {m} (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineAllInternalRecursiveLawSentence w B)) :=
+  Internal.ObjectPacketAffine.native_packetAffineAllInternalRecursiveLaw w B
+
+example {m} (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineAllInternalFibersSentence w B)) :=
+  Internal.ObjectPacketAffine.native_packetAffineAllInternalFibers w B
+
+example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineLiteralSystemExistsSentence wide w)) :=
+  Internal.ObjectPacketAffine.native_packetAffineLiteralSystemExists wide w
+
+example {m} (wide : Bool) (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineLiteralFramesUniqueSentence wide w B C)) :=
+  Internal.ObjectPacketAffine.native_packetAffineLiteralFramesUnique wide w B C
+
+example {m} (wide : Bool) (w B z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineZeroBelowLiteralBaseSentence wide w B z)) :=
+  Internal.ObjectPacketAffine.native_packetAffineZeroBelowLiteralBase wide w B z
+
+example {m} (wide : Bool) (w B e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineTwoBelowLiteralBaseSentence wide w B e)) :=
+  Internal.ObjectPacketAffine.native_packetAffineTwoBelowLiteralBase wide w B e
+
+example {m} (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineRejectDigitSentence w B d t n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineRejectDigit w B d t n
+
+example {m} (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineRejectTailSentence w B d t n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineRejectTail w B d t n
+
+example {m} (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffine.packetAffineRejectOutputSentence w B d t n)) :=
+  Internal.ObjectPacketAffine.native_packetAffineRejectOutput w B d t n
+
 end PPAC.Migration.Step4Checks
