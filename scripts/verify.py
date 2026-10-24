@@ -1243,6 +1243,45 @@ def check_proof_tree_internal_induction() -> dict:
             'conditional_root_property_and_negative_rejection_transferred':True,
             'dedicated_Proof_local_closure_Bool_compiler_interpretation_Con_proved':False}
 
+
+def check_proof_tree_equation_unique() -> dict:
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['ProofTreeEquationSyntax', 'ProofTreeEquationReverseStep', 'ProofTreeEquationUnique', 'ProofTreeEquationCanonical', 'ObjectProofTreeEquation']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|induction code\b',text):
+            raise RuntimeError('Forbidden recursive-equation uniqueness shortcut: '+module)
+    required={
+      'ProofTreeEquationSyntax':['def equation','property P w.castSucc (Fin.last m)).iff (normalized test P','closure_from_equation','reverseIH'],
+      'ProofTreeEquationReverseStep':['Derives.allE child hi','ProofTreeNodeSyntax.payload_field_below','HornBinderRules.eliminate_many','children_to_nodes','ProofTreeNodeBackward.node_backward','equation_at'],
+      'ProofTreeEquationUnique':['SetInduction.all_holds','ZFContext.separation hZ (inductionMatrix test P).neg','base.foundation','ObjectTransitiveCover.source_cover','closure_from_equation','all_iff','two_solutions','ProjectionNodeFields.constructor_field_natural'],
+      'ProofTreeEquationCanonical':['def nodeTemplate','ProofTreeEntrySyntax.node test (0 : Fin 2) (Fin.last 1)','property_node','children_node','cases_node','normalized_node','ProofTreeNodeBackward.node_iff'],
+      'ObjectProofTreeEquation':['TheoryTransport.sentence','ZFReplay.replay','native_proofTreeEquationAllCodeUnique','native_proofTreeCanonicalNodeEquation']}
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing actual recursive equation proof: '+module+': '+clause)
+    equation_def=re.search(r'(?ms)^def equation\b.*?(?=^def|\Z)',texts['ProofTreeEquationSyntax'])
+    if not equation_def or 'Formula mem' in equation_def.group(0) or 'Formula.mem' in equation_def.group(0) or '.imp' in equation_def.group(0):
+        raise RuntimeError('Candidate equation must quantify all objects without an Omega guard')
+    for module,theorem,premises in [('ProofTreeEquationUnique','all_iff',{'hw','he'}),('ProofTreeEquationUnique','point_iff',{'hw','he'}),('ProofTreeEquationCanonical','equation_proved',{'hw'})]:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:
+            raise RuntimeError('Recursive equation endpoint premise drift: '+module+'.'+theorem)
+        if '(test : Formula 1)' not in header.group(0) or re.search(r'Promise|Model|Consistent|hIH\s*:|hTest\s*:',header.group(0)):
+            raise RuntimeError('Hidden checker correctness or IH premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name,args in [('proofTreeEquationAllCodeUnique','test P w'),('proofTreeCanonicalNodeEquation','test w')]:
+        if 'ObjectProofTreeEquation.native_'+name+' '+args not in check:
+            raise RuntimeError('Missing expanded native equation contract')
+    return {'candidate_equation_quantifies_all_object_codes':True,
+            'equation_discharges_forward_object_closure':True,
+            'reverse_Foundation_Separation_induction_IH_object_discharged':True,
+            'all_actual_six_case_assignment_witnesses_object_eliminated':True,
+            'node_and_root_equivalence_and_two_solution_uniqueness':True,
+            'canonical_Node_Formula2_satisfies_equation_without_equation_premise':True,
+            'candidate_property_natural_range_object_proved':True,
+            'dedicated_Bool_Proof_equation_compiler_interpretation_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1275,6 +1314,7 @@ def main() -> None:
     proof_tree_root_closed_fields = check_proof_tree_root_closed_fields()
     proof_tree_six_node_equation = check_proof_tree_six_node_equation()
     proof_tree_internal_induction = check_proof_tree_internal_induction()
+    proof_tree_equation_unique = check_proof_tree_equation_unique()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3973,7 +4013,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreePointInduction',
                     'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRootProperty',
                     'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRejectNodeFromProperty',
-                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRejectRootFromProperty'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRejectRootFromProperty',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationImpliesLocalClosure',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationReverseProgressive',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationAllCodeUnique',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationPointUnique',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationRootUnique',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationTwoSolutions',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationNodeNatural',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationSolutionNatural',
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3985,6 +4034,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProofTreeEquation": ('proofTreeEquationImpliesLocalClosure', 'proofTreeEquationReverseProgressive', 'proofTreeEquationAllCodeUnique', 'proofTreeEquationPointUnique', 'proofTreeEquationRootUnique', 'proofTreeEquationTwoSolutions', 'proofTreeEquationNodeNatural', 'proofTreeEquationSolutionNatural', 'proofTreeCanonicalNodeEquation'),
         "ObjectProofTreeInduction": ('proofTreePropertyStepWithMemberIH', 'proofTreePropertyProgressive', 'proofTreeInternalInduction', 'proofTreePointInduction', 'proofTreeRootProperty', 'proofTreeRejectNodeFromProperty', 'proofTreeRejectRootFromProperty'),
         "ObjectProofTreeNode": ('proofNodeFieldLocalIff', 'proofNodeActualTagLocalIff', 'proofNodeVariableChildIff', 'proofNodeAllChildrenIff', 'proofNodePayloadFieldBelow', 'proofNodeSixCasesForward', 'proofNodeSixCasesBackward', 'proofNodeExactSixCasesIff', 'proofRootExactNodeSixCasesIff'),
         "ObjectProofTreeRoot": ('proofRootOneNonempty', 'proofRootOneMembership', 'proofRootZeroGuardIff', 'proofRootPayloadConstructorIff', 'proofRootActualLocalCondition', 'proofRootClosedFieldsForward', 'proofRootClosedFieldsBackward', 'proofRootExactClosedFieldsIff'),
@@ -4929,6 +4979,12 @@ def main() -> None:
         "proof_tree_root_closed_fields_guard": proof_tree_root_closed_fields,
         "proof_tree_six_node_equation_guard": proof_tree_six_node_equation,
         "proof_tree_internal_induction_guard": proof_tree_internal_induction,
+        "proof_tree_equation_unique_guard": proof_tree_equation_unique,
+        'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,
+        'object_original_proof_tree_canonical_Node_formula_satisfies_equation_proved': True,
+        'object_original_proof_tree_equation_solution_natural_range_proved': True,
+        'object_original_proof_tree_dedicated_Bool_Proof_equation_proved': False,
+
         'object_original_proof_tree_internal_Foundation_induction_schema_proved': True,
         'object_original_proof_tree_internal_member_IH_discharged': True,
         'object_original_proof_tree_conditional_root_property_and_rejection_proved': True,

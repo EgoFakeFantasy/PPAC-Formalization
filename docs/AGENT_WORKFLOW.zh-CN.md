@@ -1,5 +1,9 @@
 # 对象层迁移工程流程
 
+原证明树递归方程唯一性及规范解已验收：全对象域Equation实际推出正向Closure，反向Foundation归纳消去IH，得到Ω→Equation→∀p(Node↔P)；实际Node有限Formula2模板在只有Ω前提下满足方程。精确Root、两解等价及自然范围已返回原核。5模块72声明、9组nativeZF闭句；1931构建任务、21417审计（424无公理／20993允许依赖）、零警告；九命令／五trust=0通过，1757哈希／2409对精确足迹／19073项Internal覆盖。下一步转向ZF/U实际公理测试；具体Bool／Proof_T方程、内部编译解释与最终Con仍未证明。见[本批验收与后续工程表](STEP4_PROOF_TREE_EQUATION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原ZF内部证明树归纳模式已验收：用Foundation／完整Separation／TransitiveCover消去全部内部成员IH，六类child严格下降与完整赋值块均对象处理；最终为Ω→对象Closure→∀p(Node→P)，P是显式Formula2索引。根性质与条件拒绝也已返回原核。5模块65声明、7组nativeZF闭句；1926构建任务、21345审计（424无公理／20921允许依赖）、零警告；九命令／五trust=0通过，1752哈希／2400对精确足迹／19001项Internal覆盖。具体Proof_T的Closure仍未证明；下一步是内部递归方程唯一性，实际Bool／专用Proof／内部解释与最终Con仍未完成。见[本批验收与后续工程表](STEP4_PROOF_TREE_INDUCTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

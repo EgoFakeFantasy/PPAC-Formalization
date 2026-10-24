@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+The original six-case recursive proof-tree equation has a unique solution on all object codes, proved through forward and reverse internal Foundation induction. The actual Node Formula2 template satisfies the equation under Omega alone. Five modules, 72 declarations, nine certificate families; 1931 build jobs, 21417 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1757 hashes and 2409 exact core/native footprints. Dedicated ZF/U tests, the actual Bool/Proof_T equation, compiler/interpretation and final internal Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_EQUATION_ACCEPTANCE.zh-CN.md).
+
+The entries below are historical checkpoints.
+
 Internal proof-tree induction is accepted in the original nativeZF kernel: Foundation, full Separation and the proved transitive cover discharge the internal member IH for all object codes. The theorem retains exactly Omega and an explicit object local-closure premise; the property is a Formula2 scheme index. Five modules, 65 declarations, seven certificate families; 1926 build jobs, 21345 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1752 hashes and 2400 exact core/native footprints. The dedicated Proof_T closure, actual Bool correspondence, complete Proof/compiler/interpretation and final Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_INDUCTION_ACCEPTANCE.zh-CN.md).
 
 The entries below are historical checkpoints.

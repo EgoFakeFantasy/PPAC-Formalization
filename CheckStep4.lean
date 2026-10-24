@@ -10598,4 +10598,54 @@ example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : 
       ((Internal.ProofTreeEntrySyntax.node test w code).imp (Internal.ProofTreeInductionSyntax.property P w code)))).close)) :=
   Internal.ObjectProofTreeInduction.native_proofTreePointInduction test P w code
 
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationImpliesLocalClosureSentence test P w)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationImpliesLocalClosure test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationReverseProgressiveSentence test P w)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationReverseProgressive test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationAllCodeUniqueSentence test P w)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationAllCodeUnique test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationPointUniqueSentence test P w code)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationPointUnique test P w code
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationRootUniqueSentence test P w code conclusion)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationRootUnique test P w code conclusion
+
+example {m} (test : Source.Formula 1) (P Q : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationTwoSolutionsSentence test P Q w code)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationTwoSolutions test P Q w code
+
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationNodeNaturalSentence test w code)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationNodeNatural test w code
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeEquationSolutionNaturalSentence test P w code)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationSolutionNatural test P w code
+
+example {m} (test : Source.Formula 1) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeEquation.proofTreeCanonicalNodeEquationSentence test w)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation test w
+
+-- Uniqueness over all object codes, with the candidate equation explicitly inside the sentence.
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeEquationSyntax.equation test P w).imp
+      (Source.Formula.all ((Internal.ProofTreeEntrySyntax.node test w.castSucc (Fin.last m)).iff
+        (Internal.ProofTreeInductionSyntax.property P w.castSucc (Fin.last m)))))).close)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeEquationAllCodeUnique test P w
+
+-- The original Node template satisfies the actual six-case equation; no equation is assumed here.
+example {m} (test : Source.Formula 1) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp (Source.Formula.all
+      ((Internal.ProofTreeInductionSyntax.property (Internal.ProofTreeEquationCanonical.nodeTemplate test) w.castSucc (Fin.last m)).iff
+        (Internal.ProofTreeInductionSyntax.normalized test (Internal.ProofTreeEquationCanonical.nodeTemplate test) w.castSucc (Fin.last m))))).close)) :=
+  Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation test w
+
 end PPAC.Migration.Step4Checks
