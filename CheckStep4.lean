@@ -11416,4 +11416,84 @@ example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (w r V : Fin m) : Yes
     (Translation.sentence (Internal.ObjectPacketAffineApplication.originalRuleRejectNonNaturalRowSentence rule w r V)) :=
   Internal.ObjectPacketAffineApplication.native_originalRuleRejectNonNaturalRow rule w r V
 
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceMemberHasActualStepSentence rules w R r)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceMemberHasActualStep rules w R r
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w R r S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceInsertPreservesClosureSentence rules w R r S)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceInsertPreservesClosure rules w R r S
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w R r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceInsertAcceptsActualRootSentence rules w R r)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceInsertAcceptsActualRoot rules w R r
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceAcceptedRootSetExistsSentence rules w)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootSetExists rules w
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceAcceptedRootMembershipIffSentence rules w V r)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootMembershipIff rules w V r
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w V R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceContainsEveryInternalSubtraceSentence rules w V R)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceContainsEveryInternalSubtrace rules w V R
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceAcceptedRootSetClosedSentence rules w V)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootSetClosed rules w V
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceAllCandidateUnfoldIffSentence rules w V r)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceAllCandidateUnfoldIff rules w V r
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceAllCandidateSystemExistsSentence rules w)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceAllCandidateSystemExists rules w
+
+example {m} (rules : List YesMetaZFC.Automation.ObjectHorn.Rule) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.closedTraceRejectNonNaturalRootSentence rules w r)) :=
+  Internal.ObjectPacketClosedTrace.native_closedTraceRejectNonNaturalRoot rules w r
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetActualTenRuleAcceptedRootSetExistsSentence w)) :=
+  Internal.ObjectPacketClosedTrace.native_packetActualTenRuleAcceptedRootSetExists w
+
+example {m} (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetActualTenRuleAcceptedRootSetClosedSentence w V)) :=
+  Internal.ObjectPacketClosedTrace.native_packetActualTenRuleAcceptedRootSetClosed w V
+
+example {m} (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetActualTenRuleConditionUnfoldIffSentence w V r)) :=
+  Internal.ObjectPacketClosedTrace.native_packetActualTenRuleConditionUnfoldIff w V r
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetActualTenRuleTraceSystemExistsSentence w)) :=
+  Internal.ObjectPacketClosedTrace.native_packetActualTenRuleTraceSystemExists w
+
+example {m} (wide : Bool) (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (hk : rule ∈ PacketAffineDispatchData.others wide) (w d t n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineForeignRuleRejectedSentence wide rule hk w d t n r R)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineForeignRuleRejected wide rule hk w d t n r R
+
+example {m} (wide : Bool) (w d t n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineActualTenRuleDispatchSentence wide w d t n r R)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineActualTenRuleDispatch wide w d t n r R
+
+example {m} (wide : Bool) (w B d t n r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineActualTenRuleStepIffOutcomesSentence wide w B d t n r R)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineActualTenRuleStepIffOutcomes wide w B d t n r R
+
+example {m} (wide : Bool) (w B V d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineConditionIffActualOutcomesSentence wide w B V d t n r)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineConditionIffActualOutcomes wide w B V d t n r
+
+example {m} (wide : Bool) (w B r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineBaseConditionAcceptedSentence wide w B r)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineBaseConditionAccepted wide w B r
+
+example {m} (wide : Bool) (w B d t a s n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineSuccessorConditionAcceptedSentence wide w B d t a s n q r)) :=
+  Internal.ObjectPacketClosedTrace.native_packetAffineSuccessorConditionAccepted wide w B d t a s n q r
+
 end PPAC.Migration.Step4Checks

@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+Packet实际十规则的关系式闭轨迹已验收：原Separation构造全部内部接受根集合，包含任意内部闭轨迹且自身闭合；仅Ω推出覆盖所有根候选的统一展开系统。原十规则的仿射根行准确分派到base／step，零点及后继接受已对象消去统一轨迹见证。12模块153声明、20组原nativeZF闭句；2180构建、23457审计（459无公理／22998允许依赖）、零警告；九命令／五trust=0通过，1960哈希、2610对精确足迹、21113项Internal覆盖。原Basic AST条件翻译、完整仿射算术等价、字节包、schema、Proof／解释及最终内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_CLOSED_TRACE_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原Packet仿射规则的完整有界赋值应用已验收：原head全部参数的内部搜索界实际推导，arity=1／3存在块双向消去；结构输出的自然性从真实行／前提取得，最终ALL2定律覆盖所有内部行和轨迹候选，实际128／256应用系统仅以Ω为前提对象存在。8模块96声明、14组原nativeZF闭句；2168构建、23304审计（458无公理／22846允许依赖）、零警告；九命令／五trust=0通过，1948哈希、2590对精确足迹、20960项Internal覆盖。完整Packet闭轨迹／原condition、字节包、schema、Proof／解释及内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_AFFINE_APPLICATION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

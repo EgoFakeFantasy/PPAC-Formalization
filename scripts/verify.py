@@ -1886,6 +1886,42 @@ def check_Packet_affine_bounded_applications() -> dict:
             'full_Proof_and_Con':False}
 
 
+def check_Packet_explicit_table_closed_trace() -> dict:
+    modules = ['HornClosedTraceSyntax', 'HornClosedTraceExtension', 'PacketTraceSyntax', 'PacketAffineDispatchData', 'HornClosedTraceValueSyntax', 'HornClosedTraceValue', 'HornClosedTraceValueClosed', 'PacketAffineDispatch', 'HornClosedTraceSystemSyntax', 'HornClosedTraceProperties', 'PacketTraceCore', 'ObjectPacketClosedTrace']
+    schemas = ['closedTraceMemberHasActualStep', 'closedTraceInsertPreservesClosure', 'closedTraceInsertAcceptsActualRoot', 'closedTraceAcceptedRootSetExists', 'closedTraceAcceptedRootMembershipIff', 'closedTraceContainsEveryInternalSubtrace', 'closedTraceAcceptedRootSetClosed', 'closedTraceAllCandidateUnfoldIff', 'closedTraceAllCandidateSystemExists', 'closedTraceRejectNonNaturalRoot', 'packetActualTenRuleAcceptedRootSetExists', 'packetActualTenRuleAcceptedRootSetClosed', 'packetActualTenRuleConditionUnfoldIff', 'packetActualTenRuleTraceSystemExists', 'packetAffineForeignRuleRejected', 'packetAffineActualTenRuleDispatch', 'packetAffineActualTenRuleStepIffOutcomes', 'packetAffineConditionIffActualOutcomes', 'packetAffineBaseConditionAccepted', 'packetAffineSuccessorConditionAccepted']
+    required = {'HornClosedTraceSyntax': ['def closed', 'def witness', 'def condition', 'HornStepSyntax.step rules', 'theorem closed_at', 'theorem step_row_subst'], 'HornClosedTraceExtension': ['HornTraceMonotone.step rules', 'HornClosedTraceSyntax.step_row_subst rules', 'InsertExistence.exists_insert', 'theorem condition'], 'PacketTraceSyntax': ['HornStepSyntax.step ObjectPacket.rules', 'HornClosedTraceSyntax.closed ObjectPacket.rules', 'HornClosedTraceSyntax.witness ObjectPacket.rules', 'HornClosedTraceSyntax.condition ObjectPacket.rules'], 'PacketAffineDispatchData': ['def others', 'ObjectPacket.rules.drop 4', 'theorem others_classified', 'theorem rule_cases', 'theorem base_member', 'theorem step_member'], 'HornClosedTraceValueSyntax': ['def matrix (rules : List Rule)', 'MinimalPredicates.separated (matrix rules)', 'HornClosedTraceSyntax.condition rules', 'theorem value_at'], 'HornClosedTraceValue': ['ZFContext.separation hZ (HornClosedTraceValueSyntax.matrix rules)', 'theorem exists_value', 'theorem subtrace_included', 'theorem member_iff'], 'HornClosedTraceValueClosed': ['HornTraceMonotone.step rules', 'HornClosedTraceValue.subtrace_included rules', 'theorem closed', 'HornClosedTraceExtension.condition rules'], 'PacketAffineDispatch': ['HornNodeDisjoint.node_contradiction', 'PacketAffineDispatchData.rule_cases', 'HornStepSyntax.step_elim ObjectPacket.rules', 'theorem step_iff_applications', 'theorem step_iff_outcomes'], 'HornClosedTraceSystemSyntax': ['def allLaw', 'def existsSystem', 'HornClosedTraceValueSyntax.value rules', 'HornClosedTraceSyntax.closed rules'], 'HornClosedTraceProperties': ['theorem step_natural', 'HornApplicationRange.range', 'theorem reject_non_natural', 'theorem unfold_iff', 'theorem all_unfold', 'theorem exists_system', 'HornClosedTraceValue.exists_value rules hZ w'], 'PacketTraceCore': ['HornClosedTraceValueSyntax.value ObjectPacket.rules', 'theorem affine_condition_iff_outcomes', 'theorem base_accept', 'theorem step_accept', 'PacketAffineApplication.base_backward', 'PacketAffineApplication.step_backward', 'PacketAffineDispatch.step_iff_outcomes', 'PacketAffineDispatchData.base_member', 'PacketAffineDispatchData.step_member'], 'ObjectPacketClosedTrace': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|addConst_eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b|HornLookupConditionSyntax|HornLookupSoundSyntax|HornUniversalTraceSyntax|HornStepSyntax\.originalStep|ObjectSyntaxTransform\.rules'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text):
+            raise RuntimeError('Packet explicit-table trace forbidden gap or wrong table: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Packet explicit-table trace proof drift: '+mod+': '+clause)
+    signatures = [('HornClosedTraceValue','exists_value',set()),('HornClosedTraceValueClosed','condition_step',{'hv','ht'}),('HornClosedTraceProperties','unfold_iff',{'hw','hv'}),('HornClosedTraceProperties','exists_system',{'hw'}),('PacketAffineDispatch','dispatch',{'hw','hc','hs'}),('PacketAffineDispatch','step_iff_applications',{'hw','hc'}),('PacketAffineDispatch','step_iff_outcomes',{'hw','hB','hc'}),('PacketTraceCore','affine_condition_iff_outcomes',{'hw','hB','hv','hr'}),('PacketTraceCore','base_accept',{'hw','hB','hb'}),('PacketTraceCore','step_accept',{'hw','hB','hq','hc','hs','hn','hr'}),('PacketTraceCore','exists_system',{'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Packet explicit-table trace hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketClosedTrace.native_'+name not in check:
+            raise RuntimeError('Missing Packet explicit-table trace native fixture: '+name)
+    return {'fixed_rule_table_explicit_in_generic_closed_trace_and_value':True,
+            'Packet_uses_actual_original_ten_rules':True,
+            'original_Separation_constructs_all_internal_accepted_roots':True,
+            'every_internal_subtrace_included_and_universal_value_closed':True,
+            'all_candidate_roots_unfold_without_root_naturality_premise':True,
+            'only_omega_premise_for_actual_internal_uniform_trace_system':True,
+            'all_eight_foreign_affine_branches_object_rejected':True,
+            'actual_ten_rule_affine_dispatch_to_exact_prior_application_outcomes':True,
+            'base_and_successor_acceptance_eliminate_universal_trace_witness':True,
+            'original_Basic_AST_condition_translation':False,
+            'full_condition_iff_affine_arithmetic_and_byte_tree_bridge':False,
+            'full_Proof_and_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1933,6 +1969,7 @@ def main() -> None:
     Packet_affine_arithmetic = check_Packet_affine_arithmetic()
     Packet_original_affine_local_matrices = check_Packet_original_affine_local_matrices()
     Packet_affine_bounded_applications = check_Packet_affine_bounded_applications()
+    Packet_explicit_table_closed_trace = check_Packet_explicit_table_closed_trace()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4814,7 +4851,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAllInternalAffineApplicationsLaw',
                     'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_packetAffineLiteralApplicationSystemExists',
                     'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_originalRuleApplicationRowNatural',
-                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_originalRuleRejectNonNaturalRow'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketAffineApplication.native_originalRuleRejectNonNaturalRow',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceMemberHasActualStep',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceInsertPreservesClosure',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceInsertAcceptsActualRoot',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootSetExists',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootMembershipIff',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceContainsEveryInternalSubtrace',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceAcceptedRootSetClosed',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceAllCandidateUnfoldIff',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceAllCandidateSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_closedTraceRejectNonNaturalRoot',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetActualTenRuleAcceptedRootSetExists',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetActualTenRuleAcceptedRootSetClosed',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetActualTenRuleConditionUnfoldIff',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetActualTenRuleTraceSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineForeignRuleRejected',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineActualTenRuleDispatch',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineActualTenRuleStepIffOutcomes',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineConditionIffActualOutcomes',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineBaseConditionAccepted',
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineSuccessorConditionAccepted'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4826,6 +4883,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketClosedTrace": ('closedTraceMemberHasActualStep', 'closedTraceInsertPreservesClosure', 'closedTraceInsertAcceptsActualRoot', 'closedTraceAcceptedRootSetExists', 'closedTraceAcceptedRootMembershipIff', 'closedTraceContainsEveryInternalSubtrace', 'closedTraceAcceptedRootSetClosed', 'closedTraceAllCandidateUnfoldIff', 'closedTraceAllCandidateSystemExists', 'closedTraceRejectNonNaturalRoot', 'packetActualTenRuleAcceptedRootSetExists', 'packetActualTenRuleAcceptedRootSetClosed', 'packetActualTenRuleConditionUnfoldIff', 'packetActualTenRuleTraceSystemExists', 'packetAffineForeignRuleRejected', 'packetAffineActualTenRuleDispatch', 'packetAffineActualTenRuleStepIffOutcomes', 'packetAffineConditionIffActualOutcomes', 'packetAffineBaseConditionAccepted', 'packetAffineSuccessorConditionAccepted'),
         "ObjectPacketAffineApplication": ('packetAffineBaseHeadSearchBound', 'packetAffineBaseMatrixSuppliesBoundedApplication', 'packetAffineStepHeadSearchBound', 'packetAffineStepMatrixSuppliesBoundedApplication', 'packetAffineRowAssignmentsNatural', 'packetAffineEntryAssignmentsNatural', 'packetAffineBaseDigitNatural', 'packetAffineStepAssignmentsNatural', 'packetAffineWholeBaseApplicationIff', 'packetAffineWholeStepApplicationIff', 'packetAllInternalAffineApplicationsLaw', 'packetAffineLiteralApplicationSystemExists', 'originalRuleApplicationRowNatural', 'originalRuleRejectNonNaturalRow'),
         "ObjectPacketHornAffine": ('packetOriginalAddConstGraphIff', 'packetOriginalRadixAddConstGraphIff', 'packetOriginalAffineBaseHeadIff', 'packetOriginalAffineStepHeadIff', 'packetOriginalAffineBaseGuardIff', 'packetOriginalAffineStepPremiseIff', 'packetOriginalAffineBaseMatrixAtIff', 'packetOriginalAffineStepMatrixAtIff', 'packetOriginalAffineBaseMatrixIff', 'packetOriginalAffineStepMatrixIff', 'packetOriginalAffineAllInternalBaseMatrixLaw', 'packetOriginalAffineAllInternalStepMatrixLaw', 'packetOriginalAffineLiteralMatrixSystemExists'),
         "ObjectPacketAffine": ('packetAffineExistsUnique', 'packetAffineOutputsUnique', 'packetAffineZeroIff', 'packetAffineAdvance', 'packetAffineRecursiveIff', 'packetAffineAllInternalRecursiveLaw', 'packetAffineAllInternalFibers', 'packetAffineLiteralSystemExists', 'packetAffineLiteralFramesUnique', 'packetAffineZeroBelowLiteralBase', 'packetAffineTwoBelowLiteralBase', 'packetAffineRejectDigit', 'packetAffineRejectTail', 'packetAffineRejectOutput'),
@@ -5800,6 +5858,14 @@ def main() -> None:
         "Packet_affine_arithmetic_guard": Packet_affine_arithmetic,
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
+        "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        'object_Horn_explicit_table_internal_closed_trace_value_constructed': True,
+        'object_Packet_actual_ten_rule_relational_trace_system_constructed': True,
+        'object_Packet_actual_ten_rule_affine_root_dispatch_proved': True,
+        'object_Packet_relational_condition_all_internal_unfold_proved': True,
+        'object_Packet_relational_affine_base_successor_acceptance_proved': True,
+        'object_Packet_original_Basic_AST_condition_translation_proved': False,
+
         'object_Packet_original_affine_head_search_bounds_proved': True,
         'object_Packet_original_affine_full_arity_application_iff_proved': True,
         'object_Packet_original_affine_all_internal_application_law_proved': True,
