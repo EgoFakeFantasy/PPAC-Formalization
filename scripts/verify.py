@@ -2512,6 +2512,34 @@ def check_Packet_actual_byte_execution() -> dict:
     return {'actual_Bytes_and_independent_ByteList_definitions_preserved': True, 'fixed_object_Formula2_joint_total_domain_unique_matrix': True, 'real_Cons_field_naturality_then_strict_tail_code_descent_derived': True, 'actual_256_affine_cell_domain_totality_uniqueness_literal_eliminated': True, 'existence_uses_actual_child_Bytes_and_full_real_cell': True, 'arbitrary_actual_Bytes_implies_independent_input_guard': True, 'all_candidate_output_uniqueness_two_actual_Cons_blocks_compared': True, 'original_Foundation_full_Separation_discharge_all_internal_joint_IH': True, 'unique_output_fiber_iff_independent_ByteList_and_natural_tail': True, 'final_ALL2_requires_only_omega_no_length_radix_graph_or_IH_premise': True, 'invalid_input_rejection_and_nonstandard_candidates_covered': True, 'original_host_bytes_foldr_canonical_sequence_bridge_proved': False, 'canonical_varint_readTokens_byte_program_bridge_proved': False, 'full_Basic_AST_schema_Proof_Con_proved': False}
 
 
+def check_Packet_independent_varint_prefix_construction() -> dict:
+    modules = ['PacketVarintCellSyntax', 'PacketVarintCell', 'PacketVarintRowSyntax', 'PacketVarintTraceSyntax', 'PacketVarintRowMap', 'PacketVarintTraceProperties', 'PacketVarintTraceTransport', 'PacketVarintTraceAppend', 'PacketVarintTraceBase', 'PacketVarintSyntax', 'PacketVarintDomain', 'PacketVarintConstruct', 'PacketVarintCellLaws', 'PacketVarintPrefixSyntax', 'PacketVarintPrefixDomain', 'PacketVarintPrefixConstruct', 'ObjectPacketVarintPrefix']
+    required = {'PacketVarintCellSyntax': ['def terminal', 'StructuralListSyntax.nilCode w x', 'empty u', 'def continuation', '(empty u.castSucc).neg', 'PacketAffineSyntax.affine w.castSucc B.castSucc', 'NaturalAdditionSyntax.sum', 'def cell'], 'PacketVarintCell': ['theorem terminal_cell', 'theorem continuation_cell', 'NaturalAdditionCore.closure', 'PacketAffineCore.digit_natural'], 'PacketVarintRowSyntax': ['def rowAt', 'successor j i', 'StructuralListSyntax.consCode w h x y', 'PacketVarintCellSyntax.cell w C x h u v', 'existsMany 6'], 'PacketVarintTraceSyntax': ['StructuralListTraceSyntax.trace w z e l d f n', 'SequenceSyntax.sequence g d w', 'edge g z t', 'edge g l a', 'links w C l f g', 'def foldAt'], 'PacketVarintRowMap': ['edgeIncluded f F', 'edgeIncluded g G', 'theorem row_map', 'theorem append_links', 'HornBinderRules.eliminate_many 6'], 'PacketVarintTraceProperties': ['theorem list_trace', 'theorem value_sequence', 'theorem length', 'theorem valid', 'SequenceSyntax.bounded_at'], 'PacketVarintTraceTransport': ['Derives.eqSubst', 'theorem input_subst', 'theorem radix_subst'], 'PacketVarintTraceAppend': ['StructuralListTraceAppend.from_append', 'SequenceAppend.exists_append', 'PacketVarintRowMap.append_links', 'PacketVarintCell.head_natural', 'PacketVarintCell.output_guard', 'theorem cons_fold'], 'PacketVarintTraceBase': ['StructuralListTraceBase.exists_base', 'SequenceAppend.exists_append', 'StructuralListUnits.with_units', 'GraphProperties.single_valued', 'theorem nil_iff'], 'PacketVarintSyntax': ['def canonicalAt', 'empty (Fin.last m)', 'foldAt w.castSucc B.castSucc s.castSucc (Fin.last m) n.castSucc', '(StructuralListSyntax.nilCode w.castSucc s.castSucc).neg', 'SyntaxNumeralSyntax.numeral 128', 'def canonical'], 'PacketVarintDomain': ['theorem at_domain', 'theorem domain', 'SyntaxNumerals.unique', 'theorem actual_iff', 'theorem reject_nil'], 'PacketVarintConstruct': ['SyntaxNumerals.exists_numeral hZ 0', 'PacketVarintTraceBase.nil_fold', 'PacketVarintTraceAppend.cons_fold', 'PacketVarintCell.terminal_cell', 'PacketVarintCell.continuation_cell', 'StructuralConsUnique.disjoint', 'theorem terminal', 'theorem continuation'], 'PacketVarintCellLaws': ['theorem continuation_nonzero', 'theorem terminal_continuation_disjoint', 'theorem zero_forces_terminal', 'theorem nonempty_previous_forces_continuation', 'PacketTokenByteBounds.small_digit_byte', 'PacketTokenByteBounds.shifted_digit_byte', 'theorem cell_byte_bound'], 'PacketVarintPrefixSyntax': ['def prefixCode', 'canonical w.castSucc n.castSucc (Fin.last m)', 'PacketBytesTraceSyntax.bytes w.castSucc (Fin.last m) t.castSucc a.castSucc', 'theorem intro_prefix'], 'PacketVarintPrefixDomain': ['PacketVarintDomain.domain', 'PacketBytesLaws.domain', 'theorem domain'], 'PacketVarintPrefixConstruct': ['StructuralConsCore.exists_cons', 'StructuralListUnits.with_units', 'PacketVarintConstruct.terminal', 'PacketVarintConstruct.continuation', 'PacketBytesLaws.singleton_bytes', 'PacketBytesLaws.cons_bytes', 'theorem terminal', 'theorem continuation'], 'ObjectPacketVarintPrefix': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    schemas = ['packetVarintTerminalCellConstructed', 'packetVarintNonzeroContinuationCellConstructed', 'packetVarintContinuationRequiresNonzeroValue', 'packetVarintTerminalContinuationDisjoint', 'packetVarintZeroPriorForcesActualTerminal', 'packetVarintNonemptyListForcesActualContinuation', 'packetVarintEveryActualCellByteBound', 'packetVarintBothOriginalGraphsRowTransport', 'packetVarintFullOldRowsAndNewLastRowPreserved', 'packetVarintRealDualSequenceExtension', 'packetVarintEmptyTraceExactNaturalSeed', 'packetVarintIndependentCanonicalAtDomain', 'packetVarintIndependentActualCanonicalDomain', 'packetVarintActual128ExactGraphIff', 'packetVarintCanonicalTerminalActualGraphs', 'packetVarintCanonicalNonzeroContinuationActualGraphs', 'packetVarintCanonicalRejectsActualNil', 'packetVarintIndependentPrefixExactNumericDomain', 'packetVarintTerminalPrefixAllCodeWitnessesEliminated', 'packetVarintContinuationPrefixAllCodeWitnessesEliminated']
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b|PacketTokenAcceptedSyntax|PacketTokenArithmeticEquation|PacketTraceSyntax\.condition'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Independent varint prefix forbidden gap or Tok dependence: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Independent varint prefix proof drift: '+mod+': '+clause)
+    for mod in ['PacketVarintCellSyntax','PacketVarintRowSyntax','PacketVarintTraceSyntax','PacketVarintSyntax']:
+        if 'PacketBytesTraceSyntax.bytes' in texts[mod]: raise RuntimeError('Canonical graph definition depends on byte execution: '+mod)
+    signatures = [('PacketVarintTraceAppend', 'cons_fold', {'hw', 'hf', 'hc', 'ha'}), ('PacketVarintTraceBase', 'nil_iff', {'hw', 'hn'}), ('PacketVarintDomain', 'at_domain', {'hc'}), ('PacketVarintDomain', 'domain', {'hc'}), ('PacketVarintDomain', 'actual_iff', {'hB'}), ('PacketVarintConstruct', 'terminal', {'hs', 'hn', 'he', 'hw', 'hB'}), ('PacketVarintConstruct', 'continuation', {'hq', 'hf', 'hp', 'hw', 'hs', 'ha', 'hB'}), ('PacketVarintCellLaws', 'cell_byte_bound', {'hw', 'hC', 'hB', 'hc'}), ('PacketVarintPrefixDomain', 'domain', {'hp'}), ('PacketVarintPrefixConstruct', 'terminal', {'hw', 'ha', 'hB', 'hn'}), ('PacketVarintPrefixConstruct', 'continuation', {'hq', 'hf', 'hw', 'hn', 'hs', 'ha', 'hB'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Independent varint prefix hidden premise: '+mod+'.'+name)
+    upstream = (ROOT/'.lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/NatPacket.lean').read_text(encoding='utf-8')
+    for clause in ['if scale != 1 && byte == 0 then none','else (value % 128 + 128) :: varint (value / 128)','readTokens rest 0 1 ((value + byte * scale) :: acc)']:
+        if clause not in upstream: raise RuntimeError('Original canonical byte program drift: '+clause)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketVarintPrefix.native_'+name not in checks: raise RuntimeError('Missing independent varint prefix fixture: '+name)
+    return {'independent_canonical_definition_no_Tok_acceptance_or_answer_predicate': True, 'actual_original_list_and_numeric_sequence_share_every_internal_index': True, 'terminal_cell_requires_Nil_prior_list_zero_prior_value_and_low_digit': True, 'continuation_cell_requires_nonzero_prior_value_and_shifted_base128_digit': True, 'terminal_continuation_disjoint_and_zero_prior_forces_terminal': True, 'actual_128_256_arithmetic_proves_each_cell_byte_bound': True, 'original_pairing_union_append_construct_both_graphs_and_preserve_all_old_rows': True, 'canonical_graph_zero_seed_and_nonempty_original_list_preserved': True, 'real_terminal_and_continuation_graph_closure_proved': True, 'independent_prefix_uses_actual_Bytes_with_exact_remaining_numeric_tail': True, 'prefix_terminal_and_continuation_all_actual_code_witnesses_eliminated': True, 'nonstandard_lengths_and_invalid_candidates_preserved': True, 'exact_reverse_canonical_recursion_proved': False, 'full_all_internal_canonical_totality_uniqueness_byte_domain_proved': False, 'actual_Tok_iff_independent_canonical_prefix_proved': False, 'original_varint_readTokens_program_bridge_proved': False, 'full_Basic_AST_schema_Proof_Con_proved': False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2576,6 +2604,7 @@ def main() -> None:
     Packet_exact_ordered_byte_fold_recursion = check_Packet_exact_ordered_byte_fold_recursion()
     Packet_independent_valid_byte_input = check_Packet_independent_valid_byte_input()
     Packet_actual_byte_execution = check_Packet_actual_byte_execution()
+    Packet_independent_varint_prefix_construction = check_Packet_independent_varint_prefix_construction()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5727,7 +5756,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionExistsDomainIff',
                     'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionUniqueFiberIff',
                     'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionAllInternalFiberDomain',
-                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionInvalidInputRejected'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionInvalidInputRejected',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintTerminalCellConstructed',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintNonzeroContinuationCellConstructed',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintContinuationRequiresNonzeroValue',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintTerminalContinuationDisjoint',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintZeroPriorForcesActualTerminal',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintNonemptyListForcesActualContinuation',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintEveryActualCellByteBound',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintBothOriginalGraphsRowTransport',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintFullOldRowsAndNewLastRowPreserved',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintRealDualSequenceExtension',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintEmptyTraceExactNaturalSeed',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintIndependentCanonicalAtDomain',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintIndependentActualCanonicalDomain',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintActual128ExactGraphIff',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintCanonicalTerminalActualGraphs',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintCanonicalNonzeroContinuationActualGraphs',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintCanonicalRejectsActualNil',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintIndependentPrefixExactNumericDomain',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintTerminalPrefixAllCodeWitnessesEliminated',
+                    'PPAC.Migration.Internal.ObjectPacketVarintPrefix.native_packetVarintContinuationPrefixAllCodeWitnessesEliminated'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5739,6 +5788,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketVarintPrefix": ('packetVarintTerminalCellConstructed', 'packetVarintNonzeroContinuationCellConstructed', 'packetVarintContinuationRequiresNonzeroValue', 'packetVarintTerminalContinuationDisjoint', 'packetVarintZeroPriorForcesActualTerminal', 'packetVarintNonemptyListForcesActualContinuation', 'packetVarintEveryActualCellByteBound', 'packetVarintBothOriginalGraphsRowTransport', 'packetVarintFullOldRowsAndNewLastRowPreserved', 'packetVarintRealDualSequenceExtension', 'packetVarintEmptyTraceExactNaturalSeed', 'packetVarintIndependentCanonicalAtDomain', 'packetVarintIndependentActualCanonicalDomain', 'packetVarintActual128ExactGraphIff', 'packetVarintCanonicalTerminalActualGraphs', 'packetVarintCanonicalNonzeroContinuationActualGraphs', 'packetVarintCanonicalRejectsActualNil', 'packetVarintIndependentPrefixExactNumericDomain', 'packetVarintTerminalPrefixAllCodeWitnessesEliminated', 'packetVarintContinuationPrefixAllCodeWitnessesEliminated'),
         "ObjectPacketBytesExecution": ('packetBytesExecutionActualCellData', 'packetBytesExecutionActualCellTotal', 'packetBytesExecutionActualCellUnique', 'packetBytesExecutionStrictInputTailProperty', 'packetBytesExecutionStrictAcceptedTailProperty', 'packetBytesExecutionTotalJointStep', 'packetBytesExecutionDomainJointStep', 'packetBytesExecutionUniqueJointStep', 'packetBytesExecutionAllJointProperties', 'packetBytesExecutionOutputExists', 'packetBytesExecutionActualInputDomain', 'packetBytesExecutionOutputUnique', 'packetBytesExecutionExistsDomainIff', 'packetBytesExecutionUniqueFiberIff', 'packetBytesExecutionAllInternalFiberDomain', 'packetBytesExecutionInvalidInputRejected'),
         "ObjectPacketByteInput": ('packetByteInputCompleteFieldsToAllFieldBounds', 'packetByteInputAllFieldBoundsToActualGraph', 'packetByteInputOriginalGraphAndLengthBoundsIff', 'packetByteInputFullConsFieldBoundsForward', 'packetByteInputFirstActualFieldByteBound', 'packetByteInputAllSuccessorFieldsTailBounds', 'packetByteInputBoundsAtAnyActualLength', 'packetByteInputNilGuardConstructed', 'packetByteInputFullConsGuardConstructed', 'packetByteInputTypedConsHeadAndTailRecovered', 'packetByteInputAllInternalRadixGuardRecursion', 'packetByteInputActual256ExactGuardIff', 'packetByteInputActualByteNaturalOnlyOmega', 'packetByteInputActualGuardImpliesOriginalListValidity', 'packetByteInputActualGuardExactRecursionOnlyOmega', 'packetByteInputAllInternalActualGuardOnlyOmega'),
         "ObjectPacketBytesRecursion": ('packetBytesRecursionBothSequenceRowRestriction', 'packetBytesRecursionAllOldRowsRestriction', 'packetBytesRecursionFullDualPrefixFromActualRestrictions', 'packetBytesRecursionDualPrefixGraphsObjectEliminated', 'packetBytesRecursionCompleteTerminalRowNormalized', 'packetBytesRecursionTerminalWitnessesFromFullTrace', 'packetBytesRecursionSuccessorFullReverseDecomposition', 'packetBytesRecursionAllInternalTraceReverseDecomposition', 'packetBytesRecursionAllInternalFoldReverseDecomposition', 'packetBytesRecursionIndependentCriterionBackward', 'packetBytesRecursionExactAllInternalRadixRecursion', 'packetBytesRecursionActual256CriterionEquivalence', 'packetBytesRecursionActualBytesExactRecursionOnlyOmega', 'packetBytesRecursionAllInternalActualRecursionOnlyOmega'),
@@ -6731,6 +6781,15 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_independent_varint_prefix_construction_guard": Packet_independent_varint_prefix_construction,
+        'object_Packet_actual_Tok_iff_independent_canonical_prefix_proved': False,
+        'object_Packet_independent_varint_zero_seeded_dual_graph_constructed': True,
+        'object_Packet_varint_cells_terminal_nonzero_continuation_disjoint_proved': True,
+        'object_Packet_varint_actual_cell_byte_bounds_proved': True,
+        'object_Packet_independent_varint_terminal_and_continuation_graph_closure_proved': True,
+        'object_Packet_independent_varint_prefix_constructors_exact_tail_proved': True,
+        'object_Packet_independent_varint_all_internal_exact_reverse_recursion_proved': False,
+        'object_Packet_independent_varint_full_total_unique_and_byte_input_domain_proved': False,
         "Packet_actual_byte_execution_guard": Packet_actual_byte_execution,
         'object_Packet_actual_byte_execution_exact_independent_input_domain_proved': True,
         'object_Packet_actual_byte_execution_joint_internal_IH_discharged': True,

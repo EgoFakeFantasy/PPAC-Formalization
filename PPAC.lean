@@ -266,3 +266,4 @@ import PPAC.Migration.Internal.ObjectPacketBytesTrace
 import PPAC.Migration.Internal.ObjectPacketBytesRecursion
 import PPAC.Migration.Internal.ObjectPacketByteInput
 import PPAC.Migration.Internal.ObjectPacketBytesExecution
+import PPAC.Migration.Internal.ObjectPacketVarintPrefix

@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+独立规范LEB128图及准确tail前缀的构造闭包已验收：原列表轨迹与数值序列共用全部内部索引，终止步要求原Nil及零初值，延续步要求非零已有值及base128仿射／移位字节。两类步互斥、实际128／256字节界已证；原序列追加构造双图，消去零、图及列表码见证。独立Prefix由规范图和实际Bytes定义，终止／延续构造保留准确剩余tail。17模块168声明、20组原nativeZF闭句；2370构建、25663审计、零警告，九命令／五trust=0通过。全部旧布尔叶保持。反向递归、全内部规范图总唯一及ByteList域、Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_VARINT_PREFIX_CONSTRUCTION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立实际Bytes执行的全内部存在唯一及准确输入域已验收：固定Formula2联合总性／任意实际接受的输入域／全部候选输出唯一性，原Foundation与完整Separation消去全部内部IH。真实Cons字段自然性、严格尾码下降、两份完整递归分支与实际256末步均正式处理。最终仅Ω证明ALL2唯一输出纤维↔ByteList∧自然tail；非法输入拒绝已证。12模块134声明、16组原nativeZF闭句；2353构建、25495审计，零警告；九命令／五trust=0通过。原宿主bytes.foldr到内部规范序列的桥、varint／readTokens、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及工程流程](STEP4_PACKET_BYTES_EXECUTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
