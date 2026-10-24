@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+3f.2c.3b.2d.6e已验收：原mode1在零绑定深度下的Run2已与实际AbstractFreeTop参数列逐字段程序映射对象等价，覆盖任意内部自然数长度的合法源列表。列表归纳IH、逐项Promise及两张码表见证均已对象消去，最终源类型守卫位于结论内部。13模块89声明、11组闭句返回原nativeZF。1723构建任务、18521项审计（398无公理／18123允许依赖）、零警告；九命令及五trust=0入口全部退出0；1558份独立哈希一致、2132对精确证书足迹、16177项Internal显式声明覆盖。非零深度binder提升frame／列表映射、完整mode1公式及forall、共享quotation／Bool、专用ProofZF/U及最终Con仍未完成。见[验收](docs/STEP4_MODE_ONE_ACTUAL_ABSTRACT_ARGUMENT_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2d.6d已验收：原mode1零深度变量数值关系已接实际AbstractFreeTop两张码表；全部有效纯项已与既有独立项程序及原混合项操作对象等价。实际两码表由原存在性定理取得并在对象EX中消去，最终类型守卫保留在结论内部，无给定R/S／解码图／一致性前提。7模块84声明、15组闭句返回原nativeZF。1710构建任务、18432项审计（398无公理／18034允许依赖）、零警告；九命令及五trust=0入口全部退出0；1545份独立哈希一致、2121对精确证书足迹、16088项Internal显式声明覆盖。非零深度绑定提升、参数列实际映射、完整mode1公式及forall、共享quotation／Bool、ProofZF/U和最终Con仍未完成。见[验收](docs/STEP4_MODE_ONE_ACTUAL_ABSTRACT_TERM_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

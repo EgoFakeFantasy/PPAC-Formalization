@@ -9099,4 +9099,61 @@ example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Deriv
             (AbstractTopTermSyntax.abstracted w a b A B n q))))))).close)) :=
   ObjectAbstractTopTerm.native_modeOneZeroDepthGuardedPureTermActualOperationIff w mode z P a b A B n q
 
+example {m} (modeIndex : Fin 4) (w mode depth parameter a b c d n k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.smallModeArgumentActualFiberSentence modeIndex w mode depth parameter a b c d n k)) :=
+  Internal.ObjectAbstractTopArguments.native_smallModeArgumentActualFiber modeIndex w mode depth parameter a b c d n k
+
+example {m} (modeIndex : Fin 4) (w mode depth parameter a b n k q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.smallModeArgumentActualFieldsSentence modeIndex w mode depth parameter a b n k q)) :=
+  Internal.ObjectAbstractTopArguments.native_smallModeArgumentActualFields modeIndex w mode depth parameter a b n k q
+
+example {m} (modeIndex : Fin 4) (w mode depth parameter a b c d n k q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.smallModeArgumentCompleteFieldMapIffSentence modeIndex w mode depth parameter a b c d n k q)) :=
+  Internal.ObjectAbstractTopArguments.native_smallModeArgumentCompleteFieldMapIff modeIndex w mode depth parameter a b c d n k q
+
+example {m} (w mode z P a b A B R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneActualTermAllOutputsAgreementSentence w mode z P a b A B R S n)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneActualTermAllOutputsAgreement w mode z P a b A B R S n
+
+example {m} (w mode z P a b A B R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneActualTermUniqueTypedFiberSentence w mode z P a b A B R S n)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneActualTermUniqueTypedFiber w mode z P a b A B R S n
+
+example {m} (w mode z P a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneActualTermPromiseDischargedSentence w mode z P a b A B R S)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneActualTermPromiseDischarged w mode z P a b A B R S
+
+example {m} (w mode z P a b A B R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneZeroDepthActualArgumentFieldsIffSentence w mode z P a b A B R S n q k)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthActualArgumentFieldsIff w mode z P a b A B R S n q k
+
+example {m} (w mode z P a b A B R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneZeroDepthActualArgumentProgramIffSentence w mode z P a b A B R S n q k)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthActualArgumentProgramIff w mode z P a b A B R S n q k
+
+example {m} (w mode z P a b A B R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneZeroDepthArgumentsAtActualCodesIffSentence w mode z P a b A B R S n q k)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthArgumentsAtActualCodesIff w mode z P a b A B R S n q k
+
+example {m} (w mode z P a b A B n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneZeroDepthArgumentsActualOperationIffSentence w mode z P a b A B n q k)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthArgumentsActualOperationIff w mode z P a b A B n q k
+
+example {m} (w mode z P a b A B n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractTopArguments.modeOneZeroDepthGuardedArgumentsActualOperationIffSentence w mode z P a b A B n q k)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthGuardedArgumentsActualOperationIff w mode z P a b A B n q k
+
+-- Expanded native contract: source list guard in the conclusion, no code tables, Promise or IH premises.
+example {m} (w mode z P a b A B n q k : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.SyntaxNumeralSyntax.numeral 1 mode).imp
+          ((Internal.OriginalTermTraceSyntax.metadata w z P).imp
+            ((OmegaSyntax.empty z).imp
+              ((Internal.SyntaxTopEnvironmentSyntax.abstractInput w a b A B).imp
+                (((Internal.SyntaxMixedImageCodeSyntax.termList w k a B n).conj
+                  (Internal.OriginalTransformRowSyntax.run 2 w mode z P n q)).iff
+                    (Internal.AbstractTopArgumentSyntax.abstracted w a b A B n q k))))))).close)) :=
+  Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthGuardedArgumentsActualOperationIff w mode z P a b A B n q k
+
 end PPAC.Migration.Step4Checks

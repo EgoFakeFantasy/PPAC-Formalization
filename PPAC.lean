@@ -216,3 +216,4 @@ import PPAC.Migration.Internal.ObjectOriginalAbstract
 import PPAC.Migration.Internal.ObjectAbstractVariable
 import PPAC.Migration.Internal.ObjectSmallModeArguments
 import PPAC.Migration.Internal.ObjectAbstractTopTerm
+import PPAC.Migration.Internal.ObjectAbstractTopArguments
