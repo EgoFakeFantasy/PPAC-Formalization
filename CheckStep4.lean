@@ -12620,4 +12620,63 @@ example {m} (w n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketVarintRecursion.packetVarintRecursionAllInternalActualCanonicalRecursionOnlyOmegaSentence w)) :=
   Internal.ObjectPacketVarintRecursion.native_packetVarintRecursionAllInternalActualCanonicalRecursionOnlyOmega w
+example {m} (w B n d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionStrictQuotientAuthorizesJointIHSentence w B n d q)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionStrictQuotientAuthorizesJointIH w B n d q
+
+example {m} (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionActualSmallListConstructedSentence w B n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionActualSmallListConstructed w B n
+
+example {m} (w B n d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionActualRecursiveListConstructedSentence w B n d q)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionActualRecursiveListConstructed w B n d q
+
+example {m} (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionExistenceJointStepSentence w B n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionExistenceJointStep w B n
+
+example {m} (w B C n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionAllActualCandidatesByteGuardJointStepSentence w B C n s)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionAllActualCandidatesByteGuardJointStep w B C n s
+
+example {m} (w B n s t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionAllActualCandidateListsUniqueJointStepSentence w B n s t)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionAllActualCandidateListsUniqueJointStep w B n s t
+
+example {m} (w B C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionJointPropertyStepSentence w B C n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionJointPropertyStep w B C n
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionOriginalFoundationSeparationAllJointIHDischargedSentence w B C)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionOriginalFoundationSeparationAllJointIHDischarged w B C
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionAllJointPropertiesOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionAllJointPropertiesOnlyOmega w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionActualListExistsOnlyOmegaSentence w n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionActualListExistsOnlyOmega w n
+
+example {m} (w n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionEveryActualCanonicalCandidateHasIndependentByteGuardSentence w n s)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionEveryActualCanonicalCandidateHasIndependentByteGuard w n s
+
+example {m} (w n s t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionEveryActualCanonicalCandidateListUniqueSentence w n s t)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionEveryActualCanonicalCandidateListUnique w n s t
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionExistenceExactNaturalDomainSentence w n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionExistenceExactNaturalDomain w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionUniqueByteListFiberExactNaturalDomainSentence w n)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionUniqueByteListFiberExactNaturalDomain w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionAllInternalUniqueByteListFibersOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketVarintExecution.native_packetVarintExecutionAllInternalUniqueByteListFibersOnlyOmega w
 end PPAC.Migration.Step4Checks

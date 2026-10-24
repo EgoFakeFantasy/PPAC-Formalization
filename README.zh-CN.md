@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+独立规范varint列表的全内部存在唯一和全部候选字节合法性已验收：固定Formula2联合存在性／任意实际Canonical候选ByteList域／列表唯一性。原base128严格商下降授权每次较小IH，原Foundation及完整Separation消去全部联合IH，128／256及列表码／加法见证对象构造消去。最终仅Ω取得ALL1唯一字节列表纤维↔n∈ω；全部实际规范候选都属独立ByteList。12模块125声明、15组原nativeZF闭句；2395构建、25917审计、零警告，九命令／五trust=0通过。总唯一／字节合法性顶层和两个对应旧guard子门false→true，其余旧布尔叶保持。Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_VARINT_EXECUTION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立规范varint的全内部准确递归已验收：原Separation构造双限制前缀图、保留全部旧行，两张原函数图归一完整末行。真实非零尾值与零seed证明较短列表非Nil，构造实际较小规范图；终止头字段经对象等号对齐。完整EX4延续分支和实际128见证双向对齐并消去外部前提，最终仅Ω取得ALL2 Canonical↔终止／延续精确条件。13模块129声明、14组原nativeZF闭句；2383构建、25792审计、零警告，九命令／五trust=0通过。反向递归顶层及对应旧guard子门false→true，其余旧布尔叶保持。全内部规范图总唯一／ByteList域、Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_VARINT_RECURSION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
