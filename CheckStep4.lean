@@ -12097,4 +12097,59 @@ example {m} (w a n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmegaSentence w)) :=
   Internal.ObjectPacketStructureRoot.native_packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega w
+example {m} (w tag p n l t u v a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualRawPayloadStrictSubcodeSentence w tag p n l t u v a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualRawPayloadStrictSubcode w tag p n l t u v a
+
+example {m} (w h q n k t u a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualConsChildrenStrictSubcodesSentence w h q n k t u a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualConsChildrenStrictSubcodes w h q n k t u a
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailTreePointFromJointChildIHSentence w n t a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailTreePointFromJointChildIH w n t a
+
+example {m} (w n l t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailForestPointFromJointChildIHSentence w n l t a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailForestPointFromJointChildIH w n l t a
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailJointPointSentence w n)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailJointPoint w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailJointObjectProgressiveSentence w)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailJointObjectProgressive w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailAllInternalJointIHDischargedSentence w)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalJointIHDischarged w
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualTreeBelowOutputSentence w n t a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualTreeBelowOutput w n t a
+
+example {m} (w n l t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualForestBelowOutputSentence w n l t a)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualForestBelowOutput w n l t a
+
+example {m} (w n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualTreeContainedSentence w n t a r)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualTreeContained w n t a r
+
+example {m} (w n l t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailActualForestContainedSentence w n l t a r)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailActualForestContained w n l t a r
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailAllInternalTreeLawSentence w)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalTreeLaw w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailAllInternalForestLawSentence w)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalForestLaw w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureTail.packetStructureTailAllInternalCoupledLawsOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalCoupledLawsOnlyOmega w
 end PPAC.Migration.Step4Checks

@@ -2210,7 +2210,7 @@ def check_Packet_original_structural_forward_unfolding() -> dict:
             'common_canonical_accepting_set_and_three_root_laws_exist_only_omega':True,
             'external_Branch_Family_indices_only_finite_metadata_no_runtime_values':True,
             'specified_root_witness_fields_fully_normalized':True,
-            'joint_internal_tree_forest_tail_bound':False,
+            'joint_internal_tree_forest_tail_bound':True,
             'reverse_unbounded_assignment_search_bounds_discharged':False,
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
@@ -2244,7 +2244,39 @@ def check_Packet_specified_structural_root_recursion() -> dict:
             'ALL3_ALL4_ALL2_actual_forward_acceptance_laws_only_omega':True,
             'all_internal_invalid_nonstandard_field_candidates_retained':True,
             'all_actual_accepted_fields_natural_from_real_row':True,
-            'joint_internal_tree_forest_tail_bound':False,
+            'joint_internal_tree_forest_tail_bound':True,
+            'reverse_unbounded_assignment_search_bounds_discharged':False,
+            'full_bytes_Basic_AST_schema_Proof_Con':False}
+
+
+def check_Packet_joint_internal_structural_tail_bounds() -> dict:
+    modules = ['PacketStructureTailSyntax', 'PacketStructureTailChildren', 'PacketStructureTailPoint', 'PacketStructureTailInduction', 'PacketStructureTailBounds', 'PacketStructureTailLawSyntax', 'PacketStructureTailLaws', 'ObjectPacketStructureTail']
+    schemas = ['packetStructureTailActualRawPayloadStrictSubcode', 'packetStructureTailActualConsChildrenStrictSubcodes', 'packetStructureTailTreePointFromJointChildIH', 'packetStructureTailForestPointFromJointChildIH', 'packetStructureTailJointPoint', 'packetStructureTailJointObjectProgressive', 'packetStructureTailAllInternalJointIHDischarged', 'packetStructureTailActualTreeBelowOutput', 'packetStructureTailActualForestBelowOutput', 'packetStructureTailActualTreeContained', 'packetStructureTailActualForestContained', 'packetStructureTailAllInternalTreeLaw', 'packetStructureTailAllInternalForestLaw', 'packetStructureTailAllInternalCoupledLawsOnlyOmega']
+    required = {'PacketStructureTailSyntax': ['def treeProperty', 'def forestProperty', 'def property', '(treeProperty w n).conj (forestProperty w n)', 'def matrix : Formula 2', 'def hypothesis', 'theorem ih_at'], 'PacketStructureTailChildren': ['theorem raw_payload', 'StructuralNodeProperties.components', 'theorem cons_children', 'StructuralConsCore.components', 'accepted_environment hZ 4 4', 'PacketTokenAcceptedNatural.accepted_environment'], 'PacketStructureTailPoint': ['theorem tree_point', 'theorem forest_point', 'PacketStructureRootLaws.tree_forward', 'PacketStructureRootLaws.forest_forward', 'raw_payload hZ5', 'cons_children hZ4', 'PacketTokenBounds.tail_below', '(.conjR hPq)', '(.conjL hPh)'], 'PacketStructureTailInduction': ['theorem point', 'theorem progressive', 'theorem all_property', 'BoundedInduction.induction_on_set PacketStructureTailSyntax.matrix', 'ZFContext.separation hZ PacketStructureTailSyntax.matrix.neg', '(ZFContext.arithmetic hZ).base.foundation'], 'PacketStructureTailBounds': ['theorem tree_tail', 'theorem forest_tail', 'property_at hZ w n hw', 'theorem tree_contained', 'theorem forest_contained'], 'PacketStructureTailLawSyntax': ['OriginalUniversalBlock.allMany 3', 'OriginalUniversalBlock.allMany 4', 'def allLaw', '(allTree w).conj (allForest w)'], 'PacketStructureTailLaws': ['theorem all_tree', 'theorem all_forest', 'theorem all_law', 'PacketStructureTailBounds.tree_tail', 'PacketStructureTailBounds.forest_tail'], 'ObjectPacketStructureTail': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Joint actual structural tail forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Joint actual structural tail proof drift: '+mod+': '+clause)
+    signatures = [('PacketStructureTailInduction','all_property',{'hw'}),('PacketStructureTailBounds','tree_tail',{'hw','ha'}),('PacketStructureTailBounds','forest_tail',{'hw','ha'}),('PacketStructureTailBounds','tree_contained',{'hw','ha','hr','har'}),('PacketStructureTailBounds','forest_contained',{'hw','ha','hr','har'}),('PacketStructureTailLaws','all_tree',{'hw'}),('PacketStructureTailLaws','all_forest',{'hw'}),('PacketStructureTailLaws','all_law',{'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Joint actual structural tail hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketStructureTail.native_'+name not in check: raise RuntimeError('Missing joint actual structural tail native fixture: '+name)
+    return {'one_fixed_object_Formula2_couples_actual_tree_and_forest_tail_properties':True,
+            'real_accepted_children_supply_naturality_and_strict_Raw_Cons_subcode_descent':True,
+            'tree_point_uses_smaller_forest_and_two_actual_Tok_tail_bounds':True,
+            'forest_cons_point_uses_both_smaller_tree_and_smaller_forest':True,
+            'original_Foundation_full_Separation_discharge_all_internal_child_IH':True,
+            'final_ALL3_ALL4_actual_tail_laws_require_only_omega':True,
+            'all_internal_invalid_nonstandard_field_candidates_retained':True,
+            'containment_corollaries_retain_actual_output_bound_and_naturality':True,
             'reverse_unbounded_assignment_search_bounds_discharged':False,
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
@@ -2306,6 +2338,7 @@ def main() -> None:
     Packet_actual_token_numeric_bounds = check_Packet_actual_token_numeric_bounds()
     Packet_original_structural_forward_unfolding = check_Packet_original_structural_forward_unfolding()
     Packet_specified_structural_root_recursion = check_Packet_specified_structural_root_recursion()
+    Packet_joint_internal_structural_tail_bounds = check_Packet_joint_internal_structural_tail_bounds()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5358,7 +5391,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketStructureRoot.native_packetStructureRootActualTreeForward',
                     'PPAC.Migration.Internal.ObjectPacketStructureRoot.native_packetStructureRootActualForestForward',
                     'PPAC.Migration.Internal.ObjectPacketStructureRoot.native_packetStructureRootActualPacketForward',
-                    'PPAC.Migration.Internal.ObjectPacketStructureRoot.native_packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketStructureRoot.native_packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualRawPayloadStrictSubcode',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualConsChildrenStrictSubcodes',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailTreePointFromJointChildIH',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailForestPointFromJointChildIH',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailJointPoint',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailJointObjectProgressive',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalJointIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualTreeBelowOutput',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualForestBelowOutput',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualTreeContained',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualForestContained',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalTreeLaw',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalForestLaw',
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalCoupledLawsOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5370,6 +5417,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketStructureTail": ('packetStructureTailActualRawPayloadStrictSubcode', 'packetStructureTailActualConsChildrenStrictSubcodes', 'packetStructureTailTreePointFromJointChildIH', 'packetStructureTailForestPointFromJointChildIH', 'packetStructureTailJointPoint', 'packetStructureTailJointObjectProgressive', 'packetStructureTailAllInternalJointIHDischarged', 'packetStructureTailActualTreeBelowOutput', 'packetStructureTailActualForestBelowOutput', 'packetStructureTailActualTreeContained', 'packetStructureTailActualForestContained', 'packetStructureTailAllInternalTreeLaw', 'packetStructureTailAllInternalForestLaw', 'packetStructureTailAllInternalCoupledLawsOnlyOmega'),
         "ObjectPacketStructureRoot": ('packetStructureRootTreeFieldsIff', 'packetStructureRootForestNilFieldsIff', 'packetStructureRootForestConsFieldsIff', 'packetStructureRootPacketFieldsIff', 'packetStructureRootAllActualOutcomesNormalized', 'packetStructureRootCanonicalEntryActualAcceptanceIff', 'packetStructureRootCanonicalCriterionActualRecursiveCasesIff', 'packetStructureRootConditionNormalizedForward', 'packetStructureRootActualRecursiveCasesWithoutCanonicalSet', 'packetStructureRootActualAcceptedRecursiveCasesOnlyOmega', 'packetStructureRootActualAcceptedAllFieldsNatural', 'packetStructureRootAllInternalOutcomeFieldNormalization', 'packetStructureRootAllInternalAcceptedRecursion', 'packetStructureRootActualTreeForward', 'packetStructureRootActualForestForward', 'packetStructureRootActualPacketForward', 'packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega'),
         "ObjectPacketStructure": ('packetStructureTreeExactMatrix', 'packetStructureForestNilExactMatrix', 'packetStructureForestConsExactMatrix', 'packetStructurePacketExactMatrix', 'packetStructureAllFourCompleteLocalMatrices', 'packetStructureOriginalBoundedApplicationsIff', 'packetStructureOriginalApplicationForward', 'packetStructureOriginalThreeTagDispatch', 'packetStructureActualConditionBoundedIff', 'packetStructureActualConditionForward', 'packetStructureActualRootLaw', 'packetStructureAllInternalRootLaws', 'packetStructureActualSystemExistsOnlyOmega'),
         "ObjectPacketTokenBounds": ('packetTokenTwoCoordinateSumComparison', 'packetTokenTwoCoordinateProductComparison', 'packetTokenActualAffineComparison', 'packetTokenSmallInputTailBounds', 'packetTokenAllInternalBoundsIHDischarged', 'packetTokenInputTailBoundsAtRadices', 'packetTokenAllNumericBoundsAtRadices', 'packetTokenAllInternalNumericBoundsOnlyOmega', 'packetTokenActualInputTailBoundsOnlyOmega', 'packetTokenActualInputBelowOutput', 'packetTokenActualTailBelowOutput', 'packetTokenActualContainedInputTailBounds'),
@@ -6355,6 +6403,12 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_joint_internal_structural_tail_bounds_guard": Packet_joint_internal_structural_tail_bounds,
+        'object_Packet_structural_actual_tree_tail_le_output_proved': True,
+        'object_Packet_structural_actual_forest_tail_le_output_proved': True,
+        'object_Packet_structural_tail_all_internal_IH_discharged': True,
+        'object_Packet_structural_tail_bounds_require_only_omega': True,
+        'object_Packet_structural_actual_child_subcode_descent_proved': True,
         "Packet_specified_structural_root_recursion_guard": Packet_specified_structural_root_recursion,
         'object_Packet_structural_actual_acceptance_independently_defined': True,
         'object_Packet_structural_canonical_entries_actual_acceptance_iff_proved': True,
@@ -6368,7 +6422,7 @@ def main() -> None:
         'object_Packet_structural_three_tag_dispatch_proved': True,
         'object_Packet_structural_all_internal_forward_root_system_proved': True,
         'object_Packet_structural_unbounded_reverse_search_bounds_discharged': False,
-        'object_Packet_structural_joint_internal_tail_bound_proved': False,
+        'object_Packet_structural_joint_internal_tail_bound_proved': True,
         'object_Packet_structural_specified_root_fields_normalized': True,
         "Packet_actual_token_numeric_bounds_guard": Packet_actual_token_numeric_bounds,
         'object_Packet_token_numeric_input_tail_bounds_internal_IH_discharged': True,

@@ -259,3 +259,4 @@ import PPAC.Migration.Internal.ObjectPacketTokenExecution
 import PPAC.Migration.Internal.ObjectPacketTokenBounds
 import PPAC.Migration.Internal.ObjectPacketStructure
 import PPAC.Migration.Internal.ObjectPacketStructureRoot
+import PPAC.Migration.Internal.ObjectPacketStructureTail

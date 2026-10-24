@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+实际Tree／Forest的联合内部tail界已验收：一个固定对象Formula2同时包含两类性质，真实Raw payload与Cons头／尾的严格子码界由实际接受字段自然性取得；Tree使用较小Forest及两份真实Tok界，ForestCons使用较小Tree及较小Forest。原Foundation及该联合矩阵的完整Separation实例消去全部内部IH。最终仅Ω推出ALL3／ALL4真实接受的tail≤output，包含推论保留真实输出界及上界自然性。8模块99声明、14组原nativeZF闭句；2296构建、24828审计（472无公理／24356允许依赖）、零警告；九命令／五trust=0通过，2076哈希、2775对精确足迹、22484项Internal覆盖。联合tail顶层门及两个对应子门false→true，其余既有布尔叶原值保持。原反向搜索界、规范字节程序、Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_STRUCTURE_TAIL_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 指定tree／forest／packet根字段归一及实际接受的正向递归已验收：原EX8／3／8／4完整见证经原构造器注入性与对象等号替换对齐；空森林给出内部零长度、对应单位码及tail=output。无界结果与固定根分支双向等价，规范成员与独立实际接受双向对应；根行和规范V对象消去。最终仅Ω给出ALL3／ALL4／ALL2实际接受正向递归及全字段自然性，全部内部及无效候选保留。14模块171声明、17组原nativeZF闭句；2288构建、24729审计（472无公理／24257允许依赖）、零警告；九命令／五trust=0通过，2068哈希、2761对精确足迹、22385项Internal覆盖。指定根字段归一顶层门及对应旧guard子门false→true，其余既有布尔叶原值保持。联合tail界、原反向搜索界消去、规范字节程序、Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_STRUCTURE_ROOT_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
