@@ -2316,6 +2316,46 @@ def check_Packet_structural_search_bounds_and_typed_recursion() -> dict:
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
 
+def check_Packet_actual_token_prefix_inverse() -> dict:
+    modules = ['PacketTokenPrefixTransport','PacketTokenPrefixSyntax','PacketTokenPrefixValues','PacketTokenPrefixPoint','PacketTokenPrefixInduction','PacketTokenPrefixLawSyntax','PacketTokenPrefixLaws','ObjectPacketTokenPrefix']
+    required = {
+        'PacketTokenPrefixTransport':['Derives.eqSubst','theorem accepted_output','theorem sum_output'],
+        'PacketTokenPrefixSyntax':['OriginalUniversalBlock.allMany 4','def matrix : Formula 2','theorem property_at','theorem input_subst'],
+        'PacketTokenPrefixValues':['theorem shifted_not_small','GodelPairArithmetic.sum_right_bound','NaturalOrderBasic.below_not_reverse','theorem small_large_false','PacketDivisionUnique.unique','theorem large_values','PacketTokenPrefixTransport.accepted_output','GodelPairArithmetic.cancel_sum_left','PacketAffineCore.unique'],
+        'PacketTokenPrefixPoint':['theorem small_point','theorem large_cases_unique','theorem large_point','HornBinderRules.eliminate_many 4 L','HornBinderRules.eliminate_many 4 M','PacketTokenPrefixValues.small_large_false','PacketTokenPrefixValues.large_values'],
+        'PacketTokenPrefixInduction':['theorem base','theorem step','theorem all_property','PacketQuotientInduction.all_holds hZ false PacketTokenPrefixSyntax.matrix','PacketTokenAcceptedNatural.accepted_environment'],
+        'PacketTokenPrefixLawSyntax':['OriginalUniversalBlock.allMany 5','def five','def allLaw'],
+        'PacketTokenPrefixLaws':['SyntaxNumerals.exists_numeral hZ 128','SyntaxNumerals.exists_numeral hZ1 256','theorem all_law','theorem unique','theorem fiber_iff','theorem output_iff','PacketTokenExecution.unique'],
+        'ObjectPacketTokenPrefix':['TheoryTransport.sentence','ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Actual token prefix forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Actual token prefix proof drift: '+mod+': '+clause)
+    for name,expected in [('all_law',{'hw'}),('unique',{'hw','ha','hb'}),('input_unique',{'hw','ha','hb'}),('tail_unique',{'hw','ha','hb'}),('fiber_iff',{'hw','ha'}),('output_iff',{'hw','ha','hb'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts['PacketTokenPrefixLaws'])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Actual token prefix hidden premise: '+name)
+    schemas = ['packetTokenPrefixShiftedByteNotSmall', 'packetTokenPrefixTerminalContinuationDisjoint', 'packetTokenPrefixTerminalInverse', 'packetTokenPrefixLargeWitnessInverse', 'packetTokenPrefixAllQuotientInduction', 'packetTokenPrefixAllAtRadices', 'packetTokenPrefixAllInternalOnlyOmega', 'packetTokenPrefixJointInverseOnlyOmega', 'packetTokenPrefixInputOnlyOmega', 'packetTokenPrefixTailOnlyOmega', 'packetTokenPrefixActualFiberIffOnlyOmega', 'packetTokenPrefixOutputIffOnlyOmega']
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketTokenPrefix.native_'+name not in checks: raise RuntimeError('Missing actual token prefix fixture: '+name)
+    return {'actual_Tok_independently_defined_acceptance_preserved':True,
+            'terminal_continuation_byte_disjointness_object_derived':True,
+            'all_internal_numeric_inputs_and_remaining_tails_jointly_unique':True,
+            'both_full_large_witness_blocks_object_eliminated':True,
+            'original_Foundation_Separation_quotient_induction_all_IH_discharged':True,
+            '128_256_radix_witnesses_constructed_and_object_eliminated':True,
+            'final_ALL5_and_scalar_inverse_require_only_omega':True,
+            'exact_actual_prefix_fiber_and_output_iff_proved':True,
+            'all_invalid_and_nonstandard_candidates_remain_quantified':True,
+            'full_canonical_byte_sequence_readTokens_bridge_proved':False,
+            'full_Basic_AST_schema_Proof_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2375,6 +2415,7 @@ def main() -> None:
     Packet_specified_structural_root_recursion = check_Packet_specified_structural_root_recursion()
     Packet_joint_internal_structural_tail_bounds = check_Packet_joint_internal_structural_tail_bounds()
     Packet_structural_search_bounds_and_typed_recursion = check_Packet_structural_search_bounds_and_typed_recursion()
+    Packet_actual_token_prefix_inverse = check_Packet_actual_token_prefix_inverse()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5455,7 +5496,19 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllInternalRootConditionIff',
                     'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllInternalActualTypedRecursion',
                     'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllThreeActualTypedRecursionLaws',
-                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchCanonicalRootSystemExistsOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchCanonicalRootSystemExistsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixShiftedByteNotSmall',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixTerminalContinuationDisjoint',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixTerminalInverse',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixLargeWitnessInverse',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixAllQuotientInduction',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixAllAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixAllInternalOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixJointInverseOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixInputOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixTailOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixActualFiberIffOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixOutputIffOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5467,6 +5520,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketTokenPrefix": ('packetTokenPrefixShiftedByteNotSmall', 'packetTokenPrefixTerminalContinuationDisjoint', 'packetTokenPrefixTerminalInverse', 'packetTokenPrefixLargeWitnessInverse', 'packetTokenPrefixAllQuotientInduction', 'packetTokenPrefixAllAtRadices', 'packetTokenPrefixAllInternalOnlyOmega', 'packetTokenPrefixJointInverseOnlyOmega', 'packetTokenPrefixInputOnlyOmega', 'packetTokenPrefixTailOnlyOmega', 'packetTokenPrefixActualFiberIffOnlyOmega', 'packetTokenPrefixOutputIffOnlyOmega'),
         "ObjectPacketStructureSearch": ('packetStructureSearchAllOriginalAssignmentNaturality', 'packetStructureSearchAllOriginalAssignmentBounds', 'packetStructureSearchActualAffineTailOnlyOmega', 'packetStructureSearchFourOriginalApplicationsIff', 'packetStructureSearchActualRootConditionRecursionIff', 'packetStructureSearchTypedActualAcceptanceBackward', 'packetStructureSearchActualAcceptanceTypedRecursionIff', 'packetStructureSearchActualTreeTypedRecursionIff', 'packetStructureSearchActualForestTypedRecursionIff', 'packetStructureSearchActualPacketTypedRecursionIff', 'packetStructureSearchAllInternalRootConditionIff', 'packetStructureSearchAllInternalActualTypedRecursion', 'packetStructureSearchAllThreeActualTypedRecursionLaws', 'packetStructureSearchCanonicalRootSystemExistsOnlyOmega'),
         "ObjectPacketStructureTail": ('packetStructureTailActualRawPayloadStrictSubcode', 'packetStructureTailActualConsChildrenStrictSubcodes', 'packetStructureTailTreePointFromJointChildIH', 'packetStructureTailForestPointFromJointChildIH', 'packetStructureTailJointPoint', 'packetStructureTailJointObjectProgressive', 'packetStructureTailAllInternalJointIHDischarged', 'packetStructureTailActualTreeBelowOutput', 'packetStructureTailActualForestBelowOutput', 'packetStructureTailActualTreeContained', 'packetStructureTailActualForestContained', 'packetStructureTailAllInternalTreeLaw', 'packetStructureTailAllInternalForestLaw', 'packetStructureTailAllInternalCoupledLawsOnlyOmega'),
         "ObjectPacketStructureRoot": ('packetStructureRootTreeFieldsIff', 'packetStructureRootForestNilFieldsIff', 'packetStructureRootForestConsFieldsIff', 'packetStructureRootPacketFieldsIff', 'packetStructureRootAllActualOutcomesNormalized', 'packetStructureRootCanonicalEntryActualAcceptanceIff', 'packetStructureRootCanonicalCriterionActualRecursiveCasesIff', 'packetStructureRootConditionNormalizedForward', 'packetStructureRootActualRecursiveCasesWithoutCanonicalSet', 'packetStructureRootActualAcceptedRecursiveCasesOnlyOmega', 'packetStructureRootActualAcceptedAllFieldsNatural', 'packetStructureRootAllInternalOutcomeFieldNormalization', 'packetStructureRootAllInternalAcceptedRecursion', 'packetStructureRootActualTreeForward', 'packetStructureRootActualForestForward', 'packetStructureRootActualPacketForward', 'packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega'),
@@ -6454,6 +6508,13 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_actual_token_prefix_inverse_guard": Packet_actual_token_prefix_inverse,
+        'object_Packet_actual_token_numeric_prefix_inverse_proved': True,
+        'object_Packet_actual_token_joint_input_remaining_tail_unique_proved': True,
+        'object_Packet_actual_token_terminal_continuation_disjoint_proved': True,
+        'object_Packet_actual_token_prefix_ALL5_requires_only_omega': True,
+        'object_Packet_actual_token_prefix_all_internal_IH_discharged': True,
+        'object_Packet_actual_token_prefix_exact_accepted_fiber_proved': True,
         "Packet_structural_search_bounds_and_typed_recursion_guard": Packet_structural_search_bounds_and_typed_recursion,
         'object_Packet_structural_all_original_assignment_naturality_proved': True,
         'object_Packet_structural_four_full_original_application_equivalences_proved': True,

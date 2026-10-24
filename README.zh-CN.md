@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+实际Tok的全内部数值前缀逆唯一性已验收：同一输出唯一确定数值与剩余tail，终止字节与128移位延续字节不相容。固定对象Formula2沿原Foundation／Separation商归纳消去全部内部IH；两份真实EX4见证及128／256见证均对象消去。最终仅Ω取得ALL5联合唯一性、准确已接受纤维及输出相等↔数值和tail同时相等。8模块81声明、12组原nativeZF闭句；2314构建、25016审计（472无公理／24544允许依赖）、零警告；九命令／五trust=0通过，2094哈希、2801对精确足迹、22672项Internal覆盖。全部旧布尔叶保持。规范字节序列与原readTokens／varint的全内部对应、Basic AST桥、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_TOKEN_PREFIX_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原结构规则反向搜索界及实际带类型递归双条件已验收：原7／1／6／3赋值的全部自然性从真实head／前提行取得，原head变量界、真实Tok输入／tail界、联合Tree-tail界及实际仿射商界消去全部搜索界；256辅助见证对象消去。四条完整原Application↔无界Outcome，根Condition↔归一Case，独立实际Accepted↔NatFields∧Case；Nil-tail自然性保留。最终仅Ω取得ALL3／ALL4／ALL2准确实际递归及同一规范V的全根系统。10模块107声明、14组原nativeZF闭句；2306构建、24935审计（472无公理／24463允许依赖）、零警告；九命令／五trust=0通过，2086哈希、2789对精确足迹、22591项Internal覆盖。搜索界顶层门及三个对应子门false→true，其余旧布尔叶原值保持。规范字节序列／原varint、Basic AST桥、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_STRUCTURE_SEARCH_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
