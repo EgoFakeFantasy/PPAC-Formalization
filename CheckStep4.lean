@@ -10891,4 +10891,76 @@ example {m} (kind : Fin 3) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives n
       (Internal.ProjectAtomicExistence.allInputs kind w z))).close)) :=
   Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs kind w z
 
+example {m} (w c n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceStateExistsSentence w c n h)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceStateExists w c n h
+
+example {m} (w c n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceStateUniqueFiberSentence w c n h)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceStateUniqueFiber w c n h
+
+example {m} (w a c n h v b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceStateEdgesIffSentence w a c n h v b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceStateEdgesIff w a c n h v b f
+
+example {m} (w c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceRecursorsSentence w c)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceRecursors w c
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceActualCarrierRecursorsSentence w)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceActualCarrierRecursors w
+
+example {m} (w c n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceNaturalEvaluationExistsSentence w c n)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceNaturalEvaluationExists w c n
+
+example {m} (w c n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceEvaluationUniqueFiberSentence w c n)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceEvaluationUniqueFiber w c n
+
+example {m} (w a c n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceTypedRecursiveIffSentence w a c n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceTypedRecursiveIff w a c n b f
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceCodeCarrierExistsSentence w)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceCodeCarrierExists w
+
+example {m} (w a c n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceCodeAtCarrierIffSentence w a c n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceCodeAtCarrierIff w a c n b f
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceCodeGuardsSentence w n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceCodeGuards w n b f
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceNonNaturalCodeRejectedSentence w n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceNonNaturalCodeRejected w n b f
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceInvalidContextRejectedSentence w n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceInvalidContextRejected w n b f
+
+example {m} (w v n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceCodeOmegaIndependentSentence w v n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceCodeOmegaIndependent w v n b f
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceCodeRecursiveIffSentence w n b f)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceCodeRecursiveIff w n b f
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectSourceCode.projectSourceAllInternalRecursiveLawSentence w)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw w
+-- An object ALL3 law; no external AST/standardness or carrier premise remains.
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp (Source.Formula.all (Source.Formula.all (Source.Formula.all
+      ((Internal.ProjectSourceCodeSyntax.sourceCode w.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc
+        (Fin.last (m+1)).castSucc (Fin.last (m+2))).iff
+        (Internal.ProjectSourceCodeRecursiveSyntax.criterion w.castSucc.castSucc.castSucc (Fin.last m).castSucc.castSucc
+        (Fin.last (m+1)).castSucc (Fin.last (m+2)))))))).close)) :=
+  Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw w
+
 end PPAC.Migration.Step4Checks

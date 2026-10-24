@@ -1461,6 +1461,62 @@ def check_Project_atomic_compile() -> dict:
             'complete_schema_test_Proof_interpretation_Con_proved':False}
 
 
+def check_Project_source_recursive_grammar() -> dict:
+    modules=['ProjectSourceAtomSyntax', 'ProjectSourceAtoms', 'ProjectSourceLocalSyntax', 'ProjectSourceLocal', 'ProjectSourceTypeStateSyntax', 'ProjectSourceTypeStateRows', 'ProjectSourceTypeStateExistence', 'ProjectSourceTypeStateMembership', 'ProjectSourceTypeRecursionSyntax', 'ProjectSourceTypeRecursionStep', 'ProjectSourceTypeRecursors', 'ProjectSourceTypeEvaluationSyntax', 'ProjectSourceTypeEvaluationExistence', 'ProjectSourceTypeEvaluationUnique', 'ProjectSourceTypeGraphValues', 'ProjectSourceTypeHistory', 'ProjectSourceTypeJudgmentSyntax', 'ProjectSourceTypeJudgment', 'ProjectSourceTypeRecursiveSyntax', 'ProjectSourceTypeReadTransfer', 'ProjectSourceTypeFieldsTransfer', 'ProjectSourceTypeCaseTransfer', 'ProjectSourceTypeLocalTransfer', 'ProjectSourceTypeRecursive', 'ProjectSourceCodeSyntax', 'ProjectSourceCodeTransport', 'ProjectSourceCodeCarrier', 'ProjectSourceCodeRecursiveSyntax', 'ProjectSourceCodeCongruence', 'ProjectSourceCodeCriterionTransfer', 'ProjectSourceCodeProperties', 'ProjectSourceCodeRecursive', 'ObjectProjectSourceCode']
+    texts={n:strip_comments((ROOT/'PPAC/Migration/Internal'/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for name,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option\s+(?:maxHeartbeats|linter\.)',text):raise RuntimeError('Forbidden Project source shortcut: '+name)
+        if 'FormulaCodeSyntax.formulaCode' in text or 'ProjectAtomicSyntax.result' in text or 'ProjectAtomicSyntax.compiled' in text:raise RuntimeError('Source validity must be independent of target validity/compilation')
+    # Recheck the complete proof re-instantiation, not just selected tokens.
+    mapping={'SyntaxFormulaLocalSyntax': 'ProjectSourceLocalSyntax', 'SyntaxFormulaLocal': 'ProjectSourceLocal', 'SyntaxTypeStateSyntax': 'ProjectSourceTypeStateSyntax', 'SyntaxTypeStateRows': 'ProjectSourceTypeStateRows', 'SyntaxTypeStateExistence': 'ProjectSourceTypeStateExistence', 'SyntaxTypeStateMembership': 'ProjectSourceTypeStateMembership', 'SyntaxTypeRecursionSyntax': 'ProjectSourceTypeRecursionSyntax', 'SyntaxTypeRecursionStep': 'ProjectSourceTypeRecursionStep', 'SyntaxTypeRecursors': 'ProjectSourceTypeRecursors', 'SyntaxTypeEvaluationSyntax': 'ProjectSourceTypeEvaluationSyntax', 'SyntaxTypeEvaluationExistence': 'ProjectSourceTypeEvaluationExistence', 'SyntaxTypeEvaluationUnique': 'ProjectSourceTypeEvaluationUnique', 'SyntaxTypeGraphValues': 'ProjectSourceTypeGraphValues', 'SyntaxTypeHistory': 'ProjectSourceTypeHistory', 'SyntaxTypeJudgmentSyntax': 'ProjectSourceTypeJudgmentSyntax', 'SyntaxTypeJudgment': 'ProjectSourceTypeJudgment', 'SyntaxTypeRecursiveSyntax': 'ProjectSourceTypeRecursiveSyntax', 'SyntaxTypeReadTransfer': 'ProjectSourceTypeReadTransfer', 'SyntaxTypeFieldsTransfer': 'ProjectSourceTypeFieldsTransfer', 'SyntaxTypeCaseTransfer': 'ProjectSourceTypeCaseTransfer', 'SyntaxTypeLocalTransfer': 'ProjectSourceTypeLocalTransfer', 'SyntaxTypeRecursive': 'ProjectSourceTypeRecursive', 'FormulaCodeSyntax': 'ProjectSourceCodeSyntax', 'FormulaCodeTransport': 'ProjectSourceCodeTransport', 'FormulaCodeCarrier': 'ProjectSourceCodeCarrier', 'FormulaCodeRecursiveSyntax': 'ProjectSourceCodeRecursiveSyntax', 'FormulaCodeCongruence': 'ProjectSourceCodeCongruence', 'FormulaCodeCriterionTransfer': 'ProjectSourceCodeCriterionTransfer', 'FormulaCodeProperties': 'ProjectSourceCodeProperties', 'FormulaCodeRecursive': 'ProjectSourceCodeRecursive'}
+    for src,dst in mapping.items():
+        expected=strip_comments((ROOT/'PPAC/Migration/Internal'/(src+'.lean')).read_text(encoding='utf-8'))
+        for a,b in sorted(mapping.items(),key=lambda kv:-len(kv[0])):expected=re.sub(r'\b'+a+r'\b',b,expected)
+        expected=expected.replace('import PPAC.Migration.Internal.ObjectSyntaxTypeStates','import PPAC.Migration.Internal.ProjectSourceTypeJudgment').replace('import PPAC.Migration.Internal.ObjectSyntaxTypeRecursive','import PPAC.Migration.Internal.ProjectSourceTypeRecursive')
+        expected=expected.replace('formulaCode','sourceCode').replace('SyntaxAtomSyntax.atomic','ProjectSourceAtomSyntax.atomic')
+        expected=re.sub(r'(?<![.\w])atomic_rename\b','ProjectSourceAtomSyntax.atomic_rename',expected)
+        expected=re.sub(r'(?<![.\w])atomic\b','ProjectSourceAtomSyntax.atomic',expected)
+        expected=expected.replace('SyntaxAtomCases.context','ProjectSourceAtoms.context').replace('SyntaxAtomCases.range','ProjectSourceAtoms.range')
+        if src=='SyntaxFormulaLocalSyntax':expected='import PPAC.Migration.Internal.ProjectSourceAtoms\n'+expected
+        if expected.strip()!=texts[dst].strip():raise RuntimeError('Project source object proof re-instantiation drift: '+dst)
+    required={
+      'ProjectSourceAtomSyntax':['ProjectAtomicSyntax.sourceAt kind','existsMany 2','SyntaxAtomSyntax.nullary false','SyntaxAtomSyntax.nullary true','binaryAtom 0','binaryAtom 1','binaryAtom 2'],
+      'ProjectSourceAtoms':['SyntaxNodeInjective.constructor_range','HornBinderRules.eliminate_many 2','theorem context','theorem range'],
+      'ProjectSourceLocalSyntax':['ProjectSourceAtomSyntax.atomic','negation w b f h n','binary 0 w b f h n','binary 1 w b f h n','binary 2 w b f h n','binary 3 w b f h n','quantified true w b f h n','quantified false w b f h n'],
+      'ProjectSourceTypeStateSyntax':['MinimalPredicates.separated selectionMatrix','def rowBody'],
+      'ProjectSourceTypeStateExistence':['MinimalInstances.separation_instance','extensionality_instance'],
+      'ProjectSourceTypeRecursors':['ObjectTransfiniteRecursion.source_uniqueness matrix','ProjectSourceTypeRecursionStep.total','ProjectSourceTypeRecursionStep.deterministic','theorem actual_carrier_recursors'],
+      'ProjectSourceTypeEvaluationExistence':['InsertExistence.exists_insert','ProjectSourceTypeRecursors.exists_graph','OrdinalSuccessor.ordinal'],
+      'ProjectSourceTypeEvaluationUnique':['OrdinalRecursionCompatibility','theorem exists_unique'],
+      'ProjectSourceTypeRecursive':['ProjectSourceTypeHistory.from_value','ProjectSourceTypeStateMembership.edge_iff','theorem recursive_iff'],
+      'ProjectSourceCodeSyntax':['def sourceCode','carrier w.castSucc.castSucc','typed w.castSucc.castSucc'],
+      'ProjectSourceCodeCarrier':['PowerSetLogic.unique','theorem exists_carrier','theorem code_iff_typed'],
+      'ProjectSourceCodeRecursive':['def universalLaw','theorem all_law','ProjectSourceCodeCarrier.exists_carrier','theorem recursive_iff'],
+      'ObjectProjectSourceCode':['TheoryTransport.sentence','ZFReplay.replay','native_projectSourceAllInternalRecursiveLaw']}
+    for name,clauses in required.items():
+        missing=[x for x in clauses if x not in texts[name]]
+        if missing:raise RuntimeError('Project source proof drift: '+name+': '+repr(missing))
+    for module,name,premises in [('ProjectSourceTypeRecursors','all_unique',set()),('ProjectSourceTypeStateExistence','exists_state',set()),('ProjectSourceCodeRecursive','recursive_iff',{'hw'}),('ProjectSourceCodeRecursive','all_law',{'hw'})]:
+        h=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[module])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0)))!=premises:raise RuntimeError('Project source hidden premise: '+module+'.'+name)
+        if re.search(r'hIH\s*:|Promise|Consistent|Model|Nat\)',h.group(0)):raise RuntimeError('External Project source correctness premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for clause in ['ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw w','Internal.ProjectSourceCodeSyntax.sourceCode w.castSucc.castSucc.castSucc','Internal.ProjectSourceCodeRecursiveSyntax.criterion w.castSucc.castSucc.castSucc']:
+        if clause not in check:raise RuntimeError('Missing expanded native Project source universal check')
+    return {'independent_source_grammar_has_five_atomic_and_seven_logical_modes':True,
+            'Project_atomic_terms_bound_only_no_free_term_branch':True,
+            'thirty_object_recursion_proof_modules_reinstantiated_and_compared_exactly':True,
+            'actual_Separation_states_and_full_ordinal_recursors_exists_unique':True,
+            'actual_internal_evaluation_unique_and_compatible_histories_proved':True,
+            'source_code_two_power_carriers_and_evaluation_witnesses_object_existential':True,
+            'full_source_recursive_iff_for_all_internal_root_and_scope_candidates':True,
+            'final_ALL3_recursive_law_has_only_Omega_premise':True,
+            'invalid_natural_and_context_guards_and_omega_independence_proved':True,
+            'target_twelve_constructor_body_compiler_and_recursive_IH_discharged':False,
+            'actual_NatPacket_schema_packets_and_Horn_test_correspondence_proved':False,
+            'complete_schema_test_Proof_interpretation_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1498,6 +1554,7 @@ def main() -> None:
     all_internal_forall_closure = check_all_internal_forall_closure()
     three_schema_index_system = check_three_schema_index_system()
     Project_atomic_compile = check_Project_atomic_compile()
+    Project_source_recursive_grammar = check_Project_source_recursive_grammar()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4250,7 +4307,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicCompiledUnique',
                     'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectEqualitySameCode',
                     'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicTypedUnique',
-                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceStateExists',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceStateUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceStateEdgesIff',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceRecursors',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceActualCarrierRecursors',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceNaturalEvaluationExists',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceEvaluationUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceTypedRecursiveIff',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeCarrierExists',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeAtCarrierIff',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeGuards',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceNonNaturalCodeRejected',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceInvalidContextRejected',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeOmegaIndependent',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeRecursiveIff',
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4262,6 +4335,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectSourceCode": ('projectSourceStateExists', 'projectSourceStateUniqueFiber', 'projectSourceStateEdgesIff', 'projectSourceRecursors', 'projectSourceActualCarrierRecursors', 'projectSourceNaturalEvaluationExists', 'projectSourceEvaluationUniqueFiber', 'projectSourceTypedRecursiveIff', 'projectSourceCodeCarrierExists', 'projectSourceCodeAtCarrierIff', 'projectSourceCodeGuards', 'projectSourceNonNaturalCodeRejected', 'projectSourceInvalidContextRejected', 'projectSourceCodeOmegaIndependent', 'projectSourceCodeRecursiveIff', 'projectSourceAllInternalRecursiveLaw'),
         "ObjectProjectAtomic": ('projectBoundShiftUnique', 'projectBoundShiftRange', 'projectBoundShiftTargetType', 'projectBoundShiftExists', 'projectBoundShiftExistsUnique', 'projectSubsetUnique', 'projectSubsetTargetType', 'projectSubsetExists', 'projectSubsetTypedUnique', 'projectAtomicResultUnique', 'projectAtomicCompiledType', 'projectAtomicCompiledUnique', 'projectEqualitySameCode', 'projectAtomicTypedUnique', 'projectAtomicAllInternalInputs'),
         "ObjectSchemaIndex": ('doubleShiftExists', 'doubleShiftMap', 'doubleShiftEdgesIff', 'doubleShiftUnique', 'schemaIndexGraphExists', 'schemaIndexMap', 'schemaIndexZeroIff', 'schemaCollectionOneIff', 'schemaSeparationTailIff', 'schemaCollectionTailIff', 'schemaIndexStateExists', 'schemaIndexCodeExists', 'schemaIndexRenameLaw', 'schemaIndexRenameAt', 'schemaIndexSystemExists'),
         "ObjectForallClosure": ('unaryIterationExistsUnique', 'unaryIterationNaturalRange', 'unaryIterationUnique', 'unaryIterationZeroIff', 'unaryIterationSuccessorIff', 'unaryIterationAllInternalCounts', 'forallClosureUniformTyping', 'forallClosureTypingIff', 'forallClosureClosedIff', 'forallClosureClosedExistsUnique', 'forallClosureAllInternalCounts'),
@@ -5216,6 +5290,9 @@ def main() -> None:
         "all_internal_forall_closure_guard": all_internal_forall_closure,
         "three_schema_index_system_guard": three_schema_index_system,
         "Project_atomic_compile_guard": Project_atomic_compile,
+        "Project_source_recursive_grammar_guard": Project_source_recursive_grammar,
+        'object_Project_source_twelve_constructor_recursive_code_equation_proved': True,
+        'object_Project_source_actual_carriers_and_recursors_object_eliminated': True,
         'object_Project_bound_term_internal_shift_proved': True,
         'object_Project_subset_internal_expansion_typed_unique_proved': True,
         'object_Project_three_atomic_internal_compile_proved': True,

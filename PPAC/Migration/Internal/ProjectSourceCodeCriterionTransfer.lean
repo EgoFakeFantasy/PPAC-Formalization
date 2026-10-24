@@ -1,0 +1,84 @@
+import PPAC.Migration.Internal.ProjectSourceCodeCongruence
+
+/-! 固定真实载体下，将所有Typed查询替换为SourceCode；覆盖全部内部子码及后继见证。 -/
+namespace PPAC.Migration.Internal.ProjectSourceCodeCriterionTransfer
+open Source SourceAlgebra SourceLogic OmegaSyntax SyntaxTermSyntax SyntaxLogicalSyntax SyntaxAtomSyntax
+open ProjectSourceTypeJudgmentSyntax ProjectSourceCodeSyntax ProjectSourceCodeCongruence
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+
+theorem typed_iff_code {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c n b f : Fin m)
+    (hc : Derives Γ (carrier w a c)) : Derives Γ ((typed w c n b f).iff (sourceCode w n b f)) := by
+  have hh := ProjectSourceCodeCarrier.code_iff_typed hZ w a c n b f hc
+  exact .conjI (.conjR hh) (.conjL hh)
+
+theorem advanced_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c x b f : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.advancedTyped w c x b f).iff (ProjectSourceCodeRecursiveSyntax.advancedCode w x b f)) := by
+  apply ex_congr
+  have hc1 : Derives (Context.image Formula.raise Γ) (carrier w.castSucc a.castSucc c.castSucc) := by
+    simpa only [carrier_rename] using Derives.rename Fin.castSucc hc
+  exact conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+    (typed_iff_code (ZFContext.rename hZ Fin.castSucc) w.castSucc a.castSucc c.castSucc x.castSucc (Fin.last m) f.castSucc hc1)
+
+theorem check_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (advance : Bool) (w a c x b f : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.stepCheck advance w c x b f).iff (ProjectSourceCodeRecursiveSyntax.stepCheck advance w x b f)) := by
+  cases advance
+  · exact typed_iff_code hZ w a c x b f hc
+  · exact advanced_iff hZ w a c x b f hc
+
+theorem single_fields_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (tag : Nat) (advance : Bool) (w a c b f x n : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.singleFields tag advance w c b f x n).iff (ProjectSourceCodeRecursiveSyntax.singleFields tag advance w b f x n)) :=
+  conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+    (conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _) (check_iff hZ advance w a c x b f hc))
+
+theorem binary_fields_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w a c b f x y n : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.binaryFields kind w c b f x y n).iff (ProjectSourceCodeRecursiveSyntax.binaryFields kind w b f x y n)) :=
+  conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+    (conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+      (conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+        (conj_congr (typed_iff_code hZ w a c x b f hc) (typed_iff_code hZ w a c y b f hc))))
+
+theorem single_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (tag : Nat) (advance : Bool) (w a c b f n : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.singleCase tag advance w c b f n).iff (ProjectSourceCodeRecursiveSyntax.singleCase tag advance w b f n)) := by
+  apply conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+  apply ex_congr
+  have hc1 : Derives (Context.image Formula.raise Γ) (carrier w.castSucc a.castSucc c.castSucc) := by
+    simpa only [carrier_rename] using Derives.rename Fin.castSucc hc
+  exact single_fields_iff (ZFContext.rename hZ Fin.castSucc) tag advance
+    w.castSucc a.castSucc c.castSucc b.castSucc f.castSucc (Fin.last m) n.castSucc hc1
+
+theorem binary_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w a c b f n : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.binaryCase kind w c b f n).iff (ProjectSourceCodeRecursiveSyntax.binaryCase kind w b f n)) := by
+  apply conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _)
+  apply ex_congr
+  apply ex_congr
+  have hc2 : Derives (Context.image Formula.raise (Context.image Formula.raise Γ))
+      (carrier w.castSucc.castSucc a.castSucc.castSucc c.castSucc.castSucc) := by
+    simpa only [carrier_rename] using Derives.rename Fin.castSucc (Derives.rename Fin.castSucc hc)
+  exact binary_fields_iff (ZFContext.rename (ZFContext.rename hZ Fin.castSucc) Fin.castSucc) kind
+    w.castSucc.castSucc a.castSucc.castSucc c.castSucc.castSucc b.castSucc.castSucc f.castSucc.castSucc
+    (Fin.last m).castSucc (Fin.last (m+1)) n.castSucc.castSucc hc2
+
+theorem all_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c n b f : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.allCases w c n b f).iff (ProjectSourceCodeRecursiveSyntax.allCases w n b f)) := by
+  open ProjectSourceTypeLocalTransfer in
+  exact disj_congr (iff_refl (ProjectSourceAtomSyntax.atomic w b f n))
+    (disj_congr (single_iff hZ 4 false w a c b f n hc)
+      (disj_congr (binary_iff hZ 0 w a c b f n hc)
+        (disj_congr (binary_iff hZ 1 w a c b f n hc)
+          (disj_congr (binary_iff hZ 2 w a c b f n hc)
+            (disj_congr (binary_iff hZ 3 w a c b f n hc)
+              (disj_congr (single_iff hZ 9 true w a c b f n hc)
+                (single_iff hZ 10 true w a c b f n hc)))))))
+
+theorem criterion_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c n b f : Fin m)
+    (hc : Derives Γ (carrier w a c)) :
+    Derives Γ ((ProjectSourceTypeRecursiveSyntax.criterion w c n b f).iff (ProjectSourceCodeRecursiveSyntax.criterion w n b f)) :=
+  conj_congr (ProjectSourceTypeLocalTransfer.iff_refl _) (all_iff hZ w a c n b f hc)
+end PPAC.Migration.Internal.ProjectSourceCodeCriterionTransfer
