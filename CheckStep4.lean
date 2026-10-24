@@ -9652,4 +9652,116 @@ example {m} (w mode depth P D R S a b c e A C K H : Fin m) :
               (Internal.InstantiateOperationFrameSyntax.frame w mode D P A b C e K H))))).close)) :=
   Internal.ObjectInstantiateBinder.native_modeTwoActualBinderFrame w mode depth P D R S a b c e A C K H
 
+example {m} (w mode depth P a b c e R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllTypedTermAgreementSentence w mode depth P a b c e R S n)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllTypedTermAgreement w mode depth P a b c e R S n
+
+example {m} (w mode depth P a b c e R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllTypedTermUniqueFiberSentence w mode depth P a b c e R S n)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllTypedTermUniqueFiber w mode depth P a b c e R S n
+
+example {m} (w mode depth P a b c e R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoTermPromiseDerivedSentence w mode depth P a b c e R S)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoTermPromiseDerived w mode depth P a b c e R S
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoArgumentFieldsProgramIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoArgumentFieldsProgramIff w mode depth P a b c e R S n q k
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoWholeArgumentProgramIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoWholeArgumentProgramIff w mode depth P a b c e R S n q k
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoGuardedArgumentProgramIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoGuardedArgumentProgramIff w mode depth P a b c e R S n q k
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoFourAtomicRunIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoFourAtomicRunIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoFourAtomicProgramIffSentence w mode depth P a b c e R S h n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoFourAtomicProgramIff w mode depth P a b c e R S h n q
+
+example {m} (w n mode depth P a b c e R S A C K H D : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualBinderPrefixFromInductionSentence w n mode depth P a b c e R S A C K H D)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualBinderPrefixFromInduction w n mode depth P a b c e R S A C K H D
+
+example {m} (w n mode depth P a b c e R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllElevenProgramFromInductionIffSentence w n mode depth P a b c e R S h q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllElevenProgramFromInductionIff w n mode depth P a b c e R S h q
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoUniformCorrectnessProgressiveSentence w)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoUniformCorrectnessProgressive w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllInternalFormulaCorrectSentence w)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllInternalFormulaCorrect w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllInternalRootsCorrectSentence w n)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllInternalRootsCorrect w n
+
+example {m} (w n mode depth P a b c e R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllInternalWholeFormulaExecutionIffSentence w n mode depth P a b c e R S q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllInternalWholeFormulaExecutionIff w n mode depth P a b c e R S q
+
+example {m} (w n mode depth P a b c e R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAllInternalWholeFormulaProgramIffSentence w n mode depth P a b c e R S h q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllInternalWholeFormulaProgramIff w n mode depth P a b c e R S h q
+
+example {m} (w n mode depth P a b c e R S h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualHistoryAgreementDischargedSentence w n mode depth P a b c e R S h)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualHistoryAgreementDischarged w n mode depth P a b c e R S h
+
+example {m} (w n mode depth P a b c e R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoAgreedActualHistoryExistsDischargedSentence w n mode depth P a b c e R S)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAgreedActualHistoryExistsDischarged w n mode depth P a b c e R S
+
+example {m} (w n mode z P b A R S q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualRootWholeFormulaExecutionIffSentence w n mode z P b A R S q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualRootWholeFormulaExecutionIff w n mode z P b A R S q
+
+example {m} (w n mode z P b A R S h q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualRootWholeFormulaProgramIffSentence w n mode z P b A R S h q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualRootWholeFormulaProgramIff w n mode z P b A R S h q
+
+example {m} (w mode z P b A R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualInstantiateTopAtCodesIffSentence w mode z P b A R S n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopAtCodesIff w mode z P b A R S n q
+
+example {m} (w mode z P b A n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualInstantiateTopIffSentence w mode z P b A n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopIff w mode z P b A n q
+
+example {m} (w z P b A n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualInstantiateTopSourceTypeSentence w z P b A n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopSourceType w z P b A n q
+
+example {m} (w mode z P b A n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateFormula.modeTwoActualInstantiateTopGuardedIffSentence w mode z P b A n q)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopGuardedIff w mode z P b A n q
+-- Expanded genuine mode2 whole formula endpoint: original ZF discharges every internal formula IH.
+example {m} (w n mode depth P a b c e R S q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.InstantiateOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          ((Internal.FormulaCodeSyntax.formulaCode w n a b).imp
+            ((Internal.OriginalTransformRowSyntax.run 3 w mode depth P n q).iff
+              (Internal.FormulaTransformExecutionSyntax.executed w R S a b c e n q))))).close)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoAllInternalWholeFormulaExecutionIff w n mode depth P a b c e R S q
+
+-- Expanded actual InstantiateTop endpoint: no metadata/frame/history/table-code/IH premises; source type is inside.
+example {m} (w mode z P b A n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.SyntaxNumeralSyntax.numeral 2 mode).imp
+          ((OmegaSyntax.empty z).imp
+            ((Internal.SyntaxTopEnvironmentSyntax.instantiateInput w z b A P).imp
+              (((Internal.FormulaCodeSyntax.formulaCode w n A b).conj (Internal.OriginalTransformRowSyntax.run 3 w mode z P n q)).iff
+                (Internal.SyntaxTopFormulaSyntax.instantiated w z b A P n q)))))).close)) :=
+  Internal.ObjectInstantiateFormula.native_modeTwoActualInstantiateTopGuardedIff w mode z P b A n q
+
 end PPAC.Migration.Step4Checks

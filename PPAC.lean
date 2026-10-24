@@ -225,3 +225,4 @@ import PPAC.Migration.Internal.ObjectForallNode
 import PPAC.Migration.Internal.ObjectInstantiateVariable
 import PPAC.Migration.Internal.ObjectInstantiateRoot
 import PPAC.Migration.Internal.ObjectInstantiateBinder
+import PPAC.Migration.Internal.ObjectInstantiateFormula

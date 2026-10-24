@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+mode2全内部完整公式及实际InstantiateTop已验收：项唯一纤维、任意内部长度列表、四原子和全部11公式构造子均已对应；对象ALL10允许frame／输出变化，原ZF集合归纳消去IH，真实历史及binder见证消去。实际空绑定目标InstantiateTop的两张码表已构造并在对象EX2中消去；最终只需Ω／Num2／empty／实际入口，源公式类型在结论内部，无元数据／frame／历史／码表前提。18模块161声明、23组原nativeZF闭句；1815构建任务、19381声明审计（402无公理／18979允许依赖）、零警告；九命令及五trust=0入口全通过，1650哈希／2253对足迹／17037项Internal覆盖。共享quotation／Bool、完整Proof／内部解释及最终Con仍未完成。见[本批验收与后续流程](STEP4_MODE_TWO_FULL_FORMULA_ACCEPTANCE.zh-CN.md)。
+
 mode2真实binder框架闭包已验收：独立源／目标后继经对象唯一性对齐；全部合法内部bound索引由真实source=succ(depth)分成below／point，point使用闭参数真实重命名保持，原参数P不变。新零／旧bound后继／free字段兼容及两层各四个提升见证全部在对象推导中消去；最终只需Ω／旧frame／实际深度后继／actualLift。8模块65声明、12组原nativeZF闭句；1797构建任务、19220声明审计（402无公理／18818允许依赖）、零警告，九命令及五trust=0入口全通过；1632哈希／2230对足迹／16876项Internal覆盖。mode2完整公式、完整InstantiateTop及最终内部Con仍未完成。见[本批验收与后续流程](STEP4_MODE_TWO_BINDER_ACCEPTANCE.zh-CN.md)。
 
 mode2实际零深度根已验收：从原instantiateCoded推出frame，元数据／闭参数／变量兼容性均由原环境取得；全部内部合法纯项的Run1对应独立程序与coded mixed substitution，源类型守卫在结论内部。闭绑定参数经真实binder的bound后移／free恒等重命名保持原码也已证明。5模块49声明、9组原nativeZF闭句；1789构建任务、19155声明审计（400无公理／18755允许依赖）、零警告；九命令及五trust=0入口全通过，1624哈希／2218对足迹／16811项Internal覆盖。真实binder框架闭包、mode2完整公式及最终内部Con仍未完成。见[本批验收与后续流程](STEP4_MODE_TWO_ACTUAL_ROOT_ACCEPTANCE.zh-CN.md)。
