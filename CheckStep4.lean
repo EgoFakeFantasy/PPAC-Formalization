@@ -11868,4 +11868,68 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualArithmeticRecursionSystemExistsSentence w)) :=
   Internal.ObjectPacketTokenArithmetic.native_packetTokenActualArithmeticRecursionSystemExists w
 
+example {m} (i j : Nat) (w a b c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenFiniteNumeralSumSentence i j w a b c)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenFiniteNumeralSum i j w a b c
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualDouble128Sentence w B C)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualDouble128 w B C
+
+example {m} (w B C d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenSmallDigitByteBoundSentence w B C d)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenSmallDigitByteBound w B C d
+
+example {m} (w B C d y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenShiftedDigitByteBoundSentence w B C d y)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenShiftedDigitByteBound w B C d y
+
+example {m} (w B C n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualSmallOutputConstructedSentence w B C n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualSmallOutputConstructed w B C n t
+
+example {m} (w B C n d q t u y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualRecursiveOutputConstructedSentence w B C n d q t u y)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualRecursiveOutputConstructed w B C n d q t u y
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenAllInternalOutputExistenceIHDischargedSentence w B C)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalOutputExistenceIHDischarged w B C
+
+example {m} (w B C n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualOutputExistsAtRadicesSentence w B C n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputExistsAtRadices w B C n t
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenAllInternalOutputUniquenessIHDischargedSentence w B C)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalOutputUniquenessIHDischarged w B C
+
+example {m} (w B C n t a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualOutputUniqueAtRadicesSentence w B C n t a b)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueAtRadices w B C n t a b
+
+example {m} (w B C n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualUniqueOutputFiberAtRadicesSentence w B C n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualUniqueOutputFiberAtRadices w B C n t
+
+example {m} (w B C n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenUniqueOutputFiberDomainAtRadicesSentence w B C n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenUniqueOutputFiberDomainAtRadices w B C n t
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenAllInternalExactUniqueOutputFibersSentence w)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalExactUniqueOutputFibers w
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualUniqueOutputFiberExactDomainSentence w n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualUniqueOutputFiberExactDomain w n t
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualOutputExistsOnlyOmegaSentence w n t)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputExistsOnlyOmega w n t
+
+example {m} (w n t a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualOutputUniqueOnlyOmegaSentence w n t a b)) :=
+  Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueOnlyOmega w n t a b
+
 end PPAC.Migration.Step4Checks

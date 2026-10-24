@@ -2071,7 +2071,7 @@ def check_Packet_original_token_applications() -> dict:
             'actual_relational_Packet_condition_complete_token_outcome_equation_ALL4':True,
             'both_radices_and_canonical_value_object_exist_under_only_omega':True,
             'specified_root_fields_full_normalization':True,
-            'all_internal_token_execution_total_unique':False,
+            'all_internal_token_execution_total_unique':True,
             'full_varint_Basic_AST_bridge_Proof_Con':False}
 
 
@@ -2108,8 +2108,47 @@ def check_Packet_token_exact_arithmetic_recursion() -> dict:
             'all_internal_specified_root_arithmetic_equation_ALL4':True,
             'actual_small_large_test_exact_and_invalid_fields_rejected':True,
             'actual_two_radix_recursion_system_exists_under_only_omega':True,
-            'all_internal_token_execution_total_unique':False,
+            'all_internal_token_execution_total_unique':True,
             'full_varint_Basic_AST_bridge_Proof_Con':False}
+
+
+def check_Packet_actual_token_execution() -> dict:
+    modules = ['SyntaxNumeralAddition', 'PacketTokenByteBounds', 'PacketTokenExistenceSyntax', 'PacketTokenExistencePoint', 'PacketTokenExistenceInduction', 'PacketTokenValueTransport', 'PacketTokenUniqueSyntax', 'PacketTokenUniqueValues', 'PacketTokenUniquePoint', 'PacketTokenUniqueInduction', 'PacketTokenExecutionSyntax', 'PacketTokenExecutionFiber', 'PacketTokenExecution', 'ObjectPacketTokenExecution']
+    schemas = ['packetTokenFiniteNumeralSum', 'packetTokenActualDouble128', 'packetTokenSmallDigitByteBound', 'packetTokenShiftedDigitByteBound', 'packetTokenActualSmallOutputConstructed', 'packetTokenActualRecursiveOutputConstructed', 'packetTokenAllInternalOutputExistenceIHDischarged', 'packetTokenActualOutputExistsAtRadices', 'packetTokenAllInternalOutputUniquenessIHDischarged', 'packetTokenActualOutputUniqueAtRadices', 'packetTokenActualUniqueOutputFiberAtRadices', 'packetTokenUniqueOutputFiberDomainAtRadices', 'packetTokenAllInternalExactUniqueOutputFibers', 'packetTokenActualUniqueOutputFiberExactDomain', 'packetTokenActualOutputExistsOnlyOmega', 'packetTokenActualOutputUniqueOnlyOmega']
+    required = {'SyntaxNumeralAddition': ['theorem sum_at', '(i j : Nat)', '(numeral (i+j) c)', 'induction j generalizing m with', 'add_succ_backward'], 'PacketTokenByteBounds': ['SyntaxNumeralAddition.sum_at hZ 128 128', 'theorem small_digit_byte', 'NaturalAdditionMonotone.strict_monotone', 'theorem shifted_digit_byte'], 'PacketTokenExistenceSyntax': ['def existsOutput', 'accepted w.castSucc', 'def property', 'def matrix', 'theorem property_at'], 'PacketTokenExistencePoint': ['theorem small_point', 'theorem step_values', 'PacketTokenByteBounds.shifted_digit_byte', 'PacketAffineCore.exists_value', 'PacketTokenArithmeticSyntax.intro_large', 'theorem large_point'], 'PacketTokenExistenceInduction': ['theorem small_property', 'theorem large_property', 'theorem all_property', 'PacketQuotientInduction.all_holds hZ false PacketTokenExistenceSyntax.matrix', 'theorem exists_output'], 'PacketTokenValueTransport': ['Derives.eqSubst', 'theorem accepted_input', 'theorem sum_first'], 'PacketTokenUniqueSyntax': ['OriginalUniversalBlock.allMany 3', 'def property', 'def matrix', 'theorem property_at', 'theorem input_subst'], 'PacketTokenUniqueValues': ['PacketDivisionUnique.unique', 'PacketTokenValueTransport.accepted_input', 'ZFArithmetic.add_unique', 'PacketAffineTransport.digit', 'PacketAffineTransport.tail', 'PacketAffineCore.unique'], 'PacketTokenUniquePoint': ['theorem large_cases_unique', 'HornBinderRules.eliminate_many 4 L', 'HornBinderRules.eliminate_many 4 M', 'PacketTokenUniqueValues.unique', 'theorem large_point'], 'PacketTokenUniqueInduction': ['theorem all_property', 'PacketQuotientInduction.all_holds hZ false PacketTokenUniqueSyntax.matrix', 'theorem unique'], 'PacketTokenExecutionSyntax': ['def uniqueAt', 'def fiber', 'def allLaw', 'OriginalUniversalBlock.allMany 2', 'theorem uniqueAt_at'], 'PacketTokenExecutionFiber': ['theorem exists_fiber', 'PacketTokenExistenceInduction.exists_output', 'PacketTokenUniqueInduction.unique', 'theorem fiber_iff'], 'PacketTokenExecution': ['theorem all_law_at', 'theorem all_law', 'SyntaxNumerals.exists_numeral hZ 128', 'SyntaxNumerals.exists_numeral hZ1 256', 'theorem fiber_iff', 'theorem exists_output', 'theorem unique'], 'ObjectPacketTokenExecution': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text):
+            raise RuntimeError('Actual token execution forbidden gap: '+mod)
+        inductions = re.findall(r'(?m)^\s+induction[^\n]*',text)
+        if mod == 'SyntaxNumeralAddition':
+            if [x.strip() for x in inductions] != ['induction j generalizing m with'] or '(i j : Nat)' not in text:
+                raise RuntimeError('Only external finite numeral-index induction is permitted')
+        elif inductions:
+            raise RuntimeError('Internal token runtime values cannot use host induction: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Actual token execution proof drift: '+mod+': '+clause)
+    signatures = [('PacketTokenExistenceInduction', 'all_property', {'hB', 'hC', 'hw'}), ('PacketTokenExistenceInduction', 'exists_output', {'hB', 'hC', 'hn', 'hw', 'ht'}), ('PacketTokenUniqueInduction', 'all_property', {'hB', 'hC', 'hw'}), ('PacketTokenUniqueInduction', 'unique', {'hb', 'hB', 'hC', 'hw', 'ha'}), ('PacketTokenExecution', 'all_law', {'hw'}), ('PacketTokenExecution', 'fiber_iff', {'hw'}), ('PacketTokenExecution', 'exists_output', {'hn', 'hw', 'ht'}), ('PacketTokenExecution', 'unique', {'hb', 'hw', 'ha'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Actual token execution hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketTokenExecution.native_'+name not in check:
+            raise RuntimeError('Missing actual token execution native fixture: '+name)
+    return {'external_finite_numeral_index_only_object_addition_certificate':True,
+            'actual_128_plus_128_256_and_shifted_digit_byte_bound':True,
+            'actual_output_existence_internal_quotient_IH_fully_discharged':True,
+            'actual_output_uniqueness_both_full_large_witness_blocks_compared':True,
+            'actual_output_uniqueness_internal_quotient_IH_fully_discharged':True,
+            'typed_unique_output_fiber_exactly_internal_natural_input_tail_pairs':True,
+            'all_internal_and_invalid_input_tail_candidates_retained_ALL2':True,
+            'actual_radix_witnesses_object_eliminated_only_omega_premise':True,
+            'full_varint_canonical_bytes_Basic_AST_bridge_Proof_Con':False}
 
 
 def main() -> None:
@@ -2165,6 +2204,7 @@ def main() -> None:
     Packet_quotient_descent_and_induction = check_Packet_quotient_descent_and_induction()
     Packet_original_token_applications = check_Packet_original_token_applications()
     Packet_token_exact_arithmetic_recursion = check_Packet_token_exact_arithmetic_recursion()
+    Packet_actual_token_execution = check_Packet_actual_token_execution()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5159,7 +5199,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualRejectInvalidField',
                     'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalAcceptedArithmeticRecursion',
                     'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalRootArithmeticRecursion',
-                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualArithmeticRecursionSystemExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualArithmeticRecursionSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenFiniteNumeralSum',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualDouble128',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenSmallDigitByteBound',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenShiftedDigitByteBound',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualSmallOutputConstructed',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualRecursiveOutputConstructed',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalOutputExistenceIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputExistsAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalOutputUniquenessIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualUniqueOutputFiberAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenUniqueOutputFiberDomainAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalExactUniqueOutputFibers',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualUniqueOutputFiberExactDomain',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputExistsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5171,6 +5227,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketTokenExecution": ('packetTokenFiniteNumeralSum', 'packetTokenActualDouble128', 'packetTokenSmallDigitByteBound', 'packetTokenShiftedDigitByteBound', 'packetTokenActualSmallOutputConstructed', 'packetTokenActualRecursiveOutputConstructed', 'packetTokenAllInternalOutputExistenceIHDischarged', 'packetTokenActualOutputExistsAtRadices', 'packetTokenAllInternalOutputUniquenessIHDischarged', 'packetTokenActualOutputUniqueAtRadices', 'packetTokenActualUniqueOutputFiberAtRadices', 'packetTokenUniqueOutputFiberDomainAtRadices', 'packetTokenAllInternalExactUniqueOutputFibers', 'packetTokenActualUniqueOutputFiberExactDomain', 'packetTokenActualOutputExistsOnlyOmega', 'packetTokenActualOutputUniqueOnlyOmega'),
         "ObjectPacketTokenArithmetic": ('packetTokenRootSmallFieldsIff', 'packetTokenRootLargeFieldsIff', 'packetTokenSpecifiedRootConditionEquation', 'packetTokenSpecifiedRootMemberEquation', 'packetTokenCanonicalEntryActualAcceptanceIff', 'packetTokenCanonicalEntryAffineIff', 'packetTokenZeroGuardFromNonzeroQuotient', 'packetTokenSmallExactArithmeticBridge', 'packetTokenLargeExactArithmeticBridge', 'packetTokenFullExactArithmeticBridge', 'packetTokenActualAcceptanceNaturalFields', 'packetTokenArithmeticCriterionNaturalFields', 'packetTokenConditionExactArithmeticWithoutCanonicalWitness', 'packetTokenActualAcceptedExactArithmeticRecursion', 'packetTokenLargeBranchExcludesSmallInput', 'packetTokenActualSmallBranchIff', 'packetTokenActualLargeBranchIff', 'packetTokenActualRejectInvalidField', 'packetTokenAllInternalAcceptedArithmeticRecursion', 'packetTokenAllInternalRootArithmeticRecursion', 'packetTokenActualArithmeticRecursionSystemExists'),
         "ObjectPacketToken": ('packetTokenSmallExactMatrix', 'packetTokenLargeExactMatrixAt', 'packetTokenLargeExactMatrixWitnessesDischarged', 'packetTokenLargeAssignmentNatural', 'packetTokenCanonicalAffineEntryArithmetic', 'packetTokenDigitBelowAffineOutput', 'packetTokenAllSixActualAssignmentBoundsAt', 'packetTokenAllSixActualAssignmentBounds', 'packetTokenSmallApplicationIff', 'packetTokenLargeApplicationIff', 'packetTokenOriginalTwoRuleDispatch', 'packetTokenCompleteStepEquation', 'packetTokenActualConditionEquation', 'packetTokenAllInternalRootEquation', 'packetTokenActualTwoRadixSystemExists'),
         "ObjectPacketDescent": ('packetDescentOneProduct', 'packetDescentProductBounds', 'packetDescentQuotientBounds', 'packetDescentQuotientBelow', 'packetDescentNonzeroOutputStrict', 'packetDescentTerminalDigit', 'packetDescentExactStoppingThreshold', 'packetDescentZeroOutputExactFields', 'packetDescentLargeOutputNonzero', 'packetDescentQuotientInductionPoint', 'packetDescentQuotientInductionProgressive', 'packetDescentAllInternalQuotientInduction', 'packetDescentAffineProperties', 'packetDescentAffineTerminalRecursiveBranches', 'packetDescentAcceptedProperties', 'packetDescentAllInternalAcceptedLaw', 'packetDescentActualLiteralSystemExists'),
@@ -6152,6 +6209,12 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_actual_token_execution_guard": Packet_actual_token_execution,
+        'object_Packet_token_shifted_byte_bound_proved': True,
+        'object_Packet_token_output_existence_internal_IH_discharged': True,
+        'object_Packet_token_output_uniqueness_internal_IH_discharged': True,
+        'object_Packet_token_exact_internal_unique_output_domain_proved': True,
+        'object_Packet_token_final_execution_requires_only_omega': True,
         "Packet_token_exact_arithmetic_recursion_guard": Packet_token_exact_arithmetic_recursion,
         'object_Packet_token_specified_root_fields_normalized': True,
         'object_Packet_token_exact_arithmetic_recursive_equation_proved': True,
@@ -6168,7 +6231,7 @@ def main() -> None:
         'object_Packet_token_relational_condition_recursive_equation_proved': True,
         'object_Packet_token_actual_two_radix_system_constructed': True,
         'object_Packet_token_all_internal_canonical_arithmetic_proved': False,
-        'object_Packet_token_actual_execution_total_unique_proved': False,
+        'object_Packet_token_actual_execution_total_unique_proved': True,
         "Packet_quotient_descent_and_induction_guard": Packet_quotient_descent_and_induction,
         'object_Packet_internal_quotient_weak_and_strict_descent_proved': True,
         'object_Packet_internal_quotient_exact_stopping_threshold_proved': True,

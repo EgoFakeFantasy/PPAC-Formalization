@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+实际token的全内部输出存在唯一性已验收：内部128+128=256及移位字节界完成；两个固定对象矩阵分别经原Foundation／Separation驱动的商归纳消去存在性与唯一性全部IH，两份完整大分支见证由逆分解、和式、递归输出及最终仿射唯一性逐项比较。最终仅Ω推出ALL2带类型唯一输出纤维，定义域恰为内部n∈ω且tail∈ω，128／256辅助见证已对象消去。14模块124声明、16组原nativeZF闭句；2254构建、24285审计（465无公理／23820允许依赖）、零警告；九命令／五trust=0通过，2034哈希、2719对精确足迹、21941项Internal覆盖。实际执行存在唯一顶层门及两个对应子门false→true，其余既有布尔叶保持原值。完整规范字节程序、原Basic AST桥、字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_TOKEN_EXECUTION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 指定token根的全内部准确算术递归已验收：原EX3／EX8字段经对象构造器注入性对齐，原零guard、移位见证、规范V及真实根码均对象消去；独立Tok接受谓词取得含真实递归Tok前提的准确small／large数值双条件。ALL3／ALL4覆盖全部内部数据及根候选，准确分支测试和非法自然数字段拒绝已证，仅Ω取得实际128／256递归系统EX2。15模块158声明、21组原nativeZF闭句；2240构建、24161审计（464无公理／23697允许依赖）、零警告；九命令／五trust=0通过，2020哈希、2703对精确足迹、21817项Internal覆盖。旧token应用guard中的根字段归一子门false→true，其余既有布尔叶保持原值。全内部token输出存在唯一、完整varint／字节包、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_TOKEN_ARITHMETIC_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
