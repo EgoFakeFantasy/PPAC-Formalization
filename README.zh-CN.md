@@ -1,5 +1,10 @@
 # PPAC 向 YesMetaZFC 迁移
 
+固定7条ZF公理及目标3句的部分对象测试已验收：真实小标签包算术、准确原二字段行、固定纯公式报价及隐藏ω对齐完成；包／公式／行见证均在对象EX内取得并消去，标签7 Choice被两张部分测试拒绝。10模块140声明、11组原nativeZF闭句；1984构建任务、21557审计（426无公理／21131允许依赖）、零警告；九命令／五trust=0通过，1767哈希、2420对精确足迹、19213项Internal覆盖。完整schema证书数据的sound／complete及往返是宿主中间成果；全部内部Separation／Collection测试、实际Bool／Proof、内部解释及最终Con仍未证明。六组固定测试的core也继承原七项闭句证书，已逐名锁定。见[本批验收与修订工程流程](docs/STEP4_FIXED_AXIOM_TEST_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
+
 原证明树递归方程唯一性及规范解已验收：全对象域Equation实际推出正向Closure，反向Foundation归纳消去IH，得到Ω→Equation→∀p(Node↔P)；实际Node有限Formula2模板在只有Ω前提下满足方程。精确Root、两解等价及自然范围已返回原核。5模块72声明、9组nativeZF闭句；1931构建任务、21417审计（424无公理／20993允许依赖）、零警告；九命令／五trust=0通过，1757哈希／2409对精确足迹／19073项Internal覆盖。下一步转向ZF/U实际公理测试；具体Bool／Proof_T方程、内部编译解释与最终Con仍未证明。见[本批验收与后续工程表](docs/STEP4_PROOF_TREE_EQUATION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

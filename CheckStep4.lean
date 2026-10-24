@@ -10648,4 +10648,62 @@ example {m} (test : Source.Formula 1) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.
         (Internal.ProofTreeInductionSyntax.normalized test (Internal.ProofTreeEquationCanonical.nodeTemplate test) w.castSucc (Fin.last m))))).close)) :=
   Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation test w
 
+example {m} (tag : Nat) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedPacketExistsSentence tag w)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedPacketExists tag w
+
+example {m} (tag : Nat) (w p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedPacketNaturalSentence tag w p)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedPacketNatural tag w p
+
+example {m} (tag : Nat) (w p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedPacketUniqueSentence tag w p q)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedPacketUnique tag w p q
+
+example {m} (k l : Nat) (hkl : k ≠ l) (w p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedPacketTagsDisjointSentence k l hkl w p)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedPacketTagsDisjoint k l hkl w p
+
+example {m} (tag : Nat) (w p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedPacketAtValueSentence tag w p q)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedPacketAtValue tag w p q
+
+example {m} (target : Bool) (kind : Fin 10) (hk : kind ∈ FixedAxiomTableSyntax.kinds target) (w c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomTableAtPacketSentence target kind hk w c f)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomTableAtPacket target kind hk w c f
+
+example {m} (target : Bool) (w row c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomRowAtConstructorSentence target w row c f)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomRowAtConstructor target w row c f
+
+example {m} (target : Bool) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomTestAtOmegaSentence target w row)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomTestAtOmega target w row
+
+example {m} (target : Bool) (kind : Fin 10) (hk : kind ∈ FixedAxiomTableSyntax.kinds target) (w row c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomTestAtPacketRowSentence target kind hk w row c f)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomTestAtPacketRow target kind hk w row c f
+
+example {m} (target : Bool) (w row c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomChoicePacketRejectedSentence target w row c f)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomChoicePacketRejected target w row c f
+
+example {m} (target : Bool) (kind : Fin 10) (hk : kind ∈ FixedAxiomTableSyntax.kinds target) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectFixedAxiomTest.fixedAxiomAcceptedWitnessExistsSentence target kind hk w)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomAcceptedWitnessExists target kind hk w
+
+-- Expanded fixed-test contract, with the actual row and packet premises retained.
+example {m} (target : Bool) (kind : Fin 10) (hk : kind ∈ Internal.FixedAxiomTableSyntax.kinds target)
+    (w row c f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp
+      ((Internal.SyntaxNodeSyntax.constructor 2 0 w (Source.SetLanguage.args2 c f) row).imp
+        ((Internal.FixedAxiomPacketSyntax.leaf (Internal.NativeAxiomCertificateData.fixedTag kind) w c).imp
+          ((Internal.AxiomTestSyntax.holds (Internal.FixedAxiomTableSyntax.test target) row).iff
+            (Internal.PureQuotationSyntax.formula (Internal.NativeAxiomCertificateData.fixedFormula kind) w f))))).close)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomTestAtPacketRow target kind hk w row c f
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp (Internal.FixedAxiomTableExistence.existsTest true w)).close)) :=
+  Internal.ObjectFixedAxiomTest.native_fixedAxiomAcceptedWitnessExists true 0 (by decide) w
+
 end PPAC.Migration.Step4Checks

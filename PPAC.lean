@@ -235,3 +235,4 @@ import PPAC.Migration.Internal.ObjectProofTreeRoot
 import PPAC.Migration.Internal.ObjectProofTreeNode
 import PPAC.Migration.Internal.ObjectProofTreeInduction
 import PPAC.Migration.Internal.ObjectProofTreeEquation
+import PPAC.Migration.Internal.ObjectFixedAxiomTest

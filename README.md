@@ -1,5 +1,10 @@
 # PPAC → YesMetaZFC
 
+固定7条ZF公理及目标3句的部分对象测试已验收：真实小标签包算术、准确原二字段行、固定纯公式报价及隐藏ω对齐完成；包／公式／行见证均在对象EX内取得并消去，标签7 Choice被两张部分测试拒绝。10模块140声明、11组原nativeZF闭句；1984构建任务、21557审计（426无公理／21131允许依赖）、零警告；九命令／五trust=0通过，1767哈希、2420对精确足迹、19213项Internal覆盖。完整schema证书数据的sound／complete及往返是宿主中间成果；全部内部Separation／Collection测试、实际Bool／Proof、内部解释及最终Con仍未证明。六组固定测试的core也继承原七项闭句证书，已逐名锁定。见[本批验收与修订工程流程](docs/STEP4_FIXED_AXIOM_TEST_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
+
 The original six-case recursive proof-tree equation has a unique solution on all object codes, proved through forward and reverse internal Foundation induction. The actual Node Formula2 template satisfies the equation under Omega alone. Five modules, 72 declarations, nine certificate families; 1931 build jobs, 21417 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1757 hashes and 2409 exact core/native footprints. Dedicated ZF/U tests, the actual Bool/Proof_T equation, compiler/interpretation and final internal Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_EQUATION_ACCEPTANCE.zh-CN.md).
 
 The entries below are historical checkpoints.

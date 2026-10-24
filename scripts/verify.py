@@ -1282,6 +1282,55 @@ def check_proof_tree_equation_unique() -> dict:
             'candidate_property_natural_range_object_proved':True,
             'dedicated_Bool_Proof_equation_compiler_interpretation_Con_proved':False}
 
+# Exact per-declaration footprints: fixed native sentences carry the seven existing certificates.
+FIXED_AXIOM_FOOTPRINT_GROUPS = {'std2': ['NativeAxiomCertificateData.Certificate', 'NativeAxiomCertificateData.toZFC', 'NativeAxiomCertificateData.narrow', 'NativeAxiomCertificateData.narrow_toZFC', 'NativeAxiomCertificateData.encode', 'NativeAxiomCertificateData.decode', 'NativeAxiomCertificateData.decode_encode', 'NativeAxiomCertificateData.choice_packet_rejected', 'NativeAxiomCertificateData.TargetCertificate', 'NativeAxiomCertificateData.extraSentence', 'NativeAxiomCertificateData.fixedTag_lt', 'NativeAxiomCertificateData.targetEncode', 'NativeAxiomCertificateData.targetDecode', 'NativeAxiomCertificateData.targetDecode_as_base', 'NativeAxiomCertificateData.target_decode_encode', 'NativeAxiomCertificateData.target_choice_packet_rejected', 'NativeAxiomCertificateData.fixedCertificate', 'NativeAxiomCertificateData.fixedTag_injective', 'NativeAxiomCertificateData.fixed_encode_exact', 'NativeAxiomCertificateData.fixed_decode_exact', 'NativeAxiomCertificateData.fixedTag_ne_choice', 'FixedAxiomPacketSyntax.matrix', 'FixedAxiomPacketSyntax.body', 'FixedAxiomPacketSyntax.leaf', 'FixedAxiomPacketSyntax.existsLeaf', 'FixedAxiomPacketSyntax.varint_small', 'FixedAxiomPacketSyntax.original_leaf_packet_raw', 'FixedAxiomPacketSyntax.packet_polynomial', 'FixedAxiomPacketSyntax.original_leaf_packet_value', 'FixedAxiomPacketFacts.field0', 'FixedAxiomPacketFacts.field1', 'FixedAxiomPacketFacts.field2', 'FixedAxiomPacketFacts.field3', 'FixedAxiomPacketFacts.field4', 'FixedAxiomPacketFacts.field5', 'FixedAxiomPacketFacts.field6', 'FixedAxiomTableSyntax.target_kind_mem', 'FixedAxiomTableSyntax.base_kind_mem', 'ObjectFixedAxiomTest.fixedPacketExistsSentence', 'ObjectFixedAxiomTest.fixedPacketNaturalSentence', 'ObjectFixedAxiomTest.fixedPacketUniqueSentence', 'ObjectFixedAxiomTest.fixedPacketTagsDisjointSentence', 'ObjectFixedAxiomTest.fixedPacketAtValueSentence'], 'std2_inherited': ['NativeAxiomCertificateData.projectSentence', 'NativeAxiomCertificateData.sentence', 'NativeAxiomCertificateData.project_sound', 'NativeAxiomCertificateData.sound', 'NativeAxiomCertificateData.complete', 'NativeAxiomCertificateData.targetSentence', 'NativeAxiomCertificateData.target_sound', 'NativeAxiomCertificateData.target_complete', 'NativeAxiomCertificateData.fixedFormula', 'NativeAxiomCertificateData.fixed_target_sound', 'NativeAxiomCertificateData.fixed_sentence_exact', 'FixedAxiomTableSyntax.branch', 'FixedAxiomTableSyntax.table', 'FixedAxiomTableSyntax.rowTest', 'FixedAxiomTableSyntax.test', 'FixedAxiomTableFacts.intro_table', 'FixedAxiomTableFacts.rowBody', 'FixedAxiomTableFacts.rowTest_eq', 'FixedAxiomTableExistence.existsTest', 'ObjectFixedAxiomTest.fixedAxiomTableAtPacketSentence', 'ObjectFixedAxiomTest.fixedAxiomRowAtConstructorSentence', 'ObjectFixedAxiomTest.fixedAxiomTestAtOmegaSentence', 'ObjectFixedAxiomTest.fixedAxiomTestAtPacketRowSentence', 'ObjectFixedAxiomTest.fixedAxiomChoicePacketRejectedSentence', 'ObjectFixedAxiomTest.fixedAxiomAcceptedWitnessExistsSentence'], 'empty': ['NativeAxiomCertificateData.fixedTag', 'FixedAxiomPacketSyntax.packet_fold'], 'std3': ['FixedAxiomPacketSyntax.matrix_rename', 'FixedAxiomPacketSyntax.body_lift', 'FixedAxiomPacketSyntax.leaf_rename', 'FixedAxiomPacketSyntax.existsLeaf_rename', 'FixedAxiomPacketSyntax.intro_leaf', 'FixedAxiomPacketSyntax.intro_exists', 'FixedAxiomPacketArithmetic.mul_inputs', 'FixedAxiomPacketArithmetic.add_inputs', 'FixedAxiomPacketArithmetic.base_nonempty', 'FixedAxiomPacketFacts.matrix_natural', 'FixedAxiomPacketFacts.matrix_range', 'FixedAxiomPacketFacts.matrix_unique', 'FixedAxiomPacketFacts.matrix_tag_equal', 'FixedAxiomPacketExistence.exists_packet', 'FixedAxiomPacketUnique.unique_at_matrix', 'FixedAxiomPacketUnique.unique', 'FixedAxiomPacketUnique.range', 'FixedAxiomPacketUnique.reject_at_matrix', 'FixedAxiomPacketUnique.disjoint', 'FixedAxiomPacketUnique.output_subst', 'FixedAxiomPacketUnique.at_value', 'ObjectFixedAxiomTest.source_fixedPacketExists', 'ObjectFixedAxiomTest.fixedPacketExists_kernel_certificate', 'ObjectFixedAxiomTest.source_fixedPacketNatural', 'ObjectFixedAxiomTest.fixedPacketNatural_kernel_certificate', 'ObjectFixedAxiomTest.source_fixedPacketUnique', 'ObjectFixedAxiomTest.fixedPacketUnique_kernel_certificate', 'ObjectFixedAxiomTest.source_fixedPacketTagsDisjoint', 'ObjectFixedAxiomTest.fixedPacketTagsDisjoint_kernel_certificate', 'ObjectFixedAxiomTest.source_fixedPacketAtValue', 'ObjectFixedAxiomTest.fixedPacketAtValue_kernel_certificate'], 'propext': ['FixedAxiomTableSyntax.kinds', 'FixedAxiomTableSyntax.fixed_counts'], 'std3_inherited': ['FixedAxiomTableSyntax.branch_rename', 'FixedAxiomTableSyntax.table_rename', 'FixedAxiomTableSyntax.rowTest_rename', 'FixedAxiomTableSyntax.test_at', 'FixedAxiomTableFacts.table_at', 'FixedAxiomTableFacts.table_inputs', 'FixedAxiomTableFacts.intro_row', 'FixedAxiomTableFacts.row_at', 'FixedAxiomTableFacts.row_omega_subst', 'FixedAxiomTableFacts.test_iff_row', 'FixedAxiomTableFacts.at_packet_row', 'FixedAxiomTableFacts.reject_choice_row', 'FixedAxiomTableExistence.existsTest_rename', 'FixedAxiomTableExistence.exists_accepted', 'ObjectFixedAxiomTest.native_fixedPacketExists', 'ObjectFixedAxiomTest.native_fixedPacketNatural', 'ObjectFixedAxiomTest.native_fixedPacketUnique', 'ObjectFixedAxiomTest.native_fixedPacketTagsDisjoint', 'ObjectFixedAxiomTest.native_fixedPacketAtValue', 'ObjectFixedAxiomTest.source_fixedAxiomTableAtPacket', 'ObjectFixedAxiomTest.fixedAxiomTableAtPacket_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomTableAtPacket', 'ObjectFixedAxiomTest.source_fixedAxiomRowAtConstructor', 'ObjectFixedAxiomTest.fixedAxiomRowAtConstructor_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomRowAtConstructor', 'ObjectFixedAxiomTest.source_fixedAxiomTestAtOmega', 'ObjectFixedAxiomTest.fixedAxiomTestAtOmega_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomTestAtOmega', 'ObjectFixedAxiomTest.source_fixedAxiomTestAtPacketRow', 'ObjectFixedAxiomTest.fixedAxiomTestAtPacketRow_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomTestAtPacketRow', 'ObjectFixedAxiomTest.source_fixedAxiomChoicePacketRejected', 'ObjectFixedAxiomTest.fixedAxiomChoicePacketRejected_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomChoicePacketRejected', 'ObjectFixedAxiomTest.source_fixedAxiomAcceptedWitnessExists', 'ObjectFixedAxiomTest.fixedAxiomAcceptedWitnessExists_kernel_certificate', 'ObjectFixedAxiomTest.native_fixedAxiomAcceptedWitnessExists']}
+
+def fixed_axiom_expected_footprints(inherited: set[str]) -> dict[str, set[str]]:
+    basis={"empty":set(), "propext":{"propext"}, "std2":{"propext","Quot.sound"}, "std3":{"propext","Classical.choice","Quot.sound"}}
+    result={}
+    for group,names in FIXED_AXIOM_FOOTPRINT_GROUPS.items():
+        expected=basis[group.removesuffix("_inherited")] | (inherited if group.endswith("_inherited") else set())
+        for name in names:
+            full="PPAC.Migration.Internal."+name
+            if full in result: raise RuntimeError("Duplicate fixed axiom footprint")
+            result[full]=expected
+    return result
+
+def check_fixed_axiom_partial_test() -> dict:
+    modules=['NativeAxiomCertificateData', 'FixedAxiomPacketSyntax', 'FixedAxiomPacketArithmetic', 'FixedAxiomPacketFacts', 'FixedAxiomPacketExistence', 'FixedAxiomPacketUnique', 'FixedAxiomTableSyntax', 'FixedAxiomTableFacts', 'FixedAxiomTableExistence', 'ObjectFixedAxiomTest']
+    texts={n:strip_comments((ROOT/'PPAC/Migration/Internal'/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for name,body in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b',body):
+            raise RuntimeError('Forbidden fixed-axiom proof shortcut: '+name)
+    required={
+      'NativeAxiomCertificateData':['inductive Certificate','Project.UnarySchema','Project.BinarySchema','| .choice => none','target_choice_packet_rejected','fixed_encode_exact','fixed_decode_exact','fixedTag_ne_choice'],
+      'FixedAxiomPacketSyntax':['numeral 256','packet_fold','original_leaf_packet_value','packet_polynomial'],
+      'FixedAxiomPacketFacts':['matrix_tag_equal','NaturalMultiplicationOrderLaws.left_cancel','NaturalDifference.unique'],
+      'FixedAxiomPacketExistence':['SyntaxNumerals.exists_numeral','ZFArithmetic.mul_exists','ZFArithmetic.add_exists','Derives.exE','intro_leaf'],
+      'FixedAxiomPacketUnique':['HornBinderRules.eliminate_many 6','SyntaxNumerals.different','theorem disjoint','theorem at_value'],
+      'FixedAxiomTableSyntax':['def kinds','[0,1,2,3,4,5,6,7,8,9]','[0,1,2,3,4,5,6]','PureQuotationSyntax.formula (fixedFormula kind)','def test','def rowTest'],
+      'FixedAxiomTableFacts':['at_packet_row','OmegaAlgebra.unique','ProofTreeConstructorFacts.field_equal','reject_choice_row','FixedAxiomPacketUnique.disjoint'],
+      'FixedAxiomTableExistence':['OriginalTreeQuotationExistence.tree_exists','FixedAxiomPacketExistence.exists_packet','SyntaxConstructors.exists_constructor','Derives.exE','exists_accepted'],
+      'ObjectFixedAxiomTest':['TheoryTransport.sentence','ZFReplay.replay','native_fixedAxiomTestAtPacketRow','native_fixedAxiomAcceptedWitnessExists']}
+    for module,clauses in required.items():
+        if any(clause not in texts[module] for clause in clauses): raise RuntimeError('Fixed axiom endpoint drift: '+module)
+    certificate=texts['NativeAxiomCertificateData'].split('inductive Certificate',1)[1].split('def projectSentence',1)[0]
+    if re.search(r'\bchoice\b',certificate):raise RuntimeError('Choice added to nativeZF certificate data')
+    names={'PPAC.Migration.Internal.'+mod+'.'+n for mod,body in texts.items() for n in re.findall(r'^(?:def|theorem|abbrev|inductive|structure) (\w+)',body,re.M)}
+    expected=set(fixed_axiom_expected_footprints(set()))
+    if names != expected: raise RuntimeError('Fixed axiom exact footprint coverage drift')
+    header=re.search(r'(?ms)^theorem exists_accepted\b.*?(?=:=)',texts['FixedAxiomTableExistence']).group(0)
+    if set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header)) != {'hw'}:raise RuntimeError('Hidden accepted witness premise')
+    return {'explicit_declarations':len(names),'fixed_native_ZF_axioms':7,'fixed_target_extras':3,
+            'fixed_packet_tags':[0,1,2,3,4,5,6,10,11,12],
+            'NatPacket_bytes_distinct_from_structural_tree_quotation':True,
+            'all_packet_and_formula_and_row_witnesses_object_eliminated':True,
+            'fixed_test_iff_actual_formula_at_actual_packet_row':True,
+            'choice_tag_7_rejected_by_both_partial_tests':True,
+            'full_schema_certificate_data_host_roundtrip_only':True,
+            'full_Separation_Collection_internal_test_proved':False,
+            'Bool_Proof_compiler_interpretation_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1315,6 +1364,7 @@ def main() -> None:
     proof_tree_six_node_equation = check_proof_tree_six_node_equation()
     proof_tree_internal_induction = check_proof_tree_internal_induction()
     proof_tree_equation_unique = check_proof_tree_equation_unique()
+    fixed_axiom_partial_test = check_fixed_axiom_partial_test()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -1452,7 +1502,11 @@ def main() -> None:
         raise RuntimeError("Native-choice original source hash changed")
     contracts = {x for x in footprints if x.startswith("PPAC.Migration.target_derives_")} | {
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
+    fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name in fixed_exact:
+            if set(dependencies) != fixed_exact[name]: raise RuntimeError("Fixed axiom footprint changed: "+name)
+            continue
         extra = set(dependencies) - allowed
         expected_extra = inherited if name in contracts else ({"Classical.choice"} if name.startswith("PPAC.Migration.Translation.") else set())
         is_step2 = any(name.startswith("PPAC.Migration." + prefix) for prefix in
@@ -4034,6 +4088,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectFixedAxiomTest": ('fixedPacketExists', 'fixedPacketNatural', 'fixedPacketUnique', 'fixedPacketTagsDisjoint', 'fixedPacketAtValue'),
         "ObjectProofTreeEquation": ('proofTreeEquationImpliesLocalClosure', 'proofTreeEquationReverseProgressive', 'proofTreeEquationAllCodeUnique', 'proofTreeEquationPointUnique', 'proofTreeEquationRootUnique', 'proofTreeEquationTwoSolutions', 'proofTreeEquationNodeNatural', 'proofTreeEquationSolutionNatural', 'proofTreeCanonicalNodeEquation'),
         "ObjectProofTreeInduction": ('proofTreePropertyStepWithMemberIH', 'proofTreePropertyProgressive', 'proofTreeInternalInduction', 'proofTreePointInduction', 'proofTreeRootProperty', 'proofTreeRejectNodeFromProperty', 'proofTreeRejectRootFromProperty'),
         "ObjectProofTreeNode": ('proofNodeFieldLocalIff', 'proofNodeActualTagLocalIff', 'proofNodeVariableChildIff', 'proofNodeAllChildrenIff', 'proofNodePayloadFieldBelow', 'proofNodeSixCasesForward', 'proofNodeSixCasesBackward', 'proofNodeExactSixCasesIff', 'proofRootExactNodeSixCasesIff'),
@@ -4980,6 +5035,12 @@ def main() -> None:
         "proof_tree_six_node_equation_guard": proof_tree_six_node_equation,
         "proof_tree_internal_induction_guard": proof_tree_internal_induction,
         "proof_tree_equation_unique_guard": proof_tree_equation_unique,
+        "fixed_axiom_partial_test_guard": fixed_axiom_partial_test,
+        'object_fixed_axiom_packet_arithmetic_proved': True,
+        'object_fixed_7_ZF_plus_3_target_partial_test_exact_proved': True,
+        'object_fixed_axiom_test_witnesses_object_eliminated': True,
+        'object_full_Separation_Collection_axiom_test_proved': False,
+
         'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,
         'object_original_proof_tree_canonical_Node_formula_satisfies_equation_proved': True,
         'object_original_proof_tree_equation_solution_natural_range_proved': True,
