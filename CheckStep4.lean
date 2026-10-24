@@ -8091,4 +8091,54 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       (.all (PureSyntaxFormulaInductionSyntax.correct w.castSucc (Fin.last m)))).close)) :=
   ObjectPureSyntaxFormulaChecker.native_formulaAllInternalCorrect w
 
+example {m} (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.termExprQueryIffSentence env w)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_termExprQueryIff env w
+
+example {m} (env : Fin 4 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.argumentsExprQueryIffSentence env w)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_argumentsExprQueryIff env w
+
+example {m} (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.formulaExprQueryIffSentence env w)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_formulaExprQueryIff env w
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.substitutionFormulaQueryIffSentence env w z)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_substitutionFormulaQueryIff env w z
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.substitutionArgumentsQueryIffSentence env w z)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_substitutionArgumentsQueryIff env w z
+
+example {m} (env : Fin 6 → Fin m) (w z mode : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.substitutionTransformAtModeIffSentence env w z mode)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_substitutionTransformAtModeIff env w z mode
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.substitutionGuardedTransformIffSentence env w z)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_substitutionGuardedTransformIff env w z
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPureProofSubstitutionQueries.substitutionBundleIffSentence env w z)) :=
+  Internal.ObjectPureProofSubstitutionQueries.native_substitutionBundleIff env w z
+-- 实际原替换节点查询索引和Kind不由复制表替代。
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.queries[0] =
+    (.syntax, PureProofSubstitutionQueries.substitutionFormula) := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.queries[1] =
+    (.syntax, PureProofSubstitutionQueries.substitutionArguments) := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.queries[4] =
+    (.transform, PureProofSubstitutionQueries.substitutionTransform) := rfl
+
+-- 展开局部三查询合取：最终只有Omega、真实自然赋值和空集零值，无FormulaCode/IH前提。
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((HornExprSyntax.environmentNat 6 w env).imp
+      ((OmegaSyntax.empty z).imp
+        (((PureSyntaxExprQuery.query PureProofSubstitutionQueries.substitutionFormula w env).conj
+          ((PureSyntaxExprQuery.query PureProofSubstitutionQueries.substitutionArguments w env).conj
+            (OriginalTransformExprQuery.query PureProofSubstitutionQueries.substitutionTransform w env))).iff
+          ((FormulaCodeSyntax.formulaCode w (env 5) z (env 2)).conj
+            (FreeSubstProgramSyntax.executed w z (env 2) (env 0) (env 3) (env 5) (env 1))))))).close)) :=
+  ObjectPureProofSubstitutionQueries.native_substitutionBundleIff env w z
+
 end PPAC.Migration.Step4Checks

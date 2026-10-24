@@ -1,5 +1,10 @@
 # 对象层最终目标与内部Con规格
 
+3f.2c.3b.2d.1已验收：固定Expr语法查询已由真实行图和闭轨迹接到纯项／项列／公式类型；原substitutionShape的第0／1／4项查询直接取自上游表，三项合取与输入公式合法及自由替换程序执行对象等价。最终只有Ω、六项自然赋值和空集零值前提，模式数码及行码见证内部消去。6模块64声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1603构建任务、17067项审计（392无公理／16675允许依赖）、零警告；九命令及五trust=0入口全部退出0；1438份独立哈希一致、1937对精确证书足迹、14723项Internal显式声明覆盖。两项投影、完整节点外壳／赋值界、原数值quotation、完整ProofZF/U与最终Con仍未完成。见[验收](STEP4_PURE_PROOF_SUBSTITUTION_QUERIES_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2c.3c已验收：纯十五规则的完整公式查询已对全部内部绑定界／自由界／输入候选与FormulaCode对象等价，最终接口只有Ω前提；十一构造的统一对象IH已由原ZF集合归纳消去。项、参数列和公式的独立纯查询现有联合类型双条件。4模块56声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1570构建任务、17003项审计（392无公理／16611允许依赖）、零警告；九命令及五trust=0入口全部退出0；1432份独立哈希一致、1929对精确证书足迹、14659项Internal显式声明覆盖。原数值quotation、共享扩展签名检查器适用性、ProofZF/U检查／编译、完整内部解释及最终Con仍未完成。见[验收](STEP4_PURE_FORMULA_QUERY_INDUCTION_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

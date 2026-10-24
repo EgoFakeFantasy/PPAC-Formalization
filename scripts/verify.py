@@ -105,8 +105,31 @@ def check_pure_syntax_definition() -> dict:
             "argument_query_correctness_proved": True, "formula_query_correctness_proved": True, "formula_query_scope": "all internal root/bound/free candidates under Omega, object IH discharged"}
 
 
+def check_pure_proof_query_definitions() -> dict:
+    """Keep actual expression query acceptance separate from its typing/program specification."""
+    declarations = {"PureSyntaxExprQuery": ["query", "rowQuery"],
+                    "OriginalTransformExprQuery": ["query", "rowQuery"],
+                    "PureProofSubstitutionTransform": ["bundle"]}
+    forbidden = re.compile(r"FormulaCodeSyntax\.|SyntaxTermSyntax\.|SyntaxMixedImageCodeSyntax\.|FreeSubstProgramSyntax\.|OriginalTransformRowSyntax\.|Expr\.eval|specification")
+    for module, names in declarations.items():
+        body = strip_comments((ROOT / "PPAC/Migration/Internal" / (module + ".lean")).read_text(encoding="utf-8"))
+        for name in names:
+            found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+            if not found or forbidden.search(found.group(0)):
+                raise RuntimeError(f"Actual proof query uses a comparison oracle: {module}.{name}")
+    body = strip_comments((ROOT / "PPAC/Migration/Internal/PureProofSubstitutionQueries.lean").read_text(encoding="utf-8"))
+    for name, index in [("substitutionFormula", 0), ("substitutionArguments", 1), ("substitutionTransform", 4)]:
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+        if not found or f"(ObjectProofNode.substitutionShape.queries[{index}]).2" not in found.group(0):
+            raise RuntimeError(f"Original substitution query index changed: {name}")
+    return {"acceptance_definitions": declarations, "independent_of_comparison_oracles": True,
+            "actual_substitution_query_indices": [0, 1, 4], "projection_queries_proved": False,
+            "full_proof_node_correctness_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
+    pure_proof_query_definition = check_pure_proof_query_definitions()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2333,7 +2356,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryIff',
                     'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQuerySound',
                     'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_formulaQueryComplete',
-                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_fullSyntaxTypingIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker.native_fullSyntaxTypingIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_termExprQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_argumentsExprQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_formulaExprQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_substitutionFormulaQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_substitutionArgumentsQueryIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_substitutionTransformAtModeIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_substitutionGuardedTransformIff',
+                    'PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries.native_substitutionBundleIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2443,6 +2474,7 @@ def main() -> None:
         "ObjectPureSyntaxBinary": ('formulaCorrectInstance', 'formulaStrictIHInstance', 'binaryInputExpressionIff', 'binaryKnownTypeIff', 'binaryActualApplicationSound', 'binaryActualChildTracesMerged', 'binaryQueryFromActualChildren', 'binaryQueryFromStrictInduction'),
         "ObjectPureSyntaxUnary": ('unaryInputExpressionIff', 'unaryKnownTypeIff', 'unaryActualApplicationSound', 'unaryActualChildTraceExtended', 'unaryQueryFromActualChild', 'unaryQueryFromInternalStep', 'unaryQueryFromStrictInduction'),
         "ObjectPureSyntaxFormulaChecker": ('formulaFromInductionIff', 'formulaAllInternalCorrect', 'formulaCorrectAtRoot', 'formulaInductionDischarged', 'formulaQueryIff', 'formulaQuerySound', 'formulaQueryComplete', 'fullSyntaxTypingIff'),
+        "ObjectPureProofSubstitutionQueries": ('termExprQueryIff', 'argumentsExprQueryIff', 'formulaExprQueryIff', 'substitutionFormulaQueryIff', 'substitutionArgumentsQueryIff', 'substitutionTransformAtModeIff', 'substitutionGuardedTransformIff', 'substitutionBundleIff'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3203,6 +3235,12 @@ def main() -> None:
         "object_pure_syntax_unary_three_rules_actual_applications_proved": True,
         "object_pure_syntax_quantifier_bound_successor_internalized_proved": True,
         "object_pure_syntax_unary_complete_queries_under_uniform_IH_proved": True,
+        "object_pure_syntax_expr_queries_type_iff_proved": True,
+        "object_original_substitution_shape_pure_syntax_queries_proved": True,
+        "object_original_substitution_shape_mode_three_query_under_pure_guards_proved": True,
+        "object_original_substitution_shape_syntax_transform_bundle_iff_proved": True,
+        "object_original_substitution_shape_full_local_checker_proved": False,
+        "pure_proof_query_definition_guard": pure_proof_query_definition,
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
         "scope": "Current milestone: both quantifiers have complete original mode0/3 Run3 dispatch and exact correspondence with the existing single/advanced history program under the explicit uniform object induction premise, real admissible frame, source FormulaCode and actual recursion graph. Independent depth-successor runs are equivalent to advanced reads; bound/index/image witnesses are constructed and eliminated inside object quantifiers, with actual field equalities aligning executions. Seven certificate families replay into original nativeZF. Full eleven-case assembly and discharge of uniform FormulaCode induction remain unproved, as do final-checker applicability of the mode3 contract, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
