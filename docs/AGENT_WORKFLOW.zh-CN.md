@@ -1,5 +1,7 @@
 # 对象层迁移工程流程
 
+原逻辑0–19／22／26完整纯关系节点已验收：22个模式的原arity、有序Bool查询表、全部赋值界与88个嵌套数值子码已对象处理，最终节点只有Ω／empty前提。28模块996声明、67组原nativeZF闭句；1852构建任务、20602声明审计（417无公理／20185允许依赖）、零警告，九命令及五trust=0入口全通过；1687哈希／2335对精确足迹／18258项Internal覆盖。结合20／23／25，已有25个完整纯关系模式；21／24、共享quotation／Bool、理论节点、完整Proof／内部解释及最终Con仍未证明。见[本批验收与后续工程表](STEP4_STATIC_LOGICAL_NODES_ACCEPTANCE.zh-CN.md)。
+
 原逻辑20／23／25完整纯关系节点已验收：实际三／五查询接真实mode2 InstantiateTop，全部4／6赋值界由实际头推出；嵌套头的3／3／4个子码均以对象EX构造并消去。最终完整规范化节点只有Ω／empty前提，15组闭句返回原nativeZF。9模块225声明；1824构建任务、19606声明审计（405无公理／19201允许依赖）、零警告；九命令及五trust=0入口全通过，1659哈希／2268对精确足迹／17262项Internal覆盖。清理1份失效日志、未发现失效编译进程后已恢复全仓编译。其余逻辑／理论节点、共享quotation／Bool、完整Proof／内部解释及最终Con仍未证明。见[本批验收与后续工程表](STEP4_LOGICAL_INSTANTIATION_NODES_ACCEPTANCE.zh-CN.md)。
 
 mode2全内部完整公式及实际InstantiateTop已验收：项唯一纤维、任意内部长度列表、四原子和全部11公式构造子均已对应；对象ALL10允许frame／输出变化，原ZF集合归纳消去IH，真实历史及binder见证消去。实际空绑定目标InstantiateTop的两张码表已构造并在对象EX2中消去；最终只需Ω／Num2／empty／实际入口，源公式类型在结论内部，无元数据／frame／历史／码表前提。18模块161声明、23组原nativeZF闭句；1815构建任务、19381声明审计（402无公理／18979允许依赖）、零警告；九命令及五trust=0入口全通过，1650哈希／2253对足迹／17037项Internal覆盖。共享quotation／Bool、完整Proof／内部解释及最终Con仍未完成。见[本批验收与后续流程](STEP4_MODE_TWO_FULL_FORMULA_ACCEPTANCE.zh-CN.md)。

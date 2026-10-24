@@ -9838,4 +9838,426 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
         (Internal.LogicalInstantiateNodeSyntax.normalized6 w z row)))).close)) :=
   Internal.ObjectLogicalInstantiate.native_logicalTwentyFiveWholeNormalizedNodeIff w z row
 
+example {m} (n : Nat) (isTerm : Bool) (env : Fin (n+1) → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalAllQueriesIffSentence n isTerm env w z)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalAllQueriesIff n isTerm env w z
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule0WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule0WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule0AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule0AllAssignmentBounds env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule0NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule0NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule1WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule1WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule1AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule1AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule1NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule1NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule2WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule2WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule2AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule2AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule2NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule2NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule3WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule3WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule3AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule3AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule3NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule3NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule4WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule4WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule4AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule4AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule4NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule4NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule5WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule5WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule5AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule5AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule5NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule5NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule6WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule6WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule6AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule6AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule6NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule6NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule7WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule7WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 1 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule7AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule7AllAssignmentBounds env w row
+
+example {m} (env : Fin 1 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule7NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule7NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule8WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule8WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule8AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule8AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule8NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule8NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule9WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule9WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule9AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule9AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule9NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule9NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule10WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule10WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule10AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule10AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule10NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule10NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule11WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule11WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule11AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule11AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule11NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule11NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule12WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule12WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule12AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule12AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule12NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule12NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule13WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule13WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule13AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule13AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule13NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule13NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule14WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule14WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule14AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule14AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule14NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule14NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule15WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule15WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule15AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule15AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule15NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule15NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule16WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule16WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule16AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule16AllAssignmentBounds env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule16NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule16NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule17WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule17WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule17AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule17AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule17NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule17NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule18WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule18WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule18AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule18AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule18NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule18NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule19WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule19WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule19AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule19AllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule19NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule19NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule22WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule22WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule22AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule22AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule22NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule22NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule26WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule26WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule26AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule26AllAssignmentBounds env w row
+
+example {m} (env : Fin 2 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalStatic.staticLogicalRule26NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule26NumericNestedHeadIff env w row
+
+-- Expanded actual rule0: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 3 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule0.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 3 false (@Internal.LogicalRule0Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule0WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule1: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule1.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule1Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule1WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule2: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule2.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule2Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule2WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule3: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule3.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule3Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule3WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule4: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule4.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule4Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule4WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule5: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule5.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule5Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule5WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule6: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule6.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule6Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule6WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule7: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 0 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule7.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 0 false (@Internal.LogicalRule7Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule7WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule8: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule8.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule8Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule8WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule9: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule9.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule9Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule9WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule10: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule10.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule10Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule10WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule11: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule11.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule11Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule11WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule12: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule12.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule12Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule12WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule13: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule13.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule13Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule13WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule14: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule14.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule14Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule14WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule15: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule15.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule15Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule15WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule16: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 3 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule16.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 3 false (@Internal.LogicalRule16Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule16WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule17: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule17.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule17Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule17WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule18: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule18.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule18Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule18WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule19: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 2 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule19.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 2 false (@Internal.LogicalRule19Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule19WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule22: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 false (YesMetaZFC.Automation.ObjectLogicalAxiom.rule22.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 false (@Internal.LogicalRule22Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule22WholeNormalizedNodeIff w z row
+
+-- Expanded actual rule26: all assignment and numeric head witnesses are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalStaticNodeSyntax.node 1 true (YesMetaZFC.Automation.ObjectLogicalAxiom.rule26.head) w row).iff
+        (Internal.LogicalStaticNodeSyntax.normalized 1 true (@Internal.LogicalRule26Head.normalized) w z row)))).close)) :=
+  Internal.ObjectLogicalStatic.native_staticLogicalRule26WholeNormalizedNodeIff w z row
+
 end PPAC.Migration.Step4Checks
