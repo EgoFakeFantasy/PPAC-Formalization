@@ -218,3 +218,4 @@ import PPAC.Migration.Internal.ObjectSmallModeArguments
 import PPAC.Migration.Internal.ObjectAbstractTopTerm
 import PPAC.Migration.Internal.ObjectAbstractTopArguments
 import PPAC.Migration.Internal.ObjectAbstractOperationFrame
+import PPAC.Migration.Internal.ObjectAbstractFramePrograms

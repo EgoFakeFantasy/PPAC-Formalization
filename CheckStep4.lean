@@ -9218,4 +9218,55 @@ example {m} (w mode depth P D R S a b c e A C K H : Fin m) :
               (Internal.AbstractOperationFrameSyntax.frame w mode D P A b C e K H))))).close)) :=
   Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged w mode depth P D R S a b c e A C K H
 
+example {m} (bound : Bool) (w mode depth P a b c e R S n q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameVariableProgramIffSentence bound w mode depth P a b c e R S n q i)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameVariableProgramIff bound w mode depth P a b c e R S n q i
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTermProgramIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermProgramIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTermCodedIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermCodedIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTermGuardedCodedIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermGuardedCodedIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTermAllOutputsAgreementSentence w mode depth P a b c e R S n)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermAllOutputsAgreement w mode depth P a b c e R S n
+
+example {m} (w mode depth P a b c e R S n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTypedTermUniqueFiberSentence w mode depth P a b c e R S n)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTypedTermUniqueFiber w mode depth P a b c e R S n
+
+example {m} (w mode depth P a b c e R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameTermPromiseDischargedSentence w mode depth P a b c e R S)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermPromiseDischarged w mode depth P a b c e R S
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameArgumentFieldsIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameArgumentFieldsIff w mode depth P a b c e R S n q k
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameArgumentProgramIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameArgumentProgramIff w mode depth P a b c e R S n q k
+
+example {m} (w mode depth P a b c e R S n q k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractFramePrograms.arbitraryDepthFrameGuardedArgumentProgramIffSentence w mode depth P a b c e R S n q k)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameGuardedArgumentProgramIff w mode depth P a b c e R S n q k
+
+-- Expanded arbitrary-depth list contract: source guard inside conclusion; no Promise or IH premises.
+example {m} (w mode depth P a b c e R S n q k : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.AbstractOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          (((Internal.SyntaxMixedImageCodeSyntax.termList w k a b n).conj
+            (Internal.OriginalTransformRowSyntax.run 2 w mode depth P n q)).iff
+              ((Internal.SyntaxMixedImageCodeSyntax.termList w k a b n).conj
+                (Internal.ArgumentProgramFieldSyntax.mapped w R S k c e n q))))).close)) :=
+  Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameGuardedArgumentProgramIff w mode depth P a b c e R S n q k
+
 end PPAC.Migration.Step4Checks

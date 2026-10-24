@@ -333,8 +333,8 @@ def check_small_mode_arguments_and_pure_term_values() -> dict:
             "actual_child_Run1_and_Run2_queries_retained": True,
             "argument_root_and_all_root_set_witnesses_discharged": True,
             "pure_signature_all_terms_guarded_numeric_iff_proved": True,
-            "argument_map_against_actual_abstract_coded_environment_proved": False,
-            "legacy_argument_map_flag_scope": "arbitrary depth including binder lifts",
+            "argument_map_against_actual_abstract_coded_environment_proved": True,
+            "legacy_argument_map_flag_scope": "arbitrary internal depth under the proved compatible frame",
             "zero_depth_actual_abstract_argument_map_proved": True,
             "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
 
@@ -372,7 +372,8 @@ def check_actual_abstract_argument_operation() -> dict:
             "list_IH_and_term_promise_discharged": True,
             "both_code_table_witnesses_constructed_and_eliminated": True,
             "source_list_type_guard_inside_final_conclusion": True, "depth_required_empty": True,
-            "binder_lifted_argument_map_proved": False,
+            "binder_lifted_argument_map_proved": True,
+            "binder_lifted_argument_map_scope": "typed lists under proved compatible frames",
             "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
 
 
@@ -395,6 +396,27 @@ def check_actual_abstract_frame() -> dict:
             "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
 
 
+def check_actual_abstract_frame_programs() -> dict:
+    """Final arbitrary-depth endpoints carry no externally supplied Promise or list induction."""
+    for module, name, premises in [
+        ("AbstractFrameTerm", "program_iff", {"hw", "hF", "ht"}),
+        ("AbstractFrameTerm", "guarded_coded_iff", {"hw", "hF"}),
+        ("AbstractFrameTermFiber", "promise", {"hw", "hF"}),
+        ("AbstractFrameArguments", "run_iff", {"hw", "hFrame", "hL"}),
+        ("AbstractFrameArguments", "guarded_iff", {"hw", "hFrame"})]:
+        text = strip_comments((ROOT / ("PPAC/Migration/Internal/" + module + ".lean")).read_text(encoding="utf-8"))
+        found = re.search(r"(?ms)^theorem " + name + r"\b.*?(?=:=)", text)
+        if not found or set(re.findall(r"\((\w+)\s*:\s*Derives Γ \(", found.group(0))) != premises:
+            raise RuntimeError("Arbitrary-depth frame program contract changed: " + module + "." + name)
+    return {"arbitrary_internal_depth_term_program_and_coded_operation_iff_proved": True,
+            "actual_typed_unique_term_fiber_and_internal_promise_proved": True,
+            "arbitrary_internal_depth_argument_program_field_map_iff_proved": True,
+            "list_IH_and_term_promise_discharged": True,
+            "source_type_guards_inside_final_conclusions": True,
+            "source_target_bound_lengths_remain_independent": True,
+            "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -411,6 +433,7 @@ def main() -> None:
     actual_abstract_pure_term_operation = check_actual_abstract_pure_term_operation()
     actual_abstract_argument_operation = check_actual_abstract_argument_operation()
     actual_abstract_frame = check_actual_abstract_frame()
+    actual_abstract_frame_programs = check_actual_abstract_frame_programs()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2853,7 +2876,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualLiftedFreeFieldsIff',
                     'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_allInternalLiftedBoundFieldsIff',
                     'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_allInternalLiftedFrameCompatibility',
-                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameVariableProgramIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermProgramIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermCodedIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermGuardedCodedIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermAllOutputsAgreement',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTypedTermUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameTermPromiseDischarged',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameArgumentFieldsIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameArgumentProgramIff',
+                    'PPAC.Migration.Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameGuardedArgumentProgramIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2975,6 +3008,7 @@ def main() -> None:
         "ObjectOriginalAbstract": ('modeOneFiveRuleStepIff', 'modeOneVariableTwoRuleStepIff', 'modeOneVariableWholeTraceIff', 'modeOneBoundIdentityGuardIff', 'modeOneBoundAbstractGuardIff', 'modeOneBoundPreservedTrace', 'modeOneBoundShiftedTrace', 'modeOneFreeHeadTrace', 'modeOneFreeTailTrace'),
         "ObjectAbstractVariable": ('originalVariableIndexGraph', 'modeOneBoundVariableNumericIff', 'modeOneBoundVariableNumericSound', 'modeOneBoundVariableNumericComplete', 'modeOneFreeVariableNumericIff', 'modeOneFreeVariableNumericSound', 'modeOneFreeVariableNumericComplete', 'modeOneAllVariableNumericTraceIff', 'modeOneAllVariableNumericRunIff', 'modeOneVariableNumericOutputNatural', 'modeOnePreservedValueConstructsTrace', 'modeOneShiftedValueConstructsTrace', 'modeOneFreeHeadValueConstructsTrace', 'modeOneFreeTailValueConstructsTrace'),
         "ObjectSmallModeArguments": ('smallModeOriginalNilGuard', 'smallModeOriginalNilMatrixIff', 'smallModeOriginalNilAtRowIff', 'smallModeOriginalNilApplicationIff', 'smallModeArgumentTraceAtActualValueIff', 'smallModeArgumentTraceIff', 'smallModeArgumentWholeRunIff', 'modeOnePureTermGuardedNumericIff', 'modeOnePureTermTypedNumericIff', 'modeOneTermScopeBranchNumeric', 'modeOneTermNumericBranchRun'),
+        "ObjectAbstractFramePrograms": ('arbitraryDepthFrameVariableProgramIff', 'arbitraryDepthFrameTermProgramIff', 'arbitraryDepthFrameTermCodedIff', 'arbitraryDepthFrameTermGuardedCodedIff', 'arbitraryDepthFrameTermAllOutputsAgreement', 'arbitraryDepthFrameTypedTermUniqueFiber', 'arbitraryDepthFrameTermPromiseDischarged', 'arbitraryDepthFrameArgumentFieldsIff', 'arbitraryDepthFrameArgumentProgramIff', 'arbitraryDepthFrameGuardedArgumentProgramIff'),
         "ObjectAbstractOperationFrame": ('arbitraryDepthBoundShiftedIff', 'internalSuccessorThresholdIff', 'knownActualIndexVariableRenameIff', 'actualBinderBoundRenameIff', 'actualBinderFreeRenameIff', 'arbitraryDepthBoundBinderCovarianceIff', 'arbitraryDepthFreeBinderCovarianceIff', 'actualAbstractRootCompatibleFrame', 'actualLiftedBoundFieldsIff', 'actualLiftedFreeFieldsIff', 'allInternalLiftedBoundFieldsIff', 'allInternalLiftedFrameCompatibility', 'actualBinderCompatibleFrameWitnessesDischarged'),
         "ObjectAbstractTopArguments": ('smallModeArgumentActualFiber', 'smallModeArgumentActualFields', 'smallModeArgumentCompleteFieldMapIff', 'modeOneActualTermAllOutputsAgreement', 'modeOneActualTermUniqueTypedFiber', 'modeOneActualTermPromiseDischarged', 'modeOneZeroDepthActualArgumentFieldsIff', 'modeOneZeroDepthActualArgumentProgramIff', 'modeOneZeroDepthArgumentsAtActualCodesIff', 'modeOneZeroDepthArgumentsActualOperationIff', 'modeOneZeroDepthGuardedArgumentsActualOperationIff'),
         "ObjectAbstractTopTerm": ('modeOneBoundAtZeroDepthIff', 'modeOneFreeAtZeroIndexIff', 'modeOneFreeAtSuccessorIndexIff', 'modeOneBoundBelowDepthIff', 'modeOneActualBoundTableAtSuccessorIff', 'modeOneActualFreeTableAtZeroIff', 'modeOneActualFreeTableAtSuccessorIff', 'modeOneZeroDepthActualVariableTableIff', 'modeOneZeroDepthActualVariableProgramIff', 'modeOneZeroDepthActualPureTermProgramIff', 'modeOneZeroDepthActualCodedPureTermIff', 'modeOneZeroDepthPureTermAtActualCodesIff', 'modeOneZeroDepthPureTermActualOperationIff', 'actualAbstractPureTermSourceType', 'modeOneZeroDepthGuardedPureTermActualOperationIff'),
@@ -3777,6 +3811,12 @@ def main() -> None:
         "actual_abstract_pure_term_operation_guard": actual_abstract_pure_term_operation,
         "actual_abstract_argument_operation_guard": actual_abstract_argument_operation,
         "actual_abstract_frame_guard": actual_abstract_frame,
+        "actual_abstract_frame_programs_guard": actual_abstract_frame_programs,
+        "object_original_mode_one_arbitrary_depth_frame_term_program_iff_proved": True,
+        "object_original_mode_one_arbitrary_depth_frame_coded_term_iff_proved": True,
+        "object_original_mode_one_arbitrary_depth_frame_term_promise_discharged": True,
+        "object_original_mode_one_arbitrary_depth_frame_argument_map_proved": True,
+
         "object_original_mode_one_arbitrary_internal_depth_variable_binder_covariance_proved": True,
         "object_original_mode_one_actual_abstract_root_frame_proved": True,
         "object_original_mode_one_actual_binder_frame_eight_witnesses_discharged": True,
@@ -3797,7 +3837,7 @@ def main() -> None:
         "object_original_small_mode_argument_whole_run_equations_proved": True,
         "object_original_mode_one_pure_term_guarded_numeric_iff_proved": True,
         "object_original_mode_one_pure_term_typed_numeric_iff_proved": True,
-        "object_original_mode_one_abstract_environment_argument_map_proved": False,
+        "object_original_mode_one_abstract_environment_argument_map_proved": True,
         "object_original_mode_one_variable_numeric_output_iff_proved": True,
         "object_original_mode_one_whole_variable_numeric_run_iff_proved": True,
         "object_original_mode_one_variable_root_witness_discharged": True,
@@ -3833,7 +3873,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth term/argument map, full mode1 formula operation/forall, logical/theory shapes, shared quotation/Bool, internal Proof/compiler/interpretation and final Con remain unproved.",
+        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth compatible frames now prove original term Run1 versus actual term program/coded substitution, typed unique outputs and their internal Promise, and list Run2 versus actual field maps with Promise/list IH discharged and source guards inside final conclusions. Full mode1 formula operation/forall, logical/theory shapes, shared quotation/Bool, internal Proof/compiler/interpretation and final Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

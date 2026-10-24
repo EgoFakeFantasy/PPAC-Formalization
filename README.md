@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+3f.2c.3b.2d.6g已验收：在已证真实根及binder闭包的兼容frame下，任意内部深度的原Run1已接实际项程序／混合项操作，实际有类型唯一纤维推出全部输入Promise；原Run2已接任意内部长度的真实逐字段程序，逐项Promise及列表IH均已消去，最终源类型守卫内部化。4模块50声明、10组闭句返回原nativeZF。1739构建任务、18660项声明审计（399无公理／18261允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1574份工作文件独立哈希一致、2155对精确核／native证书足迹、16316项Internal显式声明覆盖。完整mode1公式／forall、专用ProofZF/U及最终Con仍未完成。见[验收](docs/STEP4_MODE_ONE_ARBITRARY_DEPTH_PROGRAM_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2d.6f已验收：任意内部深度的原mode1变量数值关系与实际binder重命名协变，真实AbstractFreeTop环境给出根兼容frame；原完整码表binder提升保持frame。旧变量／字段见证及原提升的八个图／头见证均已对象消去。12模块89声明、13组闭句返回原nativeZF。1735构建任务、18610项声明审计（399无公理／18211允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1570份工作文件独立哈希一致、2145对精确核／native证书足迹、16266项Internal显式声明覆盖。任意深度项／参数列传输、完整mode1公式／forall、专用ProofZF/U及最终Con仍未完成。见[验收](docs/STEP4_MODE_ONE_ARBITRARY_DEPTH_FRAME_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。
