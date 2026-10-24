@@ -8297,4 +8297,80 @@ example {m} (k tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n i y : Fin m) :
         ((RawCodeFieldSyntax.field w n i y).iff (Source.Formula.equal y (xs j)))))).close)) :=
   ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff k tag xs j w n i y
 
+example {m} (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTraceNaturalSentence w r)) :=
+  Internal.ObjectProjectionTrace.native_projectionTraceNatural w r
+
+example {m} (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTraceOriginalStepSentence w r)) :=
+  Internal.ObjectProjectionTrace.native_projectionTraceOriginalStep w r
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTraceSetExistsSentence w)) :=
+  Internal.ObjectProjectionTrace.native_projectionTraceSetExists w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTraceAllRootsUnfoldSentence w)) :=
+  Internal.ObjectProjectionTrace.native_projectionTraceAllRootsUnfold w
+
+example {m} (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTraceAtActualSetIffSentence w V r)) :=
+  Internal.ObjectProjectionTrace.native_projectionTraceAtActualSetIff w V r
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (hr : rule ∈ YesMetaZFC.Automation.ObjectProjection.rules) (env : Fin rule.arity → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionActualHeadBoundSentence rule env w r)) :=
+  Internal.ObjectProjectionTrace.native_projectionActualHeadBound rule hr env w r
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (hr : rule ∈ YesMetaZFC.Automation.ObjectProjection.rules) (env : Fin rule.arity → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionActualRuleApplicationSentence rule env w r R)) :=
+  Internal.ObjectProjectionTrace.native_projectionActualRuleApplication rule hr env w r R
+
+example {m} (rule : YesMetaZFC.Automation.ObjectHorn.Rule) (hr : rule ∈ YesMetaZFC.Automation.ObjectProjection.rules) (env : Fin rule.arity → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionActualRuleConditionSentence rule env w r)) :=
+  Internal.ObjectProjectionTrace.native_projectionActualRuleCondition rule hr env w r
+
+example {m} (env : Fin 0 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTagZeroRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionTagZeroRule env w
+
+example {m} (env : Fin 2 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionTagPositiveRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionTagPositiveRule env w
+
+example {m} (env : Fin 1 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionGetZeroRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionGetZeroRule env w
+
+example {m} (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionGetHeadRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionGetHeadRule env w
+
+example {m} (env : Fin 5 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionGetTailRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionGetTailRule env w
+
+example {m} (env : Fin 1 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionFieldZeroRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionFieldZeroRule env w
+
+example {m} (env : Fin 4 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTrace.projectionFieldPositiveRuleSentence env w)) :=
+  Internal.ObjectProjectionTrace.native_projectionFieldPositiveRule env w
+-- 独立原七规则表，不得将纯十五规则或变换二十八规则当作投影规则。
+example : YesMetaZFC.Automation.ObjectProjection.rules =
+    [YesMetaZFC.Automation.ObjectProjection.tagZero, YesMetaZFC.Automation.ObjectProjection.tagPositive,
+     YesMetaZFC.Automation.ObjectProjection.getZero, YesMetaZFC.Automation.ObjectProjection.getHead,
+     YesMetaZFC.Automation.ObjectProjection.getTail, YesMetaZFC.Automation.ObjectProjection.fieldZero,
+     YesMetaZFC.Automation.ObjectProjection.fieldPositive] := rfl
+
+-- 实际存在一个内部根集合，统一展开全部内部候选，无外部有限轨迹前提。
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence ((Source.Formula.ex
+      ((ProjectionTraceSetSyntax.value w.castSucc (Fin.last m)).conj
+        (Source.Formula.all ((Source.Formula.mem (Fin.last (m+1)) w.castSucc.castSucc).imp
+          ((ProjectionTraceSyntax.condition w.castSucc.castSucc (Fin.last (m+1))).iff
+            (HornStepSyntax.step YesMetaZFC.Automation.ObjectProjection.rules w.castSucc.castSucc
+              (Fin.last (m+1)) (Fin.last m).castSucc)))))).close)) :=
+  ObjectProjectionTrace.native_projectionTraceAllRootsUnfold w
+
 end PPAC.Migration.Step4Checks

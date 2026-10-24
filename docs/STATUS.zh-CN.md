@@ -1,5 +1,10 @@
 # 当前交付状态
 
+3f.2c.3b.2d.2c.1已验收：原ObjectProjection七规则有独立纯闭轨迹及Expr查询；实际头图推出全部赋值搜索界，七规则真实子查询构造父轨迹；原Separation构造全部根集合并统一证明每个内部候选的condition↔原七规则一步展开。9模块130声明、15组闭句返回原nativeZF。1635构建任务、17476项审计（394无公理／17082允许依赖）、零警告；九命令及五trust=0入口全部退出0；1470份独立哈希一致、1983对精确证书足迹、15132项Internal显式声明覆盖。七规则与数值投影的全双条件、两项前驱投影、完整ProofZF/U及最终Con仍未完成。见[验收](STEP4_ORIGINAL_PROJECTION_TRACE_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2d.2b已验收：输入零码的get已对全部内部自然索引与空集输出对象等价，统一IH由原Separation／ω归纳消去；原field的payload后get组合已取得实际唯一自然值、任意原始标签／零输入双条件及固定有限构造器槽位读取模式。7模块91声明、13组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1626构建任务、17346项审计（393无公理／16953允许依赖）、零警告；九命令及五trust=0入口全部退出0；1461份独立哈希一致、1968对精确证书足迹、15002项Internal显式声明覆盖。原七规则闭轨迹桥、两项前驱投影查询、完整ProofZF/U及最终Con仍未完成。见[验收](STEP4_RAW_GET_ZERO_FIELD_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

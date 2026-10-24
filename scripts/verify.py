@@ -165,11 +165,37 @@ def check_raw_field_definitions() -> dict:
             "original_projection_full_seven_rule_trace_bridge_proved": False}
 
 
+def check_projection_trace_definitions() -> dict:
+    """Keep original seven-rule trace acceptance independent of numeric/typing conclusions."""
+    names = {"ProjectionTraceSyntax": ["tagRow", "getRow", "fieldRow", "closed", "witness", "condition", "tag", "get", "field"],
+             "ProjectionExprQuery": ["query", "rowQuery", "premises"],
+             "ProjectionTraceSetSyntax": ["matrix", "one", "value", "existsValue"],
+             "ProjectionTraceUnfold": ["unfolded", "existsUnfolded"]}
+    forbidden = re.compile(r"PureSyntaxTrace\.|PureSyntaxRules\.|HornLookupConditionSyntax\.|ObjectCodeProjection\.|RawCode(?:Projection|Get|Field)\w*\.|StructuralList(?:Projection|Field)\w*\.|FormulaCodeSyntax\.|SyntaxTermSyntax\.|Expr\.eval|Classical\.choose")
+    bodies = {}
+    for mod, definitions in names.items():
+        body = strip_comments((ROOT / ("PPAC/Migration/Internal/" + mod + ".lean")).read_text(encoding="utf-8"))
+        bodies[mod] = body
+        for name in definitions:
+            found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+            if not found or forbidden.search(found.group(0)):
+                raise RuntimeError(f"Original projection trace definition uses comparison oracle: {mod}.{name}")
+    if "HornStepSyntax.step YesMetaZFC.Automation.ObjectProjection.rules" not in bodies["ProjectionTraceSyntax"]:
+        raise RuntimeError("Original seven-rule list missing from projection closure")
+    if "MinimalPredicates.separated matrix" not in bodies["ProjectionTraceSetSyntax"]:
+        raise RuntimeError("Projection all-root set is not actual Separation")
+    return {"definitions": names, "original_rule_count": 7, "independent_of_numeric_and_typing_oracles": True,
+            "actual_bounded_rule_introduction_and_uniform_unfold_proved": True,
+            "all_internal_numeric_projection_iff_proved": False,
+            "proof_node_projection_queries_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
     raw_projection_definition = check_raw_projection_definitions()
     raw_field_definition = check_raw_field_definitions()
+    projection_trace_definition = check_projection_trace_definitions()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2435,7 +2461,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectRawCodeField.native_rawHeadTailOnActualConsIff',
                     'PPAC.Migration.Internal.ObjectRawCodeField.native_rawGetAtFiniteForestIff',
                     'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtFiniteNodeIff',
-                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTraceNatural',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTraceOriginalStep',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTraceSetExists',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTraceAllRootsUnfold',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTraceAtActualSetIff',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionActualHeadBound',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionActualRuleApplication',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionActualRuleCondition',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTagZeroRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionTagPositiveRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionGetZeroRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionGetHeadRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionGetTailRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionFieldZeroRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionFieldPositiveRule'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2548,6 +2589,7 @@ def main() -> None:
         "ObjectPureProofSubstitutionQueries": ('termExprQueryIff', 'argumentsExprQueryIff', 'formulaExprQueryIff', 'substitutionFormulaQueryIff', 'substitutionArgumentsQueryIff', 'substitutionTransformAtModeIff', 'substitutionGuardedTransformIff', 'substitutionBundleIff'),
         "ObjectRawCodeProjection": ('pairingComponentExists', 'pairingComponentUnique', 'barePairEveryNaturalDecodes', 'rawEveryPositiveNaturalDecodes', 'rawZeroComponent', 'rawUnselectedNaturalIsZero', 'rawHeadTailExists', 'rawHeadTailUnique', 'rawHeadTailRange', 'rawHeadTailZeroIff', 'arbitraryRawTagHeadTailIff', 'rawNaturalIterationFiber', 'rawGetExists', 'rawGetUnique', 'rawGetFiber', 'rawGetRange', 'rawGetZeroEquation', 'rawGetSuccessorEquation'),
         "ObjectRawCodeField": ('rawGetZeroAllInternalIndices', 'rawGetZeroInputIff', 'rawFieldExists', 'rawFieldUnique', 'rawFieldFiber', 'rawFieldRange', 'rawFieldAtActualPayloadIff', 'rawFieldAtArbitraryRawTagIff', 'rawFieldZeroInputIff', 'rawHeadTailOnActualConsIff', 'rawGetAtFiniteForestIff', 'rawFieldAtFiniteNodeIff', 'rawFieldAtFiniteConstructorIff'),
+        "ObjectProjectionTrace": ('projectionTraceNatural', 'projectionTraceOriginalStep', 'projectionTraceSetExists', 'projectionTraceAllRootsUnfold', 'projectionTraceAtActualSetIff', 'projectionActualHeadBound', 'projectionActualRuleApplication', 'projectionActualRuleCondition', 'projectionTagZeroRule', 'projectionTagPositiveRule', 'projectionGetZeroRule', 'projectionGetHeadRule', 'projectionGetTailRule', 'projectionFieldZeroRule', 'projectionFieldPositiveRule'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3329,6 +3371,12 @@ def main() -> None:
         "object_raw_field_zero_input_all_internal_indices_iff_proved": True,
         "object_raw_field_finite_constructor_slot_iff_schema_proved": True,
         "raw_field_definition_guard": raw_field_definition,
+        "projection_trace_definition_guard": projection_trace_definition,
+        "object_original_seven_projection_rule_trace_AST_implemented": True,
+        "object_original_seven_projection_rule_positive_closure_proved": True,
+        "object_original_projection_trace_all_root_unfold_proved": True,
+        "object_original_projection_rule_assignment_bound_discharged": True,
+
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
         "scope": "Current milestone: both quantifiers have complete original mode0/3 Run3 dispatch and exact correspondence with the existing single/advanced history program under the explicit uniform object induction premise, real admissible frame, source FormulaCode and actual recursion graph. Independent depth-successor runs are equivalent to advanced reads; bound/index/image witnesses are constructed and eliminated inside object quantifiers, with actual field equalities aligning executions. Seven certificate families replay into original nativeZF. Full eleven-case assembly and discharge of uniform FormulaCode induction remain unproved, as do final-checker applicability of the mode3 contract, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
