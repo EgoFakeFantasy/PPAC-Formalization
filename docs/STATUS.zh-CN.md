@@ -1,5 +1,9 @@
 # 当前交付状态
 
+指定token根的全内部准确算术递归已验收：原EX3／EX8字段经对象构造器注入性对齐，原零guard、移位见证、规范V及真实根码均对象消去；独立Tok接受谓词取得含真实递归Tok前提的准确small／large数值双条件。ALL3／ALL4覆盖全部内部数据及根候选，准确分支测试和非法自然数字段拒绝已证，仅Ω取得实际128／256递归系统EX2。15模块158声明、21组原nativeZF闭句；2240构建、24161审计（464无公理／23697允许依赖）、零警告；九命令／五trust=0通过，2020哈希、2703对精确足迹、21817项Internal覆盖。旧token应用guard中的根字段归一子门false→true，其余既有布尔叶保持原值。全内部token输出存在唯一、完整varint／字节包、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_ARITHMETIC_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原tokenSmall／tokenLarge的完整规则应用已验收：真实128移位、全部guard及三个有序大分支前提对象归一；全部六赋值的自然性由真实行推出，辅助digit／quotient／递归输出的搜索界由规范接受集合中的实际仿射算术推出。原arity3／6应用双向等价、十规则标签分派和ALL4关系式Condition展开完成；仅Ω取得128／256及规范V的实际EX3系统。15模块147声明、15组原nativeZF闭句；2225构建、24003审计（463无公理／23540允许依赖）、零警告；九命令／五trust=0通过，2005哈希、2682对精确足迹、21659项Internal覆盖。指定根字段归一、完整token存在唯一、varint／字节包、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_APPLICATION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

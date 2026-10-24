@@ -2070,7 +2070,44 @@ def check_Packet_original_token_applications() -> dict:
             'all_eight_foreign_rules_excluded_by_object_tag_disjointness':True,
             'actual_relational_Packet_condition_complete_token_outcome_equation_ALL4':True,
             'both_radices_and_canonical_value_object_exist_under_only_omega':True,
-            'specified_root_fields_full_normalization':False,
+            'specified_root_fields_full_normalization':True,
+            'all_internal_token_execution_total_unique':False,
+            'full_varint_Basic_AST_bridge_Proof_Con':False}
+
+
+def check_Packet_token_exact_arithmetic_recursion() -> dict:
+    modules = ['PacketTokenRootTransport', 'PacketTokenRootSyntax', 'PacketTokenRootSmall', 'PacketTokenRootLarge', 'PacketTokenRootEquation', 'PacketTokenAcceptedSyntax', 'PacketTokenCanonicalEntry', 'PacketTokenArithmeticSyntax', 'PacketTokenArithmeticBridge', 'PacketTokenAcceptedNatural', 'PacketTokenArithmeticEquation', 'PacketTokenArithmeticProperties', 'PacketTokenArithmeticSystemSyntax', 'PacketTokenArithmeticSystem', 'ObjectPacketTokenArithmetic']
+    schemas = ['packetTokenRootSmallFieldsIff', 'packetTokenRootLargeFieldsIff', 'packetTokenSpecifiedRootConditionEquation', 'packetTokenSpecifiedRootMemberEquation', 'packetTokenCanonicalEntryActualAcceptanceIff', 'packetTokenCanonicalEntryAffineIff', 'packetTokenZeroGuardFromNonzeroQuotient', 'packetTokenSmallExactArithmeticBridge', 'packetTokenLargeExactArithmeticBridge', 'packetTokenFullExactArithmeticBridge', 'packetTokenActualAcceptanceNaturalFields', 'packetTokenArithmeticCriterionNaturalFields', 'packetTokenConditionExactArithmeticWithoutCanonicalWitness', 'packetTokenActualAcceptedExactArithmeticRecursion', 'packetTokenLargeBranchExcludesSmallInput', 'packetTokenActualSmallBranchIff', 'packetTokenActualLargeBranchIff', 'packetTokenActualRejectInvalidField', 'packetTokenAllInternalAcceptedArithmeticRecursion', 'packetTokenAllInternalRootArithmeticRecursion', 'packetTokenActualArithmeticRecursionSystemExists']
+    required = {'PacketTokenRootTransport': ['Derives.eqSubst', 'theorem entry_first', 'theorem entry_second', 'theorem entry_third'], 'PacketTokenRootSyntax': ['def smallCase', 'def largeBody', 'existsMany 5', 'def criterion', 'theorem intro_large'], 'PacketTokenRootSmall': ['HornBinderRules.eliminate_many 3', 'SyntaxNodeInjective.constructor_input_eq', 'PacketTokenRootTransport.entry_first', 'PacketTokenRootTransport.entry_second', 'PacketTokenRootTransport.entry_third', 'theorem small_iff'], 'PacketTokenRootLarge': ['existsMany 8', 'theorem actual_witness', 'SyntaxNodeInjective.constructor_input_eq', 'PacketTokenRootTransport.entry_third 0', 'PacketTokenRootTransport.entry_second 2', 'PacketTokenRootTransport.entry_third 1', 'theorem large_iff'], 'PacketTokenRootEquation': ['PacketTokenDispatch.condition_iff_outcomes', 'PacketTokenRootSmall.small_iff', 'PacketTokenRootLarge.large_iff', 'theorem member_iff'], 'PacketTokenAcceptedSyntax': ['def tagAccepted', 'PacketTraceSyntax.condition', 'def accepted', 'tagAccepted 2', 'theorem intro_accepted'], 'PacketTokenCanonicalEntry': ['theorem entry_iff', 'PacketTraceCore.member_iff', 'theorem affine_entry_iff', 'PacketAffineAccepted.accepted_iff'], 'PacketTokenArithmeticSyntax': ['def largeBody', 'existsMany 4', 'affine (old 4 w) (old 4 B)', 'accepted (old 4 w) (slot 4 1) (old 4 t) (slot 4 2)', 'affine (old 4 w) (old 4 C)', 'theorem intro_large'], 'PacketTokenArithmeticBridge': ['theorem zero_member', 'GodelUnpairArithmetic.zero_below', 'PacketTokenCanonicalEntry.affine_entry_iff', 'PacketTokenCanonicalEntry.entry_iff 2', 'theorem large_forward', 'theorem large_backward', 'SyntaxNumerals.exists_numeral hZ4 0', 'theorem criterion_iff'], 'PacketTokenAcceptedNatural': ['theorem accepted_environment', 'PacketTokenNatural.row_environment', 'theorem criterion_environment', 'PacketAffineCore.output_guard'], 'PacketTokenArithmeticEquation': ['PacketTraceCore.exists_value hZ w', 'theorem condition_iff', 'theorem accepted_iff', 'PacketTokenAcceptedNatural.criterion_environment', 'SyntaxConstructors.exists_constructor', 'intro_accepted'], 'PacketTokenArithmeticProperties': ['theorem large_not_small', 'PacketDivisionDescentCore.terminal_iff', 'theorem accepted_small_iff', 'theorem accepted_large_iff', 'theorem reject_field'], 'PacketTokenArithmeticSystemSyntax': ['OriginalUniversalBlock.allMany 3', 'OriginalUniversalBlock.allMany 4', 'existsMany 2', 'def existsSystem'], 'PacketTokenArithmeticSystem': ['theorem all_law', 'theorem all_root_law', 'theorem exists_system', 'SyntaxNumerals.exists_numeral hZ 128', 'SyntaxNumerals.exists_numeral hZ1 256'], 'ObjectPacketTokenArithmetic': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text) or re.search(r'(?m)^\s+induction\b', text):
+            raise RuntimeError('Token exact arithmetic recursion forbidden gap or host induction: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Token exact arithmetic recursion proof drift: '+mod+': '+clause)
+    signatures = [('PacketTokenRootSmall', 'small_iff', {'hr', 'hw'}), ('PacketTokenRootLarge', 'large_iff', {'hr', 'hw'}), ('PacketTokenArithmeticBridge', 'criterion_iff', {'hv', 'hB', 'hC', 'hw'}), ('PacketTokenArithmeticEquation', 'condition_iff', {'hB', 'hr', 'hC', 'hw'}), ('PacketTokenArithmeticEquation', 'accepted_iff', {'hB', 'hC', 'hw'}), ('PacketTokenArithmeticSystem', 'all_law', {'hB', 'hC', 'hw'}), ('PacketTokenArithmeticSystem', 'all_root_law', {'hB', 'hC', 'hw'}), ('PacketTokenArithmeticSystem', 'exists_system', {'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Token exact arithmetic recursion hidden premise: '+mod+'.'+name)
+    definition = texts['PacketTokenAcceptedSyntax'].split('def tagAccepted')[1].split('theorem tagAccepted_rename')[0]
+    if 'affine' in definition or 'criterion' in definition or 'PacketTraceSyntax.condition' not in definition or 'tagRow' not in definition:
+        raise RuntimeError('Actual token acceptance must be independent of the arithmetic recurrence answer')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketTokenArithmetic.native_'+name not in check:
+            raise RuntimeError('Missing exact token arithmetic native fixture: '+name)
+    return {'original_EX3_EX8_fields_aligned_by_object_injectivity':True,
+            'original_zero_guard_and_arithmetic_shift_witnesses_object_eliminated':True,
+            'actual_independent_recursive_token_acceptance_retained':True,
+            'canonical_value_and_actual_root_witnesses_object_eliminated':True,
+            'all_internal_actual_acceptance_iff_exact_arithmetic_recurrence_ALL3':True,
+            'all_internal_specified_root_arithmetic_equation_ALL4':True,
+            'actual_small_large_test_exact_and_invalid_fields_rejected':True,
+            'actual_two_radix_recursion_system_exists_under_only_omega':True,
             'all_internal_token_execution_total_unique':False,
             'full_varint_Basic_AST_bridge_Proof_Con':False}
 
@@ -2127,6 +2164,7 @@ def main() -> None:
     Packet_internal_radix_division = check_Packet_internal_radix_division()
     Packet_quotient_descent_and_induction = check_Packet_quotient_descent_and_induction()
     Packet_original_token_applications = check_Packet_original_token_applications()
+    Packet_token_exact_arithmetic_recursion = check_Packet_token_exact_arithmetic_recursion()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5100,7 +5138,28 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketToken.native_packetTokenCompleteStepEquation',
                     'PPAC.Migration.Internal.ObjectPacketToken.native_packetTokenActualConditionEquation',
                     'PPAC.Migration.Internal.ObjectPacketToken.native_packetTokenAllInternalRootEquation',
-                    'PPAC.Migration.Internal.ObjectPacketToken.native_packetTokenActualTwoRadixSystemExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketToken.native_packetTokenActualTwoRadixSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenRootSmallFieldsIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenRootLargeFieldsIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenSpecifiedRootConditionEquation',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenSpecifiedRootMemberEquation',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenCanonicalEntryActualAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenCanonicalEntryAffineIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenZeroGuardFromNonzeroQuotient',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenSmallExactArithmeticBridge',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenLargeExactArithmeticBridge',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenFullExactArithmeticBridge',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualAcceptanceNaturalFields',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenArithmeticCriterionNaturalFields',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenConditionExactArithmeticWithoutCanonicalWitness',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualAcceptedExactArithmeticRecursion',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenLargeBranchExcludesSmallInput',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualSmallBranchIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualLargeBranchIff',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualRejectInvalidField',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalAcceptedArithmeticRecursion',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalRootArithmeticRecursion',
+                    'PPAC.Migration.Internal.ObjectPacketTokenArithmetic.native_packetTokenActualArithmeticRecursionSystemExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5112,6 +5171,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketTokenArithmetic": ('packetTokenRootSmallFieldsIff', 'packetTokenRootLargeFieldsIff', 'packetTokenSpecifiedRootConditionEquation', 'packetTokenSpecifiedRootMemberEquation', 'packetTokenCanonicalEntryActualAcceptanceIff', 'packetTokenCanonicalEntryAffineIff', 'packetTokenZeroGuardFromNonzeroQuotient', 'packetTokenSmallExactArithmeticBridge', 'packetTokenLargeExactArithmeticBridge', 'packetTokenFullExactArithmeticBridge', 'packetTokenActualAcceptanceNaturalFields', 'packetTokenArithmeticCriterionNaturalFields', 'packetTokenConditionExactArithmeticWithoutCanonicalWitness', 'packetTokenActualAcceptedExactArithmeticRecursion', 'packetTokenLargeBranchExcludesSmallInput', 'packetTokenActualSmallBranchIff', 'packetTokenActualLargeBranchIff', 'packetTokenActualRejectInvalidField', 'packetTokenAllInternalAcceptedArithmeticRecursion', 'packetTokenAllInternalRootArithmeticRecursion', 'packetTokenActualArithmeticRecursionSystemExists'),
         "ObjectPacketToken": ('packetTokenSmallExactMatrix', 'packetTokenLargeExactMatrixAt', 'packetTokenLargeExactMatrixWitnessesDischarged', 'packetTokenLargeAssignmentNatural', 'packetTokenCanonicalAffineEntryArithmetic', 'packetTokenDigitBelowAffineOutput', 'packetTokenAllSixActualAssignmentBoundsAt', 'packetTokenAllSixActualAssignmentBounds', 'packetTokenSmallApplicationIff', 'packetTokenLargeApplicationIff', 'packetTokenOriginalTwoRuleDispatch', 'packetTokenCompleteStepEquation', 'packetTokenActualConditionEquation', 'packetTokenAllInternalRootEquation', 'packetTokenActualTwoRadixSystemExists'),
         "ObjectPacketDescent": ('packetDescentOneProduct', 'packetDescentProductBounds', 'packetDescentQuotientBounds', 'packetDescentQuotientBelow', 'packetDescentNonzeroOutputStrict', 'packetDescentTerminalDigit', 'packetDescentExactStoppingThreshold', 'packetDescentZeroOutputExactFields', 'packetDescentLargeOutputNonzero', 'packetDescentQuotientInductionPoint', 'packetDescentQuotientInductionProgressive', 'packetDescentAllInternalQuotientInduction', 'packetDescentAffineProperties', 'packetDescentAffineTerminalRecursiveBranches', 'packetDescentAcceptedProperties', 'packetDescentAllInternalAcceptedLaw', 'packetDescentActualLiteralSystemExists'),
         "ObjectPacketDivision": ('packetDivisionIncrement', 'packetDivisionCarry', 'packetDivisionSuccessorExists', 'packetDivisionAllNaturalOutputs', 'packetDivisionDecompositionExists', 'packetDivisionLowerBand', 'packetDivisionUpperBand', 'packetDivisionQuotientUnique', 'packetDivisionRemainderUnique', 'packetDivisionPairUnique', 'packetDivisionExactDomain', 'packetDivisionQuantifiedPairUnique', 'packetDivisionUniqueFiberExists', 'packetDivisionUniqueFiberExactDomain', 'packetDivisionAcceptedInverseExists', 'packetDivisionAcceptedInverseExactDomain', 'packetDivisionAcceptedInverseUnique', 'packetDivisionAllInternalUniqueFibers', 'packetDivisionAllInternalAcceptedInverse', 'packetDivisionActualLiteralSystemExists'),
@@ -6092,6 +6152,14 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_token_exact_arithmetic_recursion_guard": Packet_token_exact_arithmetic_recursion,
+        'object_Packet_token_specified_root_fields_normalized': True,
+        'object_Packet_token_exact_arithmetic_recursive_equation_proved': True,
+        'object_Packet_token_canonical_and_root_witnesses_eliminated': True,
+        'object_Packet_token_all_internal_acceptance_recursive_iff_proved': True,
+        'object_Packet_token_actual_small_large_branch_test_proved': True,
+        'object_Packet_token_literal_arithmetic_recursion_system_constructed': True,
+        'object_Packet_token_invalid_natural_field_rejection_proved': True,
         "Packet_original_token_applications_guard": Packet_original_token_applications,
         'object_Packet_token_original_rule_matrices_proved': True,
         'object_Packet_token_all_six_assignment_search_bounds_proved': True,

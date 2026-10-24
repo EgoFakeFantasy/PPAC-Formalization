@@ -11784,4 +11784,88 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketToken.packetTokenActualTwoRadixSystemExistsSentence w)) :=
   Internal.ObjectPacketToken.native_packetTokenActualTwoRadixSystemExists w
 
+example {m} (w B V n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenRootSmallFieldsIffSentence w B V n t a r)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenRootSmallFieldsIff w B V n t a r
+
+example {m} (w B V n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenRootLargeFieldsIffSentence w B V n t a r)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenRootLargeFieldsIff w B V n t a r
+
+example {m} (w B C V n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenSpecifiedRootConditionEquationSentence w B C V n t a r)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenSpecifiedRootConditionEquation w B C V n t a r
+
+example {m} (w B C V n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenSpecifiedRootMemberEquationSentence w B C V n t a r)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenSpecifiedRootMemberEquation w B C V n t a r
+
+example {m} (tag : Nat) (w V n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenCanonicalEntryActualAcceptanceIffSentence tag w V n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenCanonicalEntryActualAcceptanceIff tag w V n t a
+
+example {m} (wide : Bool) (w B V d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenCanonicalEntryAffineIffSentence wide w B V d q n)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenCanonicalEntryAffineIff wide w B V d q n
+
+example {m} (w z q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenZeroGuardFromNonzeroQuotientSentence w z q)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenZeroGuardFromNonzeroQuotient w z q
+
+example {m} (w B C V n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenSmallExactArithmeticBridgeSentence w B C V n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenSmallExactArithmeticBridge w B C V n t a
+
+example {m} (w B C V n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenLargeExactArithmeticBridgeSentence w B C V n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenLargeExactArithmeticBridge w B C V n t a
+
+example {m} (w B C V n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenFullExactArithmeticBridgeSentence w B C V n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenFullExactArithmeticBridge w B C V n t a
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualAcceptanceNaturalFieldsSentence w n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualAcceptanceNaturalFields w n t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenArithmeticCriterionNaturalFieldsSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenArithmeticCriterionNaturalFields w B C n t a
+
+example {m} (w B C n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenConditionExactArithmeticWithoutCanonicalWitnessSentence w B C n t a r)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenConditionExactArithmeticWithoutCanonicalWitness w B C n t a r
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualAcceptedExactArithmeticRecursionSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualAcceptedExactArithmeticRecursion w B C n t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenLargeBranchExcludesSmallInputSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenLargeBranchExcludesSmallInput w B C n t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualSmallBranchIffSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualSmallBranchIff w B C n t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualLargeBranchIffSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualLargeBranchIff w B C n t a
+
+example {m} (i : Fin 3) (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualRejectInvalidFieldSentence i w n t a)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualRejectInvalidField i w n t a
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenAllInternalAcceptedArithmeticRecursionSentence w B C)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalAcceptedArithmeticRecursion w B C
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenAllInternalRootArithmeticRecursionSentence w B C)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenAllInternalRootArithmeticRecursion w B C
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenArithmetic.packetTokenActualArithmeticRecursionSystemExistsSentence w)) :=
+  Internal.ObjectPacketTokenArithmetic.native_packetTokenActualArithmeticRecursionSystemExists w
+
 end PPAC.Migration.Step4Checks
