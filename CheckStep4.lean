@@ -8141,4 +8141,90 @@ example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.
             (FreeSubstProgramSyntax.executed w z (env 2) (env 0) (env 3) (env 5) (env 1))))))).close)) :=
   ObjectPureProofSubstitutionQueries.native_substitutionBundleIff env w z
 
+example {m} (raw head : Bool) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.pairingComponentExistsSentence raw head w x)) :=
+  Internal.ObjectRawCodeProjection.native_pairingComponentExists raw head w x
+
+example {m} (raw head : Bool) (w x y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.pairingComponentUniqueSentence raw head w x y z)) :=
+  Internal.ObjectRawCodeProjection.native_pairingComponentUnique raw head w x y z
+
+example {m} (head : Bool) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.barePairEveryNaturalDecodesSentence head w x)) :=
+  Internal.ObjectRawCodeProjection.native_barePairEveryNaturalDecodes head w x
+
+example {m} (head : Bool) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawEveryPositiveNaturalDecodesSentence head w x)) :=
+  Internal.ObjectRawCodeProjection.native_rawEveryPositiveNaturalDecodes head w x
+
+example {m} (head : Bool) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawZeroComponentSentence head w x y)) :=
+  Internal.ObjectRawCodeProjection.native_rawZeroComponent head w x y
+
+example {m} (head : Bool) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawUnselectedNaturalIsZeroSentence head w x)) :=
+  Internal.ObjectRawCodeProjection.native_rawUnselectedNaturalIsZero head w x
+
+example {m} (head : Bool) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawHeadTailExistsSentence head w x)) :=
+  Internal.ObjectRawCodeProjection.native_rawHeadTailExists head w x
+
+example {m} (head : Bool) (w x y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawHeadTailUniqueSentence head w x y z)) :=
+  Internal.ObjectRawCodeProjection.native_rawHeadTailUnique head w x y z
+
+example {m} (head : Bool) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawHeadTailRangeSentence head w x y)) :=
+  Internal.ObjectRawCodeProjection.native_rawHeadTailRange head w x y
+
+example {m} (head : Bool) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawHeadTailZeroIffSentence head w x y)) :=
+  Internal.ObjectRawCodeProjection.native_rawHeadTailZeroIff head w x y
+
+example {m} (head : Bool) (w tag p a b x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.arbitraryRawTagHeadTailIffSentence head w tag p a b x y)) :=
+  Internal.ObjectRawCodeProjection.native_arbitraryRawTagHeadTailIff head w tag p a b x y
+
+example {m} (head : Bool) (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawNaturalIterationFiberSentence head w x i)) :=
+  Internal.ObjectRawCodeProjection.native_rawNaturalIterationFiber head w x i
+
+example {m} (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetExistsSentence w x i)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetExists w x i
+
+example {m} (w x i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetUniqueSentence w x i y z)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetUnique w x i y z
+
+example {m} (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetFiberSentence w x i)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetFiber w x i
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetRangeSentence w x i y)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetRange w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetZeroEquationSentence w x i y)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetZeroEquation w x i y
+
+example {m} (w x t r s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeProjection.rawGetSuccessorEquationSentence w x t r s y)) :=
+  Internal.ObjectRawCodeProjection.native_rawGetSuccessorEquation w x t r s y
+-- 任意原始标签，未假定tag=1或规范Cons；整个候选输出双条件返回原核。
+example {m} (head : Bool) (w tag p a b x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.Formula.mem tag w).imp
+      ((Source.Formula.mem p w).imp ((Source.Formula.mem a w).imp ((Source.Formula.mem b w).imp
+        ((StructuralNodeSyntax.raw w tag p x).imp ((GodelPairSyntax.code w a b p).imp
+          ((RawCodeProjectionSyntax.step head w x y).iff (Source.Formula.equal y (if head then a else b)))))))))).close)) :=
+  ObjectRawCodeProjection.native_arbitraryRawTagHeadTailIff head w tag p a b x y
+
+-- 全内部索引的后继递归方程；实际tail关系明确，不使用宿主自然递归。
+example {m} (w x t r s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.Formula.mem r w).imp
+      ((OmegaSyntax.successor s r).imp ((RawCodeProjectionSyntax.step false w x t).imp
+        ((RawCodeGetSyntax.get w x s y).iff (RawCodeGetSyntax.get w t r y)))))).close)) :=
+  ObjectRawCodeProjection.native_rawGetSuccessorEquation w x t r s y
+
 end PPAC.Migration.Step4Checks

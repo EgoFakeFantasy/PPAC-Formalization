@@ -1,5 +1,10 @@
 # 对象层最终目标与内部Con规格
 
+3f.2c.3b.2d.2a已验收：原裸配数／后继节点分量投影、任意原始标签外壳的head／tail精确双条件及零码行为已对象证明；实际自然递归给出全部内部自然索引的get值存在唯一与零索引／后继索引双向方程。16模块188声明、18组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1619构建任务、17255项审计（393无公理／16862允许依赖）、零警告；九命令及五trust=0入口全部退出0；1454份独立哈希一致、1955对精确证书足迹、14911项Internal显式声明覆盖。输入零码任意索引统一定理、field组合、原七规则轨迹桥、两投影查询、完整ProofZF/U及最终Con仍未完成。见[验收](STEP4_RAW_CODE_PROJECTION_GET_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2d.1已验收：固定Expr语法查询已由真实行图和闭轨迹接到纯项／项列／公式类型；原substitutionShape的第0／1／4项查询直接取自上游表，三项合取与输入公式合法及自由替换程序执行对象等价。最终只有Ω、六项自然赋值和空集零值前提，模式数码及行码见证内部消去。6模块64声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1603构建任务、17067项审计（392无公理／16675允许依赖）、零警告；九命令及五trust=0入口全部退出0；1438份独立哈希一致、1937对精确证书足迹、14723项Internal显式声明覆盖。两项投影、完整节点外壳／赋值界、原数值quotation、完整ProofZF/U与最终Con仍未完成。见[验收](STEP4_PURE_PROOF_SUBSTITUTION_QUERIES_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

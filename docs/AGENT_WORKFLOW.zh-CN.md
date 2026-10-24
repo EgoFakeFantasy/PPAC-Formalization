@@ -1,5 +1,19 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2d.2a已验收：原裸配数／后继节点分量投影、任意原始标签外壳的head／tail精确双条件及零码行为已对象证明；实际自然递归给出全部内部自然索引的get值存在唯一与零索引／后继索引双向方程。16模块188声明、18组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1619构建任务、17255项审计（393无公理／16862允许依赖）、零警告；九命令及五trust=0入口全部退出0；1454份独立哈希一致、1955对精确证书足迹、14911项Internal显式声明覆盖。输入零码任意索引统一定理、field组合、原七规则轨迹桥、两投影查询、完整ProofZF/U及最终Con仍未完成。见[验收](STEP4_RAW_CODE_PROJECTION_GET_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 输入与实现动作 | 必须交付的对象合同 | 状态 |
+|---|---|---|---|
+| 原始投影数值语义2a | 裸GodelPair／StructuralNode.raw、原自然递归 | 任意标签head／tail双条件与零码行为；全内部索引get唯一纤维和零／后继索引方程 | 已验收 |
+| 原始投影数值语义2b | 本批get方程和内部ω归纳 | 输入码0的全部索引输出0；field=payload之后get的总单值及确切构造律 | 下一步 |
+| 原投影七规则2c | 原ObjectProjection.rules和完整数值语义 | 独立纯闭轨迹AST与tag／get／field全内部双条件；保留任意非规范自然外壳 | 待完成 |
+| 完整替换节点 | 原第2／3项投影、已证第0／1／4项、head与赋值界 | 原有界赋值存在块和全部五查询的完整节点检查正确性 | 待完成 |
+| 原六规则／27模式及ProofZF/U | 其余规则、原数值quotation、完整ZF／目标公理、内部序列 | 专用纯检查器及全内部证明码检查／编译正确性 | 待完成 |
+| 最终内部解释／Con | 完整内部解释与锁定Con | FirstOrder.Derives nativeZF [] (Con_ZF→Con_target) | 待完成 |
+
+以下保留历史验收记录。
+
+
 3f.2c.3b.2d.1已验收：固定Expr语法查询已由真实行图和闭轨迹接到纯项／项列／公式类型；原substitutionShape的第0／1／4项查询直接取自上游表，三项合取与输入公式合法及自由替换程序执行对象等价。最终只有Ω、六项自然赋值和空集零值前提，模式数码及行码见证内部消去。6模块64声明、8组闭句经Source→TheoryTransport→ZFReplay返回原nativeZF。1603构建任务、17067项审计（392无公理／16675允许依赖）、零警告；九命令及五trust=0入口全部退出0；1438份独立哈希一致、1937对精确证书足迹、14723项Internal显式声明覆盖。两项投影、完整节点外壳／赋值界、原数值quotation、完整ProofZF/U与最终Con仍未完成。见[验收](STEP4_PURE_PROOF_SUBSTITUTION_QUERIES_ACCEPTANCE.zh-CN.md)。
 
 | 当前单元 | 实现动作 | 必须验收的对象合同 | 状态 |

@@ -204,3 +204,4 @@ import PPAC.Migration.Internal.ObjectPureSyntaxBinary
 import PPAC.Migration.Internal.ObjectPureSyntaxUnary
 import PPAC.Migration.Internal.ObjectPureSyntaxFormulaChecker
 import PPAC.Migration.Internal.ObjectPureProofSubstitutionQueries
+import PPAC.Migration.Internal.ObjectRawCodeProjection
