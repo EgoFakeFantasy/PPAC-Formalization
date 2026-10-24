@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+The exact six-case node equation and refined root equation are accepted in the original nativeZF kernel. Actual zero-tag/field queries, all twelve branches, complete assignment blocks and the original children lists are object-quantified and eliminated; the endpoint assumes only Omega. Seven modules, 70 declarations, nine certificate families; 1921 build jobs, 21280 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1747 hashes and 2393 exact core/native footprints. Internal Foundation induction, actual Bool correspondence, dedicated ZF/U tests, full Proof/compiler/interpretation and final Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_NODE_ACCEPTANCE.zh-CN.md).
+
+The entries below are historical checkpoints.
+
 Root closedness and exact conclusion fields are accepted in the original nativeZF derivation kernel: Omega implies Root iff Node and the six-case ClosedPayload specification (free field zero, conclusion equal to the candidate). All assignment and row witnesses are object-quantified and eliminated. Ten modules, 77 declarations, eight certificate families; 1914 build jobs, 21210 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1740 hashes and 2384 exact core/native footprints. Node normalization, rank induction, Bool correspondence, dedicated ZF/U tests, full Proof/compiler/interpretation and final internal Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_ROOT_ACCEPTANCE.zh-CN.md).
 
 The entries below are historical checkpoints.

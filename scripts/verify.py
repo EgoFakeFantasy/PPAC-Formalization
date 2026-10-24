@@ -1164,6 +1164,45 @@ def check_proof_tree_root_closed_fields() -> dict:
             'object_test_Formula1_parameter_explicit':True,
             'rank_Bool_dedicated_Proof_compiler_and_Con_proved':False}
 
+
+def check_proof_tree_six_node_equation() -> dict:
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['ProofTreeNodeFieldLocal', 'ProofTreeNodeTag', 'ProofTreeChildren', 'ProofTreeNodeSyntax', 'ProofTreeNodeForward', 'ProofTreeNodeBackward', 'ObjectProofTreeNode']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b',text):
+            raise RuntimeError('Forbidden node equation shortcut: '+module)
+    required={
+      'ProofTreeNodeFieldLocal':['RawCodeFieldAtConstructor.constructor_at','SyntaxNumerals.exists_numeral','ProofAllTableRenaming.table_rename','Derives.eqSubst'],
+      'ProofTreeNodeTag':['PairingProjection.selected_code true true','PairingProjection.functional_point','constructor_zero_tag','ProofTreeNodeFieldLocal.atZero_iff','local_at_zero'],
+      'ProofTreeChildren':['ProofTreeEntrySyntax.node test w (env i)','ProofTreeTraceQuery.constructor_query_iff','is.map (fun i => .node (.literal 0) [.var i])','FormulaCodeCongruence.conj_congr'],
+      'ProofTreeNodeSyntax':['environmentNat ((shape kind).extra+2)','SyntaxNodeSyntax.constructor ((shape kind).extra+2) (shape kind).tag','ProofTreeChildren.children test (shape kind).children','ProofAllNodeSyntax.table test w code','ProofTreeRootSyntax.kinds.map','SyntaxConstructors.child_member'],
+      'ProofTreeNodeForward':['SyntaxConstructors.disjoint hZ1 2 1 1 0','ProofTreeConstructorFacts.field_equal','ProofTreeChildren.children_iff','HornBinderRules.eliminate_many','ProofTreeRootForward.rule_cases rule hRule','ProofTreeNodeTag.local_iff','ProofTreeTraceEquation.recursive_iff'],
+      'ProofTreeNodeBackward':['SyntaxConstructors.exists_constructor hZ 1 0','ProofTreeChildren.children_iff','ProofTreeBranchConstruction.intro_branch','HornBinderRules.eliminate_many','ProofTreeRootSyntax.disjoin_elim','ProofTreeRootBackward.root_iff','node_iff'],
+      'ObjectProofTreeNode':['TheoryTransport.sentence','ZFReplay.replay','native_proofNodeExactSixCasesIff','native_proofRootExactNodeSixCasesIff']}
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing actual node construction: '+module+': '+clause)
+    if re.search(r'ProofTreeTraceSyntax|ProofTreeTracedStep|HornExprBounds|graph |HornRuleSyntax',texts['ProofTreeNodeSyntax']):
+        raise RuntimeError('Independent node specification contains an acceptance oracle')
+    for theorem in ['node_iff','root_iff']:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts['ProofTreeNodeBackward'])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!={'hw'}:
+            raise RuntimeError('Node/root endpoint must have only Omega object premise')
+        if '(test : Formula 1)' not in header.group(0) or re.search(r'Promise|Model|Consistent|hIH\s*:|hTest\s*:',header.group(0)):
+            raise RuntimeError('Node/root endpoint has hidden validity premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name,args in [('proofNodeExactSixCasesIff','test w code'),('proofRootExactNodeSixCasesIff','test w code conclusion')]:
+        if 'ObjectProofTreeNode.native_'+name+' '+args not in check:
+            raise RuntimeError('Missing expanded native node/root contract')
+    return {'actual_zero_tag_and_field_zero_witnesses_object_eliminated':True,
+            'local_condition_iff_exact_six_kind_table_at_actual_payload':True,
+            'all_twelve_original_branch_disjunction_eliminated':True,
+            'all_six_actual_children_lists_and_payload_arities_preserved':True,
+            'node_six_case_and_refined_root_equations_only_Omega_premise':True,
+            'all_internal_payload_fields_strictly_below_parent_code':True,
+            'dedicated_test_internal_rank_induction_Proof_Bool_compiler_and_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1194,6 +1233,7 @@ def main() -> None:
     base_proof_nodes_and_parameterized_six_table = check_base_proof_nodes_and_parameterized_six_table()
     proof_tree_checked_trace_equation = check_proof_tree_checked_trace_equation()
     proof_tree_root_closed_fields = check_proof_tree_root_closed_fields()
+    proof_tree_six_node_equation = check_proof_tree_six_node_equation()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3876,7 +3916,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofTreeRoot.native_proofRootActualLocalCondition',
                     'PPAC.Migration.Internal.ObjectProofTreeRoot.native_proofRootClosedFieldsForward',
                     'PPAC.Migration.Internal.ObjectProofTreeRoot.native_proofRootClosedFieldsBackward',
-                    'PPAC.Migration.Internal.ObjectProofTreeRoot.native_proofRootExactClosedFieldsIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofTreeRoot.native_proofRootExactClosedFieldsIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeFieldLocalIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeActualTagLocalIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeVariableChildIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeAllChildrenIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodePayloadFieldBelow',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeSixCasesForward',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeSixCasesBackward',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeExactSixCasesIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3888,6 +3937,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProofTreeNode": ('proofNodeFieldLocalIff', 'proofNodeActualTagLocalIff', 'proofNodeVariableChildIff', 'proofNodeAllChildrenIff', 'proofNodePayloadFieldBelow', 'proofNodeSixCasesForward', 'proofNodeSixCasesBackward', 'proofNodeExactSixCasesIff', 'proofRootExactNodeSixCasesIff'),
         "ObjectProofTreeRoot": ('proofRootOneNonempty', 'proofRootOneMembership', 'proofRootZeroGuardIff', 'proofRootPayloadConstructorIff', 'proofRootActualLocalCondition', 'proofRootClosedFieldsForward', 'proofRootClosedFieldsBackward', 'proofRootExactClosedFieldsIff'),
         "ObjectProofTreeTrace": ('proofTreeAllTraceRootsExist', 'proofTreeTraceRange', 'proofTreeAllRootsMembershipIff', 'proofTreeAllRootsClosed', 'proofTreeTwelveRuleTracedStepIff', 'proofTreeFullRecursiveTraceIff', 'proofTreeNodeEntryRecursiveIff', 'proofTreeRootEntryRecursiveIff', 'proofTreeTwelveBranchAllAssignmentBounds', 'proofTreeTwelveBranchTraceComposition'),
         "ObjectProofBaseNodes": ('proofLogicalNumericHeadIff', 'proofLogicalQueryConstructorIff', 'proofLogicalQueryNormalizedIff', 'proofLogicalAllAssignmentBounds', 'proofLogicalBoundedMatrixIff', 'proofLogicalWholeNodeIff', 'proofTheoryNumericHeadIff', 'proofTheoryFormulaQueryIff', 'proofTheoryParameterizedAxiomQueryIff', 'proofTheoryParameterizedAllQueriesIff', 'proofTheoryAllAssignmentBounds', 'proofTheoryParameterizedBoundedMatrixIff', 'proofTheoryParameterizedWholeNodeIff', 'proofSixRulesParameterizedActualShapeTableIff', 'proofSixRulesParameterizedSelectedNodesIff', 'proofSixRulesParameterizedActualTableSpecificationIff'),
@@ -4828,6 +4878,11 @@ def main() -> None:
         "base_proof_nodes_and_parameterized_six_table_guard": base_proof_nodes_and_parameterized_six_table,
         "proof_tree_checked_trace_equation_guard": proof_tree_checked_trace_equation,
         "proof_tree_root_closed_fields_guard": proof_tree_root_closed_fields,
+        "proof_tree_six_node_equation_guard": proof_tree_six_node_equation,
+        'object_original_proof_tree_six_node_recursive_equation_proved': True,
+        'object_original_proof_tree_node_tag0_local_table_iff_proved': True,
+        'object_original_proof_tree_payload_fields_strictly_below_code_proved': True,
+
         'object_original_proof_tree_root_closedness_exact_conclusion_iff_proved': True,
         'object_original_proof_tree_root_actual_strict_guard_zero_proved': True,
         'object_original_proof_tree_all_twelve_root_tag_separation_proved': True,

@@ -10510,4 +10510,52 @@ example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.L
       ((Internal.ProofTreeEntrySyntax.node test w code).conj (Internal.ProofTreeRootSyntax.closedPayload w code conclusion)))).close)) :=
   Internal.ObjectProofTreeRoot.native_proofRootExactClosedFieldsIff test w code conclusion
 
+example {m} (test : Source.Formula 1) (w row code z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeFieldLocalIffSentence test w row code z)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeFieldLocalIff test w row code z
+
+example {m} (test : Source.Formula 1) (w row code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeActualTagLocalIffSentence test w row code)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeActualTagLocalIff test w row code
+
+example {m} (test : Source.Formula 1) {a} (i : Fin a) (env : Fin a → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeVariableChildIffSentence test i env w)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeVariableChildIff test i env w
+
+example {m} (test : Source.Formula 1) {a} (is : List (Fin a)) (env : Fin a → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeAllChildrenIffSentence test is env w)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeAllChildrenIff test is env w
+
+example {m} (kind : Fin 6) (env : Fin ((ProofTreeBranchConstruction.shape kind).extra+2) → Fin m) (i : Fin ((ProofTreeBranchConstruction.shape kind).extra+2)) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodePayloadFieldBelowSentence kind env i w code)) :=
+  Internal.ObjectProofTreeNode.native_proofNodePayloadFieldBelow kind env i w code
+
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeSixCasesForwardSentence test w code)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeSixCasesForward test w code
+
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeSixCasesBackwardSentence test w code)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeSixCasesBackward test w code
+
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofNodeExactSixCasesIffSentence test w code)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeExactSixCasesIff test w code
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeNode.proofRootExactNodeSixCasesIffSentence test w code conclusion)) :=
+  Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff test w code conclusion
+
+-- All actual node branches, with local table and original children; only Omega is assumed.
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeEntrySyntax.node test w code).iff
+      ((Internal.ProofAllNodeSyntax.table test w code).conj (Internal.ProofTreeNodeSyntax.payloadCases test w code)))).close)) :=
+  Internal.ObjectProofTreeNode.native_proofNodeExactSixCasesIff test w code
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeEntrySyntax.root test w code conclusion).iff
+      (((Internal.ProofAllNodeSyntax.table test w code).conj (Internal.ProofTreeNodeSyntax.payloadCases test w code)).conj
+        (Internal.ProofTreeRootSyntax.closedPayload w code conclusion)))).close)) :=
+  Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff test w code conclusion
+
 end PPAC.Migration.Step4Checks
