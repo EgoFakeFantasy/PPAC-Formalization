@@ -9269,4 +9269,87 @@ example {m} (w mode depth P a b c e R S n q k : Fin m) :
                 (Internal.ArgumentProgramFieldSyntax.mapped w R S k c e n q))))).close)) :=
   Internal.ObjectAbstractFramePrograms.native_arbitraryDepthFrameGuardedArgumentProgramIff w mode depth P a b c e R S n q k
 
+example {m} (modeIndex : Fin 4) (tag : Nat) (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeFormulaConstantGuardSentence modeIndex tag env w)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeFormulaConstantGuard modeIndex tag env w
+
+example {m} (modeIndex : Fin 4) (tag : Nat) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeFormulaConstantMatrixIffSentence modeIndex tag env w n q r)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeFormulaConstantMatrixIff modeIndex tag env w n q r
+
+example {m} (modeIndex : Fin 4) (truth : Bool) (w mode depth P n q r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeFormulaConstantApplicationIffSentence modeIndex truth w mode depth P n q r V)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeFormulaConstantApplicationIff modeIndex truth w mode depth P n q r V
+
+example {m} (modeIndex : Fin 4) (w mode depth P n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeCompleteFormulaTraceIffSentence modeIndex w mode depth P n q r)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeCompleteFormulaTraceIff modeIndex w mode depth P n q r
+
+example {m} (modeIndex : Fin 4) (w mode depth P n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeCompleteFormulaWholeRunIffSentence modeIndex w mode depth P n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeCompleteFormulaWholeRunIff modeIndex w mode depth P n q
+
+example {m} (modeIndex : Fin 4) (w mode depth P n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeWholeFalseDispatchIffSentence modeIndex w mode depth P n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeWholeFalseDispatchIff modeIndex w mode depth P n q
+
+example {m} (modeIndex : Fin 4) (w mode depth P n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeWholeTrueDispatchIffSentence modeIndex w mode depth P n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeWholeTrueDispatchIff modeIndex w mode depth P n q
+
+example {m} (modeIndex : Fin 4) (w mode depth P n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeWholeEqualityDispatchIffSentence modeIndex w mode depth P n q x y)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeWholeEqualityDispatchIff modeIndex w mode depth P n q x y
+
+example {m} (modeIndex : Fin 4) (w mode depth P s x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeWholeMemberDispatchIffSentence modeIndex w mode depth P s x y n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeWholeMemberDispatchIff modeIndex w mode depth P s x y n q
+
+example {m} (w mode depth P a b c e R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameAtomicTermAgreementSentence w mode depth P a b c e R S)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameAtomicTermAgreement w mode depth P a b c e R S
+
+example {m} (w mode depth P a b c e R S n q x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameActualPairProgramIffSentence w mode depth P a b c e R S n q x y)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameActualPairProgramIff w mode depth P a b c e R S n q x y
+
+example {m} (w mode depth P a b c e R S x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameActualPairAgreementSentence w mode depth P a b c e R S x y)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameActualPairAgreement w mode depth P a b c e R S x y
+
+example {m} (truth : Bool) (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameWholeConstantIffSentence truth w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameWholeConstantIff truth w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameWholeMembershipIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameWholeMembershipIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameWholeEqualityIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameWholeEqualityIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameAllAtomicWholeRunIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameAllAtomicWholeRunIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S h n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.modeOneFrameAllAtomicProgramIffSentence w mode depth P a b c e R S h n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameAllAtomicProgramIff w mode depth P a b c e R S h n q
+
+-- Explicit actual mode1, not the old Boolean mode0.
+example {m} (w mode depth P n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractAtomicFormula.smallModeCompleteFormulaWholeRunIffSentence (1 : Fin 4) w mode depth P n q)) :=
+  Internal.ObjectAbstractAtomicFormula.native_smallModeCompleteFormulaWholeRunIff (1 : Fin 4) w mode depth P n q
+
+-- Expanded complete mode1 atomic program contract, with no agreement or source-field witness premise.
+example {m} (w mode depth P a b c e R S h n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.AbstractOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          ((Internal.SyntaxAtomSyntax.atomic w a b n).imp
+            ((Internal.OriginalTransformRowSyntax.run 3 w mode depth P n q).iff
+              (Internal.FormulaTransformProgramSyntax.run Internal.FormulaAtomicProgramSyntax.program w R S a b c e h n q))))).close)) :=
+  Internal.ObjectAbstractAtomicFormula.native_modeOneFrameAllAtomicProgramIff w mode depth P a b c e R S h n q
+
 end PPAC.Migration.Step4Checks

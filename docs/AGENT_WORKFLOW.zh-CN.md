@@ -1,5 +1,16 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2d.6h已验收：每个固定mode<4的原Run3已与未改写的十一outcomes精确等价，真实mode1实例已核查；任意内部深度frame上全部四原子输入已与既有原子程序等价。项／二参数agreement均实际推出，原长度及源字段EX见证已消去。10模块89声明、17组闭句返回原nativeZF。1749构建任务、18749项声明审计（399无公理／18350允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1584份工作文件独立哈希一致、2172对精确核／native证书足迹、16405项Internal显式声明覆盖。十一分支展开式保留原递归子Run，不等于完整公式正确性；全公式归纳／forall、专用ProofZF/U及最终Con仍未完成。见[验收](STEP4_SMALL_MODE_FORMULA_AND_MODE_ONE_ATOMIC_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 实现动作 | 对象验收合同 | 状态 |
+|---|---|---|---|
+| 小模式公式方程 | 原mode<4常量守卫、应用／trace、根行见证消去 | 原Run3↔未改写的十一outcomes，含真实mode1 | 已验收 |
+| mode1四原子基例 | 实际项／二参数agreement、源字段消去、四分支合并 | 任意深度frame下原Run3↔既有原子程序 | 已验收 |
+| 完整公式统一归纳 | 内部量化十个变化参数，真实历史和已证binder闭包，实际消去IH | 全内部合法公式的完整原运行正确性 | 下一步 |
+| forall及Proof／Con | 原嵌套头全部查询界、27模式、完整ZF/U、quotation／Bool、编译和解释 | 原nativeZF中Con_ZF→Con_target | 未证明 |
+
+以下保留历史验收记录。
+
 3f.2c.3b.2d.6g已验收：在已证真实根及binder闭包的兼容frame下，任意内部深度的原Run1已接实际项程序／混合项操作，实际有类型唯一纤维推出全部输入Promise；原Run2已接任意内部长度的真实逐字段程序，逐项Promise及列表IH均已消去，最终源类型守卫内部化。4模块50声明、10组闭句返回原nativeZF。1739构建任务、18660项声明审计（399无公理／18261允许依赖）、零警告；九条命令及五个trust=0入口全部退出0；1574份工作文件独立哈希一致、2155对精确核／native证书足迹、16316项Internal显式声明覆盖。完整mode1公式／forall、专用ProofZF/U及最终Con仍未完成。见[验收](STEP4_MODE_ONE_ARBITRARY_DEPTH_PROGRAM_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 实现动作 | 对象验收合同 | 状态 |
