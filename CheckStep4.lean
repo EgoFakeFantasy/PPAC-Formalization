@@ -11096,4 +11096,39 @@ example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAllInternalRecursiveLawSentence w)) :=
   Internal.ObjectProjectCompilerRecursive.native_compilerAllInternalRecursiveLaw w
+example {m} (w n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerChildTypingFromMemberIHSentence w n z)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerChildTypingFromMemberIH w n z
+
+example {m} (w b z n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerTwelveCasesTargetTypedSentence w b z n q)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerTwelveCasesTargetTyped w b z n q
+
+example {m} (w n b q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerOutputTypedFromMemberIHSentence w n b q z)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerOutputTypedFromMemberIH w n b q z
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerTypingPropertyStepSentence w n)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerTypingPropertyStep w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerTypingProgressiveSentence w)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerTypingProgressive w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerAllInternalOutputsTargetTypedSentence w)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerAllInternalOutputsTargetTyped w
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerInputTypingPropertySentence w n)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerInputTypingProperty w n
+
+example {m} (w n b q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerActualOutputTargetTypedSentence w n b q z)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerActualOutputTargetTyped w n b q z
+
+example {m} (w n b q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerUntypedOutputRejectedSentence w n b q z)) :=
+  Internal.ObjectProjectCompilerTyping.native_compilerUntypedOutputRejected w n b q z
 end PPAC.Migration.Step4Checks

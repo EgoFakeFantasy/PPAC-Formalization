@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+实际Project编译产出的全内部目标类型已验收：固定correct对象公式经原Foundation／完整Separation／TransitiveCover消去全部成员IH；十二分支与真实后继作用域保持FormulaCode，空集零元由原Extensionality对齐，最终仅需Ω的对象ALL4。9模块70声明、9组原nativeZF闭句；2101构建、22671审计（448无公理／22223允许依赖）、零警告；九命令／五trust=0通过，1884哈希、2518对精确足迹、20327项Internal覆盖。合法源的实际产出存在和标量唯一、完整schema、Proof／解释及最终Con仍未完成。见[本批验收与后续工程表](docs/STEP4_PROJECT_COMPILER_TYPING_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 实际Project编译器的全内部递归方程已验收：子Read与真实Compiled双向对应，实际十二分支及后继作用域完整传输；历史／状态／求值／载体见证均已对象消去，最终仅需Ω前提且量化全部内部候选。9模块80声明、12组原nativeZF闭句；2092构建、22601审计（448无公理／22153允许依赖）、零警告；九命令／五trust=0通过，1875哈希、2509对精确足迹、20257项Internal覆盖。全源输入的产出存在、目标类型及标量唯一仍待Foundation归纳；完整schema、Proof／解释及最终Con仍未完成。见[验收与修订工程表](docs/STEP4_PROJECT_COMPILER_RECURSIVE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
