@@ -9549,4 +9549,50 @@ example {m} (w mode depth P a b c e R S n q : Fin m) :
             (Internal.SyntaxCodedMixedTermSyntax.substituted w R S a b c e n q)))).close)) :=
   Internal.ObjectInstantiateVariable.native_modeTwoFrameGuardedTermCodedIff w mode depth P a b c e R S n q
 
+example {m} (w U V c e C P q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoClosedParameterBinderRenameIffSentence w U V c e C P q)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoClosedParameterBinderRenameIff w U V c e C P q
+
+example {m} (w d P i x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoVariableAtPointIffSentence w d P i x y)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoVariableAtPointIff w d P i x y
+
+example {m} (w d P i x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoVariableBelowIffSentence w d P i x y)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoVariableBelowIff w d P i x y
+
+example {m} (bound : Bool) (w z b A P R S i n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootVariableFieldIffSentence bound w z b A P R S i n q)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootVariableFieldIff bound w z b A P R S i n q
+
+example {m} (bound : Bool) (w z b A P R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootVariableCompatibilitySentence bound w z b A P R S)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootVariableCompatibility bound w z b A P R S
+
+example {m} (w mode z P b A R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootFrameSentence w mode z P b A R S)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootFrame w mode z P b A R S
+
+example {m} (w mode z P b A R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootTermProgramIffSentence w mode z P b A R S n q)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootTermProgramIff w mode z P b A R S n q
+
+example {m} (w mode z P b A R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootTermCodedIffSentence w mode z P b A R S n q)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootTermCodedIff w mode z P b A R S n q
+
+example {m} (w mode z P b A R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateRoot.modeTwoActualRootGuardedTermCodedIffSentence w mode z P b A R S n q)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootGuardedTermCodedIff w mode z P b A R S n q
+-- Expanded actual mode2 root contract: metadata and compatibility are derived, source type is inside the conclusion.
+example {m} (w mode z P b A R S n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.SyntaxNumeralSyntax.numeral 2 mode).imp
+          ((OmegaSyntax.empty z).imp
+            ((Internal.SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z b A P R S).imp
+              (((Internal.SyntaxTermSyntax.term w A b n).conj (Internal.OriginalTransformRowSyntax.run 1 w mode z P n q)).iff
+                (Internal.SyntaxCodedMixedTermSyntax.substituted w R S A b z b n q)))))).close)) :=
+  Internal.ObjectInstantiateRoot.native_modeTwoActualRootGuardedTermCodedIff w mode z P b A R S n q
+
 end PPAC.Migration.Step4Checks

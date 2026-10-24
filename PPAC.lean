@@ -223,3 +223,4 @@ import PPAC.Migration.Internal.ObjectAbstractAtomicFormula
 import PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness
 import PPAC.Migration.Internal.ObjectForallNode
 import PPAC.Migration.Internal.ObjectInstantiateVariable
+import PPAC.Migration.Internal.ObjectInstantiateRoot

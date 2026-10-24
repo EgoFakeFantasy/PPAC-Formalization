@@ -597,6 +597,46 @@ def check_mode_two_variables_and_frame_terms() -> dict:
             "Proof_and_final_internal_Con_proved": False}
 
 
+def check_mode_two_actual_root() -> dict:
+    """Actual instantiateCoded supplies the root; no binder closure is claimed."""
+    directory = ROOT / "PPAC/Migration/Internal"
+    names = ["InstantiateClosedParameterRename", "InstantiateVariableSpecialization", "InstantiateOperationFrameRoot", "InstantiateTopTermOperation"]
+    texts = {n: strip_comments((directory / (n + ".lean")).read_text(encoding="utf-8")) for n in names}
+    for module, theorem, premises in [
+        ("InstantiateClosedParameterRename", "closed_iff", {"hw", "hU", "hV", "hp"}),
+        ("InstantiateOperationFrameRoot", "from_actual_input", {"hw", "hm", "hz", "he"}),
+        ("InstantiateTopTermOperation", "program_iff", {"hw", "hm", "hz", "he", "ht"}),
+        ("InstantiateTopTermOperation", "coded_iff", {"hw", "hm", "hz", "he", "ht"}),
+        ("InstantiateTopTermOperation", "guarded_coded_iff", {"hw", "hm", "hz", "he"})]:
+        header = re.search(r"(?ms)^theorem " + theorem + r"\b.*?(?=:=)", texts[module])
+        if not header or set(re.findall(r"\((\w+)\s*:\s*Derives Γ \(", header.group(0))) != premises:
+            raise RuntimeError("Actual mode2 root endpoint changed: " + module + "." + theorem)
+        if re.search(r"Promise|Model|Consistent|Classical\.choose|hIH\s*:|hF\s*:", header.group(0)):
+            raise RuntimeError("Actual mode2 root assumes an unproved oracle/frame")
+    required = {
+        "InstantiateClosedParameterRename": ["SyntaxTermSyntax.eliminate_branch", "AbstractBinderRename.free_at", "AbstractBinderRename.code_iff_equal", "InstantiateOperationFrameSyntax.closedParameter_free"],
+        "InstantiateVariableSpecialization": ["NaturalOrderBasic.nonself", "NaturalOrderBasic.below_not_reverse", "apply Derives.exE"],
+        "InstantiateOperationFrameRoot": ["SyntaxTopCodedEnvironmentFields.instantiate_zero", "SyntaxTopCodedEnvironmentFields.instantiate_free", "SyntaxTopCodedEnvironmentTyping.instantiate_lists", "SyntaxTerms.range", "OmegaStructureAlgebra.zero_member", "intro_closedParameter", "compatible_from_actual hZ true", "compatible_from_actual hZ false"],
+        "InstantiateTopTermOperation": ["InstantiateOperationFrameRoot.from_actual_input", "InstantiateFrameTerm.program_iff", "InstantiateFrameTerm.coded_iff", "InstantiateFrameTerm.guarded_coded_iff"]}
+    for module, clauses in required.items():
+        if re.search(r"^(?:def|axiom|unsafe)\s", texts[module], re.MULTILINE):
+            raise RuntimeError("Actual mode2 root proof must not change acceptance definitions")
+        for clause in clauses:
+            if clause not in texts[module]:
+                raise RuntimeError("Missing actual root derivation: " + module + ": " + clause)
+    check = (ROOT / "CheckStep4.lean").read_text(encoding="utf-8")
+    if "ObjectInstantiateRoot.native_modeTwoActualRootGuardedTermCodedIff w mode z P b A R S n q" not in check:
+        raise RuntimeError("Missing expanded actual root native contract")
+    return {"closed_parameter_actual_binder_rename_iff_identity_proved": True,
+            "actual_InstantiateTop_root_frame_from_code_tables_proved": True,
+            "root_metadata_and_variable_compatibility_discharged": True,
+            "actual_root_all_internal_typed_term_program_and_coded_iff_proved": True,
+            "actual_root_source_guard_inside_conclusion": True,
+            "actual_binder_frame_closure_proved": False,
+            "mode2_full_formula_and_InstantiateTop_operation_proved": False,
+            "Proof_and_final_internal_Con_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -618,6 +658,7 @@ def main() -> None:
     mode_one_full_formula_correctness = check_mode_one_full_formula_correctness()
     actual_top_formula_and_forall_node = check_actual_top_formula_and_forall_node()
     mode_two_variables_and_frame_terms = check_mode_two_variables_and_frame_terms()
+    mode_two_actual_root = check_mode_two_actual_root()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3124,7 +3165,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectInstantiateVariable.native_modeTwoClosedParameterFreeBranch',
                     'PPAC.Migration.Internal.ObjectInstantiateVariable.native_modeTwoFrameTermProgramIff',
                     'PPAC.Migration.Internal.ObjectInstantiateVariable.native_modeTwoFrameTermCodedIff',
-                    'PPAC.Migration.Internal.ObjectInstantiateVariable.native_modeTwoFrameGuardedTermCodedIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectInstantiateVariable.native_modeTwoFrameGuardedTermCodedIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoClosedParameterBinderRenameIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoVariableAtPointIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoVariableBelowIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootVariableFieldIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootVariableCompatibility',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootFrame',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootTermProgramIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootTermCodedIff',
+                    'PPAC.Migration.Internal.ObjectInstantiateRoot.native_modeTwoActualRootGuardedTermCodedIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3136,6 +3186,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectInstantiateRoot": ('modeTwoClosedParameterBinderRenameIff', 'modeTwoVariableAtPointIff', 'modeTwoVariableBelowIff', 'modeTwoActualRootVariableFieldIff', 'modeTwoActualRootVariableCompatibility', 'modeTwoActualRootFrame', 'modeTwoActualRootTermProgramIff', 'modeTwoActualRootTermCodedIff', 'modeTwoActualRootGuardedTermCodedIff'),
         "ObjectNaturalAddition": ("fiber", "closure", "zero", "successor", "leftZero"),
         "ObjectNaturalMultiplication": ("fiber", "closure", "zero", "successor", "leftZero"),
         "ObjectNaturalAdditionAlgebra": ("leftSuccessor", "commutative", "associative", "cancelRight", "cancelLeft"),
@@ -4058,6 +4109,10 @@ def main() -> None:
         "mode_one_full_formula_correctness_guard": mode_one_full_formula_correctness,
         "actual_top_formula_and_forall_node_guard": actual_top_formula_and_forall_node,
         "mode_two_variables_and_frame_terms_guard": mode_two_variables_and_frame_terms,
+        "mode_two_actual_root_guard": mode_two_actual_root,
+        "object_original_mode_two_actual_root_frame_proved": True,
+        "object_original_mode_two_closed_parameter_binder_rename_identity_proved": True,
+        "object_original_mode_two_actual_root_typed_terms_proved": True,
         "object_original_mode_two_variable_numeric_value_iff_proved": True,
         "object_original_mode_two_whole_variable_run_iff_proved": True,
         "object_original_mode_two_frame_typed_term_program_iff_proved": True,
@@ -4134,7 +4189,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth compatible frames now prove original term Run1 versus actual term program/coded substitution, typed unique outputs and their internal Promise, and list Run2 versus actual field maps with Promise/list IH discharged and source guards inside final conclusions. Every fixed mode below four now has the original whole Run3 versus the unchanged eleven-outcomes unfold equation, and actual mode1 compatible frames give complete four-atomic program correctness without assumed term/pair agreement or source-field witnesses. Full recursive mode1 formula correctness is now proved for every internal typed code under the actual arbitrary-depth compatible frame, with all ten changing frame/output parameters object-quantified. Real binder lifting uses independent source/target successors. Original ZF SetInduction discharges the formula IH and actual history witnesses. The actual AbstractFreeTop environment supplies the root frame. Actual mode1 top formula operation is now proved with both actual code tables eliminated and source type inside the final conclusion. The original Hilbert forall local pure relational node is now proved with the original four queries, both successor witnesses eliminated, all four assignment bounds derived, and the nested node3/node9 head normalized by actual numeric constructors. Genuine mode2 now has exact original scalar/variable dispatch and numeric value correctness on all internal variable inputs and candidate outputs, with whole Run1 root row witnesses and output naturality discharged. Under an explicit closed-parameter/typed-table/compatible-variable frame, all valid pure terms agree with the independent term program and coded mixed substitution. Mode2 actual frame root/binder closure and full formula/InstantiateTop operation remain unproved. Shared quotation/Bool for these nodes, remaining logical/theory shapes, internal Proof/compiler/interpretation and final Con remain unproved.",
+        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth compatible frames now prove original term Run1 versus actual term program/coded substitution, typed unique outputs and their internal Promise, and list Run2 versus actual field maps with Promise/list IH discharged and source guards inside final conclusions. Every fixed mode below four now has the original whole Run3 versus the unchanged eleven-outcomes unfold equation, and actual mode1 compatible frames give complete four-atomic program correctness without assumed term/pair agreement or source-field witnesses. Full recursive mode1 formula correctness is now proved for every internal typed code under the actual arbitrary-depth compatible frame, with all ten changing frame/output parameters object-quantified. Real binder lifting uses independent source/target successors. Original ZF SetInduction discharges the formula IH and actual history witnesses. The actual AbstractFreeTop environment supplies the root frame. Actual mode1 top formula operation is now proved with both actual code tables eliminated and source type inside the final conclusion. The original Hilbert forall local pure relational node is now proved with the original four queries, both successor witnesses eliminated, all four assignment bounds derived, and the nested node3/node9 head normalized by actual numeric constructors. Genuine mode2 now has exact original scalar/variable dispatch and numeric value correctness on all internal variable inputs and candidate outputs, with whole Run1 root row witnesses and output naturality discharged. Under an explicit closed-parameter/typed-table/compatible-variable frame, all valid pure terms agree with the independent term program and coded mixed substitution. Mode2 actual zero-depth root frame is now derived from the real instantiateCoded tables, with parameter/depth naturality and variable compatibility discharged. Its typed/guarded term Run1 agrees with the independent program and coded mixed substitution. Closed parameters are proved invariant under the real binder bound-shift/free-identity renaming. Actual binder frame closure and full formula/InstantiateTop operation remain unproved. Shared quotation/Bool for these nodes, remaining logical/theory shapes, internal Proof/compiler/interpretation and final Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",
