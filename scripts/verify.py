@@ -2151,6 +2151,35 @@ def check_Packet_actual_token_execution() -> dict:
             'full_varint_canonical_bytes_Basic_AST_bridge_Proof_Con':False}
 
 
+def check_Packet_actual_token_numeric_bounds() -> dict:
+    modules = ['PacketTokenBoundComparison', 'PacketTokenBoundsSyntax', 'PacketTokenBoundsPoint', 'PacketTokenBoundsInduction', 'PacketTokenBoundsSystemSyntax', 'PacketTokenBounds', 'ObjectPacketTokenBounds']
+    schemas = ['packetTokenTwoCoordinateSumComparison', 'packetTokenTwoCoordinateProductComparison', 'packetTokenActualAffineComparison', 'packetTokenSmallInputTailBounds', 'packetTokenAllInternalBoundsIHDischarged', 'packetTokenInputTailBoundsAtRadices', 'packetTokenAllNumericBoundsAtRadices', 'packetTokenAllInternalNumericBoundsOnlyOmega', 'packetTokenActualInputTailBoundsOnlyOmega', 'packetTokenActualInputBelowOutput', 'packetTokenActualTailBelowOutput', 'packetTokenActualContainedInputTailBounds']
+    required = {'PacketTokenBoundComparison': ['theorem sum_compare', 'theorem product_compare', 'theorem affine_compare', 'NaturalMultiplicationOrderLaws.left_monotone', 'NaturalOrderBasic.transitive'], 'PacketTokenBoundsSyntax': ['def bounds', 'def property', 'def matrix', 'OriginalUniversalBlock.allMany 2', 'Derives.eqSubst'], 'PacketTokenBoundsPoint': ['theorem small_point', 'theorem large_point', 'PacketDivisionUnique.unique', 'PacketTokenBoundComparison.affine_compare', 'property_at', 'quotient_below'], 'PacketTokenBoundsInduction': ['theorem all_property', 'PacketQuotientInduction.all_holds hZ false PacketTokenBoundsSyntax.matrix', 'theorem bounds_at'], 'PacketTokenBoundsSystemSyntax': ['def lawBody', 'def allLaw', 'OriginalUniversalBlock.allMany 3'], 'PacketTokenBounds': ['theorem all_law', 'SyntaxNumerals.exists_numeral hZ 128', 'SyntaxNumerals.exists_numeral hZ1 256', 'theorem input_below', 'theorem tail_below', 'theorem contained_bounds'], 'ObjectPacketTokenBounds': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Actual token numeric bounds forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Actual token numeric bounds proof drift: '+mod+': '+clause)
+    signatures = [('PacketTokenBoundsInduction','all_property',{'hw','hB','hC'}),('PacketTokenBoundsInduction','bounds_at',{'hw','hB','hC','ha'}),('PacketTokenBounds','all_law',{'hw'}),('PacketTokenBounds','bounds',{'hw','ha'}),('PacketTokenBounds','input_below',{'hw','ha'}),('PacketTokenBounds','tail_below',{'hw','ha'}),('PacketTokenBounds','contained_bounds',{'hw','ha','hr','har'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Actual token numeric bounds hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketTokenBounds.native_'+name not in check:
+            raise RuntimeError('Missing actual token numeric bounds native fixture: '+name)
+    return {'actual_input_and_tail_below_actual_output':True,
+            'fixed_object_matrix_original_quotient_induction_all_IH_discharged':True,
+            'all_internal_input_tail_output_candidates_retained_ALL3':True,
+            'actual_radix_witnesses_eliminated_only_omega_and_actual_Tok':True,
+            'numeric_containment_corollary_requires_actual_output_bound':True,
+            'full_tree_forest_packet_search_bounds_Basic_AST_Proof_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2205,6 +2234,7 @@ def main() -> None:
     Packet_original_token_applications = check_Packet_original_token_applications()
     Packet_token_exact_arithmetic_recursion = check_Packet_token_exact_arithmetic_recursion()
     Packet_actual_token_execution = check_Packet_actual_token_execution()
+    Packet_actual_token_numeric_bounds = check_Packet_actual_token_numeric_bounds()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5215,7 +5245,19 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenAllInternalExactUniqueOutputFibers',
                     'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualUniqueOutputFiberExactDomain',
                     'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputExistsOnlyOmega',
-                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenTwoCoordinateSumComparison',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenTwoCoordinateProductComparison',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenActualAffineComparison',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenSmallInputTailBounds',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenAllInternalBoundsIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenInputTailBoundsAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenAllNumericBoundsAtRadices',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenAllInternalNumericBoundsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenActualInputTailBoundsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenActualInputBelowOutput',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenActualTailBelowOutput',
+                    'PPAC.Migration.Internal.ObjectPacketTokenBounds.native_packetTokenActualContainedInputTailBounds'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5227,6 +5269,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketTokenBounds": ('packetTokenTwoCoordinateSumComparison', 'packetTokenTwoCoordinateProductComparison', 'packetTokenActualAffineComparison', 'packetTokenSmallInputTailBounds', 'packetTokenAllInternalBoundsIHDischarged', 'packetTokenInputTailBoundsAtRadices', 'packetTokenAllNumericBoundsAtRadices', 'packetTokenAllInternalNumericBoundsOnlyOmega', 'packetTokenActualInputTailBoundsOnlyOmega', 'packetTokenActualInputBelowOutput', 'packetTokenActualTailBelowOutput', 'packetTokenActualContainedInputTailBounds'),
         "ObjectPacketTokenExecution": ('packetTokenFiniteNumeralSum', 'packetTokenActualDouble128', 'packetTokenSmallDigitByteBound', 'packetTokenShiftedDigitByteBound', 'packetTokenActualSmallOutputConstructed', 'packetTokenActualRecursiveOutputConstructed', 'packetTokenAllInternalOutputExistenceIHDischarged', 'packetTokenActualOutputExistsAtRadices', 'packetTokenAllInternalOutputUniquenessIHDischarged', 'packetTokenActualOutputUniqueAtRadices', 'packetTokenActualUniqueOutputFiberAtRadices', 'packetTokenUniqueOutputFiberDomainAtRadices', 'packetTokenAllInternalExactUniqueOutputFibers', 'packetTokenActualUniqueOutputFiberExactDomain', 'packetTokenActualOutputExistsOnlyOmega', 'packetTokenActualOutputUniqueOnlyOmega'),
         "ObjectPacketTokenArithmetic": ('packetTokenRootSmallFieldsIff', 'packetTokenRootLargeFieldsIff', 'packetTokenSpecifiedRootConditionEquation', 'packetTokenSpecifiedRootMemberEquation', 'packetTokenCanonicalEntryActualAcceptanceIff', 'packetTokenCanonicalEntryAffineIff', 'packetTokenZeroGuardFromNonzeroQuotient', 'packetTokenSmallExactArithmeticBridge', 'packetTokenLargeExactArithmeticBridge', 'packetTokenFullExactArithmeticBridge', 'packetTokenActualAcceptanceNaturalFields', 'packetTokenArithmeticCriterionNaturalFields', 'packetTokenConditionExactArithmeticWithoutCanonicalWitness', 'packetTokenActualAcceptedExactArithmeticRecursion', 'packetTokenLargeBranchExcludesSmallInput', 'packetTokenActualSmallBranchIff', 'packetTokenActualLargeBranchIff', 'packetTokenActualRejectInvalidField', 'packetTokenAllInternalAcceptedArithmeticRecursion', 'packetTokenAllInternalRootArithmeticRecursion', 'packetTokenActualArithmeticRecursionSystemExists'),
         "ObjectPacketToken": ('packetTokenSmallExactMatrix', 'packetTokenLargeExactMatrixAt', 'packetTokenLargeExactMatrixWitnessesDischarged', 'packetTokenLargeAssignmentNatural', 'packetTokenCanonicalAffineEntryArithmetic', 'packetTokenDigitBelowAffineOutput', 'packetTokenAllSixActualAssignmentBoundsAt', 'packetTokenAllSixActualAssignmentBounds', 'packetTokenSmallApplicationIff', 'packetTokenLargeApplicationIff', 'packetTokenOriginalTwoRuleDispatch', 'packetTokenCompleteStepEquation', 'packetTokenActualConditionEquation', 'packetTokenAllInternalRootEquation', 'packetTokenActualTwoRadixSystemExists'),
@@ -6209,6 +6252,12 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_actual_token_numeric_bounds_guard": Packet_actual_token_numeric_bounds,
+        'object_Packet_token_numeric_input_tail_bounds_internal_IH_discharged': True,
+        'object_Packet_token_actual_input_le_output_proved': True,
+        'object_Packet_token_actual_tail_le_output_proved': True,
+        'object_Packet_token_all_internal_numeric_bounds_proved': True,
+        'object_Packet_token_final_numeric_bounds_requires_only_omega': True,
         "Packet_actual_token_execution_guard": Packet_actual_token_execution,
         'object_Packet_token_shifted_byte_bound_proved': True,
         'object_Packet_token_output_existence_internal_IH_discharged': True,

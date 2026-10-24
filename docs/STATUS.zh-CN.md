@@ -1,5 +1,9 @@
 # 当前交付状态
 
+实际token的全内部输入／tail数值界已验收：固定对象Formula2矩阵经原Foundation／Separation商归纳消去全部IH，真实大小分支及两坐标仿射比较推出input≤output与tail≤output；128／256见证对象消去，最终ALL3仅需Ω，标量接口仅需Ω及真实Tok。7模块77声明、12组原nativeZF闭句；2261构建、24362审计（466无公理／23896允许依赖）、零警告；九命令／五trust=0通过，2041哈希、2731对精确足迹、22018项Internal覆盖。全部既有布尔叶原值保持；完整tree／forest／packet、规范字节程序、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_BOUNDS_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 实际token的全内部输出存在唯一性已验收：内部128+128=256及移位字节界完成；两个固定对象矩阵分别经原Foundation／Separation驱动的商归纳消去存在性与唯一性全部IH，两份完整大分支见证由逆分解、和式、递归输出及最终仿射唯一性逐项比较。最终仅Ω推出ALL2带类型唯一输出纤维，定义域恰为内部n∈ω且tail∈ω，128／256辅助见证已对象消去。14模块124声明、16组原nativeZF闭句；2254构建、24285审计（465无公理／23820允许依赖）、零警告；九命令／五trust=0通过，2034哈希、2719对精确足迹、21941项Internal覆盖。实际执行存在唯一顶层门及两个对应子门false→true，其余既有布尔叶保持原值。完整规范字节程序、原Basic AST桥、字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_EXECUTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

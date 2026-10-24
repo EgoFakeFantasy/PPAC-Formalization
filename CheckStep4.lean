@@ -11932,4 +11932,51 @@ example {m} (w n t a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectPacketTokenExecution.packetTokenActualOutputUniqueOnlyOmegaSentence w n t a b)) :=
   Internal.ObjectPacketTokenExecution.native_packetTokenActualOutputUniqueOnlyOmega w n t a b
 
+example {m} (w d y p r n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenTwoCoordinateSumComparisonSentence w d y p r n a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenTwoCoordinateSumComparison w d y p r n a
+
+example {m} (w B C q u p r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenTwoCoordinateProductComparisonSentence w B C q u p r)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenTwoCoordinateProductComparison w B C q u p r
+
+example {m} (w B C d q n y u a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualAffineComparisonSentence w B C d q n y u a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenActualAffineComparison w B C d q n y u a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenSmallInputTailBoundsSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenSmallInputTailBounds w B C n t a
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenAllInternalBoundsIHDischargedSentence w B C)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenAllInternalBoundsIHDischarged w B C
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenInputTailBoundsAtRadicesSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenInputTailBoundsAtRadices w B C n t a
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenAllNumericBoundsAtRadicesSentence w B C)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenAllNumericBoundsAtRadices w B C
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenAllInternalNumericBoundsOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenAllInternalNumericBoundsOnlyOmega w
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualInputTailBoundsOnlyOmegaSentence w n t a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenActualInputTailBoundsOnlyOmega w n t a
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualInputBelowOutputSentence w n t a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenActualInputBelowOutput w n t a
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualTailBelowOutputSentence w n t a)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenActualTailBelowOutput w n t a
+
+example {m} (w n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualContainedInputTailBoundsSentence w n t a r)) :=
+  Internal.ObjectPacketTokenBounds.native_packetTokenActualContainedInputTailBounds w n t a r
 end PPAC.Migration.Step4Checks
