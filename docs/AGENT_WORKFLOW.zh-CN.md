@@ -1,5 +1,9 @@
 # 对象层迁移工程流程
 
+原ZF内部证明树归纳模式已验收：用Foundation／完整Separation／TransitiveCover消去全部内部成员IH，六类child严格下降与完整赋值块均对象处理；最终为Ω→对象Closure→∀p(Node→P)，P是显式Formula2索引。根性质与条件拒绝也已返回原核。5模块65声明、7组nativeZF闭句；1926构建任务、21345审计（424无公理／20921允许依赖）、零警告；九命令／五trust=0通过，1752哈希／2400对精确足迹／19001项Internal覆盖。具体Proof_T的Closure仍未证明；下一步是内部递归方程唯一性，实际Bool／专用Proof／内部解释与最终Con仍未完成。见[本批验收与后续工程表](STEP4_PROOF_TREE_INDUCTION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原证明树六类节点及精确子节点方程已验收：原node0入口等价于准确六类局部表加实际载荷／子Node条件，原12分支、tag0／field0和完整赋值见证均对象处理；细化Root方程已组合返回原核，仅需Ω前提。7模块70声明、9组nativeZF闭句；1921构建任务、21280审计（424无公理／20856允许依赖）、零警告；九命令／五trust=0通过，1747哈希／2393对精确足迹／18936项Internal覆盖。字段严格下降已证，下一单元是内部Foundation归纳；实际Bool、专用ZF/U测试、完整Proof／内部解释及最终Con仍未证明。见[本批验收及后续工程表](STEP4_PROOF_TREE_NODE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

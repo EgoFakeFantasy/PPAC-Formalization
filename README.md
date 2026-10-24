@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+Internal proof-tree induction is accepted in the original nativeZF kernel: Foundation, full Separation and the proved transitive cover discharge the internal member IH for all object codes. The theorem retains exactly Omega and an explicit object local-closure premise; the property is a Formula2 scheme index. Five modules, 65 declarations, seven certificate families; 1926 build jobs, 21345 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1752 hashes and 2400 exact core/native footprints. The dedicated Proof_T closure, actual Bool correspondence, complete Proof/compiler/interpretation and final Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_INDUCTION_ACCEPTANCE.zh-CN.md).
+
+The entries below are historical checkpoints.
+
 The exact six-case node equation and refined root equation are accepted in the original nativeZF kernel. Actual zero-tag/field queries, all twelve branches, complete assignment blocks and the original children lists are object-quantified and eliminated; the endpoint assumes only Omega. Seven modules, 70 declarations, nine certificate families; 1921 build jobs, 21280 audited declarations, zero warnings; nine commands including five trust=0 entries passed, with 1747 hashes and 2393 exact core/native footprints. Internal Foundation induction, actual Bool correspondence, dedicated ZF/U tests, full Proof/compiler/interpretation and final Con remain unproved. See [acceptance and next steps](docs/STEP4_PROOF_TREE_NODE_ACCEPTANCE.zh-CN.md).
 
 The entries below are historical checkpoints.

@@ -10558,4 +10558,44 @@ example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.L
         (Internal.ProofTreeRootSyntax.closedPayload w code conclusion)))).close)) :=
   Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff test w code conclusion
 
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreePropertyStepWithMemberIHSentence test P w code)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreePropertyStepWithMemberIH test P w code
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreePropertyProgressiveSentence test P w)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreePropertyProgressive test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreeInternalInductionSentence test P w)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreeInternalInduction test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreePointInductionSentence test P w code)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreePointInduction test P w code
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreeRootPropertySentence test P w code conclusion)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreeRootProperty test P w code conclusion
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreeRejectNodeFromPropertySentence test P w code)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreeRejectNodeFromProperty test P w code
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeInduction.proofTreeRejectRootFromPropertySentence test P w code conclusion)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreeRejectRootFromProperty test P w code conclusion
+
+-- Foundation removes the internal member IH; the object local-closure hypothesis stays explicit.
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeInductionSyntax.closure test P w).imp
+      (Source.Formula.all ((Internal.ProofTreeEntrySyntax.node test w.castSucc (Fin.last m)).imp
+        (Internal.ProofTreeInductionSyntax.property P w.castSucc (Fin.last m)))))).close)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreeInternalInduction test P w
+
+example {m} (test : Source.Formula 1) (P : Source.Formula 2) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeInductionSyntax.closure test P w).imp
+      ((Internal.ProofTreeEntrySyntax.node test w code).imp (Internal.ProofTreeInductionSyntax.property P w code)))).close)) :=
+  Internal.ObjectProofTreeInduction.native_proofTreePointInduction test P w code
+
 end PPAC.Migration.Step4Checks

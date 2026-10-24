@@ -1203,6 +1203,46 @@ def check_proof_tree_six_node_equation() -> dict:
             'all_internal_payload_fields_strictly_below_parent_code':True,
             'dedicated_test_internal_rank_induction_Proof_Bool_compiler_and_Con_proved':False}
 
+
+def check_proof_tree_internal_induction() -> dict:
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['ProofTreeInductionSyntax', 'ProofTreeInductionChildren', 'ProofTreeInductionStep', 'ProofTreeInduction', 'ObjectProofTreeInduction']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|induction code\b',text):
+            raise RuntimeError('Forbidden internal proof induction shortcut: '+module)
+    required={
+      'ProofTreeInductionSyntax':['(P : Formula 2)','P.rename (SetLanguage.args2 w code)','ProofTreeRootSyntax.kinds.map','children P (shape kind).children','closure','Formula.mem (Fin.last m) w.castSucc','Formula.mem (Fin.last m) code.castSucc'],
+      'ProofTreeInductionChildren':['Derives.allE child hi','ProofTreeNodeSyntax.payload_field_below','transfer_children'],
+      'ProofTreeInductionStep':['HornBinderRules.eliminate_many','ProofTreeRootSyntax.disjoin_elim','ProofTreeNodeBackward.node_iff','ProofTreeInductionChildren.payload_children','ProofTreeConstructorFacts.range','closure_at'],
+      'ProofTreeInduction':['SetInduction.all_holds','ZFContext.separation hZ (inductionMatrix test P).neg','base.foundation','ObjectTransitiveCover.source_cover','ProofTreeInductionStep.from_induction','ProofTreeRootBackward.root_iff','reject_node','reject_root'],
+      'ObjectProofTreeInduction':['TheoryTransport.sentence','ZFReplay.replay','native_proofTreeInternalInduction','native_proofTreePointInduction']}
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing internal proof induction construction: '+module+': '+clause)
+    if re.search(r'Prop\b|Model|Consistent|Classical\.choose',texts['ProofTreeInductionSyntax']):
+        raise RuntimeError('Internal induction property must be an object formula')
+    for theorem in ['progressive','all_correct','at_node']:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts['ProofTreeInduction'])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!={'hw','hc'}:
+            raise RuntimeError('Internal induction endpoint must retain exactly Omega and object closure')
+        if '(test : Formula 1)' not in header.group(0) or '(P : Formula 2)' not in header.group(0):
+            raise RuntimeError('Missing explicit object-formula scheme indices')
+        if re.search(r'Promise|Model|Consistent|hIH\s*:|hTest\s*:',header.group(0)):
+            raise RuntimeError('Undischarged external induction or test oracle')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name,args in [('proofTreeInternalInduction','test P w'),('proofTreePointInduction','test P w code')]:
+        if 'ObjectProofTreeInduction.native_'+name+' '+args not in check:
+            raise RuntimeError('Missing expanded native internal-induction contract')
+    return {'actual_six_shape_children_transferred_under_member_IH':True,
+            'all_assignment_existentials_object_eliminated':True,
+            'original_Foundation_Separation_transitive_cover_discharge_internal_IH':True,
+            'all_internal_codes_not_external_Nat_induction':True,
+            'property_is_explicit_Formula2_not_host_Prop_predicate':True,
+            'final_schema_retains_only_Omega_and_explicit_object_local_closure':True,
+            'conditional_root_property_and_negative_rejection_transferred':True,
+            'dedicated_Proof_local_closure_Bool_compiler_interpretation_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1234,6 +1274,7 @@ def main() -> None:
     proof_tree_checked_trace_equation = check_proof_tree_checked_trace_equation()
     proof_tree_root_closed_fields = check_proof_tree_root_closed_fields()
     proof_tree_six_node_equation = check_proof_tree_six_node_equation()
+    proof_tree_internal_induction = check_proof_tree_internal_induction()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3925,7 +3966,14 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeSixCasesForward',
                     'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeSixCasesBackward',
                     'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofNodeExactSixCasesIff',
-                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofTreeNode.native_proofRootExactNodeSixCasesIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreePropertyStepWithMemberIH',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreePropertyProgressive',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeInternalInduction',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreePointInduction',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRootProperty',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRejectNodeFromProperty',
+                    'PPAC.Migration.Internal.ObjectProofTreeInduction.native_proofTreeRejectRootFromProperty'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3937,6 +3985,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProofTreeInduction": ('proofTreePropertyStepWithMemberIH', 'proofTreePropertyProgressive', 'proofTreeInternalInduction', 'proofTreePointInduction', 'proofTreeRootProperty', 'proofTreeRejectNodeFromProperty', 'proofTreeRejectRootFromProperty'),
         "ObjectProofTreeNode": ('proofNodeFieldLocalIff', 'proofNodeActualTagLocalIff', 'proofNodeVariableChildIff', 'proofNodeAllChildrenIff', 'proofNodePayloadFieldBelow', 'proofNodeSixCasesForward', 'proofNodeSixCasesBackward', 'proofNodeExactSixCasesIff', 'proofRootExactNodeSixCasesIff'),
         "ObjectProofTreeRoot": ('proofRootOneNonempty', 'proofRootOneMembership', 'proofRootZeroGuardIff', 'proofRootPayloadConstructorIff', 'proofRootActualLocalCondition', 'proofRootClosedFieldsForward', 'proofRootClosedFieldsBackward', 'proofRootExactClosedFieldsIff'),
         "ObjectProofTreeTrace": ('proofTreeAllTraceRootsExist', 'proofTreeTraceRange', 'proofTreeAllRootsMembershipIff', 'proofTreeAllRootsClosed', 'proofTreeTwelveRuleTracedStepIff', 'proofTreeFullRecursiveTraceIff', 'proofTreeNodeEntryRecursiveIff', 'proofTreeRootEntryRecursiveIff', 'proofTreeTwelveBranchAllAssignmentBounds', 'proofTreeTwelveBranchTraceComposition'),
@@ -4879,6 +4928,12 @@ def main() -> None:
         "proof_tree_checked_trace_equation_guard": proof_tree_checked_trace_equation,
         "proof_tree_root_closed_fields_guard": proof_tree_root_closed_fields,
         "proof_tree_six_node_equation_guard": proof_tree_six_node_equation,
+        "proof_tree_internal_induction_guard": proof_tree_internal_induction,
+        'object_original_proof_tree_internal_Foundation_induction_schema_proved': True,
+        'object_original_proof_tree_internal_member_IH_discharged': True,
+        'object_original_proof_tree_conditional_root_property_and_rejection_proved': True,
+        'object_original_proof_tree_dedicated_Proof_local_closure_proved': False,
+
         'object_original_proof_tree_six_node_recursive_equation_proved': True,
         'object_original_proof_tree_node_tag0_local_table_iff_proved': True,
         'object_original_proof_tree_payload_fields_strictly_below_code_proved': True,
