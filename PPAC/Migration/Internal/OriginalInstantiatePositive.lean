@@ -1,7 +1,7 @@
 import PPAC.Migration.Internal.OriginalInstantiateDispatch
 import PPAC.Migration.Internal.OriginalAbstractPositive
 
-/-! 待编译：原mode2四条变量规则的守卫与真实完整表闭轨迹引入。 -/
+/-! 原mode2四条变量规则的守卫与真实完整表闭轨迹引入。 -/
 namespace PPAC.Migration.Internal.OriginalInstantiatePositive
 open Source SourceAlgebra SourceLogic OmegaSyntax HornExprSyntax HornRuleSyntax
 open YesMetaZFC.Automation.ObjectSyntaxTransform

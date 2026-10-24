@@ -9473,4 +9473,80 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       ((Internal.ProofForallNodeSyntax.node w row).iff (Internal.ProofForallNode.normalized w z row)))).close)) :=
   Internal.ObjectForallNode.native_forallFullNormalizedNodeIff w z row
 
+example {m} (bound : Bool) (w mode depth P x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoWholeVariableValueIffSentence bound w mode depth P x idx y)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoWholeVariableValueIff bound w mode depth P x idx y
+
+example {m} (bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoVariableTraceValueIffSentence bound xs w r idx)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoVariableTraceValueIff bound xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoBoundCandidateIffSentence xs w r idx)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoBoundCandidateIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFreeCandidateIffSentence xs w r idx)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFreeCandidateIff xs w r idx
+
+example {m} (bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoOriginalVariableTraceStepIffSentence bound xs w r idx)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoOriginalVariableTraceStepIff bound xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r T : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFiveRuleTermDispatchIffSentence xs w r T)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFiveRuleTermDispatchIff xs w r T
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoBoundPreservedPositiveTraceSentence env w r)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoBoundPreservedPositiveTrace env w r
+
+example {m} (env : Fin 2 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoBoundPointPositiveTraceSentence env w r)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoBoundPointPositiveTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoBoundPredecessorPositiveTraceSentence env w r s)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoBoundPredecessorPositiveTrace env w r s
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFreeIdentityPositiveTraceSentence env w r)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFreeIdentityPositiveTrace env w r
+
+example {m} (w e P : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoClosedParameterFreeBranchSentence w e P)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoClosedParameterFreeBranch w e P
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFrameTermProgramIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFrameTermProgramIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFrameTermCodedIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFrameTermCodedIff w mode depth P a b c e R S n q
+
+example {m} (w mode depth P a b c e R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectInstantiateVariable.modeTwoFrameGuardedTermCodedIffSentence w mode depth P a b c e R S n q)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFrameGuardedTermCodedIff w mode depth P a b c e R S n q
+
+-- Expanded genuine mode2 whole-variable contract: no root row or output-naturality premise.
+example {m} (bound : Bool) (w mode depth P x idx y : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.SyntaxNumeralSyntax.numeral 2 mode).imp
+          ((Internal.OriginalTermTraceSyntax.metadata w depth P).imp
+            ((Internal.SyntaxVariableSyntax.code bound w idx x).imp
+              ((Internal.OriginalTransformRowSyntax.run 1 w mode depth P x y).iff
+                (Internal.InstantiateVariableValueSyntax.valueSpec bound w depth P idx x y)))))).close)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoWholeVariableValueIff bound w mode depth P x idx y
+
+-- Expanded conditional frame term contract, with source type inside the conclusion.
+example {m} (w mode depth P a b c e R S n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.InstantiateOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          (((Internal.SyntaxTermSyntax.term w a b n).conj (Internal.OriginalTransformRowSyntax.run 1 w mode depth P n q)).iff
+            (Internal.SyntaxCodedMixedTermSyntax.substituted w R S a b c e n q)))).close)) :=
+  Internal.ObjectInstantiateVariable.native_modeTwoFrameGuardedTermCodedIff w mode depth P a b c e R S n q
+
 end PPAC.Migration.Step4Checks

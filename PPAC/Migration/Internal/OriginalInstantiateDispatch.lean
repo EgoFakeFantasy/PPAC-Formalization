@@ -2,7 +2,7 @@ import PPAC.Migration.Internal.OriginalInstantiateClasses
 import PPAC.Migration.Internal.OriginalModeDispatch
 import PPAC.Migration.Internal.OriginalVariableDispatch
 
-/-! 待编译：全内部mode2行按原表精确分派；绑定三分支与自由恒等分支。 -/
+/-! 全内部mode2行按原表精确分派；绑定三分支与自由恒等分支。 -/
 namespace PPAC.Migration.Internal.OriginalInstantiateDispatch
 open Source SourceAlgebra SourceLogic OmegaSyntax HornExprSyntax HornApplicationSyntax HornBinderSyntax
 open OriginalInstantiateClasses

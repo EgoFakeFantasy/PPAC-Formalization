@@ -2,7 +2,7 @@ import PPAC.Migration.Internal.AbstractTopArgumentOperation
 import PPAC.Migration.Internal.InstantiateVariableValueSyntax
 import PPAC.Migration.Internal.EmptyBoundFreeInputs
 
-/-! 待编译：mode2实际入口frame保留空绑定参数、深度对应的上下文长度、真实码表及独立数值规格。 -/
+/-! mode2实际入口frame保留空绑定参数、深度对应的上下文长度、真实码表及独立数值规格。 -/
 namespace PPAC.Migration.Internal.InstantiateOperationFrameSyntax
 open Source SourceAlgebra SourceLogic
 open SyntaxRenameQuerySyntax (of_eq)

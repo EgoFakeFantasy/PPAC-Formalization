@@ -1,7 +1,8 @@
 import PPAC.Migration.Internal.OriginalInstantiatePositive
 import PPAC.Migration.Internal.InstantiateVariableValueSyntax
+import PPAC.Migration.Internal.FreeWeakenValueSyntax
 
-/-! 待编译：实际mode2变量规则矩阵推出独立数值规格，字段均取自原五字段行。 -/
+/-! 实际mode2变量规则矩阵推出独立数值规格，字段均取自原五字段行。 -/
 namespace PPAC.Migration.Internal.InstantiateVariableSound
 open Source SourceAlgebra SourceLogic OmegaSyntax HornExprSyntax InstantiateVariableValueSyntax
 open SyntaxRenameQuerySyntax (of_eq)

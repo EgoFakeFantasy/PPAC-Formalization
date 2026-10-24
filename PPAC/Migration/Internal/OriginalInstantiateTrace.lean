@@ -1,7 +1,7 @@
 import PPAC.Migration.Internal.OriginalInstantiateDispatch
 import PPAC.Migration.Internal.HornUniversalTraceClosed
 
-/-! 待编译：任意内部mode2变量查询与对应三条／一条原规则等价，全根集合EX实际消去。 -/
+/-! 任意内部mode2变量查询与对应三条／一条原规则等价，全根集合EX实际消去。 -/
 namespace PPAC.Migration.Internal.OriginalInstantiateTrace
 open Source SourceAlgebra SourceLogic OmegaSyntax
 open OriginalInstantiateClasses
@@ -28,7 +28,7 @@ theorem variable_condition_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have hZ1 := ZFContext.under hZ B
   have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw B)
   have hc1 := of_eq (SyntaxNodeSyntax.constructor_rename 5 1 w xs r Fin.castSucc) (under hc B)
-  have hm1 := of_eq (SyntaxNumeralSyntax.numeral_rename 1 (xs 0) Fin.castSucc) (under hm B)
+  have hm1 := of_eq (SyntaxNumeralSyntax.numeral_rename 2 (xs 0) Fin.castSucc) (under hm B)
   have hv1 := of_eq (SyntaxVariableSyntax.code_rename bound w idx (xs 3) Fin.castSucc) (under hv B)
   have hB : Derives Δ B := .hyp (Or.inl rfl)
   have hr := SyntaxNodeInjective.constructor_range hZ1 5 1 _ _ _ hw1 hc1

@@ -1,6 +1,6 @@
 import PPAC.Migration.Internal.OriginalScalarClasses
 
-/-! 待编译：原mode2五条项规则的确切分类，保留完整原28规则表。 -/
+/-! 原mode2五条项规则的确切分类，保留完整原28规则表。 -/
 namespace PPAC.Migration.Internal.OriginalInstantiateClasses
 open YesMetaZFC.Automation.ObjectHorn (Expr Rule)
 open YesMetaZFC.Automation.ObjectSyntaxTransform

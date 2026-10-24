@@ -1,5 +1,7 @@
 # 对象层最终目标与内部Con规格
 
+mode2 变量与条件项框架已验收：原全部28规则分类、Num2的三个bound及一个free变量分支、实际五字段行与闭轨迹双向传输；完整变量Run1只需Ω／Num2／元数据／输入变量码。兼容frame前提下，全部内部合法纯项对应独立程序及coded mixed substitution。12模块145声明、14组原nativeZF闭句；1784构建任务、19106声明审计（400无公理／18706允许依赖）、零警告；九命令、五trust=0入口全通过，1619哈希／2209对精确足迹／16762项Internal覆盖。247个无用临时文件已按清单清理，未发现失效进程。实际根frame、binder闭包、mode2完整公式及最终内部Con仍未完成。见[本批验收与后续流程](STEP4_MODE_TWO_VARIABLE_ACCEPTANCE.zh-CN.md)。
+
 3f.2c.3b.2d.6j已验收：mode1完整公式运行已接实际AbstractFreeTop，两张实际码表见证均在对象EX中消去，源类型守卫位于最终结论内部。原forall完整局部纯关系节点已完成：原四查询、两个后继界见证消去、全部四赋值搜索界及node3／node9嵌套头规范化。9模块121声明、14组闭句返回原nativeZF。1772构建任务、18961项声明审计（399无公理／18562允许依赖）、零警告；九命令及五trust=0入口全部退出0；1607份独立哈希、2195对精确足迹、16617项Internal覆盖。下一单元是mode2实际InstantiateTop；共享quotation／Bool、专用ProofZF/U、完整内部解释及最终Con仍未完成。见[验收与工程表](STEP4_ACTUAL_TOP_FORMULA_AND_FORALL_ACCEPTANCE.zh-CN.md)。
 
 纯等号／成员语言、完整Separation／Collection、六规则／27模式及全部内部ω的Con规格不变；最终必须取得原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。

@@ -1,6 +1,6 @@
 import PPAC.Migration.Internal.AbstractVariableIndex
 
-/-! 待编译：独立mode2变量数值规格，仅使用成员／相等／后继／变量码。 -/
+/-! 独立mode2变量数值规格，仅使用成员／相等／后继／变量码。 -/
 namespace PPAC.Migration.Internal.InstantiateVariableValueSyntax
 open Source SourceAlgebra SourceLogic OmegaSyntax
 open SyntaxRenameQuerySyntax (of_eq)
