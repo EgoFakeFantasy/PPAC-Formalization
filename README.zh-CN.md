@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+关系式Packet仿射算术的全内部双向等价已验收：指定根的真实EX2／EX5字段经对象注入性归一，原ω归纳消去全部tail IH，统一轨迹和根行见证均对象消去；最终ALL3覆盖任意内部digit／tail／output，ALL4给出准确根条件对应，并取得实际128／256系统EX、有效输入输出存在唯一及无效候选拒绝。14模块154声明、20组原nativeZF闭句；2194构建、23611审计（460无公理／23151允许依赖）、零警告；九命令／五trust=0通过，1974哈希、2630对精确足迹、21267项Internal覆盖。原Basic AST翻译、完整NatPacket字节包、schema、Proof／解释及最终内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_AFFINE_ARITHMETIC_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 Packet实际十规则的关系式闭轨迹已验收：原Separation构造全部内部接受根集合，包含任意内部闭轨迹且自身闭合；仅Ω推出覆盖所有根候选的统一展开系统。原十规则的仿射根行准确分派到base／step，零点及后继接受已对象消去统一轨迹见证。12模块153声明、20组原nativeZF闭句；2180构建、23457审计（459无公理／22998允许依赖）、零警告；九命令／五trust=0通过，1960哈希、2610对精确足迹、21113项Internal覆盖。原Basic AST条件翻译、完整仿射算术等价、字节包、schema、Proof／解释及最终内部Con仍未完成。见[实际验收及工程流程](docs/STEP4_PACKET_CLOSED_TRACE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

@@ -11496,4 +11496,84 @@ example {m} (wide : Bool) (w B d t a s n q r : Fin m) : YesMetaZFC.Logic.FirstOr
     (Translation.sentence (Internal.ObjectPacketClosedTrace.packetAffineSuccessorConditionAcceptedSentence wide w B d t a s n q r)) :=
   Internal.ObjectPacketClosedTrace.native_packetAffineSuccessorConditionAccepted wide w B d t a s n q r
 
+example {m} (wide : Bool) (w B d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineRootBaseFieldsIffSentence wide w B d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineRootBaseFieldsIff wide w B d t n r
+
+example {m} (wide : Bool) (w B V d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineRootStepFieldsIffSentence wide w B V d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineRootStepFieldsIff wide w B V d t n r
+
+example {m} (wide : Bool) (w B V d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineExactRootStepEquationSentence wide w B V d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineExactRootStepEquation wide w B V d t n r
+
+example {m} (wide : Bool) (w B V d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineExactRootMemberEquationSentence wide w B V d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineExactRootMemberEquation wide w B V d t n r
+
+example {m} (wide : Bool) (w B V t d a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineInternalEntryFromIHSentence wide w B V t d a)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineInternalEntryFromIH wide w B V t d a
+
+example {m} (wide : Bool) (w B V t d a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineInternalEntryConstructedFromIHSentence wide w B V t d a)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineInternalEntryConstructedFromIH wide w B V t d a
+
+example {m} (wide : Bool) (w B V d z n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineZeroPointMembershipIffSentence wide w B V d z n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineZeroPointMembershipIff wide w B V d z n r
+
+example {m} (wide : Bool) (w B V d t s n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineSuccessorPointMembershipIffSentence wide w B V d t s n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineSuccessorPointMembershipIff wide w B V d t s n r
+
+example {m} (wide : Bool) (w B V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAllInternalTailIHDischargedSentence wide w B V)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalTailIHDischarged wide w B V
+
+example {m} (wide : Bool) (w B V d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAllInternalRootMembershipIffSentence wide w B V d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalRootMembershipIff wide w B V d t n r
+
+example {m} (wide : Bool) (w B d t n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineConditionExactArithmeticIffSentence wide w B d t n r)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineConditionExactArithmeticIff wide w B d t n r
+
+example {m} (wide : Bool) (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedExactArithmeticIffSentence wide w B d t n)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedExactArithmeticIff wide w B d t n
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAllInternalAcceptedExactArithmeticSentence wide w B)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalAcceptedExactArithmetic wide w B
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAllInternalRootExactArithmeticSentence wide w B)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalRootExactArithmetic wide w B
+
+example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineActualLiteralExactArithmeticSystemExistsSentence wide w)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineActualLiteralExactArithmeticSystemExists wide w
+
+example {m} (wide : Bool) (w B d t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedOutputExistsSentence wide w B d t)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedOutputExists wide w B d t
+
+example {m} (wide : Bool) (w B d t n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedOutputsUniqueSentence wide w B d t n a)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedOutputsUnique wide w B d t n a
+
+example {m} (wide : Bool) (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedRejectDigitSentence wide w B d t n)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectDigit wide w B d t n
+
+example {m} (wide : Bool) (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedRejectTailSentence wide w B d t n)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectTail wide w B d t n
+
+example {m} (wide : Bool) (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedRejectOutputSentence wide w B d t n)) :=
+  Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectOutput wide w B d t n
+
 end PPAC.Migration.Step4Checks

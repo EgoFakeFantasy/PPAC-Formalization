@@ -1922,6 +1922,45 @@ def check_Packet_explicit_table_closed_trace() -> dict:
             'full_Proof_and_Con':False}
 
 
+def check_Packet_relational_affine_arithmetic() -> dict:
+    modules = ['PacketAffineRootTransport', 'PacketAffineRootSyntax', 'PacketAffineRootBase', 'PacketAffineRootStep', 'PacketAffineRootEquation', 'PacketAffineInductionSyntax', 'PacketAffineInductionEntry', 'PacketAffineInductionPredecessor', 'PacketAffineInductionPoint', 'PacketAffineInduction', 'PacketAffineAcceptedSyntax', 'PacketAffineAccepted', 'PacketAffineAcceptedProperties', 'ObjectPacketAffineArithmetic']
+    schemas = ['packetAffineRootBaseFieldsIff', 'packetAffineRootStepFieldsIff', 'packetAffineExactRootStepEquation', 'packetAffineExactRootMemberEquation', 'packetAffineInternalEntryFromIH', 'packetAffineInternalEntryConstructedFromIH', 'packetAffineZeroPointMembershipIff', 'packetAffineSuccessorPointMembershipIff', 'packetAffineAllInternalTailIHDischarged', 'packetAffineAllInternalRootMembershipIff', 'packetAffineConditionExactArithmeticIff', 'packetAffineAcceptedExactArithmeticIff', 'packetAffineAllInternalAcceptedExactArithmetic', 'packetAffineAllInternalRootExactArithmetic', 'packetAffineActualLiteralExactArithmeticSystemExists', 'packetAffineAcceptedOutputExists', 'packetAffineAcceptedOutputsUnique', 'packetAffineAcceptedRejectDigit', 'packetAffineAcceptedRejectTail', 'packetAffineAcceptedRejectOutput']
+    required = {'PacketAffineRootTransport': ['Derives.eqSubst', 'theorem row_output', 'theorem entry_digit', 'theorem entry_tail'], 'PacketAffineRootSyntax': ['def zeroCase', 'def predecessorBody', 'PacketHornAffineSyntax.entry', 'def criterion'], 'PacketAffineRootBase': ['theorem actual_witness', 'existsMany 2', 'SyntaxNodeInjective.constructor_input_eq', 'theorem base_iff'], 'PacketAffineRootStep': ['theorem actual_witness', 'existsMany 5', 'SyntaxNodeInjective.constructor_input_eq', 'PacketAffineRootTransport.entry_digit', 'theorem step_iff'], 'PacketAffineRootEquation': ['PacketAffineDispatch.step_iff_outcomes', 'PacketTraceCore.unfold_iff', 'theorem member_iff'], 'PacketAffineInductionSyntax': ['def propertyBody', 'def correct', 'def matrix', 'OriginalUniversalBlock.allMany 3', 'PacketAffineSyntax.affine', 'theorem at_correct'], 'PacketAffineInductionEntry': ['theorem entry_to_affine', 'theorem affine_to_entry', 'SyntaxConstructors.exists_constructor', 'PacketTraceCore.intro_entry'], 'PacketAffineInductionPredecessor': ['StructuralListCodeLength.predecessor_unique', 'PacketAffineRootTransport.entry_tail', 'PacketAffineInductionEntry.entry_to_affine', 'PacketAffineInductionEntry.affine_to_entry', 'PacketAffineStep.advance', 'PacketAffineStep.retreat'], 'PacketAffineInductionPoint': ['theorem no_empty_predecessor', 'theorem zero', 'theorem successor', 'OmegaStructureAlgebra.successor_not_empty'], 'PacketAffineInduction': ['theorem all_correct', 'ZFArithmetic.induction hZ (matrix wide)', 'theorem membership_iff', 'base hZ wide w B V', 'step hZ wide w B V'], 'PacketAffineAcceptedSyntax': ['def accepted', 'PacketHornAffineSyntax.row', 'PacketTraceSyntax.condition', 'OriginalUniversalBlock.allMany 3', 'OriginalUniversalBlock.allMany 4', 'def existsSystem'], 'PacketAffineAccepted': ['theorem condition_iff', 'theorem accepted_iff', 'PacketTraceCore.exists_value hZ w', 'theorem all_law', 'theorem all_root_law', 'theorem exists_system', 'SyntaxNumerals.exists_numeral'], 'PacketAffineAcceptedProperties': ['theorem exists_value', 'theorem unique', 'theorem reject_digit', 'theorem reject_tail', 'theorem reject_output', 'PacketAffineCore.exists_value', 'PacketAffineCore.unique'], 'ObjectPacketAffineArithmetic': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|addConst_eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b|HornLookupConditionSyntax|HornStepSyntax\.originalStep|ObjectSyntaxTransform\.rules'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text) or re.search(r'(?m)^\s+induction\b', text):
+            raise RuntimeError('Packet affine arithmetic forbidden gap, wrong table or host induction: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Packet affine arithmetic proof drift: '+mod+': '+clause)
+    signatures = [('PacketAffineRootBase','base_iff',{'hw','hr'}),('PacketAffineRootStep','step_iff',{'hw','hr'}),('PacketAffineInduction','all_correct',{'hw','hB','hv'}),('PacketAffineInduction','membership_iff',{'hw','hB','hv','hr'}),('PacketAffineAccepted','condition_iff',{'hw','hB','hr'}),('PacketAffineAccepted','accepted_iff',{'hw','hB'}),('PacketAffineAccepted','all_law',{'hw','hB'}),('PacketAffineAccepted','all_root_law',{'hw','hB'}),('PacketAffineAccepted','exists_system',{'hw'}),('PacketAffineAcceptedProperties','exists_value',{'hw','hB','hd','ht'}),('PacketAffineAcceptedProperties','unique',{'hw','hB','hn','ha'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Packet affine arithmetic hidden premise: '+mod+'.'+name)
+    accepted = texts['PacketAffineAcceptedSyntax'].split('def lawBody')[0]
+    if 'PacketAffineSyntax.affine' in accepted or 'condition' not in accepted or 'PacketHornAffineSyntax.row' not in accepted:
+        raise RuntimeError('Actual accepted relation must not be defined by the arithmetic answer')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketAffineArithmetic.native_'+name not in check:
+            raise RuntimeError('Missing Packet affine arithmetic native fixture: '+name)
+    return {'exact_original_root_fields_aligned_by_object_constructor_injectivity':True,
+            'original_base_EX2_and_step_EX5_witnesses_object_eliminated':True,
+            'original_object_omega_induction_discharges_all_internal_tail_IH':True,
+            'independent_actual_relational_acceptance_iff_guarded_product_plus_sum':True,
+            'all_internal_digit_tail_output_candidates_retained_in_ALL3':True,
+            'exact_root_condition_iff_arithmetic_ALL4':True,
+            'universal_trace_and_root_witnesses_object_discharged':True,
+            'only_omega_premise_for_actual_literal_arithmetic_system':True,
+            'actual_relational_affine_output_total_unique_and_invalid_candidates_rejected':True,
+            'original_Basic_AST_condition_translation':False,
+            'full_NatPacket_byte_tree_bridge':False,
+            'full_Proof_and_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1970,6 +2009,7 @@ def main() -> None:
     Packet_original_affine_local_matrices = check_Packet_original_affine_local_matrices()
     Packet_affine_bounded_applications = check_Packet_affine_bounded_applications()
     Packet_explicit_table_closed_trace = check_Packet_explicit_table_closed_trace()
+    Packet_relational_affine_arithmetic = check_Packet_relational_affine_arithmetic()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4871,7 +4911,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineActualTenRuleStepIffOutcomes',
                     'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineConditionIffActualOutcomes',
                     'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineBaseConditionAccepted',
-                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineSuccessorConditionAccepted'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketClosedTrace.native_packetAffineSuccessorConditionAccepted',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineRootBaseFieldsIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineRootStepFieldsIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineExactRootStepEquation',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineExactRootMemberEquation',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineInternalEntryFromIH',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineInternalEntryConstructedFromIH',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineZeroPointMembershipIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineSuccessorPointMembershipIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalTailIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalRootMembershipIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineConditionExactArithmeticIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedExactArithmeticIff',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalAcceptedExactArithmetic',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAllInternalRootExactArithmetic',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineActualLiteralExactArithmeticSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedOutputExists',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedOutputsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectDigit',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectTail',
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectOutput'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4883,6 +4943,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketAffineArithmetic": ('packetAffineRootBaseFieldsIff', 'packetAffineRootStepFieldsIff', 'packetAffineExactRootStepEquation', 'packetAffineExactRootMemberEquation', 'packetAffineInternalEntryFromIH', 'packetAffineInternalEntryConstructedFromIH', 'packetAffineZeroPointMembershipIff', 'packetAffineSuccessorPointMembershipIff', 'packetAffineAllInternalTailIHDischarged', 'packetAffineAllInternalRootMembershipIff', 'packetAffineConditionExactArithmeticIff', 'packetAffineAcceptedExactArithmeticIff', 'packetAffineAllInternalAcceptedExactArithmetic', 'packetAffineAllInternalRootExactArithmetic', 'packetAffineActualLiteralExactArithmeticSystemExists', 'packetAffineAcceptedOutputExists', 'packetAffineAcceptedOutputsUnique', 'packetAffineAcceptedRejectDigit', 'packetAffineAcceptedRejectTail', 'packetAffineAcceptedRejectOutput'),
         "ObjectPacketClosedTrace": ('closedTraceMemberHasActualStep', 'closedTraceInsertPreservesClosure', 'closedTraceInsertAcceptsActualRoot', 'closedTraceAcceptedRootSetExists', 'closedTraceAcceptedRootMembershipIff', 'closedTraceContainsEveryInternalSubtrace', 'closedTraceAcceptedRootSetClosed', 'closedTraceAllCandidateUnfoldIff', 'closedTraceAllCandidateSystemExists', 'closedTraceRejectNonNaturalRoot', 'packetActualTenRuleAcceptedRootSetExists', 'packetActualTenRuleAcceptedRootSetClosed', 'packetActualTenRuleConditionUnfoldIff', 'packetActualTenRuleTraceSystemExists', 'packetAffineForeignRuleRejected', 'packetAffineActualTenRuleDispatch', 'packetAffineActualTenRuleStepIffOutcomes', 'packetAffineConditionIffActualOutcomes', 'packetAffineBaseConditionAccepted', 'packetAffineSuccessorConditionAccepted'),
         "ObjectPacketAffineApplication": ('packetAffineBaseHeadSearchBound', 'packetAffineBaseMatrixSuppliesBoundedApplication', 'packetAffineStepHeadSearchBound', 'packetAffineStepMatrixSuppliesBoundedApplication', 'packetAffineRowAssignmentsNatural', 'packetAffineEntryAssignmentsNatural', 'packetAffineBaseDigitNatural', 'packetAffineStepAssignmentsNatural', 'packetAffineWholeBaseApplicationIff', 'packetAffineWholeStepApplicationIff', 'packetAllInternalAffineApplicationsLaw', 'packetAffineLiteralApplicationSystemExists', 'originalRuleApplicationRowNatural', 'originalRuleRejectNonNaturalRow'),
         "ObjectPacketHornAffine": ('packetOriginalAddConstGraphIff', 'packetOriginalRadixAddConstGraphIff', 'packetOriginalAffineBaseHeadIff', 'packetOriginalAffineStepHeadIff', 'packetOriginalAffineBaseGuardIff', 'packetOriginalAffineStepPremiseIff', 'packetOriginalAffineBaseMatrixAtIff', 'packetOriginalAffineStepMatrixAtIff', 'packetOriginalAffineBaseMatrixIff', 'packetOriginalAffineStepMatrixIff', 'packetOriginalAffineAllInternalBaseMatrixLaw', 'packetOriginalAffineAllInternalStepMatrixLaw', 'packetOriginalAffineLiteralMatrixSystemExists'),
@@ -5859,6 +5920,14 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_relational_affine_arithmetic_guard": Packet_relational_affine_arithmetic,
+        'object_Packet_affine_exact_root_predecessor_equation_proved': True,
+        'object_Packet_relational_affine_internal_omega_IH_discharged': True,
+        'object_Packet_relational_affine_condition_exact_arithmetic_proved': True,
+        'object_Packet_relational_affine_all_internal_acceptance_iff_proved': True,
+        'object_Packet_relational_affine_literal_arithmetic_system_constructed': True,
+        'object_Packet_relational_affine_execution_total_unique_proved': True,
+
         'object_Horn_explicit_table_internal_closed_trace_value_constructed': True,
         'object_Packet_actual_ten_rule_relational_trace_system_constructed': True,
         'object_Packet_actual_ten_rule_affine_root_dispatch_proved': True,
