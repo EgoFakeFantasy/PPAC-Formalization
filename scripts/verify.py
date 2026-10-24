@@ -2356,6 +2356,52 @@ def check_Packet_actual_token_prefix_inverse() -> dict:
             'full_Basic_AST_schema_Proof_Con_proved':False}
 
 
+def check_Packet_ordered_byte_fold_trace() -> dict:
+    modules = ['PacketBytesRowSyntax', 'PacketBytesTraceSyntax', 'PacketBytesRowMap', 'PacketBytesTraceProperties', 'PacketBytesTraceTransport', 'PacketBytesTraceAppend', 'PacketBytesTraceBase', 'PacketBytesLaws', 'ObjectPacketBytesTrace']
+    required = {
+        'PacketBytesRowSyntax':['def rowAt','successor j i','StructuralListSyntax.consCode w h x y','PacketAffineSyntax.affine w C h u v','existsMany 6','theorem intro_row'],
+        'PacketBytesTraceSyntax':['StructuralListTraceSyntax.trace w z e l d f n','SequenceSyntax.sequence g d w','edge g z t','edge g l a','links w C l f g','def foldAt','def bytes','SyntaxNumeralSyntax.numeral 256'],
+        'PacketBytesRowMap':['theorem row_map','theorem links_map','theorem append_links','edgeIncluded f F','edgeIncluded g G','HornBinderRules.eliminate_many 6'],
+        'PacketBytesTraceProperties':['theorem length','theorem valid','theorem tail_natural','theorem output_natural','SequenceSyntax.bounded_at'],
+        'PacketBytesTraceTransport':['Derives.eqSubst','theorem input_subst','theorem output_subst','theorem radix_subst'],
+        'PacketBytesTraceAppend':['StructuralListTraceAppend.from_append','SequenceAppend.exists_append','PacketBytesRowMap.append_links','theorem at_successor','theorem extend_trace','theorem cons_fold','HornBinderRules.eliminate_many 6'],
+        'PacketBytesTraceBase':['StructuralListTraceBase.exists_base','SequenceAppend.exists_append','StructuralListUnits.with_units','theorem nil_fold','theorem nil_value','theorem nil_iff','GraphProperties.single_valued'],
+        'PacketBytesLaws':['SyntaxNumerals.unique','SyntaxNumerals.exists_numeral hZ 256','PacketAffineAccepted.accepted_iff','theorem fold_iff','theorem nil_iff','theorem cons_bytes','theorem singleton_bytes'],
+        'ObjectPacketBytesTrace':['TheoryTransport.sentence','ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Ordered byte fold forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Ordered byte fold proof drift: '+mod+': '+clause)
+    for name,expected in [('fold_iff',{'hC'}),('domain',{'hb'}),('nil_fold',{'hw','hn','ht'}),('nil_iff',{'hw','hn'}),('cons_bytes',{'hw','hf','hc','ha'}),('singleton_bytes',{'hw','he','ht','hc','ha'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts['PacketBytesLaws'])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Ordered byte fold hidden premise: '+name)
+    upstream = (ROOT/'.lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectPacketData.lean').read_text(encoding='utf-8')
+    if 'input.foldr (fun byte rest => byte + 256 * rest) tail' not in upstream:
+        raise RuntimeError('Locked original byte fold definition drift')
+    schemas = ['packetBytesBothSequenceRowTransport', 'packetBytesBothSequenceLinksAppend', 'packetBytesOriginalDualSequenceAppend', 'packetBytesTraceExtensionWitnessesEliminated', 'packetBytesFullConsForwardAtRadix', 'packetBytesNilExactFiberAtRadix', 'packetBytesFoldOriginalValidityAndNaturalDomain', 'packetBytesActual256ExactGraphIff', 'packetBytesActualByteDomain', 'packetBytesActualNilExistsOnlyOmega', 'packetBytesActualNilIffOnlyOmega', 'packetBytesActualConsForwardOnlyOmega', 'packetBytesActualSingletonOnlyOmega']
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketBytesTrace.native_'+name not in checks: raise RuntimeError('Missing ordered byte fold fixture: '+name)
+    return {'independent_dual_sequence_ordered_byte_fold_graph_constructed':True,
+            'original_list_trace_and_value_sequence_share_every_internal_index':True,
+            'each_step_real_Cons_and_bounded_affine_byte_equation':True,
+            'full_old_rows_preserved_and_new_last_row_constructed':True,
+            'original_pairing_union_sequence_append_operations_construct_both_graphs':True,
+            'Nil_exact_fiber_keeps_internal_natural_tail_guard':True,
+            'Cons_forward_closure_all_sequence_and_literal_witnesses_eliminated':True,
+            'actual_256_Cons_closure_uses_actual_Packet_affine_acceptance_only_omega':True,
+            'all_internal_and_nonstandard_trace_lengths_preserved':True,
+            'full_internal_byte_fold_totality_uniqueness_proved':False,
+            'reverse_Cons_decomposition_and_full_recursion_iff_proved':False,
+            'canonical_varint_readTokens_byte_program_bridge_proved':False,
+            'full_Basic_AST_schema_Proof_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2416,6 +2462,7 @@ def main() -> None:
     Packet_joint_internal_structural_tail_bounds = check_Packet_joint_internal_structural_tail_bounds()
     Packet_structural_search_bounds_and_typed_recursion = check_Packet_structural_search_bounds_and_typed_recursion()
     Packet_actual_token_prefix_inverse = check_Packet_actual_token_prefix_inverse()
+    Packet_ordered_byte_fold_trace = check_Packet_ordered_byte_fold_trace()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5508,7 +5555,20 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixInputOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixTailOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixActualFiberIffOnlyOmega',
-                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixOutputIffOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixOutputIffOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesBothSequenceRowTransport',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesBothSequenceLinksAppend',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesOriginalDualSequenceAppend',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesTraceExtensionWitnessesEliminated',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesFullConsForwardAtRadix',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesNilExactFiberAtRadix',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesFoldOriginalValidityAndNaturalDomain',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActual256ExactGraphIff',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualByteDomain',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualNilExistsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualNilIffOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualConsForwardOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualSingletonOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5520,6 +5580,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketBytesTrace": ('packetBytesBothSequenceRowTransport', 'packetBytesBothSequenceLinksAppend', 'packetBytesOriginalDualSequenceAppend', 'packetBytesTraceExtensionWitnessesEliminated', 'packetBytesFullConsForwardAtRadix', 'packetBytesNilExactFiberAtRadix', 'packetBytesFoldOriginalValidityAndNaturalDomain', 'packetBytesActual256ExactGraphIff', 'packetBytesActualByteDomain', 'packetBytesActualNilExistsOnlyOmega', 'packetBytesActualNilIffOnlyOmega', 'packetBytesActualConsForwardOnlyOmega', 'packetBytesActualSingletonOnlyOmega'),
         "ObjectPacketTokenPrefix": ('packetTokenPrefixShiftedByteNotSmall', 'packetTokenPrefixTerminalContinuationDisjoint', 'packetTokenPrefixTerminalInverse', 'packetTokenPrefixLargeWitnessInverse', 'packetTokenPrefixAllQuotientInduction', 'packetTokenPrefixAllAtRadices', 'packetTokenPrefixAllInternalOnlyOmega', 'packetTokenPrefixJointInverseOnlyOmega', 'packetTokenPrefixInputOnlyOmega', 'packetTokenPrefixTailOnlyOmega', 'packetTokenPrefixActualFiberIffOnlyOmega', 'packetTokenPrefixOutputIffOnlyOmega'),
         "ObjectPacketStructureSearch": ('packetStructureSearchAllOriginalAssignmentNaturality', 'packetStructureSearchAllOriginalAssignmentBounds', 'packetStructureSearchActualAffineTailOnlyOmega', 'packetStructureSearchFourOriginalApplicationsIff', 'packetStructureSearchActualRootConditionRecursionIff', 'packetStructureSearchTypedActualAcceptanceBackward', 'packetStructureSearchActualAcceptanceTypedRecursionIff', 'packetStructureSearchActualTreeTypedRecursionIff', 'packetStructureSearchActualForestTypedRecursionIff', 'packetStructureSearchActualPacketTypedRecursionIff', 'packetStructureSearchAllInternalRootConditionIff', 'packetStructureSearchAllInternalActualTypedRecursion', 'packetStructureSearchAllThreeActualTypedRecursionLaws', 'packetStructureSearchCanonicalRootSystemExistsOnlyOmega'),
         "ObjectPacketStructureTail": ('packetStructureTailActualRawPayloadStrictSubcode', 'packetStructureTailActualConsChildrenStrictSubcodes', 'packetStructureTailTreePointFromJointChildIH', 'packetStructureTailForestPointFromJointChildIH', 'packetStructureTailJointPoint', 'packetStructureTailJointObjectProgressive', 'packetStructureTailAllInternalJointIHDischarged', 'packetStructureTailActualTreeBelowOutput', 'packetStructureTailActualForestBelowOutput', 'packetStructureTailActualTreeContained', 'packetStructureTailActualForestContained', 'packetStructureTailAllInternalTreeLaw', 'packetStructureTailAllInternalForestLaw', 'packetStructureTailAllInternalCoupledLawsOnlyOmega'),
@@ -6508,6 +6569,14 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_ordered_byte_fold_trace_guard": Packet_ordered_byte_fold_trace,
+        'object_Packet_independent_ordered_byte_fold_trace_constructed': True,
+        'object_Packet_ordered_byte_fold_exact_typed_Nil_fiber_proved': True,
+        'object_Packet_ordered_byte_fold_Cons_forward_constructed': True,
+        'object_Packet_ordered_byte_fold_closure_sequence_and_radix_witnesses_eliminated': True,
+        'object_Packet_ordered_byte_fold_all_internal_trace_lengths_preserved': True,
+        'object_Packet_ordered_byte_fold_global_total_unique_proved': False,
+        'object_Packet_ordered_byte_fold_full_Cons_recursion_iff_proved': False,
         "Packet_actual_token_prefix_inverse_guard": Packet_actual_token_prefix_inverse,
         'object_Packet_actual_token_numeric_prefix_inverse_proved': True,
         'object_Packet_actual_token_joint_input_remaining_tail_unique_proved': True,

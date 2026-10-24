@@ -12254,4 +12254,55 @@ example {m} (w n t a k s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF
 example {m} (w n t a k s b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketTokenPrefix.packetTokenPrefixOutputIffOnlyOmegaSentence w n t a k s b)) :=
   Internal.ObjectPacketTokenPrefix.native_packetTokenPrefixOutputIffOnlyOmega w n t a k s b
+example {m} (w C f g F G i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesBothSequenceRowTransportSentence w C f g F G i)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesBothSequenceRowTransport w C f g F G i
+
+example {m} (w C l d f g F G : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesBothSequenceLinksAppendSentence w C l d f g F G)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesBothSequenceLinksAppend w C l d f g F G
+
+example {m} (w C n t a z e l d f g h p b k F G : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesOriginalDualSequenceAppendSentence w C n t a z e l d f g h p b k F G)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesOriginalDualSequenceAppend w C n t a z e l d f g h p b k F G
+
+example {m} (w C n t a z e l d f g h p b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesTraceExtensionWitnessesEliminatedSentence w C n t a z e l d f g h p b)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesTraceExtensionWitnessesEliminated w C n t a z e l d f g h p b
+
+example {m} (w C n t a h p b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesFullConsForwardAtRadixSentence w C n t a h p b)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesFullConsForwardAtRadix w C n t a h p b
+
+example {m} (w C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesNilExactFiberAtRadixSentence w C n t a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesNilExactFiberAtRadix w C n t a
+
+example {m} (w C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesFoldOriginalValidityAndNaturalDomainSentence w C n t a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesFoldOriginalValidityAndNaturalDomain w C n t a
+
+example {m} (w C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActual256ExactGraphIffSentence w C n t a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActual256ExactGraphIff w C n t a
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActualByteDomainSentence w n t a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActualByteDomain w n t a
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActualNilExistsOnlyOmegaSentence w n t)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActualNilExistsOnlyOmega w n t
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActualNilIffOnlyOmegaSentence w n t a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActualNilIffOnlyOmega w n t a
+
+example {m} (w n t a h p b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActualConsForwardOnlyOmegaSentence w n t a h p b)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActualConsForwardOnlyOmega w n t a h p b
+
+example {m} (w e n t h a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesTrace.packetBytesActualSingletonOnlyOmegaSentence w e n t h a)) :=
+  Internal.ObjectPacketBytesTrace.native_packetBytesActualSingletonOnlyOmega w e n t h a
 end PPAC.Migration.Step4Checks
