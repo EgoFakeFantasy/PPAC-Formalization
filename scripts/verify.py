@@ -353,7 +353,7 @@ def check_actual_abstract_pure_term_operation() -> dict:
             "zero_depth_all_valid_pure_term_program_and_coded_operation_iff_proved": True,
             "both_actual_code_table_witnesses_constructed_and_eliminated": True,
             "term_type_guard_inside_final_conclusion": True, "depth_required_empty": True,
-            "binder_lifted_mode_one_frame_proved": False,
+            "binder_lifted_mode_one_frame_proved": True,
             "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
 
 
@@ -376,6 +376,25 @@ def check_actual_abstract_argument_operation() -> dict:
             "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
 
 
+def check_actual_abstract_frame() -> dict:
+    """Compatibility is independent variable arithmetic on real typed tables, not Run correctness."""
+    body = strip_comments((ROOT / "PPAC/Migration/Internal/AbstractOperationFrameSyntax.lean").read_text(encoding="utf-8"))
+    for name in ["point", "compatible", "frame"]:
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+        if not found or re.search(r"OriginalTransformRowSyntax\.|Horn\w*\.|OriginalArgumentFieldSyntax\.|OriginalNumericTermValueSyntax\.|TermTransformProgram\w*\.|Expr\.eval|Classical\.choose", found.group(0)):
+            raise RuntimeError("Abstract frame uses operation/acceptance oracle: " + name)
+    for required in ["SyntaxMixedImageCodeSyntax.termLists w a b c e R S", "AbstractVariableValueSyntax.valueSpec bound w depth i n q", "StructuralListFieldSyntax.field w (SyntaxIndexMapSyntax.selectMap bound R S) i q", ".all (.all (.all"]:
+        if required not in body:
+            raise RuntimeError("Abstract frame lost actual all-internal variable/table contract: " + required)
+    return {"arbitrary_internal_depth_compatible_frame_proved": True,
+            "actual_top_environment_root_instance_proved": True,
+            "actual_original_coded_binder_lift_preserves_frame_proved": True,
+            "all_internal_scoped_variables_and_candidate_outputs_covered": True,
+            "eight_lift_graph_map_head_witnesses_eliminated": True,
+            "old_variable_code_and_field_witnesses_eliminated": True,
+            "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -391,6 +410,7 @@ def main() -> None:
     small_mode_arguments_and_pure_term_values = check_small_mode_arguments_and_pure_term_values()
     actual_abstract_pure_term_operation = check_actual_abstract_pure_term_operation()
     actual_abstract_argument_operation = check_actual_abstract_argument_operation()
+    actual_abstract_frame = check_actual_abstract_frame()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2820,7 +2840,20 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthActualArgumentProgramIff',
                     'PPAC.Migration.Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthArgumentsAtActualCodesIff',
                     'PPAC.Migration.Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthArgumentsActualOperationIff',
-                    'PPAC.Migration.Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthGuardedArgumentsActualOperationIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthGuardedArgumentsActualOperationIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_arbitraryDepthBoundShiftedIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_internalSuccessorThresholdIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_knownActualIndexVariableRenameIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualBinderBoundRenameIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualBinderFreeRenameIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_arbitraryDepthBoundBinderCovarianceIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_arbitraryDepthFreeBinderCovarianceIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualAbstractRootCompatibleFrame',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualLiftedBoundFieldsIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualLiftedFreeFieldsIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_allInternalLiftedBoundFieldsIff',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_allInternalLiftedFrameCompatibility',
+                    'PPAC.Migration.Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2942,6 +2975,7 @@ def main() -> None:
         "ObjectOriginalAbstract": ('modeOneFiveRuleStepIff', 'modeOneVariableTwoRuleStepIff', 'modeOneVariableWholeTraceIff', 'modeOneBoundIdentityGuardIff', 'modeOneBoundAbstractGuardIff', 'modeOneBoundPreservedTrace', 'modeOneBoundShiftedTrace', 'modeOneFreeHeadTrace', 'modeOneFreeTailTrace'),
         "ObjectAbstractVariable": ('originalVariableIndexGraph', 'modeOneBoundVariableNumericIff', 'modeOneBoundVariableNumericSound', 'modeOneBoundVariableNumericComplete', 'modeOneFreeVariableNumericIff', 'modeOneFreeVariableNumericSound', 'modeOneFreeVariableNumericComplete', 'modeOneAllVariableNumericTraceIff', 'modeOneAllVariableNumericRunIff', 'modeOneVariableNumericOutputNatural', 'modeOnePreservedValueConstructsTrace', 'modeOneShiftedValueConstructsTrace', 'modeOneFreeHeadValueConstructsTrace', 'modeOneFreeTailValueConstructsTrace'),
         "ObjectSmallModeArguments": ('smallModeOriginalNilGuard', 'smallModeOriginalNilMatrixIff', 'smallModeOriginalNilAtRowIff', 'smallModeOriginalNilApplicationIff', 'smallModeArgumentTraceAtActualValueIff', 'smallModeArgumentTraceIff', 'smallModeArgumentWholeRunIff', 'modeOnePureTermGuardedNumericIff', 'modeOnePureTermTypedNumericIff', 'modeOneTermScopeBranchNumeric', 'modeOneTermNumericBranchRun'),
+        "ObjectAbstractOperationFrame": ('arbitraryDepthBoundShiftedIff', 'internalSuccessorThresholdIff', 'knownActualIndexVariableRenameIff', 'actualBinderBoundRenameIff', 'actualBinderFreeRenameIff', 'arbitraryDepthBoundBinderCovarianceIff', 'arbitraryDepthFreeBinderCovarianceIff', 'actualAbstractRootCompatibleFrame', 'actualLiftedBoundFieldsIff', 'actualLiftedFreeFieldsIff', 'allInternalLiftedBoundFieldsIff', 'allInternalLiftedFrameCompatibility', 'actualBinderCompatibleFrameWitnessesDischarged'),
         "ObjectAbstractTopArguments": ('smallModeArgumentActualFiber', 'smallModeArgumentActualFields', 'smallModeArgumentCompleteFieldMapIff', 'modeOneActualTermAllOutputsAgreement', 'modeOneActualTermUniqueTypedFiber', 'modeOneActualTermPromiseDischarged', 'modeOneZeroDepthActualArgumentFieldsIff', 'modeOneZeroDepthActualArgumentProgramIff', 'modeOneZeroDepthArgumentsAtActualCodesIff', 'modeOneZeroDepthArgumentsActualOperationIff', 'modeOneZeroDepthGuardedArgumentsActualOperationIff'),
         "ObjectAbstractTopTerm": ('modeOneBoundAtZeroDepthIff', 'modeOneFreeAtZeroIndexIff', 'modeOneFreeAtSuccessorIndexIff', 'modeOneBoundBelowDepthIff', 'modeOneActualBoundTableAtSuccessorIff', 'modeOneActualFreeTableAtZeroIff', 'modeOneActualFreeTableAtSuccessorIff', 'modeOneZeroDepthActualVariableTableIff', 'modeOneZeroDepthActualVariableProgramIff', 'modeOneZeroDepthActualPureTermProgramIff', 'modeOneZeroDepthActualCodedPureTermIff', 'modeOneZeroDepthPureTermAtActualCodesIff', 'modeOneZeroDepthPureTermActualOperationIff', 'actualAbstractPureTermSourceType', 'modeOneZeroDepthGuardedPureTermActualOperationIff'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
@@ -3742,6 +3776,11 @@ def main() -> None:
         "small_mode_arguments_and_pure_term_values_guard": small_mode_arguments_and_pure_term_values,
         "actual_abstract_pure_term_operation_guard": actual_abstract_pure_term_operation,
         "actual_abstract_argument_operation_guard": actual_abstract_argument_operation,
+        "actual_abstract_frame_guard": actual_abstract_frame,
+        "object_original_mode_one_arbitrary_internal_depth_variable_binder_covariance_proved": True,
+        "object_original_mode_one_actual_abstract_root_frame_proved": True,
+        "object_original_mode_one_actual_binder_frame_eight_witnesses_discharged": True,
+
         "object_original_small_mode_typed_argument_fiber_and_field_map_proved": True,
         "object_original_mode_one_zero_depth_actual_abstract_argument_map_proved": True,
         "object_original_mode_one_zero_depth_argument_Promise_and_IH_discharged": True,
@@ -3753,7 +3792,7 @@ def main() -> None:
         "object_original_mode_one_zero_depth_actual_abstract_pure_term_program_proved": True,
         "object_original_mode_one_zero_depth_pure_term_actual_abstract_operation_proved": True,
         "object_original_mode_one_zero_depth_pure_term_code_witnesses_discharged": True,
-        "object_original_mode_one_binder_lifted_abstract_frame_proved": False,
+        "object_original_mode_one_binder_lifted_abstract_frame_proved": True,
         "object_original_small_mode_argument_nil_guard_proved": True,
         "object_original_small_mode_argument_whole_run_equations_proved": True,
         "object_original_mode_one_pure_term_guarded_numeric_iff_proved": True,
@@ -3794,7 +3833,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. Binder-lifted abstract frames/maps, full formula operation/forall, logical/theory shapes, shared quotation/Bool, internal Proof/compiler/interpretation and final Con remain unproved.",
+        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth term/argument map, full mode1 formula operation/forall, logical/theory shapes, shared quotation/Bool, internal Proof/compiler/interpretation and final Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

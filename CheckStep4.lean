@@ -9156,4 +9156,66 @@ example {m} (w mode z P a b A B n q k : Fin m) :
                     (Internal.AbstractTopArgumentSyntax.abstracted w a b A B n q k))))))).close)) :=
   Internal.ObjectAbstractTopArguments.native_modeOneZeroDepthGuardedArgumentsActualOperationIff w mode z P a b A B n q k
 
+example {m} (w d i j x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.arbitraryDepthBoundShiftedIffSentence w d i j x y)) :=
+  Internal.ObjectAbstractOperationFrame.native_arbitraryDepthBoundShiftedIff w d i j x y
+
+example {m} (w d i D I : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.internalSuccessorThresholdIffSentence w d i D I)) :=
+  Internal.ObjectAbstractOperationFrame.native_internalSuccessorThresholdIff w d i D I
+
+example {m} (bound : Bool) (w r t a b c e n q i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.knownActualIndexVariableRenameIffSentence bound w r t a b c e n q i j)) :=
+  Internal.ObjectAbstractOperationFrame.native_knownActualIndexVariableRenameIff bound w r t a b c e n q i j
+
+example {m} (w U V c e C t q i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualBinderBoundRenameIffSentence w U V c e C t q i j)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualBinderBoundRenameIff w U V c e C t q i j
+
+example {m} (w U V c e C t q i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualBinderFreeRenameIffSentence w U V c e C t q i)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualBinderFreeRenameIff w U V c e C t q i
+
+example {m} (w d i D I U V c e C x X t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.arbitraryDepthBoundBinderCovarianceIffSentence w d i D I U V c e C x X t q)) :=
+  Internal.ObjectAbstractOperationFrame.native_arbitraryDepthBoundBinderCovarianceIff w d i D I U V c e C x X t q
+
+example {m} (w d i D U V c e C t q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.arbitraryDepthFreeBinderCovarianceIffSentence w d i D U V c e C t q)) :=
+  Internal.ObjectAbstractOperationFrame.native_arbitraryDepthFreeBinderCovarianceIff w d i D U V c e C t q
+
+example {m} (w mode z P a b A B R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualAbstractRootCompatibleFrameSentence w mode z P a b A B R S)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualAbstractRootCompatibleFrame w mode z P a b A B R S
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n i j X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualLiftedBoundFieldsIffSentence w mode depth P D R S a b c e A C K H U V z n i j X q)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualLiftedBoundFieldsIff w mode depth P D R S a b c e A C K H U V z n i j X q
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n i X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualLiftedFreeFieldsIffSentence w mode depth P D R S a b c e A C K H U V z n i X q)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualLiftedFreeFieldsIff w mode depth P D R S a b c e A C K H U V z n i X q
+
+example {m} (w mode depth P D R S a b c e A C K H U V z n i X q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.allInternalLiftedBoundFieldsIffSentence w mode depth P D R S a b c e A C K H U V z n i X q)) :=
+  Internal.ObjectAbstractOperationFrame.native_allInternalLiftedBoundFieldsIff w mode depth P D R S a b c e A C K H U V z n i X q
+
+example {m} (bound : Bool) (w mode depth P D R S a b c e A C K H U V z n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.allInternalLiftedFrameCompatibilitySentence bound w mode depth P D R S a b c e A C K H U V z n)) :=
+  Internal.ObjectAbstractOperationFrame.native_allInternalLiftedFrameCompatibility bound w mode depth P D R S a b c e A C K H U V z n
+
+example {m} (w mode depth P D R S a b c e A C K H : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractOperationFrame.actualBinderCompatibleFrameWitnessesDischargedSentence w mode depth P D R S a b c e A C K H)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged w mode depth P D R S a b c e A C K H
+
+-- Expanded actual binder closure: four premises, no lifting graph/head/old-field witnesses.
+example {m} (w mode depth P D R S a b c e A C K H : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.AbstractOperationFrameSyntax.frame w mode depth P a b c e R S).imp
+          ((OmegaSyntax.successor D depth).imp
+            ((Internal.SyntaxCodedMixedBinderSyntax.lifted w R S a b c e A C K H).imp
+              (Internal.AbstractOperationFrameSyntax.frame w mode D P A b C e K H))))).close)) :=
+  Internal.ObjectAbstractOperationFrame.native_actualBinderCompatibleFrameWitnessesDischarged w mode depth P D R S a b c e A C K H
+
 end PPAC.Migration.Step4Checks
