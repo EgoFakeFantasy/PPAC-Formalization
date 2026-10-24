@@ -11205,4 +11205,51 @@ example {m} (w n b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectProjectCompilerUnique.compilerAllInternalSourceTypedUniqueOutputExistsSentence w)) :=
   Internal.ObjectProjectCompilerUnique.native_compilerAllInternalSourceTypedUniqueOutputExists w
+example {m} (w n f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerSourceChildValidityFromMemberIHSentence w n f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerSourceChildValidityFromMemberIH w n f
+
+example {m} (w b z n q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerActualCasesRecoverSourceGrammarSentence w b z n q f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerActualCasesRecoverSourceGrammar w b z n q f
+
+example {m} (w n b q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerInputValidFromMemberIHSentence w n b q f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerInputValidFromMemberIH w n b q f
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerSourceValidityProgressiveSentence w)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerSourceValidityProgressive w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerAllInternalActualInputsValidSentence w)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalActualInputsValid w
+
+example {m} (w n b q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerActualInputValidSentence w n b q f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerActualInputValid w n b q f
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerSourceAcceptanceIffSentence w n b f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerSourceAcceptanceIff w n b f
+
+example {m} (w n b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerSourceTypedUniqueAcceptanceIffSentence w n b f z)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerSourceTypedUniqueAcceptanceIff w n b f z
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerAllInternalSourceAcceptanceIffSentence w)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceAcceptanceIff w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerAllInternalSourceTypedUniqueAcceptanceIffSentence w)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceTypedUniqueAcceptanceIff w
+
+example {m} (w n b z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerClosedSourceTypedUniqueAcceptanceIffSentence w n b z)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerClosedSourceTypedUniqueAcceptanceIff w n b z
+
+example {m} (w n b q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerInvalidSourceRejectedSentence w n b q f)) :=
+  Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected w n b q f
 end PPAC.Migration.Step4Checks

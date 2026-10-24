@@ -1735,7 +1735,56 @@ def check_Project_compiler_scalar_uniqueness() -> dict:
             'all_internal_actual_inputs_scalar_functional_with_only_omega':True,
             'every_legal_source_has_actual_target_typed_output_unique_among_all_outputs':True,
             'finite_modes_are_external_proof_templates_not_internal_code_restrictions':True,
-            'source_validity_converse_original_byte_bridge_full_schema_Proof_Con_proved':False}
+            'scalar_uniqueness_stage_alone_proves_source_validity_converse':False,
+            'original_byte_bridge_full_schema_Proof_Con_proved':False}
+
+
+def check_Project_compiler_source_validity() -> dict:
+    modules = ['ProjectCompilerSourceSyntax', 'ProjectCompilerSourceQueries', 'ProjectCompilerSourceMatrix', 'ProjectCompilerSourceCases', 'ProjectCompilerSourceIH', 'ProjectCompilerSourceStep', 'ProjectCompilerSourceValid', 'ProjectCompilerSourceAcceptedSyntax', 'ProjectCompilerSourceAccepted', 'ObjectProjectCompilerSourceValid']
+    required = {'ProjectCompilerSourceSyntax': ['def queryBody', 'sourceCode (old 3 w) (slot 3 0) (slot 3 1) (old 3 f)', 'def propertyBody', '(Formula.mem (slot 3 2) (old 3 w)).imp', 'sourceCode (old 3 w) (old 3 n) (slot 3 0) (slot 3 2)', 'def correct', 'def allIH', 'theorem at_correct'], 'ProjectCompilerSourceQueries': ['theorem advanced_source', 'theorem check_source', 'theorem check_child_member', 'sourceCode_rename', 'Derives.exE', 'Derives.exI'], 'ProjectCompilerSourceMatrix': ['ProjectSourceAtomSyntax.intro_binary', 'ProjectSourceCodeRecursiveSyntax.intro_single', 'ProjectSourceCodeRecursiveSyntax.intro_binary', 'ProjectCompilerSourceQueries.check_source', 'ProjectCompilerSourceQueries.check_child_member', 'theorem mode_source_cases', 'constant_source false', 'constant_source true', 'atomic_source 0', 'atomic_source 1', 'atomic_source 2', 'single_source 4 false', 'single_source 9 true', 'single_source 10 true', 'binary_source 0', 'binary_source 1', 'binary_source 2', 'binary_source 3'], 'ProjectCompilerSourceCases': ['HornBinderRules.eliminate_many 4', 'ProjectCompilerSourceMatrix.mode_source_cases', 'ProofTreeRootSyntax.disjoin_elim', 'ProjectCompilerUniquePadding.actual_cases_to_choices'], 'ProjectCompilerSourceIH': ['theorem supply_queries', 'below_correct', 'codeMatrix_at', 'at_correct', 'HornBinderRules.under_body 3 hf'], 'ProjectCompilerSourceStep': ['ProjectCompilerRecursive.recursive_iff', 'ProjectCompilerSourceIH.supply_queries', 'ProjectCompilerSourceCases.actual_source_cases', 'ProjectSourceCodeRecursive.recursive_iff', 'theorem from_induction'], 'ProjectCompilerSourceValid': ['SetInduction.all_holds', 'ZFContext.separation hZ inductionMatrix.neg', '.base.foundation', 'ObjectTransitiveCover.source_cover', 'theorem all_correct', 'theorem valid_input'], 'ProjectCompilerSourceAcceptedSyntax': ['def accepted', '(Formula.mem f w).conj (ProjectCompilerCompleteSyntax.existsOutput w n b)', 'def typedAccepted', '(Formula.mem f w).conj (ProjectCompilerUniqueFiberSyntax.typedFiber w n b z)', 'def allAcceptanceLaw', 'def allTypedAcceptanceLaw', 'OriginalUniversalBlock.allMany 3', 'OriginalUniversalBlock.allMany 4'], 'ProjectCompilerSourceAccepted': ['ProjectSourceCodeProperties.guards', 'ProjectCompilerComplete.output_exists_without_zero', 'ProjectCompilerSourceValid.valid_input', 'ProjectCompilerUniqueFiber.typed_unique_exists', 'theorem all_source_iff_exists', 'theorem all_source_iff_typed_fiber', 'OmegaStructureAlgebra.zero_member', 'theorem reject_invalid_source'], 'ObjectProjectCompilerSourceValid': ['TheoryTransport.sentence', 'ZFReplay.replay', 'native_compilerAllInternalActualInputsValid', 'native_compilerAllInternalSourceAcceptanceIff', 'native_compilerAllInternalSourceTypedUniqueAcceptanceIff']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b', text):
+            raise RuntimeError('Compiler source validity forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Compiler source validity proof drift: '+mod+': '+clause)
+    expected_premises = [
+        ('ProjectCompilerSourceIH','supply_queries',{'hf','hI'}),
+        ('ProjectCompilerSourceStep','input_from_induction',{'hw','hf','hI','hc'}),
+        ('ProjectCompilerSourceStep','from_induction',{'hw','hI'}),
+        ('ProjectCompilerSourceValid','progressive',{'hw'}),
+        ('ProjectCompilerSourceValid','all_correct',{'hw'}),
+        ('ProjectCompilerSourceValid','valid_input',{'hw','hf','hc'}),
+        ('ProjectCompilerSourceAccepted','source_iff_exists',{'hw'}),
+        ('ProjectCompilerSourceAccepted','source_iff_typed_fiber',{'hw','hz'}),
+        ('ProjectCompilerSourceAccepted','all_source_iff_exists',{'hw'}),
+        ('ProjectCompilerSourceAccepted','all_source_iff_typed_fiber',{'hw'}),
+        ('ProjectCompilerSourceAccepted','reject_invalid_source',{'hw','hf','hs'})]
+    for mod,name,expected in expected_premises:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Compiler source validity hidden premise: '+mod+'.'+name)
+        if any(x in h.group(0) for x in ['Promise','Consistent','hSourceValid','hAccept']):
+            raise RuntimeError('Compiler source validity oracle: '+mod+'.'+name)
+    if 'FormulaCodeSyntax.formulaCode' in texts['ProjectCompilerSourceMatrix']:
+        raise RuntimeError('Source matrix validity must not be inferred from target typing')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in ['compilerSourceChildValidityFromMemberIH', 'compilerActualCasesRecoverSourceGrammar', 'compilerInputValidFromMemberIH', 'compilerSourceValidityProgressive', 'compilerAllInternalActualInputsValid', 'compilerActualInputValid', 'compilerSourceAcceptanceIff', 'compilerSourceTypedUniqueAcceptanceIff', 'compilerAllInternalSourceAcceptanceIff', 'compilerAllInternalSourceTypedUniqueAcceptanceIff', 'compilerClosedSourceTypedUniqueAcceptanceIff', 'compilerInvalidSourceRejected']:
+        if 'Internal.ObjectProjectCompilerSourceValid.native_'+name not in check:
+            raise RuntimeError('Missing compiler source-validity native fixture: '+name)
+    return {'all_twelve_actual_cases_recover_independent_source_grammar':True,
+            'source_child_input_root_not_target_output_is_validated':True,
+            'actual_successor_scope_and_strict_child_guard_preserved':True,
+            'original_Foundation_Separation_transitive_cover_discharge_source_validation_IH':True,
+            'actual_Compiled_implies_SourceCode_for_any_internal_natural_source_context':True,
+            'exact_source_acceptance_iff_context_natural_and_actual_output_exists':True,
+            'exact_source_acceptance_iff_context_natural_and_actual_typed_unique_fiber':True,
+            'invalid_internal_context_candidates_kept_and_rejected_by_explicit_right_guard':True,
+            'only_omega_premise_in_final_ALL3_acceptance_and_ALL4_typed_acceptance_laws':True,
+            'all_twelve_structural_tree_code_compiler_interface_complete':True,
+            'original_NatPacket_Horn_schema_Proof_interpretation_Con_proved':False}
 
 
 def main() -> None:
@@ -1781,6 +1830,7 @@ def main() -> None:
     Project_compiler_output_typing = check_Project_compiler_output_typing()
     Project_compiler_source_completeness = check_Project_compiler_source_completeness()
     Project_compiler_scalar_uniqueness = check_Project_compiler_scalar_uniqueness()
+    Project_compiler_source_validity = check_Project_compiler_source_validity()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4609,7 +4659,19 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerActualOutputsScalarUnique',
                     'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerActualUniqueOutputFiber',
                     'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerSourceActualTypedUniqueOutputExists',
-                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerAllInternalSourceTypedUniqueOutputExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerAllInternalSourceTypedUniqueOutputExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerSourceChildValidityFromMemberIH',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerActualCasesRecoverSourceGrammar',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerInputValidFromMemberIH',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerSourceValidityProgressive',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalActualInputsValid',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerActualInputValid',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerSourceAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerSourceTypedUniqueAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerAllInternalSourceTypedUniqueAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerClosedSourceTypedUniqueAcceptanceIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4621,6 +4683,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectCompilerSourceValid": ('compilerSourceChildValidityFromMemberIH', 'compilerActualCasesRecoverSourceGrammar', 'compilerInputValidFromMemberIH', 'compilerSourceValidityProgressive', 'compilerAllInternalActualInputsValid', 'compilerActualInputValid', 'compilerSourceAcceptanceIff', 'compilerSourceTypedUniqueAcceptanceIff', 'compilerAllInternalSourceAcceptanceIff', 'compilerAllInternalSourceTypedUniqueAcceptanceIff', 'compilerClosedSourceTypedUniqueAcceptanceIff', 'compilerInvalidSourceRejected'),
         "ObjectProjectCompilerUnique": ('compilerGuardedChildScalarUnique', 'compilerSuccessorChildScalarUnique', 'compilerAllCasesScalarUnique', 'compilerOutputsUniqueFromMemberIH', 'compilerScalarFunctionalityProgressive', 'compilerAllInternalOutputsScalarUnique', 'compilerActualOutputsScalarUnique', 'compilerActualUniqueOutputFiber', 'compilerSourceActualTypedUniqueOutputExists', 'compilerAllInternalSourceTypedUniqueOutputExists'),
         "ObjectProjectCompilerComplete": ('compilerSourceAtomsActualOutput', 'compilerSourceChildOutputFromMemberIH', 'compilerSourceOutputFromMemberIH', 'compilerCompletenessPropertyStep', 'compilerCompletenessProgressive', 'compilerAllInternalCompletenessProperty', 'compilerSourceInputActualOutputExists', 'compilerAllInternalSourceOutputsExist', 'compilerSourceInputActualTypedOutputExists'),
         "ObjectProjectCompilerTyping": ('compilerChildTypingFromMemberIH', 'compilerTwelveCasesTargetTyped', 'compilerOutputTypedFromMemberIH', 'compilerTypingPropertyStep', 'compilerTypingProgressive', 'compilerAllInternalOutputsTargetTyped', 'compilerInputTypingProperty', 'compilerActualOutputTargetTyped', 'compilerUntypedOutputRejected'),
@@ -5587,9 +5650,14 @@ def main() -> None:
         "Project_compiler_output_typing_guard": Project_compiler_output_typing,
         "Project_compiler_source_completeness_guard": Project_compiler_source_completeness,
         "Project_compiler_scalar_uniqueness_guard": Project_compiler_scalar_uniqueness,
+        "Project_compiler_source_validity_guard": Project_compiler_source_validity,
+        'object_Project_compiler_source_validation_member_IH_Foundation_discharged': True,
+        'object_Project_structural_compiler_exact_source_acceptance_proved': True,
+        'object_Project_structural_compiler_exact_typed_unique_acceptance_proved': True,
+
         'object_Project_compiler_scalar_output_functionality_proved': True,
         'object_Project_compiler_scalar_IH_Foundation_discharged': True,
-        'object_Project_compiler_actual_output_implies_source_code_proved': False,
+        'object_Project_compiler_actual_output_implies_source_code_proved': True,
 
         'object_Project_compiler_all_source_inputs_actual_output_exists_proved': True,
         'object_Project_compiler_all_source_inputs_have_actual_typed_output_proved': True,
@@ -5611,7 +5679,7 @@ def main() -> None:
         'object_Project_bound_term_internal_shift_proved': True,
         'object_Project_subset_internal_expansion_typed_unique_proved': True,
         'object_Project_three_atomic_internal_compile_proved': True,
-        'object_Project_all_twelve_constructor_internal_compile_proved': False,
+        'object_Project_all_twelve_constructor_internal_compile_proved': True,
         'object_three_schema_index_complete_graphs_proved': True,
         'object_three_schema_index_actual_list_codes_proved': True,
         'object_three_schema_index_uniform_formula_renaming_proved': True,

@@ -1,5 +1,9 @@
 # 对象层迁移工程流程
 
+Project结构树码的完整十二构造编译接口已验收：实际Compiled在任意内部自然源上下文中反推SourceCode，原Foundation／完整Separation／TransitiveCover消去IH；仅Ω推出ALL3准确源接受双条件，f∈ω保留在右侧合取处理全部无效上下文候选；ALL4给出准确类型唯一接受接口及闭源特例。10模块99声明、12组原nativeZF闭句；2138构建、22966审计（452无公理／22514允许依赖）、零警告；九命令／五trust=0通过，1921哈希、2549对精确足迹、20622项Internal覆盖。原ProjectEncode／NatPacket字节包、Horn、完整schema、Proof／解释及最终内部Con仍未完成。见[验收与后续工程表](STEP4_PROJECT_COMPILER_SOURCE_VALID_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 实际Project编译产出的全内部标量唯一性已验收：原源构造器不交／注入性及子查询IH比较全部十二分支，两个后继作用域和两份空集见证对象对齐，原Foundation／完整Separation／TransitiveCover消去全部IH；最终仅需Ω的ALL4标量定理，并合成全部合法源的准确类型唯一产出。16模块109声明、10组原nativeZF闭句；2128构建、22867审计（452无公理／22415允许依赖）、零警告；九命令／五trust=0通过，1911哈希、2537对精确足迹、20523项Internal覆盖。实际产出反推源合法性、原字节包／Horn、完整schema、Proof／解释及最终Con仍未完成。见[验收与后续工程表](STEP4_PROJECT_COMPILER_UNIQUE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

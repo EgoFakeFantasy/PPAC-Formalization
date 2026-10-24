@@ -245,3 +245,4 @@ import PPAC.Migration.Internal.ObjectProjectCompilerRecursive
 import PPAC.Migration.Internal.ObjectProjectCompilerTyping
 import PPAC.Migration.Internal.ObjectProjectCompilerComplete
 import PPAC.Migration.Internal.ObjectProjectCompilerUnique
+import PPAC.Migration.Internal.ObjectProjectCompilerSourceValid
