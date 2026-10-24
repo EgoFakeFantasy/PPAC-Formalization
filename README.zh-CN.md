@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+原证明树根关闭性与精确结论字段已验收：原12分支推出Ω→(Root↔Node∧ClosedPayload)，六类载荷的free字段为0、结论字段等于候选结论；反向构造根行及闭轨迹。赋值／载荷／行见证对象消去，仅需Ω前提，8组闭句返回原nativeZF。10模块77声明；1914构建任务、21210审计（424无公理／20786允许依赖）、零警告；九命令／五trust=0通过，1740哈希／2384对精确足迹／18866项Internal覆盖。下一步是节点六分支精确方程和内部下降归纳；实际Bool、ZF/U专用测试、完整Proof／内部解释与最终Con仍未证明。见[本批验收及逐步工程表](docs/STEP4_PROOF_TREE_ROOT_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原12分支带局部检查闭轨迹方程已验收：真实tag／field局部表、全部payload／children与完整原guards保留；原Separation实际构造全部轨迹根集合并证明闭合，最终方程在对象EX中消去该见证。12分支的全部赋值界、正向组合及node／root候选结论入口展开已返回原核。13模块122声明、10组nativeZF闭句；1904构建任务、21133审计（422无公理／20711允许依赖）、零警告；九命令及五trust=0全通过，1730哈希／2376对精确足迹／18789项Internal覆盖。根关闭性、秩归纳、实际Bool、ZF/U测试、完整Proof／内部编译解释与最终Con仍未证明。见[验收与后续流程](docs/STEP4_PROOF_TREE_TRACE_ACCEPTANCE.zh-CN.md)。
 
 逻辑证明节点与参数化六规则局部表已验收：logicalShape的结论／公理码换位、原27逻辑查询表、全部三赋值界及数值行码完成对象推导；theoryShape保留显式test : Formula 1接口，尚未实例化ZF/U专用公理测试。原六Shape／五Kind及完整赋值块直接组合局部表，最终只有Ω／empty对象前提。17模块152声明、16组原nativeZF闭句；1882构建任务、21011声明审计（421无公理／20590允许依赖）、零警告；九命令及五trust=0入口全通过，1717哈希／2366对精确足迹／18667项Internal覆盖。专用公理测试、证明树递归、共享实际Bool、内部Proof／编译解释和最终Con仍未证明。见[验收与后续工程表](docs/STEP4_BASE_PROOF_NODES_ACCEPTANCE.zh-CN.md)。

@@ -10472,4 +10472,42 @@ example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.L
       (Internal.ProofTreeEntrySyntax.rootEquation test w code conclusion)).close)) :=
   Internal.ObjectProofTreeTrace.native_proofTreeRootEntryRecursiveIff test w code conclusion
 
+example {m} (x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootOneNonemptySentence x)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootOneNonempty x
+
+example {m} (u x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootOneMembershipSentence u x)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootOneMembership u x
+
+example {m} {a} (i : Fin a) (env : Fin a → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootZeroGuardIffSentence i env w)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootZeroGuardIff i env w
+
+example {m} (s : YesMetaZFC.Automation.ObjectProofTree.Shape) (env : Fin (s.extra+2) → Fin m) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootPayloadConstructorIffSentence s env w code)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootPayloadConstructorIff s env w code
+
+example {m} (test : Source.Formula 1) (w code conclusion r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootActualLocalConditionSentence test w code conclusion r)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootActualLocalCondition test w code conclusion r
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootClosedFieldsForwardSentence test w code conclusion)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootClosedFieldsForward test w code conclusion
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootClosedFieldsBackwardSentence test w code conclusion)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootClosedFieldsBackward test w code conclusion
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeRoot.proofRootExactClosedFieldsIffSentence test w code conclusion)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootExactClosedFieldsIff test w code conclusion
+
+-- Full internal root contract: the only object premise is Omega.
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Internal.ProofTreeEntrySyntax.root test w code conclusion).iff
+      ((Internal.ProofTreeEntrySyntax.node test w code).conj (Internal.ProofTreeRootSyntax.closedPayload w code conclusion)))).close)) :=
+  Internal.ObjectProofTreeRoot.native_proofRootExactClosedFieldsIff test w code conclusion
+
 end PPAC.Migration.Step4Checks
