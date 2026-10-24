@@ -11656,4 +11656,72 @@ example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionActualLiteralSystemExistsSentence wide w)) :=
   Internal.ObjectPacketDivision.native_packetDivisionActualLiteralSystemExists wide w
 
+example {m} (w a e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentOneProductSentence w a e)) :=
+  Internal.ObjectPacketDescent.native_packetDescentOneProduct w a e
+
+example {m} (wide : Bool) (w B q v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentProductBoundsSentence wide w B q v)) :=
+  Internal.ObjectPacketDescent.native_packetDescentProductBounds wide w B q v
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentQuotientBoundsSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentQuotientBounds wide w B d q n
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentQuotientBelowSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentQuotientBelow wide w B d q n
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentNonzeroOutputStrictSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentNonzeroOutputStrict wide w B d q n
+
+example {m} (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentTerminalDigitSentence w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentTerminalDigit w B d q n
+
+example {m} (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentExactStoppingThresholdSentence w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentExactStoppingThreshold w B d q n
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentZeroOutputExactFieldsSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentZeroOutputExactFields wide w B d q n
+
+example {m} (wide : Bool) (B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentLargeOutputNonzeroSentence wide B n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentLargeOutputNonzero wide B n
+
+example {m} {k} (wide : Bool) (p : Formula (k+1)) (ρ : Fin k → Fin m) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentQuotientInductionPointSentence wide p ρ w B n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentQuotientInductionPoint wide p ρ w B n
+
+example {m} {k} (wide : Bool) (p : Formula (k+1)) (ρ : Fin k → Fin m) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentQuotientInductionProgressiveSentence wide p ρ w B)) :=
+  Internal.ObjectPacketDescent.native_packetDescentQuotientInductionProgressive wide p ρ w B
+
+example {m} {k} (wide : Bool) (p : Formula (k+1)) (ρ : Fin k → Fin m) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentAllInternalQuotientInductionSentence wide p ρ w B)) :=
+  Internal.ObjectPacketDescent.native_packetDescentAllInternalQuotientInduction wide p ρ w B
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentAffinePropertiesSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentAffineProperties wide w B d q n
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentAffineTerminalRecursiveBranchesSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentAffineTerminalRecursiveBranches wide w B d q n
+
+example {m} (wide : Bool) (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentAcceptedPropertiesSentence wide w B d q n)) :=
+  Internal.ObjectPacketDescent.native_packetDescentAcceptedProperties wide w B d q n
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentAllInternalAcceptedLawSentence wide w B)) :=
+  Internal.ObjectPacketDescent.native_packetDescentAllInternalAcceptedLaw wide w B
+
+example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDescent.packetDescentActualLiteralSystemExistsSentence wide w)) :=
+  Internal.ObjectPacketDescent.native_packetDescentActualLiteralSystemExists wide w
+
 end PPAC.Migration.Step4Checks

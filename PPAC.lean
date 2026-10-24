@@ -252,3 +252,4 @@ import PPAC.Migration.Internal.ObjectPacketAffineApplication
 import PPAC.Migration.Internal.ObjectPacketClosedTrace
 import PPAC.Migration.Internal.ObjectPacketAffineArithmetic
 import PPAC.Migration.Internal.ObjectPacketDivision
+import PPAC.Migration.Internal.ObjectPacketDescent

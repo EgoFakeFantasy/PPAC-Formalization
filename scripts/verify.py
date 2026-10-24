@@ -1998,6 +1998,45 @@ def check_Packet_internal_radix_division() -> dict:
             'full_varint_Proof_and_Con':False}
 
 
+def check_Packet_quotient_descent_and_induction() -> dict:
+    modules = ['PacketDivisionDescentOrder', 'PacketDivisionDescentCore', 'PacketQuotientInductionSyntax', 'PacketQuotientInduction', 'PacketDivisionDescentSyntax', 'PacketDivisionDescentAccepted', 'ObjectPacketDescent']
+    schemas = ['packetDescentOneProduct', 'packetDescentProductBounds', 'packetDescentQuotientBounds', 'packetDescentQuotientBelow', 'packetDescentNonzeroOutputStrict', 'packetDescentTerminalDigit', 'packetDescentExactStoppingThreshold', 'packetDescentZeroOutputExactFields', 'packetDescentLargeOutputNonzero', 'packetDescentQuotientInductionPoint', 'packetDescentQuotientInductionProgressive', 'packetDescentAllInternalQuotientInduction', 'packetDescentAffineProperties', 'packetDescentAffineTerminalRecursiveBranches', 'packetDescentAcceptedProperties', 'packetDescentAllInternalAcceptedLaw', 'packetDescentActualLiteralSystemExists']
+    required = {'PacketDivisionDescentOrder': ['theorem one_product', 'SyntaxNumeralSyntax.eliminate_succ 0', 'NaturalMultiplicationAlgebraLaws.right_unit', 'NaturalMultiplicationMonotone.monotone', 'NaturalMultiplicationMonotone.strict_monotone', 'SyntaxNumerals.exists_numeral hZ 1'], 'PacketDivisionDescentCore': ['theorem quotient_bounds', 'PacketDivisionBand.lower', 'NaturalOrderBasic.transitive', 'theorem quotient_strict', 'theorem terminal_iff', 'PacketDivisionUnique.unique', 'PacketAffineZero.zero_iff', 'theorem zero_output'], 'PacketQuotientInductionSyntax': ['def base', 'def stepBody', 'def step', 'OriginalUniversalBlock.allMany 3', 'pred p', 'BoundedInduction.below', 'theorem below_at'], 'PacketQuotientInduction': ['theorem large_nonempty', 'theorem point', 'PacketDivisionInduction.exists_decomposition', 'PacketDivisionDescentCore.quotient_strict', 'theorem progressive', 'theorem all_holds', 'BoundedInduction.induction_on_set p ρ w', 'ZFContext.separation hZ p.neg', '(ZFContext.arithmetic hZ).base.foundation'], 'PacketDivisionDescentSyntax': ['def properties', 'def branch', 'def lawBody', 'PacketAffineAcceptedSyntax.accepted', 'OriginalUniversalBlock.allMany 3', 'PacketDivisionValueSyntax.system', 'def existsSystem'], 'PacketDivisionDescentAccepted': ['theorem affine_properties', 'theorem affine_branch', 'theorem accepted_properties', 'PacketAffineAccepted.accepted_iff', 'theorem all_law', 'theorem exists_system', 'SyntaxNumerals.exists_numeral'], 'ObjectPacketDescent': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text) or re.search(r'(?m)^\s+induction\b', text):
+            raise RuntimeError('Quotient descent forbidden gap or host induction: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Quotient descent proof drift: '+mod+': '+clause)
+    signatures = [('PacketDivisionDescentCore', 'quotient_bounds', {'hB', 'hw', 'ha'}), ('PacketDivisionDescentCore', 'quotient_strict', {'hB', 'hw', 'hn', 'ha'}), ('PacketDivisionDescentCore', 'terminal_iff', {'hw', 'ha'}), ('PacketQuotientInduction', 'all_holds', {'hB', 'hs', 'hw', 'hb'}), ('PacketDivisionDescentAccepted', 'accepted_properties', {'hB', 'hw', 'ha'}), ('PacketDivisionDescentAccepted', 'all_law', {'hB', 'hw'}), ('PacketDivisionDescentAccepted', 'exists_system', {'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Quotient descent hidden premise: '+mod+'.'+name)
+    if '(p : Formula (k+1))' not in texts['PacketQuotientInduction'] or '(ρ : Fin k → Fin m)' not in texts['PacketQuotientInduction']:
+        raise RuntimeError('Quotient induction must retain arbitrary object matrices and parameters')
+    law = texts['PacketDivisionDescentSyntax'].split('def lawBody')[1].split('def allLaw')[0]
+    if 'PacketAffineAcceptedSyntax.accepted' not in law or 'PacketAffineSyntax.affine' in law:
+        raise RuntimeError('Descent law must use actual independent relational Packet acceptance')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketDescent.native_'+name not in check:
+            raise RuntimeError('Missing quotient descent native fixture: '+name)
+    return {'actual_internal_unit_witness_and_strict_radix_comparison':True,
+            'quotient_below_output_and_strict_for_nonzero_output':True,
+            'zero_quotient_iff_output_below_actual_radix':True,
+            'zero_output_iff_both_fields_zero':True,
+            'arbitrary_object_matrix_quotient_induction_by_original_Foundation_Separation':True,
+            'internal_IH_discharged_with_explicit_object_base_step_premises':True,
+            'all_internal_actual_relational_Packet_descent_and_stopping_branches':True,
+            'actual_literal_system_exists_under_only_omega':True,
+            'concrete_full_varint_program_termination_correctness':False,
+            'original_Basic_AST_bridge_and_final_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2048,6 +2087,7 @@ def main() -> None:
     Packet_explicit_table_closed_trace = check_Packet_explicit_table_closed_trace()
     Packet_relational_affine_arithmetic = check_Packet_relational_affine_arithmetic()
     Packet_internal_radix_division = check_Packet_internal_radix_division()
+    Packet_quotient_descent_and_induction = check_Packet_quotient_descent_and_induction()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4989,7 +5029,24 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseUnique',
                     'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAllInternalUniqueFibers',
                     'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAllInternalAcceptedInverse',
-                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionActualLiteralSystemExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionActualLiteralSystemExists',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentOneProduct',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentProductBounds',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentQuotientBounds',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentQuotientBelow',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentNonzeroOutputStrict',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentTerminalDigit',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentExactStoppingThreshold',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentZeroOutputExactFields',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentLargeOutputNonzero',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentQuotientInductionPoint',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentQuotientInductionProgressive',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentAllInternalQuotientInduction',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentAffineProperties',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentAffineTerminalRecursiveBranches',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentAcceptedProperties',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentAllInternalAcceptedLaw',
+                    'PPAC.Migration.Internal.ObjectPacketDescent.native_packetDescentActualLiteralSystemExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5001,6 +5058,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketDescent": ('packetDescentOneProduct', 'packetDescentProductBounds', 'packetDescentQuotientBounds', 'packetDescentQuotientBelow', 'packetDescentNonzeroOutputStrict', 'packetDescentTerminalDigit', 'packetDescentExactStoppingThreshold', 'packetDescentZeroOutputExactFields', 'packetDescentLargeOutputNonzero', 'packetDescentQuotientInductionPoint', 'packetDescentQuotientInductionProgressive', 'packetDescentAllInternalQuotientInduction', 'packetDescentAffineProperties', 'packetDescentAffineTerminalRecursiveBranches', 'packetDescentAcceptedProperties', 'packetDescentAllInternalAcceptedLaw', 'packetDescentActualLiteralSystemExists'),
         "ObjectPacketDivision": ('packetDivisionIncrement', 'packetDivisionCarry', 'packetDivisionSuccessorExists', 'packetDivisionAllNaturalOutputs', 'packetDivisionDecompositionExists', 'packetDivisionLowerBand', 'packetDivisionUpperBand', 'packetDivisionQuotientUnique', 'packetDivisionRemainderUnique', 'packetDivisionPairUnique', 'packetDivisionExactDomain', 'packetDivisionQuantifiedPairUnique', 'packetDivisionUniqueFiberExists', 'packetDivisionUniqueFiberExactDomain', 'packetDivisionAcceptedInverseExists', 'packetDivisionAcceptedInverseExactDomain', 'packetDivisionAcceptedInverseUnique', 'packetDivisionAllInternalUniqueFibers', 'packetDivisionAllInternalAcceptedInverse', 'packetDivisionActualLiteralSystemExists'),
         "ObjectPacketAffineArithmetic": ('packetAffineRootBaseFieldsIff', 'packetAffineRootStepFieldsIff', 'packetAffineExactRootStepEquation', 'packetAffineExactRootMemberEquation', 'packetAffineInternalEntryFromIH', 'packetAffineInternalEntryConstructedFromIH', 'packetAffineZeroPointMembershipIff', 'packetAffineSuccessorPointMembershipIff', 'packetAffineAllInternalTailIHDischarged', 'packetAffineAllInternalRootMembershipIff', 'packetAffineConditionExactArithmeticIff', 'packetAffineAcceptedExactArithmeticIff', 'packetAffineAllInternalAcceptedExactArithmetic', 'packetAffineAllInternalRootExactArithmetic', 'packetAffineActualLiteralExactArithmeticSystemExists', 'packetAffineAcceptedOutputExists', 'packetAffineAcceptedOutputsUnique', 'packetAffineAcceptedRejectDigit', 'packetAffineAcceptedRejectTail', 'packetAffineAcceptedRejectOutput'),
         "ObjectPacketClosedTrace": ('closedTraceMemberHasActualStep', 'closedTraceInsertPreservesClosure', 'closedTraceInsertAcceptsActualRoot', 'closedTraceAcceptedRootSetExists', 'closedTraceAcceptedRootMembershipIff', 'closedTraceContainsEveryInternalSubtrace', 'closedTraceAcceptedRootSetClosed', 'closedTraceAllCandidateUnfoldIff', 'closedTraceAllCandidateSystemExists', 'closedTraceRejectNonNaturalRoot', 'packetActualTenRuleAcceptedRootSetExists', 'packetActualTenRuleAcceptedRootSetClosed', 'packetActualTenRuleConditionUnfoldIff', 'packetActualTenRuleTraceSystemExists', 'packetAffineForeignRuleRejected', 'packetAffineActualTenRuleDispatch', 'packetAffineActualTenRuleStepIffOutcomes', 'packetAffineConditionIffActualOutcomes', 'packetAffineBaseConditionAccepted', 'packetAffineSuccessorConditionAccepted'),
@@ -5979,6 +6037,13 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_quotient_descent_and_induction_guard": Packet_quotient_descent_and_induction,
+        'object_Packet_internal_quotient_weak_and_strict_descent_proved': True,
+        'object_Packet_internal_quotient_exact_stopping_threshold_proved': True,
+        'object_Packet_internal_quotient_zero_output_exact_fields_proved': True,
+        'object_Packet_internal_quotient_recursion_induction_schema_proved': True,
+        'object_Packet_relational_affine_all_internal_descent_contract_proved': True,
+        'object_Packet_internal_quotient_descent_literal_system_constructed': True,
         "Packet_internal_radix_division_guard": Packet_internal_radix_division,
         'object_Packet_radix_division_all_internal_output_exists_proved': True,
         'object_Packet_radix_division_internal_quotient_bands_disjoint_proved': True,
