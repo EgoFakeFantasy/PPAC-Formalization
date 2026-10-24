@@ -209,3 +209,4 @@ import PPAC.Migration.Internal.ObjectRawCodeField
 import PPAC.Migration.Internal.ObjectProjectionTrace
 import PPAC.Migration.Internal.ObjectProjectionTag
 import PPAC.Migration.Internal.ObjectProjectionGetField
+import PPAC.Migration.Internal.ObjectProofSubstitutionNode

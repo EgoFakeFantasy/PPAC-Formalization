@@ -8564,4 +8564,103 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
         (ProjectionGetInductionSyntax.correct w.castSucc (Fin.last m))))).close)) :=
   ObjectProjectionGetField.native_projectionGetAllInternalCorrect w
 
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFreeProjectionIffSentence env w z)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFreeProjectionIff env w z
+
+example {m} (env : Fin 6 → Fin m) (w one : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFormulaProjectionAtOneIffSentence env w one)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFormulaProjectionAtOneIff env w one
+
+example {m} (env : Fin 6 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFormulaProjectionIffSentence env w)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFormulaProjectionIff env w
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionBothProjectionsIffSentence env w z)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionBothProjectionsIff env w z
+
+example {m} (k tag : Nat) (xs : Fin (k+2) → Fin m) (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFreeProjectionAtConstructorSentence k tag xs env w z)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFreeProjectionAtConstructor k tag xs env w z
+
+example {m} (k tag : Nat) (xs : Fin (k+2) → Fin m) (env : Fin 6 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFormulaProjectionAtConstructorSentence k tag xs env w)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFormulaProjectionAtConstructor k tag xs env w
+
+example {m} (k tag : Nat) (xs : Fin (k+2) → Fin m) (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionProjectionsAtConstructorSentence k tag xs env w z)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionProjectionsAtConstructor k tag xs env w z
+
+example {m} (env : Fin 6 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionAllFiveQueriesIffSentence env w z)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionAllFiveQueriesIff env w z
+
+example {m} (raw head : Bool) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.pairingProjectionNumericBoundSentence raw head w x y)) :=
+  Internal.ObjectProofSubstitutionNode.native_pairingProjectionNumericBound raw head w x y
+
+example {m} (head : Bool) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.rawHeadTailNumericBoundSentence head w x y)) :=
+  Internal.ObjectProofSubstitutionNode.native_rawHeadTailNumericBound head w x y
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.rawGetAllInternalBoundsSentence w)) :=
+  Internal.ObjectProofSubstitutionNode.native_rawGetAllInternalBounds w
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.rawGetNumericBoundSentence w x i y)) :=
+  Internal.ObjectProofSubstitutionNode.native_rawGetNumericBound w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.rawFieldNumericBoundSentence w x i y)) :=
+  Internal.ObjectProofSubstitutionNode.native_rawFieldNumericBound w x i y
+
+example {m} (w p y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionAtOneBoundSentence w p y)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionAtOneBound w p y
+
+example {m} (env : Fin 6 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFormulaProjectionBoundSentence env w)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFormulaProjectionBound env w
+
+example {m} (env : Fin 6 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionAllAssignmentBounds env w row
+
+example {m} (env : Fin 6 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionActualFiveFieldHeadIffSentence env w row)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionActualFiveFieldHeadIff env w row
+
+example {m} (env : Fin 6 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionBoundedMatrixIffSentence env w z row)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionBoundedMatrixIff env w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofSubstitutionNode.substitutionFullPureRelationalNodeIffSentence w z row)) :=
+  Internal.ObjectProofSubstitutionNode.native_substitutionFullPureRelationalNodeIff w z row
+-- 确切引用原查询位置／种类，不能用数值规格重定义查询。
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.queries[2] =
+    YesMetaZFC.Automation.ObjectProofNode.projection (.var 4) 0 (.var 2) := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.queries[3] =
+    YesMetaZFC.Automation.ObjectProofNode.projection (.var 4) 1 (.var 5) := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.arity = 6 := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.substitutionShape.head =
+    YesMetaZFC.Automation.ObjectProofNode.node 5 [.var 0, .var 1, .var 2, .var 3, .var 4] := rfl
+
+-- 原field在所有内部自然输入／索引上的值界，不要求合法前驱证明或规范外壳。
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.Formula.mem x w).imp
+      ((Source.Formula.mem i w).imp ((RawCodeFieldSyntax.field w x i y).imp
+        (NaturalAdditionBounds.below y x))))).close)) :=
+  ObjectProofSubstitutionNode.native_rawFieldNumericBound w x i y
+
+-- 全部六赋值、实际原头、全部五查询和搜索界均在node的对象存在块内。
+-- 最终没有预给envNat／bounds／query／合法前驱假设；共享扩展条件的Bool对应另行证明。
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((HornBinderSyntax.existsMany 6 (ProofSubstitutionNodeSyntax.body w row)).iff
+        (HornBinderSyntax.existsMany 6 (ProofSubstitutionNodeSyntax.specificationBody w z row))))).close)) :=
+  ObjectProofSubstitutionNode.native_substitutionFullPureRelationalNodeIff w z row
+
 end PPAC.Migration.Step4Checks
