@@ -2397,7 +2397,51 @@ def check_Packet_ordered_byte_fold_trace() -> dict:
             'actual_256_Cons_closure_uses_actual_Packet_affine_acceptance_only_omega':True,
             'all_internal_and_nonstandard_trace_lengths_preserved':True,
             'full_internal_byte_fold_totality_uniqueness_proved':False,
-            'reverse_Cons_decomposition_and_full_recursion_iff_proved':False,
+            'reverse_Cons_decomposition_and_full_recursion_iff_proved':True,
+            'canonical_varint_readTokens_byte_program_bridge_proved':False,
+            'full_Basic_AST_schema_Proof_Con_proved':False}
+
+
+def check_Packet_exact_ordered_byte_fold_recursion() -> dict:
+    modules = ['PacketBytesRowRestrict', 'PacketBytesTracePrefix', 'PacketBytesRecursionSyntax', 'PacketBytesTerminal', 'PacketBytesDecomposition', 'PacketBytesRecursionEquation', 'PacketBytesRecursionBridge', 'PacketBytesRecursionLaws', 'ObjectPacketBytesRecursion']
+    required = {
+        'PacketBytesRowRestrict':['theorem row_restrict','theorem links_restrict','GodelPairArithmetic.successor_below','NaturalOrderBasic.below_successor','RestrictionEdges.restricted_edge','HornBinderRules.eliminate_many 6'],
+        'PacketBytesTracePrefix':['SequencePrefix.exists_prefix','ZFContext.separation hZ RestrictionSyntax.matrix','ZFContext.separation hZ1 RestrictionSyntax.matrix','StructuralListTracePrefix.links_restrict','PacketBytesRowRestrict.links_restrict','theorem from_prefixes','theorem exists_prefix'],
+        'PacketBytesRecursionSyntax':['def nilCase','Formula.mem t w','def terminalBody','def consBody','def caseAt','def actualBody','def criterion','PacketAffineAcceptedSyntax.accepted true','bytes (old 3 w) (slot 3 1) (old 3 t) (slot 3 2)','Derives.eqSubst'],
+        'PacketBytesTerminal':['theorem of_row','OmegaUniversal.successor_unique','GraphProperties.single_valued','PacketAffineTransport.output','cons_output','theorem terminal_row'],
+        'PacketBytesDecomposition':['theorem successor_case','PacketBytesTracePrefix.exists_prefix','theorem nil_trace_case','OmegaStructureAlgebra.decomposition_at','theorem trace_forward','theorem fold_forward','HornBinderRules.eliminate_many 6'],
+        'PacketBytesRecursionEquation':['theorem cons_backward','PacketBytesTraceAppend.cons_fold','PacketBytesTraceBase.nil_fold','theorem backward','theorem fold_iff'],
+        'PacketBytesRecursionBridge':['theorem cons_to_actual','theorem actual_to_cons','PacketAffineAccepted.accepted_iff','PacketBytesLaws.fold_at','theorem cases_iff'],
+        'PacketBytesRecursionLaws':['SyntaxNumerals.exists_numeral hZ 256','PacketBytesLaws.fold_iff','PacketBytesRecursionEquation.fold_iff','PacketBytesRecursionBridge.cases_iff','OriginalUniversalBlock.allMany 3','theorem actual_iff','theorem all_law'],
+        'ObjectPacketBytesRecursion':['TheoryTransport.sentence','ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Exact ordered byte recursion forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Exact ordered byte recursion proof drift: '+mod+': '+clause)
+    for mod,name,expected in [('PacketBytesRecursionLaws','actual_iff',{'hw'}),('PacketBytesRecursionLaws','all_law',{'hw'}),('PacketBytesRecursionEquation','fold_iff',{'hw'}),('PacketBytesDecomposition','fold_forward',{'hw','hf'}),('PacketBytesRecursionBridge','cases_iff',{'hw','hC'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Exact ordered byte recursion hidden premise: '+mod+'.'+name)
+    schemas = ['packetBytesRecursionBothSequenceRowRestriction', 'packetBytesRecursionAllOldRowsRestriction', 'packetBytesRecursionFullDualPrefixFromActualRestrictions', 'packetBytesRecursionDualPrefixGraphsObjectEliminated', 'packetBytesRecursionCompleteTerminalRowNormalized', 'packetBytesRecursionTerminalWitnessesFromFullTrace', 'packetBytesRecursionSuccessorFullReverseDecomposition', 'packetBytesRecursionAllInternalTraceReverseDecomposition', 'packetBytesRecursionAllInternalFoldReverseDecomposition', 'packetBytesRecursionIndependentCriterionBackward', 'packetBytesRecursionExactAllInternalRadixRecursion', 'packetBytesRecursionActual256CriterionEquivalence', 'packetBytesRecursionActualBytesExactRecursionOnlyOmega', 'packetBytesRecursionAllInternalActualRecursionOnlyOmega']
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketBytesRecursion.native_'+name not in checks: raise RuntimeError('Missing exact byte recursion fixture: '+name)
+    return {'both_original_Separation_prefix_graphs_constructed_and_eliminated':True,
+            'all_old_byte_rows_preserved_under_both_actual_restrictions':True,
+            'complete_terminal_row_normalized_by_both_original_sequence_functions':True,
+            'internal_length_zero_successor_decomposition_no_external_standardness':True,
+            'all_internal_numeric_candidates_exact_independent_recursive_iff':True,
+            'real_byte_head_tail_and_intermediate_value_internally_bound':True,
+            'unguarded_external_Cons_fields_not_assumed_natural':True,
+            'Nil_exact_natural_tail_guard_preserved':True,
+            'original_actual_Packet_affine_acceptance_preserved_in_recursive_criterion':True,
+            'all_prefix_graph_terminal_and_radix_witnesses_object_eliminated':True,
+            'final_ALL3_and_scalar_exact_recursion_require_only_omega':True,
+            'full_internal_byte_fold_totality_uniqueness_proved':False,
             'canonical_varint_readTokens_byte_program_bridge_proved':False,
             'full_Basic_AST_schema_Proof_Con_proved':False}
 
@@ -2463,6 +2507,7 @@ def main() -> None:
     Packet_structural_search_bounds_and_typed_recursion = check_Packet_structural_search_bounds_and_typed_recursion()
     Packet_actual_token_prefix_inverse = check_Packet_actual_token_prefix_inverse()
     Packet_ordered_byte_fold_trace = check_Packet_ordered_byte_fold_trace()
+    Packet_exact_ordered_byte_fold_recursion = check_Packet_exact_ordered_byte_fold_recursion()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5568,7 +5613,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualNilExistsOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualNilIffOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualConsForwardOnlyOmega',
-                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualSingletonOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketBytesTrace.native_packetBytesActualSingletonOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionBothSequenceRowRestriction',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionAllOldRowsRestriction',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionFullDualPrefixFromActualRestrictions',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionDualPrefixGraphsObjectEliminated',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionCompleteTerminalRowNormalized',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionTerminalWitnessesFromFullTrace',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionSuccessorFullReverseDecomposition',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionAllInternalTraceReverseDecomposition',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionAllInternalFoldReverseDecomposition',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionIndependentCriterionBackward',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionExactAllInternalRadixRecursion',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionActual256CriterionEquivalence',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionActualBytesExactRecursionOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionAllInternalActualRecursionOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5580,6 +5639,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketBytesRecursion": ('packetBytesRecursionBothSequenceRowRestriction', 'packetBytesRecursionAllOldRowsRestriction', 'packetBytesRecursionFullDualPrefixFromActualRestrictions', 'packetBytesRecursionDualPrefixGraphsObjectEliminated', 'packetBytesRecursionCompleteTerminalRowNormalized', 'packetBytesRecursionTerminalWitnessesFromFullTrace', 'packetBytesRecursionSuccessorFullReverseDecomposition', 'packetBytesRecursionAllInternalTraceReverseDecomposition', 'packetBytesRecursionAllInternalFoldReverseDecomposition', 'packetBytesRecursionIndependentCriterionBackward', 'packetBytesRecursionExactAllInternalRadixRecursion', 'packetBytesRecursionActual256CriterionEquivalence', 'packetBytesRecursionActualBytesExactRecursionOnlyOmega', 'packetBytesRecursionAllInternalActualRecursionOnlyOmega'),
         "ObjectPacketBytesTrace": ('packetBytesBothSequenceRowTransport', 'packetBytesBothSequenceLinksAppend', 'packetBytesOriginalDualSequenceAppend', 'packetBytesTraceExtensionWitnessesEliminated', 'packetBytesFullConsForwardAtRadix', 'packetBytesNilExactFiberAtRadix', 'packetBytesFoldOriginalValidityAndNaturalDomain', 'packetBytesActual256ExactGraphIff', 'packetBytesActualByteDomain', 'packetBytesActualNilExistsOnlyOmega', 'packetBytesActualNilIffOnlyOmega', 'packetBytesActualConsForwardOnlyOmega', 'packetBytesActualSingletonOnlyOmega'),
         "ObjectPacketTokenPrefix": ('packetTokenPrefixShiftedByteNotSmall', 'packetTokenPrefixTerminalContinuationDisjoint', 'packetTokenPrefixTerminalInverse', 'packetTokenPrefixLargeWitnessInverse', 'packetTokenPrefixAllQuotientInduction', 'packetTokenPrefixAllAtRadices', 'packetTokenPrefixAllInternalOnlyOmega', 'packetTokenPrefixJointInverseOnlyOmega', 'packetTokenPrefixInputOnlyOmega', 'packetTokenPrefixTailOnlyOmega', 'packetTokenPrefixActualFiberIffOnlyOmega', 'packetTokenPrefixOutputIffOnlyOmega'),
         "ObjectPacketStructureSearch": ('packetStructureSearchAllOriginalAssignmentNaturality', 'packetStructureSearchAllOriginalAssignmentBounds', 'packetStructureSearchActualAffineTailOnlyOmega', 'packetStructureSearchFourOriginalApplicationsIff', 'packetStructureSearchActualRootConditionRecursionIff', 'packetStructureSearchTypedActualAcceptanceBackward', 'packetStructureSearchActualAcceptanceTypedRecursionIff', 'packetStructureSearchActualTreeTypedRecursionIff', 'packetStructureSearchActualForestTypedRecursionIff', 'packetStructureSearchActualPacketTypedRecursionIff', 'packetStructureSearchAllInternalRootConditionIff', 'packetStructureSearchAllInternalActualTypedRecursion', 'packetStructureSearchAllThreeActualTypedRecursionLaws', 'packetStructureSearchCanonicalRootSystemExistsOnlyOmega'),
@@ -6569,6 +6629,13 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_exact_ordered_byte_fold_recursion_guard": Packet_exact_ordered_byte_fold_recursion,
+        'object_Packet_ordered_byte_fold_dual_restricted_prefix_graphs_constructed': True,
+        'object_Packet_ordered_byte_fold_full_terminal_row_normalization_proved': True,
+        'object_Packet_ordered_byte_fold_all_internal_exact_recursion_iff_proved': True,
+        'object_Packet_ordered_byte_fold_exact_recursion_ALL3_requires_only_omega': True,
+        'object_Packet_ordered_byte_fold_reverse_prefix_and_radix_witnesses_eliminated': True,
+        'object_Packet_ordered_byte_fold_exact_recursion_Nil_tail_natural_guard_preserved': True,
         "Packet_ordered_byte_fold_trace_guard": Packet_ordered_byte_fold_trace,
         'object_Packet_independent_ordered_byte_fold_trace_constructed': True,
         'object_Packet_ordered_byte_fold_exact_typed_Nil_fiber_proved': True,
@@ -6576,7 +6643,7 @@ def main() -> None:
         'object_Packet_ordered_byte_fold_closure_sequence_and_radix_witnesses_eliminated': True,
         'object_Packet_ordered_byte_fold_all_internal_trace_lengths_preserved': True,
         'object_Packet_ordered_byte_fold_global_total_unique_proved': False,
-        'object_Packet_ordered_byte_fold_full_Cons_recursion_iff_proved': False,
+        'object_Packet_ordered_byte_fold_full_Cons_recursion_iff_proved': True,
         "Packet_actual_token_prefix_inverse_guard": Packet_actual_token_prefix_inverse,
         'object_Packet_actual_token_numeric_prefix_inverse_proved': True,
         'object_Packet_actual_token_joint_input_remaining_tail_unique_proved': True,
