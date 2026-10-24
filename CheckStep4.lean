@@ -8663,4 +8663,85 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
         (HornBinderSyntax.existsMany 6 (ProofSubstitutionNodeSyntax.specificationBody w z row))))).close)) :=
   ObjectProofSubstitutionNode.native_substitutionFullPureRelationalNodeIff w z row
 
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpConclusionQueryIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpConclusionQueryIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpAntecedentQueryIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpAntecedentQueryIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpLeftFreeProjectionIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpLeftFreeProjectionIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpLeftFormulaProjectionIffSentence env w)) :=
+  Internal.ObjectProofMPNode.native_mpLeftFormulaProjectionIff env w
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpRightFreeProjectionIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpRightFreeProjectionIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpRightImplicationProjectionIffSentence env w)) :=
+  Internal.ObjectProofMPNode.native_mpRightImplicationProjectionIff env w
+
+example {m} (env : Fin 5 → Fin m) (w q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpImplicationGraphIffSentence env w q)) :=
+  Internal.ObjectProofMPNode.native_mpImplicationGraphIff env w q
+
+example {m} (env : Fin 5 → Fin m) (w q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpRightImplicationAtConstructorIffSentence env w q)) :=
+  Internal.ObjectProofMPNode.native_mpRightImplicationAtConstructorIff env w q
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpAllFourProjectionsIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpAllFourProjectionsIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpBothFormulaQueriesIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpBothFormulaQueriesIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpAllSixQueriesIffSentence env w z)) :=
+  Internal.ObjectProofMPNode.native_mpAllSixQueriesIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpAntecedentProjectionBoundSentence env w)) :=
+  Internal.ObjectProofMPNode.native_mpAntecedentProjectionBound env w
+
+example {m} (env : Fin 5 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectProofMPNode.native_mpAllAssignmentBounds env w row
+
+example {m} (env : Fin 5 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpActualFourFieldHeadIffSentence env w row)) :=
+  Internal.ObjectProofMPNode.native_mpActualFourFieldHeadIff env w row
+
+example {m} (env : Fin 5 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpBoundedMatrixIffSentence env w z row)) :=
+  Internal.ObjectProofMPNode.native_mpBoundedMatrixIff env w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofMPNode.mpFullPureRelationalNodeIffSentence w z row)) :=
+  Internal.ObjectProofMPNode.native_mpFullPureRelationalNodeIff w z row
+
+-- 原MP五赋值／四字段头／六查询；复合输出来自原表。
+example : YesMetaZFC.Automation.ObjectProofNode.mpShape.arity = 5 := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.mpShape.queries.length = 6 := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.mpShape.head =
+    YesMetaZFC.Automation.ObjectProofNode.node 2 [.var 0, .var 1, .var 2, .var 3] := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.mpShape.queries[5] =
+    YesMetaZFC.Automation.ObjectProofNode.projection (.var 3) 1
+      (YesMetaZFC.Automation.ObjectProofNode.node 7 [.var 4, .var 1]) := rfl
+
+-- 最终只有Ω和空集零值前提，全部五赋值与界在对象存在块中消去。
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((HornBinderSyntax.existsMany 5 (ProofMPNodeSyntax.body w row)).iff
+       (HornBinderSyntax.existsMany 5 (ProofMPNodeSyntax.specificationBody w z row))))).close)) :=
+  ObjectProofMPNode.native_mpFullPureRelationalNodeIff w z row
+
 end PPAC.Migration.Step4Checks

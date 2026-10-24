@@ -210,3 +210,4 @@ import PPAC.Migration.Internal.ObjectProjectionTrace
 import PPAC.Migration.Internal.ObjectProjectionTag
 import PPAC.Migration.Internal.ObjectProjectionGetField
 import PPAC.Migration.Internal.ObjectProofSubstitutionNode
+import PPAC.Migration.Internal.ObjectProofMPNode

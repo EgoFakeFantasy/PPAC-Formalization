@@ -233,6 +233,33 @@ def check_pure_substitution_node_definitions() -> dict:
             "shared_extended_condition_numeric_quotation_Bool_correspondence_proved": False}
 
 
+def check_pure_mp_node_definitions() -> dict:
+    """Inspect actual original six-query acceptance independently of its numeric specifications."""
+    definitions = {"ProofMPSyntax": ["conclusionQuery", "antecedentQuery", "leftFreeQuery", "leftFormulaQuery", "rightFreeQuery", "rightImplicationQuery", "projections"],
+                   "ProofMPAllQueries": ["formulaQueries", "bundle"],
+                   "ProofMPNodeSyntax": ["queryMatrix", "boundedMatrix", "body", "node"]}
+    forbidden = re.compile(r"RawCode(?:Field|Get)\w*\.|FormulaCodeSyntax\.|\bspecification\b|\bmetadata\b|\bimplicationRead\b|Expr\.eval|Classical\.choose|ObjectLocalDecision\.(?:checked|Rule\.checked)")
+    bodies = {}
+    for mod, names in definitions.items():
+        body = strip_comments((ROOT / ("PPAC/Migration/Internal/" + mod + ".lean")).read_text(encoding="utf-8"))
+        bodies[mod] = body
+        for name in names:
+            found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+            if not found or forbidden.search(found.group(0)):
+                raise RuntimeError(f"Pure MP acceptance uses comparison oracle: {mod}.{name}")
+    for i in range(6):
+        if f"(ObjectProofNode.mpShape.queries[{i}]).2" not in bodies["ProofMPSyntax"]:
+            raise RuntimeError(f"Exact original MP query changed: {i}")
+    for clause in ["graph ObjectProofNode.mpShape.head w env row", "ProofMPAllQueries.bundle w env", "HornExprBounds.environmentBound 5 row env", "existsMany 5 (body w row)"]:
+        if clause not in bodies["ProofMPNodeSyntax"]:
+            raise RuntimeError("Incomplete original pure MP node: " + clause)
+    return {"definitions": definitions, "original_arity": 5, "original_head_field_count": 4, "actual_query_count": 6,
+            "composite_implication_output_witness_constructed_and_eliminated": True,
+            "all_five_assignment_bounds_discharged": True,
+            "whole_fixed_shape_pure_relational_node_iff_proved": True,
+            "shared_extended_condition_numeric_quotation_Bool_correspondence_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -241,6 +268,7 @@ def main() -> None:
     projection_trace_definition = check_projection_trace_definitions()
     projection_rule_partition = check_projection_rule_partition()
     pure_substitution_node_definition = check_pure_substitution_node_definitions()
+    pure_mp_node_definition = check_pure_mp_node_definitions()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2578,7 +2606,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofSubstitutionNode.native_substitutionAllAssignmentBounds',
                     'PPAC.Migration.Internal.ObjectProofSubstitutionNode.native_substitutionActualFiveFieldHeadIff',
                     'PPAC.Migration.Internal.ObjectProofSubstitutionNode.native_substitutionBoundedMatrixIff',
-                    'PPAC.Migration.Internal.ObjectProofSubstitutionNode.native_substitutionFullPureRelationalNodeIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofSubstitutionNode.native_substitutionFullPureRelationalNodeIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpConclusionQueryIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpAntecedentQueryIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpLeftFreeProjectionIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpLeftFormulaProjectionIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpRightFreeProjectionIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpRightImplicationProjectionIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpImplicationGraphIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpRightImplicationAtConstructorIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpAllFourProjectionsIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpBothFormulaQueriesIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpAllSixQueriesIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpAntecedentProjectionBound',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpActualFourFieldHeadIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpBoundedMatrixIff',
+                    'PPAC.Migration.Internal.ObjectProofMPNode.native_mpFullPureRelationalNodeIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2695,6 +2739,7 @@ def main() -> None:
         "ObjectProjectionTag": ('projectionConstructorFieldNatural', 'projectionTagQueryNatural', 'projectionGetQueryNatural', 'projectionFieldQueryNatural', 'projectionTagRuleDispatch', 'projectionGetRuleDispatch', 'projectionFieldRuleDispatch', 'projectionTagZeroConstructed', 'projectionTagRawConstructed', 'projectionTagSound', 'projectionTagComplete', 'projectionTagQueryIff', 'projectionTagQueryUnique', 'projectionTagAtActualRowSound'),
         "ObjectProjectionGetField": ('projectionActualPremiseQueryIff', 'projectionActualPremisesQueriesIff', 'projectionGetVariablesQueryIff', 'projectionArbitraryRawPairHeadTail', 'projectionSuccessorVariableIff', 'projectionGetZeroConstructed', 'projectionGetHeadConstructed', 'projectionGetTailConstructed', 'projectionGetZeroIndexIff', 'projectionGetAllInternalCorrect', 'projectionGetAtInternalIndexIff', 'projectionGetAllCandidatesIff', 'projectionGetSound', 'projectionGetComplete', 'projectionGetUnique', 'projectionGetObjectSuccessorStep', 'projectionGetTailActualSubquery', 'projectionFieldZeroConstructed', 'projectionFieldRawConstructed', 'projectionFieldAllCandidatesIff', 'projectionFieldSound', 'projectionFieldComplete', 'projectionFieldUnique', 'originalSevenProjectionNumericIffs'),
         "ObjectProofSubstitutionNode": ('substitutionFreeProjectionIff', 'substitutionFormulaProjectionAtOneIff', 'substitutionFormulaProjectionIff', 'substitutionBothProjectionsIff', 'substitutionFreeProjectionAtConstructor', 'substitutionFormulaProjectionAtConstructor', 'substitutionProjectionsAtConstructor', 'substitutionAllFiveQueriesIff', 'pairingProjectionNumericBound', 'rawHeadTailNumericBound', 'rawGetAllInternalBounds', 'rawGetNumericBound', 'rawFieldNumericBound', 'substitutionAtOneBound', 'substitutionFormulaProjectionBound', 'substitutionAllAssignmentBounds', 'substitutionActualFiveFieldHeadIff', 'substitutionBoundedMatrixIff', 'substitutionFullPureRelationalNodeIff'),
+        "ObjectProofMPNode": ('mpConclusionQueryIff', 'mpAntecedentQueryIff', 'mpLeftFreeProjectionIff', 'mpLeftFormulaProjectionIff', 'mpRightFreeProjectionIff', 'mpRightImplicationProjectionIff', 'mpImplicationGraphIff', 'mpRightImplicationAtConstructorIff', 'mpAllFourProjectionsIff', 'mpBothFormulaQueriesIff', 'mpAllSixQueriesIff', 'mpAntecedentProjectionBound', 'mpAllAssignmentBounds', 'mpActualFourFieldHeadIff', 'mpBoundedMatrixIff', 'mpFullPureRelationalNodeIff'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3486,6 +3531,12 @@ def main() -> None:
         "object_original_projection_field_all_internal_iff_proved": True,
         "object_original_projection_numeric_quotation_correspondence_proved": False,
         "pure_substitution_node_definition_guard": pure_substitution_node_definition,
+        "pure_mp_node_definition_guard": pure_mp_node_definition,
+        "object_original_mp_exact_six_queries_pure_correspondence_proved": True,
+        "object_original_mp_composite_implication_projection_proved": True,
+        "object_original_mp_all_five_assignment_bounds_proved": True,
+        "object_original_mp_full_pure_relational_node_proved": True,
+        "object_original_mp_shape_numeric_quotation_checker_correspondence_proved": False,
         "object_original_substitution_shape_projection_queries_proved": True,
         "object_original_substitution_shape_all_five_queries_iff_proved": True,
         "object_raw_get_bound_object_IH_discharged": True,
@@ -3500,7 +3551,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "The original substitution shape now has its exact projection queries 2/3, original-order all-five query bundle, actual five-field head, all six object assignment bounds and complete bounded existential pure relational node iff specification proved. General raw field output bounds use original Separation/internal omega induction and do not assume a valid predecessor proof code. Shared extended-signature condition/numeric quotation/Bool correspondence, the other full proof shapes, arbitrary ProofZF/U checking/compilation, internal interpretation and final Con implication remain unproved.",
+        "scope": "The original substitution and MP shapes now have complete bounded existential pure relational node iff specifications. MP uses all six exact original queries, the composite implication constructor witness, actual four-field head and all five assignment bounds. No valid predecessor premise is added. Shared extended condition/numeric quotation/Bool correspondence, the other four full proof shapes, arbitrary ProofZF/U checking/compilation, internal interpretation and final Con implication remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",
