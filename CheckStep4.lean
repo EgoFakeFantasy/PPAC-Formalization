@@ -11724,4 +11724,64 @@ example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
     (Translation.sentence (Internal.ObjectPacketDescent.packetDescentActualLiteralSystemExistsSentence wide w)) :=
   Internal.ObjectPacketDescent.native_packetDescentActualLiteralSystemExists wide w
 
+example {m} (env : Fin 3 → Fin m) (w B r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenSmallExactMatrixSentence env w B r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenSmallExactMatrix env w B r V
+
+example {m} (env : Fin 6 → Fin m) (w B z y r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenLargeExactMatrixAtSentence env w B z y r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenLargeExactMatrixAt env w B z y r V
+
+example {m} (env : Fin 6 → Fin m) (w B r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenLargeExactMatrixWitnessesDischargedSentence env w B r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenLargeExactMatrixWitnessesDischarged env w B r V
+
+example {m} (env : Fin 6 → Fin m) (w B V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenLargeAssignmentNaturalSentence env w B V r)) :=
+  Internal.ObjectPacketToken.native_packetTokenLargeAssignmentNatural env w B V r
+
+example {m} (wide : Bool) (w B V d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenCanonicalAffineEntryArithmeticSentence wide w B V d q n)) :=
+  Internal.ObjectPacketToken.native_packetTokenCanonicalAffineEntryArithmetic wide w B V d q n
+
+example {m} (w B d q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenDigitBelowAffineOutputSentence w B d q n)) :=
+  Internal.ObjectPacketToken.native_packetTokenDigitBelowAffineOutput w B d q n
+
+example {m} (env : Fin 6 → Fin m) (w B C V z y r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenAllSixActualAssignmentBoundsAtSentence env w B C V z y r)) :=
+  Internal.ObjectPacketToken.native_packetTokenAllSixActualAssignmentBoundsAt env w B C V z y r
+
+example {m} (env : Fin 6 → Fin m) (w B C V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenAllSixActualAssignmentBoundsSentence env w B C V r)) :=
+  Internal.ObjectPacketToken.native_packetTokenAllSixActualAssignmentBounds env w B C V r
+
+example {m} (w B r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenSmallApplicationIffSentence w B r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenSmallApplicationIff w B r V
+
+example {m} (w B C r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenLargeApplicationIffSentence w B C r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenLargeApplicationIff w B C r V
+
+example {m} (w n t a r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenOriginalTwoRuleDispatchSentence w n t a r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenOriginalTwoRuleDispatch w n t a r V
+
+example {m} (w B C n t a r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenCompleteStepEquationSentence w B C n t a r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenCompleteStepEquation w B C n t a r V
+
+example {m} (w B C n t a r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenActualConditionEquationSentence w B C n t a r V)) :=
+  Internal.ObjectPacketToken.native_packetTokenActualConditionEquation w B C n t a r V
+
+example {m} (w B C V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenAllInternalRootEquationSentence w B C V)) :=
+  Internal.ObjectPacketToken.native_packetTokenAllInternalRootEquation w B C V
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketToken.packetTokenActualTwoRadixSystemExistsSentence w)) :=
+  Internal.ObjectPacketToken.native_packetTokenActualTwoRadixSystemExists w
+
 end PPAC.Migration.Step4Checks

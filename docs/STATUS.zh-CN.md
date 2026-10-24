@@ -1,5 +1,9 @@
 # 当前交付状态
 
+原tokenSmall／tokenLarge的完整规则应用已验收：真实128移位、全部guard及三个有序大分支前提对象归一；全部六赋值的自然性由真实行推出，辅助digit／quotient／递归输出的搜索界由规范接受集合中的实际仿射算术推出。原arity3／6应用双向等价、十规则标签分派和ALL4关系式Condition展开完成；仅Ω取得128／256及规范V的实际EX3系统。15模块147声明、15组原nativeZF闭句；2225构建、24003审计（463无公理／23540允许依赖）、零警告；九命令／五trust=0通过，2005哈希、2682对精确足迹、21659项Internal覆盖。指定根字段归一、完整token存在唯一、varint／字节包、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_APPLICATION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 内部商下降及停止条件已验收：实际128／256基数下商不超过输出，非零输出严格下降；零商恰对应输出小于基数，零输出恰对应digit与quotient均零。原Foundation／Separation为任意有限对象矩阵证明沿真实商的归纳模式，并将下降／停止分支接入独立关系式Packet接受谓词；仅Ω取得包含逆唯一纤维及ALL3下降定律的实际系统EX。7模块108声明、17组原nativeZF闭句；2210构建、23856审计（463无公理／23393允许依赖）、零警告；九命令／五trust=0通过，1990哈希、2667对精确足迹、21512项Internal覆盖。完整varint程序、原Basic AST桥、字节包、schema、Proof／解释及最终内部Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_DESCENT_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
