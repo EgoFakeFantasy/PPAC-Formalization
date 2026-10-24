@@ -213,3 +213,4 @@ import PPAC.Migration.Internal.ObjectProofSubstitutionNode
 import PPAC.Migration.Internal.ObjectProofMPNode
 import PPAC.Migration.Internal.ObjectProofStrengtheningNode
 import PPAC.Migration.Internal.ObjectOriginalAbstract
+import PPAC.Migration.Internal.ObjectAbstractVariable

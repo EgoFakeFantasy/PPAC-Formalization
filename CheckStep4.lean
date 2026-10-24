@@ -8886,4 +8886,76 @@ example {m} (bound : Bool) (w r idx : Fin m) (xs : Fin 5 → Fin m) :
               (HornStepSyntax.step (OriginalAbstractClasses.variableSelected bound) w r w)))))).close)) :=
   ObjectOriginalAbstract.native_modeOneVariableWholeTraceIff bound xs w r idx
 
+
+
+example {m} (n : Nat) (bound : Bool) (e : YesMetaZFC.Automation.ObjectHorn.Expr n) (env : Fin n → Fin m) (w idx x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.originalVariableIndexGraphSentence n bound e env w idx x)) :=
+  Internal.ObjectAbstractVariable.native_originalVariableIndexGraph n bound e env w idx x
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneBoundVariableNumericIffSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneBoundVariableNumericIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneBoundVariableNumericSoundSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneBoundVariableNumericSound xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneBoundVariableNumericCompleteSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneBoundVariableNumericComplete xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneFreeVariableNumericIffSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneFreeVariableNumericIff xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneFreeVariableNumericSoundSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneFreeVariableNumericSound xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneFreeVariableNumericCompleteSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneFreeVariableNumericComplete xs w r idx
+
+example {m} (bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneAllVariableNumericTraceIffSentence bound xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneAllVariableNumericTraceIff bound xs w r idx
+
+example {m} (bound : Bool) (w mode depth P x idx y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneAllVariableNumericRunIffSentence bound w mode depth P x idx y)) :=
+  Internal.ObjectAbstractVariable.native_modeOneAllVariableNumericRunIff bound w mode depth P x idx y
+
+example {m} (bound : Bool) (w d i x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneVariableNumericOutputNaturalSentence bound w d i x y)) :=
+  Internal.ObjectAbstractVariable.native_modeOneVariableNumericOutputNatural bound w d i x y
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOnePreservedValueConstructsTraceSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOnePreservedValueConstructsTrace xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneShiftedValueConstructsTraceSentence xs w r idx s)) :=
+  Internal.ObjectAbstractVariable.native_modeOneShiftedValueConstructsTrace xs w r idx s
+
+example {m} (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneFreeHeadValueConstructsTraceSentence xs w r idx)) :=
+  Internal.ObjectAbstractVariable.native_modeOneFreeHeadValueConstructsTrace xs w r idx
+
+example {m} (xs : Fin 5 → Fin m) (w r idx k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectAbstractVariable.modeOneFreeTailValueConstructsTraceSentence xs w r idx k)) :=
+  Internal.ObjectAbstractVariable.native_modeOneFreeTailValueConstructsTrace xs w r idx k
+
+-- 数值关系独立于原查询／规则／类型程序；运行时索引和深度均为内部变量。
+example {m} (w d i x y : Fin m) : AbstractVariableValueSyntax.boundValue w d i x y =
+    ((Source.Formula.mem i d).conj (.equal y x)).disj (AbstractVariableValueSyntax.boundShifted w d i y) := rfl
+example {m} (w d i y : Fin m) : AbstractVariableValueSyntax.freeValue w d i y =
+    ((OmegaSyntax.empty i).conj (SyntaxVariableSyntax.code true w d y)).disj (AbstractVariableValueSyntax.freeTail w i y) := rfl
+-- 整条原kind1运行：没有给定行码、输出自然性、赋值、全根集合或轨迹见证。
+example {m} (bound : Bool) (w mode depth P x idx y : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 1 mode).imp
+        ((OriginalTermTraceSyntax.metadata w depth P).imp ((SyntaxVariableSyntax.code bound w idx x).imp
+          ((OriginalTransformRowSyntax.run 1 w mode depth P x y).iff
+            (AbstractVariableValueSyntax.valueSpec bound w depth idx x y)))))).close)) :=
+  ObjectAbstractVariable.native_modeOneAllVariableNumericRunIff bound w mode depth P x idx y
+
 end PPAC.Migration.Step4Checks
