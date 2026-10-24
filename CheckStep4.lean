@@ -8227,4 +8227,74 @@ example {m} (w x t r s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF
         ((RawCodeGetSyntax.get w x s y).iff (RawCodeGetSyntax.get w t r y)))))).close)) :=
   ObjectRawCodeProjection.native_rawGetSuccessorEquation w x t r s y
 
+example {m} (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawGetZeroAllInternalIndicesSentence w z)) :=
+  Internal.ObjectRawCodeField.native_rawGetZeroAllInternalIndices w z
+
+example {m} (w z i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawGetZeroInputIffSentence w z i y)) :=
+  Internal.ObjectRawCodeField.native_rawGetZeroInputIff w z i y
+
+example {m} (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldExistsSentence w x i)) :=
+  Internal.ObjectRawCodeField.native_rawFieldExists w x i
+
+example {m} (w x i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldUniqueSentence w x i y z)) :=
+  Internal.ObjectRawCodeField.native_rawFieldUnique w x i y z
+
+example {m} (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldFiberSentence w x i)) :=
+  Internal.ObjectRawCodeField.native_rawFieldFiber w x i
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldRangeSentence w x i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldRange w x i y
+
+example {m} (w x p i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldAtActualPayloadIffSentence w x p i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldAtActualPayloadIff w x p i y
+
+example {m} (w tag p x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldAtArbitraryRawTagIffSentence w tag p x i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldAtArbitraryRawTagIff w tag p x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldZeroInputIffSentence w x i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldZeroInputIff w x i y
+
+example {m} (head : Bool) (w h t n y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawHeadTailOnActualConsIffSentence head w h t n y)) :=
+  Internal.ObjectRawCodeField.native_rawHeadTailOnActualConsIff head w h t n y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawGetAtFiniteForestIffSentence k xs j w n i y)) :=
+  Internal.ObjectRawCodeField.native_rawGetAtFiniteForestIff k xs j w n i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (j : Fin k) (w tag n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldAtFiniteNodeIffSentence k xs j w tag n i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldAtFiniteNodeIff k xs j w tag n i y
+
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectRawCodeField.rawFieldAtFiniteConstructorIffSentence k tag xs j w n i y)) :=
+  Internal.ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff k tag xs j w n i y
+-- 输入零码的全部内部自然索引，不仅索引为零；候选输出不预给自然性。
+example {m} (w z i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Source.Formula.mem i w).imp ((RawCodeGetSyntax.get w z i y).iff (OmegaSyntax.empty y))))).close)) :=
+  ObjectRawCodeField.native_rawGetZeroInputIff w z i y
+
+-- 原field的实际唯一纤维只有Omega和内部索引自然性，无输入规范性前提。
+example {m} (w x i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((Source.Formula.mem i w).imp
+      (RawCodeFieldSyntax.fiber w x i))).close)) :=
+  ObjectRawCodeField.native_rawFieldFiber w x i
+
+-- 固定合法槽位是外部模式；实际候选原构造器及原字段值均为对象量词。
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNodeSyntax.constructor k tag w xs n).imp
+      ((SyntaxNumeralSyntax.numeral j.val i).imp
+        ((RawCodeFieldSyntax.field w n i y).iff (Source.Formula.equal y (xs j)))))).close)) :=
+  ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff k tag xs j w n i y
+
 end PPAC.Migration.Step4Checks

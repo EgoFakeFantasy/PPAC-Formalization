@@ -144,7 +144,24 @@ def check_raw_projection_definitions() -> dict:
         raise RuntimeError("Raw projection lost the original two pairing cases")
     return {"definitions": declarations, "independent_of_canonical_list_and_host_oracles": True,
             "arbitrary_raw_tag_head_tail_iff_proved": True, "all_internal_get_values_unique_proved": True,
-            "get_zero_successor_index_equations_proved": True, "get_zero_input_all_internal_indices_proved": False,
+            "get_zero_successor_index_equations_proved": True, "get_zero_input_all_internal_indices_proved": True,
+            "original_projection_full_seven_rule_trace_bridge_proved": False}
+
+
+def check_raw_field_definitions() -> dict:
+    """The original payload/get field relation must not call canonical-field or checker oracles."""
+    body = strip_comments((ROOT / "PPAC/Migration/Internal/RawCodeFieldSyntax.lean").read_text(encoding="utf-8"))
+    names = ["body", "field", "existsField", "fiber"]
+    forbidden = re.compile(r"StructuralList(?:Projection|Field|Iteration|Shift)|ObjectCodeProjection\.|ObjectProjection\.|Expr\.eval|FormulaCodeSyntax\.|SyntaxTermSyntax\.|RawCodeGetZeroSyntax\.|Classical\.choose")
+    for name in names:
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+        if not found or forbidden.search(found.group(0)):
+            raise RuntimeError(f"Raw field acceptance uses a comparison oracle: {name}")
+    if "PairingProjectionSyntax.step true false w x p" not in body or "RawCodeGetSyntax.get w p i y" not in body:
+        raise RuntimeError("Original payload followed by get composition changed")
+    return {"definitions": names, "independent_of_canonical_field_and_host_oracles": True,
+            "input_zero_all_internal_indices_proved": True, "field_total_unique_on_internal_indices_proved": True,
+            "finite_constructor_slot_scope": "external finite arity/slot schema with object quantified codes and values",
             "original_projection_full_seven_rule_trace_bridge_proved": False}
 
 
@@ -152,6 +169,7 @@ def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
     raw_projection_definition = check_raw_projection_definitions()
+    raw_field_definition = check_raw_field_definitions()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2404,7 +2422,20 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectRawCodeProjection.native_rawGetFiber',
                     'PPAC.Migration.Internal.ObjectRawCodeProjection.native_rawGetRange',
                     'PPAC.Migration.Internal.ObjectRawCodeProjection.native_rawGetZeroEquation',
-                    'PPAC.Migration.Internal.ObjectRawCodeProjection.native_rawGetSuccessorEquation'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectRawCodeProjection.native_rawGetSuccessorEquation',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawGetZeroAllInternalIndices',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawGetZeroInputIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldExists',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldUnique',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldFiber',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldRange',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtActualPayloadIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtArbitraryRawTagIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldZeroInputIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawHeadTailOnActualConsIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawGetAtFiniteForestIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtFiniteNodeIff',
+                    'PPAC.Migration.Internal.ObjectRawCodeField.native_rawFieldAtFiniteConstructorIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2516,6 +2547,7 @@ def main() -> None:
         "ObjectPureSyntaxFormulaChecker": ('formulaFromInductionIff', 'formulaAllInternalCorrect', 'formulaCorrectAtRoot', 'formulaInductionDischarged', 'formulaQueryIff', 'formulaQuerySound', 'formulaQueryComplete', 'fullSyntaxTypingIff'),
         "ObjectPureProofSubstitutionQueries": ('termExprQueryIff', 'argumentsExprQueryIff', 'formulaExprQueryIff', 'substitutionFormulaQueryIff', 'substitutionArgumentsQueryIff', 'substitutionTransformAtModeIff', 'substitutionGuardedTransformIff', 'substitutionBundleIff'),
         "ObjectRawCodeProjection": ('pairingComponentExists', 'pairingComponentUnique', 'barePairEveryNaturalDecodes', 'rawEveryPositiveNaturalDecodes', 'rawZeroComponent', 'rawUnselectedNaturalIsZero', 'rawHeadTailExists', 'rawHeadTailUnique', 'rawHeadTailRange', 'rawHeadTailZeroIff', 'arbitraryRawTagHeadTailIff', 'rawNaturalIterationFiber', 'rawGetExists', 'rawGetUnique', 'rawGetFiber', 'rawGetRange', 'rawGetZeroEquation', 'rawGetSuccessorEquation'),
+        "ObjectRawCodeField": ('rawGetZeroAllInternalIndices', 'rawGetZeroInputIff', 'rawFieldExists', 'rawFieldUnique', 'rawFieldFiber', 'rawFieldRange', 'rawFieldAtActualPayloadIff', 'rawFieldAtArbitraryRawTagIff', 'rawFieldZeroInputIff', 'rawHeadTailOnActualConsIff', 'rawGetAtFiniteForestIff', 'rawFieldAtFiniteNodeIff', 'rawFieldAtFiniteConstructorIff'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3288,10 +3320,15 @@ def main() -> None:
         "object_raw_head_tail_actual_natural_recursors_proved": True,
         "object_raw_get_all_internal_indices_actual_unique_proved": True,
         "object_raw_get_zero_successor_index_equations_proved": True,
-        "object_raw_get_zero_input_all_internal_indices_proved": False,
+        "object_raw_get_zero_input_all_internal_indices_proved": True,
         "object_original_projection_full_seven_rule_trace_bridge_proved": False,
         "object_original_projection_proof_node_queries_proved": False,
         "raw_projection_definition_guard": raw_projection_definition,
+        "object_raw_field_payload_get_composition_AST_implemented": True,
+        "object_raw_field_all_internal_indices_actual_unique_proved": True,
+        "object_raw_field_zero_input_all_internal_indices_iff_proved": True,
+        "object_raw_field_finite_constructor_slot_iff_schema_proved": True,
+        "raw_field_definition_guard": raw_field_definition,
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
         "scope": "Current milestone: both quantifiers have complete original mode0/3 Run3 dispatch and exact correspondence with the existing single/advanced history program under the explicit uniform object induction premise, real admissible frame, source FormulaCode and actual recursion graph. Independent depth-successor runs are equivalent to advanced reads; bound/index/image witnesses are constructed and eliminated inside object quantifiers, with actual field equalities aligning executions. Seven certificate families replay into original nativeZF. Full eleven-case assembly and discharge of uniform FormulaCode induction remain unproved, as do final-checker applicability of the mode3 contract, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
