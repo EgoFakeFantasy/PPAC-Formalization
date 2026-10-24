@@ -11576,4 +11576,84 @@ example {m} (wide : Bool) (w B d t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Deri
     (Translation.sentence (Internal.ObjectPacketAffineArithmetic.packetAffineAcceptedRejectOutputSentence wide w B d t n)) :=
   Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectOutput wide w B d t n
 
+example {m} (w B d q n s e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionIncrementSentence w B d q n s e)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionIncrement w B d q n s e
+
+example {m} (w B d q n s Q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionCarrySentence w B d q n s Q z)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionCarry w B d q n s Q z
+
+example {m} (wide : Bool) (w B n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionSuccessorExistsSentence wide w B n s)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionSuccessorExists wide w B n s
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAllNaturalOutputsSentence wide w B)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAllNaturalOutputs wide w B
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionDecompositionExistsSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionDecompositionExists wide w B n
+
+example {m} (w B d q n p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionLowerBandSentence w B d q n p)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionLowerBand w B d q n p
+
+example {m} (w B d q n Q y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionUpperBandSentence w B d q n Q y)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionUpperBand w B d q n Q y
+
+example {m} (w B d q e p n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionQuotientUniqueSentence w B d q e p n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionQuotientUnique w B d q e p n
+
+example {m} (w B d e q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionRemainderUniqueSentence w B d e q n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionRemainderUnique w B d e q n
+
+example {m} (w B d q e p n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionPairUniqueSentence w B d q e p n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionPairUnique w B d q e p n
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionExactDomainSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionExactDomain wide w B n
+
+example {m} (w B n d q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionQuantifiedPairUniqueSentence w B n d q)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionQuantifiedPairUnique w B n d q
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionUniqueFiberExistsSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionUniqueFiberExists wide w B n
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionUniqueFiberExactDomainSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionUniqueFiberExactDomain wide w B n
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAcceptedInverseExistsSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseExists wide w B n
+
+example {m} (wide : Bool) (w B n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAcceptedInverseExactDomainSentence wide w B n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseExactDomain wide w B n
+
+example {m} (wide : Bool) (w B d q e p n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAcceptedInverseUniqueSentence wide w B d q e p n)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseUnique wide w B d q e p n
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAllInternalUniqueFibersSentence wide w B)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAllInternalUniqueFibers wide w B
+
+example {m} (wide : Bool) (w B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionAllInternalAcceptedInverseSentence wide w B)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionAllInternalAcceptedInverse wide w B
+
+example {m} (wide : Bool) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketDivision.packetDivisionActualLiteralSystemExistsSentence wide w)) :=
+  Internal.ObjectPacketDivision.native_packetDivisionActualLiteralSystemExists wide w
+
 end PPAC.Migration.Step4Checks

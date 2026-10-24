@@ -1961,6 +1961,43 @@ def check_Packet_relational_affine_arithmetic() -> dict:
             'full_Proof_and_Con':False}
 
 
+def check_Packet_internal_radix_division() -> dict:
+    modules = ['PacketDivisionSyntax', 'PacketDivisionTransitions', 'PacketDivisionStep', 'PacketDivisionInduction', 'PacketDivisionBand', 'PacketDivisionUnique', 'PacketDivisionValueSyntax', 'PacketDivisionValue', 'ObjectPacketDivision']
+    schemas = ['packetDivisionIncrement', 'packetDivisionCarry', 'packetDivisionSuccessorExists', 'packetDivisionAllNaturalOutputs', 'packetDivisionDecompositionExists', 'packetDivisionLowerBand', 'packetDivisionUpperBand', 'packetDivisionQuotientUnique', 'packetDivisionRemainderUnique', 'packetDivisionPairUnique', 'packetDivisionExactDomain', 'packetDivisionQuantifiedPairUnique', 'packetDivisionUniqueFiberExists', 'packetDivisionUniqueFiberExactDomain', 'packetDivisionAcceptedInverseExists', 'packetDivisionAcceptedInverseExactDomain', 'packetDivisionAcceptedInverseUnique', 'packetDivisionAllInternalUniqueFibers', 'packetDivisionAllInternalAcceptedInverse', 'packetDivisionActualLiteralSystemExists']
+    required = {'PacketDivisionSyntax': ['def decompositionBody', 'existsMany 2', 'PacketAffineSyntax.affine', 'def matrix'], 'PacketDivisionTransitions': ['theorem increment', 'theorem carry', 'add_succ_backward', 'mul_succ_backward'], 'PacketDivisionStep': ['theorem from_affine', 'GodelPairArithmetic.successor_below', 'carry_exists', 'PacketDivisionTransitions.increment', 'theorem from_decomposition'], 'PacketDivisionInduction': ['theorem zero_point', 'theorem base', 'theorem step', 'ZFArithmetic.induction hZ PacketDivisionSyntax.matrix', 'theorem all_decomposes', 'theorem exists_decomposition'], 'PacketDivisionBand': ['theorem sum_at_product', 'theorem lower', 'theorem upper', 'NaturalAdditionBounds.lower_bound', 'NaturalAdditionMonotone.strict_monotone'], 'PacketDivisionUnique': ['theorem quotient_not_less', 'PacketDivisionBand.upper', 'PacketDivisionBand.lower', 'NaturalMultiplicationOrderLaws.left_monotone', 'NaturalOrderBasic.transitive', 'NaturalOrderBasic.below_not_reverse', 'NaturalAdditionCancellation.cancel_right', 'theorem unique'], 'PacketDivisionValueSyntax': ['def uniquePair', 'OriginalUniversalBlock.allMany 2', 'def fiberBody', 'def fiber', 'def acceptedBody', 'PacketAffineAcceptedSyntax.accepted', 'def allLaw', 'def allAcceptedLaw', 'def existsSystem'], 'PacketDivisionValue': ['theorem unique_pair', 'PacketDivisionUnique.unique', 'theorem exists_fiber', 'theorem fiber_iff', 'theorem accepted_exists', 'theorem accepted_iff', 'theorem accepted_unique', 'PacketAffineAccepted.accepted_iff', 'theorem exists_system', 'SyntaxNumerals.exists_numeral'], 'ObjectPacketDivision': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text) or re.search(r'(?m)^\s+induction\b', text):
+            raise RuntimeError('Internal radix division forbidden gap or host induction: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Internal radix division proof drift: '+mod+': '+clause)
+    signatures = [('PacketDivisionInduction', 'all_decomposes', {'hB', 'hw'}), ('PacketDivisionUnique', 'unique', {'hb', 'ha', 'hw'}), ('PacketDivisionValue', 'fiber_iff', {'hB', 'hw'}), ('PacketDivisionValue', 'accepted_iff', {'hB', 'hw'}), ('PacketDivisionValue', 'accepted_unique', {'hb', 'ha', 'hB', 'hw'}), ('PacketDivisionValue', 'exists_system', {'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Internal radix division hidden premise: '+mod+'.'+name)
+    accepted = texts['PacketDivisionValueSyntax'].split('def acceptedBody')[1].split('def acceptedDecomposition')[0]
+    if 'PacketAffineSyntax.affine' in accepted or 'PacketAffineAcceptedSyntax.accepted' not in accepted:
+        raise RuntimeError('Inverse accepted fiber must reference the independently defined actual relation')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketDivision.native_'+name not in check:
+            raise RuntimeError('Missing internal radix division native fixture: '+name)
+    return {'internal_output_existence_by_original_object_omega_induction':True,
+            'both_increment_and_actual_radix_carry_object_proved':True,
+            'distinct_quotient_bands_object_disjoint':True,
+            'quotient_and_remainder_jointly_unique_by_order_and_cancellation':True,
+            'quantified_unique_inverse_fiber_and_exact_omega_domain':True,
+            'independent_actual_relational_Packet_inverse_exists_unique':True,
+            'all_internal_and_invalid_output_candidates_retained':True,
+            'actual_128_256_system_exists_under_only_omega':True,
+            'original_Basic_AST_condition_translation':False,
+            'full_varint_Proof_and_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2010,6 +2047,7 @@ def main() -> None:
     Packet_affine_bounded_applications = check_Packet_affine_bounded_applications()
     Packet_explicit_table_closed_trace = check_Packet_explicit_table_closed_trace()
     Packet_relational_affine_arithmetic = check_Packet_relational_affine_arithmetic()
+    Packet_internal_radix_division = check_Packet_internal_radix_division()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4931,7 +4969,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedOutputsUnique',
                     'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectDigit',
                     'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectTail',
-                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectOutput'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketAffineArithmetic.native_packetAffineAcceptedRejectOutput',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionIncrement',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionCarry',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionSuccessorExists',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAllNaturalOutputs',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionDecompositionExists',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionLowerBand',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionUpperBand',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionQuotientUnique',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionRemainderUnique',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionPairUnique',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionExactDomain',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionQuantifiedPairUnique',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionUniqueFiberExists',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionUniqueFiberExactDomain',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseExists',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseExactDomain',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAcceptedInverseUnique',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAllInternalUniqueFibers',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionAllInternalAcceptedInverse',
+                    'PPAC.Migration.Internal.ObjectPacketDivision.native_packetDivisionActualLiteralSystemExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4943,6 +5001,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketDivision": ('packetDivisionIncrement', 'packetDivisionCarry', 'packetDivisionSuccessorExists', 'packetDivisionAllNaturalOutputs', 'packetDivisionDecompositionExists', 'packetDivisionLowerBand', 'packetDivisionUpperBand', 'packetDivisionQuotientUnique', 'packetDivisionRemainderUnique', 'packetDivisionPairUnique', 'packetDivisionExactDomain', 'packetDivisionQuantifiedPairUnique', 'packetDivisionUniqueFiberExists', 'packetDivisionUniqueFiberExactDomain', 'packetDivisionAcceptedInverseExists', 'packetDivisionAcceptedInverseExactDomain', 'packetDivisionAcceptedInverseUnique', 'packetDivisionAllInternalUniqueFibers', 'packetDivisionAllInternalAcceptedInverse', 'packetDivisionActualLiteralSystemExists'),
         "ObjectPacketAffineArithmetic": ('packetAffineRootBaseFieldsIff', 'packetAffineRootStepFieldsIff', 'packetAffineExactRootStepEquation', 'packetAffineExactRootMemberEquation', 'packetAffineInternalEntryFromIH', 'packetAffineInternalEntryConstructedFromIH', 'packetAffineZeroPointMembershipIff', 'packetAffineSuccessorPointMembershipIff', 'packetAffineAllInternalTailIHDischarged', 'packetAffineAllInternalRootMembershipIff', 'packetAffineConditionExactArithmeticIff', 'packetAffineAcceptedExactArithmeticIff', 'packetAffineAllInternalAcceptedExactArithmetic', 'packetAffineAllInternalRootExactArithmetic', 'packetAffineActualLiteralExactArithmeticSystemExists', 'packetAffineAcceptedOutputExists', 'packetAffineAcceptedOutputsUnique', 'packetAffineAcceptedRejectDigit', 'packetAffineAcceptedRejectTail', 'packetAffineAcceptedRejectOutput'),
         "ObjectPacketClosedTrace": ('closedTraceMemberHasActualStep', 'closedTraceInsertPreservesClosure', 'closedTraceInsertAcceptsActualRoot', 'closedTraceAcceptedRootSetExists', 'closedTraceAcceptedRootMembershipIff', 'closedTraceContainsEveryInternalSubtrace', 'closedTraceAcceptedRootSetClosed', 'closedTraceAllCandidateUnfoldIff', 'closedTraceAllCandidateSystemExists', 'closedTraceRejectNonNaturalRoot', 'packetActualTenRuleAcceptedRootSetExists', 'packetActualTenRuleAcceptedRootSetClosed', 'packetActualTenRuleConditionUnfoldIff', 'packetActualTenRuleTraceSystemExists', 'packetAffineForeignRuleRejected', 'packetAffineActualTenRuleDispatch', 'packetAffineActualTenRuleStepIffOutcomes', 'packetAffineConditionIffActualOutcomes', 'packetAffineBaseConditionAccepted', 'packetAffineSuccessorConditionAccepted'),
         "ObjectPacketAffineApplication": ('packetAffineBaseHeadSearchBound', 'packetAffineBaseMatrixSuppliesBoundedApplication', 'packetAffineStepHeadSearchBound', 'packetAffineStepMatrixSuppliesBoundedApplication', 'packetAffineRowAssignmentsNatural', 'packetAffineEntryAssignmentsNatural', 'packetAffineBaseDigitNatural', 'packetAffineStepAssignmentsNatural', 'packetAffineWholeBaseApplicationIff', 'packetAffineWholeStepApplicationIff', 'packetAllInternalAffineApplicationsLaw', 'packetAffineLiteralApplicationSystemExists', 'originalRuleApplicationRowNatural', 'originalRuleRejectNonNaturalRow'),
@@ -5920,6 +5979,13 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_internal_radix_division_guard": Packet_internal_radix_division,
+        'object_Packet_radix_division_all_internal_output_exists_proved': True,
+        'object_Packet_radix_division_internal_quotient_bands_disjoint_proved': True,
+        'object_Packet_radix_division_unique_inverse_fiber_proved': True,
+        'object_Packet_radix_division_exact_internal_domain_proved': True,
+        'object_Packet_relational_affine_inverse_exists_unique_proved': True,
+        'object_Packet_radix_division_actual_literal_system_constructed': True,
         "Packet_relational_affine_arithmetic_guard": Packet_relational_affine_arithmetic,
         'object_Packet_affine_exact_root_predecessor_equation_proved': True,
         'object_Packet_relational_affine_internal_omega_IH_discharged': True,
