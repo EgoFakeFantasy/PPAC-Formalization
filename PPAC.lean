@@ -238,3 +238,4 @@ import PPAC.Migration.Internal.ObjectProofTreeEquation
 import PPAC.Migration.Internal.ObjectFixedAxiomTest
 import PPAC.Migration.Internal.ObjectForallClosure
 import PPAC.Migration.Internal.ObjectSchemaIndex
+import PPAC.Migration.Internal.ObjectProjectAtomic

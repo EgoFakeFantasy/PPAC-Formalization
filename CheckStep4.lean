@@ -10826,4 +10826,69 @@ example {m} (site : Fin 3) (w n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives
       (Internal.SchemaIndexRenameSystem.existsSystem site w n z)))).close)) :=
   Internal.ObjectSchemaIndex.native_schemaIndexSystemExists site w n z
 
+example {m} (w x y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectBoundShiftUniqueSentence w x y q)) :=
+  Internal.ObjectProjectAtomic.native_projectBoundShiftUnique w x y q
+
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectBoundShiftRangeSentence w x y)) :=
+  Internal.ObjectProjectAtomic.native_projectBoundShiftRange w x y
+
+example {m} (w b B f x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectBoundShiftTargetTypeSentence w b B f x y)) :=
+  Internal.ObjectProjectAtomic.native_projectBoundShiftTargetType w b B f x y
+
+example {m} (w b x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectBoundShiftExistsSentence w b x)) :=
+  Internal.ObjectProjectAtomic.native_projectBoundShiftExists w b x
+
+example {m} (w b x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectBoundShiftExistsUniqueSentence w b x)) :=
+  Internal.ObjectProjectAtomic.native_projectBoundShiftExistsUnique w b x
+
+example {m} (w b z x y q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectSubsetUniqueSentence w b z x y q r)) :=
+  Internal.ObjectProjectAtomic.native_projectSubsetUnique w b z x y q r
+
+example {m} (w b z x y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectSubsetTargetTypeSentence w b z x y q)) :=
+  Internal.ObjectProjectAtomic.native_projectSubsetTargetType w b z x y q
+
+example {m} (w b z x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectSubsetExistsSentence w b z x y)) :=
+  Internal.ObjectProjectAtomic.native_projectSubsetExists w b z x y
+
+example {m} (w b z x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectSubsetTypedUniqueSentence w b z x y)) :=
+  Internal.ObjectProjectAtomic.native_projectSubsetTypedUnique w b z x y
+
+example {m} (kind : Fin 3) (w b z x y q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectAtomicResultUniqueSentence kind w b z x y q r)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicResultUnique kind w b z x y q r
+
+example {m} (kind : Fin 3) (w b z x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectAtomicCompiledTypeSentence kind w b z x y n q)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicCompiledType kind w b z x y n q
+
+example {m} (kind : Fin 3) (w b z x y n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectAtomicCompiledUniqueSentence kind w b z x y n q r)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicCompiledUnique kind w b z x y n q r
+
+example {m} (w b z x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectEqualitySameCodeSentence w b z x y n q)) :=
+  Internal.ObjectProjectAtomic.native_projectEqualitySameCode w b z x y n q
+
+example {m} (kind : Fin 3) (w b z x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectAtomicTypedUniqueSentence kind w b z x y n)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicTypedUnique kind w b z x y n
+
+example {m} (kind : Fin 3) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectAtomic.projectAtomicAllInternalInputsSentence kind w z)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs kind w z
+-- Bound/scope/term/input-code variables all vary under object ALL4.
+example {m} (kind : Fin 3) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((empty z).imp
+      (Internal.ProjectAtomicExistence.allInputs kind w z))).close)) :=
+  Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs kind w z
+
 end PPAC.Migration.Step4Checks

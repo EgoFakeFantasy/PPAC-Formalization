@@ -1,6 +1,6 @@
 # PPAC → YesMetaZFC
 
-三处schema指标嵌入已验收：原unaryUnderTwo、binaryUnderOne／Two分别由实际位移图与一／两次binder提升实现，首槽／尾部、准确作用域和完整自然列表码均有对象推导。最终EX7系统只需Ω、内部参数个数及对象零，构造并消去四个作用域、图、bound／free码，得到全内部纯公式的唯一重命名输出。13模块155声明、15组原nativeZF闭句；2007构建、21824审计（433无公理／21391允许依赖）、零警告；九命令／五trust=0通过，1790哈希、2446对精确足迹、19480项Internal覆盖。下一步是原Project十二构造正文到纯十一构造的内部转换；完整schema测试、Proof／解释及最终Con仍未完成。见[本批验收与修订工程表](docs/STEP4_SCHEMA_INDEX_ACCEPTANCE.zh-CN.md)。
+Project三类原子正文的内部编译已验收：任意内部bound项实际提升并保留准确后继作用域；成员码补实际关系叶，primitive equal保持同源码，subset实际展开为提升后的成员／蕴含／全称码。最终对象ALL4出口仅需Ω和对象零，作用域、项码、输入码及全部候选输出均内部量化。16模块147声明、15组原nativeZF闭句；2023构建、21971审计（436无公理／21535允许依赖）、零警告；九命令／五trust=0通过，1806哈希、2461对精确足迹、19627项Internal覆盖。完整十二构造递归编译、所有schema的NatPacket字节包桥、完整公理测试、Proof／内部解释及最终Con仍未完成。见[本批验收与后续工程表](docs/STEP4_PROJECT_ATOMIC_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
 

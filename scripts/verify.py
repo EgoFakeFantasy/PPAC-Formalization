@@ -1413,6 +1413,54 @@ def check_three_schema_index_system() -> dict:
             'complete_schema_test_Proof_interpretation_Con_proved':False}
 
 
+def check_Project_atomic_compile() -> dict:
+    modules=['ProjectBoundShiftSyntax', 'ProjectBoundShiftPoint', 'ProjectBoundShiftLaws', 'ProjectBoundShiftExistence', 'ProjectSubsetSyntax', 'ProjectSubsetPoint', 'ProjectSubsetLaws', 'ProjectSubsetAssembly', 'ProjectSubsetFinish', 'ProjectSubsetExistence', 'ProjectAtomicSyntax', 'ProjectAtomicMember', 'ProjectAtomicLaws', 'ProjectAtomicExistence', 'ProjectAtomicData', 'ObjectProjectAtomic']
+    texts={n:strip_comments((ROOT/'PPAC/Migration/Internal'/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for name,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix',text):
+            raise RuntimeError('Forbidden Project atomic shortcut: '+name)
+    required={
+      'ProjectBoundShiftSyntax':['SyntaxVariableSyntax.code true w i x','successor j i','SyntaxVariableSyntax.code true w j y','existsMany 2','def uniqueOutput'],
+      'ProjectBoundShiftPoint':['SyntaxVariableDecode.index_eq','InsertLogic.unique','SyntaxVariables.unique','SyntaxIndexLiftOrder.successor_member','SyntaxTermSyntax.intro_term'],
+      'ProjectBoundShiftLaws':['HornBinderRules.eliminate_many 2','matrix_unique','matrix_type','theorem unique_output'],
+      'ProjectBoundShiftExistence':['OmegaSyntax.step_at','SyntaxVariables.exists_code','SyntaxTermSyntax.eliminate_branch','theorem exists_unique','Derives.exE'],
+      'ProjectSubsetSyntax':['existsMany 8','successor (env 0) b','shifted w x (env 1)','shifted w y (env 2)','SyntaxVariableSyntax.code true w z (env 3)','zeroScalar w (env 4)','memberCode w (env 4) (env 3) (env 1) (env 5)','memberCode w (env 4) (env 3) (env 2) (env 6)','binaryCode 2 w (env 5) (env 6) (env 7)','singleCode 9 w (env 7) q'],
+      'ProjectSubsetAssembly':['def environment','ProjectSubsetSyntax.intro_expanded','theorem assemble'],
+      'ProjectSubsetPoint':['Derives.eqSubst','ProjectBoundShiftLaws.unique','SyntaxVariables.unique','SyntaxConstructors.unique','FormulaCodeKnownAtomic.member_iff','FormulaCodeKnownLogical.binary2_iff','FormulaCodeKnownLogical.forall_iff','FormulaCodeBranchSyntax.at_successor'],
+      'ProjectSubsetLaws':['HornBinderRules.eliminate_many 8','theorem target_type','theorem unique_output'],
+      'ProjectSubsetFinish':['ProjectSubsetAssembly.assemble','SyntaxConstructors.exists_constructor','Derives.exE','def prepared'],
+      'ProjectSubsetExistence':['ProjectBoundShiftExistence.exists_output','SyntaxVariables.exists_code','SyntaxConstructors.exists_constructor','ProjectSubsetFinish.finish','theorem exists_unique_typed'],
+      'ProjectAtomicSyntax':['if kind.val=0 then 2 else if kind.val=1 then 3 else 11','SyntaxTermSyntax.branch true w b x','SyntaxTermSyntax.branch true w b y','constructor 2 (sourceTag kind)','memberResult w x y q','SyntaxAtomSyntax.equalCode w x y q','ProjectSubsetSyntax.expanded w b z x y q'],
+      'ProjectAtomicMember':['ProjectSubsetPoint.inputs3_subst','SyntaxConstructors.exists_constructor','FormulaCodeKnownAtomic.member_iff','SyntaxAtomSyntax.zeroScalar'],
+      'ProjectAtomicLaws':['theorem equal_same_code','SyntaxConstructors.unique hZ 2 3','ProjectSubsetLaws.target_type','ProjectAtomicMember.target_type'],
+      'ProjectAtomicExistence':['ProjectSubsetExistence.exists_output','theorem exists_unique_typed','def allInputs','allMany 4','theorem all_internal_inputs','HornBinderRules.zf_body 4'],
+      'ProjectAtomicData':['ZFC.ProjectEncode.formula','NatPacket.Tree.node (ProjectAtomicSyntax.sourceTag kind)','theorem source_encoding'],
+      'ObjectProjectAtomic':['TheoryTransport.sentence','ZFReplay.replay','native_projectAtomicTypedUnique','native_projectAtomicAllInternalInputs']}
+    for name,clauses in required.items():
+        missing=[c for c in clauses if c not in texts[name]]
+        if missing:raise RuntimeError('Project atomic proof drift: '+name+': '+repr(missing))
+    for module,name,premises in [('ProjectBoundShiftExistence','exists_unique',{'hw','hx'}),('ProjectSubsetExistence','exists_unique_typed',{'hw','hb','hz','hx','hy'}),('ProjectAtomicExistence','exists_unique_typed',{'hw','hz','hi'}),('ProjectAtomicExistence','all_internal_inputs',{'hw','hz'})]:
+        h=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[module])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0)))!=premises:raise RuntimeError('Project atomic hidden premise: '+module+'.'+name)
+        if re.search(r'hIH\s*:|Promise|Consistent|Model|Nat\)',h.group(0)):raise RuntimeError('Project atomic external premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for clause in ['ObjectProjectAtomic.native_projectAtomicAllInternalInputs kind w z','Internal.ProjectAtomicExistence.allInputs kind w z','ObjectProjectAtomic.native_projectSubsetTypedUnique','ObjectProjectAtomic.native_projectEqualitySameCode']:
+        if clause not in check:raise RuntimeError('Missing native Project atomic check')
+    return {'all_bound_indices_scope_sizes_and_candidate_codes_object_quantified':True,
+            'actual_bound_term_index_successor_shift_exists_unique':True,
+            'exact_successor_scope_type_without_external_standardness':True,
+            'Project_membership_two_source_fields_to_actual_three_pure_fields':True,
+            'Project_equality_primitive_equal_and_same_code':True,
+            'Project_subset_actual_bound_shift_and_member_imp_forall_template':True,
+            'all_subset_intermediate_scopes_and_term_and_formula_codes_object_eliminated':True,
+            'three_atomic_modes_have_typed_unique_output_for_all_internal_inputs':True,
+            'final_ALL4_endpoint_premises_only_Omega_and_empty':True,
+            'original_Project_encoder_tag_metadata_checked_separately':True,
+            'full_twelve_constructor_body_compiler_and_recursive_IH_discharged':False,
+            'NatPacket_byte_packet_to_structural_tree_bridge_for_all_schema_codes':False,
+            'complete_schema_test_Proof_interpretation_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1449,6 +1497,7 @@ def main() -> None:
     fixed_axiom_partial_test = check_fixed_axiom_partial_test()
     all_internal_forall_closure = check_all_internal_forall_closure()
     three_schema_index_system = check_three_schema_index_system()
+    Project_atomic_compile = check_Project_atomic_compile()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4186,7 +4235,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexCodeExists',
                     'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexRenameLaw',
                     'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexRenameAt',
-                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexSystemExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectSchemaIndex.native_schemaIndexSystemExists',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectBoundShiftUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectBoundShiftRange',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectBoundShiftTargetType',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectBoundShiftExists',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectBoundShiftExistsUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectSubsetUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectSubsetTargetType',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectSubsetExists',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectSubsetTypedUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicResultUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicCompiledType',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicCompiledUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectEqualitySameCode',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicTypedUnique',
+                    'PPAC.Migration.Internal.ObjectProjectAtomic.native_projectAtomicAllInternalInputs'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4198,6 +4262,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectAtomic": ('projectBoundShiftUnique', 'projectBoundShiftRange', 'projectBoundShiftTargetType', 'projectBoundShiftExists', 'projectBoundShiftExistsUnique', 'projectSubsetUnique', 'projectSubsetTargetType', 'projectSubsetExists', 'projectSubsetTypedUnique', 'projectAtomicResultUnique', 'projectAtomicCompiledType', 'projectAtomicCompiledUnique', 'projectEqualitySameCode', 'projectAtomicTypedUnique', 'projectAtomicAllInternalInputs'),
         "ObjectSchemaIndex": ('doubleShiftExists', 'doubleShiftMap', 'doubleShiftEdgesIff', 'doubleShiftUnique', 'schemaIndexGraphExists', 'schemaIndexMap', 'schemaIndexZeroIff', 'schemaCollectionOneIff', 'schemaSeparationTailIff', 'schemaCollectionTailIff', 'schemaIndexStateExists', 'schemaIndexCodeExists', 'schemaIndexRenameLaw', 'schemaIndexRenameAt', 'schemaIndexSystemExists'),
         "ObjectForallClosure": ('unaryIterationExistsUnique', 'unaryIterationNaturalRange', 'unaryIterationUnique', 'unaryIterationZeroIff', 'unaryIterationSuccessorIff', 'unaryIterationAllInternalCounts', 'forallClosureUniformTyping', 'forallClosureTypingIff', 'forallClosureClosedIff', 'forallClosureClosedExistsUnique', 'forallClosureAllInternalCounts'),
         "ObjectFixedAxiomTest": ('fixedPacketExists', 'fixedPacketNatural', 'fixedPacketUnique', 'fixedPacketTagsDisjoint', 'fixedPacketAtValue'),
@@ -5150,6 +5215,11 @@ def main() -> None:
         "fixed_axiom_partial_test_guard": fixed_axiom_partial_test,
         "all_internal_forall_closure_guard": all_internal_forall_closure,
         "three_schema_index_system_guard": three_schema_index_system,
+        "Project_atomic_compile_guard": Project_atomic_compile,
+        'object_Project_bound_term_internal_shift_proved': True,
+        'object_Project_subset_internal_expansion_typed_unique_proved': True,
+        'object_Project_three_atomic_internal_compile_proved': True,
+        'object_Project_all_twelve_constructor_internal_compile_proved': False,
         'object_three_schema_index_complete_graphs_proved': True,
         'object_three_schema_index_actual_list_codes_proved': True,
         'object_three_schema_index_uniform_formula_renaming_proved': True,
