@@ -12423,4 +12423,67 @@ example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputAllInternalActualGuardOnlyOmegaSentence w)) :=
   Internal.ObjectPacketByteInput.native_packetByteInputAllInternalActualGuardOnlyOmega w
+example {m} (w h u a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionActualCellDataSentence w h u a)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellData w h u a
+
+example {m} (w h u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionActualCellTotalSentence w h u)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellTotal w h u
+
+example {m} (w h u a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionActualCellUniqueSentence w h u a b)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellUnique w h u a b
+
+example {m} (w n h x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionStrictInputTailPropertySentence w n h x)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionStrictInputTailProperty w n h x
+
+example {m} (w n t a h x u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionStrictAcceptedTailPropertySentence w n t a h x u)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionStrictAcceptedTailProperty w n t a h x u
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionTotalJointStepSentence w n)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionTotalJointStep w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionDomainJointStepSentence w n)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionDomainJointStep w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionUniqueJointStepSentence w n)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionUniqueJointStep w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionAllJointPropertiesSentence w)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionAllJointProperties w
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionOutputExistsSentence w n t)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionOutputExists w n t
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionActualInputDomainSentence w n t a)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualInputDomain w n t a
+
+example {m} (w n t a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionOutputUniqueSentence w n t a b)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionOutputUnique w n t a b
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionExistsDomainIffSentence w n t)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionExistsDomainIff w n t
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionUniqueFiberIffSentence w n t)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionUniqueFiberIff w n t
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionAllInternalFiberDomainSentence w)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionAllInternalFiberDomain w
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketBytesExecution.packetBytesExecutionInvalidInputRejectedSentence w n t a)) :=
+  Internal.ObjectPacketBytesExecution.native_packetBytesExecutionInvalidInputRejected w n t a
 end PPAC.Migration.Step4Checks

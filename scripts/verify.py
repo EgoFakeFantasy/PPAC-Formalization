@@ -2396,7 +2396,7 @@ def check_Packet_ordered_byte_fold_trace() -> dict:
             'Cons_forward_closure_all_sequence_and_literal_witnesses_eliminated':True,
             'actual_256_Cons_closure_uses_actual_Packet_affine_acceptance_only_omega':True,
             'all_internal_and_nonstandard_trace_lengths_preserved':True,
-            'full_internal_byte_fold_totality_uniqueness_proved':False,
+            'full_internal_byte_fold_totality_uniqueness_proved':True,
             'reverse_Cons_decomposition_and_full_recursion_iff_proved':True,
             'canonical_varint_readTokens_byte_program_bridge_proved':False,
             'full_Basic_AST_schema_Proof_Con_proved':False}
@@ -2441,7 +2441,7 @@ def check_Packet_exact_ordered_byte_fold_recursion() -> dict:
             'original_actual_Packet_affine_acceptance_preserved_in_recursive_criterion':True,
             'all_prefix_graph_terminal_and_radix_witnesses_object_eliminated':True,
             'final_ALL3_and_scalar_exact_recursion_require_only_omega':True,
-            'full_internal_byte_fold_totality_uniqueness_proved':False,
+            'full_internal_byte_fold_totality_uniqueness_proved':True,
             'canonical_varint_readTokens_byte_program_bridge_proved':False,
             'full_Basic_AST_schema_Proof_Con_proved':False}
 
@@ -2484,9 +2484,32 @@ def check_Packet_independent_valid_byte_input() -> dict:
             'actual_256_guard_ALL1_requires_only_omega':True,
             'input_guard_definition_and_proofs_do_not_use_Bytes_execution':True,
             'nonstandard_lengths_and_invalid_candidates_remain_quantified':True,
-            'full_internal_byte_fold_totality_uniqueness_proved':False,
+            'full_internal_byte_fold_totality_uniqueness_proved':True,
             'canonical_varint_readTokens_byte_program_bridge_proved':False,
             'full_Basic_AST_schema_Proof_Con_proved':False}
+
+
+def check_Packet_actual_byte_execution() -> dict:
+    modules = ['PacketBytesExecutionSyntax', 'PacketBytesExecutionTransport', 'PacketBytesExecutionAffine', 'PacketBytesExecutionDescent', 'PacketBytesExecutionTotal', 'PacketBytesExecutionDomain', 'PacketBytesExecutionUniqueValues', 'PacketBytesExecutionUnique', 'PacketBytesExecutionInduction', 'PacketBytesExecutionFiberSyntax', 'PacketBytesExecution', 'ObjectPacketBytesExecution']
+    required = {'PacketBytesExecutionSyntax': ['def matrix : Formula 2 := property 0 1', 'def property', 'def total', 'def domain', 'def unique', 'def earlier', 'OriginalUniversalBlock.allMany 3'], 'PacketBytesExecutionTransport': ['Derives.eqSubst', 'theorem input_subst', 'theorem affine_digit', 'theorem affine_tail'], 'PacketBytesExecutionAffine': ['SyntaxNumerals.exists_numeral hZ 256', 'PacketAffineCore.exists_value', 'PacketAffineCore.unique', 'PacketAffineAccepted.accepted_iff', 'theorem bytes_input_natural'], 'PacketBytesExecutionDescent': ['StructuralConsCore.components', 'PacketByteInputLaws.byte_natural', 'PacketBytesExecutionAffine.bytes_input_natural', 'earlier_at'], 'PacketBytesExecutionTotal': ['PacketBytesExecutionDescent.input_tail_property', 'PacketBytesExecutionAffine.exists_cell', 'PacketBytesLaws.cons_bytes', 'PacketBytesLaws.nil_fold', 'HornBinderRules.eliminate_many 2', 'theorem total_property'], 'PacketBytesExecutionDomain': ['PacketBytesExecutionDescent.accepted_tail_property', 'PacketBytesExecutionAffine.data', 'PacketByteInputRecursionSyntax.intro_actual_cons', 'PacketBytesRecursionLaws.actual_iff', 'HornBinderRules.eliminate_many 3', 'theorem domain_property'], 'PacketBytesExecutionUniqueValues': ['StructuralConsUnique.injective', 'StructuralConsUnique.disjoint', 'PacketBytesExecutionTransport.input_subst', 'PacketBytesExecutionTransport.affine_digit', 'PacketBytesExecutionTransport.affine_tail', 'PacketBytesExecutionAffine.unique_cell', 'theorem cases_unique'], 'PacketBytesExecutionUnique': ['PacketBytesRecursionLaws.actual_iff', 'PacketBytesLaws.nil_value', 'PacketBytesExecutionUniqueValues.nil_cons_false', 'PacketBytesExecutionUniqueValues.cases_unique', 'theorem unique_property'], 'PacketBytesExecutionInduction': ['BoundedInduction.induction_on_set PacketBytesExecutionSyntax.matrix', 'ZFContext.separation hZ PacketBytesExecutionSyntax.matrix.neg', '(ZFContext.arithmetic hZ).base.foundation', 'theorem all_properties', 'theorem exists_output', 'theorem input_domain', 'theorem output_unique'], 'PacketBytesExecutionFiberSyntax': ['def uniqueAt', 'def fiberBody', 'def fiber', 'def lawBody', 'def allLaw', 'OriginalUniversalBlock.allMany 2'], 'PacketBytesExecution': ['PacketBytesExecutionInduction.exists_output', 'PacketBytesExecutionInduction.input_domain', 'PacketBytesExecutionInduction.output_unique', 'theorem input_to_fiber', 'theorem fiber_to_input', 'theorem fiber_iff', 'theorem exists_iff', 'theorem all_law', 'theorem reject_input'], 'ObjectPacketBytesExecution': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    schemas = ['packetBytesExecutionActualCellData', 'packetBytesExecutionActualCellTotal', 'packetBytesExecutionActualCellUnique', 'packetBytesExecutionStrictInputTailProperty', 'packetBytesExecutionStrictAcceptedTailProperty', 'packetBytesExecutionTotalJointStep', 'packetBytesExecutionDomainJointStep', 'packetBytesExecutionUniqueJointStep', 'packetBytesExecutionAllJointProperties', 'packetBytesExecutionOutputExists', 'packetBytesExecutionActualInputDomain', 'packetBytesExecutionOutputUnique', 'packetBytesExecutionExistsDomainIff', 'packetBytesExecutionUniqueFiberIff', 'packetBytesExecutionAllInternalFiberDomain', 'packetBytesExecutionInvalidInputRejected']
+    texts = {}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Actual byte execution forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Actual byte execution proof drift: '+mod+': '+clause)
+    signatures = [('PacketBytesExecutionAffine', 'data', {'hw', 'hc'}), ('PacketBytesExecutionAffine', 'exists_cell', {'hw', 'hb', 'hu'}), ('PacketBytesExecutionAffine', 'unique_cell', {'hw', 'hb', 'ha'}), ('PacketBytesExecutionInduction', 'all_properties', {'hw'}), ('PacketBytesExecutionInduction', 'exists_output', {'hw', 'ht', 'hn'}), ('PacketBytesExecutionInduction', 'input_domain', {'hw', 'ha'}), ('PacketBytesExecutionInduction', 'output_unique', {'hw', 'hb', 'ha'}), ('PacketBytesExecution', 'fiber_iff', {'hw'}), ('PacketBytesExecution', 'exists_iff', {'hw'}), ('PacketBytesExecution', 'all_law', {'hw'}), ('PacketBytesExecution', 'reject_input', {'hw', 'hn'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Actual byte execution hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketBytesExecution.native_'+name not in checks: raise RuntimeError('Missing actual byte execution fixture: '+name)
+    return {'actual_Bytes_and_independent_ByteList_definitions_preserved': True, 'fixed_object_Formula2_joint_total_domain_unique_matrix': True, 'real_Cons_field_naturality_then_strict_tail_code_descent_derived': True, 'actual_256_affine_cell_domain_totality_uniqueness_literal_eliminated': True, 'existence_uses_actual_child_Bytes_and_full_real_cell': True, 'arbitrary_actual_Bytes_implies_independent_input_guard': True, 'all_candidate_output_uniqueness_two_actual_Cons_blocks_compared': True, 'original_Foundation_full_Separation_discharge_all_internal_joint_IH': True, 'unique_output_fiber_iff_independent_ByteList_and_natural_tail': True, 'final_ALL2_requires_only_omega_no_length_radix_graph_or_IH_premise': True, 'invalid_input_rejection_and_nonstandard_candidates_covered': True, 'original_host_bytes_foldr_canonical_sequence_bridge_proved': False, 'canonical_varint_readTokens_byte_program_bridge_proved': False, 'full_Basic_AST_schema_Proof_Con_proved': False}
 
 
 def main() -> None:
@@ -2552,6 +2575,7 @@ def main() -> None:
     Packet_ordered_byte_fold_trace = check_Packet_ordered_byte_fold_trace()
     Packet_exact_ordered_byte_fold_recursion = check_Packet_exact_ordered_byte_fold_recursion()
     Packet_independent_valid_byte_input = check_Packet_independent_valid_byte_input()
+    Packet_actual_byte_execution = check_Packet_actual_byte_execution()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5687,7 +5711,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketByteInput.native_packetByteInputActualByteNaturalOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketByteInput.native_packetByteInputActualGuardImpliesOriginalListValidity',
                     'PPAC.Migration.Internal.ObjectPacketByteInput.native_packetByteInputActualGuardExactRecursionOnlyOmega',
-                    'PPAC.Migration.Internal.ObjectPacketByteInput.native_packetByteInputAllInternalActualGuardOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketByteInput.native_packetByteInputAllInternalActualGuardOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellData',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellTotal',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualCellUnique',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionStrictInputTailProperty',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionStrictAcceptedTailProperty',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionTotalJointStep',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionDomainJointStep',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionUniqueJointStep',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionAllJointProperties',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionOutputExists',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionActualInputDomain',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionOutputUnique',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionExistsDomainIff',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionUniqueFiberIff',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionAllInternalFiberDomain',
+                    'PPAC.Migration.Internal.ObjectPacketBytesExecution.native_packetBytesExecutionInvalidInputRejected'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5699,6 +5739,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketBytesExecution": ('packetBytesExecutionActualCellData', 'packetBytesExecutionActualCellTotal', 'packetBytesExecutionActualCellUnique', 'packetBytesExecutionStrictInputTailProperty', 'packetBytesExecutionStrictAcceptedTailProperty', 'packetBytesExecutionTotalJointStep', 'packetBytesExecutionDomainJointStep', 'packetBytesExecutionUniqueJointStep', 'packetBytesExecutionAllJointProperties', 'packetBytesExecutionOutputExists', 'packetBytesExecutionActualInputDomain', 'packetBytesExecutionOutputUnique', 'packetBytesExecutionExistsDomainIff', 'packetBytesExecutionUniqueFiberIff', 'packetBytesExecutionAllInternalFiberDomain', 'packetBytesExecutionInvalidInputRejected'),
         "ObjectPacketByteInput": ('packetByteInputCompleteFieldsToAllFieldBounds', 'packetByteInputAllFieldBoundsToActualGraph', 'packetByteInputOriginalGraphAndLengthBoundsIff', 'packetByteInputFullConsFieldBoundsForward', 'packetByteInputFirstActualFieldByteBound', 'packetByteInputAllSuccessorFieldsTailBounds', 'packetByteInputBoundsAtAnyActualLength', 'packetByteInputNilGuardConstructed', 'packetByteInputFullConsGuardConstructed', 'packetByteInputTypedConsHeadAndTailRecovered', 'packetByteInputAllInternalRadixGuardRecursion', 'packetByteInputActual256ExactGuardIff', 'packetByteInputActualByteNaturalOnlyOmega', 'packetByteInputActualGuardImpliesOriginalListValidity', 'packetByteInputActualGuardExactRecursionOnlyOmega', 'packetByteInputAllInternalActualGuardOnlyOmega'),
         "ObjectPacketBytesRecursion": ('packetBytesRecursionBothSequenceRowRestriction', 'packetBytesRecursionAllOldRowsRestriction', 'packetBytesRecursionFullDualPrefixFromActualRestrictions', 'packetBytesRecursionDualPrefixGraphsObjectEliminated', 'packetBytesRecursionCompleteTerminalRowNormalized', 'packetBytesRecursionTerminalWitnessesFromFullTrace', 'packetBytesRecursionSuccessorFullReverseDecomposition', 'packetBytesRecursionAllInternalTraceReverseDecomposition', 'packetBytesRecursionAllInternalFoldReverseDecomposition', 'packetBytesRecursionIndependentCriterionBackward', 'packetBytesRecursionExactAllInternalRadixRecursion', 'packetBytesRecursionActual256CriterionEquivalence', 'packetBytesRecursionActualBytesExactRecursionOnlyOmega', 'packetBytesRecursionAllInternalActualRecursionOnlyOmega'),
         "ObjectPacketBytesTrace": ('packetBytesBothSequenceRowTransport', 'packetBytesBothSequenceLinksAppend', 'packetBytesOriginalDualSequenceAppend', 'packetBytesTraceExtensionWitnessesEliminated', 'packetBytesFullConsForwardAtRadix', 'packetBytesNilExactFiberAtRadix', 'packetBytesFoldOriginalValidityAndNaturalDomain', 'packetBytesActual256ExactGraphIff', 'packetBytesActualByteDomain', 'packetBytesActualNilExistsOnlyOmega', 'packetBytesActualNilIffOnlyOmega', 'packetBytesActualConsForwardOnlyOmega', 'packetBytesActualSingletonOnlyOmega'),
@@ -6690,6 +6731,10 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_actual_byte_execution_guard": Packet_actual_byte_execution,
+        'object_Packet_actual_byte_execution_exact_independent_input_domain_proved': True,
+        'object_Packet_actual_byte_execution_joint_internal_IH_discharged': True,
+        'object_Packet_actual_byte_execution_unique_fiber_domain_only_omega_proved': True,
         "Packet_independent_valid_byte_input_guard": Packet_independent_valid_byte_input,
         'object_Packet_independent_byte_input_guard_uses_original_full_Fields_graph': True,
         'object_Packet_byte_input_guard_graph_pointwise_bounds_equivalence_proved': True,
@@ -6711,7 +6756,7 @@ def main() -> None:
         'object_Packet_ordered_byte_fold_Cons_forward_constructed': True,
         'object_Packet_ordered_byte_fold_closure_sequence_and_radix_witnesses_eliminated': True,
         'object_Packet_ordered_byte_fold_all_internal_trace_lengths_preserved': True,
-        'object_Packet_ordered_byte_fold_global_total_unique_proved': False,
+        'object_Packet_ordered_byte_fold_global_total_unique_proved': True,
         'object_Packet_ordered_byte_fold_full_Cons_recursion_iff_proved': True,
         "Packet_actual_token_prefix_inverse_guard": Packet_actual_token_prefix_inverse,
         'object_Packet_actual_token_numeric_prefix_inverse_proved': True,

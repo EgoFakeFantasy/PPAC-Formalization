@@ -1,5 +1,9 @@
 # 当前交付状态
 
+独立实际Bytes执行的全内部存在唯一及准确输入域已验收：固定Formula2联合总性／任意实际接受的输入域／全部候选输出唯一性，原Foundation与完整Separation消去全部内部IH。真实Cons字段自然性、严格尾码下降、两份完整递归分支与实际256末步均正式处理。最终仅Ω证明ALL2唯一输出纤维↔ByteList∧自然tail；非法输入拒绝已证。12模块134声明、16组原nativeZF闭句；2353构建、25495审计，零警告；九命令／五trust=0通过。原宿主bytes.foldr到内部规范序列的桥、varint／readTokens、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及工程流程](STEP4_PACKET_BYTES_EXECUTION_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立有效字节输入守卫及全内部Nil／Cons递归已验收：定义直接使用原Encoding／HasLength／完整Fields图和图值域小于256，不引用Bytes执行。完整图边界与全部内部逐字段界双向等价；真实零字段取得头字节界，后继字段对应给尾界并构造反向界。长度、完整字段图、零／后继及256见证对象消去；最终仅Ω取得ALL1 ByteList↔Nil∨EX2(Cons∧Byte_head∧ByteList_tail)，全局自然性从原有效列表取得，辅助原Cons注入／字段定律保留自然性前提。9模块135声明、16组原nativeZF闭句；2341构建、25361审计（474无公理／24887允许依赖）、零警告；九命令／五trust=0通过，2121哈希、2844对精确足迹、23017项Internal覆盖。全部旧布尔叶保持。字节执行全域存在唯一、规范varint／readTokens对应、Basic AST桥、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_BYTE_INPUT_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
