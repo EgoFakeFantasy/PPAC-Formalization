@@ -247,3 +247,4 @@ import PPAC.Migration.Internal.ObjectProjectCompilerComplete
 import PPAC.Migration.Internal.ObjectProjectCompilerUnique
 import PPAC.Migration.Internal.ObjectProjectCompilerSourceValid
 import PPAC.Migration.Internal.ObjectPacketAffine
+import PPAC.Migration.Internal.ObjectPacketHornAffine
