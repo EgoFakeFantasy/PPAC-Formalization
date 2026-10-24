@@ -302,7 +302,7 @@ def check_original_mode_one_scalar_definitions() -> dict:
     return {"mode": 1, "term_rule_count": 5, "bound_variable_rule_count": 2, "free_variable_rule_count": 2,
             "whole_variable_trace_iff_exact_original_bounded_applications_proved": True,
             "all_root_set_witness_discharged": True, "four_variable_rule_positive_traces_proved": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_mode_one_variable_numeric_values() -> dict:
@@ -317,7 +317,7 @@ def check_mode_one_variable_numeric_values() -> dict:
             "free_head_and_tail_branches_proved": True, "all_internal_candidate_outputs_iff_proved": True,
             "whole_original_variable_run_root_witness_discharged": True,
             "output_naturality_derived_not_assumed": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_small_mode_arguments_and_pure_term_values() -> dict:
@@ -336,7 +336,7 @@ def check_small_mode_arguments_and_pure_term_values() -> dict:
             "argument_map_against_actual_abstract_coded_environment_proved": True,
             "legacy_argument_map_flag_scope": "arbitrary internal depth under the proved compatible frame",
             "zero_depth_actual_abstract_argument_map_proved": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_actual_abstract_pure_term_operation() -> dict:
@@ -354,7 +354,7 @@ def check_actual_abstract_pure_term_operation() -> dict:
             "both_actual_code_table_witnesses_constructed_and_eliminated": True,
             "term_type_guard_inside_final_conclusion": True, "depth_required_empty": True,
             "binder_lifted_mode_one_frame_proved": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_actual_abstract_argument_operation() -> dict:
@@ -374,7 +374,7 @@ def check_actual_abstract_argument_operation() -> dict:
             "source_list_type_guard_inside_final_conclusion": True, "depth_required_empty": True,
             "binder_lifted_argument_map_proved": True,
             "binder_lifted_argument_map_scope": "typed lists under proved compatible frames",
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_actual_abstract_frame() -> dict:
@@ -393,7 +393,7 @@ def check_actual_abstract_frame() -> dict:
             "all_internal_scoped_variables_and_candidate_outputs_covered": True,
             "eight_lift_graph_map_head_witnesses_eliminated": True,
             "old_variable_code_and_field_witnesses_eliminated": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_actual_abstract_frame_programs() -> dict:
@@ -414,7 +414,7 @@ def check_actual_abstract_frame_programs() -> dict:
             "list_IH_and_term_promise_discharged": True,
             "source_type_guards_inside_final_conclusions": True,
             "source_target_bound_lengths_remain_independent": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_small_mode_formula_and_abstract_atomic_programs() -> dict:
@@ -433,7 +433,7 @@ def check_small_mode_formula_and_abstract_atomic_programs() -> dict:
             "arbitrary_internal_depth_mode_one_all_four_atomic_program_iff_proved": True,
             "term_and_pair_agreements_proved_not_assumed": True,
             "atomic_source_field_and_pair_length_witnesses_eliminated": True,
-            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": False}
+            "full_mode_one_formula_run_proved": True, "full_forall_node_proved": True}
 
 
 def check_mode_one_full_formula_correctness() -> dict:
@@ -482,8 +482,62 @@ def check_mode_one_full_formula_correctness() -> dict:
             "object_set_induction_IH_and_history_existence_discharged": True,
             "actual_AbstractFreeTop_environment_root_formula_bridge_proved": True,
             "full_mode_one_formula_run_proved": True,
-            "full_forall_node_proved": False,
+            "full_forall_node_proved": True,
             "shared_quotation_Proof_and_Con_proved": False}
+
+
+def check_actual_top_formula_and_forall_node() -> dict:
+    """Actual AbstractFreeTop and all four original forall queries, bounds and nested head."""
+    directory = ROOT / "PPAC/Migration/Internal"
+    modules = ["AbstractTopFormulaOperation", "ProofForallSyntax", "ProofForallQueries",
+               "ProofForallAllQueries", "ProofForallBounds", "ProofForallHead", "ProofForallNodeSyntax", "ProofForallNode"]
+    texts = {m: strip_comments((directory / (m + ".lean")).read_text(encoding="utf-8")) for m in modules}
+    contracts = [
+        ("AbstractTopFormulaOperation", "at_codes_iff", {"hw", "hm", "hd", "hz", "he", "hn"}),
+        ("AbstractTopFormulaOperation", "run_iff", {"hw", "hm", "hd", "hz", "hi", "hn"}),
+        ("AbstractTopFormulaOperation", "guarded_iff", {"hw", "hm", "hd", "hz", "hi"}),
+        ("ProofForallAllQueries", "bundle_iff", {"hw", "hn", "hz"}),
+        ("ProofForallBounds", "environment_bound", {"hw", "hn", "hh", "hq"}),
+        ("ProofForallHead", "head_iff", {"hw", "hn"}),
+        ("ProofForallNode", "node_iff", {"hw", "hz"}),
+        ("ProofForallNode", "normalized_node_iff", {"hw", "hz"})]
+    for module, name, premises in contracts:
+        header = re.search(r"(?ms)^theorem " + name + r"\b.*?(?=:=)", texts[module])
+        if not header or set(re.findall(r"\((\w+)\s*:\s*Derives Γ \(", header.group(0))) != premises:
+            raise RuntimeError("Actual top/forall final contract changed: " + module + "." + name)
+        if re.search(r"Model|Consistent|Classical\.choose|Promise|allFramesIH|hIH\s*:", header.group(0)):
+            raise RuntimeError("Unexpected external oracle in actual top/forall interface")
+    clauses = {
+        "AbstractTopFormulaOperation": ["AbstractTopFormula.run_iff_execution", "FormulaTransformRecursionCorrectness.execution_iff", "SyntaxTopFormulaCodes.abstract_at_codes", "SyntaxTopCodedEnvironmentExistence.abstract_exists", "SyntaxRenameBinders.eliminate_2", "((FormulaCodeSyntax.formulaCode w n a B).conj (OriginalTransformRowSyntax.run 3 w mode z P n q)).iff"],
+        "ProofForallSyntax": ["ObjectProofNode.forallShape.queries[0]", "ObjectProofNode.forallShape.queries[1]", "ObjectProofNode.forallShape.queries[2]", "ObjectProofNode.forallShape.queries[3]", "ObjectProofNode.formula (.succ (.var 0)) (.var 3)", "ObjectProofNode.transform 1 (.literal 0) (.var 3) (.var 1)", "SyntaxTopFormulaSyntax.abstracted w z (env 0) A B (env 3) (env 1)"],
+        "ProofForallQueries": ["OriginalTransformRowSyntax.run 3 w A z z (env 3) (env 1)", "HornRowFields.five (.literal 1) (.literal 0) (.literal 0) (.var 3) (.var 1)", "SyntaxNumeralSyntax.intro_succ 0 A z hz hA", "AbstractTopFormulaOperation.run_iff"],
+        "ProofForallAllQueries": ["InsertExistence.exists_insert (env 0) (env 0)", "InsertExistence.exists_insert z z", "Derives.exE", "intro_atOneSpecification", "intro_specification"],
+        "ProofForallBounds": ["ProofSubstitutionBounds.atOne_bound", "NaturalOrderBasic.transitive", "HornExprBounds.intro_environmentBound", "head_first_variables"],
+        "ProofForallHead": ["ObjectProofNode.node 9 [.var 1]", "SyntaxNodeSyntax.constructor 1 9", "SyntaxNodeSyntax.constructor 3 3", "HornExprExistence.exists_value", "HornExprConstructor.constructor_iff", "Derives.exE"],
+        "ProofForallNodeSyntax": ["graph ObjectProofNode.forallShape.head", "ProofForallSyntax.bundle", "HornExprBounds.environmentBound 4", "existsMany 4 (body w row)"],
+        "ProofForallNode": ["ProofForallAllQueries.bundle_iff", "ProofForallBounds.environment_bound", "HornApplicationBounds.existsMany_congr 4", "ProofForallHead.head_iff", "normalized_node_iff"]}
+    for module, required in clauses.items():
+        for clause in required:
+            if clause not in texts[module]:
+                raise RuntimeError("Missing original forall construction clause: " + module + ": " + clause)
+    for module, body in texts.items():
+        if re.search(r"Expr\.eval|Classical\.choose|OriginalFormulaRunEquation\.run_iff.*false|WellFounded|Model|Consistent", body):
+            raise RuntimeError("Host computation or restricted-mode shortcut in " + module)
+    # Acceptance definitions refer to actual original query expressions, not their comparison specification.
+    for name in ["formulaQuery", "freeQuery", "predecessorFormulaQuery", "transformQuery", "bundle"]:
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", texts["ProofForallSyntax"])
+        if not found or re.search(r"FormulaCodeSyntax|SyntaxTopFormulaSyntax|specification|atSuccessor", found.group(0)):
+            raise RuntimeError("Forall acceptance contains comparison oracle: " + name)
+    return {"actual_mode_one_full_formula_AbstractFreeTop_operation_proved": True,
+            "both_actual_code_table_witnesses_discharged": True,
+            "source_type_guard_inside_final_conclusion": True,
+            "original_arity": 4, "actual_query_count": 4,
+            "original_mode_one_zero_depth_input_output_direction_checked": True,
+            "both_bound_and_free_successor_witnesses_discharged": True,
+            "nested_quantifier_and_outer_head_numeric_constructors_proved": True,
+            "all_four_original_assignment_bounds_derived": True,
+            "full_forall_node_proved": True,
+            "shared_quotation_Bool_Proof_and_Con_proved": False}
 
 
 def main() -> None:
@@ -505,6 +559,7 @@ def main() -> None:
     actual_abstract_frame_programs = check_actual_abstract_frame_programs()
     small_mode_formula_and_abstract_atomic_programs = check_small_mode_formula_and_abstract_atomic_programs()
     mode_one_full_formula_correctness = check_mode_one_full_formula_correctness()
+    actual_top_formula_and_forall_node = check_actual_top_formula_and_forall_node()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2983,7 +3038,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness.native_modeOneFullFormulaRunProgramIff',
                     'PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness.native_modeOneAgreedHistoryExists',
                     'PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualTopFullFormulaExecutionIff',
-                    'PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualTopFullFormulaProgramIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectAbstractFormulaCorrectness.native_modeOneActualTopFullFormulaProgramIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_modeOneActualTopFormulaAtCodesIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_modeOneActualTopFormulaIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_modeOneActualTopGuardedFormulaIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_modeOneActualTopFormulaSource',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallFormulaQueryIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallFreeProjectionQueryIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallPredecessorFormulaQueryIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallModeOneTransformNumericIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallActualTopTransformIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallAllFourQueriesIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallAllFourAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallActualNestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallFullPureRelationalNodeIff',
+                    'PPAC.Migration.Internal.ObjectForallNode.native_forallFullNormalizedNodeIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3107,6 +3176,7 @@ def main() -> None:
         "ObjectSmallModeArguments": ('smallModeOriginalNilGuard', 'smallModeOriginalNilMatrixIff', 'smallModeOriginalNilAtRowIff', 'smallModeOriginalNilApplicationIff', 'smallModeArgumentTraceAtActualValueIff', 'smallModeArgumentTraceIff', 'smallModeArgumentWholeRunIff', 'modeOnePureTermGuardedNumericIff', 'modeOnePureTermTypedNumericIff', 'modeOneTermScopeBranchNumeric', 'modeOneTermNumericBranchRun'),
         "ObjectAbstractAtomicFormula": ('smallModeFormulaConstantGuard', 'smallModeFormulaConstantMatrixIff', 'smallModeFormulaConstantApplicationIff', 'smallModeCompleteFormulaTraceIff', 'smallModeCompleteFormulaWholeRunIff', 'smallModeWholeFalseDispatchIff', 'smallModeWholeTrueDispatchIff', 'smallModeWholeEqualityDispatchIff', 'smallModeWholeMemberDispatchIff', 'modeOneFrameAtomicTermAgreement', 'modeOneFrameActualPairProgramIff', 'modeOneFrameActualPairAgreement', 'modeOneFrameWholeConstantIff', 'modeOneFrameWholeMembershipIff', 'modeOneFrameWholeEqualityIff', 'modeOneFrameAllAtomicWholeRunIff', 'modeOneFrameAllAtomicProgramIff'),
         "ObjectAbstractFormulaCorrectness": ('modeOneAllFormulaCorrect', 'modeOneFormulaCorrectAt', 'modeOneAllFramesIH', 'modeOneFullFormulaRunExecutionIff', 'modeOneActualHistoryAgreement', 'modeOneFullFormulaRunProgramIff', 'modeOneAgreedHistoryExists', 'modeOneActualTopFullFormulaExecutionIff', 'modeOneActualTopFullFormulaProgramIff'),
+        "ObjectForallNode": ('modeOneActualTopFormulaAtCodesIff', 'modeOneActualTopFormulaIff', 'modeOneActualTopGuardedFormulaIff', 'modeOneActualTopFormulaSource', 'forallFormulaQueryIff', 'forallFreeProjectionQueryIff', 'forallPredecessorFormulaQueryIff', 'forallModeOneTransformNumericIff', 'forallActualTopTransformIff', 'forallAllFourQueriesIff', 'forallAllFourAssignmentBounds', 'forallActualNestedHeadIff', 'forallFullPureRelationalNodeIff', 'forallFullNormalizedNodeIff'),
         "ObjectAbstractFramePrograms": ('arbitraryDepthFrameVariableProgramIff', 'arbitraryDepthFrameTermProgramIff', 'arbitraryDepthFrameTermCodedIff', 'arbitraryDepthFrameTermGuardedCodedIff', 'arbitraryDepthFrameTermAllOutputsAgreement', 'arbitraryDepthFrameTypedTermUniqueFiber', 'arbitraryDepthFrameTermPromiseDischarged', 'arbitraryDepthFrameArgumentFieldsIff', 'arbitraryDepthFrameArgumentProgramIff', 'arbitraryDepthFrameGuardedArgumentProgramIff'),
         "ObjectAbstractOperationFrame": ('arbitraryDepthBoundShiftedIff', 'internalSuccessorThresholdIff', 'knownActualIndexVariableRenameIff', 'actualBinderBoundRenameIff', 'actualBinderFreeRenameIff', 'arbitraryDepthBoundBinderCovarianceIff', 'arbitraryDepthFreeBinderCovarianceIff', 'actualAbstractRootCompatibleFrame', 'actualLiftedBoundFieldsIff', 'actualLiftedFreeFieldsIff', 'allInternalLiftedBoundFieldsIff', 'allInternalLiftedFrameCompatibility', 'actualBinderCompatibleFrameWitnessesDischarged'),
         "ObjectAbstractTopArguments": ('smallModeArgumentActualFiber', 'smallModeArgumentActualFields', 'smallModeArgumentCompleteFieldMapIff', 'modeOneActualTermAllOutputsAgreement', 'modeOneActualTermUniqueTypedFiber', 'modeOneActualTermPromiseDischarged', 'modeOneZeroDepthActualArgumentFieldsIff', 'modeOneZeroDepthActualArgumentProgramIff', 'modeOneZeroDepthArgumentsAtActualCodesIff', 'modeOneZeroDepthArgumentsActualOperationIff', 'modeOneZeroDepthGuardedArgumentsActualOperationIff'),
@@ -3913,6 +3983,7 @@ def main() -> None:
         "actual_abstract_frame_programs_guard": actual_abstract_frame_programs,
         "small_mode_formula_and_abstract_atomic_programs_guard": small_mode_formula_and_abstract_atomic_programs,
         "mode_one_full_formula_correctness_guard": mode_one_full_formula_correctness,
+        "actual_top_formula_and_forall_node_guard": actual_top_formula_and_forall_node,
         "object_original_small_mode_complete_formula_Run3_equations_proved": True,
         "object_original_mode_one_complete_atomic_whole_run_program_proved": True,
         "object_original_mode_one_atomic_term_and_pair_agreements_discharged": True,
@@ -3953,7 +4024,12 @@ def main() -> None:
         "object_original_mode_one_scalar_numeric_guards_proved": True,
         "object_original_mode_one_four_variable_positive_traces_proved": True,
         "object_original_mode_one_full_formula_run_proved": True,
-        "object_original_forall_full_pure_relational_node_proved": False,
+        "object_original_forall_full_pure_relational_node_proved": True,
+        "object_original_forall_exact_four_queries_pure_correspondence_proved": True,
+        "object_original_forall_all_four_assignment_bounds_proved": True,
+        "object_original_forall_nested_head_normalization_proved": True,
+        "object_original_mode_one_actual_top_formula_operation_proved": True,
+        "object_original_forall_shape_numeric_quotation_checker_correspondence_proved": False,
         "object_original_mode_zero_full_formula_run_weakening_proved": True,
         "object_original_strengthening_exact_four_queries_pure_correspondence_proved": True,
         "object_original_strengthening_successor_witness_discharged": True,
@@ -3979,7 +4055,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth compatible frames now prove original term Run1 versus actual term program/coded substitution, typed unique outputs and their internal Promise, and list Run2 versus actual field maps with Promise/list IH discharged and source guards inside final conclusions. Every fixed mode below four now has the original whole Run3 versus the unchanged eleven-outcomes unfold equation, and actual mode1 compatible frames give complete four-atomic program correctness without assumed term/pair agreement or source-field witnesses. Full recursive mode1 formula correctness is now proved for every internal typed code under the actual arbitrary-depth compatible frame, with all ten changing frame/output parameters object-quantified. Real binder lifting uses independent source/target successors. Original ZF SetInduction discharges the formula IH and actual history witnesses. The actual AbstractFreeTop environment supplies the root frame. Original Hilbert forall proof-node, logical/theory shapes, shared quotation/Bool, internal Proof/compiler/interpretation and final Con remain unproved.",
+        "scope": "Original substitution, MP and strengthening nodes, small-mode argument Run2 equations and pure mode1 numeric terms remain proved. Mode1 at empty depth now agrees with actual AbstractFreeTop code tables, the independent term program and coded mixed term substitution on all valid pure terms; actual code-table witnesses are constructed and eliminated and the type guard is inside the conclusion. The zero-depth actual argument-list program map is now proved for arbitrary internal lengths, with list IH, term Promise and both code-table witnesses discharged and source type inside the conclusion. An independent compatible frame now covers arbitrary internal depths and actual typed tables; the real top environment supplies the root, actual original binder lifting preserves it, and old variable/field plus all eight lifting witnesses are discharged. Arbitrary-depth compatible frames now prove original term Run1 versus actual term program/coded substitution, typed unique outputs and their internal Promise, and list Run2 versus actual field maps with Promise/list IH discharged and source guards inside final conclusions. Every fixed mode below four now has the original whole Run3 versus the unchanged eleven-outcomes unfold equation, and actual mode1 compatible frames give complete four-atomic program correctness without assumed term/pair agreement or source-field witnesses. Full recursive mode1 formula correctness is now proved for every internal typed code under the actual arbitrary-depth compatible frame, with all ten changing frame/output parameters object-quantified. Real binder lifting uses independent source/target successors. Original ZF SetInduction discharges the formula IH and actual history witnesses. The actual AbstractFreeTop environment supplies the root frame. Actual mode1 top formula operation is now proved with both actual code tables eliminated and source type inside the final conclusion. The original Hilbert forall local pure relational node is now proved with the original four queries, both successor witnesses eliminated, all four assignment bounds derived, and the nested node3/node9 head normalized by actual numeric constructors. Shared quotation/Bool for these nodes, remaining logical/theory shapes, internal Proof/compiler/interpretation and final Con remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

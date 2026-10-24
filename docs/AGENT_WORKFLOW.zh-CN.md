@@ -1,5 +1,30 @@
 # 对象层迁移工程流程
 
+3f.2c.3b.2d.6j已验收：mode1完整公式运行已接实际AbstractFreeTop，两张实际码表见证均在对象EX中消去，源类型守卫位于最终结论内部。原forall完整局部纯关系节点已完成：原四查询、两个后继界见证消去、全部四赋值搜索界及node3／node9嵌套头规范化。9模块121声明、14组闭句返回原nativeZF。1772构建任务、18961项声明审计（399无公理／18562允许依赖）、零警告；九命令及五trust=0入口全部退出0；1607份独立哈希、2195对精确足迹、16617项Internal覆盖。下一单元是mode2实际InstantiateTop；共享quotation／Bool、专用ProofZF/U、完整内部解释及最终Con仍未完成。见[验收与工程表](STEP4_ACTUAL_TOP_FORMULA_AND_FORALL_ACCEPTANCE.zh-CN.md)。
+
+纯等号／成员语言、完整Separation／Collection、六规则／27模式及全部内部ω的Con规格不变；最终必须取得原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。
+
+以下为历史验收记录，旧状态只对应其历史基点。
+
+## 后续 agent 工程流程
+
+| 顺序 | 实现工作 | 对象交付与状态 |
+|---|---|---|
+| 1 | 原source19规则、rename／instantiate、背景公理传输 | 原核Derives证书，既有批次已验收 |
+| 2 | 原mode0／3及mode1项／列表／完整公式、真实binder | 全内部合法码对应及IH／历史消去，相应批次已验收 |
+| 3 | mode1实际AbstractFreeTop及原全称化节点 | 原四查询、四搜索界、嵌套数值头，本批已验收 |
+| 4 | 原mode2实际InstantiateTop | 从原变量点／前驱规则到实际环境及全内部项／列表／公式，真实binder闭包与根，下一单元 |
+| 5 | 原27逻辑模式、理论公理及剩余证明节点 | 准确arity／头／查询／赋值界及完整ZF/U公理实例，待完成；若采用共享Bool作桥，须证明准确对应 |
+| 6 | 专用纯ℒ Proof_ZF／Proof_U及内部证书转换 | 六规则／27模式、全部内部ω、完整Separation／Collection及检查／编译正确性，待完成 |
+| 7 | 完整数学内部解释与目标理论 | 原核内解释设施及ZF、PP、ACwo、¬AC，待完成 |
+| 8 | 最终内部Con蕴含 | 原Derives nativeZF [] (Con_ZF→Con_target)，尚未证明 |
+
+下一单元先盘点原mode2数值规则与既有实际InstantiateTop环境。原逻辑模式20／23／25使用transform2，21／24使用transform1；不能用mode1结果或外部标准quotation模式替代mode2全内部正确性。每批执行定向编译、原核闭句、全仓构建／禁止缺口／精确足迹、独立回读、本地提交及提交后字节核对。
+
+本批是完整局部纯关系节点；共享扩展语言quotation／Bool、全Proof检查器及最终内部Con仍未完成。
+
+
+
 3f.2c.3b.2d.6i已验收：实际mode1完整公式递归正确性已覆盖全部内部合法码、任意内部深度及全部11构造子。统一对象ALL10允许frame及候选输出变化，原ZF集合归纳消去公式IH，真实历史EX及binder的独立源／目标后继与提升表见证均已消去；实际AbstractFreeTop环境已提供根frame。14模块91声明、9组闭句返回原nativeZF。1763构建任务、18840项声明审计（399无公理／18441允许依赖）、零警告；九命令及五trust=0入口全部退出0；1598份独立哈希、2181对精确证书足迹、16496项Internal显式声明覆盖。原Hilbert全称化节点、共享quotation／Bool、专用ProofZF/U、内部解释及最终Con仍未完成。见[验收与后续工程表](STEP4_MODE_ONE_FULL_FORMULA_ACCEPTANCE.zh-CN.md)。
 
 完整Separation／Collection、六规则／27模式及全部内部ω的Con规格保持不变；最终目标仍是原FirstOrder.Derives nativeZF [] (Con_ZF→Con_target)。

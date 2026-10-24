@@ -9398,4 +9398,79 @@ example {m} (w n mode depth P a b c e R S q : Fin m) :
               (Internal.FormulaTransformExecutionSyntax.executed w R S a b c e n q))))).close)) :=
   Internal.ObjectAbstractFormulaCorrectness.native_modeOneFullFormulaRunExecutionIff w n mode depth P a b c e R S q
 
+example {m} (w mode z P a b A B R S n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.modeOneActualTopFormulaAtCodesIffSentence w mode z P a b A B R S n q)) :=
+  Internal.ObjectForallNode.native_modeOneActualTopFormulaAtCodesIff w mode z P a b A B R S n q
+
+example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.modeOneActualTopFormulaIffSentence w mode z P a b A B n q)) :=
+  Internal.ObjectForallNode.native_modeOneActualTopFormulaIff w mode z P a b A B n q
+
+example {m} (w mode z P a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.modeOneActualTopGuardedFormulaIffSentence w mode z P a b A B n q)) :=
+  Internal.ObjectForallNode.native_modeOneActualTopGuardedFormulaIff w mode z P a b A B n q
+
+example {m} (w a b A B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.modeOneActualTopFormulaSourceSentence w a b A B n q)) :=
+  Internal.ObjectForallNode.native_modeOneActualTopFormulaSource w a b A B n q
+
+example {m} (env : Fin 4 → Fin m) (w z B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallFormulaQueryIffSentence env w z B)) :=
+  Internal.ObjectForallNode.native_forallFormulaQueryIff env w z B
+
+example {m} (env : Fin 4 → Fin m) (w z B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallFreeProjectionQueryIffSentence env w z B)) :=
+  Internal.ObjectForallNode.native_forallFreeProjectionQueryIff env w z B
+
+example {m} (env : Fin 4 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallPredecessorFormulaQueryIffSentence env w)) :=
+  Internal.ObjectForallNode.native_forallPredecessorFormulaQueryIff env w
+
+example {m} (env : Fin 4 → Fin m) (w z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallModeOneTransformNumericIffSentence env w z A)) :=
+  Internal.ObjectForallNode.native_forallModeOneTransformNumericIff env w z A
+
+example {m} (env : Fin 4 → Fin m) (w z A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallActualTopTransformIffSentence env w z A B)) :=
+  Internal.ObjectForallNode.native_forallActualTopTransformIff env w z A B
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallAllFourQueriesIffSentence env w z)) :=
+  Internal.ObjectForallNode.native_forallAllFourQueriesIff env w z
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallAllFourAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectForallNode.native_forallAllFourAssignmentBounds env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallActualNestedHeadIffSentence env w row)) :=
+  Internal.ObjectForallNode.native_forallActualNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallFullPureRelationalNodeIffSentence w z row)) :=
+  Internal.ObjectForallNode.native_forallFullPureRelationalNodeIff w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallNode.forallFullNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectForallNode.native_forallFullNormalizedNodeIff w z row
+
+-- Expanded actual top formula operation, with input type guard inside the conclusion.
+example {m} (w mode z P a b A B n q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((Internal.SyntaxNumeralSyntax.numeral 1 mode).imp
+          ((Internal.OriginalTermTraceSyntax.metadata w z P).imp
+            ((OmegaSyntax.empty z).imp
+              ((Internal.SyntaxTopEnvironmentSyntax.abstractInput w a b A B).imp
+                (((Internal.FormulaCodeSyntax.formulaCode w n a B).conj
+                  (Internal.OriginalTransformRowSyntax.run 3 w mode z P n q)).iff
+                    (Internal.SyntaxTopFormulaSyntax.abstracted w a b A B n q))))))).close)) :=
+  Internal.ObjectForallNode.native_modeOneActualTopGuardedFormulaIff w mode z P a b A B n q
+
+-- Expanded complete node, including the four original bounded assignment witnesses.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.ProofForallNodeSyntax.node w row).iff (Internal.ProofForallNode.normalized w z row)))).close)) :=
+  Internal.ObjectForallNode.native_forallFullNormalizedNodeIff w z row
+
 end PPAC.Migration.Step4Checks
