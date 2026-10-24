@@ -258,3 +258,4 @@ import PPAC.Migration.Internal.ObjectPacketTokenArithmetic
 import PPAC.Migration.Internal.ObjectPacketTokenExecution
 import PPAC.Migration.Internal.ObjectPacketTokenBounds
 import PPAC.Migration.Internal.ObjectPacketStructure
+import PPAC.Migration.Internal.ObjectPacketStructureRoot

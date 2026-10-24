@@ -12030,4 +12030,71 @@ example {m} (f : PacketStructureDispatchData.Family) (w V : Fin m) : YesMetaZFC.
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketStructure.packetStructureActualSystemExistsOnlyOmegaSentence w)) :=
   Internal.ObjectPacketStructure.native_packetStructureActualSystemExistsOnlyOmega w
+example {m} (w V n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootTreeFieldsIffSentence w V n t a r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootTreeFieldsIff w V n t a r
+
+example {m} (w V n l t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootForestNilFieldsIffSentence w V n l t a r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootForestNilFieldsIff w V n l t a r
+
+example {m} (w V n l t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootForestConsFieldsIffSentence w V n l t a r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootForestConsFieldsIff w V n l t a r
+
+example {m} (w V a n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootPacketFieldsIffSentence w V a n r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootPacketFieldsIff w V a n r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootAllActualOutcomesNormalizedSentence f xs w V r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootAllActualOutcomesNormalized f xs w V r
+
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootCanonicalEntryActualAcceptanceIffSentence k tag xs w V)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootCanonicalEntryActualAcceptanceIff k tag xs w V
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootCanonicalCriterionActualRecursiveCasesIffSentence f xs w V)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootCanonicalCriterionActualRecursiveCasesIff f xs w V
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootConditionNormalizedForwardSentence f xs w V r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootConditionNormalizedForward f xs w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualRecursiveCasesWithoutCanonicalSetSentence f xs w r)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualRecursiveCasesWithoutCanonicalSet f xs w r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualAcceptedRecursiveCasesOnlyOmegaSentence f xs w)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualAcceptedRecursiveCasesOnlyOmega f xs w
+
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualAcceptedAllFieldsNaturalSentence k tag xs w)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualAcceptedAllFieldsNatural k tag xs w
+
+example {m} (f : PacketStructureDispatchData.Family) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootAllInternalOutcomeFieldNormalizationSentence f w V)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootAllInternalOutcomeFieldNormalization f w V
+
+example {m} (f : PacketStructureDispatchData.Family) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootAllInternalAcceptedRecursionSentence f w)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootAllInternalAcceptedRecursion f w
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualTreeForwardSentence w n t a)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualTreeForward w n t a
+
+example {m} (w n l t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualForestForwardSentence w n l t a)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualForestForward w n l t a
+
+example {m} (w a n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootActualPacketForwardSentence w a n)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootActualPacketForward w a n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructureRoot.packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketStructureRoot.native_packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega w
 end PPAC.Migration.Step4Checks
