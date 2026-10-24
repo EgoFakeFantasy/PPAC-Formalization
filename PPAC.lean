@@ -230,3 +230,4 @@ import PPAC.Migration.Internal.ObjectLogicalInstantiate
 import PPAC.Migration.Internal.ObjectLogicalStatic
 import PPAC.Migration.Internal.ObjectLogicalAbstract
 import PPAC.Migration.Internal.ObjectProofBaseNodes
+import PPAC.Migration.Internal.ObjectProofTreeTrace

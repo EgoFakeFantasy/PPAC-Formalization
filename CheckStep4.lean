@@ -10420,4 +10420,56 @@ example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.First
       ((Internal.ProofAllNodeSyntax.table test w row).iff (Internal.ProofAllNodeSyntax.specification test w z row)))).close)) :=
   Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff test w z row
 
+example {m} (test : Source.Formula 1) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeAllTraceRootsExistSentence test w)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeAllTraceRootsExist test w
+
+example {m} (test : Source.Formula 1) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeTraceRangeSentence test w r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeTraceRange test w r
+
+example {m} (test : Source.Formula 1) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeAllRootsMembershipIffSentence test w V r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeAllRootsMembershipIff test w V r
+
+example {m} (test : Source.Formula 1) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeAllRootsClosedSentence test w V)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeAllRootsClosed test w V
+
+example {m} (test : Source.Formula 1) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeTwelveRuleTracedStepIffSentence test w V r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeTwelveRuleTracedStepIff test w V r
+
+example {m} (test : Source.Formula 1) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeFullRecursiveTraceIffSentence test w r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeFullRecursiveTraceIff test w r
+
+example {m} (test : Source.Formula 1) (w code : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeNodeEntryRecursiveIffSentence test w code)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeNodeEntryRecursiveIff test w code
+
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeRootEntryRecursiveIffSentence test w code conclusion)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeRootEntryRecursiveIff test w code conclusion
+
+example {m} (kind : Fin 6) (isRoot : Bool) (env : Fin ((ProofTreeBranchConstruction.shape kind).extra+2) → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeTwelveBranchAllAssignmentBoundsSentence kind isRoot env w r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeTwelveBranchAllAssignmentBounds kind isRoot env w r
+
+example {m} (test : Source.Formula 1) (kind : Fin 6) (isRoot : Bool) (env : Fin ((ProofTreeBranchConstruction.shape kind).extra+2) → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofTreeTrace.proofTreeTwelveBranchTraceCompositionSentence test kind isRoot env w r)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeTwelveBranchTraceComposition test kind isRoot env w r
+
+-- Full internal closed-trace equation: no assumed trace set, IH, model or external finite proof.
+example {m} (test : Source.Formula 1) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((Internal.ProofTreeTraceSyntax.condition test w r).iff
+      (Internal.ProofTreeTraceEquation.equation test w r)).close)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeFullRecursiveTraceIff test w r
+
+-- Actual root row links code and candidate conclusion; rank correctness and root closedness remain separate goals.
+example {m} (test : Source.Formula 1) (w code conclusion : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((Internal.ProofTreeEntrySyntax.root test w code conclusion).iff
+      (Internal.ProofTreeEntrySyntax.rootEquation test w code conclusion)).close)) :=
+  Internal.ObjectProofTreeTrace.native_proofTreeRootEntryRecursiveIff test w code conclusion
+
 end PPAC.Migration.Step4Checks

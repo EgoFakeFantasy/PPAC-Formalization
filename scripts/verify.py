@@ -1063,6 +1063,67 @@ def check_base_proof_nodes_and_parameterized_six_table() -> dict:
             'whole_local_table_only_Omega_empty_object_premises':True,
             'dedicated_ZF_U_tests_Proof_recursion_shared_Bool_compiler_and_Con_proved':False}
 
+
+def check_proof_tree_checked_trace_equation() -> dict:
+    # Exact original 12 branches and a closed-trace unfolding equation, not yet rank/Bool/Proof soundness.
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['ProofAllTableRenaming','ProofTreeRowLocalSyntax','ProofTreeTraceSyntax','ProofTreeTraceMonotone',
+        'ProofTreeTraceExtension','ProofTreeUniversalSyntax','ProofTreeUniversalValue','ProofTreeUniversalClosed',
+        'ProofTreeTracedStep','ProofTreeTraceEquation','ProofTreeBranchConstruction','ProofTreeEntrySyntax','ObjectProofTreeTrace']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b',text):
+            raise RuntimeError('Forbidden proof-tree trace shortcut: '+module)
+    for module,theorem,premises in [('ProofTreeUniversalValue','exists_value',set()),
+            ('ProofTreeTraceEquation','recursive_iff',set()),('ProofTreeEntrySyntax','root_recursive_iff',set()),
+            ('ProofTreeEntrySyntax','node_recursive_iff',set()),('ProofTreeBranchConstruction','intro_branch',{'hw','hn','hm','hl'})]:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:
+            raise RuntimeError('Checked-trace endpoint changed: '+module+'.'+theorem)
+        if re.search(r'Promise|Model|Consistent|Classical\.choose|hIH\s*:|hTest\s*:',header.group(0)):
+            raise RuntimeError('Undischarged checked-trace oracle')
+        if '(test : Formula 1)' not in header.group(0):raise RuntimeError('Object axiom-test parameter hidden')
+    required={
+      'ProofAllTableRenaming':['query_rename','listBundle_rename','matrix_rename','node_rename','table_rename'],
+      'ProofTreeRowLocalSyntax':['PairingProjectionSyntax.step true true','RawCodeFieldSyntax.field',
+          'ProofAllNodeSyntax.table test','(OmegaSyntax.empty (Fin.last m)).imp'],
+      'ProofTreeTraceSyntax':['HornStepSyntax.step ObjectProofTree.rules','ProofTreeRowLocalSyntax.localCondition',
+          'RestrictionSyntax.subset R w','original_rules_count','payload_arities','child_positions'],
+      'ProofTreeTraceMonotone':['HornTraceMonotone.step','Derives.eqSubst'],
+      'ProofTreeTraceExtension':['InsertExistence.exists_insert','ProofTreeTraceMonotone.step','ProofTreeTraceMonotone.row_subst'],
+      'ProofTreeUniversalSyntax':['MinimalPredicates.separated (matrix test)','ProofTreeTraceSyntax.condition test'],
+      'ProofTreeUniversalValue':['MinimalInstances.separation_instance','ZFContext.separation hZ','subtrace_included'],
+      'ProofTreeUniversalClosed':['ProofTreeUniversalValue.subtrace_included','ProofTreeTraceMonotone.step','ProofTreeTraceExtension.condition'],
+      'ProofTreeTracedStep':['HornRuleSyntax.guards rule.guards','HornExprBounds.environmentBound rule.arity',
+          'HornApplicationBounds.existsMany_congr rule.arity','ProofTreeUniversalValue.member_iff'],
+      'ProofTreeTraceEquation':['ProofTreeUniversalValue.exists_value test hZ w','Derives.exE','at_value_iff',
+          'ProofTreeTracedStep.step_iff','ProofTreeRowLocalSyntax.localCondition'],
+      'ProofTreeBranchConstruction':['shape_mem','head_variables','HornExprBounds.variable_bound','ObjectProofTree.branch_mem',
+          'HornExprRange.range','ProofTreeTraceEquation.recursive_iff'],
+      'ProofTreeEntrySyntax':['SyntaxNodeSyntax.constructor 1 0','SyntaxNodeSyntax.constructor 2 1',
+          'SetLanguage.args2 code.castSucc conclusion.castSucc','FormulaCodeCongruence.ex_congr']}
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing exact checked trace construction: '+module+': '+clause)
+    # The accepting trace cannot use its recursion equation or an intended proof-validity assertion.
+    for module in ['ProofTreeTraceSyntax','ProofTreeRowLocalSyntax']:
+        if re.search(r'ProofTreeTraceEquation|WellFounded|ProofValid|dedicatedProof|Consistent',texts[module]):
+            raise RuntimeError('Conclusion used as checked-trace acceptance oracle')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name,args in [('proofTreeFullRecursiveTraceIff','test w r'),('proofTreeRootEntryRecursiveIff','test w code conclusion')]:
+        if 'ObjectProofTreeTrace.native_'+name+' '+args not in check:
+            raise RuntimeError('Missing expanded native checked trace contract')
+    return {'actual_twelve_original_rules_and_payload_arities_children_preserved':True,
+            'per_row_actual_tag_and_field_local_check_retained':True,
+            'arbitrary_internal_omega_subset_closed_traces':True,
+            'Pairing_Union_inserts_real_root_and_preserves_local_checks':True,
+            'original_Separation_constructs_all_trace_root_set':True,
+            'canonical_trace_set_witness_object_eliminated_in_final_equation':True,
+            'all_actual_twelve_branch_bounds_and_composition_proved':True,
+            'actual_node_and_root_candidate_conclusion_entry_equations_proved':True,
+            'object_test_Formula1_parameter_still_explicit':True,
+            'rank_induction_root_closedness_Bool_and_dedicated_Proof_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1091,6 +1152,7 @@ def main() -> None:
     static_logical_nodes = check_static_logical_nodes()
     abstract_logical_nodes_and_exact_table = check_abstract_logical_nodes_and_exact_table()
     base_proof_nodes_and_parameterized_six_table = check_base_proof_nodes_and_parameterized_six_table()
+    proof_tree_checked_trace_equation = check_proof_tree_checked_trace_equation()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3755,7 +3817,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedWholeNodeIff',
                     'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualShapeTableIff',
                     'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedSelectedNodesIff',
-                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeAllTraceRootsExist',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeTraceRange',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeAllRootsMembershipIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeAllRootsClosed',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeTwelveRuleTracedStepIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeFullRecursiveTraceIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeNodeEntryRecursiveIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeRootEntryRecursiveIff',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeTwelveBranchAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectProofTreeTrace.native_proofTreeTwelveBranchTraceComposition'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3767,6 +3839,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProofTreeTrace": ('proofTreeAllTraceRootsExist', 'proofTreeTraceRange', 'proofTreeAllRootsMembershipIff', 'proofTreeAllRootsClosed', 'proofTreeTwelveRuleTracedStepIff', 'proofTreeFullRecursiveTraceIff', 'proofTreeNodeEntryRecursiveIff', 'proofTreeRootEntryRecursiveIff', 'proofTreeTwelveBranchAllAssignmentBounds', 'proofTreeTwelveBranchTraceComposition'),
         "ObjectProofBaseNodes": ('proofLogicalNumericHeadIff', 'proofLogicalQueryConstructorIff', 'proofLogicalQueryNormalizedIff', 'proofLogicalAllAssignmentBounds', 'proofLogicalBoundedMatrixIff', 'proofLogicalWholeNodeIff', 'proofTheoryNumericHeadIff', 'proofTheoryFormulaQueryIff', 'proofTheoryParameterizedAxiomQueryIff', 'proofTheoryParameterizedAllQueriesIff', 'proofTheoryAllAssignmentBounds', 'proofTheoryParameterizedBoundedMatrixIff', 'proofTheoryParameterizedWholeNodeIff', 'proofSixRulesParameterizedActualShapeTableIff', 'proofSixRulesParameterizedSelectedNodesIff', 'proofSixRulesParameterizedActualTableSpecificationIff'),
         "ObjectLogicalAbstract": ('logicalRule21AtSuccessorsQueriesIff', 'logicalRule21AtOneQueriesIff', 'logicalRule21AllQueriesIff', 'logicalRule21AllAssignmentBounds', 'logicalRule21NumericNestedHeadIff', 'logicalRule21WholeNormalizedNodeIff', 'logicalRule24AtSuccessorsQueriesIff', 'logicalRule24AtOneQueriesIff', 'logicalRule24AllQueriesIff', 'logicalRule24AllAssignmentBounds', 'logicalRule24NumericNestedHeadIff', 'logicalRule24WholeNormalizedNodeIff', 'logicalAllTwentySevenWholeNodesIff', 'logicalAllTwentySevenActualShapeTableIff', 'logicalAllTwentySevenActualTableSpecificationIff'),
         "ObjectLogicalStatic": ('staticLogicalAllQueriesIff', 'staticLogicalRule0WholeNormalizedNodeIff', 'staticLogicalRule0AllAssignmentBounds', 'staticLogicalRule0NumericNestedHeadIff', 'staticLogicalRule1WholeNormalizedNodeIff', 'staticLogicalRule1AllAssignmentBounds', 'staticLogicalRule1NumericNestedHeadIff', 'staticLogicalRule2WholeNormalizedNodeIff', 'staticLogicalRule2AllAssignmentBounds', 'staticLogicalRule2NumericNestedHeadIff', 'staticLogicalRule3WholeNormalizedNodeIff', 'staticLogicalRule3AllAssignmentBounds', 'staticLogicalRule3NumericNestedHeadIff', 'staticLogicalRule4WholeNormalizedNodeIff', 'staticLogicalRule4AllAssignmentBounds', 'staticLogicalRule4NumericNestedHeadIff', 'staticLogicalRule5WholeNormalizedNodeIff', 'staticLogicalRule5AllAssignmentBounds', 'staticLogicalRule5NumericNestedHeadIff', 'staticLogicalRule6WholeNormalizedNodeIff', 'staticLogicalRule6AllAssignmentBounds', 'staticLogicalRule6NumericNestedHeadIff', 'staticLogicalRule7WholeNormalizedNodeIff', 'staticLogicalRule7AllAssignmentBounds', 'staticLogicalRule7NumericNestedHeadIff', 'staticLogicalRule8WholeNormalizedNodeIff', 'staticLogicalRule8AllAssignmentBounds', 'staticLogicalRule8NumericNestedHeadIff', 'staticLogicalRule9WholeNormalizedNodeIff', 'staticLogicalRule9AllAssignmentBounds', 'staticLogicalRule9NumericNestedHeadIff', 'staticLogicalRule10WholeNormalizedNodeIff', 'staticLogicalRule10AllAssignmentBounds', 'staticLogicalRule10NumericNestedHeadIff', 'staticLogicalRule11WholeNormalizedNodeIff', 'staticLogicalRule11AllAssignmentBounds', 'staticLogicalRule11NumericNestedHeadIff', 'staticLogicalRule12WholeNormalizedNodeIff', 'staticLogicalRule12AllAssignmentBounds', 'staticLogicalRule12NumericNestedHeadIff', 'staticLogicalRule13WholeNormalizedNodeIff', 'staticLogicalRule13AllAssignmentBounds', 'staticLogicalRule13NumericNestedHeadIff', 'staticLogicalRule14WholeNormalizedNodeIff', 'staticLogicalRule14AllAssignmentBounds', 'staticLogicalRule14NumericNestedHeadIff', 'staticLogicalRule15WholeNormalizedNodeIff', 'staticLogicalRule15AllAssignmentBounds', 'staticLogicalRule15NumericNestedHeadIff', 'staticLogicalRule16WholeNormalizedNodeIff', 'staticLogicalRule16AllAssignmentBounds', 'staticLogicalRule16NumericNestedHeadIff', 'staticLogicalRule17WholeNormalizedNodeIff', 'staticLogicalRule17AllAssignmentBounds', 'staticLogicalRule17NumericNestedHeadIff', 'staticLogicalRule18WholeNormalizedNodeIff', 'staticLogicalRule18AllAssignmentBounds', 'staticLogicalRule18NumericNestedHeadIff', 'staticLogicalRule19WholeNormalizedNodeIff', 'staticLogicalRule19AllAssignmentBounds', 'staticLogicalRule19NumericNestedHeadIff', 'staticLogicalRule22WholeNormalizedNodeIff', 'staticLogicalRule22AllAssignmentBounds', 'staticLogicalRule22NumericNestedHeadIff', 'staticLogicalRule26WholeNormalizedNodeIff', 'staticLogicalRule26AllAssignmentBounds', 'staticLogicalRule26NumericNestedHeadIff'),
@@ -4703,6 +4776,14 @@ def main() -> None:
         "static_logical_nodes_guard": static_logical_nodes,
         "abstract_logical_nodes_and_exact_table_guard": abstract_logical_nodes_and_exact_table,
         "base_proof_nodes_and_parameterized_six_table_guard": base_proof_nodes_and_parameterized_six_table,
+        "proof_tree_checked_trace_equation_guard": proof_tree_checked_trace_equation,
+        'object_original_proof_tree_twelve_branch_checked_trace_AST_implemented': True,
+        'object_original_proof_tree_all_trace_roots_Separation_and_closure_proved': True,
+        'object_original_proof_tree_full_internal_closed_trace_equation_proved': True,
+        'object_original_proof_tree_twelve_branch_bounds_and_positive_composition_proved': True,
+        'object_original_proof_tree_node_root_entry_recursive_equations_proved': True,
+        'object_original_proof_tree_rank_induction_root_closedness_and_full_checker_correctness_proved': False,
+
         'object_original_logical_proof_node_full_pure_relation_proved': True,
         'object_original_theory_proof_node_object_formula_parameter_interface_proved': True,
         'object_original_six_rule_pure_local_table_with_axiom_formula_parameter_proved': True,
