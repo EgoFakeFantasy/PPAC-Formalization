@@ -8744,4 +8744,86 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
        (HornBinderSyntax.existsMany 5 (ProofMPNodeSyntax.specificationBody w z row))))).close)) :=
   ObjectProofMPNode.native_mpFullPureRelationalNodeIff w z row
 
+
+
+example {m} (w mode depth P a b B n q I J R S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.modeZeroFormulaAtCodesIffSentence w mode depth P a b B n q I J R S)) :=
+  Internal.ObjectProofStrengtheningNode.native_modeZeroFormulaAtCodesIff w mode depth P a b B n q I J R S
+
+example {m} (w mode depth P a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.modeZeroFullFormulaWeakenIffSentence w mode depth P a b B n q)) :=
+  Internal.ObjectProofStrengtheningNode.native_modeZeroFullFormulaWeakenIff w mode depth P a b B n q
+
+example {m} (w mode depth P a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.modeZeroFullFormulaProgramIffSentence w mode depth P a b B n q)) :=
+  Internal.ObjectProofStrengtheningNode.native_modeZeroFullFormulaProgramIff w mode depth P a b B n q
+
+example {m} (w mode depth P a b B n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.modeZeroFullFormulaOutputTypeSentence w mode depth P a b B n q)) :=
+  Internal.ObjectProofStrengtheningNode.native_modeZeroFullFormulaOutputType w mode depth P a b B n q
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningFormulaQueryIffSentence env w z)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningFormulaQueryIff env w z
+
+example {m} (env : Fin 4 → Fin m) (w z B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningFreeProjectionAtSuccessorIffSentence env w z B)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningFreeProjectionAtSuccessorIff env w z B
+
+example {m} (env : Fin 4 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningPredecessorFormulaIffSentence env w)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningPredecessorFormulaIff env w
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningActualModeZeroQueryIffSentence env w z)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningActualModeZeroQueryIff env w z
+
+example {m} (env : Fin 4 → Fin m) (w z B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningGuardedModeZeroProgramIffSentence env w z B)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningGuardedModeZeroProgramIff env w z B
+
+example {m} (env : Fin 4 → Fin m) (w z B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningAllFourQueriesAtSuccessorIffSentence env w z B)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningAllFourQueriesAtSuccessorIff env w z B
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningAllFourQueriesIffSentence env w z)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningAllFourQueriesIff env w z
+
+example {m} (env : Fin 4 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningPredecessorFormulaBoundSentence env w)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningPredecessorFormulaBound env w
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningAllAssignmentBounds env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningActualThreeFieldHeadIffSentence env w row)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningActualThreeFieldHeadIff env w row
+
+example {m} (env : Fin 4 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningBoundedMatrixIffSentence env w z row)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningBoundedMatrixIff env w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofStrengtheningNode.strengtheningFullPureRelationalNodeIffSentence w z row)) :=
+  Internal.ObjectProofStrengtheningNode.native_strengtheningFullPureRelationalNodeIff w z row
+
+example : YesMetaZFC.Automation.ObjectProofNode.strengtheningShape.arity = 4 := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.strengtheningShape.queries.length = 4 := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.strengtheningShape.head =
+    YesMetaZFC.Automation.ObjectProofNode.node 4 [.var 0, .var 1, .var 2] := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.strengtheningShape.queries[1] =
+    YesMetaZFC.Automation.ObjectProofNode.projection (.var 2) 0 (.succ (.var 0)) := rfl
+example : YesMetaZFC.Automation.ObjectProofNode.strengtheningShape.queries[3] =
+    YesMetaZFC.Automation.ObjectProofNode.transform 0 (.literal 0) (.var 1) (.var 3) := rfl
+
+-- 原四赋值EX全部内部绑定；最终仅Ω／空集零值，不预给后继界／码表／合法前驱。
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((HornBinderSyntax.existsMany 4 (ProofStrengtheningNodeSyntax.body w row)).iff
+       (HornBinderSyntax.existsMany 4 (ProofStrengtheningNodeSyntax.specificationBody w z row))))).close)) :=
+  ObjectProofStrengtheningNode.native_strengtheningFullPureRelationalNodeIff w z row
+
 end PPAC.Migration.Step4Checks

@@ -211,3 +211,4 @@ import PPAC.Migration.Internal.ObjectProjectionTag
 import PPAC.Migration.Internal.ObjectProjectionGetField
 import PPAC.Migration.Internal.ObjectProofSubstitutionNode
 import PPAC.Migration.Internal.ObjectProofMPNode
+import PPAC.Migration.Internal.ObjectProofStrengtheningNode
