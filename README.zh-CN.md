@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+3f.2c.3b.2d.6c已验收：原参数列nil／cons完整方程已覆盖每个固定k<4，mode1／2实例已显式核验；真实原Run1／Run2子查询保持不变，nil赋值、全根集合及根行码见证已对象消去。mode1对全部有效纯项的数值双条件已证明，类型守卫保留在结论内部。8模块60声明、11组闭句返回原nativeZF。1703构建任务、18348项审计（398无公理／17950允许依赖）、零警告；九命令及五trust=0入口全部退出0；1538份独立哈希一致、2106对精确证书足迹、16004项Internal显式声明覆盖。实际抽象环境的项／列表映射、完整mode1公式及forall、共享quotation／Bool、ProofZF/U和最终Con仍未完成。见[验收](docs/STEP4_SMALL_MODE_ARGUMENTS_PURE_TERM_ACCEPTANCE.zh-CN.md)。
+
+以下保留历史验收记录。
+
 3f.2c.3b.2d.6b已验收：原mode1绑定／自由变量对全部内部候选输出的数值双条件已证明，四条原规则赋值见证已消去；整条原kind1变量运行已与独立数值关系对象等价，实际行码在对象EX中构造并消去，输出自然性实际推出。最终只有Ω、Num1、自然深度／参数和真实输入变量码前提，没有给定行码／赋值／轨迹或输出自然性前提。7模块100声明、14组闭句返回原nativeZF。1695构建任务、18288项审计（398无公理／17890允许依赖）、零警告；九命令及五trust=0入口全部退出0；1530份独立哈希一致、2095对精确证书足迹、15944项Internal显式声明覆盖。递归应用项／参数列、完整mode1公式及forall、共享quotation／Bool、ProofZF/U和最终Con仍未完成。见[验收](docs/STEP4_MODE_ONE_VARIABLE_NUMERIC_ACCEPTANCE.zh-CN.md)。
 
 以下保留历史验收记录。

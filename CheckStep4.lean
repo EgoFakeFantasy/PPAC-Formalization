@@ -8958,4 +8958,71 @@ example {m} (bound : Bool) (w mode depth P x idx y : Fin m) :
             (AbstractVariableValueSyntax.valueSpec bound w depth idx x y)))))).close)) :=
   ObjectAbstractVariable.native_modeOneAllVariableNumericRunIff bound w mode depth P x idx y
 
+
+
+example {m} (k : Fin 4) (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeOriginalNilGuardSentence k env w)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeOriginalNilGuard k env w
+
+example {m} (k : Fin 4) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeOriginalNilMatrixIffSentence k env w n q r)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeOriginalNilMatrixIff k env w n q r
+
+example {m} (k : Fin 4) (env : Fin 3 → Fin m) (w n q r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeOriginalNilAtRowIffSentence k env w n q r)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeOriginalNilAtRowIff k env w n q r
+
+example {m} (k : Fin 4) (w mode depth parameter input output r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeOriginalNilApplicationIffSentence k w mode depth parameter input output r V)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeOriginalNilApplicationIff k w mode depth parameter input output r V
+
+example {m} (k : Fin 4) (w mode depth parameter input output r V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeArgumentTraceAtActualValueIffSentence k w mode depth parameter input output r V)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeArgumentTraceAtActualValueIff k w mode depth parameter input output r V
+
+example {m} (k : Fin 4) (w mode depth parameter input output r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeArgumentTraceIffSentence k w mode depth parameter input output r)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeArgumentTraceIff k w mode depth parameter input output r
+
+example {m} (k : Fin 4) (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.smallModeArgumentWholeRunIffSentence k w mode depth parameter input output)) :=
+  Internal.ObjectSmallModeArguments.native_smallModeArgumentWholeRunIff k w mode depth parameter input output
+
+example {m} (w mode depth P a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.modeOnePureTermGuardedNumericIffSentence w mode depth P a b n q)) :=
+  Internal.ObjectSmallModeArguments.native_modeOnePureTermGuardedNumericIff w mode depth P a b n q
+
+example {m} (w mode depth P a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.modeOnePureTermTypedNumericIffSentence w mode depth P a b n q)) :=
+  Internal.ObjectSmallModeArguments.native_modeOnePureTermTypedNumericIff w mode depth P a b n q
+
+example {m} (bound : Bool) (w mode depth P limit n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.modeOneTermScopeBranchNumericSentence bound w mode depth P limit n q)) :=
+  Internal.ObjectSmallModeArguments.native_modeOneTermScopeBranchNumeric bound w mode depth P limit n q
+
+example {m} (bound : Bool) (w mode depth P limit n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectSmallModeArguments.modeOneTermNumericBranchRunSentence bound w mode depth P limit n q)) :=
+  Internal.ObjectSmallModeArguments.native_modeOneTermNumericBranchRun bound w mode depth P limit n q
+
+-- 明确检查mode1与mode2，不能以旧Boolthree=false(mode0)接口替代。
+example {m} (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 1 mode).imp
+      ((Source.Formula.mem depth w).imp ((Source.Formula.mem parameter w).imp
+        ((OriginalTransformRowSyntax.run 2 w mode depth parameter input output).iff
+          (OriginalArgumentCaseSyntax.outcomes w mode depth parameter input output)))))).close)) :=
+  ObjectSmallModeArguments.native_smallModeArgumentWholeRunIff (1 : Fin 4) w mode depth parameter input output
+example {m} (w mode depth parameter input output : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 2 mode).imp
+      ((Source.Formula.mem depth w).imp ((Source.Formula.mem parameter w).imp
+        ((OriginalTransformRowSyntax.run 2 w mode depth parameter input output).iff
+          (OriginalArgumentCaseSyntax.outcomes w mode depth parameter input output)))))).close)) :=
+  ObjectSmallModeArguments.native_smallModeArgumentWholeRunIff (2 : Fin 4) w mode depth parameter input output
+-- 纯成员语言有效项只有两个变量分支；类型守卫保留在结论内部。
+example {m} (w mode depth P a b n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((SyntaxNumeralSyntax.numeral 1 mode).imp
+      ((OriginalTermTraceSyntax.metadata w depth P).imp
+        (((SyntaxTermSyntax.term w a b n).conj (OriginalTransformRowSyntax.run 1 w mode depth P n q)).iff
+          (AbstractTermValueSyntax.value w a b depth n q))))).close)) :=
+  ObjectSmallModeArguments.native_modeOnePureTermGuardedNumericIff w mode depth P a b n q
+
 end PPAC.Migration.Step4Checks
