@@ -11979,4 +11979,55 @@ example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w n t a r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketTokenBounds.packetTokenActualContainedInputTailBoundsSentence w n t a r)) :=
   Internal.ObjectPacketTokenBounds.native_packetTokenActualContainedInputTailBounds w n t a r
+example {m} (env : Fin 7 → Fin m) (w V r n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureTreeExactMatrixSentence env w V r n)) :=
+  Internal.ObjectPacketStructure.native_packetStructureTreeExactMatrix env w V r n
+
+example {m} (env : Fin 1 → Fin m) (w V r z e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureForestNilExactMatrixSentence env w V r z e)) :=
+  Internal.ObjectPacketStructure.native_packetStructureForestNilExactMatrix env w V r z e
+
+example {m} (env : Fin 6 → Fin m) (w V r n s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureForestConsExactMatrixSentence env w V r n s)) :=
+  Internal.ObjectPacketStructure.native_packetStructureForestConsExactMatrix env w V r n s
+
+example {m} (env : Fin 3 → Fin m) (w V r e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructurePacketExactMatrixSentence env w V r e)) :=
+  Internal.ObjectPacketStructure.native_packetStructurePacketExactMatrix env w V r e
+
+example {m} (b : PacketStructureApplicationSyntax.Branch) (env : Fin (PacketStructureApplicationSyntax.rule b).arity → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureAllFourCompleteLocalMatricesSentence b env w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureAllFourCompleteLocalMatrices b env w V r
+
+example {m} (b : PacketStructureApplicationSyntax.Branch) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureOriginalBoundedApplicationsIffSentence b w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureOriginalBoundedApplicationsIff b w V r
+
+example {m} (b : PacketStructureApplicationSyntax.Branch) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureOriginalApplicationForwardSentence b w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureOriginalApplicationForward b w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureOriginalThreeTagDispatchSentence f xs w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureOriginalThreeTagDispatch f xs w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureActualConditionBoundedIffSentence f xs w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureActualConditionBoundedIff f xs w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureActualConditionForwardSentence f xs w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureActualConditionForward f xs w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (xs : Fin (PacketStructureDispatchData.width f) → Fin m) (w V r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureActualRootLawSentence f xs w V r)) :=
+  Internal.ObjectPacketStructure.native_packetStructureActualRootLaw f xs w V r
+
+example {m} (f : PacketStructureDispatchData.Family) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureAllInternalRootLawsSentence f w V)) :=
+  Internal.ObjectPacketStructure.native_packetStructureAllInternalRootLaws f w V
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketStructure.packetStructureActualSystemExistsOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketStructure.native_packetStructureActualSystemExistsOnlyOmega w
 end PPAC.Migration.Step4Checks

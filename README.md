@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+原tree／forestNil／forestCons／packet四条完整局部矩阵及正向应用已验收：arity7／1／6／3、空guard、全部head字段和有序前提保持原样；rawNode、Nil、Cons／后继及单位见证对象消去。完整有界应用与保留原自然性／搜索界的结构结果双向等价，并推出无搜索界的正向结果；tag3／4／5按完整原十规则准确分派。仅Ω对象构造同一个规范接受集合及ALL4／ALL5／ALL3三类根定律。13模块196声明、13组原nativeZF闭句；2274构建、24558审计（471无公理／24087允许依赖）、零警告；九命令／五trust=0通过，2054哈希、2744对精确足迹、22214项Internal覆盖。全部既有布尔叶原值保持。指定根字段归一、联合tail界、反向搜索界消去、完整字节程序、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_STRUCTURE_FORWARD_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 实际token的全内部输入／tail数值界已验收：固定对象Formula2矩阵经原Foundation／Separation商归纳消去全部IH，真实大小分支及两坐标仿射比较推出input≤output与tail≤output；128／256见证对象消去，最终ALL3仅需Ω，标量接口仅需Ω及真实Tok。7模块77声明、12组原nativeZF闭句；2261构建、24362审计（466无公理／23896允许依赖）、零警告；九命令／五trust=0通过，2041哈希、2731对精确足迹、22018项Internal覆盖。全部既有布尔叶原值保持；完整tree／forest／packet、规范字节程序、原Basic AST桥、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_TOKEN_BOUNDS_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
