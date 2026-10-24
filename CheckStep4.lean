@@ -10706,4 +10706,59 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (((omega w).imp (Internal.FixedAxiomTableExistence.existsTest true w)).close)) :=
   Internal.ObjectFixedAxiomTest.native_fixedAxiomAcceptedWitnessExists true 0 (by decide) w
 
+example {m} (tag : Nat) (w a n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationExistsUniqueSentence tag w a n)) :=
+  Internal.ObjectForallClosure.native_unaryIterationExistsUnique tag w a n
+
+example {m} (tag : Nat) (w a n y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationNaturalRangeSentence tag w a n y)) :=
+  Internal.ObjectForallClosure.native_unaryIterationNaturalRange tag w a n y
+
+example {m} (tag : Nat) (w a n y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationUniqueSentence tag w a n y z)) :=
+  Internal.ObjectForallClosure.native_unaryIterationUnique tag w a n y z
+
+example {m} (tag : Nat) (w a z y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationZeroIffSentence tag w a z y)) :=
+  Internal.ObjectForallClosure.native_unaryIterationZeroIff tag w a z y
+
+example {m} (tag : Nat) (w a n s y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationSuccessorIffSentence tag w a n s y z)) :=
+  Internal.ObjectForallClosure.native_unaryIterationSuccessorIff tag w a n s y z
+
+example {m} (tag : Nat) (w a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.unaryIterationAllInternalCountsSentence tag w a)) :=
+  Internal.ObjectForallClosure.native_unaryIterationAllInternalCounts tag w a
+
+example {m} (w a source f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.forallClosureUniformTypingSentence w a source f)) :=
+  Internal.ObjectForallClosure.native_forallClosureUniformTyping w a source f
+
+example {m} (w a source f n b y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.forallClosureTypingIffSentence w a source f n b y)) :=
+  Internal.ObjectForallClosure.native_forallClosureTypingIff w a source f n b y
+
+example {m} (w a n z y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.forallClosureClosedIffSentence w a n z y)) :=
+  Internal.ObjectForallClosure.native_forallClosureClosedIff w a n z y
+
+example {m} (w a n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.forallClosureClosedExistsUniqueSentence w a n z)) :=
+  Internal.ObjectForallClosure.native_forallClosureClosedExistsUnique w a n z
+
+example {m} (w a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectForallClosure.forallClosureAllInternalCountsSentence w a)) :=
+  Internal.ObjectForallClosure.native_forallClosureAllInternalCounts w a
+
+-- The iteration count is an object-quantified omega element.
+example {m} (w a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((Source.Formula.mem a w).imp (Source.Formula.all ((Source.Formula.mem (Fin.last m) w.castSucc).imp (Internal.SyntaxUnaryIterationSyntax.fiber 9 w.castSucc a.castSucc (Fin.last m)))))).close)) :=
+  Internal.ObjectForallClosure.native_forallClosureAllInternalCounts w a
+
+-- Input typing supplies count/input naturality; all closed-output witnesses are internal.
+example {m} (w a n z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((empty z).imp
+      ((Internal.FormulaCodeSyntax.formulaCode w a n z).imp (Internal.SyntaxForallClosureOutput.fiber w a n z)))).close)) :=
+  Internal.ObjectForallClosure.native_forallClosureClosedExistsUnique w a n z
+
 end PPAC.Migration.Step4Checks

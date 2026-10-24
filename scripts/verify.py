@@ -1331,6 +1331,42 @@ def check_fixed_axiom_partial_test() -> dict:
             'full_Separation_Collection_internal_test_proved':False,
             'Bool_Proof_compiler_interpretation_Con_proved':False}
 
+def check_all_internal_forall_closure() -> dict:
+    modules=['SyntaxUnaryIterationStep', 'SyntaxUnaryIterationSyntax', 'SyntaxUnaryIterationCore', 'SyntaxUnaryIterationLaws', 'SyntaxForallClosureTypingSyntax', 'SyntaxForallClosureTypingHelpers', 'SyntaxForallClosureTypingPoint', 'SyntaxForallClosureTyping', 'SyntaxForallClosureOutput', 'ObjectForallClosure']
+    texts={name:strip_comments((ROOT/'PPAC/Migration/Internal'/(name+'.lean')).read_text(encoding='utf-8')) for name in modules}
+    for name,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix',text):
+            raise RuntimeError('Forbidden internal closure shortcut: '+name)
+    required={
+      'SyntaxUnaryIterationStep':['SyntaxConstructors.exists_constructor','SyntaxConstructors.unique','relationTotal','relationFunctional'],
+      'SyntaxUnaryIterationSyntax':['NaturalEvaluationSyntax.evaluation (SyntaxUnaryIterationStep.matrix tag)','def forallClosure','iterate 9 w a n y'],
+      'SyntaxUnaryIterationCore':['NaturalRecursion.source_uniqueness','ObjectNaturalRecursion.instantiate_unique','NaturalEvaluationFiber.at_natural','NaturalEvaluationRange.evaluation_range'],
+      'SyntaxUnaryIterationLaws':['NaturalRecursionLaws.evaluation_zero','NaturalEvaluationStep.evaluation_step','successor_backward','all_internal_counts'],
+      'SyntaxForallClosureTypingSyntax':['allMany 2 (body','NaturalAdditionSyntax.sum w n b source','formulaCode w y b f','formulaCode w a source f'],
+      'SyntaxForallClosureTypingHelpers':['ZFArithmetic.add_commute','ZFArithmetic.add_succ_backward','FormulaCodeKnownLogical.forall_iff','FormulaCodeBranchSyntax.at_successor'],
+      'SyntaxForallClosureTypingPoint':['move_successor','SyntaxUnaryIterationCore.exists_iteration','Derives.exE','quantified_at_successor','at_point'],
+      'SyntaxForallClosureTyping':['OmegaInduction.induction_on_omega','ZFContext.separation hZ','all_correct','typed_iff'],
+      'SyntaxForallClosureOutput':['FormulaCodeProperties.guards','closed_iff','closed_exists_unique','SyntaxUnaryIterationCore.exists_unique'],
+      'ObjectForallClosure':['TheoryTransport.sentence','ZFReplay.replay','native_forallClosureClosedExistsUnique','native_forallClosureAllInternalCounts']}
+    for name,clauses in required.items():
+        if any(clause not in texts[name] for clause in clauses):raise RuntimeError('Internal closure proof drift: '+name)
+    for module,name,premises in [('SyntaxForallClosureTyping','typed_iff',{'hw','ha','hf','hn','hb','hs','hy'}),('SyntaxForallClosureOutput','closed_exists_unique',{'hw','hz','ht'}),('SyntaxUnaryIterationLaws','all_internal_counts',{'hw','ha'})]:
+        header=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:raise RuntimeError('Closure endpoint hidden premise: '+name)
+        if re.search(r'hIH\s*:|Promise|Consistent|Model',header.group(0)):raise RuntimeError('Closure endpoint retains an external correctness premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for clause in ['ObjectForallClosure.native_forallClosureAllInternalCounts w a','ObjectForallClosure.native_forallClosureClosedExistsUnique w a n z','SyntaxUnaryIterationSyntax.fiber 9 w.castSucc a.castSucc (Fin.last m)']:
+        if clause not in check:raise RuntimeError('Missing expanded internal-count closure check')
+    return {'arbitrary_internal_count_is_object_ALL_not_external_Nat_index':True,
+            'actual_recursion_graphs_and_natural_witnesses_object_eliminated':True,
+            'zero_and_successor_unary_node_equations_proved':True,
+            'remaining_bound_and_output_vary_in_object_ALL2_IH':True,
+            'object_omega_induction_discharges_typing_IH':True,
+            'exact_type_equivalence_bound_n_plus_b_to_b':True,
+            'input_typing_supplies_closed_fiber_natural_guards':True,
+            'original_Project_schema_and_Horn_condition_correspondence_proved':False,
+            'complete_schema_test_Proof_interpretation_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1365,6 +1401,7 @@ def main() -> None:
     proof_tree_internal_induction = check_proof_tree_internal_induction()
     proof_tree_equation_unique = check_proof_tree_equation_unique()
     fixed_axiom_partial_test = check_fixed_axiom_partial_test()
+    all_internal_forall_closure = check_all_internal_forall_closure()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4076,7 +4113,18 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationTwoSolutions',
                     'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationNodeNatural',
                     'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeEquationSolutionNatural',
-                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofTreeEquation.native_proofTreeCanonicalNodeEquation',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationExistsUnique',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationNaturalRange',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationUnique',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationZeroIff',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationSuccessorIff',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_unaryIterationAllInternalCounts',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureUniformTyping',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureTypingIff',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureClosedIff',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureClosedExistsUnique',
+                    'PPAC.Migration.Internal.ObjectForallClosure.native_forallClosureAllInternalCounts'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4088,6 +4136,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectForallClosure": ('unaryIterationExistsUnique', 'unaryIterationNaturalRange', 'unaryIterationUnique', 'unaryIterationZeroIff', 'unaryIterationSuccessorIff', 'unaryIterationAllInternalCounts', 'forallClosureUniformTyping', 'forallClosureTypingIff', 'forallClosureClosedIff', 'forallClosureClosedExistsUnique', 'forallClosureAllInternalCounts'),
         "ObjectFixedAxiomTest": ('fixedPacketExists', 'fixedPacketNatural', 'fixedPacketUnique', 'fixedPacketTagsDisjoint', 'fixedPacketAtValue'),
         "ObjectProofTreeEquation": ('proofTreeEquationImpliesLocalClosure', 'proofTreeEquationReverseProgressive', 'proofTreeEquationAllCodeUnique', 'proofTreeEquationPointUnique', 'proofTreeEquationRootUnique', 'proofTreeEquationTwoSolutions', 'proofTreeEquationNodeNatural', 'proofTreeEquationSolutionNatural', 'proofTreeCanonicalNodeEquation'),
         "ObjectProofTreeInduction": ('proofTreePropertyStepWithMemberIH', 'proofTreePropertyProgressive', 'proofTreeInternalInduction', 'proofTreePointInduction', 'proofTreeRootProperty', 'proofTreeRejectNodeFromProperty', 'proofTreeRejectRootFromProperty'),
@@ -5036,6 +5085,12 @@ def main() -> None:
         "proof_tree_internal_induction_guard": proof_tree_internal_induction,
         "proof_tree_equation_unique_guard": proof_tree_equation_unique,
         "fixed_axiom_partial_test_guard": fixed_axiom_partial_test,
+        "all_internal_forall_closure_guard": all_internal_forall_closure,
+        'object_all_internal_unary_node_iteration_proved': True,
+        'object_all_internal_parameter_forall_closure_typed_proved': True,
+        'object_all_internal_forall_closure_closed_unique_output_proved': True,
+        'object_original_Project_schema_numeric_test_proved': False,
+
         'object_fixed_axiom_packet_arithmetic_proved': True,
         'object_fixed_7_ZF_plus_3_target_partial_test_exact_proved': True,
         'object_fixed_axiom_test_witnesses_object_eliminated': True,

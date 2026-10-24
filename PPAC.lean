@@ -236,3 +236,4 @@ import PPAC.Migration.Internal.ObjectProofTreeNode
 import PPAC.Migration.Internal.ObjectProofTreeInduction
 import PPAC.Migration.Internal.ObjectProofTreeEquation
 import PPAC.Migration.Internal.ObjectFixedAxiomTest
+import PPAC.Migration.Internal.ObjectForallClosure
