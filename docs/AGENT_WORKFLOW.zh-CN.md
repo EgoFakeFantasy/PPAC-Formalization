@@ -1,5 +1,9 @@
 # 对象层迁移工程流程
 
+实际Project编译产出的全内部标量唯一性已验收：原源构造器不交／注入性及子查询IH比较全部十二分支，两个后继作用域和两份空集见证对象对齐，原Foundation／完整Separation／TransitiveCover消去全部IH；最终仅需Ω的ALL4标量定理，并合成全部合法源的准确类型唯一产出。16模块109声明、10组原nativeZF闭句；2128构建、22867审计（452无公理／22415允许依赖）、零警告；九命令／五trust=0通过，1911哈希、2537对精确足迹、20523项Internal覆盖。实际产出反推源合法性、原字节包／Horn、完整schema、Proof／解释及最终Con仍未完成。见[验收与后续工程表](STEP4_PROJECT_COMPILER_UNIQUE_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 全部内部合法Project源码的实际产出存在性已验收：十二源构造从真实子查询和原构造器实际供应输出，原Foundation／完整Separation／TransitiveCover消去全部成员IH，辅助零元亦对象消去；最终仅需Ω的ALL3源到EX输出闭句，保留任意内部f，并结合前批类型定理取得准确有类型产出。11模块87声明、9组原nativeZF闭句；2112构建、22758审计（448无公理／22310允许依赖）、零警告；九命令／五trust=0通过，1895哈希、2527对精确足迹、20414项Internal覆盖。输出码标量唯一、原字节包／Horn、完整schema、Proof／解释及最终Con仍未完成。见[验收与后续工程表](STEP4_PROJECT_COMPILER_COMPLETE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

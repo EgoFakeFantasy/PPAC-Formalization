@@ -1560,9 +1560,9 @@ def check_Project_actual_compiler() -> dict:
             'produced_output_actual_parent_graph_state_and_edge_certificate_proved':True,
             'both_constants_really_produce_same_input_code':True,
             'three_atomic_modes_really_produce_a_typed_output':True,
-            'only_state_and_evaluation_value_uniqueness_proved_not_general_scalar_functionality':True,
+            'construction_stage_only_establishes_state_and_evaluation_value_uniqueness':True,
             'generic_history_independent_helper_retains_explicit_object_ALL_premise':True,
-            'all_legal_source_codes_have_unique_typed_compiled_output_proved':False,
+            'construction_stage_alone_proves_legal_source_unique_typed_output':False,
             'compiler_recursive_IH_discharged_on_all_twelve_modes':False,
             'actual_NatPacket_Horn_schema_test_Proof_interpretation_Con_proved':False}
 
@@ -1605,7 +1605,7 @@ def check_Project_compiler_recursive_equation() -> dict:
             'actual_state_evaluation_history_and_carrier_witnesses_object_eliminated':True,
             'only_omega_premise_in_final_all_internal_recursive_equation':True,
             'non_natural_and_invalid_candidates_retained':True,
-            'global_source_completeness_output_typing_scalar_uniqueness_proved':False,
+            'recursive_equation_alone_proves_source_completeness_typing_scalar_uniqueness':False,
             'full_schema_Proof_interpretation_Con_proved':False}
 
 
@@ -1691,6 +1691,53 @@ def check_Project_compiler_source_completeness() -> dict:
             'scalar_output_uniqueness_full_schema_Proof_Con_proved':False}
 
 
+def check_Project_compiler_scalar_uniqueness() -> dict:
+    modules = ['ProjectCompilerUniqueSyntax', 'ProjectCompilerUniqueTransport', 'ProjectCompilerUniqueMatrixSyntax', 'ProjectCompilerUniqueMatrixHead', 'ProjectCompilerUniqueActualSyntax', 'ProjectCompilerUniquePadding', 'ProjectCompilerUniqueQueries', 'ProjectCompilerUniqueAtoms', 'ProjectCompilerUniqueLogical', 'ProjectCompilerUniqueMatrices', 'ProjectCompilerUniquePairs', 'ProjectCompilerUniqueStep', 'ProjectCompilerUnique', 'ProjectCompilerUniqueFiberSyntax', 'ProjectCompilerUniqueFiber', 'ObjectProjectCompilerUnique']
+    required = {'ProjectCompilerUniqueSyntax': ['def propertyBody', 'def functional', 'OriginalUniversalBlock.allMany 3', '(ProjectCompilerCodeSyntax.compiled (old 3 w) (old 3 n) (slot 3 0) (slot 3 1)).imp', '(.equal (slot 3 1) (slot 3 2))', 'def allIH', 'theorem unique_at', 'theorem below_functional'], 'ProjectCompilerUniqueTransport': ['Derives.eqSubst', 'theorem atomic_left', 'theorem atomic_right', 'theorem check_input', 'theorem single_input', 'theorem binary_left', 'theorem binary_right', 'theorem cases_zero'], 'ProjectCompilerUniqueMatrixSyntax': ['inductive Mode', 'theorem tag_injective', 'def matrix', 'constant false', 'constant true', 'ProjectAtomicSyntax.compiled 0', 'ProjectAtomicSyntax.compiled 1', 'ProjectAtomicSyntax.compiled 2', 'singleMatrix 4 false', 'singleMatrix 9 true', 'singleMatrix 10 true', 'binaryMatrix 0', 'binaryMatrix 1', 'binaryMatrix 2', 'binaryMatrix 3', 'existsMany 4 (body mode', 'LogicalAllPatterns.disjoin'], 'ProjectCompilerUniqueMatrixHead': ['theorem source_head', 'SyntaxConstructors.disjoint', 'theorem different_modes'], 'ProjectCompilerUniqueActualSyntax': ['def actualCase', 'constant false', 'constant true', 'atomicCase 0', 'atomicCase 1', 'atomicCase 2', 'singleCase 4 false', 'singleCase 9 true', 'singleCase 10 true', 'binaryCase 0', 'binaryCase 1', 'binaryCase 2', 'binaryCase 3'], 'ProjectCompilerUniquePadding': ['theorem intro_uniform', 'HornBinderRules.intro_many 4', 'theorem from_actual_mode', 'HornBinderRules.eliminate_many 2', 'theorem actual_cases_to_choices', 'FormulaCodeCaseLogic.disj_imp h10 h11'], 'ProjectCompilerUniqueQueries': ['below_functional', 'unique_at', 'OmegaUniversal.successor_unique', 'ProjectCompilerCodeTransport.code_bound', 'theorem check_unique'], 'ProjectCompilerUniqueAtoms': ['eq_trans', 'SyntaxNodeInjective.constructor_input_eq', 'ProjectCompilerUniqueTransport.atomic_left', 'ProjectCompilerUniqueTransport.atomic_right', 'ProjectAtomicLaws.compiled_unique'], 'ProjectCompilerUniqueLogical': ['SyntaxNodeInjective.constructor_input_eq', 'ProjectCompilerUniqueQueries.check_unique', 'ProjectCompilerUniqueQueries.query_unique', 'SyntaxConstructors.unique'], 'ProjectCompilerUniqueMatrices': ['theorem same_mode', 'theorem any_modes', 'ProjectCompilerUniqueMatrixHead.different_modes'], 'ProjectCompilerUniquePairs': ['HornBinderRules.eliminate_many 4', 'theorem uniform_unique', 'theorem choices_unique', 'ProofTreeRootSyntax.disjoin_elim', 'ProjectCompilerUniquePadding.actual_cases_to_choices'], 'ProjectCompilerUniqueStep': ['ProjectCompilerRecursive.recursive_iff', 'OmegaUniversal.empty_unique', 'ProjectCompilerUniqueTransport.cases_zero', 'ProjectCompilerUniquePairs.actual_cases_unique', 'theorem from_induction'], 'ProjectCompilerUnique': ['SetInduction.all_holds', 'ZFContext.separation hZ inductionMatrix.neg', '.base.foundation', 'ObjectTransitiveCover.source_cover', 'theorem all_functional', 'theorem unique_outputs'], 'ProjectCompilerUniqueFiberSyntax': ['def uniqueOutput', 'def typedFiber', 'ProjectCompilerCodeSyntax.compiled w.castSucc n.castSucc b.castSucc (Fin.last m)', 'FormulaCodeSyntax.formulaCode w.castSucc (Fin.last m) b.castSucc z.castSucc', 'def allSourceTypedUniqueLaw', 'OriginalUniversalBlock.allMany 4'], 'ProjectCompilerUniqueFiber': ['ProjectCompilerUnique.unique_outputs', 'ProjectCompilerComplete.typed_output_exists', 'theorem typed_unique_exists', 'theorem all_source_typed_unique'], 'ObjectProjectCompilerUnique': ['TheoryTransport.sentence', 'ZFReplay.replay', 'native_compilerAllInternalOutputsScalarUnique', 'native_compilerAllInternalSourceTypedUniqueOutputExists']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b', text):
+            raise RuntimeError('Compiler scalar uniqueness forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Compiler scalar uniqueness proof drift: '+mod+': '+clause)
+    expected_premises = [
+        ('ProjectCompilerUniqueQueries','query_unique',{'hI','hq','hr'}),
+        ('ProjectCompilerUniqueQueries','advanced_unique',{'hI','hq','hr'}),
+        ('ProjectCompilerUniqueStep','outputs_from_induction',{'hw','hI','hq','hr'}),
+        ('ProjectCompilerUniqueStep','from_induction',{'hw','hI'}),
+        ('ProjectCompilerUnique','progressive',{'hw'}),
+        ('ProjectCompilerUnique','all_functional',{'hw'}),
+        ('ProjectCompilerUnique','unique_outputs',{'hw','hq','hr'}),
+        ('ProjectCompilerUniqueFiber','typed_unique_exists',{'hw','hz','hc'}),
+        ('ProjectCompilerUniqueFiber','all_source_typed_unique',{'hw'})]
+    for mod,name,expected in expected_premises:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Compiler scalar uniqueness hidden premise: '+mod+'.'+name)
+        if any(x in h.group(0) for x in ['Promise','Consistent','hUnique','hFunctionality']):
+            raise RuntimeError('Compiler scalar uniqueness oracle: '+mod+'.'+name)
+    names = ['falseCase','trueCase','memberCase','equalCase','subsetCase','negCase','conjCase','disjCase','impCase','iffCase','forallCase','existsCase']
+    actual = re.search(r'def modes : List Mode := \[([^\]]+)\]', texts['ProjectCompilerUniqueMatrixSyntax'])
+    if not actual or re.findall(r'\.(\w+)',actual.group(1)) != names:
+        raise RuntimeError('Compiler finite template coverage drift')
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in ['compilerGuardedChildScalarUnique', 'compilerSuccessorChildScalarUnique', 'compilerAllCasesScalarUnique', 'compilerOutputsUniqueFromMemberIH', 'compilerScalarFunctionalityProgressive', 'compilerAllInternalOutputsScalarUnique', 'compilerActualOutputsScalarUnique', 'compilerActualUniqueOutputFiber', 'compilerSourceActualTypedUniqueOutputExists', 'compilerAllInternalSourceTypedUniqueOutputExists']:
+        if 'Internal.ObjectProjectCompilerUnique.native_'+name not in check:
+            raise RuntimeError('Missing compiler scalar uniqueness native fixture: '+name)
+    return {'all_twelve_actual_matrices_scalar_unique_under_object_member_IH':True,
+            'different_source_constructor_tags_rejected_in_original_kernel':True,
+            'source_field_equality_recovered_by_original_constructor_injectivity':True,
+            'independent_successor_scopes_and_empty_zeros_aligned_by_object_uniqueness':True,
+            'both_internal_EX4_field_blocks_and_all_actual_cases_eliminated':True,
+            'original_Foundation_Separation_transitive_cover_discharge_scalar_IH':True,
+            'all_internal_actual_inputs_scalar_functional_with_only_omega':True,
+            'every_legal_source_has_actual_target_typed_output_unique_among_all_outputs':True,
+            'finite_modes_are_external_proof_templates_not_internal_code_restrictions':True,
+            'source_validity_converse_original_byte_bridge_full_schema_Proof_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1733,6 +1780,7 @@ def main() -> None:
     Project_compiler_recursive_equation = check_Project_compiler_recursive_equation()
     Project_compiler_output_typing = check_Project_compiler_output_typing()
     Project_compiler_source_completeness = check_Project_compiler_source_completeness()
+    Project_compiler_scalar_uniqueness = check_Project_compiler_scalar_uniqueness()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4551,7 +4599,17 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerAllInternalCompletenessProperty',
                     'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualOutputExists',
                     'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerAllInternalSourceOutputsExist',
-                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualTypedOutputExists'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualTypedOutputExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerGuardedChildScalarUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerSuccessorChildScalarUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerAllCasesScalarUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerOutputsUniqueFromMemberIH',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerScalarFunctionalityProgressive',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerAllInternalOutputsScalarUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerActualOutputsScalarUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerActualUniqueOutputFiber',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerSourceActualTypedUniqueOutputExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerUnique.native_compilerAllInternalSourceTypedUniqueOutputExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4563,6 +4621,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectCompilerUnique": ('compilerGuardedChildScalarUnique', 'compilerSuccessorChildScalarUnique', 'compilerAllCasesScalarUnique', 'compilerOutputsUniqueFromMemberIH', 'compilerScalarFunctionalityProgressive', 'compilerAllInternalOutputsScalarUnique', 'compilerActualOutputsScalarUnique', 'compilerActualUniqueOutputFiber', 'compilerSourceActualTypedUniqueOutputExists', 'compilerAllInternalSourceTypedUniqueOutputExists'),
         "ObjectProjectCompilerComplete": ('compilerSourceAtomsActualOutput', 'compilerSourceChildOutputFromMemberIH', 'compilerSourceOutputFromMemberIH', 'compilerCompletenessPropertyStep', 'compilerCompletenessProgressive', 'compilerAllInternalCompletenessProperty', 'compilerSourceInputActualOutputExists', 'compilerAllInternalSourceOutputsExist', 'compilerSourceInputActualTypedOutputExists'),
         "ObjectProjectCompilerTyping": ('compilerChildTypingFromMemberIH', 'compilerTwelveCasesTargetTyped', 'compilerOutputTypedFromMemberIH', 'compilerTypingPropertyStep', 'compilerTypingProgressive', 'compilerAllInternalOutputsTargetTyped', 'compilerInputTypingProperty', 'compilerActualOutputTargetTyped', 'compilerUntypedOutputRejected'),
         "ObjectProjectCompilerRecursive": ('compilerActualChildReadIff', 'compilerGuardedChildQueryIff', 'compilerAllInternalChildQueries', 'compilerSuccessorQueryIff', 'compilerScopedChildQueryIff', 'compilerAllTwelveCasesIff', 'compilerActualLocalRecursiveIff', 'compilerActualStateRecursiveIff', 'compilerAtEvaluationRecursiveIff', 'compilerAtCarrierRecursiveIff', 'compilerAllCandidatesRecursiveIff', 'compilerAllInternalRecursiveLaw'),
@@ -5527,6 +5586,11 @@ def main() -> None:
         "Project_compiler_recursive_equation_guard": Project_compiler_recursive_equation,
         "Project_compiler_output_typing_guard": Project_compiler_output_typing,
         "Project_compiler_source_completeness_guard": Project_compiler_source_completeness,
+        "Project_compiler_scalar_uniqueness_guard": Project_compiler_scalar_uniqueness,
+        'object_Project_compiler_scalar_output_functionality_proved': True,
+        'object_Project_compiler_scalar_IH_Foundation_discharged': True,
+        'object_Project_compiler_actual_output_implies_source_code_proved': False,
+
         'object_Project_compiler_all_source_inputs_actual_output_exists_proved': True,
         'object_Project_compiler_all_source_inputs_have_actual_typed_output_proved': True,
         'object_Project_compiler_source_completeness_member_IH_Foundation_discharged': True,
@@ -5541,7 +5605,7 @@ def main() -> None:
         'object_Project_compiler_actual_set_recursion_constructed_proved': True,
         'object_Project_compiler_produced_output_actual_parent_certificate_proved': True,
         'object_Project_compiler_constants_and_atomic_execution_proved': True,
-        'object_Project_compiler_all_source_inputs_output_typed_unique_proved': False,
+        'object_Project_compiler_all_source_inputs_output_typed_unique_proved': True,
         'object_Project_source_twelve_constructor_recursive_code_equation_proved': True,
         'object_Project_source_actual_carriers_and_recursors_object_eliminated': True,
         'object_Project_bound_term_internal_shift_proved': True,
