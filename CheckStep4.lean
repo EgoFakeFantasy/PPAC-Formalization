@@ -10260,4 +10260,82 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
         (Internal.LogicalStaticNodeSyntax.normalized 1 true (@Internal.LogicalRule26Head.normalized) w z row)))).close)) :=
   Internal.ObjectLogicalStatic.native_staticLogicalRule26WholeNormalizedNodeIff w z row
 
+example {m} (env : Fin 5 → Fin m) (w z A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21AtSuccessorsQueriesIffSentence env w z A B)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21AtSuccessorsQueriesIff env w z A B
+
+example {m} (env : Fin 5 → Fin m) (w z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21AtOneQueriesIffSentence env w z A)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21AtOneQueriesIff env w z A
+
+example {m} (env : Fin 5 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21AllQueriesIffSentence env w z)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21AllQueriesIff env w z
+
+example {m} (env : Fin 5 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21AllAssignmentBounds env w row
+
+example {m} (env : Fin 5 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule21WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21WholeNormalizedNodeIff w z row
+
+example {m} (env : Fin 4 → Fin m) (w z A B : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24AtSuccessorsQueriesIffSentence env w z A B)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24AtSuccessorsQueriesIff env w z A B
+
+example {m} (env : Fin 4 → Fin m) (w z A : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24AtOneQueriesIffSentence env w z A)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24AtOneQueriesIff env w z A
+
+example {m} (env : Fin 4 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24AllQueriesIffSentence env w z)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24AllQueriesIff env w z
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24AllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24AllAssignmentBounds env w row
+
+example {m} (env : Fin 4 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24NumericNestedHeadIffSentence env w row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24NumericNestedHeadIff env w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalRule24WholeNormalizedNodeIffSentence w z row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24WholeNormalizedNodeIff w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalAllTwentySevenWholeNodesIffSentence w z row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenWholeNodesIff w z row
+
+example {m} (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalAllTwentySevenActualShapeTableIffSentence w row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualShapeTableIff w row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectLogicalAbstract.logicalAllTwentySevenActualTableSpecificationIffSentence w z row)) :=
+  Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff w z row
+
+-- Expanded rule21: both successor witnesses and complete assignments are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalAbstractNodeSyntax.node21 w row).iff (Internal.LogicalAbstractNodeSyntax.normalized21 w z row)))).close)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule21WholeNormalizedNodeIff w z row
+
+-- Expanded rule24: both successor witnesses and complete assignments are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalAbstractNodeSyntax.node24 w row).iff (Internal.LogicalAbstractNodeSyntax.normalized24 w z row)))).close)) :=
+  Internal.ObjectLogicalAbstract.native_logicalRule24WholeNormalizedNodeIff w z row
+
+-- Exact original 27-Shape table, with actual ordered Bool query lists and all assignment blocks.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.LogicalOriginalNodeSyntax.table w row).iff (Internal.LogicalAllPatterns.specification w z row)))).close)) :=
+  Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff w z row
+
 end PPAC.Migration.Step4Checks

@@ -896,6 +896,90 @@ def check_static_logical_nodes() -> dict:
             'all_internal_assignment_candidates_in_scope':True,
             'remaining_rules21_24_shared_quotation_Proof_compiler_and_Con_proved':False}
 
+
+def check_abstract_logical_nodes_and_exact_table() -> dict:
+    # Actual mode1 logical21/24 and the complete original 27-Shape pure relational table.
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['LogicalAbstractQueries','LogicalAbstractSyntax','LogicalAbstractAllQueries','LogicalAbstractQueryList',
+             'LogicalRule21Head','LogicalRule24Head','LogicalAbstractNodeSyntax','LogicalAbstractNode','LogicalAllPatterns',
+             'LogicalOriginalQueryBundles','LogicalOriginalNodeSyntax','LogicalOriginalNodes','ObjectLogicalAbstract']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|axiom|unsafe|native_decide)\b',text):
+            raise RuntimeError('Forbidden abstract logical node shortcut: '+module)
+    contracts=[('LogicalAbstractQueries','typed_transform_iff',{'hw','hn','hz','hA','hs','hf'}),
+        ('LogicalAbstractAllQueries','bundle21_iff',{'hw','hn','hz'}),
+        ('LogicalAbstractAllQueries','bundle24_iff',{'hw','hn','hz'}),
+        ('LogicalAbstractNode','normalized_node21_iff',{'hw','hz'}),
+        ('LogicalAbstractNode','normalized_node24_iff',{'hw','hz'}),
+        ('LogicalAllPatterns','node_iff',{'hw','hz'}),('LogicalOriginalNodes','raw_table_iff',set()),
+        ('LogicalOriginalNodes','table_iff',{'hw','hz'})]
+    for module,theorem,premises in contracts:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:
+            raise RuntimeError('Original logical endpoint changed: '+module+'.'+theorem)
+        if re.search(r'Promise|Model|Consistent|Classical\.choose|hIH\s*:',header.group(0)):
+            raise RuntimeError('Undischarged logical table oracle')
+    required={
+        'LogicalAbstractQueries':['grammar false (.literal 0) (.succ (.var free))','ObjectLogicalAxiom.transform 1 (.literal 0)',
+            'SyntaxNumeralSyntax.intro_succ 0 A z hz hA','AbstractTopFormulaOperation.run_iff hZ w A z z z',
+            'HornRowFields.five (.literal 1) (.literal 0) (.literal 0)', 'SyntaxTopEnvironmentSyntax.abstractInput'],
+        'LogicalAbstractSyntax':['actual_arity21','actual_arity24','actual_queries21','actual_queries24',
+            'transformQuery 1 3','transformQuery 2 4','LogicalStaticQueries.query false 0 2','atOneSpecification21','atOneSpecification24'],
+        'LogicalAbstractAllQueries':['LogicalAbstractQueries.typed_transform_iff','InsertExistence.exists_insert',
+            'intro_atOneSpecification21','intro_atOneSpecification24','intro_specification21','intro_specification24'],
+        'LogicalAbstractNode':['HornExprBounds.variable_bound','HornApplicationBounds.existsMany_congr 5',
+            'HornApplicationBounds.existsMany_congr 4','LogicalAbstractAllQueries.bundle21_iff','LogicalAbstractAllQueries.bundle24_iff'],
+        'LogicalOriginalNodeSyntax':['environmentNat shape.arity','environmentBound shape.arity','graph shape.head',
+            'LogicalStaticQueryList.listBundle shape.queries','existsMany shape.arity','ObjectLogicalAxiom.shapes.map'],
+        'LogicalOriginalNodes':['raw_table_iff','LogicalAllPatterns.node_iff hZ w z row hw hz'],
+        'LogicalAllPatterns':['original_table_exact','original_table_length','patternNodes','patternSpecifications']}
+    for r,witnesses in [(21,7),(24,6)]:
+        required['LogicalRule'+str(r)+'Head']=['SyntaxNodeSyntax.constructor','existsMany '+str(witnesses),
+            'HornExprExistence.exists_value','head_iff']
+        if 'original_bundle'+str(r)+'_iff' not in texts['LogicalAbstractQueryList']:
+            raise RuntimeError('Missing actual ordered abstract query list bridge')
+    for r in [20,23,25]:
+        if 'original_bundle'+str(r)+'_iff' not in texts['LogicalOriginalQueryBundles']:
+            raise RuntimeError('Missing original mixed query bundle bridge')
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing complete logical derivation: '+module+': '+clause)
+    for r in range(27):
+        if 'theorem rule'+str(r)+'_iff ' not in texts['LogicalOriginalNodes']:
+            raise RuntimeError('Missing actual original node transfer: '+str(r))
+        if 'have h'+str(r)+' :=' not in texts['LogicalAllPatterns']:
+            raise RuntimeError('Missing actual normalized pattern: '+str(r))
+    def definition(module,name):
+        found=re.search(r'(?ms)^def '+name+r'\b.*?(?=^def |^theorem |^end |\Z)',texts[module])
+        if not found:raise RuntimeError('Missing logical acceptance definition: '+module+'.'+name)
+        return found.group(0)
+    for name in ['matrix','body','node','table']:
+        if re.search(r'formulaCode|SyntaxTermSyntax|abstracted|specification|normalized',definition('LogicalOriginalNodeSyntax',name)):
+            raise RuntimeError('Comparison specification in exact original accepting table')
+    for r in [21,24]:
+        for name in ['queryMatrix','boundedMatrix','body','node']:
+            if re.search(r'formulaCode|SyntaxTermSyntax|abstracted|specification|normalized',definition('LogicalAbstractNodeSyntax',name+str(r))):
+                raise RuntimeError('Comparison specification in accepting abstract node')
+        if re.search(r'formulaCode|abstracted|specification',definition('LogicalAbstractSyntax','bundle'+str(r))):
+            raise RuntimeError('Type/operation oracle in actual query bundle')
+        if re.search(r'\bgraph\b|formulaCode|abstracted|specification',definition('LogicalRule'+str(r)+'Head','atValues')):
+            raise RuntimeError('Graph oracle in numeric nested head')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in ['logicalRule21WholeNormalizedNodeIff','logicalRule24WholeNormalizedNodeIff','logicalAllTwentySevenActualTableSpecificationIff']:
+        if 'ObjectLogicalAbstract.native_'+name+' w z row' not in check:
+            raise RuntimeError('Missing expanded original native logical table contract')
+    return {'remaining_original_rules21_24_full_nodes_proved':True,
+            'both_source_and_target_successors_object_eliminated':True,
+            'real_Num1_and_actual_AbstractFreeTop_used':True,
+            'all_five_or_four_assignment_bounds_derived':True,
+            'all_thirteen_numeric_head_codes_object_quantified':True,
+            'all_twenty_seven_actual_Shape_nodes_object_transferred':True,
+            'exact_original_arity_head_ordered_Bool_lists_and_full_table_proved':True,
+            'whole_exact_table_only_Omega_empty_premises':True,
+            'all_internal_candidate_assignments_in_scope':True,
+            'shared_quotation_Bool_Proof_compiler_interpretation_and_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -922,6 +1006,7 @@ def main() -> None:
     mode_two_full_formula = check_mode_two_full_formula()
     logical_instantiation_nodes = check_logical_instantiation_nodes()
     static_logical_nodes = check_static_logical_nodes()
+    abstract_logical_nodes_and_exact_table = check_abstract_logical_nodes_and_exact_table()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -3554,7 +3639,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectLogicalStatic.native_staticLogicalRule22NumericNestedHeadIff',
                     'PPAC.Migration.Internal.ObjectLogicalStatic.native_staticLogicalRule26WholeNormalizedNodeIff',
                     'PPAC.Migration.Internal.ObjectLogicalStatic.native_staticLogicalRule26AllAssignmentBounds',
-                    'PPAC.Migration.Internal.ObjectLogicalStatic.native_staticLogicalRule26NumericNestedHeadIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectLogicalStatic.native_staticLogicalRule26NumericNestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21AtSuccessorsQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21AtOneQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21AllQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21AllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21NumericNestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule21WholeNormalizedNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24AtSuccessorsQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24AtOneQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24AllQueriesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24AllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24NumericNestedHeadIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24WholeNormalizedNodeIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenWholeNodesIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualShapeTableIff',
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3566,6 +3666,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectLogicalAbstract": ('logicalRule21AtSuccessorsQueriesIff', 'logicalRule21AtOneQueriesIff', 'logicalRule21AllQueriesIff', 'logicalRule21AllAssignmentBounds', 'logicalRule21NumericNestedHeadIff', 'logicalRule21WholeNormalizedNodeIff', 'logicalRule24AtSuccessorsQueriesIff', 'logicalRule24AtOneQueriesIff', 'logicalRule24AllQueriesIff', 'logicalRule24AllAssignmentBounds', 'logicalRule24NumericNestedHeadIff', 'logicalRule24WholeNormalizedNodeIff', 'logicalAllTwentySevenWholeNodesIff', 'logicalAllTwentySevenActualShapeTableIff', 'logicalAllTwentySevenActualTableSpecificationIff'),
         "ObjectLogicalStatic": ('staticLogicalAllQueriesIff', 'staticLogicalRule0WholeNormalizedNodeIff', 'staticLogicalRule0AllAssignmentBounds', 'staticLogicalRule0NumericNestedHeadIff', 'staticLogicalRule1WholeNormalizedNodeIff', 'staticLogicalRule1AllAssignmentBounds', 'staticLogicalRule1NumericNestedHeadIff', 'staticLogicalRule2WholeNormalizedNodeIff', 'staticLogicalRule2AllAssignmentBounds', 'staticLogicalRule2NumericNestedHeadIff', 'staticLogicalRule3WholeNormalizedNodeIff', 'staticLogicalRule3AllAssignmentBounds', 'staticLogicalRule3NumericNestedHeadIff', 'staticLogicalRule4WholeNormalizedNodeIff', 'staticLogicalRule4AllAssignmentBounds', 'staticLogicalRule4NumericNestedHeadIff', 'staticLogicalRule5WholeNormalizedNodeIff', 'staticLogicalRule5AllAssignmentBounds', 'staticLogicalRule5NumericNestedHeadIff', 'staticLogicalRule6WholeNormalizedNodeIff', 'staticLogicalRule6AllAssignmentBounds', 'staticLogicalRule6NumericNestedHeadIff', 'staticLogicalRule7WholeNormalizedNodeIff', 'staticLogicalRule7AllAssignmentBounds', 'staticLogicalRule7NumericNestedHeadIff', 'staticLogicalRule8WholeNormalizedNodeIff', 'staticLogicalRule8AllAssignmentBounds', 'staticLogicalRule8NumericNestedHeadIff', 'staticLogicalRule9WholeNormalizedNodeIff', 'staticLogicalRule9AllAssignmentBounds', 'staticLogicalRule9NumericNestedHeadIff', 'staticLogicalRule10WholeNormalizedNodeIff', 'staticLogicalRule10AllAssignmentBounds', 'staticLogicalRule10NumericNestedHeadIff', 'staticLogicalRule11WholeNormalizedNodeIff', 'staticLogicalRule11AllAssignmentBounds', 'staticLogicalRule11NumericNestedHeadIff', 'staticLogicalRule12WholeNormalizedNodeIff', 'staticLogicalRule12AllAssignmentBounds', 'staticLogicalRule12NumericNestedHeadIff', 'staticLogicalRule13WholeNormalizedNodeIff', 'staticLogicalRule13AllAssignmentBounds', 'staticLogicalRule13NumericNestedHeadIff', 'staticLogicalRule14WholeNormalizedNodeIff', 'staticLogicalRule14AllAssignmentBounds', 'staticLogicalRule14NumericNestedHeadIff', 'staticLogicalRule15WholeNormalizedNodeIff', 'staticLogicalRule15AllAssignmentBounds', 'staticLogicalRule15NumericNestedHeadIff', 'staticLogicalRule16WholeNormalizedNodeIff', 'staticLogicalRule16AllAssignmentBounds', 'staticLogicalRule16NumericNestedHeadIff', 'staticLogicalRule17WholeNormalizedNodeIff', 'staticLogicalRule17AllAssignmentBounds', 'staticLogicalRule17NumericNestedHeadIff', 'staticLogicalRule18WholeNormalizedNodeIff', 'staticLogicalRule18AllAssignmentBounds', 'staticLogicalRule18NumericNestedHeadIff', 'staticLogicalRule19WholeNormalizedNodeIff', 'staticLogicalRule19AllAssignmentBounds', 'staticLogicalRule19NumericNestedHeadIff', 'staticLogicalRule22WholeNormalizedNodeIff', 'staticLogicalRule22AllAssignmentBounds', 'staticLogicalRule22NumericNestedHeadIff', 'staticLogicalRule26WholeNormalizedNodeIff', 'staticLogicalRule26AllAssignmentBounds', 'staticLogicalRule26NumericNestedHeadIff'),
         "ObjectLogicalInstantiate": ('logicalTwentyTwentyThreeAtBoundQueriesIff', 'logicalTwentyTwentyThreeAllQueriesIff', 'logicalTwentyTwentyThreeAllAssignmentBounds', 'logicalTwentyTwentyThreeBoundedMatrixIff', 'logicalTwentyTwentyThreeWholeNodeIff', 'logicalTwentyTwentyThreeWholeNormalizedNodeIff', 'logicalTwentyFiveAtBoundQueriesIff', 'logicalTwentyFiveAllQueriesIff', 'logicalTwentyFiveAllAssignmentBounds', 'logicalTwentyFiveBoundedMatrixIff', 'logicalTwentyFiveWholeNodeIff', 'logicalTwentyFiveWholeNormalizedNodeIff', 'logicalRule20NestedHeadIff', 'logicalRule23NestedHeadIff', 'logicalRule25NestedHeadIff'),
         "ObjectInstantiateFormula": ('modeTwoAllTypedTermAgreement', 'modeTwoAllTypedTermUniqueFiber', 'modeTwoTermPromiseDerived', 'modeTwoArgumentFieldsProgramIff', 'modeTwoWholeArgumentProgramIff', 'modeTwoGuardedArgumentProgramIff', 'modeTwoFourAtomicRunIff', 'modeTwoFourAtomicProgramIff', 'modeTwoActualBinderPrefixFromInduction', 'modeTwoAllElevenProgramFromInductionIff', 'modeTwoUniformCorrectnessProgressive', 'modeTwoAllInternalFormulaCorrect', 'modeTwoAllInternalRootsCorrect', 'modeTwoAllInternalWholeFormulaExecutionIff', 'modeTwoAllInternalWholeFormulaProgramIff', 'modeTwoActualHistoryAgreementDischarged', 'modeTwoAgreedActualHistoryExistsDischarged', 'modeTwoActualRootWholeFormulaExecutionIff', 'modeTwoActualRootWholeFormulaProgramIff', 'modeTwoActualInstantiateTopAtCodesIff', 'modeTwoActualInstantiateTopIff', 'modeTwoActualInstantiateTopSourceType', 'modeTwoActualInstantiateTopGuardedIff'),
@@ -4498,6 +4599,13 @@ def main() -> None:
         "mode_two_full_formula_guard": mode_two_full_formula,
         "logical_instantiation_nodes_guard": logical_instantiation_nodes,
         "static_logical_nodes_guard": static_logical_nodes,
+        "abstract_logical_nodes_and_exact_table_guard": abstract_logical_nodes_and_exact_table,
+        'object_original_logical_21_24_full_pure_relational_nodes_proved': True,
+        'object_original_all_27_logical_full_pure_relational_nodes_proved': True,
+        'object_original_all_27_exact_Shape_query_table_pure_relation_proved': True,
+        'object_original_all_27_exact_table_independent_specification_iff_proved': True,
+        'object_original_all_27_numeric_quotation_Bool_checker_correspondence_proved': False,
+
         'object_original_logical_0_to_19_22_26_full_pure_relational_nodes_proved': True,
         'object_original_static_logical_exact_query_list_interpretation_proved': True,
         'object_original_static_logical_all_assignment_bounds_proved': True,
