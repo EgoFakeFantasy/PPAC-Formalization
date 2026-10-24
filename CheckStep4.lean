@@ -8826,4 +8826,64 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
        (HornBinderSyntax.existsMany 4 (ProofStrengtheningNodeSyntax.specificationBody w z row))))).close)) :=
   ObjectProofStrengtheningNode.native_strengtheningFullPureRelationalNodeIff w z row
 
+
+
+example {m} (xs : Fin 5 → Fin m) (w r R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneFiveRuleStepIffSentence xs w r R)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneFiveRuleStepIff xs w r R
+
+example {m} (bound : Bool) (xs : Fin 5 → Fin m) (w r R idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneVariableTwoRuleStepIffSentence bound xs w r R idx)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneVariableTwoRuleStepIff bound xs w r R idx
+
+example {m} (bound : Bool) (xs : Fin 5 → Fin m) (w r idx : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneVariableWholeTraceIffSentence bound xs w r idx)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneVariableWholeTraceIff bound xs w r idx
+
+example {m} (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneBoundIdentityGuardIffSentence env w)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneBoundIdentityGuardIff env w
+
+example {m} (env : Fin 3 → Fin m) (w s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneBoundAbstractGuardIffSentence env w s)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneBoundAbstractGuardIff env w s
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneBoundPreservedTraceSentence env w r)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneBoundPreservedTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneBoundShiftedTraceSentence env w r s)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneBoundShiftedTrace env w r s
+
+example {m} (env : Fin 2 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneFreeHeadTraceSentence env w r)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneFreeHeadTrace env w r
+
+example {m} (env : Fin 3 → Fin m) (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectOriginalAbstract.modeOneFreeTailTraceSentence env w r)) :=
+  Internal.ObjectOriginalAbstract.native_modeOneFreeTailTrace env w r
+
+example : OriginalAbstractClasses.selected =
+    [YesMetaZFC.Automation.ObjectSyntaxTransform.boundIdentity 1 true,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.boundAbstract,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.freeAbstractHead,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.freeAbstractTail,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.application 1] := rfl
+example : OriginalAbstractClasses.variableSelected true =
+    [YesMetaZFC.Automation.ObjectSyntaxTransform.boundIdentity 1 true,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.boundAbstract] := rfl
+example : OriginalAbstractClasses.variableSelected false =
+    [YesMetaZFC.Automation.ObjectSyntaxTransform.freeAbstractHead,
+     YesMetaZFC.Automation.ObjectSyntaxTransform.freeAbstractTail] := rfl
+-- 全根集合已在对象EX中取得并消去；最终没有给定V、闭轨迹或规则应用前提。
+example {m} (bound : Bool) (w r idx : Fin m) (xs : Fin 5 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((OmegaSyntax.omega w).imp
+        ((SyntaxNodeSyntax.constructor 5 1 w xs r).imp ((SyntaxNumeralSyntax.numeral 1 (xs 0)).imp
+          ((SyntaxVariableSyntax.code bound w idx (xs 3)).imp
+            ((HornLookupConditionSyntax.condition w r).iff
+              (HornStepSyntax.step (OriginalAbstractClasses.variableSelected bound) w r w)))))).close)) :=
+  ObjectOriginalAbstract.native_modeOneVariableWholeTraceIff bound xs w r idx
+
 end PPAC.Migration.Step4Checks

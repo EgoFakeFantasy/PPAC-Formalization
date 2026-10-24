@@ -286,6 +286,25 @@ def check_pure_strengthening_node_definitions() -> dict:
             "shared_extended_condition_numeric_quotation_Bool_correspondence_proved": False}
 
 
+def check_original_mode_one_scalar_definitions() -> dict:
+    """Original fixed rule selection; no numeric value/program specification defines acceptance."""
+    selected = strip_comments((ROOT / "PPAC/Migration/Internal/OriginalAbstractClasses.lean").read_text(encoding="utf-8"))
+    trace = strip_comments((ROOT / "PPAC/Migration/Internal/OriginalAbstractTrace.lean").read_text(encoding="utf-8"))
+    for clause in ["[boundIdentity 1 true, boundAbstract, freeAbstractHead, freeAbstractTail, application 1]",
+                   "if bound then [boundIdentity 1 true, boundAbstract] else [freeAbstractHead, freeAbstractTail]"]:
+        if clause not in selected:
+            raise RuntimeError("Original mode1 rule selection changed: " + clause)
+    found = re.search(r"(?ms)^def variableStep\b.*?(?=^(?:def|theorem|end)\b|\Z)", trace)
+    if not found or "HornStepSyntax.step (variableSelected bound) w r w" not in found.group(0):
+        raise RuntimeError("Original mode1 variable query is not the exact original two-rule step")
+    if re.search(r"SyntaxTop\w*\.|FormulaTransform\w*\.|\bvalueSpec\b|Expr\.eval|Classical\.choose", found.group(0)):
+        raise RuntimeError("Mode1 variable acceptance uses comparison oracle")
+    return {"mode": 1, "term_rule_count": 5, "bound_variable_rule_count": 2, "free_variable_rule_count": 2,
+            "whole_variable_trace_iff_exact_original_bounded_applications_proved": True,
+            "all_root_set_witness_discharged": True, "four_variable_rule_positive_traces_proved": True,
+            "full_mode_one_formula_run_proved": False, "full_forall_node_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -296,6 +315,7 @@ def main() -> None:
     pure_substitution_node_definition = check_pure_substitution_node_definitions()
     pure_mp_node_definition = check_pure_mp_node_definitions()
     pure_strengthening_node_definition = check_pure_strengthening_node_definitions()
+    original_mode_one_scalar_definition = check_original_mode_one_scalar_definitions()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2665,7 +2685,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProofStrengtheningNode.native_strengtheningAllAssignmentBounds',
                     'PPAC.Migration.Internal.ObjectProofStrengtheningNode.native_strengtheningActualThreeFieldHeadIff',
                     'PPAC.Migration.Internal.ObjectProofStrengtheningNode.native_strengtheningBoundedMatrixIff',
-                    'PPAC.Migration.Internal.ObjectProofStrengtheningNode.native_strengtheningFullPureRelationalNodeIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProofStrengtheningNode.native_strengtheningFullPureRelationalNodeIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneFiveRuleStepIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneVariableTwoRuleStepIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneVariableWholeTraceIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneBoundIdentityGuardIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneBoundAbstractGuardIff',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneBoundPreservedTrace',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneBoundShiftedTrace',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneFreeHeadTrace',
+                    'PPAC.Migration.Internal.ObjectOriginalAbstract.native_modeOneFreeTailTrace'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2784,6 +2813,7 @@ def main() -> None:
         "ObjectProofSubstitutionNode": ('substitutionFreeProjectionIff', 'substitutionFormulaProjectionAtOneIff', 'substitutionFormulaProjectionIff', 'substitutionBothProjectionsIff', 'substitutionFreeProjectionAtConstructor', 'substitutionFormulaProjectionAtConstructor', 'substitutionProjectionsAtConstructor', 'substitutionAllFiveQueriesIff', 'pairingProjectionNumericBound', 'rawHeadTailNumericBound', 'rawGetAllInternalBounds', 'rawGetNumericBound', 'rawFieldNumericBound', 'substitutionAtOneBound', 'substitutionFormulaProjectionBound', 'substitutionAllAssignmentBounds', 'substitutionActualFiveFieldHeadIff', 'substitutionBoundedMatrixIff', 'substitutionFullPureRelationalNodeIff'),
         "ObjectProofMPNode": ('mpConclusionQueryIff', 'mpAntecedentQueryIff', 'mpLeftFreeProjectionIff', 'mpLeftFormulaProjectionIff', 'mpRightFreeProjectionIff', 'mpRightImplicationProjectionIff', 'mpImplicationGraphIff', 'mpRightImplicationAtConstructorIff', 'mpAllFourProjectionsIff', 'mpBothFormulaQueriesIff', 'mpAllSixQueriesIff', 'mpAntecedentProjectionBound', 'mpAllAssignmentBounds', 'mpActualFourFieldHeadIff', 'mpBoundedMatrixIff', 'mpFullPureRelationalNodeIff'),
         "ObjectProofStrengtheningNode": ('modeZeroFormulaAtCodesIff', 'modeZeroFullFormulaWeakenIff', 'modeZeroFullFormulaProgramIff', 'modeZeroFullFormulaOutputType', 'strengtheningFormulaQueryIff', 'strengtheningFreeProjectionAtSuccessorIff', 'strengtheningPredecessorFormulaIff', 'strengtheningActualModeZeroQueryIff', 'strengtheningGuardedModeZeroProgramIff', 'strengtheningAllFourQueriesAtSuccessorIff', 'strengtheningAllFourQueriesIff', 'strengtheningPredecessorFormulaBound', 'strengtheningAllAssignmentBounds', 'strengtheningActualThreeFieldHeadIff', 'strengtheningBoundedMatrixIff', 'strengtheningFullPureRelationalNodeIff'),
+        "ObjectOriginalAbstract": ('modeOneFiveRuleStepIff', 'modeOneVariableTwoRuleStepIff', 'modeOneVariableWholeTraceIff', 'modeOneBoundIdentityGuardIff', 'modeOneBoundAbstractGuardIff', 'modeOneBoundPreservedTrace', 'modeOneBoundShiftedTrace', 'modeOneFreeHeadTrace', 'modeOneFreeTailTrace'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3577,6 +3607,13 @@ def main() -> None:
         "pure_substitution_node_definition_guard": pure_substitution_node_definition,
         "pure_mp_node_definition_guard": pure_mp_node_definition,
         "pure_strengthening_node_definition_guard": pure_strengthening_node_definition,
+        "original_mode_one_scalar_definition_guard": original_mode_one_scalar_definition,
+        "object_original_mode_one_term_five_rule_dispatch_proved": True,
+        "object_original_mode_one_variable_two_rule_whole_trace_unfold_proved": True,
+        "object_original_mode_one_scalar_numeric_guards_proved": True,
+        "object_original_mode_one_four_variable_positive_traces_proved": True,
+        "object_original_mode_one_full_formula_run_proved": False,
+        "object_original_forall_full_pure_relational_node_proved": False,
         "object_original_mode_zero_full_formula_run_weakening_proved": True,
         "object_original_strengthening_exact_four_queries_pure_correspondence_proved": True,
         "object_original_strengthening_successor_witness_discharged": True,
@@ -3602,7 +3639,7 @@ def main() -> None:
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "The original substitution, MP and strengthening shapes now have complete bounded existential pure relational node iff specifications. Strengthening uses the full original mode0 formula run, four internal code tables, successor free-bound witness, all four exact queries and all four assignment bounds. Shared extended condition/numeric quotation/Bool correspondence, the other three full proof shapes, arbitrary ProofZF/U checking/compilation, internal interpretation and final Con implication remain unproved.",
+        "scope": "Original substitution, MP and strengthening complete pure relational nodes remain proved. Mode1 now has exact five-rule term dispatch, two-rule whole variable trace iff with all-root witness discharged, numeric bound guards and four actual variable-rule positive traces. Mode1 numeric scalar output equations, full formula operation and forall node, logical/theory shapes, shared extended-condition quotation/Bool, arbitrary internal ProofZF/U compilation, internal interpretation and final Con implication remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",
