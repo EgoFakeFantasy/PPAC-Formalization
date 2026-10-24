@@ -145,7 +145,7 @@ def check_raw_projection_definitions() -> dict:
     return {"definitions": declarations, "independent_of_canonical_list_and_host_oracles": True,
             "arbitrary_raw_tag_head_tail_iff_proved": True, "all_internal_get_values_unique_proved": True,
             "get_zero_successor_index_equations_proved": True, "get_zero_input_all_internal_indices_proved": True,
-            "original_projection_full_seven_rule_trace_bridge_proved": False}
+            "original_projection_full_seven_rule_trace_bridge_proved": True}
 
 
 def check_raw_field_definitions() -> dict:
@@ -162,7 +162,7 @@ def check_raw_field_definitions() -> dict:
     return {"definitions": names, "independent_of_canonical_field_and_host_oracles": True,
             "input_zero_all_internal_indices_proved": True, "field_total_unique_on_internal_indices_proved": True,
             "finite_constructor_slot_scope": "external finite arity/slot schema with object quantified codes and values",
-            "original_projection_full_seven_rule_trace_bridge_proved": False}
+            "original_projection_full_seven_rule_trace_bridge_proved": True}
 
 
 def check_projection_trace_definitions() -> dict:
@@ -186,7 +186,7 @@ def check_projection_trace_definitions() -> dict:
         raise RuntimeError("Projection all-root set is not actual Separation")
     return {"definitions": names, "original_rule_count": 7, "independent_of_numeric_and_typing_oracles": True,
             "actual_bounded_rule_introduction_and_uniform_unfold_proved": True,
-            "all_internal_numeric_projection_iff_proved": False,
+            "all_internal_numeric_projection_iff_proved": True,
             "proof_node_projection_queries_proved": False}
 
 
@@ -203,7 +203,7 @@ def check_projection_rule_partition() -> dict:
     return {"groups": groups, "all_original_rules_dispatched": True,
             "tag_numeric_all_internal_candidates_iff_proved": True,
             "query_input_index_output_natural_domains_proved": True,
-            "get_and_field_numeric_all_internal_candidates_iff_proved": False}
+            "get_and_field_numeric_all_internal_candidates_iff_proved": True}
 
 
 def main() -> None:
@@ -2507,7 +2507,31 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagComplete',
                     'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagQueryIff',
                     'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagQueryUnique',
-                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagAtActualRowSound'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagAtActualRowSound',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionActualPremiseQueryIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionActualPremisesQueriesIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetVariablesQueryIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionArbitraryRawPairHeadTail',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionSuccessorVariableIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetZeroConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetHeadConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetTailConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetZeroIndexIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetAllInternalCorrect',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetAtInternalIndexIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetAllCandidatesIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetSound',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetComplete',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetUnique',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetObjectSuccessorStep',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionGetTailActualSubquery',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldZeroConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldRawConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldAllCandidatesIff',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldSound',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldComplete',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_projectionFieldUnique',
+                    'PPAC.Migration.Internal.ObjectProjectionGetField.native_originalSevenProjectionNumericIffs'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2622,6 +2646,7 @@ def main() -> None:
         "ObjectRawCodeField": ('rawGetZeroAllInternalIndices', 'rawGetZeroInputIff', 'rawFieldExists', 'rawFieldUnique', 'rawFieldFiber', 'rawFieldRange', 'rawFieldAtActualPayloadIff', 'rawFieldAtArbitraryRawTagIff', 'rawFieldZeroInputIff', 'rawHeadTailOnActualConsIff', 'rawGetAtFiniteForestIff', 'rawFieldAtFiniteNodeIff', 'rawFieldAtFiniteConstructorIff'),
         "ObjectProjectionTrace": ('projectionTraceNatural', 'projectionTraceOriginalStep', 'projectionTraceSetExists', 'projectionTraceAllRootsUnfold', 'projectionTraceAtActualSetIff', 'projectionActualHeadBound', 'projectionActualRuleApplication', 'projectionActualRuleCondition', 'projectionTagZeroRule', 'projectionTagPositiveRule', 'projectionGetZeroRule', 'projectionGetHeadRule', 'projectionGetTailRule', 'projectionFieldZeroRule', 'projectionFieldPositiveRule'),
         "ObjectProjectionTag": ('projectionConstructorFieldNatural', 'projectionTagQueryNatural', 'projectionGetQueryNatural', 'projectionFieldQueryNatural', 'projectionTagRuleDispatch', 'projectionGetRuleDispatch', 'projectionFieldRuleDispatch', 'projectionTagZeroConstructed', 'projectionTagRawConstructed', 'projectionTagSound', 'projectionTagComplete', 'projectionTagQueryIff', 'projectionTagQueryUnique', 'projectionTagAtActualRowSound'),
+        "ObjectProjectionGetField": ('projectionActualPremiseQueryIff', 'projectionActualPremisesQueriesIff', 'projectionGetVariablesQueryIff', 'projectionArbitraryRawPairHeadTail', 'projectionSuccessorVariableIff', 'projectionGetZeroConstructed', 'projectionGetHeadConstructed', 'projectionGetTailConstructed', 'projectionGetZeroIndexIff', 'projectionGetAllInternalCorrect', 'projectionGetAtInternalIndexIff', 'projectionGetAllCandidatesIff', 'projectionGetSound', 'projectionGetComplete', 'projectionGetUnique', 'projectionGetObjectSuccessorStep', 'projectionGetTailActualSubquery', 'projectionFieldZeroConstructed', 'projectionFieldRawConstructed', 'projectionFieldAllCandidatesIff', 'projectionFieldSound', 'projectionFieldComplete', 'projectionFieldUnique', 'originalSevenProjectionNumericIffs'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3395,7 +3420,7 @@ def main() -> None:
         "object_raw_get_all_internal_indices_actual_unique_proved": True,
         "object_raw_get_zero_successor_index_equations_proved": True,
         "object_raw_get_zero_input_all_internal_indices_proved": True,
-        "object_original_projection_full_seven_rule_trace_bridge_proved": False,
+        "object_original_projection_full_seven_rule_trace_bridge_proved": True,
         "object_original_projection_proof_node_queries_proved": False,
         "raw_projection_definition_guard": raw_projection_definition,
         "object_raw_field_payload_get_composition_AST_implemented": True,
@@ -3408,13 +3433,17 @@ def main() -> None:
         "object_original_projection_tag_all_internal_iff_proved": True,
         "object_original_projection_query_natural_domains_proved": True,
         "object_original_projection_rule_outer_dispatch_proved": True,
+        "object_original_projection_get_all_internal_iff_proved": True,
+        "object_original_projection_get_object_IH_discharged": True,
+        "object_original_projection_field_all_internal_iff_proved": True,
+        "object_original_projection_numeric_quotation_correspondence_proved": False,
         "object_original_seven_projection_rule_trace_AST_implemented": True,
         "object_original_seven_projection_rule_positive_closure_proved": True,
         "object_original_projection_trace_all_root_unfold_proved": True,
         "object_original_projection_rule_assignment_bound_discharged": True,
 
         "pure_syntax_full_typing_scope": "Independent full15 pure Horn term/list/formula query ASTs are equivalent to the corresponding types on all internal candidates under Omega; formula object IH is discharged with original ZF SetInduction. Original extended-signature/numeric quotation and final-checker applicability remain unproved.",
-        "scope": "Current milestone: both quantifiers have complete original mode0/3 Run3 dispatch and exact correspondence with the existing single/advanced history program under the explicit uniform object induction premise, real admissible frame, source FormulaCode and actual recursion graph. Independent depth-successor runs are equivalent to advanced reads; bound/index/image witnesses are constructed and eliminated inside object quantifiers, with actual field equalities aligning executions. Seven certificate families replay into original nativeZF. Full eleven-case assembly and discharge of uniform FormulaCode induction remain unproved, as do final-checker applicability of the mode3 contract, quotation, numeric Option, Proof checking/compilation, interpretation and final internal Con.",
+        "scope": "Original independent pure seven-rule projection queries now have full numeric tag/get/field iff contracts on all internal candidates with explicit natural input/index domains. Get uniform all-input/output correctness is discharged by original ZF Separation and internal omega induction; actual subqueries come from the real separated closed-root set. Source/extended-signature numeric quotation, Bool/Option checker correspondence, actual proof-node projection queries, the whole substitution node, full ProofZF/U checking/compilation, internal interpretation and final internal Con implication remain unproved.",
         "original_pure_signature_term_bridge_scope": "Original modes0/3 checked term traces with internal depth/parameter metadata correspond to the independent term program and coded mixed term substitution for every internal input/output. Actual identity/shift/converted-list hypotheses are explicit; input legality is inside the checked formula. Pure signature terms have only bound/free variable branches. This is not original parameter-list/formula mode0/3 correctness, extended-language quotation elimination, rule checking, arbitrary ProofZF/U correctness, or the final internal Con theorem.",
         "original_universal_argument_trace_scope": "Separation constructs the actual set V of natural rows with an original internal closed trace. Every closed subtrace embeds in V, V is closed for the full original table, and on natural rows Trace is equivalent to originalStep at V. All actual 28 rules compose their child traces with natural bounded assignments and exact head/guards. Kind2 rows dispatch exactly to original nilArguments/consArguments; their positive trace introductions are proved. This is not exact nil/cons output equations, arbitrary internal list recursion, complete formula transformation, extended-language quotation elimination, generic internally encoded rule interpretation, ProofZF/U correctness, or final Con.",
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",

@@ -8448,4 +8448,120 @@ example : ProjectionRuleDispatch.getRules = [YesMetaZFC.Automation.ObjectProject
 example : ProjectionRuleDispatch.fieldRules = [YesMetaZFC.Automation.ObjectProjection.fieldZero,
     YesMetaZFC.Automation.ObjectProjection.fieldPositive] := rfl
 
+example {m} (a : Nat) (e : YesMetaZFC.Automation.ObjectHorn.Expr a) (env : Fin a → Fin m) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionActualPremiseQueryIffSentence a e env w V)) :=
+  Internal.ObjectProjectionGetField.native_projectionActualPremiseQueryIff a e env w V
+
+example {m} (a : Nat) (es : List (YesMetaZFC.Automation.ObjectHorn.Expr a)) (env : Fin a → Fin m) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionActualPremisesQueriesIffSentence a es env w V)) :=
+  Internal.ObjectProjectionGetField.native_projectionActualPremisesQueriesIff a es env w V
+
+example {m} (a : Nat) (jx ji jy : Fin a) (env : Fin a → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetVariablesQueryIffSentence a jx ji jy env w)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetVariablesQueryIff a jx ji jy env w
+
+example {m} (head : Bool) (a : Nat) (tag first rest : Fin a) (env : Fin a → Fin m) (w x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionArbitraryRawPairHeadTailSentence head a tag first rest env w x)) :=
+  Internal.ObjectProjectionGetField.native_projectionArbitraryRawPairHeadTail head a tag first rest env w x
+
+example {m} (a : Nat) (j : Fin a) (env : Fin a → Fin m) (w s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionSuccessorVariableIffSentence a j env w s)) :=
+  Internal.ObjectProjectionGetField.native_projectionSuccessorVariableIff a j env w s
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetZeroConstructedSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetZeroConstructed w x i y
+
+example {m} (w tag first rest p x z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetHeadConstructedSentence w tag first rest p x z)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetHeadConstructed w tag first rest p x z
+
+example {m} (w tag first rest p x i s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetTailConstructedSentence w tag first rest p x i s y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetTailConstructed w tag first rest p x i s y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetZeroIndexIffSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetZeroIndexIff w x i y
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetAllInternalCorrectSentence w)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetAllInternalCorrect w
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetAtInternalIndexIffSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetAtInternalIndexIff w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetAllCandidatesIffSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetAllCandidatesIff w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetSoundSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetSound w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetCompleteSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetComplete w x i y
+
+example {m} (w x i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetUniqueSentence w x i y z)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetUnique w x i y z
+
+example {m} (w i s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetObjectSuccessorStepSentence w i s)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetObjectSuccessorStep w i s
+
+example {m} (env : Fin 5 → Fin m) (w V : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionGetTailActualSubquerySentence env w V)) :=
+  Internal.ObjectProjectionGetField.native_projectionGetTailActualSubquery env w V
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldZeroConstructedSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldZeroConstructed w x i y
+
+example {m} (w tag p x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldRawConstructedSentence w tag p x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldRawConstructed w tag p x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldAllCandidatesIffSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldAllCandidatesIff w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldSoundSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldSound w x i y
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldCompleteSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldComplete w x i y
+
+example {m} (w x i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.projectionFieldUniqueSentence w x i y z)) :=
+  Internal.ObjectProjectionGetField.native_projectionFieldUnique w x i y z
+
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionGetField.originalSevenProjectionNumericIffsSentence w x i y)) :=
+  Internal.ObjectProjectionGetField.native_originalSevenProjectionNumericIffs w x i y
+-- get最终前提只有Omega；全部内部索引／输入／候选输出由对象量词覆盖。
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((ProjectionTraceSyntax.get w x i y).iff ((Source.Formula.mem x w).conj
+        ((Source.Formula.mem i w).conj (RawCodeGetSyntax.get w x i y))))).close)) :=
+  ObjectProjectionGetField.native_projectionGetAllCandidatesIff w x i y
+
+-- field最终无get正确性假设，也无外部给定轨迹／解码见证。
+example {m} (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((ProjectionTraceSyntax.field w x i y).iff ((Source.Formula.mem x w).conj
+        ((Source.Formula.mem i w).conj (RawCodeFieldSyntax.field w x i y))))).close)) :=
+  ObjectProjectionGetField.native_projectionFieldAllCandidatesIff w x i y
+
+-- 内部ALL索引的统一正确性，由原Separation和原omega归纳实际消去IH。
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp (Source.Formula.all
+      ((Source.Formula.mem (Fin.last m) w.castSucc).imp
+        (ProjectionGetInductionSyntax.correct w.castSucc (Fin.last m))))).close)) :=
+  ObjectProjectionGetField.native_projectionGetAllInternalCorrect w
+
 end PPAC.Migration.Step4Checks
