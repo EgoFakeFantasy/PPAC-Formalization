@@ -10963,4 +10963,90 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
         (Fin.last (m+1)).castSucc (Fin.last (m+2)))))))).close)) :=
   Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw w
 
+example {m} (w c n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerStateExistsSentence w c n h)) :=
+  Internal.ObjectProjectCompiler.native_compilerStateExists w c n h
+
+example {m} (w c n h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerStateUniqueFiberSentence w c n h)) :=
+  Internal.ObjectProjectCompiler.native_compilerStateUniqueFiber w c n h
+
+example {m} (w a c n h v b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerStateEdgesIffSentence w a c n h v b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerStateEdgesIff w a c n h v b q
+
+example {m} (w c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerAllRecursorsSentence w c)) :=
+  Internal.ObjectProjectCompiler.native_compilerAllRecursors w c
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerActualCarrierRecursorsSentence w)) :=
+  Internal.ObjectProjectCompiler.native_compilerActualCarrierRecursors w
+
+example {m} (w c n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerNaturalEvaluationExistsSentence w c n)) :=
+  Internal.ObjectProjectCompiler.native_compilerNaturalEvaluationExists w c n
+
+example {m} (w c n y u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerEvaluationStateUniqueSentence w c n y u)) :=
+  Internal.ObjectProjectCompiler.native_compilerEvaluationStateUnique w c n y u
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerProducedOutputRootCertificateSentence w n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerProducedOutputRootCertificate w n b q
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerCarrierExistsSentence w)) :=
+  Internal.ObjectProjectCompiler.native_compilerCarrierExists w
+
+example {m} (w a c n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerAtActualCarrierIffSentence w a c n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerAtActualCarrierIff w a c n b q
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerNaturalGuardsSentence w n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerNaturalGuards w n b q
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerNonNaturalInputRejectedSentence w n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerNonNaturalInputRejected w n b q
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerInvalidCoordinatesRejectedSentence w n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerInvalidCoordinatesRejected w n b q
+
+example {m} (w v n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerOmegaIndependentSentence w v n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerOmegaIndependent w v n b q
+
+example {m} (truth : Bool) (w n b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerConstantsActuallyProducedSentence truth w n b)) :=
+  Internal.ObjectProjectCompiler.native_compilerConstantsActuallyProduced truth w n b
+
+example {m} (kind : Fin 3) (w b z x y n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerThreeAtomsActuallyProducedSentence kind w b z x y n q)) :=
+  Internal.ObjectProjectCompiler.native_compilerThreeAtomsActuallyProduced kind w b z x y n q
+
+example {m} (kind : Fin 3) (w b z x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerThreeAtomsTypedOutputExistsSentence kind w b z x y n)) :=
+  Internal.ObjectProjectCompiler.native_compilerThreeAtomsTypedOutputExists kind w b z x y n
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerHistoryIndependentActualOutputSentence w n b q)) :=
+  Internal.ObjectProjectCompiler.native_compilerHistoryIndependentActualOutput w n b q
+
+example {m} (w c n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerEvaluationStateUniqueFiberSentence w c n)) :=
+  Internal.ObjectProjectCompiler.native_compilerEvaluationStateUniqueFiber w c n
+
+example {m} (w c n v : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompiler.compilerActualHistoryFromValueSentence w c n v)) :=
+  Internal.ObjectProjectCompiler.native_compilerActualHistoryFromValue w c n v
+-- Atomic witnesses belong to the actual recursive compiler and have target FormulaCode.
+example {m} (kind : Fin 3) (w b z x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((omega w).imp ((empty z).imp
+      ((Internal.ProjectAtomicSyntax.sourceAt kind w b x y n).imp
+        (Internal.ProjectCompilerBase.existsTyped w n b z)))).close)) :=
+  Internal.ObjectProjectCompiler.native_compilerThreeAtomsTypedOutputExists kind w b z x y n
+
 end PPAC.Migration.Step4Checks

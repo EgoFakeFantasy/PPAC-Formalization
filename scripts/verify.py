@@ -1517,6 +1517,56 @@ def check_Project_source_recursive_grammar() -> dict:
             'complete_schema_test_Proof_interpretation_Con_proved':False}
 
 
+def check_Project_actual_compiler() -> dict:
+    modules=['ProjectCompilerCaseSyntax', 'ProjectCompilerLocalSyntax', 'ProjectCompilerLocal', 'ProjectCompilerStateSyntax', 'ProjectCompilerStateRows', 'ProjectCompilerStateExistence', 'ProjectCompilerStateMembership', 'ProjectCompilerRecursionSyntax', 'ProjectCompilerRecursionStep', 'ProjectCompilerRecursors', 'ProjectCompilerEvaluationSyntax', 'ProjectCompilerEvaluationExistence', 'ProjectCompilerEvaluationUnique', 'ProjectCompilerGraphValues', 'ProjectCompilerHistory', 'ProjectCompilerJudgmentSyntax', 'ProjectCompilerJudgment', 'ProjectCompilerCodeSyntax', 'ProjectCompilerCodeTransport', 'ProjectCompilerCodeCarrier', 'ProjectCompilerCodeProperties', 'ProjectCompilerRootSyntax', 'ProjectCompilerRoot', 'ProjectCompilerIndependent', 'ProjectCompilerCaseIntro', 'ProjectCompilerBase', 'ObjectProjectCompiler']
+    texts={n:strip_comments((ROOT/'PPAC/Migration/Internal'/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for name,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option\s+(?:maxHeartbeats|linter\.)',text):raise RuntimeError('Forbidden actual compiler shortcut: '+name)
+    mapping={'ProjectSourceTypeStateSyntax': 'ProjectCompilerStateSyntax', 'ProjectSourceTypeStateRows': 'ProjectCompilerStateRows', 'ProjectSourceTypeStateExistence': 'ProjectCompilerStateExistence', 'ProjectSourceTypeStateMembership': 'ProjectCompilerStateMembership', 'ProjectSourceTypeRecursionSyntax': 'ProjectCompilerRecursionSyntax', 'ProjectSourceTypeRecursionStep': 'ProjectCompilerRecursionStep', 'ProjectSourceTypeRecursors': 'ProjectCompilerRecursors', 'ProjectSourceTypeEvaluationSyntax': 'ProjectCompilerEvaluationSyntax', 'ProjectSourceTypeEvaluationExistence': 'ProjectCompilerEvaluationExistence', 'ProjectSourceTypeEvaluationUnique': 'ProjectCompilerEvaluationUnique', 'ProjectSourceTypeGraphValues': 'ProjectCompilerGraphValues', 'ProjectSourceTypeHistory': 'ProjectCompilerHistory', 'ProjectSourceTypeJudgmentSyntax': 'ProjectCompilerJudgmentSyntax', 'ProjectSourceTypeJudgment': 'ProjectCompilerJudgment', 'ProjectSourceCodeSyntax': 'ProjectCompilerCodeSyntax', 'ProjectSourceCodeTransport': 'ProjectCompilerCodeTransport', 'ProjectSourceCodeCarrier': 'ProjectCompilerCodeCarrier', 'ProjectSourceCodeProperties': 'ProjectCompilerCodeProperties'}
+    for src,dst in mapping.items():
+        expected=strip_comments((ROOT/'PPAC/Migration/Internal'/(src+'.lean')).read_text(encoding='utf-8'))
+        for a,b in sorted(mapping.items(),key=lambda kv:-len(kv[0])):expected=re.sub(r'\b'+a+r'\b',b,expected)
+        expected=expected.replace('ProjectSourceLocalSyntax','ProjectCompilerLocalSyntax').replace('ProjectSourceLocal','ProjectCompilerLocal')
+        expected=expected.replace('ProjectSourceTypeRecursive','ProjectCompilerJudgment').replace('ProjectSourceCodeCriterionTransfer','ProjectCompilerCodeCarrier')
+        expected=expected.replace('sourceCode','compiled').replace('typed','atCarrier').replace('Typed','AtCarrier').replace('localType','localStep').replace('subst_free','subst_output')
+        if expected.strip()!=texts[dst].strip():raise RuntimeError('Compiler recursion re-instantiation drift: '+dst)
+    required={
+      'ProjectCompilerCaseSyntax':['def relation','def queried','(Formula.mem x n).conj','def advanced','successor (Fin.last m) b.castSucc','ProjectAtomicSyntax.compiled kind','singleCode tag w x n','singleCode tag w y q','binaryCode kind w x y n','binaryCode kind w X Y q','constant false w n q','constant true w n q','atomicCase 0','atomicCase 1','atomicCase 2','singleCase 4 false','singleCase 9 true','singleCase 10 true','binaryCase 0','binaryCase 1','binaryCase 2','binaryCase 3'],
+      'ProjectCompilerLocalSyntax':['SyntaxContextReadSyntax.read (0 : Fin 1)','ProjectCompilerCaseSyntax.cases readMatrix (one h)','(empty (Fin.last m)).conj','(Formula.mem n w).conj','SyntaxTermSyntax.contexts w b q','theorem intro_local'],
+      'ProjectCompilerStateExistence':['MinimalInstances.separation_instance','extensionality_instance'],
+      'ProjectCompilerRecursors':['ObjectTransfiniteRecursion.source_uniqueness matrix','ProjectCompilerRecursionStep.total','ProjectCompilerRecursionStep.deterministic'],
+      'ProjectCompilerRoot':['ProjectCompilerHistory.from_value','ProjectCompilerStateMembership.local_of_edge','ProjectCompilerCodeSyntax.eliminate_code','theorem certificate_of_compiled'],
+      'ProjectCompilerRootSyntax':['existsMany 4','ProjectCompilerRecursionSyntax.graph','ProjectCompilerStateSyntax.state','ProjectCompilerLocalSyntax.localStep'],
+      'ProjectCompilerIndependent':['def allHistories','ProjectCompilerCodeCarrier.exists_carrier','ProjectCompilerEvaluationExistence.exists_value','ProjectCompilerStateMembership.edge_of_local','ProjectCompilerCodeSyntax.intro_code'],
+      'ProjectCompilerBase':['theorem constant_compiled','ProjectCompilerCaseIntro.constant_cases','ProjectCompilerCaseIntro.atomic_cases','ProjectCompilerIndependent.compiled','theorem atomic_compiled','ProjectAtomicExistence.exists_unique_typed','theorem atomic_exists_typed'],
+      'ObjectProjectCompiler':['TheoryTransport.sentence','ZFReplay.replay','native_compilerConstantsActuallyProduced','native_compilerThreeAtomsTypedOutputExists']}
+    for name,clauses in required.items():
+        missing=[x for x in clauses if x not in texts[name]]
+        if missing:raise RuntimeError('Actual compiler proof drift: '+name+': '+repr(missing))
+    for n in ['ProjectCompilerCaseSyntax','ProjectCompilerLocalSyntax']:
+        if 'FormulaCodeSyntax.formulaCode' in texts[n] or 'ProjectSourceCodeSyntax.sourceCode' in texts[n]:raise RuntimeError('Actual step must not assume target typing or whole source correctness')
+    for mod,name,pre in [('ProjectCompilerRecursors','all_unique',set()),('ProjectCompilerRoot','certificate_of_compiled',{'hw','hc'}),('ProjectCompilerIndependent','compiled',{'hw','hn','hl'}),('ProjectCompilerBase','constant_compiled',{'hw','hb','hc'}),('ProjectCompilerBase','atomic_exists_typed',{'hw','hz','hi'})]:
+        h=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0)))!=pre:raise RuntimeError('Actual compiler hidden premise: '+mod+'.'+name)
+        if re.search(r'hIH\s*:|Promise|Consistent|Model',h.group(0)):raise RuntimeError('Unexpected compiler external correctness premise')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for clause in ['ObjectProjectCompiler.native_compilerThreeAtomsTypedOutputExists kind w b z x y n','Internal.ProjectCompilerBase.existsTyped w n b z','ObjectProjectCompiler.native_compilerProducedOutputRootCertificate']:
+        if clause not in check:raise RuntimeError('Missing actual compiler native check')
+    return {'all_twelve_actual_input_and_output_constructor_cases_defined':True,
+            'child_query_uses_actual_history_and_strict_internal_child_bound':True,
+            'quantifier_queries_use_actual_independent_successor_scope':True,
+            'local_program_does_not_assume_target_FormulaCode_or_whole_source_correctness':True,
+            'actual_Separation_states_and_full_ordinal_recursors_constructed_unique':True,
+            'produced_output_actual_parent_graph_state_and_edge_certificate_proved':True,
+            'both_constants_really_produce_same_input_code':True,
+            'three_atomic_modes_really_produce_a_typed_output':True,
+            'only_state_and_evaluation_value_uniqueness_proved_not_general_scalar_functionality':True,
+            'generic_history_independent_helper_retains_explicit_object_ALL_premise':True,
+            'all_legal_source_codes_have_unique_typed_compiled_output_proved':False,
+            'compiler_recursive_IH_discharged_on_all_twelve_modes':False,
+            'actual_NatPacket_Horn_schema_test_Proof_interpretation_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1555,6 +1605,7 @@ def main() -> None:
     three_schema_index_system = check_three_schema_index_system()
     Project_atomic_compile = check_Project_atomic_compile()
     Project_source_recursive_grammar = check_Project_source_recursive_grammar()
+    Project_actual_compiler = check_Project_actual_compiler()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4323,7 +4374,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceInvalidContextRejected',
                     'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeOmegaIndependent',
                     'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceCodeRecursiveIff',
-                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectSourceCode.native_projectSourceAllInternalRecursiveLaw',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerStateExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerStateUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerStateEdgesIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerAllRecursors',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerActualCarrierRecursors',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerNaturalEvaluationExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerEvaluationStateUnique',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerProducedOutputRootCertificate',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerCarrierExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerAtActualCarrierIff',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerNaturalGuards',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerNonNaturalInputRejected',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerInvalidCoordinatesRejected',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerOmegaIndependent',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerConstantsActuallyProduced',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerThreeAtomsActuallyProduced',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerThreeAtomsTypedOutputExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerHistoryIndependentActualOutput',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerEvaluationStateUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectProjectCompiler.native_compilerActualHistoryFromValue'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4335,6 +4406,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectCompiler": ('compilerStateExists', 'compilerStateUniqueFiber', 'compilerStateEdgesIff', 'compilerAllRecursors', 'compilerActualCarrierRecursors', 'compilerNaturalEvaluationExists', 'compilerEvaluationStateUnique', 'compilerProducedOutputRootCertificate', 'compilerCarrierExists', 'compilerAtActualCarrierIff', 'compilerNaturalGuards', 'compilerNonNaturalInputRejected', 'compilerInvalidCoordinatesRejected', 'compilerOmegaIndependent', 'compilerConstantsActuallyProduced', 'compilerThreeAtomsActuallyProduced', 'compilerThreeAtomsTypedOutputExists', 'compilerHistoryIndependentActualOutput', 'compilerEvaluationStateUniqueFiber', 'compilerActualHistoryFromValue'),
         "ObjectProjectSourceCode": ('projectSourceStateExists', 'projectSourceStateUniqueFiber', 'projectSourceStateEdgesIff', 'projectSourceRecursors', 'projectSourceActualCarrierRecursors', 'projectSourceNaturalEvaluationExists', 'projectSourceEvaluationUniqueFiber', 'projectSourceTypedRecursiveIff', 'projectSourceCodeCarrierExists', 'projectSourceCodeAtCarrierIff', 'projectSourceCodeGuards', 'projectSourceNonNaturalCodeRejected', 'projectSourceInvalidContextRejected', 'projectSourceCodeOmegaIndependent', 'projectSourceCodeRecursiveIff', 'projectSourceAllInternalRecursiveLaw'),
         "ObjectProjectAtomic": ('projectBoundShiftUnique', 'projectBoundShiftRange', 'projectBoundShiftTargetType', 'projectBoundShiftExists', 'projectBoundShiftExistsUnique', 'projectSubsetUnique', 'projectSubsetTargetType', 'projectSubsetExists', 'projectSubsetTypedUnique', 'projectAtomicResultUnique', 'projectAtomicCompiledType', 'projectAtomicCompiledUnique', 'projectEqualitySameCode', 'projectAtomicTypedUnique', 'projectAtomicAllInternalInputs'),
         "ObjectSchemaIndex": ('doubleShiftExists', 'doubleShiftMap', 'doubleShiftEdgesIff', 'doubleShiftUnique', 'schemaIndexGraphExists', 'schemaIndexMap', 'schemaIndexZeroIff', 'schemaCollectionOneIff', 'schemaSeparationTailIff', 'schemaCollectionTailIff', 'schemaIndexStateExists', 'schemaIndexCodeExists', 'schemaIndexRenameLaw', 'schemaIndexRenameAt', 'schemaIndexSystemExists'),
@@ -5291,6 +5363,11 @@ def main() -> None:
         "three_schema_index_system_guard": three_schema_index_system,
         "Project_atomic_compile_guard": Project_atomic_compile,
         "Project_source_recursive_grammar_guard": Project_source_recursive_grammar,
+        "Project_actual_compiler_guard": Project_actual_compiler,
+        'object_Project_compiler_actual_set_recursion_constructed_proved': True,
+        'object_Project_compiler_produced_output_actual_parent_certificate_proved': True,
+        'object_Project_compiler_constants_and_atomic_execution_proved': True,
+        'object_Project_compiler_all_source_inputs_output_typed_unique_proved': False,
         'object_Project_source_twelve_constructor_recursive_code_equation_proved': True,
         'object_Project_source_actual_carriers_and_recursors_object_eliminated': True,
         'object_Project_bound_term_internal_shift_proved': True,
