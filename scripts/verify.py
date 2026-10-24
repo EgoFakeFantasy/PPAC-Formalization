@@ -2211,7 +2211,7 @@ def check_Packet_original_structural_forward_unfolding() -> dict:
             'external_Branch_Family_indices_only_finite_metadata_no_runtime_values':True,
             'specified_root_witness_fields_fully_normalized':True,
             'joint_internal_tree_forest_tail_bound':True,
-            'reverse_unbounded_assignment_search_bounds_discharged':False,
+            'reverse_unbounded_assignment_search_bounds_discharged':True,
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
 
@@ -2245,7 +2245,7 @@ def check_Packet_specified_structural_root_recursion() -> dict:
             'all_internal_invalid_nonstandard_field_candidates_retained':True,
             'all_actual_accepted_fields_natural_from_real_row':True,
             'joint_internal_tree_forest_tail_bound':True,
-            'reverse_unbounded_assignment_search_bounds_discharged':False,
+            'reverse_unbounded_assignment_search_bounds_discharged':True,
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
 
@@ -2277,7 +2277,42 @@ def check_Packet_joint_internal_structural_tail_bounds() -> dict:
             'final_ALL3_ALL4_actual_tail_laws_require_only_omega':True,
             'all_internal_invalid_nonstandard_field_candidates_retained':True,
             'containment_corollaries_retain_actual_output_bound_and_naturality':True,
-            'reverse_unbounded_assignment_search_bounds_discharged':False,
+            'reverse_unbounded_assignment_search_bounds_discharged':True,
+            'full_bytes_Basic_AST_schema_Proof_Con':False}
+
+
+def check_Packet_structural_search_bounds_and_typed_recursion() -> dict:
+    modules = ['PacketStructureSearchEnvironment', 'PacketStructureSearchArithmetic', 'PacketStructureSearchHead', 'PacketStructureSearchBounds', 'PacketStructureSearchApplication', 'PacketStructureSearchEquation', 'PacketStructureSearchAccepted', 'PacketStructureSearchLawSyntax', 'PacketStructureSearchLaws', 'ObjectPacketStructureSearch']
+    schemas = ['packetStructureSearchAllOriginalAssignmentNaturality', 'packetStructureSearchAllOriginalAssignmentBounds', 'packetStructureSearchActualAffineTailOnlyOmega', 'packetStructureSearchFourOriginalApplicationsIff', 'packetStructureSearchActualRootConditionRecursionIff', 'packetStructureSearchTypedActualAcceptanceBackward', 'packetStructureSearchActualAcceptanceTypedRecursionIff', 'packetStructureSearchActualTreeTypedRecursionIff', 'packetStructureSearchActualForestTypedRecursionIff', 'packetStructureSearchActualPacketTypedRecursionIff', 'packetStructureSearchAllInternalRootConditionIff', 'packetStructureSearchAllInternalActualTypedRecursion', 'packetStructureSearchAllThreeActualTypedRecursionLaws', 'packetStructureSearchCanonicalRootSystemExistsOnlyOmega']
+    required = {'PacketStructureSearchEnvironment': ['theorem entry_environment', 'theorem tree_at_natural', 'theorem nil_at_natural', 'theorem cons_at_natural', 'theorem packet_at_natural', 'theorem local_natural'], 'PacketStructureSearchArithmetic': ['PacketTokenBounds.input_below', 'PacketTokenBounds.tail_below', 'PacketStructureTailBounds.tree_tail', 'PacketStructureTailBounds.forest_tail', 'theorem affine_tail', 'SyntaxNumerals.exists_numeral hZ 256', 'PacketDivisionDescentCore.quotient_below'], 'PacketStructureSearchHead': ['theorem matrix_of_local', 'theorem root_natural', 'theorem variable_bound', 'HornExprBounds.variable_bound', 'PacketStructureSearchEnvironment.local_natural'], 'PacketStructureSearchBounds': ['theorem tree_bounds', 'environmentBound 7', 'theorem nil_bounds', 'environmentBound 1', 'theorem cons_bounds', 'environmentBound 6', 'theorem packet_bounds', 'environmentBound 3', 'PacketStructureSearchArithmetic.token_input', 'PacketStructureSearchArithmetic.tree_tail', 'PacketStructureSearchArithmetic.affine_tail', 'theorem local_bounds'], 'PacketStructureSearchApplication': ['theorem backward', 'PacketStructureSearchBounds.local_bounds', 'PacketStructureSearchEnvironment.local_natural', 'HornApplicationRules.intro_application', 'theorem application_iff'], 'PacketStructureSearchEquation': ['theorem applications_iff_outcomes', 'theorem condition_iff_criterion', 'PacketStructureSearchApplication.application_iff', 'PacketStructureRootEquation.outcomes_iff'], 'PacketStructureSearchAccepted': ['theorem backward', 'SyntaxConstructors.exists_constructor', 'PacketStructureSearchEquation.condition_iff_criterion', 'theorem accepted_iff', '(environmentNat (width f) w xs).conj (criterion f w xs)'], 'PacketStructureSearchLawSyntax': ['OriginalUniversalBlock.allMany (width f+1)', 'OriginalUniversalBlock.allMany (width f)', 'environmentNat (width f)', 'def allSystem', 'def existsCanonical'], 'PacketStructureSearchLaws': ['theorem all_actual', 'theorem all_root', 'theorem all_system', 'theorem exists_canonical', 'theorem tree_iff', 'theorem forest_iff', 'theorem packet_iff', 'environmentNat 4 w (four n l t a)'], 'ObjectPacketStructureSearch': ['TheoryTransport.sentence', 'ZFReplay.replay']}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden,text): raise RuntimeError('Actual structural search forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Actual structural search proof drift: '+mod+': '+clause)
+    signatures = [('PacketStructureSearchBounds','local_bounds',{'hw','hv','hl'}),('PacketStructureSearchApplication','application_iff',{'hw','hv'}),('PacketStructureSearchAccepted','backward',{'hw','hn','hc'}),('PacketStructureSearchAccepted','accepted_iff',{'hw'}),('PacketStructureSearchLaws','all_actual',{'hw'}),('PacketStructureSearchLaws','all_system',{'hw'}),('PacketStructureSearchLaws','exists_canonical',{'hw'}),('PacketStructureSearchLaws','tree_iff',{'hw'}),('PacketStructureSearchLaws','forest_iff',{'hw'}),('PacketStructureSearchLaws','packet_iff',{'hw'})]
+    for mod,name,expected in signatures:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Actual structural search hidden premise: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketStructureSearch.native_'+name not in check: raise RuntimeError('Missing actual structural search native fixture: '+name)
+    return {'all_original_7_1_6_3_assignment_naturality_derived_from_actual_rows':True,
+            'actual_head_variables_bounded_by_original_expression_variable_bound':True,
+            'tree_auxiliary_fields_bounded_by_real_token_input_and_tail':True,
+            'cons_middle_tail_bounded_by_joint_actual_tree_tail':True,
+            'packet_middle_tail_bounded_by_actual_affine_quotient_only_omega':True,
+            'all_original_reverse_assignment_search_bounds_discharged':True,
+            'four_full_original_bounded_applications_iff_unbounded_outcomes':True,
+            'actual_root_condition_iff_normalized_canonical_recursive_cases':True,
+            'actual_acceptance_iff_original_field_naturality_and_recursive_criterion':True,
+            'Nil_tail_naturality_guard_preserved_for_all_invalid_candidates':True,
+            'final_ALL3_ALL4_ALL2_actual_typed_recursion_requires_only_omega':True,
+            'canonical_set_and_root_witnesses_constructed_and_object_eliminated':True,
             'full_bytes_Basic_AST_schema_Proof_Con':False}
 
 
@@ -2339,6 +2374,7 @@ def main() -> None:
     Packet_original_structural_forward_unfolding = check_Packet_original_structural_forward_unfolding()
     Packet_specified_structural_root_recursion = check_Packet_specified_structural_root_recursion()
     Packet_joint_internal_structural_tail_bounds = check_Packet_joint_internal_structural_tail_bounds()
+    Packet_structural_search_bounds_and_typed_recursion = check_Packet_structural_search_bounds_and_typed_recursion()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5405,7 +5441,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailActualForestContained',
                     'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalTreeLaw',
                     'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalForestLaw',
-                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalCoupledLawsOnlyOmega'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketStructureTail.native_packetStructureTailAllInternalCoupledLawsOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllOriginalAssignmentNaturality',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllOriginalAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualAffineTailOnlyOmega',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchFourOriginalApplicationsIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualRootConditionRecursionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchTypedActualAcceptanceBackward',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualAcceptanceTypedRecursionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualTreeTypedRecursionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualForestTypedRecursionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchActualPacketTypedRecursionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllInternalRootConditionIff',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllInternalActualTypedRecursion',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchAllThreeActualTypedRecursionLaws',
+                    'PPAC.Migration.Internal.ObjectPacketStructureSearch.native_packetStructureSearchCanonicalRootSystemExistsOnlyOmega'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5417,6 +5467,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketStructureSearch": ('packetStructureSearchAllOriginalAssignmentNaturality', 'packetStructureSearchAllOriginalAssignmentBounds', 'packetStructureSearchActualAffineTailOnlyOmega', 'packetStructureSearchFourOriginalApplicationsIff', 'packetStructureSearchActualRootConditionRecursionIff', 'packetStructureSearchTypedActualAcceptanceBackward', 'packetStructureSearchActualAcceptanceTypedRecursionIff', 'packetStructureSearchActualTreeTypedRecursionIff', 'packetStructureSearchActualForestTypedRecursionIff', 'packetStructureSearchActualPacketTypedRecursionIff', 'packetStructureSearchAllInternalRootConditionIff', 'packetStructureSearchAllInternalActualTypedRecursion', 'packetStructureSearchAllThreeActualTypedRecursionLaws', 'packetStructureSearchCanonicalRootSystemExistsOnlyOmega'),
         "ObjectPacketStructureTail": ('packetStructureTailActualRawPayloadStrictSubcode', 'packetStructureTailActualConsChildrenStrictSubcodes', 'packetStructureTailTreePointFromJointChildIH', 'packetStructureTailForestPointFromJointChildIH', 'packetStructureTailJointPoint', 'packetStructureTailJointObjectProgressive', 'packetStructureTailAllInternalJointIHDischarged', 'packetStructureTailActualTreeBelowOutput', 'packetStructureTailActualForestBelowOutput', 'packetStructureTailActualTreeContained', 'packetStructureTailActualForestContained', 'packetStructureTailAllInternalTreeLaw', 'packetStructureTailAllInternalForestLaw', 'packetStructureTailAllInternalCoupledLawsOnlyOmega'),
         "ObjectPacketStructureRoot": ('packetStructureRootTreeFieldsIff', 'packetStructureRootForestNilFieldsIff', 'packetStructureRootForestConsFieldsIff', 'packetStructureRootPacketFieldsIff', 'packetStructureRootAllActualOutcomesNormalized', 'packetStructureRootCanonicalEntryActualAcceptanceIff', 'packetStructureRootCanonicalCriterionActualRecursiveCasesIff', 'packetStructureRootConditionNormalizedForward', 'packetStructureRootActualRecursiveCasesWithoutCanonicalSet', 'packetStructureRootActualAcceptedRecursiveCasesOnlyOmega', 'packetStructureRootActualAcceptedAllFieldsNatural', 'packetStructureRootAllInternalOutcomeFieldNormalization', 'packetStructureRootAllInternalAcceptedRecursion', 'packetStructureRootActualTreeForward', 'packetStructureRootActualForestForward', 'packetStructureRootActualPacketForward', 'packetStructureRootAllThreeAcceptedRecursionLawsOnlyOmega'),
         "ObjectPacketStructure": ('packetStructureTreeExactMatrix', 'packetStructureForestNilExactMatrix', 'packetStructureForestConsExactMatrix', 'packetStructurePacketExactMatrix', 'packetStructureAllFourCompleteLocalMatrices', 'packetStructureOriginalBoundedApplicationsIff', 'packetStructureOriginalApplicationForward', 'packetStructureOriginalThreeTagDispatch', 'packetStructureActualConditionBoundedIff', 'packetStructureActualConditionForward', 'packetStructureActualRootLaw', 'packetStructureAllInternalRootLaws', 'packetStructureActualSystemExistsOnlyOmega'),
@@ -6403,6 +6454,12 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_structural_search_bounds_and_typed_recursion_guard": Packet_structural_search_bounds_and_typed_recursion,
+        'object_Packet_structural_all_original_assignment_naturality_proved': True,
+        'object_Packet_structural_four_full_original_application_equivalences_proved': True,
+        'object_Packet_structural_actual_all_internal_typed_recursion_iff_proved': True,
+        'object_Packet_structural_actual_recursion_iff_requires_only_omega': True,
+        'object_Packet_structural_actual_Nil_tail_naturality_guard_preserved': True,
         "Packet_joint_internal_structural_tail_bounds_guard": Packet_joint_internal_structural_tail_bounds,
         'object_Packet_structural_actual_tree_tail_le_output_proved': True,
         'object_Packet_structural_actual_forest_tail_le_output_proved': True,
@@ -6421,7 +6478,7 @@ def main() -> None:
         'object_Packet_structural_four_forward_applications_proved': True,
         'object_Packet_structural_three_tag_dispatch_proved': True,
         'object_Packet_structural_all_internal_forward_root_system_proved': True,
-        'object_Packet_structural_unbounded_reverse_search_bounds_discharged': False,
+        'object_Packet_structural_unbounded_reverse_search_bounds_discharged': True,
         'object_Packet_structural_joint_internal_tail_bound_proved': True,
         'object_Packet_structural_specified_root_fields_normalized': True,
         "Packet_actual_token_numeric_bounds_guard": Packet_actual_token_numeric_bounds,
