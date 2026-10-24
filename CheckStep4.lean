@@ -12360,4 +12360,67 @@ example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketBytesRecursion.packetBytesRecursionAllInternalActualRecursionOnlyOmegaSentence w)) :=
   Internal.ObjectPacketBytesRecursion.native_packetBytesRecursionAllInternalActualRecursionOnlyOmega w
+example {m} (w C n l f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputCompleteFieldsToAllFieldBoundsSentence w C n l f)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputCompleteFieldsToAllFieldBounds w C n l f
+
+example {m} (w C n l f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputAllFieldBoundsToActualGraphSentence w C n l f)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputAllFieldBoundsToActualGraph w C n l f
+
+example {m} (w C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputOriginalGraphAndLengthBoundsIffSentence w C n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputOriginalGraphAndLengthBoundsIff w C n
+
+example {m} (w C r s h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputFullConsFieldBoundsForwardSentence w C r s h t n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputFullConsFieldBoundsForward w C r s h t n
+
+example {m} (w C r s h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputFirstActualFieldByteBoundSentence w C r s h t n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputFirstActualFieldByteBound w C r s h t n
+
+example {m} (w C r s h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputAllSuccessorFieldsTailBoundsSentence w C r s h t n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputAllSuccessorFieldsTailBounds w C r s h t n
+
+example {m} (w C n l : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputBoundsAtAnyActualLengthSentence w C n l)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputBoundsAtAnyActualLength w C n l
+
+example {m} (w C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputNilGuardConstructedSentence w C n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputNilGuardConstructed w C n
+
+example {m} (w C h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputFullConsGuardConstructedSentence w C h t n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputFullConsGuardConstructed w C h t n
+
+example {m} (w C h t n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputTypedConsHeadAndTailRecoveredSentence w C h t n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputTypedConsHeadAndTailRecovered w C h t n
+
+example {m} (w C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputAllInternalRadixGuardRecursionSentence w C n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputAllInternalRadixGuardRecursion w C n
+
+example {m} (w C n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputActual256ExactGuardIffSentence w C n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputActual256ExactGuardIff w C n
+
+example {m} (w h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputActualByteNaturalOnlyOmegaSentence w h)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputActualByteNaturalOnlyOmega w h
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputActualGuardImpliesOriginalListValiditySentence w n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputActualGuardImpliesOriginalListValidity w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputActualGuardExactRecursionOnlyOmegaSentence w n)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputActualGuardExactRecursionOnlyOmega w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketByteInput.packetByteInputAllInternalActualGuardOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketByteInput.native_packetByteInputAllInternalActualGuardOnlyOmega w
 end PPAC.Migration.Step4Checks

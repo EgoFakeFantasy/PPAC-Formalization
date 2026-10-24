@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+独立有效字节输入守卫及全内部Nil／Cons递归已验收：定义直接使用原Encoding／HasLength／完整Fields图和图值域小于256，不引用Bytes执行。完整图边界与全部内部逐字段界双向等价；真实零字段取得头字节界，后继字段对应给尾界并构造反向界。长度、完整字段图、零／后继及256见证对象消去；最终仅Ω取得ALL1 ByteList↔Nil∨EX2(Cons∧Byte_head∧ByteList_tail)，全局自然性从原有效列表取得，辅助原Cons注入／字段定律保留自然性前提。9模块135声明、16组原nativeZF闭句；2341构建、25361审计（474无公理／24887允许依赖）、零警告；九命令／五trust=0通过，2121哈希、2844对精确足迹、23017项Internal覆盖。全部旧布尔叶保持。字节执行全域存在唯一、规范varint／readTokens对应、Basic AST桥、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_BYTE_INPUT_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立有序字节fold的全内部准确递归双条件已验收：原Separation实际构造两张精确限制前缀图，全部旧字节行逐行保留；原双函数单值性归一完整末行，内部长度零／后继分解取得真实字节、尾列表和中间值。全部前缀图、末行及256见证对象消去；最终仅Ω取得覆盖全部内部候选的ALL3 Bytes↔NilCase∨EX3(Cons∧Bytes_tail∧原256仿射接受)，Nil尾部自然性保留。9模块102声明、14组原nativeZF闭句；2332构建、25226审计（472无公理／24754允许依赖）、零警告；九命令／五trust=0通过，2112哈希、2828对精确足迹、22882项Internal覆盖。递归双条件顶层门及对应子门false→true，其余旧布尔叶保持。fold全域总唯一性、规范varint／readTokens对应、Basic AST桥、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_BYTES_RECURSION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
