@@ -190,12 +190,29 @@ def check_projection_trace_definitions() -> dict:
             "proof_node_projection_queries_proved": False}
 
 
+def check_projection_rule_partition() -> dict:
+    """Match all three actual outer-tag sublists to the pinned original seven descriptors."""
+    body = strip_comments((ROOT / "PPAC/Migration/Internal/ProjectionRuleDispatch.lean").read_text(encoding="utf-8"))
+    groups = {"tagRules": ["tagZero", "tagPositive"], "getRules": ["getZero", "getHead", "getTail"],
+              "fieldRules": ["fieldZero", "fieldPositive"]}
+    for name, rules in groups.items():
+        found = re.search(r"(?ms)^def " + name + r"\b.*?(?=^(?:def|theorem|end)\b|\Z)", body)
+        expected = "def" + name + ":ListRule:=[" + ",".join("ObjectProjection." + rule for rule in rules) + "]"
+        if not found or re.sub(r"\s+", "", found.group(0)) != expected:
+            raise RuntimeError(f"Original projection rule partition changed: {name}")
+    return {"groups": groups, "all_original_rules_dispatched": True,
+            "tag_numeric_all_internal_candidates_iff_proved": True,
+            "query_input_index_output_natural_domains_proved": True,
+            "get_and_field_numeric_all_internal_candidates_iff_proved": False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
     raw_projection_definition = check_raw_projection_definitions()
     raw_field_definition = check_raw_field_definitions()
     projection_trace_definition = check_projection_trace_definitions()
+    projection_rule_partition = check_projection_rule_partition()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -2476,7 +2493,21 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionGetHeadRule',
                     'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionGetTailRule',
                     'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionFieldZeroRule',
-                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionFieldPositiveRule'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectionTrace.native_projectionFieldPositiveRule',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionConstructorFieldNatural',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagQueryNatural',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionGetQueryNatural',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionFieldQueryNatural',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagRuleDispatch',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionGetRuleDispatch',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionFieldRuleDispatch',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagZeroConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagRawConstructed',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagSound',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagComplete',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagQueryIff',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagQueryUnique',
+                    'PPAC.Migration.Internal.ObjectProjectionTag.native_projectionTagAtActualRowSound'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -2590,6 +2621,7 @@ def main() -> None:
         "ObjectRawCodeProjection": ('pairingComponentExists', 'pairingComponentUnique', 'barePairEveryNaturalDecodes', 'rawEveryPositiveNaturalDecodes', 'rawZeroComponent', 'rawUnselectedNaturalIsZero', 'rawHeadTailExists', 'rawHeadTailUnique', 'rawHeadTailRange', 'rawHeadTailZeroIff', 'arbitraryRawTagHeadTailIff', 'rawNaturalIterationFiber', 'rawGetExists', 'rawGetUnique', 'rawGetFiber', 'rawGetRange', 'rawGetZeroEquation', 'rawGetSuccessorEquation'),
         "ObjectRawCodeField": ('rawGetZeroAllInternalIndices', 'rawGetZeroInputIff', 'rawFieldExists', 'rawFieldUnique', 'rawFieldFiber', 'rawFieldRange', 'rawFieldAtActualPayloadIff', 'rawFieldAtArbitraryRawTagIff', 'rawFieldZeroInputIff', 'rawHeadTailOnActualConsIff', 'rawGetAtFiniteForestIff', 'rawFieldAtFiniteNodeIff', 'rawFieldAtFiniteConstructorIff'),
         "ObjectProjectionTrace": ('projectionTraceNatural', 'projectionTraceOriginalStep', 'projectionTraceSetExists', 'projectionTraceAllRootsUnfold', 'projectionTraceAtActualSetIff', 'projectionActualHeadBound', 'projectionActualRuleApplication', 'projectionActualRuleCondition', 'projectionTagZeroRule', 'projectionTagPositiveRule', 'projectionGetZeroRule', 'projectionGetHeadRule', 'projectionGetTailRule', 'projectionFieldZeroRule', 'projectionFieldPositiveRule'),
+        "ObjectProjectionTag": ('projectionConstructorFieldNatural', 'projectionTagQueryNatural', 'projectionGetQueryNatural', 'projectionFieldQueryNatural', 'projectionTagRuleDispatch', 'projectionGetRuleDispatch', 'projectionFieldRuleDispatch', 'projectionTagZeroConstructed', 'projectionTagRawConstructed', 'projectionTagSound', 'projectionTagComplete', 'projectionTagQueryIff', 'projectionTagQueryUnique', 'projectionTagAtActualRowSound'),
         "ObjectPureSyntaxMembership": ('membershipInputDataIff', 'membershipAtForestIff', 'membershipTypedListSound', 'membershipActualPremiseAtTwo', 'membershipApplicationSound', 'membershipQueryFromList', 'membershipQueryAt', 'typedMembershipQuery', 'fullMembershipQuery', 'allFourAtomicQueries'),
         "ObjectPureSyntaxFormulaAtoms": ('constantInputExpressionIff', 'constantApplicationIffNullary', 'constantApplicationSound', 'constantQueryConstructed', 'typedConstantQueryConstructed', 'equalityInputExpressionIff', 'equalityApplicationSound', 'equalityQueryConstructed', 'typedEqualityQueryConstructed', 'equalityActualChildTracesMerged'),
         "ObjectPureSyntaxArgumentChecker": ('pureConsQueryComplete', 'pureConsApplicationFromInductionSound', 'pureArgumentsFromInductionIff', 'pureAllArgumentsCorrect', 'pureArgumentsInductionDischarged', 'pureArgumentsQueryIff', 'pureArgumentsQuerySound', 'pureArgumentsQueryComplete', 'pureEmptyBoundArgumentsQueryIff', 'pureModeThreeFromArgumentsQueryIff'),
@@ -3372,6 +3404,10 @@ def main() -> None:
         "object_raw_field_finite_constructor_slot_iff_schema_proved": True,
         "raw_field_definition_guard": raw_field_definition,
         "projection_trace_definition_guard": projection_trace_definition,
+        "projection_rule_partition_guard": projection_rule_partition,
+        "object_original_projection_tag_all_internal_iff_proved": True,
+        "object_original_projection_query_natural_domains_proved": True,
+        "object_original_projection_rule_outer_dispatch_proved": True,
         "object_original_seven_projection_rule_trace_AST_implemented": True,
         "object_original_seven_projection_rule_positive_closure_proved": True,
         "object_original_projection_trace_all_root_unfold_proved": True,

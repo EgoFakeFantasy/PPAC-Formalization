@@ -8373,4 +8373,79 @@ example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
               (Fin.last (m+1)) (Fin.last m).castSucc)))))).close)) :=
   ObjectProjectionTrace.native_projectionTraceAllRootsUnfold w
 
+example {m} (k tag : Nat) (xs : Fin k → Fin m) (j : Fin k) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionConstructorFieldNaturalSentence k tag xs j w row)) :=
+  Internal.ObjectProjectionTag.native_projectionConstructorFieldNatural k tag xs j w row
+
+example {m} (j : Fin 2) (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagQueryNaturalSentence j w x y)) :=
+  Internal.ObjectProjectionTag.native_projectionTagQueryNatural j w x y
+
+example {m} (j : Fin 3) (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionGetQueryNaturalSentence j w x i y)) :=
+  Internal.ObjectProjectionTag.native_projectionGetQueryNatural j w x i y
+
+example {m} (j : Fin 3) (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionFieldQueryNaturalSentence j w x i y)) :=
+  Internal.ObjectProjectionTag.native_projectionFieldQueryNatural j w x i y
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w row R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagRuleDispatchSentence k xs w row R)) :=
+  Internal.ObjectProjectionTag.native_projectionTagRuleDispatch k xs w row R
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w row R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionGetRuleDispatchSentence k xs w row R)) :=
+  Internal.ObjectProjectionTag.native_projectionGetRuleDispatch k xs w row R
+
+example {m} (k : Nat) (xs : Fin k → Fin m) (w row R : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionFieldRuleDispatchSentence k xs w row R)) :=
+  Internal.ObjectProjectionTag.native_projectionFieldRuleDispatch k xs w row R
+
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagZeroConstructedSentence w x y)) :=
+  Internal.ObjectProjectionTag.native_projectionTagZeroConstructed w x y
+
+example {m} (w x y b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagRawConstructedSentence w x y b)) :=
+  Internal.ObjectProjectionTag.native_projectionTagRawConstructed w x y b
+
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagSoundSentence w x y)) :=
+  Internal.ObjectProjectionTag.native_projectionTagSound w x y
+
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagCompleteSentence w x y)) :=
+  Internal.ObjectProjectionTag.native_projectionTagComplete w x y
+
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagQueryIffSentence w x y)) :=
+  Internal.ObjectProjectionTag.native_projectionTagQueryIff w x y
+
+example {m} (w x y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagQueryUniqueSentence w x y z)) :=
+  Internal.ObjectProjectionTag.native_projectionTagQueryUnique w x y z
+
+example {m} (w x y row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectionTag.projectionTagAtActualRowSoundSentence w x y row)) :=
+  Internal.ObjectProjectionTag.native_projectionTagAtActualRowSound w x y row
+-- tag双条件只有Omega前提，输入自然域保留在对象结论，不预给候选输出自然性。
+example {m} (w x y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp
+      ((ProjectionTraceSyntax.tag w x y).iff
+        ((Source.Formula.mem x w).conj (PairingProjectionSyntax.step true true w x y)))).close)) :=
+  ObjectProjectionTag.native_projectionTagQueryIff w x y
+
+-- 实际get查询本身推出任一字段自然性，包括索引和候选输出。
+example {m} (j : Fin 3) (w x i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((ProjectionTraceSyntax.get w x i y).imp
+      (Source.Formula.mem (SyntaxAtomSyntax.three x i y j) w))).close)) :=
+  ObjectProjectionTag.native_projectionGetQueryNatural j w x i y
+
+example : ProjectionRuleDispatch.tagRules = [YesMetaZFC.Automation.ObjectProjection.tagZero,
+    YesMetaZFC.Automation.ObjectProjection.tagPositive] := rfl
+example : ProjectionRuleDispatch.getRules = [YesMetaZFC.Automation.ObjectProjection.getZero,
+    YesMetaZFC.Automation.ObjectProjection.getHead, YesMetaZFC.Automation.ObjectProjection.getTail] := rfl
+example : ProjectionRuleDispatch.fieldRules = [YesMetaZFC.Automation.ObjectProjection.fieldZero,
+    YesMetaZFC.Automation.ObjectProjection.fieldPositive] := rfl
+
 end PPAC.Migration.Step4Checks
