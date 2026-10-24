@@ -243,3 +243,4 @@ import PPAC.Migration.Internal.ObjectProjectSourceCode
 import PPAC.Migration.Internal.ObjectProjectCompiler
 import PPAC.Migration.Internal.ObjectProjectCompilerRecursive
 import PPAC.Migration.Internal.ObjectProjectCompilerTyping
+import PPAC.Migration.Internal.ObjectProjectCompilerComplete

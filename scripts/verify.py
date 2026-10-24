@@ -1649,6 +1649,48 @@ def check_Project_compiler_output_typing() -> dict:
             'source_completeness_scalar_uniqueness_full_schema_Proof_Con_proved':False}
 
 
+def check_Project_compiler_source_completeness() -> dict:
+    modules = ['ProjectCompilerCompleteSyntax', 'ProjectCompilerCompleteIntro', 'ProjectCompilerCompleteConstructors', 'ProjectCompilerCompleteQuerySyntax', 'ProjectCompilerCompleteQueries', 'ProjectCompilerCompleteFields', 'ProjectCompilerCompleteAtoms', 'ProjectCompilerCompleteCases', 'ProjectCompilerCompleteStep', 'ProjectCompilerComplete', 'ObjectProjectCompilerComplete']
+    required = {'ProjectCompilerCompleteSyntax': ['def existsOutput', 'ProjectCompilerCodeSyntax.compiled w.castSucc n.castSucc b.castSucc (Fin.last m)', 'def propertyBody', 'ProjectSourceCodeSyntax.sourceCode (old 3 w) (old 3 n) (slot 3 0) (slot 3 1)', 'def correct', 'def allIH', 'theorem at_correct', 'theorem below_correct'], 'ProjectCompilerCompleteIntro': ['ProjectCompilerRecursive.recursive_iff', 'theorem of_cases', 'Derives.exI z', 'ProjectCompilerCodeProperties.guards', 'theorem check_output_natural'], 'ProjectCompilerCompleteConstructors': ['theorem single_cases', 'theorem binary_cases', 'theorem single_output', 'theorem binary_output', 'SyntaxConstructors.exists_constructor hZ 1', 'SyntaxConstructors.exists_constructor hZ 2', 'ProjectCompilerCaseIntro.single_case', 'ProjectCompilerCaseIntro.binary_case', 'ProjectCompilerCompleteIntro.of_cases'], 'ProjectCompilerCompleteQuerySyntax': ['def someCheck', 'check advance codeMatrix', 'theorem query_of_output', 'theorem intro_advanced', 'Derives.exI B'], 'ProjectCompilerCompleteQueries': ['theorem child_output', 'below_correct', 'theorem ordinary_query', 'theorem source_check_output', 'ProjectSourceCodeSyntax.sourceCode w.castSucc x.castSucc (Fin.last m) f.castSucc', 'intro_advanced', 'intro_someCheck true'], 'ProjectCompilerCompleteFields': ['ProjectCompilerCompleteQueries.source_check_output', 'ProjectCompilerCompleteConstructors.single_output', 'ProjectCompilerCompleteConstructors.binary_output'], 'ProjectCompilerCompleteAtoms': ['ProjectCompilerBase.constant_compiled', 'ProjectCompilerBase.atomic_exists_typed', 'HornBinderRules.eliminate_many 2', 'theorem all_atoms'], 'ProjectCompilerCompleteCases': ['HornBinderRules.eliminate_many 1', 'HornBinderRules.eliminate_many 2', 'singleCase 4 false', 'singleCase 9 true', 'singleCase 10 true', 'binaryCase 0', 'binaryCase 1', 'binaryCase 2', 'binaryCase 3', 'ProjectCompilerCompleteAtoms.all_atoms'], 'ProjectCompilerCompleteStep': ['ProjectSourceCodeRecursive.recursive_iff', 'ProjectCompilerCompleteCases.all_cases', 'theorem from_induction'], 'ProjectCompilerComplete': ['SetInduction.all_holds', 'ZFContext.separation hZ inductionMatrix.neg', '.base.foundation', 'ObjectTransitiveCover.source_cover', 'theorem output_exists_without_zero', '(.conjL (.conjL hw))', 'def allSourceLaw', 'theorem all_source_outputs', 'theorem typed_output_exists', 'ProjectCompilerTyping.output_type'], 'ObjectProjectCompilerComplete': ['TheoryTransport.sentence', 'ZFReplay.replay', 'native_compilerSourceInputActualOutputExists', 'native_compilerAllInternalSourceOutputsExist', 'native_compilerSourceInputActualTypedOutputExists']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b', text):
+            raise RuntimeError('Compiler completeness forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Compiler completeness proof drift: '+mod+': '+clause)
+    expected_premises = [
+        ('ProjectCompilerCompleteQueries','child_output',{'hz','hI','hx','hc'}),
+        ('ProjectCompilerCompleteQueries','source_check_output',{'hz','hI','hx','hc'}),
+        ('ProjectCompilerCompleteStep','output_from_induction',{'hw','hz','hI','hc'}),
+        ('ProjectCompilerCompleteStep','from_induction',{'hw','hI'}),
+        ('ProjectCompilerComplete','progressive',{'hw'}),
+        ('ProjectCompilerComplete','all_correct',{'hw'}),
+        ('ProjectCompilerComplete','output_exists_without_zero',{'hw','hc'}),
+        ('ProjectCompilerComplete','all_source_outputs',{'hw'}),
+        ('ProjectCompilerComplete','typed_output_exists',{'hw','hz','hc'})]
+    for mod,name,expected in expected_premises:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Compiler completeness hidden premise: '+mod+'.'+name)
+        if any(x in h.group(0) for x in ['Promise','Consistent','hExistence','hCompiled']):
+            raise RuntimeError('Compiler completeness output oracle: '+mod+'.'+name)
+    check = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in ['compilerSourceAtomsActualOutput', 'compilerSourceChildOutputFromMemberIH', 'compilerSourceOutputFromMemberIH', 'compilerCompletenessPropertyStep', 'compilerCompletenessProgressive', 'compilerAllInternalCompletenessProperty', 'compilerSourceInputActualOutputExists', 'compilerAllInternalSourceOutputsExist', 'compilerSourceInputActualTypedOutputExists']:
+        if 'Internal.ObjectProjectCompilerComplete.native_'+name not in check:
+            raise RuntimeError('Missing compiler completeness native fixture: '+name)
+    return {'all_twelve_source_constructors_obtain_actual_compiler_outputs':True,
+            'actual_source_free_scope_is_arbitrary_internal_parameter':True,
+            'strict_child_guards_and_actual_quantifier_successor_scopes_preserved':True,
+            'all_target_codes_and_source_child_witnesses_object_existentially_constructed_and_eliminated':True,
+            'original_Foundation_Separation_and_transitive_cover_discharge_all_completeness_IH':True,
+            'empty_zero_exists_in_omega_and_is_discharged_in_final_source_law':True,
+            'only_omega_premise_in_final_ALL3_source_to_EX_output_law':True,
+            'actual_output_existence_combined_with_independent_global_target_typing':True,
+            'scalar_output_uniqueness_full_schema_Proof_Con_proved':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1690,6 +1732,7 @@ def main() -> None:
     Project_actual_compiler = check_Project_actual_compiler()
     Project_compiler_recursive_equation = check_Project_compiler_recursive_equation()
     Project_compiler_output_typing = check_Project_compiler_output_typing()
+    Project_compiler_source_completeness = check_Project_compiler_source_completeness()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -4499,7 +4542,16 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectProjectCompilerTyping.native_compilerAllInternalOutputsTargetTyped',
                     'PPAC.Migration.Internal.ObjectProjectCompilerTyping.native_compilerInputTypingProperty',
                     'PPAC.Migration.Internal.ObjectProjectCompilerTyping.native_compilerActualOutputTargetTyped',
-                    'PPAC.Migration.Internal.ObjectProjectCompilerTyping.native_compilerUntypedOutputRejected'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectProjectCompilerTyping.native_compilerUntypedOutputRejected',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceAtomsActualOutput',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceChildOutputFromMemberIH',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceOutputFromMemberIH',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerCompletenessPropertyStep',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerCompletenessProgressive',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerAllInternalCompletenessProperty',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualOutputExists',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerAllInternalSourceOutputsExist',
+                    'PPAC.Migration.Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualTypedOutputExists'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -4511,6 +4563,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProjectCompilerComplete": ('compilerSourceAtomsActualOutput', 'compilerSourceChildOutputFromMemberIH', 'compilerSourceOutputFromMemberIH', 'compilerCompletenessPropertyStep', 'compilerCompletenessProgressive', 'compilerAllInternalCompletenessProperty', 'compilerSourceInputActualOutputExists', 'compilerAllInternalSourceOutputsExist', 'compilerSourceInputActualTypedOutputExists'),
         "ObjectProjectCompilerTyping": ('compilerChildTypingFromMemberIH', 'compilerTwelveCasesTargetTyped', 'compilerOutputTypedFromMemberIH', 'compilerTypingPropertyStep', 'compilerTypingProgressive', 'compilerAllInternalOutputsTargetTyped', 'compilerInputTypingProperty', 'compilerActualOutputTargetTyped', 'compilerUntypedOutputRejected'),
         "ObjectProjectCompilerRecursive": ('compilerActualChildReadIff', 'compilerGuardedChildQueryIff', 'compilerAllInternalChildQueries', 'compilerSuccessorQueryIff', 'compilerScopedChildQueryIff', 'compilerAllTwelveCasesIff', 'compilerActualLocalRecursiveIff', 'compilerActualStateRecursiveIff', 'compilerAtEvaluationRecursiveIff', 'compilerAtCarrierRecursiveIff', 'compilerAllCandidatesRecursiveIff', 'compilerAllInternalRecursiveLaw'),
         "ObjectProjectCompiler": ('compilerStateExists', 'compilerStateUniqueFiber', 'compilerStateEdgesIff', 'compilerAllRecursors', 'compilerActualCarrierRecursors', 'compilerNaturalEvaluationExists', 'compilerEvaluationStateUnique', 'compilerProducedOutputRootCertificate', 'compilerCarrierExists', 'compilerAtActualCarrierIff', 'compilerNaturalGuards', 'compilerNonNaturalInputRejected', 'compilerInvalidCoordinatesRejected', 'compilerOmegaIndependent', 'compilerConstantsActuallyProduced', 'compilerThreeAtomsActuallyProduced', 'compilerThreeAtomsTypedOutputExists', 'compilerHistoryIndependentActualOutput', 'compilerEvaluationStateUniqueFiber', 'compilerActualHistoryFromValue'),
@@ -5473,6 +5526,11 @@ def main() -> None:
         "Project_actual_compiler_guard": Project_actual_compiler,
         "Project_compiler_recursive_equation_guard": Project_compiler_recursive_equation,
         "Project_compiler_output_typing_guard": Project_compiler_output_typing,
+        "Project_compiler_source_completeness_guard": Project_compiler_source_completeness,
+        'object_Project_compiler_all_source_inputs_actual_output_exists_proved': True,
+        'object_Project_compiler_all_source_inputs_have_actual_typed_output_proved': True,
+        'object_Project_compiler_source_completeness_member_IH_Foundation_discharged': True,
+
         'object_Project_compiler_all_actual_outputs_target_typed_proved': True,
         'object_Project_compiler_output_typing_member_IH_Foundation_discharged': True,
 

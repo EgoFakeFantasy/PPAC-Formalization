@@ -11131,4 +11131,39 @@ example {m} (w n b q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
 example {m} (w n b q z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectProjectCompilerTyping.compilerUntypedOutputRejectedSentence w n b q z)) :=
   Internal.ObjectProjectCompilerTyping.native_compilerUntypedOutputRejected w n b q z
+example {m} (w n b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerSourceAtomsActualOutputSentence w n b f z)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerSourceAtomsActualOutput w n b f z
+
+example {m} (w n x b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerSourceChildOutputFromMemberIHSentence w n x b f z)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerSourceChildOutputFromMemberIH w n x b f z
+
+example {m} (w n b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerSourceOutputFromMemberIHSentence w n b f z)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerSourceOutputFromMemberIH w n b f z
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerCompletenessPropertyStepSentence w n)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerCompletenessPropertyStep w n
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerCompletenessProgressiveSentence w)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerCompletenessProgressive w
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerAllInternalCompletenessPropertySentence w)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerAllInternalCompletenessProperty w
+
+example {m} (w n b f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerSourceInputActualOutputExistsSentence w n b f)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualOutputExists w n b f
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerAllInternalSourceOutputsExistSentence w)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerAllInternalSourceOutputsExist w
+
+example {m} (w n b f z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerComplete.compilerSourceInputActualTypedOutputExistsSentence w n b f z)) :=
+  Internal.ObjectProjectCompilerComplete.native_compilerSourceInputActualTypedOutputExists w n b f z
 end PPAC.Migration.Step4Checks
