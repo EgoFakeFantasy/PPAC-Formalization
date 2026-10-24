@@ -980,6 +980,89 @@ def check_abstract_logical_nodes_and_exact_table() -> dict:
             'all_internal_candidate_assignments_in_scope':True,
             'shared_quotation_Bool_Proof_compiler_interpretation_and_Con_proved':False}
 
+
+def check_base_proof_nodes_and_parameterized_six_table() -> dict:
+    # Actual logicalShape and object-formula-parameterized theoryShape, then the exact six-rule local table.
+    directory=ROOT/'PPAC/Migration/Internal'
+    modules=['LogicalTableRenaming','OriginalLogicalExprQuery','AxiomTestSyntax','OriginalAxiomExprQuery',
+        'ProofLogicalSyntax','ProofLogicalQueries','ProofLogicalNodeSyntax','ProofLogicalNode',
+        'ProofTheorySyntax','ProofTheoryQueries','ProofTheoryNodeSyntax','ProofTheoryNode',
+        'ProofAllQuerySyntax','ProofAllQueryBundles','ProofAllNodeSyntax','ProofAllNodes','ObjectProofBaseNodes']
+    texts={n:strip_comments((directory/(n+'.lean')).read_text(encoding='utf-8')) for n in modules}
+    for module,text in texts.items():
+        if re.search(r'Expr\.eval|Classical\.choose|\b(?:sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b',text):
+            raise RuntimeError('Forbidden base proof node shortcut: '+module)
+        if re.search(r'test\s*:\s*(?:Nat\s*→|.*Model|.*Consistent)',text):
+            raise RuntimeError('Axiom test must be an object Formula 1, not a host predicate')
+    contracts=[('ProofLogicalQueries','query_normalized_iff',{'hw','hn','hz'}),
+        ('ProofLogicalNode','normalized_node_iff',{'hw','hz'}),
+        ('ProofTheoryQueries','bundle_iff',{'hw','hn','hz'}),
+        ('ProofTheoryNode','normalized_node_iff',{'hw','hz'}),
+        ('ProofAllNodes','raw_table_iff',set()),('ProofAllNodes','table_iff',{'hw','hz'})]
+    for module,theorem,premises in contracts:
+        header=re.search(r'(?ms)^theorem '+theorem+r'\b.*?(?=:=)',texts[module])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=premises:
+            raise RuntimeError('Base proof node endpoint changed: '+module+'.'+theorem)
+        if re.search(r'Promise|Model|Consistent|Classical\.choose|hIH\s*:|hTest\s*:',header.group(0)):
+            raise RuntimeError('Undischarged base proof node oracle')
+        if module in ['ProofTheoryQueries','ProofTheoryNode','ProofAllNodes'] and '(test : Formula 1)' not in header.group(0):
+            raise RuntimeError('Theory test object formula parameter was hidden')
+    required={
+        'LogicalTableRenaming':['listBundle_rename','matrix_rename','body_lift','node_rename','table_rename'],
+        'OriginalLogicalExprQuery':['LogicalOriginalNodeSyntax.table','LogicalTableRenaming.table_rename','Derives.exE','HornExprConstructor.constructor_iff'],
+        'AxiomTestSyntax':['test : Formula 1','test.rename (fun _ => row)','holds_rename'],
+        'OriginalAxiomExprQuery':['test : Formula 1','AxiomTestSyntax.holds test','AxiomTestSyntax.holds_rename','Derives.exE'],
+        'ProofLogicalSyntax':['actual_arity','actual_query','actual_query_fields','node 0 [.var 0, .var 2, .var 1]',
+            'LogicalAllPatterns.specification','OriginalLogicalExprQuery.query queryExpr'],
+        'ProofLogicalQueries':['OriginalLogicalExprQuery.constructor_query_iff hZ 3 0','LogicalOriginalNodes.table_iff',
+            'FormulaCodeCongruence.ex_congr','HornExprBounds.variable_bound'],
+        'ProofTheorySyntax':['actual_arity','actual_queries','actual_formula','actual_axiom','node 0 [.var 2, .var 1]',
+            'OriginalAxiomExprQuery.query test axiomExpr'],
+        'ProofTheoryQueries':['LogicalStaticQueries.query_iff hZ false','OriginalAxiomExprQuery.constructor_query_iff test hZ 2 0',
+            'HornExprBounds.variable_bound'],
+        'ProofAllQuerySyntax':['.projection','ProjectionExprQuery.query','.syntax','PureSyntaxExprQuery.query','.transform',
+            'OriginalTransformExprQuery.query','.logical','OriginalLogicalExprQuery.query','.axiom','OriginalAxiomExprQuery.query test'],
+        'ProofAllNodeSyntax':['environmentNat shape.arity','environmentBound shape.arity','graph shape.head',
+            'ProofAllQuerySyntax.listBundle test shape.queries','existsMany shape.arity','ObjectProofNode.shapes.map',
+            'original_arity_order','original_query_counts'],
+        'ProofAllNodes':['ProofLogicalNode.normalized_node_iff hZ','ProofTheoryNode.normalized_node_iff test hZ',
+            'ProofMPNode.node_iff hZ','ProofForallNode.normalized_node_iff hZ','ProofStrengtheningNode.node_iff hZ','ProofSubstitutionNode.node_iff hZ']}
+    for module,clauses in required.items():
+        for clause in clauses:
+            if clause not in texts[module]:raise RuntimeError('Missing exact six-rule local derivation: '+module+': '+clause)
+    for kind,arity in [('logical',3),('theory',3),('mp',5),('forall',4),('strengthening',4),('substitution',6)]:
+        if 'theorem '+kind+'_bundle_iff' not in texts['ProofAllQueryBundles'] or 'theorem '+kind+'_node_iff' not in texts['ProofAllNodes']:
+            raise RuntimeError('Missing actual query/node transfer: '+kind)
+        if 'HornApplicationBounds.existsMany_congr '+str(arity) not in texts['ProofAllNodes']:
+            raise RuntimeError('Incomplete assignment block: '+kind)
+    def definition(module,name):
+        found=re.search(r'(?ms)^def '+name+r'\b.*?(?=^def |^theorem |^end |\Z)',texts[module])
+        if not found:raise RuntimeError('Missing six-rule acceptance definition: '+module+'.'+name)
+        return found.group(0)
+    for module,names in [('ProofAllNodeSyntax',['matrix','body','node','table']),
+            ('ProofLogicalNodeSyntax',['boundedMatrix','body','node']),('ProofTheoryNodeSyntax',['boundedMatrix','body','node'])]:
+        for name in names:
+            if re.search(r'formulaCode|SyntaxTermSyntax|abstracted|specification|normalized',definition(module,name)):
+                raise RuntimeError('Specification oracle in accepting proof table')
+    for module in ['ProofLogicalSyntax','ProofTheorySyntax']:
+        if re.search(r'formulaCode|specification|normalized',definition(module,'bundle')):
+            raise RuntimeError('Type oracle in accepting base queries')
+    check=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name,args in [('proofLogicalWholeNodeIff','w z row'),('proofTheoryParameterizedWholeNodeIff','test w z row'),
+            ('proofSixRulesParameterizedActualTableSpecificationIff','test w z row')]:
+        if 'ObjectProofBaseNodes.native_'+name+' '+args not in check:
+            raise RuntimeError('Missing expanded native base proof node contract')
+    return {'actual_logical_conclusion_axiom_code_field_swap_proved':True,
+            'logical_query_row_witness_and_complete_three_assignments_object_eliminated':True,
+            'actual_logical_query_uses_exact_twenty_seven_pattern_table':True,
+            'theory_axiom_test_is_explicit_object_Formula1_parameter':True,
+            'parameterized_theory_query_and_complete_node_proved':True,
+            'all_five_original_query_Kinds_preserved':True,
+            'exact_six_original_arities_ordered_queries_and_assignment_blocks_proved':True,
+            'all_six_local_nodes_under_parameterized_axiom_formula_transferred':True,
+            'whole_local_table_only_Omega_empty_object_premises':True,
+            'dedicated_ZF_U_tests_Proof_recursion_shared_Bool_compiler_and_Con_proved':False}
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1007,11 +1090,13 @@ def main() -> None:
     logical_instantiation_nodes = check_logical_instantiation_nodes()
     static_logical_nodes = check_static_logical_nodes()
     abstract_logical_nodes_and_exact_table = check_abstract_logical_nodes_and_exact_table()
+    base_proof_nodes_and_parameterized_six_table = check_base_proof_nodes_and_parameterized_six_table()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
     sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", ROOT / "CheckStep3.lean", ROOT / "CheckStep4.lean", *ROOT.glob("PPAC/**/*.lean")])
-    forbidden = re.compile(r"\b(sorry|admit|axiom|unsafe|native_decide)\b")
+    # .axiom is the upstream Kind constructor; declaration-level axiom remains forbidden.
+    forbidden = re.compile(r"\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b")
     for path in sources:
         if forbidden.search(strip_comments(path.read_text(encoding="utf-8-sig"))):
             raise RuntimeError(f"Forbidden token in {path.relative_to(ROOT)}")
@@ -3654,7 +3739,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalRule24WholeNormalizedNodeIff',
                     'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenWholeNodesIff',
                     'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualShapeTableIff',
-                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalNumericHeadIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalQueryConstructorIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalQueryNormalizedIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalBoundedMatrixIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofLogicalWholeNodeIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryNumericHeadIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryFormulaQueryIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedAxiomQueryIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedAllQueriesIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryAllAssignmentBounds',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedBoundedMatrixIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedWholeNodeIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualShapeTableIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedSelectedNodesIff',
+                    'PPAC.Migration.Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -3666,6 +3767,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectProofBaseNodes": ('proofLogicalNumericHeadIff', 'proofLogicalQueryConstructorIff', 'proofLogicalQueryNormalizedIff', 'proofLogicalAllAssignmentBounds', 'proofLogicalBoundedMatrixIff', 'proofLogicalWholeNodeIff', 'proofTheoryNumericHeadIff', 'proofTheoryFormulaQueryIff', 'proofTheoryParameterizedAxiomQueryIff', 'proofTheoryParameterizedAllQueriesIff', 'proofTheoryAllAssignmentBounds', 'proofTheoryParameterizedBoundedMatrixIff', 'proofTheoryParameterizedWholeNodeIff', 'proofSixRulesParameterizedActualShapeTableIff', 'proofSixRulesParameterizedSelectedNodesIff', 'proofSixRulesParameterizedActualTableSpecificationIff'),
         "ObjectLogicalAbstract": ('logicalRule21AtSuccessorsQueriesIff', 'logicalRule21AtOneQueriesIff', 'logicalRule21AllQueriesIff', 'logicalRule21AllAssignmentBounds', 'logicalRule21NumericNestedHeadIff', 'logicalRule21WholeNormalizedNodeIff', 'logicalRule24AtSuccessorsQueriesIff', 'logicalRule24AtOneQueriesIff', 'logicalRule24AllQueriesIff', 'logicalRule24AllAssignmentBounds', 'logicalRule24NumericNestedHeadIff', 'logicalRule24WholeNormalizedNodeIff', 'logicalAllTwentySevenWholeNodesIff', 'logicalAllTwentySevenActualShapeTableIff', 'logicalAllTwentySevenActualTableSpecificationIff'),
         "ObjectLogicalStatic": ('staticLogicalAllQueriesIff', 'staticLogicalRule0WholeNormalizedNodeIff', 'staticLogicalRule0AllAssignmentBounds', 'staticLogicalRule0NumericNestedHeadIff', 'staticLogicalRule1WholeNormalizedNodeIff', 'staticLogicalRule1AllAssignmentBounds', 'staticLogicalRule1NumericNestedHeadIff', 'staticLogicalRule2WholeNormalizedNodeIff', 'staticLogicalRule2AllAssignmentBounds', 'staticLogicalRule2NumericNestedHeadIff', 'staticLogicalRule3WholeNormalizedNodeIff', 'staticLogicalRule3AllAssignmentBounds', 'staticLogicalRule3NumericNestedHeadIff', 'staticLogicalRule4WholeNormalizedNodeIff', 'staticLogicalRule4AllAssignmentBounds', 'staticLogicalRule4NumericNestedHeadIff', 'staticLogicalRule5WholeNormalizedNodeIff', 'staticLogicalRule5AllAssignmentBounds', 'staticLogicalRule5NumericNestedHeadIff', 'staticLogicalRule6WholeNormalizedNodeIff', 'staticLogicalRule6AllAssignmentBounds', 'staticLogicalRule6NumericNestedHeadIff', 'staticLogicalRule7WholeNormalizedNodeIff', 'staticLogicalRule7AllAssignmentBounds', 'staticLogicalRule7NumericNestedHeadIff', 'staticLogicalRule8WholeNormalizedNodeIff', 'staticLogicalRule8AllAssignmentBounds', 'staticLogicalRule8NumericNestedHeadIff', 'staticLogicalRule9WholeNormalizedNodeIff', 'staticLogicalRule9AllAssignmentBounds', 'staticLogicalRule9NumericNestedHeadIff', 'staticLogicalRule10WholeNormalizedNodeIff', 'staticLogicalRule10AllAssignmentBounds', 'staticLogicalRule10NumericNestedHeadIff', 'staticLogicalRule11WholeNormalizedNodeIff', 'staticLogicalRule11AllAssignmentBounds', 'staticLogicalRule11NumericNestedHeadIff', 'staticLogicalRule12WholeNormalizedNodeIff', 'staticLogicalRule12AllAssignmentBounds', 'staticLogicalRule12NumericNestedHeadIff', 'staticLogicalRule13WholeNormalizedNodeIff', 'staticLogicalRule13AllAssignmentBounds', 'staticLogicalRule13NumericNestedHeadIff', 'staticLogicalRule14WholeNormalizedNodeIff', 'staticLogicalRule14AllAssignmentBounds', 'staticLogicalRule14NumericNestedHeadIff', 'staticLogicalRule15WholeNormalizedNodeIff', 'staticLogicalRule15AllAssignmentBounds', 'staticLogicalRule15NumericNestedHeadIff', 'staticLogicalRule16WholeNormalizedNodeIff', 'staticLogicalRule16AllAssignmentBounds', 'staticLogicalRule16NumericNestedHeadIff', 'staticLogicalRule17WholeNormalizedNodeIff', 'staticLogicalRule17AllAssignmentBounds', 'staticLogicalRule17NumericNestedHeadIff', 'staticLogicalRule18WholeNormalizedNodeIff', 'staticLogicalRule18AllAssignmentBounds', 'staticLogicalRule18NumericNestedHeadIff', 'staticLogicalRule19WholeNormalizedNodeIff', 'staticLogicalRule19AllAssignmentBounds', 'staticLogicalRule19NumericNestedHeadIff', 'staticLogicalRule22WholeNormalizedNodeIff', 'staticLogicalRule22AllAssignmentBounds', 'staticLogicalRule22NumericNestedHeadIff', 'staticLogicalRule26WholeNormalizedNodeIff', 'staticLogicalRule26AllAssignmentBounds', 'staticLogicalRule26NumericNestedHeadIff'),
         "ObjectLogicalInstantiate": ('logicalTwentyTwentyThreeAtBoundQueriesIff', 'logicalTwentyTwentyThreeAllQueriesIff', 'logicalTwentyTwentyThreeAllAssignmentBounds', 'logicalTwentyTwentyThreeBoundedMatrixIff', 'logicalTwentyTwentyThreeWholeNodeIff', 'logicalTwentyTwentyThreeWholeNormalizedNodeIff', 'logicalTwentyFiveAtBoundQueriesIff', 'logicalTwentyFiveAllQueriesIff', 'logicalTwentyFiveAllAssignmentBounds', 'logicalTwentyFiveBoundedMatrixIff', 'logicalTwentyFiveWholeNodeIff', 'logicalTwentyFiveWholeNormalizedNodeIff', 'logicalRule20NestedHeadIff', 'logicalRule23NestedHeadIff', 'logicalRule25NestedHeadIff'),
@@ -4600,6 +4702,13 @@ def main() -> None:
         "logical_instantiation_nodes_guard": logical_instantiation_nodes,
         "static_logical_nodes_guard": static_logical_nodes,
         "abstract_logical_nodes_and_exact_table_guard": abstract_logical_nodes_and_exact_table,
+        "base_proof_nodes_and_parameterized_six_table_guard": base_proof_nodes_and_parameterized_six_table,
+        'object_original_logical_proof_node_full_pure_relation_proved': True,
+        'object_original_theory_proof_node_object_formula_parameter_interface_proved': True,
+        'object_original_six_rule_pure_local_table_with_axiom_formula_parameter_proved': True,
+        'object_original_six_rule_exact_local_table_independent_specification_iff_proved': True,
+        'object_original_six_rule_numeric_quotation_Bool_checker_correspondence_proved': False,
+
         'object_original_logical_21_24_full_pure_relational_nodes_proved': True,
         'object_original_all_27_logical_full_pure_relational_nodes_proved': True,
         'object_original_all_27_exact_Shape_query_table_pure_relation_proved': True,

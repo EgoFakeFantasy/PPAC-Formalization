@@ -10338,4 +10338,86 @@ example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       ((Internal.LogicalOriginalNodeSyntax.table w row).iff (Internal.LogicalAllPatterns.specification w z row)))).close)) :=
   Internal.ObjectLogicalAbstract.native_logicalAllTwentySevenActualTableSpecificationIff w z row
 
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalNumericHeadIffSentence env w row)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalNumericHeadIff env w row
+
+example {m} (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalQueryConstructorIffSentence env w)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalQueryConstructorIff env w
+
+example {m} (env : Fin 3 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalQueryNormalizedIffSentence env w z)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalQueryNormalizedIff env w z
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalAllAssignmentBounds env w row
+
+example {m} (env : Fin 3 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalBoundedMatrixIffSentence env w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalBoundedMatrixIff env w z row
+
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofLogicalWholeNodeIffSentence w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalWholeNodeIff w z row
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryNumericHeadIffSentence env w row)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryNumericHeadIff env w row
+
+example {m} (env : Fin 3 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryFormulaQueryIffSentence env w z)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryFormulaQueryIff env w z
+
+example {m} (test : Source.Formula 1) (env : Fin 3 → Fin m) (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryParameterizedAxiomQueryIffSentence test env w)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedAxiomQueryIff test env w
+
+example {m} (test : Source.Formula 1) (env : Fin 3 → Fin m) (w z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryParameterizedAllQueriesIffSentence test env w z)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedAllQueriesIff test env w z
+
+example {m} (env : Fin 3 → Fin m) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryAllAssignmentBoundsSentence env w row)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryAllAssignmentBounds env w row
+
+example {m} (test : Source.Formula 1) (env : Fin 3 → Fin m) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryParameterizedBoundedMatrixIffSentence test env w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedBoundedMatrixIff test env w z row
+
+example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofTheoryParameterizedWholeNodeIffSentence test w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedWholeNodeIff test w z row
+
+example {m} (test : Source.Formula 1) (w row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofSixRulesParameterizedActualShapeTableIffSentence test w row)) :=
+  Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualShapeTableIff test w row
+
+example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofSixRulesParameterizedSelectedNodesIffSentence test w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedSelectedNodesIff test w z row
+
+example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProofBaseNodes.proofSixRulesParameterizedActualTableSpecificationIffSentence test w z row)) :=
+  Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff test w z row
+
+-- Expanded logical node: query row and all three assignments are object-quantified.
+example {m} (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.ProofLogicalNodeSyntax.node w row).iff (Internal.ProofLogicalNodeSyntax.normalized w z row)))).close)) :=
+  Internal.ObjectProofBaseNodes.native_proofLogicalWholeNodeIff w z row
+
+-- Theory test is an explicit object formula schema index; it is not a ZF/U test implementation.
+example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.ProofTheoryNodeSyntax.node test w row).iff (Internal.ProofTheoryNodeSyntax.normalized test w z row)))).close)) :=
+  Internal.ObjectProofBaseNodes.native_proofTheoryParameterizedWholeNodeIff test w z row
+
+-- Exact six-Shape local table, with all five Kind dispatches and a visible object axiom-test parameter.
+example {m} (test : Source.Formula 1) (w z row : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (((OmegaSyntax.omega w).imp ((OmegaSyntax.empty z).imp
+      ((Internal.ProofAllNodeSyntax.table test w row).iff (Internal.ProofAllNodeSyntax.specification test w z row)))).close)) :=
+  Internal.ObjectProofBaseNodes.native_proofSixRulesParameterizedActualTableSpecificationIff test w z row
+
 end PPAC.Migration.Step4Checks

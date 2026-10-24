@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+逻辑证明节点与参数化六规则局部表已验收：logicalShape的结论／公理码换位、原27逻辑查询表、全部三赋值界及数值行码完成对象推导；theoryShape保留显式test : Formula 1接口，尚未实例化ZF/U专用公理测试。原六Shape／五Kind及完整赋值块直接组合局部表，最终只有Ω／empty对象前提。17模块152声明、16组原nativeZF闭句；1882构建任务、21011声明审计（421无公理／20590允许依赖）、零警告；九命令及五trust=0入口全通过，1717哈希／2366对精确足迹／18667项Internal覆盖。专用公理测试、证明树递归、共享实际Bool、内部Proof／编译解释和最终Con仍未证明。见[验收与后续工程表](STEP4_BASE_PROOF_NODES_ACCEPTANCE.zh-CN.md)。
+
+逻辑证明节点与参数化六规则局部表已验收：logicalShape的结论／公理码换位、原27逻辑查询表、全部三赋值界及数值行码完成对象推导；theoryShape保留显式test : Formula 1接口，尚未实例化ZF/U专用公理测试。原六Shape／五Kind及完整赋值块直接组合局部表，最终只有Ω／empty对象前提。17模块152声明、16组原nativeZF闭句；1882构建任务、21011声明审计（421无公理／20590允许依赖）、零警告；九命令及五trust=0入口全通过，1717哈希／2366对精确足迹／18667项Internal覆盖。专用公理测试、证明树递归、共享实际Bool、内部Proof／编译解释和最终Con仍未证明。见[验收与后续工程表](STEP4_BASE_PROOF_NODES_ACCEPTANCE.zh-CN.md)。
+
 全部27原逻辑模式的准确纯关系表已验收：补齐21／24真实mode1查询与两层后继EX，原Shape.arity/head/有序Bool列表直接进入独立接受式；27个完整赋值节点逐项传输并组合原表，最终只有Ω／empty前提。13模块257声明、15组原nativeZF闭句；1865构建任务、20859声明审计（420无公理／20439允许依赖）、零警告，九命令及五trust=0入口全通过；1700哈希／2350对精确足迹／18515项Internal覆盖。原共享quotation／实际Bool、其余证明／理论节点、内部Proof／编译解释及最终Con仍未证明。见[验收与后续工程表](STEP4_ALL_LOGICAL_PATTERNS_ACCEPTANCE.zh-CN.md)。
 
 原逻辑0–19／22／26完整纯关系节点已验收：22个模式的原arity、有序Bool查询表、全部赋值界与88个嵌套数值子码已对象处理，最终节点只有Ω／empty前提。28模块996声明、67组原nativeZF闭句；1852构建任务、20602声明审计（417无公理／20185允许依赖）、零警告，九命令及五trust=0入口全通过；1687哈希／2335对精确足迹／18258项Internal覆盖。结合20／23／25，已有25个完整纯关系模式；21／24、共享quotation／Bool、理论节点、完整Proof／内部解释及最终Con仍未证明。见[本批验收与后续工程表](STEP4_STATIC_LOGICAL_NODES_ACCEPTANCE.zh-CN.md)。
