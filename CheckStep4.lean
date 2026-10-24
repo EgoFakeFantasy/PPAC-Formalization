@@ -11049,4 +11049,51 @@ example {m} (kind : Fin 3) (w b z x y n : Fin m) : YesMetaZFC.Logic.FirstOrder.D
         (Internal.ProjectCompilerBase.existsTyped w n b z)))).close)) :=
   Internal.ObjectProjectCompiler.native_compilerThreeAtomsTypedOutputExists kind w b z x y n
 
+example {m} (w a c h n x b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerActualChildReadIffSentence w a c h n x b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerActualChildReadIff w a c h n x b q
+
+example {m} (w a c h n x b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerGuardedChildQueryIffSentence w a c h n x b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerGuardedChildQueryIff w a c h n x b q
+
+example {m} (w a c h n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAllInternalChildQueriesSentence w a c h n)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAllInternalChildQueries w a c h n
+
+example {m} (w a c h n x b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerSuccessorQueryIffSentence w a c h n x b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerSuccessorQueryIff w a c h n x b q
+
+example {m} (advance : Bool) (w a c h n x b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerScopedChildQueryIffSentence advance w a c h n x b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerScopedChildQueryIff advance w a c h n x b q
+
+example {m} (w a c h n b z q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAllTwelveCasesIffSentence w a c h n b z q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAllTwelveCasesIff w a c h n b z q
+
+example {m} (w a c h n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerActualLocalRecursiveIffSentence w a c h n b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerActualLocalRecursiveIff w a c h n b q
+
+example {m} (w a c n h v b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerActualStateRecursiveIffSentence w a c n h v b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerActualStateRecursiveIff w a c n h v b q
+
+example {m} (w a c n v b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAtEvaluationRecursiveIffSentence w a c n v b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAtEvaluationRecursiveIff w a c n v b q
+
+example {m} (w a c n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAtCarrierRecursiveIffSentence w a c n b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAtCarrierRecursiveIff w a c n b q
+
+example {m} (w n b q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAllCandidatesRecursiveIffSentence w n b q)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAllCandidatesRecursiveIff w n b q
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectProjectCompilerRecursive.compilerAllInternalRecursiveLawSentence w)) :=
+  Internal.ObjectProjectCompilerRecursive.native_compilerAllInternalRecursiveLaw w
 end PPAC.Migration.Step4Checks

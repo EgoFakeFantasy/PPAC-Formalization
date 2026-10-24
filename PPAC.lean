@@ -241,3 +241,4 @@ import PPAC.Migration.Internal.ObjectSchemaIndex
 import PPAC.Migration.Internal.ObjectProjectAtomic
 import PPAC.Migration.Internal.ObjectProjectSourceCode
 import PPAC.Migration.Internal.ObjectProjectCompiler
+import PPAC.Migration.Internal.ObjectProjectCompilerRecursive
