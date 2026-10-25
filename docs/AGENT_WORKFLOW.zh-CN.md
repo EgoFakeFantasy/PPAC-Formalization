@@ -1,5 +1,19 @@
 # 对象层迁移工程流程
 
+成功非空有界字节输入的全内部规范首段逆向已验收：实际Canonical段、原Splice、保持完整ByteList的余表、严格rest∈input、原尺度守卫、精确发射算术／Cons及同一返回候选后续Eval均由原对象EX5保存。固定Formula5经完整Separation／Foundation关闭全部IH；最终闭句从Eval恢复State，不增加载荷／返回候选自然性假设。实际Some成功排除原拒绝并恢复EOF条件；输出顺序的反向Cons与Nil恒等式一并完成。14模块125声明、17组原nativeZF闭句；2624构建、28451审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整多token逆向、全packet程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_READER_PREFIX_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 已有接口／输入 | 对象交付及验收要求 | 状态 |
+|---|---|---|---|
+| R4b.3b.2b／2c.0 | 独立Encoded、实际Output、完整ByteList | 全内部正向消费与输出顺序、全部编码字段<256 | 已验收 |
+| R4b.3b.2c.1 | PrefixInduction.extract_prefix、Success、OutputBackward | 全内部首段EX5、真实rest∈input、全部IH消去、实际拒绝排除及反向顺序 | 本批已验收 |
+| R4b.3b.2c.2 | 首段EX5、真实Cons尾码、OutputBackward.step | 固定Formula5按字节码归纳：成功整段Eval+Some→EX tokens(Encoded∧Output)，全部候选保留 | 下一单元 |
+| R4b.3b.2c.3 | nil_accumulator、InitLiterals、原单位／128见证 | 消去全部初始化常量，识别真实Some载荷，形成初始化Parse／独立Encoded双条件 | 待完成 |
+| R5 | 原Bytes／Canonical／Tok与完整字节包 | 全内部及无效码上的完整程序／规格桥与准确失败 | 待完成 |
+| A／P | Basic AST、原六规则／27模式、全Separation／Collection | 全部内部Proof码、公理模式及证明变换准确性 | 待完成 |
+| I／C | 对象数学解释、理论／语言对应 | 原nativeZF中的最终内部Con蕴含 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 独立多token编码的完整字节界已验收：实际Splice保持原ByteList，两次固定Formula2经原完整Separation／Foundation关闭全部真实尾码IH；每个实际Encoded输出都满足原Fields／有界序列图字节合同，任意真实长度、内部索引及字段候选均小于实际256。相同实际编码字节见证上的唯一性和全部初始化Parse返回方程一并保留。另完成逆向所需的延续低位<128及正尺度更新后非零／非单位。14模块106声明、13组原nativeZF闭句；2610构建、28326审计、零警告，九命令／五trust=0通过。仅原编码全局字节界门false→true，其余旧布尔叶保持。成功解析的逆向规范分段、完整Bytes／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_TOKEN_BYTE_BOUND_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 输入及原接口 | 原核交付要求 | 状态 |
