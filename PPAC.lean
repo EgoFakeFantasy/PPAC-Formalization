@@ -274,3 +274,4 @@ import PPAC.Migration.Internal.ObjectPacketReaderStep
 import PPAC.Migration.Internal.ObjectPacketReaderInput
 import PPAC.Migration.Internal.ObjectPacketReaderHistory
 import PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend
+import PPAC.Migration.Internal.ObjectPacketReaderConsumption

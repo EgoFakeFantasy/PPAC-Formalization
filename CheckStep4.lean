@@ -12970,4 +12970,75 @@ example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.De
 example {m} (w B z o n r s l d e f L V S A x y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendRawStateCodesConstructActualExtensionSentence w B z o n r s l d e f L V S A x y q c)) :=
   Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRawStateCodesConstructActualExtension w B z o n r s l d e f L V S A x y q c
+example {m} (w B z o l v s a r y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionRawStepConsumesActualConsSentence w B z o l v s a r y q c)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionRawStepConsumesActualCons w B z o l v s a r y q c
+
+example {m} (w B z o l v s a r y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionRawStepStrictInputDescentSentence w B z o l v s a r y q c)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionRawStepStrictInputDescent w B z o l v s a r y q c
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionCarrierHasActualValidInputSentence w n)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionCarrierHasActualValidInput w n
+
+example {m} (w n l v s a L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionInputAgreesWithActualStateCodeSentence w n l v s a L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionInputAgreesWithActualStateCode w n l v s a L
+
+example {m} (w n l L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualStateInputUniqueSentence w n l L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualStateInputUnique w n l L
+
+example {m} (w B z o n r l x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionCodedStepConsumesActualConsSentence w B z o n r l x)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionCodedStepConsumesActualCons w B z o n r l x
+
+example {m} (w B z o n r l x : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionCodedStepStrictInputDescentSentence w B z o n r l x)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionCodedStepStrictInputDescent w B z o n r l x
+
+example {m} (w B z o n r l d f i N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionEveryActualHistoryEdgeHasStateCarrierSentence w B z o n r l d f i N)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionEveryActualHistoryEdgeHasStateCarrier w B z o n r l d f i N
+
+example {m} (w B z o n r l d f i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualDomainIndexHasUniqueValidInputFiberSentence w B z o n r l d f i)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualDomainIndexHasUniqueValidInputFiber w B z o n r l d f i
+
+example {m} (w f d i n L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionInputProjectionExactAtActualEdgeSentence w f d i n L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionInputProjectionExactAtActualEdge w f d i n L
+
+example {m} (w B z o n r l d f i j L K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualAdjacentInputsConsumeConsSentence w B z o n r l d f i j L K)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualAdjacentInputsConsumeCons w B z o n r l d f i j L K
+
+example {m} (w B z o n r l d f i j L K : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualAdjacentInputsStrictlyDescendSentence w B z o n r l d f i j L K)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualAdjacentInputsStrictlyDescend w B z o n r l d f i j L K
+
+example {m} (w B z o n r l d f i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionEveryInternalStepHasActualConsumptionWitnessesSentence w B z o n r l d f i)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionEveryInternalStepHasActualConsumptionWitnesses w B z o n r l d f i
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionAllInternalStepConsumptionSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionAllInternalStepConsumption w B z o n r l d f
+
+example {m} (w B z o n r L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionNilInputForbidsNextCodedStepSentence w B z o n r L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionNilInputForbidsNextCodedStep w B z o n r L
+
+example {m} (w B z o n r L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionOriginalByteRejectForbidsNextCodedStepSentence w B z o n r L v s a)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionOriginalByteRejectForbidsNextCodedStep w B z o n r L v s a
+
+example {m} (w B z o n r l d f i L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionNilInputOccursOnlyAtLastHistoryIndexSentence w B z o n r l d f i L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionNilInputOccursOnlyAtLastHistoryIndex w B z o n r l d f i L
+
+example {m} (w f i L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualProjectedInputIsNaturalSentence w f i L)) :=
+  Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualProjectedInputIsNatural w f i L
 end PPAC.Migration.Step4Checks
