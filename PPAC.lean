@@ -350,3 +350,4 @@ import PPAC.Migration.ForcingSupportFilter
 import PPAC.Migration.ExistingCardinalBounds
 import PPAC.Migration.ForcingSupportIntersection
 import PPAC.Migration.ForcingNormalFilter
+import PPAC.Migration.ForcingDiagramAction

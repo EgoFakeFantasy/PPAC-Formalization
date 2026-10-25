@@ -30081,3 +30081,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingNormalFilter.constructionSentence
 #print axioms PPAC.Migration.ForcingNormalFilter.construction_models
 #print axioms PPAC.Migration.ForcingNormalFilter.construction_kernel_certificate
+
+-- Pinned Diagram label action: every declaration.
+#print axioms PPAC.Migration.ForcingDiagramAction.exists_permute
+#print axioms PPAC.Migration.ForcingDiagramAction.unique
+#print axioms PPAC.Migration.ForcingDiagramAction.permute_one
+#print axioms PPAC.Migration.ForcingDiagramAction.permute_mul
+#print axioms PPAC.Migration.ForcingDiagramAction.permute_inv_permute
+#print axioms PPAC.Migration.ForcingDiagramAction.existenceSentence
+#print axioms PPAC.Migration.ForcingDiagramAction.identitySentence
+#print axioms PPAC.Migration.ForcingDiagramAction.multiplicationSentence
+#print axioms PPAC.Migration.ForcingDiagramAction.inverseSentence
+#print axioms PPAC.Migration.ForcingDiagramAction.existence_models
+#print axioms PPAC.Migration.ForcingDiagramAction.identity_models
+#print axioms PPAC.Migration.ForcingDiagramAction.multiplication_models
+#print axioms PPAC.Migration.ForcingDiagramAction.inverse_models
+#print axioms PPAC.Migration.ForcingDiagramAction.existence_kernel_certificate
+#print axioms PPAC.Migration.ForcingDiagramAction.identity_kernel_certificate
+#print axioms PPAC.Migration.ForcingDiagramAction.multiplication_kernel_certificate
+#print axioms PPAC.Migration.ForcingDiagramAction.inverse_kernel_certificate

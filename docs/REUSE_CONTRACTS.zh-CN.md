@@ -31,43 +31,30 @@
 
 IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompilation 是可参考的已有集合 Sat 与公式迁移代码；其具体背景和语言须对应，不从目录名推断能直接导入。已撤回重复的 SetSatisfactionRow，未接入正式入口。不得恢复用户退役的反射实现。
 
-## 当前必要源消费者
+## 实际源消费者与复用裁决
 
-- 原 AtomicForcing.relations/mem_iff/eq_iff 与 atomic_laws → SymmetricNames.atomic：原子递归和基础定律已完成。
-- 原 eq_of_dense/mem_of_dense → SymmetricNames.atomic_regular：实质引理已完成，不再重证。
-- 原 edge_map_orderIso/atomic_symmetry → SymmetricNames.forces_symmetry/mem_symmetry/eq_symmetry：本批 ForcingAtomicSymmetry 复用已完成名字映射、pair 归纳、精确方程及 actCode；序保持仅要求在内部 P 上。
-- 本批 ForcingFormula / ForcingSound 已消费原 ForcingQuotient.Force、ForcingTruth.force_of_dense/forcing_sound，取得固定公式与固定源证明实例的原核证书；实际 HS 定义和通用公式作用对称性实例现已接通；具体 PPAC 系统解释仍待接。
+| OpenAI 原证明链 | 本仓已完成的复用与迁移 | 仍需接入 |
+|---|---|---|
+| AtomicForcing.relations/atomic_laws/atomic_symmetry → SymmetricNames.atomic/atomic_regular | 现有名字递归、二／三名字归纳、原子方程及定律、实际条件图作用 | 具体 PPAC 条件呈现 |
+| Force/force_of_dense → forcing_sound | 固定公式、19 规则的固定证明保真，原核模式证书 | 任意内部证明码归约归阶段 10 |
+| Name.HS.smul → forces_symmetry | 字面稳定子、实际 HS 定义、Child 归纳、共轭传输；通用 HS 作用及公式对称性已完成 | 为具体 actionHom 提供代数 Context，不能把 Context 当作已经构造 |
+| SupportFilter.inf_mem/isNormalFilter → ProductNames.system | 固定底座函数空间、幂集、分离；新版 Card/Omega/InfiniteBound 五段原证明正文；实际小支撑族与四项正规性 | bot_not_mem 按 ChoiceFailure 消费者处理；具体条件作用仍缺 |
+| Diagram.permute/permute_one/permute_mul/permute_inv_permute → ProductForcing.permuteOrderIso → ProductNames.actionHom | 本批 ForcingDiagramAction 直接调用 `ZF.exists_compositionFunction` 和 `IsSetRelation.eq_of_pairMember_iff`；复用已有 Injection/CompositionGraph 公式 | Diagram 序关系、Cohen 分量及 WithTop 后再组成源 actionHom；不能称整体已经迁移 |
 
-决策稠密集、atomic_truth、exists_truth_generic 属于泛滤求值分支，已从当前必需待办删除；不因同在源文件中就依次全部移植。具体源条件呈现、全秩 HS 与后续代数／模型主链仍须完成。NatPacket 字节兼容冻结。
+本批 Diagram 证书依赖标准三项及七项已有基础句子 FreeClosed 证书。没有扩大此前活动可信基。此前正规滤子批次已消费的 15 项递归和 9 项基数 native Bool 证书仍保留记录及重算，不能改称整个工程仅有标准三项。
 
-本批公式层重用原子定律而不假定 AtomicData 字段；rename 的 binder 对应直接调用已有 DefinableMinimaChoice.lift_assignment。沿用 Source.Derives 的原 19 构造器，没有新增推导核。有限前提与名字域守卫仅在既有 Source AST 中合取打包，最终仍用 ModelTransfer.derives 返回原核证明。六构造子 Basic 是锁定源语法的摘录；源码只用于泛滤的 Countable 派生未搬入，不重建满足关系或内部码识别。
+## 新版库的强迫合同核对
 
-本轮 ForcingFormulaSymmetry 继续消费既有 atomic_symmetry、mapping、action_transport、toBasic 和 conjunction_semantics；返回原核的 ModelTransfer.derives 仍直接使用已有 strong_completeness/PureRosserSchedule。没有重建群作用后端、满足关系、检查器或完备性。一般 H 的双向名字见证前提只是原 N ≃ N 所使用的两个存在方向的对象化；实际 HS 的两个条件已由本轮 ForcingHSAction.domain_transport 证明，但保留具体系统须提供的代数 Context。已重新读取上述 LCarrier 两个完整模型定理和 LCarrier 的 ZFSet 子类定义，未把该单个模型套入任意 nativeZF 模型的前提。
+读查同一固定新版 7979336 的三个入口，源码哈希见 SOURCE_LOCK.companion_candidates.native_internal_forcing_contract_review；本批没有编译这些供体入口，也没有替换底座。
 
+- `Internal.Npair_d / npair_l`：所有条件作权重的配对名字；源 pairName 是指定顶条件的两个边。存在语义用途，但不能原名替换后声称字面名字已对应。本仓已完成源 pairName，故不重做。
+- `Internal.Aut_d / aut_bij_l`：内部条件双射及序／排除值保持。它没有给出源 ProductNames 的标签群具体作用；现有本仓条件图已经具备相应基础，继续复用它们。
+- `Internal.preserves_zf_l`：对任意内部 ZF 模型，在 `Cond_order_d` 与 `Generic_d` 前提下证明完整泛滤商扩张满足 ZF。不是 HS 限制域的 ZF 定理，也不是对象内部 Con。不能为了套用该结论重开泛滤真值支线。
 
-本轮 ForcingHS 的内部闭包证明直接调用固定 Collection.collection_exists_d，并用现成 Separation 删除收集见证中的多余元素，再用 KP.exists_union/exists_insert 拼接；没有另造 Replacement 或选择见证函数。定义唯一性调用已验收 ForcingNameInduction.kernel_certificate；check_HS 使用 ForcingCheckName.formula_induction、edge_checkName 和 ForcingCheckNameLaws.action_fixed。稳定子通过既有 actFormula/mapConditions 定义，未把 Symmetric 或 HS 作为假设字段。通用 HS.smul 已由 ForcingHSAction 迁移；具体群／正规滤子仍待实例化。
+## 不能重复建设或误报的部分
 
+新版 L 的域是任意 M 内的 `{x : M.Domain // L_d x}`；完整 ZF/ZFC 已有。223 模块依赖差异是版本整合工作量证据，不是 142 项未证明数学；GCH 不增加为本项目义务。BMS 完备性回传方法已在 ModelTransfer 中应用，当前供体存在无关脏改动，本批只读未动。
 
-下一实际源实例已核对：ProductNames.system 使用 Γ = Equiv.Perm I 与 SupportFilter.subgroupFilter μ；ConcreteSystem.S 消费同一系统。现有 ForcingConditionGraphs 的恒等、逆、复合已用于标签集合 I，稳定子共轭已接通；原小支撑滤子的四条正规性现由 ForcingNormalFilter 构造，剩余为 actionHom 及非平凡性，不新建通用群论库。源 IsNormalFilter 的四项是顶、向上闭包、交和共轭闭包；其小支撑滤子构造与基数前提仍按原源码迁移。仅以文件名搜索未发现同名供体，不据此断言其他仓库不存在可用数学。
+既有全模式、内部序数递归、Proof/Sat 配套已经存在。ZF/U 特化和全部内部码正确性尚未接通，但不另建通用证明核、编码器或满足关系。其他库接口未定位时写“未定位到精确合同”，不能写“数学不存在”。
 
-ForcingHSAction 的稳定子共轭复用 ForcingConditionGraphs.exists_inverse/exists_composition、ForcingConditionAction.name_composition/name_inverse。HS.smul 直接沿原 Child 归纳，消费 ForcingHS.intro_hs/child 和 ForcingMapConditions.edge_mapping；公式对称性直接消费已有 conclusion_models/action_transport。四类证书全部返回 ModelTransfer.derives，未新增核或对象选择原则。NormalImage 只表达原正规滤子的共轭条款，不声称已构造具体小支撑滤子。
-
-标签实例：ForcingLabelPermutations 用底座函数空间与原 Separation 构造全部置换和 Fix J，闭包只调用既有 exists_identity/exists_inverse/exists_composition。ForcingLabelConjugacy 沿 SupportFilter.conjugate_fix 证明两个成员方向，复用现成 Conjugate/Image 公式和 function_unique。集合编码共轭图及稳定子精确像现已由 ForcingConjugationGraph 接通；小支撑基数／正规性现已由 ForcingSupportIntersection / ForcingNormalFilter 接通。
-
-本轮 ForcingConjugationGraph 直接调用 FunctionConstruction.exists_setFunctionFromTo_of_denote、Model/SetTheory/FunctionSemantics.IsSetRelation.eq_of_pairMember_iff 和既有 binary_semantics；未新增函数图后端。Subgroup 的对象公式复用既有 closed，证明实际共轭保持其三种运算闭包，供源 conjugate_mem 使用。
-
-后续支撑界已定位的供体：SetTheory/Card/Aleph/Multiplication.lean:345 `infiniteCardinal_selfMultiplication`。精确前提为 Models ZF、已解释有序对约定、IsOmega ω、IsCardinal ω、IsInfiniteCardinal ω κ，结论 IsCardinalMultiplication κ κ κ。现已连同新版 Card/Omega、Card/InfiniteBound 的五个原证明适配；内部 ω 的基数性也已消去，不重建该数学。
-
-## 本轮复用审查纠错
-
-此前仅检查锁定旧底座与 ZFSet LCarrier 工程，遗漏新版底座的任意模型内部 L。新版定义 `l_model_l` 的域是 `{x : M.Domain // L_d x}`，M 是任意内部 ZF 模型；与旧 LCarrier 的模型范围不同。实际 ZFC 消费完整 Separation/Collection，并由 Jensen 全局良序得 Choice，无额外对象 AC 前提。
-
-ZFC 端点依赖闭包 223 模块，相对固定 039c8e1 缺 142 模块、28 模块不同；不能仅拷贝两个终点或直接改 import。后续先移植所需扩展及语言对应，消费现成定理，停止扩写旧的独立 L 构造路线。现成 GCH 只作资产记录，不加入当前必经路线。原生 ZF 端点审计为标准三项及七项已有 FreeClosed 证书；ZFC/GCH 另含 Choice 句子的 FreeClosed 证书，不能误报为向背景添加 AC。
-
-同一新版库还有内部强迫名字、自动同构及 ZF 保持接口；尚未核对它们与 OpenAI 的 HS 受限强迫完全一致，不能据名称直接替换 SymmetricChoice.forces_ZF，也不将这些已有数学报为不存在。下一次扩写类似基础前必须先核对这些接口。
-
-本轮实际已消费的底座接口：ForcingSupportSize 使用 `exists_setInjectionFromTo_of_denote` + `inverseValue` + `exists_compositionInjection`；ForcingSupportFilter 使用原幂集／分离、实际 Fixing 和共轭像。小支撑族、有限并／置换像大小界和完整四项正规性已构造；具体 actionHom 和非平凡性仍待接。数学背景和源消费者不变。
-
-本轮直接消费新版供体 `omega_skip_l / omega_not_le_finite_l / omega_cardinal_l / infinite_product_l / infinite_union_two_l`；五段正文保持原样，未使用该文件中无消费者的 insert 定理。ForcingSupportIntersection 的消费者是源 inf_mem，ForcingNormalFilter 的消费者是源 ProductNames.system。依赖固定底座的基数算术新增消费 9 项现有 native Bool 证书（IsOrdinalMaximum.mem 六项、omega_selfMultiplication 三项）；重新计算并锁定，不冒充 kernel reduction 或依赖范围不变。
-
-本轮对 L 版本接口的抽查发现 Project/Syntax 的差异只是 DeriveFreeClosed import 改名，Logic/Syntax 的所读差异为排版；不能把“28 个文件不同”解释成 28 项新数学工作。完整扩展移植仍需按实际依赖逐项核对，当前没有整体替换固定底座。
+`atomic_truth`、决策稠密集、`exists_truth_generic` 仅服务未选的泛滤分支；NatPacket／字节兼容继续冻结。旧的独立 L 重建路线停止扩写。保留具有实际依赖或尚未完成裁剪判断的已验收证明；不以已投入成本作为继续开发理由。

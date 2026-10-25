@@ -2,7 +2,7 @@
 
 Use the original 1–11 stages in docs/AGENT_WORKFLOW.zh-CN.md. Final target remains native `Derives nativeZF [] (Con_ZF → Con_U)`, over every internal proof code, with U = ZF + PP + ACwo + notAC.
 
-1–3 are accepted: complete source syntax/rules, both proof kernels, all ZF schemes and both AC presentations. Do not rebuild or report these as missing.
+1–3 are accepted: complete source syntax/rules and their bidirectional transfer to the original kernel, all ZF schemes and both AC presentations. Do not rebuild or report these as missing.
 
 4: original Lean 4.34.1 Main built (8998 jobs) and five endpoints passed trust=0. Full Comparator remains unverified; local CheckStep4 is a different test.
 
@@ -25,3 +25,5 @@ Decision density, atomic_truth, exists_truth_generic and byte/packet compatibili
 The earlier accepted 47-declaration batch (ForcingNameConjugacy, ForcingStabilizerTransport, ForcingHSAction) is fully accepted: four native certificates, literal stabilizer conjugacy, HS.smul by original Child induction, and actual HS-domain formula symmetry. Concrete group/action/normal-filter instantiation remains unproved; no HS preservation premise was assumed.
 
 The concrete label carrier, unique fixing subsets, identity/inverse/composition witnesses, exact label images and pointwise conjugacy are accepted. ForcingConjugationGraph now constructs the conjugation permutation graph on this carrier, proves the exact image of fixing subgroups, and proves subgroup closure is preserved. Directed build/trust=0 preaudit passed; full verification passed. ForcingSupportSize/ForcingSupportFilter now supply the actual support family, empty/subset/image bounds and top/upward/conjugation clauses. ForcingSupportIntersection/ForcingNormalFilter now prove the finite-union bound, intersection closure and all four normal-filter clauses. Remaining here: actual ProductNames condition action and properness/bot_not_mem when used by ChoiceFailure. The conjugation graph and stabilizer set-image are no longer unproved obligations.
+
+ForcingDiagramAction now constructs postcomposition on all internal injections D -> I, with identity, composition and inverse laws and four native kernel certificates. This is the Diagram label-action component of the pinned source chain; diagram order, Cohen and WithTop components remain, so final ProductNames.actionHom is still incomplete.

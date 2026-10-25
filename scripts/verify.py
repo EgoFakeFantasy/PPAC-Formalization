@@ -3439,7 +3439,8 @@ def main() -> None:
                                ("forcing_support_filter", "ForcingSupportFilter", 25),
                                ("existing_cardinal_bounds", "ExistingCardinalBounds", 5),
                                ("forcing_support_intersection", "ForcingSupportIntersection", 7),
-                               ("forcing_normal_filter", "ForcingNormalFilter", 18)):
+                               ("forcing_normal_filter", "ForcingNormalFilter", 18),
+                               ("forcing_diagram_action", "ForcingDiagramAction", 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7402,6 +7403,8 @@ def main() -> None:
         "additional_pinned_cardinal_native_Bool_certificates_reevaluated": 9,
         "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The donor finite-union bound, intersection closure and full four-clause normal-filter construction are now proved under internal IsOmega/IsInfiniteCardinal, with omega cardinality derived. ProductNames condition action and properness remain.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
+        "source_diagram_full_injection_label_action_native_certificates_proved": True,
+        "source_diagram_order_and_Cohen_product_action_proved": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,
