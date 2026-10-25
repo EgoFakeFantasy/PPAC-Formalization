@@ -16,3 +16,34 @@ example : Translation.lift (fun _ : Fin 1 => (.here :
 example : Translation.lift (fun _ : Fin 1 => (.here :
     FirstOrder.Variable [SetSort.set] SetSort.set)) (0 : Fin 2) =
     FirstOrder.Variable.there FirstOrder.Variable.here := rfl
+
+-- Exact inherited native recursion certificates; finite Bool checks, no new proof axiom.
+open Lean Elab Command
+set_option maxRecDepth 32768
+set_option maxHeartbeats 4000000
+run_cmd do
+  let names : List Name := [
+    `YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18,
+    `YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16,
+    `YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2,
+    `YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5,
+    `YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3,
+    `YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1,
+    `YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2,
+    `YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3,
+    `YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1,
+    `YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2]
+  for name in names do
+    let info ← getConstInfo name
+    let args := info.type.getAppArgs
+    unless info.type.isAppOfArity ``Eq 3 && args[0]! == mkConst ``Bool do
+      throwError "Unexpected native recursion certificate type: {name}"
+    let left ← liftTermElabM (Meta.evalExpr Bool (mkConst ``Bool) args[1]!)
+    let right ← liftTermElabM (Meta.evalExpr Bool (mkConst ``Bool) args[2]!)
+    unless left && right do throwError "False native recursion certificate: {name}"
+  logInfo m!"Rechecked {names.length} pinned native recursion Bool certificates"

@@ -29021,3 +29021,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.GodelDefOutput.uniqueness_kernel_certificate
 #print axioms PPAC.Migration.GodelDefOutput.source_existence_certificate
 #print axioms PPAC.Migration.GodelDefOutput.source_uniqueness_certificate
+#print axioms PPAC.Migration.GodelDefRecursion.encode_semantics
+#print axioms PPAC.Migration.GodelDefRecursion.successorIndex
+#print axioms PPAC.Migration.GodelDefRecursion.successor
+#print axioms PPAC.Migration.GodelDefRecursion.successor_semantics
+#print axioms PPAC.Migration.GodelDefRecursion.successor_total_unique
+#print axioms PPAC.Migration.GodelDefRecursion.operator
+#print axioms PPAC.Migration.GodelDefRecursion.operator_semantics
+#print axioms PPAC.Migration.GodelDefRecursion.operator_total_unique
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchy
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchy_semantics
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchy_total_unique
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchySentence
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchy_models
+#print axioms PPAC.Migration.GodelDefRecursion.hierarchy_kernel_certificate

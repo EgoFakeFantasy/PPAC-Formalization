@@ -73,4 +73,16 @@ Derives nativeZF [] (CoverWO → AC)
 
 本批没有证明该求值谓词在任意内部程序码上的完整运行正确性，也没有证明实际L的全部公理／层序图／CoverWO。下一项数学工作是用已有内部递归和这一确切后继公式传输原层历史；不能把此Def-step验收当成完整L解释或最终Con完成。
 
+内部层递归现已直接消费YesMetaZFC的 `zeroSuccessorLimitStep_isClassFunctionOnTransfiniteSequences` 和 `transfiniteRecursion_isClassFunctionOnOrdinals`。`GodelDefRecursion.successor_semantics`证明原 `(previous,fixed13,output)` 与现有Project参数布局的精确对应；零步使用原空集，后继步使用上批固定原Def公式，极限步使用原函数值域的并。空初值及实际后继的全定义单值性均已消去，不是把这些条件当作假设留下。所取得的原核闭句为：
+
+```text
+Derives nativeZF [] (∀fixed13 ∀α (Ord(α) → ∃!x H_fixed13(α,x)))
+```
+
+H通过现成内部递归公式定义，量化实际集合编码的前段函数图；`hierarchy_semantics`给出精确历史及三分支语义。证明适用于每个nativeZF模型的全部内部序数，未采用宿主Ordinal递归或外部良基假设。这关闭固定原Def的内部层递归存在唯一义务；原bareStageAt公式的对应、规范13参数、求值正确性及完整L解释仍待接通，不能凭此宣称已证明实际L的全部公理。
+
+本次消费的现成递归还带入15个原自动化Bool检查证书，来自原序数分类、递归序列限制及两条分支互斥证明。它们的具体名称、四份原文件哈希和14项适配声明的精确依赖已锁在SOURCE_LOCK；原七项ZF句子证书基线不变，未引入choice句子证书或新的自定义公理。Check.lean逐项重新计算这15个闭合Bool等式的两边并检查均为true；这是沿用Lean编译器的原生计算信任，不是核内归约证明。正式摘要分别记录该范围，未把全仓依赖白名单放宽为通配。
+
+内部Def递归批正式验收：2833构建任务、28716声明审计（535无公理依赖／28181依赖已记录）、新增14项全部覆盖、9条命令全成功（5条trust=0）、零警告；15项既有原生Bool证书重新计算通过。源码哈希2423项全部匹配，五项最终完成标志仍为false。
+
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。

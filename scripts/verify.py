@@ -3411,6 +3411,16 @@ def main() -> None:
                     re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", output_body, re.MULTILINE)}
     if not (syntax_names | output_names) <= set(expected):
         raise RuntimeError("Incomplete fixed Godel Def output declaration audit")
+    # Reuse the pinned internal three-way recursion, with exact inherited native certificates.
+    recursion_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))["companion_reuse"]["native_godel_recursion"]
+    for source, digest in recursion_lock["sources"].items():
+        if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / source).read_bytes()).hexdigest() != digest:
+            raise RuntimeError("Pinned native recursion source changed: " + source)
+    recursion_names = {"PPAC.Migration.GodelDefRecursion." + n for n in re.findall(
+        r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)",
+        strip_comments((ROOT / recursion_lock["adapter"]).read_text(encoding="utf-8")), re.MULTILINE)}
+    if recursion_names != set(recursion_lock["exact_declaration_footprints"]) or not recursion_names <= set(expected):
+        raise RuntimeError("Incomplete native Godel recursion declaration audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3501,6 +3511,8 @@ def main() -> None:
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
     build = run(["lake", "--no-cache", "--wfail", "build"], "build.log")
     run(["lake", "env", "lean", "--trust=0", "Check.lean"], "check.log")
+    if "Rechecked 15 pinned native recursion Bool certificates" not in (OUT / "check.log").read_text(encoding="utf-8"):
+        raise RuntimeError("Inherited native recursion Bool checks were not executed")
     run(["lake", "env", "lean", "--trust=0", "CheckStep2.lean"], "step2-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep3.lean"], "step3-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep4.lean"], "step4-check.log")
@@ -3526,6 +3538,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.GodelDefRecursion."):
+            if set(dependencies) != set(recursion_lock["exact_declaration_footprints"].get(name, [])):
+                raise RuntimeError("Unexpected native Godel recursion dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.ExistingConstructible."):
             if not set(dependencies) <= {"propext", "Quot.sound"}:
                 raise RuntimeError("Unexpected existing constructible syntax dependency: " + name)
@@ -7171,7 +7187,7 @@ def main() -> None:
                 raise RuntimeError(f"Unexpected arithmetic core certificate footprint: {core}")
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
-    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "lean_version": version,
         "build_passed": True,
@@ -7839,6 +7855,9 @@ def main() -> None:
         "allowed_standard_axioms": sorted(allowed | {"Classical.choice"}),
         "semantic_bridge_choice_origin": "Lean core Fin.lastCases_castSucc; proof-only, not object AC or extracted data",
         "inherited_native_certificate_axioms": sorted(inherited),
+        "additional_active_inherited_recursion_certificate_axioms": recursion_lock["native_bool_certificate_axioms"],
+        "inherited_recursion_certificate_Bool_operands_natively_rechecked": True,
+        "inherited_recursion_certificate_recheck_is_kernel_reduction": False,
         "additional_active_inherited_choice_bridge_certificate_axioms": sorted(inherited_choice),
         "native_choice_bridge_trust_scope": choice_baseline["scope"],
         "native_ZF_seven_certificate_baseline_unchanged": True,
