@@ -30435,3 +30435,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProductPoset.sentence
 #print axioms PPAC.Migration.ForcingProductPoset.models
 #print axioms PPAC.Migration.ForcingProductPoset.kernel_certificate
+#print axioms PPAC.Migration.ForcingUnionAction.map_unionName_restricted
+#print axioms PPAC.Migration.ForcingProductStabilizer.subgroup
+#print axioms PPAC.Migration.ForcingProductStabilizer.sentence
+#print axioms PPAC.Migration.ForcingProductStabilizer.models
+#print axioms PPAC.Migration.ForcingProductStabilizer.kernel_certificate
+#print axioms PPAC.Migration.ForcingProductHSPair.pair_hs
+#print axioms PPAC.Migration.ForcingProductHSPair.pair_of_filter
+#print axioms PPAC.Migration.ForcingProductHSPair.sentence
+#print axioms PPAC.Migration.ForcingProductHSPair.models
+#print axioms PPAC.Migration.ForcingProductHSPair.kernel_certificate
+#print axioms PPAC.Migration.ForcingProductHSUnion.union_hs
+#print axioms PPAC.Migration.ForcingProductHSUnion.sentence
+#print axioms PPAC.Migration.ForcingProductHSUnion.models
+#print axioms PPAC.Migration.ForcingProductHSUnion.kernel_certificate

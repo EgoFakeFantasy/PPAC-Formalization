@@ -3411,7 +3411,7 @@ def main() -> None:
                                ("forcing_condition_action", "ForcingConditionAction", 37),
                                ("forcing_pair_name", "ForcingPairName", 32),
                                ("forcing_union_name", "ForcingUnionName", 32),
-                               ("forcing_union_action", "ForcingUnionAction", 12),
+                               ("forcing_union_action", "ForcingUnionAction", 13),
                                ("forcing_check_name", "ForcingCheckName", 40),
                                ("forcing_check_name_laws", "ForcingCheckNameLaws", 22),
                                ("forcing_pair_induction", "ForcingPairInduction", 14),
@@ -3455,7 +3455,10 @@ def main() -> None:
                                ("forcing_product_symmetry", "ForcingProductSymmetry", 11),
                                ("forcing_product_parameters", "ForcingProductParameters", 7),
                                ("forcing_diagram_poset", "ForcingDiagramPoset", 19),
-                               ("forcing_product_poset", "ForcingProductPoset", 17)):
+                               ("forcing_product_poset", "ForcingProductPoset", 17),
+                               ("forcing_product_stabilizer", "ForcingProductStabilizer", 4),
+                               ("forcing_product_hs_pair", "ForcingProductHSPair", 5),
+                               ("forcing_product_hs_union", "ForcingProductHSUnion", 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7378,7 +7381,10 @@ def main() -> None:
         "source_forcing_empty_HS_proved": True,
         "source_forcing_HS_action_closure_native_schema_proved": True,
         "source_forcing_HS_action_closure_concrete_PPAC_instance_proved": False,
-        "source_forcing_HS_pair_union_closure_proved": False,
+        "source_forcing_HS_pair_union_closure_proved": True,
+        "source_product_actual_name_stabilizers_subgroup_proved": True,
+        "source_product_HS_pair_union_object_kernel_certificates_proved": True,
+        "source_product_HS_union_assumes_order_invariance_on_nonconditions": False,
         "source_atomic_left_right_swap_induction_native_certificate_proved": True,
         "source_atomic_relations_recursion_constructed": True,
         "source_atomic_relations_scope": "All internal raw names, internal condition set P, formula-defined relation R; native existence, uniqueness, exact membership/equality equations. External condition presentation identification remains pending.",

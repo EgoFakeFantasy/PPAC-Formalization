@@ -43,6 +43,44 @@ theorem preservesOrder_semantics {n : Nat} (v : Fin n → M.Carrier .set) (R : F
     exact ⟨(h x y a b hx hy).mp, (h x y a b hx hy).mpr⟩
 
 /-- Source's two membership directions, reusing both exact edge equations. -/
+theorem map_unionName_restricted (hM : FirstOrder.Theory.Models M nativeZF) {k n : Nat}
+    {f : Formula (k+2)} {R : Formula (n+2)} {fparams : Fin k → M.Carrier .set}
+    {params : Fin n → M.Carrier .set} (hf : IsFunction f fparams)
+    (P : M.Carrier .set) (Q : M.Carrier .set → Prop)
+    (hqQ : ∀ q, (Definitional.Project.FirstOrderSemantics.reduct M).mem q P → Q q)
+    (hinto : ∀ x y, (Definitional.Project.FirstOrderSemantics.reduct M).mem x P → MapRel f fparams x y →
+      (Definitional.Project.FirstOrderSemantics.reduct M).mem y P)
+    (honto : ∀ y, (Definitional.Project.FirstOrderSemantics.reduct M).mem y P →
+      ∃ x, (Definitional.Project.FirstOrderSemantics.reduct M).mem x P ∧ MapRel f fparams x y)
+    (hR : ∀ x y a b, Q x → Q y → MapRel f fparams x a → MapRel f fparams y b → (MapRel R params a b ↔ MapRel R params x y))
+    {sigma name mapped output : M.Carrier .set} (hn : UnionName R params P sigma name)
+    (hs : Mapped f fparams sigma mapped) (ho : Mapped f fparams name output)
+    (hQ : ∀ chi p child r, PureKuratowski.PairMember M chi p sigma →
+      PureKuratowski.PairMember M child r chi → Q p ∧ Q r) :
+    UnionName R params P mapped output := by
+  intro z
+  constructor
+  · intro hz
+    obtain ⟨child, q, child', q', he, hchild, hqMap, hCode⟩ := (ForcingMapConditions.mem_mapping hM hf ho z).mp hz
+    obtain ⟨chi, p, r, hp, hr, hq, hqp, hqr⟩ := (ForcingUnionName.edge_unionName hM hn child q).mp he
+    obtain ⟨chi', hchi⟩ := ForcingMapConditions.exists_mapping hM f fparams hf chi
+    obtain ⟨p', hpMap, _⟩ := hf p
+    obtain ⟨r', hrMap, _⟩ := hf r
+    exact ⟨child', q', hCode, chi', p', r',
+      (ForcingMapConditions.edge_mapping hM hf hs chi' p').mpr ⟨chi, p, hp, hchi, hpMap⟩,
+      (ForcingMapConditions.edge_mapping hM hf hchi child' r').mpr ⟨child, r, hr, hchild, hrMap⟩,
+      hinto q q' hq hqMap, (hR q p q' p' (hqQ q hq) (hQ chi p child r hp hr).1 hqMap hpMap).mpr hqp, (hR q r q' r' (hqQ q hq) (hQ chi p child r hp hr).2 hqMap hrMap).mpr hqr⟩
+  · rintro ⟨child, q, hCode, chi, p, r, hp, hr, hq, hqp, hqr⟩
+    obtain ⟨chi', p', hp', hchi, hpMap⟩ := (ForcingMapConditions.edge_mapping hM hf hs chi p).mp hp
+    obtain ⟨child', r', hr', hchild, hrMap⟩ := (ForcingMapConditions.edge_mapping hM hf hchi child r).mp hr
+    obtain ⟨q', hq', hqMap⟩ := honto q hq
+    apply (ForcingMapConditions.mem_mapping hM hf ho z).mpr
+    exact ⟨child', q', child, q,
+      (ForcingUnionName.edge_unionName hM hn child' q').mpr ⟨chi', p', r', hp', hr', hq',
+        (hR q' p' q p (hqQ q' hq') (hQ chi' p' child' r' hp' hr').1 hqMap hpMap).mp hqp, (hR q' r' q r (hqQ q' hq') (hQ chi' p' child' r' hp' hr').2 hqMap hrMap).mp hqr⟩,
+      hchild, hqMap, hCode⟩
+
+/-- Original unrestricted API, retained as an instance of the shared proof. -/
 theorem map_unionName (hM : FirstOrder.Theory.Models M nativeZF) {n : Nat}
     {f R : Formula (n+2)} {params : Fin n → M.Carrier .set} (hf : IsFunction f params)
     (P : M.Carrier .set)
@@ -54,27 +92,8 @@ theorem map_unionName (hM : FirstOrder.Theory.Models M nativeZF) {n : Nat}
     {sigma name mapped output : M.Carrier .set} (hn : UnionName R params P sigma name)
     (hs : Mapped f params sigma mapped) (ho : Mapped f params name output) :
     UnionName R params P mapped output := by
-  intro z
-  constructor
-  · intro hz
-    obtain ⟨child, q, child', q', he, hchild, hqMap, hCode⟩ := (ForcingMapConditions.mem_mapping hM hf ho z).mp hz
-    obtain ⟨chi, p, r, hp, hr, hq, hqp, hqr⟩ := (ForcingUnionName.edge_unionName hM hn child q).mp he
-    obtain ⟨chi', hchi⟩ := ForcingMapConditions.exists_mapping hM f params hf chi
-    obtain ⟨p', hpMap, _⟩ := hf p
-    obtain ⟨r', hrMap, _⟩ := hf r
-    exact ⟨child', q', hCode, chi', p', r',
-      (ForcingMapConditions.edge_mapping hM hf hs chi' p').mpr ⟨chi, p, hp, hchi, hpMap⟩,
-      (ForcingMapConditions.edge_mapping hM hf hchi child' r').mpr ⟨child, r, hr, hchild, hrMap⟩,
-      hinto q q' hq hqMap, (hR q p q' p' hqMap hpMap).mpr hqp, (hR q r q' r' hqMap hrMap).mpr hqr⟩
-  · rintro ⟨child, q, hCode, chi, p, r, hp, hr, hq, hqp, hqr⟩
-    obtain ⟨chi', p', hp', hchi, hpMap⟩ := (ForcingMapConditions.edge_mapping hM hf hs chi p).mp hp
-    obtain ⟨child', r', hr', hchild, hrMap⟩ := (ForcingMapConditions.edge_mapping hM hf hchi child r).mp hr
-    obtain ⟨q', hq', hqMap⟩ := honto q hq
-    apply (ForcingMapConditions.mem_mapping hM hf ho z).mpr
-    exact ⟨child', q', child, q,
-      (ForcingUnionName.edge_unionName hM hn child' q').mpr ⟨chi', p', r', hp', hr', hq',
-        (hR q' p' q p hqMap hpMap).mp hqp, (hR q' r' q r hqMap hrMap).mp hqr⟩,
-      hchild, hqMap, hCode⟩
+  exact map_unionName_restricted hM hf P (fun _ => True) (fun _ _ => True.intro)
+    hinto honto (fun x y a b _ _ => hR x y a b) hn hs ho (fun _ _ _ _ _ _ => ⟨True.intro, True.intro⟩)
 
 /-- Actual source actCode, not an assumed abstract action on names. -/
 theorem action_unionName (hM : FirstOrder.Theory.Models M nativeZF) {n : Nat}

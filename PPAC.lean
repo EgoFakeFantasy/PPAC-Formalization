@@ -366,3 +366,6 @@ import PPAC.Migration.ForcingProductSymmetry
 import PPAC.Migration.ForcingProductParameters
 import PPAC.Migration.ForcingDiagramPoset
 import PPAC.Migration.ForcingProductPoset
+import PPAC.Migration.ForcingProductStabilizer
+import PPAC.Migration.ForcingProductHSPair
+import PPAC.Migration.ForcingProductHSUnion

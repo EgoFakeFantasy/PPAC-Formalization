@@ -34,7 +34,7 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 |---|---|---|
 | AtomicForcing relations/atomic_laws/atomic_symmetry | ForcingPairInduction, AtomicStep/Graphs/Recursion/Relations/Basic/Laws/Symmetry: internal recursion, exact equations, laws and action symmetry | Concrete system and forced axioms |
 | ForcingQuotient Force; ForcingTruth regularity/forcing_sound | ForcingFormula/Sound: every fixed formula and all 19-rule fixed proofs | Every internal proof code belongs to stage 10 |
-| Name.Symmetric/HS/hs_iff/child | Literal stabilizers, internal closed witnesses, exact recursive equation and definable uniqueness | Pair/union HS closure |
+| Name.Symmetric/HS/hs_iff/child | Literal stabilizers, internal closed witnesses, exact recursive equation and definable uniqueness | HS pair/union now supplied by ProductHSPair/ProductHSUnion; full forced axioms remain |
 | Name.empty_HS/check_HS | ForcingHSCheck: all internal sets; top-filter, valid top and fixed-action premises retained | Supply these from the complete system |
 | Name.HS.smul; SymmetricNames.forces_symmetry | ForcingNameConjugacy/StabilizerTransport/HSAction: actual stabilizer conjugacy, Child induction, two-way HS domain transport | ProductSymmetry now supplies both contexts and order; the final Main monoid/poset system remains |
 | Equiv.Perm I; SupportFilter.Fix/conjugate_fix | LabelPermutations/LabelConjugacy/ConjugationGraph: actual permutation carrier, fixing subsets, conjugation graph, exact subgroup images | These constructions are complete |
@@ -49,6 +49,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 | CohenForcing.Condition countable Boolean graphs | ProductParameters.construction_kernel_certificate: native omega/two existence followed by shared carriers and uniform Family | Monoid/conical order and complete source-system assembly remain |
 
 | Source diagram/product/WithTop partial order | ForcingProductPoset.kernel_certificate, using ForcingDiagramPoset source laws | Object implication from the source left-cancel monoid/conical contract and actual Presentation to the existing forcing PreorderOn, antisymmetry and internal top. Concrete stage-8 monoid is not yet constructed. |
+
+| Source actual-name stabilizer and HS pair/union | ProductStabilizer, ProductHSPair, ProductHSUnion.kernel_certificate | Actual action, native subgroup closure, literal source names, source normality/presentation antecedents. All internal names; no HS closure assumption. Does not yet prove forces_pairing/forces_union. |
 
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 

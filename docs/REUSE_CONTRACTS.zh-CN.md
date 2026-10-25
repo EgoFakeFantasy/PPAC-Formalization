@@ -69,3 +69,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 本批复用原核闭合接口不变：ForcingHSAction 的原域传输证明只将共轭图参数从环境槽位放宽为任意内部图，原接口保留为直接实例；没有重复名字归纳。ForcingProductFamily 只将已证存在句子的开公式正文命名，旧句子仍定义为同一正文的闭合，供源 omega/2 特化消费。旧声明公理依赖集合预审逐项相同。
 
 本批偏序复用：ForcingDiagramPoset.injection_ext 直接消费底座 IsSetRelation.eq_of_pairMember_iff 与既有 native_mapsTo，不另建图外延性。ProductPoset.preorder 直接返回现有 AtomicBasic.PreorderOn，原核闭合继续用 ModelTransfer.derives。源 sub_one/sub_sub/index_unique 的证明结构保留；实际单子构造仍沿 OpenAI Algebra/Construction，不能用任意现成单子替换所需的不变量。
+
+本批 HS 配对／并集消费：原 MulAction.stabilizer 的子群义务由 ProductStabilizer 调用已证实际动作恒等／复合／逆及 NameConjugacy 完成。配对交集直接使用 KP.intersection_exists_d；正规性直接复用 NormalFilter.is_normal，名字构造与作用交换继续使用 PairName/UnionName/UnionAction。UnionAction 的同一条目证明放宽为只检查实际条件的序保持，旧接口保留且旧依赖集合不变；没有另建条件作用或名字递归。原核 HS 闭包已接通，下一项为原 mem_pair/mem_union 和 forces_pairing/forces_union，不能把这些强迫公理也算完成。
