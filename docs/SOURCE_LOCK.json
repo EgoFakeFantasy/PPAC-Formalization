@@ -8205,16 +8205,15 @@
       "scope": "Original Child induction proves HS closure from literal stabilizer conjugacy and algebraic normal-filter context. Both source conjugation directions and inverse name action discharge actual HS domain closure/surjectivity. Full fixed-formula symmetry is instantiated with ForcingHS.predicate; no arbitrary H-domain transport assumption remains. Two native certificate schemas. Concrete PPAC label permutation/actionHom/filter instances, pair/union closure, target axioms, arbitrary internal formula/proof-code reduction and final Con remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingHSAction.preservesAt": [
-          "propext",
-          "Quot.sound"
+          "Quot.sound",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.preservesAt_semantics": [
-          "propext",
           "Classical.choice",
-          "Quot.sound"
+          "Quot.sound",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.hs_action": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8223,14 +8222,14 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.sentence": [
-          "propext",
-          "Quot.sound"
+          "Quot.sound",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.models": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8239,10 +8238,10 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.kernel_certificate": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8251,10 +8250,22 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingHSAction.domain_transport_graphs": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.domain_transport": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8263,14 +8274,14 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.formulaSentence": [
-          "propext",
-          "Quot.sound"
+          "Quot.sound",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.formula_models": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8279,10 +8290,10 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ],
         "PPAC.Migration.ForcingHSAction.formula_kernel_certificate": [
-          "propext",
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -8291,7 +8302,8 @@
           "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
-          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ]
       }
     },
@@ -11706,7 +11718,7 @@
         "ForcingStabilizerTransport.Family",
         "ModelTransfer.derives (existing original-kernel completeness bridge)"
       ],
-      "scope": "Uniform definable action on fixed internal carriers, unique actions, identity/composition/order/top laws and actual Family construction. Concrete omega/2 and monoid/conical partial-order instantiation remain.",
+      "scope": "Uniform fixed-carrier action, uniqueness, identity/composition/order/top and Family construction. ForcingProductParameters specializes to source omega/two; ForcingProductSymmetry supplies actual HS-domain formula symmetry. Monoid/conical partial-order and full forced axioms remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingProductFamily.Presentation": [],
         "PPAC.Migration.ForcingProductFamily.presentation": [
@@ -11963,6 +11975,10 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
         ],
+        "PPAC.Migration.ForcingProductFamily.constructionBody": [
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.ForcingProductFamily.constructionSentence": [
           "Quot.sound",
           "propext"
@@ -12013,7 +12029,7 @@
         "ForcingHSAction.hs_action",
         "ModelTransfer.derives (existing original-kernel completeness bridge)"
       ],
-      "scope": "Actual inverse/conjugacy and Context for the uniform product action and support-defined filter. Native existential SystemData construction and HS action closure; no assumed NormalImage or HS closure. Full target forcing axioms and final Con remain.",
+      "scope": "Actual inverse/conjugacy and support-filter Context, existential SystemData and HS closure without assumed NormalImage/HS closure. ProductSymmetry constructs the reverse context and applies this family to full fixed-formula symmetry. Full poset/forcing axioms and final Con remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingProductCovariance.label_left_inverse": [],
         "PPAC.Migration.ForcingProductCovariance.inverse": [
@@ -12201,6 +12217,188 @@
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingNames.lean": "0e2f3a09e6b38d12cf3ab5f1935eb1a3d1dccd389444866e47231c113f2f955c",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/SupportFilter.lean": "521468b7f5a96113e97036ee33bd49806d2d9de47503700d4e49c135d638caf2",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a"
+      }
+    },
+    "forcing_product_symmetry": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean",
+      "source_sha256": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a",
+      "adapter": "PPAC/Migration/ForcingProductSymmetry.lean",
+      "source_declarations": [
+        "SymmetricSystem.forces_symmetry"
+      ],
+      "consumers": [
+        "SymmetricNames Separation-name construction and full forced ZF schemas"
+      ],
+      "reused_interfaces": [
+        "ForcingProductCovariance.context_of_data",
+        "ForcingConjugationGraph.exists_graph",
+        "ForcingHSAction.domain_transport_graphs",
+        "ForcingProductFamily.order",
+        "ForcingFormulaSymmetry.conclusion_models",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Each fixed source formula: actual uniform action/support filter, constructed reverse conjugation, both HS domain directions and source relation preservation. No assumed Context, HS closure or order transport. Full monoid/conical poset and forced axioms remain.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingProductSymmetry.actionFormula": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.actionFormula_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.context_reindex": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.orderFormula": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.orderFormula_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.reverse_context": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.domain_transport": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.order_on": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductSymmetry.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_product_parameters": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/CohenForcing.lean",
+      "source_sha256": "9aa9ff0c5a0df3aba50b01a5e690ad9ae01bf5a8b2d1ceca497b2831eed04db1",
+      "adapter": "PPAC/Migration/ForcingProductParameters.lean",
+      "source_declarations": [
+        "CohenForcing.Condition",
+        "ProductForcing.actionHom"
+      ],
+      "consumers": [
+        "ProductNames.system on source countable Boolean-valued Cohen conditions"
+      ],
+      "reused_interfaces": [
+        "ZF.exists_omega",
+        "KP.exists_ordinalOne",
+        "KP.exists_successor",
+        "ForcingProductFamily.construction_models",
+        "ProjectSyntax.encode / GodelDefRecursion.encode_semantics",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Construct internal omega and ordinal two, then exact shared Cohen/Diagram/Product/WithTop carriers and uniform Family at these parameters, reusing existing constructors. Full monoid/conical system remains.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      },
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Natural.lean",
+      "native_source_sha256": "84df94e658be97304df936efa2db4eecdc04aaac1cdeb3273cbc4a0d41389cbd",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingProductParameters.two": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.two_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.two_semantics": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.parameters": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.constructionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductParameters.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
       }
     }
   },

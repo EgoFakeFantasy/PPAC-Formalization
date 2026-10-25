@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、具体系统中的 HS 作用实例与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC/GCH 已定位并验收端点；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；通用 HS.smul 和实际 HS 域公式对称性已验收；标签置换载体、逐点稳定子闭包及逐点共轭已验收；共轭集合图、精确稳定子像与子群像闭包已验收；小支撑族、有限并基数界、交闭包及四项正规性已构造；目标端主链未完成 | Diagram 载体／实际作用图、作用律、子图构造和平移关系不变性已验收；Cohen 坐标及条件载体上的实际保序双射已完整验收；Cohen 群律与实际乘积作用已完整验收；WithTop 载体／固定顶条件／作用律已完整验收；固定载体上的统一标签作用公式、Family/Covariance、支撑滤子 Context 与 HS 作用已完整验收；接原 omega/2 参数与单子/conical 条件，形成实际 poset；完成 pair/union HS 闭包、双向 Context 下的具体公式对称性和全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；通用 HS.smul 和实际 HS 域公式对称性已验收；标签置换载体、逐点稳定子闭包及逐点共轭已验收；共轭集合图、精确稳定子像与子群像闭包已验收；小支撑族、有限并基数界、交闭包及四项正规性已构造；目标端主链未完成 | Diagram 载体／实际作用图、作用律、子图构造和平移关系不变性已验收；Cohen 坐标及条件载体上的实际保序双射已完整验收；Cohen 群律与实际乘积作用已完整验收；WithTop 载体／固定顶条件／作用律已完整验收；固定载体上的统一标签作用公式、Family/Covariance、支撑滤子 Context 与 HS 作用已完整验收；原 omega/2 载体特化和实际 HS 域公式对称性已完整验收；接单子/conical 条件形成实际 poset，完成 pair/union HS 闭包和全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -32,8 +32,10 @@
 
 ## 本批执行边界
 
-源消费者仍是固定 `ProductNames.actionHom → system → Name.HS.smul`。本批 ForcingProductFamily 固定共享 C、S、X、Y、P、W，复用已证 Cohen/Diagram/Product/WithTop 精确图和作用律，构造唯一的统一对象作用公式；ForcingProductCovariance 证明逆与共轭，将已有支撑滤子 normal_image 接入 Context，并直接消费 ForcingHSAction.hs_action。
+源消费者：`SymmetricNames.forces_symmetry`（用于 Separation-name 构造）及 `CohenForcing.Condition → ProductNames.system`。
 
-原核证书包括共享载体／Family 存在、唯一性、恒等／复合／保序／固定顶，以及实际 SystemData 存在、Context 和 HS 作用。SystemData 的图、置换和滤子字段有实际存在性证明；没有假设 HS 闭包、目标公理或 NormalImage。完整验收结果以 STATUS 和 verification/summary.json 为准。
+ForcingProductSymmetry 将现有统一作用公式重索引到完整环境，实际构造反向共轭图，消费两方向 HS 域传输及已证 Product/WithTop 序关系保持。原核模式对每个完整源公式成立，不再假设 Context、DomainTransport 或 OrderOn。源有限公式索引是外部模式索引，任意内部证明码仍属于阶段 10，不能混报。
 
-真正下一步是源 B=2、w=ω 特化及单子/conical 关系的偏序合同，随后消费已证双向 Context 和序不变性完成具体公式对称性；继续源 pair/union HS 闭包及全部解释公理。原阶段 8 的代数构造不可用假设字段冒充。不得重做本批已构造的统一作用族，最终 Con 仍未完成。
+ForcingProductParameters 直接调用 YesMetaZFC 的 exists_omega、exists_ordinalOne、exists_successor，把既有共享载体／Family 构造特化到内部 ω 和 von Neumann 2。没有重建自然数或额外假设参数存在。完整验收结果以 STATUS 为准。
+
+核对源消费者后，对称性不需要先完成偏序定律；本轮直接接通，不把阶段 8 的完整代数构造人为前置。真正下一步是迁移原 DiagramOrder 偏序证明的单子／conical 合同、Product/WithTop 序装配，以及源 pair/union HS 闭包；其实际单子由原阶段 8 构造提供，不能用字段假设冒充核心构造。然后继续全部强迫 ZF 模式，保持原 8–10 主链和最终 Con 目标。

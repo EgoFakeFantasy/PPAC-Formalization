@@ -55,3 +55,6 @@ WithTop 批次：完整验收后删除 verification/ForcingWithTopAudit.lean 一
 
 
 统一作用／Context 批次：绝对路径、无跟踪文件名引用及逐项 SHA-256 回验后，删除 37 份已消费的 .local 模板／schema-spec／exports／旧 WIP 元数据，以及已由 Audit.lean 接替的一次性 ForcingProductFamilyAudit.lean，共 38 文件、270921 字节。前 37 份归档于 verification/retired-consumed-metadata-20261026.zip；清单为 verification/cleanup-family-20261026.json，预审日志保留。清理后才启动本批完整验收。现行 GAPS/THEOREM_COVERAGE 去掉重复历史批次和过时未完成声明；已验收冻结字节模块未在缺少精确依赖裁剪时批量删除。
+
+
+源参数／具体公式对称性批次：正式 Audit.lean 已接管全部新增和改动声明后，按绝对路径与 SHA-256 白名单删除一次性 verification/ForcingProductSystemAudit.lean，再启动串行全验收。保留预审日志及 cleanup-product-system-probe-20261026.json；没有新增持久生成脚本或重复验收报告。

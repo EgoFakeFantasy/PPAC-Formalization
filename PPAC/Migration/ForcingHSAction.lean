@@ -83,10 +83,10 @@ theorem kernel_certificate {k : Nat} (A : Formula (k+2)) (G P F c r i sigma : Fi
 
 /-- Discharge the two name-domain obligations for actual HS, using both source
 normal-filter conjugations and the already constructed inverse name action. -/
-theorem domain_transport (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
-    (A : Formula (k+2)) (params : Fin k → M.Carrier .set) (G P F c d r i : Fin k)
-    (hf : Context A params (params G) (params P) (params F) (params c) (params r) (params i))
-    (hb : Context A params (params G) (params P) (params F) (params d) (params i) (params r)) :
+theorem domain_transport_graphs (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (A : Formula (k+2)) (params : Fin k → M.Carrier .set) (G P F r i : Fin k) (c d : M.Carrier .set)
+    (hf : Context A params (params G) (params P) (params F) c (params r) (params i))
+    (hb : Context A params (params G) (params P) (params F) d (params i) (params r)) :
     ForcingFormulaSymmetry.DomainTransport (ForcingConditionAction.actFormula P r) (ForcingHS.predicate A G P F) params := by
   constructor
   · intro x hx
@@ -102,6 +102,13 @@ theorem domain_transport (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
       (ForcingHS.isName hyHS) hx
     exact ⟨x,(ForcingHS.predicate_semantics (M := M) A G P F params x).mpr hxHS,
       (ForcingNameConjugacy.action_iff params P r x y).mpr hback⟩
+
+theorem domain_transport (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (A : Formula (k+2)) (params : Fin k → M.Carrier .set) (G P F c d r i : Fin k)
+    (hf : Context A params (params G) (params P) (params F) (params c) (params r) (params i))
+    (hb : Context A params (params G) (params P) (params F) (params d) (params i) (params r)) :
+    ForcingFormulaSymmetry.DomainTransport (ForcingConditionAction.actFormula P r) (ForcingHS.predicate A G P F) params :=
+  domain_transport_graphs hM A params G P F r i (params c) (params d) hf hb
 
 /-- The original full formula symmetry now uses the actual HS domain; no
 arbitrary H-domain closure or surjectivity premise remains in this sentence. -/
