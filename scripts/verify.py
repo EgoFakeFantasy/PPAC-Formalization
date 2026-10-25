@@ -2741,7 +2741,51 @@ def check_Packet_reader_state_code_coded_step_history_base() -> dict:
             'real_singleton_sequence_constructs_zero_history':True,
             'every_accepted_zero_history_has_equal_endpoints':True,
             'all_invalid_and_nonstandard_candidates_and_raw_scale_domain_preserved':True,
-            'arbitrary_length_history_append_and_determinism':False,
+            'arbitrary_length_history_append_and_determinism':True,
+            'all_index_input_consumption_and_complete_run_exists_unique':False,
+            'actual_EOF_accumulator_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
+def check_Packet_reader_history_append_and_determinism() -> dict:
+    modules = ['PacketReaderHistoryRowMap', 'PacketReaderHistoryAppend', 'PacketReaderHistoryAgreementSyntax', 'PacketReaderHistoryAgreementRows', 'PacketReaderHistoryAgreementPoint', 'PacketReaderHistoryAgreementInduction', 'PacketReaderHistoryUnique', 'ObjectPacketReaderHistoryAppend']
+    schemas = ['packetReaderHistoryAppendEveryOldRowPreserved', 'packetReaderHistoryAppendAllOldAndNewRowsPreserved', 'packetReaderHistoryAppendEveryActualAppendIsLongerHistory', 'packetReaderHistoryAppendActualExactExtensionExists', 'packetReaderHistoryAppendBothActualRowWitnessBlocksCompared', 'packetReaderHistoryAppendEmptyIndexAgreement', 'packetReaderHistoryAppendRealSuccessorAgreement', 'packetReaderHistoryAppendOriginalOmegaMatrixBase', 'packetReaderHistoryAppendOriginalOmegaMatrixStep', 'packetReaderHistoryAppendAllInternalIndexAgreementIHDischarged', 'packetReaderHistoryAppendEveryActualNaturalIndexAgrees', 'packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValue', 'packetReaderHistoryAppendSameInternalLengthEndpointsUnique', 'packetReaderHistoryAppendOriginalLiteralAllIndexAgreement', 'packetReaderHistoryAppendRawStateCodesConstructActualExtension']
+    required = {
+        'PacketReaderHistoryRowMap': ['theorem row_map', 'theorem links_map', 'theorem append_links', 'edgeIncluded_at', 'HornBinderRules.eliminate_many 3', 'InsertLogic.member_cases'],
+        'PacketReaderHistoryAppend': ['def extension', 'SequenceSyntax.append', 'theorem from_append', 'StructuralListTraceRows.old_included', 'StructuralListTraceRows.new_edge', 'PacketReaderHistoryRowMap.append_links', 'SequenceAppend.exists_append', 'theorem exists_extension'],
+        'PacketReaderHistoryAgreementSyntax': ['def agree', 'def matrix : Formula 3', 'def allAgreement', 'theorem matrix_pred', 'theorem at_values', 'theorem step_source_subst', 'Derives.eqSubst'],
+        'PacketReaderHistoryAgreementRows': ['HornBinderRules.eliminate_many 3 R', 'HornBinderRules.eliminate_many 3 T', 'OmegaUniversal.successor_unique', 'GraphProperties.single_valued', 'step_source_subst', 'PacketReaderCodedUnique.unique'],
+        'PacketReaderHistoryAgreementPoint': ['OmegaUniversal.empty_unique', 'GraphProperties.domain_of_edge', 'SyntaxIndexLiftOrder.predecessor_member', 'PacketReaderHistoryAgreementRows.outputs_unique', 'theorem zero_point', 'theorem successor_point'],
+        'PacketReaderHistoryAgreementInduction': ['OmegaInductionSyntax.base PacketReaderHistoryAgreementSyntax.matrix', 'OmegaInductionSyntax.step PacketReaderHistoryAgreementSyntax.matrix', 'ZFArithmetic.induction hZ PacketReaderHistoryAgreementSyntax.matrix', 'theorem all_agreement'],
+        'PacketReaderHistoryUnique': ['theorem at_index', 'theorem common_values', 'GraphProperties.domain_of_edge', 'StructuralListTraceOrder.member_member', 'theorem endpoints', 'PacketReaderHistoryAgreementInduction.all_agreement'],
+        'ObjectPacketReaderHistoryAppend': ['TheoryTransport.sentence', 'ZFReplay.replay', 'SyntaxNumerals.range hZ 128 w B', 'PacketReaderCodedSyntax.intro_step']}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text): raise RuntimeError('Reader history append forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader history append proof drift: '+mod+': '+clause)
+    for mod,name,expected in [('PacketReaderHistoryAppend','exists_extension',{'hw','hh','ht','he'}),('PacketReaderHistoryAgreementInduction','all_agreement',{'hw','hB','hf','hg'}),('PacketReaderHistoryUnique','common_values',{'hw','hB','hf','hg','ha','hb'}),('PacketReaderHistoryUnique','endpoints',{'hw','hB','hf','hg'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Reader history append hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderHistoryAppend.native_'+name not in checks: raise RuntimeError('Missing reader history append native fixture: '+name)
+    return {'original_sequence_append_actually_constructs_longer_history':True,
+            'new_graph_exactly_restricts_to_original_graph_on_old_domain':True,
+            'all_old_rows_preserved_and_actual_new_last_row_constructed':True,
+            'both_complete_actual_row_witness_blocks_eliminated':True,
+            'successor_row_domains_derived_from_real_target_edges':True,
+            'fixed_object_Formula3_omega_induction_uses_full_Separation':True,
+            'all_graph_agreement_induction_hypotheses_discharged':True,
+            'all_internal_natural_indices_of_same_source_histories_agree':True,
+            'actual_common_index_naturality_derived_no_extra_input_assumption':True,
+            'same_internal_length_histories_have_unique_endpoint_code':True,
+            'arbitrary_internal_lengths_nonstandard_indices_and_invalid_candidates_preserved':True,
             'all_index_input_consumption_and_complete_run_exists_unique':False,
             'actual_EOF_accumulator_reverse':False,
             'readTokens_Bytes_Canonical_full_program_bridge':False,
@@ -2819,6 +2863,7 @@ def main() -> None:
     Packet_raw_reader_local_step = check_Packet_raw_reader_local_step()
     Packet_complete_reader_input_single_step = check_Packet_complete_reader_input_single_step()
     Packet_reader_state_code_coded_step_history_base = check_Packet_reader_state_code_coded_step_history_base()
+    Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -6078,7 +6123,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryEveryZeroHistoryHasSameEndpoint',
                     'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualSingletonZeroHistoryExists',
                     'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualStateCodeSeedsZeroHistory',
-                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryOriginalLiteralCodedDomain'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryOriginalLiteralCodedDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryOldRowPreserved',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAllOldAndNewRowsPreserved',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryActualAppendIsLongerHistory',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendActualExactExtensionExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendBothActualRowWitnessBlocksCompared',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEmptyIndexAgreement',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRealSuccessorAgreement',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalOmegaMatrixBase',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalOmegaMatrixStep',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAllInternalIndexAgreementIHDischarged',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryActualNaturalIndexAgrees',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValue',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendSameInternalLengthEndpointsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalLiteralAllIndexAgreement',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRawStateCodesConstructActualExtension'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -6090,6 +6150,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderHistoryAppend": ('packetReaderHistoryAppendEveryOldRowPreserved', 'packetReaderHistoryAppendAllOldAndNewRowsPreserved', 'packetReaderHistoryAppendEveryActualAppendIsLongerHistory', 'packetReaderHistoryAppendActualExactExtensionExists', 'packetReaderHistoryAppendBothActualRowWitnessBlocksCompared', 'packetReaderHistoryAppendEmptyIndexAgreement', 'packetReaderHistoryAppendRealSuccessorAgreement', 'packetReaderHistoryAppendOriginalOmegaMatrixBase', 'packetReaderHistoryAppendOriginalOmegaMatrixStep', 'packetReaderHistoryAppendAllInternalIndexAgreementIHDischarged', 'packetReaderHistoryAppendEveryActualNaturalIndexAgrees', 'packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValue', 'packetReaderHistoryAppendSameInternalLengthEndpointsUnique', 'packetReaderHistoryAppendOriginalLiteralAllIndexAgreement', 'packetReaderHistoryAppendRawStateCodesConstructActualExtension'),
         "ObjectPacketReaderHistory": ('packetReaderHistoryStateCodeExactRawDomain', 'packetReaderHistoryStateCodeOutputUnique', 'packetReaderHistoryStateCodeAllFieldsInjective', 'packetReaderHistoryStateCodeNatural', 'packetReaderHistoryCodedTransitionAtActualSource', 'packetReaderHistoryCodedTransitionNaturalDomain', 'packetReaderHistoryCodedTransitionExactCarriers', 'packetReaderHistoryCodedTransitionOutputUnique', 'packetReaderHistoryCodedSuccessorExactRawDomain', 'packetReaderHistoryActualInternalIndexHasAdjacentStep', 'packetReaderHistoryActualHistoryEndpointsNatural', 'packetReaderHistoryEveryZeroHistoryHasSameEndpoint', 'packetReaderHistoryActualSingletonZeroHistoryExists', 'packetReaderHistoryActualStateCodeSeedsZeroHistory', 'packetReaderHistoryOriginalLiteralCodedDomain'),
         "ObjectPacketReaderInput": ('packetReaderInputActualConsFieldsUnique', 'packetReaderInputFullValidNilConsDecomposition', 'packetReaderInputActualConsStepExact', 'packetReaderInputActualConsRejectExact', 'packetReaderInputNilNoAdvance', 'packetReaderInputNilNoByteReject', 'packetReaderInputCompleteStatePreserved', 'packetReaderInputCompleteStepJointUnique', 'packetReaderInputInvalidStateRejected', 'packetReaderInputCompleteExactSuccessorDomain', 'packetReaderInputFourWayExactStateDomain', 'packetReaderInputNilNoSuccessor', 'packetReaderInputByteRejectNoSuccessor', 'packetReaderInputEofObservationsDisjoint', 'packetReaderInputOriginalLiteralExactSuccessorDomain', 'packetReaderInputOriginalLiteralFourWayDispatch'),
         "ObjectPacketReaderStep": ('packetReaderRawGuardPartition', 'packetReaderTerminalRejectionNoStep', 'packetReaderEofExactGuardPartition', 'packetReaderUnboundedValueUpdateExists', 'packetReaderUnboundedValueUpdateRange', 'packetReaderContinuationExactNaturalDomain', 'packetReaderContinuationJointUnique', 'packetReaderContinuationActualExists', 'packetReaderEmissionActualConsExists', 'packetReaderEmissionActualConsUnique', 'packetReaderEmissionValidAccumulator', 'packetReaderLocalStepStatePreserved', 'packetReaderLocalStepJointUnique', 'packetReaderLocalStepExactSuccessorDomain', 'packetReaderOriginalLiteralLocalSuccessorDomain'),
@@ -7089,6 +7150,8 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_reader_history_append_and_determinism_guard": Packet_reader_history_append_and_determinism,
+        'object_Packet_readTokens_history_append_and_all_index_determinism_proved': True,
         "Packet_reader_state_code_coded_step_history_base_guard": Packet_reader_state_code_coded_step_history_base,
         'object_Packet_readTokens_exact_state_code_coded_step_and_history_zero_base_proved': True,
         "Packet_complete_reader_input_single_step_guard": Packet_complete_reader_input_single_step,

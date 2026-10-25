@@ -12911,4 +12911,63 @@ example {m} (w B z o n d l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives 
 example {m} (w B z o n l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryOriginalLiteralCodedDomainSentence w B z o n l v s a)) :=
   Internal.ObjectPacketReaderHistory.native_packetReaderHistoryOriginalLiteralCodedDomain w B z o n l v s a
+example {m} (w B z o f g i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendEveryOldRowPreservedSentence w B z o f g i)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryOldRowPreserved w B z o f g i
+
+example {m} (w B z o l d f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendAllOldAndNewRowsPreservedSentence w B z o l d f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAllOldAndNewRowsPreserved w B z o l d f g
+
+example {m} (w B z o n r s l d e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendEveryActualAppendIsLongerHistorySentence w B z o n r s l d e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryActualAppendIsLongerHistory w B z o n r s l d e f g
+
+example {m} (w B z o n r s l d e f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendActualExactExtensionExistsSentence w B z o n r s l d e f)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendActualExactExtensionExists w B z o n r s l d e f
+
+example {m} (w B z o f g d e i j a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendBothActualRowWitnessBlocksComparedSentence w B z o f g d e i j a b)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendBothActualRowWitnessBlocksCompared w B z o f g d e i j a b
+
+example {m} (w B z o n r t l d k e f g i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendEmptyIndexAgreementSentence w B z o n r t l d k e f g i)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEmptyIndexAgreement w B z o n r t l d k e f g i
+
+example {m} (w B z o n r t l d k e f g i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendRealSuccessorAgreementSentence w B z o n r t l d k e f g i j)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRealSuccessorAgreement w B z o n r t l d k e f g i j
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendOriginalOmegaMatrixBaseSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalOmegaMatrixBase w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendOriginalOmegaMatrixStepSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalOmegaMatrixStep w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendAllInternalIndexAgreementIHDischargedSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAllInternalIndexAgreementIHDischarged w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendEveryActualNaturalIndexAgreesSentence w B z o n r t l d k e f g i)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendEveryActualNaturalIndexAgrees w B z o n r t l d k e f g i
+
+example {m} (w B z o n r t l d k e f g i a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValueSentence w B z o n r t l d k e f g i a b)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValue w B z o n r t l d k e f g i a b
+
+example {m} (w B z o n r t l d e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendSameInternalLengthEndpointsUniqueSentence w B z o n r t l d e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendSameInternalLengthEndpointsUnique w B z o n r t l d e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendOriginalLiteralAllIndexAgreementSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalLiteralAllIndexAgreement w B z o n r t l d k e f g
+
+example {m} (w B z o n r s l d e f L V S A x y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistoryAppend.packetReaderHistoryAppendRawStateCodesConstructActualExtensionSentence w B z o n r s l d e f L V S A x y q c)) :=
+  Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRawStateCodesConstructActualExtension w B z o n r s l d e f L V S A x y q c
 end PPAC.Migration.Step4Checks
