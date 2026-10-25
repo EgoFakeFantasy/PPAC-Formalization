@@ -28865,3 +28865,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ModelTransfer.project_derives
 #print axioms PPAC.Migration.ModelTransfer.target_models_iff
 #print axioms PPAC.Migration.ModelTransfer.target_project_models_iff
+
+#print axioms PPAC.Migration.DefinableMinimaChoice.lift_assignment
+#print axioms PPAC.Migration.DefinableMinimaChoice.realize_rename
+#print axioms PPAC.Migration.DefinableMinimaChoice.least
+#print axioms PPAC.Migration.DefinableMinimaChoice.minimumPrinciple
+#print axioms PPAC.Migration.DefinableMinimaChoice.selected
+#print axioms PPAC.Migration.DefinableMinimaChoice.selected_semantics
+#print axioms PPAC.Migration.DefinableMinimaChoice.minimum_semantics
+#print axioms PPAC.Migration.DefinableMinimaChoice.separation_semantics
+#print axioms PPAC.Migration.DefinableMinimaChoice.selector_models
+#print axioms PPAC.Migration.DefinableMinimaChoice.selector_kernel_certificate
+#print axioms PPAC.Migration.DefinableMinimaChoice.kernel_certificate
+#print axioms PPAC.Migration.DefinableMinimaChoice.source_certificate
+#print axioms PPAC.Migration.DefinableMinimaChoice.relative_kernel_certificate

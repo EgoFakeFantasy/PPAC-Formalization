@@ -43,6 +43,7 @@ import PPAC.Migration.ObjectRankCover
 import PPAC.Migration.ReverseZFReplay
 
 import PPAC.Migration.ChoiceNativeBridge
+import PPAC.Migration.DefinableMinimaChoice
 
 import PPAC.Migration.Internal.ObjectCheckedSequences
 

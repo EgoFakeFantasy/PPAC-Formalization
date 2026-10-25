@@ -13,3 +13,14 @@ lean/OAI/SetTheory/PartitionConsistency/Logic/SetLanguage.lean at the same pinne
 The ZF and target-theory Set predicates are unfolded to proposition-valued functions.
 The source formula AST now has a generated DecidableEq instance; its constructors are unchanged.
 Normalization, reverse translation, and presentation-replay proofs are new migration code.
+
+DefinableMinimaChoice adapts the least-member separation proof and renaming
+semantics from ConstructibleUniverse/SetTheory/ZFC/Constructible/Choice.lean
+InternalWellOrder.lean, and Def.lean in
+https://github.com/05-02-07/lean-constructible-universe,
+commit 7f5a7d03d63d9769172f17350bbe8303996e5b53.
+Copyright (c) 2026 Zike Liu. Licensed under Apache License 2.0;
+see third_party/constructible-universe/LICENSE.
+Changes: use the existing PPAC Source syntax; generalize the LCarrier-specific
+argument to arbitrary nativeZF models; reuse existing original-kernel
+completeness, reverse transfer and relativization to obtain Derives certificates.

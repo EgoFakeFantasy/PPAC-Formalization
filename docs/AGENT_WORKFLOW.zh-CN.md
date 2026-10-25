@@ -15,7 +15,7 @@
 | 验收项 | 直接复用 | 本工程实际要做 | 当前状态 |
 |---|---|---|---|
 | 1. 语言、理论与原核接通 | 已验收源／原19规则传输、完整ZF互导、AC等价；YesMetaZFC Project语义桥、纯语言公平调度／强完备性；BMS原核收尾方法 | 接入精确ZF背景及U的额外句子，明确模型universe和量词，不复制这些底座 | 既有迁移已验收；ModelTransfer的6项ZF／U模型桥及原核回传已通过正式验收 |
-| 2. 数学解释成立 | 已有LStageZF／Def／Gödel／逐公式编译，现有满足关系与源PPAC强迫数学 | 对接实际语言和背景，消去L解释及对称系统的实际前提，得到全模式ZF、全秩PP、ACwo、¬AC所需证书 | 尚未完成，精确来源与缺口见MATH_REDUCTION_ROUTE；不得再从头造L或满足关系 |
+| 2. 数学解释成立 | 已有LStageZF／Def／Gödel／逐公式编译，现有满足关系与源PPAC强迫数学 | 对接实际语言和背景，消去L解释及对称系统的实际前提，得到全模式ZF、全秩PP、ACwo、¬AC所需证书 | Min_lt→AC及其域相对化已获得原核证书；L域、实际层序／最小元和其余数学解释尚未完成，见MATH_REDUCTION_ROUTE |
 | 3. 内部Proof／Con实例化 | ObjectFormulaSyntax、ObjectSyntaxTransform、ObjectLogicalAxiom、ObjectProofNode.ofNodeTest、既有内部图对应及纯支撑消去方法 | 为ZF和U提供实际公理测试与支撑证书，核对完整模式、六规则／27模式和任意内部码；需要时证明约定编码间的内部传输 | 尚未完成；具体ZFC实例不能直接冒名为ZF／U |
 | 4. 主句封闭 | 已验收相对化规则、现成原核回传和前两项实际解释 | 在ZF内完成U矛盾证明→ZFC矛盾证明→ZF矛盾证明，消去全部中间前提，取得最终Derives | 尚未完成；最终Con完成标志保持false |
 

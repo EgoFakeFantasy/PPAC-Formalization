@@ -1198,4 +1198,21 @@ example (D : Source.Formula 1) :
     rintro q ⟨a, ⟨b, hb, _⟩, _⟩
     exact False.elim hb)
 
+/-- The order formula may bind a witness: r is fixed and the new witness is not captured. -/
+example : DefinableMinimaChoice.least
+    (.ex ((Source.Formula.mem 1 3).conj (.mem 3 2))) =
+    Source.Formula.conj (.mem 2 1) (.all ((Source.Formula.mem 3 1).imp
+      ((Source.Formula.ex ((Source.Formula.mem 3 4).conj (.mem 4 2))).neg))) := rfl
+
+/-- A selected element belongs to a family member; the comparison keeps r fixed. -/
+example : DefinableMinimaChoice.selected (.mem 1 2) =
+    Source.Formula.ex ((Source.Formula.mem 3 1).conj
+      ((Source.Formula.mem 2 3).conj (.all ((Source.Formula.mem 4 3).imp
+        (Source.Formula.mem 4 2).neg)))) := rfl
+
+/-- Consume the schema with the actual internal Kuratowski relation graph. -/
+example : FirstOrder.Derives nativeZF [] (Translation.sentence
+    ((DefinableMinimaChoice.minimumPrinciple (Source.SetLanguage.edge 0 1 2)).imp
+      Source.SetLanguage.AC)) := DefinableMinimaChoice.kernel_certificate _
+
 end PPAC.Migration.Step3Checks

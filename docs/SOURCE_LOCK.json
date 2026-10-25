@@ -87,5 +87,17 @@
   "toolchains": {
     "openai": "leanprover/lean4:v4.34.1",
     "yesmeta": "leanprover/lean4:v4.33.1"
+  },
+  "companion_reuse": {
+    "definable_minima_choice": {
+      "repository": "https://github.com/05-02-07/lean-constructible-universe",
+      "commit": "7f5a7d03d63d9769172f17350bbe8303996e5b53",
+      "adapter": "PPAC/Migration/DefinableMinimaChoice.lean",
+      "files": {
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Choice.lean": "2bc8a05096d8025998957817b113ab6ba7c455165bc673f0dc74eab661f7e0ce",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean": "3e84de8cf5da75546c399c7044f87e4b51c27d686b733065d7d4380dfcc46cec",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/InternalWellOrder.lean": "58e0778d79deb5ae876cdab599164a105229aa0f4063165b163ce2a8d664a6bb"
+      }
+    }
   }
 }

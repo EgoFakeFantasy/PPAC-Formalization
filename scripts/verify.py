@@ -3383,6 +3383,11 @@ def main() -> None:
                             re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", model_transfer_body, re.MULTILINE)}
     if not model_transfer_names or not model_transfer_names <= set(expected):
         raise RuntimeError("Incomplete model transfer declaration audit")
+    minima_body = strip_comments((ROOT / "PPAC/Migration/DefinableMinimaChoice.lean").read_text(encoding="utf-8"))
+    minima_names = {"PPAC.Migration.DefinableMinimaChoice." + n for n in
+                    re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", minima_body, re.MULTILINE)}
+    if not minima_names or not minima_names <= set(expected):
+        raise RuntimeError("Incomplete definable minima choice audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3498,6 +3503,20 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.DefinableMinimaChoice."):
+            simple = {"propext", "Quot.sound", "Classical.choice"}
+            closed = {"selector_models", "selector_kernel_certificate", "kernel_certificate",
+                      "source_certificate", "relative_kernel_certificate"}
+            suffix = name.rsplit(".", 1)[1]
+            if suffix in {"least", "minimumPrinciple", "selected"}:
+                if set(dependencies) != {"propext", "Quot.sound"}:
+                    raise RuntimeError("Unexpected minima formula construction dependency: " + name)
+            elif suffix in closed:
+                if set(dependencies) != simple | inherited:
+                    raise RuntimeError("Unexpected minima choice certificate dependency: " + name)
+            elif not set(dependencies) <= simple:
+                raise RuntimeError("Unexpected minima semantics dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.ModelTransfer."):
             expected_model = {"propext", "Quot.sound", "Classical.choice"}
             if name != "PPAC.Migration.ModelTransfer.derives":

@@ -31,4 +31,17 @@ YesMetaZFC 文件相对于 `.lake/packages/YesMetaZFC/YesMetaZFC/`。BMS 本地�
 
 早先三个既有接口目标的196 jobs构建及本地trust=0调用探针也已通过；它们是复用可调用性证据。误扩至整套PureProvability的构建已主动中止，不列为重新编译通过。重复满足关系候选及冻结packet候选不恢复；本批临时探针已删除，正式源文件和审计保留。
 
+数学收尾批正式验收：2657构建任务、28562声明审计（新增13项完整覆盖）、9条命令全成功、5条trust=0、零警告。公式构造精确依赖propext／Quot.sound；五项模型／原核证书精确保留标准三项及既有七个ZF句子证书，未激活额外choice证书。本批早先审计曾因错误地要求公式构造无任何宿主逻辑依赖而失败，已按实际两项标准依赖设置精确检查并完整重验通过。
+
+数学收尾已实际复用到 `DefinableMinimaChoice.lean`：原L工程的Choice／InternalWellOrder用分离选取集合族各成员的最小元。本适配以三元纯公式lt(r,x,y)表达带内部参数的关系，证明对象句子
+
+```text
+Min_lt := ∀a ∃r ∀x∈a (x非空 → ∃唯一y (y∈x ∧ ∀z∈x ¬lt(r,z,y)))
+Derives nativeZF [] (Min_lt → AC)
+```
+
+r在对象量词内为每个族分别存在，无需在元层选一个关系函数或统一的全宇宙最小元关系。已用实际Kuratowski关系图edge(r,x,y)实例化；量词回归覆盖lt内部另有存在量词时的变量保护。现成反向编译及相对化还给出原核中的 `∃D → (Min_lt)^D → AC^D`，背景明确为相对化的源ZF理论。此证书关闭了L选择公理的分离收尾；实际L域、全部相对化ZF公理及内部层序关系的最小元前提尚待接通。
+
+复用来源为本地已核对提交7f5a7d03d63d9769172f17350bbe8303996e5b53的Choice.lean、InternalWellOrder.lean和Def.lean；原文件SHA-256及适配路径记入SOURCE_LOCK.json的companion_reuse，版权和Apache许可证完整保留。未修改L工程或YesMetaZFC依赖。
+
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。
