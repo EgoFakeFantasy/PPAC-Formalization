@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 a304593；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
+本批输入基点 651d618；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
 
 | 原阶段 | 当前实际状态 |
 |---|---|
@@ -27,17 +27,17 @@
 
 ## 本批形式化推进
 
-沿固定源 `CohenForcing.Condition.permute_one/permute_mul → ProductForcing.permute/permuteOrderIso → ProductNames.actionHom` 推进。
+继续固定源 `ProductNames.Poset = WithTop (ProductForcing.Condition ...)` 和 `actionHom` 的 withTopCongr、map_one、map_mul 分支。
 
-- ForcingCohenActionLaws 依次证明两次左坐标提升与条件图像的恒等／复合律，复合顺序严格为先 σ 后 π；两个完整对象句回到原核，不以宿主 Equiv 的相等替代内部作用图。
-- ForcingProductAction 构造内部 Cohen × Diagram 载体上的实际置换，保留每个坐标的精确边方程；证明恒等／复合律以及反包含序与 Diagram 平移关系的乘积保持／反映。
-- exists_source_action/assembly_kernel_certificate 从一个内部标签置换直接调用既有 Cohen 和 Diagram 构造，消去产品、条件载体、分量作用图及保序性的存在前提。没有把源目标公理或 HS 闭包作为输入。
+- ForcingWithTopCarrier 用内部空集编码顶条件，用内部单元素集 {p} 编码原条件；从幂集／分离构造整个载体，直接调用底座空集和 singleton。证明两个分支互斥、嵌入单射及每个原条件的内部嵌入存在。
+- ForcingWithTopAction 通过底座可定义函数构造实际置换，固定顶条件，并给出嵌入条件上的精确边等价；证明恒等、复合及源 WithTop 序保持／反映，coe 上的序严格还原已有 Product 序，top 不能小于 coe。
+- construction_kernel_certificate 从已构造 Product 置换及其保序性构造 WithTop 载体、顶条件、扩展置换、固定顶条件的边和保序证书。输入不含 HS 闭包、目标 ZF 公理或任何最终结论。
 
-本批 46 项声明、6 项原核证书。源单子完整代数律及 conical 条件仍由阶段 8 原构造提供；当前结果是对已定义源乘积关系的自同构，不冒充任意乘法表均给出偏序。B=2、w=ω 是现成集合的参数实例；WithTop 顶条件、统一标签作用族及其与正规滤子的装配尚未完成。最终 actionHom/Con 不标完成。
+本批 58 项声明、4 项原核证书已完整验收：2908 项构建任务通过；9 条命令全部退出 0，其中 5 次 --trust=0 检查；29971 项声明完成审计（673 项无公理依赖，29298 项依赖已记录可信基）；0 警告，2477 个文件 SHA-256 全部吻合。实际证据见 verification/commands.json、summary.json、build.log 和 audit.log。源单子代数／conical 条件仍来自阶段 8，不把一般乘法表的关系不变性称为偏序构造。
 
-验收：完整构建 2906 任务通过；9 条命令全部退出 0，其中 5 次 --trust=0 检查；29913 项声明完成依赖审计（653 项无公理依赖，29260 项依赖已记录可信基）；0 警告，2475 个文件 SHA-256 全部吻合。最终 Con、完整 actionHom、WithTop 和源单子偏序实例化仍明确为 false。实际证据见 verification/commands.json、summary.json、build.log 和 audit.log。
+WithTop 分支本身不再列为未证明。真正未接的是固定同一组载体后，将标签置换到条件置换表示为统一对象公式 A，并为现有 Family／Covariance／正规滤子／HS 合同提供具体实例；原参数 B=2、w=ω 的最终特化也尚未接入。最终 actionHom/Con 继续为未完成。
 
-本批 46 项声明仅沿用标准三项及七项已有基础句子证书，未扩大活动可信基，不增加对象公理。整个项目既有的 15 项递归和 9 项基数 native Bool 证书继续重算并记录；不改报成全工程仅有标准三项。
+本批 58 项声明仅依赖标准三项及七项已有基础句子证书，未扩大活动可信基，没有增加对象公理。原工程 15 项递归和 9 项基数 native Bool 证书继续重算，不改报成仅标准三项。
 
 ## 真正剩余与停止项
 

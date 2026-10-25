@@ -358,3 +358,5 @@ import PPAC.Migration.ForcingCohenConditions
 import PPAC.Migration.ForcingCohenOrderAction
 import PPAC.Migration.ForcingCohenActionLaws
 import PPAC.Migration.ForcingProductAction
+import PPAC.Migration.ForcingWithTopCarrier
+import PPAC.Migration.ForcingWithTopAction
