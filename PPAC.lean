@@ -329,3 +329,6 @@ import PPAC.Migration.ForcingAtomicStep
 import PPAC.Migration.ForcingAtomicGraphs
 import PPAC.Migration.ForcingAtomicRecursion
 import PPAC.Migration.ForcingAtomicRelations
+import PPAC.Migration.ForcingAtomicBasic
+import PPAC.Migration.ForcingTripleInduction
+import PPAC.Migration.ForcingAtomicLaws

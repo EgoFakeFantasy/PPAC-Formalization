@@ -3418,7 +3418,10 @@ def main() -> None:
                                ("forcing_atomic_step", "ForcingAtomicStep", 30),
                                ("forcing_atomic_graphs", "ForcingAtomicGraphs", 23),
                                ("forcing_atomic_recursion", "ForcingAtomicRecursion", 13),
-                               ("forcing_atomic_relations", "ForcingAtomicRelations", 21)):
+                               ("forcing_atomic_relations", "ForcingAtomicRelations", 21),
+                               ("forcing_atomic_basic", "ForcingAtomicBasic", 31),
+                               ("forcing_triple_induction", "ForcingTripleInduction", 8),
+                               ("forcing_atomic_laws", "ForcingAtomicLaws", 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7324,7 +7327,11 @@ def main() -> None:
         "source_atomic_relations_scope": "All internal raw names, internal condition set P, formula-defined relation R; native existence, uniqueness, exact membership/equality equations. External condition presentation identification remains pending.",
         "source_atomic_relations_exact_recursive_equations_proved": True,
         "source_atomic_condition_presentation_identified": False,
-        "source_atomic_forcing_laws_proved": False,
+        "source_atomic_forcing_laws_proved": True,
+        "source_atomic_forcing_laws_scope": "Internal condition codes P and formula-defined preorder R; monotonicity, symmetry, dense closure, edge introduction, reflexivity, equality transitivity and both membership congruences. No external condition-presentation identification or atomic truth claimed.",
+        "source_atomic_four_query_triple_induction_proved": True,
+        "source_atomic_decision_set_density_proved": False,
+        "source_atomic_truth_proved": False,
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
