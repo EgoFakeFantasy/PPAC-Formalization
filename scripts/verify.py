@@ -3426,6 +3426,12 @@ def main() -> None:
         strip_comments((ROOT / recursion_lock["adapter"]).read_text(encoding="utf-8")), re.MULTILINE)}
     if recursion_names != set(recursion_lock["exact_declaration_footprints"]) or not recursion_names <= set(expected):
         raise RuntimeError("Incomplete native Godel recursion declaration audit")
+    parameter_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))["companion_reuse"]["canonical_constructible_parameters"]
+    parameter_names = {"PPAC.Migration.ConstructibleParameters." + n for n in re.findall(
+        r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)",
+        strip_comments((ROOT / parameter_lock["adapter"]).read_text(encoding="utf-8")), re.MULTILINE)}
+    if parameter_names != set(parameter_lock["exact_declaration_footprints"]) or not parameter_names <= set(expected):
+        raise RuntimeError("Incomplete canonical constructible parameter audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3543,6 +3549,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.ConstructibleParameters."):
+            if set(dependencies) != set(parameter_lock["exact_declaration_footprints"].get(name, [])):
+                raise RuntimeError("Unexpected canonical constructible parameter dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.ConstructibleHistory."):
             if set(dependencies) != set(syntax_lock["history_exact_declaration_footprints"].get(name, [])):
                 raise RuntimeError("Unexpected original constructible history dependency: " + name)

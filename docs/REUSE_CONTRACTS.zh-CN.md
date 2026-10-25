@@ -98,4 +98,16 @@ Derives nativeZF [] (∀θ, Empty(θ₂) → ∀α, Ord(α) → ∃!x, BareStage
 
 原层历史批正式验收：2834构建任务、28763声明审计（536无公理依赖／28227依赖已记录）、新增47项全部覆盖、9条命令全成功（5条trust=0）、零警告；2424份源码哈希全部一致。五项最终完成标志仍为false。
 
+规范参数及其消去现已接通：原StageHistoryParameters／RudimentaryTermZFCode给出的布局为 `(0,1,0,0,1,2,3,4,5,6,7,8,ω)`，对应varTag、appTag、empty、九个操作码和内部ω。`ConstructibleParameters`直接消费已验收SyntaxNumerals.exists_numeral／unique与ObjectOmega.native_existence／native_unique，逐个构造有限数码见证，证明规范13元组唯一；没有抽取宿主函数枚举内部自然数，也没有要求ω外部标准。源文件哈希、槽位表和新增33项声明的精确依赖记录在SOURCE_LOCK。
+
+`canonicalStage`把13个规范参数作为对象存在量词隐藏，仍使用原bareStageAt公式。规范条件消去原空集槽前提后，原ZF核中的unique_kernel_certificate为无额外参数条件的闭句：
+
+```text
+Derives nativeZF [] (∀α, Ord(α) → ∃!S, CanonicalStage(α,S))
+```
+
+`domain`是参数无关的纯对象一元公式 `L(x) := ∃α ∃S (Ord(α) ∧ CanonicalStage(α,S) ∧ x∈S)`，domain_semantics给出逐量词对应。它当前仍是待验证的实际解释域：层值存在不推出存在属于某层的对象，故尚未取得L非空证书；更没有因此取得原求值／Def正确性、L的完整ZF／Choice或最终Con。下一项消费端是原项目已有的godelDef_empty／自变量程序求值路线，须把所需实际内部程序／轨迹证明接入，而不是把“x属于层”改成“x等于层”来伪造非空。
+
+规范参数批正式验收：2835构建任务、28796声明审计（538无公理依赖／28258依赖已记录）、新增33项全部覆盖、9条命令全成功（5条trust=0）、零警告；2425份源码哈希全部匹配。现有15项原生Bool证书重新计算通过；最终五项完成标志仍为false。
+
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。
