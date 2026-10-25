@@ -1,50 +1,50 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 651d618；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
+本批输入基点 337ee8b；原阶段表逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe。**当前仍在第 7 阶段，不是收尾；最终对象一致性命题尚未证明。**
 
 | 原阶段 | 当前实际状态 |
 |---|---|
 | 1 语言桥 | 已验收 |
-| 2 源推导传输 | 已验收：重命名、替换、19 规则到原核及双向回放；不等同于任意内部码传输 |
-| 3 全理论对应 | 已验收：全部 Separation/Replacement 与 Separation/Collection、固定公理及两种 AC |
+| 2 源推导传输 | 已验收：重命名、替换、19 规则到原核和双向回放；任意内部码传输不属于这一已完成项 |
+| 3 全理论对应 | 已验收：全部 Separation/Replacement 与 Separation/Collection、固定公理和两种 AC |
 | 4 原环境基线 | 原 Main 和五端点已验收；完整 Comparator 未验收 |
-| 5 内部构造 | 配对／图／ω／序列／递归、名字及 check/pair/union 已验收；具体系统消费者对接仍有缺口 |
-| 6 背景和解释 | 通用相对化与原核回传已完成；新版任意 ZF 模型内部 L 数学已有，版本／语言／原核适配未完成 |
-| 7 强迫前端 | 部分完成，当前所在阶段；原子递归、定律、固定公式及固定证明保真、通用 HS 作用、正规滤子已验收；具体系统及全部解释公理未闭合 |
-| 8 代数／构造 | OpenAI Algebra/Construction 核心尚未完成目标端迁移 |
+| 5 内部构造 | 配对／图／ω／序列／递归、名字、check/pair/union 已验收；具体系统消费者对接未全部完成 |
+| 6 背景和解释 | 通用相对化／原核回传已有；新版任意 ZF 模型内部 L 数学已有，版本／语言／原核接入未完成 |
+| 7 强迫前端 | 部分完成，当前阶段；本批完成固定共享载体上的统一作用公式、支撑滤子 Context 和 HS 作用；原具体参数、单子/conical 偏序、具体公式对称性装配、pair/union HS 闭包及全部解释公理仍未闭合 |
+| 8 代数／构造 | 原 Algebra/Construction 核心尚未完成目标端迁移 |
 | 9 模型应用 | 原 SVC、ACwo、商单射、非选择见证主链尚未完成目标端迁移 |
 | 10 全局装配 | 原 Main 全秩 PP、ZF/U 内部证明码归约及最终 Con 未完成 |
 | 11 终验 | 未开始最终主定理验收 |
 
-背景始终是纯成员／等词语言、完整 Separation/Collection 的 nativeZF，推导关系是原 FirstOrder.Derives。最终目标为 `Derives nativeZF [] (Con_ZF → Con_U)`，U = ZF + PP + ACwo + ¬AC；Con 量化全部内部证明码，包括外部非标准码。没有把目标改成 Lean 宿主层一致性。
+背景是纯成员／等词语言、完整 Separation/Collection 的 nativeZF，推导关系是原 FirstOrder.Derives。最终目标为 `Derives nativeZF [] (Con_ZF → Con_U)`，U = ZF + PP + ACwo + ¬AC；Con 量化全部内部证明码，包括外部非标准码。对象层要求从项目早期就存在，未改成 Lean 宿主一致性。
 
-## 本次重新核对的事实
+## 本次重审事实
 
-- 固定 OpenAI 主链 75 份源码逐项 SHA-256 匹配；历史原环境 78 份副本验收另含 3 份入口。只表明来源相同，不能据此说全库已经迁移。
-- 新版 YesMetaZFC checkout 79793365c2145c53db37eaf8ab23a64826bd9738 当前源码干净。重新读取 l_model_l、l_model_zf_l、l_model_zfc_l：任意内部 ZF 模型的 L 满足完整 ZF/ZFC，不限 ZFSet 或外部良基模型。已有数学不能重列为待证明；之前 224 任务和端点审计属于已保存验收，本批没有重跑供体构建。
-- 完整公理模式、内部递归、Proof/Sat 配套及完备性已经存在；BMS 的全模型强完备性回传方法已在 ModelTransfer 中使用。本批只读 BMS 现有文件，保留该仓无关脏改动。
-- 新版内部强迫 preserves_zf_l 要求 Generic_d，结论为全部名字的泛滤商扩张保持 ZF；不能直接替代 OpenAI HS 对称模型的全部公理证明。Npair_d 使用全部条件作权重，也不能改名替代已经迁移的固定顶条件 pairName。具体合同及哈希已记入 SOURCE_LOCK。
+- 重新逐项核对 75 份固定 OpenAI 主链源码 SHA-256，全部匹配。原隔离环境 8998 任务／五端点审计是已有验收，本批未重跑，且仍不是完整 Comparator。
+- 新版 YesMetaZFC 79793365c2145c53db37eaf8ab23a64826bd9738 当前干净。重新读取 l_model_zf_l 和 l_model_zfc_l：任意内部 ZF 模型、完整分离和收集，非仅 ZFSet／外部良基模型。待做的是迁移接口，不能报成缺少 L 数学。
+- 全模式、内部递归、Proof/Sat 和强完备性已经存在。本批复用既有图构造、函数外延性、支撑滤子、HS 作用及 ModelTransfer 原核回传，不另建基础。
+- 原 Main.lean 的 main_consistency 忽略输入一致性并调用 ConcreteSystem.consistent_target；Logic/GroundModels.lean 明说没有证明 ZF 内可构造解释。源库外部结果不等于本工程内部 Con；也不能据此声称已正确迁移整个 OpenAI 主链。
 
-## 本批形式化推进
+## 本批实际证明和验收
 
-继续固定源 `ProductNames.Poset = WithTop (ProductForcing.Condition ...)` 和 `actionHom` 的 withTopCongr、map_one、map_mul 分支。
+固定源消费者：`ProductNames.actionHom → system → Name.HS.smul`。
 
-- ForcingWithTopCarrier 用内部空集编码顶条件，用内部单元素集 {p} 编码原条件；从幂集／分离构造整个载体，直接调用底座空集和 singleton。证明两个分支互斥、嵌入单射及每个原条件的内部嵌入存在。
-- ForcingWithTopAction 通过底座可定义函数构造实际置换，固定顶条件，并给出嵌入条件上的精确边等价；证明恒等、复合及源 WithTop 序保持／反映，coe 上的序严格还原已有 Product 序，top 不能小于 coe。
-- construction_kernel_certificate 从已构造 Product 置换及其保序性构造 WithTop 载体、顶条件、扩展置换、固定顶条件的边和保序证书。输入不含 HS 闭包、目标 ZF 公理或任何最终结论。
+ForcingProductFamily 在共享 C、S、X、Y、P、W 上给出统一对象公式 actionFormula，组合已验收 Cohen、Diagram、Product、WithTop 精确图。证明实际作用存在、唯一、恒等／复合、保序及固定顶，并在原核证明共享载体与 Family 存在。
 
-本批 58 项声明、4 项原核证书已完整验收：2908 项构建任务通过；9 条命令全部退出 0，其中 5 次 --trust=0 检查；29971 项声明完成审计（673 项无公理依赖，29298 项依赖已记录可信基）；0 警告，2477 个文件 SHA-256 全部吻合。实际证据见 verification/commands.json、summary.json、build.log 和 audit.log。源单子代数／conical 条件仍来自阶段 8，不把一般乘法表的关系不变性称为偏序构造。
+ForcingProductCovariance 从同一作用的恒等／复合推出逆和共轭；直接调用已有 ForcingSupportFilter.normal_image 及 ForcingHSAction.hs_action。SystemData 的逆置换、共轭图、两个条件作用及精确支撑滤子均有构造，Context 和 HS 闭包有原核证书。没有把 NormalImage、HS 闭包或目标公理放入假设字段。
 
-WithTop 分支本身不再列为未证明。真正未接的是固定同一组载体后，将标签置换到条件置换表示为统一对象公式 A，并为现有 Family／Covariance／正规滤子／HS 合同提供具体实例；原参数 B=2、w=ω 的最终特化也尚未接入。最终 actionHom/Con 继续为未完成。
+本批 55 项声明、9 项原核证书完整验收：**2910 项构建任务通过，9 条命令全部退出 0（含 5 次 --trust=0），30026 项声明审计通过，0 警告，2479 个文件当前 SHA-256 全部匹配。** 其中 678 项无公理依赖，29348 项依赖已记录可信基。证据为 verification/commands.json、summary.json、build.log、audit.log 及 product-family-preaudit.log。
 
-本批 58 项声明仅依赖标准三项及七项已有基础句子证书，未扩大活动可信基，没有增加对象公理。原工程 15 项递归和 9 项基数 native Bool 证书继续重算，不改报成仅标准三项。
+完整验收后仅修正 SOURCE_LOCK 的四处范围说明；逐字节重建验收时版本并比对原记录哈希，确认声明足迹、源哈希和所有证明输入不变，再回验当前全部文件。原哈希、新哈希和四个字段路径保存在 summary.json 的 post_acceptance_metadata_check；没有把文案更新冒称为重新运行 Lean。
 
-## 真正剩余与停止项
+本批仅用标准三项和七项已有基础句子 FreeClosed 证书，未扩大活动可信基。全仓原有 15 项递归、9 项基数 native Bool 证书继续显式重算，不能把全仓说成仅依赖标准三项。
 
-必要工作仍是：把现成 L 定理接入同一对象语言／原核；完成源具体强迫系统、HS 闭包和全部解释公理；迁移原代数构造和模型应用；按原 Main 装配全秩 PP；特化现有内部证明机器到 ZF/U，证明全部内部码的矛盾证明归约及最终 Con；最后做第 11 阶段终验。
+这关闭的是参数化固定载体作用和支撑滤子／HS 接口；B=2、w=ω 特化、单子/conical 偏序及完整系统仍待接入。因此最终 group-homomorphism-system、relative_consistency 和 object_Con 标志仍为 false；新增细粒度作用／Context／HS 标志为 true。
 
-停止重证完整 ZF 模式、L 数学、通用递归、满足关系、完备性；不重启 NatPacket／字节兼容、泛滤 atomic_truth/decision-density 或旧独立 L 重建路线。历史 STEP3/STEP4 报告名称不是原阶段位置。
+## 剩余、清理及误判纠正
 
-删除了 24 份已消费、无正式文件名引用的草稿／模板／暂存清单，归档及 SHA-256 回验后逐项清理，共 102222 字节。现行流程／复用表去掉重复批次叙述，OBJECT_TARGET 更正旧 LCarrier 误导描述。仍未完成冻结已验收证明库的精确依赖裁剪，不能声称这些已全部删除。详见 CLEANUP。
+真正必要的工作：接入已有 L 定理；完成原具体强迫系统及全部解释公理；迁移原代数构造和模型应用；依原 Main 装配全秩 PP；特化现成 Proof/Sat 到 ZF/U，证明任意内部码归约及最终 Con；再做第 11 阶段验收。没有证据支持“再几步即可完成”或完成百分比。
 
-此前误判出在我没有先按原主定理消费者核查必要性，把兼容实现细节扩成必经步骤；又漏查新版已有数学，把“尚未适配”说成“尚未证明”，并把局部验收当成主链接近完成。对象层要求从早期就存在，不是用户后来改变目标。
+已删除过时的缺口表／覆盖表重复叙述，修正将统一作用族继续列为未做的状态。按已回验归档和绝对路径白名单删除 38 个已消费模板、生成元数据及一次性探针，270921 字节；未把逻辑大小当作实测磁盘增量。正式证明和日志保留。已验收冻结字节模块尚未完成精确依赖裁剪，不能声称所有无用代码已经删除。
+
+此前严重误判的原因是没有持续按原主定理消费者核查必要性，把实现选择扩为必经任务；漏查新版已完成数学，把“尚未适配”说成“尚未证明”；并用局部编译验收代替对 7–10 主链的进度判断。这是我的规划和报告错误，不是用户后来改变了目标。

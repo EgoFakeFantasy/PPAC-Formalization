@@ -52,3 +52,6 @@ Cohen 条件／序作用批次：完整验收后删除已消费的 verification/
 Cohen 作用律／Product 批次：完整验收后删除已消费的 verification/ForcingProductAudit.lean 探针；正式 Audit.lean 覆盖新增 46 项声明，定向、预审与完整日志均保留。清单为 verification/cleanup-product-probe-20261026.json。整体装配的数字索引展开曾触发心跳上限，已改为显式 binder 索引并在默认上限下通过，未保留扩大资源额度的改动。回读没有残留 Lean/Lake；本批没有新增持久生成脚本或另建验收报告。
 
 WithTop 批次：完整验收后删除 verification/ForcingWithTopAudit.lean 一次性探针，正式 Audit.lean 已覆盖全部新增 58 项声明；定向、预审和完整验收日志均保留，清单见 verification/cleanup-withtop-probe-20261026.json。未新增持久生成脚本或单独验收报告；未发现残留 Lean/Lake 进程。
+
+
+统一作用／Context 批次：绝对路径、无跟踪文件名引用及逐项 SHA-256 回验后，删除 37 份已消费的 .local 模板／schema-spec／exports／旧 WIP 元数据，以及已由 Audit.lean 接替的一次性 ForcingProductFamilyAudit.lean，共 38 文件、270921 字节。前 37 份归档于 verification/retired-consumed-metadata-20261026.zip；清单为 verification/cleanup-family-20261026.json，预审日志保留。清理后才启动本批完整验收。现行 GAPS/THEOREM_COVERAGE 去掉重复历史批次和过时未完成声明；已验收冻结字节模块未在缺少精确依赖裁剪时批量删除。

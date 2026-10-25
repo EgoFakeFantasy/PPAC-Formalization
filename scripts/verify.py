@@ -3449,7 +3449,9 @@ def main() -> None:
                                ("forcing_cohen_action_laws", "ForcingCohenActionLaws", 14),
                                ("forcing_product_action", "ForcingProductAction", 32),
                                ("forcing_withtop_carrier", "ForcingWithTopCarrier", 24),
-                               ("forcing_withtop_action", "ForcingWithTopAction", 34)):
+                               ("forcing_withtop_action", "ForcingWithTopAction", 34),
+                               ("forcing_product_family", "ForcingProductFamily", 35),
+                               ("forcing_product_covariance", "ForcingProductCovariance", 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7410,7 +7412,7 @@ def main() -> None:
         "source_forcing_small_support_properness_proved": False,
         "source_forcing_small_support_omega_cardinality_assumed": False,
         "additional_pinned_cardinal_native_Bool_certificates_reevaluated": 9,
-        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The donor finite-union bound, intersection closure and full four-clause normal-filter construction are now proved under internal IsOmega/IsInfiniteCardinal, with omega cardinality derived. ProductNames condition action and properness remain.",
+        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The donor finite-union bound, intersection closure and full four-clause normal-filter construction are now proved under internal IsOmega/IsInfiniteCardinal, with omega cardinality derived. Uniform ProductNames condition action and HS context are constructed; concrete omega/2, monoid/conical order, properness and forcing axioms remain.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_diagram_full_injection_label_action_native_certificates_proved": True,
         "source_diagram_order_and_Cohen_product_action_proved": True,
@@ -7425,14 +7427,17 @@ def main() -> None:
         "source_product_condition_partial_order_algebra_instantiated": False,
         "source_product_WithTop_action_instantiated": True,
         "source_product_WithTop_top_fixed_and_group_laws_proved": True,
-        "source_product_WithTop_uniform_label_family_instantiated": False,
-        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier label family, normal-filter contexts and concrete omega/2 specialization remain.",
-        "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Label identity/composition and actual Cohen/diagram product assembly are now proved. WithTop extension is constructed. Concrete omega/2 and uniform action-family assembly remain.",
+        "source_product_WithTop_uniform_label_family_instantiated": True,
+        "source_product_uniform_action_support_context_constructed": True,
+        "source_product_uniform_action_HS_closure_native_certificate_proved": True,
+        "source_product_action_context_assumes_HS_closure_or_NormalImage": False,
+        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier formula, unique actions, Family/Covariance, support-filter Context construction and HS closure are now proved. Concrete omega/2, monoid/conical order and full system forcing axioms remain.",
+        "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Label identity/composition and actual Cohen/diagram product assembly are now proved. WithTop extension is constructed. Uniform action-family and support Context are now constructed; concrete omega/2 and monoid/conical system assembly remain.",
         "source_diagram_all_injection_carrier_and_set_action_constructed": True,
         "source_diagram_set_action_identity_and_multiplication_proved": True,
         "source_diagram_sub_constructed_from_left_cancellation_table": True,
         "source_diagram_translation_relation_preserved_and_reflected": True,
-        "source_diagram_order_scope": "All internal diagram injections; internal multiplication table; sub constructed from fixed-left totality/functionality/cancellation. Translation-relation automorphism constructed. Concrete monoid/conical partial-order premises not yet instantiated. Cohen/product/WithTop permutations and relation invariance are constructed; uniform action-family integration remains.",
+        "source_diagram_order_scope": "All internal diagram injections; internal multiplication table; sub constructed from fixed-left totality/functionality/cancellation. Translation-relation automorphism constructed. Concrete monoid/conical partial-order premises not yet instantiated. Cohen/product/WithTop permutations and relation invariance are constructed; uniform action-family and HS context are now instantiated; concrete monoid/conical order and forcing axioms remain.",
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,
