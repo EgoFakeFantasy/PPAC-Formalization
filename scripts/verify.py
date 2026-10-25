@@ -3393,6 +3393,14 @@ def main() -> None:
                    re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", names_body, re.MULTILINE)}
     if len(names_names) != 37 or names_names != set(names_lock["exact_declaration_footprints"]) or not names_names <= set(expected):
         raise RuntimeError("Incomplete original IsName definition and equation audit")
+    eval_lock = source_lock["source_proof_adaptations"]["forcing_evaluation"]
+    if source_lock["files"][eval_lock["source_file"]] != eval_lock["source_sha256"]:
+        raise RuntimeError("Original evaluate source lock changed")
+    eval_body = strip_comments((ROOT / eval_lock["adapter"]).read_text(encoding="utf-8"))
+    eval_names = {"PPAC.Migration.ForcingEvaluation." + n for n in
+                  re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", eval_body, re.MULTILINE)}
+    if len(eval_names) != 44 or eval_names != set(eval_lock["exact_declaration_footprints"]) or not eval_names <= set(expected):
+        raise RuntimeError("Incomplete original evaluate declaration audit")
     interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
     interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
                          re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
@@ -3578,6 +3586,10 @@ def main() -> None:
         if name in names_names:
             if set(dependencies) != set(names_lock["exact_declaration_footprints"][name]):
                 raise RuntimeError("Unexpected original IsName dependency: " + name)
+            continue
+        if name in eval_names:
+            if set(dependencies) != set(eval_lock["exact_declaration_footprints"][name]):
+                raise RuntimeError("Unexpected original evaluate dependency: " + name)
             continue
         if name in interpreted_names:
             if set(dependencies) != {"propext", "Quot.sound", "Classical.choice"} | inherited:
@@ -7249,6 +7261,8 @@ def main() -> None:
         "source_forcing_IsName_set_condition_unfolding_proved": True,
         "source_forcing_IsName_formula_indexed_uniqueness_proved": True,
         "source_forcing_evaluate_mapConditions_atomic_recursion_completed": False,
+        "source_forcing_evaluate_internal_set_G_total_unique_unfolding_proved": True,
+        "source_forcing_evaluate_external_generic_filter_identification_proved": False,
         "interpreted_ZF_full_schema_external_transport_proved": True,
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",

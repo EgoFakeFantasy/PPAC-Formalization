@@ -11,7 +11,9 @@
 
 原 PPAC 数学链已开始接入其实际入口：ForcingNameInduction 保留原 ForcingNames.Child 的 `∃condition, pair(subname,condition)∈parent`，把 child_wf 的三次成员下降通过已有集合归纳模式回传为原核闭句。通用底座 WellFounded.Recursion.solve 要求宿主 WellFounded，不能用于任意可能外部不良基的 nativeZF 模型；本适配改用已经完成的 SetInduction.native_induction，不复制递归器。完整名字定义／递归与强迫关系未被这条归纳模式替代。固定源 SHA、实际消费者和 18 项精确依赖见 SOURCE_LOCK.source_proof_adaptations。
 
-ForcingNames 本批继续消费同一固定源的 IsName／isName_iff。原 ConditionAction.conditions 是 ZFSet，目标采用内部集合参数 P；不声称覆盖任意不可定义的外部类条件。内部 Closed(P,S) 要求 S 中每个名字的每个条目具有原 Kuratowski 配对形状，条件属于 P、子名字属于 S；IsName(P,σ) 定义为存在这样的 S 包含 σ。直接消费已有 Collection、Separation、KP.exists_union／exists_insert 合并子名字见证；Collection 中的杂项先经完整分离筛掉，没有抽取选择函数。原两合取展开式、intro／edges、child／condition 和空名字均已构造；现有 Child 归纳还给出任意参数公式解的唯一性模式，并回传原 Derives。定向及完整验收均已通过：37 项新增声明全部审计，2838 构建任务、28855 声明、9 命令退出 0、5 条 trust=0、零警告；四类原核证书仅继承标准三项和原七项 ZF 句子证书。evaluate／mapConditions 和原子强迫递归未在本批实现。
+ForcingNames 本批继续消费同一固定源的 IsName／isName_iff。原 ConditionAction.conditions 是 ZFSet，目标采用内部集合参数 P；不声称覆盖任意不可定义的外部类条件。内部 Closed(P,S) 要求 S 中每个名字的每个条目具有原 Kuratowski 配对形状，条件属于 P、子名字属于 S；IsName(P,σ) 定义为存在这样的 S 包含 σ。直接消费已有 Collection、Separation、KP.exists_union／exists_insert 合并子名字见证；Collection 中的杂项先经完整分离筛掉，没有抽取选择函数。原两合取展开式、intro／edges、child／condition 和空名字均已构造；现有 Child 归纳还给出任意参数公式解的唯一性模式，并回传原 Derives。定向及完整验收均已通过：37 项新增声明全部审计，2838 构建任务、28855 声明、9 命令退出 0、5 条 trust=0、零警告；四类原核证书仅继承标准三项和原七项 ZF 句子证书。该 IsName 批次没有实现名字函数递归；本轮 evaluate 的实际完成范围见下一段。
+
+ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 和原子强迫递归仍未完成。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
 
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 

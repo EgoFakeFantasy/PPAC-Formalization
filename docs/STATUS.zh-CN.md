@@ -8,6 +8,6 @@
 
 最终对象 Con 主句未证明。实际本地验收结果位于 verification/summary.json；其各项布尔值只覆盖所注明的局部范围，不能作为完成比例。历史报告保留原时间和基点，不再产生当前待办。
 
-本批原 IsName 适配已验收：2838 构建任务、28855 声明审计（549 项无公理依赖、28306 项依赖已记录）、9 命令退出 0、5 条 trust=0、零警告；新增 37 项全部覆盖，2428 份源码哈希全部一致。四类原核证书覆盖原两合取展开式、条目式等价、空名字和任意参数可定义解唯一性。适用源 ConditionAction 的集合条件 P；evaluate／mapConditions／原子递归及最终五项标志仍未完成。
+本批原 evaluate 适配已验收：2839 构建任务、28899 声明审计（555 项无公理依赖、28344 项依赖已记录）、9 命令退出 0、5 条 trust=0、零警告；新增 44 项全部覆盖，2429 份源码哈希全部一致。四条原核证书证明每个内部集合 G、每个原始集合名字的求值存在、唯一、原成员展开式及空名字求值；没有名字秩界或 IsName 前提。外部泛型滤子的解释对应、mapConditions、原子强迫递归及最终内部 Con 仍未完成。
 
-原 4.34.1 工具链已经从官方 GitHub release 取得并验哈希；隔离基线目录为 `C:/Users/17857/Documents/Codex/ppac-upstream-4341/`。原 Main 定向构建首段已通过 12 个源模块，为串行验收本批代码主动中断；本批验收后已从缓存恢复。首段中断原因及日志单独保留为 source-build-initial-result.json／source-build-initial.log，不计作原源码失败。当前实际终态以 source-build-result.json 和活进程为准，不认定原 Main 已构建成功。完整 Comparator 因缺 Linux/landrun 尚未运行。
+原 4.34.1 工具链及固定依赖已保持原样；隔离目录为 `C:/Users/17857/Documents/Codex/ppac-upstream-4341/`。实测 78 份复制源文件哈希全部未变，原 PPAC 子树已有 22 个模块编译产物，尚无 Main 完成结果。本批在 GateTowers 完成后主动切换到目标仓验收，随后恢复原构建；中断记录与日志单独归档，不算源码失败。当前终态以 source-build-result.json 和活进程为准。完整 Comparator 因缺 Linux/landrun 尚未运行。
