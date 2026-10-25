@@ -315,3 +315,5 @@ import PPAC.Migration.ForcingEvaluation
 import PPAC.Migration.ForcingNameRecursion
 import PPAC.Migration.ForcingMapConditions
 import PPAC.Migration.ForcingMapLaws
+import PPAC.Migration.ForcingClassEvaluation
+import PPAC.Migration.ForcingEvaluationCovariance

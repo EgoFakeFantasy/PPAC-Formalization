@@ -8,8 +8,8 @@
 
 最终对象 Con 主句未证明。实际本地验收结果位于 verification/summary.json；其各项布尔值只覆盖所注明的局部范围，不能作为完成比例。历史报告保留原时间和基点，不再产生当前待办。
 
-当前批次适配原 `mapConditions_id`、`mapConditions_comp`、`IsName.mapConditions` 及名字作用律使用的函数外延替换。四类原核证书已通过定向构建和预审计，完整验收已通过。`evaluate_mapConditions` 的完整类滤子语义及实际 `actCode`／`Name.act` 接入仍待完成；不把原类滤子悄悄缩成内部集合参数。
+当前批次为原求值递归的公式定义条件类版本及 `evaluate_mapConditions` 的对象模式。已连接旧集合 G 求值实例，逆像为实际公式，不要求其为集合。五类原核证书定向构建和预审计通过，完整验收已通过。任意外部泛型滤子解释、实际 `actCode`／`Name.act` 接入仍待完成。
 
-原 4.34.1 环境保留原固定源及依赖，Main 仍未完成。本轮原源码已构建到 DiagramPlacements，PPAC 子树有 39 个模块的编译产物；为串行目标仓验收主动中止，记录在 source-build-pass4-result.json。完整 Comparator 缺 Linux/landrun，仍未运行；Main 定向构建也不能替代它。
+原 4.34.1 Main 已编译到 LocalRecords，PPAC 子树共有 42 个模块编译产物；78 份复制源文件 SHA-256 全部匹配。为串行目标仓验收主动中止并保留 source-build-pass5-result.json；不是源码失败。Main 尚未完整通过，完整 Comparator 缺 Linux/landrun，仍未运行。
 
-本批完整验收通过：2842 构建任务、29001 项声明审计（556 项无公理依赖、28445 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 33 项声明全部覆盖，2432 份源码哈希匹配。四类原核证书未超出标准三项及原七项 ZF 句子证书。
+本批完整验收通过：2844 构建任务、29044 项声明审计（557 项无公理依赖、28487 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 43 项声明全部覆盖，2434 份源码哈希匹配。五类原核证书仅继承标准三项及原七项 ZF 句子证书。

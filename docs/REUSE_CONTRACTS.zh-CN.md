@@ -19,6 +19,10 @@ ForcingMapConditions 适配同一源文件第 96–128 行：原 child_wf.fix �
 
 ForcingMapLaws 按原第 130–165 行的 Child 归纳推进 `mapConditions_id`、`mapConditions_comp`、`IsName.mapConditions`；直接消费既有名字边／子名字性质、映射成员／边方程及唯一性，不再构造递归。原第 425–439 行对 actCode 函数的外延替换通过逐点等价关系给出对象图同余。恒等律的 IsName 条件、复合次序 f∘g 及名字保持的 P→Q 条件均与源一致。四类原核证书和全部 33 项声明已定向构建、预审计通过，完整验收已通过。原 evaluate_mapConditions 的任意类滤子版本与实际 actCode 实例仍待接通，不能从内部集合 G 的求值结果推定完成。
 
+ForcingClassEvaluation／ForcingEvaluationCovariance 继续消费同一源的 evaluate、成员方程及 169–181 行协变证明。条件类由任意参数公式给出，旧内部集合 G 求值通过 membershipPredicate 实例取得对象等价；逆像由存在量词、原映射关系与条件谓词直接构造，不假设它是集合。递归复用 ForcingNameRecursion，值域界复用 coordinate_bound，输出使用原完整 Separation；相容性直接调用已证 Child 归纳、映射边方程和求值唯一性。五类原核证书、43 项声明已定向构建和预审计通过，完整验收已通过。此公式模式不是任意不可定义外部泛型滤子的表示定理，后者仍在源解释链中待接。
+
+下一原 actCode 消费端已核对固定底座 SetTheory/FunctionConstruction.lean 的 exists_identityBijection、exists_inverseBijectionWithPairs、exists_compositionBijection：背景为任意 Project ZF 模型，配对约定显式给出，逆图保留精确边对应。通过既有 ModelTransfer.project_models_iff 与 KuratowskiZF.interpretation 可接本仓；不另造恒等、逆或复合双射。此处是接口定位，尚未计为 actCode 迁移完成。
+
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 
 # 优先复用的已完成接口（2026-10-25 用户纠正后）
@@ -138,3 +142,5 @@ Derives nativeZF [] (∀α, Ord(α) → ∃!S, CanonicalStage(α,S))
 本批完整验收通过：2841 构建任务、28968 项声明审计（555 项无公理依赖、28413 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 69 项声明全部覆盖，2431 份源码哈希全部一致。五类 mapConditions 原核证书仅继承标准三项及原七项 ZF 句子证书。
 
 本批完整验收通过：2842 构建任务、29001 项声明审计（556 项无公理依赖、28445 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 33 项声明全部覆盖，2432 份源码哈希匹配。四类原核证书未超出标准三项及原七项 ZF 句子证书。
+
+本批完整验收通过：2844 构建任务、29044 项声明审计（557 项无公理依赖、28487 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 43 项声明全部覆盖，2434 份源码哈希匹配。五类原核证书仅继承标准三项及原七项 ZF 句子证书。
