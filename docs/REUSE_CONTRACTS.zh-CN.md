@@ -23,10 +23,12 @@ YesMetaZFC 文件相对于 `.lake/packages/YesMetaZFC/YesMetaZFC/`。BMS 本地�
 
 现有语法／证明图资产已经完成；接下来的工作必须是选定这些接口后的ZF／U公理测试、背景消去、语言对应或实际数学证明传输。新增基础模块前必须先给出具体接口不适用的类型／前提证据，不能再以“对象层需要”为理由从头重建。
 
-最终目标仍为原 nativeZF 中的内部 Con_ZF → Con_U。原有最后验收为08fd907，本轮接口复用检查与主定理完成分开记录，不把清单或调用检查算成迁移完成。
+实际接入代码为 `PPAC/Migration/ModelTransfer.lean`，共6个声明：从已验收源公理推导取得外延性，直接消费通用 `FirstOrderSemantics.models_iff` 得到精确nativeZF／Project ZF的模型等价；对任意模型universe证明U的模型条件恰为Project ZF加原PP、ACwo、¬AC矩阵；直接复用既有纯语言调度和强完备性，把所有相应Type 0模型中的Project定理回传为原核 `Derives nativeZF [] (fo_sentence φ)`。这正是BMS的收尾方式，不新增满足关系、调度、证明核或模型构造。
 
-实际调用验收：固定依赖下的 ObjectProofNodePresentation、PureRosserSchedule 和 StrongCompleteness 三个目标已完成一次针对性构建（196 jobs）。`.local/reuse-existing-interfaces.lean` 在 `lake env lean --trust=0` 下通过：四项现成接口可直接引用；使用既有纯语言调度，对 nativeZF 的所有 Type 0 模型蕴含返回原 `Derives nativeZF [] φ`。此调用仍显式要求所有相应模型中的语义前提，没有用标准模型真值冒充该前提；它不是最终Con证明。
+这项接线不把具体ZFC规范扩张自动改成ZF扩张，也不把单个标准模型里的L构造改称所有模型中的定理。现有L／逐公式编译和ZF／U内部证明图的实际适配继续使用上述已有资产；未满足的全模型数学前提和内部任意码传输仍明确保留。
 
-探针的依赖只有三项标准宿主逻辑公理及原已锁定的七个ZF句子语法证书。另一次误扩至整套 PureProvability 的构建已主动中止；该模块本轮只核对源码，不列为重新编译通过。后续不再为接口盘点触发整套无关构建。
+实际验收：定向构建ModelTransfer（155 jobs）通过；正式 `python scripts/verify.py` 完整通过，2656构建任务、28549审计声明（新增6项全部覆盖）、9条命令全成功（5条trust=0）、零警告。新增通用收尾只依赖三项标准宿主逻辑公理，其余五项精确保留既有七个ZF语法证书基线；没有激活额外choice语法证书或新增对象AC。日志与源码哈希在忽略的verification目录，不将日志加入源码。
 
-重复候选源码已移出主目录并核对恢复副本哈希，8个对应编译产物已清理；没有集成新满足关系实现，也没有修改其他项目源码。本轮仅修订复用决策和调用验收，原正式证明验收基点仍为08fd907。
+早先三个既有接口目标的196 jobs构建及本地trust=0调用探针也已通过；它们是复用可调用性证据。误扩至整套PureProvability的构建已主动中止，不列为重新编译通过。重复满足关系候选及冻结packet候选不恢复；本批临时探针已删除，正式源文件和审计保留。
+
+最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。

@@ -3376,6 +3376,13 @@ def main() -> None:
                             re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", relativization_body, re.MULTILINE)}
     if not relativization_names or not relativization_names <= set(expected):
         raise RuntimeError("Incomplete relativization declaration audit")
+    # The existing semantics/completeness bridge is reused with the exact ZF
+    # background, not the concrete ZFC expansion. Audit every added declaration.
+    model_transfer_body = strip_comments((ROOT / "PPAC/Migration/ModelTransfer.lean").read_text(encoding="utf-8"))
+    model_transfer_names = {"PPAC.Migration.ModelTransfer." + n for n in
+                            re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", model_transfer_body, re.MULTILINE)}
+    if not model_transfer_names or not model_transfer_names <= set(expected):
+        raise RuntimeError("Incomplete model transfer declaration audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3491,6 +3498,13 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.ModelTransfer."):
+            expected_model = {"propext", "Quot.sound", "Classical.choice"}
+            if name != "PPAC.Migration.ModelTransfer.derives":
+                expected_model |= inherited
+            if set(dependencies) != expected_model:
+                raise RuntimeError("Unexpected model transfer dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.Relativization."):
             if not set(dependencies) <= {"propext", "Quot.sound", "Classical.choice"}:
                 raise RuntimeError("Unexpected relativization dependency: " + name)

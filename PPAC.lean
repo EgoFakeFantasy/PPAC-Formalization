@@ -7,6 +7,7 @@ import PPAC.Migration.Relativization
 import PPAC.Migration.Presentation
 import PPAC.Migration.SourceTheory
 import PPAC.Migration.ZFEquivalence
+import PPAC.Migration.ModelTransfer
 import PPAC.Migration.SeparationSyntax
 import PPAC.Migration.CollectionSyntax
 import PPAC.Migration.ZFReplay

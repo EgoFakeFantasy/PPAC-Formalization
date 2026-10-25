@@ -28858,3 +28858,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.Relativization.domain_one
 #print axioms PPAC.Migration.Relativization.source_closed_at
 #print axioms PPAC.Migration.Relativization.kernel_certificate
+
+#print axioms PPAC.Migration.ModelTransfer.extensionality
+#print axioms PPAC.Migration.ModelTransfer.project_models_iff
+#print axioms PPAC.Migration.ModelTransfer.derives
+#print axioms PPAC.Migration.ModelTransfer.project_derives
+#print axioms PPAC.Migration.ModelTransfer.target_models_iff
+#print axioms PPAC.Migration.ModelTransfer.target_project_models_iff
