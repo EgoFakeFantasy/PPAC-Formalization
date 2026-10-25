@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+reader实际EOF返回及整段真实运行返回已验收：原Nil／单格forest呈现None／Some，EOF通过构造真实acc逆序载荷和实际Some码，EOF失败／字节拒绝准确返回None。每个实际状态carrier均有唯一真实运行返回，域准确等于carrier；任意真实停止历史和实际末字段上的Some／None双条件已证明。12模块188声明、27组原nativeZF闭句；2503构建、27334审计、零警告，九命令／五trust=0通过；仅9个旧EOF原语子门false→true。原初始化／varint分段、完整readTokens／Bytes／Canonical／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_RETURN_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原内部列表实际逆序图已验收：反向索引满足原无界i+j+1=l，全部内部位置都有唯一对称且在域内的反向索引；原Replacement构造精确反向字段图，原序列编码构造真实原列表码。所有内部有效列表均有唯一逆序码，保长度／有效性，字段准确反向，对称且逆序两次还原；原Nil与Cons／唯一尾追加的双条件均已证明。16模块187声明、23组原nativeZF闭句；2491构建、27146审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。EOF返回分支连接、完整reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_STRUCTURAL_LIST_REVERSE_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

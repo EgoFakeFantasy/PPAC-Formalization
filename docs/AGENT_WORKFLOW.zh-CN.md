@@ -1,5 +1,20 @@
 # 对象层迁移工程流程
 
+reader实际EOF返回及整段真实运行返回已验收：原Nil／单格forest呈现None／Some，EOF通过构造真实acc逆序载荷和实际Some码，EOF失败／字节拒绝准确返回None。每个实际状态carrier均有唯一真实运行返回，域准确等于carrier；任意真实停止历史和实际末字段上的Some／None双条件已证明。12模块188声明、27组原nativeZF闭句；2503构建、27334审计、零警告，九命令／五trust=0通过；仅9个旧EOF原语子门false→true。原初始化／varint分段、完整readTokens／Bytes／Canonical／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_RETURN_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 实现职责 | 原核验收要求 | 状态 |
+|---|---|---|---|
+| R1／R2 | 原无界状态、真实输入Cons、完整单步 | 准确域、实际状态字段及带码后继唯一 | 已验收 |
+| R3 | 实际历史、内部长度守恒与停止 | 所有内部步、停止历史存在及末码／长度／域／图联合唯一 | 已验收 |
+| R4a／R4b.1 | 三类实际停止观察及实际逆序 | 分类互斥穷尽；原内部列表逆序存在唯一、全字段及Nil／Cons律 | 已验收 |
+| R4b.2 | 原EOF返回与整段实际运行返回 | 实际Some逆序载荷／None双条件，真实运行域及对象EX／ALL唯一纤维 | 本批已验收 |
+| R4b.3 | 原初始化与规范varint分段 | 实际初值value／scale／acc，全部内部输入上的分段及输出顺序不变量 | 下一单元 |
+| R5 | 原reader与Bytes／Canonical／Tok程序桥 | 原程序与独立规格双条件，覆盖非标准及所有无效内部候选码 | 待完成 |
+| A／P | 原Basic AST及内部Proof检查器 | 六规则／27模式、完整Separation／Collection及全部内部码 | 待完成 |
+| I／C | 原数学解释及内部Con | 背景假设核对、对象证明变换、原nativeZF中的Con蕴含 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 原内部列表实际逆序图已验收：反向索引满足原无界i+j+1=l，全部内部位置都有唯一对称且在域内的反向索引；原Replacement构造精确反向字段图，原序列编码构造真实原列表码。所有内部有效列表均有唯一逆序码，保长度／有效性，字段准确反向，对称且逆序两次还原；原Nil与Cons／唯一尾追加的双条件均已证明。16模块187声明、23组原nativeZF闭句；2491构建、27146审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。EOF返回分支连接、完整reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_STRUCTURAL_LIST_REVERSE_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 实现职责 | 原核验收要求 | 状态 |

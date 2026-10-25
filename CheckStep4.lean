@@ -13321,4 +13321,112 @@ example {m} (w u l L h r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives native
     (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualSnocCodeUniqueSentence w u l L h r s)) :=
   Internal.ObjectStructuralListReverse.native_structuralListReverseActualSnocCodeUnique w u l L h r s
 
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualNoneExistsSentence w)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualNoneExists w
+
+example {m} (w r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualSomeExistsSentence w r)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualSomeExists w r
+
+example {m} (w p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualNoneUniqueSentence w p q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualNoneUnique w p q
+
+example {m} (w r p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualSomeUniqueSentence w r p q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualSomeUnique w r p q
+
+example {m} (w r s q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualSomePayloadUniqueSentence w r s q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualSomePayloadUnique w r s q
+
+example {m} (w r q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualOptionsDisjointSentence w r q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualOptionsDisjoint w r q
+
+example {m} (w B z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnEOFActualReverseReturnExistsSentence w B z o L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnEOFActualReverseReturnExists w B z o L v s a
+
+example {m} (w B z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnActualRejectionReturnExistsSentence w B z o L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnActualRejectionReturnExists w B z o L v s a
+
+example {m} (w B z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnLocalDomainExactlyOriginalTerminalSentence w B z o L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnLocalDomainExactlyOriginalTerminal w B z o L v s a
+
+example {m} (w B z o L v s a p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnLocalCandidateUniqueSentence w B z o L v s a p q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnLocalCandidateUnique w B z o L v s a p q
+
+example {m} (w B z o L v s a r q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnExactSomeActualReverseSentence w B z o L v s a r q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnExactSomeActualReverse w B z o L v s a r q
+
+example {m} (w B z o L v s a q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnExactNoneOriginalRejectionSentence w B z o L v s a q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnExactNoneOriginalRejection w B z o L v s a q
+
+example {m} (w B z o L v s a q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnLocalValueNaturalSentence w B z o L v s a q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnLocalValueNatural w B z o L v s a q
+
+example {m} (w B z o n q L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnCodedNormalizeAtActualSourceSentence w B z o n q L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnCodedNormalizeAtActualSource w B z o n q L v s a
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnCodedExistsOnOriginalObservationSentence w B z o n)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnCodedExistsOnOriginalObservation w B z o n
+
+example {m} (w B z o n p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnCodedCandidateUniqueSentence w B z o n p q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnCodedCandidateUnique w B z o n p q
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnCodedDomainExactlyOriginalObservationSentence w B z o n)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnCodedDomainExactlyOriginalObservation w B z o n
+
+example {m} (w B z o n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnCodedValueNaturalSentence w B z o n q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnCodedValueNatural w B z o n q
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnEveryActualCarrierHasRealRunReturnSentence w B z o n)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnEveryActualCarrierHasRealRunReturn w B z o n
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRunDomainExactlyActualCarrierSentence w B z o n)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRunDomainExactlyActualCarrier w B z o n
+
+example {m} (w B z o n p q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunCandidateUniqueSentence w B z o n p q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunCandidateUnique w B z o n p q
+
+example {m} (w B z o n q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunValueNaturalSentence w B z o n q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunValueNatural w B z o n q
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunObjectExistsUniqueFiberSentence w B z o n)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunObjectExistsUniqueFiber w B z o n
+
+example {m} (w B z o n r l d f q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunNormalizeAtStoppedHistorySentence w B z o n r l d f q)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunNormalizeAtStoppedHistory w B z o n r l d f q
+
+example {m} (w B z o n r l d f q L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunNormalizeAtActualEndpointSentence w B z o n r l d f q L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunNormalizeAtActualEndpoint w B z o n r l d f q L v s a
+
+example {m} (w B z o n r l d f q L v s a u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunExactSomeActualReverseSentence w B z o n r l d f q L v s a u)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunExactSomeActualReverse w B z o n r l d f q L v s a u
+
+example {m} (w B z o n r l d f q L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderReturn.packetReaderReturnRealRunExactNoneOriginalRejectionSentence w B z o n r l d f q L v s a)) :=
+  Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunExactNoneOriginalRejection w B z o n r l d f q L v s a
+
 end PPAC.Migration.Step4Checks

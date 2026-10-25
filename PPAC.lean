@@ -283,3 +283,5 @@ import PPAC.Migration.Internal.ObjectPacketReaderStopping
 import PPAC.Migration.Internal.ObjectPacketReaderTerminal
 
 import PPAC.Migration.Internal.ObjectStructuralListReverse
+
+import PPAC.Migration.Internal.ObjectPacketReaderReturn
