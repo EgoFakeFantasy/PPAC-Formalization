@@ -11,6 +11,7 @@
 | 参数无关纯公式 L(x)，解释域非空，量词相对化 | 论文 metatheory.tex:68–93 | 既有L／Def模块和配套已定位；待完成纯对象句子、原ZF背景及推导接口的接入，不重建构造 |
 | 固定Gödel Def后继的实际内部输出 | 原L工程RudimentaryDefOutputFormula／固定StackProgramEvalFormula；GodelDefOutput.existence_kernel_certificate、uniqueness_kernel_certificate | 原ZF内对全部14输入参数的输出存在唯一闭句已推导；原99项纯语法正文及槽位锁定。完整内部求值正确性、层历史及L公理仍待传输 |
 | 固定原Def的内部层递归 | YesMetaZFC原三分支算子全定义单值、原内部超限递归；GodelDefRecursion.hierarchy_kernel_certificate | 全部13参数、全部内部序数上的唯一递归值闭句已推导，历史为内部集合编码；原bareStageAt对应、规范参数及L公理尚待接通 |
+| 原bareStageAt全部内部序数接口 | 固定L工程BareStageHistory原14项语法；ConstructibleHistory.agreement_kernel_certificate／unique_kernel_certificate；原内部序数归纳与全分离 | 参数empty槽为空时，原历史与内部Def递归等价且层值存在唯一已推导；保留历史含杂项的原范围。其余规范参数及求值／Def正确性仍待接通 |
 | 相对化保留推理，显式处理自由变量在解释域内 | Relativization.lean 的 formula／derives／source_closed_at／kernel_certificate | 本批提供全部19条源规则、任意外部有限证书及真正原核证书；非空前提保持为对象蕴含 |
 | 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 论文 metatheory.tex:68–93 | 缺逐模式原核证书和统一的语法证书生成／内部准确性；宿主 models_ZFC 不可替代 |
 | L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF中Min_lt→AC及原库内部良序覆盖CoverWO→Min_edge→AC与域相对化已推导；实际L中的层序图／CoverWO及L域相对化ZF仍待接通 |

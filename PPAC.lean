@@ -305,3 +305,4 @@ import PPAC.Migration.Internal.ObjectPacketReaderPrefix
 
 import PPAC.Migration.Internal.ObjectPacketReaderInverse
 import PPAC.Migration.GodelDefRecursion
+import PPAC.Migration.ConstructibleHistory

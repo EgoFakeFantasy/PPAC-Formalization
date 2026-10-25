@@ -3411,6 +3411,11 @@ def main() -> None:
                     re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", output_body, re.MULTILINE)}
     if not (syntax_names | output_names) <= set(expected):
         raise RuntimeError("Incomplete fixed Godel Def output declaration audit")
+    history_names = {"PPAC.Migration.ConstructibleHistory." + n for n in re.findall(
+        r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)",
+        strip_comments((ROOT / syntax_lock["history_adapter"]).read_text(encoding="utf-8")), re.MULTILINE)}
+    if history_names != set(syntax_lock["history_exact_declaration_footprints"]) or not history_names <= set(expected):
+        raise RuntimeError("Incomplete original constructible history audit")
     # Reuse the pinned internal three-way recursion, with exact inherited native certificates.
     recursion_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))["companion_reuse"]["native_godel_recursion"]
     for source, digest in recursion_lock["sources"].items():
@@ -3538,6 +3543,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.ConstructibleHistory."):
+            if set(dependencies) != set(syntax_lock["history_exact_declaration_footprints"].get(name, [])):
+                raise RuntimeError("Unexpected original constructible history dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.GodelDefRecursion."):
             if set(dependencies) != set(recursion_lock["exact_declaration_footprints"].get(name, [])):
                 raise RuntimeError("Unexpected native Godel recursion dependency: " + name)

@@ -879,4 +879,143 @@ def godelDefOutputFormula : FOFormula 15 :=
 -- END ORIGINAL Constructible.Godel.RudimentaryTerm.godelDefOutputFormula
 end Constructible.Godel.RudimentaryTerm
 
+
+namespace Constructible.Model
+open Constructible
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryEntryAt
+def bareHistoryEntryAt {n : Nat}
+    (history index stage : Fin n) : FOFormula n :=
+  .ex (.conj
+    (.mem (Fin.last n) history.castSucc)
+    (Delta0Formula.kuratowskiPairEqAt
+      (Fin.last n) index.castSucc stage.castSucc).toFO)
+-- END ORIGINAL Constructible.Model.bareHistoryEntryAt
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryStateRename
+def bareHistoryStateRename : Fin 3 → Fin 16 :=
+  ![13, 14, 15]
+-- END ORIGINAL Constructible.Model.bareHistoryStateRename
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryBaseStateFormula
+def bareHistoryBaseStateFormula : FOFormula 16 :=
+  .conj
+    (.eq (14 : Fin 16) (2 : Fin 16))
+    (.eq (15 : Fin 16) (2 : Fin 16))
+-- END ORIGINAL Constructible.Model.bareHistoryBaseStateFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistorySuccessorDefRename
+def bareHistorySuccessorDefRename : Fin 15 → Fin 18 :=
+  Fin.lastCases
+    (15 : Fin 18)
+    (fun i14 => Fin.cases
+      (17 : Fin 18)
+      (fun i13 => Fin.castLE (by decide) i13)
+      i14)
+-- END ORIGINAL Constructible.Model.bareHistorySuccessorDefRename
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistorySuccessorStateFormula
+def bareHistorySuccessorStateFormula : FOFormula 16 :=
+  .ex (.ex
+    (.conj
+      (Delta0Formula.successorFOAt (14 : Fin 18) (16 : Fin 18))
+      (.conj
+        (bareHistoryEntryAt
+          (13 : Fin 18) (16 : Fin 18) (17 : Fin 18))
+        (FOFormula.rename bareHistorySuccessorDefRename
+          Godel.RudimentaryTerm.godelDefOutputFormula))))
+-- END ORIGINAL Constructible.Model.bareHistorySuccessorStateFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryLimitStateFormula
+def bareHistoryLimitStateFormula : FOFormula 3 :=
+  FOFormula.all
+    (FOFormula.biimp
+      (.mem (3 : Fin 4) (2 : Fin 4))
+      (FOFormula.boundedEx (1 : Fin 4)
+        (.ex
+          (.conj
+            (bareHistoryEntryAt
+              (0 : Fin 6) (4 : Fin 6) (5 : Fin 6))
+            (.mem (3 : Fin 6) (5 : Fin 6))))))
+-- END ORIGINAL Constructible.Model.bareHistoryLimitStateFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryIndexIsZeroFormula
+def bareHistoryIndexIsZeroFormula : FOFormula 16 :=
+  .eq (14 : Fin 16) (2 : Fin 16)
+-- END ORIGINAL Constructible.Model.bareHistoryIndexIsZeroFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryIndexHasPredecessorFormula
+def bareHistoryIndexHasPredecessorFormula : FOFormula 16 :=
+  .ex (Delta0Formula.successorFOAt (14 : Fin 17) (16 : Fin 17))
+-- END ORIGINAL Constructible.Model.bareHistoryIndexHasPredecessorFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareHistoryLocalStateFormula
+def bareHistoryLocalStateFormula : FOFormula 16 :=
+  .disj
+    bareHistoryBaseStateFormula
+    (.disj
+      bareHistorySuccessorStateFormula
+      (.conj
+        (.conj
+          (.neg bareHistoryIndexIsZeroFormula)
+          (.neg bareHistoryIndexHasPredecessorFormula))
+        (FOFormula.rename bareHistoryStateRename
+          bareHistoryLimitStateFormula)))
+-- END ORIGINAL Constructible.Model.bareHistoryLocalStateFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareValidHistoryLocalRename
+def bareValidHistoryLocalRename : Fin 16 → Fin 17 :=
+  Fin.lastCases
+    (16 : Fin 17)
+    (fun i15 => Fin.lastCases
+      (15 : Fin 17)
+      (fun i14 => Fin.lastCases
+        (13 : Fin 17)
+        (fun i13 => Fin.castLE (by decide) i13)
+        i14)
+      i15)
+-- END ORIGINAL Constructible.Model.bareValidHistoryLocalRename
+
+-- BEGIN ORIGINAL Constructible.Model.bareValidStageHistoryIndexBody
+def bareValidStageHistoryIndexBody : FOFormula 16 :=
+  .ex
+    (.conj
+      (bareHistoryEntryAt
+        (13 : Fin 17) (15 : Fin 17) (16 : Fin 17))
+      (.conj
+        (FOFormula.all
+          (FOFormula.imp
+            (bareHistoryEntryAt
+              (13 : Fin 18) (15 : Fin 18) (17 : Fin 18))
+            (.eq (17 : Fin 18) (16 : Fin 18))))
+        (FOFormula.rename bareValidHistoryLocalRename
+          bareHistoryLocalStateFormula)))
+-- END ORIGINAL Constructible.Model.bareValidStageHistoryIndexBody
+
+-- BEGIN ORIGINAL Constructible.Model.bareValidStageHistoryFormula
+def bareValidStageHistoryFormula : FOFormula 15 :=
+  FOFormula.all
+    (FOFormula.imp
+      (FOFormula.disj
+        (.mem (15 : Fin 16) (14 : Fin 16))
+        (.eq (15 : Fin 16) (14 : Fin 16)))
+      bareValidStageHistoryIndexBody)
+-- END ORIGINAL Constructible.Model.bareValidStageHistoryFormula
+
+-- BEGIN ORIGINAL Constructible.Model.bareStageAtValidHistoryRename
+def bareStageAtValidHistoryRename : Fin 15 → Fin 16 :=
+  ![0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 13]
+-- END ORIGINAL Constructible.Model.bareStageAtValidHistoryRename
+
+-- BEGIN ORIGINAL Constructible.Model.bareStageAtFormula
+def bareStageAtFormula : FOFormula 15 :=
+  .ex
+    (.conj
+      (FOFormula.rename bareStageAtValidHistoryRename
+        bareValidStageHistoryFormula)
+      (bareHistoryEntryAt
+        (15 : Fin 16) (13 : Fin 16) (14 : Fin 16)))
+-- END ORIGINAL Constructible.Model.bareStageAtFormula
+end Constructible.Model
+
 end PPAC.Migration.ExistingConstructible

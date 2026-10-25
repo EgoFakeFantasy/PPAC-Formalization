@@ -33,9 +33,13 @@ PureKuratowskiProject and PureKuratowski interfaces; their convention and
 coordinate-injectivity theorem are reused unchanged.
 
 ExistingConstructibleSyntax includes the literal pure-syntax dependency slice
-of the existing godelDefOutputFormula (99 declarations from 11 files), at the
+of the existing godelDefOutputFormula and bareStageAtFormula
+(113 declarations from 12 files), at the
 same pinned constructible-universe commit and under its Apache 2.0 license.
 Original declaration bodies are preserved; Mathlib/model imports and theorems
 are omitted, the namespace is prefixed, and finite vectors use Fin.cases.
 GodelDefOutput translates this existing syntax into Source and supplies
 original-ZF object derivations of output existence and uniqueness.
+ConstructibleHistory transports the original bare histories, preserving their
+allowance for irrelevant members, and proves original-ZF agreement and unique
+existence using the existing internal ordinal recursion and full Separation.
