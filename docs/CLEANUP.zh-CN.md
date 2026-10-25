@@ -43,3 +43,6 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 再次确认并删除 24 份 `.local` 验收草稿、报告模板、暂存文件清单，共 102222 字节；无 Git 跟踪文件按名称引用它们。删除前在 verification/retired-drafts-20261026.zip 归档并逐项 SHA-256 回验，清单为 verification/cleanup-drafts-20261026.json；逐个核对绝对路径严格位于本仓 .local 顶层、普通文件且内容未变后删除。未把逻辑字节数当作实测磁盘增量。
 
 现行流程和复用合同删去重复批次叙述；OBJECT_TARGET 修正仍以旧 LCarrier 描述供体范围的过时句子，GAPS 去掉“两套核”的歧义。旧正式验收报告保留为历史证据，不再作为待办表。没有发现应终止的残留 Lean/Lake；本批仅串行启动自身编译，未触碰其他仓库脏改动。
+
+
+Diagram 载体／序作用批次：完整验收后删除自身一次性 verification/ForcingDiagramOrderAudit.lean 探针，保留定向构建、预审计及完整验收日志。未生成额外脚本或历史验收报告；未发现残留 Lean/Lake 进程。

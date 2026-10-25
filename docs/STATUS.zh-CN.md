@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-复审基点 7a76825；本批仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
+本批输入基点 ad520bc；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
 
 | 原阶段 | 当前实际状态 |
 |---|---|
@@ -27,15 +27,19 @@
 
 ## 本批形式化推进
 
-源依赖是 `Diagrams.Diagram.permute → ProductForcing.permuteOrderIso → ProductNames.actionHom`。新增 ForcingDiagramAction 直接调用 YesMetaZFC 的 `ZF.exists_compositionFunction` 和关系外延，复用已有 Injection/CompositionGraph 公式。
+继续原 `Diagrams.Diagram.sub/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom`。两个模块 ForcingDiagramCarrier / ForcingDiagramOrder 直接复用底座函数空间、分离、可定义函数构造和函数复合，以及前批已经验收的整张图标签作用。
 
-对任意内部集合 D、I、整张单射图 r:D→I 和 I 上置换，已构造实际后复合图，证明唯一性、恒等、复合顺序和逆作用；四项闭句通过 ModelTransfer 返回原核 Derives。无有限截断、无对象 AC、无外部良基假设。本批新增 17 项声明。
+- 实际构造所有内部单射 D→I 的集合 X；对每个标签置换构造 X 上的置换图，证明集合图层的恒等和复合律。
+- 用内部集合图 `((n,x),y)` 表示乘法。给定固定左乘的全定义、函数性和左消去条件，实际构造整个 `sub r n` 单射图；没有把子图存在作为假设。
+- 按源 `r ≤ s ↔ ∃n, sub r n = s` 定义平移关系，证明标签作用与 sub 交换、保持并反映关系；最后在原核中构造整个 Diagram 载体及其关系自同构。
 
-这仅完成 Diagram 标签作用分量。Diagram 序关系、Cohen 分量和 WithTop 的作用仍要接通，当前不能报告 ProductNames.actionHom 完成。有限并支撑界与正规滤子的四项在前批已完成，不再误列待办；properness/bot_not_mem 按原 ChoiceFailure 的实际消费者处理。
+这是全内部集合上的对象公式与原核证书，没有外部良基或有限秩限制，也没有向对象 ZF 加 AC。本批新增 50 项声明、6 项原核证书。
 
-验收：定向构建 570 任务通过，17 项声明 trust=0 预审计通过。随后完整验收 9 条命令退出 0，其中 5 条 trust=0；2899 个构建任务，29757 项声明（625 项无公理依赖、29132 项依赖已记录），零 Lean 警告，2468 份文件哈希回验匹配。15 项递归和 9 项基数 Bool 证书重算通过。命令见 verification/commands.json，最终 Con 与完整 actionHom 的验收标志仍为 false。
+边界：平移关系不变性对任意乘法表成立，不意味着任意表都给出偏序。源 LeftCancelMonoid 的完整代数律、conical 条件和具体单子存在仍由阶段 8 的原构造提供；当前不能把这些解释前提标成已经实例化。Cohen 和 WithTop 分量仍未迁移，完整 ProductNames.actionHom 仍未完成。
 
-本批证书的依赖为标准三项及七项既有基础句子 FreeClosed 证书，未扩大活动可信基。全工程此前已有的 15 项递归和 9 项基数 native Bool 证书仍纳入重算；不能说全工程只依赖标准三项。
+验收：定向构建 572 任务通过，50 项声明 trust=0 预审计通过。完整验收 9 条命令全部退出 0，其中 5 条 trust=0；2901 个构建任务，29807 项声明审计（634 项无公理依赖、29173 项依赖已记录），零 Lean 警告，2470 份文件哈希回验匹配。15 项递归与 9 项基数 native Bool 证书重算通过。最终 Con 和完整 actionHom 仍为 false；精确命令见 verification/commands.json。
+
+本批依赖仅使用活动可信基中的标准三项及七项基础句子 FreeClosed 证书；没有新增可信公理。全工程此前已有的 15 项递归和 9 项基数 native Bool 证书仍重算与记录，不能把全工程标成仅标准三项。
 
 ## 真正剩余与停止项
 

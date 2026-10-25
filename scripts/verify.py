@@ -3440,7 +3440,9 @@ def main() -> None:
                                ("existing_cardinal_bounds", "ExistingCardinalBounds", 5),
                                ("forcing_support_intersection", "ForcingSupportIntersection", 7),
                                ("forcing_normal_filter", "ForcingNormalFilter", 18),
-                               ("forcing_diagram_action", "ForcingDiagramAction", 17)):
+                               ("forcing_diagram_action", "ForcingDiagramAction", 17),
+                               ("forcing_diagram_carrier", "ForcingDiagramCarrier", 23),
+                               ("forcing_diagram_order", "ForcingDiagramOrder", 27)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7405,6 +7407,11 @@ def main() -> None:
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_diagram_full_injection_label_action_native_certificates_proved": True,
         "source_diagram_order_and_Cohen_product_action_proved": False,
+        "source_diagram_all_injection_carrier_and_set_action_constructed": True,
+        "source_diagram_set_action_identity_and_multiplication_proved": True,
+        "source_diagram_sub_constructed_from_left_cancellation_table": True,
+        "source_diagram_translation_relation_preserved_and_reflected": True,
+        "source_diagram_order_scope": "All internal diagram injections; internal multiplication table; sub constructed from fixed-left totality/functionality/cancellation. Translation-relation automorphism constructed. Concrete monoid/conical partial-order premises not yet instantiated; Cohen and WithTop actions remain.",
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,
