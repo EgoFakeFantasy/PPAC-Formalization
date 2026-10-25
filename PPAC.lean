@@ -369,3 +369,5 @@ import PPAC.Migration.ForcingProductPoset
 import PPAC.Migration.ForcingProductStabilizer
 import PPAC.Migration.ForcingProductHSPair
 import PPAC.Migration.ForcingProductHSUnion
+import PPAC.Migration.ForcingPairUnion
+import PPAC.Migration.ForcingBasicSetAxioms

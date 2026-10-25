@@ -50,7 +50,9 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Source diagram/product/WithTop partial order | ForcingProductPoset.kernel_certificate, using ForcingDiagramPoset source laws | Object implication from the source left-cancel monoid/conical contract and actual Presentation to the existing forcing PreorderOn, antisymmetry and internal top. Concrete stage-8 monoid is not yet constructed. |
 
-| Source actual-name stabilizer and HS pair/union | ProductStabilizer, ProductHSPair, ProductHSUnion.kernel_certificate | Actual action, native subgroup closure, literal source names, source normality/presentation antecedents. All internal names; no HS closure assumption. Does not yet prove forces_pairing/forces_union. |
+| Source actual-name stabilizer and HS pair/union | ProductStabilizer, ProductHSPair, ProductHSUnion.kernel_certificate | Actual action, native subgroup closure, literal source names, source normality/presentation antecedents. All internal names; no HS closure assumption. PairUnion now consumes these closures to prove forces_pairing/forces_union; other forced axioms remain. |
+
+| First four source forced ZF axioms | ForcingPairUnion.kernel_certificate and ForcingBasicSetAxioms.kernel_certificate | Extensionality, EmptySet, Pairing, Union in the same actual all-rank HS domain; source algebra/presentation/carrier/normality contracts, with preorder derived. Guarded source codeOrder and literal union correspondence proved. Foundation, Infinity, PowerSet and full forced schemas remain. |
 
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 

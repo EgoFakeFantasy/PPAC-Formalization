@@ -64,3 +64,6 @@ WithTop 批次：完整验收后删除 verification/ForcingWithTopAudit.lean 一
 
 
 HS 配对／并集批次：删除一次性 verification/ForcingProductHSClosureAudit.lean，正式 Audit.lean 已覆盖新增 14 项声明和改动模块原 12 项声明；保留预审、正式验收及静态集成门失败日志。清单为 verification/cleanup-hs-closure-probe-20261026.json。未新增持久生成脚本；旧并集接口保留，依赖集合未变化。验收后未发现残留 Lean/Lake，未触及其他项目。
+
+
+四条强迫公理批次：删除已由正式 Audit.lean 接替的 verification/ForcingSetAxiomsAudit.lean，保留预审和完整验收日志；路径／SHA-256 清单为 verification/cleanup-forcing-set-axioms-probe-20261026.json。删除空集辅助定理中不需要的条件参数，保持 --wfail；未新增生成脚本或独立验收报告。验收后未发现残留 Lean/Lake。
