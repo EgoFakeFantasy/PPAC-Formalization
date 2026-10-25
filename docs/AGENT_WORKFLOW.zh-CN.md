@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、具体系统中的 HS 作用实例与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC/GCH 已定位并验收端点；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；通用 HS.smul 和实际 HS 域公式对称性已验收；标签置换载体、逐点稳定子闭包及逐点共轭已验收；共轭集合图、精确稳定子像与子群像闭包已验收；小支撑族、有限并基数界、交闭包及四项正规性已构造；目标端主链未完成 | Diagram 载体／实际作用图、作用律、子图构造和平移关系不变性已验收；Cohen 坐标及条件载体上的实际保序双射已完整验收；接源单子代数前提、Cohen 群律、乘积和 WithTop，形成实际 poset/群作用并消费已构造正规滤子、pair/union 闭包、将已证 HS 作用与公式对称性实例化到具体系统、全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；通用 HS.smul 和实际 HS 域公式对称性已验收；标签置换载体、逐点稳定子闭包及逐点共轭已验收；共轭集合图、精确稳定子像与子群像闭包已验收；小支撑族、有限并基数界、交闭包及四项正规性已构造；目标端主链未完成 | Diagram 载体／实际作用图、作用律、子图构造和平移关系不变性已验收；Cohen 坐标及条件载体上的实际保序双射已完整验收；Cohen 群律与实际乘积作用已完整验收；接源单子代数前提和 WithTop，形成实际 poset/群作用并消费已构造正规滤子、pair/union 闭包、将已证 HS 作用与公式对称性实例化到具体系统、全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -32,10 +32,8 @@
 
 ## 本批执行边界
 
-实际源消费者：`CohenForcing.Condition.coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom`。三个模块 ForcingCohenCoordinates/Conditions/OrderAction 构造内部坐标置换、全部有界部分函数条件及实际保序双射，并以一条装配证书消去各载体／图的存在前提。
+源消费者仍是 `CohenForcing.permute_one/permute_mul → ProductForcing.permute/permuteOrderIso → ProductNames.actionHom`。ForcingCohenActionLaws 和 ForcingProductAction 补上内部作用图的恒等／复合律，构造两分量乘积作用与保序性；整体装配直接消费既有两个分量的载体和图构造。
 
-底座现有 product-injection 包装只返回单射存在性，未保留本源消费者需要的逐坐标方程；因此直接使用其已有底层 `exists_setFunctionFromTo_of_denote`，而非重做函数构造。积、幂集、分离、Kuratowski 图和小集置换像界全部直接复用。
+具体源二元素值集、ω 界、WithTop 顶条件和统一标签作用族接入前，不声称完整 actionHom。乘积关系在任意内部乘法表上被保持，不等于该表已满足源 LeftCancelMonoid/IsConical；这些条件由原阶段 8 构造提供。
 
-内部值集 B、界 w 保持为参数，源实例取已有的 2、ω；这些集合存在性已经完成，不重证。Cohen 作用在标签群乘法下的恒等／复合律、Product 与 WithTop 装配仍待迁移，完整 actionHom 和最终 Con 未完成。单子代数律与 conical 条件仍由阶段 8 原构造提供。
-
-定向构建和 60 项声明 trust=0 预审计通过；完整验收结果见 STATUS。下一源依赖是 Cohen 的 permute_one/permute_mul 与 ProductForcing.permute、ProductNames.actionHom 的 WithTop 分支。只迁移这些实际消费者，不按文件行序补齐无关分支。
+下一实际消费者为 `ProductNames.actionHom` 的 WithTop 分支和其恒等／乘法兼容；随后接既有正规滤子及 HS 作用合同。当前批次验收以 STATUS 和 verification 实际日志为准。

@@ -39,8 +39,8 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | Force/force_of_dense → forcing_sound | 固定公式、19 规则的固定证明保真，原核模式证书 | 任意内部证明码归约归阶段 10 |
 | Name.HS.smul → forces_symmetry | 字面稳定子、实际 HS 定义、Child 归纳、共轭传输；通用 HS 作用及公式对称性已完成 | 为具体 actionHom 提供代数 Context，不能把 Context 当作已经构造 |
 | SupportFilter.inf_mem/isNormalFilter → ProductNames.system | 固定底座函数空间、幂集、分离；新版 Card/Omega/InfiniteBound 五段原证明正文；实际小支撑族与四项正规性 | bot_not_mem 按 ChoiceFailure 消费者处理；具体条件作用仍缺 |
-| Diagram.sub/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom | ForcingDiagramCarrier/Order 直接调用原函数空间、分离、可定义函数和复合；消费既有 Injection/CompositionGraph/标签作用。构造整张子图、实际载体与关系自同构，集合级作用律已证 | 单子代数律和 conical 条件由原阶段 8 构造提供；Cohen 群律与 Product/WithTop 后再组成 actionHom。任意乘法表的平移关系不变性不冒充偏序存在 |
-| Cohen coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso | 原积／函数构造、幂集／分离、既有 exists_image/small_image；实际条件载体和保序双射装配完成 | B=2、w=ω 仅需消费已有构造；跨标签作用律与 Product/WithTop 仍未接通 |
+| Diagram.sub/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom | ForcingDiagramCarrier/Order 直接调用原函数空间、分离、可定义函数和复合；消费既有 Injection/CompositionGraph/标签作用。构造整张子图、实际载体与关系自同构，集合级作用律已证 | 单子代数律和 conical 条件由原阶段 8 构造提供；本批已接 Cohen 群律及 Product，WithTop 后再组成 actionHom。任意乘法表的平移关系不变性不冒充偏序存在 |
+| Cohen coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso | 原积／函数构造、幂集／分离、既有 exists_image/small_image；实际条件载体和保序双射装配完成 | B=2、w=ω 仅需消费已有构造；跨标签作用律及 Product 由本批接入；WithTop 与统一作用族仍未接通 |
 
 本批 7 项 Cohen 原核证书依赖标准三项及七项已有基础句子 FreeClosed 证书。没有扩大此前活动可信基。此前正规滤子批次已消费的 15 项递归和 9 项基数 native Bool 证书仍保留记录及重算，不能改称整个工程仅有标准三项。
 
@@ -62,3 +62,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 
 本批已消费的 Cohen 复用：coordinatePerm 的两次 prodCongr 保留为内部精确图方程。原 `exists_cartesianProductInjection` 返回值未保留该方程，因此调用已有 `exists_setFunctionFromTo_of_denote` 留下方程用于函数性证明；不重建积或函数后端。`small_image` 在界 w=ω 时直接给出源 countable_graph 的内部保持；一般 w 的结论更强，但当前不冒称 ProductNames 的具体参数已经装配。
+
+本批 Product 消费：Cohen 两次坐标提升、精确集合像和 Diagram 集合级作用律直接组合为 ProductForcing 的恒等／复合律。积与函数图仍调用底座 exists_cartesianProduct、exists_setFunctionFromTo_of_denote；源分量的保序性直接用于乘积关系，exists_source_action 消去分量构造前提。未重做集合构造、基数界或图编码。

@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 e73fac7；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
+本批输入基点 a304593；当前仍在第 7 阶段。阶段编号逐项对照最初 f28b0334a740108057adf18a24dc11abd866efbe，未另设“收尾四步”。最终对象一致性命题尚未证明。
 
 | 原阶段 | 当前实际状态 |
 |---|---|
@@ -27,19 +27,17 @@
 
 ## 本批形式化推进
 
-继续原 `CohenForcing.Condition.coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom`，没有进入同文件的泛滤或 σ-闭分支。
+沿固定源 `CohenForcing.Condition.permute_one/permute_mul → ProductForcing.permute/permuteOrderIso → ProductNames.actionHom` 推进。
 
-- ForcingCohenCoordinates 使用底座积与可定义函数构造，实际构造 I×K、(I×K)×B 及两次左坐标置换。精确方程保持 level 与值不变；逆坐标图也已证明。
-- ForcingCohenConditions 使用原幂集／分离构造全部有界部分函数图。对坐标像证明精确边方程、函数性、内部大小界和反包含序等价；大小界直接消费既有 small_image，没有另造可数性理论。
-- ForcingCohenOrderAction 构造整个条件集合上的双射及反包含序保持／反映。assembly_kernel_certificate 将产品、条件载体、坐标图和作用图的存在前提全部由实际构造消去；输入仅为内部 I、K、B、界 w 和 I 上的置换。
+- ForcingCohenActionLaws 依次证明两次左坐标提升与条件图像的恒等／复合律，复合顺序严格为先 σ 后 π；两个完整对象句回到原核，不以宿主 Equiv 的相等替代内部作用图。
+- ForcingProductAction 构造内部 Cohen × Diagram 载体上的实际置换，保留每个坐标的精确边方程；证明恒等／复合律以及反包含序与 Diagram 平移关系的乘积保持／反映。
+- exists_source_action/assembly_kernel_certificate 从一个内部标签置换直接调用既有 Cohen 和 Diagram 构造，消去产品、条件载体、分量作用图及保序性的存在前提。没有把源目标公理或 HS 闭包作为输入。
 
-本批 60 项声明、7 项原核 Derives 证书；所有载体与图都是模型内部集合，没有外部可数性、良基性或有限秩假设。原 Cohen 条件取 B=2、w=ω；当前一般化定理覆盖这些参数，但具体 ProductNames 系统尚未接入它们。ω、二元素集合本身已有底座构造，不是新的数学待证项。
+本批 46 项声明、6 项原核证书。源单子完整代数律及 conical 条件仍由阶段 8 原构造提供；当前结果是对已定义源乘积关系的自同构，不冒充任意乘法表均给出偏序。B=2、w=ω 是现成集合的参数实例；WithTop 顶条件、统一标签作用族及其与正规滤子的装配尚未完成。最终 actionHom/Con 不标完成。
 
-此前 Diagram 载体／作用律／子图构造／平移关系不变性仍已验收。源具体单子、完整代数律和 conical 条件由阶段 8 提供。Cohen 跨标签置换的恒等／复合群律、乘积与 WithTop 装配尚未完成；不能把本次单个置换的实际保序双射称为完整 actionHom。
+验收：完整构建 2906 任务通过；9 条命令全部退出 0，其中 5 次 --trust=0 检查；29913 项声明完成依赖审计（653 项无公理依赖，29260 项依赖已记录可信基）；0 警告，2475 个文件 SHA-256 全部吻合。最终 Con、完整 actionHom、WithTop 和源单子偏序实例化仍明确为 false。实际证据见 verification/commands.json、summary.json、build.log 和 audit.log。
 
-验收：完整构建 2904 任务通过；9 条命令全部退出 0，其中 5 条 --trust=0 检查；29867 项声明完成依赖审计（647 项无公理依赖，29220 项依赖已记录可信基），0 警告，2473 个文件 SHA-256 全部回验吻合。最终 object_Con_theorem_proved 仍为 false。实际日志见 verification/commands.json、summary.json、build.log 与 audit.log。
-
-本批依赖标准三项及七项已有基础句子 FreeClosed 证书，没有扩大活动可信基。整个项目既有的 15 项递归和 9 项基数 native Bool 证书仍重算与记录，不改报成全工程仅有标准三项。
+本批 46 项声明仅沿用标准三项及七项已有基础句子证书，未扩大活动可信基，不增加对象公理。整个项目既有的 15 项递归和 9 项基数 native Bool 证书继续重算并记录；不改报成全工程仅有标准三项。
 
 ## 真正剩余与停止项
 

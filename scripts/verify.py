@@ -3445,7 +3445,9 @@ def main() -> None:
                                ("forcing_diagram_order", "ForcingDiagramOrder", 27),
                                ("forcing_cohen_coordinates", "ForcingCohenCoordinates", 17),
                                ("forcing_cohen_conditions", "ForcingCohenConditions", 26),
-                               ("forcing_cohen_order_action", "ForcingCohenOrderAction", 17)):
+                               ("forcing_cohen_order_action", "ForcingCohenOrderAction", 17),
+                               ("forcing_cohen_action_laws", "ForcingCohenActionLaws", 14),
+                               ("forcing_product_action", "ForcingProductAction", 32)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7409,19 +7411,23 @@ def main() -> None:
         "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The donor finite-union bound, intersection closure and full four-clause normal-filter construction are now proved under internal IsOmega/IsInfiniteCardinal, with omega cardinality derived. ProductNames condition action and properness remain.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_diagram_full_injection_label_action_native_certificates_proved": True,
-        "source_diagram_order_and_Cohen_product_action_proved": False,
+        "source_diagram_order_and_Cohen_product_action_proved": True,
         "source_cohen_coordinate_permutation_graphs_constructed": True,
         "source_cohen_bounded_partial_function_carrier_constructed": True,
         "source_cohen_image_preserves_functionality_and_internal_bound": True,
         "source_cohen_condition_carrier_order_permutation_constructed": True,
-        "source_cohen_label_action_group_laws_instantiated": False,
+        "source_cohen_label_action_group_laws_instantiated": True,
         "source_cohen_omega_two_and_product_WithTop_system_assembled": False,
-        "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Concrete omega/2 and group-law/product/WithTop assembly remain.",
+        "source_product_condition_carrier_and_action_from_label_permutation_constructed": True,
+        "source_product_condition_identity_and_multiplication_proved": True,
+        "source_product_condition_partial_order_algebra_instantiated": False,
+        "source_product_WithTop_action_instantiated": False,
+        "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Label identity/composition and actual Cohen/diagram product assembly are now proved. Concrete omega/2, WithTop and uniform action-family assembly remain.",
         "source_diagram_all_injection_carrier_and_set_action_constructed": True,
         "source_diagram_set_action_identity_and_multiplication_proved": True,
         "source_diagram_sub_constructed_from_left_cancellation_table": True,
         "source_diagram_translation_relation_preserved_and_reflected": True,
-        "source_diagram_order_scope": "All internal diagram injections; internal multiplication table; sub constructed from fixed-left totality/functionality/cancellation. Translation-relation automorphism constructed. Concrete monoid/conical partial-order premises not yet instantiated; Cohen and WithTop actions remain.",
+        "source_diagram_order_scope": "All internal diagram injections; internal multiplication table; sub constructed from fixed-left totality/functionality/cancellation. Translation-relation automorphism constructed. Concrete monoid/conical partial-order premises not yet instantiated. Cohen/product permutation and relation invariance are constructed; WithTop remains.",
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,

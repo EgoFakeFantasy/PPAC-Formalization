@@ -48,3 +48,5 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 Diagram 载体／序作用批次：完整验收后删除自身一次性 verification/ForcingDiagramOrderAudit.lean 探针，保留定向构建、预审计及完整验收日志。未生成额外脚本或历史验收报告；未发现残留 Lean/Lake 进程。
 
 Cohen 条件／序作用批次：完整验收后删除已消费的 verification/ForcingCohenAudit.lean 一次性探针，正式 Audit.lean 已覆盖全部 60 项声明；保留预审、定向及完整验收日志，清单见 verification/cleanup-cohen-probe-20261026.json。回读未发现残留 Lean/Lake 进程；没有删除其他项目文件。
+
+Cohen 作用律／Product 批次：完整验收后删除已消费的 verification/ForcingProductAudit.lean 探针；正式 Audit.lean 覆盖新增 46 项声明，定向、预审与完整日志均保留。清单为 verification/cleanup-product-probe-20261026.json。整体装配的数字索引展开曾触发心跳上限，已改为显式 binder 索引并在默认上限下通过，未保留扩大资源额度的改动。回读没有残留 Lean/Lake；本批没有新增持久生成脚本或另建验收报告。
