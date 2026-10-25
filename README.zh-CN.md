@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+reader完整停止历史存在及四字段联合唯一已验收：固定Formula6经原完整Separation和内部ω归纳取得已停止或指定长度真实前缀，再由真实初始长度排除过长前缀。每个实际状态carrier均有真实停止历史；停止长度、末状态码、实际定义域及整张图联合唯一，并组合为对象EX4／ALL4公式。9模块134声明、17组原nativeZF闭句；2469构建、26851审计、零警告，九命令／五trust=0通过；仅四个原停止历史子门false→true，其余旧布尔叶保持。EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_STOPPING_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 reader全内部长度守恒与历史长度界已验收：每个实际历史域索引都有唯一的实际剩余长度；真实Cons消费使剩余长度减少一，原完整Separation与固定Formula4的内部ω归纳消去全部守恒IH，得到索引加剩余长度等于初始长度。任意实际历史索引及末索引均不超过真实初始输入长度，过长接受历史不可能。8模块85声明、13组原nativeZF闭句；2460构建、26717审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整停止历史存在唯一、EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_LENGTH_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

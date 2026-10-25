@@ -13093,4 +13093,72 @@ example {m} (w B z o n r l d f L N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derive
     (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthNoTooLongAcceptedHistorySentence w B z o n r l d f L N)) :=
   Internal.ObjectPacketReaderLength.native_packetReaderLengthNoTooLongAcceptedHistory w B z o n r l d f L N
 
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingActualSourceCarrierNaturalSentence w n)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingActualSourceCarrierNatural w n
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingActualZeroPrefixSentence w B z o n)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingActualZeroPrefix w B z o n
+
+example {m} (w B z o n r i d f j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingActualHistoryStopsOrExtendsSentence w B z o n r i d f j)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingActualHistoryStopsOrExtends w B z o n r i d f j
+
+example {m} (w B z o n i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingInternalSuccessorProgressSentence w B z o n i j)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingInternalSuccessorProgress w B z o n i j
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingAllInternalProgressSentence w B z o n)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingAllInternalProgress w B z o n
+
+example {m} (w B z o n L N j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingTooLongActualPrefixImpossibleSentence w B z o n L N j)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingTooLongActualPrefixImpossible w B z o n L N j
+
+example {m} (w B z o n L N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingFromInitialActualLengthExistsCompleteSentence w B z o n L N)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingFromInitialActualLengthExistsComplete w B z o n L N
+
+example {m} (w B z o n L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingFromActualSourceCodeExistsCompleteSentence w B z o n L v s a)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingFromActualSourceCodeExistsComplete w B z o n L v s a
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingEveryActualCarrierHasCompleteHistorySentence w B z o n)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingEveryActualCarrierHasCompleteHistory w B z o n
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedHistoryCannotBeStrictlyShorterSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedHistoryCannotBeStrictlyShorter w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedLengthUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedLengthUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedEndpointUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedEndpointUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedDomainUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedDomainUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedGraphUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedGraphUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedFieldsJointUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedFieldsJointUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingStoppedFieldsUniversalUniqueSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedFieldsUniversalUnique w B z o n r l d f
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingCompleteHistoryExistsUniqueSentence w B z o n)) :=
+  Internal.ObjectPacketReaderStopping.native_packetReaderStoppingCompleteHistoryExistsUnique w B z o n
+
 end PPAC.Migration.Step4Checks
