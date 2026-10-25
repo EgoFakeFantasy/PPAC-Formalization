@@ -1,19 +1,17 @@
 # 对象层迁移工程流程
 
-全内部有界token流的整段逆向与初始化双条件已验收：原Formula5按真实字节码成员归纳，完整Separation／Foundation关闭全部IH；任意累加器、载荷及返回候选下，成功运行重建真实token列表、独立Encoded及精确Output。实际128／0／1见证对象消去；Ω、ByteList和Some下取得Parse↔Encoded，Ω下有界成功像准确等于独立Encoded，实际Some见证也由原对象存在构造取得。10模块79声明、9组原nativeZF闭句；2634构建、28530审计、零警告，九命令／五trust=0通过。仅四个已证明的有界整段逆向旧门false→true，其余旧布尔叶保持。完整readBytes／树／森林／packet程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_READER_INVERSE_ACCEPTANCE.zh-CN.md)。
+2026-10-25 范围裁决：撤回“四步收尾”的近完成判断。当前调度以[范围重估与停止项](SCOPE_REASSESSMENT.zh-CN.md)为准；下文历史表中的“下一单元”“待完成”不再自动授权继续扩展。
 
-| 单元 | 实际接口／输入 | 原核交付与工程验收 | 状态 |
-|---|---|---|---|
-| R4b.3b.2b／2c.0／2c.1 | 独立Encoded、完整ByteList、规范首段EX5 | 正向消费、全局字段界、成功首段与真实rest∈input | 已验收 |
-| R4b.3b.2c.2／2c.3 | InverseInduction.inverse、InverseInitialized.at_success、InverseAccepted.bounded_iff | 整段逆向、精确输出、全部IH／初始化常量消去、有界成功像双条件 | 本批已验收 |
-| R5a | 实际Splice及PacketBytesTraceSyntax.bytes | 按真实prefix码证明Bytes拼接组合，任意数值tail／输出，原有无效候选保留 | 下一单元 |
-| R5b | Encoded、Bytes、TokenCanonicalLaws.at_canonical_list | 独立PackedTokens及准确Nil／Cons／原Tok递归，区分列表尾与数值尾 | 待完成 |
-| R5c | 原NatPacket.readBytes、商256／终止一／零拒绝 | 建立真正实际程序关系和全部内部码正确性，不以规范谓词定义成功 | 待完成 |
-| R5d | 原readTree/readForest、内部fuel、版本一、空余输入检查 | 原Tree／Forest／Packet图与完整程序双条件，所有无效码 | 待完成 |
-| A／P | 原Basic AST、六规则／27模式、全Separation／Collection | 全内部ProofZF／ProofU及公理／证明变换正确性 | 待完成 |
-| I／C | 对象数学解释、原语言／理论对应 | nativeZF中的最终内部Con蕴含 | 待完成 |
+| 工作 | 当前决定 | 验收／继续条件 |
+|---|---|---|
+| ZF 内相对一致性数学解释 | 当前唯一优先项 | 核对具体归约及关键前提的对象证明来源，明确宿主结果与未证缺口 |
+| 完整公理测试、Proof 与 Con 纯公式 | 必要但未完成 | 复用结构编码，覆盖全模式、六规则／27模式与全部内部码；顺序由数学路线决定 |
+| 内部矛盾证明传输、最终 Derives | 必要但未完成 | 不加入对象 Choice／强不可达，不以外部回放替代 |
+| R5a–d 及后续 NatPacket／字节解析兼容 | 退出主线，冻结 | 只有建立到必要终点的具体依赖，并排除现有关系式接口后才重新评估 |
+| 既有已验收推导和结构库 | 保留 | 不重做，不用局部验收数替代主定理进度 |
 
-以下为历史验收记录，仅代表各自基点。
+最后完整验收基点仍为 `71534da`；本轮没有新的证明验收。14 个未提交的 PackedTokens／BytesSplice 文件冻结，不集成。以下全部内容保留为历史验收记录，仅代表各自基点；最新已通过的 reader 逆向验收见 [STEP4_READER_INVERSE_ACCEPTANCE](STEP4_READER_INVERSE_ACCEPTANCE.zh-CN.md)。
+
 
 成功非空有界字节输入的全内部规范首段逆向已验收：实际Canonical段、原Splice、保持完整ByteList的余表、严格rest∈input、原尺度守卫、精确发射算术／Cons及同一返回候选后续Eval均由原对象EX5保存。固定Formula5经完整Separation／Foundation关闭全部IH；最终闭句从Eval恢复State，不增加载荷／返回候选自然性假设。实际Some成功排除原拒绝并恢复EOF条件；输出顺序的反向Cons与Nil恒等式一并完成。14模块125声明、17组原nativeZF闭句；2624构建、28451审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整多token逆向、全packet程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_READER_PREFIX_ACCEPTANCE.zh-CN.md)。
 
