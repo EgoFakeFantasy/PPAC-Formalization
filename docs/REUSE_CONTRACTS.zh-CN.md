@@ -13,7 +13,9 @@
 
 ForcingNames 本批继续消费同一固定源的 IsName／isName_iff。原 ConditionAction.conditions 是 ZFSet，目标采用内部集合参数 P；不声称覆盖任意不可定义的外部类条件。内部 Closed(P,S) 要求 S 中每个名字的每个条目具有原 Kuratowski 配对形状，条件属于 P、子名字属于 S；IsName(P,σ) 定义为存在这样的 S 包含 σ。直接消费已有 Collection、Separation、KP.exists_union／exists_insert 合并子名字见证；Collection 中的杂项先经完整分离筛掉，没有抽取选择函数。原两合取展开式、intro／edges、child／condition 和空名字均已构造；现有 Child 归纳还给出任意参数公式解的唯一性模式，并回传原 Derives。定向及完整验收均已通过：37 项新增声明全部审计，2838 构建任务、28855 声明、9 命令退出 0、5 条 trust=0、零警告；四类原核证书仅继承标准三项和原七项 ZF 句子证书。该 IsName 批次没有实现名字函数递归；本轮 evaluate 的实际完成范围见下一段。
 
-ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 和原子强迫递归仍未完成。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
+ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 的本批范围见下段，原子强迫递归仍未完成。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
+
+ForcingMapConditions 适配同一源文件第 96–128 行：原 child_wf.fix 在目标端用已验收的 Child 公式归纳及内部集合图实现；函数式 Replacement、笛卡尔积和完整分离直接调用 YesMetaZFC，逐变量翻译复用 ProjectSyntax.binary／GodelDefRecursion.encode_semantics。共享辅助的算子全定义性、单值性和子名字依赖性均由具体映射算子证明，没有假定目标递归已存在。五类原核闭句模式保留条件映射的对象全函数前提，覆盖所有内部原始名字。外部不可定义函数不在此公式模式的声明范围；原恒等律、复合律、IsName 保持、evaluate 相容性和具体 actCode 实例仍待迁移。新增 69 项声明（含结构构造器及三个字段）预审计只使用标准三项和原七项 ZF 句子证书，完整验收已通过。
 
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 
@@ -130,3 +132,5 @@ Derives nativeZF [] (∀α, Ord(α) → ∃!S, CanonicalStage(α,S))
 规范参数批正式验收：2835构建任务、28796声明审计（538无公理依赖／28258依赖已记录）、新增33项全部覆盖、9条命令全成功（5条trust=0）、零警告；2425份源码哈希全部匹配。现有15项原生Bool证书重新计算通过；最终五项完成标志仍为false。
 
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。
+
+本批完整验收通过：2841 构建任务、28968 项声明审计（555 项无公理依赖、28413 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 69 项声明全部覆盖，2431 份源码哈希全部一致。五类 mapConditions 原核证书仅继承标准三项及原七项 ZF 句子证书。

@@ -3401,6 +3401,21 @@ def main() -> None:
                   re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", eval_body, re.MULTILINE)}
     if len(eval_names) != 44 or eval_names != set(eval_lock["exact_declaration_footprints"]) or not eval_names <= set(expected):
         raise RuntimeError("Incomplete original evaluate declaration audit")
+    map_recursion_footprints = {}
+    for key, module, count in (("forcing_name_recursion", "ForcingNameRecursion", 25),
+                               ("forcing_map_conditions", "ForcingMapConditions", 44)):
+        adapter_lock = source_lock["source_proof_adaptations"][key]
+        if source_lock["files"][adapter_lock["source_file"]] != adapter_lock["source_sha256"]:
+            raise RuntimeError("Original condition-map source lock changed")
+        body = strip_comments((ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8"))
+        prefix = "PPAC.Migration." + module + "."
+        names = {prefix + n for n in re.findall(
+            r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
+        if module == "ForcingNameRecursion":
+            names |= {prefix + "OperatorFacts." + n for n in ("mk", "total", "unique", "child_congr")}
+        if len(names) != count or names != set(adapter_lock["exact_declaration_footprints"]) or not names <= set(expected):
+            raise RuntimeError("Incomplete condition-map declaration audit: " + module)
+        map_recursion_footprints.update(adapter_lock["exact_declaration_footprints"])
     interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
     interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
                          re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
@@ -3579,6 +3594,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name in map_recursion_footprints:
+            if set(dependencies) != set(map_recursion_footprints[name]):
+                raise RuntimeError("Unexpected condition-map dependency: " + name)
+            continue
         if name in forcing_name_names:
             if set(dependencies) != set(forcing_name_lock["exact_declaration_footprints"][name]):
                 raise RuntimeError("Unexpected original Child induction dependency: " + name)
@@ -7263,6 +7282,10 @@ def main() -> None:
         "source_forcing_evaluate_mapConditions_atomic_recursion_completed": False,
         "source_forcing_evaluate_internal_set_G_total_unique_unfolding_proved": True,
         "source_forcing_evaluate_external_generic_filter_identification_proved": False,
+        "source_forcing_mapConditions_definable_total_unique_unfolding_edge_empty_proved": True,
+        "source_forcing_mapConditions_object_function_antecedent_retained": True,
+        "source_forcing_mapConditions_identity_composition_name_preservation_covariance_proved": False,
+        "source_forcing_mapConditions_concrete_actCode_instance_proved": False,
         "interpreted_ZF_full_schema_external_transport_proved": True,
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",
