@@ -2612,6 +2612,48 @@ def check_Packet_actual_token_canonical_prefix_agreement() -> dict:
     return {'original_Tok_Canonical_Bytes_and_independent_Prefix_definitions_preserved': True, 'given_actual_Cons_Bytes_exact_tail_execution_bidirectional': True, 'real_field_naturality_and_original_Cons_injectivity_align_actual_witnesses': True, 'independent_Prefix_exact_arithmetic_recursion_for_all_internal_candidates': True, 'full_EX4_original_and_independent_branches_keep_all_arithmetic_guards': True, 'fixed_Formula2_compares_all_internal_tails_and_outputs': True, 'actual_strict_quotient_descent_precedes_each_smaller_agreement_IH': True, 'original_Foundation_full_Separation_discharge_all_comparison_IH': True, 'actual_128_256_and_internal_code_tail_cell_witnesses_object_eliminated': True, 'actual_Tok_iff_independent_canonical_prefix_proved': True, 'final_scalar_and_ALL3_agreement_require_only_omega': True, 'invalid_input_naturality_derived_from_actual_Tok_or_Prefix': True, 'actual_Tok_iff_Bytes_at_every_given_actual_canonical_list': True, 'original_varint_readTokens_program_bridge_proved': False, 'full_Basic_AST_schema_Proof_Con_proved': False}
 
 
+def check_Packet_raw_reader_local_step() -> dict:
+    modules = ['PacketReaderStepSyntax', 'PacketReaderGuards', 'PacketReaderArithmetic', 'PacketReaderContinuation', 'PacketReaderEmission', 'PacketReaderStep', 'PacketReaderStepExistence', 'ObjectPacketReaderStep']
+    schemas = ['packetReaderRawGuardPartition', 'packetReaderTerminalRejectionNoStep', 'packetReaderEofExactGuardPartition', 'packetReaderUnboundedValueUpdateExists', 'packetReaderUnboundedValueUpdateRange', 'packetReaderContinuationExactNaturalDomain', 'packetReaderContinuationJointUnique', 'packetReaderContinuationActualExists', 'packetReaderEmissionActualConsExists', 'packetReaderEmissionActualConsUnique', 'packetReaderEmissionValidAccumulator', 'packetReaderLocalStepStatePreserved', 'packetReaderLocalStepJointUnique', 'packetReaderLocalStepExactSuccessorDomain', 'packetReaderOriginalLiteralLocalSuccessorDomain']
+    required = {
+        'PacketReaderStepSyntax': ['def state', 'StructuralListTraceSyntax.valid w l', 'def finish', '(Formula.equal s o).disj (Formula.equal b z).neg', 'def reject', 'def more', 'def eof', '(Formula.equal s o).conj (.equal v z)', 'def emission', 'consCode w.castSucc (Fin.last m) a.castSucc c.castSucc', 'def continuation', 'sum w.castSucc B.castSucc (Fin.last m) b.castSucc', 'product w.castSucc s.castSucc B.castSucc q.castSucc', 'def emitCase', 'def continueCase', 'def step'],
+        'PacketReaderGuards': ['NaturalOrderBasic.compare', 'SourcePropositional.by_cases', 'theorem finish_reject_disjoint', 'theorem reject_no_step', 'NaturalOrderBasic.below_not_reverse'],
+        'PacketReaderArithmetic': ['theorem exists_equation', 'mul_exists', 'add_exists', 'theorem equation_range', 'theorem equation_digit'],
+        'PacketReaderContinuation': ['NaturalDifference.exists_of_below', 'NaturalDifference.unique', 'PacketAffineCore.equation_unique', 'ZFArithmetic.mul_unique', 'theorem exists_update', 'theorem domain'],
+        'PacketReaderEmission': ['StructuralConsCore.exists_cons', 'StructuralListValidity.cons_valid', 'StructuralConsUnique.unique', 'PacketVarintCanonicalPieces.cons_head'],
+        'PacketReaderStep': ['theorem domain', 'theorem unique', 'PacketReaderGuards.low_more_disjoint', 'PacketReaderEmission.unique', 'PacketReaderContinuation.unique'],
+        'PacketReaderStepExistence': ['existsMany 4', 'theorem domain_iff', 'theorem exists_of_not_reject', 'theorem reject_no_result', 'HornBinderRules.eliminate_many 4', 'PacketReaderGuards.partition'],
+        'ObjectPacketReaderStep': ['TheoryTransport.sentence', 'ZFReplay.replay', 'SyntaxNumeralSyntax.numeral 128 B', 'SyntaxNumeralSyntax.numeral 0 z', 'SyntaxNumeralSyntax.numeral 1 o', 'SyntaxNumerals.range hZ 128 w B', 'SyntaxNumerals.range hZ 0 w z', 'SyntaxNumerals.range hZ 1 w o']}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text): raise RuntimeError('Raw reader forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Raw reader proof drift: '+mod+': '+clause)
+    for mod,name,expected in [('PacketReaderStep','unique',{'hw','hB','hb','hi','hc','hd'}),('PacketReaderStep','domain',{'hw','hB','hz','ho','hi','hh'}),('PacketReaderStepExistence','domain_iff',{'hw','hB','hz','ho','hb','hi'}),('PacketReaderArithmetic','exists_equation',{'hw','hb','hv','hs'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)', texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Raw reader hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderStep.native_'+name not in checks: raise RuntimeError('Missing raw reader native fixture: '+name)
+    return {'raw_state_retains_valid_remainder_value_scale_reversed_accumulator':True,
+            'no_byte_256_bound_or_positive_scale_premise':True,
+            'low_byte_terminal_noncanonical_zero_reject_and_high_byte_guards_partition':True,
+            'continuation_uses_unbounded_internal_natural_difference_not_bounded_digit':True,
+            'actual_terminal_Cons_and_continuation_value_scale_exist_and_are_unique':True,
+            'local_state_preservation_and_four_output_joint_determinism':True,
+            'local_typed_successor_exists_iff_not_original_reject_guard':True,
+            'original_128_0_1_literals_specialized_by_object_numeral_ranges':True,
+            'EOF_scale_one_value_zero_guard_retained':True,
+            'full_input_Cons_decomposition_and_whole_run':False,
+            'actual_EOF_accumulator_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2680,6 +2722,7 @@ def main() -> None:
     Packet_exact_canonical_varint_recursion = check_Packet_exact_canonical_varint_recursion()
     Packet_canonical_varint_execution = check_Packet_canonical_varint_execution()
     Packet_actual_token_canonical_prefix_agreement = check_Packet_actual_token_canonical_prefix_agreement()
+    Packet_raw_reader_local_step = check_Packet_raw_reader_local_step()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -5893,7 +5936,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffIndependentPrefixOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalAllInternalActualTokPrefixAgreementOnlyOmega',
                     'PPAC.Migration.Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalPrefixAtAnyActualCanonicalList',
-                    'PPAC.Migration.Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderRawGuardPartition',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderTerminalRejectionNoStep',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderEofExactGuardPartition',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderUnboundedValueUpdateExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderUnboundedValueUpdateRange',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderContinuationExactNaturalDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderContinuationJointUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderContinuationActualExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderEmissionActualConsExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderEmissionActualConsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderEmissionValidAccumulator',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderLocalStepStatePreserved',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderLocalStepJointUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderLocalStepExactSuccessorDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderStep.native_packetReaderOriginalLiteralLocalSuccessorDomain'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -5905,6 +5963,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderStep": ('packetReaderRawGuardPartition', 'packetReaderTerminalRejectionNoStep', 'packetReaderEofExactGuardPartition', 'packetReaderUnboundedValueUpdateExists', 'packetReaderUnboundedValueUpdateRange', 'packetReaderContinuationExactNaturalDomain', 'packetReaderContinuationJointUnique', 'packetReaderContinuationActualExists', 'packetReaderEmissionActualConsExists', 'packetReaderEmissionActualConsUnique', 'packetReaderEmissionValidAccumulator', 'packetReaderLocalStepStatePreserved', 'packetReaderLocalStepJointUnique', 'packetReaderLocalStepExactSuccessorDomain', 'packetReaderOriginalLiteralLocalSuccessorDomain'),
         "ObjectPacketTokenCanonical": ('packetTokenCanonicalGivenConsExactByteTailIff', 'packetTokenCanonicalActualSingletonLastCellNormalized', 'packetTokenCanonicalIndependentPrefixExactArithmeticRecursion', 'packetTokenCanonicalAllInternalIndependentPrefixRecursion', 'packetTokenCanonicalStrictActualQuotientAuthorizesAgreementIH', 'packetTokenCanonicalFullOriginalAndIndependentCriteriaAgree', 'packetTokenCanonicalWholeActualTokenPrefixAgreementStep', 'packetTokenCanonicalOriginalFoundationSeparationAgreementIHDischarged', 'packetTokenCanonicalAllAgreementPropertiesOnlyOmega', 'packetTokenCanonicalActualTokIffIndependentPrefixOnlyOmega', 'packetTokenCanonicalAllInternalActualTokPrefixAgreementOnlyOmega', 'packetTokenCanonicalPrefixAtAnyActualCanonicalList', 'packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList'),
         "ObjectPacketVarintExecution": ('packetVarintExecutionStrictQuotientAuthorizesJointIH', 'packetVarintExecutionActualSmallListConstructed', 'packetVarintExecutionActualRecursiveListConstructed', 'packetVarintExecutionExistenceJointStep', 'packetVarintExecutionAllActualCandidatesByteGuardJointStep', 'packetVarintExecutionAllActualCandidateListsUniqueJointStep', 'packetVarintExecutionJointPropertyStep', 'packetVarintExecutionOriginalFoundationSeparationAllJointIHDischarged', 'packetVarintExecutionAllJointPropertiesOnlyOmega', 'packetVarintExecutionActualListExistsOnlyOmega', 'packetVarintExecutionEveryActualCanonicalCandidateHasIndependentByteGuard', 'packetVarintExecutionEveryActualCanonicalCandidateListUnique', 'packetVarintExecutionExistenceExactNaturalDomain', 'packetVarintExecutionUniqueByteListFiberExactNaturalDomain', 'packetVarintExecutionAllInternalUniqueByteListFibersOnlyOmega'),
         "ObjectPacketVarintRecursion": ('packetVarintRecursionBothGraphsFullOldRowRestriction', 'packetVarintRecursionBothGraphsAllOldLinksRestriction', 'packetVarintRecursionActualPrefixGraphsConstructedAndEliminated', 'packetVarintRecursionCompleteActualLastRowNormalized', 'packetVarintRecursionAllInternalRawFoldReverseDecomposition', 'packetVarintRecursionAllInternalRawFoldExactRecursion', 'packetVarintRecursionNonzeroValueForcesActualNonemptySuffix', 'packetVarintRecursionCanonicalTerminalHeadAligned', 'packetVarintRecursionAllInternalCanonicalReverseDecomposition', 'packetVarintRecursionExactCanonicalRecursionAtNaturalRadix', 'packetVarintRecursionActual128CompleteSmallerGraphAlignment', 'packetVarintRecursionActual128CanonicalExactRecursion', 'packetVarintRecursionActualCanonicalExactRecursionOnlyOmega', 'packetVarintRecursionAllInternalActualCanonicalRecursionOnlyOmega'),
@@ -6901,6 +6960,8 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_raw_reader_local_step_guard": Packet_raw_reader_local_step,
+        'object_Packet_raw_readTokens_local_step_domain_and_determinism_proved': True,
         "Packet_actual_token_canonical_prefix_agreement_guard": Packet_actual_token_canonical_prefix_agreement,
         'object_Packet_given_actual_Cons_Bytes_exact_tail_execution_proved': True,
         'object_Packet_independent_Prefix_full_exact_arithmetic_recursion_proved': True,

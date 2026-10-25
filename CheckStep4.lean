@@ -12730,4 +12730,63 @@ example {m} (w n s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
 example {m} (w n s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalListSentence w n s t a)) :=
   Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList w n s t a
+example {m} (w B z o b s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderRawGuardPartitionSentence w B z o b s)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderRawGuardPartition w B z o b s
+
+example {m} (w B z o b x v s a r y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderTerminalRejectionNoStepSentence w B z o b x v s a r y q c)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderTerminalRejectionNoStep w B z o b x v s a r y q c
+
+example {m} (z o v s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderEofExactGuardPartitionSentence z o v s)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderEofExactGuardPartition z o v s
+
+example {m} (w b v s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderUnboundedValueUpdateExistsSentence w b v s)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderUnboundedValueUpdateExists w b v s
+
+example {m} (w b v s y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderUnboundedValueUpdateRangeSentence w b v s y)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderUnboundedValueUpdateRange w b v s y
+
+example {m} (w B b v s y q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderContinuationExactNaturalDomainSentence w B b v s y q)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderContinuationExactNaturalDomain w B b v s y q
+
+example {m} (w B b v s y q t u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderContinuationJointUniqueSentence w B b v s y q t u)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderContinuationJointUnique w B b v s y q t u
+
+example {m} (w B b v s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderContinuationActualExistsSentence w B b v s)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderContinuationActualExists w B b v s
+
+example {m} (w b v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderEmissionActualConsExistsSentence w b v s a)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderEmissionActualConsExists w b v s a
+
+example {m} (w b v s a c d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderEmissionActualConsUniqueSentence w b v s a c d)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderEmissionActualConsUnique w b v s a c d
+
+example {m} (w b v s a c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderEmissionValidAccumulatorSentence w b v s a c)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderEmissionValidAccumulator w b v s a c
+
+example {m} (w B z o b x v s a r y q c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderLocalStepStatePreservedSentence w B z o b x v s a r y q c)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderLocalStepStatePreserved w B z o b x v s a r y q c
+
+example {m} (w B z o b x v s a r y q c t j k d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderLocalStepJointUniqueSentence w B z o b x v s a r y q c t j k d)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderLocalStepJointUnique w B z o b x v s a r y q c t j k d
+
+example {m} (w B z o b x v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderLocalStepExactSuccessorDomainSentence w B z o b x v s a)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderLocalStepExactSuccessorDomain w B z o b x v s a
+
+example {m} (w B z o b x v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderStep.packetReaderOriginalLiteralLocalSuccessorDomainSentence w B z o b x v s a)) :=
+  Internal.ObjectPacketReaderStep.native_packetReaderOriginalLiteralLocalSuccessorDomain w B z o b x v s a
 end PPAC.Migration.Step4Checks

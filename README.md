@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+原readTokens给定head／rest的对象层局部转移已验收：原终止／非规范零拒绝／延续守卫覆盖并互斥；未限制byte<256或scale>0。内部差分B+d=byte、无界value+digit*scale、真实Cons前插acc均取得存在、范围与唯一性；四项后继联合唯一，合法后继存在当且仅当未触发原拒绝守卫。128／0／1按原对象数字特化。8模块122声明、15组原nativeZF闭句；2415构建、26154审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。当前完整输入Cons绑定、整段内部执行、EOF实际逆序、readTokens↔Bytes／Canonical程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收与后续工程流程](docs/STEP4_PACKET_READER_STEP_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原对象Tok与独立规范字节Prefix的全内部双条件已验收：同一实际Cons的Bytes尾执行准确分解，经真实字段自然性及原注入性对齐；独立Prefix取得准确终止／延续递归。固定Formula2比较全部内部tail／output，原严格商下降、Foundation及完整Separation消去全部IH，128／256见证对象消去。最终仅Ω取得ALL3 Tok↔Prefix，并对任意实际规范列表取得Tok↔该列表Bytes。12模块115声明、13组原nativeZF闭句；2407构建、26032审计、零警告，九命令／五trust=0通过。Tok对应顶层及三个旧guard子门false→true，其余旧布尔叶保持。原readTokens累加器／scale程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_TOKEN_CANONICAL_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

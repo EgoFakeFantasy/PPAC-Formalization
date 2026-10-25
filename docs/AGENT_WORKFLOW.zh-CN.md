@@ -1,5 +1,18 @@
 # 对象层迁移工程流程
 
+原readTokens给定head／rest的对象层局部转移已验收：原终止／非规范零拒绝／延续守卫覆盖并互斥；未限制byte<256或scale>0。内部差分B+d=byte、无界value+digit*scale、真实Cons前插acc均取得存在、范围与唯一性；四项后继联合唯一，合法后继存在当且仅当未触发原拒绝守卫。128／0／1按原对象数字特化。8模块122声明、15组原nativeZF闭句；2415构建、26154审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。当前完整输入Cons绑定、整段内部执行、EOF实际逆序、readTokens↔Bytes／Canonical程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收与后续工程流程](STEP4_PACKET_READER_STEP_ACCEPTANCE.zh-CN.md)。
+
+| 后续单元 | 输入与实现职责 | 原核验收要求 | 状态 |
+|---|---|---|---|
+| R1 | 给定内部head／rest，原value／scale／acc及128／0／1 | 精确局部转移、类型保持、四项确定性、后继存在↔非拒绝 | 本批已验收 |
+| R2 | 当前完整输入l及真实Cons(b,x,l) | 头尾在对象量词中取得、绑定并消去；Nil／Cons分派；全部候选的完整状态单步总唯一／拒绝 | 下一单元 |
+| R3 | 原完整Fields及内部有限历史 | 全内部索引消费、value／scale／acc不变量、完整运行存在与唯一；不假设外部标准ω或外部良基 | 待完成 |
+| R4 | EOF分支、实际逆序、规范varint边界 | 终止规范零守卫与累计值／scale对应，acc逆序及完整消费，准确失败与成功结果 | 待完成 |
+| R5 | 原readTokens与已验收Bytes／Canonical／Tok | 全部内部有效及无效候选上的程序／规格双条件；原Basic AST及完整字节包 | 待完成 |
+| P／I／C | 原六规则／27模式、全部ZF／U公理及完整模式 | 专用内部Proof与检查／编译正确性、数学解释、原nativeZF内部Con蕴含 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 原对象Tok与独立规范字节Prefix的全内部双条件已验收：同一实际Cons的Bytes尾执行准确分解，经真实字段自然性及原注入性对齐；独立Prefix取得准确终止／延续递归。固定Formula2比较全部内部tail／output，原严格商下降、Foundation及完整Separation消去全部IH，128／256见证对象消去。最终仅Ω取得ALL3 Tok↔Prefix，并对任意实际规范列表取得Tok↔该列表Bytes。12模块115声明、13组原nativeZF闭句；2407构建、26032审计、零警告，九命令／五trust=0通过。Tok对应顶层及三个旧guard子门false→true，其余旧布尔叶保持。原readTokens累加器／scale程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_CANONICAL_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
