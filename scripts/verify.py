@@ -3424,7 +3424,8 @@ def main() -> None:
                                ("forcing_atomic_laws", "ForcingAtomicLaws", 16),
                                ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20),
                                ("forcing_formula", "ForcingFormula", 39),
-                               ("forcing_sound", "ForcingSound", 9)):
+                               ("forcing_sound", "ForcingSound", 9),
+                               ("forcing_formula_symmetry", "ForcingFormulaSymmetry", 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7339,7 +7340,9 @@ def main() -> None:
         "source_forcing_sound_all_19_rules_fixed_proof_native_schema_proved": True,
         "source_forcing_sound_arbitrary_internal_code_reduction_proved": False,
         "source_forcing_formula_actual_HS_domain_instantiated": False,
-        "source_forcing_formula_action_symmetry_proved": False,
+        "source_forcing_formula_action_symmetry_native_schema_proved": True,
+        "source_forcing_formula_action_symmetry_actual_HS_instance_proved": False,
+        "source_forcing_formula_action_symmetry_scope": "Every fixed formula; explicit object H-domain closure and surjectivity, constructed atomic symmetry, existing actCode instance. Actual HS domain obligations remain.",
         "source_atomic_action_symmetry_native_certificates_proved": True,
         "source_atomic_action_symmetry_scope": "All internal raw names; definable injective map/order-isomorphism on P, with actual actCode permutation instance. Final PPAC group and HS remain uninstantiated.",
         "source_atomic_decision_truth_branch_required_for_selected_route": False,

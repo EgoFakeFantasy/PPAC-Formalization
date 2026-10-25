@@ -335,3 +335,4 @@ import PPAC.Migration.ForcingAtomicLaws
 import PPAC.Migration.ForcingAtomicSymmetry
 import PPAC.Migration.ForcingFormula
 import PPAC.Migration.ForcingSound
+import PPAC.Migration.ForcingFormulaSymmetry

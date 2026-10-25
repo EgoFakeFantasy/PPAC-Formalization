@@ -29812,3 +29812,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSound.sentence
 #print axioms PPAC.Migration.ForcingSound.models
 #print axioms PPAC.Migration.ForcingSound.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.DomainTransport
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.domainTransport
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.domainTransport_semantics
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.basic_symmetry
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.symmetry
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.conclusion
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.conclusion_models
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.sentence
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.models
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.kernel_certificate
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.actionSentence
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.action_models
+#print axioms PPAC.Migration.ForcingFormulaSymmetry.action_kernel_certificate

@@ -34,8 +34,10 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 - 原 AtomicForcing.relations/mem_iff/eq_iff 与 atomic_laws → SymmetricNames.atomic：原子递归和基础定律已完成。
 - 原 eq_of_dense/mem_of_dense → SymmetricNames.atomic_regular：实质引理已完成，不再重证。
 - 原 edge_map_orderIso/atomic_symmetry → SymmetricNames.forces_symmetry/mem_symmetry/eq_symmetry：本批 ForcingAtomicSymmetry 复用已完成名字映射、pair 归纳、精确方程及 actCode；序保持仅要求在内部 P 上。
-- 本批 ForcingFormula / ForcingSound 已消费原 ForcingQuotient.Force、ForcingTruth.force_of_dense/forcing_sound，取得固定公式与固定源证明实例的原核证书；HS、完整公式作用对称性和实际系统解释仍待接。
+- 本批 ForcingFormula / ForcingSound 已消费原 ForcingQuotient.Force、ForcingTruth.force_of_dense/forcing_sound，取得固定公式与固定源证明实例的原核证书；实际 HS、其公式作用对称性实例和实际系统解释仍待接。
 
 决策稠密集、atomic_truth、exists_truth_generic 属于泛滤求值分支，已从当前必需待办删除；不因同在源文件中就依次全部移植。具体源条件呈现、全秩 HS 与后续代数／模型主链仍须完成。NatPacket 字节兼容冻结。
 
 本批公式层重用原子定律而不假定 AtomicData 字段；rename 的 binder 对应直接调用已有 DefinableMinimaChoice.lift_assignment。沿用 Source.Derives 的原 19 构造器，没有新增推导核。有限前提与名字域守卫仅在既有 Source AST 中合取打包，最终仍用 ModelTransfer.derives 返回原核证明。六构造子 Basic 是锁定源语法的摘录；源码只用于泛滤的 Countable 派生未搬入，不重建满足关系或内部码识别。
+
+本轮 ForcingFormulaSymmetry 继续消费既有 atomic_symmetry、mapping、action_transport、toBasic 和 conjunction_semantics；返回原核的 ModelTransfer.derives 仍直接使用已有 strong_completeness/PureRosserSchedule。没有重建群作用后端、满足关系、检查器或完备性。一般 H 的双向名字见证前提只是原 N ≃ N 所使用的两个存在方向的对象化；实际 HS 必须单独证明这些条件。已重新读取上述 LCarrier 两个完整模型定理和 LCarrier 的 ZFSet 子类定义，未把该单个模型套入任意 nativeZF 模型的前提。
