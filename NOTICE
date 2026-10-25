@@ -24,3 +24,10 @@ see third_party/constructible-universe/LICENSE.
 Changes: use the existing PPAC Source syntax; generalize the LCarrier-specific
 argument to arbitrary nativeZF models; reuse existing original-kernel
 completeness, reverse transfer and relativization to obtain Derives certificates.
+
+InternalWellOrderChoice also adapts the stage-bound and unique-minimum route
+from ConstructibleUniverse/SetTheory/ZFC/Constructible/StageInternalOrder.lean
+and InternalWellOrder.lean at that same commit and under that same license.
+KuratowskiZF adapts the background premises of the pinned YesMetaZFC
+PureKuratowskiProject and PureKuratowski interfaces; their convention and
+coordinate-injectivity theorem are reused unchanged.

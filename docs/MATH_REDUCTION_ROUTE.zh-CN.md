@@ -11,7 +11,7 @@
 | 参数无关纯公式 L(x)，解释域非空，量词相对化 | 论文 metatheory.tex:68–93 | 既有L／Def模块和配套已定位；待完成纯对象句子、原ZF背景及推导接口的接入，不重建构造 |
 | 相对化保留推理，显式处理自由变量在解释域内 | Relativization.lean 的 formula／derives／source_closed_at／kernel_certificate | 本批提供全部19条源规则、任意外部有限证书及真正原核证书；非空前提保持为对象蕴含 |
 | 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 论文 metatheory.tex:68–93 | 缺逐模式原核证书和统一的语法证书生成／内部准确性；宿主 models_ZFC 不可替代 |
-| L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF对象模式Min_lt→AC及域相对化已证明；Min_lt只要求每个族内部存在一个关系参数。实际L中的层序图／最小元前提及L域相对化ZF仍待接通 |
+| L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF中Min_lt→AC及原库内部良序覆盖CoverWO→Min_edge→AC与域相对化已推导；实际L中的层序图／CoverWO及L域相对化ZF仍待接通 |
 | 具体集合对称系统及全部内部 HS 名字类 | ProductNames.system:89–92；SymmetricNames.Name:48–49 | 缺纯对象公式、构造及全秩证明；不能把 HS 类当作地面集合，不能加全局秩截断 |
 | 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 缺对象定义与实际原核证明；不能把 Regular 当作未消除的目标假设 |
 | 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 源为宿主证明；缺对象逐实例证书与递归语法转换。不得定义全宇宙的统一真值谓词 |

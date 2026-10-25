@@ -98,6 +98,15 @@
         "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean": "3e84de8cf5da75546c399c7044f87e4b51c27d686b733065d7d4380dfcc46cec",
         "ConstructibleUniverse/SetTheory/ZFC/Constructible/InternalWellOrder.lean": "58e0778d79deb5ae876cdab599164a105229aa0f4063165b163ce2a8d664a6bb"
       }
+    },
+    "internal_order_cover": {
+      "repository": "https://github.com/05-02-07/lean-constructible-universe",
+      "commit": "7f5a7d03d63d9769172f17350bbe8303996e5b53",
+      "adapter": "PPAC/Migration/InternalWellOrderChoice.lean",
+      "files": {
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/InternalWellOrder.lean": "58e0778d79deb5ae876cdab599164a105229aa0f4063165b163ce2a8d664a6bb",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/StageInternalOrder.lean": "f63fbe5b9245e0b2f9d32b5debc6a18015d8e13b742de473e0411dc18126e5e1"
+      }
     }
   }
 }

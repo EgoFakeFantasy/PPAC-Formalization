@@ -28879,3 +28879,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.DefinableMinimaChoice.kernel_certificate
 #print axioms PPAC.Migration.DefinableMinimaChoice.source_certificate
 #print axioms PPAC.Migration.DefinableMinimaChoice.relative_kernel_certificate
+
+#print axioms PPAC.Migration.KuratowskiZF.code_correct
+#print axioms PPAC.Migration.KuratowskiZF.exists_code
+#print axioms PPAC.Migration.KuratowskiZF.code_unique
+#print axioms PPAC.Migration.KuratowskiZF.interpretation
+#print axioms PPAC.Migration.KuratowskiZF.source_pair
+#print axioms PPAC.Migration.KuratowskiZF.source_code
+#print axioms PPAC.Migration.KuratowskiZF.source_edge
+#print axioms PPAC.Migration.InternalWellOrderChoice.graph
+#print axioms PPAC.Migration.InternalWellOrderChoice.least_graph
+#print axioms PPAC.Migration.InternalWellOrderChoice.unique_minimum
+#print axioms PPAC.Migration.InternalWellOrderChoice.projectCover
+#print axioms PPAC.Migration.InternalWellOrderChoice.wellOrderCover
+#print axioms PPAC.Migration.InternalWellOrderChoice.cover_models
+#print axioms PPAC.Migration.InternalWellOrderChoice.minimum_models
+#print axioms PPAC.Migration.InternalWellOrderChoice.minimum_kernel_certificate
+#print axioms PPAC.Migration.InternalWellOrderChoice.kernel_certificate
+#print axioms PPAC.Migration.InternalWellOrderChoice.source_certificate
+#print axioms PPAC.Migration.InternalWellOrderChoice.relative_kernel_certificate

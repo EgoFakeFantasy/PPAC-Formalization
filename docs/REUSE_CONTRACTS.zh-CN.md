@@ -44,4 +44,18 @@ r在对象量词内为每个族分别存在，无需在元层选一个关系函�
 
 复用来源为本地已核对提交7f5a7d03d63d9769172f17350bbe8303996e5b53的Choice.lean、InternalWellOrder.lean和Def.lean；原文件SHA-256及适配路径记入SOURCE_LOCK.json的companion_reuse，版权和Apache许可证完整保留。未修改L工程或YesMetaZFC依赖。
 
+内部良序批正式验收：2830构建任务、28580声明审计（新增18项完整覆盖）、9条命令全成功、5条trust=0、零警告。两份适配的逐声明足迹已精确锁定：构造为原标准两项，纯语义辅助为标准三项，其余模型／原核证书仍为标准三项加原七个ZF句子证书，没有激活额外choice证书。首次消费的两个既有库目标也已成功构建（219 jobs）；源码依赖未改。
+
+内部良序覆盖已实际接入：`KuratowskiZF`复用固定YesMetaZFC的同一Kuratowski convention／Code／坐标单射和KP配对构造，提供任意nativeZF模型中的完整Interpretation记录；只适配原入口要求ZFC的背景，不重写有序对或整个规范扩张。`InternalWellOrderChoice`直接使用原Project.isSetCodedWellOrder及其语义定理，并通过既有ProjectDecode取得Source闭句：
+
+```text
+CoverWO := ∀a ∃b ∃r (a⊆b ∧ r在b上是内部集合编码良序)
+Derives nativeZF [] (CoverWO → Min_edge)
+Derives nativeZF [] (CoverWO → AC)
+```
+
+这里的良序最小元条件只量化模型内部子集。由原线序的自反空缺／传递性把“≤所有元素”转成“无更小元素”，并证明唯一性；在族的并集上应用CoverWO后，得到上批所需同一个内部关系参数。Source反向编译及任意域相对化证书也已取得，仍保留域非空与相对化ZF背景。此处没有证明实际L层序满足CoverWO，也没有假定宿主WellFounded或外部标准ω。
+
+原L工程StageInternalOrder／InternalWellOrder的覆盖与最小元路线记录在SOURCE_LOCK.json；未修改该工程或固定依赖。该适配是L实际层序构造的消费端，接下来应传输已有构造以证明L域中的CoverWO，而不是继续新增可选编码设施。
+
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。
