@@ -30468,3 +30468,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingBasicSetAxioms.sentence
 #print axioms PPAC.Migration.ForcingBasicSetAxioms.models
 #print axioms PPAC.Migration.ForcingBasicSetAxioms.kernel_certificate
+#print axioms PPAC.Migration.ForcingFoundation.minimal
+#print axioms PPAC.Migration.ForcingFoundation.Minimal
+#print axioms PPAC.Migration.ForcingFoundation.minimal_semantics
+#print axioms PPAC.Migration.ForcingFoundation.witness
+#print axioms PPAC.Migration.ForcingFoundation.Witness
+#print axioms PPAC.Migration.ForcingFoundation.witness_semantics
+#print axioms PPAC.Migration.ForcingFoundation.inductionPredicate
+#print axioms PPAC.Migration.ForcingFoundation.inductionPredicate_semantics
+#print axioms PPAC.Migration.ForcingFoundation.minimal_member
+#print axioms PPAC.Migration.ForcingFoundation.forces_foundation
+#print axioms PPAC.Migration.ForcingFoundation.sentence
+#print axioms PPAC.Migration.ForcingFoundation.models
+#print axioms PPAC.Migration.ForcingFoundation.kernel_certificate

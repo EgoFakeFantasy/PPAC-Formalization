@@ -371,3 +371,4 @@ import PPAC.Migration.ForcingProductHSPair
 import PPAC.Migration.ForcingProductHSUnion
 import PPAC.Migration.ForcingPairUnion
 import PPAC.Migration.ForcingBasicSetAxioms
+import PPAC.Migration.ForcingFoundation

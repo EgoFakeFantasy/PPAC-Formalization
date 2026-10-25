@@ -13091,6 +13091,123 @@
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
       }
+    },
+    "forcing_foundation": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean",
+      "source_sha256": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a",
+      "adapter": "PPAC/Migration/ForcingFoundation.lean",
+      "source_declarations": [
+        "SymmetricSystem.minimal_member",
+        "SymmetricSystem.forces_foundation"
+      ],
+      "consumers": [
+        "SymmetricSystem.forces_ZF (Forcing/SymmetricChoice.lean:215) -> ProductNames.forces_ZF -> Main forces_target"
+      ],
+      "reused_interfaces": [
+        "ForcingMapLaws.formula_induction -> ForcingNameInduction.kernel_certificate -> SetInduction.native_induction",
+        "ForcingAtomicRelations.mem_iff",
+        "ForcingAtomicBasic.condition/mem_mono",
+        "ForcingAtomicLaws.mem_congr_left",
+        "ForcingHS.child",
+        "ForcingPairUnion.domain/domain_semantics",
+        "ForcingProductPoset.preorder",
+        "ForcingFormula.force_all/force_ex/force_imp/force_neg",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Literal source minimal_member Child descent encoded by a pure internal formula; all internal names and arbitrary nativeZF models, no external WellFounded premise. Source Foundation forced in the actual all-rank HS domain under source monoid/presentation/condition contracts. No group or normality assumption is needed for this axiom. Full forced ZF and object Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingFoundation.minimal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.Minimal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.minimal_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.witness": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.Witness": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.witness_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.inductionPredicate": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.inductionPredicate_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.minimal_member": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.forces_foundation": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFoundation.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      }
     }
   },
   "selected_route_consumer_audit": {

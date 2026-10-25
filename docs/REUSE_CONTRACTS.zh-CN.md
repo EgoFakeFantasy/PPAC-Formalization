@@ -73,3 +73,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 本批 HS 配对／并集消费：原 MulAction.stabilizer 的子群义务由 ProductStabilizer 调用已证实际动作恒等／复合／逆及 NameConjugacy 完成。配对交集直接使用 KP.intersection_exists_d；正规性直接复用 NormalFilter.is_normal，名字构造与作用交换继续使用 PairName/UnionName/UnionAction。UnionAction 的同一条目证明放宽为只检查实际条件的序保持，旧接口保留且旧依赖集合不变；没有另建条件作用或名字递归。原核 HS 闭包已接通，并已由本批 ForcingPairUnion 消费到原 mem_pair/mem_union 和 forces_pairing/forces_union；其余强迫公理仍有独立义务。
 
 本批四条强迫公理继续复用 AtomicRelations.mem_iff/eq_iff、AtomicBasic 的自反／边引入／单调性、AtomicLaws 相等替换和 Formula 的逻辑分解；没有新建强迫代数或添加强迫公理字段。实际 HS 域只对已有 hs 公式重索引。原 codeOrder 的域限制由已证 IsName 条目性质给出字面并集等价，且实际构造消费了该等价。SourceStatements 中四条原公理本身未改写。
+
+Foundation 迁移直接消费已经完成的 ForcingMapLaws.formula_induction → ForcingNameInduction.kernel_certificate → SetInduction.native_induction；将原 minimal_member 的归纳性质编码为纯成员公式，保留源 Child 下降和稠密见证。回传继续使用已接入的 BMS 式 ModelTransfer，不另建归纳、完备性或 L 后端。
