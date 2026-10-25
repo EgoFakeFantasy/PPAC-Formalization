@@ -13161,4 +13161,72 @@ example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectPacketReaderStopping.packetReaderStoppingCompleteHistoryExistsUniqueSentence w B z o n)) :=
   Internal.ObjectPacketReaderStopping.native_packetReaderStoppingCompleteHistoryExistsUnique w B z o n
 
+example {m} (w B z o n L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalRawObservationForbidsSuccessorSentence w B z o n L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalRawObservationForbidsSuccessor w B z o n L v s a
+
+example {m} (w B z o n L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalNoSuccessorGivesThreeOriginalObservationsSentence w B z o n L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalNoSuccessorGivesThreeOriginalObservations w B z o n L v s a
+
+example {m} (w B z o n L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalExactThreeWayStoppingAtEveryActualCodeSentence w B z o n L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactThreeWayStoppingAtEveryActualCode w B z o n L v s a
+
+example {m} (w z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalEOFSuccessFailureDisjointSentence w z o L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFSuccessFailureDisjoint w z o L v s a
+
+example {m} (w B z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalEOFSuccessByteRejectDisjointSentence w B z o L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFSuccessByteRejectDisjoint w B z o L v s a
+
+example {m} (w B z o L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalEOFFailureByteRejectDisjointSentence w B z o L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFFailureByteRejectDisjoint w B z o L v s a
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalObservationHasExactCarrierAndNoSuccessorSentence w B z o n)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalObservationHasExactCarrierAndNoSuccessor w B z o n
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalCarrierNoSuccessorHasActualObservationSentence w B z o n)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalCarrierNoSuccessorHasActualObservation w B z o n
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalExactObservationDomainAllCandidateCodesSentence w B z o n)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactObservationDomainAllCandidateCodes w B z o n
+
+example {m} (w B z o n L v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalObservationNormalizesAtActualStateFieldsSentence w B z o n L v s a)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalObservationNormalizesAtActualStateFields w B z o n L v s a
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalHaltedHistoryHasActualOriginalStopCauseSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalHaltedHistoryHasActualOriginalStopCause w B z o n r l d f
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedRealHistoryIsHaltedSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedRealHistoryIsHalted w B z o n r l d f
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalExactClassifiedHistoryEquivalenceSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactClassifiedHistoryEquivalence w B z o n r l d f
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedCompleteHistoryExistsSentence w B z o n)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExists w B z o n
+
+example {m} (w B z o n r t l d k e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedHistoriesJointlyUniqueSentence w B z o n r t l d k e f g)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoriesJointlyUnique w B z o n r t l d k e f g
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedHistoryUniversalUniquenessSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoryUniversalUniqueness w B z o n r l d f
+
+example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedCompleteHistoryExistsUniqueSentence w B z o n)) :=
+  Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExistsUnique w B z o n
+
 end PPAC.Migration.Step4Checks

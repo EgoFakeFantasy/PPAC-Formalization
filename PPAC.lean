@@ -279,3 +279,5 @@ import PPAC.Migration.Internal.ObjectPacketReaderConsumption
 import PPAC.Migration.Internal.ObjectPacketReaderLength
 
 import PPAC.Migration.Internal.ObjectPacketReaderStopping
+
+import PPAC.Migration.Internal.ObjectPacketReaderTerminal

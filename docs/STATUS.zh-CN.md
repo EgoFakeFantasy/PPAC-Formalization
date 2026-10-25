@@ -1,5 +1,9 @@
 # 当前交付状态
 
+reader真实停止原因及带分类完整历史已验收：原EOF守卫通过、EOF守卫失败、实际字节拒绝三类两两互斥；每个实际状态码无后继准确等价于三类原观察。全候选码上的观察域恰为实际carrier且无后继；带分类真实历史准确等价于原停止历史，并取得对象EX4／ALL4的完整历史存在及联合唯一。6模块108声明、17组原nativeZF闭句；2475构建、26959审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。EOF实际acc.reverse、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_TERMINAL_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 reader完整停止历史存在及四字段联合唯一已验收：固定Formula6经原完整Separation和内部ω归纳取得已停止或指定长度真实前缀，再由真实初始长度排除过长前缀。每个实际状态carrier均有真实停止历史；停止长度、末状态码、实际定义域及整张图联合唯一，并组合为对象EX4／ALL4公式。9模块134声明、17组原nativeZF闭句；2469构建、26851审计、零警告，九命令／五trust=0通过；仅四个原停止历史子门false→true，其余旧布尔叶保持。EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_STOPPING_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

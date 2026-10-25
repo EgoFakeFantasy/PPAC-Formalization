@@ -2826,6 +2826,39 @@ def check_Packet_reader_complete_stopping_history_exists_joint_unique() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_Packet_reader_actual_terminal_cause_and_classified_history() -> dict:
+    modules = ['PacketReaderTerminalSyntax', 'PacketReaderTerminalRaw', 'PacketReaderTerminalObservation', 'PacketReaderTerminalHistory', 'PacketReaderTerminalContract', 'ObjectPacketReaderTerminal']
+    schemas = ['packetReaderTerminalRawObservationForbidsSuccessor', 'packetReaderTerminalNoSuccessorGivesThreeOriginalObservations', 'packetReaderTerminalExactThreeWayStoppingAtEveryActualCode', 'packetReaderTerminalEOFSuccessFailureDisjoint', 'packetReaderTerminalEOFSuccessByteRejectDisjoint', 'packetReaderTerminalEOFFailureByteRejectDisjoint', 'packetReaderTerminalObservationHasExactCarrierAndNoSuccessor', 'packetReaderTerminalCarrierNoSuccessorHasActualObservation', 'packetReaderTerminalExactObservationDomainAllCandidateCodes', 'packetReaderTerminalObservationNormalizesAtActualStateFields', 'packetReaderTerminalHaltedHistoryHasActualOriginalStopCause', 'packetReaderTerminalClassifiedRealHistoryIsHalted', 'packetReaderTerminalExactClassifiedHistoryEquivalence', 'packetReaderTerminalClassifiedCompleteHistoryExists', 'packetReaderTerminalClassifiedHistoriesJointlyUnique', 'packetReaderTerminalClassifiedHistoryUniversalUniqueness', 'packetReaderTerminalClassifiedCompleteHistoryExistsUnique']
+    required = {'PacketReaderTerminalSyntax': ['def raw', 'eofSuccess', 'eofFailure', 'blocked', 'PacketReaderStateSyntax.carrierBody', 'def observation', 'def classifiedHistory', 'def classifiedComplete'], 'PacketReaderTerminalRaw': ['theorem no_next_of_raw', 'PacketReaderCodedExistence.domain_at_source', 'theorem raw_of_no_next', 'PacketReaderInputOutcomes.classify', 'PacketReaderCodedExistence.exists_next', 'theorem at_actual_code', 'theorem success_failure_disjoint', 'theorem success_reject_disjoint', 'theorem failure_reject_disjoint', 'PacketReaderInputNormalize.nil_no_blocked'], 'PacketReaderTerminalObservation': ['theorem domain', 'theorem from_carrier', 'HornBinderRules.eliminate_many 4', 'theorem exact_domain', 'theorem at_actual_code', 'PacketReaderTerminalRaw.raw_of_no_next'], 'PacketReaderTerminalHistory': ['PacketReaderHistoryStates.at_edge', 'theorem from_halted', 'theorem to_halted', 'theorem exact_history', 'theorem exists_classified', 'PacketReaderStoppingExistence.exists_complete'], 'PacketReaderTerminalContract': ['def uniqueAtBody', 'def uniqueAt', 'def uniqueClassifiedComplete', 'theorem fields_unique', 'PacketReaderStoppingContract.fields_unique', 'PacketReaderTerminalHistory.to_halted', 'theorem exists_unique', 'PacketReaderTerminalHistory.exists_classified'], 'ObjectPacketReaderTerminal': ['TheoryTransport.sentence', 'ZFReplay.replay', 'PacketReaderTerminalContract.exists_unique', 'PacketReaderTerminalObservation.exact_domain']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):
+            raise RuntimeError('Reader stopping forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader stopping proof drift: '+mod+': '+clause)
+        texts[mod] = text
+    for mod,name,expected in [('PacketReaderTerminalRaw','at_actual_code',{'hw','hB','hz','ho','hc'}),('PacketReaderTerminalObservation','exact_domain',{'hw','hB','hz','ho'}),('PacketReaderTerminalHistory','exists_classified',{'hw','hB','hz','ho','hc'}),('PacketReaderTerminalContract','exists_unique',{'hw','hB','hz','ho','hc'})]:
+        header = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0))) != expected:
+            raise RuntimeError('Reader stopping hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderTerminal.native_'+name not in checks: raise RuntimeError('Missing reader stopping native fixture: '+name)
+    return {'three_original_stopping_observations_independent_of_history':True,
+            'original_EOF_pass_EOF_fail_and_byte_reject_pairwise_disjoint':True,
+            'actual_state_code_no_successor_iff_three_original_observations':True,
+            'actual_coded_observation_exactly_carrier_and_no_successor':True,
+            'observation_normalizes_at_every_actual_state_code':True,
+            'classified_real_history_iff_original_halted_history':True,
+            'classified_complete_history_exists_with_joint_EX4_ALL4_uniqueness':True,
+            'all_invalid_and_nonstandard_candidates_and_raw_scale_domain_preserved':True,
+            'original_EOF_guard_s_equals_o_and_v_equals_z_preserved':True,
+            'actual_EOF_accumulator_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_Packet_reader_all_internal_length_conservation_and_bound() -> dict:
     modules = ['PacketReaderLengthSyntax', 'PacketReaderLengthAt', 'PacketReaderTailLength', 'PacketReaderLengthArithmetic', 'PacketReaderLengthPoint', 'PacketReaderLengthInduction', 'PacketReaderLengthBounds', 'ObjectPacketReaderLength']
     schemas = ['packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory']
@@ -2978,6 +3011,7 @@ def main() -> None:
     Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     Packet_reader_actual_input_projection_and_consumption = check_Packet_reader_actual_input_projection_and_consumption()
     Packet_reader_all_internal_length_conservation_and_bound = check_Packet_reader_all_internal_length_conservation_and_bound()
+    Packet_reader_actual_terminal_cause_and_classified_history = check_Packet_reader_actual_terminal_cause_and_classified_history()
     Packet_reader_complete_stopping_history_exists_joint_unique = check_Packet_reader_complete_stopping_history_exists_joint_unique()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
@@ -6271,6 +6305,23 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedFieldsJointUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderStopping.native_packetReaderStoppingStoppedFieldsUniversalUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderStopping.native_packetReaderStoppingCompleteHistoryExistsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalRawObservationForbidsSuccessor',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalNoSuccessorGivesThreeOriginalObservations',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactThreeWayStoppingAtEveryActualCode',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFSuccessFailureDisjoint',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFSuccessByteRejectDisjoint',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalEOFFailureByteRejectDisjoint',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalObservationHasExactCarrierAndNoSuccessor',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalCarrierNoSuccessorHasActualObservation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactObservationDomainAllCandidateCodes',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalObservationNormalizesAtActualStateFields',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalHaltedHistoryHasActualOriginalStopCause',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedRealHistoryIsHalted',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalExactClassifiedHistoryEquivalence',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoriesJointlyUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoryUniversalUniqueness',
+                    'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExistsUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength',
@@ -6313,6 +6364,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderTerminal": ('packetReaderTerminalRawObservationForbidsSuccessor', 'packetReaderTerminalNoSuccessorGivesThreeOriginalObservations', 'packetReaderTerminalExactThreeWayStoppingAtEveryActualCode', 'packetReaderTerminalEOFSuccessFailureDisjoint', 'packetReaderTerminalEOFSuccessByteRejectDisjoint', 'packetReaderTerminalEOFFailureByteRejectDisjoint', 'packetReaderTerminalObservationHasExactCarrierAndNoSuccessor', 'packetReaderTerminalCarrierNoSuccessorHasActualObservation', 'packetReaderTerminalExactObservationDomainAllCandidateCodes', 'packetReaderTerminalObservationNormalizesAtActualStateFields', 'packetReaderTerminalHaltedHistoryHasActualOriginalStopCause', 'packetReaderTerminalClassifiedRealHistoryIsHalted', 'packetReaderTerminalExactClassifiedHistoryEquivalence', 'packetReaderTerminalClassifiedCompleteHistoryExists', 'packetReaderTerminalClassifiedHistoriesJointlyUnique', 'packetReaderTerminalClassifiedHistoryUniversalUniqueness', 'packetReaderTerminalClassifiedCompleteHistoryExistsUnique'),
         "ObjectPacketReaderStopping": ('packetReaderStoppingActualSourceCarrierNatural', 'packetReaderStoppingActualZeroPrefix', 'packetReaderStoppingActualHistoryStopsOrExtends', 'packetReaderStoppingInternalSuccessorProgress', 'packetReaderStoppingAllInternalProgress', 'packetReaderStoppingTooLongActualPrefixImpossible', 'packetReaderStoppingFromInitialActualLengthExistsComplete', 'packetReaderStoppingFromActualSourceCodeExistsComplete', 'packetReaderStoppingEveryActualCarrierHasCompleteHistory', 'packetReaderStoppingStoppedHistoryCannotBeStrictlyShorter', 'packetReaderStoppingStoppedLengthUnique', 'packetReaderStoppingStoppedEndpointUnique', 'packetReaderStoppingStoppedDomainUnique', 'packetReaderStoppingStoppedGraphUnique', 'packetReaderStoppingStoppedFieldsJointUnique', 'packetReaderStoppingStoppedFieldsUniversalUnique', 'packetReaderStoppingCompleteHistoryExistsUnique'),
         "ObjectPacketReaderLength": ('packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory'),
         "ObjectPacketReaderConsumption": ('packetReaderConsumptionRawStepConsumesActualCons', 'packetReaderConsumptionRawStepStrictInputDescent', 'packetReaderConsumptionCarrierHasActualValidInput', 'packetReaderConsumptionInputAgreesWithActualStateCode', 'packetReaderConsumptionActualStateInputUnique', 'packetReaderConsumptionCodedStepConsumesActualCons', 'packetReaderConsumptionCodedStepStrictInputDescent', 'packetReaderConsumptionEveryActualHistoryEdgeHasStateCarrier', 'packetReaderConsumptionActualDomainIndexHasUniqueValidInputFiber', 'packetReaderConsumptionInputProjectionExactAtActualEdge', 'packetReaderConsumptionActualAdjacentInputsConsumeCons', 'packetReaderConsumptionActualAdjacentInputsStrictlyDescend', 'packetReaderConsumptionEveryInternalStepHasActualConsumptionWitnesses', 'packetReaderConsumptionAllInternalStepConsumption', 'packetReaderConsumptionNilInputForbidsNextCodedStep', 'packetReaderConsumptionOriginalByteRejectForbidsNextCodedStep', 'packetReaderConsumptionNilInputOccursOnlyAtLastHistoryIndex', 'packetReaderConsumptionActualProjectedInputIsNatural'),
@@ -7318,6 +7370,8 @@ def main() -> None:
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
         "Packet_reader_complete_stopping_history_exists_joint_unique_guard": Packet_reader_complete_stopping_history_exists_joint_unique,
         "object_Packet_readTokens_complete_stopped_history_exists_joint_unique_proved": True,
+        "Packet_reader_actual_terminal_cause_and_classified_history_guard": Packet_reader_actual_terminal_cause_and_classified_history,
+        "object_Packet_readTokens_actual_terminal_cause_and_classified_history_exists_unique_proved": True,
         "Packet_reader_all_internal_length_conservation_and_bound_guard": Packet_reader_all_internal_length_conservation_and_bound,
         "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved": True,
         "Packet_reader_actual_input_projection_and_consumption_guard": Packet_reader_actual_input_projection_and_consumption,
