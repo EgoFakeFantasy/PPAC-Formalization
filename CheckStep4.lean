@@ -13765,4 +13765,56 @@ example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderUniqueActualEncodedInputAndAllReturnsSentence w n)) :=
   Internal.ObjectPacketReaderTokens.native_tokensReaderUniqueActualEncodedInputAndAllReturns w n
 
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteSpliceAllInternalPropertiesSentence w)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteSpliceAllInternalProperties w
+
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteActualSplicePreservesFullByteGuardSentence w C T L)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteActualSplicePreservesFullByteGuard w C T L
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteEncodingAllInternalPropertiesSentence w)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteEncodingAllInternalProperties w
+
+example {m} (w n bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteEveryEncodedInputHasFullByteGuardSentence w n bytes)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteEveryEncodedInputHasFullByteGuard w n bytes
+
+example {m} (w C n l : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteGuardAllActualFieldsAtAnyLengthSentence w C n l)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteGuardAllActualFieldsAtAnyLength w C n l
+
+example {m} (w C n l i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteGuardAllActualFieldsBelowActual256Sentence w C n l i y)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteGuardAllActualFieldsBelowActual256 w C n l i y
+
+example {m} (w n l i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteGuardAllActualFieldValuesAreBytesSentence w n l i y)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteGuardAllActualFieldValuesAreBytes w n l i y
+
+example {m} (w n bytes C l : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteEncodedInputAllActualFieldsBoundedSentence w n bytes C l)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteEncodedInputAllActualFieldsBounded w n bytes C l
+
+example {m} (w n bytes l i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteEncodedInputEveryFieldValueIsByteSentence w n bytes l i y)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteEncodedInputEveryFieldValueIsByte w n bytes l i y
+
+example {m} (w n bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteEncodedInputAndAllInitializedReturnsSentence w n bytes)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteEncodedInputAndAllInitializedReturns w n bytes
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteUniqueActualBoundedInputAndAllInitializedReturnsSentence w n)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteUniqueActualBoundedInputAndAllInitializedReturns w n
+
+example {m} (w B b d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensByteContinuationDigitBoundSentence w B b d)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensByteContinuationDigitBound w B b d
+
+example {m} (w B z o s S : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokensByteInput.tokensBytePositiveContinuationScaleGuardSentence w B z o s S)) :=
+  Internal.ObjectPacketTokensByteInput.native_tokensBytePositiveContinuationScaleGuard w B z o s S
+
 end PPAC.Migration.Step4Checks

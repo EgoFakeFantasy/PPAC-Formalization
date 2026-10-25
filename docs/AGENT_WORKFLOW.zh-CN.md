@@ -1,5 +1,19 @@
 # 对象层迁移工程流程
 
+独立多token编码的完整字节界已验收：实际Splice保持原ByteList，两次固定Formula2经原完整Separation／Foundation关闭全部真实尾码IH；每个实际Encoded输出都满足原Fields／有界序列图字节合同，任意真实长度、内部索引及字段候选均小于实际256。相同实际编码字节见证上的唯一性和全部初始化Parse返回方程一并保留。另完成逆向所需的延续低位<128及正尺度更新后非零／非单位。14模块106声明、13组原nativeZF闭句；2610构建、28326审计、零警告，九命令／五trust=0通过。仅原编码全局字节界门false→true，其余旧布尔叶保持。成功解析的逆向规范分段、完整Bytes／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_TOKEN_BYTE_BOUND_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 输入及原接口 | 原核交付要求 | 状态 |
+|---|---|---|---|
+| R1–R4b.3b.2b | 原reader、实际Varint消费、独立Encoded与Output | 全内部运行、真实acc及token输出顺序、初始化Parse精确式 | 已验收 |
+| R4b.3b.2c.0 | ByteInput.actual_iff、Canonical字节界、实际Splice | Splice保持完整ByteList；Encoded全部输出及所有字段<256；编码唯一见证保留 | 本批已验收 |
+| R4b.3b.2c.1 | 本批低位界／正尺度，原Eval／Advance／Terminal | ByteList非Nil输入、正尺度及成功Some下，构造真实规范首段、实际rest∈input和保持ByteList的余表 | 下一单元 |
+| R4b.3b.2c.2 | 规范首段、真实Cons尾码、Output前后方向 | 固定Formula2/5原Separation／Foundation关闭字节码IH，成功运行→独立Encoded | 待完成 |
+| R5 | 原Bytes／Canonical／Tok及完整字节包 | 全内部和无效码上的程序／规格双条件，准确失败分支 | 待完成 |
+| A／P | 原Basic AST、六规则／27模式、全Separation／Collection | 全部内部证明码和公理模式准确性 | 待完成 |
+| I／C | 原数学解释及对象证明变换 | nativeZF中的最终内部Con蕴含，理论／语言／背景对应完整 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 全内部多token编码及原reader顺序消费已验收：独立原双轨迹构造每个有效内部token列表的唯一规范分段编码，精确Nil／Cons方程保留段和token顺序。实际Splice结合律与单元素Snoc合同将反向acc对接最终顺序；固定Formula5经原完整Separation／Foundation消去全部尾码IH。仅Ω与独立Encoded即可取得原Parse(bytes,p)↔Some(tokens,p)，实际128／0／1见证均在对象推导内消去，并联合构造唯一实际字节输入和所有返回候选方程。43模块375声明、25组原nativeZF闭句；2596构建、28220审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。全局字节<256界、带界逆向规范分段、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_MULTITOKEN_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 实现职责 | 原核验收要求 | 状态 |

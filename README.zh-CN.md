@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+独立多token编码的完整字节界已验收：实际Splice保持原ByteList，两次固定Formula2经原完整Separation／Foundation关闭全部真实尾码IH；每个实际Encoded输出都满足原Fields／有界序列图字节合同，任意真实长度、内部索引及字段候选均小于实际256。相同实际编码字节见证上的唯一性和全部初始化Parse返回方程一并保留。另完成逆向所需的延续低位<128及正尺度更新后非零／非单位。14模块106声明、13组原nativeZF闭句；2610构建、28326审计、零警告，九命令／五trust=0通过。仅原编码全局字节界门false→true，其余旧布尔叶保持。成功解析的逆向规范分段、完整Bytes／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_TOKEN_BYTE_BOUND_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 全内部多token编码及原reader顺序消费已验收：独立原双轨迹构造每个有效内部token列表的唯一规范分段编码，精确Nil／Cons方程保留段和token顺序。实际Splice结合律与单元素Snoc合同将反向acc对接最终顺序；固定Formula5经原完整Separation／Foundation消去全部尾码IH。仅Ω与独立Encoded即可取得原Parse(bytes,p)↔Some(tokens,p)，实际128／0／1见证均在对象推导内消去，并联合构造唯一实际字节输入和所有返回候选方程。43模块375声明、25组原nativeZF闭句；2596构建、28220审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。全局字节<256界、带界逆向规范分段、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_MULTITOKEN_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
