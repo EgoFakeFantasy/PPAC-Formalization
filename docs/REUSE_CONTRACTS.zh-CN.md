@@ -13,7 +13,7 @@
 
 ForcingNames 本批继续消费同一固定源的 IsName／isName_iff。原 ConditionAction.conditions 是 ZFSet，目标采用内部集合参数 P；不声称覆盖任意不可定义的外部类条件。内部 Closed(P,S) 要求 S 中每个名字的每个条目具有原 Kuratowski 配对形状，条件属于 P、子名字属于 S；IsName(P,σ) 定义为存在这样的 S 包含 σ。直接消费已有 Collection、Separation、KP.exists_union／exists_insert 合并子名字见证；Collection 中的杂项先经完整分离筛掉，没有抽取选择函数。原两合取展开式、intro／edges、child／condition 和空名字均已构造；现有 Child 归纳还给出任意参数公式解的唯一性模式，并回传原 Derives。定向及完整验收均已通过：37 项新增声明全部审计，2838 构建任务、28855 声明、9 命令退出 0、5 条 trust=0、零警告；四类原核证书仅继承标准三项和原七项 ZF 句子证书。该 IsName 批次没有实现名字函数递归；本轮 evaluate 的实际完成范围见下一段。
 
-ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 的本批范围见下段，原子强迫递归仍未完成。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
+ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 的本批范围见下段，原子强迫递归现已由本文末 Atomic 批次构造；原子定律及具体条件呈现仍待接。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
 
 ForcingMapConditions 适配同一源文件第 96–128 行：原 child_wf.fix 在目标端用已验收的 Child 公式归纳及内部集合图实现；函数式 Replacement、笛卡尔积和完整分离直接调用 YesMetaZFC，逐变量翻译复用 ProjectSyntax.binary／GodelDefRecursion.encode_semantics。共享辅助的算子全定义性、单值性和子名字依赖性均由具体映射算子证明，没有假定目标递归已存在。五类原核闭句模式保留条件映射的对象全函数前提，覆盖所有内部原始名字。外部不可定义函数不在此公式模式的声明范围；原恒等律、复合律、IsName 保持、公式类 evaluate 相容性和具体 actCode 实例现已验收，见下文对应模块；任意外部泛型滤子解释仍待接。新增 69 项声明（含结构构造器及三个字段）预审计只使用标准三项和原七项 ZF 句子证书，完整验收已通过。
 
@@ -63,6 +63,8 @@ YesMetaZFC 文件相对于 `.lake/packages/YesMetaZFC/YesMetaZFC/`。BMS 本地�
 - `ModelTransfer.project_models_iff` 精确连接任意 nativeZF 模型与 Project ZF；`derives` 直接消费原强完备性和既有调度。BMS 收尾方法已适配，不待重造。
 - `DefinableMinimaChoice`、`InternalWellOrderChoice` 已取得 `Min_lt → AC` 和 `CoverWO → AC` 的原核证书。原 L 工程的最小元证明路线已经复用；实际 L 域满足其前提仍要通过精确对象接口接入。
 - `KuratowskiZF` 复用底座配对约定；`InterpretedZF` 复用全部 ZF 模式回放。后者保留相对化背景和域非空条件，不冒充 nativeZF 已证明全部 L 公理。
-- 本轮 `ForcingPairInduction` 消费已有 `ForcingMapLaws.formula_induction` 两次，构造对称加强谓词，取得左／右／交换下降的原核归纳模式。源依据是固定 `AtomicForcing.pairLower_left/right/swap`；未实现的实际消费者是 `relations` 的内部递归构造。不是新的良基或递归后端。
+- 本轮 `ForcingPairInduction` 消费已有 `ForcingMapLaws.formula_induction` 两次，构造对称加强谓词，取得左／右／交换下降的原核归纳模式。源依据是固定 `AtomicForcing.pairLower_left/right/swap`；本批实际消费者为 `ForcingAtomicGraphs.compatible` 和 `ForcingAtomicRecursion.exists_value`，不再列为待接的归纳接口。不是新的良基或递归后端。
 
 2026-10-26 再审核实读：固定底座 Axioms/ZF.lean 的两个模式构造器；本仓 ReverseZFReplay、CollectionFromReplacement、ModelTransfer；L 工程 ZFModel、Model、StageHistoryGraphSystem；BMS SecondOrderCompleteness。未重新编译这些外部仓库，也未修改其源码。旧重复段落可从 Git `3deb896` 恢复。
+
+本批原子递归直接消费固定底座 `SetTheory/Collection.lean:69 collection_exists_d`。既有 `ForcingMapConditions.binary_semantics` 连接原 Source 矩阵与底座 Project 二元模式；Collection 的非精确见证族经已有 Separation 过滤后取 Union。源码 SHA 锁入 SOURCE_LOCK。初次从 CollectionSyntax.core 展开整个复杂矩阵造成化简超时，已改用这个现成语义入口，无需扩大 heartbeat 或重建 Collection。底座和其他仓库均未修改。

@@ -325,3 +325,7 @@ import PPAC.Migration.ForcingUnionAction
 import PPAC.Migration.ForcingCheckName
 import PPAC.Migration.ForcingCheckNameLaws
 import PPAC.Migration.ForcingPairInduction
+import PPAC.Migration.ForcingAtomicStep
+import PPAC.Migration.ForcingAtomicGraphs
+import PPAC.Migration.ForcingAtomicRecursion
+import PPAC.Migration.ForcingAtomicRelations

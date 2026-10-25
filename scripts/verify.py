@@ -3414,7 +3414,11 @@ def main() -> None:
                                ("forcing_union_action", "ForcingUnionAction", 12),
                                ("forcing_check_name", "ForcingCheckName", 40),
                                ("forcing_check_name_laws", "ForcingCheckNameLaws", 22),
-                               ("forcing_pair_induction", "ForcingPairInduction", 14)):
+                               ("forcing_pair_induction", "ForcingPairInduction", 14),
+                               ("forcing_atomic_step", "ForcingAtomicStep", 30),
+                               ("forcing_atomic_graphs", "ForcingAtomicGraphs", 23),
+                               ("forcing_atomic_recursion", "ForcingAtomicRecursion", 13),
+                               ("forcing_atomic_relations", "ForcingAtomicRelations", 21)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7316,7 +7320,11 @@ def main() -> None:
         "source_forcing_checkName_external_wellFounded_required": False,
         "source_forcing_checkName_HS_closure_proved": False,
         "source_atomic_left_right_swap_induction_native_certificate_proved": True,
-        "source_atomic_relations_recursion_constructed": False,
+        "source_atomic_relations_recursion_constructed": True,
+        "source_atomic_relations_scope": "All internal raw names, internal condition set P, formula-defined relation R; native existence, uniqueness, exact membership/equality equations. External condition presentation identification remains pending.",
+        "source_atomic_relations_exact_recursive_equations_proved": True,
+        "source_atomic_condition_presentation_identified": False,
+        "source_atomic_forcing_laws_proved": False,
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,

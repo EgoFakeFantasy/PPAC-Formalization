@@ -8,11 +8,11 @@
 
 本批沿固定源 ForcingNames 第 184–237、474–478、494–532 行，完成 checkName 的内部图构造、存在、唯一、精确成员／边方程、名字保持、求值、条件映射及固定条件作用；完成原 mapConditions_unionName／smul_union 的实际置换图实例。共 74 项声明、10 类 nativeZF 原核证书。复用现有集合归纳、图操作及集合构造；未增加通用递归后端或宿主良基前提。
 
-checkName、pairName、unionName 的上述基础性质现已完成，不再列为待做。真正尚待的是实际条件／群／赋值呈现与原强迫前端的接通、HS 及其闭包、原子和逐公式强迫、具体模型链、L 对象解释及最终内部 Proof/Con。下一源依赖已核对原 HS 和 AtomicForcing 的左／右／交换递归分支。
+checkName、pairName、unionName 的上述基础性质现已完成，不再列为待做。真正尚待的是实际条件／群／赋值呈现与原强迫前端的接通、HS 及其闭包、原子强迫定律与逐公式强迫、具体模型链、L 对象解释及最终内部 Proof/Con。本批内部条件码上的原子递归及精确展开已完成，见下文。
 
 原环境基线：隔离 Lean 4.34.1 的原 Main 完整通过 8998 项构建；五个端点 trust=0 及公理审计通过，只依赖标准三项。78 份源副本哈希匹配。命令及日志哈希见 SOURCE_LOCK.original_build。完整 Comparator 缺 Linux/landrun，未运行；目标仓仍使用 4.33.1。
 
-最近完整验收通过：2852 构建任务、29266 项声明审计（579 项无公理依赖、28687 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；本次新增 14 项双名字归纳声明全部覆盖，2442 份哈希匹配。新增 1 类原核证书没有扩大既有可信基。此前 74 项 checkName／unionName 作用声明的验收保留。
+最近完整验收通过：2856 构建任务、29353 项声明审计（588 项无公理依赖、28765 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；本次新增 87 项原子递归声明全部覆盖，2446 份哈希匹配。新增 6 类原核证书没有扩大既有可信基。此前名字构造及双名字归纳验收保留。
 
 ## 再审结论与本轮纠正
 
@@ -22,6 +22,14 @@ checkName、pairName、unionName 的上述基础性质现已完成，不再列�
 
 本次又检查了本地 YesMetaZFC、YesMetaZFC-stage4 的可构造／相对化入口；在已检查范围未定位到可直接替代本项目目标的 `Derives nativeZF [] α^L` 全模式端点。不能据此宣称所有其他位置都不存在此结果，也不能把具体 LCarrier 模型断言改名成这个类型。
 
-原 Main 构建日志与端点审计日志重新核对 SHA-256，均与 SOURCE_LOCK 匹配；本轮没有重跑原 Main。新增 ForcingPairInduction 修复了未提交文件中的语义化简收尾错误，14 项声明已完成定向构建、trust=0 预审计及整仓正式验收。它只证明原 AtomicForcing 所用左／右／交换下降的对象归纳模式；MemAt/EqAt 递归存在及原子定律仍未完成。
+原 Main 构建日志与端点审计日志重新核对 SHA-256，均与 SOURCE_LOCK 匹配；本轮没有重跑原 Main。新增 ForcingPairInduction 修复了未提交文件中的语义化简收尾错误，14 项声明已完成定向构建、trust=0 预审计及整仓正式验收。它只证明原 AtomicForcing 所用左／右／交换下降的对象归纳模式；当时 MemAt/EqAt 递归存在及原子定律尚未完成；本批递归的新结果以下文为准，原子定律仍未完成。
 
 清理：删除 4 个已失效一次性清理脚本和 27 份广场简报缓存（合计 932362 字节）；逐文件检查路径、哈希与正式代码无引用，清单在 verification/review-cleanup-manifest.json。删除 FEASIBILITY 和 REUSE_CONTRACTS 中重复旧批次状态，历史可由 Git 3deb896 恢复。未在缺少依赖裁决时删除已验收证明；冻结字节路线没有重启。
+
+## 本批：原 AtomicForcing 递归迁移
+
+固定源仍是 OpenAI 1581d4c 的 AtomicForcing.relations/MemAt/EqAt/mem_iff/eq_iff。ForcingAtomicStep 通过已有完整 Separation 构造两个条件真值集合，保留原量词和三种递归查询；ForcingAtomicGraphs 以已有双名字归纳证明部分图相容性；ForcingAtomicRecursion 直接调用固定 YesMetaZFC.Collection.collection_exists_d、已有公式编译、集合并与插入，构造全部内部名字对的递归值；ForcingAtomicRelations 消去局部图选择，取得原两个递归展开式。
+
+范围为任意内部集合 P、任意参数公式关系 R，以及全部内部原始集合名字；不是有界秩或有限名字结果。不要求外部良基、标准 ω、对象选择或已有强迫定律。原外部 P/code 呈现的识别尚待接通；这项内部条件码结果没有被冒充为任意外部条件类的定理。下一消费者是原单调性、稠密闭包、自反性和三名字归纳下的 atomic_laws。
+
+新增 87 项声明、6 类 nativeZF 原核证书。定向构建、trust=0 全声明预审计及整仓验收均通过。最终对象 Con、完整原子强迫定律和具体条件呈现识别仍记录为 false。
