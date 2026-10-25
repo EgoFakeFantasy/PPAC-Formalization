@@ -13885,4 +13885,40 @@ example {m} (w B z o L v s A O p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives 
     (Translation.sentence (Internal.ObjectPacketReaderPrefix.readerPrefixEverySuccessfulBoundedNonemptyInputHasCanonicalPrefixSentence w B z o L v s A O p)) :=
   Internal.ObjectPacketReaderPrefix.native_readerPrefixEverySuccessfulBoundedNonemptyInputHasCanonicalPrefix w B z o L v s A O p
 
+example {m} (w B z o L A O p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseActualNilSuccessHasIndependentTokenEncodingSentence w B z o L A O p)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseActualNilSuccessHasIndependentTokenEncoding w B z o L A O p
+
+example {m} (w B z o : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseAllInternalBoundedInputPropertiesSentence w B z o)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseAllInternalBoundedInputProperties w B z o
+
+example {m} (w B z o L A O p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseEverySuccessfulBoundedInputReconstructsActualTokensSentence w B z o L A O p)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseEverySuccessfulBoundedInputReconstructsActualTokens w B z o L A O p
+
+example {m} (w B z o tokens bytes p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseInitializedSuccessExactAtActualLiteralsSentence w B z o tokens bytes p)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseInitializedSuccessExactAtActualLiterals w B z o tokens bytes p
+
+example {m} (w tokens bytes p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseInitializedSuccessExactWithoutLiteralParametersSentence w tokens bytes p)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseInitializedSuccessExactWithoutLiteralParameters w tokens bytes p
+
+example {m} (w tokens bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseBoundedActualAcceptanceImpliesIndependentEncodingSentence w tokens bytes)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseBoundedActualAcceptanceImpliesIndependentEncoding w tokens bytes
+
+example {m} (w tokens bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseIndependentEncodingConstructsActualAcceptanceSentence w tokens bytes)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseIndependentEncodingConstructsActualAcceptance w tokens bytes
+
+example {m} (w tokens bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseActualAcceptanceExactOnBoundedInputSentence w tokens bytes)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseActualAcceptanceExactOnBoundedInput w tokens bytes
+
+example {m} (w tokens bytes : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderInverse.readerInverseBoundedActualAcceptanceExactlyIndependentEncodingSentence w tokens bytes)) :=
+  Internal.ObjectPacketReaderInverse.native_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding w tokens bytes
+
 end PPAC.Migration.Step4Checks

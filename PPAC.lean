@@ -297,3 +297,5 @@ import PPAC.Migration.Internal.ObjectPacketReaderTokens
 import PPAC.Migration.Internal.ObjectPacketTokensByteInput
 
 import PPAC.Migration.Internal.ObjectPacketReaderPrefix
+
+import PPAC.Migration.Internal.ObjectPacketReaderInverse

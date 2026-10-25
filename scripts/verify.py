@@ -3010,6 +3010,37 @@ def check_actual_reader_history_prepend_and_run_recursion() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_all_internal_whole_reader_inverse() -> dict:
+    modules = ['PacketReaderInverseSyntax', 'PacketReaderInverseNil', 'PacketReaderInverseConsPoint', 'PacketReaderInverseCons', 'PacketReaderInverseCases', 'PacketReaderInverseStep', 'PacketReaderInverseInduction', 'PacketReaderInverseInitialized', 'PacketReaderInverseAccepted', 'ObjectPacketReaderInverse']
+    schemas = ['readerInverseActualNilSuccessHasIndependentTokenEncoding', 'readerInverseAllInternalBoundedInputProperties', 'readerInverseEverySuccessfulBoundedInputReconstructsActualTokens', 'readerInverseInitializedSuccessExactAtActualLiterals', 'readerInverseInitializedSuccessExactWithoutLiteralParameters', 'readerInverseBoundedActualAcceptanceImpliesIndependentEncoding', 'readerInverseIndependentEncodingConstructsActualAcceptance', 'readerInverseActualAcceptanceExactOnBoundedInput', 'readerInverseBoundedActualAcceptanceExactlyIndependentEncoding']
+    required = {'PacketReaderInverseSyntax': ['def resultBody', 'def result', 'def caseFormula', 'def body', 'def property', 'def earlier', 'def allProperties', 'def matrix', 'theorem resultBody_lift', 'theorem result_rename', 'theorem caseFormula_rename', 'theorem body_lift', 'theorem property_rename', 'theorem earlier_rename', 'theorem allProperties_rename', 'theorem matrix_pred', 'theorem intro_result', 'theorem at_fields', 'theorem earlier_at', 'def matrix : Formula 5', 'OriginalUniversalBlock.allMany 3', 'PacketTokensBytes.encoded', 'PacketReaderOutputOrder.output'], 'PacketReaderInverseNil': ['theorem nil_case', 'PacketReaderSuccess.nil_reverse', 'StructuralListSpliceAlgebra.right_nil'], 'PacketReaderInverseConsPoint': ['theorem at_tokens', 'theorem with_tail', 'theorem from_tail_result', 'PacketTokensBytes.cons_iff', 'PacketReaderOutputBackward.step', 'StructuralConsCore.exists_cons'], 'PacketReaderInverseCons': ['theorem at_prefix', 'theorem from_prefix', 'PacketReaderTokenUnits.equation_zero_unit', 'PacketAffineCore.equation_unique', 'earlier_at'], 'PacketReaderInverseCases': ['theorem from_earlier_point', 'PacketReaderPrefixInduction.extract_prefix', 'OmegaStructureAlgebra.successor_not_empty'], 'PacketReaderInverseStep': ['theorem property_from_earlier'], 'PacketReaderInverseInduction': ['theorem progressive', 'theorem all_properties', 'theorem at_code', 'theorem inverse', 'BoundedInduction.induction_on_set', 'PacketReaderInverseSyntax.matrix.neg', 'foundation'], 'PacketReaderInverseInitialized': ['theorem encoded_input_subst', 'theorem at_literals', 'theorem at_success', 'StructuralListUnits.with_units', 'SyntaxNumerals.exists_numeral', 'PacketReaderOutputBackward.nil_accumulator', 'encoded_input_subst'], 'PacketReaderInverseAccepted': ['def accepted', 'def boundedAccepted', 'theorem accepted_rename', 'theorem boundedAccepted_rename', 'theorem intro_accepted', 'theorem from_accepted', 'theorem to_accepted', 'theorem accepted_iff', 'theorem bounded_iff', 'PacketReaderReturnPayload.some_exists', 'PacketReaderTokensInitialized.at_encoded', 'PacketTokensBytesByte.byte_input'], 'ObjectPacketReaderInverse': ['def readerInverseActualNilSuccessHasIndependentTokenEncodingSentence', 'theorem source_readerInverseActualNilSuccessHasIndependentTokenEncoding', 'theorem readerInverseActualNilSuccessHasIndependentTokenEncoding_kernel_certificate', 'theorem native_readerInverseActualNilSuccessHasIndependentTokenEncoding', 'def readerInverseAllInternalBoundedInputPropertiesSentence', 'theorem source_readerInverseAllInternalBoundedInputProperties', 'theorem readerInverseAllInternalBoundedInputProperties_kernel_certificate', 'theorem native_readerInverseAllInternalBoundedInputProperties', 'def readerInverseEverySuccessfulBoundedInputReconstructsActualTokensSentence', 'theorem source_readerInverseEverySuccessfulBoundedInputReconstructsActualTokens', 'theorem readerInverseEverySuccessfulBoundedInputReconstructsActualTokens_kernel_certificate', 'theorem native_readerInverseEverySuccessfulBoundedInputReconstructsActualTokens', 'def readerInverseInitializedSuccessExactAtActualLiteralsSentence', 'theorem source_readerInverseInitializedSuccessExactAtActualLiterals', 'theorem readerInverseInitializedSuccessExactAtActualLiterals_kernel_certificate', 'theorem native_readerInverseInitializedSuccessExactAtActualLiterals', 'def readerInverseInitializedSuccessExactWithoutLiteralParametersSentence', 'theorem source_readerInverseInitializedSuccessExactWithoutLiteralParameters', 'theorem readerInverseInitializedSuccessExactWithoutLiteralParameters_kernel_certificate', 'theorem native_readerInverseInitializedSuccessExactWithoutLiteralParameters', 'def readerInverseBoundedActualAcceptanceImpliesIndependentEncodingSentence', 'theorem source_readerInverseBoundedActualAcceptanceImpliesIndependentEncoding', 'theorem readerInverseBoundedActualAcceptanceImpliesIndependentEncoding_kernel_certificate', 'theorem native_readerInverseBoundedActualAcceptanceImpliesIndependentEncoding', 'def readerInverseIndependentEncodingConstructsActualAcceptanceSentence', 'theorem source_readerInverseIndependentEncodingConstructsActualAcceptance', 'theorem readerInverseIndependentEncodingConstructsActualAcceptance_kernel_certificate', 'theorem native_readerInverseIndependentEncodingConstructsActualAcceptance', 'def readerInverseActualAcceptanceExactOnBoundedInputSentence', 'theorem source_readerInverseActualAcceptanceExactOnBoundedInput', 'theorem readerInverseActualAcceptanceExactOnBoundedInput_kernel_certificate', 'theorem native_readerInverseActualAcceptanceExactOnBoundedInput', 'def readerInverseBoundedActualAcceptanceExactlyIndependentEncodingSentence', 'theorem source_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding', 'theorem readerInverseBoundedActualAcceptanceExactlyIndependentEncoding_kernel_certificate', 'theorem native_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding', 'TheoryTransport.sentence', 'ZFReplay.replay']}
+    texts = {}
+    for mod in modules:
+        text=strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):raise RuntimeError('Whole reader inverse forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text:raise RuntimeError('Whole reader inverse proof drift: '+mod+': '+clause)
+        texts[mod]=text
+    for mod,name,expected in [('PacketReaderInverseInduction', 'inverse', {'hSome', 'hz', 'ho', 'hw', 'hB', 'hBytes', 'hEval'}), ('PacketReaderInverseInitialized', 'at_success', {'hw', 'hBytes', 'hSome'}), ('PacketReaderInverseAccepted', 'bounded_iff', {'hw'})]:
+        header=re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0)))!=expected:raise RuntimeError('Whole reader inverse hidden premise: '+mod+'.'+name)
+    checks=(ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderInverse.native_'+name not in checks:raise RuntimeError('Missing whole reader inverse fixture: '+name)
+    return {'all_successful_internal_bounded_inputs_have_independent_token_encoding_and_exact_output':True,
+            'fixed_Formula5_full_Separation_and_Foundation_discharge_all_whole_inverse_IH':True,
+            'actual_prefix_suffix_code_membership_authorizes_all_smaller_input_instances':True,
+            'emitted_value_equals_actual_token_by_original_equation_uniqueness':True,
+            'real_Cons_token_list_and_backward_accumulator_order_reconstructed':True,
+            'initialized_Parse_iff_Encoded_with_actual_ByteList_and_Some_guards':True,
+            'actual_128_zero_unit_witnesses_eliminated_inside_original_derivation':True,
+            'bounded_acceptance_exactly_independent_encoding_with_internal_Some_existence':True,
+            'all_internal_nonstandard_invalid_candidates_retained_in_original_guarded_statements':True,
+            'no_host_data_recursion_external_standardness_new_kernel_or_object_Choice_added':True,
+            'full_readBytes_Bytes_Tok_tree_forest_packet_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_all_internal_successful_reader_prefix() -> dict:
     modules = ['PacketReaderPrefixSyntax', 'PacketReaderPrefixSmall', 'PacketReaderPrefixReconstruct', 'PacketReaderPrefixContinuePoint', 'PacketReaderSuccess', 'PacketReaderPrefixContinueWitness', 'PacketReaderPrefixContinue', 'PacketReaderPrefixCases', 'PacketReaderPrefixStep', 'PacketReaderPrefixInduction', 'PacketReaderOutputBackwardBase', 'PacketReaderOutputBackwardCons', 'PacketReaderOutputBackward', 'ObjectPacketReaderPrefix']
     schemas = ['readerPrefixOutputOrderBackwardCons', 'readerPrefixOutputOrderExactCons', 'readerPrefixOutputOrderExactNilAccumulator', 'readerPrefixEveryActualEvaluationHasGenuineState', 'readerPrefixActualNilSuccessHasEOFGuardAndReverse', 'readerPrefixActualNilSuccessHasExactGuard', 'readerPrefixActualNilSuccessHasActualReverse', 'readerPrefixActualSomeSuccessExcludesRejection', 'readerPrefixActualSomeSuccessExcludesRejectedHead', 'readerPrefixNonunitSuccessfulInputIsNotNil', 'readerPrefixContinuationReconstructsActualCanonicalCons', 'readerPrefixStrictSuffixCodeMembershipComposes', 'readerPrefixNonzeroContinuationHasSourceGuard', 'readerPrefixContinuationReconstructsActualSpliceCons', 'readerPrefixTerminalDigitReconstructsActualPrefix', 'readerPrefixAllInternalCanonicalPrefixProperties', 'readerPrefixEverySuccessfulBoundedNonemptyInputHasCanonicalPrefix']
@@ -3037,7 +3068,7 @@ def check_all_internal_successful_reader_prefix() -> dict:
             'all_internal_value_positive_scale_accumulator_payload_return_candidates_preserved':True,
             'final_native_prefix_schema_derives_State_from_Eval_without_extra_hypothesis':True,
             'no_host_List_length_recursion_external_standardness_new_kernel_or_object_Choice_added':True,
-            'complete_multi_token_successful_reader_inverse':False,
+            'complete_multi_token_successful_reader_inverse':True,
             'readTokens_Bytes_Canonical_full_program_bridge':False,
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
@@ -3069,7 +3100,7 @@ def check_all_internal_encoded_token_byte_bound() -> dict:
             'continuation_byte_minus_128_has_actual_digit_below_128':True,
             'positive_scale_times_128_is_nonzero_and_not_unit':True,
             'no_external_standardness_host_data_recursion_new_kernel_or_object_Choice_added':True,
-            'successful_reader_canonical_inverse_with_ByteList_preserved':False,
+            'successful_reader_canonical_inverse_with_ByteList_preserved':True,
             'readTokens_Bytes_Canonical_full_program_bridge':False,
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
@@ -3107,7 +3138,7 @@ def check_all_internal_multi_token_encoding_and_reader_output() -> dict:
             'unique_actual_encoded_input_and_all_Parse_return_candidates_jointly_witnessed':True,
             'no_external_standardness_host_data_recursion_new_kernel_or_object_Choice_added':True,
             'encoded_outputs_global_less_than_256_byte_bound':True,
-            'bounded_successful_reader_inverse_canonical_decomposition':False,
+            'bounded_successful_reader_inverse_canonical_decomposition':True,
             'readTokens_Bytes_Canonical_full_program_bridge':False,
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
@@ -3145,7 +3176,7 @@ def check_all_internal_single_varint_segment_consumption() -> dict:
             'original_guard_scale_equals_unit_or_token_nonzero_retained':True,
             'unique_actual_splice_and_all_output_candidate_consumption_constructed':True,
             'no_host_runtime_recursion_new_kernel_or_object_Choice_added':True,
-            'multi_token_segmentation_output_order_and_bounded_inverse':False,
+            'multi_token_segmentation_output_order_and_bounded_inverse':True,
             'readTokens_Bytes_Canonical_full_program_bridge':False,
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
@@ -3306,6 +3337,7 @@ def main() -> None:
     all_internal_multi_token_encoding_and_reader_output = check_all_internal_multi_token_encoding_and_reader_output()
     all_internal_encoded_token_byte_bound = check_all_internal_encoded_token_byte_bound()
     all_internal_successful_reader_prefix = check_all_internal_successful_reader_prefix()
+    all_internal_whole_reader_inverse = check_all_internal_whole_reader_inverse()
     actual_reader_history_prepend_and_run_recursion = check_actual_reader_history_prepend_and_run_recursion()
     actual_reader_initialization = check_actual_reader_initialization()
     actual_EOF_reverse_option_and_real_run_return = check_actual_EOF_reverse_option_and_real_run_return()
@@ -6713,6 +6745,15 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationNormalizesAtActualCode',
                     'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquation',
                     'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseActualNilSuccessHasIndependentTokenEncoding',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseAllInternalBoundedInputProperties',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseEverySuccessfulBoundedInputReconstructsActualTokens',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseInitializedSuccessExactAtActualLiterals',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseInitializedSuccessExactWithoutLiteralParameters',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseBoundedActualAcceptanceImpliesIndependentEncoding',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseIndependentEncodingConstructsActualAcceptance',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseActualAcceptanceExactOnBoundedInput',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding',
                     'PPAC.Migration.Internal.ObjectPacketReaderPrefix.native_readerPrefixOutputOrderBackwardCons',
                     'PPAC.Migration.Internal.ObjectPacketReaderPrefix.native_readerPrefixOutputOrderExactCons',
                     'PPAC.Migration.Internal.ObjectPacketReaderPrefix.native_readerPrefixOutputOrderExactNilAccumulator',
@@ -6827,6 +6868,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderInverse": ('readerInverseActualNilSuccessHasIndependentTokenEncoding', 'readerInverseAllInternalBoundedInputProperties', 'readerInverseEverySuccessfulBoundedInputReconstructsActualTokens', 'readerInverseInitializedSuccessExactAtActualLiterals', 'readerInverseInitializedSuccessExactWithoutLiteralParameters', 'readerInverseBoundedActualAcceptanceImpliesIndependentEncoding', 'readerInverseIndependentEncodingConstructsActualAcceptance', 'readerInverseActualAcceptanceExactOnBoundedInput', 'readerInverseBoundedActualAcceptanceExactlyIndependentEncoding'),
         "ObjectPacketReaderPrefix": ('readerPrefixOutputOrderBackwardCons', 'readerPrefixOutputOrderExactCons', 'readerPrefixOutputOrderExactNilAccumulator', 'readerPrefixEveryActualEvaluationHasGenuineState', 'readerPrefixActualNilSuccessHasEOFGuardAndReverse', 'readerPrefixActualNilSuccessHasExactGuard', 'readerPrefixActualNilSuccessHasActualReverse', 'readerPrefixActualSomeSuccessExcludesRejection', 'readerPrefixActualSomeSuccessExcludesRejectedHead', 'readerPrefixNonunitSuccessfulInputIsNotNil', 'readerPrefixContinuationReconstructsActualCanonicalCons', 'readerPrefixStrictSuffixCodeMembershipComposes', 'readerPrefixNonzeroContinuationHasSourceGuard', 'readerPrefixContinuationReconstructsActualSpliceCons', 'readerPrefixTerminalDigitReconstructsActualPrefix', 'readerPrefixAllInternalCanonicalPrefixProperties', 'readerPrefixEverySuccessfulBoundedNonemptyInputHasCanonicalPrefix'),
         "ObjectPacketTokensByteInput": ('tokensByteSpliceAllInternalProperties', 'tokensByteActualSplicePreservesFullByteGuard', 'tokensByteEncodingAllInternalProperties', 'tokensByteEveryEncodedInputHasFullByteGuard', 'tokensByteGuardAllActualFieldsAtAnyLength', 'tokensByteGuardAllActualFieldsBelowActual256', 'tokensByteGuardAllActualFieldValuesAreBytes', 'tokensByteEncodedInputAllActualFieldsBounded', 'tokensByteEncodedInputEveryFieldValueIsByte', 'tokensByteEncodedInputAndAllInitializedReturns', 'tokensByteUniqueActualBoundedInputAndAllInitializedReturns', 'tokensByteContinuationDigitBound', 'tokensBytePositiveContinuationScaleGuard'),
         "ObjectPacketReaderTokens": ('tokensReaderActualZeroUnitAffineEquation', 'tokensReaderActualEmptyInputExactReturn', 'tokensSpliceExactRightNil', 'tokensSpliceAllCandidateAssociativity', 'tokensSpliceExactSingleton', 'tokensSpliceExactSnocConsReassociation', 'tokensSpliceSingletonSpliceIsActualSnoc', 'tokensReaderReverseConsThroughActualSplice', 'tokensReaderNilRemainingTokensGiveActualReverse', 'tokensReaderConsPreservesExactOutputOrder', 'tokensBytesSeededExactNil', 'tokensBytesSeededExactCons', 'tokensBytesSeededEveryActualInputAndTailHaveUniqueEncoding', 'tokensBytesSeededAllCandidateOutputsUnique', 'tokensBytesIndependentEncodingExactNil', 'tokensBytesIndependentEncodingExactCons', 'tokensBytesIndependentEncodingRequiresActualInput', 'tokensBytesIndependentEncodingRequiresActualOutput', 'tokensBytesEveryActualInputHasUniqueIndependentEncoding', 'tokensBytesIndependentEncodingExactDomain', 'tokensBytesIndependentEncodingAllCandidateOutputsUnique', 'tokensReaderAllInternalTokenListProperties', 'tokensReaderAllInternalEncodedSegmentsAndOutputOrder', 'tokensReaderInitializedExactOriginalTokens', 'tokensReaderUniqueActualEncodedInputAndAllReturns'),
@@ -7851,6 +7893,10 @@ def main() -> None:
         "object_actual_reader_initialization_literals_input_domain_and_empty_equation_proved": True,
         "actual_reader_history_prepend_and_run_recursion_guard": actual_reader_history_prepend_and_run_recursion,
         "object_actual_reader_prepend_history_and_full_run_step_terminal_equations_proved": True,
+        "all_internal_whole_reader_inverse_guard": all_internal_whole_reader_inverse,
+        "object_all_internal_whole_token_reader_inverse_proved": True,
+        "object_initialized_reader_success_iff_independent_encoding_proved": True,
+        "object_bounded_accepted_byte_stream_iff_independent_token_encoding_proved": True,
         "all_internal_successful_reader_prefix_guard": all_internal_successful_reader_prefix,
         "object_successful_nonempty_bounded_reader_prefix_proved": True,
         "object_reader_prefix_strict_actual_suffix_code_descent_proved": True,
