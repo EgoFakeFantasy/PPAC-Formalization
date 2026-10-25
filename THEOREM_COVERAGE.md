@@ -23,7 +23,7 @@ The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historica
 | Main OpenAI forcing chain | No completed native counterpart yet | Original forcing, algebra, construction and models remain to be migrated along their actual dependency chain |
 | Internal Proof/Con and final theorem | Not complete | Original background, all internal codes, full axiom test and final Derives required |
 
-The completed donor LCarrier ZF/ZFC theorems include full schemas; see REUSE_CONTRACTS for their exact types and the outstanding integration distinction. Do not describe the existing ZF schema equivalence or reverse proof compilation as missing.
+The newer native YesMetaZFC 7979336 has l_model_zf_l/l_model_zfc_l/l_model_gch_l for arbitrary internal ZF models with full schemas; directed ZFC build and three-endpoint trust=0 audit passed. This corrects the previous inventory restricted to ZFSet LCarrier. Version/language/native-kernel integration is pending; see REUSE_CONTRACTS. Do not describe the existing ZF schema equivalence or reverse proof compilation as missing.
 
 Current local proof acceptance is recorded in STATUS and verification/summary.json; historical counts are not completion estimates. Original OpenAI Lean 4.34.1 Comparator has not run; the exact toolchain is now installed in an isolated workspace and the original Main build passed all 8998 jobs and five endpoints passed trust=0 / standard-three dependency audit. Full Comparator remains unavailable without Linux/landrun.
 
@@ -56,13 +56,13 @@ This batch has 59 audited declarations; directed build and trust=0 preaudit pass
 | Name.HS.smul hereditary step | ForcingHSAction.hs_action and kernel_certificate: original Child induction, all internal names | No assumed HS closure; algebraic Context remains |
 | SymmetricNames.forces_symmetry | ForcingHSAction.domain_transport/formula_kernel_certificate: actual HS domain, both directions proved | Concrete forward/inverse Context and order preservation must be supplied |
 
-Current batch: 47 new declarations, one generalized existing mapping congruence, four native certificates; full verifier passed (29595 declarations, 9 commands including 5 trust=0, zero warnings). Existing native sentence-certificate dependencies are retained; no trust expansion. These counts measure audit coverage, not completion of stages 7–10.
+Earlier accepted batch: 47 new declarations, one generalized existing mapping congruence, four native certificates; full verifier passed (29595 declarations, 9 commands including 5 trust=0, zero warnings). Existing native sentence-certificate dependencies are retained; no trust expansion. These counts measure audit coverage, not completion of stages 7–10.
 
 | Concrete source dependency | Current object result | Remaining boundary |
 |---|---|---|
 | ProductNames.system: Equiv.Perm I | ForcingLabelPermutations constructs the exact internal permutation set via donor function space and Separation | Conjugation graph and subgroup-image closure are proved below; concrete condition action remains |
 | SupportFilter.Fix / mem_Fix | Unique internal fixing subset; actual identity/inverse/composition witnesses stay in it; three native certificates | No small-support cardinal or normal-filter claim |
-| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | The graph and exact stabilizer set image are now proved below; small-support bounds/filter remain |
+| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | The graph and exact stabilizer set image are now proved below; finite-union/intersection and complete normality remain; support-family clauses are proved below |
 
 This label batch has 41 declarations; directed build and trust=0 preaudit passed. Full verification passed. Its five certificates retain only the existing nativeZF trust baseline.
 
@@ -70,6 +70,10 @@ This label batch has 41 declarations; directed build and trust=0 preaudit passed
 |---|---|---|
 | SupportFilter.conjugate_fix map | ForcingConjugationGraph.exists_graph: unique internal permutation graph, with actual inverse/surjectivity proof | Concrete condition-action covariance remains |
 | SupportFilter.conjugate_fix equality | fixing_image and image_kernel_certificate: exact fixing-subgroup set image | No small-support cardinal conclusion |
-| SupportFilter.conjugate_mem subgroup map | identity/inverse/composition covariance; subgroup_image and subgroup_kernel_certificate | Small-support bound and full filter membership still to supply |
+| SupportFilter.conjugate_mem subgroup map | identity/inverse/composition covariance; subgroup_image and subgroup_kernel_certificate | Support-family conjugation membership is supplied below; finite-union/intersection remain |
 
 This conjugation batch has 30 declarations and three native certificates. Directed build and trust=0 preaudit passed; full verification passed. No new trust dependency or assumed graph/stabilizer-image conclusion.
+
+| Source dependency | New native migration | Remaining boundary |
+|---|---|---|
+| SupportFilter.subgroupFilter / top_mem / upward_closed / conjugate_mem | ForcingSupportSize and ForcingSupportFilter: actual source injection and native cardinal bound; unique support-defined subgroup family; top, upward among subgroups, conjugation; six native certificates | inf_mem finite-union bound/intersection closure and ProductNames.actionHom remain. Do not mark complete IsNormalFilter |

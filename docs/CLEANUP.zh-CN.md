@@ -28,3 +28,9 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 此前冻结目录中的 14 个 packet 候选及重复 SetSatisfactionRow 确认没有活动 Lean import 后退役；连同两份原清单共移除 17 个散文件、100472 字节。删除前生成并逐文件 SHA-256 回验 verification/retired-unused-candidates-20261026.zip（24306 字节），仅作恢复证据，不是待继续代码。已验收 packet 模块的依赖裁剪尚未完成，未据名称删除它们。这里覆盖上文“冻结候选暂保留”的旧裁决。
 
 覆盖表删掉被后来验收推翻的历史“尚未”描述，流程保持原 1–11 阶段。主目标没有改写；完整公式作用对称性通用证书与实际 HS 实例分别记录。
+
+## 本轮生成元数据清理
+
+另确认并删除 369 份已消费／冻结的 `.local` 计划、wrapper-spec、batch 和 checks 元数据，共 4,371,395 字节；没有 Git 跟踪文件引用这些文件名。删除前建立并逐项 SHA-256 回验 `verification/retired-generator-metadata-20261026.zip`；清单在 `verification/cleanup-generator-metadata-20261026.json`。只处理已解析到本仓 `.local` 顶层的普通文件，跳过重解析点，保留正式源、日志和证明。
+
+本轮静态 import 闭包发现 2137 个 Internal 模块中有 1906 个未被非 Internal 正式模块传递导入；这个数字不包含审计根，不能据此将全部模块判为错误或无用。已验收冻结证明尚未完成精确裁剪，未声称已全部删除。没有残留 Lean/Lake 进程需要终止；正式验收继续串行。

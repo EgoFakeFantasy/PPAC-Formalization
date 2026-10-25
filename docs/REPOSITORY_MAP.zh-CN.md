@@ -22,3 +22,5 @@
 不是仅凭仓库名相近就整体引入。IBLP/BLP 等未经本轮全量构建。
 
 另一本地现成项目 `lean-constructible-universe-stage4` 已有 LStageZF、Def／Gödel运算、逐公式编译和集合满足关系配套；应消费其构造与有限公式，补到本项目语言／背景／原核的必要接口，不重新从外部工程造同类基础。其 ZFSet 特定模型终局与本项目的原ZF内部Con目标仍须通过实际接口衔接。
+
+本轮纠错：本地新版 YesMetaZFC `work/yesmetazfc-analytic-comprehension`（7979336）具有任意内部 ZF 模型的 Jensen L、全 Separation/Collection、ZFC/GCH 结论及内部 forcing 配套。此前只查固定旧版和另一 LCarrier 工程不充分；精确端点审计、版本差异和移植边界见 REUSE_CONTRACTS。活动 Lake 依赖仍为固定 039c8e1，不能声称新版已接入。

@@ -3434,7 +3434,9 @@ def main() -> None:
                                ("forcing_hs_action", "ForcingHSAction", 10),
                                ("forcing_label_permutations", "ForcingLabelPermutations", 32),
                                ("forcing_label_conjugacy", "ForcingLabelConjugacy", 9),
-                               ("forcing_conjugation_graph", "ForcingConjugationGraph", 30)):
+                               ("forcing_conjugation_graph", "ForcingConjugationGraph", 30),
+                               ("forcing_support_size", "ForcingSupportSize", 19),
+                               ("forcing_support_filter", "ForcingSupportFilter", 25)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7372,8 +7374,13 @@ def main() -> None:
         "source_forcing_label_group_conjugation_set_graph_constructed": True,
         "source_forcing_label_fixing_conjugation_exact_set_image_proved": True,
         "source_forcing_label_subgroup_conjugation_closure_proved": True,
+        "source_forcing_small_support_family_constructed": True,
+        "source_forcing_small_support_empty_subset_image_bounds_proved": True,
+        "source_forcing_small_support_top_upward_conjugation_proved": True,
+        "source_forcing_small_support_union_bound_proved": False,
+        "source_forcing_small_support_intersection_closure_proved": False,
         "source_forcing_small_support_normal_filter_constructed": False,
-        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Cardinal support filter and ProductNames condition-action instance remain.",
+        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The finite-union cardinal bound, intersection closure and ProductNames condition-action instance remain.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,

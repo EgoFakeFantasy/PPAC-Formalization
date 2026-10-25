@@ -345,3 +345,5 @@ import PPAC.Migration.ForcingHSAction
 import PPAC.Migration.ForcingLabelPermutations
 import PPAC.Migration.ForcingLabelConjugacy
 import PPAC.Migration.ForcingConjugationGraph
+import PPAC.Migration.ForcingSupportSize
+import PPAC.Migration.ForcingSupportFilter

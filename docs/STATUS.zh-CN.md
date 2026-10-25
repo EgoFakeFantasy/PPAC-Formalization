@@ -4,32 +4,38 @@
 
 背景为纯成员语言、完整 Separation/Collection 的 nativeZF。终点为原核 `Derives nativeZF [] (Con_ZF → Con_U)`，其中 U = ZF + PP + ACwo + ¬AC，Con 量化全部内部证明码。
 
+## 本轮纠正的实质误报
+
+此前以固定旧版 YesMetaZFC 和另一 LCarrier 工程的边界推断现有资产范围，漏查了 `../yesmetazfc-analytic-comprehension` 的新版底座。这使“尚未定位到任意 nativeZF 模型的 L 终局”的判断不成立。
+
+新版底座 7979336 已有 `InnerModel.l_model_zf_l / l_model_zfc_l / l_model_gch_l`：任意 ZF 模型中的实际内部 L 满足完整 ZF、ZFC、GCH，含全部 Separation/Collection，允许外部非标准、非良基模型。本轮 ZFC 端点定向构建通过（224 任务），三端点 trust=0 依赖审计通过。这里不是只有 ZFSet 上的 LCarrier。
+
+真正待接的是新版供体到本仓固定 039c8e1 底座的版本／语言／对象相对化接口及内部证明归约。不能把这些现成数学定理再列为待证明，也不能把供体模型定理直接当成最终对象 Con。ZFC 依赖闭包有 223 模块，其中旧底座缺 142 个、另有 28 个内容不同；本轮未擅自整体换底座。GCH 不属于当前主线的新增义务。
+
 ## 已完成，不再误列待做
 
 - 全语言、重命名／替换、19 源规则原核传输、ZF/U 双向回放、全公理模式和两种 AC 对应。
-- YesMetaZFC 集合构造、内部递归、原完备性；BMS 原核回传方式已接到 ModelTransfer。
-- 名字、求值、映射、条件作用、check/pair/union 构造、原子递归及精确方程、基础定律及原子／公式作用对称性。
-- 固定公式强迫与 19 规则逐固定证明保真；HS 字面稳定子、内部闭包定义、展开、可定义唯一性、空/check 闭包。
-- L 供体的完整 LCarrier ZF/ZFC 结论已经存在。已核对其类型与 LCarrier 定义：它是 ZFSet 子类；待接的是当前任意 nativeZF 模型中的对象解释接口，不是重新证明供体结论。
+- 底座内部集合构造、递归和原完备性；BMS 原核回传方法已用于 ModelTransfer。
+- 名字、求值、映射、条件作用、check/pair/union 构造、原子递归／定律及公式作用对称性。
+- 固定公式强迫与逐固定证明保真；HS 字面定义、空/check 闭包、通用 HS.smul 和实际 HS 域公式对称性。
+- 标签置换集、稳定子、共轭集合图、精确稳定子像和子群像闭包。
 
-## 本轮沿源依赖完成的证明
+## 本轮继续迁移
 
-`ForcingConjugationGraph` 沿 SupportFilter.conjugate_fix/conjugate_mem，把已证的逐点对应提升为实际集合图。
+沿锁定 OpenAI `SupportFilter.subgroupFilter/top_mem/upward_closed/conjugate_mem → ProductNames.system`，新增 ForcingSupportSize / ForcingSupportFilter：把源单射公式对应到底座 CardinalLessOrEqual，复用实际逆值关系、单射复合、幂集和分离构造小支撑子群族，证明顶、对子群的向上闭包和共轭闭包。44 项声明、六类原核 Derives 证书。
 
-直接调用底座 `exists_setFunctionFromTo_of_denote` 构造标签置换载体上的 `s ↦ r s r⁻¹` 图，以原关系外延性证明唯一性，并证明逆变换、单射性及满射性。随后证明该图将 Fix J 精确映到 Fix(r-image J)，并保持子群的恒等／逆／复合闭包。没有把这些结论作为输入字段。
+未完成有限并的基数界及交闭包，因此不宣称完整正规滤子完成。其无限基数算术供体已存在；继续适配其真实前提，不重建基数论。具体 ProductNames.actionHom、HS pair/union 及解释后的全 ZF 公理仍待接。
 
-本批 30 项声明、三类 `FirstOrder.Derives nativeZF [] ...` 证书。定向构建及 trust=0 预审计已通过，完整验收已通过。这里已经消去“标签群共轭集合图尚未构造”的缺口；小支撑基数界、完整正规滤子和具体条件 actionHom 仍未完成。
-
-上一批 aeb0d0c 的标签置换集、逐点稳定子、内部标签像和逐点共轭继续复用。1bf58f5 的通用 HS.smul 与实际 HS 域公式对称性不重做。
+本轮完整验收通过：2875 个构建任务；29710 项声明（618 无公理依赖、29092 依赖已记录）；9 条命令退出 0，其中 5 条 trust=0；零 Lean 警告；2464 份验收文件哈希全部匹配。新增 44 项声明、六类原核证书；这不是最终 Con 或完整阶段 7 的验收。 详情见 verification/summary.json 和 commands.json。
 
 ## 真正剩余
 
-5–6：具体系统呈现和 L 对象解释接口。7：具体 PPAC 群／正规滤子实例、pair/union 的 HS 闭包、解释后的完整 ZF 公理模式。8–9：源代数构造及同一系统的 SVC、ACwo、非选择见证。10：全秩 PP、现成证明机器的 ZF/U 特化、全部内部码归约与最终 Con。11：终验。
+5–6：具体系统呈现、新版现成 L 定理的版本／语言／原核适配。
+7：有限并支撑界、交闭包、具体条件作用、HS 闭包及解释公理。
+8–9：原 Algebra/Construction/Models 的构造、不变量、SVC、ACwo、商单射和非选择见证。
+10：原 Main 全秩 PP 装配、现成证明机器 ZF/U 特化、全部内部码归约、最终 Con。
+11：完整终验。
 
-不再把通用 HS.smul 或 HS 域公式对称性列为未证明；具体实例仍未完成。NatPacket 字节兼容及 generic-filter truth 支线退出本路线，重复满足关系实现和未接入候选已退役；保留有实际依赖的已验收代码。
+冻结 NatPacket／字节兼容，排除泛滤真值支线。无现行消费者不自动证明一个已验收引理无用；未对现有证明库按文件名批量删除。本轮清理范围见 CLEANUP。
 
-此前误判来自把辅助验收当成主链进度、未分清供体已有定理与本仓接口、没有在增加支线前核对实际消费者。对象层要求从早期就存在，这些错误不能归因于用户改动目标。
-
-上一验收基点为 aeb0d0c。原 OpenAI 4.34.1 基线为 8998 构建任务及五端点 trust=0 通过；本轮只读取源和供体，没有重跑或修改外部仓库。
-
-本轮完整验收：2873 个构建任务；29666 项声明审计（612 项无公理依赖、29054 项依赖已记录）；9 条命令退出 0，其中 5 条 trust=0，零警告；2462 份文件哈希匹配。新增 30 项声明、三类原核证书，未扩大既有可信基。小支撑正规滤子、具体条件作用和最终对象 Con 仍未完成。
+此前误判的责任在我：没有把旧锁定依赖与用户已经完成的新版库分开，没有充分查明现成接口，又把辅助验收误当成主链接近完成。对象层要求从早期就存在，不能归因于用户改变目标。

@@ -1,6 +1,6 @@
 # 现成接口复用与精确边界（2026-10-26 重审）
 
-本表取代重复的逐批进度叙述；旧验收段可从 Git `629b815` 恢复。固定 YesMetaZFC 为 `039c8e132cc19671d73a3933c66b4799d2599dd6`，本轮未更新依赖或修改其他仓库。源码位置与依赖指纹以 SOURCE_LOCK 为准。
+本表取代重复的逐批进度叙述；旧验收段可从 Git `629b815` 恢复。固定 YesMetaZFC 为 `039c8e132cc19671d73a3933c66b4799d2599dd6`，本轮未更新活动依赖或修改供体源码；另核对了新版 YesMetaZFC 7979336，见下文。源码位置与依赖指纹以 SOURCE_LOCK 为准。
 
 | 已有资产 | 精确入口／本仓实际消费者 | 正确状态和边界 |
 |---|---|---|
@@ -11,7 +11,8 @@
 | 内部函数空间 | FunctionSpaceConstruction.lean 的 ZF.exists_functionSpace；ForcingLabelPermutations.exists_carrier | 本轮直接消费其全部内部函数图集合，再分离置换；没有重建幂集／积或函数空间。固定源文件哈希纳入 SOURCE_LOCK |
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。具体 PPAC 群同态族未实例化 |
 | 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；不能拿单个 LCarrier 模型冒充其全模型前提 |
-| L 的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 已完成，包含完整模式。Model.lean:52/96 的 LCarrier 为 ZFSet 子类；到本项目任意 nativeZF 模型的对象解释接口仍未闭合。不能据此宣称其他位置没有实现过该接口 |
+| 旧 LCarrier 工程的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 该旧工程已完成完整模式，但 LCarrier 是 ZFSet 子类。这个限制不能概括新版 YesMetaZFC：其任意 ZF 模型的内部 L 定理已存在，见下一行 |
+| 新版原生 L 数学 | ../yesmetazfc-analytic-comprehension，7979336；InnerModel/Jensen/ZF/Model.lean:15 l_model_zf_l、Choice.lean:14 l_model_zfc_l、GCH/Model.lean:47 l_model_gch_l | 任意 ZF 模型，完整分离／收集；本轮 ZFC 定向构建及三端点 trust=0 通过。待移植版本、Project 语言、相对化及原核接口；不是待重证的 L 数学。GCH 非当前必需工作 |
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；实际 L 域满足全部前提仍待接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | 已接通；保留解释背景和域非空前提，不等于 nativeZF 已证明 ZFC 的全部 L 相对化 |
 
@@ -56,3 +57,13 @@ ForcingHSAction 的稳定子共轭复用 ForcingConditionGraphs.exists_inverse/e
 本轮 ForcingConjugationGraph 直接调用 FunctionConstruction.exists_setFunctionFromTo_of_denote、Model/SetTheory/FunctionSemantics.IsSetRelation.eq_of_pairMember_iff 和既有 binary_semantics；未新增函数图后端。Subgroup 的对象公式复用既有 closed，证明实际共轭保持其三种运算闭包，供源 conjugate_mem 使用。
 
 后续支撑界已定位的供体：SetTheory/Card/Aleph/Multiplication.lean:345 `infiniteCardinal_selfMultiplication`。精确前提为 Models ZF、已解释有序对约定、IsOmega ω、IsCardinal ω、IsInfiniteCardinal ω κ，结论 IsCardinalMultiplication κ κ κ。本轮只核对入口，尚未完成支撑并的适配，不把该既有定理报为待重建。
+
+## 本轮复用审查纠错
+
+此前仅检查锁定旧底座与 ZFSet LCarrier 工程，遗漏新版底座的任意模型内部 L。新版定义 `l_model_l` 的域是 `{x : M.Domain // L_d x}`，M 是任意内部 ZF 模型；与旧 LCarrier 的模型范围不同。实际 ZFC 消费完整 Separation/Collection，并由 Jensen 全局良序得 Choice，无额外对象 AC 前提。
+
+ZFC 端点依赖闭包 223 模块，相对固定 039c8e1 缺 142 模块、28 模块不同；不能仅拷贝两个终点或直接改 import。后续先移植所需扩展及语言对应，消费现成定理，停止扩写旧的独立 L 构造路线。现成 GCH 只作资产记录，不加入当前必经路线。原生 ZF 端点审计为标准三项及七项已有 FreeClosed 证书；ZFC/GCH 另含 Choice 句子的 FreeClosed 证书，不能误报为向背景添加 AC。
+
+同一新版库还有内部强迫名字、自动同构及 ZF 保持接口；尚未核对它们与 OpenAI 的 HS 受限强迫完全一致，不能据名称直接替换 SymmetricChoice.forces_ZF，也不将这些已有数学报为不存在。下一次扩写类似基础前必须先核对这些接口。
+
+本轮实际已消费的底座接口：ForcingSupportSize 使用 `exists_setInjectionFromTo_of_denote` + `inverseValue` + `exists_compositionInjection`；ForcingSupportFilter 使用原幂集／分离、实际 Fixing 和共轭像。小支撑族、空／子集／置换像大小界和顶／向上／共轭已构造；有限并界、交闭包、具体 actionHom 仍待接。数学背景和源消费者不变。
