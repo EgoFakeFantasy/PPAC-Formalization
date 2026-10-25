@@ -299,27 +299,29 @@ theorem equivalentMaps_semantics {n m : Nat} (v : Fin m → M.Carrier .set)
     paramsUp, Fin.lastCases_last, Fin.lastCases_castSucc]
   exact forall_congr' (fun _ => forall_congr' (fun _ => ⟨fun h => ⟨h.1, h.2⟩, fun h => ⟨h.mp, h.mpr⟩⟩))
 
-theorem mapping_congr {n : Nat} {f g : Formula (n+2)} {params : Fin n → M.Carrier .set}
-    (he : ∀ x y, MapRel f params x y ↔ MapRel g params x y) (sigma output : M.Carrier .set) :
-    Mapped f params sigma output ↔ Mapped g params sigma output := by
-  have transfer : ∀ {a b : Formula (n+2)}, (∀ x y, MapRel a params x y ↔ MapRel b params x y) →
-      Mapped a params sigma output → Mapped b params sigma output := by
-    intro a b hab hm
-    obtain ⟨graph, hGood, hEdge⟩ := hm
-    refine ⟨graph, ?_, hEdge⟩
+theorem mapping_congr {n m : Nat} {f : Formula (n+2)} {g : Formula (m+2)}
+    {params : Fin n → M.Carrier .set} {other : Fin m → M.Carrier .set}
+    (he : ∀ x y, MapRel f params x y ↔ MapRel g other x y) (sigma output : M.Carrier .set) :
+    Mapped f params sigma output ↔ Mapped g other sigma output := by
+  have transfer : ∀ {j l : Nat} {a : Formula (j+2)} {b : Formula (l+2)}
+      {v : Fin j → M.Carrier .set} {w : Fin l → M.Carrier .set},
+      (∀ x y, MapRel a v x y ↔ MapRel b w x y) → Mapped a v sigma output → Mapped b w sigma output := by
+    intro j l a b v w hab hm
+    obtain ⟨graph,hGood,hEdge⟩ := hm
+    refine ⟨graph,?_,hEdge⟩
     intro s o hs
-    obtain ⟨hc, hp⟩ := hGood s o hs
-    refine ⟨hc, ?_⟩
-    apply (ForcingMapConditions.operator_semantics b params s graph o).mpr
-    have hEq := (ForcingMapConditions.operator_semantics a params s graph o).mp hp
+    obtain ⟨hc,hp⟩ := hGood s o hs
+    refine ⟨hc,?_⟩
+    apply (ForcingMapConditions.operator_semantics b w s graph o).mpr
+    have hEq := (ForcingMapConditions.operator_semantics a v s graph o).mp hp
     intro z
     constructor
     · intro hz
-      obtain ⟨tau, condition, v, c, ht, hv, hr, hCode⟩ := (hEq z).mp hz
-      exact ⟨tau, condition, v, c, ht, hv, (hab condition c).mp hr, hCode⟩
-    · rintro ⟨tau, condition, v, c, ht, hv, hr, hCode⟩
-      exact (hEq z).mpr ⟨tau, condition, v, c, ht, hv, (hab condition c).mpr hr, hCode⟩
-  exact ⟨transfer he, transfer (fun x y => (he x y).symm)⟩
+      obtain ⟨tau,condition,value,c,ht,hv,hr,hCode⟩ := (hEq z).mp hz
+      exact ⟨tau,condition,value,c,ht,hv,(hab condition c).mp hr,hCode⟩
+    · rintro ⟨tau,condition,value,c,ht,hv,hr,hCode⟩
+      exact (hEq z).mpr ⟨tau,condition,value,c,ht,hv,(hab condition c).mpr hr,hCode⟩
+  exact ⟨transfer he,transfer (fun x y => (he x y).symm)⟩
 
 def congruenceSentence {n : Nat} (f g : Formula (n+2)) : Source.Sentence :=
   let rho : Fin n → Fin (n+2) := fun i => i.castSucc.castSucc

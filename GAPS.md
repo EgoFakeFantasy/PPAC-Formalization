@@ -8,11 +8,11 @@ Use the original 1–11 stages in docs/AGENT_WORKFLOW.zh-CN.md. Final target rem
 
 5–6: internal pairs/graphs/omega/recursion, names, evaluation, map/action laws and check/pair/union constructions are accepted. Concrete source-system presentation and the complete nativeZF L interpretation adapter remain. Donor LCarrier ZF/ZFC theorems and full schemas already exist; their current object integration is incomplete.
 
-7: constructed atomic recursion/equations/laws, atomic action symmetry, full fixed-formula forcing, all 19-rule fixed-proof soundness and generic formula action symmetry are accepted. The formula action certificate retains explicit domain-transport hypotheses.
+7: constructed atomic recursion/equations/laws, atomic action symmetry, full fixed-formula forcing, all 19-rule fixed-proof soundness and generic formula action symmetry are accepted. The generic formula certificate retains domain-transport hypotheses; ForcingHSAction now discharges them for the actual HS predicate under explicit algebraic contexts.
 
 The current ForcingStabilizer/ForcingHS/ForcingHSCheck batch is fully accepted: literal stabilizer subsets, HS internal closed witnesses, exact source recursion equation, uniqueness among definable solutions, empty HS and check HS for all internal sets. It reuses native Collection/Separation/Union/Insert, Child induction and checkName action laws. No external well-foundedness or arbitrary assumed Symmetric predicate.
 
-Remaining in 7: actual PPAC group/action/normal-filter presentation; HS.smul and pair/union HS closure; instantiate and discharge the HS-domain transport in formula symmetry; force every target ZF axiom scheme. Empty/check results retain original top-filter, valid-condition and fixed-action premises, to be supplied by the concrete system.
+Remaining in 7: actual PPAC group/action/normal-filter presentation; pair/union HS closure; instantiate the proved HS action and formula symmetry certificates with the concrete PPAC algebraic contexts; force every target ZF axiom scheme. Empty/check results retain original top-filter, valid-condition and fixed-action premises, to be supplied by the concrete system.
 
 8–9: migrate the actual source Algebra/Construction and Models chain: monoid/placement/conservative hull, SVC, ACwo, same-model quotient injections and notAC witnesses. All-rank and exact-source hypotheses must be retained.
 
@@ -21,3 +21,5 @@ Remaining in 7: actual PPAC group/action/normal-filter presentation; HS.smul and
 11: final theorem/quantifier/trust/source audit has not started.
 
 Decision density, atomic_truth, exists_truth_generic and byte/packet compatibility are outside the selected direct proof-reduction route. Unintegrated packet candidates and duplicate satisfaction code were retired. Existing audited dependencies are retained; do not use their counts as a progress estimate.
+
+The current 47-declaration batch (ForcingNameConjugacy, ForcingStabilizerTransport, ForcingHSAction) is fully accepted: four native certificates, literal stabilizer conjugacy, HS.smul by original Child induction, and actual HS-domain formula symmetry. Concrete group/action/normal-filter instantiation remains unproved; no HS preservation premise was assumed.

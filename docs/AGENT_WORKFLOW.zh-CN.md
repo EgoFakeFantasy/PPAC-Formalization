@@ -10,9 +10,9 @@
 | 2 | 句法与源推导传输 | 重命名、替换、有限支撑、19 规则及反向编译，原核 Derives 证书 | 已完成外部证书迁移；内部任意码归约归阶段 10，不回滚本项 |
 | 3 | 全理论对应 | 完整 Separation/Replacement ↔ 原 Separation/Collection，全部固定公理、两种 AC；ZF/U 双向回放 | 已完成；不得把完整模式再报成未证明 |
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
-| 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、HS 作用闭包与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
+| 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、具体系统中的 HS 作用实例与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 其他 L 工程的 ZF/ZFC 结论已有；核对并补到当前对象解释的接口和真实前提。原 LCarrier 是 ZFSet 子类，不能直接代替所有 nativeZF 模型的结论 |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包本轮已通过完整验收；目标端主链未完成 | 接实际 poset/群/正规滤子呈现、HS.smul 和 pair/union 闭包、实际 HS 域的公式作用对称性、全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；本轮通用 HS.smul 和实际 HS 域公式对称性已验收；目标端主链未完成 | 接实际 poset/群/正规滤子呈现、pair/union 闭包、将已证 HS 作用与公式对称性实例化到具体系统、全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -30,10 +30,8 @@
 
 
 
-本轮消费者：ForcingNames.Name.Symmetric/HS/hs_iff/empty_HS/check_HS → SymmetricSystem.Name（SymmetricNames.lean）以及 Name.check（SymmetricSets.lean:108–110）。字面稳定子和 HS 内部闭包集直接复用原 Separation/Collection、Union/Insert、名字映射及 Child 归纳；check_HS 复用已验收的 checkName 精确子名字方程和固定条件作用。不是新增满足关系或重新实现递归后端。
+本轮源链：ForcingNames.Name.HS.smul → SymmetricNames.forces_symmetry → Separation 名字作用。ForcingNameConjugacy/ForcingStabilizerTransport/ForcingHSAction 复用现成条件图、名字映射、Child 归纳和 ModelTransfer；没有另建递归、满足关系或完备性。47 项新声明、四类原核证书；mapping_congr 泛化到不同参数表。
 
-ForcingStabilizer / ForcingHS / ForcingHSCheck 共 59 项声明、五类原核证书；定向构建及 trust=0 预审计通过，完整验收已通过。内部全秩名字和所有内部集合均在范围内；无需外部 WellFounded。原 Name 子类型在对象语言中明确表现为 IsName 守卫。
+已消去一般 H 的闭包／满射性假设；留下明确的条件图作用族、共轭协变与正规滤子闭包。下一依赖为 ProductNames.system 的 Γ = Equiv.Perm I、actionHom 和 SupportFilter.subgroupFilter μ 提供这些代数前提，以及 pair/union HS 闭包。通用 HS.smul 不再是待证项，具体实例仍是待接项。不得恢复 NatPacket 或泛滤真值支线。
 
-剩余对象前提与消费者：具体 PPAC 群作用/正规滤子 → HS.smul、pair_HS、union_HS → 实际 HS 量词域的公式作用对称性与 ZF 全模式。不得把已完成的 HS 定义、展开和空/check 闭包再次报为待做。第 8–10 阶段仍按源实际依赖迁移代数构造、模型应用、全秩 PP 与内部 Con；不加入新阶段，不恢复泛滤真值或 NatPacket 字节支线。
-
-本轮完整验收：2866 个构建任务；29548 项声明审计（598 项无公理依赖、28950 项依赖已记录）；9 条命令退出 0，其中 5 条 trust=0，零警告；2456 份文件哈希匹配。59 项新增声明、五类原核证书均已覆盖，未扩大既有可信基；实际系统的 HS 作用闭包与最终对象 Con 仍未完成。
+本轮完整验收：2869 个构建任务；29595 项声明审计（601 项无公理依赖、28994 项依赖已记录）；9 条命令退出 0，其中 5 条 trust=0，零警告；2459 份文件哈希匹配。新增 47 项声明、四类原核证书，泛化一个既有映射同余定理；未扩大既有可信基。具体 PPAC 系统实例与最终对象 Con 仍未完成。

@@ -339,3 +339,6 @@ import PPAC.Migration.ForcingFormulaSymmetry
 import PPAC.Migration.ForcingStabilizer
 import PPAC.Migration.ForcingHS
 import PPAC.Migration.ForcingHSCheck
+import PPAC.Migration.ForcingNameConjugacy
+import PPAC.Migration.ForcingStabilizerTransport
+import PPAC.Migration.ForcingHSAction

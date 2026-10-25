@@ -3428,7 +3428,10 @@ def main() -> None:
                                ("forcing_formula_symmetry", "ForcingFormulaSymmetry", 13),
                                ("forcing_stabilizer", "ForcingStabilizer", 19),
                                ("forcing_hs", "ForcingHS", 32),
-                               ("forcing_hs_check", "ForcingHSCheck", 8)):
+                               ("forcing_hs_check", "ForcingHSCheck", 8),
+                               ("forcing_name_conjugacy", "ForcingNameConjugacy", 16),
+                               ("forcing_stabilizer_transport", "ForcingStabilizerTransport", 21),
+                               ("forcing_hs_action", "ForcingHSAction", 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7335,7 +7338,8 @@ def main() -> None:
         "source_forcing_literal_stabilizer_constructed": True,
         "source_forcing_HS_definition_unfolding_and_definable_uniqueness_proved": True,
         "source_forcing_empty_HS_proved": True,
-        "source_forcing_HS_action_closure_proved": False,
+        "source_forcing_HS_action_closure_native_schema_proved": True,
+        "source_forcing_HS_action_closure_concrete_PPAC_instance_proved": False,
         "source_forcing_HS_pair_union_closure_proved": False,
         "source_atomic_left_right_swap_induction_native_certificate_proved": True,
         "source_atomic_relations_recursion_constructed": True,
@@ -7348,10 +7352,12 @@ def main() -> None:
         "source_forcing_fixed_formula_native_monotonicity_and_dense_closure_proved": True,
         "source_forcing_sound_all_19_rules_fixed_proof_native_schema_proved": True,
         "source_forcing_sound_arbitrary_internal_code_reduction_proved": False,
-        "source_forcing_formula_actual_HS_domain_instantiated": False,
+        "source_forcing_formula_HS_domain_native_schema_instantiated": True,
+        "source_forcing_formula_HS_domain_concrete_PPAC_system_instantiated": False,
         "source_forcing_formula_action_symmetry_native_schema_proved": True,
-        "source_forcing_formula_action_symmetry_actual_HS_instance_proved": False,
-        "source_forcing_formula_action_symmetry_scope": "Every fixed formula; explicit object H-domain closure and surjectivity, constructed atomic symmetry, existing actCode instance. Actual HS domain obligations remain.",
+        "source_forcing_formula_action_symmetry_HS_native_schema_proved": True,
+        "source_forcing_formula_action_symmetry_concrete_PPAC_instance_proved": False,
+        "source_forcing_formula_action_symmetry_scope": "Every fixed formula; constructed atomic symmetry and existing actCode. ForcingHSAction discharges domain closure/surjectivity for actual HS under explicit algebraic normal-filter contexts in both directions. Concrete PPAC group/action/filter instances remain.",
         "source_atomic_action_symmetry_native_certificates_proved": True,
         "source_atomic_action_symmetry_scope": "All internal raw names; definable injective map/order-isomorphism on P, with actual actCode permutation instance. Final PPAC group and HS remain uninstantiated.",
         "source_atomic_decision_truth_branch_required_for_selected_route": False,
