@@ -2933,6 +2933,44 @@ def check_actual_EOF_reverse_option_and_real_run_return() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_actual_reader_initialization() -> dict:
+    modules = ['PacketReaderInitSyntax', 'PacketReaderInitSeed', 'PacketReaderInitSeeded', 'PacketReaderInitLiterals', 'PacketReaderInitParser', 'PacketReaderFixedReturn', 'PacketReaderTerminalZero', 'PacketReaderInitEmpty', 'ObjectPacketReaderInit']
+    schemas = ['packetReaderInitActualInitialState', 'packetReaderInitActualInitialCodeExists', 'packetReaderInitActualInitialCodeUnique', 'packetReaderInitActualInitialCodeNatural', 'packetReaderInitSeededNormalizeAtActualInitialCode', 'packetReaderInitSeededReturnExists', 'packetReaderInitSeededCandidateUnique', 'packetReaderInitSeededValueNatural', 'packetReaderInitSeededDomainExactlyValidInput', 'packetReaderInitFixedParserExactlyActualLiterals', 'packetReaderInitEveryInternalInputHasInitializedReturn', 'packetReaderInitInitializedCandidateUnique', 'packetReaderInitInitializedValueNatural', 'packetReaderInitInitializedDomainExactlyValidInput', 'packetReaderInitInitializedObjectExistsUniqueFiber', 'packetReaderInitFixedSuccessExactActualOption', 'packetReaderInitFixedRejectionExactActualOption', 'packetReaderInitActualZeroHistoryImplementsLocalReturn', 'packetReaderInitActualTerminalRunEquation', 'packetReaderInitSeededEmptyInputExactSomeNil', 'packetReaderInitInitializedEmptyInputExactSomeNil']
+    required = {'PacketReaderInitSyntax': ['def seed', 'PacketReaderStateSyntax.code w L z o o n', 'def parseBody', 'SyntaxNumeralSyntax.numeral 128', 'def parseFiber', 'PacketReaderReturnCodedSyntax.run'], 'PacketReaderInitSeed': ['StructuralListTraceBase.valid_unit', 'theorem exists_seed', 'PacketReaderStateCode.exists_code', 'theorem unique'], 'PacketReaderInitSeeded': ['PacketReaderInitSeed.exists_seed', 'PacketReaderReturnRunExistence.exists_run', 'PacketReaderInitSeed.unique', 'theorem at_seed', 'theorem exact_domain', 'PacketReaderReturnRunUnique.unique'], 'PacketReaderInitLiterals': ['SyntaxNumerals.unique', 'OmegaUniversal.empty_unique', 'StructuralListUnits.unique', 'theorem at_literals', 'Derives.eqSubst'], 'PacketReaderInitParser': ['StructuralListUnits.with_units', 'SyntaxNumerals.exists_numeral hZ2 128', 'theorem exists_return', 'theorem exact_domain', 'theorem exists_unique', 'apply Derives.allI'], 'PacketReaderFixedReturn': ['theorem at_success', 'StructuralListReverseUnique.unique', 'theorem at_rejection', 'PacketReaderReturnUnique.success_rejection_disjoint'], 'PacketReaderTerminalZero': ['PacketReaderHistoryBase.exists_zero', 'theorem at_terminal', 'PacketReaderReturnRunNormalize.at_endpoint'], 'PacketReaderInitEmpty': ['theorem seeded_empty', 'PacketReaderTerminalZero.at_terminal', 'StructuralListReverseNil.nil_pair', 'theorem at_empty', 'PacketReaderReturnPayload.some_unique'], 'ObjectPacketReaderInit': ['TheoryTransport.sentence', 'ZFReplay.replay', 'PacketReaderInitParser.exists_unique', 'PacketReaderInitEmpty.at_empty']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):
+            raise RuntimeError('Reader stopping forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader stopping proof drift: '+mod+': '+clause)
+        texts[mod] = text
+    for mod,name,expected in [('PacketReaderInitSeed','exists_seed',{'hw','hz','ho','hL'}),('PacketReaderInitSeeded','exists_return',{'hw','hB','hz','ho','hL'}),('PacketReaderInitParser','exists_return',{'hw','hL'}),('PacketReaderInitParser','exists_unique',{'hw','hL'}),('PacketReaderInitEmpty','at_empty',{'hw','hL','hu'})]:
+        header = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0))) != expected:
+            raise RuntimeError('Reader stopping hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderInit.native_'+name not in checks: raise RuntimeError('Missing reader stopping native fixture: '+name)
+    return {'original_readTokens_initial_fields_are_actual_input_zero_one_and_Nil_code_one':True,
+            'actual_initial_state_code_constructed_from_every_valid_internal_input':True,
+            'actual_initial_state_code_natural_and_unique':True,
+            'seeded_reader_normalizes_at_every_actual_initial_code':True,
+            'seeded_reader_return_exists_uniquely_exactly_on_valid_internal_input':True,
+            'actual_128_zero_one_object_witnesses_aligned_by_original_equality':True,
+            'all_literal_and_initial_state_code_witnesses_eliminated_in_fixed_reader':True,
+            'fixed_initialized_reader_returns_exist_for_all_valid_internal_lists':True,
+            'fixed_initialized_reader_return_domain_exactly_valid_input_for_all_candidates':True,
+            'fixed_initialized_reader_has_object_EX_ALL_unique_return_fiber':True,
+            'fixed_original_terminal_cause_exact_option_value_on_every_candidate':True,
+            'real_zero_step_history_implements_original_terminal_run_equation':True,
+            'initialized_empty_input_exactly_Some_actual_Nil_payload_for_every_candidate':True,
+            'no_external_literals_initial_code_history_or_termination_premise_in_parser_fiber':True,
+            'all_internal_varint_segmentation_and_output_order_invariants':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_Packet_reader_all_internal_length_conservation_and_bound() -> dict:
     modules = ['PacketReaderLengthSyntax', 'PacketReaderLengthAt', 'PacketReaderTailLength', 'PacketReaderLengthArithmetic', 'PacketReaderLengthPoint', 'PacketReaderLengthInduction', 'PacketReaderLengthBounds', 'ObjectPacketReaderLength']
     schemas = ['packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory']
@@ -3085,6 +3123,7 @@ def main() -> None:
     Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     Packet_reader_actual_input_projection_and_consumption = check_Packet_reader_actual_input_projection_and_consumption()
     Packet_reader_all_internal_length_conservation_and_bound = check_Packet_reader_all_internal_length_conservation_and_bound()
+    actual_reader_initialization = check_actual_reader_initialization()
     actual_EOF_reverse_option_and_real_run_return = check_actual_EOF_reverse_option_and_real_run_return()
     actual_internal_list_reversal = check_actual_internal_list_reversal()
     Packet_reader_actual_terminal_cause_and_classified_history = check_Packet_reader_actual_terminal_cause_and_classified_history()
@@ -6448,6 +6487,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunNormalizeAtActualEndpoint',
                     'PPAC.Migration.Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunExactSomeActualReverse',
                     'PPAC.Migration.Internal.ObjectPacketReaderReturn.native_packetReaderReturnRealRunExactNoneOriginalRejection',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualInitialState',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualInitialCodeExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualInitialCodeUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualInitialCodeNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededNormalizeAtActualInitialCode',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededReturnExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededCandidateUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededValueNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededDomainExactlyValidInput',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitFixedParserExactlyActualLiterals',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitEveryInternalInputHasInitializedReturn',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedCandidateUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedValueNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedDomainExactlyValidInput',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedObjectExistsUniqueFiber',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitFixedSuccessExactActualOption',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitFixedRejectionExactActualOption',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualZeroHistoryImplementsLocalReturn',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualTerminalRunEquation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededEmptyInputExactSomeNil',
+                    'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedEmptyInputExactSomeNil',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength',
@@ -6490,6 +6550,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderInit": ('packetReaderInitActualInitialState', 'packetReaderInitActualInitialCodeExists', 'packetReaderInitActualInitialCodeUnique', 'packetReaderInitActualInitialCodeNatural', 'packetReaderInitSeededNormalizeAtActualInitialCode', 'packetReaderInitSeededReturnExists', 'packetReaderInitSeededCandidateUnique', 'packetReaderInitSeededValueNatural', 'packetReaderInitSeededDomainExactlyValidInput', 'packetReaderInitFixedParserExactlyActualLiterals', 'packetReaderInitEveryInternalInputHasInitializedReturn', 'packetReaderInitInitializedCandidateUnique', 'packetReaderInitInitializedValueNatural', 'packetReaderInitInitializedDomainExactlyValidInput', 'packetReaderInitInitializedObjectExistsUniqueFiber', 'packetReaderInitFixedSuccessExactActualOption', 'packetReaderInitFixedRejectionExactActualOption', 'packetReaderInitActualZeroHistoryImplementsLocalReturn', 'packetReaderInitActualTerminalRunEquation', 'packetReaderInitSeededEmptyInputExactSomeNil', 'packetReaderInitInitializedEmptyInputExactSomeNil'),
         "ObjectPacketReaderReturn": ('packetReaderReturnActualNoneExists', 'packetReaderReturnActualSomeExists', 'packetReaderReturnActualNoneUnique', 'packetReaderReturnActualSomeUnique', 'packetReaderReturnActualSomePayloadUnique', 'packetReaderReturnActualOptionsDisjoint', 'packetReaderReturnEOFActualReverseReturnExists', 'packetReaderReturnActualRejectionReturnExists', 'packetReaderReturnLocalDomainExactlyOriginalTerminal', 'packetReaderReturnLocalCandidateUnique', 'packetReaderReturnExactSomeActualReverse', 'packetReaderReturnExactNoneOriginalRejection', 'packetReaderReturnLocalValueNatural', 'packetReaderReturnCodedNormalizeAtActualSource', 'packetReaderReturnCodedExistsOnOriginalObservation', 'packetReaderReturnCodedCandidateUnique', 'packetReaderReturnCodedDomainExactlyOriginalObservation', 'packetReaderReturnCodedValueNatural', 'packetReaderReturnEveryActualCarrierHasRealRunReturn', 'packetReaderReturnRunDomainExactlyActualCarrier', 'packetReaderReturnRealRunCandidateUnique', 'packetReaderReturnRealRunValueNatural', 'packetReaderReturnRealRunObjectExistsUniqueFiber', 'packetReaderReturnRealRunNormalizeAtStoppedHistory', 'packetReaderReturnRealRunNormalizeAtActualEndpoint', 'packetReaderReturnRealRunExactSomeActualReverse', 'packetReaderReturnRealRunExactNoneOriginalRejection'),
         "ObjectStructuralListReverse": ('structuralListReverseEveryInternalPositionHasMirror', 'structuralListReverseMirrorCandidateUnique', 'structuralListReverseMirrorSymmetric', 'structuralListReverseMirrorInputInRange', 'structuralListReverseMirrorOutputInRange', 'structuralListReverseActualReverseFieldExistsUnique', 'structuralListReverseActualReverseFieldNatural', 'structuralListReverseReverseFieldExactAtMirror', 'structuralListReverseOriginalReplacementConstructsExactReverseGraph', 'structuralListReverseExactReverseGraphIsActualSequence', 'structuralListReverseExactReverseGraphUnique', 'structuralListReverseEveryValidInternalListHasActualReverse', 'structuralListReverseActualReverseCodeUnique', 'structuralListReverseActualReverseCodeExistsUnique', 'structuralListReverseActualReverseRequiresValidInput', 'structuralListReverseActualReverseHasValidOutput', 'structuralListReverseActualReverseFieldsExactlyReflected', 'structuralListReverseActualReverseSymmetric', 'structuralListReverseActualReverseInvolutive', 'structuralListReverseExactNilReversal', 'structuralListReverseNormalizeEveryActualLength', 'structuralListReverseExactConsSnocReversal', 'structuralListReverseActualSnocCodeUnique'),
         "ObjectPacketReaderTerminal": ('packetReaderTerminalRawObservationForbidsSuccessor', 'packetReaderTerminalNoSuccessorGivesThreeOriginalObservations', 'packetReaderTerminalExactThreeWayStoppingAtEveryActualCode', 'packetReaderTerminalEOFSuccessFailureDisjoint', 'packetReaderTerminalEOFSuccessByteRejectDisjoint', 'packetReaderTerminalEOFFailureByteRejectDisjoint', 'packetReaderTerminalObservationHasExactCarrierAndNoSuccessor', 'packetReaderTerminalCarrierNoSuccessorHasActualObservation', 'packetReaderTerminalExactObservationDomainAllCandidateCodes', 'packetReaderTerminalObservationNormalizesAtActualStateFields', 'packetReaderTerminalHaltedHistoryHasActualOriginalStopCause', 'packetReaderTerminalClassifiedRealHistoryIsHalted', 'packetReaderTerminalExactClassifiedHistoryEquivalence', 'packetReaderTerminalClassifiedCompleteHistoryExists', 'packetReaderTerminalClassifiedHistoriesJointlyUnique', 'packetReaderTerminalClassifiedHistoryUniversalUniqueness', 'packetReaderTerminalClassifiedCompleteHistoryExistsUnique'),
@@ -7504,6 +7565,8 @@ def main() -> None:
         "object_actual_internal_list_reversal_exists_unique_Nil_Cons_proved": True,
         "actual_EOF_reverse_option_and_real_run_return_guard": actual_EOF_reverse_option_and_real_run_return,
         "object_actual_EOF_reverse_option_and_real_run_return_exists_unique_proved": True,
+        "actual_reader_initialization_guard": actual_reader_initialization,
+        "object_actual_reader_initialization_literals_input_domain_and_empty_equation_proved": True,
         "Packet_reader_all_internal_length_conservation_and_bound_guard": Packet_reader_all_internal_length_conservation_and_bound,
         "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved": True,
         "Packet_reader_actual_input_projection_and_consumption_guard": Packet_reader_actual_input_projection_and_consumption,

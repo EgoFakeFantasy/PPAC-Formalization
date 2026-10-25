@@ -1,5 +1,20 @@
 # 对象层迁移工程流程
 
+原reader初始化与空输入精确方程已验收：真实初始字段为input／0／1／Nil，原Nil码恰为内部一；实际128、零、一和初始状态码均在对象量词内构造并消去。仅Ω与实际输入有效性即可取得初始化reader的对象EX／ALL唯一返回纤维，返回存在域准确等于有效输入；真实零步历史证明原终止方程及空输入准确返回Some实际Nil。9模块136声明、21组原nativeZF闭句；2512构建、27470审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。varint分段／输出顺序、完整程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_INIT_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 实现职责 | 原核验收要求 | 状态 |
+|---|---|---|---|
+| R1／R2 | 原无界状态、真实Cons与带码单步 | 实际字段、准确域及联合唯一 | 已验收 |
+| R3／R4a | 实际历史、停止与原终止观察 | 全内部长度界、完整停止历史联合唯一及三原因互斥穷尽 | 已验收 |
+| R4b.1／.2 | 实际逆序与EOF／运行返回 | 真实逆序图、Some／None精确值、实际运行域及对象唯一纤维 | 已验收 |
+| R4b.3a | 原初始化与终止递归基例 | 实际128／0／1／Nil与初始状态码消去、准确输入域、空输入方程 | 本批已验收 |
+| R4b.3b | 全内部varint分段与输出顺序 | 实际value／scale／acc不变量、内部段消费、已发射token与输出顺序 | 下一单元 |
+| R5 | readTokens与Bytes／Canonical／Tok | 全内部程序／规格双条件，所有无效候选和实际字节包覆盖 | 待完成 |
+| A／P | 原Basic AST与内部Proof | 六规则／27模式、完整Separation／Collection及全部内部码 | 待完成 |
+| I／C | 对象数学解释与最终内部Con | 原理论／语言／假设核对、证明变换、nativeZF中的Con蕴含 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 reader实际EOF返回及整段真实运行返回已验收：原Nil／单格forest呈现None／Some，EOF通过构造真实acc逆序载荷和实际Some码，EOF失败／字节拒绝准确返回None。每个实际状态carrier均有唯一真实运行返回，域准确等于carrier；任意真实停止历史和实际末字段上的Some／None双条件已证明。12模块188声明、27组原nativeZF闭句；2503构建、27334审计、零警告，九命令／五trust=0通过；仅9个旧EOF原语子门false→true。原初始化／varint分段、完整readTokens／Bytes／Canonical／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_RETURN_ACCEPTANCE.zh-CN.md)。
 
 | 单元 | 实现职责 | 原核验收要求 | 状态 |

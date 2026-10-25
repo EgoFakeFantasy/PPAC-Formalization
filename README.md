@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+原reader初始化与空输入精确方程已验收：真实初始字段为input／0／1／Nil，原Nil码恰为内部一；实际128、零、一和初始状态码均在对象量词内构造并消去。仅Ω与实际输入有效性即可取得初始化reader的对象EX／ALL唯一返回纤维，返回存在域准确等于有效输入；真实零步历史证明原终止方程及空输入准确返回Some实际Nil。9模块136声明、21组原nativeZF闭句；2512构建、27470审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。varint分段／输出顺序、完整程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_INIT_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 reader实际EOF返回及整段真实运行返回已验收：原Nil／单格forest呈现None／Some，EOF通过构造真实acc逆序载荷和实际Some码，EOF失败／字节拒绝准确返回None。每个实际状态carrier均有唯一真实运行返回，域准确等于carrier；任意真实停止历史和实际末字段上的Some／None双条件已证明。12模块188声明、27组原nativeZF闭句；2503构建、27334审计、零警告，九命令／五trust=0通过；仅9个旧EOF原语子门false→true。原初始化／varint分段、完整readTokens／Bytes／Canonical／Tok程序桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_RETURN_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
