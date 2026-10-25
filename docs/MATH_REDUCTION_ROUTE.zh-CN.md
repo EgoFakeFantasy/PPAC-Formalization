@@ -1,3 +1,5 @@
+> 当前阶段见 AGENT_WORKFLOW。以下源数学路线保持固定；“源已有证明”“本仓接口”“尚未定位／尚未接入”分开读取。日期较早的验收段只代表历史批次。
+
 # 普通相对一致性的数学归约依赖（2026-10-25）
 
 用户纠正后的复用优先级见 [现有接口复用合同](REUSE_CONTRACTS.zh-CN.md)。下表中的“缺”指PPAC尚未接好的对象接口，不意味着底座或其他项目没有对应构造；不得按旧措辞重新开发已有满足关系、L、识别器或收尾工具。
@@ -14,12 +16,12 @@
 | 原bareStageAt全部内部序数接口 | 固定L工程BareStageHistory原14项语法；ConstructibleHistory.agreement_kernel_certificate／unique_kernel_certificate；原内部序数归纳与全分离 | 参数empty槽为空时，原历史与内部Def递归等价且层值存在唯一已推导；保留历史含杂项的原范围。规范参数已接通；求值／Def正确性仍待接通 |
 | 规范参数及参数消去 | 原StageHistoryParameters／RudimentaryTermZFCode；既有SyntaxNumerals、ObjectOmega；ConstructibleParameters.unique_kernel_certificate | 规范13参数已在对象量词内消去；无参数层关系在全部内部序数上存在唯一已推导。L(x)纯公式及语义对应已定义；域非空、求值／Def正确性尚未证明 |
 | 相对化保留推理，显式处理自由变量在解释域内 | Relativization.lean 的 formula／derives／source_closed_at／kernel_certificate | 本批提供全部19条源规则、任意外部有限证书及真正原核证书；非空前提保持为对象蕴含 |
-| 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 论文 metatheory.tex:68–93 | 缺逐模式原核证书和统一的语法证书生成／内部准确性；宿主 models_ZFC 不可替代 |
+| 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 原 L 工程 ZFModel.lCarrier_models_ZF、StageHistoryGraphSystem.lCarrier_models_ZFC；本仓 InterpretedZF | 原 LCarrier 的完整模式与 Choice 结论已完成。本仓全模式相对化回放已接线，保留解释背景与域非空；尚未定位到可直接调用的全 nativeZF 模型 L 终局，需要接其精确接口，不是重证底座公理模式 |
 | L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF中Min_lt→AC及原库内部良序覆盖CoverWO→Min_edge→AC与域相对化已推导；实际L中的层序图／CoverWO及L域相对化ZF仍待接通 |
 | 具体集合对称系统及全部内部 HS 名字类 | ProductNames.system:89–92；SymmetricNames.Name:48–49 | 缺纯对象公式、构造及全秩证明；不能把 HS 类当作地面集合，不能加全局秩截断 |
 | 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 缺对象定义与实际原核证明；不能把 Regular 当作未消除的目标假设 |
 | 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 源为宿主证明；缺对象逐实例证书与递归语法转换。不得定义全宇宙的统一真值谓词 |
-| 全 ZF 公理在 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 缺对象逐模式 Separation／Collection 证明；Replacement 与 Collection 先用已验收呈现互导对应 |
+| 全 ZF 公理在 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 原源强迫模型证明已经存在，尚未迁移到目标解释。迁移该证明并消费既有完整 Replacement/Collection 互导；不重造全公理模式 |
 | 无选择、序数指标选择与全秩 PP 在同一系统成立 | ChoiceFailure.forces_not_AC:241–260；OrdinalChoice.forces_ACwo:472–474；Main.forces_PP:133–152 | 缺对象证明。PP 依赖 OrdinalPresentation.ordinal_presentation 和 SliceAssembly.presentation_reverse_injection；不能把局部逆单射改成原满射截面 |
 | 任意内部码上的完整 Ax_ZF/Ax_U、Proof_ZF/Proof_U | 固定 OBJECT_TARGET；现有 ProofTreeEntrySyntax／ProofTheoryNodeSyntax 的显式公式参数 | 检查器仍未完整实例化；六规则、27模式及全模式不可只验证固定有限表 |
 | 两段语法证明归约在 ZF 内表示并证明正确 | 论文 metatheory.tex:383–394 提供数学路线 | 缺全部内部码上的传输，外部有限证书回放不等于这一项；不要求二进制程序或确定性算法 |
@@ -35,9 +37,9 @@
 - 不恢复 NatPacket、LEB128、字节／树／森林解析兼容。直接结构公理测试是独立对象公式；改变证明呈现仍须取得所需对象 Con 等价。
 - 不以 PP 推出 ACwo 为理由删除源码 PP 证明中使用的 ACwo 构造；那会形成循环。两者在同一系统中的数学依赖仍按上表处理。
 
-当前先接入已完成的 L／Def／Gödel及配套满足关系，再补尚未返回原ZF推导的实际接口；不重新定义整套L。对集合结构的满足关系可以在 ZF 内编码；这与被禁止的全宇宙统一真值谓词不同。不得把二者混淆后重新引入无关 packet 设施。
+当前按原 1–11 阶段执行；第 6 阶段消费已有 L／Def／Gödel及配套满足关系，仅补尚未返回原ZF推导的实际接口；不重新定义整套L。对集合结构的满足关系可以在 ZF 内编码；这与被禁止的全宇宙统一真值谓词不同。不得把二者混淆后重新引入无关 packet 设施。
 
-冻结工作保存在 `.local/frozen-packet-20261025/`，14文件均有移前／移后相同的 SHA-256，清单为该目录的 manifest.json；没有删除已验收证明。
+历史冻结工作曾保存在 `.local/frozen-packet-20261025/`；它不属于当前正式目标。当前清理范围见 CLEANUP，已验收证明尚未按批量依赖裁剪删除。
 
 本批实际验收：`python scripts/verify.py` 通过，2635 构建任务，28543 审计声明，9条命令全部成功（含5条 trust=0），零警告。新增 Relativization 的13个声明全部进入审计，仅使用 propext／Quot.sound／Classical.choice；未增加对象AC。完整检查输出保存在 verification/，最终Con与专用内部检查器等五项原未完成标志仍为 false。
 

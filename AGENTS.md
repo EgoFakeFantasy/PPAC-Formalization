@@ -10,3 +10,5 @@ Source Replacement/native Collection and the two AC presentations require actual
 Do not import host auxiliary PP as the object sentence. Do not add Choice or inaccessible premises to the ordinary route.
 Only one Lean/Lake build at a time; LEAN_NUM_THREADS=1. Run python scripts/verify.py after changes.
 Do not restore retired reflection implementations. Do not publish local probes, archives or logs automatically.
+
+Use the original stages 1-11 in AGENT_WORKFLOW, never the later four-row summary or historical S3/STEP4 batch numbering. CheckStep4.lean is NOT the original OpenAI Comparator baseline. Every new proof must identify its pinned source dependency and actual consumer; do not report an existing donor theorem as missing merely because its native adapter is incomplete.

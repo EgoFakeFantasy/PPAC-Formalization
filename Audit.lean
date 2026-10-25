@@ -29115,3 +29115,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructibleParameters.unique_kernel_certificate
 #print axioms PPAC.Migration.ConstructibleParameters.domain
 #print axioms PPAC.Migration.ConstructibleParameters.domain_semantics
+
+#print axioms PPAC.Migration.InterpretedZF.source_sentence
+#print axioms PPAC.Migration.InterpretedZF.native_sentence
+#print axioms PPAC.Migration.InterpretedZF.project_axiom
+#print axioms PPAC.Migration.InterpretedZF.collection

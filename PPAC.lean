@@ -3,6 +3,7 @@ import PPAC.Migration.Contract
 
 import PPAC.Migration.TheoryTransport
 import PPAC.Migration.Relativization
+import PPAC.Migration.InterpretedZF
 
 import PPAC.Migration.Presentation
 import PPAC.Migration.SourceTheory

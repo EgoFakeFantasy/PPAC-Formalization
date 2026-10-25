@@ -3376,6 +3376,11 @@ def main() -> None:
                             re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", relativization_body, re.MULTILINE)}
     if not relativization_names or not relativization_names <= set(expected):
         raise RuntimeError("Incomplete relativization declaration audit")
+    interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
+    interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
+                         re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
+    if len(interpreted_names) != 4 or not interpreted_names <= set(expected):
+        raise RuntimeError("Incomplete interpreted full-ZF declaration audit")
     # The existing semantics/completeness bridge is reused with the exact ZF
     # background, not the concrete ZFC expansion. Audit every added declaration.
     model_transfer_body = strip_comments((ROOT / "PPAC/Migration/ModelTransfer.lean").read_text(encoding="utf-8"))
@@ -3549,6 +3554,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name in interpreted_names:
+            if set(dependencies) != {"propext", "Quot.sound", "Classical.choice"} | inherited:
+                raise RuntimeError("Unexpected interpreted-ZF dependency: " + name)
+            continue
         if name.startswith("PPAC.Migration.ConstructibleParameters."):
             if set(dependencies) != set(parameter_lock["exact_declaration_footprints"].get(name, [])):
                 raise RuntimeError("Unexpected canonical constructible parameter dependency: " + name)
@@ -7209,6 +7218,10 @@ def main() -> None:
     hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "lean_version": version,
+        "interpreted_ZF_full_schema_external_transport_proved": True,
+        "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
+        "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",
+        "interpreted_ZF_transport_is_internal_Con_proof": False,
         "build_passed": True,
         "audit_passed": True,
         "check_passed": True,

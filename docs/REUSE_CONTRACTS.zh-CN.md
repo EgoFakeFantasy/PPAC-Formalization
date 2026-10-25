@@ -1,3 +1,16 @@
+# 2026-10-26 源码重审结论（当前状态）
+
+| 已有资产 | 本轮实读的精确证据 | 正确裁决 |
+|---|---|---|
+| YesMetaZFC 全公理模式 | 固定 039c8e1，SetTheory/Axioms/ZF.lean 的 Axiom.separation/collection 对任意参数数目和任意矩阵；Separation.lean、Collection.lean 的模型接口 | 已完成，直接复用；不是待证明基础 |
+| 本仓全模式原核迁移 | ReverseZFReplay.replay_project_axiom 枚举所有原生构造器；derives_iff/source_sentence_iff/target_derives_iff；CollectionFromReplacement.native_project_matrix | 已完成，不能把新解释中的接线叫作重证全模式 |
+| 完整 L 模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF 的分支包括任意 n、phi 的 Separation 和 Replacement；StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC 无额外未消前提 | 已完成于该库的 LCarrier；继续复用其构造及证明，不从零造 L |
+| 精确 L 终局类型 | Model.lean 中 ClassCarrier M = {x : ZFSet // x∈M}，LCarrier 为实际 L 的子类型；ZFModel 目标为 Mathlib FOL 的模型断言 | 该精确类型不量化所有 nativeZF 模型。当前已查的固定底座及本地 YesMetaZFC／stage4 桥中，尚未定位到可直接调用的 `Derives nativeZF [] α^L` 全模式终局；这是定位／适配状态，不宣称其他位置没有做过 |
+| 原核收尾方法 | BMS SecondOrderCompleteness.derives_m 调原 strong_completeness；本仓 ModelTransfer 已适配纯成员语言、任意对应 Type 0 模型和实际 nativeZF | 已接入，不再复制调度／完备性。具体 LCarrier 真值不能填“所有模型”参数 |
+| 相对化中的全模式接线 | 新 InterpretedZF 的 source_sentence/native_sentence/project_axiom/collection，全部由已证 ReverseZFReplay、Relativization、CollectionFromReplacement 组合 | 本轮正式检查通过，记为第 6 阶段接口；相对化 ZF 背景和域非空明确保留，不声称完整 L 解释或 Con 已闭合 |
+
+本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
+
 # 优先复用的已完成接口（2026-10-25 用户纠正后）
 
 纠正：此前仓库评估停在粗略目录／README层，没有继续消费已经完成的具体接口，导致重复开发。当前 YesMetaZFC 固定提交 039c8e132cc19671d73a3933c66b4799d2599dd6 已核对等于 EgoFakeFantasy/YesMetaZFC 远端 main；本轮不更新依赖、不改其他项目的脏工作区。

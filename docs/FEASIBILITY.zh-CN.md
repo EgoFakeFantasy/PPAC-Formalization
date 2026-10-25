@@ -25,8 +25,8 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 最终终点已按用户要求固定为对象ZF中的内部Con蕴含的Derives证书；背景与编码见OBJECT_TARGET.zh-CN.md。外部一致性传输仅是中间层。
 不以 ZFC 的普通推导证明 ¬AC；模型解释的结论和解释所处的元理论必须区分。
 
-## 主要缺口
-1. 源开放自然演绎规则（无限假设集、末自由变量）到目标有限上下文 Hilbert 核的双向传输；须用有限支撑。
+## 范围核对（当前阶段见 AGENT_WORKFLOW）
+1. 源开放自然演绎到原有限上下文 Hilbert 核的双向传输与有限支撑已完成；它不代替全部内部证明码传输。
 2. 两种AC呈现的对象互导、源Replacement与目标Collection完整逐模式互导及ZF/目标理论回放均已完成；内部证明码表示仍待实现。
 3. 元层纯集合、布尔值、商、全部 HS 名字的 universe 对应；不能强行固定名字秩界。
 4. 可构造解释如走论文路径，应逐公理证明 ZF ⊢ α^L；语义 L 模型或文档提及 GCH 不够。
@@ -38,6 +38,8 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。当前检查精确守住此基线，不标成“仅三项标准公理”；未修改底座，也未添加新的自定义公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。
 
 语义桥的 Classical.choice 已定位到 Lean 核心定理 Fin.lastCases_castSucc，只用于 Prop 中的绑定等式证明；未向对象ZF加入AC，也未抽取内部集合选择函数。旧宿主辅助维持原先无 Classical.choice 的依赖范围。
+
+以下内容为旧批次记录，不是当前待办；其后续完成状态以 AGENT_WORKFLOW 和 REUSE_CONTRACTS 为准。
 
 第二步进度：源19规则正向传输、AST重命名/替换、任意变量环境的闭句传输和有限原核公理支撑已完成；源/目标ZF呈现等价、反向传输与对象内部化尚未完成。
 
