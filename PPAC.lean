@@ -342,3 +342,5 @@ import PPAC.Migration.ForcingHSCheck
 import PPAC.Migration.ForcingNameConjugacy
 import PPAC.Migration.ForcingStabilizerTransport
 import PPAC.Migration.ForcingHSAction
+import PPAC.Migration.ForcingLabelPermutations
+import PPAC.Migration.ForcingLabelConjugacy

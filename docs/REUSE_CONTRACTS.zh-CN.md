@@ -8,6 +8,7 @@
 | 集合配对、并、插入、积、分离、收集 | KP.exists_pair/exists_union/exists_insert、ZF.exists_cartesianProduct、Collection.collection_exists_d；KuratowskiZF、ForcingNames、ForcingAtomicRecursion、ForcingHS | 已消费。内部 Collection 见证族经 Separation 过滤再合并；不抽取对象选择函数 |
 | 内部序数递归 | SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals；GodelDefRecursion、ConstructibleHistory | 已消费全部内部序数接口。另一个 WellFounded.Recursion.solve 要求宿主 WellFounded，不能用于任意可能外部不良基的 nativeZF 模型 |
 | 集合／名字归纳与递归 | SetInduction.native_induction → ForcingNameInduction/ForcingMapLaws → ForcingPairInduction/ForcingTripleInduction；ForcingNameRecursion | 已消费到名字、映射、原子递归和定律；后两种归纳有实际证明消费者，不是待重建后端 |
+| 内部函数空间 | FunctionSpaceConstruction.lean 的 ZF.exists_functionSpace；ForcingLabelPermutations.exists_carrier | 本轮直接消费其全部内部函数图集合，再分离置换；没有重建幂集／积或函数空间。固定源文件哈希纳入 SOURCE_LOCK |
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。具体 PPAC 群同态族未实例化 |
 | 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；不能拿单个 LCarrier 模型冒充其全模型前提 |
 | L 的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 已完成，包含完整模式。Model.lean:52/96 的 LCarrier 为 ZFSet 子类；到本项目任意 nativeZF 模型的对象解释接口仍未闭合。不能据此宣称其他位置没有实现过该接口 |
@@ -49,3 +50,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 下一实际源实例已核对：ProductNames.system 使用 Γ = Equiv.Perm I 与 SupportFilter.subgroupFilter μ；ConcreteSystem.S 消费同一系统。下一批应将现有 ForcingConditionGraphs 的恒等、逆、复合图入口实例化到标签集合 I，接原 actionHom 和稳定子共轭，不预先新建通用群论库。源 IsNormalFilter 的四项是顶、向上闭包、交和共轭闭包；其小支撑滤子构造与基数前提仍按原源码迁移。仅以文件名搜索未发现同名供体，不据此断言其他仓库不存在可用数学。
 
 本轮稳定子共轭复用 ForcingConditionGraphs.exists_inverse/exists_composition、ForcingConditionAction.name_composition/name_inverse。HS.smul 直接沿原 Child 归纳，消费 ForcingHS.intro_hs/child 和 ForcingMapConditions.edge_mapping；公式对称性直接消费已有 conclusion_models/action_transport。四类证书全部返回 ModelTransfer.derives，未新增核或对象选择原则。NormalImage 只表达原正规滤子的共轭条款，不声称已构造具体小支撑滤子。
+
+标签实例本批：ForcingLabelPermutations 用底座函数空间与原 Separation 构造全部置换和 Fix J，闭包只调用既有 exists_identity/exists_inverse/exists_composition。ForcingLabelConjugacy 沿 SupportFilter.conjugate_fix 证明两个成员方向，复用现成 Conjugate/Image 公式和 function_unique。尚未完成的是置换载体上的集合编码共轭图及小支撑基数／正规滤子，不是上述已完成的载体与逐点稳定子。

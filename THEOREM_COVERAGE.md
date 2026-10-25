@@ -57,3 +57,11 @@ This batch has 59 audited declarations; directed build and trust=0 preaudit pass
 | SymmetricNames.forces_symmetry | ForcingHSAction.domain_transport/formula_kernel_certificate: actual HS domain, both directions proved | Concrete forward/inverse Context and order preservation must be supplied |
 
 Current batch: 47 new declarations, one generalized existing mapping congruence, four native certificates; full verifier passed (29595 declarations, 9 commands including 5 trust=0, zero warnings). Existing native sentence-certificate dependencies are retained; no trust expansion. These counts measure audit coverage, not completion of stages 7–10.
+
+| Concrete source dependency | Current object result | Remaining boundary |
+|---|---|---|
+| ProductNames.system: Equiv.Perm I | ForcingLabelPermutations constructs the exact internal permutation set via donor function space and Separation | Full group algebra and concrete condition action remain |
+| SupportFilter.Fix / mem_Fix | Unique internal fixing subset; actual identity/inverse/composition witnesses stay in it; three native certificates | No small-support cardinal or normal-filter claim |
+| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | Conjugation as a set-coded permutation on the group carrier and stabilizer set-image assembly remain |
+
+This label batch has 41 declarations; directed build and trust=0 preaudit passed. Full verification passed. Its five certificates retain only the existing nativeZF trust baseline.

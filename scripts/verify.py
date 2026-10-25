@@ -3431,7 +3431,9 @@ def main() -> None:
                                ("forcing_hs_check", "ForcingHSCheck", 8),
                                ("forcing_name_conjugacy", "ForcingNameConjugacy", 16),
                                ("forcing_stabilizer_transport", "ForcingStabilizerTransport", 21),
-                               ("forcing_hs_action", "ForcingHSAction", 10)):
+                               ("forcing_hs_action", "ForcingHSAction", 10),
+                               ("forcing_label_permutations", "ForcingLabelPermutations", 32),
+                               ("forcing_label_conjugacy", "ForcingLabelConjugacy", 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7363,6 +7365,12 @@ def main() -> None:
         "source_atomic_decision_truth_branch_required_for_selected_route": False,
         "source_atomic_decision_set_density_proved": False,
         "source_atomic_truth_proved": False,
+        "source_forcing_label_permutation_carrier_and_fixing_sets_proved": True,
+        "source_forcing_label_fixing_identity_inverse_composition_closure_proved": True,
+        "source_forcing_label_fixing_conjugacy_pointwise_native_certificate_proved": True,
+        "source_forcing_label_group_conjugation_set_graph_constructed": False,
+        "source_forcing_small_support_normal_filter_constructed": False,
+        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier and pointwise fixing subsets, operation witnesses, exact label images and pointwise conjugacy. No complete group algebra, conjugation map graph, cardinal support filter or ProductNames condition-action instance claimed.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
