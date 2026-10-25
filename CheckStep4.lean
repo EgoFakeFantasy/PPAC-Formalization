@@ -13041,4 +13041,56 @@ example {m} (w B z o n r l d f i L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derive
 example {m} (w f i L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderConsumption.packetReaderConsumptionActualProjectedInputIsNaturalSentence w f i L)) :=
   Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionActualProjectedInputIsNatural w f i L
+example {m} (w f i a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualRemainingLengthNaturalSentence w f i a)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural w f i a
+
+example {m} (w f d i a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualLengthIndexInHistoryDomainSentence w f d i a)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain w f d i a
+
+example {m} (w B z o n r l d f i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthEveryActualHistoryIndexHasLengthSentence w B z o n r l d f i)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength w B z o n r l d f i
+
+example {m} (w f d i a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualRemainingLengthUniqueSentence w f d i a b)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthUnique w f d i a b
+
+example {m} (w L K a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualConsConsumesOneLengthUnitSentence w L K a b)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualConsConsumesOneLengthUnit w L K a b
+
+example {m} (w i j a b N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthInternalSuccessorConservationTransferSentence w i j a b N)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthInternalSuccessorConservationTransfer w i j a b N
+
+example {m} (w B z o n r l d f L N i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualSeedConservationSentence w B z o n r l d f L N i)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualSeedConservation w B z o n r l d f L N i
+
+example {m} (w B z o n r l d f i j a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualAdjacentLengthsAreSuccessorsSentence w B z o n r l d f i j a b)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualAdjacentLengthsAreSuccessors w B z o n r l d f i j a b
+
+example {m} (w B z o n r l d f N i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthConservationSuccessorPointSentence w B z o n r l d f N i j)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthConservationSuccessorPoint w B z o n r l d f N i j
+
+example {m} (w B z o n r l d f L N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthAllInternalIndicesConservationSentence w B z o n r l d f L N)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthAllInternalIndicesConservation w B z o n r l d f L N
+
+example {m} (w B z o n r l d f L N i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthActualHistoryIndexBoundSentence w B z o n r l d f L N i)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthActualHistoryIndexBound w B z o n r l d f L N i
+
+example {m} (w B z o n r l d f L N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthWholeHistoryLengthBoundSentence w B z o n r l d f L N)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthWholeHistoryLengthBound w B z o n r l d f L N
+
+example {m} (w B z o n r l d f L N : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderLength.packetReaderLengthNoTooLongAcceptedHistorySentence w B z o n r l d f L N)) :=
+  Internal.ObjectPacketReaderLength.native_packetReaderLengthNoTooLongAcceptedHistory w B z o n r l d f L N
+
 end PPAC.Migration.Step4Checks

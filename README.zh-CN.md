@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+reader全内部长度守恒与历史长度界已验收：每个实际历史域索引都有唯一的实际剩余长度；真实Cons消费使剩余长度减少一，原完整Separation与固定Formula4的内部ω归纳消去全部守恒IH，得到索引加剩余长度等于初始长度。任意实际历史索引及末索引均不超过真实初始输入长度，过长接受历史不可能。8模块85声明、13组原nativeZF闭句；2460构建、26717审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整停止历史存在唯一、EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_LENGTH_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 reader真实输入投影与逐内部步消费已验收：原始及带码转移取得真实单格Cons消费，余输入码严格属于旧输入码。每条实际历史边都有真实状态carrier，每个内部域索引都有实际唯一有效输入字段；所有内部步索引均取得后继及前后输入、真实Cons消费见证。Nil输入和原字节拒绝不能继续，Nil输入只能出现于末索引。10模块133声明、18组原nativeZF闭句；2452构建、26632审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。全局长度界／完整停止历史、EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_CONSUMPTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

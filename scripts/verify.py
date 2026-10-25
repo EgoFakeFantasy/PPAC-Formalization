@@ -2792,6 +2792,38 @@ def check_Packet_reader_history_append_and_determinism() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_Packet_reader_all_internal_length_conservation_and_bound() -> dict:
+    modules = ['PacketReaderLengthSyntax', 'PacketReaderLengthAt', 'PacketReaderTailLength', 'PacketReaderLengthArithmetic', 'PacketReaderLengthPoint', 'PacketReaderLengthInduction', 'PacketReaderLengthBounds', 'ObjectPacketReaderLength']
+    schemas = ['packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory']
+    required = {'PacketReaderLengthSyntax': ['def lengthAt', 'def balance', 'def matrix : Formula 4', 'def allBalance', 'theorem matrix_pred'], 'PacketReaderLengthAt': ['theorem exists_at', 'PacketReaderHistoryInput.exists_at', 'StructuralListLengthBasic.exists_length', 'theorem unique', 'StructuralListLengthUnique.unique'], 'PacketReaderTailLength': ['StructuralListLengthRules.cons_predecessor', 'StructuralListLengthUnique.unique', 'successor_input_subst'], 'PacketReaderLengthArithmetic': ['ZFContext.separation hZ1 NaturalAdditionShift.matrix', 'NaturalAdditionShift.shift_at', 'NaturalDifference.below_of_exists'], 'PacketReaderLengthPoint': ['theorem zero_value', 'PacketReaderLengthAt.unique', 'theorem adjacent_lengths', 'PacketReaderHistoryConsumption.adjacent', 'theorem successor_value', 'SyntaxIndexLiftOrder.predecessor_member', 'PacketReaderLengthAt.exists_at'], 'PacketReaderLengthInduction': ['ZFArithmetic.induction hZ PacketReaderLengthSyntax.matrix', 'NaturalAdditionTransport.params3 w f N', 'theorem all_balance', 'OmegaInductionSyntax.holds'], 'PacketReaderLengthBounds': ['theorem index_from_balance', 'PacketReaderLengthAt.exists_at', 'theorem history_bound', 'theorem no_too_long_history', 'NaturalOrderBasic.below_not_reverse'], 'ObjectPacketReaderLength': ['TheoryTransport.sentence', 'ZFReplay.replay', 'PacketReaderLengthInduction.all_balance', 'PacketReaderLengthBounds.no_too_long_history']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):
+            raise RuntimeError('Reader length forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader length proof drift: '+mod+': '+clause)
+        texts[mod] = text
+    for mod,name,expected in [('PacketReaderLengthInduction','all_balance',{'hw','hh','hL','hN'}),('PacketReaderLengthBounds','index_bound',{'hw','hh','hL','hN','hi'}),('PacketReaderLengthBounds','history_bound',{'hw','hh','hL','hN'}),('PacketReaderLengthBounds','no_too_long_history',{'hw','hh','hL','hN'})]:
+        header = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0))) != expected:
+            raise RuntimeError('Reader length hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderLength.native_'+name not in checks: raise RuntimeError('Missing reader length native fixture: '+name)
+    return {'actual_remaining_length_exists_and_is_unique_at_every_internal_domain_index':True,
+            'actual_Cons_consumption_gives_successor_of_remaining_length':True,
+            'fixed_Formula4_original_omega_induction_discharges_all_balance_IH':True,
+            'all_internal_indices_plus_remaining_length_equal_initial_length':True,
+            'all_actual_history_domain_indices_bounded_by_initial_length':True,
+            'whole_history_length_bounded_and_too_long_history_impossible':True,
+            'no_external_standardness_wellfoundedness_or_Choice_added':True,
+            'complete_stopping_history_exists_unique':False,
+            'actual_EOF_accumulator_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_Packet_reader_actual_input_projection_and_consumption() -> dict:
     modules = ['PacketReaderConsumptionSyntax', 'PacketReaderConsumptionTransport', 'PacketReaderRawConsumption', 'PacketReaderInputProjection', 'PacketReaderCodedConsumption', 'PacketReaderHistoryStates', 'PacketReaderHistoryInput', 'PacketReaderHistoryConsumption', 'PacketReaderConsumptionStopping', 'ObjectPacketReaderConsumption']
     schemas = ['packetReaderConsumptionRawStepConsumesActualCons', 'packetReaderConsumptionRawStepStrictInputDescent', 'packetReaderConsumptionCarrierHasActualValidInput', 'packetReaderConsumptionInputAgreesWithActualStateCode', 'packetReaderConsumptionActualStateInputUnique', 'packetReaderConsumptionCodedStepConsumesActualCons', 'packetReaderConsumptionCodedStepStrictInputDescent', 'packetReaderConsumptionEveryActualHistoryEdgeHasStateCarrier', 'packetReaderConsumptionActualDomainIndexHasUniqueValidInputFiber', 'packetReaderConsumptionInputProjectionExactAtActualEdge', 'packetReaderConsumptionActualAdjacentInputsConsumeCons', 'packetReaderConsumptionActualAdjacentInputsStrictlyDescend', 'packetReaderConsumptionEveryInternalStepHasActualConsumptionWitnesses', 'packetReaderConsumptionAllInternalStepConsumption', 'packetReaderConsumptionNilInputForbidsNextCodedStep', 'packetReaderConsumptionOriginalByteRejectForbidsNextCodedStep', 'packetReaderConsumptionNilInputOccursOnlyAtLastHistoryIndex', 'packetReaderConsumptionActualProjectedInputIsNatural']
@@ -2911,6 +2943,7 @@ def main() -> None:
     Packet_reader_state_code_coded_step_history_base = check_Packet_reader_state_code_coded_step_history_base()
     Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     Packet_reader_actual_input_projection_and_consumption = check_Packet_reader_actual_input_projection_and_consumption()
+    Packet_reader_all_internal_length_conservation_and_bound = check_Packet_reader_all_internal_length_conservation_and_bound()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -6186,6 +6219,19 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendSameInternalLengthEndpointsUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendOriginalLiteralAllIndexAgreement',
                     'PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend.native_packetReaderHistoryAppendRawStateCodesConstructActualExtension',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualConsConsumesOneLengthUnit',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthInternalSuccessorConservationTransfer',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualSeedConservation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualAdjacentLengthsAreSuccessors',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthConservationSuccessorPoint',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthAllInternalIndicesConservation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualHistoryIndexBound',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthWholeHistoryLengthBound',
+                    'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthNoTooLongAcceptedHistory',
                     'PPAC.Migration.Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionRawStepConsumesActualCons',
                     'PPAC.Migration.Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionRawStepStrictInputDescent',
                     'PPAC.Migration.Internal.ObjectPacketReaderConsumption.native_packetReaderConsumptionCarrierHasActualValidInput',
@@ -6215,6 +6261,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderLength": ('packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory'),
         "ObjectPacketReaderConsumption": ('packetReaderConsumptionRawStepConsumesActualCons', 'packetReaderConsumptionRawStepStrictInputDescent', 'packetReaderConsumptionCarrierHasActualValidInput', 'packetReaderConsumptionInputAgreesWithActualStateCode', 'packetReaderConsumptionActualStateInputUnique', 'packetReaderConsumptionCodedStepConsumesActualCons', 'packetReaderConsumptionCodedStepStrictInputDescent', 'packetReaderConsumptionEveryActualHistoryEdgeHasStateCarrier', 'packetReaderConsumptionActualDomainIndexHasUniqueValidInputFiber', 'packetReaderConsumptionInputProjectionExactAtActualEdge', 'packetReaderConsumptionActualAdjacentInputsConsumeCons', 'packetReaderConsumptionActualAdjacentInputsStrictlyDescend', 'packetReaderConsumptionEveryInternalStepHasActualConsumptionWitnesses', 'packetReaderConsumptionAllInternalStepConsumption', 'packetReaderConsumptionNilInputForbidsNextCodedStep', 'packetReaderConsumptionOriginalByteRejectForbidsNextCodedStep', 'packetReaderConsumptionNilInputOccursOnlyAtLastHistoryIndex', 'packetReaderConsumptionActualProjectedInputIsNatural'),
         "ObjectPacketReaderHistoryAppend": ('packetReaderHistoryAppendEveryOldRowPreserved', 'packetReaderHistoryAppendAllOldAndNewRowsPreserved', 'packetReaderHistoryAppendEveryActualAppendIsLongerHistory', 'packetReaderHistoryAppendActualExactExtensionExists', 'packetReaderHistoryAppendBothActualRowWitnessBlocksCompared', 'packetReaderHistoryAppendEmptyIndexAgreement', 'packetReaderHistoryAppendRealSuccessorAgreement', 'packetReaderHistoryAppendOriginalOmegaMatrixBase', 'packetReaderHistoryAppendOriginalOmegaMatrixStep', 'packetReaderHistoryAppendAllInternalIndexAgreementIHDischarged', 'packetReaderHistoryAppendEveryActualNaturalIndexAgrees', 'packetReaderHistoryAppendAnyActualCommonEdgesHaveSameValue', 'packetReaderHistoryAppendSameInternalLengthEndpointsUnique', 'packetReaderHistoryAppendOriginalLiteralAllIndexAgreement', 'packetReaderHistoryAppendRawStateCodesConstructActualExtension'),
         "ObjectPacketReaderHistory": ('packetReaderHistoryStateCodeExactRawDomain', 'packetReaderHistoryStateCodeOutputUnique', 'packetReaderHistoryStateCodeAllFieldsInjective', 'packetReaderHistoryStateCodeNatural', 'packetReaderHistoryCodedTransitionAtActualSource', 'packetReaderHistoryCodedTransitionNaturalDomain', 'packetReaderHistoryCodedTransitionExactCarriers', 'packetReaderHistoryCodedTransitionOutputUnique', 'packetReaderHistoryCodedSuccessorExactRawDomain', 'packetReaderHistoryActualInternalIndexHasAdjacentStep', 'packetReaderHistoryActualHistoryEndpointsNatural', 'packetReaderHistoryEveryZeroHistoryHasSameEndpoint', 'packetReaderHistoryActualSingletonZeroHistoryExists', 'packetReaderHistoryActualStateCodeSeedsZeroHistory', 'packetReaderHistoryOriginalLiteralCodedDomain'),
@@ -7216,6 +7263,8 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_reader_all_internal_length_conservation_and_bound_guard": Packet_reader_all_internal_length_conservation_and_bound,
+        "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved": True,
         "Packet_reader_actual_input_projection_and_consumption_guard": Packet_reader_actual_input_projection_and_consumption,
         'object_Packet_readTokens_actual_input_projection_and_adjacent_consumption_proved': True,
         "Packet_reader_history_append_and_determinism_guard": Packet_reader_history_append_and_determinism,
