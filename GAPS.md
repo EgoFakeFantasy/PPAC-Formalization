@@ -1,19 +1,23 @@
 # Remaining migration obligations
 
-Current authoritative stages: [original 1–11 workflow](docs/AGENT_WORKFLOW.zh-CN.md), audited 2026-10-26. Earlier repeated batch notes are recoverable from Git `7dbb1c1`.
+Use the original 1–11 stages in docs/AGENT_WORKFLOW.zh-CN.md. Final target remains native `Derives nativeZF [] (Con_ZF → Con_U)`, over every internal proof code, with U = ZF + PP + ACwo + notAC.
 
-Stages 1–3 are accepted: all source rules, full ZF schema equivalence and both AC presentations. These are not missing.
+1–3 are accepted: complete source syntax/rules, both proof kernels, all ZF schemes and both AC presentations. Do not rebuild or report these as missing.
 
-Stage 4: original Lean 4.34.1 Main built successfully (8998 jobs); five endpoints passed trust=0 and exact standard-three axiom audit. Full Comparator reproduction remains unverified. The local CheckStep4 is a different internalization test.
-Stages 5–6: internal constructions and interpretation interfaces are partly connected. Completed companion L mathematics must be reused with exact language, background and model quantifiers. The new interpreted-ZF transport retains its interpreted background and domain-nonempty antecedent.
-Stage 5: name-map laws and formula-class evaluation/covariance are accepted. The exact identity-outside `actCode` and its name action on internal permutation graphs have passed full local native-kernel acceptance. The new pairName construction/evaluation/map/fixed-condition action and unionName construction/filter evaluation have passed full local native-kernel acceptance. The checkName existence/uniqueness/exact equations/name/evaluation/map/fixed-action laws and unionName action law are now fully accepted. They are no longer remaining obligations. Next actual consumers are hereditary symmetry (HS), its closure laws, its full formula action symmetry instance and the actual HS interpretation consuming the constructed atomic recursion, laws and fixed-formula soundness. The final PPAC-specific group/homomorphism family is not instantiated; arbitrary external generic-filter interpretation is outside the selected direct proof-reduction route. Neither obligation is replaced by the generic graph action.
+4: original Lean 4.34.1 Main built (8998 jobs) and five endpoints passed trust=0. Full Comparator remains unverified; local CheckStep4 is a different test.
 
-Stages 7–9: the original OpenAI forcing/algebra/construction/model proof chain has no completed native counterpart yet. The exact left/right/swap induction needed by AtomicForcing now has an accepted nativeZF certificate; relations/MemAt/EqAt recursion and its exact equations have now been constructed for internal condition codes P with formula-defined R. Monotonicity, dense closure, reflexivity, symmetry, transitivity and membership congruence are now proved for internal preorders. Atomic action symmetry and its actCode permutation instance have passed full native-kernel acceptance; the actual condition presentation, actual HS remains pending; fixed-formula forcing and the 19-rule fixed-proof soundness schema have passed full acceptance. The generic formula action-symmetry schema is the current batch; its explicit H-domain closure and surjectivity must still be discharged for actual HS. Decision-set density / atomic truth / existence of a truth-generic filter are not required by the selected direct proof-reduction route.
-Stage 10: migrate the actual all-rank PP assembly and instantiate the existing proof machinery for ZF/U; prove the internal proof reduction and final object Con implication.
-Stage 11: final acceptance follows the actual main theorem; it has not occurred.
+5–6: internal pairs/graphs/omega/recursion, names, evaluation, map/action laws and check/pair/union constructions are accepted. Concrete source-system presentation and the complete nativeZF L interpretation adapter remain. Donor LCarrier ZF/ZFC theorems and full schemas already exist; their current object integration is incomplete.
 
-Frozen byte/packet compatibility is not a necessary migration milestone and must not drive further work. Do not use auxiliary acceptance counts to estimate progress.
+7: constructed atomic recursion/equations/laws, atomic action symmetry, full fixed-formula forcing, all 19-rule fixed-proof soundness and generic formula action symmetry are accepted. The formula action certificate retains explicit domain-transport hypotheses.
 
-ForcingFormula / ForcingSound now compile every fixed original formula, prove regularity from the actual atomic recursion, and replay all 19 source rules to a nativeZF certificate schema for finite premise lists. Full acceptance passed. The parameter domain H still requires the actual HS instantiation; arbitrary internal-code soundness and target-axiom forcing remain separate obligations.
+The current ForcingStabilizer/ForcingHS/ForcingHSCheck batch is fully accepted: literal stabilizer subsets, HS internal closed witnesses, exact source recursion equation, uniqueness among definable solutions, empty HS and check HS for all internal sets. It reuses native Collection/Separation/Union/Insert, Child induction and checkName action laws. No external well-foundedness or arbitrary assumed Symmetric predicate.
 
-ForcingFormulaSymmetry ports the pinned force_symmetry six-case proof and the existing actCode instance. It constructs two nativeZF certificate schemas under explicit object domain-transport hypotheses. It does not discharge the actual HS instance or the remaining target axioms. Directed build and trust=0 preaudit passed; full acceptance passed.
+Remaining in 7: actual PPAC group/action/normal-filter presentation; HS.smul and pair/union HS closure; instantiate and discharge the HS-domain transport in formula symmetry; force every target ZF axiom scheme. Empty/check results retain original top-filter, valid-condition and fixed-action premises, to be supplied by the concrete system.
+
+8–9: migrate the actual source Algebra/Construction and Models chain: monoid/placement/conservative hull, SVC, ACwo, same-model quotient injections and notAC witnesses. All-rank and exact-source hypotheses must be retained.
+
+10: original reverse_injection_dense → forces_PP → forces_target assembly, ZF/U specialization of existing internal proof machinery, reduction of every internal/nonstandard contradiction proof, final object Con implication.
+
+11: final theorem/quantifier/trust/source audit has not started.
+
+Decision density, atomic_truth, exists_truth_generic and byte/packet compatibility are outside the selected direct proof-reduction route. Unintegrated packet candidates and duplicate satisfaction code were retired. Existing audited dependencies are retained; do not use their counts as a progress estimate.

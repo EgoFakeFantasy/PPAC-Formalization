@@ -3425,7 +3425,10 @@ def main() -> None:
                                ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20),
                                ("forcing_formula", "ForcingFormula", 39),
                                ("forcing_sound", "ForcingSound", 9),
-                               ("forcing_formula_symmetry", "ForcingFormulaSymmetry", 13)):
+                               ("forcing_formula_symmetry", "ForcingFormulaSymmetry", 13),
+                               ("forcing_stabilizer", "ForcingStabilizer", 19),
+                               ("forcing_hs", "ForcingHS", 32),
+                               ("forcing_hs_check", "ForcingHSCheck", 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7325,9 +7328,15 @@ def main() -> None:
         "source_forcing_unionName_formula_class_filter_evaluation_proved": True,
         "source_forcing_unionName_condition_action_proved": True,
         "source_forcing_checkName_proved": True,
-        "source_forcing_checkName_scope": "All internal sets: existence, uniqueness, exact membership/edge equations, IsName, formula-class evaluation, definable condition-map covariance and fixed-condition action. External generic-filter identification and HS closure are not claimed.",
+        "source_forcing_checkName_scope": "All internal sets: existence, uniqueness, exact membership/edge equations, IsName, formula-class evaluation, definable condition-map covariance and fixed-condition action. External generic-filter identification is not claimed. HS closure is proved separately in ForcingHSCheck under the original fixed-action and top-filter premises.",
         "source_forcing_checkName_external_wellFounded_required": False,
-        "source_forcing_checkName_HS_closure_proved": False,
+        "source_forcing_checkName_HS_closure_proved": True,
+        "source_forcing_checkName_HS_scope": "All internal x; explicit source top-filter, t in P and action-family fixing t; concrete PPAC family remains uninstantiated.",
+        "source_forcing_literal_stabilizer_constructed": True,
+        "source_forcing_HS_definition_unfolding_and_definable_uniqueness_proved": True,
+        "source_forcing_empty_HS_proved": True,
+        "source_forcing_HS_action_closure_proved": False,
+        "source_forcing_HS_pair_union_closure_proved": False,
         "source_atomic_left_right_swap_induction_native_certificate_proved": True,
         "source_atomic_relations_recursion_constructed": True,
         "source_atomic_relations_scope": "All internal raw names, internal condition set P, formula-defined relation R; native existence, uniqueness, exact membership/equality equations. External condition presentation identification remains pending.",

@@ -19,7 +19,7 @@ The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historica
 | Formula-class evaluation and original covariance | ForcingClassEvaluation existence / uniqueness / unfolding / membership certificates; ForcingEvaluationCovariance.covariance_kernel_certificate | Every parameter formula and definable total map; exact inverse-image formula, no inverse-image-set hypothesis, all raw names. Old set-G evaluator is an object-equivalent instance. Full local native-kernel acceptance passed. External generic-filter identification is outside the selected direct proof-reduction route. |
 | Actual condition-code and name action | ForcingConditionGraphs identity / inverse / composition certificates; ForcingConditionAction function / name / identity / composition / inverse / covariance certificates | Exact source identity-outside condition formula, instantiated name map and formula-class covariance. Arbitrary internal permutation graphs; final PPAC group/homomorphism family not yet instantiated. Full local native-kernel acceptance passed. |
 | Original pair and union names | ForcingPairName seven native certificate schemas; ForcingUnionName five native certificate schemas | Exact literal pair and all-common-strengthenings union; formula-class evaluation, pair mapping/fixed-condition action; union evaluation retains subset/upward closure/directedness. Full local native-kernel acceptance passed. Both are completed by the following row. |
-| Original checkName and union action | ForcingCheckName four certificates; ForcingCheckNameLaws four certificates; ForcingUnionAction two certificates | All internal sets, exact source membership equation, IsName, formula-class evaluation, definable condition mapping, fixed-condition action; actual order-preserving permutation commutes with unionName. No external WellFounded; HS remains pending; atomic recursion and laws are covered below. Full acceptance passed. |
+| Original checkName and union action | ForcingCheckName four certificates; ForcingCheckNameLaws four certificates; ForcingUnionAction two certificates | All internal sets, exact source membership equation, IsName, formula-class evaluation, definable condition mapping, fixed-condition action; actual order-preserving permutation commutes with unionName. No external WellFounded; the newly constructed HS/check closure is recorded below; atomic recursion and laws are covered below. Full acceptance passed. |
 | Main OpenAI forcing chain | No completed native counterpart yet | Original forcing, algebra, construction and models remain to be migrated along their actual dependency chain |
 | Internal Proof/Con and final theorem | Not complete | Original background, all internal codes, full axiom test and final Derives required |
 
@@ -33,10 +33,19 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 | Source dependency | Current native migration | Remaining boundary |
 |---|---|---|
 | AtomicForcing child induction and relations | ForcingPairInduction, ForcingAtomicStep/Graphs/Recursion/Relations: internal recursive relations and exact equations accepted | Actual condition presentation remains |
-| AtomicForcing atomic_laws and dense closure | ForcingAtomicBasic/TripleInduction/Laws accepted; constructed relations, no assumed atomic-law fields | Actual HS and target axioms remain |
+| AtomicForcing atomic_laws and dense closure | ForcingAtomicBasic/TripleInduction/Laws accepted; constructed relations, no assumed atomic-law fields | Concrete HS system closure and target axioms remain |
 | AtomicForcing atomic_symmetry | ForcingAtomicSymmetry accepted, including literal actCode permutation instance | Concrete PPAC group remains |
-| ForcingQuotient BasicFormula/toBasic/Force, ForcingTruth regularity | ForcingFormula accepted: every fixed formula, all-rank parameter H, dense local witnesses | Actual H = HS instantiation remains |
+| ForcingQuotient BasicFormula/toBasic/Force, ForcingTruth regularity | ForcingFormula accepted: every fixed formula, all-rank parameter H, dense local witnesses | HS predicate is constructed below; actual system/domain transport remains |
 | ForcingTruth forcing_sound/rename/raise/instantiate | ForcingSound accepted: all 19 rules, native certificate for each fixed source proof and finite premise list | Arbitrary internal/nonstandard proof-code reduction remains |
 | ForcingTruth force_symmetry (14–44) | ForcingFormulaSymmetry: six-case original induction, general map and existing actCode certificates; directed build and trust=0 preaudit passed, full acceptance passed | H closure/surjectivity are explicit object antecedents, not completed actual HS. Consumer: SymmetricNames.forces_symmetry and Separation-name action |
 
 Decision-set density, atomic_truth and exists_truth_generic are outside the selected direct proof-reduction route. Historical batch-specific missing-status paragraphs have been removed because later accepted batches discharged them. Source definitions, quantifiers and the final nativeZF Con contract remain unchanged.
+
+
+| Original HS dependency | Current object result | Remaining boundary |
+|---|---|---|
+| Name.Symmetric | ForcingStabilizer: actual fixed-name action and unique stabilizer subset by Separation | Concrete group/action-family and normal filter not instantiated |
+| Name.HS / hs_iff / child | ForcingHS: internal closed-set witnesses, exact guarded source equation, uniqueness among definable solutions by original Child induction | HS.smul and pair/union closures remain |
+| Name.empty_HS / check_HS | Empty HS and check HS for every internal set; five native certificates across all three modules | Retains original top-filter, t in P and fixed-action premises; concrete system must supply them |
+
+This batch has 59 audited declarations; directed build and trust=0 preaudit passed, full acceptance passed. The all-rank HS predicate is no longer an arbitrary assumed H or a nonexistent definition. Its complete action closure and use in the concrete PPAC forcing system remain unproved.

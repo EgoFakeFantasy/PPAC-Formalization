@@ -336,3 +336,6 @@ import PPAC.Migration.ForcingAtomicSymmetry
 import PPAC.Migration.ForcingFormula
 import PPAC.Migration.ForcingSound
 import PPAC.Migration.ForcingFormulaSymmetry
+import PPAC.Migration.ForcingStabilizer
+import PPAC.Migration.ForcingHS
+import PPAC.Migration.ForcingHSCheck

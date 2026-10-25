@@ -5,7 +5,7 @@
 | 已有资产 | 精确入口／本仓实际消费者 | 正确状态和边界 |
 |---|---|---|
 | 完整 ZF 模式 | YesMetaZFC/SetTheory/Axioms/ZF.lean 的任意参数 separation/collection；ReverseZFReplay、CollectionFromReplacement | 已完成并消费，不能再报为数学缺口 |
-| 集合配对、并、插入、积、分离、收集 | KP.exists_pair/exists_union/exists_insert、ZF.exists_cartesianProduct、Collection.collection_exists_d；KuratowskiZF、ForcingNames、ForcingAtomicRecursion | 已消费。内部 Collection 见证族经 Separation 过滤再合并；不抽取对象选择函数 |
+| 集合配对、并、插入、积、分离、收集 | KP.exists_pair/exists_union/exists_insert、ZF.exists_cartesianProduct、Collection.collection_exists_d；KuratowskiZF、ForcingNames、ForcingAtomicRecursion、ForcingHS | 已消费。内部 Collection 见证族经 Separation 过滤再合并；不抽取对象选择函数 |
 | 内部序数递归 | SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals；GodelDefRecursion、ConstructibleHistory | 已消费全部内部序数接口。另一个 WellFounded.Recursion.solve 要求宿主 WellFounded，不能用于任意可能外部不良基的 nativeZF 模型 |
 | 集合／名字归纳与递归 | SetInduction.native_induction → ForcingNameInduction/ForcingMapLaws → ForcingPairInduction/ForcingTripleInduction；ForcingNameRecursion | 已消费到名字、映射、原子递归和定律；后两种归纳有实际证明消费者，不是待重建后端 |
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。具体 PPAC 群同态族未实例化 |
@@ -41,3 +41,9 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 本批公式层重用原子定律而不假定 AtomicData 字段；rename 的 binder 对应直接调用已有 DefinableMinimaChoice.lift_assignment。沿用 Source.Derives 的原 19 构造器，没有新增推导核。有限前提与名字域守卫仅在既有 Source AST 中合取打包，最终仍用 ModelTransfer.derives 返回原核证明。六构造子 Basic 是锁定源语法的摘录；源码只用于泛滤的 Countable 派生未搬入，不重建满足关系或内部码识别。
 
 本轮 ForcingFormulaSymmetry 继续消费既有 atomic_symmetry、mapping、action_transport、toBasic 和 conjunction_semantics；返回原核的 ModelTransfer.derives 仍直接使用已有 strong_completeness/PureRosserSchedule。没有重建群作用后端、满足关系、检查器或完备性。一般 H 的双向名字见证前提只是原 N ≃ N 所使用的两个存在方向的对象化；实际 HS 必须单独证明这些条件。已重新读取上述 LCarrier 两个完整模型定理和 LCarrier 的 ZFSet 子类定义，未把该单个模型套入任意 nativeZF 模型的前提。
+
+
+本轮 ForcingHS 的内部闭包证明直接调用固定 Collection.collection_exists_d，并用现成 Separation 删除收集见证中的多余元素，再用 KP.exists_union/exists_insert 拼接；没有另造 Replacement 或选择见证函数。定义唯一性调用已验收 ForcingNameInduction.kernel_certificate；check_HS 使用 ForcingCheckName.formula_induction、edge_checkName 和 ForcingCheckNameLaws.action_fixed。稳定子通过既有 actFormula/mapConditions 定义，未把 Symmetric 或 HS 作为假设字段。具体群／正规滤子和 HS.smul 仍是待迁移的源数学。
+
+
+下一实际源实例已核对：ProductNames.system 使用 Γ = Equiv.Perm I 与 SupportFilter.subgroupFilter μ；ConcreteSystem.S 消费同一系统。下一批应将现有 ForcingConditionGraphs 的恒等、逆、复合图入口实例化到标签集合 I，接原 actionHom 和稳定子共轭，不预先新建通用群论库。源 IsNormalFilter 的四项是顶、向上闭包、交和共轭闭包；其小支撑滤子构造与基数前提仍按原源码迁移。仅以文件名搜索未发现同名供体，不据此断言其他仓库不存在可用数学。
