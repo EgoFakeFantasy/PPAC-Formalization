@@ -2971,6 +2971,45 @@ def check_actual_reader_initialization() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_actual_reader_history_prepend_and_run_recursion() -> dict:
+    modules = ['SequencePrependSyntax', 'SequencePrependValues', 'SequencePrependGraph', 'SequencePrependEdges', 'PacketReaderHistoryPrependRows', 'PacketReaderHistoryPrepend', 'PacketReaderRunPrepend', 'PacketReaderRunStep', 'PacketReaderEvalSyntax', 'PacketReaderEval', 'ObjectPacketReaderRecursion']
+    schemas = ['packetReaderRecursionPrependZeroValueExact', 'packetReaderRecursionPrependSuccessorValueExact', 'packetReaderRecursionPrependValueUnique', 'packetReaderRecursionPrependEveryInternalValueExistsUnique', 'packetReaderRecursionPrependValuePreservesActualBound', 'packetReaderRecursionOriginalReplacementConstructsExactPrependGraph', 'packetReaderRecursionPrependGraphIsActualSequence', 'packetReaderRecursionPrependGraphUnique', 'packetReaderRecursionPrependActualZeroEdge', 'packetReaderRecursionPrependEveryActualSuccessorEdgeExact', 'packetReaderRecursionEveryActualHistoryRowShifts', 'packetReaderRecursionActualInitialStepConstructsZeroRow', 'packetReaderRecursionExactPrependGraphConstructsRealWholeHistory', 'packetReaderRecursionRealWholeHistoryPrependExists', 'packetReaderRecursionStepAndReturningHistoryConstructWholeRun', 'packetReaderRecursionActualStepPropagatesReturningRunBackward', 'packetReaderRecursionActualStepPropagatesReturningRunForward', 'packetReaderRecursionActualStepWholeRunExactEquation', 'packetReaderRecursionFourFieldEvaluationNormalizesAtActualCode', 'packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquation', 'packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation']
+    required = {'SequencePrependSyntax': ['def shift', 'def value', 'empty i', 'successor i.castSucc', 'def matrix : Formula 5', 'def graph', 'theorem matrix_graph'], 'SequencePrependValues': ['theorem at_zero', 'theorem at_successor', 'SyntaxIndexLiftOrder.successor_injective', 'theorem exists_unique', 'OmegaStructureInduction.decomposition', 'SyntaxIndexLiftOrder.predecessor_member', 'SequenceLogic.value_at'], 'SequencePrependGraph': ['RelationGraphFunction.exists_graph', 'theorem total', 'theorem outputs', 'RelationGraph.sequence', 'RelationGraph.unique_graph'], 'SequencePrependEdges': ['theorem zero_edge', 'theorem successor_iff', 'SyntaxIndexLiftOrder.successor_member', 'theorem forward_edge'], 'PacketReaderHistoryPrependRows': ['theorem successor_row', 'theorem zero_row', 'SequencePrependEdges.forward_edge', 'PacketReaderCodedSyntax.step_rename'], 'PacketReaderHistoryPrepend': ['def extension', 'theorem links', 'OmegaStructureInduction.decomposition', 'theorem from_graph', 'theorem exists_extension', 'SequencePrependGraph.exists_graph'], 'PacketReaderRunPrepend': ['theorem from_history', 'InsertExistence.exists_insert', 'PacketReaderHistoryPrepend.exists_extension', 'theorem backward', 'intro_run'], 'PacketReaderRunStep': ['theorem forward', 'PacketReaderReturnRunExistence.exists_run', 'PacketReaderReturnRunUnique.unique', 'theorem step_iff', 'PacketReaderRunPrepend.backward'], 'PacketReaderEvalSyntax': ['def eval', 'PacketReaderStateSyntax.code', 'PacketReaderReturnCodedSyntax.run', 'theorem eval_rename'], 'PacketReaderEval': ['theorem at_code', 'theorem step_iff', 'PacketReaderInputStep.domain', 'PacketReaderStateCode.exists_code', 'PacketReaderCodedSyntax.intro_step', 'PacketReaderRunStep.step_iff', 'theorem at_terminal', 'PacketReaderTerminalZero.at_terminal'], 'ObjectPacketReaderRecursion': ['TheoryTransport.sentence', 'ZFReplay.replay', 'PacketReaderEval.step_iff', 'PacketReaderRunStep.step_iff']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):
+            raise RuntimeError('Reader stopping forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader stopping proof drift: '+mod+': '+clause)
+        texts[mod] = text
+    for mod,name,expected in [('SequencePrependGraph','exists_graph',{'hw','hd','he','hf'}),('PacketReaderHistoryPrepend','exists_extension',{'hw','hh','ht','he'}),('PacketReaderRunPrepend','backward',{'hw','ht','hr'}),('PacketReaderRunStep','step_iff',{'hw','hB','hz','ho','ht'}),('PacketReaderEval','step_iff',{'hw','hB','hz','ho','ht'})]:
+        header = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0))) != expected:
+            raise RuntimeError('Reader stopping hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderRecursion.native_'+name not in checks: raise RuntimeError('Missing reader stopping native fixture: '+name)
+    return {'exact_prepend_value_zero_and_successor_equations_proved':True,
+            'every_actual_internal_prepend_index_has_unique_value':True,
+            'original_Replacement_constructs_actual_exact_prepend_graph':True,
+            'actual_prepend_graph_is_bounded_sequence_and_unique_as_set':True,
+            'all_original_edges_shift_exactly_to_successor_indices':True,
+            'actual_zero_initial_step_and_all_internal_rows_constructed':True,
+            'original_history_prepended_with_actual_domain_and_exact_graph':True,
+            'genuine_step_and_returning_history_construct_genuine_whole_run':True,
+            'whole_run_one_step_backward_propagation_without_new_history_premise':True,
+            'whole_run_one_step_forward_propagation_from_actual_totality_and_uniqueness':True,
+            'whole_run_one_step_exact_biconditional_on_all_output_candidates':True,
+            'actual_four_field_evaluation_constructs_and_eliminates_both_state_codes':True,
+            'actual_four_field_evaluation_original_advance_equation_proved':True,
+            'actual_four_field_evaluation_original_terminal_equation_proved':True,
+            'no_external_standard_length_host_recursion_or_chosen_graph_used':True,
+            'all_internal_varint_segmentation_and_output_order_invariants':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_Packet_reader_all_internal_length_conservation_and_bound() -> dict:
     modules = ['PacketReaderLengthSyntax', 'PacketReaderLengthAt', 'PacketReaderTailLength', 'PacketReaderLengthArithmetic', 'PacketReaderLengthPoint', 'PacketReaderLengthInduction', 'PacketReaderLengthBounds', 'ObjectPacketReaderLength']
     schemas = ['packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory']
@@ -3123,6 +3162,7 @@ def main() -> None:
     Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     Packet_reader_actual_input_projection_and_consumption = check_Packet_reader_actual_input_projection_and_consumption()
     Packet_reader_all_internal_length_conservation_and_bound = check_Packet_reader_all_internal_length_conservation_and_bound()
+    actual_reader_history_prepend_and_run_recursion = check_actual_reader_history_prepend_and_run_recursion()
     actual_reader_initialization = check_actual_reader_initialization()
     actual_EOF_reverse_option_and_real_run_return = check_actual_EOF_reverse_option_and_real_run_return()
     actual_internal_list_reversal = check_actual_internal_list_reversal()
@@ -6508,6 +6548,27 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitActualTerminalRunEquation',
                     'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitSeededEmptyInputExactSomeNil',
                     'PPAC.Migration.Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedEmptyInputExactSomeNil',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependZeroValueExact',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependSuccessorValueExact',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependValueUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependEveryInternalValueExistsUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependValuePreservesActualBound',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionOriginalReplacementConstructsExactPrependGraph',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependGraphIsActualSequence',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependGraphUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependActualZeroEdge',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependEveryActualSuccessorEdgeExact',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionEveryActualHistoryRowShifts',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualInitialStepConstructsZeroRow',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionExactPrependGraphConstructsRealWholeHistory',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionRealWholeHistoryPrependExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionStepAndReturningHistoryConstructWholeRun',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepPropagatesReturningRunBackward',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepPropagatesReturningRunForward',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepWholeRunExactEquation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationNormalizesAtActualCode',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquation',
+                    'PPAC.Migration.Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength',
@@ -6550,6 +6611,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderRecursion": ('packetReaderRecursionPrependZeroValueExact', 'packetReaderRecursionPrependSuccessorValueExact', 'packetReaderRecursionPrependValueUnique', 'packetReaderRecursionPrependEveryInternalValueExistsUnique', 'packetReaderRecursionPrependValuePreservesActualBound', 'packetReaderRecursionOriginalReplacementConstructsExactPrependGraph', 'packetReaderRecursionPrependGraphIsActualSequence', 'packetReaderRecursionPrependGraphUnique', 'packetReaderRecursionPrependActualZeroEdge', 'packetReaderRecursionPrependEveryActualSuccessorEdgeExact', 'packetReaderRecursionEveryActualHistoryRowShifts', 'packetReaderRecursionActualInitialStepConstructsZeroRow', 'packetReaderRecursionExactPrependGraphConstructsRealWholeHistory', 'packetReaderRecursionRealWholeHistoryPrependExists', 'packetReaderRecursionStepAndReturningHistoryConstructWholeRun', 'packetReaderRecursionActualStepPropagatesReturningRunBackward', 'packetReaderRecursionActualStepPropagatesReturningRunForward', 'packetReaderRecursionActualStepWholeRunExactEquation', 'packetReaderRecursionFourFieldEvaluationNormalizesAtActualCode', 'packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquation', 'packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation'),
         "ObjectPacketReaderInit": ('packetReaderInitActualInitialState', 'packetReaderInitActualInitialCodeExists', 'packetReaderInitActualInitialCodeUnique', 'packetReaderInitActualInitialCodeNatural', 'packetReaderInitSeededNormalizeAtActualInitialCode', 'packetReaderInitSeededReturnExists', 'packetReaderInitSeededCandidateUnique', 'packetReaderInitSeededValueNatural', 'packetReaderInitSeededDomainExactlyValidInput', 'packetReaderInitFixedParserExactlyActualLiterals', 'packetReaderInitEveryInternalInputHasInitializedReturn', 'packetReaderInitInitializedCandidateUnique', 'packetReaderInitInitializedValueNatural', 'packetReaderInitInitializedDomainExactlyValidInput', 'packetReaderInitInitializedObjectExistsUniqueFiber', 'packetReaderInitFixedSuccessExactActualOption', 'packetReaderInitFixedRejectionExactActualOption', 'packetReaderInitActualZeroHistoryImplementsLocalReturn', 'packetReaderInitActualTerminalRunEquation', 'packetReaderInitSeededEmptyInputExactSomeNil', 'packetReaderInitInitializedEmptyInputExactSomeNil'),
         "ObjectPacketReaderReturn": ('packetReaderReturnActualNoneExists', 'packetReaderReturnActualSomeExists', 'packetReaderReturnActualNoneUnique', 'packetReaderReturnActualSomeUnique', 'packetReaderReturnActualSomePayloadUnique', 'packetReaderReturnActualOptionsDisjoint', 'packetReaderReturnEOFActualReverseReturnExists', 'packetReaderReturnActualRejectionReturnExists', 'packetReaderReturnLocalDomainExactlyOriginalTerminal', 'packetReaderReturnLocalCandidateUnique', 'packetReaderReturnExactSomeActualReverse', 'packetReaderReturnExactNoneOriginalRejection', 'packetReaderReturnLocalValueNatural', 'packetReaderReturnCodedNormalizeAtActualSource', 'packetReaderReturnCodedExistsOnOriginalObservation', 'packetReaderReturnCodedCandidateUnique', 'packetReaderReturnCodedDomainExactlyOriginalObservation', 'packetReaderReturnCodedValueNatural', 'packetReaderReturnEveryActualCarrierHasRealRunReturn', 'packetReaderReturnRunDomainExactlyActualCarrier', 'packetReaderReturnRealRunCandidateUnique', 'packetReaderReturnRealRunValueNatural', 'packetReaderReturnRealRunObjectExistsUniqueFiber', 'packetReaderReturnRealRunNormalizeAtStoppedHistory', 'packetReaderReturnRealRunNormalizeAtActualEndpoint', 'packetReaderReturnRealRunExactSomeActualReverse', 'packetReaderReturnRealRunExactNoneOriginalRejection'),
         "ObjectStructuralListReverse": ('structuralListReverseEveryInternalPositionHasMirror', 'structuralListReverseMirrorCandidateUnique', 'structuralListReverseMirrorSymmetric', 'structuralListReverseMirrorInputInRange', 'structuralListReverseMirrorOutputInRange', 'structuralListReverseActualReverseFieldExistsUnique', 'structuralListReverseActualReverseFieldNatural', 'structuralListReverseReverseFieldExactAtMirror', 'structuralListReverseOriginalReplacementConstructsExactReverseGraph', 'structuralListReverseExactReverseGraphIsActualSequence', 'structuralListReverseExactReverseGraphUnique', 'structuralListReverseEveryValidInternalListHasActualReverse', 'structuralListReverseActualReverseCodeUnique', 'structuralListReverseActualReverseCodeExistsUnique', 'structuralListReverseActualReverseRequiresValidInput', 'structuralListReverseActualReverseHasValidOutput', 'structuralListReverseActualReverseFieldsExactlyReflected', 'structuralListReverseActualReverseSymmetric', 'structuralListReverseActualReverseInvolutive', 'structuralListReverseExactNilReversal', 'structuralListReverseNormalizeEveryActualLength', 'structuralListReverseExactConsSnocReversal', 'structuralListReverseActualSnocCodeUnique'),
@@ -7567,6 +7629,8 @@ def main() -> None:
         "object_actual_EOF_reverse_option_and_real_run_return_exists_unique_proved": True,
         "actual_reader_initialization_guard": actual_reader_initialization,
         "object_actual_reader_initialization_literals_input_domain_and_empty_equation_proved": True,
+        "actual_reader_history_prepend_and_run_recursion_guard": actual_reader_history_prepend_and_run_recursion,
+        "object_actual_reader_prepend_history_and_full_run_step_terminal_equations_proved": True,
         "Packet_reader_all_internal_length_conservation_and_bound_guard": Packet_reader_all_internal_length_conservation_and_bound,
         "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved": True,
         "Packet_reader_actual_input_projection_and_consumption_guard": Packet_reader_actual_input_projection_and_consumption,

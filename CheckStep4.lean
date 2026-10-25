@@ -13513,4 +13513,88 @@ example {m} (w L u q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderInit.packetReaderInitInitializedEmptyInputExactSomeNilSentence w L u q)) :=
   Internal.ObjectPacketReaderInit.native_packetReaderInitInitializedEmptyInputExactSomeNil w L u q
 
+example {m} (f d n i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependZeroValueExactSentence f d n i y)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependZeroValueExact f d n i y
+
+example {m} (w f d n i j y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependSuccessorValueExactSentence w f d n i j y)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependSuccessorValueExact w f d n i j y
+
+example {m} (w f d n i y z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependValueUniqueSentence w f d n i y z)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependValueUnique w f d n i y z
+
+example {m} (w f d n e i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependEveryInternalValueExistsUniqueSentence w f d n e i)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependEveryInternalValueExistsUnique w f d n e i
+
+example {m} (f d n w i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependValuePreservesActualBoundSentence f d n w i y)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependValuePreservesActualBound f d n w i y
+
+example {m} (w f d n e : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionOriginalReplacementConstructsExactPrependGraphSentence w f d n e)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionOriginalReplacementConstructsExactPrependGraph w f d n e
+
+example {m} (w f d n e g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependGraphIsActualSequenceSentence w f d n e g)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependGraphIsActualSequence w f d n e g
+
+example {m} (f d n e g h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependGraphUniqueSentence f d n e g h)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependGraphUnique f d n e g h
+
+example {m} (w f d n e g z : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependActualZeroEdgeSentence w f d n e g z)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependActualZeroEdge w f d n e g z
+
+example {m} (w f d n e g i j y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionPrependEveryActualSuccessorEdgeExactSentence w f d n e g i j y)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionPrependEveryActualSuccessorEdgeExact w f d n e g i j y
+
+example {m} (w B z o f d n e g i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionEveryActualHistoryRowShiftsSentence w B z o f d n e g i j)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionEveryActualHistoryRowShifts w B z o f d n e g i j
+
+example {m} (w B z o n r t l d e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionActualInitialStepConstructsZeroRowSentence w B z o n r t l d e f g)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualInitialStepConstructsZeroRow w B z o n r t l d e f g
+
+example {m} (w B z o n r t l d e f g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionExactPrependGraphConstructsRealWholeHistorySentence w B z o n r t l d e f g)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionExactPrependGraphConstructsRealWholeHistory w B z o n r t l d e f g
+
+example {m} (w B z o n r t l d e f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionRealWholeHistoryPrependExistsSentence w B z o n r t l d e f)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionRealWholeHistoryPrependExists w B z o n r t l d e f
+
+example {m} (w B z o n r t l d f q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionStepAndReturningHistoryConstructWholeRunSentence w B z o n r t l d f q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionStepAndReturningHistoryConstructWholeRun w B z o n r t l d f q
+
+example {m} (w B z o n r q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionActualStepPropagatesReturningRunBackwardSentence w B z o n r q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepPropagatesReturningRunBackward w B z o n r q
+
+example {m} (w B z o n r q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionActualStepPropagatesReturningRunForwardSentence w B z o n r q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepPropagatesReturningRunForward w B z o n r q
+
+example {m} (w B z o n r q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionActualStepWholeRunExactEquationSentence w B z o n r q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionActualStepWholeRunExactEquation w B z o n r q
+
+example {m} (w B z o L v s a q n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionFourFieldEvaluationNormalizesAtActualCodeSentence w B z o L v s a q n)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationNormalizesAtActualCode w B z o L v s a q n
+
+example {m} (w B z o L v s a X y S c q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquationSentence w B z o L v s a X y S c q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalAdvanceEquation w B z o L v s a X y S c q
+
+example {m} (w B z o L v s a q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionFourFieldEvaluationOriginalTerminalEquationSentence w B z o L v s a q)) :=
+  Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation w B z o L v s a q
+
 end PPAC.Migration.Step4Checks
