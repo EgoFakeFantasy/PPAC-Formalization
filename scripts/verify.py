@@ -3464,7 +3464,8 @@ def main() -> None:
                                ("forcing_foundation", "ForcingFoundation", 13),
                                ("forcing_infinity", "ForcingInfinity", 9),
                                ("forcing_collected_name", "ForcingCollectedName", 16),
-                               ("forcing_collected_hs", "ForcingCollectedHS", 17)):
+                               ("forcing_collected_hs", "ForcingCollectedHS", 17),
+                               ("forcing_tuple_stabilizer", "ForcingTupleStabilizer", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7398,6 +7399,8 @@ def main() -> None:
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
+        "source_tuple_stabilizer_native_schema_proved": True,
+        "source_separation_common_support_from_actual_name_stabilizers_proved": True,
         "source_collect_HS_concrete_separation_instance_proved": False,
         "source_actual_HS_all_forced_ZF_schemas_proved": False,
         "source_product_actual_name_stabilizers_subgroup_proved": True,

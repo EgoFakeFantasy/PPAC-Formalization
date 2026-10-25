@@ -79,3 +79,5 @@ Foundation 迁移直接消费已经完成的 ForcingMapLaws.formula_induction �
 Infinity 迁移直接消费固定底座 `ZF.exists_omega` 及内部 IsOmega 的空集／后继闭包，消费现成 checkName.exists_checked/edge_checkName/unique 和 HSCheck.check_hs。实际固定顶来自 ProductFamily.top_fixed；SuccessorOf 中的 SameMembers 由既有 ModelTransfer.extensionality 转为源等号。原 mem_check/check_successor 的稠密见证与原子相等替换保留；不另建自然数、check 递归或限制内部 ω。
 
 收集名字迁移消费现有 coordinate_bound（两次原生并）、exists_cartesian（原生积）、SeparationSyntax 全模式，构造恰好满足原索引／条件测试的有序对值域。HS 证明消费 ProductCovariance.inverse、NameConjugacy.inverse_action、实际稳定子子群和 Normal 的上闭性。indexed_permutes_iff 核对当前对象条件与源按索引存在见证合同，而非未经证明地改写前提。族图允许关系式呈现，源函数图是精确特例；这里未声称 SymmetricChoice.chosenWitness 的宿主选择已对象化，仍须在对应消费者处证明本地见证义务。
+
+参数元组稳定子直接消费固定底座 `SetTheory/Separation.lean:98 KP.intersection_exists_d`、现有 subgroup_intersection/实际名字稳定子和 Normal 的交闭性。沿源的零元组顶群、后继有限交证明；separation_support 用追加原名字的元组取得分离所需共同支撑。原核回传仍用 ModelTransfer，不重建集合交、群作用或完备性。新版 L 的 ZF/ZFC 定理正文已再次回读，完整模式及任意内部模型范围不变；本批没有重跑或改写供体。

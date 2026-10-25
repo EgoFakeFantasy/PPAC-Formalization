@@ -30523,3 +30523,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCollectedHS.sentence
 #print axioms PPAC.Migration.ForcingCollectedHS.models
 #print axioms PPAC.Migration.ForcingCollectedHS.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingTupleStabilizer.finite_conjunction
+#print axioms PPAC.Migration.ForcingTupleStabilizer.tupleHS
+#print axioms PPAC.Migration.ForcingTupleStabilizer.tupleHS_semantics
+#print axioms PPAC.Migration.ForcingTupleStabilizer.tupleFixed
+#print axioms PPAC.Migration.ForcingTupleStabilizer.TupleFixed
+#print axioms PPAC.Migration.ForcingTupleStabilizer.tupleFixed_semantics
+#print axioms PPAC.Migration.ForcingTupleStabilizer.exists_tuple
+#print axioms PPAC.Migration.ForcingTupleStabilizer.fixed_action
+#print axioms PPAC.Migration.ForcingTupleStabilizer.separation_support
+#print axioms PPAC.Migration.ForcingTupleStabilizer.sentence
+#print axioms PPAC.Migration.ForcingTupleStabilizer.models
+#print axioms PPAC.Migration.ForcingTupleStabilizer.kernel_certificate

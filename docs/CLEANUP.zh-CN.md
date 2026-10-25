@@ -78,3 +78,6 @@ Infinity 批次：正式 Audit.lean 接管新增九项声明后，按绝对路�
 
 
 收集名字批次：正式 Audit.lean 接管新增 33 项声明后，按绝对路径、普通文件及 SHA-256 白名单删除 ForcingCollectAudit.lean；清单为 verification/cleanup-collect-probe-20261026.json。预审探针曾因 import 排在声明之后失败，调整为全部 import 在文件开头后重新预审通过；该错误未作为形式化通过证据。预审及完整日志保留；没有新增持久生成脚本或独立报告。
+
+
+参数稳定子复审批次：按解析后的绝对路径、普通文件和无跟踪引用白名单，删除 8 份旧规划元数据及已由正式 Audit.lean 接管的 ForcingTupleAudit.lean，共 9 文件、14915 字节；旧元数据先归档并逐项 SHA-256 回验，清单见 verification/cleanup-tuple-review-20261026.json。mode2-source-batch.json 因仍有跟踪引用而保留；正式预审和全验收日志保留。移除新模块对 CollectedHS 的不必要导入，改为直接复用 ProductStabilizer/NormalFilter。没有重启冻结字节路线，也没有在未分析消费者前批量删除已验收证明。

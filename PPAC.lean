@@ -375,3 +375,4 @@ import PPAC.Migration.ForcingFoundation
 import PPAC.Migration.ForcingInfinity
 import PPAC.Migration.ForcingCollectedName
 import PPAC.Migration.ForcingCollectedHS
+import PPAC.Migration.ForcingTupleStabilizer

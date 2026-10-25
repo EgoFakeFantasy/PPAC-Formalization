@@ -60,6 +60,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | SymmetricNames.collectRaw / collect_HS | ForcingCollectedName.existence_kernel_certificate; ForcingCollectedHS.kernel_certificate | Exact internal indexed-family range and HS closure under source subgroup/selected-entry permutation contract; indexed contract equivalence proved. Actual Separation/PowerSet/Replacement instantiations remain. No object choice function or new Collection backend. |
 
+| SymmetricNames.tupleStabilizer / tupleStabilizer_mem / mem_tupleStabilizer | ForcingTupleStabilizer.kernel_certificate; separation_support | Native finite intersection and actual stabilizer subgroup proofs; every external finite tuple indexes an object sentence and original-kernel certificate. Simultaneous fixing for the name and parameters is constructed, not assumed. separationTest_permute and full forced Separation remain. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
