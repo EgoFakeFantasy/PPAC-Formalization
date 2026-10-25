@@ -1,5 +1,9 @@
 # PPAC 向 YesMetaZFC 迁移
 
+全内部多token编码及原reader顺序消费已验收：独立原双轨迹构造每个有效内部token列表的唯一规范分段编码，精确Nil／Cons方程保留段和token顺序。实际Splice结合律与单元素Snoc合同将反向acc对接最终顺序；固定Formula5经原完整Separation／Foundation消去全部尾码IH。仅Ω与独立Encoded即可取得原Parse(bytes,p)↔Some(tokens,p)，实际128／0／1见证均在对象推导内消去，并联合构造唯一实际字节输入和所有返回候选方程。43模块375声明、25组原nativeZF闭句；2596构建、28220审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。全局字节<256界、带界逆向规范分段、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_MULTITOKEN_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 全内部单个规范varint段消费已验收：独立实际Cons双轨迹给精确拼接，任意两个有效内部列表都有唯一实际拼接码。固定Formula5经原完整Separation和Foundation消去所有较小token归纳假设，任意自然数尾输入、value／scale／acc下得到完整段Eval双条件；保留原尺度等于单位或token非零守卫，允许零尺度，未添加尾输入字节界。实际拼接输入被构造且对所有返回候选成立。30模块239声明、17组原nativeZF闭句；2553构建、27845审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。多token分段／输出顺序、带字节界的逆向规范性、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_VARINT_SEGMENT_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

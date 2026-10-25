@@ -13665,4 +13665,104 @@ example {m} (w B z o n C T v s a u c : Fin m) : YesMetaZFC.Logic.FirstOrder.Deri
     (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentUniqueActualJoinedInputAndAllOutputConsumptionSentence w B z o n C T v s a u c)) :=
   Internal.ObjectPacketReaderVarintSegment.native_varintSegmentUniqueActualJoinedInputAndAllOutputConsumption w B z o n C T v s a u c
 
+example {m} (w z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderActualZeroUnitAffineEquationSentence w z o n)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderActualZeroUnitAffineEquation w z o n
+
+example {m} (w B z o L a R p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderActualEmptyInputExactReturnSentence w B z o L a R p)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderActualEmptyInputExactReturn w B z o L a R p
+
+example {m} (w n e a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensSpliceExactRightNilSentence w n e a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensSpliceExactRightNil w n e a
+
+example {m} (w A B C AB BC O : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensSpliceAllCandidateAssociativitySentence w A B C AB BC O)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensSpliceAllCandidateAssociativity w A B C AB BC O
+
+example {m} (w h e S T O : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensSpliceExactSingletonSentence w h e S T O)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensSpliceExactSingleton w h e S T O
+
+example {m} (w A e h S AH T HT O : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensSpliceExactSnocConsReassociationSentence w A e h S AH T HT O)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensSpliceExactSnocConsReassociation w A e h S AH T HT O
+
+example {m} (w n h S r l L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensSpliceSingletonSpliceIsActualSnocSentence w n h S r l L)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensSpliceSingletonSpliceIsActualSnoc w n h S r l L
+
+example {m} (w h A A1 R S R1 : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderReverseConsThroughActualSpliceSentence w h A A1 R S R1)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderReverseConsThroughActualSplice w h A A1 R S R1
+
+example {m} (w A T O : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderNilRemainingTokensGiveActualReverseSentence w A T O)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderNilRemainingTokensGiveActualReverse w A T O
+
+example {m} (w h A A1 e T HT O : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderConsPreservesExactOutputOrderSentence w h A A1 e T HT O)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderConsPreservesExactOutputOrder w h A A1 e T HT O
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesSeededExactNilSentence w n t a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesSeededExactNil w n t a
+
+example {m} (w h x n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesSeededExactConsSentence w h x n t a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesSeededExactCons w h x n t a
+
+example {m} (w n t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesSeededEveryActualInputAndTailHaveUniqueEncodingSentence w n t)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesSeededEveryActualInputAndTailHaveUniqueEncoding w n t
+
+example {m} (w n t a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesSeededAllCandidateOutputsUniqueSentence w n t a b)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesSeededAllCandidateOutputsUnique w n t a b
+
+example {m} (w n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingExactNilSentence w n a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingExactNil w n a
+
+example {m} (w h x n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingExactConsSentence w h x n a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingExactCons w h x n a
+
+example {m} (w n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingRequiresActualInputSentence w n a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingRequiresActualInput w n a
+
+example {m} (w n a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingRequiresActualOutputSentence w n a)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingRequiresActualOutput w n a
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesEveryActualInputHasUniqueIndependentEncodingSentence w n)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesEveryActualInputHasUniqueIndependentEncoding w n
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingExactDomainSentence w n)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingExactDomain w n
+
+example {m} (w n a b : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensBytesIndependentEncodingAllCandidateOutputsUniqueSentence w n a b)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensBytesIndependentEncodingAllCandidateOutputsUnique w n a b
+
+example {m} (w B z o : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderAllInternalTokenListPropertiesSentence w B z o)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderAllInternalTokenListProperties w B z o
+
+example {m} (w B z o n bytes A O p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderAllInternalEncodedSegmentsAndOutputOrderSentence w B z o n bytes A O p)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderAllInternalEncodedSegmentsAndOutputOrder w B z o n bytes A O p
+
+example {m} (w n bytes p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderInitializedExactOriginalTokensSentence w n bytes p)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderInitializedExactOriginalTokens w n bytes p
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderTokens.tokensReaderUniqueActualEncodedInputAndAllReturnsSentence w n)) :=
+  Internal.ObjectPacketReaderTokens.native_tokensReaderUniqueActualEncodedInputAndAllReturns w n
+
 end PPAC.Migration.Step4Checks
