@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+原内部列表实际逆序图已验收：反向索引满足原无界i+j+1=l，全部内部位置都有唯一对称且在域内的反向索引；原Replacement构造精确反向字段图，原序列编码构造真实原列表码。所有内部有效列表均有唯一逆序码，保长度／有效性，字段准确反向，对称且逆序两次还原；原Nil与Cons／唯一尾追加的双条件均已证明。16模块187声明、23组原nativeZF闭句；2491构建、27146审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。EOF返回分支连接、完整reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_STRUCTURAL_LIST_REVERSE_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 reader真实停止原因及带分类完整历史已验收：原EOF守卫通过、EOF守卫失败、实际字节拒绝三类两两互斥；每个实际状态码无后继准确等价于三类原观察。全候选码上的观察域恰为实际carrier且无后继；带分类真实历史准确等价于原停止历史，并取得对象EX4／ALL4的完整历史存在及联合唯一。6模块108声明、17组原nativeZF闭句；2475构建、26959审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。EOF实际acc.reverse、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_TERMINAL_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

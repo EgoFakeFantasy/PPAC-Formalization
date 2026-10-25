@@ -2859,6 +2859,42 @@ def check_Packet_reader_actual_terminal_cause_and_classified_history() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_actual_internal_list_reversal() -> dict:
+    modules = ['StructuralReverseIndexSyntax', 'StructuralReverseIndexArithmetic', 'StructuralReverseIndexExistence', 'StructuralReverseFieldSyntax', 'StructuralReverseFieldValues', 'StructuralReverseFieldGraph', 'StructuralListReverseSyntax', 'StructuralListReverseEncoding', 'StructuralListReverseUnique', 'StructuralReverseFieldAtMirror', 'StructuralListReverseLaws', 'StructuralListReverseNil', 'StructuralReverseIndexCons', 'StructuralListReverseCons', 'StructuralListReverseConsContract', 'ObjectStructuralListReverse']
+    schemas = ['structuralListReverseEveryInternalPositionHasMirror', 'structuralListReverseMirrorCandidateUnique', 'structuralListReverseMirrorSymmetric', 'structuralListReverseMirrorInputInRange', 'structuralListReverseMirrorOutputInRange', 'structuralListReverseActualReverseFieldExistsUnique', 'structuralListReverseActualReverseFieldNatural', 'structuralListReverseReverseFieldExactAtMirror', 'structuralListReverseOriginalReplacementConstructsExactReverseGraph', 'structuralListReverseExactReverseGraphIsActualSequence', 'structuralListReverseExactReverseGraphUnique', 'structuralListReverseEveryValidInternalListHasActualReverse', 'structuralListReverseActualReverseCodeUnique', 'structuralListReverseActualReverseCodeExistsUnique', 'structuralListReverseActualReverseRequiresValidInput', 'structuralListReverseActualReverseHasValidOutput', 'structuralListReverseActualReverseFieldsExactlyReflected', 'structuralListReverseActualReverseSymmetric', 'structuralListReverseActualReverseInvolutive', 'structuralListReverseExactNilReversal', 'structuralListReverseNormalizeEveryActualLength', 'structuralListReverseExactConsSnocReversal', 'structuralListReverseActualSnocCodeUnique']
+    required = {'StructuralReverseIndexSyntax': ['def witness', 'sum w i j p', 'successor l p', 'def mirror', 'def existsMirror'], 'StructuralReverseIndexArithmetic': ['theorem symmetric', 'theorem input_bound', 'theorem output_bound', 'theorem unique', 'NaturalDifference.unique', 'SyntaxIndexLiftOrder.successor_injective'], 'StructuralReverseIndexExistence': ['NaturalOrderBasic.member_successor', 'NaturalDifference.exists_of_below', 'OmegaStructureInduction.decomposition', 'theorem exists_partner'], 'StructuralReverseFieldSyntax': ['def value', 'mirror', 'field', 'def matrix : Formula 5', 'def graph', 'theorem matrix_rel', 'theorem matrix_fiber'], 'StructuralReverseFieldValues': ['theorem exists_value', 'StructuralReverseIndexExistence.exists_partner', 'StructuralListFieldValues.exists_value', 'theorem unique', 'StructuralReverseIndexArithmetic.unique', 'theorem exists_unique'], 'StructuralReverseFieldGraph': ['RelationGraphFunction.exists_graph', 'theorem total', 'theorem outputs', 'theorem sequence', 'RelationGraph.unique_graph'], 'StructuralListReverseSyntax': ['def reading', 'def atLength', 'hasLength w n l', 'hasLength w r l', 'def reverses', 'def fiber', 'theorem length_subst'], 'StructuralListReverseEncoding': ['StructuralListFieldGraphSyntax.law_at', 'StructuralReverseFieldSyntax.law_at', 'theorem reading_from_graph', 'StructuralListEncodeExistence.exists_encoding', 'theorem exists_reverse'], 'StructuralListReverseUnique': ['StructuralListCodeInduction.unique', 'StructuralListLengthUnique.unique', 'theorem unique', 'theorem valid_input', 'theorem valid_output', 'theorem exists_unique'], 'StructuralReverseFieldAtMirror': ['theorem at_mirror', 'StructuralReverseIndexArithmetic.unique', 'StructuralListFieldSyntax.index_subst'], 'StructuralListReverseLaws': ['theorem field_at_mirror', 'theorem symmetric_reading', 'theorem symmetric', 'theorem involutive'], 'StructuralListReverseNil': ['theorem normalize_length', 'theorem nil_pair', 'theorem nil_output', 'theorem nil_iff', 'StructuralListLengthRules.nil_empty'], 'StructuralReverseIndexCons': ['theorem grow', 'ZFArithmetic.add_succ_backward', 'theorem last_zero', 'ZFArithmetic.add_zero'], 'StructuralListReverseCons': ['theorem at_partner', 'StructuralListFieldCons.successor_iff', 'theorem prefix_at', 'theorem last_iff', 'StructuralListFieldCons.zero_iff'], 'StructuralListReverseConsContract': ['def snoc', 'agree w l r u', 'field w r l h', 'theorem snoc_unique', 'StructuralListCodeInduction.unique', 'theorem backward', 'theorem cons_iff'], 'ObjectStructuralListReverse': ['TheoryTransport.sentence', 'ZFReplay.replay', 'StructuralListReverseUnique.exists_unique', 'StructuralListReverseConsContract.cons_iff']}
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\b(axiom|induction)\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b',text):
+            raise RuntimeError('Reader stopping forbidden gap: '+mod)
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader stopping proof drift: '+mod+': '+clause)
+        texts[mod] = text
+    for mod,name,expected in [('StructuralReverseIndexExistence','exists_partner',{'hw','hl','hi'}),('StructuralListReverseEncoding','exists_reverse',{'hw','hv'}),('StructuralListReverseUnique','exists_unique',{'hw','hn'}),('StructuralListReverseLaws','involutive',{'hw','hr','hs'}),('StructuralListReverseConsContract','cons_iff',{'hw','hh','hc','ht','hL','hu'})]:
+        header = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not header or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',header.group(0))) != expected:
+            raise RuntimeError('Reader stopping hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectStructuralListReverse.native_'+name not in checks: raise RuntimeError('Missing reader stopping native fixture: '+name)
+    return {'actual_internal_mirror_indices_exist_uniquely_and_are_symmetric_in_range':True,
+            'all_actual_reverse_fields_exist_uniquely_and_are_natural':True,
+            'original_Replacement_constructs_exact_full_reverse_field_graph':True,
+            'original_sequence_encoding_constructs_actual_reverse_list_code':True,
+            'all_valid_internal_lists_have_a_unique_actual_reverse_code':True,
+            'reverse_graph_preserves_actual_source_and_output_validity_and_length':True,
+            'every_actual_mirror_equation_gives_exact_source_output_field_equivalence':True,
+            'reverse_is_symmetric_and_involutive_for_all_internal_lengths':True,
+            'original_Nil_reversal_exact_biconditional_proved':True,
+            'original_Cons_reversal_exact_snoc_biconditional_proved':True,
+            'snoc_candidate_code_unique_from_actual_length_prefix_fields_and_last_head':True,
+            'no_host_List_reverse_choice_function_or_external_standard_index_used':True,
+            'EOF_success_return_value_connected_to_actual_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def check_Packet_reader_all_internal_length_conservation_and_bound() -> dict:
     modules = ['PacketReaderLengthSyntax', 'PacketReaderLengthAt', 'PacketReaderTailLength', 'PacketReaderLengthArithmetic', 'PacketReaderLengthPoint', 'PacketReaderLengthInduction', 'PacketReaderLengthBounds', 'ObjectPacketReaderLength']
     schemas = ['packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory']
@@ -3011,6 +3047,7 @@ def main() -> None:
     Packet_reader_history_append_and_determinism = check_Packet_reader_history_append_and_determinism()
     Packet_reader_actual_input_projection_and_consumption = check_Packet_reader_actual_input_projection_and_consumption()
     Packet_reader_all_internal_length_conservation_and_bound = check_Packet_reader_all_internal_length_conservation_and_bound()
+    actual_internal_list_reversal = check_actual_internal_list_reversal()
     Packet_reader_actual_terminal_cause_and_classified_history = check_Packet_reader_actual_terminal_cause_and_classified_history()
     Packet_reader_complete_stopping_history_exists_joint_unique = check_Packet_reader_complete_stopping_history_exists_joint_unique()
     mode_three_scope = check_mode_three_scope()
@@ -6322,6 +6359,29 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoriesJointlyUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedHistoryUniversalUniqueness',
                     'PPAC.Migration.Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExistsUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseEveryInternalPositionHasMirror',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorCandidateUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorSymmetric',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorInputInRange',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorOutputInRange',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldExistsUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldNatural',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseReverseFieldExactAtMirror',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseOriginalReplacementConstructsExactReverseGraph',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseExactReverseGraphIsActualSequence',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseExactReverseGraphUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseEveryValidInternalListHasActualReverse',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseCodeUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseCodeExistsUnique',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseRequiresValidInput',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseHasValidOutput',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldsExactlyReflected',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseSymmetric',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseInvolutive',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseExactNilReversal',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseNormalizeEveryActualLength',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseExactConsSnocReversal',
+                    'PPAC.Migration.Internal.ObjectStructuralListReverse.native_structuralListReverseActualSnocCodeUnique',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualRemainingLengthNatural',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthActualLengthIndexInHistoryDomain',
                     'PPAC.Migration.Internal.ObjectPacketReaderLength.native_packetReaderLengthEveryActualHistoryIndexHasLength',
@@ -6364,6 +6424,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectStructuralListReverse": ('structuralListReverseEveryInternalPositionHasMirror', 'structuralListReverseMirrorCandidateUnique', 'structuralListReverseMirrorSymmetric', 'structuralListReverseMirrorInputInRange', 'structuralListReverseMirrorOutputInRange', 'structuralListReverseActualReverseFieldExistsUnique', 'structuralListReverseActualReverseFieldNatural', 'structuralListReverseReverseFieldExactAtMirror', 'structuralListReverseOriginalReplacementConstructsExactReverseGraph', 'structuralListReverseExactReverseGraphIsActualSequence', 'structuralListReverseExactReverseGraphUnique', 'structuralListReverseEveryValidInternalListHasActualReverse', 'structuralListReverseActualReverseCodeUnique', 'structuralListReverseActualReverseCodeExistsUnique', 'structuralListReverseActualReverseRequiresValidInput', 'structuralListReverseActualReverseHasValidOutput', 'structuralListReverseActualReverseFieldsExactlyReflected', 'structuralListReverseActualReverseSymmetric', 'structuralListReverseActualReverseInvolutive', 'structuralListReverseExactNilReversal', 'structuralListReverseNormalizeEveryActualLength', 'structuralListReverseExactConsSnocReversal', 'structuralListReverseActualSnocCodeUnique'),
         "ObjectPacketReaderTerminal": ('packetReaderTerminalRawObservationForbidsSuccessor', 'packetReaderTerminalNoSuccessorGivesThreeOriginalObservations', 'packetReaderTerminalExactThreeWayStoppingAtEveryActualCode', 'packetReaderTerminalEOFSuccessFailureDisjoint', 'packetReaderTerminalEOFSuccessByteRejectDisjoint', 'packetReaderTerminalEOFFailureByteRejectDisjoint', 'packetReaderTerminalObservationHasExactCarrierAndNoSuccessor', 'packetReaderTerminalCarrierNoSuccessorHasActualObservation', 'packetReaderTerminalExactObservationDomainAllCandidateCodes', 'packetReaderTerminalObservationNormalizesAtActualStateFields', 'packetReaderTerminalHaltedHistoryHasActualOriginalStopCause', 'packetReaderTerminalClassifiedRealHistoryIsHalted', 'packetReaderTerminalExactClassifiedHistoryEquivalence', 'packetReaderTerminalClassifiedCompleteHistoryExists', 'packetReaderTerminalClassifiedHistoriesJointlyUnique', 'packetReaderTerminalClassifiedHistoryUniversalUniqueness', 'packetReaderTerminalClassifiedCompleteHistoryExistsUnique'),
         "ObjectPacketReaderStopping": ('packetReaderStoppingActualSourceCarrierNatural', 'packetReaderStoppingActualZeroPrefix', 'packetReaderStoppingActualHistoryStopsOrExtends', 'packetReaderStoppingInternalSuccessorProgress', 'packetReaderStoppingAllInternalProgress', 'packetReaderStoppingTooLongActualPrefixImpossible', 'packetReaderStoppingFromInitialActualLengthExistsComplete', 'packetReaderStoppingFromActualSourceCodeExistsComplete', 'packetReaderStoppingEveryActualCarrierHasCompleteHistory', 'packetReaderStoppingStoppedHistoryCannotBeStrictlyShorter', 'packetReaderStoppingStoppedLengthUnique', 'packetReaderStoppingStoppedEndpointUnique', 'packetReaderStoppingStoppedDomainUnique', 'packetReaderStoppingStoppedGraphUnique', 'packetReaderStoppingStoppedFieldsJointUnique', 'packetReaderStoppingStoppedFieldsUniversalUnique', 'packetReaderStoppingCompleteHistoryExistsUnique'),
         "ObjectPacketReaderLength": ('packetReaderLengthActualRemainingLengthNatural', 'packetReaderLengthActualLengthIndexInHistoryDomain', 'packetReaderLengthEveryActualHistoryIndexHasLength', 'packetReaderLengthActualRemainingLengthUnique', 'packetReaderLengthActualConsConsumesOneLengthUnit', 'packetReaderLengthInternalSuccessorConservationTransfer', 'packetReaderLengthActualSeedConservation', 'packetReaderLengthActualAdjacentLengthsAreSuccessors', 'packetReaderLengthConservationSuccessorPoint', 'packetReaderLengthAllInternalIndicesConservation', 'packetReaderLengthActualHistoryIndexBound', 'packetReaderLengthWholeHistoryLengthBound', 'packetReaderLengthNoTooLongAcceptedHistory'),
@@ -7372,6 +7433,8 @@ def main() -> None:
         "object_Packet_readTokens_complete_stopped_history_exists_joint_unique_proved": True,
         "Packet_reader_actual_terminal_cause_and_classified_history_guard": Packet_reader_actual_terminal_cause_and_classified_history,
         "object_Packet_readTokens_actual_terminal_cause_and_classified_history_exists_unique_proved": True,
+        "actual_internal_list_reversal_guard": actual_internal_list_reversal,
+        "object_actual_internal_list_reversal_exists_unique_Nil_Cons_proved": True,
         "Packet_reader_all_internal_length_conservation_and_bound_guard": Packet_reader_all_internal_length_conservation_and_bound,
         "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved": True,
         "Packet_reader_actual_input_projection_and_consumption_guard": Packet_reader_actual_input_projection_and_consumption,

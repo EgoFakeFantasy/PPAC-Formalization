@@ -13229,4 +13229,96 @@ example {m} (w B z o n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectPacketReaderTerminal.packetReaderTerminalClassifiedCompleteHistoryExistsUniqueSentence w B z o n)) :=
   Internal.ObjectPacketReaderTerminal.native_packetReaderTerminalClassifiedCompleteHistoryExistsUnique w B z o n
 
+example {m} (w l i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseEveryInternalPositionHasMirrorSentence w l i)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseEveryInternalPositionHasMirror w l i
+
+example {m} (w l i j k : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseMirrorCandidateUniqueSentence w l i j k)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorCandidateUnique w l i j k
+
+example {m} (w l i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseMirrorSymmetricSentence w l i j)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorSymmetric w l i j
+
+example {m} (w l i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseMirrorInputInRangeSentence w l i j)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorInputInRange w l i j
+
+example {m} (w l i j : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseMirrorOutputInRangeSentence w l i j)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseMirrorOutputInRange w l i j
+
+example {m} (w n l i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseFieldExistsUniqueSentence w n l i)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldExistsUnique w n l i
+
+example {m} (w n l i y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseFieldNaturalSentence w n l i y)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldNatural w n l i y
+
+example {m} (w n l i j y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseReverseFieldExactAtMirrorSentence w n l i j y)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseReverseFieldExactAtMirror w n l i j y
+
+example {m} (w n l : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseOriginalReplacementConstructsExactReverseGraphSentence w n l)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseOriginalReplacementConstructsExactReverseGraph w n l
+
+example {m} (w n l g : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseExactReverseGraphIsActualSequenceSentence w n l g)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseExactReverseGraphIsActualSequence w n l g
+
+example {m} (w n l g h : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseExactReverseGraphUniqueSentence w n l g h)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseExactReverseGraphUnique w n l g h
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseEveryValidInternalListHasActualReverseSentence w n)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseEveryValidInternalListHasActualReverse w n
+
+example {m} (w n r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseCodeUniqueSentence w n r s)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseCodeUnique w n r s
+
+example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseCodeExistsUniqueSentence w n)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseCodeExistsUnique w n
+
+example {m} (w n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseRequiresValidInputSentence w n r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseRequiresValidInput w n r
+
+example {m} (w n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseHasValidOutputSentence w n r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseHasValidOutput w n r
+
+example {m} (w n l r i j y : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseFieldsExactlyReflectedSentence w n l r i j y)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseFieldsExactlyReflected w n l r i j y
+
+example {m} (w n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseSymmetricSentence w n r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseSymmetric w n r
+
+example {m} (w n r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualReverseInvolutiveSentence w n r s)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualReverseInvolutive w n r s
+
+example {m} (w n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseExactNilReversalSentence w n r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseExactNilReversal w n r
+
+example {m} (w n l r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseNormalizeEveryActualLengthSentence w n l r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseNormalizeEveryActualLength w n l r
+
+example {m} (w h t n l L u r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseExactConsSnocReversalSentence w h t n l L u r)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseExactConsSnocReversal w h t n l L u r
+
+example {m} (w u l L h r s : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectStructuralListReverse.structuralListReverseActualSnocCodeUniqueSentence w u l L h r s)) :=
+  Internal.ObjectStructuralListReverse.native_structuralListReverseActualSnocCodeUnique w u l L h r s
+
 end PPAC.Migration.Step4Checks
