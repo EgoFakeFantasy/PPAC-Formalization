@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+原对象Tok与独立规范字节Prefix的全内部双条件已验收：同一实际Cons的Bytes尾执行准确分解，经真实字段自然性及原注入性对齐；独立Prefix取得准确终止／延续递归。固定Formula2比较全部内部tail／output，原严格商下降、Foundation及完整Separation消去全部IH，128／256见证对象消去。最终仅Ω取得ALL3 Tok↔Prefix，并对任意实际规范列表取得Tok↔该列表Bytes。12模块115声明、13组原nativeZF闭句；2407构建、26032审计、零警告，九命令／五trust=0通过。Tok对应顶层及三个旧guard子门false→true，其余旧布尔叶保持。原readTokens累加器／scale程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_TOKEN_CANONICAL_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 独立规范varint列表的全内部存在唯一和全部候选字节合法性已验收：固定Formula2联合存在性／任意实际Canonical候选ByteList域／列表唯一性。原base128严格商下降授权每次较小IH，原Foundation及完整Separation消去全部联合IH，128／256及列表码／加法见证对象构造消去。最终仅Ω取得ALL1唯一字节列表纤维↔n∈ω；全部实际规范候选都属独立ByteList。12模块125声明、15组原nativeZF闭句；2395构建、25917审计、零警告，九命令／五trust=0通过。总唯一／字节合法性顶层和两个对应旧guard子门false→true，其余旧布尔叶保持。Tok双条件、原varint／readTokens程序桥、Basic AST、完整字节包、schema、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_VARINT_EXECUTION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

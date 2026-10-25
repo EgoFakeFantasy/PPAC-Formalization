@@ -12679,4 +12679,55 @@ example {m} (w n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
 example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketVarintExecution.packetVarintExecutionAllInternalUniqueByteListFibersOnlyOmegaSentence w)) :=
   Internal.ObjectPacketVarintExecution.native_packetVarintExecutionAllInternalUniqueByteListFibersOnlyOmega w
+example {m} (w h x s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalGivenConsExactByteTailIffSentence w h x s t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalGivenConsExactByteTailIff w h x s t a
+
+example {m} (w h e s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalActualSingletonLastCellNormalizedSentence w h e s t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualSingletonLastCellNormalized w h e s t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalIndependentPrefixExactArithmeticRecursionSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalIndependentPrefixExactArithmeticRecursion w B C n t a
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalAllInternalIndependentPrefixRecursionSentence w B C)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalAllInternalIndependentPrefixRecursion w B C
+
+example {m} (w B n d q t u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalStrictActualQuotientAuthorizesAgreementIHSentence w B n d q t u)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalStrictActualQuotientAuthorizesAgreementIH w B n d q t u
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalFullOriginalAndIndependentCriteriaAgreeSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalFullOriginalAndIndependentCriteriaAgree w B C n t a
+
+example {m} (w B C n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalWholeActualTokenPrefixAgreementStepSentence w B C n t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalWholeActualTokenPrefixAgreementStep w B C n t a
+
+example {m} (w B C : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalOriginalFoundationSeparationAgreementIHDischargedSentence w B C)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalOriginalFoundationSeparationAgreementIHDischarged w B C
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalAllAgreementPropertiesOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalAllAgreementPropertiesOnlyOmega w
+
+example {m} (w n t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalActualTokIffIndependentPrefixOnlyOmegaSentence w n t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffIndependentPrefixOnlyOmega w n t a
+
+example {m} (w : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalAllInternalActualTokPrefixAgreementOnlyOmegaSentence w)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalAllInternalActualTokPrefixAgreementOnlyOmega w
+
+example {m} (w n s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalPrefixAtAnyActualCanonicalListSentence w n s t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalPrefixAtAnyActualCanonicalList w n s t a
+
+example {m} (w n s t a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketTokenCanonical.packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalListSentence w n s t a)) :=
+  Internal.ObjectPacketTokenCanonical.native_packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList w n s t a
 end PPAC.Migration.Step4Checks
