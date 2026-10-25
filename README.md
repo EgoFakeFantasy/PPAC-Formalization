@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+全内部单个规范varint段消费已验收：独立实际Cons双轨迹给精确拼接，任意两个有效内部列表都有唯一实际拼接码。固定Formula5经原完整Separation和Foundation消去所有较小token归纳假设，任意自然数尾输入、value／scale／acc下得到完整段Eval双条件；保留原尺度等于单位或token非零守卫，允许零尺度，未添加尾输入字节界。实际拼接输入被构造且对所有返回候选成立。30模块239声明、17组原nativeZF闭句；2553构建、27845审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。多token分段／输出顺序、带字节界的逆向规范性、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_VARINT_SEGMENT_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 真实历史前置与reader完整运行递归方程已验收：原Replacement构造零头／全内部后继平移的精确序列图，所有真实旧行与新增首步组成真实新历史。真实一步前后完整Run在任意输出候选上满足双条件，四字段Eval构造并消去两端状态码，得到原Advance及Terminal方程。11模块136声明、21组原nativeZF闭句；2523构建、27606审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。全内部varint分段／输出顺序、完整程序规格桥、Basic AST、内部Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_READER_RECURSION_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

@@ -13597,4 +13597,72 @@ example {m} (w B z o L v s a q : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives na
     (Translation.sentence (Internal.ObjectPacketReaderRecursion.packetReaderRecursionFourFieldEvaluationOriginalTerminalEquationSentence w B z o L v s a q)) :=
   Internal.ObjectPacketReaderRecursion.native_packetReaderRecursionFourFieldEvaluationOriginalTerminalEquation w B z o L v s a q
 
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceExactNilSentence w C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceExactNil w C T L
+
+example {m} (w h X C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceExactConsSentence w h X C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceExactCons w h X C T L
+
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceRequiresActualTailSentence w C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceRequiresActualTail w C T L
+
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceRequiresActualJoinedListSentence w C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceRequiresActualJoinedList w C T L
+
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceRequiresActualPrefixSentence w C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceRequiresActualPrefix w C T L
+
+example {m} (w C T : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentEveryTwoInternalListsHaveUniqueSpliceSentence w C T)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentEveryTwoInternalListsHaveUniqueSplice w C T
+
+example {m} (w C T L M : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceAllCandidateOutputsUniqueSentence w C T L M)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceAllCandidateOutputsUnique w C T L M
+
+example {m} (w C T L : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentSpliceOutputIsNaturalSentence w C T L)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentSpliceOutputIsNatural w C T L
+
+example {m} (w B d k n v s v1 s1 u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentFullContinuationArithmeticComposeSentence w B d k n v s v1 s1 u)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentFullContinuationArithmeticCompose w B d k n v s v1 s1 u
+
+example {m} (w B d k n v s v1 s1 u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentFullContinuationArithmeticDecomposeSentence w B d k n v s v1 s1 u)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentFullContinuationArithmeticDecompose w B d k n v s v1 s1 u
+
+example {m} (w B d k n v s v1 s1 u : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentFullContinuationArithmeticExactSentence w B d k n v s v1 s1 u)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentFullContinuationArithmeticExact w B d k n v s v1 s1 u
+
+example {m} (w B z o L b T v s a u c p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentActualTerminalDigitEvaluationSentence w B z o L b T v s a u c p)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentActualTerminalDigitEvaluation w B z o L b T v s a u c p
+
+example {m} (w B z o L b T v s a d y S p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentActualContinuationDigitEvaluationSentence w B z o L b T v s a d y S p)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentActualContinuationDigitEvaluation w B z o L b T v s a d y S p
+
+example {m} (w B z o : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentAllInternalTokenSegmentPropertiesSentence w B z o)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentAllInternalTokenSegmentProperties w B z o
+
+example {m} (w B z o n C T L v s a u c p : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentEveryActualCanonicalSegmentConsumesExactlySentence w B z o n C T L v s a u c p)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentEveryActualCanonicalSegmentConsumesExactly w B z o n C T L v s a u c p
+
+example {m} (w B z o n C T L v s a u c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentCompleteCanonicalSegmentAllOutputsSentence w B z o n C T L v s a u c)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentCompleteCanonicalSegmentAllOutputs w B z o n C T L v s a u c
+
+example {m} (w B z o n C T v s a u c : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderVarintSegment.varintSegmentUniqueActualJoinedInputAndAllOutputConsumptionSentence w B z o n C T v s a u c)) :=
+  Internal.ObjectPacketReaderVarintSegment.native_varintSegmentUniqueActualJoinedInputAndAllOutputConsumption w B z o n C T v s a u c
+
 end PPAC.Migration.Step4Checks

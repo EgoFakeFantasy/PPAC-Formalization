@@ -289,3 +289,5 @@ import PPAC.Migration.Internal.ObjectPacketReaderReturn
 import PPAC.Migration.Internal.ObjectPacketReaderInit
 
 import PPAC.Migration.Internal.ObjectPacketReaderRecursion
+
+import PPAC.Migration.Internal.ObjectPacketReaderVarintSegment
