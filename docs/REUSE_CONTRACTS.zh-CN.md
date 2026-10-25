@@ -47,8 +47,12 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 本轮 ForcingHS 的内部闭包证明直接调用固定 Collection.collection_exists_d，并用现成 Separation 删除收集见证中的多余元素，再用 KP.exists_union/exists_insert 拼接；没有另造 Replacement 或选择见证函数。定义唯一性调用已验收 ForcingNameInduction.kernel_certificate；check_HS 使用 ForcingCheckName.formula_induction、edge_checkName 和 ForcingCheckNameLaws.action_fixed。稳定子通过既有 actFormula/mapConditions 定义，未把 Symmetric 或 HS 作为假设字段。通用 HS.smul 已由 ForcingHSAction 迁移；具体群／正规滤子仍待实例化。
 
 
-下一实际源实例已核对：ProductNames.system 使用 Γ = Equiv.Perm I 与 SupportFilter.subgroupFilter μ；ConcreteSystem.S 消费同一系统。下一批应将现有 ForcingConditionGraphs 的恒等、逆、复合图入口实例化到标签集合 I，接原 actionHom 和稳定子共轭，不预先新建通用群论库。源 IsNormalFilter 的四项是顶、向上闭包、交和共轭闭包；其小支撑滤子构造与基数前提仍按原源码迁移。仅以文件名搜索未发现同名供体，不据此断言其他仓库不存在可用数学。
+下一实际源实例已核对：ProductNames.system 使用 Γ = Equiv.Perm I 与 SupportFilter.subgroupFilter μ；ConcreteSystem.S 消费同一系统。现有 ForcingConditionGraphs 的恒等、逆、复合已用于标签集合 I，稳定子共轭已接通；剩余为原 actionHom 与小支撑滤子，不新建通用群论库。源 IsNormalFilter 的四项是顶、向上闭包、交和共轭闭包；其小支撑滤子构造与基数前提仍按原源码迁移。仅以文件名搜索未发现同名供体，不据此断言其他仓库不存在可用数学。
 
-本轮稳定子共轭复用 ForcingConditionGraphs.exists_inverse/exists_composition、ForcingConditionAction.name_composition/name_inverse。HS.smul 直接沿原 Child 归纳，消费 ForcingHS.intro_hs/child 和 ForcingMapConditions.edge_mapping；公式对称性直接消费已有 conclusion_models/action_transport。四类证书全部返回 ModelTransfer.derives，未新增核或对象选择原则。NormalImage 只表达原正规滤子的共轭条款，不声称已构造具体小支撑滤子。
+ForcingHSAction 的稳定子共轭复用 ForcingConditionGraphs.exists_inverse/exists_composition、ForcingConditionAction.name_composition/name_inverse。HS.smul 直接沿原 Child 归纳，消费 ForcingHS.intro_hs/child 和 ForcingMapConditions.edge_mapping；公式对称性直接消费已有 conclusion_models/action_transport。四类证书全部返回 ModelTransfer.derives，未新增核或对象选择原则。NormalImage 只表达原正规滤子的共轭条款，不声称已构造具体小支撑滤子。
 
-标签实例本批：ForcingLabelPermutations 用底座函数空间与原 Separation 构造全部置换和 Fix J，闭包只调用既有 exists_identity/exists_inverse/exists_composition。ForcingLabelConjugacy 沿 SupportFilter.conjugate_fix 证明两个成员方向，复用现成 Conjugate/Image 公式和 function_unique。尚未完成的是置换载体上的集合编码共轭图及小支撑基数／正规滤子，不是上述已完成的载体与逐点稳定子。
+标签实例：ForcingLabelPermutations 用底座函数空间与原 Separation 构造全部置换和 Fix J，闭包只调用既有 exists_identity/exists_inverse/exists_composition。ForcingLabelConjugacy 沿 SupportFilter.conjugate_fix 证明两个成员方向，复用现成 Conjugate/Image 公式和 function_unique。集合编码共轭图及稳定子精确像现已由 ForcingConjugationGraph 接通；小支撑基数／正规滤子仍待接。
+
+本轮 ForcingConjugationGraph 直接调用 FunctionConstruction.exists_setFunctionFromTo_of_denote、Model/SetTheory/FunctionSemantics.IsSetRelation.eq_of_pairMember_iff 和既有 binary_semantics；未新增函数图后端。Subgroup 的对象公式复用既有 closed，证明实际共轭保持其三种运算闭包，供源 conjugate_mem 使用。
+
+后续支撑界已定位的供体：SetTheory/Card/Aleph/Multiplication.lean:345 `infiniteCardinal_selfMultiplication`。精确前提为 Models ZF、已解释有序对约定、IsOmega ω、IsCardinal ω、IsInfiniteCardinal ω κ，结论 IsCardinalMultiplication κ κ κ。本轮只核对入口，尚未完成支撑并的适配，不把该既有定理报为待重建。

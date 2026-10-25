@@ -60,8 +60,16 @@ Current batch: 47 new declarations, one generalized existing mapping congruence,
 
 | Concrete source dependency | Current object result | Remaining boundary |
 |---|---|---|
-| ProductNames.system: Equiv.Perm I | ForcingLabelPermutations constructs the exact internal permutation set via donor function space and Separation | Full group algebra and concrete condition action remain |
+| ProductNames.system: Equiv.Perm I | ForcingLabelPermutations constructs the exact internal permutation set via donor function space and Separation | Conjugation graph and subgroup-image closure are proved below; concrete condition action remains |
 | SupportFilter.Fix / mem_Fix | Unique internal fixing subset; actual identity/inverse/composition witnesses stay in it; three native certificates | No small-support cardinal or normal-filter claim |
-| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | Conjugation as a set-coded permutation on the group carrier and stabilizer set-image assembly remain |
+| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | The graph and exact stabilizer set image are now proved below; small-support bounds/filter remain |
 
 This label batch has 41 declarations; directed build and trust=0 preaudit passed. Full verification passed. Its five certificates retain only the existing nativeZF trust baseline.
+
+| Source dependency | Current object result | Remaining boundary |
+|---|---|---|
+| SupportFilter.conjugate_fix map | ForcingConjugationGraph.exists_graph: unique internal permutation graph, with actual inverse/surjectivity proof | Concrete condition-action covariance remains |
+| SupportFilter.conjugate_fix equality | fixing_image and image_kernel_certificate: exact fixing-subgroup set image | No small-support cardinal conclusion |
+| SupportFilter.conjugate_mem subgroup map | identity/inverse/composition covariance; subgroup_image and subgroup_kernel_certificate | Small-support bound and full filter membership still to supply |
+
+This conjugation batch has 30 declarations and three native certificates. Directed build and trust=0 preaudit passed; full verification passed. No new trust dependency or assumed graph/stabilizer-image conclusion.

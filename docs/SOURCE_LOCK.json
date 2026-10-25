@@ -8515,7 +8515,7 @@
         "ForcingConditionGraphs.native_endomap/exists_identity/exists_inverse/exists_composition",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual internal set of every permutation graph on I, unique pointwise stabilizer subsets, and existence of identity/inverse/composition witnesses inside those subsets. Three native certificates. No external finite or well-founded restriction, no group carrier assumption. Full group algebra, concrete condition action, small-support cardinal bounds and filter construction remain.",
+      "scope": "Actual internal set of every permutation graph on I, unique pointwise stabilizer subsets, and identity/inverse/composition witnesses inside them. Three native certificates. No external finite or well-founded restriction. ForcingConjugationGraph now constructs conjugation on this carrier and subgroup-image closure; concrete condition action, small-support cardinal bounds and filter construction remain.",
       "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionSpaceConstruction.lean",
       "native_source_sha256": "fd763edf53980fd6482d3189449e89f0f50f2d8febbd95612607e262e0618a92"
     },
@@ -8615,7 +8615,246 @@
         "ForcingConditionGraphs.function_unique",
         "ModelTransfer.derives"
       ],
-      "scope": "Exact internal image of a label set and both directions of Fixes(J,s) iff Fixes(r-image(J),r s r^-1), using actual permutation/inverse/composition graphs. Two native certificates; pointwise fixing-set membership follows. The set-coded conjugation permutation on the label-group carrier, small-support bound and complete normal-filter instance are not yet constructed."
+      "scope": "Exact internal label image and both directions of pointwise fixing conjugacy, with two native certificates. ForcingConjugationGraph now upgrades this to the precise image of fixing subgroups under an actually constructed internal permutation graph. Small-support bound and complete normal-filter instance remain."
+    },
+    "forcing_conjugation_graph": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SupportFilter.lean",
+      "source_sha256": "521468b7f5a96113e97036ee33bd49806d2d9de47503700d4e49c135d638caf2",
+      "adapter": "PPAC/Migration/ForcingConjugationGraph.lean",
+      "source_declarations": [
+        "SupportFilter.conjugate_fix",
+        "SupportFilter.conjugate_mem: subgroup image under MulAut.conj"
+      ],
+      "consumers": [
+        "SupportFilter.conjugate_mem (small-support bound and full filter still pending)",
+        "ForcingStabilizerTransport.Context concrete label-conjugation permutation"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "reused_interfaces": [
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "Structure.IsSetRelation.eq_of_pairMember_iff",
+        "ForcingMapConditions.binary_semantics",
+        "ForcingConditionGraphs.native_endomap",
+        "ForcingNameConjugacy.exists_conjugate",
+        "ForcingLabelConjugacy.fixing_conjugate",
+        "ForcingLabelPermutations.closed/closed_semantics",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Constructs the actual internal permutation graph s -> r s r^-1 on the complete label-permutation carrier, proves uniqueness and exact fixing-subgroup image. Conjugation preserves identity/inverse/composition and subgroup closure. Three native certificates; no assumed graph existence, injectivity/surjectivity or stabilizer image. Small-support cardinal bounds, full normal filter, concrete condition action and final Con remain.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingConjugationGraph.endomap_ext": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.edges": [],
+        "PPAC.Migration.ForcingConjugationGraph.unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.reverse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.value_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.Graph": [],
+        "PPAC.Migration.ForcingConjugationGraph.graph": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.graph_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.exists_graph": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.graph_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.fixing_image": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.identity_covariance": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.inverse_covariance": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.composition_covariance": [],
+        "PPAC.Migration.ForcingConjugationGraph.Subgroup": [],
+        "PPAC.Migration.ForcingConjugationGraph.subgroup": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.subgroup_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.fixing_subgroup": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.subgroup_image": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.subgroupSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.subgroup_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.subgroup_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.graphSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.imageSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.graph_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.image_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.graph_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjugationGraph.image_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

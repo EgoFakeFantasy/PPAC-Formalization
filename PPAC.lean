@@ -344,3 +344,4 @@ import PPAC.Migration.ForcingStabilizerTransport
 import PPAC.Migration.ForcingHSAction
 import PPAC.Migration.ForcingLabelPermutations
 import PPAC.Migration.ForcingLabelConjugacy
+import PPAC.Migration.ForcingConjugationGraph
