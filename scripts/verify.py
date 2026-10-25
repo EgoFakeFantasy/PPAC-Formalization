@@ -3385,6 +3385,14 @@ def main() -> None:
                           re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", forcing_name_body, re.MULTILINE)}
     if len(forcing_name_names) != 18 or forcing_name_names != set(forcing_name_lock["exact_declaration_footprints"]) or not forcing_name_names <= set(expected):
         raise RuntimeError("Incomplete original Child induction audit")
+    names_lock = source_lock["source_proof_adaptations"]["forcing_names"]
+    if source_lock["files"][names_lock["source_file"]] != names_lock["source_sha256"]:
+        raise RuntimeError("Original IsName source lock changed")
+    names_body = strip_comments((ROOT / names_lock["adapter"]).read_text(encoding="utf-8"))
+    names_names = {"PPAC.Migration.ForcingNames." + n for n in
+                   re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", names_body, re.MULTILINE)}
+    if len(names_names) != 37 or names_names != set(names_lock["exact_declaration_footprints"]) or not names_names <= set(expected):
+        raise RuntimeError("Incomplete original IsName definition and equation audit")
     interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
     interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
                          re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
@@ -3566,6 +3574,10 @@ def main() -> None:
         if name in forcing_name_names:
             if set(dependencies) != set(forcing_name_lock["exact_declaration_footprints"][name]):
                 raise RuntimeError("Unexpected original Child induction dependency: " + name)
+            continue
+        if name in names_names:
+            if set(dependencies) != set(names_lock["exact_declaration_footprints"][name]):
+                raise RuntimeError("Unexpected original IsName dependency: " + name)
             continue
         if name in interpreted_names:
             if set(dependencies) != {"propext", "Quot.sound", "Classical.choice"} | inherited:
@@ -7234,6 +7246,9 @@ def main() -> None:
         "source_forcing_Child_formula_indexed_induction_proved": True,
         "source_forcing_Child_external_wellFounded_claimed": False,
         "source_forcing_IsName_and_atomic_recursion_completed": False,
+        "source_forcing_IsName_set_condition_unfolding_proved": True,
+        "source_forcing_IsName_formula_indexed_uniqueness_proved": True,
+        "source_forcing_evaluate_mapConditions_atomic_recursion_completed": False,
         "interpreted_ZF_full_schema_external_transport_proved": True,
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",

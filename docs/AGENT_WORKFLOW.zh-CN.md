@@ -10,7 +10,7 @@
 | 2 | 句法与源推导传输 | 重命名、替换、有限支撑、19 规则及反向编译，原核 Derives 证书 | 已完成外部证书迁移；内部任意码归约归阶段 10，不回滚本项 |
 | 3 | 全理论对应 | 完整 Separation/Replacement ↔ 原 Separation/Collection，全部固定公理、两种 AC；ZF/U 双向回放 | 已完成；不得把完整模式再报成未证明 |
 | 4 | 原 Lean 4.34.1 外部基线 | 本轮重算固定源 75 文件 SHA-256，全部匹配；源证明端点已读 | 原 Comparator 尚未运行；新增隔离的原版 4.34.1；目标仓仍用 4.33.1。官方 GitHub 同版工具链已下载并验 SHA-256；75 源模块和 Mathlib 的 9 个依赖提交均保持原样。隔离目录中原 Main 定向构建已启动，尚未验收；本机缺 Linux/landrun，完整 Comparator 未运行，本仓 CheckStep4 不是此验收 |
-| 5 | 内部名字、图、元组、递归 | 已有对象配对／图／ω／序列／原内部递归；固定 Def、原历史与规范参数已接入；原 ForcingNames.Child 的对象归纳模式本批已验收 | 按源 ForcingNames/SymmetricNames 的实际消费者适配名字及内部图；不重造现成基础，不开发字节兼容 |
+| 5 | 内部名字、图、元组、递归 | 已有对象配对／图／ω／序列／原内部递归；固定 Def、原历史与规范参数已接入；原 ForcingNames.Child 对象归纳已验收；集合条件 P 的 IsName 定义、原展开方程及可定义解唯一性本批已验收 | 按源 ForcingNames/SymmetricNames 的实际消费者适配名字及内部图；不重造现成基础，不开发字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 其他 L 工程的 ZF/ZFC 结论已有；核对并补到当前对象解释的接口和真实前提。原 LCarrier 是 ZFSet 子类，不能直接代替所有 nativeZF 模型的结论 |
 | 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；尚无完成的目标端主链 | 迁移原 poset/正规滤子/HS、原子递归、逐公式 forcing_sound、全部解释公理；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
@@ -28,4 +28,4 @@
 
 一次仅一个 Lean/Lake 构建；正式证明改动运行 scripts/verify.py，检查依赖及禁用缺口。文档改动不触发重复全量编译。保留其他仓库脏改动和已退役反射状态。不用文件数、辅助布尔门或构建任务数估计完成比例。
 
-本轮实际验收：ForcingNameInduction 把原 Child/child_wf 的三步 Kuratowski 成员下降改写为每个公式实例的原核 ZF 归纳证书；直接消费已有 SetInduction、KuratowskiZF 和原核回传。18 项新增声明全部覆盖；scripts/verify.py 通过（2837 构建任务、28818 声明审计、9 命令退出 0、5 条 trust=0、零警告）。三项模型／原核证书只继承标准三项及原七项 ZF 句子证书。域中的外部 WellFounded、完整 IsName、名字递归、强迫关系及最终 Con 均未因此完成。本轮为阶段 5 的源证明适配，阶段 5 整体仍未完成。
+本批原 IsName 适配已验收：2838 构建任务、28855 声明审计（549 项无公理依赖、28306 项依赖已记录）、9 命令退出 0、5 条 trust=0、零警告；新增 37 项全部覆盖，2428 份源码哈希全部一致。四类原核证书覆盖原两合取展开式、条目式等价、空名字和任意参数可定义解唯一性。适用源 ConditionAction 的集合条件 P；evaluate／mapConditions／原子递归及最终五项标志仍未完成。 本批仍为阶段 5 的局部完成，不能视为阶段 5 整体或主数学链完成。
