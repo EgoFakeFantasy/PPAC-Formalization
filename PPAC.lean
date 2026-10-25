@@ -347,3 +347,6 @@ import PPAC.Migration.ForcingLabelConjugacy
 import PPAC.Migration.ForcingConjugationGraph
 import PPAC.Migration.ForcingSupportSize
 import PPAC.Migration.ForcingSupportFilter
+import PPAC.Migration.ExistingCardinalBounds
+import PPAC.Migration.ForcingSupportIntersection
+import PPAC.Migration.ForcingNormalFilter

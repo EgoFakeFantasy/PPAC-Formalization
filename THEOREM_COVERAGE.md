@@ -44,7 +44,7 @@ Decision-set density, atomic_truth and exists_truth_generic are outside the sele
 
 | Original HS dependency | Current object result | Remaining boundary |
 |---|---|---|
-| Name.Symmetric | ForcingStabilizer: actual fixed-name action and unique stabilizer subset by Separation | Concrete group/action-family and normal filter not instantiated |
+| Name.Symmetric | ForcingStabilizer: actual fixed-name action and unique stabilizer subset by Separation | Normal filter constructed below; concrete condition/action-family remains |
 | Name.HS / hs_iff / child | ForcingHS: internal closed-set witnesses, exact guarded source equation, uniqueness among definable solutions by original Child induction | HS.smul is proved below; pair/union closures remain |
 | Name.empty_HS / check_HS | Empty HS and check HS for every internal set; five native certificates across all three modules | Retains original top-filter, t in P and fixed-action premises; concrete system must supply them |
 
@@ -62,7 +62,7 @@ Earlier accepted batch: 47 new declarations, one generalized existing mapping co
 |---|---|---|
 | ProductNames.system: Equiv.Perm I | ForcingLabelPermutations constructs the exact internal permutation set via donor function space and Separation | Conjugation graph and subgroup-image closure are proved below; concrete condition action remains |
 | SupportFilter.Fix / mem_Fix | Unique internal fixing subset; actual identity/inverse/composition witnesses stay in it; three native certificates | No small-support cardinal or normal-filter claim |
-| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | The graph and exact stabilizer set image are now proved below; finite-union/intersection and complete normality remain; support-family clauses are proved below |
+| SupportFilter.conjugate_fix | ForcingLabelConjugacy: exact internal label image and pointwise fixing equivalence in both directions; two native certificates | The graph and exact stabilizer set image are now proved below; finite-union/intersection and complete normality are proved below |
 
 This label batch has 41 declarations; directed build and trust=0 preaudit passed. Full verification passed. Its five certificates retain only the existing nativeZF trust baseline.
 
@@ -70,10 +70,16 @@ This label batch has 41 declarations; directed build and trust=0 preaudit passed
 |---|---|---|
 | SupportFilter.conjugate_fix map | ForcingConjugationGraph.exists_graph: unique internal permutation graph, with actual inverse/surjectivity proof | Concrete condition-action covariance remains |
 | SupportFilter.conjugate_fix equality | fixing_image and image_kernel_certificate: exact fixing-subgroup set image | No small-support cardinal conclusion |
-| SupportFilter.conjugate_mem subgroup map | identity/inverse/composition covariance; subgroup_image and subgroup_kernel_certificate | Support-family conjugation membership is supplied below; finite-union/intersection remain |
+| SupportFilter.conjugate_mem subgroup map | identity/inverse/composition covariance; subgroup_image and subgroup_kernel_certificate | Support-family conjugation membership and finite-union/intersection are supplied below |
 
 This conjugation batch has 30 declarations and three native certificates. Directed build and trust=0 preaudit passed; full verification passed. No new trust dependency or assumed graph/stabilizer-image conclusion.
 
 | Source dependency | New native migration | Remaining boundary |
 |---|---|---|
-| SupportFilter.subgroupFilter / top_mem / upward_closed / conjugate_mem | ForcingSupportSize and ForcingSupportFilter: actual source injection and native cardinal bound; unique support-defined subgroup family; top, upward among subgroups, conjugation; six native certificates | inf_mem finite-union bound/intersection closure and ProductNames.actionHom remain. Do not mark complete IsNormalFilter |
+| SupportFilter.subgroupFilter / top_mem / upward_closed / conjugate_mem | ForcingSupportSize and ForcingSupportFilter: actual source injection and native cardinal bound; unique support-defined subgroup family; top, upward among subgroups, conjugation; six native certificates | inf_mem and all four normal-filter clauses are completed by the following row; ProductNames.actionHom and properness remain |
+
+| Source dependency | Current object result | Remaining boundary |
+|---|---|---|
+| SupportFilter.inf_mem / isNormalFilter | Literal newer native omega/cardinal-bound proofs + ForcingSupportIntersection + ForcingNormalFilter.construction_kernel_certificate: constructs G,F with exact support definition and all four clauses under internal IsOmega/IsInfiniteCardinal | Condition action, properness/bot_not_mem and target axioms remain. No assumed omega-cardinality or normality |
+
+The current cardinal consumer additionally uses nine existing pinned native Bool certificates (ordinal maximum and omega multiplication), reevaluated in Check.lean and locked per declaration. These supplement the prior 15 recursion checks and seven sentence certificates; native evaluation is not kernel reduction. No object AC or new proof kernel was added.

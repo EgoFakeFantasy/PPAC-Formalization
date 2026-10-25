@@ -34,3 +34,5 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 另确认并删除 369 份已消费／冻结的 `.local` 计划、wrapper-spec、batch 和 checks 元数据，共 4,371,395 字节；没有 Git 跟踪文件引用这些文件名。删除前建立并逐项 SHA-256 回验 `verification/retired-generator-metadata-20261026.zip`；清单在 `verification/cleanup-generator-metadata-20261026.json`。只处理已解析到本仓 `.local` 顶层的普通文件，跳过重解析点，保留正式源、日志和证明。
 
 本轮静态 import 闭包发现 2137 个 Internal 模块中有 1906 个未被非 Internal 正式模块传递导入；这个数字不包含审计根，不能据此将全部模块判为错误或无用。已验收冻结证明尚未完成精确裁剪，未声称已全部删除。没有残留 Lean/Lake 进程需要终止；正式验收继续串行。
+
+正规滤子批次：删除已消费的 verification/ForcingNormalAudit.lean 探针，保留其预审日志和完整验收日志。预审识别出九项额外底座 native 依赖后，已停止提前启动的旧验收及其自身子进程，完成显式记录／重算后重新验收通过；未终止其他项目进程。

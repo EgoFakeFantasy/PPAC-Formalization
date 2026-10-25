@@ -22,16 +22,18 @@
 
 ## 本轮继续迁移
 
-沿锁定 OpenAI `SupportFilter.subgroupFilter/top_mem/upward_closed/conjugate_mem → ProductNames.system`，新增 ForcingSupportSize / ForcingSupportFilter：把源单射公式对应到底座 CardinalLessOrEqual，复用实际逆值关系、单射复合、幂集和分离构造小支撑子群族，证明顶、对子群的向上闭包和共轭闭包。44 项声明、六类原核 Derives 证书。
+沿锁定 OpenAI `SupportFilter.inf_mem/isNormalFilter → ProductNames.system`，已将新版底座 `Card/Omega` 和 `Card/InfiniteBound` 的五个证明正文原样适配到固定 039c8e1 底座。只改变 import／命名空间；源文件及选取正文哈希纳入 SOURCE_LOCK 并由 verifier 核对。
 
-未完成有限并的基数界及交闭包，因此不宣称完整正规滤子完成。其无限基数算术供体已存在；继续适配其真实前提，不重建基数论。具体 ProductNames.actionHom、HS pair/union 及解释后的全 ZF 公理仍待接。
+ForcingSupportIntersection 使用供体 `infinite_union_two_l` 证明实际支撑 J∪J' 仍不超过 μ，再构造交子群的支撑见证。ForcingNormalFilter 合成顶、向上、交、共轭四项，返回 `construction_kernel_certificate`：对内部 ω、无限基数 μ 和任意标签集 I，实际存在完整置换载体 G 与定义正确的正规滤子 F。ω 的基数性由供体证明，不作为新增假设。
 
-本轮完整验收通过：2875 个构建任务；29710 项声明（618 无公理依赖、29092 依赖已记录）；9 条命令退出 0，其中 5 条 trust=0；零 Lean 警告；2464 份验收文件哈希全部匹配。新增 44 项声明、六类原核证书；这不是最终 Con 或完整阶段 7 的验收。 详情见 verification/summary.json 和 commands.json。
+本轮完整验收通过：2898 个构建任务，29740 项声明审计（625 项无公理依赖、29115 项依赖已记录）；9 条命令退出 0，其中 5 条 trust=0；零 Lean 警告；2467 份文件哈希匹配。新增 30 项声明、一条原核正规滤子构造证书。原 15 项递归与新消费的 9 项基数 native Bool 证书均重算通过；最终 Con 仍未证明。 具体命令见 verification/commands.json。旧版基数算术额外消费 9 项已有 native Bool 证书；Check.lean 逐项重新计算，SOURCE_LOCK 记录精确名字和底座源哈希。这是活动依赖范围扩大，不是“仅标准三项”或“可信依赖完全未变”；没有向对象 ZF 添加 AC 或新数学公理。
+
+普通正规滤子的四项已完成，不再误列待做。`bot_not_mem` 的非平凡性、具体 ProductNames.actionHom、HS pair/union 及解释后的全 ZF 公理仍未接通。
 
 ## 真正剩余
 
 5–6：具体系统呈现、新版现成 L 定理的版本／语言／原核适配。
-7：有限并支撑界、交闭包、具体条件作用、HS 闭包及解释公理。
+7：具体条件作用、HS 闭包及解释公理；非平凡性按原 ChoiceFailure 消费者继续迁移。有限并支撑界和四项正规性不再列为缺口。
 8–9：原 Algebra/Construction/Models 的构造、不变量、SVC、ACwo、商单射和非选择见证。
 10：原 Main 全秩 PP 装配、现成证明机器 ZF/U 特化、全部内部码归约、最终 Con。
 11：完整终验。

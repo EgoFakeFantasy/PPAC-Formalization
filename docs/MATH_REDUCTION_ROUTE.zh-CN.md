@@ -9,7 +9,7 @@
 | L 解释和全模式 | 新版 YesMetaZFC 7979336：InnerModel.l_model_zf_l / l_model_zfc_l | 任意 ZF 模型中的内部 L 完整数学已经存在，ZFC 定向构建与端点审计通过。移植版本／语言对应，再接既有 Relativization/InterpretedZF/ModelTransfer；停止重建另一套 L。旧 ZFSet LCarrier 不是全部可用资产 |
 | 原核全理论与相对化 | ReverseZFReplay、ChoiceNativeBridge、Relativization、InterpretedZF | 全模式、AC 两种呈现、19 规则回放已完成；具体解释非空及背景由实际供体接口提供，不当作假设偷渡 |
 | 内部名字及作用 | ForcingNames、NameActions；本仓 ForcingNames/Evaluation/MapConditions/ConditionAction | 内部递归、check/pair/union、作用律已验收；具体 ProductNames 条件／群同态呈现仍待接 |
-| 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；本轮构造实际 subgroupFilter 及顶／向上／共轭。有限并支撑界、交闭包待适配底座已存在的无限基数算术 |
+| 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；实际 subgroupFilter、有限并支撑界和全部四项正规性已构造；直接使用新版底座五个原证明，ω 基数性不再作为额外前提。下一接口是具体 ProductNames.actionHom；非平凡性按源依赖另接 |
 | 全秩 HS 和强迫前端 | SymmetricNames、AtomicForcing、ForcingQuotient、ForcingTruth.forcing_sound | 实际 HS 定义、空/check、通用 HS.smul、原子递归／定律／对称性及固定公式／证明保真已完成。具体系统实例、HS pair/union 和解释公理仍待接 |
 | 全 ZF 在同一 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 源证明已有，目标端迁移未完成；复用完整 Replacement/Collection 对应。新版底座普通 forcing ZF 保持不自动等同于 HS 解释，先核对合同 |
 | 源构造核心 | Algebra、Construction | Monoid/Placement/ConservativeHull 及实际不变量待迁移，不能以字段假定核心结论 |

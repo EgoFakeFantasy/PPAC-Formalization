@@ -3436,7 +3436,10 @@ def main() -> None:
                                ("forcing_label_conjugacy", "ForcingLabelConjugacy", 9),
                                ("forcing_conjugation_graph", "ForcingConjugationGraph", 30),
                                ("forcing_support_size", "ForcingSupportSize", 19),
-                               ("forcing_support_filter", "ForcingSupportFilter", 25)):
+                               ("forcing_support_filter", "ForcingSupportFilter", 25),
+                               ("existing_cardinal_bounds", "ExistingCardinalBounds", 5),
+                               ("forcing_support_intersection", "ForcingSupportIntersection", 7),
+                               ("forcing_normal_filter", "ForcingNormalFilter", 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -3458,6 +3461,18 @@ def main() -> None:
         if len(names) != count or names != set(adapter_lock["exact_declaration_footprints"]) or not names <= set(expected):
             raise RuntimeError("Incomplete condition-map declaration audit: " + module)
         map_recursion_footprints.update(adapter_lock["exact_declaration_footprints"])
+    cardinal_reuse = source_lock["companion_reuse"]["native_infinite_union"]
+    cardinal_text = (ROOT / cardinal_reuse["adapter"]).read_text(encoding="utf-8")
+    cardinal_blocks = {m[1]: m[2].strip() for m in re.finditer(
+        r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", cardinal_text)}
+    if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in cardinal_blocks.items()} != cardinal_reuse["literal_blocks_sha256"]:
+        raise RuntimeError("Reused donor cardinal proof bodies changed")
+    for name, digest in cardinal_reuse["certificate_source_files"].items():
+        if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / name).read_bytes()).hexdigest() != digest:
+            raise RuntimeError("Pinned cardinal certificate source changed")
+    for name in cardinal_reuse["additional_native_certificate_axioms"]:
+        if "`" + name not in (ROOT / "Check.lean").read_text(encoding="utf-8"):
+            raise RuntimeError("Missing cardinal certificate reevaluation: " + name)
     interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
     interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
                          re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
@@ -3611,6 +3626,8 @@ def main() -> None:
     run(["lake", "env", "lean", "--trust=0", "Check.lean"], "check.log")
     if "Rechecked 15 pinned native recursion Bool certificates" not in (OUT / "check.log").read_text(encoding="utf-8"):
         raise RuntimeError("Inherited native recursion Bool checks were not executed")
+    if "Rechecked 9 pinned native cardinal Bool certificates" not in (OUT / "check.log").read_text(encoding="utf-8"):
+        raise RuntimeError("Inherited native cardinal Bool checks were not executed")
     run(["lake", "env", "lean", "--trust=0", "CheckStep2.lean"], "step2-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep3.lean"], "step3-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep4.lean"], "step4-check.log")
@@ -7377,10 +7394,13 @@ def main() -> None:
         "source_forcing_small_support_family_constructed": True,
         "source_forcing_small_support_empty_subset_image_bounds_proved": True,
         "source_forcing_small_support_top_upward_conjugation_proved": True,
-        "source_forcing_small_support_union_bound_proved": False,
-        "source_forcing_small_support_intersection_closure_proved": False,
-        "source_forcing_small_support_normal_filter_constructed": False,
-        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The finite-union cardinal bound, intersection closure and ProductNames condition-action instance remain.",
+        "source_forcing_small_support_union_bound_proved": True,
+        "source_forcing_small_support_intersection_closure_proved": True,
+        "source_forcing_small_support_normal_filter_constructed": True,
+        "source_forcing_small_support_properness_proved": False,
+        "source_forcing_small_support_omega_cardinality_assumed": False,
+        "additional_pinned_cardinal_native_Bool_certificates_reevaluated": 9,
+        "source_forcing_label_group_scope": "Every internal label set I; actual permutation carrier, fixing subsets and operation witnesses; conjugation is an internally constructed permutation graph with exact fixing-subgroup images and subgroup closure. Actual small-support family and top/upward/conjugation clauses are constructed. The donor finite-union bound, intersection closure and full four-clause normal-filter construction are now proved under internal IsOmega/IsInfiniteCardinal, with omega cardinality derived. ProductNames condition action and properness remain.",
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,

@@ -37,7 +37,7 @@ Source Formula n 的量词绑定最后变量；目标内在语法绑定列表头
 7. 最终分开验收普通 Con 路线、带强不可达的传递模型路线和论文更强的序列保持结论。
 
 
-公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。当前检查精确守住此基线，不标成“仅三项标准公理”；未修改底座，也未添加新的自定义公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。
+公理审计边界：固定 YesMetaZFC 的 sentence! 宏用 native_decide 生成7个基础句子的 FreeClosed 证书，原生ZF合同继承其7个 native_decide.ax_1 依赖。见 docs/TRUST_BASELINE.json。该文件记录七项基础句子证书；递归配套另有 15 项已有 native Bool 证书，本轮基数算术再消费 9 项。Check.lean 重新计算后两组，精确足迹见 SOURCE_LOCK；不标成“仅三项标准公理”或活动依赖完全未变。未修改底座，也未添加新的对象数学公理。后续若要求纯内核证书，需另行把这些证书改为 kernel-checked decide 并核对原理论不变。
 
 语义桥的 Classical.choice 已定位到 Lean 核心定理 Fin.lastCases_castSucc，只用于 Prop 中的绑定等式证明；未向对象ZF加入AC，也未抽取内部集合选择函数。旧宿主辅助维持原先无 Classical.choice 的依赖范围。
 
