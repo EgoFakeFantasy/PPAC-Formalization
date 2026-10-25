@@ -9,6 +9,8 @@
 | 原核收尾方法 | BMS SecondOrderCompleteness.derives_m 调原 strong_completeness；本仓 ModelTransfer 已适配纯成员语言、任意对应 Type 0 模型和实际 nativeZF | 已接入，不再复制调度／完备性。具体 LCarrier 真值不能填“所有模型”参数 |
 | 相对化中的全模式接线 | 新 InterpretedZF 的 source_sentence/native_sentence/project_axiom/collection，全部由已证 ReverseZFReplay、Relativization、CollectionFromReplacement 组合 | 本轮正式检查通过，记为第 6 阶段接口；相对化 ZF 背景和域非空明确保留，不声称完整 L 解释或 Con 已闭合 |
 
+原 PPAC 数学链已开始接入其实际入口：ForcingNameInduction 保留原 ForcingNames.Child 的 `∃condition, pair(subname,condition)∈parent`，把 child_wf 的三次成员下降通过已有集合归纳模式回传为原核闭句。通用底座 WellFounded.Recursion.solve 要求宿主 WellFounded，不能用于任意可能外部不良基的 nativeZF 模型；本适配改用已经完成的 SetInduction.native_induction，不复制递归器。完整名字定义／递归与强迫关系未被这条归纳模式替代。固定源 SHA、实际消费者和 18 项精确依赖见 SOURCE_LOCK.source_proof_adaptations。
+
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 
 # 优先复用的已完成接口（2026-10-25 用户纠正后）

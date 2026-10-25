@@ -8,4 +8,6 @@
 
 最终对象 Con 主句未证明。实际本地验收结果位于 verification/summary.json；其各项布尔值只覆盖所注明的局部范围，不能作为完成比例。历史报告保留原时间和基点，不再产生当前待办。
 
-本轮实际验收：InterpretedZF 四项接线定向构建通过；scripts/verify.py 全流程通过（2836 构建任务，28800 声明审计，9 条命令退出 0，含 5 条 trust=0，零警告）。新四项依赖精确等于标准三项及已有七个 ZF 句子证书；没有新增对象公理。五项最终完成标志仍为 false。本轮推进的是阶段 6 的接线，未提升为阶段 6 整体完成。
+本轮原源 Child 归纳适配已验收：2837 构建任务、28818 声明审计、9 命令退出 0、5 条 trust=0、零警告；18 项新增声明全部覆盖，最终五项标志仍为 false。
+
+原 4.34.1 工具链已经从官方 GitHub release 取得并验哈希；隔离基线目录为 `C:/Users/17857/Documents/Codex/ppac-upstream-4341/`。原 Main 的定向构建在本批启动，实际终态以该目录 source-build-result.json 和活进程为准，不能以本状态快照认定构建结束。完整 Comparator 因缺 Linux/landrun 尚未运行。

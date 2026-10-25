@@ -18,6 +18,7 @@
 | 相对化保留推理，显式处理自由变量在解释域内 | Relativization.lean 的 formula／derives／source_closed_at／kernel_certificate | 本批提供全部19条源规则、任意外部有限证书及真正原核证书；非空前提保持为对象蕴含 |
 | 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 原 L 工程 ZFModel.lCarrier_models_ZF、StageHistoryGraphSystem.lCarrier_models_ZFC；本仓 InterpretedZF | 原 LCarrier 的完整模式与 Choice 结论已完成。本仓全模式相对化回放已接线，保留解释背景与域非空；尚未定位到可直接调用的全 nativeZF 模型 L 终局，需要接其精确接口，不是重证底座公理模式 |
 | L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF中Min_lt→AC及原库内部良序覆盖CoverWO→Min_edge→AC与域相对化已推导；实际L中的层序图／CoverWO及L域相对化ZF仍待接通 |
+| 原名字 Child 关系的内部归纳 | ForcingNames.Child/child_wf；已有 SetInduction.native_induction 与 KuratowskiZF.source_edge | 已接入 ForcingNameInduction.kernel_certificate：每个任意参数公式的原核闭句，沿原三次成员下降。所有内部集合都在量化范围内；没有外部 WellFounded 假设。原 IsName/evaluate/mapConditions 与 AtomicForcing.eq_refl 是消费者，完整递归还未迁入 |
 | 具体集合对称系统及全部内部 HS 名字类 | ProductNames.system:89–92；SymmetricNames.Name:48–49 | 缺纯对象公式、构造及全秩证明；不能把 HS 类当作地面集合，不能加全局秩截断 |
 | 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 缺对象定义与实际原核证明；不能把 Regular 当作未消除的目标假设 |
 | 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 源为宿主证明；缺对象逐实例证书与递归语法转换。不得定义全宇宙的统一真值谓词 |

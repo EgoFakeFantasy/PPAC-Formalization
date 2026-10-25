@@ -29120,3 +29120,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InterpretedZF.native_sentence
 #print axioms PPAC.Migration.InterpretedZF.project_axiom
 #print axioms PPAC.Migration.InterpretedZF.collection
+
+#print axioms PPAC.Migration.ForcingNameInduction.child
+#print axioms PPAC.Migration.ForcingNameInduction.below
+#print axioms PPAC.Migration.ForcingNameInduction.progressive
+#print axioms PPAC.Migration.ForcingNameInduction.sentence
+#print axioms PPAC.Migration.ForcingNameInduction.members
+#print axioms PPAC.Migration.ForcingNameInduction.strengthened
+#print axioms PPAC.Migration.ForcingNameInduction.pred_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.member_below_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.holds_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.member_progressive_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.members_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.strengthened_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.child_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.child_descent
+#print axioms PPAC.Migration.ForcingNameInduction.progressive_semantics
+#print axioms PPAC.Migration.ForcingNameInduction.models
+#print axioms PPAC.Migration.ForcingNameInduction.kernel_certificate
+#print axioms PPAC.Migration.ForcingNameInduction.source_certificate

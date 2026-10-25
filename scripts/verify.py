@@ -3376,6 +3376,15 @@ def main() -> None:
                             re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", relativization_body, re.MULTILINE)}
     if not relativization_names or not relativization_names <= set(expected):
         raise RuntimeError("Incomplete relativization declaration audit")
+    source_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))
+    forcing_name_lock = source_lock["source_proof_adaptations"]["forcing_name_induction"]
+    if source_lock["files"][forcing_name_lock["source_file"]] != forcing_name_lock["source_sha256"]:
+        raise RuntimeError("Original forcing-name source lock changed")
+    forcing_name_body = strip_comments((ROOT / forcing_name_lock["adapter"]).read_text(encoding="utf-8"))
+    forcing_name_names = {"PPAC.Migration.ForcingNameInduction." + n for n in
+                          re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", forcing_name_body, re.MULTILINE)}
+    if len(forcing_name_names) != 18 or forcing_name_names != set(forcing_name_lock["exact_declaration_footprints"]) or not forcing_name_names <= set(expected):
+        raise RuntimeError("Incomplete original Child induction audit")
     interpreted_body = strip_comments((ROOT / "PPAC/Migration/InterpretedZF.lean").read_text(encoding="utf-8"))
     interpreted_names = {"PPAC.Migration.InterpretedZF." + n for n in
                          re.findall(r"^theorem\s+([A-Za-z_][A-Za-z_0-9]*)", interpreted_body, re.MULTILINE)}
@@ -3554,6 +3563,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name in forcing_name_names:
+            if set(dependencies) != set(forcing_name_lock["exact_declaration_footprints"][name]):
+                raise RuntimeError("Unexpected original Child induction dependency: " + name)
+            continue
         if name in interpreted_names:
             if set(dependencies) != {"propext", "Quot.sound", "Classical.choice"} | inherited:
                 raise RuntimeError("Unexpected interpreted-ZF dependency: " + name)
@@ -7218,6 +7231,9 @@ def main() -> None:
     hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "lean_version": version,
+        "source_forcing_Child_formula_indexed_induction_proved": True,
+        "source_forcing_Child_external_wellFounded_claimed": False,
+        "source_forcing_IsName_and_atomic_recursion_completed": False,
         "interpreted_ZF_full_schema_external_transport_proved": True,
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",

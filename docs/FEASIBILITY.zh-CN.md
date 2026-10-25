@@ -1,3 +1,5 @@
+> 2026-10-26 基线更新：已从官方 GitHub release 获取 Lean 4.34.1，SHA-256 为 `667394ecf6708a228221eb4919c0bdb419966b7408bcf3089a9096a6f4ae62c9`，二进制报告 commit `5045d0056413266e57c625dcd7c365b10e377c52`。隔离复制的 75 源模块逐字哈希保持一致；Mathlib 及 8 个传递依赖与原 manifest 全部一致。原 Main 定向构建已启动，未以此宣称成功；完整 Comparator 仍缺 Linux/landrun。本文件及 SOURCE_LOCK.original_build 中早期“not run”描述是初次盘点快照，不是当前进程终态。
+
 # PPAC 向 YesMetaZFC 迁移审查
 核查日期：2026-10-21。结论：可以分阶段实施，但不是改 import 的直接移植；完整迁移尚未完成。
 当前：完整ZF呈现互导、外部推导双向回放及原两种AC的对象等价均已验收；内部Proof/Con和最终主句仍待实现。

@@ -1579,5 +1579,132 @@
       },
       "scope": "The 13 canonical internal parameters exist uniquely and are existentially eliminated. The literal original stage relation is a parameter-free class function on all internal ordinals, proved in the original native ZF kernel. Domain is defined by membership in such a stage; domain nonemptiness and evaluator/Def correctness remain unproved."
     }
+  },
+  "source_proof_adaptations": {
+    "forcing_name_induction": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingNames.lean",
+      "source_sha256": "0e2f3a09e6b38d12cf3ab5f1935eb1a3d1dccd389444866e47231c113f2f955c",
+      "source_declarations": [
+        "OAI.PartitionConsistency.SetForcingNames.Child",
+        "OAI.PartitionConsistency.SetForcingNames.child_wf"
+      ],
+      "adapter": "PPAC/Migration/ForcingNameInduction.lean",
+      "consumers": [
+        "ForcingNames.IsName",
+        "ForcingNames.evaluate",
+        "ForcingNames.mapConditions",
+        "AtomicForcing.eq_refl"
+      ],
+      "reused_interfaces": [
+        "KuratowskiZF.source_edge",
+        "SetInduction.native_induction",
+        "ModelTransfer.derives",
+        "ReverseZFReplay.source_sentence"
+      ],
+      "scope": "Every formula-indexed induction instance for the exact all-rank Child relation is proved in original nativeZF. Arbitrary object parameters and internal sets are included; external WellFounded, complete IsName/forcing recursion and the internal Con theorem are not claimed.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNameInduction.child": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.below": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.progressive": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.members": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.strengthened": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.pred_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.member_below_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.holds_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.member_progressive_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.members_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.strengthened_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.child_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.child_descent": [],
+        "PPAC.Migration.ForcingNameInduction.progressive_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingNameInduction.models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingNameInduction.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingNameInduction.source_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    }
   }
 }
