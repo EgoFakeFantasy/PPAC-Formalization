@@ -10,7 +10,7 @@
 | 2 | 句法与源推导传输 | 重命名、替换、有限支撑、19 规则及反向编译，原核 Derives 证书 | 已完成外部证书迁移；内部任意码归约归阶段 10，不回滚本项 |
 | 3 | 全理论对应 | 完整 Separation/Replacement ↔ 原 Separation/Collection，全部固定公理、两种 AC；ZF/U 双向回放 | 已完成；不得把完整模式再报成未证明 |
 | 4 | 原 Lean 4.34.1 外部基线 | 本轮重算固定源 75 文件 SHA-256，全部匹配；源证明端点已读 | 原 Comparator 尚未运行；新增隔离的原版 4.34.1；目标仓仍用 4.33.1。官方 GitHub 同版工具链已下载并验 SHA-256；75 源模块和 Mathlib 的 9 个依赖提交均保持原样。隔离目录中原 Main 定向构建已启动，尚未验收；本机缺 Linux/landrun，完整 Comparator 未运行，本仓 CheckStep4 不是此验收 |
-| 5 | 内部名字、图、元组、递归 | 已有对象配对／图／ω／序列／原内部递归；固定 Def、原历史与规范参数已接入；原 ForcingNames.Child 对象归纳已验收；集合条件 P 的 IsName 定义、原展开方程及可定义解唯一性已验收；内部集合 G 的全秩 evaluate 已验收；可定义 mapConditions 的存在、唯一、成员／边展开及空名字已完整验收 | 继续原 mapConditions_id／comp、IsName.mapConditions、evaluate_mapConditions，再接 Name.act；不重造现成基础，不开发字节兼容 |
+| 5 | 内部名字、图、元组、递归 | 已有对象配对／图／ω／序列／原内部递归；固定 Def、原历史与规范参数已接入；原 ForcingNames.Child 对象归纳已验收；集合条件 P 的 IsName 定义、原展开方程及可定义解唯一性已验收；内部集合 G 的全秩 evaluate 已验收；可定义 mapConditions 的存在、唯一、成员／边展开及空名字已验收；原恒等、复合、名字保持和逐点等价替换已完整验收 | 接原 evaluate_mapConditions 的类滤子语义及实际 Name.act，继续原名字构造的消费者；不重造现成基础，不开发字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 其他 L 工程的 ZF/ZFC 结论已有；核对并补到当前对象解释的接口和真实前提。原 LCarrier 是 ZFSet 子类，不能直接代替所有 nativeZF 模型的结论 |
 | 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；尚无完成的目标端主链 | 迁移原 poset/正规滤子/HS、原子递归、逐公式 forcing_sound、全部解释公理；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
@@ -28,6 +28,8 @@
 
 一次仅一个 Lean/Lake 构建；正式证明改动运行 scripts/verify.py，检查依赖及禁用缺口。文档改动不触发重复全量编译。保留其他仓库脏改动和已退役反射状态。不用文件数、辅助布尔门或构建任务数估计完成比例。
 
-当前批次：原 ForcingNames.lean:96–128 的 mapConditions 递归、成员／边展开及空名字。任意参数公式表示条件映射，其全定义单值性保留为对象前提；对象名字不设秩界。已有 Child 归纳、Collection、函数式 Replacement、积、分离和原 ModelTransfer 被实际消费。完整验收已通过；阶段 5 整体及最终 Con 均未完成。
+当前批次：沿原 ForcingNames.lean:130–165 迁移恒等律、复合律和名字保持，并适配原 425–439 行名字作用律中的函数外延替换。所有结论提供纯对象闭句及原核证书；恒等律保留 IsName 前提，复合律覆盖原始名字，名字保持保留“P 中条件的像属于 Q”的对象前提。四类证书均已定向构建并预审计通过，完整验收已通过。
 
-本批完整验收通过：2841 构建任务、28968 项声明审计（555 项无公理依赖、28413 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 69 项声明全部覆盖，2431 份源码哈希全部一致。五类 mapConditions 原核证书仅继承标准三项及原七项 ZF 句子证书。
+原 evaluate_mapConditions 的 G 是外部类；一般映射的集合逆像也未必是集合。因此本仓现有内部集合 G 求值证书不能直接替代它。必须沿源解释补全所需类谓词／外部滤子对应，或在实际 actCode 情形证明恰当的内部集合接口；后一项不能单独宣称覆盖原任意类滤子定理。最终 Con 和阶段 5 整体仍未完成。
+
+本批完整验收通过：2842 构建任务、29001 项声明审计（556 项无公理依赖、28445 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 33 项声明全部覆盖，2432 份源码哈希匹配。四类原核证书未超出标准三项及原七项 ZF 句子证书。

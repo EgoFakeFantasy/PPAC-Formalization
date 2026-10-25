@@ -3403,7 +3403,8 @@ def main() -> None:
         raise RuntimeError("Incomplete original evaluate declaration audit")
     map_recursion_footprints = {}
     for key, module, count in (("forcing_name_recursion", "ForcingNameRecursion", 25),
-                               ("forcing_map_conditions", "ForcingMapConditions", 44)):
+                               ("forcing_map_conditions", "ForcingMapConditions", 44),
+                               ("forcing_map_laws", "ForcingMapLaws", 33)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if source_lock["files"][adapter_lock["source_file"]] != adapter_lock["source_sha256"]:
             raise RuntimeError("Original condition-map source lock changed")
@@ -7286,6 +7287,11 @@ def main() -> None:
         "source_forcing_mapConditions_object_function_antecedent_retained": True,
         "source_forcing_mapConditions_identity_composition_name_preservation_covariance_proved": False,
         "source_forcing_mapConditions_concrete_actCode_instance_proved": False,
+        "source_forcing_mapConditions_identity_on_IsName_proved": True,
+        "source_forcing_mapConditions_composition_all_raw_names_proved": True,
+        "source_forcing_IsName_mapConditions_set_conditions_proved": True,
+        "source_forcing_mapConditions_extensional_relation_congruence_proved": True,
+        "source_forcing_evaluate_mapConditions_class_filter_covariance_proved": False,
         "interpreted_ZF_full_schema_external_transport_proved": True,
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",
