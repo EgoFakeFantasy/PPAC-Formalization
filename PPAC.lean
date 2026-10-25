@@ -321,3 +321,6 @@ import PPAC.Migration.ForcingConditionGraphs
 import PPAC.Migration.ForcingConditionAction
 import PPAC.Migration.ForcingPairName
 import PPAC.Migration.ForcingUnionName
+import PPAC.Migration.ForcingUnionAction
+import PPAC.Migration.ForcingCheckName
+import PPAC.Migration.ForcingCheckNameLaws

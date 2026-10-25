@@ -25,9 +25,11 @@ ForcingClassEvaluation／ForcingEvaluationCovariance 继续消费同一源的 ev
 
 ForcingConditionGraphs／ForcingConditionAction 已实际消费上述接口。原 functionOn AST 未重定义；其纸面语义与底座 IsSetFunctionFromTo／IsSetBijectionFromTo 建立精确对应。恒等图采用 exists_setFunctionFromTo_of_denote 的 identityValue 实例、逆图采用 exists_inverseBijectionWithPairs、复合图采用 exists_compositionFunction；这些返回实际边方程，避免把只保证“某个双射”的推论冒充指定恒等或复合。原 actCode 的内／外条件分支保留，名字作用只调用已证的 mapping、恒等、复合、同余与求值相容性，不把作用律设为字段。九类原核证书和 70 项声明预审计没有新增可信基依赖，完整验收已通过。SOURCE_LOCK 同时锁定所消费 FunctionConstruction.lean 的 SHA-256。原具体群同态族与完整对称系统尚未实例化。
 
-ForcingPairName／ForcingUnionName 本批沿固定 ForcingNames 第 239–348 行及 Name.smul_pair 迁移：配对使用 KP.exists_pair 和既有 Kuratowski 编码；并名字通过既有坐标界、Union、ZF.exists_cartesianProduct、Separation 获得全部共同加强条件的精确范围。求值和映射直接消费已有成员方程及单值性。并名字求值明确保留源滤子的包含、向上闭包和定向性，不假设二元交或选择加强条件。64 项声明、12 类原核证书已通过完整验收（2848 构建任务、29178 声明审计、9 命令成功、5 条 trust=0、零警告）。checkName 和 unionName 作用律仍待迁移；既有配对、集合并、笛卡尔积及分离不是待重做的基础。
+ForcingPairName／ForcingUnionName 本批沿固定 ForcingNames 第 239–348 行及 Name.smul_pair 迁移：配对使用 KP.exists_pair 和既有 Kuratowski 编码；并名字通过既有坐标界、Union、ZF.exists_cartesianProduct、Separation 获得全部共同加强条件的精确范围。求值和映射直接消费已有成员方程及单值性。并名字求值明确保留源滤子的包含、向上闭包和定向性，不假设二元交或选择加强条件。64 项声明、12 类原核证书已通过完整验收（2848 构建任务、29178 声明审计、9 命令成功、5 条 trust=0、零警告）。checkName 和 unionName 作用律现已由本批下述模块迁移并验收；既有配对、集合并、笛卡尔积及分离不是待重做的基础。
 
-checkName 的下一复用入口已实读：固定底座 SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals，在任意 Project ZF 模型中工作，保留可定义序列算子的全定义／单值前提，不要求宿主 WellFounded。本仓 ConstructibleHistory:531 与 GodelDefRecursion:176 已消费这一组入口。后续应接原 checkName 的具体算子及成员递归对应，而不是再次建设超限递归；当前只完成接口核对，尚未声称 checkName 证明完成。
+checkName 的下一复用入口已实读：固定底座 SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals，在任意 Project ZF 模型中工作，保留可定义序列算子的全定义／单值前提，不要求宿主 WellFounded。本仓 ConstructibleHistory:531 与 GodelDefRecursion:176 已消费这一组入口。后续应接原 checkName 的具体算子及成员递归对应，而不是再次建设超限递归；该接口定位不表示递归基础缺失；本批 checkName 的原成员递归直接消费已验收的集合归纳，而不是把序数序列算子冒用为成员递归。
+
+ForcingUnionAction 逐成员复用原第 494–532 行的两个方向，保持全体条件码上的序不变前提；满射置换图给出源逆作用所需原像。ForcingCheckName 专门表示原第 184–201 行的成员递归值域，复用 SetInduction.native_induction、既有 comparison/union_edge/insert_edge、Collection／Separation 和配对／积；没有新通用递归器，也未要求任意模型外部良基。ForcingCheckNameLaws 按原第 203–237、474–478 行完成三个成员归纳证明及固定条件作用。74 项声明、10 类证书完整验收通过；具体 HS 与泛型解释仍未完成。
 
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 
