@@ -3368,6 +3368,14 @@ def main() -> None:
     missing_internal = internal_explicit - set(expected)
     if missing_internal:
         raise RuntimeError(f"Internal explicit declarations missing from Audit.lean: {sorted(missing_internal)}")
+    # Formula-indexed relativization is a new interpretation primitive, not a
+    # packet module. Require complete declaration coverage and the standard
+    # three host logical axioms only; no inherited native certificate additions.
+    relativization_body = strip_comments((ROOT / "PPAC/Migration/Relativization.lean").read_text(encoding="utf-8"))
+    relativization_names = {"PPAC.Migration.Relativization." + n for n in
+                            re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", relativization_body, re.MULTILINE)}
+    if not relativization_names or not relativization_names <= set(expected):
+        raise RuntimeError("Incomplete relativization declaration audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3483,6 +3491,10 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.Relativization."):
+            if not set(dependencies) <= {"propext", "Quot.sound", "Classical.choice"}:
+                raise RuntimeError("Unexpected relativization dependency: " + name)
+            continue
         if name in fixed_exact:
             if set(dependencies) != fixed_exact[name]: raise RuntimeError("Fixed axiom footprint changed: "+name)
             continue

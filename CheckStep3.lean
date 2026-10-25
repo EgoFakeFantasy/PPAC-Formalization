@@ -1170,4 +1170,32 @@ example : Source.Derives (Source.SetLanguage.ZF.at 0) (Source.SetLanguage.AC.iff
 example : FirstOrder.Derives nativeZF [] (.imp (Definitional.Project.fo_sentence Axioms.choice) AC) := ChoiceNativeBridge.native_reverse
 example : FirstOrder.Derives nativeZF [] (.iff AC (Definitional.Project.fo_sentence Axioms.choice)) := ChoiceNativeBridge.native_equivalence
 
+/-- Quantifier restriction uses an explicit pure unary predicate, not truth. -/
+example (D : Source.Formula 1) :
+    Relativization.formula D (Source.Formula.all (.equal 0 0) : Source.Sentence) =
+      Source.Formula.all ((Relativization.domain D 0).imp (.equal 0 0)) := rfl
+
+/-- All externally finite source proofs, including arbitrary free contexts,
+produce an original-kernel certificate with nonempty domain still explicit. -/
+example (D : Source.Formula 1) {T : Source.Theory} {n} {p : Source.Sentence}
+    (d : Source.Derives (T.at n) (p.rename Fin.elim0)) :
+    FirstOrder.Derives (TheoryTransport.theory (Relativization.theory D T)) []
+      (Translation.sentence ((Source.Formula.ex D).imp (Relativization.formula D p))) :=
+  Relativization.kernel_certificate D d
+
+/-- Regression for the nonempty-domain obligation: even the logical existence
+sentence is relativized only under EX D, without assuming every set lies in D. -/
+example (D : Source.Formula 1) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence ((Source.Formula.ex D).imp
+        (Relativization.formula D (Source.Formula.ex (.equal 0 0))))) := by
+  let T : Source.Theory := fun _ => False
+  have d : Source.Derives (T.at 1)
+      ((Source.Formula.ex (.equal 0 0) : Source.Sentence).rename Fin.elim0) := by
+    apply Source.Derives.exI (0 : Fin 1)
+    exact Source.Derives.eqRefl 0
+  exact (Relativization.kernel_certificate D d).theory_weaken (by
+    rintro q ⟨a, ⟨b, hb, _⟩, _⟩
+    exact False.elim hb)
+
 end PPAC.Migration.Step3Checks

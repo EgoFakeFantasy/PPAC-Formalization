@@ -28844,3 +28844,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.Internal.ObjectPacketReaderInverse.source_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding
 #print axioms PPAC.Migration.Internal.ObjectPacketReaderInverse.readerInverseBoundedActualAcceptanceExactlyIndependentEncoding_kernel_certificate
 #print axioms PPAC.Migration.Internal.ObjectPacketReaderInverse.native_readerInverseBoundedActualAcceptanceExactlyIndependentEncoding
+
+#print axioms PPAC.Migration.Relativization.domain
+#print axioms PPAC.Migration.Relativization.formula
+#print axioms PPAC.Migration.Relativization.domain_rename
+#print axioms PPAC.Migration.Relativization.formula_rename
+#print axioms PPAC.Migration.Relativization.formula_raise
+#print axioms PPAC.Migration.Relativization.formula_instantiate
+#print axioms PPAC.Migration.Relativization.derives
+#print axioms PPAC.Migration.Relativization.theory
+#print axioms PPAC.Migration.Relativization.sentence_rename
+#print axioms PPAC.Migration.Relativization.axiom_closed
+#print axioms PPAC.Migration.Relativization.domain_one
+#print axioms PPAC.Migration.Relativization.source_closed_at
+#print axioms PPAC.Migration.Relativization.kernel_certificate
