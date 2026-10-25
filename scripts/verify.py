@@ -2699,6 +2699,55 @@ def check_Packet_complete_reader_input_single_step() -> dict:
             'full_Basic_AST_schema_Proof_interpretation_Con':False}
 
 
+def check_Packet_reader_state_code_coded_step_history_base() -> dict:
+    modules = ['PacketReaderStateSyntax', 'PacketReaderStateCode', 'PacketReaderCodedSyntax', 'PacketReaderCodedTransport', 'PacketReaderCodedNormalize', 'PacketReaderCodedUnique', 'PacketReaderCodedExistence', 'PacketReaderHistorySyntax', 'PacketReaderHistoryLaws', 'PacketReaderHistoryBase', 'ObjectPacketReaderHistory']
+    schemas = ['packetReaderHistoryStateCodeExactRawDomain', 'packetReaderHistoryStateCodeOutputUnique', 'packetReaderHistoryStateCodeAllFieldsInjective', 'packetReaderHistoryStateCodeNatural', 'packetReaderHistoryCodedTransitionAtActualSource', 'packetReaderHistoryCodedTransitionNaturalDomain', 'packetReaderHistoryCodedTransitionExactCarriers', 'packetReaderHistoryCodedTransitionOutputUnique', 'packetReaderHistoryCodedSuccessorExactRawDomain', 'packetReaderHistoryActualInternalIndexHasAdjacentStep', 'packetReaderHistoryActualHistoryEndpointsNatural', 'packetReaderHistoryEveryZeroHistoryHasSameEndpoint', 'packetReaderHistoryActualSingletonZeroHistoryExists', 'packetReaderHistoryActualStateCodeSeedsZeroHistory', 'packetReaderHistoryOriginalLiteralCodedDomain']
+    required = {
+        'PacketReaderStateSyntax': ['def fields', 'def code', '(PacketReaderStepSyntax.state w l v s a).conj', 'SyntaxForestSyntax.forest 4 w (fields l v s a) n', 'def carrier', 'existsMany 4'],
+        'PacketReaderStateCode': ['SyntaxForests.exists_forest', 'SyntaxForests.unique', 'SyntaxForestInjective.input_eq', 'StructuralListValidity.range', 'theorem exists_iff', 'theorem fields_unique'],
+        'PacketReaderCodedSyntax': ['def stepBody', 'def nextBody', 'def step', 'existsMany 8', 'PacketReaderInputSyntax.advance', 'def existsNext', 'theorem intro_step'],
+        'PacketReaderCodedTransport': ['Derives.eqSubst', 'theorem align_source', 'theorem align_code'],
+        'PacketReaderCodedNormalize': ['PacketReaderStateCode.fields_unique', 'PacketReaderCodedTransport.align_source', 'theorem at_source', 'theorem carriers', 'HornBinderRules.eliminate_many 8'],
+        'PacketReaderCodedUnique': ['PacketReaderInputStep.unique', 'PacketReaderCodedTransport.align_code', 'PacketReaderStateCode.unique', 'theorem unique'],
+        'PacketReaderCodedExistence': ['PacketReaderInputExistence.domain_iff', 'PacketReaderStateCode.exists_code', 'PacketReaderCodedNormalize.at_source', 'PacketReaderInputExistence.result_domain', 'theorem exists_iff'],
+        'PacketReaderHistorySyntax': ['def rowAt', 'successor j i', 'edge f i n', 'edge f j r', 'PacketReaderCodedSyntax.step w B z o n r', 'def links', 'Formula.mem (Fin.last m) l.castSucc', 'def history', 'SequenceSyntax.sequence f d w', 'edge f z n', 'edge f l r', 'def existsHistory', 'theorem links_at'],
+        'PacketReaderHistoryLaws': ['theorem row_at', 'theorem endpoint_range', 'theorem zero_value', 'GraphProperties.single_valued', 'StructuralListTraceOrder.edge_input_subst'],
+        'PacketReaderHistoryBase': ['SequenceAppend.exists_append', 'SequenceLogic.empty_sequence', 'StructuralListTraceRows.new_edge', 'empty_links', 'theorem exists_zero'],
+        'ObjectPacketReaderHistory': ['TheoryTransport.sentence', 'ZFReplay.replay', 'SyntaxNumerals.range hZ 128 w B', 'SyntaxNumerals.range hZ 0 w z', 'SyntaxNumerals.range hZ 1 w o']}
+    forbidden = r'Expr\.eval|Classical\.choose|\b(sorry|admit|unsafe|native_decide|induction)\b|(?<!\.)\baxiom\b|Nat\.strongRec|WellFounded\.fix|set_option|\bModel\b'
+    texts = {}
+    for mod in modules:
+        text = strip_comments((ROOT/'PPAC/Migration/Internal'/(mod+'.lean')).read_text(encoding='utf-8'))
+        if re.search(forbidden, text): raise RuntimeError('Reader state history forbidden gap: '+mod)
+        texts[mod] = text
+        for clause in required[mod]:
+            if clause not in text: raise RuntimeError('Reader state history proof drift: '+mod+': '+clause)
+    for mod,name,expected in [('PacketReaderStateCode','exists_iff',{'hw'}),('PacketReaderCodedUnique','unique',{'hw','hB','hr','ht'}),('PacketReaderCodedExistence','exists_iff',{'hw','hB','hz','ho','hc'}),('PacketReaderHistoryLaws','zero_value',{'hh','hl'}),('PacketReaderHistoryBase','exists_zero',{'hw','hz','hd','hn','hc'})]:
+        h = re.search(r'(?ms)^theorem '+name+r'\b.*?(?=:=)',texts[mod])
+        if not h or set(re.findall(r'\((\w+)\s*:\s*Derives Γ \(',h.group(0))) != expected:
+            raise RuntimeError('Reader state history hidden premise: '+mod+'.'+name)
+    checks = (ROOT/'CheckStep4.lean').read_text(encoding='utf-8')
+    for name in schemas:
+        if 'Internal.ObjectPacketReaderHistory.native_'+name not in checks: raise RuntimeError('Missing reader state history native fixture: '+name)
+    return {'actual_original_four_field_state_code_has_exact_raw_state_domain':True,
+            'state_codes_natural_output_unique_and_all_four_fields_injective':True,
+            'complete_eight_internal_field_coded_transition_independently_defined':True,
+            'coded_transition_exact_at_every_actual_source_state_code':True,
+            'coded_transition_source_and_target_have_actual_state_carriers':True,
+            'coded_transition_natural_domain_and_output_determinism':True,
+            'coded_successor_exists_iff_original_raw_admissible_domain':True,
+            'independent_finite_history_uses_original_sequence_graph_and_all_internal_indices':True,
+            'every_adjacent_history_row_requires_actual_coded_transition':True,
+            'real_singleton_sequence_constructs_zero_history':True,
+            'every_accepted_zero_history_has_equal_endpoints':True,
+            'all_invalid_and_nonstandard_candidates_and_raw_scale_domain_preserved':True,
+            'arbitrary_length_history_append_and_determinism':False,
+            'all_index_input_consumption_and_complete_run_exists_unique':False,
+            'actual_EOF_accumulator_reverse':False,
+            'readTokens_Bytes_Canonical_full_program_bridge':False,
+            'full_Basic_AST_schema_Proof_interpretation_Con':False}
+
+
 def main() -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -2769,6 +2818,7 @@ def main() -> None:
     Packet_actual_token_canonical_prefix_agreement = check_Packet_actual_token_canonical_prefix_agreement()
     Packet_raw_reader_local_step = check_Packet_raw_reader_local_step()
     Packet_complete_reader_input_single_step = check_Packet_complete_reader_input_single_step()
+    Packet_reader_state_code_coded_step_history_base = check_Packet_reader_state_code_coded_step_history_base()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
     (OUT / "summary.json").unlink(missing_ok=True)
@@ -6013,7 +6063,22 @@ def main() -> None:
                     'PPAC.Migration.Internal.ObjectPacketReaderInput.native_packetReaderInputByteRejectNoSuccessor',
                     'PPAC.Migration.Internal.ObjectPacketReaderInput.native_packetReaderInputEofObservationsDisjoint',
                     'PPAC.Migration.Internal.ObjectPacketReaderInput.native_packetReaderInputOriginalLiteralExactSuccessorDomain',
-                    'PPAC.Migration.Internal.ObjectPacketReaderInput.native_packetReaderInputOriginalLiteralFourWayDispatch'} or name.startswith((
+                    'PPAC.Migration.Internal.ObjectPacketReaderInput.native_packetReaderInputOriginalLiteralFourWayDispatch',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeExactRawDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeOutputUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeAllFieldsInjective',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionAtActualSource',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionNaturalDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionExactCarriers',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionOutputUnique',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedSuccessorExactRawDomain',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualInternalIndexHasAdjacentStep',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualHistoryEndpointsNatural',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryEveryZeroHistoryHasSameEndpoint',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualSingletonZeroHistoryExists',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualStateCodeSeedsZeroHistory',
+                    'PPAC.Migration.Internal.ObjectPacketReaderHistory.native_packetReaderHistoryOriginalLiteralCodedDomain'} or name.startswith((
             "PPAC.Migration.ZFEquivalence.", "PPAC.Migration.SeparationSyntax.", "PPAC.Migration.CollectionSyntax.", "PPAC.Migration.ZFReplay.", "PPAC.Migration.ReverseZFReplay.")):
             if not set(dependencies) <= allowed | {"Classical.choice"} | inherited:
                 raise RuntimeError(f"Unexpected fixed-ZF axiom dependency: {name}: {dependencies}")
@@ -6025,6 +6090,7 @@ def main() -> None:
         if extra != expected_extra:
             raise RuntimeError(f"Unexpected axiom dependency: {name}: {dependencies}")
     arithmetic_groups = {
+        "ObjectPacketReaderHistory": ('packetReaderHistoryStateCodeExactRawDomain', 'packetReaderHistoryStateCodeOutputUnique', 'packetReaderHistoryStateCodeAllFieldsInjective', 'packetReaderHistoryStateCodeNatural', 'packetReaderHistoryCodedTransitionAtActualSource', 'packetReaderHistoryCodedTransitionNaturalDomain', 'packetReaderHistoryCodedTransitionExactCarriers', 'packetReaderHistoryCodedTransitionOutputUnique', 'packetReaderHistoryCodedSuccessorExactRawDomain', 'packetReaderHistoryActualInternalIndexHasAdjacentStep', 'packetReaderHistoryActualHistoryEndpointsNatural', 'packetReaderHistoryEveryZeroHistoryHasSameEndpoint', 'packetReaderHistoryActualSingletonZeroHistoryExists', 'packetReaderHistoryActualStateCodeSeedsZeroHistory', 'packetReaderHistoryOriginalLiteralCodedDomain'),
         "ObjectPacketReaderInput": ('packetReaderInputActualConsFieldsUnique', 'packetReaderInputFullValidNilConsDecomposition', 'packetReaderInputActualConsStepExact', 'packetReaderInputActualConsRejectExact', 'packetReaderInputNilNoAdvance', 'packetReaderInputNilNoByteReject', 'packetReaderInputCompleteStatePreserved', 'packetReaderInputCompleteStepJointUnique', 'packetReaderInputInvalidStateRejected', 'packetReaderInputCompleteExactSuccessorDomain', 'packetReaderInputFourWayExactStateDomain', 'packetReaderInputNilNoSuccessor', 'packetReaderInputByteRejectNoSuccessor', 'packetReaderInputEofObservationsDisjoint', 'packetReaderInputOriginalLiteralExactSuccessorDomain', 'packetReaderInputOriginalLiteralFourWayDispatch'),
         "ObjectPacketReaderStep": ('packetReaderRawGuardPartition', 'packetReaderTerminalRejectionNoStep', 'packetReaderEofExactGuardPartition', 'packetReaderUnboundedValueUpdateExists', 'packetReaderUnboundedValueUpdateRange', 'packetReaderContinuationExactNaturalDomain', 'packetReaderContinuationJointUnique', 'packetReaderContinuationActualExists', 'packetReaderEmissionActualConsExists', 'packetReaderEmissionActualConsUnique', 'packetReaderEmissionValidAccumulator', 'packetReaderLocalStepStatePreserved', 'packetReaderLocalStepJointUnique', 'packetReaderLocalStepExactSuccessorDomain', 'packetReaderOriginalLiteralLocalSuccessorDomain'),
         "ObjectPacketTokenCanonical": ('packetTokenCanonicalGivenConsExactByteTailIff', 'packetTokenCanonicalActualSingletonLastCellNormalized', 'packetTokenCanonicalIndependentPrefixExactArithmeticRecursion', 'packetTokenCanonicalAllInternalIndependentPrefixRecursion', 'packetTokenCanonicalStrictActualQuotientAuthorizesAgreementIH', 'packetTokenCanonicalFullOriginalAndIndependentCriteriaAgree', 'packetTokenCanonicalWholeActualTokenPrefixAgreementStep', 'packetTokenCanonicalOriginalFoundationSeparationAgreementIHDischarged', 'packetTokenCanonicalAllAgreementPropertiesOnlyOmega', 'packetTokenCanonicalActualTokIffIndependentPrefixOnlyOmega', 'packetTokenCanonicalAllInternalActualTokPrefixAgreementOnlyOmega', 'packetTokenCanonicalPrefixAtAnyActualCanonicalList', 'packetTokenCanonicalActualTokIffBytesAtAnyActualCanonicalList'),
@@ -7023,6 +7089,8 @@ def main() -> None:
         "Packet_original_affine_local_matrices_guard": Packet_original_affine_local_matrices,
         "Packet_affine_bounded_applications_guard": Packet_affine_bounded_applications,
         "Packet_explicit_table_closed_trace_guard": Packet_explicit_table_closed_trace,
+        "Packet_reader_state_code_coded_step_history_base_guard": Packet_reader_state_code_coded_step_history_base,
+        'object_Packet_readTokens_exact_state_code_coded_step_and_history_zero_base_proved': True,
         "Packet_complete_reader_input_single_step_guard": Packet_complete_reader_input_single_step,
         'object_Packet_readTokens_complete_input_single_step_proved': True,
         "Packet_raw_reader_local_step_guard": Packet_raw_reader_local_step,

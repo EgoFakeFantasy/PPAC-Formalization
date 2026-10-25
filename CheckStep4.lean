@@ -12852,4 +12852,63 @@ example {m} (w B z o l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nati
 example {m} (w B z o l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (Translation.sentence (Internal.ObjectPacketReaderInput.packetReaderInputOriginalLiteralFourWayDispatchSentence w B z o l v s a)) :=
   Internal.ObjectPacketReaderInput.native_packetReaderInputOriginalLiteralFourWayDispatch w B z o l v s a
+example {m} (w l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryStateCodeExactRawDomainSentence w l v s a)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeExactRawDomain w l v s a
+
+example {m} (w l v s a n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryStateCodeOutputUniqueSentence w l v s a n r)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeOutputUnique w l v s a n r
+
+example {m} (w l v s a x y q c n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryStateCodeAllFieldsInjectiveSentence w l v s a x y q c n)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeAllFieldsInjective w l v s a x y q c n
+
+example {m} (w l v s a n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryStateCodeNaturalSentence w l v s a n)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryStateCodeNatural w l v s a n
+
+example {m} (w B z o n r l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryCodedTransitionAtActualSourceSentence w B z o n r l v s a)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionAtActualSource w B z o n r l v s a
+
+example {m} (w B z o n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryCodedTransitionNaturalDomainSentence w B z o n r)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionNaturalDomain w B z o n r
+
+example {m} (w B z o n r : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryCodedTransitionExactCarriersSentence w B z o n r)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionExactCarriers w B z o n r
+
+example {m} (w B z o n r t : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryCodedTransitionOutputUniqueSentence w B z o n r t)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedTransitionOutputUnique w B z o n r t
+
+example {m} (w B z o n l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryCodedSuccessorExactRawDomainSentence w B z o n l v s a)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryCodedSuccessorExactRawDomain w B z o n l v s a
+
+example {m} (w B z o n r l d f i : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryActualInternalIndexHasAdjacentStepSentence w B z o n r l d f i)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualInternalIndexHasAdjacentStep w B z o n r l d f i
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryActualHistoryEndpointsNaturalSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualHistoryEndpointsNatural w B z o n r l d f
+
+example {m} (w B z o n r l d f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryEveryZeroHistoryHasSameEndpointSentence w B z o n r l d f)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryEveryZeroHistoryHasSameEndpoint w B z o n r l d f
+
+example {m} (w B z o n d : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryActualSingletonZeroHistoryExistsSentence w B z o n d)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualSingletonZeroHistoryExists w B z o n d
+
+example {m} (w B z o n d l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryActualStateCodeSeedsZeroHistorySentence w B z o n d l v s a)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryActualStateCodeSeedsZeroHistory w B z o n d l v s a
+
+example {m} (w B z o n l v s a : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Internal.ObjectPacketReaderHistory.packetReaderHistoryOriginalLiteralCodedDomainSentence w B z o n l v s a)) :=
+  Internal.ObjectPacketReaderHistory.native_packetReaderHistoryOriginalLiteralCodedDomain w B z o n l v s a
 end PPAC.Migration.Step4Checks

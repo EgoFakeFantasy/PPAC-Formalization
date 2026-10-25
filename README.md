@@ -1,5 +1,9 @@
 # PPAC → YesMetaZFC
 
+reader实际状态编码、带码单步及独立历史零步基例已验收：原四字段列表码存在恰好等价于原State，码自然且唯一，同一码的四字段联合唯一。完整八字段带码转移在任意实际源状态码上准确归一，输出唯一，后继域等价于原Admissible。独立内部序列历史逐内部索引检查真实带码步，真实单点序列构造零步历史，任意已接受零步历史首尾相等。11模块136声明、15组原nativeZF闭句；2434构建、26411审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。任意长度历史追加／确定性、输入消费／完整运行、EOF实际逆序、原reader程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_HISTORY_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原readTokens完整输入单步已验收：当前输入与真实Cons(head,rest)绑定，原有限列表Nil／Cons分解取得头尾，原注入性对齐并消去全部见证。完整状态类型保持、四项后继联合唯一；后继存在准确等价于原状态合法、非Nil且真实头字节未拒绝。EOF守卫通过／失败、字节拒绝和后继存在四类覆盖且互斥，观察定义域准确为原始State；保留全部内部及无效候选，不限制byte<256或scale>0。8模块121声明、16组原nativeZF闭句；2423构建、26275审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整执行历史／消费、EOF实际acc.reverse、readTokens↔Bytes／Canonical、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](docs/STEP4_PACKET_READER_INPUT_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。
