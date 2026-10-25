@@ -23,6 +23,8 @@ ForcingClassEvaluation／ForcingEvaluationCovariance 继续消费同一源的 ev
 
 下一原 actCode 消费端已核对固定底座 SetTheory/FunctionConstruction.lean 的 exists_identityBijection、exists_inverseBijectionWithPairs、exists_compositionBijection：背景为任意 Project ZF 模型，配对约定显式给出，逆图保留精确边对应。通过既有 ModelTransfer.project_models_iff 与 KuratowskiZF.interpretation 可接本仓；不另造恒等、逆或复合双射。此处是接口定位，尚未计为 actCode 迁移完成。
 
+ForcingConditionGraphs／ForcingConditionAction 已实际消费上述接口。原 functionOn AST 未重定义；其纸面语义与底座 IsSetFunctionFromTo／IsSetBijectionFromTo 建立精确对应。恒等图采用 exists_setFunctionFromTo_of_denote 的 identityValue 实例、逆图采用 exists_inverseBijectionWithPairs、复合图采用 exists_compositionFunction；这些返回实际边方程，避免把只保证“某个双射”的推论冒充指定恒等或复合。原 actCode 的内／外条件分支保留，名字作用只调用已证的 mapping、恒等、复合、同余与求值相容性，不把作用律设为字段。九类原核证书和 70 项声明预审计没有新增可信基依赖，完整验收已通过。SOURCE_LOCK 同时锁定所消费 FunctionConstruction.lean 的 SHA-256。原具体群同态族与完整对称系统尚未实例化。
+
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 
 # 优先复用的已完成接口（2026-10-25 用户纠正后）
@@ -144,3 +146,5 @@ Derives nativeZF [] (∀α, Ord(α) → ∃!S, CanonicalStage(α,S))
 本批完整验收通过：2842 构建任务、29001 项声明审计（556 项无公理依赖、28445 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 33 项声明全部覆盖，2432 份源码哈希匹配。四类原核证书未超出标准三项及原七项 ZF 句子证书。
 
 本批完整验收通过：2844 构建任务、29044 项声明审计（557 项无公理依赖、28487 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 43 项声明全部覆盖，2434 份源码哈希匹配。五类原核证书仅继承标准三项及原七项 ZF 句子证书。
+
+本批完整验收通过：2846 构建任务、29114 项声明审计（570 项无公理依赖、28544 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 70 项声明全部覆盖，2436 份源码哈希匹配。九类原核证书仅继承标准三项及原七项 ZF 句子证书。

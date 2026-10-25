@@ -3406,8 +3406,14 @@ def main() -> None:
                                ("forcing_map_conditions", "ForcingMapConditions", 44),
                                ("forcing_map_laws", "ForcingMapLaws", 33),
                                ("forcing_class_evaluation", "ForcingClassEvaluation", 34),
-                               ("forcing_evaluation_covariance", "ForcingEvaluationCovariance", 9)):
+                               ("forcing_evaluation_covariance", "ForcingEvaluationCovariance", 9),
+                               ("forcing_condition_graphs", "ForcingConditionGraphs", 33),
+                               ("forcing_condition_action", "ForcingConditionAction", 37)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
+        if "native_source_file" in adapter_lock:
+            native_path = ROOT / adapter_lock["native_source_file"]
+            if hashlib.sha256(native_path.read_bytes()).hexdigest() != adapter_lock["native_source_sha256"]:
+                raise RuntimeError("Native condition-graph constructor source changed")
         if source_lock["files"][adapter_lock["source_file"]] != adapter_lock["source_sha256"]:
             raise RuntimeError("Original condition-map source lock changed")
         body = strip_comments((ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8"))
@@ -7288,7 +7294,12 @@ def main() -> None:
         "source_forcing_mapConditions_definable_total_unique_unfolding_edge_empty_proved": True,
         "source_forcing_mapConditions_object_function_antecedent_retained": True,
         "source_forcing_mapConditions_identity_composition_name_preservation_covariance_proved": False,
-        "source_forcing_mapConditions_concrete_actCode_instance_proved": False,
+        "source_forcing_mapConditions_concrete_actCode_instance_proved": True,
+        "source_forcing_actCode_instance_scope": "Internal permutation graph on P, identity outside P; final PPAC group/homomorphism family not instantiated",
+        "source_forcing_condition_graph_identity_inverse_composition_proved": True,
+        "source_forcing_Name_act_graph_preservation_identity_composition_inverse_proved": True,
+        "source_forcing_Name_evaluate_smul_formula_class_proved": True,
+        "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,
