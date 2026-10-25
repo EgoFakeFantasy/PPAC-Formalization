@@ -1,5 +1,9 @@
 # 对象层最终目标与内部Con规格
 
+原readTokens完整输入单步已验收：当前输入与真实Cons(head,rest)绑定，原有限列表Nil／Cons分解取得头尾，原注入性对齐并消去全部见证。完整状态类型保持、四项后继联合唯一；后继存在准确等价于原状态合法、非Nil且真实头字节未拒绝。EOF守卫通过／失败、字节拒绝和后继存在四类覆盖且互斥，观察定义域准确为原始State；保留全部内部及无效候选，不限制byte<256或scale>0。8模块121声明、16组原nativeZF闭句；2423构建、26275审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整执行历史／消费、EOF实际acc.reverse、readTokens↔Bytes／Canonical、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_INPUT_ACCEPTANCE.zh-CN.md)。
+
+以下为历史验收记录，仅代表各自基点。
+
 原readTokens给定head／rest的对象层局部转移已验收：原终止／非规范零拒绝／延续守卫覆盖并互斥；未限制byte<256或scale>0。内部差分B+d=byte、无界value+digit*scale、真实Cons前插acc均取得存在、范围与唯一性；四项后继联合唯一，合法后继存在当且仅当未触发原拒绝守卫。128／0／1按原对象数字特化。8模块122声明、15组原nativeZF闭句；2415构建、26154审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。当前完整输入Cons绑定、整段内部执行、EOF实际逆序、readTokens↔Bytes／Canonical程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收与后续工程流程](STEP4_PACKET_READER_STEP_ACCEPTANCE.zh-CN.md)。
 
 以下为历史验收记录，仅代表各自基点。

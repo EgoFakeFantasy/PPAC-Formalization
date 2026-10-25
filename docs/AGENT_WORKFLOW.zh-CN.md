@@ -1,5 +1,19 @@
 # 对象层迁移工程流程
 
+原readTokens完整输入单步已验收：当前输入与真实Cons(head,rest)绑定，原有限列表Nil／Cons分解取得头尾，原注入性对齐并消去全部见证。完整状态类型保持、四项后继联合唯一；后继存在准确等价于原状态合法、非Nil且真实头字节未拒绝。EOF守卫通过／失败、字节拒绝和后继存在四类覆盖且互斥，观察定义域准确为原始State；保留全部内部及无效候选，不限制byte<256或scale>0。8模块121声明、16组原nativeZF闭句；2423构建、26275审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。完整执行历史／消费、EOF实际acc.reverse、readTokens↔Bytes／Canonical、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收及后续工程流程](STEP4_PACKET_READER_INPUT_ACCEPTANCE.zh-CN.md)。
+
+| 单元 | 实现职责 | 原核交付要求 | 状态 |
+|---|---|---|---|
+| R1 | 给定head／rest，原value／scale／acc及128／0／1 | 无界局部更新、真实Cons累积、类型保持、后继确定性／准确域 | 已验收 |
+| R2 | 完整当前输入l与原Cons(head,rest) | 真实头尾内部取得、对齐、消去；完整状态单步准确域／四项联合唯一；Nil／Cons及四类分派 | 本批已验收 |
+| R3a | 完整状态四元组、原内部有限序列图 | 用原构造器编码状态，定义独立合法逐步历史、内部逐索引输入消费；不得用最终运行结果倒定义历史 | 下一单元 |
+| R3b | 原序列追加、真实严格tail下降及Foundation／Separation | 全内部完整运行存在唯一；中间value／scale／acc及余输入不变量；不假设外部标准ω或外部良基 | 待完成 |
+| R4 | EOF实际逆序、规范分段及原返回类型 | 构造并证明acc.reverse及准确成功／拒绝，证明原初始化下的规范varint和值／scale不变量、完整消费 | 待完成 |
+| R5 | reader、已验收Bytes／Canonical／Tok及原Basic AST | 原程序／规格的全内部双条件、完整字节包与AST桥，含全部无效码 | 待完成 |
+| P／I／C | 原六规则／27模式、全部ZF／U公理及完整模式 | 内部Proof／检查与编译正确性、完整数学解释、原nativeZF内部Con蕴含 | 待完成 |
+
+以下为历史验收记录，仅代表各自基点。
+
 原readTokens给定head／rest的对象层局部转移已验收：原终止／非规范零拒绝／延续守卫覆盖并互斥；未限制byte<256或scale>0。内部差分B+d=byte、无界value+digit*scale、真实Cons前插acc均取得存在、范围与唯一性；四项后继联合唯一，合法后继存在当且仅当未触发原拒绝守卫。128／0／1按原对象数字特化。8模块122声明、15组原nativeZF闭句；2415构建、26154审计、零警告，九命令／五trust=0通过；全部旧布尔叶保持。当前完整输入Cons绑定、整段内部执行、EOF实际逆序、readTokens↔Bytes／Canonical程序桥、Basic AST、Proof／解释及最终Con仍未完成。见[实际验收与后续工程流程](STEP4_PACKET_READER_STEP_ACCEPTANCE.zh-CN.md)。
 
 | 后续单元 | 输入与实现职责 | 原核验收要求 | 状态 |

@@ -271,3 +271,4 @@ import PPAC.Migration.Internal.ObjectPacketVarintRecursion
 import PPAC.Migration.Internal.ObjectPacketVarintExecution
 import PPAC.Migration.Internal.ObjectPacketTokenCanonical
 import PPAC.Migration.Internal.ObjectPacketReaderStep
+import PPAC.Migration.Internal.ObjectPacketReaderInput
