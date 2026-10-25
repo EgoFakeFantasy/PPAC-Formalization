@@ -48,6 +48,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 | SymmetricNames.forces_symmetry → Separation-name | ProductSymmetry.kernel_certificate: actual action family, reverse conjugation, both HS-domain directions and order invariance | Each complete fixed formula; arbitrary internal codes and final Main poset remain |
 | CohenForcing.Condition countable Boolean graphs | ProductParameters.construction_kernel_certificate: native omega/two existence followed by shared carriers and uniform Family | Monoid/conical order and complete source-system assembly remain |
 
+| Source diagram/product/WithTop partial order | ForcingProductPoset.kernel_certificate, using ForcingDiagramPoset source laws | Object implication from the source left-cancel monoid/conical contract and actual Presentation to the existing forcing PreorderOn, antisymmetry and internal top. Concrete stage-8 monoid is not yet constructed. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.

@@ -364,3 +364,5 @@ import PPAC.Migration.ForcingProductFamily
 import PPAC.Migration.ForcingProductCovariance
 import PPAC.Migration.ForcingProductSymmetry
 import PPAC.Migration.ForcingProductParameters
+import PPAC.Migration.ForcingDiagramPoset
+import PPAC.Migration.ForcingProductPoset

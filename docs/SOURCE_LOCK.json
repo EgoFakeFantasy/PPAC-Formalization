@@ -10233,7 +10233,7 @@
         "ForcingConditionGraphs.exists_inverse",
         "ModelTransfer.derives"
       ],
-      "scope": "Literal internal multiplication graph and translation relation; construct sub from fixed-left multiplication totality/functionality/cancellation; prove label action commutes with sub and preserves/reflects translation relation. Construct actual carrier and order-preserving permutation; two native certificates. Does not assert monoid existence or partial-order axioms for arbitrary multiplication tables. Source monoid laws/conicality remain stage 8; Cohen and WithTop components remain.",
+      "scope": "Literal internal multiplication graph and translation relation; construct sub from fixed-left multiplication totality/functionality/cancellation; prove label action commutes with sub and preserves/reflects translation relation. Construct actual carrier and order-preserving permutation; two native certificates. Does not assert monoid existence or partial-order axioms for arbitrary multiplication tables. Cohen/Product/WithTop and uniform actions are integrated. ForcingDiagramPoset proves the partial-order laws under the source algebra contract; constructing that monoid remains stage 8.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingDiagramOrder.Product": [],
         "PPAC.Migration.ForcingDiagramOrder.product": [
@@ -10769,7 +10769,7 @@
         "ForcingCohenConditions.exists_permute/image_subset_iff",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual permutation of the entire condition carrier with reverse-inclusion equivalence. Assembly constructs products, coordinate graphs, carrier and order action from the label permutation. Identity/multiplication are now supplied by ForcingCohenActionLaws and product assembly by ForcingProductAction; WithTop is supplied by ForcingWithTopAction; omega/2, uniform ProductNames.actionHom and final Con remain.",
+      "scope": "Actual permutation of the entire condition carrier with reverse-inclusion equivalence. Assembly constructs products, coordinate graphs, carrier and order action from the label permutation. Identity/multiplication are now supplied by ForcingCohenActionLaws and product assembly by ForcingProductAction; WithTop is supplied by ForcingWithTopAction; omega/2 and the uniform ProductNames action family are supplied by ProductParameters/Family. Source monoid construction, forced axioms and final Con remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingCohenOrderAction.image_unique": [
           "propext",
@@ -10909,7 +10909,7 @@
         "ForcingConditionGraphs identity/composition and endomap",
         "ModelTransfer.derives"
       ],
-      "scope": "Internal identity and multiplication coherence through both coordinate lifts and exact Cohen condition image action. WithTop and the fixed-carrier uniform family/support-filter Context are integrated by their adapters. Source omega/2 and monoid/conical partial-order specialization remain.",
+      "scope": "Internal identity and multiplication coherence through both coordinate lifts and exact Cohen condition image action. WithTop and the fixed-carrier uniform family/support-filter Context are integrated by their adapters. Source omega/2 is integrated. Generic source monoid/conical order laws are proved by ProductPoset; actual stage-8 monoid construction remains.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingCohenActionLaws.coordinate_identity": [
           "Classical.choice",
@@ -11079,7 +11079,7 @@
         "ForcingDiagramOrder.exists_order_action",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual internal product carrier/action from the Cohen and diagram components, identity/composition and preservation/reflection of their product relation. WithTop, uniform family and support-filter Context are integrated by their adapters. The concrete monoid/conical partial-order and source omega/2 specialization remain.",
+      "scope": "Actual internal product carrier/action from the Cohen and diagram components, identity/composition and preservation/reflection of their product relation. WithTop, uniform family and support-filter Context are integrated by their adapters. Source omega/2 is integrated; ProductPoset proves the order laws from the source algebra contract. Actual stage-8 monoid construction remains.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingProductAction.Tensor": [],
         "PPAC.Migration.ForcingProductAction.tensor": [
@@ -11487,7 +11487,7 @@
         "ForcingProductAction.OrderPreserving",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual permutation extension of the constructed product action, fixed internal top, exact coe edges/order, identity/composition and order invariance. Uniform label family and support-filter/HS Context are now constructed by ForcingProductFamily/Covariance. Full concrete poset/system and final Con remain incomplete.",
+      "scope": "Actual permutation extension of the constructed product action, fixed internal top, exact coe edges/order, identity/composition and order invariance. Uniform label family and support-filter/HS Context are now constructed by ForcingProductFamily/Covariance. Full concrete poset/system and final Con remain incomplete. ProductPoset now discharges preorder/antisymmetry/top from the source algebra contract; the actual stage-8 monoid and full forcing axioms remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingWithTopAction.Lifted": [],
         "PPAC.Migration.ForcingWithTopAction.lifted": [
@@ -11718,7 +11718,7 @@
         "ForcingStabilizerTransport.Family",
         "ModelTransfer.derives (existing original-kernel completeness bridge)"
       ],
-      "scope": "Uniform fixed-carrier action, uniqueness, identity/composition/order/top and Family construction. ForcingProductParameters specializes to source omega/two; ForcingProductSymmetry supplies actual HS-domain formula symmetry. Monoid/conical partial-order and full forced axioms remain.",
+      "scope": "Uniform fixed-carrier action, uniqueness, identity/composition/order/top and Family construction. ForcingProductParameters specializes to source omega/two; ForcingProductSymmetry supplies actual HS-domain formula symmetry. Monoid/conical partial-order and full forced axioms remain. ProductPoset now discharges preorder/antisymmetry/top from the source algebra contract; the actual stage-8 monoid and full forcing axioms remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingProductFamily.Presentation": [],
         "PPAC.Migration.ForcingProductFamily.presentation": [
@@ -12029,7 +12029,7 @@
         "ForcingHSAction.hs_action",
         "ModelTransfer.derives (existing original-kernel completeness bridge)"
       ],
-      "scope": "Actual inverse/conjugacy and support-filter Context, existential SystemData and HS closure without assumed NormalImage/HS closure. ProductSymmetry constructs the reverse context and applies this family to full fixed-formula symmetry. Full poset/forcing axioms and final Con remain.",
+      "scope": "Actual inverse/conjugacy and support-filter Context, existential SystemData and HS closure without assumed NormalImage/HS closure. ProductSymmetry constructs the reverse context and applies this family to full fixed-formula symmetry. Full poset/forcing axioms and final Con remain. ProductPoset now discharges preorder/antisymmetry/top from the source algebra contract; the actual stage-8 monoid and full forcing axioms remain.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingProductCovariance.label_left_inverse": [],
         "PPAC.Migration.ForcingProductCovariance.inverse": [
@@ -12237,7 +12237,7 @@
         "ForcingFormulaSymmetry.conclusion_models",
         "ModelTransfer.derives"
       ],
-      "scope": "Each fixed source formula: actual uniform action/support filter, constructed reverse conjugation, both HS domain directions and source relation preservation. No assumed Context, HS closure or order transport. Full monoid/conical poset and forced axioms remain.",
+      "scope": "Each fixed source formula: actual uniform action/support filter, constructed reverse conjugation, both HS domain directions and source relation preservation. No assumed Context, HS closure or order transport. Full monoid/conical poset and forced axioms remain. ProductPoset now discharges preorder/antisymmetry/top from the source algebra contract; the actual stage-8 monoid and full forcing axioms remain.",
       "additional_source_sha256": {
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
       },
@@ -12388,6 +12388,219 @@
           "propext"
         ],
         "PPAC.Migration.ForcingProductParameters.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_diagram_poset": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/Diagrams.lean",
+      "source_sha256": "e3ba9254bc6fa9e6e07e5062f1e8faa6cf87083cc1c0241f382d689b40306987",
+      "adapter": "PPAC/Migration/ForcingDiagramPoset.lean",
+      "source_declarations": [
+        "Diagram.sub_one",
+        "Diagram.sub_sub",
+        "Diagram.index_unique",
+        "Diagram.PartialOrder"
+      ],
+      "consumers": [
+        "ProductNames.system -> SymmetricNames.atomic_regular / forcing_sound"
+      ],
+      "reused_interfaces": [
+        "SetTheory.Structure.IsSetRelation.eq_of_pairMember_iff",
+        "ForcingSupportSize.native_mapsTo",
+        "ForcingDiagramOrder.Product/Sub/Le"
+      ],
+      "scope": "Internal left-cancel monoid and conical formulas; exact source sub identity/composition, index uniqueness and diagram partial order. Actual stage-8 monoid construction is still required.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingDiagramPoset.Unit": [],
+        "PPAC.Migration.ForcingDiagramPoset.Associative": [],
+        "PPAC.Migration.ForcingDiagramPoset.LeftCancelMonoid": [],
+        "PPAC.Migration.ForcingDiagramPoset.Conical": [],
+        "PPAC.Migration.ForcingDiagramPoset.injection_ext": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.sub_one": [],
+        "PPAC.Migration.ForcingDiagramPoset.sub_sub": [],
+        "PPAC.Migration.ForcingDiagramPoset.index_unique": [],
+        "PPAC.Migration.ForcingDiagramPoset.le_refl": [],
+        "PPAC.Migration.ForcingDiagramPoset.le_trans": [],
+        "PPAC.Migration.ForcingDiagramPoset.le_antisymm": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.unit": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.associative": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.leftCancelMonoid": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.conical": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.unit_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.associative_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.leftCancelMonoid_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingDiagramPoset.conical_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_product_poset": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductForcing.lean",
+      "source_sha256": "c1e7573a688211618f1d27580d1a152da1d12d6c272720f146f278107f9f1e24",
+      "adapter": "PPAC/Migration/ForcingProductPoset.lean",
+      "source_declarations": [
+        "ProductForcing.Condition",
+        "ProductNames.Poset"
+      ],
+      "consumers": [
+        "ProductNames.system -> SymmetricNames.atomic_regular / forcing_sound"
+      ],
+      "reused_interfaces": [
+        "ForcingDiagramPoset.le_refl/le_trans/le_antisymm",
+        "ForcingProductFamily.Presentation",
+        "ForcingWithTopCarrier",
+        "ForcingAtomicBasic.PreorderOn/preorder_semantics",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Original-kernel object sentence: internal source monoid and conical contract plus constructed presentation imply the actual forcing PreorderOn, antisymmetry and an internal greatest condition. No assumed order laws; actual source monoid construction, HS pair/union closure and all forced ZF schemas remain.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/Diagrams.lean": "e3ba9254bc6fa9e6e07e5062f1e8faa6cf87083cc1c0241f382d689b40306987",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingProductPoset.product_refl": [],
+        "PPAC.Migration.ForcingProductPoset.product_trans": [],
+        "PPAC.Migration.ForcingProductPoset.diagram_mem_of_code": [],
+        "PPAC.Migration.ForcingProductPoset.product_antisymm": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.coe_mem": [],
+        "PPAC.Migration.ForcingProductPoset.withtop_refl": [],
+        "PPAC.Migration.ForcingProductPoset.withtop_trans": [],
+        "PPAC.Migration.ForcingProductPoset.withtop_antisymm": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.exists_top": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.preorder": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.antisymmetric": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.top": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.antisymmetric_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.top_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingProductPoset.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

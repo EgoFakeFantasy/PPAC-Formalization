@@ -58,3 +58,6 @@ WithTop 批次：完整验收后删除 verification/ForcingWithTopAudit.lean 一
 
 
 源参数／具体公式对称性批次：正式 Audit.lean 已接管全部新增和改动声明后，按绝对路径与 SHA-256 白名单删除一次性 verification/ForcingProductSystemAudit.lean，再启动串行全验收。保留预审日志及 cleanup-product-system-probe-20261026.json；没有新增持久生成脚本或重复验收报告。
+
+
+偏序合同批次：正式 Audit.lean 已覆盖新增 36 项声明后，删除一次性 ForcingProductPosetAudit.lean；另核对无跟踪引用后删除旧 choice-trust-probe.lean。均按本仓解析绝对路径、普通文件、未跟踪状态和 SHA-256 白名单操作，清单为 verification/cleanup-product-poset-probe-20261026.json、cleanup-old-choice-probe-20261026.json。预审及正式日志保留；.local 未发现待清理执行脚本；没有残留 Lean/Lake。本轮纠正 SOURCE_LOCK 中已失效的 Cohen/WithTop/omega/two/作用族未完成描述，未删除具有实际依赖或尚未完成裁剪判断的证明。

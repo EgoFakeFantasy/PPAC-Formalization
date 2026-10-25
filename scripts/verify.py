@@ -3453,7 +3453,9 @@ def main() -> None:
                                ("forcing_product_family", "ForcingProductFamily", 36),
                                ("forcing_product_covariance", "ForcingProductCovariance", 20),
                                ("forcing_product_symmetry", "ForcingProductSymmetry", 11),
-                               ("forcing_product_parameters", "ForcingProductParameters", 7)):
+                               ("forcing_product_parameters", "ForcingProductParameters", 7),
+                               ("forcing_diagram_poset", "ForcingDiagramPoset", 19),
+                               ("forcing_product_poset", "ForcingProductPoset", 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7427,6 +7429,9 @@ def main() -> None:
         "source_product_condition_carrier_and_action_from_label_permutation_constructed": True,
         "source_product_condition_identity_and_multiplication_proved": True,
         "source_product_condition_partial_order_algebra_instantiated": False,
+        "source_product_partial_order_from_source_monoid_contract_proved": True,
+        "source_product_actual_relation_PreorderOn_antisymmetry_top_native_certificate_proved": True,
+        "source_product_stage8_monoid_construction_proved": False,
         "source_product_WithTop_action_instantiated": True,
         "source_product_WithTop_top_fixed_and_group_laws_proved": True,
         "source_product_WithTop_uniform_label_family_instantiated": True,
@@ -7436,7 +7441,7 @@ def main() -> None:
         "source_product_uniform_action_actual_HS_formula_symmetry_proved": True,
         "source_product_formula_symmetry_assumes_order_transport_or_domain_closure": False,
         "source_cohen_omega_two_fixed_carriers_family_constructed": True,
-        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier formula, unique actions, Family/Covariance, support-filter Context construction and HS closure are now proved. Source omega/two fixed carriers and actual HS-domain formula symmetry are now proved. Monoid/conical partial order and full system forcing axioms remain.",
+        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier formula, unique actions, Family/Covariance, support-filter Context construction and HS closure are now proved. Source omega/two fixed carriers and actual HS-domain formula symmetry are now proved. ProductPoset proves actual preorder, antisymmetry and internal top under the source left-cancel monoid/conical contract. Constructing that monoid and full system forcing axioms remains.",
         "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Label identity/composition and actual Cohen/diagram product assembly are now proved. WithTop extension is constructed. Uniform action-family and support Context are now constructed; source omega/two fixed carriers are constructed; monoid/conical system assembly remains.",
         "source_diagram_all_injection_carrier_and_set_action_constructed": True,
         "source_diagram_set_action_identity_and_multiplication_proved": True,
