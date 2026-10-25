@@ -29742,3 +29742,24 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicLaws.laws_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicLaws.left_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicLaws.right_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.Transport
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.transport
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.transport_semantics
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.edge_map
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.mem_transport
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.half_transport
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.symmetry
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.Symmetry
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.symmetry_semantics
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.atomic_symmetry
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.sentence
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.models
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.orderOn
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.OrderOn
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.orderOn_semantics
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.action_transport
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.actionSentence
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.action_models
+#print axioms PPAC.Migration.ForcingAtomicSymmetry.action_kernel_certificate

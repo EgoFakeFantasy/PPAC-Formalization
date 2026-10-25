@@ -60,3 +60,7 @@ Con_T = ¬∃p (p∈ω ∧ Proof_T(p, code(⊥)))
 - 中断时的 14 个 PacketPackedTokens／BytesSplice 文件只有定向编译／预审计，未接入正式入口、未完整验收、未提交。保留为冻结工作，不执行预备集成脚本，不算主线进度。
 - 已验收证明和可复用结构库不在缺少依赖分析时批量删除；也不为完成已有投入而继续后续解析器。
 - 本次交付为范围裁决与流程修订，不是新的形式化定理验收。
+
+## 2026-10-26 实际消费者复审
+
+又发现一次范围误排：在原子定律完成后，以源文件行序把决策稠密集与 atomic_truth 列为下一步，没有核对 Main 的声明依赖，也没有遵守本工程已选定的直接证明归约路线。该分支仅服务泛滤求值，不是 Main 的 regular forcing soundness 链。已删除尚未集成的 ForcingAtomicDecisions 及其缓存；不把其定向编译算进度。保留的原子递归与定律确被 SymmetricNames.atomic / atomic_regular 使用。当前正确消费者为 atomic_symmetry → forces_symmetry，以及 Force / force_of_dense → forcing_sound。今后每批必须先核对实际定理消费者，不能以同文件相邻位置替代必要性证明。

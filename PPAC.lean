@@ -332,3 +332,4 @@ import PPAC.Migration.ForcingAtomicRelations
 import PPAC.Migration.ForcingAtomicBasic
 import PPAC.Migration.ForcingTripleInduction
 import PPAC.Migration.ForcingAtomicLaws
+import PPAC.Migration.ForcingAtomicSymmetry

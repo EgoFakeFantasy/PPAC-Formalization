@@ -3421,7 +3421,8 @@ def main() -> None:
                                ("forcing_atomic_relations", "ForcingAtomicRelations", 21),
                                ("forcing_atomic_basic", "ForcingAtomicBasic", 31),
                                ("forcing_triple_induction", "ForcingTripleInduction", 8),
-                               ("forcing_atomic_laws", "ForcingAtomicLaws", 16)):
+                               ("forcing_atomic_laws", "ForcingAtomicLaws", 16),
+                               ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7298,15 +7299,12 @@ def main() -> None:
         "lean_version": version,
         "source_forcing_Child_formula_indexed_induction_proved": True,
         "source_forcing_Child_external_wellFounded_claimed": False,
-        "source_forcing_IsName_and_atomic_recursion_completed": False,
         "source_forcing_IsName_set_condition_unfolding_proved": True,
         "source_forcing_IsName_formula_indexed_uniqueness_proved": True,
-        "source_forcing_evaluate_mapConditions_atomic_recursion_completed": False,
         "source_forcing_evaluate_internal_set_G_total_unique_unfolding_proved": True,
         "source_forcing_evaluate_external_generic_filter_identification_proved": False,
         "source_forcing_mapConditions_definable_total_unique_unfolding_edge_empty_proved": True,
         "source_forcing_mapConditions_object_function_antecedent_retained": True,
-        "source_forcing_mapConditions_identity_composition_name_preservation_covariance_proved": False,
         "source_forcing_mapConditions_concrete_actCode_instance_proved": True,
         "source_forcing_actCode_instance_scope": "Internal permutation graph on P, identity outside P; final PPAC group/homomorphism family not instantiated",
         "source_forcing_condition_graph_identity_inverse_composition_proved": True,
@@ -7330,6 +7328,9 @@ def main() -> None:
         "source_atomic_forcing_laws_proved": True,
         "source_atomic_forcing_laws_scope": "Internal condition codes P and formula-defined preorder R; monotonicity, symmetry, dense closure, edge introduction, reflexivity, equality transitivity and both membership congruences. No external condition-presentation identification or atomic truth claimed.",
         "source_atomic_four_query_triple_induction_proved": True,
+        "source_atomic_action_symmetry_native_certificates_proved": True,
+        "source_atomic_action_symmetry_scope": "All internal raw names; definable injective map/order-isomorphism on P, with actual actCode permutation instance. Final PPAC group and HS remain uninstantiated.",
+        "source_atomic_decision_truth_branch_required_for_selected_route": False,
         "source_atomic_decision_set_density_proved": False,
         "source_atomic_truth_proved": False,
         "source_forcing_final_group_homomorphism_family_instantiated": False,
@@ -7337,7 +7338,6 @@ def main() -> None:
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,
         "source_forcing_IsName_mapConditions_set_conditions_proved": True,
         "source_forcing_mapConditions_extensional_relation_congruence_proved": True,
-        "source_forcing_evaluate_mapConditions_class_filter_covariance_proved": False,
         "source_forcing_evaluate_formula_class_total_unique_unfolding_proved": True,
         "source_forcing_evaluate_internal_set_G_formula_class_equivalence_proved": True,
         "source_forcing_evaluate_mapConditions_formula_class_covariance_proved": True,
@@ -8001,7 +8001,8 @@ def main() -> None:
         "proof_checker_correctness_on_arbitrary_internal_codes_proved": False,
         "object_Con_theorem_proved": False,
         "trust_level": 0,
-        "original_openai_build_run": False,
+        "original_openai_build_rerun_in_this_verification": False,
+        "original_openai_baseline_record": source_lock["original_build"],
         "relative_consistency_proved": False,
         "internal_explicit_declaration_audit_coverage_complete": True,
         "internal_explicit_declarations_coverage_checked": len(internal_explicit),

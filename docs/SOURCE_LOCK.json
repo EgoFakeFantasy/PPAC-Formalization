@@ -6626,6 +6626,205 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "forcing_atomic_symmetry": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+      "source_sha256": "8960224d120911db992ac0c5a1d5e92eb518643b353f0a1fa7d2e4f08177f50f",
+      "source_declarations": [
+        "edge_map_orderIso",
+        "atomic_symmetry"
+      ],
+      "adapter": "PPAC/Migration/ForcingAtomicSymmetry.lean",
+      "consumers": [
+        "ForcingAtomicSymmetry.models",
+        "ForcingAtomicSymmetry.action_models"
+      ],
+      "source_main_route_consumers": [
+        "SymmetricNames.SymmetricSystem.forces_symmetry",
+        "SymmetricNames.SymmetricSystem.mem_symmetry",
+        "SymmetricNames.SymmetricSystem.eq_symmetry"
+      ],
+      "reused_interfaces": [
+        "ForcingMapConditions.edge_mapping",
+        "ForcingMapConditions.exists_mapping",
+        "ForcingPairInduction.formula_induction",
+        "ForcingAtomicRelations.mem_iff",
+        "ForcingAtomicRelations.eq_iff",
+        "ForcingConditionAction.act_function",
+        "ForcingConditionAction.act_into",
+        "ForcingConditionGraphs.Permutation",
+        "ModelTransfer.derives"
+      ],
+      "scope": "All internal raw names and parameter-definable injective total condition maps inducing an order isomorphism on the internal condition set P. Actual identity-outside actCode permutation instance discharges map hypotheses. Order invariance is restricted to P, not all sets. Two nativeZF certificate schemas; final PPAC group/HS/full formula forcing and Con remain incomplete. No generic filter truth branch.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicSymmetry.Transport": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.transport": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.transport_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.edge_map": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.mem_transport": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.half_transport": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.symmetry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.Symmetry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.symmetry_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.atomic_symmetry": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.orderOn": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.OrderOn": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.orderOn_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.action_transport": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.actionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.action_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingAtomicSymmetry.action_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
+  },
+  "selected_route_consumer_audit": {
+    "route": "direct proof reduction via regular forcing soundness",
+    "retained_source_dependencies": [
+      "AtomicForcing.atomic_laws",
+      "AtomicForcing.atomic_symmetry",
+      "SymmetricNames.atomic",
+      "SymmetricNames.atomic_regular",
+      "SymmetricNames.forces_symmetry",
+      "ForcingTruth.forcing_sound"
+    ],
+    "excluded_from_required_work": [
+      "AtomicForcing.memberDecisions_dense",
+      "AtomicForcing.equalityDecisions_dense",
+      "AtomicForcing.atomic_truth",
+      "AtomicForcing.exists_truth_generic"
+    ],
+    "evidence": "Pinned PartitionConsistency source references: decision density theorems are used by exists_truth_generic; atomic_truth has no occurrence outside its declaration. Main.consistent_target invokes S.consistent_of_forces. Imported source file inclusion does not imply every declaration is needed.",
+    "discarded_unintegrated_adapter": "PPAC/Migration/ForcingAtomicDecisions.lean"
   }
 }

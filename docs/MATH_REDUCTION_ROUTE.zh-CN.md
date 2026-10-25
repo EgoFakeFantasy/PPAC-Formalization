@@ -18,9 +18,9 @@
 | 相对化保留推理，显式处理自由变量在解释域内 | Relativization.lean 的 formula／derives／source_closed_at／kernel_certificate | 本批提供全部19条源规则、任意外部有限证书及真正原核证书；非空前提保持为对象蕴含 |
 | 每个 ZFC 公理的 L 相对化在 ZF 可证，含完整模式 | 原 L 工程 ZFModel.lCarrier_models_ZF、StageHistoryGraphSystem.lCarrier_models_ZFC；本仓 InterpretedZF | 原 LCarrier 的完整模式与 Choice 结论已完成。本仓全模式相对化回放已接线，保留解释背景与域非空；尚未定位到可直接调用的全 nativeZF 模型 L 终局，需要接其精确接口，不是重证底座公理模式 |
 | L解释中选择公理的分离收尾 | 现成L工程Choice／InternalWellOrder；DefinableMinimaChoice.kernel_certificate、relative_kernel_certificate | 原ZF中Min_lt→AC及原库内部良序覆盖CoverWO→Min_edge→AC与域相对化已推导；实际L中的层序图／CoverWO及L域相对化ZF仍待接通 |
-| 原名字 Child 关系的内部归纳 | ForcingNames.Child/child_wf；已有 SetInduction.native_induction 与 KuratowskiZF.source_edge | 已接入 ForcingNameInduction.kernel_certificate：每个任意参数公式的原核闭句，沿原三次成员下降。所有内部集合都在量化范围内；没有外部 WellFounded 假设。原 IsName/evaluate/mapConditions 与 AtomicForcing.eq_refl 是消费者，完整递归还未迁入 |
+| 原名字 Child 关系的内部归纳 | ForcingNames.Child/child_wf；已有 SetInduction.native_induction 与 KuratowskiZF.source_edge | 已接入 ForcingNameInduction.kernel_certificate：每个任意参数公式的原核闭句，沿原三次成员下降。所有内部集合都在量化范围内；没有外部 WellFounded 假设。原 IsName/evaluate/mapConditions 与 AtomicForcing.eq_refl 是消费者，名字与原子递归及原子定律已迁入；见当前流程表 |
 | 具体集合对称系统及全部内部 HS 名字类 | ProductNames.system:89–92；SymmetricNames.Name:48–49 | 缺纯对象公式、构造及全秩证明；不能把 HS 类当作地面集合，不能加全局秩截断 |
-| 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 缺对象定义与实际原核证明；不能把 Regular 当作未消除的目标假设 |
+| 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 原子递归、单调性、等词合同、eq_of_dense / mem_of_dense 原核证书已完成；不可再报为未证明。当前补原子作用对称性；HS 限制及完整逻辑消费者待接 |
 | 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 源为宿主证明；缺对象逐实例证书与递归语法转换。不得定义全宇宙的统一真值谓词 |
 | 全 ZF 公理在 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 原源强迫模型证明已经存在，尚未迁移到目标解释。迁移该证明并消费既有完整 Replacement/Collection 互导；不重造全公理模式 |
 | 无选择、序数指标选择与全秩 PP 在同一系统成立 | ChoiceFailure.forces_not_AC:241–260；OrdinalChoice.forces_ACwo:472–474；Main.forces_PP:133–152 | 缺对象证明。PP 依赖 OrdinalPresentation.ordinal_presentation 和 SliceAssembly.presentation_reverse_injection；不能把局部逆单射改成原满射截面 |
@@ -42,8 +42,8 @@
 
 历史冻结工作曾保存在 `.local/frozen-packet-20261025/`；它不属于当前正式目标。当前清理范围见 CLEANUP，已验收证明尚未按批量依赖裁剪删除。
 
-本批实际验收：`python scripts/verify.py` 通过，2635 构建任务，28543 审计声明，9条命令全部成功（含5条 trust=0），零警告。新增 Relativization 的13个声明全部进入审计，仅使用 propext／Quot.sound／Classical.choice；未增加对象AC。完整检查输出保存在 verification/，最终Con与专用内部检查器等五项原未完成标志仍为 false。
-
 复用核查：联网只读 IBLP/Model/SetSatisfaction.lean（blob e22c8df3043f215a3a40b34e3b3c53d835b490ce）和 SetSatisfactionFormula.lean（blob 7f4dcc8cf340c6f371681c8c6ca1801a1631bf92）。前者有有界集合上的实际 Sat 集，后者含排除非法／越域条目的支持条件及有限纯公式构造；其定理依赖 ZFSet／ModelStage 的宿主语义，不能作为本项目原ZF推导证书直接导入。本轮未添加 Lake 依赖或复制这些文件。
 
 收尾清理：删除两个弃用的 PackedTokens 包装生成／集成脚本；冻结的14个Lean文件及移位哈希清单完整保留。正式验证结束后无残留 Lean/Lake 编译进程。
+
+2026-10-26 消费者复审：AtomicForcing 的决策稠密集仅进入 exists_truth_generic；atomic_truth 在锁定 PartitionConsistency 目录没有该定义之外的使用。普通 Main 走 SymmetricNames.atomic_regular → ForcingTruth.forcing_sound / consistent_of_forces，不需要泛滤求值真值分支。此前把该分支列成必需下一步错误；已撤回新候选，保持本文件原有直接归约选择。
