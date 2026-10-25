@@ -3462,7 +3462,9 @@ def main() -> None:
                                ("forcing_pair_union", "ForcingPairUnion", 12),
                                ("forcing_basic_set_axioms", "ForcingBasicSetAxioms", 7),
                                ("forcing_foundation", "ForcingFoundation", 13),
-                               ("forcing_infinity", "ForcingInfinity", 9)):
+                               ("forcing_infinity", "ForcingInfinity", 9),
+                               ("forcing_collected_name", "ForcingCollectedName", 16),
+                               ("forcing_collected_hs", "ForcingCollectedHS", 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7393,6 +7395,10 @@ def main() -> None:
         "source_minimal_member_uses_internal_formula_child_induction": True,
         "source_actual_HS_forces_infinity_native_certificate_proved": True,
         "source_forced_infinity_uses_literal_check_of_internal_omega": True,
+        "source_collectRaw_exact_internal_graph_range_constructed": True,
+        "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
+        "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
+        "source_collect_HS_concrete_separation_instance_proved": False,
         "source_actual_HS_all_forced_ZF_schemas_proved": False,
         "source_product_actual_name_stabilizers_subgroup_proved": True,
         "source_product_HS_pair_union_object_kernel_certificates_proved": True,

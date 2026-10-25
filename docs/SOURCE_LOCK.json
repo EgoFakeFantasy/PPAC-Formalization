@@ -13344,6 +13344,305 @@
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
       }
+    },
+    "forcing_collected_name": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean",
+      "source_sha256": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a",
+      "adapter": "PPAC/Migration/ForcingCollectedName.lean",
+      "source_declarations": [
+        "SymmetricSystem.collectRaw",
+        "SymmetricSystem.mem_collectRaw",
+        "SymmetricSystem.edge_collectRaw",
+        "SymmetricSystem.isName_collectRaw",
+        "SymmetricSystem.collectName"
+      ],
+      "consumers": [
+        "SymmetricNames.separate -> mem_separate -> forces_separation",
+        "SymmetricSets.subsetBound/normalize/power -> forces_powerSet",
+        "SymmetricChoice replacement family -> forces_replacement -> forces_ZF -> ProductNames/Main"
+      ],
+      "reused_interfaces": [
+        "ForcingMapConditions.coordinate_bound",
+        "ForcingCohenCoordinates.exists_cartesian -> native ZF.exists_cartesianProduct",
+        "SeparationSyntax.source_separation",
+        "ForcingNames.intro_name",
+        "ModelTransfer.extensionality/derives"
+      ],
+      "scope": "Internal index set J and graph f with the same index/condition predicate R; exact Kuratowski range, edge equivalence, uniqueness and IsName. No graph functionality is needed for these stronger relation-family results; source function graphs are literal specializations, not external functions chosen in a model. Existence certificate for every parameterized pure object formula; no external Small or new collection principle.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCollectedName.admissible": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.Admissible": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.admissible_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.entry": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.Entry": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.entry_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.collected": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.Collected": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.collected_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.exists_collected": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.edge_collected": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.isName": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.existenceSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.existence_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedName.existence_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricSets.lean": "70a168cfb6667ff7b5c46a3a347895b9ea1a8aafb2d7221f300184c0216f7076",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      }
+    },
+    "forcing_collected_hs": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean",
+      "source_sha256": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a",
+      "adapter": "PPAC/Migration/ForcingCollectedHS.lean",
+      "source_declarations": [
+        "SymmetricSystem.collect_HS",
+        "SymmetricSystem.collect"
+      ],
+      "consumers": [
+        "SymmetricNames.separate -> mem_separate -> forces_separation",
+        "SymmetricSets.subsetBound/normalize/power -> forces_powerSet",
+        "SymmetricChoice replacement family -> forces_replacement -> forces_ZF -> ProductNames/Main"
+      ],
+      "reused_interfaces": [
+        "ForcingCollectedName.exists_collected/edge_collected/isName",
+        "ForcingProductFamily.exists_action/action_permutation",
+        "ForcingProductCovariance.inverse",
+        "ForcingNameConjugacy.exists_action/inverse_action/unique",
+        "ForcingMapConditions.mem_mapping",
+        "ForcingProductStabilizer.subgroup",
+        "ForcingNormalFilter.Normal upward closure",
+        "ForcingHS.intro_hs",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Literal source collect_HS subgroup and selected-entry permutation contract encoded as object formulas. indexed_permutes_iff proves equivalence with the source indexed existential witness premise. Actual fixed-carrier action and its inverse prove two-way literal containment; obtain original-kernel existence of the exact collected name and its HS proof. Family HS and entry permutation premises are retained, not assumed conclusions. Concrete Separation/PowerSet/Replacement predicates remain to be instantiated; no full forced schema or final Con claimed.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCollectedHS.familyHS": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.FamilyHS": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.familyHS_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.moveEntries": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.MoveEntries": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.moveEntries_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.permutes": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.Permutes": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.permutes_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.IndexedPermutes": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.indexed_permutes_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.mapped_subset": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.fixed": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.collect_HS": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCollectedHS.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricSets.lean": "70a168cfb6667ff7b5c46a3a347895b9ea1a8aafb2d7221f300184c0216f7076",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      }
     }
   },
   "selected_route_consumer_audit": {

@@ -75,3 +75,6 @@ Foundation／状态复审批次：正式 Audit.lean 接替后按绝对路径及 
 
 
 Infinity 批次：正式 Audit.lean 接管新增九项声明后，按绝对路径、普通文件及 SHA-256 白名单删除一次性 ForcingInfinityAudit.lean；清单为 verification/cleanup-infinity-probe-20261026.json。预审及正式验收日志保留；无新增持久生成脚本或独立报告。下一消费者按源依赖修正为 collect/separate 后再接 PowerSet.normalize，不为同文件相邻顺序重排数学依赖。
+
+
+收集名字批次：正式 Audit.lean 接管新增 33 项声明后，按绝对路径、普通文件及 SHA-256 白名单删除 ForcingCollectAudit.lean；清单为 verification/cleanup-collect-probe-20261026.json。预审探针曾因 import 排在声明之后失败，调整为全部 import 在文件开头后重新预审通过；该错误未作为形式化通过证据。预审及完整日志保留；没有新增持久生成脚本或独立报告。

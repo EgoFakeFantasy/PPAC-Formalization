@@ -58,6 +58,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Source mem_check/check_successor/forces_infinity | ForcingInfinity.kernel_certificate | Literal check-name of native internal omega, exact source dense membership/successor argument and actual HS check closure. Source monoid/presentation/carrier/normality contracts; no external standardness or new recursion assumption. |
 
+| SymmetricNames.collectRaw / collect_HS | ForcingCollectedName.existence_kernel_certificate; ForcingCollectedHS.kernel_certificate | Exact internal indexed-family range and HS closure under source subgroup/selected-entry permutation contract; indexed contract equivalence proved. Actual Separation/PowerSet/Replacement instantiations remain. No object choice function or new Collection backend. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
