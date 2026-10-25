@@ -52,9 +52,11 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Source actual-name stabilizer and HS pair/union | ProductStabilizer, ProductHSPair, ProductHSUnion.kernel_certificate | Actual action, native subgroup closure, literal source names, source normality/presentation antecedents. All internal names; no HS closure assumption. PairUnion now consumes these closures to prove forces_pairing/forces_union; other forced axioms remain. |
 
-| First four source forced ZF axioms | ForcingPairUnion.kernel_certificate and ForcingBasicSetAxioms.kernel_certificate | Extensionality, EmptySet, Pairing, Union in the same actual all-rank HS domain; source algebra/presentation/carrier/normality contracts, with preorder derived. Guarded source codeOrder and literal union correspondence proved. Infinity, PowerSet and full forced schemas remain; Foundation is now covered by the following row. |
+| First four source forced ZF axioms | ForcingPairUnion.kernel_certificate and ForcingBasicSetAxioms.kernel_certificate | Extensionality, EmptySet, Pairing, Union in the same actual all-rank HS domain; source algebra/presentation/carrier/normality contracts, with preorder derived. Guarded source codeOrder and literal union correspondence proved. PowerSet and full forced schemas remain; Foundation and Infinity are covered by the following rows. |
 
 | Source minimal_member / forces_foundation | ForcingFoundation.kernel_certificate | Same all-rank HS domain, source monoid/presentation/condition antecedents; pure formula instance of existing internal Child induction. No external WellFounded premise. |
+
+| Source mem_check/check_successor/forces_infinity | ForcingInfinity.kernel_certificate | Literal check-name of native internal omega, exact source dense membership/successor argument and actual HS check closure. Source monoid/presentation/carrier/normality contracts; no external standardness or new recursion assumption. |
 
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 

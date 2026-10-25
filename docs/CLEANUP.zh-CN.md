@@ -72,3 +72,6 @@ HS 配对／并集批次：删除一次性 verification/ForcingProductHSClosureA
 Foundation／状态复审批次：正式 Audit.lean 接替后按绝对路径及 SHA-256 白名单删除 ForcingFoundationAudit.lean；清单为 verification/cleanup-foundation-probe-20261026.json。另删除 37 份完全无跟踪文件名引用的本仓旧消息草稿／回执及取消记录，共 35102 字节；删除前归档并逐文件核验 verification/retired-message-drafts-20261026.zip，清单为 cleanup-message-drafts-20261026.json。只处理本仓 .local 普通文件，未操作 AgentPlaza 服务数据或其他项目。逻辑字节数不是实测磁盘增量。
 
 现行覆盖表纠正已完成偏序律仍报为待办的条目，流程去掉重复批次叙述；Foundation 从未完成项移至有原核证书项。未新增生成脚本／独立报告，正式验收日志保留。冻结字节证明的精确依赖裁剪仍未完成，不能据此报告已全清理。
+
+
+Infinity 批次：正式 Audit.lean 接管新增九项声明后，按绝对路径、普通文件及 SHA-256 白名单删除一次性 ForcingInfinityAudit.lean；清单为 verification/cleanup-infinity-probe-20261026.json。预审及正式验收日志保留；无新增持久生成脚本或独立报告。下一消费者按源依赖修正为 collect/separate 后再接 PowerSet.normalize，不为同文件相邻顺序重排数学依赖。

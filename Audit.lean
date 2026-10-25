@@ -30481,3 +30481,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFoundation.sentence
 #print axioms PPAC.Migration.ForcingFoundation.models
 #print axioms PPAC.Migration.ForcingFoundation.kernel_certificate
+#print axioms PPAC.Migration.ForcingInfinity.mem_check
+#print axioms PPAC.Migration.ForcingInfinity.check_mem_of_mem
+#print axioms PPAC.Migration.ForcingInfinity.check_successor
+#print axioms PPAC.Migration.ForcingInfinity.check_empty
+#print axioms PPAC.Migration.ForcingInfinity.check_hs
+#print axioms PPAC.Migration.ForcingInfinity.forces_infinity
+#print axioms PPAC.Migration.ForcingInfinity.sentence
+#print axioms PPAC.Migration.ForcingInfinity.models
+#print axioms PPAC.Migration.ForcingInfinity.kernel_certificate

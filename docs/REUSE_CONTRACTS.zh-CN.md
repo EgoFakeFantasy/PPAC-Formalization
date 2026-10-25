@@ -75,3 +75,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 本批四条强迫公理继续复用 AtomicRelations.mem_iff/eq_iff、AtomicBasic 的自反／边引入／单调性、AtomicLaws 相等替换和 Formula 的逻辑分解；没有新建强迫代数或添加强迫公理字段。实际 HS 域只对已有 hs 公式重索引。原 codeOrder 的域限制由已证 IsName 条目性质给出字面并集等价，且实际构造消费了该等价。SourceStatements 中四条原公理本身未改写。
 
 Foundation 迁移直接消费已经完成的 ForcingMapLaws.formula_induction → ForcingNameInduction.kernel_certificate → SetInduction.native_induction；将原 minimal_member 的归纳性质编码为纯成员公式，保留源 Child 下降和稠密见证。回传继续使用已接入的 BMS 式 ModelTransfer，不另建归纳、完备性或 L 后端。
+
+Infinity 迁移直接消费固定底座 `ZF.exists_omega` 及内部 IsOmega 的空集／后继闭包，消费现成 checkName.exists_checked/edge_checkName/unique 和 HSCheck.check_hs。实际固定顶来自 ProductFamily.top_fixed；SuccessorOf 中的 SameMembers 由既有 ModelTransfer.extensionality 转为源等号。原 mem_check/check_successor 的稠密见证与原子相等替换保留；不另建自然数、check 递归或限制内部 ω。

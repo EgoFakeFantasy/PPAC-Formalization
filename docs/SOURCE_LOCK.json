@@ -13208,6 +13208,142 @@
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
       }
+    },
+    "forcing_infinity": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricSets.lean",
+      "source_sha256": "70a168cfb6667ff7b5c46a3a347895b9ea1a8aafb2d7221f300184c0216f7076",
+      "adapter": "PPAC/Migration/ForcingInfinity.lean",
+      "source_declarations": [
+        "SymmetricSystem.Name.check_empty",
+        "SymmetricSystem.mem_check",
+        "SymmetricSystem.check_mem_of_mem",
+        "SymmetricSystem.check_successor",
+        "SymmetricSystem.forces_infinity"
+      ],
+      "consumers": [
+        "SymmetricSystem.forces_ZF (Forcing/SymmetricChoice.lean) -> ProductNames.forces_ZF -> Main forces_target"
+      ],
+      "reused_interfaces": [
+        "ForcingCheckName.exists_checked/edge_checkName/unique/mem_checkName",
+        "ForcingHSCheck.check_hs",
+        "ForcingProductFamily.family/top_fixed",
+        "ForcingAtomicRelations.mem_iff",
+        "ForcingAtomicBasic.mem_of_edge_eq/eq_refl/eq_mono",
+        "ForcingAtomicLaws.mem_congr_left/mem_congr_right/eq_trans",
+        "ForcingBasicSetAxioms.not_mem_empty",
+        "YesMetaZFC.SetTheory.ZF.exists_omega and Structure.IsOmega internal empty/successor closure",
+        "ModelTransfer.extensionality.eq_of_same_members",
+        "ForcingProductPoset.preorder",
+        "ForcingFormula.force_all/force_ex/force_imp/force_neg/force_disj",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Literal check-name of native internal omega, all internal elements including externally nonstandard ones. Exact source dense membership/successor argument, same actual all-rank HS domain under source monoid/presentation/permutation-carrier/normality contracts. Native SuccessorOf SameMembers is converted using existing model extensionality. No new check recursion, external standard-omega restriction, forcing axiom assumption or object Choice. Full forced ZF and final Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingInfinity.mem_check": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.check_mem_of_mem": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.check_successor": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.check_empty": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.check_hs": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.forces_infinity": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingInfinity.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricChoice.lean": "26495e973050efee25d712922906e72eb84693677de2195bf6a5c411665e6b45",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376"
+      }
     }
   },
   "selected_route_consumer_audit": {
