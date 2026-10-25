@@ -1,4 +1,6 @@
 # 名下仓库复用评估
+
+2026-10-25 用户纠正：不能停留在README级评估。现已核对可调用的底座及其他项目收尾接口，具体复用决定、前提和验收见 [REUSE_CONTRACTS](REUSE_CONTRACTS.zh-CN.md)。
 2026-10-21 通过已连接 GitHub owner 列表确认账号 EgoFakeFantasy，共13仓库。
 下述相关仓库逐一读取当前 README；这些是接口候选，不是本轮重新验证的定理。
 
@@ -18,3 +20,5 @@
 
 只把 YesMetaZFC 放入本次 Lake 依赖。其余“有效帮助”是按接口分层可选复用，
 不是仅凭仓库名相近就整体引入。IBLP/BLP 等未经本轮全量构建。
+
+另一本地现成项目 `lean-constructible-universe-stage4` 已有 LStageZF、Def／Gödel运算、逐公式编译和集合满足关系配套；应消费其构造与有限公式，补到本项目语言／背景／原核的必要接口，不重新从外部工程造同类基础。其 ZFSet 特定模型终局与本项目的原ZF内部Con目标仍须通过实际接口衔接。
