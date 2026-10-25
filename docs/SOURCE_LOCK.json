@@ -107,6 +107,425 @@
         "ConstructibleUniverse/SetTheory/ZFC/Constructible/InternalWellOrder.lean": "58e0778d79deb5ae876cdab599164a105229aa0f4063165b163ce2a8d664a6bb",
         "ConstructibleUniverse/SetTheory/ZFC/Constructible/StageInternalOrder.lean": "f63fbe5b9245e0b2f9d32b5debc6a18015d8e13b742de473e0411dc18126e5e1"
       }
+    },
+    "godel_def_syntax": {
+      "repository": "https://github.com/05-02-07/lean-constructible-universe",
+      "commit": "7f5a7d03d63d9769172f17350bbe8303996e5b53",
+      "adapter": "PPAC/Migration/ExistingConstructibleSyntax.lean",
+      "proof": "PPAC/Migration/GodelDefOutput.lean",
+      "namespace_prefix": "PPAC.Migration.ExistingConstructible.",
+      "files": {
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean": "3e84de8cf5da75546c399c7044f87e4b51c27d686b733065d7d4380dfcc46cec",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean": "cadef2644f1fefe707cdc1fc40ee1eab697e33d6d37a09cb0f409da41029de7a",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean": "b883f19bef8d2af466d55ad4a57be417de40705c6c161d12dab20d39b56f9493",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean": "a8ac95569a91e72502b3dda605ae27b886eae7de6c727baf7e031f41b03d022c",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/FiniteOrdinalSuccessorFormula.lean": "b55c75127845c10ca64f98e1264b28afd1deb5978137e9c4db6cddae8e739895",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean": "4a43309f60a0499016653848542befbb91a46f5ce4aa690ed9c836b079dd6717",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean": "463e098df5f8c23245fbc082e5bd2bedaa0a736ec1dd80e689a7ca2156ec04a9",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryDefOutputFormula.lean": "529c4a6b7390944fa491408c0ed03bc14d3401630baeae79f3746c112ce46f68",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean": "bdca3fa9798f04e96ae42443e60edb3ae783f82e99a35bcdf73eddec7575d87b",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean": "2207e7ab0fb6e18b82f4054d4acbc00f07de374565fd6c92f5a3b2b27879d4fd",
+        "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean": "a5f36f446506f359e22015896510ba402817c69778790f0acf4b83eee6676a32"
+      },
+      "declarations": {
+        "Constructible.FOFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "14347a5d39b08f5276977c4a17ace3b88eaaa1b5eee0717caf5c03159a191c35"
+        },
+        "Constructible.FOFormula.disj": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "f1e5e1b52724a1ebc6fd7b6b444a6fcf3fcb8b13ea7ba7ce7519e7e40e4a19a5"
+        },
+        "Constructible.FOFormula.imp": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "5d81f68cadeef62f53446cedc65a9efc693e86374e0486e0564cc2228603dd70"
+        },
+        "Constructible.FOFormula.biimp": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "4acb623db1fc0a00bd1d6e63e89e5147d8375bc7166406337e3dd9772febbe1f"
+        },
+        "Constructible.FOFormula.all": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "041477c4617c1966589590a002ebe5fb6db6eb4bfc6b692f646c78dab515c40b"
+        },
+        "Constructible.FOFormula.liftRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "d43f313f1f7c6a715c6df21a9752b1580e471e0f79c8f37b704fd5871b34ff94"
+        },
+        "Constructible.FOFormula.rename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "2874aecceb30a8b2861c0f3e2105043e28eec6178ec03cd3dd321827506704c4"
+        },
+        "Constructible.FOFormula.weaken": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "27379298703c8d0d21dda29036b4ed816dbfeb92fa8d0f43076a81d71331a0b3"
+        },
+        "Constructible.FOFormula.boundedEx": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "88d515f8e15dda121ce7e60b94e710c8ba9ee21043344807a36fe0db75cf0b53"
+        },
+        "Constructible.FOFormula.boundedAll": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Def.lean",
+          "body_sha256": "0bd13439eb68063e7ea73b647d73c306cc5c5cb60384011bc03c9de27d795ae0"
+        },
+        "Constructible.Delta0Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "d29208950547ca7423f53908306f12207f6a171db8bad1edc385a61584aad4e9"
+        },
+        "Constructible.Delta0Formula.toFO": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "45b126dfc000655711614a0341ed5af6cd664c7b1a61da505f3aeebb06acb719"
+        },
+        "Constructible.Delta0Formula.relativize": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "76491d56572f3dbc665620cfbd73d35ac09392fa17c3410f678440a957666314"
+        },
+        "Constructible.Delta0Formula.disj": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "7e3463e1e8118bfaacd3d4a27ff54e8f2829e0c5314c22009e0ab05374801645"
+        },
+        "Constructible.Delta0Formula.imp": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "15bcd5e596178fe8ddb50d8385793c84db7f37ba9ad93ff9a5199fcba2fd0d3c"
+        },
+        "Constructible.Delta0Formula.biimp": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "d092a3e14402fc16d6f08338b0e43d871b6d2241786b4262ab28e4580a579fc2"
+        },
+        "Constructible.Delta0Formula.boundedAll": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "fea2cbf9db5d1b59ad20e6a3b3af813a26b524a24dbc0c0b40e599d4cd241c7c"
+        },
+        "Constructible.Delta0Formula.liftRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "c6e5d51d6b7367178472d4c9f1edfeaa6299b1f15c5f4d2f1fe802c6ab6d3666"
+        },
+        "Constructible.Delta0Formula.rename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0.lean",
+          "body_sha256": "2d35fde6333286a8daac418991e9661e0de52e59a2cde415850ffc30ff225ac4"
+        },
+        "Constructible.Delta0Formula.subsetAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "ce6f4e3c8da4058b02b53ecc87b36ee71d02e1aea43bd9128b444c1a2bc304f2"
+        },
+        "Constructible.Delta0Formula.singletonEqAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "8597f40c7b6940257f66d3a651d40a2d590634d7c2cea712bf7fcd521e08da8a"
+        },
+        "Constructible.Delta0Formula.unorderedPairEqAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "8bb6b32d7bc174597b6b1f1c8eb5e52660c41692ae5ddfae1b5900e3c45484dc"
+        },
+        "Constructible.Delta0Formula.kuratowskiPairEqAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "fb66a443917438dd21b95836779df72971b026d240cf48c778f8e0533b8095f1"
+        },
+        "Constructible.Delta0Formula.tripleEqAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "8c5b6ab9d6810e08166a44948bb8cd05ded20f7a7fdcb8efa2e2d7598580dee3"
+        },
+        "Constructible.Delta0Formula.withBoundedPairComponents": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "98610ea9283836241b4215fbeab2c65e00f5857d9dc9d968c615d56f10ef8649"
+        },
+        "Constructible.Delta0Formula.fiberEqAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "4cc427b7cce8d28210b8516a57b71e0e33465127989b63f7e40436a52f001eb6"
+        },
+        "Constructible.Delta0Formula.f6MemAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "d5b289cc24a8b71a4338b7841160a7ec816b58770b3ba11460b863d613dec641"
+        },
+        "Constructible.Delta0Formula.f8MemAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "418f7f97ceac1621f801c2e42cf63971518d6845aad498dbd865e303d3c757f5"
+        },
+        "Constructible.Delta0Formula.successorAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/FiniteOrdinalSuccessorFormula.lean",
+          "body_sha256": "a7bcf4d9264505149748f62e4c66c8849c60ff87405851f5688f379a8bab7879"
+        },
+        "Constructible.Delta0Formula.successorFOAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/FiniteOrdinalSuccessorFormula.lean",
+          "body_sha256": "33a7ff81699d186e98aec7d747ceaf0c3e7958cd156e5e14a7e339639d3a92a0"
+        },
+        "Constructible.Godel.RudimentaryTerm.godelDefEvalRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryDefOutputFormula.lean",
+          "body_sha256": "b92112b242d30c27da587a67aa20804e625dc373b78dcb8e88dd033989e80aba"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalOmegaIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "ced79b6dca7bd502b4a6aa75bd0c7191941ab8e2c5fd94530a6416e1d3e888c6"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalProgramIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "e09b24558bcd7d5ca873a5cdf0776edf043c239e663bcf2ff47523bb6a7d5307"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalProgramValidityRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "86ae8598d94335a62d2d10d4824e080c315bb0a0759c697ee6e221b17170d67a"
+        },
+        "Constructible.IndexedSequenceZF.formulaImp": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean",
+          "body_sha256": "e16f5a68d38ce5623d1746463fd56f1640076d55158940e6d76d3cc63f096eab"
+        },
+        "Constructible.IndexedSequenceZF.functionGraphValueAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean",
+          "body_sha256": "cf77522c45459a6111310ad5bd9e427c177e6b1527e19ed63bc1b626b1dccf79"
+        },
+        "Constructible.IndexedSequenceZF.uniqueValueAtBody": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean",
+          "body_sha256": "c3144c4083fbe86153a35d55cf63f045be52f1566335c82231c8e3b86b0e4afb"
+        },
+        "Constructible.IndexedSequenceZF.totalFunctionalBody": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean",
+          "body_sha256": "20838e779fb603abd2c1c85ff22eb72c3ada6184fd35c2e3948ede7d17143162"
+        },
+        "Constructible.IndexedSequenceZF.sequenceValidityFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceValidity.lean",
+          "body_sha256": "15425544bb10a06a745284665edd074867db68badae608f7fab101d36b708ed7"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalTraceValidityRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "ae282127e904d8bd2fa1e55706d2da92e33ed15f70d20044463c6e4d9bb9bd14"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalProgramLengthRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "2649722acf7c8b2aea5916fde0c0c6eb469a9229979e69fab64493025f835f0d"
+        },
+        "Constructible.IndexedSequenceZF.hasLengthFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean",
+          "body_sha256": "8821c8e49323c15e33f380c1564e0aebf6e218697fe38b634e3f3aa7ce440665"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalTraceLengthRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "43237a899be06f7fbf82c5601cf397083c913257ddcabdea3649c70aedc5c619"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalInitialValueRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "9a68733cd6e2af9dbc5a9b3dd1fb9b3d5104f662ca78a5dca1aad39e8f2a7e55"
+        },
+        "Constructible.IndexedSequenceZF.withBoundedKuratowskiComponents": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean",
+          "body_sha256": "7744bfd37b6102e3a04a5ddf3dea4c8a1e03f981b51344c5ce89e9bbdb6ae312"
+        },
+        "Constructible.IndexedSequenceZF.graphPairMemAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean",
+          "body_sha256": "7d70216eabbc3315ee23dbb20f1fa695a1a20c4926a5ed22ee46bd22ea389bbb"
+        },
+        "Constructible.IndexedSequenceZF.valueAtDelta0": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean",
+          "body_sha256": "9f9e00693f0b4985c2d88a1038f7bb4dc4e4af10bcb96ece0d11a54ffd855413"
+        },
+        "Constructible.IndexedSequenceZF.valueAtFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/IndexedSequenceOrderFormula.lean",
+          "body_sha256": "e93d7b72f9065510eb502b96b7fd41dba7a443ec1bc40ad5c639224e7e96a725"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalFinalValueRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "c915b8fc7c26b28334544faf0f5188e77b144124861cbbe5922aabb90cc9fdde"
+        },
+        "Constructible.Godel.RudimentaryTerm.evalTraceStepRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "a186a61a40c4830e4035c364643f39d6c07107f5b590cb2c8d12b5637f0e1f0b"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepProgramValueRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "a16b99fd54a9214ea25b6c2278d1ff7ee04656d28f82730565a31027ee16e077"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepInputValueRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "791417966f2028e7464db90e037420ef8f4fa003bc09fe7d5780b6b108a30e97"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepOutputValueRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "08eaf1331229f91dc47511e174b2a04a6aa58a4fba1ac3fc36a3c7da7cf8907e"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepStackStepRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "f42eaed90568bb2dff008c261edc5f2baab7e3b72231e0d86a3e16cc55075091"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepLiftOne": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "ac1f777aec184d2a4b4845d36b281b0f19b53f9e12ffbbdf956f325e15b3a806"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepTokenIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "75e3588adabf53b73e060ae86d7de0c425635fa03d105e12b8673012a0e642fc"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepVarTagIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "b9b06c1a7307f956dec421340300b8ddd0c97baeccdc4fe6b6e97881ba5b5239"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepEmptyIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "c5970e5d785370703789fa177148ac40101ce89c3ea6cf315cdb9e29b7da95ee"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepUniverseIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "bf150cf43e7b05de01efaf6ead21a20ff1bd64c494eddd9b0f1fb7c9d5f49b36"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepOutputIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "ac62a28fce5d803dbc8541750a1f2b049056b8cfd81bacfcfb7f6acc62c1e12a"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepInputIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "18f863da4d3e938b573b73d28bc4edff525c50445b4f8b282da492c5026f3558"
+        },
+        "Constructible.Godel.RudimentaryTerm.variableStackStepFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "2d129b58233ff843d18f82946cbec6f12a75900749f6bc1e130b41378f9502c3"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepLiftFive": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "3bbb7c9187c71f3c3d6fac643cc79e48002c2d9faad1931944d5e1943f7a23a6"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepAppTagIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "4e2539558f3d6b9a0eb7a1f89198e408f28f91cbdf07a3beb2ec6d7ee3da8283"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepOperationIndex": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "924c3a1df8205ad1f8294d5888a8a2468b0aace9745cd7864b656a6b3902d36f"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepOpGraphRename": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "8e0575d303487b48e2ea783966b7280bfe7937ea457f507f25ceb77528d6ad3f"
+        },
+        "Constructible.Godel.graphF0Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "f3b80072a5a6bbab5f87c7312b0260d08a2c98defa35eec64dd2708d42bb2436"
+        },
+        "Constructible.Godel.graphF1Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "ff5ededd4bf253e2c0f06195a259db8f2cd4798120d2243fec8355aef5b5c08a"
+        },
+        "Constructible.Godel.graphF2Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "d80a9afb3597c7e162aff8f200bf4e07d08c59636ff89ad5b8fd6e7c2566168d"
+        },
+        "Constructible.Godel.memF0Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "3b6829db498e2ecbe6d6f2a4cba2da392d70727ff3a329317bfc955cf21970c3"
+        },
+        "Constructible.Godel.memF1Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "9b0ea5a6498fe1ce24f04565de74750581dc1701bd4a4f0bdc39deb4b79c5ae8"
+        },
+        "Constructible.Godel.memF2Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "4c9914f871ba8e03708e6e8f1e537ba69b8493c57114a01e7f7967b2de129d0a"
+        },
+        "Constructible.Godel.memF3Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "70124e032c1f5a655eb06e6370925f0e354f95153759c7c01140d2e5cdbbd83c"
+        },
+        "Constructible.Godel.memF4Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "7f4a2a7a861f9108b6513c21531416a8536b0aeb0df4ad89de8ce6cd8c520729"
+        },
+        "Constructible.Godel.memF5Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "dc2e0801176afe2fa30a90449c5938827c6519d14d29b8be2ad8bddf785dd72a"
+        },
+        "Constructible.Godel.memF6Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "36f67ac3381569bd706df65624138f8ca99fbcc8f08ce94dd13a0b7c4d8e68d3"
+        },
+        "Constructible.Godel.memF7Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "fc47ed124bcbd35193ec4e78fea4f3cfb2e15d92ec28b374ee8fe89f8d236689"
+        },
+        "Constructible.Godel.memF8Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "6b36158b6cb6c0e653ebded24dca22046a1b7fce79f9fa387575c482b4c54573"
+        },
+        "Constructible.Godel.memOpFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0Godel.lean",
+          "body_sha256": "b8f1fdc3539d89e9276007b446b52309558eacd68922002e18294ecb9a839ed1"
+        },
+        "Constructible.Godel.memOpAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "817d3ccdf197ef5083dd4ea70880be3bdb80ac47434b9961828f99739b1ae910"
+        },
+        "Constructible.Godel.outputSubsetOpAt": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "56ea94f39e6d2b1e430cf4d59f0424ff19eb17ccb343c0d5fefca850a2fc1995"
+        },
+        "Constructible.Godel.containsF3Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "91debad12a64fca7e886246916598a5ecc21bb3b4ba7fc59c4fffe32649ff15b"
+        },
+        "Constructible.Godel.graphF3Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "3d7fb2ed0e1aaabb8f2d0496cb971fd4091fc5dd9630899638ccdde3a7ac2949"
+        },
+        "Constructible.Godel.containsF4Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "9dafce5d75764bb4a589547ea4835313f18f44483723bf8ac0013fae51078e65"
+        },
+        "Constructible.Godel.graphF4Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "29407d3a2ebb4923bbecf5bc096b007dea2328bdbcffb0d6e55a4c1e2201c18f"
+        },
+        "Constructible.Godel.graphF5Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "cc56793bccf13c0ea20522db93b34b34e237de7de2eaafc4e27a8a2a999fba71"
+        },
+        "Constructible.Godel.graphF6Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "90bddc6c613a364a2b534f91352fb1dcbd683f5ccbaea13b44fa18ad64de96b4"
+        },
+        "Constructible.Godel.graphF7Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "ea9e6df047f6f46f78d8ecfe3e27dcce0b9a2e78cbe2a970ff2011c1fe416972"
+        },
+        "Constructible.Godel.graphF8Formula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "138b39842d5f36a7c16ac3829e29ee9c188e05e2f04367e2432060077a406eb4"
+        },
+        "Constructible.Godel.opGraphFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/Delta0GodelGraph.lean",
+          "body_sha256": "bc99f711a7fb973954d1507ab9322000fe5ee73efb805c8ad5ea04275e0ab0c1"
+        },
+        "Constructible.Godel.RudimentaryTerm.operationStackStepBody": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "ec6c6b00f1f4c3bdb50dff6e23848949647c838ff8fb72acca0c801c85b2519d"
+        },
+        "Constructible.Godel.RudimentaryTerm.operationStackStepFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "13cfcd9c0a559464a83970c1484cce418238f77ed10119002d9c8dabe9a4f098"
+        },
+        "Constructible.Godel.RudimentaryTerm.anyOperationStackStepFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "f90c733ee3ba1bcf5fd2b78d4acdfa1d9923de671004e05c9be11cd3e4615d94"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackStepFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackStepFormula.lean",
+          "body_sha256": "fbf598fd9468ed39cc4c60cd46ce4770603d3a4e23330590ceb29a188fc3bd73"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepBody": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "08b87039f82a7eee4f9aa988a28bdce206a9b09f79934c3909f62195f448ee0a"
+        },
+        "Constructible.Godel.RudimentaryTerm.traceStepFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackTraceStepFormula.lean",
+          "body_sha256": "6072d93071b0f928d3cae59fc64bab223b488fda89c9c13fc19c719cf6319c21"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackProgramEvalCore": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "4b8746a674402faa7f485d2d54496f89644cf6fa5a322a6f60ee26a2f9c305d9"
+        },
+        "Constructible.Godel.RudimentaryTerm.stackProgramEvalFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryStackProgramEvalFormula.lean",
+          "body_sha256": "f101cb504be3dda8151588624ff029c259c553d80e7d8a6cd8554b1fa076f46a"
+        },
+        "Constructible.Godel.RudimentaryTerm.godelDefOutputFormula": {
+          "source": "ConstructibleUniverse/SetTheory/ZFC/Constructible/RudimentaryDefOutputFormula.lean",
+          "body_sha256": "5a4d3243ddf0be912ae94b59930de5646151a53c2758030202590b7da1350f11"
+        }
+      },
+      "notation_change": "Finite-vector notation is elaborated by the scoped Fin.cases macro; declaration bodies are otherwise unchanged."
     }
   }
 }

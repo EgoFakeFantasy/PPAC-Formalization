@@ -58,4 +58,19 @@ Derives nativeZF [] (CoverWO → AC)
 
 原L工程StageInternalOrder／InternalWellOrder的覆盖与最小元路线记录在SOURCE_LOCK.json；未修改该工程或固定依赖。该适配是L实际层序构造的消费端，接下来应传输已有构造以证明L域中的CoverWO，而不是继续新增可选编码设施。
 
+实际Def后继构造已接入：`ExistingConstructibleSyntax`保留固定L工程godelDefOutputFormula所需的99个既有纯语法声明（11个源文件）；原声明正文逐项SHA-256锁定，数据的构造器和原变量槽位保留，仅移除Mathlib／模型导入和证明，有限向量在本模块作用域内展开为Fin.cases。这个语法切片解决原工程Lean 4.33.0-rc1＋Mathlib与当前4.33.1＋Std的实际导入差异，不引入新的识别器、满足关系递归或推导核。
+
+`GodelDefOutput`以五构造器翻译接入已有Source语言，证明重命名保真、原派生逻辑外壳及固定输出公式的实际语义对应。对原布局 `[U,varTag,appTag,empty,op0,...,op8,omega,nextU]`，原ZF核取得：
+
+```text
+∀十四个输入参数 ∃nextU godelDefOutputFormula
+∀十四个输入参数 ∀nextU nextU' (Output(nextU) ∧ Output(nextU') → nextU=nextU')
+```
+
+这两条是无额外算子前提的闭句Derives证书：幂集给候选范围，完整分离按固定原求值公式构造精确输出族，外延性关闭唯一性。程序码、结果、输入参数均为模型内部集合；未假定外部良基或标准ω，也未把原求值公式换成不透明的宿主oracle。源19规则的反向编译证书已提供，供后续原内部递归直接消费。
+
+固定Def批实际验收：scripts/verify.py全流程通过；2832构建任务，28702个声明审计（535项无公理依赖、28167项依赖已核对），9条命令全部成功，其中5条trust=0，零警告。新增122项声明全部覆盖，2421份源码哈希与验收记录一致。该数量只记录验收覆盖，不表示最终主定理的完成比例。
+
+本批没有证明该求值谓词在任意内部程序码上的完整运行正确性，也没有证明实际L的全部公理／层序图／CoverWO。下一项数学工作是用已有内部递归和这一确切后继公式传输原层历史；不能把此Def-step验收当成完整L解释或最终Con完成。
+
 最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。

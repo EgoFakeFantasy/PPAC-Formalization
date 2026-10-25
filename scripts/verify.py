@@ -3394,6 +3394,23 @@ def main() -> None:
                         re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", bridge_body, re.MULTILINE)}
         if not bridge_names or not bridge_names <= set(expected):
             raise RuntimeError("Incomplete internal order bridge audit: " + module)
+    # Existing constructible syntax is a literal dependency slice; guard its
+    # original bodies independently of the new output construction proof.
+    syntax_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))["companion_reuse"]["godel_def_syntax"]
+    syntax_text = (ROOT / syntax_lock["adapter"]).read_text(encoding="utf-8")
+    literal_blocks = {m[1]: m[2].strip() for m in re.finditer(
+        r"(?ms)^-- BEGIN ORIGINAL ([A-Za-z0-9_.]+)\n(.*?)^-- END ORIGINAL \1\n", syntax_text)}
+    if set(literal_blocks) != set(syntax_lock["declarations"]):
+        raise RuntimeError("Incomplete original constructible syntax slice")
+    for original, body in literal_blocks.items():
+        if hashlib.sha256(body.encode("utf-8")).hexdigest() != syntax_lock["declarations"][original]["body_sha256"]:
+            raise RuntimeError("Original constructible declaration changed: " + original)
+    syntax_names = {syntax_lock["namespace_prefix"] + n for n in literal_blocks}
+    output_body = strip_comments((ROOT / syntax_lock["proof"]).read_text(encoding="utf-8"))
+    output_names = {"PPAC.Migration.GodelDefOutput." + n for n in
+                    re.findall(r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)", output_body, re.MULTILINE)}
+    if not (syntax_names | output_names) <= set(expected):
+        raise RuntimeError("Incomplete fixed Godel Def output declaration audit")
     # The independent compiler core may use proved numeric libraries, but cannot call
     # the legacy full formula judgment, step specification, operator or evaluator.
     formula_program_core_modules = ('FormulaAtomicProgramSyntax', 'FormulaTransformHistorySyntax', 'FormulaTransformAtomSyntax', 'FormulaTransformLogicalSyntax', 'FormulaTransformProgramSyntax', 'FormulaTransformOperatorSyntax', 'FormulaTransformRecursionSyntax', 'FormulaTransformEvaluationSyntax', 'FormulaTransformExecutionSyntax')
@@ -3509,6 +3526,25 @@ def main() -> None:
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
     fixed_exact = fixed_axiom_expected_footprints(inherited)
     for name, dependencies in footprints.items():
+        if name.startswith("PPAC.Migration.ExistingConstructible."):
+            if not set(dependencies) <= {"propext", "Quot.sound"}:
+                raise RuntimeError("Unexpected existing constructible syntax dependency: " + name)
+            continue
+        if name.startswith("PPAC.Migration.GodelDefOutput."):
+            suffix = name.rsplit(".", 1)[1]
+            native = {"exists_unique", "existence_models", "uniqueness_models",
+                      "existence_kernel_certificate", "uniqueness_kernel_certificate",
+                      "source_existence_certificate", "source_uniqueness_certificate"}
+            data = {"toSource_rename", "evaluator", "output", "query", "existenceSentence",
+                    "otherIndex", "uniquenessSentence"}
+            expected_output = ({"propext", "Quot.sound"} if suffix in data else
+                               set() if suffix == "toSource" else
+                               {"propext", "Quot.sound", "Classical.choice"})
+            if suffix in native:
+                expected_output |= inherited
+            if set(dependencies) != expected_output:
+                raise RuntimeError("Unexpected fixed Godel Def output dependency: " + name)
+            continue
         if name.startswith(("PPAC.Migration.KuratowskiZF.", "PPAC.Migration.InternalWellOrderChoice.")):
             expected_bridge = {"propext", "Quot.sound", "Classical.choice"}
             if name in {'PPAC.Migration.InternalWellOrderChoice.wellOrderCover', 'PPAC.Migration.InternalWellOrderChoice.graph', 'PPAC.Migration.InternalWellOrderChoice.projectCover'}:
