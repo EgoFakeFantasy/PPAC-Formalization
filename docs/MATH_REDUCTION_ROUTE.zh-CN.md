@@ -21,7 +21,7 @@
 | 原名字 Child 关系的内部归纳 | ForcingNames.Child/child_wf；已有 SetInduction.native_induction 与 KuratowskiZF.source_edge | 已接入 ForcingNameInduction.kernel_certificate：每个任意参数公式的原核闭句，沿原三次成员下降。所有内部集合都在量化范围内；没有外部 WellFounded 假设。原 IsName/evaluate/mapConditions 与 AtomicForcing.eq_refl 是消费者，名字与原子递归及原子定律已迁入；见当前流程表 |
 | 具体集合对称系统及全部内部 HS 名字类 | ProductNames.system:89–92；SymmetricNames.Name:48–49 | 缺纯对象公式、构造及全秩证明；不能把 HS 类当作地面集合，不能加全局秩截断 |
 | 原子强迫的内部名字递归、单调性、等词合同及正则性 | SymmetricNames.atomic:89–100；ForcingTruth.data_regular:351–356 | 原子递归、单调性、等词合同、eq_of_dense / mem_of_dense 原核证书已完成；不可再报为未证明。当前补原子作用对称性；HS 限制及完整逻辑消费者待接 |
-| 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 源为宿主证明；缺对象逐实例证书与递归语法转换。不得定义全宇宙的统一真值谓词 |
+| 逐公式强迫翻译及逻辑规则保真 | ForcingTruth.force_of_dense:60–82、forcing_sound:240 起 | 本批 ForcingFormula / ForcingSound 已实现逐固定公式翻译与全部 19 源规则到原核的固定证明实例证书。实际 HS 域及目标公理待接；所有内部证明码的统一归约仍归阶段 10。不得定义全宇宙统一真值谓词 |
 | 全 ZF 公理在 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 原源强迫模型证明已经存在，尚未迁移到目标解释。迁移该证明并消费既有完整 Replacement/Collection 互导；不重造全公理模式 |
 | 无选择、序数指标选择与全秩 PP 在同一系统成立 | ChoiceFailure.forces_not_AC:241–260；OrdinalChoice.forces_ACwo:472–474；Main.forces_PP:133–152 | 缺对象证明。PP 依赖 OrdinalPresentation.ordinal_presentation 和 SliceAssembly.presentation_reverse_injection；不能把局部逆单射改成原满射截面 |
 | 任意内部码上的完整 Ax_ZF/Ax_U、Proof_ZF/Proof_U | 固定 OBJECT_TARGET；现有 ProofTreeEntrySyntax／ProofTheoryNodeSyntax 的显式公式参数 | 检查器仍未完整实例化；六规则、27模式及全模式不可只验证固定有限表 |

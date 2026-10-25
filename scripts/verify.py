@@ -3422,7 +3422,9 @@ def main() -> None:
                                ("forcing_atomic_basic", "ForcingAtomicBasic", 31),
                                ("forcing_triple_induction", "ForcingTripleInduction", 8),
                                ("forcing_atomic_laws", "ForcingAtomicLaws", 16),
-                               ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20)):
+                               ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20),
+                               ("forcing_formula", "ForcingFormula", 39),
+                               ("forcing_sound", "ForcingSound", 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -3430,10 +3432,15 @@ def main() -> None:
                 raise RuntimeError("Native condition-graph constructor source changed")
         if source_lock["files"][adapter_lock["source_file"]] != adapter_lock["source_sha256"]:
             raise RuntimeError("Original condition-map source lock changed")
+        for extra_source, extra_digest in adapter_lock.get("additional_source_sha256", {}).items():
+            if source_lock["files"][extra_source] != extra_digest:
+                raise RuntimeError("Additional forcing source lock changed: " + extra_source)
         body = strip_comments((ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8"))
         prefix = "PPAC.Migration." + module + "."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
+        if module == "ForcingFormula":
+            names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
         if module == "ForcingNameRecursion":
             names |= {prefix + "OperatorFacts." + n for n in ("mk", "total", "unique", "child_congr")}
         if len(names) != count or names != set(adapter_lock["exact_declaration_footprints"]) or not names <= set(expected):
@@ -7328,6 +7335,11 @@ def main() -> None:
         "source_atomic_forcing_laws_proved": True,
         "source_atomic_forcing_laws_scope": "Internal condition codes P and formula-defined preorder R; monotonicity, symmetry, dense closure, edge introduction, reflexivity, equality transitivity and both membership congruences. No external condition-presentation identification or atomic truth claimed.",
         "source_atomic_four_query_triple_induction_proved": True,
+        "source_forcing_fixed_formula_native_monotonicity_and_dense_closure_proved": True,
+        "source_forcing_sound_all_19_rules_fixed_proof_native_schema_proved": True,
+        "source_forcing_sound_arbitrary_internal_code_reduction_proved": False,
+        "source_forcing_formula_actual_HS_domain_instantiated": False,
+        "source_forcing_formula_action_symmetry_proved": False,
         "source_atomic_action_symmetry_native_certificates_proved": True,
         "source_atomic_action_symmetry_scope": "All internal raw names; definable injective map/order-isomorphism on P, with actual actCode permutation instance. Final PPAC group and HS remain uninstantiated.",
         "source_atomic_decision_truth_branch_required_for_selected_route": False,

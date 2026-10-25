@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、HS 与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 其他 L 工程的 ZF/ZFC 结论已有；核对并补到当前对象解释的接口和真实前提。原 LCarrier 是 ZFSet 子类，不能直接代替所有 nativeZF 模型的结论 |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和本批作用对称性已通过整仓验收；目标端主链未完成 | 接实际 poset 呈现、正规滤子/HS、逐公式 forcing_sound、全部解释公理；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；目标端主链未完成 | 接实际 poset 呈现、正规滤子/HS、完整公式作用对称性、全部解释公理；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -28,10 +28,12 @@
 
 一次仅一个 Lean/Lake 构建；正式证明改动运行 scripts/verify.py，检查依赖及禁用缺口。文档改动不触发重复全量编译。保留其他仓库脏改动和已退役反射状态。不用文件数、辅助布尔门或构建任务数估计完成比例。
 
-当前批次按实际消费者纠错：原 AtomicForcing 的决策稠密集、atomic_truth、exists_truth_generic 属于泛滤求值分支，不是选定 Main 直接证明归约的必需步骤。新建但未集成的 ForcingAtomicDecisions 已删除；不以它的定向编译计主线进度。
+本批迁移原 ForcingQuotient.BasicFormula / Formula.toBasic / AtomicData.Force 及 ForcingTruth.force_of_dense、完整逻辑子句、元组替换、rename/raise/instantiate/forcing_sound。沿原六构造子基与八种公式翻译，存在量词仍为局部稠密见证；量词域是任意参数公式 H，不要求包含名字的地面集合或固定秩界。
 
-本批转移原 edge_map_orderIso / atomic_symmetry，消费者为 SymmetricNames.forces_symmetry。复用已有名字映射、左／右／交换归纳和原子方程；把条件序同构表示为公式关系，并实际实例化已有 actCode。序保持只限 P，保留全部内部原始名字；两类 nativeZF 原核证书，本批完整验收已通过。
+ForcingFormula 给出逐固定公式的纯对象翻译、单调性与稠密闭包原核证书；ForcingSound 重放全部 19 源规则，并对每个有限前提列表及源证明给出原核闭句证书。总计 48 项审计声明（含六构造子基的类型／构造器／递归器）、3 类原核证书；定向构建及 trust=0 预审计已通过，完整验收已通过。
 
-下一必要源消费者：ForcingQuotient.Force、ForcingTruth.force_of_dense / forcing_sound、SymmetricNames 的 HS 定义及 forces_symmetry。原子正规性所需 eq_of_dense / mem_of_dense 已完成，不再报为未证明；HS 与具体系统实例尚未完成。
+名字域 H 尚未实例化为实际 HS，全部目标公理尚未强迫。此次外部固定证明参数返回实际对象证明，不是所有内部／非标准证明码的统一归约；后者仍在第 10 阶段。下一实际源消费者为 ConditionAction.Name.HS、SymmetricSystem.Name 与 forces_symmetry，以及完整解释公理链。已完成的公式层保真不再列为待重建。
 
-本批完整验收通过：2860 构建任务、29428 项声明审计（588 项无公理依赖、28840 项依赖已记录）、9 条命令退出 0，其中 5 条 trust=0，零警告；2450 份哈希逐项匹配。新增 20 项声明、2 类原核证书均在正式审计中，本批未扩大可信基。最终对象 Con 仍为未完成。
+决策稠密集、atomic_truth、exists_truth_generic 仍排除在选定 Main 直接归约的必需待办之外；上轮已删除错排候选并修正旧聚合状态，见 SCOPE_REASSESSMENT。阶段编号和最终对象 Con 合同不变。
+
+本批完整验收通过：2862 构建任务、29476 项声明审计（598 项无公理依赖、28878 项依赖已记录）；9 条命令退出 0，其中 5 条 trust=0，零警告；2452 份哈希匹配。48 项新增声明、3 类原核证书均被覆盖，本批未扩大既有可信基。最终对象 Con 和全部内部证明码归约仍未完成。
