@@ -353,3 +353,6 @@ import PPAC.Migration.ForcingNormalFilter
 import PPAC.Migration.ForcingDiagramAction
 import PPAC.Migration.ForcingDiagramCarrier
 import PPAC.Migration.ForcingDiagramOrder
+import PPAC.Migration.ForcingCohenCoordinates
+import PPAC.Migration.ForcingCohenConditions
+import PPAC.Migration.ForcingCohenOrderAction

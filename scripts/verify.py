@@ -3442,7 +3442,10 @@ def main() -> None:
                                ("forcing_normal_filter", "ForcingNormalFilter", 18),
                                ("forcing_diagram_action", "ForcingDiagramAction", 17),
                                ("forcing_diagram_carrier", "ForcingDiagramCarrier", 23),
-                               ("forcing_diagram_order", "ForcingDiagramOrder", 27)):
+                               ("forcing_diagram_order", "ForcingDiagramOrder", 27),
+                               ("forcing_cohen_coordinates", "ForcingCohenCoordinates", 17),
+                               ("forcing_cohen_conditions", "ForcingCohenConditions", 26),
+                               ("forcing_cohen_order_action", "ForcingCohenOrderAction", 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7407,6 +7410,13 @@ def main() -> None:
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_diagram_full_injection_label_action_native_certificates_proved": True,
         "source_diagram_order_and_Cohen_product_action_proved": False,
+        "source_cohen_coordinate_permutation_graphs_constructed": True,
+        "source_cohen_bounded_partial_function_carrier_constructed": True,
+        "source_cohen_image_preserves_functionality_and_internal_bound": True,
+        "source_cohen_condition_carrier_order_permutation_constructed": True,
+        "source_cohen_label_action_group_laws_instantiated": False,
+        "source_cohen_omega_two_and_product_WithTop_system_assembled": False,
+        "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Concrete omega/2 and group-law/product/WithTop assembly remain.",
         "source_diagram_all_injection_carrier_and_set_action_constructed": True,
         "source_diagram_set_action_identity_and_multiplication_proved": True,
         "source_diagram_sub_constructed_from_left_cancellation_table": True,
