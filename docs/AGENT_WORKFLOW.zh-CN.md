@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、HS 与泛型解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 其他 L 工程的 ZF/ZFC 结论已有；核对并补到当前对象解释的接口和真实前提。原 LCarrier 是 ZFSet 子类，不能直接代替所有 nativeZF 模型的结论 |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；尚无完成的目标端主链 | 迁移原 poset/正规滤子/HS、原子递归、逐公式 forcing_sound、全部解释公理；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换下降的对象归纳已完整验收；目标端主链未完成 | 迁移原 poset/正规滤子/HS、原子递归、逐公式 forcing_sound、全部解释公理；保留全秩和完整模式 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -30,6 +30,6 @@
 
 当前批次沿固定 ForcingNames 第 184–237、474–478、494–532 行完成 checkName 与 unionName 作用律。检查名字的全内部集合存在、唯一、成员／边方程、名字保持、公式类求值、条件映射与固定条件作用，以及保持原序的置换与并名字交换，均取得 nativeZF 原核证书。
 
-这关闭的是基础名字构造，不是遗传对称 HS 或原子强迫。下一源消费者为原 ForcingNames.HS/check_HS/pair_HS/union_HS 与 AtomicForcing。后者的原递归包含左／右／交换下降，不能冒用普通字典序；优先复用既有 Child 归纳处理这三个实际分支，仍须构造原 MemAt/EqAt 方程，不能把原子性质设为前提。完整 L 解释、群／正规滤子及全局模型应用继续按原阶段推进。
+这关闭的是基础名字构造，不是遗传对称 HS 或原子强迫。下一源消费者为原 ForcingNames.HS/check_HS/pair_HS/union_HS 与 AtomicForcing。后者的原递归包含左／右／交换下降，不能冒用普通字典序；已复用既有 Child 归纳处理这三个实际分支，仍须构造原 MemAt/EqAt 方程，不能把原子性质设为前提。完整 L 解释、群／正规滤子及全局模型应用继续按原阶段推进。
 
-本批完整验收通过：2851 构建任务、29252 项声明审计（578 项无公理依赖、28674 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 74 项声明全部覆盖，2441 份源码哈希匹配。10 类新增原核证书没有扩大既有可信基。
+最近完整验收通过：2852 构建任务、29266 项声明审计（579 项无公理依赖、28687 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；本次新增 14 项双名字归纳声明全部覆盖，2442 份哈希匹配。新增 1 类原核证书没有扩大既有可信基。此前 74 项 checkName／unionName 作用声明的验收保留。

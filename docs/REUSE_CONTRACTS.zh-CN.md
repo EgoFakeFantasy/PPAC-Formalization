@@ -31,7 +31,7 @@ checkName 的下一复用入口已实读：固定底座 SetTheory/Ord/Recursion.
 
 ForcingUnionAction 逐成员复用原第 494–532 行的两个方向，保持全体条件码上的序不变前提；满射置换图给出源逆作用所需原像。ForcingCheckName 专门表示原第 184–201 行的成员递归值域，复用 SetInduction.native_induction、既有 comparison/union_edge/insert_edge、Collection／Separation 和配对／积；没有新通用递归器，也未要求任意模型外部良基。ForcingCheckNameLaws 按原第 203–237、474–478 行完成三个成员归纳证明及固定条件作用。74 项声明、10 类证书完整验收通过；具体 HS 与泛型解释仍未完成。
 
-本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
+本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。旧批次的重复验收数字不用于判断当前阶段。
 
 # 优先复用的已完成接口（2026-10-25 用户纠正后）
 
@@ -58,99 +58,11 @@ YesMetaZFC 文件相对于 `.lake/packages/YesMetaZFC/YesMetaZFC/`。BMS 本地�
 
 现有语法／证明图资产已经完成；接下来的工作必须是选定这些接口后的ZF／U公理测试、背景消去、语言对应或实际数学证明传输。新增基础模块前必须先给出具体接口不适用的类型／前提证据，不能再以“对象层需要”为理由从头重建。
 
-实际接入代码为 `PPAC/Migration/ModelTransfer.lean`，共6个声明：从已验收源公理推导取得外延性，直接消费通用 `FirstOrderSemantics.models_iff` 得到精确nativeZF／Project ZF的模型等价；对任意模型universe证明U的模型条件恰为Project ZF加原PP、ACwo、¬AC矩阵；直接复用既有纯语言调度和强完备性，把所有相应Type 0模型中的Project定理回传为原核 `Derives nativeZF [] (fo_sentence φ)`。这正是BMS的收尾方式，不新增满足关系、调度、证明核或模型构造。
+## 当前可直接消费的接口
 
-这项接线不把具体ZFC规范扩张自动改成ZF扩张，也不把单个标准模型里的L构造改称所有模型中的定理。现有L／逐公式编译和ZF／U内部证明图的实际适配继续使用上述已有资产；未满足的全模型数学前提和内部任意码传输仍明确保留。
+- `ModelTransfer.project_models_iff` 精确连接任意 nativeZF 模型与 Project ZF；`derives` 直接消费原强完备性和既有调度。BMS 收尾方法已适配，不待重造。
+- `DefinableMinimaChoice`、`InternalWellOrderChoice` 已取得 `Min_lt → AC` 和 `CoverWO → AC` 的原核证书。原 L 工程的最小元证明路线已经复用；实际 L 域满足其前提仍要通过精确对象接口接入。
+- `KuratowskiZF` 复用底座配对约定；`InterpretedZF` 复用全部 ZF 模式回放。后者保留相对化背景和域非空条件，不冒充 nativeZF 已证明全部 L 公理。
+- 本轮 `ForcingPairInduction` 消费已有 `ForcingMapLaws.formula_induction` 两次，构造对称加强谓词，取得左／右／交换下降的原核归纳模式。源依据是固定 `AtomicForcing.pairLower_left/right/swap`；未实现的实际消费者是 `relations` 的内部递归构造。不是新的良基或递归后端。
 
-实际验收：定向构建ModelTransfer（155 jobs）通过；正式 `python scripts/verify.py` 完整通过，2656构建任务、28549审计声明（新增6项全部覆盖）、9条命令全成功（5条trust=0）、零警告。新增通用收尾只依赖三项标准宿主逻辑公理，其余五项精确保留既有七个ZF语法证书基线；没有激活额外choice语法证书或新增对象AC。日志与源码哈希在忽略的verification目录，不将日志加入源码。
-
-早先三个既有接口目标的196 jobs构建及本地trust=0调用探针也已通过；它们是复用可调用性证据。误扩至整套PureProvability的构建已主动中止，不列为重新编译通过。重复满足关系候选及冻结packet候选不恢复；本批临时探针已删除，正式源文件和审计保留。
-
-数学收尾批正式验收：2657构建任务、28562声明审计（新增13项完整覆盖）、9条命令全成功、5条trust=0、零警告。公式构造精确依赖propext／Quot.sound；五项模型／原核证书精确保留标准三项及既有七个ZF句子证书，未激活额外choice证书。本批早先审计曾因错误地要求公式构造无任何宿主逻辑依赖而失败，已按实际两项标准依赖设置精确检查并完整重验通过。
-
-数学收尾已实际复用到 `DefinableMinimaChoice.lean`：原L工程的Choice／InternalWellOrder用分离选取集合族各成员的最小元。本适配以三元纯公式lt(r,x,y)表达带内部参数的关系，证明对象句子
-
-```text
-Min_lt := ∀a ∃r ∀x∈a (x非空 → ∃唯一y (y∈x ∧ ∀z∈x ¬lt(r,z,y)))
-Derives nativeZF [] (Min_lt → AC)
-```
-
-r在对象量词内为每个族分别存在，无需在元层选一个关系函数或统一的全宇宙最小元关系。已用实际Kuratowski关系图edge(r,x,y)实例化；量词回归覆盖lt内部另有存在量词时的变量保护。现成反向编译及相对化还给出原核中的 `∃D → (Min_lt)^D → AC^D`，背景明确为相对化的源ZF理论。此证书关闭了L选择公理的分离收尾；实际L域、全部相对化ZF公理及内部层序关系的最小元前提尚待接通。
-
-复用来源为本地已核对提交7f5a7d03d63d9769172f17350bbe8303996e5b53的Choice.lean、InternalWellOrder.lean和Def.lean；原文件SHA-256及适配路径记入SOURCE_LOCK.json的companion_reuse，版权和Apache许可证完整保留。未修改L工程或YesMetaZFC依赖。
-
-内部良序批正式验收：2830构建任务、28580声明审计（新增18项完整覆盖）、9条命令全成功、5条trust=0、零警告。两份适配的逐声明足迹已精确锁定：构造为原标准两项，纯语义辅助为标准三项，其余模型／原核证书仍为标准三项加原七个ZF句子证书，没有激活额外choice证书。首次消费的两个既有库目标也已成功构建（219 jobs）；源码依赖未改。
-
-内部良序覆盖已实际接入：`KuratowskiZF`复用固定YesMetaZFC的同一Kuratowski convention／Code／坐标单射和KP配对构造，提供任意nativeZF模型中的完整Interpretation记录；只适配原入口要求ZFC的背景，不重写有序对或整个规范扩张。`InternalWellOrderChoice`直接使用原Project.isSetCodedWellOrder及其语义定理，并通过既有ProjectDecode取得Source闭句：
-
-```text
-CoverWO := ∀a ∃b ∃r (a⊆b ∧ r在b上是内部集合编码良序)
-Derives nativeZF [] (CoverWO → Min_edge)
-Derives nativeZF [] (CoverWO → AC)
-```
-
-这里的良序最小元条件只量化模型内部子集。由原线序的自反空缺／传递性把“≤所有元素”转成“无更小元素”，并证明唯一性；在族的并集上应用CoverWO后，得到上批所需同一个内部关系参数。Source反向编译及任意域相对化证书也已取得，仍保留域非空与相对化ZF背景。此处没有证明实际L层序满足CoverWO，也没有假定宿主WellFounded或外部标准ω。
-
-原L工程StageInternalOrder／InternalWellOrder的覆盖与最小元路线记录在SOURCE_LOCK.json；未修改该工程或固定依赖。该适配是L实际层序构造的消费端，接下来应传输已有构造以证明L域中的CoverWO，而不是继续新增可选编码设施。
-
-实际Def后继构造已接入：`ExistingConstructibleSyntax`保留固定L工程godelDefOutputFormula所需的99个既有纯语法声明（11个源文件）；原声明正文逐项SHA-256锁定，数据的构造器和原变量槽位保留，仅移除Mathlib／模型导入和证明，有限向量在本模块作用域内展开为Fin.cases。这个语法切片解决原工程Lean 4.33.0-rc1＋Mathlib与当前4.33.1＋Std的实际导入差异，不引入新的识别器、满足关系递归或推导核。
-
-`GodelDefOutput`以五构造器翻译接入已有Source语言，证明重命名保真、原派生逻辑外壳及固定输出公式的实际语义对应。对原布局 `[U,varTag,appTag,empty,op0,...,op8,omega,nextU]`，原ZF核取得：
-
-```text
-∀十四个输入参数 ∃nextU godelDefOutputFormula
-∀十四个输入参数 ∀nextU nextU' (Output(nextU) ∧ Output(nextU') → nextU=nextU')
-```
-
-这两条是无额外算子前提的闭句Derives证书：幂集给候选范围，完整分离按固定原求值公式构造精确输出族，外延性关闭唯一性。程序码、结果、输入参数均为模型内部集合；未假定外部良基或标准ω，也未把原求值公式换成不透明的宿主oracle。源19规则的反向编译证书已提供，供后续原内部递归直接消费。
-
-固定Def批实际验收：scripts/verify.py全流程通过；2832构建任务，28702个声明审计（535项无公理依赖、28167项依赖已核对），9条命令全部成功，其中5条trust=0，零警告。新增122项声明全部覆盖，2421份源码哈希与验收记录一致。该数量只记录验收覆盖，不表示最终主定理的完成比例。
-
-本批没有证明该求值谓词在任意内部程序码上的完整运行正确性，也没有证明实际L的全部公理／层序图／CoverWO。下一项数学工作是用已有内部递归和这一确切后继公式传输原层历史；不能把此Def-step验收当成完整L解释或最终Con完成。
-
-内部层递归现已直接消费YesMetaZFC的 `zeroSuccessorLimitStep_isClassFunctionOnTransfiniteSequences` 和 `transfiniteRecursion_isClassFunctionOnOrdinals`。`GodelDefRecursion.successor_semantics`证明原 `(previous,fixed13,output)` 与现有Project参数布局的精确对应；零步使用原空集，后继步使用上批固定原Def公式，极限步使用原函数值域的并。空初值及实际后继的全定义单值性均已消去，不是把这些条件当作假设留下。所取得的原核闭句为：
-
-```text
-Derives nativeZF [] (∀fixed13 ∀α (Ord(α) → ∃!x H_fixed13(α,x)))
-```
-
-H通过现成内部递归公式定义，量化实际集合编码的前段函数图；`hierarchy_semantics`给出精确历史及三分支语义。证明适用于每个nativeZF模型的全部内部序数，未采用宿主Ordinal递归或外部良基假设。这关闭固定原Def的内部层递归存在唯一义务；原bareStageAt公式的对应、规范13参数、求值正确性及完整L解释仍待接通，不能凭此宣称已证明实际L的全部公理。
-
-本次消费的现成递归还带入15个原自动化Bool检查证书，来自原序数分类、递归序列限制及两条分支互斥证明。它们的具体名称、四份原文件哈希和14项适配声明的精确依赖已锁在SOURCE_LOCK；原七项ZF句子证书基线不变，未引入choice句子证书或新的自定义公理。Check.lean逐项重新计算这15个闭合Bool等式的两边并检查均为true；这是沿用Lean编译器的原生计算信任，不是核内归约证明。正式摘要分别记录该范围，未把全仓依赖白名单放宽为通配。
-
-内部Def递归批正式验收：2833构建任务、28716声明审计（535无公理依赖／28181依赖已记录）、新增14项全部覆盖、9条命令全成功（5条trust=0）、零警告；15项既有原生Bool证书重新计算通过。源码哈希2423项全部匹配，五项最终完成标志仍为false。
-
-原bareStageAt接口已接通：从同一固定L工程BareStageHistory.lean继续保留14个原纯语法声明，连同先前99项共113项／12份源文件，逐项正文哈希保持原样。`ConstructibleHistory`保留原历史允许非条目杂项的语义；没有把原条件偷偷加强为“整个历史已是干净函数图”。原配对公式与同一Kuratowski convention、后继公式与内部SuccessorOf、三分支及有效历史的逐量词对应均已证明。
-
-反方向通过原ZF完整分离在固定comparisonSchema.neg上构造反例集，再调用现有内部序数归纳：任意原有效历史的每个值都满足现有内部Def递归。证明显式表示归纳性质，不使用模型外部良基或宿主Ordinal递归。由原递归存在唯一性，原ZF核得到两个闭句（θ₂指原参数布局的empty槽，对应Project的bound 10）：
-
-```text
-Derives nativeZF [] (∀θ, Empty(θ₂) → ∀α, Ord(α) → ∀x, BareStageAt_θ(α,x) ↔ H_θ(α,x))
-Derives nativeZF [] (∀θ, Empty(θ₂) → ∀α, Ord(α) → ∃!x, BareStageAt_θ(α,x))
-```
-
-两份证书为agreement_kernel_certificate、unique_kernel_certificate。只构造前缀函数图来提供原历史见证；反方向处理所有原历史，包括含杂项者。新增33项适配声明的精确依赖已锁定，预审未引入前批15项原生Bool证书与原七项ZF句子证书之外的依赖。规范其余12参数、原求值／Def正确性、实际L的完整ZF／Choice及PPAC解释仍待接入；此处的参数化原历史定理不替代这些义务。
-
-原层历史批正式验收：2834构建任务、28763声明审计（536无公理依赖／28227依赖已记录）、新增47项全部覆盖、9条命令全成功（5条trust=0）、零警告；2424份源码哈希全部一致。五项最终完成标志仍为false。
-
-规范参数及其消去现已接通：原StageHistoryParameters／RudimentaryTermZFCode给出的布局为 `(0,1,0,0,1,2,3,4,5,6,7,8,ω)`，对应varTag、appTag、empty、九个操作码和内部ω。`ConstructibleParameters`直接消费已验收SyntaxNumerals.exists_numeral／unique与ObjectOmega.native_existence／native_unique，逐个构造有限数码见证，证明规范13元组唯一；没有抽取宿主函数枚举内部自然数，也没有要求ω外部标准。源文件哈希、槽位表和新增33项声明的精确依赖记录在SOURCE_LOCK。
-
-`canonicalStage`把13个规范参数作为对象存在量词隐藏，仍使用原bareStageAt公式。规范条件消去原空集槽前提后，原ZF核中的unique_kernel_certificate为无额外参数条件的闭句：
-
-```text
-Derives nativeZF [] (∀α, Ord(α) → ∃!S, CanonicalStage(α,S))
-```
-
-`domain`是参数无关的纯对象一元公式 `L(x) := ∃α ∃S (Ord(α) ∧ CanonicalStage(α,S) ∧ x∈S)`，domain_semantics给出逐量词对应。它当前仍是待验证的实际解释域：层值存在不推出存在属于某层的对象，故尚未取得L非空证书；更没有因此取得原求值／Def正确性、L的完整ZF／Choice或最终Con。下一项消费端是原项目已有的godelDef_empty／自变量程序求值路线，须把所需实际内部程序／轨迹证明接入，而不是把“x属于层”改成“x等于层”来伪造非空。
-
-规范参数批正式验收：2835构建任务、28796声明审计（538无公理依赖／28258依赖已记录）、新增33项全部覆盖、9条命令全成功（5条trust=0）、零警告；2425份源码哈希全部匹配。现有15项原生Bool证书重新计算通过；最终五项完成标志仍为false。
-
-最终目标仍为原nativeZF中的内部Con_ZF → Con_U。最终Con、相对一致性、专用ZF／U内部检查器、任意内部码正确性及完整内部模式测试五项完成标志均保持false。接口接线验收不是主定理完成验收。
-
-本批完整验收通过：2841 构建任务、28968 项声明审计（555 项无公理依赖、28413 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 69 项声明全部覆盖，2431 份源码哈希全部一致。五类 mapConditions 原核证书仅继承标准三项及原七项 ZF 句子证书。
-
-本批完整验收通过：2842 构建任务、29001 项声明审计（556 项无公理依赖、28445 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 33 项声明全部覆盖，2432 份源码哈希匹配。四类原核证书未超出标准三项及原七项 ZF 句子证书。
-
-本批完整验收通过：2844 构建任务、29044 项声明审计（557 项无公理依赖、28487 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 43 项声明全部覆盖，2434 份源码哈希匹配。五类原核证书仅继承标准三项及原七项 ZF 句子证书。
-
-本批完整验收通过：2846 构建任务、29114 项声明审计（570 项无公理依赖、28544 项依赖已记录）、9 条命令退出 0、5 条 trust=0、零警告；新增 70 项声明全部覆盖，2436 份源码哈希匹配。九类原核证书仅继承标准三项及原七项 ZF 句子证书。
+2026-10-26 再审核实读：固定底座 Axioms/ZF.lean 的两个模式构造器；本仓 ReverseZFReplay、CollectionFromReplacement、ModelTransfer；L 工程 ZFModel、Model、StageHistoryGraphSystem；BMS SecondOrderCompleteness。未重新编译这些外部仓库，也未修改其源码。旧重复段落可从 Git `3deb896` 恢复。

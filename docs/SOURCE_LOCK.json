@@ -5311,6 +5311,112 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "forcing_pair_induction": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+      "source_sha256": "8960224d120911db992ac0c5a1d5e92eb518643b353f0a1fa7d2e4f08177f50f",
+      "source_declarations": [
+        "pairLower_wf",
+        "pairLower_left",
+        "pairLower_right",
+        "pairLower_swap",
+        "relations"
+      ],
+      "adapter": "PPAC/Migration/ForcingPairInduction.lean",
+      "consumers": [
+        "ForcingPairInduction.models",
+        "ForcingPairInduction.kernel_certificate"
+      ],
+      "planned_source_consumer": "AtomicForcing.relations existence and compatibility; not yet implemented",
+      "reused_interfaces": [
+        "ForcingMapLaws.formula_induction",
+        "ForcingNameInduction.kernel_certificate",
+        "ReplacementPredicates.rel",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Formula-indexed induction on the exact left-child, right-child and right-child-with-swap dependencies. Derived by two existing Child inductions with a symmetric strengthened predicate. No external WellFounded, no full multiset-order equivalence, no atomic recursion existence or forcing laws claimed.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPairInduction.symmetric": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.rightAll": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.symmetric_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.rightAll_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.formula_induction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingPairInduction.leftBelow": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.rightBelow": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.swapBelow": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.progressive": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.holds": [],
+        "PPAC.Migration.ForcingPairInduction.progressive_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPairInduction.models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingPairInduction.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   }
 }

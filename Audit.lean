@@ -29583,3 +29583,18 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCheckNameLaws.actionSentence
 #print axioms PPAC.Migration.ForcingCheckNameLaws.action_models
 #print axioms PPAC.Migration.ForcingCheckNameLaws.action_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingPairInduction.symmetric
+#print axioms PPAC.Migration.ForcingPairInduction.rightAll
+#print axioms PPAC.Migration.ForcingPairInduction.symmetric_semantics
+#print axioms PPAC.Migration.ForcingPairInduction.rightAll_semantics
+#print axioms PPAC.Migration.ForcingPairInduction.formula_induction
+#print axioms PPAC.Migration.ForcingPairInduction.leftBelow
+#print axioms PPAC.Migration.ForcingPairInduction.rightBelow
+#print axioms PPAC.Migration.ForcingPairInduction.swapBelow
+#print axioms PPAC.Migration.ForcingPairInduction.progressive
+#print axioms PPAC.Migration.ForcingPairInduction.holds
+#print axioms PPAC.Migration.ForcingPairInduction.progressive_semantics
+#print axioms PPAC.Migration.ForcingPairInduction.sentence
+#print axioms PPAC.Migration.ForcingPairInduction.models
+#print axioms PPAC.Migration.ForcingPairInduction.kernel_certificate

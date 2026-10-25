@@ -324,3 +324,4 @@ import PPAC.Migration.ForcingUnionName
 import PPAC.Migration.ForcingUnionAction
 import PPAC.Migration.ForcingCheckName
 import PPAC.Migration.ForcingCheckNameLaws
+import PPAC.Migration.ForcingPairInduction
