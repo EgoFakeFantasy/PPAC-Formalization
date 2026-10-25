@@ -3408,7 +3408,9 @@ def main() -> None:
                                ("forcing_class_evaluation", "ForcingClassEvaluation", 34),
                                ("forcing_evaluation_covariance", "ForcingEvaluationCovariance", 9),
                                ("forcing_condition_graphs", "ForcingConditionGraphs", 33),
-                               ("forcing_condition_action", "ForcingConditionAction", 37)):
+                               ("forcing_condition_action", "ForcingConditionAction", 37),
+                               ("forcing_pair_name", "ForcingPairName", 32),
+                               ("forcing_union_name", "ForcingUnionName", 32)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7299,6 +7301,13 @@ def main() -> None:
         "source_forcing_condition_graph_identity_inverse_composition_proved": True,
         "source_forcing_Name_act_graph_preservation_identity_composition_inverse_proved": True,
         "source_forcing_Name_evaluate_smul_formula_class_proved": True,
+        "source_forcing_pairName_existence_unique_edge_name_proved": True,
+        "source_forcing_pairName_formula_class_evaluation_and_map_proved": True,
+        "source_forcing_Name_smul_pair_fixed_condition_proved": True,
+        "source_forcing_unionName_exact_range_edge_name_proved": True,
+        "source_forcing_unionName_formula_class_filter_evaluation_proved": True,
+        "source_forcing_unionName_condition_action_proved": False,
+        "source_forcing_checkName_proved": False,
         "source_forcing_final_group_homomorphism_family_instantiated": False,
         "source_forcing_mapConditions_identity_on_IsName_proved": True,
         "source_forcing_mapConditions_composition_all_raw_names_proved": True,

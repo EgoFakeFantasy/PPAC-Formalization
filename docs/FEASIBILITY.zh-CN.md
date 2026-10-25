@@ -1,4 +1,4 @@
-> 2026-10-26 基线更新：已从官方 GitHub release 获取 Lean 4.34.1，SHA-256 为 `667394ecf6708a228221eb4919c0bdb419966b7408bcf3089a9096a6f4ae62c9`，二进制报告 commit `5045d0056413266e57c625dcd7c365b10e377c52`。隔离复制的 75 源模块逐字哈希保持一致；Mathlib 及 8 个传递依赖与原 manifest 全部一致。原 Main 定向构建已启动，未以此宣称成功；完整 Comparator 仍缺 Linux/landrun。本文件及 SOURCE_LOCK.original_build 中早期“not run”描述是初次盘点快照，不是当前进程终态。
+> 2026-10-26 原环境基线更新：隔离 Lean 4.34.1 的原 Main 已完成 8998 项构建，退出 0；main_consistency 等五个关键端点的 --trust=0 审计退出 0，均仅依赖 propext、Classical.choice、Quot.sound。78 份源副本哈希全部匹配。完整 Comparator 仍未运行，缺 Linux/landrun；原 Main 的外部证明通过不等于本仓对象 Con 完成。精确命令及日志哈希见 SOURCE_LOCK.original_build。
 
 # PPAC 向 YesMetaZFC 迁移审查
 核查日期：2026-10-21。结论：可以分阶段实施，但不是改 import 的直接移植；完整迁移尚未完成。

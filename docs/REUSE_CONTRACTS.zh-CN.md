@@ -15,15 +15,19 @@ ForcingNames 本批继续消费同一固定源的 IsName／isName_iff。原 Cond
 
 ForcingEvaluation 继续适配原 evaluate／evaluate_eq／mem_evaluate_iff／evaluate_empty。它用模型内部集合图表示部分求值；已有 Child 公式归纳证明不同图在共同名字上的值相等，已有 Collection 收集子名字图并通过 Separation 清除不合格杂项，Union 合并相容图，Kuratowski 配对和插入扩展当前节点。值集合直接由原活跃条目方程经 Union 与 Separation 构造。原核闭句覆盖每个内部集合 G、每个原始集合名字 σ 的存在、唯一、成员展开和空名字；不限制名字秩、不预设 IsName、不使用宿主 WellFounded。原外部泛型滤子与内部参数的解释对应仍属阶段 6–7，mapConditions 的本批范围见下段，原子强迫递归仍未完成。本批完整验收通过：44 项新增声明全部覆盖，2839 构建任务、28899 声明、9 命令退出 0、5 条 trust=0、零警告；四条原核证书未增加原七项 ZF 句子证书之外的依赖。
 
-ForcingMapConditions 适配同一源文件第 96–128 行：原 child_wf.fix 在目标端用已验收的 Child 公式归纳及内部集合图实现；函数式 Replacement、笛卡尔积和完整分离直接调用 YesMetaZFC，逐变量翻译复用 ProjectSyntax.binary／GodelDefRecursion.encode_semantics。共享辅助的算子全定义性、单值性和子名字依赖性均由具体映射算子证明，没有假定目标递归已存在。五类原核闭句模式保留条件映射的对象全函数前提，覆盖所有内部原始名字。外部不可定义函数不在此公式模式的声明范围；原恒等律、复合律、IsName 保持、evaluate 相容性和具体 actCode 实例仍待迁移。新增 69 项声明（含结构构造器及三个字段）预审计只使用标准三项和原七项 ZF 句子证书，完整验收已通过。
+ForcingMapConditions 适配同一源文件第 96–128 行：原 child_wf.fix 在目标端用已验收的 Child 公式归纳及内部集合图实现；函数式 Replacement、笛卡尔积和完整分离直接调用 YesMetaZFC，逐变量翻译复用 ProjectSyntax.binary／GodelDefRecursion.encode_semantics。共享辅助的算子全定义性、单值性和子名字依赖性均由具体映射算子证明，没有假定目标递归已存在。五类原核闭句模式保留条件映射的对象全函数前提，覆盖所有内部原始名字。外部不可定义函数不在此公式模式的声明范围；原恒等律、复合律、IsName 保持、公式类 evaluate 相容性和具体 actCode 实例现已验收，见下文对应模块；任意外部泛型滤子解释仍待接。新增 69 项声明（含结构构造器及三个字段）预审计只使用标准三项和原七项 ZF 句子证书，完整验收已通过。
 
-ForcingMapLaws 按原第 130–165 行的 Child 归纳推进 `mapConditions_id`、`mapConditions_comp`、`IsName.mapConditions`；直接消费既有名字边／子名字性质、映射成员／边方程及唯一性，不再构造递归。原第 425–439 行对 actCode 函数的外延替换通过逐点等价关系给出对象图同余。恒等律的 IsName 条件、复合次序 f∘g 及名字保持的 P→Q 条件均与源一致。四类原核证书和全部 33 项声明已定向构建、预审计通过，完整验收已通过。原 evaluate_mapConditions 的任意类滤子版本与实际 actCode 实例仍待接通，不能从内部集合 G 的求值结果推定完成。
+ForcingMapLaws 按原第 130–165 行的 Child 归纳推进 `mapConditions_id`、`mapConditions_comp`、`IsName.mapConditions`；直接消费既有名字边／子名字性质、映射成员／边方程及唯一性，不再构造递归。原第 425–439 行对 actCode 函数的外延替换通过逐点等价关系给出对象图同余。恒等律的 IsName 条件、复合次序 f∘g 及名字保持的 P→Q 条件均与源一致。四类原核证书和全部 33 项声明已定向构建、预审计通过，完整验收已通过。实际 actCode 实例及公式定义条件类的 evaluate_mapConditions 现已验收；任意不可定义外部泛型滤子的解释仍待接，不能从内部集合 G 或公式类结果推定完成。
 
 ForcingClassEvaluation／ForcingEvaluationCovariance 继续消费同一源的 evaluate、成员方程及 169–181 行协变证明。条件类由任意参数公式给出，旧内部集合 G 求值通过 membershipPredicate 实例取得对象等价；逆像由存在量词、原映射关系与条件谓词直接构造，不假设它是集合。递归复用 ForcingNameRecursion，值域界复用 coordinate_bound，输出使用原完整 Separation；相容性直接调用已证 Child 归纳、映射边方程和求值唯一性。五类原核证书、43 项声明已定向构建和预审计通过，完整验收已通过。此公式模式不是任意不可定义外部泛型滤子的表示定理，后者仍在源解释链中待接。
 
-下一原 actCode 消费端已核对固定底座 SetTheory/FunctionConstruction.lean 的 exists_identityBijection、exists_inverseBijectionWithPairs、exists_compositionBijection：背景为任意 Project ZF 模型，配对约定显式给出，逆图保留精确边对应。通过既有 ModelTransfer.project_models_iff 与 KuratowskiZF.interpretation 可接本仓；不另造恒等、逆或复合双射。此处是接口定位，尚未计为 actCode 迁移完成。
+原 actCode 消费端已核对固定底座 SetTheory/FunctionConstruction.lean 的 exists_identityBijection、exists_inverseBijectionWithPairs、exists_compositionBijection：背景为任意 Project ZF 模型，配对约定显式给出，逆图保留精确边对应。通过既有 ModelTransfer.project_models_iff 与 KuratowskiZF.interpretation 可接本仓；不另造恒等、逆或复合双射。接口定位现已由下一段所列适配实际消费；这一旧定位记录不再构成待办。
 
 ForcingConditionGraphs／ForcingConditionAction 已实际消费上述接口。原 functionOn AST 未重定义；其纸面语义与底座 IsSetFunctionFromTo／IsSetBijectionFromTo 建立精确对应。恒等图采用 exists_setFunctionFromTo_of_denote 的 identityValue 实例、逆图采用 exists_inverseBijectionWithPairs、复合图采用 exists_compositionFunction；这些返回实际边方程，避免把只保证“某个双射”的推论冒充指定恒等或复合。原 actCode 的内／外条件分支保留，名字作用只调用已证的 mapping、恒等、复合、同余与求值相容性，不把作用律设为字段。九类原核证书和 70 项声明预审计没有新增可信基依赖，完整验收已通过。SOURCE_LOCK 同时锁定所消费 FunctionConstruction.lean 的 SHA-256。原具体群同态族与完整对称系统尚未实例化。
+
+ForcingPairName／ForcingUnionName 本批沿固定 ForcingNames 第 239–348 行及 Name.smul_pair 迁移：配对使用 KP.exists_pair 和既有 Kuratowski 编码；并名字通过既有坐标界、Union、ZF.exists_cartesianProduct、Separation 获得全部共同加强条件的精确范围。求值和映射直接消费已有成员方程及单值性。并名字求值明确保留源滤子的包含、向上闭包和定向性，不假设二元交或选择加强条件。64 项声明、12 类原核证书已通过完整验收（2848 构建任务、29178 声明审计、9 命令成功、5 条 trust=0、零警告）。checkName 和 unionName 作用律仍待迁移；既有配对、集合并、笛卡尔积及分离不是待重做的基础。
+
+checkName 的下一复用入口已实读：固定底座 SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals，在任意 Project ZF 模型中工作，保留可定义序列算子的全定义／单值前提，不要求宿主 WellFounded。本仓 ConstructibleHistory:531 与 GodelDefRecursion:176 已消费这一组入口。后续应接原 checkName 的具体算子及成员递归对应，而不是再次建设超限递归；当前只完成接口核对，尚未声称 checkName 证明完成。
 
 本轮未修改任何其他仓库或固定依赖。IBLP 的集合 Sat 是先前已读的候选，本轮没有重新编译或将其计为新迁移成果。全体旧验收文字以下保留历史范围；其中“尚待”须按本表和原 1–11 阶段读取。
 

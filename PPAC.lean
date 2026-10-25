@@ -319,3 +319,5 @@ import PPAC.Migration.ForcingClassEvaluation
 import PPAC.Migration.ForcingEvaluationCovariance
 import PPAC.Migration.ForcingConditionGraphs
 import PPAC.Migration.ForcingConditionAction
+import PPAC.Migration.ForcingPairName
+import PPAC.Migration.ForcingUnionName
