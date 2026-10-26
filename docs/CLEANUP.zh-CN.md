@@ -152,3 +152,6 @@ Probe 动作／target 批次：去掉未使用的公式参数和局部绑定；�
 
 
 heightIntervals 内部图批次：精确源码与逐声明依赖进入正式 Audit 后，仅按本仓绝对路径、重解析点和 SHA 删除覆盖全部 57 项声明的一次性 ConstructionHeightIntervalsAudit.lean；见 verification/cleanup-height-interval-graphs-20261027.json。成功构建、预审和全量日志保留。没有新增持久脚本、未终止其他项目进程，358 项冻结兼容模块的批量退役仍未执行。
+
+
+初始 Base uniform/order 适配批次：原权重构造体保留 MapsTo，旧 API 不变；新 Base 模块缩小导入到实际消费的逐字母区间合同，不依赖完整图装配终点。现行缺口表压缩重复进度段，删除已完成适配仍待做的误报。完整 Audit 覆盖 15 项新声明和权重模块全部 32 项后，仅按本仓路径、重解析点和 SHA 删除一次性 ConstructionBaseUniformAudit.lean；见 verification/cleanup-base-uniform-20261027.json。成功验收日志保留，无新持久脚本、无其他进程终止；358 项批量退役仍未执行。

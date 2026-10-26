@@ -2494,7 +2494,7 @@ def main() -> None:
                                ("construction_fraction_order", "ConstructionFractionOrder", 50),
                                ("construction_fraction_density", "ConstructionFractionDensity", 17),
                                ("construction_real_cuts", "ConstructionRealCuts", 43),
-                               ("construction_cut_weights", "ConstructionCutWeights", 31),
+                               ("construction_cut_weights", "ConstructionCutWeights", 32),
                                ("construction_fraction_addition", "ConstructionFractionAddition", 32),
                                ("construction_principal_addition", "ConstructionPrincipalAddition", 30),
                                ("construction_fraction_difference", "ConstructionFractionDifference", 16),
@@ -2592,7 +2592,10 @@ def main() -> None:
                                ("construction_probe_cost_supremum", "ConstructionProbeCostSupremum", 16),
                                ("construction_probe_interval_choices", "ConstructionProbeIntervalChoices", 16),
                                ("construction_probe_height_interval_graphs", "ConstructionProbeHeightIntervalGraphs", 13),
-                               ("construction_probe_height_intervals_syntax", "ConstructionProbeHeightIntervalsSyntax", 12)):
+                               ("construction_probe_height_intervals_syntax", "ConstructionProbeHeightIntervalsSyntax", 12),
+                               ("construction_principal_sum_bridge", "ConstructionPrincipalSumBridge", 1),
+                               ("construction_base_uniform_margin", "ConstructionBaseUniformMargin", 4),
+                               ("construction_base_uniform_margin_syntax", "ConstructionBaseUniformMarginSyntax", 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6241,6 +6244,7 @@ def main() -> None:
         "source_probe_letter_floor_graph_and_order_bounds_proved": True,
         "source_probe_inside_outside_cost_bounds_from_old_point_bound_proved": True,
         "source_initial_base_PointBound_adapter_proved": True,
+        "source_initial_base_UniformMargins_HeightOrder_adapter_proved": True,
         "source_probe_interval_cut_addition_and_max_constructed": True,
         "source_probe_positive_cut_division_graph_constructed": True,
         "source_probe_actual_cut_quarter_graph_constructed": True,

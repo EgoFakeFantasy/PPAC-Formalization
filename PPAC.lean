@@ -467,3 +467,6 @@ import PPAC.Migration.ConstructionProbeCostSupremum
 import PPAC.Migration.ConstructionProbeIntervalChoices
 import PPAC.Migration.ConstructionProbeHeightIntervalGraphs
 import PPAC.Migration.ConstructionProbeHeightIntervalsSyntax
+import PPAC.Migration.ConstructionPrincipalSumBridge
+import PPAC.Migration.ConstructionBaseUniformMargin
+import PPAC.Migration.ConstructionBaseUniformMarginSyntax

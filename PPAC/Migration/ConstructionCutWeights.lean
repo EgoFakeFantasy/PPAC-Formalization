@@ -2,6 +2,7 @@
 The old exact exponent offsets n+1 and n+3 are preserved. This supplies actual
 set-valued graphs on internal omega; real arithmetic and margin remain separate. -/
 import PPAC.Migration.ConstructionRealCuts
+import PPAC.Migration.ForcingSupportSize
 
 namespace PPAC.Migration.ConstructionCutWeights
 open YesMetaZFC YesMetaZFC.Logic YesMetaZFC.Logic.FirstOrder YesMetaZFC.SetTheory
@@ -62,21 +63,21 @@ theorem value_unique (hM : FirstOrder.Theory.Models M nativeZF) {height : Bool}
   subst r
   exact principal_unique hM hc hd
 
-theorem exists_graph (hM : FirstOrder.Theory.Models M nativeZF) (height : Bool)
+theorem exists_graph_with_map (hM : FirstOrder.Theory.Models M nativeZF) (height : Bool)
     {w one two offset Q R : M.Carrier .set} (hw : (Project.FirstOrderSemantics.reduct M).IsOmega w)
     (hone : (Project.FirstOrderSemantics.reduct M).mem one w) (ht : (Project.FirstOrderSemantics.reduct M).mem two w)
     (htn : ∃ a, (Project.FirstOrderSemantics.reduct M).mem a two) (ho : (Project.FirstOrderSemantics.reduct M).mem offset w)
     (hQ : ConstructionFractionOrder.Carrier w Q) (hR : CutCarrier hM w Q R)
     (hrange : ∀ n q, (Project.FirstOrderSemantics.reduct M).mem n w →
       ConstructionBaseWeights.Weight hM height w one two offset n q → (Project.FirstOrderSemantics.reduct M).mem q Q) :
-    ∃ f, Graph hM height w one two offset Q f ∧ RangeCuts R f := by
+    ∃ f, ForcingSupportSize.MapsTo w R f ∧ Graph hM height w one two offset Q f ∧ RangeCuts R f := by
   let env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) 5 :=
     { bound := Fin.cases w (Fin.cases one (Fin.cases two (Fin.cases offset (fun _ => Q)))), free := fun _ => w }
   have hValueRange : ∀ n c, (Project.FirstOrderSemantics.reduct M).mem n w →
       Value hM height w one two offset Q n c → (Project.FirstOrderSemantics.reduct M).mem c R := by
     rintro n c hn ⟨q,hq,hc⟩
     exact (hR c).mpr (principal_cut hM hw hQ (hrange n q hn hq) hc)
-  obtain ⟨f,_,hf⟩ := ZF.exists_setFunctionFromTo_of_denote (ModelTransfer.project_models_iff.mp hM)
+  obtain ⟨f,hMap,hf⟩ := ZF.exists_setFunctionFromTo_of_denote (ModelTransfer.project_models_iff.mp hM)
     (KuratowskiZF.interpretation hM) (valueSchema height) env (source := w) (target := R) (by
       intro n hn
       obtain ⟨q,hq⟩ := ConstructionBaseWeights.weight_exists hM height hw hone ht htn ho hn
@@ -89,7 +90,18 @@ theorem exists_graph (hM : FirstOrder.Theory.Models M nativeZF) (height : Bool)
       exact hValueRange n c hn ((valueSchema_semantics hM height env n c).mp hc))
   have hg : Graph hM height w one two offset Q f := fun n c =>
     (hf n c).trans (and_congr Iff.rfl (valueSchema_semantics hM height env n c))
-  exact ⟨f,hg,fun n c hc => hValueRange n c ((hg n c).mp hc).1 ((hg n c).mp hc).2⟩
+  exact ⟨f,(ForcingSupportSize.native_mapsTo hM w R f).mpr hMap,hg,fun n c hc => hValueRange n c ((hg n c).mp hc).1 ((hg n c).mp hc).2⟩
+
+theorem exists_graph (hM : FirstOrder.Theory.Models M nativeZF) (height : Bool)
+    {w one two offset Q R : M.Carrier .set} (hw : (Project.FirstOrderSemantics.reduct M).IsOmega w)
+    (hone : (Project.FirstOrderSemantics.reduct M).mem one w) (ht : (Project.FirstOrderSemantics.reduct M).mem two w)
+    (htn : ∃ a, (Project.FirstOrderSemantics.reduct M).mem a two) (ho : (Project.FirstOrderSemantics.reduct M).mem offset w)
+    (hQ : ConstructionFractionOrder.Carrier w Q) (hR : CutCarrier hM w Q R)
+    (hrange : ∀ n q, (Project.FirstOrderSemantics.reduct M).mem n w →
+      ConstructionBaseWeights.Weight hM height w one two offset n q → (Project.FirstOrderSemantics.reduct M).mem q Q) :
+    ∃ f, Graph hM height w one two offset Q f ∧ RangeCuts R f := by
+  obtain ⟨f,_,hg,hr⟩ := exists_graph_with_map hM height hw hone ht htn ho hQ hR hrange
+  exact ⟨f,hg,hr⟩
 
 def graph {m : Nat} (height : Bool) (w one two offset Q f : Fin m) : Project.Formula 1 m :=
   .forallE (.forallE (.iff (ProjectSyntax.encode id (Source.SetLanguage.edge f.succ.succ (1 : Fin (m+2)) 0))

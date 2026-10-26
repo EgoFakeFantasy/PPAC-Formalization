@@ -30100,3 +30100,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeHeightIntervalsSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeHeightIntervalsSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionProbeHeightIntervalsSyntax.construction_kernel_certificate
+
+-- Retain existing native weight MapsTo and adapt completed Base margin to probe inputs.
+#print axioms PPAC.Migration.ConstructionCutWeights.exists_graph_with_map
+#print axioms PPAC.Migration.ConstructionPrincipalSumBridge.principal_sum
+#print axioms PPAC.Migration.ConstructionBaseUniformMargin.base_uniform
+#print axioms PPAC.Migration.ConstructionBaseUniformMargin.base_height_order
+#print axioms PPAC.Migration.ConstructionBaseUniformMargin.Data
+#print axioms PPAC.Migration.ConstructionBaseUniformMargin.exists_base
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.data
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.data_freeClosed
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.data_semantics
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.bridgeSentence
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.bridge_models
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.bridge_kernel_certificate
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionBaseUniformMarginSyntax.construction_kernel_certificate
