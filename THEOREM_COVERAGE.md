@@ -96,7 +96,7 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.margin / Base.heightCost full initial numerical data | ConstructionBaseHeightGap.construction_kernel_certificate | Constructs actual source n+1/n+3 cut-valued graphs, principal unit and positive unit bounds. For every internal x<y, the exact nonempty missed-cost image has a supremum strictly below the represented additive height gap. Follows source successive power doublings and monotonicity. No assumed margin field. Arbitrary-cut field operations, extensions and the final monoid remain. |
 
-These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
+These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates are recorded; 15 recursion, nine cardinal and six newly consumed sequence-restriction Bool certificates are explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
 
@@ -111,3 +111,5 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | ProbeWords.Path.inCone_letter_iff/one_inCone/inCone_of_dvd/inCone_intersection/old_common_multiple_of_cones/initial_profile | ConstructionProbeCones.construction_kernel_certificate | Actual quotient graphs and initial letter constructed from the original Path, with all six cone laws on every internal omega index. Consumers are old cone preservation, common-multiple reflection, probe_old_profile, margins and embeddings. |
 
 | ProbeWords.Path.letters_cardinal_le | ConstructionProbeCardinality.bound_kernel_certificate | Original infinite cardinal mu and D <= mu yield an actual injection Letters -> mu. Reuses the existing infinite-product bound and native ordinal least-preimage theorem, handles empty quotient, and does not assume injective projection or object choice. Word size and extensions remain. |
+
+| ProbeWords.Raw.old/cons and constructor cases | ConstructionProbeRaw.construction_kernel_certificate | Actual internal finite-word carrier and total unique constructors, injectivity, disjointness, closure and exhaustive cases. Direct reuse of native finite-sequence last parsing and append, including nonstandard internal lengths. Source oldAct/headDiv, reduced Word, induction consumers, size and extension remain. Newly inherited six native sequence-restriction Bool certificates are explicitly audited and recomputed. |

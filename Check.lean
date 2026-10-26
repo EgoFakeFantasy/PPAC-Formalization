@@ -69,3 +69,22 @@ run_cmd do
     let right ← liftTermElabM (Meta.evalExpr Bool (mkConst ``Bool) args[2]!)
     unless left && right do throwError "False native cardinal certificate: {name}"
   logInfo m!"Rechecked {names.length} pinned native cardinal Bool certificates"
+
+-- Additionally consumed pinned sequence restriction Bool certificates; no new object axiom.
+run_cmd do
+  let names : List Name := [
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3,
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6,
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1,
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4,
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2,
+    `YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5]
+  for name in names do
+    let info ← getConstInfo name
+    let args := info.type.getAppArgs
+    unless info.type.isAppOfArity ``Eq 3 && args[0]! == mkConst ``Bool do
+      throwError "Unexpected native sequence restriction certificate type: {name}"
+    let left ← liftTermElabM (Meta.evalExpr Bool (mkConst ``Bool) args[1]!)
+    let right ← liftTermElabM (Meta.evalExpr Bool (mkConst ``Bool) args[2]!)
+    unless left && right do throwError "False native sequence restriction certificate: {name}"
+  logInfo m!"Rechecked {names.length} pinned native sequence restriction Bool certificates"

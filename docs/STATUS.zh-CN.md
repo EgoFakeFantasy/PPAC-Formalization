@@ -1,15 +1,15 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 `bfcd2ec`。沿固定 OpenAI ProbeWords 完成锥判据、锥交、共同倍数反射、初始 profile 和字母基数界，消费者为原 Probe 扩张、margin 及嵌入。**连续完整验收到原 1–3；当前主开发仍在阶段 8，尚未进入收尾；最终对象 Con 未证明。**
+本批输入基点 `af890f8`。已从最初 `f28b0334a740108057adf18a24dc11abd866efbe` 的流程重新核对阶段编号，并沿固定 OpenAI `ProbeWords.Raw` 继续迁移。**连续完整验收到原 1–3；当前主开发仍在阶段 8，未进入收尾；最终对象 Con 未证明。**
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
 | 1–3 | 语言桥、重命名／替换、19 规则传输、完整 ZF 模式互导、两种 AC 对应均已验收 | 不重做；全部内部码归约属于 10 |
-| 4 | 原 Main 的 8998 项构建和五端点审计已有验收；本轮重核 75 份主链源码哈希全部匹配 | 完整 Comparator 未运行，缺 Linux/landrun；本轮没有重跑原环境 |
+| 4 | 原 Main 的 8998 项构建和五端点审计已有验收；本轮重核 75 份主链源码哈希全部匹配 | 完整 Comparator 未运行，缺 Linux/landrun；本轮未重跑原环境 |
 | 5 | 内部集合／图／ω／递归、名字、统一作用及 HS 基础已有 | 最终具体系统的消费归 8–10，不重造基础 |
-| 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 及完整模式已经完成；本轮回读 Model/Choice 正文确认范围 | 旧版依赖、当前对象语言相对化及原核接口尚未接通；不是缺少 L 数学 |
+| 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 及完整模式已经完成；本轮再次回读 Model/Choice 正文确认范围 | 固定旧版、当前对象语言相对化及原核接口尚未接通；不是缺少 L 数学 |
 | 7 | forces_ZF 的固定公理和完整模式已有原核证书 | 源单子／Presentation／正规滤子等前提仍需由具体系统实例化；整阶段不能打勾 |
-| 8 | 初始 Base 及完整 margin、Path 因子／终端图、过渡系统、实际字母商、动作／target／exit 和 Alphabet 已验。本批完成全部六条锥定律、实际初始字母及 lower-closure profile、字母商到无限基数的内部单射界 | 原 Raw/Word 正规形及其大小界、实际 Probe/Merger 扩张、保守嵌入与 margin 延拓、Placement、ConservativeHull 和最终饱和单子 |
+| 8 | 初始 Base 及完整 margin、Path 因子／终端图、过渡系统、实际字母商、动作／target／exit 和 Alphabet、锥定律／profile／字母基数界已验。本批完成 Raw 的内部载体及 old/cons 的存在唯一性、单射、互斥、闭包和穷尽分解 | 源 oldAct/headDiv、Word 正规形及大小界、实际 Probe/Merger 扩张、保守嵌入与 margin 延拓、Placement、ConservativeHull 和最终饱和单子 |
 | 9 | 原 Models 证明已有固定源码 | SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
 | 10 | 原 Main 依赖链和对象 Con 合同固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 特化、全部内部矛盾证明码归约及最终闭句未完成 |
 | 11 | 现有验收工具可复用 | 最终主定理验收未开始 |
@@ -18,20 +18,24 @@
 
 ## 本批实际证明与复用
 
-ConstructionProbeCones 对应原 Path.inCone_letter_iff、one_inCone、inCone_of_dvd、inCone_intersection、old_common_multiple_of_cones、initial_profile。以已证 letter_eq_iff 的共同阶段和左乘结合律完成精确锥交；由已有 target 取得旧共同倍数；factor_zero 给初始字母的精确下闭包。construction_kernel_certificate 从原内部 Path 出发构造全部实际图与初始字母，返回纯对象存在句子的 FirstOrder.Derives nativeZF []。覆盖所有内部 ω 索引，不假设右消去或过渡映射单射。
+ConstructionProbeRaw 对应原 ProbeWords.lean 的 Raw.old/cons 及其构造器案例。内部值表示为“尾到头的有限字母序列＋末尾旧元素”，cons 直接使用原生序列 append。载体通过固定底座积／幂集／分离和已有 Representatives 构造，长度遍历模型内部 ω，没有换成外部 Lean List。
 
-ConstructionProbeCardinality 对应原 Path.letters_cardinal_le。原无限基数 μ 与 D≤μ 前提保持不变：已复用的 ExistingCardinalBounds.infinite_product_l 给 ω×D 的编号；把实际商投影在未使用编号处延拓为固定字母，再直接调用固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal，取得 Letters→μ 的内部单射。空商通过空域单射单独处理。bound_kernel_certificate 返回原核纯对象基数界证书，不使用任意代表元选择或对象 AC。
+固定 YesMetaZFC 039c8e1 的 Ord/FiniteSequenceParsing.lean 已有 empty_or_decomposition_exists_unique、components_unique、empty_sequence_unique；本批直接消费这些定理完成构造器分解和单射，没有重造序列解析后端。KuratowskiZF 提供 ZF 背景的配对唯一性，ModelTransfer 使用已接入的 BMS 式原核强完备性回传。construction_kernel_certificate 的类型为 `FirstOrder.Derives nativeZF [] (Project.fo_sentence constructionSentence)`，句子实际构造载体并包含十项构造器合同。
 
-原生函数图、已有积／商／投影和 BMS 式 ModelTransfer 继续复用；没有重建无限基数乘法、最小原像定理或编码后端。现有内部有限序列库已有空序列、追加、存在性、前缀唯一性证书，供后续 Raw/Word 适配；本批尚未据此宣称正规形完成。L→ZF/ZFC、完整模式和 Proof/Sat 的已有／待接边界不变。
+这不是源全部 Raw/Word 的完成证书。oldAct/headDiv、reduced Word、后续归纳消费者、大小界和扩张单子尚待迁移；下一步按源 oldAct_one/mul、headDiv_iff、oldAct_injective 及 Word 构造推进，不新开基础设施路线。
 
 ## 误判纠正与清理
 
-此前把局部构建／引理验收当成主定理接近完成，把版本／语言接口缺口误报成数学缺口，并扩写未证明必要的字节兼容路线，这是规划和验收判断错误。对象层要求从早期已明确，不归因于用户改变目标或磁盘问题。最初 1–11 编号与最终合同保持不变。
+此前把局部构建／引理验收当成主定理接近完成，把版本／语言接口缺口误报成数学缺口，并扩写未证明必要的字节兼容路线，这是规划和验收判断错误。对象层要求从早期已明确，不归因于用户改变目标或磁盘问题。
 
-本轮从现行待办移除已完成锥交、初始 profile 和字母基数界，并明确剩余的字正规形大小界仍未完成；不把字母界冒充整个扩张大小界。正式 Audit 已覆盖新增 31 项声明，删除被接管的一次性预审探针；逐路径／SHA 清单见 verification/cleanup-probe-cone-cardinality-audit-20261026.json。未新增持久生成脚本或逐批报告。冻结字节模块的独立依赖裁剪尚未完成，不声称已全部删除。
+本批修正了未提交 Raw 中两处误用 ZFC 配对唯一性的接口，改用已有 ZF 接口；移除了对 ConstructionProbeCones 的不必要导入，直接依赖 Letters。修正文档中把后续已完成强迫公理和 Base 数值构造仍写作待办的陈旧表述。正式 Audit 已覆盖 43 项新声明，删除被接管的一次性预审探针；精确路径／SHA 见 verification/cleanup-probe-raw-audit-20261026.json。未新增持久生成脚本或逐批报告。
 
-## 实际验收
+冻结 NatPacket、字节读入、泛滤真值和独立 L 重建继续停止开发。冻结模块中仍有实际依赖的源码没有盲删；尚未完成整条冻结依赖链裁剪，不能宣称所有冗余代码已经清空。历史检查器未完成标记表示特定兼容接口，不表示底座缺少自然数、递归或证明码数学。
 
-定向严格构建、trust=0 预审和完整 scripts/verify.py 均通过：全仓 2960 项构建任务；9 条命令全部退出 0，其中 5 次 --trust=0；30876 项声明审计，799 项无公理依赖、30077 项使用已记录依赖；0 警告；2521 个当前文件指纹全部匹配。新增 31 项声明及 2 项原核证书，无新增可信依赖；字母基数证书消费的 34 项依赖全部已在先前可信基中记录和重算，不能说整个工程仅有三项标准公理。这些数量不是完成百分比。
+## 实际验收与可信边界
 
-本轮重核 75 份固定 OpenAI 主链源码哈希全部匹配；未修改供体。证据为 verification/commands.json、summary.json、build.log、audit.log、construction-probe-cone-cardinality-preaudit.log 和 construction-probe-cone-cardinality-full-verification.log。锥交/profile/字母基数界状态为 true；实际扩张单子及 relative_consistency_proved 仍为 false。无残留 Lean/Lake 进程；仅本地提交，不上传或发布。
+定向严格构建、trust=0 预审和完整 scripts/verify.py 均通过：全仓 2962 项构建任务；9 条命令全部退出 0，其中 5 次 --trust=0；30919 项声明审计，808 项无公理依赖、30111 项使用已记录依赖；0 警告；2522 个当前文件指纹全部匹配。这些数量不是完成百分比。
+
+新增 43 项声明和 1 项原核证书。本批证书依赖 16 项：标准三项、底座七项基础句子证书，以及序列限制的六项既有原生 Bool 证书；后六项为本项目本批新增消费，不能声称依赖不变。Check.lean 已重新计算全部六项，并继续复算既有 15 项递归与 9 项基数证书；源码和精确声明足迹由 SOURCE_LOCK 锁定。此复算不等于消除这些原生证书公理或改成纯内核归约。未添加对象 AC、不可达或新推导核。
+
+本轮重核 75 份固定 OpenAI 主链源码哈希全部匹配；未修改供体。证据为 verification/commands.json、summary.json、build.log、check.log、audit.log、construction-probe-raw-preaudit.log 和 construction-probe-raw-full-verification.log。Raw 载体／构造器状态为 true；Raw oldAct/Word、实际扩张单子与 relative_consistency_proved 仍为 false。仅本地提交，不上传或发布。

@@ -3493,7 +3493,8 @@ def main() -> None:
                                ("construction_probe_target", "ConstructionProbeTarget", 22),
                                ("construction_probe_alphabet", "ConstructionProbeAlphabet", 28),
                                ("construction_probe_cones", "ConstructionProbeCones", 26),
-                               ("construction_probe_cardinality", "ConstructionProbeCardinality", 5)):
+                               ("construction_probe_cardinality", "ConstructionProbeCardinality", 5),
+                               ("construction_probe_raw", "ConstructionProbeRaw", 43)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -3504,6 +3505,12 @@ def main() -> None:
         for extra_source, extra_digest in adapter_lock.get("additional_source_sha256", {}).items():
             if source_lock["files"][extra_source] != extra_digest:
                 raise RuntimeError("Additional forcing source lock changed: " + extra_source)
+        for native_file, native_digest in adapter_lock.get("certificate_source_files", {}).items():
+            if hashlib.sha256((ROOT / native_file).read_bytes()).hexdigest() != native_digest:
+                raise RuntimeError("Native certificate source changed: " + native_file)
+        for axiom in adapter_lock.get("additional_native_certificate_axioms", []):
+            if "`" + axiom not in (ROOT / "Check.lean").read_text(encoding="utf-8"):
+                raise RuntimeError("Missing inherited certificate reevaluation: " + axiom)
         body = strip_comments((ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8"))
         prefix = "PPAC.Migration." + module + "."
         names = {prefix + n for n in re.findall(
@@ -3682,6 +3689,8 @@ def main() -> None:
         raise RuntimeError("Inherited native recursion Bool checks were not executed")
     if "Rechecked 9 pinned native cardinal Bool certificates" not in (OUT / "check.log").read_text(encoding="utf-8"):
         raise RuntimeError("Inherited native cardinal Bool checks were not executed")
+    if "Rechecked 6 pinned native sequence restriction Bool certificates" not in (OUT / "check.log").read_text(encoding="utf-8"):
+        raise RuntimeError("Inherited native sequence restriction Bool checks were not executed")
     run(["lake", "env", "lean", "--trust=0", "CheckStep2.lean"], "step2-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep3.lean"], "step3-check.log")
     run(["lake", "env", "lean", "--trust=0", "CheckStep4.lean"], "step4-check.log")
@@ -7511,6 +7520,9 @@ def main() -> None:
         "source_probe_exit_equivariance_dvd_target_and_head_separation_kernel_proved": True,
         "source_probe_full_cone_intersection_profile_and_cardinal_bounds_proved": True,
         "source_probe_alphabet_constructed": True,
+        "source_probe_raw_carrier_and_constructor_cases_kernel_proved": True,
+        "source_probe_raw_old_action_and_reduced_word_proved": False,
+        "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,

@@ -70,7 +70,7 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 本批偏序复用：ForcingDiagramPoset.injection_ext 直接消费底座 IsSetRelation.eq_of_pairMember_iff 与既有 native_mapsTo，不另建图外延性。ProductPoset.preorder 直接返回现有 AtomicBasic.PreorderOn，原核闭合继续用 ModelTransfer.derives。源 sub_one/sub_sub/index_unique 的证明结构保留；实际单子构造仍沿 OpenAI Algebra/Construction，不能用任意现成单子替换所需的不变量。
 
-本批 HS 配对／并集消费：原 MulAction.stabilizer 的子群义务由 ProductStabilizer 调用已证实际动作恒等／复合／逆及 NameConjugacy 完成。配对交集直接使用 KP.intersection_exists_d；正规性直接复用 NormalFilter.is_normal，名字构造与作用交换继续使用 PairName/UnionName/UnionAction。UnionAction 的同一条目证明放宽为只检查实际条件的序保持，旧接口保留且旧依赖集合不变；没有另建条件作用或名字递归。原核 HS 闭包已接通，并已由本批 ForcingPairUnion 消费到原 mem_pair/mem_union 和 forces_pairing/forces_union；其余强迫公理仍有独立义务。
+本批 HS 配对／并集消费：原 MulAction.stabilizer 的子群义务由 ProductStabilizer 调用已证实际动作恒等／复合／逆及 NameConjugacy 完成。配对交集直接使用 KP.intersection_exists_d；正规性直接复用 NormalFilter.is_normal，名字构造与作用交换继续使用 PairName/UnionName/UnionAction。UnionAction 的同一条目证明放宽为只检查实际条件的序保持，旧接口保留且旧依赖集合不变；没有另建条件作用或名字递归。原核 HS 闭包已接通，并已由本批 ForcingPairUnion 消费到原 mem_pair/mem_union 和 forces_pairing/forces_union；其余强迫公理后来已由 ForcingZFAxioms 接通，当前剩余是具体系统实例化。
 
 本批四条强迫公理继续复用 AtomicRelations.mem_iff/eq_iff、AtomicBasic 的自反／边引入／单调性、AtomicLaws 相等替换和 Formula 的逻辑分解；没有新建强迫代数或添加强迫公理字段。实际 HS 域只对已有 hs 公式重索引。原 codeOrder 的域限制由已证 IsName 条目性质给出字面并集等价，且实际构造消费了该等价。SourceStatements 中四条原公理本身未改写。
 
@@ -91,7 +91,7 @@ Replacement 实例复用：固定底座 Collection.lean:69 的 ZF.collection_exi
 
 阶段 8 下一消费者核对：原 Construction/MonoidBase.Base 采用内部自然数加法单子，但完整 Object 还保留条件并、真实 height/cost 和非单位元；Algebra/DiagramOrder.HeightCost 使用有界实数上确界。新版 7979336 的 Descriptive/Dyadic 已提供内部 2^n 单位分数码及比较，可作特定辅助候选；RealPair 实际是 Baire 空间配对，不是实数有序域。尚未定位与 HeightCost 全合同对应的现成接口，不能据文件名声称已接通，也不能据此次局部检索声称其他仓库没有相关数学。当前已有自然数／序数算术、图构造和递归继续优先复用；没有修改或构建供体。
 
-本批 Base.M 已实际消费固定 039c8e1 底座 Ord/Natural.lean 的 ordinalAddition_mem_omega、members_areOrdinals/transitive，以及 Ord/Arithmetic 的存在唯一性、零元、结合、消去、序比较与右余项。FunctionConstruction.exists_setFunctionFromTo_of_denote 在原生 ω×ω 上构造精确内部加法表；Base.le_iff 与 joins 保留原自然数序／max 证明，不重新开发自然数算术。模型中全部内部 ω 都被覆盖，最后由已有 ModelTransfer 回传原核；height/cost/margin 未被假设为字段或误记为完成。新增声明使用已有 15 个递归 Bool 证书，预审未发现新的依赖；正式验收继续执行原证书复算。删除对整个 ProductParameters 的不必要导入，直接消费原生积构造。
+本批 Base.M 已实际消费固定 039c8e1 底座 Ord/Natural.lean 的 ordinalAddition_mem_omega、members_areOrdinals/transitive，以及 Ord/Arithmetic 的存在唯一性、零元、结合、消去、序比较与右余项。FunctionConstruction.exists_setFunctionFromTo_of_denote 在原生 ω×ω 上构造精确内部加法表；Base.le_iff 与 joins 保留原自然数序／max 证明，不重新开发自然数算术。模型中全部内部 ω 都被覆盖，最后由已有 ModelTransfer 回传原核；height/cost/margin 后来已由 ConstructionBaseHeightGap 完成实际构造和原核证明，不再列为待做。新增声明使用已有 15 个递归 Bool 证书，预审未发现新的依赖；正式验收继续执行原证书复算。删除对整个 ProductParameters 的不必要导入，直接消费原生积构造。
 
 Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad_exists_l／dyad_unique_l／dyad_denominator_pos_l、dyad_le_l 的幂指数比较及 ds_digits_l 的内部数字构造方法，适配到固定旧版已有算术与原 n+1/n+3 偏移。供体单文件 SHA 已锁定，未复制其零距离分支、Baire 拓扑或整个依赖闭包。高度分子通过内部非零自然数的前驱取得，成本分子为内部一；两张函数图直接使用原生积和可定义函数图。原核证书还包含两图所有输出的 0<分子<分母；这不是完整实数解释，也不把 Dyadic 当作实数域。该批只到分数图；后续切割与完整 Base.margin 已接通，当前不再列为缺口。
 
@@ -101,8 +101,10 @@ Base 数值解释的当前复用结果：原生 NaturalPrime、Arithmetic 的加
 
 Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影、动作、target 与 exit 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成 Representatives 同时表示 D×Letters，不重建积或商库。动作良定义／单射和 target 等变性已验收，过渡映射不要求单射。
 
-Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。下一消费者为原 Raw/Word 正规形及 Probe 扩张。
+Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；下一消费者为原 oldAct/headDiv、Word 正规形及 Probe 扩张。
 
 锥与大小界的实际复用：ConstructionProbeCones 消费已有 letter_eq_iff、letter_transition、动作及 TableLaws，沿源共同阶段计算取得锥交、共同倍数与 initial_profile；对应消费者为 old_cone_intersection/common_multiple_reflection/probe_old_profile、ProbeMargins 和 ProbePresentations。ConstructionProbeCardinality 直接调用已复用的 ExistingCardinalBounds.infinite_product_l 及固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal。先给实际代表元积编号，再将商投影延拓到基数，底座最小原像定理给反向单射；空商独立处理。没有重证基数乘法、最小原像定理或引入对象选择。
 
-ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。剩余为原 Raw/Word 正规形、它们的大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
+ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，剩余为原 oldAct/headDiv、Word 正规形、它们的大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
+
+Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequenceParsing.lean 的 empty_or_decomposition_exists_unique、components_unique 和 empty_sequence_unique，以及已有 exists_append，表示“尾到头的内部有限字母序列＋末尾旧元素”。载体由原生积／幂集／分离和现有 Representatives 构造；old/cons 的存在唯一性、单射、互斥、闭包与穷尽分解进入同一个纯对象句子的原核证书。未重建序列解析或把内部长度变为外部 List。只导入实际所需 ConstructionProbeLetters；两处误用 ZFC 配对唯一性接口已改为现有 KuratowskiZF.code_unique。原 oldAct/headDiv、Word/reduced 及大小界仍待按源实现。底座序列限制带来 6 项此前未消费的原生 Bool 证书，已纳入精确足迹和 Check 复算；不能说可信依赖未扩大。
