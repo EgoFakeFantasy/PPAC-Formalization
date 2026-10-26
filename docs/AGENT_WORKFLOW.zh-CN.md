@@ -37,3 +37,5 @@ oldHom／old_mul_eq_old_iff／old_dvd_old_iff／old_dvd_iff_headDiv 和 exit_ne_
 evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保持原任意单子；基础 lift 不要求源 conical／b≠unit，附加 generator 取值才使用这两个源条件。
 
 第 6 阶段已有 L 的接口、第 9 阶段模型应用、第 10 阶段全部内部码与最终 Con 仍未完成。源函数图、序列解析、ω 归纳、递归、完整模式、Proof/Sat、完备性均复用既有配套。实际验收统一见 STATUS，不以构建数估算剩余工期。
+
+清理边界：135 个无其他证明消费者的 Packet/ObjectPacket 模块已按精确传递 import 闭包退役（RETIRED_PACKET.json）；另外 291 个仍有依赖的模块保留。该清理不推动阶段编号，也不降低最终 Con 及全部内部码验收门。

@@ -261,32 +261,9 @@ import PPAC.Migration.Internal.ObjectPacketDivision
 import PPAC.Migration.Internal.ObjectPacketDescent
 import PPAC.Migration.Internal.ObjectPacketToken
 import PPAC.Migration.Internal.ObjectPacketTokenArithmetic
-import PPAC.Migration.Internal.ObjectPacketTokenExecution
-import PPAC.Migration.Internal.ObjectPacketTokenBounds
-import PPAC.Migration.Internal.ObjectPacketStructure
-import PPAC.Migration.Internal.ObjectPacketStructureRoot
-import PPAC.Migration.Internal.ObjectPacketStructureTail
-import PPAC.Migration.Internal.ObjectPacketStructureSearch
-import PPAC.Migration.Internal.ObjectPacketTokenPrefix
-import PPAC.Migration.Internal.ObjectPacketBytesTrace
-import PPAC.Migration.Internal.ObjectPacketBytesRecursion
-import PPAC.Migration.Internal.ObjectPacketByteInput
-import PPAC.Migration.Internal.ObjectPacketBytesExecution
-import PPAC.Migration.Internal.ObjectPacketVarintPrefix
-import PPAC.Migration.Internal.ObjectPacketVarintRecursion
-import PPAC.Migration.Internal.ObjectPacketVarintExecution
-import PPAC.Migration.Internal.ObjectPacketTokenCanonical
-import PPAC.Migration.Internal.ObjectPacketReaderStep
-import PPAC.Migration.Internal.ObjectPacketReaderInput
-import PPAC.Migration.Internal.ObjectPacketReaderHistory
-import PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend
-import PPAC.Migration.Internal.ObjectPacketReaderConsumption
 
-import PPAC.Migration.Internal.ObjectPacketReaderLength
 
-import PPAC.Migration.Internal.ObjectPacketReaderStopping
 
-import PPAC.Migration.Internal.ObjectPacketReaderTerminal
 
 import PPAC.Migration.Internal.ObjectStructuralListReverse
 
@@ -298,13 +275,9 @@ import PPAC.Migration.Internal.ObjectPacketReaderRecursion
 
 import PPAC.Migration.Internal.ObjectPacketReaderVarintSegment
 
-import PPAC.Migration.Internal.ObjectPacketReaderTokens
 
-import PPAC.Migration.Internal.ObjectPacketTokensByteInput
 
-import PPAC.Migration.Internal.ObjectPacketReaderPrefix
 
-import PPAC.Migration.Internal.ObjectPacketReaderInverse
 import PPAC.Migration.GodelDefRecursion
 import PPAC.Migration.ConstructibleHistory
 import PPAC.Migration.ConstructibleParameters
@@ -449,3 +422,8 @@ import PPAC.Migration.ConstructionProbeTransportHom
 import PPAC.Migration.ConstructionProbeTransportHomSyntax
 import PPAC.Migration.ConstructionProbeConservative
 import PPAC.Migration.ConstructionProbeConservativeSyntax
+
+-- Retained structural proofs previously reached only through the retired packet branch.
+import PPAC.Migration.Internal.StructuralListSpliceAlgebra
+import PPAC.Migration.Internal.StructuralListSpliceByte
+import PPAC.Migration.Internal.StructuralListSpliceSnoc

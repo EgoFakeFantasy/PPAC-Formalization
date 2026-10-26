@@ -38,10 +38,14 @@ oldHom 的完整 Conservative 与 Word 之间的 transport_conservative 是不�
 
 下一实际依赖是 ProbeGates 的 head/Gate 与共享 gate 论证，然后 ProbePresentations.transport_factors:389、transport_common_below:522、transport_conservative:572。不能跳过前提把现有单射同态改名成完整保守模拟。已经完成的 quotient/letterAct/乘法相容、字母锥与 oldHom 保守性不重做。
 
-实际 Probe/Merger 扩张、margin、Placement/ConservativeHull 和原 6、9–11 的剩余不变。NatPacket/字节兼容、泛滤真值和独立 L 重建继续停用；冻结模块只有在精确依赖确认后才裁剪。最终对象 Con 未证明。
+实际 Probe/Merger 扩张、margin、Placement/ConservativeHull 和原 6、9–11 的剩余不变。NatPacket/字节兼容、泛滤真值和独立 L 重建继续停用；已精确裁剪不被其他证明传递依赖的 135 个 Packet/ObjectPacket 模块，恢复点和 SHA 见 RETIRED_PACKET.json；291 个仍有依赖的同类模块保留。清理后全量验收已完成，见下文。最终对象 Con 未证明。
 
 ## 实际验收
 
-四个模块的定向构建和合并 --trust=0 预审退出 0。36 项声明中 7 项无公理依赖；两条原核证书各 22 项已记录依赖，没有新增可信依赖。完整 scripts/verify.py 已退出 0：3006 项构建任务；9 条命令全部退出 0，其中 5 条 --trust=0；31518 项声明（905 无公理依赖，30613 有已记录依赖）；0 警告。2566 个验收指纹和 75 份固定源主链哈希全部匹配。Word transportHom 与 oldHom 完整保守性门为 true；Word 之间完整保守模拟及最终 Con 仍为 false。验收结束未发现 Lean/Lake 残留进程。
+证明迁移提交 f39f60d：四个模块的定向构建、合并 --trust=0 预审及完整 scripts/verify.py 全部退出 0。36 项新增声明中 7 项无公理依赖；两条原核证书各 22 项已记录依赖，没有新增可信依赖。该提交验收为 3006 项构建、31518 项声明、2566 个指纹。
 
-证据：verification/construction-probe-transport-hom-build.log、construction-probe-transport-hom-syntax-build.log、construction-probe-conservative-build.log、construction-probe-conservative-syntax-build.log、construction-probe-transport-hom-preaudit.log、construction-probe-transport-hom-full-verification.log，以及 commands.json / summary.json。原 L 供体和原 4.34.1 Main 本批未重跑；仅本地修改，不上传或发布。
+随后精确退役 135 个隔离 Packet/ObjectPacket 模块。清理首轮因保留的列表拼接模块失去间接 import 而审计失败；补齐 3 个直接 import 根后重验通过，未删除其审计项。157 个冻结兼容支线进度标记已从当前状态输出移除。再删除 1080 个对应生成缓存后，最后完整 scripts/verify.py 退出 0：2871 项构建；9 条命令全部退出 0，其中 5 条 --trust=0；29173 项声明（893 无公理依赖，28280 有已记录依赖）；0 警告。2431 个验收指纹和 75 份固定源主链哈希全部匹配。声明数下降来自明确退役，不表示证明进度变化。
+
+Word transportHom 与 oldHom 完整保守性门为 true；Word 之间完整保守模拟及最终 Con 仍为 false。验收结束 Lean/Lake 进程数为 0；C 盘可用约 51.64 GiB。无新增持久生成脚本；291 个仍有传递引用的同类模块暂保留，这不表示它们已全部被证明是最终主定理必需的内容。
+
+证据：verification/commands.json、summary.json、isolated-packet-retirement-full-verification.log；原证明批次 construction-probe-transport-hom-full-verification.log 与四个定向构建／预审日志。首轮清理失败另存 isolated-packet-retirement-first-failure.log / first-audit.log，不作成功证据。退役源码哈希与恢复点见 docs/RETIRED_PACKET.json；缓存清单见 verification/cleanup-retired-packet-cache-20261026.json。原 L 供体及原 4.34.1 Main 本批未重跑；本批回读确认新版 L 的 ZF/ZFC 正文和固定版本。仅本地提交，不上传或发布。

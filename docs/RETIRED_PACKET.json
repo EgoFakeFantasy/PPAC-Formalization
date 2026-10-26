@@ -1,0 +1,1016 @@
+{
+  "recovery_commit": "f39f60d3196a9ffab3385b2208ef9b09b14e42ec",
+  "reason": "Retired NatPacket/reader compatibility route; no retained PPAC proof module transitively imports these modules. Their theorem validity is not disputed.",
+  "selection": "Packet/ObjectPacket outside transitive imports of every other PPAC proof module. Umbrella and historical fixtures removed together. Generic compilation, full retained declaration audit and trust checks remain.",
+  "modules": [
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketByteInput",
+      "path": "PPAC/Migration/Internal/ObjectPacketByteInput.lean",
+      "sha256": "3e657dc4fc43bce2f024e327bc8a909a35bdffb7ea31b9264ee06cefecc21a76",
+      "bytes": 29373
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketBytesExecution",
+      "path": "PPAC/Migration/Internal/ObjectPacketBytesExecution.lean",
+      "sha256": "08f3b1c7331e0d38496ef4d964f4fd80bdd77abe2e173518d848fe82da17160b",
+      "bytes": 26244
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketBytesRecursion",
+      "path": "PPAC/Migration/Internal/ObjectPacketBytesRecursion.lean",
+      "sha256": "97f0aece02df061997462458b9430eb6b6ea3e911891110aa81336fa90e64d5f",
+      "bytes": 29352
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketBytesTrace",
+      "path": "PPAC/Migration/Internal/ObjectPacketBytesTrace.lean",
+      "sha256": "9835369f2107ef25a168e6d6200e201195650213b5986d06d0cdb7039f332726",
+      "bytes": 24828
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderConsumption",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderConsumption.lean",
+      "sha256": "b8f97bdf9ecced27236be7c7923c406fdaaee7d19c1169f97469c4f549ba9678",
+      "bytes": 38066
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderHistory",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderHistory.lean",
+      "sha256": "7472dc6b5adf1fed94a70691ab7f5f78137ef628297f04d4c787bf5bd98c9723",
+      "bytes": 28638
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderHistoryAppend",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderHistoryAppend.lean",
+      "sha256": "d81c69965b7f7a47ec15da18e1488edb6ec3b48aebc19b3d29c519a65e40710d",
+      "bytes": 38630
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderInput",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderInput.lean",
+      "sha256": "915311e02c61aaf3b38d5c6172a3e70f82016aebf85ba584468f1f2868ca599f",
+      "bytes": 30530
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderInverse",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderInverse.lean",
+      "sha256": "b993a13e2384b9d5c383a8a448791947f70240d4fe60cacd4fc975068d993e9a",
+      "bytes": 20587
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderLength",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderLength.lean",
+      "sha256": "b25cbb49059641eb9010139a402cdfb832083db27cd2108ac9a05e1accff7ec9",
+      "bytes": 29023
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderPrefix",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderPrefix.lean",
+      "sha256": "2343961947a8ca5546198e7faee58a3ca56a39fbad6cbe3b886d68dfa8c7cd6d",
+      "bytes": 45849
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderStep",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderStep.lean",
+      "sha256": "9f954a3d0eb1548b8f607548e27c4863aabc408cfe708a1920d5bf7d6abf0e02",
+      "bytes": 32819
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderStopping",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderStopping.lean",
+      "sha256": "279418f0b0ad89d5e6cb6bf5fbf03b5661b81e13e82ca94c99e9dbf34de2fa97",
+      "bytes": 35751
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderTerminal",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderTerminal.lean",
+      "sha256": "08462f8252670aaca0aeecdcd7710556298905158e9f09c57e66d00938472c13",
+      "bytes": 38523
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketReaderTokens",
+      "path": "PPAC/Migration/Internal/ObjectPacketReaderTokens.lean",
+      "sha256": "c41df0bea10bf7bc85039ad9ab2c08cf095f9748475ebb0c691b09d97a8c41ff",
+      "bytes": 50105
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketStructure",
+      "path": "PPAC/Migration/Internal/ObjectPacketStructure.lean",
+      "sha256": "85103c2688478f8d2e1e8727275ab5e5c71543530f63d3e1052a087c02eaf926",
+      "bytes": 26671
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketStructureRoot",
+      "path": "PPAC/Migration/Internal/ObjectPacketStructureRoot.lean",
+      "sha256": "dba39fe9b12ca0b8a95b759c4adb98148cc2fd467c1fc0b30b36258542083316",
+      "bytes": 31253
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketStructureSearch",
+      "path": "PPAC/Migration/Internal/ObjectPacketStructureSearch.lean",
+      "sha256": "88a837367fb10ba5d93fd1d1748cefd51d31f48da6e6778711fd8b829173f2dd",
+      "bytes": 26489
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketStructureTail",
+      "path": "PPAC/Migration/Internal/ObjectPacketStructureTail.lean",
+      "sha256": "991f953f2b8fffdf431ba348360cff6d8300f705729f88f818543dd3463e54a0",
+      "bytes": 23794
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketTokenBounds",
+      "path": "PPAC/Migration/Internal/ObjectPacketTokenBounds.lean",
+      "sha256": "ac5b9339c4a13b379d9d084f4594ab7a01a04f0dbc7d59cd8a2f46421e645407",
+      "bytes": 25031
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketTokenCanonical",
+      "path": "PPAC/Migration/Internal/ObjectPacketTokenCanonical.lean",
+      "sha256": "14ddc29739609288a40205960e3d5e66d0c4c50c5f1712992889f50780e8f10d",
+      "bytes": 25729
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketTokenExecution",
+      "path": "PPAC/Migration/Internal/ObjectPacketTokenExecution.lean",
+      "sha256": "195c67652bb8345f659eb8be93c68c6e48bcb26e0305eac05a81c4868cf27e1f",
+      "bytes": 31624
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketTokenPrefix",
+      "path": "PPAC/Migration/Internal/ObjectPacketTokenPrefix.lean",
+      "sha256": "eb553fa28debd9476d060e16b5c7d754282add988cd6c86a33993bba835121a6",
+      "bytes": 22853
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketTokensByteInput",
+      "path": "PPAC/Migration/Internal/ObjectPacketTokensByteInput.lean",
+      "sha256": "28518403703443a6cf8b17af4db496835a3260be06f3ce95463ce91d55767508",
+      "bytes": 26381
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketVarintExecution",
+      "path": "PPAC/Migration/Internal/ObjectPacketVarintExecution.lean",
+      "sha256": "e3ebd659ab6f098d004102483a43360f1f406d9d2ef1659ed87d2a86067f2891",
+      "bytes": 29014
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketVarintPrefix",
+      "path": "PPAC/Migration/Internal/ObjectPacketVarintPrefix.lean",
+      "sha256": "4a13821d067a99ea309fb704cfd12a2bc64d72176520ba3cf1129574071d1e9d",
+      "bytes": 37610
+    },
+    {
+      "module": "PPAC.Migration.Internal.ObjectPacketVarintRecursion",
+      "path": "PPAC/Migration/Internal/ObjectPacketVarintRecursion.lean",
+      "sha256": "e74ba268123dcb909bbbcf94d2fdaa62979f695fb067b0bec66d334a16a21136",
+      "bytes": 27602
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketByteInputFields",
+      "path": "PPAC/Migration/Internal/PacketByteInputFields.lean",
+      "sha256": "0f4f430e1d8acdf4b4c6e14cb477f70f5f99a22d6b4fa6e92a34b4fc7c7871bf",
+      "bytes": 2514
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseAccepted",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseAccepted.lean",
+      "sha256": "4624ef995110f394c984e95e66d7639cc9fa387e737ba1a91613d6089637d2b2",
+      "bytes": 5774
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseArithmetic",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseArithmetic.lean",
+      "sha256": "2a060ad5b7d5d71f82b3170a680555e89befacccd2f13f1194a7ade702849ae3",
+      "bytes": 3562
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseCases",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseCases.lean",
+      "sha256": "27dc52ccf4d735534eb1e60b741f02fe4b173f8ebeda4978d92ee3db4c60d960",
+      "bytes": 1891
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseCons",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseCons.lean",
+      "sha256": "dba831053a14a7399c1b25d8ff3d157ba02ea8255ec061d56483c5ab43339686",
+      "bytes": 4490
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseConsPoint",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseConsPoint.lean",
+      "sha256": "3470d9a9608e588cd2382481067f80e2c035ee6fd2aff195cc769f94d7af3bed",
+      "bytes": 5752
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseInduction",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseInduction.lean",
+      "sha256": "0ee53f080dc9921c6b3b06c06051abc2066d4e0497e8bce2a2ea1cd93b078c25",
+      "bytes": 4495
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseInitialized",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseInitialized.lean",
+      "sha256": "90dc1f50d2604db651d4b95b8630045a76d5f9ec448a418128754a3457757225",
+      "bytes": 6727
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseNil",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseNil.lean",
+      "sha256": "b3c404beeb20e35fdb617aae01b583e6b13e438997c1f1ec6dffda1d0e2937aa",
+      "bytes": 1476
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseStep",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseStep.lean",
+      "sha256": "f61a3eb779419aa7e2d9f205c96020113432338e4e4a565f70db2e317ebdcd64",
+      "bytes": 2157
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderInverseSyntax",
+      "path": "PPAC/Migration/Internal/PacketReaderInverseSyntax.lean",
+      "sha256": "e88e1ba98a8832a52559826ed9127e18237a37ac61647533fc60e0902f6881f6",
+      "bytes": 6040
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderOutputBackward",
+      "path": "PPAC/Migration/Internal/PacketReaderOutputBackward.lean",
+      "sha256": "3b6b04195e14ed9868e275a211c927687294ac7f9bc8933f1da872bbfca8d5d4",
+      "bytes": 4136
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderOutputBackwardBase",
+      "path": "PPAC/Migration/Internal/PacketReaderOutputBackwardBase.lean",
+      "sha256": "0005f4ec17eadd25253f7b911fef491a85f5894e3aea8b6d3df52c16b1264028",
+      "bytes": 2937
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderOutputBackwardCons",
+      "path": "PPAC/Migration/Internal/PacketReaderOutputBackwardCons.lean",
+      "sha256": "6b4e38d3d0150ffae928d2a94266e33448aec5ea9c920e6730d24795a3660d0d",
+      "bytes": 4913
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderOutputCons",
+      "path": "PPAC/Migration/Internal/PacketReaderOutputCons.lean",
+      "sha256": "703ab048408ec849aec491dce0fc02924282372b34bb5ad7bc3d1daba0b807b2",
+      "bytes": 5884
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderOutputOrder",
+      "path": "PPAC/Migration/Internal/PacketReaderOutputOrder.lean",
+      "sha256": "3b71da08709752d2a17e82578a25d43c039fb6b07173b179c084a17072c5c30b",
+      "bytes": 5679
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixCases",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixCases.lean",
+      "sha256": "85b70dfd6198178da15806e09223ceb817bfe60c3466529522b6ab0e0f291cc7",
+      "bytes": 7121
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixContinue",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixContinue.lean",
+      "sha256": "55af9da939cb8e1a9753d0fe390c7698666707b4ecb8eedf30913b85c126dd90",
+      "bytes": 11867
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixContinuePoint",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixContinuePoint.lean",
+      "sha256": "895db8abd8b8fe0f1d712969373d4c1ce5743d828e70c7a0819a0c0ac347a963",
+      "bytes": 2882
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixContinueWitness",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixContinueWitness.lean",
+      "sha256": "3b17af41a47d6056ac2c30b6614ebd2de5b9571bd11e3e0f68e9edc214def85b",
+      "bytes": 11434
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixInduction",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixInduction.lean",
+      "sha256": "104be7b2f6b399d1da2c2e2d69ee423fdfa5e1044f57e86104952573872334c9",
+      "bytes": 4767
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixReconstruct",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixReconstruct.lean",
+      "sha256": "e80277a481db8061ee222b6f4280add097237036d1569d5a478c59559b4e8f04",
+      "bytes": 2833
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixSmall",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixSmall.lean",
+      "sha256": "0f3aa8bcdfde070fbc2a91bbb6790c7208d36e497a11ebf484079937f5fb6bab",
+      "bytes": 8923
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixStep",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixStep.lean",
+      "sha256": "d5a85fbc929cdf83dc30c0a0ce1cefa95d5558cb7cea986514a56eefdaadac14",
+      "bytes": 2981
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderPrefixSyntax",
+      "path": "PPAC/Migration/Internal/PacketReaderPrefixSyntax.lean",
+      "sha256": "2de37e463fd521029bbe8e0dcd4b2f5049cc258a2f17ec5a4d73faa0654646c1",
+      "bytes": 7787
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderSuccess",
+      "path": "PPAC/Migration/Internal/PacketReaderSuccess.lean",
+      "sha256": "f2a0b57fd64741e53039b66f615d42b823f1925c73225f5f2901956678d81947",
+      "bytes": 5634
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokenUnits",
+      "path": "PPAC/Migration/Internal/PacketReaderTokenUnits.lean",
+      "sha256": "f50fa403bb2fd8e12e3eee43e92fbf4d825e09bfa01a6e31c63633c3fba9f095",
+      "bytes": 2345
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensInduction",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensInduction.lean",
+      "sha256": "11d582ebb316524a87042cb92b9531ff948b472385978e6beccb295738927ebd",
+      "bytes": 4488
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensInitialized",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensInitialized.lean",
+      "sha256": "08d7d05e7000ce0506126d02769cfdd1ad0e5d5a4fcf822f85f9e679dffd1c8a",
+      "bytes": 4065
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensPoint",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensPoint.lean",
+      "sha256": "b15baa79a0b79c48e0858d237816924cf170dc4465867c4210fd1b603de3a3b8",
+      "bytes": 7867
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensRoundtrip",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensRoundtrip.lean",
+      "sha256": "8a5ce893c75fb182c359dce55adbc1e9ea222cba926f189d955ae84e293038ed",
+      "bytes": 3960
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensStep",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensStep.lean",
+      "sha256": "af9d2032428753ae28bf79872d9cff1656781c1ae300585ed4921173f15ba03f",
+      "bytes": 6517
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketReaderTokensSyntax",
+      "path": "PPAC/Migration/Internal/PacketReaderTokensSyntax.lean",
+      "sha256": "aae73f5ac0a99a27e70d7b83af47a202cac4e94ed00f48b2ca4d8db3aa97bded",
+      "bytes": 5293
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureAcceptedForward",
+      "path": "PPAC/Migration/Internal/PacketStructureAcceptedForward.lean",
+      "sha256": "6b73f16967556bde83be43a4d7beabdded937f8b66f48ea3391de2990a625018",
+      "bytes": 3996
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureAcceptedSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureAcceptedSyntax.lean",
+      "sha256": "e1615d8d0caba0aee362c823478bda54198585c76463cd64c7791598f93f2d60",
+      "bytes": 5984
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureApplication",
+      "path": "PPAC/Migration/Internal/PacketStructureApplication.lean",
+      "sha256": "e411cc4ec87785d7897b294df9e35248d57a5ff8a40d933905fb06aa85ee6772",
+      "bytes": 4462
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureApplicationSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureApplicationSyntax.lean",
+      "sha256": "72bb6e7d4b79babccfa36e69778083757e3dd0266d87b5292f83b228970b6903",
+      "bytes": 4193
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureCanonicalCases",
+      "path": "PPAC/Migration/Internal/PacketStructureCanonicalCases.lean",
+      "sha256": "4e1b00eae4bcacc5ab9ee047f5f646a980156a2312fa710761014e13569d4b87",
+      "bytes": 3868
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureDispatch",
+      "path": "PPAC/Migration/Internal/PacketStructureDispatch.lean",
+      "sha256": "88e282467014442e0e008f67eb250b0bc1f9b12e572b9003c1926a5db212ecd6",
+      "bytes": 8673
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureDispatchData",
+      "path": "PPAC/Migration/Internal/PacketStructureDispatchData.lean",
+      "sha256": "307feccb4b37c6d5d5db2d9e96ed6e22c2f0c9dfd8f0bbc904150e15e51517b7",
+      "bytes": 4277
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureExpr",
+      "path": "PPAC/Migration/Internal/PacketStructureExpr.lean",
+      "sha256": "da0462ea83036c21771303597838952dcd3dd72d73e81bc4eaaf1e00ab350828",
+      "bytes": 2120
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureLocal",
+      "path": "PPAC/Migration/Internal/PacketStructureLocal.lean",
+      "sha256": "9f7597c42e9d1ca0484c916c440c9862b394b7652e221dd0da7fcf4d7e9db381",
+      "bytes": 12192
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureLocalSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureLocalSyntax.lean",
+      "sha256": "db962ba3b0e86f6b69c41a247cff1e2a711dc789c42a1b52ca2a8b3b61733fae",
+      "bytes": 5978
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureMatrix",
+      "path": "PPAC/Migration/Internal/PacketStructureMatrix.lean",
+      "sha256": "8a8a0b89323f8ed16897ede2cb2783b272bff5f0d96401c6e88a0dbb73287a4c",
+      "bytes": 9189
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootCons",
+      "path": "PPAC/Migration/Internal/PacketStructureRootCons.lean",
+      "sha256": "04db40356885f3bfc27d99371bd6ae054b50cb5de456b104fc2520b6b921b92b",
+      "bytes": 3807
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootEquation",
+      "path": "PPAC/Migration/Internal/PacketStructureRootEquation.lean",
+      "sha256": "57e11ac57ec4f581b1dbf60081b34cd51c36e07f7bb352d1437be9359278efa8",
+      "bytes": 2690
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootLawSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureRootLawSyntax.lean",
+      "sha256": "61463be1f517d812361b87c93f967bdbbe453e37980ecffb7569295eeabd4356",
+      "bytes": 2754
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootLaws",
+      "path": "PPAC/Migration/Internal/PacketStructureRootLaws.lean",
+      "sha256": "4c0ae0c082c31a357f21562a2355a8df06e4588545056b328be3e95ffc9c1d6c",
+      "bytes": 3031
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootNil",
+      "path": "PPAC/Migration/Internal/PacketStructureRootNil.lean",
+      "sha256": "9c025cc11f0c1e41168f9cd0a67f72e816aef1145d9c6ce190fc61ec60d58ac0",
+      "bytes": 2802
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootPacket",
+      "path": "PPAC/Migration/Internal/PacketStructureRootPacket.lean",
+      "sha256": "46e0a20977219dcbca177f60b23c6c612788eedca71f90c09cee3f533a590b55",
+      "bytes": 3325
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureRootSyntax.lean",
+      "sha256": "e7047f64dba2116fddbb709298ee3ee3914e9d5229047cf2e4658230ae60255a",
+      "bytes": 6404
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootTransport",
+      "path": "PPAC/Migration/Internal/PacketStructureRootTransport.lean",
+      "sha256": "3d44bffee4efeeb5539687d00dd6a89a2f092518fb286b188413582d6a520939",
+      "bytes": 4899
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootTree",
+      "path": "PPAC/Migration/Internal/PacketStructureRootTree.lean",
+      "sha256": "8e2b2e86d9203146a41a5a23f64fbde06e2bc29dc06b1376a2bf8bf2f9c22a26",
+      "bytes": 3666
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRootWitness",
+      "path": "PPAC/Migration/Internal/PacketStructureRootWitness.lean",
+      "sha256": "496a4a1439745441f6725bd2b61d1e6e8a061dc94c6f7b9489ebc41d2bd36555",
+      "bytes": 1845
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureRuleData",
+      "path": "PPAC/Migration/Internal/PacketStructureRuleData.lean",
+      "sha256": "994fa32f4e21c813ac23eae19c479fe517f1b2ee1d8a902523b5fa11479aba84",
+      "bytes": 1964
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchAccepted",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchAccepted.lean",
+      "sha256": "6f90111c170c27486c3f72e634c5a53fcaefbbc218f70b90044fa5d225c36f92",
+      "bytes": 3631
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchApplication",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchApplication.lean",
+      "sha256": "39cc167bdcb700e167521690f22f085bf5435194e343c639141b848f88a16e49",
+      "bytes": 2496
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchArithmetic",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchArithmetic.lean",
+      "sha256": "54fbc9a20f07682776a5ae36d21347c88a21d1e467f2be8aa4da3dc0087fbfb3",
+      "bytes": 3115
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchBounds",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchBounds.lean",
+      "sha256": "2bc738d585fc355244b061bea4287361178864cfc5f7c76d4bdc77597ab320df",
+      "bytes": 9559
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchEnvironment",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchEnvironment.lean",
+      "sha256": "a9d31977509c3b7adc365b5b01e10f7cbea0513a1bd5f9f68da4784e0695a79c",
+      "bytes": 7952
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchEquation",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchEquation.lean",
+      "sha256": "52bf93f00c077954107ee3ff211697d28c6cd511b36a5d82df0df75f2b5b96df",
+      "bytes": 1845
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchHead",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchHead.lean",
+      "sha256": "e6ba0abf06627e0617ed0d1ae5ea2c48a31eb283dc40fdacd59ade5d8d1dcbed",
+      "bytes": 1730
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchLawSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchLawSyntax.lean",
+      "sha256": "85b1931044199d230a154e557d4efd29cedadb0545c8c3af8b12c6f0b1fa6ca3",
+      "bytes": 3811
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSearchLaws",
+      "path": "PPAC/Migration/Internal/PacketStructureSearchLaws.lean",
+      "sha256": "73ca26f72a86cc195afd9fc40afa24a60a3b819fde204a371ccbf752435f45dc",
+      "bytes": 3994
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureSyntax.lean",
+      "sha256": "823a319812a8ee51c63353a4b7a6fc761cb351d0dd6221bbede678ba7e18cfb8",
+      "bytes": 5105
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSystem",
+      "path": "PPAC/Migration/Internal/PacketStructureSystem.lean",
+      "sha256": "a94a0dd136d938babebbee97e150e013c0d15fff87439115a072be086f746b73",
+      "bytes": 2686
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureSystemSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureSystemSyntax.lean",
+      "sha256": "719b9663f2518a3898c53ac38cb01a62b1691df3ae6a4288d9173ea1869d31fe",
+      "bytes": 2722
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailBounds",
+      "path": "PPAC/Migration/Internal/PacketStructureTailBounds.lean",
+      "sha256": "722ab2fa07e9116c29c1c605d4ab8cde3c32ebddcece6e4b58705a8801a94ab9",
+      "bytes": 2218
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailChildren",
+      "path": "PPAC/Migration/Internal/PacketStructureTailChildren.lean",
+      "sha256": "106f619bee2b72eabe9acad7ab367b6abe15c32f4182e6e3dd361c373d4ac4fb",
+      "bytes": 2464
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailInduction",
+      "path": "PPAC/Migration/Internal/PacketStructureTailInduction.lean",
+      "sha256": "2e48bb66e31ec90f6274f9390ba463d10d9ecf60b6c57968c86728e7f41026fc",
+      "bytes": 3430
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailLawSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureTailLawSyntax.lean",
+      "sha256": "6b4ab5ae0cb6ae2f513192faf0ec1287d8e024a2b10c8e605aa32d1abdcd322b",
+      "bytes": 1941
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailLaws",
+      "path": "PPAC/Migration/Internal/PacketStructureTailLaws.lean",
+      "sha256": "c09151f522fe088182c41adceda16bf64e11b16b1b21c922f5996e8eb61ed892",
+      "bytes": 1613
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailPoint",
+      "path": "PPAC/Migration/Internal/PacketStructureTailPoint.lean",
+      "sha256": "f3e6728e353a31455c87a7471e37b30a43590a049cfdc28b8be69b4fb280b704",
+      "bytes": 4387
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketStructureTailSyntax",
+      "path": "PPAC/Migration/Internal/PacketStructureTailSyntax.lean",
+      "sha256": "0e3b02a7b76cdcfe7ee30f2a4fd65457df725ce3384c831f127e3625e7406f20",
+      "bytes": 3590
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBoundComparison",
+      "path": "PPAC/Migration/Internal/PacketTokenBoundComparison.lean",
+      "sha256": "df41ddb2429bc48dc394053956e45cb2b9f73d97bbe6e361ccad808f0fd9ca0f",
+      "bytes": 7050
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBounds",
+      "path": "PPAC/Migration/Internal/PacketTokenBounds.lean",
+      "sha256": "54a42f3f2a3ebc9d47d78920e50c59e98022b9c96923b52e2ffede439f6515f7",
+      "bytes": 4066
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBoundsInduction",
+      "path": "PPAC/Migration/Internal/PacketTokenBoundsInduction.lean",
+      "sha256": "c4dea37d36ffc9beb0bb2772dcbd0a9d4e6853d14e1562df932aa12e5d25ba42",
+      "bytes": 7133
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBoundsPoint",
+      "path": "PPAC/Migration/Internal/PacketTokenBoundsPoint.lean",
+      "sha256": "433d0098b17e45f0a05b77fcb4b6263457a554e427f877e6f3fd9f64e01bb740",
+      "bytes": 3701
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBoundsSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokenBoundsSyntax.lean",
+      "sha256": "4c4741896331f83b682e9f730a08b18c70144ca7612a2ce94f9886846add2ff1",
+      "bytes": 2563
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokenBoundsSystemSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokenBoundsSystemSyntax.lean",
+      "sha256": "b1a91ac336ca71f47fe7925342346b0ca6472368912c9bd6eb5c68642abb736c",
+      "bytes": 1005
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytes",
+      "path": "PPAC/Migration/Internal/PacketTokensBytes.lean",
+      "sha256": "1656d0979b76ab2a6b1817dd51b3e8e9e78eab1b5e9654f83c8370522c563ef8",
+      "bytes": 19644
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesByte",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesByte.lean",
+      "sha256": "6b1f6be5ace2e3aecaaa3b20d4b69343d8c54221822682520749bc4f4928e9d4",
+      "bytes": 784
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesByteConsequences",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesByteConsequences.lean",
+      "sha256": "6a1b1029b2b3babff8acc4e618c390afaa53eb5d19c42e010b2d55f1241c11c6",
+      "bytes": 4410
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesByteInduction",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesByteInduction.lean",
+      "sha256": "55162bd0cc0b9e45c1fdae87ea5094dbf18ce0974287b332fe895a701cbb01c4",
+      "bytes": 2410
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesBytePoint",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesBytePoint.lean",
+      "sha256": "590f8afc0ca785f0f84756cc19cee54ad62fb1c0a0d19d6f1b08d605c4226167",
+      "bytes": 2318
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesByteStep",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesByteStep.lean",
+      "sha256": "91a223e79879216cfe05875beafb985eb315d616a98c23a78e66e8812e4f5cde",
+      "bytes": 3542
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesByteSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesByteSyntax.lean",
+      "sha256": "b47cecfa494c691a188b42bbebb891c773f5498df5c502d05540908fe957bde4",
+      "bytes": 2816
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesDecomposition",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesDecomposition.lean",
+      "sha256": "7b7085697c5dd547ad1077b99196fdd9757733a122fe3728b3a88408e77c26f1",
+      "bytes": 4679
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesPushTransport",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesPushTransport.lean",
+      "sha256": "2bbd4bbe798754f800c03e1153e73b9a9d264f195d1ef7d683b48e222ba77775",
+      "bytes": 1497
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRawCons",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRawCons.lean",
+      "sha256": "6310f14f79d28753c857d112d28ed86d7e3c7eea50733579e448e9ba570f942a",
+      "bytes": 4852
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRecursionEquation",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRecursionEquation.lean",
+      "sha256": "1accaaa7ae02a3d8f62718dd3b717cd1a1d3bb21def81ef792c8e3a300a396e6",
+      "bytes": 2156
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRecursionSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRecursionSyntax.lean",
+      "sha256": "c63da787dd63527d69bbaed159ac3c8fc8310cda9634e82ff1a25977391cb181",
+      "bytes": 4866
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRowMap",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRowMap.lean",
+      "sha256": "f9a959ab29fe2cd34b4431693484d3dbe58dc8a36417a035a64d517b92581f35",
+      "bytes": 3694
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRowRestrict",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRowRestrict.lean",
+      "sha256": "587bd0000512d6cb73edf26e40e8d4fc793ceafcca50a017cbd3a4402583bc0b",
+      "bytes": 3878
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesRowSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesRowSyntax.lean",
+      "sha256": "11459b3cb71838f7e19399131854d4511169381b10424962faedd17440d68628",
+      "bytes": 10605
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeeded",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeeded.lean",
+      "sha256": "ffd3f649ef4ed16e11b869e240fb89b6f60024e00fe760ec6bfe16b8ec37b9f0",
+      "bytes": 5998
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeededTotal",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeededTotal.lean",
+      "sha256": "52c55641e22c19302e5af8c013d05808d464946076a3eaab33566d4dd78efb04",
+      "bytes": 1832
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeededTotalInduction",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeededTotalInduction.lean",
+      "sha256": "42e6ae627e177a799825e50d43a5a7354ae58d6a5a02b0d602f750b433e54982",
+      "bytes": 2470
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeededTotalPoint",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeededTotalPoint.lean",
+      "sha256": "6770859535e523b3035dcc37121d69cf2d23a44f3cff4120596ba4d63ca490cd",
+      "bytes": 6359
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeededTotalStep",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeededTotalStep.lean",
+      "sha256": "b2eb73f745ece9cb5a18ff1db6cfdff3fde57b2a4a3627e358e4aeac2cb7492d",
+      "bytes": 3869
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSeededTotalSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSeededTotalSyntax.lean",
+      "sha256": "fbd05984346c9c8ec5e0679285e427e56fac2d8279041e41d655c96626b45948",
+      "bytes": 5523
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesSyntax",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesSyntax.lean",
+      "sha256": "c2a1b0dd8baf7de38e4d3ef2a124ac3fbd8cfb1f4e8cac5f16f2f8b5050263b6",
+      "bytes": 2657
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTerminal",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTerminal.lean",
+      "sha256": "de68451c7efbb9b6876989a232ba89cc65f3fdcc6b89dfa3f1fb893709996f82",
+      "bytes": 2998
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTraceAppend",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTraceAppend.lean",
+      "sha256": "831cd02e044c5b1c3d1ad4fbacf3525609e79a9ca462da567240e4e81b68837f",
+      "bytes": 7642
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTraceBase",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTraceBase.lean",
+      "sha256": "50bad332708df6300e690c51785a9a19ddc97278a0885aefe189cf2582d1165a",
+      "bytes": 6580
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTracePrefix",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTracePrefix.lean",
+      "sha256": "ea724c60c244d15e4c4fcb7d2018a526fbe89c63ce0ddc4b2e13c3db1a95aca6",
+      "bytes": 5425
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTraceProperties",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTraceProperties.lean",
+      "sha256": "e1a6942aa98d729228d01a22db2d8b124bfaa0a53b47f7c94a3839a5a5032dff",
+      "bytes": 2550
+    },
+    {
+      "module": "PPAC.Migration.Internal.PacketTokensBytesTraceTransport",
+      "path": "PPAC/Migration/Internal/PacketTokensBytesTraceTransport.lean",
+      "sha256": "05459c2d0ff92f4f4c33d61a7ffd8ee406c5b4c06e6ab84e533e4366b9344a3d",
+      "bytes": 1497
+    }
+  ],
+  "retired_checker_functions": [
+    "check_Packet_actual_token_execution",
+    "check_Packet_actual_token_numeric_bounds",
+    "check_Packet_original_structural_forward_unfolding",
+    "check_Packet_specified_structural_root_recursion",
+    "check_Packet_joint_internal_structural_tail_bounds",
+    "check_Packet_structural_search_bounds_and_typed_recursion",
+    "check_Packet_actual_token_prefix_inverse",
+    "check_Packet_ordered_byte_fold_trace",
+    "check_Packet_exact_ordered_byte_fold_recursion",
+    "check_Packet_independent_valid_byte_input",
+    "check_Packet_actual_byte_execution",
+    "check_Packet_independent_varint_prefix_construction",
+    "check_Packet_exact_canonical_varint_recursion",
+    "check_Packet_canonical_varint_execution",
+    "check_Packet_actual_token_canonical_prefix_agreement",
+    "check_Packet_raw_reader_local_step",
+    "check_Packet_complete_reader_input_single_step",
+    "check_Packet_reader_state_code_coded_step_history_base",
+    "check_Packet_reader_history_append_and_determinism",
+    "check_Packet_reader_complete_stopping_history_exists_joint_unique",
+    "check_Packet_reader_actual_terminal_cause_and_classified_history",
+    "check_all_internal_whole_reader_inverse",
+    "check_all_internal_successful_reader_prefix",
+    "check_all_internal_encoded_token_byte_bound",
+    "check_all_internal_multi_token_encoding_and_reader_output",
+    "check_Packet_reader_all_internal_length_conservation_and_bound",
+    "check_Packet_reader_actual_input_projection_and_consumption"
+  ],
+  "removed_umbrella_imports": 27,
+  "removed_audit_declarations": 2345,
+  "removed_fixture_blocks": 390,
+  "retained_packet_modules": 291,
+  "archive": "verification/retired-isolated-packet-20261026.zip",
+  "retained_structural_import_roots": [
+    "PPAC.Migration.Internal.StructuralListSpliceAlgebra",
+    "PPAC.Migration.Internal.StructuralListSpliceByte",
+    "PPAC.Migration.Internal.StructuralListSpliceSnoc"
+  ],
+  "suppressed_frozen_compatibility_status_flags": [
+    "object_Packet_readTokens_complete_stopped_history_exists_joint_unique_proved",
+    "object_Packet_readTokens_actual_terminal_cause_and_classified_history_exists_unique_proved",
+    "object_actual_reader_initialization_literals_input_domain_and_empty_equation_proved",
+    "object_actual_reader_prepend_history_and_full_run_step_terminal_equations_proved",
+    "object_all_internal_whole_token_reader_inverse_proved",
+    "object_initialized_reader_success_iff_independent_encoding_proved",
+    "object_bounded_accepted_byte_stream_iff_independent_token_encoding_proved",
+    "object_successful_nonempty_bounded_reader_prefix_proved",
+    "object_reader_prefix_strict_actual_suffix_code_descent_proved",
+    "object_reader_output_order_backward_and_Nil_identity_proved",
+    "object_actual_reader_Some_excludes_rejection_and_recovers_EOF_proved",
+    "object_independent_token_encoding_global_byte_bound_proved",
+    "object_reader_continuation_digit_and_positive_scale_guards_proved",
+    "object_all_internal_token_encoding_exists_unique_and_exact_Nil_Cons_proved",
+    "object_multi_token_reader_consumption_and_actual_output_order_proved",
+    "object_initialized_reader_returns_actual_independent_encoded_tokens_proved",
+    "object_Packet_readTokens_all_internal_length_conservation_and_history_bound_proved",
+    "object_Packet_readTokens_actual_input_projection_and_adjacent_consumption_proved",
+    "object_Packet_readTokens_history_append_and_all_index_determinism_proved",
+    "object_Packet_readTokens_exact_state_code_coded_step_and_history_zero_base_proved",
+    "object_Packet_readTokens_complete_input_single_step_proved",
+    "object_Packet_raw_readTokens_local_step_domain_and_determinism_proved",
+    "object_Packet_given_actual_Cons_Bytes_exact_tail_execution_proved",
+    "object_Packet_independent_Prefix_full_exact_arithmetic_recursion_proved",
+    "object_Packet_actual_Tok_canonical_prefix_ALL3_requires_only_omega",
+    "object_Packet_actual_Tok_agreement_quotient_IH_and_128_256_witnesses_discharged",
+    "object_Packet_actual_Tok_iff_Bytes_at_any_actual_canonical_list_proved",
+    "object_Packet_varint_joint_Formula2_existence_byte_domain_unique_implemented",
+    "object_Packet_varint_joint_internal_IH_and_128_256_witnesses_discharged",
+    "object_Packet_varint_all_actual_candidates_independent_byte_input_guard_proved",
+    "object_Packet_varint_unique_list_fiber_exact_natural_domain_only_omega",
+    "object_Packet_varint_full_dual_graph_prefix_restriction_proved",
+    "object_Packet_varint_all_internal_raw_fold_recursion_proved",
+    "object_Packet_varint_nonzero_tail_value_proves_smaller_canonical_nonempty",
+    "object_Packet_varint_canonical_exact_recursion_final_ALL2_requires_only_omega",
+    "object_Packet_varint_canonical_actual_128_smaller_graph_alignment_proved",
+    "object_Packet_actual_Tok_iff_independent_canonical_prefix_proved",
+    "object_Packet_independent_varint_zero_seeded_dual_graph_constructed",
+    "object_Packet_varint_cells_terminal_nonzero_continuation_disjoint_proved",
+    "object_Packet_varint_actual_cell_byte_bounds_proved",
+    "object_Packet_independent_varint_terminal_and_continuation_graph_closure_proved",
+    "object_Packet_independent_varint_prefix_constructors_exact_tail_proved",
+    "object_Packet_independent_varint_all_internal_exact_reverse_recursion_proved",
+    "object_Packet_independent_varint_full_total_unique_and_byte_input_domain_proved",
+    "object_Packet_actual_byte_execution_exact_independent_input_domain_proved",
+    "object_Packet_actual_byte_execution_joint_internal_IH_discharged",
+    "object_Packet_actual_byte_execution_unique_fiber_domain_only_omega_proved",
+    "object_Packet_independent_byte_input_guard_uses_original_full_Fields_graph",
+    "object_Packet_byte_input_guard_graph_pointwise_bounds_equivalence_proved",
+    "object_Packet_byte_input_guard_all_internal_Nil_Cons_recursion_proved",
+    "object_Packet_byte_input_guard_actual_head_and_tail_bounds_derived",
+    "object_Packet_byte_input_guard_length_graph_and_radix_witnesses_eliminated",
+    "object_Packet_byte_input_guard_final_interfaces_require_only_omega",
+    "object_Packet_byte_input_guard_independent_of_Bytes_execution_proved",
+    "object_Packet_ordered_byte_fold_dual_restricted_prefix_graphs_constructed",
+    "object_Packet_ordered_byte_fold_full_terminal_row_normalization_proved",
+    "object_Packet_ordered_byte_fold_all_internal_exact_recursion_iff_proved",
+    "object_Packet_ordered_byte_fold_exact_recursion_ALL3_requires_only_omega",
+    "object_Packet_ordered_byte_fold_reverse_prefix_and_radix_witnesses_eliminated",
+    "object_Packet_ordered_byte_fold_exact_recursion_Nil_tail_natural_guard_preserved",
+    "object_Packet_independent_ordered_byte_fold_trace_constructed",
+    "object_Packet_ordered_byte_fold_exact_typed_Nil_fiber_proved",
+    "object_Packet_ordered_byte_fold_Cons_forward_constructed",
+    "object_Packet_ordered_byte_fold_closure_sequence_and_radix_witnesses_eliminated",
+    "object_Packet_ordered_byte_fold_all_internal_trace_lengths_preserved",
+    "object_Packet_ordered_byte_fold_global_total_unique_proved",
+    "object_Packet_ordered_byte_fold_full_Cons_recursion_iff_proved",
+    "object_Packet_actual_token_numeric_prefix_inverse_proved",
+    "object_Packet_actual_token_joint_input_remaining_tail_unique_proved",
+    "object_Packet_actual_token_terminal_continuation_disjoint_proved",
+    "object_Packet_actual_token_prefix_ALL5_requires_only_omega",
+    "object_Packet_actual_token_prefix_all_internal_IH_discharged",
+    "object_Packet_actual_token_prefix_exact_accepted_fiber_proved",
+    "object_Packet_structural_all_original_assignment_naturality_proved",
+    "object_Packet_structural_four_full_original_application_equivalences_proved",
+    "object_Packet_structural_actual_all_internal_typed_recursion_iff_proved",
+    "object_Packet_structural_actual_recursion_iff_requires_only_omega",
+    "object_Packet_structural_actual_Nil_tail_naturality_guard_preserved",
+    "object_Packet_structural_actual_tree_tail_le_output_proved",
+    "object_Packet_structural_actual_forest_tail_le_output_proved",
+    "object_Packet_structural_tail_all_internal_IH_discharged",
+    "object_Packet_structural_tail_bounds_require_only_omega",
+    "object_Packet_structural_actual_child_subcode_descent_proved",
+    "object_Packet_structural_actual_acceptance_independently_defined",
+    "object_Packet_structural_canonical_entries_actual_acceptance_iff_proved",
+    "object_Packet_structural_all_internal_actual_forward_recursion_proved",
+    "object_Packet_structural_actual_forward_requires_only_omega",
+    "object_Packet_structural_actual_acceptance_all_field_naturality_proved",
+    "object_Packet_structural_four_original_local_matrices_proved",
+    "object_Packet_structural_four_exact_bounded_applications_proved",
+    "object_Packet_structural_four_forward_applications_proved",
+    "object_Packet_structural_three_tag_dispatch_proved",
+    "object_Packet_structural_all_internal_forward_root_system_proved",
+    "object_Packet_structural_unbounded_reverse_search_bounds_discharged",
+    "object_Packet_structural_joint_internal_tail_bound_proved",
+    "object_Packet_structural_specified_root_fields_normalized",
+    "object_Packet_token_numeric_input_tail_bounds_internal_IH_discharged",
+    "object_Packet_token_actual_input_le_output_proved",
+    "object_Packet_token_actual_tail_le_output_proved",
+    "object_Packet_token_all_internal_numeric_bounds_proved",
+    "object_Packet_token_final_numeric_bounds_requires_only_omega",
+    "object_Packet_token_shifted_byte_bound_proved",
+    "object_Packet_token_output_existence_internal_IH_discharged",
+    "object_Packet_token_output_uniqueness_internal_IH_discharged",
+    "object_Packet_token_exact_internal_unique_output_domain_proved",
+    "object_Packet_token_final_execution_requires_only_omega",
+    "object_Packet_token_specified_root_fields_normalized",
+    "object_Packet_token_exact_arithmetic_recursive_equation_proved",
+    "object_Packet_token_canonical_and_root_witnesses_eliminated",
+    "object_Packet_token_all_internal_acceptance_recursive_iff_proved",
+    "object_Packet_token_actual_small_large_branch_test_proved",
+    "object_Packet_token_literal_arithmetic_recursion_system_constructed",
+    "object_Packet_token_invalid_natural_field_rejection_proved",
+    "object_Packet_token_original_rule_matrices_proved",
+    "object_Packet_token_all_six_assignment_search_bounds_proved",
+    "object_Packet_token_canonical_bounded_application_equivalence_proved",
+    "object_Packet_token_actual_table_dispatch_proved",
+    "object_Packet_token_relational_condition_recursive_equation_proved",
+    "object_Packet_token_actual_two_radix_system_constructed",
+    "object_Packet_token_all_internal_canonical_arithmetic_proved",
+    "object_Packet_token_actual_execution_total_unique_proved",
+    "object_Packet_internal_quotient_weak_and_strict_descent_proved",
+    "object_Packet_internal_quotient_exact_stopping_threshold_proved",
+    "object_Packet_internal_quotient_zero_output_exact_fields_proved",
+    "object_Packet_internal_quotient_recursion_induction_schema_proved",
+    "object_Packet_relational_affine_all_internal_descent_contract_proved",
+    "object_Packet_internal_quotient_descent_literal_system_constructed",
+    "object_Packet_radix_division_all_internal_output_exists_proved",
+    "object_Packet_radix_division_internal_quotient_bands_disjoint_proved",
+    "object_Packet_radix_division_unique_inverse_fiber_proved",
+    "object_Packet_radix_division_exact_internal_domain_proved",
+    "object_Packet_relational_affine_inverse_exists_unique_proved",
+    "object_Packet_radix_division_actual_literal_system_constructed",
+    "object_Packet_affine_exact_root_predecessor_equation_proved",
+    "object_Packet_relational_affine_internal_omega_IH_discharged",
+    "object_Packet_relational_affine_condition_exact_arithmetic_proved",
+    "object_Packet_relational_affine_all_internal_acceptance_iff_proved",
+    "object_Packet_relational_affine_literal_arithmetic_system_constructed",
+    "object_Packet_relational_affine_execution_total_unique_proved",
+    "object_Packet_actual_ten_rule_relational_trace_system_constructed",
+    "object_Packet_actual_ten_rule_affine_root_dispatch_proved",
+    "object_Packet_relational_condition_all_internal_unfold_proved",
+    "object_Packet_relational_affine_base_successor_acceptance_proved",
+    "object_Packet_original_Basic_AST_condition_translation_proved",
+    "object_Packet_original_affine_head_search_bounds_proved",
+    "object_Packet_original_affine_full_arity_application_iff_proved",
+    "object_Packet_original_affine_all_internal_application_law_proved",
+    "object_Packet_original_affine_literal_application_system_constructed",
+    "object_Packet_original_addConst_graph_addition_correspondence_proved",
+    "object_Packet_original_affine_local_matrix_equivalence_proved",
+    "object_Packet_original_affine_all_internal_local_laws_proved",
+    "object_Packet_original_affine_literal_matrix_system_constructed",
+    "object_Packet_128_256_affine_arithmetic_total_unique_proved",
+    "object_Packet_affine_all_internal_recursive_equation_proved",
+    "object_Packet_actual_literal_radix_systems_constructed",
+    "object_Packet_actual_Horn_affine_condition_correspondence_proved",
+    "object_full_NatPacket_byte_tree_bridge_proved"
+  ],
+  "status_flag_scope": "Remove frozen compatibility progress booleans from current status; retained proofs are still compiled and audited. Do not relabel removed booleans as false or use historical successes as current migration progress."
+}
