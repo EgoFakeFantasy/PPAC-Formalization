@@ -94,3 +94,5 @@ Replacement 批次：删除未被实际消费者使用的 orbit/localBound 额�
 Base.M 批次：去掉 ConstructionBaseMonoid 对 ProductParameters 的不必要导入，直接使用原生自然数与积构造；没有新增算术后端或持久脚本。正式 Audit.lean 覆盖全部 23 项声明后，核对本仓绝对路径、普通文件和 SHA-256，删除 verification/ConstructionBaseMonoidAudit.lean；清单为 cleanup-base-monoid-probe-20261026.json，预审日志保留。旧字节支线仍冻结，未作无依据批量删除。
 
 Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性、幂比较及数字构造，不复制零距离／Baire 分支，不导入新版依赖树。正式 Audit.lean 接管 41 项声明后，按解析本仓绝对路径、普通文件和 SHA-256 删除一次性 ConstructionBaseWeightsAudit.lean；清单为 verification/cleanup-base-weights-probe-20261026.json，预审和全验收日志保留。未新增持久脚本，供体未修改，字节支线未重启。
+
+分数比较批次：直接导入已存在的原生 NaturalPrime 交换律，不复制其整除／素数后续内容，也不修改底座。正式 Audit.lean 接管 50 项声明后，按本仓绝对路径、普通文件和 SHA-256 白名单删除 ConstructionFractionOrderAudit.lean；清单为 verification/cleanup-fraction-order-probe-20261026.json。预审／完整日志保留，无新增持久脚本，冻结支线未恢复。

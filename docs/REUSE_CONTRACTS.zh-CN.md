@@ -94,3 +94,5 @@ Replacement 实例复用：固定底座 Collection.lean:69 的 ZF.collection_exi
 本批 Base.M 已实际消费固定 039c8e1 底座 Ord/Natural.lean 的 ordinalAddition_mem_omega、members_areOrdinals/transitive，以及 Ord/Arithmetic 的存在唯一性、零元、结合、消去、序比较与右余项。FunctionConstruction.exists_setFunctionFromTo_of_denote 在原生 ω×ω 上构造精确内部加法表；Base.le_iff 与 joins 保留原自然数序／max 证明，不重新开发自然数算术。模型中全部内部 ω 都被覆盖，最后由已有 ModelTransfer 回传原核；height/cost/margin 未被假设为字段或误记为完成。新增声明使用已有 15 个递归 Bool 证书，预审未发现新的依赖；正式验收继续执行原证书复算。删除对整个 ProductParameters 的不必要导入，直接消费原生积构造。
 
 Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad_exists_l／dyad_unique_l／dyad_denominator_pos_l、dyad_le_l 的幂指数比较及 ds_digits_l 的内部数字构造方法，适配到固定旧版已有算术与原 n+1/n+3 偏移。供体单文件 SHA 已锁定，未复制其零距离分支、Baire 拓扑或整个依赖闭包。高度分子通过内部非零自然数的前驱取得，成本分子为内部一；两张函数图直接使用原生积和可定义函数图。原核证书还包含两图所有输出的 0<分子<分母；这不是完整实数解释，也不把 Dyadic 当作实数域。原 height/cost/margin 的实数部分仍明确待接。
+
+分数比较批次：定位并直接调用固定底座 Ord/NaturalPrime.lean:497 的 Structure.natural_mul_comm，以及既有乘法结合、正因子严格递增、唯一性和内部 ω 闭包。交叉比较传递性只组合这些已有算术结果，不重建自然数乘法；载体由原生积和分离构造，上一批 weights_proper 直接证明原两图的值属于载体。单位分数比较的原核证书核对逆分母次序，与 Dyadic 消费者合同一致。比较对象是编码全预序，不把编码等号当作分数数值相等；完整有理数／实数解释和 margin 仍需后续衔接。

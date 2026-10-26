@@ -78,6 +78,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | MonoidConstruction.Base.height / cost fraction data | ConstructionBaseWeights.construction_kernel_certificate | Exact internal function graphs for ((2^(n+1)-1),2^(n+1)) and (1,2^(n+3)); total/unique on all internal omega, with natural numerator and denominator satisfying 0 < numerator < denominator. Adapts existing Dyadic positive-denominator arguments and native arithmetic. Fraction-to-real interpretation, real supremum and margin remain unproved; no full HeightCost claim. |
 
+| Base.height/cost ordered representation adapter | ConstructionFractionOrder.construction_kernel_certificate; unitOrder_kernel_certificate | Internal set of nonnegative natural fractions with nonzero denominators; cross-product comparison is reflexive, transitive and total. Both source weight graphs land in the carrier. Unit-fraction comparison is exactly reverse denominator order. Different equivalent codes need not be equal: no antisymmetry, complete-real-field, real embedding or margin claim. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
