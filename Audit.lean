@@ -29951,3 +29951,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.construction_kernel_certificate
+
+-- Actual all-cut addition associativity; pinned ProbeMargins interval prerequisite.
+#print axioms PPAC.Migration.ConstructionCutAssociativity.equiv_trans
+#print axioms PPAC.Migration.ConstructionCutAssociativity.common_denominator
+#print axioms PPAC.Migration.ConstructionCutAssociativity.sum_common_denominator
+#print axioms PPAC.Migration.ConstructionCutAssociativity.fraction_assoc
+#print axioms PPAC.Migration.ConstructionCutAssociativity.sum_fraction
+#print axioms PPAC.Migration.ConstructionCutAssociativity.sum_is_cut
+#print axioms PPAC.Migration.ConstructionCutAssociativity.member_reassociate
+#print axioms PPAC.Migration.ConstructionCutAssociativity.cut_assoc
+#print axioms PPAC.Migration.ConstructionCutAssociativitySyntax.associativitySentence
+#print axioms PPAC.Migration.ConstructionCutAssociativitySyntax.associativity_models
+#print axioms PPAC.Migration.ConstructionCutAssociativitySyntax.associativity_kernel_certificate
