@@ -438,3 +438,4 @@ import PPAC.Migration.ConstructionProbeConservativeSimulation
 import PPAC.Migration.ConstructionProbeSimulation
 import PPAC.Migration.ConstructionProbeConditionalJoins
 import PPAC.Migration.ConstructionProbeProfiles
+import PPAC.Migration.ConstructionPersistentProfiles

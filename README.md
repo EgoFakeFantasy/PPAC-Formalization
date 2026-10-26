@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。阶段 8 已有实际 Word 单子、呈现、大小界、完整保守模拟和条件并；本批沿固定源补初始 probe 的全 Word 除子／并 profile，并构造同一个 Word／probe 图系统的原核证书。完整验收结果以 STATUS 为准。下一缺口是 old gates／profile 在后续扩张中的保持，之后仍有 Probe/Merger、Placement/ConservativeHull；最终对象 Con 未证明。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。阶段 8 已有实际 Word 单子、呈现、大小界、完整保守模拟和条件并；初始 probe 完整 profile 已验收。本批沿固定源证明 old gates 和 profile 保持，构造同一个实际后继扩张并证明它保持所有旧 profile；初始接口也已接通。完整验收结果以 STATUS 为准。下一缺口是原 Path.simulation_pushout，之后仍有 margin、Merger、Placement/ConservativeHull；最终对象 Con 未证明。
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 
