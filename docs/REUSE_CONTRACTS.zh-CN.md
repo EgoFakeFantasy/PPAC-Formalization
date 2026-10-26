@@ -80,12 +80,14 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。
 
-映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输仍待接。本批没有新增递归或商后端。
+映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输现已接通，Path/probe 方程及完整扩张仍待装配。本批没有新增递归或商后端。
 
 字母模拟批次直接消费已存在的 exists_graph/map_letter/graph_injective、FactorMap/TerminalMap 和 inCone_letter_iff。原 Conservative.factor_eq 用旧因子保持与单射性恢复指定因子；再经共同阶段锥判据证明原 lettersMap_inCone_iff。没有新建序列、递归、满足关系或完备性后端。对象证书只证明原 AlphabetSimulation 的四项相容性，不声称已证明 Conservative 的全部四字段或 Word.transport_conservative。
 
 Raw/Word 传输批次复用 exists_node_map 中的原生函数复合、现有 finite sequence 长度唯一性及 prefixHead/reduced 判据。原 Raw.transport 的字面映射由内部序列逐项复合和末端映射实现；已证 headDiv/reducedness/oldAct 保持。Word.transport 直接调用原生 ZF.exists_restriction 限制实际 Raw 图到既有 WordCarrier，不新建序列或 Word 后端。三个原核证书的依赖分别为 10/16/16 项；后两项包含先前已有并重算的六项序列限制 Bool 证书，没有新增可信依赖。
 
-transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，Word-to-Word transport_conservative 的共享 gate 论证仍需迁移。
+transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，共享 gate 及 Word-to-Word transport_conservative 后续已接通。
 
 head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；共享 gate 存在性随后直接使用该纯公式索引 raw_induction 完成：变化的头部和目标词均置于归纳公式量词内，old/cons 后缀分别消费共享旧交和递归 gate，最终构造两侧实际 exit(s)*u。该结论已取得原核证书，未新建归纳后端。
+
+Word 完整保守传输批次：因子反映直接使用已有 raw_induction、head_transport_some、letterAct_injective 和共享 gate；整除反映复用已存在的通用 division_reflection。共同上界反映复用共享旧交与共享 gate，同头分支消费已有 eval_letterAct（即源生成元乘法的关系形式）。最终四字段通过 common_below、divides_trans 和因子反映组装，再用已有 exists_transport_hom 构造实际图；三个闭句继续走 ModelTransfer。没有重复旧嵌入保守性、重建生成元或加入对象选择原则。基础单子的 ConditionalJoins 和扩张 Word 的条件并是不同义务，后者仍须沿源 cone_join 迁移。

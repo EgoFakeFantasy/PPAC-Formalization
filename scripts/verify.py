@@ -2557,7 +2557,10 @@ def main() -> None:
                                ("construction_probe_gates_syntax", "ConstructionProbeGatesSyntax", 21),
                                ("construction_probe_head_transport", "ConstructionProbeHeadTransport", 10),
                                ("construction_probe_shared_intersections", "ConstructionProbeSharedIntersections", 13),
-                               ("construction_probe_shared_gates", "ConstructionProbeSharedGates", 9)):
+                               ("construction_probe_shared_gates", "ConstructionProbeSharedGates", 9),
+                               ("construction_probe_transport_factors", "ConstructionProbeTransportFactors", 14),
+                               ("construction_probe_transport_common", "ConstructionProbeTransportCommon", 11),
+                               ("construction_probe_conservative_simulation", "ConstructionProbeConservativeSimulation", 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6193,7 +6196,9 @@ def main() -> None:
         "source_probe_head_transport_kernel_proved": True,
         "source_probe_shared_old_intersections_kernel_proved": True,
         "source_probe_shared_gate_existence_kernel_proved": True,
-        "source_probe_conservative_simulation_transport_proved": False,
+        "source_probe_word_transport_factors_kernel_proved": True,
+        "source_probe_word_transport_common_below_kernel_proved": True,
+        "source_probe_conservative_simulation_transport_proved": True,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
