@@ -3484,7 +3484,8 @@ def main() -> None:
                                ("construction_fraction_addition", "ConstructionFractionAddition", 32),
                                ("construction_principal_addition", "ConstructionPrincipalAddition", 30),
                                ("construction_fraction_difference", "ConstructionFractionDifference", 16),
-                               ("construction_base_cost_bound", "ConstructionBaseCostBound", 25)):
+                               ("construction_base_cost_bound", "ConstructionBaseCostBound", 25),
+                               ("construction_base_height_gap", "ConstructionBaseHeightGap", 23)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7493,7 +7494,7 @@ def main() -> None:
         "source_initial_base_left_cancel_conical_unit_and_generator_proved": True,
         "source_initial_base_le_iff_and_pair_joins_proved": True,
         "source_initial_base_algebra_native_kernel_certificate_proved": True,
-        "source_initial_base_height_cost_and_margin_proved": False,
+        "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
         "source_initial_base_fraction_graph_native_kernel_certificate_proved": True,
@@ -7507,16 +7508,18 @@ def main() -> None:
         "source_initial_base_weight_principal_addition_kernel_proved": True,
         "source_principal_cut_nonnegative_difference_kernel_proved": True,
         "source_base_margin_exact_nonempty_cost_image_and_supremum_bound_kernel_proved": True,
-        "source_base_margin_strict_height_gap_estimate_proved": False,
+        "source_base_margin_strict_height_gap_estimate_proved": True,
+        "source_initial_base_actual_cut_graphs_and_full_margin_kernel_proved": True,
+        "source_initial_base_margin_scope": "Actual original n+1/n+3 weight graphs with positive unit bounds and, for every internal x<y, exact nonempty missed-cost image supremum strictly below the represented additive height gap. Native kernel certificate constructs the data. This is not arbitrary-cut field arithmetic or the later source extensions/final monoid.",
         "source_arbitrary_cut_addition_proved": False,
         "source_initial_base_fraction_real_interpretation_proved": False,
         "source_initial_base_fraction_carrier_total_preorder_constructed": True,
         "source_initial_base_fraction_order_native_kernel_certificates_proved": True,
         "source_initial_base_unit_fraction_reverse_denominator_order_proved": True,
         "source_initial_base_fraction_codes_claimed_antisymmetric": False,
-        "source_initial_base_fraction_order_scope": "Internal natural fraction-code carrier and cross-multiplication total preorder; includes both source weight graphs. Unit fractions have precisely reversed denominator order. Equivalent fraction codes remain distinct, but their principal cuts are proved equal. Rounded cut completion and cut-valued source weight graphs are now constructed. Complete real field arithmetic and margin remain unproved.",
-        "source_initial_base_weights_scope": "Exact internal natural fraction graphs ((2^(n+1)-1),2^(n+1)) and (1,2^(n+3)); positive numerator strictly below denominator. All internal omega, including nonstandard. No completed-real-field interpretation, real margin, or final construction is claimed.",
-        "source_initial_base_scope": "Only initial Base.M algebra, exact internal addition graph, zero unit, nonzero successor generator and pair joins. All internal/nonstandard naturals; original Base.object still needs the source margin estimate and its numerical interface. Final saturated construction and final Con remain incomplete.",
+        "source_initial_base_fraction_order_scope": "Internal natural fraction-code carrier and cross-multiplication total preorder; includes both source weight graphs. Unit fractions have precisely reversed denominator order. Equivalent fraction codes remain distinct, but their principal cuts are proved equal. Rounded cut completion and cut-valued source weight graphs are now constructed. Full Base numeric margin is proved in the cut representation; complete arbitrary-cut field arithmetic remains unproved.",
+        "source_initial_base_weights_scope": "Exact internal natural fraction graphs ((2^(n+1)-1),2^(n+1)) and (1,2^(n+3)); positive numerator strictly below denominator. All internal omega, including nonstandard. The actual cut-valued source weights and their full strict margin are proved separately; no complete arbitrary-cut field or final construction is claimed.",
+        "source_initial_base_scope": "Only initial Base.M algebra, exact internal addition graph, zero unit, nonzero successor generator and pair joins. All internal/nonstandard naturals; the separately constructed exact cut weight graphs now supply the full Base margin. The initial data must be consumed by the original extension interfaces. Final saturated construction and final Con remain incomplete.",
         "source_product_WithTop_action_instantiated": True,
         "source_product_WithTop_top_fixed_and_group_laws_proved": True,
         "source_product_WithTop_uniform_label_family_instantiated": True,
