@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。实际 Word 左消去单子、oldHom、整除反映及 conical 已验收；generator 实际图及关系已验收；evalHom 与任意内部目标单子上的实际 liftHom 已验收；Word.hom_ext 已验收；实际索引 probe 图与 Path.presentedHom_ext 已验收；相邻过渡传输与实际 interpretedLetter 已验收；本批完成 exit 相容、实际 probe 关系及索引呈现同态存在唯一性的原核证书；Raw/扩张大小界已回传原核；实际映射路径和字母商映射／单射反映已回传原核；动作／exit／锥相容和实际 AlphabetSimulation 已回传原核；Raw/Word 保守模拟及完整扩张仍待迁移；最终对象 Con 未证明。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。实际 Word 左消去单子、oldHom、整除反映及 conical 已验收；generator 实际图及关系已验收；evalHom 与任意内部目标单子上的实际 liftHom 已验收；Word.hom_ext 已验收；实际索引 probe 图与 Path.presentedHom_ext 已验收；相邻过渡传输与实际 interpretedLetter 已验收；本批完成 exit 相容、实际 probe 关系及索引呈现同态存在唯一性的原核证书；Raw/扩张大小界已回传原核；实际映射路径和字母商映射／单射反映已回传原核；动作／exit／锥相容和实际 AlphabetSimulation 已回传原核；Raw 传输及 reduced Word 实际单射已回传原核；Word 同态、完整保守模拟及扩张仍待迁移；最终对象 Con 未证明。
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

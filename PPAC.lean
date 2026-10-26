@@ -442,3 +442,6 @@ import PPAC.Migration.ConstructionProbeLettersMap
 import PPAC.Migration.ConstructionProbeLettersMapSyntax
 import PPAC.Migration.ConstructionProbeAlphabetMap
 import PPAC.Migration.ConstructionProbeAlphabetMapSyntax
+import PPAC.Migration.ConstructionProbeRawTransport
+import PPAC.Migration.ConstructionProbeRawTransportSyntax
+import PPAC.Migration.ConstructionProbeWordTransport
