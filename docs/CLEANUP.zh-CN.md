@@ -102,3 +102,5 @@ Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性�
 实际 import 图中有 431 个名称包含 Packet/Varint/Reader/Bytes 的模块，其中存在 13 个非同名模块直接消费者（例如 FixedAxiomTableSyntax、SequencePrependSyntax）。因此没有按名称批量删除它们；剩余裁剪必须先解开具体依赖，不能把“冻结”误记为“已删除”，也不以已投入成本继续开发。三个现有 scripts 均为验收入口，没有认定为垃圾。本轮未修改其他项目或供体。
 
 切割表示批次：正式 Audit 接管全部 74 项声明后，按本仓绝对路径与 SHA-256 删除唯一临时探针 ConstructionCutRepresentationAudit.lean，清单 verification/cleanup-cut-representation-probe-20261026.json。没有新增脚本、另开实数库或复制供体依赖树；全部集合／函数构造调用既有接口。旧字节支线继续冻结，本轮未作未经依赖核对的证明删除。
+
+加法批次：正式 Audit 接管全部 62 项声明后，核对本仓绝对路径与 SHA-256，删除唯一临时探针 ConstructionAdditionAudit.lean；清单 verification/cleanup-addition-probe-20261026.json，预审日志保留。没有新增脚本、通用代数后端或修改供体。字节支线继续冻结，剩余依赖裁剪未冒称完成。

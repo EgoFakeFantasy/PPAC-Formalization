@@ -86,6 +86,10 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.height/cost and positive/unit bounds in the cut representation | ConstructionCutWeights.construction_kernel_certificate | Exact internal graphs with original n+1/n+3 offsets, values in one cut carrier, constructed principal unit, and nonempty proper subcuts of that unit. Reuses native definable-function construction and arithmetic. Original real arithmetic and margin remain. |
 
+| Base.margin / HeightCost rational addition representation | ConstructionFractionAddition.addition_kernel_certificate | Exact (a*d+c*b,b*d) codes on all internal fractions, total/unique, commutative, and fixed-summand weak/strict order reflection. Monotonicity and equivalence compatibility feed actual principal-cut addition. Not a full field. |
+
+| Base.height/cost actual principal-cut value addition | ConstructionPrincipalAddition.addition_kernel_certificate; weightAddition_kernel_certificate | Addition is well-defined independently of input fraction representatives, total/unique/closed on represented principal cuts, commutative and inclusion-reflecting. Actual source weight graphs feed the operation. Arbitrary-cut addition, remaining arithmetic and the source margin are not yet proved. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.

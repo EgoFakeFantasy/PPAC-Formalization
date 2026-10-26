@@ -3480,7 +3480,9 @@ def main() -> None:
                                ("construction_fraction_order", "ConstructionFractionOrder", 50),
                                ("construction_fraction_density", "ConstructionFractionDensity", 17),
                                ("construction_real_cuts", "ConstructionRealCuts", 43),
-                               ("construction_cut_weights", "ConstructionCutWeights", 31)):
+                               ("construction_cut_weights", "ConstructionCutWeights", 31),
+                               ("construction_fraction_addition", "ConstructionFractionAddition", 32),
+                               ("construction_principal_addition", "ConstructionPrincipalAddition", 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7498,6 +7500,10 @@ def main() -> None:
         "source_initial_base_principal_cut_equivalence_and_order_reflection_proved": True,
         "source_initial_base_cut_bounded_set_suprema_proved": True,
         "source_initial_base_height_cost_cut_graphs_and_positive_unit_bounds_proved": True,
+        "source_initial_base_fraction_addition_total_unique_commutative_order_reflection_proved": True,
+        "source_initial_base_principal_addition_representation_independence_proved": True,
+        "source_initial_base_weight_principal_addition_kernel_proved": True,
+        "source_arbitrary_cut_addition_proved": False,
         "source_initial_base_fraction_real_interpretation_proved": False,
         "source_initial_base_fraction_carrier_total_preorder_constructed": True,
         "source_initial_base_fraction_order_native_kernel_certificates_proved": True,
