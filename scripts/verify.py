@@ -3469,7 +3469,12 @@ def main() -> None:
                                ("forcing_separation", "ForcingSeparation", 28),
                                ("forcing_separation_axiom", "ForcingSeparationAxiom", 8),
                                ("forcing_power_name", "ForcingPowerName", 27),
-                               ("forcing_power_axiom", "ForcingPowerAxiom", 5)):
+                               ("forcing_power_axiom", "ForcingPowerAxiom", 5),
+                               ("forcing_replacement_orbit", "ForcingReplacementOrbit", 12),
+                               ("forcing_replacement_witness", "ForcingReplacementWitness", 15),
+                               ("forcing_replacement_image", "ForcingReplacementImage", 8),
+                               ("forcing_replacement_axiom", "ForcingReplacementAxiom", 6),
+                               ("forcing_zf_axioms", "ForcingZFAxioms", 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7411,7 +7416,13 @@ def main() -> None:
         "source_subsetBound_normalize_and_literal_power_name_proved": True,
         "source_power_exact_edge_and_all_HS_mem_iff_proved": True,
         "source_actual_HS_forces_powerSet_native_certificate_proved": True,
-        "source_actual_HS_all_forced_ZF_schemas_proved": False,
+        "source_chosenWitness_consumer_discharged_by_native_Collection": True,
+        "source_internal_choice_function_constructed_or_assumed": False,
+        "source_replacementBound_whole_group_orbit_and_local_witness_proved": True,
+        "source_replacementImage_exact_membership_under_single_valuedness_proved": True,
+        "source_actual_HS_full_forced_Replacement_native_schema_proved": True,
+        "source_actual_HS_all_forced_ZF_schemas_proved": True,
+        "source_actual_HS_all_forced_ZF_scope": "Every external source axiom/schema has a native object derivation under original source monoid/Presentation/carrier/Normal/condition premises; concrete stage-8 algebra and arbitrary internal syntax/proof-code reduction are not discharged.",
         "source_product_actual_name_stabilizers_subgroup_proved": True,
         "source_product_HS_pair_union_object_kernel_certificates_proved": True,
         "source_product_HS_union_assumes_order_invariance_on_nonconditions": False,

@@ -380,3 +380,8 @@ import PPAC.Migration.ForcingSeparation
 import PPAC.Migration.ForcingSeparationAxiom
 import PPAC.Migration.ForcingPowerName
 import PPAC.Migration.ForcingPowerAxiom
+import PPAC.Migration.ForcingReplacementOrbit
+import PPAC.Migration.ForcingReplacementWitness
+import PPAC.Migration.ForcingReplacementImage
+import PPAC.Migration.ForcingReplacementAxiom
+import PPAC.Migration.ForcingZFAxioms

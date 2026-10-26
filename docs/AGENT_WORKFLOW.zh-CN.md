@@ -2,7 +2,7 @@
 
 阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
 
-**实际位置：1–3 已验收；4 原 Main／端点审计已通过、Comparator 未验收；5–6 部分完成。7–10 主数学链没有完成迁移，不能称为收尾。**
+**实际位置：1–3 已验收；4 原 Main／端点审计已通过、Comparator 未验收；5–6 仍有具体接入。第 7 阶段的强迫 ZF 前端合同已闭合，下一主线是第 8 阶段的具体源构造；8–10 未完成，不能称为收尾。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、具体系统中的 HS 作用实例与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
-| 7 | 源强迫前端 | 原子递归／定律、完整公式与固定证明保真、实际标签作用与正规滤子、原单子合同下偏序、全秩 HS、collect／共同支撑／separate 均已验收；七条固定强迫 ZF 公理及完整 Separation 已有原核证书，包括本批原 PowerSet | 接原 SymmetricChoice 的本地见证、群轨道界、replacementImage 和完整 forces_replacement，再装配 forces_ZF。具体单子构造归 8；全部内部公式／证明码归约归 10。不能把底座全模式误列为缺失 |
+| 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；本批接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -30,8 +30,8 @@
 
 ## 当前直接消费者
 
-原 `SymmetricNames.separate/mem_separate → SymmetricSets.subsetBound → normalize → PowerCandidate → power → mem_power → forces_powerSet` 已迁移。本批直接调用底座 SetConstruction.exists_powerSet、SeparationSyntax、恒等图及已有 collect_HS；保留原稳定子、精确边方程、稠密见证和相等替换。幂集界只约束一个名字的规范化子集编码，量词仍覆盖任意内部 HS 名字。
+固定 `SymmetricChoice.lean` 的 `WitnessIndex/chosenWitness → replacementBound → bounded_local_witness → image_in_bound → replacementImage → forces_replacement → forces_ZF` 已迁移。唯一需要对象化适配的宿主选择步骤，改由底座 Collection 给出覆盖所有有效索引的 HS 见证集；精确证明了源 bounded_local_witness 消费者合同，未构造或假定对象选择函数。随后保留源全群轨道、单值性、相等替换、稠密性及 Separation 像集证明。
 
-下一直接消费者是固定 `SymmetricChoice.lean` 的 `WitnessIndex/chosenWitness → replacementBound → bounded_local_witness → image_in_bound → replacementImage → forces_replacement → forces_ZF`。源 chosenWitness 使用宿主选择；目标必须用已存在的内部 Collection／所选背景履行本地见证义务，并证明所用关系式族与下游源合同相容。不能直接搬入宿主选择函数，也不另造通用 Collection 后端。
+下一主线为原阶段 8 的 Algebra/Construction。源 MonoidBase.Object 除实际左消去／conical 单子外还保留条件并、height/cost 与非单位元素；不能只提供一个任意单子即称原构造完成。沿原 DiagramOrder/Placements/MonoidBase 的依赖对接底座已有内部算术、图和递归，随后迁移扩张、塔与 conservative hull 不变量。先核查现成精确合同，缺少已接适配不等于缺少已有数学。
 
-本批证书保留源单子／呈现／正规滤子前提，阶段 8 必须提供原 Algebra/Construction 的实际构造；阶段 6 的已有 L 接口适配、9 的模型应用、10 的内部码及最终 Con 均未因此完成。完整验收数据统一见 STATUS，不以构建数量估计剩余工期。
+阶段 6 的已有 L 接口适配、9 的模型应用、10 的全部内部码与最终 Con 均未因 forces_ZF 完成。完整验收数据统一见 STATUS，不以构建数量估计剩余工期。

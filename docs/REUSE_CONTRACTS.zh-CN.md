@@ -78,10 +78,15 @@ Foundation 迁移直接消费已经完成的 ForcingMapLaws.formula_induction �
 
 Infinity 迁移直接消费固定底座 `ZF.exists_omega` 及内部 IsOmega 的空集／后继闭包，消费现成 checkName.exists_checked/edge_checkName/unique 和 HSCheck.check_hs。实际固定顶来自 ProductFamily.top_fixed；SuccessorOf 中的 SameMembers 由既有 ModelTransfer.extensionality 转为源等号。原 mem_check/check_successor 的稠密见证与原子相等替换保留；不另建自然数、check 递归或限制内部 ω。
 
-收集名字迁移消费现有 coordinate_bound（两次原生并）、exists_cartesian（原生积）、SeparationSyntax 全模式，构造恰好满足原索引／条件测试的有序对值域。HS 证明消费 ProductCovariance.inverse、NameConjugacy.inverse_action、实际稳定子子群和 Normal 的上闭性。indexed_permutes_iff 核对当前对象条件与源按索引存在见证合同，而非未经证明地改写前提。族图允许关系式呈现，源函数图是精确特例；这里未声称 SymmetricChoice.chosenWitness 的宿主选择已对象化，仍须在对应消费者处证明本地见证义务。
+收集名字迁移消费现有 coordinate_bound（两次原生并）、exists_cartesian（原生积）、SeparationSyntax 全模式，构造恰好满足原索引／条件测试的有序对值域。HS 证明消费 ProductCovariance.inverse、NameConjugacy.inverse_action、实际稳定子子群和 Normal 的上闭性。indexed_permutes_iff 核对当前对象条件与源按索引存在见证合同，而非未经证明地改写前提。族图允许关系式呈现，源函数图是精确特例；本批 Replacement 已用下述原生 Collection 适配该宿主选择步骤并证明本地见证消费者合同。
 
 参数元组稳定子直接消费固定底座 `SetTheory/Separation.lean:98 KP.intersection_exists_d`、现有 subgroup_intersection/实际名字稳定子和 Normal 的交闭性。沿源的零元组顶群、后继有限交证明；separation_support 用追加原名字的元组取得分离所需共同支撑。原核回传仍用 ModelTransfer，不重建集合交、群作用或完备性。新版 L 的 ZF/ZFC 定理正文已再次回读，完整模式及任意内部模型范围不变；本批没有重跑或改写供体。
 
 Separation 实例复用：内部子名字投影仅使用既有 coordinate_bound、原生积和 SeparationSyntax；没有新增函数／递归后端。normal_context 直接组合 ProductCovariance 与 Normal 的已有共轭子句，实际消费者为域传输和 separationTest_permute；不重证 HS.smul。atomic_congr/force_congr 只证明添加内部作用图／参数槽位不改变原递归或量词域，马上由实际 symmetry 和 exists_at_values 消费。mem_separate 复用原子的单调／稠密闭包及 tuple_congr；最终句子保持原 SourceStatements.separation，原核回传仍用 ModelTransfer。
 
 幂集迁移复用：ForcingPowerName.exists_candidates 直接调用固定底座 SetConstruction.lean:362 的 ZF.exists_powerSet，再用现有 SeparationSyntax 筛出全部内部 HS 子集。候选族用已有恒等图呈现，subsetBound_fixed 和 powerCandidate_permute 消费实际稳定子、Separation.entry_permute/symmetry、HSAction 与 collect_HS；normalize 直接消费已证分离成员等价。mem_power 保留源稠密与相等替换，ForcingPowerAxiom 用已有 ModelTransfer 回到原核。没有重建幂集、分离、递归或完备性。本批再次直接回读新版 7979336 的 l_model_zf_l/l_model_zfc_l 全模式及任意模型范围；没有修改或重复编译供体。
+
+Replacement 实例复用：固定底座 Collection.lean:69 的 ZF.collection_exists_d 在精确有效 raw-entry/condition 索引集上收集 HS 见证，经现有 Separation 过滤；它不选唯一函数。Replacement.lean:98 的 exists_functionalImage 直接构造整个内部群作用的精确像，现有实际恒等／乘法图和 NameConjugacy.composition 证明轨道闭包，collect_HS 给出界的 HS 性。bounded_local_witness 的完整源合同已实际证明，image_in_bound 与 replacementImage 沿原单值性／稠密性／分离链消费它，最终 ForcingZFAxioms 给出全源 ZF 的逐实例原核证书。没有添加对象 AC 或重建收集、函数像、递归、完备性。
+
+
+阶段 8 下一消费者核对：原 Construction/MonoidBase.Base 采用内部自然数加法单子，但完整 Object 还保留条件并、真实 height/cost 和非单位元；Algebra/DiagramOrder.HeightCost 使用有界实数上确界。新版 7979336 的 Descriptive/Dyadic 已提供内部 2^n 单位分数码及比较，可作特定辅助候选；RealPair 实际是 Baire 空间配对，不是实数有序域。尚未定位与 HeightCost 全合同对应的现成接口，不能据文件名声称已接通，也不能据此次局部检索声称其他仓库没有相关数学。当前已有自然数／序数算术、图构造和递归继续优先复用；没有修改或构建供体。

@@ -87,3 +87,6 @@ Separation 批次：正式 Audit.lean 已覆盖全部 36 项新增声明后，�
 
 
 幂集／复审批次：正式 Audit.lean 接管新增 32 项声明后，按解析后的本仓绝对路径、普通文件及 SHA-256 白名单删除 ForcingPowerAudit.lean，再运行串行全验收；预审日志保留，清单为 verification/cleanup-power-probe-20261026.json。删除 normalized_bounded 未使用的模型参数；流程第 7 阶段去掉重复的逐批叙述，当前缺口／覆盖表移除已完成 PowerSet 的待办。现有三个脚本均有验收用途；.local 剩余 batch 元数据均有跟踪引用，不误删。冻结字节模块仍需按实际依赖裁剪，本批没有声称全部无用代码已清完，也没有恢复该支线。
+
+
+Replacement 批次：删除未被实际消费者使用的 orbit/localBound 额外 AST 及其展开引理，保留构造所用 movePair/witness AST 和直接服务最终证书的证明。正式 Audit.lean 接管 45 项声明后，按解析本仓绝对路径、普通文件和 SHA-256 白名单删除 ForcingReplacementAudit.lean，再启动串行全验收；清单为 verification/cleanup-replacement-probe-20261026.json。保留预审／全验收日志；修正 MATH_REDUCTION_ROUTE 中实际作用、HS pair/union 和全 ZF 仍被报为待做的旧描述。没有生成持久脚本或独立验收报告，没有修改供体或恢复冻结支线。

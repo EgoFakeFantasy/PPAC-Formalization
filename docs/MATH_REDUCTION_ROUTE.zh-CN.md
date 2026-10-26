@@ -8,10 +8,10 @@
 |---|---|---|
 | L 解释和全模式 | 新版 YesMetaZFC 7979336：InnerModel.l_model_zf_l / l_model_zfc_l | 任意 ZF 模型中的内部 L 完整数学已经存在，ZFC 定向构建与端点审计通过。移植版本／语言对应，再接既有 Relativization/InterpretedZF/ModelTransfer；停止重建另一套 L。旧 ZFSet LCarrier 不是全部可用资产 |
 | 原核全理论与相对化 | ReverseZFReplay、ChoiceNativeBridge、Relativization、InterpretedZF | 全模式、AC 两种呈现、19 规则回放已完成；具体解释非空及背景由实际供体接口提供，不当作假设偷渡 |
-| 内部名字及作用 | ForcingNames、NameActions；本仓 ForcingNames/Evaluation/MapConditions/ConditionAction | 内部递归、check/pair/union、作用律已验收；具体 ProductNames 条件／群同态呈现仍待接 |
-| 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；实际 subgroupFilter、有限并支撑界和全部四项正规性已构造；直接使用新版底座五个原证明，ω 基数性不再作为额外前提。下一接口是具体 ProductNames.actionHom；非平凡性按源依赖另接 |
-| 全秩 HS 和强迫前端 | SymmetricNames、AtomicForcing、ForcingQuotient、ForcingTruth.forcing_sound | 实际 HS 定义、空/check、通用 HS.smul、原子递归／定律／对称性及固定公式／证明保真已完成。具体系统实例、HS pair/union 和解释公理仍待接 |
-| 全 ZF 在同一 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 源证明已有，目标端迁移未完成；复用完整 Replacement/Collection 对应。新版底座普通 forcing ZF 保持不自动等同于 HS 解释，先核对合同 |
+| 内部名字及作用 | ForcingNames、NameActions；本仓 ForcingNames/Evaluation/MapConditions/ConditionAction | 内部递归、check/pair/union、实际统一条件作用／群律已验收；具体阶段 8 单子仍待提供 |
+| 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；实际 subgroupFilter、有限并支撑界和全部四项正规性已构造；直接使用新版底座五个原证明，ω 基数性不再作为额外前提。实际 ProductNames.actionHom 和支撑 Context 已接通；非平凡性按源 ChoiceFailure 消费者另接 |
+| 全秩 HS 和强迫前端 | SymmetricNames、AtomicForcing、ForcingQuotient、ForcingTruth.forcing_sound | 实际 HS 定义、空/check/pair/union、实际统一作用、原子与完整公式强迫、固定证明保真已完成；七条固定 ZF 公理与完整模式现均有原核证书。具体阶段 8 代数仍待实例化 |
+| 全 ZF 在同一 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 目标端 ForcingZFAxioms.kernel_certificate 已接通全部九个源公理构造器。源宿主见证选择通过原生 Collection 适配，保留全群轨道和下游证明。仍有源代数／呈现／正规滤子前提；不是全部内部证明码归约或最终 Con |
 | 源构造核心 | Algebra、Construction | Monoid/Placement/ConservativeHull 及实际不变量待迁移，不能以字段假定核心结论 |
 | 目标模型应用 | ChoiceFailure.forces_not_AC、OrdinalChoice.forces_ACwo、Models 中同一系统的 SVC／商单射 | 源完整证明已有，目标端主链未迁移；不换成局部或定秩见证 |
 | 全秩 PP 和 Main | reverse_injection_dense → forces_PP → forces_target | 等待原依赖装配。保持所有满射的反向单射，不改成原满射截面 |
