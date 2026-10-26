@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 `6c638d9`；一般差值和加法相消已在该基点验收，结合律已在 `7828bfe` 验收。已从最初 `f28b0334` 回读原流程，并核对现行验收，而非沿用历史批次编号。**连续完整验收到第 1–3 阶段；主开发仍在第 8 阶段，最终对象 Con 未证明，不是收尾。**
+本批输入基点 `99f4cc6`；逐字母区间已在该基点验收。一般差值／相消及结合律均为已有成果，本批复用。已从最初 `f28b0334` 回读原流程，并核对现行验收，而非沿用历史批次编号。**连续完整验收到第 1–3 阶段；主开发仍在第 8 阶段，最终对象 Con 未证明，不是收尾。**
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 | 内部集合／图／ω／序列／递归、名字及作用／HS 基础已有 | 具体系统消费者归 8–10，不重建基础 |
 | 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 和完整模式已有；此前已核对版本及干净工作树，本批未重跑或修改供体 | 固定旧版、当前对象语言相对化与原核接口未接通；不是缺少 L 数学 |
 | 7 | forces_ZF 固定公理和全部模式已有逐实例原核证书 | 仍保留源单子／Presentation／正规滤子前提，待具体系统实例化；全部内部码归 10 |
-| 8 | 初始 Base 及严格 margin；内部 Path/Alphabet/Word、old/generator/probe 图、呈现、大小界、保守模拟、条件并、profile 保持、pushout；floor、条件式 cost 界、加法/max、正整数除法、/4 与四倍和恢复已有。一般加法结合律已有；一般差值精确加回／所有切割解唯一性、加法序反映／相消已有；本批接实际逐字母区间及统一锥外 cost 界（保留旧 uniform margin） | heightIntervals 内部函数图、旧 HeightCost 接口适配、Word height/cost/margin 和 Probe 装配；Merger、Placement、ConservativeHull、最终饱和单子 |
+| 8 | 初始 Base 及严格 margin；内部 Path/Alphabet/Word、old/generator/probe 图、呈现、大小界、保守模拟、条件并、profile 保持、pushout；floor、条件式 cost 界、加法/max、正整数除法、/4 与四倍和恢复已有。一般加法结合律已有；一般差值精确加回／所有切割解唯一性、加法序反映／相消已有；逐字母区间及统一锥外 cost 界已有；本批构造规范旧成本上确界和实际 heightIntervals 三图，接齐源字段（保留旧 uniform margin） | 旧 HeightCost 接口适配、Word height/cost/margin 和 Probe 装配；Merger、Placement、ConservativeHull、最终饱和单子 |
 | 9 | Models 固定源码已有 | 同一系统中的全秩 SVC、ACwo、商单射和非选择见证尚未迁移完成 |
 | 10 | 原 Main 链与内部 Con 合同固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 特化、全部内部矛盾证明码归约与最终闭句 |
 | 11 | 现有验收工具可复用 | 最终主定理验收未开始 |
@@ -20,7 +20,7 @@
 
 ## 本轮实查与误判纠正
 
-- 此前基点的 2459 份验收哈希已与当时工作树逐一匹配；本批更新到 2467 份并再次全部匹配，九条既有验收命令均退出 0；这些结果真实，但最终 Con 标志仍为 false。编译成功不能推出全迁移完成。
+- 此前基点的 2459 份验收哈希已与当时工作树逐一匹配；本批更新到 2471 份并再次全部匹配，九条既有验收命令均退出 0；这些结果真实，但最终 Con 标志仍为 false。编译成功不能推出全迁移完成。
 - 原阶段 1–3 的语言、推导和全理论对应已经完成；L 数学、完整模式、内部递归、函数图、Proof/Sat 不能再误报为待研发。
 - 第 6 阶段缺供体接口适配，第 7 阶段保留实际系统前提；把它们与已完成的供体数学混为一谈，是先前重复规划的原因。
 - 将可选 Packet/reader 字节兼容当作主定理义务、用局部验收外推整体进度，造成范围扩张和“收尾”误判。对象层目标早已明确，不是用户后来改了要求。
@@ -28,21 +28,22 @@
 
 ## 本批实际源迁移
 
-原源：Algebra/ProbeMargins.lean 的 `Path.target_lt_exit:106`、`Path.exists_letter_interval:117`，消费者是 `heightIntervals:144` 和 `Word.rawHeight:210`。旧前提对应 MergerCones.lean 的 `UniformMargin:12`、`HeightCost.uniform_margin:44`。本批不假设新 Word 的 margin。
+固定源为 Algebra/ProbeMargins.lean 的 `HeightIntervals:14`、`Path.heightIntervals:144`，以及 MergerCones.lean 的 `HeightCost.uniform_margin:44`。直接下游为同一 Word 的 `rawHeight:210`、`rawCost:216`、`heightCost:494` 和 Path.extensionHeightCost。
 
-- ConstructionProbeIntervals 按原公式构造 p=target−floor、K=max(p,C)、delta=(exit−floor−K)/4、offset=floor+2delta。复用前批差值、相消、max、/4、四倍和恢复及结合律，证明 delta 非空、floor+delta<offset、offset+delta+K<exit。Recipe 保留实际运算的成员公式并证明固定 C 时三个输出唯一，供内部函数图装配使用。
-- ConstructionProbeLetterIntervals 在同一组实际 floor／target／exit／height／cost 图上证明 target 严格小于 exit，构造逐字母区间，并证明同一个 K 控制所有旧锥外 cost。按源证明分成“d 整除 target”和“不整除 target”两支，前一支消费既有 target_outside_cost 并用加法相消，后一支消费旧 uniform margin。
-- 两个原核闭句分别为 `ConstructionProbeIntervalsSyntax.construction_kernel_certificate` 和 `letter_kernel_certificate`，返回原 `FirstOrder.Derives nativeZF [] …`。保留的 UniformMargins 是旧 HeightCost 的一致成本界输入；区间和新 K 的统一界是结论，不是前提。
+- ConstructionProbeCostSupremum 通过原生 Separation 构造所有遗漏旧成本的精确内部像集，直接调用已有 bounded_union 取得唯一上确界 C；证明用该 C 替换旧任意 uniform cap 仍保留严格空间和全部遗漏成本界。
+- ConstructionProbeIntervalChoices 保留实际 F/K/E/H/C 图边、同一个规范 C 及前批 literal Recipe。证明每个内部字母都有这样的数据，三个输出联合唯一；没有把内部选择函数作为前提。
+- ConstructionProbeHeightIntervalGraphs 对唯一可定义关系直接调用原生 exists_setFunctionFromTo_of_denote，构造实际 offset、scale、outsideBound 三张 S→R 图。图有精确边方程；对同一字母，任意三个实际图求值来自同一规范数据，保留两个严格区间、scale 正性和全部 outside_cost。inside_cost 也由既有 additive bound 接到实际差切割、加回方程和成本包含。已有 FloorLaws 保留 floor_pos/floor_le；outside_nonneg 来自非负切割值域。因此全部源 HeightIntervals 字段已接通。
+- `ConstructionProbeHeightIntervalsSyntax.construction_kernel_certificate` 返回纯成员语言闭句的原 `FirstOrder.Derives nativeZF [] …`，确实量化并构造三个内部函数图，不是宿主层 witness family。
 
-**准确边界：逐字母存在性已证明，但 source heightIntervals 的全体内部函数图尚未装配。** 固定旧 C 的 Recipe 唯一性已证；下一步以原遗漏成本集合的精确上确界规范化 C，消费既有 bounded_union／Separation 和可定义函数图入口，不能将宿主 choose 当作内部对象选择。旧 Base 的完整严格 margin 已有，只需适配其已有表示，不重证其数学。后继 Word height/cost/margin 仍未完成。
+**本批没有消去旧 UniformMargins 或源单子／实际 floor、cost 图的原输入。** 它们是源旧 HeightCost／原路径提供的背景，不能冒充新 Word 的 margin。初始 Base 的完整严格 margin 数学原本已有；待做是把其既有 principal-add／自然数序表示适配到当前一般 SumCut／Divides 接口，复用现成 le_iff 和已证 margin，不重新证明 Base 估计。后继 Word height/cost/margin、完整 Probe 和最终 Con 仍未完成。
 
-本批删除一个没有消费者的新辅助引理及无用局部绑定，没有新增持久生成脚本。39 项声明的严格定向构建与 --trust=0 预审均退出 0；两个原核端点均继承已有 25 项依赖，没有新增可信依赖。正式 scripts/verify.py 已退出 0：2907 项构建，29648 项声明（948 项无公理依赖、28700 项有已记录依赖），九条命令全部退出 0，五次 --trust=0，零警告。2467 份当前受验文件指纹及 75 份固定源哈希全部匹配。完整日志：verification/construction-probe-intervals-full-verification.log。
+本批 57 项声明的严格定向构建与 --trust=0 预审均已退出 0；原核端点仍只继承已有 25 项依赖，没有新增可信依赖。正式 scripts/verify.py 已退出 0：2911 项构建，29705 项声明（952 项无公理依赖、28753 项有已记录依赖），九条命令全部退出 0，五次 --trust=0，零警告。2471 份当前受验文件指纹和 75 份固定源哈希全部匹配。完整日志：verification/construction-height-interval-graphs-full-verification.log。没有新增持久生成脚本。
 
 ## 当前必要顺序与停止项
 
-按固定源继续：规范旧 uniform bound 的已有成本上确界 → 装配 heightIntervals 的内部 offset／scale／outsideBound 函数图 → 同一 Word 的实际 height/cost、严格 margin 和旧 cost 上确界保持 → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。再与第 6 阶段接口、第 9 阶段模型应用和第 10 阶段全部内部证明码归约汇合。
+按固定源继续：适配已完成的旧 HeightCost／Base margin 接口 → 同一 Word 的实际 height/cost、严格 margin 和旧 cost 上确界保持 → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。再与第 6 阶段接口、第 9 阶段模型应用和第 10 阶段全部内部证明码归约汇合。
 
-差值、加法序反映／相消、结合律、max、/4 和四倍和恢复均不再是缺口。本批逐字母区间已有原核证书，不能再写作“区间算术未证明”；真正剩余是上述规范选择／函数图和后继构造，不能把点态存在性误记为 heightIntervals 或整个 margin 已完成。
+差值、加法序反映／相消、结合律、max、/4、四倍和恢复、逐字母区间均不重证。本批旧成本上确界规范化和 heightIntervals 内部三图已通过全量验收，不再列作缺口。原生 le_iff、函数图、递归、完整模式及已有 Base margin 继续复用；只补原 Raw/Word 公式实际需要的接口／运算，不新增完整实数域工程。
 
 停止：NatPacket／reader 兼容、泛滤 atomic_truth 支线、独立 L 重建、当前消费者不需要的完整实数域。工作树清理按精确依赖闭包执行；已证明不等于主线需要，未找到接口也不等于数学不存在。
 

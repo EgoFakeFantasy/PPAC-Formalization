@@ -463,3 +463,7 @@ import PPAC.Migration.ConstructionCutDifferenceSyntax
 import PPAC.Migration.ConstructionProbeIntervals
 import PPAC.Migration.ConstructionProbeLetterIntervals
 import PPAC.Migration.ConstructionProbeIntervalsSyntax
+import PPAC.Migration.ConstructionProbeCostSupremum
+import PPAC.Migration.ConstructionProbeIntervalChoices
+import PPAC.Migration.ConstructionProbeHeightIntervalGraphs
+import PPAC.Migration.ConstructionProbeHeightIntervalsSyntax

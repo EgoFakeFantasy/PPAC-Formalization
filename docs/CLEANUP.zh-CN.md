@@ -149,3 +149,6 @@ Probe 动作／target 批次：去掉未使用的公式参数和局部绑定；�
 
 
 逐字母区间批次：移除没有当前消费者的新 strict_trans_le 辅助引理及无用局部绑定；完整验收覆盖 39 项声明后，只按解析后的本仓绝对路径、重解析属性和 SHA 删除一次性 ConstructionProbeIntervalsAudit.lean，清单 verification/cleanup-probe-intervals-20261027.json。成功构建／预审／完整日志保留，没有新增持久脚本。358 项冻结兼容模块及其检查仍未删除，待此前具体清单授权，不绕过审批。
+
+
+heightIntervals 内部图批次：精确源码与逐声明依赖进入正式 Audit 后，仅按本仓绝对路径、重解析点和 SHA 删除覆盖全部 57 项声明的一次性 ConstructionHeightIntervalsAudit.lean；见 verification/cleanup-height-interval-graphs-20261027.json。成功构建、预审和全量日志保留。没有新增持久脚本、未终止其他项目进程，358 项冻结兼容模块的批量退役仍未执行。
