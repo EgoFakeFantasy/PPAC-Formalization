@@ -82,6 +82,10 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.height/cost representation prerequisite: dense fraction order | ConstructionFractionDensity.density_kernel_certificate | Every internally strictly ordered pair has an internal mediant. Reuses native addition commutativity, distributivity and monotonicity. Auxiliary representation contract only: no completed real embedding, source margin or Base.object. |
 
+| DiagramOrder.HeightCost / MonoidBase.missedSup order representation | ConstructionRealCuts.construction_kernel_certificate; comparison_kernel_certificate | Internal set of proper rounded nonnegative lower cuts; total/antisymmetric inclusion, bounded internal set suprema, principal cut order reflection and equality exactly modulo fraction equivalence. Zero may be empty. Not a full ordered-field interface. |
+
+| Base.height/cost and positive/unit bounds in the cut representation | ConstructionCutWeights.construction_kernel_certificate | Exact internal graphs with original n+1/n+3 offsets, values in one cut carrier, constructed principal unit, and nonempty proper subcuts of that unit. Reuses native definable-function construction and arithmetic. Original real arithmetic and margin remain. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.

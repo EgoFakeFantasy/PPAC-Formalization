@@ -389,3 +389,5 @@ import PPAC.Migration.ConstructionBaseMonoid
 import PPAC.Migration.ConstructionBaseWeights
 import PPAC.Migration.ConstructionFractionOrder
 import PPAC.Migration.ConstructionFractionDensity
+import PPAC.Migration.ConstructionRealCuts
+import PPAC.Migration.ConstructionCutWeights

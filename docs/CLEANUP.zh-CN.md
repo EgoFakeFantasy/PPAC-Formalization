@@ -100,3 +100,5 @@ Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性�
 本次阶段复审删除 39 份冻结字节／reader 兼容支线的旧 STEP4 验收叙述；逐文件核对 HEAD 内容和 SHA-256，唯一外部引用为已重写的中文 README。恢复点 c1059d6，清单 verification/cleanup-stage-review-20261026.json。中文 README 原 636 行旧批次叙述替换为当前合同与阶段入口，英文入口同步。未删除原证明或正式验收日志。
 
 实际 import 图中有 431 个名称包含 Packet/Varint/Reader/Bytes 的模块，其中存在 13 个非同名模块直接消费者（例如 FixedAxiomTableSyntax、SequencePrependSyntax）。因此没有按名称批量删除它们；剩余裁剪必须先解开具体依赖，不能把“冻结”误记为“已删除”，也不以已投入成本继续开发。三个现有 scripts 均为验收入口，没有认定为垃圾。本轮未修改其他项目或供体。
+
+切割表示批次：正式 Audit 接管全部 74 项声明后，按本仓绝对路径与 SHA-256 删除唯一临时探针 ConstructionCutRepresentationAudit.lean，清单 verification/cleanup-cut-representation-probe-20261026.json。没有新增脚本、另开实数库或复制供体依赖树；全部集合／函数构造调用既有接口。旧字节支线继续冻结，本轮未作未经依赖核对的证明删除。

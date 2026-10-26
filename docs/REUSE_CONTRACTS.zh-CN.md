@@ -98,3 +98,5 @@ Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad
 分数比较批次：定位并直接调用固定底座 Ord/NaturalPrime.lean:497 的 Structure.natural_mul_comm，以及既有乘法结合、正因子严格递增、唯一性和内部 ω 闭包。交叉比较传递性只组合这些已有算术结果，不重建自然数乘法；载体由原生积和分离构造，上一批 weights_proper 直接证明原两图的值属于载体。单位分数比较的原核证书核对逆分母次序，与 Dyadic 消费者合同一致。比较对象是编码全预序，不把编码等号当作分数数值相等；完整有理数／实数解释和 margin 仍需后续衔接。
 
 分数稠密性批次直接调用固定底座 NaturalPrime 的 natural_add_comm、Arithmetic 的 ordinalMultiplication_add 与 ordinalAddition_isIncreasingOnOrdinals，构造中间分数 (a+c)/(b+d)。原核回传仍用已复用的 BMS 式 ModelTransfer。它是 Base 数值解释的前置合同，尚无已闭合的实数值源消费者；不把此辅助结果算作 Base.object 或完整阶段 8。新版 L 两端点本轮再次回读，供体 HEAD 仍为 7979336，相关文件无脏改动；没有重证或更改其模型范围。
+
+切割表示批次：ConstructionRealCuts 直接使用底座 Separation、PowerSet、Union 与原 extensionality，不建立新集合后端。ConstructionCutWeights 调用 exists_setFunctionFromTo_of_denote 收集由唯一主切割定义的两张实际函数图，调用原自然数乘零／乘一和已证 ProperFraction 得到严格正性、单位上界。上一批密度被 principal_cut 的 roundedness 实际消费；本批切割被源 Base 两张值图实际消费。三项原核证书使用现成 ModelTransfer；不抽取宿主值函数，不假设外部标准 ω，不宣称已接完整实数域或 margin。
