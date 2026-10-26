@@ -485,3 +485,10 @@ import PPAC.Migration.ConstructionProbeGateCapSyntax
 import PPAC.Migration.ConstructionProbeCostOperation
 import PPAC.Migration.ConstructionProbeCostFold
 import PPAC.Migration.ConstructionProbeCostFoldSyntax
+
+import PPAC.Migration.ConstructionCutProductUnit
+import PPAC.Migration.ConstructionCutProductUnitSyntax
+import PPAC.Migration.ConstructionProbeWeightBounds
+import PPAC.Migration.ConstructionProbeWeightBoundsSyntax
+import PPAC.Migration.ConstructionProbeOldCostFactors
+import PPAC.Migration.ConstructionProbeOldCostFactorsSyntax
