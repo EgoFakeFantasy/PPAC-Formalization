@@ -399,3 +399,5 @@ import PPAC.Migration.ConstructionBaseHeightGap
 import PPAC.Migration.ConstructionProbePath
 import PPAC.Migration.ConstructionProbeTransitions
 import PPAC.Migration.ConstructionProbeLetters
+import PPAC.Migration.ConstructionProbeAction
+import PPAC.Migration.ConstructionProbeTarget

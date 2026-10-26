@@ -109,4 +109,6 @@ Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad
 
 完整 Base margin 批次：复用 native ordinalAddition_one_iff/two_iff、ordinalExponentiation_successor_iff 和已有结合／分配／比较，沿源两次倍增及幂次比较完成严格高度差。已证 principal_difference_exists/add_le_iff 将关系式加法转为实际差；missing_supremum_bound 提供精确成本上确界。最终 constructionSentence 直接调用既有 exists_bounded_weights 构造所有源数值数据，连同每个内部严格索引对的 margin 回传原核。Base 初始数值数学已完成；前文各批“未完成 margin”仅为对应模块当时的范围，不能再当当前待办。未新建有序域、算术核或修改供体。
 
-Probe Path 迁移：直接消费固定底座 FunctionConstruction.exists_setFunctionFromTo_of_denote、原生积和分离；源 factor/terminal 的选择由已有左消去律证明唯一，得到精确内部函数图。自反、复合、零点、终端兼容沿 ProbeWords 原证明，ModelTransfer 返回原核句子。没有新增对象选择、右消去或过渡映射单射假设。供体未修改；transition/DirectedSystem 与实际直极限字母商、投影及共同阶段相等判据现已接通。类集合使用原生 Separation，商载体直接使用 Replacement.exists_functionalImage，投影仍用原生可定义函数图。原核存在句子从源 Path 出发，已消去等价关系定律前提；未重新建设通用商库。字母动作／target、正规形与实际扩张仍待迁移。
+Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影和动作／target 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成代表元积构造同时用于 D×Letters，不重建积或通用商库。动作良定义／单射消费已有共同阶段兼容／消去；target 下降消费 factor_terminal 与函数图唯一性。原核存在句子从原 Path 出发构造全部数据，未把商、动作、target 或其定律作为假设。供体未修改。
+
+下一消费者是原 exit 与 head_separation 所需的 dvd_target_of_inCone，再组装 Alphabet；其余锥定律、字母基数界按实际扩张消费者接入，不因它们在源文件中较早出现而一律作为 Alphabet 的前置。字正规形与扩张仍未完成。后续 letters_cardinal_le 需另按源基数合同适配：已核对 ForcingSupportSize.small_image 要求 Permutation，不能直接套到非单射商投影；这一接口限制不表示底座缺少相关数学，也不授权重造基数后端。
