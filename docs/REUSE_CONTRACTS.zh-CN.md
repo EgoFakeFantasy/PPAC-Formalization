@@ -88,4 +88,4 @@ Raw/Word 传输批次复用 exists_node_map 中的原生函数复合、现有 fi
 
 transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，Word-to-Word transport_conservative 的共享 gate 论证仍需迁移。
 
-head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；剩余共享 gate 存在性必须使用已有纯公式索引的 raw_induction 覆盖全部内部长度。
+head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；共享 gate 存在性随后直接使用该纯公式索引 raw_induction 完成：变化的头部和目标词均置于归纳公式量词内，old/cons 后缀分别消费共享旧交和递归 gate，最终构造两侧实际 exit(s)*u。该结论已取得原核证书，未新建归纳后端。

@@ -29608,3 +29608,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeSharedIntersections.sharedSentence
 #print axioms PPAC.Migration.ConstructionProbeSharedIntersections.shared_models
 #print axioms PPAC.Migration.ConstructionProbeSharedIntersections.shared_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.SharedGateAt
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.sharedGateAt
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.sharedGateAt_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.sharedGateAt_semantics
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.shared_headDiv_intersection
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.exists_simulated_gate_of_exit
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.sharedSentence
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.shared_models
+#print axioms PPAC.Migration.ConstructionProbeSharedGates.shared_kernel_certificate
