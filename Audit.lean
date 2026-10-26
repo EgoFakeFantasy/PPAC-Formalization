@@ -29764,3 +29764,37 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbePushoutSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbePushoutSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionProbePushoutSyntax.construction_kernel_certificate
+
+-- Pinned probe letter-floor graph and native object certificate.
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.HeightOrder
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.HeightFamily
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.Floor
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.Graph
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.FloorLaws
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightValue
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightValue_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightValue_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightFamily
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightFamily_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.heightFamily_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.floor
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.floor_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.floor_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.exists_height_family
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.floor_unique
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.family_bound
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.exists_floor
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.floor_bounds
+#print axioms PPAC.Migration.ConstructionProbeLetterFloor.exists_floor_graph
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws_semantics
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionProbeLetterFloorSyntax.construction_kernel_certificate

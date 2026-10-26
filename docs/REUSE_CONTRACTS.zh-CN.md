@@ -78,7 +78,8 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | 映射 Path 与 Raw/Word 传输 | ConstructionProbeMappedPath.exists_node_map → ZF.exists_compositionFunction；ZF.exists_restriction；现成序列长度、prefixHead/reduced 判据 | 实际像图和 Word 图已构造；没有重造序列、递归或商后端 |
 | 完整保守模拟、old/probe 方程 | ConstructionProbeSimulation.exists_simulation；既有 raw_induction、head_transport_some、letterAct_injective、共享 gate、division_reflection | 同一个 H 上的四字段 Conservative 和端点方程已证；具体路径／字母合同保留 |
 | 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 专用 factors_of_old/gates 尚待迁移 |
-| 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 本批原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
+| 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
+| letterFloor 与高度像集 | ConstructionRealCuts.bounded_union；ZF.separation_exists_d / exists_setFunctionFromTo_of_denote；dvd_target_of_inCone、one_inCone | 本批构造所有字母的实际图与上下界；旧高度正性／单调性保留。后续具体切割运算与 intervals 尚未迁移，不把上确界存在误报为完整 margin |
 | 全部对象层证书收尾 | 既有 ModelTransfer.derives/project_models_iff，复用 BMS 式原核 strong_completeness 路径 | 需所有对应 Type 0 模型的前提；不能用单个具体模型替代；没有另建完备性核 |
 
-下一必要消费者是 ProbeMargins.extensionHeightCost / extension_old_cost_supremum → MonoidBase.ProbeData.extension.margin / inclusion.supremum。先使用上述切割上确界、函数图、Raw 递归与 Gate；只补固定源证明所需的具体运算和不变量适配，不重建整套实数或序列基础。
+下一必要消费者是 ProbeMargins.extensionHeightCost / extension_old_cost_supremum → MonoidBase.ProbeData.extension.margin / inclusion.supremum。letterFloor 图及上下界现已消费切割上确界和原生函数图。下一步继续原 inside/outside cost 与 intervals，随后使用 Raw 递归与 Gate；只补固定源证明所需的具体运算和不变量适配，不重建整套实数或序列基础。

@@ -32449,6 +32449,280 @@
           "propext"
         ]
       }
+    },
+    "construction_probe_letter_floor": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidBase.lean": "16add52e42197a226969be1accaac6d27514aebcc38c25eee05eb392aa5c5324"
+      },
+      "adapter": "PPAC/Migration/ConstructionProbeLetterFloor.lean",
+      "source_declarations": [
+        "ProbeAlgebra.Path.letterFloor:49",
+        "ProbeAlgebra.Path.letter_heights_bdd:52",
+        "ProbeAlgebra.Path.height_le_letterFloor:58",
+        "ProbeAlgebra.Path.letterFloor_pos:62",
+        "ProbeAlgebra.Path.letterFloor_le:65"
+      ],
+      "consumers": [
+        "ProbeMargins.Path.letter_inside_cost/target_outside_cost/exists_letter_interval/heightIntervals",
+        "ProbeMargins.Path.extensionHeightCost:573 -> MonoidBase.ProbeData.extension.margin:185"
+      ],
+      "reused_interfaces": [
+        "ConstructionRealCuts.bounded_union/CutCarrier/supremum",
+        "ZF.separation_exists_d",
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "ConstructionProbeAlphabet.dvd_target_of_inCone",
+        "ConstructionProbeCones.one_inCone",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Exact internal height image of every old letter cone, bounded by the height of the actual target. Existing bounded cut union gives the least upper bound. Original definable-function construction builds one graph for all internal letters, with uniqueness, positivity, each cone-height lower bound and target-height upper bound. The pure membership/equality sentence has an original nativeZF Derives certificate. Source old-height positivity/monotonicity and existing monoid/action/target graph contracts remain premises; floors, height images and their universal properties are constructed, not assumed. No external enumeration, representative selection, object Choice, new recursion or new completion backend. Letter intervals, general cut arithmetic required by them, extension height/cost, full margins, final monoid and Con remain unfinished.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeLetterFloor.HeightOrder": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.HeightFamily": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.Floor": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.Graph": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.FloorLaws": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightValue": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightValue_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightValue_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightFamily": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightFamily_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.heightFamily_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.floor": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.floor_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.floor_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.exists_height_family": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.floor_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.family_bound": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.exists_floor": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloor.floor_bounds": [],
+        "PPAC.Migration.ConstructionProbeLetterFloor.exists_floor_graph": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_letter_floor_syntax": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidBase.lean": "16add52e42197a226969be1accaac6d27514aebcc38c25eee05eb392aa5c5324"
+      },
+      "adapter": "PPAC/Migration/ConstructionProbeLetterFloorSyntax.lean",
+      "source_declarations": [
+        "ProbeAlgebra.Path.letterFloor:49",
+        "ProbeAlgebra.Path.letter_heights_bdd:52",
+        "ProbeAlgebra.Path.height_le_letterFloor:58",
+        "ProbeAlgebra.Path.letterFloor_pos:62",
+        "ProbeAlgebra.Path.letterFloor_le:65"
+      ],
+      "consumers": [
+        "ProbeMargins.Path.letter_inside_cost/target_outside_cost/exists_letter_interval/heightIntervals",
+        "ProbeMargins.Path.extensionHeightCost:573 -> MonoidBase.ProbeData.extension.margin:185"
+      ],
+      "reused_interfaces": [
+        "ConstructionRealCuts.bounded_union/CutCarrier/supremum",
+        "ZF.separation_exists_d",
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "ConstructionProbeAlphabet.dvd_target_of_inCone",
+        "ConstructionProbeCones.one_inCone",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Exact internal height image of every old letter cone, bounded by the height of the actual target. Existing bounded cut union gives the least upper bound. Original definable-function construction builds one graph for all internal letters, with uniqueness, positivity, each cone-height lower bound and target-height upper bound. The pure membership/equality sentence has an original nativeZF Derives certificate. Source old-height positivity/monotonicity and existing monoid/action/target graph contracts remain premises; floors, height images and their universal properties are constructed, not assumed. No external enumeration, representative selection, object Choice, new recursion or new completion backend. Letter intervals, general cut arithmetic required by them, extension height/cost, full margins, final monoid and Con remain unfinished.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.heightOrder_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.graph_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.floorLaws_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.constructionSentence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterFloorSyntax.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
