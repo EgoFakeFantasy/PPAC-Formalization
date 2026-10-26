@@ -3529,7 +3529,9 @@ def main() -> None:
                                ("construction_probe_mapped_path", "ConstructionProbeMappedPath", 10),
                                ("construction_probe_mapped_path_syntax", "ConstructionProbeMappedPathSyntax", 12),
                                ("construction_probe_letters_map", "ConstructionProbeLettersMap", 12),
-                               ("construction_probe_letters_map_syntax", "ConstructionProbeLettersMapSyntax", 10)):
+                               ("construction_probe_letters_map_syntax", "ConstructionProbeLettersMapSyntax", 10),
+                               ("construction_probe_alphabet_map", "ConstructionProbeAlphabetMap", 13),
+                               ("construction_probe_alphabet_map_syntax", "ConstructionProbeAlphabetMapSyntax", 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7580,6 +7582,7 @@ def main() -> None:
         "source_probe_indexed_relations_and_unique_presentedHom_kernel_proved": True,
         "source_probe_raw_and_extension_cardinal_bounds_kernel_proved": True,
         "source_probe_actual_mapped_path_and_letter_map_kernel_proved": True,
+        "source_probe_actual_alphabet_simulation_kernel_proved": True,
         "source_probe_conservative_simulation_transport_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,
