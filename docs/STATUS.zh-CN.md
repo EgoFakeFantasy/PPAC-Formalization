@@ -1,43 +1,37 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 `2b8187d`。已对照最初 `f28b0334` 的阶段表、固定 OpenAI 源代码、当前证明和验收记录复审。**连续完整验收到原 1–3；当前开发在阶段 8 的初始 Base 数值解释，不是收尾。最终对象 Con 尚未证明。**
+本批输入基点 `cd3cc7c`。本轮回读最初 `f28b0334` 的阶段表、固定 OpenAI ProbeWords 原文、当前对象证书及新版 YesMetaZFC 的 L 两端点正文。**连续完整验收到原 1–3；当前开发在阶段 8 的 Probe 路径／扩张迁移。不是前七阶段全部完成，也不是收尾；最终对象 Con 未证明。**
 
-| 原阶段 | 已完成与真正剩余 |
+| 原阶段 | 已有成果与真实剩余 |
 |---|---|
 | 1–3 | 语言桥、重命名／替换、19 规则推导传输、完整 ZF 模式互导和两种 AC 对应已验收，不重做 |
-| 4 | 原 Main 和五端点已有验收；完整 Comparator 未运行，缺 Linux/landrun。75 份主链源码哈希此前已全部核对匹配，固定来源未变，没有重跑原环境 |
-| 5 | 内部集合／图／ω／递归、名字、统一作用和 HS 基础已完成；最终具体系统的消费归 8–10 |
-| 6 | 新版任意 ZF 模型内部 L→ZF/ZFC 及全模式已有，已回读并确认 Model/Choice 正文；剩版本、语言相对化和原核接入，不重证 L 数学 |
-| 7 | forces_ZF 的固定公理和完整模式已有原核证书；保留源单子／Presentation／正规滤子等前提，具体系统由 8 提供，不能给整阶段打勾 |
-| 8 | 初始单子、精确 height/cost 分数图、次序／密度、切割与有界上确界、权重切割图和单位界、分数／主切割加法已有。有序主切割的唯一非负差及严格正差已有。本批沿源两次倍增和单调性完成严格高度差，构造实际权重图及全部严格 margin 的原核证书。初始 Base 数学数据已齐；原 Probe/Merger 扩张、保守嵌入、margin 延拓、Placement、ConservativeHull 和最终饱和单子尚未完成 |
+| 4 | 历史原 Main 的 8998 项构建和五端点审计已通过；完整 Comparator 未运行，缺 Linux/landrun。本轮重核 75 份主链源码哈希，全部匹配；没有重跑原环境 |
+| 5 | 内部集合／图／ω／递归、名字、统一作用和 HS 基础已有；最终具体系统的消费归 8–10 |
+| 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 及全模式已完成，本轮再次回读 Model/Choice 正文。剩版本、语言相对化和原核接入，不重证 L 数学 |
+| 7 | forces_ZF 的固定公理和完整模式已有原核证书，保留源单子／Presentation／正规滤子前提；具体系统由 8 提供，整阶段不能打勾 |
+| 8 | 初始 Base 的单子、条件并、非单位元及完整 height/cost/margin 已有。本批新增原 Probe Path.factor/terminal 的实际内部函数图及定律的原核证书。仍缺 transition、直极限字母、字正规形、实际 Probe/Merger 扩张、保守嵌入及 margin 延拓、Placement、ConservativeHull 与最终饱和单子 |
 | 9 | 原 SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
-| 10 | 原 Main 装配、ZF/U 专用内部 Proof/Con、全部内部矛盾证明码归约及最终闭句未完成；底座通用 Proof/Sat 已有，不重造 |
+| 10 | 原 Main 装配、ZF/U 专用内部 Proof/Con、全部内部矛盾证明码归约和最终闭句未完成；底座通用 Proof/Sat 已有，不重造 |
 | 11 | 最终主定理验收未开始 |
 
-对象合同未变：纯成员／等词语言、完整 nativeZF、原 FirstOrder.Derives；目标为 `Derives nativeZF [] (Con_ZF → Con_U)`，U = ZF + PP + ACwo + ¬AC，覆盖全部内部及外部非标准证明码。固定源为 OpenAI 1581d4cb；没有换成独立目标证明。
+对象合同：纯成员／等词语言、完整 nativeZF、原 FirstOrder.Derives；最终 `Derives nativeZF [] (Con_ZF → Con_U)`，U = ZF + PP + ACwo + ¬AC，覆盖全部内部及外部非标准证明码。固定源仍为 OpenAI 1581d4cb，不改为独立目标证明。
 
-## 本批实际证明与复用
+## 本批实际迁移与复用
 
-ConstructionBaseHeightGap 沿固定 MonoidBase.Base.margin 第一分支保留原两次 pow_succ 和幂次比较。在内部自然数上，两个相邻分母恰为前一分母的二倍；通分与后继运算证明相邻高度满足 height(x)+cost(x)<height(x+1)，再由高度单调性得到任意内部 x<y 的严格估计。所有中间数都是模型内部集合，没有外部标准性假设。
+ConstructionProbePath 对应 ProbeWords.Path 的 factor/node_factor/factor_self/factor_trans/factor_zero 和 terminal/node_terminal/factor_terminal/terminal_zero。先沿原左消去证明右因子唯一，再直接调用固定 YesMetaZFC 的 exists_setFunctionFromTo_of_denote，构造有序内部 ω 对上的因子图与内部 ω 上的终端图。积与分离也复用原生接口。
 
-cut_gap 用已证主切割加法的序反映，把此式转为 cost(x)<gap，且 height(x)+gap=height(y)。source_margin 将它与上一批精确非空成本像集的上确界≤cost(x) 合并，得到原严格上确界 margin。
+纯对象 constructionSentence 由 construction_kernel_certificate 返回原 FirstOrder.Derives nativeZF [] 证书；不是只交付宿主层函数或公式 AST。它实际存在量化两张图，并给出精确边方程、自反、零点、复合和终端兼容律；仍保留原左消去单子和有界递增 Path 作为输入。没有假定对象选择、右消去、过渡映射单射或外部标准 ω。实际消费者是原 transition/DirectedSystem 和直极限字母，随后进入 ProbeData.extension；这些后续消费者本批未实现。
 
-最终 constructionSentence 不以 margin 或权重图作为假设：它直接复用 exists_bounded_weights，构造实际原 n+1/n+3 权重图、切割载体、主单位、正性／单位界及全部严格索引对的 margin。construction_kernel_certificate 返回原 FirstOrder.Derives nativeZF [] 中的纯对象句子。差由已验收的 PrincipalAdd／唯一差接口确定；完整初始 Base 数值义务在该切割解释下已完成。
+原核回传继续复用已接入的 BMS 式 ModelTransfer，并覆盖相应全部模型。新版 L 已完成的数学本轮未重证、未重编译、未修改供体；本批也未重造证明核、Sat 或函数图后端。
 
-直接调用固定 YesMetaZFC 的 ordinalAddition_one_iff/two_iff、ordinalAddition_successor_iff、ordinalExponentiation_successor_iff、结合／分配及比较，复用本仓已有主切割差、加法比较和成本上确界。原核回传继续使用已接入的 BMS 式 ModelTransfer。未重建算术核、有序域、完备性或修改供体。
+## 误判纠正与清理
 
-## 真正剩余消费者
+此前错误在于把局部验收当成全局接近完成、把版本／语言接口未接通说成已有数学未完成，并让可选字节兼容路线扩张。对象层要求早已存在，不能归因于用户后来改变目标；详见 SCOPE_REASSESSMENT。
 
-Base 初始内部自然数单子、条件并、非单位元及完整 height/cost/margin 的数学数据均已有，不再列为待证。下一步按原 MonoidBase.ProbeData.extension 和 MergerData.extension 的依赖迁移实际扩张、字正规形、条件并、保守嵌入与 margin 延拓，再接原 Placement、塔、ConservativeHull 和最终饱和单子。
+本轮修正覆盖表将强迫前端整体标成未迁移的表述；同步两个 README，删除 margin 仍待接的过时描述；压缩阶段 8 缺口表。正式 Audit 接管 49 项声明后删除唯一临时 ConstructionProbePathAudit.lean，路径／SHA 清单为 verification/cleanup-probe-path-audit-20261026.json。没有新增持久脚本。冻结字节模块仍有实际引用，剩余依赖裁剪未完成，不能声称全部无用成果已清除。
 
-已经定位 ProbeWords.Path.factor/terminal：原 .choose 取出的右因子由左消去性唯一决定，目标端可以复用原生唯一函数图构造；这只是下一接口判断，本批没有声称已迁移这些图。任意切割运算按后续原扩张的具体需要适配，不把完整实数域扩建作为已经完成的 Base 数值证明的前置。
+## 实际验收
 
-第 6 阶段现成 L 数学的版本／语言／原核接入、9–10 的模型应用和内部证明码装配仍未完成。初始 Base 不替代最终饱和单子，最终对象 Con 仍为未证明。
+定向编译、trust=0 预审及完整 scripts/verify.py 均通过。严格构建 2948 项任务；9 条命令全部退出 0，其中 5 次 --trust=0；30675 项声明审计，732 项无公理依赖、29943 项使用已记录依赖；构建 0 警告；2514 个当前文件指纹全部匹配。新增 49 项声明，无新增可信依赖；底座原有 native Bool 证书仍明确保留记录。这些数字不表示完成比例。
 
-## 实际验收与清理
-
-新增 23 项声明、1 项原核存在证书。定向构建、trust=0 预审和完整 scripts/verify.py 通过：2947 项构建任务；9 条命令全部退出 0，其中 5 次 --trust=0；30626 项声明审计，717 项无公理依赖、29909 项使用已记录依赖；0 警告；2513 个当前文件指纹全部匹配。无新增可信依赖，原有 native Bool 证书仍明确记录。以上数字不是全项目完成比例。
-
-证据：verification/commands.json、summary.json、build.log、audit.log、construction-base-margin-preaudit.log、construction-base-margin-full-verification.log。正式 Audit 接管后删除唯一临时探针；清单 cleanup-base-margin-probe-20261026.json。清除未使用局部绑定；当前覆盖表和缺口表删除 margin 仍未完成的过时叙述。没有新增持久脚本。
-
-验收后无残留 Lean/Lake。冻结字节模块的剩余依赖裁剪仍未完成，未冒称全部垃圾已清理。Base 数值 margin 标志为 true；任意切割加法、完整切割域、最终单子及 relative_consistency_proved 仍为 false。未上传或发布。
+证据：verification/commands.json、summary.json、build.log、audit.log、construction-probe-path-preaudit.log、construction-probe-path-full-verification.log。路径图与 Base.margin 标志为 true；直极限字母／扩张、最终单子及 relative_consistency_proved 为 false。验收结束无 Lean/Lake 残留；本批仅本地提交，不上传或发布。

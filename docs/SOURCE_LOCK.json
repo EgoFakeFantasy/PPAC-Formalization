@@ -20243,6 +20243,303 @@
           "propext"
         ]
       }
+    },
+    "construction_probe_path": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean",
+      "source_sha256": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
+      "adapter": "PPAC/Migration/ConstructionProbePath.lean",
+      "source_declarations": [
+        "Path.factor/node_factor/factor_self/factor_trans/factor_zero",
+        "Path.terminal/node_terminal/factor_terminal/terminal_zero"
+      ],
+      "consumers": [
+        "Path.transition and DirectedSystem for the source Probe direct-limit letters",
+        "MonoidBase.ProbeData.extension; actual extension remains incomplete"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "ZF.exists_cartesianProduct",
+        "ZF.separation_exists_d",
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "ForcingSupportSize.native_mapsTo",
+        "ForcingDiagramPoset.LeftCancelMonoid",
+        "ConstructionBaseCostBound.natLeF",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Given the original left-cancellative monoid and bounded increasing internal omega-path, construct exact factor and terminal function graphs and prove identity, composition, zero and terminal compatibility in a pure nativeZF sentence and original Derives. No object choice, right cancellation, transition injectivity or external-standard omega premise. Direct-limit letters, normal forms, extensions and final Con are not proved by this certificate.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbePath.Factor": [],
+        "PPAC.Migration.ConstructionProbePath.FactorTable": [],
+        "PPAC.Migration.ConstructionProbePath.OrderedPair": [],
+        "PPAC.Migration.ConstructionProbePath.OrderedPairs": [],
+        "PPAC.Migration.ConstructionProbePath.Path": [],
+        "PPAC.Migration.ConstructionProbePath.TableLaws": [],
+        "PPAC.Migration.ConstructionProbePath.Terminal": [],
+        "PPAC.Migration.ConstructionProbePath.TerminalTable": [],
+        "PPAC.Migration.ConstructionProbePath.constructionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.exists_factor_table": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.exists_ordered_pairs": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.exists_terminal_table": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factor": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorPair": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorPair_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorPair_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorTable": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorTable_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factorTable_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factor_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factor_self": [],
+        "PPAC.Migration.ConstructionProbePath.factor_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.factor_terminal": [],
+        "PPAC.Migration.ConstructionProbePath.factor_trans": [],
+        "PPAC.Migration.ConstructionProbePath.factor_unique": [],
+        "PPAC.Migration.ConstructionProbePath.factor_zero": [],
+        "PPAC.Migration.ConstructionProbePath.orderedPair": [
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.orderedPair_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.orderedPair_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.orderedPairs": [
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.orderedPairs_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.orderedPairs_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.path": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.path_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.path_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.tableLaws": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.tableLaws_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.tableLaws_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.table_laws": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminalTable": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminalTable_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminalTable_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminal_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminal_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePath.terminal_unique": [],
+        "PPAC.Migration.ConstructionProbePath.terminal_zero": []
+      }
     }
   },
   "selected_route_consumer_audit": {
