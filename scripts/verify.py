@@ -2552,7 +2552,11 @@ def main() -> None:
                                ("construction_probe_transport_hom", "ConstructionProbeTransportHom", 11),
                                ("construction_probe_transport_hom_syntax", "ConstructionProbeTransportHomSyntax", 6),
                                ("construction_probe_conservative", "ConstructionProbeConservative", 7),
-                               ("construction_probe_conservative_syntax", "ConstructionProbeConservativeSyntax", 12)):
+                               ("construction_probe_conservative_syntax", "ConstructionProbeConservativeSyntax", 12),
+                               ("construction_probe_gates", "ConstructionProbeGates", 22),
+                               ("construction_probe_gates_syntax", "ConstructionProbeGatesSyntax", 21),
+                               ("construction_probe_head_transport", "ConstructionProbeHeadTransport", 10),
+                               ("construction_probe_shared_intersections", "ConstructionProbeSharedIntersections", 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6183,6 +6187,11 @@ def main() -> None:
         "source_probe_reduced_word_transport_embedding_kernel_proved": True,
         "source_probe_actual_transportHom_kernel_proved": True,
         "source_probe_actual_old_embedding_full_conservative_kernel_proved": True,
+        "source_probe_head_and_gate_local_laws_kernel_proved": True,
+        "source_probe_suffix_intersection_gate_kernel_proved": True,
+        "source_probe_head_transport_kernel_proved": True,
+        "source_probe_shared_old_intersections_kernel_proved": True,
+        "source_probe_shared_gate_existence_kernel_proved": False,
         "source_probe_conservative_simulation_transport_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,

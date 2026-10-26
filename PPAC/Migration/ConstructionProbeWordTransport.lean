@@ -1,6 +1,6 @@
 /- Pinned ProbePresentations.Word.transport: restrict the actual Raw transport
 map to the existing reduced-word carrier. Native restriction, not a new word
-encoding, supplies the graph. Multiplicativity remains the next source obligation. -/
+encoding, supplies the graph. Multiplicativity is supplied by ConstructionProbeTransportHom. -/
 import PPAC.Migration.ConstructionProbeRawTransportSyntax
 
 namespace PPAC.Migration.ConstructionProbeWordTransport

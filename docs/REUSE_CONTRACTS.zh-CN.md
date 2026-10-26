@@ -87,3 +87,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 Raw/Word 传输批次复用 exists_node_map 中的原生函数复合、现有 finite sequence 长度唯一性及 prefixHead/reduced 判据。原 Raw.transport 的字面映射由内部序列逐项复合和末端映射实现；已证 headDiv/reducedness/oldAct 保持。Word.transport 直接调用原生 ZF.exists_restriction 限制实际 Raw 图到既有 WordCarrier，不新建序列或 Word 后端。三个原核证书的依赖分别为 10/16/16 项；后两项包含先前已有并重算的六项序列限制 Bool 证书，没有新增可信依赖。
 
 transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，Word-to-Word transport_conservative 的共享 gate 论证仍需迁移。
+
+head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；剩余共享 gate 存在性必须使用已有纯公式索引的 raw_induction 覆盖全部内部长度。

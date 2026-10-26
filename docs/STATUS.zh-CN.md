@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 `1cbcfe4`。重新对照最初 `f28b0334` 的流程表、固定源和现有验收后：**连续完整验收到原 1–3，当前主开发在 8；尚未进入收尾，最终对象 Con 未证明。** 历史 S3／STEP4 批次名及 CheckStep4 不代表原阶段编号。
+本批输入基点 `084cf35`。重新对照最初 `f28b0334` 的流程表、固定源和现有验收后：**连续完整验收到原 1–3，当前主开发在 8；尚未进入收尾，最终对象 Con 未证明。** 历史 S3／STEP4 批次名及 CheckStep4 不代表原阶段编号。
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 | 内部集合／图／ω／序列／递归、名字及作用／HS 基础已有 | 具体系统消费者归 8–10，不重建基础 |
 | 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 及完整模式已完成；既有回读确认 Model/Choice 正文、固定 7979336 及当时供体干净状态；本批未重跑供体构建 | 固定旧版、当前对象语言相对化与原核接口未接通；不是缺少 L 数学 |
 | 7 | forces_ZF 固定公理和全部模式已有逐实例原核证书 | 源单子／Presentation／正规滤子前提待具体系统实例化；全部内部码归 10 |
-| 8 | 初始 Base 与完整 margin、Path／过渡／字母商、动作／target／exit／Alphabet、锥与字母界、Raw、reduced Word、quotient、letterAct 已验收。Raw.eval、求值定律、实际 Word 左消去单子已验收；实际 oldHom 单射同态、因子／整除反映和 Word conical 已验收；generator 实际图、乘法／作用关系和旧元素 gate 已验收；evalHom 与任意目标单子的实际 liftHom 已验收；hom_ext 实际函数图相等和 lift 唯一性已验收；实际索引 probe 图与 Path.presentedHom_ext 已验收；相邻过渡传输、实际 interpretedLetter 及代表公式／动作等变已验收；exit 相容、实际 probe 关系及索引呈现同态存在唯一性已验收；Raw/扩张大小界已验收；实际映射路径／因子／终端表及字母商映射、代表公式、单射反映已验收；动作／exit／锥相容和实际 AlphabetSimulation 已验收；Raw 实际传输、reducedness 保持及 reduced Word 单射已验收；本批接通实际 transportHom 和 oldHom 四字段保守性 | Word 之间完整保守模拟，Probe/Merger 实际扩张、保守嵌入／margin 延拓、Placement、ConservativeHull 与最终饱和单子 |
+| 8 | 初始 Base 与完整 margin、Path／过渡／字母商、动作／target／exit／Alphabet、锥与字母界、Raw、reduced Word、quotient、letterAct 已验收。Raw.eval、求值定律、实际 Word 左消去单子已验收；实际 oldHom 单射同态、因子／整除反映和 Word conical 已验收；generator 实际图、乘法／作用关系和旧元素 gate 已验收；evalHom 与任意目标单子的实际 liftHom 已验收；hom_ext 实际函数图相等和 lift 唯一性已验收；实际索引 probe 图与 Path.presentedHom_ext 已验收；相邻过渡传输、实际 interpretedLetter 及代表公式／动作等变已验收；exit 相容、实际 probe 关系及索引呈现同态存在唯一性已验收；Raw/扩张大小界已验收；实际映射路径／因子／终端表及字母商映射、代表公式、单射反映已验收；动作／exit／锥相容和实际 AlphabetSimulation 已验收；Raw 实际传输、reducedness 保持及 reduced Word 单射已验收；实际 transportHom 和 oldHom 四字段保守性已验收；本批 head/Gate 局部定律、后缀交 gate、头部传输和共享旧元素交已通过全量验收 | Word 之间完整保守模拟，Probe/Merger 实际扩张、保守嵌入／margin 延拓、Placement、ConservativeHull 与最终饱和单子 |
 | 9 | Models 固定源码已有 | SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
 | 10 | 原 Main 链与内部 Con 合同固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 特化、全部内部矛盾证明码归约与最终闭句 |
 | 11 | 现有验收工具可复用 | 最终主定理验收未开始 |
@@ -26,26 +26,24 @@
 
 ## 本批实际源迁移
 
-固定 OpenAI 1581d4c 的 ProbePresentations.Word.transport_quotient:212、transport_letterAct:219、transport_mul:231、transportHom:243，以及 ConservativeExtensions.Path.oldHom_conservative:86（消费 ProbeWords 的 old_cone_intersection:735、common_multiple_reflection:747）。四个目标模块和每条声明均记录在 SOURCE_LOCK。
+固定 OpenAI 1581d4c：ProbeGates.Word 的 head/Gate 局部定律和 gate_of_suffix_intersection:128，以及 ProbePresentations.Word.head_transport / head_transport_eq_some:361、simulated_old_intersection:271。四个模块、源哈希、实际消费者及逐声明依赖已纳入 SOURCE_LOCK、正式 Audit 和 verify。
 
-transportHom 复用已构造的 Raw/Word 传输图、已有内部 Raw 归纳、求值与乘法图；保持原 quotient/letterAct 分支，证明乘法和单位保持。oldHom 完整保守性复用已证 ConeLaws 与 EmbeddingLaws，得到单射、指定因子反映、整个目标 Word 载体上的旧锥交保持、旧共同倍数反映。两条纯成员闭句已回传原 FirstOrder.Derives nativeZF []。所有内部有限长度均在量化范围内。
+源 Option head 以已有内部 Raw 的精确 none/some 关系表示；已证互斥、覆盖及 some 唯一性。Gate 使用已证 old_divides_iff_headDiv，gate_iff_old_cone 给出与源定义的对应；后缀交构造的 gate 是实际 exit(s)*u，并非假定存在。头部传输消费已有字面 Raw 传输。共享旧元素交复用三个 Conservative 合同的 common/intersections 字段，在两侧使用同一个原基底 join。
 
-oldHom 的完整 Conservative 与 Word 之间的 transport_conservative 是不同定理；后者仍未完成。两条证书保留源中的字母／单子／锥等前提，尚未装配最终 Probe/Merger 系统。
+四条原核证书都返回纯成员闭句的 FirstOrder.Derives nativeZF []，且保留源中的单子、Alphabet、Word、图和条件并等前提；所有内部有限长度均在量化范围内。尚未证明 exists_simulated_gate_of_exit，不能把这些前提定理报成完整共享 gate 存在性或 Word-to-Word transport_conservative。
 
 ## 清理与真实后续
 
-正式 Audit 已接管 36 项声明，重复的临时预审输入已删除，清单为 verification/cleanup-probe-transport-hom-20261026.json。未新增持久生成脚本。现行状态表撤销了把 transportHom 和 oldHom 完整保守性列作待做的条目。
+下一实际源义务是 ProbePresentations.Word.exists_simulated_gate_of_exit:287 的内部 Raw 归纳，再接 transport_factors:389、transport_common_below:522 和 transport_conservative:572。新证的 head/Gate 局部定律、头部传输、后缀交 gate 与共享旧交正是该归纳调用的前提，不能重新列为未做。后续 Probe/Merger、margin、Placement、ConservativeHull 仍按原源依赖迁移。
 
-下一实际依赖是 ProbeGates 的 head/Gate 与共享 gate 论证，然后 ProbePresentations.transport_factors:389、transport_common_below:522、transport_conservative:572。不能跳过前提把现有单射同态改名成完整保守模拟。已经完成的 quotient/letterAct/乘法相容、字母锥与 oldHom 保守性不重做。
+新版 YesMetaZFC 的 Model.lean:15 / Choice.lean:14 本批重新回读，任意 ZF 模型内的 L→ZF/ZFC 和全分离／收集确已存在；本批未重编供体。剩余是固定旧版、当前对象语言相对化和原核接口适配。BMS 的完备性收尾方法已在 ModelTransfer.derives:34 被实际复用，本批四证书继续调用同一入口；没有新建递归、满足关系、证明核或 L 数学。
 
-实际 Probe/Merger 扩张、margin、Placement/ConservativeHull 和原 6、9–11 的剩余不变。NatPacket/字节兼容、泛滤真值和独立 L 重建继续停用；已精确裁剪不被其他证明传递依赖的 135 个 Packet/ObjectPacket 模块，恢复点和 SHA 见 RETIRED_PACKET.json；291 个仍有依赖的同类模块保留。清理后全量验收已完成，见下文。最终对象 Con 未证明。
+NatPacket/字节兼容、泛滤真值和独立 L 重建继续停用。上一提交 084cf35 已按精确 import 闭包退役 135 个隔离模块及其审计项、1080 个生成缓存，并移除 157 个冻结支线进度标记；恢复点和 SHA 见 RETIRED_PACKET.json。291 个仍被保留证明传递引用的模块暂保留，不能据此宣称它们全部是最终主定理必需。当前没有证据支持继续盲删这些依赖。
 
 ## 实际验收
 
-证明迁移提交 f39f60d：四个模块的定向构建、合并 --trust=0 预审及完整 scripts/verify.py 全部退出 0。36 项新增声明中 7 项无公理依赖；两条原核证书各 22 项已记录依赖，没有新增可信依赖。该提交验收为 3006 项构建、31518 项声明、2566 个指纹。
+本批定向构建及合并 --trust=0 预审退出 0：66 项声明，14 项无公理依赖；四条原核证书的依赖数依次为 16、22、16、10，均为此前已记录依赖。ConstructionProbeGatesSyntax 在后续 HeadTransport 构建中重编且无警告；更早的独立日志曾有一项 unused simp 警告，已修正。
 
-随后精确退役 135 个隔离 Packet/ObjectPacket 模块。清理首轮因保留的列表拼接模块失去间接 import 而审计失败；补齐 3 个直接 import 根后重验通过，未删除其审计项。157 个冻结兼容支线进度标记已从当前状态输出移除。再删除 1080 个对应生成缓存后，最后完整 scripts/verify.py 退出 0：2871 项构建；9 条命令全部退出 0，其中 5 条 --trust=0；29173 项声明（893 无公理依赖，28280 有已记录依赖）；0 警告。2431 个验收指纹和 75 份固定源主链哈希全部匹配。声明数下降来自明确退役，不表示证明进度变化。
+本批完整 scripts/verify.py 已退出 0：2875 项构建；9 条命令全部退出 0，其中 5 条 --trust=0；29239 项声明（907 无公理依赖，28332 有已记录依赖）；0 警告。2435 个验收指纹与 75 份固定源主链哈希全部匹配。共享 gate 存在性、完整 Word 保守传输和最终 Con 的门仍为 false。
 
-Word transportHom 与 oldHom 完整保守性门为 true；Word 之间完整保守模拟及最终 Con 仍为 false。验收结束 Lean/Lake 进程数为 0；C 盘可用约 51.64 GiB。无新增持久生成脚本；291 个仍有传递引用的同类模块暂保留，这不表示它们已全部被证明是最终主定理必需的内容。
-
-证据：verification/commands.json、summary.json、isolated-packet-retirement-full-verification.log；原证明批次 construction-probe-transport-hom-full-verification.log 与四个定向构建／预审日志。首轮清理失败另存 isolated-packet-retirement-first-failure.log / first-audit.log，不作成功证据。退役源码哈希与恢复点见 docs/RETIRED_PACKET.json；缓存清单见 verification/cleanup-retired-packet-cache-20261026.json。原 L 供体及原 4.34.1 Main 本批未重跑；本批回读确认新版 L 的 ZF/ZFC 正文和固定版本。仅本地提交，不上传或发布。
+本批日志：verification/construction-probe-gates-full-verification.log；正式结果见 commands.json 和 summary.json。预审输入已由正式 Audit 接管并删除，66 项覆盖逐一核对；清单为 verification/cleanup-probe-gates-20261026.json，成功日志保留。清理前确认无 Lean/Lake 进程；未新增持久脚本。原 Main、完整 Comparator 和 L 供体本批未重跑。最终对象 Con 仍未证明；仅本地工作，不上传或发布。

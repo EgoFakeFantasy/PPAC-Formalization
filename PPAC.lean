@@ -427,3 +427,7 @@ import PPAC.Migration.ConstructionProbeConservativeSyntax
 import PPAC.Migration.Internal.StructuralListSpliceAlgebra
 import PPAC.Migration.Internal.StructuralListSpliceByte
 import PPAC.Migration.Internal.StructuralListSpliceSnoc
+import PPAC.Migration.ConstructionProbeGates
+import PPAC.Migration.ConstructionProbeGatesSyntax
+import PPAC.Migration.ConstructionProbeHeadTransport
+import PPAC.Migration.ConstructionProbeSharedIntersections
