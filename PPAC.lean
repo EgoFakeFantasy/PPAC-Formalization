@@ -492,3 +492,6 @@ import PPAC.Migration.ConstructionProbeWeightBounds
 import PPAC.Migration.ConstructionProbeWeightBoundsSyntax
 import PPAC.Migration.ConstructionProbeOldCostFactors
 import PPAC.Migration.ConstructionProbeOldCostFactorsSyntax
+
+import PPAC.Migration.ConstructionProbeCostMargins
+import PPAC.Migration.ConstructionProbeCostMarginsSyntax

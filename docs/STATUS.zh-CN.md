@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段复审（2026-10-27）
 
-本轮基点 `1af856e`。以最初 `f28b0334a740108057adf18a24dc11abd866efbe` 的 1–11 阶段为准，逐项核对当前代码、固定源和验收记录。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾，不能把局部证书数量解释为全迁移完成度。**
+本轮基点 `441322a`。以最初 `f28b0334a740108057adf18a24dc11abd866efbe` 的 1–11 阶段为准，逐项核对当前代码、固定源和验收记录。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾，不能把局部证书数量解释为全迁移完成度。**
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 内部基础 | 集合、图、ω、序列、递归、名字、作用、HS 基础已有 | 具体系统消费者在 8–10；不重建基础 |
 | 6 背景／L 解释 | 新版 7979336 任意 ZF 模型内部 L→ZF/ZFC 和完整模式已有 | 固定旧版 039c8e1、当前 Project 语言、相对化和原核接口；不是待重证 L 数学 |
 | 7 强迫前端 | 原 forces_ZF 的七个固定公理及全部模式有逐实例原核证书，实际作用／正规滤子／全秩 HS 合同已有 | 仍保留源单子／Presentation／正规滤子等前提，等待最终具体系统；全部内部码归 10 |
-| 8 代数／构造核心 | Base 及严格 margin；实际 Path/Alphabet/Word、映射、呈现、大小界、保守模拟、条件并、profile 和 pushout；所需切割算术、floor、旧成本上确界和实际 interval 三图；唯一 Word 高度／cap／成本图、原方程、cost_bounds 已有。本轮接通 height_bounds、cost_le_scale 和精确 cost_old_factor | cost_other_block_factor、实际需要的字面 Gate 消费接口、严格后继 margin、旧成本上确界保持、完整 Probe；然后 Merger、Placement/ConservativeHull、最终饱和单子 |
+| 8 代数／构造核心 | Base 及严格 margin；实际 Path/Alphabet/Word、映射、呈现、大小界、保守模拟、条件并、profile 和 pushout；所需切割算术、floor、旧成本上确界和实际 interval 三图；唯一 Word 高度／cap／成本图、原方程、cost_bounds 已有。height_bounds、cost_le_scale、精确 cost_old_factor 已验收；本轮接通字面 Gate 成本、outside-block 因子和 old–old 严格 margin | old–new／new–old／same-head 严格 margin、统一递归、旧成本上确界保持、完整 Probe；然后 Merger、Placement/ConservativeHull、最终饱和单子 |
 | 9 模型应用 | Models 固定源码已有 | 同一系统中的全秩 SVC、ACwo、商单射和非选择见证 |
 | 10 Main／内部 Con | 原 Main 链和最终 Con 规格固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 专用内部检查关系及全部内部矛盾码归约、最终闭句 |
 | 11 终验 | 现有审计工具可复用 | 最终主定理验收未开始 |
@@ -20,20 +20,20 @@
 
 纯成员／等词语言、完整 nativeZF（全 Separation/Collection），U = ZF + PP + ACwo + ¬AC。最终必须交付原 `FirstOrder.Derives nativeZF [] (Con_ZF → Con_U)`，其中蕴含为对象公式，Con 覆盖所有内部证明码，包括外部看来非标准的码。Con 的固定定义、编码和六种原核规则见 OBJECT_TARGET；ZF/U 完整专用 AST 和任意内部码传输仍未闭合。不能把宿主 Consistent、语义模型、AST 或辅助构建通过当作主句。
 
-## 本轮代码复核与源迁移
+## 本轮固定源迁移
 
-固定 OpenAI 提交 `1581d4cbdd69a0faf34b2089614fe2a814316a6a`，底座 `039c8e132cc19671d73a3933c66b4799d2599dd6`。本轮开始时，上一验收的 2486 份文件指纹全部匹配，没有把旧报告当作新代码的验收。
+固定 OpenAI 提交 1581d4c、活动 YesMetaZFC 039c8e1，不改供体、不改目标背景。本轮开始时上一批完整验收的 2492 份指纹为既有基线；权重图／高度界／scale 界和 cost_old_factor 不重做。
 
-- ConstructionCutProductUnit：原 height_bounds:239 / cost_le_scale:268 真正需要的乘法单位及界。unit 明确为实际 rational 1/1 的主切割；复用原生乘法、分数密度／scaled_equiv 和已证切割单调，不扩建完整域。
-- ConstructionProbeWeightBounds：使用同一实际 Word，直接调用既有 HeightFold 和 CostFold 构造 HL/Cap/LC；用既有 Raw 对象公式归纳、实际 interval 三图证明 `0<height<1`、`0<cost≤1` 和原 cons/head 的 `cost≤scale`，保留完整图唯一性。不假设所需新图或所需新界。
-- ConstructionProbeOldCostFactors：从已有 EmbeddingLaws 抽取整除反映，消费已有 HasOldGates，证明每个 OldMinimum 的成本界及原 cost_old_factor:285 的完整结论和内部见证。不重证门、交或嵌入。cost_le_gate:277 的充分 least-old-profile 估计已有，尚不冒称独立字面 Gate 终点。
-- 三个 Syntax 终点均为纯对象句子的原核 `Derives nativeZF [] ...`；经已有 ModelTransfer 的全模型／语言／universe 对应回传，不只交付语义定理。三个终点依赖项分别 25、31、16，全部属于既有可信基，没有新增本工程公理。
+- 固定 ProbeMargins.cost_le_gate:277：直接消费既有字面 Gate→旧倍数轮廓和 minimum 成本界。
+- cost_other_block_factor:299：按源 old/new 分支，用既有 exit gate 构造 g、old(g)、C(g)，保留两项整除和成本界。
+- uniform_margin_old:326：保留旧 UniformMargins 给出的实际界和严格高度间隙；用既有 cost_old_factor 把全部新遗漏成本压回旧遗漏成本，不把严格 margin 降为单调性。
+- 纯成员 Syntax 终点为原 FirstOrder.Derives nativeZF [] constructionSentence；在该证书中直接调用既有生产者导出 ExitGates、HasOldGates、EmbeddingLaws 和 Word 单子律，不假设这些期望结论。原实际字母表／Word／乘法／旧嵌入、旧条件并和保守性、cap／成本／高度方程及旧 uniform margin 为现成输入。没有新增对象 AC、通用归纳或完整实数域。
 
-本轮 6 个模块共 25 项声明，定向严格构建和 trust=0 预审均退出 0，零警告。现已加入 PPAC、Audit、SOURCE_LOCK 和逐声明完整审计。正式 scripts/verify.py 已退出 0：2932 项构建，29925 项声明（975 项无公理依赖、28950 项有已记录依赖），九条命令全部退出 0，其中五次 --trust=0，零警告；2492 份当前指纹及 75 份固定源哈希全部匹配。日志：verification/probe-weight-bounds-full-verification.log。 完整 HeightCost、margin 和最终 Con 仍为未证明。
+新增 2 模块共 7 项声明，严格定向构建和 --trust=0 预审退出 0，零警告。原核终点继承已有 22 项依赖，没有扩大可信基。正式 scripts/verify.py 已退出 0：2934 项构建，29932 项声明（976 项无公理依赖、28956 项有已记录依赖），九条命令全部退出 0，其中五次 --trust=0，零警告；2494 份当前指纹及 75 份固定源哈希匹配。日志 verification/probe-cost-margins-full-verification.log。完整 HeightCost、其他 margin 情形、旧成本上确界保持和最终 Con 均仍未证明。
 
 ## 复用裁决与误判纠正
 
-本轮回读干净的新版供体 Jensen/ZF/Model.lean:15 和 Jensen/ZF/Choice.lean:14，前提确为任意 `M.Models ZF`；固定旧版也干净。新版 L 完整数学已做完，不能把旧 LCarrier 的 ZFSet 限制套到新版。已有全模式、内部递归、函数空间、Proof/Sat 和 BMS-style ModelTransfer 已实际消费；继续做消费者的特化和接口，不另建通用配套。精确入口及背景差异见 REUSE_CONTRACTS。
+此前已回读干净的新版供体 Jensen/ZF/Model.lean:15 和 Jensen/ZF/Choice.lean:14，前提确为任意 `M.Models ZF`；固定旧版也干净。新版 L 完整数学已做完，不能把旧 LCarrier 的 ZFSet 限制套到新版。已有全模式、内部递归、函数空间、Proof/Sat 和 BMS-style ModelTransfer 已实际消费；继续做消费者的特化和接口，不另建通用配套。精确入口及背景差异见 REUSE_CONTRACTS。
 
 此前误判的原因是把局部验收批次当作整个项目阶段，把“当前版本／语言未接通”误报成“已有数学未完成”，以及在内部编码支线投入了当前路线不需要的工作。这些是规划和验收判断错误，不能归因于磁盘不足，也不能用更多辅助定理掩盖。当前流程以原源声明、实际生产者／消费者和最终对象核类型为门，不以模块数、布尔状态或编译任务数作完成率。
 
@@ -41,7 +41,7 @@
 
 ## 必要的下一顺序
 
-固定源 cost_other_block_factor／必要 Gate 接口 → 原 uniform_margin_old 及后续严格 margin → extensionHeightCost／extension_old_cost_supremum → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。随后与第 6 阶段已有 L 的适配、第 9 阶段同一模型应用和第 10 阶段全部内部码归约汇合。每项保持原假设、全秩及内部量词，不另证一个相似目标。
+固定源 uniform_margin_old_new:343 → uniform_margin_new_old:371 → uniform_margin_same_head:415 → uniform_margin:450 → extensionHeightCost／extension_old_cost_supremum → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。随后与第 6 阶段已有 L 的适配、第 9 阶段同一模型应用和第 10 阶段全部内部码归约汇合。每项保持原假设、全秩及内部量词，不另证一个相似目标。
 
 ## 清理和执行边界
 
@@ -49,4 +49,4 @@
 
 本轮按最新删除要求提交同一精确补丁，**自动审批再次拒绝**：需要用户明确批准这份 358 模块及对应专用检查的大规模删除范围。源码、入口、检查和缓存均未删除；已发具体确认，不绕过。该删除不是形式化主线前提。保留主线全量编译、全部保留声明和原核 trust 审计、最终 Con 门。
 
-完整验收后，本批已按绝对路径／重解析点／哈希白名单删除唯一重复预审输入 verification/ProbeWeightBoundsAudit.lean（2188 字节）；成功定向／预审／全量日志保留。清单：verification/cleanup-probe-weight-bounds-20261027.json。复核无 Lean/Lake 进程；没有终止其他项目或应用。Agent 广场拒绝连接，未直接修改其数据；需要时双击 C:/Users/17857/AgentPlaza/启动广场.bat。
+此前已删除权重界探针。本轮全量验收后已按绝对路径／重解析点／哈希白名单删除被 Audit 接管的 ProbeCostMarginsAudit.lean（626 字节）。清单 verification/cleanup-probe-cost-margins-20261027.json；成功定向／预审／全量日志全部保留，没有终止其他项目。Agent 广场拒绝连接，未直接修改其数据；需要时双击 C:/Users/17857/AgentPlaza/启动广场.bat。

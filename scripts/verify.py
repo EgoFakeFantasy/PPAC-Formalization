@@ -2613,7 +2613,9 @@ def main() -> None:
                                ('construction_probe_weight_bounds', 'ConstructionProbeWeightBounds', 7),
                                ('construction_probe_weight_bounds_syntax', 'ConstructionProbeWeightBoundsSyntax', 3),
                                ('construction_probe_old_cost_factors', 'ConstructionProbeOldCostFactors', 5),
-                               ('construction_probe_old_cost_factors_syntax', 'ConstructionProbeOldCostFactorsSyntax', 3)):
+                               ('construction_probe_old_cost_factors_syntax', 'ConstructionProbeOldCostFactorsSyntax', 3),
+                               ('construction_probe_cost_margins', 'ConstructionProbeCostMargins', 4),
+                               ('construction_probe_cost_margins_syntax', 'ConstructionProbeCostMarginsSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6283,6 +6285,8 @@ def main() -> None:
         "source_probe_actual_cut_product_unit_law_proved": True,
         "source_probe_actual_Word_height_bounds_cost_scale_proved": True,
         "source_probe_actual_old_cost_factor_from_existing_profiles_proved": True,
+        "source_probe_literal_gate_outside_block_cost_proved": True,
+        "source_probe_old_old_strict_uniform_margin_proved": True,
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,

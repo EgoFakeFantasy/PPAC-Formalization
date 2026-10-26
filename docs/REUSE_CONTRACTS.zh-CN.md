@@ -98,6 +98,8 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | 原 OldMinimum／gateCap | 现成 PersistentProfiles.OldGate 的精确旧倍数轮廓；已有 LeftCancelMonoid／Conical；原生可定义函数构造与图外延性 | 实际唯一 cap 图、精确最小旧成本／默认 unit 分支、正性和非严格上界已证。没有重证门存在性，不选任意更大旧倍数，不强化所有词有门 |
 | 原 rawCost／Word.cost／cost_bounds | 未修改的 evalHom／Word lift；上批 HeightFold.eval_range 根步骤范围细化；现成 Raw 公式归纳、agreement、一般乘积／min；原生状态图和函数构造 | 状态保持当前词的证明已完成，使用 cap(当前新词)；同一 Word 实际成本图具有原 old/cons 方程、整体唯一性及 0<cost≤unit。证书同时构造 cap，无 cap／成本图 oracle；单位 1 的切割表示由既有 Base 数据供给 |
 
-下一实际消费者是 ProbeMargins.Word.cost_other_block_factor:299、uniform_margin_old:326 及后续严格 margin → heightCost:494 / extension_old_cost_supremum:584 → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术、实际高度／cap／成本图、height_bounds、cost_bounds、cost_le_scale 和 cost_old_factor 均已有。只继续源消费者需要的估计及严格 margin，不重复这些构造，不新建通用递归、Proof/Sat 或完整实数域。
+下一实际消费者是 ProbeMargins.Word.uniform_margin_old_new:343、uniform_margin_new_old:371、uniform_margin_same_head:415 及统一递归 → heightCost:494 / extension_old_cost_supremum:584 → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术、实际高度／cap／成本图、height_bounds、cost_bounds、cost_le_scale 和 cost_old_factor 均已有。只继续源消费者需要的估计及严格 margin，不重复这些构造，不新建通用递归、Proof/Sat 或完整实数域。
 
 本轮复用复核：活动底座仍为 039c8e1，新版供体仍为 7979336，两者工作树干净。回读 Jensen/ZF/Model.lean:15 和 Jensen/ZF/Choice.lean:14，前提确为任意 M.Models ZF；不是 ZFSet 子类限制，也没有新增 L 证明任务。本轮不修改供体。新权重界直接消费已有 Raw 对象公式归纳、HeightFold/CostFold、interval 三图和 min 界；old-factor 直接抽取已有 EmbeddingLaws 字段和 HasOldGates，不重建 gate 或递归。
+
+原 Gate/成本/margin 消费：ConstructionProbeCostMargins.minimum_of_gate 直接调用 gate_dvd_old_iff；cost_le_gate 复用既有 minimum 成本界；outside-block 因子使用现成 gate_existence、EmbeddingLaws，old–old 严格 margin 直接消费 cost_old_factor 和旧 UniformMargins。原核 Syntax 中调用这些既有生产者，消去 ExitGates／HasOldGates／EmbeddingLaws／Word 单子前提；仅保留原实际字母表、Word／乘法／旧嵌入、旧条件并与保守性、权重方程和旧 margin 输入。没有重做 Gate、嵌入、归纳或实数算术。

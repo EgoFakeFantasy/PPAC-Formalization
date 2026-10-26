@@ -30328,3 +30328,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeOldCostFactorsSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeOldCostFactorsSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionProbeOldCostFactorsSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionProbeCostMargins.minimum_of_gate
+#print axioms PPAC.Migration.ConstructionProbeCostMargins.cost_le_gate
+#print axioms PPAC.Migration.ConstructionProbeCostMargins.cost_other_block_factor
+#print axioms PPAC.Migration.ConstructionProbeCostMargins.uniform_margin_old
+#print axioms PPAC.Migration.ConstructionProbeCostMarginsSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeCostMarginsSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionProbeCostMarginsSyntax.construction_kernel_certificate

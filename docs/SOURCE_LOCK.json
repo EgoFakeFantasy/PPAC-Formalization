@@ -41140,6 +41140,174 @@
         "Existing ModelTransfer.derives"
       ],
       "scope": "Extracts reflection from completed EmbeddingLaws, proves cost<=C(g) for every actual OldMinimum, and the exact source old-factor conclusion for all internal q dividing old(y), including actual Emb/C witnesses, OldMinimum, q|old(g), g|y and cost bound. Uses accepted existing gate/profile producers rather than re-proving them. Does not claim literal Gate endpoint, outside-block factor, uniform margin or final Con."
+    },
+    "construction_probe_cost_margins": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "adapter": "PPAC/Migration/ConstructionProbeCostMargins.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.cost_le_gate:277",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.cost_other_block_factor:299",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_old:326"
+      ],
+      "consumers": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_old_new:343",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_new_old:371",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_same_head:415",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin:450",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.heightCost:494"
+      ],
+      "reused_interfaces": [
+        "Existing Gate.gate_dvd_old_iff and oldGraph; existing cost_le_minimum",
+        "Existing ConditionalJoins.gate_existence and PersistentProfiles.probe_has_old_gates, unchanged",
+        "Existing EmbeddingLaws exact old/HeadDiv reflection; existing Word monoid_laws",
+        "Existing actual height old equation and cost_old_factor; existing UniformMargins/UniformAt/MissedBound",
+        "Existing ModelTransfer.derives all-model/universe bridge"
+      ],
+      "scope": "Literal native Gate cost bound, exact outside-block old factor and old-old STRICT uniform margin for all internal words/costs. Same actual Emb/H/C/HL/LC graphs; bound witness and strict height gap are retained, every missed new cost is controlled via its existing old factor. Object certificate derives ExitGates, HasOldGates, EmbeddingLaws and the new Word monoid from accepted producers, rather than assuming those desired conclusions. Retains actual Alphabet/Word/multiplication/old graph, old conditional joins and conservativity, cap/cost/height equations and old UniformMargins. Those are existing source construction contracts, not new ZF axioms. Other margin cases, complete HeightCost, supremum preservation and final Con are NOT claimed.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeCostMargins.minimum_of_gate": [],
+        "PPAC.Migration.ConstructionProbeCostMargins.cost_le_gate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionProbeCostMargins.cost_other_block_factor": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionProbeCostMargins.uniform_margin_old": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ]
+      }
+    },
+    "construction_probe_cost_margins_syntax": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "adapter": "PPAC/Migration/ConstructionProbeCostMarginsSyntax.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.cost_le_gate:277",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.cost_other_block_factor:299",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_old:326"
+      ],
+      "consumers": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_old_new:343",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_new_old:371",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin_same_head:415",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.uniform_margin:450",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.heightCost:494"
+      ],
+      "reused_interfaces": [
+        "Existing Gate.gate_dvd_old_iff and oldGraph; existing cost_le_minimum",
+        "Existing ConditionalJoins.gate_existence and PersistentProfiles.probe_has_old_gates, unchanged",
+        "Existing EmbeddingLaws exact old/HeadDiv reflection; existing Word monoid_laws",
+        "Existing actual height old equation and cost_old_factor; existing UniformMargins/UniformAt/MissedBound",
+        "Existing ModelTransfer.derives all-model/universe bridge"
+      ],
+      "scope": "Literal native Gate cost bound, exact outside-block old factor and old-old STRICT uniform margin for all internal words/costs. Same actual Emb/H/C/HL/LC graphs; bound witness and strict height gap are retained, every missed new cost is controlled via its existing old factor. Object certificate derives ExitGates, HasOldGates, EmbeddingLaws and the new Word monoid from accepted producers, rather than assuming those desired conclusions. Retains actual Alphabet/Word/multiplication/old graph, old conditional joins and conservativity, cap/cost/height equations and old UniformMargins. Those are existing source construction contracts, not new ZF axioms. Other margin cases, complete HeightCost, supremum preservation and final Con are NOT claimed.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeCostMarginsSyntax.constructionSentence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionProbeCostMarginsSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionProbeCostMarginsSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

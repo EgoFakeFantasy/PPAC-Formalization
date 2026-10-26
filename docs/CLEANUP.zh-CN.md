@@ -20,7 +20,9 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 | 大规模退役审批 | 本轮提交同一精确补丁，自动审批再次拒绝，理由为需要用户明确批准具体 358 模块／配套检查删除范围；已发确认。源码、检查和缓存均仍在，不绕过。 |
 | scripts/check_source_rules.py、check_source_theory.py、verify.py | 三者都在实际验收命令链中，不是无用脚本，保留。 |
 | 供体、工具链和其他仓库 | 保留；本轮未修改或清理。固定源 75 份哈希匹配；两个 YesMetaZFC checkout 干净。 |
-| 本轮 6 模块／25 声明 | 直接服务 ProbeMargins 的 height_bounds、cost_le_scale、cost_old_factor；保留并纳入全部声明审计。没有新增持久生成脚本。 |
+| 此前 6 模块／25 声明 | 直接服务 ProbeMargins 的 height_bounds、cost_le_scale、cost_old_factor；保留并纳入全部声明审计。没有新增持久生成脚本。 |
 | 预审输入／进程 | 只在完整 Audit 覆盖且全量验收成功后，按本仓绝对路径、无重解析点和 SHA 白名单删除本轮 ProbeWeightBoundsAudit.lean。保留成功构建、预审及全验收日志；不终止正在验收的进程或其他项目进程。已全量验收并删除该唯一探针（2188 字节），清单见 verification/cleanup-probe-weight-bounds-20261027.json。没有残留 Lean/Lake，未终止任何其他进程。 |
 
 停止开发 NatPacket／字节兼容、泛滤 truth、独立 L 重建、重复 Sat 及无当前原消费者的完整实数域。现行 STATUS、AGENT_WORKFLOW、GAPS 和 THEOREM_COVERAGE 已移除“已有完整模式／L 数学／Word 权重界尚未做”的误报；对旧兼容支线的历史 False 不再当作本项目基础数学待办。
+
+本轮成本／old–old margin 批次：新增 2 模块、7 声明均有固定原消费者；保留并加入完整 Audit，无新持久生成脚本。全量验收成功后已按绝对路径／重解析点／哈希白名单删除 ProbeCostMarginsAudit.lean（626 字节），清单 verification/cleanup-probe-cost-margins-20261027.json；成功日志保留，358 项退役提案仍未执行。
