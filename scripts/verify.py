@@ -3474,7 +3474,8 @@ def main() -> None:
                                ("forcing_replacement_witness", "ForcingReplacementWitness", 15),
                                ("forcing_replacement_image", "ForcingReplacementImage", 8),
                                ("forcing_replacement_axiom", "ForcingReplacementAxiom", 6),
-                               ("forcing_zf_axioms", "ForcingZFAxioms", 4)):
+                               ("forcing_zf_axioms", "ForcingZFAxioms", 4),
+                               ("construction_base_monoid", "ConstructionBaseMonoid", 23)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7479,6 +7480,12 @@ def main() -> None:
         "source_product_partial_order_from_source_monoid_contract_proved": True,
         "source_product_actual_relation_PreorderOn_antisymmetry_top_native_certificate_proved": True,
         "source_product_stage8_monoid_construction_proved": False,
+        "source_initial_base_internal_omega_addition_table_constructed": True,
+        "source_initial_base_left_cancel_conical_unit_and_generator_proved": True,
+        "source_initial_base_le_iff_and_pair_joins_proved": True,
+        "source_initial_base_algebra_native_kernel_certificate_proved": True,
+        "source_initial_base_height_cost_and_margin_proved": False,
+        "source_initial_base_scope": "Only initial Base.M algebra, exact internal addition graph, zero unit, nonzero successor generator and pair joins. All internal/nonstandard naturals; original Base.object still needs height/cost and margin. Final saturated construction and final Con remain incomplete.",
         "source_product_WithTop_action_instantiated": True,
         "source_product_WithTop_top_fixed_and_group_laws_proved": True,
         "source_product_WithTop_uniform_label_family_instantiated": True,

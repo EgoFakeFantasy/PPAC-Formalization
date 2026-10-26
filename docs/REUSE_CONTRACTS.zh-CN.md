@@ -90,3 +90,5 @@ Replacement 实例复用：固定底座 Collection.lean:69 的 ZF.collection_exi
 
 
 阶段 8 下一消费者核对：原 Construction/MonoidBase.Base 采用内部自然数加法单子，但完整 Object 还保留条件并、真实 height/cost 和非单位元；Algebra/DiagramOrder.HeightCost 使用有界实数上确界。新版 7979336 的 Descriptive/Dyadic 已提供内部 2^n 单位分数码及比较，可作特定辅助候选；RealPair 实际是 Baire 空间配对，不是实数有序域。尚未定位与 HeightCost 全合同对应的现成接口，不能据文件名声称已接通，也不能据此次局部检索声称其他仓库没有相关数学。当前已有自然数／序数算术、图构造和递归继续优先复用；没有修改或构建供体。
+
+本批 Base.M 已实际消费固定 039c8e1 底座 Ord/Natural.lean 的 ordinalAddition_mem_omega、members_areOrdinals/transitive，以及 Ord/Arithmetic 的存在唯一性、零元、结合、消去、序比较与右余项。FunctionConstruction.exists_setFunctionFromTo_of_denote 在原生 ω×ω 上构造精确内部加法表；Base.le_iff 与 joins 保留原自然数序／max 证明，不重新开发自然数算术。模型中全部内部 ω 都被覆盖，最后由已有 ModelTransfer 回传原核；height/cost/margin 未被假设为字段或误记为完成。新增声明使用已有 15 个递归 Bool 证书，预审未发现新的依赖；正式验收继续执行原证书复算。删除对整个 ProductParameters 的不必要导入，直接消费原生积构造。

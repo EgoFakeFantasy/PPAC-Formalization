@@ -90,3 +90,5 @@ Separation 批次：正式 Audit.lean 已覆盖全部 36 项新增声明后，�
 
 
 Replacement 批次：删除未被实际消费者使用的 orbit/localBound 额外 AST 及其展开引理，保留构造所用 movePair/witness AST 和直接服务最终证书的证明。正式 Audit.lean 接管 45 项声明后，按解析本仓绝对路径、普通文件和 SHA-256 白名单删除 ForcingReplacementAudit.lean，再启动串行全验收；清单为 verification/cleanup-replacement-probe-20261026.json。保留预审／全验收日志；修正 MATH_REDUCTION_ROUTE 中实际作用、HS pair/union 和全 ZF 仍被报为待做的旧描述。没有生成持久脚本或独立验收报告，没有修改供体或恢复冻结支线。
+
+Base.M 批次：去掉 ConstructionBaseMonoid 对 ProductParameters 的不必要导入，直接使用原生自然数与积构造；没有新增算术后端或持久脚本。正式 Audit.lean 覆盖全部 23 项声明后，核对本仓绝对路径、普通文件和 SHA-256，删除 verification/ConstructionBaseMonoidAudit.lean；清单为 cleanup-base-monoid-probe-20261026.json，预审日志保留。旧字节支线仍冻结，未作无依据批量删除。

@@ -30653,3 +30653,27 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingZFAxioms.sentence
 #print axioms PPAC.Migration.ForcingZFAxioms.models
 #print axioms PPAC.Migration.ForcingZFAxioms.kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionBaseMonoid.AdditionGraph
+#print axioms PPAC.Migration.ConstructionBaseMonoid.sumPair
+#print axioms PPAC.Migration.ConstructionBaseMonoid.sumPair_semantics
+#print axioms PPAC.Migration.ConstructionBaseMonoid.addition_unique
+#print axioms PPAC.Migration.ConstructionBaseMonoid.exists_additionGraph
+#print axioms PPAC.Migration.ConstructionBaseMonoid.leftCancelMonoid
+#print axioms PPAC.Migration.ConstructionBaseMonoid.conical
+#print axioms PPAC.Migration.ConstructionBaseMonoid.Divides
+#print axioms PPAC.Migration.ConstructionBaseMonoid.divides
+#print axioms PPAC.Migration.ConstructionBaseMonoid.divides_semantics
+#print axioms PPAC.Migration.ConstructionBaseMonoid.le_iff
+#print axioms PPAC.Migration.ConstructionBaseMonoid.Joins
+#print axioms PPAC.Migration.ConstructionBaseMonoid.joins
+#print axioms PPAC.Migration.ConstructionBaseMonoid.joinsFormula
+#print axioms PPAC.Migration.ConstructionBaseMonoid.joinsFormula_semantics
+#print axioms PPAC.Migration.ConstructionBaseMonoid.graph
+#print axioms PPAC.Migration.ConstructionBaseMonoid.graph_freeClosed
+#print axioms PPAC.Migration.ConstructionBaseMonoid.graph_semantics
+#print axioms PPAC.Migration.ConstructionBaseMonoid.exists_base
+#print axioms PPAC.Migration.ConstructionBaseMonoid.algebraBody
+#print axioms PPAC.Migration.ConstructionBaseMonoid.constructionSentence
+#print axioms PPAC.Migration.ConstructionBaseMonoid.construction_models
+#print axioms PPAC.Migration.ConstructionBaseMonoid.construction_kernel_certificate

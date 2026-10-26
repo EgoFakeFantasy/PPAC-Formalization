@@ -74,6 +74,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | SymmetricChoice.forces_ZF | ForcingZFAxioms.kernel_certificate | All nine source axiom constructors: seven fixed axioms, full Separation and full Replacement. The same actual HS domain and original monoid/Presentation/carrier/Normal/condition premises. This is an external schema of object derivations; stage-8 concrete algebra and stage-10 arbitrary internal formula/proof codes are not discharged. |
 
+| MonoidConstruction.Base.M / IsConical / le_iff / joins / object algebra | ConstructionBaseMonoid.construction_kernel_certificate | Exact set graph of addition on all internal omega, zero unit, associativity, left cancellation, conicality, successor generator distinct from zero and pair least upper bounds. Reuses native ordinal arithmetic and definable graphs; no host Nat enumeration. Original real height/cost/margin and subsequent extensions are not yet supplied. This is the initial base, not the final saturated monoid. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
