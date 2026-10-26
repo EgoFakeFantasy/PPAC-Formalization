@@ -2585,7 +2585,10 @@ def main() -> None:
                                ("construction_cut_associativity_syntax", "ConstructionCutAssociativitySyntax", 3),
                                ("construction_cut_locatedness", "ConstructionCutLocatedness", 7),
                                ("construction_cut_difference", "ConstructionCutDifference", 21),
-                               ("construction_cut_difference_syntax", "ConstructionCutDifferenceSyntax", 6)):
+                               ("construction_cut_difference_syntax", "ConstructionCutDifferenceSyntax", 6),
+                               ("construction_probe_intervals", "ConstructionProbeIntervals", 9),
+                               ("construction_probe_letter_intervals", "ConstructionProbeLetterIntervals", 6),
+                               ("construction_probe_intervals_syntax", "ConstructionProbeIntervalsSyntax", 24)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6241,6 +6244,7 @@ def main() -> None:
         "source_probe_actual_cut_addition_associativity_proved": True,
         "source_probe_general_cut_difference_exact_recovery_proved": True,
         "source_probe_cut_addition_order_reflection_cancellation_proved": True,
+        "source_probe_pointwise_letter_intervals_from_old_uniform_margin_proved": True,
         "source_probe_letter_intervals_constructed": False,
         "source_probe_successor_HeightCost_PointBound_instantiated": False,
         "source_probe_extension_height_cost_margin_proved": False,

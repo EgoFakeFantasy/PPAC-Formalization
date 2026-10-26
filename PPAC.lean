@@ -460,3 +460,6 @@ import PPAC.Migration.ConstructionCutAssociativitySyntax
 import PPAC.Migration.ConstructionCutLocatedness
 import PPAC.Migration.ConstructionCutDifference
 import PPAC.Migration.ConstructionCutDifferenceSyntax
+import PPAC.Migration.ConstructionProbeIntervals
+import PPAC.Migration.ConstructionProbeLetterIntervals
+import PPAC.Migration.ConstructionProbeIntervalsSyntax

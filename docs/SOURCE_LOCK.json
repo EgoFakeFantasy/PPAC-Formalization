@@ -33646,7 +33646,7 @@
         "ZF.exists_setFunctionFromTo_of_denote",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual operations needed because letterFloor can be a nonprincipal cut. Each two internal cuts are bounded by principal cuts using their own properness witnesses; existing principal_add_bound and bounded_sum then give a proper sum, with no retained upper-bound input. Existing native cartesian-product and definable-function constructors build one addition graph on the full cut carrier. Commutativity, monotonicity, operand inclusion and both empty-cut zero identities are proved. Literal maximum is constructed from existing cut totality, with uniqueness, operand/least-upper bounds and the strict upper-bound law used by the source max_lt step. The pure nativeZF sentence constructs the addition graph and all maxima for all internal cuts, including nonstandard model data. No object choice, external enumeration, new recursion, satisfaction or proof kernel; no complete real field is claimed. These are source interval arithmetic prerequisites, not a claim that exists_letter_interval is proved. The quarter inverse-image graph and positivity/order laws are supplied by ConstructionCutDivision. Quarter-to-balanced-fourfold-addition linkage is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation arithmetic, letter intervals, successor height/cost, complete margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Actual operations needed because letterFloor can be a nonprincipal cut. Each two internal cuts are bounded by principal cuts using their own properness witnesses; existing principal_add_bound and bounded_sum then give a proper sum, with no retained upper-bound input. Existing native cartesian-product and definable-function constructors build one addition graph on the full cut carrier. Commutativity, monotonicity, operand inclusion and both empty-cut zero identities are proved. Literal maximum is constructed from existing cut totality, with uniqueness, operand/least-upper bounds and the strict upper-bound law used by the source max_lt step. The pure nativeZF sentence constructs the addition graph and all maxima for all internal cuts, including nonstandard model data. No object choice, external enumeration, new recursion, satisfaction or proof kernel; no complete real field is claimed. These are source interval arithmetic prerequisites, not a claim that exists_letter_interval is proved. The quarter inverse-image graph and positivity/order laws are supplied by ConstructionCutDivision. Quarter-to-balanced-fourfold-addition linkage is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation arithmetic, letter intervals, successor height/cost, complete margin and final Con remain unfinished. Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutArithmetic.below_omitted": [
           "Classical.choice",
@@ -34006,7 +34006,7 @@
         "ZF.exists_setFunctionFromTo_of_denote",
         "ModelTransfer.derives"
       ],
-      "scope": "Actual operations needed because letterFloor can be a nonprincipal cut. Each two internal cuts are bounded by principal cuts using their own properness witnesses; existing principal_add_bound and bounded_sum then give a proper sum, with no retained upper-bound input. Existing native cartesian-product and definable-function constructors build one addition graph on the full cut carrier. Commutativity, monotonicity, operand inclusion and both empty-cut zero identities are proved. Literal maximum is constructed from existing cut totality, with uniqueness, operand/least-upper bounds and the strict upper-bound law used by the source max_lt step. The pure nativeZF sentence constructs the addition graph and all maxima for all internal cuts, including nonstandard model data. No object choice, external enumeration, new recursion, satisfaction or proof kernel; no complete real field is claimed. These are source interval arithmetic prerequisites, not a claim that exists_letter_interval is proved. The quarter inverse-image graph and positivity/order laws are supplied by ConstructionCutDivision. Quarter-to-balanced-fourfold-addition linkage is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation arithmetic, letter intervals, successor height/cost, complete margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Actual operations needed because letterFloor can be a nonprincipal cut. Each two internal cuts are bounded by principal cuts using their own properness witnesses; existing principal_add_bound and bounded_sum then give a proper sum, with no retained upper-bound input. Existing native cartesian-product and definable-function constructors build one addition graph on the full cut carrier. Commutativity, monotonicity, operand inclusion and both empty-cut zero identities are proved. Literal maximum is constructed from existing cut totality, with uniqueness, operand/least-upper bounds and the strict upper-bound law used by the source max_lt step. The pure nativeZF sentence constructs the addition graph and all maxima for all internal cuts, including nonstandard model data. No object choice, external enumeration, new recursion, satisfaction or proof kernel; no complete real field is claimed. These are source interval arithmetic prerequisites, not a claim that exists_letter_interval is proved. The quarter inverse-image graph and positivity/order laws are supplied by ConstructionCutDivision. Quarter-to-balanced-fourfold-addition linkage is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation arithmetic, letter intervals, successor height/cost, complete margin and final Con remain unfinished. Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutArithmeticSyntax.graph": [
           "Classical.choice",
@@ -34391,7 +34391,7 @@
         "ConstructionBaseWeights.digits_exists and internal omega successor",
         "ModelTransfer.derives"
       ],
-      "scope": "Positive natural multiplication of existing internal fraction codes, total/unique by code with weak/strict order reflection. Inverse construction is by value using denominator multiplication and existing scaled_equiv, not false fraction-code equality. General cut division is the exact scaling inverse image, constructed by native Separation; cut closure, uniqueness, positivity equivalence and weak/strict order preservation and reflection are proved. A native definable-function constructor builds the whole division graph on CutCarrier for every positive internal natural, including nonstandard ones. The second closed endpoint constructs actual digits and their successor four, then the actual /4 graph with the same laws. Both have original nativeZF Derives certificates. No object choice, external enumeration, new recursion or proof kernel. Full exists_letter_interval is not claimed. The quarter-to-balanced-fourfold-sum identity is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation/associativity laws, interval assembly, successor height/cost/margin and final Con remain incomplete. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Positive natural multiplication of existing internal fraction codes, total/unique by code with weak/strict order reflection. Inverse construction is by value using denominator multiplication and existing scaled_equiv, not false fraction-code equality. General cut division is the exact scaling inverse image, constructed by native Separation; cut closure, uniqueness, positivity equivalence and weak/strict order preservation and reflection are proved. A native definable-function constructor builds the whole division graph on CutCarrier for every positive internal natural, including nonstandard ones. The second closed endpoint constructs actual digits and their successor four, then the actual /4 graph with the same laws. Both have original nativeZF Derives certificates. No object choice, external enumeration, new recursion or proof kernel. Full exists_letter_interval is not claimed. The quarter-to-balanced-fourfold-sum identity is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation/associativity laws, interval assembly, successor height/cost/margin and final Con remain incomplete. Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutDivision.Value": [
           "Classical.choice",
@@ -34677,7 +34677,7 @@
         "ConstructionBaseWeights.digits_exists and internal omega successor",
         "ModelTransfer.derives"
       ],
-      "scope": "Positive natural multiplication of existing internal fraction codes, total/unique by code with weak/strict order reflection. Inverse construction is by value using denominator multiplication and existing scaled_equiv, not false fraction-code equality. General cut division is the exact scaling inverse image, constructed by native Separation; cut closure, uniqueness, positivity equivalence and weak/strict order preservation and reflection are proved. A native definable-function constructor builds the whole division graph on CutCarrier for every positive internal natural, including nonstandard ones. The second closed endpoint constructs actual digits and their successor four, then the actual /4 graph with the same laws. Both have original nativeZF Derives certificates. No object choice, external enumeration, new recursion or proof kernel. Full exists_letter_interval is not claimed. The quarter-to-balanced-fourfold-sum identity is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation/associativity laws, interval assembly, successor height/cost/margin and final Con remain incomplete. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Positive natural multiplication of existing internal fraction codes, total/unique by code with weak/strict order reflection. Inverse construction is by value using denominator multiplication and existing scaled_equiv, not false fraction-code equality. General cut division is the exact scaling inverse image, constructed by native Separation; cut closure, uniqueness, positivity equivalence and weak/strict order preservation and reflection are proved. A native definable-function constructor builds the whole division graph on CutCarrier for every positive internal natural, including nonstandard ones. The second closed endpoint constructs actual digits and their successor four, then the actual /4 graph with the same laws. Both have original nativeZF Derives certificates. No object choice, external enumeration, new recursion or proof kernel. Full exists_letter_interval is not claimed. The quarter-to-balanced-fourfold-sum identity is supplied by ConstructionCutQuarterSum. General-cut difference, other required strict/cancellation/associativity laws, interval assembly, successor height/cost/margin and final Con remain incomplete. Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutDivisionSyntax.graph": [
           "Classical.choice",
@@ -34868,7 +34868,7 @@
         "ConstructionProbeHomEvaluation.product_unique",
         "ModelTransfer.derives"
       ],
-      "scope": "Connects the existing actual division-by-four graph and actual binary addition graph on the same full CutCarrier. Native successor arithmetic proves internal two*two=four; same_den_sum identifies numeric doubling by value, then a cut-membership proof identifies actual double sums with division-by-two inverse images. Scaling/division composition and existing division order reflection prove that two actual doubles of a quarter recover the original cut. The native closed endpoint constructs both graphs and their original laws, and for every quarter output constructs the intermediate double and proves the fourfold output is the original input, uniquely for all possible graph evaluations. It does not assume a field, general cut cancellation or an external real model. All internal cuts and fraction codes are included. General-cut difference, other required strict/cancellation laws (associativity is now supplied by ConstructionCutAssociativity), complete letter intervals, successor height/cost/margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Connects the existing actual division-by-four graph and actual binary addition graph on the same full CutCarrier. Native successor arithmetic proves internal two*two=four; same_den_sum identifies numeric doubling by value, then a cut-membership proof identifies actual double sums with division-by-two inverse images. Scaling/division composition and existing division order reflection prove that two actual doubles of a quarter recover the original cut. The native closed endpoint constructs both graphs and their original laws, and for every quarter output constructs the intermediate double and proves the fourfold output is the original input, uniquely for all possible graph evaluations. It does not assume a field, general cut cancellation or an external real model. All internal cuts and fraction codes are included.  Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutQuarterSum.two_mul_two": [
           "Classical.choice",
@@ -35116,7 +35116,7 @@
         "ConstructionProbeHomEvaluation.product_unique",
         "ModelTransfer.derives"
       ],
-      "scope": "Connects the existing actual division-by-four graph and actual binary addition graph on the same full CutCarrier. Native successor arithmetic proves internal two*two=four; same_den_sum identifies numeric doubling by value, then a cut-membership proof identifies actual double sums with division-by-two inverse images. Scaling/division composition and existing division order reflection prove that two actual doubles of a quarter recover the original cut. The native closed endpoint constructs both graphs and their original laws, and for every quarter output constructs the intermediate double and proves the fourfold output is the original input, uniquely for all possible graph evaluations. It does not assume a field, general cut cancellation or an external real model. All internal cuts and fraction codes are included. General-cut difference, other required strict/cancellation laws (associativity is now supplied by ConstructionCutAssociativity), complete letter intervals, successor height/cost/margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Connects the existing actual division-by-four graph and actual binary addition graph on the same full CutCarrier. Native successor arithmetic proves internal two*two=four; same_den_sum identifies numeric doubling by value, then a cut-membership proof identifies actual double sums with division-by-two inverse images. Scaling/division composition and existing division order reflection prove that two actual doubles of a quarter recover the original cut. The native closed endpoint constructs both graphs and their original laws, and for every quarter output constructs the intermediate double and proves the fourfold output is the original input, uniquely for all possible graph evaluations. It does not assume a field, general cut cancellation or an external real model. All internal cuts and fraction codes are included.  Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutQuarterSumSyntax.linkLaws": [
           "Quot.sound",
@@ -35222,7 +35222,7 @@
         "ConstructionCutAddition.sum_unique",
         "ModelTransfer.derives (existing BMS-style original-kernel closing method)"
       ],
-      "scope": "Proves addition associativity on all internal nonnegative cuts for the existing actual SumCut relation. Three arbitrary fraction codes are moved to a common denominator by the already accepted scaled_equiv, then native ordinalAddition_assoc and same_den_sum give fraction associativity by value. Membership reassociation handles operand and zero branches as well as nested fraction sums. Cut associativity retains only Omega, the full fraction carrier, three Cut inputs and the four actual SumCut evaluations; no assumed field, associativity, principal representation, model well-foundedness or object choice. The pure nativeZF closed sentence is transferred through existing ModelTransfer to original FirstOrder.Derives. It is an arithmetic prerequisite of the pinned source interval proof, not a claim that exists_letter_interval or Word height/cost is migrated. General-cut difference, strict/cancellation laws, full intervals, successor margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Proves addition associativity on all internal nonnegative cuts for the existing actual SumCut relation. Three arbitrary fraction codes are moved to a common denominator by the already accepted scaled_equiv, then native ordinalAddition_assoc and same_den_sum give fraction associativity by value. Membership reassociation handles operand and zero branches as well as nested fraction sums. Cut associativity retains only Omega, the full fraction carrier, three Cut inputs and the four actual SumCut evaluations; no assumed field, associativity, principal representation, model well-foundedness or object choice. The pure nativeZF closed sentence is transferred through existing ModelTransfer to original FirstOrder.Derives. It is an arithmetic prerequisite of the pinned source interval proof, not a claim that exists_letter_interval or Word height/cost is migrated.  Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutAssociativity.equiv_trans": [
           "Classical.choice",
@@ -35450,7 +35450,7 @@
         "ConstructionCutAddition.sum_unique",
         "ModelTransfer.derives (existing BMS-style original-kernel closing method)"
       ],
-      "scope": "Proves addition associativity on all internal nonnegative cuts for the existing actual SumCut relation. Three arbitrary fraction codes are moved to a common denominator by the already accepted scaled_equiv, then native ordinalAddition_assoc and same_den_sum give fraction associativity by value. Membership reassociation handles operand and zero branches as well as nested fraction sums. Cut associativity retains only Omega, the full fraction carrier, three Cut inputs and the four actual SumCut evaluations; no assumed field, associativity, principal representation, model well-foundedness or object choice. The pure nativeZF closed sentence is transferred through existing ModelTransfer to original FirstOrder.Derives. It is an arithmetic prerequisite of the pinned source interval proof, not a claim that exists_letter_interval or Word height/cost is migrated. General-cut difference, strict/cancellation laws, full intervals, successor margin and final Con remain unfinished. Current update: general-cut difference and additive inclusion/strict-order reflection and cancellation are now supplied by ConstructionCutDifferenceSyntax.difference_kernel_certificate/order_kernel_certificate; they are no longer missing. Full letter intervals and successor margin remain unfinished.",
+      "scope": "Proves addition associativity on all internal nonnegative cuts for the existing actual SumCut relation. Three arbitrary fraction codes are moved to a common denominator by the already accepted scaled_equiv, then native ordinalAddition_assoc and same_den_sum give fraction associativity by value. Membership reassociation handles operand and zero branches as well as nested fraction sums. Cut associativity retains only Omega, the full fraction carrier, three Cut inputs and the four actual SumCut evaluations; no assumed field, associativity, principal representation, model well-foundedness or object choice. The pure nativeZF closed sentence is transferred through existing ModelTransfer to original FirstOrder.Derives. It is an arithmetic prerequisite of the pinned source interval proof, not a claim that exists_letter_interval or Word height/cost is migrated.  Current consumers are ConstructionCutDifference and ConstructionProbeIntervals: general-cut difference, additive associativity/order reflection/cancellation and pointwise source intervals are now supplied there. Full heightIntervals graph assembly and successor margin remain unfinished.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionCutAssociativitySyntax.associativitySentence": [
           "Classical.choice",
@@ -36224,6 +36224,560 @@
           "propext"
         ],
         "PPAC.Migration.ConstructionCutDifferenceSyntax.order_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_intervals": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerCones.lean": "b18027f78e14d908447d3bcd00c20864e4106a984cd4dcb1b07c6498e425ab53"
+      },
+      "adapter": "PPAC/Migration/ConstructionProbeIntervals.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.target_lt_exit:106",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.exists_letter_interval:117",
+        "OAI.PartitionConsistency.DiagramOrder.UniformMargin:12 (old source input, additive nonnegative-cut form retained explicitly)",
+        "OAI.PartitionConsistency.DiagramOrder.HeightCost.uniform_margin:44 (source old-margin consequence; not a new successor-margin assumption)"
+      ],
+      "consumers": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.heightIntervals:144",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.rawHeight:210",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.extensionHeightCost:573"
+      ],
+      "reused_interfaces": [
+        "ConstructionCutDifference.exists_difference/sum_le_iff/sum_strict_iff",
+        "ConstructionCutArithmetic.exists_max/max_laws/exists_sum/sum_comm/sum_zero",
+        "ConstructionCutDivision.exists_value/value_cut/nonempty_iff/value_unique",
+        "ConstructionCutQuarterSum.quarter_fourfold",
+        "ConstructionCutAssociativity.cut_assoc/sum_is_cut",
+        "Existing actual FloorLaws/CostBounds on the same F,H,C,K graphs",
+        "Existing MapsTo and ForcingConditionGraphs.function_unique",
+        "Native original-kernel ModelTransfer.derives closing method"
+      ],
+      "scope": "Constructs the literal source interval recipe p=target-floor, K=max p C, delta=(exit-floor-K)/4 and offset=floor+2*delta using only accepted actual cut operations. Proves positive delta, floor+delta<offset and offset+delta+K<exit, and uniqueness of all three outputs for fixed old C. The pointwise source theorem consumes the existing actual floor/target/exit/height/cost graphs, original left-cancel/conical/nonunit-step contracts and old uniform-margin input. It proves target strictly below the actual exit, constructs the interval and proves the same K bounds EVERY old outside cost, splitting on divisibility by the target and consuming the accepted target_outside_cost conclusion. Two pure nativeZF sentences return original FirstOrder.Derives certificates. The old UniformMargins input remains explicit; new successor margin is not assumed. Full source heightIntervals function graphs, canonical selection of the old missed-cost supremum/interface to old HeightCost, Word height/cost/margin and final Con are not claimed complete. This is the pointwise source interval result, not the whole Probe extension.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeIntervals.Strict": [],
+        "PPAC.Migration.ConstructionProbeIntervals.le_strict_trans": [],
+        "PPAC.Migration.ConstructionProbeIntervals.reassociate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.sum_positive": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.Recipe": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.recipe_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.Interval": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.exists_interval": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervals.outside_target_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_letter_intervals": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerCones.lean": "b18027f78e14d908447d3bcd00c20864e4106a984cd4dcb1b07c6498e425ab53"
+      },
+      "adapter": "PPAC/Migration/ConstructionProbeLetterIntervals.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.target_lt_exit:106",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.exists_letter_interval:117",
+        "OAI.PartitionConsistency.DiagramOrder.UniformMargin:12 (old source input, additive nonnegative-cut form retained explicitly)",
+        "OAI.PartitionConsistency.DiagramOrder.HeightCost.uniform_margin:44 (source old-margin consequence; not a new successor-margin assumption)"
+      ],
+      "consumers": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.heightIntervals:144",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.rawHeight:210",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.extensionHeightCost:573"
+      ],
+      "reused_interfaces": [
+        "ConstructionCutDifference.exists_difference/sum_le_iff/sum_strict_iff",
+        "ConstructionCutArithmetic.exists_max/max_laws/exists_sum/sum_comm/sum_zero",
+        "ConstructionCutDivision.exists_value/value_cut/nonempty_iff/value_unique",
+        "ConstructionCutQuarterSum.quarter_fourfold",
+        "ConstructionCutAssociativity.cut_assoc/sum_is_cut",
+        "Existing actual FloorLaws/CostBounds on the same F,H,C,K graphs",
+        "Existing MapsTo and ForcingConditionGraphs.function_unique",
+        "Native original-kernel ModelTransfer.derives closing method"
+      ],
+      "scope": "Constructs the literal source interval recipe p=target-floor, K=max p C, delta=(exit-floor-K)/4 and offset=floor+2*delta using only accepted actual cut operations. Proves positive delta, floor+delta<offset and offset+delta+K<exit, and uniqueness of all three outputs for fixed old C. The pointwise source theorem consumes the existing actual floor/target/exit/height/cost graphs, original left-cancel/conical/nonunit-step contracts and old uniform-margin input. It proves target strictly below the actual exit, constructs the interval and proves the same K bounds EVERY old outside cost, splitting on divisibility by the target and consuming the accepted target_outside_cost conclusion. Two pure nativeZF sentences return original FirstOrder.Derives certificates. The old UniformMargins input remains explicit; new successor margin is not assumed. Full source heightIntervals function graphs, canonical selection of the old missed-cost supremum/interface to old HeightCost, Word height/cost/margin and final Con are not claimed complete. This is the pointwise source interval result, not the whole Probe extension.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeLetterIntervals.MissedBound": [],
+        "PPAC.Migration.ConstructionProbeLetterIntervals.UniformAt": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterIntervals.UniformMargins": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeLetterIntervals.OutsideBound": [],
+        "PPAC.Migration.ConstructionProbeLetterIntervals.target_strict_exit": [],
+        "PPAC.Migration.ConstructionProbeLetterIntervals.exists_letter_interval": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_intervals_syntax": {
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean",
+      "source_sha256": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerCones.lean": "b18027f78e14d908447d3bcd00c20864e4106a984cd4dcb1b07c6498e425ab53"
+      },
+      "adapter": "PPAC/Migration/ConstructionProbeIntervalsSyntax.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.target_lt_exit:106",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.exists_letter_interval:117",
+        "OAI.PartitionConsistency.DiagramOrder.UniformMargin:12 (old source input, additive nonnegative-cut form retained explicitly)",
+        "OAI.PartitionConsistency.DiagramOrder.HeightCost.uniform_margin:44 (source old-margin consequence; not a new successor-margin assumption)"
+      ],
+      "consumers": [
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.heightIntervals:144",
+        "OAI.PartitionConsistency.ProbeAlgebra.Word.rawHeight:210",
+        "OAI.PartitionConsistency.ProbeAlgebra.Path.extensionHeightCost:573"
+      ],
+      "reused_interfaces": [
+        "ConstructionCutDifference.exists_difference/sum_le_iff/sum_strict_iff",
+        "ConstructionCutArithmetic.exists_max/max_laws/exists_sum/sum_comm/sum_zero",
+        "ConstructionCutDivision.exists_value/value_cut/nonempty_iff/value_unique",
+        "ConstructionCutQuarterSum.quarter_fourfold",
+        "ConstructionCutAssociativity.cut_assoc/sum_is_cut",
+        "Existing actual FloorLaws/CostBounds on the same F,H,C,K graphs",
+        "Existing MapsTo and ForcingConditionGraphs.function_unique",
+        "Native original-kernel ModelTransfer.derives closing method"
+      ],
+      "scope": "Constructs the literal source interval recipe p=target-floor, K=max p C, delta=(exit-floor-K)/4 and offset=floor+2*delta using only accepted actual cut operations. Proves positive delta, floor+delta<offset and offset+delta+K<exit, and uniqueness of all three outputs for fixed old C. The pointwise source theorem consumes the existing actual floor/target/exit/height/cost graphs, original left-cancel/conical/nonunit-step contracts and old uniform-margin input. It proves target strictly below the actual exit, constructs the interval and proves the same K bounds EVERY old outside cost, splitting on divisibility by the target and consuming the accepted target_outside_cost conclusion. Two pure nativeZF sentences return original FirstOrder.Derives certificates. The old UniformMargins input remains explicit; new successor margin is not assumed. Full source heightIntervals function graphs, canonical selection of the old missed-cost supremum/interface to old HeightCost, Word height/cost/margin and final Con are not claimed complete. This is the pointwise source interval result, not the whole Probe extension.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.recipe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.recipe_freeClosed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.recipe_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.interval": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.interval_freeClosed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.interval_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.missedBound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.missedBound_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.missedBound_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformAt": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformAt_freeClosed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformAt_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformMargins": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformMargins_freeClosed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.uniformMargins_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.outsideBound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.outsideBound_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.outsideBound_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.constructionSentence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.letterSentence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.letter_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeIntervalsSyntax.letter_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

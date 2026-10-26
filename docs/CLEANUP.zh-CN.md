@@ -146,3 +146,6 @@ Probe 动作／target 批次：去掉未使用的公式参数和局部绑定；�
 
 
 一般切割差／加法相消批次：完整验收已覆盖本批 34 项声明后，仅按本仓绝对路径、重解析点和哈希检查删除一次性 ConstructionCutDifferenceAudit.lean；见 verification/cleanup-cut-difference-20261027.json。成功定向构建、预审和全量验收日志保留。358 项冻结兼容模块的提案仍未获具体授权，未执行；本批没有删除其源码、活动检查或缓存。原阶段仍为 8，完整字母区间和最终 Con 均未完成。
+
+
+逐字母区间批次：移除没有当前消费者的新 strict_trans_le 辅助引理及无用局部绑定；完整验收覆盖 39 项声明后，只按解析后的本仓绝对路径、重解析属性和 SHA 删除一次性 ConstructionProbeIntervalsAudit.lean，清单 verification/cleanup-probe-intervals-20261027.json。成功构建／预审／完整日志保留，没有新增持久脚本。358 项冻结兼容模块及其检查仍未删除，待此前具体清单授权，不绕过审批。
