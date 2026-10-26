@@ -79,3 +79,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | Raw.cardinal_le / extension_cardinal_le | 新版 7979336 FiniteSequenceSyntax/Recursion/Numbering/Countable 的四段原证明；已适配 ExistingFiniteSequenceBounds.fseq_bound_l | 全内部有限序列统一编号，无可数选择；实际消费者 OpenAI MonoidBase:215。两个原核证书见 ConstructionProbeWordCardinality |
 
 本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。
+
+映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，完整动作／exit／锥及 Word 保守传输仍待接。本批没有新增递归或商后端。

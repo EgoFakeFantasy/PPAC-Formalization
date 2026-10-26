@@ -118,3 +118,5 @@ Probe 字母批次：删除未使用的局部前提和化简项；正式 Audit �
 Probe 动作／target 批次：去掉未使用的公式参数和局部绑定；正式 Audit 接管 57 项声明后删除唯一临时 ConstructionProbeActionTargetAudit.lean，路径／SHA 清单为 verification/cleanup-probe-action-target-audit-20261026.json。现行文档不再列动作／target 为待做；数学路线中的第 8 阶段长段改为准确的现有接口与下一消费者。无新增持久脚本、供体修改或冻结支线开发。
 
 大小界／复审批次：REUSE_CONTRACTS 去掉重复逐批叙述及过时未完成声明，保留现行接口和边界；恢复点 45512cc。没有复制供体中不被当前消费者使用的 countable-only 特例及 join/lift/end 模块。Audit 接管 42 项声明后删除唯一预审输入，绝对路径及 SHA 清单为 verification/cleanup-probe-word-cardinality-20261026.json；正式日志保留。未新增持久脚本；冻结字节模块的精确依赖裁剪未完成，未宣称全清理。
+
+映射路径／字母批次：删除未使用的化简项；Audit 接管全部 44 项声明后，按本仓解析后的绝对路径及 SHA 删除唯一临时 ConstructionProbeMappedLettersAudit.lean，清单 verification/cleanup-probe-mapped-letters-20261026.json。预审／全验收日志保留，未新增持久脚本。未将尚未完成的冻结依赖裁剪报告为已删除。
