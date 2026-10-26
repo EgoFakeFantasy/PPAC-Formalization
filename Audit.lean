@@ -29732,3 +29732,35 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionPersistentProfiles.successorSentence
 #print axioms PPAC.Migration.ConstructionPersistentProfiles.successor_models
 #print axioms PPAC.Migration.ConstructionPersistentProfiles.successor_kernel_certificate
+
+-- Pinned probe simulation pushout, including its native object certificate.
+#print axioms PPAC.Migration.ConstructionProbePushout.Presentation
+#print axioms PPAC.Migration.ConstructionProbePushout.Hom
+#print axioms PPAC.Migration.ConstructionProbePushout.SquareComm
+#print axioms PPAC.Migration.ConstructionProbePushout.IsPushout
+#print axioms PPAC.Migration.ConstructionProbePushout.composition_value
+#print axioms PPAC.Migration.ConstructionProbePushout.composition_preserves
+#print axioms PPAC.Migration.ConstructionProbePushout.presentation_relations
+#print axioms PPAC.Migration.ConstructionProbePushout.presentation_ext
+#print axioms PPAC.Migration.ConstructionProbePushout.presentation_lift
+#print axioms PPAC.Migration.ConstructionProbePushout.factor_preimage
+#print axioms PPAC.Migration.ConstructionProbePushout.terminal_preimage
+#print axioms PPAC.Migration.ConstructionProbePushout.mapped_relations
+#print axioms PPAC.Migration.ConstructionProbePushout.simulation_commutes
+#print axioms PPAC.Migration.ConstructionProbePushout.simulation_pushout
+#print axioms PPAC.Migration.ConstructionProbePushout.exists_pushout
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.presentation
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.presentation_freeClosed
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.presentation_semantics
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.hom
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.hom_freeClosed
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.hom_semantics
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.squareComm
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.squareComm_freeClosed
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.squareComm_semantics
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.isPushout
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.isPushout_freeClosed
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.isPushout_semantics
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionProbePushoutSyntax.construction_kernel_certificate

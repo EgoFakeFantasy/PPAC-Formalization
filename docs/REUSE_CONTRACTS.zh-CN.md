@@ -64,38 +64,21 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 ## 现行代数构造复用入口
 
-下表取代逐批叙述；旧正文可从 45512cc 恢复。声明类型、所选供体正文哈希与精确依赖以 SOURCE_LOCK 和 Audit 为准。
+下表只保留当前可调用入口及边界；逐批过程记录由 Git 保留。源声明、所选供体正文哈希和精确依赖见 SOURCE_LOCK；已迁移结论见 THEOREM_COVERAGE，实际验收见 STATUS。
 
 | 当前消费者 | 已实际复用的入口 | 边界 |
 |---|---|---|
-| 全部强迫 ZF 模式 | Collection.collection_exists_d、Replacement.exists_functionalImage、SeparationSyntax；既有 HS、轨道和支撑图 | 完整前端已证；实际最终单子／呈现待实例化 |
-| Base.M 和完整 margin | 固定底座 Ord/Natural、Arithmetic、NaturalPrime；新版 Descriptive/Dyadic 的数字与单位分数方法 | 已证，不扩建当前消费者不需要的完整实数域；RealPair 是 Baire 配对，不能代替实数域 |
-| Probe Path 和商字母 | 原生 FunctionConstruction、Replacement、Separation；现有 Representatives | factor/terminal、共同阶段商、动作、target/exit 和 Alphabet 已证 |
-| 字母大小界 | 已适配 ExistingCardinalBounds.infinite_product_l；原生 Comparison.exists_rightInverseInjection_of_surjection_from_ordinal | 从序数最小原像得单射，不任选商代表元 |
-| Raw、Word、quotient、letterAct | 原生 FiniteSequenceParsing 和序列限制；已有函数图构造 | 所有内部有限长度；不是宿主 List；现成基础不重写 |
-| Raw.eval、evalHom/liftHom | 原生 recursiveSequenceIn_existsUnique、已存在的内部历史限制 | Word/任意目标单子；目标不增加左消去条件 |
-| Word 单子、old 嵌入及 conical | 已有 raw_induction、IsOmega.induction、实际乘法图 | 单个实际 Word 已完成，不能替代最终饱和单子 |
-| generator、indexed probe 和呈现 | 已有函数图、字母商判据、old_mul_generator、generator_mul_b、hom_ext | 实际图、exit/transition 关系、presentedHom 存在唯一性、Word 完整保守模拟已证；Path old/probe 方程本批接通，完整扩张待接 |
-| Raw.cardinal_le / extension_cardinal_le | 新版 7979336 FiniteSequenceSyntax/Recursion/Numbering/Countable 的四段原证明；已适配 ExistingFiniteSequenceBounds.fseq_bound_l | 全内部有限序列统一编号，无可数选择；实际消费者 OpenAI MonoidBase:215。两个原核证书见 ConstructionProbeWordCardinality |
+| 全部强迫 ZF 模式 | Collection.collection_exists_d、Replacement.exists_functionalImage、SeparationSyntax；既有 HS、轨道和支撑图 | 前端已证；最终具体单子／呈现待实例化 |
+| Base.M 和初始 margin | 固定底座 Ord/Natural、Arithmetic、NaturalPrime；新版 Descriptive/Dyadic 方法；本仓 ConstructionRealCuts.bounded_union、ConstructionCutWeights.exists_bounded_weights | 初始 Base 已证；后继 margin 未接通。不扩建消费者不需要的实数域；RealPair 不是实数域 |
+| Probe Path、商字母与字母模拟 | 原生 FunctionConstruction、Replacement、Separation；Representatives；exists_factor_table/exists_terminal_table；letter_eq_iff、transition_total/unique、inCone_letter_iff | factor/terminal、共同阶段商、动作、target/exit、AlphabetSimulation 已证。不增加过渡映射单射性 |
+| 字母／Word 大小界 | ExistingCardinalBounds.infinite_product_l；原生 Comparison.exists_rightInverseInjection_of_surjection_from_ordinal；ExistingFiniteSequenceBounds.fseq_bound_l | 使用序数最小原像及全内部有限序列统一编号，不选商代表、不加可数选择。新版四段序列证明保留正文哈希 |
+| Raw、Word、quotient、letterAct | 原生 FiniteSequenceParsing、序列限制、函数图；已有 raw_induction、IsOmega.induction | 所有内部有限长度，非宿主 List 或外部标准长度 |
+| evalHom/liftHom 与呈现 | 原生 recursiveSequenceIn_existsUnique；ConstructionProbePresentedLift.existsUnique_presentedHom；ConstructionProbeIndexedGenerators.presentedHom_ext | 任意内部目标单子，不增加左消去条件；实际图、关系及唯一性已有 |
+| 实际 Word、old 嵌入及条件并 | ConstructionProbeConditionalJoins.exists_extension；现成 raw_induction、实际乘法图、ForcingConditionGraphs.exists_identity 和共享 Gate | 同一 W/unit/J/G 及三项代数性质已构造；基础条件并仍是源前提，不能替代最终饱和单子 |
+| 映射 Path 与 Raw/Word 传输 | ConstructionProbeMappedPath.exists_node_map → ZF.exists_compositionFunction；ZF.exists_restriction；现成序列长度、prefixHead/reduced 判据 | 实际像图和 Word 图已构造；没有重造序列、递归或商后端 |
+| 完整保守模拟、old/probe 方程 | ConstructionProbeSimulation.exists_simulation；既有 raw_induction、head_transport_some、letterAct_injective、共享 gate、division_reflection | 同一个 H 上的四字段 Conservative 和端点方程已证；具体路径／字母合同保留 |
+| 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 专用 factors_of_old/gates 尚待迁移 |
+| 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 本批原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
+| 全部对象层证书收尾 | 既有 ModelTransfer.derives/project_models_iff，复用 BMS 式原核 strong_completeness 路径 | 需所有对应 Type 0 模型的前提；不能用单个具体模型替代；没有另建完备性核 |
 
-本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。
-
-映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输已接通；Path/probe 方程本批接到同一实际 H，完整扩张仍待装配。本批没有新增递归或商后端。
-
-字母模拟批次直接消费已存在的 exists_graph/map_letter/graph_injective、FactorMap/TerminalMap 和 inCone_letter_iff。原 Conservative.factor_eq 用旧因子保持与单射性恢复指定因子；再经共同阶段锥判据证明原 lettersMap_inCone_iff。没有新建序列、递归、满足关系或完备性后端。对象证书只证明原 AlphabetSimulation 的四项相容性，不声称已证明 Conservative 的全部四字段或 Word.transport_conservative。
-
-Raw/Word 传输批次复用 exists_node_map 中的原生函数复合、现有 finite sequence 长度唯一性及 prefixHead/reduced 判据。原 Raw.transport 的字面映射由内部序列逐项复合和末端映射实现；已证 headDiv/reducedness/oldAct 保持。Word.transport 直接调用原生 ZF.exists_restriction 限制实际 Raw 图到既有 WordCarrier，不新建序列或 Word 后端。三个原核证书的依赖分别为 10/16/16 项；后两项包含先前已有并重算的六项序列限制 Bool 证书，没有新增可信依赖。
-
-transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，共享 gate 及 Word-to-Word transport_conservative 后续已接通。
-
-head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；共享 gate 存在性随后直接使用该纯公式索引 raw_induction 完成：变化的头部和目标词均置于归纳公式量词内，old/cons 后缀分别消费共享旧交和递归 gate，最终构造两侧实际 exit(s)*u。该结论已取得原核证书，未新建归纳后端。
-
-Word 完整保守传输批次：因子反映直接使用已有 raw_induction、head_transport_some、letterAct_injective 和共享 gate；整除反映复用已存在的通用 division_reflection。共同上界反映复用共享旧交与共享 gate，同头分支消费已有 eval_letterAct（即源生成元乘法的关系形式）。最终四字段通过 common_below、divides_trans 和因子反映组装，再用已有 exists_transport_hom 构造实际图；三个闭句继续走 ModelTransfer。没有重复旧嵌入保守性、重建生成元或加入对象选择原则。基础单子的 ConditionalJoins 和扩张 Word 的条件并是不同义务；后者现已沿源 cone_join 迁移，当前验收见 STATUS。
-
-本轮复审直接回读新版 7979336 的 l_model_zf_l / l_model_zfc_l：任意内部模型、完整模式数学已有，供体工作树干净，未重跑供体编译或修改版本。原核回传仍调用现成 ModelTransfer.derives。Path simulation 批次只组合现有 transport_old/transport_cons、old/cons 唯一性和实际 LettersMap/GeneratorGraph/ProbeGraph；没有新增函数图、递归、编码或完备性实现。纯闭句在同一个存在量词 H 内同时给出保守性和 old/probe 方程。基础 ConditionalJoins 仍是源前提；扩张 Word 的条件并由当前 ConditionalJoins 模块实际证明。
-
-Word 条件并批次：直接调用 ForcingConditionGraphs.exists_identity，特化既有 exists_simulated_gate_of_exit；没有重写 Gate 归纳。old_intersections 只组合既有 old Conservative 的共同上界反映和锥交保持；新的 Raw 归纳严格对应源 cone_join，使用已有 pure-schema raw_induction，并将另一个词与共同上界置于内部量词。等头分支直接用已有实际 generator 乘法与左消去律；源 conical 和 b≠unit 条件保持。最终端点消去 old 保守嵌入、Gate 和 old intersections 前提；原 Word 载体、单位及乘法图构造已直接复用：exists_extension 和最终纯闭句实际给出 W/unit/J/G 见证，验收见 STATUS。
-
-初始 profile 批次：直接复用 ConditionalJoins.exists_extension、Generator.exists_generator_graph、IndexedGenerators.exists_probe_graph、old 嵌入及 Gate。第三个入口调用固定底座 ZF.exists_setFunctionFromTo_of_denote，未新建图／递归后端。原 probe_old_profile 通过既有 ConeLaws.initial_profile；非整除使用原左消去和 conical；全 profile 严格按原 old_factor_of_other_block 证明覆盖所有新旧 Word。初始 exit 用现成 TerminalTable/TargetLaws/ExitGraph 求得。最终纯闭句构造同一 W/G、生成元及 probe 图，原核回传直接调用 ModelTransfer.derives。无新选择原则、编码器或完备性实现；后续 profile 保持不是本批结论。
-
-profile 保持批次：原 OldGate/HasOldGates 直接由既有 gate_dvd_old_iff、gate_old_intersection 和 gate_existence 获得；旧像／新 gate 分支逐项消费 Conservative 的因子反映与锥交保持。存在的 exists_node_map 直接调用固定 YesMetaZFC 的 exists_compositionFunction，构造每条实际像路径，没有增加选代表或递归后端。初始完整 profile 已接统一接口；最终端点在同一个 W/G/O 下量化所有旧 profile。原核回传继续使用现成 ModelTransfer，三证书无新增可信依赖。Merger 的 factors_of_old 尚未迁移，不能把通用 map 定理记作 Merger 专用 gates 已完成。
+下一必要消费者是 ProbeMargins.extensionHeightCost / extension_old_cost_supremum → MonoidBase.ProbeData.extension.margin / inclusion.supremum。先使用上述切割上确界、函数图、Raw 递归与 Gate；只补固定源证明所需的具体运算和不变量适配，不重建整套实数或序列基础。
