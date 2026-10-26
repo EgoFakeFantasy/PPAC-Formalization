@@ -2599,7 +2599,10 @@ def main() -> None:
                                ("construction_fraction_product", "ConstructionFractionProduct", 14),
                                ("construction_cut_product", "ConstructionCutProduct", 23),
                                ("construction_cut_minimum", "ConstructionCutMinimum", 11),
-                               ("construction_word_arithmetic_syntax", "ConstructionWordArithmeticSyntax", 12)):
+                               ("construction_word_arithmetic_syntax", "ConstructionWordArithmeticSyntax", 12),
+                               ("construction_probe_height_operation", "ConstructionProbeHeightOperation", 18),
+                               ("construction_probe_height_fold", "ConstructionProbeHeightFold", 7),
+                               ("construction_probe_height_fold_syntax", "ConstructionProbeHeightFoldSyntax", 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6262,6 +6265,7 @@ def main() -> None:
         "source_probe_actual_cut_product_graph_constructed": True,
         "source_probe_actual_cut_product_positive_mono_zero_laws_proved": True,
         "source_probe_actual_cut_minimum_total_positive_proved": True,
+        "source_probe_actual_Word_height_total_unique_map_proved": True,
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,

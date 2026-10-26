@@ -157,3 +157,5 @@ heightIntervals 内部图批次：精确源码与逐声明依赖进入正式 Aud
 初始 Base uniform/order 适配批次：原权重构造体保留 MapsTo，旧 API 不变；新 Base 模块缩小导入到实际消费的逐字母区间合同，不依赖完整图装配终点。现行缺口表压缩重复进度段，删除已完成适配仍待做的误报。完整 Audit 覆盖 15 项新声明和权重模块全部 32 项后，仅按本仓路径、重解析点和 SHA 删除一次性 ConstructionBaseUniformAudit.lean；见 verification/cleanup-base-uniform-20261027.json。成功验收日志保留，无新持久脚本、无其他进程终止；358 项批量退役仍未执行。
 
 原 rawHeight/rawCost 运算批次：只补实际需要的非负乘法图和 min，直接复用原生算术、Separation、函数图和现有 cuts_total。全部 60 项声明经正式 Audit 后，仅按本仓绝对路径、重解析点和 SHA 删除一次性 WordArithmeticAudit.lean；见 verification/cleanup-word-arithmetic-20261027.json。成功定向构建、预审及全量验收日志保留，无新持久生成脚本；全量句柄已退出 0，复核无 Lean/Lake 残留进程。358 项冻结兼容批量退役仍未执行。
+
+实际 Word 高度图批次：直接复用现有 evalHom／Word lift／Raw 归纳；完整 Audit 覆盖 31 项新声明后，按本仓绝对路径、重解析点和 SHA 删除一次性 ProbeHeightFoldAudit.lean 及已被成功构建替代的本批初次语法失败日志。清单 verification/cleanup-probe-height-fold-20261027.json；成功定向构建、预审、全量验收日志保留。无新持久生成脚本；全量句柄已退出 0，复核无 Lean/Lake 残留进程。358 项冻结兼容模块的批量退役仍未执行。

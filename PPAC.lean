@@ -475,3 +475,7 @@ import PPAC.Migration.ConstructionFractionProduct
 import PPAC.Migration.ConstructionCutProduct
 import PPAC.Migration.ConstructionCutMinimum
 import PPAC.Migration.ConstructionWordArithmeticSyntax
+
+import PPAC.Migration.ConstructionProbeHeightOperation
+import PPAC.Migration.ConstructionProbeHeightFold
+import PPAC.Migration.ConstructionProbeHeightFoldSyntax

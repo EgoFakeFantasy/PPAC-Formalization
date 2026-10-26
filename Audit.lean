@@ -30179,3 +30179,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionWordArithmeticSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionWordArithmeticSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionWordArithmeticSyntax.construction_kernel_certificate
+
+-- Original Word height via the unchanged evalHom and actual unique recurrence.
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.Affine
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.affine
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.affine_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.affine_semantics
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.affine_total
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.affine_unique
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.Case
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.operationCase
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.operationCase_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.operationCase_semantics
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.case_unique
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.case_total
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.case_range
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.pairCase
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.pairCase_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.pairCase_semantics
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.Graph
+#print axioms PPAC.Migration.ConstructionProbeHeightOperation.exists_operation
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.eval_range
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.prepend_iff
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.Laws
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.height_laws
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.exists_height
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.height_unique
+#print axioms PPAC.Migration.ConstructionProbeHeightFold.existsUnique_height
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.laws
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.laws_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.laws_semantics
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionProbeHeightFoldSyntax.construction_kernel_certificate
