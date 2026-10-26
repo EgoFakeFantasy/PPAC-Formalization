@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段复审（2026-10-27）
 
-本轮基点 `441322a`。以最初 `f28b0334a740108057adf18a24dc11abd866efbe` 的 1–11 阶段为准，逐项核对当前代码、固定源和验收记录。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾，不能把局部证书数量解释为全迁移完成度。**
+本轮基点 `c8dcad0`。以最初 `f28b0334a740108057adf18a24dc11abd866efbe` 的 1–11 阶段为准，逐项核对当前代码、固定源和验收记录。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾，不能把局部证书数量解释为全迁移完成度。**
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 内部基础 | 集合、图、ω、序列、递归、名字、作用、HS 基础已有 | 具体系统消费者在 8–10；不重建基础 |
 | 6 背景／L 解释 | 新版 7979336 任意 ZF 模型内部 L→ZF/ZFC 和完整模式已有 | 固定旧版 039c8e1、当前 Project 语言、相对化和原核接口；不是待重证 L 数学 |
 | 7 强迫前端 | 原 forces_ZF 的七个固定公理及全部模式有逐实例原核证书，实际作用／正规滤子／全秩 HS 合同已有 | 仍保留源单子／Presentation／正规滤子等前提，等待最终具体系统；全部内部码归 10 |
-| 8 代数／构造核心 | Base 及严格 margin；实际 Path/Alphabet/Word、映射、呈现、大小界、保守模拟、条件并、profile 和 pushout；所需切割算术、floor、旧成本上确界和实际 interval 三图；唯一 Word 高度／cap／成本图、原方程、cost_bounds 已有。height_bounds、cost_le_scale、精确 cost_old_factor 已验收；本轮接通字面 Gate 成本、outside-block 因子和 old–old 严格 margin | old–new／new–old／same-head 严格 margin、统一递归、旧成本上确界保持、完整 Probe；然后 Merger、Placement/ConservativeHull、最终饱和单子 |
+| 8 代数／构造核心 | Base、实际 Path/Alphabet/Word／映射／呈现／保守性／条件并／profile／pushout；所需切割运算、interval 图、唯一权重图和所有已列界／因子估计已有。old–old／old–new／new–old 严格 margin 已接；两边实际遗漏成本集合及公共唯一上确界已构造，覆盖空集和任意旧端点 | same-head margin 的原接口、统一归纳；HeightCost／Path inclusion／完整 Probe；Merger、Placement／ConservativeHull、最终饱和单子 |
 | 9 模型应用 | Models 固定源码已有 | 同一系统中的全秩 SVC、ACwo、商单射和非选择见证 |
 | 10 Main／内部 Con | 原 Main 链和最终 Con 规格固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 专用内部检查关系及全部内部矛盾码归约、最终闭句 |
 | 11 终验 | 现有审计工具可复用 | 最终主定理验收未开始 |
@@ -22,14 +22,14 @@
 
 ## 本轮固定源迁移
 
-固定 OpenAI 提交 1581d4c、活动 YesMetaZFC 039c8e1，不改供体、不改目标背景。本轮开始时上一批完整验收的 2492 份指纹为既有基线；权重图／高度界／scale 界和 cost_old_factor 不重做。
+固定 OpenAI 1581d4c、活动 YesMetaZFC 039c8e1 不变。开始时上一验收的 2494 份指纹匹配。本轮不修改供体，不重做已有基础、Gate、递归或上确界设施。
 
-- 固定 ProbeMargins.cost_le_gate:277：直接消费既有字面 Gate→旧倍数轮廓和 minimum 成本界。
-- cost_other_block_factor:299：按源 old/new 分支，用既有 exit gate 构造 g、old(g)、C(g)，保留两项整除和成本界。
-- uniform_margin_old:326：保留旧 UniformMargins 给出的实际界和严格高度间隙；用既有 cost_old_factor 把全部新遗漏成本压回旧遗漏成本，不把严格 margin 降为单调性。
-- 纯成员 Syntax 终点为原 FirstOrder.Derives nativeZF [] constructionSentence；在该证书中直接调用既有生产者导出 ExitGates、HasOldGates、EmbeddingLaws 和 Word 单子律，不假设这些期望结论。原实际字母表／Word／乘法／旧嵌入、旧条件并和保守性、cap／成本／高度方程及旧 uniform margin 为现成输入。没有新增对象 AC、通用归纳或完整实数域。
+- uniform_margin_old_new:343：按原式构造 max(floor-height(x),scale)，实际高度加界严格小于新高度，覆盖同头／异头全部遗漏成本。不增添原命题没有的 b!=e。
+- uniform_margin_new_old:371：用现成 generator 图／整除定理导出 exit(s)|y；等号分支取实际零切割，严格分支用旧 UniformMargins；按原式构造 max(outsideBound,old remainder) 和严格间隙。保留原 b!=e。
+- old_cost_supremum:515：旧成本原值嵌入；每个新遗漏成本由旧遗漏成本支配。复用现成 Family／Cap／bounded_union，构造两边实际集合及同一个唯一上确界，证明任意旧／新 Cap 值相等。任意旧端点和空集合均覆盖，不加 x<=y 或非空前提。Word 上确界数学已完成，Path inclusion 仍待装配。
+- 三个纯对象闭句的终点均为原 FirstOrder.Derives nativeZF [] constructionSentence；实际旧嵌入、Word、门及 generator 生产者均被消费，不把目标 margin／上确界或内部选择函数当作输入。
 
-新增 2 模块共 7 项声明，严格定向构建和 --trust=0 预审退出 0，零警告。原核终点继承已有 22 项依赖，没有扩大可信基。正式 scripts/verify.py 已退出 0：2934 项构建，29932 项声明（976 项无公理依赖、28956 项有已记录依赖），九条命令全部退出 0，其中五次 --trust=0，零警告；2494 份当前指纹及 75 份固定源哈希匹配。日志 verification/probe-cost-margins-full-verification.log。完整 HeightCost、其他 margin 情形、旧成本上确界保持和最终 Con 均仍未证明。
+新增 6 模块、17 项声明。严格定向构建和 --trust=0 预审退出 0，零警告；三个终点分别继承已有 31／31／22 项依赖，无新增可信依赖。正式 scripts/verify.py 已退出 0：2940 项构建，29949 项声明（976 项无公理依赖、28973 项有已记录依赖），九条命令全部退出 0，其中五次 --trust=0，零警告；2500 份当前指纹和 75 份固定源哈希匹配。日志 verification/probe-margins-supremum-full-verification.log。same-head／统一 margin、完整 HeightCost／Probe 和最终 Con 仍未证明。
 
 ## 复用裁决与误判纠正
 
@@ -41,7 +41,7 @@
 
 ## 必要的下一顺序
 
-固定源 uniform_margin_old_new:343 → uniform_margin_new_old:371 → uniform_margin_same_head:415 → uniform_margin:450 → extensionHeightCost／extension_old_cost_supremum → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。随后与第 6 阶段已有 L 的适配、第 9 阶段同一模型应用和第 10 阶段全部内部码归约汇合。每项保持原假设、全秩及内部量词，不另证一个相似目标。
+固定源 uniform_margin_same_head:415 → uniform_margin:450 → heightCost:494 → extensionHeightCost／Path inclusion（old_cost_supremum:515 已证） → 完整 Probe → Merger → Placement／ConservativeHull → 最终单子。随后与第 6 阶段已有 L 的适配、第 9 阶段同一模型应用和第 10 阶段全部内部码归约汇合。每项保持原假设、全秩及内部量词，不另证一个相似目标。
 
 ## 清理和执行边界
 
@@ -49,4 +49,4 @@
 
 本轮按最新删除要求提交同一精确补丁，**自动审批再次拒绝**：需要用户明确批准这份 358 模块及对应专用检查的大规模删除范围。源码、入口、检查和缓存均未删除；已发具体确认，不绕过。该删除不是形式化主线前提。保留主线全量编译、全部保留声明和原核 trust 审计、最终 Con 门。
 
-此前已删除权重界探针。本轮全量验收后已按绝对路径／重解析点／哈希白名单删除被 Audit 接管的 ProbeCostMarginsAudit.lean（626 字节）。清单 verification/cleanup-probe-cost-margins-20261027.json；成功定向／预审／全量日志全部保留，没有终止其他项目。Agent 广场拒绝连接，未直接修改其数据；需要时双击 C:/Users/17857/AgentPlaza/启动广场.bat。
+此前已删除权重界探针。此前成本／old–old margin 探针已清理。本轮全量验收后已按绝对路径／重解析点／哈希白名单删除被 Audit 接管的 ProbeMixedMarginsAudit.lean（1577 字节），清单 verification/cleanup-probe-margins-supremum-20261027.json。成功定向／预审／全量日志保留，本工程验收进程已结束，其他工程的活动编译保留。Agent 广场拒绝连接，未直接修改其数据；需要时双击 C:/Users/17857/AgentPlaza/启动广场.bat。
