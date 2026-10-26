@@ -29934,3 +29934,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCutDivisionSyntax.quarterSentence
 #print axioms PPAC.Migration.ConstructionCutDivisionSyntax.quarter_models
 #print axioms PPAC.Migration.ConstructionCutDivisionSyntax.quarter_kernel_certificate
+
+-- Actual /4 and addition graphs linked by the balanced fourfold identity.
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.two_mul_two
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.twice_sum_equiv
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.twice_ge
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.times_comp
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.value_comp
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.double_value
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.quarter_fourfold
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.LinkLaws
+#print axioms PPAC.Migration.ConstructionCutQuarterSum.exists_link
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.linkLaws
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.linkLaws_freeClosed
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.linkLaws_semantics
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionCutQuarterSumSyntax.construction_kernel_certificate

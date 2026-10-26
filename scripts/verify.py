@@ -2578,7 +2578,9 @@ def main() -> None:
                                ("construction_cut_arithmetic_syntax", "ConstructionCutArithmeticSyntax", 18),
                                ("construction_fraction_scaling", "ConstructionFractionScaling", 10),
                                ("construction_cut_division", "ConstructionCutDivision", 17),
-                               ("construction_cut_division_syntax", "ConstructionCutDivisionSyntax", 12)):
+                               ("construction_cut_division_syntax", "ConstructionCutDivisionSyntax", 12),
+                               ("construction_cut_quarter_sum", "ConstructionCutQuarterSum", 9),
+                               ("construction_cut_quarter_sum_syntax", "ConstructionCutQuarterSumSyntax", 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6230,6 +6232,7 @@ def main() -> None:
         "source_probe_interval_cut_addition_and_max_constructed": True,
         "source_probe_positive_cut_division_graph_constructed": True,
         "source_probe_actual_cut_quarter_graph_constructed": True,
+        "source_probe_actual_cut_quarter_fourfold_sum_identity_proved": True,
         "source_probe_letter_intervals_constructed": False,
         "source_probe_successor_HeightCost_PointBound_instantiated": False,
         "source_probe_extension_height_cost_margin_proved": False,
