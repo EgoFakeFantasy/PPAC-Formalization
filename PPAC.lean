@@ -470,3 +470,8 @@ import PPAC.Migration.ConstructionProbeHeightIntervalsSyntax
 import PPAC.Migration.ConstructionPrincipalSumBridge
 import PPAC.Migration.ConstructionBaseUniformMargin
 import PPAC.Migration.ConstructionBaseUniformMarginSyntax
+
+import PPAC.Migration.ConstructionFractionProduct
+import PPAC.Migration.ConstructionCutProduct
+import PPAC.Migration.ConstructionCutMinimum
+import PPAC.Migration.ConstructionWordArithmeticSyntax

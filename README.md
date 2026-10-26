@@ -8,7 +8,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 **当前主开发在原第 8 阶段，尚未进入收尾。** 第 1–3 阶段的原范围已验收；第 4 阶段原 Main／端点已验收，完整 Comparator 未验；第 5 阶段基础包已有；第 6 阶段缺已有 L 定理的版本／语言接口；第 7 阶段已有条件式强迫 ZF 前端，待同一具体系统实例化。第 9–11 阶段未闭合。
 
-第 8 阶段已有实际 Path/Alphabet/Word 单子、呈现、保守模拟、条件并、profile 保持和 pushout；floor、原逐字母区间和 heightIntervals 三张内部函数图均已有证书。本批完成初始 Base 的表示适配：保留同一组 H/C 的实际函数图证书和完整旧 margin，导出 Probe 所需的 HeightOrder、UniformMargins。直接复用已完成的 Base 数值估计，没有重证。
+第 8 阶段已有实际 Path/Alphabet/Word 单子、呈现、保守模拟、条件并、profile 保持和 pushout；floor、原逐字母区间和 heightIntervals 三张内部函数图均已有证书。已完成初始 Base 的表示适配：保留同一组 H/C 的实际函数图证书和完整旧 margin，导出 Probe 所需的 HeightOrder、UniformMargins。初始 Base 数值估计与接口适配已完成，没有重证。本批按原 rawHeight/rawCost 补出一般乘积实际图、交换／单调／零／正性和 min 的实际唯一值／界／正性；Word 递归及后继 margin 尚未完成。
 
 下一缺口是原 Word height/cost、严格后继 margin 和旧 cost 上确界保持，再装配 Probe、Merger、Placement/ConservativeHull 和最终单子。**最终对象 Con 未证明；其内部公式目前有固定规格，ZF/U 专用完整 AST 及全部内部码传输尚未闭合。**
 

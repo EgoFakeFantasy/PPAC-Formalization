@@ -2595,7 +2595,11 @@ def main() -> None:
                                ("construction_probe_height_intervals_syntax", "ConstructionProbeHeightIntervalsSyntax", 12),
                                ("construction_principal_sum_bridge", "ConstructionPrincipalSumBridge", 1),
                                ("construction_base_uniform_margin", "ConstructionBaseUniformMargin", 4),
-                               ("construction_base_uniform_margin_syntax", "ConstructionBaseUniformMarginSyntax", 9)):
+                               ("construction_base_uniform_margin_syntax", "ConstructionBaseUniformMarginSyntax", 9),
+                               ("construction_fraction_product", "ConstructionFractionProduct", 14),
+                               ("construction_cut_product", "ConstructionCutProduct", 23),
+                               ("construction_cut_minimum", "ConstructionCutMinimum", 11),
+                               ("construction_word_arithmetic_syntax", "ConstructionWordArithmeticSyntax", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6255,6 +6259,9 @@ def main() -> None:
         "source_probe_pointwise_letter_intervals_from_old_uniform_margin_proved": True,
         "source_probe_letter_intervals_constructed": True,
         "source_probe_successor_HeightCost_PointBound_instantiated": False,
+        "source_probe_actual_cut_product_graph_constructed": True,
+        "source_probe_actual_cut_product_positive_mono_zero_laws_proved": True,
+        "source_probe_actual_cut_minimum_total_positive_proved": True,
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,
