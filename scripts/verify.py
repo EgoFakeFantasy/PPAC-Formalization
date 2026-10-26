@@ -3482,7 +3482,8 @@ def main() -> None:
                                ("construction_real_cuts", "ConstructionRealCuts", 43),
                                ("construction_cut_weights", "ConstructionCutWeights", 31),
                                ("construction_fraction_addition", "ConstructionFractionAddition", 32),
-                               ("construction_principal_addition", "ConstructionPrincipalAddition", 30)):
+                               ("construction_principal_addition", "ConstructionPrincipalAddition", 30),
+                               ("construction_fraction_difference", "ConstructionFractionDifference", 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7503,6 +7504,7 @@ def main() -> None:
         "source_initial_base_fraction_addition_total_unique_commutative_order_reflection_proved": True,
         "source_initial_base_principal_addition_representation_independence_proved": True,
         "source_initial_base_weight_principal_addition_kernel_proved": True,
+        "source_principal_cut_nonnegative_difference_kernel_proved": True,
         "source_arbitrary_cut_addition_proved": False,
         "source_initial_base_fraction_real_interpretation_proved": False,
         "source_initial_base_fraction_carrier_total_preorder_constructed": True,
@@ -7511,7 +7513,7 @@ def main() -> None:
         "source_initial_base_fraction_codes_claimed_antisymmetric": False,
         "source_initial_base_fraction_order_scope": "Internal natural fraction-code carrier and cross-multiplication total preorder; includes both source weight graphs. Unit fractions have precisely reversed denominator order. Equivalent fraction codes remain distinct, but their principal cuts are proved equal. Rounded cut completion and cut-valued source weight graphs are now constructed. Complete real field arithmetic and margin remain unproved.",
         "source_initial_base_weights_scope": "Exact internal natural fraction graphs ((2^(n+1)-1),2^(n+1)) and (1,2^(n+3)); positive numerator strictly below denominator. All internal omega, including nonstandard. No completed-real-field interpretation, real margin, or final construction is claimed.",
-        "source_initial_base_scope": "Only initial Base.M algebra, exact internal addition graph, zero unit, nonzero successor generator and pair joins. All internal/nonstandard naturals; original Base.object still needs height/cost and margin. Final saturated construction and final Con remain incomplete.",
+        "source_initial_base_scope": "Only initial Base.M algebra, exact internal addition graph, zero unit, nonzero successor generator and pair joins. All internal/nonstandard naturals; original Base.object still needs the source margin estimate and its numerical interface. Final saturated construction and final Con remain incomplete.",
         "source_product_WithTop_action_instantiated": True,
         "source_product_WithTop_top_fixed_and_group_laws_proved": True,
         "source_product_WithTop_uniform_label_family_instantiated": True,

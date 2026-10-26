@@ -1,37 +1,39 @@
 # 当前状态：原 1–11 阶段
 
-本轮输入基点 `5b863b2`。当前仍在原第 8 阶段的初始 Base 数值接口。本批完成内部非负分数加法及其主切割上的表示无关加法，并实际接入源 height/cost 的值。任意切割加法、其余实数算术及原 margin 尚未完成；Base.object、后续扩张与最终对象 Con 仍未完成。
+本批输入基点 `e3d6cea`。已对照最初 `f28b0334` 的阶段表、固定 OpenAI 源代码、当前证明和验收记录复审。**连续完整验收到原 1–3；当前开发在阶段 8 的初始 Base 数值解释，不是收尾。最终对象 Con 尚未证明。**
 
-| 原阶段 | 当前实际状态与剩余 |
+| 原阶段 | 已完成与真正剩余 |
 |---|---|
-| 1–3 | 语言桥、源推导传输、全部 ZF 模式和两种 AC 对应已验收，不重做 |
-| 4 | 原 Main 和五端点已有验收；完整 Comparator 未运行，本轮未重跑原环境 |
-| 5 | 内部集合／图／ω／递归、名字、统一作用及 HS 消费者已有；剩余最终系统的消费归 8–10 |
-| 6 | 新版任意内部 ZF 模型的 L→ZF/ZFC 及全部模式已存在；版本／语言／原核接入未完成，不重证 L 数学 |
-| 7 | forces_ZF 的固定公理和全部模式已有原核证书；具体系统前提仍由 8 提供，整阶段不能打勾 |
-| 8 | 初始单子、分数图／次序／密度、切割载体与有界上确界、height/cost 切割图和单位界已有。本批分数／主切割加法及源权重值加法已验收。任意切割运算、其余算术、margin、扩张、Placement、ConservativeHull、最终饱和单子未完成 |
-| 9 | 源 SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
-| 10 | 全秩 PP、ZF/U 专用内部 Proof/Con、全部内部码归约及最终闭句未完成 |
+| 1–3 | 语言桥、重命名／替换、19 规则推导传输、完整 ZF 模式互导和两种 AC 对应已验收，不重做 |
+| 4 | 原 Main 和五端点已有验收；完整 Comparator 未运行，缺 Linux/landrun。本批核对 75 份主链源码哈希全部匹配，没有重跑原环境 |
+| 5 | 内部集合／图／ω／递归、名字、统一作用和 HS 基础已完成；最终具体系统的消费归 8–10 |
+| 6 | 新版任意 ZF 模型内部 L→ZF/ZFC 及全模式已有，本批再次回读 Model/Choice 正文；剩版本、语言相对化和原核接入，不重证 L 数学 |
+| 7 | forces_ZF 的固定公理和完整模式已有原核证书；保留源单子／Presentation／正规滤子等前提，具体系统由 8 提供，不能给整阶段打勾 |
+| 8 | 初始单子、精确 height/cost 分数图、次序／密度、切割与有界上确界、权重切割图和单位界、分数／主切割加法已有。本批完成有序主切割的唯一非负差及严格正差。原 margin、Base.object、扩张、Placement、ConservativeHull、最终饱和单子尚未完成 |
+| 9 | 原 SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
+| 10 | 原 Main 装配、ZF/U 专用内部 Proof/Con、全部内部矛盾证明码归约及最终闭句未完成；底座通用 Proof/Sat 已有，不重造 |
 | 11 | 最终主定理验收未开始 |
 
-连续完整验收仍到原 1–3；开发在 8 不等于前面各阶段全过，更不是收尾。固定最终目标仍是纯成员／等词语言、完整 nativeZF、原 FirstOrder.Derives 中的 `Con_ZF → Con_U`，U = ZF + PP + ACwo + ¬AC，量化全部内部／外部非标准证明码。
+对象合同未变：纯成员／等词语言、完整 nativeZF、原 FirstOrder.Derives；目标为 `Derives nativeZF [] (Con_ZF → Con_U)`，U = ZF + PP + ACwo + ¬AC，覆盖全部内部及外部非标准证明码。固定源为 OpenAI 1581d4cb；没有换成独立目标证明。
 
-## 本轮实际证明
+## 本批实际证明与复用
 
-ConstructionFractionAddition 使用原生自然数运算构造 `(a*d+c*b, b*d)`，证明对每对有效分数码存在唯一结果、交换性，以及同一加数下弱／严格比较的双条件。再由单调性证明换用等值输入表示后输出数值等价。没有将分数码的不同表示强行判为相等。
+ConstructionFractionDifference 直接使用固定 YesMetaZFC 的 `ZF.ordinalAddition_existsUnique_rightRemainder` 构造通分后的自然数差额，复用已证分数加法与主切割序反映，证明：每个有序的有理主切割对 c≤d 存在唯一主切割 gap，满足 c+gap=d；若 c<d，则 gap 非空。零切割是实际空集。结论已编码为纯对象闭句，经现有 BMS 式 ModelTransfer 回到原 `FirstOrder.Derives`，证书为 difference_kernel_certificate。
 
-ConstructionPrincipalAddition 将该关系下降到已构造的主切割：表示无关，存在唯一、封闭、交换，并且同一加数下切割包含关系准确反映原包含关系。另证原 height/cost 的实际值属于这个域，给其加法存在唯一性单独原核证书；原 n+1/n+3 公式不变。
+新增 16 项声明、1 项原核证书。该证明仅是原 Base.margin 的高度差表示前置；不宣称原二进分数估计、任意切割减法、完整实数域或 Base.object 已完成。
 
-三项原核证书：ConstructionFractionAddition.addition_kernel_certificate；ConstructionPrincipalAddition.addition_kernel_certificate；ConstructionPrincipalAddition.weightAddition_kernel_certificate。所有断言已编码为纯对象闭句，由既有 ModelTransfer 回传原核；不是只给宿主 Prop 定理。
+已实际复用的其他项目入口保持不变：新版 YesMetaZFC Descriptive/Dyadic 的单位分数／幂比较方法已经适配到原 n+1/n+3 权重；BMS 式 strong_completeness 收尾已用于 ModelTransfer；新版 L 全模式数学已存在，待适配，不能标成已接通。没有复制无关 Baire 空间代码、重造 Sat／递归／完备性或修改供体。
 
-范围明确：这里是分数与有理主切割的加法，尚未交付任意切割加法、全加法群／域定律或原 margin 不等式；没有以参数字段假设它们成立。
+## 本次范围纠正与下一消费者
 
-## 复用与验收
+此前误判的原因是把条件式前端、宿主辅助和局部编译验收混作最终对象证明进度，并在未证明必要性时扩展字节兼容及重复基础工作。对象层要求从早期就存在，不是用户后来增加。已撤回“四步收尾”，沿原阶段表记录，不以声明数或构建数估计完成比例。
 
-直接消费固定底座 Arithmetic/Algebra 的乘法结合／分配律、NaturalPrime 的交换律、Arithmetic/Normal 的严格单调与非零乘积界，以及本仓已有 mul_swap、mul_le_iff、主切割比较和权重图。原核回传继续采用已经接入的 BMS 式 ModelTransfer。未新建算术或证明核，未修改供体，未恢复冻结支线。
+本次进一步删除“先完成整个实数域再证明 Base.margin”的不必要执行门。严格按原 MonoidBase.Base.margin：取 r=2^(-(x+3))，证明 r<height(y)-height(x)，以及每个遗漏因子 d 的 cost(d)≤r，再接原 UniformMargin.supremum_lt 的上确界论证。任意切割运算仅按后续原扩张的实际消费者适配；这项顺序调整不免除后续所需算术证明。
 
-新增 **62 项声明、3 项原核证书**。定向构建、预审及完整验收通过：**2944 项构建任务；9 条命令全部退出 0（5 次 --trust=0）；30562 项声明审计，715 项无公理依赖、29847 项使用已记录依赖；0 警告；2510 个当前文件指纹匹配**。无新增可信依赖，已有 native Bool 证书继续明确记录。
+## 实际验收与清理
 
-证据：verification/commands.json、summary.json、build.log、audit.log、construction-addition-preaudit.log、construction-addition-full-verification.log。正式 Audit 接替后删除唯一临时探针，清单 cleanup-addition-probe-20261026.json；无新增持久脚本。冻结字节证明剩余裁剪尚未完成，未冒称全部清理。
+定向构建、预审和完整 `scripts/verify.py` 通过：2945 项构建任务；9 条命令全部退出 0，其中 5 次 --trust=0；30578 项声明审计，715 项无公理依赖、29863 项使用已记录依赖；0 警告；2511 个当前文件指纹全部匹配。无新增可信依赖，原有 native Bool 证书仍明确记录。没有把这些数字作为全项目完成度。
 
-分数加法、主切割加法表示无关性及原权重值加法证书标志为 true；任意切割加法、完整实数解释、原 height/cost/margin、最终单子和 relative_consistency_proved 均继续为 false。验收后无残留 Lean/Lake；没有上传或发布。
+证据：verification/commands.json、summary.json、build.log、audit.log、construction-difference-preaudit.log、construction-difference-full-verification.log。正式 Audit 覆盖新增声明后删除唯一临时探针；清单 cleanup-difference-probe-20261026.json。去掉未使用局部绑定，没有新增持久脚本。验收后无残留 Lean/Lake。
+
+冻结字节模块仍有消费者，剩余依赖裁剪尚未完成；本批不声称所有无用内容已清完。此前已删的 39 份过时报告可从 Git 恢复。任意切割加法、完整实数解释、原 margin、最终单子及 relative_consistency_proved 仍为 false。未上传或发布。

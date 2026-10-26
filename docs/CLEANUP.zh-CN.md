@@ -104,3 +104,5 @@ Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性�
 切割表示批次：正式 Audit 接管全部 74 项声明后，按本仓绝对路径与 SHA-256 删除唯一临时探针 ConstructionCutRepresentationAudit.lean，清单 verification/cleanup-cut-representation-probe-20261026.json。没有新增脚本、另开实数库或复制供体依赖树；全部集合／函数构造调用既有接口。旧字节支线继续冻结，本轮未作未经依赖核对的证明删除。
 
 加法批次：正式 Audit 接管全部 62 项声明后，核对本仓绝对路径与 SHA-256，删除唯一临时探针 ConstructionAdditionAudit.lean；清单 verification/cleanup-addition-probe-20261026.json，预审日志保留。没有新增脚本、通用代数后端或修改供体。字节支线继续冻结，剩余依赖裁剪未冒称完成。
+
+非负差／原阶段复审：对照最初 f28b0334 的 1–11 阶段和当前源 Base.margin，删除“先补完整实数运算再做 Base.margin”的不必要执行门，改为原两个二进分数估计及统一上确界界。去掉未使用的局部绑定；正式 Audit 覆盖 16 项声明后删除一次性 ConstructionDifferenceAudit.lean，清单 verification/cleanup-difference-probe-20261026.json。无新增持久脚本；未无依据删除仍被引用的冻结证明，剩余裁剪未完成。

@@ -90,6 +90,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.height/cost actual principal-cut value addition | ConstructionPrincipalAddition.addition_kernel_certificate; weightAddition_kernel_certificate | Addition is well-defined independently of input fraction representatives, total/unique/closed on represented principal cuts, commutative and inclusion-reflecting. Actual source weight graphs feed the operation. Arbitrary-cut addition, remaining arithmetic and the source margin are not yet proved. |
 
+| Base.margin height-difference representation prerequisite | ConstructionFractionDifference.difference_kernel_certificate | Every ordered pair of represented principal cuts has a unique represented additive gap; strict order makes the gap nonempty. Reuses the native ordinal right-remainder theorem. This does not prove the original dyadic margin estimate or subtraction on arbitrary cuts. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
