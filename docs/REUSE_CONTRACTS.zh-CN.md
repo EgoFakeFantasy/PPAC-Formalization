@@ -12,7 +12,7 @@
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。固定载体的统一标签作用、逆与共轭已接入；原 omega/2 已特化；源单子/conical 合同下偏序已接通；具体单子构造仍属阶段 8 |
 | 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；不能拿单个 LCarrier 模型冒充其全模型前提 |
 | 旧 LCarrier 工程的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 该旧工程已完成完整模式，但 LCarrier 是 ZFSet 子类。这个限制不能概括新版 YesMetaZFC：其任意 ZF 模型的内部 L 定理已存在，见下一行 |
-| 新版原生 L 数学 | ../yesmetazfc-analytic-comprehension，7979336；InnerModel/Jensen/ZF/Model.lean:15 l_model_zf_l、Choice.lean:14 l_model_zfc_l、GCH/Model.lean:47 l_model_gch_l | 任意 ZF 模型，完整分离／收集；本轮 ZFC 定向构建及三端点 trust=0 通过。待移植版本、Project 语言、相对化及原核接口；不是待重证的 L 数学。GCH 非当前必需工作 |
+| 新版原生 L 数学 | ../yesmetazfc-analytic-comprehension，7979336；InnerModel/Jensen/ZF/Model.lean:15 l_model_zf_l、Choice.lean:14 l_model_zfc_l、GCH/Model.lean:47 l_model_gch_l | 任意 ZF 模型，完整分离／收集；既有 ZFC 定向构建及三端点 trust=0 验收通过；本轮只回读 ZF/ZFC 正文及确认版本、干净状态。待移植版本、Project 语言、相对化及原核接口；不是待重证的 L 数学。GCH 非当前必需工作 |
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；实际 L 域满足全部前提仍待接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | 已接通；保留解释背景和域非空前提，不等于 nativeZF 已证明 ZFC 的全部 L 相对化 |
 
@@ -101,11 +101,11 @@ Base 数值解释的当前复用结果：原生 NaturalPrime、Arithmetic 的加
 
 Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影、动作、target 与 exit 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成 Representatives 同时表示 D×Letters，不重建积或商库。动作良定义／单射和 target 等变性已验收，过渡映射不要求单射。
 
-Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通；Raw.eval 精确两分支已接通，求值定律与 Word 左消去单子也已接通，下一消费者为 oldHom／整除／conical、呈现及 Probe 扩张。
+Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通；Raw.eval 精确两分支已接通，求值定律与 Word 左消去单子也已接通，oldHom／整除反映／conical 已回传原核，下一消费者为 generator、呈现及 Probe 扩张。
 
 锥与大小界的实际复用：ConstructionProbeCones 消费已有 letter_eq_iff、letter_transition、动作及 TableLaws，沿源共同阶段计算取得锥交、共同倍数与 initial_profile；对应消费者为 old_cone_intersection/common_multiple_reflection/probe_old_profile、ProbeMargins 和 ProbePresentations。ConstructionProbeCardinality 直接调用已复用的 ExistingCardinalBounds.infinite_product_l 及固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal。先给实际代表元积编号，再将商投影延拓到基数，底座最小原像定理给反向单射；空商独立处理。没有重证基数乘法、最小原像定理或引入对象选择。
 
-ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通，Raw.eval 已接通，Word 求值定律与左消去单子也已接通，剩余为 oldHom／整除／conical、呈现、大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
+ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通，Raw.eval 已接通，Word 求值定律与左消去单子也已接通，oldHom／整除反映／conical 已回传原核，剩余为 generator、呈现、大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
 
 Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequenceParsing.lean 的 empty_or_decomposition_exists_unique、components_unique 和 empty_sequence_unique，以及已有 exists_append，表示“尾到头的内部有限字母序列＋末尾旧元素”。载体由原生积／幂集／分离和现有 Representatives 构造；old/cons 的存在唯一性、单射、互斥、闭包与穷尽分解进入同一个纯对象句子的原核证书。未重建序列解析或把内部长度变为外部 List。只导入实际所需 ConstructionProbeLetters；两处误用 ZFC 配对唯一性接口已改为现有 KuratowskiZF.code_unique。原 oldAct/headDiv、Word/reduced 后续已接通；大小界仍待其实际消费者。底座序列限制带来 6 项此前未消费的原生 Bool 证书，已纳入精确足迹和 Check 复算；不能说可信依赖未扩大。
 
@@ -113,4 +113,6 @@ Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequence
 
 Raw.eval 的实际复用：ConstructionProbeEvaluation 直接调用固定 Ord/Recursion.lean:1142 的 ZF.recursiveSequenceIn_existsUnique。取 bound=n+1、target=Word，已有 oldAct/letterAct 分别供初值和后继；限制同一内部历史并用原 cons 的 prefix_restriction 证明精确 cons 方程，不另造递归或历史后端。ConstructionProbeEvaluationSyntax 直接使用原生 isRecursiveSequenceIn AST，证明总性、闭包、唯一性和 old/cons 两方程的纯成员句子并回传原核。外部非标准内部长度未排除。后续 eval_oldAct/eval_injective、Word.eval_letterAct 及实际 Word 左消去单子现已接通，不再列为缺口。当前证书使用 22 项既有依赖，没有新增可信依赖；全仓实际验收见 STATUS。
 
-Word 单子的实际复用：ConstructionProbeEvaluationLaws.lengthSchema 把源 Raw 构造器归纳的性质写为纯公式，由固定 Ord/Natural.lean:38 的 IsOmega.induction 和 Separation 完成；后继仅消费已存在的有限序列末项分解，不新建归纳后端。eval_oldAct、eval_letterAct 沿源 old/cons 与 headDiv 分支；eval_injective、mul_assoc、mul_one 共用该接口。ConstructionProbeWordMonoid 直接调用原生可定义函数图，构造实际 W×W→W；原核证书同时构造 Word 载体、old 单位和全部左消去单子律。现有 22 项依赖不增加；oldHom、conical、呈现和扩张仍待源消费者。
+Word 单子的实际复用：ConstructionProbeEvaluationLaws.lengthSchema 把源 Raw 构造器归纳的性质写为纯公式，由固定 Ord/Natural.lean:38 的 IsOmega.induction 和 Separation 完成；后继仅消费已存在的有限序列末项分解，不新建归纳后端。eval_oldAct、eval_letterAct 沿源 old/cons 与 headDiv 分支；eval_injective、mul_assoc、mul_one 共用该接口。ConstructionProbeWordMonoid 直接调用原生可定义函数图，构造实际 W×W→W；原核证书同时构造 Word 载体、old 单位和全部左消去单子律。现有 22 项依赖不增加；oldHom／因子／整除反映及 conical 后续已回传原核；generator、呈现和扩张仍待迁移。
+
+本批 oldHom 的实际复用：exists_old_graph 直接调用固定 FunctionConstruction.exists_setFunctionFromTo_of_denote，借助已证 old 唯一性和单射性取得实际内部单射图。因子刻画沿源 old/cons 排斥分支；整除反映消费已有 Word.headDiv_iff 和 eval_old_iff。conical 消费 Alphabet 分离及原单子 conical，没有加入 b≠unit。新原核存在句子组合已有实际 Word/乘法构造和 ModelTransfer.derives；24 项声明没有新增可信依赖，未重建函数图、代数后端或完备性。

@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。本批沿固定 ProbeWords 完成求值作用律、内部归纳下的单射／结合／单位律，并构造实际 Word 载体、单位与乘法图，取得 LeftCancelMonoid 的原核存在证书。原 oldHom／整除／conical／generator、呈现与大小界及完整扩张仍待迁移；最终对象 Con 未证明。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。已有实际 Word 左消去单子；本批沿固定 ProbeWords 继续完成实际 oldHom 单射同态、因子／整除反映及 conical 的原核存在证书；generator、呈现与大小界及完整扩张仍待迁移；最终对象 Con 未证明。
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

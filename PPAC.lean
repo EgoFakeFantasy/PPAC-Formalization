@@ -416,3 +416,5 @@ import PPAC.Migration.ConstructionProbeEvaluationSyntax
 import PPAC.Migration.ConstructionProbeEvaluationLaws
 import PPAC.Migration.ConstructionProbeWordMonoid
 import PPAC.Migration.ConstructionProbeWordMonoidSyntax
+import PPAC.Migration.ConstructionProbeOldEmbedding
+import PPAC.Migration.ConstructionProbeOldEmbeddingSyntax

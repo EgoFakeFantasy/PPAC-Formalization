@@ -3505,7 +3505,9 @@ def main() -> None:
                                ("construction_probe_evaluation_syntax", "ConstructionProbeEvaluationSyntax", 14),
                                ("construction_probe_evaluation_laws", "ConstructionProbeEvaluationLaws", 9),
                                ("construction_probe_word_monoid", "ConstructionProbeWordMonoid", 14),
-                               ("construction_probe_word_monoid_syntax", "ConstructionProbeWordMonoidSyntax", 6)):
+                               ("construction_probe_word_monoid_syntax", "ConstructionProbeWordMonoidSyntax", 6),
+                               ("construction_probe_old_embedding", "ConstructionProbeOldEmbedding", 13),
+                               ("construction_probe_old_embedding_syntax", "ConstructionProbeOldEmbeddingSyntax", 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7538,6 +7540,7 @@ def main() -> None:
         "source_probe_raw_eval_total_unique_old_cons_equations_kernel_proved": True,
         "source_probe_raw_eval_oldAct_and_injectivity_proved": True,
         "source_probe_raw_eval_and_word_monoid_proved": True,
+        "source_probe_actual_old_embedding_factor_divisibility_and_conical_kernel_proved": True,
         "source_probe_actual_word_carrier_multiplication_left_cancel_monoid_kernel_proved": True,
         "source_probe_word_conical_embedding_and_presentation_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
