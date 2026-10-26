@@ -80,8 +80,10 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。
 
-映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word 同态及完整保守传输仍待接。本批没有新增递归或商后端。
+映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输仍待接。本批没有新增递归或商后端。
 
 字母模拟批次直接消费已存在的 exists_graph/map_letter/graph_injective、FactorMap/TerminalMap 和 inCone_letter_iff。原 Conservative.factor_eq 用旧因子保持与单射性恢复指定因子；再经共同阶段锥判据证明原 lettersMap_inCone_iff。没有新建序列、递归、满足关系或完备性后端。对象证书只证明原 AlphabetSimulation 的四项相容性，不声称已证明 Conservative 的全部四字段或 Word.transport_conservative。
 
 Raw/Word 传输批次复用 exists_node_map 中的原生函数复合、现有 finite sequence 长度唯一性及 prefixHead/reduced 判据。原 Raw.transport 的字面映射由内部序列逐项复合和末端映射实现；已证 headDiv/reducedness/oldAct 保持。Word.transport 直接调用原生 ZF.exists_restriction 限制实际 Raw 图到既有 WordCarrier，不新建序列或 Word 后端。三个原核证书的依赖分别为 10/16/16 项；后两项包含先前已有并重算的六项序列限制 Bool 证书，没有新增可信依赖。
+
+transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求值、乘法图、ConeLaws 和 EmbeddingLaws；没有新增递归、商、锥或完备性后端。两条原核证书各 22 项依赖，来自既有标准三项、七项基础句子与两组六项序列限制证书。oldHom 完整四字段已接通，Word-to-Word transport_conservative 的共享 gate 论证仍需迁移。

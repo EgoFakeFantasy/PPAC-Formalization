@@ -3534,7 +3534,11 @@ def main() -> None:
                                ("construction_probe_alphabet_map_syntax", "ConstructionProbeAlphabetMapSyntax", 18),
                                ("construction_probe_raw_transport", "ConstructionProbeRawTransport", 18),
                                ("construction_probe_raw_transport_syntax", "ConstructionProbeRawTransportSyntax", 19),
-                               ("construction_probe_word_transport", "ConstructionProbeWordTransport", 8)):
+                               ("construction_probe_word_transport", "ConstructionProbeWordTransport", 8),
+                               ("construction_probe_transport_hom", "ConstructionProbeTransportHom", 11),
+                               ("construction_probe_transport_hom_syntax", "ConstructionProbeTransportHomSyntax", 6),
+                               ("construction_probe_conservative", "ConstructionProbeConservative", 7),
+                               ("construction_probe_conservative_syntax", "ConstructionProbeConservativeSyntax", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7588,6 +7592,8 @@ def main() -> None:
         "source_probe_actual_alphabet_simulation_kernel_proved": True,
         "source_probe_raw_transport_and_reducedness_kernel_proved": True,
         "source_probe_reduced_word_transport_embedding_kernel_proved": True,
+        "source_probe_actual_transportHom_kernel_proved": True,
+        "source_probe_actual_old_embedding_full_conservative_kernel_proved": True,
         "source_probe_conservative_simulation_transport_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,

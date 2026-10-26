@@ -445,3 +445,7 @@ import PPAC.Migration.ConstructionProbeAlphabetMapSyntax
 import PPAC.Migration.ConstructionProbeRawTransport
 import PPAC.Migration.ConstructionProbeRawTransportSyntax
 import PPAC.Migration.ConstructionProbeWordTransport
+import PPAC.Migration.ConstructionProbeTransportHom
+import PPAC.Migration.ConstructionProbeTransportHomSyntax
+import PPAC.Migration.ConstructionProbeConservative
+import PPAC.Migration.ConstructionProbeConservativeSyntax
