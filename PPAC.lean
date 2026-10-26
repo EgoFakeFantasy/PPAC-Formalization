@@ -413,3 +413,6 @@ import PPAC.Migration.ConstructionProbeWordQuotient
 import PPAC.Migration.ConstructionProbeLetterAction
 import PPAC.Migration.ConstructionProbeEvaluation
 import PPAC.Migration.ConstructionProbeEvaluationSyntax
+import PPAC.Migration.ConstructionProbeEvaluationLaws
+import PPAC.Migration.ConstructionProbeWordMonoid
+import PPAC.Migration.ConstructionProbeWordMonoidSyntax

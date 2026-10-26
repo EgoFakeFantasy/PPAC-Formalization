@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／五端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 数学接入未完成；7 的强迫 ZF 条件式前端已过，具体系统仍待 8；当前开发在 8，9–11 尚未闭合。初始 Base 及完整 margin 已完成。沿原 ProbeWords 的过渡图、实际字母商／投影和共同阶段相等判据已有原核证书。本批构造商上实际动作／target 图，并证明恒等、复合、单射及 target 等变性。exit、head_separation 与实际 Alphabet 也已回传原核。原锥判据、锥交、共同倍数、初始 profile 和字母基数界也已取得原核证书。Raw 内部载体及 old/cons 构造器全案例证书已完成；原 oldAct/headDiv、实际 reduced/Word、唯一 quotient 图和 letterAct 的前端归约／等变／单射现已取得原核证书；Raw.eval 的内部求值总性／唯一性、闭包及 old/cons 精确方程也已取得原核证书；下一步为 eval_oldAct/eval_injective、Word 乘法／单子、大小界和实际扩张；最终单子及对象 Con 未完成。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。本批沿固定 ProbeWords 完成求值作用律、内部归纳下的单射／结合／单位律，并构造实际 Word 载体、单位与乘法图，取得 LeftCancelMonoid 的原核存在证书。原 oldHom／整除／conical／generator、呈现与大小界及完整扩张仍待迁移；最终对象 Con 未证明。
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

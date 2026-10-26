@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 原 Base.M 的内部 ω 加法表、单子／conical、非单位生成元和条件并已验；原 n+1/n+3 权重图、切割次序／上确界、正性单位界已有；实际权重图的存在及所有严格索引对的完整 Base.margin 原核证书已完成 | 初始 Base 数学数据已齐；原 Probe Path.factor/terminal 的实际内部函数图及自反、复合、零点、终端兼容律已有原核证书。原 transition/DirectedSystem、实际直极限商载体／投影和 letter_eq_iff 现已接入原核。商上实际动作图、恒等／复合／单射和 target 图及等变性现已接通。exit 图、等变性、dvd_target_of_inCone、head_separation 和实际 Alphabet 已取得原核存在证书；有限阶段锥判据、锥交、共同倍数、初始 profile 及实际字母基数界现已取得原核证书；Raw 内部载体和 old/cons 全案例已取得原核证书；原 oldAct/headDiv、实际 reduced/Word、唯一 quotient 图和 letterAct 七项定律现已取得原核证书；Raw.eval 总性／唯一性、闭包及 old/cons 方程也已回传原核；下一步接 eval_oldAct/eval_injective、Word 乘法／单子及其大小界、实际 Probe/Merger 扩张、条件并、保守嵌入与 margin 延拓，再接 Placement/ConservativeHull 和最终饱和单子；初始单子不替代最终构造 |
+| 8 | 源代数／构造核心 | 原 Base.M 的内部 ω 加法表、单子／conical、非单位生成元和条件并已验；原 n+1/n+3 权重图、切割次序／上确界、正性单位界已有；实际权重图的存在及所有严格索引对的完整 Base.margin 原核证书已完成 | 初始 Base 数学数据已齐；原 Probe Path.factor/terminal 的实际内部函数图及自反、复合、零点、终端兼容律已有原核证书。原 transition/DirectedSystem、实际直极限商载体／投影和 letter_eq_iff 现已接入原核。商上实际动作图、恒等／复合／单射和 target 图及等变性现已接通。exit 图、等变性、dvd_target_of_inCone、head_separation 和实际 Alphabet 已取得原核存在证书；有限阶段锥判据、锥交、共同倍数、初始 profile 及实际字母基数界现已取得原核证书；Raw 内部载体和 old/cons 全案例已取得原核证书；原 oldAct/headDiv、实际 reduced/Word、唯一 quotient 图和 letterAct 七项定律现已取得原核证书；Raw.eval 总性／唯一性、闭包及 old/cons 方程也已回传原核；求值作用律／单射及实际 Word 左消去单子也已回传原核；下一步接 oldHom／整除／conical／generator、呈现与大小界、实际 Probe/Merger 扩张、条件并、保守嵌入与 margin 延拓，再接 Placement/ConservativeHull 和最终饱和单子；初始单子不替代最终构造 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -30,12 +30,8 @@
 
 ## 当前直接消费者
 
-固定 `SymmetricChoice.lean` 的 `WitnessIndex/chosenWitness → replacementBound → bounded_local_witness → image_in_bound → replacementImage → forces_replacement → forces_ZF` 已迁移。唯一需要对象化适配的宿主选择步骤，改由底座 Collection 给出覆盖所有有效索引的 HS 见证集；精确证明了源 bounded_local_witness 消费者合同，未构造或假定对象选择函数。随后保留源全群轨道、单值性、相等替换、稠密性及 Separation 像集证明。
+固定 ProbeWords 的 Raw.eval_oldAct / eval_injective → Word.eval_letterAct → mul_assoc / mul_one → LeftCancelMonoid 已接通。源构造器归纳由纯 lengthSchema 经已有 Separation 与 IsOmega.induction 实现；不要求外部标准长度。当前证书构造实际 Word、old 单位、W×W 输入载体与乘法表，未假定单子律。
 
-正在原阶段 8 的 Algebra/Construction。初始内部自然数单子、条件并、非单位元，以及原 height/cost 的实际切割图、单位界和完整严格 margin 均已取得原核证书。本批沿原两次 pow_succ 与幂次比较证明 height(x)+cost(x)<height(y)，由已证主切割差和精确成本像集上确界得到 source_margin；最后的 constructionSentence 实际构造两张图及全部 margin，未以字段假定它们。
+下一源链为 oldHom／old_mul_eq_old_iff／old_dvd_old_iff／old_dvd_iff_headDiv → exit_ne_one／letterAct_ne_one／IsConical → generator 及关系 → evalHom／liftHom 与呈现。已核对实际消费者：ConservativeExtensions.lean:86、ProbeGates.lean:623、ProbePresentations 的保守与生成元映射链。随后按原依赖接大小界、Probe/Merger 实际扩张、条件并、保守嵌入／margin、Placement 和 ConservativeHull。不是仅按源文件相邻位置增加工作；无用支线不恢复。
 
-下一消费者是原 MonoidBase.ProbeData.extension / MergerData.extension：Path 的 factor/terminal 已用原生唯一函数图构造完成，保留源左消去与有界递增路径前提；本批已构造 transition、有向系统和实际直极限字母商；商上实际动作及 target 已构造并证明原定律；exit、head_separation 与实际 Alphabet 已由原 Path/conical/非单位元前提构造并回传原核；本批已迁移原锥判据／锥交／共同倍数／初始 profile 和字母基数界；Raw 内部载体及构造器全案例已有原核证书；原 oldAct/headDiv、实际 reduced/Word、唯一 quotient 图和 letterAct 已取得原核证书；Raw.eval 的精确两分支求值已接通；下一步按原 eval_oldAct/eval_injective 接 Word 乘法／单子及其大小界、实际扩张单子、条件并、保守嵌入及 margin 延拓，再接原 Placement、塔和 conservative hull。任意切割运算仅按这些真实消费者所需适配；不重新证明已经完成的 Base.margin，不先扩建完整实数域库。
-
-阶段 6 的已有 L 接口适配、9 的模型应用、10 的全部内部码与最终 Con 均未因 forces_ZF 完成。完整验收数据统一见 STATUS，不以构建数量估计剩余工期。
-
-当前 Raw.eval 已直接消费固定底座的有界递归与历史限制，存在／唯一性、Word 闭包和源 old/cons 精确方程均已回传原核。下一必要链为原 eval_oldAct（构造器案例）→ eval_injective（对象 ω 归纳）→ Word.eval_letterAct/mul_assoc/mul_one → LeftCancelMonoid。归纳性质使用纯公式分离，继续覆盖全部内部有限长度；不新增通用递归后端。
+第 6 阶段已有 L 的接口、第 9 阶段模型应用、第 10 阶段全部内部码与最终 Con 仍未完成。源函数图、序列解析、ω 归纳、递归、完整模式、Proof/Sat、完备性均复用既有配套。实际验收统一见 STATUS，不以构建数估算剩余工期。
