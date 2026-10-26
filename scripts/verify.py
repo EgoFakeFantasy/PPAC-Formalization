@@ -3509,7 +3509,11 @@ def main() -> None:
                                ("construction_probe_old_embedding", "ConstructionProbeOldEmbedding", 13),
                                ("construction_probe_old_embedding_syntax", "ConstructionProbeOldEmbeddingSyntax", 11),
                                ("construction_probe_generator", "ConstructionProbeGenerator", 10),
-                               ("construction_probe_generator_syntax", "ConstructionProbeGeneratorSyntax", 11)):
+                               ("construction_probe_generator_syntax", "ConstructionProbeGeneratorSyntax", 11),
+                               ("construction_probe_hom_evaluation", "ConstructionProbeHomEvaluation", 29),
+                               ("construction_probe_hom_evaluation_syntax", "ConstructionProbeHomEvaluationSyntax", 8),
+                               ("construction_probe_lift_hom", "ConstructionProbeLiftHom", 13),
+                               ("construction_probe_lift_hom_syntax", "ConstructionProbeLiftHomSyntax", 21)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7544,6 +7548,7 @@ def main() -> None:
         "source_probe_raw_eval_and_word_monoid_proved": True,
         "source_probe_actual_old_embedding_factor_divisibility_and_conical_kernel_proved": True,
         "source_probe_actual_generator_graph_relations_and_old_gate_kernel_proved": True,
+        "source_probe_evalHom_and_actual_liftHom_arbitrary_target_monoid_kernel_proved": True,
         "source_probe_actual_word_carrier_multiplication_left_cancel_monoid_kernel_proved": True,
         "source_probe_word_conical_embedding_and_presentation_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,

@@ -420,3 +420,7 @@ import PPAC.Migration.ConstructionProbeOldEmbedding
 import PPAC.Migration.ConstructionProbeOldEmbeddingSyntax
 import PPAC.Migration.ConstructionProbeGenerator
 import PPAC.Migration.ConstructionProbeGeneratorSyntax
+import PPAC.Migration.ConstructionProbeHomEvaluation
+import PPAC.Migration.ConstructionProbeHomEvaluationSyntax
+import PPAC.Migration.ConstructionProbeLiftHom
+import PPAC.Migration.ConstructionProbeLiftHomSyntax
