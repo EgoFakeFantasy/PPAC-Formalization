@@ -29661,3 +29661,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeSimulation.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeSimulation.construction_models
 #print axioms PPAC.Migration.ConstructionProbeSimulation.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.identity_conservative
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.identity_word_graph
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.gate_existence
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.ExitGates
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.OldIntersections
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.old_intersections
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.dvd_of_different_head
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.old_word_cone_join
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.different_head_cone_join
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.left_mul_dvd_iff
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.translate_cone_intersection
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.ConeJoinAt
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.coneJoinAt
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.coneJoinAt_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.coneJoinAt_semantics
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.cone_join
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.conditional_joins
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.extension_laws
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.exists_extension
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.extensionSentence
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.extension_models
+#print axioms PPAC.Migration.ConstructionProbeConditionalJoins.extension_kernel_certificate

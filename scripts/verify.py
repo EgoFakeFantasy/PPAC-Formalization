@@ -2561,7 +2561,8 @@ def main() -> None:
                                ("construction_probe_transport_factors", "ConstructionProbeTransportFactors", 14),
                                ("construction_probe_transport_common", "ConstructionProbeTransportCommon", 11),
                                ("construction_probe_conservative_simulation", "ConstructionProbeConservativeSimulation", 5),
-                               ("construction_probe_simulation", "ConstructionProbeSimulation", 11)):
+                               ("construction_probe_simulation", "ConstructionProbeSimulation", 11),
+                               ("construction_probe_conditional_joins", "ConstructionProbeConditionalJoins", 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6201,10 +6202,11 @@ def main() -> None:
         "source_probe_word_transport_common_below_kernel_proved": True,
         "source_probe_conservative_simulation_transport_proved": True,
         "source_probe_simulation_old_and_indexed_probe_same_graph_kernel_proved": True,
-        "source_probe_word_conditional_joins_proved": False,
+        "source_probe_word_conditional_joins_proved": True,
+        "source_probe_word_left_cancel_conical_conditional_joins_kernel_proved": True,
         "source_probe_word_full_profile_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
-        "source_probe_extension_monoid_proved": False,
+        "source_probe_complete_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

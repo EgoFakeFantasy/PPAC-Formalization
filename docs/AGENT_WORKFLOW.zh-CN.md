@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | Base 与初始 margin；实际 Path／字母／Alphabet／Word 单子、old 嵌入、generator／indexed probe、呈现唯一性、大小界；mapped Path、AlphabetSimulation、实际 transportHom、oldHom 与 Word 完整保守性、共享 Gate。Path old/probe 方程与保守性已接到同一实际映射，当前验收见 STATUS | 扩张 Word 条件并、probe 完整 profile；实际 Probe/Merger 扩张及所需 gate/pushout 接口、margin 延拓、Placement、ConservativeHull 和最终饱和单子。已证单个 Word 单子不替代最终构造 |
+| 8 | 源代数／构造核心 | Base 与初始 margin；实际 Path／字母／Alphabet／Word 单子、old 嵌入、generator／indexed probe、呈现唯一性、大小界；mapped Path、AlphabetSimulation、实际 transportHom、oldHom 与 Word 完整保守性、共享 Gate。Path old/probe 方程与保守性已接到同一实际映射；实际 Word 载体／乘法／单位及左消去、conical、条件并本批统一构造，当前验收见 STATUS | probe 完整 profile；Probe 的 gate/pushout/margin 接口、Merger 扩张、margin 延拓、Placement、ConservativeHull 和最终饱和单子。已证单个 Word 单子不替代最终构造 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -34,7 +34,7 @@
 
 当前已接 ProbePresentations.Path.simulation_conservative:606、simulation_old:614 和 simulation_probe:619：ConstructionProbeSimulation 构造同一个 H，证明实际 WordGraph、乘法／单位保持、四字段 Conservative 以及 old/probe 方程。直接消费者是 ConservativeCells.Probe.simulation:201、simulation_inclusion:205、simulation_generator:208。已有 Path 字母／generator／probe 图合同保留，不能声称完整 Probe Object 已装配。
 
-下一项仅沿原 ProbeGates.cone_join → Path.extension_hasConditionalJoins，供 ConservativeCells.Probe.extension:181 使用；然后按 MonoidRounds 的消费补 probe_full_profile 及实际扩张。共享 Gate 已有，优先特化现成证明；不再重写一次 Raw 归纳。后续 Probe/Merger、margin、Placement 和 ConservativeHull 仍按源依赖接入。源声明到目标证书的完整索引集中在 THEOREM_COVERAGE，不在每份流程里重复逐批清单。
+本批沿原 ProbeGates.cone_join → Path.extension_hasConditionalJoins 接通扩张 Word 条件并，供 ConservativeCells.Probe.extension:181 的 joins 字段使用。共享 Gate 已特化到原生恒等图，不重写 Gate 归纳。下一项按 MonoidRounds 消费补 probe_full_profile／probe_join_profile：先复用当前 ExitGates、old 嵌入与 generator 入口，接 old_factor_of_other_block 和初始 probe 的精确图方程。后续 Probe/Merger、margin、Placement 和 ConservativeHull 仍按源依赖接入。源声明到目标证书的完整索引集中在 THEOREM_COVERAGE，不在每份流程里重复逐批清单。
 
 evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保持原任意单子；基础 lift 不要求源 conical／b≠unit，附加 generator 取值才使用这两个源条件。
 
