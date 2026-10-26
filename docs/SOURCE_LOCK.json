@@ -25341,7 +25341,7 @@
         "ConstructionProbeGenerator.exists_generator_graph",
         "ModelTransfer.derives"
       ],
-      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness, complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
+      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness is now supplied by construction_probe_hom_ext; complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeHomEvaluation.Eval": [
           "Classical.choice",
@@ -25688,7 +25688,7 @@
         "ConstructionProbeGenerator.exists_generator_graph",
         "ModelTransfer.derives"
       ],
-      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness, complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
+      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness is now supplied by construction_probe_hom_ext; complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeHomEvaluationSyntax.LiftGraph": [
           "Classical.choice",
@@ -25801,7 +25801,7 @@
         "ConstructionProbeGenerator.exists_generator_graph",
         "ModelTransfer.derives"
       ],
-      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness, complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
+      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness is now supplied by construction_probe_hom_ext; complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeLiftHom.BasicLiftLaws": [],
         "PPAC.Migration.ConstructionProbeLiftHom.Equivariant": [],
@@ -25976,7 +25976,7 @@
         "ConstructionProbeGenerator.exists_generator_graph",
         "ModelTransfer.derives"
       ],
-      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness, complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
+      "scope": "Pinned evalHom old/cons recursion is represented by an N-valued native bounded history, with all internal lengths and exact constructor equations. Source oldAct/letterAct cases and existing pure Raw induction prove preservation of actual source evaluation multiplication. Construct an actual Word-to-N lift graph for every internal target monoid with the original F multiplicativity, letter equivariance and exit relations. The pure native-kernel existence certificate needs no target cancellation and no source conical/nonunit-b premise for the basic lift. Only its additional generator clause assumes source conical and b != identity, exactly as in the source. hom_ext uniqueness is now supplied by construction_probe_hom_ext; complete presentations, Word cardinal bounds and full extensions remain. No new recursion, induction, monoid or proof kernel is introduced.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeLiftHomSyntax.basicLiftLaws": [
           "Quot.sound",
@@ -26150,6 +26150,268 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_hom_ext": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean",
+      "source_sha256": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
+      "adapter": "PPAC/Migration/ConstructionProbeHomExt.lean",
+      "source_declarations": [
+        "Word.hom_ext (688-700)",
+        "Word.generator_mul_of_not_headDiv (682-685)"
+      ],
+      "consumers": [
+        "ProbeGates.Path.presentedHom_ext (635-639)",
+        "uniqueness of the already constructed Word.liftHom"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/FiniteSequenceParsing.lean",
+      "native_source_sha256": "033ebe122fb616eec8b0cb516fcc122e8146a2343e4149aa263424d8f8f717a3",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "ConstructionProbeEvaluationLaws.raw_induction",
+        "ConstructionProbeReduced.reduced_cons",
+        "ConstructionProbeGenerator.generator_mul_of_not_headDiv",
+        "ForcingConditionGraphs.function_unique",
+        "SetTheory.Structure.IsSetRelation.eq_of_pairMember_iff",
+        "ConstructionProbeHomEvaluation.product_unique",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Pinned old/cons induction proves equality of actual internal homomorphism graphs from agreement on all old elements and generators. Pure formula-indexed induction covers all internal word lengths. Multiplicativity and the existing actual Word/multiplication/generator graphs are explicit premises; target multiplication only needs to be a function, so no target cancellation is added. Source conical/nonunit premises were discharged when constructing the generator graph. lift_unique consumes the existing LiftLaws. Path.presentedHom_ext still needs its indexed probe adapter; complete presentations, cardinal bounds and extensions remain. No new recursion, induction or proof kernel.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeHomExt.AgreeAt": [],
+        "PPAC.Migration.ConstructionProbeHomExt.agreeAt": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.agreeAt_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.agreeAt_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.agreement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.agreement_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.agreement_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.pointwise": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.hom_ext": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExt.lift_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_hom_ext_syntax": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean",
+      "source_sha256": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
+      "adapter": "PPAC/Migration/ConstructionProbeHomExtSyntax.lean",
+      "source_declarations": [
+        "Word.hom_ext (688-700)",
+        "Word.generator_mul_of_not_headDiv (682-685)"
+      ],
+      "consumers": [
+        "ProbeGates.Path.presentedHom_ext (635-639)",
+        "uniqueness of the already constructed Word.liftHom"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/FiniteSequenceParsing.lean",
+      "native_source_sha256": "033ebe122fb616eec8b0cb516fcc122e8146a2343e4149aa263424d8f8f717a3",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "ConstructionProbeEvaluationLaws.raw_induction",
+        "ConstructionProbeReduced.reduced_cons",
+        "ConstructionProbeGenerator.generator_mul_of_not_headDiv",
+        "ForcingConditionGraphs.function_unique",
+        "SetTheory.Structure.IsSetRelation.eq_of_pairMember_iff",
+        "ConstructionProbeHomEvaluation.product_unique",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Pinned old/cons induction proves equality of actual internal homomorphism graphs from agreement on all old elements and generators. Pure formula-indexed induction covers all internal word lengths. Multiplicativity and the existing actual Word/multiplication/generator graphs are explicit premises; target multiplication only needs to be a function, so no target cancellation is added. Source conical/nonunit premises were discharged when constructing the generator graph. lift_unique consumes the existing LiftLaws. Path.presentedHom_ext still needs its indexed probe adapter; complete presentations, cardinal bounds and extensions remain. No new recursion, induction or proof kernel.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.oldAgreement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.oldAgreement_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.oldAgreement_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.generatorAgreement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.generatorAgreement_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.generatorAgreement_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.homExtSentence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.homExt_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeHomExtSyntax.homExt_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
           "propext"
         ]
       }
