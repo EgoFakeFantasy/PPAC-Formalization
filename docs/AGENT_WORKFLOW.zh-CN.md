@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 原初始 Base.M 与完整 margin；Probe Path／字母商／动作／Alphabet、锥性质及字母基数界；Raw／reduced Word／quotient／letterAct／eval；实际 Word 左消去单子、old 嵌入／因子／整除反映、conical；实际 generator 图及乘法／作用／旧元素 gate；任意目标单子上的 evalHom／实际 liftHom、hom_ext 实际函数图相等、索引 probe 图与 Path.presentedHom_ext；相邻过渡传输及实际 interpretedLetter／代表公式／动作等变；exit 相容、实际 probe 关系及索引呈现同态存在唯一性，均已有原核证书 | 接原 Raw.cardinal_le／extension_cardinal_le 与保守模拟；实际 Probe/Merger 扩张、条件并、保守嵌入／margin 延拓、Placement／ConservativeHull 和最终饱和单子。初始或单个 Word 单子不替代最终构造 |
+| 8 | 源代数／构造核心 | 原初始 Base.M 与完整 margin；Probe Path／字母商／动作／Alphabet、锥性质及字母基数界；Raw／reduced Word／quotient／letterAct／eval；实际 Word 左消去单子、old 嵌入／因子／整除反映、conical；实际 generator 图及乘法／作用／旧元素 gate；任意目标单子上的 evalHom／实际 liftHom、hom_ext 实际函数图相等、索引 probe 图与 Path.presentedHom_ext；相邻过渡传输及实际 interpretedLetter／代表公式／动作等变；exit 相容、实际 probe 关系及索引呈现同态存在唯一性，均已有原核证书 | Raw.cardinal_le／extension_cardinal_le 已回传原核；接保守模拟；实际 Probe/Merger 扩张、条件并、保守嵌入／margin 延拓、Placement／ConservativeHull 和最终饱和单子。初始或单个 Word 单子不替代最终构造 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -32,7 +32,7 @@
 
 固定 ProbeWords 的 Raw.eval_oldAct / eval_injective → Word.eval_letterAct → mul_assoc / mul_one → LeftCancelMonoid 已接通。源构造器归纳由纯 lengthSchema 经已有 Separation 与 IsOmega.induction 实现；不要求外部标准长度。当前证书构造实际 Word、old 单位、W×W 输入载体与乘法表，未假定单子律。
 
-oldHom／old_mul_eq_old_iff／old_dvd_old_iff／old_dvd_iff_headDiv 和 exit_ne_one／letterAct_ne_one／IsConical 已按固定源迁移为实际图与原核证书。generator 实际图及乘法／作用／整除关系也已回传原核。evalHom／liftHom 已回传原核，hom_ext 已回传原核，实际 probe 图与 Path.presentedHom_ext 已回传原核，transitions_from_adjacent／实际 interpretedLetter 及代表公式／动作等变已回传原核，interpretedLetter_exit、实际 probe 关系与 presentedLift／existsUnique_presentedHom 已回传原核，下一源链为 Raw.cardinal_le／Path.extension_cardinal_le 与 ProbePresentations 保守模拟。已核对实际消费者：ConservativeExtensions.lean:86、ProbeGates.lean:623、ProbePresentations 的保守与生成元映射链。随后按原依赖接大小界、Probe/Merger 实际扩张、条件并、保守嵌入／margin、Placement 和 ConservativeHull。不是仅按源文件相邻位置增加工作；无用支线不恢复。
+oldHom／old_mul_eq_old_iff／old_dvd_old_iff／old_dvd_iff_headDiv 和 exit_ne_one／letterAct_ne_one／IsConical 已按固定源迁移为实际图与原核证书。generator 实际图及乘法／作用／整除关系也已回传原核。evalHom／liftHom 已回传原核，hom_ext 已回传原核，实际 probe 图与 Path.presentedHom_ext 已回传原核，transitions_from_adjacent／实际 interpretedLetter 及代表公式／动作等变已回传原核，interpretedLetter_exit、实际 probe 关系与 presentedLift／existsUnique_presentedHom 已回传原核，Raw.cardinal_le／Path.extension_cardinal_le 已回传原核；下一源链为 ProbePresentations 保守模拟。已核对实际消费者：ConservativeExtensions.lean:86、ProbeGates.lean:623、ProbePresentations 的保守与生成元映射链。随后按原依赖接 Probe/Merger 实际扩张、条件并、保守嵌入／margin、Placement 和 ConservativeHull。不是仅按源文件相邻位置增加工作；无用支线不恢复。
 
 evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保持原任意单子；基础 lift 不要求源 conical／b≠unit，附加 generator 取值才使用这两个源条件。
 

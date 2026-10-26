@@ -3523,7 +3523,9 @@ def main() -> None:
                                ("construction_probe_interpreted_letters", "ConstructionProbeInterpretedLetters", 11),
                                ("construction_probe_interpreted_letters_syntax", "ConstructionProbeInterpretedLettersSyntax", 9),
                                ("construction_probe_presented_lift", "ConstructionProbePresentedLift", 7),
-                               ("construction_probe_presented_lift_syntax", "ConstructionProbePresentedLiftSyntax", 12)):
+                               ("construction_probe_presented_lift_syntax", "ConstructionProbePresentedLiftSyntax", 12),
+                               ("existing_finite_sequence_bounds", "ExistingFiniteSequenceBounds", 33),
+                               ("construction_probe_word_cardinality", "ConstructionProbeWordCardinality", 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -3544,6 +3546,8 @@ def main() -> None:
         prefix = "PPAC.Migration." + module + "."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
+        if module == "ExistingFiniteSequenceBounds":
+            names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
         if module == "ForcingNameRecursion":
@@ -3551,6 +3555,12 @@ def main() -> None:
         if len(names) != count or names != set(adapter_lock["exact_declaration_footprints"]) or not names <= set(expected):
             raise RuntimeError("Incomplete condition-map declaration audit: " + module)
         map_recursion_footprints.update(adapter_lock["exact_declaration_footprints"])
+    fseq_reuse = source_lock["companion_reuse"]["native_finite_sequence_bound"]
+    fseq_text = (ROOT / fseq_reuse["adapter"]).read_text(encoding="utf-8")
+    fseq_blocks = {m[1]: m[2].strip() for m in re.finditer(
+        r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", fseq_text)}
+    if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in fseq_blocks.items()} != fseq_reuse["literal_blocks_sha256"]:
+        raise RuntimeError("Reused donor finite-sequence proof bodies changed")
     cardinal_reuse = source_lock["companion_reuse"]["native_infinite_union"]
     cardinal_text = (ROOT / cardinal_reuse["adapter"]).read_text(encoding="utf-8")
     cardinal_blocks = {m[1]: m[2].strip() for m in re.finditer(
@@ -7564,6 +7574,7 @@ def main() -> None:
         "source_probe_adjacent_transport_and_actual_interpretedLetter_equivariance_kernel_proved": True,
         "source_probe_actual_word_carrier_multiplication_left_cancel_monoid_kernel_proved": True,
         "source_probe_indexed_relations_and_unique_presentedHom_kernel_proved": True,
+        "source_probe_raw_and_extension_cardinal_bounds_kernel_proved": True,
         "source_probe_conservative_simulation_transport_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,

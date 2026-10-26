@@ -55,70 +55,27 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 ## 不能重复建设或误报的部分
 
-新版 L 的域是任意 M 内的 `{x : M.Domain // L_d x}`；完整 ZF/ZFC 已有。223 模块依赖差异是版本整合工作量证据，不是 142 项未证明数学；GCH 不增加为本项目义务。BMS 完备性回传方法已在 ModelTransfer 中应用，当前供体存在无关脏改动，本批只读未动。
+新版 L 的域是任意 M 内的 `{x : M.Domain // L_d x}`；完整 ZF/ZFC 已有。223 模块依赖差异是版本整合工作量证据，不是 142 项未证明数学；GCH 不增加为本项目义务。BMS 完备性回传方法已在 ModelTransfer 中应用，BMS 供体此前存在无关脏改动；本轮未修改。新版 YesMetaZFC 本轮确认干净。
 
 既有全模式、内部序数递归、Proof/Sat 配套已经存在。ZF/U 特化和全部内部码正确性尚未接通，但不另建通用证明核、编码器或满足关系。其他库接口未定位时写“未定位到精确合同”，不能写“数学不存在”。
 
 `atomic_truth`、决策稠密集、`exists_truth_generic` 仅服务未选的泛滤分支；NatPacket／字节兼容继续冻结。旧的独立 L 重建路线停止扩写。保留具有实际依赖或尚未完成裁剪判断的已验收证明；不以已投入成本作为继续开发理由。
 
 
-本批已消费的 Cohen 复用：coordinatePerm 的两次 prodCongr 保留为内部精确图方程。原 `exists_cartesianProductInjection` 返回值未保留该方程，因此调用已有 `exists_setFunctionFromTo_of_denote` 留下方程用于函数性证明；不重建积或函数后端。`small_image` 在界 w=ω 时直接给出源 countable_graph 的内部保持；一般 w 的结论更强，但本批 ForcingProductParameters 已将共同载体和作用族特化到原内部 omega/2；完整单子/偏序系统仍未装配。
+## 现行代数构造复用入口
 
-本批 Product 消费：Cohen 两次坐标提升、精确集合像和 Diagram 集合级作用律直接组合为 ProductForcing 的恒等／复合律。积与函数图仍调用底座 exists_cartesianProduct、exists_setFunctionFromTo_of_denote；源分量的保序性直接用于乘积关系，exists_source_action 消去分量构造前提。未重做集合构造、基数界或图编码。
+下表取代逐批叙述；旧正文可从 45512cc 恢复。声明类型、所选供体正文哈希与精确依赖以 SOURCE_LOCK 和 Audit 为准。
 
-本批复用原核闭合接口不变：ForcingHSAction 的原域传输证明只将共轭图参数从环境槽位放宽为任意内部图，原接口保留为直接实例；没有重复名字归纳。ForcingProductFamily 只将已证存在句子的开公式正文命名，旧句子仍定义为同一正文的闭合，供源 omega/2 特化消费。旧声明公理依赖集合预审逐项相同。
+| 当前消费者 | 已实际复用的入口 | 边界 |
+|---|---|---|
+| 全部强迫 ZF 模式 | Collection.collection_exists_d、Replacement.exists_functionalImage、SeparationSyntax；既有 HS、轨道和支撑图 | 完整前端已证；实际最终单子／呈现待实例化 |
+| Base.M 和完整 margin | 固定底座 Ord/Natural、Arithmetic、NaturalPrime；新版 Descriptive/Dyadic 的数字与单位分数方法 | 已证，不扩建当前消费者不需要的完整实数域；RealPair 是 Baire 配对，不能代替实数域 |
+| Probe Path 和商字母 | 原生 FunctionConstruction、Replacement、Separation；现有 Representatives | factor/terminal、共同阶段商、动作、target/exit 和 Alphabet 已证 |
+| 字母大小界 | 已适配 ExistingCardinalBounds.infinite_product_l；原生 Comparison.exists_rightInverseInjection_of_surjection_from_ordinal | 从序数最小原像得单射，不任选商代表元 |
+| Raw、Word、quotient、letterAct | 原生 FiniteSequenceParsing 和序列限制；已有函数图构造 | 所有内部有限长度；不是宿主 List；现成基础不重写 |
+| Raw.eval、evalHom/liftHom | 原生 recursiveSequenceIn_existsUnique、已存在的内部历史限制 | Word/任意目标单子；目标不增加左消去条件 |
+| Word 单子、old 嵌入及 conical | 已有 raw_induction、IsOmega.induction、实际乘法图 | 单个实际 Word 已完成，不能替代最终饱和单子 |
+| generator、indexed probe 和呈现 | 已有函数图、字母商判据、old_mul_generator、generator_mul_b、hom_ext | 实际图、exit/transition 关系、presentedHom 存在唯一性已证；保守模拟仍需迁移 |
+| Raw.cardinal_le / extension_cardinal_le | 新版 7979336 FiniteSequenceSyntax/Recursion/Numbering/Countable 的四段原证明；已适配 ExistingFiniteSequenceBounds.fseq_bound_l | 全内部有限序列统一编号，无可数选择；实际消费者 OpenAI MonoidBase:215。两个原核证书见 ConstructionProbeWordCardinality |
 
-本批偏序复用：ForcingDiagramPoset.injection_ext 直接消费底座 IsSetRelation.eq_of_pairMember_iff 与既有 native_mapsTo，不另建图外延性。ProductPoset.preorder 直接返回现有 AtomicBasic.PreorderOn，原核闭合继续用 ModelTransfer.derives。源 sub_one/sub_sub/index_unique 的证明结构保留；实际单子构造仍沿 OpenAI Algebra/Construction，不能用任意现成单子替换所需的不变量。
-
-本批 HS 配对／并集消费：原 MulAction.stabilizer 的子群义务由 ProductStabilizer 调用已证实际动作恒等／复合／逆及 NameConjugacy 完成。配对交集直接使用 KP.intersection_exists_d；正规性直接复用 NormalFilter.is_normal，名字构造与作用交换继续使用 PairName/UnionName/UnionAction。UnionAction 的同一条目证明放宽为只检查实际条件的序保持，旧接口保留且旧依赖集合不变；没有另建条件作用或名字递归。原核 HS 闭包已接通，并已由本批 ForcingPairUnion 消费到原 mem_pair/mem_union 和 forces_pairing/forces_union；其余强迫公理后来已由 ForcingZFAxioms 接通，当前剩余是具体系统实例化。
-
-本批四条强迫公理继续复用 AtomicRelations.mem_iff/eq_iff、AtomicBasic 的自反／边引入／单调性、AtomicLaws 相等替换和 Formula 的逻辑分解；没有新建强迫代数或添加强迫公理字段。实际 HS 域只对已有 hs 公式重索引。原 codeOrder 的域限制由已证 IsName 条目性质给出字面并集等价，且实际构造消费了该等价。SourceStatements 中四条原公理本身未改写。
-
-Foundation 迁移直接消费已经完成的 ForcingMapLaws.formula_induction → ForcingNameInduction.kernel_certificate → SetInduction.native_induction；将原 minimal_member 的归纳性质编码为纯成员公式，保留源 Child 下降和稠密见证。回传继续使用已接入的 BMS 式 ModelTransfer，不另建归纳、完备性或 L 后端。
-
-Infinity 迁移直接消费固定底座 `ZF.exists_omega` 及内部 IsOmega 的空集／后继闭包，消费现成 checkName.exists_checked/edge_checkName/unique 和 HSCheck.check_hs。实际固定顶来自 ProductFamily.top_fixed；SuccessorOf 中的 SameMembers 由既有 ModelTransfer.extensionality 转为源等号。原 mem_check/check_successor 的稠密见证与原子相等替换保留；不另建自然数、check 递归或限制内部 ω。
-
-收集名字迁移消费现有 coordinate_bound（两次原生并）、exists_cartesian（原生积）、SeparationSyntax 全模式，构造恰好满足原索引／条件测试的有序对值域。HS 证明消费 ProductCovariance.inverse、NameConjugacy.inverse_action、实际稳定子子群和 Normal 的上闭性。indexed_permutes_iff 核对当前对象条件与源按索引存在见证合同，而非未经证明地改写前提。族图允许关系式呈现，源函数图是精确特例；本批 Replacement 已用下述原生 Collection 适配该宿主选择步骤并证明本地见证消费者合同。
-
-参数元组稳定子直接消费固定底座 `SetTheory/Separation.lean:98 KP.intersection_exists_d`、现有 subgroup_intersection/实际名字稳定子和 Normal 的交闭性。沿源的零元组顶群、后继有限交证明；separation_support 用追加原名字的元组取得分离所需共同支撑。原核回传仍用 ModelTransfer，不重建集合交、群作用或完备性。新版 L 的 ZF/ZFC 定理正文已再次回读，完整模式及任意内部模型范围不变；本批没有重跑或改写供体。
-
-Separation 实例复用：内部子名字投影仅使用既有 coordinate_bound、原生积和 SeparationSyntax；没有新增函数／递归后端。normal_context 直接组合 ProductCovariance 与 Normal 的已有共轭子句，实际消费者为域传输和 separationTest_permute；不重证 HS.smul。atomic_congr/force_congr 只证明添加内部作用图／参数槽位不改变原递归或量词域，马上由实际 symmetry 和 exists_at_values 消费。mem_separate 复用原子的单调／稠密闭包及 tuple_congr；最终句子保持原 SourceStatements.separation，原核回传仍用 ModelTransfer。
-
-幂集迁移复用：ForcingPowerName.exists_candidates 直接调用固定底座 SetConstruction.lean:362 的 ZF.exists_powerSet，再用现有 SeparationSyntax 筛出全部内部 HS 子集。候选族用已有恒等图呈现，subsetBound_fixed 和 powerCandidate_permute 消费实际稳定子、Separation.entry_permute/symmetry、HSAction 与 collect_HS；normalize 直接消费已证分离成员等价。mem_power 保留源稠密与相等替换，ForcingPowerAxiom 用已有 ModelTransfer 回到原核。没有重建幂集、分离、递归或完备性。本批再次直接回读新版 7979336 的 l_model_zf_l/l_model_zfc_l 全模式及任意模型范围；没有修改或重复编译供体。
-
-Replacement 实例复用：固定底座 Collection.lean:69 的 ZF.collection_exists_d 在精确有效 raw-entry/condition 索引集上收集 HS 见证，经现有 Separation 过滤；它不选唯一函数。Replacement.lean:98 的 exists_functionalImage 直接构造整个内部群作用的精确像，现有实际恒等／乘法图和 NameConjugacy.composition 证明轨道闭包，collect_HS 给出界的 HS 性。bounded_local_witness 的完整源合同已实际证明，image_in_bound 与 replacementImage 沿原单值性／稠密性／分离链消费它，最终 ForcingZFAxioms 给出全源 ZF 的逐实例原核证书。没有添加对象 AC 或重建收集、函数像、递归、完备性。
-
-
-阶段 8 下一消费者核对：原 Construction/MonoidBase.Base 采用内部自然数加法单子，但完整 Object 还保留条件并、真实 height/cost 和非单位元；Algebra/DiagramOrder.HeightCost 使用有界实数上确界。新版 7979336 的 Descriptive/Dyadic 已提供内部 2^n 单位分数码及比较，可作特定辅助候选；RealPair 实际是 Baire 空间配对，不是实数有序域。尚未定位与 HeightCost 全合同对应的现成接口，不能据文件名声称已接通，也不能据此次局部检索声称其他仓库没有相关数学。当前已有自然数／序数算术、图构造和递归继续优先复用；没有修改或构建供体。
-
-本批 Base.M 已实际消费固定 039c8e1 底座 Ord/Natural.lean 的 ordinalAddition_mem_omega、members_areOrdinals/transitive，以及 Ord/Arithmetic 的存在唯一性、零元、结合、消去、序比较与右余项。FunctionConstruction.exists_setFunctionFromTo_of_denote 在原生 ω×ω 上构造精确内部加法表；Base.le_iff 与 joins 保留原自然数序／max 证明，不重新开发自然数算术。模型中全部内部 ω 都被覆盖，最后由已有 ModelTransfer 回传原核；height/cost/margin 后来已由 ConstructionBaseHeightGap 完成实际构造和原核证明，不再列为待做。新增声明使用已有 15 个递归 Bool 证书，预审未发现新的依赖；正式验收继续执行原证书复算。删除对整个 ProductParameters 的不必要导入，直接消费原生积构造。
-
-Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad_exists_l／dyad_unique_l／dyad_denominator_pos_l、dyad_le_l 的幂指数比较及 ds_digits_l 的内部数字构造方法，适配到固定旧版已有算术与原 n+1/n+3 偏移。供体单文件 SHA 已锁定，未复制其零距离分支、Baire 拓扑或整个依赖闭包。高度分子通过内部非零自然数的前驱取得，成本分子为内部一；两张函数图直接使用原生积和可定义函数图。原核证书还包含两图所有输出的 0<分子<分母；这不是完整实数解释，也不把 Dyadic 当作实数域。该批只到分数图；后续切割与完整 Base.margin 已接通，当前不再列为缺口。
-
-分数比较批次：定位并直接调用固定底座 Ord/NaturalPrime.lean:497 的 Structure.natural_mul_comm，以及既有乘法结合、正因子严格递增、唯一性和内部 ω 闭包。交叉比较传递性只组合这些已有算术结果，不重建自然数乘法；载体由原生积和分离构造，上一批 weights_proper 直接证明原两图的值属于载体。单位分数比较的原核证书核对逆分母次序，与 Dyadic 消费者合同一致。比较对象是编码全预序，不把编码等号当作分数数值相等；后续已完成所需切割解释和 Base.margin；完整实数域不作为新的前置任务。
-
-Base 数值解释的当前复用结果：原生 NaturalPrime、Arithmetic 的加法／乘法／幂、比较和右余项，已由 ConstructionFraction*、ConstructionRealCuts 和 ConstructionBaseHeightGap 消费到完整 Base.margin。分数密度、主切割、精确成本像上确界、严格高度差及实际两张图都已完成；原生 Separation、PowerSet、Union 与可定义函数图承担集合构造。此前“尚未闭合实数值消费者／margin”的批次说明撤出当前待办；不扩建当前源消费者不需要的完整实数域。
-
-Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影、动作、target 与 exit 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成 Representatives 同时表示 D×Letters，不重建积或商库。动作良定义／单射和 target 等变性已验收，过渡映射不要求单射。
-
-Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通；Raw.eval 精确两分支已接通，求值定律与 Word 左消去单子也已接通，oldHom／整除反映／conical 已回传原核，generator 实际图及乘法／整除关系也已回传原核，evalHom／liftHom 已回传原核，hom_ext 已回传原核，路径索引呈现现已完成；下一消费者为大小界、保守模拟及 Probe 扩张。
-
-锥与大小界的实际复用：ConstructionProbeCones 消费已有 letter_eq_iff、letter_transition、动作及 TableLaws，沿源共同阶段计算取得锥交、共同倍数与 initial_profile；对应消费者为 old_cone_intersection/common_multiple_reflection/probe_old_profile、ProbeMargins 和 ProbePresentations。ConstructionProbeCardinality 直接调用已复用的 ExistingCardinalBounds.infinite_product_l 及固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal。先给实际代表元积编号，再将商投影延拓到基数，底座最小原像定理给反向单射；空商独立处理。没有重证基数乘法、最小原像定理或引入对象选择。
-
-ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通，Raw.eval 已接通，Word 求值定律与左消去单子也已接通，oldHom／整除反映／conical 已回传原核，generator 图及关系已回传原核，evalHom／liftHom 已回传原核，hom_ext 已回传原核，路径索引呈现现已完成；剩余为大小界、保守模拟及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
-
-Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequenceParsing.lean 的 empty_or_decomposition_exists_unique、components_unique 和 empty_sequence_unique，以及已有 exists_append，表示“尾到头的内部有限字母序列＋末尾旧元素”。载体由原生积／幂集／分离和现有 Representatives 构造；old/cons 的存在唯一性、单射、互斥、闭包与穷尽分解进入同一个纯对象句子的原核证书。未重建序列解析或把内部长度变为外部 List。只导入实际所需 ConstructionProbeLetters；两处误用 ZFC 配对唯一性接口已改为现有 KuratowskiZF.code_unique。原 oldAct/headDiv、Word/reduced 后续已接通；大小界仍待其实际消费者。底座序列限制带来 6 项此前未消费的原生 Bool 证书，已纳入精确足迹和 Check 复算；不能说可信依赖未扩大。
-
-源 Word 前端的直接复用：Raw.oldAct/headDiv 只做构造器案例，调用现有实际字母动作、KuratowskiZF 和函数唯一性；Reduced 用反向序列的真前缀 headDiv 测试，直接消费原生 restriction/序列分解，保留最高字母不受约束。Word 载体用 Separation。quotient 由 Word.headDiv_iff 与 oldAct 单射给唯一原像，直接调用 exists_setFunctionFromTo_of_denote 构造有效输入域上的图，替代源宿主 choose。letterAct 完全保留源两支，其交叉分支不相交实际使用 Alphabet.ExitLaws 的 head_separation；关系的存在唯一性、闭包、归约、等变和单射均回原核。没有另建递归、对象选择或泛滤真值支线；Raw.eval 及后续求值定律／Word 左消去单子均已接通。该批 124 项声明、4 项原核证书未引入新的可信依赖。
-
-Raw.eval 的实际复用：ConstructionProbeEvaluation 直接调用固定 Ord/Recursion.lean:1142 的 ZF.recursiveSequenceIn_existsUnique。取 bound=n+1、target=Word，已有 oldAct/letterAct 分别供初值和后继；限制同一内部历史并用原 cons 的 prefix_restriction 证明精确 cons 方程，不另造递归或历史后端。ConstructionProbeEvaluationSyntax 直接使用原生 isRecursiveSequenceIn AST，证明总性、闭包、唯一性和 old/cons 两方程的纯成员句子并回传原核。外部非标准内部长度未排除。后续 eval_oldAct/eval_injective、Word.eval_letterAct 及实际 Word 左消去单子现已接通，不再列为缺口。当前证书使用 22 项既有依赖，没有新增可信依赖；全仓实际验收见 STATUS。
-
-Word 单子的实际复用：ConstructionProbeEvaluationLaws.lengthSchema 把源 Raw 构造器归纳的性质写为纯公式，由固定 Ord/Natural.lean:38 的 IsOmega.induction 和 Separation 完成；后继仅消费已存在的有限序列末项分解，不新建归纳后端。eval_oldAct、eval_letterAct 沿源 old/cons 与 headDiv 分支；eval_injective、mul_assoc、mul_one 共用该接口。ConstructionProbeWordMonoid 直接调用原生可定义函数图，构造实际 W×W→W；原核证书同时构造 Word 载体、old 单位和全部左消去单子律。现有 22 项依赖不增加；oldHom／因子／整除反映及 conical 后续已回传原核；generator 图及关系后续已回传原核；evalHom／liftHom 已回传原核；hom_ext 已回传原核；路径索引呈现现已完成；大小界、保守模拟和实际扩张仍待迁移。
-
-本批 oldHom 的实际复用：exists_old_graph 直接调用固定 FunctionConstruction.exists_setFunctionFromTo_of_denote，借助已证 old 唯一性和单射性取得实际内部单射图。因子刻画沿源 old/cons 排斥分支；整除反映消费已有 Word.headDiv_iff 和 eval_old_iff。conical 消费 Alphabet 分离及原单子 conical，没有加入 b≠unit。新原核存在句子组合已有实际 Word/乘法构造和 ModelTransfer.derives；24 项声明没有新增可信依赖，未重建函数图、代数后端或完备性。
-
-Generator 的实际复用：沿原 cons(s,old(unit))，调用已有 exists_cons／cons_unique 和原生 exists_setFunctionFromTo_of_denote 构造内部图。闭包用已有 reduced_cons 及 conical 排除 b 整除单位；乘法用 eval_cons_iff、eval_old_iff 和 oldAct_one；出口用 letterAct_oldAct_b；旧元素 gate 用上批 oldAct_eq_old_iff。反向见证是原 old(b)*old(t) 按已证 old 乘法方程化简后的 old(b*t)。没有新增递归或代数后端；原核证书合并现成 Word／old 图并保留 b≠unit。evalHom／liftHom 的任意目标单子合同现已接通，没有偷换为左消去目标。
-
-evalHom／liftHom 的实际复用：原生 recursiveSequenceIn_existsUnique 的目标改为 N，初值为 F(x)，后继为 Q(s) 与前值的目标乘积；历史限制、末项分解沿已有 Raw.eval 的结构证明适配。已有 Representatives＋MapsTo 给出任意目标二元运算的存在唯一性，不假设左消去。oldAct／letterAct 兼容沿源两支，乘法保持直接消费现成 raw_induction，不新建归纳器。exists_setFunctionFromTo_of_denote 构造实际 W→N 图。核心 lift 保持原一般性，conical 与 b≠unit 仅用于 generator 条件分支；原核回传仍用 ModelTransfer。
-
-本批 hom_ext 直接消费 ConstructionProbeEvaluationLaws.raw_induction 的纯公式归纳、reduced_cons、generator_mul_of_not_headDiv，以及底座 FiniteSequenceParsing 的 IsSetRelation.eq_of_pairMember_iff。已有函数唯一性比较生成元及后缀值，已有 product_unique 比较乘积值；不另建函数外延性或 Word 归纳。实际消费者为固定 ProbeGates.Path.presentedHom_ext:635–639，其路径索引生成元适配现已由 ConstructionProbeIndexedGenerators 完成。实际 probe 图直接消费原生函数图构造、已有字母 projection 和 generator 图；代表分解与 ActionTable 给出 generator(letter i x)=old(x)*probe(i)，再消费 hom_ext。没有重建直极限、递归或 Word 归纳。本批已接 transitions_from_adjacent 与 interpretedLetter：纯 Stage 公式经原 IsOmega.induction／Separation 传输相邻关系；原共同阶段判据与目标结合律证明代表无关性；原函数图构造给出实际解释图、代表公式与动作等变。两个新原核证书各只使用标准三项及七项既有基础句子证书，没有新增可信依赖。本批已直接消费 TargetGraph／ExitGraph 和既有代表公式完成 interpretedLetter_exit，再用已有 exists_lift_graph／lift_laws／presentedHom_ext 构造唯一实际 lift；generator_mul_b、old_mul_generator 与共同阶段判据给出实际 probe 的 exit／transition 关系。本地索引呈现接口已完成，实际下游为 ConservativeCells:234 与 MergerPushouts:354；剩余大小界和保守模拟，不重复建设已有呈现或递归。
+本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。

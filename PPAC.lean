@@ -434,3 +434,5 @@ import PPAC.Migration.ConstructionProbeInterpretedLetters
 import PPAC.Migration.ConstructionProbeInterpretedLettersSyntax
 import PPAC.Migration.ConstructionProbePresentedLift
 import PPAC.Migration.ConstructionProbePresentedLiftSyntax
+import PPAC.Migration.ExistingFiniteSequenceBounds
+import PPAC.Migration.ConstructionProbeWordCardinality
