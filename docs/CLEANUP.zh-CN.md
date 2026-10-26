@@ -106,3 +106,5 @@ Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性�
 加法批次：正式 Audit 接管全部 62 项声明后，核对本仓绝对路径与 SHA-256，删除唯一临时探针 ConstructionAdditionAudit.lean；清单 verification/cleanup-addition-probe-20261026.json，预审日志保留。没有新增脚本、通用代数后端或修改供体。字节支线继续冻结，剩余依赖裁剪未冒称完成。
 
 非负差／原阶段复审：对照最初 f28b0334 的 1–11 阶段和当前源 Base.margin，删除“先补完整实数运算再做 Base.margin”的不必要执行门，改为原两个二进分数估计及统一上确界界。去掉未使用的局部绑定；正式 Audit 覆盖 16 项声明后删除一次性 ConstructionDifferenceAudit.lean，清单 verification/cleanup-difference-probe-20261026.json。无新增持久脚本；未无依据删除仍被引用的冻结证明，剩余裁剪未完成。
+
+原成本界批次：将新模块的导入从 ConstructionFractionDifference 缩为实际使用的 ConstructionCutWeights，移除不必要的分数加法／差依赖。正式 Audit 覆盖全部 25 项声明后，按本仓绝对路径及 SHA-256 删除一次性 ConstructionBaseCostBoundAudit.lean；清单 verification/cleanup-base-cost-bound-probe-20261026.json。保留预审和完整验收日志；无新增持久脚本、供体修改或冻结支线开发。

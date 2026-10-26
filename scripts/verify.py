@@ -3483,7 +3483,8 @@ def main() -> None:
                                ("construction_cut_weights", "ConstructionCutWeights", 31),
                                ("construction_fraction_addition", "ConstructionFractionAddition", 32),
                                ("construction_principal_addition", "ConstructionPrincipalAddition", 30),
-                               ("construction_fraction_difference", "ConstructionFractionDifference", 16)):
+                               ("construction_fraction_difference", "ConstructionFractionDifference", 16),
+                               ("construction_base_cost_bound", "ConstructionBaseCostBound", 25)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7505,6 +7506,8 @@ def main() -> None:
         "source_initial_base_principal_addition_representation_independence_proved": True,
         "source_initial_base_weight_principal_addition_kernel_proved": True,
         "source_principal_cut_nonnegative_difference_kernel_proved": True,
+        "source_base_margin_exact_nonempty_cost_image_and_supremum_bound_kernel_proved": True,
+        "source_base_margin_strict_height_gap_estimate_proved": False,
         "source_arbitrary_cut_addition_proved": False,
         "source_initial_base_fraction_real_interpretation_proved": False,
         "source_initial_base_fraction_carrier_total_preorder_constructed": True,

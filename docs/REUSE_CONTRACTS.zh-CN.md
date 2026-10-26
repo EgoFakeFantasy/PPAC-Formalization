@@ -104,3 +104,5 @@ Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad
 加法批次：直接复用 Arithmetic/Algebra 的乘法结合／分配律、NaturalPrime 的交换律、Arithmetic/Normal 的加法严格单调和非零乘积界，配合现有 mul_swap/mul_le_iff；未引入外部标准 Nat、宿主数值函数或新算术后端。消去同一正分母后再消去共同加项，证明加法比较的双条件，随后用现有 principal_eq_iff 消去编码选择。ConstructionPrincipalAddition 实际消费 ConstructionCutWeights 的 Graph/Value，给原 height/cost 值的加法存在唯一性单独原核证书。未声称所有切割已可相加或 margin 已完成。
 
 非负差批次：直接消费固定底座 Arithmetic/Comparison.lean 的 ordinalAddition_existsUnique_rightRemainder 和已有分数加法／主切割序反映，得到表示无关的唯一加法差及严格正差，回传既有 ModelTransfer 原核。源消费者是 Base.margin 的 height(y)-height(x)；其二进分数估计尚未证明。该消费者只需主切割算术及上确界界，不以构造完整实数域作为下一道门。
+
+原成本界批次：直接调用固定底座 ordinalExponentiation_values_mem_iff 和 ordinalAddition_isIncreasingOnOrdinals，配合已有自然数交换律、单位分数反序及主切割比较，迁移 Base.margin 第二分支。精确成本像集使用原生 Separation，cost(y) 给非空见证；上确界直接消费既有 bounded_union，未重建实数序、幂函数、集合像或完备性。原 MergerCones.UniformMargin.supremum_lt 的严格高度差前提仍待证明。

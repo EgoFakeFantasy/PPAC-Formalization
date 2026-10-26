@@ -92,6 +92,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.margin height-difference representation prerequisite | ConstructionFractionDifference.difference_kernel_certificate | Every ordered pair of represented principal cuts has a unique represented additive gap; strict order makes the gap nonempty. Reuses the native ordinal right-remainder theorem. This does not prove the original dyadic margin estimate or subtraction on arbitrary cuts. |
 
+| Base.margin cost branch / UniformMargin.supremum_lt non-strict bound | ConstructionBaseCostBound.bound_kernel_certificate | Exact n+3 costs are antitone. For x<y, the exact missed-cost image is constructed, contains cost(y), and has a cut supremum <= cost(x). Reuses native exponent comparison, Separation and bounded union. The strict height-gap estimate and full margin remain unproved. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.

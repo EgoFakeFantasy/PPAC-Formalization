@@ -394,3 +394,4 @@ import PPAC.Migration.ConstructionCutWeights
 import PPAC.Migration.ConstructionFractionAddition
 import PPAC.Migration.ConstructionPrincipalAddition
 import PPAC.Migration.ConstructionFractionDifference
+import PPAC.Migration.ConstructionBaseCostBound
