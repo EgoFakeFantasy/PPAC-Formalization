@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。阶段 8 已有实际 Word 单子、呈现、大小界、完整保守模拟和条件并；初始 probe 完整 profile 已验收。old gates 和同一后继扩张对全部旧 profile 的保持已有验收。实际模拟的 pushout 已覆盖任意内部目标单子。所有内部字母的 floor 图及其精确上确界、正性与上下界已有验收。两种条件式 cost 界及实际和切割已验收。实际 Base 的 PointBound 已接通并保留完整原 margin。全内部切割加法与 maximum 已验收。正整数除法及实际 /4 图已验收。现有证书在同一组实际图上证明 quarter 后两次 double 恢复原切割，本轮又补全任意内部切割的加法结合律，供原区间公式使用；完整验收结果以 STATUS 为准。下一缺口是原 ProbeMargins 的 margin 延拓／上确界保持及完整 Probe 装配，之后仍有 Merger、Placement/ConservativeHull；最终对象 Con 未证明。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／端点已过、完整 Comparator 未验；5 基础包已过；6 的已有 L 接口待适配；7 的强迫 ZF 前端待具体系统实例化；当前主开发在 8，9–11 未闭合。阶段 8 已有实际 Word 单子、呈现、大小界、完整保守模拟和条件并；初始 probe 完整 profile 已验收。old gates 和同一后继扩张对全部旧 profile 的保持已有验收。实际模拟的 pushout 已覆盖任意内部目标单子。所有内部字母的 floor 图及其精确上确界、正性与上下界已有验收。两种条件式 cost 界及实际和切割已验收。实际 Base 的 PointBound 已接通并保留完整原 margin。全内部切割加法与 maximum 已验收。正整数除法及实际 /4 图已验收。现有证书在同一组实际图上证明 quarter 后两次 double 恢复原切割，此前已补全任意内部切割的加法结合律，本轮再完成一般切割差的精确加回／所有切割解唯一性及加法序反映／相消，供原区间公式使用；完整验收结果以 STATUS 为准。下一缺口是原 ProbeMargins 的 margin 延拓／上确界保持及完整 Probe 装配，之后仍有 Merger、Placement/ConservativeHull；最终对象 Con 未证明。
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

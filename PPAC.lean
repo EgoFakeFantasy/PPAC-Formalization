@@ -457,3 +457,6 @@ import PPAC.Migration.ConstructionCutQuarterSum
 import PPAC.Migration.ConstructionCutQuarterSumSyntax
 import PPAC.Migration.ConstructionCutAssociativity
 import PPAC.Migration.ConstructionCutAssociativitySyntax
+import PPAC.Migration.ConstructionCutLocatedness
+import PPAC.Migration.ConstructionCutDifference
+import PPAC.Migration.ConstructionCutDifferenceSyntax
