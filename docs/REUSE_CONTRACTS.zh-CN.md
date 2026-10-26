@@ -75,12 +75,12 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | Raw、Word、quotient、letterAct | 原生 FiniteSequenceParsing 和序列限制；已有函数图构造 | 所有内部有限长度；不是宿主 List；现成基础不重写 |
 | Raw.eval、evalHom/liftHom | 原生 recursiveSequenceIn_existsUnique、已存在的内部历史限制 | Word/任意目标单子；目标不增加左消去条件 |
 | Word 单子、old 嵌入及 conical | 已有 raw_induction、IsOmega.induction、实际乘法图 | 单个实际 Word 已完成，不能替代最终饱和单子 |
-| generator、indexed probe 和呈现 | 已有函数图、字母商判据、old_mul_generator、generator_mul_b、hom_ext | 实际图、exit/transition 关系、presentedHom 存在唯一性已证；保守模拟仍需迁移 |
+| generator、indexed probe 和呈现 | 已有函数图、字母商判据、old_mul_generator、generator_mul_b、hom_ext | 实际图、exit/transition 关系、presentedHom 存在唯一性、Word 完整保守模拟已证；Path old/probe 方程本批接通，完整扩张待接 |
 | Raw.cardinal_le / extension_cardinal_le | 新版 7979336 FiniteSequenceSyntax/Recursion/Numbering/Countable 的四段原证明；已适配 ExistingFiniteSequenceBounds.fseq_bound_l | 全内部有限序列统一编号，无可数选择；实际消费者 OpenAI MonoidBase:215。两个原核证书见 ConstructionProbeWordCardinality |
 
 本批只调整四段有限序列证明的 import 和外围 namespace，逐段比较与供体一致；没有复制 countable-only 特例、序列 join/lift/end 或供体整棵依赖树。固定底座不变，供体未修改。42 项声明及两个原核证书通过完整验收，没有新增可信依赖，实际记录见 STATUS。
 
-映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输现已接通，Path/probe 方程及完整扩张仍待装配。本批没有新增递归或商后端。
+映射路径／字母批次：原生 exists_compositionFunction 直接构造 node 像图；既有 exists_factor_table/exists_terminal_table 给目标表，乘法保持证明原 map_factor/map_terminal。实际字母图调用原生函数构造，复用 letter_eq_iff、transition_total/transition_unique；单射反映保留原共同阶段论证，不增加过渡映射单射性。消费者是 ProbePresentations.alphabetSimulation，动作／exit／锥及实际 AlphabetSimulation 已接通；Raw 实际传输与 reduced Word 单射已接通；Word transportHom 和 oldHom 四字段保守性已接通；Word 之间完整保守传输已接通；Path/probe 方程本批接到同一实际 H，完整扩张仍待装配。本批没有新增递归或商后端。
 
 字母模拟批次直接消费已存在的 exists_graph/map_letter/graph_injective、FactorMap/TerminalMap 和 inCone_letter_iff。原 Conservative.factor_eq 用旧因子保持与单射性恢复指定因子；再经共同阶段锥判据证明原 lettersMap_inCone_iff。没有新建序列、递归、满足关系或完备性后端。对象证书只证明原 AlphabetSimulation 的四项相容性，不声称已证明 Conservative 的全部四字段或 Word.transport_conservative。
 
@@ -91,3 +91,5 @@ transportHom/oldHom 保守性批次：直接消费现有 Raw 归纳、Word 求�
 head/Gate 批次：直接使用已有 cases_raw/cons_injective、headDiv_cons_iff、eval_cons_iff、oldAct_mul、old_dvd_iff_headDiv 和 Word 单子律。头部传输使用既有 Raw Value 的构造子方程；共享旧交只组合已经完成的 Conservative.common/intersections，不重复证明旧嵌入保守性。四条原核证书继续使用 BMS 式 ModelTransfer.derives。没有新增 Option 后端、外部长度归纳、序列编码或满足关系；共享 gate 存在性随后直接使用该纯公式索引 raw_induction 完成：变化的头部和目标词均置于归纳公式量词内，old/cons 后缀分别消费共享旧交和递归 gate，最终构造两侧实际 exit(s)*u。该结论已取得原核证书，未新建归纳后端。
 
 Word 完整保守传输批次：因子反映直接使用已有 raw_induction、head_transport_some、letterAct_injective 和共享 gate；整除反映复用已存在的通用 division_reflection。共同上界反映复用共享旧交与共享 gate，同头分支消费已有 eval_letterAct（即源生成元乘法的关系形式）。最终四字段通过 common_below、divides_trans 和因子反映组装，再用已有 exists_transport_hom 构造实际图；三个闭句继续走 ModelTransfer。没有重复旧嵌入保守性、重建生成元或加入对象选择原则。基础单子的 ConditionalJoins 和扩张 Word 的条件并是不同义务，后者仍须沿源 cone_join 迁移。
+
+本轮复审直接回读新版 7979336 的 l_model_zf_l / l_model_zfc_l：任意内部模型、完整模式数学已有，供体工作树干净，未重跑供体编译或修改版本。原核回传仍调用现成 ModelTransfer.derives。Path simulation 批次只组合现有 transport_old/transport_cons、old/cons 唯一性和实际 LettersMap/GeneratorGraph/ProbeGraph；没有新增函数图、递归、编码或完备性实现。纯闭句在同一个存在量词 H 内同时给出保守性和 old/probe 方程。基础 ConditionalJoins 仍是源前提，不替代扩张 Word 的条件并。

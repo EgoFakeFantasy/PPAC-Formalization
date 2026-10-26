@@ -29649,3 +29649,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeConservativeSimulation.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeConservativeSimulation.construction_models
 #print axioms PPAC.Migration.ConstructionProbeConservativeSimulation.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionProbeSimulation.simulation_old
+#print axioms PPAC.Migration.ConstructionProbeSimulation.simulation_generator
+#print axioms PPAC.Migration.ConstructionProbeSimulation.simulation_probe
+#print axioms PPAC.Migration.ConstructionProbeSimulation.EndpointLaws
+#print axioms PPAC.Migration.ConstructionProbeSimulation.exists_simulation
+#print axioms PPAC.Migration.ConstructionProbeSimulation.endpointLaws
+#print axioms PPAC.Migration.ConstructionProbeSimulation.endpointLaws_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeSimulation.endpointLaws_semantics
+#print axioms PPAC.Migration.ConstructionProbeSimulation.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeSimulation.construction_models
+#print axioms PPAC.Migration.ConstructionProbeSimulation.construction_kernel_certificate
