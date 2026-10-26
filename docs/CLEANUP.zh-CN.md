@@ -96,3 +96,7 @@ Base.M 批次：去掉 ConstructionBaseMonoid 对 ProductParameters 的不必要
 Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性、幂比较及数字构造，不复制零距离／Baire 分支，不导入新版依赖树。正式 Audit.lean 接管 41 项声明后，按解析本仓绝对路径、普通文件和 SHA-256 删除一次性 ConstructionBaseWeightsAudit.lean；清单为 verification/cleanup-base-weights-probe-20261026.json，预审和全验收日志保留。未新增持久脚本，供体未修改，字节支线未重启。
 
 分数比较批次：直接导入已存在的原生 NaturalPrime 交换律，不复制其整除／素数后续内容，也不修改底座。正式 Audit.lean 接管 50 项声明后，按本仓绝对路径、普通文件和 SHA-256 白名单删除 ConstructionFractionOrderAudit.lean；清单为 verification/cleanup-fraction-order-probe-20261026.json。预审／完整日志保留，无新增持久脚本，冻结支线未恢复。
+
+本次阶段复审删除 39 份冻结字节／reader 兼容支线的旧 STEP4 验收叙述；逐文件核对 HEAD 内容和 SHA-256，唯一外部引用为已重写的中文 README。恢复点 c1059d6，清单 verification/cleanup-stage-review-20261026.json。中文 README 原 636 行旧批次叙述替换为当前合同与阶段入口，英文入口同步。未删除原证明或正式验收日志。
+
+实际 import 图中有 431 个名称包含 Packet/Varint/Reader/Bytes 的模块，其中存在 13 个非同名模块直接消费者（例如 FixedAxiomTableSyntax、SequencePrependSyntax）。因此没有按名称批量删除它们；剩余裁剪必须先解开具体依赖，不能把“冻结”误记为“已删除”，也不以已投入成本继续开发。三个现有 scripts 均为验收入口，没有认定为垃圾。本轮未修改其他项目或供体。

@@ -1,30 +1,23 @@
 # PPAC → YesMetaZFC
 
-本工程迁移重构 OpenAI 的 PPAC 证明到 YesMetaZFC 原基础；不是另起一条独立证明路线。
-
-**2026-10-26 重审：最初阶段 1–3 已完成；阶段 4 原 Main／五端点已验收，完整 Comparator 未验收；阶段 5–6 部分完成；阶段 7–10 的主数学证明链尚未完成迁移，阶段 11 未到。此前“四步收尾／接近完成”的判断撤回。**
-
-最终目标是纯等词／成员语言、完整 nativeZF、原 FirstOrder.Derives 中的对象闭句：
+迁移对象是固定 OpenAI PPAC 证明，目标底座是 YesMetaZFC 原推导核。最终要求：
 
 ```text
-Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
+FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-源的全参数 Separation／Replacement、原生 Separation／Collection 及两种 AC 的推导对应已经完成；不得重新列为未做。其他 L 工程也已有全模式 ZF 和 ZFC 模型定理，当前须适配其精确背景／量词／语言接口，不能把已有构造说成没有证明。
+**尚未完成，也未进入收尾。** 按最初 1–11 阶段，连续完整验收到 1–3；4 的原 Main／五端点已过、完整 Comparator 未验；5 的基础包已过；6 的已有 L 数学接入未完成；7 的强迫 ZF 条件式前端已过，具体系统仍待 8；当前主开发在 8，9–11 尚未闭合。阶段 8 的本次分数稠密性只属于数值解释的辅助合同，不是 Base.object 或最终单子。
 
-- [原 1–11 阶段、实际状态与下一门槛](docs/AGENT_WORKFLOW.zh-CN.md)
-- [源数学链、已接入与尚待接入的区分](docs/MATH_REDUCTION_ROUTE.zh-CN.md)
-- [精确对象目标和内部 Con 规格](docs/OBJECT_TARGET.zh-CN.md)
-- [其他仓库的实际接口与复用证据](docs/REUSE_CONTRACTS.zh-CN.md)
-- [源码固定提交及哈希](docs/SOURCE_LOCK.json)
-- [清理范围与恢复点](docs/CLEANUP.zh-CN.md)
+完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 
-入口：`import PPAC`。旧宿主辅助单独为 `PPAC.Auxiliary`，不是对象 PP 证明。
-Lean 4.33.1，唯一 Lake 依赖为 YesMetaZFC `039c8e132cc19671d73a3933c66b4799d2599dd6`。
-运行 `python scripts/verify.py`；一次只运行一个 Lean/Lake 构建。实际结果保存在忽略的 `verification/`。
-该验证针对本仓，不是原 OpenAI Lean 4.34.1 Comparator 的验证。
+- [原 1–11 阶段与真实验收门](docs/AGENT_WORKFLOW.zh-CN.md)
+- [本次实际验收与未完成项](docs/STATUS.zh-CN.md)
+- [内部 Con 固定规格](docs/OBJECT_TARGET.zh-CN.md)
+- [已有仓库接口及复用边界](docs/REUSE_CONTRACTS.zh-CN.md)
+- [OpenAI 源证明对应和依赖](docs/MATH_REDUCTION_ROUTE.zh-CN.md)
+- [固定源码与逐声明依赖](docs/SOURCE_LOCK.json)
+- [清理与恢复依据](docs/CLEANUP.zh-CN.md)
 
-字节／NatPacket／LEB128 兼容退出迁移主线；不再开发。已验收的历史证明暂保留其审计，未完成依赖裁剪前不把它们说成已全部删除。当前状态不再由旧辅助验收的条目数推动。决策稠密集／泛滤原子真值也不列为本条直接证明归约的必要步骤；原子作用对称性与逻辑 forcing_sound 按实际消费者推进。
+入口 `import PPAC`；宿主辅助独立为 `PPAC.Auxiliary`。Lean 4.33.1，YesMetaZFC 固定 `039c8e132cc19671d73a3933c66b4799d2599dd6`。执行 `python scripts/verify.py`，Lean/Lake 串行；原 OpenAI 4.34.1 验收与本仓分开记录。
 
-旧的重复进度文字可从 Git `7dbb1c1` 的 README 和目标规格恢复；逐批验收报告仍保留各自历史范围，不作为当前阶段指令。
-OpenAI 语法及公式按 Apache-2.0 适配，见 NOTICE；既有代码作者信息保留。
+NatPacket／字节兼容、泛滤真值分支及独立 L 重建均不再开发。旧批次记录从 Git 恢复，不再放首页作为当前阶段。历史证明尚有结构模块依赖，未声称全部裁剪完成。没有上传或发布本轮改动。

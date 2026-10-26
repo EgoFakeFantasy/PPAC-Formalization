@@ -388,3 +388,4 @@ import PPAC.Migration.ForcingZFAxioms
 import PPAC.Migration.ConstructionBaseMonoid
 import PPAC.Migration.ConstructionBaseWeights
 import PPAC.Migration.ConstructionFractionOrder
+import PPAC.Migration.ConstructionFractionDensity

@@ -80,6 +80,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | Base.height/cost ordered representation adapter | ConstructionFractionOrder.construction_kernel_certificate; unitOrder_kernel_certificate | Internal set of nonnegative natural fractions with nonzero denominators; cross-product comparison is reflexive, transitive and total. Both source weight graphs land in the carrier. Unit-fraction comparison is exactly reverse denominator order. Different equivalent codes need not be equal: no antisymmetry, complete-real-field, real embedding or margin claim. |
 
+| Base.height/cost representation prerequisite: dense fraction order | ConstructionFractionDensity.density_kernel_certificate | Every internally strictly ordered pair has an internal mediant. Reuses native addition commutativity, distributivity and monotonicity. Auxiliary representation contract only: no completed real embedding, source margin or Base.object. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.

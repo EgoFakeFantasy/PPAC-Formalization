@@ -3477,7 +3477,8 @@ def main() -> None:
                                ("forcing_zf_axioms", "ForcingZFAxioms", 4),
                                ("construction_base_monoid", "ConstructionBaseMonoid", 23),
                                ("construction_base_weights", "ConstructionBaseWeights", 41),
-                               ("construction_fraction_order", "ConstructionFractionOrder", 50)):
+                               ("construction_fraction_order", "ConstructionFractionOrder", 50),
+                               ("construction_fraction_density", "ConstructionFractionDensity", 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7490,6 +7491,7 @@ def main() -> None:
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
         "source_initial_base_fraction_graph_native_kernel_certificate_proved": True,
+        "source_initial_base_fraction_order_density_kernel_proved": True,
         "source_initial_base_fraction_real_interpretation_proved": False,
         "source_initial_base_fraction_carrier_total_preorder_constructed": True,
         "source_initial_base_fraction_order_native_kernel_certificates_proved": True,
