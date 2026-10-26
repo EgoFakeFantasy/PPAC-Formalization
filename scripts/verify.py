@@ -2575,7 +2575,10 @@ def main() -> None:
                                ("construction_base_point_bound", "ConstructionBasePointBound", 7),
                                ("construction_base_point_bound_syntax", "ConstructionBasePointBoundSyntax", 3),
                                ("construction_cut_arithmetic", "ConstructionCutArithmetic", 21),
-                               ("construction_cut_arithmetic_syntax", "ConstructionCutArithmeticSyntax", 18)):
+                               ("construction_cut_arithmetic_syntax", "ConstructionCutArithmeticSyntax", 18),
+                               ("construction_fraction_scaling", "ConstructionFractionScaling", 10),
+                               ("construction_cut_division", "ConstructionCutDivision", 17),
+                               ("construction_cut_division_syntax", "ConstructionCutDivisionSyntax", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6225,6 +6228,8 @@ def main() -> None:
         "source_probe_inside_outside_cost_bounds_from_old_point_bound_proved": True,
         "source_initial_base_PointBound_adapter_proved": True,
         "source_probe_interval_cut_addition_and_max_constructed": True,
+        "source_probe_positive_cut_division_graph_constructed": True,
+        "source_probe_actual_cut_quarter_graph_constructed": True,
         "source_probe_letter_intervals_constructed": False,
         "source_probe_successor_HeightCost_PointBound_instantiated": False,
         "source_probe_extension_height_cost_margin_proved": False,

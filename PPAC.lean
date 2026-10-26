@@ -450,3 +450,6 @@ import PPAC.Migration.ConstructionBasePointBound
 import PPAC.Migration.ConstructionBasePointBoundSyntax
 import PPAC.Migration.ConstructionCutArithmetic
 import PPAC.Migration.ConstructionCutArithmeticSyntax
+import PPAC.Migration.ConstructionFractionScaling
+import PPAC.Migration.ConstructionCutDivision
+import PPAC.Migration.ConstructionCutDivisionSyntax
