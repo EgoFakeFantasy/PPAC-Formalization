@@ -3500,7 +3500,9 @@ def main() -> None:
                                ("construction_probe_reduced", "ConstructionProbeReduced", 20),
                                ("construction_probe_word", "ConstructionProbeWord", 15),
                                ("construction_probe_word_quotient", "ConstructionProbeWordQuotient", 33),
-                               ("construction_probe_letter_action", "ConstructionProbeLetterAction", 20)):
+                               ("construction_probe_letter_action", "ConstructionProbeLetterAction", 20),
+                               ("construction_probe_evaluation", "ConstructionProbeEvaluation", 21),
+                               ("construction_probe_evaluation_syntax", "ConstructionProbeEvaluationSyntax", 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7530,6 +7532,8 @@ def main() -> None:
         "source_probe_raw_old_action_and_reduced_word_proved": True,
         "source_probe_word_quotient_graph_and_inverse_laws_proved": True,
         "source_probe_letter_front_reduction_equivariance_and_injectivity_kernel_proved": True,
+        "source_probe_raw_eval_total_unique_old_cons_equations_kernel_proved": True,
+        "source_probe_raw_eval_oldAct_and_injectivity_proved": False,
         "source_probe_raw_eval_and_word_monoid_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,

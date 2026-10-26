@@ -411,3 +411,5 @@ import PPAC.Migration.ConstructionProbeReduced
 import PPAC.Migration.ConstructionProbeWord
 import PPAC.Migration.ConstructionProbeWordQuotient
 import PPAC.Migration.ConstructionProbeLetterAction
+import PPAC.Migration.ConstructionProbeEvaluation
+import PPAC.Migration.ConstructionProbeEvaluationSyntax
