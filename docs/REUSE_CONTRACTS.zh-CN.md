@@ -91,8 +91,11 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | HeightIntervals 的实际函数图 | 原生 Separation、exists_setFunctionFromTo_of_denote；已有 bounded_union、cap/recipe 唯一性、MapsTo；原生 le_iff 已用于本批初始 Base 旧 margin 适配 | 构造规范遗漏成本上确界和实际 offset/scale/outsideBound 三图；同一数据的所有源字段及实际差值 inside_cost 已接通。旧 uniform margin／floor/cost 输入保留，后继 Word margin 未完成 |
 | 已完成 Base margin 的表示适配 | 既有 source_margin、height_mono、le_iff、weights_bounded、base_point_bound；原生函数图构造器原已给出 MapsTo | PrincipalAdd→SumCut 已精确接通；保留原生 MapsTo 的新入口与旧 API 兼容。实际 Base 构造输出完整原 margin、HeightOrder、UniformMargins，初始这两个输入已消去；后继 Word margin 仍待原证明 |
 
-| 原 Raw/Word 所需乘法与 min | 原生 ordinalMultiplication 的总性／结合／交换／零方程；现有分数码与 mul_swap、dense、cuts_total；原生 Separation 与可定义函数图构造器 | 本批取得实际一般切割乘法图，交换／单调／零吸收及正性；min 的实际唯一值、界和正性。完整原核证书只使用现有可信依赖。乘法单位／结合／分配和成本／margin 消费者未闭合；Word 高度递归已接在下行，不能冒称完整实数域或后继 HeightCost |
+| 原 Raw/Word 所需乘法与 min | 原生 ordinalMultiplication 的总性／结合／交换／零方程；现有分数码与 mul_swap、dense、cuts_total；原生 Separation 与可定义函数图构造器 | 本批取得实际一般切割乘法图，交换／单调／零吸收及正性；min 的实际唯一值、界和正性。完整原核证书只使用现有可信依赖。乘法单位／结合／分配和进一步成本估计／margin 消费者未闭合；Word 高度递归已接在下行，不能冒称完整实数域或后继 HeightCost |
 
-| 原 rawHeight／Word.height | 未修改的 ConstructionProbeHomEvaluation、HomEvaluationSyntax.exists_lift_graph；原生 exists_unionOfTwo／恒等图／函数构造；现成 HomExt.agreement 和 Raw.raw_induction | 仿射运算在 N=S∪R 上喂入现有总二元代数求值器；没有附加结合、消去或单子律。实际根步骤细化输出范围到 R，同一 Word 高度图满足精确 old/cons 方程，且整个图唯一。此项已接通，不再把高度图本身列作缺口；界、成本图和 margin 仍未接通 |
+| 原 rawHeight／Word.height | 未修改的 ConstructionProbeHomEvaluation、HomEvaluationSyntax.exists_lift_graph；原生 exists_unionOfTwo／恒等图／函数构造；现成 HomExt.agreement 和 Raw.raw_induction | 仿射运算在 N=S∪R 上喂入现有总二元代数求值器；没有附加结合、消去或单子律。实际根步骤细化输出范围到 R，同一 Word 高度图满足精确 old/cons 方程，且整个图唯一。此项已接通，不再把高度图本身列作缺口；高度界及 margin 仍未接通；成本图和 cost_bounds 已接在下行 |
 
-下一实际消费者是 ProbeMargins.Word.height_bounds:239 与 rawCost:216 → heightCost:494 / extension_old_cost_supremum:584 → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术和实际唯一 Word 高度图均已有。先接源高度界、词相关 gateCap 和成本递归；沿用现有内部求值／函数图和 gate/profile 合同，不复制通用递归后端，也不把仿射高度的运算改名为成本。
+| 原 OldMinimum／gateCap | 现成 PersistentProfiles.OldGate 的精确旧倍数轮廓；已有 LeftCancelMonoid／Conical；原生可定义函数构造与图外延性 | 实际唯一 cap 图、精确最小旧成本／默认 unit 分支、正性和非严格上界已证。没有重证门存在性，不选任意更大旧倍数，不强化所有词有门 |
+| 原 rawCost／Word.cost／cost_bounds | 未修改的 evalHom／Word lift；上批 HeightFold.eval_range 根步骤范围细化；现成 Raw 公式归纳、agreement、一般乘积／min；原生状态图和函数构造 | 状态保持当前词的证明已完成，使用 cap(当前新词)；同一 Word 实际成本图具有原 old/cons 方程、整体唯一性及 0<cost≤unit。证书同时构造 cap，无 cap／成本图 oracle；单位 1 的切割表示由既有 Base 数据供给 |
+
+下一实际消费者是 ProbeMargins.Word.height_bounds:239、cost_le_scale／cost_old_factor → heightCost:494 / extension_old_cost_supremum:584 → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术、实际高度图、本批 cap／成本图和 cost_bounds 均已有。只继续源消费者需要的估计及严格 margin，不重复这些构造，不新建通用递归、Proof/Sat 或完整实数域。

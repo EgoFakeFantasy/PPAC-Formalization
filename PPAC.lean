@@ -479,3 +479,9 @@ import PPAC.Migration.ConstructionWordArithmeticSyntax
 import PPAC.Migration.ConstructionProbeHeightOperation
 import PPAC.Migration.ConstructionProbeHeightFold
 import PPAC.Migration.ConstructionProbeHeightFoldSyntax
+
+import PPAC.Migration.ConstructionProbeGateCap
+import PPAC.Migration.ConstructionProbeGateCapSyntax
+import PPAC.Migration.ConstructionProbeCostOperation
+import PPAC.Migration.ConstructionProbeCostFold
+import PPAC.Migration.ConstructionProbeCostFoldSyntax

@@ -159,3 +159,5 @@ heightIntervals 内部图批次：精确源码与逐声明依赖进入正式 Aud
 原 rawHeight/rawCost 运算批次：只补实际需要的非负乘法图和 min，直接复用原生算术、Separation、函数图和现有 cuts_total。全部 60 项声明经正式 Audit 后，仅按本仓绝对路径、重解析点和 SHA 删除一次性 WordArithmeticAudit.lean；见 verification/cleanup-word-arithmetic-20261027.json。成功定向构建、预审及全量验收日志保留，无新持久生成脚本；全量句柄已退出 0，复核无 Lean/Lake 残留进程。358 项冻结兼容批量退役仍未执行。
 
 实际 Word 高度图批次：直接复用现有 evalHom／Word lift／Raw 归纳；完整 Audit 覆盖 31 项新声明后，按本仓绝对路径、重解析点和 SHA 删除一次性 ProbeHeightFoldAudit.lean 及已被成功构建替代的本批初次语法失败日志。清单 verification/cleanup-probe-height-fold-20261027.json；成功定向构建、预审、全量验收日志保留。无新持久生成脚本；全量句柄已退出 0，复核无 Lean/Lake 残留进程。358 项冻结兼容模块的批量退役仍未执行。
+
+实际 gateCap／Word 成本图批次：完整 Audit 覆盖全部 89 项新声明后，仅按本仓绝对路径、重解析点和 SHA 删除一次性 ProbeCostFoldAudit.lean；见 verification/cleanup-probe-cost-fold-20261027.json。成功 gateCap／成本运算／成本折叠严格构建、预审和全量验收日志保留。无新持久生成脚本；全量句柄已退出 0，复核无 Lean/Lake 残留进程。358 项冻结兼容批量退役仍未执行。
