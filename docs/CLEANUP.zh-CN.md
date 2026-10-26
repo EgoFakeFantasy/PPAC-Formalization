@@ -84,3 +84,6 @@ Infinity 批次：正式 Audit.lean 接管新增九项声明后，按绝对路�
 
 
 Separation 批次：正式 Audit.lean 已覆盖全部 36 项新增声明后，按本仓绝对路径、普通文件和 SHA-256 白名单删除一次性 ForcingSeparationAudit.lean；预审与全验收日志保留，清单为 verification/cleanup-separation-probe-20261026.json。本批没有生成持久脚本或独立验收报告，也没有修改供体或恢复冻结支线。
+
+
+幂集／复审批次：正式 Audit.lean 接管新增 32 项声明后，按解析后的本仓绝对路径、普通文件及 SHA-256 白名单删除 ForcingPowerAudit.lean，再运行串行全验收；预审日志保留，清单为 verification/cleanup-power-probe-20261026.json。删除 normalized_bounded 未使用的模型参数；流程第 7 阶段去掉重复的逐批叙述，当前缺口／覆盖表移除已完成 PowerSet 的待办。现有三个脚本均有验收用途；.local 剩余 batch 元数据均有跟踪引用，不误删。冻结字节模块仍需按实际依赖裁剪，本批没有声称全部无用代码已清完，也没有恢复该支线。

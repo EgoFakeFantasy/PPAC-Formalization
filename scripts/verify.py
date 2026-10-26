@@ -3467,7 +3467,9 @@ def main() -> None:
                                ("forcing_collected_hs", "ForcingCollectedHS", 17),
                                ("forcing_tuple_stabilizer", "ForcingTupleStabilizer", 12),
                                ("forcing_separation", "ForcingSeparation", 28),
-                               ("forcing_separation_axiom", "ForcingSeparationAxiom", 8)):
+                               ("forcing_separation_axiom", "ForcingSeparationAxiom", 8),
+                               ("forcing_power_name", "ForcingPowerName", 27),
+                               ("forcing_power_axiom", "ForcingPowerAxiom", 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7406,6 +7408,9 @@ def main() -> None:
         "source_collect_HS_concrete_separation_instance_proved": True,
         "source_separate_literal_edge_and_mem_iff_proved": True,
         "source_actual_HS_full_forced_Separation_native_schema_proved": True,
+        "source_subsetBound_normalize_and_literal_power_name_proved": True,
+        "source_power_exact_edge_and_all_HS_mem_iff_proved": True,
+        "source_actual_HS_forces_powerSet_native_certificate_proved": True,
         "source_actual_HS_all_forced_ZF_schemas_proved": False,
         "source_product_actual_name_stabilizers_subgroup_proved": True,
         "source_product_HS_pair_union_object_kernel_certificates_proved": True,

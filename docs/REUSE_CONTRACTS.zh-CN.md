@@ -83,3 +83,5 @@ Infinity 迁移直接消费固定底座 `ZF.exists_omega` 及内部 IsOmega 的�
 参数元组稳定子直接消费固定底座 `SetTheory/Separation.lean:98 KP.intersection_exists_d`、现有 subgroup_intersection/实际名字稳定子和 Normal 的交闭性。沿源的零元组顶群、后继有限交证明；separation_support 用追加原名字的元组取得分离所需共同支撑。原核回传仍用 ModelTransfer，不重建集合交、群作用或完备性。新版 L 的 ZF/ZFC 定理正文已再次回读，完整模式及任意内部模型范围不变；本批没有重跑或改写供体。
 
 Separation 实例复用：内部子名字投影仅使用既有 coordinate_bound、原生积和 SeparationSyntax；没有新增函数／递归后端。normal_context 直接组合 ProductCovariance 与 Normal 的已有共轭子句，实际消费者为域传输和 separationTest_permute；不重证 HS.smul。atomic_congr/force_congr 只证明添加内部作用图／参数槽位不改变原递归或量词域，马上由实际 symmetry 和 exists_at_values 消费。mem_separate 复用原子的单调／稠密闭包及 tuple_congr；最终句子保持原 SourceStatements.separation，原核回传仍用 ModelTransfer。
+
+幂集迁移复用：ForcingPowerName.exists_candidates 直接调用固定底座 SetConstruction.lean:362 的 ZF.exists_powerSet，再用现有 SeparationSyntax 筛出全部内部 HS 子集。候选族用已有恒等图呈现，subsetBound_fixed 和 powerCandidate_permute 消费实际稳定子、Separation.entry_permute/symmetry、HSAction 与 collect_HS；normalize 直接消费已证分离成员等价。mem_power 保留源稠密与相等替换，ForcingPowerAxiom 用已有 ModelTransfer 回到原核。没有重建幂集、分离、递归或完备性。本批再次直接回读新版 7979336 的 l_model_zf_l/l_model_zfc_l 全模式及任意模型范围；没有修改或重复编译供体。

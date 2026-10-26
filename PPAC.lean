@@ -378,3 +378,5 @@ import PPAC.Migration.ForcingCollectedHS
 import PPAC.Migration.ForcingTupleStabilizer
 import PPAC.Migration.ForcingSeparation
 import PPAC.Migration.ForcingSeparationAxiom
+import PPAC.Migration.ForcingPowerName
+import PPAC.Migration.ForcingPowerAxiom

@@ -12,7 +12,7 @@
 | 4 | 原 Lean 4.34.1 外部基线 | 固定源 78 份副本哈希全部匹配；原 Main 完整构建 8998 任务通过；五个关键端点以 --trust=0 审计通过，仅标准三项依赖 | 完整 Comparator 仍未运行，缺 Linux/landrun；本仓 CheckStep4 不是此验收。原 4.34.1 环境与目标 4.33.1 保持隔离 |
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；继续向阶段 7 接实际条件／群／赋值呈现、具体系统中的 HS 作用实例与强迫公式解释。完整阶段的消费者对接尚未验收；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；本轮 InterpretedZF 消费已证全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
-| 7 | 源强迫前端 | 已固定 Forcing 16 文件，源 atomic/regular/forces_ZF 等证明可复用；左／右／交换归纳已验收；内部条件码上的原子递归及精确方程已验收；基础原子定律和作用对称性已验收；完整公式强迫及 19 规则固定证明保真已验收；公式作用对称性通用迁移已验收；HS 字面定义、展开、唯一性及空/check 闭包已验收；通用 HS.smul 和实际 HS 域公式对称性已验收；标签置换载体、逐点稳定子闭包及逐点共轭已验收；共轭集合图、精确稳定子像与子群像闭包已验收；小支撑族、有限并基数界、交闭包及四项正规性已构造；目标端主链未完成 | Diagram 载体／实际作用图、作用律、子图构造和平移关系不变性已验收；Cohen 坐标及条件载体上的实际保序双射已完整验收；Cohen 群律与实际乘积作用已完整验收；WithTop 载体／固定顶条件／作用律已完整验收；固定载体上的统一标签作用公式、Family/Covariance、支撑滤子 Context 与 HS 作用已完整验收；原 omega/2 载体特化和实际 HS 域公式对称性已完整验收；原单子/conical 合同下的 Diagram→Product→WithTop 预序、反对称性、顶条件已证明；具体单子由阶段 8 提供。实际稳定子子群与 pair/union HS 闭包已证明；已接通 Extensionality、Empty Set、Pairing、Union；已沿源 minimal_member 接通 Foundation；本批沿 mem_check/check_successor 接通 Infinity，原 collectRaw 的内部图精确值域和 collect_HS 合同已迁移；tupleStabilizer 的有限交构造、滤子成员性及实际固定作用已接入原核，并给出 separate 所需共同支撑；已接原 entry_permute/separationTest_permute、精确 separate、mem_separate 与完整 forces_separation；继续 PowerSet 和 Replacement 模式；固定证明实例的 forcing_sound 已完成，内部任意码归约仍归阶段 10；保留全秩和完整模式 |
+| 7 | 源强迫前端 | 原子递归／定律、完整公式与固定证明保真、实际标签作用与正规滤子、原单子合同下偏序、全秩 HS、collect／共同支撑／separate 均已验收；七条固定强迫 ZF 公理及完整 Separation 已有原核证书，包括本批原 PowerSet | 接原 SymmetricChoice 的本地见证、群轨道界、replacementImage 和完整 forces_replacement，再装配 forces_ZF。具体单子构造归 8；全部内部公式／证明码归约归 10。不能把底座全模式误列为缺失 |
 | 8 | 源代数／构造核心 | Algebra 13、Construction 13 文件已锁定，尚未完成目标端迁移 | 沿原 Monoid/Placement/ConservativeHull 实际构造及不变量迁移；不得以字段假设核心结论 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
@@ -30,8 +30,8 @@
 
 ## 当前直接消费者
 
-原 `tupleStabilizer → entry_permute/separationTest_permute → separate → edge_separate → mem_separate → forces_separation` 已迁移。ForcingSeparation 构造原名字全部边上的内部子名字投影图，选取精确原分离测试；共同稳定子和已有公式对称性证明条目置换，再由既有 collect_HS 给出 HS。ForcingSeparationAxiom 保留源稠密见证和 tuple_congr 证明，封闭原 Separation 公理句子。任意外部公式及有限参数长度均给出原核证书，内部名字／参数无秩界；全部内部证明码仍归阶段 10。
+原 `SymmetricNames.separate/mem_separate → SymmetricSets.subsetBound → normalize → PowerCandidate → power → mem_power → forces_powerSet` 已迁移。本批直接调用底座 SetConstruction.exists_powerSet、SeparationSyntax、恒等图及已有 collect_HS；保留原稳定子、精确边方程、稠密见证和相等替换。幂集界只约束一个名字的规范化子集编码，量词仍覆盖任意内部 HS 名字。
 
-下一直接消费者是原 `SymmetricSets.subsetBound → normalize → power → forces_powerSet`。normalize 直接使用本批已证 separate/mem_separate；不重建分离名字或底座幂集。随后沿 SymmetricChoice 处理 Replacement 的本地见证与群轨道界；源 chosenWitness 的宿主选择必须通过已有内部 Collection／所选背景履行对象见证义务。
+下一直接消费者是固定 `SymmetricChoice.lean` 的 `WitnessIndex/chosenWitness → replacementBound → bounded_local_witness → image_in_bound → replacementImage → forces_replacement → forces_ZF`。源 chosenWitness 使用宿主选择；目标必须用已存在的内部 Collection／所选背景履行本地见证义务，并证明所用关系式族与下游源合同相容。不能直接搬入宿主选择函数，也不另造通用 Collection 后端。
 
-以上仍属原阶段 7。当前强迫模式证书保留源单子／呈现／正规滤子前提；阶段 8 必须给出原 Algebra/Construction 的实际构造。阶段 6 的已有 L 接口接入、9 的模型应用、10 的内部码及最终 Con 义务不变。
+本批证书保留源单子／呈现／正规滤子前提，阶段 8 必须提供原 Algebra/Construction 的实际构造；阶段 6 的已有 L 接口适配、9 的模型应用、10 的内部码及最终 Con 均未因此完成。完整验收数据统一见 STATUS，不以构建数量估计剩余工期。
