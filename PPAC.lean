@@ -432,3 +432,5 @@ import PPAC.Migration.ConstructionProbePresentationTransitions
 import PPAC.Migration.ConstructionProbePresentationTransitionsSyntax
 import PPAC.Migration.ConstructionProbeInterpretedLetters
 import PPAC.Migration.ConstructionProbeInterpretedLettersSyntax
+import PPAC.Migration.ConstructionProbePresentedLift
+import PPAC.Migration.ConstructionProbePresentedLiftSyntax

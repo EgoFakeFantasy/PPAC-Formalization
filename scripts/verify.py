@@ -3521,7 +3521,9 @@ def main() -> None:
                                ("construction_probe_presentation_transitions", "ConstructionProbePresentationTransitions", 12),
                                ("construction_probe_presentation_transitions_syntax", "ConstructionProbePresentationTransitionsSyntax", 9),
                                ("construction_probe_interpreted_letters", "ConstructionProbeInterpretedLetters", 11),
-                               ("construction_probe_interpreted_letters_syntax", "ConstructionProbeInterpretedLettersSyntax", 9)):
+                               ("construction_probe_interpreted_letters_syntax", "ConstructionProbeInterpretedLettersSyntax", 9),
+                               ("construction_probe_presented_lift", "ConstructionProbePresentedLift", 7),
+                               ("construction_probe_presented_lift_syntax", "ConstructionProbePresentedLiftSyntax", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7561,7 +7563,8 @@ def main() -> None:
         "source_probe_actual_indexed_probe_graph_and_presentedHom_ext_kernel_proved": True,
         "source_probe_adjacent_transport_and_actual_interpretedLetter_equivariance_kernel_proved": True,
         "source_probe_actual_word_carrier_multiplication_left_cancel_monoid_kernel_proved": True,
-        "source_probe_word_conical_embedding_and_presentation_proved": False,
+        "source_probe_indexed_relations_and_unique_presentedHom_kernel_proved": True,
+        "source_probe_conservative_simulation_transport_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
