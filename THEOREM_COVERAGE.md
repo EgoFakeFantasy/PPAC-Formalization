@@ -76,6 +76,8 @@ The four InterpretedZF declarations inherit exactly the existing seven ZF senten
 
 | MonoidConstruction.Base.M / IsConical / le_iff / joins / object algebra | ConstructionBaseMonoid.construction_kernel_certificate | Exact set graph of addition on all internal omega, zero unit, associativity, left cancellation, conicality, successor generator distinct from zero and pair least upper bounds. Reuses native ordinal arithmetic and definable graphs; no host Nat enumeration. Original real height/cost/margin and subsequent extensions are not yet supplied. This is the initial base, not the final saturated monoid. |
 
+| MonoidConstruction.Base.height / cost fraction data | ConstructionBaseWeights.construction_kernel_certificate | Exact internal function graphs for ((2^(n+1)-1),2^(n+1)) and (1,2^(n+3)); total/unique on all internal omega, with natural numerator and denominator satisfying 0 < numerator < denominator. Adapts existing Dyadic positive-denominator arguments and native arithmetic. Fraction-to-real interpretation, real supremum and margin remain unproved; no full HeightCost claim. |
+
 These rows are integrated into the formal audit; current full acceptance is reported only in STATUS. Existing seven sentence certificates, 15 recursion Bool certificates and nine cardinal Bool certificates remain explicitly audited/reevaluated. No new object axiom, HS-closure assumption or proof kernel is added.
 
 Decision density, atomic_truth, exists_truth_generic and byte compatibility are outside the selected direct proof-reduction route. Historical reports remain recoverable in Git; their obsolete missing-status narratives are not current obligations.
