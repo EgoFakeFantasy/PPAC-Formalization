@@ -428,3 +428,7 @@ import PPAC.Migration.ConstructionProbeHomExt
 import PPAC.Migration.ConstructionProbeHomExtSyntax
 import PPAC.Migration.ConstructionProbeIndexedGenerators
 import PPAC.Migration.ConstructionProbeIndexedGeneratorsSyntax
+import PPAC.Migration.ConstructionProbePresentationTransitions
+import PPAC.Migration.ConstructionProbePresentationTransitionsSyntax
+import PPAC.Migration.ConstructionProbeInterpretedLetters
+import PPAC.Migration.ConstructionProbeInterpretedLettersSyntax

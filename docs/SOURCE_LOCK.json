@@ -26443,7 +26443,7 @@
         "ConstructionProbeHomEvaluation.product_unique",
         "ModelTransfer.derives"
       ],
-      "scope": "Construct the actual internal omega-to-Word probe graph i -> generator(letter i identity). The source generator factorization through old(x) and probe(i) follows from the existing letter quotient representation, actual action table and generator product. The native existence certificate includes the exact indexed homomorphism extensionality property for every internal target function table. No new recursion, external standard-index restriction or target cancellation. Source interpretedLetter descent, transitions_from_adjacent and full existsUnique_presentedHom remain; existing generic liftHom and Word.hom_ext are not repeated.",
+      "scope": "Construct the actual internal omega-to-Word probe graph i -> generator(letter i identity). The source generator factorization through old(x) and probe(i) follows from the existing letter quotient representation, actual action table and generator product. The native existence certificate includes the exact indexed homomorphism extensionality property for every internal target function table. No new recursion, external standard-index restriction or target cancellation. Source interpretedLetter descent and transitions_from_adjacent are now proved in construction_probe_interpreted_letters; interpretedLetter_exit and full existsUnique_presentedHom remain; existing generic liftHom and Word.hom_ext are not repeated.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeIndexedGenerators.Probe": [],
         "PPAC.Migration.ConstructionProbeIndexedGenerators.probe": [
@@ -26556,7 +26556,7 @@
         "ConstructionProbeHomEvaluation.product_unique",
         "ModelTransfer.derives"
       ],
-      "scope": "Construct the actual internal omega-to-Word probe graph i -> generator(letter i identity). The source generator factorization through old(x) and probe(i) follows from the existing letter quotient representation, actual action table and generator product. The native existence certificate includes the exact indexed homomorphism extensionality property for every internal target function table. No new recursion, external standard-index restriction or target cancellation. Source interpretedLetter descent, transitions_from_adjacent and full existsUnique_presentedHom remain; existing generic liftHom and Word.hom_ext are not repeated.",
+      "scope": "Construct the actual internal omega-to-Word probe graph i -> generator(letter i identity). The source generator factorization through old(x) and probe(i) follows from the existing letter quotient representation, actual action table and generator product. The native existence certificate includes the exact indexed homomorphism extensionality property for every internal target function table. No new recursion, external standard-index restriction or target cancellation. Source interpretedLetter descent and transitions_from_adjacent are now proved in construction_probe_interpreted_letters; interpretedLetter_exit and full existsUnique_presentedHom remain; existing generic liftHom and Word.hom_ext are not repeated.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionProbeIndexedGeneratorsSyntax.probeGraph": [
           "Quot.sound",
@@ -26650,6 +26650,388 @@
           "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
           "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
           "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_presentation_transitions": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeGates.lean",
+      "source_sha256": "da862f5f98fb1c809a76dbeed5ff707052f533a06e84ed3a1ac9ef3ccb1a4157",
+      "adapter": "PPAC/Migration/ConstructionProbePresentationTransitions.lean",
+      "source_declarations": [
+        "Path.transitions_from_adjacent (573)"
+      ],
+      "consumers": [
+        "Path.interpretedLetter descent"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Natural.lean",
+      "native_source_sha256": "84df94e658be97304df936efa2db4eecdc04aaac1cdeb3273cbc4a0d41389cbd",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "Structure.IsOmega.induction",
+        "ZF.separation_exists_d",
+        "ConstructionProbePath.factor_self/factor_trans/factor_unique"
+      ],
+      "scope": "Source adjacent-to-all transition proof via explicit pure Stage formula, Separation and existing internal omega induction. The base uses factor_self and map_one; successor uses factor_trans, map_mul and target associativity. All internal indices, no target cancellation or new induction backend. Native certificate feeds interpretedLetter directly.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbePresentationTransitions.Transport": [],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transport": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transport_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transport_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.Stage": [],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.stage": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.stage_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.stage_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.Adjacent": [],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transport_self": [],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transport_step": [
+          "Classical.choice"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitions.transitions_from_adjacent": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_presentation_transitions_syntax": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeGates.lean",
+      "source_sha256": "da862f5f98fb1c809a76dbeed5ff707052f533a06e84ed3a1ac9ef3ccb1a4157",
+      "adapter": "PPAC/Migration/ConstructionProbePresentationTransitionsSyntax.lean",
+      "source_declarations": [
+        "Path.transitions_from_adjacent (573)"
+      ],
+      "consumers": [
+        "Path.interpretedLetter descent"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Natural.lean",
+      "native_source_sha256": "84df94e658be97304df936efa2db4eecdc04aaac1cdeb3273cbc4a0d41389cbd",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "Structure.IsOmega.induction",
+        "ZF.separation_exists_d",
+        "ConstructionProbePath.factor_self/factor_trans/factor_unique"
+      ],
+      "scope": "Source adjacent-to-all transition proof via explicit pure Stage formula, Separation and existing internal omega induction. The base uses factor_self and map_one; successor uses factor_trans, map_mul and target associativity. All internal indices, no target cancellation or new induction backend. Native certificate feeds interpretedLetter directly.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.adjacent": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.adjacent_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.adjacent_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.allTransitions": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.allTransitions_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.allTransitions_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.transitionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.transition_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbePresentationTransitionsSyntax.transition_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_interpreted_letters": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeGates.lean",
+      "source_sha256": "da862f5f98fb1c809a76dbeed5ff707052f533a06e84ed3a1ac9ef3ccb1a4157",
+      "adapter": "PPAC/Migration/ConstructionProbeInterpretedLetters.lean",
+      "source_declarations": [
+        "Path.interpretedLetter (591)",
+        "Path.interpretedLetter_mk",
+        "Path.interpretedLetter_act"
+      ],
+      "consumers": [
+        "Path.interpretedLetter_exit",
+        "Path.presentedLift",
+        "Path.existsUnique_presentedHom"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "ConstructionProbePresentationTransitions.transitions_from_adjacent",
+        "ConstructionProbeLetters.letter_eq_iff",
+        "ConstructionProbeAction.representative/projected",
+        "ConstructionProbeHomEvaluation.product_unique",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Actual quotient letter interpretation graph s -> f(x)*p(i), independent of representative by the existing common-stage criterion and proved transition compatibility. Totality, uniqueness, exact interpretedLetter_mk and action equivariance are proved. Native existence certificate derives all-stage transport from the original adjacent relations, not an added all-stage hypothesis. Target remains an arbitrary internal monoid. Source interpretedLetter_exit and final presentedLift/existsUnique_presentedHom assembly remain.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.Value": [],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value_transition": [
+          "Classical.choice"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.value_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.InterpretationGraph": [],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.exists_interpretation": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.interpretation_mk": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLetters.interpretation_equivariant": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_probe_interpreted_letters_syntax": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeGates.lean",
+      "source_sha256": "da862f5f98fb1c809a76dbeed5ff707052f533a06e84ed3a1ac9ef3ccb1a4157",
+      "adapter": "PPAC/Migration/ConstructionProbeInterpretedLettersSyntax.lean",
+      "source_declarations": [
+        "Path.interpretedLetter (591)",
+        "Path.interpretedLetter_mk",
+        "Path.interpretedLetter_act"
+      ],
+      "consumers": [
+        "Path.interpretedLetter_exit",
+        "Path.presentedLift",
+        "Path.existsUnique_presentedHom"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean",
+      "native_source_sha256": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "reused_interfaces": [
+        "ZF.exists_setFunctionFromTo_of_denote",
+        "ConstructionProbePresentationTransitions.transitions_from_adjacent",
+        "ConstructionProbeLetters.letter_eq_iff",
+        "ConstructionProbeAction.representative/projected",
+        "ConstructionProbeHomEvaluation.product_unique",
+        "ModelTransfer.derives"
+      ],
+      "scope": "Actual quotient letter interpretation graph s -> f(x)*p(i), independent of representative by the existing common-stage criterion and proved transition compatibility. Totality, uniqueness, exact interpretedLetter_mk and action equivariance are proved. Native existence certificate derives all-stage transport from the original adjacent relations, not an added all-stage hypothesis. Target remains an arbitrary internal monoid. Source interpretedLetter_exit and final presentedLift/existsUnique_presentedHom assembly remain.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.interpretationGraph": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.interpretationGraph_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.interpretationGraph_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.representativeLaw": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.representativeLaw_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.representativeLaw_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.constructionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionProbeInterpretedLettersSyntax.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
         ]
       }
