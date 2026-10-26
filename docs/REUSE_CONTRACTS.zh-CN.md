@@ -101,10 +101,14 @@ Base 数值解释的当前复用结果：原生 NaturalPrime、Arithmetic 的加
 
 Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影、动作、target 与 exit 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成 Representatives 同时表示 D×Letters，不重建积或商库。动作良定义／单射和 target 等变性已验收，过渡映射不要求单射。
 
-Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；下一消费者为原 oldAct/headDiv、Word 正规形及 Probe 扩张。
+Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。Raw 载体和构造器已接入；oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通；下一消费者为 Raw.eval、Word 乘法及 Probe 扩张。
 
 锥与大小界的实际复用：ConstructionProbeCones 消费已有 letter_eq_iff、letter_transition、动作及 TableLaws，沿源共同阶段计算取得锥交、共同倍数与 initial_profile；对应消费者为 old_cone_intersection/common_multiple_reflection/probe_old_profile、ProbeMargins 和 ProbePresentations。ConstructionProbeCardinality 直接调用已复用的 ExistingCardinalBounds.infinite_product_l 及固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal。先给实际代表元积编号，再将商投影延拓到基数，底座最小原像定理给反向单射；空商独立处理。没有重证基数乘法、最小原像定理或引入对象选择。
 
-ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，剩余为原 oldAct/headDiv、Word 正规形、它们的大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
+ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。Raw 载体和构造器已接入，oldAct/headDiv、实际 Word、quotient 和 letterAct 现已接通，剩余为 Raw.eval、Word 乘法、大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
 
-Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequenceParsing.lean 的 empty_or_decomposition_exists_unique、components_unique 和 empty_sequence_unique，以及已有 exists_append，表示“尾到头的内部有限字母序列＋末尾旧元素”。载体由原生积／幂集／分离和现有 Representatives 构造；old/cons 的存在唯一性、单射、互斥、闭包与穷尽分解进入同一个纯对象句子的原核证书。未重建序列解析或把内部长度变为外部 List。只导入实际所需 ConstructionProbeLetters；两处误用 ZFC 配对唯一性接口已改为现有 KuratowskiZF.code_unique。原 oldAct/headDiv、Word/reduced 及大小界仍待按源实现。底座序列限制带来 6 项此前未消费的原生 Bool 证书，已纳入精确足迹和 Check 复算；不能说可信依赖未扩大。
+Raw 的直接复用：ConstructionProbeRaw 调用固定底座 Ord/FiniteSequenceParsing.lean 的 empty_or_decomposition_exists_unique、components_unique 和 empty_sequence_unique，以及已有 exists_append，表示“尾到头的内部有限字母序列＋末尾旧元素”。载体由原生积／幂集／分离和现有 Representatives 构造；old/cons 的存在唯一性、单射、互斥、闭包与穷尽分解进入同一个纯对象句子的原核证书。未重建序列解析或把内部长度变为外部 List。只导入实际所需 ConstructionProbeLetters；两处误用 ZFC 配对唯一性接口已改为现有 KuratowskiZF.code_unique。原 oldAct/headDiv、Word/reduced 后续已接通；大小界仍待其实际消费者。底座序列限制带来 6 项此前未消费的原生 Bool 证书，已纳入精确足迹和 Check 复算；不能说可信依赖未扩大。
+
+源 Word 前端的直接复用：Raw.oldAct/headDiv 只做构造器案例，调用现有实际字母动作、KuratowskiZF 和函数唯一性；Reduced 用反向序列的真前缀 headDiv 测试，直接消费原生 restriction/序列分解，保留最高字母不受约束。Word 载体用 Separation。quotient 由 Word.headDiv_iff 与 oldAct 单射给唯一原像，直接调用 exists_setFunctionFromTo_of_denote 构造有效输入域上的图，替代源宿主 choose。letterAct 完全保留源两支，其交叉分支不相交实际使用 Alphabet.ExitLaws 的 head_separation；关系的存在唯一性、闭包、归约、等变和单射均回原核。没有另建递归、对象选择或泛滤真值支线；Raw.eval/Word 乘法是下一源消费者。当前 124 项新增声明、4 项原核证书未引入新的可信依赖。
+
+Raw.eval 后续复用已核对精确类型：ZF.recursiveSequenceIn_existsUnique（固定 Ord/Recursion.lean:1142）返回 bound 上的实际唯一 target 值历史；只要求 IsClassFunctionOnSequencesInBelow 和 MapsSequencesInBelowInto。取字母长度后继与现有 Word 载体，已证 oldAct/letterAct 分别供初值和后继。现成 isRecursiveSequenceIn AST、restriction、recursiveSequenceIn_unique 和递归值解读可直接消费。当前只完成接口定位，不把 Eval 或 Word 单子宣称完成。

@@ -405,3 +405,9 @@ import PPAC.Migration.ConstructionProbeAlphabet
 import PPAC.Migration.ConstructionProbeCones
 import PPAC.Migration.ConstructionProbeCardinality
 import PPAC.Migration.ConstructionProbeRaw
+import PPAC.Migration.ConstructionProbeRawAction
+import PPAC.Migration.ConstructionProbeRawActionSyntax
+import PPAC.Migration.ConstructionProbeReduced
+import PPAC.Migration.ConstructionProbeWord
+import PPAC.Migration.ConstructionProbeWordQuotient
+import PPAC.Migration.ConstructionProbeLetterAction

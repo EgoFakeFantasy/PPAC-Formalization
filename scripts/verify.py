@@ -3494,7 +3494,13 @@ def main() -> None:
                                ("construction_probe_alphabet", "ConstructionProbeAlphabet", 28),
                                ("construction_probe_cones", "ConstructionProbeCones", 26),
                                ("construction_probe_cardinality", "ConstructionProbeCardinality", 5),
-                               ("construction_probe_raw", "ConstructionProbeRaw", 43)):
+                               ("construction_probe_raw", "ConstructionProbeRaw", 43),
+                               ("construction_probe_raw_action", "ConstructionProbeRawAction", 14),
+                               ("construction_probe_raw_action_syntax", "ConstructionProbeRawActionSyntax", 22),
+                               ("construction_probe_reduced", "ConstructionProbeReduced", 20),
+                               ("construction_probe_word", "ConstructionProbeWord", 15),
+                               ("construction_probe_word_quotient", "ConstructionProbeWordQuotient", 33),
+                               ("construction_probe_letter_action", "ConstructionProbeLetterAction", 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7521,7 +7527,10 @@ def main() -> None:
         "source_probe_full_cone_intersection_profile_and_cardinal_bounds_proved": True,
         "source_probe_alphabet_constructed": True,
         "source_probe_raw_carrier_and_constructor_cases_kernel_proved": True,
-        "source_probe_raw_old_action_and_reduced_word_proved": False,
+        "source_probe_raw_old_action_and_reduced_word_proved": True,
+        "source_probe_word_quotient_graph_and_inverse_laws_proved": True,
+        "source_probe_letter_front_reduction_equivariance_and_injectivity_kernel_proved": True,
+        "source_probe_raw_eval_and_word_monoid_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
