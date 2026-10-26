@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段
 
-本批输入基点 `ffb37fb`。按最初 `f28b0334` 的原流程：**连续完整验收到 1–3，当前主开发在 8；尚未进入收尾，最终对象 Con 未证明。** 本批迁移固定 OpenAI cone_join → extension_hasConditionalJoins，当前仍属原第 8 阶段。
+本批输入基点 `15bd572`。按最初 `f28b0334` 的原流程：**连续完整验收到 1–3，当前主开发在 8；尚未进入收尾，最终对象 Con 未证明。** 本批迁移固定 OpenAI probe_full_profile / probe_join_profile → PersistentProfiles.Path.probeProfile，当前仍属原第 8 阶段。
 
 | 原阶段 | 已完成／已经存在 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 | 内部集合／图／ω／序列／递归、名字及作用／HS 基础已有 | 具体系统消费者归 8–10，不重建基础 |
 | 6 | 新版 7979336 的任意 ZF 模型内部 L→ZF/ZFC 及完整模式已完成；既有回读确认 Model/Choice 正文、固定 7979336 及当时供体干净状态；本批未重跑供体构建 | 固定旧版、当前对象语言相对化与原核接口未接通；不是缺少 L 数学 |
 | 7 | forces_ZF 固定公理和全部模式已有逐实例原核证书 | 源单子／Presentation／正规滤子前提待具体系统实例化；全部内部码归 10 |
-| 8 | Base/margin；实际 Path、Alphabet、Word 单子、old/generator/probe 图、呈现与大小界；共享 Gate、完整 Word 保守传输已有原核证书。Path old/probe 方程与完整保守性已验收；本批实际 Word 扩张及三项代数性质已构造，验收状态见下文 | probe 完整 profile；Probe 的 gate/pushout/margin 接口及 Merger 扩张、margin 延拓、Placement、ConservativeHull、最终饱和单子 |
+| 8 | Base/margin；实际 Path、Alphabet、Word 单子、old/generator/probe 图、呈现与大小界；共享 Gate、完整 Word 保守传输已有原核证书。Path old/probe 方程与完整保守性已验收；实际 Word 扩张及三项代数性质已构造；本批初始 probe 全 Word profile 已取得原核证书，验收见下文 | old gates／后续 profile 保持、Probe 的 pushout/margin 接口及 Merger 扩张、margin 延拓、Placement、ConservativeHull、最终饱和单子 |
 | 9 | Models 固定源码已有 | SVC、ACwo、同一系统商单射和非选择见证的目标端迁移未完成 |
 | 10 | 原 Main 链与内部 Con 合同固定；底座通用 Proof/Sat 已有 | 全秩 PP/Main 装配、ZF/U 特化、全部内部矛盾证明码归约与最终闭句 |
 | 11 | 现有验收工具可复用 | 最终主定理验收未开始 |
@@ -26,22 +26,22 @@
 
 ## 本批实际源迁移
 
-固定 ProbeGates 的 old_word_cone_join、different_head_cone_join、translate_cone_intersection、cone_join 和 Path.extension_hasConditionalJoins。直接消费者是 ConservativeCells.Probe.extension:181 与 MonoidBase.ProbeData.extension:179 的 joins 字段。源基底 conical、b≠unit 和基础 ConditionalJoins 保持，未添加对象 Choice。
+固定 ProbeWords.probe_old_profile / probe_not_dvd_a 和 ProbeGates.generator_gate / generator_dvd_of_head / old_factor_of_other_block / head_ne_initial_of_dvd_a / probe_full_profile / probe_join_profile；直接消费者是 PersistentProfiles.Path.probeProfile:108，随后由 profile 保持及 MonoidRounds 使用。未按源码行序扩写不相干支线。
 
-Gate 由现成共享 Gate 定理在原生恒等图上特化得到，不重复归纳；old intersections 使用已有 old Conservative；Raw 归纳保留源三个分支，另一个词和共同上界在纯公式内量化。等头分支使用已有实际 generator 乘法与消去。
+原 profile 的两个下集相交覆盖扩张里的全部 Word，不只 old 元素；路径索引是全部内部 ω。初始 exit 从 TerminalTable/TargetLaws/ExitGraph 的实际图方程推出，非整除沿源左消去与 conical 证明。最终 profileSentence 实际构造 W/unit/J/G、generator 图、indexed-probe 图、初始 probe 和 old a/b/a*d，给出同一系统的单子三性质、精确图方程、exit、非整除以及完整除子／并 profile。它没有把 Word 对象、Gate 或 profile 作为前提；保留已完成前序模块提供的 Path/Alphabet/Cone/Target/Exit 合同及原基底条件。
 
-最终纯闭句实际构造 W、unit、W×W 输入载体 J 和乘法图 G，给出精确 WordCarrier、Old、Representatives、MapsTo、MultiplicationGraph 及同一个 W/G/unit 的 LeftCancelMonoid、Conical、ConditionalJoins。直接复用 exists_word_carrier、exists_old、exists_multiplication；W/G/unit、old 保守嵌入、Gate 和 old intersections 都不是最终前提。基础 Alphabet/ConeLaws 与原基底假设保留。该存在性版本定向构建、预审及全量验收均已通过。
+profile_kernel_certificate 返回原 FirstOrder.Derives nativeZF [] (Project.fo_sentence profileSentence)。语义中间证明经现成 ModelTransfer 回传，未新建推导核、满足关系或内部递归。
 
-## 真实剩余
+## 真实剩余及本轮复审
 
-原 Word 条件并不再列为数学缺口。下一链为 old_factor_of_other_block → probe_full_profile / probe_join_profile，复用既有 Gate、generator、初始字母 profile、old 嵌入。实际 Word 扩张的载体和三项代数性质不再列为缺口。随后仍需 Probe 的 profile/gate/pushout/margin 接口、Merger 扩张、Placement、ConservativeHull 和最终饱和单子；第 6 阶段适配、第 9–11 阶段及全部内部码 Con 仍未完成。
+原 Word 条件并、实际三性质扩张构造和初始完整 profile 不再列为待证明数学。下一条源依赖为 PersistentProfiles.HasOldGates／ProbeProfile.map／Path.preserve_profile，复用既有 Gate.old_intersection、Conservative 四字段；随后仍有完整 Probe 的 pushout/margin、Merger、Placement、ConservativeHull 与最终饱和单子。第 6 阶段适配、第 9–11 阶段及全部内部码 Con 未完成。
 
-新版 L→ZF/ZFC、完整模式、内部递归、函数图、Proof/Sat 和原核完备性已有，不重做。冻结的 NatPacket、泛滤真值和独立 L 路线不恢复。
+本轮重新回读最初 f28b0334 的 1–11 表及新版 YesMetaZFC 7979336 的 Model/Choice 正文，确认任意模型 L→ZF/ZFC、全分离／收集已经存在，供体工作树干净；没有重跑供体构建或修改版本。BMS 式 ModelTransfer 已在当前库实际消费，函数图／递归／Proof/Sat 已有。不恢复 NatPacket、泛滤真值或独立 L 重建。
+
+此前误判来自把局部验收当整体推进、把已有供体数学与未接接口混为一谈，以及将可选字节兼容支线当作主定理义务；不是对象层目标后来改变。135 个孤立 Packet 模块已有可恢复退役记录；仍被保留证明依赖的 291 个不凭文件名前缀删除。本轮不增加持久脚本或新一套阶段编号。
 
 ## 实际验收
 
-存在性版本的定向构建和 22 声明 --trust=0 预审均退出 0；6 项无公理依赖，原核证书仍为此前记录的 22 项依赖，未新增可信依赖。当前版本完整 scripts/verify.py 已退出 0：2881 项构建，29311 项声明（918 无公理依赖、28393 有已记录依赖），9 条命令全部退出 0，其中 5 条 --trust=0，0 警告。75 份主链源文件哈希全部重新匹配。最终日志为 verification/construction-probe-joins-full-verification.log；当前 commands.json / summary.json 属于最终存在性版本。此前条件式接口版本的结果另留 interface-full-verification 日志，未混作最终结果。
+定向构建退出 0（642 项任务）；22 声明的 --trust=0 预审退出 0，3 项无公理依赖，原核证书为既有 22 项依赖，未新增可信依赖。正式 scripts/verify.py 已退出 0：2882 项构建、29333 声明（921 项无公理依赖，28412 项有已记录依赖）、9 条命令全部退出 0，5 次 --trust=0，0 警告；75 份主链源文件哈希全部匹配。日志为 verification/construction-probe-profiles-full-verification.log。summary.json / commands.json 对应本批最终证明；验收后仅纠正 SOURCE_LOCK 中一处源行号 279→272，重构旧哈希并检查全部证明／脚本／足迹未变，元数据校验记录留在 summary.json，未重复编译。
 
-原 Main、完整 Comparator 和 L 供体本批未重跑；未上传。本批没有新增持久脚本。正式 Audit 覆盖全部 22 项新增声明；编译进程全部退出后清理重复预审输入及四份空的早期定向日志，精确路径和 SHA 见 verification/cleanup-probe-joins-20261027.json。保留最终构建、trust=0 与全量验收日志。
-
-Word 条件并及实际三性质构造门均为 true；完整 profile、完整 Probe 扩张包和 relative_consistency_proved 仍为 false。当前仍在原第 8 阶段。
+本批无上传。正式 Audit 已覆盖新增 22 声明；编译结束后仅清理本批重复预审输入、早期空日志及被最终通过结果替代的失败日志，精确清单与哈希见 verification/cleanup-probe-profiles-20261027.json。没有新增持久脚本；本轮编译／初始只读命令均已退出，无需终止进程。初始 full profile 标志为 true，完整 Probe 包及 relative_consistency_proved 仍为 false。最终对象 Con 和完整 Probe 扩张包仍未证明；当前仍在原第 8 阶段。

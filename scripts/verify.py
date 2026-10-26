@@ -2562,7 +2562,8 @@ def main() -> None:
                                ("construction_probe_transport_common", "ConstructionProbeTransportCommon", 11),
                                ("construction_probe_conservative_simulation", "ConstructionProbeConservativeSimulation", 5),
                                ("construction_probe_simulation", "ConstructionProbeSimulation", 11),
-                               ("construction_probe_conditional_joins", "ConstructionProbeConditionalJoins", 22)):
+                               ("construction_probe_conditional_joins", "ConstructionProbeConditionalJoins", 22),
+                               ("construction_probe_profiles", "ConstructionProbeProfiles", 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6204,7 +6205,7 @@ def main() -> None:
         "source_probe_simulation_old_and_indexed_probe_same_graph_kernel_proved": True,
         "source_probe_word_conditional_joins_proved": True,
         "source_probe_word_left_cancel_conical_conditional_joins_kernel_proved": True,
-        "source_probe_word_full_profile_proved": False,
+        "source_probe_word_full_profile_proved": True,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
