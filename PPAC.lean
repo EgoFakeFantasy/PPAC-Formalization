@@ -503,3 +503,10 @@ import PPAC.Migration.ConstructionProbeNewOldMarginSyntax
 
 import PPAC.Migration.ConstructionProbeOldCostSupremum
 import PPAC.Migration.ConstructionProbeOldCostSupremumSyntax
+
+import PPAC.Migration.ConstructionFractionProductArithmetic
+import PPAC.Migration.ConstructionCutProductArithmetic
+import PPAC.Migration.ConstructionProbeSameHeadMargin
+import PPAC.Migration.ConstructionProbeUniformMargins
+import PPAC.Migration.ConstructionProbeHeightCost
+import PPAC.Migration.ConstructionProbeHeightCostSyntax

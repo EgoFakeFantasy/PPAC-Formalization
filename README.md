@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 **当前主开发在原第 8 阶段，尚未进入收尾。** 第 1–3 阶段的原范围已验收；第 4 阶段原 Main／端点已验收，完整 Comparator 未验；第 5 阶段基础包已有；第 6 阶段缺已有 L 定理的版本／语言接口；第 7 阶段已有条件式强迫 ZF 前端，待同一具体系统实例化。第 9–11 阶段未闭合。
 
-第 8 阶段已有实际 Path/Alphabet/Word 单子、呈现、保守模拟、条件并、profile 保持和 pushout；floor、原逐字母区间和 heightIntervals 三张内部函数图均已有证书。已完成初始 Base 的表示适配：保留同一组 H/C 的实际函数图证书和完整旧 margin，导出 Probe 所需的 HeightOrder、UniformMargins。初始 Base 数值估计与接口适配已完成，没有重证。一般乘积实际图和 min 已有。实际唯一高度图及原 old/cons 方程已有。同一求值器已构造当前词的实际 cap 和唯一成本图。本轮按固定源接通 height_bounds、cost_le_scale 和 cost_old_factor，保留同一实际函数图；字面 Gate 成本界、outside-block 旧因子和 old–old、old–new、new–old 严格 margin 和 Word 旧成本上确界保持现已接通；完整 HeightCost 尚未完成。
+第 8 阶段已有 Base、实际 Path/Alphabet/Word、呈现、保守性、条件并、profile 和 pushout，以及实际 interval 和权重图。本批接通原 same-head margin 和覆盖所有内部长度的统一归纳，并构造完整 Word HeightCost 的对象证书：实际高度／cap／成本图、全部上下界、每个严格比较的实际遗漏成本上确界及严格高度间隙、图唯一性、旧成本上确界保持。全部现成基础和缩放／递归／上确界设施直接复用。
 
-下一缺口是原 same-head 严格 margin、统一递归、HeightCost／Path inclusion 装配，再装配 Probe、Merger、Placement/ConservativeHull 和最终单子。**最终对象 Con 未证明；其内部公式目前有固定规格，ZF/U 专用完整 AST 及全部内部码传输尚未闭合。**
+下一缺口是 Path／inclusion 与完整 Probe 装配，再接 Merger、Placement／ConservativeHull 和最终单子；已有 Word HeightCost 数学不重做。**最终对象 Con 未证明；ZF/U 专用内部公式和全部内部码传输仍未闭合。**
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

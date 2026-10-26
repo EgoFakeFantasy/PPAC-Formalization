@@ -12,7 +12,7 @@
 | 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；实际 subgroupFilter、有限并支撑界和全部四项正规性已构造；直接使用新版底座五个原证明，ω 基数性不再作为额外前提。实际 ProductNames.actionHom 和支撑 Context 已接通；非平凡性按源 ChoiceFailure 消费者另接 |
 | 全秩 HS 和强迫前端 | SymmetricNames、AtomicForcing、ForcingQuotient、ForcingTruth.forcing_sound | 实际 HS 定义、空/check/pair/union、实际统一作用、原子与完整公式强迫、固定证明保真已完成；七条固定 ZF 公理与完整模式现均有原核证书。具体阶段 8 代数仍待实例化 |
 | 全 ZF 在同一 HS 解释中成立 | SymmetricChoice.forces_ZF:203–217 | 目标端 ForcingZFAxioms.kernel_certificate 已接通全部九个源公理构造器。源宿主见证选择通过原生 Collection 适配，保留全群轨道和下游证明。仍有源代数／呈现／正规滤子前提；不是全部内部证明码归约或最终 Con |
-| 源构造核心 | Algebra、Construction | Base、实际 Path/Alphabet/Word、呈现／保守性／条件并／profile／pushout、所需切割运算、interval 图和唯一权重图及界已有；old–old、old–new、new–old 严格 margin 已接；Word 两边遗漏成本集合的公共唯一上确界已构造，含空集和任意旧端点。下一步原 same-head margin／统一递归 → HeightCost／Path inclusion／完整 Probe → Merger → Placement／ConservativeHull → 最终单子。精确源声明、前提和对象核证书见 THEOREM_COVERAGE／SOURCE_LOCK；不重建已有基础或扩建完整实数域 |
+| 源构造核心 | Algebra、Construction | Base、实际 Path/Alphabet/Word、呈现／保守性／条件并／profile／pushout、interval 已有。完整 Word HeightCost 现已构造并取得对象证书：包括 same-head、覆盖所有内部长度的统一归纳，以及原字段要求的实际遗漏成本上确界／严格间隙；旧上确界保持和唯一性也保留。下一步 Path／inclusion／完整 Probe → Merger → Placement／ConservativeHull → 最终单子。不重建 Word margin、域、递归或上确界；精确源与背景见 THEOREM_COVERAGE／SOURCE_LOCK |
 | 目标模型应用 | ChoiceFailure.forces_not_AC、OrdinalChoice.forces_ACwo、Models 中同一系统的 SVC／商单射 | 源完整证明已有，目标端主链未迁移；不换成局部或定秩见证 |
 | 全秩 PP 和 Main | reverse_injection_dense → forces_PP → forces_target | 等待原依赖装配。保持所有满射的反向单射，不改成原满射截面 |
 | 全部内部 Proof/Con | 底座 ObjectProofNode、ReducedProofPresentation、PureProvability 等 | 工具已存在；仍需 ZF/U 理论特化、完整公理测试及全部非标准内部证明码的正确归约。固定标准证明回放不等价于此项 |

@@ -2621,7 +2621,13 @@ def main() -> None:
                                ('construction_probe_new_old_margin', 'ConstructionProbeNewOldMargin', 3),
                                ('construction_probe_new_old_margin_syntax', 'ConstructionProbeNewOldMarginSyntax', 3),
                                ('construction_probe_old_cost_supremum', 'ConstructionProbeOldCostSupremum', 3),
-                               ('construction_probe_old_cost_supremum_syntax', 'ConstructionProbeOldCostSupremumSyntax', 3)):
+                               ('construction_probe_old_cost_supremum_syntax', 'ConstructionProbeOldCostSupremumSyntax', 3),
+                               ('construction_fraction_product_arithmetic', 'ConstructionFractionProductArithmetic', 4),
+                               ('construction_cut_product_arithmetic', 'ConstructionCutProductArithmetic', 4),
+                               ('construction_probe_same_head_margin', 'ConstructionProbeSameHeadMargin', 2),
+                               ('construction_probe_uniform_margins', 'ConstructionProbeUniformMargins', 5),
+                               ('construction_probe_height_cost', 'ConstructionProbeHeightCost', 1),
+                               ('construction_probe_height_cost_syntax', 'ConstructionProbeHeightCostSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6296,6 +6302,9 @@ def main() -> None:
         "source_probe_old_new_strict_uniform_margin_proved": True,
         "source_probe_new_old_strict_uniform_margin_proved": True,
         "source_probe_Word_exact_old_cost_supremum_proved": True,
+        "source_probe_required_positive_affine_cut_scaling_proved": True,
+        "source_probe_same_head_and_all_internal_uniform_margins_proved": True,
+        "source_probe_Word_complete_actual_HeightCost_constructed": True,
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,

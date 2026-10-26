@@ -80,7 +80,7 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 专用 factors_of_old/gates 尚待迁移 |
 | 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
 | letterFloor 与高度像集 | ConstructionRealCuts.bounded_union；ZF.separation_exists_d / exists_setFunctionFromTo_of_denote；dvd_target_of_inCone、one_inCone | 已构造所有字母的实际图与上下界；旧高度正性／单调性保留。一般加法/max、正整数除法及 /4 四倍和已迁移；一般切割差本批已证，逐字母 intervals 已证，实际 heightIntervals 内部图本批已装配，不把上确界存在误报为完整 margin |
-| Probe 锥内／锥外 cost 界 | 既有 FractionAddition.Sum／sum_right_lt_iff、Separation、ConditionalJoins、ConeLaws、floor 图及原核 ModelTransfer | 已有有界和切割及两界；一般旧 PointBound 输入保留，初始 Base 的该输入已由本批消去。原逐字母严格区间及实际 heightIntervals 三图均已有；后继 Word HeightCost 仍待接通 |
+| Probe 锥内／锥外 cost 界 | 既有 FractionAddition.Sum／sum_right_lt_iff、Separation、ConditionalJoins、ConeLaws、floor 图及原核 ModelTransfer | 已有有界和切割及两界；一般旧 PointBound 输入保留，初始 Base 的该输入已由本批消去。原逐字母严格区间及实际 heightIntervals 三图均已有；完整 Word HeightCost 本批已接通，Path／Probe 装配仍待接通 |
 | 初始 Base 的 PointBound | ConstructionBaseHeightGap.cut_gap/source_margin；ConstructionBaseCostBound.missing_cost_bound；原生自然数算术；既有实际图构造器 | 已在同一组图上保留完整严格 margin 并给出 PointBound；只做所需加法界适配，不重证 Base 或声称任意加法全等价 |
 | 原区间的一般加法与 maximum | 已有 principal_add_bound / bound_inputs_mono / exists_bounded_sum、cuts_total、笛卡尔积与可定义函数图 | 全 CutCarrier 加法图、非严格序性质／零定律和唯一 maximum 已构造；差值及加法严格序／相消本批已接，逐字母区间已证，heightIntervals 函数图本批已装配，不扩写成完整实数域 |
 | 原区间的 /4 | ConstructionFractionDifference.scaled_equiv；既有 mul_swap/mul_le_iff；原生 Separation／可定义函数图；digits_exists | 正整数除法及实际四分之一图、正性和序反映已有；本批复用 same_den_sum、原生后继算术及除法序反映，接通实际四倍和恢复定律。字母区间及其三张内部函数图均已完成；分数及主切割差也已有，不再列为待做 |
@@ -88,20 +88,24 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 | 一般切割差／相消 | 原生 Separation、KP.mem_minimal_exists_d、IsOmega.exists_predecessor_of_mem_of_nonempty；既有分数差、same_den_sum、加法结合／序反映 | 内部网格逼近、一般差精确加回及所有切割解唯一性、加法包含／严格包含反映和相消均有本批原核证书。非标准内部指标不丢失；逐字母区间已证，heightIntervals 函数图本批已装配 |
 | 原逐字母区间及统一成本界 | 既有差值、相消、max、/4、quarter_fourfold、cut_assoc；同一 F/H/C/K/E 图的 FloorLaws、CostBounds 与 MapsTo 唯一性 | 按原公式构造并证明两个严格区间和同一 K 的全部锥外成本界；保留旧 UniformMargins。Recipe 的三个输出对固定 C 唯一。本批已规范旧成本上确界并直接消费既有 native function constructor 构造三图，不引入内部选择函数假设 |
-| HeightIntervals 的实际函数图 | 原生 Separation、exists_setFunctionFromTo_of_denote；已有 bounded_union、cap/recipe 唯一性、MapsTo；原生 le_iff 已用于本批初始 Base 旧 margin 适配 | 构造规范遗漏成本上确界和实际 offset/scale/outsideBound 三图；同一数据的所有源字段及实际差值 inside_cost 已接通。旧 uniform margin／floor/cost 输入保留，后继 Word margin 未完成 |
+| HeightIntervals 的实际函数图 | 原生 Separation、exists_setFunctionFromTo_of_denote；已有 bounded_union、cap/recipe 唯一性、MapsTo；原生 le_iff 已用于本批初始 Base 旧 margin 适配 | 构造规范遗漏成本上确界和实际 offset/scale/outsideBound 三图；同一数据的所有源字段及实际差值 inside_cost 已接通。旧 uniform margin／floor/cost 输入保留，完整 Word margin 本批已完成，Path／Probe 仍待装配 |
 | 已完成 Base margin 的表示适配 | 既有 source_margin、height_mono、le_iff、weights_bounded、base_point_bound；原生函数图构造器原已给出 MapsTo | PrincipalAdd→SumCut 已精确接通；保留原生 MapsTo 的新入口与旧 API 兼容。实际 Base 构造输出完整原 margin、HeightOrder、UniformMargins，初始这两个输入已消去；后继 Word margin 仍待原证明 |
 
-| 原 Raw/Word 所需乘法与 min | 原生 ordinalMultiplication 的总性／结合／交换／零方程；现有分数码与 mul_swap、dense、cuts_total；原生 Separation 与可定义函数图构造器 | 本批取得实际一般切割乘法图，交换／单调／零吸收及正性；min 的实际唯一值、界和正性。完整原核证书只使用现有可信依赖。乘法单位已由源高度／成本界实际消费；结合／分配只有后续原消费者需要时才接，不扩建域。部分成本估计已接，严格 margin 未闭合；Word 高度递归已接在下行，不能冒称完整实数域或后继 HeightCost |
+| 原 Raw/Word 所需乘法与 min | 原生 ordinalMultiplication 的总性／结合／交换／零方程；现有分数码与 mul_swap、dense、cuts_total；原生 Separation 与可定义函数图构造器 | 本批取得实际一般切割乘法图，交换／单调／零吸收及正性；min 的实际唯一值、界和正性。完整原核证书只使用现有可信依赖。乘法单位已由源高度／成本界实际消费；本批按 same-head 的实际需要接通分配和正仿射缩放；未扩建乘法结合／逆或完整域。成本估计和完整 Word 严格／上确界 margin 均已接通；Word 高度递归已接在下行，不能冒称完整实数域或后继 HeightCost |
 
 | 原 rawHeight／Word.height | 未修改的 ConstructionProbeHomEvaluation、HomEvaluationSyntax.exists_lift_graph；原生 exists_unionOfTwo／恒等图／函数构造；现成 HomExt.agreement 和 Raw.raw_induction | 仿射运算在 N=S∪R 上喂入现有总二元代数求值器；没有附加结合、消去或单子律。实际根步骤细化输出范围到 R，同一 Word 高度图满足精确 old/cons 方程，且整个图唯一。此项已接通，不再把高度图本身列作缺口；高度界及 margin 仍未接通；成本图和 cost_bounds 已接在下行 |
 
 | 原 OldMinimum／gateCap | 现成 PersistentProfiles.OldGate 的精确旧倍数轮廓；已有 LeftCancelMonoid／Conical；原生可定义函数构造与图外延性 | 实际唯一 cap 图、精确最小旧成本／默认 unit 分支、正性和非严格上界已证。没有重证门存在性，不选任意更大旧倍数，不强化所有词有门 |
 | 原 rawCost／Word.cost／cost_bounds | 未修改的 evalHom／Word lift；上批 HeightFold.eval_range 根步骤范围细化；现成 Raw 公式归纳、agreement、一般乘积／min；原生状态图和函数构造 | 状态保持当前词的证明已完成，使用 cap(当前新词)；同一 Word 实际成本图具有原 old/cons 方程、整体唯一性及 0<cost≤unit。证书同时构造 cap，无 cap／成本图 oracle；单位 1 的切割表示由既有 Base 数据供给 |
 
-下一实际消费者是 ProbeMargins.Word.uniform_margin_same_head:415 及统一递归 → heightCost:494 / extension_old_cost_supremum:584 → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术、实际高度／cap／成本图、height_bounds、cost_bounds、cost_le_scale 和 cost_old_factor 均已有。只继续源消费者需要的估计及严格 margin，不重复这些构造，不新建通用递归、Proof/Sat 或完整实数域。
+下一实际消费者是 ProbeMargins.Path.extensionHeightCost:573 / extension_old_cost_supremum:584 的数据装配（Word same-head／统一归纳／HeightCost 已完成） → MonoidBase.ProbeData.extension.margin / inclusion.supremum。Base、heightIntervals、原算术、实际高度／cap／成本图、height_bounds、cost_bounds、cost_le_scale 和 cost_old_factor 均已有。只继续源消费者需要的估计及严格 margin，不重复这些构造，不新建通用递归、Proof/Sat 或完整实数域。
 
 本轮复用复核：活动底座仍为 039c8e1，新版供体仍为 7979336，两者工作树干净。回读 Jensen/ZF/Model.lean:15 和 Jensen/ZF/Choice.lean:14，前提确为任意 M.Models ZF；不是 ZFSet 子类限制，也没有新增 L 证明任务。本轮不修改供体。新权重界直接消费已有 Raw 对象公式归纳、HeightFold/CostFold、interval 三图和 min 界；old-factor 直接抽取已有 EmbeddingLaws 字段和 HasOldGates，不重建 gate 或递归。
 
 原 Gate/成本/margin 消费：ConstructionProbeCostMargins.minimum_of_gate 直接调用 gate_dvd_old_iff；cost_le_gate 复用既有 minimum 成本界；outside-block 因子使用现成 gate_existence、EmbeddingLaws，old–old 严格 margin 直接消费 cost_old_factor 和旧 UniformMargins。原核 Syntax 中调用这些既有生产者，消去 ExitGates／HasOldGates／EmbeddingLaws／Word 单子前提；仅保留原实际字母表、Word／乘法／旧嵌入、旧条件并与保守性、权重方程和旧 margin 输入。没有重做 Gate、嵌入、归纳或实数算术。
 
 混合 margin／上确界批次：old–new 直接用既有 floor、inside_bounds、差值/max、cost_le_scale 和 outside-block 因子；new–old 直接调用原 generator 构造与 generator_dvd_of_head／generator_dvd_old_iff、旧 UniformMargins 和 cost_old_factor，等号分支取实际零切割。Word old_cost_supremum:515 复用现成 Family／Cap／exists_family／bounded_union／cap_unique，以旧成本不变嵌入和新成本的旧支配构造两边实际集合及公共唯一上确界；空集和无序端点不丢失。没有重建上确界设施，也没有增加域运算。
+
+完整 Word HeightCost 批次：正有理缩放通过既有 ConstructionFractionScaling.Times/order_iff 和 scaled_equiv 取得，公共分母和 native mul_add 给出分配；严格切割缩放由已有差值、正乘积和加法序反映推出。same-head 直接消费现成 generator 乘法／left_mul_dvd_iff 和 old_factor_of_other_block。统一证明只调用既有 Raw 对象公式归纳，atTarget 同时量化被比较词和两个高度值，覆盖非标准内部长度。最后调用既有 canonical_uniform，为所有新严格比较构造实际 Cap 和严格间隙，精确对应 DiagramOrder.HeightCost.margin:67；没有重证上确界设施。
+
+下一装配入口已经存在：ConstructionPersistentProfiles.exists_probe_successor:187 返回实际 W/unit/J/G/O、WordCarrier、MultiplicationGraph、左消去／conical／条件并、OldGraph／Conservative／HasOldGates 和全部旧 profile 的映射保持。应直接组合本批 exists_heightCost，核对原 ProbeData/Probe 字段；不新建一套扩张或 profile 归纳。

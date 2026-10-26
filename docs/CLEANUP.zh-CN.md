@@ -28,3 +28,5 @@ README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不
 本轮成本／old–old margin 批次：新增 2 模块、7 声明均有固定原消费者；保留并加入完整 Audit，无新持久生成脚本。全量验收成功后已按绝对路径／重解析点／哈希白名单删除 ProbeCostMarginsAudit.lean（626 字节），清单 verification/cleanup-probe-cost-margins-20261027.json；成功日志保留，358 项退役提案仍未执行。
 
 本轮 mixed margin／Word 上确界：6 模块、17 声明均对应固定原源；复用现成 generator、区间、差值/max 和 Family/Cap，不新增持久脚本。全量成功后已按路径／重解析点／SHA 白名单删除被 Audit 覆盖的 ProbeMixedMarginsAudit.lean（1577 字节），清单 verification/cleanup-probe-margins-supremum-20261027.json；活动的其他工程编译保留；358 项退役提案仍未执行。
+
+完整 Word HeightCost 批次：6 模块／19 声明均有实际源消费者并最终进入对象证书。原正自然 Scaling 保持原样；没有新增持久生成脚本或完整域支线。全量成功后已按路径／重解析点／SHA 白名单删除被 Audit 覆盖的 ProbeHeightCostAudit.lean（1579 字节），清单 verification/cleanup-probe-height-cost-20261027.json；358 项批量退役仍未执行。
