@@ -3486,7 +3486,9 @@ def main() -> None:
                                ("construction_fraction_difference", "ConstructionFractionDifference", 16),
                                ("construction_base_cost_bound", "ConstructionBaseCostBound", 25),
                                ("construction_base_height_gap", "ConstructionBaseHeightGap", 23),
-                               ("construction_probe_path", "ConstructionProbePath", 49)):
+                               ("construction_probe_path", "ConstructionProbePath", 49),
+                               ("construction_probe_transitions", "ConstructionProbeTransitions", 44),
+                               ("construction_probe_letters", "ConstructionProbeLetters", 41)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7496,7 +7498,11 @@ def main() -> None:
         "source_initial_base_le_iff_and_pair_joins_proved": True,
         "source_initial_base_algebra_native_kernel_certificate_proved": True,
         "source_probe_path_factor_terminal_graphs_and_laws_kernel_proved": True,
-        "source_probe_direct_limit_letters_and_extension_proved": False,
+        "source_probe_transition_graphs_directed_system_kernel_proved": True,
+        "source_probe_actual_direct_limit_quotient_and_projection_kernel_proved": True,
+        "source_probe_letter_equality_iff_common_stage_proved": True,
+        "source_probe_quotient_action_and_target_constructed": False,
+        "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

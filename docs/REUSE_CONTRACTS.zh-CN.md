@@ -105,8 +105,8 @@ Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad
 
 非负差批次：直接消费固定底座 Arithmetic/Comparison.lean 的 ordinalAddition_existsUnique_rightRemainder 和已有分数加法／主切割序反映，得到表示无关的唯一加法差及严格正差，回传既有 ModelTransfer 原核。源消费者是 Base.margin 的 height(y)-height(x)；其二进分数估计尚未证明。该消费者只需主切割算术及上确界界，不以构造完整实数域作为下一道门。
 
-原成本界批次：直接调用固定底座 ordinalExponentiation_values_mem_iff 和 ordinalAddition_isIncreasingOnOrdinals，配合已有自然数交换律、单位分数反序及主切割比较，迁移 Base.margin 第二分支。精确成本像集使用原生 Separation，cost(y) 给非空见证；上确界直接消费既有 bounded_union，未重建实数序、幂函数、集合像或完备性。原 MergerCones.UniformMargin.supremum_lt 的严格高度差前提仍待证明。
+原成本界批次：直接调用固定底座 ordinalExponentiation_values_mem_iff 和 ordinalAddition_isIncreasingOnOrdinals，配合已有自然数交换律、单位分数反序及主切割比较，迁移 Base.margin 第二分支。精确成本像集使用原生 Separation，cost(y) 给非空见证；上确界直接消费既有 bounded_union，未重建实数序、幂函数、集合像或完备性。该批仅成本界；后续已完成严格高度差并由 source_margin 消费，当前不再列为待证。
 
 完整 Base margin 批次：复用 native ordinalAddition_one_iff/two_iff、ordinalExponentiation_successor_iff 和已有结合／分配／比较，沿源两次倍增及幂次比较完成严格高度差。已证 principal_difference_exists/add_le_iff 将关系式加法转为实际差；missing_supremum_bound 提供精确成本上确界。最终 constructionSentence 直接调用既有 exists_bounded_weights 构造所有源数值数据，连同每个内部严格索引对的 margin 回传原核。Base 初始数值数学已完成；前文各批“未完成 margin”仅为对应模块当时的范围，不能再当当前待办。未新建有序域、算术核或修改供体。
 
-Probe Path 迁移：直接消费固定底座 FunctionConstruction.exists_setFunctionFromTo_of_denote、原生积和分离；源 factor/terminal 的选择由已有左消去律证明唯一，得到精确内部函数图。自反、复合、零点、终端兼容沿 ProbeWords 原证明，ModelTransfer 返回原核句子。没有新增对象选择、右消去或过渡映射单射假设。供体未修改；transition、直极限字母和实际扩张仍待源依赖迁移。
+Probe Path 迁移：直接消费固定底座 FunctionConstruction.exists_setFunctionFromTo_of_denote、原生积和分离；源 factor/terminal 的选择由已有左消去律证明唯一，得到精确内部函数图。自反、复合、零点、终端兼容沿 ProbeWords 原证明，ModelTransfer 返回原核句子。没有新增对象选择、右消去或过渡映射单射假设。供体未修改；transition/DirectedSystem 与实际直极限字母商、投影及共同阶段相等判据现已接通。类集合使用原生 Separation，商载体直接使用 Replacement.exists_functionalImage，投影仍用原生可定义函数图。原核存在句子从源 Path 出发，已消去等价关系定律前提；未重新建设通用商库。字母动作／target、正规形与实际扩张仍待迁移。

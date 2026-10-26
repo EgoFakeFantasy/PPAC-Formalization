@@ -112,3 +112,5 @@ Base 数值数据批次：只适配直接消费的 Dyadic 正分母、唯一性�
 完整 Base margin 批次：清除未使用局部绑定；正式 Audit 接管 23 项声明后按本仓绝对路径与 SHA-256 删除唯一临时探针 ConstructionBaseHeightGapAudit.lean，清单 verification/cleanup-base-margin-probe-20261026.json。当前覆盖表、缺口表及流程移除 margin 仍待证明的过时陈述，保留模块本身的准确证明范围。无新增持久脚本或无依据证明删除。
 
 Probe Path 批次：修正覆盖表把已完成强迫前端整体标为未迁移的错误描述，压缩第 8 阶段缺口表，删除复用表及 README.md 中 margin 仍待接的过时表述，两个 README 同步。正式 Audit 接管 49 项声明后删除唯一临时 ConstructionProbePathAudit.lean，SHA 清单为 verification/cleanup-probe-path-audit-20261026.json；无新持久脚本。编译前无 Lean/Lake 残留；未无依据删除仍有消费者的冻结证明。
+
+Probe 字母批次：删除未使用的局部前提和化简项；正式 Audit 覆盖 85 项声明后删除唯一临时 ConstructionProbeLettersAudit.lean，路径及 SHA 清单为 verification/cleanup-probe-letters-audit-20261026.json。拆开含糊的“字母和扩张”合并标志，分别记录字母已构造与扩张未完成。更新现行待办，移除已完成 transition／直极限字母仍待做的叙述；未新增持久脚本或修改供体，冻结模块依赖裁剪仍未完成。

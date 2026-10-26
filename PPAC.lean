@@ -397,3 +397,5 @@ import PPAC.Migration.ConstructionFractionDifference
 import PPAC.Migration.ConstructionBaseCostBound
 import PPAC.Migration.ConstructionBaseHeightGap
 import PPAC.Migration.ConstructionProbePath
+import PPAC.Migration.ConstructionProbeTransitions
+import PPAC.Migration.ConstructionProbeLetters
