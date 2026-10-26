@@ -97,18 +97,10 @@ Base 数值数据批次：实际复用新版 7979336 Descriptive/Dyadic 的 dyad
 
 分数比较批次：定位并直接调用固定底座 Ord/NaturalPrime.lean:497 的 Structure.natural_mul_comm，以及既有乘法结合、正因子严格递增、唯一性和内部 ω 闭包。交叉比较传递性只组合这些已有算术结果，不重建自然数乘法；载体由原生积和分离构造，上一批 weights_proper 直接证明原两图的值属于载体。单位分数比较的原核证书核对逆分母次序，与 Dyadic 消费者合同一致。比较对象是编码全预序，不把编码等号当作分数数值相等；后续已完成所需切割解释和 Base.margin；完整实数域不作为新的前置任务。
 
-分数稠密性批次直接调用固定底座 NaturalPrime 的 natural_add_comm、Arithmetic 的 ordinalMultiplication_add 与 ordinalAddition_isIncreasingOnOrdinals，构造中间分数 (a+c)/(b+d)。原核回传仍用已复用的 BMS 式 ModelTransfer。它是 Base 数值解释的前置合同，尚无已闭合的实数值源消费者；不把此辅助结果算作 Base.object 或完整阶段 8。新版 L 两端点本轮再次回读，供体 HEAD 仍为 7979336，相关文件无脏改动；没有重证或更改其模型范围。
+Base 数值解释的当前复用结果：原生 NaturalPrime、Arithmetic 的加法／乘法／幂、比较和右余项，已由 ConstructionFraction*、ConstructionRealCuts 和 ConstructionBaseHeightGap 消费到完整 Base.margin。分数密度、主切割、精确成本像上确界、严格高度差及实际两张图都已完成；原生 Separation、PowerSet、Union 与可定义函数图承担集合构造。此前“尚未闭合实数值消费者／margin”的批次说明撤出当前待办；不扩建当前源消费者不需要的完整实数域。
 
-切割表示批次：ConstructionRealCuts 直接使用底座 Separation、PowerSet、Union 与原 extensionality，不建立新集合后端。ConstructionCutWeights 调用 exists_setFunctionFromTo_of_denote 收集由唯一主切割定义的两张实际函数图，调用原自然数乘零／乘一和已证 ProperFraction 得到严格正性、单位上界。上一批密度被 principal_cut 的 roundedness 实际消费；本批切割被源 Base 两张值图实际消费。三项原核证书使用现成 ModelTransfer；不抽取宿主值函数，不假设外部标准 ω，不宣称已接完整实数域或 margin。
+Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影、动作、target 与 exit 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成 Representatives 同时表示 D×Letters，不重建积或商库。动作良定义／单射和 target 等变性已验收，过渡映射不要求单射。
 
-加法批次：直接复用 Arithmetic/Algebra 的乘法结合／分配律、NaturalPrime 的交换律、Arithmetic/Normal 的加法严格单调和非零乘积界，配合现有 mul_swap/mul_le_iff；未引入外部标准 Nat、宿主数值函数或新算术后端。消去同一正分母后再消去共同加项，证明加法比较的双条件，随后用现有 principal_eq_iff 消去编码选择。ConstructionPrincipalAddition 实际消费 ConstructionCutWeights 的 Graph/Value，给原 height/cost 值的加法存在唯一性单独原核证书。未声称所有切割已可相加或 margin 已完成。
+Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。下一消费者为原 Raw/Word 正规形及 Probe 扩张。
 
-非负差批次：直接消费固定底座 Arithmetic/Comparison.lean 的 ordinalAddition_existsUnique_rightRemainder 和已有分数加法／主切割序反映，得到表示无关的唯一加法差及严格正差，回传既有 ModelTransfer 原核。源消费者是 Base.margin 的 height(y)-height(x)；其二进分数估计尚未证明。该消费者只需主切割算术及上确界界，不以构造完整实数域作为下一道门。
-
-原成本界批次：直接调用固定底座 ordinalExponentiation_values_mem_iff 和 ordinalAddition_isIncreasingOnOrdinals，配合已有自然数交换律、单位分数反序及主切割比较，迁移 Base.margin 第二分支。精确成本像集使用原生 Separation，cost(y) 给非空见证；上确界直接消费既有 bounded_union，未重建实数序、幂函数、集合像或完备性。该批仅成本界；后续已完成严格高度差并由 source_margin 消费，当前不再列为待证。
-
-完整 Base margin 批次：复用 native ordinalAddition_one_iff/two_iff、ordinalExponentiation_successor_iff 和已有结合／分配／比较，沿源两次倍增及幂次比较完成严格高度差。已证 principal_difference_exists/add_le_iff 将关系式加法转为实际差；missing_supremum_bound 提供精确成本上确界。最终 constructionSentence 直接调用既有 exists_bounded_weights 构造所有源数值数据，连同每个内部严格索引对的 margin 回传原核。Base 初始数值数学已完成；前文各批“未完成 margin”仅为对应模块当时的范围，不能再当当前待办。未新建有序域、算术核或修改供体。
-
-Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原生可定义函数图构造；类集合使用 Separation，商载体使用 Replacement.exists_functionalImage，投影和动作／target 都使用 FunctionConstruction.exists_setFunctionFromTo_of_denote。现成代表元积构造同时用于 D×Letters，不重建积或通用商库。动作良定义／单射消费已有共同阶段兼容／消去；target 下降消费 factor_terminal 与函数图唯一性。原核存在句子从原 Path 出发构造全部数据，未把商、动作、target 或其定律作为假设。供体未修改。
-
-下一消费者是原 exit 与 head_separation 所需的 dvd_target_of_inCone，再组装 Alphabet；其余锥定律、字母基数界按实际扩张消费者接入，不因它们在源文件中较早出现而一律作为 Alphabet 的前置。字正规形与扩张仍未完成。后续 letters_cardinal_le 需另按源基数合同适配：已核对 ForcingSupportSize.small_image 要求 Permutation，不能直接套到非单射商投影；这一接口限制不表示底座缺少相关数学，也不授权重造基数后端。
+剩余锥交、初始 profile 和字母基数界只按原消费者接入。ForcingSupportSize.small_image 要求置换，不能用于任意非单射商投影；不能据此误报底座缺少基数数学或另建基数后端。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
