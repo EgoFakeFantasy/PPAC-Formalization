@@ -31207,3 +31207,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeAlphabet.inCone
 #print axioms PPAC.Migration.ConstructionProbeAlphabet.inCone_freeClosed
 #print axioms PPAC.Migration.ConstructionProbeAlphabet.inCone_semantics
+
+#print axioms PPAC.Migration.ConstructionProbeCones.ConeLaws
+#print axioms PPAC.Migration.ConstructionProbeCones.FiniteCone
+#print axioms PPAC.Migration.ConstructionProbeCones.InitialProfile
+#print axioms PPAC.Migration.ConstructionProbeCones.JoinProperty
+#print axioms PPAC.Migration.ConstructionProbeCones.coneLaws
+#print axioms PPAC.Migration.ConstructionProbeCones.coneLaws_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeCones.coneLaws_semantics
+#print axioms PPAC.Migration.ConstructionProbeCones.cone_laws
+#print axioms PPAC.Migration.ConstructionProbeCones.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeCones.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionProbeCones.construction_models
+#print axioms PPAC.Migration.ConstructionProbeCones.finiteCone
+#print axioms PPAC.Migration.ConstructionProbeCones.finiteCone_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeCones.finiteCone_semantics
+#print axioms PPAC.Migration.ConstructionProbeCones.inCone_intersection
+#print axioms PPAC.Migration.ConstructionProbeCones.inCone_letter_iff
+#print axioms PPAC.Migration.ConstructionProbeCones.inCone_of_dvd
+#print axioms PPAC.Migration.ConstructionProbeCones.initialProfile
+#print axioms PPAC.Migration.ConstructionProbeCones.initialProfile_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeCones.initialProfile_semantics
+#print axioms PPAC.Migration.ConstructionProbeCones.initial_profile
+#print axioms PPAC.Migration.ConstructionProbeCones.joinProperty
+#print axioms PPAC.Migration.ConstructionProbeCones.joinProperty_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeCones.joinProperty_semantics
+#print axioms PPAC.Migration.ConstructionProbeCones.old_common_multiple_of_cones
+#print axioms PPAC.Migration.ConstructionProbeCones.one_inCone
+
+#print axioms PPAC.Migration.ConstructionProbeCardinality.boundSentence
+#print axioms PPAC.Migration.ConstructionProbeCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ConstructionProbeCardinality.bound_models
+#print axioms PPAC.Migration.ConstructionProbeCardinality.indexed_quotient_bound
+#print axioms PPAC.Migration.ConstructionProbeCardinality.letters_cardinal_le

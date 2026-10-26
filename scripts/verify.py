@@ -3491,7 +3491,9 @@ def main() -> None:
                                ("construction_probe_letters", "ConstructionProbeLetters", 41),
                                ("construction_probe_action", "ConstructionProbeAction", 35),
                                ("construction_probe_target", "ConstructionProbeTarget", 22),
-                               ("construction_probe_alphabet", "ConstructionProbeAlphabet", 28)):
+                               ("construction_probe_alphabet", "ConstructionProbeAlphabet", 28),
+                               ("construction_probe_cones", "ConstructionProbeCones", 26),
+                               ("construction_probe_cardinality", "ConstructionProbeCardinality", 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -7507,7 +7509,7 @@ def main() -> None:
         "source_probe_quotient_action_and_target_constructed": True,
         "source_probe_action_identity_composition_injective_and_target_equivariant_kernel_proved": True,
         "source_probe_exit_equivariance_dvd_target_and_head_separation_kernel_proved": True,
-        "source_probe_full_cone_intersection_profile_and_cardinal_bounds_proved": False,
+        "source_probe_full_cone_intersection_profile_and_cardinal_bounds_proved": True,
         "source_probe_alphabet_constructed": True,
         "source_probe_extension_monoid_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,

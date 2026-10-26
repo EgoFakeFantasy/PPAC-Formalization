@@ -402,3 +402,5 @@ import PPAC.Migration.ConstructionProbeLetters
 import PPAC.Migration.ConstructionProbeAction
 import PPAC.Migration.ConstructionProbeTarget
 import PPAC.Migration.ConstructionProbeAlphabet
+import PPAC.Migration.ConstructionProbeCones
+import PPAC.Migration.ConstructionProbeCardinality

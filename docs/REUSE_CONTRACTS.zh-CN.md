@@ -103,4 +103,6 @@ Probe Path／字母复用：factor/terminal 由左消去保证唯一，使用原
 
 Alphabet 的实际消费者：ConstructionProbeAlphabet 直接消费上述动作、target 和 TargetLaws；exit(s)=target(s)*d，锥见证的 target 给整除见证，左消去与源 conical 条件给 head_separation。原 d≠unit 前提保留。存在句子构造全套图和字母表定律并回传现有 ModelTransfer 原核；不是把分离定律留作未证字段。下一消费者为原 Raw/Word 正规形及 Probe 扩张。
 
-剩余锥交、初始 profile 和字母基数界只按原消费者接入。ForcingSupportSize.small_image 要求置换，不能用于任意非单射商投影；不能据此误报底座缺少基数数学或另建基数后端。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
+锥与大小界的实际复用：ConstructionProbeCones 消费已有 letter_eq_iff、letter_transition、动作及 TableLaws，沿源共同阶段计算取得锥交、共同倍数与 initial_profile；对应消费者为 old_cone_intersection/common_multiple_reflection/probe_old_profile、ProbeMargins 和 ProbePresentations。ConstructionProbeCardinality 直接调用已复用的 ExistingCardinalBounds.infinite_product_l 及固定底座 Card/Cofinality/Comparison.lean:103 的 exists_rightInverseInjection_of_surjection_from_ordinal。先给实际代表元积编号，再将商投影延拓到基数，底座最小原像定理给反向单射；空商独立处理。没有重证基数乘法、最小原像定理或引入对象选择。
+
+ForcingSupportSize.small_image 的置换前提不适用于任意商投影；本批用上述现成序数接口解决了实际消费者，而非新增基数后端。剩余为原 Raw/Word 正规形、它们的大小界及实际扩张。冻结的 NatPacket、泛滤真值与独立 L 重建路线继续停用。
