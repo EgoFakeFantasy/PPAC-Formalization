@@ -2568,7 +2568,10 @@ def main() -> None:
                                ("construction_probe_pushout", "ConstructionProbePushout", 15),
                                ("construction_probe_pushout_syntax", "ConstructionProbePushoutSyntax", 15),
                                ("construction_probe_letter_floor", "ConstructionProbeLetterFloor", 20),
-                               ("construction_probe_letter_floor_syntax", "ConstructionProbeLetterFloorSyntax", 12)):
+                               ("construction_probe_letter_floor_syntax", "ConstructionProbeLetterFloorSyntax", 12),
+                               ("construction_cut_addition", "ConstructionCutAddition", 21),
+                               ("construction_probe_cost_bounds", "ConstructionProbeCostBounds", 7),
+                               ("construction_probe_cost_bounds_syntax", "ConstructionProbeCostBoundsSyntax", 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6215,6 +6218,8 @@ def main() -> None:
         "source_probe_successor_profile_preservation_proved": True,
         "source_probe_simulation_pushout_proved": True,
         "source_probe_letter_floor_graph_and_order_bounds_proved": True,
+        "source_probe_inside_outside_cost_bounds_from_old_point_bound_proved": True,
+        "source_probe_actual_old_HeightCost_PointBound_instantiated": False,
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,
