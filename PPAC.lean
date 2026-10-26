@@ -446,3 +446,5 @@ import PPAC.Migration.ConstructionProbeLetterFloorSyntax
 import PPAC.Migration.ConstructionCutAddition
 import PPAC.Migration.ConstructionProbeCostBounds
 import PPAC.Migration.ConstructionProbeCostBoundsSyntax
+import PPAC.Migration.ConstructionBasePointBound
+import PPAC.Migration.ConstructionBasePointBoundSyntax

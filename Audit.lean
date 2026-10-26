@@ -29840,3 +29840,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeCostBoundsSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeCostBoundsSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionProbeCostBoundsSyntax.construction_kernel_certificate
+
+-- Existing full Base margin adapted to the probe PointBound, on the same graphs.
+#print axioms PPAC.Migration.ConstructionBasePointBound.sum_left_le
+#print axioms PPAC.Migration.ConstructionBasePointBound.sum_right_le
+#print axioms PPAC.Migration.ConstructionBasePointBound.principal_add_bound
+#print axioms PPAC.Migration.ConstructionBasePointBound.bound_inputs_mono
+#print axioms PPAC.Migration.ConstructionBasePointBound.cost_value_exists
+#print axioms PPAC.Migration.ConstructionBasePointBound.base_point_bound
+#print axioms PPAC.Migration.ConstructionBasePointBound.exists_base
+#print axioms PPAC.Migration.ConstructionBasePointBoundSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionBasePointBoundSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionBasePointBoundSyntax.construction_kernel_certificate

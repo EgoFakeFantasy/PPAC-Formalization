@@ -80,7 +80,8 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 专用 factors_of_old/gates 尚待迁移 |
 | 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
 | letterFloor 与高度像集 | ConstructionRealCuts.bounded_union；ZF.separation_exists_d / exists_setFunctionFromTo_of_denote；dvd_target_of_inCone、one_inCone | 已构造所有字母的实际图与上下界；旧高度正性／单调性保留。后续具体切割运算与 intervals 尚未迁移，不把上确界存在误报为完整 margin |
-| Probe 锥内／锥外 cost 界 | 既有 FractionAddition.Sum／sum_right_lt_iff、Separation、ConditionalJoins、ConeLaws、floor 图及原核 ModelTransfer | 本批构造有界和切割并沿源证明推导两界；原旧 PointBound 输入保留。具体 HeightCost 的输入实例及严格统一间隙、intervals 仍待接通 |
+| Probe 锥内／锥外 cost 界 | 既有 FractionAddition.Sum／sum_right_lt_iff、Separation、ConditionalJoins、ConeLaws、floor 图及原核 ModelTransfer | 已有有界和切割及两界；一般旧 PointBound 输入保留，初始 Base 的该输入已由本批消去。后继 HeightCost、一般严格区间仍待接通 |
+| 初始 Base 的 PointBound | ConstructionBaseHeightGap.cut_gap/source_margin；ConstructionBaseCostBound.missing_cost_bound；原生自然数算术；既有实际图构造器 | 本批在同一组图上保留完整严格 margin 并给出 PointBound；只做所需加法界适配，不重证 Base 或声称任意加法全等价 |
 | 全部对象层证书收尾 | 既有 ModelTransfer.derives/project_models_iff，复用 BMS 式原核 strong_completeness 路径 | 需所有对应 Type 0 模型的前提；不能用单个具体模型替代；没有另建完备性核 |
 
-下一必要消费者是 ProbeMargins.extensionHeightCost / extension_old_cost_supremum → MonoidBase.ProbeData.extension.margin / inclusion.supremum。letterFloor 图及上下界现已消费切割上确界和原生函数图。条件式 inside/outside cost 与实际和切割现已接通。下一步接具体旧 HeightCost 的点界及严格统一间隙、intervals，随后使用 Raw 递归与 Gate；只补固定源证明所需的具体运算和不变量适配，不重建整套实数或序列基础。
+下一必要消费者是 ProbeMargins.extensionHeightCost / extension_old_cost_supremum → MonoidBase.ProbeData.extension.margin / inclusion.supremum。letterFloor 图及上下界现已消费切割上确界和原生函数图。条件式 inside/outside cost 与实际和切割现已接通。初始 Base 的点界与完整严格 margin 已接通。下一步是一般严格区间及 intervals，随后使用 Raw 递归与 Gate 构造后继 HeightCost；只补固定源证明所需的具体运算和不变量适配，不重建整套实数或序列基础。
