@@ -561,3 +561,6 @@ import PPAC.Migration.ConstructionMergerWordWeightsSyntax
 import PPAC.Migration.ConstructionMergerWordMargins
 import PPAC.Migration.ConstructionMergerWordHeightCost
 import PPAC.Migration.ConstructionMergerWordHeightCostSyntax
+import PPAC.Migration.ConstructionMergerCardinality
+import PPAC.Migration.ConstructionMergerParent
+import PPAC.Migration.ConstructionMergerParentSyntax

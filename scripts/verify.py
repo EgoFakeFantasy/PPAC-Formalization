@@ -2177,7 +2177,10 @@ def main() -> None:
                                ('construction_merger_word_weights_syntax', 'ConstructionMergerWordWeightsSyntax', 3),
                                ('construction_merger_word_margins', 'ConstructionMergerWordMargins', 9),
                                ('construction_merger_word_heightCost', 'ConstructionMergerWordHeightCost', 1),
-                               ('construction_merger_word_heightCost_syntax', 'ConstructionMergerWordHeightCostSyntax', 3)):
+                               ('construction_merger_word_heightCost_syntax', 'ConstructionMergerWordHeightCostSyntax', 3),
+                               ('construction_merger_cardinality', 'ConstructionMergerCardinality', 5),
+                               ('construction_merger_parent', 'ConstructionMergerParent', 1),
+                               ('construction_merger_parent_syntax', 'ConstructionMergerParentSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5610,7 +5613,11 @@ def main() -> None:
         "source_merger_word_all_old_pairs_exact_missed_cost_family_and_cap_proved": True,
         "source_merger_word_snoc_existential_witness": "room*(unit/4); literal source weight formulas unchanged",
         "source_merger_word_old_cost_supremum_proved": True,
-        "source_merger_complete_weighted_extension_package_proved": False,
+        "source_merger_complete_weighted_extension_package_proved": True,
+        "source_merger_cardinality_from_same_actual_copies_and_Raw_proved": True,
+        "source_merger_cardinality_is_conditional_output_not_construction_premise": True,
+        "source_merger_same_original_parent_weighted_request_producer_proved": True,
+        "source_merger_same_old_inclusion_marked_nonunit_and_height_cost_preserved": True,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

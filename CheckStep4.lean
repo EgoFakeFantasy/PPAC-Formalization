@@ -11270,4 +11270,12 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionMergerWordHeightCostSyntax.constructionSentence) :=
   ConstructionMergerWordHeightCostSyntax.construction_kernel_certificate
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerCardinality.boundSentence) :=
+  ConstructionMergerCardinality.bound_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerParentSyntax.constructionSentence) :=
+  ConstructionMergerParentSyntax.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

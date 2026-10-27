@@ -27645,3 +27645,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerCardinality.copies_cardinal_le
+#print axioms PPAC.Migration.ConstructionMergerCardinality.merger_cardinal_le
+#print axioms PPAC.Migration.ConstructionMergerCardinality.boundSentence
+#print axioms PPAC.Migration.ConstructionMergerCardinality.bound_models
+#print axioms PPAC.Migration.ConstructionMergerCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerParent.exists_system
+#print axioms PPAC.Migration.ConstructionMergerParentSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerParentSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerParentSyntax.construction_kernel_certificate
