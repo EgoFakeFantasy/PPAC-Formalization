@@ -27540,3 +27540,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMargin.half_strict
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMargin.CoordinateBound
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMargin.copies_coordinate_margin
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.construction_kernel_certificate

@@ -11250,4 +11250,8 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionMergerAverageGapSyntax.constructionSentence) :=
   ConstructionMergerAverageGapSyntax.construction_kernel_certificate
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerCoordinateMarginSyntax.constructionSentence) :=
+  ConstructionMergerCoordinateMarginSyntax.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -544,3 +544,6 @@ import PPAC.Migration.ConstructionMergerHeightUpperSyntax
 
 import PPAC.Migration.ConstructionMergerAverageGap
 import PPAC.Migration.ConstructionMergerAverageGapSyntax
+
+import PPAC.Migration.ConstructionMergerCoordinateMargin
+import PPAC.Migration.ConstructionMergerCoordinateMarginSyntax

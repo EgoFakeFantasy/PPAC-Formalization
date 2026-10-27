@@ -2164,7 +2164,9 @@ def main() -> None:
                                ('construction_merger_height_upper', 'ConstructionMergerHeightUpper', 9),
                                ('construction_merger_height_upper_syntax', 'ConstructionMergerHeightUpperSyntax', 3),
                                ('construction_merger_average_gap', 'ConstructionMergerAverageGap', 9),
-                               ('construction_merger_average_gap_syntax', 'ConstructionMergerAverageGapSyntax', 3)):
+                               ('construction_merger_average_gap_syntax', 'ConstructionMergerAverageGapSyntax', 3),
+                               ('construction_merger_coordinate_margin', 'ConstructionMergerCoordinateMargin', 3),
+                               ('construction_merger_coordinate_margin_syntax', 'ConstructionMergerCoordinateMarginSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5586,6 +5588,7 @@ def main() -> None:
         "source_merger_copies_average_height_mono_strictMono_and_cost_unit_bound_proved": True,
         "source_merger_copies_average_height_lt_canonical_unit_proved": True,
         "source_merger_copies_average_coordinate_gap_proved": True,
+        "source_merger_copies_coordinate_margin_proved": True,
         "source_merger_copies_average_product_heightCost_proved": False,
         "source_merger_complete_weighted_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,

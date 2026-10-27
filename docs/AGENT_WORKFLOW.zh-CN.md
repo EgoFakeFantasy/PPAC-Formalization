@@ -2,7 +2,7 @@
 
 阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
 
-**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已有；6 接口未闭合；7 条件式前端已有；主开发在 8。原父输入 ProbeData 已完成；Merger 实际 copies／Word／旧嵌入／profile／根、坐标图及两张权重函数图已有；高度／成本正性、高度<1、各副本成本界、平均高度严格单调和成本单位界已有原核证书。平均坐标差/n≤平均高度差也已有原核证书。剩余每坐标遗漏成本 margin、统一 margin、完整加权 Merger、Placement／Hull 和最终单子；9–11 未完成。不是前七阶段全过，也不是收尾。**
+**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已有；6 接口未闭合；7 条件式前端已有；主开发在 8。原父输入 ProbeData 已完成；Merger 实际 copies／Word／旧嵌入／profile／根、坐标图及两张权重函数图已有；高度／成本正性、高度<1、各副本成本界、平均高度严格单调和成本单位界已有原核证书。平均坐标差/n≤平均高度差也已有原核证书。每坐标整类遗漏成本 margin 现也已有原核证书。剩余有限统一 margin、完整加权 Merger、Placement／Hull 和最终单子；9–11 未完成。不是前七阶段全过，也不是收尾。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；InterpretedZF 已消费全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | Base、Path／Alphabet／Word、呈现／保守性／条件并／profile／pushout、完整 Probe Word HeightCost 和原父输入 ProbeData 已验收；Merger 同一实际 copies／Word／乘法／左消去单子／conical／条件并、旧嵌入／gates／profile／根已有；两张坐标图、实际有限平均／min 乘积除法权重图、四个逐点 HeightCost 界、cap／每个表示副本成本界、平均高度单调／严格单调、平均坐标间隙均有原核证书 | 每坐标遗漏成本 margin、完整统一严格上确界 margin 及同一父系统的完整 copies HeightCost；Merger Word 权重／margin／旧上确界、基数界、完整加权 MergerData；Placement／ConservativeHull 和最终饱和单子。完整阶段未完成 |
+| 8 | 源代数／构造核心 | Base、Path／Alphabet／Word、呈现／保守性／条件并／profile／pushout、完整 Probe Word HeightCost 和原父输入 ProbeData 已验收；Merger 同一实际 copies／Word／乘法／左消去单子／conical／条件并、旧嵌入／gates／profile／根已有；两张坐标图、实际有限平均／min 乘积除法权重图、四个逐点 HeightCost 界、cap／每个表示副本成本界、平均高度单调／严格单调、平均坐标间隙及每坐标整类遗漏成本 margin 均有原核证书 | 有限统一严格上确界 margin 及同一父系统的完整 copies HeightCost；Merger Word 权重／margin／旧上确界、基数界、完整加权 MergerData；Placement／ConservativeHull 和最终饱和单子。完整阶段未完成 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
