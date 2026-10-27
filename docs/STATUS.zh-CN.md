@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-本批父提交 `2d020f1`；已批准清理提交为 `53b5b17`，阶段编号取自最初 `f28b0334a740108057adf18a24dc11abd866efbe`。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 原范围已验收，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾。**
+本批父提交 `0ef84fc`；已批准清理提交为 `53b5b17`，阶段编号取自最初 `f28b0334a740108057adf18a24dc11abd866efbe`。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 原范围已验收，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾。**
 
 | 原阶段 | 已有／已验收 | 真正剩余 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 5 内部基础 | 集合、图、ω、序列、递归、名字及作用 | 基础已完成，后续消费，不重建 |
 | 6 背景／L | 完整任意模型 L/ZFC 已复用到固定底座；原生及源语言的逐公理／全模式 L 相对化原核证书、Choice、全局序、非空性已取得。ConstructibleSource 实际接通域公式与 InterpretedZF，解释背景／非空前提已消去；同一 universe，无额外对象 Choice／不可达 | 最初固定背景／universe、逐实例 Derives、不加不可达的验收门已完成，不再列作待做。全部内部／非标准 Proof/Con 归约属于 10；本阶段完成不等于最终 Con |
 | 7 强迫前端 | 七个固定 ZF 公理及全部模式有原核证书；实际作用／正规滤子／全秩 HS 合同已有 | 由 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整 Base／加权 ProbeData／MergerData；实际加权极限及通用性质、完整保守／profile／Cap／条件基数结论；实际后继／fromBase／原请求见证；全部 Request 集、穷尽 Schedule／Place、内部良序；现已从原单子父输入实际构造规范坍缩、逆图、序型上的调度／位置图及实际末阶段，保留全部请求和严格先后关系，均有原核证书 | 同一选中后继的全部旧阶段新腿族、完整字段／现有自然性保持与精确 inclusion 方程已接通；原生序数追加已构造新载体和自身恒等腿。Under M 极限的同一加权对象／全腿族／唯一 fromBase／全部三角交换已接通，源 hP 的函数类型已纠正并由实际转移 profile 不变量导出。原请求基数界尚待实例化；初始／后继／极限规范记录现已在原父输入下分别总且唯一，共用九字段，完整 incoming family 均包含当前自身恒等腿；须将完整有效历史／全部转移表与这些实际分支实例化为原生内部递归的统一算子，接成实际塔，证明全塔时间／fromBase_naturality／map_succ，再接 CompleteRounds／SaturatedMonoids。Placement／Hull 按实际消费者接入；完整阶段未完成 |
+| 8 构造核心 | 完整 Base／加权 ProbeData／MergerData；实际加权极限及通用性质、完整保守／profile／Cap／条件基数结论；实际后继／fromBase／原请求见证；全部 Request 集、穷尽 Schedule／Place、内部良序；现已从原单子父输入实际构造规范坍缩、逆图、序型上的调度／位置图及实际末阶段，保留全部请求和严格先后关系，均有原核证书 | 同一选中后继的全部旧阶段新腿族、完整字段／现有自然性保持与精确 inclusion 方程已接通；原生序数追加已构造新载体和自身恒等腿。Under M 极限的同一加权对象／全腿族／唯一 fromBase／全部三角交换已接通，源 hP 的函数类型已纠正并由实际转移 profile 不变量导出。原请求基数界尚待实例化；初始／后继／极限规范记录现已在原父输入下分别总且唯一，共用九字段，完整 incoming family 均包含当前自身恒等腿；记录历史的九张字段函数、实际内部 J×J 上全转移矩阵及序数原 IndexLaws 现已构造；仍须证明完整代数／profile／复合／base 自然性历史不变量与保持，并将这些实际分支实例化为原生内部递归的统一算子，接成实际塔，证明全塔时间／fromBase_naturality／map_succ，再接 CompleteRounds／SaturatedMonoids。Placement／Hull 按实际消费者接入；完整阶段未完成 |
 | 9 模型应用 | Models 固定源已锁定 | 同一系统的全秩 SVC、ACwo、商单射和非选择见证 |
 | 10 Main／内部 Con | 源 Main 链、Con 规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查关系及全部内部矛盾码归约、最终闭句 |
 | 11 终验 | 现成审计工具可复用 | 最终主定理验收未开始 |
@@ -22,19 +22,15 @@
 
 第 6 阶段已在提交 c7b963d 按最初 f28b033 第 6 行验收门完成：同一任意原生 ZF 模型内部的完整 L/ZFC、全部原生／源公理与模式、Choice、全局序和非空都有原核相对化证书；既有 InterpretedZF 的背景和非空前提已被 ConstructibleSource 实际消去。版本、域公式、全模式和背景消费均不再列为待做。原验收记录 l-source-acceptance.json 保留；这仍不是全部内部 Proof/Con 证明。
 
-本批继续原第 8 阶段，把已有初始对象、选中完整后继及规范 Under-base 极限消费为同一种原生 Kuratowski 九字段阶段记录：六项 Object 数据、完整 incoming family、fromBase、内部阶段时刻。三个分支在各自原父输入下均已实际构造记录并证明唯一；不是另建编码器或递归核。
+本批继续原第 8 阶段，直接消费既有九字段 Pack 及原生 functionalImage／set-function／relation／cartesian-product 构造。ConstructionTowerHistory 从实际内部集合图 S 提取 Domains、Muls、Units、Marks、Heights、Costs、Incoming、Origins、Times 九张函数图，逐行证明它们解码为同一个原阶段记录。没有重建编码器、递归核或按宿主自然数索引历史。
 
-ConstructionTowerCanonicalLimit 直接用保留的规范代表集／商载体／投影／乘法图／unit／mark／height／cost／cocone 方程证明原极限八项输出字面相等，再消费既有 fromBase 精确唯一性。已有 KP.exists_successor／successor_isOrdinal 与原 self-append 追加当前自身恒等腿，记录时刻为内部 J；没有另选同构极限或引入另一套 class choice。共享 self_unique 被极限和后继两个实际消费者复用。
+Records J S 的前提是：S 为定义域 J 上的实际函数，每个值为原九字段记录，且记录的 time 字段等于内部索引。当前 time_identity 是在这个明确前提下得到的恒等图；它不代替实际递归塔上时间不变量的归纳证明。row_unique／field_unique／chart_unique 消去多重字段表示，charts_decode 从九张实际图恢复同一个原记录；records_restrict 保留前段记录。
 
-ConstructionTowerInitial 直接调用原 identity graph／constant function；完整 Conservative／乘法／单位／mark／height／cost／OldSuprema 和 profile 自映射字段已证明，不能只以恒等图代替完整 Hom。全配对成本 cap 直接消费已有 Family／bounded_union／cap_unique，没有新造上确界或实数后端。实际单阶段 incoming family、零阶段 base 三角交换及源 ordinal-one／空集类型均保留，记录时刻准确为对象 zero；给定原 X0 是源初始化参数，不是重做 Base M。
+ConstructionTowerTransitions 从阶段 j 已存的 incoming family 构造全矩阵 F，定义域 P 是原生构造的实际 J×J。IncomingRows 的准确前提是该族的定义域为内部 j 的后继，含 j 自身。i≤j 时 matrix_at 精确等于目标记录保存的第 i 条腿；其余索引对取固定 zero，仅用于整张矩阵的总定义，不进入有效转移。Order 实际构造 J 上的非严格成员关系，保留真实关系类型；矩阵／索引关系均有字面唯一性。对任意内部序数 J，现成 membership linear order 给出原 IndexLaws，包括全部公共上界，不要求外部良基或标准 ω。
 
-ConstructionTowerCanonicalSuccessor 实际消费同一个选中 raw 后继、全部旧腿更新与原 self-append；raw tuple 单射、原完整腿族唯一性及共享 self_unique 给出唯一规范记录。完整 incoming family 的定义域为 J 的实际后继，含自身恒等腿；记录时刻为实际内部 J。WeightFamily 明确保留函数图类型，不容许非关系杂项；原请求见证仍由同一 Extended 保留。
+extraction_kernel_certificate 为纯 forall2 nativeZF 原核证书；construction_kernel_certificate 为纯 forall3 nativeZF 原核证书，实际构造同一九张字段图、索引关系 E、积载体 P 和全转移矩阵 F，并保留条件式序数 IndexLaws。72 项显式声明（History 35、Transitions 37）已通过定向编译与 --trust=0 逐项预审，均只消费此前已有依赖。scripts/verify.py 正式全量验收已通过：2834 项构建、30848 项声明审计（1538 项无公理依赖、29310 项有记录依赖），九命令／五次 trust=0 均退出 0，零警告；2398 份当前验收指纹与 75 份固定源哈希均匹配。此前 30776 项足迹逐项不变，无新增公理或可信依赖；底座和供体干净。
 
-三项原核端点：初始 pure forall12 与极限 pure forall20 为 nativeZF 原核证书；后继 pure forall33 是 nativeZF 中同一 L 相对化证书，由已完成 L/order 生产者消去顺序前提。分别使用 10／35／40 项已记录依赖，无新增公理或可信依赖。三个模块新增 34 项显式声明（规范极限 14、初始 11、规范后继 9）。定向编译、--trust=0 预审和 scripts/verify.py 全部通过：2832 项构建、30776 项声明（1526 项无公理依赖、29250 项有记录依赖），九命令／五次 trust=0 均退出 0，零警告。2396 份当前指纹与 75 份固定源哈希匹配；原 30742 项足迹逐项不变，底座和供体干净。
-
-三个分支的 incoming family 定义域已经统一到包含当前自身，初始 Value 明确保留完整 ObjectFields，极限的自身腿直接消费现成追加。临时 34 声明预审源按绝对路径、完整内容、非重解析点与 SHA 白名单删除，成功日志及 tower-packets-acceptance.json 保留；没有新增持久生成脚本或服务。
-
-**这完成的是三个实际分支记录的存在／唯一性，不是完整塔。** 原父输入尚须从完整有效历史／全部转移表中提取，并把实际分支接成原生递归的总且唯一算子，之后证明全塔时间／fromBase_naturality／map_succ。三种记录的单值性、完整加权极限、L／全模式和递归数学不再列为待做；原请求基数界、CompleteRounds／SaturatedMonoids、9–11 阶段及最终内部 Con 仍未完成。
+完整有效历史的 Object／全 Hom／profile／恒等／复合／fromBase 自然性还须实例化并证明由三个分支保持，再装配已有原生内部递归。原请求基数界、CompleteRounds／SaturatedMonoids、9–11 阶段和最终内部 Con 仍未完成。字段／全转移表构造和内部序数原 IndexLaws 不再列为缺失的基础设施；整个第 8 阶段仍未完成。
 
 ## 复用裁决和剩余顺序
 
@@ -52,6 +48,6 @@ ConstructionTowerCanonicalSuccessor 实际消费同一个选中 raw 后继、全
 
 既往 partial 模块、被合并入口及临时 Audit／专属缓存的清理证据保存在 verification/cleanup-probe-*.json 与 cleanup-merger-*.json；状态页不再将历史清理反复列为本批结果。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；不干预其他项目。
 
-本批临时 34 声明 preaudit 源已由正式审计覆盖并按路径／完整内容／SHA 清理，证据在 tower-packets-acceptance.json。没有新增持久生成脚本或后台服务；编译已退出，不干预其他项目进程。
+前批临时 34 声明 preaudit 源已清理，证据在 tower-packets-acceptance.json。本批仅新增必要的两个证明模块；72 声明临时预审源已在正式验收覆盖后按精确路径／完整内容／非重解析点／SHA 白名单清理，成功日志保留，证据见 tower-history-acceptance.json。不新增持久生成脚本或后台服务，不干预其他项目进程。
 
 Agent 广场当前未连通，本轮 GET／POST 未成功，经验未同步，也未直接修改数据；恢复可双击 C:/Users/17857/AgentPlaza/启动广场.bat。未推送或发布。

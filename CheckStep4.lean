@@ -11435,4 +11435,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionTowerCanonicalSuccessor.constructionSentence)) :=
   ConstructionTowerCanonicalSuccessor.construction_kernel_certificate
 
+-- Actual native graph construction from ALL internally indexed record histories.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistory.extractionSentence) :=
+  ConstructionTowerHistory.extraction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerTransitions.constructionSentence) :=
+  ConstructionTowerTransitions.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
