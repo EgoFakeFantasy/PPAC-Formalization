@@ -2217,7 +2217,10 @@ def main() -> None:
                                ('construction_round_step', 'ConstructionRoundStep', 5),
                                ('construction_round_step_syntax', 'ConstructionRoundStepSyntax', 30),
                                ('construction_request_schedule', 'ConstructionRequestSchedule', 42),
-                               ('construction_request_schedule_syntax', 'ConstructionRequestScheduleSyntax', 3)):
+                               ('construction_request_schedule_syntax', 'ConstructionRequestScheduleSyntax', 3),
+                               ('construction_request_carrier', 'ConstructionRequestCarrier', 23),
+                               ('construction_complete_schedule', 'ConstructionCompleteSchedule', 17),
+                               ('construction_complete_schedule_syntax', 'ConstructionCompleteScheduleSyntax', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5699,6 +5702,10 @@ def main() -> None:
         "source_request_schedule_uniform_graph_has_fixed_target_carrier_or_omega_index_restriction": False,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
+        "source_CompleteRounds_full_internal_canonical_Request_carrier_and_defaultProbe_constructed": True,
+        "source_CompleteRounds_actual_exhaustive_underlying_Request_times_K_top_Schedule_and_Place_graphs_constructed": True,
+        "source_CompleteRounds_every_Request_K_pair_non_top_position_and_K_place_injection_proved": True,
+        "source_CompleteRounds_internal_wellorder_ordinal_index_and_original_Request_cardinal_bounds_instantiated": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

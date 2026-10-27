@@ -55689,6 +55689,391 @@
           "propext"
         ]
       }
+    },
+    "construction_request_carrier": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean",
+      "source_sha256": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidBase.lean": "16add52e42197a226969be1accaac6d27514aebcc38c25eee05eb392aa5c5324"
+      },
+      "adapter": "PPAC/Migration/ConstructionRequestCarrier.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionSpaceConstruction.lean": "fd763edf53980fd6482d3189449e89f0f50f2d8febbd95612607e262e0618a92",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/ProductConstruction.lean": "66e228884ea7eeabb7a3ad59cb7cc82a459cc477123f5504fe19670dc58a817b",
+        "PPAC/Migration/ForcingWithTopCarrier.lean": "e04813113932603530c5224bce1138a548f6c522664bafb291ad66e5ce9919d9"
+      },
+      "source_declarations": [
+        "CompleteRounds.ProbeData.code / MergerData.code / Request data",
+        "MonoidRounds.Request.defaultProbe / ScheduleIndex",
+        "CompleteRounds.CompleteRound.Index:403 / schedule:405 / place:409 / place_injective:418"
+      ],
+      "consumers": [
+        "Actual CompleteRound exhaustive request-domain/index/schedule inputs to Round iteration, replacing the supplied base Schedule premise",
+        "Source CompleteRounds placement/injectivity, later well-order/ordinal index and cardinal adaptation then SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ZF.exists_functionSpace bounds ALL internal omega-to-D paths, Cartesian/powerset/Union bound canonical partial start tables for ALL n in internal omega, Separation constructs SAME COMPLETE actual Request carrier. WellFormed records exactly the actual Option-table graph rows; no external finite list/numeral bound. Source absent start remains absent",
+        "UNCHANGED Kuratowski code/type/uniqueness and accepted RequestSchedule constructors; exact carrier-membership biconditional and actual defaultProbe use SAME monoid unit/marked nonunit and actual constant omega-path. No supplied Request carrier/default path/set-size/Choice premise. Canonical mapped PN already follows from exact graph and target Prescription, so source transport lands in COMPLETE target carrier",
+        "UNCHANGED ForcingWithTopCarrier actual carrier/empty/singleton constructors, native representative product and definable function constructor. Construct Request x K, actual index carrier + top, ONE actual Schedule to SAME complete Request set and actual INJECTIVE Place graph. Given K nonempty EVERY Request x K pair has its designated NON-TOP position, every request occurs non-top, fixed-request K placement injective, top uses actual defaultProbe, Schedule graph UNIQUE",
+        "Source index ORDERING is not silently replaced by an arbitrary well-order: this endpoint proves underlying full index CARRIER/SCHEDULE/PLACEMENT DATA. Internal well-order/ordinalization interface and original mu^omega cardinal bound remain open; nativeZF is NOT claimed to well-order arbitrary Request sets without source ground assumptions",
+        "UNCHANGED ModelTransfer.derives gives pure forall8 native FirstOrder.Derives nativeZF [] producer constructing ALL eight actual global objects. Source full internal/nonstandard path/finite-n/K quantifiers and original monoid/default nonunit conditions retained; no new choice/kernel/parser/recursor/Sat/scalar/category backend. Actual ordinal iteration/full ordered bounded CompleteRounds/saturation, L pinned-language adapter and final internal Con remain open"
+      ],
+      "scope": "COMPLETE full internal canonical Request set/defaultProbe and ACTUAL exhaustive underlying Request x K + top Schedule/Place graphs, all pairs and non-top request occurrences, K placement injection, Schedule/carrier uniqueness and exact membership/values. No supplied carrier or Schedule. This does NOT instantiate the source internal well-order/ordinal indexing, original Request/index cardinal bounds, actual ordinal tower or final saturation. Original stage8 and stages6-adapter/9-11/final Con remain incomplete; no hidden object Choice or trust expansion.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionRequestCarrier.WellFormed": [],
+        "PPAC.Migration.ConstructionRequestCarrier.Element": [],
+        "PPAC.Migration.ConstructionRequestCarrier.Carrier": [],
+        "PPAC.Migration.ConstructionRequestCarrier.ConstantNode": [],
+        "PPAC.Migration.ConstructionRequestCarrier.element_request": [],
+        "PPAC.Migration.ConstructionRequestCarrier.wellFormed_of_graph": [],
+        "PPAC.Migration.ConstructionRequestCarrier.transport_element": [],
+        "PPAC.Migration.ConstructionRequestCarrier.carrier_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.constant_node": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.wellFormed": [
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.wellFormed_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.wellFormed_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.element": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.element_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.element_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.carrier": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.carrier_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.carrier_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.constantNode": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.constantNode_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.constantNode_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.exists_carrier": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionRequestCarrier.exists_system": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_complete_schedule": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean",
+      "source_sha256": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidBase.lean": "16add52e42197a226969be1accaac6d27514aebcc38c25eee05eb392aa5c5324"
+      },
+      "adapter": "PPAC/Migration/ConstructionCompleteSchedule.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionSpaceConstruction.lean": "fd763edf53980fd6482d3189449e89f0f50f2d8febbd95612607e262e0618a92",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/ProductConstruction.lean": "66e228884ea7eeabb7a3ad59cb7cc82a459cc477123f5504fe19670dc58a817b",
+        "PPAC/Migration/ForcingWithTopCarrier.lean": "e04813113932603530c5224bce1138a548f6c522664bafb291ad66e5ce9919d9"
+      },
+      "source_declarations": [
+        "CompleteRounds.ProbeData.code / MergerData.code / Request data",
+        "MonoidRounds.Request.defaultProbe / ScheduleIndex",
+        "CompleteRounds.CompleteRound.Index:403 / schedule:405 / place:409 / place_injective:418"
+      ],
+      "consumers": [
+        "Actual CompleteRound exhaustive request-domain/index/schedule inputs to Round iteration, replacing the supplied base Schedule premise",
+        "Source CompleteRounds placement/injectivity, later well-order/ordinal index and cardinal adaptation then SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ZF.exists_functionSpace bounds ALL internal omega-to-D paths, Cartesian/powerset/Union bound canonical partial start tables for ALL n in internal omega, Separation constructs SAME COMPLETE actual Request carrier. WellFormed records exactly the actual Option-table graph rows; no external finite list/numeral bound. Source absent start remains absent",
+        "UNCHANGED Kuratowski code/type/uniqueness and accepted RequestSchedule constructors; exact carrier-membership biconditional and actual defaultProbe use SAME monoid unit/marked nonunit and actual constant omega-path. No supplied Request carrier/default path/set-size/Choice premise. Canonical mapped PN already follows from exact graph and target Prescription, so source transport lands in COMPLETE target carrier",
+        "UNCHANGED ForcingWithTopCarrier actual carrier/empty/singleton constructors, native representative product and definable function constructor. Construct Request x K, actual index carrier + top, ONE actual Schedule to SAME complete Request set and actual INJECTIVE Place graph. Given K nonempty EVERY Request x K pair has its designated NON-TOP position, every request occurs non-top, fixed-request K placement injective, top uses actual defaultProbe, Schedule graph UNIQUE",
+        "Source index ORDERING is not silently replaced by an arbitrary well-order: this endpoint proves underlying full index CARRIER/SCHEDULE/PLACEMENT DATA. Internal well-order/ordinalization interface and original mu^omega cardinal bound remain open; nativeZF is NOT claimed to well-order arbitrary Request sets without source ground assumptions",
+        "UNCHANGED ModelTransfer.derives gives pure forall8 native FirstOrder.Derives nativeZF [] producer constructing ALL eight actual global objects. Source full internal/nonstandard path/finite-n/K quantifiers and original monoid/default nonunit conditions retained; no new choice/kernel/parser/recursor/Sat/scalar/category backend. Actual ordinal iteration/full ordered bounded CompleteRounds/saturation, L pinned-language adapter and final internal Con remain open"
+      ],
+      "scope": "COMPLETE full internal canonical Request set/defaultProbe and ACTUAL exhaustive underlying Request x K + top Schedule/Place graphs, all pairs and non-top request occurrences, K placement injection, Schedule/carrier uniqueness and exact membership/values. No supplied carrier or Schedule. This does NOT instantiate the source internal well-order/ordinal indexing, original Request/index cardinal bounds, actual ordinal tower or final saturation. Original stage8 and stages6-adapter/9-11/final Con remain incomplete; no hidden object Choice or trust expansion.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionCompleteSchedule.Value": [],
+        "PPAC.Migration.ConstructionCompleteSchedule.Graph": [],
+        "PPAC.Migration.ConstructionCompleteSchedule.Places": [],
+        "PPAC.Migration.ConstructionCompleteSchedule.value_unique": [],
+        "PPAC.Migration.ConstructionCompleteSchedule.exists_places": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.value": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.value_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.value_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.graph": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.graph_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.graph_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.places": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.places_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.places_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.Data": [],
+        "PPAC.Migration.ConstructionCompleteSchedule.exists_system": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteSchedule.exists_all": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "construction_complete_schedule_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean",
+      "source_sha256": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidBase.lean": "16add52e42197a226969be1accaac6d27514aebcc38c25eee05eb392aa5c5324"
+      },
+      "adapter": "PPAC/Migration/ConstructionCompleteScheduleSyntax.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionSpaceConstruction.lean": "fd763edf53980fd6482d3189449e89f0f50f2d8febbd95612607e262e0618a92",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/ProductConstruction.lean": "66e228884ea7eeabb7a3ad59cb7cc82a459cc477123f5504fe19670dc58a817b",
+        "PPAC/Migration/ForcingWithTopCarrier.lean": "e04813113932603530c5224bce1138a548f6c522664bafb291ad66e5ce9919d9"
+      },
+      "source_declarations": [
+        "CompleteRounds.ProbeData.code / MergerData.code / Request data",
+        "MonoidRounds.Request.defaultProbe / ScheduleIndex",
+        "CompleteRounds.CompleteRound.Index:403 / schedule:405 / place:409 / place_injective:418"
+      ],
+      "consumers": [
+        "Actual CompleteRound exhaustive request-domain/index/schedule inputs to Round iteration, replacing the supplied base Schedule premise",
+        "Source CompleteRounds placement/injectivity, later well-order/ordinal index and cardinal adaptation then SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ZF.exists_functionSpace bounds ALL internal omega-to-D paths, Cartesian/powerset/Union bound canonical partial start tables for ALL n in internal omega, Separation constructs SAME COMPLETE actual Request carrier. WellFormed records exactly the actual Option-table graph rows; no external finite list/numeral bound. Source absent start remains absent",
+        "UNCHANGED Kuratowski code/type/uniqueness and accepted RequestSchedule constructors; exact carrier-membership biconditional and actual defaultProbe use SAME monoid unit/marked nonunit and actual constant omega-path. No supplied Request carrier/default path/set-size/Choice premise. Canonical mapped PN already follows from exact graph and target Prescription, so source transport lands in COMPLETE target carrier",
+        "UNCHANGED ForcingWithTopCarrier actual carrier/empty/singleton constructors, native representative product and definable function constructor. Construct Request x K, actual index carrier + top, ONE actual Schedule to SAME complete Request set and actual INJECTIVE Place graph. Given K nonempty EVERY Request x K pair has its designated NON-TOP position, every request occurs non-top, fixed-request K placement injective, top uses actual defaultProbe, Schedule graph UNIQUE",
+        "Source index ORDERING is not silently replaced by an arbitrary well-order: this endpoint proves underlying full index CARRIER/SCHEDULE/PLACEMENT DATA. Internal well-order/ordinalization interface and original mu^omega cardinal bound remain open; nativeZF is NOT claimed to well-order arbitrary Request sets without source ground assumptions",
+        "UNCHANGED ModelTransfer.derives gives pure forall8 native FirstOrder.Derives nativeZF [] producer constructing ALL eight actual global objects. Source full internal/nonstandard path/finite-n/K quantifiers and original monoid/default nonunit conditions retained; no new choice/kernel/parser/recursor/Sat/scalar/category backend. Actual ordinal iteration/full ordered bounded CompleteRounds/saturation, L pinned-language adapter and final internal Con remain open"
+      ],
+      "scope": "COMPLETE full internal canonical Request set/defaultProbe and ACTUAL exhaustive underlying Request x K + top Schedule/Place graphs, all pairs and non-top request occurrences, K placement injection, Schedule/carrier uniqueness and exact membership/values. No supplied carrier or Schedule. This does NOT instantiate the source internal well-order/ordinal indexing, original Request/index cardinal bounds, actual ordinal tower or final saturation. Original stage8 and stages6-adapter/9-11/final Con remain incomplete; no hidden object Choice or trust expansion.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.data_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.data_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.constructionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ConstructionCompleteScheduleSyntax.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
