@@ -535,3 +535,6 @@ import PPAC.Migration.ConstructionMergerFiniteWeightsSyntax
 
 import PPAC.Migration.ConstructionMergerWeightEstimates
 import PPAC.Migration.ConstructionMergerWeightEstimatesSyntax
+
+import PPAC.Migration.ConstructionMergerHeightComparison
+import PPAC.Migration.ConstructionMergerHeightComparisonSyntax

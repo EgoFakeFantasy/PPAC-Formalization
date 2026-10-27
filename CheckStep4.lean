@@ -11238,4 +11238,8 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionMergerWeightEstimatesSyntax.constructionSentence) :=
   ConstructionMergerWeightEstimatesSyntax.construction_kernel_certificate
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerHeightComparisonSyntax.constructionSentence) :=
+  ConstructionMergerHeightComparisonSyntax.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
