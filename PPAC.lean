@@ -534,3 +534,7 @@ import PPAC.Migration.ConstructionMergerWordCancellationSyntax
 
 import PPAC.Migration.ConstructionMergerCopyCones
 import PPAC.Migration.ConstructionMergerCopyConesSyntax
+
+import PPAC.Migration.ConstructionMergerWordDivisibility
+import PPAC.Migration.ConstructionMergerWordCones
+import PPAC.Migration.ConstructionMergerWordConesSyntax

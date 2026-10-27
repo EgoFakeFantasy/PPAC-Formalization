@@ -2645,7 +2645,10 @@ def main() -> None:
                                ('construction_merger_word_cancellation', 'ConstructionMergerWordCancellation', 6),
                                ('construction_merger_word_cancellation_syntax', 'ConstructionMergerWordCancellationSyntax', 3),
                                ('construction_merger_copy_cones', 'ConstructionMergerCopyCones', 17),
-                               ('construction_merger_copy_cones_syntax', 'ConstructionMergerCopyConesSyntax', 3)):
+                               ('construction_merger_copy_cones_syntax', 'ConstructionMergerCopyConesSyntax', 3),
+                               ('construction_merger_word_divisibility', 'ConstructionMergerWordDivisibility', 16),
+                               ('construction_merger_word_cones', 'ConstructionMergerWordCones', 12),
+                               ('construction_merger_word_cones_syntax', 'ConstructionMergerWordConesSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6332,7 +6335,8 @@ def main() -> None:
         "source_merger_actual_Word_carrier_right_action_and_product_constructed": True,
         "source_merger_Word_monoid_and_left_cancel_proved": True,
         "source_merger_actual_copies_conditional_joins_proved": True,
-        "source_merger_Word_conditional_joins_proved": False,
+        "source_merger_Word_conditional_joins_proved": True,
+        "source_merger_old_common_multiples_and_cones_preserved_proved": True,
         "source_merger_complete_weighted_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
