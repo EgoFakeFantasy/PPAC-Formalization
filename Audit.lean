@@ -27516,3 +27516,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerHeightComparisonSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerHeightComparisonSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerHeightComparisonSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.natural_zero_principal
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.natural_successor_sum
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.constantSumAt
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.constantSumAt_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.constantSumAt_semantics
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.constant_eval_natural
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.natural_division_unit
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.average_lt_unit
+#print axioms PPAC.Migration.ConstructionMergerHeightUpper.copiesHeight_lt_one
+#print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.construction_kernel_certificate

@@ -538,3 +538,6 @@ import PPAC.Migration.ConstructionMergerWeightEstimatesSyntax
 
 import PPAC.Migration.ConstructionMergerHeightComparison
 import PPAC.Migration.ConstructionMergerHeightComparisonSyntax
+
+import PPAC.Migration.ConstructionMergerHeightUpper
+import PPAC.Migration.ConstructionMergerHeightUpperSyntax
