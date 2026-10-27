@@ -521,3 +521,8 @@ import PPAC.Migration.ConstructionMergerRelations
 import PPAC.Migration.ConstructionMergerCopies
 import PPAC.Migration.ConstructionMergerAction
 import PPAC.Migration.ConstructionMergerActionSyntax
+
+import PPAC.Migration.ConstructionMergerWordAction
+import PPAC.Migration.ConstructionMergerWordOperation
+import PPAC.Migration.ConstructionMergerWordProduct
+import PPAC.Migration.ConstructionMergerWordProductSyntax
