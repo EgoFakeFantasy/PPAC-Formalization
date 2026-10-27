@@ -11612,4 +11612,13 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIndex.constructionSentence)) :=
   ConstructionSaturationIndex.construction_kernel_certificate
 
+-- Any internally countable domain and any actual internal function; range is constructed.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionSaturationBoundedness.subsetSentence) :=
+  ConstructionSaturationBoundedness.subset_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionSaturationBoundedness.countableSentence) :=
+  ConstructionSaturationBoundedness.countable_kernel_certificate
+
 end PPAC.Migration.Step4Checks

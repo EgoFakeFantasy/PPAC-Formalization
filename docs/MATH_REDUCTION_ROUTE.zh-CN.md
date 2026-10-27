@@ -23,3 +23,5 @@
 当前 5–6 的接口工作和 7–10 的数学迁移必须区分；不能因供体未接入就把现成定理列作新的数学研发。新版供体源码及版本差异锁在 SOURCE_LOCK.companion_candidates；原源消费者、译入模块及公理足迹锁在 source_proof_adaptations。
 
 原源：../openai-math-ppac-source/lean/OAI/SetTheory/PartitionConsistency/。BMS 的完备性回传已用于 ModelTransfer；IBLP 的具体集合满足关系只在背景对应后引用，不重复造 Sat。禁止恢复用户退役的旧反射实现。
+
+RoundOrdinal.countable_bounded:496 已迁移为 ConstructionSaturationBoundedness.countable_kernel_certificate：原核 nativeZF 对象闭句涵盖全部内部可数域、实际内部函数，并在证明中构造值域及 j∈ω₁ 上界。第8阶段的下一门仍是 SAME 实际塔的 countable_stage:580 提升／因子分解，再接最终饱和性和 ConcreteSystem μ/K；不能把序数有界性当成塔覆盖已经完成。

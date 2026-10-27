@@ -31784,3 +31784,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSaturationIndex.construction_models
 #print axioms PPAC.Migration.ConstructionSaturationIndex.construction_kernel_certificate
 #print axioms PPAC.Migration.ConstructionSaturationIndex.index_kernel_certificate
+
+-- Actual internal countable function bound, with range constructed inside the proof.
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_subset_bounded
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_range_bounded
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.bounded
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.bounded_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.bounded_semantics
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.subsetSentence
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.subset_models
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.subset_kernel_certificate
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_bounded
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.mapBound
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.mapBound_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.mapBound_semantics
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countableSentence
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_models
+#print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_kernel_certificate

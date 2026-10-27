@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第 8 阶段。完整 CompleteRound 单轮、实际唯一整轮后继及完整 Valid/AllSmall 追加保持已完成；有界原父背景下的完整外层内部递归塔、全部阶段 Valid/AllSmall 和全塔精确相邻转移现亦已完成；具体内部 ω₁+1 索引及该长度的实际塔亦已完成；原 ConcreteSystem 的 μ/K 实例化、可数覆盖／最终饱和性尚未完成。9–11 和最终内部 Con 未完成。** 不以局部证书、声明数或构建数作为整体完成比例。
+**仍在原第 8 阶段。完整 CompleteRound 单轮、实际唯一整轮后继及完整 Valid/AllSmall 追加保持已完成；有界原父背景下的完整外层内部递归塔、全部阶段 Valid/AllSmall 和全塔精确相邻转移现亦已完成；具体内部 ω₁+1 索引及该长度的实际塔亦已完成；RoundOrdinal.countable_bounded 的全部内部可数域接口亦已完成；原 ConcreteSystem 的 μ/K 实例化、实际塔的可数覆盖／最终饱和性尚未完成。9–11 和最终内部 Con 未完成。** 不以局部证书、声明数或构建数作为整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -13,24 +13,24 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | Base、完整加权 Probe/Merger、保守加权极限、实际有效单轮递归塔／所有内部阶段界；实际来源／新鲜性／精确锥；全 Request／调度／Place/last；执行根图及切片家族；完整 CompleteRound 原父输入装配；实际整轮后继及全部旧腿／base 更新、完整 Valid/AllSmall 追加保持；全历史总唯一实际算子／原生递归、整塔 Valid/AllSmall、全12表／21合同／精确相邻转移 | 原 ConcreteSystem 基数 μ/K 参数实例化、适当阶段可数覆盖、最终饱和单子及其实际 Placement/Hull 消费者 |
+| 8 构造核心 | Base、完整加权 Probe/Merger、保守加权极限、实际有效单轮递归塔／所有内部阶段界；实际来源／新鲜性／精确锥；全 Request／调度／Place/last；执行根图及切片家族；完整 CompleteRound 原父输入装配；实际整轮后继及全部旧腿／base 更新、完整 Valid/AllSmall 追加保持；全历史总唯一实际算子／原生递归、整塔 Valid/AllSmall、全12表／21合同／精确相邻转移；具体内部ω₁+1及该长度塔；任意内部可数域函数的实际序数界 | 原 ConcreteSystem 基数 μ/K 参数实例化、适当阶段可数覆盖、最终饱和单子及其实际 Placement/Hull 消费者 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、商单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
 
 ## 本批实际证明与验收
 
-ConstructionSaturationIndex 现从内部 ω 构造其 Hartogs 序数 κ，直接复用供体后继正则性得到 κ 正则且 ω∈κ；在原假设 ω₁≤μ 下，用既有无限两集并界证明 B=κ+1 仍为 μ 小。exists_tower 实际实例化已验收的完整外层递归塔，保留 Valid/AllSmall、12表、21项加权/base合同和同一 trace-bearing 整轮的精确相邻转移。index_kernel_certificate 与 construction_kernel_certificate 均为原 nativeZF 核中同一既有 L 相对化证书，L Choice/order 已消去。
+ConstructionSaturationIndex 已从内部 ω 构造 κ=Hartogs(ω)，复用供体正则性并证明 κ+1 仍为 μ 小，实际生成该长度的完整递归塔；原 ω₁≤μ、μ^ω=μ、base/K 小等父输入全部保留。两个同一既有 L 相对化的原 nativeZF 核证书已验收，L Choice/order 已消去。供体 OrdinalImage 和 SuccessorRegularity 的证明体按有限路径替换逐字核对，已有 union_bound_l 直接复用，没有复制整个 CountableUnion。
 
-供体 OrdinalImage 的5项声明和 SuccessorRegularity.hartogs_regular_l 的证明体已锁定并按有限路径替换逐字核对。已有 union_bound_l 直接复用，未复制整个 CountableUnion，也未重建 L、模式、序数或递归底座。原 μ^ω=μ、ω₁≤μ、base/K 小等父输入保留；尚未构造 ConcreteSystem 的具体 μ/K，也未证明可数适当阶段覆盖或最终饱和性。
+ConstructionSaturationBoundedness 现迁移原 RoundOrdinal.countable_bounded:496。对于任意内部集合 A 及内部单射 A→ω，任意实际集合函数 f:A→κ，定理内部实际构造值域并输出 j∈κ，所有 f 的输出均≤j。空域、内部非标准 ω、模型外部不良基等情况均保留。证明直接使用既有有界／共尾二分、成员良序型、共尾度比较及供体序数像界；没有重建函数扩张、选择、基数或递归后端。subset_kernel_certificate 和 countable_kernel_certificate 是原 nativeZF 核中的 forall3／forall4 对象闭句证书，没有额外 Choice 公理。
 
-正式验收：36项新声明 trust=0 预审；2873构建／31337声明（1564无公理依赖、29773记录依赖），9命令／5次 trust=0 全退出0，零警告；此前31301项足迹逐项不变，无新增公理依赖。75固定源哈希匹配，底座／供体干净。临时 SaturationIndexAudit.lean 已按精确路径、内容SHA和非重解析点检查清理，成功日志保留。证据 verification/saturation-index-acceptance.json。
+最新正式验收：15项新声明 trust=0 预审；2874构建／31352声明（1564无公理依赖、29788记录依赖），9命令／5次 trust=0 全退出0，零警告；此前31337项足迹逐项不变，无新增公理依赖。75固定源哈希匹配，底座／供体干净。临时 SaturationBoundednessAudit.lean 已按精确路径、内容SHA和非重解析点检查清理；成功日志保留。证据 verification/saturation-boundedness-acceptance.json，前一批 verification/saturation-index-acceptance.json 保留。
 
 ## 继续顺序与边界
 
-下一实际消费者为原 ConcreteSystem 的具体 μ/K 实例化，以及原 countable_stage → SaturatedMonoids 的可数适当阶段覆盖／最终 Probe/Merger 饱和性。统一外层算子、实际原生递归、完整 Valid/AllSmall、全表／图表和精确全塔 map_succ 均不再待做。现成内部共尾有界与供体正则性直接复用，不重建序数、递归、模式、L 或单轮数学。
+下一实际消费者是原 Saturation.countable_stage:580：从同一实际 κ 极限记录的现成代表／cocone 读出逐元素的较早阶段代表，复用现成内部统一化得到出生索引函数，直接调用现已完成的 countable_bounded；再用同一全塔转移及复合构造实际内部提升函数 g，并证明 fromStage∘g=f。这里的实际塔因子分解尚未证明，不能以已完成的序数界替代。随后接 SaturatedMonoids 的最终 Probe/Merger 饱和性及实际 Placement/Hull 消费者，以及 ConcreteSystem 的具体 μ/K。上述均属于原第8阶段，没有新增阶段。
 
-进一步复核修正：后继正则性所需的小族并 union_bound_l 已由 ExistingSmallUnion.lean:153 适配并用于 DirectedCardinality，不能把“整个 CountableUnion 模块未复制”误报为其数学或必要接口未完成。现成供体 OrdinalImage 和 SuccessorRegularity.hartogs_regular_l 已完成必要适配，具体 ω₁+1 索引与该长度塔已生成；下一步消费现成共尾有界／序型接口，证明全部内部可数族的适当阶段覆盖。之后是第 9 模型应用和第 10 全部内部码归约。当前未取得原核最终 Derives nativeZF [] (Con_ZF → Con_U)，其中 U=ZF+PP+ACwo+¬AC；Con 保持全部内部／非标准证明码。
+统一外层算子、实际原生递归、完整 Valid/AllSmall、全表／图表、精确 map_succ、具体 ω₁+1、供体正则性和任意内部可数域的序数有界性均不再待做。现成内部 L、全公理模式、universe 对应、小族并也不再待做。之后是第 9 模型应用和第 10 全部内部码归约。当前未取得原核最终 Derives nativeZF [] (Con_ZF → Con_U)，其中 U=ZF+PP+ACwo+¬AC；Con 保持全部内部／非标准证明码。
 
 此前将局部验收当整体进度、将已存在数学的适配缺口误报为数学缺口、把可选字节兼容当必需主线，是规划与验收判断错误；对象层要求早已明确，不能归因于用户追加要求。后续只按原源完整类型、实际生产者／消费者和原 1–11 门判断。
 

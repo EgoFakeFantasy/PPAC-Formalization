@@ -16,6 +16,8 @@
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
+RoundOrdinal.countable_bounded:496 已迁移为 ConstructionSaturationBoundedness.countable_kernel_certificate：原核 nativeZF 对象闭句涵盖全部内部可数域、实际内部函数，并在证明中构造值域及 j∈ω₁ 上界。第8阶段的下一门仍是 SAME 实际塔的 countable_stage:580 提升／因子分解，再接最终饱和性和 ConcreteSystem μ/K；不能把序数有界性当成塔覆盖已经完成。
+
 ## Agent 执行入口
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |

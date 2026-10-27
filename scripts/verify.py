@@ -2270,7 +2270,8 @@ def main() -> None:
                                ('construction_saturation_iteration_validity', 'ConstructionSaturationIterationValidity', 15),
                                ('existing_ordinal_image', 'ExistingOrdinalImage', 5),
                                ('existing_successor_regularity', 'ExistingSuccessorRegularity', 1),
-                               ('construction_saturation_index', 'ConstructionSaturationIndex', 30)):
+                               ('construction_saturation_index', 'ConstructionSaturationIndex', 30),
+                               ('construction_saturation_boundedness', 'ConstructionSaturationBoundedness', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5887,6 +5888,8 @@ def main() -> None:
         "source_Saturation_omega1_plus_one_actual_recursive_tower_constructed": True,
         "source_Saturation_original_omega1_le_mu_parent_preserved": True,
         "source_Saturation_ConcreteSystem_mu_K_instantiation_complete": False,
+        "source_RoundOrdinal_countable_bounded_ALL_internal_countable_domains_actual_range_constructed_native_kernel_certificate": True,
+        "source_RoundOrdinal_countable_subset_bound_native_kernel_certificate": True,
         "source_Saturation_countable_proper_stage_coverage_complete": False,
         "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": False,
         "source_Saturation_multiround_actual_system_complete": False,
