@@ -2197,7 +2197,12 @@ def main() -> None:
                                ('construction_directed_weight_data', 'ConstructionDirectedWeightData', 24),
                                ('construction_directed_weights', 'ConstructionDirectedWeights', 15),
                                ('construction_directed_height_cost', 'ConstructionDirectedHeightCost', 18),
-                               ('construction_directed_height_cost_syntax', 'ConstructionDirectedHeightCostSyntax', 3)):
+                               ('construction_directed_height_cost_syntax', 'ConstructionDirectedHeightCostSyntax', 3),
+                               ('existing_small_union', 'ExistingSmallUnion', 6),
+                               ('construction_directed_cardinality', 'ConstructionDirectedCardinality', 18),
+                               ('construction_directed_marks', 'ConstructionDirectedMarks', 13),
+                               ('construction_directed_object', 'ConstructionDirectedObject', 1),
+                               ('construction_directed_object_syntax', 'ConstructionDirectedObjectSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -2239,6 +2244,12 @@ def main() -> None:
         r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", cardinal_text)}
     if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in cardinal_blocks.items()} != cardinal_reuse["literal_blocks_sha256"]:
         raise RuntimeError("Reused donor cardinal proof bodies changed")
+    small_union_reuse = source_lock["companion_reuse"]["native_small_family_union"]
+    small_union_text = (ROOT / small_union_reuse["adapter"]).read_text(encoding="utf-8")
+    small_union_blocks = {m[1]: m[2].strip() for m in re.finditer(
+        r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", small_union_text)}
+    if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in small_union_blocks.items()} != small_union_reuse["literal_blocks_sha256"]:
+        raise RuntimeError("Reused donor internal small-family union proof bodies changed")
     for name, digest in cardinal_reuse["certificate_source_files"].items():
         if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / name).read_bytes()).hexdigest() != digest:
             raise RuntimeError("Pinned cardinal certificate source changed")
@@ -5652,8 +5663,12 @@ def main() -> None:
         "source_directed_limit_complete_weighted_limit_proved": True,
         "source_directed_limit_actual_height_cost_graphs_four_bounds_and_exact_cap_margins_proved": True,
         "source_directed_limit_all_old_pairs_actual_families_same_unique_supremum_proved": True,
-        "source_directed_limit_weighted_scope": "Complete generic DirectLimits HeightCost layer; cardinality, marked-element Object, actual final weighted tower and request schedule remain open",
-        "source_directed_limit_cardinality_and_marked_Object_assembly_proved": False,
+        "source_directed_limit_weighted_scope": "Complete generic weighted pointed Object and all inclusions; original Choice explicit only in cardinal output. Actual universal-colimit/tower/request schedule remain open",
+        "source_directed_limit_cardinality_and_marked_Object_assembly_proved": True,
+        "source_directed_limit_cardinality_source_object_Choice_explicit_in_output_only": True,
+        "source_directed_limit_distinguished_mark_nonunit_and_all_inclusion_mark_equations_proved": True,
+        "source_directed_limit_complete_pointed_weighted_object_constructed": True,
+        "source_directed_limit_actual_universal_colimit_and_final_tower_constructed": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

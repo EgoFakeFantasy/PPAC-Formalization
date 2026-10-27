@@ -581,3 +581,8 @@ import PPAC.Migration.ConstructionDirectedWeightData
 import PPAC.Migration.ConstructionDirectedWeights
 import PPAC.Migration.ConstructionDirectedHeightCost
 import PPAC.Migration.ConstructionDirectedHeightCostSyntax
+import PPAC.Migration.ExistingSmallUnion
+import PPAC.Migration.ConstructionDirectedCardinality
+import PPAC.Migration.ConstructionDirectedMarks
+import PPAC.Migration.ConstructionDirectedObject
+import PPAC.Migration.ConstructionDirectedObjectSyntax

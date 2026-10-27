@@ -1659,6 +1659,31 @@
       },
       "adaptation": "Selected existing proof bodies with import and enclosing namespace adaptation only. Countable-only specializations and join/lift/end modules are not copied. Native ZF, all internal finite lengths, no choice of per-length enumerations.",
       "consumer": "ConstructionProbeWordCardinality.raw_cardinal_le -> extension_cardinal_le -> OpenAI Construction/MonoidBase.lean:215"
+    },
+    "native_small_family_union": {
+      "repository": "https://github.com/EgoFakeFantasy/YesMetaZFC",
+      "commit": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "adapter": "PPAC/Migration/ExistingSmallUnion.lean",
+      "files": {
+        "YesMetaZFC/SetTheory/Choice.lean": "b6633b1ac801f87c076816db8eef034595aaa142f773709a48cacb7849395760",
+        "YesMetaZFC/SetTheory/DependentChoice.lean": "40e8cb69e4ad261fa496c6b4d303b0271eb5c062c0327a75a0fd1084ea245d7c",
+        "YesMetaZFC/SetTheory/Card/CountableUnion.lean": "f1c74af92e3cbd9ac0157272da447b20909e89bd71a2753ce3b7157a675cb3f5"
+      },
+      "literal_blocks_sha256": {
+        "Choice.Selector": "0504c44e4989979b8539ba1114b41582dac687ba9abcb6a4a669b69e71839929",
+        "DependentChoice.Uniformize": "e2e4728f6ce23b4a3207e79ea0ac018e1ce9aa941e40fba8e184403e0e781fe6",
+        "Card.CountableUnion.UnionBound": "06d6d811640b501a69078a9edd3a44d7dcd990126d1ab656e7cd151f9389d8be"
+      },
+      "selected_declarations": [
+        "models_zf_l",
+        "choice_set_l",
+        "selector_l",
+        "uniformize_l",
+        "uniformize_formula_l",
+        "union_bound_l"
+      ],
+      "adaptation": "Six exact theorem types/proof bodies; only imports, enclosing namespace and retained binder context change. No recursive choice/ordinal enumeration/fiber/cardinal library is recreated. Source Models ZFC stays explicit.",
+      "trust_note": "No new trusted dependencies; object Choice is explicit in cardinal OUTPUT only, absent from constructing the pointed weighted limit. Native choice closedness certificate was already in baseline."
     }
   },
   "source_proof_adaptations": {
@@ -52961,6 +52986,669 @@
           "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
           "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
           "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
+    },
+    "existing_small_union": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ExistingSmallUnion.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cardinal_le:335",
+        "MonoidTowers.DirectedColimit.old_e:52 / object:63 / inclusion:74"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.cocone/lift/isColimit interfaces for the same actual object",
+        "MonoidRounds.DirectedColimit.cardinal_le / ContinuousTower and CompleteRounds limit stages"
+      ],
+      "reused_interfaces": [
+        "EXACT six selected YesMetaZFC 7979336 Choice/DependentChoice/CountableUnion theorem bodies; proofs construct MODEL-INTERNAL selector/uniformization/union injection. Literal blocks/full donor file hashes in companion_reuse.native_small_family_union; no reproof of generic Choice/cardinal union math",
+        "UNCHANGED coordinate_bound/native_mapsTo/range/Union/Cartesian constructors, existing indexed_quotient_bound for ANY ordinal-small surjective source, and ExistingCardinalBounds.infinite_product_l. Stage-domain range is bounded via SAME Domains graph; donor union bound controls actual union; original varying disjoint sum is subset of J×union. Then SAME actual projection gives limit size",
+        "Standalone pure forall7 cardinal kernel retains original object Choice EXPLICITLY inside Bound; neither injectivity/conservativity/algebra/weights/nonempty-index nor fixed-carrier/omega-index assumption is added to size theorem. All internal infinite mu and arbitrary set-indexed VARYING carriers",
+        "UNCHANGED native Axioms.choice actual formula lifted by existing rename; choice_semantics/models_zfc precisely connect its object predicate to donor Models ZFC. Background of ALL kernel endpoints remains nativeZF. Choice is never a construction premise of actual limit object",
+        "Source actual mark tables/MarkFamily/nonunit/map_e equations; SAME common-future equality proves all mark images coincide. Existing injective_transitions/of_injective and unit image prove distinguished Object.e != monoid unit. No selected family or arbitrary Type-level stage choice",
+        "UNCHANGED complete ConstructionDirectedHeightCost.exists_system retains SAME carrier/projection/product/unit, actual height/cost, full Conservative, all profiles and exact old suprema; original stage Conical/ConditionalJoins are now supplied as source Object fields. Construct SAME nonunit mark and ALL actual inclusion graphs preserving it",
+        "Pure forall13 complete weighted pointed-object producer constructs SAME seven actual carrier/monoid/mark objects plus two weight graphs; original stage marker/transition assumptions explicit, cardinal Bound conditional in OUTPUT. No final actual tower/request schedule or new Object/Hom/category/quotient/Sat/kernel/sequence/recursor/scalar framework",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives for both standalone cardinal theorem and full pointed Object/inclusions; each endpoint uses 35 already-recorded dependencies, NO trust expansion or hidden object Choice"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.cardinal_le with original source object Choice explicit only in cardinal conclusion, and MonoidTowers.DirectedColimit.object/inclusion distinguished-nonunit/weighted fields on SAME actual constructor. Independent size endpoint has no extra algebra/injectivity/conservativity/nonempty-index premise. Generic complete pointed weighted object outer forall13 constructs nine actual global objects; all canonical maps preserve product/unit/mark, all source profiles and exact heights/costs/old suprema. Original stage Object Conical/Joins/mark data explicit; no Choice construction premise. Literal native small-union donor proofs reused, not redeveloped. Actual cocone/lift/universal-colimit adaptation for consumers, final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ExistingSmallUnion.models_zf_l": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingSmallUnion.choice_set_l": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingSmallUnion.selector_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingSmallUnion.uniformize_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingSmallUnion.uniformize_formula_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingSmallUnion.union_bound_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_cardinality": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedCardinality.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cardinal_le:335",
+        "MonoidTowers.DirectedColimit.old_e:52 / object:63 / inclusion:74"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.cocone/lift/isColimit interfaces for the same actual object",
+        "MonoidRounds.DirectedColimit.cardinal_le / ContinuousTower and CompleteRounds limit stages"
+      ],
+      "reused_interfaces": [
+        "EXACT six selected YesMetaZFC 7979336 Choice/DependentChoice/CountableUnion theorem bodies; proofs construct MODEL-INTERNAL selector/uniformization/union injection. Literal blocks/full donor file hashes in companion_reuse.native_small_family_union; no reproof of generic Choice/cardinal union math",
+        "UNCHANGED coordinate_bound/native_mapsTo/range/Union/Cartesian constructors, existing indexed_quotient_bound for ANY ordinal-small surjective source, and ExistingCardinalBounds.infinite_product_l. Stage-domain range is bounded via SAME Domains graph; donor union bound controls actual union; original varying disjoint sum is subset of J×union. Then SAME actual projection gives limit size",
+        "Standalone pure forall7 cardinal kernel retains original object Choice EXPLICITLY inside Bound; neither injectivity/conservativity/algebra/weights/nonempty-index nor fixed-carrier/omega-index assumption is added to size theorem. All internal infinite mu and arbitrary set-indexed VARYING carriers",
+        "UNCHANGED native Axioms.choice actual formula lifted by existing rename; choice_semantics/models_zfc precisely connect its object predicate to donor Models ZFC. Background of ALL kernel endpoints remains nativeZF. Choice is never a construction premise of actual limit object",
+        "Source actual mark tables/MarkFamily/nonunit/map_e equations; SAME common-future equality proves all mark images coincide. Existing injective_transitions/of_injective and unit image prove distinguished Object.e != monoid unit. No selected family or arbitrary Type-level stage choice",
+        "UNCHANGED complete ConstructionDirectedHeightCost.exists_system retains SAME carrier/projection/product/unit, actual height/cost, full Conservative, all profiles and exact old suprema; original stage Conical/ConditionalJoins are now supplied as source Object fields. Construct SAME nonunit mark and ALL actual inclusion graphs preserving it",
+        "Pure forall13 complete weighted pointed-object producer constructs SAME seven actual carrier/monoid/mark objects plus two weight graphs; original stage marker/transition assumptions explicit, cardinal Bound conditional in OUTPUT. No final actual tower/request schedule or new Object/Hom/category/quotient/Sat/kernel/sequence/recursor/scalar framework",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives for both standalone cardinal theorem and full pointed Object/inclusions; each endpoint uses 35 already-recorded dependencies, NO trust expansion or hidden object Choice"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.cardinal_le with original source object Choice explicit only in cardinal conclusion, and MonoidTowers.DirectedColimit.object/inclusion distinguished-nonunit/weighted fields on SAME actual constructor. Independent size endpoint has no extra algebra/injectivity/conservativity/nonempty-index premise. Generic complete pointed weighted object outer forall13 constructs nine actual global objects; all canonical maps preserve product/unit/mark, all source profiles and exact heights/costs/old suprema. Original stage Object Conical/Joins/mark data explicit; no Choice construction premise. Literal native small-union donor proofs reused, not redeveloped. Actual cocone/lift/universal-colimit adaptation for consumers, final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedCardinality.Choice": [],
+        "PPAC.Migration.ConstructionDirectedCardinality.choice": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.choice_freeClosed": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.choice_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.models_zfc": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.StageSmall": [],
+        "PPAC.Migration.ConstructionDirectedCardinality.Bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.carrier_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.stageSmall": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.stageSmall_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.stageSmall_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.boundProperty": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.boundProperty_freeClosed": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.boundProperty_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.boundSentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.bound_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedCardinality.bound_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
+    },
+    "construction_directed_marks": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedMarks.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cardinal_le:335",
+        "MonoidTowers.DirectedColimit.old_e:52 / object:63 / inclusion:74"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.cocone/lift/isColimit interfaces for the same actual object",
+        "MonoidRounds.DirectedColimit.cardinal_le / ContinuousTower and CompleteRounds limit stages"
+      ],
+      "reused_interfaces": [
+        "EXACT six selected YesMetaZFC 7979336 Choice/DependentChoice/CountableUnion theorem bodies; proofs construct MODEL-INTERNAL selector/uniformization/union injection. Literal blocks/full donor file hashes in companion_reuse.native_small_family_union; no reproof of generic Choice/cardinal union math",
+        "UNCHANGED coordinate_bound/native_mapsTo/range/Union/Cartesian constructors, existing indexed_quotient_bound for ANY ordinal-small surjective source, and ExistingCardinalBounds.infinite_product_l. Stage-domain range is bounded via SAME Domains graph; donor union bound controls actual union; original varying disjoint sum is subset of J×union. Then SAME actual projection gives limit size",
+        "Standalone pure forall7 cardinal kernel retains original object Choice EXPLICITLY inside Bound; neither injectivity/conservativity/algebra/weights/nonempty-index nor fixed-carrier/omega-index assumption is added to size theorem. All internal infinite mu and arbitrary set-indexed VARYING carriers",
+        "UNCHANGED native Axioms.choice actual formula lifted by existing rename; choice_semantics/models_zfc precisely connect its object predicate to donor Models ZFC. Background of ALL kernel endpoints remains nativeZF. Choice is never a construction premise of actual limit object",
+        "Source actual mark tables/MarkFamily/nonunit/map_e equations; SAME common-future equality proves all mark images coincide. Existing injective_transitions/of_injective and unit image prove distinguished Object.e != monoid unit. No selected family or arbitrary Type-level stage choice",
+        "UNCHANGED complete ConstructionDirectedHeightCost.exists_system retains SAME carrier/projection/product/unit, actual height/cost, full Conservative, all profiles and exact old suprema; original stage Conical/ConditionalJoins are now supplied as source Object fields. Construct SAME nonunit mark and ALL actual inclusion graphs preserving it",
+        "Pure forall13 complete weighted pointed-object producer constructs SAME seven actual carrier/monoid/mark objects plus two weight graphs; original stage marker/transition assumptions explicit, cardinal Bound conditional in OUTPUT. No final actual tower/request schedule or new Object/Hom/category/quotient/Sat/kernel/sequence/recursor/scalar framework",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives for both standalone cardinal theorem and full pointed Object/inclusions; each endpoint uses 35 already-recorded dependencies, NO trust expansion or hidden object Choice"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.cardinal_le with original source object Choice explicit only in cardinal conclusion, and MonoidTowers.DirectedColimit.object/inclusion distinguished-nonunit/weighted fields on SAME actual constructor. Independent size endpoint has no extra algebra/injectivity/conservativity/nonempty-index premise. Generic complete pointed weighted object outer forall13 constructs nine actual global objects; all canonical maps preserve product/unit/mark, all source profiles and exact heights/costs/old suprema. Original stage Object Conical/Joins/mark data explicit; no Choice construction premise. Literal native small-union donor proofs reused, not redeveloped. Actual cocone/lift/universal-colimit adaptation for consumers, final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedMarks.MarkFamily": [],
+        "PPAC.Migration.ConstructionDirectedMarks.Stable": [],
+        "PPAC.Migration.ConstructionDirectedMarks.MarkImage": [],
+        "PPAC.Migration.ConstructionDirectedMarks.exists_mark": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markFamily": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markFamily_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markFamily_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.stable": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.stable_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.stable_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markImage": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markImage_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedMarks.markImage_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_object": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedObject.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cardinal_le:335",
+        "MonoidTowers.DirectedColimit.old_e:52 / object:63 / inclusion:74"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.cocone/lift/isColimit interfaces for the same actual object",
+        "MonoidRounds.DirectedColimit.cardinal_le / ContinuousTower and CompleteRounds limit stages"
+      ],
+      "reused_interfaces": [
+        "EXACT six selected YesMetaZFC 7979336 Choice/DependentChoice/CountableUnion theorem bodies; proofs construct MODEL-INTERNAL selector/uniformization/union injection. Literal blocks/full donor file hashes in companion_reuse.native_small_family_union; no reproof of generic Choice/cardinal union math",
+        "UNCHANGED coordinate_bound/native_mapsTo/range/Union/Cartesian constructors, existing indexed_quotient_bound for ANY ordinal-small surjective source, and ExistingCardinalBounds.infinite_product_l. Stage-domain range is bounded via SAME Domains graph; donor union bound controls actual union; original varying disjoint sum is subset of J×union. Then SAME actual projection gives limit size",
+        "Standalone pure forall7 cardinal kernel retains original object Choice EXPLICITLY inside Bound; neither injectivity/conservativity/algebra/weights/nonempty-index nor fixed-carrier/omega-index assumption is added to size theorem. All internal infinite mu and arbitrary set-indexed VARYING carriers",
+        "UNCHANGED native Axioms.choice actual formula lifted by existing rename; choice_semantics/models_zfc precisely connect its object predicate to donor Models ZFC. Background of ALL kernel endpoints remains nativeZF. Choice is never a construction premise of actual limit object",
+        "Source actual mark tables/MarkFamily/nonunit/map_e equations; SAME common-future equality proves all mark images coincide. Existing injective_transitions/of_injective and unit image prove distinguished Object.e != monoid unit. No selected family or arbitrary Type-level stage choice",
+        "UNCHANGED complete ConstructionDirectedHeightCost.exists_system retains SAME carrier/projection/product/unit, actual height/cost, full Conservative, all profiles and exact old suprema; original stage Conical/ConditionalJoins are now supplied as source Object fields. Construct SAME nonunit mark and ALL actual inclusion graphs preserving it",
+        "Pure forall13 complete weighted pointed-object producer constructs SAME seven actual carrier/monoid/mark objects plus two weight graphs; original stage marker/transition assumptions explicit, cardinal Bound conditional in OUTPUT. No final actual tower/request schedule or new Object/Hom/category/quotient/Sat/kernel/sequence/recursor/scalar framework",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives for both standalone cardinal theorem and full pointed Object/inclusions; each endpoint uses 35 already-recorded dependencies, NO trust expansion or hidden object Choice"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.cardinal_le with original source object Choice explicit only in cardinal conclusion, and MonoidTowers.DirectedColimit.object/inclusion distinguished-nonunit/weighted fields on SAME actual constructor. Independent size endpoint has no extra algebra/injectivity/conservativity/nonempty-index premise. Generic complete pointed weighted object outer forall13 constructs nine actual global objects; all canonical maps preserve product/unit/mark, all source profiles and exact heights/costs/old suprema. Original stage Object Conical/Joins/mark data explicit; no Choice construction premise. Literal native small-union donor proofs reused, not redeveloped. Actual cocone/lift/universal-colimit adaptation for consumers, final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedObject.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
+    },
+    "construction_directed_object_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedObjectSyntax.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cardinal_le:335",
+        "MonoidTowers.DirectedColimit.old_e:52 / object:63 / inclusion:74"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.cocone/lift/isColimit interfaces for the same actual object",
+        "MonoidRounds.DirectedColimit.cardinal_le / ContinuousTower and CompleteRounds limit stages"
+      ],
+      "reused_interfaces": [
+        "EXACT six selected YesMetaZFC 7979336 Choice/DependentChoice/CountableUnion theorem bodies; proofs construct MODEL-INTERNAL selector/uniformization/union injection. Literal blocks/full donor file hashes in companion_reuse.native_small_family_union; no reproof of generic Choice/cardinal union math",
+        "UNCHANGED coordinate_bound/native_mapsTo/range/Union/Cartesian constructors, existing indexed_quotient_bound for ANY ordinal-small surjective source, and ExistingCardinalBounds.infinite_product_l. Stage-domain range is bounded via SAME Domains graph; donor union bound controls actual union; original varying disjoint sum is subset of J×union. Then SAME actual projection gives limit size",
+        "Standalone pure forall7 cardinal kernel retains original object Choice EXPLICITLY inside Bound; neither injectivity/conservativity/algebra/weights/nonempty-index nor fixed-carrier/omega-index assumption is added to size theorem. All internal infinite mu and arbitrary set-indexed VARYING carriers",
+        "UNCHANGED native Axioms.choice actual formula lifted by existing rename; choice_semantics/models_zfc precisely connect its object predicate to donor Models ZFC. Background of ALL kernel endpoints remains nativeZF. Choice is never a construction premise of actual limit object",
+        "Source actual mark tables/MarkFamily/nonunit/map_e equations; SAME common-future equality proves all mark images coincide. Existing injective_transitions/of_injective and unit image prove distinguished Object.e != monoid unit. No selected family or arbitrary Type-level stage choice",
+        "UNCHANGED complete ConstructionDirectedHeightCost.exists_system retains SAME carrier/projection/product/unit, actual height/cost, full Conservative, all profiles and exact old suprema; original stage Conical/ConditionalJoins are now supplied as source Object fields. Construct SAME nonunit mark and ALL actual inclusion graphs preserving it",
+        "Pure forall13 complete weighted pointed-object producer constructs SAME seven actual carrier/monoid/mark objects plus two weight graphs; original stage marker/transition assumptions explicit, cardinal Bound conditional in OUTPUT. No final actual tower/request schedule or new Object/Hom/category/quotient/Sat/kernel/sequence/recursor/scalar framework",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives for both standalone cardinal theorem and full pointed Object/inclusions; each endpoint uses 35 already-recorded dependencies, NO trust expansion or hidden object Choice"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.cardinal_le with original source object Choice explicit only in cardinal conclusion, and MonoidTowers.DirectedColimit.object/inclusion distinguished-nonunit/weighted fields on SAME actual constructor. Independent size endpoint has no extra algebra/injectivity/conservativity/nonempty-index premise. Generic complete pointed weighted object outer forall13 constructs nine actual global objects; all canonical maps preserve product/unit/mark, all source profiles and exact heights/costs/old suprema. Original stage Object Conical/Joins/mark data explicit; no Choice construction premise. Literal native small-union donor proofs reused, not redeveloped. Actual cocone/lift/universal-colimit adaptation for consumers, final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedObjectSyntax.constructionSentence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedObjectSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedObjectSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
           "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
           "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
           "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
