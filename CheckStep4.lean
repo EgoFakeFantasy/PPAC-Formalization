@@ -11603,4 +11603,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIterationValidity.constructionSentence)) :=
   ConstructionSaturationIterationValidity.construction_kernel_certificate
 
+-- Concrete internal omega1+1, retaining omega1 <= mu and the original cardinal parents.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIndex.indexSentence)) :=
+  ConstructionSaturationIndex.index_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIndex.constructionSentence)) :=
+  ConstructionSaturationIndex.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

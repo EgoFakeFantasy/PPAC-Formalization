@@ -2267,7 +2267,10 @@ def main() -> None:
                                ('construction_saturation_successor', 'ConstructionSaturationSuccessor', 9),
                                ('construction_saturation_iteration_cases', 'ConstructionSaturationIterationCases', 11),
                                ('construction_saturation_iteration', 'ConstructionSaturationIteration', 22),
-                               ('construction_saturation_iteration_validity', 'ConstructionSaturationIterationValidity', 15)):
+                               ('construction_saturation_iteration_validity', 'ConstructionSaturationIterationValidity', 15),
+                               ('existing_ordinal_image', 'ExistingOrdinalImage', 5),
+                               ('existing_successor_regularity', 'ExistingSuccessorRegularity', 1),
+                               ('construction_saturation_index', 'ConstructionSaturationIndex', 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -2290,7 +2293,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
@@ -2347,6 +2350,30 @@ def main() -> None:
         r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", ordinal_text)}
     if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in ordinal_blocks.items()} != ordinal_reuse["literal_blocks_sha256"]:
         raise RuntimeError("Reused donor internal ordinal enumeration proof bodies changed")
+    successor_reuse = source_lock["companion_reuse"]["native_successor_regularity"]
+    if successor_reuse["commit"] != "79793365c2145c53db37eaf8ab23a64826bd9738":
+        raise RuntimeError("Successor regularity donor revision changed")
+    for module, reuse in successor_reuse["modules"].items():
+        donor_path = ROOT / reuse["donor_file"]
+        if hashlib.sha256(donor_path.read_bytes()).hexdigest() != reuse["donor_sha256"]:
+            raise RuntimeError("Successor regularity donor source changed: " + module)
+        donor = donor_path.read_text(encoding="utf-8")
+        namespace = reuse["donor_namespace"]
+        body = donor[donor.index("namespace " + namespace):]
+        prefix = "namespace PPAC.Migration." + module + "\nopen YesMetaZFC SetTheory"
+        if module == "ExistingSuccessorRegularity":
+            prefix += "\nopen ExistingSmallUnion (models_zf_l union_bound_l)"
+        body = body.replace("namespace " + namespace, prefix, 1).replace(
+            "end " + namespace, "end PPAC.Migration." + module)
+        for original, adapted in reuse["replacements"]:
+            body = body.replace(original, adapted)
+        target = (ROOT / reuse["adapter"]).read_text(encoding="utf-8")
+        if target[target.index("namespace PPAC.Migration." + module):] != body:
+            raise RuntimeError("Successor regularity proof differs beyond explicit path adaptations: " + module)
+        if hashlib.sha256(body.encode("utf-8")).hexdigest() != reuse["normalized_donor_body_sha256"]:
+            raise RuntimeError("Successor regularity normalized proof hash mismatch")
+        if re.findall(r"^import (.+)$", target, re.MULTILINE) != reuse["exact_imports"]:
+            raise RuntimeError("Successor regularity adapter imports changed")
     normalized_enum = ordinal_blocks["Choice.OrdinalEnumeration"].replace(
         "exists_hartogsNumber_kernel hZF I S", "ZF.exists_hartogsNumber hZF I S")
     if hashlib.sha256(normalized_enum.encode("utf-8")).hexdigest() != ordinal_reuse["original_donor_block_sha256"]:
@@ -5856,6 +5883,11 @@ def main() -> None:
         "source_Saturation_full_internal_multiround_recursive_tower_constructed": True,
         "source_Saturation_all_twelve_tables_time_full_weighted_diagram_and_stage_bounds_constructed": True,
         "source_Saturation_global_adjacent_map_equals_SAME_trace_bearing_selected_complete_round_inclusion": True,
+        "source_Saturation_concrete_internal_Hartogs_omega_regular_index_and_successor_mu_small_constructed": True,
+        "source_Saturation_omega1_plus_one_actual_recursive_tower_constructed": True,
+        "source_Saturation_original_omega1_le_mu_parent_preserved": True,
+        "source_Saturation_ConcreteSystem_mu_K_instantiation_complete": False,
+        "source_Saturation_countable_proper_stage_coverage_complete": False,
         "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,

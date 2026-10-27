@@ -659,3 +659,5 @@ import PPAC.Migration.ConstructionSaturationSuccessor
 import PPAC.Migration.ConstructionSaturationIterationCases
 import PPAC.Migration.ConstructionSaturationIteration
 import PPAC.Migration.ConstructionSaturationIterationValidity
+
+import PPAC.Migration.ConstructionSaturationIndex
