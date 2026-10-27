@@ -2,7 +2,7 @@
 
 阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
 
-**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已有；6 接口未闭合；7 条件式前端已有；主开发仍在 8。ProbeData 与完整加权 MergerData 原父输入生产者均已验收，含实际权重／严格上确界 margin、旧上确界保持、指定非单位元、所有旧 profile／根及条件基数界。有向极限的实际变动载体／等价类／投影、全部阶段函数图与二／三元共同阶段表示也已验收；同一实际乘法表／单位、结合律／左消去单子／条件 conical 及全部阶段单子同态现也已验收；指定右因子／精确整除反射、全部阶段四字段 Conservative／极限条件并现也已验收；源全后继 profile 的同一路径极限传输现也已验收；实际高度／成本图、四界、严格实际 Cap margin 和所有旧对同一最小上界现也已验收；显式原选择条件下的基数界及完整指定非单位元 Object／inclusion 现也已验收；原 MonoidTowers 的实际 cocone 图族／完整加权 lift／fac／uniq 现亦已验收；下一项是实际加权塔／请求调度及最终饱和单子，再按实际依赖接入 Placement／ConservativeHull；9–11 未完成。不是前七阶段全过，也不是收尾。**
+**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已有；6 接口未闭合；7 条件式前端已有；主开发仍在 8。ProbeData 与完整加权 MergerData 原父输入生产者均已验收，含实际权重／严格上确界 margin、旧上确界保持、指定非单位元、所有旧 profile／根及条件基数界。有向极限的实际变动载体／等价类／投影、全部阶段函数图与二／三元共同阶段表示也已验收；同一实际乘法表／单位、结合律／左消去单子／条件 conical 及全部阶段单子同态现也已验收；指定右因子／精确整除反射、全部阶段四字段 Conservative／极限条件并现也已验收；源全后继 profile 的同一路径极限传输现也已验收；实际高度／成本图、四界、严格实际 Cap margin 和所有旧对同一最小上界现也已验收；显式原选择条件下的基数界及完整指定非单位元 Object／inclusion 现也已验收；原 MonoidTowers 的实际 cocone 图族／完整加权 lift／fac／uniq 现亦已验收；两类请求的唯一参数映射现亦已验收；下一项是统一调度图及 Round.step 实际后继／fromBase，再接实际加权塔／请求调度及最终饱和单子，再按实际依赖接入 Placement／ConservativeHull；9–11 未完成。不是前七阶段全过，也不是收尾。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；InterpretedZF 已消费全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | Base、完整 ProbeData／加权 MergerData 原父输入生产者及已列全部字段；极限实际变动载体／同一投影／阶段图／共同阶段、实际乘法／单位／结合律／左消去单子／条件 conical 及全部阶段单子同态／四字段 Conservative／极限条件并及源全后继 profile 极限传输、完整实际权重／严格 Cap margin／所有旧对同一上确界、显式原选择条件下基数界及完整指定非单位元 Object／inclusion 及同一对象的实际 cocone／完整加权 lift／fac／uniq 已有原核证书 | 实际塔／请求调度和最终饱和单子；Placement／Hull 按实际消费者接入。完整阶段未完成 |
+| 8 | 源代数／构造核心 | Base、完整 ProbeData／加权 MergerData 原父输入生产者及已列全部字段；极限实际变动载体／同一投影／阶段图／共同阶段、实际乘法／单位／结合律／左消去单子／条件 conical 及全部阶段单子同态／四字段 Conservative／极限条件并及源全后继 profile 极限传输、完整实际权重／严格 Cap margin／所有旧对同一上确界、显式原选择条件下基数界及完整指定非单位元 Object／inclusion 及同一对象的实际 cocone／完整加权 lift／fac／uniq 及两类请求的唯一参数映射、prescription one-step 有效性双向传输已有原核证书 | 统一调度图、Round.step 实际后继／fromBase、实际塔／请求调度和最终饱和单子；Placement／Hull 按实际消费者接入。完整阶段未完成 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -44,4 +44,4 @@ evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保�
 
 清理边界：先前 135 个孤立模块已退役；本轮获得用户对精确清单的明确批准后，已退役其余 358 个模块（291 Packet/reader + 67 专属消费者）及批准的配套入口／测试／审计。原提案跨 example 边界误带的一条保留测试已恢复，漏掉的退休端点预期已清除；全部保留原核检查和最终 Con 门保留。完整保留验收已通过，见 STATUS 及执行记录。恢复清单见 RETIRED_PACKET.json，执行记录见 verification/retired-packet-closure-execution-20261027.json。这不是新的数学阶段，不改变第 8 阶段剩余任务。
 
-当前第 8 阶段的紧接源接口：MonoidTowers.ConstructionIteration.Step／structureWithTime／time／functor／map_succ → MonoidRounds.Request.map／target／inclusion／Round → CompleteRounds → SaturatedMonoids。实际规范 cocone 图族和完整 lift／fac／uniq 已由 ConstructionDirectedColimitSyntax 的 forall13 原核生产者验收。后续直接消费已有内部序数递归与本批极限；真实时间索引、后继操作及内部极限保持是必要验收门，不新建通用类别或外部良基递归。57 项新增声明，全部 27526 项原足迹不变；实际命令和结果统一见 STATUS 与 directed-colimit-acceptance.json。
+当前第 8 阶段直接接口：MonoidRounds.Request.map 两类参数映射合同已验收（实际映射路径／非单位参数、同一内部有限 n／正性、唯一实际 PN、one-step 关系反射、任意新目标上的 Valid 双条件）。下一项把这些唯一数据收集到调度图，原样调用已有 ConstructionProbeParent／ConstructionMergerParent 完整生产者，接 Round.step:93／fromBase:103／map_succ:118，再由既有内部序数递归和实际极限接 ConstructionIteration → CompleteRounds → SaturatedMonoids。这里的统一图／后继接线未完成；不重做已有请求构造、实际极限或 L 数学。实际命令和本批 37 项声明验收见 STATUS 与 request-maps-acceptance.json；原 27583 项依赖足迹逐项不变。

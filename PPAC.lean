@@ -591,3 +591,7 @@ import PPAC.Migration.ConstructionDirectedLiftSyntax
 import PPAC.Migration.ConstructionDirectedCocone
 import PPAC.Migration.ConstructionDirectedColimit
 import PPAC.Migration.ConstructionDirectedColimitSyntax
+import PPAC.Migration.ConstructionMergerPrescriptionMap
+import PPAC.Migration.ConstructionMergerPrescriptionMapSyntax
+import PPAC.Migration.ConstructionRequestMaps
+import PPAC.Migration.ConstructionRequestMapsSyntax

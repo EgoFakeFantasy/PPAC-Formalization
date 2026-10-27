@@ -2207,7 +2207,11 @@ def main() -> None:
                                ('construction_directed_lift_syntax', 'ConstructionDirectedLiftSyntax', 21),
                                ('construction_directed_cocone', 'ConstructionDirectedCocone', 11),
                                ('construction_directed_colimit', 'ConstructionDirectedColimit', 5),
-                               ('construction_directed_colimit_syntax', 'ConstructionDirectedColimitSyntax', 3)):
+                               ('construction_directed_colimit_syntax', 'ConstructionDirectedColimitSyntax', 3),
+                               ('construction_merger_prescription_map', 'ConstructionMergerPrescriptionMap', 18),
+                               ('construction_merger_prescription_map_syntax', 'ConstructionMergerPrescriptionMapSyntax', 9),
+                               ('construction_request_maps', 'ConstructionRequestMaps', 4),
+                               ('construction_request_maps_syntax', 'ConstructionRequestMapsSyntax', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5677,6 +5681,11 @@ def main() -> None:
         "source_directed_limit_full_weighted_pointed_conservative_lift_fac_unique_proved": True,
         "source_directed_limit_actual_generic_universal_colimit_constructed": True,
         "source_directed_limit_actual_universal_colimit_and_final_tower_constructed": False,
+        "source_request_map_both_ProbeData_and_MergerData_constructors_proved": True,
+        "source_request_map_actual_partial_start_graph_and_exact_one_step_relation_reflection_proved": True,
+        "source_request_map_validity_iff_all_target_elements_without_transitive_closure_proved": True,
+        "source_request_map_actual_internal_path_and_nonunit_payload_unique_proved": True,
+        "source_request_map_scope": "Both original parameter constructors transported along same actual conservative hom. Actual Round.step successor/fromBase assembly and final weighted tower/request schedule remain open",
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
