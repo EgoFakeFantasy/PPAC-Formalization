@@ -109,3 +109,5 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 完整 Word HeightCost 批次：正有理缩放通过既有 ConstructionFractionScaling.Times/order_iff 和 scaled_equiv 取得，公共分母和 native mul_add 给出分配；严格切割缩放由已有差值、正乘积和加法序反映推出。same-head 直接消费现成 generator 乘法／left_mul_dvd_iff 和 old_factor_of_other_block。统一证明只调用既有 Raw 对象公式归纳，atTarget 同时量化被比较词和两个高度值，覆盖非标准内部长度。最后调用既有 canonical_uniform，为所有新严格比较构造实际 Cap 和严格间隙，精确对应 DiagramOrder.HeightCost.margin:67；没有重证上确界设施。
 
 下一装配入口已经存在：ConstructionPersistentProfiles.exists_probe_successor:187 返回实际 W/unit/J/G/O、WordCarrier、MultiplicationGraph、左消去／conical／条件并、OldGraph／Conservative／HasOldGates 和全部旧 profile 的映射保持。应直接组合本批 exists_heightCost，核对原 ProbeData/Probe 字段；不新建一套扩张或 profile 归纳。
+
+Merger 当前消费：ConstructionMergerRelations/Copies/Action 将固定原关系（不是传递闭包）实例化为已验收 ProbeLetters 的具体 class／投影构造模式，直接调用原生 Separation／functionalImage／setFunction；product-coded representatives 及 projected/indices/range 直接复用。右自由性是固定 copy 的旧因子单射性；不要求右消去或提供 action oracle。下一步 Raw.exists_carrier/Old/Cons、Raw 对象公式归纳及现成内部函数／递归承担 source Merger Word（用倒序字母存储 snoc），不重建序列／parser／基础归纳。

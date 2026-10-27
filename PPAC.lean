@@ -516,3 +516,8 @@ import PPAC.Migration.ConstructionProbeSuccessorSyntax
 
 import PPAC.Migration.ConstructionProbeParent
 import PPAC.Migration.ConstructionProbeParentSyntax
+
+import PPAC.Migration.ConstructionMergerRelations
+import PPAC.Migration.ConstructionMergerCopies
+import PPAC.Migration.ConstructionMergerAction
+import PPAC.Migration.ConstructionMergerActionSyntax
