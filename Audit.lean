@@ -27528,3 +27528,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerHeightUpperSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.times_as_product
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.times_sum_equiv
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.division_sum
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.sumGapAt
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.sumGapAt_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.sumGapAt_semantics
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.sum_eval_gap
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.coordinate_average_gap
+#print axioms PPAC.Migration.ConstructionMergerAverageGap.copiesHeight_gap
+#print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerAverageGapSyntax.construction_kernel_certificate
