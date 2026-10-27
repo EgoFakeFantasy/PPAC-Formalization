@@ -542,3 +542,7 @@ import PPAC.Migration.ConstructionMergerWordConesSyntax
 import PPAC.Migration.ConstructionMergerOldEmbedding
 import PPAC.Migration.ConstructionMergerRoots
 import PPAC.Migration.ConstructionMergerRootsSyntax
+
+import PPAC.Migration.ConstructionMergerCoordinates
+import PPAC.Migration.ConstructionMergerCoordinateLaws
+import PPAC.Migration.ConstructionMergerCoordinateSyntax
