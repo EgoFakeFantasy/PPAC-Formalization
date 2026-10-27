@@ -2220,7 +2220,10 @@ def main() -> None:
                                ('construction_request_schedule_syntax', 'ConstructionRequestScheduleSyntax', 3),
                                ('construction_request_carrier', 'ConstructionRequestCarrier', 23),
                                ('construction_complete_schedule', 'ConstructionCompleteSchedule', 17),
-                               ('construction_complete_schedule_syntax', 'ConstructionCompleteScheduleSyntax', 6)):
+                               ('construction_complete_schedule_syntax', 'ConstructionCompleteScheduleSyntax', 6),
+                               ('existing_ordinal_enumeration', 'ExistingOrdinalEnumeration', 9),
+                               ('construction_schedule_order', 'ConstructionScheduleOrder', 8),
+                               ('construction_schedule_order_syntax', 'ConstructionScheduleOrderSyntax', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -2241,7 +2244,7 @@ def main() -> None:
         prefix = "PPAC.Migration." + module + "."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module == "ExistingFiniteSequenceBounds":
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
@@ -2268,6 +2271,26 @@ def main() -> None:
         r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", small_union_text)}
     if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in small_union_blocks.items()} != small_union_reuse["literal_blocks_sha256"]:
         raise RuntimeError("Reused donor internal small-family union proof bodies changed")
+    ordinal_reuse = source_lock["companion_reuse"]["native_ordinal_enumeration"]
+    ordinal_text = (ROOT / ordinal_reuse["adapter"]).read_text(encoding="utf-8")
+    ordinal_blocks = {m[1]: m[2].strip() for m in re.finditer(
+        r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", ordinal_text)}
+    if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in ordinal_blocks.items()} != ordinal_reuse["literal_blocks_sha256"]:
+        raise RuntimeError("Reused donor internal ordinal enumeration proof bodies changed")
+    normalized_enum = ordinal_blocks["Choice.OrdinalEnumeration"].replace(
+        "exists_hartogsNumber_kernel hZF I S", "ZF.exists_hartogsNumber hZF I S")
+    if hashlib.sha256(normalized_enum.encode("utf-8")).hexdigest() != ordinal_reuse["original_donor_block_sha256"]:
+        raise RuntimeError("Ordinal enumeration deviates from original donor body")
+    native_block = re.search(r"(?ms)^-- BEGIN NATIVE Hartogs.Exists\n(.*?)^-- END NATIVE Hartogs.Exists\n", ordinal_text)[1].strip()
+    if hashlib.sha256(native_block.encode("utf-8")).hexdigest() != ordinal_reuse["native_hartogs_adapter_block_sha256"]:
+        raise RuntimeError("Kernel-checked Hartogs adapter proof changed")
+    normalized_hartogs = native_block.replace("theorem exists_hartogsNumber_kernel\n", "theorem exists_hartogsNumber\n").replace(
+        "    exact hZF.1.eq_of_same_members first second\n      (fun x => (hFirstSuccessor x).trans (hSecondSuccessor x).symm)", "    prove_auto")
+    native_hartogs_text = (ROOT / ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Aleph/Hartogs.lean").read_text(encoding="utf-8")
+    original_hartogs = native_hartogs_text.split("theorem exists_hartogsNumber\n", 1)[1].split("\nend ZF", 1)[0]
+    original_hartogs = ("theorem exists_hartogsNumber\n" + original_hartogs).strip()
+    if normalized_hartogs != original_hartogs or hashlib.sha256(original_hartogs.encode("utf-8")).hexdigest() != ordinal_reuse["native_hartogs_original_block_sha256"]:
+        raise RuntimeError("Hartogs proof differs beyond the one explicit successor-extensionality step")
     for name, digest in cardinal_reuse["certificate_source_files"].items():
         if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / name).read_bytes()).hexdigest() != digest:
             raise RuntimeError("Pinned cardinal certificate source changed")
@@ -5706,6 +5729,11 @@ def main() -> None:
         "source_CompleteRounds_actual_exhaustive_underlying_Request_times_K_top_Schedule_and_Place_graphs_constructed": True,
         "source_CompleteRounds_every_Request_K_pair_non_top_position_and_K_place_injection_proved": True,
         "source_CompleteRounds_internal_wellorder_ordinal_index_and_original_Request_cardinal_bounds_instantiated": False,
+        "source_CompleteRounds_actual_chosen_internal_product_and_WithTop_wellorders_constructed": True,
+        "source_CompleteRounds_every_designated_place_strictly_before_top_proved": True,
+        "source_CompleteRounds_actual_canonical_ordinal_type_and_equinumerosity_constructed": True,
+        "source_CompleteRounds_chosen_wellorder_object_Choice_explicit_antecedent": True,
+        "source_CompleteRounds_schedule_transported_to_ordinal_graph_constructed": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

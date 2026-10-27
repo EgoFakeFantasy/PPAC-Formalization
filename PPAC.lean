@@ -604,3 +604,6 @@ import PPAC.Migration.ConstructionRequestScheduleSyntax
 import PPAC.Migration.ConstructionRequestCarrier
 import PPAC.Migration.ConstructionCompleteSchedule
 import PPAC.Migration.ConstructionCompleteScheduleSyntax
+import PPAC.Migration.ExistingOrdinalEnumeration
+import PPAC.Migration.ConstructionScheduleOrder
+import PPAC.Migration.ConstructionScheduleOrderSyntax

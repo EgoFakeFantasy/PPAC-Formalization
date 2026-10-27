@@ -2,7 +2,7 @@
 
 阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
 
-**实际位置：连续完整验收到原 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8。完整 Probe／Merger、通用实际加权极限、两类请求参数映射、两类实际 Round.step 后继及同一后继 fromBase／原请求见证、变动阶段上的唯一统一映射请求图均已有原核证书。全部 Request 集／默认 Probe／Request×K 加 top 的穷尽底层调度已有原核证书；调度内部良序／序数／原请求基数界、真实迭代塔及全塔时间／自然性仍未装配；9–11 未完成。不是收尾。**
+**实际位置：连续完整验收到原 1–3；4 部分验收，5 基础包已有，6 接口未闭合，7 条件式前端已有；主开发仍在 8。完整 Probe／Merger、通用实际加权极限、两类请求参数映射、两类实际 Round.step 后继及同一后继 fromBase／原请求见证、变动阶段上的唯一统一映射请求图均已有原核证书。全部 Request 集／默认 Probe／Request×K 加 top 的穷尽底层调度已有原核证书；同一索引的实际内部良序、严格 top 位置和规范序型现也已验收；序型上的实际调度图传输／原请求基数界、真实迭代塔及全塔时间／自然性仍未装配；9–11 未完成。不是收尾。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；InterpretedZF 已消费全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整 Base／ProbeData／加权 MergerData；同一实际加权极限的完整 Object／inclusions／cocone／lift／fac／uniq、全部 Conservative／profiles／实际 Cap／基数结论；两类实际 Round.step 后继与后继 fromBase、原基请求见证；变动阶段上给定调度的唯一实际映射请求图 | 全部内部 Request 集、默认 Probe、穷尽底层 Schedule／Place 单射已验收；补其内部良序／序数及原请求基数界接口，用既有内部序数递归与后继／极限装配实际塔，核对真实时间、全塔 fromBase_naturality／map_succ，再接 CompleteRounds／SaturatedMonoids。Placement／Hull 按实际消费者接入；完整阶段未完成 |
+| 8 | 源代数／构造核心 | 完整 Base／ProbeData／加权 MergerData；同一实际加权极限的完整 Object／inclusions／cocone／lift／fac／uniq、全部 Conservative／profiles／实际 Cap／基数结论；两类实际 Round.step 后继与后继 fromBase、原基请求见证；变动阶段上给定调度的唯一实际映射请求图 | 全部内部 Request 集、默认 Probe、穷尽底层 Schedule／Place 单射已验收；内部良序／严格 top 位置及规范序型亦已验收；补实际调度图到序型的传输及原请求基数界接口，用既有内部序数递归与后继／极限装配实际塔，核对真实时间、全塔 fromBase_naturality／map_succ，再接 CompleteRounds／SaturatedMonoids。Placement／Hull 按实际消费者接入；完整阶段未完成 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -44,4 +44,4 @@ evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保�
 
 清理边界：先前 135 个孤立模块已退役；本轮获得用户对精确清单的明确批准后，已退役其余 358 个模块（291 Packet/reader + 67 专属消费者）及批准的配套入口／测试／审计。原提案跨 example 边界误带的一条保留测试已恢复，漏掉的退休端点预期已清除；全部保留原核检查和最终 Con 门保留。完整保留验收已通过，见 STATUS 及执行记录。恢复清单见 RETIRED_PACKET.json，执行记录见 verification/retired-packet-closure-execution-20261027.json。这不是新的数学阶段，不改变第 8 阶段剩余任务。
 
-当前第 8 阶段直接接口：两类 Round.step 实际后继及完整 fromBase／原请求见证已验收。ConstructionCompleteScheduleSyntax 的 forall8 原核端点现已从原父输入实际构造全部 Request 集、默认 Probe、Request×K 加 top 的穷尽底层调度和 Place 单射；每个请求与每个 k 都有非 top 出现位置，无给定 Schedule 前提。非 top 不自动等于内部序中的 ¬IsMax。下一接口为既有良序／序型与原请求基数界的实例化，以及 ConstructionIteration 的实际内部序数迭代／时间／全塔自然性，再接完整轮次和饱和性。本批 46 项声明的验收见 STATUS 与 complete-schedule-acceptance.json；原 27713 项足迹不变。不重建 L、全模式、Proof/Sat、函数图、良序型或递归后端。
+当前第 8 阶段直接接口：原完整后继／极限／fromBase／原请求见证以及全部 Request 集和实际穷尽调度已验收。ConstructionScheduleOrderSyntax 的 forall3 原核端点现已实际调用这些调度生产者，再用现成供体 ordinal_enum_l 与底座最小原像／序型接口，构造同一积上的内部良序、同一 WithTop 索引的内部良序、指定位置严格早于 top 及规范序型／等势。对象 Choice 是源 ZFC 层的显式前件，不加入最终 nativeZF；原 Hartogs 唯一自动化调用已用外延性替换以避免 3 项新 native Bool 依赖。下一接口为实际 Schedule／Place 到序型的传输、原请求基数界、真实内部迭代塔／时间／全塔自然性，再接 CompleteRounds／SaturatedMonoids。本批 23 项声明的完整验收见 STATUS 与 schedule-order-acceptance.json，原 27759 项足迹不变。不重建 L、全模式、Proof/Sat、函数图、序型或递归后端。

@@ -1684,6 +1684,83 @@
       ],
       "adaptation": "Six exact theorem types/proof bodies; only imports, enclosing namespace and retained binder context change. No recursive choice/ordinal enumeration/fiber/cardinal library is recreated. Source Models ZFC stays explicit.",
       "trust_note": "No new trusted dependencies; object Choice is explicit in cardinal OUTPUT only, absent from constructing the pointed weighted limit. Native choice closedness certificate was already in baseline."
+    },
+    "native_ordinal_enumeration": {
+      "repository": "https://github.com/EgoFakeFantasy/YesMetaZFC",
+      "commit": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "adapter": "PPAC/Migration/ExistingOrdinalEnumeration.lean",
+      "files": {
+        "YesMetaZFC/SetTheory/Choice.lean": "b6633b1ac801f87c076816db8eef034595aaa142f773709a48cacb7849395760"
+      },
+      "literal_blocks_sha256": {
+        "Choice.OrdinalEnumeration": "e68482debb96cea8d118bd204a96ba9c4bd482212005f8705479b72d990b198b"
+      },
+      "original_donor_block_sha256": "e07c68bed963562dccfe76702f5c491a59e2cfb779ef8ef2ecdf04a6e9456195",
+      "native_hartogs_original_block_sha256": "cb3a80fe848dfb6f92577a7f0cd90196d5a7b60790f3ce7b44b1f243d9c91513",
+      "native_hartogs_adapter_block_sha256": "90fbd1e823017951a67101cef69edf81a489ab23b4119afb0397307334aa5231",
+      "selected_declarations": {
+        "PPAC.Migration.ExistingOrdinalEnumeration.exists_hartogsNumber_kernel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.Rem_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.Enum_step_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.enum_step_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.enum_step_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.ordinal_enum_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_m_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "adaptation": "Original completed ordinal_enum_l body, only Hartogs reference redirects to same pinned proof with ONE automation call replaced by explicit extensionality. Both directions of exact normalization checked. Existing selector_l reused, source Models ZFC explicit.",
+      "trust_note": "All 23 declaration footprints contained in previous 27759-declaration trust union; three native Hartogs Bool dependencies eliminated, no new axioms."
     }
   },
   "source_proof_adaptations": {
@@ -56072,6 +56149,309 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ]
+      }
+    },
+    "existing_ordinal_enumeration": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean",
+      "source_sha256": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b"
+      },
+      "adapter": "PPAC/Migration/ExistingOrdinalEnumeration.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Aleph/Hartogs.lean": "f87fdd6cb8cdee93f208f4201b765f451288ad78e89771a2b0e8fa0ab8d7156a",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/OrderType.lean": "635dc2aa7ae3c7446e5dd8a90a0e8ea4238051be009a340c5c7bdb13c05f35df",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Cofinality/Comparison.lean": "975fe67eb26acf52a35fa446cfa73bfad54e22e2a00001f86a045c011c15f6b4",
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Choice.lean": "b6633b1ac801f87c076816db8eef034595aaa142f773709a48cacb7849395760"
+      },
+      "source_declarations": [
+        "MonoidRounds.WellOrdered:410 / LinearOrder:413 / ScheduleIndex:421",
+        "CompleteRounds.CompleteRound.Index:403 / place_not_isMax:413"
+      ],
+      "consumers": [
+        "CompleteRound actual exhaustive schedule internal order/maximum and native ordinal type for ConstructionIteration"
+      ],
+      "reused_interfaces": [
+        "Existing completed donor Choice.lean:79-189 syntax and ordinal_enum_l proof bodies retained, only Hartogs reference redirected. Existing selector_l and native internal recursion reused. Pinned Hartogs full proof body reused with its sole prove_auto replaced by explicit successor extensionality; normalization and block hashes checked, eliminating three otherwise-new native Bool axioms",
+        "Native exists_rightInverseInjection_of_surjection_from_ordinal and transportedOrdinalMembership construct actual chosen wellorder on SAME complete Request x K product. Internal rank-image Separation gives least elements; all internal subsets and nonstandard indices retained, no external WellFounded",
+        "SAME existing WithTop carrier/Schedule/Place. Actual strict relation is a set, internal wellorder and unique maximum top proved; EVERY designated pair position STRICTLY before top. Existing native wellOrderType_existsUnique constructs canonical internal ordinal type, ordinal proof and equinumerosity",
+        "Pure forall3 nativeZF original-kernel producer ACTUALLY calls full underlying schedule and order constructors. Source object Choice EXPLICIT antecedent, not added to final nativeZF. Original mu^omega bound, schedule transported to ordinal graph, actual tower/global naturality, pinned L adapter, models/internal Con remain open"
+      ],
+      "scope": "ACTUAL chosen internal product/WithTop wellorders on SAME exhaustive Schedule and Place; every placement strictly before top, canonical internal ordinal type/equinumerosity. Source object Choice explicit. Original cardinal bound, transported ordinal schedule, actual tower/global naturality, pinned-L adapter and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ExistingOrdinalEnumeration.exists_hartogsNumber_kernel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.Rem_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.Enum_step_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.enum_step_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.enum_step_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.ordinal_enum_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ExistingOrdinalEnumeration.rem_m_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    "construction_schedule_order": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean",
+      "source_sha256": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b"
+      },
+      "adapter": "PPAC/Migration/ConstructionScheduleOrder.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Aleph/Hartogs.lean": "f87fdd6cb8cdee93f208f4201b765f451288ad78e89771a2b0e8fa0ab8d7156a",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/OrderType.lean": "635dc2aa7ae3c7446e5dd8a90a0e8ea4238051be009a340c5c7bdb13c05f35df",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Cofinality/Comparison.lean": "975fe67eb26acf52a35fa446cfa73bfad54e22e2a00001f86a045c011c15f6b4",
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Choice.lean": "b6633b1ac801f87c076816db8eef034595aaa142f773709a48cacb7849395760"
+      },
+      "source_declarations": [
+        "MonoidRounds.WellOrdered:410 / LinearOrder:413 / ScheduleIndex:421",
+        "CompleteRounds.CompleteRound.Index:403 / place_not_isMax:413"
+      ],
+      "consumers": [
+        "CompleteRound actual exhaustive schedule internal order/maximum and native ordinal type for ConstructionIteration"
+      ],
+      "reused_interfaces": [
+        "Existing completed donor Choice.lean:79-189 syntax and ordinal_enum_l proof bodies retained, only Hartogs reference redirected. Existing selector_l and native internal recursion reused. Pinned Hartogs full proof body reused with its sole prove_auto replaced by explicit successor extensionality; normalization and block hashes checked, eliminating three otherwise-new native Bool axioms",
+        "Native exists_rightInverseInjection_of_surjection_from_ordinal and transportedOrdinalMembership construct actual chosen wellorder on SAME complete Request x K product. Internal rank-image Separation gives least elements; all internal subsets and nonstandard indices retained, no external WellFounded",
+        "SAME existing WithTop carrier/Schedule/Place. Actual strict relation is a set, internal wellorder and unique maximum top proved; EVERY designated pair position STRICTLY before top. Existing native wellOrderType_existsUnique constructs canonical internal ordinal type, ordinal proof and equinumerosity",
+        "Pure forall3 nativeZF original-kernel producer ACTUALLY calls full underlying schedule and order constructors. Source object Choice EXPLICIT antecedent, not added to final nativeZF. Original mu^omega bound, schedule transported to ordinal graph, actual tower/global naturality, pinned L adapter, models/internal Con remain open"
+      ],
+      "scope": "ACTUAL chosen internal product/WithTop wellorders on SAME exhaustive Schedule and Place; every placement strictly before top, canonical internal ordinal type/equinumerosity. Source object Choice explicit. Original cardinal bound, transported ordinal schedule, actual tower/global naturality, pinned-L adapter and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionScheduleOrder.exists_product_order": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.Lt": [],
+        "PPAC.Migration.ConstructionScheduleOrder.lt": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.lt_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.lt_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.exists_index_order": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.OrderedData": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrder.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ]
+      }
+    },
+    "construction_schedule_order_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean",
+      "source_sha256": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b"
+      },
+      "adapter": "PPAC/Migration/ConstructionScheduleOrderSyntax.lean",
+      "certificate_source_files": {
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Aleph/Hartogs.lean": "f87fdd6cb8cdee93f208f4201b765f451288ad78e89771a2b0e8fa0ab8d7156a",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/OrderType.lean": "635dc2aa7ae3c7446e5dd8a90a0e8ea4238051be009a340c5c7bdb13c05f35df",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Cofinality/Comparison.lean": "975fe67eb26acf52a35fa446cfa73bfad54e22e2a00001f86a045c011c15f6b4",
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Choice.lean": "b6633b1ac801f87c076816db8eef034595aaa142f773709a48cacb7849395760"
+      },
+      "source_declarations": [
+        "MonoidRounds.WellOrdered:410 / LinearOrder:413 / ScheduleIndex:421",
+        "CompleteRounds.CompleteRound.Index:403 / place_not_isMax:413"
+      ],
+      "consumers": [
+        "CompleteRound actual exhaustive schedule internal order/maximum and native ordinal type for ConstructionIteration"
+      ],
+      "reused_interfaces": [
+        "Existing completed donor Choice.lean:79-189 syntax and ordinal_enum_l proof bodies retained, only Hartogs reference redirected. Existing selector_l and native internal recursion reused. Pinned Hartogs full proof body reused with its sole prove_auto replaced by explicit successor extensionality; normalization and block hashes checked, eliminating three otherwise-new native Bool axioms",
+        "Native exists_rightInverseInjection_of_surjection_from_ordinal and transportedOrdinalMembership construct actual chosen wellorder on SAME complete Request x K product. Internal rank-image Separation gives least elements; all internal subsets and nonstandard indices retained, no external WellFounded",
+        "SAME existing WithTop carrier/Schedule/Place. Actual strict relation is a set, internal wellorder and unique maximum top proved; EVERY designated pair position STRICTLY before top. Existing native wellOrderType_existsUnique constructs canonical internal ordinal type, ordinal proof and equinumerosity",
+        "Pure forall3 nativeZF original-kernel producer ACTUALLY calls full underlying schedule and order constructors. Source object Choice EXPLICIT antecedent, not added to final nativeZF. Original mu^omega bound, schedule transported to ordinal graph, actual tower/global naturality, pinned L adapter, models/internal Con remain open"
+      ],
+      "scope": "ACTUAL chosen internal product/WithTop wellorders on SAME exhaustive Schedule and Place; every placement strictly before top, canonical internal ordinal type/equinumerosity. Source object Choice explicit. Original cardinal bound, transported ordinal schedule, actual tower/global naturality, pinned-L adapter and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.orderedData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.orderedData_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.orderedData_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.constructionSentence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionScheduleOrderSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5"
         ]
       }
     }
