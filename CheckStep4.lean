@@ -11400,4 +11400,15 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionRoundSelection.stepSentence)) :=
   ConstructionRoundSelection.step_kernel_certificate
 
+-- SAME selected round successor; ALL old varying carriers and actual leg family.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionTowerSuccessor.successorSentence)) :=
+  ConstructionTowerSuccessor.successor_kernel_certificate
+
+-- ALL internal ordinal lengths: append new carrier and OWN actual identity leg.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerSuccessor.appendSentence) :=
+  ConstructionTowerSuccessor.append_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -2229,7 +2229,8 @@ def main() -> None:
                                ('existing_l_choice_bridge', 'ExistingLChoiceBridge', 4),
                                ('constructible_ground', 'ConstructibleGround', 8),
                                ('constructible_source', 'ConstructibleSource', 17),
-                               ('construction_round_selection', 'ConstructionRoundSelection', 29)):
+                               ('construction_round_selection', 'ConstructionRoundSelection', 29),
+                               ('construction_tower_successor', 'ConstructionTowerSuccessor', 53)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5757,6 +5758,10 @@ def main() -> None:
         "source_request_schedule_uniform_graph_has_fixed_target_carrier_or_omega_index_restriction": False,
         "source_round_same_L_whole_successor_tuple_selector_total_unique_all_inputs": True,
         "source_round_same_L_selected_successor_both_requests_actual_full_parent_producer": True,
+        "source_round_same_chosen_successor_all_old_stage_map_family_constructed": True,
+        "source_round_successor_all_existing_fromBase_naturality_and_full_MapFields_preserved": True,
+        "source_round_old_current_identity_leg_maps_exact_same_inclusion_proved": True,
+        "source_round_native_ordinal_append_actual_new_carrier_and_self_identity_constructed": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
         "source_CompleteRounds_full_internal_canonical_Request_carrier_and_defaultProbe_constructed": True,

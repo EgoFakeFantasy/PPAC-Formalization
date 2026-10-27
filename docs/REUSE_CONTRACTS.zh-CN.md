@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段的唯一后继接口为 ConstructionRoundSelection：在同一实际 L 内，直接消费既有完整 probe_step／merger_step，以原 Kuratowski 配对打包九个字段；现成 Jensen 全局序的集合初段、KP.exists_insert 与 ZF.separation_exists_d 选出整个候选元组的最小者。无候选输入取 zero，因此对全部输入唯一且总定义；原完整父输入保证候选存在并保留原请求见证／fromBase。没有添加对象全局选择公理或通用选择后端。它是现有内部递归所需的后继选择器；真实历史的极限分支、全塔时间／自然性仍须装配，不能写成塔已完成。
+当前第 8 阶段的唯一后继接口为 ConstructionRoundSelection：在同一实际 L 内，直接消费既有完整 probe_step／merger_step，以原 Kuratowski 配对打包九个字段；现成 Jensen 全局序的集合初段、KP.exists_insert 与 ZF.separation_exists_d 选出整个候选元组的最小者。无候选输入取 zero，因此对全部输入唯一且总定义；原完整父输入保证候选存在并保留原请求见证／fromBase。没有添加对象全局选择公理或通用选择后端。ConstructionTowerSuccessor 现实际消费同一选中元组，以现成 function composition／functionalImage／set-function constructor 构造全部旧阶段的新腿族；完整 MapFields、profile、Stable 和原有 fromBase 自然性同步传输，旧当前腿为恒等时新图精确等于 O。原生 IsSequenceOfLength.exists_append 又实际追加载体行和新阶段自身的恒等腿，close_extended 在同一选中输出上调用两者。没有复建 graph insertion／递归后端。真实历史／其余对象字段与转移表、极限分支、全塔时间仍须装配，不能写成完整塔已完成。
 
 ## 内部证明码：复用现有配套，不重建
 
