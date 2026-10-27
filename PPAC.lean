@@ -538,3 +538,7 @@ import PPAC.Migration.ConstructionMergerCopyConesSyntax
 import PPAC.Migration.ConstructionMergerWordDivisibility
 import PPAC.Migration.ConstructionMergerWordCones
 import PPAC.Migration.ConstructionMergerWordConesSyntax
+
+import PPAC.Migration.ConstructionMergerOldEmbedding
+import PPAC.Migration.ConstructionMergerRoots
+import PPAC.Migration.ConstructionMergerRootsSyntax
