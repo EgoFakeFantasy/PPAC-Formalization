@@ -11504,4 +11504,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerMapSucc.constructionSentence)) :=
   ConstructionTowerMapSucc.construction_kernel_certificate
 
+-- Native ZF Request bound and actual small Request set; no object Choice premise.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionRequestCardinality.boundSentence) :=
+  ConstructionRequestCardinality.bound_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionRequestCardinality.constructionSentence) :=
+  ConstructionRequestCardinality.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

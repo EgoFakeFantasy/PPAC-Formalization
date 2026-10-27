@@ -2247,7 +2247,9 @@ def main() -> None:
                                ('construction_tower_iteration_cases', 'ConstructionTowerIterationCases', 15),
                                ('construction_tower_iteration', 'ConstructionTowerIteration', 29),
                                ('construction_tower_iteration_validity', 'ConstructionTowerIterationValidity', 12),
-                               ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 12)):
+                               ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 12),
+                               ('construction_request_padding', 'ConstructionRequestPadding', 14),
+                               ('construction_request_cardinality', 'ConstructionRequestCardinality', 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5808,6 +5810,10 @@ def main() -> None:
         "source_CompleteRounds_full_internal_canonical_Request_carrier_and_defaultProbe_constructed": True,
         "source_CompleteRounds_actual_exhaustive_underlying_Request_times_K_top_Schedule_and_Place_graphs_constructed": True,
         "source_CompleteRounds_every_Request_K_pair_non_top_position_and_K_place_injection_proved": True,
+        "source_CompleteRounds_original_Request_data_cardinal_le_instantiated": True,
+        "source_CompleteRounds_actual_small_Request_carrier_constructed": True,
+        "source_Request_cardinal_bound_preserves_complete_partial_start_graph_all_internal_n_and_diagonals": True,
+        # Request bound is complete. Joint gate still needs actual ordinal-index size/tower bounds.
         "source_CompleteRounds_internal_wellorder_ordinal_index_and_original_Request_cardinal_bounds_instantiated": False,
         "source_CompleteRounds_actual_chosen_internal_product_and_WithTop_wellorders_constructed": True,
         "source_CompleteRounds_every_designated_place_strictly_before_top_proved": True,

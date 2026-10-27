@@ -31421,3 +31421,35 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionTowerMapSucc.constructionSentence
 #print axioms PPAC.Migration.ConstructionTowerMapSucc.construction_models
 #print axioms PPAC.Migration.ConstructionTowerMapSucc.construction_kernel_certificate
+
+-- Complete original Request bound: actual injective Option padding and native mu^omega=mu.
+#print axioms PPAC.Migration.ConstructionRequestPadding.Value
+#print axioms PPAC.Migration.ConstructionRequestPadding.Padding
+#print axioms PPAC.Migration.ConstructionRequestPadding.prescription_single
+#print axioms PPAC.Migration.ConstructionRequestPadding.value_unique
+#print axioms PPAC.Migration.ConstructionRequestPadding.padValue
+#print axioms PPAC.Migration.ConstructionRequestPadding.padValue_freeClosed
+#print axioms PPAC.Migration.ConstructionRequestPadding.padValue_semantics
+#print axioms PPAC.Migration.ConstructionRequestPadding.padding
+#print axioms PPAC.Migration.ConstructionRequestPadding.padding_freeClosed
+#print axioms PPAC.Migration.ConstructionRequestPadding.padding_semantics
+#print axioms PPAC.Migration.ConstructionRequestPadding.exists_padding
+#print axioms PPAC.Migration.ConstructionRequestPadding.padding_unique
+#print axioms PPAC.Migration.ConstructionRequestPadding.recover_edge
+#print axioms PPAC.Migration.ConstructionRequestPadding.padding_injective
+#print axioms PPAC.Migration.ConstructionRequestCardinality.function_space_bound
+#print axioms PPAC.Migration.ConstructionRequestCardinality.Encoding
+#print axioms PPAC.Migration.ConstructionRequestCardinality.encoding
+#print axioms PPAC.Migration.ConstructionRequestCardinality.encoding_freeClosed
+#print axioms PPAC.Migration.ConstructionRequestCardinality.encoding_semantics
+#print axioms PPAC.Migration.ConstructionRequestCardinality.merger_fields
+#print axioms PPAC.Migration.ConstructionRequestCardinality.encoding_unique
+#print axioms PPAC.Migration.ConstructionRequestCardinality.encoding_injective
+#print axioms PPAC.Migration.ConstructionRequestCardinality.data_cardinal_le
+#print axioms PPAC.Migration.ConstructionRequestCardinality.boundSentence
+#print axioms PPAC.Migration.ConstructionRequestCardinality.bound_models
+#print axioms PPAC.Migration.ConstructionRequestCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ConstructionRequestCardinality.exists_small_carrier
+#print axioms PPAC.Migration.ConstructionRequestCardinality.constructionSentence
+#print axioms PPAC.Migration.ConstructionRequestCardinality.construction_models
+#print axioms PPAC.Migration.ConstructionRequestCardinality.construction_kernel_certificate

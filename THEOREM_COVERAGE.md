@@ -364,4 +364,14 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | MonoidRounds.Round.map_succ／ConstructionIteration.map_succ | ConstructionTowerMapSucc.mapSucc_kernel_certificate | nativeZF forall20 原核证书；所有内部相邻阶段的全局矩阵图精确等于同一原请求后继 inclusion O，保留两个实际阶段记录、完整 Step、Probe／Merger 两种 Done 见证 |
 | 原 Round 实际构造与后续 CompleteRounds | ConstructionTowerMapSucc.construction_kernel_certificate | 同一 L 相对化 forall15 原核证书；实际构造原递归塔、全部12表、恒等时间、完整21项图表／Under-base 条件，并返回全部相邻阶段的精确 map_succ；已有 L/order 生产者消去背景，不给定相邻方程 |
 
-12 项显式声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2845 项构建、31000 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30988 项足迹不变，2409 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。请求基数界、多轮／饱和系统和最终内部 Con 仍未完成。
+12 项显式声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2845 项构建、31000 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30988 项足迹不变，2409 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。请求基数界现由下列 ConstructionRequestCardinality 完成；索引／塔基数界传播、多轮／饱和系统和最终内部 Con 仍未完成。
+
+## 原第 8 阶段：完整 Request 基数界和实际小请求集
+
+| 固定源消费者 | 实际目标入口 | 精确范围 |
+|---|---|---|
+| CompleteRounds.MergerData.code_injective／data_cardinal_le | ConstructionRequestPadding.exists_padding／padding_injective | 全部内部 n 的同一完整 P，含对角行；在 ω×ω 上真实 Option 补全，可恢复全部原边及字面原表，未使用幂集基数上界 |
+| ProbeData／MergerData／Request.data_cardinal_le → CompleteRound.cardinal_le | ConstructionRequestCardinality.bound_kernel_certificate | nativeZF forall8 原核证书；原 μ 无限、μ^ω=μ、D≤μ 假设下，实际构造完整 Request 集到 μ 的单射，零／一仅为内部不同标签，无对象 Choice 前件 |
+| 实际 Request 集生产者 → 后续轮次枚举 | ConstructionRequestCardinality.construction_kernel_certificate | nativeZF forall7 原核证书；调用既有 RequestCarrier.exists_carrier 实际构造同一完整 Request 集及 Small 单射证书，不以给定 Request 集代替构造 |
+
+两模块 30 项声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2847 项构建、31030 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31000 项足迹不变，2411 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。索引／实际塔基数界传播、CompleteRounds／SaturatedMonoids 和最终内部 Con 仍未完成。
