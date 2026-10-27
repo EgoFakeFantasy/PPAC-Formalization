@@ -33,7 +33,7 @@ path and four source elements. No initial-only or supplied limit profile. -/
 def PersistentProfile (J E Domains F Muls w i a b d p node : M.Carrier .set) : Prop :=
   ∀ j D mul f mapped aa bb dd pp, (Project.FirstOrderSemantics.reduct M).mem j J →
     PureKuratowski.PairMember M i j E → PureKuratowski.PairMember M j D Domains →
-    PureKuratowski.PairMember M j mul Muls → Product F i j f → NodeMap node f mapped →
+    PureKuratowski.PairMember M j mul Muls → Product F i j f → MapsTo w D mapped → NodeMap node f mapped →
     PureKuratowski.PairMember M a aa f → PureKuratowski.PairMember M b bb f →
     PureKuratowski.PairMember M d dd f → PureKuratowski.PairMember M p pp f →
     ProbeProfile w D mul aa bb dd pp mapped
@@ -67,7 +67,7 @@ theorem initial_profile
       exact ⟨y,hly,hId y (hn.2 l y hly)⟩
     · rintro ⟨x,hlx,hxy⟩
       exact (ForcingConditionGraphs.function_unique hf.1.1 (hId x (hn.2 l x hlx)) hxy) ▸ hlx
-  exact hPersist i D mul f node a b d p hi hii hD hm hF hNode (hId a ha) (hId b hb) (hId d hd) (hId p hp0)
+  exact hPersist i D mul f node a b d p hi hii hD hm hF hn hNode (hId a ha) (hId b hb) (hId d hd) (hId p hp0)
 
 /-- Actual comparison stage for source probeProfile: same original path,
 actual transition images, and canonical stage graph into the SAME limit. -/
@@ -104,8 +104,8 @@ theorem comparison_profile (hM : FirstOrder.Theory.Models M nativeZF)
   obtain ⟨bk,_,htb,hbk⟩ := transition_value hCov.1 hi hk hD hDk hFt (ForcingConditionGraphs.function_input hf.1 hfb)
   obtain ⟨dk,_,htd,hdk⟩ := transition_value hCov.1 hi hk hD hDk hFt (ForcingConditionGraphs.function_input hf.1 hfd)
   obtain ⟨pk,_,htp,hpk⟩ := transition_value hCov.1 hi hk hD hDk hFt (ForcingConditionGraphs.function_input hf.1 hfp)
-  obtain ⟨nodek,_,hNK⟩ := ConstructionProbeMappedPath.exists_node_map hM hn hCov.1.1
-  have hProf := hPersist k Dk mk t nodek ak bk dk pk hk hik hDk hmk hFt hNK hta htb htd htp
+  obtain ⟨nodek,hNodeK,hNK⟩ := ConstructionProbeMappedPath.exists_node_map hM hn hCov.1.1
+  have hProf := hPersist k Dk mk t nodek ak bk dk pk hk hik hDk hmk hFt hNodeK hNK hta htb htd htp
   obtain ⟨xk,hxk,_,hxp⟩ := ConstructionDirectedLimitCarrier.projected_later hM hC hp hE hT hEq hk hjk hzx
   obtain ⟨gk,hgk,hGK,_⟩ := ConstructionDirectedLimitCarrier.exists_stage_map hM hC hp hE hT hEq hk hDk
   have hCore := stage_core hM hFam hE hT hCons hC hp hL hP hEq hG hGraph hMon hImage hk hDk hmk hek hgk hGK
@@ -253,25 +253,27 @@ theorem exists_system (hM : FirstOrder.Theory.Models M nativeZF)
     profile_transport hM hFam hE hT hCons hC hp hL hP hEq hG hGraph hMon hImage hi hD hm he hf hFG⟩
 
 def persistentProfile {m : Nat} (J E Domains F Muls w i a b d p node : Fin m) : Project.Formula 1 m :=
-  (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.imp (.mem (.bound
-  (8 : Fin (m+9))) (.bound J.succ.succ.succ.succ.succ.succ.succ.succ.succ)) (.imp (ProjectSyntax.encode id
-  (Source.SetLanguage.edge E.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.forallE (.imp (.mem
+  (.bound (8 : Fin (m+9))) (.bound J.succ.succ.succ.succ.succ.succ.succ.succ.succ)) (.imp
+  (ProjectSyntax.encode id (Source.SetLanguage.edge E.succ.succ.succ.succ.succ.succ.succ.succ.succ
   i.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin (m+9)))) (.imp (ProjectSyntax.encode id
   (Source.SetLanguage.edge Domains.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin (m+9)) (7 : Fin
   (m+9)))) (.imp (ProjectSyntax.encode id (Source.SetLanguage.edge
   Muls.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin (m+9)) (6 : Fin (m+9)))) (.imp
   (ProjectSyntax.encode id (ForcingDiagramOrder.product F.succ.succ.succ.succ.succ.succ.succ.succ.succ
   i.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin (m+9)) (5 : Fin (m+9)))) (.imp
-  (ConstructionProbeMappedPathSyntax.nodeMap node.succ.succ.succ.succ.succ.succ.succ.succ.succ (5 : Fin (m+9))
-  (4 : Fin (m+9))) (.imp (ProjectSyntax.encode id (Source.SetLanguage.edge (5 : Fin (m+9))
+  (ProjectSyntax.encode id (Source.SetLanguage.mapsTo (4 : Fin (m+9))
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ (7 : Fin (m+9)))) (.imp
+  (ConstructionProbeMappedPathSyntax.nodeMap node.succ.succ.succ.succ.succ.succ.succ.succ.succ (5 : Fin
+  (m+9)) (4 : Fin (m+9))) (.imp (ProjectSyntax.encode id (Source.SetLanguage.edge (5 : Fin (m+9))
   a.succ.succ.succ.succ.succ.succ.succ.succ.succ (3 : Fin (m+9)))) (.imp (ProjectSyntax.encode id
   (Source.SetLanguage.edge (5 : Fin (m+9)) b.succ.succ.succ.succ.succ.succ.succ.succ.succ (2 : Fin (m+9))))
   (.imp (ProjectSyntax.encode id (Source.SetLanguage.edge (5 : Fin (m+9))
   d.succ.succ.succ.succ.succ.succ.succ.succ.succ (1 : Fin (m+9)))) (.imp (ProjectSyntax.encode id
   (Source.SetLanguage.edge (5 : Fin (m+9)) p.succ.succ.succ.succ.succ.succ.succ.succ.succ (0 : Fin (m+9))))
-  (ConstructionPersistentProfiles.probeProfile w.succ.succ.succ.succ.succ.succ.succ.succ.succ (7 : Fin (m+9))
-  (6 : Fin (m+9)) (3 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9)) (4 : Fin
-  (m+9))))))))))))))))))))))
+  (ConstructionPersistentProfiles.probeProfile w.succ.succ.succ.succ.succ.succ.succ.succ.succ (7 : Fin
+  (m+9)) (6 : Fin (m+9)) (3 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9)) (4 : Fin
+  (m+9)))))))))))))))))))))))
 
 theorem persistentProfile_freeClosed {m : Nat} (J E Domains F Muls w i a b d p node : Fin m) :
     (persistentProfile J E Domains F Muls w i a b d p node).FreeClosed := by
@@ -286,7 +288,7 @@ theorem persistentProfile_semantics (hM : FirstOrder.Theory.Models M nativeZF) {
   simp only [persistentProfile,PersistentProfile,Project.Formula.satisfies_forall_iff,
     Project.Formula.satisfies_imp_iff,Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,
     GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,
-    ForcingDiagramOrder.product_semantics (M := M),ConstructionProbeMappedPathSyntax.nodeMap_semantics hM,
+    ForcingDiagramOrder.product_semantics (M := M),ForcingSupportSize.mapsTo_semantics (M := M),ConstructionProbeMappedPathSyntax.nodeMap_semantics hM,
     ConstructionPersistentProfiles.probeProfile_semantics hM]
   rfl
 

@@ -11411,4 +11411,14 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerSuccessor.appendSentence) :=
   ConstructionTowerSuccessor.append_kernel_certificate
 
+-- Actual complete UNDER-base limit, all old stages, unique base map/all triangles.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerLimit.constructionSentence) :=
+  ConstructionTowerLimit.construction_kernel_certificate
+
+-- Actual typed transition profiles imply source hP, including mapped-function typing.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerLimit.typedProfileSentence) :=
+  ConstructionTowerLimit.typedProfile_kernel_certificate
+
 end PPAC.Migration.Step4Checks

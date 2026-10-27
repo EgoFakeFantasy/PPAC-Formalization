@@ -2230,7 +2230,8 @@ def main() -> None:
                                ('constructible_ground', 'ConstructibleGround', 8),
                                ('constructible_source', 'ConstructibleSource', 17),
                                ('construction_round_selection', 'ConstructionRoundSelection', 29),
-                               ('construction_tower_successor', 'ConstructionTowerSuccessor', 53)):
+                               ('construction_tower_successor', 'ConstructionTowerSuccessor', 53),
+                               ('construction_tower_limit', 'ConstructionTowerLimit', 33)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5762,6 +5763,10 @@ def main() -> None:
         "source_round_successor_all_existing_fromBase_naturality_and_full_MapFields_preserved": True,
         "source_round_old_current_identity_leg_maps_exact_same_inclusion_proved": True,
         "source_round_native_ordinal_append_actual_new_carrier_and_self_identity_constructed": True,
+        "source_round_actual_Under_base_limit_full_weighted_object_and_all_leg_fields_constructed": True,
+        "source_round_actual_Under_base_limit_unique_fromBase_all_old_triangles_proved": True,
+        "source_directed_profile_mapped_function_parameter_correctly_typed": True,
+        "source_actual_typed_transition_Profiles_discharge_source_persistent_hP_kernel_proved": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
         "source_CompleteRounds_full_internal_canonical_Request_carrier_and_defaultProbe_constructed": True,
