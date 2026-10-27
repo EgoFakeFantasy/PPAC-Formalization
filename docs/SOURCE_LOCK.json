@@ -44974,6 +44974,255 @@
         "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerWords.lean": "8e26bf5c4fd3e7912f10675b4449aeecd7d6af2be800a83aafdfd054ce04feb3",
         "lean/OAI/SetTheory/PartitionConsistency/Forcing/Diagrams.lean": "e3ba9254bc6fa9e6e07e5062f1e8faa6cf87083cc1c0241f382d689b40306987"
       }
+    },
+    "construction_merger_copy_cones": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerWords.lean",
+      "source_sha256": "8e26bf5c4fd3e7912f10675b4449aeecd7d6af2be800a83aafdfd054ce04feb3",
+      "adapter": "PPAC/Migration/ConstructionMergerCopyCones.lean",
+      "consumers": [
+        "OAI.PartitionConsistency.MergerAlgebra.Word.exists_cone_join",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.merger_hasConditionalJoins",
+        "OAI.PartitionConsistency.MonoidConstruction.MergerData.extension"
+      ],
+      "source_declarations": [
+        "OAI.PartitionConsistency.DiagramOrder.exists_cone_residual:45",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.Reaches:76",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.reaches_refl:79",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.reaches_trans:81",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.HasConeJoins:88",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.reaches_copy_iff:459",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.reaches_same_copy_iff:463",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.same_copy_cone_intersection:473",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.overlap_cone_intersection:492",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.copies_hasConeJoins:517"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionProbeConditionalJoins.left_mul_dvd_iff, ConstructionProbeSharedIntersections.ConditionalJoins and ConstructionProbeCones.JoinProperty",
+        "ConstructionMergerCopies equality iff ORIGINAL prescribed relation, same-copy injectivity and actual representatives",
+        "UNCHANGED ConstructionProbeAction.projected/projected_indices for existing quotient graph",
+        "ConstructionMergerWordCancellation.exists_system, retaining the SAME copies, both Word operation graphs and all proved monoid laws",
+        "Existing ModelTransfer.derives / pure Project language / original FirstOrder.Derives"
+      ],
+      "scope": "From original old left-cancel conical monoid with ConditionalJoins and valid prescription, CONSTRUCTS same actual copies and all existing Word data, proves HasConeJoins D L A on precisely the original prescribed quotient, without transitive closure or new cone-join assumptions. Residual is an actual right factor of an old conditional join. Pure forall7 original-kernel certificate retains all previous producer fields. Word conditional joins, weights, full MergerData and final Con remain open.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerWords.lean": "8e26bf5c4fd3e7912f10675b4449aeecd7d6af2be800a83aafdfd054ce04feb3",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/Diagrams.lean": "e3ba9254bc6fa9e6e07e5062f1e8faa6cf87083cc1c0241f382d689b40306987"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionMergerCopyCones.Reaches": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.HasConeJoins": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.exists_cone_residual": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_refl": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_trans": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_copy_iff": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_same_copy_iff": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.same_copy_cone_intersection": [],
+        "PPAC.Migration.ConstructionMergerCopyCones.overlap_cone_intersection": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.copies_hasConeJoins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.reaches_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyCones.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
+    },
+    "construction_merger_copy_cones_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerWords.lean",
+      "source_sha256": "8e26bf5c4fd3e7912f10675b4449aeecd7d6af2be800a83aafdfd054ce04feb3",
+      "adapter": "PPAC/Migration/ConstructionMergerCopyConesSyntax.lean",
+      "consumers": [
+        "OAI.PartitionConsistency.MergerAlgebra.Word.exists_cone_join",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.merger_hasConditionalJoins",
+        "OAI.PartitionConsistency.MonoidConstruction.MergerData.extension"
+      ],
+      "source_declarations": [
+        "OAI.PartitionConsistency.DiagramOrder.exists_cone_residual:45",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.Reaches:76",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.reaches_refl:79",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.reaches_trans:81",
+        "OAI.PartitionConsistency.MergerAlgebra.RightFreeAction.HasConeJoins:88",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.reaches_copy_iff:459",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.reaches_same_copy_iff:463",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.same_copy_cone_intersection:473",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.overlap_cone_intersection:492",
+        "OAI.PartitionConsistency.DiagramForcing.OverlapPrescription.copies_hasConeJoins:517"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionProbeConditionalJoins.left_mul_dvd_iff, ConstructionProbeSharedIntersections.ConditionalJoins and ConstructionProbeCones.JoinProperty",
+        "ConstructionMergerCopies equality iff ORIGINAL prescribed relation, same-copy injectivity and actual representatives",
+        "UNCHANGED ConstructionProbeAction.projected/projected_indices for existing quotient graph",
+        "ConstructionMergerWordCancellation.exists_system, retaining the SAME copies, both Word operation graphs and all proved monoid laws",
+        "Existing ModelTransfer.derives / pure Project language / original FirstOrder.Derives"
+      ],
+      "scope": "From original old left-cancel conical monoid with ConditionalJoins and valid prescription, CONSTRUCTS same actual copies and all existing Word data, proves HasConeJoins D L A on precisely the original prescribed quotient, without transitive closure or new cone-join assumptions. Residual is an actual right factor of an old conditional join. Pure forall7 original-kernel certificate retains all previous producer fields. Word conditional joins, weights, full MergerData and final Con remain open.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/MergerWords.lean": "8e26bf5c4fd3e7912f10675b4449aeecd7d6af2be800a83aafdfd054ce04feb3",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/Diagrams.lean": "e3ba9254bc6fa9e6e07e5062f1e8faa6cf87083cc1c0241f382d689b40306987"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionMergerCopyConesSyntax.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyConesSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionMergerCopyConesSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

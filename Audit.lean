@@ -30564,3 +30564,24 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerWordCancellationSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerWordCancellationSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerWordCancellationSyntax.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.Reaches
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.HasConeJoins
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.exists_cone_residual
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_refl
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_trans
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_copy_iff
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_same_copy_iff
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.same_copy_cone_intersection
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.overlap_cone_intersection
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.copies_hasConeJoins
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.reaches_semantics
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.hasConeJoins_semantics
+#print axioms PPAC.Migration.ConstructionMergerCopyCones.exists_system
+#print axioms PPAC.Migration.ConstructionMergerCopyConesSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerCopyConesSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerCopyConesSyntax.construction_kernel_certificate

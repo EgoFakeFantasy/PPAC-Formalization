@@ -531,3 +531,6 @@ import PPAC.Migration.ConstructionMergerWordMonoid
 import PPAC.Migration.ConstructionMergerWordLength
 import PPAC.Migration.ConstructionMergerWordCancellation
 import PPAC.Migration.ConstructionMergerWordCancellationSyntax
+
+import PPAC.Migration.ConstructionMergerCopyCones
+import PPAC.Migration.ConstructionMergerCopyConesSyntax
