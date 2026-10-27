@@ -2254,7 +2254,8 @@ def main() -> None:
                                ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16),
                                ('construction_round_fresh', 'ConstructionRoundFresh', 12),
                                ('construction_operation_source', 'ConstructionOperationSource', 12),
-                               ('construction_round_source', 'ConstructionRoundSource', 6)):
+                               ('construction_round_source', 'ConstructionRoundSource', 6),
+                               ('construction_probe_independent', 'ConstructionProbeIndependent', 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5814,6 +5815,8 @@ def main() -> None:
         "source_round_actual_global_map_succ_exports_SAME_current_fresh_request_witness": True,
         "source_round_selected_successors_retain_ACTUAL_alphabet_normal_word_and_free_action_provenance": True,
         "source_round_actual_global_map_succ_exports_SAME_original_operation_source_data": True,
+        "source_original_Probe_independent_exact_common_exit_cone_all_internal_words_proved": True,
+        "source_actual_request_Provenance_implies_same_chosen_probe_independence_kernel_proved": True,
         "source_original_Probe_gate_independence_and_Merger_full_RootSystem_transferred": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

@@ -11530,4 +11530,14 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerCardinality.constructionSentence)) :=
   ConstructionTowerCardinality.construction_kernel_certificate
 
+
+-- Exact all-internal-word common exit cone; consume the SAME actual request source.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionProbeIndependent.independentSentence) :=
+  ConstructionProbeIndependent.independent_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionProbeIndependent.realizedSentence) :=
+  ConstructionProbeIndependent.realized_kernel_certificate
+
 end PPAC.Migration.Step4Checks

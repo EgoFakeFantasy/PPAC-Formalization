@@ -31521,3 +31521,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionRoundSource.probe
 #print axioms PPAC.Migration.ConstructionRoundSource.merger
 #print axioms PPAC.Migration.ConstructionProbeParent.exists_probe_with_source
+
+-- Exact pinned ProbeData.independent, all internal W, and actual request provenance.
+#print axioms PPAC.Migration.ConstructionProbeIndependent.zero_gate
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independent
+#print axioms PPAC.Migration.ConstructionProbeIndependent.Independent
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independentCone
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independentCone_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independentCone_semantics
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independentSentence
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independent_models
+#print axioms PPAC.Migration.ConstructionProbeIndependent.independent_kernel_certificate
+#print axioms PPAC.Migration.ConstructionProbeIndependent.Realized
+#print axioms PPAC.Migration.ConstructionProbeIndependent.of_provenance
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realized
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realized_freeClosed
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realized_semantics
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realizedSentence
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realized_models
+#print axioms PPAC.Migration.ConstructionProbeIndependent.realized_kernel_certificate
