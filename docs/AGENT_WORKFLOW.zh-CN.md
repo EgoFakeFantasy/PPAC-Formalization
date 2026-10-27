@@ -2,7 +2,7 @@
 
 阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
 
-**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已验收；6 接口未闭合；7 仅条件式前端合同已验收，整阶段不能打勾；当前主开发在 8 的原 Probe 路径／扩张迁移，9–11 未完成。不是“前七阶段全过”，也不是收尾。**
+**实际位置：连续完整验收到原 1–3 阶段。4 部分验收；5 基础包已验收；6 接口未闭合；7 仅条件式前端合同已验收，整阶段不能打勾；当前主开发在 8；原 ProbeData 操作已接通，下一步 Merger，9–11 未完成。不是“前七阶段全过”，也不是收尾。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | Relativization、ModelTransfer、L 原语法及递归桥；InterpretedZF 已消费全模式回放 | 新版 YesMetaZFC 的任意 ZF 模型内部 L→ZF/ZFC 已定位并验收端点（GCH 不增加为本项目义务）；补其与固定旧版、当前对象语言及原核相对化的接口。停止重证 L 全模式；不把模型定理等同于最终内部 Con |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | Base／实际 Path/Alphabet/Word、呈现、保守性、条件并、profile／pushout 已有；完整 Word HeightCost 已构造：实际三图及原方程、所有界、same-head 和全内部统一归纳、每个严格比较的实际上确界及严格间隙、唯一性、旧成本上确界保持，均进入对象核证书 | 已取得同一实际载体的 Probe 请求装配证书：旧标记像非单位、inclusion 的单位／乘法／保守性／旧高度／旧成本／上确界、实际 probe 与完整 profile／新颖性／基数界／全部旧 profile 保持；仍显式接收已有 Path／字母表／floor／interval 数据。下一步从原 ProbeData 输入统一调用这些存在性生产者，再接 Merger、Placement／ConservativeHull、最终饱和单子。不是阶段 8 全部完成 |
+| 8 | 源代数／构造核心 | Base／实际 Path/Alphabet/Word、呈现、保守性、条件并、profile／pushout 已有；完整 Word HeightCost 已构造：实际三图及原方程、所有界、same-head 和全内部统一归纳、每个严格比较的实际上确界及严格间隙、唯一性、旧成本上确界保持，均进入对象核证书 | 已从原父输入构造同一实际载体的完整 ProbeData 请求、加权新对象和 inclusion 全字段，原核证书已消去字母表／floor／interval 数据前提；原请求 Path 是源字段。剩余 Merger、Placement／ConservativeHull、最终饱和单子。不是阶段 8 全部完成 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -32,11 +32,11 @@
 
 固定 ProbeWords 的 Raw.eval_oldAct / eval_injective → Word.eval_letterAct → mul_assoc / mul_one → LeftCancelMonoid 已接通。源构造器归纳由纯 lengthSchema 经已有 Separation 与 IsOmega.induction 实现；不要求外部标准长度。当前证书构造实际 Word、old 单位、W×W 输入载体与乘法表，未假定单子律。
 
-当前已接 ProbePresentations.Path.simulation_conservative:606、simulation_old:614 和 simulation_probe:619：ConstructionProbeSimulation 构造同一个 H，证明实际 WordGraph、乘法／单位保持、四字段 Conservative 以及 old/probe 方程。直接消费者是 ConservativeCells.Probe.simulation:198、simulation_inclusion:202、simulation_generator:205。已有 Path 字母／generator／probe 图合同保留，其单独证书没有加权 Object；本批 ConstructionProbeSuccessorSyntax 已在实际 Path／字母表／interval 数据上接入完整请求与加权 Object/inclusion 字段，最终父输入生产者组合仍未闭合。
+当前已接 ProbePresentations.Path.simulation_conservative:606、simulation_old:614 和 simulation_probe:619：ConstructionProbeSimulation 构造同一个 H，证明实际 WordGraph、乘法／单位保持、四字段 Conservative 以及 old/probe 方程。直接消费者是 ConservativeCells.Probe.simulation:198、simulation_inclusion:202、simulation_generator:205。已有 Path 字母／generator／probe 图合同保留，其单独证书没有加权 Object；本批 ConstructionProbeSuccessorSyntax 已在实际 Path／字母表／interval 数据上接入完整请求与加权 Object/inclusion 字段，本批 ConstructionProbeParentSyntax 已进一步闭合原父输入生产者组合。
 
 ProbeGates 的条件并、初始全 profile、PersistentProfiles 的后继保持，以及 MergerPushouts.Path.simulation_pushout 已沿固定源接通，原核证书及具体前提集中见 THEOREM_COVERAGE。没有重建 Gate 归纳、自由扩张或 presentedHom。
 
-当前消费者为 extensionHeightCost:573／extension_old_cost_supremum:584 → MonoidConstruction.ProbeData.extension／inclusion 的完整装配。same-head:415、全内部统一归纳:450、Word heightCost:494 和 old_cost_supremum:515 的数学已经完成；证书明确构造原 HeightCost.margin 所需的实际遗漏成本上确界及严格间隙，不只返回逐点界。同一实际载体的请求／加权新对象／inclusion 字段已经组合并有对象核证书；后续只从原 ProbeData 输入调用已有 Path／字母表／floor／interval 存在性生产者，不重证这些字段，再继续原 Merger／Placement／ConservativeHull。
+当前消费者为 extensionHeightCost:573／extension_old_cost_supremum:584 → MonoidConstruction.ProbeData.extension／inclusion 的完整装配。same-head:415、全内部统一归纳:450、Word heightCost:494 和 old_cost_supremum:515 的数学已经完成；证书明确构造原 HeightCost.margin 所需的实际遗漏成本上确界及严格间隙，不只返回逐点界。ConstructionProbeParentSyntax 已从原 ProbeData 父输入调用全部现成生产者，构造完整请求／加权新对象／inclusion 的原核证书；旧高度单调性／逐点成本界通过原 uniform margin 推出，不添加父输入。下一步原 Merger／Placement／ConservativeHull，不重做 Probe。
 
 evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保持原任意单子；基础 lift 不要求源 conical／b≠unit，附加 generator 取值才使用这两个源条件。
 

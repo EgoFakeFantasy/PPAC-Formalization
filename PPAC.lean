@@ -513,3 +513,6 @@ import PPAC.Migration.ConstructionProbeHeightCostSyntax
 
 import PPAC.Migration.ConstructionProbeSuccessor
 import PPAC.Migration.ConstructionProbeSuccessorSyntax
+
+import PPAC.Migration.ConstructionProbeParent
+import PPAC.Migration.ConstructionProbeParentSyntax
