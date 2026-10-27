@@ -8,25 +8,20 @@
 README、GAPS、THEOREM_COVERAGE、Audit、verify 重写以符合新范围；不删除 Git 历史。
 逐文件理由见 CLEANUP.json。未因此证明旧引理有错，也不判断其在其他项目中无用。
 
-## 当前清理裁决（2026-10-27 复审）
+## 已批准的精确退役（2026-10-27）
 
-重复逐批叙述已从本文件删去；历史明细可从 Git `1af856e` 的本路径恢复。当前保留依据是对选定原源码迁移路线的实际生产者／消费者依赖，不把“已证明”自动等同“本路线需要”，也不把退役结论说成旧定理不成立。
+用户已明确批准 verification/retired-packet-closure-review.json 中的 358 模块闭包及专属入口／测试／审计删除。本轮已执行；此前自动审批阻拦已由这次明确授权解决，不再等待确认。原归档／补丁哈希不变，执行及修复证据见 verification/retired-packet-closure-execution-20261027.json。
 
-| 对象 | 当前裁决与证据 |
+| 对象 | 实际处理与边界 |
 |---|---|
-| 已退役的 135 个孤立 Packet/ObjectPacket 模块 | 已删除；精确清单、哈希和恢复提交见 RETIRED_PACKET.json。历史验收保留，不再次计作本轮删除。 |
-| 剩余 291 个 Packet 模块与 67 个冻结内部消费者 | 精确反向闭包共 358 项，没有其他保留证明模块引用；唯一 umbrella 入口拟同步去除。逐份源码哈希及恢复 ZIP 已再次核对。verification/retired-packet-closure-review.{json,zip,patch} 是提案，尚未执行。 |
-| 上述支线的检查 | 拟同步退役 14 个专用函数、263 个 fixture、3219 个声明审计和 19 个过时状态项；通用保留代码编译、全部保留声明、trust=0 和最终 Con 门均保留。不是任意删测试以取得通过。 |
-| 大规模退役审批 | 本轮提交同一精确补丁，自动审批再次拒绝，理由为需要用户明确批准具体 358 模块／配套检查删除范围；已发确认。源码、检查和缓存均仍在，不绕过。 |
-| scripts/check_source_rules.py、check_source_theory.py、verify.py | 三者都在实际验收命令链中，不是无用脚本，保留。 |
-| 供体、工具链和其他仓库 | 保留；本轮未修改或清理。固定源 75 份哈希匹配；两个 YesMetaZFC checkout 干净。 |
-| 此前 6 模块／25 声明 | 直接服务 ProbeMargins 的 height_bounds、cost_le_scale、cost_old_factor；保留并纳入全部声明审计。没有新增持久生成脚本。 |
-| 预审输入／进程 | 只在完整 Audit 覆盖且全量验收成功后，按本仓绝对路径、无重解析点和 SHA 白名单删除本轮 ProbeWeightBoundsAudit.lean。保留成功构建、预审及全验收日志；不终止正在验收的进程或其他项目进程。已全量验收并删除该唯一探针（2188 字节），清单见 verification/cleanup-probe-weight-bounds-20261027.json。没有残留 Lean/Lake，未终止任何其他进程。 |
+| 135 个先前孤立模块 | 先前已退役，不计入本轮删除；旧归档及恢复提交保留。 |
+| 本轮 358 个模块 | 291 个 Packet/reader 与 67 个专属冻结消费者全部删除；逐文件 SHA 与 ZIP 一致，无保留证明导入；17 个 umbrella 入口同步移除。源码逻辑大小 1,993,851 字节。 |
+| 退休检查 | 14 个专用检查函数、263 条专属测试、3219 项声明审计、263 对已退役端点的精确足迹检查和 19 个过时状态项已清除。仅限批准退休模块。 |
+| 保留检查修复 | 旧提案跨相邻 example 边界误带 compilerInvalidSourceRejected 测试，已恢复；又补清旧提案漏掉的 14 组退休端点预期。原主线静态检查、通用构建、全部保留声明审计、五次 trust=0 和最终 Con 门未降低。 |
+| 直接生成缓存 | 仅按已退役源模块路径白名单删除 2864 个 .lake/build 直接生成文件；无递归目录删除，无重解析目标。逻辑大小 225,677,746 字节；缓存清理时段实测可用空间增加 227,020,800 字节，二者分别记录。见 verification/cleanup-approved-packet-artifacts-20261027.json。 |
+| 剩余主线 | 27,050 项保留声明的全部依赖足迹已与清理前逐项一致；正式完整验收已通过：2612 项构建、27050 项声明、九命令／五次 trust=0 均退出 0，零警告，2175 份当前指纹及 75 份源哈希匹配；不据此宣称最终数学完成。 |
+| 必需脚本／外部仓库 | check_source_rules.py、check_source_theory.py、verify.py 均保留；不清理供体、工具链或其他项目。一次一个本项目 Lean/Lake，不终止其他进程。 |
 
-停止开发 NatPacket／字节兼容、泛滤 truth、独立 L 重建、重复 Sat 及无当前原消费者的完整实数域。现行 STATUS、AGENT_WORKFLOW、GAPS 和 THEOREM_COVERAGE 已移除“已有完整模式／L 数学／Word 权重界尚未做”的误报；对旧兼容支线的历史 False 不再当作本项目基础数学待办。
+累计退役 493 个模块的逐文件归档位置／恢复提交见 RETIRED_PACKET.json，两个 ZIP 均保留。退役理由是它们不服务当前选定的源迁移路线，不是旧定理无效。旧过程记录由 Git 和清理清单保留，不再反复写成当前任务。
 
-本轮成本／old–old margin 批次：新增 2 模块、7 声明均有固定原消费者；保留并加入完整 Audit，无新持久生成脚本。全量验收成功后已按绝对路径／重解析点／哈希白名单删除 ProbeCostMarginsAudit.lean（626 字节），清单 verification/cleanup-probe-cost-margins-20261027.json；成功日志保留，358 项退役提案仍未执行。
-
-本轮 mixed margin／Word 上确界：6 模块、17 声明均对应固定原源；复用现成 generator、区间、差值/max 和 Family/Cap，不新增持久脚本。全量成功后已按路径／重解析点／SHA 白名单删除被 Audit 覆盖的 ProbeMixedMarginsAudit.lean（1577 字节），清单 verification/cleanup-probe-margins-supremum-20261027.json；活动的其他工程编译保留；358 项退役提案仍未执行。
-
-完整 Word HeightCost 批次：6 模块／19 声明均有实际源消费者并最终进入对象证书。原正自然 Scaling 保持原样；没有新增持久生成脚本或完整域支线。全量成功后已按路径／重解析点／SHA 白名单删除被 Audit 覆盖的 ProbeHeightCostAudit.lean（1579 字节），清单 verification/cleanup-probe-height-cost-20261027.json；358 项批量退役仍未执行。
+主开发仍为原第 8 阶段；本轮清理不算数学阶段完成。后续继续固定 OpenAI MergerCones 的有限平均／乘积权重，最终目标仍为原核对象内部 Con 蕴含。

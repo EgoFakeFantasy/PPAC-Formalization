@@ -252,28 +252,14 @@ import PPAC.Migration.Internal.ObjectProjectCompilerTyping
 import PPAC.Migration.Internal.ObjectProjectCompilerComplete
 import PPAC.Migration.Internal.ObjectProjectCompilerUnique
 import PPAC.Migration.Internal.ObjectProjectCompilerSourceValid
-import PPAC.Migration.Internal.ObjectPacketAffine
-import PPAC.Migration.Internal.ObjectPacketHornAffine
-import PPAC.Migration.Internal.ObjectPacketAffineApplication
-import PPAC.Migration.Internal.ObjectPacketClosedTrace
-import PPAC.Migration.Internal.ObjectPacketAffineArithmetic
-import PPAC.Migration.Internal.ObjectPacketDivision
-import PPAC.Migration.Internal.ObjectPacketDescent
-import PPAC.Migration.Internal.ObjectPacketToken
-import PPAC.Migration.Internal.ObjectPacketTokenArithmetic
 
 
 
 
-import PPAC.Migration.Internal.ObjectStructuralListReverse
 
-import PPAC.Migration.Internal.ObjectPacketReaderReturn
 
-import PPAC.Migration.Internal.ObjectPacketReaderInit
 
-import PPAC.Migration.Internal.ObjectPacketReaderRecursion
 
-import PPAC.Migration.Internal.ObjectPacketReaderVarintSegment
 
 
 
@@ -424,9 +410,6 @@ import PPAC.Migration.ConstructionProbeConservative
 import PPAC.Migration.ConstructionProbeConservativeSyntax
 
 -- Retained structural proofs previously reached only through the retired packet branch.
-import PPAC.Migration.Internal.StructuralListSpliceAlgebra
-import PPAC.Migration.Internal.StructuralListSpliceByte
-import PPAC.Migration.Internal.StructuralListSpliceSnoc
 import PPAC.Migration.ConstructionProbeGates
 import PPAC.Migration.ConstructionProbeGatesSyntax
 import PPAC.Migration.ConstructionProbeHeadTransport
