@@ -11230,4 +11230,8 @@ example {m} (w n b q f : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [
     (Translation.sentence (Internal.ObjectProjectCompilerSourceValid.compilerInvalidSourceRejectedSentence w n b q f)) :=
   Internal.ObjectProjectCompilerSourceValid.native_compilerInvalidSourceRejected w n b q f
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerFiniteWeightsSyntax.constructionSentence) :=
+  ConstructionMergerFiniteWeightsSyntax.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

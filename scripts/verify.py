@@ -2154,7 +2154,9 @@ def main() -> None:
                                ('construction_merger_roots_syntax', 'ConstructionMergerRootsSyntax', 3),
                                ('construction_merger_coordinates', 'ConstructionMergerCoordinates', 19),
                                ('construction_merger_coordinate_laws', 'ConstructionMergerCoordinateLaws', 10),
-                               ('construction_merger_coordinate_syntax', 'ConstructionMergerCoordinateSyntax', 3)):
+                               ('construction_merger_coordinate_syntax', 'ConstructionMergerCoordinateSyntax', 3),
+                               ('construction_merger_finite_weights', 'ConstructionMergerFiniteWeights', 26),
+                               ('construction_merger_finite_weights_syntax', 'ConstructionMergerFiniteWeightsSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5571,6 +5573,7 @@ def main() -> None:
         "source_merger_actual_roots_exact_prescription_realization_and_newness_proved": True,
         "source_merger_actual_coordinate_height_cost_graphs_constructed": True,
         "source_merger_coordinate_bounds_monotonicity_and_represented_strictness_proved": True,
+        "source_merger_copies_literal_average_and_min_product_function_graphs_constructed": True,
         "source_merger_copies_average_product_heightCost_proved": False,
         "source_merger_complete_weighted_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
