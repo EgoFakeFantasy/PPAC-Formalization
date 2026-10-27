@@ -2246,7 +2246,8 @@ def main() -> None:
                                ('construction_tower_history_closure', 'ConstructionTowerHistoryClosure', 18),
                                ('construction_tower_iteration_cases', 'ConstructionTowerIterationCases', 15),
                                ('construction_tower_iteration', 'ConstructionTowerIteration', 29),
-                               ('construction_tower_iteration_validity', 'ConstructionTowerIterationValidity', 12)):
+                               ('construction_tower_iteration_validity', 'ConstructionTowerIterationValidity', 12),
+                               ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5800,7 +5801,7 @@ def main() -> None:
         "source_round_native_ordinal_recursion_instantiated_with_SAME_actual_source_operator": True,
         "source_round_internal_formula_separation_ordinal_induction_full_recursive_validity_proved": True,
         "source_round_actual_recursive_tower_all_field_tables_time_identity_global_base_naturality_constructed": True,
-        "source_round_exact_global_map_succ_original_request_equation_exported": False,
+        "source_round_exact_global_map_succ_original_request_equation_exported": True,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

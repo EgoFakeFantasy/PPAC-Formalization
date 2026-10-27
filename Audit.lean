@@ -31407,3 +31407,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionTowerIterationValidity.constructionSentence
 #print axioms PPAC.Migration.ConstructionTowerIterationValidity.construction_models
 #print axioms PPAC.Migration.ConstructionTowerIterationValidity.construction_kernel_certificate
+
+-- Exact original successor equation on the SAME actual recursive tower.
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.SuccessorAt
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.map_succ
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.successorAt
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.successorAt_freeClosed
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.successorAt_semantics
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.mapSuccSentence
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.mapSucc_models
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.mapSucc_kernel_certificate
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.exists_tower
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.constructionSentence
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.construction_models
+#print axioms PPAC.Migration.ConstructionTowerMapSucc.construction_kernel_certificate
