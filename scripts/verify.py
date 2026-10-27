@@ -2261,7 +2261,8 @@ def main() -> None:
                                ('construction_tower_request_cones', 'ConstructionTowerRequestCones', 8),
                                ('construction_tower_execution', 'ConstructionTowerExecution', 19),
                                ('construction_tower_probe_family', 'ConstructionTowerProbeFamily', 18),
-                               ('construction_tower_probe_independence', 'ConstructionTowerProbeIndependence', 10)):
+                               ('construction_tower_probe_independence', 'ConstructionTowerProbeIndependence', 10),
+                               ('construction_complete_round', 'ConstructionCompleteRound', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5836,7 +5837,11 @@ def main() -> None:
         "source_actual_tower_canonical_probe_cross_cut_transition_kernel_proved": True,
         "source_actual_tower_canonical_probe_family_injective_and_pairwise_independent_complete": True,
         "source_actual_constructed_cut_probe_family_returns_Injection_and_exact_fromBase_exit_cones": True,
-        "source_CompleteRound_final_K_Place_last_target_inclusion_and_probe_assembly_complete": False,
+        "source_CompleteRound_final_K_Place_last_target_inclusion_and_probe_assembly_complete": True,
+        "source_CompleteRound_constructed_from_original_parents_including_actual_Request_schedule_tower": True,
+        "source_CompleteRound_every_merger_full_RootSystem_on_same_target_complete": True,
+        "source_CompleteRound_original_parent_forall15_internal_L_relative_native_kernel_certificate": True,
+        "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

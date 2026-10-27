@@ -1,8 +1,6 @@
-# 原 1–11 阶段迁移流程（2026-10-26 重审）
+# 原 1–11 阶段迁移流程（2026-10-28）
 
-阶段编号恢复为最初提交 `f28b0334a740108057adf18a24dc11abd866efbe` 的表。阶段 0 是来源审查前置；下表不再用四项验收或历史 S3/STEP4 批次重新编号。迁移对象始终为固定 OpenAI PPAC 证明，底座为固定 YesMetaZFC 原推导核。
-
-**实际位置：连续完整验收到原 1–3；4 部分验收，5 基础包已有，6 原范围已验收，7 条件式前端已有；主开发仍在 8。完整 Probe／Merger、通用实际加权极限、两类请求参数映射、两类实际 Round.step 后继及同一后继 fromBase／原请求见证、变动阶段上的唯一统一映射请求图均已有原核证书。全部 Request 集／默认 Probe／Request×K 加 top 的穷尽底层调度已有原核证书；同一索引的实际内部良序、严格 top 位置和规范序型现也已验收；实际调度／位置图到规范序型的传输及完整原父输入组合现亦已验收；单轮实际有效内部递归塔、时间恒等、全塔 fromBase 自然性与精确全塔 map_succ 原请求方程已构造；原请求基数界、同一索引／序数／last 的大小界及实际单轮塔的全部阶段界已接通；当前 inclusion 新鲜性与实际 generator 已传到选中输出及全塔；原正规形／自由作用来源数据已传到候选和全塔；ProbeData.independent 的全载体精确交锥与实际请求 Provenance 消费已取得原核证书；Merger 完整 RootSystem 及实际请求来源消费也已取得原核证书；后续切片的实际 F(i,k)／fromBase 精确锥、profile／新鲜性也已接通；统一执行／根图、切片Probe家族的存在／单值性／profile／跨切片一致性也已验收；位置Probe单射／两两独立性现亦已验收；整轮target/inclusion、K/Place/last重索引及多轮／饱和系统仍待接；9–11 未完成。不是收尾。**
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**；完整 CompleteRound 单轮已通过正式验收，下一消费者为原 CompleteRounds.Saturation.step／SaturatedMonoids。9–11 和最终内部 Con 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -13,39 +11,25 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整 Base／ProbeData／加权 MergerData；同一实际加权极限的完整 Object／inclusions／cocone／lift／fac／uniq、全部 Conservative／profiles／实际 Cap／基数结论；两类实际 Round.step 后继与后继 fromBase、原基请求见证；变动阶段上给定调度的唯一实际映射请求图 | 全部内部 Request 集、默认 Probe、穷尽底层 Schedule／Place 单射已验收；内部良序／严格 top 位置及规范序型亦已验收；实际调度／位置图到规范序型的传输和完整原父输入组合亦已验收；完整后继选择器、全部旧腿更新和自映射追加已接通；Under M 极限的同一对象／全腿族／唯一 fromBase／全部三角交换亦已接通，源 hP 类型已纠正并由真实转移 profile 消去；初始／后继／极限规范阶段记录在原父输入下均已总且唯一，共用九字段并包含自身恒等腿；记录历史的九字段函数／全转移表和任意内部序数原 IndexLaws 已构造；完整有效历史已编码，实际首段有效、21 项原合同提取／规范极限值已构造；后继历史接入及后继／极限追加的完整 Valid 保持均已完成；统一 BinarySchema14 已在全部内部集合历史上总且唯一，并实际实例化既有原生递归；内部分离／序数归纳已证明递归历史完整有效，实际单轮塔／时间恒等／全塔 fromBase 自然性已构造。ConstructionTowerMapSucc 已导出同一全塔的精确原请求 inclusion 方程，保留完整 Step／Done；ConstructionRequestCardinality 已证明完整 Request.data_cardinal_le 并实际构造小 Request 集；ConstructionScheduleCardinality／TowerCardinality 又将该界接到同一实际索引、序数／last 和全部内部阶段，实际有界塔构造保留全部字段／map_succ。Selection／全塔现已保留实际 generator 和当前 inclusion 强新鲜性；原 probe_gate.intersections／ProbeData.independent 及实际请求来源消费已接通；Merger 全锥 RootSystem 及实际请求来源消费也已接通；两类后续切片实现现已接通，Probe 为实际 F(i,k)，Merger 为实际目标 fromBase；同一Picked raw／执行图／第九字段图及统一切片Probe家族／跨切片一致性现已接通；位置Probe单射／两两独立性也已接通；下一项接整轮target/inclusion和Place到K的重索引，再接SaturatedMonoids。Placement／Hull 按实际消费者接入；完整阶段未完成 |
+| 8 | 源代数／构造核心 | 完整 Base、加权 Probe/Merger、保守加权极限及通用性质；实际选中后继、完整有效递归塔、所有内部阶段大小界；实际执行／根／切片 Probe 家族及精确锥；现已从原父输入构造完整 CompleteRound 的请求、调度、last target/inclusion、K 家族和所有 Merger | 当前只剩原 CompleteRounds.Saturation 的多轮实际系统／最终饱和性及其实际 Placement/Hull 消费者；不重做单轮、L、模式、序数或递归基础 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
-阶段 0 已纠正既有资产误分类；本轮重新核对 75 份主链文件哈希全部匹配；原隔离验收另含 3 份入口文件。哈希匹配只证明来源未变，不是这些文件均已迁移。现有 L 完成范围及实际待接接口见 REUSE_CONTRACTS；主数学链见 MATH_REDUCTION_ROUTE。
+## Agent 执行入口
 
-每个后续改动必须注明：原源文件／定理，目标完整类型，已复用入口，精确背景差异，当前消费者，实际命令和退出码。不能仅给一个名称相似的新辅助定理算迁移完成。
+| 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
+|---|---|---|---|
+| 8 的下一项 | CompleteRounds.Saturation.step、map_succ、target、countable_stage → SaturatedMonoids | ConstructionCompleteRound.exists_from_parent；现成内部 Ord.Recursion、有效历史／加权极限、函数图和内部共尾界 | 同一内部多轮塔、阶段同态／profile／大小界、所有内部可数数据的适当阶段覆盖、全部 Probe/Merger 饱和性及原核证书 |
+| 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
+| 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
+| 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计与实际构建通过 |
+| 4 的独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 基线 | Linux/landrun；不能用本仓 CheckStep4 替代 |
 
-执行顺序：第 4 阶段的原 Main／端点审计已完成，完整 Comparator 保留为独立未验项；第 5–6 阶段只处理进入源强迫链所需的接口，再按源依赖推进 7–10。现有完整模式、识别器、满足关系、完备性不重复建设。若还没找到某个已声称存在的接口，标“未定位到精确合同”，不能直接标“数学未证明”。
+对象语言为纯等词／成员 ℒ；背景 nativeZF 含全部 Separation/Collection；U = ZF+PP+ACwo+¬AC。终点是原 FirstOrder.Derives nativeZF [] (Con_ZF → Con_U)，Con 量化全部内部证明码。同一内部 L 的 Choice/order 已由现成证书消去，不向普通 ZF 增加 Choice 或不可达。
 
-背景：纯 ℒ，nativeZF 含全 Separation/Collection，U = ZF+PP+ACwo+¬AC；终点为 `Derives nativeZF [] (Con_ZF → Con_U)`。不添加对象 AC、不可达或新推导核。
+本批 constructionSentence 为 forall15，实际从原父输入生成全部 Request、同一有界调度／塔、last 目标与 inclusion。每个原 Probe datum 返回 K→target 的 Injection、完整 profile 和对全部目标元素／新右因子的公共出口锥；每个 Merger datum 返回同一目标的完整 RootSystem。原核端点为 ConstructionCompleteRound.construction_kernel_certificate，句子相对化到同一已有内部 L；这是单轮构造证书，不是最终 Con。
 
-一次仅一个 Lean/Lake 构建；正式证明改动运行 scripts/verify.py，检查依赖及禁用缺口。文档改动不触发重复全量编译。保留其他仓库脏改动和已退役反射状态。不用文件数、辅助布尔门或构建任务数估计完成比例。
+验收见 verification/complete-round-acceptance.json：18 项新声明；2860 项构建；31220 项声明；此前 31202 项足迹不变；9 命令／5 次 trust=0 全通过、零警告、无新增公理依赖；2424 当前指纹／75 源哈希匹配。
 
-## 当前直接消费者
-
-固定 ProbeWords 的 Raw.eval_oldAct / eval_injective → Word.eval_letterAct → mul_assoc / mul_one → LeftCancelMonoid 已接通。源构造器归纳由纯 lengthSchema 经已有 Separation 与 IsOmega.induction 实现；不要求外部标准长度。当前证书构造实际 Word、old 单位、W×W 输入载体与乘法表，未假定单子律。
-
-当前已接 ProbePresentations.Path.simulation_conservative:606、simulation_old:614 和 simulation_probe:619：ConstructionProbeSimulation 构造同一个 H，证明实际 WordGraph、乘法／单位保持、四字段 Conservative 以及 old/probe 方程。直接消费者是 ConservativeCells.Probe.simulation:198、simulation_inclusion:202、simulation_generator:205。已有 Path 字母／generator／probe 图合同保留，其单独证书没有加权 Object；本批 ConstructionProbeSuccessorSyntax 已在实际 Path／字母表／interval 数据上接入完整请求与加权 Object/inclusion 字段，本批 ConstructionProbeParentSyntax 已进一步闭合原父输入生产者组合。
-
-ProbeGates 的条件并、初始全 profile、PersistentProfiles 的后继保持，以及 MergerPushouts.Path.simulation_pushout 已沿固定源接通，原核证书及具体前提集中见 THEOREM_COVERAGE。没有重建 Gate 归纳、自由扩张或 presentedHom。
-
-已完成原消费者 extensionHeightCost:573／extension_old_cost_supremum:584 → MonoidConstruction.ProbeData.extension／inclusion 的完整装配。same-head:415、全内部统一归纳:450、Word heightCost:494 和 old_cost_supremum:515 的数学已经完成；证书明确构造原 HeightCost.margin 所需的实际遗漏成本上确界及严格间隙，不只返回逐点界。ConstructionProbeParentSyntax 已从原 ProbeData 父输入调用全部现成生产者，构造完整请求／加权新对象／inclusion 的原核证书；旧高度单调性／逐点成本界通过原 uniform margin 推出，不添加父输入。完整 MergerData 原父输入装配也已验收；下一实际消费者为保守有向极限／加权塔及请求调度，不重做 Probe 或 Merger 权重。
-
-evalHom／liftHom 已直接复用现有内部递归和函数图，目标 N 保持原任意单子；基础 lift 不要求源 conical／b≠unit，附加 generator 取值才使用这两个源条件。
-
-第 6 阶段原生／源域及解释背景消费已验收；第 9 阶段模型应用、第 10 阶段全部内部码与最终 Con 仍未完成。源函数图、序列解析、ω 归纳、递归、完整模式、Proof/Sat、完备性均复用既有配套。实际验收统一见 STATUS，不以构建数估算剩余工期。
-
-清理边界：先前 135 个孤立模块已退役；本轮获得用户对精确清单的明确批准后，已退役其余 358 个模块（291 Packet/reader + 67 专属消费者）及批准的配套入口／测试／审计。原提案跨 example 边界误带的一条保留测试已恢复，漏掉的退休端点预期已清除；全部保留原核检查和最终 Con 门保留。完整保留验收已通过，见 STATUS 及执行记录。恢复清单见 RETIRED_PACKET.json，执行记录见 verification/retired-packet-closure-execution-20261027.json。这不是新的数学阶段，不改变第 8 阶段剩余任务。
-
-当前第 8 阶段直接接口：完整原单子父输入现经 RequestCarrier／既有完整调度／内部良序生产者及原生逆／复合函数，实际构造全部请求与规范序型上的 Schedule／Place；同一坍缩给出严格序同构、准确调度值／位置以及实际末阶段 last，所有请求/K 指定位置都在 last 内。ConstructionOrdinalScheduleSyntax.full_kernel_certificate 是纯 forall8 原核端点，构造 16 个对象，保留源 Choice 显式前件；无给定 Request 集／调度／坍缩／位置图。完整九字段后继元组的同一 L 唯一选择器现已接通：集合初段分离选取整组最小见证，无效输入默认 zero，保留两类原请求／fromBase，且不加对象选择。ConstructionTowerSuccessor 已消费同一选中后继，构造所有旧阶段复合腿并保持完整字段、Stable、既有 fromBase 自然性及精确 inclusion 方程；原生序数追加实际追加载体和自身恒等腿。ConstructionTowerLimit 已实际消费完整加权 colimit 并取得 Under M 的完整新字段、唯一 fromBase 与所有三角交换；typedProfile 原核端点消去准确函数类型的 hP。规范极限输出字面唯一及初始／后继／极限共用九字段阶段记录的存在／唯一性均已接通，全部含自身恒等腿，时刻为实际内部 zero／J；不再补这些已完成的记录合同。ConstructionTowerHistory／Transitions 现消费原 Pack 和原生函数／关系／积构造，从记录历史实际提取同一九张字段图、E/P/F，矩阵在 i≤j 时精确读取目标记录保存的腿，任意内部序数满足原 IndexLaws；记录时间等于索引和 incoming 域为 j+1 是明确前提，完整 Valid 现已按原记录编码；真实初始历史完整有效，21 项原图表／Under-base 输入已导出，规范极限已从有效历史直接构造并证明唯一。同一选中后继现已从有效历史接入，后继／极限追加的完整有效性保持现也已证明；完整原父输入端点同时构造唯一记录和实际有效追加。统一算子现已对全部内部集合历史总且唯一，实际实例化原生 Ord.Recursion；内部公式分离／序数归纳已证明完整 Valid，并实际构造单轮塔、时间恒等与全塔 fromBase 自然性。同一塔的精确 map_succ 原请求方程现已由 ConstructionTowerMapSucc 导出；ConstructionRequestCardinality 现已接通原请求基数界及实际小 Request 集；ConstructionScheduleCardinality 已取得同一索引／序数／last 大小界；ConstructionTowerCardinality 已用内部公式归纳消费原后继／极限合同，证明全部阶段界并实际构造同一有界塔。实际 generator 和当前 O 强新鲜性现也已传过候选／全塔；下一项接后续切片实现／精确锥合同／重复 probe 独立性和饱和性。前批调度验收记录保留；前批字段／转移表验收记录保留；前批有效历史／初始／极限验收记录保留；前批分支保持验收记录保留；前批 56 声明验收见 tower-iteration-acceptance.json；前批 12 声明验收见 tower-map-succ-acceptance.json；前批 30 声明验收见 request-cardinality-acceptance.json；前批 31 声明验收见 schedule-tower-cardinality-acceptance.json；前批新增12／修订94验收见 round-freshness-acceptance.json；本批新增19／受影响旧124声明验收见 STATUS 与 source-provenance-acceptance.json。L、完整模式、Proof/Sat、函数图、序型和递归数学不重建。
-
-第 6 阶段现按原验收门通过：既有 ProjectDecode／规范化证书和原核可靠性给出同一实际 L 的源域对应，原生与源八构造器／末 binder 对齐；全部源 ZF／AC／Collection 有原核相对化证明。ConstructibleSource.replay／nonempty_kernel 实际消去既有 InterpretedZF 背景和非空前提，标准 native ZF／源句子及 native ZFC 源句子证明均可传输。17 项显式接口全量验收、旧 30610 项足迹不变；见 STATUS／l-source-acceptance.json。内部代码归约归 10，尚未完成；实际单轮有效递归塔／时间／全塔 base 自然性归 8，本批已完成，8 的精确 map_succ、原请求基数界及同一索引／塔全部阶段界已导出；完整轮次请求实现和多轮义务仍未完成。
-
-本轮原正规形来源修复：ProbeParent 的原证明分解为额外返回已构造 Alpha 数据的新出口，旧 exists_probe 类型不变。OperationSource／RoundSource 的纯公式保留同一 quotient/action/word/product/generator/root 图，Candidate/Picked 要求这些原数据，Extended／全塔 map_succ 同步传输。九字段、实际 generator／当前 O 新鲜性和全部既有塔不变量保留。ConstructionProbeIndependent 已消费这些原数据，取得 ProbeData.independent 的 forall15 和实际请求来源消费的 forall17 原核证书，覆盖 W 全部内部元素。ConstructionMergerRootSystem 现也以既有 snoc_cone_intersection／内部归纳补齐不相交分支，取得全扩张 RootSystem 的 forall12／实际来源消费 forall16 原核证书。ConstructionConeTransport／TowerRequestCones 已实际读取全塔 incoming 腿并由 Valid 导出保守性，构造像／复合图并证明 Probe inclusion=F(i,k)、Merger base=目标 fromBase，返回全部内部后续切片的交锥／profile／新鲜性；三条原核端点已验收。同一raw/Picked/Pack已保留到切片，Execution原生收集实际执行／第九字段图，ProbeFamily实际构造统一切片Probe并证明单值／profile／跨切片一致性。ConstructionTowerProbeIndependence 已按原源用前次profile、实际transition、后次新鲜性／交锥证明统一家族Injection及全部新右因子的两两独立性，实际生产者与forall34原核端点均已验收；整轮target/inclusion、K/Place/last重索引和多轮仍未完成。
+每个证明改动先写原源声明、完整目标类型和真实消费者，查底座／同伴精确接口后复用；没定位到接口不能写成数学不存在。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；正式证明改动运行 scripts/verify.py。不以模块数／构建数估算完成比例；不因文档改动重复编译。NatPacket/reader 已按获批清单退役，不恢复该支线或退役反射；保留其他项目改动。不新建通用证明核、编码器、满足关系、递归或类别后端。

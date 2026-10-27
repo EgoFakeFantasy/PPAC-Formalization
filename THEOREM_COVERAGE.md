@@ -316,110 +316,26 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 
 | ConstructionIteration.structureWithTime.X0 / successor / time; Round Under.mk(identity), step/fromBase/map_succ; canonical DirectedColimit | ConstructionTowerInitial.initial_kernel_certificate / ConstructionTowerCanonicalLimit.construction_kernel_certificate / ConstructionTowerCanonicalSuccessor.construction_kernel_certificate | ALL THREE ACTUAL cases yield ONE normalized stage record under their ORIGINAL case parents. SAME existing nine-field Kuratowski Pack: six Object fields, COMPLETE incoming+self family, fromBase, literal internal zero/J time. Initial identity has full Conservative/Hom/mark/height/cost/OldSuprema/profile fields, actual singleton-stage family/base triangles; uses unchanged native identity/constant function/Family/bounded_union. Canonical limit EIGHT fields literally equal by retained quotient/projection/table/unit/mark/weight/cocone/base equations; native successor/self-append adds OWN identity, no second class choice or merely isomorphic replacement. Successor ACTUALLY consumes SAME chosen raw tuple/all-old-leg/self-append; exact tuple/family/shared self_unique prove unique state. Shared codec and self uniqueness ACTUALLY reused. THREE original-kernel endpoints: pure forall12 initial + forall20 limit in nativeZF; pure forall33 SAME-L relative successor in nativeZF, with completed L/order discharge; 10/35/40 existing dependencies. 34 declarations/full 30776-declaration validation, all 30742 old footprints unchanged, zero warnings/new trust. Full valid-history/all transition-table extraction and UNIFORM actual native recursive operator/tower/global time/naturality/map_succ, original Request cardinal bound, CompleteRounds/saturation/models/internal Proof-Con/final Con remain OPEN. Case-value functionality is COMPLETE; it is not the entire history operator. |
 
-## 原第 8 阶段：记录历史的实际字段与全转移表
+## 原第8阶段：当前已验收构造闭包
 
-| 固定源消费者 | 实际目标入口 | 精确范围 |
+| 固定原源消费者 | 已迁移入口 | 保留的完整对象范围 |
 |---|---|---|
-| ConstructionIteration.structureWithTime／Round.fromBase 的内部集合呈现 | ConstructionTowerHistory.extraction_kernel_certificate | forall2 nativeZF Derives；Records J S 下实际构造九张字段图；时间字段等于内部索引是 Records 明确前提；九图解码同一原 Pack，全部内部集合索引 |
-| 同一 functor 的全部转移／原有向极限索引输入 | ConstructionTowerTransitions.construction_kernel_certificate | forall3 nativeZF Derives；Records 与 IncomingRows 下实际构造九字段图、E、P=J×J、全函数矩阵 F；matrix_at 对 i≤j 字面等于目标记录保存的 incoming leg；任意内部序数导出原 IndexLaws |
+| MonoidTowers 的历史／映射／Under-base 极限 | ConstructionTowerHistory／Transitions／Validity／Diagram／HistoryLimit | 同一九字段、全矩阵、21 项图表；任意内部序数 |
+| ConstructionIteration 初始／后继／极限 | TowerHistoryInitial／HistorySuccessor／Append／HistoryClosure | 实际唯一阶段记录及完整 Valid 追加保持 |
+| 实际递归单轮塔 | TowerIterationCases／Iteration／IterationValidity | 全集合历史上的总唯一具体算子；既有原生递归；内部分离／序数归纳证明完整有效 |
+| Round.map_succ | TowerMapSucc | 全塔原请求 inclusion 精确方程；实际 raw/Picked/Pack 和来源不丢失 |
+| Request.data_cardinal_le／Round.cardinal_le | RequestPadding／RequestCardinality／ScheduleCardinality／TowerCardinality | 完整 Request、同一 J/last 和全部内部阶段实际大小界 |
+| probe_new／原请求 profile | RoundFresh／RoundSelection／TowerMapSucc | 实际 generator；相对整个当前旧阶段的新鲜性 |
+| ProbeData.independent／Merger.RootSystem | ProbeIndependent／MergerRootSystem | 全扩张载体／所有新右因子精确公共锥；缺失处方时不相交 |
+| Round.probe_independent／creates_merger 的后续切片 | ConeTransport／TowerRequestCones | 实际 F(i,k)、同一 fromBase、全 MapFields/profile／精确锥 |
+| Round.probe／probe_transition | TowerExecution／TowerProbeFamily | 同一执行与第九字段图、唯一切片家族、完整 profile／跨切片一致性 |
+| Round.probes_ne_of_lt 同一请求消费者／probes_independent_of_lt | TowerProbeIndependence | 所有不同位置 Injection 和精确 JoinProperty，出口为目标 fromBase(a)*mark |
+| CompleteRound.target/inclusion/preservesProfiles/cardinal_le | CompleteRound.target／exists_complete_round／exists_from_parent | 从原父输入构造 Request、调度、实际有界塔、同一 last 目标与 inclusion；Object/MapFields/Profiles/Small |
+| CompleteRound.probe/probe_profile/probe_injective/probes_independent | CompleteRound.exists_probe | 实际 Place(q,k)→既有唯一 Probe 的准确图；完整 K→target Injection、所有新右因子精确交锥 |
+| CompleteRound.realizes_merger | CompleteRound.realizes_merger | K 的一个非空见证；同一目标全部 Merger 处方的完整 RootSystem，无选择函数输入 |
 
-新声明 72 项已通过定向编译、逐项 trust=0 预审及正式完整验收：2834 项构建、30848 项声明，九命令／五次 trust=0 均退出 0，零警告；30776 项原足迹不变，2398 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。此处尚无完整代数／profile／复合／base 自然性有效历史的保持、统一递归算子或实际塔，不宣称原全塔 time／fromBase_naturality／map_succ 或最终对象 Con 已证明。
+本批 ConstructionCompleteRound 共 18 项声明，constructionSentence 为 forall15。construction_kernel_certificate 返回原 FirstOrder.Derives nativeZF []，句子相对化到同一既有内部 L；该 L 的 Choice/order 被实际消去，没有向普通 ZF 添加 Choice。实际完整父输入生产者 exists_from_parent 同时返回所有原请求的 ProbeFamilies/MergerFamilies，不把见证或目标当作输入。
 
-## 原第 8 阶段：完整记录有效性、原图表输入、实际初始历史／极限值
+正式验收：2860 项构建、31220 项声明，9 命令／5 次 trust=0 均成功、零警告；旧 31202 项足迹不变、无新增公理依赖；2424 当前指纹／75 源哈希匹配。证据 verification/complete-round-acceptance.json；此前各批证据保留于 verification，历史过程文字可从 acf13f8 恢复。
 
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；分支追加保持已由 HistoryClosure 实际证明，统一算子／实际递归塔现已由 IterationValidity 完成 |
-| 原加权有向极限／Under M 的完整父输入 | ConstructionTowerDiagram.extraction_kernel_certificate | forall13 nativeZF Derives；从记录 Valid 导出全部 21 项原代数／权重／profile／base 合同，实际构造图表；几何参数／非空仍为原构造器的明确前提 |
-| ConstructionIteration 的规范极限分支 | ConstructionTowerHistoryLimit.construction_kernel_certificate | forall13 nativeZF Derives；实际从非空内部序数的 Valid 历史及原几何父输入构造唯一规范极限记录，不再假定图表／腿族／极限；追加有效性现由 HistoryClosure.limit_kernel_certificate 实际证明 |
-| 原 Under.mk(identity) 初始分支 | ConstructionTowerHistoryInitial.construction_kernel_certificate | forall12 nativeZF Derives；实际构造首段历史且证明完整 Valid，原生 constantFunction 与既有初始值被消费；不以给定有效历史代替构造 |
-
-本批四模块 50 项显式声明已通过定向编译、逐项 trust=0 预审及正式全量验收：2838 项构建、30898 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30848 项足迹不变，2402 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际首段与条件式极限分支不等于完整递归塔；后继接入及后继／极限追加保持现已由下列 HistorySuccessor／HistoryClosure 完成，原请求基数界、完整轮次／饱和性及最终对象 Con 仍未完成。
-
-## 原第 8 阶段：实际历史后继与后继／极限完整追加保持
-
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| Round.step／fromBase／map_succ 的历史输入 | ConstructionTowerHistorySuccessor.construction_kernel_certificate | 同一 L 相对化 forall17 原核证书；从同一有效历史实际读取末记录、导出全部旧 fan／Hom／profile／自然性，消费同一原选中后继，输出字面唯一；原请求见证保留于 Extended |
-| 原内部序数迭代的后继／极限历史保持 | ConstructionTowerAppend.preserves；ConstructionTowerHistoryClosure.limit_kernel_certificate／successor_kernel_certificate | 原生序列实际追加；逐项证明全部 Valid；直接消费同一 Result／Extended／SelfExtension，未假定新历史有效；两个保持原核证书在 nativeZF 中 |
-| 原源父输入至实际可继续的分支 | ConstructionTowerHistoryClosure.successorConstruction_kernel_certificate／limitConstruction_kernel_certificate | 后继同一 L 相对化 forall17，极限 nativeZF forall13；实际构造唯一记录与实际有效追加；原 Principal／Coordinates 导出 top Cut，无新前提 |
-
-本批三模块共 34 项声明、五项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2841 项构建、30932 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30898 项足迹不变，2405 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。初始有效性、完整图表输入、两种分支构造与追加保持已接通；全部内部历史上的统一算子／原生递归实际单轮塔现已由下列 IterationValidity 完成；精确全塔 map_succ 现由下列 ConstructionTowerMapSucc 完成；请求基数界、多轮／饱和系统及最终对象 Con 尚未完成。
-
-## 原第 8 阶段：具体全历史算子、原生递归与实际完整有效单轮塔
-
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| ConstructionIteration.structureWithTime／Round.step | ConstructionTowerIteration.total_kernel_certificate | 同一 L 相对化 forall16 原核证书；具体 BinarySchema14 在全部内部集合历史总且唯一，有效范围执行同一三个源 Case，其余输入精确 zero |
-| 原算子的实际有效步 | ConstructionTowerIteration.step_kernel_certificate | nativeZF forall18 Derives；实际 Operation 在 Good 历史上给出同一原 Case 和真实完整 Valid 追加 |
-| 原内部序数迭代 | ConstructionTowerIteration.recursion_kernel_certificate | 同一 L 相对化 forall16 Derives；既有 native recursiveSequence_exists 被实际具体算子实例化，不是任意给定算子／序列 |
-| 实际塔／time／fromBase_naturality | ConstructionTowerIterationValidity.construction_kernel_certificate | 同一 L 相对化 forall15 Derives；显式纯 Correct 公式的分离反例集／原生内部序数归纳证明完整 Valid，实际构造递归历史、全部 12 表、时间恒等和全部 21 项加权图表／base 自然性合同 |
-
-本批三模块共 56 项声明、四项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2844 项构建、30988 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30932 项足迹不变，2408 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际单轮塔已构造；精确全塔 map_succ 的原请求方程现由下列 ConstructionTowerMapSucc 完成；请求基数界、CompleteRounds／SaturatedMonoids 最终多轮系统及最终对象 Con 仍未完成。
-
-## 原第 8 阶段：同一实际塔的精确原请求 map_succ
-
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| MonoidRounds.Round.map_succ／ConstructionIteration.map_succ | ConstructionTowerMapSucc.mapSucc_kernel_certificate | nativeZF forall20 原核证书；所有内部相邻阶段的全局矩阵图精确等于同一原请求后继 inclusion O，保留两个实际阶段记录、完整 Step、Probe／Merger 两种 Done 见证 |
-| 原 Round 实际构造与后续 CompleteRounds | ConstructionTowerMapSucc.construction_kernel_certificate | 同一 L 相对化 forall15 原核证书；实际构造原递归塔、全部12表、恒等时间、完整21项图表／Under-base 条件，并返回全部相邻阶段的精确 map_succ；已有 L/order 生产者消去背景，不给定相邻方程 |
-
-12 项显式声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2845 项构建、31000 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30988 项足迹不变，2409 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。请求基数界现由下列 ConstructionRequestCardinality 完成；索引／塔基数界传播、多轮／饱和系统和最终内部 Con 仍未完成。
-
-## 原第 8 阶段：完整 Request 基数界和实际小请求集
-
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| CompleteRounds.MergerData.code_injective／data_cardinal_le | ConstructionRequestPadding.exists_padding／padding_injective | 全部内部 n 的同一完整 P，含对角行；在 ω×ω 上真实 Option 补全，可恢复全部原边及字面原表，未使用幂集基数上界 |
-| ProbeData／MergerData／Request.data_cardinal_le → CompleteRound.cardinal_le | ConstructionRequestCardinality.bound_kernel_certificate | nativeZF forall8 原核证书；原 μ 无限、μ^ω=μ、D≤μ 假设下，实际构造完整 Request 集到 μ 的单射，零／一仅为内部不同标签，无对象 Choice 前件 |
-| 实际 Request 集生产者 → 后续轮次枚举 | ConstructionRequestCardinality.construction_kernel_certificate | nativeZF forall7 原核证书；调用既有 RequestCarrier.exists_carrier 实际构造同一完整 Request 集及 Small 单射证书，不以给定 Request 集代替构造 |
-
-两模块 30 项声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2847 项构建、31030 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31000 项足迹不变，2411 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。索引／实际塔基数界传播现由下列两模块完成；完整轮次请求实现、SaturatedMonoids 和最终内部 Con 仍未完成。
-
-## 原第 8 阶段：同一索引与实际塔全部阶段的大小界
-
-| 固定源消费者 | 实际目标入口 | 精确范围 |
-|---|---|---|
-| CompleteRound.cardinal_le 的原 Index 界 | ConstructionScheduleCardinality.bound_kernel_certificate | nativeZF forall18；原 WithTop carrier 的真实编码单射及同一 inverse-collapse，取得 A、I、规范序数与 last 的 Small，完整 Data 不变 |
-| 同一实际内部序数调度生产者 | ConstructionScheduleCardinality.construction_kernel_certificate | nativeZF forall10；实际构造完整原 Data，消费原 Request 界并返回五项 Small；仅保留既有内部良序生产者的显式 Choice |
-| Round/ContinuousTower.cardinal_le | ConstructionTowerCardinality.bound_kernel_certificate | nativeZF forall17；纯 At 公式、全 Separation 和内部序数归纳，实际消费同一 Initial、后继 SizeBound、规范极限 Bound，覆盖全部内部阶段；原 union 界的 Choice 前件显式保留 |
-| 原 actual tower / time / map_succ 构造 | ConstructionTowerCardinality.construction_kernel_certificate | 同一 L 相对化 forall16；实际构造完整同一塔和全部阶段 Small／同一 Domains 的 StageSmall，全部12表、21项图表、自然性、时间及精确 map_succ 保留；已有 L Choice/order 实际消去 |
-
-两模块 31 项声明／四项原核端点已通过定向编译、trust=0 预审及正式全量验收：2849 项构建、31061 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31030 项足迹不变，2413 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。完整轮次请求实现／重复 probe 独立性、SaturatedMonoids、多模型应用和最终内部 Con 仍未完成。
-
-## 原第8阶段：修复选中请求的当前 inclusion 新鲜性
-
-| 固定源义务 | 实际接口／消费者 | 精确范围 |
-|---|---|---|
-| Round.creates_probe／probe_new 的当前阶段新鲜性输入 | RoundFresh.probe、ProbeWitness、Completed → Selection.Candidate/Picked | 复用既有实际父 hNotOld；原九字段末字段存实际 generator，移除旧零占位；原生／纯 Done 接同一 O，保留固定 generator profile 及全部当前原像排除 |
-| Merger roots 对当前 inclusion 的新鲜性 | RoundFresh.merger／merger_of_completed | 同一实际 roots 图、完整旧因子实现及全部 current-O 原像排除；不把旧因子实现升级成尚未证明的全锥 RootSystem |
-| 全塔原请求精确后继 | TowerSuccessor.Extended／TowerMapSucc.mapSucc_kernel_certificate／construction_kernel_certificate | 同一选中元组、原 Step、全局矩阵 inclusion 和强 Done 同步；nativeZF forall20 与同一 L forall15 原核端点重新证明，没有换塔或增加外部良基前提 |
-
-新增12项显式声明及3个修订模块94项声明均通过 trust=0 预审及正式全量验收：2850 项构建、31073 项声明，九命令／五次 trust=0 均退出0，零警告；原31061项足迹不变，2414份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。源 probe_gate.intersections／probe_independent 与 Merger 全锥 RootSystem、完整轮次／饱和及最终内部 Con 仍未完成。
-
-## 原第8阶段：原操作精确锥与实际后续切片
-
-| 固定源消费者 | 实际入口／消费者 | 精确范围 |
-|---|---|---|
-| ProbeData.probe_gate／probe_old_profile／independent | OperationSource／ProbeIndependent | 同一真实正规形；零位gate／完整内部路径profile／全W精确公共锥，forall15；实际Provenance消费forall17原核证书 |
-| MergerData.cone_realization／RootSystem | OperationSource／MergerRootSystem | 缺失start锥不交、存在start完整JoinProperty，全部扩张新右因子；forall12／实际请求消费forall16原核证书 |
-| RootSystem.map／OverlapPrescription.map_comp | ConstructionConeTransport | 直接用Conservative.Intersections/Common、原生复合、原映射处方；实际构造像及基图，两条forall20原核证书 |
-| Round.probe_independent:337／probe_profile:308／probe_new:325／creates_merger:275 | ConstructionTowerRequestCones.at_later／cut_kernel_certificate | 同一Recursive／map_succ／incoming；由Valid读取真实腿；Probe图=全局F(i,k)、全MapFields／最终profile／相对整个旧阶段新鲜性；Merger基图=同一目标Row的fromBase；forall21原核证书，覆盖全部内部后续切片及k=j |
-
-本批21项声明／旧31129项足迹逐项不变；正式验收2856项构建、31150项声明，九命令／五次trust=0均退出0，零编译警告；2420份当前指纹／75份源哈希匹配，无新增公理依赖。实际后续切片传输已完成；整轮target/inclusion、重复Probe家族的单射／两两独立性、多轮饱和及最终内部Con未完成。
-
-## 原第8阶段：统一执行／根图与切片Probe家族
-
-| 原源消费者 | 实际入口 | 对象范围 |
-|---|---|---|
-| Round.step/map_succ／Probe.probe | map_succ_selected／SelectedAt；TowerRequestCones保留raw/Picked/Pack | 同一真实选中元组，旧接口投影保留 |
-| CompleteRound.probe | TowerExecution.exists_execution | 内部有效位置、同一执行图／值域、已有第九字段Chart；同一L内forall18相对化原核证书 |
-| Round.probe／probe_profile | TowerProbeFamily.exists_family | 实际分离合格位置；同一根／转移图上的唯一Probe值与最终profile，forall34原核证书 |
-| Round.probe_transition | TowerProbeFamily.transition | 实际内部切片、同一根对象与Valid.Homs/Composition，forall21原核证书 |
-
-全量2858项构建／31192项声明，九命令／五次trust=0通过、零编译警告；旧31150项足迹不变，无新增公理依赖。统一家族的单值性不等于不同位置的单射／独立性；后两项、整轮target/inclusion、多轮和最终内部Con未完成。
-
-## 原第8阶段：统一切片Probe的单射／两两独立性
-
-ConstructionTowerProbeIndependence.independent_of_lt 按原 probes_ne_of_lt 的同一请求消费者实例及 probes_independent_of_lt 读取前次profile／实际transition／后次全旧阶段freshness与independent；内部序数比较给出所有不同位置的Injection和完整JoinProperty。最终出口明确为同一目标fromBase(a)*mark，覆盖全部新右因子。exists_independent_family 实际构造并保留原Positions/Maps/Graph/profile，forall34原核证书已验收。
-本批10项声明，全量2859项构建／31202项声明，九命令／五次trust=0通过、零编译警告；旧31192项足迹不变，无新增公理依赖。位置家族的单射／两两独立性已完成；K/Place/last重索引、整轮target/inclusion、多轮及最终内部Con未完成。
+当前位置仍为原阶段8：完整单轮完成；下一项为源 Saturation 多轮实际系统／可数适当阶段覆盖／最终饱和性。第9模型应用、第10全部内部 Proof/Con 和最终闭句、第11最终验收均未完成。

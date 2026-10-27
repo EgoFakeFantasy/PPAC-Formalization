@@ -31641,3 +31641,23 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionTowerProbeIndependence.constructionSentence
 #print axioms PPAC.Migration.ConstructionTowerProbeIndependence.construction_models
 #print axioms PPAC.Migration.ConstructionTowerProbeIndependence.construction_kernel_certificate
+
+-- Actual complete round from original parents, full K-families and mergers.
+#print axioms PPAC.Migration.ConstructionCompleteRound.successor_before_last
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_placement
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_probe
+#print axioms PPAC.Migration.ConstructionCompleteRound.realizes_merger
+#print axioms PPAC.Migration.ConstructionCompleteRound.target
+#print axioms PPAC.Migration.ConstructionCompleteRound.ProbeFamilies
+#print axioms PPAC.Migration.ConstructionCompleteRound.MergerFamilies
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_complete_round
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_from_parent
+#print axioms PPAC.Migration.ConstructionCompleteRound.probeFamilies
+#print axioms PPAC.Migration.ConstructionCompleteRound.probeFamilies_freeClosed
+#print axioms PPAC.Migration.ConstructionCompleteRound.probeFamilies_semantics
+#print axioms PPAC.Migration.ConstructionCompleteRound.mergerFamilies
+#print axioms PPAC.Migration.ConstructionCompleteRound.mergerFamilies_freeClosed
+#print axioms PPAC.Migration.ConstructionCompleteRound.mergerFamilies_semantics
+#print axioms PPAC.Migration.ConstructionCompleteRound.constructionSentence
+#print axioms PPAC.Migration.ConstructionCompleteRound.construction_models
+#print axioms PPAC.Migration.ConstructionCompleteRound.construction_kernel_certificate

@@ -50,4 +50,6 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 已证：语言及全部源规则传输、完整 ZF 呈现互导、AC 等价、通用域相对化，以及已列明的内部构造。完整公理模式在底座和本仓均已存在。
 已完成的背景解释：同一任意原生 ZF 模型内部的 L/ZFC 已复用到固定底座；ConstructibleGround 和 ConstructibleSource 已取得全部原生／源公理与模式、Choice 及域非空的 L 相对化原核证书。既有 InterpretedZF 的背景和非空前提已被实际消去，原第 6 阶段验收门已经通过；不再把版本、源域或 L 全模式解释列作缺口。
 
-真正未闭合：第 8 阶段的整轮 target/inclusion、K/Place/last 重索引及多轮饱和性（实际单轮有效内部递归塔／时间恒等／全塔 fromBase 自然性／精确 map_succ 原请求 inclusion 方程／完整原请求基数界、同一索引／规范序数／last 大小界、全部内部阶段界及选中实际 generator／当前 inclusion 强新鲜性及原正规形／自由作用来源数据传输、ProbeData.independent 的全内部 W 精确公共锥、Merger 完整 RootSystem 及两类实际请求 Provenance 消费、全部实际后续切片的 F(i,k)/fromBase 精确锥／profile／新鲜性原核证书，以及同一实际执行／第九字段图、统一切片Probe家族／profile／单值／跨切片一致性／不同位置单射与全新右因子两两独立性已完成），第 9 阶段同一系统的模型应用，第 10 阶段 ZF/U 专用内部 Proof/Con、全部内部／非标准矛盾码传输和最终闭句。已有全部外部标准证书变换不替代这些内部码证明。
+本批已完成：完整 CompleteRound 从原父输入构造，包含全部请求／有界调度／内部塔、同一 last target/inclusion、K 索引 Probe 单射／profile／全新右因子精确公共锥、所有 Merger 全 RootSystem；forall15 原核证书相对化到同一现成内部 L，Choice/order 已实际消去。
+
+真正未闭合：第 8 的多轮 Saturation／最终饱和单子，第 9 同一系统的模型应用，第 10 全秩 PP/Main、ZF/U 专用内部 Proof/Con、全部内部／非标准矛盾码传输和最终原核闭句。已有外部标准证书变换不替代内部码证明。最新验收和原 1–11 状态见 STATUS／AGENT_WORKFLOW。

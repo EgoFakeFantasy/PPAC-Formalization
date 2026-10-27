@@ -11580,4 +11580,9 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerProbeIndependence.constructionSentence) :=
   ConstructionTowerProbeIndependence.construction_kernel_certificate
 
+-- Full original-parent construction, using existing SAME L Choice/order.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionCompleteRound.constructionSentence)) :=
+  ConstructionCompleteRound.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
