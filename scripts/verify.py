@@ -2249,7 +2249,9 @@ def main() -> None:
                                ('construction_tower_iteration_validity', 'ConstructionTowerIterationValidity', 12),
                                ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 12),
                                ('construction_request_padding', 'ConstructionRequestPadding', 14),
-                               ('construction_request_cardinality', 'ConstructionRequestCardinality', 16)):
+                               ('construction_request_cardinality', 'ConstructionRequestCardinality', 16),
+                               ('construction_schedule_cardinality', 'ConstructionScheduleCardinality', 15),
+                               ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5813,8 +5815,11 @@ def main() -> None:
         "source_CompleteRounds_original_Request_data_cardinal_le_instantiated": True,
         "source_CompleteRounds_actual_small_Request_carrier_constructed": True,
         "source_Request_cardinal_bound_preserves_complete_partial_start_graph_all_internal_n_and_diagonals": True,
-        # Request bound is complete. Joint gate still needs actual ordinal-index size/tower bounds.
-        "source_CompleteRounds_internal_wellorder_ordinal_index_and_original_Request_cardinal_bounds_instantiated": False,
+        # Request and SAME actual ordinal-index bounds are proved; final CompleteRounds/saturation is separate.
+        "source_CompleteRounds_actual_WithTop_and_SAME_canonical_ordinal_and_last_size_bounds_proved": True,
+        "source_round_actual_recursive_tower_ALL_internal_stage_cardinal_bounds_proved": True,
+        "source_round_actual_bounded_tower_constructor_retains_ALL_fields_global_map_succ_and_stage_bounds": True,
+        "source_CompleteRounds_internal_wellorder_ordinal_index_and_original_Request_cardinal_bounds_instantiated": True,
         "source_CompleteRounds_actual_chosen_internal_product_and_WithTop_wellorders_constructed": True,
         "source_CompleteRounds_every_designated_place_strictly_before_top_proved": True,
         "source_CompleteRounds_actual_canonical_ordinal_type_and_equinumerosity_constructed": True,

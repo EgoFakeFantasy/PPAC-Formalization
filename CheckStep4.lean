@@ -11513,4 +11513,21 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionRequestCardinality.constructionSentence) :=
   ConstructionRequestCardinality.construction_kernel_certificate
 
+-- Existing actual carriers/collapse and source successor/limit bounds; no rebuilt foundations.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionScheduleCardinality.boundSentence) :=
+  ConstructionScheduleCardinality.bound_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionScheduleCardinality.constructionSentence) :=
+  ConstructionScheduleCardinality.construction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerCardinality.boundSentence) :=
+  ConstructionTowerCardinality.bound_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerCardinality.constructionSentence)) :=
+  ConstructionTowerCardinality.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

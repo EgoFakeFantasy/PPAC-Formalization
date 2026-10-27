@@ -633,3 +633,5 @@ import PPAC.Migration.ConstructionTowerIterationValidity
 import PPAC.Migration.ConstructionTowerMapSucc
 import PPAC.Migration.ConstructionRequestPadding
 import PPAC.Migration.ConstructionRequestCardinality
+import PPAC.Migration.ConstructionScheduleCardinality
+import PPAC.Migration.ConstructionTowerCardinality

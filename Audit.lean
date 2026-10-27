@@ -31453,3 +31453,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionRequestCardinality.constructionSentence
 #print axioms PPAC.Migration.ConstructionRequestCardinality.construction_models
 #print axioms PPAC.Migration.ConstructionRequestCardinality.construction_kernel_certificate
+
+-- SAME actual schedule indices/ordinal and original recursive tower stage-size bounds.
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.Tagged
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.tagged
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.tagged_freeClosed
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.tagged_semantics
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.tagged_unique
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.tagged_injective
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.index_small
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.bounds
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.exists_bounded_system
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.boundSentence
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.bound_models
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.constructionSentence
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.construction_models
+#print axioms PPAC.Migration.ConstructionScheduleCardinality.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionTowerCardinality.At
+#print axioms PPAC.Migration.ConstructionTowerCardinality.AllSmall
+#print axioms PPAC.Migration.ConstructionTowerCardinality.atStage
+#print axioms PPAC.Migration.ConstructionTowerCardinality.atStage_freeClosed
+#print axioms PPAC.Migration.ConstructionTowerCardinality.atStage_semantics
+#print axioms PPAC.Migration.ConstructionTowerCardinality.allSmall
+#print axioms PPAC.Migration.ConstructionTowerCardinality.allSmall_freeClosed
+#print axioms PPAC.Migration.ConstructionTowerCardinality.allSmall_semantics
+#print axioms PPAC.Migration.ConstructionTowerCardinality.stage_small
+#print axioms PPAC.Migration.ConstructionTowerCardinality.boundSentence
+#print axioms PPAC.Migration.ConstructionTowerCardinality.bound_models
+#print axioms PPAC.Migration.ConstructionTowerCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ConstructionTowerCardinality.exists_tower
+#print axioms PPAC.Migration.ConstructionTowerCardinality.constructionSentence
+#print axioms PPAC.Migration.ConstructionTowerCardinality.construction_models
+#print axioms PPAC.Migration.ConstructionTowerCardinality.construction_kernel_certificate

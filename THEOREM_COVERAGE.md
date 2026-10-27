@@ -374,4 +374,15 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | ProbeData／MergerData／Request.data_cardinal_le → CompleteRound.cardinal_le | ConstructionRequestCardinality.bound_kernel_certificate | nativeZF forall8 原核证书；原 μ 无限、μ^ω=μ、D≤μ 假设下，实际构造完整 Request 集到 μ 的单射，零／一仅为内部不同标签，无对象 Choice 前件 |
 | 实际 Request 集生产者 → 后续轮次枚举 | ConstructionRequestCardinality.construction_kernel_certificate | nativeZF forall7 原核证书；调用既有 RequestCarrier.exists_carrier 实际构造同一完整 Request 集及 Small 单射证书，不以给定 Request 集代替构造 |
 
-两模块 30 项声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2847 项构建、31030 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31000 项足迹不变，2411 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。索引／实际塔基数界传播、CompleteRounds／SaturatedMonoids 和最终内部 Con 仍未完成。
+两模块 30 项声明／两项原核端点已通过定向编译、trust=0 预审及正式全量验收：2847 项构建、31030 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31000 项足迹不变，2411 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。索引／实际塔基数界传播现由下列两模块完成；完整轮次请求实现、SaturatedMonoids 和最终内部 Con 仍未完成。
+
+## 原第 8 阶段：同一索引与实际塔全部阶段的大小界
+
+| 固定源消费者 | 实际目标入口 | 精确范围 |
+|---|---|---|
+| CompleteRound.cardinal_le 的原 Index 界 | ConstructionScheduleCardinality.bound_kernel_certificate | nativeZF forall18；原 WithTop carrier 的真实编码单射及同一 inverse-collapse，取得 A、I、规范序数与 last 的 Small，完整 Data 不变 |
+| 同一实际内部序数调度生产者 | ConstructionScheduleCardinality.construction_kernel_certificate | nativeZF forall10；实际构造完整原 Data，消费原 Request 界并返回五项 Small；仅保留既有内部良序生产者的显式 Choice |
+| Round/ContinuousTower.cardinal_le | ConstructionTowerCardinality.bound_kernel_certificate | nativeZF forall17；纯 At 公式、全 Separation 和内部序数归纳，实际消费同一 Initial、后继 SizeBound、规范极限 Bound，覆盖全部内部阶段；原 union 界的 Choice 前件显式保留 |
+| 原 actual tower / time / map_succ 构造 | ConstructionTowerCardinality.construction_kernel_certificate | 同一 L 相对化 forall16；实际构造完整同一塔和全部阶段 Small／同一 Domains 的 StageSmall，全部12表、21项图表、自然性、时间及精确 map_succ 保留；已有 L Choice/order 实际消去 |
+
+两模块 31 项声明／四项原核端点已通过定向编译、trust=0 预审及正式全量验收：2849 项构建、31061 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31030 项足迹不变，2413 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。完整轮次请求实现／重复 probe 独立性、SaturatedMonoids、多模型应用和最终内部 Con 仍未完成。
