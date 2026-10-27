@@ -11478,4 +11478,21 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryClosure.limitConstructionSentence) :=
   ConstructionTowerHistoryClosure.limitConstruction_kernel_certificate
 
+-- Concrete operator/recursion/full-valid tower; SAME L/order producer discharges needed order.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerIteration.totalSentence)) :=
+  ConstructionTowerIteration.total_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerIteration.stepSentence) :=
+  ConstructionTowerIteration.step_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerIteration.recursionSentence)) :=
+  ConstructionTowerIteration.recursion_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerIterationValidity.constructionSentence)) :=
+  ConstructionTowerIterationValidity.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

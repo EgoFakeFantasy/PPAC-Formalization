@@ -329,7 +329,7 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 
 | 固定源消费者 | 实际目标入口 | 精确范围 |
 |---|---|---|
-| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；统一递归实例尚未完成；分支追加保持已由后续 HistoryClosure 实际证明 |
+| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；分支追加保持已由 HistoryClosure 实际证明，统一算子／实际递归塔现已由 IterationValidity 完成 |
 | 原加权有向极限／Under M 的完整父输入 | ConstructionTowerDiagram.extraction_kernel_certificate | forall13 nativeZF Derives；从记录 Valid 导出全部 21 项原代数／权重／profile／base 合同，实际构造图表；几何参数／非空仍为原构造器的明确前提 |
 | ConstructionIteration 的规范极限分支 | ConstructionTowerHistoryLimit.construction_kernel_certificate | forall13 nativeZF Derives；实际从非空内部序数的 Valid 历史及原几何父输入构造唯一规范极限记录，不再假定图表／腿族／极限；追加有效性现由 HistoryClosure.limit_kernel_certificate 实际证明 |
 | 原 Under.mk(identity) 初始分支 | ConstructionTowerHistoryInitial.construction_kernel_certificate | forall12 nativeZF Derives；实际构造首段历史且证明完整 Valid，原生 constantFunction 与既有初始值被消费；不以给定有效历史代替构造 |
@@ -344,4 +344,15 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | 原内部序数迭代的后继／极限历史保持 | ConstructionTowerAppend.preserves；ConstructionTowerHistoryClosure.limit_kernel_certificate／successor_kernel_certificate | 原生序列实际追加；逐项证明全部 Valid；直接消费同一 Result／Extended／SelfExtension，未假定新历史有效；两个保持原核证书在 nativeZF 中 |
 | 原源父输入至实际可继续的分支 | ConstructionTowerHistoryClosure.successorConstruction_kernel_certificate／limitConstruction_kernel_certificate | 后继同一 L 相对化 forall17，极限 nativeZF forall13；实际构造唯一记录与实际有效追加；原 Principal／Coordinates 导出 top Cut，无新前提 |
 
-本批三模块共 34 项声明、五项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2841 项构建、30932 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30898 项足迹不变，2405 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。初始有效性、完整图表输入、两种分支构造与追加保持已接通；全部内部历史上的统一算子／原生递归实际塔及最终对象 Con 尚未完成。
+本批三模块共 34 项声明、五项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2841 项构建、30932 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30898 项足迹不变，2405 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。初始有效性、完整图表输入、两种分支构造与追加保持已接通；全部内部历史上的统一算子／原生递归实际单轮塔现已由下列 IterationValidity 完成；精确全塔 map_succ、请求基数界、多轮／饱和系统及最终对象 Con 尚未完成。
+
+## 原第 8 阶段：具体全历史算子、原生递归与实际完整有效单轮塔
+
+| 固定源消费者 | 实际目标入口 | 精确范围 |
+|---|---|---|
+| ConstructionIteration.structureWithTime／Round.step | ConstructionTowerIteration.total_kernel_certificate | 同一 L 相对化 forall16 原核证书；具体 BinarySchema14 在全部内部集合历史总且唯一，有效范围执行同一三个源 Case，其余输入精确 zero |
+| 原算子的实际有效步 | ConstructionTowerIteration.step_kernel_certificate | nativeZF forall18 Derives；实际 Operation 在 Good 历史上给出同一原 Case 和真实完整 Valid 追加 |
+| 原内部序数迭代 | ConstructionTowerIteration.recursion_kernel_certificate | 同一 L 相对化 forall16 Derives；既有 native recursiveSequence_exists 被实际具体算子实例化，不是任意给定算子／序列 |
+| 实际塔／time／fromBase_naturality | ConstructionTowerIterationValidity.construction_kernel_certificate | 同一 L 相对化 forall15 Derives；显式纯 Correct 公式的分离反例集／原生内部序数归纳证明完整 Valid，实际构造递归历史、全部 12 表、时间恒等和全部 21 项加权图表／base 自然性合同 |
+
+本批三模块共 56 项声明、四项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2844 项构建、30988 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30932 项足迹不变，2408 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际单轮塔已构造；精确全塔 map_succ 的原请求方程、请求基数界、CompleteRounds／SaturatedMonoids 最终多轮系统及最终对象 Con 仍未完成。
