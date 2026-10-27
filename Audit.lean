@@ -27571,3 +27571,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.CopiesHeightCost
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.copiesHeightCost
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.copiesHeightCost_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.copiesHeightCost_semantics
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.exists_weights
+#print axioms PPAC.Migration.ConstructionMergerHeightCost.exists_system
+#print axioms PPAC.Migration.ConstructionMergerHeightCostSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerHeightCostSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerHeightCostSyntax.construction_kernel_certificate

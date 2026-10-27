@@ -10,7 +10,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 第 8 阶段的完整 ProbeData 父输入生产者已有原核证书，包括实际请求、加权新对象／inclusion、严格上确界 margin、profile、新颖性和基数界。Merger 已构造实际指定 copies、全内部 Word／操作表、完整左消去单子／conical／条件并、旧嵌入／四字段保守性／旧 gates／所有旧 profile 保持及根的精确关系实现。
 
-Merger 的同一实际 copies／Word／旧嵌入／profile／根、两张坐标表及实际有限平均／min 乘积除法权重图已构造。高度／成本正性、高度<1、成本≤1、平均高度严格单调及 cap／所有表示副本成本界已有原核对象证书，覆盖全部内部／非标准长度。平均坐标差/n≤平均高度差现已沿原 copiesHeight_gap 取得原核证书，保留相等端点及内部差值的实际构造。每坐标整类遗漏成本 margin 现也已有原核证书，保留先取一个界再约束全部遗漏 d 的量词顺序。有限统一严格界及实际遗漏成本上确界 margin 现也已有原核证书，copiesHeightCost 的数学字段已齐备。下一项是同一实际权重生产者的完整 copiesHeightCost 合同与父系统合并／加权 MergerData 装配，再接 Word 权重／旧上确界、基数界、Placement／ConservativeHull 和最终单子。**最终对象 Con 未证明；ZF/U 专用内部公式和全部内部码传输仍未闭合。**
+Merger 的同一实际 copies／Word／旧嵌入／profile／根、两张坐标表及实际有限平均／min 乘积除法权重图已构造。高度／成本正性、高度<1、成本≤1、平均高度严格单调及 cap／所有表示副本成本界已有原核对象证书，覆盖全部内部／非标准长度。平均坐标差/n≤平均高度差现已沿原 copiesHeight_gap 取得原核证书，保留相等端点及内部差值的实际构造。每坐标整类遗漏成本 margin 现也已有原核证书，保留先取一个界再约束全部遗漏 d 的量词顺序。有限统一严格界及实际遗漏成本上确界 margin 现也已有原核证书，完整 copiesHeightCost 及同一原父输入生产者合并现也已有原核证书。下一项是源 Word 权重／margin／旧上确界、基数界与完整加权 MergerData 装配，然后接 Placement／ConservativeHull 和最终单子。**最终对象 Con 未证明；ZF/U 专用内部公式和全部内部码传输仍未闭合。**
 
 完整 ZF 模式、内部递归、Proof/Sat、原核完备性及新版任意 ZF 模型中的 L→ZF/ZFC 已存在。剩余的是具体版本／语言／背景适配及源 PPAC 主链，不能把已有数学重新列为待证。
 

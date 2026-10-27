@@ -550,3 +550,6 @@ import PPAC.Migration.ConstructionMergerCoordinateMarginSyntax
 
 import PPAC.Migration.ConstructionMergerUniformMargin
 import PPAC.Migration.ConstructionMergerUniformMarginSyntax
+
+import PPAC.Migration.ConstructionMergerHeightCost
+import PPAC.Migration.ConstructionMergerHeightCostSyntax
