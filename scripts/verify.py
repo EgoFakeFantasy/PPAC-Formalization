@@ -2183,7 +2183,11 @@ def main() -> None:
                                ('construction_merger_parent_syntax', 'ConstructionMergerParentSyntax', 3),
                                ('construction_directed_system', 'ConstructionDirectedSystem', 29),
                                ('construction_directed_limit_carrier', 'ConstructionDirectedLimitCarrier', 47),
-                               ('construction_directed_limit_carrier_syntax', 'ConstructionDirectedLimitCarrierSyntax', 3)):
+                               ('construction_directed_limit_carrier_syntax', 'ConstructionDirectedLimitCarrierSyntax', 3),
+                               ('construction_directed_monoid_data', 'ConstructionDirectedMonoidData', 33),
+                               ('construction_directed_product', 'ConstructionDirectedProduct', 16),
+                               ('construction_directed_monoid', 'ConstructionDirectedMonoid', 13),
+                               ('construction_directed_monoid_syntax', 'ConstructionDirectedMonoidSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5626,6 +5630,11 @@ def main() -> None:
         "source_directed_limit_of_map_and_conditional_transition_injectivity_proved": True,
         "source_directed_limit_carrier_quotient_requires_transition_injectivity": False,
         "source_directed_limit_monoid_and_conservativity_proved": False,
+        "source_directed_limit_same_actual_multiplication_and_unit_constructed": True,
+        "source_directed_limit_associative_LeftCancelMonoid_and_conditional_Conical_proved": True,
+        "source_directed_limit_every_stage_actual_MonoidHom_proved": True,
+        "source_directed_limit_monoid_requires_transition_injectivity": False,
+        "source_directed_limit_full_Conservative_maps_proved": False,
         "source_directed_limit_complete_weighted_limit_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
