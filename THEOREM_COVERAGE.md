@@ -329,9 +329,19 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 
 | 固定源消费者 | 实际目标入口 | 精确范围 |
 |---|---|---|
-| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；统一递归保持尚未证明 |
+| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；统一递归实例尚未完成；分支追加保持已由后续 HistoryClosure 实际证明 |
 | 原加权有向极限／Under M 的完整父输入 | ConstructionTowerDiagram.extraction_kernel_certificate | forall13 nativeZF Derives；从记录 Valid 导出全部 21 项原代数／权重／profile／base 合同，实际构造图表；几何参数／非空仍为原构造器的明确前提 |
-| ConstructionIteration 的规范极限分支 | ConstructionTowerHistoryLimit.construction_kernel_certificate | forall13 nativeZF Derives；实际从非空内部序数的 Valid 历史及原几何父输入构造唯一规范极限记录，不再假定图表／腿族／极限；追加有效性未证明 |
+| ConstructionIteration 的规范极限分支 | ConstructionTowerHistoryLimit.construction_kernel_certificate | forall13 nativeZF Derives；实际从非空内部序数的 Valid 历史及原几何父输入构造唯一规范极限记录，不再假定图表／腿族／极限；追加有效性现由 HistoryClosure.limit_kernel_certificate 实际证明 |
 | 原 Under.mk(identity) 初始分支 | ConstructionTowerHistoryInitial.construction_kernel_certificate | forall12 nativeZF Derives；实际构造首段历史且证明完整 Valid，原生 constantFunction 与既有初始值被消费；不以给定有效历史代替构造 |
 
-本批四模块 50 项显式声明已通过定向编译、逐项 trust=0 预审及正式全量验收：2838 项构建、30898 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30848 项足迹不变，2402 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际首段与条件式极限分支不等于完整递归塔；后继接入、后继／极限追加保持、原请求基数界、完整轮次／饱和性及最终对象 Con 仍未完成。
+本批四模块 50 项显式声明已通过定向编译、逐项 trust=0 预审及正式全量验收：2838 项构建、30898 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30848 项足迹不变，2402 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际首段与条件式极限分支不等于完整递归塔；后继接入及后继／极限追加保持现已由下列 HistorySuccessor／HistoryClosure 完成，原请求基数界、完整轮次／饱和性及最终对象 Con 仍未完成。
+
+## 原第 8 阶段：实际历史后继与后继／极限完整追加保持
+
+| 固定源消费者 | 实际目标入口 | 精确范围 |
+|---|---|---|
+| Round.step／fromBase／map_succ 的历史输入 | ConstructionTowerHistorySuccessor.construction_kernel_certificate | 同一 L 相对化 forall17 原核证书；从同一有效历史实际读取末记录、导出全部旧 fan／Hom／profile／自然性，消费同一原选中后继，输出字面唯一；原请求见证保留于 Extended |
+| 原内部序数迭代的后继／极限历史保持 | ConstructionTowerAppend.preserves；ConstructionTowerHistoryClosure.limit_kernel_certificate／successor_kernel_certificate | 原生序列实际追加；逐项证明全部 Valid；直接消费同一 Result／Extended／SelfExtension，未假定新历史有效；两个保持原核证书在 nativeZF 中 |
+| 原源父输入至实际可继续的分支 | ConstructionTowerHistoryClosure.successorConstruction_kernel_certificate／limitConstruction_kernel_certificate | 后继同一 L 相对化 forall17，极限 nativeZF forall13；实际构造唯一记录与实际有效追加；原 Principal／Coordinates 导出 top Cut，无新前提 |
+
+本批三模块共 34 项声明、五项原核端点已通过定向编译、逐项 trust=0 预审及正式全量验收：2841 项构建、30932 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30898 项足迹不变，2405 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。初始有效性、完整图表输入、两种分支构造与追加保持已接通；全部内部历史上的统一算子／原生递归实际塔及最终对象 Con 尚未完成。

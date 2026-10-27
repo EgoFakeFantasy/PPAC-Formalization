@@ -2240,7 +2240,10 @@ def main() -> None:
                                ('construction_tower_validity', 'ConstructionTowerValidity', 23),
                                ('construction_tower_diagram', 'ConstructionTowerDiagram', 9),
                                ('construction_tower_history_limit', 'ConstructionTowerHistoryLimit', 9),
-                               ('construction_tower_history_initial', 'ConstructionTowerHistoryInitial', 9)):
+                               ('construction_tower_history_initial', 'ConstructionTowerHistoryInitial', 9),
+                               ('construction_tower_history_successor', 'ConstructionTowerHistorySuccessor', 10),
+                               ('construction_tower_append', 'ConstructionTowerAppend', 6),
+                               ('construction_tower_history_closure', 'ConstructionTowerHistoryClosure', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5786,6 +5789,9 @@ def main() -> None:
         "source_round_21_original_weighted_diagram_Under_base_parents_derived_from_record_validity": True,
         "source_round_actual_canonical_limit_from_record_history_total_unique": True,
         "source_round_actual_initial_history_full_algebraic_profile_coherence_validity_proved": True,
+        "source_round_same_original_selected_successor_from_full_valid_history_total_unique": True,
+        "source_round_actual_successor_and_limit_append_preserve_complete_Valid": True,
+        "source_round_both_original_case_parent_constructors_return_unique_record_and_actual_valid_append": True,
         "source_round_actual_full_valid_history_operator_instantiated": False,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

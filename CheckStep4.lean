@@ -11457,4 +11457,25 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryInitial.constructionSentence) :=
   ConstructionTowerHistoryInitial.construction_kernel_certificate
 
+-- Full source-parent constructor plus actual append validity, same normalized records.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerHistorySuccessor.constructionSentence)) :=
+  ConstructionTowerHistorySuccessor.construction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryClosure.limitSentence) :=
+  ConstructionTowerHistoryClosure.limit_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryClosure.successorSentence) :=
+  ConstructionTowerHistoryClosure.successor_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerHistoryClosure.successorConstructionSentence)) :=
+  ConstructionTowerHistoryClosure.successorConstruction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryClosure.limitConstructionSentence) :=
+  ConstructionTowerHistoryClosure.limitConstruction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

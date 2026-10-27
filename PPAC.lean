@@ -624,3 +624,6 @@ import PPAC.Migration.ConstructionTowerValidity
 import PPAC.Migration.ConstructionTowerDiagram
 import PPAC.Migration.ConstructionTowerHistoryLimit
 import PPAC.Migration.ConstructionTowerHistoryInitial
+import PPAC.Migration.ConstructionTowerHistorySuccessor
+import PPAC.Migration.ConstructionTowerAppend
+import PPAC.Migration.ConstructionTowerHistoryClosure
