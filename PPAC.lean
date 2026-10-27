@@ -553,3 +553,8 @@ import PPAC.Migration.ConstructionMergerUniformMarginSyntax
 
 import PPAC.Migration.ConstructionMergerHeightCost
 import PPAC.Migration.ConstructionMergerHeightCostSyntax
+
+import PPAC.Migration.ConstructionMergerWordParameters
+import PPAC.Migration.ConstructionMergerWordHeights
+import PPAC.Migration.ConstructionMergerWordCosts
+import PPAC.Migration.ConstructionMergerWordWeightsSyntax
