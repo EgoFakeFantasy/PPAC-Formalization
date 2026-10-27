@@ -11444,4 +11444,17 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerTransitions.constructionSentence) :=
   ConstructionTowerTransitions.construction_kernel_certificate
 
+-- Full native history contracts: no given diagram in the actual constructor endpoints.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerDiagram.extractionSentence) :=
+  ConstructionTowerDiagram.extraction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryLimit.constructionSentence) :=
+  ConstructionTowerHistoryLimit.construction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerHistoryInitial.constructionSentence) :=
+  ConstructionTowerHistoryInitial.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

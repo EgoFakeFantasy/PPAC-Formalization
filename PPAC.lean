@@ -620,3 +620,7 @@ import PPAC.Migration.ConstructionTowerInitial
 import PPAC.Migration.ConstructionTowerCanonicalSuccessor
 import PPAC.Migration.ConstructionTowerHistory
 import PPAC.Migration.ConstructionTowerTransitions
+import PPAC.Migration.ConstructionTowerValidity
+import PPAC.Migration.ConstructionTowerDiagram
+import PPAC.Migration.ConstructionTowerHistoryLimit
+import PPAC.Migration.ConstructionTowerHistoryInitial

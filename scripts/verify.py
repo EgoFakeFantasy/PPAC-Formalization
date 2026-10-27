@@ -2236,7 +2236,11 @@ def main() -> None:
                                ('construction_tower_initial', 'ConstructionTowerInitial', 11),
                                ('construction_tower_canonical_successor', 'ConstructionTowerCanonicalSuccessor', 9),
                                ('construction_tower_history', 'ConstructionTowerHistory', 35),
-                               ('construction_tower_transitions', 'ConstructionTowerTransitions', 37)):
+                               ('construction_tower_transitions', 'ConstructionTowerTransitions', 37),
+                               ('construction_tower_validity', 'ConstructionTowerValidity', 23),
+                               ('construction_tower_diagram', 'ConstructionTowerDiagram', 9),
+                               ('construction_tower_history_limit', 'ConstructionTowerHistoryLimit', 9),
+                               ('construction_tower_history_initial', 'ConstructionTowerHistoryInitial', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5778,6 +5782,10 @@ def main() -> None:
         "source_round_record_history_nine_actual_field_graphs_constructed": True,
         "source_round_record_history_all_index_transition_matrix_exact_target_incoming_leg": True,
         "source_round_record_history_internal_ordinal_original_index_laws_proved": True,
+        "source_round_full_record_history_validity_pure_formula_defined": True,
+        "source_round_21_original_weighted_diagram_Under_base_parents_derived_from_record_validity": True,
+        "source_round_actual_canonical_limit_from_record_history_total_unique": True,
+        "source_round_actual_initial_history_full_algebraic_profile_coherence_validity_proved": True,
         "source_round_actual_full_valid_history_operator_instantiated": False,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

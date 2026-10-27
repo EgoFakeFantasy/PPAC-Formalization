@@ -324,3 +324,14 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | 同一 functor 的全部转移／原有向极限索引输入 | ConstructionTowerTransitions.construction_kernel_certificate | forall3 nativeZF Derives；Records 与 IncomingRows 下实际构造九字段图、E、P=J×J、全函数矩阵 F；matrix_at 对 i≤j 字面等于目标记录保存的 incoming leg；任意内部序数导出原 IndexLaws |
 
 新声明 72 项已通过定向编译、逐项 trust=0 预审及正式完整验收：2834 项构建、30848 项声明，九命令／五次 trust=0 均退出 0，零警告；30776 项原足迹不变，2398 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。此处尚无完整代数／profile／复合／base 自然性有效历史的保持、统一递归算子或实际塔，不宣称原全塔 time／fromBase_naturality／map_succ 或最终对象 Con 已证明。
+
+## 原第 8 阶段：完整记录有效性、原图表输入、实际初始历史／极限值
+
+| 固定源消费者 | 实际目标入口 | 精确范围 |
+|---|---|---|
+| 原 Under／functor／profile 逐阶段合同 | ConstructionTowerValidity.valid | 纯公式直接编码同一记录的完整 Object／MapFields／Profiles、自身恒等、三重复合和 base 自然性；不假定构造好的图表；统一递归保持尚未证明 |
+| 原加权有向极限／Under M 的完整父输入 | ConstructionTowerDiagram.extraction_kernel_certificate | forall13 nativeZF Derives；从记录 Valid 导出全部 21 项原代数／权重／profile／base 合同，实际构造图表；几何参数／非空仍为原构造器的明确前提 |
+| ConstructionIteration 的规范极限分支 | ConstructionTowerHistoryLimit.construction_kernel_certificate | forall13 nativeZF Derives；实际从非空内部序数的 Valid 历史及原几何父输入构造唯一规范极限记录，不再假定图表／腿族／极限；追加有效性未证明 |
+| 原 Under.mk(identity) 初始分支 | ConstructionTowerHistoryInitial.construction_kernel_certificate | forall12 nativeZF Derives；实际构造首段历史且证明完整 Valid，原生 constantFunction 与既有初始值被消费；不以给定有效历史代替构造 |
+
+本批四模块 50 项显式声明已通过定向编译、逐项 trust=0 预审及正式全量验收：2838 项构建、30898 项声明，九命令／五次 trust=0 均退出 0，零警告；原 30848 项足迹不变，2402 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。实际首段与条件式极限分支不等于完整递归塔；后继接入、后继／极限追加保持、原请求基数界、完整轮次／饱和性及最终对象 Con 仍未完成。
