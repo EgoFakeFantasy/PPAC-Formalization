@@ -11575,4 +11575,9 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerProbeFamily.transitionSentence) :=
   ConstructionTowerProbeFamily.transition_kernel_certificate
 
+-- Actual family construction, retaining graph/profile and proving pairwise source conclusions.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerProbeIndependence.constructionSentence) :=
+  ConstructionTowerProbeIndependence.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

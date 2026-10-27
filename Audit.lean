@@ -31629,3 +31629,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionTowerProbeFamily.transitionSentence
 #print axioms PPAC.Migration.ConstructionTowerProbeFamily.transition_models
 #print axioms PPAC.Migration.ConstructionTowerProbeFamily.transition_kernel_certificate
+
+-- SAME constructed canonical cut family: Injection and all-target common exit cones.
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.Independent
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.independent_of_lt
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.independent
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.exists_independent_family
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.independentFamily
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.independentFamily_freeClosed
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.independentFamily_semantics
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.constructionSentence
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.construction_models
+#print axioms PPAC.Migration.ConstructionTowerProbeIndependence.construction_kernel_certificate

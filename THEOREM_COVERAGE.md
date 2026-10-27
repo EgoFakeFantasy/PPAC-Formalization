@@ -418,3 +418,8 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | Round.probe_transition | TowerProbeFamily.transition | 实际内部切片、同一根对象与Valid.Homs/Composition，forall21原核证书 |
 
 全量2858项构建／31192项声明，九命令／五次trust=0通过、零编译警告；旧31150项足迹不变，无新增公理依赖。统一家族的单值性不等于不同位置的单射／独立性；后两项、整轮target/inclusion、多轮和最终内部Con未完成。
+
+## 原第8阶段：统一切片Probe的单射／两两独立性
+
+ConstructionTowerProbeIndependence.independent_of_lt 按原 probes_ne_of_lt 的同一请求消费者实例及 probes_independent_of_lt 读取前次profile／实际transition／后次全旧阶段freshness与independent；内部序数比较给出所有不同位置的Injection和完整JoinProperty。最终出口明确为同一目标fromBase(a)*mark，覆盖全部新右因子。exists_independent_family 实际构造并保留原Positions/Maps/Graph/profile，forall34原核证书已验收。
+本批10项声明，全量2859项构建／31202项声明，九命令／五次trust=0通过、零编译警告；旧31192项足迹不变，无新增公理依赖。位置家族的单射／两两独立性已完成；K/Place/last重索引、整轮target/inclusion、多轮及最终内部Con未完成。

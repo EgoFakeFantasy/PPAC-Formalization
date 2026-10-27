@@ -2260,7 +2260,8 @@ def main() -> None:
                                ('construction_cone_transport', 'ConstructionConeTransport', 13),
                                ('construction_tower_request_cones', 'ConstructionTowerRequestCones', 8),
                                ('construction_tower_execution', 'ConstructionTowerExecution', 19),
-                               ('construction_tower_probe_family', 'ConstructionTowerProbeFamily', 18)):
+                               ('construction_tower_probe_family', 'ConstructionTowerProbeFamily', 18),
+                               ('construction_tower_probe_independence', 'ConstructionTowerProbeIndependence', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5833,7 +5834,9 @@ def main() -> None:
         "source_actual_tower_SAME_Picked_raw_execution_and_ninth_field_graphs_constructed": True,
         "source_actual_tower_canonical_fixed_request_cut_probe_family_total_unique_profile_proved": True,
         "source_actual_tower_canonical_probe_cross_cut_transition_kernel_proved": True,
-        "source_actual_tower_canonical_probe_family_injective_and_pairwise_independent_complete": False,
+        "source_actual_tower_canonical_probe_family_injective_and_pairwise_independent_complete": True,
+        "source_actual_constructed_cut_probe_family_returns_Injection_and_exact_fromBase_exit_cones": True,
+        "source_CompleteRound_final_K_Place_last_target_inclusion_and_probe_assembly_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
