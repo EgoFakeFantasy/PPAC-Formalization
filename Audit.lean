@@ -31540,3 +31540,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeIndependent.realizedSentence
 #print axioms PPAC.Migration.ConstructionProbeIndependent.realized_models
 #print axioms PPAC.Migration.ConstructionProbeIndependent.realized_kernel_certificate
+
+-- Exact Merger RootSystem: absent/present starts, all internal extension elements.
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.disjointAt
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.disjointAt_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.disjointAt_semantics
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.snoc_cones_disjoint
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.RootSystem
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.root_system
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystem
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystem_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystem_semantics
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystemSentence
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystem_models
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.rootSystem_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.Realized
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.of_provenance
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realized
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_semantics
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realizedSentence
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_models
+#print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_kernel_certificate

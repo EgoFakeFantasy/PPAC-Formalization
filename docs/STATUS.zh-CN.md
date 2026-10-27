@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-本批父提交 `a605f7c`；已批准清理提交为 `53b5b17`，阶段编号取自最初 `f28b0334a740108057adf18a24dc11abd866efbe`。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 原范围已验收，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾。**
+本批父提交 `eaa464a`；已批准清理提交为 `53b5b17`，阶段编号取自最初 `f28b0334a740108057adf18a24dc11abd866efbe`。**连续完整验收到 1–3；4 部分验收，5 基础包已有，6 原范围已验收，7 条件式前端已有；主开发仍在 8，9–11 未完成。不是收尾。**
 
 | 原阶段 | 已有／已验收 | 真正剩余 |
 |---|---|---|
@@ -22,15 +22,15 @@
 
 第 6 阶段已在提交 c7b963d 按最初 f28b033 第 6 行验收门完成：同一任意原生 ZF 模型内部的完整 L/ZFC、全部原生／源公理与模式、Choice、全局序和非空都有原核相对化证书；既有 InterpretedZF 的背景和非空前提已被 ConstructibleSource 实际消去。版本、域公式、全模式和背景消费均不再列为待做。原验收记录 l-source-acceptance.json 保留；这仍不是全部内部 Proof/Con 证明。
 
-本批继续原第 8 阶段，逐项迁移固定源 MonoidRounds.ProbeData.probe_gate／independent。ConstructionProbeIndependent.zero_gate 从同一 Alpha 的终端表、投影和出口图计算零位字母的出口 a*mark，直接实例化既有 gate_of_suffix_intersection（suffix=unit），并从同一 ConeLaws 取得全部内部路径节点的精确旧 profile；未增加新的构造或背景前提。
+本轮在原第 8 阶段完成两条原操作的精确锥证明，均以固定 OpenAI 源为准。前批 ConstructionProbeIndependent 已迁移 MonoidRounds.ProbeData.independent：从同一终端／出口图计算零位 gate，以完整内部路径 profile 和有界性排除 x|probe，证明对实际 W 内任意 z，x|a*mark 且 ¬x|a 时 (O(x)|z ∧ gen|z) ↔ O(a*mark)|z。原核 forall15／实际请求来源消费 forall17 证书已验收并提交 eaa464a。
 
-independent 按原源证明，以路径有界性排除 x|probe，再用既有 gate_old_intersection 和旧嵌入整除等价证明：x|a*mark 且 ¬x|a 时，对实际 W 内任意 z，(O(x)|z ∧ gen|z) ↔ O(a*mark)|z。z 没有限制为旧元素、外部有限字或标准自然数编码。Independent／independentCone 明确编码完整量词；independent_kernel_certificate 是原 FirstOrder.Derives nativeZF [] 的 forall15 证书。
+本批 ConstructionMergerRootSystem 迁移 CompleteRounds.snoc_cones_disjoint:97／root_system:172／cone_realization:206。缺失 start 时，用既有纯公式 raw_induction／snoc_dvd_snoc_iff／长度与不整除前缀证明根锥在整个扩张中不相交；存在 start 时直接复用已有 overlap_cone_intersection／snoc_cone_intersection，返回同一 old 因子的两根乘积相等，以及该值的完整 JoinProperty。没有重做既有归纳、词正规形、锥交或编码设施。
 
-of_provenance 实际消费 Candidate／Extended／SuccessorAt 已保存的同一 Provenance，以原 request code 单射／不交定理精确提取请求，返回同一 f/W/G/O/gen 的交锥性质。realized_kernel_certificate 为该消费给出 forall17 原核证书；未重新挑选后继或生成元，也未弱化现有字段。CheckStep4 实际检查两条新端点。原 31092 项声明足迹逐项不变，无新增公理依赖。
+RootSystem／rootSystem 明确量化实际 W 的全部内部元素，保留原 P、实际 O 及 roots；不是仅检查旧右因子的 RootLaws。rootSystem_kernel_certificate 是原 FirstOrder.Derives nativeZF [] 的 forall12 证书，所需原操作数据由既有完整父生产者提供，无新增对象 Choice／conical／不可达前件。of_provenance 以原 request code 单射／不交定理实际提取候选／Extended／SuccessorAt 保存的同一 PN/W/G/O/roots；realized_kernel_certificate 为该消费提供 forall16 原核证书。CheckStep4 实际检查两个端点。
 
-正式全量验收通过：2853 项构建、31109 项声明（1553 项无公理依赖、29556 项有记录依赖），九命令／五次 trust=0 均退出0，零警告；2417 份当前指纹和 75 份固定源哈希全部匹配，底座及供体干净。本批只增加一个必要模块和17项显式声明；临时预审源按精确路径／内容哈希／非重解析点清理，成功日志保留。证据为 verification/probe-independent-acceptance.json。
+本批20项显式声明预审及完整正式验收均通过：2854项构建、31129项声明（1555项无公理依赖、29574项有记录依赖），九命令／五次trust=0均退出0，零编译警告；此前31109项足迹逐项不变，无新增公理依赖；2418份当前指纹和75份固定源哈希全部匹配，底座／供体干净。临时预审源按精确路径、内容哈希和非重解析点白名单清理，成功日志保留。证据为 verification/merger-root-system-acceptance.json；前批 Probe 证据另存 probe-independent-acceptance.json。
 
-**原操作的 ProbeData.independent 及实际请求 Provenance 消费已完成，不再列为缺失。** 真正剩余：Merger 的完整 RootSystem，向后续切片传输精确锥／独立性，完整轮次和多轮 SaturatedMonoids。已核对 MergerWordCones.snoc_cone_intersection／内部归纳／长度及不整除前缀定理均已完成；只补原 CompleteRounds.snoc_cones_disjoint 的缺失分支并装配已有接口，不重做这些数学。原阶段8仍未完成，9–11及最终内部 Con 未完成。
+**ProbeData.independent 和完整 Merger.RootSystem，以及两类实际请求 Provenance 消费均已完成，不再列为缺失。** 真正下一项：沿实际 Conservative 腿把精确锥传到后续切片，随后完成完整轮次请求实现／重复 probe 独立性和多轮 SaturatedMonoids。既有 Conservative.Intersections／Common、实际函数图复合和完整全塔腿已存在，应直接消费；不重建它们。原阶段8仍未完成，9–11及最终内部Con未完成。
 
 ## 复用裁决和剩余顺序
 
@@ -38,7 +38,7 @@ of_provenance 实际消费 Candidate／Extended／SuccessorAt 已保存的同一
 
 此前把局部验收当整体进度、把接口未接通说成已有数学未完成，并把可选字节兼容误当主线必需，是我的规划与验收判断错误。原 Main 的宿主 Consistent 和忽略输入的 main_consistency 不满足早已规定的内部对象 Con；这个差异本该在早期规划时落实，不能归因于用户后加要求。现在按源声明、完整类型及实际生产者／消费者核对，不以模块数或构建数估计完成比例。
 
-当前开发入口是直接消费已传到候选／全塔的原正规形数据，消费已完成 Probe 原核交锥证明并接 Merger 全锥 RootSystem／后续切片实现 → 完整轮次／重复 probe 独立性 → SaturatedMonoids，再与第 9 阶段同一模型应用及第 10 阶段内部码归约汇合；索引和实际塔的全部大小界不再列作待做。已完成资产不再作为新研发义务；停止 NatPacket／泛滤 truth／独立 L／重复 Sat 支线。
+当前开发入口是直接消费已传到候选／全塔的原正规形数据，消费已完成 Probe／Merger 原核精确锥证明并接后续切片传输 → 完整轮次／重复 probe 独立性 → SaturatedMonoids，再与第 9 阶段同一模型应用及第 10 阶段内部码归约汇合；索引和实际塔的全部大小界不再列作待做。已完成资产不再作为新研发义务；停止 NatPacket／泛滤 truth／独立 L／重复 Sat 支线。
 
 ## 清理及执行边界
 
@@ -52,6 +52,6 @@ of_provenance 实际消费 Candidate／Extended／SuccessorAt 已保存的同一
 
 Agent 广场当前未连通，本轮 GET／POST 未成功，经验未同步，也未直接修改数据；恢复可双击 C:/Users/17857/AgentPlaza/启动广场.bat。未推送或发布。
 
-已修复的前批缺口：RoundStep.probe_step 的弱 base 新鲜性不再决定被选候选；Selection 已改用保留父 hNotOld 的 RoundFresh.probe／merger，并在原末字段保存实际 generator。全塔原核端点重新证明了同一当前 O 下的强新鲜性。旧弱桥仍是正确中间定理，有既有消费者，不被误称为原 creates_probe 的完整结论。Probe 原精确公共锥现已证明；真正后续义务是切片传输及 Merger.RootSystem 对任意新右因子的量词；不能只凭 profile／新鲜性或旧因子乘积等式宣布这些已完成。
+已修复的前批缺口：RoundStep.probe_step 的弱 base 新鲜性不再决定被选候选；Selection 已改用保留父 hNotOld 的 RoundFresh.probe／merger，并在原末字段保存实际 generator。全塔原核端点重新证明了同一当前 O 下的强新鲜性。旧弱桥仍是正确中间定理，有既有消费者，不被误称为原 creates_probe 的完整结论。Probe 原精确公共锥现已证明；Merger 全载体 RootSystem 也已证明；真正后续义务是两类切片传输；不能只凭 profile／新鲜性或旧因子乘积等式宣布这些已完成。
 
-已完成的忠实来源修订：具体 path/quotient/action/word/product/generator/root 数据已由原父证明生产、被原候选要求并传到全塔；不再仅以抽象 Step/profile/freshness 充当原具体操作。固定源 ProbeData.independent 的精确公共锥现已证明；真正未完成的是 Merger.RootSystem 对任意新右因子的实现及两类后续传输，不能用旧因子等式代替。
+已完成的忠实来源修订：具体 path/quotient/action/word/product/generator/root 数据已由原父证明生产、被原候选要求并传到全塔；不再仅以抽象 Step/profile/freshness 充当原具体操作。固定源 ProbeData.independent 的精确公共锥现已证明；两类原操作全载体精确锥均已证明；真正未完成的是它们沿实际腿的后续传输，不能用旧因子等式代替。

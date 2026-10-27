@@ -11540,4 +11540,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionProbeIndependent.realizedSentence) :=
   ConstructionProbeIndependent.realized_kernel_certificate
 
+-- Full source RootSystem on SAME normal forms and SAME actual mapped request.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerRootSystem.rootSystemSentence) :=
+  ConstructionMergerRootSystem.rootSystem_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionMergerRootSystem.realizedSentence) :=
+  ConstructionMergerRootSystem.realized_kernel_certificate
+
 end PPAC.Migration.Step4Checks

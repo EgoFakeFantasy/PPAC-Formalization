@@ -640,3 +640,5 @@ import PPAC.Migration.ConstructionOperationSource
 import PPAC.Migration.ConstructionRoundSource
 
 import PPAC.Migration.ConstructionProbeIndependent
+
+import PPAC.Migration.ConstructionMergerRootSystem
