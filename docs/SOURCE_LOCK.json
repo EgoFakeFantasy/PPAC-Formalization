@@ -52366,6 +52366,615 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "construction_directed_weight_data": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedWeightData.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height:181 / cost:184 / height_of / cost_of",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height_pos:194 / height_lt_one:199 / cost_pos:204 / cost_le_one:209",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cost_le_old_sup:222",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.old_cost_supremum:251",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.heightCost:295 / heightCost_height_of / heightCost_cost_of"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.margin:57 / object:63 / inclusion:74",
+        "MonoidRounds/CompleteRounds weighted limit stages feeding SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedProfiles.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit, EVERY conservative stage graph and source EVERY-later-stage profile transport",
+        "Source H family/hρ/hε/hSup become actual WeightFamily/Stable/HeightBounds/CostBounds/UniformFamily/SupremumLaws predicates. Original stage weight/margin/exact-supremum conditions remain explicit; no supplied limit weight graph, margin or supremum",
+        "Source DirectLimit.lift for height/cost is adapted as actual common-future well-defined Value and UNCHANGED native definable-function constructor. SAME quotient projection; actual canonical stage value equations derived. No chosen representatives, family selection or new generic quotient backend",
+        "UNCHANGED existing RangeBound/Bounds and actual source value equations give all four pointwise bounds. Source cost_le_old_sup represents ANY arbitrary new missed divisor at common future, derives canonical stage precise divisibility reflection, uses ORIGINAL transition hSup to bound by SAME actual old Cap",
+        "UNCHANGED Family/Cap/exists_family/bounded_union/cap_unique construct both old/new missed-cost families and SAME ACTUAL UNIQUE least upper bound for ALL old pairs, including empty/incomparable intervals. Old costs embed unchanged; new costs bounded by old cap; no merely pointwise surrogate",
+        "UNCHANGED canonical_uniform supplies source ACTUAL cap and strict sum gap; source pair common-stage representation plus exact divisibility reflection and cap_limit/missed_bound_limit prove final ExactMargins and UniformMargins. No arithmetic field/CutCarrier/supremum redevelopment",
+        "Pure forall12 producer constructs SAME six actual monoid objects plus BOTH actual weight graphs, keeps ALL conservative/profile fields and every old height/cost/supremum equation. All indices/sets/proofs internal; generic existing scalar cut carrier/unit bound parameters retained for actual canonical source scalars",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives; new endpoint uses 25 already-recorded dependencies and NO new custom axiom/object Choice/standardness/parser/Sat/kernel/sequence/recursor/category backend or trust expansion"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.height/cost/four bounds/cost_le_old_sup/old_cost_supremum/heightCost and stage value equations, on SAME actual monoid and ALL internal varying-stage directed PREORDER indices. Outer pure forall12, original six carrier/monoid objects plus two actual weight graphs constructed. Original stage real-cut weight/margin and transition hρ/hε/hSup are explicit source inputs, never supplied limit conclusions. ALL old pairs actual families and SAME unique least bound, including empty/incomparable pairs; ACTUAL strict cap+height sum margin, not only uniform pointwise inequalities. Retains full Conservative/conditional joins/all-later-stage profile transport. Cardinal bound, marked-element Object/weighted tower/request schedule/final saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedWeightData.WeightFamily": [],
+        "PPAC.Migration.ConstructionDirectedWeightData.Stable": [],
+        "PPAC.Migration.ConstructionDirectedWeightData.HeightBounds": [],
+        "PPAC.Migration.ConstructionDirectedWeightData.CostBounds": [],
+        "PPAC.Migration.ConstructionDirectedWeightData.UniformFamily": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.SupremumLaws": [],
+        "PPAC.Migration.ConstructionDirectedWeightData.weightFamily": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.weightFamily_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.weightFamily_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.stable": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.stable_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.stable_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.heightBounds": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.heightBounds_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.heightBounds_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.costBounds": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.costBounds_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.costBounds_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.uniformFamily": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.uniformFamily_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.uniformFamily_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.supremumLaws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.supremumLaws_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeightData.supremumLaws_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_weights": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedWeights.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height:181 / cost:184 / height_of / cost_of",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height_pos:194 / height_lt_one:199 / cost_pos:204 / cost_le_one:209",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cost_le_old_sup:222",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.old_cost_supremum:251",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.heightCost:295 / heightCost_height_of / heightCost_cost_of"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.margin:57 / object:63 / inclusion:74",
+        "MonoidRounds/CompleteRounds weighted limit stages feeding SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedProfiles.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit, EVERY conservative stage graph and source EVERY-later-stage profile transport",
+        "Source H family/hρ/hε/hSup become actual WeightFamily/Stable/HeightBounds/CostBounds/UniformFamily/SupremumLaws predicates. Original stage weight/margin/exact-supremum conditions remain explicit; no supplied limit weight graph, margin or supremum",
+        "Source DirectLimit.lift for height/cost is adapted as actual common-future well-defined Value and UNCHANGED native definable-function constructor. SAME quotient projection; actual canonical stage value equations derived. No chosen representatives, family selection or new generic quotient backend",
+        "UNCHANGED existing RangeBound/Bounds and actual source value equations give all four pointwise bounds. Source cost_le_old_sup represents ANY arbitrary new missed divisor at common future, derives canonical stage precise divisibility reflection, uses ORIGINAL transition hSup to bound by SAME actual old Cap",
+        "UNCHANGED Family/Cap/exists_family/bounded_union/cap_unique construct both old/new missed-cost families and SAME ACTUAL UNIQUE least upper bound for ALL old pairs, including empty/incomparable intervals. Old costs embed unchanged; new costs bounded by old cap; no merely pointwise surrogate",
+        "UNCHANGED canonical_uniform supplies source ACTUAL cap and strict sum gap; source pair common-stage representation plus exact divisibility reflection and cap_limit/missed_bound_limit prove final ExactMargins and UniformMargins. No arithmetic field/CutCarrier/supremum redevelopment",
+        "Pure forall12 producer constructs SAME six actual monoid objects plus BOTH actual weight graphs, keeps ALL conservative/profile fields and every old height/cost/supremum equation. All indices/sets/proofs internal; generic existing scalar cut carrier/unit bound parameters retained for actual canonical source scalars",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives; new endpoint uses 25 already-recorded dependencies and NO new custom axiom/object Choice/standardness/parser/Sat/kernel/sequence/recursor/category backend or trust expansion"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.height/cost/four bounds/cost_le_old_sup/old_cost_supremum/heightCost and stage value equations, on SAME actual monoid and ALL internal varying-stage directed PREORDER indices. Outer pure forall12, original six carrier/monoid objects plus two actual weight graphs constructed. Original stage real-cut weight/margin and transition hρ/hε/hSup are explicit source inputs, never supplied limit conclusions. ALL old pairs actual families and SAME unique least bound, including empty/incomparable pairs; ACTUAL strict cap+height sum margin, not only uniform pointwise inequalities. Retains full Conservative/conditional joins/all-later-stage profile transport. Cardinal bound, marked-element Object/weighted tower/request schedule/final saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedWeights.Value": [],
+        "PPAC.Migration.ConstructionDirectedWeights.Graph": [],
+        "PPAC.Migration.ConstructionDirectedWeights.value_range": [],
+        "PPAC.Migration.ConstructionDirectedWeights.value_total": [],
+        "PPAC.Migration.ConstructionDirectedWeights.value_unique": [],
+        "PPAC.Migration.ConstructionDirectedWeights.value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.value_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.value_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.exists_graph": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.projection_equation": [],
+        "PPAC.Migration.ConstructionDirectedWeights.height_bounds": [],
+        "PPAC.Migration.ConstructionDirectedWeights.cost_bounds": [],
+        "PPAC.Migration.ConstructionDirectedWeights.graph": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.graph_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedWeights.graph_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_height_cost": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedHeightCost.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height:181 / cost:184 / height_of / cost_of",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height_pos:194 / height_lt_one:199 / cost_pos:204 / cost_le_one:209",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cost_le_old_sup:222",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.old_cost_supremum:251",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.heightCost:295 / heightCost_height_of / heightCost_cost_of"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.margin:57 / object:63 / inclusion:74",
+        "MonoidRounds/CompleteRounds weighted limit stages feeding SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedProfiles.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit, EVERY conservative stage graph and source EVERY-later-stage profile transport",
+        "Source H family/hρ/hε/hSup become actual WeightFamily/Stable/HeightBounds/CostBounds/UniformFamily/SupremumLaws predicates. Original stage weight/margin/exact-supremum conditions remain explicit; no supplied limit weight graph, margin or supremum",
+        "Source DirectLimit.lift for height/cost is adapted as actual common-future well-defined Value and UNCHANGED native definable-function constructor. SAME quotient projection; actual canonical stage value equations derived. No chosen representatives, family selection or new generic quotient backend",
+        "UNCHANGED existing RangeBound/Bounds and actual source value equations give all four pointwise bounds. Source cost_le_old_sup represents ANY arbitrary new missed divisor at common future, derives canonical stage precise divisibility reflection, uses ORIGINAL transition hSup to bound by SAME actual old Cap",
+        "UNCHANGED Family/Cap/exists_family/bounded_union/cap_unique construct both old/new missed-cost families and SAME ACTUAL UNIQUE least upper bound for ALL old pairs, including empty/incomparable intervals. Old costs embed unchanged; new costs bounded by old cap; no merely pointwise surrogate",
+        "UNCHANGED canonical_uniform supplies source ACTUAL cap and strict sum gap; source pair common-stage representation plus exact divisibility reflection and cap_limit/missed_bound_limit prove final ExactMargins and UniformMargins. No arithmetic field/CutCarrier/supremum redevelopment",
+        "Pure forall12 producer constructs SAME six actual monoid objects plus BOTH actual weight graphs, keeps ALL conservative/profile fields and every old height/cost/supremum equation. All indices/sets/proofs internal; generic existing scalar cut carrier/unit bound parameters retained for actual canonical source scalars",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives; new endpoint uses 25 already-recorded dependencies and NO new custom axiom/object Choice/standardness/parser/Sat/kernel/sequence/recursor/category backend or trust expansion"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.height/cost/four bounds/cost_le_old_sup/old_cost_supremum/heightCost and stage value equations, on SAME actual monoid and ALL internal varying-stage directed PREORDER indices. Outer pure forall12, original six carrier/monoid objects plus two actual weight graphs constructed. Original stage real-cut weight/margin and transition hρ/hε/hSup are explicit source inputs, never supplied limit conclusions. ALL old pairs actual families and SAME unique least bound, including empty/incomparable pairs; ACTUAL strict cap+height sum margin, not only uniform pointwise inequalities. Retains full Conservative/conditional joins/all-later-stage profile transport. Cardinal bound, marked-element Object/weighted tower/request schedule/final saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedHeightCost.ExactMargins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.OldSuprema": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.missed_bound_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.cap_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.old_suprema": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exact_margins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.Laws": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exists_weights": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exactMargins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exactMargins_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.exactMargins_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.oldSuprema": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.oldSuprema_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.oldSuprema_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.laws": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.laws_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCost.laws_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_height_cost_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedHeightCostSyntax.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height:181 / cost:184 / height_of / cost_of",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.height_pos:194 / height_lt_one:199 / cost_pos:204 / cost_le_one:209",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.cost_le_old_sup:222",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.old_cost_supremum:251",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.heightCost:295 / heightCost_height_of / heightCost_cost_of"
+      ],
+      "consumers": [
+        "MonoidTowers.DirectedColimit.margin:57 / object:63 / inclusion:74",
+        "MonoidRounds/CompleteRounds weighted limit stages feeding SaturatedMonoids"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedProfiles.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit, EVERY conservative stage graph and source EVERY-later-stage profile transport",
+        "Source H family/hρ/hε/hSup become actual WeightFamily/Stable/HeightBounds/CostBounds/UniformFamily/SupremumLaws predicates. Original stage weight/margin/exact-supremum conditions remain explicit; no supplied limit weight graph, margin or supremum",
+        "Source DirectLimit.lift for height/cost is adapted as actual common-future well-defined Value and UNCHANGED native definable-function constructor. SAME quotient projection; actual canonical stage value equations derived. No chosen representatives, family selection or new generic quotient backend",
+        "UNCHANGED existing RangeBound/Bounds and actual source value equations give all four pointwise bounds. Source cost_le_old_sup represents ANY arbitrary new missed divisor at common future, derives canonical stage precise divisibility reflection, uses ORIGINAL transition hSup to bound by SAME actual old Cap",
+        "UNCHANGED Family/Cap/exists_family/bounded_union/cap_unique construct both old/new missed-cost families and SAME ACTUAL UNIQUE least upper bound for ALL old pairs, including empty/incomparable intervals. Old costs embed unchanged; new costs bounded by old cap; no merely pointwise surrogate",
+        "UNCHANGED canonical_uniform supplies source ACTUAL cap and strict sum gap; source pair common-stage representation plus exact divisibility reflection and cap_limit/missed_bound_limit prove final ExactMargins and UniformMargins. No arithmetic field/CutCarrier/supremum redevelopment",
+        "Pure forall12 producer constructs SAME six actual monoid objects plus BOTH actual weight graphs, keeps ALL conservative/profile fields and every old height/cost/supremum equation. All indices/sets/proofs internal; generic existing scalar cut carrier/unit bound parameters retained for actual canonical source scalars",
+        "UNCHANGED ModelTransfer.derives returns original nativeZF Derives; new endpoint uses 25 already-recorded dependencies and NO new custom axiom/object Choice/standardness/parser/Sat/kernel/sequence/recursor/category backend or trust expansion"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.height/cost/four bounds/cost_le_old_sup/old_cost_supremum/heightCost and stage value equations, on SAME actual monoid and ALL internal varying-stage directed PREORDER indices. Outer pure forall12, original six carrier/monoid objects plus two actual weight graphs constructed. Original stage real-cut weight/margin and transition hρ/hε/hSup are explicit source inputs, never supplied limit conclusions. ALL old pairs actual families and SAME unique least bound, including empty/incomparable pairs; ACTUAL strict cap+height sum margin, not only uniform pointwise inequalities. Retains full Conservative/conditional joins/all-later-stage profile transport. Cardinal bound, marked-element Object/weighted tower/request schedule/final saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedHeightCostSyntax.constructionSentence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCostSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionDirectedHeightCostSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

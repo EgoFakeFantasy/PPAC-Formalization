@@ -577,3 +577,7 @@ import PPAC.Migration.ConstructionDirectedConservative
 import PPAC.Migration.ConstructionDirectedConservativeSyntax
 import PPAC.Migration.ConstructionDirectedProfiles
 import PPAC.Migration.ConstructionDirectedProfilesSyntax
+import PPAC.Migration.ConstructionDirectedWeightData
+import PPAC.Migration.ConstructionDirectedWeights
+import PPAC.Migration.ConstructionDirectedHeightCost
+import PPAC.Migration.ConstructionDirectedHeightCostSyntax

@@ -2193,7 +2193,11 @@ def main() -> None:
                                ('construction_directed_conservative', 'ConstructionDirectedConservative', 4),
                                ('construction_directed_conservative_syntax', 'ConstructionDirectedConservativeSyntax', 3),
                                ('construction_directed_profiles', 'ConstructionDirectedProfiles', 13),
-                               ('construction_directed_profiles_syntax', 'ConstructionDirectedProfilesSyntax', 3)):
+                               ('construction_directed_profiles_syntax', 'ConstructionDirectedProfilesSyntax', 3),
+                               ('construction_directed_weight_data', 'ConstructionDirectedWeightData', 24),
+                               ('construction_directed_weights', 'ConstructionDirectedWeights', 15),
+                               ('construction_directed_height_cost', 'ConstructionDirectedHeightCost', 18),
+                               ('construction_directed_height_cost_syntax', 'ConstructionDirectedHeightCostSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5645,7 +5649,11 @@ def main() -> None:
         "source_directed_limit_conditional_joins_from_actual_stages_proved": True,
         "source_directed_limit_all_later_stage_profile_transport_proved": True,
         "source_directed_limit_profile_initial_assumed_or_HasOldGates_required": False,
-        "source_directed_limit_complete_weighted_limit_proved": False,
+        "source_directed_limit_complete_weighted_limit_proved": True,
+        "source_directed_limit_actual_height_cost_graphs_four_bounds_and_exact_cap_margins_proved": True,
+        "source_directed_limit_all_old_pairs_actual_families_same_unique_supremum_proved": True,
+        "source_directed_limit_weighted_scope": "Complete generic DirectLimits HeightCost layer; cardinality, marked-element Object, actual final weighted tower and request schedule remain open",
+        "source_directed_limit_cardinality_and_marked_Object_assembly_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
