@@ -28193,3 +28193,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionScheduleOrderSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionScheduleOrderSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionScheduleOrderSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionOrdinalSchedule.Data
+#print axioms PPAC.Migration.ConstructionOrdinalSchedule.transport
+#print axioms PPAC.Migration.ConstructionOrdinalSchedule.exists_system
+#print axioms PPAC.Migration.ConstructionOrdinalSchedule.exists_all
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.data
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.data_freeClosed
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.data_semantics
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.fullSentence
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.full_models
+#print axioms PPAC.Migration.ConstructionOrdinalScheduleSyntax.full_kernel_certificate

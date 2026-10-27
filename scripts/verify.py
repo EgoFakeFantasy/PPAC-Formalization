@@ -2223,7 +2223,9 @@ def main() -> None:
                                ('construction_complete_schedule_syntax', 'ConstructionCompleteScheduleSyntax', 6),
                                ('existing_ordinal_enumeration', 'ExistingOrdinalEnumeration', 9),
                                ('construction_schedule_order', 'ConstructionScheduleOrder', 8),
-                               ('construction_schedule_order_syntax', 'ConstructionScheduleOrderSyntax', 6)):
+                               ('construction_schedule_order_syntax', 'ConstructionScheduleOrderSyntax', 6),
+                               ('construction_ordinal_schedule', 'ConstructionOrdinalSchedule', 4),
+                               ('construction_ordinal_schedule_syntax', 'ConstructionOrdinalScheduleSyntax', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5733,7 +5735,10 @@ def main() -> None:
         "source_CompleteRounds_every_designated_place_strictly_before_top_proved": True,
         "source_CompleteRounds_actual_canonical_ordinal_type_and_equinumerosity_constructed": True,
         "source_CompleteRounds_chosen_wellorder_object_Choice_explicit_antecedent": True,
-        "source_CompleteRounds_schedule_transported_to_ordinal_graph_constructed": False,
+        "source_CompleteRounds_schedule_transported_to_ordinal_graph_constructed": True,
+        "source_CompleteRounds_actual_canonical_collapse_inverse_and_ordinal_Place_graphs_constructed": True,
+        "source_CompleteRounds_actual_ordinal_successor_endpoint_and_every_pair_before_last_proved": True,
+        "source_CompleteRounds_ordinal_schedule_from_full_original_monoid_parents_constructed": True,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

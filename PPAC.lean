@@ -607,3 +607,5 @@ import PPAC.Migration.ConstructionCompleteScheduleSyntax
 import PPAC.Migration.ExistingOrdinalEnumeration
 import PPAC.Migration.ConstructionScheduleOrder
 import PPAC.Migration.ConstructionScheduleOrderSyntax
+import PPAC.Migration.ConstructionOrdinalSchedule
+import PPAC.Migration.ConstructionOrdinalScheduleSyntax
