@@ -11389,4 +11389,15 @@ example {p : Source.Sentence}
       (Translation.sentence (Relativization.formula ConstructibleSource.domain p)) :=
   ConstructibleSource.source_zfc_sentence h
 
+-- Actual complete successor selector, SAME L; no supplied successor tuple.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionRoundSelection.totalSentence)) :=
+  ConstructionRoundSelection.total_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionRoundSelection.stepSentence)) :=
+  ConstructionRoundSelection.step_kernel_certificate
+
 end PPAC.Migration.Step4Checks
