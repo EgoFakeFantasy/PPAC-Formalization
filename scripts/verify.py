@@ -2225,7 +2225,9 @@ def main() -> None:
                                ('construction_schedule_order', 'ConstructionScheduleOrder', 8),
                                ('construction_schedule_order_syntax', 'ConstructionScheduleOrderSyntax', 6),
                                ('construction_ordinal_schedule', 'ConstructionOrdinalSchedule', 4),
-                               ('construction_ordinal_schedule_syntax', 'ConstructionOrdinalScheduleSyntax', 6)):
+                               ('construction_ordinal_schedule_syntax', 'ConstructionOrdinalScheduleSyntax', 6),
+                               ('existing_l_choice_bridge', 'ExistingLChoiceBridge', 4),
+                               ('constructible_ground', 'ConstructibleGround', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -2244,6 +2246,8 @@ def main() -> None:
                 raise RuntimeError("Missing inherited certificate reevaluation: " + axiom)
         body = strip_comments((ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8"))
         prefix = "PPAC.Migration." + module + "."
+        if module == "ExistingLChoiceBridge":
+            prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
         if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration"):
@@ -2255,6 +2259,30 @@ def main() -> None:
         if len(names) != count or names != set(adapter_lock["exact_declaration_footprints"]) or not names <= set(expected):
             raise RuntimeError("Incomplete condition-map declaration audit: " + module)
         map_recursion_footprints.update(adapter_lock["exact_declaration_footprints"])
+    l_reuse = source_lock["companion_reuse"]["native_internal_L"]
+    l_manifest_path = ROOT / l_reuse["manifest"]
+    if hashlib.sha256(l_manifest_path.read_bytes()).hexdigest() != l_reuse["manifest_sha256"]:
+        raise RuntimeError("Native L reuse manifest changed")
+    l_manifest = json.loads(l_manifest_path.read_text(encoding="utf-8"))
+    if len(l_manifest["proof_modules"]) != 140 or len(l_manifest["exact_declaration_footprints"]) != 2818:
+        raise RuntimeError("Incomplete actual L dependency/declaration slice")
+    l_paths = set()
+    for entry in l_manifest["proof_modules"]:
+        target = ROOT / entry["adapter"]
+        if hashlib.sha256(target.read_bytes()).hexdigest() != entry["adapter_sha256"]:
+            raise RuntimeError("Reused L adapter changed: " + entry["adapter"])
+        normalized = re.sub(r"^import\s+.*\n", "", target.read_text(encoding="utf-8"), flags=re.MULTILINE)
+        if hashlib.sha256(normalized.encode("utf-8")).hexdigest() != entry["normalized_nonimport_body_sha256"]:
+            raise RuntimeError("Reused L mathematical proof body changed: " + entry["adapter"])
+        l_paths.add(target.resolve())
+    if l_paths != {f.resolve() for f in (ROOT / "PPAC/Companion").rglob("*.lean")}:
+        raise RuntimeError("Unreviewed or missing companion L proof module")
+    for name, digest in (l_manifest["native_existing_dependency_files"] | l_manifest["auxiliary_files"]).items():
+        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != digest:
+            raise RuntimeError("Native L dependency/notice changed: " + name)
+    if not set(l_manifest["exact_declaration_footprints"]) <= set(expected):
+        raise RuntimeError("Incomplete L public/generated declaration audit")
+    map_recursion_footprints.update(l_manifest["exact_declaration_footprints"])
     fseq_reuse = source_lock["companion_reuse"]["native_finite_sequence_bound"]
     fseq_text = (ROOT / fseq_reuse["adapter"]).read_text(encoding="utf-8")
     fseq_blocks = {m[1]: m[2].strip() for m in re.finditer(
@@ -5456,7 +5484,7 @@ def main() -> None:
                 raise RuntimeError(f"Unexpected arithmetic core certificate footprint: {core}")
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
-    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "lean_version": version,
         "source_forcing_Child_formula_indexed_induction_proved": True,
@@ -5793,6 +5821,13 @@ def main() -> None:
         "interpreted_ZF_transport_domain_nonempty_antecedent_retained": True,
         "interpreted_ZF_transport_background": "translated D-relativization of source Replacement ZF",
         "interpreted_ZF_transport_is_internal_Con_proof": False,
+        "native_internal_L_missing_dependency_slice_reused_on_pinned_kernel": True,
+        "native_internal_L_arbitrary_model_full_ZF_ZFC_mathematics_reused": True,
+        "native_internal_L_relative_all_ZF_ZFC_axiom_schema_original_kernel_certificates": True,
+        "native_internal_L_relative_Choice_global_order_and_nonempty_original_kernel_certificates": True,
+        "native_internal_L_requires_ambient_object_Choice_standardness_or_external_wellfoundedness": False,
+        "native_internal_L_source_Relativization_domain_formula_consumer_connected": False,
+        "native_internal_L_all_internal_Proof_Con_transfer_completed": False,
         "build_passed": True,
         "audit_passed": True,
         "check_passed": True,

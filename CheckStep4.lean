@@ -11342,4 +11342,24 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionOrdinalScheduleSyntax.fullSentence) :=
   ConstructionOrdinalScheduleSyntax.full_kernel_certificate
 
+-- Arbitrary native ZF/ZFC schema indices; SAME original derivation kernel.
+example {p : SetTheory.Definitional.Project.Sentence} (hp : SetTheory.ZF p) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative p)) :=
+  ConstructibleGround.zf_axiom_kernel hp
+
+example {p : SetTheory.Definitional.Project.Sentence} (hp : SetTheory.ZFC p) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative p)) :=
+  ConstructibleGround.zfc_axiom_kernel hp
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative SetTheory.InnerModel.js_universe_s)) :=
+  ConstructibleGround.global_order_kernel
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructibleGround.nonemptySentence) :=
+  ConstructibleGround.nonempty_kernel
+
 end PPAC.Migration.Step4Checks

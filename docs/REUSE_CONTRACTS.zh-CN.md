@@ -10,10 +10,10 @@
 | 集合／名字归纳与递归 | SetInduction.native_induction → ForcingNameInduction/ForcingMapLaws → ForcingPairInduction/ForcingTripleInduction；ForcingNameRecursion | 已消费到名字、映射、原子递归和定律；后两种归纳有实际证明消费者，不是待重建后端 |
 | 内部函数空间 | FunctionSpaceConstruction.lean 的 ZF.exists_functionSpace；ForcingLabelPermutations.exists_carrier | 本轮直接消费其全部内部函数图集合，再分离置换；没有重建幂集／积或函数空间。固定源文件哈希纳入 SOURCE_LOCK |
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。固定载体的统一标签作用、逆与共轭已接入；原 omega/2 已特化；源单子/conical 合同下偏序已接通；具体单子构造仍属阶段 8 |
-| 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；不能拿单个 LCarrier 模型冒充其全模型前提 |
+| 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；本批 L 相对化已核对任意同一 universe 模型的前提，不拿单个 LCarrier 替代 |
 | 旧 LCarrier 工程的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 该旧工程已完成完整模式，但 LCarrier 是 ZFSet 子类。这个限制不能概括新版 YesMetaZFC：其任意 ZF 模型的内部 L 定理已存在，见下一行 |
-| 新版原生 L 数学 | ../yesmetazfc-analytic-comprehension，7979336；SetTheory/InnerModel/Jensen/ZF/Model.lean:15 l_model_zf_l、Choice.lean:14 l_model_zfc_l、GCH/Model.lean:47 l_model_gch_l | 任意 ZF 模型，完整分离／收集；既有 ZFC 定向构建及三端点 trust=0 验收通过；本轮只回读 ZF/ZFC 正文及确认版本、干净状态。待移植版本、Project 语言、相对化及原核接口；不是待重证的 L 数学。GCH 非当前必需工作 |
-| L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；实际 L 域满足全部前提仍待接通 |
+| 新版原生 L 数学 | 供体 7979336 的 l_model_zf_l／l_model_zfc_l／js_l_model_l；现由 PPAC/Companion 必要闭包及 ConstructibleGround.relative／zfc_axiom_kernel／global_order_kernel／nonempty_kernel 消费 | 固定旧版 039c8e1 编译通过并实际取得 nativeZF 中全部原生 ZF/ZFC 公理／模式、Choice、L 内全局序和非空的相对化原核证书。140 份数学正文不变；源域公式消费及内部 Con 仍未闭合。不能再报版本适配或原生全模式解释未完成；GCH 非本项目义务 |
+| L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费仍待接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | 已接通；保留解释背景和域非空前提，不等于 nativeZF 已证明 ZFC 的全部 L 相对化 |
 
 ## 内部证明码：复用现有配套，不重建
@@ -126,4 +126,4 @@ Merger 基数界已直接复用 ConstructionProbeWordCardinality.raw_cardinal_le
 
 本批供体重用锁为 SOURCE_LOCK.companion_reuse.native_small_family_union；三份原文件 SHA、三个精确区块 SHA、六项声明全足迹以及实际消费者均记录。既有原 Axioms.choice、源 AC 对应已完成；本批 choice_semantics/models_zfc 仅接线。不能把一般小族并的源 ZFC 前提隐藏成 ZF 无条件结论，也不能把它加成极限对象构造前提。
 
-本轮对新版 L→ZFC 端点做了只读兼容核对：依赖闭包 223 项，其中 142 项旧版没有、28 项已有文件文本不同；按 def／abbrev／structure／inductive／theorem 名称核对未见删除，仅 FunctionSemantics 新增 comp_l；尚未据此断言签名兼容。多份差异是导入／自动化属性或格式。这是缩小适配范围的证据，不是编译兼容结论，也不把 L 数学重新列为未证明；未修改活动底座、供体或恢复退役反射源码。
+本轮已实际完成此前兼容核对之后的接线：223 模块闭包中旧版已有 81 个，其余 142 项用 140 份只改导入的数学正文及 2 项既有实现重定向解决。140 个模块和 2818 项公开／生成声明均已正式验收，无新增信任；SOURCE_LOCK 锚定 L_REUSE_LOCK 的所有源码、去导入正文及精确足迹。活动依赖和供体均未修改，未读取退役反射归档。源域公式消费与全部内部 Proof/Con 仍保留为实际未完项。
