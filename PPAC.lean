@@ -510,3 +510,6 @@ import PPAC.Migration.ConstructionProbeSameHeadMargin
 import PPAC.Migration.ConstructionProbeUniformMargins
 import PPAC.Migration.ConstructionProbeHeightCost
 import PPAC.Migration.ConstructionProbeHeightCostSyntax
+
+import PPAC.Migration.ConstructionProbeSuccessor
+import PPAC.Migration.ConstructionProbeSuccessorSyntax

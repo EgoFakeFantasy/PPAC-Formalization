@@ -30371,3 +30371,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionProbeHeightCostSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionProbeHeightCostSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionProbeHeightCostSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionProbeSuccessor.exists_probe_successor
+#print axioms PPAC.Migration.ConstructionProbeSuccessorSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionProbeSuccessorSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionProbeSuccessorSyntax.construction_kernel_certificate

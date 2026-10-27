@@ -2627,7 +2627,9 @@ def main() -> None:
                                ('construction_probe_same_head_margin', 'ConstructionProbeSameHeadMargin', 2),
                                ('construction_probe_uniform_margins', 'ConstructionProbeUniformMargins', 5),
                                ('construction_probe_height_cost', 'ConstructionProbeHeightCost', 1),
-                               ('construction_probe_height_cost_syntax', 'ConstructionProbeHeightCostSyntax', 3)):
+                               ('construction_probe_height_cost_syntax', 'ConstructionProbeHeightCostSyntax', 3),
+                               ('construction_probe_successor', 'ConstructionProbeSuccessor', 1),
+                               ('construction_probe_successor_syntax', 'ConstructionProbeSuccessorSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -6308,6 +6310,8 @@ def main() -> None:
         "source_probe_extension_height_cost_margin_proved": False,
         "additional_pinned_sequence_restriction_Bool_certificates_reevaluated": 6,
         "source_probe_complete_extension_package_proved": False,
+        "source_probe_same_carrier_weighted_request_package_constructed": True,
+        "source_probe_parent_Path_alphabet_interval_producer_composition_complete": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
