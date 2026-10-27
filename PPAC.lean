@@ -575,3 +575,5 @@ import PPAC.Migration.ConstructionDirectedConservativeData
 import PPAC.Migration.ConstructionDirectedFactors
 import PPAC.Migration.ConstructionDirectedConservative
 import PPAC.Migration.ConstructionDirectedConservativeSyntax
+import PPAC.Migration.ConstructionDirectedProfiles
+import PPAC.Migration.ConstructionDirectedProfilesSyntax

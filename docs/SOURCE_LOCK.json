@@ -52189,6 +52189,183 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "construction_directed_profiles": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedProfiles.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.probeProfile:130"
+      ],
+      "consumers": [
+        "MonoidRounds directed-colimit profile transfer at the exact ConservativeLimit.probeProfile call:203",
+        "CompleteRounds profile persistence through the same MonoidRounds limit construction"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedConservative.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit and EVERY full conservative canonical stage graph",
+        "UNCHANGED ProbeProfile/InitialProfile/NodeMap contracts and native exists_node_map composition; no new path representation, parser, recursion, quotient or category backend",
+        "Literal source hP is explicit PersistentProfile of EVERY later actual stage/transition image, including SAME mapped original node graph and all four original source elements. Initial profile DERIVED using actual identity transition graph and NodeMap node f node, not supplied as extra premise",
+        "Source arbitrary limit element is represented at an actual stage and pushed to actual common future; all original elements and path transported by SAME actual transition; canonical stage graph/full Conservative/division_reflection retained",
+        "Actual node commutation through common future proved from exact quotient map equality and function uniqueness; no newly chosen limit path, selected family or HasOldGates premise",
+        "Exit/not-divides use DERIVED original profile, accepted actual hom/precise divisibility reflection; forward divisor containment and join property use source EVERY-later-stage profile and actual later canonical map Conservative.intersections; reverse divisor containment uses original node self-divisibility and unchanged divides_trans",
+        "Source specified exit product is identified with final exit witness by UNCHANGED generic product_unique, no supplied limit profile or join law",
+        "Pure forall6/exist6 native FirstOrder.Derives producer retains EVERY stage graph plus forall internal profile inputs and existential actual images. All path indices internal; no external omega standardness, object Choice, new Sat/kernel/recursor/backend/trust"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.probeProfile:130 for SAME actual limit monoid, original stage elements and original mapped path. EVERY later-stage source hP remains explicit in conditional ProfileTransport output for EVERY constructed canonical stage map; original profile follows from source identity transition, never extra assumption. Arbitrary internal NONEMPTY directed PREORDER with VARYING carriers; all internal path indices covered. Pure forall6/exist6 original nativeZF kernel certificate. Accepted factors/divisibility/all-four Conservative/conditional joins retained. Full precise weights/old actual supremum/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedProfiles.PersistentProfile": [],
+        "PPAC.Migration.ConstructionDirectedProfiles.initial_profile": [],
+        "PPAC.Migration.ConstructionDirectedProfiles.comparison_profile": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.profile": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.ProfileTransport": [],
+        "PPAC.Migration.ConstructionDirectedProfiles.profile_transport": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.persistentProfile": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.persistentProfile_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.persistentProfile_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.profileTransport": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.profileTransport_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfiles.profileTransport_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_profiles_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedProfilesSyntax.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.probeProfile:130"
+      ],
+      "consumers": [
+        "MonoidRounds directed-colimit profile transfer at the exact ConservativeLimit.probeProfile call:203",
+        "CompleteRounds profile persistence through the same MonoidRounds limit construction"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ConstructionDirectedConservative.exists_system builds SAME actual varying-stage carrier/projection/multiplication/unit and EVERY full conservative canonical stage graph",
+        "UNCHANGED ProbeProfile/InitialProfile/NodeMap contracts and native exists_node_map composition; no new path representation, parser, recursion, quotient or category backend",
+        "Literal source hP is explicit PersistentProfile of EVERY later actual stage/transition image, including SAME mapped original node graph and all four original source elements. Initial profile DERIVED using actual identity transition graph and NodeMap node f node, not supplied as extra premise",
+        "Source arbitrary limit element is represented at an actual stage and pushed to actual common future; all original elements and path transported by SAME actual transition; canonical stage graph/full Conservative/division_reflection retained",
+        "Actual node commutation through common future proved from exact quotient map equality and function uniqueness; no newly chosen limit path, selected family or HasOldGates premise",
+        "Exit/not-divides use DERIVED original profile, accepted actual hom/precise divisibility reflection; forward divisor containment and join property use source EVERY-later-stage profile and actual later canonical map Conservative.intersections; reverse divisor containment uses original node self-divisibility and unchanged divides_trans",
+        "Source specified exit product is identified with final exit witness by UNCHANGED generic product_unique, no supplied limit profile or join law",
+        "Pure forall6/exist6 native FirstOrder.Derives producer retains EVERY stage graph plus forall internal profile inputs and existential actual images. All path indices internal; no external omega standardness, object Choice, new Sat/kernel/recursor/backend/trust"
+      ],
+      "scope": "COMPLETE pinned DirectLimits.probeProfile:130 for SAME actual limit monoid, original stage elements and original mapped path. EVERY later-stage source hP remains explicit in conditional ProfileTransport output for EVERY constructed canonical stage map; original profile follows from source identity transition, never extra assumption. Arbitrary internal NONEMPTY directed PREORDER with VARYING carriers; all internal path indices covered. Pure forall6/exist6 original nativeZF kernel certificate. Accepted factors/divisibility/all-four Conservative/conditional joins retained. Full precise weights/old actual supremum/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedProfilesSyntax.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfilesSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedProfilesSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
