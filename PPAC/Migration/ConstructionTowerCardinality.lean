@@ -25,6 +25,23 @@ def AllSmall (J S mu : M.Carrier .set) : Prop := ∀ i,
   (Project.FirstOrderSemantics.reduct M).mem i J → At S mu i
 
 
+/-- Reuse the already proved actual append size argument for initial,
+complete-round successor and canonical limit rows. -/
+theorem append_small {J S next S' output W G unitW markW HW CW L base : M.Carrier .set}
+    (hFn : ForcingConditionGraphs.FunctionOn J S) (hSmall : AllSmall J S mu)
+    (hPack : ConstructionRoundSelection.Pack W G unitW markW HW CW L base J output)
+    (hWsize : Small W mu) (hAppend : ConstructionTowerAppend.Append J S output next S') :
+    AllSmall next S' mu := by
+  intro i _ A hA
+  obtain ⟨A',m,v,a,V,T,L',f',time,⟨code,hCode,hRowPack⟩,he⟩ := hA
+  change A = A' at he
+  subst A'
+  rcases (hAppend.2.2 i code).mp hCode with hOld | ⟨rfl,rfl⟩
+  · have hiJ := ForcingConditionGraphs.function_input hFn hOld
+    exact hSmall i hiJ A ⟨A,m,v,a,V,T,L',f',time,⟨code,hOld,hRowPack⟩,rfl⟩
+  · obtain ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩ := ConstructionRoundSelection.pack_injective hPack hRowPack
+    exact hWsize
+
 def atStage {m : Nat} (S mu i : Fin m) : Project.Formula 1 m :=
   (.forallE (.imp (ConstructionTowerHistory.field 0 S.succ i.succ (0 : Fin (m+1))) (ProjectSyntax.encode id
   (ForcingSupportSize.small (0 : Fin (m+1)) mu.succ))))
@@ -38,7 +55,7 @@ theorem atStage_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     Project.Formula.satisfies env (atStage S mu i) ↔ At (env.bound S) (env.bound mu) (env.bound i) := by
   simp only [atStage,At,Project.Formula.satisfies_forall_iff,
     Project.Formula.satisfies_imp_iff,
-    
+
     GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ConstructionTowerHistory.field_semantics hM 0,ForcingSupportSize.small_semantics (M := M)]
   rfl
 

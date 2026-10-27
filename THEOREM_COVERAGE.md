@@ -335,9 +335,13 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | CompleteRound.realizes_merger | CompleteRound.realizes_merger | K 的一个非空见证；同一目标全部 Merger 处方的完整 RootSystem，无选择函数输入 |
 | Saturation.step/succIso/map_succ | CompleteRound.Built；SaturationStep.Candidate/Picked/exists_step | 实际有界调度／递归／矩阵／执行根图／last 行保留；旧最小候选证明共用；forall15 同一内部 L 相对化原核证书 |
 | Saturation.map_succ/cardinal_le 的实际后继 | SaturationSuccessor.exists_value | 当前行和全旧腿由 Valid 读取；实际完整整轮／全腿和原 base 复合／self-extension／追加历史；完整 Valid/AllSmall、精确 SuccessorEquation、唯一记录；forall18 原核证书 |
+| Saturation.tower／ConstructionIteration 三分支 | SaturationIterationCases | 原初始、实际带trace完整后继、原规范极限；共享既有append_small／完整Valid保持 |
+| Saturation.tower 的实际统一算子 | SaturationIteration | 全内部集合历史总唯一，显式坏历史默认值；BinarySchema15与原生递归真实实例化；forall17原核证书 |
+| Saturation.preservesProfiles/cardinal_le／完整塔 | SaturationIterationValidity.recursive_valid_small／exists_tower | 纯Correct／内部反例集分离／序数归纳证明全Valid和AllSmall；实际全12表、时间恒等与21加权／base合同；forall16原核证书 |
+| Saturation.map_succ | SaturationIterationValidity.map_succ_selected／SelectedAt | 全塔相邻腿字面等于同一选中完整round inclusion，保留raw/Picked/Candidate/Built和精确base复合 |
 
-ConstructionCompleteRound 原完整单轮结论保持；两个更强生产者保留同一实际 Built trace，旧接口只作投影，旧足迹不变。新增后继候选同时要求该 trace 及全部原请求见证，不能仅用一个无构造来源的性质包替代固定源。
+上述塔从完整有界父Context实际生成，包含原几何／base、K非空、无限μ和μ^ω=μ、base/K/索引μ小；没有给定有效输出塔或宿主良基假设。具体ω₁+1和原基数参数尚待实例化；不把这条任意内部有界索引的构造冒充最终饱和性。
 
-本批新增 32 项声明，预审同时覆盖 47 项受影响旧声明。正式验收 2862 构建／31252 声明、9 命令／5 次 trust=0 均成功、零警告；此前 31220 足迹逐项不变，无新增公理依赖；2426 当前指纹／75 源哈希匹配，证据 verification/saturation-successor-acceptance.json。
+本批49新声明、25受影响旧声明预审；正式2865构建／31301声明，9命令／5次trust=0均成功、零编译警告；旧31252足迹逐项不变、无新增公理依赖；2429当前指纹／75源哈希匹配，见 verification/saturation-iteration-acceptance.json。
 
-当前位置仍为原阶段8：完整单轮、实际唯一整轮后继及全旧腿更新／Valid/AllSmall 追加保持完成；统一外层内部递归塔、可数适当阶段覆盖和最终饱和性未完成。后续正则性已定位供体 ZFC.hartogs_regular_l，内部共尾有界已有，不新增这些数学。第9模型应用、第10全部内部 Proof/Con 与最终闭句、第11最终验收均未完成。
+仍在原阶段8：有界完整内部多轮递归塔与精确全塔相邻转移完成；具体ω₁+1／基数参数、可数适当阶段覆盖和最终饱和性未完成。后继正则性数学已有；其union_bound_l接口已在ExistingSmallUnion适配，不重复复制整个CountableUnion。第9模型应用、第10全部内部Proof/Con与最终主句、第11终验仍未完成。

@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第 8 阶段。完整 CompleteRound 单轮、实际唯一整轮后继及完整 Valid/AllSmall 追加保持已完成；完整外层内部递归塔和多轮饱和性尚未完成。9–11 和最终内部 Con 未完成。** 不以局部证书、声明数或构建数作为整体完成比例。
+**仍在原第 8 阶段。完整 CompleteRound 单轮、实际唯一整轮后继及完整 Valid/AllSmall 追加保持已完成；有界原父背景下的完整外层内部递归塔、全部阶段 Valid/AllSmall 和全塔精确相邻转移现亦已完成；具体 ω₁+1 实例化／可数覆盖／最终饱和性尚未完成。9–11 和最终内部 Con 未完成。** 不以局部证书、声明数或构建数作为整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -13,26 +13,28 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | Base、完整加权 Probe/Merger、保守加权极限、实际有效单轮递归塔／所有内部阶段界；实际来源／新鲜性／精确锥；全 Request／调度／Place/last；执行根图及切片家族；完整 CompleteRound 原父输入装配；实际整轮后继及全部旧腿／base 更新、完整 Valid/AllSmall 追加保持 | 原 Saturation 完整外层多轮递归塔、适当阶段可数覆盖、最终饱和单子及其实际 Placement/Hull 消费者 |
+| 8 构造核心 | Base、完整加权 Probe/Merger、保守加权极限、实际有效单轮递归塔／所有内部阶段界；实际来源／新鲜性／精确锥；全 Request／调度／Place/last；执行根图及切片家族；完整 CompleteRound 原父输入装配；实际整轮后继及全部旧腿／base 更新、完整 Valid/AllSmall 追加保持；全历史总唯一实际算子／原生递归、整塔 Valid/AllSmall、全12表／21合同／精确相邻转移 | 原 Saturation 具体 ω₁+1 与基数参数实例化、适当阶段可数覆盖、最终饱和单子及其实际 Placement/Hull 消费者 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、商单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
 
 ## 本批实际证明与验收
 
-原 CompleteRounds.Saturation.step/succIso/map_succ/cardinal_le 的实际后继现由 ConstructionSaturationStep／Successor 接通。CompleteRound.Built 保留同一实际调度 Context/Data、索引大小界、原递归塔／矩阵、执行／根图、last 目标行及全部阶段界。两个更强原父输入生产者直接保留这些见证；旧接口由投影保留。选中候选同时要求该实际构造 trace、完整 Request、目标／inclusion、K Probe 家族和所有 Merger，而非仅列出与原构造无关的性质。
+原 CompleteRounds.Saturation.tower／preservesProfiles／cardinal_le／map_succ 的实际内部多轮塔现已接通。ConstructionSaturationIterationCases 复用既有初始、带完整实际 trace 的唯一整轮后继和规范 Under-base 极限；提取已证 append_small 后，三个分支共同保持完整 Valid 和 AllSmall。未增加初始、极限、选择、tuple 或序数递归后端。
 
-ConstructionRoundSelection.least_denote 是原最小候选证明的提取，原选择器与新的整轮后继共用它。未重建全局选择或 tuple codec。forall15 step_kernel_certificate 已在原 nativeZF 核中证明同一内部 L 的实际完整父输入有唯一选中整轮，现成 L 的 Choice/order 被实际消去。
+ConstructionSaturationIteration 的具体 Good 要求内部序数、范围、Valid 和 AllSmall；合格历史执行真实三个分支，其余集合历史用明确 zero 默认值。已证明对全部内部集合历史总且唯一，实际实例化原生 BinarySchema15／recursiveSequence_exists；forall17 total_kernel_certificate 是原核对象证书。
 
-ConstructionSaturationSuccessor.exists_value 从实际 Valid 历史读取当前行和完整旧腿，消费同一带 trace 的选中整轮，复用原函数复合／set-function 更新全部旧腿和原 fromBase，再调用原 self-extension／Append.preserves 实际构造新记录与追加历史。保留精确 SuccessorEquation，证明全部内部追加阶段的 Valid 和 AllSmall；新记录唯一性复用既有 chart/row、选中元组、图、self-extension 和 packet 唯一性。forall18 construction_kernel_certificate 是同一内部 L 相对化的原核证书；没有宿主 WellFounded 或普通 ZF Choice 前提。
+ConstructionSaturationIterationValidity 用显式纯 Correct 公式的内部分离反例集和原生序数归纳，同时证明全部内部初始段的 Valid 与 AllSmall，直接复用既有 restriction／valid_of_cover。exists_tower 实际构造同一多轮递归历史、全部12张字段／时间／全转移表和21项原加权／base合同，不把有效输出塔当前提。map_succ_selected 从同一递归限制和实际记录中导出全塔相邻图字面等于同一选中整轮的 inclusion，保留 raw/Picked/Candidate/Built 及 base 精确复合。forall16 construction_kernel_certificate 是同一既有内部 L 相对化的原 nativeZF 核证书，L Choice/order 实际消去。所有内部阶段、可能外部不良基的模型均保留；无宿主 WellFounded 假设。
 
-正式验收：32 项新声明及 47 项受影响旧声明预审；全量 2862 项构建、31252 项声明（1563 项无公理依赖、29689 项记录依赖），9 命令／5 次 trust=0 均退出 0，零编译警告；此前 31220 项足迹逐项不变，无新增公理依赖；2426 当前指纹／75 固定源哈希匹配，底座／供体干净。临时 SaturationSuccessorAudit.lean 已按精确路径／内容 SHA／非重解析点白名单清理。证据 verification/saturation-successor-acceptance.json；单轮及切片独立性历史验收保留。
+本构造的父背景明确包含原几何／base、K非空、无限μ及μ^ω=μ、base/K/索引μ小；已实际生成该背景下的完整有界外层塔，尚未把具体ω₁+1索引与原基数参数实例化，也未证明最终可数覆盖／饱和性。
+
+正式验收：49 项新声明、25 项受影响旧声明预审；2865 构建／31301 声明（1564 无公理依赖、29737 记录依赖），9 命令／5 次 trust=0 全退出0，零编译警告；此前31252项足迹逐项不变，无新增公理依赖；2429 当前指纹／75 固定源哈希匹配，底座／供体干净。临时 SaturationIterationAudit.lean 按精确路径／内容SHA／非重解析点白名单清理。证据 verification/saturation-iteration-acceptance.json；此前整轮／后继验收保留。
 
 ## 继续顺序与边界
 
-下一实际消费者为原 Saturation 的统一外层历史算子／内部序数递归、countable_stage 和最终 SaturatedMonoids。后继已完成；初始和极限的原数学已有，直接接既有接口及大小界。统一算子必须对全部内部集合历史总且唯一，再以原生 Ord.Recursion 和已验收的内部公式分离／序数归纳方式证明整塔 Valid/AllSmall，不能假定输出塔有效。
+下一实际消费者为具体内部 ω₁+1／原基数参数对已完成外层 Context 的实例化，以及原 countable_stage → SaturatedMonoids 的可数适当阶段覆盖／最终 Probe/Merger 饱和性。统一外层算子、实际原生递归、完整 Valid/AllSmall、全表／图表和精确全塔 map_succ 均不再待做。现成内部共尾有界与供体正则性直接复用，不重建序数、递归、模式、L 或单轮数学。
 
-后续可数覆盖所需数学已定位：供体 7979336 的 SetTheory/Card/Properties/SuccessorRegularity.lean:17 ZFC.hartogs_regular_l；固定底座 Card/Cofinality/Boundedness.lean:282 bounded_of_cardinality_mem、335 range_bounded_of_domain_mem。前者尚未适配活动版本及实际消费者，不能报成数学未完成。完整多轮递归／覆盖／饱和性仍未装配。之后是第 9 模型应用和第 10 全部内部码归约。当前未取得原核最终 Derives nativeZF [] (Con_ZF → Con_U)，其中 U=ZF+PP+ACwo+¬AC；Con 保持全部内部／非标准证明码。
+进一步复核修正：后继正则性所需的小族并 union_bound_l 已由 ExistingSmallUnion.lean:153 适配并用于 DirectedCardinality，不能把“整个 CountableUnion 模块未复制”误报为其数学或必要接口未完成。后续只需现成供体 OrdinalImage 的必要闭包及 SuccessorRegularity.hartogs_regular_l，再实例化当前原生共尾有界消费者。之后是第 9 模型应用和第 10 全部内部码归约。当前未取得原核最终 Derives nativeZF [] (Con_ZF → Con_U)，其中 U=ZF+PP+ACwo+¬AC；Con 保持全部内部／非标准证明码。
 
 此前将局部验收当整体进度、将已存在数学的适配缺口误报为数学缺口、把可选字节兼容当必需主线，是规划与验收判断错误；对象层要求早已明确，不能归因于用户追加要求。后续只按原源完整类型、实际生产者／消费者和原 1–11 门判断。
 

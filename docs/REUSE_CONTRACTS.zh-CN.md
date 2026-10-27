@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；下一真实消费者为原 Saturation 统一外层递归／覆盖／饱和系统。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；下一真实消费者为具体ω₁+1／基数参数实例化和覆盖／饱和系统。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -143,7 +143,14 @@ CompleteRound.Built/built 和 exists_complete_round_built／exists_from_parent_b
 | 已定位供体／底座 | 实际下一消费者 | 当前适配状态 |
 |---|---|---|
 | 供体 7979336，SetTheory/Card/Properties/SuccessorRegularity.lean:17，ZFC.hartogs_regular_l | 原 RoundOrdinal.countable_bounded／Saturation.countable_stage；ConcreteSystem.μ_regular | 数学已存在；活动 039c8e1 尚无该模块，须复用必要闭包并核对精确消费者，不能重证或报成缺失 |
-| 同供体 Card/CountableUnion.lean、Card/OrdinalImage.lean | 上一供体定理的必要依赖 | 两模块已定位，尚未适配；按实际闭包复用，不升级整个活动底座 |
+| 同供体 Card/CountableUnion.union_bound_l；本仓 ExistingSmallUnion.lean:153 | 后继正则性所需小族并 | 必要接口已经适配并由 DirectedCardinality 实际消费；不复制整 CountableUnion，也不重报为缺失 |
+| 同供体 Card/OrdinalImage.lean | 后继正则性的序数像界依赖 | 尚需适配必要原证明闭包；无须升级活动底座 |
 | 固定底座 Card/Cofinality/Boundedness.lean:282/335 | 同一内部可数族的适当阶段上界 | bounded_of_cardinality_mem／range_bounded_of_domain_mem 已存在；只接 ω₁ 与实际塔的消费者 |
 
 已读供体源码 SHA256：SuccessorRegularity = 3ba72b4361f154a2c3bffe813a1a1d32074c99fbe30f2b235f1cb1dfb64c4edb；CountableUnion = f1c74af92e3cbd9ac0157272da447b20909e89bd71a2753ce3b7157a675cb3f5；OrdinalImage = b4d2ab883b487b5b66ce54d0af333dab9a38b2ddd7323635c28418dec146b7e0。供体未修改。初始／极限／原生内部递归／valid_of_cover 及内部反例集归纳方法已有，不新建此类后端。
+
+## 当前外层递归消费（2026-10-28）
+
+ConstructionSaturationIterationCases 的三个实际分支直接使用原 Initial／HistoryLimit／SaturationSuccessor；TowerCardinality.append_small 为既有后继中的小性证明提取，后继旧接口／足迹不变。SaturationIteration 的 BinarySchema15 对全部内部集合历史总唯一，实际调用原 recursiveSequence_exists；SaturationIterationValidity 的纯 Correct／内部分离反例集和序数归纳同时证明全 Valid/AllSmall，并复用原 valid_of_cover 和全字段／图表提取。全塔 map_succ_selected 保留实际完整 round trace 和原始 inclusion 方程。forall17/16 原核证书已正式验收；有界原父背景下的完整内部多轮塔不再是待做数学。
+
+尚需消费的是具体ω₁+1／基数参数、可数范围的适当阶段覆盖及最终饱和系统。union_bound_l 已适配的事实已复核，后继正则性原证明只调用该接口，不调用 infinite_union_l/countable_union_l 等其余 CountableUnion 定理；因此无需复制整个模块。OrdinalImage 与 hartogs_regular_l 的必要闭包仍待接入，所有供体正文保持来源锁定。

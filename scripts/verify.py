@@ -2251,7 +2251,7 @@ def main() -> None:
                                ('construction_request_padding', 'ConstructionRequestPadding', 14),
                                ('construction_request_cardinality', 'ConstructionRequestCardinality', 16),
                                ('construction_schedule_cardinality', 'ConstructionScheduleCardinality', 15),
-                               ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16),
+                               ('construction_tower_cardinality', 'ConstructionTowerCardinality', 17),
                                ('construction_round_fresh', 'ConstructionRoundFresh', 12),
                                ('construction_operation_source', 'ConstructionOperationSource', 12),
                                ('construction_round_source', 'ConstructionRoundSource', 6),
@@ -2264,7 +2264,10 @@ def main() -> None:
                                ('construction_tower_probe_independence', 'ConstructionTowerProbeIndependence', 10),
                                ('construction_complete_round', 'ConstructionCompleteRound', 24),
                                ('construction_saturation_step', 'ConstructionSaturationStep', 16),
-                               ('construction_saturation_successor', 'ConstructionSaturationSuccessor', 9)):
+                               ('construction_saturation_successor', 'ConstructionSaturationSuccessor', 9),
+                               ('construction_saturation_iteration_cases', 'ConstructionSaturationIterationCases', 11),
+                               ('construction_saturation_iteration', 'ConstructionSaturationIteration', 22),
+                               ('construction_saturation_iteration_validity', 'ConstructionSaturationIterationValidity', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5847,7 +5850,13 @@ def main() -> None:
         "source_Saturation_valid_original_parent_complete_round_selected_uniquely_with_native_kernel_certificate": True,
         "source_Saturation_actual_selected_successor_updates_ALL_old_legs_and_base_and_exact_current_inclusion": True,
         "source_Saturation_actual_successor_append_preserves_full_Valid_and_AllSmall": True,
-        "source_Saturation_full_internal_multiround_recursive_tower_constructed": False,
+        "source_Saturation_concrete_history_operator_total_unique_on_ALL_internal_set_histories": True,
+        "source_Saturation_existing_native_ordinal_recursion_actually_instantiated": True,
+        "source_Saturation_actual_full_recursive_Valid_AND_AllSmall_proved_by_internal_formula_induction": True,
+        "source_Saturation_full_internal_multiround_recursive_tower_constructed": True,
+        "source_Saturation_all_twelve_tables_time_full_weighted_diagram_and_stage_bounds_constructed": True,
+        "source_Saturation_global_adjacent_map_equals_SAME_trace_bearing_selected_complete_round_inclusion": True,
+        "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

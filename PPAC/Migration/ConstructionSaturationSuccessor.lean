@@ -147,16 +147,7 @@ theorem exists_value (hM : FirstOrder.Theory.Models M nativeZF)
   subst next'
   have hValid := ConstructionTowerAppend.preserves hM hJ hV hR (ConstructionRealCuts.principal_cut hM hw hQ ((hQ u).mpr ⟨one,one,hCoordinates⟩) hTop)
     hCharts hE hF hObjW hBaseFields hBaseProfilesW hOut hStableW hFullW hProfilesW hNaturalW hSelf hPack hAppend
-  have hSmall' : ConstructionTowerCardinality.AllSmall next S' mu := by
-    intro i _ A hA
-    obtain ⟨A',m,v,a,V,T,L',f',time,⟨code,hCode,hRowPack⟩,he⟩ := hA
-    change A = A' at he
-    subst A'
-    rcases (hAppend.2.2 i code).mp hCode with hOld | ⟨rfl,rfl⟩
-    · have hiJ := ForcingConditionGraphs.function_input hV.1.1 hOld
-      exact hSmall i hiJ A ⟨A,m,v,a,V,T,L',f',time,⟨code,hOld,hRowPack⟩,rfl⟩
-    · obtain ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩ := ConstructionRoundSelection.pack_injective hPack hRowPack
-      exact hWsize
+  have hSmall' := ConstructionTowerCardinality.append_small hV.1.1 hSmall hPack hWsize hAppend
   exact ⟨output,hValue,fun other hOther => value_unique hM hOrder hV hOther hValue,
     next,S',hAppend,hValid,hSmall'⟩
 

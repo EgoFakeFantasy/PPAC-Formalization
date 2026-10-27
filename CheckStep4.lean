@@ -11594,4 +11594,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationSuccessor.constructionSentence)) :=
   ConstructionSaturationSuccessor.construction_kernel_certificate
 
+-- ALL internal set histories, then the actual full bounded outer recursive tower.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIteration.totalSentence)) :=
+  ConstructionSaturationIteration.total_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationIterationValidity.constructionSentence)) :=
+  ConstructionSaturationIterationValidity.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
