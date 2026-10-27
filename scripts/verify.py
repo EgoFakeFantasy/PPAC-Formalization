@@ -2174,7 +2174,10 @@ def main() -> None:
                                ('construction_merger_word_parameters', 'ConstructionMergerWordParameters', 20),
                                ('construction_merger_word_heights', 'ConstructionMergerWordHeights', 15),
                                ('construction_merger_word_costs', 'ConstructionMergerWordCosts', 12),
-                               ('construction_merger_word_weights_syntax', 'ConstructionMergerWordWeightsSyntax', 3)):
+                               ('construction_merger_word_weights_syntax', 'ConstructionMergerWordWeightsSyntax', 3),
+                               ('construction_merger_word_margins', 'ConstructionMergerWordMargins', 9),
+                               ('construction_merger_word_heightCost', 'ConstructionMergerWordHeightCost', 1),
+                               ('construction_merger_word_heightCost_syntax', 'ConstructionMergerWordHeightCostSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5601,8 +5604,12 @@ def main() -> None:
         "source_merger_copies_average_product_heightCost_proved": True,
         "source_merger_copies_complete_heightCost_same_parent_producer_proved": True,
         "source_merger_word_actual_height_cost_graphs_and_pointwise_bounds_proved": True,
-        "source_merger_word_complete_heightCost_proved": False,
-        "source_merger_word_old_cost_supremum_proved": False,
+        "source_merger_word_complete_heightCost_proved": True,
+        "source_merger_word_uniform_margin_all_internal_comparisons_proved": True,
+        "source_merger_word_actual_supremum_strict_margin_proved": True,
+        "source_merger_word_all_old_pairs_exact_missed_cost_family_and_cap_proved": True,
+        "source_merger_word_snoc_existential_witness": "room*(unit/4); literal source weight formulas unchanged",
+        "source_merger_word_old_cost_supremum_proved": True,
         "source_merger_complete_weighted_extension_package_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,

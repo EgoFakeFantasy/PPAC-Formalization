@@ -118,8 +118,6 @@ Merger 当前消费：ConstructionMergerRelations/Copies/Action 将固定原关�
 
 本批旧嵌入／根实际消费：Conservative 四字段分别复用 Old 注入、factors_of_old、preserve_old_cone_intersection、old_common_multiple_iff；HasOldGates 直接给出 old 分支，不建额外 gate。所有旧 profile 调用未改 exists_mapped_profile，映射节点复用 native composition。根函数图由原生函数构造器、projected 与 Raw.exists_cons 组成；root*old 的字面式消费已有 CopyLaw 与 Word action/product laws，精确关系消费 copy_eq_iff，根新颖性消费 old_ne_cons。完整 Pure forall7 证书保留同一实际生产者数据，不另建 Object/Hom 框架。
 
-下段源权重复用裁决：ConstructionCutDivision.Value/value_cut 对任意正内部自然数 n 已有，不能只因先前消费者是 /4 就重建 /n。实际有限坐标和／积拟用已有全内部 Eval 与 cut sum/product 表实例化；仍须构造指定坐标序列并证明源有限平均／乘积公式及界，尚未实现，不能记为已验收。HasRep/coordHeight/coordCost 及其界／单调性／有表示严格性本批已有原核证书；后续直接迁移有限平均／有限乘积成本，不新建算术、序列解析或通用递归。
+当前 Merger 权重已消费既有任意正内部 n 的 ConstructionCutDivision.Value、实际坐标行、Raw evaluator 和 Cut sum/product 图。有限平均／min 乘积除法函数图、全部逐点界、copies 严格统一 margin／真实上确界、完整 copiesHeightCost／同一原父生产者均已有原核证书；不能再列为待实现。Word 实际字面权重及完整 HeightCost／实际上确界 margin、任意旧对成本族与上确界保持也已验收。Word margin 直接复用现成 atTarget／Raw 归纳、可除性分解、copies margin 和 canonical_uniform；没有新通用后端。snoc 的存在性见证用 room*quarter，源字面权重公式保持。当前真实状态见 STATUS。
 
-本批实际坐标消费：HasRep 的代表唯一性用原 copy_injective，Graph 的总性／唯一性／范围用旧函数图和 native exists_setFunctionFromTo_of_denote；两张表共享已有 cartesian representatives。表示传输直接用 reaches_copy_iff，同-copy 整除反映复用 reaches_same_copy_iff；高度单调性消费既有 ConstructionProbeParent.height_order；有表示严格性用旧 UniformMargins、divides_antisymm 和已证 le_strict_trans。旧单位界切割与完整旧函数／界均保持原父合同，不假定新坐标单调性。
-
-下一有限和／积的具体入口已经核对：ConstructionProbeHomEvaluation.eval_total/unique/range、eval_old_iff/cons_iff 接受任意内部 Raw 序列和总二元运算，无结合律前提；ConstructionCutArithmetic.exists_graph 与 ConstructionCutProduct.exists_graph 已提供对应运算。先构造实际 n→R 坐标行，编码成以空／单位切割为旧系数的 Raw，再直接实例化已有 Eval，最后接 ConstructionCutDivision.Value 的 /n。具体行、平均／乘积图及源界仍待做，不记为已完成，不新建通用有限 fold 或递归设施。
+下一项 Merger 基数界直接复用 ConstructionProbeWordCardinality.raw_cardinal_le（Merger 是同一 Raw 载体）、ConstructionProbeCardinality.indexed_quotient_bound、原生 infinite_product_l 和 ConstructionMergerCopies.projection_onto。内部 n⊆ω 与已有 ω≤mu 给出有限索引 bound；不用选择商代表或重写有限序列定理。完整加权 MergerData 需将已完成的同一原父生产者与 Word 权重组合；不是待重做这些数学。

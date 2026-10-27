@@ -27632,3 +27632,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerWordWeightsSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerWordWeightsSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerWordWeightsSyntax.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.parameter_gap_bounds
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.uniform_margin_snoc
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.uniform_margin_same_prefix
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.old_comparison_iff
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.old_missed_costs_iff
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.uniform_margin_old
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.old_cap_iff
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.exists_old_common_supremum
+#print axioms PPAC.Migration.ConstructionMergerWordMargins.word_uniform_margin
+#print axioms PPAC.Migration.ConstructionMergerWordHeightCost.exists_heightCost
+#print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerWordHeightCostSyntax.construction_kernel_certificate
