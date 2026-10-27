@@ -532,3 +532,6 @@ import PPAC.Migration.ConstructionMergerCoordinateSyntax
 
 import PPAC.Migration.ConstructionMergerFiniteWeights
 import PPAC.Migration.ConstructionMergerFiniteWeightsSyntax
+
+import PPAC.Migration.ConstructionMergerWeightEstimates
+import PPAC.Migration.ConstructionMergerWeightEstimatesSyntax
