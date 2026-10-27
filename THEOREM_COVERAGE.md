@@ -407,3 +407,14 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | Round.probe_independent:337／probe_profile:308／probe_new:325／creates_merger:275 | ConstructionTowerRequestCones.at_later／cut_kernel_certificate | 同一Recursive／map_succ／incoming；由Valid读取真实腿；Probe图=全局F(i,k)、全MapFields／最终profile／相对整个旧阶段新鲜性；Merger基图=同一目标Row的fromBase；forall21原核证书，覆盖全部内部后续切片及k=j |
 
 本批21项声明／旧31129项足迹逐项不变；正式验收2856项构建、31150项声明，九命令／五次trust=0均退出0，零编译警告；2420份当前指纹／75份源哈希匹配，无新增公理依赖。实际后续切片传输已完成；整轮target/inclusion、重复Probe家族的单射／两两独立性、多轮饱和及最终内部Con未完成。
+
+## 原第8阶段：统一执行／根图与切片Probe家族
+
+| 原源消费者 | 实际入口 | 对象范围 |
+|---|---|---|
+| Round.step/map_succ／Probe.probe | map_succ_selected／SelectedAt；TowerRequestCones保留raw/Picked/Pack | 同一真实选中元组，旧接口投影保留 |
+| CompleteRound.probe | TowerExecution.exists_execution | 内部有效位置、同一执行图／值域、已有第九字段Chart；同一L内forall18相对化原核证书 |
+| Round.probe／probe_profile | TowerProbeFamily.exists_family | 实际分离合格位置；同一根／转移图上的唯一Probe值与最终profile，forall34原核证书 |
+| Round.probe_transition | TowerProbeFamily.transition | 实际内部切片、同一根对象与Valid.Homs/Composition，forall21原核证书 |
+
+全量2858项构建／31192项声明，九命令／五次trust=0通过、零编译警告；旧31150项足迹不变，无新增公理依赖。统一家族的单值性不等于不同位置的单射／独立性；后两项、整轮target/inclusion、多轮和最终内部Con未完成。

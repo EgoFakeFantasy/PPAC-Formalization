@@ -25,12 +25,15 @@ variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
 def At (hM : FirstOrder.Theory.Models M nativeZF)
     (w Q R top D mul e mark H C zero one Schedule history F i j k : M.Carrier .set) : Prop :=
-  ∃ request N mulN eN markN HN CN K f W G unitW markW HL LC NewOut base O roots
+  ∃ raw request N mulN eN markN HN CN K f W G unitW markW HL LC NewOut base O roots
       V GV unitV markV HV CV KV baseV leg,
     PureKuratowski.PairMember M i request Schedule ∧
     Row history i N mulN eN markN HN CN K f i ∧
     Row history j W G unitW markW HL LC NewOut base j ∧
     Row history k V GV unitV markV HV CV KV baseV k ∧
+    ConstructionRoundSelection.Picked hM w Q R top zero one D mul e mark H C
+      N mulN eN markN HN CN f request raw ∧
+    ConstructionRoundSelection.Pack W G unitW markW HL LC O base roots raw ∧
     ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f
       W G unitW markW HL LC O base ∧
     ConstructionRoundSelection.Done w D mul zero one request W G markW O base roots ∧
@@ -60,9 +63,9 @@ theorem at_later (hM : FirstOrder.Theory.Models M nativeZF)
     (hSucc : (Project.FirstOrderSemantics.reduct M).SuccessorOf j i) (hBefore : Before j k) :
     At hM w Q R top D mul e mark H C zero one Schedule history F i j k := by
   have hV := ConstructionTowerIterationValidity.recursive_valid hM hCtx hRec (fun _ h => h)
-  obtain ⟨request,N,mulN,eN,markN,HN,CN,K,f,W,G,unitW,markW,HL,LC,NewOut,base,O,roots,
-    hRequest,hRowI,hRowJ,hStep,hDone,hO,hSource⟩ :=
-    ConstructionTowerMapSucc.map_succ hM hCtx hRec hF hi hj hSucc
+  obtain ⟨raw,request,N,mulN,eN,markN,HN,CN,K,f,W,G,unitW,markW,HL,LC,NewOut,base,O,roots,
+    hRequest,hRowI,hRowJ,hPicked,hRaw,hStep,hDone,hO,hSource⟩ :=
+    ConstructionTowerMapSucc.map_succ_selected hM hCtx hRec hF hi hj hSucc
   obtain ⟨V,GV,unitV,markV,HV,CV,KV,baseV,hRowK⟩ := hV.1.2 k hk
   obtain ⟨leg,hLeg⟩ := ConstructionTowerTransitions.leg_total (i := j) hV.1
     (ConstructionTowerValidity.incoming_rows hM hV) hk
@@ -94,9 +97,9 @@ theorem at_later (hM : FirstOrder.Theory.Models M nativeZF)
     (Or.inl hSucc.predecessor_mem) hBefore (row_field 6 hRowJ) (row_field 6 hRowK) hOldEdge hLegEdge hGlobalEdge
   have hGlobalMap := (hV.2.2.1 i k N mulN eN markN HN CN K f V GV unitV markV HV CV KV baseV global
     hi hk hBeforeIK hRowI hRowK hGlobalEdge).1
-  refine ⟨request,N,mulN,eN,markN,HN,CN,K,f,W,G,unitW,markW,HL,LC,NewOut,base,O,roots,
+  refine ⟨raw,request,N,mulN,eN,markN,HN,CN,K,f,W,G,unitW,markW,HL,LC,NewOut,base,O,roots,
     V,GV,unitV,markV,HV,CV,KV,baseV,leg,
-    hRequest,hRowI,hRowJ,hRowK,hStep,hDone,hO,hSource,hGlobal,?_,?_⟩
+    hRequest,hRowI,hRowJ,hRowK,hPicked,hRaw,hStep,hDone,hO,hSource,hGlobal,?_,?_⟩
   · intro a b node hCode
     obtain ⟨ON,genV,hON,hOC,hGenV,hRealized⟩ :=
       ConstructionConeTransport.probe_after hM hw hz hzw hObjN.1 hObjN.2.1 hObjN.2.2.2.1
@@ -136,108 +139,126 @@ theorem at_later (hM : FirstOrder.Theory.Models M nativeZF)
 
 
 
+
 def conesAt {m : Nat} (w Q R top D mul e mark H C zero one Schedule history F i j k : Fin m) : Project.Formula 1 m :=
   (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE
   (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE
-  (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj
+  (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj
   (ProjectSyntax.encode id (Source.SetLanguage.edge
-  Schedule.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (27 : Fin (m+28)))) (.conj (ConstructionTowerHistory.row
-  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (26 : Fin (m+28)) (25 : Fin (m+28)) (24 : Fin (m+28)) (23 : Fin (m+28)) (22 : Fin (m+28)) (21 : Fin
-  (m+28)) (20 : Fin (m+28)) (19 : Fin (m+28))
-  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
+  Schedule.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (27 : Fin (m+29)))) (.conj (ConstructionTowerHistory.row
+  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (26 : Fin (m+29)) (25 : Fin (m+29)) (24 : Fin (m+29)) (23 : Fin (m+29)) (22 : Fin (m+29)) (21 : Fin
+  (m+29)) (20 : Fin (m+29)) (19 : Fin (m+29))
+  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
   (.conj (ConstructionTowerHistory.row
-  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (18 : Fin (m+28)) (17 : Fin (m+28)) (16 : Fin (m+28)) (15 : Fin (m+28)) (14 : Fin (m+28)) (13 : Fin
-  (m+28)) (12 : Fin (m+28)) (11 : Fin (m+28))
-  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
+  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (18 : Fin (m+29)) (17 : Fin (m+29)) (16 : Fin (m+29)) (15 : Fin (m+29)) (14 : Fin (m+29)) (13 : Fin
+  (m+29)) (12 : Fin (m+29)) (11 : Fin (m+29))
+  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
   (.conj (ConstructionTowerHistory.row
-  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (8 : Fin (m+28)) (7 : Fin (m+28)) (6 : Fin (m+28)) (5 : Fin (m+28)) (4 : Fin (m+28)) (3 : Fin (m+28)) (2 :
-  Fin (m+28)) (1 : Fin (m+28))
-  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
-  (.conj (ConstructionRoundStepSyntax.step
-  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (26 : Fin (m+28)) (25 : Fin (m+28)) (24 : Fin (m+28)) (23 : Fin (m+28)) (22 : Fin (m+28)) (21 : Fin
-  (m+28)) (19 : Fin (m+28)) (18 : Fin (m+28)) (17 : Fin (m+28)) (16 : Fin (m+28)) (15 : Fin (m+28)) (14 :
-  Fin (m+28)) (13 : Fin (m+28)) (10 : Fin (m+28)) (11 : Fin (m+28))) (.conj (ConstructionRoundSelection.done
-  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (27 : Fin (m+28)) (18 : Fin (m+28)) (17 : Fin (m+28)) (15 : Fin (m+28)) (10 : Fin (m+28)) (11 : Fin
-  (m+28)) (9 : Fin (m+28))) (.conj (ProjectSyntax.encode id (ForcingDiagramOrder.product
-  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (10 : Fin (m+28)))) (.conj (ConstructionRoundSource.provenance
-  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (27 : Fin (m+28)) (26 : Fin (m+28)) (25 : Fin (m+28)) (24 : Fin (m+28)) (23 : Fin (m+28)) (19 : Fin
-  (m+28)) (18 : Fin (m+28)) (17 : Fin (m+28)) (16 : Fin (m+28)) (10 : Fin (m+28)) (9 : Fin (m+28))) (.conj
+  history.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (8 : Fin (m+29)) (7 : Fin (m+29)) (6 : Fin (m+29)) (5 : Fin (m+29)) (4 : Fin (m+29)) (3 : Fin (m+29)) (2 :
+  Fin (m+29)) (1 : Fin (m+29))
+  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)
+  (.conj (ConstructionRoundSelection.picked
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (26 : Fin (m+29)) (25 : Fin (m+29)) (24 : Fin (m+29)) (23 : Fin (m+29)) (22 : Fin (m+29)) (21 : Fin
+  (m+29)) (19 : Fin (m+29)) (27 : Fin (m+29)) (28 : Fin (m+29))) (.conj (ConstructionRoundSelection.pack (18
+  : Fin (m+29)) (17 : Fin (m+29)) (16 : Fin (m+29)) (15 : Fin (m+29)) (14 : Fin (m+29)) (13 : Fin (m+29))
+  (10 : Fin (m+29)) (11 : Fin (m+29)) (9 : Fin (m+29)) (28 : Fin (m+29))) (.conj
+  (ConstructionRoundStepSyntax.step
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (26 : Fin (m+29)) (25 : Fin (m+29)) (24 : Fin (m+29)) (23 : Fin (m+29)) (22 : Fin (m+29)) (21 : Fin
+  (m+29)) (19 : Fin (m+29)) (18 : Fin (m+29)) (17 : Fin (m+29)) (16 : Fin (m+29)) (15 : Fin (m+29)) (14 :
+  Fin (m+29)) (13 : Fin (m+29)) (10 : Fin (m+29)) (11 : Fin (m+29))) (.conj (ConstructionRoundSelection.done
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (27 : Fin (m+29)) (18 : Fin (m+29)) (17 : Fin (m+29)) (15 : Fin (m+29)) (10 : Fin (m+29)) (11 : Fin
+  (m+29)) (9 : Fin (m+29))) (.conj (ProjectSyntax.encode id (ForcingDiagramOrder.product
+  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (10 : Fin (m+29)))) (.conj (ConstructionRoundSource.provenance
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (27 : Fin (m+29)) (26 : Fin (m+29)) (25 : Fin (m+29)) (24 : Fin (m+29)) (23 : Fin (m+29)) (19 : Fin
+  (m+29)) (18 : Fin (m+29)) (17 : Fin (m+29)) (16 : Fin (m+29)) (10 : Fin (m+29)) (9 : Fin (m+29))) (.conj
   (ProjectSyntax.encode id (ForcingDiagramOrder.product
-  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (0 : Fin (m+28)))) (.conj (.forallE (.forallE (.forallE (.imp (ConstructionRequestSchedule.probeCode
-  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (2 : Fin (m+31)) (1 : Fin (m+31)) (0 : Fin (m+31)) (27 : Fin (m+28)).succ.succ.succ) (.existsE (.existsE
+  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (0 : Fin (m+29)))) (.conj (.forallE (.forallE (.forallE (.imp (ConstructionRequestSchedule.probeCode
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (2 : Fin (m+32)) (1 : Fin (m+32)) (0 : Fin (m+32)) (27 : Fin (m+29)).succ.succ.succ) (.existsE (.existsE
   (.conj (ConstructionRoundStepSyntax.mapFields
-  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (26 : Fin (m+28)).succ.succ.succ.succ.succ (8 : Fin (m+28)).succ.succ.succ.succ.succ (25 : Fin
-  (m+28)).succ.succ.succ.succ.succ (7 : Fin (m+28)).succ.succ.succ.succ.succ (24 : Fin
-  (m+28)).succ.succ.succ.succ.succ (6 : Fin (m+28)).succ.succ.succ.succ.succ (23 : Fin
-  (m+28)).succ.succ.succ.succ.succ (5 : Fin (m+28)).succ.succ.succ.succ.succ (22 : Fin
-  (m+28)).succ.succ.succ.succ.succ (21 : Fin (m+28)).succ.succ.succ.succ.succ (4 : Fin
-  (m+28)).succ.succ.succ.succ.succ (3 : Fin (m+28)).succ.succ.succ.succ.succ (1 : Fin (m+33))) (.conj
-  (ConstructionProbeMappedPathSyntax.nodeMap (10 : Fin (m+28)).succ.succ.succ.succ.succ (0 : Fin
-  (m+28)).succ.succ.succ.succ.succ (1 : Fin (m+33))) (.conj (ProjectSyntax.encode id
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (26 : Fin (m+29)).succ.succ.succ.succ.succ (8 : Fin (m+29)).succ.succ.succ.succ.succ (25 : Fin
+  (m+29)).succ.succ.succ.succ.succ (7 : Fin (m+29)).succ.succ.succ.succ.succ (24 : Fin
+  (m+29)).succ.succ.succ.succ.succ (6 : Fin (m+29)).succ.succ.succ.succ.succ (23 : Fin
+  (m+29)).succ.succ.succ.succ.succ (5 : Fin (m+29)).succ.succ.succ.succ.succ (22 : Fin
+  (m+29)).succ.succ.succ.succ.succ (21 : Fin (m+29)).succ.succ.succ.succ.succ (4 : Fin
+  (m+29)).succ.succ.succ.succ.succ (3 : Fin (m+29)).succ.succ.succ.succ.succ (1 : Fin (m+34))) (.conj
+  (ConstructionProbeMappedPathSyntax.nodeMap (10 : Fin (m+29)).succ.succ.succ.succ.succ (0 : Fin
+  (m+29)).succ.succ.succ.succ.succ (1 : Fin (m+34))) (.conj (ProjectSyntax.encode id
   (ForcingDiagramOrder.product
-  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (1 : Fin (m+33)))) (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge (0 : Fin
-  (m+28)).succ.succ.succ.succ.succ (9 : Fin (m+28)).succ.succ.succ.succ.succ (0 : Fin (m+33)))) (.conj
-  (ConstructionProbeIndependent.realized (26 : Fin (m+28)).succ.succ.succ.succ.succ (25 : Fin
-  (m+28)).succ.succ.succ.succ.succ (23 : Fin (m+28)).succ.succ.succ.succ.succ (19 : Fin
-  (m+28)).succ.succ.succ.succ.succ (8 : Fin (m+28)).succ.succ.succ.succ.succ (7 : Fin
-  (m+28)).succ.succ.succ.succ.succ (1 : Fin (m+33)) (0 : Fin (m+33)) (2 : Fin (m+31)).succ.succ (1 : Fin
-  (m+31)).succ.succ (0 : Fin (m+31)).succ.succ) (.conj (ConstructionRoundFresh.probeWitness
-  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (8 : Fin (m+28)).succ.succ.succ.succ.succ (7 : Fin (m+28)).succ.succ.succ.succ.succ (5 : Fin
-  (m+28)).succ.succ.succ.succ.succ (1 : Fin (m+28)).succ.succ.succ.succ.succ (2 : Fin (m+31)).succ.succ (1 :
-  Fin (m+31)).succ.succ (0 : Fin (m+31)).succ.succ (0 : Fin (m+33))) (.forallE (.neg (ProjectSyntax.encode
-  id (Source.SetLanguage.edge (1 : Fin (m+33)).succ (0 : Fin (m+34)) (0 : Fin (m+33)).succ))))))))))))))))
+  F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  k.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (1 : Fin (m+34)))) (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge (0 : Fin
+  (m+29)).succ.succ.succ.succ.succ (9 : Fin (m+29)).succ.succ.succ.succ.succ (0 : Fin (m+34)))) (.conj
+  (ConstructionProbeIndependent.realized (26 : Fin (m+29)).succ.succ.succ.succ.succ (25 : Fin
+  (m+29)).succ.succ.succ.succ.succ (23 : Fin (m+29)).succ.succ.succ.succ.succ (19 : Fin
+  (m+29)).succ.succ.succ.succ.succ (8 : Fin (m+29)).succ.succ.succ.succ.succ (7 : Fin
+  (m+29)).succ.succ.succ.succ.succ (1 : Fin (m+34)) (0 : Fin (m+34)) (2 : Fin (m+32)).succ.succ (1 : Fin
+  (m+32)).succ.succ (0 : Fin (m+32)).succ.succ) (.conj (ConstructionRoundFresh.probeWitness
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (8 : Fin (m+29)).succ.succ.succ.succ.succ (7 : Fin (m+29)).succ.succ.succ.succ.succ (5 : Fin
+  (m+29)).succ.succ.succ.succ.succ (1 : Fin (m+29)).succ.succ.succ.succ.succ (2 : Fin (m+32)).succ.succ (1 :
+  Fin (m+32)).succ.succ (0 : Fin (m+32)).succ.succ (0 : Fin (m+34))) (.forallE (.neg (ProjectSyntax.encode
+  id (Source.SetLanguage.edge (1 : Fin (m+34)).succ (0 : Fin (m+35)) (0 : Fin (m+34)).succ))))))))))))))))
   (.forallE (.forallE (.imp (ConstructionRequestSchedule.mergerCode
-  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  (1 : Fin (m+30)) (0 : Fin (m+30)) (27 : Fin (m+28)).succ.succ) (.existsE (.conj (ProjectSyntax.encode id
-  (Source.SetLanguage.mapsTo (0 : Fin (m+31)) (1 : Fin (m+30)).succ (8 : Fin (m+28)).succ.succ.succ)) (.conj
-  (ConstructionProbeMappedPathSyntax.nodeMap (9 : Fin (m+28)).succ.succ.succ (0 : Fin (m+28)).succ.succ.succ
-  (0 : Fin (m+31))) (ConstructionMergerRootSystem.rootSystem (1 : Fin (m+30)).succ (0 : Fin (m+30)).succ (8
-  : Fin (m+28)).succ.succ.succ (7 : Fin (m+28)).succ.succ.succ (1 : Fin (m+28)).succ.succ.succ (0 : Fin
-  (m+31)))))))))))))))))))))))))))))))))))))))))))))))
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (1 : Fin (m+31)) (0 : Fin (m+31)) (27 : Fin (m+29)).succ.succ) (.existsE (.conj (ProjectSyntax.encode id
+  (Source.SetLanguage.mapsTo (0 : Fin (m+32)) (1 : Fin (m+31)).succ (8 : Fin (m+29)).succ.succ.succ)) (.conj
+  (ConstructionProbeMappedPathSyntax.nodeMap (9 : Fin (m+29)).succ.succ.succ (0 : Fin (m+29)).succ.succ.succ
+  (0 : Fin (m+32))) (ConstructionMergerRootSystem.rootSystem (1 : Fin (m+31)).succ (0 : Fin (m+31)).succ (8
+  : Fin (m+29)).succ.succ.succ (7 : Fin (m+29)).succ.succ.succ (1 : Fin (m+29)).succ.succ.succ (0 : Fin
+  (m+32))))))))))))))))))))))))))))))))))))))))))))))))))
 
 theorem conesAt_freeClosed {m : Nat} (w Q R top D mul e mark H C zero one Schedule history F i j k : Fin m) :
     (conesAt w Q R top D mul e mark H C zero one Schedule history F i j k).FreeClosed := by
-  simp -implicitDefEqProofs [conesAt,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionTowerHistory.row_freeClosed,ConstructionRoundStepSyntax.mapFields_freeClosed,ConstructionRoundFresh.probeWitness_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed,ConstructionRoundSource.provenance_freeClosed,ConstructionRequestSchedule.probeCode_freeClosed,ConstructionProbeMappedPathSyntax.nodeMap_freeClosed,ConstructionProbeIndependent.realized_freeClosed,ConstructionRequestSchedule.mergerCode_freeClosed,ConstructionMergerRootSystem.rootSystem_freeClosed]
+  simp -implicitDefEqProofs [conesAt,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.picked_freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionTowerHistory.row_freeClosed,ConstructionRoundStepSyntax.mapFields_freeClosed,ConstructionRoundFresh.probeWitness_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed,ConstructionRoundSource.provenance_freeClosed,ConstructionRequestSchedule.probeCode_freeClosed,ConstructionProbeMappedPathSyntax.nodeMap_freeClosed,ConstructionProbeIndependent.realized_freeClosed,ConstructionRequestSchedule.mergerCode_freeClosed,ConstructionMergerRootSystem.rootSystem_freeClosed]
 
 theorem conesAt_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w Q R top D mul e mark H C zero one Schedule history F i j k : Fin m) :
@@ -245,7 +266,7 @@ theorem conesAt_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
   simp only [conesAt,At,Project.Formula.satisfies_forall_iff,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_imp_iff,Project.Formula.satisfies_conj_iff,
     Project.Formula.satisfies_neg_iff,
-    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,ConstructionTowerHistory.row_semantics hM,ConstructionRoundStepSyntax.mapFields_semantics hM,ConstructionRoundFresh.probeWitness_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,ConstructionRoundSource.provenance_semantics hM,ConstructionRequestSchedule.probeCode_semantics hM,ConstructionProbeMappedPathSyntax.nodeMap_semantics hM,ConstructionProbeIndependent.realized_semantics hM,ConstructionRequestSchedule.mergerCode_semantics hM,ConstructionMergerRootSystem.rootSystem_semantics hM,ForcingDiagramOrder.product_semantics (M := M),ForcingSupportSize.mapsTo_semantics (M := M)]
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,ConstructionRoundSelection.picked_semantics hM,ConstructionRoundSelection.pack_semantics hM,ConstructionTowerHistory.row_semantics hM,ConstructionRoundStepSyntax.mapFields_semantics hM,ConstructionRoundFresh.probeWitness_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,ConstructionRoundSource.provenance_semantics hM,ConstructionRequestSchedule.probeCode_semantics hM,ConstructionProbeMappedPathSyntax.nodeMap_semantics hM,ConstructionProbeIndependent.realized_semantics hM,ConstructionRequestSchedule.mergerCode_semantics hM,ConstructionMergerRootSystem.rootSystem_semantics hM,ForcingDiagramOrder.product_semantics (M := M),ForcingSupportSize.mapsTo_semantics (M := M)]
   rfl
 
 

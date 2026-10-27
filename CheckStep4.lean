@@ -11562,4 +11562,17 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerRequestCones.cutSentence) :=
   ConstructionTowerRequestCones.cut_kernel_certificate
 
+-- SAME existing internal L selector; actual execution/root graph construction.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionTowerExecution.executionSentence)) :=
+  ConstructionTowerExecution.execution_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerProbeFamily.familySentence) :=
+  ConstructionTowerProbeFamily.family_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerProbeFamily.transitionSentence) :=
+  ConstructionTowerProbeFamily.transition_kernel_certificate
+
 end PPAC.Migration.Step4Checks

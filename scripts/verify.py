@@ -2247,7 +2247,7 @@ def main() -> None:
                                ('construction_tower_iteration_cases', 'ConstructionTowerIterationCases', 15),
                                ('construction_tower_iteration', 'ConstructionTowerIteration', 29),
                                ('construction_tower_iteration_validity', 'ConstructionTowerIterationValidity', 12),
-                               ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 12),
+                               ('construction_tower_map_succ', 'ConstructionTowerMapSucc', 17),
                                ('construction_request_padding', 'ConstructionRequestPadding', 14),
                                ('construction_request_cardinality', 'ConstructionRequestCardinality', 16),
                                ('construction_schedule_cardinality', 'ConstructionScheduleCardinality', 15),
@@ -2258,7 +2258,9 @@ def main() -> None:
                                ('construction_probe_independent', 'ConstructionProbeIndependent', 17),
                                ('construction_merger_root_system', 'ConstructionMergerRootSystem', 20),
                                ('construction_cone_transport', 'ConstructionConeTransport', 13),
-                               ('construction_tower_request_cones', 'ConstructionTowerRequestCones', 8)):
+                               ('construction_tower_request_cones', 'ConstructionTowerRequestCones', 8),
+                               ('construction_tower_execution', 'ConstructionTowerExecution', 19),
+                               ('construction_tower_probe_family', 'ConstructionTowerProbeFamily', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5828,6 +5830,10 @@ def main() -> None:
         "source_actual_recursive_tower_all_internal_later_cuts_original_request_cones_kernel_proved": True,
         "source_actual_recursive_tower_Merger_final_base_equals_SAME_target_row_fromBase": True,
         "source_actual_recursive_tower_Probe_composite_equals_global_F_i_k_full_MapFields_profile_and_current_freshness": True,
+        "source_actual_tower_SAME_Picked_raw_execution_and_ninth_field_graphs_constructed": True,
+        "source_actual_tower_canonical_fixed_request_cut_probe_family_total_unique_profile_proved": True,
+        "source_actual_tower_canonical_probe_cross_cut_transition_kernel_proved": True,
+        "source_actual_tower_canonical_probe_family_injective_and_pairwise_independent_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
