@@ -11421,4 +11421,18 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionTowerLimit.typedProfileSentence) :=
   ConstructionTowerLimit.typedProfile_kernel_certificate
 
+-- SAME normalized codec/full incoming+self family in ALL three actual cases.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerInitial.initialSentence) :=
+  ConstructionTowerInitial.initial_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerCanonicalLimit.constructionSentence) :=
+  ConstructionTowerCanonicalLimit.construction_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionTowerCanonicalSuccessor.constructionSentence)) :=
+  ConstructionTowerCanonicalSuccessor.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

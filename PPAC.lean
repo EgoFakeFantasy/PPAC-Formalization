@@ -615,3 +615,6 @@ import PPAC.Migration.ConstructibleSource
 import PPAC.Migration.ConstructionRoundSelection
 import PPAC.Migration.ConstructionTowerSuccessor
 import PPAC.Migration.ConstructionTowerLimit
+import PPAC.Migration.ConstructionTowerCanonicalLimit
+import PPAC.Migration.ConstructionTowerInitial
+import PPAC.Migration.ConstructionTowerCanonicalSuccessor
