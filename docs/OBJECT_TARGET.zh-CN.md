@@ -50,6 +50,8 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 已证：语言及全部源规则传输、完整 ZF 呈现互导、AC 等价、通用域相对化，以及已列明的内部构造。完整公理模式在底座和本仓均已存在。
 已完成的背景解释：同一任意原生 ZF 模型内部的 L/ZFC 已复用到固定底座；ConstructibleGround 和 ConstructibleSource 已取得全部原生／源公理与模式、Choice 及域非空的 L 相对化原核证书。既有 InterpretedZF 的背景和非空前提已被实际消去，原第 6 阶段验收门已经通过；不再把版本、源域或 L 全模式解释列作缺口。
 
-本批已完成：完整 CompleteRound 从原父输入构造，包含全部请求／有界调度／内部塔、同一 last target/inclusion、K 索引 Probe 单射／profile／全新右因子精确公共锥、所有 Merger 全 RootSystem；forall15 原核证书相对化到同一现成内部 L，Choice/order 已实际消去。
+已完成：完整 CompleteRound 从原父输入构造，包含全部请求／有界调度／内部塔、同一 last target/inclusion、K 索引 Probe 单射／profile／全新右因子精确公共锥、所有 Merger 全 RootSystem；forall15 原核证书相对化到同一现成内部 L，Choice/order 已实际消去。
 
-真正未闭合：第 8 的多轮 Saturation／最终饱和单子，第 9 同一系统的模型应用，第 10 全秩 PP/Main、ZF/U 专用内部 Proof/Con、全部内部／非标准矛盾码传输和最终原核闭句。已有外部标准证书变换不替代内部码证明。最新验收和原 1–11 状态见 STATUS／AGENT_WORKFLOW。
+本批又已完成实际整轮构造 trace 的保留、唯一选中整轮后继、全旧腿／base 更新、精确当前 inclusion 以及完整 Valid/AllSmall 追加保持；forall15/18 同一内部 L 相对化原核证书已验收。
+
+真正未闭合：第 8 的完整外层内部递归、可数适当阶段覆盖和多轮 Saturation／最终饱和单子，第 9 同一系统的模型应用，第 10 全秩 PP/Main、ZF/U 专用内部 Proof/Con、全部内部／非标准矛盾码传输和最终原核闭句。已有外部标准证书变换不替代内部码证明。最新验收和原 1–11 状态见 STATUS／AGENT_WORKFLOW。

@@ -2229,7 +2229,7 @@ def main() -> None:
                                ('existing_l_choice_bridge', 'ExistingLChoiceBridge', 4),
                                ('constructible_ground', 'ConstructibleGround', 8),
                                ('constructible_source', 'ConstructibleSource', 17),
-                               ('construction_round_selection', 'ConstructionRoundSelection', 29),
+                               ('construction_round_selection', 'ConstructionRoundSelection', 30),
                                ('construction_tower_successor', 'ConstructionTowerSuccessor', 53),
                                ('construction_tower_limit', 'ConstructionTowerLimit', 33),
                                ('construction_tower_canonical_limit', 'ConstructionTowerCanonicalLimit', 14),
@@ -2262,7 +2262,9 @@ def main() -> None:
                                ('construction_tower_execution', 'ConstructionTowerExecution', 19),
                                ('construction_tower_probe_family', 'ConstructionTowerProbeFamily', 18),
                                ('construction_tower_probe_independence', 'ConstructionTowerProbeIndependence', 10),
-                               ('construction_complete_round', 'ConstructionCompleteRound', 18)):
+                               ('construction_complete_round', 'ConstructionCompleteRound', 24),
+                               ('construction_saturation_step', 'ConstructionSaturationStep', 16),
+                               ('construction_saturation_successor', 'ConstructionSaturationSuccessor', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5841,6 +5843,11 @@ def main() -> None:
         "source_CompleteRound_constructed_from_original_parents_including_actual_Request_schedule_tower": True,
         "source_CompleteRound_every_merger_full_RootSystem_on_same_target_complete": True,
         "source_CompleteRound_original_parent_forall15_internal_L_relative_native_kernel_certificate": True,
+        "source_CompleteRound_actual_schedule_recursion_execution_and_last_row_trace_retained": True,
+        "source_Saturation_valid_original_parent_complete_round_selected_uniquely_with_native_kernel_certificate": True,
+        "source_Saturation_actual_selected_successor_updates_ALL_old_legs_and_base_and_exact_current_inclusion": True,
+        "source_Saturation_actual_successor_append_preserves_full_Valid_and_AllSmall": True,
+        "source_Saturation_full_internal_multiround_recursive_tower_constructed": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

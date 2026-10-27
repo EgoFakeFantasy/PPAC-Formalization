@@ -31661,3 +31661,37 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCompleteRound.constructionSentence
 #print axioms PPAC.Migration.ConstructionCompleteRound.construction_models
 #print axioms PPAC.Migration.ConstructionCompleteRound.construction_kernel_certificate
+
+-- SAME constructed complete-round trace; selected outer successor and full append invariants.
+#print axioms PPAC.Migration.ConstructionRoundSelection.least_denote
+#print axioms PPAC.Migration.ConstructionCompleteRound.Built
+#print axioms PPAC.Migration.ConstructionCompleteRound.built
+#print axioms PPAC.Migration.ConstructionCompleteRound.built_freeClosed
+#print axioms PPAC.Migration.ConstructionCompleteRound.built_semantics
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_complete_round_built
+#print axioms PPAC.Migration.ConstructionCompleteRound.exists_from_parent_built
+#print axioms PPAC.Migration.ConstructionSaturationStep.Candidate
+#print axioms PPAC.Migration.ConstructionSaturationStep.Picked
+#print axioms PPAC.Migration.ConstructionSaturationStep.candidate_exists
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked_unique
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked_is_candidate
+#print axioms PPAC.Migration.ConstructionSaturationStep.candidate
+#print axioms PPAC.Migration.ConstructionSaturationStep.candidate_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationStep.candidate_semantics
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked_semantics
+#print axioms PPAC.Migration.ConstructionSaturationStep.picked_total
+#print axioms PPAC.Migration.ConstructionSaturationStep.exists_step
+#print axioms PPAC.Migration.ConstructionSaturationStep.stepSentence
+#print axioms PPAC.Migration.ConstructionSaturationStep.step_models
+#print axioms PPAC.Migration.ConstructionSaturationStep.step_kernel_certificate
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.Value
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.value_unique
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.exists_value
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.value
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.value_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.value_semantics
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.constructionSentence
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.construction_models
+#print axioms PPAC.Migration.ConstructionSaturationSuccessor.construction_kernel_certificate

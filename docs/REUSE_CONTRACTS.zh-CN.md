@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；下一真实消费者只为原 Saturation 多轮系统。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；下一真实消费者为原 Saturation 统一外层递归／覆盖／饱和系统。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -135,3 +135,15 @@ ConstructionDirectedColimit 已复用原生有向商、projection、完整 Hom/C
 已完成的具体来源传输：MonoidRounds.ProbeData.independent:304 所需 path/quotient/action/target/exit/word/generator 数据与 CompleteRounds.creates_merger 所需 copy/free-action/word/root 数据，现由 OperationSource／RoundSource 的纯对象合同保留到候选／全塔。ProbeParent 原构造证明本体仅分解为更强出口，旧接口由投影保留；未重做既有生产者或数学后台。Probe 的零位 gate／完整旧 profile 已由同一原数据导出，精确 independent 及实际 Provenance 消费已取得原核证书；全锥 RootSystem 现也由同一原 word／copy 数据装配并取得原核证书；现已传到全部实际后续切片；完整轮次和 K 索引重复 Probe 家族亦已完成，接下来为多轮 Saturation，不再另建正规形或恢复冻结字节支线。数据存在与语义等价、单独编译都不代替后续精确锥的原核推导。
 
 本批精确复用：ConstructionCompleteRound.exists_placement 直接使用已有内部 successor／trichotomy 和 set-function；exists_probe 将原 Place(q,k) 与同一已验收切片家族复合，保留准确 Place/ProbeAt 图并导出 K 单射／全 profile／全新右因子 JoinProperty。realizes_merger 直接消费 actual at_later 的全 RootSystem。exists_from_parent 进一步调用既有 RequestCarrier、有界调度／塔、Execution 和实际 last 行，消去请求／调度／塔／目标作为输入。forall15 原核证书使用既有内部 L，消去 Choice/order。所有单轮目标已完成；下一项为源 Saturation 多轮、模型应用和内部 Con。18 项新增声明、旧 31202 足迹不变，完整验收见 STATUS／complete-round-acceptance.json。
+
+## Saturation 实际后继与下一处供体消费
+
+CompleteRound.Built/built 和 exists_complete_round_built／exists_from_parent_built 保留原实际有界调度、Recursive、全矩阵／执行根图、同一 last 行及 AllSmall；旧接口类型与足迹不变。SaturationStep.Candidate/Picked 必须保留该 trace；minimum 证明直接共用从旧 RoundSelection 提取的 least_denote。SaturationSuccessor 直接消费既有 HistorySuccessor.parents、全腿函数复合、self-extension、Append.preserves，实际更新全部旧腿／base、保留精确当前 inclusion 方程，并证明追加历史完整 Valid/AllSmall 和唯一记录；无新集合、编码、选择或递归后端。两条 forall15/18 原核证书已正式验收，详见 STATUS。
+
+| 已定位供体／底座 | 实际下一消费者 | 当前适配状态 |
+|---|---|---|
+| 供体 7979336，SetTheory/Card/Properties/SuccessorRegularity.lean:17，ZFC.hartogs_regular_l | 原 RoundOrdinal.countable_bounded／Saturation.countable_stage；ConcreteSystem.μ_regular | 数学已存在；活动 039c8e1 尚无该模块，须复用必要闭包并核对精确消费者，不能重证或报成缺失 |
+| 同供体 Card/CountableUnion.lean、Card/OrdinalImage.lean | 上一供体定理的必要依赖 | 两模块已定位，尚未适配；按实际闭包复用，不升级整个活动底座 |
+| 固定底座 Card/Cofinality/Boundedness.lean:282/335 | 同一内部可数族的适当阶段上界 | bounded_of_cardinality_mem／range_bounded_of_domain_mem 已存在；只接 ω₁ 与实际塔的消费者 |
+
+已读供体源码 SHA256：SuccessorRegularity = 3ba72b4361f154a2c3bffe813a1a1d32074c99fbe30f2b235f1cb1dfb64c4edb；CountableUnion = f1c74af92e3cbd9ac0157272da447b20909e89bd71a2753ce3b7157a675cb3f5；OrdinalImage = b4d2ab883b487b5b66ce54d0af333dab9a38b2ddd7323635c28418dec146b7e0。供体未修改。初始／极限／原生内部递归／valid_of_cover 及内部反例集归纳方法已有，不新建此类后端。

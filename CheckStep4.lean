@@ -11585,4 +11585,13 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionCompleteRound.constructionSentence)) :=
   ConstructionCompleteRound.construction_kernel_certificate
 
+-- Actual outer successor, preserving SAME complete-round construction trace.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationStep.stepSentence)) :=
+  ConstructionSaturationStep.step_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionSaturationSuccessor.constructionSentence)) :=
+  ConstructionSaturationSuccessor.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

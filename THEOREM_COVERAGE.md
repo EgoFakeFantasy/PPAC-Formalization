@@ -333,9 +333,11 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | CompleteRound.target/inclusion/preservesProfiles/cardinal_le | CompleteRound.target／exists_complete_round／exists_from_parent | 从原父输入构造 Request、调度、实际有界塔、同一 last 目标与 inclusion；Object/MapFields/Profiles/Small |
 | CompleteRound.probe/probe_profile/probe_injective/probes_independent | CompleteRound.exists_probe | 实际 Place(q,k)→既有唯一 Probe 的准确图；完整 K→target Injection、所有新右因子精确交锥 |
 | CompleteRound.realizes_merger | CompleteRound.realizes_merger | K 的一个非空见证；同一目标全部 Merger 处方的完整 RootSystem，无选择函数输入 |
+| Saturation.step/succIso/map_succ | CompleteRound.Built；SaturationStep.Candidate/Picked/exists_step | 实际有界调度／递归／矩阵／执行根图／last 行保留；旧最小候选证明共用；forall15 同一内部 L 相对化原核证书 |
+| Saturation.map_succ/cardinal_le 的实际后继 | SaturationSuccessor.exists_value | 当前行和全旧腿由 Valid 读取；实际完整整轮／全腿和原 base 复合／self-extension／追加历史；完整 Valid/AllSmall、精确 SuccessorEquation、唯一记录；forall18 原核证书 |
 
-本批 ConstructionCompleteRound 共 18 项声明，constructionSentence 为 forall15。construction_kernel_certificate 返回原 FirstOrder.Derives nativeZF []，句子相对化到同一既有内部 L；该 L 的 Choice/order 被实际消去，没有向普通 ZF 添加 Choice。实际完整父输入生产者 exists_from_parent 同时返回所有原请求的 ProbeFamilies/MergerFamilies，不把见证或目标当作输入。
+ConstructionCompleteRound 原完整单轮结论保持；两个更强生产者保留同一实际 Built trace，旧接口只作投影，旧足迹不变。新增后继候选同时要求该 trace 及全部原请求见证，不能仅用一个无构造来源的性质包替代固定源。
 
-正式验收：2860 项构建、31220 项声明，9 命令／5 次 trust=0 均成功、零警告；旧 31202 项足迹不变、无新增公理依赖；2424 当前指纹／75 源哈希匹配。证据 verification/complete-round-acceptance.json；此前各批证据保留于 verification，历史过程文字可从 acf13f8 恢复。
+本批新增 32 项声明，预审同时覆盖 47 项受影响旧声明。正式验收 2862 构建／31252 声明、9 命令／5 次 trust=0 均成功、零警告；此前 31220 足迹逐项不变，无新增公理依赖；2426 当前指纹／75 源哈希匹配，证据 verification/saturation-successor-acceptance.json。
 
-当前位置仍为原阶段8：完整单轮完成；下一项为源 Saturation 多轮实际系统／可数适当阶段覆盖／最终饱和性。第9模型应用、第10全部内部 Proof/Con 和最终闭句、第11最终验收均未完成。
+当前位置仍为原阶段8：完整单轮、实际唯一整轮后继及全旧腿更新／Valid/AllSmall 追加保持完成；统一外层内部递归塔、可数适当阶段覆盖和最终饱和性未完成。后续正则性已定位供体 ZFC.hartogs_regular_l，内部共尾有界已有，不新增这些数学。第9模型应用、第10全部内部 Proof/Con 与最终闭句、第11最终验收均未完成。

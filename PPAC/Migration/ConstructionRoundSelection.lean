@@ -179,7 +179,7 @@ theorem candidate_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     Project.Formula.satisfies env (candidate w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output) ↔ Candidate hM (env.bound w) (env.bound Q) (env.bound R) (env.bound top) (env.bound zero) (env.bound one) (env.bound D) (env.bound mul) (env.bound e) (env.bound mark) (env.bound H) (env.bound C) (env.bound N) (env.bound mulN) (env.bound eN) (env.bound markN) (env.bound HN) (env.bound CN) (env.bound f) (env.bound request) (env.bound output) := by
   simp only [candidate,Candidate,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_conj_iff,
-    
+
     pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,done_semantics hM,ConstructionRoundSource.provenance_semantics hM]
   rfl
 
@@ -221,6 +221,39 @@ theorem picked_unique (hM : FirstOrder.Theory.Models M nativeZF)
     · exact False.elim (hnx ⟨y,hy⟩)
     · rfl
 
+
+/-- Factor the EXISTING bounded-initial-segment minimum argument so that
+Saturation.step can consume exactly the same definable selection mechanism.
+The hypothesis is a formula instance; no arbitrary class Separation. -/
+theorem least_denote (hM : FirstOrder.Theory.Models M nativeZF)
+    (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
+    {m : Nat} (schema : Project.UnarySchema m)
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m)
+    (hn : ∃ output, schema.denote env output) :
+    ∃ output, schema.denote env output ∧
+      ∀ other, schema.denote env other →
+        ¬ InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M) other output := by
+  let rawM := Project.FirstOrderSemantics.reduct M
+  obtain ⟨first,hfirst⟩ := hn
+  obtain ⟨initial,hInitial⟩ := hOrder.2.2.2.2 first
+  obtain ⟨bound,hBound⟩ := KP.exists_insert (ZF.modelsKP (ModelTransfer.project_models_iff.mp hM)) initial first
+  obtain ⟨candidates,hCandidates⟩ := ZF.separation_exists_d (ModelTransfer.project_models_iff.mp hM) schema env bound
+  have hFirst : rawM.mem first candidates := (hCandidates first).mpr ⟨(hBound first).mpr (Or.inr rfl),hfirst⟩
+  obtain ⟨output,hOutput,hMin⟩ := hOrder.2.2.2.1 candidates ⟨first,hFirst⟩
+  refine ⟨output,((hCandidates output).mp hOutput).2,?_⟩
+  intro other hOther hlt
+  have hBoundOther : rawM.mem other bound := by
+    apply (hBound other).mpr
+    apply Or.inl
+    apply (hInitial other).mpr
+    rcases hMin first hFirst with heq | hltFirst
+    · exact heq ▸ hlt
+    · exact hOrder.2.1 other output first hlt hltFirst
+  rcases hMin other ((hCandidates other).mpr ⟨hBoundOther,hOther⟩) with heq | hForward
+  · exact hOrder.1 output (heq.symm ▸ hlt)
+  · exact hOrder.1 output (hOrder.2.1 output other output hForward hlt)
+
+
 /-- Total even on invalid stage/input data. Separation is applied only to
 a set initial segment plus ONE existing candidate, never to a proper class. -/
 theorem picked_total (hM : FirstOrder.Theory.Models M nativeZF)
@@ -237,28 +270,12 @@ theorem picked_total (hM : FirstOrder.Theory.Models M nativeZF)
   have he (output) : schema.denote env output ↔ Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output := by
     exact candidate_semantics hM (env.push output) (0 : Fin 20).succ (1 : Fin 20).succ (2 : Fin 20).succ (3 : Fin 20).succ (4 : Fin 20).succ (5 : Fin 20).succ (6 : Fin 20).succ (7 : Fin 20).succ (8 : Fin 20).succ (9 : Fin 20).succ (10 : Fin 20).succ (11 : Fin 20).succ (12 : Fin 20).succ (13 : Fin 20).succ (14 : Fin 20).succ (15 : Fin 20).succ (16 : Fin 20).succ (17 : Fin 20).succ (18 : Fin 20).succ (19 : Fin 20).succ (0 : Fin 21)
   by_cases hn : ∃ output, Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output
-  · obtain ⟨first,hfirst⟩ := hn
-    obtain ⟨initial,hInitial⟩ := hOrder.2.2.2.2 first
-    obtain ⟨bound,hBound⟩ := KP.exists_insert (ZF.modelsKP (ModelTransfer.project_models_iff.mp hM)) initial first
-    obtain ⟨candidates,hCandidates⟩ := ZF.separation_exists_d (ModelTransfer.project_models_iff.mp hM) schema env bound
-    have hIn (x) : rawM.mem x candidates ↔ rawM.mem x bound ∧ Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request x :=
-      (hCandidates x).trans (and_congr_right fun _ => he x)
-    have hFirst : rawM.mem first candidates := (hIn first).mpr ⟨(hBound first).mpr (Or.inr rfl),hfirst⟩
-    obtain ⟨output,hOutput,hMin⟩ := hOrder.2.2.2.1 candidates ⟨first,hFirst⟩
-    have hCandidate := ((hIn output).mp hOutput).2
+  · obtain ⟨output,hOutput,hMin⟩ := least_denote hM hOrder schema env
+      (by obtain ⟨output,hOutput⟩ := hn; exact ⟨output,(he output).mpr hOutput⟩)
+    have hCandidate := (he output).mp hOutput
     have hNoPrior : ∀ other, Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request other →
-        ¬ InnerModel.Js_lt_d (M := rawM) other output := by
-      intro other hOther hlt
-      have hBoundOther : rawM.mem other bound := by
-        apply (hBound other).mpr
-        apply Or.inl
-        apply (hInitial other).mpr
-        rcases hMin first hFirst with heq | hltFirst
-        · exact heq ▸ hlt
-        · exact hOrder.2.1 other output first hlt hltFirst
-      rcases hMin other ((hIn other).mpr ⟨hBoundOther,hOther⟩) with heq | hForward
-      · exact hOrder.1 output (heq.symm ▸ hlt)
-      · exact hOrder.1 output (hOrder.2.1 output other output hForward hlt)
+        ¬ InnerModel.Js_lt_d (M := rawM) other output :=
+      fun other hOther => hMin other ((he other).mpr hOther)
     have hPick : Picked hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output := Or.inl ⟨hCandidate,hNoPrior⟩
     exact ⟨output,hPick,fun other hOther => picked_unique hM hOrder hOther hPick⟩
   · have hPick : Picked hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request zero := Or.inr ⟨hn,rfl⟩

@@ -19,7 +19,7 @@ open ConstructionTowerIteration (Recursive)
 open ConstructionTowerProbeFamily (Positions ProbeAt)
 open ConstructionTowerProbeIndependence (Independent)
 open ConstructionProbeMappedPath (NodeMap)
-open ForcingSupportSize (MapsTo Injection)
+open ForcingSupportSize (MapsTo Injection Small)
 open ForcingDiagramOrder (Product)
 attribute [local implicit_reducible] SetTheory.signature Project.FirstOrderSemantics.reduct
 set_option autoImplicit false
@@ -229,9 +229,147 @@ def MergerFamilies (V GV baseV one Requests : M.Carrier .set) : Prop :=
     ConstructionRequestSchedule.MergerCode one n prescription request →
     ∃ roots, MapsTo n V roots ∧ ConstructionMergerRootSystem.RootSystem n prescription V GV baseV roots
 
-/-- Actual bounded CompleteRound, from the original parent/context and actual
+/- Actual bounded CompleteRound, from the original parent/context and actual
 ordinal schedule only. The tower, execution/root tables, target, inclusion,
 all K-indexed probe families and every merger are constructed here. -/
+
+/-- The SAME actual complete-round construction trace, retained for the outer
+successor selector. A merely property-equivalent arbitrary target does not
+satisfy this contract without its actual schedule, recursion and last row. -/
+def Built (hM : FirstOrder.Theory.Models M nativeZF)
+    (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O : M.Carrier .set) : Prop :=
+  ∃ u A I indexTop default oldSchedule oldPlace r order J collapse inverse Schedule Place last
+      history P F Steps Events Roots L,
+    Context hM w Q R top D mul e mark H C zero one u J Schedule ∧
+    ConstructionOrdinalSchedule.Data hM Requests K A I indexTop default oldSchedule oldPlace r order
+      J collapse inverse Schedule Place last ∧ Small J mu ∧
+    Recursive hM w Q R top D mul e mark H C zero one J Schedule J history ∧
+    Matrix J history zero P F ∧ StepSet J Steps ∧
+    ConstructionTowerExecution.Graph hM w Q R top D mul e mark H C zero one Schedule history F J Steps Events ∧
+    Chart 8 Steps Events Roots ∧ Row history last W G unitW markW HW CW L O last ∧
+    ConstructionTowerCardinality.AllSmall J history mu
+
+
+def built {m : Nat} (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O : Fin m) : Project.Formula 1 m :=
+  (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE
+  (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE
+  (.existsE (.existsE (.conj (ConstructionTowerIterationCases.context
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (21 : Fin (m+22)) (12 : Fin (m+22)) (9 : Fin (m+22))) (.conj (ConstructionOrdinalScheduleSyntax.data
+  Requests.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  K.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (20 : Fin (m+22)) (19 : Fin (m+22)) (18 : Fin (m+22)) (17 : Fin (m+22)) (16 : Fin (m+22)) (15 : Fin
+  (m+22)) (14 : Fin (m+22)) (13 : Fin (m+22)) (12 : Fin (m+22)) (11 : Fin (m+22)) (10 : Fin (m+22)) (9 : Fin
+  (m+22)) (8 : Fin (m+22)) (7 : Fin (m+22))) (.conj (ProjectSyntax.encode id (ForcingSupportSize.small (12 :
+  Fin (m+22))
+  mu.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))
+  (.conj (ConstructionTowerIteration.recursive
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (12 : Fin (m+22)) (9 : Fin (m+22)) (12 : Fin (m+22)) (6 : Fin (m+22))) (.conj
+  (ConstructionTowerTransitions.matrix (12 : Fin (m+22)) (6 : Fin (m+22))
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (5 : Fin (m+22)) (4 : Fin (m+22))) (.conj (ConstructionTowerExecution.stepSet (12 : Fin (m+22)) (3 : Fin
+  (m+22))) (.conj (ConstructionTowerExecution.graph
+  w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  Q.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  R.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  top.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mark.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  H.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  C.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (9 : Fin (m+22)) (6 : Fin (m+22)) (4 : Fin (m+22)) (12 : Fin (m+22)) (3 : Fin (m+22)) (2 : Fin (m+22)))
+  (.conj (ConstructionTowerHistory.chart 8 (3 : Fin (m+22)) (2 : Fin (m+22)) (1 : Fin (m+22))) (.conj
+  (ConstructionTowerHistory.row (6 : Fin (m+22)) (7 : Fin (m+22))
+  W.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  G.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  unitW.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  markW.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  HW.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  CW.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (0 : Fin (m+22))
+  O.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  (7 : Fin (m+22))) (ConstructionTowerCardinality.allSmall (12 : Fin (m+22)) (6 : Fin (m+22))
+  mu.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))))))))))))))))))))))))))))))))
+
+theorem built_freeClosed {m : Nat} (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O : Fin m) :
+    (built w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O).FreeClosed := by
+  simp -implicitDefEqProofs [built,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionTowerIterationCases.context_freeClosed,ConstructionOrdinalScheduleSyntax.data_freeClosed,ConstructionTowerIteration.recursive_freeClosed,ConstructionTowerTransitions.matrix_freeClosed,ConstructionTowerExecution.stepSet_freeClosed,ConstructionTowerExecution.graph_freeClosed,ConstructionTowerHistory.chart_freeClosed,ConstructionTowerHistory.row_freeClosed,ConstructionTowerCardinality.allSmall_freeClosed]
+
+theorem built_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O : Fin m) :
+    Project.Formula.satisfies env (built w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O) ↔ Built hM (env.bound w) (env.bound Q) (env.bound R) (env.bound top) (env.bound D) (env.bound mul) (env.bound e) (env.bound mark) (env.bound H) (env.bound C) (env.bound zero) (env.bound one) (env.bound K) (env.bound mu) (env.bound Requests) (env.bound W) (env.bound G) (env.bound unitW) (env.bound markW) (env.bound HW) (env.bound CW) (env.bound O) := by
+  simp only [built,Built,Project.Formula.satisfies_exists_iff,
+    Project.Formula.satisfies_conj_iff,
+
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ConstructionTowerIterationCases.context_semantics hM,ConstructionOrdinalScheduleSyntax.data_semantics hM,ForcingSupportSize.small_semantics (M := M),ConstructionTowerIteration.recursive_semantics hM,ConstructionTowerTransitions.matrix_semantics hM,ConstructionTowerExecution.stepSet_semantics,ConstructionTowerExecution.graph_semantics hM,ConstructionTowerHistory.chart_semantics hM 8,ConstructionTowerHistory.row_semantics hM,ConstructionTowerCardinality.allSmall_semantics hM]
+  rfl
+
+
+theorem exists_complete_round_built (hM : FirstOrder.Theory.Models M nativeZF)
+    (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M))
+    {w Q R top D mul e mark H C zero one u J Schedule
+      Requests K A I indexTop default oldSchedule oldPlace r order collapse inverse Place last mu : M.Carrier .set}
+    (hCtx : Context hM w Q R top D mul e mark H C zero one u J Schedule)
+    (hData : ConstructionOrdinalSchedule.Data hM Requests K A I indexTop default oldSchedule oldPlace r order
+      J collapse inverse Schedule Place last)
+    (hK : ∃ k, (Project.FirstOrderSemantics.reduct M).mem k K)
+    (hmu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) w mu)
+    (hD : ForcingSupportSize.Small D mu) (hLength : ForcingSupportSize.Small J mu) :
+    ∃ V GV unitV markV HV CV baseV,
+      ConstructionRoundFields.ObjectFields hM w Q R top V GV unitV markV HV CV ∧
+      ConstructionRoundFields.MapFields hM w Q D V mul GV e unitV mark markV H C HV CV baseV ∧
+      ConstructionRoundFields.Profiles w D V mul GV baseV ∧ ForcingSupportSize.Small V mu ∧
+      ProbeFamilies w K V GV markV baseV zero Requests ∧
+      MergerFamilies V GV baseV one Requests ∧
+      Built hM w Q R top D mul e mark H C zero one K mu Requests V GV unitV markV HV CV baseV := by
+  obtain ⟨history,Domains,Muls,Units,Marks,Heights,Costs,Incoming,Origins,Times,E,P,F,
+    hRec,_,_,_,_,hF,_,_,hSmall,_⟩ :=
+    ConstructionTowerCardinality.exists_tower hM hOrder hChoice hCtx hmu hD hLength
+  obtain ⟨Steps,Outputs,Events,RootValues,Roots,hSteps,_,hEvents,_,hRoots⟩ :=
+    ConstructionTowerExecution.exists_execution hM hOrder hCtx hRec hF
+  have hDataCopy := hData
+  obtain ⟨_,_,_,_,_,_,_,_,_,_,hLast,_⟩ := hDataCopy
+  obtain ⟨V,GV,unitV,markV,HV,CV,KV,baseV,hRow,hObj,hMap,hProfiles,hBound⟩ :=
+    target hM hCtx hRec hLast hSmall
+  refine ⟨V,GV,unitV,markV,HV,CV,baseV,hObj,hMap,hProfiles,hBound,?_,?_,?_⟩
+  · intro request a b node hRequest hCode
+    obtain ⟨Family,hIndependent,_,hProfile⟩ :=
+      exists_probe hM hCtx hRec hF hSteps hEvents hRoots hData hRequest hCode hRow
+    exact ⟨Family,hIndependent,hProfile⟩
+  · intro request n prescription hRequest hCode
+    exact realizes_merger hM hCtx hRec hF hData hK hRequest hCode hRow
+
+  · exact ⟨u,A,I,indexTop,default,oldSchedule,oldPlace,r,order,J,collapse,inverse,Schedule,Place,last,
+      history,P,F,Steps,Events,Roots,KV,hCtx,hData,hLength,hRec,hF,hSteps,hEvents,hRoots,hRow,hSmall⟩
+
 theorem exists_complete_round (hM : FirstOrder.Theory.Models M nativeZF)
     (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
     (hChoice : ConstructionDirectedCardinality.Choice (M := M))
@@ -249,26 +387,60 @@ theorem exists_complete_round (hM : FirstOrder.Theory.Models M nativeZF)
       ConstructionRoundFields.Profiles w D V mul GV baseV ∧ ForcingSupportSize.Small V mu ∧
       ProbeFamilies w K V GV markV baseV zero Requests ∧
       MergerFamilies V GV baseV one Requests := by
-  obtain ⟨history,Domains,Muls,Units,Marks,Heights,Costs,Incoming,Origins,Times,E,P,F,
-    hRec,_,_,_,_,hF,_,_,hSmall,_⟩ :=
-    ConstructionTowerCardinality.exists_tower hM hOrder hChoice hCtx hmu hD hLength
-  obtain ⟨Steps,Outputs,Events,RootValues,Roots,hSteps,_,hEvents,_,hRoots⟩ :=
-    ConstructionTowerExecution.exists_execution hM hOrder hCtx hRec hF
-  have hDataCopy := hData
-  obtain ⟨_,_,_,_,_,_,_,_,_,_,hLast,_⟩ := hDataCopy
-  obtain ⟨V,GV,unitV,markV,HV,CV,KV,baseV,hRow,hObj,hMap,hProfiles,hBound⟩ :=
-    target hM hCtx hRec hLast hSmall
-  refine ⟨V,GV,unitV,markV,HV,CV,baseV,hObj,hMap,hProfiles,hBound,?_,?_⟩
-  · intro request a b node hRequest hCode
-    obtain ⟨Family,hIndependent,_,hProfile⟩ :=
-      exists_probe hM hCtx hRec hF hSteps hEvents hRoots hData hRequest hCode hRow
-    exact ⟨Family,hIndependent,hProfile⟩
-  · intro request n prescription hRequest hCode
-    exact realizes_merger hM hCtx hRec hF hData hK hRequest hCode hRow
+  obtain ⟨V,GV,unitV,markV,HV,CV,baseV,hObj,hMap,hProfiles,hBound,hProbes,hMergers,_⟩ :=
+    exists_complete_round_built hM hOrder hChoice hCtx hData hK hmu hD hLength
+  exact ⟨V,GV,unitV,markV,HV,CV,baseV,hObj,hMap,hProfiles,hBound,hProbes,hMergers⟩
 
 /-- Discharge even the request carrier, schedule, ordinal index and its size
 from the ORIGINAL CompleteRound parent. The existing bounded schedule and
 complete-round constructors are consumed, rather than assumed as output. -/
+theorem exists_from_parent_built (hM : FirstOrder.Theory.Models M nativeZF)
+    (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M))
+    {w Q R top D mul e mark H C zero one u K mu : M.Carrier .set}
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega w)
+    (hQ : ConstructionFractionOrder.Carrier w Q)
+    (hR : ConstructionRealCuts.CutCarrier hM w Q R)
+    (hCoordinates : ConstructionFractionOrder.Coordinates w u one one)
+    (hone : (Project.FirstOrderSemantics.reduct M).IsOrdinalOne one)
+    (hTop : ConstructionRealCuts.Principal hM w Q u top)
+    (hObj : ConstructionRoundFields.ObjectFields hM w Q R top D mul e mark H C)
+    (hz : ∀ x, ¬ (Project.FirstOrderSemantics.reduct M).mem x zero)
+    (hzw : (Project.FirstOrderSemantics.reduct M).mem zero w)
+    (hK : ∃ k, (Project.FirstOrderSemantics.reduct M).mem k K)
+    (hmu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) w mu)
+    (hpow : (Project.FirstOrderSemantics.reduct M).IsCardinalExponentiation (KuratowskiZF.interpretation hM) mu mu w)
+    (hD : ForcingSupportSize.Small D mu) (hKSmall : ForcingSupportSize.Small K mu) :
+    ∃ Requests V GV unitV markV HV CV baseV,
+      ConstructionRequestCarrier.Carrier w D mul e zero one Requests ∧
+      ConstructionRoundFields.ObjectFields hM w Q R top V GV unitV markV HV CV ∧
+      ConstructionRoundFields.MapFields hM w Q D V mul GV e unitV mark markV H C HV CV baseV ∧
+      ConstructionRoundFields.Profiles w D V mul GV baseV ∧ ForcingSupportSize.Small V mu ∧
+      ProbeFamilies w K V GV markV baseV zero Requests ∧
+      MergerFamilies V GV baseV one Requests ∧
+      Built hM w Q R top D mul e mark H C zero one K mu Requests V GV unitV markV HV CV baseV := by
+  obtain ⟨Requests,node,default,hCarrier,_,_,_,_,hDefault,h01,hLegacy,_⟩ :=
+    ConstructionRequestCarrier.exists_system hM hw hz hzw hone hObj.1 hObj.2.2.2.1 hObj.2.2.2.2.1
+  obtain ⟨one',hSucc,hOne⟩ := hw.1.2 zero hzw
+  obtain ⟨z,hz',hSucc'⟩ := hone
+  have eqZero := (ModelTransfer.extensionality hM).eq_of_same_members z zero
+    (fun x => ⟨fun h => False.elim (hz' x h),fun h => False.elim (hz x h)⟩)
+  subst z
+  have eqOne := (ModelTransfer.extensionality hM).eq_of_same_members one' one
+    (fun x => (hSucc x).trans (hSucc' x).symm)
+  have how : (Project.FirstOrderSemantics.reduct M).mem one w := eqOne ▸ hOne
+  obtain ⟨A,I,indexTop,oldSchedule,oldPlace,r,order,J,collapse,inverse,Schedule,Place,last,
+    hData,_,_,_,hJSmall,_⟩ := ConstructionScheduleCardinality.exists_bounded_system hM hChoice hw hmu hpow
+      hD hKSmall hzw how h01 hCarrier hDefault hK
+  have hDataCopy := hData
+  obtain ⟨hOrdered,_,_,_,_,_,hSchedule,_⟩ := hDataCopy
+  obtain ⟨_,_,_,_,_,_,_,_,hJ,_⟩ := hOrdered
+  have hCtx : Context hM w Q R top D mul e mark H C zero one u J Schedule :=
+    ⟨hw,hQ,hR,hCoordinates,⟨zero,hz,hSucc'⟩,hTop,hObj,hz,hzw,hJ,hSchedule.1,
+      fun i q hq => hLegacy q (hSchedule.2 i q hq)⟩
+  obtain ⟨V,GV,unitV,markV,HV,CV,baseV,hTarget,hMap,hProfiles,hBound,hProbes,hMergers,hBuilt⟩ :=
+    exists_complete_round_built hM hOrder hChoice hCtx hData hK hmu hD hJSmall
+  exact ⟨Requests,V,GV,unitV,markV,HV,CV,baseV,hCarrier,hTarget,hMap,hProfiles,hBound,hProbes,hMergers,hBuilt⟩
 theorem exists_from_parent (hM : FirstOrder.Theory.Models M nativeZF)
     (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
     (hChoice : ConstructionDirectedCardinality.Choice (M := M))
@@ -293,28 +465,10 @@ theorem exists_from_parent (hM : FirstOrder.Theory.Models M nativeZF)
       ConstructionRoundFields.Profiles w D V mul GV baseV ∧ ForcingSupportSize.Small V mu ∧
       ProbeFamilies w K V GV markV baseV zero Requests ∧
       MergerFamilies V GV baseV one Requests := by
-  obtain ⟨Requests,node,default,hCarrier,_,_,_,_,hDefault,h01,hLegacy,_⟩ :=
-    ConstructionRequestCarrier.exists_system hM hw hz hzw hone hObj.1 hObj.2.2.2.1 hObj.2.2.2.2.1
-  obtain ⟨one',hSucc,hOne⟩ := hw.1.2 zero hzw
-  obtain ⟨z,hz',hSucc'⟩ := hone
-  have eqZero := (ModelTransfer.extensionality hM).eq_of_same_members z zero
-    (fun x => ⟨fun h => False.elim (hz' x h),fun h => False.elim (hz x h)⟩)
-  subst z
-  have eqOne := (ModelTransfer.extensionality hM).eq_of_same_members one' one
-    (fun x => (hSucc x).trans (hSucc' x).symm)
-  have how : (Project.FirstOrderSemantics.reduct M).mem one w := eqOne ▸ hOne
-  obtain ⟨A,I,indexTop,oldSchedule,oldPlace,r,order,J,collapse,inverse,Schedule,Place,last,
-    hData,_,_,_,hJSmall,_⟩ := ConstructionScheduleCardinality.exists_bounded_system hM hChoice hw hmu hpow
-      hD hKSmall hzw how h01 hCarrier hDefault hK
-  have hDataCopy := hData
-  obtain ⟨hOrdered,_,_,_,_,_,hSchedule,_⟩ := hDataCopy
-  obtain ⟨_,_,_,_,_,_,_,_,hJ,_⟩ := hOrdered
-  have hCtx : Context hM w Q R top D mul e mark H C zero one u J Schedule :=
-    ⟨hw,hQ,hR,hCoordinates,⟨zero,hz,hSucc'⟩,hTop,hObj,hz,hzw,hJ,hSchedule.1,
-      fun i q hq => hLegacy q (hSchedule.2 i q hq)⟩
-  obtain ⟨V,GV,unitV,markV,HV,CV,baseV,hTarget,hMap,hProfiles,hBound,hProbes,hMergers⟩ :=
-    exists_complete_round hM hOrder hChoice hCtx hData hK hmu hD hJSmall
-  exact ⟨Requests,V,GV,unitV,markV,HV,CV,baseV,hCarrier,hTarget,hMap,hProfiles,hBound,hProbes,hMergers⟩
+  obtain ⟨Requests,V,GV,unitV,markV,HV,CV,baseV,hCarrier,hObj',hMap,hProfiles,hBound,hProbes,hMergers,_⟩ :=
+    exists_from_parent_built hM hOrder hChoice hw hQ hR hCoordinates hone hTop hObj hz hzw hK hmu hpow hD hKSmall
+  exact ⟨Requests,V,GV,unitV,markV,HV,CV,baseV,hCarrier,hObj',hMap,hProfiles,hBound,hProbes,hMergers⟩
+
 
 def probeFamilies {m : Nat} (w K V GV markV baseV zero Requests : Fin m) : Project.Formula 1 m :=
   (.forallE (.forallE (.forallE (.forallE (.imp (.mem (.bound (3 : Fin (m+4))) (.bound
