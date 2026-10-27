@@ -11549,4 +11549,17 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionMergerRootSystem.realizedSentence) :=
   ConstructionMergerRootSystem.realized_kernel_certificate
 
+-- Actual image/composite construction, then SAME recursive tower later-cut consumer.
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionConeTransport.probeAfterSentence) :=
+  ConstructionConeTransport.probeAfter_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionConeTransport.mergerAfterSentence) :=
+  ConstructionConeTransport.mergerAfter_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionTowerRequestCones.cutSentence) :=
+  ConstructionTowerRequestCones.cut_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -2256,7 +2256,9 @@ def main() -> None:
                                ('construction_operation_source', 'ConstructionOperationSource', 12),
                                ('construction_round_source', 'ConstructionRoundSource', 6),
                                ('construction_probe_independent', 'ConstructionProbeIndependent', 17),
-                               ('construction_merger_root_system', 'ConstructionMergerRootSystem', 20)):
+                               ('construction_merger_root_system', 'ConstructionMergerRootSystem', 20),
+                               ('construction_cone_transport', 'ConstructionConeTransport', 13),
+                               ('construction_tower_request_cones', 'ConstructionTowerRequestCones', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5821,7 +5823,11 @@ def main() -> None:
         "source_original_Probe_gate_independence_and_Merger_full_RootSystem_transferred": True,
         "source_original_Merger_full_RootSystem_all_internal_extension_elements_kernel_proved": True,
         "source_actual_request_Provenance_implies_same_chosen_Merger_RootSystem_kernel_proved": True,
-        "source_full_Probe_and_Merger_exact_cones_later_cut_transport_complete": False,
+        "source_full_Probe_and_Merger_exact_cones_later_cut_transport_complete": True,
+        "source_exact_later_cones_construct_actual_image_and_composite_graphs": True,
+        "source_actual_recursive_tower_all_internal_later_cuts_original_request_cones_kernel_proved": True,
+        "source_actual_recursive_tower_Merger_final_base_equals_SAME_target_row_fromBase": True,
+        "source_actual_recursive_tower_Probe_composite_equals_global_F_i_k_full_MapFields_profile_and_current_freshness": True,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

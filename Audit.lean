@@ -31562,3 +31562,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerRootSystem.realizedSentence
 #print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_models
 #print axioms PPAC.Migration.ConstructionMergerRootSystem.realized_kernel_certificate
+
+-- Exact cone transport along actual conservative legs and SAME recursive tower cuts.
+#print axioms PPAC.Migration.ConstructionConeTransport.probe_map
+#print axioms PPAC.Migration.ConstructionConeTransport.merger_map
+#print axioms PPAC.Migration.ConstructionConeTransport.exists_probe_map
+#print axioms PPAC.Migration.ConstructionConeTransport.exists_merger_map
+#print axioms PPAC.Migration.ConstructionConeTransport.merger_pullback
+#print axioms PPAC.Migration.ConstructionConeTransport.probe_after
+#print axioms PPAC.Migration.ConstructionConeTransport.merger_after
+#print axioms PPAC.Migration.ConstructionConeTransport.probeAfterSentence
+#print axioms PPAC.Migration.ConstructionConeTransport.probeAfter_models
+#print axioms PPAC.Migration.ConstructionConeTransport.probeAfter_kernel_certificate
+#print axioms PPAC.Migration.ConstructionConeTransport.mergerAfterSentence
+#print axioms PPAC.Migration.ConstructionConeTransport.mergerAfter_models
+#print axioms PPAC.Migration.ConstructionConeTransport.mergerAfter_kernel_certificate
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.At
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.at_later
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.conesAt
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.conesAt_freeClosed
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.conesAt_semantics
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.cutSentence
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.cut_models
+#print axioms PPAC.Migration.ConstructionTowerRequestCones.cut_kernel_certificate

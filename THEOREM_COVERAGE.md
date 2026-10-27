@@ -397,12 +397,13 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 
 新增12项显式声明及3个修订模块94项声明均通过 trust=0 预审及正式全量验收：2850 项构建、31073 项声明，九命令／五次 trust=0 均退出0，零警告；原31061项足迹不变，2414份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。源 probe_gate.intersections／probe_independent 与 Merger 全锥 RootSystem、完整轮次／饱和及最终内部 Con 仍未完成。
 
-## 原第8阶段：原正规形／自由作用数据传到候选及全塔
+## 原第8阶段：原操作精确锥与实际后续切片
 
 | 固定源消费者 | 实际入口／消费者 | 精确范围 |
 |---|---|---|
-| ProbeData.probe_gate／probe_old_profile／independent | OperationSource.Alpha／Probe；ProbeParent.exists_probe_with_source | 同一 factor/terminal/quotient/projection/action/target/exit/cone 数据与 canonical Word/product/generator/probe 图；原父证明分解，旧 exists_probe 类型保留 |
-| MergerData.cone_realization.map | OperationSource.Merger；RoundSource.merger | 同一处方／copy 商／投影／等式、copy/word 自由作用、word 乘法、old inclusion、实际 roots 图／laws，全部内部 n 与旧处方量词保留 |
-| 原 Request.map／Round.step／map_succ | RoundSource.Provenance → Candidate/Picked/Extended/SuccessorAt | 匹配同一原请求和实际映射；候选必须给出原正规形来源，完整 Step、当前新鲜性、同一 W/G/unit/O/roots 保留；现有原核端点同步导出来源数据 |
+| ProbeData.probe_gate／probe_old_profile／independent | OperationSource／ProbeIndependent | 同一真实正规形；零位gate／完整内部路径profile／全W精确公共锥，forall15；实际Provenance消费forall17原核证书 |
+| MergerData.cone_realization／RootSystem | OperationSource／MergerRootSystem | 缺失start锥不交、存在start完整JoinProperty，全部扩张新右因子；forall12／实际请求消费forall16原核证书 |
+| RootSystem.map／OverlapPrescription.map_comp | ConstructionConeTransport | 直接用Conservative.Intersections/Common、原生复合、原映射处方；实际构造像及基图，两条forall20原核证书 |
+| Round.probe_independent:337／probe_profile:308／probe_new:325／creates_merger:275 | ConstructionTowerRequestCones.at_later／cut_kernel_certificate | 同一Recursive／map_succ／incoming；由Valid读取真实腿；Probe图=全局F(i,k)、全MapFields／最终profile／相对整个旧阶段新鲜性；Merger基图=同一目标Row的fromBase；forall21原核证书，覆盖全部内部后续切片及k=j |
 
-新增19项声明及旧124项受影响声明均通过trust=0预审及正式全量验收：2852项构建、31092项声明，九命令／五次trust=0均退出0，零警告；原31073项足迹不变，2416份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。Probe 精确公共锥、Merger 全锥 RootSystem、后续切片／完整轮次／饱和和最终内部 Con 仍未完成。
+本批21项声明／旧31129项足迹逐项不变；正式验收2856项构建、31150项声明，九命令／五次trust=0均退出0，零编译警告；2420份当前指纹／75份源哈希匹配，无新增公理依赖。实际后续切片传输已完成；整轮target/inclusion、重复Probe家族的单射／两两独立性、多轮饱和及最终内部Con未完成。
