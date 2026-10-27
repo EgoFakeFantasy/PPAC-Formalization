@@ -11306,4 +11306,12 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionDirectedObjectSyntax.constructionSentence) :=
   ConstructionDirectedObjectSyntax.construction_kernel_certificate
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDirectedLiftSyntax.universalSentence) :=
+  ConstructionDirectedLiftSyntax.universal_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDirectedColimitSyntax.constructionSentence) :=
+  ConstructionDirectedColimitSyntax.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

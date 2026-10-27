@@ -2202,7 +2202,12 @@ def main() -> None:
                                ('construction_directed_cardinality', 'ConstructionDirectedCardinality', 18),
                                ('construction_directed_marks', 'ConstructionDirectedMarks', 13),
                                ('construction_directed_object', 'ConstructionDirectedObject', 1),
-                               ('construction_directed_object_syntax', 'ConstructionDirectedObjectSyntax', 3)):
+                               ('construction_directed_object_syntax', 'ConstructionDirectedObjectSyntax', 3),
+                               ('construction_directed_lift', 'ConstructionDirectedLift', 17),
+                               ('construction_directed_lift_syntax', 'ConstructionDirectedLiftSyntax', 21),
+                               ('construction_directed_cocone', 'ConstructionDirectedCocone', 11),
+                               ('construction_directed_colimit', 'ConstructionDirectedColimit', 5),
+                               ('construction_directed_colimit_syntax', 'ConstructionDirectedColimitSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5663,11 +5668,14 @@ def main() -> None:
         "source_directed_limit_complete_weighted_limit_proved": True,
         "source_directed_limit_actual_height_cost_graphs_four_bounds_and_exact_cap_margins_proved": True,
         "source_directed_limit_all_old_pairs_actual_families_same_unique_supremum_proved": True,
-        "source_directed_limit_weighted_scope": "Complete generic weighted pointed Object and all inclusions; original Choice explicit only in cardinal output. Actual universal-colimit/tower/request schedule remain open",
+        "source_directed_limit_weighted_scope": "Complete generic weighted pointed Object, actual canonical cocone family and full universal lift/fac/uniq; original Choice explicit only in cardinal output. Actual final weighted tower/request schedule remain open",
         "source_directed_limit_cardinality_and_marked_Object_assembly_proved": True,
         "source_directed_limit_cardinality_source_object_Choice_explicit_in_output_only": True,
         "source_directed_limit_distinguished_mark_nonunit_and_all_inclusion_mark_equations_proved": True,
         "source_directed_limit_complete_pointed_weighted_object_constructed": True,
+        "source_directed_limit_actual_canonical_cocone_leg_family_and_naturality_constructed": True,
+        "source_directed_limit_full_weighted_pointed_conservative_lift_fac_unique_proved": True,
+        "source_directed_limit_actual_generic_universal_colimit_constructed": True,
         "source_directed_limit_actual_universal_colimit_and_final_tower_constructed": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,

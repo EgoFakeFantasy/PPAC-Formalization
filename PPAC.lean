@@ -586,3 +586,8 @@ import PPAC.Migration.ConstructionDirectedCardinality
 import PPAC.Migration.ConstructionDirectedMarks
 import PPAC.Migration.ConstructionDirectedObject
 import PPAC.Migration.ConstructionDirectedObjectSyntax
+import PPAC.Migration.ConstructionDirectedLift
+import PPAC.Migration.ConstructionDirectedLiftSyntax
+import PPAC.Migration.ConstructionDirectedCocone
+import PPAC.Migration.ConstructionDirectedColimit
+import PPAC.Migration.ConstructionDirectedColimitSyntax
