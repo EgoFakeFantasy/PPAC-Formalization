@@ -27547,3 +27547,27 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.constructionSentence
 #print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.construction_models
 #print axioms PPAC.Migration.ConstructionMergerCoordinateMarginSyntax.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.ClassBound
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.Stage
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.classBound
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.classBound_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.classBound_semantics
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.stage
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.stage_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.stage_semantics
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.finite_uniform
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.MissedBound
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.UniformAt
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.copies_uniform_margin
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.CostMember
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.Family
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.Cap
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.costMember
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.costMember_freeClosed
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.costMember_semantics
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.exists_family
+#print axioms PPAC.Migration.ConstructionMergerUniformMargin.canonical_uniform
+#print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.constructionSentence
+#print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.construction_models
+#print axioms PPAC.Migration.ConstructionMergerUniformMarginSyntax.construction_kernel_certificate
