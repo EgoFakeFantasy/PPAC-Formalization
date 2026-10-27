@@ -11322,4 +11322,12 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionRequestMapsSyntax.mapsSentence) :=
   ConstructionRequestMapsSyntax.maps_kernel_certificate
 
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionRoundStepSyntax.stepSentence) :=
+  ConstructionRoundStepSyntax.step_kernel_certificate
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionRequestScheduleSyntax.scheduleSentence) :=
+  ConstructionRequestScheduleSyntax.schedule_kernel_certificate
+
 end PPAC.Migration.Step4Checks

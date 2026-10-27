@@ -595,3 +595,9 @@ import PPAC.Migration.ConstructionMergerPrescriptionMap
 import PPAC.Migration.ConstructionMergerPrescriptionMapSyntax
 import PPAC.Migration.ConstructionRequestMaps
 import PPAC.Migration.ConstructionRequestMapsSyntax
+import PPAC.Migration.ConstructionRoundFields
+import PPAC.Migration.ConstructionRoundSuccessors
+import PPAC.Migration.ConstructionRoundStep
+import PPAC.Migration.ConstructionRoundStepSyntax
+import PPAC.Migration.ConstructionRequestSchedule
+import PPAC.Migration.ConstructionRequestScheduleSyntax

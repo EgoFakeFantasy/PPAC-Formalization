@@ -2211,7 +2211,13 @@ def main() -> None:
                                ('construction_merger_prescription_map', 'ConstructionMergerPrescriptionMap', 18),
                                ('construction_merger_prescription_map_syntax', 'ConstructionMergerPrescriptionMapSyntax', 9),
                                ('construction_request_maps', 'ConstructionRequestMaps', 4),
-                               ('construction_request_maps_syntax', 'ConstructionRequestMapsSyntax', 6)):
+                               ('construction_request_maps_syntax', 'ConstructionRequestMapsSyntax', 6),
+                               ('construction_round_fields', 'ConstructionRoundFields', 9),
+                               ('construction_round_successors', 'ConstructionRoundSuccessors', 4),
+                               ('construction_round_step', 'ConstructionRoundStep', 5),
+                               ('construction_round_step_syntax', 'ConstructionRoundStepSyntax', 30),
+                               ('construction_request_schedule', 'ConstructionRequestSchedule', 42),
+                               ('construction_request_schedule_syntax', 'ConstructionRequestScheduleSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5685,7 +5691,14 @@ def main() -> None:
         "source_request_map_actual_partial_start_graph_and_exact_one_step_relation_reflection_proved": True,
         "source_request_map_validity_iff_all_target_elements_without_transitive_closure_proved": True,
         "source_request_map_actual_internal_path_and_nonunit_payload_unique_proved": True,
-        "source_request_map_scope": "Both original parameter constructors transported along same actual conservative hom. Actual Round.step successor/fromBase assembly and final weighted tower/request schedule remain open",
+        "source_request_map_scope": "Both parameter constructors transported and BOTH actual full weighted Round.step successors/fromBase/operation witnesses now constructed. Given Schedule maps uniformly at VARYING stages; actual ordinal iteration/final exhaustive CompleteRounds remain open",
+        "source_round_step_actual_both_weighted_successors_and_same_fromBase_constructed": True,
+        "source_round_step_original_base_Probe_profile_and_Merger_root_realization_retained": True,
+        "source_round_step_full_fields_all_profiles_same_old_cap_and_cardinality_retained": True,
+        "source_request_schedule_actual_unique_mapped_graph_arbitrary_varying_stage_domains_constructed": True,
+        "source_request_schedule_uniform_graph_has_fixed_target_carrier_or_omega_index_restriction": False,
+        "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": False,
+        "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,
