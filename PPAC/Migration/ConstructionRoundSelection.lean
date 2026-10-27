@@ -4,7 +4,7 @@ the SAME internal L, using its existing set-like Jensen order. Both original
 requests, their witnesses and the exact fromBase composition are retained.
 This is the successor-selector consumed by the ordinal iteration; it is
 not a claim that the full tower or internal Con has already been built. -/
-import PPAC.Migration.ConstructionRequestSchedule
+import PPAC.Migration.ConstructionRoundFresh
 import PPAC.Migration.ConstructibleSource
 
 namespace PPAC.Migration.ConstructionRoundSelection
@@ -57,16 +57,15 @@ theorem pack_injective {W G e mark H C O base roots W' G' e' mark' H' C' O' base
   obtain ⟨rfl,rfl⟩ := PureKuratowski.code_injective h7 g7
   exact ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩
 
-def Done (w D mul zero one request W G mark base roots : M.Carrier .set) : Prop :=
-  (∃ a b node, ProbeCode zero a b node request ∧ ProbeDone w W G mark base a b node ∧ roots = zero) ∨
-  ∃ n P, MergerCode one n P request ∧ MergerDone n D W mul G P base roots
+def Done (w D mul zero one request W G mark O base roots : M.Carrier .set) : Prop :=
+  ConstructionRoundFresh.Completed w D mul zero one request W G mark O base roots
 
 def Candidate (hM : FirstOrder.Theory.Models M nativeZF)
     (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : M.Carrier .set) : Prop :=
   ∃ W G unitW markW HL LC O baseW roots,
     Pack W G unitW markW HL LC O baseW roots output ∧
     ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f W G unitW markW HL LC O baseW ∧
-    Done w D mul zero one request W G markW baseW roots
+    Done w D mul zero one request W G markW O baseW roots
 
 def Picked (hM : FirstOrder.Theory.Models M nativeZF)
     (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : M.Carrier .set) : Prop :=
@@ -90,14 +89,14 @@ theorem candidate_exists (hM : FirstOrder.Theory.Models M nativeZF)
     (hq : Request w D mul e zero one request) :
     ∃ output, Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output := by
   rcases hq with ⟨a,b,node,hCode,hb,hne,hPath⟩ | ⟨n,P,hCode,hn,hnp,hP,hValid⟩
-  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,hStep,hDone⟩ :=
-      ConstructionRoundStep.probe_step hM hw hz hzw hQ hR hu hone htop hObjN hf hb hne hPath
-    obtain ⟨output,hPack⟩ := pack_exists hM W G unitW markW HL LC O baseW zero
-    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,zero,hPack,hStep,Or.inl ⟨a,b,node,hCode,hDone,rfl⟩⟩
-  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hStep,hDone⟩ :=
-      ConstructionRoundStep.merger_step hM hw hz hzw hQ hR hu hone htop hObjD hObjN hf hn hnp hP hValid
+  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,gen,hStep,hDone,hFresh⟩ :=
+      ConstructionRoundFresh.probe hM hw hz hzw hQ hR hu hone htop hObjN hf hb hne hPath
+    obtain ⟨output,hPack⟩ := pack_exists hM W G unitW markW HL LC O baseW gen
+    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,gen,hPack,hStep,Or.inl ⟨a,b,node,hCode,hDone,hFresh⟩⟩
+  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hStep,hDone,hFresh⟩ :=
+      ConstructionRoundFresh.merger hM hw hz hzw hQ hR hu hone htop hObjD hObjN hf hn hnp hP hValid
     obtain ⟨output,hPack⟩ := pack_exists hM W G unitW markW HL LC O baseW roots
-    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,Or.inr ⟨n,P,hCode,hDone⟩⟩
+    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,Or.inr ⟨n,P,hCode,hDone,hFresh⟩⟩
 
 def pack {m : Nat} (W G e mark H C O base roots output : Fin m) : Project.Formula 1 m :=
   (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (PureKuratowskiProject.code
@@ -127,28 +126,20 @@ theorem pack_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
   rfl
 
 
-def done {m : Nat} (w D mul zero one request W G mark base roots : Fin m) : Project.Formula 1 m :=
-  (.disj (.existsE (.existsE (.existsE (.conj (ConstructionRequestSchedule.probeCode zero.succ.succ.succ (2 :
-  Fin (m+3)) (1 : Fin (m+3)) (0 : Fin (m+3)) request.succ.succ.succ) (.conj
-  (ConstructionRoundStepSyntax.probeDone w.succ.succ.succ W.succ.succ.succ G.succ.succ.succ
-  mark.succ.succ.succ base.succ.succ.succ (2 : Fin (m+3)) (1 : Fin (m+3)) (0 : Fin (m+3)))
-  (Project.Formula.extensionalEq (.bound roots.succ.succ.succ) (.bound zero.succ.succ.succ))))))) (.existsE
-  (.existsE (.conj (ConstructionRequestSchedule.mergerCode one.succ.succ (1 : Fin (m+2)) (0 : Fin (m+2))
-  request.succ.succ) (ConstructionRoundStepSyntax.mergerDone (1 : Fin (m+2)) D.succ.succ W.succ.succ
-  mul.succ.succ G.succ.succ (0 : Fin (m+2)) base.succ.succ roots.succ.succ)))))
+def done {m : Nat} (w D mul zero one request W G mark O base roots : Fin m) : Project.Formula 1 m :=
+  ConstructionRoundFresh.completed w D mul zero one request W G mark O base roots
 
-theorem done_freeClosed {m : Nat} (w D mul zero one request W G mark base roots : Fin m) :
-    (done w D mul zero one request W G mark base roots).FreeClosed := by
-  simp -implicitDefEqProofs [done,Definitional.Formula.FreeClosed,ConstructionRequestSchedule.probeCode_freeClosed,ConstructionRequestSchedule.mergerCode_freeClosed,ConstructionRoundStepSyntax.probeDone_freeClosed,ConstructionRoundStepSyntax.mergerDone_freeClosed,Project.Formula.extensionalEq]
+theorem done_freeClosed {m : Nat} (w D mul zero one request W G mark O base roots : Fin m) :
+    (done w D mul zero one request W G mark O base roots).FreeClosed :=
+  ConstructionRoundFresh.completed_freeClosed _ _ _ _ _ _ _ _ _ _ _ _
 
 theorem done_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
-    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w D mul zero one request W G mark base roots : Fin m) :
-    Project.Formula.satisfies env (done w D mul zero one request W G mark base roots) ↔ Done (env.bound w) (env.bound D) (env.bound mul) (env.bound zero) (env.bound one) (env.bound request) (env.bound W) (env.bound G) (env.bound mark) (env.bound base) (env.bound roots) := by
-  simp only [done,Done,Project.Formula.satisfies_exists_iff,
-    Project.Formula.satisfies_conj_iff,
-    Project.Term.eval_bound,
-    Project.Formula.satisfies_disj_iff,ConstructionRequestSchedule.probeCode_semantics hM,ConstructionRequestSchedule.mergerCode_semantics hM,ConstructionRoundStepSyntax.probeDone_semantics hM,ConstructionRoundStepSyntax.mergerDone_semantics hM,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM)]
-  rfl
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m)
+    (w D mul zero one request W G mark O base roots : Fin m) :
+    Project.Formula.satisfies env (done w D mul zero one request W G mark O base roots) ↔
+      Done (env.bound w) (env.bound D) (env.bound mul) (env.bound zero) (env.bound one) (env.bound request)
+        (env.bound W) (env.bound G) (env.bound mark) (env.bound O) (env.bound base) (env.bound roots) :=
+  ConstructionRoundFresh.completed_semantics hM env _ _ _ _ _ _ _ _ _ _ _ _
 
 
 def candidate {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) : Project.Formula 1 m :=
@@ -169,7 +160,7 @@ def candidate {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN 
   w.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ
   mul.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ
   one.succ.succ.succ.succ.succ.succ.succ.succ.succ request.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 :
-  Fin (m+9)) (7 : Fin (m+9)) (5 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9))))))))))))))
+  Fin (m+9)) (7 : Fin (m+9)) (5 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9))))))))))))))
 
 theorem candidate_freeClosed {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) :
     (candidate w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output).FreeClosed := by
@@ -183,7 +174,6 @@ theorem candidate_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     
     pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,done_semantics hM]
   rfl
-
 
 def picked {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) : Project.Formula 1 m :=
   (.disj (.conj (candidate w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output)

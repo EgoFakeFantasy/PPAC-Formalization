@@ -29,7 +29,7 @@ def SuccessorAt (hM : FirstOrder.Theory.Models M nativeZF)
     Row history j W G unitW markW HL LC NewOut base j ∧
     ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f
       W G unitW markW HL LC O base ∧
-    ConstructionRoundSelection.Done w D mul zero one request W G markW base roots ∧
+    ConstructionRoundSelection.Done w D mul zero one request W G markW O base roots ∧
     Product F i j O
 
 theorem map_succ (hM : FirstOrder.Theory.Models M nativeZF)
@@ -125,7 +125,7 @@ def successorAt {m : Nat} (w Q R top D mul e mark H C zero one Schedule history 
   mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (18 :
-  Fin (m+19)) (9 : Fin (m+19)) (8 : Fin (m+19)) (6 : Fin (m+19)) (2 : Fin (m+19)) (0 : Fin (m+19)))
+  Fin (m+19)) (9 : Fin (m+19)) (8 : Fin (m+19)) (6 : Fin (m+19)) (1 : Fin (m+19)) (2 : Fin (m+19)) (0 : Fin (m+19)))
   (ProjectSyntax.encode id (ForcingDiagramOrder.product
   F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ

@@ -2251,7 +2251,8 @@ def main() -> None:
                                ('construction_request_padding', 'ConstructionRequestPadding', 14),
                                ('construction_request_cardinality', 'ConstructionRequestCardinality', 16),
                                ('construction_schedule_cardinality', 'ConstructionScheduleCardinality', 15),
-                               ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16)):
+                               ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16),
+                               ('construction_round_fresh', 'ConstructionRoundFresh', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5806,6 +5807,9 @@ def main() -> None:
         "source_round_internal_formula_separation_ordinal_induction_full_recursive_validity_proved": True,
         "source_round_actual_recursive_tower_all_field_tables_time_identity_global_base_naturality_constructed": True,
         "source_round_exact_global_map_succ_original_request_equation_exported": True,
+        "source_round_SELECTED_actual_probe_generator_stored_in_existing_tuple_and_CURRENT_inclusion_freshness_retained": True,
+        "source_round_SELECTED_merger_roots_CURRENT_inclusion_freshness_retained": True,
+        "source_round_actual_global_map_succ_exports_SAME_current_fresh_request_witness": True,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

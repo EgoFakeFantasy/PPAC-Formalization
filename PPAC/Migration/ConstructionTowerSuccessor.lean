@@ -350,7 +350,7 @@ def Extended (hM : FirstOrder.Theory.Models M nativeZF)
     ∃ W G unitW markW HL LC O baseW roots Out,
       ConstructionRoundSelection.Pack W G unitW markW HL LC O baseW roots output ∧
       ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f W G unitW markW HL LC O baseW ∧
-      ConstructionRoundSelection.Done w D mul zero one request W G markW baseW roots ∧
+      ConstructionRoundSelection.Done w D mul zero one request W G markW O baseW roots ∧
       Graph J Domains K O W Out ∧ WeightFamily J Domains W Out ∧ CompositeFamily J K O Out ∧
       Stable J E Domains F Out ∧
       FullLegs hM w Q J Domains Muls Units Marks Heights Costs Out W G unitW markW HL LC ∧
@@ -431,7 +431,7 @@ def extended {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN C
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   request.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (9 : Fin (m+10)) (8 : Fin (m+10)) (6 : Fin
-  (m+10)) (2 : Fin (m+10)) (1 : Fin (m+10))) (.conj (graph
+  (m+10)) (3 : Fin (m+10)) (2 : Fin (m+10)) (1 : Fin (m+10))) (.conj (graph
   J.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   Domains.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   K.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (3 : Fin (m+10)) (9 : Fin (m+10)) (0 : Fin (m+10)))

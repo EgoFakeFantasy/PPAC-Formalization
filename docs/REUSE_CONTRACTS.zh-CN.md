@@ -130,4 +130,6 @@ Merger 基数界已直接复用 ConstructionProbeWordCardinality.raw_cardinal_le
 
 本轮已实际完成此前兼容核对之后的接线：223 模块闭包中旧版已有 81 个，其余 142 项用 140 份只改导入的数学正文及 2 项既有实现重定向解决。140 个模块和 2818 项公开／生成声明均已正式验收，无新增信任；SOURCE_LOCK 锚定 L_REUSE_LOCK 的所有源码、去导入正文及精确足迹。活动依赖和供体均未修改，未读取退役反射归档。源域公式消费本批已验收；全部内部 Proof/Con 仍是实际未完项。
 
-下一项精确复用约束：RoundSuccessors.probe 已有对当前 inclusion O 的 hNotOld；RoundStep.probe_step 只向基对象复合，Selection.Done 因而只保存较弱 base 新鲜性。须把已有当前阶段新鲜性接回候选／选中输出／全塔，不能把它当尚未证明的新数学，也不能用弱结论替代源 Round.creates_probe。Merger roots 同步核对。此接口修订属于原第8阶段，当前完整轮次／独立性仍未完成。
+本轮源合同修复已完成：RoundFresh 直接调用既有强父生产者，保留实际 generator 和对当前 O 的 hNotOld；Selection 已复用原九字段末字段保存实际 Probe，Done 的原生／纯 AST 加入当前 O，候选／选中输出／Extended／全塔 map_succ 全部加强，两个当前源请求仍保持全部内部量词。不存在新的选择器／编码或 Probe/Merger 数学重造。后续核对源 probe_gate.intersections、probe_independent、Merger.RootSystem 的全锥合同，消费已验收的 word／自由作用接口；不能把当前阶段新鲜性再报缺失，也不能用旧因子实现代替任意新右因子的公共锥实现。
+
+下一项的具体源消费者已定位：MonoidRounds.ProbeData.independent:304 用 probe_gate.intersections／probe_old_profile，CompleteRounds.creates_merger 用 cone_realization.map。先从已验收 ProbeParent／ProbeSuccessor、MergerParent 及 word／自由作用配套保留所需正规形来源合同，再接候选和原消费者；当前 Step/profile/freshness 合同本身不宣称具体 target 的全部正规形表示或全锥实现。

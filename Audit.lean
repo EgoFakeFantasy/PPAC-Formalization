@@ -31486,3 +31486,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionTowerCardinality.constructionSentence
 #print axioms PPAC.Migration.ConstructionTowerCardinality.construction_models
 #print axioms PPAC.Migration.ConstructionTowerCardinality.construction_kernel_certificate
+
+-- Actual selected probe generator and current-stage inclusion freshness for BOTH requests.
+#print axioms PPAC.Migration.ConstructionRoundFresh.ProbeWitness
+#print axioms PPAC.Migration.ConstructionRoundFresh.Completed
+#print axioms PPAC.Migration.ConstructionRoundFresh.probeWitness
+#print axioms PPAC.Migration.ConstructionRoundFresh.probeWitness_freeClosed
+#print axioms PPAC.Migration.ConstructionRoundFresh.probeWitness_semantics
+#print axioms PPAC.Migration.ConstructionRoundFresh.completed
+#print axioms PPAC.Migration.ConstructionRoundFresh.completed_freeClosed
+#print axioms PPAC.Migration.ConstructionRoundFresh.completed_semantics
+#print axioms PPAC.Migration.ConstructionRoundFresh.probe_of_completed
+#print axioms PPAC.Migration.ConstructionRoundFresh.merger_of_completed
+#print axioms PPAC.Migration.ConstructionRoundFresh.probe
+#print axioms PPAC.Migration.ConstructionRoundFresh.merger

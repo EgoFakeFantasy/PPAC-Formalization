@@ -386,3 +386,13 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | 原 actual tower / time / map_succ 构造 | ConstructionTowerCardinality.construction_kernel_certificate | 同一 L 相对化 forall16；实际构造完整同一塔和全部阶段 Small／同一 Domains 的 StageSmall，全部12表、21项图表、自然性、时间及精确 map_succ 保留；已有 L Choice/order 实际消去 |
 
 两模块 31 项声明／四项原核端点已通过定向编译、trust=0 预审及正式全量验收：2849 项构建、31061 项声明，九命令／五次 trust=0 均退出 0，零警告；原 31030 项足迹不变，2413 份当前指纹／75 份源哈希匹配，底座／供体干净，无新增信任。完整轮次请求实现／重复 probe 独立性、SaturatedMonoids、多模型应用和最终内部 Con 仍未完成。
+
+## 原第8阶段：修复选中请求的当前 inclusion 新鲜性
+
+| 固定源义务 | 实际接口／消费者 | 精确范围 |
+|---|---|---|
+| Round.creates_probe／probe_new 的当前阶段新鲜性输入 | RoundFresh.probe、ProbeWitness、Completed → Selection.Candidate/Picked | 复用既有实际父 hNotOld；原九字段末字段存实际 generator，移除旧零占位；原生／纯 Done 接同一 O，保留固定 generator profile 及全部当前原像排除 |
+| Merger roots 对当前 inclusion 的新鲜性 | RoundFresh.merger／merger_of_completed | 同一实际 roots 图、完整旧因子实现及全部 current-O 原像排除；不把旧因子实现升级成尚未证明的全锥 RootSystem |
+| 全塔原请求精确后继 | TowerSuccessor.Extended／TowerMapSucc.mapSucc_kernel_certificate／construction_kernel_certificate | 同一选中元组、原 Step、全局矩阵 inclusion 和强 Done 同步；nativeZF forall20 与同一 L forall15 原核端点重新证明，没有换塔或增加外部良基前提 |
+
+新增12项显式声明及3个修订模块94项声明均通过 trust=0 预审及正式全量验收：2850 项构建、31073 项声明，九命令／五次 trust=0 均退出0，零警告；原31061项足迹不变，2414份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。源 probe_gate.intersections／probe_independent 与 Merger 全锥 RootSystem、完整轮次／饱和及最终内部 Con 仍未完成。
