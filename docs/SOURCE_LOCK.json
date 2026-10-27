@@ -51888,6 +51888,307 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "construction_directed_conservative_data": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedConservativeData.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_factors:65",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_dvd_iff:79",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_conservative:86",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.conditionalJoins:111"
+      ],
+      "consumers": [
+        "DirectLimits.probeProfile:130",
+        "DirectLimits.heightCost:295",
+        "MonoidTowers.DirectedColimit canonical conservative inclusions/conditional joins"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED accepted ConstructionDirectedMonoid.exists_system executes SAME actual varying-stage carrier/projection/product/unit constructor; all source stage monoid and directed-system/hom premises retained",
+        "UNCHANGED original four-field ConstructionProbeConservative.Conservative contract applied to ORIGINAL TRANSITIONS (source hf), derives transition injectivity; no supplied limit injection/factor/Conservative field",
+        "UNCHANGED actual graph MapsTo/Injection totality and transition pointwise uniqueness align each transition value with the SAME actual source graph; no assumed pointer uniqueness or selected family",
+        "Source of_factors represents arbitrary target factor at a stage, pushes equation to common future, uses inherited of_injective and source conservative factor property to recover SPECIFIED factor",
+        "UNCHANGED ConstructionProbeAlphabetMap.division_reflection consumes source/actual-limit LeftCancelMonoid, actual injection/product preservation and derived factor property; no renamed special Word theorem",
+        "Source of_conservative tests EVERY arbitrary target element at an actual common future; constructed later stage map and derived division_reflection transport intersections/common from ORIGINAL transition; all four fields derived",
+        "Source conditionalJoins uses UNCHANGED actual common_stage_three, existing ConditionalJoins/JoinProperty contract, derived stage divisibility reflection and full intersection preservation; all-stage premise stays conditional in OUTPUT",
+        "UNCHANGED ModelTransfer.derives: pure forall6/exist6 nativeZF certificate; no new Choice/kernel/Sat/parser/category/quotient/sequence/recursor/scalar backend or trusted dependency"
+      ],
+      "scope": "COMPLETE source of_factors/of_dvd_iff/of_conservative/conditionalJoins for SAME actual directed limit monoid and EVERY canonical stage graph, arbitrary internal NONEMPTY directed PREORDER indices and VARYING carriers. Original conservative transition premise hf is explicit, never assume the limit Conservative. JoinsFamily and ConicalFamily remain CONDITIONAL OUTPUTS. Native original FirstOrder.Derives nativeZF [] pure forall6/exist6. No external standardness/ordinal/well-foundedness/size restriction or object Choice. Full profiles/precise weights/old actual suprema/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedConservativeData.ConservativeTransitions": [],
+        "PPAC.Migration.ConstructionDirectedConservativeData.transition_value": [],
+        "PPAC.Migration.ConstructionDirectedConservativeData.transition_edge": [],
+        "PPAC.Migration.ConstructionDirectedConservativeData.injective_transitions": [],
+        "PPAC.Migration.ConstructionDirectedConservativeData.conservativeTransitions": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeData.conservativeTransitions_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeData.conservativeTransitions_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeData.JoinsFamily": [],
+        "PPAC.Migration.ConstructionDirectedConservativeData.joinsFamily": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeData.joinsFamily_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeData.joinsFamily_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_factors": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedFactors.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_factors:65",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_dvd_iff:79",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_conservative:86",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.conditionalJoins:111"
+      ],
+      "consumers": [
+        "DirectLimits.probeProfile:130",
+        "DirectLimits.heightCost:295",
+        "MonoidTowers.DirectedColimit canonical conservative inclusions/conditional joins"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED accepted ConstructionDirectedMonoid.exists_system executes SAME actual varying-stage carrier/projection/product/unit constructor; all source stage monoid and directed-system/hom premises retained",
+        "UNCHANGED original four-field ConstructionProbeConservative.Conservative contract applied to ORIGINAL TRANSITIONS (source hf), derives transition injectivity; no supplied limit injection/factor/Conservative field",
+        "UNCHANGED actual graph MapsTo/Injection totality and transition pointwise uniqueness align each transition value with the SAME actual source graph; no assumed pointer uniqueness or selected family",
+        "Source of_factors represents arbitrary target factor at a stage, pushes equation to common future, uses inherited of_injective and source conservative factor property to recover SPECIFIED factor",
+        "UNCHANGED ConstructionProbeAlphabetMap.division_reflection consumes source/actual-limit LeftCancelMonoid, actual injection/product preservation and derived factor property; no renamed special Word theorem",
+        "Source of_conservative tests EVERY arbitrary target element at an actual common future; constructed later stage map and derived division_reflection transport intersections/common from ORIGINAL transition; all four fields derived",
+        "Source conditionalJoins uses UNCHANGED actual common_stage_three, existing ConditionalJoins/JoinProperty contract, derived stage divisibility reflection and full intersection preservation; all-stage premise stays conditional in OUTPUT",
+        "UNCHANGED ModelTransfer.derives: pure forall6/exist6 nativeZF certificate; no new Choice/kernel/Sat/parser/category/quotient/sequence/recursor/scalar backend or trusted dependency"
+      ],
+      "scope": "COMPLETE source of_factors/of_dvd_iff/of_conservative/conditionalJoins for SAME actual directed limit monoid and EVERY canonical stage graph, arbitrary internal NONEMPTY directed PREORDER indices and VARYING carriers. Original conservative transition premise hf is explicit, never assume the limit Conservative. JoinsFamily and ConicalFamily remain CONDITIONAL OUTPUTS. Native original FirstOrder.Derives nativeZF [] pure forall6/exist6. No external standardness/ordinal/well-foundedness/size restriction or object Choice. Full profiles/precise weights/old actual suprema/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedFactors.projected_transition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedFactors.product_reflect": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedFactors.of_factors": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedFactors.stage_core": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_conservative": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedConservative.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_factors:65",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_dvd_iff:79",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_conservative:86",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.conditionalJoins:111"
+      ],
+      "consumers": [
+        "DirectLimits.probeProfile:130",
+        "DirectLimits.heightCost:295",
+        "MonoidTowers.DirectedColimit canonical conservative inclusions/conditional joins"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED accepted ConstructionDirectedMonoid.exists_system executes SAME actual varying-stage carrier/projection/product/unit constructor; all source stage monoid and directed-system/hom premises retained",
+        "UNCHANGED original four-field ConstructionProbeConservative.Conservative contract applied to ORIGINAL TRANSITIONS (source hf), derives transition injectivity; no supplied limit injection/factor/Conservative field",
+        "UNCHANGED actual graph MapsTo/Injection totality and transition pointwise uniqueness align each transition value with the SAME actual source graph; no assumed pointer uniqueness or selected family",
+        "Source of_factors represents arbitrary target factor at a stage, pushes equation to common future, uses inherited of_injective and source conservative factor property to recover SPECIFIED factor",
+        "UNCHANGED ConstructionProbeAlphabetMap.division_reflection consumes source/actual-limit LeftCancelMonoid, actual injection/product preservation and derived factor property; no renamed special Word theorem",
+        "Source of_conservative tests EVERY arbitrary target element at an actual common future; constructed later stage map and derived division_reflection transport intersections/common from ORIGINAL transition; all four fields derived",
+        "Source conditionalJoins uses UNCHANGED actual common_stage_three, existing ConditionalJoins/JoinProperty contract, derived stage divisibility reflection and full intersection preservation; all-stage premise stays conditional in OUTPUT",
+        "UNCHANGED ModelTransfer.derives: pure forall6/exist6 nativeZF certificate; no new Choice/kernel/Sat/parser/category/quotient/sequence/recursor/scalar backend or trusted dependency"
+      ],
+      "scope": "COMPLETE source of_factors/of_dvd_iff/of_conservative/conditionalJoins for SAME actual directed limit monoid and EVERY canonical stage graph, arbitrary internal NONEMPTY directed PREORDER indices and VARYING carriers. Original conservative transition premise hf is explicit, never assume the limit Conservative. JoinsFamily and ConicalFamily remain CONDITIONAL OUTPUTS. Native original FirstOrder.Derives nativeZF [] pure forall6/exist6. No external standardness/ordinal/well-foundedness/size restriction or object Choice. Full profiles/precise weights/old actual suprema/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedConservative.comparison_stage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservative.stage_conservative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservative.conditional_joins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservative.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_conservative_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedConservativeSyntax.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_factors:65",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_dvd_iff:79",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_conservative:86",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.conditionalJoins:111"
+      ],
+      "consumers": [
+        "DirectLimits.probeProfile:130",
+        "DirectLimits.heightCost:295",
+        "MonoidTowers.DirectedColimit canonical conservative inclusions/conditional joins"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED accepted ConstructionDirectedMonoid.exists_system executes SAME actual varying-stage carrier/projection/product/unit constructor; all source stage monoid and directed-system/hom premises retained",
+        "UNCHANGED original four-field ConstructionProbeConservative.Conservative contract applied to ORIGINAL TRANSITIONS (source hf), derives transition injectivity; no supplied limit injection/factor/Conservative field",
+        "UNCHANGED actual graph MapsTo/Injection totality and transition pointwise uniqueness align each transition value with the SAME actual source graph; no assumed pointer uniqueness or selected family",
+        "Source of_factors represents arbitrary target factor at a stage, pushes equation to common future, uses inherited of_injective and source conservative factor property to recover SPECIFIED factor",
+        "UNCHANGED ConstructionProbeAlphabetMap.division_reflection consumes source/actual-limit LeftCancelMonoid, actual injection/product preservation and derived factor property; no renamed special Word theorem",
+        "Source of_conservative tests EVERY arbitrary target element at an actual common future; constructed later stage map and derived division_reflection transport intersections/common from ORIGINAL transition; all four fields derived",
+        "Source conditionalJoins uses UNCHANGED actual common_stage_three, existing ConditionalJoins/JoinProperty contract, derived stage divisibility reflection and full intersection preservation; all-stage premise stays conditional in OUTPUT",
+        "UNCHANGED ModelTransfer.derives: pure forall6/exist6 nativeZF certificate; no new Choice/kernel/Sat/parser/category/quotient/sequence/recursor/scalar backend or trusted dependency"
+      ],
+      "scope": "COMPLETE source of_factors/of_dvd_iff/of_conservative/conditionalJoins for SAME actual directed limit monoid and EVERY canonical stage graph, arbitrary internal NONEMPTY directed PREORDER indices and VARYING carriers. Original conservative transition premise hf is explicit, never assume the limit Conservative. JoinsFamily and ConicalFamily remain CONDITIONAL OUTPUTS. Native original FirstOrder.Derives nativeZF [] pure forall6/exist6. No external standardness/ordinal/well-foundedness/size restriction or object Choice. Full profiles/precise weights/old actual suprema/cardinality, actual final weighted tower/request schedule/saturated monoid, model applications/internal Proof-Con/final Con remain OPEN; original stage8 not complete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedConservativeSyntax.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedConservativeSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
