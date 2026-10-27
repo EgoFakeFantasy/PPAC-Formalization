@@ -22,15 +22,17 @@
 
 第 6 阶段已在提交 c7b963d 按最初 f28b033 第 6 行验收门完成：同一任意原生 ZF 模型内部的完整 L/ZFC、全部原生／源公理与模式、Choice、全局序和非空都有原核相对化证书；既有 InterpretedZF 的背景和非空前提已被 ConstructibleSource 实际消去。版本、域公式、全模式和背景消费均不再列为待做。原验收记录 l-source-acceptance.json 保留；这仍不是全部内部 Proof/Con 证明。
 
-本批继续原第 8 阶段，修复前批源合同审查发现的当前阶段新鲜性丢失。父 RoundSuccessors.probe／merger 已经证明完整 hNotOld，本轮复用其原生产者，把该事实和同一实际操作见证传到候选、选中元组及全塔；不重做 Probe/Merger、编码、递归或选择后端。
+本批继续原第8阶段，修复源正规形数据在父构造与候选之间丢失的问题。固定源 ProbeData.independent 读取 probe_gate.intersections／probe_old_profile，creates_merger 读取 cone_realization.map；先前只保留 Step/profile/freshness 无法直接消费这些原接口。本轮传输原生产者已经生成的数据，没有重做父数学、引入新构造输入或改变原最终目标。
 
-ConstructionRoundFresh.ProbeWitness 固定实际 generator，而非只给出某个存在量词下的 profile。Completed 显式接收当前 inclusion O：Probe 分支保留该 generator 的全部基图像／路径／profile，并排除 O 的全部内部原像；Merger 分支保留完整旧因子实现／root 图，并排除每个 root 对 O 的全部原像。两个原生产者桥保留同一加权后继、fromBase、全部字段和 profile；probe_of_completed／merger_of_completed 精确抽取对应原请求见证。
+ConstructionOperationSource 提供明确的纯对象公式。Alpha 保留路径 factor/terminal 表、实际字母商／投影、action 表、target/exit 图及 cone laws；Probe 保留同一 canonical Word 载体／乘法图、old unit/inclusion、generator/probe 图及零位实际 generator；Merger 保留同一有效映射处方、copy 商／投影／等式、copy 与 word 的实际自由作用、有限 word 载体／乘法、old inclusion 和实际 root 图／laws。不是无展开的 provenance 标签，全部有纯 AST 与语义等价。
 
-Selection 继续使用原九字段 Pack；末字段现在保存实际 Probe generator，移除旧的 roots=zero 占位，Merger 则仍保存实际 roots 图。Done 原生定义与纯 AST 同步加入当前 O。Candidate/Picked 的原存在、全部输入总唯一及同一 L 最小元选择证明保持；不另建 generator 选择器。TowerSuccessor.Extended 与全塔 SuccessorAt／map_succ 保留该同一强 Done。公开 map_succ 的 nativeZF forall20 原核证书及实际塔的同一 L forall15 构造证书已针对强合同重新编译。
+ProbeParent 的原构造证明分解为 exists_probe_with_source，额外返回已经生成的 Alpha 数据；原 exists_probe 的类型保持，通过投影取得旧结果。RoundSource 两类桥实际消费该更强出口或完整 MergerParent 输出，仍构造同一加权后继／fromBase／完整字段／profile／当前阶段新鲜性，同时保留它们的原正规形来源。
 
-本轮新增 12 项显式声明；3 个原模块的 94 项声明经过精确预审，原依赖足迹逐项不变。106 项新建／受影响声明通过 trust=0 预审，无新增公理依赖；19 项直接消费者的源码指纹仅对这三个明确变更文件更新。scripts/verify.py 正式全量验收已通过：2850 项构建、31073 项声明（1549 项无公理依赖、29524 项有记录依赖），九命令／五次 trust=0 均退出 0，零警告。2414 份当前指纹／75 份固定源哈希全部匹配；此前 31061 项足迹逐项不变，无新增公理或可信依赖；底座与供体干净。
+Candidate/Picked 现在要求这些实际源数据；Extended 在同一 W/G/unit/O/roots 上保存并传输；全塔 SuccessorAt 及 map_succ 原核证书同步导出。原最小候选选择、九字段编码、内部序数递归、完整 Valid、时间／自然性、原请求与索引／阶段大小界均保留。仅两个旧证明对新增尾字段进行投影，未弱化其有效性／唯一性结论。
 
-**当前 inclusion 的强新鲜性和实际 Probe generator 已从父构造传到选中输出及全塔，不能再把它列作缺口。** 原索引、全部阶段大小界和同一实际塔等已验收成果继续有效。下一项沿固定源 Round.creates_probe、probe_gate.intersections／probe_independent 和 Merger.RootSystem 的全锥量词接原接口，完成后续切片与重复请求的实现，再接完整轮次／多轮饱和。原阶段 8 仍未完成；9–11 和最终内部 Con 尚未完成。
+本批新增19项显式声明（OperationSource12、RoundSource6、原 Parent 新出口1）；全部143项新建／受影响声明通过 trust=0 预审，原124项足迹逐项不变，无新增公理依赖。23项直接消费者的旧源码指纹仅对6个明确修订文件更新。scripts/verify.py 正式全量验收已通过：2852项构建、31092项声明（1551项无公理依赖、29541项有记录依赖），九命令／五次trust=0均退出0，零警告。2416份当前指纹／75份固定源哈希全部匹配；此前31073项足迹逐项不变，无新增公理或可信依赖；底座与供体干净。
+
+**父正规形／自由作用来源数据现已传过候选和实际全塔；不能再把这条数据传输列作缺口。** 下一项直接消费这些原接口证明 Probe 精确公共锥和 Merger 全锥 RootSystem，并传到后续切片，再接完整轮次／重复 probe 独立性与多轮饱和。原阶段8仍未完成；9–11及最终内部 Con 尚未完成。原核证书导出来源数据不等于这些全锥定理已经完成。
 
 ## 复用裁决和剩余顺序
 
@@ -38,7 +40,7 @@ Selection 继续使用原九字段 Pack；末字段现在保存实际 Probe gene
 
 此前把局部验收当整体进度、把接口未接通说成已有数学未完成，并把可选字节兼容误当主线必需，是我的规划与验收判断错误。原 Main 的宿主 Consistent 和忽略输入的 main_consistency 不满足早已规定的内部对象 Con；这个差异本该在早期规划时落实，不能归因于用户后加要求。现在按源声明、完整类型及实际生产者／消费者核对，不以模块数或构建数估计完成比例。
 
-当前开发入口是固定源后续切片请求实现、Probe gate/intersections 与 Merger 全锥 RootSystem 的原接口消费 → 完整轮次／重复 probe 独立性 → SaturatedMonoids，再与第 9 阶段同一模型应用及第 10 阶段内部码归约汇合；索引和实际塔的全部大小界不再列作待做。已完成资产不再作为新研发义务；停止 NatPacket／泛滤 truth／独立 L／重复 Sat 支线。
+当前开发入口是直接消费已传到候选／全塔的原正规形数据，证明 Probe gate/intersections 与 Merger 全锥 RootSystem／后续切片实现 → 完整轮次／重复 probe 独立性 → SaturatedMonoids，再与第 9 阶段同一模型应用及第 10 阶段内部码归约汇合；索引和实际塔的全部大小界不再列作待做。已完成资产不再作为新研发义务；停止 NatPacket／泛滤 truth／独立 L／重复 Sat 支线。
 
 ## 清理及执行边界
 
@@ -48,10 +50,10 @@ Selection 继续使用原九字段 Pack；末字段现在保存实际 Probe gene
 
 既往 partial 模块、被合并入口及临时 Audit／专属缓存的清理证据保存在 verification/cleanup-probe-*.json 与 cleanup-merger-*.json；状态页不再将历史清理反复列为本批结果。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；不干预其他项目。
 
-本批仅新增必要的 RoundFresh 适配模块，修订 Selection／TowerSuccessor／TowerMapSucc 三个原模块；前批临时预审源已清理，成功日志保留。本批 106 声明临时预审源已在正式验收后按精确路径／完整内容／非重解析点／SHA 白名单清理，证据见 round-freshness-acceptance.json。不新增持久生成脚本或后台服务，不干预其他项目进程。
+本批仅新增必要的 OperationSource／RoundSource 两个模块，修订六个必要的父接口／选择／传输消费者；旧接口尽量保留。前批临时预审源已清理，成功日志保留。本批143声明临时预审源已在正式验收后按精确路径／完整内容／非重解析点／SHA白名单清理，证据见 source-provenance-acceptance.json。不新增持久生成脚本或后台服务，不干预其他项目进程。
 
 Agent 广场当前未连通，本轮 GET／POST 未成功，经验未同步，也未直接修改数据；恢复可双击 C:/Users/17857/AgentPlaza/启动广场.bat。未推送或发布。
 
 已修复的前批缺口：RoundStep.probe_step 的弱 base 新鲜性不再决定被选候选；Selection 已改用保留父 hNotOld 的 RoundFresh.probe／merger，并在原末字段保存实际 generator。全塔原核端点重新证明了同一当前 O 下的强新鲜性。旧弱桥仍是正确中间定理，有既有消费者，不被误称为原 creates_probe 的完整结论。真正后续义务须保留源 probe_independent 的精确公共锥和 Merger.RootSystem 对任意新右因子的量词；不能只凭 profile／新鲜性或旧因子乘积等式宣布这些已完成。
 
-后续忠实迁移审查：固定 MonoidRounds.ProbeData.independent:304 实际消费 probe_gate.intersections 和 probe_old_profile；CompleteRounds.creates_merger:275 实际消费 cone_realization.map。当前候选保留 Step/profile/freshness 等性质，但还未携带供这些源消费者直接读取的完整正规形／自由作用来源合同。须先核对并保留已有父生产者数据，避免把任意满足性质的扩张当作原具体 target；这仍是原第8阶段的接口迁移，不能靠新增弱公理或改写目标跳过。
+已完成的忠实来源修订：具体 path/quotient/action/word/product/generator/root 数据已由原父证明生产、被原候选要求并传到全塔；不再仅以抽象 Step/profile/freshness 充当原具体操作。真正未完成的仍是固定源 ProbeData.independent 的精确公共锥与 Merger.RootSystem 对任意新右因子的实现及其后续传输，不能用旧因子等式代替。

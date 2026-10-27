@@ -2130,7 +2130,7 @@ def main() -> None:
                                ('construction_probe_height_cost_syntax', 'ConstructionProbeHeightCostSyntax', 3),
                                ('construction_probe_successor', 'ConstructionProbeSuccessor', 1),
                                ('construction_probe_successor_syntax', 'ConstructionProbeSuccessorSyntax', 3),
-                               ('construction_probe_parent', 'ConstructionProbeParent', 3),
+                               ('construction_probe_parent', 'ConstructionProbeParent', 4),
                                ('construction_probe_parent_syntax', 'ConstructionProbeParentSyntax', 3),
                                ('construction_merger_relations', 'ConstructionMergerRelations', 19),
                                ('construction_merger_copies', 'ConstructionMergerCopies', 35),
@@ -2252,7 +2252,9 @@ def main() -> None:
                                ('construction_request_cardinality', 'ConstructionRequestCardinality', 16),
                                ('construction_schedule_cardinality', 'ConstructionScheduleCardinality', 15),
                                ('construction_tower_cardinality', 'ConstructionTowerCardinality', 16),
-                               ('construction_round_fresh', 'ConstructionRoundFresh', 12)):
+                               ('construction_round_fresh', 'ConstructionRoundFresh', 12),
+                               ('construction_operation_source', 'ConstructionOperationSource', 12),
+                               ('construction_round_source', 'ConstructionRoundSource', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5810,6 +5812,9 @@ def main() -> None:
         "source_round_SELECTED_actual_probe_generator_stored_in_existing_tuple_and_CURRENT_inclusion_freshness_retained": True,
         "source_round_SELECTED_merger_roots_CURRENT_inclusion_freshness_retained": True,
         "source_round_actual_global_map_succ_exports_SAME_current_fresh_request_witness": True,
+        "source_round_selected_successors_retain_ACTUAL_alphabet_normal_word_and_free_action_provenance": True,
+        "source_round_actual_global_map_succ_exports_SAME_original_operation_source_data": True,
+        "source_original_Probe_gate_independence_and_Merger_full_RootSystem_transferred": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
         "source_CompleteRounds_actual_exhaustive_enumeration_and_final_saturated_monoid_constructed": False,

@@ -50,7 +50,7 @@ theorem successor_preserves (hM : FirstOrder.Theory.Models M nativeZF)
     raw,W,G,unitW,markW,HL,LC,O,base,roots,Out,identity,NewDomains,NewOut,
     hExt,hRaw,hGraph,hOut,hSelf,hPack⟩ := hValue
   obtain ⟨_,W0,G0,unit0,mark0,H0,C0,O0,base0,roots0,Out0,hRaw0,hStep,_,hGraph0,hOut0,
-    _,hStable,hFull,hProfiles,hNatural,_,hUnique⟩ := hExt
+    _,hStable,hFull,hProfiles,hNatural,_,hUnique,_⟩ := hExt
   obtain ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩ :=
     ConstructionRoundSelection.pack_injective hRaw0 hRaw
   have eqOut := hUnique Out hOut.1 hGraph

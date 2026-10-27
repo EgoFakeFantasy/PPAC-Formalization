@@ -396,3 +396,13 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | 全塔原请求精确后继 | TowerSuccessor.Extended／TowerMapSucc.mapSucc_kernel_certificate／construction_kernel_certificate | 同一选中元组、原 Step、全局矩阵 inclusion 和强 Done 同步；nativeZF forall20 与同一 L forall15 原核端点重新证明，没有换塔或增加外部良基前提 |
 
 新增12项显式声明及3个修订模块94项声明均通过 trust=0 预审及正式全量验收：2850 项构建、31073 项声明，九命令／五次 trust=0 均退出0，零警告；原31061项足迹不变，2414份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。源 probe_gate.intersections／probe_independent 与 Merger 全锥 RootSystem、完整轮次／饱和及最终内部 Con 仍未完成。
+
+## 原第8阶段：原正规形／自由作用数据传到候选及全塔
+
+| 固定源消费者 | 实际入口／消费者 | 精确范围 |
+|---|---|---|
+| ProbeData.probe_gate／probe_old_profile／independent | OperationSource.Alpha／Probe；ProbeParent.exists_probe_with_source | 同一 factor/terminal/quotient/projection/action/target/exit/cone 数据与 canonical Word/product/generator/probe 图；原父证明分解，旧 exists_probe 类型保留 |
+| MergerData.cone_realization.map | OperationSource.Merger；RoundSource.merger | 同一处方／copy 商／投影／等式、copy/word 自由作用、word 乘法、old inclusion、实际 roots 图／laws，全部内部 n 与旧处方量词保留 |
+| 原 Request.map／Round.step／map_succ | RoundSource.Provenance → Candidate/Picked/Extended/SuccessorAt | 匹配同一原请求和实际映射；候选必须给出原正规形来源，完整 Step、当前新鲜性、同一 W/G/unit/O/roots 保留；现有原核端点同步导出来源数据 |
+
+新增19项声明及旧124项受影响声明均通过trust=0预审及正式全量验收：2852项构建、31092项声明，九命令／五次trust=0均退出0，零警告；原31073项足迹不变，2416份当前指纹／75份源哈希匹配，底座／供体干净，无新增信任。Probe 精确公共锥、Merger 全锥 RootSystem、后续切片／完整轮次／饱和和最终内部 Con 仍未完成。

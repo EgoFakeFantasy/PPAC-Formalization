@@ -4,7 +4,7 @@ the SAME internal L, using its existing set-like Jensen order. Both original
 requests, their witnesses and the exact fromBase composition are retained.
 This is the successor-selector consumed by the ordinal iteration; it is
 not a claim that the full tower or internal Con has already been built. -/
-import PPAC.Migration.ConstructionRoundFresh
+import PPAC.Migration.ConstructionRoundSource
 import PPAC.Migration.ConstructibleSource
 
 namespace PPAC.Migration.ConstructionRoundSelection
@@ -65,7 +65,8 @@ def Candidate (hM : FirstOrder.Theory.Models M nativeZF)
   ∃ W G unitW markW HL LC O baseW roots,
     Pack W G unitW markW HL LC O baseW roots output ∧
     ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f W G unitW markW HL LC O baseW ∧
-    Done w D mul zero one request W G markW O baseW roots
+    Done w D mul zero one request W G markW O baseW roots ∧
+    ConstructionRoundSource.Provenance hM w zero one request N mulN eN markN f W G unitW O roots
 
 def Picked (hM : FirstOrder.Theory.Models M nativeZF)
     (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : M.Carrier .set) : Prop :=
@@ -89,14 +90,14 @@ theorem candidate_exists (hM : FirstOrder.Theory.Models M nativeZF)
     (hq : Request w D mul e zero one request) :
     ∃ output, Candidate hM w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output := by
   rcases hq with ⟨a,b,node,hCode,hb,hne,hPath⟩ | ⟨n,P,hCode,hn,hnp,hP,hValid⟩
-  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,gen,hStep,hDone,hFresh⟩ :=
-      ConstructionRoundFresh.probe hM hw hz hzw hQ hR hu hone htop hObjN hf hb hne hPath
+  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,gen,hStep,hDone,hFresh,hSource⟩ :=
+      ConstructionRoundSource.probe hM hw hz hzw hQ hR hu hone htop hObjN hf hb hne hPath hCode
     obtain ⟨output,hPack⟩ := pack_exists hM W G unitW markW HL LC O baseW gen
-    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,gen,hPack,hStep,Or.inl ⟨a,b,node,hCode,hDone,hFresh⟩⟩
-  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hStep,hDone,hFresh⟩ :=
-      ConstructionRoundFresh.merger hM hw hz hzw hQ hR hu hone htop hObjD hObjN hf hn hnp hP hValid
+    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,gen,hPack,hStep,Or.inl ⟨a,b,node,hCode,hDone,hFresh⟩,hSource⟩
+  · obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hStep,hDone,hFresh,hSource⟩ :=
+      ConstructionRoundSource.merger hM hw hz hzw hQ hR hu hone htop hObjD hObjN hf hn hnp hP hValid hCode
     obtain ⟨output,hPack⟩ := pack_exists hM W G unitW markW HL LC O baseW roots
-    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,Or.inr ⟨n,P,hCode,hDone,hFresh⟩⟩
+    exact ⟨output,W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,Or.inr ⟨n,P,hCode,hDone,hFresh⟩,hSource⟩
 
 def pack {m : Nat} (W G e mark H C O base roots output : Fin m) : Project.Formula 1 m :=
   (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (PureKuratowskiProject.code
@@ -142,6 +143,7 @@ theorem done_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
   ConstructionRoundFresh.completed_semantics hM env _ _ _ _ _ _ _ _ _ _ _ _
 
 
+
 def candidate {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) : Project.Formula 1 m :=
   (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (pack (8 :
   Fin (m+9)) (7 : Fin (m+9)) (6 : Fin (m+9)) (5 : Fin (m+9)) (4 : Fin (m+9)) (3 : Fin (m+9)) (2 : Fin (m+9))
@@ -156,15 +158,21 @@ def candidate {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN 
   eN.succ.succ.succ.succ.succ.succ.succ.succ.succ markN.succ.succ.succ.succ.succ.succ.succ.succ.succ
   HN.succ.succ.succ.succ.succ.succ.succ.succ.succ CN.succ.succ.succ.succ.succ.succ.succ.succ.succ
   f.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin (m+9)) (7 : Fin (m+9)) (6 : Fin (m+9)) (5 : Fin
-  (m+9)) (4 : Fin (m+9)) (3 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9))) (done
+  (m+9)) (4 : Fin (m+9)) (3 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9))) (.conj (done
   w.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ
   mul.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ
   one.succ.succ.succ.succ.succ.succ.succ.succ.succ request.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 :
-  Fin (m+9)) (7 : Fin (m+9)) (5 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9))))))))))))))
+  Fin (m+9)) (7 : Fin (m+9)) (5 : Fin (m+9)) (2 : Fin (m+9)) (1 : Fin (m+9)) (0 : Fin (m+9)))
+  (ConstructionRoundSource.provenance w.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  zero.succ.succ.succ.succ.succ.succ.succ.succ.succ one.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  request.succ.succ.succ.succ.succ.succ.succ.succ.succ N.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  mulN.succ.succ.succ.succ.succ.succ.succ.succ.succ eN.succ.succ.succ.succ.succ.succ.succ.succ.succ
+  markN.succ.succ.succ.succ.succ.succ.succ.succ.succ f.succ.succ.succ.succ.succ.succ.succ.succ.succ (8 : Fin
+  (m+9)) (7 : Fin (m+9)) (6 : Fin (m+9)) (2 : Fin (m+9)) (0 : Fin (m+9)))))))))))))))
 
 theorem candidate_freeClosed {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) :
     (candidate w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output).FreeClosed := by
-  simp -implicitDefEqProofs [candidate,Definitional.Formula.FreeClosed,pack_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,done_freeClosed]
+  simp -implicitDefEqProofs [candidate,Definitional.Formula.FreeClosed,pack_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,done_freeClosed,ConstructionRoundSource.provenance_freeClosed]
 
 theorem candidate_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) :
@@ -172,7 +180,7 @@ theorem candidate_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
   simp only [candidate,Candidate,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_conj_iff,
     
-    pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,done_semantics hM]
+    pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,done_semantics hM,ConstructionRoundSource.provenance_semantics hM]
   rfl
 
 def picked {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request output : Fin m) : Project.Formula 1 m :=

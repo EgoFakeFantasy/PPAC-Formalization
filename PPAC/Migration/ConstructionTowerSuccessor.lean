@@ -356,7 +356,8 @@ def Extended (hM : FirstOrder.Theory.Models M nativeZF)
       FullLegs hM w Q J Domains Muls Units Marks Heights Costs Out W G unitW markW HL LC ∧
       ProfileLegs w J Domains Muls Out W G ∧ BaseNatural J Origins Out baseW ∧
       SuccessorEquation J K N O Out ∧
-      ∀ other, FunctionOn J other → Graph J Domains K O W other → other = Out
+      (∀ other, FunctionOn J other → Graph J Domains K O W other → other = Out) ∧
+      ConstructionRoundSource.Provenance hM w zero one request N mulN eN markN f W G unitW O roots
 
 theorem extended_unique (hM : FirstOrder.Theory.Models M nativeZF)
     (hOrder : Project.Gw_order_d (InnerModel.Js_lt_d (M := Project.FirstOrderSemantics.reduct M)))
@@ -391,7 +392,7 @@ theorem exists_extended (hM : FirstOrder.Theory.Models M nativeZF)
         J E Domains F Muls Units Marks Heights Costs K Origins other → other = output := by
   obtain ⟨output,hPick,_⟩ := ConstructionRoundSelection.picked_total hM hOrder
     w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request
-  obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,hDone⟩ :=
+  obtain ⟨W,G,unitW,markW,HL,LC,O,baseW,roots,hPack,hStep,hDone,hSource⟩ :=
     ConstructionRoundSelection.picked_is_candidate hM
       (ConstructionRoundSelection.candidate_exists hM hw hz hzw hQ hR hu hone htop hObjD hObjN hf hq) hPick
   have hMapO := hStep.1.2.1
@@ -404,7 +405,7 @@ theorem exists_extended (hM : FirstOrder.Theory.Models M nativeZF)
       full_legs_comp hM hObjN.1 hObjW.1 hK hOut hComp hFull hMapO,
       profile_legs_comp hK hComp hProfiles hStep.1.2.2.2.2.1,
       base_natural_comp hK.1 hComp hNatural hStep.2.1,
-      successor_equation hM hFull.1 hOut hComp hMapO.1.1.1,hUnique⟩
+      successor_equation hM hFull.1 hOut hComp hMapO.1.1.1,hUnique,hSource⟩
   exact ⟨output,hExtended,fun other hOther => extended_unique hM hOrder hOther hExtended⟩
 
 
@@ -459,17 +460,17 @@ def extended {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN C
   Origins.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (0 : Fin (m+10)) (2 : Fin (m+10))) (.conj
   (successorEquation J.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   K.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ N.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (3
-  : Fin (m+10)) (0 : Fin (m+10))) (.forallE (.imp (ProjectSyntax.encode id (Source.SetLanguage.functionOn (0
+  : Fin (m+10)) (0 : Fin (m+10))) (.conj (.forallE (.imp (ProjectSyntax.encode id (Source.SetLanguage.functionOn (0
   : Fin (m+11)) J.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ)) (.imp (graph
   J.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   Domains.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   K.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (3 : Fin (m+10)).succ (9 : Fin (m+10)).succ (0 :
   Fin (m+11))) (Project.Formula.extensionalEq (.bound (0 : Fin (m+11))) (.bound (0 : Fin
-  (m+10)).succ)))))))))))))))))))))))))))
+  (m+10)).succ))))) (ConstructionRoundSource.provenance w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ request.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ N.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ mulN.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ eN.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ markN.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ f.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (9 : Fin (m+10)) (8 : Fin (m+10)) (7 : Fin (m+10)) (3 : Fin (m+10)) (1 : Fin (m+10))))))))))))))))))))))))))
 
 theorem extended_freeClosed {m : Nat} (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request J E Domains F Muls Units Marks Heights Costs K Origins output : Fin m) :
     (extended w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request J E Domains F Muls Units Marks Heights Costs K Origins output).FreeClosed := by
-  simp -implicitDefEqProofs [extended,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.picked_freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed,graph_freeClosed,ConstructionDirectedWeightData.weightFamily_freeClosed,compositeFamily_freeClosed,ConstructionDirectedWeightData.stable_freeClosed,fullLegs_freeClosed,profileLegs_freeClosed,baseNatural_freeClosed,successorEquation_freeClosed,Project.Formula.extensionalEq]
+  simp -implicitDefEqProofs [extended,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.picked_freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed,graph_freeClosed,ConstructionDirectedWeightData.weightFamily_freeClosed,compositeFamily_freeClosed,ConstructionDirectedWeightData.stable_freeClosed,fullLegs_freeClosed,profileLegs_freeClosed,baseNatural_freeClosed,successorEquation_freeClosed,Project.Formula.extensionalEq,ConstructionRoundSource.provenance_freeClosed]
 
 theorem extended_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w Q R top zero one D mul e mark H C N mulN eN markN HN CN f request J E Domains F Muls Units Marks Heights Costs K Origins output : Fin m) :
@@ -477,7 +478,7 @@ theorem extended_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
   simp only [extended,Extended,Project.Formula.satisfies_forall_iff,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_imp_iff,Project.Formula.satisfies_conj_iff,
     Project.Term.eval_bound,
-    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ConstructionRoundSelection.picked_semantics hM,ConstructionRoundSelection.pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,graph_semantics hM,ConstructionDirectedWeightData.weightFamily_semantics hM,compositeFamily_semantics hM,ConstructionDirectedWeightData.stable_semantics hM,fullLegs_semantics hM,profileLegs_semantics hM,baseNatural_semantics hM,successorEquation_semantics hM,ForcingConditionGraphs.functionOn_semantics (M := M),Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM)]
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ConstructionRoundSelection.picked_semantics hM,ConstructionRoundSelection.pack_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,graph_semantics hM,ConstructionDirectedWeightData.weightFamily_semantics hM,compositeFamily_semantics hM,ConstructionDirectedWeightData.stable_semantics hM,fullLegs_semantics hM,profileLegs_semantics hM,baseNatural_semantics hM,successorEquation_semantics hM,ForcingConditionGraphs.functionOn_semantics (M := M),Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),ConstructionRoundSource.provenance_semantics hM]
   rfl
 
 

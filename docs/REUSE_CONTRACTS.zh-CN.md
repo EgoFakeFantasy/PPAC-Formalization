@@ -132,4 +132,4 @@ Merger 基数界已直接复用 ConstructionProbeWordCardinality.raw_cardinal_le
 
 本轮源合同修复已完成：RoundFresh 直接调用既有强父生产者，保留实际 generator 和对当前 O 的 hNotOld；Selection 已复用原九字段末字段保存实际 Probe，Done 的原生／纯 AST 加入当前 O，候选／选中输出／Extended／全塔 map_succ 全部加强，两个当前源请求仍保持全部内部量词。不存在新的选择器／编码或 Probe/Merger 数学重造。后续核对源 probe_gate.intersections、probe_independent、Merger.RootSystem 的全锥合同，消费已验收的 word／自由作用接口；不能把当前阶段新鲜性再报缺失，也不能用旧因子实现代替任意新右因子的公共锥实现。
 
-下一项的具体源消费者已定位：MonoidRounds.ProbeData.independent:304 用 probe_gate.intersections／probe_old_profile，CompleteRounds.creates_merger 用 cone_realization.map。先从已验收 ProbeParent／ProbeSuccessor、MergerParent 及 word／自由作用配套保留所需正规形来源合同，再接候选和原消费者；当前 Step/profile/freshness 合同本身不宣称具体 target 的全部正规形表示或全锥实现。
+已完成的具体来源传输：MonoidRounds.ProbeData.independent:304 所需 path/quotient/action/target/exit/word/generator 数据与 CompleteRounds.creates_merger 所需 copy/free-action/word/root 数据，现由 OperationSource／RoundSource 的纯对象合同保留到候选／全塔。ProbeParent 原构造证明本体仅分解为更强出口，旧接口由投影保留；未重做既有生产者或数学后台。接下来实际证明／消费 probe_gate.intersections、probe_old_profile 和全锥 RootSystem，不再另建正规形或恢复冻结字节支线。数据存在与语义等价、单独编译都不代替后续精确锥的原核推导。

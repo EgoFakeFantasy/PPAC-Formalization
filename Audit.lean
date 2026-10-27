@@ -31500,3 +31500,24 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionRoundFresh.merger_of_completed
 #print axioms PPAC.Migration.ConstructionRoundFresh.probe
 #print axioms PPAC.Migration.ConstructionRoundFresh.merger
+
+-- SAME original alphabet/normal-word/free-action provenance retained through chosen requests and tower.
+#print axioms PPAC.Migration.ConstructionOperationSource.Alpha
+#print axioms PPAC.Migration.ConstructionOperationSource.Probe
+#print axioms PPAC.Migration.ConstructionOperationSource.Merger
+#print axioms PPAC.Migration.ConstructionOperationSource.alpha
+#print axioms PPAC.Migration.ConstructionOperationSource.alpha_freeClosed
+#print axioms PPAC.Migration.ConstructionOperationSource.alpha_semantics
+#print axioms PPAC.Migration.ConstructionOperationSource.probe
+#print axioms PPAC.Migration.ConstructionOperationSource.probe_freeClosed
+#print axioms PPAC.Migration.ConstructionOperationSource.probe_semantics
+#print axioms PPAC.Migration.ConstructionOperationSource.merger
+#print axioms PPAC.Migration.ConstructionOperationSource.merger_freeClosed
+#print axioms PPAC.Migration.ConstructionOperationSource.merger_semantics
+#print axioms PPAC.Migration.ConstructionRoundSource.Provenance
+#print axioms PPAC.Migration.ConstructionRoundSource.provenance
+#print axioms PPAC.Migration.ConstructionRoundSource.provenance_freeClosed
+#print axioms PPAC.Migration.ConstructionRoundSource.provenance_semantics
+#print axioms PPAC.Migration.ConstructionRoundSource.probe
+#print axioms PPAC.Migration.ConstructionRoundSource.merger
+#print axioms PPAC.Migration.ConstructionProbeParent.exists_probe_with_source

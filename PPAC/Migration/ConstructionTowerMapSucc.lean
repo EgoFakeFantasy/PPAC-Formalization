@@ -30,7 +30,7 @@ def SuccessorAt (hM : FirstOrder.Theory.Models M nativeZF)
     ConstructionRoundStep.Step hM w Q R top zero D mul e mark H C N mulN eN markN HN CN f
       W G unitW markW HL LC O base ∧
     ConstructionRoundSelection.Done w D mul zero one request W G markW O base roots ∧
-    Product F i j O
+    Product F i j O ∧ ConstructionRoundSource.Provenance hM w zero one request N mulN eN markN f W G unitW O roots
 
 theorem map_succ (hM : FirstOrder.Theory.Models M nativeZF)
     (hCtx : Context hM w Q R top D mul e mark H C zero one u lengthBound Schedule)
@@ -61,7 +61,7 @@ theorem map_succ (hM : FirstOrder.Theory.Models M nativeZF)
       raw,W,G,unitW,markW,HL,LC,O,base,roots,Out,identity,NewDomains,NewOut,
       hExt,hRaw,hGraph,hOut,hSelf,hPack⟩ := hValue
     obtain ⟨_,W0,G0,unit0,mark0,H0,C0,O0,base0,roots0,Out0,hRaw0,hStep,hDone,hGraph0,hOut0,
-      _,hStable,hFull,hProfiles,hNatural,hSuccEq,hUnique⟩ := hExt
+      _,hStable,hFull,hProfiles,hNatural,hSuccEq,hUnique,hSource⟩ := hExt
     obtain ⟨eW,eG,eUnit,eMark,eH,eC,eO,eBase,eRoots⟩ :=
       ConstructionRoundSelection.pack_injective hRaw0 hRaw
     subst W0; subst G0; subst unit0; subst mark0; subst H0; subst C0; subst O0; subst base0; subst roots0
@@ -83,7 +83,7 @@ theorem map_succ (hM : FirstOrder.Theory.Models M nativeZF)
       (ConstructionTowerTransitions.matrix_at hValid.1 hF hi hj
         (Or.inl hs.predecessor_mem) (row_field 6 hTarget)).mpr hNewO
     exact ⟨request,N,mulN,eN,markN,HN,CN,K,f,W,G,unitW,markW,HL,LC,NewOut,base,O,roots,
-      hRequest,hRowGlobal,hTarget,hStep,hDone,hGlobalO⟩
+      hRequest,hRowGlobal,hTarget,hStep,hDone,hGlobalO,hSource⟩
   · exact False.elim (hNo ⟨i,hs⟩)
 
 
@@ -126,15 +126,15 @@ def successorAt {m : Nat} (w Q R top D mul e mark H C zero one Schedule history 
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (18 :
   Fin (m+19)) (9 : Fin (m+19)) (8 : Fin (m+19)) (6 : Fin (m+19)) (1 : Fin (m+19)) (2 : Fin (m+19)) (0 : Fin (m+19)))
-  (ProjectSyntax.encode id (ForcingDiagramOrder.product
+  (.conj (ProjectSyntax.encode id (ForcingDiagramOrder.product
   F.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   i.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   j.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (1 : Fin
-  (m+19))))))))))))))))))))))))))))
+  (m+19)))) (ConstructionRoundSource.provenance w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ one.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ (18 : Fin (m+19)) (17 : Fin (m+19)) (16 : Fin (m+19)) (15 : Fin (m+19)) (14 : Fin (m+19)) (10 : Fin (m+19)) (9 : Fin (m+19)) (8 : Fin (m+19)) (7 : Fin (m+19)) (1 : Fin (m+19)) (0 : Fin (m+19))))))))))))))))))))))))))))
 
 theorem successorAt_freeClosed {m : Nat} (w Q R top D mul e mark H C zero one Schedule history F i j : Fin m) :
     (successorAt w Q R top D mul e mark H C zero one Schedule history F i j).FreeClosed := by
-  simp -implicitDefEqProofs [successorAt,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionTowerHistory.row_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed]
+  simp -implicitDefEqProofs [successorAt,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionTowerHistory.row_freeClosed,ConstructionRoundStepSyntax.step_freeClosed,ConstructionRoundSelection.done_freeClosed,ConstructionRoundSource.provenance_freeClosed]
 
 theorem successorAt_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w Q R top D mul e mark H C zero one Schedule history F i j : Fin m) :
@@ -142,7 +142,7 @@ theorem successorAt_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Na
   simp only [successorAt,SuccessorAt,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_conj_iff,
     
-    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,ConstructionTowerHistory.row_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,ForcingDiagramOrder.product_semantics (M := M)]
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,ConstructionTowerHistory.row_semantics hM,ConstructionRoundStepSyntax.step_semantics hM,ConstructionRoundSelection.done_semantics hM,ForcingDiagramOrder.product_semantics (M := M),ConstructionRoundSource.provenance_semantics hM]
   rfl
 
 def mapSuccSentence : Project.Sentence where

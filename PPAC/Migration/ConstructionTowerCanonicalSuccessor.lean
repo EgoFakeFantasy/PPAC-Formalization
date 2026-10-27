@@ -42,7 +42,7 @@ theorem value_unique (hM : FirstOrder.Theory.Models M nativeZF)
   subst raw'
   obtain ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩ := ConstructionRoundSelection.pack_injective hRaw hRaw'
   have hCopy := hExt
-  obtain ⟨_,W0,G0,unit0,mark0,H0,C0,O0,base0,roots0,Out0,hRaw0,_,_,_,_,_,_,_,_,_,_,hUnique⟩ := hCopy
+  obtain ⟨_,W0,G0,unit0,mark0,H0,C0,O0,base0,roots0,Out0,hRaw0,_,_,_,_,_,_,_,_,_,_,hUnique,_⟩ := hCopy
   obtain ⟨rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl,rfl⟩ := ConstructionRoundSelection.pack_injective hRaw0 hRaw
   have heOut := (hUnique Out hOut.1 hGraph).trans (hUnique Out' hOut'.1 hGraph').symm
   subst Out'

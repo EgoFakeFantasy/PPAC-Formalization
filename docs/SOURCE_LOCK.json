@@ -42836,6 +42836,48 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
         ],
+        "PPAC.Migration.ConstructionProbeParent.exists_probe_with_source": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
         "PPAC.Migration.ConstructionProbeParent.exists_probe": [
           "propext",
           "Classical.choice",
@@ -42908,12 +42950,15 @@
         "ConstructionProbeSuccessor.exists_probe_successor",
         "BMS-style ModelTransfer.derives"
       ],
-      "scope": "Original ProbeData parent-only execution: old monoid, conical, joins, old actual cut weights/bounds/uniform margin, nonunit marker and actual request Path. CONSTRUCTS all letter/action/exit/cone/floor/interval data and the SAME actual complete weighted successor/inclusion/probe/profile/newness/cardinal/persistent-profile package. Eliminates 16 construction-data premises of the previous successor endpoint; adds NO parent HeightOrder/PointBound premise. All internal/nonstandard path indices retained. ProbeData operation is closed; Merger, Placement/ConservativeHull, final stage 8 and object Con remain open.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: The UNCHANGED actual original alphabet/path/height-cost construction proof is factored into exists_probe_with_source, which additionally RETURNS the already constructed full Alpha graph data (actual quotient/action/factor/terminal/target/exit/cone tables). Legacy exists_probe retains its exact old type by projection. No additional construction INPUT or background assumption; no reproof or new algebra/recursor.",
       "additional_source_sha256": {
         "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeMargins.lean": "8a5066e1df9d4c9c06f3081e1499a41d1c193e431caaf5507d43bd22d81f2603",
         "lean/OAI/SetTheory/PartitionConsistency/Algebra/PersistentProfiles.lean": "4ef9be5dceae6e1ef6af9ae62348b89e64016b2de34f5bef29d2c4e074190b9d",
         "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0",
         "lean/OAI/SetTheory/PartitionConsistency/Algebra/DiagramOrder.lean": "ea224c749fb3dca08bc57b291a9bd070651718db87a280e13001a3a7e53da035"
+      },
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionOperationSource.lean": "5df3709d7c7a6e528d771f417c33be13bc90b6d8071146913b01c54801c0e66b"
       }
     },
     "construction_probe_parent_syntax": {
@@ -57437,7 +57482,8 @@
         "PPAC/Companion/YesMetaZFC/SetTheory/InnerModel/Order/Statement.lean": "d2f83eac2ac6ef9ecfb0ec9cd3976797b327ae1a4780ec65ed64e88684ab59c3",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Separation.lean": "c05f127387dab1f81733a538d8f77df9c47c9dbdbaa800737494a9f4db88356f",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/SetConstruction.lean": "7ab1b72b7326826b18de8c7aeb6cb1de72abd7e7734cb96647e2cd1e641947b1",
-        "PPAC/Migration/ConstructionRoundFresh.lean": "da244a6f480cdfc620e62814d13329a6e486e2d409ae7f2ca6ce93dc9527c029"
+        "PPAC/Migration/ConstructionRoundFresh.lean": "da244a6f480cdfc620e62814d13329a6e486e2d409ae7f2ca6ce93dc9527c029",
+        "PPAC/Migration/ConstructionRoundSource.lean": "280d578d567640800ff6b6b6923e6c37085b374f7295c85fba856eb1412ec26f"
       },
       "source_declarations": [
         "Round.step",
@@ -57454,7 +57500,7 @@
         "existing actual L/ZF and SAME L set-like Jensen order",
         "original ModelTransfer and ConstructibleGround.relative_models"
       ],
-      "scope": "CURRENT CONTRACT STRENGTHENING: SAME fixed nine-field tuple, same L least-candidate selector and ALL-input default/uniqueness. Existing ninth field stores ACTUAL Probe generator; it is NOT forced to zero. Done now explicitly receives current inclusion O and keeps fixed-generator ProbeWitness with ALL current preimages excluded, or complete MergerDone plus ALL roots excluded from current inclusion. Full original parent producers actually supply these stronger facts via ConstructionRoundFresh; old base-only weakening no longer determines the chosen candidate. Original candidate parents, exact fromBase, L-relative total/step kernels and no ambient object Choice unchanged. Actual tower, time, naturality and Request/index/stage bounds are complete in later accepted modules; full-round independence/multiround/models/internal Con remain OPEN.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: SAME nine-field tuple, actual Probe generator/current freshness, full Step and original request. Candidate now ALSO requires actual original operation Provenance: matched mapped request and exact alphabet/path/quotient/word/product/generator data or actual copy quotient/right-free actions/word product/root graphs. Old source parent proof ACTUALLY supplies data. Same least-candidate selection in SAME L, invalid-input default, total uniqueness and L-relative step kernels retained. Does not assert yet proved exact all-cone/persistence/independence/CompleteRounds or internal Con.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionRoundSelection.Pack": [],
         "PPAC.Migration.ConstructionRoundSelection.pack_exists": [
@@ -57839,7 +57885,7 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerSuccessor.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundStep.lean": "74ab9f83ee1dfb3c9796845b17d8e6aec48d514a00ef8b209dde36e4345a98a4",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ConstructionProbeMappedPath.lean": "b739a5ea788595c2a45c15d42033be2623c9ec11f77e411dc6fc394d88c34438",
@@ -57849,7 +57895,8 @@
         "PPAC/Migration/ConstructibleGround.lean": "25eb4b6e93cbaa884d36186d9e2e90e8ceec5c8ca6458f8df03cce08c826c9a9",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Replacement.lean": "b8cc34395af11b488e9adc8af54e0565e38ab8f36f99251b71ed97ae8188c4a6",
-        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0"
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
+        "PPAC/Migration/ConstructionRoundSource.lean": "280d578d567640800ff6b6b6923e6c37085b374f7295c85fba856eb1412ec26f"
       },
       "source_declarations": [
         "Round.step",
@@ -57867,7 +57914,7 @@
         "UNCHANGED original IsSequenceOfLength.exists_append on actual internal ordinals",
         "same completed L/nativeZF/global order and original ModelTransfer closing"
       ],
-      "scope": "CURRENT CONTRACT STRENGTHENING: SAME selected tuple/actual original inclusion/fromBase/full Hom/profile/weights/Stable/naturality and unique old-leg family/self-append retained. Extended carries strong current-inclusion Done for ACTUAL selected probe generator or complete current-fresh Merger roots, not just base freshness. Uses unchanged SAME original parent/graph/ordinal append producers. Existing whole source successor L-relative and native append kernels rechecked; completed histories/recursion/tower/index/stage bounds are not missing. CompleteRound independence, saturation, models and internal Con remain OPEN.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: SAME picked whole tuple, full successor/inclusion/fromBase/all old-leg updates/self append. Extended explicitly retains actual operation Provenance in addition to strong Done/current freshness. Graph uniqueness unchanged and new source data is transferred on SAME W,G,unit,O,roots; no alternative extension or source tags without formula semantics. Existing L-relative successor/native append kernels rechecked.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionTowerSuccessor.Value": [],
         "PPAC.Migration.ConstructionTowerSuccessor.Graph": [],
@@ -58347,7 +58394,7 @@
         "PPAC/Migration/ConstructionDirectedHeightCost.lean": "8f8778ee9730c193229c39f566a10f5aa05b1773626a1cae5782915faafff759",
         "PPAC/Migration/ConstructionDirectedWeightData.lean": "dce190744e80c893f6d5f674118642600bb62135c07d8ea8ea046d9eef177cf7",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionRequestMaps.lean": "42d942887b0bedc48cd4cd225213fad243a6b8fdaa98ccedf73688d72d1cbe6c",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
       },
@@ -58731,8 +58778,8 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerCanonicalLimit.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionTowerLimit.lean": "cc293471ba3a230289b0548ac9d983377b3f6d4775a1e28d8229a193de6b9a21",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
         "PPAC/Migration/ConstructionDirectedCocone.lean": "7d95146d3d0e72f65518cb738f03f730defbb948178c38b41e2709b57d758f0d",
@@ -58995,8 +59042,8 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerInitial.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionTowerLimit.lean": "cc293471ba3a230289b0548ac9d983377b3f6d4775a1e28d8229a193de6b9a21",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
         "PPAC/Migration/ConstructionTowerCanonicalLimit.lean": "2e7fe8dce4373c30cc0960af387ac66007bb4e6fbc3ea2ca016e796e593f3abe",
@@ -59133,8 +59180,8 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionTowerLimit.lean": "cc293471ba3a230289b0548ac9d983377b3f6d4775a1e28d8229a193de6b9a21",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
         "PPAC/Migration/ConstructionTowerCanonicalLimit.lean": "2e7fe8dce4373c30cc0960af387ac66007bb4e6fbc3ea2ca016e796e593f3abe",
@@ -59156,7 +59203,7 @@
         "native graph extensionality/identity/constant functions/sequence append/ordinal successor",
         "original ModelTransfer and SAME actual L/order producer where needed"
       ],
-      "scope": "ACTUALLY calls existing SAME selected full successor, all-old-leg producer and native self-append. Typed WeightFamily forbids junk graph alternatives. Original selected raw tuple equality + exact old-family uniqueness + shared self-append graph equality prove unique normalized stage packet. SAME nine fields six Object/full incoming family/fromBase/literal internal index J; family domain is actual successor next of J, includes OWN identity, all original witnesses retained in Extended. Actual ordinal J/next and successor relation explicit. Pure forall33 nativeZF SAME-L relative kernel consumes completed L/order producer, no ambient Choice/new class-choice/codec/recursor. Full valid-history/operator/time/tower/Con OPEN.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: SAME actual selected raw record and normalized history record, unique original nine-field Pack and self-append. Extra original-operation source data in Extended is retained; uniqueness proof projects unchanged exact graph uniqueness. No new normalization/equivalence convention or choice backend.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionTowerCanonicalSuccessor.Value": [
           "propext",
@@ -59346,7 +59393,7 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerHistory.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/KuratowskiZF.lean": "172f20e5f392b6faa45f4d68095f7158cadc164f91ed47adb06408a67730d502",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
@@ -59566,7 +59613,7 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerTransitions.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/KuratowskiZF.lean": "172f20e5f392b6faa45f4d68095f7158cadc164f91ed47adb06408a67730d502",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
@@ -59851,7 +59898,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ConstructionTowerHistory.lean": "e7b606207390e0474d3a5aa328e07a4fbe75d54b7ad405e09f03004ec090d179",
         "PPAC/Migration/ConstructionTowerTransitions.lean": "8367ee114d77d56762781cf054b1ff88b1c142e91a4095c2420cf8590386d2bd",
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
@@ -60057,7 +60104,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ConstructionTowerHistory.lean": "e7b606207390e0474d3a5aa328e07a4fbe75d54b7ad405e09f03004ec090d179",
         "PPAC/Migration/ConstructionTowerTransitions.lean": "8367ee114d77d56762781cf054b1ff88b1c142e91a4095c2420cf8590386d2bd",
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
@@ -60184,7 +60231,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ConstructionTowerHistory.lean": "e7b606207390e0474d3a5aa328e07a4fbe75d54b7ad405e09f03004ec090d179",
         "PPAC/Migration/ConstructionTowerTransitions.lean": "8367ee114d77d56762781cf054b1ff88b1c142e91a4095c2420cf8590386d2bd",
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
@@ -60386,7 +60433,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ConstructionTowerHistory.lean": "e7b606207390e0474d3a5aa328e07a4fbe75d54b7ad405e09f03004ec090d179",
         "PPAC/Migration/ConstructionTowerTransitions.lean": "8367ee114d77d56762781cf054b1ff88b1c142e91a4095c2420cf8590386d2bd",
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ForcingConditionGraphs.lean": "62df08ebfc25d5765f6cce00f97391305959be6077eba97726036815307e4c4f",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
@@ -60513,8 +60560,8 @@
         "PPAC/Migration/ConstructionTowerValidity.lean": "2eaf93bb0864373a5b5cadd94c3941fa1dc1bc7b492985c958a55d3fec89df8c",
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
-        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "f4da094c0f44c980880b6a6e7573ad1305e2b5fff1fb5bd2092a6207d089a9d0",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "79083d58e8608d183e2b96dd6b15eab535d68f5a684e263b6acba87875e241c2",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructibleGround.lean": "25eb4b6e93cbaa884d36186d9e2e90e8ceec5c8ca6458f8df03cce08c826c9a9",
         "PPAC/Migration/ConstructibleSource.lean": "3e0753271c6e98902b29cf15fe0161d0b1113865606300d0ab478ce9fc491add"
       },
@@ -60739,7 +60786,7 @@
         "PPAC/Migration/ConstructionRoundFields.lean": "3d8b648ba563c58d56acd11e109aad02615cda7c7c0688e306a86aaf84e6dbfb",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
         "PPAC/Migration/ConstructionTowerInitial.lean": "2115714024451fec1c52fc3124a9c8fc1174cece6dea9f57aad64155d2d2e0e0",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionDirectedWeightData.lean": "dce190744e80c893f6d5f674118642600bb62135c07d8ea8ea046d9eef177cf7",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Arithmetic/Recursion.lean": "78514c4d002710e93b65f6f9c1642efaf7a9d5617a460573da9a20236dbf03d4"
@@ -60823,7 +60870,7 @@
         "PPAC/Migration/ConstructionTowerHistorySuccessor.lean": "524168de9cf2d135a6a9250c5b1715fc71a9b17332cce2a1dbda4ab128e34557",
         "PPAC/Migration/ConstructionTowerHistoryLimit.lean": "5874fce84dcf23420c38b7ad4ced22c1d4a21ccae977c707d5e86e7d478bc7d9",
         "PPAC/Migration/ConstructionTowerAppend.lean": "7f3c9da9ed12c65e450e098e0e09020b917d95f546e3356d982999c51a6f60d9",
-        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "f4da094c0f44c980880b6a6e7573ad1305e2b5fff1fb5bd2092a6207d089a9d0",
+        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "79083d58e8608d183e2b96dd6b15eab535d68f5a684e263b6acba87875e241c2",
         "PPAC/Migration/ConstructionTowerCanonicalLimit.lean": "2e7fe8dce4373c30cc0960af387ac66007bb4e6fbc3ea2ca016e796e593f3abe",
         "PPAC/Migration/ConstructionTowerLimit.lean": "cc293471ba3a230289b0548ac9d983377b3f6d4775a1e28d8229a193de6b9a21",
         "PPAC/Migration/ConstructionRealCuts.lean": "e05c379a01b56f2c760b66a98d4d12dbe54aad55a27bda5b6722efa8e898c3e2",
@@ -60843,7 +60890,7 @@
         "native sequence append/ordinal successor/extensionality",
         "existing complete SAME L/order producer and ModelTransfer"
       ],
-      "scope": "BOTH actual HistoryLimit.Value and HistorySuccessor.Value consume SAME Result/Extended fan and SelfExtension to construct actual appended history with COMPLETE Valid. Five native kernel endpoints across modules: pointwise limit/successor append closure nativeZF; combined source-parent unique-record AND valid-append limit constructor nativeZF, successor constructor SAME L relative. Original Principal top discharges needed Cut via existing principal_cut with same unit Coordinates, no extra background. Full successor and limit append preservation COMPLETE; uniform total history operator, actual recursive tower/time/map_succ/CompleteRounds/Con remain OPEN.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: UNCHANGED full Valid history append at successor/limit; proof projects old graph uniqueness from SAME source-enriched Extended. Extra source data retained in actual successor value, no altered validity conditions or weakened caller hypotheses; existing native/L-relative closure kernels rechecked.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionTowerHistoryClosure.Continues": [
           "propext",
@@ -61151,7 +61198,7 @@
         "PPAC/Migration/ConstructionTowerHistoryInitial.lean": "688bc548fa5fc99bf54096295b88aae13b0002e763fffe5169bc9a4203b89b19",
         "PPAC/Migration/ConstructionTowerHistorySuccessor.lean": "524168de9cf2d135a6a9250c5b1715fc71a9b17332cce2a1dbda4ab128e34557",
         "PPAC/Migration/ConstructionTowerHistoryLimit.lean": "5874fce84dcf23420c38b7ad4ced22c1d4a21ccae977c707d5e86e7d478bc7d9",
-        "PPAC/Migration/ConstructionTowerHistoryClosure.lean": "643166a89cb46e4daf7b51bc8304f2d574b4227b5021a32cbf938b92b3e2e82b",
+        "PPAC/Migration/ConstructionTowerHistoryClosure.lean": "fa6b03da129b938c84756f42425ec2c8af2b61253ac8d331e9595b7db49421c5",
         "PPAC/Migration/ConstructionRequestSchedule.lean": "6e9243c74ccdaeddf65654662d3c9f7685faff94ba071b51c6218e4d875b9ed3",
         "PPAC/Migration/ConstructionRealCuts.lean": "e05c379a01b56f2c760b66a98d4d12dbe54aad55a27bda5b6722efa8e898c3e2"
       },
@@ -62286,14 +62333,15 @@
         "PPAC/Migration/ConstructionTowerIteration.lean": "85086afb727859d517e3c3603f6b42f307cd7591332cafa7dd69e0b8fcc80086",
         "PPAC/Migration/ConstructionTowerIterationCases.lean": "9cca2e45a79f5ad215ffae675577a6778605832dd69a00fb21a3651473417edf",
         "PPAC/Migration/ConstructionTowerHistorySuccessor.lean": "524168de9cf2d135a6a9250c5b1715fc71a9b17332cce2a1dbda4ab128e34557",
-        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "f4da094c0f44c980880b6a6e7573ad1305e2b5fff1fb5bd2092a6207d089a9d0",
-        "PPAC/Migration/ConstructionTowerSuccessor.lean": "41673e29bc0dd06a15196c04374f95a8509871ec8b6565ec0a76a04fc74b1027",
+        "PPAC/Migration/ConstructionTowerCanonicalSuccessor.lean": "79083d58e8608d183e2b96dd6b15eab535d68f5a684e263b6acba87875e241c2",
+        "PPAC/Migration/ConstructionTowerSuccessor.lean": "c0584fb30c04e12bf75ffd695e85801de9e33b695c50b955ebb0b8880b6bd0c3",
         "PPAC/Migration/ConstructionTowerTransitions.lean": "8367ee114d77d56762781cf054b1ff88b1c142e91a4095c2420cf8590386d2bd",
-        "PPAC/Migration/ConstructionRoundSelection.lean": "17aa90a6338f21e30e59b032affc5ee5a40f8af69d3a6d08b15ca5949f06965a",
+        "PPAC/Migration/ConstructionRoundSelection.lean": "b605d9300fb39d860e3c4d6744b28c957a53997697f5330298e842659a5a4d6d",
         "PPAC/Migration/ConstructionRoundStep.lean": "74ab9f83ee1dfb3c9796845b17d8e6aec48d514a00ef8b209dde36e4345a98a4",
         "PPAC/Migration/ConstructibleGround.lean": "25eb4b6e93cbaa884d36186d9e2e90e8ceec5c8ca6458f8df03cce08c826c9a9",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
-        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0"
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Ord/Recursion.lean": "45575b365549484c9d6d95700c7edcea090bb8761553be891cf47f6797dec6b0",
+        "PPAC/Migration/ConstructionRoundSource.lean": "280d578d567640800ff6b6b6923e6c37085b374f7295c85fba856eb1412ec26f"
       },
       "source_declarations": [
         "Round.map_succ",
@@ -62311,7 +62359,7 @@
         "actual Matrix exact edge theorem",
         "unchanged SAME L/order producer and original ModelTransfer kernel"
       ],
-      "scope": "CURRENT CONTRACT STRENGTHENING: ALL internally adjacent stages of SAME actual source recursive tower. Global matrix graph is literally SAME selected original inclusion O; both actual records and complete Step retained. Strong Done explicitly uses this SAME O, carrying actual Probe generator in original tuple ninth field with NO current preimage, or full Merger roots with NO current preimages. Native forall20 equation kernel and SAME L-relative forall15 actual tower/all12tables/time/full21diagram/naturality kernel rechecked. ALL internal indices retained, no external WellFounded/rank/standardness. Request/index/stage cardinal bounds are completed in accepted modules. CompleteRound persistence/independence, saturation, models and final internal Con remain OPEN.",
+      "scope": "CURRENT SOURCE PROVENANCE CONTRACT: ALL internal adjacent stages of SAME actual recursive tower. Global transition equals SAME actual original inclusion O, strong Done/current freshness and original mapped operation Provenance retained, including actual fixed Probe generator/normal-form graphs or actual Merger copy/free-action/word/root graphs. Native forall20 equation kernel and SAME L-relative forall15 actual full-tower kernel rechecked. No alternative source operation, standardness/rank bound, or new ambient Choice. Exact cone/RootSystem/persistence, full CompleteRounds/saturation/models/internal Con remain OPEN.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ConstructionTowerMapSucc.SuccessorAt": [
           "propext",
@@ -63395,7 +63443,7 @@
       },
       "adapter": "PPAC/Migration/ConstructionTowerCardinality.lean",
       "certificate_source_files": {
-        "PPAC/Migration/ConstructionTowerMapSucc.lean": "a750d48b51314614e40a2b49857f3a3a45aa22260257146ea6efa36f9e5f04b7",
+        "PPAC/Migration/ConstructionTowerMapSucc.lean": "07e847d8306a793d42be3aa4c94edbd80bfef00b9c6157005312a5e30fce7cee",
         "PPAC/Migration/ConstructionTowerIterationValidity.lean": "e9e8a0eb0203a1fe8bb9114a917f423fe373f711e535f35db3f8ae14f025e749",
         "PPAC/Migration/ConstructionTowerIterationCases.lean": "9cca2e45a79f5ad215ffae675577a6778605832dd69a00fb21a3651473417edf",
         "PPAC/Migration/ConstructionTowerIteration.lean": "85086afb727859d517e3c3603f6b42f307cd7591332cafa7dd69e0b8fcc80086",
@@ -63825,6 +63873,274 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
         ],
         "PPAC.Migration.ConstructionRoundFresh.merger": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      }
+    },
+    "construction_operation_source": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean",
+      "source_sha256": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b"
+      },
+      "adapter": "PPAC/Migration/ConstructionOperationSource.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionProbeSuccessor.lean": "5a904d88cf618ea49faf424aa6f2025c3bf70193adfec25b7d00751dc6ba5fd8",
+        "PPAC/Migration/ConstructionProbeAlphabet.lean": "9ee71cecb29086c4c0e9ffbdc6e4b55879320b8b1e91c051d6cc5fceaddd0872",
+        "PPAC/Migration/ConstructionProbeAction.lean": "0f4a9f4dd6ebd1040a4da9f55f6b54a878daabee86b795e457ab05e6cb434165",
+        "PPAC/Migration/ConstructionProbeCones.lean": "3569d0003e05a2555630f38321f1edf1593fdfc2c10e64abd983ba38b3700498",
+        "PPAC/Migration/ConstructionProbeGeneratorSyntax.lean": "fac680d7c1520570c3aff717e7cbc5afd843d8d782a911c524bf4376d23f707c",
+        "PPAC/Migration/ConstructionMergerCopies.lean": "9c721c0ff1f3bb036e322a50fcc32c5fe48e12ac73920bbe6ebee846059c1e9a",
+        "PPAC/Migration/ConstructionMergerAction.lean": "bd3215aefb6d473dbeedd4b82082d2c9fc4843703d04467d7fc57032a934e02f",
+        "PPAC/Migration/ConstructionMergerWordAction.lean": "61f3c77e420a4f76f2f221fc825ee5eb1a1f076cfe8ef36d0e41d944f098ec01",
+        "PPAC/Migration/ConstructionMergerWordProduct.lean": "b9412100b85fda15987cd2687a5cc9f9066e98377671872026abc281aac48c82",
+        "PPAC/Migration/ConstructionMergerRoots.lean": "9344a36616cf68f3ac100a8dbd461474aa239b891005e997a3f5684b858b621f"
+      },
+      "source_declarations": [
+        "ProbeData.target/independent/probe_gate",
+        "MergerData.target/cone_realization",
+        "Round.step/map_succ/requestIso consumers"
+      ],
+      "consumers": [
+        "ConstructionRoundSelection.Candidate/Picked",
+        "ConstructionTowerSuccessor.Extended",
+        "ConstructionTowerMapSucc original-kernel equations and actual tower"
+      ],
+      "reused_interfaces": [
+        "unchanged actual original alphabet/path/quotient/action/word/product/generator/root constructors",
+        "stronger existing original parent output without new input or math backend",
+        "same actual request map/fromBase/weights/profile/current freshness and nine-field tuple",
+        "same L least-candidate selector, internal ordinal iterator and original ModelTransfer"
+      ],
+      "scope": "ACTUAL object formulas for original normal forms. Alpha preserves SAME path factor/terminal tables, full letter quotient projection, actual action graph, target and exit graphs, cone laws. Probe preserves SAME canonical Word carrier/product graph, old unit/inclusion, actual generator/probe graphs and fixed gen at zero, plus original path/b conditions. Merger preserves SAME typed/valid mapped prescription, literal copy quotient/projection/equality, actual right-free actions on copies and words, full finite-word carrier and multiplication laws, old inclusion and actual root graph/laws. No semantic provenance tag, external finite enumeration, new codec/presentation/kernel or source algebra reproof.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionOperationSource.Alpha": [],
+        "PPAC.Migration.ConstructionOperationSource.Probe": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.Merger": [],
+        "PPAC.Migration.ConstructionOperationSource.alpha": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.alpha_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.alpha_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.probe": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.probe_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.probe_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.merger": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.merger_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionOperationSource.merger_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_round_source": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean",
+      "source_sha256": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/CompleteRounds.lean": "2edb327fe94c10448409c94e3f57ef94d1a88cde0ff4e947fc3b9268d88f265b"
+      },
+      "adapter": "PPAC/Migration/ConstructionRoundSource.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionOperationSource.lean": "5df3709d7c7a6e528d771f417c33be13bc90b6d8071146913b01c54801c0e66b",
+        "PPAC/Migration/ConstructionProbeParent.lean": "a1063b74bb07fe6ca15672ce34dc35dc7eece26bdaadf0f04b08f5fbaa156fbc",
+        "PPAC/Migration/ConstructionMergerParent.lean": "39839620cadfcf796175b69ed97a7f521552a3745f5bd64e40d9218b9ab4e8d5",
+        "PPAC/Migration/ConstructionRoundFresh.lean": "da244a6f480cdfc620e62814d13329a6e486e2d409ae7f2ca6ce93dc9527c029",
+        "PPAC/Migration/ConstructionMergerPrescriptionMap.lean": "3263a91487ef7014dad426d96e1e7275d785027a32fa0212c4948dfb2f0fe28b",
+        "PPAC/Migration/ConstructionRequestMaps.lean": "42d942887b0bedc48cd4cd225213fad243a6b8fdaa98ccedf73688d72d1cbe6c"
+      },
+      "source_declarations": [
+        "ProbeData.target/independent/probe_gate",
+        "MergerData.target/cone_realization",
+        "Round.step/map_succ/requestIso consumers"
+      ],
+      "consumers": [
+        "ConstructionRoundSelection.Candidate/Picked",
+        "ConstructionTowerSuccessor.Extended",
+        "ConstructionTowerMapSucc original-kernel equations and actual tower"
+      ],
+      "reused_interfaces": [
+        "unchanged actual original alphabet/path/quotient/action/word/product/generator/root constructors",
+        "stronger existing original parent output without new input or math backend",
+        "same actual request map/fromBase/weights/profile/current freshness and nine-field tuple",
+        "same L least-candidate selector, internal ordinal iterator and original ModelTransfer"
+      ],
+      "scope": "Matched original Probe/Merger request transported by SAME actual fromBase f. Producer bridges ACTUALLY consume stronger existing Probe parent output or complete MergerParent normal-form output, reconstruct unchanged full weighted Successor/Step/fromBase/profile/current freshness and RETAIN its original operation graphs. Original Probe parent proof body is factored rather than redone. Same source data feeds Candidate/Picked/Extended/actual global map_succ; ANY candidate must exhibit actual normal-form/source data, not merely abstract profile/Step properties. Exact cone/persistence/independence and final Con remain OPEN.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionRoundSource.Provenance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionRoundSource.provenance": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionRoundSource.provenance_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionRoundSource.provenance_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionRoundSource.probe": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionRoundSource.merger": [
           "propext",
           "Classical.choice",
           "Quot.sound",
