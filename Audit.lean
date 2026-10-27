@@ -31801,3 +31801,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSaturationBoundedness.countableSentence
 #print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_models
 #print axioms PPAC.Migration.ConstructionSaturationBoundedness.countable_kernel_certificate
+
+-- SAME actual omega1+1 tower: all internal countable families factor through a proper stage.
+#print axioms PPAC.Migration.ConstructionSaturationCover.Representative
+#print axioms PPAC.Migration.ConstructionSaturationCover.exists_rep
+#print axioms PPAC.Migration.ConstructionSaturationCover.Birth
+#print axioms PPAC.Migration.ConstructionSaturationCover.birth
+#print axioms PPAC.Migration.ConstructionSaturationCover.birth_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.birth_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.preimage
+#print axioms PPAC.Migration.ConstructionSaturationCover.preimage_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.preimage_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.Factor
+#print axioms PPAC.Migration.ConstructionSaturationCover.exists_factor
+#print axioms PPAC.Migration.ConstructionSaturationCover.Covered
+#print axioms PPAC.Migration.ConstructionSaturationCover.AllHistoriesCovered
+#print axioms PPAC.Migration.ConstructionSaturationCover.CoveredTower
+#print axioms PPAC.Migration.ConstructionSaturationCover.tower_covered
+#print axioms PPAC.Migration.ConstructionSaturationCover.exists_covered_tower
+#print axioms PPAC.Migration.ConstructionSaturationCover.factor
+#print axioms PPAC.Migration.ConstructionSaturationCover.factor_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.factor_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.covered
+#print axioms PPAC.Migration.ConstructionSaturationCover.covered_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.covered_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.allHistoriesCovered
+#print axioms PPAC.Migration.ConstructionSaturationCover.allHistoriesCovered_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.allHistoriesCovered_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.coveredTower
+#print axioms PPAC.Migration.ConstructionSaturationCover.coveredTower_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCover.coveredTower_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCover.constructionSentence
+#print axioms PPAC.Migration.ConstructionSaturationCover.construction_models
+#print axioms PPAC.Migration.ConstructionSaturationCover.construction_kernel_certificate

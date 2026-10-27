@@ -2271,7 +2271,8 @@ def main() -> None:
                                ('existing_ordinal_image', 'ExistingOrdinalImage', 5),
                                ('existing_successor_regularity', 'ExistingSuccessorRegularity', 1),
                                ('construction_saturation_index', 'ConstructionSaturationIndex', 30),
-                               ('construction_saturation_boundedness', 'ConstructionSaturationBoundedness', 15)):
+                               ('construction_saturation_boundedness', 'ConstructionSaturationBoundedness', 15),
+                               ('construction_saturation_cover', 'ConstructionSaturationCover', 31)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5890,8 +5891,11 @@ def main() -> None:
         "source_Saturation_ConcreteSystem_mu_K_instantiation_complete": False,
         "source_RoundOrdinal_countable_bounded_ALL_internal_countable_domains_actual_range_constructed_native_kernel_certificate": True,
         "source_RoundOrdinal_countable_subset_bound_native_kernel_certificate": True,
-        "source_Saturation_countable_proper_stage_coverage_complete": False,
-        "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": False,
+        "source_Saturation_actual_limit_representatives_read_from_SAME_recursive_history_and_global_matrix": True,
+        "source_Saturation_internal_birth_index_function_and_actual_lift_graph_constructed": True,
+        "source_Saturation_countable_proper_stage_coverage_complete": True,
+        "source_Saturation_countable_stage_SAME_constructed_tower_native_kernel_certificate": True,
+        "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

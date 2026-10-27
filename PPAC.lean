@@ -663,3 +663,5 @@ import PPAC.Migration.ConstructionSaturationIterationValidity
 import PPAC.Migration.ConstructionSaturationIndex
 
 import PPAC.Migration.ConstructionSaturationBoundedness
+
+import PPAC.Migration.ConstructionSaturationCover

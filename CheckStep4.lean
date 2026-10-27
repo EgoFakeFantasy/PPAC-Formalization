@@ -11621,4 +11621,11 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionSaturationBoundedness.countableSentence) :=
   ConstructionSaturationBoundedness.countable_kernel_certificate
 
+-- Original source parents produce the actual tower AND countable-stage factorization
+-- for its SAME recursive history and SAME actual transition matrix.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionSaturationCover.constructionSentence)) :=
+  ConstructionSaturationCover.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
