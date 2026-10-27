@@ -11628,4 +11628,11 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionSaturationCover.constructionSentence)) :=
   ConstructionSaturationCover.construction_kernel_certificate
 
+-- SAME actual constructed tower, with all final Probe requests and K-indexed
+-- injection/full final divisor profiles/exact pairwise intersections.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionSaturationProbes.constructionSentence)) :=
+  ConstructionSaturationProbes.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

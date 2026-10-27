@@ -31834,3 +31834,31 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSaturationCover.constructionSentence
 #print axioms PPAC.Migration.ConstructionSaturationCover.construction_models
 #print axioms PPAC.Migration.ConstructionSaturationCover.construction_kernel_certificate
+
+-- Actual final Probe saturation, full final divisor profiles and exact intersections.
+#print axioms PPAC.Migration.ConstructionSaturationProbeStage.parameters
+#print axioms PPAC.Migration.ConstructionSaturationProbeStage.reflect_path
+#print axioms PPAC.Migration.ConstructionSaturationProbeStage.ProbeStage
+#print axioms PPAC.Migration.ConstructionSaturationProbeStage.probe_stage
+#print axioms PPAC.Migration.ConstructionSaturationProbes.Probes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.AllProbes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.AllHistoriesProbes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.ProbeTower
+#print axioms PPAC.Migration.ConstructionSaturationProbes.tower_probes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.exists_probe_tower
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probesF
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probesF_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probesF_semantics
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allProbes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allProbes_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allProbes_semantics
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allHistoriesProbes
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allHistoriesProbes_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationProbes.allHistoriesProbes_semantics
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probeTower
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probeTower_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationProbes.probeTower_semantics
+#print axioms PPAC.Migration.ConstructionSaturationProbes.constructionSentence
+#print axioms PPAC.Migration.ConstructionSaturationProbes.construction_models
+#print axioms PPAC.Migration.ConstructionSaturationProbes.construction_kernel_certificate

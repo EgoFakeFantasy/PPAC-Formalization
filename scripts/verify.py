@@ -2272,7 +2272,9 @@ def main() -> None:
                                ('existing_successor_regularity', 'ExistingSuccessorRegularity', 1),
                                ('construction_saturation_index', 'ConstructionSaturationIndex', 30),
                                ('construction_saturation_boundedness', 'ConstructionSaturationBoundedness', 15),
-                               ('construction_saturation_cover', 'ConstructionSaturationCover', 31)):
+                               ('construction_saturation_cover', 'ConstructionSaturationCover', 31),
+                               ('construction_saturation_probe_stage', 'ConstructionSaturationProbeStage', 4),
+                               ('construction_saturation_probes', 'ConstructionSaturationProbes', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5896,6 +5898,12 @@ def main() -> None:
         "source_Saturation_countable_proper_stage_coverage_complete": True,
         "source_Saturation_countable_stage_SAME_constructed_tower_native_kernel_certificate": True,
         "source_Saturation_concrete_omega1_index_and_countable_stage_cover_instantiated": True,
+        "source_SaturatedMonoids_probe_stage_actual_parameter_lift_and_conservative_path_reflection_complete": True,
+        "source_SaturatedMonoids_SAME_selected_complete_round_inclusion_afterRound_and_profile_transport_complete": True,
+        "source_SaturatedMonoids_final_Probe_saturation_K_injection_full_final_divisor_profiles_exact_intersections_native_kernel_certificate": True,
+        "source_SaturatedMonoids_finite_prescription_stage_complete": False,
+        "source_SaturatedMonoids_final_finiteMergers_complete": False,
+        "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,
