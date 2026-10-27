@@ -11362,4 +11362,31 @@ example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructibleGround.nonemptySentence) :=
   ConstructibleGround.nonempty_kernel
 
+-- SAME completed L domain discharges the existing source interpreted theory.
+example {p : Source.Sentence} (hp : Source.SetLanguage.ZF p) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (Relativization.formula ConstructibleSource.domain p)) :=
+  ConstructibleSource.zf_axiom_kernel hp
+
+example : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+    (Translation.sentence (Relativization.formula ConstructibleSource.domain Source.SetLanguage.AC)) :=
+  ConstructibleSource.choice_kernel
+
+example {n : Nat} (p : Source.Formula (n+2)) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (Relativization.formula ConstructibleSource.domain (CollectionSyntax.collection p))) :=
+  ConstructibleSource.collection_kernel p
+
+example {p : YesMetaZFC.Logic.FirstOrder.Sentence SetTheory.PureSetLanguage}
+    (h : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] p) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (Relativization.formula ConstructibleSource.domain (Reverse.sentence p))) :=
+  ConstructibleSource.native_sentence h
+
+example {p : Source.Sentence}
+    (h : YesMetaZFC.Logic.FirstOrder.Derives (SetTheory.Definitional.Project.fo_theory SetTheory.ZFC) [] (Translation.sentence p)) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (Relativization.formula ConstructibleSource.domain p)) :=
+  ConstructibleSource.source_zfc_sentence h
+
 end PPAC.Migration.Step4Checks

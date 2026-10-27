@@ -2227,7 +2227,8 @@ def main() -> None:
                                ('construction_ordinal_schedule', 'ConstructionOrdinalSchedule', 4),
                                ('construction_ordinal_schedule_syntax', 'ConstructionOrdinalScheduleSyntax', 6),
                                ('existing_l_choice_bridge', 'ExistingLChoiceBridge', 4),
-                               ('constructible_ground', 'ConstructibleGround', 8)):
+                               ('constructible_ground', 'ConstructibleGround', 8),
+                               ('constructible_source', 'ConstructibleSource', 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5826,7 +5827,11 @@ def main() -> None:
         "native_internal_L_relative_all_ZF_ZFC_axiom_schema_original_kernel_certificates": True,
         "native_internal_L_relative_Choice_global_order_and_nonempty_original_kernel_certificates": True,
         "native_internal_L_requires_ambient_object_Choice_standardness_or_external_wellfoundedness": False,
-        "native_internal_L_source_Relativization_domain_formula_consumer_connected": False,
+        "native_internal_L_source_Relativization_domain_formula_consumer_connected": True,
+        "native_internal_L_source_ZF_full_schemas_Choice_and_Collection_relative_kernels": True,
+        "native_internal_L_InterpretedZF_background_and_nonempty_actually_discharged": True,
+        "native_internal_L_native_ZF_and_source_native_ZFC_standard_proof_transports": True,
+        "original_stage6_background_universe_instance_Derives_gate_complete": True,
         "native_internal_L_all_internal_Proof_Con_transfer_completed": False,
         "build_passed": True,
         "audit_passed": True,

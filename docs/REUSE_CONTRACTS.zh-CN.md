@@ -12,9 +12,9 @@
 | 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。固定载体的统一标签作用、逆与共轭已接入；原 omega/2 已特化；源单子/conical 合同下偏序已接通；具体单子构造仍属阶段 8 |
 | 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；本批 L 相对化已核对任意同一 universe 模型的前提，不拿单个 LCarrier 替代 |
 | 旧 LCarrier 工程的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 该旧工程已完成完整模式，但 LCarrier 是 ZFSet 子类。这个限制不能概括新版 YesMetaZFC：其任意 ZF 模型的内部 L 定理已存在，见下一行 |
-| 新版原生 L 数学 | 供体 7979336 的 l_model_zf_l／l_model_zfc_l／js_l_model_l；现由 PPAC/Companion 必要闭包及 ConstructibleGround.relative／zfc_axiom_kernel／global_order_kernel／nonempty_kernel 消费 | 固定旧版 039c8e1 编译通过并实际取得 nativeZF 中全部原生 ZF/ZFC 公理／模式、Choice、L 内全局序和非空的相对化原核证书。140 份数学正文不变；源域公式消费及内部 Con 仍未闭合。不能再报版本适配或原生全模式解释未完成；GCH 非本项目义务 |
-| L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费仍待接通 |
-| 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | 已接通；保留解释背景和域非空前提，不等于 nativeZF 已证明 ZFC 的全部 L 相对化 |
+| 新版原生 L 数学 | 供体 7979336 的 l_model_zf_l／l_model_zfc_l／js_l_model_l；现由 PPAC/Companion 必要闭包及 ConstructibleGround.relative／zfc_axiom_kernel／global_order_kernel／nonempty_kernel 消费 | 固定旧版 039c8e1 编译通过并实际取得 nativeZF 中全部原生 ZF/ZFC 公理／模式、Choice、L 内全局序和非空的相对化原核证书。140 份数学正文不变；源域公式和解释背景消费本批也已验收，内部 Con 仍未完成。不能再报版本适配、原生／源全模式解释未完成；GCH 非本项目义务 |
+| L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
+| 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -126,4 +126,4 @@ Merger 基数界已直接复用 ConstructionProbeWordCardinality.raw_cardinal_le
 
 本批供体重用锁为 SOURCE_LOCK.companion_reuse.native_small_family_union；三份原文件 SHA、三个精确区块 SHA、六项声明全足迹以及实际消费者均记录。既有原 Axioms.choice、源 AC 对应已完成；本批 choice_semantics/models_zfc 仅接线。不能把一般小族并的源 ZFC 前提隐藏成 ZF 无条件结论，也不能把它加成极限对象构造前提。
 
-本轮已实际完成此前兼容核对之后的接线：223 模块闭包中旧版已有 81 个，其余 142 项用 140 份只改导入的数学正文及 2 项既有实现重定向解决。140 个模块和 2818 项公开／生成声明均已正式验收，无新增信任；SOURCE_LOCK 锚定 L_REUSE_LOCK 的所有源码、去导入正文及精确足迹。活动依赖和供体均未修改，未读取退役反射归档。源域公式消费与全部内部 Proof/Con 仍保留为实际未完项。
+本轮已实际完成此前兼容核对之后的接线：223 模块闭包中旧版已有 81 个，其余 142 项用 140 份只改导入的数学正文及 2 项既有实现重定向解决。140 个模块和 2818 项公开／生成声明均已正式验收，无新增信任；SOURCE_LOCK 锚定 L_REUSE_LOCK 的所有源码、去导入正文及精确足迹。活动依赖和供体均未修改，未读取退役反射归档。源域公式消费本批已验收；全部内部 Proof/Con 仍是实际未完项。

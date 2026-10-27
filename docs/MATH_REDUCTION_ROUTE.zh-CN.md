@@ -6,7 +6,7 @@
 
 | 必要环节 | 原源／现成供体 | 当前状态与下一接口 |
 |---|---|---|
-| L 解释和全模式 | 供体 7979336：l_model_zf_l／l_model_zfc_l／js_l_model_l；ConstructibleGround 原核端点 | 完整数学已按必要闭包复用到固定旧版：140 份正文只改导入，任意模型／同一 universe。全部原生 ZF/ZFC 公理及模式、Choice、全局序、非空性的实际 L 相对化原核证书已验收，无额外对象 Choice／良基／不可达前提。版本和原生对象解释不再待做；下一消费是既有 Source Relativization 域公式及第 10 阶段内部码，不重建 L/GCH |
+| L 解释和全模式 | 供体 7979336：l_model_zf_l／l_model_zfc_l／js_l_model_l；ConstructibleGround 原核端点 | 完整数学已按必要闭包复用到固定旧版：140 份正文只改导入，任意模型／同一 universe。全部原生 ZF/ZFC 公理及模式、Choice、全局序、非空性的实际 L 相对化原核证书已验收，无额外对象 Choice／良基／不可达前提。版本、原生及源对象解释均已验收；ConstructibleSource 已实际消去既有 InterpretedZF 背景／非空前提，取得全部源模式／AC／Collection 原核 L 相对化。直接消费者为原第 8 阶段迭代及第 10 阶段内部码，不重建 L/GCH |
 | 原核全理论与相对化 | ReverseZFReplay、ChoiceNativeBridge、Relativization、InterpretedZF | 全模式、AC 两种呈现、19 规则回放已完成；具体解释非空及背景由实际供体接口提供，不当作假设偷渡 |
 | 内部名字及作用 | ForcingNames、NameActions；本仓 ForcingNames/Evaluation/MapConditions/ConditionAction | 内部递归、check/pair/union、实际统一条件作用／群律已验收；具体阶段 8 单子仍待提供 |
 | 小支撑正规滤子 | SupportFilter → ProductNames.system:89–92 | 标签置换、Fix、共轭图及像已验收；实际 subgroupFilter、有限并支撑界和全部四项正规性已构造；直接使用新版底座五个原证明，ω 基数性不再作为额外前提。实际 ProductNames.actionHom 和支撑 Context 已接通；非平凡性按源 ChoiceFailure 消费者另接 |
