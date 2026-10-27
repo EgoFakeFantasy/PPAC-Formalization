@@ -2180,7 +2180,10 @@ def main() -> None:
                                ('construction_merger_word_heightCost_syntax', 'ConstructionMergerWordHeightCostSyntax', 3),
                                ('construction_merger_cardinality', 'ConstructionMergerCardinality', 5),
                                ('construction_merger_parent', 'ConstructionMergerParent', 1),
-                               ('construction_merger_parent_syntax', 'ConstructionMergerParentSyntax', 3)):
+                               ('construction_merger_parent_syntax', 'ConstructionMergerParentSyntax', 3),
+                               ('construction_directed_system', 'ConstructionDirectedSystem', 29),
+                               ('construction_directed_limit_carrier', 'ConstructionDirectedLimitCarrier', 47),
+                               ('construction_directed_limit_carrier_syntax', 'ConstructionDirectedLimitCarrierSyntax', 3)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5618,6 +5621,12 @@ def main() -> None:
         "source_merger_cardinality_is_conditional_output_not_construction_premise": True,
         "source_merger_same_original_parent_weighted_request_producer_proved": True,
         "source_merger_same_old_inclusion_marked_nonunit_and_height_cost_preserved": True,
+        "source_directed_limit_actual_varying_carrier_projection_and_all_stage_maps_proved": True,
+        "source_directed_limit_actual_common_stage_pair_and_triple_proved": True,
+        "source_directed_limit_of_map_and_conditional_transition_injectivity_proved": True,
+        "source_directed_limit_carrier_quotient_requires_transition_injectivity": False,
+        "source_directed_limit_monoid_and_conservativity_proved": False,
+        "source_directed_limit_complete_weighted_limit_proved": False,
         "source_initial_base_height_cost_and_margin_proved": True,
         "source_initial_base_height_cost_fraction_graphs_constructed": True,
         "source_initial_base_fraction_numerator_positive_below_denominator_proved": True,

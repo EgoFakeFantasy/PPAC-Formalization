@@ -50860,6 +50860,553 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
         ]
       }
+    },
+    "construction_directed_system": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedSystem.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of:19 (underlying carrier/toFun portion only)",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_apply:25",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_map:29",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_injective:62"
+      ],
+      "consumers": [
+        "DirectLimits LeftCancelMonoid:32 and IsConical:44 common-stage induction3",
+        "DirectLimits.of_factors:65 / of_conservative:86 / conditionalJoins:111",
+        "MonoidTowers.DirectedColimit actual carrier / transition / object"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ForcingMapConditions.coordinate_bound, native KP Union and Cartesian product, native Separation construct the ACTUAL disjoint sum of varying stage carriers; no supplied sum/bound or fixed-carrier omega specialization",
+        "ADAPTS accepted MergerCopies exact-class Separation/functionalImage/native function-graph proof pattern to THIS source common-future relation; underlying source directed-system totality/functionality/identity/composition are explicit input, not assumed limit properties",
+        "Source common-future equality proved reflexive/symmetric/transitive by actual arbitrary directed PREORDER common successors and transition equations; NO antisymmetry, external well-foundedness, standardness, choice family or transition-injectivity premise for quotient existence",
+        "UNCHANGED native function constructor builds EVERY actual stage inclusion graph from SAME global projection; source of_map and exact projected equality are derived; source of_injective requires only actual InjectiveTransitions in the OUTPUT implication",
+        "Actual common-stage pair and triple representation is CONSTRUCTED by actual transition totality and original index directedness, for source induction2/induction3 multiplication/cancellation/associativity consumers",
+        "UNCHANGED Kuratowski coding and generic ConstructionProbeHomEvaluation.product_unique reused; no new generic quotient/category/sequence/parser/Sat/kernel/recursor backend or trust",
+        "UNCHANGED ModelTransfer.derives gives pure forall4/exist3 original nativeZF kernel certificate including every stage map, precise equality, of_map, conditional injectivity and common-stage pair/triple"
+      ],
+      "scope": "ACTUAL underlying carrier/toFun portion of pinned DirectLimits.ConservativeLimit.of, exact common-future equivalence classes, SAME global projection and ALL actual stage map graphs. Arbitrary internal set-indexed directed PREORDERS with VARYING stage carriers. Original directed-system equations remain explicit inputs; actual final tower is not supplied/constructed in this batch. of_map, of_injective (conditional on actual transition injections), all pair/triple common-stage witnesses derived. Quotient existence NEVER assumes transition injectivity, Choice, nonempty/ordinal/omega/externally well-founded index, chosen representatives or cardinal bound. Extra assumptions unused by carrier layer are not introduced. Pure forall4/exist3 native Derives certificate. DOES NOT YET PROVE full of as MonoidHom, limit multiplication/unit/left-cancel/conical/joins/Conservative/profiles/weights/cardinality or final tower/Con; these actual consumers remain stage8 work.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedSystem.At": [],
+        "PPAC.Migration.ConstructionDirectedSystem.IndexLaws": [],
+        "PPAC.Migration.ConstructionDirectedSystem.InjectiveTransitions": [],
+        "PPAC.Migration.ConstructionDirectedSystem.Meets": [],
+        "PPAC.Migration.ConstructionDirectedSystem.Transition": [],
+        "PPAC.Migration.ConstructionDirectedSystem.TransitionLaws": [],
+        "PPAC.Migration.ConstructionDirectedSystem.atStage": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.atStage_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.atStage_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.indexLaws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.indexLaws_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.indexLaws_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.injectiveTransitions": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.injectiveTransitions_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.injectiveTransitions_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.meets": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_refl": [],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_same_iff": [],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_symm": [],
+        "PPAC.Migration.ConstructionDirectedSystem.meets_trans": [],
+        "PPAC.Migration.ConstructionDirectedSystem.transition": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.transitionLaws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.transitionLaws_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.transitionLaws_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.transition_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedSystem.transition_meets": [],
+        "PPAC.Migration.ConstructionDirectedSystem.transition_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_limit_carrier": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedLimitCarrier.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of:19 (underlying carrier/toFun portion only)",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_apply:25",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_map:29",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_injective:62"
+      ],
+      "consumers": [
+        "DirectLimits LeftCancelMonoid:32 and IsConical:44 common-stage induction3",
+        "DirectLimits.of_factors:65 / of_conservative:86 / conditionalJoins:111",
+        "MonoidTowers.DirectedColimit actual carrier / transition / object"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ForcingMapConditions.coordinate_bound, native KP Union and Cartesian product, native Separation construct the ACTUAL disjoint sum of varying stage carriers; no supplied sum/bound or fixed-carrier omega specialization",
+        "ADAPTS accepted MergerCopies exact-class Separation/functionalImage/native function-graph proof pattern to THIS source common-future relation; underlying source directed-system totality/functionality/identity/composition are explicit input, not assumed limit properties",
+        "Source common-future equality proved reflexive/symmetric/transitive by actual arbitrary directed PREORDER common successors and transition equations; NO antisymmetry, external well-foundedness, standardness, choice family or transition-injectivity premise for quotient existence",
+        "UNCHANGED native function constructor builds EVERY actual stage inclusion graph from SAME global projection; source of_map and exact projected equality are derived; source of_injective requires only actual InjectiveTransitions in the OUTPUT implication",
+        "Actual common-stage pair and triple representation is CONSTRUCTED by actual transition totality and original index directedness, for source induction2/induction3 multiplication/cancellation/associativity consumers",
+        "UNCHANGED Kuratowski coding and generic ConstructionProbeHomEvaluation.product_unique reused; no new generic quotient/category/sequence/parser/Sat/kernel/recursor backend or trust",
+        "UNCHANGED ModelTransfer.derives gives pure forall4/exist3 original nativeZF kernel certificate including every stage map, precise equality, of_map, conditional injectivity and common-stage pair/triple"
+      ],
+      "scope": "ACTUAL underlying carrier/toFun portion of pinned DirectLimits.ConservativeLimit.of, exact common-future equivalence classes, SAME global projection and ALL actual stage map graphs. Arbitrary internal set-indexed directed PREORDERS with VARYING stage carriers. Original directed-system equations remain explicit inputs; actual final tower is not supplied/constructed in this batch. of_map, of_injective (conditional on actual transition injections), all pair/triple common-stage witnesses derived. Quotient existence NEVER assumes transition injectivity, Choice, nonempty/ordinal/omega/externally well-founded index, chosen representatives or cardinal bound. Extra assumptions unused by carrier layer are not introduced. Pure forall4/exist3 native Derives certificate. DOES NOT YET PROVE full of as MonoidHom, limit multiplication/unit/left-cancel/conical/joins/Conservative/profiles/weights/cardinality or final tower/Con; these actual consumers remain stage8 work.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.Carrier": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.Class": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.EqualityLaw": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.Projection": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.Related": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.Representatives": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.carrier": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.carrier_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.carrier_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.class_eq_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.class_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.common_stage_pair": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.common_stage_three": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.eqClass": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.eqClass_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.eqClass_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.equalityLaw": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.equalityLaw_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.equalityLaw_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.equality_law": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_carrier": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_class": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_projection": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_representatives": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_stage_map": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.of_injective": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.of_map": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projected_eq_iff": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projected_indices": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projected_later": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projected_total": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projectionGraph": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projectionGraph_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projectionGraph_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.projection_onto": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_codes_iff": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_refl": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_symm": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.related_trans": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.representative": [],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.representatives": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.representatives_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrier.representatives_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "construction_directed_limit_carrier_syntax": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/DirectLimits.lean",
+      "source_sha256": "1ddd15637fe187a94b33b8978996d92ea703a5cce6793d4a55a4484f72dbc5e3",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidTowers.lean": "ccee147102a2bf28f5c8286ec55925ef220b48d5de29645db610243437f0c81a"
+      },
+      "adapter": "PPAC/Migration/ConstructionDirectedLimitCarrierSyntax.lean",
+      "source_declarations": [
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of:19 (underlying carrier/toFun portion only)",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_apply:25",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_map:29",
+        "PartitionConsistency.DiagramOrder.ConservativeLimit.of_injective:62"
+      ],
+      "consumers": [
+        "DirectLimits LeftCancelMonoid:32 and IsConical:44 common-stage induction3",
+        "DirectLimits.of_factors:65 / of_conservative:86 / conditionalJoins:111",
+        "MonoidTowers.DirectedColimit actual carrier / transition / object"
+      ],
+      "reused_interfaces": [
+        "UNCHANGED ForcingMapConditions.coordinate_bound, native KP Union and Cartesian product, native Separation construct the ACTUAL disjoint sum of varying stage carriers; no supplied sum/bound or fixed-carrier omega specialization",
+        "ADAPTS accepted MergerCopies exact-class Separation/functionalImage/native function-graph proof pattern to THIS source common-future relation; underlying source directed-system totality/functionality/identity/composition are explicit input, not assumed limit properties",
+        "Source common-future equality proved reflexive/symmetric/transitive by actual arbitrary directed PREORDER common successors and transition equations; NO antisymmetry, external well-foundedness, standardness, choice family or transition-injectivity premise for quotient existence",
+        "UNCHANGED native function constructor builds EVERY actual stage inclusion graph from SAME global projection; source of_map and exact projected equality are derived; source of_injective requires only actual InjectiveTransitions in the OUTPUT implication",
+        "Actual common-stage pair and triple representation is CONSTRUCTED by actual transition totality and original index directedness, for source induction2/induction3 multiplication/cancellation/associativity consumers",
+        "UNCHANGED Kuratowski coding and generic ConstructionProbeHomEvaluation.product_unique reused; no new generic quotient/category/sequence/parser/Sat/kernel/recursor backend or trust",
+        "UNCHANGED ModelTransfer.derives gives pure forall4/exist3 original nativeZF kernel certificate including every stage map, precise equality, of_map, conditional injectivity and common-stage pair/triple"
+      ],
+      "scope": "ACTUAL underlying carrier/toFun portion of pinned DirectLimits.ConservativeLimit.of, exact common-future equivalence classes, SAME global projection and ALL actual stage map graphs. Arbitrary internal set-indexed directed PREORDERS with VARYING stage carriers. Original directed-system equations remain explicit inputs; actual final tower is not supplied/constructed in this batch. of_map, of_injective (conditional on actual transition injections), all pair/triple common-stage witnesses derived. Quotient existence NEVER assumes transition injectivity, Choice, nonempty/ordinal/omega/externally well-founded index, chosen representatives or cardinal bound. Extra assumptions unused by carrier layer are not introduced. Pure forall4/exist3 native Derives certificate. DOES NOT YET PROVE full of as MonoidHom, limit multiplication/unit/left-cancel/conical/joins/Conservative/profiles/weights/cardinality or final tower/Con; these actual consumers remain stage8 work.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionDirectedLimitCarrierSyntax.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrierSyntax.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionDirectedLimitCarrierSyntax.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

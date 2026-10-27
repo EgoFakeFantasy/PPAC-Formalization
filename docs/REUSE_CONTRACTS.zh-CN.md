@@ -122,4 +122,4 @@ Merger 当前消费：ConstructionMergerRelations/Copies/Action 将固定原关�
 
 Merger 基数界已直接复用 ConstructionProbeWordCardinality.raw_cardinal_le、ConstructionProbeCardinality.indexed_quotient_bound、原生 infinite_product_l 和 ConstructionMergerCopies.projection_onto，现有原核证书。ConstructionMergerParentSyntax 已组合同一原父生产者与完整 Word 权重，保留实际旧嵌入／所有 profile／根、指定非单位元、高度／成本／旧上确界及条件基数界；完整加权 MergerData 不再待装配。
 
-下一直接消费者是 Request.target/inclusion 与 MonoidTowers.DirectedColimit，源 ConcreteSystem.T = Saturation.target Base.object K。先迁移源 ConservativeLimit 的实际集合图／共同阶段关系及其单子、保守性和精确权重，复用现有 Cartesian/Separation/functionalImage、函数构造、Cut 与原核回传；随后接加权塔／请求调度。直接消费现成集合构造，不另建类别论或通用 quotient／递归后端。Placement/Hull 按已核对的具体消费者接入，不能按目录顺序扩写泛滤分支。
+下一直接消费者是 Request.target/inclusion 与 MonoidTowers.DirectedColimit，源 ConcreteSystem.T = Saturation.target Base.object K。本批已复用 coordinate_bound／Union／Cartesian／Separation、MergerCopies 精确类／functionalImage／函数图方法和 Kuratowski／product_unique，构造实际变动载体／共同后继等价类／同一投影／全部阶段函数图，并导出 of_map、条件 of_injective 与二／三元共同阶段表示；已有原核证书。没有以固定载体 Probe/omega 的 Letters 直接改名冒充任意变动阶段族。下一步仅在这些同一对象上接源乘法、保守性、条件并／profile／完整权重与基数界，再接加权塔／请求调度。直接消费现成集合构造，不另建类别论或通用 quotient／递归后端。Placement/Hull 按已核对的具体消费者接入，不能按目录顺序扩写泛滤分支。
