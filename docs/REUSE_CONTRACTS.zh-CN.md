@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；下一真实消费者为 CellTowers／纤维粘合。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；本批实际纤维粘合已完成；下一真实消费者为标签系统/纤维基数与移动滤子传输。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -267,4 +267,8 @@ ForcingSystemFibers 已直接消费 System 的单射/复合、sub_eq、原生配
 
 ForcingComponentFibers 已复用整个 ConstructionComponentCarrier 和 EncodedArrow，按同一实际对象函数的唯一值定义 VertexFiber；native functionalImage/setFunctionFromTo 收集完整内部纤维函数族。exists_arrowMap 直接调用已验收 fiber_bijection，唯一性使用既有函数图外延性，恒等/复合直接消费 restrict_refl/restrict_comp。普通 nativeZF 原核联合证书已完整验收；所有量词仍是内部集合量词，不以外部可数或定秩对象代替。
 
-下一真实消费者是 ComponentGluing.Matches/refl/symm/trans/same/common，再接实际 Glued/toGlued。应复用 successors_directed/Common、上述实际双射和相容性，以及已用过的分离/函数像/投影构造方法。ForcingLocalQuotient.exists_quotient 具体绑定 ActiveEqual，不能仅改名当作 Matches 商；底座分离和函数像的构造方法可以适配。移动滤子 quotient transport、实际粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingComponentMatches 直接复用 successors_directed/compose、实际箭头双射及 Coherent 证明原 Matches 传递性；同纤维不坍缩由原映射唯一性推出。全体 Point 载体取既有顶点集合与完整纤维像的并之积，再分离，不限制为外部可数或固定秩片段。
+
+ForcingComponentGluing 复用原生分离、functionalImage/setFunctionFromTo 取得整个指定 Common 分量的 Matches 商及投影。ForcingLocalQuotient.exists_quotient/class_eq_iff 的构造与证明方法被适配，未把绑定 ActiveEqual 的旧结论直接改名。满射按源证明使用共同后继和实际箭头前像；所有整纤维的规范双射与箭头交换律均有原核对象证书。
+
+下一真实消费者为 LocalRecords.labelSystem:606–619 和 ConcreteSystem.label_available_center/labelFiberEmbedding/labelFiber_cardinal/gluedLabel_cardinal:175–267。其字面范围/包含映射实例尚未接入；现成完整 System 接口、ConstructionIdealProbes.ideal_probes、实际饱和 T 和 μ/K 基数界必须复用。随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。

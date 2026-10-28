@@ -766,3 +766,5 @@ import PPAC.Migration.ForcingSystemAvailability
 
 import PPAC.Migration.ForcingSystemFibers
 import PPAC.Migration.ForcingComponentFibers
+import PPAC.Migration.ForcingComponentMatches
+import PPAC.Migration.ForcingComponentGluing

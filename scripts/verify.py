@@ -2336,7 +2336,9 @@ def main() -> None:
                                ('forcing_eligible_system', 'ForcingEligibleSystem', 28),
                                ('forcing_system_availability', 'ForcingSystemAvailability', 24),
                                ('forcing_system_fibers', 'ForcingSystemFibers', 22),
-                               ('forcing_component_fibers', 'ForcingComponentFibers', 27)):
+                               ('forcing_component_fibers', 'ForcingComponentFibers', 27),
+                               ('forcing_component_matches', 'ForcingComponentMatches', 42),
+                               ('forcing_component_gluing', 'ForcingComponentGluing', 46)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5734,6 +5736,8 @@ def main() -> None:
         "source_AvailableRecords_same_eligibleSystem_all_classAvailability_ideals_constructed": True,
         "source_AvailableRecords_actual_availability_contraction_and_fiber_bijections_proved": True,
         "source_ComponentGluing_all_internal_vertex_fibers_and_actual_arrow_coherence_native_kernel_proved": True,
+        "source_ComponentGluing_actual_Point_Matches_equivalence_and_same_fiber_laws_native_kernel_proved": True,
+        "source_ComponentGluing_entire_component_quotient_and_all_toGlued_bijections_commuting_native_kernel_proved": True,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,

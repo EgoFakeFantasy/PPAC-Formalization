@@ -12130,4 +12130,15 @@ example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps : Fin k
         (ForcingComponentFibers.constructionSentence D I mul e q diagrams objImage objects S mapImage maps)) :=
   ForcingComponentFibers.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps
 
+-- Actual Matches equivalence and the entire glued component, in the original native ZF kernel.
+example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingComponentMatches.constructionSentence D I mul e q diagrams objImage objects S mapImage maps)) :=
+  ForcingComponentMatches.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps
+
+example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps root : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingComponentGluing.constructionSentence D I mul e q diagrams objImage objects S mapImage maps root)) :=
+  ForcingComponentGluing.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps root
+
 end PPAC.Migration.Step4Checks
