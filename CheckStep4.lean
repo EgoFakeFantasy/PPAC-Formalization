@@ -11892,4 +11892,21 @@ example {k : Nat} (rho : Fin 7 → Fin k)
         (ForcingSupportDescent.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1))) :=
   ForcingSupportDescent.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1
 
+
+-- Pinned ProductNames Bit laws on the actual internal condition action.
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.coeSentence) :=
+  ForcingProductBits.coe_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.topSentence) :=
+  ForcingProductBits.top_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.monoSentence) :=
+  ForcingProductBits.mono_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.functionalSentence) :=
+  ForcingProductBits.functional_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.moveSentence) :=
+  ForcingProductBits.move_kernel_certificate
+
 end PPAC.Migration.Step4Checks

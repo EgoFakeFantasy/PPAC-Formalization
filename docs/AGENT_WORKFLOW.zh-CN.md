@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；本批完整 support_descent 已取得同一内部 L 原核证书并全量验收。下一项是实际 LocalName 规范化/商/限制，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；本批完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 ProductNames.Bit 及五条性质现也已通过原核／全量验收；下一项是源 label/labelSet 和实际 LocalName 规范化/商/限制，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -22,7 +22,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
 |---|---|---|---|
-| 8 的下一项 | LocalQuotients.localName_descent/实际商和限制 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing、OrbitNames 字面相等和实际 compatible_placement 原核证书；源 forces_at_supporting_root/forces_iff_restrict 已接，active_equal 与完整 support_descent 均已接，下一项原 localName_descent/商/限制；Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
+| 8 的下一项 | LocalQuotients.localName_descent/实际商和限制 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing、OrbitNames 字面相等和实际 compatible_placement 原核证书；源 forces_at_supporting_root/forces_iff_restrict 已接，active_equal 与完整 support_descent 均已接，具体 Bit 已接，先接源 label/labelSet，再接原 localName_descent/商/限制；Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计、实际构建和干净检出源码锁复现通过（当前本地通过不替代检出复现） |

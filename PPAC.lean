@@ -731,3 +731,4 @@ import PPAC.Migration.ForcingActiveEquality
 
 import PPAC.Migration.ForcingSupportOrbit
 import PPAC.Migration.ForcingSupportDescent
+import PPAC.Migration.ForcingProductBits

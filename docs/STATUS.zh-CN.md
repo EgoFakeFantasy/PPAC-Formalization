@@ -20,21 +20,19 @@
 
 ## 本批实际证明与验收
 
-源 LocalQuotients.support_descent:132–202 → ForcingSupportDescent.construction_kernel_certificate。真实调用点为同文件 localName_descent:386。
+源 ProductNames.Bit:205 及 bit_coe:209、not_bit_top:215、bit_mono:218、bit_functional:227、bit_move:232 已迁移到 ForcingProductBits。五条性质各有原 FirstOrder.Derives nativeZF [] φ 证书；全对象量词保留实际 WithTop 载体、Cohen 条件图与标签置换图，顶条件分支也已证明。直接消费已有 Entry、below_code、code_le、moved_coordinates 与实际 Product action，没有新增图／强迫／递归后端或对象 Choice。
 
-ForcingSupportOrbit 直接调用底座 exists_setFunctionFromTo_of_denote、现成 group orbit/name action/HS closure，构造根固定子群索引的名字图与激活图，并证明族等变性、恒等索引及实际条件坐标。ForcingSupportDescent 先用根限制把原 Cohen 见证放到 v 的支撑，再证明嵌套限制保持原 d|s0；active_equal 给出所有内部索引/共同条件上的相干性。现成 Mix 构造、fixed_and_HS 和 eq_at 返回实际根支撑 HS 名字，最后取得两侧原 Cohen 限制处的强迫相等。
+实际源消费者是 ProductNames.label:241、smul_label:254、mem_label:270，再到 LocalQuotients 的 labelSet_subsetBound/localName_descent。当前只完成具体 Bit 依赖；label/labelSet 的实际名字和 X(p) 仍未构造，不能记为 LocalName 完成。既有 checkName、collect、normalize、bound、Separation、商后端均已存在，接下来只补源具体适配。
 
-原 d 不要求预先支撑在 v 内。没有给定混合名字、族相干性、额外 Cohen 相容性或有限秩界；源原支撑、精确交集、图扩张及实际 canonical D≤μ、I=Hartogs(μ)、同一 Row/AllMergers/monoid 背景均保留。同一现成 L 解释消去 Choice 后，输出普通 nativeZF 的原核证书。没有重建名字、函数图、强迫或 L 后端。
+全量验收通过：2920 项构建、32337 项声明；新增 25 项，旧 32312 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2475 份当前文件哈希匹配；底座与供体干净，358 个已批准退役模块保持删除，恢复档／补丁哈希匹配。见 verification/product-bits-acceptance.json。本批曾修正 AST 语法、变量向量、语义包装和显式实例参数后通过；不宣称首次编译通过。本地验收不替代历史 CRLF 检出复现。
 
-全量验收通过：2919 项构建、32312 项声明；新增 19 项，旧 32293 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2474 份当前文件哈希匹配；底座与供体干净，358 个已批准退役模块保持删除，恢复档／补丁哈希匹配。见 verification/support-descent-acceptance.json。两模块及完整对象句子均首次编译通过。本地验收不替代历史 CRLF 检出复现。
-
-实际 LocalName 的规范化/ground-set X(p)、LocalQuotient/restrict、Fiber 粘合和最终内部 Con 仍未完成；支撑下降已从待做项移除。
+前批完整 support_descent 保持已验收：同一内部 L 中构造任意秩、根支撑 HS 名字，两侧等式均位于原 Cohen 限制；原 d 没有额外支撑或相容性前提。其 19 项声明本批足迹全部不变，详见 verification/support-descent-acceptance.json，不重报为待做。
 
 ## 继续顺序与边界
 
 | 真实剩余项 | 已有实现必须复用 | 实际需要接入 |
 |---|---|---|
-| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等、实际 compatible_placement 和 ChoiceFailure 根限制已接；独立及任意重叠副本比较均已接；完整 support_descent 已接；下一项复用现成 normalize/bound/Separation 接原 localName_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
+| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等、实际 compatible_placement 和 ChoiceFailure 根限制已接；独立及任意重叠副本比较均已接；完整 support_descent 已接；下一项从已验收具体 Bit 接原 label/labelSet，再复用现成 normalize/bound/Separation 接原 localName_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
 | CellTowers 实际消费者 | 已完成 CompleteRound.Built、Saturation 的实际历史/嵌入/来源、countable conservative hull | 同一最终 T 内 stage range 的原 cell Attachment，有限旧系数与依赖图、内部首次出现及原重排/商消费者；不重建塔 |
 | 原 9–11 | 同一具体系统、已有全秩名字/HS/强迫前端、底座 Proof/Sat | SVC/ACwo/商单射/¬AC，全秩 PP/Main、ZF/U 专用内部检查和全部矛盾码传输，最终主句终验 |
 
