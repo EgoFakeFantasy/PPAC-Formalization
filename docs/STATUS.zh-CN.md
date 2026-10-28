@@ -41,3 +41,5 @@ ConstructionComponentCarrier 使用既有完整 Diagram 载体、幂集、积和
 原第 4 阶段独立 Comparator 仍缺 Linux/landrun；原 Main 基线通过不替代它。最终 Derives nativeZF [] (Con_ZF → Con_U)、U=ZF+PP+ACwo+¬AC 仍未完成，Con 继续量化全部内部／非标准证明码。358 个已获批退役模块保持删除，不恢复 Packet/reader 或退役反射。
 
 已纠正四项历史状态误报：实际无限预算排列及 two/three-copy、Diagram common extension 与完整 Product descent、完整多轮饱和单子、穷尽请求/最终单子均已有证书，不再标未完成。独立有限载体的排列扩张未声明完成，也不是当前实际调用前置。
+
+验收范围为当前本地工作树。只读字节核对发现 304 个历史 Lean 文件与 Git 保存内容仅有 CRLF/LF 差异；本批四个新模块已匹配 Git 字节。历史 raw-byte 源码锁的干净检出复现尚未验收，列为第 11 阶段工程复现项，不增加第 8 阶段数学前置；本轮未重写这些历史证明。详见 component-cofinal-acceptance.json 的 historical_checkout_byte_audit。

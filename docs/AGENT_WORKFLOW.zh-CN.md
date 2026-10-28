@@ -25,7 +25,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 | 8 的下一项 | ComponentGluing 的实际 Fiber/arrowMap/粘合；CellTowers 的 Attachment/有限旧系数/deps/重排 | 本批整个分量共尾链、既有函数与商构造；实际 CompleteRound.Built/塔嵌入/来源、countable conservative hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
-| 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计与实际构建通过 |
+| 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计、实际构建和干净检出源码锁复现通过（当前本地通过不替代检出复现） |
 | 4 的独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 基线 | Linux/landrun；不能用本仓 CheckStep4 替代 |
 
 对象语言为纯等词／成员 ℒ；背景 nativeZF 含全部 Separation/Collection；U = ZF+PP+ACwo+¬AC。终点是原 FirstOrder.Derives nativeZF [] (Con_ZF → Con_U)，Con 量化全部内部证明码。同一内部 L 的 Choice/order 已由现成证书消去，不向普通 ZF 增加 Choice 或不可达。

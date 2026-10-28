@@ -182,3 +182,13 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 此前各批“下一项”仅是历史上下文；现行缺口以本节和 STATUS 为准。无实际消费者的独立 Component quotient 不增加为新前置，既有 L/全模式/塔/ω递归/计数并/商/名字后端不重做。
 
 本批正式验收通过：2909 项构建、32174 项声明审计；新增 85 项及三条原核端点，旧 32089 项足迹不变。9 条命令／5 次 trust=0 全退出 0、零警告、无新增公理依赖。75 份固定源与 2464 份当前指纹匹配，底座／供体干净；358 个获批退役模块仍全部不存在。见 verification/component-cofinal-acceptance.json。
+
+后续粘合仅接固定源的三段真实装配：
+
+| 源入口 | 所需适配与已有接口 | 严格验收边界 |
+|---|---|---|
+| LocalRecords.System:531；AvailableRecords.eligibleSystem:265–290 | 实际对象集合族及 restriction 图；复用 range_inter_sub 和已有强迫前端 | LocalQuotients:289/445–554 的全秩 normalized local names、EqG 实际商及同代表 restriction 尚待接；不能直接假设 intersection 或把条件 System 当作实际生产者 |
+| LocalRecords:549–599；AvailableRecords:405–459；ComponentGluing:213–286 | availability 由实际 restriction 原像定义；Fiber 要求完整 availability=指定 ConeIdeal；arrowMap 字面为 restriction。复用本批 contract_ideal/eq_of_contract_eq/Arrow | 原图恒等/复合/单射/交集下降和实际 arrowMap 双射，不改成任意另选双射 |
+| ComponentGluing.Matches/Glued:305–398 | 完整 component point 集；已有 DirectedLimitCarrier.exists_representatives:45 的依赖和集方法、Companion Fiber.fiber_function_l:29–33 的精确类函数及 range | 全点 Matches 等价、同fiber相等判据、实际规范投影，toGlued_injective:368/surjective:375/arrow:391；不缩成链上的局部商，不选择代表 |
+
+实际消费者为 ConcreteSystem:223/265、CodeLinks:275–309/376/426、OrdinalCodes:500–522、QuotientTransport:263–292、TailGraphs:84。DirectedLimitCarrier 的专用 Related 不能未经对应证明套用；ProbeWordQuotient 是单子右除，不能当等价类商。现有 ForcingAtomicLaws/Formula/Evaluation/PowerName 等已完成基础继续复用，不重建其后端。
