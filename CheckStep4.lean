@@ -11635,4 +11635,11 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionSaturationProbes.constructionSentence)) :=
   ConstructionSaturationProbes.construction_kernel_certificate
 
+-- SAME actual constructed tower; all internal finite prescriptions, including
+-- n=0, have the SAME root graph with full RootSystem AND equality iff GIVEN CopyRel.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionSaturationMergers.constructionSentence)) :=
+  ConstructionSaturationMergers.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

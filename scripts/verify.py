@@ -2274,7 +2274,9 @@ def main() -> None:
                                ('construction_saturation_boundedness', 'ConstructionSaturationBoundedness', 15),
                                ('construction_saturation_cover', 'ConstructionSaturationCover', 31),
                                ('construction_saturation_probe_stage', 'ConstructionSaturationProbeStage', 4),
-                               ('construction_saturation_probes', 'ConstructionSaturationProbes', 22)):
+                               ('construction_saturation_probes', 'ConstructionSaturationProbes', 22),
+                               ('construction_saturation_prescription_stage', 'ConstructionSaturationPrescriptionStage', 11),
+                               ('construction_saturation_mergers', 'ConstructionSaturationMergers', 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5901,8 +5903,11 @@ def main() -> None:
         "source_SaturatedMonoids_probe_stage_actual_parameter_lift_and_conservative_path_reflection_complete": True,
         "source_SaturatedMonoids_SAME_selected_complete_round_inclusion_afterRound_and_profile_transport_complete": True,
         "source_SaturatedMonoids_final_Probe_saturation_K_injection_full_final_divisor_profiles_exact_intersections_native_kernel_certificate": True,
-        "source_SaturatedMonoids_finite_prescription_stage_complete": False,
-        "source_SaturatedMonoids_final_finiteMergers_complete": False,
+        "source_SaturatedMonoids_finite_prescription_stage_complete": True,
+        "source_SaturatedMonoids_final_finiteMergers_complete": True,
+        "source_SaturatedMonoids_prescription_stage_no_Valid_premise_full_literal_optional_table_round_trip": True,
+        "source_SaturatedMonoids_all_internal_n_in_omega_including_empty_index_preserved": True,
+        "source_SaturatedMonoids_SAME_final_roots_full_RootSystem_AND_exact_product_equality_iff_GIVEN_CopyRel_native_kernel_certificate": True,
         "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
