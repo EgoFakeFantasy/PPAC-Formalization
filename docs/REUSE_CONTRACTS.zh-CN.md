@@ -215,8 +215,12 @@ RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值�
 
 ForcingSupportingRoot.forces_at_supporting_root / forces_iff_restrict 直接调用现成 ForcingSeparation.symmetry（已经处理实际 Product、全秩 HS 及新作用图参数）和 ForcingFormula.of_dense/mono；不用再写一套公式对称或环境重索引。既有 small-support Filter 通过 is_normal 给出所需正规性。Code 仅展开既有 Kuratowski pair 与 WithTop singleton，moved_code 以现成图唯一性连接 compatible_placement 的输出。
 
-construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 LocalQuotients.active_equal/support_descent 尚未完成，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。
+construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 active_equal 现已接入，support_descent 尚未完成，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。
 
 ## 独立活动副本比较
 
-LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate（同一内部 L）；真实消费者为 active_equal:111/114。直接消费已完成的 ConstructionDescentPlacement.descent_comparison_placement、ForcingSupportedNames.name_eq_of_same_diagram、ForcingSeparation.symmetry、AtomicBasic/Laws，以及现成 Code/moved_code。新增 below_code/lift_le 仅连接已有 Product/WithTop 的原条件与下界；eq_symmetry 仅将已有公式对称性实例化为相等。未重造放置、名字作用、强迫递归或 L。此项独立比较已完整验收（2916 构建、32288 声明，旧足迹不变）；一般重叠比较和支撑下降尚未完成。见 active-independent-acceptance.json。
+LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate（同一内部 L）；真实消费者为 active_equal:111/114。直接消费已完成的 ConstructionDescentPlacement.descent_comparison_placement、ForcingSupportedNames.name_eq_of_same_diagram、ForcingSeparation.symmetry、AtomicBasic/Laws，以及现成 Code/moved_code。新增 below_code/lift_le 仅连接已有 Product/WithTop 的原条件与下界；eq_symmetry 仅将已有公式对称性实例化为相等。未重造放置、名字作用、强迫递归或 L。此项独立比较已完整验收（2916 构建、32288 声明，旧足迹不变）；独立比较验收见 active-independent-acceptance.json；一般比较由下述新消费者接入，支撑下降尚未完成。
+
+## 任意重叠的活动副本比较
+
+LocalQuotients.active_equal:67 → ForcingActiveEquality.construction_kernel_certificate（同一内部 L）；真实消费者 support_descent:173。原 permute_le_root:58 复用现成 compatible_placement 的固定根 CompositionGraph 与 ForcingDiagramOrder.le_iff。根限制相容性由 exists_restrict/restricted_entry、实际 Moved 和 Cohen functional 直接推出。相容放置返回第三副本，两次调用 ForcingActiveIndependent.active_equal_independent，最后复用 eq_of_dense/eq_trans/eq_symm。已通过全量验收（2917 构建、32293 声明，旧足迹不变；active-equal-acceptance.json）。无新增独立性、稠密性或共同下界前提。一般支撑下降的族装配仍待接，已有 ForcingReplacementOrbit.moved/moved_unique、原生 functional image、ForcingPowerName.hs_move 和 EquivariantMixing 需直接复用。

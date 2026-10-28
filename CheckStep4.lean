@@ -11876,4 +11876,12 @@ example {k : Nat} (rho : Fin 7 → Fin k)
         (ForcingActiveIndependent.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y))) :=
   ForcingActiveIndependent.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y
 
+-- Pinned LocalQuotients.active_equal:67: arbitrary overlaps, SAME internal L.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingActiveEquality.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y))) :=
+  ForcingActiveEquality.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y
+
 end PPAC.Migration.Step4Checks

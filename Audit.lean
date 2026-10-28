@@ -32775,3 +32775,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingActiveIndependent.construction_models
 #print axioms PPAC.Migration.ForcingActiveIndependent.eq_symmetry
 #print axioms PPAC.Migration.ForcingActiveIndependent.lift_le
+
+#print axioms PPAC.Migration.ForcingActiveEquality.active_equal
+#print axioms PPAC.Migration.ForcingActiveEquality.constructionSentence
+#print axioms PPAC.Migration.ForcingActiveEquality.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingActiveEquality.construction_models
+#print axioms PPAC.Migration.ForcingActiveEquality.permute_le_root

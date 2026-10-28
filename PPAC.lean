@@ -726,3 +726,5 @@ import PPAC.Migration.ConstructionCompatiblePlacement
 import PPAC.Migration.ForcingSupportingRoot
 
 import PPAC.Migration.ForcingActiveIndependent
+
+import PPAC.Migration.ForcingActiveEquality
