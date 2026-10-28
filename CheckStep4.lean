@@ -12037,4 +12037,19 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul g r q labels E pr Q : Fin k) 
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleObjects.constructionSentence rho G F mul g r q labels E pr Q)) :=
   ForcingEligibleObjects.construction_kernel_certificate rho G F mul g r q labels E pr Q
 
+
+-- Actual eligible Obj restriction and transfer of the three existing quotient map laws.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w e G F mul g r s q labels E X pr ps Q T V U f : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleRestriction.constructionSentence rho I K B w e G F mul g r s q labels E X pr ps Q T V U f)) :=
+  ForcingEligibleRestriction.construction_kernel_certificate rho I K B w e G F mul g r s q labels E X pr ps Q T V U f
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingEligibleRestriction.identitySentence) :=
+  ForcingEligibleRestriction.identity_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingEligibleRestriction.compositionSentence) :=
+  ForcingEligibleRestriction.composition_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingEligibleRestriction.injectivitySentence) :=
+  ForcingEligibleRestriction.injectivity_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -253,4 +253,4 @@ LocalQuotient.restrict_injective:511 和 intersection:536 现已由 ForcingLocal
 
 AvailableRecords.EligibleName/Eligible/eligible_restrict_iff 和 eligibleSystem.Obj:272 已由 ForcingEligibility/ForcingEligibilityReflection/ForcingEligibleObjects 接通并验收。代表无关性直接使用 tuple_congr、Cohen directedness 和原子等式；反射使用既有 supporting_root、实际 labelSet.HS_and_fixed 与实际 LocalName 支撑；Obj 集合使用原生 Separation。未新增资格 oracle、E 等价前提、外部枚举、名字秩界或新的函数/商后端。
 
-当前真实消费者为 eligibleSystem:273–289 的限制图和系统公理/装配。直接复用既有商限制恒等/复合/单射/交集及原生函数限制；源码第 282 行实际使用 intersection_le_root，应检查并适配现成图序/范围接口。向移动滤子的 quotient transport、实际纤维粘合和后续 CellTowers 尚未完成。localName_of_raw:342 无当前调用，不新增为主线前置。
+ForcingEligibleRestriction 已直接消费 native exists_restriction、现成 RestrictionSyntax.edgeLaw、GraphSyntax.edge_original 和 eligible_restrict，构造实际 Obj 限制图并取得三条映射定律传输证书。商恒等/复合/单射前提明确保留，其生产者已完成；下一消费者是 eligibleSystem:275–289 的实际前提消去、资格交集和统一装配，不能把传输证书单独记作完整系统。源码第 282 行实际使用 intersection_le_root，应检查并适配现成图序/范围接口。向移动滤子的 quotient transport、实际纤维粘合和后续 CellTowers 尚未完成。localName_of_raw:342 无当前调用，不新增为主线前置。

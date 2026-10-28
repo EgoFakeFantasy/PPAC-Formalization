@@ -467,3 +467,10 @@ Full verification PASSED: 2931 jobs, 32527 declarations, 11 new and two original
 | AvailableRecords.eligibleSystem.Obj:272 | ForcingEligibleObjects.construction_kernel_certificate | Actual quotient subset, exactly below the root and eligible; native Separation, ordinary nativeZF. |
 
 Full verification PASSED: 2934 jobs, 32561 declarations, 34 new and four original-kernel endpoints; all 32527 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2489 current hashes match. See verification/eligibility-acceptance.json. Earlier eligibility and Obj obligations are now closed. Restricted Obj maps, full eligibleSystem assembly, quotient transport, gluing/CellTowers and final internal Con remain incomplete; original stage remains 8.
+
+| Pinned eligible map consumer | Native original-kernel endpoint | Exact scope |
+|---|---|---|
+| AvailableRecords.eligibleSystem.restrict:273–274 | ForcingEligibleRestriction.construction_kernel_certificate | Actual restricted graph between exact eligible Obj carriers, using unchanged native exists_restriction and eligibility preservation. |
+| restrict_refl/restrict_comp/injective:275–279 | ForcingEligibleRestriction.{identity,composition,injectivity}_kernel_certificate | Three ordinary nativeZF transfer certificates for restricted graphs; existing quotient-law premises retained explicitly, to be discharged in actual system assembly. |
+
+Full verification PASSED: 2935 jobs, 32579 declarations, 18 new and four ordinary nativeZF endpoints; all 32561 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2490 current hashes match. See verification/eligible-restriction-acceptance.json. The first CheckStep4 run failed because the examples were appended outside its namespace; after relocation the full rerun passed. Actual quotient-law premise discharge, eligible intersection and indexed system assembly remain pending. Original stage 8 and final Con status are unchanged.
