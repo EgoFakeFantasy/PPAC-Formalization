@@ -12123,4 +12123,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incomin
         (ForcingSystemFibers.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
   ForcingSystemFibers.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
 
+-- All internal Component vertices carry one exact fiber family; actual arrows are coherent.
+example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence
+        (ForcingComponentFibers.constructionSentence D I mul e q diagrams objImage objects S mapImage maps)) :=
+  ForcingComponentFibers.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps
+
 end PPAC.Migration.Step4Checks

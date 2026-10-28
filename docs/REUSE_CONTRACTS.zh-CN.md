@@ -265,4 +265,6 @@ ForcingSystemAvailability 已将 Available 定义为同一系统实际限制图�
 
 ForcingSystemFibers 已直接消费 System 的单射/复合、sub_eq、原生配对码与函数唯一性，证明指定实际限制图上的 available_sub_iff；再用现成 left_mul_dvd_iff 得到完整实际理想收缩。精确 Fiber 用 ZF.separation_exists_d 构造，映射用 ZF.exists_restriction；目标资格由 eq_of_contract_eq，满射由实际 Available 与 contract_unique。两个普通原核端点及同一已有内部 L 的联合存在端点覆盖全部内部参数。ConditionalJoins 是源显式前提，已有 ObjectFields 提供，不重证。
 
-下一真实消费者是 ComponentGluing.vertexFiber/arrowMap/arrowMap_comp，再接实际 Glued/toGlued。原 Component 顶点/箭头/整分量共尾链、理想收缩/重建和函数后端都已完成，统一族及其相容接线直接消费这些结果。移动滤子 quotient transport、实际粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingComponentFibers 已复用整个 ConstructionComponentCarrier 和 EncodedArrow，按同一实际对象函数的唯一值定义 VertexFiber；native functionalImage/setFunctionFromTo 收集完整内部纤维函数族。exists_arrowMap 直接调用已验收 fiber_bijection，唯一性使用既有函数图外延性，恒等/复合直接消费 restrict_refl/restrict_comp。普通 nativeZF 原核联合证书已完整验收；所有量词仍是内部集合量词，不以外部可数或定秩对象代替。
+
+下一真实消费者是 ComponentGluing.Matches/refl/symm/trans/same/common，再接实际 Glued/toGlued。应复用 successors_directed/Common、上述实际双射和相容性，以及已用过的分离/函数像/投影构造方法。ForcingLocalQuotient.exists_quotient 具体绑定 ActiveEqual，不能仅改名当作 Matches 商；底座分离和函数像的构造方法可以适配。移动滤子 quotient transport、实际粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
