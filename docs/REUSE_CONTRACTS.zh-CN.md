@@ -161,4 +161,10 @@ ConstructionSaturationIterationCases 的三个实际分支直接使用原 Initia
 
 实际Cohen消费者由 ConstructionCohenCompatibility 复用原 Separation/唯一函数、ExistingOrdinalImage.ordinal_image_bound_l、原两次 coordinate lift/image、infinite_union_two_l 和KP并构造完成。支撑是原图到标签的实际投影，保留源s0限制范围与s1重叠范围各自独立；四条未相对化原nativeZF证书不加Choice。完整descent现由ConstructionDescentPlacement实际消费以上结果，不重建支撑、限制、Cohen图作用或并条件。验收见 verification/cohen-compatibility-acceptance.json。
 
-完整Product descent由 ConstructionDescentPlacement 消费现成three_copy_placement、fixed-three amalgamate、Cohen comparison/union和原Comp/Le传输完成。只包装原范围构造+既有ordinal_image_bound_l；实际K是t范围与c支撑的并。保留s0/s1独立范围、任意反例条件及实际两次lift/image；原Kuratowski配对和Product.Le返回完整三个下界。forall28同一L原核证书不加普通ZF Choice。下一Hull/ComponentGluing复用ConstructionDirectedWeights.exists_graph、ConstructionDirectedLift的因子化/唯一性及原呈现/lift，不重建商/descend后端。验收见verification/descent-placement-acceptance.json。
+完整Product descent由 ConstructionDescentPlacement 消费现成three_copy_placement、fixed-three amalgamate、Cohen comparison/union和原Comp/Le传输完成。只包装原范围构造+既有ordinal_image_bound_l；实际K是t范围与c支撑的并。保留s0/s1独立范围、任意反例条件及实际两次lift/image；原Kuratowski配对和Product.Le返回完整三个下界。forall28同一L原核证书不加普通ZF Choice。任意目标下降图、因子化/唯一性已存在；代码审查确认 plain monoidLift 泛性质不是当前可数 hull 前置，不据同文件排列顺序扩写其包装。验收见verification/descent-placement-acceptance.json。
+
+
+本批 CountableHull／ConservativeHull 复用裁决：CountablePair、CountableUnion、CountableChain 已在现有 PPAC/Companion 闭包内，不新增复制。供体 CountableHull.cc_hull_l 是一元多值闭包；只适配其内部 powerset／iterate_l／归纳／range／union 正文方法，二元一步可数性消费现成 countable_product_l/countable_cover_l，同阶段消费 cc_increasing_of_successor_l。保留精确源 stage/carrier，覆盖空种子及非标准内部 ω。
+
+ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图使用原 identity；原 divides_antisymm 识别两个 joins，不新造序或选择后端。完整装配构造源三值插入行和实际操作表；forall6/exists9 同一 L 原核证书消去 Choice。实际消费者是 CellTowers.hull:330 及其 countable/contains/deps，ConcreteQuotients:118 factor_eq；这些消费者本身和 ComponentGluing 后续接入。完整源定理的 Conical 前提保留；不把独立 omit-IsConical 辅助定理的全泛化算作本批完成。
+本批 113 项声明及两条同一 L 原核端点正式验收通过：2905 项构建、32089 项声明审计，9 条命令／5 次 trust=0 全退出 0、零警告；此前 31976 项足迹不变，无新增公理依赖。75 份固定源与 2460 份当前指纹匹配，底座／供体干净。见 verification/countable-conservative-hull-acceptance.json。

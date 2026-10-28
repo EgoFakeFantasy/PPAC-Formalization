@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第8阶段。具体Base/T现已完成：现成Base的实际完整函数图证据被保留，全部几何父前提已消去；同一内部L中实际连续统后继μ和K:=μ生成完整塔，最终单子行现已显式返回，并携带全部ObjectFields、Probe/有限Merger/精确CopyRel、任意理想Probe、补集与内部基数端点。内部支撑族新鲜成员、新鲜排列扩张及同一实际Hartogs标签集的全位置输入现均有原核证书；paste/two/three-copy精确集合位置合同现也已完成；实际Diagram的范围/公共子图标签等价、固定根排列、图相等和ExactOverlap.of_common亦已完成；原可选处方/给定CopyRel/Valid和同一最终行Merger消费亦已完成；整个D→I的amalgamate/common_extension及固定三图共同扩张亦已完成；实际Cohen支撑/限制/兼容/并条件亦已完成；完整Product descent亦已完成；真正未完的是Hull/ComponentGluing消费者、第9–11和最终内部Con。** 不以局部证书、声明数或构建数作为整体完成比例。
+**仍在原第 8 阶段。完整 Base/T、实际 μ/K、内部塔与饱和结论、全模式 L 解释、有限 Diagram 共同扩张及完整 Product descent 已完成。本批完成源二元可数闭包与完整 countable conservative hull 的对象证书；实际 CellTowers／组件粘合消费者和第 9–11 阶段仍未完成，最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -13,33 +13,25 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | Hull/ComponentGluing；有限族/固定三图下界、实际Cohen和完整Product descent已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | CellTowers／ComponentGluing 实际消费者；有限族/固定三图下界、Cohen、Product descent 和 countable conservative hull helper 已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、商单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
 
 ## 本批实际证明与验收
 
-ConstructionDescentPlacement 完整迁移源 descent_comparison_placement:491，实际消费者为 LocalQuotients.active_equal_independent:18 的第42行调用。原任意p/s0/s1/v、根固定及独立交集、任意反例Cohen c/Diagram t、两份原限制图下界假设全部保留；没有给定输出排列或共同下界。
+固定源 ConservativeHulls 的二元 stage/carrier/closed，以及 conservative 和 exists_countable_conservative 已接通。ConstructionCountableHull 复用既有 CountablePair、CountableUnion、CountableChain 和供体 cc_hull_l 的内部迭代方法，保留准确零／后继阶段、整个内部 ω 索引图及并；二元操作先移到同一实际阶段。没有把供体一元闭包直接改名。
 
-原范围构造与现成 ordinal_image_bound_l 给出实际范围及大小界；实际K=range(t)∪support(c)。直接消费既有three_copy_placement生成π/ρ，保留不同s0范围A与s1范围E；原Comp方程给出s0移动图恰为sa/sb，同一个s1图携带两份Comp方程。原Le传输/ExactOverlap及固定三图amalgamate构造整个D→I上的共同Diagram。
+ConstructionCountableConservativeHull 实际构造源 operations={x*y,factor x y,join x y}∪deps(x)，不存在因子／join 时按源取单位元。任意可数种子和每行可数依赖保留，seed=insert e A；构造平方、幂集、整张操作表、阶段图和最终 S。ConstructionConservativeHull 用原 restriction 和 identity 构造实际子集乘法／包含图，证明原四项 Conservative、LeftCancelMonoid、Conical、条件 joins，以及全部依赖闭包。
 
-现成两次coordinate lift/整图image构造两份移动Cohen图；支撑一致性将移动限制图识别为输入两份原限制图，几何精确交集给出各自A/E上的trigger/overlap。消费现成Cohen比较/并条件得到实际a，原Kuratowski构造q=(a,z)、(c,t)及两份移动Product码，返回全部三个原ForcingProductAction.Le。Result保留实际f/g/Graph/Image/条件，未改强迫序或只返回独立分量。
+最终 forall6/exists9 句保留这些实际构造及全部结论，由同一既有 L 的 Choice 消去取得原 FirstOrder.Derives nativeZF [] 证书。未对普通 ZF 新增 Choice；未把 Closure/Conservative/可数 hull 当作输入。该完整源定理有 Conical 前提；不声称覆盖源另行 omit IsConical 的 countable 辅助定理全部泛化范围。
 
-forall28同一既有L相对化的原nativeZF核证书消去Choice；实际源D≤μ、I=Hartogs(μ)保持不变，全部内部坐标/图成员及任意c,t保留。30新声明正式验收通过：2902构建/31976声明，9命令/5次trust=0全退出0、零警告；此前31946项足迹不变，无新增公理依赖。75固定源/2457当前指纹匹配，底座/供体干净；临时预审源按精确路径/内容SHA/非重解析点清理，见 verification/descent-placement-acceptance.json。Hull/ComponentGluing、模型应用及最终内部Con仍未完成。
+本批 113 项声明及两条同一 L 原核端点正式验收通过：2905 项构建、32089 项声明审计，9 条命令／5 次 trust=0 全退出 0、零警告；此前 31976 项足迹不变，无新增公理依赖。75 份固定源与 2460 份当前指纹匹配，底座／供体干净。见 verification/countable-conservative-hull-acceptance.json。
 
 ## 继续顺序与边界
 
-完整Product descent现已接通，不再列为待做。原第8阶段剩余实际消费者为ConservativeHull/ComponentGluing，再接第9阶段同一具体系统的LocalQuotients/ConcreteQuotients/SVC/ACwo/¬AC。任意目标的descend图、因子化/唯一性和通用呈现/lift接口已有，Hull应直接复用这些接口；不重建Base/T、有限Merger、范围/支撑/限制、Cohen图作用、排列/下界、基数/选择/L。
+实际源调用为 CellTowers.hull:330、countable:339、contains:342/345、closed_deps:348，以及 ConcreteQuotients:118 的 factor_eq。本批完成所需 helper，后续接这些实际消费者和 ComponentGluing，再进入第 9 的同一系统模型应用、第 10 的 PP/Main 与全部内部 Proof/Con、第 11 终验。
 
-Base图证据/最终ObjectFields/T装配、实际μ/K及其进入同一完整塔现均已验收，不再待做。内部L/完整模式/universe、递归/基数底座、完整塔/覆盖、Probe/Merger/精确CopyRel、任意理想与补集Probe和内部基数端点亦均已完成。原核最终Derives nativeZF [] (Con_ZF→Con_U)尚未取得；U=ZF+PP+ACwo+¬AC，Con仍量化全部内部/非标准证明码。
+本轮审查确认任意同态 monoidLift 的泛性质包装不是当前可数 hull 前置。未扩写 fromBase/pushout；本轮临时 plain-lift 草稿和 8 个对应构建产物已精确清理。原任意目标下降图、因子化及唯一性继续保留，以真实消费者需要为准。不重建商、计数并、ω 递归、选择或 L。
 
-此前将局部验收当整体进度、将已存在数学的适配缺口误报为数学缺口、把可选字节兼容当必需主线，是规划与验收判断错误；对象层要求早已明确，不能归因于用户追加要求。后续只按原源完整类型、实际生产者／消费者和原 1–11 门判断。
-
-## 获批清理与执行边界
-
-精确 358 模块清单已执行：291 个 Packet/reader、67 个专属消费者，17 个入口、263 条专属测试和 3219 项声明审计退役；误带的保留 compilerInvalidSourceRejected 测试已恢复。保留主线全量验收通过。归档／逐文件恢复记录见 RETIRED_PACKET.json、retired-packet-closure-review.json 和 retired-packet-closure-execution-20261027.json。累计退役 493 模块；未重复删除。
-
-2864 项专属无消费者生成缓存已按路径／后缀／非重解析点／SHA 白名单清理，逻辑 225677746 字节，清理时实测空闲增加 227020800 字节。未清其他项目／工具链。后续本批只清理自己的临时预审源；成功日志保留。不启动无用服务，一次一个 Lean/Lake；未推送或发布。
-
-Agent 广场本轮未连通；恢复可双击 C:/Users/17857/AgentPlaza/启动广场.bat。未直接改写其数据。
+原第 4 阶段独立 Comparator 仍缺 Linux/landrun；原 Main 基线通过不替代它。最终 Derives nativeZF [] (Con_ZF → Con_U)、U=ZF+PP+ACwo+¬AC 仍未完成，Con 继续量化全部内部／非标准证明码。

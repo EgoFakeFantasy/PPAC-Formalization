@@ -11797,4 +11797,16 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionDescentPlacement.constructionSentence)) :=
   ConstructionDescentPlacement.construction_kernel_certificate
 
+-- Pinned binary hull / actual countable conservative submonoid, same internal L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionCountableHull.constructionSentence)) :=
+  ConstructionCountableHull.construction_kernel_certificate
+
+-- Pinned binary hull / actual countable conservative submonoid, same internal L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionCountableConservativeHull.constructionSentence)) :=
+  ConstructionCountableConservativeHull.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

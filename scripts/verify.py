@@ -2295,7 +2295,10 @@ def main() -> None:
                                ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28),
                                ('construction_diagram_three', 'ConstructionDiagramThree', 9),
                                ('construction_cohen_compatibility', 'ConstructionCohenCompatibility', 77),
-                               ('construction_descent_placement', 'ConstructionDescentPlacement', 30)):
+                               ('construction_descent_placement', 'ConstructionDescentPlacement', 30),
+                               ('construction_countable_hull', 'ConstructionCountableHull', 31),
+                               ('construction_conservative_hull', 'ConstructionConservativeHull', 29),
+                               ('construction_countable_conservative_hull', 'ConstructionCountableConservativeHull', 53)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -2334,7 +2337,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
@@ -6003,6 +6006,10 @@ def main() -> None:
         "source_actual_Cohen_compatibility_union_and_full_descent_complete": True,
         "source_actual_full_descent_comparison_placement_Product_lower_bound_kernel_certificate": True,
         "source_actual_descent_supplied_placements_or_output_lower_bound_premise": False,
+        "source_actual_binary_countable_hull_all_internal_omega_complete": True,
+        "source_actual_countable_conservative_hull_original_kernel_certificate": True,
+        "source_actual_countable_conservative_hull_supplied_output_closure": False,
+        "source_actual_CellTowers_hull_and_ComponentGluing_consumers_complete": False,
         "source_actual_ConservativeHull_ComponentGluing_complete": False,
         "source_actual_Cohen_label_support_countable_restriction_constructed": True,
         "source_actual_Cohen_TWO_existing_coordinate_lifts_exact_label_move_kernel_certificate": True,
