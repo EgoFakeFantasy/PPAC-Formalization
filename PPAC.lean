@@ -683,3 +683,6 @@ import PPAC.Migration.ConstructionConcreteBase
 import PPAC.Migration.ConstructionPlacementFreshness
 
 import PPAC.Migration.ConstructionPlacementExtensions
+
+import PPAC.Migration.ConstructionPlacementPasting
+import PPAC.Migration.ConstructionPlacementTriple

@@ -11710,4 +11710,19 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementExtensions.actualLabelsSentence)) :=
   ConstructionPlacementExtensions.actualLabels_kernel_certificate
 
+-- Fixed-source exact root intersections and simultaneous fresh placements.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionPlacementPasting.pasteSentence) :=
+  ConstructionPlacementPasting.paste_kernel_certificate
+
+-- Fixed-source exact root intersections and simultaneous fresh placements.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementPasting.constructionSentence)) :=
+  ConstructionPlacementPasting.construction_kernel_certificate
+
+-- Fixed-source exact root intersections and simultaneous fresh placements.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementTriple.constructionSentence)) :=
+  ConstructionPlacementTriple.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
