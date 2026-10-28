@@ -2,7 +2,7 @@
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
-**仍在原第 8 阶段。本批已将 eligibleSystemTransport 的全部逐图 app 收集成一个内部函数，并在两侧已有实际对象族和限制族上证明 Apps 与 Natural，取得同一普通 nativeZF 原核构造证书。CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批已迁移 TailGraphs 的真实 ChainCode/At/Represents：构造全部内部 ω 上的局部名字链码集合，证明每个实际粘合类都有代表码以及表示唯一性，并取得同一内部 L 中的 nativeZF 原核证书。TailGraphs 的同码协变/最小码、PersistentCodes、OrdinalCodes、CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -24,7 +24,7 @@
 |---|---|---|---|
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
-| 8 当前 | CodeLinks 的实际链码、选择与 Links 消费者 | 已有共尾链、RootGroup/分量传输相关接口、资格系统与全族自然性 | 逐条核对 CodeLinks 的真实调用及尚缺适配；不凭文件名重建已有 hull、名字、商或作用后端；完整模型应用仍归第 9 阶段 |
+| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；本批 ChainCode/At/Represents/exists_representing_code 已接入 | 下一接 TailGraphs.at_transport_iff:103–146、tail_fixed/represents_same_code:152–187，再接既有内部良序上的 leastCode 和后续源消费者；不重建名字/函数空间/选择/L/商后端 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

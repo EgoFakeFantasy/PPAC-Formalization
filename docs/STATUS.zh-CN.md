@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。本批已将 eligibleSystemTransport 的全部逐图 app 收集成一个内部函数，并在两侧已有实际对象族和限制族上证明 Apps 与 Natural，取得同一普通 nativeZF 原核构造证书。CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批已迁移 TailGraphs 的真实 ChainCode/At/Represents：构造全部内部 ω 上的局部名字链码集合，证明每个实际粘合类都有代表码以及表示唯一性，并取得同一内部 L 中的 nativeZF 原核证书。TailGraphs 的同码协变/最小码、PersistentCodes、OrdinalCodes、CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -20,13 +20,13 @@
 
 ## 本批实际证明与验收
 
-固定源为 QuotientTransport.eligibleSystemTransport:309–337。ForcingEligibleReindex.construction_kernel_certificate 在原 nativeZF 中同时构造覆盖全部内部图的 app 集合函数，并证明它对两侧已有实际对象族为双射，且与实际限制族满足全部自然性。原单子、呈现、支撑、字面 labels/bound、移动滤子和已有对象/限制族前提仍显式保留；没有假设 app 族或自然性。
+固定源 TailGraphs.lean:21–88。ForcingTailCodes.construction_kernel_certificate 返回同一已有内部 L 中的原核推导：构造精确局部名字链码载体，给每个实际 Glued 值构造一个代表码，并证明同码不能表示两个不同的粘合值。原生函数空间/分离负责载体，既有 local projection/toGlued 满射给出逐项名字，既有 uniformize_formula_l 组装全部内部 ω 序列；内部 L 提供选择，环境背景仍为 nativeZF。
 
-复用既有 diagram/Data 唯一性、ZF.exists_functionalImage、ZF.exists_setFunctionFromTo_of_denote、restrict_ofName 和函数唯一性。自然性方块沿用同一原始名字见证，无需选择商代表，也没有新造递归、商或推导核。
+现成候选名字集合、完整 Chain、实际对象族、AllFiberMaps 和 glued projection 的函数图合同仍是显式输入。本批没有证明过滤子移动下的 At 保反射、同码协变、leastCode 或后续 persistent/ordinal 选择。上批 eligibleSystemTransport 的全 app 族与自然性保持已完成。
 
-全量验收通过：**2957 项构建，33085 项声明审计**；新增 15 项，旧 33070 项足迹逐项不变。9 条命令、5 次 trust=0 均退出 0，零警告、无新增公理依赖。1849 项无公理、31236 项具有既已记录依赖；75 份固定源和 2512 份当前文件哈希匹配。记录：verification/eligible-reindex-acceptance.json。
+全量验收通过：**2958 项构建，33117 项声明审计**；新增 32 项，旧 33085 项足迹逐项不变。9 条命令及其中 5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1849 项无公理、31268 项具有既已记录依赖；75 份固定源及 2513 份当前文件哈希匹配。记录：verification/tail-code-acceptance.json。
 
-批准退役的 358 个模块保持删除；执行记录明确移除了 263 个专用测试块和 3219 项声明审计。本轮复核没有恢复或扩大该清单。
+批准退役的 358 个模块保持删除；263 个专用测试块和 3219 项声明审计的退役记录保留，不恢复 Packet/reader。
 
 ## 继续顺序与边界
 
@@ -34,7 +34,7 @@
 |---|---|---|---|
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
-| 8 当前 | CodeLinks 的实际链码、选择与 Links 消费者 | 已有共尾链、RootGroup/分量传输相关接口、资格系统与全族自然性 | 逐条核对 CodeLinks 的真实调用及尚缺适配；不凭文件名重建已有 hull、名字、商或作用后端；完整模型应用仍归第 9 阶段 |
+| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；本批 ChainCode/At/Represents/exists_representing_code 已接入 | 下一接 TailGraphs.at_transport_iff:103–146、tail_fixed/represents_same_code:152–187，再接既有内部良序上的 leastCode 和后续源消费者；不重建名字/函数空间/选择/L/商后端 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

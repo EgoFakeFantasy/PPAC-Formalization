@@ -12235,4 +12235,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul a I K B w e mu pi inv c ai ac
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingEligibleReindex.constructionSentence rho G F mul a I K B w e mu pi inv c ai ac g gT q A Hq labelMap top bit labels E bound objImage objects targetImage targets arrows maps targetMaps)) :=
   ForcingEligibleReindex.construction_kernel_certificate rho G F mul a I K B w e mu pi inv c ai ac g gT q A Hq labelMap top bit labels E bound objImage objects targetImage targets arrows maps targetMaps
 
+-- Literal local-name codes over the entire internal omega, in the existing L.
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul g q bound labels E objects maps root gluePr w names chain objImage Q P vertices zero b : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingTailCodes.constructionSentence rho I G F mul g q bound labels E objects maps root gluePr w names chain objImage Q P vertices zero b))) :=
+  ForcingTailCodes.construction_kernel_certificate rho I G F mul g q bound labels E objects maps root gluePr w names chain objImage Q P vertices zero b
+
 end PPAC.Migration.Step4Checks

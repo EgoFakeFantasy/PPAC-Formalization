@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；完整 eligibleSystemTransport 函数族与自然性现也已接入；下一源消费者为 CodeLinks。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；完整 eligibleSystemTransport 函数族与自然性现也已接入；下一源消费者沿 TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks；链码载体及表示存在/唯一性本批已接入。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -297,3 +297,9 @@ ForcingEligibleTransport.name_iff 直接调用 ForcingSeparation.symmetry；该�
 root_object_bijection 使用已有 LabelSet.HS_and_fixed、ComponentMove.root_fixed 和 E 的 Supported 条件消去固定标签/E/根前提；原生 ZF.exists_restriction 与 restrict_injective 返回完整 Obj 双射。assemble_app 消费两条现有 EligibleFamily.Data，复用 LocalNameTransport.range_image/exists_graph、LocalQuotientTransport.exists_transport 和实际 EqG 对称性，构造真实商映射后再限制到资格集合。
 
 完整 app 函数族和自然性联合装配现已由 ForcingEligibleReindex.construction_kernel_certificate 完成：Row 用现有 diagram/Data 唯一性证明唯一，原生 functionalImage/setFunctionFromTo 收集全部内部图上的 app；app_data 对齐两侧对象族，natural_of_family 对齐已有 map_data，使用同一原始名字及 restrict_ofName、函数唯一性闭合方块。该端点不假设 app 或 Natural；不重建任何后端。CodeLinks 和后续模型/内部 Con 才是继续项。
+
+## TailGraphs 的实际名字链码与代表存在
+
+ForcingTailCodes 消费 TailGraphs:21–88。ChainCode 由现成原生 functionSpace 和 Separation 构造，逐项 Entry 使用已有 LocalName 及实际顶点编码；不是宿主 Nat/List。At 直接连通同一 Data 行的局部投影、精确 Fiber 和实际 glued projection；唯一性使用 Data/function/code 唯一性。代表存在先消费现成 AllFiberMaps 和 projection_onto，再调用已复用的 ExistingSmallUnion.uniformize_formula_l。最后沿用 ConstructibleSource/ConstructibleGround，在同一内部 L 消去对象 Choice，取得 nativeZF 原核证书。候选名字载体、完整 Chain 和实际 gluing 合同保持显式输入。
+
+下一步使用已有 EligibleReindex、LocalName/QuotientTransport 和 GluedTransport 接源 at_transport_iff，再处理 tail_fixed/represents_same_code 及同一内部良序的 leastCode。PersistentCodes/OrdinalCodes/CodeLinks 仍需迁移，不把本批存在/唯一性误报为完整最小码或序数秩。

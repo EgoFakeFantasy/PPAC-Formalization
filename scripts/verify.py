@@ -2350,7 +2350,8 @@ def main() -> None:
                                ('forcing_local_name_transport', 'ForcingLocalNameTransport', 19),
                                ('forcing_local_quotient_transport', 'ForcingLocalQuotientTransport', 22),
                                ('forcing_eligible_transport', 'ForcingEligibleTransport', 22),
-                               ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15)):
+                               ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15),
+                               ('forcing_tail_codes', 'ForcingTailCodes', 32)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5773,6 +5774,11 @@ def main() -> None:
         "source_QuotientTransport_actual_eligible_app_from_existing_rows_native_kernel_proved": True,
         "source_QuotientTransport_full_eligibleSystemTransport_family_assembled": True,
         "source_QuotientTransport_eligible_transport_scope": "Actual coordinate eligibility consumes existing full HS formula symmetry and simultaneously moves filter, diagram and E. Actual root Obj bijection consumes literal labelSet fixedness, root support and fixed E. Assembly constructs LocalName/quotient/eligible app from the two actual EligibleFamily.Data rows; no app or quotient bijection is assumed. All-app function family and full naturality are now assembled by ForcingEligibleReindex against the existing actual object/restriction families; CodeLinks, model applications and final internal Con remain unproved.",
+        "source_TailGraphs_actual_internal_omega_ChainCode_carrier_constructed": True,
+        "source_TailGraphs_actual_At_Represents_unique_proved": True,
+        "source_TailGraphs_every_glued_value_has_literal_representing_code_same_L_native_kernel_proved": True,
+        "source_TailGraphs_same_code_covariance_and_leastCode_completed": False,
+        "source_TailGraphs_code_scope": "Exact existing candidate names, chain, object family and gluing laws are consumed. All internal omega entries are actual local normalized names. Existing internal uniformization supplies representative sequences inside the same L; no ambient Choice or host sequence is substituted. Transport/same-code covariance, persistent selection, ordinal rank, CodeLinks and final Con remain unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
