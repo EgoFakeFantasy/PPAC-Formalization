@@ -32781,3 +32781,23 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingActiveEquality.construction_kernel_certificate
 #print axioms PPAC.Migration.ForcingActiveEquality.construction_models
 #print axioms PPAC.Migration.ForcingActiveEquality.permute_le_root
+
+#print axioms PPAC.Migration.ForcingSupportDescent.constructionSentence
+#print axioms PPAC.Migration.ForcingSupportDescent.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingSupportDescent.construction_models
+#print axioms PPAC.Migration.ForcingSupportDescent.result
+#print axioms PPAC.Migration.ForcingSupportDescent.result_semantics
+#print axioms PPAC.Migration.ForcingSupportDescent.support_descent
+#print axioms PPAC.Migration.ForcingSupportOrbit.ActivationFamily
+#print axioms PPAC.Migration.ForcingSupportOrbit.ConditionMoved
+#print axioms PPAC.Migration.ForcingSupportOrbit.NameFamily
+#print axioms PPAC.Migration.ForcingSupportOrbit.activations
+#print axioms PPAC.Migration.ForcingSupportOrbit.conditionMoved
+#print axioms PPAC.Migration.ForcingSupportOrbit.conditionMoved_semantics
+#print axioms PPAC.Migration.ForcingSupportOrbit.condition_mem
+#print axioms PPAC.Migration.ForcingSupportOrbit.condition_unique
+#print axioms PPAC.Migration.ForcingSupportOrbit.exists_families
+#print axioms PPAC.Migration.ForcingSupportOrbit.family_HS
+#print axioms PPAC.Migration.ForcingSupportOrbit.identity_members
+#print axioms PPAC.Migration.ForcingSupportOrbit.moved_coordinates
+#print axioms PPAC.Migration.ForcingSupportOrbit.permutes

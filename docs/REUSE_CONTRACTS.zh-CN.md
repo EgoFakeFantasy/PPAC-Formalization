@@ -198,7 +198,7 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 
 固定源 LocalQuotients.support_descent:132–202 真实调用 equivariantMix、equivariantMix_fixed、eq_equivariantMix_at。ForcingMixName/MixLaws/EquivariantMix 已复用现成 Collected、原生 union/Separation/恒等图、AtomicBasic/Laws/Symmetry、ProductFamily.order、NameConjugacy 和 collect_HS/fixed；没有重做名字、递归或 HS 后端。源码及全部声明足迹锁在 SOURCE_LOCK 的 forcing_mix_name/forcing_mix_laws/forcing_equivariant_mix。
 
-精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal、support_descent、LocalQuotient/restrict、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。
+精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal 和 support_descent 已在下述后续消费者中完成；LocalName/LocalQuotient/restrict、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。
 
 
 ## 支撑图相等与实际相容放置
@@ -215,12 +215,18 @@ RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值�
 
 ForcingSupportingRoot.forces_at_supporting_root / forces_iff_restrict 直接调用现成 ForcingSeparation.symmetry（已经处理实际 Product、全秩 HS 及新作用图参数）和 ForcingFormula.of_dense/mono；不用再写一套公式对称或环境重索引。既有 small-support Filter 通过 is_normal 给出所需正规性。Code 仅展开既有 Kuratowski pair 与 WithTop singleton，moved_code 以现成图唯一性连接 compatible_placement 的输出。
 
-construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 active_equal 现已接入，support_descent 尚未完成，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。
+construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 active_equal 与完整 support_descent 现已接入，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。
 
 ## 独立活动副本比较
 
-LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate（同一内部 L）；真实消费者为 active_equal:111/114。直接消费已完成的 ConstructionDescentPlacement.descent_comparison_placement、ForcingSupportedNames.name_eq_of_same_diagram、ForcingSeparation.symmetry、AtomicBasic/Laws，以及现成 Code/moved_code。新增 below_code/lift_le 仅连接已有 Product/WithTop 的原条件与下界；eq_symmetry 仅将已有公式对称性实例化为相等。未重造放置、名字作用、强迫递归或 L。此项独立比较已完整验收（2916 构建、32288 声明，旧足迹不变）；独立比较验收见 active-independent-acceptance.json；一般比较由下述新消费者接入，支撑下降尚未完成。
+LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate（同一内部 L）；真实消费者为 active_equal:111/114。直接消费已完成的 ConstructionDescentPlacement.descent_comparison_placement、ForcingSupportedNames.name_eq_of_same_diagram、ForcingSeparation.symmetry、AtomicBasic/Laws，以及现成 Code/moved_code。新增 below_code/lift_le 仅连接已有 Product/WithTop 的原条件与下界；eq_symmetry 仅将已有公式对称性实例化为相等。未重造放置、名字作用、强迫递归或 L。此项独立比较已完整验收（2916 构建、32288 声明，旧足迹不变）；独立比较验收见 active-independent-acceptance.json；一般比较和完整支撑下降均已由后续消费者接入。
 
 ## 任意重叠的活动副本比较
 
-LocalQuotients.active_equal:67 → ForcingActiveEquality.construction_kernel_certificate（同一内部 L）；真实消费者 support_descent:173。原 permute_le_root:58 复用现成 compatible_placement 的固定根 CompositionGraph 与 ForcingDiagramOrder.le_iff。根限制相容性由 exists_restrict/restricted_entry、实际 Moved 和 Cohen functional 直接推出。相容放置返回第三副本，两次调用 ForcingActiveIndependent.active_equal_independent，最后复用 eq_of_dense/eq_trans/eq_symm。已通过全量验收（2917 构建、32293 声明，旧足迹不变；active-equal-acceptance.json）。无新增独立性、稠密性或共同下界前提。一般支撑下降的族装配仍待接，已有 ForcingReplacementOrbit.moved/moved_unique、原生 functional image、ForcingPowerName.hs_move 和 EquivariantMixing 需直接复用。
+LocalQuotients.active_equal:67 → ForcingActiveEquality.construction_kernel_certificate（同一内部 L）；真实消费者 support_descent:173。原 permute_le_root:58 复用现成 compatible_placement 的固定根 CompositionGraph 与 ForcingDiagramOrder.le_iff。根限制相容性由 exists_restrict/restricted_entry、实际 Moved 和 Cohen functional 直接推出。相容放置返回第三副本，两次调用 ForcingActiveIndependent.active_equal_independent，最后复用 eq_of_dense/eq_trans/eq_symm。已通过全量验收（2917 构建、32293 声明，旧足迹不变；active-equal-acceptance.json）。无新增独立性、稠密性或共同下界前提。一般支撑下降的族装配现已直接消费 ForcingReplacementOrbit.moved/moved_unique、原生 functional graph、ForcingPowerName.hs_move 和 EquivariantMixing，见下文。
+
+## 完整支撑下降的实际装配
+
+LocalQuotients.support_descent:132–202 → ForcingSupportDescent.construction_kernel_certificate；真实消费者 localName_descent:386。ForcingSupportOrbit 构造原固定根子群索引的精确名字函数图和激活函数图；使用固定原生 FunctionConstruction.exists_setFunctionFromTo_of_denote 与既有 group orbit/name action，无新函数图后端。实际 Product 乘法/恒等和 name composition、hs_move 给出族等变/HS/恒等项。moved_coordinates 通过现成 Cohen/Diagram 构造和作用唯一性取得原坐标。
+
+完整 support_descent 保留原 Cohen 见证及两侧原限制；先用已证 supporting_root 限制到 v，证明嵌套限制等同原 d|s0，直接调用 active_equal 得到所有内部索引的相干性，再消费 exists_mix、fixed_and_HS、eq_at 和第二次 supporting_root。没有额外相容性、给定相干族或给定混合名字。全部 19 项声明/同一 L 原核证书通过完整验收（2919 构建、32312 声明，旧足迹不变），见 support-descent-acceptance.json。剩余具体 LocalName 规范化应复用 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq 和现成 Separation/CollectedHS.fixed；它不是重建规范化后端的理由。

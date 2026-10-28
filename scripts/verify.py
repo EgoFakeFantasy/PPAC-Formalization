@@ -2310,7 +2310,9 @@ def main() -> None:
                                ('construction_compatible_placement', 'ConstructionCompatiblePlacement', 19),
                                ('forcing_supporting_root', 'ForcingSupportingRoot', 15),
                                ('forcing_active_independent', 'ForcingActiveIndependent', 7),
-                               ('forcing_active_equality', 'ForcingActiveEquality', 5)):
+                               ('forcing_active_equality', 'ForcingActiveEquality', 5),
+                               ('forcing_support_orbit', 'ForcingSupportOrbit', 13),
+                               ('forcing_support_descent', 'ForcingSupportDescent', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5683,7 +5685,9 @@ def main() -> None:
         "source_ChoiceFailure_forces_iff_restrict_same_L_native_kernel_proved": True,
         "source_LocalQuotients_active_equal_independent_same_L_native_kernel_proved": True,
         "source_LocalQuotients_active_equal_arbitrary_overlap_same_L_native_kernel_proved": True,
-        "source_LocalQuotients_actual_active_equal_and_support_descent_proved": False,
+        "source_LocalQuotients_actual_root_orbit_families_constructed": True,
+        "source_LocalQuotients_support_descent_same_L_native_kernel_proved": True,
+        "source_LocalQuotients_actual_active_equal_and_support_descent_proved": True,
         "source_LocalQuotients_actual_quotients_and_restrictions_constructed": False,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
