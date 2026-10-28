@@ -11868,4 +11868,12 @@ example {k n : Nat} (rho : Fin 7 → Fin k)
       (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingSupportingRoot.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing dR z zR v phi))) :=
   ForcingSupportingRoot.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing dR z zR v phi
 
+-- Pinned LocalQuotients:18, independent active copies; original overlap retained.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingActiveIndependent.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y))) :=
+  ForcingActiveIndependent.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v alpha beta sa sb d A0 A1 fixing0 fixing1 delta da db za zb z r sigma0 sigma1 actA actB x y
+
 end PPAC.Migration.Step4Checks

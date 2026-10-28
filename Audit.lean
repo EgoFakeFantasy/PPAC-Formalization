@@ -32767,3 +32767,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSupportingRoot.constructionSentence
 #print axioms PPAC.Migration.ForcingSupportingRoot.construction_models
 #print axioms PPAC.Migration.ForcingSupportingRoot.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingActiveIndependent.active_equal_independent
+#print axioms PPAC.Migration.ForcingActiveIndependent.below_code
+#print axioms PPAC.Migration.ForcingActiveIndependent.constructionSentence
+#print axioms PPAC.Migration.ForcingActiveIndependent.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingActiveIndependent.construction_models
+#print axioms PPAC.Migration.ForcingActiveIndependent.eq_symmetry
+#print axioms PPAC.Migration.ForcingActiveIndependent.lift_le

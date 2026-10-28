@@ -724,3 +724,5 @@ import PPAC.Migration.ForcingSupportedNames
 import PPAC.Migration.ConstructionCompatiblePlacement
 
 import PPAC.Migration.ForcingSupportingRoot
+
+import PPAC.Migration.ForcingActiveIndependent

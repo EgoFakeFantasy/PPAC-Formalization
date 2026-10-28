@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第 8 阶段。完整 Base/T、实际 μ/K、内部塔与饱和结论、全模式 L 解释、Diagram 共同扩张、Product descent、countable conservative hull 及整个 Common 分量共尾链均已完成。EquivariantMixing 已完成。OrbitNames 字面相等及实际 compatible_placement 已完成。本批接通原 ChoiceFailure 的根支撑强迫保持与根限制等价，返回同一内部 L 的对象模式原核证书。LocalQuotients 的支撑下降/实际商与限制、CellTowers/实际纤维粘合以及第 9–11 阶段仍未完成，最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。完整 Base/T、实际 μ/K、内部塔与饱和结论、全模式 L 解释、Diagram 共同扩张、Product descent、countable conservative hull 及整个 Common 分量共尾链均已完成。EquivariantMixing 已完成。OrbitNames 字面相等及实际 compatible_placement 已完成。ChoiceFailure 的根支撑强迫保持与根限制等价已完成。本批迁移原 LocalQuotients.active_equal_independent，已取得同一内部 L 的对象原核证书并通过全量验收。LocalQuotients 的支撑下降/实际商与限制、CellTowers/实际纤维粘合以及第 9–11 阶段仍未完成，最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -20,19 +20,19 @@
 
 ## 本批实际证明与验收
 
-源 ChoiceFailure.forces_at_supporting_root:279 / forces_iff_restrict:305 → ForcingSupportingRoot.construction_kernel_certificate。真实调用在 LocalQuotients.support_descent:154/198、同文件 restriction:530、AvailableRecords:89 和 OrdinalCodes:269。
+源 LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate。源 active_equal:111/114 调用它，support_descent:173 再调用 active_equal。
 
-直接复用上一批实际 compatible_placement、现有 ForcingSeparation.symmetry、ForcingFormula.of_dense/mono 和 ProductPoset.preorder；实际小支撑 Filter 的正规性由 ForcingNormalFilter.is_normal 消去，不作为新的假设。根下任意条件从原 WithTop 序解包；固定根排列及共同加强条件实际构造。参数逐个受固定子群支撑，因此作用后保持字面相同。反向蕴含由实际限制包含和单调性给出。
+复用已完成的 descent_comparison_placement、name_eq_of_same_diagram、Product 强迫对称性及原子相等正则性/传递律。在每个潜在反例条件下实际构造两次放置及共同第三副本，用三个名字字面相等识别中间项，再得到共同加强条件上的强迫相等。没有给定稠密见证、输出放置或输出相等。
 
-最终模式在同一原内部 L 中保留任意源公式、全部秩 HS 参数、精确根范围及 Cohen 限制，结论为原条件与根限制条件的强迫等价；允许源 :279 中 s≤p，:305 的 s=p 是自反特例。Choice 沿现成 L 解释消去，未加到普通 nativeZF。没有给定稠密见证、共同下界或固定性结论。外部公式模式不是全部内部／非标准公式码归纳，后者仍归第 10 阶段。
+对象句子相对化到同一现成内部 L，返回普通 nativeZF 的原核证书。保留原两组精确范围交集、v≤s0/s1、d 的支撑、Cohen 限制和实际作用；名字无秩界，证明只需 IsName，因此也覆盖源 HS 名字。原 canonical D≤μ、I=Hartogs(μ)、Row/AllMergers/monoid 父背景不变。未增加对象 Choice，未重建 L、名字或强迫后端。
 
-本批全量验收通过：2915 项构建、32281 项声明；新增 15 项，旧 32266 项足迹逐项不变。9 条命令（5 次 trust=0）均退出 0，零警告、无新增公理依赖。75 份固定源、2470 份当前文件哈希匹配，底座与供体干净；358 个退役模块仍全部不存在，恢复档／补丁哈希匹配。见 verification/support-root-acceptance.json。首轮验收示例的命名空间遗漏已修正并完整重跑通过；证明模块未因此修改。当前是本地工作树验收，历史 CRLF 检出复现项仍保留。
+全量验收通过：2916 项构建、32288 项声明；新增 7 项，旧 32281 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2471 份当前文件哈希匹配；底座与供体干净。358 个已批准退役模块全部不存在，恢复档／补丁哈希匹配。见 verification/active-independent-acceptance.json。源行号校正后已对最终版本完整复验；本地验收不替代历史 CRLF 检出复现。一般重叠 active_equal、support_descent、实际商/限制、Fiber 粘合和最终内部 Con 仍未完成。
 
 ## 继续顺序与边界
 
 | 真实剩余项 | 已有实现必须复用 | 实际需要接入 |
 |---|---|---|
-| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等、实际 compatible_placement 和 ChoiceFailure 根限制已接；下一项迁移原 LocalQuotients.active_equal_independent/active_equal，再消费已有 EquivariantMixing 接 support_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
+| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等、实际 compatible_placement 和 ChoiceFailure 根限制已接；独立副本比较已接；下一项迁移原 LocalQuotients.active_equal，再消费已有 EquivariantMixing 接 support_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
 | CellTowers 实际消费者 | 已完成 CompleteRound.Built、Saturation 的实际历史/嵌入/来源、countable conservative hull | 同一最终 T 内 stage range 的原 cell Attachment，有限旧系数与依赖图、内部首次出现及原重排/商消费者；不重建塔 |
 | 原 9–11 | 同一具体系统、已有全秩名字/HS/强迫前端、底座 Proof/Sat | SVC/ACwo/商单射/¬AC，全秩 PP/Main、ZF/U 专用内部检查和全部矛盾码传输，最终主句终验 |
 
@@ -42,4 +42,4 @@
 
 已纠正四项历史状态误报：实际无限预算排列及 two/three-copy、Diagram common extension 与完整 Product descent、完整多轮饱和单子、穷尽请求/最终单子均已有证书，不再标未完成。独立有限载体的排列扩张未声明完成，也不是当前实际调用前置。
 
-验收范围为当前本地工作树。只读字节核对发现 304 个历史 Lean 文件与 Git 保存内容仅有 CRLF/LF 差异；本批新文件采用 LF；提交后另核对 Git 字节。历史 raw-byte 源码锁的干净检出复现尚未验收，列为第 11 阶段工程复现项，不增加第 8 阶段数学前置；本轮未重写这些历史证明。详见 component-cofinal-acceptance.json 的 historical_checkout_byte_audit。
+验收范围为当前本地工作树。只读字节核对发现 304 个历史 Lean 文件与 Git 保存内容仅有 CRLF/LF 差异；本批新文件采用 LF；最终验收报告记录提交后的 Git 字节核对。历史 raw-byte 源码锁的干净检出复现尚未验收，列为第 11 阶段工程复现项，不增加第 8 阶段数学前置；本轮未重写这些历史证明。详见 component-cofinal-acceptance.json 的 historical_checkout_byte_audit。

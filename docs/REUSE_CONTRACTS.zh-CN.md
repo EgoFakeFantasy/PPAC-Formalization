@@ -216,3 +216,7 @@ RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值�
 ForcingSupportingRoot.forces_at_supporting_root / forces_iff_restrict 直接调用现成 ForcingSeparation.symmetry（已经处理实际 Product、全秩 HS 及新作用图参数）和 ForcingFormula.of_dense/mono；不用再写一套公式对称或环境重索引。既有 small-support Filter 通过 is_normal 给出所需正规性。Code 仅展开既有 Kuratowski pair 与 WithTop singleton，moved_code 以现成图唯一性连接 compatible_placement 的输出。
 
 construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 LocalQuotients.active_equal/support_descent 尚未完成，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。
+
+## 独立活动副本比较
+
+LocalQuotients.active_equal_independent:18 → ForcingActiveIndependent.construction_kernel_certificate（同一内部 L）；真实消费者为 active_equal:111/114。直接消费已完成的 ConstructionDescentPlacement.descent_comparison_placement、ForcingSupportedNames.name_eq_of_same_diagram、ForcingSeparation.symmetry、AtomicBasic/Laws，以及现成 Code/moved_code。新增 below_code/lift_le 仅连接已有 Product/WithTop 的原条件与下界；eq_symmetry 仅将已有公式对称性实例化为相等。未重造放置、名字作用、强迫递归或 L。此项独立比较已完整验收（2916 构建、32288 声明，旧足迹不变）；一般重叠比较和支撑下降尚未完成。见 active-independent-acceptance.json。
