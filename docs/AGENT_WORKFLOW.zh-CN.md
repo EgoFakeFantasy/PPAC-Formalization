@@ -2,7 +2,7 @@
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
-**仍在原第 8 阶段。本批已迁移 TailGraphs 的真实 ChainCode/At/Represents：构造全部内部 ω 上的局部名字链码集合，证明每个实际粘合类都有代表码以及表示唯一性，并取得同一内部 L 中的 nativeZF 原核证书。TailGraphs 的同码协变/最小码、PersistentCodes、OrdinalCodes、CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批按原 QuotientTransport.rebaseGlued/componentEquiv 补齐同分量换根，复用现有商集、投影和整分量传输，取得以原根为目标的普通 nativeZF 原核证书。先前的全内部 ω 链码载体及代表码存在/唯一性保持已完成。At 保反射、同码协变/最小码、PersistentCodes、OrdinalCodes、CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -24,12 +24,11 @@
 |---|---|---|---|
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
-| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；本批 ChainCode/At/Represents/exists_representing_code 已接入 | 下一接 TailGraphs.at_transport_iff:103–146、tail_fixed/represents_same_code:152–187，再接既有内部良序上的 leastCode 和后续源消费者；不重建名字/函数空间/选择/L/商后端 |
+| 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
+| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；ChainCode/At/Represents/exists_representing_code 和原根 componentEquiv 已接入 | 下一接 TailGraphs.at_transport_iff:103–146、tail_fixed/represents_same_code:152–187，再接既有内部良序上的 leastCode 和后续源消费者；不重建名字/函数空间/选择/L/商后端 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 
 本批 ReindexIso 的通用原核端点允许不同源/目标 System；实际标签端点进一步构造唯一 app 函数族并证明全部自然性。两个端点均为普通 nativeZF 推导；整分量 gluedEquiv_toGlued 已由本批原核端点完成；移动滤子 eligibleSystemTransport 的全 app 族与自然性现已由 ForcingEligibleReindex 接入，使用两侧实际对象/限制族；完整模型应用仍须按上表继续。源码与精确依赖由 SOURCE_LOCK、THEOREM_COVERAGE 保留。新的辅助引理必须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、顶点 quotient/zigzag API 不作为主线前置。发布仍须独立授权。
-
-本批 ForcingEligibleTransport 直接消费完整 HS 公式对称性、实际移动滤子与图、字面 labelSet 和 E 的根支持，完成名字/商资格坐标保反射及逐图实际 app。assembly_kernel_certificate 从两条现有 Data 行构造实际商与资格双射，未把它们当前提。下一步是同一源 eligibleSystemTransport 的全 app 函数族及自然性联合装配；原阶段编号不变。全量验收为 2956 构建、33070 声明，旧 33048 足迹不变，见 verification/eligible-transport-acceptance.json。

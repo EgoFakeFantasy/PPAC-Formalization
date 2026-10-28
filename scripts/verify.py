@@ -2351,7 +2351,8 @@ def main() -> None:
                                ('forcing_local_quotient_transport', 'ForcingLocalQuotientTransport', 22),
                                ('forcing_eligible_transport', 'ForcingEligibleTransport', 22),
                                ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15),
-                               ('forcing_tail_codes', 'ForcingTailCodes', 32)):
+                               ('forcing_tail_codes', 'ForcingTailCodes', 32),
+                               ('forcing_component_rebase', 'ForcingComponentRebase', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5780,6 +5781,8 @@ def main() -> None:
         "source_TailGraphs_same_code_covariance_and_leastCode_completed": False,
         "source_TailGraphs_code_scope": "Exact existing candidate names, chain, object family and gluing laws are consumed. All internal omega entries are actual local normalized names. Existing internal uniformization supplies representative sequences inside the same L; no ambient Choice or host sequence is substituted. Transport/same-code covariance, persistent selection, ordinal rank, CodeLinks and final Con remain unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
+        "source_component_rebase_same_set_quotient_proved": True,
+        "source_component_transport_target_original_root_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
         "source_tuple_stabilizer_native_schema_proved": True,

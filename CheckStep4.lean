@@ -12241,4 +12241,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul g q bound labels E objects 
       (ConstructibleGround.relative (ForcingTailCodes.constructionSentence rho I G F mul g q bound labels E objects maps root gluePr w names chain objImage Q P vertices zero b))) :=
   ForcingTailCodes.construction_kernel_certificate rho I G F mul g q bound labels E objects maps root gluePr w names chain objImage Q P vertices zero b
 
+-- Source componentEquiv: target gluing is at the original chosen root.
+example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v V : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingComponentRebase.constructionSentence D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v V)) :=
+  ForcingComponentRebase.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v V
+
 end PPAC.Migration.Step4Checks

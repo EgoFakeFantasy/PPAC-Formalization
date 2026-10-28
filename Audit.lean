@@ -33624,3 +33624,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingTailCodes.constructionSentence
 #print axioms PPAC.Migration.ForcingTailCodes.construction_models
 #print axioms PPAC.Migration.ForcingTailCodes.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingComponentRebase.common_symm
+#print axioms PPAC.Migration.ForcingComponentRebase.common_iff
+#print axioms PPAC.Migration.ForcingComponentRebase.rebase_component
+#print axioms PPAC.Migration.ForcingComponentRebase.rebase_gluing
+#print axioms PPAC.Migration.ForcingComponentRebase.Transport
+#print axioms PPAC.Migration.ForcingComponentRebase.of_transport
+#print axioms PPAC.Migration.ForcingComponentRebase.exists_transport
+#print axioms PPAC.Migration.ForcingComponentRebase.transport
+#print axioms PPAC.Migration.ForcingComponentRebase.transport_freeClosed
+#print axioms PPAC.Migration.ForcingComponentRebase.transport_semantics
+#print axioms PPAC.Migration.ForcingComponentRebase.constructionSentence
+#print axioms PPAC.Migration.ForcingComponentRebase.construction_models
+#print axioms PPAC.Migration.ForcingComponentRebase.construction_kernel_certificate

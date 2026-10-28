@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；完整 eligibleSystemTransport 函数族与自然性现也已接入；下一源消费者沿 TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks；链码载体及表示存在/唯一性本批已接入。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；完整 eligibleSystemTransport 函数族与自然性现也已接入；下一源消费者沿 TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks；链码载体及表示存在/唯一性已接入；原 componentEquiv 的换根现由 ForcingComponentRebase 消费同一商集、投影与整分量传输完成，不重建后端。
 
 ## 内部证明码：复用现有配套，不重建
 
