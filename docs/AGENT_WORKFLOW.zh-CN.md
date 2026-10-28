@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初f28b0334a740108057adf18a24dc11abd866efbe的阶段编号。当前仍在 **8**；源饱和塔/全部理想、补集与基数端点、实际μ/K以及无几何父前提的完整Base/T现均已验收，同一实际最终单子行及全性质已显式返回。完整内部支撑族新鲜成员、新鲜排列扩张及同一实际Hartogs标签集的全位置合同已接通；paste/two/three-copy精确集合位置合同现也已接通；实际Diagram的范围/标签等价、固定根排列、图相等和ExactOverlap.of_common现也已接通；下一项是实际overlap处方及amalgamate/descent/Hull消费者，再进入9–11；最终内部Con未完成。
+沿用最初f28b0334a740108057adf18a24dc11abd866efbe的阶段编号。当前仍在 **8**；源饱和塔/全部理想、补集与基数端点、实际μ/K以及无几何父前提的完整Base/T现均已验收，同一实际最终单子行及全性质已显式返回。完整内部支撑族新鲜成员、新鲜排列扩张及同一实际Hartogs标签集的全位置合同已接通；paste/two/three-copy精确集合位置合同现也已接通；实际Diagram的范围/标签等价、固定根排列、图相等和ExactOverlap.of_common现也已接通；原可选处方/给定CopyRel/Valid和同一行Merger消费现也已接通；下一项是整个载体上的amalgamate/descent/Hull消费者，再进入9–11；最终内部Con未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -22,7 +22,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
 |---|---|---|---|
-| 8 的下一项 | 具体T的实际overlap处方/amalgamate/common_extension/descent/Hull消费者 | 全位置合同；实际Diagram范围/公共子图标签等价、根固定排列、图相等和ExactOverlap.of_common；完整Merger/RootSystem/给定CopyRel及lift均已有 | 构造原可选起点表使CopyRel逐项等于实际标签相等，消费既有Merger并产生实际共同扩张，不新建后端 |
+| 8 的下一项 | 具体T的整个载体amalgamate/common_extension/descent/Hull消费者 | 实际可选P/WellFormed/给定CopyRel精确标签等价/Valid，及同一最终行Merger的实际roots/精确实现均已接通 | 拼接roots右锥并上的部分单射，复用原源extend_embedding的载体表示适配和现成排列扩张，产生全D→I共同扩张 |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计与实际构建通过 |
@@ -34,6 +34,6 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 任意内部有限处方/精确CopyRel、任意理想共尾路径/Probe、补集/基数端点、实际μ/K及无几何前提的Base/T均已完成。同一实际最终行已取出；只接具体Placement/Hull消费者，不重新证明这些数学。
 
-本批47新声明正式验收通过：2897构建/31782审计，9命令/5次trust=0全退出0、零警告，此前31735足迹不变且无新增公理依赖；见verification/diagram-placements-acceptance.json。前批完整合同保留；amalgamate/descent/Hull和最终内部Con未完成。
+本批50新声明正式验收通过：2898构建/31832审计，9命令/5次trust=0全退出0、零警告，此前31782足迹不变且无新增公理依赖；见verification/diagram-prescription-acceptance.json。前批合同均保留；整个载体amalgamate/descent/Hull和最终内部Con未完成。
 
 每个证明改动先写原源声明、完整目标类型和真实消费者，查底座／同伴精确接口后复用；没定位到接口不能写成数学不存在。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；正式证明改动运行 scripts/verify.py。不以模块数／构建数估算完成比例；不因文档改动重复编译。NatPacket/reader 已按获批清单退役，不恢复该支线或退役反射；保留其他项目改动。不新建通用证明核、编码器、满足关系、递归或类别后端。

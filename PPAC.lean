@@ -688,3 +688,5 @@ import PPAC.Migration.ConstructionPlacementPasting
 import PPAC.Migration.ConstructionPlacementTriple
 
 import PPAC.Migration.ConstructionDiagramPlacements
+
+import PPAC.Migration.ConstructionDiagramPrescription

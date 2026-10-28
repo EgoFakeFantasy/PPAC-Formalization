@@ -11750,4 +11750,16 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionDiagramPlacements.rootSentence)) :=
   ConstructionDiagramPlacements.root_kernel_certificate
 
+-- Original literal optional table: all internal indices, SAME P and SAME actual final row.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionDiagramPrescription.constructionSentence)) :=
+  ConstructionDiagramPrescription.construction_kernel_certificate
+
+-- Original literal optional table: all internal indices, SAME P and SAME actual final row.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionDiagramPrescription.realizationSentence)) :=
+  ConstructionDiagramPrescription.realization_kernel_certificate
+
 end PPAC.Migration.Step4Checks
