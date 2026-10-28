@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。本批已迁移实际 Available/availability，并在同一内部 L 的联合原核存在证书中构造实际 eligibleSystem 及其全部内部元素的有界 availability 理想。完整验收通过。下一项是原 availability_sub 与实际 Fiber/fiberRestrict_bijective，再接移动滤子 transport、纤维粘合/CellTowers。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批已完成实际 availability 收缩等式、精确 Fiber 和原限制图诱导的纤维双射，并接入同一内部 L 的 eligibleSystem 联合存在证书。完整验收通过。下一项是已有 Component 顶点上的实际纤维/箭头映射及恒等/复合相容，再接实际粘合/CellTowers。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -13,7 +13,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射、CellTowers／纤维粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维/箭头相容、CellTowers／实际粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
@@ -22,20 +22,21 @@
 
 | 固定源声明 | 目标端点 | 精确范围 |
 |---|---|---|
-| LocalRecords.System.Available/available_one/available_lower/available_join/availability:549–598 | ForcingSystemAvailability.system_kernel_certificate | 普通 nativeZF 中，任一完整内部 System 的所有内部对象、元素、界都有实际有界 availability 理想 |
-| AvailableRecords.classAvailability:295–304 | ForcingSystemAvailability.construction_kernel_certificate | 同一已有内部 L 中联合构造实际 eligibleSystem、全部内部图/映射族及其所有 availability 理想；没有给定系统或任意指定理想前提 |
+| AvailableRecords.available_sub_iff/availability_sub:405–430 | ForcingSystemFibers.contraction_kernel_certificate | 普通 nativeZF 中，同一限制映射两端的完整实际 availability 理想满足精确收缩关系 |
+| Fiber/fiberRestrict/fiberRestrict_bijective:434–467 | ForcingSystemFibers.system_kernel_certificate | 对全部内部图、界和实际收缩，构造精确两端 Fiber 及原限制图的受限图，证明单射、满射和完整边方程 |
+| 同一 eligibleSystem 实例 | ForcingSystemFibers.construction_kernel_certificate | 已有内部 L 中联合构造实际系统、全部 availability 理想及全部纤维双射；无给定纤维或独立选择双射前提 |
 
-全量验收：**2941 项构建，32686 项声明审计**；新增 24 项，旧 32662 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1774 项无公理、30912 项具有既已记录的依赖；75 份固定源及 2496 份当前文件哈希匹配。记录：verification/system-availability-acceptance.json。
+全量验收：**2942 项构建，32708 项声明审计**；新增 22 项，旧 32686 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1776 项无公理、30932 项具有既已记录的依赖；75 份固定源及 2497 份当前文件哈希匹配。记录：verification/system-fibers-acceptance.json。
 
-Available 的对象公式是从 r.sub n 的实际限制图存在前像；载体精确为 D 中满足 n 整除 a 且 Available 的全部 n。单位/向下封闭/上确界封闭直接消费同一 System 的恒等、复合与精确交集；sub_mono 只复用既有 exists_sub/sub_sub/sub_eq；载体集合使用原生 ZF.separation_exists_d。没有预设理想、资格 oracle、外部枚举或新选择函数。叶检查修复过 m+0 绑定器索引和定义性等式闭合，不宣称首次编译全部通过。
+先用现成子图/对象函数/配对码/映射唯一性把 Available 对齐到指定限制图，再用 System 的单射与复合证明 available_sub_iff；left_mul_dvd_iff 给出实际理想收缩。精确纤维由原生 Separation 构造，映射由原生 exists_restriction 构造；目标资格用已有 eq_of_contract_eq，满射从实际 availability 取前像并用 contract_unique 对齐。源 Fiber 定理的 ConditionalJoins 前提显式保留，已有 ObjectFields 已提供它，不增加新的基础义务或对象 Choice。
 
-实际 availability 理想现已接通，不再列为待做。后续 availability_sub、精确 Fiber 与限制双射、移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成；已有 ConeIdeal.contract/eq_of_contract_eq 保留复用。358 个批准退役模块保持删除，正式日志保留。
+本批覆盖全部内部参数的纤维构造与双射；尚未统一已有 Component 顶点/箭头上的纤维族和复合相容性，也未完成实际粘合/CellTowers、移动滤子 quotient transport 或最终 Con。原顶点/箭头/整分量共尾链和理想重建均已完成并继续复用。358 个批准退役模块保持删除，正式日志保留。
 
 ## 继续顺序与边界
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | AvailableRecords.available_sub_iff:405 / availability_sub:417 / Fiber、fiberRestrict_bijective:434–467 → ComponentGluing.arrowMap | 同一实际 System 的全部 availability 有界理想；现有 ConeIdeal.contract/eq_of_contract_eq、子图复合、限制单射与复合 | 接实际 availability 收缩等式和精确纤维限制双射；消费现有理想收缩与重建，不重造理想/子图/系统底座 |
+| 8 当前 | ComponentGluing.vertexFiber/arrowMap/arrowMap_bijective/arrowMap_comp:227–283 → Glued/toGlued:362–400 | 实际 availability 收缩、精确纤维及原限制图诱导双射；现成 Component 顶点/箭头/共尾链和函数图构造 | 统一实际顶点纤维/箭头映射，证明恒等和复合相容，再接实际粘合；不重建顶点、收缩、共尾链或函数后端 |
 | 8 后续 | ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 全分量共尾链、Product descent、CompleteRound.Built、同一实际历史/嵌入/来源、countable hull | 同一系统、所有纤维、全部内部索引及全纤维单射/满射；不重建塔 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |

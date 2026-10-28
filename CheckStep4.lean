@@ -12105,4 +12105,22 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incomin
         (ForcingSystemAvailability.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
   ForcingSystemAvailability.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
 
+
+-- Exact availability contraction and actual fiber bijections.
+example {k : Nat} (D I mul e diagrams objImage objects S mapImage maps r s Or Os a n c z f y x U V : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingSystemFibers.contractionSentence D I mul e diagrams objImage objects S mapImage maps r s Or Os a n c z f y x U V)) :=
+  ForcingSystemFibers.contraction_kernel_certificate D I mul e diagrams objImage objects S mapImage maps r s Or Os a n c z f y x U V
+
+example {k : Nat} (D I mul e diagrams objImage objects S mapImage maps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingSystemFibers.systemSentence D I mul e diagrams objImage objects S mapImage maps)) :=
+  ForcingSystemFibers.system_kernel_certificate D I mul e diagrams objImage objects S mapImage maps
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingSystemFibers.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
+  ForcingSystemFibers.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
+
 end PPAC.Migration.Step4Checks

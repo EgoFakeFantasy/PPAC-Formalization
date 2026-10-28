@@ -263,4 +263,6 @@ ForcingEligibleSystem 已直接解包 MapRow，用 data_unique 对齐全部重�
 
 ForcingSystemAvailability 已将 Available 定义为同一系统实际限制图的前像关系，复用原生 ZF.separation_exists_d 构造精确有界载体；单位、向下封闭和 join 封闭直接消费既有 System 字段。sub_mono 仅拼接 exists_sub/sub_sub/sub_eq；范围交集和 ConeIdeal 定义均来自旧接口。实际 eligibleSystem 和全部 availability 理想已联合取得同一内部 L 的原核存在证书。
 
-下一真实消费者是 AvailableRecords.available_sub_iff/availability_sub/Fiber/fiberRestrict_bijective，再接 ComponentGluing.arrowMap。现成 ConstructionIdealContraction.contract/eq_of_contract_eq 及子图复合、单射/复合定律保留复用，不再列为待建基础。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingSystemFibers 已直接消费 System 的单射/复合、sub_eq、原生配对码与函数唯一性，证明指定实际限制图上的 available_sub_iff；再用现成 left_mul_dvd_iff 得到完整实际理想收缩。精确 Fiber 用 ZF.separation_exists_d 构造，映射用 ZF.exists_restriction；目标资格由 eq_of_contract_eq，满射由实际 Available 与 contract_unique。两个普通原核端点及同一已有内部 L 的联合存在端点覆盖全部内部参数。ConditionalJoins 是源显式前提，已有 ObjectFields 提供，不重证。
+
+下一真实消费者是 ComponentGluing.vertexFiber/arrowMap/arrowMap_comp，再接实际 Glued/toGlued。原 Component 顶点/箭头/整分量共尾链、理想收缩/重建和函数后端都已完成，统一族及其相容接线直接消费这些结果。移动滤子 quotient transport、实际粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
