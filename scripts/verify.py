@@ -2291,7 +2291,8 @@ def main() -> None:
                                ('construction_placement_pasting', 'ConstructionPlacementPasting', 37),
                                ('construction_placement_triple', 'ConstructionPlacementTriple', 34),
                                ('construction_diagram_placements', 'ConstructionDiagramPlacements', 47),
-                               ('construction_diagram_prescription', 'ConstructionDiagramPrescription', 50)):
+                               ('construction_diagram_prescription', 'ConstructionDiagramPrescription', 50),
+                               ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5986,12 +5987,15 @@ def main() -> None:
         "source_actual_Diagram_exact_cone_range_and_common_sub_label_iff_kernel_certificates": True,
         "source_actual_Diagram_full_ExactOverlap_of_common_and_actual_permuted_graph_equality_kernel_certificates": True,
         "source_actual_Diagram_same_position_root_fixed_permutation_kernel_certificate": True,
-        "source_actual_Diagram_overlap_prescription_and_amalgamate_constructed": False,
+        "source_actual_Diagram_overlap_prescription_and_amalgamate_constructed": True,
         "source_actual_Diagram_literal_optional_overlap_prescription_constructed": True,
         "source_actual_Diagram_GIVEN_CopyRel_iff_actual_labels_and_Valid_kernel_certificate": True,
         "source_actual_Diagram_no_diagonal_or_disjoint_start_and_no_junk_rows": True,
         "source_actual_Diagram_SAME_final_row_Merger_consumed_with_SAME_constructed_P": True,
-        "source_actual_Diagram_whole_amalgamating_injection_constructed": False,
+        "source_actual_Diagram_whole_amalgamating_injection_constructed": True,
+        "source_actual_Diagram_SAME_P_roots_WHOLE_carrier_all_internal_finite_family_common_extension_kernel_certificate": True,
+        "source_actual_Diagram_amalgamate_supplied_whole_embedding_or_diagram_premise": False,
+        "source_actual_Diagram_fixed_three_family_and_Cohen_descent_consumers_complete": False,
         "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,

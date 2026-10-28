@@ -351,7 +351,8 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | DiagramPlacements.paste_placements / extend_two_placements / three_copy_placement | ConstructionPlacementPasting.paste_kernel_certificate/construction_kernel_certificate; ConstructionPlacementTriple.construction_kernel_certificate | 完整根/像交集、全部指定边、全禁集新鲜性及三份位置的三个精确像交集；forall6未相对化拼接、forall10/10同一L原核证书；实际Diagram消费者尚待接入 |
 | Actual Diagram range/common subdiagram/permutation consumers | ConstructionDiagramPlacements.range/common/overlap/agree/root_kernel_certificate | 精确右锥/范围交集、给定公共右锥的标签等价、完整ExactOverlap.of_common、实际排列图相等及同位置根固定排列；四条未相对化原ZF、forall9同一L原核证书；实际overlap处方/amalgamate尚待 |
 | Diagrams.exists_overlap_prescription / actual finite-merger consumer | ConstructionDiagramPrescription.construction_kernel_certificate / realization_kernel_certificate | 原内部可选P无垃圾行/对角及不交起点；给定CopyRel逐项等于实际标签相等、Valid；同一P/同一最终Row返回实际roots和精确实现；forall5/14同一L原核证书 |
+| Diagrams.amalgamate/common_extension, actual canonical source labels | ConstructionDiagramAmalgamation.construction_kernel_certificate | 同一P/identity/roots/RootSystem/给定CopyRel，实际完整D→I图及全部原Sub/Le方程；不假定整图/全嵌入，含0及非标准内部有限指标；forall15同一L原核证书 |
 
-本批实际处方/给定CopyRel精确标签等价/Valid及同一行Merger消费正式2898构建/31832声明，9命令/5次trust=0全退出0、零警告，此前31782足迹不变且无新增公理依赖，见verification/diagram-prescription-acceptance.json。前批全部合同保留；不以构建/声明数作为整体完成比例。
+本批整个D→I的实际有限族amalgamate/common_extension正式2899构建/31860声明，9命令/5次trust=0全退出0、零警告，此前31832足迹不变且无新增公理依赖，见verification/diagram-amalgamation-acceptance.json。前批全部合同保留；不以构建/声明数作为整体完成比例。
 
-仍在原阶段8。真正待做的是整个载体上的amalgamate/common_extension/descent/Hull消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。
+仍在原阶段8。真正待做的是固定三图/实际Cohen descent/Hull消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。

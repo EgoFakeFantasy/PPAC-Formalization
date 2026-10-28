@@ -11762,4 +11762,10 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionDiagramPrescription.realizationSentence)) :=
   ConstructionDiagramPrescription.realization_kernel_certificate
 
+-- No supplied whole embedding or amalgamating diagram; actual canonical source labels.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionDiagramAmalgamation.constructionSentence)) :=
+  ConstructionDiagramAmalgamation.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

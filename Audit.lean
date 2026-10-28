@@ -32307,3 +32307,33 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionDiagramPrescription.realizationSentence
 #print axioms PPAC.Migration.ConstructionDiagramPrescription.realization_models
 #print axioms PPAC.Migration.ConstructionDiagramPrescription.realization_kernel_certificate
+
+-- WHOLE actual diagram amalgamation, SAME prescription/roots, all internal finite families.
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.whole_embedding
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.restrict_injection
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.extend_embedding
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.Glue
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.Subdiagrams
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.CommonExtension
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.Result
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.glue_functional
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.glue_injective
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.glue
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.glue_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.glue_semantics
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.partial_diagram
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.subdiagrams
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.common_extension
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.amalgamate
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.subdiagramsF
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.subdiagramsF_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.subdiagramsF_semantics
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.commonExtension
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.commonExtension_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.commonExtension_semantics
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.result
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.result_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.result_semantics
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.constructionSentence
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.construction_models
+#print axioms PPAC.Migration.ConstructionDiagramAmalgamation.construction_kernel_certificate

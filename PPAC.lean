@@ -690,3 +690,5 @@ import PPAC.Migration.ConstructionPlacementTriple
 import PPAC.Migration.ConstructionDiagramPlacements
 
 import PPAC.Migration.ConstructionDiagramPrescription
+
+import PPAC.Migration.ConstructionDiagramAmalgamation
