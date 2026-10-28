@@ -12230,4 +12230,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul a I K B w e mu pi inv c ai ac
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingEligibleTransport.assemblySentence rho G F mul a I K B w e mu pi inv c ai ac g gT r rT q A Hq labelMap top bit labels E bound Ar Hr X Q pr V AT HT Y T ps U)) :=
   ForcingEligibleTransport.assembly_kernel_certificate rho G F mul a I K B w e mu pi inv c ai ac g gT r rT q A Hq labelMap top bit labels E bound Ar Hr X Q pr V AT HT Y T ps U
 
+-- Actual all-diagram eligibleSystemTransport with the same family and naturality.
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul a I K B w e mu pi inv c ai ac g gT q A Hq labelMap top bit labels E bound objImage objects targetImage targets arrows maps targetMaps : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingEligibleReindex.constructionSentence rho G F mul a I K B w e mu pi inv c ai ac g gT q A Hq labelMap top bit labels E bound objImage objects targetImage targets arrows maps targetMaps)) :=
+  ForcingEligibleReindex.construction_kernel_certificate rho G F mul a I K B w e mu pi inv c ai ac g gT q A Hq labelMap top bit labels E bound objImage objects targetImage targets arrows maps targetMaps
+
 end PPAC.Migration.Step4Checks

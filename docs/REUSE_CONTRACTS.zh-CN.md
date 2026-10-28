@@ -16,7 +16,7 @@
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；下一真实消费者为完整 eligibleSystemTransport 函数族与自然性。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；实际纤维粘合、标签系统/基数、移动滤子及逐图资格 app 均已完成；完整 eligibleSystemTransport 函数族与自然性现也已接入；下一源消费者为 CodeLinks。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -275,7 +275,7 @@ ForcingLabelSystem 已用原生范围和恒等图构造 LocalRecords.labelSystem
 
 ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 diagram 复合，得到整个精确标签纤维的单射；逆 diagram 和 D≤μ 给出上界，原生 Cantor–Bernstein 得到纤维≈μ，再消费已完成 AllFiberMaps 得到实际粘合商≈μ。通用原核端点保留 IdealProbes/Small/K≈μ 输入；本批 ForcingConcreteLabels 已消费 ConstructionConcreteBase.Target:118–126 的同一最终 Row、ObjectFields、AllIdeals、Cardinals，将它们全部消去。labelFiberSet_common 的字面集合结论也已由实际箭头逐点保持标签值和共同后继满射得到。
 
-labelTransport 与 QuotientTransport 的名字、商、资格逐图传输已由后续模块完成；下一接完整 eligibleSystemTransport 函数族，再接 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
+labelTransport 与 QuotientTransport 的名字、商、资格逐图传输已由后续模块完成；完整 eligibleSystemTransport 函数族现已接通，下一接 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
 
 ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。该批之后的 labelTransport 与 ReindexIso availability/精确纤维部分现由下述两个模块完成；整分量传输现由下述 ForcingGluedTransport 完成。
 
@@ -283,7 +283,7 @@ ForcingReindexSystem 复用 permute_sub 和 available_iff_at_sub，将不同源/
 
 ForcingComponentMove 已直接复用 ForcingDiagramAction.exists_permute/unique、permute_sub、reverse、现成顶点编码和 arrow_common；实际置换保持单子索引与理想，移动实际箭头和整个 Common。ForcingGluedTransport 直接消费已有不同系统的 availability/纤维限制双射、同一 actual app 的 naturality、实际箭头双射和两端 toGlued 交换律。exists_gluing 仅装配现成纤维族、Point 载体、分量分离和商投影，不新增后端。
 
-RootMap 是源根纤维复合 c ∘ f ∘ b⁻¹ 的唯一集合关系，由既有原生 setFunctionFromTo 构造；证明所有 Common 顶点交换时，严格复用原共同后继路线。两个端点均在普通 nativeZF 原核中，源/目标 System 不必相同。本批未证明完整 RootGroup 单位/复合作用律。下一实际调用为移动滤子的 local_eq_transport_iff/eligibleSystemTransport，再接 CodeLinks；不重做 Base/T、L 全模式、hull 或商后端。
+RootMap 是源根纤维复合 c ∘ f ∘ b⁻¹ 的唯一集合关系，由既有原生 setFunctionFromTo 构造；证明所有 Common 顶点交换时，严格复用原共同后继路线。两个端点均在普通 nativeZF 原核中，源/目标 System 不必相同。本批未证明完整 RootGroup 单位/复合作用律。移动滤子的 local_eq_transport_iff/eligibleSystemTransport 已接通，下一源消费者为 CodeLinks；不重做 Base/T、L 全模式、hull 或商后端。
 
 
 ForcingLocalTransport 已消费 ForcingProductFamily.exists_action、ForcingLabelConjugacy.exists_image 和现成 Cohen 条件序同构；局部 EqG 双向证明复用 SupportingRoot.moved_code 和 atomic_symmetry。两个普通 nativeZF 原核端点覆盖实际作用/移动滤子及全部内部名字对。
@@ -296,4 +296,4 @@ ForcingEligibleTransport.name_iff 直接调用 ForcingSeparation.symmetry；该�
 
 root_object_bijection 使用已有 LabelSet.HS_and_fixed、ComponentMove.root_fixed 和 E 的 Supported 条件消去固定标签/E/根前提；原生 ZF.exists_restriction 与 restrict_injective 返回完整 Obj 双射。assemble_app 消费两条现有 EligibleFamily.Data，复用 LocalNameTransport.range_image/exists_graph、LocalQuotientTransport.exists_transport 和实际 EqG 对称性，构造真实商映射后再限制到资格集合。
 
-当前真正剩余的是完整 app 函数族和自然性联合装配。两侧实际对象/限制族、data_unique、原生 functionalImage/setFunctionFromTo 和商限制方块均已存在。应直接对齐现有行并收集唯一 app，不重建这些后端；现有资格坐标传输和逐图 app 已完成，不再报为缺口。
+完整 app 函数族和自然性联合装配现已由 ForcingEligibleReindex.construction_kernel_certificate 完成：Row 用现有 diagram/Data 唯一性证明唯一，原生 functionalImage/setFunctionFromTo 收集全部内部图上的 app；app_data 对齐两侧对象族，natural_of_family 对齐已有 map_data，使用同一原始名字及 restrict_ofName、函数唯一性闭合方块。该端点不假设 app 或 Natural；不重建任何后端。CodeLinks 和后续模型/内部 Con 才是继续项。

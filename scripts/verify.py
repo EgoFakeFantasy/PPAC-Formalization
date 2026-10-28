@@ -2349,7 +2349,8 @@ def main() -> None:
                                ('forcing_local_transport', 'ForcingLocalTransport', 22),
                                ('forcing_local_name_transport', 'ForcingLocalNameTransport', 19),
                                ('forcing_local_quotient_transport', 'ForcingLocalQuotientTransport', 22),
-                               ('forcing_eligible_transport', 'ForcingEligibleTransport', 22)):
+                               ('forcing_eligible_transport', 'ForcingEligibleTransport', 22),
+                               ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5770,8 +5771,8 @@ def main() -> None:
         "source_QuotientTransport_eligibleName_coordinate_transport_native_kernel_proved": True,
         "source_QuotientTransport_actual_eligible_root_object_bijection_native_kernel_proved": True,
         "source_QuotientTransport_actual_eligible_app_from_existing_rows_native_kernel_proved": True,
-        "source_QuotientTransport_full_eligibleSystemTransport_family_assembled": False,
-        "source_QuotientTransport_eligible_transport_scope": "Actual coordinate eligibility consumes existing full HS formula symmetry and simultaneously moves filter, diagram and E. Actual root Obj bijection consumes literal labelSet fixedness, root support and fixed E. Assembly constructs LocalName/quotient/eligible app from the two actual EligibleFamily.Data rows; no app or quotient bijection is assumed. All-app function family and full naturality assembly remain outstanding; final internal Con remains unproved.",
+        "source_QuotientTransport_full_eligibleSystemTransport_family_assembled": True,
+        "source_QuotientTransport_eligible_transport_scope": "Actual coordinate eligibility consumes existing full HS formula symmetry and simultaneously moves filter, diagram and E. Actual root Obj bijection consumes literal labelSet fixedness, root support and fixed E. Assembly constructs LocalName/quotient/eligible app from the two actual EligibleFamily.Data rows; no app or quotient bijection is assumed. All-app function family and full naturality are now assembled by ForcingEligibleReindex against the existing actual object/restriction families; CodeLinks, model applications and final internal Con remain unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
