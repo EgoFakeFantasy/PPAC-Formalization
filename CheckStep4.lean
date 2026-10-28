@@ -11774,4 +11774,21 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionDiagramThree.constructionSentence)) :=
   ConstructionDiagramThree.construction_kernel_certificate
 
+-- Actual Cohen graphs; separate s0 restriction range and s1 overlap range; no Choice.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionCohenCompatibility.supportSentence) :=
+  ConstructionCohenCompatibility.support_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionCohenCompatibility.movementSentence) :=
+  ConstructionCohenCompatibility.movement_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionCohenCompatibility.agreementSentence) :=
+  ConstructionCohenCompatibility.agreement_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionCohenCompatibility.comparisonSentence) :=
+  ConstructionCohenCompatibility.comparison_kernel_certificate
+
 end PPAC.Migration.Step4Checks

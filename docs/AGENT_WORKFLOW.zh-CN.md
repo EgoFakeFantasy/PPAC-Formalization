@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初f28b0334a740108057adf18a24dc11abd866efbe的阶段编号。当前仍在 **8**；源饱和塔/全部理想、补集与基数端点、实际μ/K以及无几何父前提的完整Base/T现均已验收，同一实际最终单子行及全性质已显式返回。完整内部支撑族新鲜成员、新鲜排列扩张及同一实际Hartogs标签集的全位置合同已接通；paste/two/three-copy精确集合位置合同现也已接通；实际Diagram的范围/标签等价、固定根排列、图相等和ExactOverlap.of_common现也已接通；原可选处方/给定CopyRel/Valid和同一行Merger消费现也已接通；整个载体amalgamate/common_extension和固定三图共同扩张现也已接通；下一项是实际Cohen descent/Hull消费者，再进入9–11；最终内部Con未完成。
+沿用最初f28b0334a740108057adf18a24dc11abd866efbe的阶段编号。当前仍在 **8**；源饱和塔/全部理想、补集与基数端点、实际μ/K以及无几何父前提的完整Base/T现均已验收，同一实际最终单子行及全性质已显式返回。完整内部支撑族新鲜成员、新鲜排列扩张及同一实际Hartogs标签集的全位置合同已接通；paste/two/three-copy精确集合位置合同现也已接通；实际Diagram的范围/标签等价、固定根排列、图相等和ExactOverlap.of_common现也已接通；原可选处方/给定CopyRel/Valid和同一行Merger消费现也已接通；整个载体amalgamate/common_extension和固定三图共同扩张现也已接通；实际Cohen兼容/并条件亦已接通；下一项是完整descent/Hull消费者，再进入9–11；最终内部Con未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -22,7 +22,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
 |---|---|---|---|
-| 8 的下一项 | 具体T的实际Cohen descent/Hull消费者 | 同一P/roots在整个D→I上的实际amalgamate/common_extension、内部三元族固定三图下界和三份位置合同均已完成 | 接实际Cohen兼容/并条件及完整descent下界，再复用既有Hull/lift |
+| 8 的下一项 | 具体T的完整descent/Hull消费者 | 整个D→I有限族/固定三图下界、三份位置合同和实际Cohen支撑/限制/兼容/并条件原核证书均已完成 | 将不同s0/s1范围的几何合同接入实际Cohen和Diagram下界，返回完整Product下界，再接既有Hull/lift |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计与实际构建通过 |
@@ -34,6 +34,6 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 任意内部有限处方/精确CopyRel、任意理想共尾路径/Probe、补集/基数端点、实际μ/K及无几何前提的Base/T均已完成。同一实际最终行已取出；只接具体Placement/Hull消费者，不重新证明这些数学。
 
-本批9新声明正式验收通过：2900构建/31869审计，9命令/5次trust=0全退出0、零警告，此前31860足迹不变且无新增公理依赖；见verification/diagram-three-acceptance.json。固定三图下界已证，实际Cohen descent/Hull和最终内部Con未完成。
+本批77新声明正式验收通过：2901构建/31946审计，9命令/5次trust=0全退出0、零警告，此前31869足迹不变且无新增公理依赖；见verification/cohen-compatibility-acceptance.json。实际Cohen兼容/三重并下界已有四条未相对化nativeZF原核证书，完整descent/Hull和最终内部Con未完成。
 
 每个证明改动先写原源声明、完整目标类型和真实消费者，查底座／同伴精确接口后复用；没定位到接口不能写成数学不存在。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；正式证明改动运行 scripts/verify.py。不以模块数／构建数估算完成比例；不因文档改动重复编译。NatPacket/reader 已按获批清单退役，不恢复该支线或退役反射；保留其他项目改动。不新建通用证明核、编码器、满足关系、递归或类别后端。

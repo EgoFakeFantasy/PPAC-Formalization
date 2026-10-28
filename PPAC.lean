@@ -694,3 +694,5 @@ import PPAC.Migration.ConstructionDiagramPrescription
 import PPAC.Migration.ConstructionDiagramAmalgamation
 
 import PPAC.Migration.ConstructionDiagramThree
+
+import PPAC.Migration.ConstructionCohenCompatibility

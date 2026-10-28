@@ -2293,7 +2293,8 @@ def main() -> None:
                                ('construction_diagram_placements', 'ConstructionDiagramPlacements', 47),
                                ('construction_diagram_prescription', 'ConstructionDiagramPrescription', 50),
                                ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28),
-                               ('construction_diagram_three', 'ConstructionDiagramThree', 9)):
+                               ('construction_diagram_three', 'ConstructionDiagramThree', 9),
+                               ('construction_cohen_compatibility', 'ConstructionCohenCompatibility', 77)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5999,6 +6000,10 @@ def main() -> None:
         "source_actual_Diagram_fixed_three_family_and_Cohen_descent_consumers_complete": False,
         "source_actual_Diagram_fixed_three_internal_family_common_extension_kernel_certificate": True,
         "source_actual_Cohen_compatibility_union_and_full_descent_complete": False,
+        "source_actual_Cohen_label_support_countable_restriction_constructed": True,
+        "source_actual_Cohen_TWO_existing_coordinate_lifts_exact_label_move_kernel_certificate": True,
+        "source_actual_Cohen_agreement_trigger_overlap_and_three_union_kernel_certificates": True,
+        "source_actual_Cohen_s0_restriction_and_s1_overlap_ranges_identified": False,
         "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
