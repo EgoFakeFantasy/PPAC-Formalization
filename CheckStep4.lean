@@ -11847,4 +11847,17 @@ example {n : Nat} (rho : Fin 7 → Fin n) (mul I K B w G F H J f a : Fin n) :
       (Translation.sentence (ForcingEquivariantMix.sentence rho mul I K B w G F H J f a)) :=
   ForcingEquivariantMix.kernel_certificate rho mul I K B w G F H J f a
 
+
+-- Pinned OrbitNames: literal equality, all internal names; ordinary nativeZF.
+example {n : Nat} (v : Fin 7 → Fin n) (I K B w G p J H sigma pi rho q A Bact x y : Fin n) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingSupportedNames.sentence v I K B w G p J H sigma pi rho q A Bact x y)) :=
+  ForcingSupportedNames.kernel_certificate v I K B w G p J H sigma pi rho q A Bact x y
+
+-- Pinned ProductForcing: actual fixed-root permutation and common Product lower bound.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionCompatiblePlacement.constructionSentence)) :=
+  ConstructionCompatiblePlacement.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -199,3 +199,13 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 固定源 LocalQuotients.support_descent:132–202 真实调用 equivariantMix、equivariantMix_fixed、eq_equivariantMix_at。ForcingMixName/MixLaws/EquivariantMix 已复用现成 Collected、原生 union/Separation/恒等图、AtomicBasic/Laws/Symmetry、ProductFamily.order、NameConjugacy 和 collect_HS/fixed；没有重做名字、递归或 HS 后端。源码及全部声明足迹锁在 SOURCE_LOCK 的 forcing_mix_name/forcing_mix_laws/forcing_equivariant_mix。
 
 精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal、support_descent、LocalQuotient/restrict、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。
+
+
+## 支撑图相等与实际相容放置
+
+| 源证明／真实消费者 | 本批实际复用 | 边界 |
+|---|---|---|
+| OrbitNames.smul_name_eq_of_diagram_eq:238 → LocalQuotients.active_equal_independent | ForcingConditionGraphs.exists_inverse/exists_composition；ProductCovariance.inverse；NameConjugacy.composition/inverse_action/injective；既有 fixedAll 和 AgreesOn | ForcingSupportedNames.kernel_certificate 是普通 nativeZF 中字面相等模式；全秩名字、精确支撑范围保留。没有重建名字／作用后端 |
+| ProductForcing.compatible_placement:149 → ChoiceFailure.forces_at_supporting_root 和 LocalQuotients.active_equal | 已有 diagram_range、原生恒等／注射复合、extend_permutation_off、common_extension_three、Cohen exists_support/exists_moved/restricted_entry/exists_union | 实际 pi、精确范围交集、实际共同 Product 下界；对象 forall22 原核句相对化到已有同一 L。原实际基数／最终行／合并父背景保留，不假定输出置换或共同加强条件 |
+
+RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值域，不是额外见证假设。相容放置不等于支撑强迫保持：源 ChoiceFailure:279/305 的稠密性消费仍未完成；后者直接复用本批输出及原强迫正则性／对称性，不另建后端。来源、直接复用文件及全部足迹见 SOURCE_LOCK.forcing_supported_names / construction_compatible_placement。

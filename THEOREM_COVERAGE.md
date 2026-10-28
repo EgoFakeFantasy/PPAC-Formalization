@@ -380,3 +380,11 @@ Previous Component full acceptance passed: 2909 build jobs, 32174 declarations, 
 | equivariantMixTest_permute:135 / equivariantMix_fixed:160 | ForcingEquivariantMix.kernel_certificate | Actual Product/WithTop action specialization: constructs exact Mix, full-rank HS, and fixation under every H element. Uses PROVED Product order transport and existing atomic symmetry/collect_HS, not assumed mixture fixedness. |
 
 This batch PASSED full local verification: 2912 build jobs, 32233 audited declarations, 59 new declarations/four ordinary nativeZF kernel endpoints; all prior 32174 footprints unchanged. Nine commands/five trust=0 checks exited 0, no warnings or new axioms. 75 fixed-source and 2467 current hashes match; native dependency/donor clean. Recorded in verification/equivariant-mixing-acceptance.json. Historical CRLF checkout reproducibility remains unverified. Still stage 8. This does NOT complete LocalQuotients.active_equal/support_descent, actual quotient/restriction/eligibleSystem, Fiber/gluing, CellTowers, or final internal Con.
+
+
+| Pinned support-descent dependency | Current native endpoint | Exact scope |
+|---|---|---|
+| OrbitNames.smul_name_eq_of_diagram_eq:238 | ForcingSupportedNames.kernel_certificate | Ordinary nativeZF schema: exact support range and same moved diagram imply LITERAL equality of arbitrary-rank moved names. Existing Product inverse/composition and name injectivity consumed. |
+| ProductForcing.compatible_placement:149–204 | ConstructionCompatiblePlacement.construction_kernel_certificate | SAME internal L, forall22; actual canonical source size/AllMergers/final Row/monoid inputs; constructs fixed-root permutation, exact range intersection and actual common Product lower bound. Root restriction compatibility retained; no output permutation/lower-bound assumption. |
+
+Full verification PASSED: 2914 jobs, 32266 declarations, 33 new; all 32233 prior footprints unchanged. Nine commands/five trust=0 checks exited 0, zero warnings/new axioms. 75 fixed source/2469 current hashes match. See verification/support-placement-acceptance.json. ChoiceFailure.forces_at_supporting_root/forces_iff_restrict, LocalQuotients.active_equal/support_descent and final Con remain unproved here. They are the actual consumers, not a reason to rebuild native permutation/name/Cohen/cardinality machinery.

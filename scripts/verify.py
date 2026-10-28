@@ -2305,7 +2305,9 @@ def main() -> None:
                                ('construction_component_cofinal', 'ConstructionComponentCofinal', 23),
                                ('forcing_mix_name', 'ForcingMixName', 25),
                                ('forcing_mix_laws', 'ForcingMixLaws', 20),
-                               ('forcing_equivariant_mix', 'ForcingEquivariantMix', 14)):
+                               ('forcing_equivariant_mix', 'ForcingEquivariantMix', 14),
+                               ('forcing_supported_names', 'ForcingSupportedNames', 14),
+                               ('construction_compatible_placement', 'ConstructionCompatiblePlacement', 19)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5672,6 +5674,9 @@ def main() -> None:
         "source_equivariantMix_coherent_family_equality_at_activation_native_kernel_proved": True,
         "source_equivariantMix_actual_Product_fixed_HS_native_kernel_proved": True,
         "source_equivariantMix_additional_internal_Choice_or_rank_bound": False,
+        "source_OrbitNames_literal_name_eq_of_same_diagram_native_kernel_proved": True,
+        "source_ProductForcing_actual_compatible_placement_same_L_native_kernel_proved": True,
+        "source_ChoiceFailure_forces_at_supporting_root_proved": False,
         "source_LocalQuotients_actual_active_equal_and_support_descent_proved": False,
         "source_LocalQuotients_actual_quotients_and_restrictions_constructed": False,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
