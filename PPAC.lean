@@ -776,3 +776,5 @@ import PPAC.Migration.ForcingLabelTransport
 import PPAC.Migration.ForcingComponentMove
 import PPAC.Migration.ForcingGluedTransport
 import PPAC.Migration.ForcingLocalTransport
+import PPAC.Migration.ForcingLocalNameTransport
+import PPAC.Migration.ForcingLocalQuotientTransport

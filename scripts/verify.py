@@ -2346,7 +2346,9 @@ def main() -> None:
                                ('forcing_label_transport', 'ForcingLabelTransport', 17),
                                ('forcing_component_move', 'ForcingComponentMove', 25),
                                ('forcing_glued_transport', 'ForcingGluedTransport', 30),
-                               ('forcing_local_transport', 'ForcingLocalTransport', 22)):
+                               ('forcing_local_transport', 'ForcingLocalTransport', 22),
+                               ('forcing_local_name_transport', 'ForcingLocalNameTransport', 19),
+                               ('forcing_local_quotient_transport', 'ForcingLocalQuotientTransport', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5759,7 +5761,11 @@ def main() -> None:
         "source_QuotientTransport_whole_component_gluedEquiv_toGlued_native_kernel_proved": True,
         "source_QuotientTransport_glued_scope": "Distinct source/target Systems; actual whole component quotients and projection graphs constructed with existing backend. Root-fiber composite is a set bijection agreeing with literal restricted app at every Common vertex. Original ReindexIso, conditional joins and root-fixing premises retained. Moving-filter eligibleSystem, full root-group action laws, CodeLinks, and final internal Con not asserted.",
         "source_QuotientTransport_actual_moved_filter_and_local_eq_transport_iff_native_kernel_proved": True,
-        "source_QuotientTransport_local_transport_scope": "Constructs the actual Product action and moved Cohen filter from existing Presentation and coordinate permutation. Local equality is preserved and reflected for all internal mapped names with both filter and diagram moved. Uses existing moved_code and atomic symmetry, not fixed-filter equality. LocalName carrier bijection, actual quotient/eligible-class transport and eligibleSystemTransport remain unassembled.",
+        "source_QuotientTransport_local_transport_scope": "Constructs the actual Product action and moved Cohen filter from existing Presentation and coordinate permutation. Local equality is preserved and reflected for all internal mapped names with both filter and diagram moved. Uses existing moved_code and atomic symmetry, not fixed-filter equality. Actual LocalName and quotient bijections are now supplied by the following adapters; eligible-class transport and eligibleSystemTransport remain unassembled.",
+        "source_QuotientTransport_LocalName_transportEquiv_native_kernel_proved": True,
+        "source_QuotientTransport_LocalQuotient_transportEquiv_native_kernel_proved": True,
+        "source_QuotientTransport_literal_restriction_square_native_kernel_proved": True,
+        "source_QuotientTransport_actual_name_quotient_scope": "Actual LocalName action bijection using existing HS, bound and support conjugacy; literal labelSet discharges bound stability. Actual moved-filter quotient construction consumes that bijection and local EqG preservation/reflection, returning both class carriers, projections and the descended bijection. Native restriction square is proved for exact graphs. Eligible-class transport and full eligibleSystemTransport assembly remain unproved; final internal Con remains unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,

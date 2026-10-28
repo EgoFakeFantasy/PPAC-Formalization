@@ -12198,4 +12198,22 @@ example {k : Nat} (rho : Fin 7 → Fin k) (mul I K B w pi g : Fin k) :
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalTransport.assemblySentence rho mul I K B w pi g)) :=
   ForcingLocalTransport.assembly_kernel_certificate rho mul I K B w pi g
 
+
+-- Actual LocalName bijection and descended moved-filter quotient transport.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c a ai bound J : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalNameTransport.constructionSentence rho I K B w G F mu pi inv c a ai bound J)) :=
+  ForcingLocalNameTransport.construction_kernel_certificate rho I K B w G F mu pi inv c a ai bound J
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c a ai labelMap top bit labels bound J : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingLocalNameTransport.literalSentence rho I K B w G F mu pi inv c a ai labelMap top bit labels bound J)) :=
+  ForcingLocalNameTransport.literal_kernel_certificate rho I K B w G F mu pi inv c a ai labelMap top bit labels bound J
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w e mul a G F mu pi inv c ai bound J JT H HT X Y g r rT : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalQuotientTransport.constructionSentence rho I K B w e mul a G F mu pi inv c ai bound J JT H HT X Y g r rT)) :=
+  ForcingLocalQuotientTransport.construction_kernel_certificate rho I K B w e mul a G F mu pi inv c ai bound J JT H HT X Y g r rT
+
+example {k : Nat} (W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalQuotientTransport.naturalitySentence W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e)) :=
+  ForcingLocalQuotientTransport.naturality_kernel_certificate W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e
+
 end PPAC.Migration.Step4Checks

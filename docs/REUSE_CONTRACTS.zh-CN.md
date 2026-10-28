@@ -286,6 +286,10 @@ ForcingComponentMove 已直接复用 ForcingDiagramAction.exists_permute/unique�
 RootMap 是源根纤维复合 c ∘ f ∘ b⁻¹ 的唯一集合关系，由既有原生 setFunctionFromTo 构造；证明所有 Common 顶点交换时，严格复用原共同后继路线。两个端点均在普通 nativeZF 原核中，源/目标 System 不必相同。本批未证明完整 RootGroup 单位/复合作用律。下一实际调用为移动滤子的 local_eq_transport_iff/eligibleSystemTransport，再接 CodeLinks；不重做 Base/T、L 全模式、hull 或商后端。
 
 
-ForcingLocalTransport 已消费 ForcingProductFamily.exists_action、ForcingLabelConjugacy.exists_image 和现成 Cohen 条件序同构。CohenPart 仅识别同一坐标置换的既有条件图；moved_code 直接复用 ConstructionCohenCompatibility.moved_of_image 与 ForcingSupportingRoot.moved_code；局部 EqG 双向证明调用已经完成的 atomic_symmetry，不新增名字递归或强迫关系。assembly_kernel_certificate 在普通 nativeZF 内构造实际作用和移动滤子，覆盖所有内部 diagram/映射名字对。下一接线是原 LocalName.transportEquiv 的实际载体保持，再消费现成 LocalQuotient 投影和商相等律；实际商/资格类自然性尚未闭合，不宣称 eligibleSystemTransport 已完成。
+ForcingLocalTransport 已消费 ForcingProductFamily.exists_action、ForcingLabelConjugacy.exists_image 和现成 Cohen 条件序同构；局部 EqG 双向证明复用 SupportingRoot.moved_code 和 atomic_symmetry。两个普通 nativeZF 原核端点覆盖实际作用/移动滤子及全部内部名字对。
 
-后续 LocalName.transportEquiv 的边界保持应直接消费 ForcingPowerName.exists_bound 返回的稳定子下 Action bound bound，以及 map_subset；HS 保持用 hs_action，支撑保持用 fixed_transport/共轭 fixing_image。这些底座结论已存在，不能再列作待重新证明的基础设施。
+ForcingLocalNameTransport 直接消费 PowerName.exists_bound 返回的稳定子不变性，与 LabelSet.HS_and_fixed 对齐同一个 Bound；map_subset、hs_action、fixing_image/fixed_transport 给出载体保持。实际名字逆作用证明满射，原生 setFunctionFromTo 返回精确限制图。literal_kernel_certificate 消去稳定边界输入，保留原字面标签/正规滤子合同；没有重建名字递归或支持后端。
+
+ForcingLocalQuotientTransport 直接调用现有 exists_quotient/equality_law，按存在代表元及实际名字作用定义商图；EqG 的实际坐标保反射给出函数唯一性和单射，LocalName 满射给出商满射。construct 明确把支撑绑定支持图值域，并消费实际移动滤子，不采用固定滤子替身。限制方块仅复用同一个名字见证与函数图唯一性，已取得原核端点。
+
+下一消费者是原 eligibleName_coordinate_transport 与完整 eligibleSystemTransport 族装配。ForcingEligibility.eligibleName_transport 已做的是同一滤子内的 EqG 替换；坐标版本应直接消费 ForcingFormulaSymmetry.symmetry、现成 HS 域传输和 LabelSet 固定性。底座公式强迫、资格定义、分离/限制函数和商后端均已完成，不应重复建设。
