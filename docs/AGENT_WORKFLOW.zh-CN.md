@@ -1,6 +1,8 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 Bit、label 的存在唯一／HS／字面置换，以及全部 labelSet 的存在唯一／HS／全群固定现均已通过原核／全量验收；标签界、候选强迫子集结论及 LocalName 集合/名字层限制已接通；实际 localNormalize/localName_descent 已接通；下一项是实际 LocalQuotient 及其限制/精确交集，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
+
+**仍在原第 8 阶段。实际 LocalQuotient、精确商投影与限制图已接通，代表名字对应、限制恒等和复合律均已取得 nativeZF 原推导核证书并通过全量验收。商限制单射、精确交集、实际纤维粘合/CellTowers，以及第 9–11 阶段仍未完成。最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -11,42 +13,21 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际 CellTowers／纤维粘合消费者；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
+| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图已接；商限制单射/精确交集和实际 CellTowers／纤维粘合消费者；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、商单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
-RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_stage:580 均已有原核对象证书：ConstructionSaturationBoundedness.countable_kernel_certificate / ConstructionSaturationCover.construction_kernel_certificate。后者内部构造出生索引函数、共同阶段及实际提升，并证明 fromStage∘lift=input。原μ/base/K父输入保留，同一L Choice/order消去。
-
 ## Agent 执行入口
 
-| 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
+| 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 的下一项 | LocalQuotient 的实际商/限制/精确交集 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing、OrbitNames 字面相等和实际 compatible_placement 原核证书；源 forces_at_supporting_root/forces_iff_restrict 已接，active_equal 与完整 support_descent 均已接，具体 Bit、实际 label/labelSet、标签界、LocalName 载体/限制、localNormalize/localName_descent 已接，下一项实际商/商限制/精确交集；Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
-| 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
-| 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
-| 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计、实际构建和干净检出源码锁复现通过（当前本地通过不替代检出复现） |
-| 4 的独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 基线 | Linux/landrun；不能用本仓 CheckStep4 替代 |
+| 8 当前 | LocalQuotient.restrict_injective:511 | 已完成 supporting_root/Cohen 限制、实际 quotient/projection/restriction、EqualityLaw | 真正商限制单射的原核对象句；不能以名字限制单射替代 |
+| 8 紧接 | LocalQuotient.intersection:536 → eligibleSystem | 已完成 localName_descent（源第 550 行消费）、实际投影/限制图 | 共同加强处相等的两侧类来自共同根类，保留实际 Cohen 限制及源背景 |
+| 8 后续 | ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 全分量共尾链、Product descent、CompleteRound.Built、同一实际历史/嵌入/来源、countable hull | 同一系统、所有纤维、全部内部索引及全纤维单射/满射；不重建塔 |
+| 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC，保留源全部量词 |
+| 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
+| 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
+| 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 
-对象语言为纯等词／成员 ℒ；背景 nativeZF 含全部 Separation/Collection；U = ZF+PP+ACwo+¬AC。终点是原 FirstOrder.Derives nativeZF [] (Con_ZF → Con_U)，Con 量化全部内部证明码。同一内部 L 的 Choice/order 已由现成证书消去，不向普通 ZF 增加 Choice 或不可达。
-
-已有验收已构造有界完整父背景下的内部多轮塔，保留同一实际 CompleteRound.Built；forall17 total_kernel_certificate 证明全部集合历史总唯一，forall16 construction_kernel_certificate 同时返回实际 Recursive、Valid/AllSmall、全部12表／21合同／时间恒等及精确全塔相邻 inclusion 方程。均为同一现成内部 L 相对化的原 nativeZF 核证书，Choice/order 已实际消去；不用宿主 WellFounded 或给定有效塔。
-
-任意内部有限处方/精确CopyRel、任意理想共尾路径/Probe、补集/基数端点、实际μ/K及无几何前提的Base/T均已完成。同一实际最终行已取出；Placement/Hull 亦已完成；只接实际 CellTowers/纤维粘合消费者，不重新证明这些数学。
-
-此前 CountableHull 批次的 113 项声明及两条同一 L 原核端点正式验收通过：2905 项构建、32089 项声明审计，9 条命令／5 次 trust=0 全退出 0、零警告；此前 31976 项足迹不变，无新增公理依赖。75 份固定源与 2460 份当前指纹匹配，底座／供体干净。见 verification/countable-conservative-hull-acceptance.json。 仍在原第 8 阶段，实际消费者及第 9–11／最终 Con 未完成。
-
-每个证明改动先写原源声明、完整目标类型和真实消费者，查底座／同伴精确接口后复用；没定位到接口不能写成数学不存在。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；正式证明改动运行 scripts/verify.py。不以模块数／构建数估算完成比例；不因文档改动重复编译。NatPacket/reader 已按获批清单退役，不恢复该支线或退役反射；保留其他项目改动。不新建通用证明核、编码器、满足关系、递归或类别后端。
-
-此前分量共尾批次正式验收通过：2909 项构建、32174 项声明审计；新增 85 项及三条原核端点，旧 32089 项足迹不变。9 条命令／5 次 trust=0 全退出 0、零警告、无新增公理依赖。75 份固定源与 2464 份当前指纹匹配，底座／供体干净；358 个获批退役模块仍全部不存在。见 verification/component-cofinal-acceptance.json。
-
-三个端点分别是普通 nativeZF 的 geometrySentence、全部 Vertex carrier 存在性，以及同一 L 的 forall18 整个 Common 分量共尾链。后者保留现成 ObjectFields/高度成本父背景，不声称已完成实际纤维粘合或最终 Con。
-
-此前 EquivariantMixing 全量验收通过：2912 项构建、32233 项声明审计；59 项新增声明和四条普通 nativeZF 原核端点，原有 32174 项足迹不变。9 条命令（含 5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源和 2467 份当前指纹匹配，底座/供体干净。验收为当前本地工作树，历史 CRLF/LF 检出复现项仍保留；见 verification/equivariant-mixing-acceptance.json。源 family permutation/coherence 前提保留；混合名字的 HS/固定性与实际 Product 保序均非假定结论。不得据此把 LocalQuotients 或实际纤维粘合标成完成。
-本批完整 support_descent 已验收：原子相等见证首先限制到 v，再构造实际根子群轨道族、证明相干性并产生根支撑 HS 混合名字，两侧原 Cohen 限制保持。全量验收通过：2919 项构建、32312 项声明；新增 19 项，旧 32293 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2474 份当前文件哈希匹配；底座与供体干净，358 个已批准退役模块保持删除，恢复档／补丁哈希匹配。见 verification/support-descent-acceptance.json。两模块及完整对象句子均首次编译通过。本地验收不替代历史 CRLF 检出复现。 下一步复用现成 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq、Separation/CollectedHS.fixed 及底座商接口接真实 LocalName/LocalQuotient；不能重报这些后端缺失。
-
-
-本批 LocalName 接线（原第 8 阶段，不新增阶段）：标签界等式、界内候选强迫子集、LocalName 载体存在唯一及名字层限制图/单射/复合共六个 nativeZF 原核端点。直接复用 Candidates、Separation、supported_mono 和原生恒等图。完整验收结果见当前 STATUS；载体完成不等于规范化/下降或商限制完成。实际 separate 的支撑保持、localNormalize/localNormalize_eq/localName_descent 现已接通；下一步实际商及其限制/交集，已完成的支撑下降与规范化后端均不重做。
-
-
-本批实际规范化/名字层下降：ForcingLocalNormalize 与 ForcingLocalNameDescent 两个原核端点、16 项声明。规范化是普通 nativeZF；下降复用原支撑下降的同一内部 L，既有 Choice 消去不变。最终全量结果见当前 STATUS / verification/local-normalize-acceptance.json。原 localName_of_raw 无源调用，不增列主线前置；实际商交集直接消费本批 localName_descent。
+本批 57 项声明、五个普通 nativeZF 原核端点已验收；完整结果见 STATUS 和 verification/local-quotient-acceptance.json。源码和依赖逐项对应由 SOURCE_LOCK、THEOREM_COVERAGE 保留。所有新的辅助引理须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、Component quotient、Common.iff_zigzag 不作为主线前置。发布仍须独立用户授权。

@@ -740,3 +740,7 @@ import PPAC.Migration.ForcingLocalNames
 
 import PPAC.Migration.ForcingLocalNormalize
 import PPAC.Migration.ForcingLocalNameDescent
+
+import PPAC.Migration.ForcingLocalAtomic
+import PPAC.Migration.ForcingLocalQuotient
+import PPAC.Migration.ForcingLocalRestriction

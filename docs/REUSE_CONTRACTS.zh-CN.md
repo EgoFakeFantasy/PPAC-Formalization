@@ -247,4 +247,6 @@ ForcingLocalNormalize.separate_supported 保留 exists_separate 构造的同一�
 
 ForcingLocalNameDescent.localName_descent 直接消费 ForcingSupportDescent.support_descent，再用 actual normalization、LabelBound.normalized_subset、PowerName.subset_congr 和 AtomicBasic.eq_symm/AtomicLaws.eq_trans。两个原 Cohen 限制保持；未替换成新的加强条件。普通规范化原核证书和同一 L 的完整下降原核证书均已全量验收；记录见 verification/local-normalize-acceptance.json。
 
-下一真实消费点是原 LocalQuotient.intersection:550；先接其 localAtomic/localSetoid 和实际商投影，再复用 supporting_root 接商限制单射。已有 ConstructionMergerCopies 的等价类/投影构造方法及原生 Separation/functionalImage/function graph 可复用，不能把这些后台重报成缺失。localName_of_raw:342 在固定源内只有定义、无调用，不新增为主线前置。
+localAtomic/localSetoid、实际商集/满投影和限制图已由 ForcingLocalAtomic/ForcingLocalQuotient/ForcingLocalRestriction 接通并全量验收。复用 ConstructionMergerCopies 等价类/投影构造方法与原生 Separation、functionalImage、setFunctionFromTo；不存在待建商后端。限制图保留同一代表名字，其恒等/复合和代表方程已有原核证书。
+
+下一真实消费点是 LocalQuotient.restrict_injective:511 和 intersection:536（源第 550 行消费已完成的 localName_descent）。单射须复用 supporting_root/Cohen 限制反推原根 EqG；交集须复用名字下降后取实际根投影。两者尚未接完，不能把名字层单射误报为商单射。localName_of_raw:342 在固定源内只有定义、无调用，不新增为主线前置。

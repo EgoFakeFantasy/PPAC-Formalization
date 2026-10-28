@@ -11980,4 +11980,29 @@ example {k : Nat} (rho : Fin 7 → Fin k)
         (ForcingLocalNameDescent.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1 c t b labels nameBound))) :=
   ForcingLocalNameDescent.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1 c t b labels nameBound
 
+-- Actual local quotients and their representative-preserving restriction graphs.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w e mul g r G F nameBound J H : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingLocalQuotient.constructionSentence rho I K B w e mul g r G F nameBound J H)) :=
+  ForcingLocalQuotient.construction_kernel_certificate rho I K B w e mul g r G F nameBound J H
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w e mul g r s G F nameBound J L HJ HL X Y Q T pr ps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingLocalRestriction.constructionSentence rho I K B w e mul g r s G F nameBound J L HJ HL X Y Q T pr ps)) :=
+  ForcingLocalRestriction.construction_kernel_certificate rho I K B w e mul g r s G F nameBound J L HJ HL X Y Q T pr ps
+
+example {k : Nat} (R : Formula (k+2)) (W g r X Q pr f : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalRestriction.identitySentence R W g r X Q pr f)) :=
+  ForcingLocalRestriction.identity_kernel_certificate R W g r X Q pr f
+
+example {k : Nat} (X Y Z Q T U pr ps pt f g h : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalRestriction.compositionSentence X Y Z Q T U pr ps pt f g h)) :=
+  ForcingLocalRestriction.composition_kernel_certificate X Y Z Q T U pr ps pt f g h
+
+example :
+    FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLocalRestriction.representativeSentence) :=
+  ForcingLocalRestriction.representative_kernel_certificate
+
 end PPAC.Migration.Step4Checks

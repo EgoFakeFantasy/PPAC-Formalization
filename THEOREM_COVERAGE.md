@@ -1,6 +1,6 @@
 # Migration coverage (2026-10-28)
 
-The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historical batch numbers are not stage numbers.
+The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historical batch numbers are not stage numbers. Earlier batch-local pending statements are historical; current remaining obligations are in STATUS and the latest coverage entry below.
 
 | Area | Verified target interface | Scope |
 |---|---|---|
@@ -442,3 +442,12 @@ Full verification PASSED: 2924 jobs, 32443 declarations, 40 new and six nativeZF
 | LocalQuotients.localName_descent:374–395 → LocalQuotient.intersection:550 | ForcingLocalNameDescent.construction_kernel_certificate | Consume actual support_descent and normalization; exact LocalName carrier predicate and both equalities at original Cohen restrictions. Same existing internal L, source background retained, semantic Choice discharged. |
 
 Full verification PASSED: 2926 jobs, 32459 declarations, 16 new and two original-kernel endpoints; all 32443 prior footprints unchanged. Nine commands/five trust=0 checks exited 0, zero warnings/new axioms; 75 source/2481 current hashes match. See verification/local-normalize-acceptance.json. This closes actual localNormalize/localName_descent from earlier pending entries, not the actual quotient/restriction/intersection, later gluing/CellTowers or final internal Con. Source localName_of_raw has no calls in the pinned source and is not added as a prerequisite.
+
+
+| Pinned local quotient consumer | Native original-kernel endpoint | Exact scope |
+|---|---|---|
+| localAtomic:445 / localSetoid:457 / LocalQuotient:466 / ofName:476 / ofName_eq:480 | ForcingLocalQuotient.construction_kernel_certificate | Actual LocalName carrier, internal class-set quotient, exact surjective projection, and projection equality iff the concrete Cohen-filter EqG. Existing Separation/functionalImage/function graph reused, no chosen representatives. |
+| LocalQuotient.restrict:485 / restrict_ofName:494 | ForcingLocalRestriction.{construction,representative}_kernel_certificate | Actual restriction graph on constructed quotients, characterized by one name projecting to both classes; concrete range/atomic monotonicity proves well-definedness. |
+| LocalQuotient.restrict_refl:498 / restrict_restrict:503 | ForcingLocalRestriction.{identity,composition}_kernel_certificate | Actual quotient restriction identity and composition graphs, not merely ground-name inclusion. |
+
+Full verification PASSED: 2929 jobs, 32516 declarations, 57 new and five ordinary nativeZF original-kernel endpoints; all 32459 prior footprints unchanged. Nine commands/five trust=0 checks exited 0, zero warnings/new axioms; 75 fixed-source/2484 current hashes match. See verification/local-quotient-acceptance.json. This closes the actual quotient and restriction-map construction obligations in earlier batch notes. Quotient restriction injectivity and exact intersection remain pending; later gluing/CellTowers and final internal Con remain incomplete. Original stage remains 8.

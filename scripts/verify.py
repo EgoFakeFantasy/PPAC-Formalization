@@ -2319,7 +2319,10 @@ def main() -> None:
                                ('forcing_label_bound', 'ForcingLabelBound', 17),
                                ('forcing_local_names', 'ForcingLocalNames', 23),
                                ('forcing_local_normalize', 'ForcingLocalNormalize', 10),
-                               ('forcing_local_name_descent', 'ForcingLocalNameDescent', 6)):
+                               ('forcing_local_name_descent', 'ForcingLocalNameDescent', 6),
+                               ('forcing_local_atomic', 'ForcingLocalAtomic', 10),
+                               ('forcing_local_quotient', 'ForcingLocalQuotient', 24),
+                               ('forcing_local_restriction', 'ForcingLocalRestriction', 23)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5701,7 +5704,9 @@ def main() -> None:
         "source_LocalQuotients_actual_root_orbit_families_constructed": True,
         "source_LocalQuotients_support_descent_same_L_native_kernel_proved": True,
         "source_LocalQuotients_actual_active_equal_and_support_descent_proved": True,
-        "source_LocalQuotients_actual_quotients_and_restrictions_constructed": False,
+        "source_LocalQuotients_actual_quotients_and_restrictions_constructed": True,
+        "source_LocalQuotients_quotient_restriction_identity_and_composition_native_kernel_proved": True,
+        "source_LocalQuotients_quotient_restriction_injective_and_intersection_proved": False,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
