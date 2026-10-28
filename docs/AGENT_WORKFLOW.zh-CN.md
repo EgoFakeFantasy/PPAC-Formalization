@@ -22,11 +22,11 @@
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | AvailableRecords.eligibleSystem:265–289；LocalRecords.System:531–544 | 实际 Obj/限制图、资格交集和三条实际定律均有原核证书；已有范围/固定子群/LocalName/商构造、函数图与 Replacement | 将同一参数下全部内部图索引的对象与映射装配成实际统一族，并逐字段消费已证定律；不重证交集或映射定律 |
+| 8 当前 | AvailableRecords.eligibleSystem:265–289；LocalRecords.System:531–544 | 同一内部对象族、全部可比图对索引和实际映射族已联合构造；源靶兼容性已证；四条实际定律已证 | 将恒等/复合/单射/交集逐字段绑定到同一联合族的对象 System 合同；直接解包 Data/MapRow 并用 data_unique 对齐，不重造族或重证定律 |
 | 8 后续 | ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 全分量共尾链、Product descent、CompleteRound.Built、同一实际历史/嵌入/来源、countable hull | 同一系统、所有纤维、全部内部索引及全纤维单射/满射；不重建塔 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 
-本批 16 项声明、四个 nativeZF 原核端点已验收（普通 ZF 两个、同一内部 L 两个）；完整结果见 STATUS 和 verification/eligible-system-laws-acceptance.json。商恒等/复合/单射前提已由现成实际证明消去；资格交集已输出实际 Obj 见证。统一内部索引族仍待装配。源码和依赖逐项对应由 SOURCE_LOCK、THEOREM_COVERAGE 保留。所有新的辅助引理须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、Component quotient、Common.iff_zigzag 不作为主线前置。发布仍须独立用户授权。
+本批 39 项声明、两项普通 nativeZF 原核存在证书已验收；完整结果见 STATUS 和 verification/eligible-families-acceptance.json。同一内部对象/映射族及源靶兼容性已实际构造，完整 System 的四条定律字段尚待绑定到该联合族。源码和依赖逐项对应由 SOURCE_LOCK、THEOREM_COVERAGE 保留。所有新的辅助引理须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、Component quotient、Common.iff_zigzag 不作为主线前置。发布仍须独立用户授权。

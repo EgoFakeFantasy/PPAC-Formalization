@@ -482,3 +482,10 @@ Full verification PASSED: 2935 jobs, 32579 declarations, 18 new and four ordinar
 | eligibleSystem.injective:277–279 | ForcingEligibleLaws.construction_kernel_certificate | Actual quotient injectivity producer discharges the abstract injection premise; same internal L. |
 
 Full verification PASSED: 2937 jobs, 32595 declarations, 16 new and four original-kernel endpoints; all 32579 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2492 current hashes match. See verification/eligible-system-laws-acceptance.json. Earlier pending eligible intersection and quotient-law premise discharge obligations are closed. Actual construction inputs remain explicit; the complete indexed eligibleSystem family, later gluing/CellTowers and final internal Con remain incomplete. Original stage remains 8.
+
+| Pinned indexed family consumer | Native original-kernel endpoint | Exact scope |
+|---|---|---|
+| AvailableRecords.eligibleSystem.Obj:272 / LocalRecords.System.Obj:532 | ForcingEligibleFamily.construction_kernel_certificate | Actual internal set-function over every internal diagram; canonical row data built with existing constructors and collected by native functional image/function graph. |
+| eligibleSystem.restrict:273–274 / System.restrict:533 | ForcingEligibleMapFamily.construction_kernel_certificate | Jointly constructs the object family, all comparable diagram-pair indices and the actual map family; proves source/target compatibility with the SAME object family. Ordinary nativeZF, no supplied family/arrow carrier or host selection. |
+
+Full verification PASSED: 2939 jobs, 32634 declarations, 39 new and two ordinary nativeZF endpoints; all 32595 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2494 current hashes match. See verification/eligible-families-acceptance.json. Earlier internal indexed-family construction is now closed. Binding the four existing laws to this SAME joint family in the full System contract remains pending, as do later gluing/CellTowers and final internal Con. Original stage remains 8.

@@ -257,4 +257,6 @@ ForcingEligibleRestriction 已直接消费 native exists_restriction、现成 Re
 
 ForcingEligibleIntersection 消费既有 exists_sub/sub_sub/injection_ext 和 range_antitone，适配源 le_of_common_and_range 与 intersection_le_root；从已证 LocalQuotient.intersection 取得根类，再用 supported_mono 和 eligible_restrict_iff 证明根资格，返回实际根 Obj 和两条受限映射边。未预设根资格、p≤q 或交集 oracle。两个同一 L 端点与两个普通 ZF 端点均已完整验收。
 
-下一真实消费者为同一参数下的完整 eligibleSystem 索引族。范围、固定子群、LocalName/商/Obj 和映射构造均已存在；统一族使用现成函数图/functionalImage/Replacement，不新增函数后端或选择代表。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingEligibleFamily 现已装配全部内部图上的实际对象函数族。Data 使用现成范围/固定子群/LocalName/商/Obj 定义；data_unique 复用原生外延性、fixing_unique、LocalNames.unique 和已编码图外延性，避免任意选择构造见证。ForcingEligibleMapFamily 直接消费 actual_restriction 和 Obj exists_restriction，用既有 Cartesian/Separation 构造全部可比图对，再用 native functionalImage/setFunctionFromTo 构造实际映射函数族。联合证书同时产生两族和索引，并证明每条映射连接同一对象族的对应项。
+
+下一真实消费者为这同一联合族的完整 System 合同。四条实际定律已经证明，按 MapRow 解包构造数据、用 data_unique 对齐即可接线；不重造对象族、图索引、函数后端或定律。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
