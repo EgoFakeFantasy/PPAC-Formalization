@@ -2284,8 +2284,25 @@ def main() -> None:
                                ('construction_ideal_cofinal', 'ConstructionIdealCofinal', 8),
                                ('construction_ideal_probes', 'ConstructionIdealProbes', 29),
                                ('construction_concrete_cardinals', 'ConstructionConcreteCardinals', 14),
-                               ('construction_concrete_tower', 'ConstructionConcreteTower', 8)):
+                               ('construction_concrete_tower', 'ConstructionConcreteTower', 8),
+                               ('construction_concrete_base', 'ConstructionConcreteBase', 24)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
+        if "retained_existing_producer" in adapter_lock:
+            retained = adapter_lock["retained_existing_producer"]
+            producer_path = ROOT / retained["producer_file"]
+            if hashlib.sha256(producer_path.read_bytes()).hexdigest() != retained["producer_sha256"]:
+                raise RuntimeError("Existing retained producer source changed")
+            producer = producer_path.read_text(encoding="utf-8")
+            selected = producer[producer.index(retained["source_start"]):producer.index(retained["source_end"])]
+            for original, adapted in retained["replacements"]:
+                if selected.count(original) != 1:
+                    raise RuntimeError("Retained producer adaptation is ambiguous")
+                selected = selected.replace(original, adapted, 1)
+            target_body = (ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8")
+            actual = target_body[target_body.index(retained["target_start"]):target_body.index(retained["target_end"])]
+            if selected.strip() != actual.strip() or hashlib.sha256(actual.strip().encode()).hexdigest() != retained["normalized_body_sha256"]:
+                raise RuntimeError("Retained producer proof differs beyond exact output-certificate packaging")
+
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
             if hashlib.sha256(native_path.read_bytes()).hexdigest() != adapter_lock["native_source_sha256"]:
@@ -5949,7 +5966,8 @@ def main() -> None:
         "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": True,
         "source_ConcreteSystem_actual_full_power_set_continuum_successor_mu_regular_and_countable_power_native_kernel_certificate": True,
         "source_ConcreteSystem_K_equal_actual_mu_consumed_by_SAME_IdealTower_native_kernel_certificate": True,
-        "source_ConcreteSystem_fully_concrete_Base_T_without_geometric_parent_contract_complete": False,
+        "source_ConcreteSystem_fully_concrete_Base_T_without_geometric_parent_contract_complete": True,
+        "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

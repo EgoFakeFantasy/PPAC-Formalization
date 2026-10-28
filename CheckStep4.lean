@@ -11675,4 +11675,12 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionConcreteTower.constructionSentence)) :=
   ConstructionConcreteTower.construction_kernel_certificate
 
+-- No supplied Base geometry, monoid, height/cost graph, mu/K or tower.
+-- SAME actual final row explicitly carries full ObjectFields, all probes,
+-- exact finite mergers, arbitrary ideals, complement and cardinal endpoints.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionConcreteBase.constructionSentence)) :=
+  ConstructionConcreteBase.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

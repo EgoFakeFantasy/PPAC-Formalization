@@ -32039,3 +32039,29 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionConcreteTower.constructionSentence
 #print axioms PPAC.Migration.ConstructionConcreteTower.construction_models
 #print axioms PPAC.Migration.ConstructionConcreteTower.construction_kernel_certificate
+
+-- Actual Base geometry consumed, SAME full concrete final row and all saturation/cardinal endpoints.
+#print axioms PPAC.Migration.ConstructionConcreteBase.addition_with_graph
+#print axioms PPAC.Migration.ConstructionConcreteBase.Base
+#print axioms PPAC.Migration.ConstructionConcreteBase.exists_base
+#print axioms PPAC.Migration.ConstructionConcreteBase.TowerData
+#print axioms PPAC.Migration.ConstructionConcreteBase.exists_tower_data
+#print axioms PPAC.Migration.ConstructionConcreteBase.Target
+#print axioms PPAC.Migration.ConstructionConcreteBase.target_of_tower_data
+#print axioms PPAC.Migration.ConstructionConcreteBase.System
+#print axioms PPAC.Migration.ConstructionConcreteBase.exists_system
+#print axioms PPAC.Migration.ConstructionConcreteBase.baseF
+#print axioms PPAC.Migration.ConstructionConcreteBase.baseF_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteBase.baseF_semantics
+#print axioms PPAC.Migration.ConstructionConcreteBase.towerData
+#print axioms PPAC.Migration.ConstructionConcreteBase.towerData_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteBase.towerData_semantics
+#print axioms PPAC.Migration.ConstructionConcreteBase.target
+#print axioms PPAC.Migration.ConstructionConcreteBase.target_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteBase.target_semantics
+#print axioms PPAC.Migration.ConstructionConcreteBase.system
+#print axioms PPAC.Migration.ConstructionConcreteBase.system_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteBase.system_semantics
+#print axioms PPAC.Migration.ConstructionConcreteBase.constructionSentence
+#print axioms PPAC.Migration.ConstructionConcreteBase.construction_models
+#print axioms PPAC.Migration.ConstructionConcreteBase.construction_kernel_certificate
