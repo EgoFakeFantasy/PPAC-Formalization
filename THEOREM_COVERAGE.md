@@ -1,4 +1,4 @@
-# Migration coverage (2026-10-26)
+# Migration coverage (2026-10-28)
 
 The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historical batch numbers are not stage numbers.
 
@@ -8,8 +8,8 @@ The authoritative original stages are in docs/AGENT_WORKFLOW.zh-CN.md. Historica
 | Original proof kernels | TheoryTransport, ReverseCompile, finite support | Source 19 rules and native six constructors / 27 logical modes; externally finite proof certificates |
 | Full theories | ZFReplay, ReverseZFReplay.derives_iff / target_derives_iff | Seven fixed axioms plus all Separation/Replacement/Collection instances; both ZF and target presentations |
 | Choice presentations | ChoiceNativeBridge and graph/selector adapters | Actual source graph choice and native selector choice equivalence |
-| Domain interpretation | Relativization, InterpretedZF.project_axiom / collection | Full native ZF proof/schema transport in the source-ZF relativized background, with domain nonemptiness retained |
-| Existing mathematics | ModelTransfer, KuratowskiZF, InternalWellOrderChoice, GodelDefOutput/Recursion, ConstructibleHistory/Parameters | Precisely stated internal model and original-kernel certificates; no completed full L interpretation claimed |
+| Domain interpretation | Relativization, InterpretedZF, ConstructibleSource.replay/nonempty_kernel | All source/native ZF schemas in SAME internal L; interpretation and nonemptiness premises discharged by existing L certificates. All internal Proof/Con remains stage 10. |
+| Existing mathematics | ModelTransfer, KuratowskiZF, ConstructibleGround/Source, existing internal recursion/Choice/cardinal/function constructors | Full internal L/ZFC and global order already reused for arbitrary native ZF models; original-kernel schema certificates. No duplicate foundational backend needed. |
 | Target axiom injection | target_derives_PP / ACwo / notAC | Only axioms of targetTheory; not a proof of its consistency |
 | Original name induction | ForcingNameInduction.kernel_certificate / source_certificate | Exact source Child relation; arbitrary-parameter formula instances in original nativeZF, without external WellFounded; later name/forcing results are recorded below |
 | Original IsName | ForcingNames.unfolding_kernel_certificate / edges_kernel_certificate / empty_kernel_certificate / uniqueness_kernel_certificate | Internal set-coded conditions, exact original recursive equation, empty name, arbitrary-formula solution uniqueness; atomic recursion and laws are covered by the rows below; evaluate and mapConditions scopes are recorded below |
@@ -340,8 +340,14 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | Saturation.preservesProfiles/cardinal_le／完整塔 | SaturationIterationValidity.recursive_valid_small／exists_tower | 纯Correct／内部反例集分离／序数归纳证明全Valid和AllSmall；实际全12表、时间恒等与21加权／base合同；forall16原核证书 |
 | Saturation.map_succ | SaturationIterationValidity.map_succ_selected／SelectedAt | 全塔相邻腿字面等于同一选中完整round inclusion，保留raw/Picked/Candidate/Built和精确base复合 |
 
-上述塔从完整有界父Context实际生成，包含原几何／base、K非空、无限μ和μ^ω=μ、base/K/索引μ小；没有给定有效输出塔或宿主良基假设。具体ω₁+1和原基数参数尚待实例化；不把这条任意内部有界索引的构造冒充最终饱和性。
+上述完整塔之后的具体内部ω₁+1/正则性/可数适当阶段覆盖、最终Probe/任意内部有限Merger/给定CopyRel精确实现、任意理想Probe、补集及基数端点均已有原核证书。实际μ=(card FULL P(ω))^+与K:=μ已实例化；现成Base几何合同已由ConstructionConcreteBase消去，同一实际最终T行显式保留全部ObjectFields和饱和性质。不能再把这些列为待完成；当前正式状态见docs/STATUS.zh-CN.md。
 
-本批49新声明、25受影响旧声明预审；正式2865构建／31301声明，9命令／5次trust=0均成功、零编译警告；旧31252足迹逐项不变、无新增公理依赖；2429当前指纹／75源哈希匹配，见 verification/saturation-iteration-acceptance.json。
+| 原源消费者 | 当前实际对象证书/构造 | 范围 |
+|---|---|---|
+| Saturation.countable_stage / probes / finiteMergers / ideal_probes / complement / cardinal | ConstructionSaturationCover/Probes/Mergers/IdealProbes/Complement/Cardinals | 全部内部指标、全部最终除子、任意理想，精确给定CopyRel；同一现成内部L |
+| ConcreteSystem.T | ConstructionConcreteCardinals/Tower/Base | 无给定Base几何、单子、μ/K、有效塔或最终行前提；同一实际最终T |
+| PlacementExtensions.countable_obstructions / exists_fresh_member | ConstructionPlacementFreshness.construction_kernel_certificate / family_kernel_certificate | 内部精确行关系和原集合值族；障碍集单射入C，任意预算界，源ω可数为实例；forall4/5同一L原核证书 |
 
-仍在原阶段8：有界完整内部多轮递归塔与精确全塔相邻转移完成；具体ω₁+1／基数参数、可数适当阶段覆盖和最终饱和性未完成。后继正则性数学已有；其union_bound_l接口已在ExistingSmallUnion适配，不重复复制整个CountableUnion。第9模型应用、第10全部内部Proof/Con与最终主句、第11终验仍未完成。
+本批新鲜支撑族合同正式2893构建/31638声明、9命令/5次trust=0全通过、零警告，此前31600足迹不变且无新增公理依赖，见verification/placement-freshness-acceptance.json。本表记录实际合同，不以构建/声明数作为主定理完成比例。
+
+仍在原阶段8。真正待做的是排列扩张、有限重叠Placement/Hull实际消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。

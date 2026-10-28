@@ -11683,4 +11683,16 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionConcreteBase.constructionSentence)) :=
   ConstructionConcreteBase.construction_kernel_certificate
 
+-- Source PlacementExtensions: all internal indices/sets, ground Choice discharged in SAME L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionPlacementFreshness.constructionSentence)) :=
+  ConstructionPlacementFreshness.construction_kernel_certificate
+
+-- Source PlacementExtensions: all internal indices/sets, ground Choice discharged in SAME L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionPlacementFreshness.familySentence)) :=
+  ConstructionPlacementFreshness.family_kernel_certificate
+
 end PPAC.Migration.Step4Checks

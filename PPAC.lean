@@ -679,3 +679,5 @@ import PPAC.Migration.ConstructionIdealProbes
 import PPAC.Migration.ConstructionConcreteTower
 
 import PPAC.Migration.ConstructionConcreteBase
+
+import PPAC.Migration.ConstructionPlacementFreshness

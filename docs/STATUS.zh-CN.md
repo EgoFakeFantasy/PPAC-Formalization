@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第8阶段。具体Base/T现已完成：现成Base的实际完整函数图证据被保留，全部几何父前提已消去；同一内部L中实际连续统后继μ和K:=μ生成完整塔，最终单子行现已显式返回，并携带全部ObjectFields、Probe/有限Merger/精确CopyRel、任意理想Probe、补集与内部基数端点。真正未完的是具体T的Placement/Hull消费者、第9–11和最终内部Con。** 不以局部证书、声明数或构建数作为整体完成比例。
+**仍在原第8阶段。具体Base/T现已完成：现成Base的实际完整函数图证据被保留，全部几何父前提已消去；同一内部L中实际连续统后继μ和K:=μ生成完整塔，最终单子行现已显式返回，并携带全部ObjectFields、Probe/有限Merger/精确CopyRel、任意理想Probe、补集与内部基数端点。PlacementExtensions的完整内部支撑族新鲜成员现亦有原核证书；真正未完的是具体T其余Placement/Hull消费者、第9–11和最终内部Con。** 不以局部证书、声明数或构建数作为整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -20,19 +20,15 @@
 
 ## 本批实际证明与验收
 
-ConstructionConcreteBase原样复用既有Base加法图构造证明，只调整返回打包以保留已由原生集合函数构造产生的CartesianProduct/IsSetFunctionFromTo证据。证明正文逐段比对及SHA已锁定；原有库证明模块未修改。未重证算术或新建图后端。
+固定源PlacementExtensions.countable_obstructions/exists_fresh_member现已迁移到ConstructionPlacementFreshness。原消费者是DiagramPlacements.witness_placement:129。完整内部集合值支撑族通过现成原生集合关系构造器产生精确行关系；Separation给出准确障碍指标集。直接调用已验收uniformize_l得到每个障碍支撑的内部坐标见证，族两两不交使选择图成为单射；既有复合图传递坐标集大小界。指标集不满足该大小界时，构造实际避开坐标集的族成员。预算参数任意，取内部ω即原可数合同，不限外部标准指标。
 
-现成BaseUniformMargin.Data提供全部实际内部ω载体、digits、分数cut载体、height/cost图和权重数据；已有代数律、height order、point bound、源margin、uniform margin直接在同一完整乘法图上消费。现成canonical_uniform提供精确遗漏成本上确界，完整ObjectFields由此装配。实际μ/K及完整IdealTower均调用上一批现成构造，所有给定Base几何/单子/权重/μ/K/有效塔前提已实际消去。
+forall4关系式障碍/新鲜性和forall5原集合值族新鲜性的原nativeZF核证书均相对化到同一既有内部L，Choice由现成L证书消去。未增加普通ZF的Choice或其他对象数学公理，未开泛滤支线，也未重做计数/选择/集合图后端。
 
-System显式保留同一实际history与最终T行。Target同时返回该行的完整ObjectFields、全部最终Probes、任意内部有限Merger/RootSystem/给定CopyRel精确实现、任意理想Probe、补集注入和最终载体/完整补集到μ的内部双射。不是仅返回一座未取出最终行的塔；全部内部/非标准指标及全部最终除子保留。
-
-forall1 IsOmega(w)→∃System的原nativeZF核对象证书相对化到同一既有内部L，Choice/order实际消去，没有额外GCH/不可达/几何背景。它完成具体Base/T；具体Placement/Hull、Models/PP/Main及最终内部Con尚未完成。
-
-正式验收：24项新声明trust=0预审；2892构建／31600声明（1593无公理依赖、30007记录依赖），9命令／5次trust=0全退出0，零警告；此前31576项足迹逐项不变，无新增公理依赖。75固定源哈希及2447当前指纹匹配，底座/供体干净。临时ConcreteBaseAudit.lean按精确路径、内容SHA和非重解析点检查清理；成功日志保留。证据verification/concrete-base-acceptance.json。
+本批38声明定向编译和trust=0预审通过；正式2893构建/31638声明（1602无公理依赖、30036记录依赖），9命令/5次trust=0均退出0、零警告；此前31600项足迹不变、无新增公理依赖。75固定源和2448当前指纹匹配，底座/供体干净。临时预审源按精确路径/内容SHA/非重解析点检查清理，证据verification/placement-freshness-acceptance.json。上一批完整Base/T的24声明、2892构建/31600审计全部通过记录仍在verification/concrete-base-acceptance.json。实际排列扩张、有限重叠Placement/Hull和最终内部Con仍未完成。
 
 ## 继续顺序与边界
 
-下一实际消费者为固定源Algebra/Placements、PlacementExtensions与Construction/DiagramPlacements、ConservativeHulls中具体T的消费者，再接Models/ComponentGluing。完整Base/T、任意理想Probe、精确Merger/CopyRel与原图/作用/名字/支撑前端均已具备；先核对源实际声明依赖，复用现成presentation/任意目标monoid lift与图构造，不重建底座或把已完成部件重新列作待做。原1–11阶段未扩张。
+本批已接PlacementExtensions的新鲜支撑成员原合同；下一实际消费者为固定源Algebra/Placements的排列扩张和Construction/DiagramPlacements有限重叠、ConservativeHulls中具体T的消费者，再接Models/ComponentGluing。完整Base/T、任意理想Probe、精确Merger/CopyRel与原图/作用/名字/支撑前端均已具备；先核对源实际声明依赖，复用现成presentation/任意目标monoid lift与图构造，不重建底座或把已完成部件重新列作待做。原1–11阶段未扩张。
 
 Base图证据/最终ObjectFields/T装配、实际μ/K及其进入同一完整塔现均已验收，不再待做。内部L/完整模式/universe、递归/基数底座、完整塔/覆盖、Probe/Merger/精确CopyRel、任意理想与补集Probe和内部基数端点亦均已完成。原核最终Derives nativeZF [] (Con_ZF→Con_U)尚未取得；U=ZF+PP+ACwo+¬AC，Con仍量化全部内部/非标准证明码。
 
