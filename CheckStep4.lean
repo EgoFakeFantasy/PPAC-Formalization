@@ -11809,4 +11809,20 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionCountableConservativeHull.constructionSentence)) :=
   ConstructionCountableConservativeHull.construction_kernel_certificate
 
+
+-- Pinned actual vertex geometry and entire carrier, ordinary native ZF.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionComponentVertices.geometrySentence) :=
+  ConstructionComponentVertices.geometry_kernel_certificate
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionComponentCarrier.constructionSentence) :=
+  ConstructionComponentCarrier.construction_kernel_certificate
+
+-- Full internal omega chain cofinal in the ENTIRE Common component, same L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionComponentCofinal.constructionSentence)) :=
+  ConstructionComponentCofinal.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

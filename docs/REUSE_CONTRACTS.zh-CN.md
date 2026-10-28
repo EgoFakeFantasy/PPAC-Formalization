@@ -1,4 +1,4 @@
-# 现成接口复用与精确边界（2026-10-26 重审）
+# 现成接口复用与精确边界（2026-10-28 复核）
 
 本表取代重复的逐批进度叙述；旧验收段可从 Git `629b815` 恢复。固定 YesMetaZFC 为 `039c8e132cc19671d73a3933c66b4799d2599dd6`，本轮未更新活动依赖或修改供体源码；另核对了新版 YesMetaZFC 7979336，见下文。源码位置与依赖指纹以 SOURCE_LOCK 为准。
 
@@ -9,14 +9,14 @@
 | 内部序数递归 | SetTheory/Ord/Recursion.lean:1297 recursiveSequence_exists、1322 recursionValue_exists、1339 transfiniteRecursion_isClassFunctionOnOrdinals；GodelDefRecursion、ConstructibleHistory | 已消费全部内部序数接口。另一个 WellFounded.Recursion.solve 要求宿主 WellFounded，不能用于任意可能外部不良基的 nativeZF 模型 |
 | 集合／名字归纳与递归 | SetInduction.native_induction → ForcingNameInduction/ForcingMapLaws → ForcingPairInduction/ForcingTripleInduction；ForcingNameRecursion | 已消费到名字、映射、原子递归和定律；后两种归纳有实际证明消费者，不是待重建后端 |
 | 内部函数空间 | FunctionSpaceConstruction.lean 的 ZF.exists_functionSpace；ForcingLabelPermutations.exists_carrier | 本轮直接消费其全部内部函数图集合，再分离置换；没有重建幂集／积或函数空间。固定源文件哈希纳入 SOURCE_LOCK |
-| 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。固定载体的统一标签作用、逆与共轭已接入；原 omega/2 已特化；源单子/conical 合同下偏序已接通；具体单子构造仍属阶段 8 |
+| 条件图构造 | SetTheory/FunctionConstruction.lean 的实际恒等、逆、复合图入口；ForcingConditionGraphs/ForcingConditionAction | 已消费，保留指定图的精确边方程。固定载体的统一标签作用、逆与共轭已接入；原 omega/2 已特化；源单子/conical 合同下偏序已接通；具体 Base/T 已完成；实际模型系统消费者仍属阶段 8–9 |
 | 原核收尾 | BMS SecondOrderCompleteness.derives_m 的 strong_completeness 模式；本仓 ModelTransfer.derives/project_models_iff | 已接入纯成员语言、对应 Type 0 全模型。不是待重做的完备性；本批 L 相对化已核对任意同一 universe 模型的前提，不拿单个 LCarrier 替代 |
 | 旧 LCarrier 工程的完整模型数学 | lean-constructible-universe-stage4 固定 7f5a7d0；ZFModel.lean:28 lCarrier_models_ZF、StageHistoryGraphSystem.lean:171 lCarrier_models_ZFC | 该旧工程已完成完整模式，但 LCarrier 是 ZFSet 子类。这个限制不能概括新版 YesMetaZFC：其任意 ZF 模型的内部 L 定理已存在，见下一行 |
 | 新版原生 L 数学 | 供体 7979336 的 l_model_zf_l／l_model_zfc_l／js_l_model_l；现由 PPAC/Companion 必要闭包及 ConstructibleGround.relative／zfc_axiom_kernel／global_order_kernel／nonempty_kernel 消费 | 固定旧版 039c8e1 编译通过并实际取得 nativeZF 中全部原生 ZF/ZFC 公理／模式、Choice、L 内全局序和非空的相对化原核证书。140 份数学正文不变；源域公式和解释背景消费本批也已验收，内部 Con 仍未完成。不能再报版本适配、原生／源全模式解释未完成；GCH 非本项目义务 |
 | L 的实际语法／递归与选择收尾 | 原 FormulaGodel、RudimentaryConstructible、BareStageHistory；本仓 GodelDefOutput/Recursion、ConstructibleHistory/Parameters、InternalWellOrderChoice | 已有构造被复用。Min_lt/CoverWO→AC 已证；本批改为直接消费完整原生内部 L/ZFC 与全局序，不再把旧局部入口当前提。具体源域公式消费已由 ConstructibleSource 接通 |
 | 全模式相对化传输 | InterpretedZF.source_sentence/native_sentence/project_axiom/collection；Relativization、ReverseZFReplay | ConstructibleSource.replay／nonempty_kernel 现已实际消去同一 L 的解释背景／非空前提，取得源全模式与 Choice 的原核 L 相对化；标准证书变换不是全部内部 Proof/Con |
 
-当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；下一真实消费者为具体ω₁+1／基数参数实例化和覆盖／饱和系统。
+当前第 8 阶段已复用原生配对／集合函数／复合／分离／内部序数递归和原 L 全局序，取得实际完整有效有界单轮塔及全转移表；九字段记录、实际选中 raw/Picked/Pack、强新鲜性、完整来源及后续切片精确锥均保留。ConstructionCompleteRound 现从原父输入调用现成 RequestCarrier、bounded schedule、bounded tower、Execution／ProbeFamily／ProbeIndependence，生成同一 last 目标／inclusion、准确 Place 到 K 重索引、完整所有请求见证和大小界。没有新建选择／序数／编码／递归后端；实际唯一整轮后继和完整 Valid/AllSmall 追加保持现也已完成；统一外层全历史总唯一算子、实际原生递归、完整Valid/AllSmall、全表／21合同／精确相邻图也已验收；具体ω₁+1／基数参数实例化和覆盖／饱和系统也已完成；下一真实消费者为 CellTowers／纤维粘合。
 
 ## 内部证明码：复用现有配套，不重建
 
@@ -39,11 +39,11 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 |---|---|---|
 | AtomicForcing.relations/atomic_laws/atomic_symmetry → SymmetricNames.atomic/atomic_regular | 现有名字递归、二／三名字归纳、原子方程及定律、实际条件图作用 | 具体 PPAC 条件呈现 |
 | Force/force_of_dense → forcing_sound | 固定公式、19 规则的固定证明保真，原核模式证书 | 任意内部证明码归约归阶段 10 |
-| Name.HS.smul → forces_symmetry | 字面稳定子、实际 HS 定义、Child 归纳、共轭传输；通用 HS 作用及公式对称性已完成 | 本批以具体统一 A、实际支撑滤子构造 Context 并消费 HS.smul；本批具体作用族的 HS 域公式对称性已接通；完整单子/偏序系统仍待装配 |
+| Name.HS.smul → forces_symmetry | 字面稳定子、实际 HS 定义、Child 归纳、共轭传输；通用 HS 作用及公式对称性已完成 | 本批以具体统一 A、实际支撑滤子构造 Context 并消费 HS.smul；本批具体作用族的 HS 域公式对称性已接通；完整 Base/T 与偏序律已有；实际模型系统装配仍待接入 |
 | SupportFilter.inf_mem/isNormalFilter → ProductNames.system | 固定底座函数空间、幂集、分离；新版 Card/Omega/InfiniteBound 五段原证明正文；实际小支撑族与四项正规性 | 已接统一条件作用和支撑滤子 Context；bot_not_mem 按 ChoiceFailure 消费者处理，完整系统仍待装配 |
 | Diagram.sub/permuteOrderIso → ProductForcing.permuteOrderIso → ProductNames.actionHom | ForcingDiagramCarrier/Order 直接调用原函数空间、分离、可定义函数和复合；消费既有 Injection/CompositionGraph/标签作用。构造整张子图、实际载体与关系自同构，集合级作用律已证 | 单子代数律和 conical 条件由原阶段 8 构造提供；已接 Cohen 群律、Product 与 WithTop 扩展；统一标签作用族及支撑滤子 Context 本批已接入。任意乘法表的平移关系不变性不冒充偏序存在 |
-| Cohen coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso | 原积／函数构造、幂集／分离、既有 exists_image/small_image；实际条件载体和保序双射装配完成 | B=2、w=ω 已由 ProductParameters 消费已有构造；跨标签作用律、Product 与 WithTop 扩展已有；统一作用族已接通，源 omega/2 参数已接通，一般源代数合同下的偏序已接入，具体单子构造仍待阶段 8 |
-| ProductNames.Poset/actionHom.withTopCongr | ForcingWithTopCarrier/Action：直接消费 KP.exists_empty/exists_singleton、ZF.exists_powerSet、已有 Separation 和可定义函数；内部空集／singleton 编码，完整载体和扩展置换 | 逐个扩展及作用律已证明；本批统一 A、Family/Covariance、支撑滤子 Context 与 HS 作用已实现。源 omega/2 参数特化及实际 HS 域公式对称性已接通；源单子/conical 合同下偏序已由 ProductPoset 接入；具体单子构造仍待阶段 8 |
+| Cohen coordinatePerm/permute/permuteOrderIso → ProductForcing.permuteOrderIso | 原积／函数构造、幂集／分离、既有 exists_image/small_image；实际条件载体和保序双射装配完成 | B=2、w=ω 已由 ProductParameters 消费已有构造；跨标签作用律、Product 与 WithTop 扩展已有；统一作用族已接通，源 omega/2 参数已接通，一般源代数合同下的偏序已接入，具体 Base/T 已完成；实际模型系统装配仍待接入 |
+| ProductNames.Poset/actionHom.withTopCongr | ForcingWithTopCarrier/Action：直接消费 KP.exists_empty/exists_singleton、ZF.exists_powerSet、已有 Separation 和可定义函数；内部空集／singleton 编码，完整载体和扩展置换 | 逐个扩展及作用律已证明；本批统一 A、Family/Covariance、支撑滤子 Context 与 HS 作用已实现。源 omega/2 参数特化及实际 HS 域公式对称性已接通；源单子/conical 合同下偏序已由 ProductPoset 接入；具体 Base/T 已完成；实际模型系统装配仍待接入 |
 
 本批参数特化与具体公式对称性的 2 项原核证书依赖标准三项及七项已有基础句子 FreeClosed 证书。没有扩大此前活动可信基。此前正规滤子批次已消费的 15 项递归和 9 项基数 native Bool 证书仍保留记录及重算，不能改称整个工程仅有标准三项。
 
@@ -61,7 +61,7 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 
 既有全模式、内部序数递归、Proof/Sat 配套已经存在。ZF/U 特化和全部内部码正确性尚未接通，但不另建通用证明核、编码器或满足关系。其他库接口未定位时写“未定位到精确合同”，不能写“数学不存在”。
 
-`atomic_truth`、决策稠密集、`exists_truth_generic` 仅服务未选的泛滤分支；NatPacket／字节兼容继续冻结。旧的独立 L 重建路线停止扩写。保留具有实际依赖或尚未完成裁剪判断的已验收证明；不以已投入成本作为继续开发理由。
+`atomic_truth`、决策稠密集、`exists_truth_generic` 仅服务未选的泛滤分支；NatPacket／reader 已按用户批准的精确清单退役。旧的独立 L 重建路线停止扩写。保留具有实际依赖或尚未完成裁剪判断的已验收证明；不以已投入成本作为继续开发理由。
 
 
 ## 现行代数构造复用入口
@@ -79,8 +79,8 @@ IBLP 的 SetSatisfaction/SetSatisfactionFormula 和 BMS 的 PowerlessSourceCompi
 | 实际 Word、old 嵌入及条件并 | ConstructionProbeConditionalJoins.exists_extension；现成 raw_induction、实际乘法图、ForcingConditionGraphs.exists_identity 和共享 Gate | 同一 W/unit/J/G 及三项代数性质已构造；基础条件并仍是源前提，不能替代最终饱和单子 |
 | 映射 Path 与 Raw/Word 传输 | ConstructionProbeMappedPath.exists_node_map → ZF.exists_compositionFunction；ZF.exists_restriction；现成序列长度、prefixHead/reduced 判据 | 实际像图和 Word 图已构造；没有重造序列、递归或商后端 |
 | 完整保守模拟、old/probe 方程 | ConstructionProbeSimulation.exists_simulation；既有 raw_induction、head_transport_some、letterAct_injective、共享 gate、division_reflection | 同一个 H 上的四字段 Conservative 和端点方程已证；具体路径／字母合同保留 |
-| 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 专用 factors_of_old/gates 尚待迁移 |
-| 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配仍待完成 |
+| 初始全 profile 与旧 profile 保持 | ConditionalJoins.exists_extension；Generator.exists_generator_graph；IndexedGenerators.exists_probe_graph；gate_dvd_old_iff/gate_old_intersection/gate_existence；exists_node_map | 一个实际后继扩张保持所有旧 profile；Merger 的专用旧因子/门和完整 Parent 已迁移；实际 Cell Attachment 消费另列 |
+| 模拟 pushout | existsUnique_presentedHom、presentedHom_ext、exists_simulation、exists_node_map | 原核证书覆盖任意内部目标单子；Presentation 只打包具体图合同，未假定普遍性质。完整 Probe 装配已完成；其实际 Cell Attachment 消费另列 |
 | letterFloor 与高度像集 | ConstructionRealCuts.bounded_union；ZF.separation_exists_d / exists_setFunctionFromTo_of_denote；dvd_target_of_inCone、one_inCone | 已构造所有字母的实际图与上下界；旧高度正性／单调性保留。一般加法/max、正整数除法及 /4 四倍和已迁移；一般切割差本批已证，逐字母 intervals 已证，实际 heightIntervals 内部图本批已装配，不把上确界存在误报为完整 margin |
 | Probe 锥内／锥外 cost 界 | 既有 FractionAddition.Sum／sum_right_lt_iff、Separation、ConditionalJoins、ConeLaws、floor 图及原核 ModelTransfer | 已有有界和切割及两界；一般旧 PointBound 输入保留，初始 Base 的该输入已由本批消去。原逐字母严格区间及实际 heightIntervals 三图均已有；完整 Word HeightCost 本批已接通，Path／Probe 原父输入完整装配亦已完成 |
 | 初始 Base 的 PointBound | ConstructionBaseHeightGap.cut_gap/source_margin；ConstructionBaseCostBound.missing_cost_bound；原生自然数算术；既有实际图构造器 | 已在同一组图上保留完整严格 margin 并给出 PointBound；只做所需加法界适配，不重证 Base 或声称任意加法全等价 |
@@ -142,9 +142,9 @@ CompleteRound.Built/built 和 exists_complete_round_built／exists_from_parent_b
 
 | 已定位供体／底座 | 实际下一消费者 | 当前适配状态 |
 |---|---|---|
-| 供体 7979336，SetTheory/Card/Properties/SuccessorRegularity.lean:17，ZFC.hartogs_regular_l | 原 RoundOrdinal.countable_bounded／Saturation.countable_stage；ConcreteSystem.μ_regular | 数学已存在；活动 039c8e1 尚无该模块，须复用必要闭包并核对精确消费者，不能重证或报成缺失 |
+| 供体 7979336，SetTheory/Card/Properties/SuccessorRegularity.lean:17，ZFC.hartogs_regular_l | 原 RoundOrdinal.countable_bounded／Saturation.countable_stage；ConcreteSystem.μ_regular | 已通过 ExistingSuccessorRegularity 的必要闭包适配，并由实际 μ/覆盖/饱和消费者使用；不重证或再报缺失 |
 | 同供体 Card/CountableUnion.union_bound_l；本仓 ExistingSmallUnion.lean:153 | 后继正则性所需小族并 | 必要接口已经适配并由 DirectedCardinality 实际消费；不复制整 CountableUnion，也不重报为缺失 |
-| 同供体 Card/OrdinalImage.lean | 后继正则性的序数像界依赖 | 尚需适配必要原证明闭包；无须升级活动底座 |
+| 同供体 Card/OrdinalImage.lean | 后继正则性的序数像界依赖 | 必要原证明闭包已适配为 ExistingOrdinalImage 并被实际消费者使用；未升级活动底座 |
 | 固定底座 Card/Cofinality/Boundedness.lean:282/335 | 同一内部可数族的适当阶段上界 | bounded_of_cardinality_mem／range_bounded_of_domain_mem 已存在；只接 ω₁ 与实际塔的消费者 |
 
 已读供体源码 SHA256：SuccessorRegularity = 3ba72b4361f154a2c3bffe813a1a1d32074c99fbe30f2b235f1cb1dfb64c4edb；CountableUnion = f1c74af92e3cbd9ac0157272da447b20909e89bd71a2753ce3b7157a675cb3f5；OrdinalImage = b4d2ab883b487b5b66ce54d0af333dab9a38b2ddd7323635c28418dec146b7e0。供体未修改。初始／极限／原生内部递归／valid_of_cover 及内部反例集归纳方法已有，不新建此类后端。
@@ -166,5 +166,19 @@ ConstructionSaturationIterationCases 的三个实际分支直接使用原 Initia
 
 本批 CountableHull／ConservativeHull 复用裁决：CountablePair、CountableUnion、CountableChain 已在现有 PPAC/Companion 闭包内，不新增复制。供体 CountableHull.cc_hull_l 是一元多值闭包；只适配其内部 powerset／iterate_l／归纳／range／union 正文方法，二元一步可数性消费现成 countable_product_l/countable_cover_l，同阶段消费 cc_increasing_of_successor_l。保留精确源 stage/carrier，覆盖空种子及非标准内部 ω。
 
-ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图使用原 identity；原 divides_antisymm 识别两个 joins，不新造序或选择后端。完整装配构造源三值插入行和实际操作表；forall6/exists9 同一 L 原核证书消去 Choice。实际消费者是 CellTowers.hull:330 及其 countable/contains/deps，ConcreteQuotients:118 factor_eq；这些消费者本身和 ComponentGluing 后续接入。完整源定理的 Conical 前提保留；不把独立 omit-IsConical 辅助定理的全泛化算作本批完成。
-本批 113 项声明及两条同一 L 原核端点正式验收通过：2905 项构建、32089 项声明审计，9 条命令／5 次 trust=0 全退出 0、零警告；此前 31976 项足迹不变，无新增公理依赖。75 份固定源与 2460 份当前指纹匹配，底座／供体干净。见 verification/countable-conservative-hull-acceptance.json。
+ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图使用原 identity；原 divides_antisymm 识别两个 joins，不新造序或选择后端。完整装配构造源三值插入行和实际操作表；forall6/exists9 同一 L 原核证书消去 Choice。实际消费者是 CellTowers.hull:330 及其 countable/contains/deps，ConcreteQuotients:118 factor_eq；实际 CellTowers 消费者和 ComponentGluing 的后续纤维粘合仍需接入。完整源定理的 Conical 前提保留；不把独立 omit-IsConical 辅助定理的全泛化算作本批完成。
+此前 CountableHull 批次的 113 项声明及两条同一 L 原核端点正式验收通过：2905 项构建、32089 项声明审计，9 条命令／5 次 trust=0 全退出 0、零警告；此前 31976 项足迹不变，无新增公理依赖。75 份固定源与 2460 份当前指纹匹配，底座／供体干净。见 verification/countable-conservative-hull-acceptance.json。
+
+## 当前 ComponentGluing 复用与真实缺口
+
+| 当前消费者 | 实际复用 | 状态/边界 |
+|---|---|---|
+| 原 contract/Arrow/共同后继 | 既有 Sub/index_unique/sub_sub、left_mul_dvd_iff/translate_cone_intersection、原生 Separation | 精确右商理想和根图保留；geometrySentence 九条定律是普通 nativeZF 原核证书 |
+| 全部 Vertex carrier | 既有 ForcingDiagramCarrier、原幂集/积/Separation/Kuratowski 编码 | 构造全部内部顶点集合，无秩/可数截断；不是商集，不另建通用编码器 |
+| 整个 Common 分量 cofinal chain | 既有 ConstructionIdealCofinal.directed_cofinal_sequence、唯一 contraction、exists_setFunctionFromTo_of_denote、exists_node_map | 整张内部 ω 图及所有 i≤j、整个分量覆盖；同一 L 原核证书消去 Choice，现成 ObjectFields 父背景保留 |
+| CellTowers 实际 Cell 消费 | 已有 CompleteRound.Built、SaturationStep.Candidate、TowerMapSucc、OperationSource、countable conservative hull | 塔与来源已有；需同一最终 T 的 stage range 原 Attachment、有限旧系数/依赖/首次出现/重排；Merger presentedLift/simulation 精确入口尚未定位到，不能写成已有或断言数学不存在 |
+| 后续真实粘合 | 现成完整 Diagram、函数与 MergerCopies 商构造方法 | 实际 System 限制/精确交集、Fiber/arrowMap、Matches 和全纤维结果仍需迁移；Component quotient 与 Common.iff_zigzag 无调用，不列为前置；需要等价类时复用 DirectedLimitCarrier／原 fiber_function_l 的已有构造 |
+
+此前各批“下一项”仅是历史上下文；现行缺口以本节和 STATUS 为准。无实际消费者的独立 Component quotient 不增加为新前置，既有 L/全模式/塔/ω递归/计数并/商/名字后端不重做。
+
+本批正式验收通过：2909 项构建、32174 项声明审计；新增 85 项及三条原核端点，旧 32089 项足迹不变。9 条命令／5 次 trust=0 全退出 0、零警告、无新增公理依赖。75 份固定源与 2464 份当前指纹匹配，底座／供体干净；358 个获批退役模块仍全部不存在。见 verification/component-cofinal-acceptance.json。
