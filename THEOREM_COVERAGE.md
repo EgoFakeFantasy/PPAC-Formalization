@@ -354,7 +354,8 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | Diagrams.amalgamate/common_extension, actual canonical source labels | ConstructionDiagramAmalgamation.construction_kernel_certificate | 同一P/identity/roots/RootSystem/给定CopyRel，实际完整D→I图及全部原Sub/Le方程；不假定整图/全嵌入，含0及非标准内部有限指标；forall15同一L原核证书 |
 | DiagramPlacements.common_extension_three:470 | ConstructionDiagramThree.construction_kernel_certificate | 实际内部序数3上的三元族F；复用既有完整有限族amalgamate，返回整个D→I的q及原q≤r/s/t；forall16同一L原核证书 |
 | Cohen support/restrict/union and DiagramPlacements.Condition:400/410/426/443 | ConstructionCohenCompatibility.support/movement/agreement/comparison_kernel_certificate | 原实际图/坐标lift/image、精确可数支撑/限制、图相等、trigger/overlap兼容及两次并给出全部三个下界；s0限制范围和s1重叠范围独立；forall8/8/12/18未相对化原nativeZF证书，无Choice |
+| ProductForcing.descent_comparison_placement:491 | ConstructionDescentPlacement.construction_kernel_certificate | 无给定输出排列/下界；实际π/ρ、同一s1移动图、两份实际Cohen lift/image、完整配对Product q及全部三个原Le；任意反例c,t与不同s0/s1范围保留；forall28同一L原核证书 |
 
-本批实际Cohen支撑/限制/移动/兼容及三重并原核下界正式验收通过：2901构建/31946审计，9命令/5次trust=0全退出0、零警告，此前31869足迹不变且无新增公理依赖；见verification/cohen-compatibility-acceptance.json。前批合同保留，不以构建/声明数作为整体完成比例。
+本批完整Product descent正式验收通过：2902构建/31976审计，9命令/5次trust=0全退出0、零警告，此前31946足迹不变且无新增公理依赖；见verification/descent-placement-acceptance.json。前批合同保留，不以构建/声明数作为整体完成比例。
 
-仍在原阶段8。真正待做的是完整descent/Hull消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。
+仍在原阶段8。真正待做的是Hull/ComponentGluing消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。

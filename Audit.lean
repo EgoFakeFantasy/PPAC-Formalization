@@ -32427,3 +32427,35 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCohenCompatibility.comparisonSentence
 #print axioms PPAC.Migration.ConstructionCohenCompatibility.comparison_models
 #print axioms PPAC.Migration.ConstructionCohenCompatibility.comparison_kernel_certificate
+
+-- Full source descent: actual placements, Cohen/Diagram combination and three Product bounds.
+#print axioms PPAC.Migration.ConstructionDescentPlacement.ActualMoved
+#print axioms PPAC.Migration.ConstructionDescentPlacement.Boundary
+#print axioms PPAC.Migration.ConstructionDescentPlacement.WithinRange
+#print axioms PPAC.Migration.ConstructionDescentPlacement.Inputs
+#print axioms PPAC.Migration.ConstructionDescentPlacement.Result
+#print axioms PPAC.Migration.ConstructionDescentPlacement.diagram_range
+#print axioms PPAC.Migration.ConstructionDescentPlacement.range_antitone
+#print axioms PPAC.Migration.ConstructionDescentPlacement.range_permute
+#print axioms PPAC.Migration.ConstructionDescentPlacement.agrees_iff
+#print axioms PPAC.Migration.ConstructionDescentPlacement.composition_transport
+#print axioms PPAC.Migration.ConstructionDescentPlacement.actual_moved_condition
+#print axioms PPAC.Migration.ConstructionDescentPlacement.descent_comparison_placement
+#print axioms PPAC.Migration.ConstructionDescentPlacement.actualMoved
+#print axioms PPAC.Migration.ConstructionDescentPlacement.actualMoved_freeClosed
+#print axioms PPAC.Migration.ConstructionDescentPlacement.actualMoved_semantics
+#print axioms PPAC.Migration.ConstructionDescentPlacement.boundary
+#print axioms PPAC.Migration.ConstructionDescentPlacement.boundary_freeClosed
+#print axioms PPAC.Migration.ConstructionDescentPlacement.boundary_semantics
+#print axioms PPAC.Migration.ConstructionDescentPlacement.withinRange
+#print axioms PPAC.Migration.ConstructionDescentPlacement.withinRange_freeClosed
+#print axioms PPAC.Migration.ConstructionDescentPlacement.withinRange_semantics
+#print axioms PPAC.Migration.ConstructionDescentPlacement.inputs
+#print axioms PPAC.Migration.ConstructionDescentPlacement.inputs_freeClosed
+#print axioms PPAC.Migration.ConstructionDescentPlacement.inputs_semantics
+#print axioms PPAC.Migration.ConstructionDescentPlacement.result
+#print axioms PPAC.Migration.ConstructionDescentPlacement.result_freeClosed
+#print axioms PPAC.Migration.ConstructionDescentPlacement.result_semantics
+#print axioms PPAC.Migration.ConstructionDescentPlacement.constructionSentence
+#print axioms PPAC.Migration.ConstructionDescentPlacement.construction_models
+#print axioms PPAC.Migration.ConstructionDescentPlacement.construction_kernel_certificate

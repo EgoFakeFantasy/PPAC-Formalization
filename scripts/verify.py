@@ -2294,7 +2294,8 @@ def main() -> None:
                                ('construction_diagram_prescription', 'ConstructionDiagramPrescription', 50),
                                ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28),
                                ('construction_diagram_three', 'ConstructionDiagramThree', 9),
-                               ('construction_cohen_compatibility', 'ConstructionCohenCompatibility', 77)):
+                               ('construction_cohen_compatibility', 'ConstructionCohenCompatibility', 77),
+                               ('construction_descent_placement', 'ConstructionDescentPlacement', 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5997,9 +5998,12 @@ def main() -> None:
         "source_actual_Diagram_whole_amalgamating_injection_constructed": True,
         "source_actual_Diagram_SAME_P_roots_WHOLE_carrier_all_internal_finite_family_common_extension_kernel_certificate": True,
         "source_actual_Diagram_amalgamate_supplied_whole_embedding_or_diagram_premise": False,
-        "source_actual_Diagram_fixed_three_family_and_Cohen_descent_consumers_complete": False,
+        "source_actual_Diagram_fixed_three_family_and_Cohen_descent_consumers_complete": True,
         "source_actual_Diagram_fixed_three_internal_family_common_extension_kernel_certificate": True,
-        "source_actual_Cohen_compatibility_union_and_full_descent_complete": False,
+        "source_actual_Cohen_compatibility_union_and_full_descent_complete": True,
+        "source_actual_full_descent_comparison_placement_Product_lower_bound_kernel_certificate": True,
+        "source_actual_descent_supplied_placements_or_output_lower_bound_premise": False,
+        "source_actual_ConservativeHull_ComponentGluing_complete": False,
         "source_actual_Cohen_label_support_countable_restriction_constructed": True,
         "source_actual_Cohen_TWO_existing_coordinate_lifts_exact_label_move_kernel_certificate": True,
         "source_actual_Cohen_agreement_trigger_overlap_and_three_union_kernel_certificates": True,

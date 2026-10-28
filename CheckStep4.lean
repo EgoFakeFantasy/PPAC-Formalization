@@ -11791,4 +11791,10 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence ConstructionCohenCompatibility.comparisonSentence) :=
   ConstructionCohenCompatibility.comparison_kernel_certificate
 
+-- Full pinned descent_comparison_placement, arbitrary counterexample c,t, same L.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionDescentPlacement.constructionSentence)) :=
+  ConstructionDescentPlacement.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
