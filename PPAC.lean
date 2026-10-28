@@ -753,3 +753,6 @@ import PPAC.Migration.ForcingEligibilityReflection
 import PPAC.Migration.ForcingEligibleObjects
 
 import PPAC.Migration.ForcingEligibleRestriction
+
+import PPAC.Migration.ForcingEligibleIntersection
+import PPAC.Migration.ForcingEligibleLaws

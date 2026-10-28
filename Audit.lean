@@ -33076,3 +33076,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingEligibleRestriction.injectivitySentence
 #print axioms PPAC.Migration.ForcingEligibleRestriction.injectivity_models
 #print axioms PPAC.Migration.ForcingEligibleRestriction.injectivity_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingEligibleIntersection.le_of_common_and_range
+#print axioms PPAC.Migration.ForcingEligibleIntersection.intersection_le_root
+#print axioms PPAC.Migration.ForcingEligibleIntersection.intersection
+#print axioms PPAC.Migration.ForcingEligibleIntersection.constructionSentence
+#print axioms PPAC.Migration.ForcingEligibleIntersection.construction_models
+#print axioms PPAC.Migration.ForcingEligibleIntersection.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingEligibleLaws.identitySentence
+#print axioms PPAC.Migration.ForcingEligibleLaws.identity_models
+#print axioms PPAC.Migration.ForcingEligibleLaws.identity_kernel_certificate
+#print axioms PPAC.Migration.ForcingEligibleLaws.compositionSentence
+#print axioms PPAC.Migration.ForcingEligibleLaws.composition_models
+#print axioms PPAC.Migration.ForcingEligibleLaws.composition_kernel_certificate
+#print axioms PPAC.Migration.ForcingEligibleLaws.restrict_injective
+#print axioms PPAC.Migration.ForcingEligibleLaws.constructionSentence
+#print axioms PPAC.Migration.ForcingEligibleLaws.construction_models
+#print axioms PPAC.Migration.ForcingEligibleLaws.construction_kernel_certificate

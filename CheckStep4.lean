@@ -12052,4 +12052,26 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingEligibleRe
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingEligibleRestriction.injectivitySentence) :=
   ForcingEligibleRestriction.injectivity_kernel_certificate
 
+
+-- Actual eligible intersection and discharge of all three quotient-map law premises.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y q Aq fixingQ E O0 O1 OP a0 a1 b0 b1 : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingEligibleIntersection.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y q Aq fixingQ E O0 O1 OP a0 a1 b0 b1))) :=
+  ForcingEligibleIntersection.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y q Aq fixingQ E O0 O1 OP a0 a1 b0 b1
+
+example {k : Nat} (R : Formula (k+2)) (Hdom : Formula (k+1)) (D mul W g r q labels E X Q pr f V a : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleLaws.identitySentence R Hdom D mul W g r q labels E X Q pr f V a)) :=
+  ForcingEligibleLaws.identity_kernel_certificate R Hdom D mul W g r q labels E X Q pr f V a
+
+example {k : Nat} (R : Formula (k+2)) (Hdom : Formula (k+1)) (D mul W g r q labels E X Y Z Q T U pr ps pt f01 f12 f02 V J a01 a12 a02 : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleLaws.compositionSentence R Hdom D mul W g r q labels E X Y Z Q T U pr ps pt f01 f12 f02 V J a01 a12 a02)) :=
+  ForcingEligibleLaws.composition_kernel_certificate R Hdom D mul W g r q labels E X Y Z Q T U pr ps pt f01 f12 f02 V J a01 a12 a02
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f V J a : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingEligibleLaws.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f V J a))) :=
+  ForcingEligibleLaws.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f V J a
+
 end PPAC.Migration.Step4Checks
