@@ -2289,7 +2289,8 @@ def main() -> None:
                                ('construction_placement_freshness', 'ConstructionPlacementFreshness', 38),
                                ('construction_placement_extensions', 'ConstructionPlacementExtensions', 26),
                                ('construction_placement_pasting', 'ConstructionPlacementPasting', 37),
-                               ('construction_placement_triple', 'ConstructionPlacementTriple', 34)):
+                               ('construction_placement_triple', 'ConstructionPlacementTriple', 34),
+                               ('construction_diagram_placements', 'ConstructionDiagramPlacements', 47)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5981,6 +5982,10 @@ def main() -> None:
         "source_DiagramPlacements_finite_overlap_paste_two_three_copy_complete": True,
         "source_DiagramPlacements_simultaneous_three_copy_ALL_exact_image_intersections_kernel_certificate": True,
         "source_DiagramPlacements_actual_Diagram_common_extension_and_descent_consumers_complete": False,
+        "source_actual_Diagram_exact_cone_range_and_common_sub_label_iff_kernel_certificates": True,
+        "source_actual_Diagram_full_ExactOverlap_of_common_and_actual_permuted_graph_equality_kernel_certificates": True,
+        "source_actual_Diagram_same_position_root_fixed_permutation_kernel_certificate": True,
+        "source_actual_Diagram_overlap_prescription_and_amalgamate_constructed": False,
         "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,

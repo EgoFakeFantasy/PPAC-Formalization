@@ -349,7 +349,8 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | PlacementExtensions.countable_obstructions / exists_fresh_member | ConstructionPlacementFreshness.construction_kernel_certificate / family_kernel_certificate | 内部精确行关系和原集合值族；障碍集单射入C，任意预算界，源ω可数为实例；forall4/5同一L原核证书 |
 | DiagramPlacements.extend_permutation_off / ConcreteSystem.I | ConstructionPlacementExtensions.construction_kernel_certificate / labels_kernel_certificate / actualLabels_kernel_certificate | 精确内部单射扩张/未指定坐标全避禁集；实际I=Hartogs(μ)，同一I适用全部内部位置输入；未相对化标签证书和同一L的forall7/2原核证书 |
 | DiagramPlacements.paste_placements / extend_two_placements / three_copy_placement | ConstructionPlacementPasting.paste_kernel_certificate/construction_kernel_certificate; ConstructionPlacementTriple.construction_kernel_certificate | 完整根/像交集、全部指定边、全禁集新鲜性及三份位置的三个精确像交集；forall6未相对化拼接、forall10/10同一L原核证书；实际Diagram消费者尚待接入 |
+| Actual Diagram range/common subdiagram/permutation consumers | ConstructionDiagramPlacements.range/common/overlap/agree/root_kernel_certificate | 精确右锥/范围交集、给定公共右锥的标签等价、完整ExactOverlap.of_common、实际排列图相等及同位置根固定排列；四条未相对化原ZF、forall9同一L原核证书；实际overlap处方/amalgamate尚待 |
 
-本批paste/two/three-copy精确位置合同正式2896构建/31735声明，9命令/5次trust=0全退出0、零警告，此前31664足迹不变且无新增公理依赖，见verification/placement-pasting-acceptance.json。此前支撑族新鲜成员、排列扩张/实际标签及完整Base/T记录均保留；不以构建/声明数作为整体完成比例。
+本批实际Diagram的范围/标签/根固定排列等合同正式2897构建/31782声明，9命令/5次trust=0全退出0、零警告，此前31735足迹不变且无新增公理依赖，见verification/diagram-placements-acceptance.json。此前位置/标签/完整Base/T记录保留；不以构建/声明数作为整体完成比例。
 
-仍在原阶段8。真正待做的是实际Diagram共同扩张/descent/Hull消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。
+仍在原阶段8。真正待做的是实际overlap处方/amalgamate/common_extension/descent/Hull消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。

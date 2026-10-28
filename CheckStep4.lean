@@ -11725,4 +11725,29 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementTriple.constructionSentence)) :=
   ConstructionPlacementTriple.construction_kernel_certificate
 
+-- Exact actual Diagram contracts required by overlap-prescription and descent consumers.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDiagramPlacements.rangeSentence) :=
+  ConstructionDiagramPlacements.range_kernel_certificate
+
+-- Exact actual Diagram contracts required by overlap-prescription and descent consumers.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDiagramPlacements.commonSentence) :=
+  ConstructionDiagramPlacements.common_kernel_certificate
+
+-- Exact actual Diagram contracts required by overlap-prescription and descent consumers.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDiagramPlacements.overlapSentence) :=
+  ConstructionDiagramPlacements.overlap_kernel_certificate
+
+-- Exact actual Diagram contracts required by overlap-prescription and descent consumers.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionDiagramPlacements.agreeSentence) :=
+  ConstructionDiagramPlacements.agree_kernel_certificate
+
+-- Exact actual Diagram contracts required by overlap-prescription and descent consumers.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionDiagramPlacements.rootSentence)) :=
+  ConstructionDiagramPlacements.root_kernel_certificate
+
 end PPAC.Migration.Step4Checks
