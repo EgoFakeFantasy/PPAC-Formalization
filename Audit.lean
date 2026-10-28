@@ -33638,3 +33638,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingComponentRebase.constructionSentence
 #print axioms PPAC.Migration.ForcingComponentRebase.construction_models
 #print axioms PPAC.Migration.ForcingComponentRebase.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingTailTransport.common_transport_iff
+#print axioms PPAC.Migration.ForcingTailTransport.at_iff_row
+#print axioms PPAC.Migration.ForcingTailTransport.at_transport_iff
+#print axioms PPAC.Migration.ForcingTailTransport.transportSentence
+#print axioms PPAC.Migration.ForcingTailTransport.transport_models
+#print axioms PPAC.Migration.ForcingTailTransport.transport_kernel_certificate
+#print axioms PPAC.Migration.ForcingTailCovariance.TailFixes
+#print axioms PPAC.Migration.ForcingTailCovariance.tail_fixed
+#print axioms PPAC.Migration.ForcingTailCovariance.represents_same_code
+#print axioms PPAC.Migration.ForcingTailCovariance.tailFixes
+#print axioms PPAC.Migration.ForcingTailCovariance.tailFixes_freeClosed
+#print axioms PPAC.Migration.ForcingTailCovariance.tailFixes_semantics
+#print axioms PPAC.Migration.ForcingTailCovariance.covarianceSentence
+#print axioms PPAC.Migration.ForcingTailCovariance.covariance_models
+#print axioms PPAC.Migration.ForcingTailCovariance.covariance_kernel_certificate

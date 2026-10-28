@@ -592,10 +592,20 @@ This supersedes the preceding pending app-family/naturality item. Source present
 
 Pinned TailGraphs.lean:21–88 is consumed by ForcingTailCodes.construction_kernel_certificate. Native functionSpace/Separation constructs the exact all-internal-omega local-name code set. At uses the actual Data projection, exact vertex fiber and glued projection; At and finite-tail Represents are functional. Every glued value has an actual representative code by existing projection/toGlued surjectivity and internal uniformization. Choice is discharged in the same existing L; the original kernel background stays nativeZF. Exact candidates, chain, object family and gluing hypotheses remain explicit.
 
-Transport/same-code covariance, leastCode, PersistentCodes, OrdinalCodes, CodeLinks and final internal Con remain open. No external generic or host sequence is introduced. Full acceptance: verification/tail-code-acceptance.json. Original stage remains 8.
+At transport and same-code covariance are now covered below. leastCode, PersistentCodes, OrdinalCodes, CodeLinks and final internal Con remain open. No external generic or host sequence is introduced. Full acceptance: verification/tail-code-acceptance.json. Original stage remains 8.
 
 ## Original-root component transport (2026-10-29)
 
 Pinned QuotientTransport.rebaseGlued/rebaseGlued_toGlued:353–370 and componentEquiv/componentEquiv_toGlued:408–421. ForcingComponentRebase proves that the same point carrier, set quotient, projection and all toGlued graphs work for every root in the same Common component. It consumes the existing whole-component transport and rebases its target to the original chosen root, retaining the same actual bijection and whole-component naturality. The explicit source component-stabilizer premise is Move v V plus EncodedCommon v V. Distinct source/target Systems and their existing full app family are preserved; no new quotient or representative selection is built.
 
-construction_kernel_certificate is an ordinary nativeZF original-kernel certificate. At transport, same-code covariance, leastCode, later code consumers and final Con remain open. Full acceptance: verification/component-rebase-acceptance.json; 2959 builds, 33130 audited declarations, all 33117 old footprints unchanged, 13 new declarations, no new axiom dependencies.
+construction_kernel_certificate is an ordinary nativeZF original-kernel certificate. At transport and same-code covariance are now covered below; leastCode, later code consumers and final Con remain open. Full acceptance: verification/component-rebase-acceptance.json; 2959 builds, 33130 audited declarations, all 33117 old footprints unchanged, 13 new declarations, no new axiom dependencies.
+
+## Actual At transport and same-code covariance (2026-10-29)
+
+Pinned TailGraphs.at_transport_iff/tail_fixed/represents_same_code:103–187. ForcingTailTransport proves both directions for arbitrary actual names. It constructs and consumes the existing local-name and fiber bijections; the reverse direction pulls back actual witnesses using name-action, quotient and glued injectivity. Locality of the input name is derived, not assumed. The same original root is retained on both sides.
+
+ForcingTailCovariance uses the actual internal Chain and a genuine range fixer at one internal index. Existing arrow/range contraction makes all later vertices and local names literally fixed. At transport then gives the same-code Represents equivalence, combining thresholds with internal omega ordinal comparison. All nonstandard internal indices are retained; no invariance of the ground wellorder is asserted.
+
+transport_kernel_certificate and covariance_kernel_certificate are ordinary nativeZF original-kernel endpoints. Existing presentation/bound stability, actual eligible/app families, availability preservation, gluing/naturality, component stabilizer, Chain/ChainCode/TailFixes remain explicit. leastCode and later code consumers, stages 9–11 and final internal Con are unfinished. Reuse InternalWellOrderChoice.unique_minimum for the next fixed-wellorder leastCode step.
+
+Full verification: 2961 jobs, 33145 declarations; 15 new and all 33130 old footprints unchanged, nine commands/five trust=0 checks passed, zero warnings/new axiom dependencies. See verification/tail-covariance-acceptance.json.

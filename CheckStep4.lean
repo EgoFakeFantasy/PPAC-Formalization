@@ -12247,4 +12247,18 @@ example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps targetI
       (ForcingComponentRebase.constructionSentence D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v V)) :=
   ForcingComponentRebase.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v V
 
+-- Pinned TailGraphs transport in the original nativeZF kernel.
+example {k m : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1))
+    (base : Fin k → Fin m) (rho : Fin 7 → Fin m)
+    (I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT vertex vertexT gluePr gluePrT Q Z phi sigma sigmaT b bT : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingTailTransport.transportSentence R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT vertex vertexT gluePr gluePrT Q Z phi sigma sigmaT b bT)) :=
+  ForcingTailTransport.transport_kernel_certificate R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT vertex vertexT gluePr gluePrT Q Z phi sigma sigmaT b bT
+
+-- Pinned TailGraphs covariance in the original nativeZF kernel.
+example {k m : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1))
+    (base : Fin k → Fin m) (rho : Fin 7 → Fin m)
+    (I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT gluePr gluePrT Q Z phi b bT zero vertices chain names code : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingTailCovariance.covarianceSentence R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT gluePr gluePrT Q Z phi b bT zero vertices chain names code)) :=
+  ForcingTailCovariance.covariance_kernel_certificate R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT gluePr gluePrT Q Z phi b bT zero vertices chain names code
+
 end PPAC.Migration.Step4Checks

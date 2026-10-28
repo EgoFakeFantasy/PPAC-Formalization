@@ -782,3 +782,5 @@ import PPAC.Migration.ForcingEligibleTransport
 import PPAC.Migration.ForcingEligibleReindex
 import PPAC.Migration.ForcingTailCodes
 import PPAC.Migration.ForcingComponentRebase
+import PPAC.Migration.ForcingTailTransport
+import PPAC.Migration.ForcingTailCovariance

@@ -2352,7 +2352,9 @@ def main() -> None:
                                ('forcing_eligible_transport', 'ForcingEligibleTransport', 22),
                                ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15),
                                ('forcing_tail_codes', 'ForcingTailCodes', 32),
-                               ('forcing_component_rebase', 'ForcingComponentRebase', 13)):
+                               ('forcing_component_rebase', 'ForcingComponentRebase', 13),
+                               ('forcing_tail_transport', 'ForcingTailTransport', 6),
+                               ('forcing_tail_covariance', 'ForcingTailCovariance', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5779,7 +5781,10 @@ def main() -> None:
         "source_TailGraphs_actual_At_Represents_unique_proved": True,
         "source_TailGraphs_every_glued_value_has_literal_representing_code_same_L_native_kernel_proved": True,
         "source_TailGraphs_same_code_covariance_and_leastCode_completed": False,
-        "source_TailGraphs_code_scope": "Exact existing candidate names, chain, object family and gluing laws are consumed. All internal omega entries are actual local normalized names. Existing internal uniformization supplies representative sequences inside the same L; no ambient Choice or host sequence is substituted. Transport/same-code covariance, persistent selection, ordinal rank, CodeLinks and final Con remain unproved.",
+        "source_TailGraphs_actual_At_transport_iff_proved": True,
+        "source_TailGraphs_internal_tail_fixed_and_same_code_covariance_proved": True,
+        "source_TailGraphs_leastCode_completed": False,
+        "source_TailGraphs_code_scope": "Exact existing candidate names, chain, object family and gluing laws are consumed. All internal omega entries are actual local normalized names. Existing internal uniformization supplies representative sequences inside the same L; no ambient Choice or host sequence is substituted. Actual At transport and same-code covariance are now proved in nativeZF using the same internal chain and code. leastCode, persistent selection, ordinal rank, CodeLinks and final Con remain unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_component_rebase_same_set_quotient_proved": True,
         "source_component_transport_target_original_root_constructed": True,

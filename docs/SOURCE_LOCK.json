@@ -88747,6 +88747,199 @@
           "propext"
         ]
       }
+    },
+    "forcing_tail_transport": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/TailGraphs.lean",
+      "source_sha256": "975243cb100359738ae77c9d13d358f6e7ac8b8404f13cceb996f264fa1cabbe",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/QuotientTransport.lean": "a393c4554a0b7810804f0c212a3be700eca2a4c08fc6813fcc853bb4bd3768f4",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/ComponentGluing.lean": "2eab5d64ca52c887f56a5fdf522a5b4cbb16bff2cd6dad54ba010646c23d3f65",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/PersistentCodes.lean": "f86be2754f8ac929d3917bd94ff69e43f27f1509bf72f2022f004a184d3c0b46",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/CodeLinks.lean": "288e2cd8da74a8696fe2c7997fdb242183a35cb25de5414f24d4953216baccc9"
+      },
+      "adapter": "PPAC/Migration/ForcingTailTransport.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingTailCodes.lean": "215dc7b8bd21f18f07783e36a5a416d6c34a5d8a9e49eca0ac0931c1701fe1fa",
+        "PPAC/Migration/ForcingEligibleReindex.lean": "e67e131c12e384228d5a28ea39c29f240823d7b909fd337c5897ac9d953362cf",
+        "PPAC/Migration/ForcingLocalNameTransport.lean": "7ccdcd3a8e7a37a863a3882b7d641262ca9cf7394c1c2709369ba53fbf571aeb",
+        "PPAC/Migration/ForcingLocalQuotientTransport.lean": "058e8273ed0ec018955edf0b5f1e87e8186c84f0568e7e427ec2e051a3de1d37",
+        "PPAC/Migration/ForcingReindexSystem.lean": "81bbf10db1a359612c61bb87af34bcd56ce237940ad95de8ad0f3b52512b5ca0",
+        "PPAC/Migration/ForcingGluedTransport.lean": "efb20dd9159b97d6de97d79fc314c2ae9d164a1c0de93bd674dffbc4f6a2f2f4",
+        "PPAC/Migration/ForcingComponentRebase.lean": "e049439a77b202285d6ba79a10e7651f31a24f5ac592c793f702b14a52216135"
+      },
+      "source_declarations": [
+        "ChainCode.at_transport_iff:103-146"
+      ],
+      "consumers": [
+        "TailGraphs.represents_same_code:170-187",
+        "PersistentCodes.Works"
+      ],
+      "scope": "Full At transport equivalence for arbitrary actual names, not only names assumed local. Constructs the existing literal name-action bijection and fiber restriction bijection from actual Data/app rows. Reverse direction pulls back the target local name, uses raw-name action injectivity, quotient injection and glued injection. Common-component membership is reflected with the inverse permutation and original component stabilizer. Explicit inputs are the existing actual eligible families, all-diagram app Family, proved availability preservation, all-fiber maps and glued naturality/injection from the preceding transport assembly; none is the At conclusion. R/Hdom stay arbitrary and actual source specialization is preserved. Ordinary nativeZF original-kernel endpoint; no object Choice or new quotient.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingTailTransport.common_transport_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailTransport.at_iff_row": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailTransport.at_transport_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailTransport.transportSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailTransport.transport_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailTransport.transport_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_tail_covariance": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/TailGraphs.lean",
+      "source_sha256": "975243cb100359738ae77c9d13d358f6e7ac8b8404f13cceb996f264fa1cabbe",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/QuotientTransport.lean": "a393c4554a0b7810804f0c212a3be700eca2a4c08fc6813fcc853bb4bd3768f4",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/ComponentGluing.lean": "2eab5d64ca52c887f56a5fdf522a5b4cbb16bff2cd6dad54ba010646c23d3f65",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/PersistentCodes.lean": "f86be2754f8ac929d3917bd94ff69e43f27f1509bf72f2022f004a184d3c0b46",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/CodeLinks.lean": "288e2cd8da74a8696fe2c7997fdb242183a35cb25de5414f24d4953216baccc9"
+      },
+      "adapter": "PPAC/Migration/ForcingTailCovariance.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingTailTransport.lean": "5df3116c172b3ec9d130029c0d3675030bdc41c120392b3a4d258f29795d4667",
+        "PPAC/Migration/ForcingTailCodes.lean": "215dc7b8bd21f18f07783e36a5a416d6c34a5d8a9e49eca0ac0931c1701fe1fa",
+        "PPAC/Migration/ConstructionComponentCofinal.lean": "8dab46e7262bd3a35f140767becadb8f61470177a0e1a6442b704f513bedf8ed",
+        "PPAC/Migration/ConstructionDescentPlacement.lean": "686ab5df3f6fbcee758f89658770f42729dbc7e0e2e15c3e20fa91d286783472",
+        "PPAC/Migration/ForcingComponentMove.lean": "bd3d1e48de34cb8d6a112e3b6c09b5527d3662e199e936ab65dd18dec42db5ef",
+        "PPAC/Migration/ForcingLocalNames.lean": "e63ee72cfc3850e3b743d3a0bb22ed70c02297b3919b3ed7f93a16fa0af56eae"
+      },
+      "source_declarations": [
+        "ChainCode.tail_fixed:152-165",
+        "ChainCode.represents_same_code:170-187"
+      ],
+      "consumers": [
+        "TailGraphs.leastCode_covariance:216",
+        "PersistentCodes.Works/Same",
+        "CodeLinks"
+      ],
+      "scope": "Object TailFixes is a genuine range fixer at an internal chain index. Existing Chain arrows imply all later ranges shrink; literal local-name support fixes each entry and its vertex. Uses the same all-internal-omega ChainCode at both Cohen filters, with thresholds combined using internal ordinal comparison, including nonstandard indices. At transport is applied in both directions with the same literal name and vertex. Ordinary nativeZF original-kernel covariance sentence. Existing presentation, bound stability, eligible/app families, availability, gluing transport, component stabilizer, internal Chain/ChainCode and tail-fixer premises are explicit. No code wellorder invariance is assumed. leastCode, persistent/ordinal selection, CodeLinks and final internal Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingTailCovariance.TailFixes": [],
+        "PPAC.Migration.ForcingTailCovariance.tail_fixed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.represents_same_code": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.tailFixes": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.tailFixes_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.tailFixes_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.covarianceSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.covariance_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTailCovariance.covariance_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
