@@ -32751,3 +32751,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCompatiblePlacement.constructionSentence
 #print axioms PPAC.Migration.ConstructionCompatiblePlacement.construction_models
 #print axioms PPAC.Migration.ConstructionCompatiblePlacement.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingSupportingRoot.Code
+#print axioms PPAC.Migration.ForcingSupportingRoot.code_mem
+#print axioms PPAC.Migration.ForcingSupportingRoot.exists_code
+#print axioms PPAC.Migration.ForcingSupportingRoot.code_le
+#print axioms PPAC.Migration.ForcingSupportingRoot.restricted_condition
+#print axioms PPAC.Migration.ForcingSupportingRoot.moved_code
+#print axioms PPAC.Migration.ForcingSupportingRoot.forces_at_supporting_root
+#print axioms PPAC.Migration.ForcingSupportingRoot.forces_iff_restrict
+#print axioms PPAC.Migration.ForcingSupportingRoot.code
+#print axioms PPAC.Migration.ForcingSupportingRoot.code_semantics
+#print axioms PPAC.Migration.ForcingSupportingRoot.tupleSupported
+#print axioms PPAC.Migration.ForcingSupportingRoot.tupleSupported_semantics
+#print axioms PPAC.Migration.ForcingSupportingRoot.constructionSentence
+#print axioms PPAC.Migration.ForcingSupportingRoot.construction_models
+#print axioms PPAC.Migration.ForcingSupportingRoot.construction_kernel_certificate

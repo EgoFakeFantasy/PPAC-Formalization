@@ -208,4 +208,11 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 | OrbitNames.smul_name_eq_of_diagram_eq:238 → LocalQuotients.active_equal_independent | ForcingConditionGraphs.exists_inverse/exists_composition；ProductCovariance.inverse；NameConjugacy.composition/inverse_action/injective；既有 fixedAll 和 AgreesOn | ForcingSupportedNames.kernel_certificate 是普通 nativeZF 中字面相等模式；全秩名字、精确支撑范围保留。没有重建名字／作用后端 |
 | ProductForcing.compatible_placement:149 → ChoiceFailure.forces_at_supporting_root 和 LocalQuotients.active_equal | 已有 diagram_range、原生恒等／注射复合、extend_permutation_off、common_extension_three、Cohen exists_support/exists_moved/restricted_entry/exists_union | 实际 pi、精确范围交集、实际共同 Product 下界；对象 forall22 原核句相对化到已有同一 L。原实际基数／最终行／合并父背景保留，不假定输出置换或共同加强条件 |
 
-RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值域，不是额外见证假设。相容放置不等于支撑强迫保持：源 ChoiceFailure:279/305 的稠密性消费仍未完成；后者直接复用本批输出及原强迫正则性／对称性，不另建后端。来源、直接复用文件及全部足迹见 SOURCE_LOCK.forcing_supported_names / construction_compatible_placement。
+RootCompatible 仅展开原根限制相容性，范围是 p 的精确内部值域，不是额外见证假设。相容放置与支撑强迫保持分别验收；源 ChoiceFailure:279/305 的稠密性消费现已由 ForcingSupportingRoot 完成，直接复用已验收的输出及强迫正则性／对称性。来源、直接复用文件及全部足迹见 SOURCE_LOCK.forcing_supported_names / construction_compatible_placement。
+
+
+## 已实际消费的支撑根强迫
+
+ForcingSupportingRoot.forces_at_supporting_root / forces_iff_restrict 直接调用现成 ForcingSeparation.symmetry（已经处理实际 Product、全秩 HS 及新作用图参数）和 ForcingFormula.of_dense/mono；不用再写一套公式对称或环境重索引。既有 small-support Filter 通过 is_normal 给出所需正规性。Code 仅展开既有 Kuratowski pair 与 WithTop singleton，moved_code 以现成图唯一性连接 compatible_placement 的输出。
+
+construction_kernel_certificate 为任意源 Formula/参数元组的同一内部 L 原核模式；源背景、精确范围／限制和全秩 HS 均保留。后续 LocalQuotients.active_equal/support_descent 尚未完成，但不再重报 root restriction 为未迁移。第 10 阶段全部内部码仍单独未验收。

@@ -11860,4 +11860,12 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionCompatiblePlacement.constructionSentence)) :=
   ConstructionCompatiblePlacement.construction_kernel_certificate
 
+
+-- Pinned supporting-root implication and restriction iff, SAME internal L, all-rank HS.
+example {k n : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing dR z zR : Fin k) (v : Fin n → Fin k) (phi : Source.Formula n) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingSupportingRoot.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing dR z zR v phi))) :=
+  ForcingSupportingRoot.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing dR z zR v phi
+
 end PPAC.Migration.Step4Checks

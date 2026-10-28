@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第 8 阶段。完整 Base/T、实际 μ/K、内部塔与饱和结论、全模式 L 解释、Diagram 共同扩张、Product descent、countable conservative hull 及整个 Common 分量共尾链均已完成。EquivariantMixing 已完成。本批接通 OrbitNames 支撑图相同所导出的名字字面相等，以及 ProductForcing 的实际相容放置：固定根的排列、精确范围交集、真实共同加强条件。LocalQuotients 的支撑下降/实际商与限制、CellTowers/实际纤维粘合以及第 9–11 阶段仍未完成，最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。完整 Base/T、实际 μ/K、内部塔与饱和结论、全模式 L 解释、Diagram 共同扩张、Product descent、countable conservative hull 及整个 Common 分量共尾链均已完成。EquivariantMixing 已完成。OrbitNames 字面相等及实际 compatible_placement 已完成。本批接通原 ChoiceFailure 的根支撑强迫保持与根限制等价，返回同一内部 L 的对象模式原核证书。LocalQuotients 的支撑下降/实际商与限制、CellTowers/实际纤维粘合以及第 9–11 阶段仍未完成，最终内部 Con 未取得。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。活动依赖和供体均未修改。
 
@@ -20,18 +20,19 @@
 
 ## 本批实际证明与验收
 
-本批沿原 LocalQuotients.active_equal/support_descent 调用链迁移两项源证明，未另立证明路线：
+源 ChoiceFailure.forces_at_supporting_root:279 / forces_iff_restrict:305 → ForcingSupportingRoot.construction_kernel_certificate。真实调用在 LocalQuotients.support_descent:154/198、同文件 restriction:530、AvailableRecords:89 和 OrdinalCodes:269。
 
-- OrbitNames.smul_name_eq_of_diagram_eq:238 → ForcingSupportedNames.kernel_certificate：普通 nativeZF 中的对象模式证书。复用现成逆／复合图、实际 Product 作用、名字复合／逆作用／单射性，证明支撑图相同则全秩名字字面相等。精确支撑范围与固定子群前提保留，没有假定输出名字相等。
-- ProductForcing.compatible_placement:149–204 → ConstructionCompatiblePlacement.construction_kernel_certificate：原 nativeZF 中同一内部 L 的 forall22 构造句。复用已完成的 extend_permutation_off、三图合并（第二图重复）、Cohen support/move/restrict/union；实际构造固定完整根范围的排列、精确交集及共同 Product 下界。保留源实际 D≤μ、I=Hartogs(μ)、同一最终 Row/AllMergers/单子前提。输出排列／共同加强条件均非输入。Choice 由现成内部 L 解释消去，没有向普通 ZF 添加 Choice。
+直接复用上一批实际 compatible_placement、现有 ForcingSeparation.symmetry、ForcingFormula.of_dense/mono 和 ProductPoset.preorder；实际小支撑 Filter 的正规性由 ForcingNormalFilter.is_normal 消去，不作为新的假设。根下任意条件从原 WithTop 序解包；固定根排列及共同加强条件实际构造。参数逐个受固定子群支撑，因此作用后保持字面相同。反向蕴含由实际限制包含和单调性给出。
 
-本批完整验收通过：2914 项构建、32266 项声明；新增 33 项，旧 32233 项足迹逐项不变。9 条命令（5 次 trust=0）均退出 0，零警告、无新增公理依赖。75 份固定源、2469 份当前文件指纹匹配，底座与供体干净；358 个退役模块全部不存在，恢复档／补丁哈希匹配。见 verification/support-placement-acceptance.json。最终内部 Con 仍未完成；本地验收不替代历史 CRLF 文件的干净检出复现。
+最终模式在同一原内部 L 中保留任意源公式、全部秩 HS 参数、精确根范围及 Cohen 限制，结论为原条件与根限制条件的强迫等价；允许源 :279 中 s≤p，:305 的 s=p 是自反特例。Choice 沿现成 L 解释消去，未加到普通 nativeZF。没有给定稠密见证、共同下界或固定性结论。外部公式模式不是全部内部／非标准公式码归纳，后者仍归第 10 阶段。
+
+本批全量验收通过：2915 项构建、32281 项声明；新增 15 项，旧 32266 项足迹逐项不变。9 条命令（5 次 trust=0）均退出 0，零警告、无新增公理依赖。75 份固定源、2470 份当前文件哈希匹配，底座与供体干净；358 个退役模块仍全部不存在，恢复档／补丁哈希匹配。见 verification/support-root-acceptance.json。首轮验收示例的命名空间遗漏已修正并完整重跑通过；证明模块未因此修改。当前是本地工作树验收，历史 CRLF 检出复现项仍保留。
 
 ## 继续顺序与边界
 
 | 真实剩余项 | 已有实现必须复用 | 实际需要接入 |
 |---|---|---|
-| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等及实际 compatible_placement 已接；下一项消费它们和现成强迫对称/正则性，迁移 ChoiceFailure.forces_at_supporting_root:279 / forces_iff_restrict:305，再消费已完成 EquivariantMixing 接原 LocalQuotients 的 active_equal/support_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
+| ComponentGluing 后续 | 本批顶点/箭头/整个 Common 分量共尾链，原完整 Diagram/函数/商构造 | OrbitNames 字面相等、实际 compatible_placement 和 ChoiceFailure 根限制已接；下一项迁移原 LocalQuotients.active_equal_independent/active_equal，再消费已有 EquivariantMixing 接 support_descent、实际商与限制/精确交集，再接真实 Fiber/arrowMap/粘合及全纤维单射/满射；源 Component 商类型和 iff_zigzag 无调用，不作为前置 |
 | CellTowers 实际消费者 | 已完成 CompleteRound.Built、Saturation 的实际历史/嵌入/来源、countable conservative hull | 同一最终 T 内 stage range 的原 cell Attachment，有限旧系数与依赖图、内部首次出现及原重排/商消费者；不重建塔 |
 | 原 9–11 | 同一具体系统、已有全秩名字/HS/强迫前端、底座 Proof/Sat | SVC/ACwo/商单射/¬AC，全秩 PP/Main、ZF/U 专用内部检查和全部矛盾码传输，最终主句终验 |
 

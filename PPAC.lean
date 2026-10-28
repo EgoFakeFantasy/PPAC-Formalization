@@ -722,3 +722,5 @@ import PPAC.Migration.ForcingEquivariantMix
 import PPAC.Migration.ForcingSupportedNames
 
 import PPAC.Migration.ConstructionCompatiblePlacement
+
+import PPAC.Migration.ForcingSupportingRoot
