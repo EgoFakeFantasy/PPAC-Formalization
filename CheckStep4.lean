@@ -11642,4 +11642,11 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionSaturationMergers.constructionSentence)) :=
   ConstructionSaturationMergers.construction_kernel_certificate
 
+-- SAME actual MergerTower, strengthened by an internal K-injection
+-- whose EVERY output lies outside the distinguished mark's full cone.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionSaturationComplement.constructionSentence)) :=
+  ConstructionSaturationComplement.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

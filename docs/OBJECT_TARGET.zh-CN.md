@@ -56,4 +56,4 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 
 本批又已完成有界原父背景下的实际完整内部多轮塔、全部内部阶段Valid/AllSmall、全12表／21合同及全塔精确相邻转移；forall17/16同一内部L相对化原核证书已验收。
 
-真正未闭合：第 8 的具体ω₁+1／基数参数实例化、可数适当阶段覆盖和多轮 Saturation／最终饱和单子，第 9 同一系统的模型应用，第 10 全秩 PP/Main、ZF/U 专用内部 Proof/Con、全部内部／非标准矛盾码传输和最终原核闭句。已有外部标准证书变换不替代内部码证明。最新验收和原 1–11 状态见 STATUS／AGENT_WORKFLOW。
+真正未闭合：第8的ideal probes/最终基数等式、ConcreteSystem μ/K及实际Placement/Hull消费者，第9同一系统的模型应用，第10全秩PP/Main、ZF/U专用内部Proof/Con、全部内部/非标准矛盾码传输和最终原核闭句。内部ω₁+1、countable_stage、完整实际塔、最终Probe/Merger、同根图RootSystem/乘积相等iffCopyRel均已完成；最新验收见STATUS。complement_probes本批已接同一实际塔并通过全量验收，取得forall15同一L相对化的原核对象证书。已有外部标准证书变换不替代内部码证明。

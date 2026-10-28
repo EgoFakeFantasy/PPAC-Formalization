@@ -31905,3 +31905,27 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSaturationMergers.constructionSentence
 #print axioms PPAC.Migration.ConstructionSaturationMergers.construction_models
 #print axioms PPAC.Migration.ConstructionSaturationMergers.construction_kernel_certificate
+
+-- Exact source complement_probes on the SAME final tower and all internal K labels.
+#print axioms PPAC.Migration.ConstructionSaturationComplement.Complement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complement_probes
+#print axioms PPAC.Migration.ConstructionSaturationComplement.AllComplement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.AllHistoriesComplement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.ComplementTower
+#print axioms PPAC.Migration.ConstructionSaturationComplement.tower_complement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.exists_complement_tower
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complement_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complement_semantics
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allComplement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allComplement_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allComplement_semantics
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allHistoriesComplement
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allHistoriesComplement_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationComplement.allHistoriesComplement_semantics
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complementTower
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complementTower_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationComplement.complementTower_semantics
+#print axioms PPAC.Migration.ConstructionSaturationComplement.constructionSentence
+#print axioms PPAC.Migration.ConstructionSaturationComplement.construction_models
+#print axioms PPAC.Migration.ConstructionSaturationComplement.construction_kernel_certificate
