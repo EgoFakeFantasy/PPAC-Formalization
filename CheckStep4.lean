@@ -11649,4 +11649,11 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionSaturationComplement.constructionSentence)) :=
   ConstructionSaturationComplement.construction_kernel_certificate
 
+-- SAME actual final tower; original K=mu gives MODEL-INTERNAL bijections
+-- from both the full final carrier and full mark-cone complement to mu.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionSaturationCardinals.constructionSentence)) :=
+  ConstructionSaturationCardinals.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

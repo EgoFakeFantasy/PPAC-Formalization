@@ -31929,3 +31929,32 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSaturationComplement.constructionSentence
 #print axioms PPAC.Migration.ConstructionSaturationComplement.construction_models
 #print axioms PPAC.Migration.ConstructionSaturationComplement.construction_kernel_certificate
+
+-- Source target/complement cardinal equalities via actual internal bijection graphs on SAME tower.
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.ComplementSet
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.exists_complement_set
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.Cardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.AllCardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.AllHistoriesCardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.CardinalTower
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.tower_cardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.exists_cardinal_tower
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.complementSet
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.complementSet_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.complementSet_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalsF
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalsF_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalsF_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allCardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allCardinals_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allCardinals_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allHistoriesCardinals
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allHistoriesCardinals_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.allHistoriesCardinals_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalTower
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalTower_freeClosed
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.cardinalTower_semantics
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.constructionSentence
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.construction_models
+#print axioms PPAC.Migration.ConstructionSaturationCardinals.construction_kernel_certificate
