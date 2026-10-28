@@ -13,7 +13,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；剩余重标号和移动滤子传输消费者；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
+| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；不同系统的 availability/精确纤维重标号与实际标签 app 族已完成；剩余移动顶点/整分量粘合和移动滤子消费者；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -22,11 +22,11 @@
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | QuotientActions.labelTransport:291–310；QuotientTransport.ReindexIso.available_iff/availability/fiberEquiv/gluedEquiv_toGlued:210–293 | 已完成同一实际 T 的标签系统/全部纤维与粘合基数/共同分量字面集合相等；现成图置换、条件和名字作用、限制图、Glued/toGlued | 按源自然性方块接重标号后的完整 availability/纤维，再将实际规范粘合映射传输到整个分量；同一泛型的结论不能冒充移动滤子的结论 |
+| 8 当前 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move:285–325 → QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 现成 permute_sub、完整顶点/箭头/Common、实际 toGlued 双射与交换律；本批不同系统的 availability/精确纤维传输及实际标签 app 族 | 只把源移动顶点/箭头公式接到现成图置换，再消费真实纤维限制图的自然性，将规范粘合映射传输到整个分量；不得另选顶点双射或把固定滤子结论冒充移动滤子结论 |
 | 8 后续 | QuotientTransport.local_eq_transport_iff:65、eligibleSystemTransport:309 → CodeLinks | 现成条件/名字作用、实际商投影、同一分量粘合及箭头交换律、整个分量共尾链、已完成 countable conservative hull | 将重标号合同实际用于移动滤子的 eligibleSystem，再接原代码链；只适配实际消费者，不重造 hull 或笼统 CellTowers 基础 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 
-本批普通 nativeZF 的 Target 消费端点及原 nativeZF 中同一内部 L 的实际 T/标签联合存在端点已接通；前者消费完整实际 Target，后者实际调用已有最终 T 生产者。因此 IdealProbes/Small/K≈μ 不再是具体标签实例的外置前提。源码与精确依赖由 SOURCE_LOCK、THEOREM_COVERAGE 保留。新的辅助引理必须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、顶点 quotient/zigzag API 不作为主线前置；实际纤维粘合商已完成。发布仍须独立授权。
+本批 ReindexIso 的通用原核端点允许不同源/目标 System；实际标签端点进一步构造唯一 app 函数族并证明全部自然性。两个端点均为普通 nativeZF 推导；整分量 gluedEquiv_toGlued 和移动滤子 eligibleSystem 仍须按上表实际消费者接入，不能仅以同一标签系统实例替代它们。源码与精确依赖由 SOURCE_LOCK、THEOREM_COVERAGE 保留。新的辅助引理必须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、顶点 quotient/zigzag API 不作为主线前置。发布仍须独立授权。

@@ -277,4 +277,8 @@ ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 dia
 
 随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
 
-ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。原源下一消费者为 QuotientActions.labelTransport:291–310 和 QuotientTransport.ReindexIso 的自然性与整分量传输:210–293。
+ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。该批之后的 labelTransport 与 ReindexIso availability/精确纤维部分现由下述两个模块完成；整分量传输仍待接。
+
+ForcingReindexSystem 复用 permute_sub 和 available_iff_at_sub，将不同源/目标系统的原自然性方块转成双向 availability，对任意相同完整理想保留精确纤维；ZF.exists_restriction 直接产生实际 app 的纤维双射。ForcingLabelTransport 的 app 行取原坐标置换限制到 diagram.range，所有行唯一；原生 functionalImage/setFunctionFromTo 收集全族。实际行双射和字面限制图的自然性直接消去标签实例的 ReindexIso 前提。
+
+下一实际调用为 ConcreteSystem.Vertex.permute/Arrow.move/Common.move:285–325 与 QuotientTransport.gluedEquiv_toGlued:252–293。需接的是源移动公式与现成图置换/顶点接口的适配，不是重做顶点、子图、理想、Common 或粘合后端。随后接移动滤子的 local_eq_transport_iff/eligibleSystemTransport 与 CodeLinks。

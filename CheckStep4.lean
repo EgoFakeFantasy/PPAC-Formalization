@@ -12164,4 +12164,16 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingConcreteLabels.constructionSentence)) :=
   ForcingConcreteLabels.construction_kernel_certificate
 
+
+-- Reindexing keeps source/target systems distinct; the label instance constructs actual apps.
+example {k : Nat} (D I mul e diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingReindexSystem.transportSentence D I mul e diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi)) :=
+  ForcingReindexSystem.transport_kernel_certificate D I mul e diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi
+
+example {k : Nat} (D I mul e pi : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingLabelTransport.constructionSentence D I mul e pi)) :=
+  ForcingLabelTransport.construction_kernel_certificate D I mul e pi
+
 end PPAC.Migration.Step4Checks
