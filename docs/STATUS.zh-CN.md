@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-28）
 
-**仍在原第 8 阶段。实际 LocalQuotient、商投影、限制图及其恒等/复合已完成；本批局部商限制单射与精确交集也已取得同一内部 L 的 nativeZF 原推导核证书并通过全量验收。下一项是资格谓词/eligibleSystem 与实际纤维粘合/CellTowers；后续第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。实际商与限制、单射/交集已完成；本批资格谓词、资格反射及实际 eligibleSystem.Obj 集合取得四项 nativeZF 原推导核证书并通过全量验收。下一项是实际 Obj 限制图与系统公理/装配，再接实际纤维粘合/CellTowers；第 9–11 阶段和最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -13,7 +13,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/eligibleSystem、CellTowers／实际纤维粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图/系统公理/装配、CellTowers／实际纤维粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
@@ -22,20 +22,19 @@
 
 | 固定源声明 | 已验收目标端点 | 精确范围 |
 |---|---|---|
-| LocalQuotient.restrict_injective:511–532 | ForcingLocalInjectivity.construction_kernel_certificate | 目标商投影相等给出加强图处 EqG；原 Cohen 见证限制到支撑根仍在同一滤子内，复用 supporting_root 反推原根 EqG，由原投影取得实际限制图单射 |
-| LocalQuotient.intersection:536–554 | ForcingLocalIntersection.construction_kernel_certificate | 两侧限制到共同图的商类相等，返回实际根商类及到原两侧类的限制边；两个原 Cohen 限制保持 |
+| AvailableRecords.EligibleName/Eligible/eligible_ofName/eligible_restrict:18–75 | ForcingEligibility.{representative,restriction}_kernel_certificate | 保留 LocalRecords 的精确 classOf/isClass；实际 Cohen 见证、同一代表名字与实际投影；普通 nativeZF |
+| AvailableRecords.eligible_restrict_iff:77–97 | ForcingEligibilityReflection.construction_kernel_certificate | 消费已有 supporting_root、实际 labelSet 固定性和源完整背景；同一内部 L 的 nativeZF 原核证书 |
+| AvailableRecords.eligibleSystem.Obj:272 | ForcingEligibleObjects.construction_kernel_certificate | 在实际商集上用现成 Separation 构造恰好满足 r≤q 与 Eligible 的 Obj 集合；普通 nativeZF |
 
-两个端点均返回 FirstOrder.Derives nativeZF [] (Project.fo_sentence (ConstructibleGround.relative …))。复用同一已验收内部 L 消去语义 Choice；原完整大小、有限合并、历史、具体呈现背景保留。交集直接消费既有 localName_descent 和实际商投影，未假定根类/下降名字或新相容性，也未重建支撑根、名字下降或商后端。源码 AvailableRecords.eligibleSystem 在第 279、283 行分别消费两项结论；ClassFibers 第 399 行也消费交集。
+全量验收：**2934 项构建，32561 项声明审计**；新增 34 项，旧 32527 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1759 项无公理、30802 项具有既已记录的依赖。75 份固定源及 2489 份当前文件哈希匹配。记录：verification/eligibility-acceptance.json。资格模块约 272 秒完成编译；未提高限额或重启仍运行的编译。修复了参数槽归一化、结果专属隐参数推断及冗余 rfl；不宣称首次编译全部通过。
 
-全量验收：**2931 项构建，32527 项声明审计**；新增 11 项，旧 32516 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1759 项无公理、30768 项具有既已记录的依赖，不能称全仓仅标准三项。75 份固定源及 2486 份当前文件哈希匹配。记录：verification/local-intersection-acceptance.json。交集语义证明删除了 simp 已闭合目标后的冗余 rfl，不宣称全部首次编译通过。
-
-局部商构造及限制图此前已验收，记录见 verification/local-quotient-acceptance.json。LocalQuotient 向移动滤子的 transport 及其后续消费者未在这两批宣称完成。已批准退役的 358 个 Packet/reader 模块均不存在，恢复 ZIP/补丁哈希匹配；未恢复退役反射。临时审计文件、比较快照和叶编译日志按本批白名单清理，保留正式全量日志、预审计和验收报告。
+本批不等于完整 eligibleSystem：实际 Obj 限制图、系统公理和统一索引装配仍待完成。局部商单射/交集见 verification/local-intersection-acceptance.json，实际商和限制图见 local-quotient-acceptance.json。向移动滤子的 quotient transport 及其消费者也未宣称完成。358 个已批准退役模块仍不存在，恢复 ZIP/补丁哈希匹配。正式日志和报告保留，仅清理本批明确列出的临时文件。
 
 ## 继续顺序与边界
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | AvailableRecords.EligibleName / Eligible / eligible_restrict_iff → eligibleSystem:265 | 现成公式强迫 tuple_congr、supporting_root、labelSet 固定性，以及本批已完成局部商限制单射/精确交集 | 实际资格谓词、限制及反射，并接同一系统的 Obj/限制/交集；第 279、283 行直接消费本批结论 |
+| 8 当前 | AvailableRecords.eligibleSystem:273–289 | 已验收资格/反射/实际 Obj、商限制恒等/复合/单射/交集，以及现成原生函数限制 | 构造实际 Obj 限制图并闭合系统公理和索引装配；第 282 行的 intersection_le_root 按固定源消费者接线，不重建底座 |
 | 8 后续 | ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 全分量共尾链、Product descent、CompleteRound.Built、同一实际历史/嵌入/来源、countable hull | 同一系统、所有纤维、全部内部索引及全纤维单射/满射；不重建塔 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |

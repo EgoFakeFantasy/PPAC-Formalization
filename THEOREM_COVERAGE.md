@@ -459,3 +459,11 @@ Full verification PASSED: 2929 jobs, 32516 declarations, 57 new and five ordinar
 | LocalQuotient.intersection:536–554 | ForcingLocalIntersection.construction_kernel_certificate | Use existing localName_descent and exact quotient projection to construct an actual root class with both restriction edges to the original classes; retain both original Cohen restrictions in the same filter. |
 
 Full verification PASSED: 2931 jobs, 32527 declarations, 11 new and two original nativeZF kernel endpoints relativized to the SAME existing internal L; all 32516 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2486 current hashes match. See verification/local-intersection-acceptance.json. The earlier pending local quotient injectivity/intersection obligations are now closed. Actual consumers: AvailableRecords.eligibleSystem:279/283 and ClassFibers:399. Eligibility/system assembly, transport to a moved filter, gluing/CellTowers and final internal Con remain incomplete; original stage remains 8.
+
+| Pinned eligibility consumer | Native original-kernel endpoint | Exact scope |
+|---|---|---|
+| AvailableRecords.EligibleName/Eligible/eligible_ofName/eligible_restrict:18–75 | ForcingEligibility.{representative,restriction}_kernel_certificate | Exact classOf/isClass AST, Cohen witness, same representative and actual projection; two ordinary nativeZF certificates. |
+| AvailableRecords.eligible_restrict_iff:77–97 | ForcingEligibilityReflection.construction_kernel_certificate | Existing supporting-root reflection and actual labelSet fixation; same internal L, full original background retained. |
+| AvailableRecords.eligibleSystem.Obj:272 | ForcingEligibleObjects.construction_kernel_certificate | Actual quotient subset, exactly below the root and eligible; native Separation, ordinary nativeZF. |
+
+Full verification PASSED: 2934 jobs, 32561 declarations, 34 new and four original-kernel endpoints; all 32527 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2489 current hashes match. See verification/eligibility-acceptance.json. Earlier eligibility and Obj obligations are now closed. Restricted Obj maps, full eligibleSystem assembly, quotient transport, gluing/CellTowers and final internal Con remain incomplete; original stage remains 8.

@@ -747,3 +747,7 @@ import PPAC.Migration.ForcingLocalRestriction
 
 import PPAC.Migration.ForcingLocalInjectivity
 import PPAC.Migration.ForcingLocalIntersection
+
+import PPAC.Migration.ForcingEligibility
+import PPAC.Migration.ForcingEligibilityReflection
+import PPAC.Migration.ForcingEligibleObjects

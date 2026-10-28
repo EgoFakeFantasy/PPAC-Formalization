@@ -12018,4 +12018,23 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingLocalIntersection.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y))) :=
   ForcingLocalIntersection.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y
 
+-- Exact isClass eligibility, root reflection and actual below-root object carrier.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w e G F mul g r labels E X pr sigma cls : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibility.representativeSentence rho I K B w e G F mul g r labels E X pr sigma cls)) :=
+  ForcingEligibility.representative_kernel_certificate rho I K B w e G F mul g r labels E X pr sigma cls
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w e G F mul g r s labels E X pr ps f x y : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibility.restrictionSentence rho I K B w e G F mul g r s labels E X pr ps f x y)) :=
+  ForcingEligibility.restriction_kernel_certificate rho I K B w e G F mul g r s labels E X pr ps f x y
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing c t b labels E nameBound X Y pr ps f x y : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingEligibilityReflection.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing c t b labels E nameBound X Y pr ps f x y))) :=
+  ForcingEligibilityReflection.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing c t b labels E nameBound X Y pr ps f x y
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul g r q labels E pr Q : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleObjects.constructionSentence rho G F mul g r q labels E pr Q)) :=
+  ForcingEligibleObjects.construction_kernel_certificate rho G F mul g r q labels E pr Q
+
 end PPAC.Migration.Step4Checks
