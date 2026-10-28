@@ -11663,4 +11663,16 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionIdealProbes.constructionSentence)) :=
   ConstructionIdealProbes.construction_kernel_certificate
 
+-- Actual FULL internal P(omega), its cardinal continuum, successor mu,
+-- mu^omega=mu/regularity/omega1 bound, and K=mu consumed by SAME IdealTower.
+-- The source Base geometric/countable-carrier contract remains explicit.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionConcreteCardinals.constructionSentence)) :=
+  ConstructionConcreteCardinals.construction_kernel_certificate
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionConcreteTower.constructionSentence)) :=
+  ConstructionConcreteTower.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

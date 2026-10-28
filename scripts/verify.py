@@ -2282,7 +2282,9 @@ def main() -> None:
                                ('existing_indexed_choice', 'ExistingIndexedChoice', 8),
                                ('construction_ideal_approximation', 'ConstructionIdealApproximation', 10),
                                ('construction_ideal_cofinal', 'ConstructionIdealCofinal', 8),
-                               ('construction_ideal_probes', 'ConstructionIdealProbes', 29)):
+                               ('construction_ideal_probes', 'ConstructionIdealProbes', 29),
+                               ('construction_concrete_cardinals', 'ConstructionConcreteCardinals', 14),
+                               ('construction_concrete_tower', 'ConstructionConcreteTower', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -5945,6 +5947,9 @@ def main() -> None:
         "source_ConeIdeal_no_countability_premise_internal_unit_and_all_indices_preserved": True,
         "source_SaturatedMonoids_all_final_divisors_arbitrary_internal_ideal_probes_native_kernel_certificate": True,
         "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": True,
+        "source_ConcreteSystem_actual_full_power_set_continuum_successor_mu_regular_and_countable_power_native_kernel_certificate": True,
+        "source_ConcreteSystem_K_equal_actual_mu_consumed_by_SAME_IdealTower_native_kernel_certificate": True,
+        "source_ConcreteSystem_fully_concrete_Base_T_without_geometric_parent_contract_complete": False,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

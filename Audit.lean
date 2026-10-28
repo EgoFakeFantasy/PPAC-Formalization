@@ -32015,3 +32015,27 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionIdealProbes.constructionSentence
 #print axioms PPAC.Migration.ConstructionIdealProbes.construction_models
 #print axioms PPAC.Migration.ConstructionIdealProbes.construction_kernel_certificate
+
+-- Actual internal continuum successor and K=mu, consumed by SAME full IdealTower.
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.cardinal_of_set
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.normalize_power
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.countable_bound
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.successor_countable_power
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.continuum_fixed_countable_power
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.omega_one_le_successor
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.Parameters
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.parameters_exists
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.parameters
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.parameters_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.parameters_semantics
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.constructionSentence
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.construction_models
+#print axioms PPAC.Migration.ConstructionConcreteCardinals.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionConcreteTower.Tower
+#print axioms PPAC.Migration.ConstructionConcreteTower.exists_tower
+#print axioms PPAC.Migration.ConstructionConcreteTower.tower
+#print axioms PPAC.Migration.ConstructionConcreteTower.tower_freeClosed
+#print axioms PPAC.Migration.ConstructionConcreteTower.tower_semantics
+#print axioms PPAC.Migration.ConstructionConcreteTower.constructionSentence
+#print axioms PPAC.Migration.ConstructionConcreteTower.construction_models
+#print axioms PPAC.Migration.ConstructionConcreteTower.construction_kernel_certificate
