@@ -2345,7 +2345,8 @@ def main() -> None:
                                ('forcing_reindex_system', 'ForcingReindexSystem', 23),
                                ('forcing_label_transport', 'ForcingLabelTransport', 17),
                                ('forcing_component_move', 'ForcingComponentMove', 25),
-                               ('forcing_glued_transport', 'ForcingGluedTransport', 30)):
+                               ('forcing_glued_transport', 'ForcingGluedTransport', 30),
+                               ('forcing_local_transport', 'ForcingLocalTransport', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5757,6 +5758,8 @@ def main() -> None:
         "source_ConcreteSystem_Vertex_permute_Arrow_move_Common_move_native_kernel_proved": True,
         "source_QuotientTransport_whole_component_gluedEquiv_toGlued_native_kernel_proved": True,
         "source_QuotientTransport_glued_scope": "Distinct source/target Systems; actual whole component quotients and projection graphs constructed with existing backend. Root-fiber composite is a set bijection agreeing with literal restricted app at every Common vertex. Original ReindexIso, conditional joins and root-fixing premises retained. Moving-filter eligibleSystem, full root-group action laws, CodeLinks, and final internal Con not asserted.",
+        "source_QuotientTransport_actual_moved_filter_and_local_eq_transport_iff_native_kernel_proved": True,
+        "source_QuotientTransport_local_transport_scope": "Constructs the actual Product action and moved Cohen filter from existing Presentation and coordinate permutation. Local equality is preserved and reflected for all internal mapped names with both filter and diagram moved. Uses existing moved_code and atomic symmetry, not fixed-filter equality. LocalName carrier bijection, actual quotient/eligible-class transport and eligibleSystemTransport remain unassembled.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,

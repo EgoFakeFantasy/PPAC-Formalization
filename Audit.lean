@@ -33488,3 +33488,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGluedTransport.constructionSentence
 #print axioms PPAC.Migration.ForcingGluedTransport.construction_models
 #print axioms PPAC.Migration.ForcingGluedTransport.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLocalTransport.CohenPart
+#print axioms PPAC.Migration.ForcingLocalTransport.part_of_action
+#print axioms PPAC.Migration.ForcingLocalTransport.part_permutation
+#print axioms PPAC.Migration.ForcingLocalTransport.image_mem_iff
+#print axioms PPAC.Migration.ForcingLocalTransport.filter_image
+#print axioms PPAC.Migration.ForcingLocalTransport.moved_code
+#print axioms PPAC.Migration.ForcingLocalTransport.local_eq_transport_iff
+#print axioms PPAC.Migration.ForcingLocalTransport.Law
+#print axioms PPAC.Migration.ForcingLocalTransport.Result
+#print axioms PPAC.Migration.ForcingLocalTransport.construct
+#print axioms PPAC.Migration.ForcingLocalTransport.cohenPart
+#print axioms PPAC.Migration.ForcingLocalTransport.cohenPart_semantics
+#print axioms PPAC.Migration.ForcingLocalTransport.law
+#print axioms PPAC.Migration.ForcingLocalTransport.law_semantics
+#print axioms PPAC.Migration.ForcingLocalTransport.result
+#print axioms PPAC.Migration.ForcingLocalTransport.result_semantics
+#print axioms PPAC.Migration.ForcingLocalTransport.constructionSentence
+#print axioms PPAC.Migration.ForcingLocalTransport.construction_models
+#print axioms PPAC.Migration.ForcingLocalTransport.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalTransport.assemblySentence
+#print axioms PPAC.Migration.ForcingLocalTransport.assembly_models
+#print axioms PPAC.Migration.ForcingLocalTransport.assembly_kernel_certificate

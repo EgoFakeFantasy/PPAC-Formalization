@@ -12188,4 +12188,14 @@ example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps targetI
       (SetTheory.Definitional.Project.fo_sentence (ForcingGluedTransport.constructionSentence D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v)) :=
   ForcingGluedTransport.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v
 
+
+-- Move the actual Cohen filter; transport local equality on all internal names.
+example {k : Nat} (rho : Fin 7 → Fin k) (mul a I K B w pi g : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalTransport.constructionSentence rho mul a I K B w pi g)) :=
+  ForcingLocalTransport.construction_kernel_certificate rho mul a I K B w pi g
+
+example {k : Nat} (rho : Fin 7 → Fin k) (mul I K B w pi g : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalTransport.assemblySentence rho mul I K B w pi g)) :=
+  ForcingLocalTransport.assembly_kernel_certificate rho mul I K B w pi g
+
 end PPAC.Migration.Step4Checks

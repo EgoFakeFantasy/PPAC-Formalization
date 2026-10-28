@@ -775,3 +775,4 @@ import PPAC.Migration.ForcingReindexSystem
 import PPAC.Migration.ForcingLabelTransport
 import PPAC.Migration.ForcingComponentMove
 import PPAC.Migration.ForcingGluedTransport
+import PPAC.Migration.ForcingLocalTransport

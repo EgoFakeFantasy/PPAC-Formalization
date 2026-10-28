@@ -284,3 +284,8 @@ ForcingReindexSystem 复用 permute_sub 和 available_iff_at_sub，将不同源/
 ForcingComponentMove 已直接复用 ForcingDiagramAction.exists_permute/unique、permute_sub、reverse、现成顶点编码和 arrow_common；实际置换保持单子索引与理想，移动实际箭头和整个 Common。ForcingGluedTransport 直接消费已有不同系统的 availability/纤维限制双射、同一 actual app 的 naturality、实际箭头双射和两端 toGlued 交换律。exists_gluing 仅装配现成纤维族、Point 载体、分量分离和商投影，不新增后端。
 
 RootMap 是源根纤维复合 c ∘ f ∘ b⁻¹ 的唯一集合关系，由既有原生 setFunctionFromTo 构造；证明所有 Common 顶点交换时，严格复用原共同后继路线。两个端点均在普通 nativeZF 原核中，源/目标 System 不必相同。本批未证明完整 RootGroup 单位/复合作用律。下一实际调用为移动滤子的 local_eq_transport_iff/eligibleSystemTransport，再接 CodeLinks；不重做 Base/T、L 全模式、hull 或商后端。
+
+
+ForcingLocalTransport 已消费 ForcingProductFamily.exists_action、ForcingLabelConjugacy.exists_image 和现成 Cohen 条件序同构。CohenPart 仅识别同一坐标置换的既有条件图；moved_code 直接复用 ConstructionCohenCompatibility.moved_of_image 与 ForcingSupportingRoot.moved_code；局部 EqG 双向证明调用已经完成的 atomic_symmetry，不新增名字递归或强迫关系。assembly_kernel_certificate 在普通 nativeZF 内构造实际作用和移动滤子，覆盖所有内部 diagram/映射名字对。下一接线是原 LocalName.transportEquiv 的实际载体保持，再消费现成 LocalQuotient 投影和商相等律；实际商/资格类自然性尚未闭合，不宣称 eligibleSystemTransport 已完成。
+
+后续 LocalName.transportEquiv 的边界保持应直接消费 ForcingPowerName.exists_bound 返回的稳定子下 Action bound bound，以及 map_subset；HS 保持用 hs_action，支撑保持用 fixed_transport/共轭 fixing_image。这些底座结论已存在，不能再列作待重新证明的基础设施。
