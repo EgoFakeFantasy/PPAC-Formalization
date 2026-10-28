@@ -32105,3 +32105,31 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionPlacementFreshness.familySentence
 #print axioms PPAC.Migration.ConstructionPlacementFreshness.family_models
 #print axioms PPAC.Migration.ConstructionPlacementFreshness.family_kernel_certificate
+
+-- Actual internal permutation extensions and SAME constructed Hartogs label set.
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.Difference
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.Extends
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.complement_equinumerous
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.join_injections
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.extend_permutation
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.Avoids
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.extend_permutation_off
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.exists_labels
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.extendsF
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.extendsF_freeClosed
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.extendsF_semantics
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.avoids
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.avoids_freeClosed
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.avoids_semantics
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.placement
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.placement_freeClosed
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.placement_semantics
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.constructionSentence
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.construction_models
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.labelsSentence
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.labels_models
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.labels_kernel_certificate
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.actualLabelsSentence
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.actualLabels_models
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionPlacementExtensions.actualLabels_kernel_certificate

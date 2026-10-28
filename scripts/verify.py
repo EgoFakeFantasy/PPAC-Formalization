@@ -2286,7 +2286,8 @@ def main() -> None:
                                ('construction_concrete_cardinals', 'ConstructionConcreteCardinals', 14),
                                ('construction_concrete_tower', 'ConstructionConcreteTower', 8),
                                ('construction_concrete_base', 'ConstructionConcreteBase', 24),
-                               ('construction_placement_freshness', 'ConstructionPlacementFreshness', 38)):
+                               ('construction_placement_freshness', 'ConstructionPlacementFreshness', 38),
+                               ('construction_placement_extensions', 'ConstructionPlacementExtensions', 26)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5972,6 +5973,10 @@ def main() -> None:
         "source_PlacementExtensions_set_valued_family_actual_row_relation_constructed": True,
         "source_PlacementExtensions_ground_Choice_discharged_in_same_internal_L": True,
         "source_PlacementExtensions_general_permutation_and_finite_overlap_placements_complete": False,
+        "source_DiagramPlacements_exact_internal_extend_permutation_off_kernel_certificate": True,
+        "source_ConcreteSystem_actual_Hartogs_label_set_non_small_native_ZF_kernel_certificate": True,
+        "source_ConcreteSystem_SAME_actual_label_set_ALL_internal_placement_inputs_kernel_certificate": True,
+        "source_DiagramPlacements_finite_overlap_paste_two_three_copy_complete": False,
         "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,

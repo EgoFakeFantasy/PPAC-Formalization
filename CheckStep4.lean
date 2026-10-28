@@ -11695,4 +11695,19 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionPlacementFreshness.familySentence)) :=
   ConstructionPlacementFreshness.family_kernel_certificate
 
+-- Pinned exact extend_permutation_off and original actual coordinate-set consumer.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementExtensions.constructionSentence)) :=
+  ConstructionPlacementExtensions.construction_kernel_certificate
+
+-- Pinned exact extend_permutation_off and original actual coordinate-set consumer.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence ConstructionPlacementExtensions.labelsSentence) :=
+  ConstructionPlacementExtensions.labels_kernel_certificate
+
+-- Pinned exact extend_permutation_off and original actual coordinate-set consumer.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ConstructionPlacementExtensions.actualLabelsSentence)) :=
+  ConstructionPlacementExtensions.actualLabels_kernel_certificate
+
 end PPAC.Migration.Step4Checks

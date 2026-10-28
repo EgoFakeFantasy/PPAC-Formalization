@@ -347,7 +347,8 @@ Decision density, atomic_truth, exists_truth_generic and byte compatibility are 
 | Saturation.countable_stage / probes / finiteMergers / ideal_probes / complement / cardinal | ConstructionSaturationCover/Probes/Mergers/IdealProbes/Complement/Cardinals | 全部内部指标、全部最终除子、任意理想，精确给定CopyRel；同一现成内部L |
 | ConcreteSystem.T | ConstructionConcreteCardinals/Tower/Base | 无给定Base几何、单子、μ/K、有效塔或最终行前提；同一实际最终T |
 | PlacementExtensions.countable_obstructions / exists_fresh_member | ConstructionPlacementFreshness.construction_kernel_certificate / family_kernel_certificate | 内部精确行关系和原集合值族；障碍集单射入C，任意预算界，源ω可数为实例；forall4/5同一L原核证书 |
+| DiagramPlacements.extend_permutation_off / ConcreteSystem.I | ConstructionPlacementExtensions.construction_kernel_certificate / labels_kernel_certificate / actualLabels_kernel_certificate | 精确内部单射扩张/未指定坐标全避禁集；实际I=Hartogs(μ)，同一I适用全部内部位置输入；未相对化标签证书和同一L的forall7/2原核证书 |
 
-本批新鲜支撑族合同正式2893构建/31638声明、9命令/5次trust=0全通过、零警告，此前31600足迹不变且无新增公理依赖，见verification/placement-freshness-acceptance.json。本表记录实际合同，不以构建/声明数作为主定理完成比例。
+本批新鲜排列/实际标签合同正式2894构建/31664声明，9命令/5次trust=0全退出0、零警告，此前31638足迹不变且无新增公理依赖，见verification/placement-extensions-acceptance.json。此前支撑族新鲜成员和完整Base/T记录均保留；不以构建/声明数作为整体完成比例。
 
-仍在原阶段8。真正待做的是排列扩张、有限重叠Placement/Hull实际消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。
+仍在原阶段8。真正待做的是有限重叠图Placement/Hull实际消费者，以及第9模型应用、第10全秩PP/Main和ZF/U专用全部内部Proof/Con传输、第11终验。最终对象Derives nativeZF [] (Con_ZF→Con_U)未取得；U=ZF+PP+ACwo+¬AC。

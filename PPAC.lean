@@ -681,3 +681,5 @@ import PPAC.Migration.ConstructionConcreteTower
 import PPAC.Migration.ConstructionConcreteBase
 
 import PPAC.Migration.ConstructionPlacementFreshness
+
+import PPAC.Migration.ConstructionPlacementExtensions
