@@ -2292,7 +2292,8 @@ def main() -> None:
                                ('construction_placement_triple', 'ConstructionPlacementTriple', 34),
                                ('construction_diagram_placements', 'ConstructionDiagramPlacements', 47),
                                ('construction_diagram_prescription', 'ConstructionDiagramPrescription', 50),
-                               ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28)):
+                               ('construction_diagram_amalgamation', 'ConstructionDiagramAmalgamation', 28),
+                               ('construction_diagram_three', 'ConstructionDiagramThree', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5996,6 +5997,8 @@ def main() -> None:
         "source_actual_Diagram_SAME_P_roots_WHOLE_carrier_all_internal_finite_family_common_extension_kernel_certificate": True,
         "source_actual_Diagram_amalgamate_supplied_whole_embedding_or_diagram_premise": False,
         "source_actual_Diagram_fixed_three_family_and_Cohen_descent_consumers_complete": False,
+        "source_actual_Diagram_fixed_three_internal_family_common_extension_kernel_certificate": True,
+        "source_actual_Cohen_compatibility_union_and_full_descent_complete": False,
         "source_ConcreteSystem_SAME_actual_final_row_full_ObjectFields_Probes_Mergers_Ideals_Complement_and_Cardinals": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,

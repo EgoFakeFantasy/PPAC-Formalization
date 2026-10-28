@@ -32337,3 +32337,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionDiagramAmalgamation.constructionSentence
 #print axioms PPAC.Migration.ConstructionDiagramAmalgamation.construction_models
 #print axioms PPAC.Migration.ConstructionDiagramAmalgamation.construction_kernel_certificate
+
+-- Actual internal three-diagram consumer of finite whole-carrier amalgamation.
+#print axioms PPAC.Migration.ConstructionDiagramThree.three_members
+#print axioms PPAC.Migration.ConstructionDiagramThree.three_family
+#print axioms PPAC.Migration.ConstructionDiagramThree.common_extension_three
+#print axioms PPAC.Migration.ConstructionDiagramThree.lowerBound
+#print axioms PPAC.Migration.ConstructionDiagramThree.lowerBound_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramThree.lowerBound_semantics
+#print axioms PPAC.Migration.ConstructionDiagramThree.constructionSentence
+#print axioms PPAC.Migration.ConstructionDiagramThree.construction_models
+#print axioms PPAC.Migration.ConstructionDiagramThree.construction_kernel_certificate

@@ -11768,4 +11768,10 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionDiagramAmalgamation.constructionSentence)) :=
   ConstructionDiagramAmalgamation.construction_kernel_certificate
 
+-- Pinned common_extension_three: internal ordinal-three family, existing finite amalgamation.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionDiagramThree.constructionSentence)) :=
+  ConstructionDiagramThree.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
