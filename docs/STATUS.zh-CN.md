@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。本批已完成原 Matches 等价性、同纤维不坍缩、整个实际分量的 Glued 商及投影、每个整纤维的 toGlued 双射和箭头交换律，取得两个普通 nativeZF 原核端点，完整验收通过。下一项是具体标签系统与纤维/粘合基数，再接移动滤子传输和 CodeLinks。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批新增实际 labelSystem、中心 availability 与左整除等价，以及同一精确标签纤维/整个实际粘合商的 μ 基数联合原核端点。该端点仍保留已有 IdealProbes/Small/K≈μ 输入，最终 T 的联合实例化尚待接入。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -13,7 +13,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；具体标签系统/基数及移动滤子传输仍待接；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；具体标签系统与带原探针/基数前提的纤维/粘合基数已接；同一最终 T 输入消去、标签集合相等及移动滤子传输仍待接；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
@@ -22,20 +22,20 @@
 
 | 固定源声明 | 目标端点 | 精确范围 |
 |---|---|---|
-| ComponentGluing.Point/Matches/refl/symm/trans/same/common:301–347 | ForcingComponentMatches.construction_kernel_certificate | 构造整个内部顶点纤维不交并；共同收缩比较的自反/对称/传递，同纤维相等判别与 Common 对应 |
-| gluingSetoid/Glued/toGlued/toGlued_injective/toGlued_surjective/fiberEquivGlued/toGlued_arrow:349–396 | ForcingComponentGluing.construction_kernel_certificate | 构造整个指定 Common 分量的实际等价类集合及投影；每个指定完整纤维都有到此商的规范集合函数双射，且与实际箭头交换 |
+| LocalRecords.labelSystem:606–619；ConcreteSystem.label_available_center:175–182 | ForcingLabelSystem.construction_kernel_certificate | 对全部内部图构造字面范围对象族和包含映射族，证明完整 System 及中心可用性等价于左整除 |
+| ConcreteSystem.labelFiberEmbedding:185–202；labelFiber_cardinal/gluedLabel_cardinal:248–267 的探针/基数步骤 | ForcingLabelCardinality.construction_kernel_certificate | 同一实际标签系统、指定精确纤维、整个实际粘合商及全部规范双射；从 IdealProbes、D≤μ、K≈μ 得到纤维与粘合商均 ≈μ |
 
-全量验收：**2945 项构建，32823 项声明审计**；新增 88 项，旧 32735 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1807 项无公理、31016 项具有既已记录的依赖；75 份固定源及 2500 份当前文件哈希匹配。记录：verification/component-gluing-acceptance.json。
+全量验收：**2947 项构建，32862 项声明审计**；新增 39 项，旧 32823 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1814 项无公理、31048 项具有既已记录的依赖；75 份固定源及 2502 份当前文件哈希匹配。记录：verification/label-cardinality-acceptance.json。
 
-两个端点保留同一实际 System 和原 ConditionalJoins 前提；已有实际 eligibleSystem 与 ObjectFields 提供相应输入。完整载体由现成并集/积/分离取得，商类和投影复用 native functionalImage/setFunctionFromTo；商类相等证明适配已有 LocalQuotient 方法，关系替换为实际 Matches。没有使用 Lean 宿主 Quotient 代替对象商，没有限制秩/外部可数性或额外对象 Choice。
+本批构造复用原生范围、恒等函数、functionalImage、逆双射、函数复合与 Cantor–Bernstein；探针图复合到实际 diagram，直接落入精确 availability 纤维。没有把宿主 Cardinal 等式或 Lean Quotient 当作对象结论。
 
-源调用核对修正了旧流程中笼统的“接 CellTowers”：Glued 的直接消费者是 ConcreteSystem.gluedLabel_cardinal、QuotientTransport 与 CodeLinks。现成 countable conservative hull 和完整饱和 T 已完成，不再列作待重建。标签范围系统及相应纤维/粘合基数的具体适配尚未登记/接通；移动滤子传输及最终内部 Con 仍未完成。358 个批准退役模块保持删除。
+真实边界：同一最终 T 的 Row/ObjectFields/AllIdeals/Cardinals 已由 ConstructionConcreteBase.Target 提供，本批还没有将它整体代入联合端点；这是一项已有生产者的接线，不能说理想探针/饱和/基数数学缺失。原 labelFiberSet_common 的字面集合相等也尚未登记。移动滤子传输、CodeLinks 和最终内部 Con 未完成。358 个批准退役模块保持删除。
 
 ## 继续顺序与边界
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | LocalRecords.labelSystem:606–619 → ConcreteSystem.label_available_center/labelFiberEmbedding/labelFiber_cardinal/gluedLabel_cardinal:175–267 | 现成图范围/包含映射/完整 System、实际饱和最终 T、ConstructionIdealProbes.ideal_probes、μ/K 基数界、本批整纤维到实际粘合的双射 | 接入字面的标签范围系统，将实际 availability 对齐除子型，再消费已有理想探针与基数界得到整个标签纤维及粘合基数；不重做饱和、理想探针或基数后端 |
+| 8 当前 | ConcreteSystem.labelFiberSet_common:230–234 与 labelFiber_cardinal/gluedLabel_cardinal:248–267 的最终 T 实例 | 已完成 ForcingLabelSystem、ForcingLabelCardinality、ConstructionConcreteBase.Target 中同一 Row/ObjectFields/AllIdeals/Cardinals | 消费该 Target 消去本批 IdealProbes/Small/K≈μ 输入；接字面标签集合沿箭头/共同后继相等。已有饱和、理想探针和基数后端不重做 |
 | 8 后续 | QuotientActions.labelTransport／QuotientTransport.gluedEquiv_toGlued → CodeLinks | 现成条件/名字作用、实际商投影、同一分量粘合及箭头交换律、整个分量共尾链、已完成 countable conservative hull | 接移动滤子与商/粘合传输，再接原代码链；只适配原消费者所需合同，不把已完成 hull 或笼统 CellTowers 重列为基础缺口 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |

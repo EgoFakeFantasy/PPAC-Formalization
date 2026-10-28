@@ -271,4 +271,8 @@ ForcingComponentMatches 直接复用 successors_directed/compose、实际箭头�
 
 ForcingComponentGluing 复用原生分离、functionalImage/setFunctionFromTo 取得整个指定 Common 分量的 Matches 商及投影。ForcingLocalQuotient.exists_quotient/class_eq_iff 的构造与证明方法被适配，未把绑定 ActiveEqual 的旧结论直接改名。满射按源证明使用共同后继和实际箭头前像；所有整纤维的规范双射与箭头交换律均有原核对象证书。
 
-下一真实消费者为 LocalRecords.labelSystem:606–619 和 ConcreteSystem.label_available_center/labelFiberEmbedding/labelFiber_cardinal/gluedLabel_cardinal:175–267。其字面范围/包含映射实例尚未接入；现成完整 System 接口、ConstructionIdealProbes.ideal_probes、实际饱和 T 和 μ/K 基数界必须复用。随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
+ForcingLabelSystem 已用原生范围和恒等图构造 LocalRecords.labelSystem 的字面对象/映射族；System 四定律直接以集合元素相等及范围交集证明。中心可用性复用 sub_range 和 diagram 单射，对齐源左整除。
+
+ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 diagram 复合，得到整个精确标签纤维的单射；逆 diagram 和 D≤μ 给出上界，原生 Cantor–Bernstein 得到纤维≈μ，再消费已完成 AllFiberMaps 得到实际粘合商≈μ。联合原核端点仍保留 IdealProbes/Small/K≈μ 输入。ConstructionConcreteBase.Target:118–126 已提供同一最终 Row、ObjectFields、AllIdeals、Cardinals；下一步只接其生产输出，不重做饱和 T、探针或基数理论。labelFiberSet_common 的字面集合结论仍需按实际箭头消费。
+
+随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。

@@ -12141,4 +12141,16 @@ example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps root : 
       (SetTheory.Definitional.Project.fo_sentence (ForcingComponentGluing.constructionSentence D I mul e q diagrams objImage objects S mapImage maps root)) :=
   ForcingComponentGluing.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps root
 
+
+-- Literal label System and exact fiber/glued cardinalities in the native kernel.
+example {k : Nat} (D I mul e : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingLabelSystem.constructionSentence D I mul e)) :=
+  ForcingLabelSystem.construction_kernel_certificate D I mul e
+
+example {k : Nat} (D I mul e q r a U K mu mark b : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingLabelCardinality.constructionSentence D I mul e q r a U K mu mark b)) :=
+  ForcingLabelCardinality.construction_kernel_certificate D I mul e q r a U K mu mark b
+
 end PPAC.Migration.Step4Checks
