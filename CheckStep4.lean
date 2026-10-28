@@ -12176,4 +12176,16 @@ example {k : Nat} (D I mul e pi : Fin k) :
       (SetTheory.Definitional.Project.fo_sentence (ForcingLabelTransport.constructionSentence D I mul e pi)) :=
   ForcingLabelTransport.construction_kernel_certificate D I mul e pi
 
+
+-- Actual vertex movement and root-fiber transport on the entire component.
+example {k : Nat} (D I mul q A pi : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingComponentMove.constructionSentence D I mul q A pi)) :=
+  ForcingComponentMove.construction_kernel_certificate D I mul q A pi
+
+example {k : Nat} (D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingGluedTransport.constructionSentence D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v)) :=
+  ForcingGluedTransport.construction_kernel_certificate D I mul e q diagrams objImage objects S mapImage maps targetImage targets targetMapImage targetMaps appImage apps pi v
+
 end PPAC.Migration.Step4Checks

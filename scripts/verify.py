@@ -2343,7 +2343,9 @@ def main() -> None:
                                ('forcing_label_cardinality', 'ForcingLabelCardinality', 9),
                                ('forcing_concrete_labels', 'ForcingConcreteLabels', 28),
                                ('forcing_reindex_system', 'ForcingReindexSystem', 23),
-                               ('forcing_label_transport', 'ForcingLabelTransport', 17)):
+                               ('forcing_label_transport', 'ForcingLabelTransport', 17),
+                               ('forcing_component_move', 'ForcingComponentMove', 25),
+                               ('forcing_glued_transport', 'ForcingGluedTransport', 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5751,7 +5753,10 @@ def main() -> None:
         "source_ConcreteSystem_same_actual_T_labels_scope": "ConstructionConcreteBase actual tower and final Target are jointly constructed in the existing internal L; the SAME Row/ObjectFields/AllIdeals/Cardinals discharge the probe and cardinal hypotheses. Every internal coordinate set has a literal label System with all exact fiber/glued cardinalities and Common fiber set equality. Moving-filter transport, CodeLinks and final internal Con remain unproved.",
         "source_QuotientTransport_ReindexIso_exact_availability_and_fiber_transport_native_kernel_proved": True,
         "source_QuotientActions_actual_labelTransport_app_family_native_kernel_constructed": True,
-        "source_QuotientTransport_reindex_scope": "Distinct source/target actual Systems; source naturality square and actual per-diagram app bijections imply complete availability and exact-fiber transport by literal restrictions. Label instance constructs the entire unique app family from the coordinate permutation. Whole-component glued transport, moving-filter eligibleSystem instantiation and final internal Con are not asserted.",
+        "source_QuotientTransport_reindex_scope": "Distinct source/target actual Systems; source naturality square and actual per-diagram app bijections imply complete availability and exact-fiber transport by literal restrictions. Label instance constructs the entire unique app family from the coordinate permutation. Whole-component glued transport is supplied by ForcingGluedTransport; moving-filter eligibleSystem instantiation and final internal Con remain unproved.",
+        "source_ConcreteSystem_Vertex_permute_Arrow_move_Common_move_native_kernel_proved": True,
+        "source_QuotientTransport_whole_component_gluedEquiv_toGlued_native_kernel_proved": True,
+        "source_QuotientTransport_glued_scope": "Distinct source/target Systems; actual whole component quotients and projection graphs constructed with existing backend. Root-fiber composite is a set bijection agreeing with literal restricted app at every Common vertex. Original ReindexIso, conditional joins and root-fixing premises retained. Moving-filter eligibleSystem, full root-group action laws, CodeLinks, and final internal Con not asserted.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,

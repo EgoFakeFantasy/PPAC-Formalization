@@ -277,8 +277,10 @@ ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 dia
 
 随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
 
-ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。该批之后的 labelTransport 与 ReindexIso availability/精确纤维部分现由下述两个模块完成；整分量传输仍待接。
+ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。该批之后的 labelTransport 与 ReindexIso availability/精确纤维部分现由下述两个模块完成；整分量传输现由下述 ForcingGluedTransport 完成。
 
 ForcingReindexSystem 复用 permute_sub 和 available_iff_at_sub，将不同源/目标系统的原自然性方块转成双向 availability，对任意相同完整理想保留精确纤维；ZF.exists_restriction 直接产生实际 app 的纤维双射。ForcingLabelTransport 的 app 行取原坐标置换限制到 diagram.range，所有行唯一；原生 functionalImage/setFunctionFromTo 收集全族。实际行双射和字面限制图的自然性直接消去标签实例的 ReindexIso 前提。
 
-下一实际调用为 ConcreteSystem.Vertex.permute/Arrow.move/Common.move:285–325 与 QuotientTransport.gluedEquiv_toGlued:252–293。需接的是源移动公式与现成图置换/顶点接口的适配，不是重做顶点、子图、理想、Common 或粘合后端。随后接移动滤子的 local_eq_transport_iff/eligibleSystemTransport 与 CodeLinks。
+ForcingComponentMove 已直接复用 ForcingDiagramAction.exists_permute/unique、permute_sub、reverse、现成顶点编码和 arrow_common；实际置换保持单子索引与理想，移动实际箭头和整个 Common。ForcingGluedTransport 直接消费已有不同系统的 availability/纤维限制双射、同一 actual app 的 naturality、实际箭头双射和两端 toGlued 交换律。exists_gluing 仅装配现成纤维族、Point 载体、分量分离和商投影，不新增后端。
+
+RootMap 是源根纤维复合 c ∘ f ∘ b⁻¹ 的唯一集合关系，由既有原生 setFunctionFromTo 构造；证明所有 Common 顶点交换时，严格复用原共同后继路线。两个端点均在普通 nativeZF 原核中，源/目标 System 不必相同。本批未证明完整 RootGroup 单位/复合作用律。下一实际调用为移动滤子的 local_eq_transport_iff/eligibleSystemTransport，再接 CodeLinks；不重做 Base/T、L 全模式、hull 或商后端。
