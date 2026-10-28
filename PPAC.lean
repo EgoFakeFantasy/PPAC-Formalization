@@ -770,3 +770,4 @@ import PPAC.Migration.ForcingComponentMatches
 import PPAC.Migration.ForcingComponentGluing
 import PPAC.Migration.ForcingLabelSystem
 import PPAC.Migration.ForcingLabelCardinality
+import PPAC.Migration.ForcingConcreteLabels

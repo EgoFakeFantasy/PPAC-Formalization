@@ -273,6 +273,8 @@ ForcingComponentGluing 复用原生分离、functionalImage/setFunctionFromTo �
 
 ForcingLabelSystem 已用原生范围和恒等图构造 LocalRecords.labelSystem 的字面对象/映射族；System 四定律直接以集合元素相等及范围交集证明。中心可用性复用 sub_range 和 diagram 单射，对齐源左整除。
 
-ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 diagram 复合，得到整个精确标签纤维的单射；逆 diagram 和 D≤μ 给出上界，原生 Cantor–Bernstein 得到纤维≈μ，再消费已完成 AllFiberMaps 得到实际粘合商≈μ。联合原核端点仍保留 IdealProbes/Small/K≈μ 输入。ConstructionConcreteBase.Target:118–126 已提供同一最终 Row、ObjectFields、AllIdeals、Cardinals；下一步只接其生产输出，不重做饱和 T、探针或基数理论。labelFiberSet_common 的字面集合结论仍需按实际箭头消费。
+ForcingLabelCardinality 用既有 IdealProbes 的同一集合函数与实际 diagram 复合，得到整个精确标签纤维的单射；逆 diagram 和 D≤μ 给出上界，原生 Cantor–Bernstein 得到纤维≈μ，再消费已完成 AllFiberMaps 得到实际粘合商≈μ。通用原核端点保留 IdealProbes/Small/K≈μ 输入；本批 ForcingConcreteLabels 已消费 ConstructionConcreteBase.Target:118–126 的同一最终 Row、ObjectFields、AllIdeals、Cardinals，将它们全部消去。labelFiberSet_common 的字面集合结论也已由实际箭头逐点保持标签值和共同后继满射得到。
 
 随后接 QuotientActions.labelTransport、QuotientTransport 和 CodeLinks。旧“接 CellTowers”的笼统描述已撤销；已有 countable conservative hull 不是待重做数学。localName_of_raw 无当前调用，不新增为前置。
+
+ForcingConcreteLabels.exists_actual 实际调用 ConstructionConcreteBase.exists_tower_data 与 target_of_tower_data，保留同一历史和最终行，再为每个内部坐标集合产生标签 System、全部精确纤维/粘合基数及 Common 纤维集合相等。最终 construction_kernel_certificate 沿用 ConstructionConcreteBase 的内部 L 关闭方法；Ordinary ZF 不增加 Choice，底座完整 L/模式/递归证明均未复制。原源下一消费者为 QuotientActions.labelTransport:291–310 和 QuotientTransport.ReindexIso 的自然性与整分量传输:210–293。

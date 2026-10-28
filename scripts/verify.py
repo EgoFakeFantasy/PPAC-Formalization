@@ -2340,7 +2340,8 @@ def main() -> None:
                                ('forcing_component_matches', 'ForcingComponentMatches', 42),
                                ('forcing_component_gluing', 'ForcingComponentGluing', 46),
                                ('forcing_label_system', 'ForcingLabelSystem', 30),
-                               ('forcing_label_cardinality', 'ForcingLabelCardinality', 9)):
+                               ('forcing_label_cardinality', 'ForcingLabelCardinality', 9),
+                               ('forcing_concrete_labels', 'ForcingConcreteLabels', 28)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5743,6 +5744,9 @@ def main() -> None:
         "source_LocalRecords_literal_labelSystem_and_centers_native_kernel_proved": True,
         "source_ConcreteSystem_exact_label_fiber_and_glued_cardinalities_native_kernel_proved": True,
         "source_ConcreteSystem_label_cardinality_scope": "Same actual label System, exact fiber and entire glued component. Original IdealProbes, Small D mu and K equinumerous mu premises retained; existing final-T producers have not yet been jointly instantiated here. labelFiberSet_common, moving-filter transport and final internal Con are not asserted.",
+        "source_ConcreteSystem_same_actual_T_label_fiber_glued_cardinality_instance_proved": True,
+        "source_ConcreteSystem_labelFiberSet_common_literal_set_equality_proved": True,
+        "source_ConcreteSystem_same_actual_T_labels_scope": "ConstructionConcreteBase actual tower and final Target are jointly constructed in the existing internal L; the SAME Row/ObjectFields/AllIdeals/Cardinals discharge the probe and cardinal hypotheses. Every internal coordinate set has a literal label System with all exact fiber/glued cardinalities and Common fiber set equality. Moving-filter transport, CodeLinks and final internal Con remain unproved.",
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,

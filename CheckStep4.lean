@@ -12153,4 +12153,15 @@ example {k : Nat} (D I mul e q r a U K mu mark b : Fin k) :
       (SetTheory.Definitional.Project.fo_sentence (ForcingLabelCardinality.constructionSentence D I mul e q r a U K mu mark b)) :=
   ForcingLabelCardinality.construction_kernel_certificate D I mul e q r a U K mu mark b
 
+
+-- Consume the same completed final Target; no probe/cardinality hypotheses remain.
+example {k : Nat} (w Q R top zero mu history kappa D I mul e mark H C incoming base : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingConcreteLabels.targetSentence w Q R top zero mu history kappa D I mul e mark H C incoming base)) :=
+  ForcingConcreteLabels.target_kernel_certificate w Q R top zero mu history kappa D I mul e mark H C incoming base
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingConcreteLabels.constructionSentence)) :=
+  ForcingConcreteLabels.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks
