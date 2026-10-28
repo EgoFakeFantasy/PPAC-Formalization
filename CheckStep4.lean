@@ -12092,4 +12092,17 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incomin
         (ForcingEligibleSystem.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
   ForcingEligibleSystem.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
 
+
+-- Actual availability ideals, both for an internal System and for the constructed eligibleSystem.
+example {k : Nat} (D I mul e diagrams objImage objects S mapImage maps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingSystemAvailability.systemSentence D I mul e diagrams objImage objects S mapImage maps)) :=
+  ForcingSystemAvailability.system_kernel_certificate D I mul e diagrams objImage objects S mapImage maps
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingSystemAvailability.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
+  ForcingSystemAvailability.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
+
 end PPAC.Migration.Step4Checks

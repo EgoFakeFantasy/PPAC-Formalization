@@ -261,4 +261,6 @@ ForcingEligibleFamily 现已装配全部内部图上的实际对象函数族。D
 
 ForcingEligibleSystem 已直接解包 MapRow，用 data_unique 对齐全部重复商集、投影和对象行，消费现有四定律并取得同一内部 L 的完整存在原核证书。族和箭头集合由既有 exists_family/exists_arrows 构造；原生 L/ZFC 与选择消去沿用 ConstructibleSource/ConstructibleGround，没有新建后台。
 
-下一真实消费者是 LocalRecords.System.Available/availability → AvailableRecords.classAvailability。它必须是同一系统限制映射的实际前像关系；现成 ConstructionIdealProbes.ConeIdeal、ConstructionIdealContraction 及 sub/范围交集已完成，保留消费，不再列为待建基础。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingSystemAvailability 已将 Available 定义为同一系统实际限制图的前像关系，复用原生 ZF.separation_exists_d 构造精确有界载体；单位、向下封闭和 join 封闭直接消费既有 System 字段。sub_mono 仅拼接 exists_sub/sub_sub/sub_eq；范围交集和 ConeIdeal 定义均来自旧接口。实际 eligibleSystem 和全部 availability 理想已联合取得同一内部 L 的原核存在证书。
+
+下一真实消费者是 AvailableRecords.available_sub_iff/availability_sub/Fiber/fiberRestrict_bijective，再接 ComponentGluing.arrowMap。现成 ConstructionIdealContraction.contract/eq_of_contract_eq 及子图复合、单射/复合定律保留复用，不再列为待建基础。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
