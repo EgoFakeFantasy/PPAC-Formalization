@@ -11938,4 +11938,30 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F c t b : Fin k) :
       (SetTheory.Definitional.Project.fo_sentence (ForcingLabelSet.constructionSentence rho I K B w mu G F c t b)) :=
   ForcingLabelSet.construction_kernel_certificate rho I K B w mu G F c t b
 
+
+-- Pinned LocalQuotients bounds and actual ground LocalName carrier/restrictions.
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLabelBound.equationSentence) :=
+  ForcingLabelBound.equation_kernel_certificate
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K c t b sigma B nu p G F mul : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingLabelBound.subsetSentence rho I K c t b sigma B nu p G F mul)) :=
+  ForcingLabelBound.subset_kernel_certificate rho I K c t b sigma B nu p G F mul
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F B H : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalNames.existenceSentence rho G F B H)) :=
+  ForcingLocalNames.existence_kernel_certificate rho G F B H
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F B H X Y : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalNames.uniquenessSentence rho G F B H X Y)) :=
+  ForcingLocalNames.uniqueness_kernel_certificate rho G F B H X Y
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F B J K HJ HK X Y : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingLocalNames.restrictionSentence rho G F B J K HJ HK X Y)) :=
+  ForcingLocalNames.restriction_kernel_certificate rho G F B J K HJ HK X Y
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLocalNames.compositionSentence) :=
+  ForcingLocalNames.composition_kernel_certificate
+
 end PPAC.Migration.Step4Checks

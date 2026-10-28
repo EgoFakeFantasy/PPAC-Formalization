@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 Bit、label 的存在唯一／HS／字面置换，以及全部 labelSet 的存在唯一／HS／全群固定现均已通过原核／全量验收；下一项是源 labelSet_subsetBound、规范化候选和实际 LocalName/商/限制，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 Bit、label 的存在唯一／HS／字面置换，以及全部 labelSet 的存在唯一／HS／全群固定现均已通过原核／全量验收；标签界、候选强迫子集结论及 LocalName 集合/名字层限制已接通；下一项是原规范化固定性、localNormalize/localName_descent、实际 LocalQuotient 及其限制，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -44,3 +44,6 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 此前 EquivariantMixing 全量验收通过：2912 项构建、32233 项声明审计；59 项新增声明和四条普通 nativeZF 原核端点，原有 32174 项足迹不变。9 条命令（含 5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源和 2467 份当前指纹匹配，底座/供体干净。验收为当前本地工作树，历史 CRLF/LF 检出复现项仍保留；见 verification/equivariant-mixing-acceptance.json。源 family permutation/coherence 前提保留；混合名字的 HS/固定性与实际 Product 保序均非假定结论。不得据此把 LocalQuotients 或实际纤维粘合标成完成。
 本批完整 support_descent 已验收：原子相等见证首先限制到 v，再构造实际根子群轨道族、证明相干性并产生根支撑 HS 混合名字，两侧原 Cohen 限制保持。全量验收通过：2919 项构建、32312 项声明；新增 19 项，旧 32293 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2474 份当前文件哈希匹配；底座与供体干净，358 个已批准退役模块保持删除，恢复档／补丁哈希匹配。见 verification/support-descent-acceptance.json。两模块及完整对象句子均首次编译通过。本地验收不替代历史 CRLF 检出复现。 下一步复用现成 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq、Separation/CollectedHS.fixed 及底座商接口接真实 LocalName/LocalQuotient；不能重报这些后端缺失。
+
+
+本批 LocalName 接线（原第 8 阶段，不新增阶段）：标签界等式、界内候选强迫子集、LocalName 载体存在唯一及名字层限制图/单射/复合共六个 nativeZF 原核端点。直接复用 Candidates、Separation、supported_mono 和原生恒等图。完整验收结果见当前 STATUS；载体完成不等于规范化/下降或商限制完成。下步只接源 separate_fixed/normalize_fixed/localNormalize/localName_descent，已完成的 support_descent 与后端均不重做。

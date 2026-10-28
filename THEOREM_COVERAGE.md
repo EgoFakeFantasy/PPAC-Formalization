@@ -426,3 +426,11 @@ Full verification PASSED: 2920 jobs, 32337 declarations, 25 new; all 32312 prior
 | ProductNames.labelSet:324 / labelSet_raw:330 / smul_labelSet:334 | ForcingLabelSet.{existence,uniqueness,construction}_kernel_certificate | Actual graph of all labels indexed by entire internal I, actual top-weighted collect, HS and literal full-group fixation. No supplied family, support witness, rank cutoff or object Choice. |
 
 Full verification PASSED: 2922 jobs, 32403 declarations, 66 new; all 32337 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2477 current hashes match. See verification/label-names-acceptance.json. Source consumers are LocalQuotients.labelSet_subsetBound/normalized_subset_labelSet/localName_descent. Existing bound/normalize/Separation/quotient backends are complete and reused; their concrete LocalName adapters, subsequent gluing/CellTowers and final internal Con remain incomplete. This does not claim all ProductNames forcing-membership/inequality consumers complete.
+
+
+| Pinned LocalQuotients consumer | Native endpoints | Exact scope |
+|---|---|---|
+| labelSet_subsetBound:247 / normalized_subset_labelSet:270 | ForcingLabelBound.{equation,subset}_kernel_certificate | Existing Bound equals all actual labels times all conditions; every raw subset forces a subset of the actual labelSet, with no new rank or HS premise. |
+| LocalName:287 / restrict:309 / restrict_name:313 / restrict_restrict:317 / restrict_injective:321 | ForcingLocalNames.{existence,uniqueness,restriction,composition}_kernel_certificate | Ground carrier via existing Candidates and Separation; exact fixing graphs/range inclusion yield the literal identity restriction graph, injectivity and composition. No supplied carrier, external enumeration or rank bound. |
+
+Full verification PASSED: 2924 jobs, 32443 declarations, 40 new and six nativeZF kernel endpoints; all 32403 prior footprints unchanged. Nine commands/five trust=0 checks exited 0, zero warnings/new axioms; 75 source/2479 current hashes match. See verification/local-names-acceptance.json. This closes the carrier/name-restriction part of the earlier LocalName pending entries, not localNormalize/localName_descent, actual LocalQuotient or its restriction maps. Final Con remains unproved.

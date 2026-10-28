@@ -231,4 +231,11 @@ LocalQuotients.support_descent:132–202 → ForcingSupportDescent.construction_
 
 完整 support_descent 保留原 Cohen 见证及两侧原限制；先用已证 supporting_root 限制到 v，证明嵌套限制等同原 d|s0，直接调用 active_equal 得到所有内部索引的相干性，再消费 exists_mix、fixed_and_HS、eq_at 和第二次 supporting_root。没有额外相容性、给定相干族或给定混合名字。全部 19 项声明/同一 L 原核证书通过完整验收（2919 构建、32312 声明，旧足迹不变），见 support-descent-acceptance.json。剩余具体 LocalName 规范化应复用 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq 和现成 Separation/CollectedHS.fixed；它不是重建规范化后端的理由。
 
-ProductNames 的具体 Bit 及五条原性质已由 ForcingProductBits 接通：直接消费 ConstructionCohenCompatibility.Entry/entry_functional、ForcingActiveIndependent.below_code、SupportingRoot.code_le、SupportOrbit.moved_coordinates 和已有 Product 条件作用，取得五项 nativeZF 原核证书。实际消费者是源 label/smul_label/mem_label，再到 LocalName；label/labelSet 现已由 ForcingLabelNames/ForcingLabelSet 构造。具体 check 名字族与全标签图复用原生 functionalImage/setFunctionFromTo；单点小支撑复用 ω≤μ 单射与原生 constantFunction；现成 collect、HS 收集、Bit/名字作用产生实际 HS 标签及全群固定 labelSet。七项 nativeZF 原核证书已验收，见 verification/label-names-acceptance.json。下一项仅接源具体 subsetBound／规范化候选／LocalName；checkName/collect/normalize/bound/商后端已有，不重建。
+ProductNames 的具体 Bit 及五条原性质已由 ForcingProductBits 接通：直接消费 ConstructionCohenCompatibility.Entry/entry_functional、ForcingActiveIndependent.below_code、SupportingRoot.code_le、SupportOrbit.moved_coordinates 和已有 Product 条件作用，取得五项 nativeZF 原核证书。实际消费者是源 label/smul_label/mem_label，再到 LocalName；label/labelSet 现已由 ForcingLabelNames/ForcingLabelSet 构造。具体 check 名字族与全标签图复用原生 functionalImage/setFunctionFromTo；单点小支撑复用 ω≤μ 单射与原生 constantFunction；现成 collect、HS 收集、Bit/名字作用产生实际 HS 标签及全群固定 labelSet。七项 nativeZF 原核证书已验收，见 verification/label-names-acceptance.json。具体 subsetBound、候选强迫子集及 LocalName 载体/名字层限制现已接通，见下节；checkName/collect/normalize/bound/商后端已有，不重建。
+
+
+## 实际 LocalName 载体与名字层限制
+
+ForcingLabelBound 直接消费 ForcingPowerName.Bound、实际 LabelSet 的 edge 方程和 AtomicRelations.mem_iff，给出源 labelSet_subsetBound/normalized_subset_labelSet。ForcingLocalNames 直接消费 exists_candidates、既有 SeparationSyntax、supported_mono 和 ForcingConditionGraphs.exists_identity，得到原 PowerCandidate 的字面支撑子集及限制图，不创建另一个候选类型或图构造后端。
+
+这六项原核端点对应载体存在唯一、界等式/强迫子集和名字层限制/复合。LocalQuotient 的商和商限制仍是另一消费者。下一步 separate_fixed/normalize_fixed 直接使用 ForcingSeparation.test_permute、ForcingCollectedHS.fixed；localNormalize 使用同一个 separated 名字、ForcingPowerName.normalized_bounded/normalize_eq；localName_descent 消费已完成的 ForcingSupportDescent。不能将这些现成后端或 support_descent 再列作未证明。

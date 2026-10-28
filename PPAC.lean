@@ -734,3 +734,6 @@ import PPAC.Migration.ForcingSupportDescent
 import PPAC.Migration.ForcingProductBits
 import PPAC.Migration.ForcingLabelNames
 import PPAC.Migration.ForcingLabelSet
+
+import PPAC.Migration.ForcingLabelBound
+import PPAC.Migration.ForcingLocalNames
