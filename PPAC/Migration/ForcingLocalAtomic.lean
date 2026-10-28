@@ -1,4 +1,4 @@
-/- Pinned LocalQuotients.localAtomic:447 / localSetoid:459 and
+/- Pinned LocalQuotients.localAtomic:445 / localSetoid:457 and
 ForcingQuotient.AtomicData.eqG_refl/symm/trans. Conditions are actual Cohen
 conditions; their filter is upward closed for the forcing order. -/
 import PPAC.Migration.ForcingLocalNameDescent

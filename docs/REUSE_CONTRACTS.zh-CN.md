@@ -249,4 +249,6 @@ ForcingLocalNameDescent.localName_descent 直接消费 ForcingSupportDescent.sup
 
 localAtomic/localSetoid、实际商集/满投影和限制图已由 ForcingLocalAtomic/ForcingLocalQuotient/ForcingLocalRestriction 接通并全量验收。复用 ConstructionMergerCopies 等价类/投影构造方法与原生 Separation、functionalImage、setFunctionFromTo；不存在待建商后端。限制图保留同一代表名字，其恒等/复合和代表方程已有原核证书。
 
-下一真实消费点是 LocalQuotient.restrict_injective:511 和 intersection:536（源第 550 行消费已完成的 localName_descent）。单射须复用 supporting_root/Cohen 限制反推原根 EqG；交集须复用名字下降后取实际根投影。两者尚未接完，不能把名字层单射误报为商单射。localName_of_raw:342 在固定源内只有定义、无调用，不新增为主线前置。
+LocalQuotient.restrict_injective:511 和 intersection:536 现已由 ForcingLocalInjectivity/ForcingLocalIntersection 接通并全量验收。单射直接复用 forces_at_supporting_root 与 ConstructionCohenCompatibility.exists_restrict；交集直接消费 localName_descent（源第 550 行调用）、既有 class/projection/Restriction 和范围单调性。两个原 Cohen 限制仍在同一滤子内；精确输出是实际根商类及两条限制边。两个原核证书均在同一已有内部 L 中，Choice 消去方式不变。
+
+下一真实消费者是 AvailableRecords.EligibleName/Eligible/eligible_restrict_iff 与 eligibleSystem:265，源码第 279、283 行分别调用本批单射和交集；ClassFibers:399 也调用交集。现成 ForcingFormula.tuple_congr、supporting_root、labelSet 固定性可用于资格接线。该系统、向移动滤子的 quotient transport 以及后续实际纤维粘合尚未宣称完成。localName_of_raw:342 仍无当前调用，不新增为主线前置。

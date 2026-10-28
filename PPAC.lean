@@ -744,3 +744,6 @@ import PPAC.Migration.ForcingLocalNameDescent
 import PPAC.Migration.ForcingLocalAtomic
 import PPAC.Migration.ForcingLocalQuotient
 import PPAC.Migration.ForcingLocalRestriction
+
+import PPAC.Migration.ForcingLocalInjectivity
+import PPAC.Migration.ForcingLocalIntersection

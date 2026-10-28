@@ -33010,3 +33010,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLocalRestriction.representativeSentence
 #print axioms PPAC.Migration.ForcingLocalRestriction.representative_models
 #print axioms PPAC.Migration.ForcingLocalRestriction.representative_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLocalInjectivity.eqG_reflect
+#print axioms PPAC.Migration.ForcingLocalInjectivity.restrict_injective
+#print axioms PPAC.Migration.ForcingLocalInjectivity.constructionSentence
+#print axioms PPAC.Migration.ForcingLocalInjectivity.construction_models
+#print axioms PPAC.Migration.ForcingLocalInjectivity.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalIntersection.intersection
+#print axioms PPAC.Migration.ForcingLocalIntersection.result
+#print axioms PPAC.Migration.ForcingLocalIntersection.result_semantics
+#print axioms PPAC.Migration.ForcingLocalIntersection.constructionSentence
+#print axioms PPAC.Migration.ForcingLocalIntersection.construction_models
+#print axioms PPAC.Migration.ForcingLocalIntersection.construction_kernel_certificate

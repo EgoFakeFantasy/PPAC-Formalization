@@ -451,3 +451,11 @@ Full verification PASSED: 2926 jobs, 32459 declarations, 16 new and two original
 | LocalQuotient.restrict_refl:498 / restrict_restrict:503 | ForcingLocalRestriction.{identity,composition}_kernel_certificate | Actual quotient restriction identity and composition graphs, not merely ground-name inclusion. |
 
 Full verification PASSED: 2929 jobs, 32516 declarations, 57 new and five ordinary nativeZF original-kernel endpoints; all 32459 prior footprints unchanged. Nine commands/five trust=0 checks exited 0, zero warnings/new axioms; 75 fixed-source/2484 current hashes match. See verification/local-quotient-acceptance.json. This closes the actual quotient and restriction-map construction obligations in earlier batch notes. Quotient restriction injectivity and exact intersection remain pending; later gluing/CellTowers and final internal Con remain incomplete. Original stage remains 8.
+
+
+| Pinned quotient law | Native original-kernel endpoint | Exact scope |
+|---|---|---|
+| LocalQuotient.restrict_injective:511–532 | ForcingLocalInjectivity.construction_kernel_certificate | Reflect actual EqG to the original supporting root using existing Cohen restriction and supporting-root forcing; deduce injectivity of the actual quotient restriction graph. |
+| LocalQuotient.intersection:536–554 | ForcingLocalIntersection.construction_kernel_certificate | Use existing localName_descent and exact quotient projection to construct an actual root class with both restriction edges to the original classes; retain both original Cohen restrictions in the same filter. |
+
+Full verification PASSED: 2931 jobs, 32527 declarations, 11 new and two original nativeZF kernel endpoints relativized to the SAME existing internal L; all 32516 prior footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axioms; 75 source/2486 current hashes match. See verification/local-intersection-acceptance.json. The earlier pending local quotient injectivity/intersection obligations are now closed. Actual consumers: AvailableRecords.eligibleSystem:279/283 and ClassFibers:399. Eligibility/system assembly, transport to a moved filter, gluing/CellTowers and final internal Con remain incomplete; original stage remains 8.

@@ -12005,4 +12005,17 @@ example :
     FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLocalRestriction.representativeSentence) :=
   ForcingLocalRestriction.representative_kernel_certificate
 
+-- Actual quotient injectivity and exact intersection, in the same existing internal L.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingLocalInjectivity.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f))) :=
+  ForcingLocalInjectivity.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s g A fixing nameBound X Y Q T pr ps f
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingLocalIntersection.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y))) :=
+  ForcingLocalIntersection.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y
+
 end PPAC.Migration.Step4Checks
