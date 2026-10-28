@@ -11909,4 +11909,33 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBit
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductBits.moveSentence) :=
   ForcingProductBits.move_kernel_certificate
 
+
+-- Actual pinned ProductNames label and full labelSet, with constructed families.
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLabelNames.existenceSentence) :=
+  ForcingLabelNames.existence_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLabelNames.uniquenessSentence) :=
+  ForcingLabelNames.uniqueness_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLabelSet.existenceSentence) :=
+  ForcingLabelSet.existence_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLabelSet.uniquenessSentence) :=
+  ForcingLabelSet.uniqueness_kernel_certificate
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w c t j j' b pi A name name' : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingLabelNames.moveSentence rho I K B w c t j j' b pi A name name')) :=
+  ForcingLabelNames.move_kernel_certificate rho I K B w c t j j' b pi A name name'
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F c t j b : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingLabelNames.constructionSentence rho I K B w mu G F c t j b)) :=
+  ForcingLabelNames.construction_kernel_certificate rho I K B w mu G F c t j b
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F c t b : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingLabelSet.constructionSentence rho I K B w mu G F c t b)) :=
+  ForcingLabelSet.construction_kernel_certificate rho I K B w mu G F c t b
+
 end PPAC.Migration.Step4Checks
