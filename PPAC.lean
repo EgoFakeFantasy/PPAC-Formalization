@@ -712,3 +712,9 @@ import PPAC.Migration.ConstructionComponentVertices
 import PPAC.Migration.ConstructionComponentCarrier
 
 import PPAC.Migration.ConstructionComponentCofinal
+
+import PPAC.Migration.ForcingMixName
+
+import PPAC.Migration.ForcingMixLaws
+
+import PPAC.Migration.ForcingEquivariantMix

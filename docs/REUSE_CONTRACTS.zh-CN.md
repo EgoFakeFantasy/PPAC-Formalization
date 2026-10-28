@@ -192,3 +192,10 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 | ComponentGluing.Matches/Glued:305–398 | 完整 component point 集；已有 DirectedLimitCarrier.exists_representatives:45 的依赖和集方法、Companion Fiber.fiber_function_l:29–33 的精确类函数及 range | 全点 Matches 等价、同fiber相等判据、实际规范投影，toGlued_injective:368/surjective:375/arrow:391；不缩成链上的局部商，不选择代表 |
 
 实际消费者为 ConcreteSystem:223/265、CodeLinks:275–309/376/426、OrdinalCodes:500–522、QuotientTransport:263–292、TailGraphs:84。DirectedLimitCarrier 的专用 Related 不能未经对应证明套用；ProbeWordQuotient 是单子右除，不能当等价类商。现有 ForcingAtomicLaws/Formula/Evaluation/PowerName 等已完成基础继续复用，不重建其后端。
+
+
+## EquivariantMixing 的实际支撑下降消费者
+
+固定源 LocalQuotients.support_descent:132–202 真实调用 equivariantMix、equivariantMix_fixed、eq_equivariantMix_at。ForcingMixName/MixLaws/EquivariantMix 已复用现成 Collected、原生 union/Separation/恒等图、AtomicBasic/Laws/Symmetry、ProductFamily.order、NameConjugacy 和 collect_HS/fixed；没有重做名字、递归或 HS 后端。源码及全部声明足迹锁在 SOURCE_LOCK 的 forcing_mix_name/forcing_mix_laws/forcing_equivariant_mix。
+
+精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal、support_descent、LocalQuotient/restrict、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。

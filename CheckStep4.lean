@@ -11825,4 +11825,26 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionComponentCofinal.constructionSentence)) :=
   ConstructionComponentCofinal.construction_kernel_certificate
 
+
+-- Pinned equivariant mixture: exact raw entries, all internal names and conditions.
+example {n : Nat} (R : Source.Formula (n+2)) (P J f a : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingMixName.existenceSentence R P J f a)) :=
+  ForcingMixName.existence_kernel_certificate R P J f a
+
+example {n : Nat} (R : Source.Formula (n+2)) (P J f a name nu p : Fin n) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingMixLaws.membershipSentence R P J f a name nu p)) :=
+  ForcingMixLaws.membership_kernel_certificate R P J f a name nu p
+
+example {n : Nat} (R : Source.Formula (n+2)) (P J f a name i sigma t : Fin n) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingMixLaws.equalitySentence R P J f a name i sigma t)) :=
+  ForcingMixLaws.equality_kernel_certificate R P J f a name i sigma t
+
+-- Literal Product action: family permutation is an input; fixedness/HS of the mix are derived.
+example {n : Nat} (rho : Fin 7 → Fin n) (mul I K B w G F H J f a : Fin n) :
+    FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingEquivariantMix.sentence rho mul I K B w G F H J f a)) :=
+  ForcingEquivariantMix.kernel_certificate rho mul I K B w G F H J f a
+
 end PPAC.Migration.Step4Checks

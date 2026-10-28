@@ -2302,7 +2302,10 @@ def main() -> None:
                                ('construction_ideal_contraction', 'ConstructionIdealContraction', 11),
                                ('construction_component_vertices', 'ConstructionComponentVertices', 30),
                                ('construction_component_carrier', 'ConstructionComponentCarrier', 21),
-                               ('construction_component_cofinal', 'ConstructionComponentCofinal', 23)):
+                               ('construction_component_cofinal', 'ConstructionComponentCofinal', 23),
+                               ('forcing_mix_name', 'ForcingMixName', 25),
+                               ('forcing_mix_laws', 'ForcingMixLaws', 20),
+                               ('forcing_equivariant_mix', 'ForcingEquivariantMix', 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5664,6 +5667,13 @@ def main() -> None:
         "source_minimal_member_uses_internal_formula_child_induction": True,
         "source_actual_HS_forces_infinity_native_certificate_proved": True,
         "source_forced_infinity_uses_literal_check_of_internal_omega": True,
+        "source_equivariantMix_exact_raw_name_native_kernel_constructed": True,
+        "source_equivariantMix_regular_membership_native_kernel_proved": True,
+        "source_equivariantMix_coherent_family_equality_at_activation_native_kernel_proved": True,
+        "source_equivariantMix_actual_Product_fixed_HS_native_kernel_proved": True,
+        "source_equivariantMix_additional_internal_Choice_or_rank_bound": False,
+        "source_LocalQuotients_actual_active_equal_and_support_descent_proved": False,
+        "source_LocalQuotients_actual_quotients_and_restrictions_constructed": False,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
@@ -5888,7 +5898,7 @@ def main() -> None:
         "source_request_map_actual_partial_start_graph_and_exact_one_step_relation_reflection_proved": True,
         "source_request_map_validity_iff_all_target_elements_without_transitive_closure_proved": True,
         "source_request_map_actual_internal_path_and_nonunit_payload_unique_proved": True,
-        "source_request_map_scope": "Both parameter constructors transported and BOTH actual full weighted Round.step successors/fromBase/operation witnesses now constructed. Given Schedule maps uniformly at VARYING stages; actual ordinal iteration/final exhaustive CompleteRounds remain open",
+        "source_request_map_scope": "Both parameter constructors transported and BOTH actual full weighted Round.step successors/fromBase/operation witnesses now constructed. Given Schedule maps uniformly at VARYING stages; actual ordinal iteration and final exhaustive CompleteRounds are completed by the accepted SaturationIteration/ConcreteTower consumers",
         "source_round_step_actual_both_weighted_successors_and_same_fromBase_constructed": True,
         "source_round_step_original_base_Probe_profile_and_Merger_root_realization_retained": True,
         "source_round_step_full_fields_all_profiles_same_old_cap_and_cardinality_retained": True,
@@ -6085,7 +6095,7 @@ def main() -> None:
         "source_product_uniform_action_actual_HS_formula_symmetry_proved": True,
         "source_product_formula_symmetry_assumes_order_transport_or_domain_closure": False,
         "source_cohen_omega_two_fixed_carriers_family_constructed": True,
-        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier formula, unique actions, Family/Covariance, support-filter Context construction and HS closure are now proved. Source omega/two fixed carriers and actual HS-domain formula symmetry are now proved. ProductPoset proves actual preorder, antisymmetry and internal top under the source left-cancel monoid/conical contract. Constructing that monoid and full system forcing axioms remains.",
+        "source_product_WithTop_scope": "Internal empty/singleton carrier, actual extension of the constructed product permutation, fixed top, exact coe edges/order and identity/composition. Uniform fixed-carrier formula, unique actions, Family/Covariance, support-filter Context construction and HS closure are now proved. Source omega/two fixed carriers and actual HS-domain formula symmetry are now proved. ProductPoset proves actual preorder, antisymmetry and internal top under the source left-cancel monoid/conical contract. The same actual final monoid is constructed by ConcreteBase/Tower; actual Models system consumers remain.",
         "source_cohen_order_action_scope": "All internal level/value carriers and injection bounds; products, exact coordinate permutations, bounded partial-function carrier and reverse-inclusion automorphism constructed in one native theorem. Label identity/composition and actual Cohen/diagram product assembly are now proved. WithTop extension is constructed. Uniform action-family and support Context are now constructed; source omega/two fixed carriers are constructed; monoid/conical system assembly remains.",
         "source_diagram_all_injection_carrier_and_set_action_constructed": True,
         "source_diagram_set_action_identity_and_multiplication_proved": True,

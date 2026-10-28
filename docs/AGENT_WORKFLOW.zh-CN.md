@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与全部饱和结论、精确有限处方／Diagram 共同扩张、Cohen 与完整 Product descent 已完成；源二元可数闭包及完整 countable conservative hull 已完成；本批继续原 ComponentGluing 的真实顶点/箭头/完整载体/整个分量内部共尾链。下一项是实际 CellTowers／纤维粘合消费者，再进入 9–11；最终内部 Con 未完成。
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。本批已迁移实际 LocalQuotients.support_descent 所需 EquivariantMixing 的精确名字、成员值、相容相等、Product 固定性/HS；支撑下降和实际商/限制本身仍待接，再消费到实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -22,7 +22,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
 |---|---|---|---|
-| 8 的下一项 | ComponentGluing 的实际 Fiber/arrowMap/粘合；CellTowers 的 Attachment/有限旧系数/deps/重排 | 本批整个分量共尾链、既有函数与商构造；实际 CompleteRound.Built/塔嵌入/来源、countable conservative hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
+| 8 的下一项 | LocalQuotients.active_equal/support_descent/实际商和限制 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing 四条原核证书、Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计、实际构建和干净检出源码锁复现通过（当前本地通过不替代检出复现） |
@@ -38,6 +38,8 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 每个证明改动先写原源声明、完整目标类型和真实消费者，查底座／同伴精确接口后复用；没定位到接口不能写成数学不存在。一次一个 Lean/Lake，LEAN_NUM_THREADS=1；正式证明改动运行 scripts/verify.py。不以模块数／构建数估算完成比例；不因文档改动重复编译。NatPacket/reader 已按获批清单退役，不恢复该支线或退役反射；保留其他项目改动。不新建通用证明核、编码器、满足关系、递归或类别后端。
 
-本批正式验收通过：2909 项构建、32174 项声明审计；新增 85 项及三条原核端点，旧 32089 项足迹不变。9 条命令／5 次 trust=0 全退出 0、零警告、无新增公理依赖。75 份固定源与 2464 份当前指纹匹配，底座／供体干净；358 个获批退役模块仍全部不存在。见 verification/component-cofinal-acceptance.json。
+此前分量共尾批次正式验收通过：2909 项构建、32174 项声明审计；新增 85 项及三条原核端点，旧 32089 项足迹不变。9 条命令／5 次 trust=0 全退出 0、零警告、无新增公理依赖。75 份固定源与 2464 份当前指纹匹配，底座／供体干净；358 个获批退役模块仍全部不存在。见 verification/component-cofinal-acceptance.json。
 
 三个端点分别是普通 nativeZF 的 geometrySentence、全部 Vertex carrier 存在性，以及同一 L 的 forall18 整个 Common 分量共尾链。后者保留现成 ObjectFields/高度成本父背景，不声称已完成实际纤维粘合或最终 Con。
+
+本批全量验收通过：2912 项构建、32233 项声明审计；59 项新增声明和四条普通 nativeZF 原核端点，原有 32174 项足迹不变。9 条命令（含 5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源和 2467 份当前指纹匹配，底座/供体干净。验收为当前本地工作树，历史 CRLF/LF 检出复现项仍保留；见 verification/equivariant-mixing-acceptance.json。源 family permutation/coherence 前提保留；混合名字的 HS/固定性与实际 Product 保序均非假定结论。不得据此把 LocalQuotients 或实际纤维粘合标成完成。
