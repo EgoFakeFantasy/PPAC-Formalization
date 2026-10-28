@@ -11964,4 +11964,20 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F B J K HJ HK X Y : Fin k) :
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingLocalNames.compositionSentence) :=
   ForcingLocalNames.composition_kernel_certificate
 
+
+-- Actual LocalName normalization and descent at the original supporting roots.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w mu c t b J H bound e G F mul sigma nu : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence
+        (ForcingLocalNormalize.constructionSentence rho I K B w mu c t b J H bound e G F mul sigma nu)) :=
+  ForcingLocalNormalize.construction_kernel_certificate rho I K B w mu c t b J H bound e G F mul sigma nu
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1 c t b labels nameBound : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingLocalNameDescent.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1 c t b labels nameBound))) :=
+  ForcingLocalNameDescent.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP d d0 d1 z z0 z1 sigma0 sigma1 c t b labels nameBound
+
 end PPAC.Migration.Step4Checks

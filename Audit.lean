@@ -32935,3 +32935,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLocalNames.compositionSentence
 #print axioms PPAC.Migration.ForcingLocalNames.composition_models
 #print axioms PPAC.Migration.ForcingLocalNames.composition_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLocalNormalize.separate_supported
+#print axioms PPAC.Migration.ForcingLocalNormalize.exists_normalize
+#print axioms PPAC.Migration.ForcingLocalNormalize.normalize_eq
+#print axioms PPAC.Migration.ForcingLocalNormalize.actual_normalize
+#print axioms PPAC.Migration.ForcingLocalNormalize.result
+#print axioms PPAC.Migration.ForcingLocalNormalize.result_semantics
+#print axioms PPAC.Migration.ForcingLocalNormalize.constructionSentence
+#print axioms PPAC.Migration.ForcingLocalNormalize.construction_models
+#print axioms PPAC.Migration.ForcingLocalNormalize.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalNormalize.normalize_at_values
+#print axioms PPAC.Migration.ForcingLocalNameDescent.localName_descent
+#print axioms PPAC.Migration.ForcingLocalNameDescent.result
+#print axioms PPAC.Migration.ForcingLocalNameDescent.result_semantics
+#print axioms PPAC.Migration.ForcingLocalNameDescent.constructionSentence
+#print axioms PPAC.Migration.ForcingLocalNameDescent.construction_models
+#print axioms PPAC.Migration.ForcingLocalNameDescent.construction_kernel_certificate

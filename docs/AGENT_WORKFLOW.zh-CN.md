@@ -1,6 +1,6 @@
 # 原 1–11 阶段迁移流程（2026-10-28）
 
-沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 Bit、label 的存在唯一／HS／字面置换，以及全部 labelSet 的存在唯一／HS／全群固定现均已通过原核／全量验收；标签界、候选强迫子集结论及 LocalName 集合/名字层限制已接通；下一项是原规范化固定性、localNormalize/localName_descent、实际 LocalQuotient 及其限制，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
+沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。当前仍在 **8**。完整 Base/T、实际 μ/K、内部塔与饱和、Diagram/Product descent、countable conservative hull、全部顶点/箭头/整分量共尾链已完成。EquivariantMixing、支撑名字相等、实际相容放置、根限制、active_equal 已验收；完整 support_descent 已取得同一内部 L 原核证书并全量验收。具体 Bit、label 的存在唯一／HS／字面置换，以及全部 labelSet 的存在唯一／HS／全群固定现均已通过原核／全量验收；标签界、候选强迫子集结论及 LocalName 集合/名字层限制已接通；实际 localNormalize/localName_descent 已接通；下一项是实际 LocalQuotient 及其限制/精确交集，再接实际纤维粘合与 CellTowers，随后进入 9–11。最终内部 Con 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -22,7 +22,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 
 | 当前顺序 | 原源消费者 | 必须消费的现成实现 | 实际验收门 |
 |---|---|---|---|
-| 8 的下一项 | LocalQuotients.localName_descent/实际商和限制 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing、OrbitNames 字面相等和实际 compatible_placement 原核证书；源 forces_at_supporting_root/forces_iff_restrict 已接，active_equal 与完整 support_descent 均已接，具体 Bit 和实际 label/labelSet 已接，下一项源 labelSet_subsetBound、规范化候选与 localName_descent/商/限制；Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
+| 8 的下一项 | LocalQuotient 的实际商/限制/精确交集 → eligibleSystem → ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 已完成 EquivariantMixing、OrbitNames 字面相等和实际 compatible_placement 原核证书；源 forces_at_supporting_root/forces_iff_restrict 已接，active_equal 与完整 support_descent 均已接，具体 Bit、实际 label/labelSet、标签界、LocalName 载体/限制、localNormalize/localName_descent 已接，下一项实际商/商限制/精确交集；Product descent、整个分量共尾链、既有函数/商；实际 CompleteRound.Built/塔嵌入/来源、countable hull | 保留同一系统、全部纤维和全内部索引；Component quotient 和 Common.iff_zigzag 均无真实调用，不新增这两个前置；不重建塔或基础 |
 | 9 | Models／具体 ProductNames | 上一步同一具体系统及已有全秩 HS／正规滤子／强迫前端 | SVC、ACwo、商单射、¬AC；保持源全部量词 |
 | 10 | PP／Main 及内部矛盾码归约 | 源满射反向单射链；底座 ObjectProofNode／ReducedProofPresentation／PureProvability／Sat | ZF/U 专用全模式公理检查，全部内部／非标准证明码的正确性，原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁／足迹／端点核查 | 最终主句、完整理论／语言／背景一致，禁止缺口审计、实际构建和干净检出源码锁复现通过（当前本地通过不替代检出复现） |
@@ -46,4 +46,7 @@ RoundOrdinal.countable_bounded:496 和 SAME 实际塔的 Saturation.countable_st
 本批完整 support_descent 已验收：原子相等见证首先限制到 v，再构造实际根子群轨道族、证明相干性并产生根支撑 HS 混合名字，两侧原 Cohen 限制保持。全量验收通过：2919 项构建、32312 项声明；新增 19 项，旧 32293 项足迹逐项不变。9 条命令（5 次 trust=0）全部退出 0，零警告、无新增公理依赖。75 份固定源、2474 份当前文件哈希匹配；底座与供体干净，358 个已批准退役模块保持删除，恢复档／补丁哈希匹配。见 verification/support-descent-acceptance.json。两模块及完整对象句子均首次编译通过。本地验收不替代历史 CRLF 检出复现。 下一步复用现成 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq、Separation/CollectedHS.fixed 及底座商接口接真实 LocalName/LocalQuotient；不能重报这些后端缺失。
 
 
-本批 LocalName 接线（原第 8 阶段，不新增阶段）：标签界等式、界内候选强迫子集、LocalName 载体存在唯一及名字层限制图/单射/复合共六个 nativeZF 原核端点。直接复用 Candidates、Separation、supported_mono 和原生恒等图。完整验收结果见当前 STATUS；载体完成不等于规范化/下降或商限制完成。下步只接源 separate_fixed/normalize_fixed/localNormalize/localName_descent，已完成的 support_descent 与后端均不重做。
+本批 LocalName 接线（原第 8 阶段，不新增阶段）：标签界等式、界内候选强迫子集、LocalName 载体存在唯一及名字层限制图/单射/复合共六个 nativeZF 原核端点。直接复用 Candidates、Separation、supported_mono 和原生恒等图。完整验收结果见当前 STATUS；载体完成不等于规范化/下降或商限制完成。实际 separate 的支撑保持、localNormalize/localNormalize_eq/localName_descent 现已接通；下一步实际商及其限制/交集，已完成的支撑下降与规范化后端均不重做。
+
+
+本批实际规范化/名字层下降：ForcingLocalNormalize 与 ForcingLocalNameDescent 两个原核端点、16 项声明。规范化是普通 nativeZF；下降复用原支撑下降的同一内部 L，既有 Choice 消去不变。最终全量结果见当前 STATUS / verification/local-normalize-acceptance.json。原 localName_of_raw 无源调用，不增列主线前置；实际商交集直接消费本批 localName_descent。

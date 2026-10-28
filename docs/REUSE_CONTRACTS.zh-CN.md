@@ -198,7 +198,7 @@ ConservativeHull 的实际乘法表使用原 ZF.exists_restriction，包含图�
 
 固定源 LocalQuotients.support_descent:132–202 真实调用 equivariantMix、equivariantMix_fixed、eq_equivariantMix_at。ForcingMixName/MixLaws/EquivariantMix 已复用现成 Collected、原生 union/Separation/恒等图、AtomicBasic/Laws/Symmetry、ProductFamily.order、NameConjugacy 和 collect_HS/fixed；没有重做名字、递归或 HS 后端。源码及全部声明足迹锁在 SOURCE_LOCK 的 forcing_mix_name/forcing_mix_laws/forcing_equivariant_mix。
 
-精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal 和 support_descent 已在下述后续消费者中完成；LocalName/LocalQuotient/restrict、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。
+精确混合名字及其两条强迫定律保留全部内部索引/条件和任意秩名字。固定性/HS 证书专用于已有实际 Product/WithTop 呈现；原族等变前提保留，混合名字不变性和 Product 保序是证明结果。四条普通 nativeZF 原核证书已通过全量验收（2912 构建/32233 声明，旧 32174 项足迹不变，9 命令全部退出 0）；见 equivariant-mixing-acceptance.json。实际 active_equal 和 support_descent 已在下述后续消费者中完成；LocalName 载体、规范化、名字层限制/下降已由后续消费者接入；LocalQuotient/商限制、eligibleSystem/Fiber/粘合仍未完成；不能将这些消费者与已完成混合引理混为一项，也不能误报现成后端缺失。
 
 
 ## 支撑图相等与实际相容放置
@@ -229,7 +229,7 @@ LocalQuotients.active_equal:67 → ForcingActiveEquality.construction_kernel_cer
 
 LocalQuotients.support_descent:132–202 → ForcingSupportDescent.construction_kernel_certificate；真实消费者 localName_descent:386。ForcingSupportOrbit 构造原固定根子群索引的精确名字函数图和激活函数图；使用固定原生 FunctionConstruction.exists_setFunctionFromTo_of_denote 与既有 group orbit/name action，无新函数图后端。实际 Product 乘法/恒等和 name composition、hs_move 给出族等变/HS/恒等项。moved_coordinates 通过现成 Cohen/Diagram 构造和作用唯一性取得原坐标。
 
-完整 support_descent 保留原 Cohen 见证及两侧原限制；先用已证 supporting_root 限制到 v，证明嵌套限制等同原 d|s0，直接调用 active_equal 得到所有内部索引的相干性，再消费 exists_mix、fixed_and_HS、eq_at 和第二次 supporting_root。没有额外相容性、给定相干族或给定混合名字。全部 19 项声明/同一 L 原核证书通过完整验收（2919 构建、32312 声明，旧足迹不变），见 support-descent-acceptance.json。剩余具体 LocalName 规范化应复用 ForcingPowerName.exists_normalize/normalized_bounded/normalize_eq 和现成 Separation/CollectedHS.fixed；它不是重建规范化后端的理由。
+完整 support_descent 保留原 Cohen 见证及两侧原限制；先用已证 supporting_root 限制到 v，证明嵌套限制等同原 d|s0，直接调用 active_equal 得到所有内部索引的相干性，再消费 exists_mix、fixed_and_HS、eq_at 和第二次 supporting_root。没有额外相容性、给定相干族或给定混合名字。全部 19 项声明/同一 L 原核证书通过完整验收（2919 构建、32312 声明，旧足迹不变），见 support-descent-acceptance.json。具体 LocalName 规范化及名字层下降现已消费上述输出，直接复用 normalized_bounded/normalize_eq 和 Separation/CollectedHS.fixed，见末节；不重建规范化后端。
 
 ProductNames 的具体 Bit 及五条原性质已由 ForcingProductBits 接通：直接消费 ConstructionCohenCompatibility.Entry/entry_functional、ForcingActiveIndependent.below_code、SupportingRoot.code_le、SupportOrbit.moved_coordinates 和已有 Product 条件作用，取得五项 nativeZF 原核证书。实际消费者是源 label/smul_label/mem_label，再到 LocalName；label/labelSet 现已由 ForcingLabelNames/ForcingLabelSet 构造。具体 check 名字族与全标签图复用原生 functionalImage/setFunctionFromTo；单点小支撑复用 ω≤μ 单射与原生 constantFunction；现成 collect、HS 收集、Bit/名字作用产生实际 HS 标签及全群固定 labelSet。七项 nativeZF 原核证书已验收，见 verification/label-names-acceptance.json。具体 subsetBound、候选强迫子集及 LocalName 载体/名字层限制现已接通，见下节；checkName/collect/normalize/bound/商后端已有，不重建。
 
@@ -238,4 +238,13 @@ ProductNames 的具体 Bit 及五条原性质已由 ForcingProductBits 接通：
 
 ForcingLabelBound 直接消费 ForcingPowerName.Bound、实际 LabelSet 的 edge 方程和 AtomicRelations.mem_iff，给出源 labelSet_subsetBound/normalized_subset_labelSet。ForcingLocalNames 直接消费 exists_candidates、既有 SeparationSyntax、supported_mono 和 ForcingConditionGraphs.exists_identity，得到原 PowerCandidate 的字面支撑子集及限制图，不创建另一个候选类型或图构造后端。
 
-这六项原核端点对应载体存在唯一、界等式/强迫子集和名字层限制/复合。LocalQuotient 的商和商限制仍是另一消费者。下一步 separate_fixed/normalize_fixed 直接使用 ForcingSeparation.test_permute、ForcingCollectedHS.fixed；localNormalize 使用同一个 separated 名字、ForcingPowerName.normalized_bounded/normalize_eq；localName_descent 消费已完成的 ForcingSupportDescent。不能将这些现成后端或 support_descent 再列作未证明。
+这六项原核端点对应载体存在唯一、界等式/强迫子集和名字层限制/复合。LocalQuotient 的商和商限制仍是另一消费者。后续已接入的 separate_fixed/normalize_fixed 直接使用 ForcingSeparation.test_permute、ForcingCollectedHS.fixed；localNormalize 使用同一个 separated 名字、ForcingPowerName.normalized_bounded/normalize_eq；localName_descent 消费已完成的 ForcingSupportDescent。不能将这些现成后端或 support_descent 再列作未证明。
+
+
+## 实际规范化与完整 LocalName 下降
+
+ForcingLocalNormalize.separate_supported 保留 exists_separate 构造的同一个名字，调用 test_permute 和 CollectedHS.fixed 证明实际共同子群的固定性；没有另建规范化。actual_normalize 从实际 LabelSet.HS_and_fixed、Fixing 子群和原无限基数背景导出所有固定性/HS 前提，再消费 normalized_bounded/normalize_eq。任意新内部见证只增加值参数槽，复用 subset_relation_congr/atomic_congr；谓词、强迫关系及全秩量词不变。
+
+ForcingLocalNameDescent.localName_descent 直接消费 ForcingSupportDescent.support_descent，再用 actual normalization、LabelBound.normalized_subset、PowerName.subset_congr 和 AtomicBasic.eq_symm/AtomicLaws.eq_trans。两个原 Cohen 限制保持；未替换成新的加强条件。普通规范化原核证书和同一 L 的完整下降原核证书均已全量验收；记录见 verification/local-normalize-acceptance.json。
+
+下一真实消费点是原 LocalQuotient.intersection:550；先接其 localAtomic/localSetoid 和实际商投影，再复用 supporting_root 接商限制单射。已有 ConstructionMergerCopies 的等价类/投影构造方法及原生 Separation/functionalImage/function graph 可复用，不能把这些后台重报成缺失。localName_of_raw:342 在固定源内只有定义、无调用，不新增为主线前置。

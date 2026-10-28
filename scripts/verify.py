@@ -2317,7 +2317,9 @@ def main() -> None:
                                ('forcing_label_names', 'ForcingLabelNames', 40),
                                ('forcing_label_set', 'ForcingLabelSet', 26),
                                ('forcing_label_bound', 'ForcingLabelBound', 17),
-                               ('forcing_local_names', 'ForcingLocalNames', 23)):
+                               ('forcing_local_names', 'ForcingLocalNames', 23),
+                               ('forcing_local_normalize', 'ForcingLocalNormalize', 10),
+                               ('forcing_local_name_descent', 'ForcingLocalNameDescent', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5694,7 +5696,7 @@ def main() -> None:
         "source_ProductNames_actual_label_and_labelSet_constructed": True,
         "source_LocalQuotients_actual_label_bound_and_normalized_subset_native_kernel_proved": True,
         "source_LocalQuotients_LocalName_carrier_and_literal_restriction_native_kernel_proved": True,
-        "source_LocalQuotients_localNormalize_and_localName_descent_proved": False,
+        "source_LocalQuotients_localNormalize_and_localName_descent_proved": True,
         "source_ProductNames_actual_label_HS_and_covariance_and_labelSet_full_group_fixation_native_kernel_proved": True,
         "source_LocalQuotients_actual_root_orbit_families_constructed": True,
         "source_LocalQuotients_support_descent_same_L_native_kernel_proved": True,
