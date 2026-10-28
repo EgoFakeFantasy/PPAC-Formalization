@@ -2278,7 +2278,11 @@ def main() -> None:
                                ('construction_saturation_prescription_stage', 'ConstructionSaturationPrescriptionStage', 11),
                                ('construction_saturation_mergers', 'ConstructionSaturationMergers', 30),
                                ('construction_saturation_complement', 'ConstructionSaturationComplement', 22),
-                               ('construction_saturation_cardinals', 'ConstructionSaturationCardinals', 27)):
+                               ('construction_saturation_cardinals', 'ConstructionSaturationCardinals', 27),
+                               ('existing_indexed_choice', 'ExistingIndexedChoice', 8),
+                               ('construction_ideal_approximation', 'ConstructionIdealApproximation', 10),
+                               ('construction_ideal_cofinal', 'ConstructionIdealCofinal', 8),
+                               ('construction_ideal_probes', 'ConstructionIdealProbes', 29)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
@@ -2301,7 +2305,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
@@ -2358,6 +2362,31 @@ def main() -> None:
         r"(?ms)^-- BEGIN DONOR ([A-Za-z0-9_.]+)\n(.*?)^-- END DONOR \1\n", ordinal_text)}
     if {k: hashlib.sha256(v.encode("utf-8")).hexdigest() for k, v in ordinal_blocks.items()} != ordinal_reuse["literal_blocks_sha256"]:
         raise RuntimeError("Reused donor internal ordinal enumeration proof bodies changed")
+    indexed_reuse = source_lock["companion_reuse"]["native_indexed_choice"]
+    if indexed_reuse["commit"] != "79793365c2145c53db37eaf8ab23a64826bd9738":
+        raise RuntimeError("Indexed choice donor revision changed")
+    indexed_expected = ""
+    for block in indexed_reuse["blocks"]:
+        path = ROOT / block["donor_file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != block["donor_sha256"]:
+            raise RuntimeError("Indexed choice donor source changed")
+        source = path.read_text(encoding="utf-8")
+        start = source.index(block["start_marker"])
+        selected = source[start:source.index(block["end_marker"], start)]
+        if hashlib.sha256(selected.encode()).hexdigest() != block["selected_source_sha256"]:
+            raise RuntimeError("Indexed choice source slice changed")
+        for original, adapted in block["replacements"]:
+            selected = selected.replace(original, adapted)
+        if hashlib.sha256(selected.encode()).hexdigest() != block["normalized_selected_sha256"]:
+            raise RuntimeError("Indexed choice reference adaptation changed")
+        indexed_expected += selected
+    indexed_target = (ROOT / indexed_reuse["adapter"]).read_text(encoding="utf-8")
+    indexed_actual = indexed_target[indexed_target.index(indexed_reuse["actual_body_start"]):
+        indexed_target.index(indexed_reuse["actual_body_end"])]
+    if indexed_actual != indexed_expected or hashlib.sha256(indexed_actual.encode()).hexdigest() != indexed_reuse["normalized_body_sha256"]:
+        raise RuntimeError("Indexed choice mathematical proof body changed beyond exact adaptations")
+    if re.findall(r"^import (.+)$", indexed_target, re.MULTILINE) != indexed_reuse["exact_imports"]:
+        raise RuntimeError("Indexed choice adapter imports changed")
     successor_reuse = source_lock["companion_reuse"]["native_successor_regularity"]
     if successor_reuse["commit"] != "79793365c2145c53db37eaf8ab23a64826bd9738":
         raise RuntimeError("Successor regularity donor revision changed")
@@ -5912,7 +5941,10 @@ def main() -> None:
         "source_SaturatedMonoids_SAME_final_roots_full_RootSystem_AND_exact_product_equality_iff_GIVEN_CopyRel_native_kernel_certificate": True,
         "source_SaturatedMonoids_complement_probes_same_final_tower_native_kernel_certificate": True,
         "source_SaturatedMonoids_target_and_complement_cardinality_internal_bijections_complete": True,
-        "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": False,
+        "source_DiagramOrder_internal_supremum_grid_and_directed_cofinal_proof_consumed_by_final_ideal_kernel_certificate": True,
+        "source_ConeIdeal_no_countability_premise_internal_unit_and_all_indices_preserved": True,
+        "source_SaturatedMonoids_all_final_divisors_arbitrary_internal_ideal_probes_native_kernel_certificate": True,
+        "source_SaturatedMonoids_ideal_complement_probes_and_cardinal_endpoints_complete": True,
         "source_Saturation_multiround_actual_system_complete": False,
         "source_round_actual_full_valid_history_operator_instantiated": True,
         "source_round_actual_ordinal_iteration_and_global_fromBase_naturality_constructed": True,

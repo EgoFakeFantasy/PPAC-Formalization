@@ -11656,4 +11656,11 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ConstructionSaturationCardinals.constructionSentence)) :=
   ConstructionSaturationCardinals.construction_kernel_certificate
 
+-- Arbitrary internal cone ideals; unit-first internally cofinal path.
+-- SAME final Probe family, ALL final divisors and exact full intersections.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ConstructionIdealProbes.constructionSentence)) :=
+  ConstructionIdealProbes.construction_kernel_certificate
+
 end PPAC.Migration.Step4Checks

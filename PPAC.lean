@@ -673,3 +673,5 @@ import PPAC.Migration.ConstructionSaturationMergers
 import PPAC.Migration.ConstructionSaturationComplement
 
 import PPAC.Migration.ConstructionSaturationCardinals
+
+import PPAC.Migration.ConstructionIdealProbes
