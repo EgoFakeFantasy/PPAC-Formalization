@@ -12084,4 +12084,12 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w e G F mul g q nameBound label
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleMapFamily.constructionSentence rho I K B w e G F mul g q nameBound labels E)) :=
   ForcingEligibleMapFamily.construction_kernel_certificate rho I K B w e G F mul g q nameBound labels E
 
+
+-- Actual System existence: same internal object/map families and all four laws.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingEligibleSystem.constructionSentence rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E))) :=
+  ForcingEligibleSystem.construction_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul c t b labels nameBound g q Aq fixingQ E
+
 end PPAC.Migration.Step4Checks

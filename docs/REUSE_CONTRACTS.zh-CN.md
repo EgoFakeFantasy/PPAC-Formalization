@@ -259,4 +259,6 @@ ForcingEligibleIntersection 消费既有 exists_sub/sub_sub/injection_ext 和 ra
 
 ForcingEligibleFamily 现已装配全部内部图上的实际对象函数族。Data 使用现成范围/固定子群/LocalName/商/Obj 定义；data_unique 复用原生外延性、fixing_unique、LocalNames.unique 和已编码图外延性，避免任意选择构造见证。ForcingEligibleMapFamily 直接消费 actual_restriction 和 Obj exists_restriction，用既有 Cartesian/Separation 构造全部可比图对，再用 native functionalImage/setFunctionFromTo 构造实际映射函数族。联合证书同时产生两族和索引，并证明每条映射连接同一对象族的对应项。
 
-下一真实消费者为这同一联合族的完整 System 合同。四条实际定律已经证明，按 MapRow 解包构造数据、用 data_unique 对齐即可接线；不重造对象族、图索引、函数后端或定律。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。
+ForcingEligibleSystem 已直接解包 MapRow，用 data_unique 对齐全部重复商集、投影和对象行，消费现有四定律并取得同一内部 L 的完整存在原核证书。族和箭头集合由既有 exists_family/exists_arrows 构造；原生 L/ZFC 与选择消去沿用 ConstructibleSource/ConstructibleGround，没有新建后台。
+
+下一真实消费者是 LocalRecords.System.Available/availability → AvailableRecords.classAvailability。它必须是同一系统限制映射的实际前像关系；现成 ConstructionIdealProbes.ConeIdeal、ConstructionIdealContraction 及 sub/范围交集已完成，保留消费，不再列为待建基础。移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成。localName_of_raw 无当前调用，不新增为主线前置。

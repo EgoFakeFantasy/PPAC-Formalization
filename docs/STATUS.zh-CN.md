@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。本批已实际构造覆盖全部内部图的对象族、全部可比图对的箭头集合及映射族，并在同一普通 nativeZF 原核证书中证明源靶兼容性。完整验收通过。下一项是把已证明的恒等/复合/单射/交集绑定到同一联合族的 System 合同，再接实际纤维粘合/CellTowers；不再把族构造列作缺口。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。本批已把恒等、复合、单射、精确支撑交集绑定到同一内部对象/映射族，取得完整 eligibleSystem 在已有内部 L 中存在的 nativeZF 原核证书。完整验收通过。下一项是源 availability/classAvailability 实际消费者，再接移动滤子 transport、纤维粘合/CellTowers。第 9–11 阶段及最终内部 Con 尚未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -13,29 +13,28 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律绑定到该族的 System 合同、CellTowers／实际纤维粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability、CellTowers／纤维粘合仍未完成；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
 
 ## 本批实际证明与验收
 
-| 固定源声明 | 已验收目标端点 | 精确范围 |
+| 固定源声明 | 目标端点 | 精确范围 |
 |---|---|---|
-| AvailableRecords.eligibleSystem.Obj:272；LocalRecords.System.Obj:532 | ForcingEligibleFamily.construction_kernel_certificate | 对全部内部图构造实际对象函数族；范围/固定子群/LocalName/商投影/Obj 行数据存在且唯一；复用现成构造、功能像和函数图 |
-| eligibleSystem.restrict:273–274；LocalRecords.System.restrict:533 | ForcingEligibleMapFamily.construction_kernel_certificate | 同时构造对象族、全部可比图对索引及映射族，证明每个映射连接同一对象族的对应源/靶；无给定族或给定箭头集前提 |
+| AvailableRecords.eligibleSystem:265–289；LocalRecords.System:531–544 | ForcingEligibleSystem.construction_kernel_certificate | 原 nativeZF 中同一内部 L 的存在句；联合构造实际对象族、全部可比图对索引和映射族，连同源靶兼容性、恒等、复合、单射及精确交集。无给定族或给定定律前提，保留源背景输入 |
 
-全量验收：**2939 项构建，32634 项声明审计**；新增 39 项，旧 32595 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1766 项无公理、30868 项具有既已记录的依赖。75 份固定源及 2494 份当前文件哈希匹配。两项端点均为普通 nativeZF 原推导核存在证书。记录：verification/eligible-families-acceptance.json。
+全量验收：**2940 项构建，32662 项声明审计**；新增 28 项，旧 32634 项依赖足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖。1771 项无公理、30891 项具有既已记录的依赖；75 份固定源及 2495 份当前文件哈希匹配。记录：verification/eligible-system-acceptance.json。
 
-叶编译修复过公式括号、定义归一化、解构后的局部变量与内部值参数的环境接线；最终完整验收通过，不宣称首次全部通过。没有外部枚举、宿主选择函数或选定商代表。
+装配直接解包 MapRow、用 data_unique 对齐重复行，再消费已有 LocalQuotient/EligibleRestriction/EligibleIntersection 定律。对象公式量化全部内部图及图对；交集返回实际根 Obj 成员和两条实际限制边。选择仅由现成内部 L/ZFC 接口消去，没有加入普通 ZF 的 Choice 前提。修复过定义性 id 等式闭合及支持性 AST 接口拼写；不宣称首次编译全部通过。
 
-资格交集与三条实际定律已在 eligible-system-laws-acceptance.json 验收。本批完成同一索引族及源靶接线；完整 System 合同仍需逐字段对这同一族应用已有定律，不能把两项存在证书说成全部系统公理已装配。后续移动滤子 transport、实际纤维粘合及 CellTowers 尚未完成。358 个批准退役模块仍不存在，恢复 ZIP/补丁哈希匹配；正式日志保留，仅清理本批临时审计材料。
+完整 System 合同现已装配，不再列为待做。后续 availability/classAvailability、移动滤子 quotient transport、实际纤维粘合及 CellTowers 尚未完成；已有 ConeIdeal 和收缩证明保留复用。358 个批准退役模块保持删除，正式日志保留。
 
 ## 继续顺序与边界
 
 | 顺序 | 固定源消费者 | 复用输入 | 验收门 |
 |---|---|---|---|
-| 8 当前 | AvailableRecords.eligibleSystem:265–289；LocalRecords.System:531–544 | 同一内部对象族、全部可比图对索引和实际映射族已联合构造；源靶兼容性已证；四条实际定律已证 | 将恒等/复合/单射/交集逐字段绑定到同一联合族的对象 System 合同；直接解包 Data/MapRow 并用 data_unique 对齐，不重造族或重证定律 |
+| 8 当前 | LocalRecords.System.Available/availability:549–598 → AvailableRecords.classAvailability:295–304 | 同一对象/映射族及完整 System 四字段原核证书；既有 sub/范围交集、ConeIdeal/收缩接口 | 接实际 Available（存在前像）及有界理想；复用 ConstructionIdealProbes/ConstructionIdealContraction，不预设任意理想，不重造 System 或定律 |
 | 8 后续 | ComponentGluing 实际 Fiber/arrowMap/粘合；CellTowers 原消费者 | 全分量共尾链、Product descent、CompleteRound.Built、同一实际历史/嵌入/来源、countable hull | 同一系统、所有纤维、全部内部索引及全纤维单射/满射；不重建塔 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |

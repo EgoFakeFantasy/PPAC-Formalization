@@ -2332,7 +2332,8 @@ def main() -> None:
                                ('forcing_eligible_intersection', 'ForcingEligibleIntersection', 6),
                                ('forcing_eligible_laws', 'ForcingEligibleLaws', 10),
                                ('forcing_eligible_family', 'ForcingEligibleFamily', 16),
-                               ('forcing_eligible_map_family', 'ForcingEligibleMapFamily', 23)):
+                               ('forcing_eligible_map_family', 'ForcingEligibleMapFamily', 23),
+                               ('forcing_eligible_system', 'ForcingEligibleSystem', 28)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -5725,7 +5726,7 @@ def main() -> None:
         "source_AvailableRecords_Obj_map_quotient_law_premises_discharged": True,
         "source_AvailableRecords_all_internal_diagram_object_and_map_families_constructed": True,
         "source_AvailableRecords_same_family_source_target_compatibility_proved": True,
-        "source_AvailableRecords_actual_eligibleSystem_full_assembly_completed": False,
+        "source_AvailableRecords_actual_eligibleSystem_full_assembly_completed": True,
         "source_collectRaw_exact_internal_graph_range_constructed": True,
         "source_collect_HS_original_subgroup_entry_contract_native_certificate_proved": True,
         "source_collect_HS_indexed_permutation_contract_equivalence_proved": True,
