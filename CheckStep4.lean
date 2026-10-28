@@ -12216,4 +12216,18 @@ example {k : Nat} (W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e : F
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLocalQuotientTransport.naturalitySentence W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e)) :=
   ForcingLocalQuotientTransport.naturality_kernel_certificate W a X Y YS Q QS T TS pr ps prT psT nf fr fs sr st c d b e
 
+
+-- Actual coordinate eligibility and root-supported app construction.
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul I K B w pi a ac g gT r rT labels E ET sigma sigmaT : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingEligibleTransport.nameSentence rho G F mul I K B w pi a ac g gT r rT labels E ET sigma sigmaT)) :=
+  ForcingEligibleTransport.name_kernel_certificate rho G F mul I K B w pi a ac g gT r rT labels E ET sigma sigmaT
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul I K B w e mu pi inv c a ai ac g gT r rT q A Hq labelMap top bit labels E X Y pr ps f Q T V U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingEligibleTransport.rootSentence rho G F mul I K B w e mu pi inv c a ai ac g gT r rT q A Hq labelMap top bit labels E X Y pr ps f Q T V U)) :=
+  ForcingEligibleTransport.root_kernel_certificate rho G F mul I K B w e mu pi inv c a ai ac g gT r rT q A Hq labelMap top bit labels E X Y pr ps f Q T V U
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul a I K B w e mu pi inv c ai ac g gT r rT q A Hq labelMap top bit labels E bound Ar Hr X Q pr V AT HT Y T ps U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingEligibleTransport.assemblySentence rho G F mul a I K B w e mu pi inv c ai ac g gT r rT q A Hq labelMap top bit labels E bound Ar Hr X Q pr V AT HT Y T ps U)) :=
+  ForcingEligibleTransport.assembly_kernel_certificate rho G F mul a I K B w e mu pi inv c ai ac g gT r rT q A Hq labelMap top bit labels E bound Ar Hr X Q pr V AT HT Y T ps U
+
 end PPAC.Migration.Step4Checks

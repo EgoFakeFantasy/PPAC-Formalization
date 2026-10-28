@@ -33554,3 +33554,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLocalQuotientTransport.naturalitySentence
 #print axioms PPAC.Migration.ForcingLocalQuotientTransport.naturality_models
 #print axioms PPAC.Migration.ForcingLocalQuotientTransport.naturality_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingEligibleTransport.name_iff
+#print axioms PPAC.Migration.ForcingEligibleTransport.class_iff
+#print axioms PPAC.Migration.ForcingEligibleTransport.literal_labels_fixed
+#print axioms PPAC.Migration.ForcingEligibleTransport.object_bijection
+#print axioms PPAC.Migration.ForcingEligibleTransport.onto
+#print axioms PPAC.Migration.ForcingEligibleTransport.onto_semantics
+#print axioms PPAC.Migration.ForcingEligibleTransport.restrictedBijection
+#print axioms PPAC.Migration.ForcingEligibleTransport.restrictedBijection_semantics
+#print axioms PPAC.Migration.ForcingEligibleTransport.root_object_bijection
+#print axioms PPAC.Migration.ForcingEligibleTransport.nameSentence
+#print axioms PPAC.Migration.ForcingEligibleTransport.name_models
+#print axioms PPAC.Migration.ForcingEligibleTransport.name_kernel_certificate
+#print axioms PPAC.Migration.ForcingEligibleTransport.rootSentence
+#print axioms PPAC.Migration.ForcingEligibleTransport.root_models
+#print axioms PPAC.Migration.ForcingEligibleTransport.root_kernel_certificate
+#print axioms PPAC.Migration.ForcingEligibleTransport.App
+#print axioms PPAC.Migration.ForcingEligibleTransport.assemble_app
+#print axioms PPAC.Migration.ForcingEligibleTransport.app
+#print axioms PPAC.Migration.ForcingEligibleTransport.app_semantics
+#print axioms PPAC.Migration.ForcingEligibleTransport.assemblySentence
+#print axioms PPAC.Migration.ForcingEligibleTransport.assembly_models
+#print axioms PPAC.Migration.ForcingEligibleTransport.assembly_kernel_certificate

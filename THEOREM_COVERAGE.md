@@ -571,3 +571,13 @@ ForcingLocalQuotientTransport (22 declarations) migrates transport_ofName/inject
 This supersedes the preceding pending LocalName/LocalQuotient items. All four endpoints are ordinary nativeZF original-kernel derivations. Actual eligibleName_coordinate_transport, the eligible-class bijection and complete eligibleSystemTransport assembly remain to be connected using existing formula symmetry, HS domain transport and fixed labels. CodeLinks, original stages 9–11 and final internal Con remain unproved.
 
 Full verification PASSED: 2955 jobs, 33048 declarations, 41 new; all 33007 old footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axiom dependencies. 1849 declarations without axioms, 31199 with recorded dependencies; 75 fixed-source and 2510 current hashes match. See verification/local-quotient-transport-acceptance.json.
+
+## Actual coordinate eligibility and eligible app construction (2026-10-29)
+
+ForcingEligibleTransport (22 declarations) migrates eligibleName_coordinate_transport:145–171 and eligible_coordinate_transport:173–182 through the existing full HS domain and actual moved filter/diagram/E. name_kernel_certificate reuses ForcingSeparation.symmetry, moved_code and the exact filter image. class_iff consumes the existing eligible_ofName projection law.
+
+root_kernel_certificate constructs the native restriction bijection between the actual root-cone Obj sets. Literal labelSet fixedness, E's original support and existing root_fixed discharge the fixed-label/E/root inputs. assembly_kernel_certificate consumes the two actual EligibleFamily.Data rows, constructs their LocalName and quotient transport, and then restricts to eligible objects. Neither a quotient bijection nor an eligible app is assumed. These are ordinary nativeZF original-kernel object sentences.
+
+This closes coordinate eligibility and actual per-diagram app construction. Collecting all app graphs into one internal function and proving full naturality against the two existing restriction families is still outstanding; the complete eligibleSystemTransport is not yet claimed. Original stage 8, CodeLinks, stages 9–11 and final internal Con remain incomplete. Existing Data uniqueness, native function-family constructors and the quotient restriction square are the next direct inputs, not new foundation obligations.
+
+Full verification PASSED: 2956 jobs, 33070 declarations, 22 new; all 33048 old footprints unchanged. Nine commands/five trust=0 checks exited 0; zero warnings/new axiom dependencies. 1849 declarations without axioms, 31221 with recorded dependencies; 75 fixed-source and 2511 current hashes match. See verification/eligible-transport-acceptance.json.
