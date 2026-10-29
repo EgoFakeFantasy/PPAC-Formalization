@@ -2361,7 +2361,8 @@ def main() -> None:
                                ('forcing_persistent_works', 'ForcingPersistentWorks', 38),
                                ('forcing_persistent_covariance', 'ForcingPersistentCovariance', 9),
                                ('forcing_works_covariance', 'ForcingWorksCovariance', 10),
-                               ('forcing_forced_availability', 'ForcingForcedAvailability', 17)):
+                               ('forcing_forced_availability', 'ForcingForcedAvailability', 17),
+                               ('forcing_stable_codes', 'ForcingStableCodes', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

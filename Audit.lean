@@ -33791,3 +33791,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingForcedAvailability.fiberSentence
 #print axioms PPAC.Migration.ForcingForcedAvailability.fiber_models
 #print axioms PPAC.Migration.ForcingForcedAvailability.fiber_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingStableCodes.exists_root_equal_code
+#print axioms PPAC.Migration.ForcingStableCodes.at_of_root_eq
+#print axioms PPAC.Migration.ForcingStableCodes.exists_working_code_of_stable
+#print axioms PPAC.Migration.ForcingStableCodes.constructionSentence
+#print axioms PPAC.Migration.ForcingStableCodes.construction_models
+#print axioms PPAC.Migration.ForcingStableCodes.construction_kernel_certificate

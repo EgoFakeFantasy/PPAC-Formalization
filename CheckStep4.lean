@@ -12349,4 +12349,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingForcedAvailability.fiberSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq d g oi objects S mi maps r a Ar Hr X Q pr Or tau U z))) :=
   ForcingForcedAvailability.fiber_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq d g oi objects S mi maps r a Ar Hr X Q pr Or tau U z
 
+-- One internal omega code works at every stronger condition.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingStableCodes.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z))) :=
+  ForcingStableCodes.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z
+
 end PPAC.Migration.Step4Checks

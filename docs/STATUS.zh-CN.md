@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生工作码、OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -33,7 +33,7 @@
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；ChainCode/At/Represents、代表码存在/唯一性、原根 componentEquiv、At 保反射及同码协变均已接入 | 通用持久选择的单调/唯一/稠密性已取得原核证书；实际主滤子及 Same 定律/表示相等已接入；逐条件 Works 和实际 Selected 特化已接入；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；主滤子 forcedAvailability 与实际 eligibleSystem 可用性及精确纤维桥接已取得原核证书并通过全量验收；下一接 exists_working_code_of_stable 的同一个内部ω链码在全部加强条件下的表示，再接 OrdinalCodes/CodeLinks。逐滤子 leastCode 不在最终消费者链上，取消其迁移前置地位；不重建名字/选择/L/商后端 |
+| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；ChainCode/At/Represents、代表码存在/唯一性、原根 componentEquiv、At 保反射及同码协变均已接入 | 通用持久选择的单调/唯一/稠密性已取得原核证书；实际主滤子及 Same 定律/表示相等已接入；逐条件 Works 和实际 Selected 特化已接入；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；主滤子 forcedAvailability 与实际 eligibleSystem 可用性及精确纤维桥接已取得原核证书并通过全量验收；exists_working_code_of_stable 的同一个内部ω链码在全部加强条件下的表示已取得原核证书并通过全量验收；其直接消费者为 CodeCardinals.ordinalType_lower_count:235，与后续 OrdinalCodes/CodeLinks 汇合。逐滤子 leastCode 不在最终消费者链上，取消其迁移前置地位；不重建名字/选择/L/商后端 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
@@ -58,3 +58,11 @@ ForcingForcedAvailability 直接迁移 GraphFusion.ForcedAvailable/mem_forcedAva
 carrier_kernel_certificate 在普通 nativeZF 中构造完整可用性集合；fiber_kernel_certificate 通过同一现成内部 L 取得相对化的 nativeZF 原核证书，原几何、支撑、名字资格和稳定性前所需条件完整保留。实际稳定工作码尚未构造；下一个直接消费者是固定源 PersistentCodes.exists_working_code_of_stable:371–425，需复用内部ω上的 uniformize_formula_l、纤维双射、EqF 单调和 toGlued_arrow，证明同一个码适用于所有加强条件。
 
 实际验收：2968 项构建、33279 项声明；新增 17 项，原 33262 项足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 份固定源和 2523 份当前文件哈希匹配。报告：verification/forced-availability-acceptance.json。原阶段仍为 8，最终内部 Con 未完成。
+
+## 同一个内部ω稳定工作码（本批全量验收通过）
+
+ForcingStableCodes 迁移固定 PersistentCodes.exists_working_code_of_stable:371–425 的完整结论。一次 uniformize_formula_l 选择生成实际内部ω函数；每个条目在原条件、原根处与给定名字 EqF。对每一个加强条件，现成 assemble_principal 重新生成实际 Bundle，system_of_families 与 gluing_laws 生成实际定律及纤维映射，已验收的精确主纤维桥接给出根元素，原 restrict_injective 和 toGlued_arrow 保证同一码仍表示它。因此不是逐条件重选码，也不是仅标准自然数上的列表。
+
+construction_kernel_certificate 在 nativeZF 原核中证明同一内部 L 相对化的完整闭句。原几何、支撑、链、局部名字和稳定可用性假设全部保留。实际源消费者为 CodeCardinals.ordinalType_lower_count:235，和 CodeLinks.ordinalRank_decide 汇合；下一步沿 OrdinalCodes 的 selectedRank/selectionType 构造，复用 ForcingCollectedName/HS、原生 Ord.OrderType.wellOrderType_existsUnique 及 Ord.Recursion.recursiveSequence_exists，不重建名字收集或递归后端。
+
+实际验收：2969 项构建、33285 项声明；新增 6 项，原 33279 项足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0；零警告、无新增公理依赖；75 份固定源和 2524 份当前文件哈希匹配。证据：verification/stable-codes-acceptance.json。原阶段仍为 8，最终内部 Con 未完成。
