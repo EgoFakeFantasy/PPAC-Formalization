@@ -34201,3 +34201,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCovariance.covarianceSentence
 #print axioms PPAC.Migration.ForcingGermCovariance.covariance_models
 #print axioms PPAC.Migration.ForcingGermCovariance.covariance_kernel_certificate
+
+-- Actual GermSelectors.OrdinalCount and conditional dense totality.
+#print axioms PPAC.Migration.ForcingGermDensity.OrdinalCount
+#print axioms PPAC.Migration.ForcingGermDensity.ordinalCount
+#print axioms PPAC.Migration.ForcingGermDensity.ordinalCount_freeClosed
+#print axioms PPAC.Migration.ForcingGermDensity.ordinalCount_semantics
+#print axioms PPAC.Migration.ForcingGermDensity.preliminary_total
+#print axioms PPAC.Migration.ForcingGermDensity.totalSentence
+#print axioms PPAC.Migration.ForcingGermDensity.total_models
+#print axioms PPAC.Migration.ForcingGermDensity.total_kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.working_linked_over

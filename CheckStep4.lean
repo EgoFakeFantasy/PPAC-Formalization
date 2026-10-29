@@ -12576,4 +12576,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
       (ConstructibleGround.relative (ForcingGermCovariance.covarianceSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label))) :=
   ForcingGermCovariance.covariance_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label
 
+-- Same actual ranks/table; source OrdinalCount remains an explicit premise.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab label d : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingGermDensity.totalSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab label d))) :=
+  ForcingGermDensity.total_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab label d
+
 end PPAC.Migration.Step4Checks

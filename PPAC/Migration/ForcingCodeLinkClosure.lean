@@ -110,6 +110,51 @@ theorem links_descend (hM : FirstOrder.Theory.Models M nativeZF)
   links_descend_over hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau (env a)
     hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hVertices hChain hd ha hEntry hArrow hLinks
 
+theorem working_linked_over (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex : Fin k) (d a : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hVertices : ConstructionComponentCarrier.Carrier (env (rho 0)) (env I) (env mul) (env q) (env vertices))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hd : (Project.FirstOrderSemantics.reduct M).mem d (env (rho 3)))
+    (_ha : ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) a)
+    (hWorks : ForcingPersistentWorks.Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d a)
+    (hCommon : EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) (env vertex)) :
+    ∃ tau, Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env vertex) tau ∧
+      ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) d (env vertex) tau a := by
+  obtain ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,b,hg,hBundle,hb,hRep⟩ := hWorks d hd (fun _ h => h)
+  obtain ⟨hObjMap,hObj,hS,hMap,hMaps,hP,hGlue,hQ,hProjection⟩ := hBundle
+  have hgf := ForcingPrincipalFilter.principal_filter hd hg
+  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
+  have hCoh := ForcingComponentFibers.coherent_of_system hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys (q := env q)
+  obtain ⟨hAll,hComm⟩ := ForcingComponentGluing.gluing_laws hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys hP hGlue hQ hProjection
+  obtain ⟨tau,hAt⟩ := ForcingTailCodes.at_total hM hp.2.2.2.1 hObjMap hObj hAll hCommon hb
+  exact ⟨tau,ForcingTailCodes.at_entry hAt,
+    ForcingCodeLinkRepresentation.links_of_represents_at hM (ForcingPairUnion.domain rho G F) env rho mul hm hp
+      hp.2.2.2.1 hObjMap hObj hMaps hCoh hAll hComm hw hChain hd hg hVertices hRep hAt⟩
+
+/-- Original indexed entry point retained unchanged. -/
 theorem working_linked (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -141,18 +186,9 @@ theorem working_linked (hM : FirstOrder.Theory.Models M nativeZF)
       (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) (env d) (env a))
     (hCommon : EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) (env vertex)) :
     ∃ tau, Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env vertex) tau ∧
-      ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env vertex) tau (env a) := by
-  obtain ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,b,hg,hBundle,hb,hRep⟩ := hWorks (env d) hd (fun _ h => h)
-  obtain ⟨hObjMap,hObj,hS,hMap,hMaps,hP,hGlue,hQ,hProjection⟩ := hBundle
-  have hgf := ForcingPrincipalFilter.principal_filter hd hg
-  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
-  have hCoh := ForcingComponentFibers.coherent_of_system hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys (q := env q)
-  obtain ⟨hAll,hComm⟩ := ForcingComponentGluing.gluing_laws hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys hP hGlue hQ hProjection
-  obtain ⟨tau,hAt⟩ := ForcingTailCodes.at_total hM hp.2.2.2.1 hObjMap hObj hAll hCommon hb
-  exact ⟨tau,ForcingTailCodes.at_entry hAt,
-    ForcingCodeLinkRepresentation.links_of_represents_at hM (ForcingPairUnion.domain rho G F) env rho mul hm hp
-      hp.2.2.2.1 hObjMap hObj hMaps hCoh hAll hComm hw hChain hd hg hVertices hRep hAt⟩
+      ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env vertex) tau (env a) :=
+  working_linked_over hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex (env d) (env a)
+    hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hVertices hChain hd _ha hWorks hCommon
 
 def descentSentence {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a : Fin k) : Project.Sentence where
   formula := Project.Formula.forallClosure k (.imp (Project.Formula.isOmega (.bound w))
@@ -199,9 +235,9 @@ theorem descent_models {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one
     ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,
     ForcingProductFamily.presentation_semantics (M := M),ForcingLabelPermutations.carrier_semantics (M := M),
     ForcingSupportFilter.filter_semantics (M := M),
-    
-    
-    
+
+
+
     ConstructionComponentCarrier.carrier_semantics hM,
     ConstructionComponentCofinal.chain_semantics hM,
     ConstructionComponentCofinal.encodedArrow_semantics hM,ForcingTailCodes.chainCode_semantics hM,
