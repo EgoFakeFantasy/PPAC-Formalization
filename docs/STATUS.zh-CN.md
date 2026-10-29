@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际 Cohen 条件的 code／decode／compatibleChoice
+## 当前执行入口：实际 Cohen flip／值域限制及 hbits／hbp
 
-完整源 CountableHull.exists_closed 已在上一批取得普通 nativeZF 原核证书，继续直接复用，不再列为待办。本批沿固定 AssignedGraphs.Condition 的真实反链证明推进，条件仍是可数部分二元图。
+完整 CountableHull、实际 code／decode／compatibleChoice 已完成，本批直接复用。条件仍是源的可数部分二元图，未替换为有限 Cohen 条件。
 
-ForcingCohenCodes 复用现成空集／单元素 Option 表示、条件载体和大小桥接。由内部 p→ω 单射构造枚举：后继索引覆盖每个 some 图元素，零索引给出 none，精确值域等于整个 enriched graph；相同编码恢复同一条件。逐条件枚举有普通 nativeZF 原核证书；现成内部选择装配全部条件上的一个 code 函数，并构造实际 decode 函数及 decode(code(p))=p。同一现成内部 L 相对化原核证书消去整体选择背景。
+ForcingCohenRestriction 用现成 Separation 构造任意 Option 值域 Y 下的 restrictedGraph，准确保留 z∈p 且 some(z)∈Y。函数性、可数性、与原条件的相容性以及精确限制唯一性均已证明；code_into／covered_of_code 对应源 hcode／hbgraph，保留全部内部索引。它不冒名复用先前按标签限制的不同谓词。
 
-ForcingCohenCompatibleChoice 直接复用现成 Cohen 相容公式与内部 uniformization，构造整个条件载体上的实际选择函数；若 A 中有相容条件，则结果属于 A 且与输入相容，否则返回空条件。没有增加 antichain/maximality 前提。其原核证书相对化到同一个已完成的内部 L。
+ForcingCohenFlip 用现成零／一／后继、Kuratowski 对和 singleton 表示构造整个内部 Option(C×2) 翻转函数图，证明闭包内可翻转任意 bit。compatible_of_bits 已接源 hbp：同一限制图的相容性与实际 bit 封闭值域推出原条件相容性。三项端点均为普通 nativeZF 的原核 Derives，无新增对象 Choice 前提。
 
-本批 50 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收与原 33942 项足迹对比以 verification/cohen-codes-acceptance.json 的实际结果为准。
+本批 65 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收及原 33992 项足迹比较见 verification/cohen-flip-acceptance.json 的实际结果。
 
-下一源步骤为 flip、任意 Option 值域的 restrictedGraph、源 Bool×ω 运算图，调用已完成的完整 CountableHull，并证明反链条件全部被同一小值域覆盖及最终 pack 单射，闭合 antichain_cardinal_le:403–457；随后接 CodeCardinals 和实际 OrdinalCount。code／decode／compatibleChoice 已完成，不再列为待办。仍在原第 8 阶段；阶段 9–11 及最终内部 Con 未完成。
+下一源步骤为源 Bool×内部ω 的实际 op 图（407–410），调用已完成 CountableHull（412），由同一 code／decode／compatibleChoice 和 flip 推出所需闭包、hin 及最终 pack 单射（430–457），闭合实际 antichain_cardinal_le 后接 CodeCardinals／OrdinalCount。flip、restrictedGraph、hcode／hbgraph、hbits／hbp 均已有，不再重做。仍在原第 8 阶段；第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

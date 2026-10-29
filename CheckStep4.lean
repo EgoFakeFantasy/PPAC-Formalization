@@ -12649,4 +12649,14 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative ForcingCohenCompatibleChoice.selectionSentence)) :=
   ForcingCohenCompatibleChoice.selection_kernel_certificate
 
+-- Exact source Option-value restriction, internal flip/hbits, and hbp.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingCohenRestriction.restrictionSentence) := ForcingCohenRestriction.restriction_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingCohenFlip.flipSentence) := ForcingCohenFlip.flip_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingCohenFlip.compatibilitySentence) := ForcingCohenFlip.compatibility_kernel_certificate
+
 end PPAC.Migration.Step4Checks
