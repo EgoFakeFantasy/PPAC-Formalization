@@ -34130,3 +34130,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeLinkClosure.workingSentence
 #print axioms PPAC.Migration.ForcingCodeLinkClosure.working_models
 #print axioms PPAC.Migration.ForcingCodeLinkClosure.working_kernel_certificate
+
+-- Live QuotientActions consumers in GermSelectors.preliminary_permute.
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.links_permute
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.tail_eq_permute
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.linksSentence
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.links_models
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.links_kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.equalitySentence
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.equality_models
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.equality_kernel_certificate

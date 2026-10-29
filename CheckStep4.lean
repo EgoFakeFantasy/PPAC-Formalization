@@ -12531,4 +12531,14 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingCodeLinkClosure.workingSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d a))) :=
   ForcingCodeLinkClosure.working_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d a
 
+-- Same code under movement and tail-fixed equality at the original root.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingCodeLinkCovariance.linksSentence rho I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau)) :=
+  ForcingCodeLinkCovariance.links_kernel_certificate rho I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingCodeLinkCovariance.equalitySentence rho w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma))) :=
+  ForcingCodeLinkCovariance.equality_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma
+
 end PPAC.Migration.Step4Checks
