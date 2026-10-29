@@ -12740,4 +12740,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incomin
       (ConstructibleGround.relative (ForcingRelationClassMove.recordSentence rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta c top bit labels E))) :=
   ForcingRelationClassMove.record_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta c top bit labels E
 
+-- Actual label-class witnesses below every stronger condition, in ordinary nativeZF.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu e root G F mul c t b labels E tau p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingLabelDensity.densitySentence rho I K B w mu e root G F mul c t b labels E tau p)) :=
+  ForcingLabelDensity.density_kernel_certificate rho I K B w mu e root G F mul c t b labels E tau p
+
 end PPAC.Migration.Step4Checks

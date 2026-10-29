@@ -848,3 +848,4 @@ import PPAC.Migration.ForcingLocalRecordPullback
 import PPAC.Migration.ForcingLocalRecordEquality
 import PPAC.Migration.ForcingRelationClass
 import PPAC.Migration.ForcingRelationClassMove
+import PPAC.Migration.ForcingLabelDensity

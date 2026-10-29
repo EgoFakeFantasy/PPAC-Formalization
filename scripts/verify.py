@@ -2411,7 +2411,8 @@ def main() -> None:
                                ('forcing_local_record_pullback', 'ForcingLocalRecordPullback', 24),
                                ('forcing_local_record_equality', 'ForcingLocalRecordEquality', 15),
                                ('forcing_relation_class', 'ForcingRelationClass', 30),
-                               ('forcing_relation_class_move', 'ForcingRelationClassMove', 21)):
+                               ('forcing_relation_class_move', 'ForcingRelationClassMove', 21),
+                               ('forcing_label_density', 'ForcingLabelDensity', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

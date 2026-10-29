@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：具体标签类协变与同记录商相等已接通
+## 当前执行入口：实际标签类的稠密条件见证已接通
 
-ForcingRelationClassMove 迁移固定 LocalRecords.separate_move／relationClass_move／labelClass_move，使用已有 mapConditions 边方程和完整强迫对称性证明字面名字动作。具体公式族 j ↦ relationClass(labelSet,E,label j) 已证明在内部 I 上总且唯一，协变由实际标签集合固定性、标签移动和 E 的原根支撑推出。
+ForcingLabelDensity 按固定 ProductNames.mem_labelSet、ChoiceFailure.exists_condition_below 及 AvailableRecords.classRepresentationSet_denseBelow 的前半段迁移。复用原子强迫方程、实际标签边方程、Cohen 空条件和 WithTop 配对编码；在任意内部加强条件下，取得真正的 Cohen／图条件及实际标签类名字，并证明与原名字强迫相等。
 
-两个原核端点分别联合证明具体名字族总性／唯一性／协变，以及实际同记录局部商相等。后者直接消费已完成的 quotient_equal，移除原抽象协变前提，在同一现成内部 L 中消去 Choice；不重做根反射、条件传输或局部商后端。21 项公开声明定向 trust=0 通过、无新增公理依赖；全量验收与原 34177 项精确依赖比较以 verification/relation-class-move-acceptance.json 为准。
+普通 nativeZF 原核 density_kernel_certificate 已将全部见证和条件量词封闭，背景保留原呈现、左消单子、已有图、ω／无限基数、支撑滤子和 HS 条件；没有新增对象 Choice。新增 8 项公开声明；实际全量验收以 verification/label-density-acceptance.json 为准。
 
-下一源步骤为 classRepresentationSet_denseBelow 的实际标签成员稠密性和图扩张，再完成 CodeCardinals total／single 的组合及 OrdinalCount。类名字构造、支持、classOf/isClass 刻画、精确移动协变和具体族同记录相等均不再列为缺口；仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 Diagram.extend_through 对支撑及指定标签的值域覆盖，随后完成 classRepresentationSet_denseBelow、CodeCardinals total／single 组合及 OrdinalCount。标签成员稠密性、实际条件细化及标签类强迫相等不再列为缺口；仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

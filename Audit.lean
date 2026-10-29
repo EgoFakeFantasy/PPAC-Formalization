@@ -34773,3 +34773,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationClassMove.recordSentence
 #print axioms PPAC.Migration.ForcingRelationClassMove.record_models
 #print axioms PPAC.Migration.ForcingRelationClassMove.record_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLabelDensity.mem_labelSet
+#print axioms PPAC.Migration.ForcingLabelDensity.exists_condition_below
+#print axioms PPAC.Migration.ForcingLabelDensity.class_label_dense
+#print axioms PPAC.Migration.ForcingLabelDensity.result
+#print axioms PPAC.Migration.ForcingLabelDensity.result_semantics
+#print axioms PPAC.Migration.ForcingLabelDensity.densitySentence
+#print axioms PPAC.Migration.ForcingLabelDensity.density_models
+#print axioms PPAC.Migration.ForcingLabelDensity.density_kernel_certificate
