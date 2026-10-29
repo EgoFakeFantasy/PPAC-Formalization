@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：CodeLinks 的 Links 局部规律及 EqF/Same 等价已验收
+## 当前执行入口：CodeLinks 的 At／Represents 与 Links 双向桥接已验收
 
-固定源 CodeLinks.Links:171、links_mono:179、links_common:188、links_congr:197、links_same:206、links_eq_iff_same:223 和 links_restrict:391 已由 ForcingCodeLinks 接入。对象关系保留模型内部ω阈值、全部后续链顶点的实际箭头，以及同一 Cohen 条件／顶点图上的字面名字相等。五条局部规律已取得普通 nativeZF 原核证书；链接代表的 EqF 与 Same 等价已通过现成 ForcingOrdinalRoot.eq_at_root 取得同一内部 L 相对化的原核证书。两个局部名字的值域／固定子通过现有外延性和唯一性对齐；内部阈值比较、箭头复合和原子相等均复用已有证明，没有新增强迫、选择或商后端。全量验收：2985 项构建、33568 项声明（新增 16 项），全部 33552 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2540 项当前哈希匹配。来源锁中的后续定理名已纠正为 links_descend，并完成复验。记录：verification/code-links-acceptance.json。
+固定源 CodeLinks.links_of_represents_at:257 与 at_of_represents_links:289 已由 ForcingCodeLinkRepresentation 接入。两方向保留同一主滤子、实际对象／限制族、精确顶点纤维、粘合投影与字面名字；沿真实箭头限制名字，再复用同一粘合类的单射性和主滤子 EqG/EqF 等价。阈值比较和共尾链使用模型内部 ω。普通 nativeZF 原核闭句证明在 Represents 下 At 当且仅当 Links；Coherent、AllFiberMaps、Commuting 从现成 System 与粘合定理导出，不作为新增未解前提。全量验收：2986 项构建、33573 项声明（新增 5 项），全部 33568 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2541 项当前哈希匹配。记录：verification/code-link-representation-acceptance.json。
 
-下一源步骤为 CodeLinks.links_of_represents_at:257 和 at_of_represents_links:289，再接 links_stable:313、exists_linked_working_of_stable:349 及后续链接下降／工作代表。所需 ForcingComponentGluing.toGlued_bijective/toGlued_arrow、ForcingSystemFibers.fiber_bijection、主滤子 eqG_principal、At／Represents 和实际资格对象／限制族已经存在；只做源消费者组合。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.links_stable:313、exists_linked_working_of_stable:349，随后 links_descend:405、working_linked:421 及 CodeCardinals／GermSelectors 消费者。Works／Bundle、system_of_families、actual_available_iff、exists_working_code_of_stable、at_of_root_eq 和 eq_at_root 已存在；复用这些证明，不重建稳定工作码、局部商或反射基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
@@ -19,7 +19,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 桥接、稳定性和后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 双向桥接已完成；链接稳定性和后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

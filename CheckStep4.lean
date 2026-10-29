@@ -12501,4 +12501,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingCodeLinks.equalitySentence rho I K B w G F mul one mu history kappa mark H C incoming base q zero root vertices chain names bound d vertex r index U tau sigma a b))) :=
   ForcingCodeLinks.equality_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q zero root vertices chain names bound d vertex r index U tau sigma a b
 
+-- The SAME actual principal quotient: At iff Links for a represented code.
+example {k : Nat} (Hdom : Source.Formula (k+1)) (rho : Fin 7 → Fin k)
+    (I K B w mul one G F g q bound labels E diagrams objImage objects S mapImage maps root P Q gluePr zero vertices chain names d vertex tau a cls : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingCodeLinkRepresentation.constructionSentence Hdom rho I K B w mul one G F g q bound labels E diagrams objImage objects S mapImage maps root P Q gluePr zero vertices chain names d vertex tau a cls)) :=
+  ForcingCodeLinkRepresentation.construction_kernel_certificate Hdom rho I K B w mul one G F g q bound labels E diagrams objImage objects S mapImage maps root P Q gluePr zero vertices chain names d vertex tau a cls
+
 end PPAC.Migration.Step4Checks

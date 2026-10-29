@@ -700,3 +700,12 @@ Pinned CodeLinks.ordinalType_decide:106, ordinalRank_eq_iff:112, ordinalRank_dec
 ## CodeLinks: actual internal Links and supported equality comparison
 
 ForcingCodeLinks adapts pinned Links:171, links_mono:179, links_common:188, links_congr:197, links_same:206, links_eq_iff_same:223 and links_restrict:391. The exact object relation retains an internal omega threshold, actual later chain arrows and forced equality at the same Cohen condition/source diagram. laws_kernel_certificate proves five local laws in ordinary nativeZF. equality_kernel_certificate proves the EqF/Same equivalence relative to the SAME existing internal L; it consumes existing OrdinalRoot.eq_at_root with supports aligned by range/fixer uniqueness. No new backend or external-standardness hypothesis. Source chain/presentation/monoid, actual ChainCode support, cardinal/merger background remain explicit. Full verification: 2985 jobs, 33568 declarations (16 new), all 33552 old footprints unchanged; nine commands/five trust=0 checks passed, zero warnings/new axiom dependencies, 75 source and 2540 current hashes match. Evidence: verification/code-links-acceptance.json. Actual consumers include CodeLinks:294,324,372,409 and GermSelectors:57,63,71,97,109,130,194,202. At/Represents linkage, stable linked working codes, remaining downstream assembly, stages 9-11 and final internal Con remain incomplete.
+
+
+## CodeLinks principal representation/link bridge — 2026-10-29
+
+固定源 CodeLinks.links_of_represents_at:257 与 at_of_represents_links:289 已由 ForcingCodeLinkRepresentation 接入。两方向保留同一主滤子、实际对象／限制族、精确顶点纤维、粘合投影与字面名字；沿真实箭头限制名字，再复用同一粘合类的单射性和主滤子 EqG/EqF 等价。阈值比较和共尾链使用模型内部 ω。普通 nativeZF 原核闭句证明在 Represents 下 At 当且仅当 Links；Coherent、AllFiberMaps、Commuting 从现成 System 与粘合定理导出，不作为新增未解前提。全量验收：2986 项构建、33573 项声明（新增 5 项），全部 33568 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2541 项当前哈希匹配。记录：verification/code-link-representation-acceptance.json。
+
+下一源步骤为 CodeLinks.links_stable:313、exists_linked_working_of_stable:349，随后 links_descend:405、working_linked:421 及 CodeCardinals／GermSelectors 消费者。Works／Bundle、system_of_families、actual_available_iff、exists_working_code_of_stable、at_of_root_eq 和 eq_at_root 已存在；复用这些证明，不重建稳定工作码、局部商或反射基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+
+源直接消费者为 links_stable 的第 323 行、exists_linked_working_of_stable 的第 367 行和 working_linked 的第 429 行。新增端点为 `ForcingCodeLinkRepresentation.construction_kernel_certificate`；原核背景为普通 `nativeZF`，对象结论为同一表示下的 `At ↔ Links`，未把任意模型中间定理当作最终内部 Con。

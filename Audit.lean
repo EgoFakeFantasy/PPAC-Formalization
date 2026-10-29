@@ -34100,3 +34100,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeLinks.equalitySentence
 #print axioms PPAC.Migration.ForcingCodeLinks.equality_models
 #print axioms PPAC.Migration.ForcingCodeLinks.equality_kernel_certificate
+
+-- Pinned principal-filter representation/link equivalence.
+#print axioms PPAC.Migration.ForcingCodeLinkRepresentation.links_of_represents_at
+#print axioms PPAC.Migration.ForcingCodeLinkRepresentation.at_of_represents_links
+#print axioms PPAC.Migration.ForcingCodeLinkRepresentation.constructionSentence
+#print axioms PPAC.Migration.ForcingCodeLinkRepresentation.construction_models
+#print axioms PPAC.Migration.ForcingCodeLinkRepresentation.construction_kernel_certificate
