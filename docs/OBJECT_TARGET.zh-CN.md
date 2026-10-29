@@ -79,3 +79,7 @@ CodeCardinals 的实际成员记录见证现已接通：ForcingCodeRecordWitness
 源主线纠偏：已撤回 classFiberEmbedding → classFiber_dense_lower → ordinalType_lower_count 的错误调用链。前两者进入独立的 QuotientActions.classFiber_dense_exact 分支，不是最终 ordinalType 下界的必要前置；e071a55 新增的独立纤维嵌入模块和其专用入口已退役，既有 profile/Outside 证明保留。恢复及精确清单见 verification/class-fiber-nonmain-review.json。
 
 ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinalType_lower_count 的 hdisj/hits:196–218：实际投影既有 Outside 副本的条件坐标，证明根外支撑不交，再证明全部内部行与全部扩张根的条件均有共同加强的副本命中。原核对象句子存在量化实际条件函数，保留逐点图双条件；Choice 在同一既有 L 中消去。未假定泛滤存在或命中集合族，也不引入该旁支。下界关系 stable/total/single 及最终基数计数的具体接线、OrdinalCount 和内部 Con 仍未完成；现成对应后端不重做。本批验收见 STATUS 和 verification/probe-row-hits-acceptance.json。
+
+## 2026-10-30 主线实际副本的稳定工作码
+
+`ForcingProbeStable.source_kernel_certificate` 的结论在原生纯成员语言中闭合，位于同一现成内部 L。它量化所有内部加强条件，实际构造一个持久链码，且每项名字在原根强迫等于原 Copy 记录中的同一名字；稳定 profile 从实际副本和已有 profile/主滤子接口推出，不作为假设传入。背景仍为普通 nativeZF；无新增对象 Choice 公理。源对应是 `CodeCardinals.ordinalType_lower_count` 的 hel/stable 和 total 的工作码产生步骤。全量验收通过：3030 构建、34358 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-stable-acceptance.json。该端点不是完整下界、OrdinalCount 或最终内部 Con。

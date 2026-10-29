@@ -859,3 +859,4 @@ import PPAC.Migration.ForcingOutsideLocal
 import PPAC.Migration.ForcingClassProfile
 import PPAC.Migration.ForcingOutsideCopies
 import PPAC.Migration.ForcingProbeRowHits
+import PPAC.Migration.ForcingProbeStable

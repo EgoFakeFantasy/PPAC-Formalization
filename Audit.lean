@@ -34937,3 +34937,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProbeRowHits.sourceSentence
 #print axioms PPAC.Migration.ForcingProbeRowHits.source_models
 #print axioms PPAC.Migration.ForcingProbeRowHits.source_kernel_certificate
+#print axioms PPAC.Migration.ForcingProbeStable.stable_of_copy
+#print axioms PPAC.Migration.ForcingProbeStable.source_construct
+#print axioms PPAC.Migration.ForcingProbeStable.sourceSentence
+#print axioms PPAC.Migration.ForcingProbeStable.source_models
+#print axioms PPAC.Migration.ForcingProbeStable.source_kernel_certificate
