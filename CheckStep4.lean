@@ -12684,4 +12684,11 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative ForcingCohenChainBound.continuumSentence)) :=
   ForcingCohenChainBound.continuum_kernel_certificate
 
+-- Source LocalRecords pullback and exact same-record condition transport, ordinary nativeZF.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingLocalRecordPullback.constructionSentence) := ForcingLocalRecordPullback.construction_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingLocalRecordPullback.transportSentence) := ForcingLocalRecordPullback.transport_kernel_certificate
+
 end PPAC.Migration.Step4Checks

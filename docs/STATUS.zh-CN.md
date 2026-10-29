@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际 Cohen ChainBound、连续统实例与 LocalRecord 大小界已接通
+## 当前执行入口：LocalRecord 条件拉回与同记录置换已接通
 
-ForcingCohenCounting 复用同一个 code 家族及已验收 pack_injection，构造 Option 载体的实际单射，接通固定 LocalRecords.Condition.cardinal_le:61–104 的整个可数条件载体大小界。它进一步构造字面的 M × (M × Condition M κ) 集合并证明 |LocalRecord|≤μ，对应 CodeCardinals.ordinalType_cardinal_le:109–115 的 hrec；没有重建枚举或基数基础。
+既有实际 Cohen ChainBound、连续统实例、条件载体和 LocalRecord 大小界已验收，保留直接消费者 hcc/hrec。当前 ForcingLocalRecordPullback 迁移固定 LocalRecords.Condition.pullback/mem_pullback:19–31 与 permute_eq_of_pullback_eq:35–58。
 
-ForcingCohenChainBound 以原生分离构造同一条件载体的精确相容关系图，证明自反性，并将已完成实际反链界直接接入现成 ChainBound。连续统实例直接消费 ConstructionConcreteCardinals.continuum_fixed_countable_power，构造幂集、对应基数及固定幂证书，再特化同一 ChainBound。四项端点都是 nativeZF 原推导核中同一现成内部 L 的相对化句子，未向原背景加入对象 Choice。
+它沿原坐标 Graph/Lifted 关系构造两次实际单射，以原生 Separation 构造条件拉回，以拉回到原条件的内部单射证明可数性；精确 Entry 方程保留标签、层和位。支持条件与既有 Support 的 range 包含严格对应；拉回唯一性已证。同一标签 CompositionGraph 与相同拉回记录导出已有 Moved 关系，再直接调用已完成实际 Cohen 置换及 entries_ext，得到指定条件恰为该置换像。两个端点均为普通 nativeZF 原推导，无对象 Choice／L 背景前提。
 
-本批 24 项公开声明定向 trust=0 审计通过，无新增公理依赖。主线全量验收、全部原 34084 项精确依赖足迹比较与哈希复核，以 verification/cohen-counting-acceptance.json 的实际结果为准。新模块编译通过本身不等于最终 Con 已完成。
+本批 24 项公开声明定向 trust=0 审计通过，无新增公理依赖。全量验收、原 34108 项精确依赖比较及哈希复核以 verification/local-record-pullback-acceptance.json 的实际结果为准。
 
-下一源步骤为 CodeCardinals.ordinalType_cardinal_le:45–120 的实际表示关系 total／single：沿 member_ordinalRank、working_rooted、classRepresentationSet_denseBelow、LocalWitness.equal_of_record_eq、rooted_eq_iff_same、selected_unique 接入现有 ChainBound.cardinal_le_mul；随后迁移下界并取得实际 OrdinalCount。hcc、continuum 与 hrec 已接通，不再列作待重建；Preliminary.total/onto 依赖 OrdinalCount，禁止反过来用它们证明 OrdinalCount。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 LocalWitness.equal_of_record_eq 的名字层装配：复用已有 permutation_over_root、名字对称性和 forces_at_supporting_root，并消费本批精确条件像；然后接通 classRepresentationSet_denseBelow 和 CodeCardinals 表示关系 total／single。条件拉回、根上置换基础、支持反射和 hcc/hrec 不重建；Preliminary.total/onto 依赖 OrdinalCount，不能反用。仍在原第 8 阶段，OrdinalCount、第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

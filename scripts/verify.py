@@ -2407,7 +2407,8 @@ def main() -> None:
                                ('forcing_cohen_operation', 'ForcingCohenOperation', 15),
                                ('forcing_cohen_antichain', 'ForcingCohenAntichain', 12),
                                ('forcing_cohen_counting', 'ForcingCohenCounting', 10),
-                               ('forcing_cohen_chain_bound', 'ForcingCohenChainBound', 14)):
+                               ('forcing_cohen_chain_bound', 'ForcingCohenChainBound', 14),
+                               ('forcing_local_record_pullback', 'ForcingLocalRecordPullback', 24)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
