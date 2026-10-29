@@ -1,14 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：完整源 CountableHull.exists_closed 已接入原核
+## 当前执行入口：实际 Cohen 条件的 code／decode／compatibleChoice
 
-ForcingCountableHull 已完成固定 AssignedGraphs.CountableHull.exists_closed:296–324 的对象层迁移。直接使用同一完整内部树载体和一个根求值函数 E；原生范围构造给出 Y，现成 ExistingOrdinalImage.ordinal_image_bound_l 给出 |Y|≤μ，叶码给出 base∈Y。
+完整源 CountableHull.exists_closed 已在上一批取得普通 nativeZF 原核证书，继续直接复用，不再列为待办。本批沿固定 AssignedGraphs.Condition 的真实反链证明推进，条件仍是可数部分二元图。
 
-源 choose 子树步骤由树码到 μ 的既有单射编号实现：复用现成编号纤维公式与原生内部良序最小元，构造一个内部函数 K:Y→C，并证明实际方程 E(K(x))=x。与任意内部 f:ω→Y 复合得到 H，再调用上一批保留精确子索引的拼接求值方程，证明全部运算值属于同一个 Y。
+ForcingCohenCodes 复用现成空集／单元素 Option 表示、条件载体和大小桥接。由内部 p→ω 单射构造枚举：后继索引覆盖每个 some 图元素，零索引给出 none，精确值域等于整个 enriched graph；相同编码恢复同一条件。逐条件枚举有普通 nativeZF 原核证书；现成内部选择装配全部条件上的一个 code 函数，并构造实际 decode 函数及 decode(code(p))=p。同一现成内部 L 相对化原核证书消去整体选择背景。
 
-forall6 普通 nativeZF 原核证书只保留源 ω≤μ、字面 μ^ω=μ、|A|≤μ、运算图和 base∈X 条件；树载体、求值器、范围、选取和幂空间均已实际构造或消去。没有新增对象 Choice、外部良基、标准 ω、初等子模型或预设封闭性。16 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收及原 33926 项足迹对比以 verification/hull-acceptance.json 的实际结果为准。
+ForcingCohenCompatibleChoice 直接复用现成 Cohen 相容公式与内部 uniformization，构造整个条件载体上的实际选择函数；若 A 中有相容条件，则结果属于 A 且与输入相容，否则返回空条件。没有增加 antichain/maximality 前提。其原核证书相对化到同一个已完成的内部 L。
 
-下一源步骤为实际可数部分二元条件的 Cohen 反链界 AssignedGraphs.Condition.antichain_cardinal_le:403–457，随后接 CodeCardinals 上下界和实际 OrdinalCount。完整 CountableHull 现已完成，不再列为待办。仍在原第 8 阶段；完整选择器、阶段 9–11 及最终内部 Con 未完成。
+本批 50 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收与原 33942 项足迹对比以 verification/cohen-codes-acceptance.json 的实际结果为准。
+
+下一源步骤为 flip、任意 Option 值域的 restrictedGraph、源 Bool×ω 运算图，调用已完成的完整 CountableHull，并证明反链条件全部被同一小值域覆盖及最终 pack 单射，闭合 antichain_cardinal_le:403–457；随后接 CodeCardinals 和实际 OrdinalCount。code／decode／compatibleChoice 已完成，不再列为待办。仍在原第 8 阶段；阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

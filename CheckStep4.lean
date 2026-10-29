@@ -12638,4 +12638,15 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
       YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
   ForcingCountableHull.hull_kernel_certificate
 
+-- Exact code range in ordinary nativeZF; whole code and selection functions in the SAME internal L.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingCohenCodes.codeSentence) := ForcingCohenCodes.code_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenCodes.dataSentence)) := ForcingCohenCodes.data_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenCompatibleChoice.selectionSentence)) :=
+  ForcingCohenCompatibleChoice.selection_kernel_certificate
+
 end PPAC.Migration.Step4Checks
