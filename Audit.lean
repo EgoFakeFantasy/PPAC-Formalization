@@ -34879,3 +34879,32 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingClassProfile.constructionSentence
 #print axioms PPAC.Migration.ForcingClassProfile.construction_models
 #print axioms PPAC.Migration.ForcingClassProfile.construction_kernel_certificate
+
+-- Actual same-root outside-class copies on every internal index.
+#print axioms PPAC.Migration.ForcingOutsideCopies.moved_supported
+#print axioms PPAC.Migration.ForcingOutsideCopies.restrict_permute_of_fixes
+#print axioms PPAC.Migration.ForcingOutsideCopies.outside_move
+#print axioms PPAC.Migration.ForcingOutsideCopies.local_value
+#print axioms PPAC.Migration.ForcingOutsideCopies.value_isClass
+#print axioms PPAC.Migration.ForcingOutsideCopies.copy
+#print axioms PPAC.Migration.ForcingOutsideCopies.Copy
+#print axioms PPAC.Migration.ForcingOutsideCopies.copyRecord
+#print axioms PPAC.Migration.ForcingOutsideCopies.copyRecord_freeClosed
+#print axioms PPAC.Migration.ForcingOutsideCopies.copyRecord_semantics
+#print axioms PPAC.Migration.ForcingOutsideCopies.Family
+#print axioms PPAC.Migration.ForcingOutsideCopies.family
+#print axioms PPAC.Migration.ForcingOutsideCopies.family_freeClosed
+#print axioms PPAC.Migration.ForcingOutsideCopies.family_semantics
+#print axioms PPAC.Migration.ForcingOutsideCopies.construct
+#print axioms PPAC.Migration.ForcingOutsideCopies.constructionSentence
+#print axioms PPAC.Migration.ForcingOutsideCopies.construction_models
+#print axioms PPAC.Migration.ForcingOutsideCopies.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingOutsideCopies.Targets
+#print axioms PPAC.Migration.ForcingOutsideCopies.targets
+#print axioms PPAC.Migration.ForcingOutsideCopies.targets_freeClosed
+#print axioms PPAC.Migration.ForcingOutsideCopies.targets_semantics
+#print axioms PPAC.Migration.ForcingOutsideCopies.construct_targets
+#print axioms PPAC.Migration.ForcingOutsideCopies.source_construct
+#print axioms PPAC.Migration.ForcingOutsideCopies.sourceSentence
+#print axioms PPAC.Migration.ForcingOutsideCopies.source_models
+#print axioms PPAC.Migration.ForcingOutsideCopies.source_kernel_certificate

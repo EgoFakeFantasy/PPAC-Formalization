@@ -1,12 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际 classFromLocal 与精确可用性 profile 已取得原核证书
+## 当前执行入口：源 outsideClass_copies 的实际内部副本族已取得原核证书
 
-ForcingClassProfile 沿固定 ClassFibers.classFromLocal:405／classFromLocal_profile:419，复用现成 LocalName、实际商投影、资格传输和同一个对象／映射族。由原名字构造真正的目标商类，返回其 Obj 成员性、投影边及完整 availability carrier。探针图本身允许位于资格锥外，不要求它的商类属于该处的 Obj；正向只在已证明位于锥内的位置构造资格值，反向从实际映射抽取共同图上的 EqG，再消费现成完整支持下降和 OutsideLocal 排除。未重建 L、支持下降、商、几何或资格后端。
+ForcingOutsideCopies.source_kernel_certificate 沿固定 ClassFibers.outsideClass_copies:508，在当前具体构造使用的无限基数预算条件下，从内部乘子函数 m 及共同乘积方程实际构造 r.sub(m i) 图族。既有 permutation_over_root 生成同根置换；实际 Cohen 条件移动保持支撑与原根限制；literal labelClass_move 生成规范化局部名字，完整 isClass 在每个内部条件成立，OutsideLocal 对全部更强条件保持。现成 uniformize_formula_l 把结果收集成一个内部函数，其值为 Kuratowski (条件,名字) 对，保留源两个坐标族的全部逐索引性质。
 
-construction_kernel_certificate 在普通 nativeZF 原核中证明同一既有内部 L 相对化的完整存在闭句；源的理想整除／共同锥条件及已经装配的具体 System／Data／局部列表接口保持显式。全量验收已通过：3027 项构建、34299 项声明，新增 13 项；全部 34286 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2582 份当前文件哈希匹配。报告为 verification/class-profile-acceptance.json。
+最终闭句同时存在量化目标图族和副本记录族，没有预设目标族、目标 Outside、置换族或宿主索引选择函数。Choice 经同一既有内部 L 消去，推导关系仍是普通 nativeZF 的原 FirstOrder.Derives。源实际标签、共同根、乘子乘积和完整固定 localList 外部见证作为装配输入保留；不重建 L、选择、名字、子图或置换后端。
 
-下一源消费者：ClassFibers.outsideClass_copies 的实际名字／条件置换族，再接 classFiberEmbedding 与 CodeCardinals.ordinalType_lower_count 的实际 total/single，最终与已完成上界合流为 ConcreteQuotients 的 OrdinalCount。完整局部列表、probeDenseSet_dense/hits、两条 OutsideLocal 排除及本批实际 classFromLocal_profile 均不再列作待证明。localList_wellorderable／outside_localList、第 9–11 阶段和最终内部 Con 仍未完成。Geometry 来自已有 IdealProbes 的完整整除及共同锥输出，不重新开发存在性。
+全量验收通过：3028 项构建、34326 项声明，新增 27 项；全部 34299 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 均退出 0，零警告；75 份固定源和 2583 份当前文件哈希匹配。报告：verification/outside-copies-acceptance.json。
+
+下一源消费者：ClassFibers.classFiberEmbedding:470 → classFiber_dense_lower:565 → CodeCardinals.ordinalType_lower_count:166，使用本批副本族、既有 probeDensity/hits、实际 classFromLocal_profile、稳定码和尾群协变。localList_wellorderable／outside_localList、实际下界／OrdinalCount、第 9–11 阶段及最终内部 Con 仍未完成。完整局部列表构造、OutsideLocal 两条排除、classFromLocal/profile 和本批 outsideClass_copies 不再列作待证明。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

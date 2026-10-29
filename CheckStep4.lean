@@ -12790,4 +12790,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ForcingClassProfile.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p sm Or OP Om Ap Hp XP QP prP Am Hm XM QM prM Ar Hr XR QR prR ordinal enum list d z sigma a e m b t U))) :=
   ForcingClassProfile.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p sm Or OP Om Ap Hp XP QP prP Am Hm XM QM prM Ar Hr XR QR prR ordinal enum list d z sigma a e m b t U
 
+-- Source outsideClass_copies: the actual subdiagram family is constructed from m.
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingOutsideCopies.sourceSentence rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers))) :=
+  ForcingOutsideCopies.source_kernel_certificate rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers
+
 end PPAC.Migration.Step4Checks
