@@ -12691,4 +12691,17 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
 example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
     ForcingLocalRecordPullback.transportSentence) := ForcingLocalRecordPullback.transport_kernel_certificate
 
+-- Actual same-record name reflection and local quotient equality, SAME existing internal L.
+example {k : Nat} (family : Source.Formula (k+2)) (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj : Fin k) : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingLocalRecordEquality.rootSentence family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj))) :=
+  ForcingLocalRecordEquality.root_kernel_certificate family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj
+
+example {k : Nat} (family : Source.Formula (k+2)) (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta : Fin k) : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingLocalRecordEquality.quotientSentence family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta))) :=
+  ForcingLocalRecordEquality.quotient_kernel_certificate family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta
+
 end PPAC.Migration.Step4Checks

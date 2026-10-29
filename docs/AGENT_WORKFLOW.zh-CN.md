@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：LocalRecord 条件拉回与同记录置换已接通
+## 当前执行入口：同记录名字反射与实际局部商相等已接通
 
-既有实际 Cohen ChainBound、连续统实例、条件载体和 LocalRecord 大小界已验收，保留直接消费者 hcc/hrec。当前 ForcingLocalRecordPullback 迁移固定 LocalRecords.Condition.pullback/mem_pullback:19–31 与 permute_eq_of_pullback_eq:35–58。
+ForcingLocalRecordEquality 迁移固定 LocalRecords.LocalWitness.equal_of_record_eq:143–182。保留源 hC 的协变名字族前提，并将其表达为公式索引的对象关系；同一个根下标、标签下标及实际拉回条件是记录相等的展开内容。
 
-它沿原坐标 Graph/Lifted 关系构造两次实际单射，以原生 Separation 构造条件拉回，以拉回到原条件的内部单射证明可数性；精确 Entry 方程保留标签、层和位。支持条件与既有 Support 的 range 包含严格对应；拉回唯一性已证。同一标签 CompositionGraph 与相同拉回记录导出已有 Moved 关系，再直接调用已完成实际 Cohen 置换及 entries_ext，得到指定条件恰为该置换像。两个端点均为普通 nativeZF 原推导，无对象 Choice／L 背景前提。
+证明实际调用既有 permutation_over_root 构造根上置换，推出其属于原根的 Fixing 子群，构造同一 Product 条件动作；本批前置的精确拉回传输给出实际条件像。随后调用完整名字对称性、原子等式传递与 forces_at_supporting_root，构造原根处的限制条件、Product/WithTop 编码及强迫等式。第二端点消费原 CohenFilter 和现成 equality_law，得出两个实际局部商值相等；未假设目标名字／商值相等。
 
-本批 24 项公开声明定向 trust=0 审计通过，无新增公理依赖。全量验收、原 34108 项精确依赖比较及哈希复核以 verification/local-record-pullback-acceptance.json 的实际结果为准。
+两个 nativeZF 原核端点均相对化于同一现成内部 L，源对象 Choice 已消去。本批 15 项公开声明定向 trust=0 审计通过，无新增公理依赖；全量验收、原 34132 项精确依赖比较和哈希复核以 verification/local-record-equality-acceptance.json 的实际结果为准。
 
-下一源步骤为 LocalWitness.equal_of_record_eq 的名字层装配：复用已有 permutation_over_root、名字对称性和 forces_at_supporting_root，并消费本批精确条件像；然后接通 classRepresentationSet_denseBelow 和 CodeCardinals 表示关系 total／single。条件拉回、根上置换基础、支持反射和 hcc/hrec 不重建；Preliminary.total/onto 依赖 OrdinalCount，不能反用。仍在原第 8 阶段，OrdinalCount、第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为将具体 labelClass 名字族及其既有／待接通的协变性质实例化到本定理，并迁移 classRepresentationSet_denseBelow，再完成 CodeCardinals 的实际 total／single。通用同记录局部商相等、条件拉回、根上置换和支持反射均已接通，不重建；Preliminary.total/onto 不得反用来证明 OrdinalCount。仍在原第 8 阶段，实际 OrdinalCount、第 9–11 阶段及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

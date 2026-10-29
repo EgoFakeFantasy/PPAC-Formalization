@@ -34704,3 +34704,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLocalRecordPullback.transportSentence
 #print axioms PPAC.Migration.ForcingLocalRecordPullback.transport_models
 #print axioms PPAC.Migration.ForcingLocalRecordPullback.transport_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.Covariant
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.covariant
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.covariant_freeClosed
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.covariant_semantics
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.equal_at_root
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.quotient_equal
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.result
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.result_freeClosed
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.result_semantics
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.rootSentence
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.root_models
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.root_kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.quotientSentence
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.quotient_models
+#print axioms PPAC.Migration.ForcingLocalRecordEquality.quotient_kernel_certificate

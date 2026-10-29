@@ -63,3 +63,5 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 本轮已接通实际 Cohen ChainBound 及连续统实例，并构造完整条件载体和字面 LocalRecord 乘积载体的大小界；四项同一内部 L 相对化原核证书见 ForcingCohenCounting/ForcingCohenChainBound。它们完成 CodeCardinals 的 hcc/hrec 辅助条件，不等于已证明实际表示关系 total/single、OrdinalCount 或最终内部 Con。
 
 LocalRecord 条件层已补齐：实际内部拉回及同记录条件置换有普通 nativeZF 原核证书，保留精确标签／层／位。它不替代 LocalWitness 名字层等式、表示密度、CodeCardinals/OrdinalCount 或最终内部 Con。
+
+LocalWitness 同记录相等现已接通名字层：实际根置换／条件传输／名字对称性／支持反射产生原根强迫等式，并由现成 equality_law 得出实际局部商值相等。Covariant 是源 hC 的对象公式前提；具体 labelClass 实例及表示密度仍需接入。两个原核端点使用同一既有 L 消去 Choice，不等于完整 CodeCardinals/OrdinalCount 或内部 Con。
