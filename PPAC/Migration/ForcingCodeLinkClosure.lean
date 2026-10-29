@@ -20,10 +20,10 @@ set_option maxHeartbeats 6000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
-theorem links_descend (hM : FirstOrder.Theory.Models M nativeZF)
+theorem links_descend_over (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a : Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau : Fin k) (a : M.Carrier .set)
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
     (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
@@ -38,11 +38,11 @@ theorem links_descend (hM : FirstOrder.Theory.Models M nativeZF)
     (hVertices : ConstructionComponentCarrier.Carrier (env (rho 0)) (env I) (env mul) (env q) (env vertices))
     (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
     (hd : (Project.FirstOrderSemantics.reduct M).mem (env d) (env (rho 3)))
-    (ha : ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env a))
+    (ha : ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) a)
     (hEntry : Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env target) (env tau))
     (hArrow : EncodedArrow (env (rho 0)) (env I) (env mul) (env q) (env source) (env target) (env n))
-    (hLinks : ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env source) (env tau) (env a)) :
-    ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env target) (env tau) (env a) := by
+    (hLinks : ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env source) (env tau) a) :
+    ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env target) (env tau) a := by
   have hCommonSource := ForcingCodeLinks.links_common hM env rho mul hw hChain hLinks
   have hCommonTarget := ForcingComponentGluing.common_between hM hm hJ (ForcingComponentRebase.common_symm hCommonSource)
     (ForcingComponentMatches.arrow_common hArrow (ForcingComponentMatches.arrow_id hm (ForcingComponentMatches.arrow_target hArrow)))
@@ -82,6 +82,33 @@ theorem links_descend (hM : FirstOrder.Theory.Models M nativeZF)
   exact ⟨vi,sigma,nm,hvi,hsi,hComposite,zr,hzr,
     ForcingOrdinalRoot.eq_at_root hM hChoice env rho G F mul hw hMu hI hSmall hMergers hRow hm hp hG hF
       hvt.1 hAR hHR hvs.1 ⟨env n,hvs.2.2.1 (env n) harr.1,harr.2.1⟩ ((hp.2.2.1 (env d)).mp hd) hz hzr hSigmaFixed hTau.2 hForce⟩
+
+/-- Retained indexed entry point; accepts the same original parameters. -/
+theorem links_descend (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a : Fin k)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hVertices : ConstructionComponentCarrier.Carrier (env (rho 0)) (env I) (env mul) (env q) (env vertices))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hd : (Project.FirstOrderSemantics.reduct M).mem (env d) (env (rho 3)))
+    (ha : ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env a))
+    (hEntry : Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env target) (env tau))
+    (hArrow : EncodedArrow (env (rho 0)) (env I) (env mul) (env q) (env source) (env target) (env n))
+    (hLinks : ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env source) (env tau) (env a)) :
+    ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env target) (env tau) (env a) :=
+  links_descend_over hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau (env a)
+    hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hVertices hChain hd ha hEntry hArrow hLinks
 
 theorem working_linked (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}

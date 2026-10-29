@@ -12559,4 +12559,15 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w cha
       (ConstructibleGround.relative (ForcingGermEquality.equalitySentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one mu history kappa mark H C incoming base zero vertices names rootIndex rootU group d vertex localRoot index U label other tau sigma))) :=
   ForcingGermEquality.equality_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one mu history kappa mark H C incoming base zero vertices names rootIndex rootU group d vertex localRoot index U label other tau sigma
 
+-- Actual Preliminary locality, with existing L discharging Choice.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z codes order ranks selection rankBound labelSet tab initialRoot label : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingGermLocality.stableSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z codes order ranks selection rankBound labelSet tab initialRoot label))) :=
+  ForcingGermLocality.stable_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z codes order ranks selection rankBound labelSet tab initialRoot label
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingGermLocality.descentSentence rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label))) :=
+  ForcingGermLocality.descent_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label
+
 end PPAC.Migration.Step4Checks

@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：Preliminary 强迫相等与标签相等的双向等价已验收
+## 当前执行入口：Preliminary 精确稳定性与下降已验收
 
-固定源 GermSelectors.ordinal_value_unique:76、preliminary_eq_iff:86 已由 ForcingGermEquality 接入，实际消费者为 StableSelectors.corrected_eq_iff:480（488 行调用）。正向复用 Links/Same 反映、Selected 唯一性、实际 rank 函数唯一性、check 反映与固定表单射；反向复用固定表单值性、check 名字唯一性、同一 Selected 关系的实际 rank 比较及 Same 自反性。未添加任意 rank 单射假设。纯成员闭句取得同一现成内部 L 相对化的 nativeZF 原核证书；原有 Ranks/FixedFamily 与固定表生产者仍为同一组输入。全量验收：2993 项构建、33633 项声明（新增 4 项），全部 33629 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2548 项当前哈希匹配。记录：verification/germ-equality-acceptance.json。
+固定源 GermSelectors.preliminary_stable:115、preliminary_descend:134 已由 ForcingGermLocality 接入；实际消费者为 OrbitAssignments.corrected_stable:30（35 行调用）及 StableSelectors.corrected_descend:519（524 行调用）。稳定性保留同一局部名字在每个更强内部条件上的资格和精确可用性理想；下降保留原标签、名字、链码、rank 历史／类型和固定表见证，并保留目标局部 Entry 条件。直接复用 Links 生产者：只把链码参数从 env a 推广为任意内部值 a，数学证明正文逐字匹配此替换，旧入口全部保留。两条纯成员闭句取得同一现成内部 L 相对化的 nativeZF 原核证书。全量验收：2994 项构建、33643 项声明（新增 8 项主接口及 2 项生产者推广），全部 33633 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2549 项当前哈希匹配。记录：verification/germ-locality-acceptance.json。
 
-下一源步骤为 GermSelectors.preliminary_stable:115、preliminary_descend:134，直接消费已有 Links 稳定性和下降定理；随后接 preliminary_permute:143、实际基数界及密度消费者。保留同一 rank 历史／类型名字、固定表和原源证明路线；不重建现成底座。仍在原第 8 阶段，整套选择器、阶段 9–11 和最终内部 Con 未完成。
+下一源步骤为 GermSelectors.preliminary_permute:143，复用已有 Selected 协变、同一 rank 固定族／类型、check 名字固定性及 Links／tail_eq_permute；随后接实际基数界与密度消费者。不重建现成名字、作用、L、rank 或表后端。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
@@ -19,7 +19,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；不同系统的 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/整分量粘合已完成；实际移动滤子及局部相等保反射已完成；实际名字/商双射与限制方块已完成；资格类坐标传输和逐图实际 app 已完成；完整 app 函数族及自然性联合装配、At 双向传输及同码协变已完成；持久选择通用单调/唯一/稠密性已完成，实际 Same 已接入；逐条件 Works 与 Selected 特化已完成；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；稳定工作码构造已完成；CodeLinks 两条表示／链接桥接已完成；链接稳定性已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表、真实 Preliminary 关系、四条基本定律及强迫相等 iff 标签相等已完成；后续稳定／下降／协变／密度与基数消费者未完；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
+| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；不同系统的 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/整分量粘合已完成；实际移动滤子及局部相等保反射已完成；实际名字/商双射与限制方块已完成；资格类坐标传输和逐图实际 app 已完成；完整 app 函数族及自然性联合装配、At 双向传输及同码协变已完成；持久选择通用单调/唯一/稠密性已完成，实际 Same 已接入；逐条件 Works 与 Selected 特化已完成；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；稳定工作码构造已完成；CodeLinks 两条表示／链接桥接已完成；链接稳定性已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表、真实 Preliminary 关系、四条基本定律及强迫相等 iff 标签相等、精确稳定性及下降已完成；后续协变／密度与基数消费者未完；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |

@@ -2380,13 +2380,14 @@ def main() -> None:
                                ('forcing_code_rank_consumers', 'ForcingCodeRankConsumers', 6),
                                ('forcing_code_links', 'ForcingCodeLinks', 16),
                                ('forcing_code_link_representation', 'ForcingCodeLinkRepresentation', 5),
-                               ('forcing_linked_stability', 'ForcingLinkedStability', 4),
+                               ('forcing_linked_stability', 'ForcingLinkedStability', 5),
                                ('forcing_linked_working', 'ForcingLinkedWorking', 4),
-                               ('forcing_code_link_closure', 'ForcingCodeLinkClosure', 8),
+                               ('forcing_code_link_closure', 'ForcingCodeLinkClosure', 9),
                                ('forcing_code_link_covariance', 'ForcingCodeLinkCovariance', 8),
                                ('forcing_ordinal_table', 'ForcingOrdinalTable', 20),
                                ('forcing_germ_preliminary', 'ForcingGermPreliminary', 11),
-                               ('forcing_germ_equality', 'ForcingGermEquality', 4)):
+                               ('forcing_germ_equality', 'ForcingGermEquality', 4),
+                               ('forcing_germ_locality', 'ForcingGermLocality', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

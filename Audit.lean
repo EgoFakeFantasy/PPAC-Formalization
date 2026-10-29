@@ -34181,3 +34181,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermEquality.equalitySentence
 #print axioms PPAC.Migration.ForcingGermEquality.equality_models
 #print axioms PPAC.Migration.ForcingGermEquality.equality_kernel_certificate
+
+-- Actual Preliminary stability/descent and retained producer generalizations.
+#print axioms PPAC.Migration.ForcingLinkedStability.links_stable_over
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.links_descend_over
+#print axioms PPAC.Migration.ForcingGermLocality.preliminary_stable
+#print axioms PPAC.Migration.ForcingGermLocality.preliminary_descend
+#print axioms PPAC.Migration.ForcingGermLocality.stableSentence
+#print axioms PPAC.Migration.ForcingGermLocality.stable_models
+#print axioms PPAC.Migration.ForcingGermLocality.stable_kernel_certificate
+#print axioms PPAC.Migration.ForcingGermLocality.descentSentence
+#print axioms PPAC.Migration.ForcingGermLocality.descent_models
+#print axioms PPAC.Migration.ForcingGermLocality.descent_kernel_certificate
