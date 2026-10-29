@@ -33773,3 +33773,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWorksCovariance.selectedSentence
 #print axioms PPAC.Migration.ForcingWorksCovariance.selected_models
 #print axioms PPAC.Migration.ForcingWorksCovariance.selected_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingForcedAvailability.Available
+#print axioms PPAC.Migration.ForcingForcedAvailability.available
+#print axioms PPAC.Migration.ForcingForcedAvailability.available_freeClosed
+#print axioms PPAC.Migration.ForcingForcedAvailability.available_semantics
+#print axioms PPAC.Migration.ForcingForcedAvailability.actual_available_iff
+#print axioms PPAC.Migration.ForcingForcedAvailability.Carrier
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrier
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrier_freeClosed
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrier_semantics
+#print axioms PPAC.Migration.ForcingForcedAvailability.exists_carrier
+#print axioms PPAC.Migration.ForcingForcedAvailability.exists_fiber_principal
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrierSentence
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrier_models
+#print axioms PPAC.Migration.ForcingForcedAvailability.carrier_kernel_certificate
+#print axioms PPAC.Migration.ForcingForcedAvailability.fiberSentence
+#print axioms PPAC.Migration.ForcingForcedAvailability.fiber_models
+#print axioms PPAC.Migration.ForcingForcedAvailability.fiber_kernel_certificate

@@ -12337,4 +12337,16 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingWorksCovariance.selectedSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code codes order))) :=
   ForcingWorksCovariance.selected_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code codes order
 
+-- Actual forced availability and principal exact-fiber bridge.
+example {k m : Nat} (R : Source.Formula (k+2)) (base : Fin k → Fin m) (rho : Fin 7 → Fin m)
+    (G F mul bound d r a tau : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingForcedAvailability.carrierSentence R base rho G F mul bound d r a tau)) :=
+  ForcingForcedAvailability.carrier_kernel_certificate R base rho G F mul bound d r a tau
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq d g oi objects S mi maps r a Ar Hr X Q pr Or tau U z : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingForcedAvailability.fiberSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq d g oi objects S mi maps r a Ar Hr X Q pr Or tau U z))) :=
+  ForcingForcedAvailability.fiber_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq d g oi objects S mi maps r a Ar Hr X Q pr Or tau U z
+
 end PPAC.Migration.Step4Checks

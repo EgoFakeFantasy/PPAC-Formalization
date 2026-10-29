@@ -791,3 +791,4 @@ import PPAC.Migration.ForcingPersistentWorks
 import PPAC.Migration.ForcingPersistentCovariance
 
 import PPAC.Migration.ForcingWorksCovariance
+import PPAC.Migration.ForcingForcedAvailability
