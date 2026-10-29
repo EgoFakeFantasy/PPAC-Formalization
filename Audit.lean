@@ -34212,3 +34212,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermDensity.total_models
 #print axioms PPAC.Migration.ForcingGermDensity.total_kernel_certificate
 #print axioms PPAC.Migration.ForcingCodeLinkClosure.working_linked_over
+
+-- Actual conditional preliminary_onto, using existing selection density.
+#print axioms PPAC.Migration.ForcingGermDensity.ontoSentence
+#print axioms PPAC.Migration.ForcingGermDensity.onto_kernel_certificate
+#print axioms PPAC.Migration.ForcingGermDensity.onto_models
+#print axioms PPAC.Migration.ForcingGermDensity.preliminary_onto

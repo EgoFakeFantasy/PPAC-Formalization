@@ -2389,7 +2389,7 @@ def main() -> None:
                                ('forcing_germ_equality', 'ForcingGermEquality', 4),
                                ('forcing_germ_locality', 'ForcingGermLocality', 8),
                                ('forcing_germ_covariance', 'ForcingGermCovariance', 4),
-                               ('forcing_germ_density', 'ForcingGermDensity', 8)):
+                               ('forcing_germ_density', 'ForcingGermDensity', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

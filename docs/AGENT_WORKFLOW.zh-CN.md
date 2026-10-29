@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：Preliminary 条件性稠密总性已验收
+## 当前执行入口：Preliminary 条件性稠密总性与满射性已验收
 
-固定源 GermSelectors.OrdinalCount:161–164、preliminary_total:167–179 已由 ForcingGermDensity 接入，实际消费者为 OrbitAssignments.corrected_total:61（71 行调用）。OrdinalCount 的纯成员公式覆盖全部加强的内部 Cohen 条件、全部内部序数及其 check 名字，不限制为外部标准码或固定秩以下。总性沿源组合现成 orderType_decide、unique_rank、固定表 indices_bijection、member_rank 和 working_linked，返回同一标签对应的实际局部 Entry 与 Preliminary；同一 rank/type 与预先选定的表保持不变。working_linked 仅泛化内部条件／链码参数，证明正文按这两项替换逐字保留，原入口保留。纯成员闭句经同一现成内部 L 返回 nativeZF 原核证书。OrdinalCount 仍是待实际基数上下界消去的源前提，未宣称完整具体系统的无条件总性。
+固定源 GermSelectors.preliminary_onto:183–205 已接入 ForcingGermDensity；实际消费者为 OrbitAssignments.corrected_onto:88（110 行调用）。直接消去现成 ForcingPersistentWorks.selection_models 的实际稠密选择结论，不重写其证明。对同一个任意 HS 名字，利用现成 Links 单调／Same 传输、同一实际 rank/type 的决定和同一序数表逆向取值，得到加强条件下的 Preliminary 标签。没有添加 LocalName 界或共同顶点输入前提。onto_kernel_certificate 经同一现成内部 L 返回 nativeZF 原核纯成员闭句。上一批总性证书保留；两条定理都仍以源 OrdinalCount 为前提，具体基数上下界尚未消去该前提。
 
-全量验收：2996 项构建、33658 项声明（新增 8 项主接口及 1 项生产者推广），全部 33649 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2551 项当前哈希匹配。记录：verification/germ-density-acceptance.json。
+全量验收：2996 项构建、33662 项声明（新增 4 项接口），全部 33658 项旧足迹不变，包含原模块 8 项接口；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2551 项当前哈希匹配。记录：verification/germ-onto-acceptance.json。
 
-下一源步骤为 GermSelectors.preliminary_onto:183，直接复用 ForcingPersistentWorks.selection_kernel_certificate 中已完成的实际稠密选择、现成 rank_decide、Links 的 same/mono 及固定表逆向取值；随后用 CodeCardinals.ordinalType_cardinal_le:45、ordinalType_lower_count:166 消去实际 OrdinalCount。下界所需稳定工作码／资格／可用性后端已经完成，不重建。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
+下一源步骤为 CodeCardinals.ordinalType_cardinal_le:45、ordinalType_lower_count:166，经 ConcreteQuotients:297/302 接出实际 OrdinalCount。直接复用不依赖 OrdinalCount 的 member_rank/rank_decide、working_linked、现成实际选择稠密性、稳定工作码和原生基数接口；不得用本批依赖 OrdinalCount 的总性／满射性反过来证明该前提。先核查相应源消费者与现成供体，不重建已完成后端。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
@@ -21,7 +21,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；不同系统的 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/整分量粘合已完成；实际移动滤子及局部相等保反射已完成；实际名字/商双射与限制方块已完成；资格类坐标传输和逐图实际 app 已完成；完整 app 函数族及自然性联合装配、At 双向传输及同码协变已完成；持久选择通用单调/唯一/稠密性已完成，实际 Same 已接入；逐条件 Works 与 Selected 特化已完成；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；稳定工作码构造已完成；CodeLinks 两条表示／链接桥接已完成；链接稳定性已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表、真实 Preliminary 关系、四条基本定律及强迫相等 iff 标签相等、精确稳定性、下降及尾群协变已完成；条件性稠密总性已完成；满射密度与实际基数消费者未完；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
+| 8 | 源代数／构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移、全部理想/补集/基数端点、实际μ/K；同一完整乘法图上Base→ObjectFields已装配，所有几何父前提消去；同一实际最终T行及全部ObjectFields/饱和/基数性质均有原核对象证书 | 实际商集/投影/限制图及局部商限制单射/精确交集已接；资格谓词/反射/实际 Obj 已接；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部索引族及完整 System 统一装配已完成；实际 availability 已接；精确 Fiber/限制双射已接；Component 纤维族/箭头相容已完成；Matches 与实际 Glued/toGlued 已完成；同一实际最终 T 的标签系统/全部纤维及粘合基数、共同分量字面集合相等已完成，探针/基数前提已消去；不同系统的 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/整分量粘合已完成；实际移动滤子及局部相等保反射已完成；实际名字/商双射与限制方块已完成；资格类坐标传输和逐图实际 app 已完成；完整 app 函数族及自然性联合装配、At 双向传输及同码协变已完成；持久选择通用单调/唯一/稠密性已完成，实际 Same 已接入；逐条件 Works 与 Selected 特化已完成；Same 协变已完成；Works/Selected 全条件协变已通过全量验收；稳定工作码构造已完成；CodeLinks 两条表示／链接桥接已完成；链接稳定性已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表、真实 Preliminary 关系、四条基本定律及强迫相等 iff 标签相等、精确稳定性、下降及尾群协变已完成；条件性稠密总性与满射性已完成；实际基数消费者未完；Placement、Product descent、countable conservative hull 已完成；顶点/箭头/整个 Common 分量共尾链本批接入，不重做 Base/T 或底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
