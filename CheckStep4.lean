@@ -12261,4 +12261,13 @@ example {k m : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1))
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingTailCovariance.covarianceSentence R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT gluePr gluePrT Q Z phi b bT zero vertices chain names code)) :=
   ForcingTailCovariance.covariance_kernel_certificate R Hdom base rho I K B w G F mu pi inv c act ai mul e g gT q bound labels E objects maps targets targetMaps objImage targetImage appImage apps root rootT gluePr gluePrT Q Z phi b bT zero vertices chain names code
 
+-- Source persistent selection, quantified over all internal conditions and codes.
+example {k m : Nat} (L W : SetTheory.Definitional.Project.Formula 1 (k+2))
+    (E : SetTheory.Definitional.Project.Formula 1 (k+3))
+    (hL : L.FreeClosed) (hW : W.FreeClosed) (hE : E.FreeClosed)
+    (base : Fin k → Fin m) (P A order : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentSelection.selectionSentence L W E hL hW hE base P A order)) :=
+  ForcingPersistentSelection.selection_kernel_certificate L W E hL hW hE base P A order
+
 end PPAC.Migration.Step4Checks

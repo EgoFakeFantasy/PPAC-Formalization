@@ -33654,3 +33654,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingTailCovariance.covarianceSentence
 #print axioms PPAC.Migration.ForcingTailCovariance.covariance_models
 #print axioms PPAC.Migration.ForcingTailCovariance.covariance_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingPersistentSelection.Rel2
+#print axioms PPAC.Migration.ForcingPersistentSelection.Rel3
+#print axioms PPAC.Migration.ForcingPersistentSelection.rel2
+#print axioms PPAC.Migration.ForcingPersistentSelection.rel3
+#print axioms PPAC.Migration.ForcingPersistentSelection.rel2_semantics
+#print axioms PPAC.Migration.ForcingPersistentSelection.rel3_semantics
+#print axioms PPAC.Migration.ForcingPersistentSelection.Selected
+#print axioms PPAC.Migration.ForcingPersistentSelection.selected_mono
+#print axioms PPAC.Migration.ForcingPersistentSelection.selected_unique
+#print axioms PPAC.Migration.ForcingPersistentSelection.dense_selected
+#print axioms PPAC.Migration.ForcingPersistentSelection.selected
+#print axioms PPAC.Migration.ForcingPersistentSelection.selected_semantics
+#print axioms PPAC.Migration.ForcingPersistentSelection.laws
+#print axioms PPAC.Migration.ForcingPersistentSelection.conclusion
+#print axioms PPAC.Migration.ForcingPersistentSelection.selectionSentence
+#print axioms PPAC.Migration.ForcingPersistentSelection.selection_models
+#print axioms PPAC.Migration.ForcingPersistentSelection.selection_kernel_certificate
