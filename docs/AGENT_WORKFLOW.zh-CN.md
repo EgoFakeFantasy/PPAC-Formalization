@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：完整 classRepresentationSet_denseBelow 已接通
+## 当前执行入口：CodeCardinals 的内部成员记录见证已接通
 
-ConstructionDiagramCoverage 复用原生值域／逆图、精确拼接和已有 extend_embedding，迁移指定标签覆盖；extend_through 从已有恒等图／子图构造取得左乘图，直接消费同一饱和单子的补集基数结论。ForcingClassRepresentation 将它与已完成的标签类稠密见证、Cohen 支撑及单点基数界组合，完成固定源 classRepresentationSet_denseBelow：同一个加强图同时覆盖支撑和指定标签，并保留原根次序及强迫相等。
+ForcingCodeRecordWitness 直接组合固定源 ordinalType_cardinal_le.total 的见证链：实际 IsSelected 的 member_rank 给出码及其秩，既有 working_linked_over 与 links_stable 给出同一根名字和强迫资格，完整 classRepresentation 稠密性与实际 pullback 构造记录 (m,(x,pb))。在同一个加强条件下保留选中性、根 Links 和该码的秩等于 check β。全部见证及 β 均为内部集合。
 
-density_kernel_certificate 已在普通 nativeZF 原核中证明上述完整句子在同一现成内部 L 的相对化；构造所需 Choice 在该 L 中消去，没有加入 nativeZF。新增 15 项公开声明；实际全量验收以 verification/diagram-coverage-acceptance.json 为准。
+member_kernel_certificate 在普通 nativeZF 原核中证明完整句子在同一现成内部 L 的相对化；Choice 由既有 L/ZFC 消去。既有链接稳定性只泛化 d/tau/z 的参数位置，原接口及旧声明足迹保留。本批全量验收已通过：3022 项构建、34229 项声明，新增 8 项；原 34221 项足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2577 份当前文件哈希匹配。报告为 verification/code-record-acceptance.json。
 
-下一源步骤为 CodeCardinals.ordinalType_cardinal_le.total／single 的实际组合，再消费现成 ChainBound 与 LocalRecord 基数界并接入 OrdinalCount。其 total 直接使用本批稠密性与主滤子，不增加泛滤存在支线；图覆盖及完整 classRepresentationSet_denseBelow 不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 CodeCardinals.ordinalType_cardinal_le.single：复用实际 labelClass 协变、同记录相等、Links/EqF/Same 等价及 selected_unique；再将同一记录关系的 total/single 接入现成 ChainBound 和记录基数界。既有根名字资格、完整表示稠密性与成员记录见证不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

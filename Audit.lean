@@ -34798,3 +34798,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingClassRepresentation.densitySentence
 #print axioms PPAC.Migration.ForcingClassRepresentation.density_models
 #print axioms PPAC.Migration.ForcingClassRepresentation.density_kernel_certificate
+#print axioms PPAC.Migration.ForcingLinkedStability.links_stable_at
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.selected_record
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.member_record
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.memberResult
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.memberResult_freeClosed
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.memberSentence
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.member_models
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.member_kernel_certificate

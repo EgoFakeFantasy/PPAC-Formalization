@@ -12752,4 +12752,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu e mark root G F mul c t b 
       (ForcingClassRepresentation.densitySentence rho I K B w mu e mark root G F mul c t b labels E tau d0 z0))) :=
   ForcingClassRepresentation.density_kernel_certificate rho I K B w mu e mark root G F mul c t b labels E tau d0 z0
 
+-- Pinned CodeCardinals total: actual rank value, root name, and internal record.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta beta nb : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingCodeRecordWitness.memberSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta beta nb))) :=
+  ForcingCodeRecordWitness.member_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta beta nb
+
 end PPAC.Migration.Step4Checks
