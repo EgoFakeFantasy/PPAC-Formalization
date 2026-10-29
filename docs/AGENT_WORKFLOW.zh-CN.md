@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：CodeLinks 四个序数消费者已接到同一实际构造并验收
+## 当前执行入口：CodeLinks 的 Links 局部规律及 EqF/Same 等价已验收
 
-固定源 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 已由 ForcingCodeRankConsumers 接入。联合对象句先存在同一尾群、初始图值域／固定子、完整秩历史与类型名字，再全称量化所有内部条件、产品码、选中索引／名字和比较序数／check 名字。直接调用现成 ForcingCodeRanks.construct 与 ForcingCohenRankConsumers.construction_models；协变、单调、群／滤子成员关系和支撑包含均由该构造提供并消费，不留给调用者额外假定。秩／类型参数扩展只通过既有 mapRel_lift 化简，不重做序数、HS、强迫或选择后端。原核证书相对于同一个内部 L，源几何、呈现／滤子、链、标签和 E 支撑、完整代码载体、根代码及规定内部良序仍显式保留。全量验收：2984 项构建、33552 项声明（新增 6 项），全部 33546 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2539 项当前哈希匹配。记录：verification/code-rank-consumers-acceptance.json。
+固定源 CodeLinks.Links:171、links_mono:179、links_common:188、links_congr:197、links_same:206、links_eq_iff_same:223 和 links_restrict:391 已由 ForcingCodeLinks 接入。对象关系保留模型内部ω阈值、全部后续链顶点的实际箭头，以及同一 Cohen 条件／顶点图上的字面名字相等。五条局部规律已取得普通 nativeZF 原核证书；链接代表的 EqF 与 Same 等价已通过现成 ForcingOrdinalRoot.eq_at_root 取得同一内部 L 相对化的原核证书。两个局部名字的值域／固定子通过现有外延性和唯一性对齐；内部阈值比较、箭头复合和原子相等均复用已有证明，没有新增强迫、选择或商后端。全量验收：2985 项构建、33568 项声明（新增 16 项），全部 33552 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2540 项当前哈希匹配。来源锁中的后续定理名已纠正为 links_descend，并完成复验。记录：verification/code-links-acceptance.json。
 
-下一源步骤为 CodeLinks.Links:171 及其单调、共同分量、同码／相等和表示消费者，再接 CodeCardinals 与 GermSelectors 的实际调用。现成内部ω比较／共尾链、主滤子相等、根支撑反射、At／Represents 和资格系统的限制／商桥接可直接复用；不重建这些基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.links_of_represents_at:257 和 at_of_represents_links:289，再接 links_stable:313、exists_linked_working_of_stable:349 及后续链接下降／工作代表。所需 ForcingComponentGluing.toGlued_bijective/toGlued_arrow、ForcingSystemFibers.fiber_bijection、主滤子 eqG_principal、At／Represents 和实际资格对象／限制族已经存在；只做源消费者组合。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

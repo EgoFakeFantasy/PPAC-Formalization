@@ -34082,3 +34082,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeRankConsumers.constructionSentence
 #print axioms PPAC.Migration.ForcingCodeRankConsumers.construction_models
 #print axioms PPAC.Migration.ForcingCodeRankConsumers.construction_kernel_certificate
+
+-- Actual internal Links and its same-code/equality laws.
+#print axioms PPAC.Migration.ForcingCodeLinks.Links
+#print axioms PPAC.Migration.ForcingCodeLinks.links_mono
+#print axioms PPAC.Migration.ForcingCodeLinks.links_common
+#print axioms PPAC.Migration.ForcingCodeLinks.links_congr
+#print axioms PPAC.Migration.ForcingCodeLinks.links_same
+#print axioms PPAC.Migration.ForcingCodeLinks.links_restrict
+#print axioms PPAC.Migration.ForcingCodeLinks.links
+#print axioms PPAC.Migration.ForcingCodeLinks.links_freeClosed
+#print axioms PPAC.Migration.ForcingCodeLinks.links_semantics
+#print axioms PPAC.Migration.ForcingCodeLinks.links_eq_iff_same
+#print axioms PPAC.Migration.ForcingCodeLinks.lawsSentence
+#print axioms PPAC.Migration.ForcingCodeLinks.laws_models
+#print axioms PPAC.Migration.ForcingCodeLinks.laws_kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeLinks.equalitySentence
+#print axioms PPAC.Migration.ForcingCodeLinks.equality_models
+#print axioms PPAC.Migration.ForcingCodeLinks.equality_kernel_certificate

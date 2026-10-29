@@ -12492,4 +12492,13 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ConstructibleGround.relative (ForcingCodeRankConsumers.constructionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U))) :=
   ForcingCodeRankConsumers.construction_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U
 
+-- Pinned CodeLinks local laws and supported equality reflection.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mul one q zero root vertices chain names d e vertex vertexT n r index U tau sigma a b : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingCodeLinks.lawsSentence rho I K B w mul one q zero root vertices chain names d e vertex vertexT n r index U tau sigma a b)) :=
+  ForcingCodeLinks.laws_kernel_certificate rho I K B w mul one q zero root vertices chain names d e vertex vertexT n r index U tau sigma a b
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q zero root vertices chain names bound d vertex r index U tau sigma a b : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingCodeLinks.equalitySentence rho I K B w G F mul one mu history kappa mark H C incoming base q zero root vertices chain names bound d vertex r index U tau sigma a b))) :=
+  ForcingCodeLinks.equality_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q zero root vertices chain names bound d vertex r index U tau sigma a b
+
 end PPAC.Migration.Step4Checks
