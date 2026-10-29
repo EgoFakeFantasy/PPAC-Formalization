@@ -12484,4 +12484,12 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ConstructibleGround.relative (ForcingCodeRanks.constructionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U))) :=
   ForcingCodeRanks.construction_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U
 
+-- The same witnesses satisfy all four CodeLinks consumers for every internal condition.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound
+      zero root vertices chain names codes order r index U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingCodeRankConsumers.constructionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U))) :=
+  ForcingCodeRankConsumers.construction_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U
+
 end PPAC.Migration.Step4Checks

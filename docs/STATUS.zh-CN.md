@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：CodeLinks 的实际 ordinalRank／ordinalType 联合构造已验收
+## 当前执行入口：CodeLinks 四个序数消费者已接到同一实际构造并验收
 
-固定源 CodeLinks.ordinalRank:95、ordinalType:101 已由 ForcingCodeRanks 接入。对每个内部尾群成员，现成逆、共轭和 Product 作用构造器产生辅助见证，保留同一 G/F；已有 Cohen 条目外延性确认同一个实际移动条件。参数重排证明保证这些临时见证不会改变实际 Selected 或固定代码序，从而取得完整 CohenSelection.Covariant。联合端点直接消费现成尾群支撑和 CohenSelection.exists_fixed_ranks，产生同一尾群、初始图值域／固定子／包含关系、全部代码秩历史、总类型名字及 HS／固定性，不再假定这些中间合同。对象证书在 nativeZF 原核，结论相对于同一内部 L；对象 Choice 仍由已有 L 提供。源几何、实际呈现／滤子、链、标签及 E 支撑、完整代码载体、根代码和规定内部良序仍显式保留。全量验收通过：2983 项构建、33546 项声明（新增 6 项），全部 33540 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2538 项当前哈希匹配。记录：verification/code-ranks-acceptance.json。
+固定源 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 已由 ForcingCodeRankConsumers 接入。联合对象句先存在同一尾群、初始图值域／固定子、完整秩历史与类型名字，再全称量化所有内部条件、产品码、选中索引／名字和比较序数／check 名字。直接调用现成 ForcingCodeRanks.construct 与 ForcingCohenRankConsumers.construction_models；协变、单调、群／滤子成员关系和支撑包含均由该构造提供并消费，不留给调用者额外假定。秩／类型参数扩展只通过既有 mapRel_lift 化简，不重做序数、HS、强迫或选择后端。原核证书相对于同一个内部 L，源几何、呈现／滤子、链、标签和 E 支撑、完整代码载体、根代码及规定内部良序仍显式保留。全量验收：2984 项构建、33552 项声明（新增 6 项），全部 33546 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2539 项当前哈希匹配。记录：verification/code-rank-consumers-acceptance.json。
 
-下一源步骤为 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 在同一实际生成历史／类型上的应用，然后 Links:171。四个性质的通用证明均已存在，直接消费 ForcingCohenRankConsumers；Ranks/PredEntry 与 Collected/Entry 只通过 MapRel 依赖关系，若需扩展参数则复用 mapRel_lift 证明等价，不重做序数、HS 或强迫后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.Links:171 及其单调、共同分量、同码／相等和表示消费者，再接 CodeCardinals 与 GermSelectors 的实际调用。现成内部ω比较／共尾链、主滤子相等、根支撑反射、At／Represents 和资格系统的限制／商桥接可直接复用；不重建这些基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
@@ -19,7 +19,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 和后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

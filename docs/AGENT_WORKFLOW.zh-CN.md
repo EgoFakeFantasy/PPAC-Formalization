@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：CodeLinks 的实际 ordinalRank／ordinalType 联合构造已验收
+## 当前执行入口：CodeLinks 四个序数消费者已接到同一实际构造并验收
 
-固定源 CodeLinks.ordinalRank:95、ordinalType:101 已由 ForcingCodeRanks 接入。对每个内部尾群成员，现成逆、共轭和 Product 作用构造器产生辅助见证，保留同一 G/F；已有 Cohen 条目外延性确认同一个实际移动条件。参数重排证明保证这些临时见证不会改变实际 Selected 或固定代码序，从而取得完整 CohenSelection.Covariant。联合端点直接消费现成尾群支撑和 CohenSelection.exists_fixed_ranks，产生同一尾群、初始图值域／固定子／包含关系、全部代码秩历史、总类型名字及 HS／固定性，不再假定这些中间合同。对象证书在 nativeZF 原核，结论相对于同一内部 L；对象 Choice 仍由已有 L 提供。源几何、实际呈现／滤子、链、标签及 E 支撑、完整代码载体、根代码和规定内部良序仍显式保留。全量验收通过：2983 项构建、33546 项声明（新增 6 项），全部 33540 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2538 项当前哈希匹配。记录：verification/code-ranks-acceptance.json。
+固定源 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 已由 ForcingCodeRankConsumers 接入。联合对象句先存在同一尾群、初始图值域／固定子、完整秩历史与类型名字，再全称量化所有内部条件、产品码、选中索引／名字和比较序数／check 名字。直接调用现成 ForcingCodeRanks.construct 与 ForcingCohenRankConsumers.construction_models；协变、单调、群／滤子成员关系和支撑包含均由该构造提供并消费，不留给调用者额外假定。秩／类型参数扩展只通过既有 mapRel_lift 化简，不重做序数、HS、强迫或选择后端。原核证书相对于同一个内部 L，源几何、呈现／滤子、链、标签和 E 支撑、完整代码载体、根代码及规定内部良序仍显式保留。全量验收：2984 项构建、33552 项声明（新增 6 项），全部 33546 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2539 项当前哈希匹配。记录：verification/code-rank-consumers-acceptance.json。
 
-下一源步骤为 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 在同一实际生成历史／类型上的应用，然后 Links:171。四个性质的通用证明均已存在，直接消费 ForcingCohenRankConsumers；Ranks/PredEntry 与 Collected/Entry 只通过 MapRel 依赖关系，若需扩展参数则复用 mapRel_lift 证明等价，不重做序数、HS 或强迫后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.Links:171 及其单调、共同分量、同码／相等和表示消费者，再接 CodeCardinals 与 GermSelectors 的实际调用。现成内部ω比较／共尾链、主滤子相等、根支撑反射、At／Represents 和资格系统的限制／商桥接可直接复用；不重建这些基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

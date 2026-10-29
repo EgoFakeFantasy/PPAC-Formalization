@@ -34074,3 +34074,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeRanks.constructionSentence
 #print axioms PPAC.Migration.ForcingCodeRanks.construction_models
 #print axioms PPAC.Migration.ForcingCodeRanks.construction_kernel_certificate
+
+-- Same constructed code ranks/type, universally consumed at the initial diagram.
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.consumerResult
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.allConsumers
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.allConsumers_freeClosed
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.constructionSentence
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.construction_models
+#print axioms PPAC.Migration.ForcingCodeRankConsumers.construction_kernel_certificate
