@@ -709,3 +709,12 @@ ForcingCodeLinks adapts pinned Links:171, links_mono:179, links_common:188, link
 下一源步骤为 CodeLinks.links_stable:313、exists_linked_working_of_stable:349，随后 links_descend:405、working_linked:421 及 CodeCardinals／GermSelectors 消费者。Works／Bundle、system_of_families、actual_available_iff、exists_working_code_of_stable、at_of_root_eq 和 eq_at_root 已存在；复用这些证明，不重建稳定工作码、局部商或反射基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 源直接消费者为 links_stable 的第 323 行、exists_linked_working_of_stable 的第 367 行和 working_linked 的第 429 行。新增端点为 `ForcingCodeLinkRepresentation.construction_kernel_certificate`；原核背景为普通 `nativeZF`，对象结论为同一表示下的 `At ↔ Links`，未把任意模型中间定理当作最终内部 Con。
+
+
+## CodeLinks exact linked-name stability — 2026-10-29
+
+固定源 CodeLinks.links_stable:313–345 已由 ForcingLinkedStability 接入。工作码在每个加强条件下提供同一实际主滤子 Bundle；现成 system_of_families 和 At／Links 桥接给出精确纤维成员，eligible_ofName 与强迫单调性给出字面名字的资格，actual_available_iff 将同一纤维理想转成强迫可用性集合。结论同时保留当前条件下 isClass 强迫和每个加强内部条件下的精确理想等式。原核证书相对化到现成同一内部 L，所需选择由已有 L/ZFC 提供，未加到外层 nativeZF。全量验收：2987 项构建、33577 项声明（新增 4 项），全部 33573 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2542 项当前哈希匹配。直接源消费者为 GermSelectors.preliminary_stable:115（调用第 122 行）。记录：verification/linked-stability-acceptance.json。
+
+下一源步骤为 CodeLinks.exists_linked_working_of_stable:349，随后 links_descend:405、working_linked:421 及 CodeCardinals／GermSelectors 消费者。exists_representing_code、exists_fiber_principal、at_of_root_eq、common_iff／rebase_gluing、links_of_represents_at 和 eq_at_root 已存在；需要将现成传输接到任意共同分量顶点，保留同一链码及全部加强条件，不重造代表码、局部商、稳定工作码或反射基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+
+新增端点为 `ForcingLinkedStability.construction_kernel_certificate`。结论保留两项完整源断言，不把资格本身、单条件稳定性或模型语义辅助定理当作最终内部 Con。

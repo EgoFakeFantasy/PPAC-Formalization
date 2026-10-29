@@ -34107,3 +34107,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeLinkRepresentation.constructionSentence
 #print axioms PPAC.Migration.ForcingCodeLinkRepresentation.construction_models
 #print axioms PPAC.Migration.ForcingCodeLinkRepresentation.construction_kernel_certificate
+
+-- Exact linked-name stability at every stronger internal condition.
+#print axioms PPAC.Migration.ForcingLinkedStability.links_stable
+#print axioms PPAC.Migration.ForcingLinkedStability.constructionSentence
+#print axioms PPAC.Migration.ForcingLinkedStability.construction_models
+#print axioms PPAC.Migration.ForcingLinkedStability.construction_kernel_certificate

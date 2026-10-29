@@ -12508,4 +12508,10 @@ example {k : Nat} (Hdom : Source.Formula (k+1)) (rho : Fin 7 → Fin k)
       (ForcingCodeLinkRepresentation.constructionSentence Hdom rho I K B w mul one G F g q bound labels E diagrams objImage objects S mapImage maps root P Q gluePr zero vertices chain names d vertex tau a cls)) :=
   ForcingCodeLinkRepresentation.construction_kernel_certificate Hdom rho I K B w mul one G F g q bound labels E diagrams objImage objects S mapImage maps root P Q gluePr zero vertices chain names d vertex tau a cls
 
+-- The linked literal name has its exact ideal at every stronger condition.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z a : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingLinkedStability.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z a))) :=
+  ForcingLinkedStability.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z a
+
 end PPAC.Migration.Step4Checks
