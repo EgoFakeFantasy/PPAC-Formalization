@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：实际标签类的稠密条件见证已接通
+## 当前执行入口：完整 classRepresentationSet_denseBelow 已接通
 
-ForcingLabelDensity 按固定 ProductNames.mem_labelSet、ChoiceFailure.exists_condition_below 及 AvailableRecords.classRepresentationSet_denseBelow 的前半段迁移。复用原子强迫方程、实际标签边方程、Cohen 空条件和 WithTop 配对编码；在任意内部加强条件下，取得真正的 Cohen／图条件及实际标签类名字，并证明与原名字强迫相等。
+ConstructionDiagramCoverage 复用原生值域／逆图、精确拼接和已有 extend_embedding，迁移指定标签覆盖；extend_through 从已有恒等图／子图构造取得左乘图，直接消费同一饱和单子的补集基数结论。ForcingClassRepresentation 将它与已完成的标签类稠密见证、Cohen 支撑及单点基数界组合，完成固定源 classRepresentationSet_denseBelow：同一个加强图同时覆盖支撑和指定标签，并保留原根次序及强迫相等。
 
-普通 nativeZF 原核 density_kernel_certificate 已将全部见证和条件量词封闭，背景保留原呈现、左消单子、已有图、ω／无限基数、支撑滤子和 HS 条件；没有新增对象 Choice。新增 8 项公开声明；实际全量验收以 verification/label-density-acceptance.json 为准。
+density_kernel_certificate 已在普通 nativeZF 原核中证明上述完整句子在同一现成内部 L 的相对化；构造所需 Choice 在该 L 中消去，没有加入 nativeZF。新增 15 项公开声明；实际全量验收以 verification/diagram-coverage-acceptance.json 为准。
 
-下一源步骤为 Diagram.extend_through 对支撑及指定标签的值域覆盖，随后完成 classRepresentationSet_denseBelow、CodeCardinals total／single 组合及 OrdinalCount。标签成员稠密性、实际条件细化及标签类强迫相等不再列为缺口；仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 CodeCardinals.ordinalType_cardinal_le.total／single 的实际组合，再消费现成 ChainBound 与 LocalRecord 基数界并接入 OrdinalCount。其 total 直接使用本批稠密性与主滤子，不增加泛滤存在支线；图覆盖及完整 classRepresentationSet_denseBelow 不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

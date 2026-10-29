@@ -70,4 +70,4 @@ LocalWitness 同记录相等现已接通名字层：实际根置换／条件传�
 
 本批 ForcingRelationClassMove 已证明精确 separate_move／relationClass_move／labelClass_move，取得具体名字族总性／唯一性／协变的普通 nativeZF 原核证书；同记录局部商相等已实例化到此族，原抽象协变前提由实际标签数据及 E 支撑消去，Choice 经同一内部 L 消去。表示稠密性、完整 CodeCardinals／OrdinalCount 和最终内部 Con 仍未完成。验收见 verification/relation-class-move-acceptance.json。
 
-本批 ForcingLabelDensity.density_kernel_certificate 在普通 nativeZF 原核中证明：强迫 isClass 的任意内部加强条件都有真正 Cohen／图条件细化，以及与原名字强迫相等的实际标签类名字。复用原强迫、标签、类名字与条件编码；不加入对象 Choice。支撑和指定标签同时落入图值域的 extend_through 尚待接入，因此完整表示稠密性、CodeCardinals、OrdinalCount 和最终内部 Con 仍未完成。验收见 verification/label-density-acceptance.json。
+ForcingLabelDensity 已在普通 nativeZF 中证明实际标签类稠密见证。本批 ForcingClassRepresentation.density_kernel_certificate 又接通固定源完整 classRepresentationSet_denseBelow：任意加强 Cohen 条件下，都存在同一加强图覆盖实际支撑及指定标签，并使原名字与实际标签类强迫相等。构造复用已完成的补集基数、单射扩张、支撑和单点界；完整对象句子相对化到同一现成内部 L，Choice 在其中消去。下一直接消费者是 CodeCardinals.ordinalType_cardinal_le.total／single；完整基数界、OrdinalCount 和最终内部 Con 仍未完成。验收见 verification/diagram-coverage-acceptance.json。

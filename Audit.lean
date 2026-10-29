@@ -34782,3 +34782,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLabelDensity.densitySentence
 #print axioms PPAC.Migration.ForcingLabelDensity.density_models
 #print axioms PPAC.Migration.ForcingLabelDensity.density_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.Covers
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.extend_embedding_cover
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.extend_through
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.covers
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.covers_freeClosed
+#print axioms PPAC.Migration.ConstructionDiagramCoverage.covers_semantics
+#print axioms PPAC.Migration.ForcingClassRepresentation.denseBelow
+#print axioms PPAC.Migration.ForcingClassRepresentation.witness
+#print axioms PPAC.Migration.ForcingClassRepresentation.witness_freeClosed
+#print axioms PPAC.Migration.ForcingClassRepresentation.witness_semantics
+#print axioms PPAC.Migration.ForcingClassRepresentation.densityResult
+#print axioms PPAC.Migration.ForcingClassRepresentation.densityResult_freeClosed
+#print axioms PPAC.Migration.ForcingClassRepresentation.densitySentence
+#print axioms PPAC.Migration.ForcingClassRepresentation.density_models
+#print axioms PPAC.Migration.ForcingClassRepresentation.density_kernel_certificate

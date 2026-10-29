@@ -12746,4 +12746,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu e root G F mul c t b label
       (ForcingLabelDensity.densitySentence rho I K B w mu e root G F mul c t b labels E tau p)) :=
   ForcingLabelDensity.density_kernel_certificate rho I K B w mu e root G F mul c t b labels E tau p
 
+-- Full source classRepresentationSet_denseBelow, in the SAME existing internal L.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu e mark root G F mul c t b labels E tau d0 z0 : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingClassRepresentation.densitySentence rho I K B w mu e mark root G F mul c t b labels E tau d0 z0))) :=
+  ForcingClassRepresentation.density_kernel_certificate rho I K B w mu e mark root G F mul c t b labels E tau d0 z0
+
 end PPAC.Migration.Step4Checks

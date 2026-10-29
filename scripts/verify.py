@@ -2412,7 +2412,9 @@ def main() -> None:
                                ('forcing_local_record_equality', 'ForcingLocalRecordEquality', 15),
                                ('forcing_relation_class', 'ForcingRelationClass', 30),
                                ('forcing_relation_class_move', 'ForcingRelationClassMove', 21),
-                               ('forcing_label_density', 'ForcingLabelDensity', 8)):
+                               ('forcing_label_density', 'ForcingLabelDensity', 8),
+                               ('construction_diagram_coverage', 'ConstructionDiagramCoverage', 6),
+                               ('forcing_class_representation', 'ForcingClassRepresentation', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

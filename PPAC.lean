@@ -849,3 +849,5 @@ import PPAC.Migration.ForcingLocalRecordEquality
 import PPAC.Migration.ForcingRelationClass
 import PPAC.Migration.ForcingRelationClassMove
 import PPAC.Migration.ForcingLabelDensity
+import PPAC.Migration.ConstructionDiagramCoverage
+import PPAC.Migration.ForcingClassRepresentation
