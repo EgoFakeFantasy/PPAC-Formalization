@@ -34140,3 +34140,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeLinkCovariance.equalitySentence
 #print axioms PPAC.Migration.ForcingCodeLinkCovariance.equality_models
 #print axioms PPAC.Migration.ForcingCodeLinkCovariance.equality_kernel_certificate
+
+-- Fixed bounded ordinal table used by GermSelectors.Preliminary.
+#print axioms PPAC.Migration.ForcingOrdinalTable.Eligible
+#print axioms PPAC.Migration.ForcingOrdinalTable.eligible
+#print axioms PPAC.Migration.ForcingOrdinalTable.eligible_freeClosed
+#print axioms PPAC.Migration.ForcingOrdinalTable.eligible_semantics
+#print axioms PPAC.Migration.ForcingOrdinalTable.Table
+#print axioms PPAC.Migration.ForcingOrdinalTable.table
+#print axioms PPAC.Migration.ForcingOrdinalTable.table_freeClosed
+#print axioms PPAC.Migration.ForcingOrdinalTable.table_semantics
+#print axioms PPAC.Migration.ForcingOrdinalTable.chooseTable
+#print axioms PPAC.Migration.ForcingOrdinalTable.Indices
+#print axioms PPAC.Migration.ForcingOrdinalTable.indices
+#print axioms PPAC.Migration.ForcingOrdinalTable.indices_freeClosed
+#print axioms PPAC.Migration.ForcingOrdinalTable.indices_semantics
+#print axioms PPAC.Migration.ForcingOrdinalTable.indices_bijection
+#print axioms PPAC.Migration.ForcingOrdinalTable.indexBijection
+#print axioms PPAC.Migration.ForcingOrdinalTable.indexBijection_freeClosed
+#print axioms PPAC.Migration.ForcingOrdinalTable.indexBijection_semantics
+#print axioms PPAC.Migration.ForcingOrdinalTable.constructionSentence
+#print axioms PPAC.Migration.ForcingOrdinalTable.construction_models
+#print axioms PPAC.Migration.ForcingOrdinalTable.construction_kernel_certificate

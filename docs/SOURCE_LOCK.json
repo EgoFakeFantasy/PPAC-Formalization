@@ -95195,6 +95195,231 @@
           "propext"
         ]
       }
+    },
+    "forcing_ordinal_table": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/OrdinalCodes.lean",
+      "source_sha256": "0c15c09a9060fa609fe3fdc989fbd2dcadd3431b528a35f6e17e0d8e2df7fbcd",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/GermSelectors.lean": "e7eaf1b05a356e2c22091d2fdc1894709cec6f7a7bc15324470470cddd906aaf"
+      },
+      "adapter": "PPAC/Migration/ForcingOrdinalTable.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingOrdinalTable.lean": "260accafbadd19f823befc1ff4f48abd4b25338713356b533a18c8fbcd84b5d3",
+        "PPAC/Migration/ExistingSmallUnion.lean": "314b6740ed17c1e5a6a7fd60cd21b3b3e55fa4e393013a697a6bb9b8474ca3af",
+        "PPAC/Migration/ConstructionDirectedCardinality.lean": "631b792d6d32b7d87a6569cb349d42902b62520490d0782f3c0f566af0ed2c0f",
+        "PPAC/Migration/ConstructibleSource.lean": "3e0753271c6e98902b29cf15fe0161d0b1113865606300d0ab478ce9fc491add",
+        "PPAC/Migration/ConstructibleGround.lean": "25eb4b6e93cbaa884d36186d9e2e90e8ceec5c8ca6458f8df03cce08c826c9a9",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionSpaceConstruction.lean": "fd763edf53980fd6482d3189449e89f0f50f2d8febbd95612607e262e0618a92",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/SetConstruction.lean": "7ab1b72b7326826b18de8c7aeb6cb1de72abd7e7734cb96647e2cd1e641947b1",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Basic.lean": "bcf661298bfb6cf87f07a2687d3f3ff60eb70469676cccd288bcb2c22e3e3943",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Card/Syntax.lean": "4b47202d1d2f7e82e8e4c22f662e54ad67bad58936a9f1a616ee0c6923ed4bdc",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Model/SetTheory/FunctionSemantics.lean": "e18feb553c0ec4c0e376da574043b685f415b36b9240e382b8b41f6d5273a6cd"
+      },
+      "source_declarations": [
+        "OrderAssignment.Table:548",
+        "OrderAssignment.chooseTable:551",
+        "OrderAssignment.indices:557"
+      ],
+      "consumers": [
+        "GermSelectors.ordinalTable:33 (chooseTable at 34)",
+        "GermSelectors.Preliminary:38 (indices at 44)",
+        "GermSelectors.preliminary_eq_iff:86 (indices at 102)",
+        "GermSelectors.preliminary_total:167 (indices at 174)",
+        "GermSelectors.preliminary_onto:183 (indices at 199)"
+      ],
+      "scope": "One actual INTERNAL bounded table of bijection graphs, chosen BEFORE quantifying over all eligible internal ordinals and with NO forcing-condition parameter. Eligible theta is an internal ordinal <= the given ordinal bound and internally equinumerous to the label set, the set-graph form of the source cardinal equality. Exact table domain and literal function uniqueness are proved. Indices uses the SAME table entry; its graph is an actual internal bijection from labels to the members of theta (internal von Neumann initial segment). Existing native insert/functionSpace/Separation and ExistingSmallUnion.uniformize_formula_l (retained donor theorem) produce the table. No new choice, cardinal, recursion, function-space or satisfaction backend; no external-standard ordinal restriction. Joint nativeZF original-kernel construction certificate is relative to the SAME existing internal L. Full source assignment/naturality variants are not asserted; actual GermSelectors relation assembly, CodeCardinals, stages 9-11 and final internal Con remain incomplete.",
+      "reuse_producers": [
+        "ExistingSmallUnion.uniformize_formula_l:132 (retained 7979336 donor proof)",
+        "ZF.exists_functionSpace",
+        "KP.exists_insert",
+        "ZF.separation_exists_d",
+        "ConstructibleSource.model_zf/model_choice",
+        "ConstructibleGround.relative_models"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOrdinalTable.Eligible": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.eligible": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.eligible_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.eligible_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.Table": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.table": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.table_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.table_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.chooseTable": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.Indices": [],
+        "PPAC.Migration.ForcingOrdinalTable.indices": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indices_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indices_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indices_bijection": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indexBijection": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indexBijection_freeClosed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.indexBijection_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.constructionSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.construction_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOrdinalTable.construction_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

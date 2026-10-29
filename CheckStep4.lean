@@ -12541,4 +12541,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingCodeLinkCovariance.equalitySentence rho w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma))) :=
   ForcingCodeLinkCovariance.equality_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma
 
+-- One internal table, before universal quantification over its ordinal entries.
+example {k : Nat} (labels bound : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingOrdinalTable.constructionSentence labels bound))) :=
+  ForcingOrdinalTable.construction_kernel_certificate labels bound
+
 end PPAC.Migration.Step4Checks
