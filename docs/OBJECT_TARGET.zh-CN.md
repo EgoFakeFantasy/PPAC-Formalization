@@ -91,3 +91,7 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 ## 2026-10-30 主线 single 的实际副本排除
 
 `ForcingProbeSingle.source_kernel_certificate` 是普通 nativeZF 原核中的对象闭句，沿同一内部 L 量化全部内部见证条件及可能共同加强。结论为同秩独立副本的见证条件无共同加强。秩判别、Links/Same、公共根交集和实际 Outside 排除均实际接通；不存在把选中码／原名字相等或不相容当作未消去假设的替代。源对应 `ordinalType_lower_count.single:254–283`。全行关系及最终基数计数和内部 Con 仍未完成。全量验收通过：3032 构建、34367 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-single-acceptance.json。
+
+## 同一行关系与计数的对象证书（2026-10-30）
+
+ForcingProbeRows.source_kernel_certificate 保持原 nativeZF 与同一内部 L 的范围，构造内部 R 并给出 A ≤ θ×continuum。关系的全行 total/single 已从实际副本、目标、乘子族推出，未作为额外前提。局部列表、完整秩图、实际几何仍是明确的源输入；具体系统的 OrdinalCount、最终 PP/Main 与覆盖全部内部／非标准证明码的 Con 推导未完成。验收见 verification/probe-rows-acceptance.json；本证书不冒称最终主句。

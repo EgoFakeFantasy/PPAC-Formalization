@@ -23,6 +23,107 @@ set_option maxHeartbeats 6000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
+theorem stable_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta : Fin k)
+    (sm m record d tau : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hrI : Injection (env (rho 0)) (env I) (env r))
+    (hpI : Injection (env (rho 0)) (env I) (env p))
+    (hsmI : Injection (env (rho 0)) (env I) sm)
+    (hAp : ForcingSupportedNames.Range (env (rho 0)) (env p) (env Ap))
+    (hHp : ForcingLabelPermutations.Fixing (env G) (env Ap) (env Hp))
+    (hXP : ForcingLocalNames.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env Hp) (env XP))
+    (ha : (Project.FirstOrderSemantics.reduct M).mem (env a) (env (rho 0)))
+    (he : (Project.FirstOrderSemantics.reduct M).mem (env e) (env (rho 0)))
+    (hmD : (Project.FirstOrderSemantics.reduct M).mem m (env (rho 0)))
+    (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) (env (rho 0)))
+    (hae : ForcingDiagramOrder.Product (env mul) (env a) (env e) (env t))
+    (hmb : ForcingDiagramOrder.Product (env mul) m (env b) (env t))
+    (hSuba : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env a) (env q))
+    (hSubm : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) m sm)
+    (hSubp : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env t) (env p))
+    (hEnum : (Project.FirstOrderSemantics.reduct M).IsSetBijectionFromTo (KuratowskiZF.interpretation hM) (env enum) (env ordinal) (env XP))
+    (hList : ForcingCollectedName.Collected ForcingPowerName.trueTest Fin.elim0 (env ordinal) (env enum) (env (rho 6)) (env list))
+    (hCopy : ForcingOutsideCopies.Copy (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) sm record)
+    (hRecord : PureKuratowski.Code M record d tau)
+    (hGeom : ForcingClassProfile.Geometry (env (rho 0)) (env mul) (env a) m (env t) (env U))
+    (f : M.Carrier .set) (hf : (Project.FirstOrderSemantics.reduct M).mem f (env (rho 3)))
+    (hdf : ForcingPowerName.Subset d f) :
+    ForcingForcedAvailability.Carrier (orderFormula (rho 0) mul) env (fun j => env (rho j)) (env G) (env F)
+      (env mul) (env bound) f (env r) (env a) tau (env U) := by
+  obtain ⟨d',tau',Am,Hm,z,hRecord',hd,_,_,hAm,hHm,hLocal,hz,hClass,hOutside⟩ := hCopy
+  obtain ⟨ed,etau⟩ := PureKuratowski.code_injective hRecord hRecord'
+  subst d'
+  subst tau'
+  obtain ⟨g,hg⟩ := ForcingPrincipalFilter.exists_principal hM (env (rho 3)) f
+  have hgf := ForcingPrincipalFilter.principal_filter hf hg
+  have hdg := (hg d).mpr ⟨(hp.2.2.1 d).mpr hd,hdf⟩
+  obtain ⟨oi,objects,hObjMap,hObj⟩ := ForcingEligibleFamily.exists_family_over hM
+    (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) (Fin.lastCases g env)
+    Fin.castSucc (fun j => (rho j).castSucc) G.castSucc F.castSucc mul.castSucc (Fin.last k)
+    q.castSucc bound.castSucc labels.castSucc E.castSucc I.castSucc (rho 4).castSucc
+    (by simpa only [Fin.lastCases_castSucc] using hp.2.2.2.1)
+  simp only [Fin.lastCases_castSucc,Fin.lastCases_last] at hObjMap hObj
+  obtain ⟨S,hS⟩ := ForcingEligibleMapFamily.exists_arrows hM env (rho 0) mul (rho 4)
+  obtain ⟨mi,maps,hMap,hMaps⟩ := ForcingEligibleMapFamily.exists_family_at_filter hM env rho G F mul
+    I K B w one q bound labels E g S hm hp hgf hS
+  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
+  obtain ⟨Or,hr,_⟩ := hObjMap.1.2 (env r) ((hp.2.2.2.1 (env r)).mpr hrI)
+  obtain ⟨OP,hP,_⟩ := hObjMap.1.2 (env p) ((hp.2.2.2.1 (env p)).mpr hpI)
+  obtain ⟨Om,hSm,_⟩ := hObjMap.1.2 sm ((hp.2.2.2.1 sm).mpr hsmI)
+  obtain ⟨Ar,Hr,XR,QR,prR,hDR⟩ := ((hObj (env r) Or).mp hr).2
+  obtain ⟨Ap',Hp',XP',QP,prP,hDP⟩ := ((hObj (env p) OP).mp hP).2
+  obtain ⟨Am',Hm',XM,QM,prM,hDM⟩ := ((hObj sm Om).mp hSm).2
+  have eAp := (ModelTransfer.extensionality hM).eq_of_same_members (env Ap) Ap' (fun x => (hAp x).trans (hDP.1 x).symm)
+  subst Ap'
+  have eHp := ForcingLabelPermutations.fixing_unique hM hHp hDP.2.1
+  subst Hp'
+  have eXP := (ModelTransfer.extensionality hM).eq_of_same_members (env XP) XP' (fun x => (hXP x).trans (hDP.2.2.1 x).symm)
+  subst XP'
+  have eAm := (ModelTransfer.extensionality hM).eq_of_same_members Am Am' (fun x => (hAm x).trans (hDM.1 x).symm)
+  subst Am'
+  have eHm := ForcingLabelPermutations.fixing_unique hM hHm hDM.2.1
+  subst Hm'
+  have hel : ForcingEligibility.EligibleName (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (env (rho 6)) g sm (env labels) (env E) tau :=
+    ⟨d,z,hdg,hz,hClass z (ForcingSupportingRoot.code_mem hp hd hsmI hz)⟩
+  obtain ⟨xr,hxr,hpr,hProfile⟩ := ForcingClassProfile.construct hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf
+    hObjMap hObj hS hMap hMaps hSys hr hP hSm hDP hDM hDR hq ha he hmD hb hae hmb hSuba hSubm hSubp
+    hLocal hel hEnum hList hdg hz hOutside hGeom
+  intro n
+  constructor
+  · intro hnU
+    obtain ⟨hn,hna,hAvail⟩ := (hProfile n).mp hnU
+    exact ⟨hn,hna,(ForcingForcedAvailability.actual_available_iff hM hChoice env rho G F mul
+      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
+      hf hg hObjMap hObj hS hMap hMaps hSys hr hDR hSuba hpr hxr hn hna).mp hAvail⟩
+  · rintro ⟨hn,hna,hAvail⟩
+    exact (hProfile n).mpr ⟨hn,hna,(ForcingForcedAvailability.actual_available_iff hM hChoice env rho G F mul
+      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
+      hf hg hObjMap hObj hS hMap hMaps hSys hr hDR hSuba hpr hxr hn hna).mpr hAvail⟩
+
 theorem stable_of_copy (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -70,61 +171,91 @@ theorem stable_of_copy (hM : FirstOrder.Theory.Models M nativeZF)
     (hdf : ForcingPowerName.Subset (env d) f) :
     ForcingForcedAvailability.Carrier (orderFormula (rho 0) mul) env (fun j => env (rho j)) (env G) (env F)
       (env mul) (env bound) f (env r) (env a) (env tau) (env U) := by
-  obtain ⟨d',tau',Am,Hm,z,hRecord',hd,_,_,hAm,hHm,hLocal,hz,hClass,hOutside⟩ := hCopy
-  obtain ⟨ed,etau⟩ := PureKuratowski.code_injective hRecord hRecord'
-  subst d'
-  subst tau'
-  obtain ⟨g,hg⟩ := ForcingPrincipalFilter.exists_principal hM (env (rho 3)) f
-  have hgf := ForcingPrincipalFilter.principal_filter hf hg
-  have hdg := (hg (env d)).mpr ⟨(hp.2.2.1 (env d)).mpr hd,hdf⟩
-  obtain ⟨oi,objects,hObjMap,hObj⟩ := ForcingEligibleFamily.exists_family_over hM
-    (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) (Fin.lastCases g env)
-    Fin.castSucc (fun j => (rho j).castSucc) G.castSucc F.castSucc mul.castSucc (Fin.last k)
-    q.castSucc bound.castSucc labels.castSucc E.castSucc I.castSucc (rho 4).castSucc
-    (by simpa only [Fin.lastCases_castSucc] using hp.2.2.2.1)
-  simp only [Fin.lastCases_castSucc,Fin.lastCases_last] at hObjMap hObj
-  obtain ⟨S,hS⟩ := ForcingEligibleMapFamily.exists_arrows hM env (rho 0) mul (rho 4)
-  obtain ⟨mi,maps,hMap,hMaps⟩ := ForcingEligibleMapFamily.exists_family_at_filter hM env rho G F mul
-    I K B w one q bound labels E g S hm hp hgf hS
-  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
-  obtain ⟨Or,hr,_⟩ := hObjMap.1.2 (env r) ((hp.2.2.2.1 (env r)).mpr hrI)
-  obtain ⟨OP,hP,_⟩ := hObjMap.1.2 (env p) ((hp.2.2.2.1 (env p)).mpr hpI)
-  obtain ⟨Om,hSm,_⟩ := hObjMap.1.2 (env sm) ((hp.2.2.2.1 (env sm)).mpr hsmI)
-  obtain ⟨Ar,Hr,XR,QR,prR,hDR⟩ := ((hObj (env r) Or).mp hr).2
-  obtain ⟨Ap',Hp',XP',QP,prP,hDP⟩ := ((hObj (env p) OP).mp hP).2
-  obtain ⟨Am',Hm',XM,QM,prM,hDM⟩ := ((hObj (env sm) Om).mp hSm).2
-  have eAp := (ModelTransfer.extensionality hM).eq_of_same_members (env Ap) Ap' (fun x => (hAp x).trans (hDP.1 x).symm)
-  subst Ap'
-  have eHp := ForcingLabelPermutations.fixing_unique hM hHp hDP.2.1
-  subst Hp'
-  have eXP := (ModelTransfer.extensionality hM).eq_of_same_members (env XP) XP' (fun x => (hXP x).trans (hDP.2.2.1 x).symm)
-  subst XP'
-  have eAm := (ModelTransfer.extensionality hM).eq_of_same_members Am Am' (fun x => (hAm x).trans (hDM.1 x).symm)
-  subst Am'
-  have eHm := ForcingLabelPermutations.fixing_unique hM hHm hDM.2.1
-  subst Hm'
-  have hel : ForcingEligibility.EligibleName (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
-      (env (rho 6)) g (env sm) (env labels) (env E) (env tau) :=
-    ⟨env d,z,hdg,hz,hClass z (ForcingSupportingRoot.code_mem hp hd hsmI hz)⟩
-  obtain ⟨xr,hxr,hpr,hProfile⟩ := ForcingClassProfile.construct hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf
-    hObjMap hObj hS hMap hMaps hSys hr hP hSm hDP hDM hDR hq ha he hmD hb hae hmb hSuba hSubm hSubp
-    hLocal hel hEnum hList hdg hz hOutside hGeom
-  intro n
-  constructor
-  · intro hnU
-    obtain ⟨hn,hna,hAvail⟩ := (hProfile n).mp hnU
-    exact ⟨hn,hna,(ForcingForcedAvailability.actual_available_iff hM hChoice env rho G F mul
-      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
-      hf hg hObjMap hObj hS hMap hMaps hSys hr hDR hSuba hpr hxr hn hna).mp hAvail⟩
-  · rintro ⟨hn,hna,hAvail⟩
-    exact (hProfile n).mpr ⟨hn,hna,(ForcingForcedAvailability.actual_available_iff hM hChoice env rho G F mul
-      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
-      hf hg hObjMap hObj hS hMap hMaps hSys hr hDR hSuba hpr hxr hn hna).mpr hAvail⟩
+  exact stable_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta (env sm) (env m) (env record) (env d) (env tau) hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hrI hpI hsmI hAp hHp hXP ha he hmD hb hae hmb hSuba hSubm hSubp hEnum hList hCopy hRecord hGeom f hf hdf
 
 /-- Source hel/stable and the first total producer: an actual persistent code,
 with every entry equal to the SAME copied name, at any stronger input condition. -/
+theorem working_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr : Fin k)
+    (sm m record d tau f z : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hrI : Injection (env (rho 0)) (env I) (env r))
+    (hpI : Injection (env (rho 0)) (env I) (env p))
+    (hsmI : Injection (env (rho 0)) (env I) sm)
+    (hAp : ForcingSupportedNames.Range (env (rho 0)) (env p) (env Ap))
+    (hHp : ForcingLabelPermutations.Fixing (env G) (env Ap) (env Hp))
+    (hXP : ForcingLocalNames.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env Hp) (env XP))
+    (ha : (Project.FirstOrderSemantics.reduct M).mem (env a) (env (rho 0)))
+    (he : (Project.FirstOrderSemantics.reduct M).mem (env e) (env (rho 0)))
+    (hmD : (Project.FirstOrderSemantics.reduct M).mem m (env (rho 0)))
+    (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) (env (rho 0)))
+    (hae : ForcingDiagramOrder.Product (env mul) (env a) (env e) (env t))
+    (hmb : ForcingDiagramOrder.Product (env mul) m (env b) (env t))
+    (hSuba : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env a) (env q))
+    (hSubm : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) m sm)
+    (hSubp : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env t) (env p))
+    (hEnum : (Project.FirstOrderSemantics.reduct M).IsSetBijectionFromTo (KuratowskiZF.interpretation hM) (env enum) (env ordinal) (env XP))
+    (hList : ForcingCollectedName.Collected ForcingPowerName.trueTest Fin.elim0 (env ordinal) (env enum) (env (rho 6)) (env list))
+    (hCopy : ForcingOutsideCopies.Copy (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) sm record)
+    (hRecord : PureKuratowski.Code M record d tau)
+    (hGeom : ForcingClassProfile.Geometry (env (rho 0)) (env mul) (env a) m (env t) (env U))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hzero : ForcingWithTopCarrier.Empty (env zero))
+    (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hRoot : Code (env root) (env r) (env a) (env U))
+    (hAr : ForcingSupportedNames.Range (env (rho 0)) (env r) (env Ar))
+    (hHr : ForcingLabelPermutations.Fixing (env G) (env Ar) (env Hr))
+    (hf : (Project.FirstOrderSemantics.reduct M).mem f (env (rho 3)))
+    (hdf : ForcingPowerName.Subset d f)
+    (hz : ForcingSupportingRoot.Code z f (env r)) :
+    (∀ g, (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) → ForcingPowerName.Subset d g →
+      ForcingForcedAvailability.Carrier (orderFormula (rho 0) mul) env (fun j => env (rho j)) (env G) (env F)
+        (env mul) (env bound) g (env r) (env a) tau (env U)) ∧
+    ∃ code, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code ∧
+      ForcingPersistentWorks.Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+        (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) f code ∧
+      ∀ i sigma, PureKuratowski.PairMember M i sigma code →
+        EqF (orderFormula (rho 0) mul) env (env (rho 6)) f (env r) sigma tau := by
+  have hStable := stable_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta sm m record d tau
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hrI hpI hsmI hAp hHp hXP ha he hmD hb hae hmb hSuba hSubm hSubp hEnum hList hCopy hRecord hGeom
+  refine ⟨hStable,?_⟩
+  obtain ⟨d',tau',Am,Hm,z',hRecord',_,_,_,hAm,hHm,hLocal,_,hClass,_⟩ := hCopy
+  obtain ⟨ed,etau⟩ := PureKuratowski.code_injective hRecord hRecord'
+  subst d'
+  subst tau'
+  have hRange : ForcingPowerName.Subset Am (env Ar) := fun x hx => (hAr x).mpr
+    (ConstructionDescentPlacement.range_antitone ⟨m,hmD,hSubm⟩ ((hAm x).mp hx))
+  have hTau : ForcingLocalNames.LocalName (fun j => env (rho j)) (env G) (env F) (env bound) (env Hr) tau :=
+    ⟨hLocal.1,ForcingSupportedNames.supported_mono hHm hHr hRange hLocal.2⟩
+  exact ForcingStableCodes.working_code_at hM hChoice env rho
+    w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq
+    zero root vertices chain names r a U Ar Hr f tau z
+    hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE
+    hzero hNames hChain hRoot hAr hHr hTau hf hz
+    (hClass z (ForcingSupportingRoot.code_mem hp ((hp.2.2.1 f).mp hf) hrI hz))
+    (fun g hg hfg => hStable g hg (fun x hx => hfg x (hdf x hx)))
+
 theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -186,24 +317,7 @@ theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
         (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) (env f) code ∧
       ∀ i sigma, PureKuratowski.PairMember M i sigma code →
         EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env f) (env r) sigma (env tau) := by
-  have hStable := stable_of_copy hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hrI hpI hsmI hAp hHp hXP ha he hmD hb hae hmb hSuba hSubm hSubp hEnum hList hCopy hRecord hGeom
-  refine ⟨hStable,?_⟩
-  obtain ⟨d',tau',Am,Hm,z',hRecord',_,_,_,hAm,hHm,hLocal,_,hClass,_⟩ := hCopy
-  obtain ⟨ed,etau⟩ := PureKuratowski.code_injective hRecord hRecord'
-  subst d'
-  subst tau'
-  have hRange : ForcingPowerName.Subset Am (env Ar) := fun x hx => (hAr x).mpr
-    (ConstructionDescentPlacement.range_antitone ⟨env m,hmD,hSubm⟩ ((hAm x).mp hx))
-  have hTau : ForcingLocalNames.LocalName (fun j => env (rho j)) (env G) (env F) (env bound) (env Hr) (env tau) :=
-    ⟨hLocal.1,ForcingSupportedNames.supported_mono hHm hHr hRange hLocal.2⟩
-  exact ForcingStableCodes.exists_working_code_of_stable hM hChoice env rho
-    w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq
-    zero root vertices chain names r a U Ar Hr f tau z
-    hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE
-    hzero hNames hChain hRoot hAr hHr hTau hf hz
-    (hClass (env z) (ForcingSupportingRoot.code_mem hp ((hp.2.2.1 (env f)).mp hf) hrI hz))
-    (fun g hg hfg => hStable g hg (fun x hx => hfg x (hdf x hx)))
+  exact working_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr (env sm) (env m) (env record) (env d) (env tau) (env f) (env z) hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hrI hpI hsmI hAp hHp hXP ha he hmD hb hae hmb hSuba hSubm hSubp hEnum hList hCopy hRecord hGeom hJ hzero hNames hChain hRoot hAr hHr hf hdf hz
 
 def sourceSentence {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z : Fin k) : Project.Sentence where
   formula :=

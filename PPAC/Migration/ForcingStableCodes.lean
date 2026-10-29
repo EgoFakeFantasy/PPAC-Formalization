@@ -25,10 +25,11 @@ variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 /-- The source hcodes/choose step, performed on the full internal omega.
 Forced availability supplies the same restricted local names as the already
 proved principal-fiber bijection; no new choice backend is introduced. -/
-theorem exists_root_equal_code (hM : FirstOrder.Theory.Models M nativeZF)
+theorem root_equal_code_at (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (R : Formula (k+2)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (I G F mul bound w names chain zero root r a U d tau q : Fin k) {vertices : M.Carrier .set}
+    (I G F mul bound w names chain zero root r a U q : Fin k)
+    (d tau : M.Carrier .set) {vertices : M.Carrier .set}
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hz : ForcingWithTopCarrier.Empty (env zero))
     (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
@@ -36,20 +37,22 @@ theorem exists_root_equal_code (hM : FirstOrder.Theory.Models M nativeZF)
     (hRoot : Code (env root) (env r) (env a) (env U))
     (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env (rho 4)))
     (hAvail : ForcingForcedAvailability.Carrier R env (fun j => env (rho j)) (env G) (env F)
-      (env mul) (env bound) (env d) (env r) (env a) (env tau) (env U)) :
+      (env mul) (env bound) d (env r) (env a) tau (env U)) :
     ∃ code, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code ∧
-      ∀ i sigma, PureKuratowski.PairMember M i sigma code → EqF R env (env (rho 6)) (env d) (env r) sigma (env tau) := by
-  let schema : Project.BinarySchema k := {
-    body := .existsE (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge chain.succ.succ.succ 2 0))
-      (.conj (ForcingTailCodes.entry (fun j => (rho j).succ.succ.succ) G.succ.succ.succ F.succ.succ.succ bound.succ.succ.succ 0 1)
-        (ForcingPrincipalFilter.eqF R (fun j => j.succ.succ.succ) (rho 6).succ.succ.succ d.succ.succ.succ r.succ.succ.succ 1 tau.succ.succ.succ)))
+      ∀ i sigma, PureKuratowski.PairMember M i sigma code → EqF R env (env (rho 6)) d (env r) sigma tau := by
+  let up : Fin k → Fin (k+2) := fun j => j.succ.succ
+  let schema : Project.BinarySchema (k+2) := {
+    body := .existsE (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge (up chain).succ.succ.succ 2 0))
+      (.conj (ForcingTailCodes.entry (fun j => (up (rho j)).succ.succ.succ) (up G).succ.succ.succ (up F).succ.succ.succ (up bound).succ.succ.succ 0 1)
+        (ForcingPrincipalFilter.eqF R (fun j => (up j).succ.succ.succ) (up (rho 6)).succ.succ.succ 3 (up r).succ.succ.succ 1 4)))
     freeClosed := by simp -implicitDefEqProofs [Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,
       ForcingTailCodes.entry_freeClosed,ForcingPrincipalFilter.eqF_freeClosed] }
-  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k := {bound := env,free := fun _ => env w}
+  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) (k+2) :=
+    {bound := Fin.cases d (Fin.cases tau env),free := fun _ => env w}
   have he i sigma : schema.denote penv i sigma ↔ ∃ vertex,
       PureKuratowski.PairMember M i vertex (env chain) ∧
       Entry (fun j => env (rho j)) (env G) (env F) (env bound) vertex sigma ∧
-      EqF R env (env (rho 6)) (env d) (env r) sigma (env tau) := by
+      EqF R env (env (rho 6)) d (env r) sigma tau := by
     simp only [schema,Project.BinarySchema.denote,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,
       GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,
       ForcingTailCodes.entry_semantics hM,ForcingPrincipalFilter.eqF_semantics hM]
@@ -79,6 +82,22 @@ theorem exists_root_equal_code (hM : FirstOrder.Theory.Models M nativeZF)
   · intro i sigma his
     obtain ⟨_,_,_,hEq⟩ := (he i sigma).mp (hSelect i sigma his)
     exact hEq
+
+theorem exists_root_equal_code (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (R : Formula (k+2)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I G F mul bound w names chain zero root r a U d tau q : Fin k) {vertices : M.Carrier .set}
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hz : ForcingWithTopCarrier.Empty (env zero))
+    (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) vertices (env chain))
+    (hRoot : Code (env root) (env r) (env a) (env U))
+    (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env (rho 4)))
+    (hAvail : ForcingForcedAvailability.Carrier R env (fun j => env (rho j)) (env G) (env F)
+      (env mul) (env bound) (env d) (env r) (env a) (env tau) (env U)) :
+    ∃ code, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code ∧
+      ∀ i sigma, PureKuratowski.PairMember M i sigma code → EqF R env (env (rho 6)) (env d) (env r) sigma (env tau) := by
+  exact root_equal_code_at hM hChoice R env rho I G F mul bound w names chain zero root r a U q (env d) (env tau) hw hz hNames hChain hRoot hDiagrams hAvail
 
 /-- The source restriction-injectivity and toGlued_arrow step. A literal
 local name equal at the root represents the same glued element. -/
@@ -171,6 +190,105 @@ theorem at_of_root_eq (hM : FirstOrder.Theory.Models M nativeZF)
 
 /-- Pinned exists_working_code_of_stable, with one code for every stronger
 internal condition and equality of every literal entry at the original root. -/
+theorem working_code_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr : Fin k)
+    (d tau z : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hzero : ForcingWithTopCarrier.Empty (env zero))
+    (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hRoot : Code (env root) (env r) (env a) (env U))
+    (hAr : ForcingSupportedNames.Range (env (rho 0)) (env r) (env Ar))
+    (hHr : ForcingLabelPermutations.Fixing (env G) (env Ar) (env Hr))
+    (hTau : ForcingLocalNames.LocalName (fun j => env (rho j)) (env G) (env F) (env bound) (env Hr) tau)
+    (hd : (Project.FirstOrderSemantics.reduct M).mem d (env (rho 3)))
+    (hz : ForcingSupportingRoot.Code z d (env r))
+    (hForce : ForcingFormula.Force (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (Source.SetLanguage.args3 tau (env labels) (env E)) (env (rho 6)) z (ForcingEligibility.isClass 0 1 2))
+    (hStable : ∀ e, (Project.FirstOrderSemantics.reduct M).mem e (env (rho 3)) → ForcingPowerName.Subset d e →
+      ForcingForcedAvailability.Carrier (orderFormula (rho 0) mul) env (fun j => env (rho j)) (env G) (env F)
+        (env mul) (env bound) e (env r) (env a) tau (env U)) :
+    ∃ code, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code ∧
+      ForcingPersistentWorks.Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+        (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d code ∧
+      ∀ i sigma, PureKuratowski.PairMember M i sigma code →
+        EqF (orderFormula (rho 0) mul) env (env (rho 6)) d (env r) sigma tau := by
+  have hCommonRoot := hChain.2.2.2.1 (env zero) (env root) hChain.2.1
+  have hVertex : ConstructionComponentVertices.Vertex (env (rho 0)) (env I) (env mul) (env q) (env r) (env a) (env U) := by
+    obtain ⟨r',a',U',_,_,_,hRoot',_,hv,_,_⟩ := hCommonRoot
+    obtain ⟨rfl,rfl,rfl⟩ := ConstructionComponentCarrier.code_injective hRoot hRoot'
+    exact hv
+  obtain ⟨code,hCode,hEqual⟩ := root_equal_code_at hM hChoice (orderFormula (rho 0) mul) env rho
+    I G F mul bound w names chain zero root r a U q d tau hw hzero hNames hChain hRoot hp.2.2.2.1
+    (hStable d hd (fun _ h => h))
+  refine ⟨code,hCode,?_,hEqual⟩
+  intro e he hde
+  obtain ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,hg,hBundle⟩ := ForcingPersistentWorks.assemble_principal hM env rho
+    I K B w one G F mul q bound labels E root hm hp he
+  have hBundleCopy := hBundle
+  obtain ⟨hObjMap,hObj,hS,hMap,hMaps,hP,hGlue,hQ,hProjection⟩ := hBundleCopy
+  have hgf := ForcingPrincipalFilter.principal_filter he hg
+  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
+  obtain ⟨hAll,hComm⟩ := ForcingComponentGluing.gluing_laws hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys hP hGlue hQ hProjection
+  obtain ⟨Or,hr,_⟩ := hObjMap.1.2 (env r) ((hp.2.2.2.1 (env r)).mpr hVertex.1)
+  obtain ⟨Ar',Hr',Xr,Qr,pr,hDr⟩ := ((hObj (env r) Or).mp hr).2
+  have eA := (ModelTransfer.extensionality hM).eq_of_same_members (env Ar) Ar' (fun t => (hAr t).trans (hDr.1 t).symm)
+  subst Ar'
+  have eH := ForcingLabelPermutations.fixing_unique hM hHr hDr.2.1
+  subst Hr'
+  obtain ⟨ze,hze⟩ := ForcingSupportingRoot.exists_code hM e (env r)
+  have hpre := ForcingProductPoset.preorder env (rho 0) mul (rho 6) hm hp.2.2.2.2.1 hp.2.2.2.1 hp.2.2.2.2.2
+  have hzW := ForcingSupportingRoot.code_mem hp ((hp.2.2.1 d).mp hd) hVertex.1 hz
+  have hzeW := ForcingSupportingRoot.code_mem hp ((hp.2.2.1 e).mp he) hVertex.1 hze
+  have hlez := (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul ze z).mpr
+    ((ForcingSupportingRoot.code_le hze hz).mpr ⟨hde,ForcingDiagramPoset.le_refl hm hVertex.1⟩)
+  have hForceE := ForcingFormula.mono hM hpre (ForcingEligibility.isClass 0 1 2)
+    (Source.SetLanguage.args3 tau (env labels) (env E)) hzW hzeW hlez hForce
+  obtain ⟨x,Vr,htx,hVr,hx⟩ := ForcingForcedAvailability.exists_fiber_principal hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
+    he hg hObjMap hObj hS hMap hMaps hr hDr hVertex.2.1 hLabelBound hVertex.2.2.2.1
+    ((hDr.2.2.1 tau).mpr hTau) hze hForceE (hStable e he hde)
+  have hVF : ForcingComponentFibers.VertexFiber (env (rho 0)) (env mul) objects maps (env root) Vr :=
+    ⟨env r,env a,env U,Or,hRoot,hr,hVr⟩
+  obtain ⟨f,hf,_,_⟩ := hAll (env root) Vr hCommonRoot hVF
+  obtain ⟨b,hxb,_⟩ := hf.1.1.2 x hx
+  have hb := hf.1.2 x b hxb
+  obtain ⟨_,p,hpx,hpb⟩ := (hf.2 x b).mp hxb
+  have hAt : At (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+      (env I) (env G) (env F) (env mul) g (env q) (env bound) (env labels) (env E) objects maps (env root) gluePr (env root) tau b :=
+    ⟨env r,env a,env U,env Ar,env Hr,Xr,Qr,pr,Or,Vr,x,p,hCommonRoot,hRoot,hDr,hr,hVr,hx,htx,hpx,hpb⟩
+  have hzWnat := ForcingConditionGraphs.function_input hChain.1.1 hChain.2.1
+  refine ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,b,hg,hBundle,hb,env zero,hzWnat,?_⟩
+  intro i hi hzi
+  obtain ⟨sigma,his,_⟩ := hCode.1.1.2 i hi
+  obtain ⟨vertex,hv,hEntry⟩ := hCode.2 i sigma his
+  obtain ⟨n,hArrow⟩ := hChain.2.2.1 (env zero) i (env root) vertex hzi hChain.2.1 hv
+  have hEqE := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp he hVertex.1 hde (hEqual i sigma his)
+  have hEqG := (ForcingPrincipalFilter.eqG_principal hM env rho mul hm hp he hVertex.1 hg).mpr hEqE
+  exact ⟨vertex,sigma,hv,his,at_of_root_eq hM hChoice env rho G F mul hw hMu hI hSmall hMergers hRow hm hJ hp hG hF
+    hgf hObjMap hObj hS hMap hMaps hSys hAll hComm hRoot hArrow (hChain.2.2.2.1 i vertex hv) hEntry hAt hEqG⟩
+
 theorem exists_working_code_of_stable (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -214,61 +332,7 @@ theorem exists_working_code_of_stable (hM : FirstOrder.Theory.Models M nativeZF)
         (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) (env d) code ∧
       ∀ i sigma, PureKuratowski.PairMember M i sigma code →
         EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env d) (env r) sigma (env tau) := by
-  have hCommonRoot := hChain.2.2.2.1 (env zero) (env root) hChain.2.1
-  have hVertex : ConstructionComponentVertices.Vertex (env (rho 0)) (env I) (env mul) (env q) (env r) (env a) (env U) := by
-    obtain ⟨r',a',U',_,_,_,hRoot',_,hv,_,_⟩ := hCommonRoot
-    obtain ⟨rfl,rfl,rfl⟩ := ConstructionComponentCarrier.code_injective hRoot hRoot'
-    exact hv
-  obtain ⟨code,hCode,hEqual⟩ := exists_root_equal_code hM hChoice (orderFormula (rho 0) mul) env rho
-    I G F mul bound w names chain zero root r a U d tau q hw hzero hNames hChain hRoot hp.2.2.2.1
-    (hStable (env d) hd (fun _ h => h))
-  refine ⟨code,hCode,?_,hEqual⟩
-  intro e he hde
-  obtain ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,hg,hBundle⟩ := ForcingPersistentWorks.assemble_principal hM env rho
-    I K B w one G F mul q bound labels E root hm hp he
-  have hBundleCopy := hBundle
-  obtain ⟨hObjMap,hObj,hS,hMap,hMaps,hP,hGlue,hQ,hProjection⟩ := hBundleCopy
-  have hgf := ForcingPrincipalFilter.principal_filter he hg
-  have hSys := ForcingEligibleSystem.system_of_families hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hgf hq hAq hHq hE hObj hS hMaps
-  obtain ⟨hAll,hComm⟩ := ForcingComponentGluing.gluing_laws hM hm hJ hp.2.2.2.1 hObjMap hS hMap hSys hP hGlue hQ hProjection
-  obtain ⟨Or,hr,_⟩ := hObjMap.1.2 (env r) ((hp.2.2.2.1 (env r)).mpr hVertex.1)
-  obtain ⟨Ar',Hr',Xr,Qr,pr,hDr⟩ := ((hObj (env r) Or).mp hr).2
-  have eA := (ModelTransfer.extensionality hM).eq_of_same_members (env Ar) Ar' (fun t => (hAr t).trans (hDr.1 t).symm)
-  subst Ar'
-  have eH := ForcingLabelPermutations.fixing_unique hM hHr hDr.2.1
-  subst Hr'
-  obtain ⟨ze,hze⟩ := ForcingSupportingRoot.exists_code hM e (env r)
-  have hpre := ForcingProductPoset.preorder env (rho 0) mul (rho 6) hm hp.2.2.2.2.1 hp.2.2.2.1 hp.2.2.2.2.2
-  have hzW := ForcingSupportingRoot.code_mem hp ((hp.2.2.1 (env d)).mp hd) hVertex.1 hz
-  have hzeW := ForcingSupportingRoot.code_mem hp ((hp.2.2.1 e).mp he) hVertex.1 hze
-  have hlez := (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul ze (env z)).mpr
-    ((ForcingSupportingRoot.code_le hze hz).mpr ⟨hde,ForcingDiagramPoset.le_refl hm hVertex.1⟩)
-  have hForceE := ForcingFormula.mono hM hpre (ForcingEligibility.isClass 0 1 2)
-    (Source.SetLanguage.args3 (env tau) (env labels) (env E)) hzW hzeW hlez hForce
-  obtain ⟨x,Vr,htx,hVr,hx⟩ := ForcingForcedAvailability.exists_fiber_principal hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hq hAq hHq hE
-    he hg hObjMap hObj hS hMap hMaps hr hDr hVertex.2.1 hLabelBound hVertex.2.2.2.1
-    ((hDr.2.2.1 (env tau)).mpr hTau) hze hForceE (hStable e he hde)
-  have hVF : ForcingComponentFibers.VertexFiber (env (rho 0)) (env mul) objects maps (env root) Vr :=
-    ⟨env r,env a,env U,Or,hRoot,hr,hVr⟩
-  obtain ⟨f,hf,_,_⟩ := hAll (env root) Vr hCommonRoot hVF
-  obtain ⟨b,hxb,_⟩ := hf.1.1.2 x hx
-  have hb := hf.1.2 x b hxb
-  obtain ⟨_,p,hpx,hpb⟩ := (hf.2 x b).mp hxb
-  have hAt : At (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
-      (env I) (env G) (env F) (env mul) g (env q) (env bound) (env labels) (env E) objects maps (env root) gluePr (env root) (env tau) b :=
-    ⟨env r,env a,env U,env Ar,env Hr,Xr,Qr,pr,Or,Vr,x,p,hCommonRoot,hRoot,hDr,hr,hVr,hx,htx,hpx,hpb⟩
-  have hzWnat := ForcingConditionGraphs.function_input hChain.1.1 hChain.2.1
-  refine ⟨g,oi,objects,S,mi,maps,P,Q,gluePr,b,hg,hBundle,hb,env zero,hzWnat,?_⟩
-  intro i hi hzi
-  obtain ⟨sigma,his,_⟩ := hCode.1.1.2 i hi
-  obtain ⟨vertex,hv,hEntry⟩ := hCode.2 i sigma his
-  obtain ⟨n,hArrow⟩ := hChain.2.2.1 (env zero) i (env root) vertex hzi hChain.2.1 hv
-  have hEqE := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp he hVertex.1 hde (hEqual i sigma his)
-  have hEqG := (ForcingPrincipalFilter.eqG_principal hM env rho mul hm hp he hVertex.1 hg).mpr hEqE
-  exact ⟨vertex,sigma,hv,his,at_of_root_eq hM hChoice env rho G F mul hw hMu hI hSmall hMergers hRow hm hJ hp hG hF
-    hgf hObjMap hObj hS hMap hMaps hSys hAll hComm hRoot hArrow (hChain.2.2.2.1 i vertex hv) hEntry hAt hEqG⟩
+  exact working_code_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr (env d) (env tau) (env z) hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hzero hNames hChain hRoot hAr hHr hTau hd hz hForce hStable
 
 def constructionSentence {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z : Fin k) : Project.Sentence where
   formula :=

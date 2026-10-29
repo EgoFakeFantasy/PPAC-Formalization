@@ -12823,4 +12823,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ForcingProbeSingle.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p s0 s1 m0 m1 t b Ap Hp XP ordinal enum list J delta rec0 rec1 d0 tau0 d1 tau1 f g c0 c1 rn0 rn1 beta nb0 nb1))) :=
   ForcingProbeSingle.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p s0 s1 m0 m1 t b Ap Hp XP ordinal enum list J delta rec0 rec1 d0 tau0 d1 tau1 f g c0 c1 rn0 rn1 beta nb0 nb1
 
+
+-- One actual internal relation R, all-row total/single and continuum count.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group theta ntheta f A P targets copies multipliers : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingProbeRows.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group theta ntheta f A P targets copies multipliers))) :=
+  ForcingProbeRows.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group theta ntheta f A P targets copies multipliers
+
 end PPAC.Migration.Step4Checks

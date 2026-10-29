@@ -862,3 +862,5 @@ import PPAC.Migration.ForcingProbeRowHits
 import PPAC.Migration.ForcingProbeStable
 import PPAC.Migration.ForcingProbeTotal
 import PPAC.Migration.ForcingProbeSingle
+
+import PPAC.Migration.ForcingProbeRows

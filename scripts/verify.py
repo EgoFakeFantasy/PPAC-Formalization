@@ -2362,7 +2362,7 @@ def main() -> None:
                                ('forcing_persistent_covariance', 'ForcingPersistentCovariance', 9),
                                ('forcing_works_covariance', 'ForcingWorksCovariance', 13),
                                ('forcing_forced_availability', 'ForcingForcedAvailability', 17),
-                               ('forcing_stable_codes', 'ForcingStableCodes', 6),
+                               ('forcing_stable_codes', 'ForcingStableCodes', 8),
                                ('forcing_ordinal_ranks', 'ForcingOrdinalRanks', 35),
                                ('forcing_ordinal_fixed', 'ForcingOrdinalFixed', 21),
                                ('forcing_ordinal_membership', 'ForcingOrdinalMembership', 28),
@@ -2423,9 +2423,10 @@ def main() -> None:
                                ('forcing_class_profile', 'ForcingClassProfile', 13),
                                ('forcing_outside_copies', 'ForcingOutsideCopies', 27),
                                ('forcing_probe_row_hits', 'ForcingProbeRowHits', 27),
-                               ('forcing_probe_stable', 'ForcingProbeStable', 5),
-                               ('forcing_probe_total', 'ForcingProbeTotal', 4),
-                               ('forcing_probe_single', 'ForcingProbeSingle', 4)):
+                               ('forcing_probe_stable', 'ForcingProbeStable', 7),
+                               ('forcing_probe_total', 'ForcingProbeTotal', 5),
+                               ('forcing_probe_single', 'ForcingProbeSingle', 5),
+                               ('forcing_probe_rows', 'ForcingProbeRows', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

@@ -34951,3 +34951,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProbeSingle.sourceSentence
 #print axioms PPAC.Migration.ForcingProbeSingle.source_models
 #print axioms PPAC.Migration.ForcingProbeSingle.source_kernel_certificate
+
+-- Actual all-row probe relation and count; generalized existing producers.
+#print axioms PPAC.Migration.ForcingStableCodes.root_equal_code_at
+#print axioms PPAC.Migration.ForcingStableCodes.working_code_at
+#print axioms PPAC.Migration.ForcingProbeStable.stable_at
+#print axioms PPAC.Migration.ForcingProbeStable.working_at
+#print axioms PPAC.Migration.ForcingProbeTotal.witness_at
+#print axioms PPAC.Migration.ForcingProbeSingle.incompatible_at
+#print axioms PPAC.Migration.ForcingProbeRows.Witness
+#print axioms PPAC.Migration.ForcingProbeRows.witness
+#print axioms PPAC.Migration.ForcingProbeRows.witness_freeClosed
+#print axioms PPAC.Migration.ForcingProbeRows.witness_semantics
+#print axioms PPAC.Migration.ForcingProbeRows.exists_relation
+#print axioms PPAC.Migration.ForcingProbeRows.source_construct
+#print axioms PPAC.Migration.ForcingProbeRows.sourceSentence
+#print axioms PPAC.Migration.ForcingProbeRows.source_models
+#print axioms PPAC.Migration.ForcingProbeRows.source_kernel_certificate

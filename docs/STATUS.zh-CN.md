@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：同秩独立副本的 single 矛盾已取得原核证书
+## 当前执行入口：同一内部行关系 R 与连续统计数已取得原核证书
 
-本批 `ForcingProbeSingle` 直接迁移固定 `CodeCardinals.ordinalType_lower_count.single:254–283`。从两份实际 Copy 记录、同一实际 rank 图中的选中见证和同一内部 β 的 check-name 出发，在任意假定共同加强条件上用既有 rank 判别推出选中码相等；经既有 Same 自反性和 Links 等价得到两个原名字的强迫相等。公共根值域交集从真实子图及独立锥方程推出；实际 LocalName 和 Outside 从原副本记录取出；构造现成主滤子后消费 outside_not_eqG_common 得到矛盾。选中码相等、原名字相等、公共根交集、主滤子和不相容结论均未作为额外输入。
+本批 `ForcingProbeRows` 对应固定 `CodeCardinals.ordinalType_lower_count` 的 R、total、single 和 ChainBound 消费。R 是从内部条件集与 θ×A 的积上分离得到的实际集合；图成员精确对应实际副本记录、选中码、Links、秩和 check-name 相等见证。所有行的 total 从实际副本族的 hits、已有稳定工作码、稠密选择和秩判定推出；single 从实际目标及乘子族、独立锥、已有成对矛盾和实际 Cohen 条件并推出。total、single、抽象 R 和计数结论均未当前提。随后构造现成连续统及兼容图，实际调用 `ForcingChainBound.cardinal_le_mul` 得到 A ≤ θ×continuum。
 
-`ForcingProbeSingle.source_kernel_certificate` 在普通 nativeZF 中证明同一现成内部 L 上的闭合对象句：这两份同秩独立副本的见证条件不存在任何共同内部加强条件。没有新增选择、秩、商、名字或强迫后端。全量验收通过：3032 项构建、34367 项声明；新增 4 项，全部 34363 项旧声明足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源及 2587 份当前文件哈希匹配。报告：verification/probe-single-acceptance.json。
+`ForcingProbeRows.source_kernel_certificate` 在普通 nativeZF 中证明同一现成内部 L 上的闭合对象句。四个既有生产者模块仅泛化逐行产生的集合参数，全部 19 项原公开定理类型／对象句保持不变；没有新增环境传输、选择、递归、名字或证明核。全量验收通过：3033 项构建、34382 项声明；新增 15 项，全部 34367 项旧声明的有序公理足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源、2588 份当前文件哈希匹配。报告：verification/probe-rows-acceptance.json。
 
-下一步将已完成的逐行 hits、实际 total 见证和本批成对 single 矛盾装配为同一内部关系 R，再消费已有 ForcingChainBound.cardinal_le_mul 与 Cohen chain-bound 接口。全部行关系装配和最终计数／OrdinalCount 仍未完成；localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。保持既有 L、完整公理模式、Proof/Sat 和选择／递归后端，不恢复退役 classFiber_dense_lower 分支。
+下一直接消费者是 `ConcreteQuotients.code_ordinalType_cardinal`。已有 `ForcingCodeCardinals.ordinalType_cardinal_le` 上界、实际探针、outside-copy 族构造及局部名字列表构造须直接消费；剩余是把这些现成生产者的同一系统数据接到本批下界，组合具体基数相等及全加强条件的 OrdinalCount，并完成 localList_wellorderable／outside_localList 消费者。不能把已有上界、列表枚举或副本构造误报为数学缺失。第 9–11 阶段及最终内部 Con 仍未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

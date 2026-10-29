@@ -21,6 +21,126 @@ set_option maxHeartbeats 6000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
+theorem incompatible_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p t b Ap Hp XP ordinal enum list J delta : Fin k)
+    (s0 s1 m0 m1 rec0 rec1 d0 tau0 d1 tau1 f g c0 c1 rn0 rn1 beta nb0 nb1 : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hrI : Injection (env (rho 0)) (env I) (env r))
+    (hpI : Injection (env (rho 0)) (env I) (env p))
+    (hs0I : Injection (env (rho 0)) (env I) s0)
+    (hs1I : Injection (env (rho 0)) (env I) s1)
+    (hm0 : (Project.FirstOrderSemantics.reduct M).mem m0 (env (rho 0)))
+    (hm1 : (Project.FirstOrderSemantics.reduct M).mem m1 (env (rho 0)))
+    (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) (env (rho 0)))
+    (hSub0 : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) m0 s0)
+    (hSub1 : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) m1 s1)
+    (hSubP : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env t) (env p))
+    (hSub0P : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) s0 (env b) (env p))
+    (hSub1P : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) s1 (env b) (env p))
+    (hCones : ConstructionDiagramPlacements.ConeEquality (env (rho 0)) (env mul) m0 m1 (env t))
+    (hAp : ForcingSupportedNames.Range (env (rho 0)) (env p) (env Ap))
+    (hHp : ForcingLabelPermutations.Fixing (env G) (env Ap) (env Hp))
+    (hXP : ForcingLocalNames.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env Hp) (env XP))
+    (hEnum : (Project.FirstOrderSemantics.reduct M).IsSetBijectionFromTo (KuratowskiZF.interpretation hM) (env enum) (env ordinal) (env XP))
+    (hList : ForcingCollectedName.Collected ForcingPowerName.trueTest Fin.elim0 (env ordinal) (env enum) (env (rho 6)) (env list))
+    (hCopy0 : ForcingOutsideCopies.Copy (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) s0 rec0)
+    (hRec0 : PureKuratowski.Code M rec0 d0 tau0)
+    (hCopy1 : ForcingOutsideCopies.Copy (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) s1 rec1)
+    (hRec1 : PureKuratowski.Code M rec1 d1 tau1)
+    (hD0f : ForcingPowerName.Subset d0 f)
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hRoot : Code (env root) (env r) (env a) (env U))
+    (hCarrier : ForcingTailCodes.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env codes))
+    (hOrder : (Project.FirstOrderSemantics.reduct M).IsSetCodedWellOrder (KuratowskiZF.interpretation hM) (env order) (env codes))
+    (hRanks : ForcingOrdinalRanks.Ranks
+      (ForcingCohenSelection.liftRelation (ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order) id (rho 0) I (rho 2) w)
+      env (env codes) (env order) (env (rho 6)) (env ranks))
+    (hFamily : ForcingOrdinalFixed.FixedFamily (fun j => env (rho j)) (env G) (env F) (env group) (env codes) (env ranks))
+    (hc0 : (Project.FirstOrderSemantics.reduct M).mem c0 (env codes))
+    (hc1 : (Project.FirstOrderSemantics.reduct M).mem c1 (env codes))
+    (hRank0 : PureKuratowski.PairMember M c0 rn0 (env ranks))
+    (hRank1 : PureKuratowski.PairMember M c1 rn1 (env ranks))
+    (hSel0 : ForcingCodeSelection.IsSelected env rho I G F mul q bound labels E root w chain codes order c0 f)
+    (hSel1 : ForcingCodeSelection.IsSelected env rho I G F mul q bound labels E root w chain codes order c1 g)
+    (hLinks0 : ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) f (env root) tau0 c0)
+    (hLinks1 : ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) g (env root) tau1 c1)
+    (hCheck0 : ForcingCheckName.Checked (env top) beta nb0)
+    (hCheck1 : ForcingCheckName.Checked (env top) beta nb1)
+    (hEq0 : EqF (orderFormula (rho 0) mul) env (env (rho 6)) f (env r) rn0 nb0)
+    (hEq1 : EqF (orderFormula (rho 0) mul) env (env (rho 6)) g (env r) rn1 nb1) :
+    ¬ ∃ c, (Project.FirstOrderSemantics.reduct M).mem c (env (rho 3)) ∧
+      ForcingPowerName.Subset f c ∧ ForcingPowerName.Subset g c := by
+  rintro ⟨c,hc,hfc,hgc⟩
+  have hEq0c := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hc hrI hfc hEq0
+  have hEq1c := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hc hrI hgc hEq1
+  have hCheckEq := ForcingCheckName.unique hM hCheck0 hCheck1
+  rw [← hCheckEq] at hEq1c
+  obtain ⟨z,hz,hRankEq⟩ := ForcingPrincipalFilter.eqF_trans hM env rho mul hm hp hc hrI
+    hEq0c (ForcingPrincipalFilter.eqF_symm hM hEq1c)
+  have hpre := ForcingProductPoset.preorder env (rho 0) mul (rho 6) hm hp.2.2.2.2.1 hp.2.2.2.1 hp.2.2.2.2.2
+  have htP := (hp.2.2.2.2.2 (env top)).mpr (Or.inl hTop)
+  have htop : ∀ v, (Project.FirstOrderSemantics.reduct M).mem v (env (rho 6)) →
+      ForcingMapConditions.MapRel (orderFormula (rho 0) mul) env v (env top) :=
+    fun v _ => (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul v (env top)).mpr (Or.inl hTop)
+  have hdomain := fun name => ForcingPairUnion.domain_semantics env rho G F name
+  have hNormal := ForcingNormalFilter.is_normal hM hw hMu hG hF
+  have hcheck : ∀ x nx, ForcingCheckName.Checked (env top) x nx →
+      ForcingClassEvaluation.Predicate (ForcingPairUnion.domain rho G F) env nx := by
+    intro x nx hn
+    exact (hdomain nx).mpr (ForcingInfinity.check_hs hM (fun j => env (rho j)) hp hG hNormal hTop hn)
+  let R := ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order
+  have hRa := (ForcingCohenSelection.mapRel_lift R id env (rho 0) I (rho 2) w c0 z).mpr
+    ((ForcingCohenSelection.lift_coe ((hp.2.2.1 c).mp hc) hrI hz).mpr
+      ((ForcingCodeSelection.mapRel_relation hM env rho I G F mul q bound labels E root w chain codes order c0 c).mpr
+        (ForcingCodeSelection.isSelected_mono hfc hSel0)))
+  have hRb := (ForcingCohenSelection.mapRel_lift R id env (rho 0) I (rho 2) w c1 z).mpr
+    ((ForcingCohenSelection.lift_coe ((hp.2.2.1 c).mp hc) hrI hz).mpr
+      ((ForcingCodeSelection.mapRel_relation hM env rho I G F mul q bound labels E root w chain codes order c1 c).mpr
+        (ForcingCodeSelection.isSelected_mono hgc hSel1)))
+  have hCodes := (ForcingOrdinalCoding.selectedRank_eq_iff hM hpre htP htop hdomain hcheck hOrder hRanks
+    hc0 hc1 hRank0 hRank1 ((hdomain rn0).mpr (hFamily c0 hc0 rn0 hRank0).1)
+    ((hdomain rn1).mpr (hFamily c1 hc1 rn1 hRank1).1)
+    (ForcingSupportingRoot.code_mem hp ((hp.2.2.1 c).mp hc) hrI hz) hRa hRb).mp hRankEq
+  have hL0 := ForcingCodeLinks.links_mono hM env rho mul hm hp hc hfc hLinks0
+  have hL1 := ForcingCodeLinks.links_mono hM env rho mul hm hp hc hgc hLinks1
+  rw [← hCodes] at hL1
+  have hCode0 := (hCarrier c0).mp hc0
+  have hSame := ForcingPersistentCodes.same_refl hM env rho mul hm hp hw hChain hCode0.1 hc
+  have hNamesEq := (ForcingCodeLinks.links_eq_iff_same hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hChain hc hRoot hCode0 hCode0 hL0 hL1).mpr hSame
+  obtain ⟨d0',tau0',A0,H0,z0,hRec0',hd0,_,_,hA0,hH0,hn0,hz0,_,hout0⟩ := hCopy0
+  obtain ⟨ed0,et0⟩ := PureKuratowski.code_injective hRec0 hRec0'
+  subst d0'; subst tau0'
+  obtain ⟨d1',tau1',A1,H1,z1,hRec1',_,_,_,hA1,hH1,hn1,_,_,_⟩ := hCopy1
+  obtain ⟨ed1,et1⟩ := PureKuratowski.code_injective hRec1 hRec1'
+  subst d1'; subst tau1'
+  obtain ⟨filter,hFilter⟩ := ForcingPrincipalFilter.exists_principal hM (env (rho 3)) c
+  have hgf := ForcingPrincipalFilter.principal_filter hc hFilter
+  have hd0g := (hFilter d0).mpr ⟨(hp.2.2.1 d0).mpr hd0,fun x hx => hfc x (hD0f x hx)⟩
+  have hInter := ConstructionDiagramPlacements.range_inter_sub hrI hSub0 hSub1 hSubP hCones
+  exact ForcingClassProfile.outside_not_eqG_common hM hChoice env rho G F mul
+    hw hMu hI hSmall hMergers hRow hm hp hG hF hpI hs0I hs1I hrI
+    ⟨env b,hb,hSub0P⟩ ⟨env b,hb,hSub1P⟩ hInter ⟨m0,hm0,hSub0⟩ ⟨m1,hm1,hSub1⟩
+    hA0 hA1 hAp hH0 hH1 hHp hn0 hn1 hLabelMap hTop hLabels hLabelBound hgf hXP hEnum hList hd0g hz0 hout0
+    ((ForcingPrincipalFilter.eqG_principal hM env rho mul hm hp hc hrI hFilter).mpr hNamesEq)
+
 theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -86,59 +206,7 @@ theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     (hEq1 : EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env g) (env r) (env rn1) (env nb1)) :
     ¬ ∃ c, (Project.FirstOrderSemantics.reduct M).mem c (env (rho 3)) ∧
       ForcingPowerName.Subset (env f) c ∧ ForcingPowerName.Subset (env g) c := by
-  rintro ⟨c,hc,hfc,hgc⟩
-  have hEq0c := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hc hrI hfc hEq0
-  have hEq1c := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hc hrI hgc hEq1
-  have hCheckEq := ForcingCheckName.unique hM hCheck0 hCheck1
-  rw [← hCheckEq] at hEq1c
-  obtain ⟨z,hz,hRankEq⟩ := ForcingPrincipalFilter.eqF_trans hM env rho mul hm hp hc hrI
-    hEq0c (ForcingPrincipalFilter.eqF_symm hM hEq1c)
-  have hpre := ForcingProductPoset.preorder env (rho 0) mul (rho 6) hm hp.2.2.2.2.1 hp.2.2.2.1 hp.2.2.2.2.2
-  have htP := (hp.2.2.2.2.2 (env top)).mpr (Or.inl hTop)
-  have htop : ∀ v, (Project.FirstOrderSemantics.reduct M).mem v (env (rho 6)) →
-      ForcingMapConditions.MapRel (orderFormula (rho 0) mul) env v (env top) :=
-    fun v _ => (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul v (env top)).mpr (Or.inl hTop)
-  have hdomain := fun name => ForcingPairUnion.domain_semantics env rho G F name
-  have hNormal := ForcingNormalFilter.is_normal hM hw hMu hG hF
-  have hcheck : ∀ x nx, ForcingCheckName.Checked (env top) x nx →
-      ForcingClassEvaluation.Predicate (ForcingPairUnion.domain rho G F) env nx := by
-    intro x nx hn
-    exact (hdomain nx).mpr (ForcingInfinity.check_hs hM (fun j => env (rho j)) hp hG hNormal hTop hn)
-  let R := ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order
-  have hRa := (ForcingCohenSelection.mapRel_lift R id env (rho 0) I (rho 2) w (env c0) z).mpr
-    ((ForcingCohenSelection.lift_coe ((hp.2.2.1 c).mp hc) hrI hz).mpr
-      ((ForcingCodeSelection.mapRel_relation hM env rho I G F mul q bound labels E root w chain codes order (env c0) c).mpr
-        (ForcingCodeSelection.isSelected_mono hfc hSel0)))
-  have hRb := (ForcingCohenSelection.mapRel_lift R id env (rho 0) I (rho 2) w (env c1) z).mpr
-    ((ForcingCohenSelection.lift_coe ((hp.2.2.1 c).mp hc) hrI hz).mpr
-      ((ForcingCodeSelection.mapRel_relation hM env rho I G F mul q bound labels E root w chain codes order (env c1) c).mpr
-        (ForcingCodeSelection.isSelected_mono hgc hSel1)))
-  have hCodes := (ForcingOrdinalCoding.selectedRank_eq_iff hM hpre htP htop hdomain hcheck hOrder hRanks
-    hc0 hc1 hRank0 hRank1 ((hdomain (env rn0)).mpr (hFamily (env c0) hc0 (env rn0) hRank0).1)
-    ((hdomain (env rn1)).mpr (hFamily (env c1) hc1 (env rn1) hRank1).1)
-    (ForcingSupportingRoot.code_mem hp ((hp.2.2.1 c).mp hc) hrI hz) hRa hRb).mp hRankEq
-  have hL0 := ForcingCodeLinks.links_mono hM env rho mul hm hp hc hfc hLinks0
-  have hL1 := ForcingCodeLinks.links_mono hM env rho mul hm hp hc hgc hLinks1
-  rw [← hCodes] at hL1
-  have hCode0 := (hCarrier (env c0)).mp hc0
-  have hSame := ForcingPersistentCodes.same_refl hM env rho mul hm hp hw hChain hCode0.1 hc
-  have hNamesEq := (ForcingCodeLinks.links_eq_iff_same hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hChain hc hRoot hCode0 hCode0 hL0 hL1).mpr hSame
-  obtain ⟨d0',tau0',A0,H0,z0,hRec0',hd0,_,_,hA0,hH0,hn0,hz0,_,hout0⟩ := hCopy0
-  obtain ⟨ed0,et0⟩ := PureKuratowski.code_injective hRec0 hRec0'
-  subst d0'; subst tau0'
-  obtain ⟨d1',tau1',A1,H1,z1,hRec1',_,_,_,hA1,hH1,hn1,_,_,_⟩ := hCopy1
-  obtain ⟨ed1,et1⟩ := PureKuratowski.code_injective hRec1 hRec1'
-  subst d1'; subst tau1'
-  obtain ⟨filter,hFilter⟩ := ForcingPrincipalFilter.exists_principal hM (env (rho 3)) c
-  have hgf := ForcingPrincipalFilter.principal_filter hc hFilter
-  have hd0g := (hFilter (env d0)).mpr ⟨(hp.2.2.1 (env d0)).mpr hd0,fun x hx => hfc x (hD0f x hx)⟩
-  have hInter := ConstructionDiagramPlacements.range_inter_sub hrI hSub0 hSub1 hSubP hCones
-  exact ForcingClassProfile.outside_not_eqG_common hM hChoice env rho G F mul
-    hw hMu hI hSmall hMergers hRow hm hp hG hF hpI hs0I hs1I hrI
-    ⟨env b,hb,hSub0P⟩ ⟨env b,hb,hSub1P⟩ hInter ⟨env m0,hm0,hSub0⟩ ⟨env m1,hm1,hSub1⟩
-    hA0 hA1 hAp hH0 hH1 hHp hn0 hn1 hLabelMap hTop hLabels hLabelBound hgf hXP hEnum hList hd0g hz0 hout0
-    ((ForcingPrincipalFilter.eqG_principal hM env rho mul hm hp hc hrI hFilter).mpr hNamesEq)
+  exact incompatible_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p t b Ap Hp XP ordinal enum list J delta (env s0) (env s1) (env m0) (env m1) (env rec0) (env rec1) (env d0) (env tau0) (env d1) (env tau1) (env f) (env g) (env c0) (env c1) (env rn0) (env rn1) (env beta) (env nb0) (env nb1) hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hrI hpI hs0I hs1I hm0 hm1 hb hSub0 hSub1 hSubP hSub0P hSub1P hCones hAp hHp hXP hEnum hList hCopy0 hRec0 hCopy1 hRec1 hD0f hChain hRoot hCarrier hOrder hRanks hFamily hc0 hc1 hRank0 hRank1 hSel0 hSel1 hLinks0 hLinks1 hCheck0 hCheck1 hEq0 hEq1
 
 def sourceSentence {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p s0 s1 m0 m1 t b Ap Hp XP ordinal enum list J delta rec0 rec1 d0 tau0 d1 tau1 f g c0 c1 rn0 rn1 beta nb0 nb1 : Fin k) : Project.Sentence where
   formula :=
