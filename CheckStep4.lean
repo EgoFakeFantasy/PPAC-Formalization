@@ -12659,4 +12659,12 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
 example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
     ForcingCohenFlip.compatibilitySentence) := ForcingCohenFlip.compatibility_kernel_certificate
 
+-- Actual source operation, and COMPLETE Cohen antichain bound in the SAME internal L.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ForcingCohenOperation.operationSentence) := ForcingCohenOperation.operation_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenAntichain.boundSentence)) :=
+  ForcingCohenAntichain.bound_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -806,3 +806,7 @@ not yet prove CountableHull.exists_closed, the Cohen chain bound or OrdinalCount
 ## 2026-10-30 Cohen flip / exact Option-value restriction
 
 Fixed AssignedGraphs:390–400,414–449 → ForcingCohenRestriction and ForcingCohenFlip. Exact restricted graph and conditionhood, full internal flip function, hcode/hbgraph, hbits and hbp; three ordinary nativeZF original-kernel certificates. Existing native Separation/function construction/small_subset and actual source condition/Option representations reused. Full source operation/hull consumption/hin/pack, Cohen chain bound, OrdinalCount and internal Con remain incomplete. Evidence: verification/cohen-flip-acceptance.json.
+
+## 2026-10-30 Complete actual Cohen antichain bound
+
+Fixed AssignedGraphs.Condition.antichain_cardinal_le:403–457 → ForcingCohenOperation / ForcingCohenAntichain. Actual Bool×internal omega operation on the SAME code/decode/compatibleChoice/flip functions; completed CountableHull consumed; full hin and actual pack injection proved; function-space transport closes |A|≤mu. Original nativeZF kernel certificate is relative to the SAME existing internal L, discharging object Choice. No assumed closure or enumeration/pack premise remains. CodeCardinals, OrdinalCount and final internal Con remain incomplete. Evidence: verification/cohen-antichain-acceptance.json.

@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：实际 Cohen flip／值域限制及 hbits／hbp
+## 当前执行入口：完整实际 Cohen 反链基数界已闭合
 
-完整 CountableHull、实际 code／decode／compatibleChoice 已完成，本批直接复用。条件仍是源的可数部分二元图，未替换为有限 Cohen 条件。
+本批完成固定 AssignedGraphs.Condition.antichain_cardinal_le:403–457，条件仍是全部内部可数部分二元图；此前 CountableHull、code／decode／compatibleChoice、flip／restrictedGraph 直接复用。
 
-ForcingCohenRestriction 用现成 Separation 构造任意 Option 值域 Y 下的 restrictedGraph，准确保留 z∈p 且 some(z)∈Y。函数性、可数性、与原条件的相容性以及精确限制唯一性均已证明；code_into／covered_of_code 对应源 hcode／hbgraph，保留全部内部索引。它不冒名复用先前按标签限制的不同谓词。
+ForcingCohenOperation 构造源 Bool×内部ω 的实际运算图：false 分支取 flip(f(n))，true 分支取 code(compatibleChoice(decode(f)))(n)。两支共用已验收的同一组内部函数，普通 nativeZF 原核证明其完整总性、唯一性和精确图方程。
 
-ForcingCohenFlip 用现成零／一／后继、Kuratowski 对和 singleton 表示构造整个内部 Option(C×2) 翻转函数图，证明闭包内可翻转任意 bit。compatible_of_bits 已接源 hbp：同一限制图的相容性与实际 bit 封闭值域推出原条件相容性。三项端点均为普通 nativeZF 的原核 Derives，无新增对象 Choice 前提。
+ForcingCohenAntichain 实际调用完整 CountableHull，利用原生常值函数取得翻转闭包，并用 decode(code(d))=d 取得所选条件编码的闭包；restrictedGraph／compatibleChoice_spec／hbits／hbp 合成全部反链条件的 hin。pack 是同一个 code 函数在 A 上的限制，构成到全部内部 ω→Y 函数空间的实际单射；既有函数空间传输及固定幂归一化给出 |A|≤μ。最终句子不再保留运算／hull／选择／pack 见证前提，原核 nativeZF 中的同一内部 L 相对化证书消去对象 Choice。
 
-本批 65 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收及原 33992 项足迹比较见 verification/cohen-flip-acceptance.json 的实际结果。
+本批 27 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收及原 34057 项足迹比较见 verification/cohen-antichain-acceptance.json 的实际结果。
 
-下一源步骤为源 Bool×内部ω 的实际 op 图（407–410），调用已完成 CountableHull（412），由同一 code／decode／compatibleChoice 和 flip 推出所需闭包、hin 及最终 pack 单射（430–457），闭合实际 antichain_cardinal_le 后接 CodeCardinals／OrdinalCount。flip、restrictedGraph、hcode／hbgraph、hbits／hbp 均已有，不再重做。仍在原第 8 阶段；第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为将本批实际反链界接入已有 ChainBound 消费者，特化 continuum，并核对源条件载体大小界及 LocalRecord 表示计数，继续 CodeCardinals 的上／下界和实际 OrdinalCount。反链界、完整 hull、所有编码／限制／翻转／运算及 hin／pack 已完成，不再列为待办。仍在原第 8 阶段；第 9–11 阶段及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
