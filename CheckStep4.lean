@@ -12632,4 +12632,10 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
       YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
   ForcingCountableTreeGraftValues.graft_kernel_certificate
 
+-- Complete pinned CountableHull.exists_closed, with all internal witnesses discharged.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableHull.hullSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableHull.hull_kernel_certificate
+
 end PPAC.Migration.Step4Checks

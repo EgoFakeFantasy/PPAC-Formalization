@@ -34491,3 +34491,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCountableTreeGraftValues.graft_kernel_certificate
 #print axioms PPAC.Migration.ForcingCountableTreeGraftValues.pullback_freeClosed
 #print axioms PPAC.Migration.ForcingCountableTreeGraftValues.evaluatedGraft_freeClosed
+
+#print axioms PPAC.Migration.ForcingCountableHull.LeastTree
+#print axioms PPAC.Migration.ForcingCountableHull.leastTree
+#print axioms PPAC.Migration.ForcingCountableHull.leastTree_semantics
+#print axioms PPAC.Migration.ForcingCountableHull.leastTree_exists
+#print axioms PPAC.Migration.ForcingCountableHull.leastTree_unique
+#print axioms PPAC.Migration.ForcingCountableHull.subtree_section
+#print axioms PPAC.Migration.ForcingCountableHull.Hull
+#print axioms PPAC.Migration.ForcingCountableHull.hull
+#print axioms PPAC.Migration.ForcingCountableHull.hull_semantics
+#print axioms PPAC.Migration.ForcingCountableHull.range_closed
+#print axioms PPAC.Migration.ForcingCountableHull.exists_closed
+#print axioms PPAC.Migration.ForcingCountableHull.hullSentence
+#print axioms PPAC.Migration.ForcingCountableHull.hull_models
+#print axioms PPAC.Migration.ForcingCountableHull.hull_kernel_certificate
+#print axioms PPAC.Migration.ForcingCountableHull.leastTree_freeClosed
+#print axioms PPAC.Migration.ForcingCountableHull.hull_freeClosed
