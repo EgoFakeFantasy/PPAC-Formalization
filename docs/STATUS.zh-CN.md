@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：CohenSelection 后半五个固定根消费者已验收
+## 当前执行入口：CodeLinks 的实际 tailGroup 及支撑已验收
 
-固定源 OrdinalCodes.CohenSelection.orderType_decide:352、rank_eq_iff:360、rank_mem:367、rank_decide:374、member_rank:391 已由 ForcingCohenRankConsumers 接入。对同一 lifted 谓词与 rank/history/type，实际协变导出不变性，已有 rank/collection/HS 生产者消去 HS／固定性中间前提；type 判定保留精确内部原始秩界，rank 判定给出 β∈θ。成员提取保留实际 collection 条目、选中代码及其原 history 名称，解码真实加强条件，按源单调性取得加强后的 Cohen 选择，再调用既有支持反射恢复同一根。联合泛公式模式证书位于 nativeZF 原核，结论相对于同一内部 L；Choice 在 L 中由现有定理产生，未加到背景 nativeZF。源几何、合并、呈现、滤子、支撑、内部良序及实际 rank 输入仍显式保留。全量验收通过：2980 项构建、33501 项声明（新增 16 项），全部 33485 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2535 项当前哈希匹配。记录：verification/cohen-ranks-acceptance.json。
+固定源 CodeLinks.tailGroup:45、tailGroup_mem:49、root_le_tailGroup:57、tailGroup_supported:73 与 ConcreteSystem.Vertex.Chain.tailFixer/稳定子条件已由 ForcingTailGroup 接入。使用现成分离构造全部尾固定置换的内部集合；内部 ω 比较、链值域反单调及已有置换运算给出子群闭包。根固定和分量稳定由已有 Move/Common 传输实际推出，未丢弃源 subgroup image 的字段。初始图值域、其固定子、包含关系和实际滤子成员关系均已构造。原核端点为普通 nativeZF 中的 construction_kernel_certificate；源链、单子、条件合并、置换载体、滤子和小定义域前提仍显式保留，无新增对象 Choice。全量验收通过：2981 项构建、33522 项声明（新增 21 项），全部 33501 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2536 项当前哈希匹配。记录：verification/tail-group-acceptance.json。
 
-下一源步骤为 CodeLinks.tailGroup:45、root_le_tailGroup:57、tailGroup_supported:73 与实际 IsSelected:78，然后 ordinalRank/ordinalType 和 Links。TailFixes、Selected 单调／协变、内部链以及 ProjectDecode 语言桥均已存在，直接消费；不新建群、名字、序数或公式编码后端。CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成，原阶段仍为 8。
+下一源步骤为 CodeLinks 的实际 IsSelected:78、isSelected_covariance:86、ordinalRank:95、ordinalType:101 及后续 Links。实际 Selected 单调／协变、CohenSelection rank/type 消费者和 ProjectDecode 语言桥均已存在，直接消费；不新建群、名字、序数或编码后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 

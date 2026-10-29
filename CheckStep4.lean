@@ -12456,4 +12456,10 @@ example {k n : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin k) (rho : Fin
   ForcingCohenRankConsumers.construction_kernel_certificate R rp rho w mu tower kappa unit mark H C incoming base I K B G F mul
     root d A fixing support X order ranks selection top z a b na nb theta ntheta beta nbeta
 
+
+-- Actual tail subgroup, root fixer inclusion, filter membership and component stabilizer fields.
+example {m : Nat} (w D I mul unit q zero root vertices chain G F mu r a U : Fin m) : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ForcingTailGroup.constructionSentence w D I mul unit q zero root vertices chain G F mu r a U)) :=
+  ForcingTailGroup.construction_kernel_certificate w D I mul unit q zero root vertices chain G F mu r a U
+
 end PPAC.Migration.Step4Checks

@@ -34024,3 +34024,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCohenRankConsumers.constructionSentence
 #print axioms PPAC.Migration.ForcingCohenRankConsumers.construction_models
 #print axioms PPAC.Migration.ForcingCohenRankConsumers.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingTailGroup.TailGroup
+#print axioms PPAC.Migration.ForcingTailGroup.tailGroup
+#print axioms PPAC.Migration.ForcingTailGroup.tailGroup_freeClosed
+#print axioms PPAC.Migration.ForcingTailGroup.tailGroup_semantics
+#print axioms PPAC.Migration.ForcingTailGroup.exists_tailGroup
+#print axioms PPAC.Migration.ForcingTailGroup.range_subset
+#print axioms PPAC.Migration.ForcingTailGroup.root_vertex
+#print axioms PPAC.Migration.ForcingTailGroup.fixes_later
+#print axioms PPAC.Migration.ForcingTailGroup.tail_inverse
+#print axioms PPAC.Migration.ForcingTailGroup.tail_composition
+#print axioms PPAC.Migration.ForcingTailGroup.root_le_tailGroup
+#print axioms PPAC.Migration.ForcingTailGroup.subgroup
+#print axioms PPAC.Migration.ForcingTailGroup.fixes_mem_stabilizer
+#print axioms PPAC.Migration.ForcingTailGroup.tailGroup_mem
+#print axioms PPAC.Migration.ForcingTailGroup.tailGroup_supported
+#print axioms PPAC.Migration.ForcingTailGroup.stabilizes
+#print axioms PPAC.Migration.ForcingTailGroup.stabilizes_freeClosed
+#print axioms PPAC.Migration.ForcingTailGroup.stabilizes_semantics
+#print axioms PPAC.Migration.ForcingTailGroup.constructionSentence
+#print axioms PPAC.Migration.ForcingTailGroup.construction_models
+#print axioms PPAC.Migration.ForcingTailGroup.construction_kernel_certificate
