@@ -34120,3 +34120,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLinkedWorking.constructionSentence
 #print axioms PPAC.Migration.ForcingLinkedWorking.construction_models
 #print axioms PPAC.Migration.ForcingLinkedWorking.construction_kernel_certificate
+
+-- Pinned link descent and a linked representative at every Common vertex.
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.links_descend
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.working_linked
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.descentSentence
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.descent_models
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.descent_kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.workingSentence
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.working_models
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.working_kernel_certificate

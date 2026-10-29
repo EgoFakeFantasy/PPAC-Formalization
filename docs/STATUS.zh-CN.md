@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：任意共同顶点的 linked-working 存在性已验收
+## 当前执行入口：链接下降与工作码代表已验收
 
-固定源 CodeLinks.exists_linked_working_of_stable:349 已由 ForcingLinkedWorking 接入。任意共同分量顶点上的资格与精确稳定理想，产生一个同时满足 ChainCode、Works 和 Links 的链码；链码在初始条件只选一次，Works 中全部加强条件使用同一码。现成 exists_fiber_principal、原代表码生产者、links_of_represents_at、links_mono 和 at_of_root_eq 共同完成传输；换根只通过 common_iff 调整共同分量条件，实际对象、纤维、商类和投影保持字面相同。ForcingTailCodes 的原生产证明仅参数化环境嵌入，新增 exists_representing_code_over，旧接口作为 id 特例保留，全部 32 项旧生产者足迹不变。最终取得同一内部 L 相对化的 nativeZF 原核证书。全量验收：2988 项构建、33582 项声明（新增 5 项），全部 33577 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2543 项当前哈希匹配。直接源消费者为 OrbitAssignments.corrected_onto:88（调用第 106 行）。记录：verification/linked-working-acceptance.json。
+固定源 CodeLinks.links_descend:405、working_linked:421 已由 ForcingCodeLinkClosure 接入。前者沿实际箭头下降，保持同一条件、字面名字及链码；后者在任意共同分量顶点，从 Works 返回 Entry 代表及 Links。复用既有内部链共尾性、支撑单调性、eq_at_root、实际主滤子 Bundle、at_total 和 links_of_represents_at；两个结论分别取得同一内部 L 相对化的 nativeZF 原核证书。全量验收：2989 项构建、33590 项声明（新增 8 项），全部 33582 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2544 项当前哈希匹配。实际源消费者分别为 GermSelectors.preliminary_descend:134（调用第 139 行）与 preliminary_total:167（调用第 176 行）。记录：verification/code-link-closure-acceptance.json。
 
-下一源步骤为 CodeLinks.links_descend:405、working_linked:421，随后 CodeCardinals／GermSelectors 消费者。eq_at_root、现有 Links 局部反射、arrow_comp、common_iff、at_total／at_entry 和 links_of_represents_at 已存在；只组合真实源消费者，不重建反射、名字、商集或选择基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 QuotientActions.links_permute:469、tail_eq_permute:487，接入 GermSelectors.preliminary_permute:143 的实际调用，再继续 CodeCardinals／GermSelectors 装配。现成 TailGroup、同码尾协变、名字对称性、移动箭头和 eq_at_root 供复用；这两条活跃消费者不同于已退役的逐滤子 leastCode 支线。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
@@ -19,7 +19,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 双向桥接已完成；链接稳定性（资格及全部加强条件下的精确理想）已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表及后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 双向桥接已完成；链接稳定性（资格及全部加强条件下的精确理想）已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表已完成；置换及后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

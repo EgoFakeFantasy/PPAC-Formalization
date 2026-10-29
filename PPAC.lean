@@ -818,3 +818,4 @@ import PPAC.Migration.ForcingCodeLinks
 import PPAC.Migration.ForcingCodeLinkRepresentation
 import PPAC.Migration.ForcingLinkedStability
 import PPAC.Migration.ForcingLinkedWorking
+import PPAC.Migration.ForcingCodeLinkClosure

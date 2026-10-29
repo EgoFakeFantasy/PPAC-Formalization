@@ -12520,4 +12520,15 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingLinkedWorking.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z))) :=
   ForcingLinkedWorking.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z
 
+-- Source link descent and the full every-Common-vertex representative conclusion.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingCodeLinkClosure.descentSentence rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a))) :=
+  ForcingCodeLinkClosure.descent_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau a
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d a : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingCodeLinkClosure.workingSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d a))) :=
+  ForcingCodeLinkClosure.working_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d a
+
 end PPAC.Migration.Step4Checks

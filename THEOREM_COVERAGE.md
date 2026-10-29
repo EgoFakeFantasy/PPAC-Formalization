@@ -727,3 +727,7 @@ ForcingCodeLinks adapts pinned Links:171, links_mono:179, links_common:188, link
 下一源步骤为 CodeLinks.links_descend:405、working_linked:421，随后 CodeCardinals／GermSelectors 消费者。eq_at_root、现有 Links 局部反射、arrow_comp、common_iff、at_total／at_entry 和 links_of_represents_at 已存在；只组合真实源消费者，不重建反射、名字、商集或选择基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 新增端点为 `ForcingLinkedWorking.construction_kernel_certificate`。对象结论保持先存在同一链码、再覆盖所有加强条件；不将顶点限为链的初始根，不把源宿主选择或模型语义中间证明当作最终内部 Con。
+
+## CodeLinks descent and working representatives (2026-10-29)
+
+ForcingCodeLinkClosure migrates pinned CodeLinks.links_descend:405 and working_linked:421, consumed at GermSelectors.preliminary_descend:134 and preliminary_total:167. The same condition/name/code descends along actual arrows; every working code has an Entry representative linked at any common vertex. Separate nativeZF original-kernel certificates are relative to the same existing internal L. Existing root reflection, internal chain cofinality, support monotonicity, principal bundles and exact glued representatives are reused. 2989 jobs, 33590 declarations, 8 new, all 33582 old footprints unchanged; 9 commands and 5 trust-zero checks passed, no warnings or new axiom dependencies. Stage 8 remains open; next are the two live QuotientActions permutation consumers, not retired leastCode. Final internal Con remains unproved.
