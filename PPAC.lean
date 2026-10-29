@@ -858,3 +858,4 @@ import PPAC.Migration.ForcingLocalList
 import PPAC.Migration.ForcingOutsideLocal
 import PPAC.Migration.ForcingClassProfile
 import PPAC.Migration.ForcingOutsideCopies
+import PPAC.Migration.ForcingClassFiberEmbedding

@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：源 outsideClass_copies 的实际内部副本族已取得原核证书
+## 当前执行入口：源 classFiberEmbedding 的实际内部纤维单射已取得原核证书
 
-ForcingOutsideCopies.source_kernel_certificate 沿固定 ClassFibers.outsideClass_copies:508，在当前具体构造使用的无限基数预算条件下，从内部乘子函数 m 及共同乘积方程实际构造 r.sub(m i) 图族。既有 permutation_over_root 生成同根置换；实际 Cohen 条件移动保持支撑与原根限制；literal labelClass_move 生成规范化局部名字，完整 isClass 在每个内部条件成立，OutsideLocal 对全部更强条件保持。现成 uniformize_formula_l 把结果收集成一个内部函数，其值为 Kuratowski (条件,名字) 对，保留源两个坐标族的全部逐索引性质。
+ForcingClassFiberEmbedding.construction_kernel_certificate 对应固定 ClassFibers.classFiberEmbedding:470–502。它消费已有 outsideClass_copies 的内部记录族，将每个实际副本名字送到同一 eligible System 的根商投影；classFromLocal_profile 保证值落在同一精确 availability 纤维，探针范围精确交集与 Outside 排除给出单射性。原生可定义函数构造器实际构造整张单射图，并给出逐内部索引的精确边双条件；没有把单射或独立商族作为前提。
 
-最终闭句同时存在量化目标图族和副本记录族，没有预设目标族、目标 Outside、置换族或宿主索引选择函数。Choice 经同一既有内部 L 消去，推导关系仍是普通 nativeZF 的原 FirstOrder.Derives。源实际标签、共同根、乘子乘积和完整固定 localList 外部见证作为装配输入保留；不重建 L、选择、名字、子图或置换后端。
+对象闭句同时存在量化纤维集合与单射图，沿同一既有内部 L 回传为普通 nativeZF 的原 FirstOrder.Derives。实际副本族、该族的滤子命中以及源探针几何仍是输入；尚未宣称构造了稠密命中子族。现成 L、全公理模式、内部函数／商／局部名字与 Outside 后端均被复用。
 
-全量验收通过：3028 项构建、34326 项声明，新增 27 项；全部 34299 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 均退出 0，零警告；75 份固定源和 2583 份当前文件哈希匹配。报告：verification/outside-copies-acceptance.json。
+全量验收通过：3029 项构建、34341 项声明，新增 15 项；全部 34326 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 均退出 0，零警告；75 份固定源和 2584 份当前文件哈希匹配。报告：verification/class-fiber-embedding-acceptance.json。
 
-下一源消费者：ClassFibers.classFiberEmbedding:470 → classFiber_dense_lower:565 → CodeCardinals.ordinalType_lower_count:166，使用本批副本族、既有 probeDensity/hits、实际 classFromLocal_profile、稳定码和尾群协变。localList_wellorderable／outside_localList、实际下界／OrdinalCount、第 9–11 阶段及最终内部 Con 仍未完成。完整局部列表构造、OutsideLocal 两条排除、classFromLocal/profile 和本批 outsideClass_copies 不再列作待证明。
+下一源消费者：ClassFibers.classFiber_dense_lower:565 → CodeCardinals.ordinalType_lower_count:166。复用已完成的 probeDenseSet_dense/hits，从 K×K 的实际副本构造按行稠密集、选择命中记录并重索引到 K，再消费本批单射；localList_wellorderable／outside_localList、实际下界／OrdinalCount、第 9–11 阶段及最终内部 Con 仍未完成。完整局部列表构造、OutsideLocal 两条排除、classFromLocal/profile、outsideClass_copies 和本批 classFiberEmbedding 不再列作待证明。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

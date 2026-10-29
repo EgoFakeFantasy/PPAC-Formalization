@@ -34908,3 +34908,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOutsideCopies.sourceSentence
 #print axioms PPAC.Migration.ForcingOutsideCopies.source_models
 #print axioms PPAC.Migration.ForcingOutsideCopies.source_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.At
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.atValue
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.at_freeClosed
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.at_semantics
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.at_unique
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.entry_data
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.construct
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.inputConditions
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.inputConditions_freeClosed
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.inputConditions_semantics
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.result
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.result_semantics
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.constructionSentence
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.construction_models
+#print axioms PPAC.Migration.ForcingClassFiberEmbedding.construction_kernel_certificate

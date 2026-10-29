@@ -74,4 +74,6 @@ CodeCardinals 的实际成员记录见证现已接通：ForcingCodeRecordWitness
 
 实际 classFromLocal_profile 现已在 ForcingClassProfile.construction_kernel_certificate 中接通：原名字的目标商类在结论内构造，Obj 成员性、同名投影及完整可用性一起返回；不要求原探针图位于资格锥内。源的实际 System、Data、几何及局部列表仍作为具体装配接口，Choice 由同一既有 L 消去。该端点不替代 CodeCardinals 下界、完整 OrdinalCount 或最终内部 Con。
 
-源 outsideClass_copies 现由 ForcingOutsideCopies.source_kernel_certificate 接通：在具体构造既定无限基数预算下，实际构造内部乘子族的子图族及一个内部 (条件,规范化名字) 记录函数。每个副本保留支撑、原根的字面限制、完整 isClass 和全部加强条件下的 OutsideLocal。原核闭句在同一个既有 L 中消去 Choice，未预设目标副本族或其排除性质。它不替代 classFiberEmbedding、完整下界／OrdinalCount、localList_wellorderable／outside_localList 或最终 Con；全量验收以 STATUS 和 verification/outside-copies-acceptance.json 为准。
+源 outsideClass_copies 现由 ForcingOutsideCopies.source_kernel_certificate 接通：在具体构造既定无限基数预算下，实际构造内部乘子族的子图族及一个内部 (条件,规范化名字) 记录函数。每个副本保留支撑、原根的字面限制、完整 isClass 和全部加强条件下的 OutsideLocal。原核闭句在同一个既有 L 中消去 Choice，未预设目标副本族或其排除性质。它不替代完整下界／OrdinalCount、localList_wellorderable／outside_localList 或最终 Con；全量验收以 STATUS 和 verification/outside-copies-acceptance.json 为准。
+
+源 classFiberEmbedding 现由 ForcingClassFiberEmbedding.construction_kernel_certificate 接通：从实际命中副本记录族构造到同一 eligible System 精确纤维的内部单射图，并保留值就是既有根商投影的逐索引双条件。各副本的 Data 与现有支撑／固定子群对齐；classFromLocal_profile 给出精确纤维性质，独立探针交集和 Outside 排除证明单射性。经同一既有 L 消去 Choice 后，结论在普通 nativeZF 原核中成立。该对象句子仍以实际副本族及其滤子命中、源几何为输入；按行稠密命中子族和完整 lower-count／OrdinalCount 未完成，最终内部 Con 未完成。本批验收以 STATUS 和 verification/class-fiber-embedding-acceptance.json 为准。
