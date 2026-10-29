@@ -12476,4 +12476,12 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingCodeSelection.monotoneSentence rho I G F mul q bound labels E root w chain codes order)) :=
   ForcingCodeSelection.monotone_kernel_certificate rho I G F mul q bound labels E root w chain codes order
 
+-- Tail group, its support, actual selected ranks and type are jointly constructed.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound
+      zero root vertices chain names codes order r index U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingCodeRanks.constructionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U))) :=
+  ForcingCodeRanks.construction_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order r index U
+
 end PPAC.Migration.Step4Checks

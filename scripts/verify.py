@@ -2375,7 +2375,8 @@ def main() -> None:
                                ('forcing_cohen_selection', 'ForcingCohenSelection', 20),
                                ('forcing_cohen_rank_consumers', 'ForcingCohenRankConsumers', 16),
                                ('forcing_tail_group', 'ForcingTailGroup', 21),
-                               ('forcing_code_selection', 'ForcingCodeSelection', 15)):
+                               ('forcing_code_selection', 'ForcingCodeSelection', 15),
+                               ('forcing_code_ranks', 'ForcingCodeRanks', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

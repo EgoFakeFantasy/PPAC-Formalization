@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：CodeLinks 的实际 IsSelected、单调性和尾群协变已验收
+## 当前执行入口：CodeLinks 的实际 ordinalRank／ordinalType 联合构造已验收
 
-固定源 CodeLinks.IsSelected:78、isSelected_mono:82、isSelected_covariance:86 已由 ForcingCodeSelection 接入。内部完整代码集合直接作为小索引载体，保留同一个规定代码序；现成 ProjectDecode 编译实际 Selected，并证明与 CohenSelection 所消费 Source 关系的逐参数语义等价。单调性取得普通 nativeZF 原核证书；逐尾群成员的实际 Cohen 作用协变取得同一内部 L 相对化的 nativeZF 原核证书。根固定、分量稳定、固定子成员与 TailFixes 全由实际尾群推出。原有 represented/works/selected 证明只泛化移动根的内部见证值，保留旧接口。源几何、系统／作用数据、链、标签支撑和实际代码载体前提仍明确保留；对象 Choice 仅由现成内部 L 提供。全量验收通过：2982 项构建、33540 项声明（新增 18 项），全部 33522 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2537 项当前哈希匹配。记录：verification/code-selection-acceptance.json。
+固定源 CodeLinks.ordinalRank:95、ordinalType:101 已由 ForcingCodeRanks 接入。对每个内部尾群成员，现成逆、共轭和 Product 作用构造器产生辅助见证，保留同一 G/F；已有 Cohen 条目外延性确认同一个实际移动条件。参数重排证明保证这些临时见证不会改变实际 Selected 或固定代码序，从而取得完整 CohenSelection.Covariant。联合端点直接消费现成尾群支撑和 CohenSelection.exists_fixed_ranks，产生同一尾群、初始图值域／固定子／包含关系、全部代码秩历史、总类型名字及 HS／固定性，不再假定这些中间合同。对象证书在 nativeZF 原核，结论相对于同一内部 L；对象 Choice 仍由已有 L 提供。源几何、实际呈现／滤子、链、标签及 E 支撑、完整代码载体、根代码和规定内部良序仍显式保留。全量验收通过：2983 项构建、33546 项声明（新增 6 项），全部 33540 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2538 项当前哈希匹配。记录：verification/code-ranks-acceptance.json。
 
-下一源步骤为 CodeLinks.ordinalRank:95、ordinalType:101：对每个尾群成员复用现成逆／共轭／作用构造，保留同一 G/F，并把实际 Selected 的逐作用协变接成 CohenSelection.Covariant，再接既有 rank/type 消费者和 Links。不得把当前逐作用证书报成该统一装配已完成；不新建选择、群、名字或序数后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.ordinalType_decide:106、ordinalRank_eq_iff:112、ordinalRank_decide:120、member_ordinalRank:130 在同一实际生成历史／类型上的应用，然后 Links:171。四个性质的通用证明均已存在，直接消费 ForcingCohenRankConsumers；Ranks/PredEntry 与 Collected/Entry 只通过 MapRel 依赖关系，若需扩展参数则复用 mapRel_lift 证明等价，不重做序数、HS 或强迫后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
