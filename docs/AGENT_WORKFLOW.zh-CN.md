@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：CodeCardinals 的实际基数上界已取得原核证书
+## 当前执行入口：探针稠密性、完整局部列表及 OutsideLocal 两条排除定理
 
-ForcingCodeCardinals 沿固定源 ordinalType_cardinal_le 构造同一个内部记录关系及集合图。total 消费既有成员秩、根名字与完整表示稠密性；single 消费实际 labelClass 协变、同记录相等、Links/Same、selected_unique 和 check 名字反射。现成 Cohen ChainBound 与字面记录大小界给出 θ ≤ μ。
+本批严格沿固定源 PlacementExtensions 和 ClassFibers：ForcingProbeDensity 用实际内部 copies 函数图、同根限制与根外不交支撑证明 probeDenseSet_dense/hits；ForcingLocalList 构造完整 LocalName 集合的内部序数双射及同一个 collected 列表，并证明 HS／固定性、精确成员刻画和任意局部名字的成员性；ForcingOutsideLocal 接通 outsideLocal_not_image 与 outsideLocal_not_equal，后者直接消费既有 ForcingLocalIntersection.intersection。未重建 L、基数枚举、过滤器、商、支持下降或名字后端。
 
-bound_kernel_certificate 在普通 nativeZF 原核中证明完整上界句子在同一现成内部 L 的相对化；Choice/ZFC 由既有内部 L 消去。全量验收已通过：3023 项构建、34242 项声明，新增 13 项；原 34229 项足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2578 份当前文件哈希匹配。报告为 verification/code-cardinals-acceptance.json。
+四个原核端点均已通过全量验收：density_kernel_certificate、construction_kernel_certificate、notImage_kernel_certificate、notEqual_kernel_certificate。notImage 是普通 nativeZF 原句，其余使用同一个既有内部 L 的相对化，Choice 由现成 L 消去。全量验收已通过：3026 项构建、34286 项声明，新增 44 项；全部 34242 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2581 份当前文件哈希匹配。报告为 verification/probe-local-list-acceptance.json。
 
-下一源步骤是 CodeCardinals.ordinalType_lower_count，再与上界合流于 ConcreteQuotients 的实际 OrdinalCount 实例（源调用点 297/302）。具体接线顺序：复用 ConstructionPlacementFreshness/ConstructionCohenCompatibility 接源 probeDenseSet_dense；复用局部交集、名字传输及实际可用性接 ClassFibers 的 outsideClass_copies/classFromLocal_profile/outsideLocal_not_equal；再消费已有 StableCodes、稠密选择、Links 同余和秩决策，证明下界 total/single 并交给已有连续统 ChainBound。通用基础已在，以上具体源消费者尚未全部接通。上界 total/single、Cohen 反链界、记录界、根名字和表示稠密性均不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤：接 ClassFibers.classFromLocal_profile 与 outsideClass_copies 的实际名字／可用性／置换族，消费本批探针密度和不相等结论，再接已有 StableCodes、稠密选择、Links 同余及秩决策，完成 CodeCardinals.ordinalType_lower_count 的 total/single；最后与已完成上界汇合为 ConcreteQuotients 实际 OrdinalCount。localList_wellorderable／outside_localList 的源消费者也尚未完成，不能用地面序数枚举代替对称解释中的良序性。已完成上界、Cohen ChainBound、记录界、完整列表及两条 OutsideLocal 排除定理不再列为缺口。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

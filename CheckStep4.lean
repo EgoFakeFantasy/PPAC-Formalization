@@ -12764,4 +12764,24 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ForcingCodeCardinals.boundSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta))) :=
   ForcingCodeCardinals.bound_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta
 
+-- Source probe density and full internal local-list construction.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingProbeDensity.densitySentence)) :=
+  ForcingProbeDensity.density_kernel_certificate
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F bound r A H mul one : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingLocalList.constructionSentence rho I K B w mu G F bound r A H mul one))) :=
+  ForcingLocalList.construction_kernel_certificate rho I K B w mu G F bound r A H mul one
+
+example {k : Nat} (rho : Fin 7 → Fin k) (mul I K B w e G F bound H X XS ordinal enum list g p s d z sigma prP prS f x y : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOutsideLocal.notImageSentence rho mul I K B w e G F bound H X XS ordinal enum list g p s d z sigma prP prS f x y)) :=
+  ForcingOutsideLocal.notImage_kernel_certificate rho mul I K B w e G F bound H X XS ordinal enum list g p s d z sigma prP prS f x y
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y ordinal enum list d z sigma : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingOutsideLocal.notEqualSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y ordinal enum list d z sigma))) :=
+  ForcingOutsideLocal.notEqual_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y ordinal enum list d z sigma
+
 end PPAC.Migration.Step4Checks

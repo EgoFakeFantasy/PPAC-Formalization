@@ -853,3 +853,6 @@ import PPAC.Migration.ConstructionDiagramCoverage
 import PPAC.Migration.ForcingClassRepresentation
 import PPAC.Migration.ForcingCodeRecordWitness
 import PPAC.Migration.ForcingCodeCardinals
+import PPAC.Migration.ForcingProbeDensity
+import PPAC.Migration.ForcingLocalList
+import PPAC.Migration.ForcingOutsideLocal

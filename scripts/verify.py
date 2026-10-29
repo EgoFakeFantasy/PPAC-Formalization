@@ -2416,7 +2416,10 @@ def main() -> None:
                                ('construction_diagram_coverage', 'ConstructionDiagramCoverage', 6),
                                ('forcing_class_representation', 'ForcingClassRepresentation', 9),
                                ('forcing_code_record_witness', 'ForcingCodeRecordWitness', 8),
-                               ('forcing_code_cardinals', 'ForcingCodeCardinals', 12)):
+                               ('forcing_code_cardinals', 'ForcingCodeCardinals', 12),
+                               ('forcing_probe_density', 'ForcingProbeDensity', 22),
+                               ('forcing_local_list', 'ForcingLocalList', 10),
+                               ('forcing_outside_local', 'ForcingOutsideLocal', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
