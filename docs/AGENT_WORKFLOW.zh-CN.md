@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：源 classFiberEmbedding 的实际内部纤维单射已取得原核证书
+## 当前执行入口：主线 ordinalType_lower_count 的逐行加强命中已取得原核证书
 
-ForcingClassFiberEmbedding.construction_kernel_certificate 对应固定 ClassFibers.classFiberEmbedding:470–502。它消费已有 outsideClass_copies 的内部记录族，将每个实际副本名字送到同一 eligible System 的根商投影；classFromLocal_profile 保证值落在同一精确 availability 纤维，探针范围精确交集与 Outside 排除给出单射性。原生可定义函数构造器实际构造整张单射图，并给出逐内部索引的精确边双条件；没有把单射或独立商族作为前提。
+声明级复核纠正了上一轮路线错误：ClassFibers.classFiber_dense_lower 不被 CodeCardinals.ordinalType_lower_count 调用，前者进入 QuotientActions.classFiber_dense_exact 辅助分支；最终 ConcreteQuotients.code_ordinalType_cardinal:302 直接调用后者。撤回“纤维稠密下界 → ordinalType 下界”的错误箭头。上一轮 e071a55 新增的 ForcingClassFiberEmbedding、15 项专用审计和 1 个专用端点检查已退出活动源码；本轮未提交的 ForcingDenseRows／ForcingClassDenseLower 旁支已撤回。源恢复材料和哈希见 verification/class-fiber-nonmain-review.json；现有 profile、Outside、商和基础设施保留。
 
-对象闭句同时存在量化纤维集合与单射图，沿同一既有内部 L 回传为普通 nativeZF 的原 FirstOrder.Derives。实际副本族、该族的滤子命中以及源探针几何仍是输入；尚未宣称构造了稠密命中子族。现成 L、全公理模式、内部函数／商／局部名字与 Outside 后端均被复用。
+ForcingProbeRowHits.source_kernel_certificate 直接对应固定 CodeCardinals.ordinalType_lower_count 内部 hdisj/hits:196–218。从同一实际 Outside 副本记录投影出 Cohen 条件函数，保留精确边双条件；用源探针交集和实际支撑证明根外支撑不交。对每个内部行索引、每个扩张公共根的内部条件，复用原生行函数构造和已完成的 ForcingProbeDensity.hits，实际产生同时扩张原条件与该行某个副本条件的见证。全部量词留在对象集合范围，普通 nativeZF 原核证书沿同一现成内部 L 消去 Choice。
 
-全量验收通过：3029 项构建、34341 项声明，新增 15 项；全部 34326 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 均退出 0，零警告；75 份固定源和 2584 份当前文件哈希匹配。报告：verification/class-fiber-embedding-acceptance.json。
+全量验收通过：3029 项构建、34353 项声明；新增主线 27 项、精确退役旁支 15 项，全部 34326 项保留旧声明足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 均退出 0，零警告；75 份固定源和 2584 份当前文件哈希匹配。报告：verification/probe-row-hits-acceptance.json。
 
-下一源消费者：ClassFibers.classFiber_dense_lower:565 → CodeCardinals.ordinalType_lower_count:166。复用已完成的 probeDenseSet_dense/hits，从 K×K 的实际副本构造按行稠密集、选择命中记录并重索引到 K，再消费本批单射；localList_wellorderable／outside_localList、实际下界／OrdinalCount、第 9–11 阶段及最终内部 Con 仍未完成。完整局部列表构造、OutsideLocal 两条排除、classFromLocal/profile、outsideClass_copies 和本批 classFiberEmbedding 不再列作待证明。
+下一步严格沿 CodeCardinals.ordinalType_lower_count：消费现有 profile、稳定工作码、持久选择和 ordinalRank 接口，接其 stable、total、single 及 ChainBound.cardinal_le_mul 实际计数；再接 ConcreteQuotients.code_ordinalType_cardinal。按行加强命中现已完成；完整下界／OrdinalCount、localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。停止扩写泛滤命中族／classFiber_dense_exact 分支，不把被导入模块当作主定理实际消费者。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

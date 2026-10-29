@@ -12796,10 +12796,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul I K B w mu one c top bit labe
       (ForcingOutsideCopies.sourceSentence rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers))) :=
   ForcingOutsideCopies.source_kernel_certificate rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers
 
--- Source classFiberEmbedding: actual copies project into the same exact fiber.
-example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p Or OP Ap Hp XP QP prP Ar Hr XR QR prR ordinal enum list a e b t U indices multipliers targets copies delta : Fin k) :
+-- Main source CodeCardinals.ordinalType_lower_count: actual row strengthening.
+example {k : Nat} (rho : Fin 7 → Fin k) (A P I K B w G SF mul bound labels E J delta list targets copies r b p t multipliers : Fin k) :
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
-      (ForcingClassFiberEmbedding.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p Or OP Ap Hp XP QP prP Ar Hr XR QR prR ordinal enum list a e b t U indices multipliers targets copies delta))) :=
-  ForcingClassFiberEmbedding.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p Or OP Ap Hp XP QP prP Ar Hr XR QR prR ordinal enum list a e b t U indices multipliers targets copies delta
+      (ForcingProbeRowHits.sourceSentence rho A P I K B w G SF mul bound labels E J delta list targets copies r b p t multipliers))) :=
+  ForcingProbeRowHits.source_kernel_certificate rho A P I K B w G SF mul bound labels E J delta list targets copies r b p t multipliers
 
 end PPAC.Migration.Step4Checks

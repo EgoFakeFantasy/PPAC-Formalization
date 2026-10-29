@@ -76,4 +76,6 @@ CodeCardinals 的实际成员记录见证现已接通：ForcingCodeRecordWitness
 
 源 outsideClass_copies 现由 ForcingOutsideCopies.source_kernel_certificate 接通：在具体构造既定无限基数预算下，实际构造内部乘子族的子图族及一个内部 (条件,规范化名字) 记录函数。每个副本保留支撑、原根的字面限制、完整 isClass 和全部加强条件下的 OutsideLocal。原核闭句在同一个既有 L 中消去 Choice，未预设目标副本族或其排除性质。它不替代完整下界／OrdinalCount、localList_wellorderable／outside_localList 或最终 Con；全量验收以 STATUS 和 verification/outside-copies-acceptance.json 为准。
 
-源 classFiberEmbedding 现由 ForcingClassFiberEmbedding.construction_kernel_certificate 接通：从实际命中副本记录族构造到同一 eligible System 精确纤维的内部单射图，并保留值就是既有根商投影的逐索引双条件。各副本的 Data 与现有支撑／固定子群对齐；classFromLocal_profile 给出精确纤维性质，独立探针交集和 Outside 排除证明单射性。经同一既有 L 消去 Choice 后，结论在普通 nativeZF 原核中成立。该对象句子仍以实际副本族及其滤子命中、源几何为输入；按行稠密命中子族和完整 lower-count／OrdinalCount 未完成，最终内部 Con 未完成。本批验收以 STATUS 和 verification/class-fiber-embedding-acceptance.json 为准。
+源主线纠偏：已撤回 classFiberEmbedding → classFiber_dense_lower → ordinalType_lower_count 的错误调用链。前两者进入独立的 QuotientActions.classFiber_dense_exact 分支，不是最终 ordinalType 下界的必要前置；e071a55 新增的独立纤维嵌入模块和其专用入口已退役，既有 profile/Outside 证明保留。恢复及精确清单见 verification/class-fiber-nonmain-review.json。
+
+ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinalType_lower_count 的 hdisj/hits:196–218：实际投影既有 Outside 副本的条件坐标，证明根外支撑不交，再证明全部内部行与全部扩张根的条件均有共同加强的副本命中。原核对象句子存在量化实际条件函数，保留逐点图双条件；Choice 在同一既有 L 中消去。未假定泛滤存在或命中集合族，也不引入该旁支。下界关系 stable/total/single 及最终基数计数的具体接线、OrdinalCount 和内部 Con 仍未完成；现成对应后端不重做。本批验收见 STATUS 和 verification/probe-row-hits-acceptance.json。
