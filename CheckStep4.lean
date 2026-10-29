@@ -12704,4 +12704,27 @@ example {k : Nat} (family : Source.Formula (k+2)) (rho : Fin 7 → Fin k)
       (ForcingLocalRecordEquality.quotientSentence family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta))) :=
   ForcingLocalRecordEquality.quotient_kernel_certificate family rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta
 
+
+-- Source relationClass/classOf/isClass and actual localLabelClass, ordinary nativeZF.
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul A E x bound : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationClass.constructionSentence rho I K B w G F mul A E x bound)) :=
+  ForcingRelationClass.construction_kernel_certificate rho I K B w G F mul A E x bound
+
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul tau A E x name p : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationClass.characterizationSentence rho G F mul tau A E x name p)) :=
+  ForcingRelationClass.characterization_kernel_certificate rho G F mul tau A E x name p
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul tau A E p : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationClass.isClassSentence rho I K B w G F mul tau A E p)) :=
+  ForcingRelationClass.isClass_kernel_certificate rho I K B w G F mul tau A E p
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu c t b j J fixing bound e G F mul A E x : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingRelationClass.localSentence rho I K B w mu c t b j J fixing bound e G F mul A E x)) :=
+  ForcingRelationClass.local_kernel_certificate rho I K B w mu c t b j J fixing bound e G F mul A E x
+
 end PPAC.Migration.Step4Checks

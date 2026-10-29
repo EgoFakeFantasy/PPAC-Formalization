@@ -846,3 +846,4 @@ import PPAC.Migration.ForcingCohenCounting
 import PPAC.Migration.ForcingCohenChainBound
 import PPAC.Migration.ForcingLocalRecordPullback
 import PPAC.Migration.ForcingLocalRecordEquality
+import PPAC.Migration.ForcingRelationClass

@@ -65,3 +65,5 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 LocalRecord 条件层已补齐：实际内部拉回及同记录条件置换有普通 nativeZF 原核证书，保留精确标签／层／位。它不替代 LocalWitness 名字层等式、表示密度、CodeCardinals/OrdinalCount 或最终内部 Con。
 
 LocalWitness 同记录相等现已接通名字层：实际根置换／条件传输／名字对称性／支持反射产生原根强迫等式，并由现成 equality_law 得出实际局部商值相等。Covariant 是源 hC 的对象公式前提；具体 labelClass 实例及表示密度仍需接入。两个原核端点使用同一既有 L 消去 Choice，不等于完整 CodeCardinals/OrdinalCount 或内部 Con。
+
+本批 ForcingRelationClass：固定 LocalRecords 的实际分离类名字及局部标签类已接通，四个普通 nativeZF 原核端点保留全部内部条件／名字量词；具体局部类的支持、界和每处 isClass 均实际证明。未将强迫资格等同于最终 PP／Con；精确移动协变、classRepresentationSet_denseBelow、完整 CodeCardinals／OrdinalCount 及原第 9–11 阶段仍未完成。验收见 verification/relation-class-acceptance.json。

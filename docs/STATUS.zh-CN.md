@@ -1,14 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：同记录名字反射与实际局部商相等已接通
+## 当前执行入口：实际关系类／局部标签类及资格刻画已接通
 
-ForcingLocalRecordEquality 迁移固定 LocalRecords.LocalWitness.equal_of_record_eq:143–182。保留源 hC 的协变名字族前提，并将其表达为公式索引的对象关系；同一个根下标、标签下标及实际拉回条件是记录相等的展开内容。
+ForcingRelationClass 迁移固定 LocalRecords.relationClass 的分离名字、成员公式、原界和强迫等式保持，复用已有 classOf/isClass 对象 AST；isClass 的稠密表示量词全部遍历内部名字和条件。实际 localLabelClass 消费原 labelSet、label 和 Fixing 子群，复用现成 HS、正规滤子和 separate_supported，证明其界、支持性及每个条件下的 isClass。
 
-证明实际调用既有 permutation_over_root 构造根上置换，推出其属于原根的 Fixing 子群，构造同一 Product 条件动作；本批前置的精确拉回传输给出实际条件像。随后调用完整名字对称性、原子等式传递与 forces_at_supporting_root，构造原根处的限制条件、Product/WithTop 编码及强迫等式。第二端点消费原 CohenFilter 和现成 equality_law，得出两个实际局部商值相等；未假设目标名字／商值相等。
+四个普通 nativeZF 原核端点覆盖有界名字构造、classOf 与实际名字等式的双向刻画、isClass 的内部稠密见证刻画、同一个实际局部标签类的联合构造。30 项公开声明定向 trust=0 通过、无新增公理依赖；全量验收及原 34147 项依赖逐项比较以 verification/relation-class-acceptance.json 的实际结果为准。
 
-两个 nativeZF 原核端点均相对化于同一现成内部 L，源对象 Choice 已消去。本批 15 项公开声明定向 trust=0 审计通过，无新增公理依赖；全量验收、原 34132 项精确依赖比较和哈希复核以 verification/local-record-equality-acceptance.json 的实际结果为准。
-
-下一源步骤为将具体 labelClass 名字族及其既有／待接通的协变性质实例化到本定理，并迁移 classRepresentationSet_denseBelow，再完成 CodeCardinals 的实际 total／single。通用同记录局部商相等、条件拉回、根上置换和支持反射均已接通，不重建；Preliminary.total/onto 不得反用来证明 OrdinalCount。仍在原第 8 阶段，实际 OrdinalCount、第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为精确 relationClass_move／labelClass_move 和具体名字族协变，再接 classRepresentationSet_denseBelow 的实际图扩张，完成 CodeCardinals total／single 和 OrdinalCount。分离、界、局部支持、classOf/isClass 公式及其强迫刻画不重做；仍在原第 8 阶段，第 9–11 阶段与最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 
