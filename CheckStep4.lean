@@ -12570,4 +12570,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingGermLocality.descentSentence rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label))) :=
   ForcingGermLocality.descent_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label
 
+-- Same code/ranks/table under actual tail permutation.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingGermCovariance.covarianceSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label))) :=
+  ForcingGermCovariance.covariance_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label
+
 end PPAC.Migration.Step4Checks

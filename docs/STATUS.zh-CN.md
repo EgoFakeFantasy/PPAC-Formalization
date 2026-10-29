@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：Preliminary 精确稳定性与下降已验收
+## 当前执行入口：Preliminary 尾群协变已验收
 
-固定源 GermSelectors.preliminary_stable:115、preliminary_descend:134 已由 ForcingGermLocality 接入；实际消费者为 OrbitAssignments.corrected_stable:30（35 行调用）及 StableSelectors.corrected_descend:519（524 行调用）。稳定性保留同一局部名字在每个更强内部条件上的资格和精确可用性理想；下降保留原标签、名字、链码、rank 历史／类型和固定表见证，并保留目标局部 Entry 条件。直接复用 Links 生产者：只把链码参数从 env a 推广为任意内部值 a，数学证明正文逐字匹配此替换，旧入口全部保留。两条纯成员闭句取得同一现成内部 L 相对化的 nativeZF 原核证书。全量验收：2994 项构建、33643 项声明（新增 8 项主接口及 2 项生产者推广），全部 33633 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2549 项当前哈希匹配。记录：verification/germ-locality-acceptance.json。
+固定源 GermSelectors.preliminary_permute:143–157 已由 ForcingGermCovariance 接入；实际消费者为 StableSelectors.preliminaryPoint_move:392（399 行调用）。同一尾群元素同时移动条件、顶点与 HS 名字，保留原标签、Selected 链码、rank/type 名字和固定序数表见证。复用既有 Selected 协变、rank 固定族、check 固定性及 Links/tail_eq_permute；仅将生产者的链码／名字参数推广为任意内部值，原入口与旧依赖足迹保留，不要求根固定。纯成员闭句经同一现成内部 L 返回 nativeZF 原核证书。全量验收：2995 项构建、33649 项声明（新增 4 项主接口及 2 项生产者推广），全部 33643 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2550 项当前哈希匹配。记录：verification/germ-covariance-acceptance.json。
 
-下一源步骤为 GermSelectors.preliminary_permute:143，复用已有 Selected 协变、同一 rank 固定族／类型、check 名字固定性及 Links／tail_eq_permute；随后接实际基数界与密度消费者。不重建现成名字、作用、L、rank 或表后端。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
+下一源步骤为 GermSelectors.OrdinalCount:161、preliminary_total:167、preliminary_onto:183，复用现成 rank 决定／成员、固定表双射、持久选择稠密性和 working_linked；按源保留条件性 OrdinalCount 接口，再用 CodeCardinals 的实际上下界消去它，不把假设该前提视为最终完成。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 
@@ -19,7 +19,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 双向桥接已完成；链接稳定性（资格及全部加强条件下的精确理想）已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表已完成；Preliminary 关系及后续基数／选择消费者仍待接入；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
+| 8 构造核心 | 完整Base/Probe/Merger、内部塔/覆盖/精确转移及全部饱和结论；实际μ/K；现成Base的完整乘法表图证据与最终ObjectFields已装配，所有几何父前提消去；同一实际历史最终T行及其全部除子/理想/补集/基数性质已返回，均有原核对象证书 | 实际商集/投影/限制图已完成；局部商限制单射/精确交集已完成；资格谓词/反射/实际 Obj 已完成；eligibleSystem 实际限制图、三条实际定律及资格交集已接；同一内部对象/映射族及源靶兼容性已构造；四条定律现已绑定到该族的完整 System 合同；实际 availability/classAvailability 已接；availability 收缩与精确 Fiber/限制双射已接；统一 Component 纤维族/实际箭头相容已完成；Matches、实际 Glued/toGlued 及全部纤维双射/交换律已完成；同一最终 T 的标签系统/全部纤维与粘合基数已装配；探针/基数前提消去、共同分量字面标签集合相等已完成；不同系统的完整 availability/精确纤维重标号与实际标签 app 族已完成；移动顶点/箭头/Common 和整分量粘合传输已完成；实际移动滤子及局部相等保反射已接；实际名字/商双射与限制方块已接；资格类坐标传输及逐图实际 app 已接；完整 app 函数族与全部自然性已在同一原核证书中联合装配；CodeLinks 的实际秩／类型及四个序数消费者已接入；Links 局部规律及 EqF/Same 等价已完成；At/Represents 与 Links 双向桥接已完成；链接稳定性（资格及全部加强条件下的精确理想）已完成；任意共同顶点的 linked-working 存在性已完成；链接下降／工作代表与两条尾群置换已完成；固定序数表已完成；Preliminary 关系及单调／共同顶点／同余／限制、精确相等、稳定性／下降和尾群协变已完成；后续密度／基数与完整选择器消费者未完；有限族/固定三图下界、Cohen、Product descent、countable conservative hull、顶点/箭头/整分量共尾链已完成 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

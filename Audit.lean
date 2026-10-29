@@ -34193,3 +34193,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermLocality.descentSentence
 #print axioms PPAC.Migration.ForcingGermLocality.descent_models
 #print axioms PPAC.Migration.ForcingGermLocality.descent_kernel_certificate
+
+-- Actual Preliminary permutation and retained covariance producer interfaces.
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.links_permute_over
+#print axioms PPAC.Migration.ForcingCodeLinkCovariance.tail_eq_permute_over
+#print axioms PPAC.Migration.ForcingGermCovariance.preliminary_permute
+#print axioms PPAC.Migration.ForcingGermCovariance.covarianceSentence
+#print axioms PPAC.Migration.ForcingGermCovariance.covariance_models
+#print axioms PPAC.Migration.ForcingGermCovariance.covariance_kernel_certificate

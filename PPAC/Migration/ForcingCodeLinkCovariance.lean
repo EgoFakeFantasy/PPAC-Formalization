@@ -34,21 +34,21 @@ private theorem join (hM : FirstOrder.Theory.Models M nativeZF) {w N L : M.Carri
   · exact ⟨L,hL,Or.inr hnl,Or.inl rfl⟩
   · exact ⟨N,hN,Or.inl rfl,Or.inr hln⟩
 
-theorem links_permute (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+theorem links_permute_over (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau : Fin k)
+    (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names ac d movedD vertex movedVertex tau movedTau : Fin k) (a : M.Carrier .set)
     (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
     (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
-    (ha : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env a))
+    (ha : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) a)
     (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
     (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) (env ac))
     (hdd : PureKuratowski.PairMember M (env d) (env movedD) (env ac))
     (hMove : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env vertex) (env movedVertex))
     (hTau : ForcingStabilizer.Action (env (rho 6)) (env act) (env tau) (env movedTau))
-    (hLinks : Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env vertex) (env tau) (env a)) :
-    Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env movedD) (env movedVertex) (env movedTau) (env a) := by
+    (hLinks : Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env vertex) (env tau) a) :
+    Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env movedD) (env movedVertex) (env movedTau) a := by
   obtain ⟨L,hL,hFixed⟩ := ForcingTailCovariance.tail_fixed hData hChain hTail (bound := env bound)
   have hMoveCopy := hMove
   obtain ⟨r,idx,U,r',hv,hv',hr,hr',hComp⟩ := hMoveCopy
@@ -67,10 +67,29 @@ theorem links_permute (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
   exact ⟨vi,sigma,n,hvi,hsi,ForcingComponentMove.move_arrow hMove hFixedVertex hArrow,
     (ForcingPersistentCovariance.eqF_transport_iff hM env rho mul act hm hp hpi hAct hc hdd hr.1 hr'.1 hComp hSigma hTau).mpr heq⟩
 
-theorem tail_eq_permute (hM : FirstOrder.Theory.Models M nativeZF)
+/-- Retained indexed entry point with unchanged statement. -/
+theorem links_permute (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau : Fin k)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (ha : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env a))
+    (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
+    (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) (env ac))
+    (hdd : PureKuratowski.PairMember M (env d) (env movedD) (env ac))
+    (hMove : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env vertex) (env movedVertex))
+    (hTau : ForcingStabilizer.Action (env (rho 6)) (env act) (env tau) (env movedTau))
+    (hLinks : Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env d) (env vertex) (env tau) (env a)) :
+    Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) (env movedD) (env movedVertex) (env movedTau) (env a) :=
+  links_permute_over hM env rho I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names ac d movedD vertex movedVertex tau movedTau (env a)
+    hm hData hw hChain ha hTail hc hdd hMove hTau hLinks
+
+theorem tail_eq_permute_over (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma : Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U : Fin k) (tau sigma : M.Carrier .set)
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
     (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
@@ -88,10 +107,10 @@ theorem tail_eq_permute (hM : FirstOrder.Theory.Models M nativeZF)
     (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) (env ac))
     (hdd : PureKuratowski.PairMember M (env d) (env movedD) (env ac))
     (hCode : Code (env root) (env r) (env idx) (env U))
-    (hTau : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) (env tau))
-    (hSigma : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) (env sigma))
-    (he : EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env d) (env r) (env tau) (env sigma)) :
-    EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env movedD) (env r) (env tau) (env sigma) := by
+    (hTau : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) tau)
+    (hSigma : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) sigma)
+    (he : EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env d) (env r) tau sigma) :
+    EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env movedD) (env r) tau sigma := by
   have hTail := ((hGroup (env pi)).mp hMember).2
   obtain ⟨hp,hG,hpi,_,_,_,_,hAct,_,hF⟩ := hData
   obtain ⟨_,movedRoot,hMove,_⟩ := ForcingTailGroup.fixes_mem_stabilizer hM hm hJoins hq hAq hpi hChain hTail
@@ -122,9 +141,9 @@ theorem tail_eq_permute (hM : FirstOrder.Theory.Models M nativeZF)
     intro g hg
     obtain ⟨hgG,hgFix⟩ := (hHJ g).mp hg
     exact (hGroup g).mpr ⟨hgG,J,vJ,rJ,idxJ,UJ,AJ,hJ,hJv,hCodeJ,hAJ,hgFix⟩
-  have hTauJ : ForcingSupportedNames.Supported (fun j => env (rho j)) HJ (env tau) :=
+  have hTauJ : ForcingSupportedNames.Supported (fun j => env (rho j)) HJ tau :=
     fun g hg A hA => hTau g (hSub g hg) A hA
-  have hSigmaJ : ForcingSupportedNames.Supported (fun j => env (rho j)) HJ (env sigma) :=
+  have hSigmaJ : ForcingSupportedNames.Supported (fun j => env (rho j)) HJ sigma :=
     fun g hg A hA => hSigma g (hSub g hg) A hA
   have hd' := (ForcingLocalTransport.part_permutation hc).1.2 (env d) (env movedD) hdd
   obtain ⟨zT,hzT,heT⟩ := heT
@@ -138,6 +157,34 @@ theorem tail_eq_permute (hM : FirstOrder.Theory.Models M nativeZF)
     ((ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul z zJ).mpr ((ForcingSupportingRoot.code_le hz hzJ).mpr
       ⟨fun _ h => h,n,hr0.2.2.1 n hArr.1,hArr.2.1⟩)) heJ⟩
 
+/-- Retained indexed entry point with unchanged statement. -/
+theorem tail_eq_permute (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U tau sigma : Fin k)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJoins : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hGroup : ForcingTailGroup.TailGroup (env w) (env (rho 0)) (env G) (env chain) (env group))
+    (hMember : (Project.FirstOrderSemantics.reduct M).mem (env pi) (env group))
+    (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) (env ac))
+    (hdd : PureKuratowski.PairMember M (env d) (env movedD) (env ac))
+    (hCode : Code (env root) (env r) (env idx) (env U))
+    (hTau : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) (env tau))
+    (hSigma : ForcingSupportedNames.Supported (fun j => env (rho j)) (env group) (env sigma))
+    (he : EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env d) (env r) (env tau) (env sigma)) :
+    EqF (orderFormula (rho 0) mul) env (env (rho 6)) (env movedD) (env r) (env tau) (env sigma) :=
+  tail_eq_permute_over hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul pi inv c act ai q Aq zero root vertices chain group ac d movedD r idx U (env tau) (env sigma)
+    hw hMu hI hSmall hMergers hRow hm hJoins hData hq hAq hChain hGroup hMember hc hdd hCode hTau hSigma he
 
 def linksSentence {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a ac d movedD vertex movedVertex tau movedTau : Fin k) : Project.Sentence where
   formula := Project.Formula.forallClosure k (.imp (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid (rho 0) mul one))
