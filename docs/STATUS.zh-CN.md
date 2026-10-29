@@ -1,16 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：完整实际 Cohen 反链基数界已闭合
+## 当前执行入口：实际 Cohen ChainBound、连续统实例与 LocalRecord 大小界已接通
 
-本批完成固定 AssignedGraphs.Condition.antichain_cardinal_le:403–457，条件仍是全部内部可数部分二元图；此前 CountableHull、code／decode／compatibleChoice、flip／restrictedGraph 直接复用。
+ForcingCohenCounting 复用同一个 code 家族及已验收 pack_injection，构造 Option 载体的实际单射，接通固定 LocalRecords.Condition.cardinal_le:61–104 的整个可数条件载体大小界。它进一步构造字面的 M × (M × Condition M κ) 集合并证明 |LocalRecord|≤μ，对应 CodeCardinals.ordinalType_cardinal_le:109–115 的 hrec；没有重建枚举或基数基础。
 
-ForcingCohenOperation 构造源 Bool×内部ω 的实际运算图：false 分支取 flip(f(n))，true 分支取 code(compatibleChoice(decode(f)))(n)。两支共用已验收的同一组内部函数，普通 nativeZF 原核证明其完整总性、唯一性和精确图方程。
+ForcingCohenChainBound 以原生分离构造同一条件载体的精确相容关系图，证明自反性，并将已完成实际反链界直接接入现成 ChainBound。连续统实例直接消费 ConstructionConcreteCardinals.continuum_fixed_countable_power，构造幂集、对应基数及固定幂证书，再特化同一 ChainBound。四项端点都是 nativeZF 原推导核中同一现成内部 L 的相对化句子，未向原背景加入对象 Choice。
 
-ForcingCohenAntichain 实际调用完整 CountableHull，利用原生常值函数取得翻转闭包，并用 decode(code(d))=d 取得所选条件编码的闭包；restrictedGraph／compatibleChoice_spec／hbits／hbp 合成全部反链条件的 hin。pack 是同一个 code 函数在 A 上的限制，构成到全部内部 ω→Y 函数空间的实际单射；既有函数空间传输及固定幂归一化给出 |A|≤μ。最终句子不再保留运算／hull／选择／pack 见证前提，原核 nativeZF 中的同一内部 L 相对化证书消去对象 Choice。
+本批 24 项公开声明定向 trust=0 审计通过，无新增公理依赖。主线全量验收、全部原 34084 项精确依赖足迹比较与哈希复核，以 verification/cohen-counting-acceptance.json 的实际结果为准。新模块编译通过本身不等于最终 Con 已完成。
 
-本批 27 项公开声明已通过定向 trust=0 审计，无新增公理依赖；全量验收及原 34057 项足迹比较见 verification/cohen-antichain-acceptance.json 的实际结果。
-
-下一源步骤为将本批实际反链界接入已有 ChainBound 消费者，特化 continuum，并核对源条件载体大小界及 LocalRecord 表示计数，继续 CodeCardinals 的上／下界和实际 OrdinalCount。反链界、完整 hull、所有编码／限制／翻转／运算及 hin／pack 已完成，不再列为待办。仍在原第 8 阶段；第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 CodeCardinals.ordinalType_cardinal_le:45–120 的实际表示关系 total／single：沿 member_ordinalRank、working_rooted、classRepresentationSet_denseBelow、LocalWitness.equal_of_record_eq、rooted_eq_iff_same、selected_unique 接入现有 ChainBound.cardinal_le_mul；随后迁移下界并取得实际 OrdinalCount。hcc、continuum 与 hrec 已接通，不再列作待重建；Preliminary.total/onto 依赖 OrdinalCount，禁止反过来用它们证明 OrdinalCount。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

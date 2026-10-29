@@ -34653,3 +34653,29 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCohenAntichain.boundSentence
 #print axioms PPAC.Migration.ForcingCohenAntichain.bound_models
 #print axioms PPAC.Migration.ForcingCohenAntichain.bound_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCohenCounting.option_bound
+#print axioms PPAC.Migration.ForcingCohenCounting.carrier_bound
+#print axioms PPAC.Migration.ForcingCohenCounting.coordinates_bound
+#print axioms PPAC.Migration.ForcingCohenCounting.boundSentence
+#print axioms PPAC.Migration.ForcingCohenCounting.bound_models
+#print axioms PPAC.Migration.ForcingCohenCounting.bound_kernel_certificate
+#print axioms PPAC.Migration.ForcingCohenCounting.records_bound
+#print axioms PPAC.Migration.ForcingCohenCounting.recordsSentence
+#print axioms PPAC.Migration.ForcingCohenCounting.records_models
+#print axioms PPAC.Migration.ForcingCohenCounting.records_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCohenChainBound.Graph
+#print axioms PPAC.Migration.ForcingCohenChainBound.graph
+#print axioms PPAC.Migration.ForcingCohenChainBound.graph_freeClosed
+#print axioms PPAC.Migration.ForcingCohenChainBound.graph_semantics
+#print axioms PPAC.Migration.ForcingCohenChainBound.exists_graph
+#print axioms PPAC.Migration.ForcingCohenChainBound.graph_refl
+#print axioms PPAC.Migration.ForcingCohenChainBound.chain_bound
+#print axioms PPAC.Migration.ForcingCohenChainBound.constructionSentence
+#print axioms PPAC.Migration.ForcingCohenChainBound.construction_models
+#print axioms PPAC.Migration.ForcingCohenChainBound.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingCohenChainBound.continuum
+#print axioms PPAC.Migration.ForcingCohenChainBound.continuumSentence
+#print axioms PPAC.Migration.ForcingCohenChainBound.continuum_models
+#print axioms PPAC.Migration.ForcingCohenChainBound.continuum_kernel_certificate

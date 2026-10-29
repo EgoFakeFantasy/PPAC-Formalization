@@ -12667,4 +12667,21 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative ForcingCohenAntichain.boundSentence)) :=
   ForcingCohenAntichain.bound_kernel_certificate
 
+-- Actual condition/LocalRecord sizes and Cohen ChainBound, all in the SAME internal L.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenCounting.boundSentence)) :=
+  ForcingCohenCounting.bound_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenCounting.recordsSentence)) :=
+  ForcingCohenCounting.records_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenChainBound.constructionSentence)) :=
+  ForcingCohenChainBound.construction_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingCohenChainBound.continuumSentence)) :=
+  ForcingCohenChainBound.continuum_kernel_certificate
+
 end PPAC.Migration.Step4Checks

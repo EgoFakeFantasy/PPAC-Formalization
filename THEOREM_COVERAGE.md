@@ -810,3 +810,10 @@ Fixed AssignedGraphs:390–400,414–449 → ForcingCohenRestriction and Forcing
 ## 2026-10-30 Complete actual Cohen antichain bound
 
 Fixed AssignedGraphs.Condition.antichain_cardinal_le:403–457 → ForcingCohenOperation / ForcingCohenAntichain. Actual Bool×internal omega operation on the SAME code/decode/compatibleChoice/flip functions; completed CountableHull consumed; full hin and actual pack injection proved; function-space transport closes |A|≤mu. Original nativeZF kernel certificate is relative to the SAME existing internal L, discharging object Choice. No assumed closure or enumeration/pack premise remains. CodeCardinals, OrdinalCount and final internal Con remain incomplete. Evidence: verification/cohen-antichain-acceptance.json.
+
+## Actual Cohen ChainBound and record counting
+
+- Pinned LocalRecords.Condition.cardinal_le:61–104: ForcingCohenCounting.carrier_bound reuses the accepted code family/pack; option_bound and coordinates_bound construct the internal injections. bound_kernel_certificate is nativeZF deriving the SAME internal L-relative sentence.
+- CodeCardinals.ordinalType_cardinal_le.hrec:109–115: records_bound constructs the literal M x (M x Condition M kappa) carrier and proves its size bound; records_kernel_certificate removes its existential witnesses in the conclusion.
+- AssignedGraphs.antichain_continuum:461–464 and CodeCardinals hcc:104–108/284–288: ForcingCohenChainBound constructs the exact compatibility graph, proves reflexivity and ChainBound, and obtains the continuum instance from the unchanged native fixed-power theorem. construction_kernel_certificate and continuum_kernel_certificate are nativeZF SAME-L endpoints.
+- All 24 declarations and four endpoints are registered in Audit/CheckStep4 and SOURCE_LOCK. Full acceptance evidence: verification/cohen-counting-acceptance.json. Representation total/single, complete ordinal bounds/OrdinalCount and final internal Con are not claimed.
