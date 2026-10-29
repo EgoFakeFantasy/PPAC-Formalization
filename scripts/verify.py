@@ -2331,8 +2331,8 @@ def main() -> None:
                                ('forcing_eligible_restriction', 'ForcingEligibleRestriction', 18),
                                ('forcing_eligible_intersection', 'ForcingEligibleIntersection', 6),
                                ('forcing_eligible_laws', 'ForcingEligibleLaws', 10),
-                               ('forcing_eligible_family', 'ForcingEligibleFamily', 16),
-                               ('forcing_eligible_map_family', 'ForcingEligibleMapFamily', 23),
+                               ('forcing_eligible_family', 'ForcingEligibleFamily', 17),
+                               ('forcing_eligible_map_family', 'ForcingEligibleMapFamily', 24),
                                ('forcing_eligible_system', 'ForcingEligibleSystem', 28),
                                ('forcing_system_availability', 'ForcingSystemAvailability', 24),
                                ('forcing_system_fibers', 'ForcingSystemFibers', 22),
@@ -2350,7 +2350,7 @@ def main() -> None:
                                ('forcing_local_name_transport', 'ForcingLocalNameTransport', 19),
                                ('forcing_local_quotient_transport', 'ForcingLocalQuotientTransport', 22),
                                ('forcing_eligible_transport', 'ForcingEligibleTransport', 22),
-                               ('forcing_eligible_reindex', 'ForcingEligibleReindex', 15),
+                               ('forcing_eligible_reindex', 'ForcingEligibleReindex', 16),
                                ('forcing_tail_codes', 'ForcingTailCodes', 32),
                                ('forcing_component_rebase', 'ForcingComponentRebase', 13),
                                ('forcing_tail_transport', 'ForcingTailTransport', 6),
@@ -2358,8 +2358,9 @@ def main() -> None:
                                ('forcing_persistent_selection', 'ForcingPersistentSelection', 17),
                                ('forcing_principal_filter', 'ForcingPrincipalFilter', 23),
                                ('forcing_persistent_codes', 'ForcingPersistentCodes', 17),
-                               ('forcing_persistent_works', 'ForcingPersistentWorks', 33),
-                               ('forcing_persistent_covariance', 'ForcingPersistentCovariance', 9)):
+                               ('forcing_persistent_works', 'ForcingPersistentWorks', 38),
+                               ('forcing_persistent_covariance', 'ForcingPersistentCovariance', 9),
+                               ('forcing_works_covariance', 'ForcingWorksCovariance', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

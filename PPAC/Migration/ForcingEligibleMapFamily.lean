@@ -191,30 +191,33 @@ theorem family_semantics {k m : Nat} (env : Fin m → M.Carrier .set)
     mapRow_semantics (M := M),paramsUp,Fin.lastCases_last,Fin.lastCases_castSucc]
   exact ⟨fun h z a => ⟨(h z a).1,(h z a).2⟩,fun h z a => ⟨(h z a).mp,(h z a).mpr⟩⟩
 
-theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+theorem exists_family_at_filter (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul : Fin k)
-    (I K B w e g q nameBound labels E : Fin k) (S : M.Carrier .set)
+    (I K B w e q nameBound labels E : Fin k) (g S : M.Carrier .set)
     (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env e))
     (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w)
       (env (rho 1)) (env (rho 2)) (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
-    (hg : ForcingLocalAtomic.CohenFilter (env (rho 3)) (env g))
+    (hg : ForcingLocalAtomic.CohenFilter (env (rho 3)) g)
     (hS : Arrows (env (rho 0)) (env mul) (env (rho 4)) S) :
     ∃ image maps, MapsTo S image maps ∧
       Family (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
-        (env G) (env F) (env mul) (env g) (env q) (env nameBound) (env labels) (env E) S maps := by
-  let up : Fin k → Fin (k+2) := fun i => i.castSucc.castSucc
+        (env G) (env F) (env mul) g (env q) (env nameBound) (env labels) (env E) S maps := by
+  let params : Fin (k+1) → M.Carrier .set := Fin.lastCases g env
+  let up : Fin (k+1) → Fin (k+1+2) := fun i => i.castSucc.castSucc
   let R := orderFormula (rho 0) mul
   let Hdom := ForcingPairUnion.domain rho G F
-  let query := mapRow R Hdom up (fun j => up (rho j)) (up G) (up F) (up mul) (up g)
-    (up q) (up nameBound) (up labels) (up E) (Fin.last k).castSucc (Fin.last (k+1))
-  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k :=
-    { bound := fun i => env i.rev, free := fun _ => S }
+  let query := mapRow R Hdom (fun j => up j.castSucc) (fun j => up (rho j).castSucc)
+    (up G.castSucc) (up F.castSucc) (up mul.castSucc) (up (Fin.last k))
+    (up q.castSucc) (up nameBound.castSucc) (up labels.castSucc) (up E.castSucc)
+    (Fin.last (k+1)).castSucc (Fin.last (k+1+1))
+  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) (k+1) :=
+    { bound := fun i => params i.rev, free := fun _ => S }
   have hRel : ∀ z a, (ProjectSyntax.binary query).denote penv z a ↔
-      MapRow R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
+      MapRow R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) g (env q)
         (env nameBound) (env labels) (env E) z a := by
     intro z a
-    rw [ForcingMapConditions.binary_semantics hM query env S z a]
-    simp only [ForcingMapConditions.MapRel,query,mapRow_semantics (M := M),up,
+    rw [ForcingMapConditions.binary_semantics hM query params S z a]
+    simp only [ForcingMapConditions.MapRel,query,mapRow_semantics (M := M),up,params,
       Fin.lastCases_last,Fin.lastCases_castSucc]
   have ht : ∀ z, (Project.FirstOrderSemantics.reduct M).mem z S →
       ∃ a, (ProjectSyntax.binary query).denote penv z a := by
@@ -235,6 +238,19 @@ theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (fun z a hz ha => (hImage a).mpr ⟨z,hz,ha⟩)
   exact ⟨image,maps,(ForcingSupportSize.native_mapsTo hM S image maps).mpr hMaps,
     fun z a => (hEdge z a).trans (and_congr Iff.rfl (hRel z a))⟩
+
+theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul : Fin k)
+    (I K B w e g q nameBound labels E : Fin k) (S : M.Carrier .set)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env e))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w)
+      (env (rho 1)) (env (rho 2)) (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hg : ForcingLocalAtomic.CohenFilter (env (rho 3)) (env g))
+    (hS : Arrows (env (rho 0)) (env mul) (env (rho 4)) S) :
+    ∃ image maps, MapsTo S image maps ∧
+      Family (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+        (env G) (env F) (env mul) (env g) (env q) (env nameBound) (env labels) (env E) S maps := by
+  exact exists_family_at_filter hM env rho G F mul I K B w e q nameBound labels E (env g) S hm hp hg hS
 
 def Compatible (objects maps : M.Carrier .set) : Prop :=
   ∀ r s Or Os z a, PureKuratowski.PairMember M r Or objects →

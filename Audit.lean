@@ -33754,3 +33754,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPersistentCovariance.representedSentence
 #print axioms PPAC.Migration.ForcingPersistentCovariance.represented_models
 #print axioms PPAC.Migration.ForcingPersistentCovariance.represented_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingEligibleFamily.exists_family_over
+#print axioms PPAC.Migration.ForcingEligibleMapFamily.exists_family_at_filter
+#print axioms PPAC.Migration.ForcingEligibleReindex.exists_family_over
+#print axioms PPAC.Migration.ForcingPersistentWorks.assemble_at_filter
+#print axioms PPAC.Migration.ForcingPersistentWorks.assemble_principal
+#print axioms PPAC.Migration.ForcingPersistentWorks.principalSentence
+#print axioms PPAC.Migration.ForcingPersistentWorks.principal_models
+#print axioms PPAC.Migration.ForcingPersistentWorks.principal_kernel_certificate
+#print axioms PPAC.Migration.ForcingWorksCovariance.represented_covariance
+#print axioms PPAC.Migration.ForcingWorksCovariance.works_covariance
+#print axioms PPAC.Migration.ForcingWorksCovariance.selected_of_covariance
+#print axioms PPAC.Migration.ForcingWorksCovariance.selected_covariance
+#print axioms PPAC.Migration.ForcingWorksCovariance.worksSentence
+#print axioms PPAC.Migration.ForcingWorksCovariance.works_models
+#print axioms PPAC.Migration.ForcingWorksCovariance.works_kernel_certificate
+#print axioms PPAC.Migration.ForcingWorksCovariance.selectedSentence
+#print axioms PPAC.Migration.ForcingWorksCovariance.selected_models
+#print axioms PPAC.Migration.ForcingWorksCovariance.selected_kernel_certificate

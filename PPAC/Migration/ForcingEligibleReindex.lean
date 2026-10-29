@@ -147,22 +147,22 @@ theorem family_semantics {k m : Nat} (env : Fin m → M.Carrier .set) (R : Formu
     row_semantics (M := M),Fin.lastCases_last,Fin.lastCases_castSucc]
   exact ⟨fun h r b => ⟨(h r b).1,(h r b).2⟩,fun h r b => ⟨(h r b).mp,(h r b).mpr⟩⟩
 
-theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
-    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (G F mul g gT q bound labels E pi a : Fin k) {I : M.Carrier .set}
+theorem exists_family_over (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin m → M.Carrier .set) (base : Fin k → Fin m) (rho : Fin 7 → Fin m)
+    (G F mul g gT q bound labels E pi a : Fin m) {I : M.Carrier .set}
     (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) I (env (rho 4)))
     (hTotal : ∀ r, (Project.FirstOrderSemantics.reduct M).mem r (env (rho 4)) →
-      ∃ b, Row R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env gT)
+      ∃ b, Row R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env gT)
         (env q) (env bound) (env labels) (env E) (env pi) (env a) r b) :
-    ∃ image apps, MapsTo (env (rho 4)) image apps ∧ Family R Hdom env (fun j => env (rho j))
+    ∃ image apps, MapsTo (env (rho 4)) image apps ∧ Family R Hdom (fun j => env (base j)) (fun j => env (rho j))
       (env G) (env F) (env mul) (env g) (env gT) (env q) (env bound) (env labels) (env E) (env pi) (env a) apps := by
-  let up := fun j : Fin k => j.castSucc.castSucc
-  let query := row R Hdom up (fun j => up (rho j)) (up G) (up F) (up mul) (up g) (up gT) (up q)
-    (up bound) (up labels) (up E) (up pi) (up a) (Fin.last k).castSucc (Fin.last (k+1))
-  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k :=
+  let up := fun j : Fin m => j.castSucc.castSucc
+  let query := row R Hdom (fun j => up (base j)) (fun j => up (rho j)) (up G) (up F) (up mul) (up g) (up gT) (up q)
+    (up bound) (up labels) (up E) (up pi) (up a) (Fin.last m).castSucc (Fin.last (m+1))
+  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m :=
     { bound := fun j => env j.rev, free := fun _ => env (rho 4) }
   have he r b : (ProjectSyntax.binary query).denote penv r b ↔
-      Row R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env gT)
+      Row R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env gT)
         (env q) (env bound) (env labels) (env E) (env pi) (env a) r b := by
     rw [ForcingMapConditions.binary_semantics hM query env (env (rho 4)) r b]
     simp only [ForcingMapConditions.MapRel,query,row_semantics (M := M),up,Fin.lastCases_last,Fin.lastCases_castSucc]
@@ -180,6 +180,17 @@ theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
   exact ⟨image,apps,(ForcingSupportSize.native_mapsTo hM _ _ _).mpr hApps,
     fun r b => (hEdge r b).trans (and_congr Iff.rfl (he r b))⟩
 
+
+theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (G F mul g gT q bound labels E pi a : Fin k) {I : M.Carrier .set}
+    (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) I (env (rho 4)))
+    (hTotal : ∀ r, (Project.FirstOrderSemantics.reduct M).mem r (env (rho 4)) →
+      ∃ b, Row R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env gT)
+        (env q) (env bound) (env labels) (env E) (env pi) (env a) r b) :
+    ∃ image apps, MapsTo (env (rho 4)) image apps ∧ Family R Hdom env (fun j => env (rho j))
+      (env G) (env F) (env mul) (env g) (env gT) (env q) (env bound) (env labels) (env E) (env pi) (env a) apps := by
+  exact exists_family_over hM R Hdom env id rho G F mul g gT q bound labels E pi a hDiagrams hTotal
 
 theorem app_data (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     {R : Formula (k+2)} {Hdom : Formula (k+1)} {env : Fin k → M.Carrier .set} {v : Fin 7 → M.Carrier .set}

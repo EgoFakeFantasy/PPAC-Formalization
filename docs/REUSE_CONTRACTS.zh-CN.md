@@ -309,3 +309,7 @@ At 双向传输与 tail_fixed/represents_same_code 已完成。ForcingPersistent
 ForcingPersistentWorks 已组合既有 exists_family/exists_arrows/exists_component/exists_quotient，并用原图/集合外延性证明呈现唯一；represented_iff 连接新的逐条件存在量词与指定实际商上的 Represents。其 selection_models 实际消费 ForcingPersistentSelection.selection_models，七条通用定律由已有 Same 与实际 Works 消去。没有重新构造资格/商后端，没有添加给定 works_mono 或 Same 等价性前提；代码载体与固定良序仍是原定理输入。下一消费者为源 works_covariance:238、same_covariance:270、selected_covariance:292 和 exists_working_code_of_stable:371。
 
 ForcingPersistentCovariance 已直接消费 principal_move、eqG_principal、local_eq_transport_iff、mapping_congr 和 tail_fixed，完成原 Same 协变；actual represented-existence 消费 represented_iff 与 represents_same_code。下一 Works 全条件装配应组合现有 ForcingEligibleSystem.system_of_families、ForcingEligibleReindex 的实际 app/自然性构造及 ForcingComponentRebase.exists_transport；这些生产者并非数学缺口。System 生产者需要的 Choice 仍由既有 ConstructibleGround.relative / ConstructibleSource.model_choice 在内部 L 处理，不新增普通 ZF 的对象 Choice，也不重证 L。
+
+## PersistentCodes 全条件协变的实际复用
+
+ForcingWorksCovariance.represented_covariance 对每个条件调用已有主滤子、对象族、限制图、system_of_families、eligible app、available_iff 和 ComponentRebase.exists_transport，实际消去此前 represented_transport_iff 的两侧呈现、自然性和双射输入。仅泛化三个既有族收集器的环境参数位置，未重建函数、Collection、选择、L 或商后端。完整 Works 再处理所有更强条件；Selected 直接消费 Works/Same，代码序保持字面不变。原核证书及全量验收均通过，证据见 STATUS；下一个源消费者为 exists_working_code_of_stable:371。

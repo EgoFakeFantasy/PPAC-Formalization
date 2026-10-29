@@ -58,6 +58,35 @@ theorem bundle_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
     ForcingComponentGluing.component_semantics hM,ForcingComponentGluing.classes_semantics hM,ForcingComponentGluing.projection_semantics hM]
   rfl
 
+theorem assemble_at_filter (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w one G F mul q bound labels E root : Fin k) (g : M.Carrier .set)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w)
+      (env (rho 1)) (env (rho 2)) (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hg : ForcingLocalAtomic.CohenFilter (env (rho 3)) g) :
+    ∃ objImage objects S mapImage maps P Q gluePr,
+      Bundle (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+        (env I) (env G) (env F) (env mul) g (env q) (env bound) (env labels) (env E) (env root)
+        objImage objects S mapImage maps P Q gluePr := by
+  obtain ⟨objImage,objects,hObjMap,hObj⟩ := ForcingEligibleFamily.exists_family_over hM
+    (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) (Fin.lastCases g env)
+    Fin.castSucc (fun j => (rho j).castSucc) G.castSucc F.castSucc mul.castSucc (Fin.last k)
+    q.castSucc bound.castSucc labels.castSucc E.castSucc I.castSucc (rho 4).castSucc
+    (by simpa only [Fin.lastCases_castSucc] using hp.2.2.2.1)
+  simp only [Fin.lastCases_castSucc,Fin.lastCases_last] at hObjMap hObj
+  obtain ⟨S,hS⟩ := ForcingEligibleMapFamily.exists_arrows hM env (rho 0) mul (rho 4)
+  obtain ⟨mapImage,maps,hMap,hMaps⟩ := ForcingEligibleMapFamily.exists_family_at_filter hM env rho G F mul
+    I K B w one q bound labels E g S hm hp hg hS
+  obtain ⟨vertices,hVertices⟩ := ConstructionComponentCarrier.exists_carrier hM (env (rho 0)) (env I) (env mul) (env q)
+  obtain ⟨image,fibers,hFibers,hFamily⟩ := ForcingComponentFibers.exists_family hM hp.2.2.2.1 hObjMap hVertices
+  obtain ⟨A,hA⟩ := ForcingComponentMatches.exists_carrier hM hVertices hFibers hFamily
+  obtain ⟨P,hP⟩ := ForcingComponentGluing.exists_component hM hA (root := env root)
+  obtain ⟨Q,gluePr,hpr,hQ,hProjection⟩ := ForcingComponentGluing.exists_quotient hM
+    (env (rho 0)) (env I) (env mul) (env q) objects maps P
+  exact ⟨objImage,objects,S,mapImage,maps,P,Q,gluePr,hObjMap,hObj,hS,hMap,hMaps,hP,hpr,hQ,hProjection⟩
+
+
 theorem assemble (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
     (I K B w one G F mul g q bound labels E root : Fin k)
@@ -69,19 +98,7 @@ theorem assemble (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
       Bundle (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
         (env I) (env G) (env F) (env mul) (env g) (env q) (env bound) (env labels) (env E) (env root)
         objImage objects S mapImage maps P Q gluePr := by
-  obtain ⟨objImage,objects,hObjMap,hObj⟩ := ForcingEligibleFamily.exists_family hM
-    (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env rho G F mul g q bound labels E I (rho 4) hp.2.2.2.1
-  obtain ⟨S,hS⟩ := ForcingEligibleMapFamily.exists_arrows hM env (rho 0) mul (rho 4)
-  obtain ⟨mapImage,maps,hMap,hMaps⟩ := ForcingEligibleMapFamily.exists_family hM env rho G F mul
-    I K B w one g q bound labels E S hm hp hg hS
-  obtain ⟨vertices,hVertices⟩ := ConstructionComponentCarrier.exists_carrier hM (env (rho 0)) (env I) (env mul) (env q)
-  obtain ⟨image,fibers,hFibers,hFamily⟩ := ForcingComponentFibers.exists_family hM hp.2.2.2.1 hObjMap hVertices
-  obtain ⟨A,hA⟩ := ForcingComponentMatches.exists_carrier hM hVertices hFibers hFamily
-  obtain ⟨P,hP⟩ := ForcingComponentGluing.exists_component hM hA (root := env root)
-  obtain ⟨Q,gluePr,hpr,hQ,hProjection⟩ := ForcingComponentGluing.exists_quotient hM
-    (env (rho 0)) (env I) (env mul) (env q) objects maps P
-  exact ⟨objImage,objects,S,mapImage,maps,P,Q,gluePr,hObjMap,hObj,hS,hMap,hMaps,hP,hpr,hQ,hProjection⟩
-
+  exact assemble_at_filter hM env rho I K B w one G F mul q bound labels E root (env g) hm hp hg
 
 def constructionSentence {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul g q bound labels E root : Fin k) : Project.Sentence where
   formula := Project.Formula.forallClosure k (.imp (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid (rho 0) mul one))
@@ -106,6 +123,63 @@ theorem construction_models {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F m
 theorem construction_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul g q bound labels E root : Fin k) :
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (constructionSentence rho I K B w one G F mul g q bound labels E root)) :=
   ModelTransfer.derives (fun _ hM => construction_models rho I K B w one G F mul g q bound labels E root hM)
+
+/-- PersistentCodes.works_covariance uses this presentation at every stronger
+condition. Only the filter varies; R, Hdom and their ambient parameters stay fixed. -/
+theorem assemble_principal (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w one G F mul q bound labels E root : Fin k) {d : M.Carrier .set}
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w)
+      (env (rho 1)) (env (rho 2)) (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hd : (Project.FirstOrderSemantics.reduct M).mem d (env (rho 3))) :
+    ∃ g objImage objects S mapImage maps P Q gluePr,
+      ForcingPrincipalFilter.Principal (env (rho 3)) d g ∧
+      Bundle (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j))
+        (env I) (env G) (env F) (env mul) g (env q) (env bound) (env labels) (env E) (env root)
+        objImage objects S mapImage maps P Q gluePr := by
+  obtain ⟨g,hg⟩ := ForcingPrincipalFilter.exists_principal hM (env (rho 3)) d
+  obtain ⟨oi,objects,S,mi,maps,P,Q,pr,hB⟩ := assemble_at_filter hM env rho
+    I K B w one G F mul q bound labels E root g hm hp (ForcingPrincipalFilter.principal_filter hd hg)
+  exact ⟨g,oi,objects,S,mi,maps,P,Q,pr,hg,hB⟩
+
+def principalSentence {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w one G F mul q bound labels E root d : Fin k) : Project.Sentence where
+  formula :=
+    let up : Fin k → Fin (k+9) := fun j => j.succ.succ.succ.succ.succ.succ.succ.succ.succ
+    Project.Formula.forallClosure k
+      (.imp (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid (rho 0) mul one))
+      (.imp (ProjectSyntax.encode id (ForcingProductFamily.presentation (rho 0) I K B w (rho 1) (rho 2) (rho 3) (rho 4) (rho 5) (rho 6)))
+      (.imp (.mem (.bound d) (.bound (rho 3)))
+      (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE
+        (.conj (ForcingPrincipalFilter.principal (up (rho 3)) (up d) 8)
+          (bundle (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) up (fun j => up (rho j))
+            (up I) (up G) (up F) (up mul) 8 (up q) (up bound) (up labels) (up E) (up root)
+            7 6 5 4 3 2 1 0))))))))))))))
+  freeClosed := by
+    simp [Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,
+      ForcingPrincipalFilter.principal_freeClosed,bundle_freeClosed]
+
+theorem principal_models {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w one G F mul q bound labels E root d : Fin k)
+    (hM : FirstOrder.Theory.Models M nativeZF) :
+    (Project.fo_sentence (principalSentence rho I K B w one G F mul q bound labels E root d)).TrueIn M := by
+  rw [Project.FirstOrderSemantics.sentence_correct (ModelTransfer.extensionality hM),SetTheory.Structure.satisfiesSentence_iff]
+  intro free
+  apply (Project.Formula.satisfies_forallClosure_iff free _).mpr
+  intro env
+  simp only [Project.Formula.satisfies_imp_iff,Project.Formula.satisfies_exists_iff,
+    Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),
+    ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingProductFamily.presentation_semantics (M := M),
+    ForcingPrincipalFilter.principal_semantics (M := M),bundle_semantics hM]
+  exact assemble_principal hM env rho I K B w one G F mul q bound labels E root
+
+theorem principal_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w one G F mul q bound labels E root d : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (Project.fo_sentence (principalSentence rho I K B w one G F mul q bound labels E root d)) :=
+  ModelTransfer.derives (fun _ hM => principal_models rho I K B w one G F mul q bound labels E root d hM)
 
 def Represented {k : Nat} (R : Formula (k+2)) (Hdom : Formula (k+1))
     (env : Fin k → M.Carrier .set) (v : Fin 7 → M.Carrier .set)

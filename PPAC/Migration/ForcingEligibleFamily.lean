@@ -187,20 +187,20 @@ theorem family_semantics {k m : Nat} (env : Fin m → M.Carrier .set)
     row_semantics (M := M),paramsUp,Fin.lastCases_last,Fin.lastCases_castSucc]
   exact ⟨fun h r O => ⟨(h r O).1,(h r O).2⟩,fun h r O => ⟨(h r O).mp,(h r O).mpr⟩⟩
 
-theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
-    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set)
-    (rho : Fin 7 → Fin k) (G F mul g q nameBound labels E I diagrams : Fin k)
+theorem exists_family_over (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin m → M.Carrier .set)
+    (base : Fin k → Fin m) (rho : Fin 7 → Fin m) (G F mul g q nameBound labels E I diagrams : Fin m)
     (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env diagrams)) :
     ∃ image objects, MapsTo (env diagrams) image objects ∧
-      Family R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
+      Family R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
         (env nameBound) (env labels) (env E) (env diagrams) objects := by
-  let up : Fin k → Fin (k+2) := fun i => i.castSucc.castSucc
-  let query := row R Hdom up (fun j => up (rho j)) (up G) (up F) (up mul) (up g)
-    (up q) (up nameBound) (up labels) (up E) (Fin.last k).castSucc (Fin.last (k+1))
-  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k :=
+  let up : Fin m → Fin (m+2) := fun i => i.castSucc.castSucc
+  let query := row R Hdom (fun j => up (base j)) (fun j => up (rho j)) (up G) (up F) (up mul) (up g)
+    (up q) (up nameBound) (up labels) (up E) (Fin.last m).castSucc (Fin.last (m+1))
+  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m :=
     { bound := fun i => env i.rev, free := fun _ => env diagrams }
   have hRel : ∀ r O, (ProjectSyntax.binary query).denote penv r O ↔
-      Row R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
+      Row R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
         (env nameBound) (env labels) (env E) r O := by
     intro r O
     rw [ForcingMapConditions.binary_semantics hM query env (env diagrams) r O]
@@ -209,7 +209,7 @@ theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
   have ht : ∀ r, (Project.FirstOrderSemantics.reduct M).mem r (env diagrams) →
       ∃ O, (ProjectSyntax.binary query).denote penv r O := by
     intro r hr
-    obtain ⟨O,hO⟩ := exists_row hM R Hdom env (fun j => env (rho j)) (env G) (env F)
+    obtain ⟨O,hO⟩ := exists_row hM R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F)
       (env mul) (env g) (env q) (env nameBound) (env labels) (env E) ((hDiagrams r).mp hr)
     exact ⟨O,(hRel r O).mpr hO⟩
   have hu : ∀ r O P, (ProjectSyntax.binary query).denote penv r O →
@@ -224,6 +224,15 @@ theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (fun r O hr hO => (hImage O).mpr ⟨r,hr,hO⟩)
   exact ⟨image,objects,(ForcingSupportSize.native_mapsTo hM (env diagrams) image objects).mpr hObj,
     fun r O => (hEdge r O).trans (and_congr Iff.rfl (hRel r O))⟩
+
+theorem exists_family (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set)
+    (rho : Fin 7 → Fin k) (G F mul g q nameBound labels E I diagrams : Fin k)
+    (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env diagrams)) :
+    ∃ image objects, MapsTo (env diagrams) image objects ∧
+      Family R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g) (env q)
+        (env nameBound) (env labels) (env E) (env diagrams) objects := by
+  exact exists_family_over hM R Hdom env id rho G F mul g q nameBound labels E I diagrams hDiagrams
 
 def constructionSentence {k : Nat} (rho : Fin 7 → Fin k)
     (G F mul g q nameBound labels E I diagrams : Fin k) : Source.Sentence :=

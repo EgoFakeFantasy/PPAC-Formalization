@@ -12324,4 +12324,17 @@ example {k m : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1))
       (ForcingPersistentCovariance.representedSentence R Hdom base rho I K B w G F mu pi inv c act ai mul one g gT q bound labels E root rootT oi objects S mi maps P Q pr oiT targets ST miT targetMaps PT Z prT appImage apps phi zero vertices chain names code d dT)) :=
   ForcingPersistentCovariance.represented_kernel_certificate R Hdom base rho I K B w G F mu pi inv c act ai mul one g gT q bound labels E root rootT oi objects S mi maps P Q pr oiT targets ST miT targetMaps PT Z prT appImage apps phi zero vertices chain names code d dT
 
+-- Actual principal presentations and full source Works/Selected covariance.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul q bound labels E root d : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingPersistentWorks.principalSentence rho I K B w one G F mul q bound labels E root d)) :=
+  ForcingPersistentWorks.principal_kernel_certificate rho I K B w one G F mul q bound labels E root d
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingWorksCovariance.worksSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code))) :=
+  ForcingWorksCovariance.works_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code codes order : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingWorksCovariance.selectedSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code codes order))) :=
+  ForcingWorksCovariance.selected_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code codes order
+
 end PPAC.Migration.Step4Checks
