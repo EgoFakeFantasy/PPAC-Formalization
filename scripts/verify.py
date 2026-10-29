@@ -2369,7 +2369,8 @@ def main() -> None:
                                ('forcing_ordinal_transitivity', 'ForcingOrdinalTransitivity', 25),
                                ('forcing_check_reflection', 'ForcingCheckReflection', 8),
                                ('forcing_raw_rank', 'ForcingRawRank', 20),
-                               ('forcing_ordinal_decision', 'ForcingOrdinalDecision', 17)):
+                               ('forcing_ordinal_decision', 'ForcingOrdinalDecision', 17),
+                               ('forcing_ordinal_coding', 'ForcingOrdinalCoding', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]

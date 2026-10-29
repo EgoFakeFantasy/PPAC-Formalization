@@ -12416,4 +12416,11 @@ example {n : Nat} (fullOrdinal : Bool) (rho : Fin 7 → Fin n)
       (Translation.sentence (ForcingOrdinalDecision.decisionSentence fullOrdinal rho G F mul unit I K B w top sigma p a)) :=
   ForcingOrdinalDecision.decision_kernel_certificate fullOrdinal rho G F mul unit I K B w top sigma p a
 
+-- Same actual rank graph/type: decision, nonself membership, equality and lower ordinal witnesses.
+example {n m : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (ra : Fin 7 → Fin m)
+    (I K B w G F support X order history selection mul unit top p a b na nb theta ntheta : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrdinalCoding.codingSentence R rp ra I K B w G F support X order history selection mul unit top p a b na nb theta ntheta)) :=
+  ForcingOrdinalCoding.coding_kernel_certificate R rp ra I K B w G F support X order history selection mul unit top p a b na nb theta ntheta
+
 end PPAC.Migration.Step4Checks

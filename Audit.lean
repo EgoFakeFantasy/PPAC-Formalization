@@ -33958,3 +33958,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalDecision.decisionSentence
 #print axioms PPAC.Migration.ForcingOrdinalDecision.decision_models
 #print axioms PPAC.Migration.ForcingOrdinalDecision.decision_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrdinalCoding.selectionType_decide
+#print axioms PPAC.Migration.ForcingOrdinalCoding.ordF_not_mem_self
+#print axioms PPAC.Migration.ForcingOrdinalCoding.selectedRank_eq_iff
+#print axioms PPAC.Migration.ForcingOrdinalCoding.selectedRank_decide
+#print axioms PPAC.Migration.ForcingOrdinalCoding.typeDecision
+#print axioms PPAC.Migration.ForcingOrdinalCoding.typeDecision_semantics
+#print axioms PPAC.Migration.ForcingOrdinalCoding.lowerDecision
+#print axioms PPAC.Migration.ForcingOrdinalCoding.lowerDecision_semantics
+#print axioms PPAC.Migration.ForcingOrdinalCoding.selectedInput
+#print axioms PPAC.Migration.ForcingOrdinalCoding.codingBody
+#print axioms PPAC.Migration.ForcingOrdinalCoding.codingSentence
+#print axioms PPAC.Migration.ForcingOrdinalCoding.coding_models
+#print axioms PPAC.Migration.ForcingOrdinalCoding.coding_kernel_certificate
