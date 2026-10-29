@@ -91775,6 +91775,293 @@
           "propext"
         ]
       }
+    },
+    "forcing_check_reflection": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ProductNames.lean",
+      "source_sha256": "1ec99b9b4f1dac8bd7ec226748f3d0f5504e0ab9867537be48a66244ec463376",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/PersistentCodes.lean": "f86be2754f8ac929d3917bd94ff69e43f27f1509bf72f2022f004a184d3c0b46"
+      },
+      "adapter": "PPAC/Migration/ForcingCheckReflection.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCheckReflection.lean": "289b19964dc65704e87f047ca87d8c39c1b3c76ba2862e41e50d26427316ddcf",
+        "PPAC/Migration/ForcingCheckName.lean": "03490645003c350257b3434aca2b732893191946b030e9470d3b12128e2e95f9",
+        "PPAC/Migration/ForcingInfinity.lean": "001e2b4c508e36f966bf2bf9f884fb87f43e8787ef0b153ac879dfc75a5ac77b",
+        "PPAC/Migration/ForcingAtomicBasic.lean": "470ff2eefaaf0fbebd58421265f2e87d6232a0a94ecbd71f03e954c543a3951f",
+        "PPAC/Migration/ForcingAtomicLaws.lean": "ae6c417bb6b430517b3b3c69c2ff0f5803f456f8896bf7e03574df416bcc9aad"
+      },
+      "source_declarations": [
+        "ProductNames.eq_check_iff:138",
+        "ProductNames.mem_check_check:161"
+      ],
+      "consumers": [
+        "PersistentCodes.ordF_eq_check_le:521 (hbounded/hmiss)",
+        "OrdinalCodes.selectionType_decide:180/selectedRank_decide:229 then CodeLinks"
+      ],
+      "scope": "Ordinary nativeZF original-kernel equivalence of actual checked-name equality/membership with ground equality/membership, for all internal sets and all conditions in the original preorder with a top. The original single member-induction proof is consumed through existing ForcingCheckName.formula_induction; actual check-name existence/uniqueness, atomic equality congruence and dense check membership are reused. No external well-foundedness, generic extension, new checker, Choice or rank cutoff. Actual preorder/top premises have existing producers.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCheckReflection.equalityAt": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.equalityAt_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.equality_reflects": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.eq_check_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.mem_check_check": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.comparisonSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.comparison_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCheckReflection.comparison_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_raw_rank": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+      "source_sha256": "8960224d120911db992ac0c5a1d5e92eb518643b353f0a1fa7d2e4f08177f50f",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/PersistentCodes.lean": "f86be2754f8ac929d3917bd94ff69e43f27f1509bf72f2022f004a184d3c0b46"
+      },
+      "adapter": "PPAC/Migration/ForcingRawRank.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRawRank.lean": "87fe73bc6142694c6934a605c451760ba129bf86dc3dee670271feea5a9849d5",
+        "PPAC/Migration/ObjectRankCover.lean": "c2889f97661335fd91490779cb74b4f5ff7ca3e49726c093a38b1e6e6288d8f2",
+        "PPAC/Migration/LayerRankSyntax.lean": "0869386cf64a95a0c96288f41b9bc5257141bf9e455ebdf2e79838e5e36a80a6",
+        "PPAC/Migration/ObjectHierarchyAlgebra.lean": "bd6eedd82829c990208944a6b90580fac0e417783c26dd975f4cf9eb2164f679",
+        "PPAC/Migration/HierarchyMemberSyntax.lean": "fdcf6b94266a904360c42fa684b5d83cf2f4d0ffd77a10dcbd44747a93e9749c",
+        "PPAC/Migration/ObjectOrdinalBasic.lean": "caa3aaeef60d886688a8758d24a3a8bc39b5746356143b70eefaa192a1ec46f6",
+        "PPAC/Migration/ForcingNameInduction.lean": "6008d60f8d67987246f6fd25d4a3b0805360dfe16ddcf66a4e76abdcc9b03e65"
+      },
+      "source_declarations": [
+        "AtomicForcing.Child.rank_lt:10-14",
+        "PersistentCodes.ordF_eq_check_le:521 hbounded quantitative rank bound"
+      ],
+      "consumers": [
+        "PersistentCodes.ordF_eq_check_le:521 (hbounded/hmiss)",
+        "OrdinalCodes.selectionType_decide:180/selectedRank_decide:229 then CodeLinks"
+      ],
+      "scope": "Ordinary nativeZF original-kernel strict Child rank descent using the EXISTING LayerRankSyntax.rank and cumulative hierarchy. Rank/Layer/Ordinal are semantic interpretations of unchanged existing object formulas. ObjectRankCover.native_rank/native_equality and ObjectHierarchyAlgebra.native_membership are actually consumed; existence and uniqueness are reused rather than rebuilt. Membership decreases the exact least-containing-layer rank, and the original three Kuratowski links give Child descent. No proxy height, new rank construction, external WellFounded or Choice. This supplies the bound interface needed by original ordF_eq_check_le; that complete decision theorem and final internal Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRawRank.Ordinal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.Layer": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.Rank": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.env_args2": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.ordinal_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.layer_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.rank_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.contains_semantics": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.rank_spec": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.closed_truth": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.exists_rank": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.unique_rank": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.ordinal_member": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.ordinal_transitive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.layer_membership": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.member_rank_lt": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.child_rank_lt": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.descentSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.descent_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawRank.descent_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

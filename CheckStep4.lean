@@ -12401,4 +12401,13 @@ example {k n m : Nat} (L : Source.Formula (k+2)) (H : Source.Formula (k+1))
       (ForcingOrdinalTransitivity.formulaBridgeSentence L H lp v P p x)) :=
   ForcingOrdinalTransitivity.formula_bridge_kernel_certificate L H lp v P p x
 
+-- Actual check names reflect equality/membership; existing exact ranks decrease on Child.
+example {k m : Nat} (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
+    (P top x y nx ny p : Fin m) : FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingCheckReflection.comparisonSentence L lp P top x y nx ny p)) :=
+  ForcingCheckReflection.comparison_kernel_certificate L lp P top x y nx ny p
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingRawRank.descentSentence) :=
+  ForcingRawRank.descent_kernel_certificate
+
 end PPAC.Migration.Step4Checks
