@@ -66,3 +66,11 @@ ForcingStableCodes 迁移固定 PersistentCodes.exists_working_code_of_stable:37
 construction_kernel_certificate 在 nativeZF 原核中证明同一内部 L 相对化的完整闭句。原几何、支撑、链、局部名字和稳定可用性假设全部保留。实际源消费者为 CodeCardinals.ordinalType_lower_count:235，和 CodeLinks.ordinalRank_decide 汇合；下一步沿 OrdinalCodes 的 selectedRank/selectionType 构造，复用 ForcingCollectedName/HS、原生 Ord.OrderType.wellOrderType_existsUnique 及 Ord.Recursion.recursiveSequence_exists，不重建名字收集或递归后端。
 
 实际验收：2969 项构建、33285 项声明；新增 6 项，原 33279 项足迹逐项不变。9 条命令、5 次 trust=0 全部退出 0；零警告、无新增公理依赖；75 份固定源和 2524 份当前文件哈希匹配。证据：verification/stable-codes-acceptance.json。原阶段仍为 8，最终内部 Con 未完成。
+
+## OrdinalCodes 的实际递归名字（全量验收通过）
+
+ForcingOrdinalRanks 对应固定源 selectedRankFixed:49、selectedRank:54、selectionType:57 与 selectedRankFixed_eq:71。现成 wellOrderType_existsUnique 把任意内部集合编码良序坍缩到内部序数；recursiveSequence_exists 递归调用现成名字收集；exists_compositionFunction 把同一历史重索引回原载体。所有索引都是模型内部集合，不要求宿主 WellFounded、外部标准序数或名字秩界。
+
+同一实际 rank 函数满足逐点精确前驱收集方程；原生良序归纳使用分离得到的反例集合，证明全部函数值均为 IsName。同一函数的完整收集给出 selectionType，并证明它也是 IsName。construction_kernel_certificate 是普通 nativeZF 原核中的纯成员闭句，不增加对象 Choice，不通过重新定义目标或换成已求值序型替代源名字。
+
+实际全量验收通过：2970 项构建、33320 项声明，新增 35 项，原 33285 项足迹逐项不变；9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 份固定源和 2525 份当前文件哈希全部匹配。报告：verification/ordinal-ranks-acceptance.json。源声明后续的 HS、共同子群固定性、强迫成员/序数/决定定理尚未迁移，不能把本批记作完整 selectedRankFixed 或整个 OrdinalCodes 完成。下一步复用 ForcingCollectedHS.fixed/collect_HS 与内部良序归纳，随后接 mem_selectedRank/mem_selectionType；实际消费者是 CodeLinks.ordinalRank:95/ordinalType:101。原阶段仍为 8，第 9–11 阶段及最终内部 Con 不变。

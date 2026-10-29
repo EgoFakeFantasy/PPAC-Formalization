@@ -12355,4 +12355,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingStableCodes.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z))) :=
   ForcingStableCodes.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r a U Ar Hr d tau z
 
+-- Actual names on every internal set-coded wellorder, in ordinary nativeZF.
+example {n m : Nat} (R : Source.Formula (n+2)) (rho : Fin n → Fin m) (X order P : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrdinalRanks.constructionSentence R rho X order P)) :=
+  ForcingOrdinalRanks.construction_kernel_certificate R rho X order P
+
 end PPAC.Migration.Step4Checks

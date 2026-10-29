@@ -32,3 +32,5 @@
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 
 本批 ReindexIso 的通用原核端点允许不同源/目标 System；实际标签端点进一步构造唯一 app 函数族并证明全部自然性。两个端点均为普通 nativeZF 推导；整分量 gluedEquiv_toGlued 已由本批原核端点完成；移动滤子 eligibleSystemTransport 的全 app 族与自然性现已由 ForcingEligibleReindex 接入，使用两侧实际对象/限制族；完整模型应用仍须按上表继续。源码与精确依赖由 SOURCE_LOCK、THEOREM_COVERAGE 保留。新的辅助引理必须有上表实际消费者；不恢复 Packet/reader，不重复完整 L/公理模式/递归/Proof/Sat/函数商后端。无当前调用的 localName_of_raw、顶点 quotient/zigzag API 不作为主线前置。发布仍须独立授权。
+
+本轮 OrdinalCodes 入口：ForcingOrdinalRanks 已构造任意内部良序上的实际 rank 名字函数和同一 selectionType，保留精确前驱收集方程，并通过内部良序归纳证明全部 IsName；普通 nativeZF 原核证书及全量验收已通过（2970 构建、33320 声明、9 条命令／5 次 trust=0，原 33285 足迹不变）。接下来只需在这个 SAME 函数上接入现成 collect_HS/fixed 的内部归纳和源强迫定理；不得重做坍缩、递归、函数图、名字收集。HS/固定性及后续 CodeLinks 尚未完成，原阶段仍为 8。
