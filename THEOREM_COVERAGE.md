@@ -718,3 +718,12 @@ ForcingCodeLinks adapts pinned Links:171, links_mono:179, links_common:188, link
 下一源步骤为 CodeLinks.exists_linked_working_of_stable:349，随后 links_descend:405、working_linked:421 及 CodeCardinals／GermSelectors 消费者。exists_representing_code、exists_fiber_principal、at_of_root_eq、common_iff／rebase_gluing、links_of_represents_at 和 eq_at_root 已存在；需要将现成传输接到任意共同分量顶点，保留同一链码及全部加强条件，不重造代表码、局部商、稳定工作码或反射基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 新增端点为 `ForcingLinkedStability.construction_kernel_certificate`。结论保留两项完整源断言，不把资格本身、单条件稳定性或模型语义辅助定理当作最终内部 Con。
+
+
+## CodeLinks linked working code at any Common vertex — 2026-10-29
+
+固定源 CodeLinks.exists_linked_working_of_stable:349 已由 ForcingLinkedWorking 接入。任意共同分量顶点上的资格与精确稳定理想，产生一个同时满足 ChainCode、Works 和 Links 的链码；链码在初始条件只选一次，Works 中全部加强条件使用同一码。现成 exists_fiber_principal、原代表码生产者、links_of_represents_at、links_mono 和 at_of_root_eq 共同完成传输；换根只通过 common_iff 调整共同分量条件，实际对象、纤维、商类和投影保持字面相同。ForcingTailCodes 的原生产证明仅参数化环境嵌入，新增 exists_representing_code_over，旧接口作为 id 特例保留，全部 32 项旧生产者足迹不变。最终取得同一内部 L 相对化的 nativeZF 原核证书。全量验收：2988 项构建、33582 项声明（新增 5 项），全部 33577 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2543 项当前哈希匹配。直接源消费者为 OrbitAssignments.corrected_onto:88（调用第 106 行）。记录：verification/linked-working-acceptance.json。
+
+下一源步骤为 CodeLinks.links_descend:405、working_linked:421，随后 CodeCardinals／GermSelectors 消费者。eq_at_root、现有 Links 局部反射、arrow_comp、common_iff、at_total／at_entry 和 links_of_represents_at 已存在；只组合真实源消费者，不重建反射、名字、商集或选择基础。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+
+新增端点为 `ForcingLinkedWorking.construction_kernel_certificate`。对象结论保持先存在同一链码、再覆盖所有加强条件；不将顶点限为链的初始根，不把源宿主选择或模型语义中间证明当作最终内部 Con。

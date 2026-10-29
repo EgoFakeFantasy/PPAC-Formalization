@@ -34113,3 +34113,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLinkedStability.constructionSentence
 #print axioms PPAC.Migration.ForcingLinkedStability.construction_models
 #print axioms PPAC.Migration.ForcingLinkedStability.construction_kernel_certificate
+
+-- Reuse the same code at all stronger conditions, at any Common vertex.
+#print axioms PPAC.Migration.ForcingTailCodes.exists_representing_code_over
+#print axioms PPAC.Migration.ForcingLinkedWorking.exists_linked_working_of_stable
+#print axioms PPAC.Migration.ForcingLinkedWorking.constructionSentence
+#print axioms PPAC.Migration.ForcingLinkedWorking.construction_models
+#print axioms PPAC.Migration.ForcingLinkedWorking.construction_kernel_certificate

@@ -231,10 +231,12 @@ theorem represents_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m : N
   rfl
 
 
-theorem exists_representing_code (hM : FirstOrder.Theory.Models M nativeZF)
-    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
-    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (I G F mul g q bound labels E objects maps root gluePr w names chain b : Fin k)
+/-- The existing representing-code construction with an arbitrary environment embedding.
+This lets its callers supply actual internally constructed families without changing R/Hdom. -/
+theorem exists_representing_code_over (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k m : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin m → M.Carrier .set) (base : Fin k → Fin m) (rho : Fin 7 → Fin m)
+    (I G F mul g q bound labels E objects maps root gluePr w names chain b : Fin m)
     {vertices objImage Q : M.Carrier .set}
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
@@ -243,23 +245,23 @@ theorem exists_representing_code (hM : FirstOrder.Theory.Models M nativeZF)
       EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) vertex)
     (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env (rho 4)))
     (hObjMap : MapsTo (env (rho 4)) objImage (env objects))
-    (hObj : ForcingEligibleFamily.Family R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g)
+    (hObj : ForcingEligibleFamily.Family R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env G) (env F) (env mul) (env g)
       (env q) (env bound) (env labels) (env E) (env (rho 4)) (env objects))
     (hAll : ForcingComponentGluing.AllFiberMaps (env (rho 0)) (env I) (env mul) (env q) (env objects) (env maps) (env root) Q (env gluePr))
     (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) Q) :
     ∃ a, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) a ∧
-      Represents R Hdom env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env g) (env q) (env bound)
+      Represents R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env g) (env q) (env bound)
         (env labels) (env E) (env objects) (env maps) (env root) (env gluePr) (env w) (env chain) a (env b) := by
-  let schema : Project.BinarySchema k := {
+  let schema : Project.BinarySchema m := {
     body := .existsE (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge chain.succ.succ.succ 2 0))
-      (atName R Hdom (fun j => j.succ.succ.succ) (fun j => (rho j).succ.succ.succ)
+      (atName R Hdom (fun j => (base j).succ.succ.succ) (fun j => (rho j).succ.succ.succ)
         I.succ.succ.succ G.succ.succ.succ F.succ.succ.succ mul.succ.succ.succ g.succ.succ.succ q.succ.succ.succ
         bound.succ.succ.succ labels.succ.succ.succ E.succ.succ.succ objects.succ.succ.succ maps.succ.succ.succ
         root.succ.succ.succ gluePr.succ.succ.succ 0 1 b.succ.succ.succ))
     freeClosed := by simp -implicitDefEqProofs [Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,atName_freeClosed] }
-  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k := { bound := env, free := fun _ => env w }
+  let penv : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m := { bound := env, free := fun _ => env w }
   have he i sigma : schema.denote penv i sigma ↔ ∃ vertex, PureKuratowski.PairMember M i vertex (env chain) ∧
-      At R Hdom env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env g) (env q) (env bound)
+      At R Hdom (fun j => env (base j)) (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env g) (env q) (env bound)
         (env labels) (env E) (env objects) (env maps) (env root) (env gluePr) vertex sigma (env b) := by
     simp only [schema,Project.BinarySchema.denote,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,
       GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,atName_semantics hM]
@@ -281,6 +283,29 @@ theorem exists_representing_code (hM : FirstOrder.Theory.Models M nativeZF)
     obtain ⟨sigma,his,_⟩ := hMap.1.2 i hi
     obtain ⟨vertex,hv,hs⟩ := (he i sigma).mp (hSelect i sigma his)
     exact ⟨vertex,sigma,hv,his,hs⟩
+
+
+theorem exists_representing_code (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (R : Formula (k+2)) (Hdom : Formula (k+1)) (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I G F mul g q bound labels E objects maps root gluePr w names chain b : Fin k)
+    {vertices objImage Q : M.Carrier .set}
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
+    (hChain : MapsTo (env w) vertices (env chain))
+    (hCommon : ∀ i vertex, PureKuratowski.PairMember M i vertex (env chain) →
+      EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) vertex)
+    (hDiagrams : ForcingDiagramCarrier.Carrier (env (rho 0)) (env I) (env (rho 4)))
+    (hObjMap : MapsTo (env (rho 4)) objImage (env objects))
+    (hObj : ForcingEligibleFamily.Family R Hdom env (fun j => env (rho j)) (env G) (env F) (env mul) (env g)
+      (env q) (env bound) (env labels) (env E) (env (rho 4)) (env objects))
+    (hAll : ForcingComponentGluing.AllFiberMaps (env (rho 0)) (env I) (env mul) (env q) (env objects) (env maps) (env root) Q (env gluePr))
+    (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) Q) :
+    ∃ a, ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) a ∧
+      Represents R Hdom env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env g) (env q) (env bound)
+        (env labels) (env E) (env objects) (env maps) (env root) (env gluePr) (env w) (env chain) a (env b) := by
+  exact exists_representing_code_over hM hChoice R Hdom env id rho
+    I G F mul g q bound labels E objects maps root gluePr w names chain b hw hNames hChain hCommon hDiagrams hObjMap hObj hAll hb
 
 
 def candidates {m : Nat} (rho : Fin 7 → Fin m) (G F bound names : Fin m) : Project.Formula 1 m :=

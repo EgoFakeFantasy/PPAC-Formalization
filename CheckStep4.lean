@@ -12514,4 +12514,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingLinkedStability.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z a))) :=
   ForcingLinkedStability.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z a
 
+-- A single code works at all stronger conditions for any Common vertex.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingLinkedWorking.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z))) :=
+  ForcingLinkedWorking.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex r index U d tau z
+
 end PPAC.Migration.Step4Checks
