@@ -12433,4 +12433,16 @@ example {k n : Nat} (ordinal : Bool) (rho : Fin 7 → Fin k)
   ForcingOrdinalRoot.construction_kernel_certificate ordinal rho w mu history kappa e mark H C incoming base I K B G F mul
     p s d A fixing z zr top sigma rank v phi
 
+
+-- Cohen-only lift: exact coe equation, actual covariance, shared internal rank/type construction.
+example {n m : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (ra : Fin 7 → Fin m)
+    (I K B w H X a z d s : Fin m) : FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingCohenSelection.liftSentence R rp ra I K B w H X a z d s)) :=
+  ForcingCohenSelection.lift_kernel_certificate R rp ra I K B w H X a z d s
+
+example {n m : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (ra : Fin 7 → Fin m)
+    (I K B w G F H X order : Fin m) : FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingCohenSelection.constructionSentence R rp ra I K B w G F H X order)) :=
+  ForcingCohenSelection.construction_kernel_certificate R rp ra I K B w G F H X order
+
 end PPAC.Migration.Step4Checks

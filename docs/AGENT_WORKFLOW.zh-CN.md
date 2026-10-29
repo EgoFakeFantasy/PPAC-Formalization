@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：保持同一根图的序数决定已验收
+## 当前执行入口：CohenSelection 的 lift 与实际 rank/type 构造已验收
 
-普通序数决定及四个 rank/type 消费者已分别于 8ea49ed、e18d8fe 验收。本批完成固定源 OrdinalCodes.forces_at_root:260、eq_at_root:271、ordinal_decide_at_root:287。ForcingOrdinalRoot.construction_kernel_certificate 的两个实例为 nativeZF 原核中的同一内部 L 相对化闭句：支持反射保留完整 Cohen 条件并恢复同一根图；序数决定返回实际 Cohen 加强、原根条件码、精确 β≤原始内部秩及 check-name 强迫相等。已有 supporting-root、名字作用/check、普通决定、ConstructibleSource 与完整 L/ZFC/选择接口均被直接消费；选择只在同一 L 中由已有定理产生，未加到背景 nativeZF。源几何、合并、呈现和支持前提仍显式保留。全量验收通过：2978 项构建、33465 项声明（新增 13 项），全部 33452 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2533 项当前哈希匹配。记录：verification/ordinal-root-acceptance.json。
+固定源 OrdinalCodes.CohenSelection.lift:310、lift_coe:315、lift_covariance:326 及 rank/orderType/fixed:333–345 已接入 ForcingCohenSelection。lift 的内部条件／图见证保持源的 Cohen-only 语义；实际乘积／WithTop 作用逐坐标解码，通过已有 moved_of_image 推出协变，再将所得不变性实际送入已有 ranks/collection/HS 生产者，生成同一 history 与 selection 及其固定性。两个泛公式模式端点均为普通 nativeZF 原核的 Derives 证书；源呈现、滤子、支撑子群、内部良序和原 Cohen 谓词协变前提显式保留，无新增对象选择或递归／名称后端。全量验收通过：2979 项构建、33485 项声明（新增 20 项），全部 33465 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2534 项当前哈希匹配。记录：verification/cohen-selection-acceptance.json。
 
-下一源步骤为 CohenSelection.lift:310 / lift_coe:315 / lift_covariance:326，继而将同一 rank/type 接入 orderType_decide:352、rank_eq_iff:360、rank_decide:374、member_rank:391，再接 CodeLinks。实际乘积作用/条件编码、普通与固定根决定、同一 rank 图及 HS 生产者已经存在，继续直接复用。原阶段仍为 8；CohenSelection 剩余特化、完整 OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为同一 rank/type 的固定根特化：CohenSelection.orderType_decide:352、rank_eq_iff:360、rank_mem:367、rank_decide:374、member_rank:391，然后 CodeLinks。完整 CohenSelection 后半及 OrdinalCodes/CodeLinks、第 9–11 阶段和最终内部 Con 仍未完成；原阶段仍为 8。固定根决定及其同一 L 背景、普通 rank/type 定律、既有底座均已完成并复用，不列作待重建。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

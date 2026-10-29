@@ -33986,3 +33986,24 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalRoot.constructionSentence
 #print axioms PPAC.Migration.ForcingOrdinalRoot.construction_models
 #print axioms PPAC.Migration.ForcingOrdinalRoot.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCohenSelection.Lift
+#print axioms PPAC.Migration.ForcingCohenSelection.lift
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_semantics
+#print axioms PPAC.Migration.ForcingCohenSelection.liftRelation
+#print axioms PPAC.Migration.ForcingCohenSelection.mapRel_lift
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_coe
+#print axioms PPAC.Migration.ForcingCohenSelection.Covariant
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_covariance
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_invariant
+#print axioms PPAC.Migration.ForcingCohenSelection.exists_fixed_ranks
+#print axioms PPAC.Migration.ForcingCohenSelection.covariant
+#print axioms PPAC.Migration.ForcingCohenSelection.covariant_freeClosed
+#print axioms PPAC.Migration.ForcingCohenSelection.covariant_semantics
+#print axioms PPAC.Migration.ForcingCohenSelection.liftSentence
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_models
+#print axioms PPAC.Migration.ForcingCohenSelection.lift_kernel_certificate
+#print axioms PPAC.Migration.ForcingCohenSelection.context
+#print axioms PPAC.Migration.ForcingCohenSelection.constructionSentence
+#print axioms PPAC.Migration.ForcingCohenSelection.construction_models
+#print axioms PPAC.Migration.ForcingCohenSelection.construction_kernel_certificate
