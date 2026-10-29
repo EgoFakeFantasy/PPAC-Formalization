@@ -82,3 +82,11 @@ ForcingOrdinalFixed 按固定源 OrdinalCodes.FixedName.collect:28–33、select
 普通 nativeZF 原核 construction_kernel_certificate 联合返回同一个实际 rank 图、同一 selectionType、精确递归方程、全部值的 HS 和同一个 H 的字面固定性；selectionType 也具有这些性质。原实际呈现、群载体、正规滤子、子群及 H 属于滤子的条件保留，没有把欲证固定性当前提，不逐群元素重新选择函数，不增加对象 Choice 或宿主良基性。
 
 实际全量验收通过：2971 项构建、33341 项声明，新增 21 项，原 33320 项足迹逐项不变；9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 份固定源和 2526 份当前文件哈希全部匹配。报告：verification/ordinal-fixed-acceptance.json。本批关闭上一批的 HS/固定性待办。下一实际源消费者是 OrdinalCodes.mem_selectedRank:79、mem_selectionType:94；现成 ForcingAtomicRelations.mem_iff 与 ForcingCollectedName.edge_collected 可复用。后续序数决定沿源 PersistentCodes.ordF_eq_check_le:521；已完成 check-name 递归、IsName/HS/作用及 ForcingInfinity.mem_check/check_mem_of_mem 不得重做。强迫序数/决定定理、CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。
+
+## 实际 rank／selectionType 的强迫成员与初段包含（全量验收通过）
+
+ForcingOrdinalMembership 逐项迁移固定源 mem_selectedRank:79、mem_selectionType:94、selectedRank_mem_selectionType:102、selectedRank_mem_selectedRank:108、selectedRank_subset:115 和 selectedRank_subset_selectionType:124。复用 rank_collected/edge_collected 和原子 mem_iff，保留每个密集见证的内部索引、实际 history 边、选择条件、加强条件及原子 EqF；rank 情形保留严格前驱，selectionType 情形覆盖整个内部载体。
+
+membership_kernel_certificate 与 selected_kernel_certificate 分别覆盖两种情况；inclusion_kernel_certificate 在原内部良序下证明全候选、全条件的逐点成员包含，其结果接入现成 SubsetF。三个普通 nativeZF 原核端点保留已构造的同一 Ranks/Collected 前提，不换成外部求值模型或代理序型。没有新强迫/序数/名字后端、秩截断或对象 Choice。
+
+全量验收通过：2972 项构建、33369 项声明，新增 28 项；全部 33341 项旧依赖足迹不变。9 条命令及 5 次 trust=0 检查均退出 0，零警告、无新增公理依赖；75 项固定源和 2527 项当前文件哈希一致。见 verification/ordinal-membership-acceptance.json。本批关闭上一批的强迫成员和初段包含待办。下一源消费者是 transF_selectedRank:134/transF_selectionType:145，再接 ordF_selectedRank:156/ordF_selectionType:168。OrdF 是源使用的“传递集且成员传递”强迫性质，不能当成最终 ACwo 中完整 ordinal 公式的替代；普通序数决定仍沿 PersistentCodes.ordF_eq_check_le:521 迁移。CodeLinks、第 9–11 阶段和最终内部 Con 仍未完成，原阶段仍为 8。

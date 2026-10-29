@@ -12368,4 +12368,23 @@ example {n m : Nat} (R : Source.Formula (n+2)) (rho : Fin n → Fin m) (ra : Fin
       (ForcingOrdinalFixed.constructionSentence R rho ra I K B w G F H X order)) :=
   ForcingOrdinalFixed.construction_kernel_certificate R rho ra I K B w G F H X order
 
+-- Exact dense member equations and selected-member consequences, for both source cases.
+example {k n m : Nat} (initial : Bool) (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
+    (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (P X order history a name nu p : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingOrdinalMembership.membershipSentence initial L lp R rp P X order history a name nu p)) :=
+  ForcingOrdinalMembership.membership_kernel_certificate initial L lp R rp P X order history a name nu p
+
+example {k n m : Nat} (initial : Bool) (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
+    (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (P X order history a name b child p : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingOrdinalMembership.selectedSentence initial L lp R rp P X order history a name b child p)) :=
+  ForcingOrdinalMembership.selected_kernel_certificate initial L lp R rp P X order history a name b child p
+
+example {k n m : Nat} (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
+    (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (P X order history a b na nb selection nu p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrdinalMembership.inclusionSentence L lp R rp P X order history a b na nb selection nu p)) :=
+  ForcingOrdinalMembership.inclusion_kernel_certificate L lp R rp P X order history a b na nb selection nu p
+
 end PPAC.Migration.Step4Checks

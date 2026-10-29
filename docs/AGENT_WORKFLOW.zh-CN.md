@@ -36,3 +36,5 @@
 本轮 OrdinalCodes 入口：ForcingOrdinalRanks 已构造任意内部良序上的实际 rank 名字函数和同一 selectionType，保留精确前驱收集方程，并通过内部良序归纳证明全部 IsName；普通 nativeZF 原核证书及全量验收已通过（2970 构建、33320 声明、9 条命令／5 次 trust=0，原 33285 足迹不变）。接下来只需在这个 SAME 函数上接入现成 collect_HS/fixed 的内部归纳和源强迫定理；不得重做坍缩、递归、函数图、名字收集。HS/固定性及后续 CodeLinks 尚未完成，原阶段仍为 8。
 
 本轮接续：ForcingOrdinalFixed 已将同一实际 rank 图和 selectionType 的 HS／共同 H 字面固定性接入普通 nativeZF 原核；全量验收通过（2971 构建、33341 声明、9 条命令／5 次 trust=0，原 33320 足迹不变）。下一项是固定源 mem_selectedRank/mem_selectionType，复用 mem_iff、edge_collected 和本批 rank_collected。随后按源链接传递性、OrdF 和 PersistentCodes.ordF_eq_check_le:521 的决定结论，再进入 CodeLinks；现成名字/HS/固定性/前驱集/内部归纳不得重建。阶段仍为 8。
+
+本轮接续：ForcingOrdinalMembership 已接通源 79/94/102/108/115/124 六个成员／初段包含结论和三个普通 nativeZF 原核端点，全量验收通过：2972 项构建、33369 项声明，新增 28 项；全部 33341 项旧依赖足迹不变。9 条命令及 5 次 trust=0 检查均退出 0，零警告、无新增公理依赖；75 项固定源和 2527 项当前文件哈希一致。见 verification/ordinal-membership-acceptance.json。下一实际消费者是 transF_selectedRank/transF_selectionType → ordF_selectedRank/ordF_selectionType → 原 ordF_eq_check_le，再进入 CodeLinks；既有实际 rank、HS/固定性、成员方程及 SubsetF 不重做。OrdF 的源辅助性质不替代完整对象 ordinal 公式。原阶段仍为 8。

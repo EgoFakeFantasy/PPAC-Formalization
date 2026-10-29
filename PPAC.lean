@@ -797,3 +797,5 @@ import PPAC.Migration.ForcingStableCodes
 import PPAC.Migration.ForcingOrdinalRanks
 
 import PPAC.Migration.ForcingOrdinalFixed
+
+import PPAC.Migration.ForcingOrdinalMembership
