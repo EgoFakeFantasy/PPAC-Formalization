@@ -2389,7 +2389,7 @@ def main() -> None:
                                ('forcing_germ_equality', 'ForcingGermEquality', 4),
                                ('forcing_germ_locality', 'ForcingGermLocality', 8),
                                ('forcing_germ_covariance', 'ForcingGermCovariance', 4),
-                               ('forcing_germ_density', 'ForcingGermDensity', 13),
+                               ('forcing_germ_density', 'ForcingGermDensity', 14),
                                ('forcing_chain_bound', 'ForcingChainBound', 25),
                                ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43),
                                ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35),
@@ -2415,8 +2415,8 @@ def main() -> None:
                                ('forcing_label_density', 'ForcingLabelDensity', 8),
                                ('construction_diagram_coverage', 'ConstructionDiagramCoverage', 6),
                                ('forcing_class_representation', 'ForcingClassRepresentation', 9),
-                               ('forcing_code_record_witness', 'ForcingCodeRecordWitness', 8),
-                               ('forcing_code_cardinals', 'ForcingCodeCardinals', 12),
+                               ('forcing_code_record_witness', 'ForcingCodeRecordWitness', 9),
+                               ('forcing_code_cardinals', 'ForcingCodeCardinals', 14),
                                ('forcing_probe_density', 'ForcingProbeDensity', 22),
                                ('forcing_local_list', 'ForcingLocalList', 10),
                                ('forcing_outside_local', 'ForcingOutsideLocal', 12),
@@ -2424,9 +2424,10 @@ def main() -> None:
                                ('forcing_outside_copies', 'ForcingOutsideCopies', 27),
                                ('forcing_probe_row_hits', 'ForcingProbeRowHits', 27),
                                ('forcing_probe_stable', 'ForcingProbeStable', 7),
-                               ('forcing_probe_total', 'ForcingProbeTotal', 5),
+                               ('forcing_probe_total', 'ForcingProbeTotal', 6),
                                ('forcing_probe_single', 'ForcingProbeSingle', 5),
-                               ('forcing_probe_rows', 'ForcingProbeRows', 9)):
+                               ('forcing_probe_rows', 'ForcingProbeRows', 10),
+                               ('forcing_concrete_ordinal_count', 'ForcingConcreteOrdinalCount', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

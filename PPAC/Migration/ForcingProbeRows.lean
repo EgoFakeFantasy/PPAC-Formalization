@@ -117,6 +117,150 @@ theorem exists_relation (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     exact ⟨bi,hbi,x,hx,(hR x).mpr ⟨(hX x).mpr ⟨f,hf,bi,(hY bi).mpr ⟨beta,hb,i,hi,hbi⟩,hx⟩,
       (hs x).mpr ⟨f,beta,i,bi,hx,hbi,hWitness⟩⟩⟩
 
+theorem count_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M))
+    {k : Nat}
+    (env : Fin k → M.Carrier .set)
+    (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group A P targets copies multipliers : Fin k)
+    (theta ntheta f : M.Carrier .set)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G))
+    (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hrI : Injection (env (rho 0)) (env I) (env r))
+    (hpI : Injection (env (rho 0)) (env I) (env p))
+    (hAp : ForcingSupportedNames.Range (env (rho 0)) (env p) (env Ap))
+    (hHp : ForcingLabelPermutations.Fixing (env G) (env Ap) (env Hp))
+    (hXP : ForcingLocalNames.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env Hp) (env XP))
+    (ha : (Project.FirstOrderSemantics.reduct M).mem (env a) (env (rho 0)))
+    (he : (Project.FirstOrderSemantics.reduct M).mem (env e) (env (rho 0)))
+    (hb : (Project.FirstOrderSemantics.reduct M).mem (env b) (env (rho 0)))
+    (hae : ForcingDiagramOrder.Product (env mul) (env a) (env e) (env t))
+    (hSuba : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env a) (env q))
+    (hSubp : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env t) (env p))
+    (hEnum : (Project.FirstOrderSemantics.reduct M).IsSetBijectionFromTo (KuratowskiZF.interpretation hM) (env enum) (env ordinal) (env XP))
+    (hList : ForcingCollectedName.Collected ForcingPowerName.trueTest Fin.elim0 (env ordinal) (env enum) (env (rho 6)) (env list))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hzero : ForcingWithTopCarrier.Empty (env zero))
+    (hNames : ForcingPowerName.Candidates (fun j => env (rho j)) (env G) (env F) (env bound) (env names))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hRoot : Code (env root) (env r) (env a) (env U))
+    (hAr : ForcingSupportedNames.Range (env (rho 0)) (env r) (env Ar))
+    (hHr : ForcingLabelPermutations.Fixing (env G) (env Ar) (env Hr))
+    (hf : (Project.FirstOrderSemantics.reduct M).mem f (env (rho 3)))
+    (hCarrier : ForcingTailCodes.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env codes))
+    (hOrder : (Project.FirstOrderSemantics.reduct M).IsSetCodedWellOrder (KuratowskiZF.interpretation hM) (env order) (env codes))
+    (hRanks : ForcingOrdinalRanks.Ranks
+      (ForcingCohenSelection.liftRelation (ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order) id (rho 0) I (rho 2) w)
+      env (env codes) (env order) (env (rho 6)) (env ranks))
+    (hSelection : ForcingCollectedName.Collected
+      (ForcingCohenSelection.liftRelation (ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order) id (rho 0) I (rho 2) w)
+      env (env codes) (env ranks) (env (rho 6)) (env selection))
+    (hFamily : ForcingOrdinalFixed.FixedFamily (fun j => env (rho j)) (env G) (env F) (env group) (env codes) (env ranks))
+    (hIncl : ForcingPowerName.Subset (env Hr) (env group))
+    (hChecked : ForcingCheckName.Checked (env top) theta ntheta)
+    (hTheta : EqF (orderFormula (rho 0) mul) env (env (rho 6)) f (env r) (env selection) ntheta)
+    (hTwo : ∃ o, (Project.FirstOrderSemantics.reduct M).IsOrdinalOne o ∧ (Project.FirstOrderSemantics.reduct M).SuccessorOf (env B) o)
+    (hP : ForcingCohenCoordinates.Cartesian (env A) (env A) (env P))
+    (hA : ¬ ForcingSupportSize.Small (env A) (env w))
+    (hCopies : ForcingOutsideCopies.Family (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env
+      (fun j => env (rho j)) (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) (env P) (env targets) (env copies))
+    (hTargets : ForcingOutsideCopies.Targets (env (rho 0)) (env I) (env mul) (env r) (env b) (env p) (env P) (env multipliers) (env targets))
+    (hMultipliers : MapsTo (env P) (env (rho 0)) (env multipliers))
+    (hProducts : ∀ i m, PureKuratowski.PairMember M i m (env multipliers) → ForcingDiagramOrder.Product (env mul) m (env b) (env t))
+    (hGeometry : ∀ i m, PureKuratowski.PairMember M i m (env multipliers) → ForcingClassProfile.Geometry (env (rho 0)) (env mul) (env a) m (env t) (env U))
+    (hIndependent : ∀ i j m n, PureKuratowski.PairMember M i m (env multipliers) → PureKuratowski.PairMember M j n (env multipliers) →
+      i ≠ j → ConstructionDiagramPlacements.ConeEquality (env (rho 0)) (env mul) m n (env t))
+    (hRangeJ : ForcingSupportedNames.Range (env (rho 0)) (env p) (env J))
+    (hDelta : ForcingPowerName.Subset (env delta) f) :
+    ∃ R Power nu W,
+      (∀ g beta i, ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g beta i ↔
+        (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) ∧
+        (Project.FirstOrderSemantics.reduct M).mem beta theta ∧ (Project.FirstOrderSemantics.reduct M).mem i (env A) ∧
+        Witness env rho I G F mul q bound labels E root w chain codes order ranks top r (env A) (env copies) g beta i) ∧
+      (Project.FirstOrderSemantics.reduct M).IsPowerSetOf Power (env w) ∧
+      (Project.FirstOrderSemantics.reduct M).IsCardinalOf (KuratowskiZF.interpretation hM) nu Power ∧
+      (Project.FirstOrderSemantics.reduct M).IsCartesianProduct (KuratowskiZF.interpretation hM) W theta nu ∧
+      (Project.FirstOrderSemantics.reduct M).CardinalLessOrEqual (KuratowskiZF.interpretation hM) (env A) W := by
+  obtain ⟨conditions,_,hProjection,hHits⟩ := ForcingProbeRowHits.source_construct hM hChoice env rho G F mul
+    hw hp hP hA hCopies hTargets hrI hSubp hRangeJ hIndependent
+  obtain ⟨R,hR⟩ := exists_relation hM env rho I G F mul q bound labels E root w chain codes order ranks top r
+    (env A) (env copies) theta
+  have hTotal : ∀ i, (Project.FirstOrderSemantics.reduct M).mem i (env A) →
+      ∃ beta, (Project.FirstOrderSemantics.reduct M).mem beta theta ∧
+        ∃ g, (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) ∧
+          ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g beta i := by
+    intro i hi
+    obtain ⟨f',j,d,hf',hff',hj,hValue,hdf'⟩ := hHits i hi f hf hDelta
+    obtain ⟨index,hIndex,hCond⟩ := hValue
+    obtain ⟨_,record,tau,hRecordEdge,hRecord⟩ := (hProjection index d).mp hCond
+    obtain ⟨sm,hTarget,hCopy⟩ := hCopies.2 index record hRecordEdge
+    obtain ⟨hsmI,_,m,hmEdge,hSubm⟩ := hTargets.2 index sm hTarget
+    obtain ⟨z,hz⟩ := ForcingSupportingRoot.exists_code hM f' (env r)
+    obtain ⟨g,beta,selected,rankName,nbeta,hg,_,hdg,_,hBeta,hSelected,hRank,hCheck,hSel,hLinks,hEq⟩ :=
+      ForcingProbeTotal.witness_below hM hChoice env rho
+        w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group
+        theta ntheta sm m record d tau f' z
+        hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE
+        hrI hpI hsmI hAp hHp hXP ha he (hMultipliers.2 index m hmEdge) hb hae (hProducts index m hmEdge)
+        hSuba hSubm hSubp hEnum hList hCopy hRecord (hGeometry index m hmEdge)
+        hJ hzero hNames hChain hRoot hAr hHr hf' hdf' hz hCarrier hOrder hRanks hSelection hFamily hIncl hChecked
+        (ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hf' hrI hff' hTheta)
+    exact ⟨beta,hBeta,g,hg,(hR g beta i).mpr ⟨hg,hBeta,hi,
+      j,index,record,d,tau,selected,rankName,nbeta,hj,hIndex,hRecordEdge,hRecord,hdg,hSelected,hRank,hCheck,hSel,hLinks,hEq⟩⟩
+  obtain ⟨Power,nu,compat,hPower,hNu,_,_,hC,hBound,hRefl⟩ := ForcingCohenChainBound.continuum hM
+    (ConstructionDirectedCardinality.models_zfc hM hChoice) hw hTwo hp.2.1 hp.2.2.1
+  have hSingle : ∀ beta i i' g g', (Project.FirstOrderSemantics.reduct M).mem beta theta →
+      (Project.FirstOrderSemantics.reduct M).mem i (env A) → (Project.FirstOrderSemantics.reduct M).mem i' (env A) →
+      (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) → (Project.FirstOrderSemantics.reduct M).mem g' (env (rho 3)) →
+      ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g beta i →
+      ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g' beta i' →
+      PureKuratowski.PairMember M g g' compat → i = i' := by
+    intro beta i i' g g' _ _ _ hg hg' hv hv' hc
+    apply Classical.byContradiction
+    intro hne
+    obtain ⟨_,_,_,j,index,record,d,tau,selected,rankName,nbeta,_,hIndex,hEdge,hRecord,hdg,hs,hrank,hcheck,hsel,hlinks,heq⟩ := (hR g beta i).mp hv
+    obtain ⟨_,_,_,j',index',record',d',tau',selected',rankName',nbeta',_,hIndex',hEdge',hRecord',_,hs',hrank',hcheck',hsel',hlinks',heq'⟩ := (hR g' beta i').mp hv'
+    obtain ⟨sm,hTarget,hCopy⟩ := hCopies.2 index record hEdge
+    obtain ⟨sm',hTarget',hCopy'⟩ := hCopies.2 index' record' hEdge'
+    obtain ⟨hsmI,hsmP,m,hmEdge,hSubm⟩ := hTargets.2 index sm hTarget
+    obtain ⟨hsmI',hsmP',m',hmEdge',hSubm'⟩ := hTargets.2 index' sm' hTarget'
+    have hindexne : index ≠ index' := by
+      intro eq
+      subst index'
+      exact hne (PureKuratowski.code_injective hIndex hIndex').1
+    have hNo := ForcingProbeSingle.incompatible_at hM hChoice env rho
+      w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p t b Ap Hp XP ordinal enum list J delta
+      sm sm' m m' record record' d tau d' tau' g g' selected selected' rankName rankName' beta nbeta nbeta'
+      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hrI hpI hsmI hsmI'
+      (hMultipliers.2 index m hmEdge) (hMultipliers.2 index' m' hmEdge') hb hSubm hSubm' hSubp hsmP hsmP'
+      (hIndependent index index' m m' hmEdge hmEdge' hindexne) hAp hHp hXP hEnum hList hCopy hRecord hCopy' hRecord'
+      hdg hChain hRoot hCarrier hOrder hRanks hFamily hs hs' hrank hrank' hsel hsel' hlinks hlinks' hcheck hcheck' heq heq'
+    obtain ⟨c,hc,_,hgc,hg'c⟩ := ConstructionCohenCompatibility.exists_union hM hw
+      ((hp.2.2.1 g).mp hg) ((hp.2.2.1 g').mp hg') ((hC g g').mp hc).2.2
+    exact hNo ⟨c,(hp.2.2.1 c).mpr hc,hgc,hg'c⟩
+  obtain ⟨W,hW⟩ := ZF.exists_cartesianProduct (ModelTransfer.project_models_iff.mp hM)
+    (KuratowskiZF.interpretation hM) theta nu
+  exact ⟨R,Power,nu,W,hR,hPower,hNu,hW,
+    ForcingChainBound.cardinal_le_mul (KuratowskiZF.interpretation hM)
+      (ConstructionDirectedCardinality.models_zfc hM hChoice) hRefl hBound hTotal hSingle hW⟩
+
 theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M))
     {k : Nat}
@@ -197,68 +341,7 @@ theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
       (Project.FirstOrderSemantics.reduct M).IsCardinalOf (KuratowskiZF.interpretation hM) nu Power ∧
       (Project.FirstOrderSemantics.reduct M).IsCartesianProduct (KuratowskiZF.interpretation hM) W (env theta) nu ∧
       (Project.FirstOrderSemantics.reduct M).CardinalLessOrEqual (KuratowskiZF.interpretation hM) (env A) W := by
-  obtain ⟨conditions,_,hProjection,hHits⟩ := ForcingProbeRowHits.source_construct hM hChoice env rho G F mul
-    hw hp hP hA hCopies hTargets hrI hSubp hRangeJ hIndependent
-  obtain ⟨R,hR⟩ := exists_relation hM env rho I G F mul q bound labels E root w chain codes order ranks top r
-    (env A) (env copies) (env theta)
-  have hTotal : ∀ i, (Project.FirstOrderSemantics.reduct M).mem i (env A) →
-      ∃ beta, (Project.FirstOrderSemantics.reduct M).mem beta (env theta) ∧
-        ∃ g, (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) ∧
-          ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g beta i := by
-    intro i hi
-    obtain ⟨f',j,d,hf',hff',hj,hValue,hdf'⟩ := hHits i hi (env f) hf hDelta
-    obtain ⟨index,hIndex,hCond⟩ := hValue
-    obtain ⟨_,record,tau,hRecordEdge,hRecord⟩ := (hProjection index d).mp hCond
-    obtain ⟨sm,hTarget,hCopy⟩ := hCopies.2 index record hRecordEdge
-    obtain ⟨hsmI,_,m,hmEdge,hSubm⟩ := hTargets.2 index sm hTarget
-    obtain ⟨z,hz⟩ := ForcingSupportingRoot.exists_code hM f' (env r)
-    obtain ⟨g,beta,selected,rankName,nbeta,hg,_,hdg,_,hBeta,hSelected,hRank,hCheck,hSel,hLinks,hEq⟩ :=
-      ForcingProbeTotal.witness_at hM hChoice env rho
-        w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group theta ntheta
-        sm m record d tau f' z
-        hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE
-        hrI hpI hsmI hAp hHp hXP ha he (hMultipliers.2 index m hmEdge) hb hae (hProducts index m hmEdge)
-        hSuba hSubm hSubp hEnum hList hCopy hRecord (hGeometry index m hmEdge)
-        hJ hzero hNames hChain hRoot hAr hHr hf' hdf' hz hCarrier hOrder hRanks hSelection hFamily hIncl hChecked
-        (ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp hf' hrI hff' hTheta)
-    exact ⟨beta,hBeta,g,hg,(hR g beta i).mpr ⟨hg,hBeta,hi,
-      j,index,record,d,tau,selected,rankName,nbeta,hj,hIndex,hRecordEdge,hRecord,hdg,hSelected,hRank,hCheck,hSel,hLinks,hEq⟩⟩
-  obtain ⟨Power,nu,compat,hPower,hNu,_,_,hC,hBound,hRefl⟩ := ForcingCohenChainBound.continuum hM
-    (ConstructionDirectedCardinality.models_zfc hM hChoice) hw hTwo hp.2.1 hp.2.2.1
-  have hSingle : ∀ beta i i' g g', (Project.FirstOrderSemantics.reduct M).mem beta (env theta) →
-      (Project.FirstOrderSemantics.reduct M).mem i (env A) → (Project.FirstOrderSemantics.reduct M).mem i' (env A) →
-      (Project.FirstOrderSemantics.reduct M).mem g (env (rho 3)) → (Project.FirstOrderSemantics.reduct M).mem g' (env (rho 3)) →
-      ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g beta i →
-      ForcingChainBound.Values (KuratowskiZF.interpretation hM) R g' beta i' →
-      PureKuratowski.PairMember M g g' compat → i = i' := by
-    intro beta i i' g g' _ _ _ hg hg' hv hv' hc
-    apply Classical.byContradiction
-    intro hne
-    obtain ⟨_,_,_,j,index,record,d,tau,selected,rankName,nbeta,_,hIndex,hEdge,hRecord,hdg,hs,hrank,hcheck,hsel,hlinks,heq⟩ := (hR g beta i).mp hv
-    obtain ⟨_,_,_,j',index',record',d',tau',selected',rankName',nbeta',_,hIndex',hEdge',hRecord',_,hs',hrank',hcheck',hsel',hlinks',heq'⟩ := (hR g' beta i').mp hv'
-    obtain ⟨sm,hTarget,hCopy⟩ := hCopies.2 index record hEdge
-    obtain ⟨sm',hTarget',hCopy'⟩ := hCopies.2 index' record' hEdge'
-    obtain ⟨hsmI,hsmP,m,hmEdge,hSubm⟩ := hTargets.2 index sm hTarget
-    obtain ⟨hsmI',hsmP',m',hmEdge',hSubm'⟩ := hTargets.2 index' sm' hTarget'
-    have hindexne : index ≠ index' := by
-      intro eq
-      subst index'
-      exact hne (PureKuratowski.code_injective hIndex hIndex').1
-    have hNo := ForcingProbeSingle.incompatible_at hM hChoice env rho
-      w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q zero root vertices chain names codes order ranks group r a U p t b Ap Hp XP ordinal enum list J delta
-      sm sm' m m' record record' d tau d' tau' g g' selected selected' rankName rankName' beta nbeta nbeta'
-      hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hrI hpI hsmI hsmI'
-      (hMultipliers.2 index m hmEdge) (hMultipliers.2 index' m' hmEdge') hb hSubm hSubm' hSubp hsmP hsmP'
-      (hIndependent index index' m m' hmEdge hmEdge' hindexne) hAp hHp hXP hEnum hList hCopy hRecord hCopy' hRecord'
-      hdg hChain hRoot hCarrier hOrder hRanks hFamily hs hs' hrank hrank' hsel hsel' hlinks hlinks' hcheck hcheck' heq heq'
-    obtain ⟨c,hc,_,hgc,hg'c⟩ := ConstructionCohenCompatibility.exists_union hM hw
-      ((hp.2.2.1 g).mp hg) ((hp.2.2.1 g').mp hg') ((hC g g').mp hc).2.2
-    exact hNo ⟨c,(hp.2.2.1 c).mpr hc,hgc,hg'c⟩
-  obtain ⟨W,hW⟩ := ZF.exists_cartesianProduct (ModelTransfer.project_models_iff.mp hM)
-    (KuratowskiZF.interpretation hM) (env theta) nu
-  exact ⟨R,Power,nu,W,hR,hPower,hNu,hW,
-    ForcingChainBound.cardinal_le_mul (KuratowskiZF.interpretation hM)
-      (ConstructionDirectedCardinality.models_zfc hM hChoice) hRefl hBound hTotal hSingle hW⟩
+  exact count_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group A P targets copies multipliers (env theta) (env ntheta) (env f) hw hMu hI hSmall hMergers hRow hm hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE hrI hpI hAp hHp hXP ha he hb hae hSuba hSubp hEnum hList hJ hzero hNames hChain hRoot hAr hHr hf hCarrier hOrder hRanks hSelection hFamily hIncl hChecked hTheta hTwo hP hA hCopies hTargets hMultipliers hProducts hGeometry hIndependent hRangeJ hDelta
 
 def sourceSentence {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group theta ntheta f A P targets copies multipliers : Fin k) : Project.Sentence where
   formula :=

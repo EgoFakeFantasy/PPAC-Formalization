@@ -34968,3 +34968,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProbeRows.sourceSentence
 #print axioms PPAC.Migration.ForcingProbeRows.source_models
 #print axioms PPAC.Migration.ForcingProbeRows.source_kernel_certificate
+
+-- Actual OrdinalCount from both source bounds and native Hartogs arithmetic.
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.member_record_below
+#print axioms PPAC.Migration.ForcingCodeCardinals.total_below
+#print axioms PPAC.Migration.ForcingCodeCardinals.cardinal_le_at
+#print axioms PPAC.Migration.ForcingProbeTotal.witness_below
+#print axioms PPAC.Migration.ForcingProbeRows.count_at
+#print axioms PPAC.Migration.ForcingGermDensity.ordinal_native
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.lower_bound
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.source_construct
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.sourceSentence
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.source_models
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.source_kernel_certificate

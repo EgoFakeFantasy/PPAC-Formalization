@@ -64,7 +64,7 @@ theorem ordinalCount_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m :
   · intro h e theta ntheta he hde ht hn hf
     exact h e he hde theta ntheta ht hn hf
 
-private theorem ordinal_native {theta : M.Carrier .set} (h : ForcingRawRank.Ordinal theta) :
+theorem ordinal_native {theta : M.Carrier .set} (h : ForcingRawRank.Ordinal theta) :
     (Project.FirstOrderSemantics.reduct M).IsOrdinal theta := by
   simp only [ForcingRawRank.Ordinal,OrdinalSyntax.ordinal,OrdinalSyntax.transitiveSet,
     OrdinalSyntax.linear,OrdinalSyntax.irreflexive,OrdinalSyntax.membershipTransitive,

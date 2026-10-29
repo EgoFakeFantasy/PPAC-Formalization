@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：同一内部行关系 R 与连续统计数已取得原核证书
+## 当前执行入口：完整量词的 OrdinalCount 已取得原核证书
 
-本批 `ForcingProbeRows` 对应固定 `CodeCardinals.ordinalType_lower_count` 的 R、total、single 和 ChainBound 消费。R 是从内部条件集与 θ×A 的积上分离得到的实际集合；图成员精确对应实际副本记录、选中码、Links、秩和 check-name 相等见证。所有行的 total 从实际副本族的 hits、已有稳定工作码、稠密选择和秩判定推出；single 从实际目标及乘子族、独立锥、已有成对矛盾和实际 Cohen 条件并推出。total、single、抽象 R 和计数结论均未当前提。随后构造现成连续统及兼容图，实际调用 `ForcingChainBound.cardinal_le_mul` 得到 A ≤ θ×continuum。
+本批 `ForcingConcreteOrdinalCount` 对应固定 `ConcreteQuotients.code_ordinalType_cardinal` 到 `GermSelectors.OrdinalCount`。对每个加强 delta 的内部条件、每个内部序数及其 check-name，实际消费上批 R 的全行下界和已有 `ForcingCodeCardinals.ordinalType_cardinal_le` 上界。用原生幂集外延／基数唯一性对齐连续统，用 Hartogs 排除及现成无限乘积界推出 μ ≤ θ，再由原生 Cantor–Bernstein 和实际标签基数得到标签集与 θ 等势。上界、下界、基数相等及 OrdinalCount 均未作为额外前提。
 
-`ForcingProbeRows.source_kernel_certificate` 在普通 nativeZF 中证明同一现成内部 L 上的闭合对象句。四个既有生产者模块仅泛化逐行产生的集合参数，全部 19 项原公开定理类型／对象句保持不变；没有新增环境传输、选择、递归、名字或证明核。全量验收通过：3033 项构建、34382 项声明；新增 15 项，全部 34367 项旧声明的有序公理足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源、2588 份当前文件哈希匹配。报告：verification/probe-rows-acceptance.json。
+`ForcingConcreteOrdinalCount.source_kernel_certificate` 在普通 nativeZF 中证明同一现成内部 L 上的闭合对象句。只泛化现有生产者的动态条件／序数参数，并原样公开既有 ordinal_native 证明；47 项旧公开定理类型／对象句保持不变。全量验收通过：3034 项构建、34393 项声明；新增 11 项，全部 34382 项旧声明的有序公理足迹不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源、2589 份当前文件哈希匹配。报告：verification/ordinal-count-acceptance.json。
 
-下一直接消费者是 `ConcreteQuotients.code_ordinalType_cardinal`。已有 `ForcingCodeCardinals.ordinalType_cardinal_le` 上界、实际探针、outside-copy 族构造及局部名字列表构造须直接消费；剩余是把这些现成生产者的同一系统数据接到本批下界，组合具体基数相等及全加强条件的 OrdinalCount，并完成 localList_wellorderable／outside_localList 消费者。不能把已有上界、列表枚举或副本构造误报为数学缺失。第 9–11 阶段及最终内部 Con 仍未完成。
+本证书仍保留明确源输入：实际副本／目标／乘子族、几何、局部列表枚举、完整秩图、参数及索引／标签基数数据。下一步直接消费 `ForcingOutsideCopies.source_construct`、既有 `ConstructionIdealProbes`、`ForcingLocalList.construct`、实际标签与序数表生产者，将同一具体系统的数据提供给该证书，再接入现有 `ForcingGermDensity.preliminary_total/preliminary_onto`。这些生产者和上界已存在，不能重报为数学缺失；本批也不冒称最终具体父输入已全部消去。localList_wellorderable／outside_localList 消费者、第 9–11 阶段及最终内部 Con 尚未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

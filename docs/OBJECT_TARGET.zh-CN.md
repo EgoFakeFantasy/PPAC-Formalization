@@ -92,6 +92,8 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 
 `ForcingProbeSingle.source_kernel_certificate` 是普通 nativeZF 原核中的对象闭句，沿同一内部 L 量化全部内部见证条件及可能共同加强。结论为同秩独立副本的见证条件无共同加强。秩判别、Links/Same、公共根交集和实际 Outside 排除均实际接通；不存在把选中码／原名字相等或不相容当作未消去假设的替代。源对应 `ordinalType_lower_count.single:254–283`。全行关系及最终基数计数和内部 Con 仍未完成。全量验收通过：3032 构建、34367 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-single-acceptance.json。
 
-## 同一行关系与计数的对象证书（2026-10-30）
+## 同一行关系与完整 OrdinalCount 的对象证书（2026-10-30）
 
-ForcingProbeRows.source_kernel_certificate 保持原 nativeZF 与同一内部 L 的范围，构造内部 R 并给出 A ≤ θ×continuum。关系的全行 total/single 已从实际副本、目标、乘子族推出，未作为额外前提。局部列表、完整秩图、实际几何仍是明确的源输入；具体系统的 OrdinalCount、最终 PP/Main 与覆盖全部内部／非标准证明码的 Con 推导未完成。验收见 verification/probe-rows-acceptance.json；本证书不冒称最终主句。
+ForcingProbeRows.source_kernel_certificate 构造同一内部 R 并证明 A ≤ θ×continuum。其后续 ForcingConcreteOrdinalCount.source_kernel_certificate 已实际消费这一界及已有上界，通过原生 Hartogs 排除与 Cantor–Bernstein 证明完整 OrdinalCount：每个加强条件和每个内部序数/check-name 见证都得到同一标签集与该序数等势。两项证书都在原 nativeZF 中、相对于同一现成内部 L；不增加对象 Choice 或强不可达。
+
+实际副本族、完整秩图、局部列表、几何和索引／标签基数仍是明确源输入。最终具体生产者装配、局部列表消费者、PP/Main 与全部内部／非标准证明码的 Con 推导未完成。最新验收见 verification/ordinal-count-acceptance.json；不得将该辅助对象定理称为最终主句。
