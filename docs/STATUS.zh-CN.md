@@ -1,5 +1,11 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
+## 当前执行入口：普通序数决定已验收
+
+本批已完成固定源 PersistentCodes.ordF_eq_check_le:521–584 和 forces_ordinal_decide:588–594。ForcingOrdinalDecision.decision_kernel_certificate 的两个实例均为普通 nativeZF 原核闭句，作用于已有具体乘积系统的全部内部 HS 名字与序数；保留 β≤σ 的原始内部秩这一精确界限。实际呈现产生 preorder、top 和 check-HS 前提；内部 Child 归纳、最小序数、秩及 check 比较均直接复用。全量验收通过：2976 项构建、33439 项声明（新增 17 项），全部 33422 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源及 2531 项当前哈希匹配。验收记录：verification/ordinal-decision-acceptance.json。
+
+下一实际消费者为 OrdinalCodes.selectionType_decide:180、ordF_not_mem_self:203、selectedRank_eq_iff:211 和 selectedRank_decide:229，再进入 CodeLinks。已有 rank/type 的 OrdF、HS、精确成员方程与本批决定定理直接组合；不得将这些基础重新列为待造。原阶段仍为 8，完整 OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 未完成。
+
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。

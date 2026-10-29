@@ -805,3 +805,4 @@ import PPAC.Migration.ForcingOrdinalTransitivity
 import PPAC.Migration.ForcingCheckReflection
 
 import PPAC.Migration.ForcingRawRank
+import PPAC.Migration.ForcingOrdinalDecision

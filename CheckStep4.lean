@@ -12410,4 +12410,10 @@ example {k m : Nat} (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingRawRank.descentSentence) :=
   ForcingRawRank.descent_kernel_certificate
 
+-- Both full-rank source ordinal decision statements in the actual product system.
+example {n : Nat} (fullOrdinal : Bool) (rho : Fin 7 → Fin n)
+    (G F mul unit I K B w top sigma p a : Fin n) : FirstOrder.Derives nativeZF []
+      (Translation.sentence (ForcingOrdinalDecision.decisionSentence fullOrdinal rho G F mul unit I K B w top sigma p a)) :=
+  ForcingOrdinalDecision.decision_kernel_certificate fullOrdinal rho G F mul unit I K B w top sigma p a
+
 end PPAC.Migration.Step4Checks

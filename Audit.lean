@@ -33940,3 +33940,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawRank.descentSentence
 #print axioms PPAC.Migration.ForcingRawRank.descent_models
 #print axioms PPAC.Migration.ForcingRawRank.descent_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrdinalDecision.ordinal_irrefl
+#print axioms PPAC.Migration.ForcingOrdinalDecision.ordinal_compare
+#print axioms PPAC.Migration.ForcingOrdinalDecision.missing
+#print axioms PPAC.Migration.ForcingOrdinalDecision.missing_semantics
+#print axioms PPAC.Migration.ForcingOrdinalDecision.least_missing
+#print axioms PPAC.Migration.ForcingOrdinalDecision.Decision
+#print axioms PPAC.Migration.ForcingOrdinalDecision.decision
+#print axioms PPAC.Migration.ForcingOrdinalDecision.decision_semantics
+#print axioms PPAC.Migration.ForcingOrdinalDecision.inductionAt
+#print axioms PPAC.Migration.ForcingOrdinalDecision.inductionAt_semantics
+#print axioms PPAC.Migration.ForcingOrdinalDecision.ordF_eq_check_le
+#print axioms PPAC.Migration.ForcingOrdinalDecision.forces_ordinal_decide
+#print axioms PPAC.Migration.ForcingOrdinalDecision.denseDecision
+#print axioms PPAC.Migration.ForcingOrdinalDecision.denseDecision_semantics
+#print axioms PPAC.Migration.ForcingOrdinalDecision.decisionSentence
+#print axioms PPAC.Migration.ForcingOrdinalDecision.decision_models
+#print axioms PPAC.Migration.ForcingOrdinalDecision.decision_kernel_certificate
