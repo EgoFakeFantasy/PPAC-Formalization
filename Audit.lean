@@ -34942,3 +34942,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProbeStable.sourceSentence
 #print axioms PPAC.Migration.ForcingProbeStable.source_models
 #print axioms PPAC.Migration.ForcingProbeStable.source_kernel_certificate
+#print axioms PPAC.Migration.ForcingProbeTotal.source_construct
+#print axioms PPAC.Migration.ForcingProbeTotal.sourceSentence
+#print axioms PPAC.Migration.ForcingProbeTotal.source_models
+#print axioms PPAC.Migration.ForcingProbeTotal.source_kernel_certificate
+#print axioms PPAC.Migration.ForcingGermDensity.existing_dense_selected

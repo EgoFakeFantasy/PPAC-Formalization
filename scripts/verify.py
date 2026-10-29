@@ -2389,7 +2389,7 @@ def main() -> None:
                                ('forcing_germ_equality', 'ForcingGermEquality', 4),
                                ('forcing_germ_locality', 'ForcingGermLocality', 8),
                                ('forcing_germ_covariance', 'ForcingGermCovariance', 4),
-                               ('forcing_germ_density', 'ForcingGermDensity', 12),
+                               ('forcing_germ_density', 'ForcingGermDensity', 13),
                                ('forcing_chain_bound', 'ForcingChainBound', 25),
                                ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43),
                                ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35),
@@ -2423,7 +2423,8 @@ def main() -> None:
                                ('forcing_class_profile', 'ForcingClassProfile', 13),
                                ('forcing_outside_copies', 'ForcingOutsideCopies', 27),
                                ('forcing_probe_row_hits', 'ForcingProbeRowHits', 27),
-                               ('forcing_probe_stable', 'ForcingProbeStable', 5)):
+                               ('forcing_probe_stable', 'ForcingProbeStable', 5),
+                               ('forcing_probe_total', 'ForcingProbeTotal', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

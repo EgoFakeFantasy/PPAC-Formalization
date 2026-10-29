@@ -276,7 +276,7 @@ theorem total_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (w mu history
       (total_models rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab label d hL hChoice)
 
 
-private theorem existing_dense_selected (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+theorem existing_dense_selected (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
     (I K B w one G F mul q bound labels E root zero vertices chain names codes order : Fin k) (d a : M.Carrier .set)
     (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))

@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：实际 Outside 副本的稳定 profile 与持久工作码
+## 当前执行入口：实际副本经持久选择取得 total 的秩见证
 
-本批 `ForcingProbeStable` 直接迁移固定 `CodeCardinals.ordinalType_lower_count` 的 `hel:212–214`、`stable:215–226` 以及 `total` 中工作码产生步骤 `235–236`。从同一实际 Copy 记录提取原条件和字面名字，对每个加强条件构造现成主滤子对象／映射族，校准局部载体与原枚举，消费已有 classFromLocal_profile 和 actual_available_iff，证明精确 profile。根上的 LocalName 与完整 isClass 从实际副本推出，再调用已有 exists_working_code_of_stable，实际产生一个在所有后续加强条件下持久有效的工作码；每项名字在原根强迫等于同一副本名字。稳定结论、根局部性、根 isClass 和主滤子 System 均未作为新假设输入。
+本批 `ForcingProbeTotal` 直接接续固定 `CodeCardinals.ordinalType_lower_count.total:233–253` 在行命中之后的推导。先消费 ForcingProbeStable 的实际工作码，再调用已有 dense_selected；`ForcingGermDensity.existing_dense_selected` 只移除 private 可见性，原命题和证明正文逐字不变。利用现成 Links 单调性／Same 传输保持同一副本名字，再从同一实际 Ranks 图取出选中码的秩名字，调用已有 ordinalRank_decide，产生加强条件、内部序数 β∈θ、选中码和强迫秩等式。没有把工作码、选中码、β 或传输后的 Links 当作输入。
 
-普通 nativeZF 原核端点 `ForcingProbeStable.source_kernel_certificate` 同时断言所有加强条件下的稳定性和实际工作码存在；仍沿同一现成内部 L 消去 Choice。没有新建选择、递归、商、编码或强迫后端。全量验收通过：3030 项构建、34358 项声明；新增 5 项，全部 34353 项旧声明足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源及 2585 份当前文件哈希匹配。报告：verification/probe-stable-acceptance.json。
+`ForcingProbeTotal.source_kernel_certificate` 将这些实际见证和同一副本 Links 一并写入普通 nativeZF 的闭合对象句，沿同一现成内部 L 消去 Choice。背景语言、完整内部条件范围和全部内部链索引保留。全量验收通过：3031 项构建、34363 项声明；新增 4 项生产者声明及 1 项现成证明公开接口，全部 34358 项旧声明足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源及 2586 份当前文件哈希匹配。报告：verification/probe-total-acceptance.json。
 
-下一步仍在 `ordinalType_lower_count.total`：将本批实际工作码送入已完成的持久选择／Same 接口，再接已有 ordinalRank_decide，保持同一副本的 Rooted 关系。随后证明 single 并消费 ChainBound.cardinal_le_mul，进入 ConcreteQuotients.code_ordinalType_cardinal。完整 total/single／下界／OrdinalCount、localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。上一批直接 hdisj/hits 保留；classFiber_dense_lower 不在主定理实际消费者链上，保持退役，不恢复旁支。
+下一步是把已有逐行 hits 与本批实际见证合为源关系 R 的全部行总性，再完成 single 并消费 ChainBound.cardinal_le_mul，进入 ConcreteQuotients.code_ordinalType_cardinal。single 所需 selectedRank_eq_iff、links_eq_iff_same、outside_not_eqG_common 已定位到现成实现，不能重报为缺失基础定理。完整计数／OrdinalCount、localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。停止扩写已退役 classFiber_dense_lower 辅助分支。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

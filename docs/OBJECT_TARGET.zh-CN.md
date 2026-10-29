@@ -83,3 +83,7 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 ## 2026-10-30 主线实际副本的稳定工作码
 
 `ForcingProbeStable.source_kernel_certificate` 的结论在原生纯成员语言中闭合，位于同一现成内部 L。它量化所有内部加强条件，实际构造一个持久链码，且每项名字在原根强迫等于原 Copy 记录中的同一名字；稳定 profile 从实际副本和已有 profile/主滤子接口推出，不作为假设传入。背景仍为普通 nativeZF；无新增对象 Choice 公理。源对应是 `CodeCardinals.ordinalType_lower_count` 的 hel/stable 和 total 的工作码产生步骤。全量验收通过：3030 构建、34358 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-stable-acceptance.json。该端点不是完整下界、OrdinalCount 或最终内部 Con。
+
+## 2026-10-30 主线 total 的实际秩见证
+
+`ForcingProbeTotal.source_kernel_certificate` 在普通 nativeZF 中证明同一内部 L 的对象句：从实际 Outside 副本和原类型强迫等式，产生加强条件、选中码、同一图中的秩名字、内部 β∈θ 及 check-name 强迫等式，并保持与同一副本名字的 Links。既有 dense_selected 仅开放可见性，原证明正文不变；没有重建选择或秩后端。该证书是行命中之后的 total 见证生产者；全部行关系装配、single、最终基数计数和内部 Con 仍未完成。全量验收通过：3031 构建、34363 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-total-acceptance.json。

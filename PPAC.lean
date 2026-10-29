@@ -860,3 +860,4 @@ import PPAC.Migration.ForcingClassProfile
 import PPAC.Migration.ForcingOutsideCopies
 import PPAC.Migration.ForcingProbeRowHits
 import PPAC.Migration.ForcingProbeStable
+import PPAC.Migration.ForcingProbeTotal

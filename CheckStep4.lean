@@ -12809,4 +12809,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ForcingProbeStable.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z))) :=
   ForcingProbeStable.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z
 
+
+-- Source total witness: actual selected code, same-copy Links and beta in theta.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z codes order ranks selection group theta ntheta : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingProbeTotal.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z codes order ranks selection group theta ntheta))) :=
+  ForcingProbeTotal.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p sm e m b t Ap Hp XP ordinal enum list J delta record d tau f zero root vertices chain names Ar Hr z codes order ranks selection group theta ntheta
+
 end PPAC.Migration.Step4Checks
