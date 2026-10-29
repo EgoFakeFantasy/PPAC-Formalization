@@ -34007,3 +34007,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCohenSelection.constructionSentence
 #print axioms PPAC.Migration.ForcingCohenSelection.construction_models
 #print axioms PPAC.Migration.ForcingCohenSelection.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.Monotone
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.orderType_decide
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.rank_decide
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.member_rank
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.monotone
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.monotone_semantics
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.typeDecision
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.typeDecision_semantics
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.lowerDecision
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.lowerDecision_semantics
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.memberDecision
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.memberDecision_semantics
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.consumerBody
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.constructionSentence
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.construction_models
+#print axioms PPAC.Migration.ForcingCohenRankConsumers.construction_kernel_certificate

@@ -809,3 +809,4 @@ import PPAC.Migration.ForcingOrdinalDecision
 import PPAC.Migration.ForcingOrdinalCoding
 import PPAC.Migration.ForcingOrdinalRoot
 import PPAC.Migration.ForcingCohenSelection
+import PPAC.Migration.ForcingCohenRankConsumers

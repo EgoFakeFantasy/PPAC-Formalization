@@ -12445,4 +12445,15 @@ example {n m : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (ra : Fin 
       (SetTheory.Definitional.Project.fo_sentence (ForcingCohenSelection.constructionSentence R rp ra I K B w G F H X order)) :=
   ForcingCohenSelection.construction_kernel_certificate R rp ra I K B w G F H X order
 
+
+-- Same internal L: actual Cohen ranks/type and all five fixed-root consumers.
+example {k n : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin k) (rho : Fin 7 → Fin k)
+    (w mu tower kappa unit mark H C incoming base I K B G F mul root d A fixing support X order ranks selection top z
+      a b na nb theta ntheta beta nbeta : Fin k) : FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingCohenRankConsumers.constructionSentence R rp rho w mu tower kappa unit mark H C incoming base I K B G F mul
+          root d A fixing support X order ranks selection top z a b na nb theta ntheta beta nbeta))) :=
+  ForcingCohenRankConsumers.construction_kernel_certificate R rp rho w mu tower kappa unit mark H C incoming base I K B G F mul
+    root d A fixing support X order ranks selection top z a b na nb theta ntheta beta nbeta
+
 end PPAC.Migration.Step4Checks
