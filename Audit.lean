@@ -33972,3 +33972,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalCoding.codingSentence
 #print axioms PPAC.Migration.ForcingOrdinalCoding.coding_models
 #print axioms PPAC.Migration.ForcingOrdinalCoding.coding_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrdinalRoot.check_supported
+#print axioms PPAC.Migration.ForcingOrdinalRoot.RootDecision
+#print axioms PPAC.Migration.ForcingOrdinalRoot.forces_at_root
+#print axioms PPAC.Migration.ForcingOrdinalRoot.eq_at_root
+#print axioms PPAC.Migration.ForcingOrdinalRoot.ordinal_decide_at_root
+#print axioms PPAC.Migration.ForcingOrdinalRoot.rootDecision
+#print axioms PPAC.Migration.ForcingOrdinalRoot.rootDecision_semantics
+#print axioms PPAC.Migration.ForcingOrdinalRoot.rootContext
+#print axioms PPAC.Migration.ForcingOrdinalRoot.formulaBody
+#print axioms PPAC.Migration.ForcingOrdinalRoot.decisionBody
+#print axioms PPAC.Migration.ForcingOrdinalRoot.constructionSentence
+#print axioms PPAC.Migration.ForcingOrdinalRoot.construction_models
+#print axioms PPAC.Migration.ForcingOrdinalRoot.construction_kernel_certificate

@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：同一选择序型与选中秩的决定已验收
+## 当前执行入口：保持同一根图的序数决定已验收
 
-普通序数决定已于 8ea49ed 验收。本批进一步迁移 OrdinalCodes.selectionType_decide:180、ordF_not_mem_self:202、selectedRank_eq_iff:212、selectedRank_decide:229。ForcingOrdinalCoding.coding_kernel_certificate 为普通 nativeZF 联合原核证书：同一实际 selectionType 有精确秩界的决定；同一实际 rank 图的选中秩不自属，强迫相等当且仅当索引相等，且决定值 β 是同一 θ 的成员。实际调用既有 ranks_fixed/collected_fixed 产生 HS，未额外假设 HS、重建 rank/名字或增加对象选择。全量验收通过：2977 项构建、33452 项声明（新增 13 项），全部 33439 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告及新增公理依赖；75 项固定源、2532 项当前哈希匹配。记录：verification/ordinal-coding-acceptance.json。
+普通序数决定及四个 rank/type 消费者已分别于 8ea49ed、e18d8fe 验收。本批完成固定源 OrdinalCodes.forces_at_root:260、eq_at_root:271、ordinal_decide_at_root:287。ForcingOrdinalRoot.construction_kernel_certificate 的两个实例为 nativeZF 原核中的同一内部 L 相对化闭句：支持反射保留完整 Cohen 条件并恢复同一根图；序数决定返回实际 Cohen 加强、原根条件码、精确 β≤原始内部秩及 check-name 强迫相等。已有 supporting-root、名字作用/check、普通决定、ConstructibleSource 与完整 L/ZFC/选择接口均被直接消费；选择只在同一 L 中由已有定理产生，未加到背景 nativeZF。源几何、合并、呈现和支持前提仍显式保留。全量验收通过：2978 项构建、33465 项声明（新增 13 项），全部 33452 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2533 项当前哈希匹配。记录：verification/ordinal-root-acceptance.json。
 
-下一源路径是 OrdinalCodes.forces_at_root:260 → eq_at_root:271 → ordinal_decide_at_root:287，随后 CohenSelection.orderType_decide:352、rank_decide:374、member_rank:391，再接 CodeLinks。直接复用已经完成的 ForcingSupportingRoot.forces_at_supporting_root、实际条件编码、完整普通序数决定和本批 rank/type 结论；不重做 L、全模式、支持反射、名字、秩或商。固定根 Cohen 决定仍未完成，原阶段仍为 8；完整 OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 均未完成。
+下一源步骤为 CohenSelection.lift:310 / lift_coe:315 / lift_covariance:326，继而将同一 rank/type 接入 orderType_decide:352、rank_eq_iff:360、rank_decide:374、member_rank:391，再接 CodeLinks。实际乘积作用/条件编码、普通与固定根决定、同一 rank 图及 HS 生产者已经存在，继续直接复用。原阶段仍为 8；CohenSelection 剩余特化、完整 OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 

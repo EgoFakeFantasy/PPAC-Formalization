@@ -12423,4 +12423,14 @@ example {n m : Nat} (R : Source.Formula (n+2)) (rp : Fin n → Fin m) (ra : Fin 
       (ForcingOrdinalCoding.codingSentence R rp ra I K B w G F support X order history selection mul unit top p a b na nb theta ntheta)) :=
   ForcingOrdinalCoding.coding_kernel_certificate R rp ra I K B w G F support X order history selection mul unit top p a b na nb theta ntheta
 
+-- Same internal L: preserve the root and full Cohen coordinate, then decide with the exact rank bound.
+example {k n : Nat} (ordinal : Bool) (rho : Fin 7 → Fin k)
+    (w mu history kappa e mark H C incoming base I K B G F mul p s d A fixing z zr top sigma rank : Fin k)
+    (v : Fin n → Fin k) (phi : Source.Formula n) : FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingOrdinalRoot.constructionSentence ordinal rho w mu history kappa e mark H C incoming base I K B G F mul
+          p s d A fixing z zr top sigma rank v phi))) :=
+  ForcingOrdinalRoot.construction_kernel_certificate ordinal rho w mu history kappa e mark H C incoming base I K B G F mul
+    p s d A fixing z zr top sigma rank v phi
+
 end PPAC.Migration.Step4Checks
