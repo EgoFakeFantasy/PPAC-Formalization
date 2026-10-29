@@ -12784,4 +12784,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incomin
       (ForcingOutsideLocal.notEqualSentence rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y ordinal enum list d z sigma))) :=
   ForcingOutsideLocal.notEqual_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul p s0 s1 v A0 A1 Ap fixing0 fixing1 fixingP c t b labels nameBound g X0 X1 XP XV Q0 Q1 QP pr0 pr1 prP prv f0 f1 k0 k1 x0 x1 y ordinal enum list d z sigma
 
+-- Source classFromLocal/profile: the probe diagram need not lie below q.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p sm Or OP Om Ap Hp XP QP prP Am Hm XM QM prM Ar Hr XR QR prR ordinal enum list d z sigma a e m b t U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingClassProfile.constructionSentence rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p sm Or OP Om Ap Hp XP QP prP Am Hm XM QM prM Ar Hr XR QR prR ordinal enum list d z sigma a e m b t U))) :=
+  ForcingClassProfile.construction_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul c top bit labels bound g q E oi objects S mi maps r p sm Or OP Om Ap Hp XP QP prP Am Hm XM QM prM Ar Hr XR QR prR ordinal enum list d z sigma a e m b t U
+
 end PPAC.Migration.Step4Checks

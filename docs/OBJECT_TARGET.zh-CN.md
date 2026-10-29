@@ -70,4 +70,6 @@ LocalWitness 同记录相等现已接通名字层：实际根置换／条件传�
 
 CodeCardinals 的实际成员记录见证现已接通：ForcingCodeRecordWitness.member_kernel_certificate 在普通 nativeZF 原核中证明同一内部 L 相对化的完整见证句子。实际选中码、同一秩图、根名字、加强条件和字面记录 (m,(x,pb)) 全部保留；既有链接稳定性与表示稠密性被直接消费。同一记录关系的 single／ChainBound 组合及实际上界现已完成，见 verification/code-cardinals-acceptance.json；下界、实际 OrdinalCount、第 9–11 阶段及最终内部 Con 仍未完成。
 
-本批已构造完整局部名字集的内部序数双射和同一个 HS／固定列表，并给出任意内部名字／条件的成员刻画；OutsideLocal 全称量化实际加强条件，普通 nativeZF 原核证明实际商限制无原像，同一内部 L 相对化原核证明精确交集下的不相等。probeDenseSet_dense/hits 同样已取得原核证书。这些原核端点不能替代尚未完成的对称解释内部 localList_wellorderable、classFromLocal_profile、outsideClass_copies、CodeCardinals 下界或最终内部 Con。当前全量验收状态见 STATUS 及 verification/probe-local-list-acceptance.json。
+本批已构造完整局部名字集的内部序数双射和同一个 HS／固定列表，并给出任意内部名字／条件的成员刻画；OutsideLocal 全称量化实际加强条件，普通 nativeZF 原核证明实际商限制无原像，同一内部 L 相对化原核证明精确交集下的不相等。probeDenseSet_dense/hits 同样已取得原核证书。这些原核端点不能替代尚未完成的对称解释内部 localList_wellorderable、outsideClass_copies、CodeCardinals 下界或最终内部 Con。当前全量验收状态见 STATUS 及 verification/probe-local-list-acceptance.json。
+
+实际 classFromLocal_profile 现已在 ForcingClassProfile.construction_kernel_certificate 中接通：原名字的目标商类在结论内构造，Obj 成员性、同名投影及完整可用性一起返回；不要求原探针图位于资格锥内。源的实际 System、Data、几何及局部列表仍作为具体装配接口，Choice 由同一既有 L 消去。该端点不替代 outsideClass_copies、CodeCardinals 下界、完整 OrdinalCount 或最终内部 Con。

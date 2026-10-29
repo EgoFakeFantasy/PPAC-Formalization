@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：探针稠密性、完整局部列表及 OutsideLocal 两条排除定理
+## 当前执行入口：实际 classFromLocal 与精确可用性 profile 已取得原核证书
 
-本批严格沿固定源 PlacementExtensions 和 ClassFibers：ForcingProbeDensity 用实际内部 copies 函数图、同根限制与根外不交支撑证明 probeDenseSet_dense/hits；ForcingLocalList 构造完整 LocalName 集合的内部序数双射及同一个 collected 列表，并证明 HS／固定性、精确成员刻画和任意局部名字的成员性；ForcingOutsideLocal 接通 outsideLocal_not_image 与 outsideLocal_not_equal，后者直接消费既有 ForcingLocalIntersection.intersection。未重建 L、基数枚举、过滤器、商、支持下降或名字后端。
+ForcingClassProfile 沿固定 ClassFibers.classFromLocal:405／classFromLocal_profile:419，复用现成 LocalName、实际商投影、资格传输和同一个对象／映射族。由原名字构造真正的目标商类，返回其 Obj 成员性、投影边及完整 availability carrier。探针图本身允许位于资格锥外，不要求它的商类属于该处的 Obj；正向只在已证明位于锥内的位置构造资格值，反向从实际映射抽取共同图上的 EqG，再消费现成完整支持下降和 OutsideLocal 排除。未重建 L、支持下降、商、几何或资格后端。
 
-四个原核端点均已通过全量验收：density_kernel_certificate、construction_kernel_certificate、notImage_kernel_certificate、notEqual_kernel_certificate。notImage 是普通 nativeZF 原句，其余使用同一个既有内部 L 的相对化，Choice 由现成 L 消去。全量验收已通过：3026 项构建、34286 项声明，新增 44 项；全部 34242 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2581 份当前文件哈希匹配。报告为 verification/probe-local-list-acceptance.json。
+construction_kernel_certificate 在普通 nativeZF 原核中证明同一既有内部 L 相对化的完整存在闭句；源的理想整除／共同锥条件及已经装配的具体 System／Data／局部列表接口保持显式。全量验收已通过：3027 项构建、34299 项声明，新增 13 项；全部 34286 项旧足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2582 份当前文件哈希匹配。报告为 verification/class-profile-acceptance.json。
 
-下一源步骤：接 ClassFibers.classFromLocal_profile 与 outsideClass_copies 的实际名字／可用性／置换族，消费本批探针密度和不相等结论，再接已有 StableCodes、稠密选择、Links 同余及秩决策，完成 CodeCardinals.ordinalType_lower_count 的 total/single；最后与已完成上界汇合为 ConcreteQuotients 实际 OrdinalCount。localList_wellorderable／outside_localList 的源消费者也尚未完成，不能用地面序数枚举代替对称解释中的良序性。已完成上界、Cohen ChainBound、记录界、完整列表及两条 OutsideLocal 排除定理不再列为缺口。
+下一源消费者：ClassFibers.outsideClass_copies 的实际名字／条件置换族，再接 classFiberEmbedding 与 CodeCardinals.ordinalType_lower_count 的实际 total/single，最终与已完成上界合流为 ConcreteQuotients 的 OrdinalCount。完整局部列表、probeDenseSet_dense/hits、两条 OutsideLocal 排除及本批实际 classFromLocal_profile 均不再列作待证明。localList_wellorderable／outside_localList、第 9–11 阶段和最终内部 Con 仍未完成。Geometry 来自已有 IdealProbes 的完整整除及共同锥输出，不重新开发存在性。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

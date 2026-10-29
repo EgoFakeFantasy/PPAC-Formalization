@@ -34865,3 +34865,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOutsideLocal.notEqualSentence
 #print axioms PPAC.Migration.ForcingOutsideLocal.notEqual_models
 #print axioms PPAC.Migration.ForcingOutsideLocal.notEqual_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingClassProfile.Geometry
+#print axioms PPAC.Migration.ForcingClassProfile.classFromLocal
+#print axioms PPAC.Migration.ForcingClassProfile.map_of_same_name
+#print axioms PPAC.Migration.ForcingClassProfile.outside_not_eqG_common
+#print axioms PPAC.Migration.ForcingClassProfile.classFromLocal_profile
+#print axioms PPAC.Migration.ForcingClassProfile.construct
+#print axioms PPAC.Migration.ForcingClassProfile.geometry
+#print axioms PPAC.Migration.ForcingClassProfile.geometry_freeClosed
+#print axioms PPAC.Migration.ForcingClassProfile.geometry_semantics
+#print axioms PPAC.Migration.ForcingClassProfile.result
+#print axioms PPAC.Migration.ForcingClassProfile.constructionSentence
+#print axioms PPAC.Migration.ForcingClassProfile.construction_models
+#print axioms PPAC.Migration.ForcingClassProfile.construction_kernel_certificate
