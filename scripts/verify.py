@@ -2424,7 +2424,8 @@ def main() -> None:
                                ('forcing_outside_copies', 'ForcingOutsideCopies', 27),
                                ('forcing_probe_row_hits', 'ForcingProbeRowHits', 27),
                                ('forcing_probe_stable', 'ForcingProbeStable', 5),
-                               ('forcing_probe_total', 'ForcingProbeTotal', 4)):
+                               ('forcing_probe_total', 'ForcingProbeTotal', 4),
+                               ('forcing_probe_single', 'ForcingProbeSingle', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

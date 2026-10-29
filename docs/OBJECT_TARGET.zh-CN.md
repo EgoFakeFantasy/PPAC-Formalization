@@ -87,3 +87,7 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 ## 2026-10-30 主线 total 的实际秩见证
 
 `ForcingProbeTotal.source_kernel_certificate` 在普通 nativeZF 中证明同一内部 L 的对象句：从实际 Outside 副本和原类型强迫等式，产生加强条件、选中码、同一图中的秩名字、内部 β∈θ 及 check-name 强迫等式，并保持与同一副本名字的 Links。既有 dense_selected 仅开放可见性，原证明正文不变；没有重建选择或秩后端。该证书是行命中之后的 total 见证生产者；全部行关系装配、single、最终基数计数和内部 Con 仍未完成。全量验收通过：3031 构建、34363 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-total-acceptance.json。
+
+## 2026-10-30 主线 single 的实际副本排除
+
+`ForcingProbeSingle.source_kernel_certificate` 是普通 nativeZF 原核中的对象闭句，沿同一内部 L 量化全部内部见证条件及可能共同加强。结论为同秩独立副本的见证条件无共同加强。秩判别、Links/Same、公共根交集和实际 Outside 排除均实际接通；不存在把选中码／原名字相等或不相容当作未消去假设的替代。源对应 `ordinalType_lower_count.single:254–283`。全行关系及最终基数计数和内部 Con 仍未完成。全量验收通过：3032 构建、34367 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-single-acceptance.json。

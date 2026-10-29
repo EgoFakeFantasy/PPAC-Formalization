@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：实际副本经持久选择取得 total 的秩见证
+## 当前执行入口：同秩独立副本的 single 矛盾已取得原核证书
 
-本批 `ForcingProbeTotal` 直接接续固定 `CodeCardinals.ordinalType_lower_count.total:233–253` 在行命中之后的推导。先消费 ForcingProbeStable 的实际工作码，再调用已有 dense_selected；`ForcingGermDensity.existing_dense_selected` 只移除 private 可见性，原命题和证明正文逐字不变。利用现成 Links 单调性／Same 传输保持同一副本名字，再从同一实际 Ranks 图取出选中码的秩名字，调用已有 ordinalRank_decide，产生加强条件、内部序数 β∈θ、选中码和强迫秩等式。没有把工作码、选中码、β 或传输后的 Links 当作输入。
+本批 `ForcingProbeSingle` 直接迁移固定 `CodeCardinals.ordinalType_lower_count.single:254–283`。从两份实际 Copy 记录、同一实际 rank 图中的选中见证和同一内部 β 的 check-name 出发，在任意假定共同加强条件上用既有 rank 判别推出选中码相等；经既有 Same 自反性和 Links 等价得到两个原名字的强迫相等。公共根值域交集从真实子图及独立锥方程推出；实际 LocalName 和 Outside 从原副本记录取出；构造现成主滤子后消费 outside_not_eqG_common 得到矛盾。选中码相等、原名字相等、公共根交集、主滤子和不相容结论均未作为额外输入。
 
-`ForcingProbeTotal.source_kernel_certificate` 将这些实际见证和同一副本 Links 一并写入普通 nativeZF 的闭合对象句，沿同一现成内部 L 消去 Choice。背景语言、完整内部条件范围和全部内部链索引保留。全量验收通过：3031 项构建、34363 项声明；新增 4 项生产者声明及 1 项现成证明公开接口，全部 34358 项旧声明足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源及 2586 份当前文件哈希匹配。报告：verification/probe-total-acceptance.json。
+`ForcingProbeSingle.source_kernel_certificate` 在普通 nativeZF 中证明同一现成内部 L 上的闭合对象句：这两份同秩独立副本的见证条件不存在任何共同内部加强条件。没有新增选择、秩、商、名字或强迫后端。全量验收通过：3032 项构建、34367 项声明；新增 4 项，全部 34363 项旧声明足迹逐项不变，无新增公理依赖。9 条命令与 5 次 trust=0 均退出 0，零警告；75 份固定源及 2587 份当前文件哈希匹配。报告：verification/probe-single-acceptance.json。
 
-下一步是把已有逐行 hits 与本批实际见证合为源关系 R 的全部行总性，再完成 single 并消费 ChainBound.cardinal_le_mul，进入 ConcreteQuotients.code_ordinalType_cardinal。single 所需 selectedRank_eq_iff、links_eq_iff_same、outside_not_eqG_common 已定位到现成实现，不能重报为缺失基础定理。完整计数／OrdinalCount、localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。停止扩写已退役 classFiber_dense_lower 辅助分支。
+下一步将已完成的逐行 hits、实际 total 见证和本批成对 single 矛盾装配为同一内部关系 R，再消费已有 ForcingChainBound.cardinal_le_mul 与 Cohen chain-bound 接口。全部行关系装配和最终计数／OrdinalCount 仍未完成；localList_wellorderable／outside_localList、第 9–11 阶段及最终内部 Con 仍未完成。保持既有 L、完整公理模式、Proof/Sat 和选择／递归后端，不恢复退役 classFiber_dense_lower 分支。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 
