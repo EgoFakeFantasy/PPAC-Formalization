@@ -12837,4 +12837,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ForcingConcreteOrdinalCount.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group A P targets copies multipliers Power continuum coordS localS labelSet))) :=
   ForcingConcreteOrdinalCount.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p e b t Ap Hp XP ordinal enum list J delta zero root vertices chain names Ar Hr codes order ranks selection group A P targets copies multipliers Power continuum coordS localS labelSet
 
+-- Actual internal ideal probes and outside copies discharge OrdinalCount family premises.
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p b t Ap Hp XP ordinal enum list delta zero root vertices chain names Ar Hr codes order ranks selection group P Power continuum coordS localS labelSet s j sigma d z : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingIdealProbeCount.sourceSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p b t Ap Hp XP ordinal enum list delta zero root vertices chain names Ar Hr codes order ranks selection group P Power continuum coordS localS labelSet s j sigma d z))) :=
+  ForcingIdealProbeCount.source_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq r a U p b t Ap Hp XP ordinal enum list delta zero root vertices chain names Ar Hr codes order ranks selection group P Power continuum coordS localS labelSet s j sigma d z
+
 end PPAC.Migration.Step4Checks

@@ -866,3 +866,4 @@ import PPAC.Migration.ForcingProbeSingle
 import PPAC.Migration.ForcingProbeRows
 
 import PPAC.Migration.ForcingConcreteOrdinalCount
+import PPAC.Migration.ForcingIdealProbeCount

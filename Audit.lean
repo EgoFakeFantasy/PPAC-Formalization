@@ -34981,3 +34981,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingConcreteOrdinalCount.sourceSentence
 #print axioms PPAC.Migration.ForcingConcreteOrdinalCount.source_models
 #print axioms PPAC.Migration.ForcingConcreteOrdinalCount.source_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOutsideCopies.construct_targets_at
+#print axioms PPAC.Migration.ForcingOutsideCopies.source_family_at
+#print axioms PPAC.Migration.ForcingProbeRows.count_with_family
+#print axioms PPAC.Migration.ForcingConcreteOrdinalCount.count_with_family
+#print axioms PPAC.Migration.ForcingIdealProbeCount.square_multipliers
+#print axioms PPAC.Migration.ForcingIdealProbeCount.local_list_fixed
+#print axioms PPAC.Migration.ForcingIdealProbeCount.source_construct
+#print axioms PPAC.Migration.ForcingIdealProbeCount.sourceSentence
+#print axioms PPAC.Migration.ForcingIdealProbeCount.source_models
+#print axioms PPAC.Migration.ForcingIdealProbeCount.source_kernel_certificate

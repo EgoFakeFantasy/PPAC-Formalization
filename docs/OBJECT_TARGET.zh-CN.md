@@ -92,8 +92,8 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 
 `ForcingProbeSingle.source_kernel_certificate` 是普通 nativeZF 原核中的对象闭句，沿同一内部 L 量化全部内部见证条件及可能共同加强。结论为同秩独立副本的见证条件无共同加强。秩判别、Links/Same、公共根交集和实际 Outside 排除均实际接通；不存在把选中码／原名字相等或不相容当作未消去假设的替代。源对应 `ordinalType_lower_count.single:254–283`。全行关系及最终基数计数和内部 Con 仍未完成。全量验收通过：3032 构建、34367 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-single-acceptance.json。
 
-## 同一行关系与完整 OrdinalCount 的对象证书（2026-10-30）
+## 同一行关系、实际探针副本与完整 OrdinalCount（2026-10-30）
 
-ForcingProbeRows.source_kernel_certificate 构造同一内部 R 并证明 A ≤ θ×continuum。其后续 ForcingConcreteOrdinalCount.source_kernel_certificate 已实际消费这一界及已有上界，通过原生 Hartogs 排除与 Cantor–Bernstein 证明完整 OrdinalCount：每个加强条件和每个内部序数/check-name 见证都得到同一标签集与该序数等势。两项证书都在原 nativeZF 中、相对于同一现成内部 L；不增加对象 Choice 或强不可达。
+ForcingProbeRows 构造同一内部 R 并证明行计数下界；ForcingConcreteOrdinalCount 消费该界与已有上界，经原生 Hartogs 排除和 Cantor–Bernstein 得到完整 OrdinalCount。本批 ForcingIdealProbeCount.source_kernel_certificate 进一步消费已有理想探针及 OutsideCopies，实际产生平方索引的乘子、目标、副本族。几何、独立性、索引不可数性和同一列表固定性均从现有生产者得出，不作为新增假设。
 
-实际副本族、完整秩图、局部列表、几何和索引／标签基数仍是明确源输入。最终具体生产者装配、局部列表消费者、PP/Main 与全部内部／非标准证明码的 Con 推导未完成。最新验收见 verification/ordinal-count-acceptance.json；不得将该辅助对象定理称为最终主句。
+证书仍是普通 nativeZF 中相对于同一现成内部 L 的闭句，量化全部内部条件与序数。实际终行／AllIdeals、完整秩／名字图、局部列表枚举、标签／参数及初始 outside-class 见证仍是明确源输入。具体父输入的最终装配、局部列表消费者、PP/Main 和全部内部／非标准证明码的 Con 推导未完成。本批全量验收状态见 STATUS；不得将该辅助对象定理称为最终主句。

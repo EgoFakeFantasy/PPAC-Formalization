@@ -499,25 +499,26 @@ theorem targets_semantics (hM : FirstOrder.Theory.Models M nativeZF) {n : Nat}
     ForcingSupportSize.injection_semantics (M := M),ForcingDiagramOrder.sub_semantics (M := M)]
   rfl
 
-theorem construct_targets (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
-    (env : Fin k → M.Carrier .set) (D I mul one r p pos product indices multipliers Y : Fin k)
+theorem construct_targets_at (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (D I mul one r p pos product indices Y : Fin k)
+    (multipliers : M.Carrier .set)
     (hm : ForcingDiagramPoset.LeftCancelMonoid (env D) (env mul) (env one))
     (hr : Injection (env D) (env I) (env r)) (hp : Injection (env D) (env I) (env p))
     (hpos : (Project.FirstOrderSemantics.reduct M).mem (env pos) (env D))
     (hSub : ForcingDiagramOrder.Sub (env D) (env mul) (env r) (env product) (env p))
-    (hMuls : ForcingSupportSize.MapsTo (env indices) (env D) (env multipliers))
-    (hProducts : ∀ i m, PureKuratowski.PairMember M i m (env multipliers) →
+    (hMuls : ForcingSupportSize.MapsTo (env indices) (env D) multipliers)
+    (hProducts : ∀ i m, PureKuratowski.PairMember M i m multipliers →
       ForcingDiagramOrder.Product (env mul) m (env pos) (env product))
     (hY : ForcingDiagramCarrier.Carrier (env D) (env I) (env Y)) :
-    ∃ output, Targets (env D) (env I) (env mul) (env r) (env pos) (env p) (env indices) (env multipliers) output := by
-  let schema : Project.BinarySchema k := {
-    body := .conj (.mem (.bound 0) (.bound Y.succ.succ))
-      (.existsE (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge multipliers.succ.succ.succ 2 0))
-        (ProjectSyntax.encode id (ForcingDiagramOrder.sub D.succ.succ.succ mul.succ.succ.succ r.succ.succ.succ 0 1))))
+    ∃ output, Targets (env D) (env I) (env mul) (env r) (env pos) (env p) (env indices) multipliers output := by
+  let schema : Project.BinarySchema (k+1) := {
+    body := .conj (.mem (.bound 0) (.bound Y.succ.succ.succ))
+      (.existsE (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge 3 2 0))
+        (ProjectSyntax.encode id (ForcingDiagramOrder.sub D.succ.succ.succ.succ mul.succ.succ.succ.succ r.succ.succ.succ.succ 0 1))))
     freeClosed := by simp -implicitDefEqProofs [Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed] }
-  let penv : Env (Project.FirstOrderSemantics.reduct M) k := ⟨env,fun _ => env r⟩
+  let penv : Env (Project.FirstOrderSemantics.reduct M) (k+1) := ⟨Fin.cases multipliers env,fun _ => env r⟩
   have he i t : schema.denote penv i t ↔ (Project.FirstOrderSemantics.reduct M).mem t (env Y) ∧
-      ∃ m, PureKuratowski.PairMember M i m (env multipliers) ∧ ForcingDiagramOrder.Sub (env D) (env mul) (env r) m t := by
+      ∃ m, PureKuratowski.PairMember M i m multipliers ∧ ForcingDiagramOrder.Sub (env D) (env mul) (env r) m t := by
     simp only [schema,Project.BinarySchema.denote,Project.Formula.satisfies_conj_iff,
       Project.Formula.satisfies_mem_iff,Project.Formula.satisfies_exists_iff,Project.Term.eval_bound,
       GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),KuratowskiZF.source_edge,
@@ -546,6 +547,63 @@ theorem construct_targets (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
   have hrv := ForcingDiagramPoset.sub_sub hm (hMuls.2 i m him) hpos (hProducts i m him) hmt hsv
   have eq := ForcingDiagramPoset.injection_ext hM hv hp (fun x z => (hrv x z).trans (hSub x z).symm)
   exact ⟨ht,eq ▸ hsv,m,him,hmt⟩
+
+theorem construct_targets (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (D I mul one r p pos product indices multipliers Y : Fin k)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env D) (env mul) (env one))
+    (hr : Injection (env D) (env I) (env r)) (hp : Injection (env D) (env I) (env p))
+    (hpos : (Project.FirstOrderSemantics.reduct M).mem (env pos) (env D))
+    (hSub : ForcingDiagramOrder.Sub (env D) (env mul) (env r) (env product) (env p))
+    (hMuls : ForcingSupportSize.MapsTo (env indices) (env D) (env multipliers))
+    (hProducts : ∀ i m, PureKuratowski.PairMember M i m (env multipliers) →
+      ForcingDiagramOrder.Product (env mul) m (env pos) (env product))
+    (hY : ForcingDiagramCarrier.Carrier (env D) (env I) (env Y)) :
+    ∃ output, Targets (env D) (env I) (env mul) (env r) (env pos) (env p) (env indices) (env multipliers) output := by
+  exact construct_targets_at hM env D I mul one r p pos product indices Y (env multipliers) hm hr hp hpos hSub hMuls hProducts hY
+
+theorem source_family_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product : Fin k)
+    (multipliers : M.Carrier .set)
+    (hp : Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hLarge : ¬ ForcingSupportSize.Small (env I) (env mu)) (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hc : ForcingConditionGraphs.FunctionOn (env K) (env c)) (htop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env c) (env top) (env bit) (env labels))
+    (hBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env c) (env top) (env bit) (env bound))
+    (hE : ForcingHS.HS actionFormula (fun i => env (rho i)) (env G) (env (rho 6)) (env F) (env E))
+    (hRootRange : ForcingSupportedNames.Range (env (rho 0)) (env p) (env J))
+    (hRoot : ForcingLabelPermutations.Fixing (env G) (env J) (env H))
+    (hEf : ForcingSupportedNames.Supported (fun i => env (rho i)) (env H) (env E))
+    (hList : ForcingOrdinalFixed.Fixed (fun i => env (rho i)) (env G) (env F) (env H) (env list))
+    (hs : Injection (env (rho 0)) (env I) (env s))
+    (hpos : (Project.FirstOrderSemantics.reduct M).mem (env pos) (env (rho 0)))
+    (hSub : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env s) (env pos) (env p))
+    (hd : Condition (env (rho 2)) (env w) (env d))
+    (hSupp : ForcingLocalRecordPullback.Supported (env (rho 0)) (env s) (env d))
+    (hRestr : Restricted (env J) (env d) (env delta)) (hz : Code (env z) (env d) (env s))
+    (hj : ImageAt (env s) (env (rho 0)) (env j))
+    (hSigma : Value (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun i => env (rho i))
+      (env G) (env F) (env I) (env K) (env c) (env top) (env bit) (env labels) (env E) (env j) (env sigma))
+    (hOut : Outside (orderFormula (rho 0) mul) env (env (rho 6)) (env z) (env sigma) (env list))
+    (hr : Injection (env (rho 0)) (env I) (env r)) (hpRoot : Injection (env (rho 0)) (env I) (env p))
+    (hSubR : ForcingDiagramOrder.Sub (env (rho 0)) (env mul) (env r) (env product) (env p))
+    (hMuls : ForcingSupportSize.MapsTo (env indices) (env (rho 0)) multipliers)
+    (hProducts : ∀ i m, PureKuratowski.PairMember M i m multipliers →
+      ForcingDiagramOrder.Product (env mul) m (env pos) (env product)) :
+    ∃ ts output, Targets (env (rho 0)) (env I) (env mul) (env r) (env pos) (env p) (env indices) multipliers ts ∧
+      Family (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun i => env (rho i))
+        (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) (env indices) ts output := by
+  obtain ⟨ts,hTs⟩ := construct_targets_at hM env (rho 0) I mul one r p pos product indices (rho 4) multipliers hm hr hpRoot hpos hSubR hMuls hProducts hp.2.2.2.1
+  obtain ⟨output,hOutput⟩ := construct hM hChoice env rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices ts
+    hp hG hF hw hMu hLarge hSmall hm hc htop hLabels hBound hE hRootRange hRoot hEf hList hs hpos hSub hd hSupp hRestr hz hj hSigma hOut hTs.1
+    (fun i t hit => ⟨(hTs.2 i t hit).1,(hTs.2 i t hit).2.1⟩)
+  exact ⟨ts,output,hTs,hOutput⟩
 
 theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
@@ -584,12 +642,7 @@ theorem source_construct (hM : FirstOrder.Theory.Models M nativeZF)
     ∃ ts output, Targets (env (rho 0)) (env I) (env mul) (env r) (env pos) (env p) (env indices) (env multipliers) ts ∧
       Family (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun i => env (rho i))
         (env G) (env F) (env w) (env bound) (env labels) (env E) (env J) (env delta) (env list) (env indices) ts output := by
-  obtain ⟨ts,hTs⟩ := construct_targets hM env (rho 0) I mul one r p pos product indices multipliers
-    (rho 4) hm hr hpRoot hpos hSubR hMuls hProducts hp.2.2.2.1
-  obtain ⟨output,hOutput⟩ := construct hM hChoice env rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices ts
-    hp hG hF hw hMu hLarge hSmall hm hc htop hLabels hBound hE hRootRange hRoot hEf hList hs hpos hSub hd hSupp hRestr hz hj hSigma hOut hTs.1
-    (fun i t hit => ⟨(hTs.2 i t hit).1,(hTs.2 i t hit).2.1⟩)
-  exact ⟨ts,output,hTs,hOutput⟩
+  exact source_family_at hM hChoice env rho G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product (env multipliers) hp hG hF hw hMu hLarge hSmall hm hc htop hLabels hBound hE hRootRange hRoot hEf hList hs hpos hSub hd hSupp hRestr hz hj hSigma hOut hr hpRoot hSubR hMuls hProducts
 
 def sourceSentence {k : Nat} (rho : Fin 7 → Fin k)
     (G F mul I K B w mu one c top bit labels E j sigma bound J H list s p pos d delta z indices r product multipliers : Fin k) : Project.Sentence where
