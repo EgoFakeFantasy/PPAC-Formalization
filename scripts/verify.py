@@ -2395,7 +2395,8 @@ def main() -> None:
                                ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35),
                                ('existing_tree_addresses', 'ExistingTreeAddresses', 29),
                                ('forcing_countable_tree_codes', 'ForcingCountableTreeCodes', 24),
-                               ('forcing_countable_tree_graft', 'ForcingCountableTreeGraft', 31)):
+                               ('forcing_countable_tree_graft', 'ForcingCountableTreeGraft', 31),
+                               ('forcing_countable_tree_cardinality', 'ForcingCountableTreeCardinality', 21)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -2436,7 +2437,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra", "ExistingTreeAddresses", "ForcingCountableTreeCodes", "ForcingCountableTreeGraft"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra", "ExistingTreeAddresses", "ForcingCountableTreeCodes", "ForcingCountableTreeGraft", "ForcingCountableTreeCardinality"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}

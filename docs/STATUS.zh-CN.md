@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：源完整内部树载体与可数拼接封闭
+## 当前执行入口：源完整树载体的内部基数界
 
-源 AssignedGraphs.CountableHull.Arity:285–287／exists_closed:296–324 的树构造现由 ForcingCountableTreeCodes 和 ForcingCountableTreeGraft 接入。原有内部有限序列空间直接复用；ExistingTreeAddresses 保留五段供体首尾／拼接／前缀／子边证明正文，仅一项定理的命名空间调整。全部地址长度属于同一个内部 ω，不限制为外部标准自然数。
+ForcingCountableTreeCardinality 已迁移 AssignedGraphs.CountableHull.exists_closed:301–316 的整个树载体大小估计。在同一内部有限地址空间上，用三个标记区分地址缺失、叶、带标签节点，并将标签映入 μ；证明编码能逐点恢复节点集和标签图，形成一个实际内部单射。全部合法树都被编码，没有高度上界或外部标准长度限制。
 
-树码为实际节点集及标签图：无标签节点无子节点，有标签节点包含全部内部 ω 子节点。用幂集／积／分离构造全部合法内部良基树的精确载体及叶码，取得 forall2 普通 nativeZF 原核证书。任意内部 ω→C 树族的实际节点拼接，已证明前缀封闭、同分支子边、内部子集极小元良基性、标签唯一性和完整分支，并取得 forall8 同一载体封闭性的普通 nativeZF 原核证书。供体 Borel 拼接方法已按源标签与分支规则适配，不直接混用合同。
+地址空间的可数性直接复用 ExistingFiniteSequenceBounds；单元素地址与原生 Cantor–Bernstein 给出到内部 ω 的双射。再消费既有无限积界、函数空间传输和 ConstructionConcreteCardinals.normalize_power，取得 forall7 普通 nativeZF 原核证书：ω≤μ、μ^ω=μ、|A|≤μ 推出同一全部树载体 |C|≤μ。没有留下“树已经小”的前提，也没有增加对象 Choice。
 
-775 项模块构建、84 项新增声明的 trust=0 审计已通过；全量验收与旧足迹比较以 verification/tree-codes-acceptance.json 的实际结果为准。
+上一批完整树载体／叶码及任意内部 ω 树族的实际拼接封闭性保持不变。本批 1012 项模块构建与 21 项公开声明的 trust=0 审计已通过；全量验收与旧足迹对比以 verification/tree-cardinality-acceptance.json 的实际结果为准。
 
-下一源步骤为同一树载体的基数界及拼接的求值方程，接上求值根值范围的完整 CountableHull.exists_closed，再接实际 Cohen 反链界和 CodeCardinals。既有内部可数幂固定点、一般求值与实际叶／节点规则直接复用。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
+下一源步骤为实际树的子节点／叶集合求值装配、保留子节点索引的拼接求值方程，以及根值范围的完整 CountableHull.exists_closed，再接实际 Cohen 反链界和 CodeCardinals。原内部求值器、叶／节点规则及固定幂参数直接复用。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

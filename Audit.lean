@@ -34412,3 +34412,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCountableTreeGraft.shift_freeClosed
 #print axioms PPAC.Migration.ForcingCountableTreeGraft.graft_freeClosed
 #print axioms PPAC.Migration.ForcingCountableTreeGraft.closure_freeClosed
+
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.addresses_equinumerous
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.Value
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_semantics
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_total
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_unique
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_typed
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_reflects
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.Encoding
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding_semantics
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding_exists
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding_unique
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding_injective
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.carrier_injection
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.cardinal_le
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.boundSentence
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.bound_models
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.bound_kernel_certificate
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.value_freeClosed
+#print axioms PPAC.Migration.ForcingCountableTreeCardinality.encoding_freeClosed
