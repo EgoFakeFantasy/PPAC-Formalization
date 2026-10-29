@@ -829,3 +829,6 @@ import PPAC.Migration.ForcingGermDensity
 import PPAC.Migration.ForcingChainBound
 import PPAC.Migration.ForcingCountableTreeEvaluation
 import PPAC.Migration.ForcingCountableTreeAlgebra
+import PPAC.Migration.ExistingTreeAddresses
+import PPAC.Migration.ForcingCountableTreeCodes
+import PPAC.Migration.ForcingCountableTreeGraft

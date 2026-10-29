@@ -56,6 +56,6 @@ ZF/U专用检查器完整纯AST、任意内部码上的正确性以及主句Deri
 
 本批又已完成有界原父背景下的实际完整内部多轮塔、全部内部阶段Valid/AllSmall、全12表／21合同及全塔精确相邻转移；forall17/16同一内部L相对化原核证书已验收。
 
-源 ChainBound 的精确内部乘积界及同一 L 相对化原核证书已完成；具体 Cohen 反链界及 CodeCardinals 实例尚未据此闭合。源可数分支树的内部集合值求值和实际叶／节点算子实例化均已有普通 nativeZF 原核证书；所有内部 ω 子值图被完整使用，通用 Local/Total/Single 已被证明。完整树载体、拼接和基数界仍未完成，不等同于 CountableHull 或 OrdinalCount 已证。
+源 ChainBound 的精确内部乘积界及同一 L 相对化原核证书已完成；具体 Cohen 反链界及 CodeCardinals 实例尚未据此闭合。源可数分支树的内部集合值求值和实际叶／节点算子实例化均已有普通 nativeZF 原核证书；所有内部 ω 子值图被完整使用，通用 Local/Total/Single 已被证明。完整内部树载体／叶码及任意内部 ω 树族的实际拼接封闭性现已取得普通 nativeZF 原核证书；树码基数界、拼接求值方程和根值范围封闭仍未完成，不等同于 CountableHull 或 OrdinalCount 已证。
 
 真正未闭合：第8的实际 OrdinalCount 前提及完整选择器消费者、CodeCardinals 及实际模型消费者（CodeLinks、固定序数表、真实 Preliminary 四条基本定律、强迫相等 iff 标签相等、精确稳定性、下降、尾群协变及保留 OrdinalCount 前提的稠密总性与满射性、LocalName/LocalQuotient/限制、Fiber/整分量粘合、eligibleSystemTransport 全族与自然性、Placement/Hull、EquivariantMixing、active_equal 和 support_descent 均已有原核证书），第9同一系统的模型应用，第10全秩PP/Main、ZF/U专用内部Proof/Con、全部内部/非标准矛盾码传输和最终原核闭句。内部ω₁+1、countable_stage、完整实际塔、最终Probe/Merger、同根图RootSystem/乘积相等iffCopyRel均已完成；最新验收见STATUS。complement_probes本批已接同一实际塔并通过全量验收，取得forall15同一L相对化的原核对象证书。本批又已完成target_cardinal/complement_cardinal的原核证书，原|K|=μ条件和完整内部双射图均保留。任意理想的单位首项内部ω共尾路径和最终ideal probes现也已有同一实际塔的forall15原核对象证书，不假设理想可数。实际P(ω)连续统后继μ及K:=μ已进入同一IdealTower，forall1/13原核对象证书已验收，这些Base几何合同现已由ConstructionConcreteBase实际消去，取得forall1完整Base/T和同一实际最终行全性质的原核对象证书。已有外部标准证书变换不替代内部码证明。

@@ -97514,6 +97514,735 @@
           "Quot.sound"
         ]
       }
+    },
+    "existing_tree_addresses": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/AssignedGraphs.lean",
+      "source_sha256": "4f706cb93f2d83a9935a0518c0c732b6fb2dc4529017934f625f749e4d5d53dd",
+      "adapter": "PPAC/Migration/ExistingTreeAddresses.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ExistingTreeAddresses.lean": "5ad83297d911d821d09cff7b1aefdad6fbbce4ded54ddda5afd1e81b78cd537f",
+        "PPAC/Migration/ForcingCountableTreeCodes.lean": "03c7dc4fa70a23df4f89573fc75e6ef29b92e36aebe2d18c3339b013de12cd27",
+        "PPAC/Migration/ForcingCountableTreeGraft.lean": "b86de82df8a8a1aeba8903cf0d2639a8708d9a4de345e30af659a3cc62aa72b2",
+        "PPAC/Migration/ExistingFiniteSequenceBounds.lean": "e8201f97ac9b03d963a97ab03635ef4d441a09846825c5d1f0e32fba54f90a2a",
+        "PPAC/Migration/ForcingCountableTreeEvaluation.lean": "1bd69ef9cef652b5368ad3d92d9db83c95094ea37f16e0a08974b5d474029ca2",
+        "PPAC/Migration/ForcingCountableTreeAlgebra.lean": "2c026d1881d99cbfd691d5ce0d87719b57d4a670e20a6e8600d23b34c2a25a16",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        "PPAC/Migration/KuratowskiZF.lean": "172f20e5f392b6faa45f4d68095f7158cadc164f91ed47adb06408a67730d502"
+      },
+      "source_declarations": [
+        "CountableHull.Arity:285-287",
+        "CountableHull.exists_closed:296-324 (leaf and full omega node constructors; cardinal/evaluation-range obligations remain)"
+      ],
+      "consumers": [
+        "AssignedGraphs.Condition.antichain_cardinal_le:403-457",
+        "CodeCardinals.ordinalType_cardinal_le:117 / ordinalType_lower_count:289"
+      ],
+      "scope": "Retain five existing donor finite-address proof sections, with only the fseq_end_exists_l theorem namespace adjusted. Reuse ExistingFiniteSequenceBounds for the whole internal finite sequence space. Native last decomposition, prepend graph construction, prefix/child equivalence and head/tail cases cover ALL internal natural lengths. These are used by the source full omega-tree carrier/graft; no external finite lists or host well-foundedness.",
+      "reuse_producers": [
+        "ExistingFiniteSequenceBounds.fseq_space_exists_l",
+        "native IsFiniteSequenceLastDecomposition and ZF.exists_setFunctionFromTo_of_denote",
+        "donor TreeCons / TreeTail / Borel.GraftTree / Borel.GraftWellFounded",
+        "native powerset/product/Separation and ModelTransfer.derives"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ExistingTreeAddresses.Fseq_end_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_unique_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_rebuild_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_exists_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.ds_restrict_iff_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.Step_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.step_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.step_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.ds_empty_fun_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.Cons_d": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_m": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_sat_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.tree_successor_le_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_unique_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_exists_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_subset_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_type_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_injective_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.tree_step_iff_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_step_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.tree_empty_domain_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_cases_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_ne_empty_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_root_l": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.fseq_end_m_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.step_m_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ExistingTreeAddresses.cons_m_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Card/FiniteSequenceEnd.lean",
+          "producer_sha256": "4627036ee9959c77df24626b3ba38578289642dd1dece2ee30b4de1726280a4a",
+          "source_start": "def Fseq_end_d",
+          "source_end": "\nend YesMetaZFC.SetTheory",
+          "target_start": "def Fseq_end_d",
+          "target_end": "\n\n-- Retained producer:",
+          "replacements": [
+            [
+              "theorem ZF.fseq_end_exists_l",
+              "theorem fseq_end_exists_l"
+            ]
+          ],
+          "normalized_body_sha256": "cc736865605d7546a7866772c69f992aff8a64cb26b5dfb6e0bc8bb9d14cdc5f"
+        },
+        {
+          "producer_file": "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/Prefix.lean",
+          "producer_sha256": "a83b9d8c5bfa0e1a3a21a7fb64cc9780915a7b907753f54ef3145d6bbaed2259",
+          "source_start": "theorem ds_restrict_iff_l",
+          "source_end": "\n/-- 每个内部自然数长度",
+          "target_start": "theorem ds_restrict_iff_l",
+          "target_end": "\n\n-- Retained producer:",
+          "replacements": [],
+          "normalized_body_sha256": "bffd6e15c6be557cbb083a790a13d8643101029e2d8913e2d3d13182defd2770"
+        },
+        {
+          "producer_file": "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/Path.lean",
+          "producer_sha256": "afe00bab8498bf0641080f30b4909b59f3c16da42cc834ea483b58ee1205aa0e",
+          "source_start": "def Step_d",
+          "source_end": "\n/-- 追加图在旧定义域",
+          "target_start": "def Step_d",
+          "target_end": "\n\n-- Retained producer:",
+          "replacements": [],
+          "normalized_body_sha256": "cd46211b285c07fc96a51c9e0ec39ee5c422212ebacddbeb3168bfe696052d41"
+        },
+        {
+          "producer_file": "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/TreeCons.lean",
+          "producer_sha256": "7466b8b0ac76d176240279dc8d4447fb8846ef4949406eec35698e127e78a713",
+          "source_start": "def Cons_d",
+          "source_end": "\nend YesMetaZFC.SetTheory.Descriptive",
+          "target_start": "def Cons_d",
+          "target_end": "\n\n-- Retained producer:",
+          "replacements": [],
+          "normalized_body_sha256": "afa21815a7edb090ed6cab4f84b9c5f64b6d9d1809de7a7cf91b9fbcedda1c47"
+        },
+        {
+          "producer_file": "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/TreeTail.lean",
+          "producer_sha256": "4d2eb2e1bcd54842c0e78e6d82b4fc10521236e4a78907223f40ab05e02ab19c",
+          "source_start": "theorem tree_empty_domain_l",
+          "source_end": "\nend YesMetaZFC.SetTheory.Descriptive",
+          "target_start": "theorem tree_empty_domain_l",
+          "target_end": "\n\nend PPAC.Migration.ExistingTreeAddresses",
+          "replacements": [],
+          "normalized_body_sha256": "2d315a65e2b08d6f2c7995f2c4f63660871f4dd71a3d719585983e902c92161a"
+        }
+      ]
+    },
+    "forcing_countable_tree_codes": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/AssignedGraphs.lean",
+      "source_sha256": "4f706cb93f2d83a9935a0518c0c732b6fb2dc4529017934f625f749e4d5d53dd",
+      "adapter": "PPAC/Migration/ForcingCountableTreeCodes.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ExistingTreeAddresses.lean": "5ad83297d911d821d09cff7b1aefdad6fbbce4ded54ddda5afd1e81b78cd537f",
+        "PPAC/Migration/ForcingCountableTreeCodes.lean": "03c7dc4fa70a23df4f89573fc75e6ef29b92e36aebe2d18c3339b013de12cd27",
+        "PPAC/Migration/ForcingCountableTreeGraft.lean": "b86de82df8a8a1aeba8903cf0d2639a8708d9a4de345e30af659a3cc62aa72b2",
+        "PPAC/Migration/ExistingFiniteSequenceBounds.lean": "e8201f97ac9b03d963a97ab03635ef4d441a09846825c5d1f0e32fba54f90a2a",
+        "PPAC/Migration/ForcingCountableTreeEvaluation.lean": "1bd69ef9cef652b5368ad3d92d9db83c95094ea37f16e0a08974b5d474029ca2",
+        "PPAC/Migration/ForcingCountableTreeAlgebra.lean": "2c026d1881d99cbfd691d5ce0d87719b57d4a670e20a6e8600d23b34c2a25a16",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        "PPAC/Migration/KuratowskiZF.lean": "172f20e5f392b6faa45f4d68095f7158cadc164f91ed47adb06408a67730d502"
+      },
+      "source_declarations": [
+        "CountableHull.Arity:285-287",
+        "CountableHull.exists_closed:296-324 (leaf and full omega node constructors; cardinal/evaluation-range obligations remain)"
+      ],
+      "consumers": [
+        "AssignedGraphs.Condition.antichain_cardinal_le:403-457",
+        "CodeCardinals.ordinalType_cardinal_le:117 / ordinalType_lower_count:289"
+      ],
+      "scope": "Construct the exact internal set C of all internally well-founded rooted prefix trees with Option-A labels and full omega branching: unlabelled nodes have no children, labelled nodes have every internal natural child. Codes are (node-set, partial label graph); all child edges lie in the already existing full internal finite address space. Powerset/product/Separation give the exact carrier without a rank restriction, and the source none leaf has a real code in C. forall2 ordinary nativeZF original-kernel certificate. This does not yet prove the tree cardinal bound or evaluation range closure.",
+      "reuse_producers": [
+        "ExistingFiniteSequenceBounds.fseq_space_exists_l",
+        "native IsFiniteSequenceLastDecomposition and ZF.exists_setFunctionFromTo_of_denote",
+        "donor TreeCons / TreeTail / Borel.GraftTree / Borel.GraftWellFounded",
+        "native powerset/product/Separation and ModelTransfer.derives"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCountableTreeCodes.Edges": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.edges": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.edges_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.edges_exists": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.Tree": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.tree": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.tree_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.Carrier": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.carrier": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.carrier_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.carrier_exists": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.tree_step_not_empty_l": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.leaf_exists": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.LeafCode": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.leafCode": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.leafCode_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.construction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.edges_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.tree_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.carrier_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeCodes.leafCode_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    "forcing_countable_tree_graft": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/AssignedGraphs.lean",
+      "source_sha256": "4f706cb93f2d83a9935a0518c0c732b6fb2dc4529017934f625f749e4d5d53dd",
+      "adapter": "PPAC/Migration/ForcingCountableTreeGraft.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ExistingTreeAddresses.lean": "5ad83297d911d821d09cff7b1aefdad6fbbce4ded54ddda5afd1e81b78cd537f",
+        "PPAC/Migration/ForcingCountableTreeCodes.lean": "03c7dc4fa70a23df4f89573fc75e6ef29b92e36aebe2d18c3339b013de12cd27",
+        "PPAC/Migration/ForcingCountableTreeGraft.lean": "b86de82df8a8a1aeba8903cf0d2639a8708d9a4de345e30af659a3cc62aa72b2",
+        "PPAC/Migration/ExistingFiniteSequenceBounds.lean": "e8201f97ac9b03d963a97ab03635ef4d441a09846825c5d1f0e32fba54f90a2a",
+        "PPAC/Migration/ForcingCountableTreeEvaluation.lean": "1bd69ef9cef652b5368ad3d92d9db83c95094ea37f16e0a08974b5d474029ca2",
+        "PPAC/Migration/ForcingCountableTreeAlgebra.lean": "2c026d1881d99cbfd691d5ce0d87719b57d4a670e20a6e8600d23b34c2a25a16",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        "PPAC/Migration/KuratowskiZF.lean": "172f20e5f392b6faa45f4d68095f7158cadc164f91ed47adb06408a67730d502"
+      },
+      "source_declarations": [
+        "CountableHull.Arity:285-287",
+        "CountableHull.exists_closed:296-324 (leaf and full omega node constructors; cardinal/evaluation-range obligations remain)"
+      ],
+      "consumers": [
+        "AssignedGraphs.Condition.antichain_cardinal_le:403-457",
+        "CodeCardinals.ordinalType_cardinal_le:117 / ordinalType_lower_count:289"
+      ],
+      "scope": "Construct the actual source some-label node from EVERY internal omega-indexed function H into the same exact tree carrier C. Prefix each child address with its index; form actual nodes and label graphs by Separation; prove same-branch child correspondence, internal subset-minimum well-foundedness, and exact full branching. Adapt existing Borel graft proofs to source labels/arity instead of assuming their contracts identical. forall8 ordinary nativeZF original-kernel certificate retains exact graft equations and membership in C. No host choice sequence, host WellFounded, object Choice, or new kernel. Tree cardinal bound, graft evaluation/root-range closure, actual OrdinalCount and final internal Con remain incomplete.",
+      "reuse_producers": [
+        "ExistingFiniteSequenceBounds.fseq_space_exists_l",
+        "native IsFiniteSequenceLastDecomposition and ZF.exists_setFunctionFromTo_of_denote",
+        "donor TreeCons / TreeTail / Borel.GraftTree / Borel.GraftWellFounded",
+        "native powerset/product/Separation and ModelTransfer.derives"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCountableTreeGraft.Sub": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.sub": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.sub_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.sub_valid": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.sub_unique": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.Shift": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.shift": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.shift_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.shift_type": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.shift_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.Graft": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_exists": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_nodes": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_labels": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_root": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_child": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_wellFounded": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_full": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_tree": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closure": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closure_semantics": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closureSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closure_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closure_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.sub_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.shift_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.graft_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingCountableTreeGraft.closure_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "adapted_donor_producers": {
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/Borel/Graft.lean": "2d4a4c6cfb1edaf7f88748e1f91442d290e2a91bad2be42219a55601f0a46a89",
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/Borel/GraftTree.lean": "7350ebf6c9666ce7135589c35776ed5648f69930551441556bb47f80245d468a",
+        "../yesmetazfc-analytic-comprehension/YesMetaZFC/SetTheory/Descriptive/Borel/GraftWellFounded.lean": "18bbe01c93cb2d230530b2c522366be883695f35e3783e46d513c0de685f2a29"
+      }
     }
   },
   "selected_route_consumer_audit": {

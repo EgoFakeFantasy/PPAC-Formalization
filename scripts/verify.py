@@ -2392,21 +2392,26 @@ def main() -> None:
                                ('forcing_germ_density', 'ForcingGermDensity', 12),
                                ('forcing_chain_bound', 'ForcingChainBound', 25),
                                ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43),
-                               ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35)):
+                               ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35),
+                               ('existing_tree_addresses', 'ExistingTreeAddresses', 29),
+                               ('forcing_countable_tree_codes', 'ForcingCountableTreeCodes', 24),
+                               ('forcing_countable_tree_graft', 'ForcingCountableTreeGraft', 31)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
+        retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
-            retained = adapter_lock["retained_existing_producer"]
+            retained_entries.append(adapter_lock["retained_existing_producer"])
+        for retained in retained_entries:
             producer_path = ROOT / retained["producer_file"]
             if hashlib.sha256(producer_path.read_bytes()).hexdigest() != retained["producer_sha256"]:
                 raise RuntimeError("Existing retained producer source changed")
             producer = producer_path.read_text(encoding="utf-8")
-            selected = producer[producer.index(retained["source_start"]):producer.index(retained["source_end"])]
+            selected = producer[producer.index(retained["source_start"]):producer.index(retained["source_end"], producer.index(retained["source_start"]))]
             for original, adapted in retained["replacements"]:
                 if selected.count(original) != 1:
                     raise RuntimeError("Retained producer adaptation is ambiguous")
                 selected = selected.replace(original, adapted, 1)
             target_body = (ROOT / adapter_lock["adapter"]).read_text(encoding="utf-8")
-            actual = target_body[target_body.index(retained["target_start"]):target_body.index(retained["target_end"])]
+            actual = target_body[target_body.index(retained["target_start"]):target_body.index(retained["target_end"], target_body.index(retained["target_start"]))]
             if selected.strip() != actual.strip() or hashlib.sha256(actual.strip().encode()).hexdigest() != retained["normalized_body_sha256"]:
                 raise RuntimeError("Retained producer proof differs beyond exact output-certificate packaging")
 
@@ -2431,7 +2436,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra", "ExistingTreeAddresses", "ForcingCountableTreeCodes", "ForcingCountableTreeGraft"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}

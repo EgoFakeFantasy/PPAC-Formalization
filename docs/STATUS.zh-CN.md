@@ -1,12 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：源可数分支树的实际叶／节点求值
+## 当前执行入口：源完整内部树载体与可数拼接封闭
 
-源 AssignedGraphs.CountableHull.evaluate:289–292 的叶／节点规则已由 ForcingCountableTreeAlgebra 实例化。叶返回 base；非叶应用实际标签算子于同一个内部 ω 上全部子节点值构成的函数图。复用原生可定义函数构造器取得子值图，并用分离取得实际求值算子；已证明其 Local/Total/Single，消去上一批通用求值器的三个算子前提。内部良基、标签／子节点数据及源给定运算合同仍显式保留。forall10 纯成员闭句取得普通 nativeZF 原核证书，不要求宿主 WellFounded、外部标准 ω 或对象 Choice。
+源 AssignedGraphs.CountableHull.Arity:285–287／exists_closed:296–324 的树构造现由 ForcingCountableTreeCodes 和 ForcingCountableTreeGraft 接入。原有内部有限序列空间直接复用；ExistingTreeAddresses 保留五段供体首尾／拼接／前缀／子边证明正文，仅一项定理的命名空间调整。全部地址长度属于同一个内部 ω，不限制为外部标准自然数。
 
-定向 Lean、771 项模块构建及 35 项公开声明的 trust=0 审计已通过。全量验收和旧声明足迹对比以 verification/tree-algebra-acceptance.json 的实际结果为准；这尚不是整个 CountableHull 或 Cohen 反链界。
+树码为实际节点集及标签图：无标签节点无子节点，有标签节点包含全部内部 ω 子节点。用幂集／积／分离构造全部合法内部良基树的精确载体及叶码，取得 forall2 普通 nativeZF 原核证书。任意内部 ω→C 树族的实际节点拼接，已证明前缀封闭、同分支子边、内部子集极小元良基性、标签唯一性和完整分支，并取得 forall8 同一载体封闭性的普通 nativeZF 原核证书。供体 Borel 拼接方法已按源标签与分支规则适配，不直接混用合同。
 
-下一源步骤为同一 AssignedGraphs.CountableHull 的完整内部树载体／拼接／基数界，再接 antichain_cardinal_le 和 CodeCardinals 两条实际基数界。复用现成有限序列空间、内部良基方法及 ConstructionConcreteCardinals 的连续统／后继可数幂固定点，不重建底座。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
+775 项模块构建、84 项新增声明的 trust=0 审计已通过；全量验收与旧足迹比较以 verification/tree-codes-acceptance.json 的实际结果为准。
+
+下一源步骤为同一树载体的基数界及拼接的求值方程，接上求值根值范围的完整 CountableHull.exists_closed，再接实际 Cohen 反链界和 CodeCardinals。既有内部可数幂固定点、一般求值与实际叶／节点规则直接复用。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

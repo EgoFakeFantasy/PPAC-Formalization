@@ -12605,4 +12605,14 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
       YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
   ForcingCountableTreeAlgebra.evaluation_kernel_certificate
 
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeCodes.constructionSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeCodes.construction_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeGraft.closureSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeGraft.closure_kernel_certificate
+
 end PPAC.Migration.Step4Checks
