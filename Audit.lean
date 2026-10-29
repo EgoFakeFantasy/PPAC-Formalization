@@ -33745,3 +33745,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPersistentWorks.selectionSentence
 #print axioms PPAC.Migration.ForcingPersistentWorks.selection_models
 #print axioms PPAC.Migration.ForcingPersistentWorks.selection_kernel_certificate
+#print axioms PPAC.Migration.ForcingPersistentCovariance.eqF_transport_iff
+#print axioms PPAC.Migration.ForcingPersistentCovariance.same_covariance
+#print axioms PPAC.Migration.ForcingPersistentCovariance.covarianceSentence
+#print axioms PPAC.Migration.ForcingPersistentCovariance.covariance_models
+#print axioms PPAC.Migration.ForcingPersistentCovariance.covariance_kernel_certificate
+#print axioms PPAC.Migration.ForcingPersistentCovariance.represented_transport_iff
+#print axioms PPAC.Migration.ForcingPersistentCovariance.representedSentence
+#print axioms PPAC.Migration.ForcingPersistentCovariance.represented_models
+#print axioms PPAC.Migration.ForcingPersistentCovariance.represented_kernel_certificate

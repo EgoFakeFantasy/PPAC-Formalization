@@ -12312,4 +12312,16 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul q bound labels E 
       (ForcingPersistentWorks.selectionSentence rho I K B w one G F mul q bound labels E root zero vertices chain names codes order)) :=
   ForcingPersistentWorks.selection_kernel_certificate rho I K B w one G F mul q bound labels E root zero vertices chain names codes order
 
+-- Actual Same covariance and principal-presentation representation transport.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a b : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentCovariance.covarianceSentence rho I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a b)) :=
+  ForcingPersistentCovariance.covariance_kernel_certificate rho I K B w G F mu pi inv c ai one mul act q zero root vertices chain bound names a b
+
+example {k m : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1))
+    (base : Fin k → Fin m) (rho : Fin 7 → Fin m) (I K B w G F mu pi inv c act ai mul one g gT q bound labels E root rootT oi objects S mi maps P Q pr oiT targets ST miT targetMaps PT Z prT appImage apps phi zero vertices chain names code d dT : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentCovariance.representedSentence R Hdom base rho I K B w G F mu pi inv c act ai mul one g gT q bound labels E root rootT oi objects S mi maps P Q pr oiT targets ST miT targetMaps PT Z prT appImage apps phi zero vertices chain names code d dT)) :=
+  ForcingPersistentCovariance.represented_kernel_certificate R Hdom base rho I K B w G F mu pi inv c act ai mul one g gT q bound labels E root rootT oi objects S mi maps P Q pr oiT targets ST miT targetMaps PT Z prT appImage apps phi zero vertices chain names code d dT
+
 end PPAC.Migration.Step4Checks
