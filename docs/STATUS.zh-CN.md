@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际关系类／局部标签类及资格刻画已接通
+## 当前执行入口：具体标签类协变与同记录商相等已接通
 
-ForcingRelationClass 迁移固定 LocalRecords.relationClass 的分离名字、成员公式、原界和强迫等式保持，复用已有 classOf/isClass 对象 AST；isClass 的稠密表示量词全部遍历内部名字和条件。实际 localLabelClass 消费原 labelSet、label 和 Fixing 子群，复用现成 HS、正规滤子和 separate_supported，证明其界、支持性及每个条件下的 isClass。
+ForcingRelationClassMove 迁移固定 LocalRecords.separate_move／relationClass_move／labelClass_move，使用已有 mapConditions 边方程和完整强迫对称性证明字面名字动作。具体公式族 j ↦ relationClass(labelSet,E,label j) 已证明在内部 I 上总且唯一，协变由实际标签集合固定性、标签移动和 E 的原根支撑推出。
 
-四个普通 nativeZF 原核端点覆盖有界名字构造、classOf 与实际名字等式的双向刻画、isClass 的内部稠密见证刻画、同一个实际局部标签类的联合构造。30 项公开声明定向 trust=0 通过、无新增公理依赖；全量验收及原 34147 项依赖逐项比较以 verification/relation-class-acceptance.json 的实际结果为准。
+两个原核端点分别联合证明具体名字族总性／唯一性／协变，以及实际同记录局部商相等。后者直接消费已完成的 quotient_equal，移除原抽象协变前提，在同一现成内部 L 中消去 Choice；不重做根反射、条件传输或局部商后端。21 项公开声明定向 trust=0 通过、无新增公理依赖；全量验收与原 34177 项精确依赖比较以 verification/relation-class-move-acceptance.json 为准。
 
-下一源步骤为精确 relationClass_move／labelClass_move 和具体名字族协变，再接 classRepresentationSet_denseBelow 的实际图扩张，完成 CodeCardinals total／single 和 OrdinalCount。分离、界、局部支持、classOf/isClass 公式及其强迫刻画不重做；仍在原第 8 阶段，第 9–11 阶段与最终内部 Con 未完成。
+下一源步骤为 classRepresentationSet_denseBelow 的实际标签成员稠密性和图扩张，再完成 CodeCardinals total／single 的组合及 OrdinalCount。类名字构造、支持、classOf/isClass 刻画、精确移动协变和具体族同记录相等均不再列为缺口；仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

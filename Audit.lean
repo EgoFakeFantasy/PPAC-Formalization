@@ -34751,3 +34751,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationClass.localSentence
 #print axioms PPAC.Migration.ForcingRelationClass.local_models
 #print axioms PPAC.Migration.ForcingRelationClass.local_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingRelationClassMove.separated_move
+#print axioms PPAC.Migration.ForcingRelationClassMove.relationClass_move
+#print axioms PPAC.Migration.ForcingRelationClassMove.class_unique
+#print axioms PPAC.Migration.ForcingRelationClassMove.Value
+#print axioms PPAC.Migration.ForcingRelationClassMove.value
+#print axioms PPAC.Migration.ForcingRelationClassMove.value_semantics
+#print axioms PPAC.Migration.ForcingRelationClassMove.family
+#print axioms PPAC.Migration.ForcingRelationClassMove.family_semantics
+#print axioms PPAC.Migration.ForcingRelationClassMove.value_unique
+#print axioms PPAC.Migration.ForcingRelationClassMove.value_exists
+#print axioms PPAC.Migration.ForcingRelationClassMove.labelClass_move
+#print axioms PPAC.Migration.ForcingRelationClassMove.covariance
+#print axioms PPAC.Migration.ForcingRelationClassMove.systemResult
+#print axioms PPAC.Migration.ForcingRelationClassMove.systemResult_freeClosed
+#print axioms PPAC.Migration.ForcingRelationClassMove.systemResult_semantics
+#print axioms PPAC.Migration.ForcingRelationClassMove.systemSentence
+#print axioms PPAC.Migration.ForcingRelationClassMove.system_models
+#print axioms PPAC.Migration.ForcingRelationClassMove.system_kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationClassMove.recordSentence
+#print axioms PPAC.Migration.ForcingRelationClassMove.record_models
+#print axioms PPAC.Migration.ForcingRelationClassMove.record_kernel_certificate

@@ -67,3 +67,5 @@ LocalRecord 条件层已补齐：实际内部拉回及同记录条件置换有�
 LocalWitness 同记录相等现已接通名字层：实际根置换／条件传输／名字对称性／支持反射产生原根强迫等式，并由现成 equality_law 得出实际局部商值相等。Covariant 是源 hC 的对象公式前提；具体 labelClass 实例及表示密度仍需接入。两个原核端点使用同一既有 L 消去 Choice，不等于完整 CodeCardinals/OrdinalCount 或内部 Con。
 
 本批 ForcingRelationClass：固定 LocalRecords 的实际分离类名字及局部标签类已接通，四个普通 nativeZF 原核端点保留全部内部条件／名字量词；具体局部类的支持、界和每处 isClass 均实际证明。未将强迫资格等同于最终 PP／Con；精确移动协变、classRepresentationSet_denseBelow、完整 CodeCardinals／OrdinalCount 及原第 9–11 阶段仍未完成。验收见 verification/relation-class-acceptance.json。
+
+本批 ForcingRelationClassMove 已证明精确 separate_move／relationClass_move／labelClass_move，取得具体名字族总性／唯一性／协变的普通 nativeZF 原核证书；同记录局部商相等已实例化到此族，原抽象协变前提由实际标签数据及 E 支撑消去，Choice 经同一内部 L 消去。表示稠密性、完整 CodeCardinals／OrdinalCount 和最终内部 Con 仍未完成。验收见 verification/relation-class-move-acceptance.json。

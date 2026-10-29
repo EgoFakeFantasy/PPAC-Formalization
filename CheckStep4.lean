@@ -12727,4 +12727,17 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu c t b j J fixing bound e G
       (ForcingRelationClass.localSentence rho I K B w mu c t b j J fixing bound e G F mul A E x)) :=
   ForcingRelationClass.local_kernel_certificate rho I K B w mu c t b j J fixing bound e G F mul A E x
 
+
+-- Concrete label-class family and actual same-record quotient equality.
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu c t b labels E J fixing G F mul : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingRelationClassMove.systemSentence rho I K B w mu c t b labels E J fixing G F mul)) :=
+  ForcingRelationClassMove.system_kernel_certificate rho I K B w mu c t b labels E J fixing G F mul
+
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta c top bit labels E : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingRelationClassMove.recordSentence rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta c top bit labels E))) :=
+  ForcingRelationClassMove.record_kernel_certificate rho w mu history kappa e mark H C incoming base I K B G F mul root s t b x i j A fixing d0 d1 pb z0 z1 sigma tau ni nj g X pr alpha beta c top bit labels E
+
 end PPAC.Migration.Step4Checks
