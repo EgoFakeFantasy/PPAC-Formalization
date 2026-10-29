@@ -34806,3 +34806,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeRecordWitness.memberSentence
 #print axioms PPAC.Migration.ForcingCodeRecordWitness.member_models
 #print axioms PPAC.Migration.ForcingCodeRecordWitness.member_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCodeRecordWitness.member_record_at
+#print axioms PPAC.Migration.ForcingCodeCardinals.Record
+#print axioms PPAC.Migration.ForcingCodeCardinals.record
+#print axioms PPAC.Migration.ForcingCodeCardinals.record_freeClosed
+#print axioms PPAC.Migration.ForcingCodeCardinals.record_semantics
+#print axioms PPAC.Migration.ForcingCodeCardinals.single
+#print axioms PPAC.Migration.ForcingCodeCardinals.total
+#print axioms PPAC.Migration.ForcingCodeCardinals.Graph
+#print axioms PPAC.Migration.ForcingCodeCardinals.exists_graph
+#print axioms PPAC.Migration.ForcingCodeCardinals.ordinalType_cardinal_le
+#print axioms PPAC.Migration.ForcingCodeCardinals.boundSentence
+#print axioms PPAC.Migration.ForcingCodeCardinals.bound_models
+#print axioms PPAC.Migration.ForcingCodeCardinals.bound_kernel_certificate

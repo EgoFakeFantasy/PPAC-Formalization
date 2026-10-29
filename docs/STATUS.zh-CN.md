@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：CodeCardinals 的内部成员记录见证已接通
+## 当前执行入口：CodeCardinals 的实际基数上界已取得原核证书
 
-ForcingCodeRecordWitness 直接组合固定源 ordinalType_cardinal_le.total 的见证链：实际 IsSelected 的 member_rank 给出码及其秩，既有 working_linked_over 与 links_stable 给出同一根名字和强迫资格，完整 classRepresentation 稠密性与实际 pullback 构造记录 (m,(x,pb))。在同一个加强条件下保留选中性、根 Links 和该码的秩等于 check β。全部见证及 β 均为内部集合。
+ForcingCodeCardinals 沿固定源 ordinalType_cardinal_le 构造同一个内部记录关系及集合图。total 消费既有成员秩、根名字与完整表示稠密性；single 消费实际 labelClass 协变、同记录相等、Links/Same、selected_unique 和 check 名字反射。现成 Cohen ChainBound 与字面记录大小界给出 θ ≤ μ。
 
-member_kernel_certificate 在普通 nativeZF 原核中证明完整句子在同一现成内部 L 的相对化；Choice 由既有 L/ZFC 消去。既有链接稳定性只泛化 d/tau/z 的参数位置，原接口及旧声明足迹保留。本批全量验收已通过：3022 项构建、34229 项声明，新增 8 项；原 34221 项足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2577 份当前文件哈希匹配。报告为 verification/code-record-acceptance.json。
+bound_kernel_certificate 在普通 nativeZF 原核中证明完整上界句子在同一现成内部 L 的相对化；Choice/ZFC 由既有内部 L 消去。全量验收已通过：3023 项构建、34242 项声明，新增 13 项；原 34229 项足迹逐项不变，无新增公理依赖。9 条命令、5 次 trust=0 全部退出 0，零警告；75 份固定源和 2578 份当前文件哈希匹配。报告为 verification/code-cardinals-acceptance.json。
 
-下一源步骤为 CodeCardinals.ordinalType_cardinal_le.single：复用实际 labelClass 协变、同记录相等、Links/EqF/Same 等价及 selected_unique；再将同一记录关系的 total/single 接入现成 ChainBound 和记录基数界。既有根名字资格、完整表示稠密性与成员记录见证不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤是 CodeCardinals.ordinalType_lower_count，再与上界合流于 ConcreteQuotients 的实际 OrdinalCount 实例（源调用点 297/302）。具体接线顺序：复用 ConstructionPlacementFreshness/ConstructionCohenCompatibility 接源 probeDenseSet_dense；复用局部交集、名字传输及实际可用性接 ClassFibers 的 outsideClass_copies/classFromLocal_profile/outsideLocal_not_equal；再消费已有 StableCodes、稠密选择、Links 同余和秩决策，证明下界 total/single 并交给已有连续统 ChainBound。通用基础已在，以上具体源消费者尚未全部接通。上界 total/single、Cohen 反链界、记录界、根名字和表示稠密性均不再列为缺口。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

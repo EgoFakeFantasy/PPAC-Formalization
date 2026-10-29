@@ -110,10 +110,10 @@ theorem selected_record (hM : FirstOrder.Theory.Models M nativeZF)
     hs,hmD,hSub,hx,hxj,hj,hLabel,hName,hClass,hz,heq,
     (ForcingLocalRecordPullback.supported_iff hSupport).mpr hCover,hpb,hPullback,hInner,hRec⟩
 
-theorem member_record (hM : FirstOrder.Theory.Models M nativeZF)
+theorem member_record_at (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta beta nb : Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta : Fin k) (beta nb : M.Carrier .set)
     (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
     (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
     (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
@@ -141,7 +141,7 @@ theorem member_record (hM : FirstOrder.Theory.Models M nativeZF)
     (hmark : (Project.FirstOrderSemantics.reduct M).mem (env mark) (env (rho 0)))
     (hEHS : ForcingHS.HS ForcingProductFamily.actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env E))
     (hCoord : ForcingCohenCoordinates.Cartesian (env (rho 0)) (env K) (env coordS))
-    (hLocal : ForcingCohenCoordinates.Cartesian (env coordS) (env B) (env localS)) 
+    (hLocal : ForcingCohenCoordinates.Cartesian (env coordS) (env B) (env localS))
     (hCodes : ForcingTailCodes.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env codes))
     (hRange : ForcingStabilizerTransport.Image (env r) (env (rho 0)) (env Ar))
     (hFix : ForcingLabelPermutations.Fixing (env G) (env Ar) (env Hr))
@@ -152,14 +152,14 @@ theorem member_record (hM : FirstOrder.Theory.Models M nativeZF)
       env (env codes) (env ranks) (env (rho 6)) (env selection))
     (hz0 : ForcingSupportingRoot.Code (env z0) (env d) (env r))
     (hTheta : ForcingCheckName.Checked (env top) (env theta) (env ntheta))
-    (hBeta : ForcingCheckName.Checked (env top) (env beta) (env nb))
-    (hbt : (Project.FirstOrderSemantics.reduct M).mem (env beta) (env theta))
+    (hBeta : ForcingCheckName.Checked (env top) beta nb)
+    (hbt : (Project.FirstOrderSemantics.reduct M).mem beta (env theta))
     (hEq : ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) (env selection) (env ntheta) (env z0)) :
     ∃ a rankName zr f tau s m x j label name z pb inner rec,
       (Project.FirstOrderSemantics.reduct M).mem a (env codes) ∧
       PureKuratowski.PairMember M a rankName (env ranks) ∧
       ForcingSupportingRoot.Code zr f (env r) ∧
-      ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) rankName (env nb) zr ∧
+      ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) rankName nb zr ∧
       ForcingCohenConditions.Condition (env (rho 2)) (env w) f ∧ ForcingPowerName.Subset (env d) f ∧
       ForcingCodeSelection.IsSelected env rho I G F mul q bound labels E root w chain codes order a f ∧
       Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env root) tau ∧
@@ -194,6 +194,76 @@ theorem member_record (hM : FirstOrder.Theory.Models M nativeZF)
   obtain ⟨zr,hzr,hRank'⟩ := ForcingPrincipalFilter.eqF_mono hM env rho mul hm hp ((hp.2.2.1 f).mpr hf) hv.1 hef ⟨ze,hze,hRank⟩
   exact ⟨a,rankName,zr,f,tau,s,m,x,j,label,name,z,pb,inner,rec,ha,han,hzr,hRank',hf,
     (fun t ht => hef t (hde t ht)),hSel,hEntry,hLinks,hs,hmD,hSub,hx,hxj,hj,hLabel,hName,hClass,hz,hForce,hSupport,hpb,hPullback,hInner,hRec⟩
+
+theorem member_record (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta beta nb : Fin k)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmall : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hp : ForcingProductFamily.Presentation (env (rho 0)) (env I) (env K) (env B) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G)) (hF : ForcingSupportFilter.Filter (env I) (env G) (env mu) (env F))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hq : Injection (env (rho 0)) (env I) (env q))
+    (hAq : ForcingSupportedNames.Range (env (rho 0)) (env q) (env Aq))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env Aq) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hVertices : ConstructionComponentCarrier.Carrier (env (rho 0)) (env I) (env mul) (env q) (env vertices))
+    (hChain : Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hd : ForcingCohenConditions.Condition (env (rho 2)) (env w) (env d))
+    (hRoot : Code (env root) (env r) (env index) (env U))
+    (hCard : ConstructionSaturationCardinals.Cardinals hM (env (rho 0)) (env mul) (env mark) (env mu))
+    (hmark : (Project.FirstOrderSemantics.reduct M).mem (env mark) (env (rho 0)))
+    (hEHS : ForcingHS.HS ForcingProductFamily.actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env E))
+    (hCoord : ForcingCohenCoordinates.Cartesian (env (rho 0)) (env K) (env coordS))
+    (hLocal : ForcingCohenCoordinates.Cartesian (env coordS) (env B) (env localS))
+    (hCodes : ForcingTailCodes.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env codes))
+    (hRange : ForcingStabilizerTransport.Image (env r) (env (rho 0)) (env Ar))
+    (hFix : ForcingLabelPermutations.Fixing (env G) (env Ar) (env Hr))
+    (hIncl : (Project.FirstOrderSemantics.reduct M).MemberSubset (env Hr) (env support))
+    (hFamily : ForcingOrdinalFixed.FixedFamily (fun j => env (rho j)) (env G) (env F) (env support) (env codes) (env ranks))
+    (hSelection : ForcingCollectedName.Collected (ForcingCohenSelection.liftRelation
+      (ForcingCodeSelection.relation rho I G F mul q bound labels E root w chain codes order) id (rho 0) I (rho 2) w)
+      env (env codes) (env ranks) (env (rho 6)) (env selection))
+    (hz0 : ForcingSupportingRoot.Code (env z0) (env d) (env r))
+    (hTheta : ForcingCheckName.Checked (env top) (env theta) (env ntheta))
+    (hBeta : ForcingCheckName.Checked (env top) (env beta) (env nb))
+    (hbt : (Project.FirstOrderSemantics.reduct M).mem (env beta) (env theta))
+    (hEq : ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) (env selection) (env ntheta) (env z0)) :
+    ∃ a rankName zr f tau s m x j label name z pb inner rec,
+      (Project.FirstOrderSemantics.reduct M).mem a (env codes) ∧
+      PureKuratowski.PairMember M a rankName (env ranks) ∧
+      ForcingSupportingRoot.Code zr f (env r) ∧
+      ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) rankName (env nb) zr ∧
+      ForcingCohenConditions.Condition (env (rho 2)) (env w) f ∧ ForcingPowerName.Subset (env d) f ∧
+      ForcingCodeSelection.IsSelected env rho I G F mul q bound labels E root w chain codes order a f ∧
+      Entry (fun j => env (rho j)) (env G) (env F) (env bound) (env root) tau ∧
+      ForcingCodeLinks.Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) f (env root) tau a ∧
+      Injection (env (rho 0)) (env I) s ∧
+      (Project.FirstOrderSemantics.reduct M).mem m (env (rho 0)) ∧ ForcingDiagramOrder.Sub (env (rho 0)) (env mul) s m (env r) ∧
+      (Project.FirstOrderSemantics.reduct M).mem x (env (rho 0)) ∧ PureKuratowski.PairMember M x j s ∧
+      (Project.FirstOrderSemantics.reduct M).mem j (env I) ∧
+      ForcingLabelNames.Label (env (rho 6)) (env K) (env labelMap) (env top) j (env bit) label ∧
+      ForcingHS.HS ForcingProductFamily.actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) name ∧
+      ForcingRelationClass.Class (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (env (rho 6)) (env labels) (env E) label name ∧
+      ForcingSupportingRoot.Code z f s ∧ ForcingAtomicRelations.Forces true (orderFormula (rho 0) mul) env (env (rho 6)) tau name z ∧
+      ForcingLocalRecordPullback.Supported (env (rho 0)) s f ∧
+      ForcingCohenConditions.Condition (env localS) (env w) pb ∧ ForcingLocalRecordPullback.Pullback (env (rho 0)) s f pb ∧
+      PureKuratowski.Code M inner x pb ∧ PureKuratowski.Code M rec m inner :=
+  member_record_at hM hChoice env rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names r index U coordS localS codes order Ar Hr support ranks selection d z0 theta ntheta (env beta) (env nb)
+    hw hMu hI hSmall hMergers hRow hm hJ hp hG hF hLabelMap hTop hLabels hLabelBound hq hAq hHq hE
+    hVertices hChain hd hRoot hCard hmark hEHS hCoord hLocal hCodes hRange hFix hIncl hFamily hSelection
+    hz0 hTheta hBeta hbt hEq
 
 
 def memberResult {k : Nat} (rho : Fin 7 → Fin k)
