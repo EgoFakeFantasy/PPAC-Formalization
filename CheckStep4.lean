@@ -12361,4 +12361,11 @@ example {n m : Nat} (R : Source.Formula (n+2)) (rho : Fin n → Fin m) (X order 
       (ForcingOrdinalRanks.constructionSentence R rho X order P)) :=
   ForcingOrdinalRanks.construction_kernel_certificate R rho X order P
 
+-- The same actual rank graph and selection type are HS and literally H-fixed.
+example {n m : Nat} (R : Source.Formula (n+2)) (rho : Fin n → Fin m) (ra : Fin 7 → Fin m)
+    (I K B w G F H X order : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrdinalFixed.constructionSentence R rho ra I K B w G F H X order)) :=
+  ForcingOrdinalFixed.construction_kernel_certificate R rho ra I K B w G F H X order
+
 end PPAC.Migration.Step4Checks

@@ -33834,3 +33834,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalRanks.constructionSentence
 #print axioms PPAC.Migration.ForcingOrdinalRanks.construction_models
 #print axioms PPAC.Migration.ForcingOrdinalRanks.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrdinalFixed.Fixed
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixed
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixed_semantics
+#print axioms PPAC.Migration.ForcingOrdinalFixed.FixedAt
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixedAt
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixedAt_semantics
+#print axioms PPAC.Migration.ForcingOrdinalFixed.FixedFamily
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixedFamily
+#print axioms PPAC.Migration.ForcingOrdinalFixed.fixedFamily_semantics
+#print axioms PPAC.Migration.ForcingOrdinalFixed.Invariant
+#print axioms PPAC.Migration.ForcingOrdinalFixed.invariant
+#print axioms PPAC.Migration.ForcingOrdinalFixed.invariant_semantics
+#print axioms PPAC.Migration.ForcingOrdinalFixed.collected_fixed
+#print axioms PPAC.Migration.ForcingOrdinalFixed.rank_collected
+#print axioms PPAC.Migration.ForcingOrdinalFixed.ranks_fixed
+#print axioms PPAC.Migration.ForcingOrdinalFixed.exists_fixed_ranks
+#print axioms PPAC.Migration.ForcingOrdinalFixed.context
+#print axioms PPAC.Migration.ForcingOrdinalFixed.context_semantics
+#print axioms PPAC.Migration.ForcingOrdinalFixed.constructionSentence
+#print axioms PPAC.Migration.ForcingOrdinalFixed.construction_models
+#print axioms PPAC.Migration.ForcingOrdinalFixed.construction_kernel_certificate

@@ -74,3 +74,11 @@ ForcingOrdinalRanks 对应固定源 selectedRankFixed:49、selectedRank:54、sel
 同一实际 rank 函数满足逐点精确前驱收集方程；原生良序归纳使用分离得到的反例集合，证明全部函数值均为 IsName。同一函数的完整收集给出 selectionType，并证明它也是 IsName。construction_kernel_certificate 是普通 nativeZF 原核中的纯成员闭句，不增加对象 Choice，不通过重新定义目标或换成已求值序型替代源名字。
 
 实际全量验收通过：2970 项构建、33320 项声明，新增 35 项，原 33285 项足迹逐项不变；9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 份固定源和 2525 份当前文件哈希全部匹配。报告：verification/ordinal-ranks-acceptance.json。源声明后续的 HS、共同子群固定性、强迫成员/序数/决定定理尚未迁移，不能把本批记作完整 selectedRankFixed 或整个 OrdinalCodes 完成。下一步复用 ForcingCollectedHS.fixed/collect_HS 与内部良序归纳，随后接 mem_selectedRank/mem_selectionType；实际消费者是 CodeLinks.ordinalRank:95/ordinalType:101。原阶段仍为 8，第 9–11 阶段及最终内部 Con 不变。
+
+## 同一 rank 函数的 HS 与共同子群固定性（全量验收通过）
+
+ForcingOrdinalFixed 按固定源 OrdinalCodes.FixedName.collect:28–33、selectedRankFixed:49–52、selectedRank_fixed:61–63 和 selectionType_fixed:66–68 迁移。现成 exists_wellOrderPredecessorSet 给出内部前驱集；既有 Ranks 方程与其上的 Collected 精确对应。对可分离的 FixedAt 反例集合做原生内部良序归纳，每个收集步骤直接调用现成 collect_HS/fixed。索引和孩子名字保持不变，仅条件按源群作用移动，选择谓词的逐点不变性作为原源前提明确保留。
+
+普通 nativeZF 原核 construction_kernel_certificate 联合返回同一个实际 rank 图、同一 selectionType、精确递归方程、全部值的 HS 和同一个 H 的字面固定性；selectionType 也具有这些性质。原实际呈现、群载体、正规滤子、子群及 H 属于滤子的条件保留，没有把欲证固定性当前提，不逐群元素重新选择函数，不增加对象 Choice 或宿主良基性。
+
+实际全量验收通过：2971 项构建、33341 项声明，新增 21 项，原 33320 项足迹逐项不变；9 条命令、5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 份固定源和 2526 份当前文件哈希全部匹配。报告：verification/ordinal-fixed-acceptance.json。本批关闭上一批的 HS/固定性待办。下一实际源消费者是 OrdinalCodes.mem_selectedRank:79、mem_selectionType:94；现成 ForcingAtomicRelations.mem_iff 与 ForcingCollectedName.edge_collected 可复用。后续序数决定沿源 PersistentCodes.ordF_eq_check_le:521；已完成 check-name 递归、IsName/HS/作用及 ForcingInfinity.mem_check/check_mem_of_mem 不得重做。强迫序数/决定定理、CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。
