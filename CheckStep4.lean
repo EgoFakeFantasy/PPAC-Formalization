@@ -12387,4 +12387,18 @@ example {k n m : Nat} (L : Source.Formula (k+2)) (lp : Fin k → Fin m)
       (ForcingOrdinalMembership.inclusionSentence L lp R rp P X order history a b na nb selection nu p)) :=
   ForcingOrdinalMembership.inclusion_kernel_certificate L lp R rp P X order history a b na nb selection nu p
 
+-- Source rank/type OrdF and full ordinal-formula bridge in the original kernel.
+example {k n m : Nat} (initial : Bool) (L : Source.Formula (k+2)) (H : Source.Formula (k+1))
+    (lp : Fin k → Fin m) (R : Source.Formula (n+2)) (rp : Fin n → Fin m)
+    (P X order history a name p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrdinalTransitivity.ordinalSentence initial L H lp R rp P X order history a name p)) :=
+  ForcingOrdinalTransitivity.ordinal_kernel_certificate initial L H lp R rp P X order history a name p
+
+example {k n m : Nat} (L : Source.Formula (k+2)) (H : Source.Formula (k+1))
+    (lp : Fin k → Fin m) (v : Fin n → Fin m) (P p : Fin m) (x : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingOrdinalTransitivity.formulaBridgeSentence L H lp v P p x)) :=
+  ForcingOrdinalTransitivity.formula_bridge_kernel_certificate L H lp v P p x
+
 end PPAC.Migration.Step4Checks

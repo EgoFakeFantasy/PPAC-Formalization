@@ -90,3 +90,9 @@ ForcingOrdinalMembership 逐项迁移固定源 mem_selectedRank:79、mem_selecti
 membership_kernel_certificate 与 selected_kernel_certificate 分别覆盖两种情况；inclusion_kernel_certificate 在原内部良序下证明全候选、全条件的逐点成员包含，其结果接入现成 SubsetF。三个普通 nativeZF 原核端点保留已构造的同一 Ranks/Collected 前提，不换成外部求值模型或代理序型。没有新强迫/序数/名字后端、秩截断或对象 Choice。
 
 全量验收通过：2972 项构建、33369 项声明，新增 28 项；全部 33341 项旧依赖足迹不变。9 条命令及 5 次 trust=0 检查均退出 0，零警告、无新增公理依赖；75 项固定源和 2527 项当前文件哈希一致。见 verification/ordinal-membership-acceptance.json。本批关闭上一批的强迫成员和初段包含待办。下一源消费者是 transF_selectedRank:134/transF_selectionType:145，再接 ordF_selectedRank:156/ordF_selectionType:168。OrdF 是源使用的“传递集且成员传递”强迫性质，不能当成最终 ACwo 中完整 ordinal 公式的替代；普通序数决定仍沿 PersistentCodes.ordF_eq_check_le:521 迁移。CodeLinks、第 9–11 阶段和最终内部 Con 仍未完成，原阶段仍为 8。
+
+## 实际 rank／selectionType 的 TransF／OrdF（全量验收通过）
+
+ForcingOrdinalTransitivity 按 OrdinalCodes:134–178 接入同一 rank 图／selectionType 的 TransF 与 OrdF，复用刚完成的强迫成员、初段包含及现有原子单调／相等替换／稠密性。PersistentCodes:439–511 的域量词、单调／合同／成员继承及完整 ordinal 公式到 OrdF 的桥接一起迁移；名字域 H 不缩小，可实例化为已有全秩 HS。两个普通 nativeZF 原核证书覆盖 rank/type 两分支及完整公式桥接，OrdF 仅表示源辅助遗传传递性，没有宣称其等于完整 ordinal。
+
+全量验收通过：2973 项构建、33394 项声明，新增 25 项；全部 33369 项旧依赖足迹不变。9 条命令及 5 次 trust=0 检查均退出 0，零警告、无新增公理依赖；75 项固定源和 2528 项当前文件哈希一致。见 verification/ordinal-transitivity-acceptance.json。下一实际消费者是 PersistentCodes.ordF_eq_check_le:521（内部名字归纳、原生累积秩和最小缺失序数），随后接 OrdinalCodes.selectionType_decide/selectedRank_decide、CodeLinks。已核对可复用供体：Cumulative.v_unfold_l/v_mono_l/v_transitive_l、CumulativeRank.ZF.v_cover_l、CumulativeSelection.ZF.v_min_exists_l，均已在 PPAC/Companion 接入；已有的是内部层级及最早层选择，源 raw.rank 的精确定量界仍须在决定证明中对应。不能使用要求宿主 WellFounded 的通用 Rank.functionOfWellFounded 替代任意 nativeZF 模型内的秩。原阶段仍为 8；决定定理、第 9–11 阶段和最终内部 Con 未完成。

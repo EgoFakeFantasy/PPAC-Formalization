@@ -799,3 +799,5 @@ import PPAC.Migration.ForcingOrdinalRanks
 import PPAC.Migration.ForcingOrdinalFixed
 
 import PPAC.Migration.ForcingOrdinalMembership
+
+import PPAC.Migration.ForcingOrdinalTransitivity
