@@ -12593,4 +12593,10 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative (ForcingChainBound.boundSentence YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention))) :=
   ForcingChainBound.bound_kernel_certificate
 
+-- Internal well-founded relation evaluation; no external WellFounded or object Choice.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeEvaluation.evaluationSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeEvaluation.evaluation_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -779,3 +779,14 @@ of the exact `B <= A x nu` closed sentence in the existing internal L. The two
 factors remain independent; object Choice is discharged inside L. Direct source
 consumers are CodeCardinals:117/289. The specific Cohen chain bound, those two
 instances, actual OrdinalCount and final internal Con are still incomplete.
+
+### Internal evaluation for source countable trees (2026-10-30)
+
+`ForcingCountableTreeEvaluation.evaluation_kernel_certificate` is an ordinary
+`nativeZF` derivation of unique total set-valued evaluation on every internally
+well-founded bounded relation with an explicit local, total, single-valued
+operator. It retains donor `wf_rel_ind_l` and adapts the donor Boolean partial
+solution argument to internal function graphs. This is required by
+AssignedGraphs.CountableHull.evaluate:289-292; actual tree coding, grafting,
+cardinality and leaf/node operator instantiation remain incomplete. It does
+not yet prove CountableHull.exists_closed, the Cohen chain bound or OrdinalCount.

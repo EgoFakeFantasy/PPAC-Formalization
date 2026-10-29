@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：CodeCardinals 共用的 ChainBound 精确乘积界
+## 当前执行入口：源可数分支树所需的内部集合值求值
 
-固定源 AssignedGraphs.ChainBound.cardinal_le:489–500、cardinal_le_mul:505–525 已迁入 ForcingChainBound。两个直接源消费者是 CodeCardinals.ordinalType_cardinal_le:117 与 ordinalType_lower_count:289。复用供体 ccc_fiber_l 的内部选择／值域反链／复合单射方法及现成 ExistingSmallUnion.uniformize_formula_l；所得精确结论为内部 |B| ≤ |A| × ν，不限制两因子相同。所有条件选择图、纤维、纤维单射族和最终单射都在对象模型内构造；forall7 纯成员闭句经同一现成内部 L 返回 nativeZF 原核，外部背景不增加 Choice。
+源 AssignedGraphs.CountableHull.evaluate:289–292／exists_closed:296–324 需要对可数分支良基树作集合值求值。ForcingCountableTreeEvaluation 已复用供体 wf_rel_ind_l 的完整归纳证明正文（仅载体参数重命名），并将 Borel.Boolean 的部分解相容／扩展／合并证明适配到内部集合函数图。所有部分图均在内部 T×X 的幂集中构造；内部良基归纳证明合并图全域，另证明唯一性。局部、总且单值的对象算子作为明确前提；不假设宿主 WellFounded、内部序数外部标准或对象 Choice。forall4 纯成员闭句取得普通 nativeZF 原核证书。
 
-定向 Lean、769 项模块构建及 25 项公开声明的 trust=0 审计已通过，无新增公理依赖。全量验收与全部旧足迹对比记录于 verification/chain-bound-acceptance.json；新增声明数不表示整体完成比例。
+定向 Lean、770 项模块构建及 43 项公开声明的 trust=0 审计已通过，无新增公理依赖。全量验收与全部旧足迹对比记录于 verification/tree-evaluation-acceptance.json。上一批精确 ChainBound 乘积界保持不变；本批是源树求值实例化的前提，不是已经完成整个 CountableHull 或 Cohen 反链界。
 
-下一源步骤为 AssignedGraphs 中具体可数支撑 Cohen 条件的 antichain_cardinal_le、AvailableRecords 的实际表示稠密性及 CodeCardinals 两条基数界，最终经 ConcreteQuotients:297/302 消去 OrdinalCount。通用 ChainBound 引理已完成，不重做；具体实例仍未完成，不能冒充已经消去 OrdinalCount。供体有限部分函数 CCC／可数支撑迭代不能直接替代源可数部分函数条件。不得以依赖 OrdinalCount 的 Preliminary 总性／满射性循环证明该前提。仍在原第 8 阶段，阶段 9–11 及最终内部 Con 未完成。
+下一源步骤为同一 AssignedGraphs.CountableHull 的内部树码／拼接／基数界及实际叶与节点算子实例化，再接 antichain_cardinal_le 和 CodeCardinals 两条实际基数界。已有 ConstructionConcreteCardinals 的连续统／后继可数幂固定点、Cohen 条件和相容／限制图直接复用，不重做。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 
