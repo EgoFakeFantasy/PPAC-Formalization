@@ -12620,4 +12620,16 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
       YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
   ForcingCountableTreeCardinality.bound_kernel_certificate
 
+-- Actual source tree evaluator / indexed graft equation in ordinary nativeZF.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeValues.rootsSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeValues.roots_kernel_certificate
+
+-- Actual source tree evaluator / indexed graft equation in ordinary nativeZF.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeGraftValues.graftSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeGraftValues.graft_kernel_certificate
+
 end PPAC.Migration.Step4Checks

@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：源完整树载体的内部基数界
+## 当前执行入口：实际整树求值与保留索引的拼接方程
 
-ForcingCountableTreeCardinality 已迁移 AssignedGraphs.CountableHull.exists_closed:301–316 的整个树载体大小估计。在同一内部有限地址空间上，用三个标记区分地址缺失、叶、带标签节点，并将标签映入 μ；证明编码能逐点恢复节点集和标签图，形成一个实际内部单射。全部合法树都被编码，没有高度上界或外部标准长度限制。
+ForcingCountableTreeValues 已把内部叶集合、完整子节点索引图和全部求值器条件落实到同一实际树；原生公式函数构造器装配整个载体上的一个根求值函数 E。forall9 普通 nativeZF 原核证书已通过定向编译及 trust=0 审计。
 
-地址空间的可数性直接复用 ExistingFiniteSequenceBounds；单元素地址与原生 Cantor–Bernstein 给出到内部 ω 的双射。再消费既有无限积界、函数空间传输和 ConstructionConcreteCardinals.normalize_power，取得 forall7 普通 nativeZF 原核证书：ω≤μ、μ^ω=μ、|A|≤μ 推出同一全部树载体 |C|≤μ。没有留下“树已经小”的前提，也没有增加对象 Choice。
+ForcingCountableTreeGraftValues 保留每个内部子节点索引，证明共同首项拼接与末项追加交换；把新树求值拉回每一棵原子树，得到相同叶／节点方程。由此证明新根的参数函数恰为 E 与 H 的复合，构造实际拼接码 c、根值 x 及 op(a,f)=x；forall13 普通 nativeZF 原核证书已通过定向编译及 trust=0 审计。现成内部良基求值器、完整载体、拼接和基数界均被复用，没有增加对象 Choice 或外部良基前提。
 
-上一批完整树载体／叶码及任意内部 ω 树族的实际拼接封闭性保持不变。本批 1012 项模块构建与 21 项公开声明的 trust=0 审计已通过；全量验收与旧足迹对比以 verification/tree-cardinality-acceptance.json 的实际结果为准。
+本批两个模块共 56 项公开声明，定向审计无新增公理依赖；全量验收与全部 33870 项旧足迹对比以 verification/tree-values-acceptance.json 的实际结果为准。原 1–11 阶段编号保持不变。
 
-下一源步骤为实际树的子节点／叶集合求值装配、保留子节点索引的拼接求值方程，以及根值范围的完整 CountableHull.exists_closed，再接实际 Cohen 反链界和 CodeCardinals。原内部求值器、叶／节点规则及固定幂参数直接复用。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
+下一源步骤为取 E 的实际内部值域，复用良序像界，并完成源 choose 子树所需的内部选取／复合，闭合完整 CountableHull.exists_closed；随后接实际 Cohen 反链界和 CodeCardinals。实际树求值装配及拼接求值方程已完成，不再列为待办。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 
