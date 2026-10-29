@@ -12270,4 +12270,28 @@ example {k m : Nat} (L W : SetTheory.Definitional.Project.Formula 1 (k+2))
       (ForcingPersistentSelection.selectionSentence L W E hL hW hE base P A order)) :=
   ForcingPersistentSelection.selection_kernel_certificate L W E hL hW hE base P A order
 
+-- Actual principal-filter / persistent-code source endpoint.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mul e d : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPrincipalFilter.constructionSentence rho I K B w mul e d)) :=
+  ForcingPrincipalFilter.construction_kernel_certificate rho I K B w mul e d
+
+-- Actual principal-filter / persistent-code source endpoint.
+example {m : Nat} (X ac d d' g g' : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPrincipalFilter.moveSentence X ac d d' g g')) :=
+  ForcingPrincipalFilter.move_kernel_certificate X ac d d' g g'
+
+-- Actual principal-filter / persistent-code source endpoint.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mul one q zero root vertices chain names a b c d e : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentCodes.lawsSentence rho I K B w mul one q zero root vertices chain names a b c d e)) :=
+  ForcingPersistentCodes.laws_kernel_certificate rho I K B w mul one q zero root vertices chain names a b c d e
+
+-- Actual principal-filter / persistent-code source endpoint.
+example {k : Nat} (Hdom : Source.Formula (k+1)) (rho : Fin 7 → Fin k) (I K B w mul one d G F g q bound labels E objects maps root gluePr Q zero vertices chain names a b x y : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentCodes.equalitySentence Hdom rho I K B w mul one d G F g q bound labels E objects maps root gluePr Q zero vertices chain names a b x y)) :=
+  ForcingPersistentCodes.equality_kernel_certificate Hdom rho I K B w mul one d G F g q bound labels E objects maps root gluePr Q zero vertices chain names a b x y
+
 end PPAC.Migration.Step4Checks
