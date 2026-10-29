@@ -34162,3 +34162,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalTable.constructionSentence
 #print axioms PPAC.Migration.ForcingOrdinalTable.construction_models
 #print axioms PPAC.Migration.ForcingOrdinalTable.construction_kernel_certificate
+
+-- Actual GermSelectors.Preliminary and its four basic laws.
+#print axioms PPAC.Migration.ForcingGermPreliminary.Preliminary
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_freeClosed
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_semantics
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_mono
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_common
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_congr
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminary_restrict
+#print axioms PPAC.Migration.ForcingGermPreliminary.lawsSentence
+#print axioms PPAC.Migration.ForcingGermPreliminary.laws_models
+#print axioms PPAC.Migration.ForcingGermPreliminary.laws_kernel_certificate

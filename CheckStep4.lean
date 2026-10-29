@@ -12547,4 +12547,10 @@ example {k : Nat} (labels bound : Fin k) :
       (ConstructibleGround.relative (ForcingOrdinalTable.constructionSentence labels bound))) :=
   ForcingOrdinalTable.construction_kernel_certificate labels bound
 
+-- Ordinary nativeZF certificate for the actual Preliminary relation.
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one zero vertices d e vertex vertexT n localRoot index U label tau sigma : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingGermPreliminary.lawsSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one zero vertices d e vertex vertexT n localRoot index U label tau sigma)) :=
+  ForcingGermPreliminary.laws_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one zero vertices d e vertex vertexT n localRoot index U label tau sigma
+
 end PPAC.Migration.Step4Checks

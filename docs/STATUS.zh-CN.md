@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：固定内部序数表与索引双射已验收
+## 当前执行入口：真实 Preliminary 关系及四条基本定律已验收
 
-固定源 OrdinalCodes.OrderAssignment.Table:548、chooseTable:551、indices:557 已由 ForcingOrdinalTable 接入。一次构造精确定义域的内部集合函数表，再量化所有不超过界、与标签集内部等势的内部序数；索引关系使用同一表项，给出标签集到该序数成员的实际内部双射图。表没有强迫条件参数。直接复用 ExistingSmallUnion.uniformize_formula_l 的供体证明、底座 exists_functionSpace／exists_insert／Separation，以及同一内部 L；联合构造取得 nativeZF 原核的 L 相对化证书。实际源消费者是 GermSelectors.ordinalTable:33、Preliminary:38、preliminary_eq_iff:86、preliminary_total:167、preliminary_onto:183。全量验收：2991 项构建、33618 项声明（新增 20 项），全部 33598 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2546 项当前哈希匹配。记录：verification/ordinal-table-acceptance.json。
+固定源 GermSelectors.Preliminary:38–45、preliminary_mono:49、preliminary_common:59、preliminary_congr:65、preliminary_restrict:125 已由 ForcingGermPreliminary 接入。关系保留 HS 名字、标签成员、同一 Selected 链码、rank 历史／类型名字、固定序数表项、check 名字与 Links；四条定律保留全部见证，复用已有 Links 与 EqF 定律。纯成员闭句取得普通 nativeZF 原核 Derives 证书。源实际消费者为 StableSelectors.corrected_mono/common/congr/restrict。全量验收：2992 项构建、33629 项声明（新增 11 项），全部 33618 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2547 项当前哈希匹配。记录：verification/germ-preliminary-acceptance.json。
 
-下一源步骤为 GermSelectors.Preliminary:38–45 的真实关系与定律装配：连接同一已有 rank 历史／序数类型名字、固定表项、Selected 链码、check 名字和 Links，随后接 CodeCardinals 上下基数界及密度消费者。固定表、选择、序数递归、L 及完整公理模式均已有，不再列为待重建基础；本批不声称完成整个 GermSelectors 或源 assignment 的其他未消费变体。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 GermSelectors.preliminary_eq_iff:86，复用现有同一 rank 历史的 allConsumers、Links/Same 等价、Selected 唯一性和固定表内部双射；随后接 stable/descend/permute、实际基数界及密度消费者。已有 rank／表生产者、L 和完整公理模式不重建；本批四条定律统一量化固定参数，未声称整个 Preliminary 双射／稠密性或最终系统已装配。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
 
-**仍在原第 8 阶段。实际 Same 协变已有普通 nativeZF 原核证书；完整 Works/Selected 全条件协变现已取得同一内部 L 相对化的 nativeZF 原核证书，全量验收已通过。稳定性产生同一个内部ω工作码现也已取得原核证书并通过全量验收；OrdinalCodes/CodeLinks、第 9–11 阶段及最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
