@@ -1,6 +1,6 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-**仍在原第 8 阶段。通用持久选择已接入；本批进一步迁移实际主滤子、Same 的四条定律和 Same ↔ 实际表示值相等，四个端点均为普通 nativeZF 原核证书。实际 Works 的逐条件系统接线、协变、Selected 特化、OrdinalCodes/CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
+**仍在原第 8 阶段。实际主滤子、Same、逐条件 Works 和实际 ChainCode.Selected 的单调/唯一/稠密选取已接入普通 nativeZF 原核。协变、由稳定性构造工作码、OrdinalCodes/CodeLinks 及第 9–11 阶段、最终内部 Con 仍未完成。** 构建数和声明数不表示整体完成比例。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -20,11 +20,11 @@
 
 ## 本批实际证明与验收
 
-ForcingPrincipalFilter 对应固定源 GraphFusion.principalFilter/eqG_principal 与 PersistentCodes.principalFilter_move；原生 Separation 构造实际主滤子，复用实际条件编码/原子单调性，证明 EqG 与该条件 EqF 等价及坐标变换下的主滤子传输。ForcingPersistentCodes 对应源 Same/same_refl/symm/trans/mono、at_eq_iff、same_iff_represents_eq。内部 ω 比较合并尾阈值，实际链/码函数的唯一性对齐名字和图，实际局部商与 toGlued 单射证明表示值相等。
+ForcingPersistentWorks 对应固定源 PersistentCodes.Works:122、works_mono:133 和实际 ChainCode.Selected/selected_mono/selected_unique/dense_selected:209–234。直接组合现成资格对象族、实际限制映射族、整个分量和商/投影构造；每个更强条件使用自己的主滤子与对应呈现。图/集合外延性证明对象族、箭头域、映射族、分量、商和投影唯一，represented_iff 将存在式恢复为任一指定实际主滤子商中的表示关系，不依赖辅助 image 界。
 
-四个对象端点是 construction_kernel_certificate、move_kernel_certificate、laws_kernel_certificate、equality_kernel_certificate，均由现有 ModelTransfer 回到 FirstOrder.Derives nativeZF []。没有加入对象 Choice、全泛型滤子或外部标准 ω 前提。实际系统、链及表示关系作为源引理原有输入显式保留；本批不宣称完成 Works、Selected 的实际特化或最终 Con。通用持久选择的历史验收仍见 verification/persistent-selection-acceptance.json。
+三个原核端点：construction_kernel_certificate 构造实际族/商；representation_kernel_certificate 证明表示规范化；selection_kernel_certificate 用实际条件包含、Works 和 Same 消去通用选择的七条抽象定律。实际 ChainCode 载体与固定代码良序保留为源定理输入；没有加入对象 Choice 或外部标准 ω。Bundle 组合实际族/商，不把原 System 定律重新证明或无条件附加；其既有生产者仍保留原源合同。尚未完成协变、从稳定性构造工作码、OrdinalCodes/CodeLinks 或最终 Con。
 
-本批完整验收通过：2964 项构建、33202 项声明审计；新增 40 项，原 33162 项足迹逐项不变。9 条命令及 5 次 trust=0 全部退出 0，零警告、无新增公理依赖；1858 项无公理、31344 项有已记录依赖。75 份固定源和 2519 份当前文件哈希匹配。记录：verification/principal-persistent-codes-acceptance.json。
+本批完整验收通过：2965 项构建、33235 项声明审计；新增 33 项，原 33202 项足迹逐项不变。9 条命令及 5 次 trust=0 全部退出 0，零警告、无新增公理依赖；1858 项无公理、31377 项有已记录依赖。75 份固定源和 2520 份当前文件哈希匹配。记录：verification/persistent-works-acceptance.json。上一批主滤子/Same 的完整记录保留于 verification/principal-persistent-codes-acceptance.json。
 
 流程纠错：TailGraphs 的逐滤子 leastCode 仅通往 QuotientActions 的小写 preliminary 支线；最终 GermSelectors.Preliminary:38–47 使用持久 Selected 和 ordinalType/ordinalRank。此前把“模块被导入”误当“声明被主定理消费”，导致错误添加前置。未提交的 ForcingLeastCodes 草稿已归档删除，两项专用生产者改动已撤回；现有有效 At/Represents 证明保留。精确来源与裁决见 SOURCE_LOCK.selected_route_consumer_audit。
 
@@ -37,7 +37,7 @@ ForcingPrincipalFilter 对应固定源 GraphFusion.principalFilter/eqG_principal
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；ChainCode/At/Represents、代表码存在/唯一性、原根 componentEquiv、At 保反射及同码协变均已接入 | 通用持久选择的单调/唯一/稠密性已取得原核证书；实际主滤子及 Same 定律/表示相等已接入；下一接逐条件 Works、协变、Selected 特化及 OrdinalCodes/CodeLinks。逐滤子 leastCode 不在最终消费者链上，取消其迁移前置地位；不重建名字/选择/L/商后端 |
+| 8 当前 | TailGraphs → PersistentCodes → OrdinalCodes → CodeLinks | 共尾链、实际资格系统/纤维/粘合和全族传输已有；ChainCode/At/Represents、代表码存在/唯一性、原根 componentEquiv、At 保反射及同码协变均已接入 | 通用持久选择的单调/唯一/稠密性已取得原核证书；实际主滤子及 Same 定律/表示相等已接入；逐条件 Works 和实际 Selected 特化已接入；下一接协变、exists_working_code_of_stable 及 OrdinalCodes/CodeLinks。逐滤子 leastCode 不在最终消费者链上，取消其迁移前置地位；不重建名字/选择/L/商后端 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

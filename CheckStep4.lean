@@ -12294,4 +12294,22 @@ example {k : Nat} (Hdom : Source.Formula (k+1)) (rho : Fin 7 → Fin k) (I K B w
       (ForcingPersistentCodes.equalitySentence Hdom rho I K B w mul one d G F g q bound labels E objects maps root gluePr Q zero vertices chain names a b x y)) :=
   ForcingPersistentCodes.equality_kernel_certificate Hdom rho I K B w mul one d G F g q bound labels E objects maps root gluePr Q zero vertices chain names a b x y
 
+-- Actual per-filter Works and concrete persistent selection.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul g q bound labels E root : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentWorks.constructionSentence rho I K B w one G F mul g q bound labels E root)) :=
+  ForcingPersistentWorks.construction_kernel_certificate rho I K B w one G F mul g q bound labels E root
+
+-- Actual per-filter Works and concrete persistent selection.
+example {k : Nat} (R : Source.Formula (k+2)) (Hdom : Source.Formula (k+1)) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain d a g oi objects S mi maps P Q pr : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentWorks.representationSentence R Hdom rho I G F mul q bound labels E root w chain d a g oi objects S mi maps P Q pr)) :=
+  ForcingPersistentWorks.representation_kernel_certificate R Hdom rho I G F mul q bound labels E root w chain d a g oi objects S mi maps P Q pr
+
+-- Actual per-filter Works and concrete persistent selection.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w one G F mul q bound labels E root zero vertices chain names codes order : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPersistentWorks.selectionSentence rho I K B w one G F mul q bound labels E root zero vertices chain names codes order)) :=
+  ForcingPersistentWorks.selection_kernel_certificate rho I K B w one G F mul q bound labels E root zero vertices chain names codes order
+
 end PPAC.Migration.Step4Checks

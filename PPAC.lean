@@ -787,3 +787,4 @@ import PPAC.Migration.ForcingTailCovariance
 import PPAC.Migration.ForcingPersistentSelection
 import PPAC.Migration.ForcingPrincipalFilter
 import PPAC.Migration.ForcingPersistentCodes
+import PPAC.Migration.ForcingPersistentWorks
