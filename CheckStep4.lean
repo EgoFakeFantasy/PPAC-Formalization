@@ -12599,4 +12599,10 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
       YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
   ForcingCountableTreeEvaluation.evaluation_kernel_certificate
 
+-- Source base / op(a, all child values) equations, with generic operator premises discharged.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ForcingCountableTreeAlgebra.evaluationSentence
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention)) :=
+  ForcingCountableTreeAlgebra.evaluation_kernel_certificate
+
 end PPAC.Migration.Step4Checks

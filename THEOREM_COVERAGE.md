@@ -790,3 +790,5 @@ solution argument to internal function graphs. This is required by
 AssignedGraphs.CountableHull.evaluate:289-292; actual tree coding, grafting,
 cardinality and leaf/node operator instantiation remain incomplete. It does
 not yet prove CountableHull.exists_closed, the Cohen chain bound or OrdinalCount.
+
+- `ForcingCountableTreeAlgebra` migrates pinned `AssignedGraphs.CountableHull.evaluate:289-292`: exact leaf/base and labelled all-internal-child operation equations. Native function construction provides child-value arguments, Separation provides the step graph, and Local/Total/Single are discharged using the existing internal evaluator. The forall10 pure-membership unique-evaluation sentence has an ordinary nativeZF original-kernel certificate. Full tree carrier/grafting/cardinality and `CountableHull.exists_closed` remain open; actual Cohen chain bound, OrdinalCount and final internal Con are not claimed.

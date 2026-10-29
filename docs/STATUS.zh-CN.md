@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：源可数分支树所需的内部集合值求值
+## 当前执行入口：源可数分支树的实际叶／节点求值
 
-源 AssignedGraphs.CountableHull.evaluate:289–292／exists_closed:296–324 需要对可数分支良基树作集合值求值。ForcingCountableTreeEvaluation 已复用供体 wf_rel_ind_l 的完整归纳证明正文（仅载体参数重命名），并将 Borel.Boolean 的部分解相容／扩展／合并证明适配到内部集合函数图。所有部分图均在内部 T×X 的幂集中构造；内部良基归纳证明合并图全域，另证明唯一性。局部、总且单值的对象算子作为明确前提；不假设宿主 WellFounded、内部序数外部标准或对象 Choice。forall4 纯成员闭句取得普通 nativeZF 原核证书。
+源 AssignedGraphs.CountableHull.evaluate:289–292 的叶／节点规则已由 ForcingCountableTreeAlgebra 实例化。叶返回 base；非叶应用实际标签算子于同一个内部 ω 上全部子节点值构成的函数图。复用原生可定义函数构造器取得子值图，并用分离取得实际求值算子；已证明其 Local/Total/Single，消去上一批通用求值器的三个算子前提。内部良基、标签／子节点数据及源给定运算合同仍显式保留。forall10 纯成员闭句取得普通 nativeZF 原核证书，不要求宿主 WellFounded、外部标准 ω 或对象 Choice。
 
-定向 Lean、770 项模块构建及 43 项公开声明的 trust=0 审计已通过，无新增公理依赖。全量验收与全部旧足迹对比记录于 verification/tree-evaluation-acceptance.json。上一批精确 ChainBound 乘积界保持不变；本批是源树求值实例化的前提，不是已经完成整个 CountableHull 或 Cohen 反链界。
+定向 Lean、771 项模块构建及 35 项公开声明的 trust=0 审计已通过。全量验收和旧声明足迹对比以 verification/tree-algebra-acceptance.json 的实际结果为准；这尚不是整个 CountableHull 或 Cohen 反链界。
 
-下一源步骤为同一 AssignedGraphs.CountableHull 的内部树码／拼接／基数界及实际叶与节点算子实例化，再接 antichain_cardinal_le 和 CodeCardinals 两条实际基数界。已有 ConstructionConcreteCardinals 的连续统／后继可数幂固定点、Cohen 条件和相容／限制图直接复用，不重做。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
+下一源步骤为同一 AssignedGraphs.CountableHull 的完整内部树载体／拼接／基数界，再接 antichain_cardinal_le 和 CodeCardinals 两条实际基数界。复用现成有限序列空间、内部良基方法及 ConstructionConcreteCardinals 的连续统／后继可数幂固定点，不重建底座。仍在原第 8 阶段；具体 OrdinalCount、完整选择器、阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

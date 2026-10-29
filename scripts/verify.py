@@ -2391,7 +2391,8 @@ def main() -> None:
                                ('forcing_germ_covariance', 'ForcingGermCovariance', 4),
                                ('forcing_germ_density', 'ForcingGermDensity', 12),
                                ('forcing_chain_bound', 'ForcingChainBound', 25),
-                               ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43)):
+                               ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43),
+                               ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
@@ -2430,7 +2431,7 @@ def main() -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
-        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation"):
+        if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
             names |= {prefix + "Basic"} | {prefix + "Basic." + n for n in ("bot", "mem", "equal", "conj", "neg", "ex", "rec")}
