@@ -1,10 +1,10 @@
 # 当前状态：原 1–11 阶段（2026-10-29）
 
-## 当前执行入口：真实 Preliminary 关系及四条基本定律已验收
+## 当前执行入口：Preliminary 强迫相等与标签相等的双向等价已验收
 
-固定源 GermSelectors.Preliminary:38–45、preliminary_mono:49、preliminary_common:59、preliminary_congr:65、preliminary_restrict:125 已由 ForcingGermPreliminary 接入。关系保留 HS 名字、标签成员、同一 Selected 链码、rank 历史／类型名字、固定序数表项、check 名字与 Links；四条定律保留全部见证，复用已有 Links 与 EqF 定律。纯成员闭句取得普通 nativeZF 原核 Derives 证书。源实际消费者为 StableSelectors.corrected_mono/common/congr/restrict。全量验收：2992 项构建、33629 项声明（新增 11 项），全部 33618 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2547 项当前哈希匹配。记录：verification/germ-preliminary-acceptance.json。
+固定源 GermSelectors.ordinal_value_unique:76、preliminary_eq_iff:86 已由 ForcingGermEquality 接入，实际消费者为 StableSelectors.corrected_eq_iff:480（488 行调用）。正向复用 Links/Same 反映、Selected 唯一性、实际 rank 函数唯一性、check 反映与固定表单射；反向复用固定表单值性、check 名字唯一性、同一 Selected 关系的实际 rank 比较及 Same 自反性。未添加任意 rank 单射假设。纯成员闭句取得同一现成内部 L 相对化的 nativeZF 原核证书；原有 Ranks/FixedFamily 与固定表生产者仍为同一组输入。全量验收：2993 项构建、33633 项声明（新增 4 项），全部 33629 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2548 项当前哈希匹配。记录：verification/germ-equality-acceptance.json。
 
-下一源步骤为 GermSelectors.preliminary_eq_iff:86，复用现有同一 rank 历史的 allConsumers、Links/Same 等价、Selected 唯一性和固定表内部双射；随后接 stable/descend/permute、实际基数界及密度消费者。已有 rank／表生产者、L 和完整公理模式不重建；本批四条定律统一量化固定参数，未声称整个 Preliminary 双射／稠密性或最终系统已装配。仍在原第 8 阶段，第 9–11 阶段及最终内部 Con 未完成。
+下一源步骤为 GermSelectors.preliminary_stable:115、preliminary_descend:134，直接消费已有 Links 稳定性和下降定理；随后接 preliminary_permute:143、实际基数界及密度消费者。保留同一 rank 历史／类型名字、固定表和原源证明路线；不重建现成底座。仍在原第 8 阶段，整套选择器、阶段 9–11 和最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

@@ -12553,4 +12553,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w cha
       (ForcingGermPreliminary.lawsSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one zero vertices d e vertex vertexT n localRoot index U label tau sigma)) :=
   ForcingGermPreliminary.laws_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one zero vertices d e vertex vertexT n localRoot index U label tau sigma
 
+-- Source preliminary_eq_iff, relative to the same existing internal L.
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one mu history kappa mark H C incoming base zero vertices names rootIndex rootU group d vertex localRoot index U label other tau sigma : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingGermEquality.equalitySentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one mu history kappa mark H C incoming base zero vertices names rootIndex rootU group d vertex localRoot index U label other tau sigma))) :=
+  ForcingGermEquality.equality_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B one mu history kappa mark H C incoming base zero vertices names rootIndex rootU group d vertex localRoot index U label other tau sigma
+
 end PPAC.Migration.Step4Checks

@@ -822,3 +822,4 @@ import PPAC.Migration.ForcingCodeLinkClosure
 import PPAC.Migration.ForcingCodeLinkCovariance
 import PPAC.Migration.ForcingOrdinalTable
 import PPAC.Migration.ForcingGermPreliminary
+import PPAC.Migration.ForcingGermEquality

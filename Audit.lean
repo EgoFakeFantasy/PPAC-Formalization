@@ -34175,3 +34175,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermPreliminary.lawsSentence
 #print axioms PPAC.Migration.ForcingGermPreliminary.laws_models
 #print axioms PPAC.Migration.ForcingGermPreliminary.laws_kernel_certificate
+
+-- GermSelectors forced equality iff the ground labels agree.
+#print axioms PPAC.Migration.ForcingGermEquality.preliminary_eq_iff
+#print axioms PPAC.Migration.ForcingGermEquality.equalitySentence
+#print axioms PPAC.Migration.ForcingGermEquality.equality_models
+#print axioms PPAC.Migration.ForcingGermEquality.equality_kernel_certificate
