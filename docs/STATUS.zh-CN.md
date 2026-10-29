@@ -1,12 +1,12 @@
-# 当前状态：原 1–11 阶段（2026-10-29）
+# 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：Preliminary 条件性稠密总性与满射性已验收
+## 当前执行入口：CodeCardinals 共用的 ChainBound 精确乘积界
 
-固定源 GermSelectors.preliminary_onto:183–205 已接入 ForcingGermDensity；实际消费者为 OrbitAssignments.corrected_onto:88（110 行调用）。直接消去现成 ForcingPersistentWorks.selection_models 的实际稠密选择结论，不重写其证明。对同一个任意 HS 名字，利用现成 Links 单调／Same 传输、同一实际 rank/type 的决定和同一序数表逆向取值，得到加强条件下的 Preliminary 标签。没有添加 LocalName 界或共同顶点输入前提。onto_kernel_certificate 经同一现成内部 L 返回 nativeZF 原核纯成员闭句。上一批总性证书保留；两条定理都仍以源 OrdinalCount 为前提，具体基数上下界尚未消去该前提。
+固定源 AssignedGraphs.ChainBound.cardinal_le:489–500、cardinal_le_mul:505–525 已迁入 ForcingChainBound。两个直接源消费者是 CodeCardinals.ordinalType_cardinal_le:117 与 ordinalType_lower_count:289。复用供体 ccc_fiber_l 的内部选择／值域反链／复合单射方法及现成 ExistingSmallUnion.uniformize_formula_l；所得精确结论为内部 |B| ≤ |A| × ν，不限制两因子相同。所有条件选择图、纤维、纤维单射族和最终单射都在对象模型内构造；forall7 纯成员闭句经同一现成内部 L 返回 nativeZF 原核，外部背景不增加 Choice。
 
-全量验收：2996 项构建、33662 项声明（新增 4 项接口），全部 33658 项旧足迹不变，包含原模块 8 项接口；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2551 项当前哈希匹配。记录：verification/germ-onto-acceptance.json。
+定向 Lean、769 项模块构建及 25 项公开声明的 trust=0 审计已通过，无新增公理依赖。全量验收与全部旧足迹对比记录于 verification/chain-bound-acceptance.json；新增声明数不表示整体完成比例。
 
-下一源步骤为 CodeCardinals.ordinalType_cardinal_le:45、ordinalType_lower_count:166，经 ConcreteQuotients:297/302 接出实际 OrdinalCount。直接复用不依赖 OrdinalCount 的 member_rank/rank_decide、working_linked、现成实际选择稠密性、稳定工作码和原生基数接口；不得用本批依赖 OrdinalCount 的总性／满射性反过来证明该前提。先核查相应源消费者与现成供体，不重建已完成后端。仍在原第 8 阶段，完整选择器及阶段 9–11、最终内部 Con 未完成。
+下一源步骤为 AssignedGraphs 中具体可数支撑 Cohen 条件的 antichain_cardinal_le、AvailableRecords 的实际表示稠密性及 CodeCardinals 两条基数界，最终经 ConcreteQuotients:297/302 消去 OrdinalCount。通用 ChainBound 引理已完成，不重做；具体实例仍未完成，不能冒充已经消去 OrdinalCount。供体有限部分函数 CCC／可数支撑迭代不能直接替代源可数部分函数条件。不得以依赖 OrdinalCount 的 Preliminary 总性／满射性循环证明该前提。仍在原第 8 阶段，阶段 9–11 及最终内部 Con 未完成。
 
 **仍在原第 8 阶段。当前已验收成果与真正剩余步骤见上方执行入口及原 1–11 阶段表；第 9–11 阶段及最终内部 Con 未完成。** 构建数和声明数不表示整体完成比例。
 

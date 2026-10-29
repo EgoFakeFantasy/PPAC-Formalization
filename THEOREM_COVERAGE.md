@@ -769,3 +769,13 @@ Acceptance: 2996 build jobs, 33658 declarations (9 new; all 33649 old footprints
 ForcingGermDensity.preliminary_onto adapts GermSelectors:183–205, consumed by OrbitAssignments.corrected_onto:88/110. It directly eliminates the existing concrete persistent-selection density certificate, keeps the same arbitrary HS name, transports actual Links, decides the same selected rank and takes an inverse value of the same fixed ordinal table. No local-name bound or common-vertex input premise is added. onto_kernel_certificate returns the pure-membership universal closure in nativeZF relative to the same existing internal L. The prior totality certificate and all eight prior module footprints remain unchanged.
 
 Acceptance: 2996 build jobs, 33662 declarations (4 new; all 33658 old footprints unchanged), 9 commands including 5 trust=0 checks pass, no warnings or added axiom dependencies, 75 pinned-source and 2551 current hashes match. Evidence: verification/germ-onto-acceptance.json. Both density theorems remain conditional on OrdinalCount. Its actual CodeCardinals upper/lower proofs must use independent prior rank/link/selection/stable-code interfaces, avoiding circular use of these conditional density theorems. Full selectors, stages 9–11 and final internal Con remain incomplete.
+
+### Source ChainBound (2026-10-30)
+
+`AssignedGraphs.ChainBound.cardinal_le` and `cardinal_le_mul` now use internal
+range antichains, definable fibers and the retained donor uniformization proof.
+`ForcingChainBound.bound_kernel_certificate` is an original `nativeZF` derivation
+of the exact `B <= A x nu` closed sentence in the existing internal L. The two
+factors remain independent; object Choice is discharged inside L. Direct source
+consumers are CodeCardinals:117/289. The specific Cohen chain bound, those two
+instances, actual OrdinalCount and final internal Con are still incomplete.

@@ -34218,3 +34218,30 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermDensity.onto_kernel_certificate
 #print axioms PPAC.Migration.ForcingGermDensity.onto_models
 #print axioms PPAC.Migration.ForcingGermDensity.preliminary_onto
+
+-- Exact source ChainBound bound used by both CodeCardinals inequalities.
+#print axioms PPAC.Migration.ForcingChainBound.Values
+#print axioms PPAC.Migration.ForcingChainBound.rel
+#print axioms PPAC.Migration.ForcingChainBound.rel_semantics
+#print axioms PPAC.Migration.ForcingChainBound.ChainBound
+#print axioms PPAC.Migration.ForcingChainBound.cardinal_le
+#print axioms PPAC.Migration.ForcingChainBound.Fiber
+#print axioms PPAC.Migration.ForcingChainBound.fiber
+#print axioms PPAC.Migration.ForcingChainBound.fiber_semantics
+#print axioms PPAC.Migration.ForcingChainBound.exists_fiber
+#print axioms PPAC.Migration.ForcingChainBound.fiber_bound
+#print axioms PPAC.Migration.ForcingChainBound.cardinal_le_mul
+#print axioms PPAC.Migration.ForcingChainBound.chainBound
+#print axioms PPAC.Migration.ForcingChainBound.chainBound_semantics
+#print axioms PPAC.Migration.ForcingChainBound.compatibleRefl
+#print axioms PPAC.Migration.ForcingChainBound.total
+#print axioms PPAC.Migration.ForcingChainBound.single
+#print axioms PPAC.Migration.ForcingChainBound.boundSentence
+#print axioms PPAC.Migration.ForcingChainBound.bound_models
+#print axioms PPAC.Migration.ForcingChainBound.bound_kernel_certificate
+#print axioms PPAC.Migration.ForcingChainBound.rel_freeClosed
+#print axioms PPAC.Migration.ForcingChainBound.fiber_freeClosed
+#print axioms PPAC.Migration.ForcingChainBound.chainBound_freeClosed
+#print axioms PPAC.Migration.ForcingChainBound.compatibleRefl_freeClosed
+#print axioms PPAC.Migration.ForcingChainBound.total_freeClosed
+#print axioms PPAC.Migration.ForcingChainBound.single_freeClosed

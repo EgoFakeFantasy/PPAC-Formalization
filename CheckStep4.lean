@@ -12588,4 +12588,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
       (ConstructibleGround.relative (ForcingGermDensity.ontoSentence rho w mu history kappa one mark H C incoming base I K B G F mul top labels bound E q zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab d a tau))) :=
   ForcingGermDensity.onto_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul top labels bound E q zero root vertices chain names vertex codes order ranks selection group r rootIndex rootU rootA rootH rankBound labelSet tab d a tau
 
+-- Exact |B| ≤ |A| × ν, in the existing internal L and original nativeZF kernel.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative (ForcingChainBound.boundSentence YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.ZFC.PureKuratowskiProject.convention))) :=
+  ForcingChainBound.bound_kernel_certificate
+
 end PPAC.Migration.Step4Checks

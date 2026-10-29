@@ -826,3 +826,4 @@ import PPAC.Migration.ForcingGermEquality
 import PPAC.Migration.ForcingGermLocality
 import PPAC.Migration.ForcingGermCovariance
 import PPAC.Migration.ForcingGermDensity
+import PPAC.Migration.ForcingChainBound
