@@ -34046,3 +34046,23 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingTailGroup.constructionSentence
 #print axioms PPAC.Migration.ForcingTailGroup.construction_models
 #print axioms PPAC.Migration.ForcingTailGroup.construction_kernel_certificate
+
+-- Actual CodeLinks selection and existing covariance with internal moved-root witness.
+#print axioms PPAC.Migration.ForcingCodeSelection.IsSelected
+#print axioms PPAC.Migration.ForcingCodeSelection.selected
+#print axioms PPAC.Migration.ForcingCodeSelection.selected_freeClosed
+#print axioms PPAC.Migration.ForcingCodeSelection.selected_semantics
+#print axioms PPAC.Migration.ForcingCodeSelection.relation
+#print axioms PPAC.Migration.ForcingCodeSelection.mapRel_relation
+#print axioms PPAC.Migration.ForcingCodeSelection.isSelected_mono
+#print axioms PPAC.Migration.ForcingCodeSelection.monotone
+#print axioms PPAC.Migration.ForcingCodeSelection.isSelected_covariance
+#print axioms PPAC.Migration.ForcingCodeSelection.constructionSentence
+#print axioms PPAC.Migration.ForcingCodeSelection.construction_models
+#print axioms PPAC.Migration.ForcingCodeSelection.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeSelection.monotoneSentence
+#print axioms PPAC.Migration.ForcingCodeSelection.monotone_models
+#print axioms PPAC.Migration.ForcingCodeSelection.monotone_kernel_certificate
+#print axioms PPAC.Migration.ForcingWorksCovariance.represented_covariance_at
+#print axioms PPAC.Migration.ForcingWorksCovariance.works_covariance_at
+#print axioms PPAC.Migration.ForcingWorksCovariance.selected_covariance_at

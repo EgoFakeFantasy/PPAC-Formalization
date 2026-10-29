@@ -17,10 +17,10 @@ set_option maxHeartbeats 6000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
-theorem represented_covariance (hM : FirstOrder.Theory.Models M nativeZF)
+theorem represented_covariance_at (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
-    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names : Fin k) (code : M.Carrier .set)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names : Fin k) (rootT code : M.Carrier .set)
     (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
     (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
     (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
@@ -42,8 +42,8 @@ theorem represented_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     (hpiHq : (Project.FirstOrderSemantics.reduct M).mem (env pi) (env Hq))
     (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
     (hFix : ForcingConditionGraphs.CompositionGraph (env (rho 0)) (env pi) (env q) (env q))
-    (hRoot : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env root) (env rootT))
-    (hStab : ConstructionComponentCofinal.EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) (env rootT))
+    (hRoot : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env root) rootT)
+    (hStab : ConstructionComponentCofinal.EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) rootT)
     (hChain : ConstructionComponentCofinal.Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
     (hCode : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code)
     (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
@@ -114,6 +114,92 @@ theorem represented_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     ⟨hBT.1,hBT.2.1,hBT.2.2.1,hBT.2.2.2.1,hBT.2.2.2.2.1,hGlT.1,hGlT.2.1,hGlT.2.2.1,hGlT.2.2.2.1⟩
     hAppMap hFamily hPres hGl.2.2.2.2.1 hGlT.2.2.2.2.1 hNat hPhi hOnto hRoot hStab hw hChain hCode hTail
 
+theorem represented_covariance (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names : Fin k) (code : M.Carrier .set)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmallD : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hSmall : ForcingSupportSize.Small (env w) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hBound : ForcingSupportedNames.Supported (fun j => env (rho j)) (env G) (env bound))
+    (hq : ForcingSupportSize.Injection (env (rho 0)) (env I) (env q))
+    (hA : ForcingSupportedNames.Range (env (rho 0)) (env q) (env A))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env A) (env Hq))
+    (hpiHq : (Project.FirstOrderSemantics.reduct M).mem (env pi) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hFix : ForcingConditionGraphs.CompositionGraph (env (rho 0)) (env pi) (env q) (env q))
+    (hRoot : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env root) (env rootT))
+    (hStab : ConstructionComponentCofinal.EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) (env rootT))
+    (hChain : ConstructionComponentCofinal.Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hCode : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code)
+    (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
+    {ac d dT : M.Carrier .set}
+    (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) ac)
+    (hdd : PureKuratowski.PairMember M d dT ac) :
+    Represented (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) dT code ↔
+      Represented (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d code :=
+  represented_covariance_at hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names (env rootT) code hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain hCode hTail hc hdd
+
+theorem works_covariance_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names : Fin k) (rootT code : M.Carrier .set)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmallD : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hSmall : ForcingSupportSize.Small (env w) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hBound : ForcingSupportedNames.Supported (fun j => env (rho j)) (env G) (env bound))
+    (hq : ForcingSupportSize.Injection (env (rho 0)) (env I) (env q))
+    (hA : ForcingSupportedNames.Range (env (rho 0)) (env q) (env A))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env A) (env Hq))
+    (hpiHq : (Project.FirstOrderSemantics.reduct M).mem (env pi) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hFix : ForcingConditionGraphs.CompositionGraph (env (rho 0)) (env pi) (env q) (env q))
+    (hRoot : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env root) rootT)
+    (hStab : ConstructionComponentCofinal.EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) rootT)
+    (hChain : ConstructionComponentCofinal.Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hCode : ForcingTailCodes.ChainCode (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) code)
+    (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
+    {ac d dT : M.Carrier .set}
+    (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) ac)
+    (hdd : PureKuratowski.PairMember M d dT ac) :
+    Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) dT code ↔
+      Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d code := by
+  have hac := ForcingLocalTransport.part_permutation hc
+  have ho : ForcingCohenOrderAction.OrderPreserving ac := by
+    obtain ⟨f,t,_,_,ht,_,_,hGraph⟩ := hc
+    exact ForcingCohenOrderAction.graph_order hData.1.2.2.1 ht hGraph
+  have transfer := fun (e eT : M.Carrier .set) (heeT : PureKuratowski.PairMember M e eT ac) =>
+    represented_covariance_at hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names rootT code hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain hCode hTail hc heeT
+  constructor
+  · intro h e he hde
+    obtain ⟨eT,heeT,_⟩ := hac.1.1.2 e he
+    exact (transfer e eT heeT).mp (h eT (hac.1.2 e eT heeT) ((ho e d eT dT heeT hdd).mpr hde))
+  · intro h eT heT hdTeT
+    obtain ⟨e,he,heeT⟩ := hac.2.2 eT heT
+    exact (transfer e eT heeT).mpr (h e he ((ho e d eT dT heeT hdd).mp hdTeT))
+
 theorem works_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
@@ -148,20 +234,8 @@ theorem works_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) ac)
     (hdd : PureKuratowski.PairMember M d dT ac) :
     Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) dT code ↔
-      Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d code := by
-  have hac := ForcingLocalTransport.part_permutation hc
-  have ho : ForcingCohenOrderAction.OrderPreserving ac := by
-    obtain ⟨f,t,_,_,ht,_,_,hGraph⟩ := hc
-    exact ForcingCohenOrderAction.graph_order hData.1.2.2.1 ht hGraph
-  have transfer := fun (e eT : M.Carrier .set) (heeT : PureKuratowski.PairMember M e eT ac) =>
-    represented_covariance hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain hCode hTail hc heeT
-  constructor
-  · intro h e he hde
-    obtain ⟨eT,heeT,_⟩ := hac.1.1.2 e he
-    exact (transfer e eT heeT).mp (h eT (hac.1.2 e eT heeT) ((ho e d eT dT heeT hdd).mpr hde))
-  · intro h eT heT hdTeT
-    obtain ⟨e,he,heeT⟩ := hac.2.2 eT heT
-    exact (transfer e eT heeT).mpr (h e he ((ho e d eT dT heeT hdd).mp hdTeT))
+      Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain) d code :=
+  works_covariance_at hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names (env rootT) code hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain hCode hTail hc hdd
 
 /-- Source ConditionCodeSelection.selected_covariance:64-80, with the same
 code order on both sides. Only conditions are transported. -/
@@ -194,6 +268,57 @@ theorem selected_of_covariance
     obtain ⟨e,heP,heeT⟩ := hp.2.2 eT heTP
     exact h.2 e heP ((ho e d eT dT heeT hdd).mp heTdT) b hb hba
       ⟨(hw e eT b heeT hb).mp hbad.1,(he e eT code b heeT ha hb).mp hbad.2⟩
+
+theorem selected_covariance_at (hM : FirstOrder.Theory.Models M nativeZF)
+    (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order : Fin k) (rootT code : M.Carrier .set)
+    (hm : ForcingDiagramPoset.LeftCancelMonoid (env (rho 0)) (env mul) (env one))
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins (env (rho 0)) (env mul))
+    (hData : ForcingProductCovariance.SystemData (fun j => env (rho j)) (env I) (env K) (env B) (env w) (env G) (env F) (env mu) (env pi) (env inv) (env c) (env act) (env ai))
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env w) (env mu))
+    (hI : (Project.FirstOrderSemantics.reduct M).IsHartogsNumber (KuratowskiZF.interpretation hM) (env I) (env mu))
+    (hSmallD : ForcingSupportSize.Small (env (rho 0)) (env mu))
+    (hSmall : ForcingSupportSize.Small (env w) (env mu))
+    (hMergers : ConstructionSaturationMergers.AllMergers (env w) (env history) (env kappa))
+    (hRow : ConstructionTowerHistory.Row (env history) (env kappa) (env (rho 0)) (env mul) (env one) (env mark) (env H) (env C) (env incoming) (env base) (env kappa))
+    (hLabelMap : ForcingConditionGraphs.FunctionOn (env K) (env labelMap))
+    (hTop : ForcingWithTopCarrier.Empty (env top))
+    (hLabels : ForcingLabelSet.LabelSet (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env labels))
+    (hLabelBound : ForcingLabelBound.LabelBound (env (rho 6)) (env I) (env K) (env labelMap) (env top) (env bit) (env bound))
+    (hBound : ForcingSupportedNames.Supported (fun j => env (rho j)) (env G) (env bound))
+    (hq : ForcingSupportSize.Injection (env (rho 0)) (env I) (env q))
+    (hA : ForcingSupportedNames.Range (env (rho 0)) (env q) (env A))
+    (hHq : ForcingLabelPermutations.Fixing (env G) (env A) (env Hq))
+    (hpiHq : (Project.FirstOrderSemantics.reduct M).mem (env pi) (env Hq))
+    (hE : ForcingSupportedNames.Supported (fun j => env (rho j)) (env Hq) (env E))
+    (hFix : ForcingConditionGraphs.CompositionGraph (env (rho 0)) (env pi) (env q) (env q))
+    (hRoot : ForcingComponentMove.Move (env (rho 0)) (env I) (env mul) (env q) (env pi) (env root) rootT)
+    (hStab : ConstructionComponentCofinal.EncodedCommon (env (rho 0)) (env I) (env mul) (env q) (env root) rootT)
+    (hChain : ConstructionComponentCofinal.Chain (env w) (env (rho 0)) (env I) (env mul) (env q) (env zero) (env root) (env vertices) (env chain))
+    (hCarrier : ForcingTailCodes.Carrier (fun j => env (rho j)) (env G) (env F) (env bound) (env w) (env names) (env chain) (env codes))
+    (hCodeMem : (Project.FirstOrderSemantics.reduct M).mem code (env codes))
+    (hTail : ForcingTailCovariance.TailFixes (env w) (env (rho 0)) (env pi) (env chain))
+    {ac d dT : M.Carrier .set}
+    (hc : ForcingLocalTransport.CohenPart (env (rho 1)) (env (rho 2)) (env (rho 3)) (env pi) ac)
+    (hdd : PureKuratowski.PairMember M d dT ac) :
+    ForcingPersistentSelection.Selected (fun p q => ForcingPowerName.Subset q p)
+      (Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain)) (ForcingPersistentCodes.Same (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env chain)) (env (rho 3)) (env codes) (env order) code dT ↔
+    ForcingPersistentSelection.Selected (fun p q => ForcingPowerName.Subset q p)
+      (Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain)) (ForcingPersistentCodes.Same (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env chain)) (env (rho 3)) (env codes) (env order) code d := by
+  have hac := ForcingLocalTransport.part_permutation hc
+  have ho : ForcingCohenOrderAction.OrderPreserving ac := by
+    obtain ⟨f,t,_,_,ht,_,_,hGraph⟩ := hc
+    exact ForcingCohenOrderAction.graph_order hData.1.2.2.1 ht hGraph
+  apply selected_of_covariance hac ho
+  · intro p pT a hpp ha
+    exact works_covariance_at hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names rootT a hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain ((hCarrier a).mp ha) hTail hc hpp
+  · intro p pT a b hpp ha hb
+    exact ForcingPersistentCovariance.same_covariance hM env rho mul act hm hData hw hChain
+      ((hCarrier a).mp ha) ((hCarrier b).mp hb) hTail hc hpp
+  · exact hCodeMem
+  · exact hdd
 
 theorem selected_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     (hChoice : ConstructionDirectedCardinality.Choice (M := M)) {k : Nat}
@@ -232,19 +357,8 @@ theorem selected_covariance (hM : FirstOrder.Theory.Models M nativeZF)
     ForcingPersistentSelection.Selected (fun p q => ForcingPowerName.Subset q p)
       (Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain)) (ForcingPersistentCodes.Same (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env chain)) (env (rho 3)) (env codes) (env order) code dT ↔
     ForcingPersistentSelection.Selected (fun p q => ForcingPowerName.Subset q p)
-      (Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain)) (ForcingPersistentCodes.Same (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env chain)) (env (rho 3)) (env codes) (env order) code d := by
-  have hac := ForcingLocalTransport.part_permutation hc
-  have ho : ForcingCohenOrderAction.OrderPreserving ac := by
-    obtain ⟨f,t,_,_,ht,_,_,hGraph⟩ := hc
-    exact ForcingCohenOrderAction.graph_order hData.1.2.2.1 ht hGraph
-  apply selected_of_covariance hac ho
-  · intro p pT a hpp ha
-    exact works_covariance hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names a hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain ((hCarrier a).mp ha) hTail hc hpp
-  · intro p pT a b hpp ha hb
-    exact ForcingPersistentCovariance.same_covariance hM env rho mul act hm hData hw hChain
-      ((hCarrier a).mp ha) ((hCarrier b).mp hb) hTail hc hpp
-  · exact hCodeMem
-  · exact hdd
+      (Works (orderFormula (rho 0) mul) (ForcingPairUnion.domain rho G F) env (fun j => env (rho j)) (env I) (env G) (env F) (env mul) (env q) (env bound) (env labels) (env E) (env root) (env w) (env chain)) (ForcingPersistentCodes.Same (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env chain)) (env (rho 3)) (env codes) (env order) code d :=
+  selected_covariance_at hM hChoice env rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order (env rootT) code hm hJ hData hw hMu hI hSmallD hSmall hMergers hRow hLabelMap hTop hLabels hLabelBound hBound hq hA hHq hpiHq hE hFix hRoot hStab hChain hCarrier hCodeMem hTail hc hdd
 
 def worksSentence {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root rootT vertices chain names code : Fin k) : Project.Sentence where
   formula :=

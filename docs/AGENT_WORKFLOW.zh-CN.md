@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-10-29）
 
-## 当前执行入口：CodeLinks 的实际 tailGroup 及支撑已验收
+## 当前执行入口：CodeLinks 的实际 IsSelected、单调性和尾群协变已验收
 
-固定源 CodeLinks.tailGroup:45、tailGroup_mem:49、root_le_tailGroup:57、tailGroup_supported:73 与 ConcreteSystem.Vertex.Chain.tailFixer/稳定子条件已由 ForcingTailGroup 接入。使用现成分离构造全部尾固定置换的内部集合；内部 ω 比较、链值域反单调及已有置换运算给出子群闭包。根固定和分量稳定由已有 Move/Common 传输实际推出，未丢弃源 subgroup image 的字段。初始图值域、其固定子、包含关系和实际滤子成员关系均已构造。原核端点为普通 nativeZF 中的 construction_kernel_certificate；源链、单子、条件合并、置换载体、滤子和小定义域前提仍显式保留，无新增对象 Choice。全量验收通过：2981 项构建、33522 项声明（新增 21 项），全部 33501 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2536 项当前哈希匹配。记录：verification/tail-group-acceptance.json。
+固定源 CodeLinks.IsSelected:78、isSelected_mono:82、isSelected_covariance:86 已由 ForcingCodeSelection 接入。内部完整代码集合直接作为小索引载体，保留同一个规定代码序；现成 ProjectDecode 编译实际 Selected，并证明与 CohenSelection 所消费 Source 关系的逐参数语义等价。单调性取得普通 nativeZF 原核证书；逐尾群成员的实际 Cohen 作用协变取得同一内部 L 相对化的 nativeZF 原核证书。根固定、分量稳定、固定子成员与 TailFixes 全由实际尾群推出。原有 represented/works/selected 证明只泛化移动根的内部见证值，保留旧接口。源几何、系统／作用数据、链、标签支撑和实际代码载体前提仍明确保留；对象 Choice 仅由现成内部 L 提供。全量验收通过：2982 项构建、33540 项声明（新增 18 项），全部 33522 项旧足迹不变；9 条命令／5 次 trust=0 全部退出 0，零警告、无新增公理依赖；75 项固定源、2537 项当前哈希匹配。记录：verification/code-selection-acceptance.json。
 
-下一源步骤为 CodeLinks 的实际 IsSelected:78、isSelected_covariance:86、ordinalRank:95、ordinalType:101 及后续 Links。实际 Selected 单调／协变、CohenSelection rank/type 消费者和 ProjectDecode 语言桥均已存在，直接消费；不新建群、名字、序数或编码后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
+下一源步骤为 CodeLinks.ordinalRank:95、ordinalType:101：对每个尾群成员复用现成逆／共轭／作用构造，保留同一 G/F，并把实际 Selected 的逐作用协变接成 CohenSelection.Covariant，再接既有 rank/type 消费者和 Links。不得把当前逐作用证书报成该统一装配已完成；不新建选择、群、名字或序数后端。第 8 阶段尚未结束，第 9–11 阶段及最终内部 Con 仍未完成。
 
 沿用最初 f28b0334a740108057adf18a24dc11abd866efbe 的阶段编号。旧批次验收叙述由 Git 和各验收报告保留，本表只列当前执行入口。
 

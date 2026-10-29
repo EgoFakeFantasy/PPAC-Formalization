@@ -12462,4 +12462,18 @@ example {m : Nat} (w D I mul unit q zero root vertices chain G F mu r a U : Fin 
     (SetTheory.Definitional.Project.fo_sentence (ForcingTailGroup.constructionSentence w D I mul unit q zero root vertices chain G F mu r a U)) :=
   ForcingTailGroup.construction_kernel_certificate w D I mul unit q zero root vertices chain G F mu r a U
 
+-- Actual selected-code covariance uses the SAME tail group and code order.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound
+      pi inv c act ai zero root vertices chain names code codes order group : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingCodeSelection.constructionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names code codes order group))) :=
+  ForcingCodeSelection.construction_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names code codes order group
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I G F mul q bound labels E root w chain codes order : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingCodeSelection.monotoneSentence rho I G F mul q bound labels E root w chain codes order)) :=
+  ForcingCodeSelection.monotone_kernel_certificate rho I G F mul q bound labels E root w chain codes order
+
 end PPAC.Migration.Step4Checks

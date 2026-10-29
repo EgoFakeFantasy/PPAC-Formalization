@@ -2360,7 +2360,7 @@ def main() -> None:
                                ('forcing_persistent_codes', 'ForcingPersistentCodes', 17),
                                ('forcing_persistent_works', 'ForcingPersistentWorks', 38),
                                ('forcing_persistent_covariance', 'ForcingPersistentCovariance', 9),
-                               ('forcing_works_covariance', 'ForcingWorksCovariance', 10),
+                               ('forcing_works_covariance', 'ForcingWorksCovariance', 13),
                                ('forcing_forced_availability', 'ForcingForcedAvailability', 17),
                                ('forcing_stable_codes', 'ForcingStableCodes', 6),
                                ('forcing_ordinal_ranks', 'ForcingOrdinalRanks', 35),
@@ -2374,7 +2374,8 @@ def main() -> None:
                                ('forcing_ordinal_root', 'ForcingOrdinalRoot', 13),
                                ('forcing_cohen_selection', 'ForcingCohenSelection', 20),
                                ('forcing_cohen_rank_consumers', 'ForcingCohenRankConsumers', 16),
-                               ('forcing_tail_group', 'ForcingTailGroup', 21)):
+                               ('forcing_tail_group', 'ForcingTailGroup', 21),
+                               ('forcing_code_selection', 'ForcingCodeSelection', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         if "retained_existing_producer" in adapter_lock:
             retained = adapter_lock["retained_existing_producer"]
