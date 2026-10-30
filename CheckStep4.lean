@@ -12871,4 +12871,9 @@ example {m : Nat} (D N T mul mulN mulT eN eT O f H S R : Fin m) :
       (ConstructionCellDescent.attachmentSentence D N T mul mulN mulT eN eT O f H S R)) :=
   ConstructionCellDescent.attachment_kernel_certificate D N T mul mulN mulT eN eT O f H S R
 
+example {m : Nat} (w zero D mul e n A base stages a : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFiniteDescent.sourceSentence w zero D mul e n A base stages a)) :=
+  ConstructionFiniteDescent.source_kernel_certificate w zero D mul e n A base stages a
+
 end PPAC.Migration.Step4Checks

@@ -111,3 +111,9 @@ ForcingGermAlignments.source_kernel_certificate 的背景是 nativeZF，语言�
 ConstructionCellDescent 的 probe_kernel_certificate、merger_kernel_certificate 和 attachment_kernel_certificate 均在 nativeZF 原核中证明纯成员语言闭句。前两者从实际字/乘法/旧包含图产生 gate 规则；第三者消费该规则、同一保守嵌入、复合包含图及实际像，将规则传输到终单子，保持任意终单子右因子的量词范围。
 
 Probe 的旧输入消耗通过现成纯公式 Raw 归纳及实际求值方程证明，覆盖全部内部字长。此批尚未产生具体塔的内部有限替换路径，也未证明可数重排、完整 germ 选择器或最终内部 Con；这些源消费者仍按 STATUS 中原阶段顺序推进。
+
+## 内部有限下降的对象证书（2026-10-30）
+
+ConstructionFiniteDescent.source_kernel_certificate 的语言、背景和推导关系仍为纯成员语言、nativeZF 和原 FirstOrder.Derives。结论存在量化真正的内部有限序列；每个相邻项都是固定源 Replaces，保持同一右因子的两条乘法方程。路径逆向存储只是内部序列追加的表示方式，方向在 Path 公式中显式规定。
+
+对象 At 公式的分离实例供应反例集，既有内部序数归纳完成零/后继/极限三分证明。因此此结论不局限于外部标准自然数或外部良基模型。全部塔/索引/对齐输入均保留为明示前提；本批不宣称已经构造实际重排塔或完成可数商。后续只沿源 countable_quotient_of_cells 所消费的端点推进，不扩建未被使用的路径理论。

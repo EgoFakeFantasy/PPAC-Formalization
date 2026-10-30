@@ -1,14 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：cell 与 attachment 的实际下降门
+## 当前执行入口：对象内部的有限 gate 下降
 
-`ConstructionCellDescent` 沿固定源 ProbeGates:211–254、ConcreteQuotients:18–88，完成 Probe 的旧右乘退出、完整 gate 规则、Merger 的无新旧因子分支，以及沿同一保守嵌入向终单子的 `OldGateStep` 传输。三个端点均为普通 nativeZF 原推导核中的纯成员语言闭句；终单子的整除见证允许在整个终单子中取值。
+`ConstructionFiniteDescent.source_kernel_certificate` 已将 GateTowers:51–81 与 ConcreteQuotients:99–125 的阶段归纳迁移为普通 nativeZF 原核中的纯成员语言闭句。结论保留实际内部有限替换序列，每次替换的索引与对齐乘法方程使用同一个右因子；并覆盖全部内部自然数长度。零阶段构造单点路径，后继阶段消费真实 OldGateStep/FactorClosed 并追加一次替换，极限阶段使用连续性转到较早阶段。
 
-旧右乘退出使用既有纯公式索引的 Raw 归纳，覆盖所有内部字长；实际乘法求值、字母作用、gate_existence 和 Merger factors_of_old 均被消费。未增加对象 Choice、外部标准自然数或外部良基前提。本批全量验收：3038 项构建、34479 项声明、9 条命令／5 次 trust=0、零警告；34449 项旧声明公理依赖保持，2593 项文件哈希匹配，无新增公理依赖。见 verification/cell-descent-acceptance.json。
+归纳直接复用 YesMetaZFC 的公式分离与序数归纳，序列构造复用原生 exists_append。没有宿主层 Nat 递归、外部良基或标准性前提。本批全量验收：3039 项构建、34510 项声明、9 条命令／5 次 trust=0、零警告；34479 项旧声明公理依赖保持，2594 项文件哈希匹配，无新增公理依赖。见 verification/finite-descent-acceptance.json。
 
-此前 `6539a2c` 的实际链索引与对齐、`67091a8` 的实际 OrdinalCount→密集总性/满射性均已完成并保留。可数闭包及保守子单子底层数学也已经存在。下一项是源 CellTower.finite_descent 的内部有限替换路径及 CellReorder.countable_reordering 与同一具体塔的连接，再接 countable_quotient_of_cells、countable_germs/component_selector_dense。ProbeGateCap 仅给出最小旧倍数；本批补齐下降实际需要的旧输入消耗性质，不再将二者混同。
+此前 cell/attachment 完整下降门已于 `a57df58` 提交；实际链索引与对齐 `6539a2c`、实际 OrdinalCount→密集总性/满射性 `67091a8` 均保留。可数闭包、保守子单子、单步 probe pushout 和实际执行图已有，不重做。
 
-**仍在原第 8 阶段。实际塔的重排/下降装配、完整选择器、赋值图和具体商双射以及第 9–11 阶段尚未完成；最终内部 Con 未完成。** 不以声明数表示完成比例。
+当前有限下降证书的 Tower/Inputs 是明确的源条件：实际阶段图、基底包含、后继等同或 gate、连续性、索引图及其有界/替换性质。**定理已证明，但实际重排塔及其内部序数索引对应尚未装配，不能宣称 countable_quotient_of_cells 完成。** 下一步按 CellReorder.future_cut/future_square/reordered/countable_reordering 连接现成生产者，再实例化下降和实际 Alignments。源 countable_quotient_of_cells 只消费下降端点，丢弃路径，因此不增建路径不变性理论。
+
+**仍在原第 8 阶段。完整 germ/selector、赋值图、具体商双射及第 9–11 阶段尚未完成；最终内部 Con 未完成。**
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -19,7 +21,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |

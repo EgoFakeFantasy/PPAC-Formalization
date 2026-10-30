@@ -870,3 +870,4 @@ import PPAC.Migration.ForcingIdealProbeCount
 import PPAC.Migration.ForcingConcreteGermDensity
 import PPAC.Migration.ForcingGermAlignments
 import PPAC.Migration.ConstructionCellDescent
+import PPAC.Migration.ConstructionFiniteDescent

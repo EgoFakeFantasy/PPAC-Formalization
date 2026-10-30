@@ -1,14 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：cell 与 attachment 的实际下降门
+## 当前执行入口：对象内部的有限 gate 下降
 
-`ConstructionCellDescent` 沿固定源 ProbeGates:211–254、ConcreteQuotients:18–88，完成 Probe 的旧右乘退出、完整 gate 规则、Merger 的无新旧因子分支，以及沿同一保守嵌入向终单子的 `OldGateStep` 传输。三个端点均为普通 nativeZF 原推导核中的纯成员语言闭句；终单子的整除见证允许在整个终单子中取值。
+`ConstructionFiniteDescent.source_kernel_certificate` 已将 GateTowers:51–81 与 ConcreteQuotients:99–125 的阶段归纳迁移为普通 nativeZF 原核中的纯成员语言闭句。结论保留实际内部有限替换序列，每次替换的索引与对齐乘法方程使用同一个右因子；并覆盖全部内部自然数长度。零阶段构造单点路径，后继阶段消费真实 OldGateStep/FactorClosed 并追加一次替换，极限阶段使用连续性转到较早阶段。
 
-旧右乘退出使用既有纯公式索引的 Raw 归纳，覆盖所有内部字长；实际乘法求值、字母作用、gate_existence 和 Merger factors_of_old 均被消费。未增加对象 Choice、外部标准自然数或外部良基前提。本批全量验收：3038 项构建、34479 项声明、9 条命令／5 次 trust=0、零警告；34449 项旧声明公理依赖保持，2593 项文件哈希匹配，无新增公理依赖。见 verification/cell-descent-acceptance.json。
+归纳直接复用 YesMetaZFC 的公式分离与序数归纳，序列构造复用原生 exists_append。没有宿主层 Nat 递归、外部良基或标准性前提。本批全量验收：3039 项构建、34510 项声明、9 条命令／5 次 trust=0、零警告；34479 项旧声明公理依赖保持，2594 项文件哈希匹配，无新增公理依赖。见 verification/finite-descent-acceptance.json。
 
-此前 `6539a2c` 的实际链索引与对齐、`67091a8` 的实际 OrdinalCount→密集总性/满射性均已完成并保留。可数闭包及保守子单子底层数学也已经存在。下一项是源 CellTower.finite_descent 的内部有限替换路径及 CellReorder.countable_reordering 与同一具体塔的连接，再接 countable_quotient_of_cells、countable_germs/component_selector_dense。ProbeGateCap 仅给出最小旧倍数；本批补齐下降实际需要的旧输入消耗性质，不再将二者混同。
+此前 cell/attachment 完整下降门已于 `a57df58` 提交；实际链索引与对齐 `6539a2c`、实际 OrdinalCount→密集总性/满射性 `67091a8` 均保留。可数闭包、保守子单子、单步 probe pushout 和实际执行图已有，不重做。
 
-**仍在原第 8 阶段。实际塔的重排/下降装配、完整选择器、赋值图和具体商双射以及第 9–11 阶段尚未完成；最终内部 Con 未完成。** 不以声明数表示完成比例。
+当前有限下降证书的 Tower/Inputs 是明确的源条件：实际阶段图、基底包含、后继等同或 gate、连续性、索引图及其有界/替换性质。**定理已证明，但实际重排塔及其内部序数索引对应尚未装配，不能宣称 countable_quotient_of_cells 完成。** 下一步按 CellReorder.future_cut/future_square/reordered/countable_reordering 连接现成生产者，再实例化下降和实际 Alignments。源 countable_quotient_of_cells 只消费下降端点，丢弃路径，因此不增建路径不变性理论。
+
+**仍在原第 8 阶段。完整 germ/selector、赋值图、具体商双射及第 9–11 阶段尚未完成；最终内部 Con 未完成。**
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -21,7 +23,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

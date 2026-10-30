@@ -2431,7 +2431,8 @@ def main() -> None:
                                ('forcing_ideal_probe_count', 'ForcingIdealProbeCount', 6),
                                ('forcing_concrete_germ_density', 'ForcingConcreteGermDensity', 8),
                                ('forcing_germ_alignments', 'ForcingGermAlignments', 31),
-                               ('construction_cell_descent', 'ConstructionCellDescent', 30)):
+                               ('construction_cell_descent', 'ConstructionCellDescent', 30),
+                               ('construction_finite_descent', 'ConstructionFiniteDescent', 31)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
