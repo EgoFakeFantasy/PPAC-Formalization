@@ -880,3 +880,4 @@ import PPAC.Migration.ConstructionMergerPushout
 import PPAC.Migration.ConstructionMergerCopiesMap
 import PPAC.Migration.ConstructionMergerWordTransport
 import PPAC.Migration.ConstructionCellGeneration
+import PPAC.Migration.ConstructionCellCoefficients

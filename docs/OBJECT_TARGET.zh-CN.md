@@ -163,3 +163,9 @@ ConstructionMergerWordTransport.source_kernel_certificate 复用完整 MergerPus
 ConstructionCellGeneration 的 merger_kernel_certificate／probe_kernel_certificate 在同一实际呈现前提下，证明任意内部普通子单子若包含全部旧像及全部新生成元像，就等于整个扩张；并证明每个内部元素属于这两族像生成的闭包。证明直接消费原呈现提升和唯一性，未添加对象选择公理，也没有把子单子加强成保守包。
 
 closure_kernel_certificate 由原生 Separation 构造实际内部最小子单子，闭包成员公式量化全部内部子单子。源 Cell.finite_coefficients 仍未证明；其有限旧系数不能等同于给整个可数新生成元族加有限支撑。现有 PureSequenceConcatenation 封装要求 ZFC，下一步应复用其下层原生 ZF 接口，不能偷加背景。实际全量验收见 verification/cell-generation-acceptance.json；最终内部 Con 未完成。
+
+## 两类 cell 有限旧系数的原核证书（2026-10-30）
+
+ConstructionCellCoefficients.merger_kernel_certificate／probe_kernel_certificate 已证明固定源 Cell.finite_coefficients 的对象版本：对同一实际扩张中的每个内部 x，存在同一内部旧系数集合 S 与内部自然数 n，使 S⊆D、S 可单射到 n、S 有内部有限满射枚举，并且 x 属于 old(S) 和全部新生成元像生成的实际闭包。后者复用上一批已构造的原生 Separation 闭包。
+
+源闭包归纳的空集、单点、并集分支均已实现；有限并用底座 ZF 序数加法和函数图构造，有限界用已固定供体的最小原像证明。没有外部标准长度限制、宿主 Finset 或额外对象 Choice 前提。CellTowers.Attachment.finite_coefficients 的同一系数传输与 dependencies/selected_word/restrict_selected 尚待接合，不等同于本批 cell 本身结论未完成。实际全量验收见 verification/cell-coefficients-acceptance.json；最终内部 Con 未完成。
