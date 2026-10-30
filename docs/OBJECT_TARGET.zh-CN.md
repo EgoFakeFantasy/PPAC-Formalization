@@ -105,3 +105,9 @@ ForcingProbeRows、ForcingConcreteOrdinalCount 与 ForcingIdealProbeCount 已将
 ForcingGermAlignments.source_kernel_certificate 的背景是 nativeZF，语言是原纯成员语言，推导关系是原 FirstOrder.Derives。最终闭句存在量化实际内部链索引图，并覆盖所有内部自然数上的对齐存在/有界性、共同推进及两条精确乘法方程、相同对齐的尾固定等价关系。完整语法与语义对应逐项由 Lean 检查，没有抽取宿主层序列、外部有限路径或标准自然数。
 
 这里的 monoid/joins、ω/zero、完整顶点载体、实际余终链和分量稳定置换是固定源本段的输入。现成原生集合函数、顶点/箭头、置换复合被直接复用。此证书供后续 countable_quotient_of_cells 消费；不把它记为已证明可数重排、有限 gate 下降、countable_germs 或完整选择器。最终内部 Con 仍未完成；上方较早批次中的“未完成”只表示当时状态，当前范围以 STATUS 为准。
+
+## Cell 下降门的对象证书（2026-10-30）
+
+ConstructionCellDescent 的 probe_kernel_certificate、merger_kernel_certificate 和 attachment_kernel_certificate 均在 nativeZF 原核中证明纯成员语言闭句。前两者从实际字/乘法/旧包含图产生 gate 规则；第三者消费该规则、同一保守嵌入、复合包含图及实际像，将规则传输到终单子，保持任意终单子右因子的量词范围。
+
+Probe 的旧输入消耗通过现成纯公式 Raw 归纳及实际求值方程证明，覆盖全部内部字长。此批尚未产生具体塔的内部有限替换路径，也未证明可数重排、完整 germ 选择器或最终内部 Con；这些源消费者仍按 STATUS 中原阶段顺序推进。

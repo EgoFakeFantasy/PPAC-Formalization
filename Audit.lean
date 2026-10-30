@@ -35041,3 +35041,35 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermAlignments.sourceSentence
 #print axioms PPAC.Migration.ForcingGermAlignments.source_models
 #print axioms PPAC.Migration.ForcingGermAlignments.source_kernel_certificate
+
+-- Actual cell gates and terminal-monoid attachment transfer.
+#print axioms PPAC.Migration.ConstructionCellDescent.OldExit
+#print axioms PPAC.Migration.ConstructionCellDescent.oldExit
+#print axioms PPAC.Migration.ConstructionCellDescent.oldExit_freeClosed
+#print axioms PPAC.Migration.ConstructionCellDescent.oldExit_semantics
+#print axioms PPAC.Migration.ConstructionCellDescent.append_old_exit_isOld
+#print axioms PPAC.Migration.ConstructionCellDescent.gate_append_old
+#print axioms PPAC.Migration.ConstructionCellDescent.GateAt
+#print axioms PPAC.Migration.ConstructionCellDescent.GateRule
+#print axioms PPAC.Migration.ConstructionCellDescent.probe_gate_rule
+#print axioms PPAC.Migration.ConstructionCellDescent.merger_gate_rule
+#print axioms PPAC.Migration.ConstructionCellDescent.OldGateStep
+#print axioms PPAC.Migration.ConstructionCellDescent.attachment_gateStep
+#print axioms PPAC.Migration.ConstructionCellDescent.gateAt
+#print axioms PPAC.Migration.ConstructionCellDescent.gateAt_freeClosed
+#print axioms PPAC.Migration.ConstructionCellDescent.gateAt_semantics
+#print axioms PPAC.Migration.ConstructionCellDescent.gateRule
+#print axioms PPAC.Migration.ConstructionCellDescent.gateRule_freeClosed
+#print axioms PPAC.Migration.ConstructionCellDescent.gateRule_semantics
+#print axioms PPAC.Migration.ConstructionCellDescent.oldGateStep
+#print axioms PPAC.Migration.ConstructionCellDescent.oldGateStep_freeClosed
+#print axioms PPAC.Migration.ConstructionCellDescent.oldGateStep_semantics
+#print axioms PPAC.Migration.ConstructionCellDescent.probeSentence
+#print axioms PPAC.Migration.ConstructionCellDescent.probe_models
+#print axioms PPAC.Migration.ConstructionCellDescent.probe_kernel_certificate
+#print axioms PPAC.Migration.ConstructionCellDescent.mergerSentence
+#print axioms PPAC.Migration.ConstructionCellDescent.merger_models
+#print axioms PPAC.Migration.ConstructionCellDescent.merger_kernel_certificate
+#print axioms PPAC.Migration.ConstructionCellDescent.attachmentSentence
+#print axioms PPAC.Migration.ConstructionCellDescent.attachment_models
+#print axioms PPAC.Migration.ConstructionCellDescent.attachment_kernel_certificate

@@ -12855,4 +12855,20 @@ example {m : Nat} (w D I mul e q zero root vertices chain pi rootT : Fin m) :
       (ForcingGermAlignments.sourceSentence w D I mul e q zero root vertices chain pi rootT)) :=
   ForcingGermAlignments.source_kernel_certificate w D I mul e q zero root vertices chain pi rootT
 
+-- Full source Cell.descent_gate and Attachment.gateStep.
+example {m : Nat} (w D S zero mul A b W E e I G unit O : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellDescent.probeSentence w D S zero mul A b W E e I G unit O)) :=
+  ConstructionCellDescent.probe_kernel_certificate w D S zero mul A b W E e I G unit O
+
+example {m : Nat} (w D L zero mul A W B G T O : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellDescent.mergerSentence w D L zero mul A W B G T O)) :=
+  ConstructionCellDescent.merger_kernel_certificate w D L zero mul A W B G T O
+
+example {m : Nat} (D N T mul mulN mulT eN eT O f H S R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellDescent.attachmentSentence D N T mul mulN mulT eN eT O f H S R)) :=
+  ConstructionCellDescent.attachment_kernel_certificate D N T mul mulN mulT eN eT O f H S R
+
 end PPAC.Migration.Step4Checks
