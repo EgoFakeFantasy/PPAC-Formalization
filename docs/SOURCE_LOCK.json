@@ -110089,6 +110089,213 @@
           "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
         ]
       }
+    },
+    "construction_merger_copies_map": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Algebra/ConservativeExtensions.lean",
+      "source_sha256": "9fab6a857ef4772644e40055cdd46370364843a3fe3e9c09d3e150811b785173",
+      "adapter": "PPAC/Migration/ConstructionMergerCopiesMap.lean",
+      "additional_source_sha256": {},
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionMergerPushout.lean": "daf3f596b4e46a8ec3f6c4e39bbd5e4aa9c2b918bae19c39c30025f9a98fed1c",
+        "PPAC/Migration/ConstructionMergerPrescriptionMap.lean": "3263a91487ef7014dad426d96e1e7275d785027a32fa0212c4948dfb2f0fe28b",
+        "PPAC/Migration/ConstructionMergerRelations.lean": "10cd904d94328db3c0667306a9116ec20dc6266984c613803cae7f090be27fee",
+        "PPAC/Migration/ConstructionMergerCopies.lean": "9c721c0ff1f3bb036e322a50fcc32c5fe48e12ac73920bbe6ebee846059c1e9a",
+        "PPAC/Migration/ConstructionMergerCopyCones.lean": "c1fab5f4751f06b2148c72ecc3f0ea1de363b96c89499cfea3712cf48cb6e2d0",
+        "PPAC/Migration/ConstructionProbeConditionalJoins.lean": "945878eae8ce2e5c4bab483fcfe4647c55dd80f8a698c6373844ad5e7fb28561",
+        "PPAC/Migration/ConstructionProbeLettersMap.lean": "7ab9995c4fcf21f3d085f4995ee4f7b3a6568aed110324ffb8d3380e059800cc",
+        "PPAC/Migration/ConstructionProbeLettersMapSyntax.lean": "afa1b4937c4b4420d56bcb8dd79e7b448837706e7d1e56947acc90c973f82151",
+        "PPAC/Migration/ConstructionMergerEvaluation.lean": "fee3ff47ddf7a0c34b3185f9e8e848993c13282f6099c4ce1c55083e42c89a83"
+      },
+      "source_declarations": [
+        "Conservative.common_below",
+        "Conservative.cone_residual",
+        "OverlapPrescription.copiesMap",
+        "OverlapPrescription.copiesMap_copy",
+        "OverlapPrescription.copiesMap_injective",
+        "OverlapPrescription.copiesMap_act",
+        "OverlapPrescription.copiesMap_factors",
+        "OverlapPrescription.copiesMap_common_below"
+      ],
+      "consumers": [
+        "Word.transport_conservative",
+        "OverlapPrescription.mergerSimulation_conservative",
+        "ConservativeCells.simulation"
+      ],
+      "reuse_producers": [
+        "ConstructionMergerPushout",
+        "ConstructionMergerPrescriptionMap",
+        "ConstructionMergerRelations",
+        "ConstructionMergerCopies",
+        "ConstructionMergerCopyCones",
+        "ConstructionProbeConditionalJoins",
+        "ConstructionProbeLettersMap",
+        "ConstructionProbeLettersMapSyntax",
+        "ConstructionMergerEvaluation"
+      ],
+      "scope": "Adapt pinned ConservativeExtensions copiesMap, copy equation, injectivity, right-action compatibility, factors and common_below to the same two actual Merger presentations. Construct the copy graph inside nativeZF using the existing generic Value/Graph and native function constructor; no assumed copy map. Prove preservation of right factors between mapped copies and an old common lower copy below every target common upper copy, including different-index prescription overlaps. Reuse base conditional joins, preserved intersections, mapped prescription and existing Copies relation. Pure-membership sourceSentence existentially quantifies the map and proves all six Laws through the original nativeZF Derives kernel, conditional on presentations already constructed by MergerPushout and the source conservative-base premises. Does not yet certify literal-word transport_conservative, whole mergerSimulation_conservative, selected successors, reordering, final model applications or internal Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionMergerCopiesMap.base_common_below": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.base_residual": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.value_unique": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.exists_graph": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.map_copy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.graph_injective": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.map_act": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copy_factors": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copy_common_below": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.CopyFactors": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.CopyCommon": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.Laws": [],
+        "PPAC.Migration.ConstructionMergerCopiesMap.exists_system": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyFactors": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyFactors_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyFactors_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyCommon": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyCommon_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.copyCommon_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.laws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.laws_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.laws_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.sourceSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.source_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMergerCopiesMap.source_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：Merger 的实际模拟推送
+## 当前执行入口：Merger 的字模拟保守性
 
-ConstructionMergerPushout 已迁移固定源 MergerPushouts.roots_satisfy/map_roots_satisfy/satisfies_map_iff/mergerSimulation_pushout。它先调用现有生产者构造映射处方及两侧完整 Merger，再构造实际诱导同态、证明旧系数／根方程和 ConservativeExtensions.mergerSimulation_snoc 的字面方程，最后证明任意内部目标单子上的完整推送通用性质。
+ConstructionMergerCopiesMap 已迁移固定源 ConservativeExtensions 的 copiesMap、代表元方程、单射性、右作用相容、copiesMap_factors 与 copiesMap_common_below。不同副本的重叠情形使用现有处方关系；同一个旧残差在旧域及任意目标因子上都有效。Copies 图由现有 Value/Graph 与原生函数构造器实际生成，没有假设待构造映射。
 
-24 个输出集合／图均在纯成员闭句内部存在量化；原核端点为 nativeZF 的 FirstOrder.Derives。没有把呈现或推送当前提，没有限制外部标准字长，也未新增目标保守性或 conical 前提。复用现有 Copies、单子乘法、旧嵌入、根、处方映射、presentedLift 和图复合；不重建基础后端。
+原核端点 source_kernel_certificate 在纯成员闭句内部存在量化该图并证明全部六项 Laws。输入为上一批已构造的两侧实际 Merger 呈现、保守基同态、映射处方和源条件交；量词覆盖任意目标副本和右因子。复用原 Copies、处方映射、条件交、Merger 右作用接口和 ModelTransfer，不增加递归或编码后端。
 
-本批全量验收：3045 项构建、34651 项声明、9 条命令／5 次 trust=0、零警告；34627 项旧声明依赖保持，2600 项文件哈希匹配，无新增公理依赖。见 verification/merger-pushout-acceptance.json。
+本批全量验收：3046 项构建、34676 项声明、9 条命令／5 次 trust=0、零警告；34651 项旧声明依赖保持，2601 项文件哈希匹配，无新增公理依赖。见 verification/merger-copies-map-acceptance.json。
 
-下一实际源消费者是 ConservativeCells 的保守态射包装、生成性与有限旧系数。这里须严格区分：本批已经证明模拟的同态、字面方程和推送；ConservativeCells.simulation 另要求 mergerSimulation_conservative 的四项条件。当前检索定位到的显式 transport_conservative 是 Probe 专用，不能当作 Merger 已接入，也不能以推送代替。继续先核对现成因子／共下界接口并适配固定源的对应传输，再接 CellCuts 选中后继像识别与 CellReorder。此前已有的 Merger 旧嵌入保守性、锥、根和处方映射保留复用。
+下一项是源 Word.transport_factors／transport_common_below／transport_conservative，再接 mergerSimulation_conservative。已有 Raw 值图、构造子方程、单射性及内部字归纳可以复用；Probe 的左作用模拟不直接适配 Merger 右作用。Copies 层输入已完成，不再重复列为缺口；完整字模拟的四项 Conservative 条件尚未验收，不能以此前推送性质替代。
 
-**仍在原第 8 阶段。Merger 实际呈现与推送已完成；模拟保守态射包装、生成性／有限旧系数、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、Probe 完整模拟／推送、两类参数原像、有限下降及对齐不再列为待做。
+**仍在原第 8 阶段。真正剩余为字模拟保守性、生成性／有限旧系数、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 已有 L、全公理模式、闭包、推导核、Probe 完整模拟／推送、Merger 实际呈现／推送与 Copies 映射、两类参数原像、有限下降及对齐均保留复用，不重新建设。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

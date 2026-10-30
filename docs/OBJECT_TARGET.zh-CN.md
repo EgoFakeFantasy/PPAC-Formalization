@@ -145,3 +145,9 @@ ConstructionMergerEvaluation 与 ConstructionMergerPresentedLift 将固定源 Me
 ## Merger 实际推送验收补记（2026-10-30）
 
 ConstructionMergerPushout.source_kernel_certificate 内部存在量化并构造映射处方、两侧实际 Merger 与模拟图共 24 个输出，证明全内部目标单子的 IsPushout 和原 mergerSimulation_snoc 方程。输入为源的基单子、有效处方、保守基映射及条件交；没有预设两侧呈现或推送。它不声称输出模拟图的四项 Conservative 条件已验收，也不替代最终 Con 闭句；下一消费者的这部分合同仍需核对并接入。全量验收见 verification/merger-pushout-acceptance.json。
+
+## Merger Copies 保守传输输入（2026-10-30）
+
+ConstructionMergerCopiesMap.source_kernel_certificate 在原 nativeZF 推导核中，由同一两侧实际呈现和源保守基映射构造 Copies 图，证明精确代表元方程、单射、右作用相容、任意目标右因子留在旧像，以及每个目标共同上界之下的旧共同下界。两侧呈现复用 ConstructionMergerPushout 的已验收生产者；本句不预设 Copies 图，也不限制外部标准字长。
+
+这些性质对应固定源 Word.transport_conservative 的 Copies 输入。它们尚不构成整个字模拟的 Conservative 证明；字因子传输、字共同下界及与实际 mergerSimulation 的接合仍须完成。最终对象 Con 未完成。实际验收见 verification/merger-copies-map-acceptance.json。
