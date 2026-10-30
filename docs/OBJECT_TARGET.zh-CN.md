@@ -157,3 +157,9 @@ ConstructionMergerCopiesMap.source_kernel_certificate 在原 nativeZF 推导核�
 ConstructionMergerWordTransport.source_kernel_certificate 复用完整 MergerPushout 的 24 个内部存在输出，并新增四项 Conservative 结论：单射、目标右因子留在旧像、所有旧交的保持、共同倍数反射。因子按内部结果字归纳；共同下界按任意内部目标字归纳，调用已验收的 Copies 因子与共同下界。raw_eq_simulation 证明该 Raw 图等于此前实际构造的 mergerSimulation，故不是另一个兼容映射的替代结论。
 
 与上一批对象句子的差异已核对为只增加实际模拟的 Conservative 合取项；原对象量词、基理论和完整推送性质保持。该源缺口现已关闭，不能继续列为待做。ConservativeCells 生成性／有限旧系数、所选后继、可数重排及第 9–11 阶段仍须推进；最终内部 Con 尚未完成。实际全量验收见 verification/merger-word-transport-acceptance.json。
+
+## 两类生成性与实际普通闭包的原核证书（2026-10-30）
+
+ConstructionCellGeneration 的 merger_kernel_certificate／probe_kernel_certificate 在同一实际呈现前提下，证明任意内部普通子单子若包含全部旧像及全部新生成元像，就等于整个扩张；并证明每个内部元素属于这两族像生成的闭包。证明直接消费原呈现提升和唯一性，未添加对象选择公理，也没有把子单子加强成保守包。
+
+closure_kernel_certificate 由原生 Separation 构造实际内部最小子单子，闭包成员公式量化全部内部子单子。源 Cell.finite_coefficients 仍未证明；其有限旧系数不能等同于给整个可数新生成元族加有限支撑。现有 PureSequenceConcatenation 封装要求 ZFC，下一步应复用其下层原生 ZF 接口，不能偷加背景。实际全量验收见 verification/cell-generation-acceptance.json；最终内部 Con 未完成。

@@ -12946,4 +12946,17 @@ example {m : Nat} (w n zero D mul e P N mulN eN f : Fin m) :
       (ConstructionMergerWordTransport.sourceSentence w n zero D mul e P N mulN eN f)) :=
   ConstructionMergerWordTransport.source_kernel_certificate w n zero D mul e P N mulN eN f
 
+example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellGeneration.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots)) :=
+  ConstructionCellGeneration.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots
+
+example {m : Nat} (w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellGeneration.probeSentence w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O)) :=
+  ConstructionCellGeneration.probe_kernel_certificate w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O
+
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    ConstructionCellGeneration.closureSentence) := ConstructionCellGeneration.closure_kernel_certificate
+
 end PPAC.Migration.Step4Checks

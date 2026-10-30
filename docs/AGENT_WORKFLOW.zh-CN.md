@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：ConservativeCells 的生成性与有限旧系数
+## 当前执行入口：ConservativeCells 的有限旧系数
 
-ConstructionMergerWordTransport 已迁移固定源 ConservativeExtensions 的字右作用／乘法传输、transportHom、单射、指定右因子保留、除法反射、任意目标字下的旧共同下界，以及完整 transport_conservative。因子和共同下界均用现有对象公式归纳，覆盖全部内部字长。上一批 Copies 因子／共同下界证书已实际消费。
+ConstructionCellGeneration 已按固定源 Probe.generated／Merger.generated 的原证明路线，复用实际 presentedLift 和呈现唯一性，把两个生成性结论接到原 nativeZF 推导核。任意子单子的乘法图由原生 ZF.exists_restriction 限制；没有给普通子单子添加因子闭包或共同上界闭包条件。
 
-raw_eq_simulation 已证明字面 Raw 传输图等于此前完整推送构造的实际 mergerSimulation；simulation_conservative 证明的是同一映射。原核 source_kernel_certificate 复用上一批 24 个内部存在量化输出，在原 Hom／根方程／snoc 方程／IsPushout 结论中新增并证明完整 Conservative。没有预设保守模拟，没有重建递归、商或推导核。
+Cell.mem_closure 同时进入两类实际呈现的原核结论。ClosureMember 量化全部内部子单子；exists_closure 用原生 Separation 构造同一个实际最小子单子，closure_kernel_certificate 给出对象层存在性。选取旧系数时始终保留整个新生成元族。
 
-本批全量验收：3047 项构建、34703 项声明、9 条命令／5 次 trust=0、零警告；34676 项旧声明依赖保持，2602 项文件哈希匹配，无新增公理依赖。见 verification/merger-word-transport-acceptance.json。
+本批全量验收：3048 项构建、34738 项声明、9 条命令／5 次 trust=0、零警告；34703 项旧声明依赖不变，2603 项文件哈希匹配，无新增公理依赖。见 verification/cell-generation-acceptance.json。
 
-下一实际源消费者是 ConservativeCells 的两类 generated，以及 Cell.mem_closure／finite_coefficients。源 generated 直接调用已迁移的实际 presentedLift 和呈现唯一性；有限系数只要求每个具体字使用有限个旧系数，必须保留整个可数新生成元族，不能误改为整条 Probe 路径有有限支撑。先匹配现有闭包、内部有限集和字求值接口，再接 CellCuts 选中后继像／推送识别与 CellReorder。
+下一实际源消费者是 Cell.finite_coefficients，随后才是 CellCuts 选中后继像／推送识别与 CellReorder。有限性需要内部有限枚举／有限集，并覆盖非标准内部长度；不能用 Lean Finset 或外部标准自然数替代。现成 PureSequenceConcatenation 的封装要求 ZFC，不可直接用于本项 nativeZF 证明；复用原生 ZF 函数图、序数加法、序列和值域接口即可，不重建递归后端。
 
-**仍在原第 8 阶段。真正剩余为生成性／有限旧系数的实际消费者接合、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 两类完整保守模拟／推送、Copies 传输、两类参数原像、有限下降及对齐均已完成并保留复用；L、全公理模式、闭包、递归与推导核不重新建设。
+**仍在原第 8 阶段。真正剩余为有限旧系数、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 两类生成性、实际普通闭包、完整保守模拟／推送、Copies 传输、两类参数原像、有限下降及对齐均已完成；L、全公理模式、闭包底座、递归与推导核不重新建设。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -21,7 +21,7 @@ raw_eq_simulation 已证明字面 Raw 传输图等于此前完整推送构造的
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性与实际普通闭包；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
