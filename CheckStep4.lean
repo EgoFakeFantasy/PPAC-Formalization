@@ -12876,4 +12876,24 @@ example {m : Nat} (w zero D mul e n A base stages a : Fin m) :
       (ConstructionFiniteDescent.sourceSentence w zero D mul e n A base stages a)) :=
   ConstructionFiniteDescent.source_kernel_certificate w zero D mul e n A base stages a
 
+example {m : Nat} (B C D mulB mulC mulD eB eC eD ab ac bd cd : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutPasting.flipSentence B C D mulB mulC mulD eB eC eD ab ac bd cd)) :=
+  ConstructionPushoutPasting.flip_kernel_certificate B C D mulB mulC mulD eB eC eD ab ac bd cd
+
+example {m : Nat} (A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutPasting.pasteSentence A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf)) :=
+  ConstructionPushoutPasting.paste_kernel_certificate A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf
+
+example {m : Nat} (A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutPasting.cancelSentence A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf)) :=
+  ConstructionPushoutPasting.cancel_kernel_certificate A B C D E F mulB mulC mulD mulE mulF eB eC eD eE eF ab ac bd cd be df ef ae cf
+
+example {m : Nat} (A B mulA mulB eA eB f idA idB : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutPasting.identitySentence A B mulA mulB eA eB f idA idB)) :=
+  ConstructionPushoutPasting.identity_kernel_certificate A B mulA mulB eA eB f idA idB
+
 end PPAC.Migration.Step4Checks

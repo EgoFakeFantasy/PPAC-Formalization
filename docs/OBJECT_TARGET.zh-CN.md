@@ -117,3 +117,9 @@ Probe 的旧输入消耗通过现成纯公式 Raw 归纳及实际求值方程证
 ConstructionFiniteDescent.source_kernel_certificate 的语言、背景和推导关系仍为纯成员语言、nativeZF 和原 FirstOrder.Derives。结论存在量化真正的内部有限序列；每个相邻项都是固定源 Replaces，保持同一右因子的两条乘法方程。路径逆向存储只是内部序列追加的表示方式，方向在 Path 公式中显式规定。
 
 对象 At 公式的分离实例供应反例集，既有内部序数归纳完成零/后继/极限三分证明。因此此结论不局限于外部标准自然数或外部良基模型。全部塔/索引/对齐输入均保留为明示前提；本批不宣称已经构造实际重排塔或完成可数商。后续只沿源 countable_quotient_of_cells 所消费的端点推进，不扩建未被使用的路径理论。
+
+## 推送重排定理的对象证书（2026-10-30）
+
+ConstructionPushoutPasting 的四个原核端点分别覆盖 flip、paste、cancel_left 和 of_id。它们复用现有纯成员语言的同态、图复合、交换方块及完整单子推送定义；量化所有内部目标单子、同态和候选普遍映射，保留存在性与唯一性。复合映射由已有原生集合函数构造器实际产生。
+
+背景仍为 nativeZF，推导关系为原 FirstOrder.Derives。结论是固定源普遍性质的传输规则；现有方块、同态、复合图或恒等图作为明确前提保留。源 future_cut/future_omitted_square 确实消费这些规则；实际选中子构造、呈现像识别、定向并方块及可数重排塔仍须继续构造，不将本批误报为 countable_germs 或最终内部 Con。
