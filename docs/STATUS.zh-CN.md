@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：Merger 的实际呈现与唯一提升
+## 当前执行入口：Merger 的实际模拟推送
 
-已迁移固定源 MergerPushouts 的 Word.evaluate/evaluate_act/evaluate_mul/liftHom/hom_ext，以及 OverlapPrescription.satisfies_rel/interpretedCopy/interpretedCopy_act/presentedLift/existsUnique_presentedHom。实际构造完整内部字载体上的求值图和原 Copies 商上的赋值图，证明任意内部目标单子中由全部旧系数与根确定唯一同态；目标不要求单射、保守性或消去律。处方只约束源规定的非对角起点关系。
+ConstructionMergerPushout 已迁移固定源 MergerPushouts.roots_satisfy/map_roots_satisfy/satisfies_map_iff/mergerSimulation_pushout。它先调用现有生产者构造映射处方及两侧完整 Merger，再构造实际诱导同态、证明旧系数／根方程和 ConservativeExtensions.mergerSimulation_snoc 的字面方程，最后证明任意内部目标单子上的完整推送通用性质。
 
-直接复用现有内部 Eval、公式归纳、Copies 投影／相等刻画、右作用和 root_mul_old；不选择商代表，不按外部标准字长归纳，不重建递归或商后端。两个端点均为纯成员语言、普通 nativeZF 的原 FirstOrder.Derives 闭句。源呈现的实际载体／投影／作用／根合同仍明确保留，由已有生产者提供。
+24 个输出集合／图均在纯成员闭句内部存在量化；原核端点为 nativeZF 的 FirstOrder.Derives。没有把呈现或推送当前提，没有限制外部标准字长，也未新增目标保守性或 conical 前提。复用现有 Copies、单子乘法、旧嵌入、根、处方映射、presentedLift 和图复合；不重建基础后端。
 
-本批全量验收：3044 项构建、34627 项声明、9 条命令／5 次 trust=0、零警告；34572 项旧声明依赖保持，2599 项文件哈希匹配，无新增公理依赖。CheckStep4 初次验收的两处命名空间错误已修复，完整重跑通过；见 verification/merger-presentation-acceptance.json。
+本批全量验收：3045 项构建、34651 项声明、9 条命令／5 次 trust=0、零警告；34627 项旧声明依赖保持，2600 项文件哈希匹配，无新增公理依赖。见 verification/merger-pushout-acceptance.json。
 
-下一项直接接固定源 MergerPushouts:288 的 mergerSimulation_pushout：消费本批实际呈现，接根满足关系、处方映射与模拟的旧系数／根方程，再构造通用同态；随后沿 ConservativeCells 的生成性／有限旧系数 → CellCuts 的选中后继像识别 → CellReorder 继续。完整 Probe 呈现／推送、两类 cell 原像和通用推送比较均已完成，不再列为待做。
+下一实际源消费者是 ConservativeCells 的保守态射包装、生成性与有限旧系数。这里须严格区分：本批已经证明模拟的同态、字面方程和推送；ConservativeCells.simulation 另要求 mergerSimulation_conservative 的四项条件。当前检索定位到的显式 transport_conservative 是 Probe 专用，不能当作 Merger 已接入，也不能以推送代替。继续先核对现成因子／共下界接口并适配固定源的对应传输，再接 CellCuts 选中后继像识别与 CellReorder。此前已有的 Merger 旧嵌入保守性、锥、根和处方映射保留复用。
 
-**仍在原第 8 阶段。Merger 实际呈现已完成，模拟推送尚未接通；选中后继、可数重排、完整 germ/selector 与赋值商双射、第 9–11 阶段和最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、有限下降及对齐继续复用。
+**仍在原第 8 阶段。Merger 实际呈现与推送已完成；模拟保守态射包装、生成性／有限旧系数、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、Probe 完整模拟／推送、两类参数原像、有限下降及对齐不再列为待做。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

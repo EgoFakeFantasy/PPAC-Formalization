@@ -141,3 +141,7 @@ ConstructionCellPreimage.probe_kernel_certificate 与 merger_kernel_certificate 
 ## Merger 呈现验收补记（2026-10-30）
 
 ConstructionMergerEvaluation 与 ConstructionMergerPresentedLift 将固定源 MergerPushouts 的字求值、实际 Copies 商解释和旧系数／根的唯一提升迁入纯成员闭句。最终输出为原核 nativeZF 中的对象存在唯一性；证明使用现有公式归纳，量词遍历全部内部字和目标单子，不加入外部标准性或目标消去律。实际呈现合同是显式输入，不能把本闭句当作已完成 mergerSimulation_pushout，更不能当作最终 Con_S → Con_U。验收见 verification/merger-presentation-acceptance.json；当前仍为原阶段 8。
+
+## Merger 实际推送验收补记（2026-10-30）
+
+ConstructionMergerPushout.source_kernel_certificate 内部存在量化并构造映射处方、两侧实际 Merger 与模拟图共 24 个输出，证明全内部目标单子的 IsPushout 和原 mergerSimulation_snoc 方程。输入为源的基单子、有效处方、保守基映射及条件交；没有预设两侧呈现或推送。它不声称输出模拟图的四项 Conservative 条件已验收，也不替代最终 Con 闭句；下一消费者的这部分合同仍需核对并接入。全量验收见 verification/merger-pushout-acceptance.json。
