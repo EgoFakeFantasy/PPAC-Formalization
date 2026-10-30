@@ -123,3 +123,11 @@ ConstructionFiniteDescent.source_kernel_certificate 的语言、背景和推导�
 ConstructionPushoutPasting 的四个原核端点分别覆盖 flip、paste、cancel_left 和 of_id。它们复用现有纯成员语言的同态、图复合、交换方块及完整单子推送定义；量化所有内部目标单子、同态和候选普遍映射，保留存在性与唯一性。复合映射由已有原生集合函数构造器实际产生。
 
 背景仍为 nativeZF，推导关系为原 FirstOrder.Derives。结论是固定源普遍性质的传输规则；现有方块、同态、复合图或恒等图作为明确前提保留。源 future_cut/future_omitted_square 确实消费这些规则；实际选中子构造、呈现像识别、定向并方块及可数重排塔仍须继续构造，不将本批误报为 countable_germs 或最终内部 Con。
+
+## 推送比较与换元的对象证书（2026-10-30）
+
+ConstructionPushoutIdentification.comparison_kernel_certificate 在普通 nativeZF 的原 FirstOrder.Derives 中证明一个纯成员闭句：对于同一 span 的两份完整推送，实际存在两张同态图，它们互逆并分别与两侧基底映射交换。两张比较图是结论中的对象存在量词，不是宿主选择函数或输入假设。
+
+apex_kernel_certificate 与 left_kernel_certificate 迁移完整普遍性质；内部目标单子及候选映射仍全称量化，换元使用的内部同态、逆图和边界等式则作为明确前提保留。复用既有 ModelTransfer 对同一原生语言及模型范围的原核转移；没有增加对象层 AC 或不可达假设。
+
+这些端点是固定源 CellCuts 呈现识别的必要消费者接口。实际 cell 原像、所选后继像的满射性以及后续可数重排仍须接通；本批不是最终内部 Con 证明。

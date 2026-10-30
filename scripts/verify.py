@@ -2433,7 +2433,8 @@ def main() -> None:
                                ('forcing_germ_alignments', 'ForcingGermAlignments', 31),
                                ('construction_cell_descent', 'ConstructionCellDescent', 30),
                                ('construction_finite_descent', 'ConstructionFiniteDescent', 31),
-                               ('construction_pushout_pasting', 'ConstructionPushoutPasting', 22)):
+                               ('construction_pushout_pasting', 'ConstructionPushoutPasting', 22),
+                               ('construction_pushout_identification', 'ConstructionPushoutIdentification', 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

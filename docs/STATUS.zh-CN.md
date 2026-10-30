@@ -1,14 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：重排所需的完整推送方块定理
+## 当前执行入口：实际推送比较与呈现换元
 
-`ConstructionPushoutPasting` 沿固定源 MergerPushouts:385–459，迁移推送的 flip、paste、cancel_left 和 of_id。四个端点均是普通 nativeZF 原核中的纯成员语言闭句，普遍性质覆盖任意内部单子及任意内部同态。直接复用已有 Hom、SquareComm、IsPushout、NodeMap 和原生图复合，未另建推送定义或限制为保守映射。
+`ConstructionPushoutIdentification` 沿固定源 MergerPushouts 的 equiv/equiv_comp_left/right、map_apex 和 CellCuts.change_left，完成两个实际推送之间的比较，以及顶点／左角换元。比较结论存在量化两张内部同态图，证明互逆并保留两个基底在两个方向上的交换等式；未预设比较同构。换元端点显式保留给定同构及边界复合等式。
 
-真实源消费者已经核对：CellReorder.future_cut 的基步使用恒等推送，后继阶段使用粘合；future_omitted_square 使用翻转和左消去。本批全量验收：3040 项构建、34532 项声明、9 条命令／5 次 trust=0、零警告；34510 项旧声明依赖保持，2595 项文件哈希匹配，无新增公理依赖。见 verification/pushout-pasting-acceptance.json。
+三个结论均落在纯成员语言、普通 nativeZF 和原 FirstOrder.Derives；普遍性质覆盖全部内部目标单子。现成 Hom、IsPushout、NodeMap、图复合、恒等图和逆图接口保持不变。源消费者为 CellCuts.restrict_selected、Square.presentationPushout/realization/attachment/intermediate。
 
-此前内部有限下降 `9dc3dec`、完整 cell/attachment gate `a57df58`、实际对齐 `6539a2c` 与密集性 `67091a8` 已完成并保留。已有可数保守闭包及单步 probe 完整推送不重做。下一处实际连接是 CellCuts.restrict_selected/intermediate 的呈现与像识别，以及 CellReorder 的定向并方块/future_cut，再生成实际重排塔并消费有限下降与 Alignments。
+本批全量验收：3041 项构建、34552 项声明、9 条命令／5 次 trust=0、零警告；34532 项旧声明依赖保持，2596 项文件哈希匹配，无新增公理依赖。见 verification/pushout-identification-acceptance.json。
 
-**本批没有构造实际选中子构造或可数重排塔。仍在原第 8 阶段；完整 germ/selector、赋值图、具体商双射及第 9–11 阶段、最终内部 Con 均未完成。** 闭包、条件下降与本批普遍性质定理不能代替实际塔装配。源 countable_quotient_of_cells 丢弃下降路径，继续不增建路径不变性理论。
+此前内部有限下降、完整 cell/attachment gate、实际对齐与密集性，以及推送粘合／消去均保留并复用。下一处实际连接仍是 CellCuts.restrict_selected/intermediate 的 cell 原像、有限旧系数依赖及像的满射识别，再接 CellReorder 的定向并方块/future_cut，生成实际重排塔并消费已有有限下降与 Alignments。原生像与逆双射构造器已有，不另建后端。
+
+**仍在原第 8 阶段。本批没有构造实际选中子构造或可数重排塔；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 尚未完成。** 已有 L、全体公理模式、闭包与推导核不重做；不增建源最终消费者没有使用的路径不变性理论。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -21,7 +23,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

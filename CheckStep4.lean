@@ -12896,4 +12896,19 @@ example {m : Nat} (A B mulA mulB eA eB f idA idB : Fin m) :
       (ConstructionPushoutPasting.identitySentence A B mulA mulB eA eB f idA idB)) :=
   ConstructionPushoutPasting.identity_kernel_certificate A B mulA mulB eA eB f idA idB
 
+example {m : Nat} (B C D E JD JE mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutIdentification.comparisonSentence B C D E JD JE mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce)) :=
+  ConstructionPushoutIdentification.comparison_kernel_certificate B C D E JD JE mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce
+
+example {m : Nat} (B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce f g : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutIdentification.apexSentence B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce f g)) :=
+  ConstructionPushoutIdentification.apex_kernel_certificate B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd be ce f g
+
+example {m : Nat} (A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f g : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionPushoutIdentification.leftSentence A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f g)) :=
+  ConstructionPushoutIdentification.left_kernel_certificate A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f g
+
 end PPAC.Migration.Step4Checks
