@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：Merger 的字模拟保守性
+## 当前执行入口：ConservativeCells 的生成性与有限旧系数
 
-ConstructionMergerCopiesMap 已迁移固定源 ConservativeExtensions 的 copiesMap、代表元方程、单射性、右作用相容、copiesMap_factors 与 copiesMap_common_below。不同副本的重叠情形使用现有处方关系；同一个旧残差在旧域及任意目标因子上都有效。Copies 图由现有 Value/Graph 与原生函数构造器实际生成，没有假设待构造映射。
+ConstructionMergerWordTransport 已迁移固定源 ConservativeExtensions 的字右作用／乘法传输、transportHom、单射、指定右因子保留、除法反射、任意目标字下的旧共同下界，以及完整 transport_conservative。因子和共同下界均用现有对象公式归纳，覆盖全部内部字长。上一批 Copies 因子／共同下界证书已实际消费。
 
-原核端点 source_kernel_certificate 在纯成员闭句内部存在量化该图并证明全部六项 Laws。输入为上一批已构造的两侧实际 Merger 呈现、保守基同态、映射处方和源条件交；量词覆盖任意目标副本和右因子。复用原 Copies、处方映射、条件交、Merger 右作用接口和 ModelTransfer，不增加递归或编码后端。
+raw_eq_simulation 已证明字面 Raw 传输图等于此前完整推送构造的实际 mergerSimulation；simulation_conservative 证明的是同一映射。原核 source_kernel_certificate 复用上一批 24 个内部存在量化输出，在原 Hom／根方程／snoc 方程／IsPushout 结论中新增并证明完整 Conservative。没有预设保守模拟，没有重建递归、商或推导核。
 
-本批全量验收：3046 项构建、34676 项声明、9 条命令／5 次 trust=0、零警告；34651 项旧声明依赖保持，2601 项文件哈希匹配，无新增公理依赖。见 verification/merger-copies-map-acceptance.json。
+本批全量验收：3047 项构建、34703 项声明、9 条命令／5 次 trust=0、零警告；34676 项旧声明依赖保持，2602 项文件哈希匹配，无新增公理依赖。见 verification/merger-word-transport-acceptance.json。
 
-下一项是源 Word.transport_factors／transport_common_below／transport_conservative，再接 mergerSimulation_conservative。已有 Raw 值图、构造子方程、单射性及内部字归纳可以复用；Probe 的左作用模拟不直接适配 Merger 右作用。Copies 层输入已完成，不再重复列为缺口；完整字模拟的四项 Conservative 条件尚未验收，不能以此前推送性质替代。
+下一实际源消费者是 ConservativeCells 的两类 generated，以及 Cell.mem_closure／finite_coefficients。源 generated 直接调用已迁移的实际 presentedLift 和呈现唯一性；有限系数只要求每个具体字使用有限个旧系数，必须保留整个可数新生成元族，不能误改为整条 Probe 路径有有限支撑。先匹配现有闭包、内部有限集和字求值接口，再接 CellCuts 选中后继像／推送识别与 CellReorder。
 
-**仍在原第 8 阶段。真正剩余为字模拟保守性、生成性／有限旧系数、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 已有 L、全公理模式、闭包、推导核、Probe 完整模拟／推送、Merger 实际呈现／推送与 Copies 映射、两类参数原像、有限下降及对齐均保留复用，不重新建设。
+**仍在原第 8 阶段。真正剩余为生成性／有限旧系数的实际消费者接合、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 两类完整保守模拟／推送、Copies 传输、两类参数原像、有限下降及对齐均已完成并保留复用；L、全公理模式、闭包、递归与推导核不重新建设。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

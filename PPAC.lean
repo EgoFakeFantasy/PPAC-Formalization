@@ -878,3 +878,4 @@ import PPAC.Migration.ConstructionMergerEvaluation
 import PPAC.Migration.ConstructionMergerPresentedLift
 import PPAC.Migration.ConstructionMergerPushout
 import PPAC.Migration.ConstructionMergerCopiesMap
+import PPAC.Migration.ConstructionMergerWordTransport

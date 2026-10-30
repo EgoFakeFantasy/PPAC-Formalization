@@ -12941,4 +12941,9 @@ example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots N mu
       (ConstructionMergerCopiesMap.sourceSentence w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f)) :=
   ConstructionMergerCopiesMap.source_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f
 
+example {m : Nat} (w n zero D mul e P N mulN eN f : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionMergerWordTransport.sourceSentence w n zero D mul e P N mulN eN f)) :=
+  ConstructionMergerWordTransport.source_kernel_certificate w n zero D mul e P N mulN eN f
+
 end PPAC.Migration.Step4Checks

@@ -2439,7 +2439,8 @@ def main() -> None:
                                ('construction_merger_evaluation', 'ConstructionMergerEvaluation', 23),
                                ('construction_merger_presented_lift', 'ConstructionMergerPresentedLift', 32),
                                ('construction_merger_pushout', 'ConstructionMergerPushout', 24),
-                               ('construction_merger_copies_map', 'ConstructionMergerCopiesMap', 25)):
+                               ('construction_merger_copies_map', 'ConstructionMergerCopiesMap', 25),
+                               ('construction_merger_word_transport', 'ConstructionMergerWordTransport', 27)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

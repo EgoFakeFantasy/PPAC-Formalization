@@ -151,3 +151,9 @@ ConstructionMergerPushout.source_kernel_certificate 内部存在量化并构造�
 ConstructionMergerCopiesMap.source_kernel_certificate 在原 nativeZF 推导核中，由同一两侧实际呈现和源保守基映射构造 Copies 图，证明精确代表元方程、单射、右作用相容、任意目标右因子留在旧像，以及每个目标共同上界之下的旧共同下界。两侧呈现复用 ConstructionMergerPushout 的已验收生产者；本句不预设 Copies 图，也不限制外部标准字长。
 
 这些性质对应固定源 Word.transport_conservative 的 Copies 输入。它们尚不构成整个字模拟的 Conservative 证明；字因子传输、字共同下界及与实际 mergerSimulation 的接合仍须完成。最终对象 Con 未完成。实际验收见 verification/merger-copies-map-acceptance.json。
+
+## 实际 Merger 字模拟保守性的原核证书（2026-10-30）
+
+ConstructionMergerWordTransport.source_kernel_certificate 复用完整 MergerPushout 的 24 个内部存在输出，并新增四项 Conservative 结论：单射、目标右因子留在旧像、所有旧交的保持、共同倍数反射。因子按内部结果字归纳；共同下界按任意内部目标字归纳，调用已验收的 Copies 因子与共同下界。raw_eq_simulation 证明该 Raw 图等于此前实际构造的 mergerSimulation，故不是另一个兼容映射的替代结论。
+
+与上一批对象句子的差异已核对为只增加实际模拟的 Conservative 合取项；原对象量词、基理论和完整推送性质保持。该源缺口现已关闭，不能继续列为待做。ConservativeCells 生成性／有限旧系数、所选后继、可数重排及第 9–11 阶段仍须推进；最终内部 Con 尚未完成。实际全量验收见 verification/merger-word-transport-acceptance.json。
