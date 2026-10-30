@@ -12911,4 +12911,14 @@ example {m : Nat} (A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f
       (ConstructionPushoutIdentification.leftSentence A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f g)) :=
   ConstructionPushoutIdentification.left_kernel_certificate A B C D E mulB mulC mulD mulE eB eC eD eE ab ac bd cd ae ed f g
 
+example {m : Nat} (w D N mul mulN e eN zero a b c node f : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellPreimage.probeSentence w D N mul mulN e eN zero a b c node f)) :=
+  ConstructionCellPreimage.probe_kernel_certificate w D N mul mulN e eN zero a b c node f
+
+example {m : Nat} (n D N mul mulN e eN P f : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellPreimage.mergerSentence n D N mul mulN e eN P f)) :=
+  ConstructionCellPreimage.merger_kernel_certificate n D N mul mulN e eN P f
+
 end PPAC.Migration.Step4Checks

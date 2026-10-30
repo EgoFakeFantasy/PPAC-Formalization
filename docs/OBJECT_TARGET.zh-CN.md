@@ -131,3 +131,9 @@ ConstructionPushoutIdentification.comparison_kernel_certificate 在普通 native
 apex_kernel_certificate 与 left_kernel_certificate 迁移完整普遍性质；内部目标单子及候选映射仍全称量化，换元使用的内部同态、逆图和边界等式则作为明确前提保留。复用既有 ModelTransfer 对同一原生语言及模型范围的原核转移；没有增加对象层 AC 或不可达假设。
 
 这些端点是固定源 CellCuts 呈现识别的必要消费者接口。实际 cell 原像、所选后继像的满射性以及后续可数重排仍须接通；本批不是最终内部 Con 证明。
+
+## 两类 cell 原像的对象证书（2026-10-30）
+
+ConstructionCellPreimage.probe_kernel_certificate 与 merger_kernel_certificate 在普通 nativeZF 的原 FirstOrder.Derives 中证明实际对象存在量词结论。Probe 返回参数原像、整条内部路径及精确映回关系；Merger 返回规范起点表、其完整 Valid 性质和恢复原表的 Graph 等式。索引仍在对象域内，结论不局限于外部标准有限情形。
+
+原像族使用原生值域／逆双射和集合函数复合构造。已有 ConstructionSaturationProbeStage.reflect_path 与 ConstructionMergerPrescriptionMap.valid_of_map 原样复用；参数在保守同态像内的条件沿用源前提，不作为已经证明的依赖闭合结论。后续仍须通过实际呈现生成性与有限旧系数建立该前提，并完成选中后继的像满射及推送识别。不能将两类原像已构造误报为可数重排或最终内部 Con 已完成。

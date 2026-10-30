@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：实际推送比较与呈现换元
+## 当前执行入口：两类 cell 的实际参数原像
 
-`ConstructionPushoutIdentification` 沿固定源 MergerPushouts 的 equiv/equiv_comp_left/right、map_apex 和 CellCuts.change_left，完成两个实际推送之间的比较，以及顶点／左角换元。比较结论存在量化两张内部同态图，证明互逆并保留两个基底在两个方向上的交换等式；未预设比较同构。换元端点显式保留给定同构及边界复合等式。
+`ConstructionCellPreimage` 迁移固定源 CellTowers.Probe.exists_preimage 和 Merger.exists_preimage，供应 CellCuts.restrict_selected 对 Cell.exists_preimage 的两分支调用。Probe 实际构造三个参数原像及整条内部路径图，并保留映回等式、路径全部性质和两个非单位条件；Merger 实际构造完整可选起点表，反射 Valid 并证明映回恰好恢复原表，保留缺项、对角项和空索引情形。
 
-三个结论均落在纯成员语言、普通 nativeZF 和原 FirstOrder.Derives；普遍性质覆盖全部内部目标单子。现成 Hom、IsPushout、NodeMap、图复合、恒等图和逆图接口保持不变。源消费者为 CellCuts.restrict_selected、Square.presentationPushout/realization/attachment/intermediate。
+直接复用既有 reflect_path、valid_of_map、处方图构造／规范性、原生值域与逆双射构造器；没有重建路径反射、有效性反射或选择后端。两个端点均为纯成员语言、普通 nativeZF 和原 FirstOrder.Derives 中的闭句。参数包含与保守同态是固定源明确保留的输入。
 
-本批全量验收：3041 项构建、34552 项声明、9 条命令／5 次 trust=0、零警告；34532 项旧声明依赖保持，2596 项文件哈希匹配，无新增公理依赖。见 verification/pushout-identification-acceptance.json。
+本批全量验收：3042 项构建、34572 项声明、9 条命令／5 次 trust=0、零警告；34552 项旧声明依赖保持，2597 项文件哈希匹配，无新增公理依赖。见 verification/cell-preimage-acceptance.json。
 
-此前内部有限下降、完整 cell/attachment gate、实际对齐与密集性，以及推送粘合／消去均保留并复用。下一处实际连接仍是 CellCuts.restrict_selected/intermediate 的 cell 原像、有限旧系数依赖及像的满射识别，再接 CellReorder 的定向并方块/future_cut，生成实际重排塔并消费已有有限下降与 Alignments。原生像与逆双射构造器已有，不另建后端。
+下一实际连接按固定源顺序进行：先把 MergerPushouts 的任意目标单子 presentedLift／完整推送接入，再以两类实际呈现证明生成性和有限旧系数，构造依赖闭合并完成选中后继的像识别，随后接 CellReorder。复核发现已验收的完整 presentedLift／pushout 生产者对应 Probe；Merger 的字乘法、Copies、根与保守模拟不能替代其任意目标普遍性质，当前未找到已接入的对应原核端点。这是原第 8 阶段内的具体未接项。
 
-**仍在原第 8 阶段。本批没有构造实际选中子构造或可数重排塔；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 尚未完成。** 已有 L、全体公理模式、闭包与推导核不重做；不增建源最终消费者没有使用的路径不变性理论。
+**仍在原第 8 阶段。两类 cell 原像已完成，实际选中后继与可数重排塔尚未完成；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、Probe 呈现、有限下降和对齐全部保留复用。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -21,7 +21,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |

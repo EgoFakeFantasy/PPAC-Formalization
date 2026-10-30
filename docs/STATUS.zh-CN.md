@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际推送比较与呈现换元
+## 当前执行入口：两类 cell 的实际参数原像
 
-`ConstructionPushoutIdentification` 沿固定源 MergerPushouts 的 equiv/equiv_comp_left/right、map_apex 和 CellCuts.change_left，完成两个实际推送之间的比较，以及顶点／左角换元。比较结论存在量化两张内部同态图，证明互逆并保留两个基底在两个方向上的交换等式；未预设比较同构。换元端点显式保留给定同构及边界复合等式。
+`ConstructionCellPreimage` 迁移固定源 CellTowers.Probe.exists_preimage 和 Merger.exists_preimage，供应 CellCuts.restrict_selected 对 Cell.exists_preimage 的两分支调用。Probe 实际构造三个参数原像及整条内部路径图，并保留映回等式、路径全部性质和两个非单位条件；Merger 实际构造完整可选起点表，反射 Valid 并证明映回恰好恢复原表，保留缺项、对角项和空索引情形。
 
-三个结论均落在纯成员语言、普通 nativeZF 和原 FirstOrder.Derives；普遍性质覆盖全部内部目标单子。现成 Hom、IsPushout、NodeMap、图复合、恒等图和逆图接口保持不变。源消费者为 CellCuts.restrict_selected、Square.presentationPushout/realization/attachment/intermediate。
+直接复用既有 reflect_path、valid_of_map、处方图构造／规范性、原生值域与逆双射构造器；没有重建路径反射、有效性反射或选择后端。两个端点均为纯成员语言、普通 nativeZF 和原 FirstOrder.Derives 中的闭句。参数包含与保守同态是固定源明确保留的输入。
 
-本批全量验收：3041 项构建、34552 项声明、9 条命令／5 次 trust=0、零警告；34532 项旧声明依赖保持，2596 项文件哈希匹配，无新增公理依赖。见 verification/pushout-identification-acceptance.json。
+本批全量验收：3042 项构建、34572 项声明、9 条命令／5 次 trust=0、零警告；34552 项旧声明依赖保持，2597 项文件哈希匹配，无新增公理依赖。见 verification/cell-preimage-acceptance.json。
 
-此前内部有限下降、完整 cell/attachment gate、实际对齐与密集性，以及推送粘合／消去均保留并复用。下一处实际连接仍是 CellCuts.restrict_selected/intermediate 的 cell 原像、有限旧系数依赖及像的满射识别，再接 CellReorder 的定向并方块/future_cut，生成实际重排塔并消费已有有限下降与 Alignments。原生像与逆双射构造器已有，不另建后端。
+下一实际连接按固定源顺序进行：先把 MergerPushouts 的任意目标单子 presentedLift／完整推送接入，再以两类实际呈现证明生成性和有限旧系数，构造依赖闭合并完成选中后继的像识别，随后接 CellReorder。复核发现已验收的完整 presentedLift／pushout 生产者对应 Probe；Merger 的字乘法、Copies、根与保守模拟不能替代其任意目标普遍性质，当前未找到已接入的对应原核端点。这是原第 8 阶段内的具体未接项。
 
-**仍在原第 8 阶段。本批没有构造实际选中子构造或可数重排塔；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 尚未完成。** 已有 L、全体公理模式、闭包与推导核不重做；不增建源最终消费者没有使用的路径不变性理论。
+**仍在原第 8 阶段。两类 cell 原像已完成，实际选中后继与可数重排塔尚未完成；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、Probe 呈现、有限下降和对齐全部保留复用。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -23,7 +23,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
