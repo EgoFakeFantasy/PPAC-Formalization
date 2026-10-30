@@ -868,3 +868,4 @@ import PPAC.Migration.ForcingProbeRows
 import PPAC.Migration.ForcingConcreteOrdinalCount
 import PPAC.Migration.ForcingIdealProbeCount
 import PPAC.Migration.ForcingConcreteGermDensity
+import PPAC.Migration.ForcingGermAlignments

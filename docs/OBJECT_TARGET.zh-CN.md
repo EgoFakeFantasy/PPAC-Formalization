@@ -99,3 +99,9 @@ ForcingProbeRows、ForcingConcreteOrdinalCount 与 ForcingIdealProbeCount 已将
 对象结论覆盖全部加强 delta 的内部条件、全部共同顶点/标签，以及全部具有 Works/Links 的内部名字见证。证书仍在普通 nativeZF 中相对于同一现成内部 L，不增加对象 Choice 或外部标准性前提。旧 Preliminary 语义和对象 AST 已用 trust=0 下的 rfl 检查定义等同。
 
 同一终行/AllIdeals、rank/selection 方程、尾群/全局固定名字界、局部列表/枚举/标签/参数及初始 outside-class 见证仍是明确源输入。分量 germ/selector、赋值图和具体商双射消费者、PP/Main、全部内部/非标准证明码的最终 Con 尚未完成。最新验收状态见 STATUS；密集性对象证书不是最终主句。
+
+## 链对齐的对象证书（2026-10-30）
+
+ForcingGermAlignments.source_kernel_certificate 的背景是 nativeZF，语言是原纯成员语言，推导关系是原 FirstOrder.Derives。最终闭句存在量化实际内部链索引图，并覆盖所有内部自然数上的对齐存在/有界性、共同推进及两条精确乘法方程、相同对齐的尾固定等价关系。完整语法与语义对应逐项由 Lean 检查，没有抽取宿主层序列、外部有限路径或标准自然数。
+
+这里的 monoid/joins、ω/zero、完整顶点载体、实际余终链和分量稳定置换是固定源本段的输入。现成原生集合函数、顶点/箭头、置换复合被直接复用。此证书供后续 countable_quotient_of_cells 消费；不把它记为已证明可数重排、有限 gate 下降、countable_germs 或完整选择器。最终内部 Con 仍未完成；上方较早批次中的“未完成”只表示当时状态，当前范围以 STATUS 为准。

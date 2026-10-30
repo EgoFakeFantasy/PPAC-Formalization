@@ -35008,3 +35008,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingConcreteGermDensity.sourceSentence
 #print axioms PPAC.Migration.ForcingConcreteGermDensity.source_models
 #print axioms PPAC.Migration.ForcingConcreteGermDensity.source_kernel_certificate
+
+-- Literal source germ alignments on every internal natural.
+#print axioms PPAC.Migration.ForcingGermAlignments.Index
+#print axioms PPAC.Migration.ForcingGermAlignments.Alignment
+#print axioms PPAC.Migration.ForcingGermAlignments.arrow_index_unique
+#print axioms PPAC.Migration.ForcingGermAlignments.arrow_index_mem
+#print axioms PPAC.Migration.ForcingGermAlignments.arrow_comp_product
+#print axioms PPAC.Migration.ForcingGermAlignments.index_exists
+#print axioms PPAC.Migration.ForcingGermAlignments.index_unique
+#print axioms PPAC.Migration.ForcingGermAlignments.index_transition
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment_nonempty
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment_bounded
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment_replacement
+#print axioms PPAC.Migration.ForcingGermAlignments.same_alignment_tail
+#print axioms PPAC.Migration.ForcingGermAlignments.Indices
+#print axioms PPAC.Migration.ForcingGermAlignments.index
+#print axioms PPAC.Migration.ForcingGermAlignments.index_freeClosed
+#print axioms PPAC.Migration.ForcingGermAlignments.index_semantics
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment_freeClosed
+#print axioms PPAC.Migration.ForcingGermAlignments.alignment_semantics
+#print axioms PPAC.Migration.ForcingGermAlignments.indices
+#print axioms PPAC.Migration.ForcingGermAlignments.indices_freeClosed
+#print axioms PPAC.Migration.ForcingGermAlignments.indices_semantics
+#print axioms PPAC.Migration.ForcingGermAlignments.exists_indices
+#print axioms PPAC.Migration.ForcingGermAlignments.Laws
+#print axioms PPAC.Migration.ForcingGermAlignments.laws
+#print axioms PPAC.Migration.ForcingGermAlignments.laws_freeClosed
+#print axioms PPAC.Migration.ForcingGermAlignments.laws_semantics
+#print axioms PPAC.Migration.ForcingGermAlignments.source_construct
+#print axioms PPAC.Migration.ForcingGermAlignments.sourceSentence
+#print axioms PPAC.Migration.ForcingGermAlignments.source_models
+#print axioms PPAC.Migration.ForcingGermAlignments.source_kernel_certificate
