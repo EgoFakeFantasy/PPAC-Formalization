@@ -2435,7 +2435,9 @@ def main() -> None:
                                ('construction_finite_descent', 'ConstructionFiniteDescent', 31),
                                ('construction_pushout_pasting', 'ConstructionPushoutPasting', 22),
                                ('construction_pushout_identification', 'ConstructionPushoutIdentification', 20),
-                               ('construction_cell_preimage', 'ConstructionCellPreimage', 20)):
+                               ('construction_cell_preimage', 'ConstructionCellPreimage', 20),
+                               ('construction_merger_evaluation', 'ConstructionMergerEvaluation', 23),
+                               ('construction_merger_presented_lift', 'ConstructionMergerPresentedLift', 32)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

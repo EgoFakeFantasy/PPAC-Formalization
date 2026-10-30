@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-30）
 
-## 当前执行入口：两类 cell 的实际参数原像
+## 当前执行入口：Merger 的实际呈现与唯一提升
 
-`ConstructionCellPreimage` 迁移固定源 CellTowers.Probe.exists_preimage 和 Merger.exists_preimage，供应 CellCuts.restrict_selected 对 Cell.exists_preimage 的两分支调用。Probe 实际构造三个参数原像及整条内部路径图，并保留映回等式、路径全部性质和两个非单位条件；Merger 实际构造完整可选起点表，反射 Valid 并证明映回恰好恢复原表，保留缺项、对角项和空索引情形。
+已迁移固定源 MergerPushouts 的 Word.evaluate/evaluate_act/evaluate_mul/liftHom/hom_ext，以及 OverlapPrescription.satisfies_rel/interpretedCopy/interpretedCopy_act/presentedLift/existsUnique_presentedHom。实际构造完整内部字载体上的求值图和原 Copies 商上的赋值图，证明任意内部目标单子中由全部旧系数与根确定唯一同态；目标不要求单射、保守性或消去律。处方只约束源规定的非对角起点关系。
 
-直接复用既有 reflect_path、valid_of_map、处方图构造／规范性、原生值域与逆双射构造器；没有重建路径反射、有效性反射或选择后端。两个端点均为纯成员语言、普通 nativeZF 和原 FirstOrder.Derives 中的闭句。参数包含与保守同态是固定源明确保留的输入。
+直接复用现有内部 Eval、公式归纳、Copies 投影／相等刻画、右作用和 root_mul_old；不选择商代表，不按外部标准字长归纳，不重建递归或商后端。两个端点均为纯成员语言、普通 nativeZF 的原 FirstOrder.Derives 闭句。源呈现的实际载体／投影／作用／根合同仍明确保留，由已有生产者提供。
 
-本批全量验收：3042 项构建、34572 项声明、9 条命令／5 次 trust=0、零警告；34552 项旧声明依赖保持，2597 项文件哈希匹配，无新增公理依赖。见 verification/cell-preimage-acceptance.json。
+本批全量验收：3044 项构建、34627 项声明、9 条命令／5 次 trust=0、零警告；34572 项旧声明依赖保持，2599 项文件哈希匹配，无新增公理依赖。CheckStep4 初次验收的两处命名空间错误已修复，完整重跑通过；见 verification/merger-presentation-acceptance.json。
 
-下一实际连接按固定源顺序进行：先把 MergerPushouts 的任意目标单子 presentedLift／完整推送接入，再以两类实际呈现证明生成性和有限旧系数，构造依赖闭合并完成选中后继的像识别，随后接 CellReorder。复核发现已验收的完整 presentedLift／pushout 生产者对应 Probe；Merger 的字乘法、Copies、根与保守模拟不能替代其任意目标普遍性质，当前未找到已接入的对应原核端点。这是原第 8 阶段内的具体未接项。
+下一项直接接固定源 MergerPushouts:288 的 mergerSimulation_pushout：消费本批实际呈现，接根满足关系、处方映射与模拟的旧系数／根方程，再构造通用同态；随后沿 ConservativeCells 的生成性／有限旧系数 → CellCuts 的选中后继像识别 → CellReorder 继续。完整 Probe 呈现／推送、两类 cell 原像和通用推送比较均已完成，不再列为待做。
 
-**仍在原第 8 阶段。两类 cell 原像已完成，实际选中后继与可数重排塔尚未完成；完整 germ/selector、赋值图、具体商双射、第 9–11 阶段及最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、Probe 呈现、有限下降和对齐全部保留复用。
+**仍在原第 8 阶段。Merger 实际呈现已完成，模拟推送尚未接通；选中后继、可数重排、完整 germ/selector 与赋值商双射、第 9–11 阶段和最终内部 Con 仍未完成。** 已有 L、全公理模式、闭包、推导核、有限下降及对齐继续复用。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

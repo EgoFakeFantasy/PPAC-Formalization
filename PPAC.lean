@@ -874,3 +874,5 @@ import PPAC.Migration.ConstructionFiniteDescent
 import PPAC.Migration.ConstructionPushoutPasting
 import PPAC.Migration.ConstructionPushoutIdentification
 import PPAC.Migration.ConstructionCellPreimage
+import PPAC.Migration.ConstructionMergerEvaluation
+import PPAC.Migration.ConstructionMergerPresentedLift
