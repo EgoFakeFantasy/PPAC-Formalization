@@ -34992,3 +34992,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingIdealProbeCount.sourceSentence
 #print axioms PPAC.Migration.ForcingIdealProbeCount.source_models
 #print axioms PPAC.Migration.ForcingIdealProbeCount.source_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCodeLinkClosure.working_linked_at
+#print axioms PPAC.Migration.ForcingGermPreliminary.PreliminaryAt
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminaryAt
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminaryAt_freeClosed
+#print axioms PPAC.Migration.ForcingGermPreliminary.preliminaryAt_semantics
+#print axioms PPAC.Migration.ForcingGermDensity.total_at
+#print axioms PPAC.Migration.ForcingGermDensity.onto_at
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.Dense
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.dense
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.dense_freeClosed
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.dense_semantics
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.source_construct
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.sourceSentence
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.source_models
+#print axioms PPAC.Migration.ForcingConcreteGermDensity.source_kernel_certificate

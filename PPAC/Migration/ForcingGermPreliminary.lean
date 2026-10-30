@@ -20,31 +20,36 @@ set_option maxHeartbeats 6000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
-def Preliminary (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
-    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
-    (d vertex label tau : M.Carrier .set) : Prop :=
+def PreliminaryAt (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top labelSet r : Fin k)
+    (rankBound tab d vertex label tau : M.Carrier .set) : Prop :=
   (Project.FirstOrderSemantics.reduct M).mem label (env labelSet) ∧
     Predicate (ForcingPairUnion.domain rho G F) env tau ∧
     ∃ theta a na ntheta beta nbeta,
-      ForcingOrdinalTable.Eligible hM (env labelSet) (env rankBound) theta ∧
+      ForcingOrdinalTable.Eligible hM (env labelSet) rankBound theta ∧
       (Project.FirstOrderSemantics.reduct M).mem a (env codes) ∧
       PureKuratowski.PairMember M a na (env ranks) ∧
-      ForcingOrdinalTable.Indices (env tab) theta label beta ∧
+      ForcingOrdinalTable.Indices tab theta label beta ∧
       Checked (env top) theta ntheta ∧ Checked (env top) beta nbeta ∧
       ForcingCodeSelection.IsSelected env rho I G F mul q bound labels E root w chain codes order a d ∧
       EqF (orderFormula (rho 0) mul) env (env (rho 6)) d (env r) (env selection) ntheta ∧
       EqF (orderFormula (rho 0) mul) env (env (rho 6)) d (env r) na nbeta ∧
       Links (orderFormula (rho 0) mul) env (env (rho 6)) (env w) (env (rho 0)) (env I) (env mul) (env q) (env chain) d vertex tau a
 
-def preliminary {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
-    (base : Fin k → Fin m) (d vertex label tau : Fin m) : Project.Formula 1 m :=
+def Preliminary (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
+    (d vertex label tau : M.Carrier .set) : Prop :=
+  PreliminaryAt hM env rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r (env rankBound) (env tab) d vertex label tau
+
+def preliminaryAt {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top labelSet r : Fin k)
+    (base : Fin k → Fin m) (rankBound tab d vertex label tau : Fin m) : Project.Formula 1 m :=
   let up : Fin m → Fin (m+6) := fun i => i.succ.succ.succ.succ.succ.succ
   .conj (.mem (.bound label) (.bound (base labelSet)))
     (.conj (ProjectSyntax.encode id (MinimalPredicates.pred (ForcingPairUnion.domain rho G F) base tau))
-      (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (ForcingOrdinalTable.eligible (up (base labelSet)) (up (base rankBound)) 5)
+      (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (ForcingOrdinalTable.eligible (up (base labelSet)) (up rankBound) 5)
         (.conj (.mem (.bound 4) (.bound (up (base codes))))
         (.conj (ProjectSyntax.encode id (Source.SetLanguage.edge (up (base ranks)) 4 3))
-        (.conj (ForcingOrdinalTable.indices (up (base tab)) 5 (up label) 1)
+        (.conj (ForcingOrdinalTable.indices (up tab) 5 (up label) 1)
         (.conj (ProjectSyntax.encode id (ForcingCheckName.checkName (up (base top)) 5 2))
         (.conj (ProjectSyntax.encode id (ForcingCheckName.checkName (up (base top)) 1 0))
         (.conj (ForcingCodeSelection.selected rho I G F mul q bound labels E root w chain codes order (fun i => up (base i)) 4 (up d))
@@ -52,25 +57,41 @@ def preliminary {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E 
         (.conj (ForcingPrincipalFilter.eqF (orderFormula (rho 0) mul) (fun i => up (base i)) (up (base (rho 6))) (up d) (up (base r)) 3 0)
         (ForcingCodeLinks.links (orderFormula (rho 0) mul) (fun i => up (base i)) (up (base (rho 6))) (up (base w)) (up (base (rho 0))) (up (base I)) (up (base mul)) (up (base q)) (up (base chain)) (up d) (up vertex) (up tau) 4)))))))))))))))))
 
-theorem preliminary_freeClosed {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
-    (base : Fin k → Fin m) (d vertex label tau : Fin m) :
-    (preliminary rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r base d vertex label tau).FreeClosed := by
-  simp -implicitDefEqProofs [preliminary,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,
+theorem preliminaryAt_freeClosed {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top labelSet r : Fin k)
+    (base : Fin k → Fin m) (rankBound tab d vertex label tau : Fin m) :
+    (preliminaryAt rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r base rankBound tab d vertex label tau).FreeClosed := by
+  simp -implicitDefEqProofs [preliminaryAt,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,
     ForcingOrdinalTable.eligible_freeClosed,ForcingOrdinalTable.indices_freeClosed,
     ForcingCodeSelection.selected_freeClosed,ForcingPrincipalFilter.eqF_freeClosed,ForcingCodeLinks.links_freeClosed]
 
-theorem preliminary_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
-    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
-    (base : Fin k → Fin m) (d vertex label tau : Fin m) :
-    Project.Formula.satisfies env (preliminary rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r base d vertex label tau) ↔
-      Preliminary hM (fun i => env.bound (base i)) rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r (env.bound d) (env.bound vertex) (env.bound label) (env.bound tau) := by
-  simp only [preliminary,Preliminary,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_exists_iff,
+theorem preliminaryAt_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top labelSet r : Fin k)
+    (base : Fin k → Fin m) (rankBound tab d vertex label tau : Fin m) :
+    Project.Formula.satisfies env (preliminaryAt rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r base rankBound tab d vertex label tau) ↔
+      PreliminaryAt hM (fun i => env.bound (base i)) rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r (env.bound rankBound) (env.bound tab) (env.bound d) (env.bound vertex) (env.bound label) (env.bound tau) := by
+  simp only [preliminaryAt,PreliminaryAt,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_exists_iff,
     Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,
     GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),
     ForcingClassEvaluation.predicate_semantics (M := M),ForcingOrdinalTable.eligible_semantics hM,
     ForcingOrdinalTable.indices_semantics hM,KuratowskiZF.source_edge,ForcingCheckName.checkName_semantics (M := M),
     ForcingCodeSelection.selected_semantics hM,ForcingPrincipalFilter.eqF_semantics hM,ForcingCodeLinks.links_semantics hM]
   rfl
+
+def preliminary {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
+    (base : Fin k → Fin m) (d vertex label tau : Fin m) : Project.Formula 1 m :=
+  preliminaryAt rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r base (base rankBound) (base tab) d vertex label tau
+
+theorem preliminary_freeClosed {k m : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
+    (base : Fin k → Fin m) (d vertex label tau : Fin m) :
+    (preliminary rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r base d vertex label tau).FreeClosed :=
+  preliminaryAt_freeClosed rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r base (base rankBound) (base tab) d vertex label tau
+
+theorem preliminary_semantics (hM : FirstOrder.Theory.Models M nativeZF) {k m : Nat}
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)
+    (base : Fin k → Fin m) (d vertex label tau : Fin m) :
+    Project.Formula.satisfies env (preliminary rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r base d vertex label tau) ↔
+      Preliminary hM (fun i => env.bound (base i)) rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r (env.bound d) (env.bound vertex) (env.bound label) (env.bound tau) :=
+  preliminaryAt_semantics hM env rho I G F mul q bound labels E root w chain codes order ranks selection top labelSet r base (base rankBound) (base tab) d vertex label tau
 
 theorem preliminary_mono (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r : Fin k)

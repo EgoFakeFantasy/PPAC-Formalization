@@ -92,8 +92,10 @@ ForcingProbeRowHits.source_kernel_certificate 直接迁移 CodeCardinals.ordinal
 
 `ForcingProbeSingle.source_kernel_certificate` 是普通 nativeZF 原核中的对象闭句，沿同一内部 L 量化全部内部见证条件及可能共同加强。结论为同秩独立副本的见证条件无共同加强。秩判别、Links/Same、公共根交集和实际 Outside 排除均实际接通；不存在把选中码／原名字相等或不相容当作未消去假设的替代。源对应 `ordinalType_lower_count.single:254–283`。全行关系及最终基数计数和内部 Con 仍未完成。全量验收通过：3032 构建、34367 项声明，9 条命令／5 次 trust=0 均退出 0；全部旧足迹不变、零警告、无新增公理依赖。见 verification/probe-single-acceptance.json。
 
-## 同一行关系、实际探针副本与完整 OrdinalCount（2026-10-30）
+## 实际计数与密集总性/满射性的对象证书（2026-10-30）
 
-ForcingProbeRows 构造同一内部 R 并证明行计数下界；ForcingConcreteOrdinalCount 消费该界与已有上界，经原生 Hartogs 排除和 Cantor–Bernstein 得到完整 OrdinalCount。本批 ForcingIdealProbeCount.source_kernel_certificate 进一步消费已有理想探针及 OutsideCopies，实际产生平方索引的乘子、目标、副本族。几何、独立性、索引不可数性和同一列表固定性均从现有生产者得出，不作为新增假设。
+ForcingProbeRows、ForcingConcreteOrdinalCount 与 ForcingIdealProbeCount 已将同一内部行关系、上下界和实际探针/副本接通。本批 ForcingConcreteGermDensity.source_kernel_certificate 再消去密集总性/满射性的抽象计数前提，并实际构造同一 selection 的秩和一张内部序数表；rank 家族固定性、selection 固定性及根群包含由现有尾群协变与收集定理推出。
 
-证书仍是普通 nativeZF 中相对于同一现成内部 L 的闭句，量化全部内部条件与序数。实际终行／AllIdeals、完整秩／名字图、局部列表枚举、标签／参数及初始 outside-class 见证仍是明确源输入。具体父输入的最终装配、局部列表消费者、PP/Main 和全部内部／非标准证明码的 Con 推导未完成。本批全量验收状态见 STATUS；不得将该辅助对象定理称为最终主句。
+对象结论覆盖全部加强 delta 的内部条件、全部共同顶点/标签，以及全部具有 Works/Links 的内部名字见证。证书仍在普通 nativeZF 中相对于同一现成内部 L，不增加对象 Choice 或外部标准性前提。旧 Preliminary 语义和对象 AST 已用 trust=0 下的 rfl 检查定义等同。
+
+同一终行/AllIdeals、rank/selection 方程、尾群/全局固定名字界、局部列表/枚举/标签/参数及初始 outside-class 见证仍是明确源输入。分量 germ/selector、赋值图和具体商双射消费者、PP/Main、全部内部/非标准证明码的最终 Con 尚未完成。最新验收状态见 STATUS；密集性对象证书不是最终主句。

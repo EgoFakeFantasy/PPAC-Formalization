@@ -2382,14 +2382,14 @@ def main() -> None:
                                ('forcing_code_link_representation', 'ForcingCodeLinkRepresentation', 5),
                                ('forcing_linked_stability', 'ForcingLinkedStability', 6),
                                ('forcing_linked_working', 'ForcingLinkedWorking', 4),
-                               ('forcing_code_link_closure', 'ForcingCodeLinkClosure', 10),
+                               ('forcing_code_link_closure', 'ForcingCodeLinkClosure', 11),
                                ('forcing_code_link_covariance', 'ForcingCodeLinkCovariance', 10),
                                ('forcing_ordinal_table', 'ForcingOrdinalTable', 20),
-                               ('forcing_germ_preliminary', 'ForcingGermPreliminary', 11),
+                               ('forcing_germ_preliminary', 'ForcingGermPreliminary', 15),
                                ('forcing_germ_equality', 'ForcingGermEquality', 4),
                                ('forcing_germ_locality', 'ForcingGermLocality', 8),
                                ('forcing_germ_covariance', 'ForcingGermCovariance', 4),
-                               ('forcing_germ_density', 'ForcingGermDensity', 14),
+                               ('forcing_germ_density', 'ForcingGermDensity', 16),
                                ('forcing_chain_bound', 'ForcingChainBound', 25),
                                ('forcing_countable_tree_evaluation', 'ForcingCountableTreeEvaluation', 43),
                                ('forcing_countable_tree_algebra', 'ForcingCountableTreeAlgebra', 35),
@@ -2428,7 +2428,8 @@ def main() -> None:
                                ('forcing_probe_single', 'ForcingProbeSingle', 5),
                                ('forcing_probe_rows', 'ForcingProbeRows', 11),
                                ('forcing_concrete_ordinal_count', 'ForcingConcreteOrdinalCount', 6),
-                               ('forcing_ideal_probe_count', 'ForcingIdealProbeCount', 6)):
+                               ('forcing_ideal_probe_count', 'ForcingIdealProbeCount', 6),
+                               ('forcing_concrete_germ_density', 'ForcingConcreteGermDensity', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
