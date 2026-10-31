@@ -1,14 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：实际有向并集／任意目标 unionLift 已验收 → Square.union／future_cut
+## 当前执行入口：完整 Square.union 已验收 → 实际 intermediate／future_cut／reordered
 
-完整 restrict_selected 与实际塔阶段闭包已在 d49d110 验收，保持同一 Cell／Attachment、内部逆、四条保守包含和完整推挤，不再列作待办。
+完整 restrict_selected、实际塔阶段闭包、有向并集与任意目标 unionLift 已完成并保留复用。ConstructionUnionPushout 本批接通固定 CellReorder.Subobject.Square.union：局部推挤的唯一 lift 由原生 functionalImageOn／setFunctionFromTo 收集成内部函数族；限制与唯一性给出兼容性，实际 unionLift 给出并集推挤。结论同时保留四条实际保守包含、完整任意内部目标通用性质和唯一性，不增加对象 Choice 或目标单子限制。
 
-ConstructionSubobjectUnion 本批迁移源 directedSup、unionLift／unionLift_comp：直接复用原生集合函数范围与 KP 并集，构造同一终端单子内的精确有向并集，保留完整保守子对象；兼容同态的图直接取集合并，并证明任意内部目标上的同态、逐阶段方程及唯一性。没有把目标改成左消去单子或保守映射，也未选择阶段代表。既有 exists_submonoid 提供乘法图、包含及条件并。
+本批完整验收：3082 项构建、35651 项声明、33 项新增声明、1 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35618 项旧声明依赖全部不变，2637 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/union-pushout-acceptance.json。
 
-本批完整验收：3081 项构建、35618 项声明、41 项新增声明、3 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35577 项旧声明依赖全部不变，2636 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/subobject-union-acceptance.json。
-
-**仍在原第 8 阶段。** 下一消费者是 Square.union：从各局部推挤的唯一 lift 收集同一内部函数族并消费本批 unionLift。复用现成 exists_functionalImageOn／exists_setFunctionFromTo_of_denote，不另建选择或收集设施。future_cut 的实际中间附件装配及完整归纳、reordered、后续 germ-selector／OrbitAssignments／具体商双射仍待接通；现有 identity／paste／cancel_left／map_apex／change_left 保留复用。第 9–11 阶段、最终全部内部／非标准证明码的 Con 蕴含和原 Comparator 未完成。
+**仍在原第 8 阶段。** Square.union 不再列作待办。下一消费者是 future_cut：接实际中间 cell 基底变换／realization 与完整归纳，再接 reordered、germ-selector／OrbitAssignments／具体商双射。既有 identity／paste／cancel_left／map_apex／change_left、完整 restrict_selected 和本批 union 均直接复用；这些接口本身不冒充完整 future_cut。第 9–11 阶段、最终全部内部／非标准证明码的 Con 蕴含和原 Comparator 未完成。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -41,7 +39,7 @@ ConstructionSubobjectUnion 本批迁移源 directedSup、unionLift／unionLift_c
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集与任意目标 unionLift 已验收 | 接各局部推挤的唯一 lift 函数族并完成 Square.union；继续实际中间附件和 future_cut 完整归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 Square.union 已验收；继续实际中间附件和 future_cut 完整归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

@@ -13313,4 +13313,8 @@ example {m : Nat} (K Domains Legs N lift i D f inc : Fin m) :
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSubobjectUnion.factorizationSentence K Domains Legs N lift i D f inc)) :=
   ConstructionSubobjectUnion.factorization_kernel_certificate K Domains Legs N lift i D f inc
 
+example {m : Nat} (V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia ib ic idD : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionUnionPushout.unionSentence V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia ib ic idD)) :=
+  ConstructionUnionPushout.union_kernel_certificate V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia ib ic idD
+
 end PPAC.Migration.Step4Checks
