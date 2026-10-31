@@ -2477,7 +2477,8 @@ def main() -> None:
                                ('construction_subobject_union', 'ConstructionSubobjectUnion', 41),
                                ('construction_union_pushout', 'ConstructionUnionPushout', 33),
                                ('construction_cell_base_change', 'ConstructionCellBaseChange', 22),
-                               ('construction_intermediate', 'ConstructionIntermediate', 16)):
+                               ('construction_intermediate', 'ConstructionIntermediate', 16),
+                               ('construction_future_family', 'ConstructionFutureFamily', 52)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

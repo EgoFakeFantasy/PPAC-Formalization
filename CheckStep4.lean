@@ -13337,4 +13337,8 @@ example {m : Nat} (w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib i
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionIntermediate.intermediateSentence w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib ic idD ie)) :=
   ConstructionIntermediate.intermediate_kernel_certificate w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib ic idD ie
 
+example {m : Nat} (I R V GV e A PA GA ia S retained : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureFamily.constructionSentence I R V GV e A PA GA ia S retained)) :=
+  ConstructionFutureFamily.construction_kernel_certificate I R V GV e A PA GA ia S retained
+
 end PPAC.Migration.Step4Checks
