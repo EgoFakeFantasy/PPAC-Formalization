@@ -358,6 +358,8 @@ ConstructionCellRestriction 本批普通 nativeZF 原核证书覆盖完整同一
 
 ConstructionSubobjectUnion 的 directedSup／lift／factorization 普通 nativeZF 原核句子量化全部内部集合索引与任意目标图；兼容同态图的集合并、逐阶段复合方程和唯一性均实际证明。目标不附加单射、保守性或左消去条件。此为源 future_cut 极限分支所需的并集接口；局部 lift 函数族与完整 Square.union 现由 ConstructionUnionPushout 消费，完整 future_cut 尚未完成。
 
-ConstructionUnionPushout.union_kernel_certificate 在普通 nativeZF 原核中证明同一终端单子内完整 Square.union：四条保守包含、任意内部目标的 lift、两条实际复合方程与唯一性。局部 lift 族通过已证明的纯公式总唯一关系和原生函数构造器取得，不把宿主选择函数当作内部集合，不假设对象 Choice。该源端点已验收；实际 intermediate／future_cut／reordered 和最终内部 Con 保持未完成。
+ConstructionUnionPushout.union_kernel_certificate 在普通 nativeZF 原核中证明同一终端单子内完整 Square.union：四条保守包含、任意内部目标的 lift、两条实际复合方程与唯一性。局部 lift 族通过已证明的纯公式总唯一关系和原生函数构造器取得，不把宿主选择函数当作内部集合，不假设对象 Choice。该源端点和随后 intermediate 均已验收；完整 future_cut／reordered 和最终内部 Con 保持未完成。
 
 ConstructionCellBaseChange 的 mapped／realization／attachment、ConstructionIntermediate 的 apexSup／intermediate 和 ConstructionFutureFamily 的实际四函数族构造均已取得普通 nativeZF 原核证书并通过全量验收。四个族由对象存在量词绑定为集合，保留精确交集、普通生成上确界、乘法图类型及单调性；对象句没有断言所有未来上确界已是保守子对象。其保守闭包／完整 Square 仍须由完整 future_cut 内部归纳证明，reordered 和最终内部 Con 亦未完成。
+
+ConstructionFutureCut 的 initial／selected／omitted／limit 四个普通 nativeZF 原核证书现已通过全量验收。selected 实际消费 intermediate 并粘合，apex_sup 保留普通生成上确界；omitted 从实际 Cover 和无保留 NewAt 推出交集相等；limit 从实际内部函数族、LocalSquares、单调性和保留侧连续并集产生另一侧的实际并集及完整 Square。LocalSquares 的逐阶段归纳来源、Timeline 前段区间／连续性及实际 selected 图对齐仍须在完整内部归纳中消去。不能将这四条带明确输入的分支句子称为完整 future_cut，更不能称为最终内部 Con。

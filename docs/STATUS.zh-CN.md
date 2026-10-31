@@ -1,16 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：实际 future_cut 集合族已验收 → 完整内部归纳／reordered
+## 当前执行入口：future_cut 四个分支的对象装配已验收 → 实际输入与内部归纳接线
 
-完整 restrict_selected、Square.union、Cell.map／realization／attachment 和 Square.intermediate 均已验收并保留复用。ConstructionFutureFamily 本批为源 future_cut 的极限步骤构造四个实际内部函数族：保留集合与原阶段的精确交集、该交集与固定初始阶段的普通生成上确界，以及两侧精确有类型乘法图；两侧载体单调性同时证明。乘法图保留 Representatives／MapsTo，排除多余行。
+ConstructionFutureCut 直接消费已验收的 intermediate／paste、of_id、typed multiplication families、directedSup／union_square，完成四条普通 nativeZF 原核对象句子：初始方块及精确上确界；选中后继的实际 intermediate cell／Attachment 和粘合方块；省略后继下两个实际保留交集的相等；从实际内部有向族及逐阶段方块取得并集方块和精确普通生成上确界。没有为推送的目标添加左消去或保守性条件，没有选择一族宿主见证。
 
-所有值由现成分离、普通闭包及乘法限制生产者构造；总唯一关系经原生 functionalImageOn／setFunctionFromTo 收集。没有使用对象 Choice、宿主选择函数或外部良基性，也没有把普通上确界预先视作保守子对象。
+本批完整验收：3086 项构建、35765 项声明、24 项新增声明、4 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35741 项旧声明依赖全部不变，2641 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/future-cut-acceptance.json。
 
-本批完整验收：3085 项构建、35741 项声明、52 项新增声明、1 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35689 项旧声明依赖全部不变，2640 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/future-family-acceptance.json。
-
-**仍在原第 8 阶段，完整 future_cut 未完成。** 下一步以已有内部集合良序和纯公式定义的反例集合执行归纳：初始分支用 of_id，选中后继用 restrict_selected／intermediate／paste，省略后继用相同交集；极限分支将本批四个实际族限制到前段区间，再消费已有 union_square。尚须证明每个未来上确界的保守闭包及完整 Square，不能把本批族构造视为整个极限分支或归纳完成。随后仍有 reordered、germ-selector／OrbitAssignments／具体商双射、第 9–11 阶段、最终全部内部／非标准证明码的 Con 蕴含及原 Comparator。
-
-固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
+**仍在原第 8 阶段，完整 future_cut 未完成。** 已完成的是源分支装配；不能将“给定 LocalSquares 和连续并集输入”的极限定理说成已消去归纳假设。下一步沿同一源证明完成：保留现有 restrict_selected 生产者已经构造的乘法图类型见证并对齐同一组 Base；从 Timeline 构造实际前段区间、限制四个集合族并证明切割连续性；以纯公式定义反例集合，调用现有内部良序最小元完成归纳。之后仍有 reordered、germ-selector／OrbitAssignments／具体商双射、第 9–11 阶段、全部内部／非标准证明码的最终 Con 蕴含及原 Comparator。不重做现成 L／全模式、递归、Proof/Sat 或原核回传。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -41,7 +37,7 @@
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 Square.union、Cell.map／realization／attachment／intermediate 及实际四函数族已验收；继续 future_cut 完整内部归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 Square.union、Cell.map／realization／attachment／intermediate、实际四函数族及 future_cut 四个分支装配已验收；继续实际输入对齐、前段连续性和完整内部归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

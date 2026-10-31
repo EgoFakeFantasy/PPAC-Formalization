@@ -13341,4 +13341,21 @@ example {m : Nat} (I R V GV e A PA GA ia S retained : Fin m) :
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureFamily.constructionSentence I R V GV e A PA GA ia S retained)) :=
   ConstructionFutureFamily.construction_kernel_certificate I R V GV e A PA GA ia S retained
 
+
+example {m : Nat} (V GV e A C PA PC GA GC ia ic : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureCut.initialSentence V GV e A C PA PC GA GC ia ic)) :=
+  ConstructionFutureCut.initial_kernel_certificate V GV e A C PA PC GA GC ia ic
+
+example {m : Nat} (w zero V GV e A B C D E T R PA PB PC PD PE PT PR GA GB GC GD GE GT GR ia ib ic idD ie it ir : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureCut.selectedSentence w zero V GV e A B C D E T R PA PB PC PD PE PT PR GA GB GC GD GE GT GR ia ib ic idD ie it ir)) :=
+  ConstructionFutureCut.selected_kernel_certificate w zero V GV e A B C D E T R PA PB PC PD PE PT PR GA GB GC GD GE GT GR ia ib ic idD ie it ir
+
+example {m : Nat} (V I R bottom S retained i j A B : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureCut.omittedSentence V I R bottom S retained i j A B)) :=
+  ConstructionFutureCut.omitted_kernel_certificate V I R bottom S retained i j A B
+
+example {m : Nat} (V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureCut.limitSentence V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic)) :=
+  ConstructionFutureCut.limit_kernel_certificate V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic
+
 end PPAC.Migration.Step4Checks
