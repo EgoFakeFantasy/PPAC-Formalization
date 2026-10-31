@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：具体 countable_germs 已接通 → 实际 selector
+## 当前执行入口：实际尾探测函数及可数坐标集 → 原 Good 条件扩张
 
-ConstructionCountableGerms 直接消费已有饱和递归的零阶段和同一展开阶段的 Bottoms，得到真实底阶段是内部 ω 初始底座的像；复用已有序数像基数界证明其可数性。实际 cell 家族、阶段闭包和首次出现索引全部由现成生产者构造，再调用完整 countable_quotient_of_cells。结论包含整个 germ 商、投影、精确尾等价判据和商到内部 ω 的单射；没有保留可数底、下降门或重排假设。
+具体 countable_germs 已于 90186f4 完整验收。本批 ConstructionGermDetectors 复用既有 uniformize_formula_l，构造全体非单位 coset × 内部 ω 上的真实探测函数；证明每点位于对应链尾且被代表移动，非单位判据不依赖代表，尾固定及同类代表的作用最终一致。
 
-最终接口是 nativeZF 中已有 L 解释下的原核证书，输入为已完成具体饱和构造的 Context／Recursive／Matrix／terminal Row，以及任意实际分量链。未重建 Base、L、完整公理模式、递归或 Proof/Sat。
+ConstructionGermDetectorSites 消费整个商的可数性，复用原积／像基数界构造全部商代表作用下的实际可数坐标集，并证明每个稳定子元素的全部足够晚探测点之像均落在同一坐标集内。未枚举可能不可数的全稳定子。两个端点均为 nativeZF 中已有 L 解释的原核证书。
 
-本批全量验收通过：3097 个构建任务、35949 项声明、2652 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；35943 项旧声明依赖全部不变，新增 6 项声明无新增公理依赖。验收记录：verification/concrete-germs-acceptance.json。上一批 countable_quotient_of_cells 的全量验收和清理后编译已通过，本地提交 6d619a6。
+本批全量验收通过：3099 个构建任务、36006 项声明、2654 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；35949 项旧依赖足迹全部不变，新增 57 项声明无新增公理依赖。记录见 verification/germ-detectors-acceptance.json。没有修改旧证明数学正文或新增公理依赖。
 
-**仍在原第 8 阶段。** 下一项为原 component_selector_dense／selected_covariant 的实际输入接线，继而 OrbitAssignments 和具体商双射；第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
+**仍在原第 8 阶段。** 下一项为源 detector_separates、Complete/Good 条件扩张和最小区分界 selector；继而 OrbitAssignments 与具体商双射。具体 countable_germs、Base、L、完整公理模式、递归和 Proof/Sat 均已有，不重做。第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -39,7 +39,7 @@ ConstructionCountableGerms 直接消费已有饱和递归的零阶段和同一�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；下一项为实际 selector。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；下一项为原 Good 条件扩张及 selector。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

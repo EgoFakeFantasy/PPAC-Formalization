@@ -929,3 +929,5 @@ import PPAC.Migration.ConstructionCountableAlignments
 import PPAC.Migration.ConstructionGermCosets
 import PPAC.Migration.ConstructionCountableQuotient
 import PPAC.Migration.ConstructionCountableGerms
+import PPAC.Migration.ConstructionGermDetectors
+import PPAC.Migration.ConstructionGermDetectorSites

@@ -13405,4 +13405,14 @@ example {m : Nat} (w Q values top mul unit mark H C zero one u K mu B history P 
       (ConstructibleGround.relative (ConstructionCountableGerms.constructionSentence w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain))) :=
   ConstructionCountableGerms.construction_kernel_certificate w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain
 
+example {m : Nat} (w D I mul q zero root vertices chain H Q : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermDetectors.constructionSentence w D I mul q zero root vertices chain H Q))) :=
+  ConstructionGermDetectors.construction_kernel_certificate w D I mul q zero root vertices chain H Q
+
+example {m : Nat} (w D I mul q zero root vertices chain H Q : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermDetectorSites.constructionSentence w D I mul q zero root vertices chain H Q))) :=
+  ConstructionGermDetectorSites.construction_kernel_certificate w D I mul q zero root vertices chain H Q
+
 end PPAC.Migration.Step4Checks
