@@ -935,3 +935,6 @@ import PPAC.Migration.ConstructionGermSeparation
 import PPAC.Migration.ConstructionCohenFill
 import PPAC.Migration.ConstructionGermComplete
 import PPAC.Migration.ConstructionCohenFusion
+import PPAC.Migration.ConstructionCohenSeparation
+import PPAC.Migration.ConstructionCohenPairSeparation
+import PPAC.Migration.ConstructionGermBoundedRows
