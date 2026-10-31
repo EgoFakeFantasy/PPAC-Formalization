@@ -13374,4 +13374,12 @@ example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained a b 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureInduction.futureCutSentence w zero one V GV e I R bottom S index cells deps retained a b B A C PA PC GA GC ia ic)) :=
   ConstructionFutureInduction.futureCut_kernel_certificate w zero one V GV e I R bottom S index cells deps retained a b B A C PA PC GA GC ia ic
 
+example {m : Nat} (w zero one V GV e I R bottom top S index cells deps retained : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionReordered.constructionSentence w zero one V GV e I R bottom top S index cells deps retained)) :=
+  ConstructionReordered.construction_kernel_certificate w zero one V GV e I R bottom top S index cells deps retained
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained kappa traces Indices A r history outerF : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionReordered.actualSentence w zero one V GV e I R bottom S index cells deps retained kappa traces Indices A r history outerF)) :=
+  ConstructionReordered.actual_kernel_certificate w zero one V GV e I R bottom S index cells deps retained kappa traces Indices A r history outerF
+
 end PPAC.Migration.Step4Checks

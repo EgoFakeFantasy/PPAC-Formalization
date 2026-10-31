@@ -2482,7 +2482,9 @@ def main() -> None:
                                ('construction_future_cut', 'ConstructionFutureCut', 24),
                                ('construction_future_limit', 'ConstructionFutureLimit', 26),
                                ('construction_future_selected', 'ConstructionFutureSelected', 16),
-                               ('construction_future_induction', 'ConstructionFutureInduction', 9)):
+                               ('construction_future_induction', 'ConstructionFutureInduction', 9),
+                               ('construction_future_tower', 'ConstructionFutureTower', 7),
+                               ('construction_reordered', 'ConstructionReordered', 24)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

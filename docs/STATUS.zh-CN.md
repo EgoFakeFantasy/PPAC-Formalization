@@ -1,22 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：完整 future_cut 原核证书已取得 → future/reordered
+## 当前执行入口：完整 future/reordered 原核证书已取得 → countable_reordering 与 germ-selector
 
-ConstructionFutureSelected 保留现成 StepCell/from_attached 和 RestrictedCellPushout.Result 已经证明的乘法图类型见证，直接消费同一实际 selected cell 的 Base、Attachment 与完整 Square；没有新增调用者数学前提。
+ConstructionFutureTower 直接消费已验收的完整 future_cut，构造同一内部索引上的实际 future 载体与乘法函数族。每个值是“原阶段与保留子对象的普通生成上确界”，并已证明全部保守阶段、单调性、终值及内部连续性；不另取保守闭包。
 
-ConstructionFutureInduction 将 Good 写成纯成员公式，以原生 Separation 构造内部反例集合，再调用同一 Timeline 的内部良序最小元。初始、selected、omitted 和实际极限四个分支均已接入，严格前段归纳假设全部消去。最终 future_cut 自行构造四个辅助函数族，取得同一个普通生成上确界的保守 Base 与完整任意目标推送方块；没有外部 WellFounded、宿主选择函数族或目标结论前提。
+ConstructionReordered 从已有 Probe/Merger 记录和现成 inverse_hom 恢复原 attachment；选中 cell 给出同一 future 载体，省略的非恒等 cell 通过已有推送方块消去及 attachment 传输。完整输出含原索引的相邻步和同一索引的恒等步，以及原底阶段包含于 retained 时的精确新底。actual_top 直接消费既有 BlockIndex/FlatStages，消去了顶点成员性、最大性及终值输入，没有重建索引。
 
-对象句为 futureCutSentence，证书为 ConstructionFutureInduction.futureCut_kernel_certificate，背景为完整 nativeZF，推导核为原 FirstOrder.Derives。本批全量验收通过：3089 项构建、35820 项声明（新增 29 项）、9 条命令／5 次 trust=0、零警告；35791 项旧声明依赖全部不变，2644 项文件哈希和 75 项固定源哈希匹配，无新增公理依赖。清理本批两个临时文件后再次编译通过。记录见 verification/future-induction-acceptance.json；这不等于全工程最终 Con 已完成。
+对象句为 constructionSentence／actualSentence，均由原 FirstOrder.Derives 在完整 nativeZF 中证明。本批全量验收通过：3091 个构建任务、35851 项声明、2646 个文件哈希、0 条警告；原有 35820 项声明依赖未变，新增 31 项未引入新公理依赖。两个临时文件清理后再次构建通过。记录见 verification/reordered-acceptance.json。
 
-**仍在原第 8 阶段；完整 future_cut 已证明，第 8 阶段未整体完成。** 下一源消费者是 CellReorder.future/future_eq/future_square/future_mono/future_selected/future_omitted_square/reordered，然后 germ-selector／OrbitAssignments／具体商双射。第 9–11 阶段、全部内部／非标准证明码的最终 Con 蕴含及原 Comparator 尚未完成。现成 L／全模式、递归、Proof/Sat 和原核回传继续复用。
-
-| a≤i<b} 及反身序关系，限制四个现有载体／乘法函数族，并由内部线性序和 Timeline 连续性证明保留切割的精确并集。消费已验收的 ConstructionFutureCut.limit／Square.union 后，用普通生成上确界唯一性将所得保守子对象识别为同一个 Futures(b)。没有使用外部 WellFounded、宿主 max 或一族宿主选择见证。
-
-极限分支的对象句只保留正常的严格前段归纳假设 EarlierSquares（a≤i<b，不含 b）；前段集合、限制图、单调性、非空性和切割连续性均已实际证明，不再作为待做或调用者额外输入。此前初始、选中／省略后继的对象分支装配继续复用。
-
-本批完整验收：3087 项构建、35791 项声明、26 项新增声明、1 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35765 项旧声明依赖全部不变，2642 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/future-limit-acceptance.json。
-
-**仍在原第 8 阶段，完整 future_cut 未完成。** 下一步只保留两项实际接线工作：保留 StepCell.from_attached 和 RestrictedCellPushout.Result 已经构造的乘法图类型见证，对齐同一组 Base 与 selected 方块；以纯公式定义反例集合，调用现有内部良序最小元，结合已验收各分支完成归纳。之后仍有 reordered、germ-selector／OrbitAssignments／具体商双射、第 9–11 阶段、全部内部／非标准证明码的最终 Con 蕴含及原 Comparator。现成 L／全模式、递归、Proof/Sat 和原核回传继续复用。
+**仍在原第 8 阶段；future_cut 和完整 future/reordered 已证明，第 8 阶段未整体完成。** 下一项是将现成可数依赖闭包结果接到 countable_reordering，再进入 germ-selector／OrbitAssignments／具体商双射。可数 hull 本身已存在且不重做。第 9–11 阶段、全部内部／非标准证明码的最终 Con 蕴含及原 Comparator 尚未完成。现成 L／全模式、递归、Proof/Sat 和原核回传继续复用。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -47,7 +39,7 @@ ConstructionFutureInduction 将 Good 写成纯成员公式，以原生 Separatio
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellReorder.future/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 已取得原核证书：实际 selected 接线、前段／限制族／连续性及完整内部归纳均已消去；下一项接 future/reordered。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | CellReorder.countable_reordering → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；下一项将现成可数 hull 接入 countable_reordering。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
