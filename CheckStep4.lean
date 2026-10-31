@@ -13301,4 +13301,16 @@ example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained i x 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellRestriction.selectedActualSentence w zero one V GV e I R bottom S index cells deps retained i x Q values top baseN baseMul baseUnit mark H C K mu B history P outerF kappa markV HV CV terminalLegs baseV traces)) :=
   ConstructionCellRestriction.selectedActual_kernel_certificate w zero one V GV e I R bottom S index cells deps retained i x Q values top baseN baseMul baseUnit mark H C K mu B history P outerF kappa markV HV CV terminalLegs baseV traces
 
+example {m : Nat} (V GV e K E Domains : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSubobjectUnion.directedSupSentence V GV e K E Domains)) :=
+  ConstructionSubobjectUnion.directedSup_kernel_certificate V GV e K E Domains
+
+example {m : Nat} (V GV e K E Domains Muls Legs U GU N GN unitN : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSubobjectUnion.liftSentence V GV e K E Domains Muls Legs U GU N GN unitN)) :=
+  ConstructionSubobjectUnion.lift_kernel_certificate V GV e K E Domains Muls Legs U GU N GN unitN
+
+example {m : Nat} (K Domains Legs N lift i D f inc : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSubobjectUnion.factorizationSentence K Domains Legs N lift i D f inc)) :=
+  ConstructionSubobjectUnion.factorization_kernel_certificate K Domains Legs N lift i D f inc
+
 end PPAC.Migration.Step4Checks

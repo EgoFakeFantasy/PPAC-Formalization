@@ -355,3 +355,5 @@ ConstructionSelectedCellRestriction.base_kernel_certificate 在原 nativeZF 中�
 ConstructionRestrictedCellSimulation.probe_kernel_certificate／merger_kernel_certificate 在普通 nativeZF 原核中构造原像完整呈现及到同一原呈现的实际保守模拟和推挤。原子 Merger 处方的完整表良构性从已有 mapped graph 保留到固定 cell；没有新增调用者数学假设。ConstructionRestrictedCellPushout.work_kernel_certificate 构造精确范围上的乘法、内部逆和限制包含，并通过既有 map_apex/change_left 传输全体内部目标的通用性质。三个端点均为中间对象推导；尚待固定 cell 分支解包、完整 Cell/Attachment 类型与包含同态的统一装配，不能据此把完整 restrict_selected 或最终 Con 标为完成。
 
 ConstructionCellRestriction 本批普通 nativeZF 原核证书覆盖完整同一固定 cell 的 restrict_selected：原呈现 Cell／Attachment、同构逆与旧元素方程、四条保守包含和 IsPushout。actualStages 从同一实际 Trace／Matrix／Row 消去阶段闭包前提，selectedActual 直接消费实际记录。此为原第 8 阶段的源定理迁移；future_cut／reordered 与最终内部 Con 未完成。
+
+ConstructionSubobjectUnion 的 directedSup／lift／factorization 普通 nativeZF 原核句子量化全部内部集合索引与任意目标图；兼容同态图的集合并、逐阶段复合方程和唯一性均实际证明。目标不附加单射、保守性或左消去条件。此为源 future_cut 极限分支的必要消费者；Square.union 的局部 lift 函数族装配与完整 future_cut 尚未完成。

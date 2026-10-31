@@ -2473,7 +2473,8 @@ def main() -> None:
                                ('construction_selected_cell_restriction', 'ConstructionSelectedCellRestriction', 13),
                                ('construction_restricted_cell_simulation', 'ConstructionRestrictedCellSimulation', 16),
                                ('construction_restricted_cell_pushout', 'ConstructionRestrictedCellPushout', 9),
-                               ('construction_cell_restriction', 'ConstructionCellRestriction', 40)):
+                               ('construction_cell_restriction', 'ConstructionCellRestriction', 40),
+                               ('construction_subobject_union', 'ConstructionSubobjectUnion', 41)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
