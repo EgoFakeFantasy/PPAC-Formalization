@@ -960,3 +960,4 @@ import PPAC.Migration.ForcingAssignmentInvariant
 import PPAC.Migration.ForcingAssignmentCosets
 import PPAC.Migration.ForcingGermCorrected
 import PPAC.Migration.ForcingGermCorrectedStability
+import PPAC.Migration.ForcingGermCorrectedCongruence

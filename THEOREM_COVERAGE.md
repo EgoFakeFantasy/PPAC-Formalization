@@ -1003,3 +1003,15 @@ Full acceptance passed: 3128 build jobs, 36475 audited declarations, 2683 hashed
 files, nine commands including five trust=0 checks, zero warnings. All 36467 prior
 footprints are unchanged, with no new axiom dependencies. Still stage 8; remaining Corrected laws,
 StableAt, orbit assignments, complete quotient bijection and final internal Con remain open.
+
+
+`ForcingGermCorrectedCongruence.congr_kernel_certificate` migrates fixed
+StableSelectors.corrected_congr:469, consuming the root_eq_symmetry:458 step
+through the existing `eqF_transport_iff`. It constructs the replacement name's
+actual inverse action and consumes existing HS preservation, keeping the same
+Selected representative. The endpoint is ordinary original `Derives nativeZF []`
+for the pure set sentence, with no new object Choice premise. The source concrete
+monoid, presentation, group/filter, vertex code and HS name inputs remain explicit.
+Full acceptance passed: 3129 build jobs, 36479 audited declarations, 2684 hashed
+files, nine commands including five trust=0 checks, zero warnings. All 36475 prior
+footprints are unchanged and there are no new axiom dependencies. This does not prove corrected_eq_iff, complete orbit assignment or Con.

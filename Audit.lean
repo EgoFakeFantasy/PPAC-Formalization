@@ -37087,3 +37087,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedStability.restrictSentence
 #print axioms PPAC.Migration.ForcingGermCorrectedStability.restrict_models
 #print axioms PPAC.Migration.ForcingGermCorrectedStability.restrict_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedCongruence.corrected_congr
+#print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congrSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congr_models
+#print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congr_kernel_certificate

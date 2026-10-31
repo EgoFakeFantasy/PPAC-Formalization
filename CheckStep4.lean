@@ -13686,4 +13686,8 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w cha
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingGermCorrectedStability.restrictSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one d vertex vertexT n label tau)) :=
   ForcingGermCorrectedStability.restrict_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one d vertex vertexT n label tau
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingGermCorrectedCongruence.congrSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma)) :=
+  ForcingGermCorrectedCongruence.congr_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma
+
 end PPAC.Migration.Step4Checks
