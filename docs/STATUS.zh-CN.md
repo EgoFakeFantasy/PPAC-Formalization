@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：StableAt 置换已接通 → corrected_stable／OrbitAssignments
+## 当前执行入口：corrected_stable 已接通 → corrected_total／corrected_onto
 
-本批迁移固定源 StableAt:581、stableAt_permute:589、stableAt_permute_iff:619。纯对象公式保留同一个规范局部名字、完整 isClass 强迫和每个内部更强条件下的精确 availability 理想。证明实际搬移支撑像／固定子群／名字，并把每个更强条件经 Cohen 双射拉回；反向使用已有逆作用。
+本批迁移固定源 OrbitAssignments.corrected_stable:30–40。实际取出 Corrected 的逆代表元，构造逆移后的局部名字、精确支撑及根条件，消费已完成的 preliminary_stable，再经已验收的 StableAt.permute 返回原条件和原顶点；没有重做稳定性基础。
 
-最终接口消费真实 labelSet 和 bound，导出标签固定性与界支撑性，从源 μ 无限基数条件导出 ω 小性和滤子正规性，再从源 E 支撑导出 E 固定性。普通 nativeZF 原核闭句及 10 项声明已通过定向编译／trust=0，无新增公理依赖；本批全量验收已通过：3134 个构建任务、36510 项声明审计、2689 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36500 项旧依赖保持不变。
+原核端点位于同一既有内部 L 相对的 nativeZF，5 项声明已通过定向编译／trust=0，无新增公理依赖。L 收尾正文沿用现成证明，仅有三个输出端点替换并逐项核对；本批全量验收已通过：3135 个构建任务、36515 项声明审计、2690 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36510 项旧依赖保持不变。StableAt 本体及双向置换已于 e7ac54e 完整验收。
 
-**仍在原第 8 阶段。** 下一个真实消费者为 OrbitAssignments.corrected_stable:30，随后继续 OrbitAssignments → assignmentGraph_bijection → 具体商双射。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
+**仍在原第 8 阶段。** 下一段为固定源 corrected_total:61／corrected_onto:88，随后完成 OrbitAssignments → assignmentGraph_bijection → 具体商双射。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -17,7 +17,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围 | 统一 conditionSelector／Selected 已接通；具体 component_selector_dense 已接通；StableAt 已接通；OrbitAssignments（先 corrected_stable）、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收 | OrbitAssignments（首先 corrected_total／corrected_onto）、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

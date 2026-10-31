@@ -37128,3 +37128,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingStableAt.permutationSentence
 #print axioms PPAC.Migration.ForcingStableAt.permutation_models
 #print axioms PPAC.Migration.ForcingStableAt.permutation_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedStable.stable_reindex
+#print axioms PPAC.Migration.ForcingGermCorrectedStable.corrected_stable
+#print axioms PPAC.Migration.ForcingGermCorrectedStable.stableSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedStable.stable_models
+#print axioms PPAC.Migration.ForcingGermCorrectedStable.stable_kernel_certificate

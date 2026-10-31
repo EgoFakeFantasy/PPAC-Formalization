@@ -13716,4 +13716,8 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul act ai I K B w mu pi inv c on
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingStableAt.permutationSentence rho G F mul act ai I K B w mu pi inv c one bound labels E q ac d movedD vertex movedVertex tau movedTau labelMap top bit Hq)) :=
   ForcingStableAt.permutation_kernel_certificate rho G F mul act ai I K B w mu pi inv c one bound labels E q ac d movedD vertex movedVertex tau movedTau labelMap top bit Hq
 
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d tau codes order ranks selection rankBound labelSet tab initialRoot label germGroup quotient nonidentity high detector patternOrder : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingGermCorrectedStable.stableSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d tau codes order ranks selection rankBound labelSet tab initialRoot label germGroup quotient nonidentity high detector patternOrder))) :=
+  ForcingGermCorrectedStable.stable_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero root vertices chain names vertex d tau codes order ranks selection rankBound labelSet tab initialRoot label germGroup quotient nonidentity high detector patternOrder
+
 end PPAC.Migration.Step4Checks

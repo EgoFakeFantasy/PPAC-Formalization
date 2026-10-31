@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：StableAt 置换已接通 → corrected_stable／OrbitAssignments
+## 当前执行入口：corrected_stable 已接通 → corrected_total／corrected_onto
 
-本批迁移固定源 StableAt:581、stableAt_permute:589、stableAt_permute_iff:619。纯对象公式保留同一个规范局部名字、完整 isClass 强迫和每个内部更强条件下的精确 availability 理想。证明实际搬移支撑像／固定子群／名字，并把每个更强条件经 Cohen 双射拉回；反向使用已有逆作用。
+本批迁移固定源 OrbitAssignments.corrected_stable:30–40。实际取出 Corrected 的逆代表元，构造逆移后的局部名字、精确支撑及根条件，消费已完成的 preliminary_stable，再经已验收的 StableAt.permute 返回原条件和原顶点；没有重做稳定性基础。
 
-最终接口消费真实 labelSet 和 bound，导出标签固定性与界支撑性，从源 μ 无限基数条件导出 ω 小性和滤子正规性，再从源 E 支撑导出 E 固定性。普通 nativeZF 原核闭句及 10 项声明已通过定向编译／trust=0，无新增公理依赖；本批全量验收已通过：3134 个构建任务、36510 项声明审计、2689 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36500 项旧依赖保持不变。
+原核端点位于同一既有内部 L 相对的 nativeZF，5 项声明已通过定向编译／trust=0，无新增公理依赖。L 收尾正文沿用现成证明，仅有三个输出端点替换并逐项核对；本批全量验收已通过：3135 个构建任务、36515 项声明审计、2690 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36510 项旧依赖保持不变。StableAt 本体及双向置换已于 e7ac54e 完整验收。
 
-**仍在原第 8 阶段。** 下一个真实消费者为 OrbitAssignments.corrected_stable:30，随后继续 OrbitAssignments → assignmentGraph_bijection → 具体商双射。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
+**仍在原第 8 阶段。** 下一段为固定源 corrected_total:61／corrected_onto:88，随后完成 OrbitAssignments → assignmentGraph_bijection → 具体商双射。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收 | 完整 restrict_selected／实际阶段闭包／Square.union／Cell.map／realization／attachment／intermediate 及完整 future_cut 内部归纳已接通；可数重排及实际索引有限下降已接通；完整 countable_quotient_of_cells 与具体 countable_germs 已接通；统一 conditionSelector／Selected 已接通；具体 component_selector_dense 已接通；继续 StableAt／OrbitAssignments／具体商双射；不重造已完成底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收 | OrbitAssignments（首先 corrected_total／corrected_onto）、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
