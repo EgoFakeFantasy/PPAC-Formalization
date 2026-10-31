@@ -954,8 +954,8 @@ Full verification passed: 3124 build jobs, 36440 audited declarations, 2679 file
 hashes, nine commands including five trust=0 checks, zero warnings. All 36432
 prior declaration footprints are unchanged; eight new declarations add no new
 axiom dependencies. Bidirectional tail invariance and actual coset shifts are
-now certified by the modules below. Corrected selector packaging remains
-pending; this is not the final internal consistency implication.
+now certified by the modules below. Corrected selector packaging is also
+certified below; this is not the final internal consistency implication.
 
 ## Source tail invariance and actual coset shifts (stage 8, 2026-11-01)
 
@@ -970,5 +970,22 @@ Both modules have L-relative nativeZF original-kernel endpoints. Full batch
 verification passed: 3126 build jobs, 36451 declarations, 2681 file hashes,
 nine commands including five trust=0 checks, zero warnings. The 36440 prior
 footprints are unchanged and the eleven added declarations introduce no new
-axiom dependencies. Corrected/corrected_selected packaging and downstream
-orbit assignment remain pending; the final internal Con theorem remains unproved.
+axiom dependencies. Corrected/corrected_selected is now certified below.
+Remaining Corrected laws and orbit assignment are pending; final internal Con
+remains unproved.
+
+## Source Corrected and actual selector (stage 8, 2026-11-01)
+
+`ForcingGermCorrected` migrates StableSelectors.Corrected:413,
+corrected_selected:419 and corrected_common:446. Shift and Corrected have pure
+object formulas with exact semantics. Corrected retains the original Selected
+class predicate and all actual inverse actions. The existing Selector graph
+supplies class uniqueness; class_eq_iff and the proved actual shift_eq discharge
+representative independence. selected_kernel_certificate is L-relative nativeZF;
+common_kernel_certificate is ordinary nativeZF, using the actual component group.
+Both are original-kernel derivations. Full batch verification passed: 3127 build
+jobs, 36467 declarations, 2682 file hashes, nine commands including five trust=0
+checks, zero warnings. All 36451 prior footprints are unchanged; the sixteen new
+declarations introduce no new axiom dependencies.
+The remaining Corrected laws, orbit assignment, actual quotient bijection,
+model assembly and final internal consistency implication remain incomplete.
