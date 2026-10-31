@@ -35929,3 +35929,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionMappedMerger.constructionSentence
 #print axioms PPAC.Migration.ConstructionMappedMerger.construction_models
 #print axioms PPAC.Migration.ConstructionMappedMerger.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMappedProbe.source_presentation
+#print axioms PPAC.Migration.ConstructionMappedProbe.exists_presentation
+#print axioms PPAC.Migration.ConstructionMappedProbe.Data
+#print axioms PPAC.Migration.ConstructionMappedProbe.construction
+#print axioms PPAC.Migration.ConstructionMappedProbe.data
+#print axioms PPAC.Migration.ConstructionMappedProbe.data_freeClosed
+#print axioms PPAC.Migration.ConstructionMappedProbe.data_semantics
+#print axioms PPAC.Migration.ConstructionMappedProbe.constructionSentence
+#print axioms PPAC.Migration.ConstructionMappedProbe.construction_models
+#print axioms PPAC.Migration.ConstructionMappedProbe.construction_kernel_certificate

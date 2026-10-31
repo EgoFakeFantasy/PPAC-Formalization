@@ -118744,6 +118744,225 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
         ]
       }
+    },
+    "construction_mapped_probe": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/BlockTowers.lean",
+      "source_sha256": "39647b75e6ad3eee0447895ec9165dadf2ca87388ae793f3c71d03f5a82bac31",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MonoidRounds.lean": "f91feb2967dfba5bd5e5e052fc1357f69adc3a1c591ce1b27256ee0a038b13b7",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/ConservativeCells.lean": "1259147ec95657be87531ad4dadb6753c268e8429ebd2a94b951872d1ca3dd50",
+        "lean/OAI/SetTheory/PartitionConsistency/Construction/MergerPushouts.lean": "8239ddd36876b7a0b60faef13db98f52bc25c71435c4f8be4c89b6640c94e16e",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbePresentations.lean": "2b016d8bb65306067c5467335a0821e0d489499d0c4bd1aaeed5e35f4d90de20",
+        "lean/OAI/SetTheory/PartitionConsistency/Algebra/ProbeWords.lean": "67b246ed3eba8f2b124203a4b6d6daf5837782219423aa60d266aefadacd0ed0"
+      },
+      "adapter": "PPAC/Migration/ConstructionMappedProbe.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionRangeObject.lean": "d190e0533a9f3ca8715993c8d65b3a49a2dff3e8c04c53148e82ef2ce2bc9f5a",
+        "PPAC/Migration/ConstructionExecutedCellPresentation.lean": "33d5100c1ffe9a8811321e100adda5132ce3602902acbe229ae4b76285e295e0",
+        "PPAC/Migration/ConstructionOperationSource.lean": "5df3709d7c7a6e528d771f417c33be13bc90b6d8071146913b01c54801c0e66b",
+        "PPAC/Migration/ConstructionProbeAlphabet.lean": "9ee71cecb29086c4c0e9ffbdc6e4b55879320b8b1e91c051d6cc5fceaddd0872",
+        "PPAC/Migration/ConstructionProbeConditionalJoins.lean": "945878eae8ce2e5c4bab483fcfe4647c55dd80f8a698c6373844ad5e7fb28561",
+        "PPAC/Migration/ConstructionProbeConservative.lean": "d240dedc78a66c27461334cb1cd6e8eee9e2f5ca4121c446ce3143bf851917eb",
+        "PPAC/Migration/ConstructionProbeOldEmbeddingSyntax.lean": "71495fe42343256fdff9db18b57bf8e414a41e21fbacda95f3dcc291c73d4fb5",
+        "PPAC/Migration/ConstructionProbeGenerator.lean": "92f30a121bd86ecb7d6f0f90a847d555b6f2c3de0a55504638790a1be4d70253",
+        "PPAC/Migration/ConstructionProbeIndexedGenerators.lean": "53b7ede77019ce3997ab7a02f95df7bb480e98dec56cefedadea50fe5a0c4b90",
+        "PPAC/Migration/ConstructionRequestMaps.lean": "42d942887b0bedc48cd4cd225213fad243a6b8fdaa98ccedf73688d72d1cbe6c",
+        "PPAC/Migration/ConstructionProbeMappedPath.lean": "b739a5ea788595c2a45c15d42033be2623c9ec11f77e411dc6fc394d88c34438",
+        "PPAC/Migration/ConstructionProbeAlphabetMap.lean": "271a1ba0093d55373f0867ecdca21bff427a24859c2e4a7a516570bfce9cb6f0",
+        "PPAC/Migration/ConstructionProbePushout.lean": "bfa5077eedb8a0698012d02197f9f4ee0b30fa17f3874a73bfac452a3320894a",
+        "PPAC/Migration/ConstructionCellSimulationEquiv.lean": "6ce28e9417562aa313371904895f1756797a072410d54b1d7246a784611f3ed0",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "source_declarations": [
+        "ProbeData.map / Probe.map",
+        "Cell.rangeAttachment, Probe branch",
+        "Cell.simulationEquiv / simulationEquiv_old",
+        "Probe simulation pushout / conservative simulation"
+      ],
+      "consumers": [
+        "request_rangeAttachment Probe branch -> actual selected-event attachment family -> blockStage_step -> flatten.step",
+        "ConstructionCellParameters.actual_probe consumes SAME target Presentation, Hom, OldFixed, Range"
+      ],
+      "reuse_producers": [
+        "Existing source-presentation extraction retains SAME witnesses, now exposing original TerminalTable/ConeLaws",
+        "ConstructionRangeObject.construction",
+        "Existing alphabet/conditional-join extension/old conservative map/generator constructors",
+        "ConstructionRequestMaps.probe_map and mapped factor/terminal/alphabet maps",
+        "ConstructionProbePushout.exists_pushout",
+        "ConstructionCellSimulationEquiv.probe_equiv and range_identification"
+      ],
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ConstructionExecutedCellPresentation.lean",
+          "producer_sha256": "33d5100c1ffe9a8811321e100adda5132ce3602902acbe229ae4b76285e295e0",
+          "source_start": "  obtain ⟨hPath,hb,_,S,act,E,projection,K,P,hAlphaSource,hWord,hUnit,hG,hOld,hK,hGen,hP,hProbe,hgen⟩ := hSource",
+          "source_end": "\ndef MergerData",
+          "target_start": "  obtain ⟨hPath,hb,_,S,act,E,projection,K,P,hAlphaSource,hWord,hUnit,hG,hOld,hK,hGen,hP,hProbe,hgen⟩ := hSource",
+          "target_end": "\n/-- Package",
+          "replacements": [
+            [
+              "C,hAlpha,_,hTargetMap",
+              "C,hAlpha,hCone,hTargetMap"
+            ],
+            [
+              "hPath,hFactor,hP,hProbe,hTerminalMap,hTarget,hExit,hmark,hOld,hO⟩,hgen⟩",
+              "hPath,hFactor,hP,hProbe,hTerminalMap,hTarget,hExit,hmark,hOld,hO⟩,hgen,hTerminal,hCone⟩"
+            ]
+          ],
+          "normalized_body_sha256": "36edcf40504383fb936542dccea78cada550cca1006af0654f22962599d80b80",
+          "scope": "Existing proof body unchanged except retaining two already present witnesses in its result."
+        }
+      ],
+      "scope": "Ordinary nativeZF original-kernel Probe mapped-presentation/range-identification construction from actual OperationSource.Probe, with SAME W/unit/G/O/raw gen and terminal graphs f/g/ranges N/R. Original terminal/cone fields are extracted from existing Alpha, not assumed anew. Only target presentation is constructed. The exact old-range object, mapped a/b/d/path, full target presentation, conservative simulation and inverse, distinguished gen->genN equation, and final embedding fixing EVERY old element with EXACT range R are twenty-seven internal existential outputs. No new algebra backend, alternate source carrier or host-finite restriction. Both standalone branches now exist; unified actual SelectedAt family, complete CellTower/stepCell, later stages and final internal Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionMappedProbe.source_presentation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.exists_presentation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.Data": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.construction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.data_freeClosed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.data_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.constructionSentence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ],
+        "PPAC.Migration.ConstructionMappedProbe.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

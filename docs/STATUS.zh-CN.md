@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：Probe 映射呈现 → 两分支实际范围附件 → stepCell
+## 当前执行入口：同一 SelectedAt 两分支范围附件 → blockStage_step → flatten.step
 
-ConstructionMappedMerger 已固定原执行的 W/G/unit/O/roots，构造字面旧范围 N 上的完整 Merger 映射呈现、同一实际模拟的保守性／满射性及内部逆，再构造固定每个旧元素且精确覆盖指定终端范围 R 的嵌入。直接消费 ConstructionRangeObject，目标范围的限制乘法、包含及原图 f 的范围同构全部由现有构造产出。未重新选择原执行 cell，未假定映射呈现或模拟存在。
+ConstructionMappedProbe 已从实际 OperationSource.Probe 构造字面旧范围上的完整映射呈现、实际保守模拟及内部逆，再取得固定每个旧元素、精确覆盖原终端范围 R 的嵌入。原 W/unit/G/O/gen 与 f/g/N/R 不变；原 gen 到目标 genN 的实际模拟方程显式保留。TerminalTable/ConeLaws 直接取自原 Alpha，不新增这两个前提。源呈现提取的已有证明正文通过两处精确替换核对，仅多保留两个已有输出。
 
-construction_kernel_certificate 是普通 nativeZF 中原 FirstOrder.Derives 闭句：25 个外部槽位全称闭包，19 个内部存在输出。现有 Merger Word 生产者的单子／conical 性直接保留，原处方 n、两张终端图 f/g、N/R 原样保留。它可供现有 actual_merger 的 Presentation／Hom／OldFixed／Range 输入；还不等于全体 stage-cell 家族。
+construction_kernel_certificate 是普通 nativeZF 原 FirstOrder.Derives 闭句，21 个槽位全称闭包、27 个内部存在输出；目标范围对象及映射请求／因子／端点／字母表／单词／模拟全部消费现成生产者。Probe 和上一批 Merger 的单次范围构造均已完成，不再列作待做。
 
-本批全量验收：3068 项构建、35324 项声明、10 新声明、1 个原核证书，9 条命令／5 次 trust=0，零警告；35314 项旧声明依赖不变，2623 项文件哈希匹配，无新增公理依赖。见 verification/mapped-merger-acceptance.json。
+本批全量验收：3069 项构建、35334 项声明、10 新声明、1 个原核证书，9 条命令／5 次 trust=0，零警告；35324 项旧声明依赖不变，2624 项文件哈希匹配，无新增公理依赖。见 verification/mapped-probe-acceptance.json。
 
-下一步：Probe 从原 OperationSource.Alpha 取已有 TerminalTable/ConeLaws，复用因子／端点／字母表映射和实际模拟；不要把简化 Presentation 没有存的字段误报为数学缺口。然后在同一 SelectedAt 家族合并两分支 → request_rangeAttachment／blockStage_step → flatten.step（身份、边界、top）→ 全局依赖与 germ/selector。实际呈现提取、字面范围适配、Merger 映射呈现与范围识别均不再列作待做；L／全模式、Timeline 和已验收基础继续复用。
+下一步统一同一 SelectedAt 的两分支：保持原 19 见证及 raw 字段，使用现有 recursive_valid／StageRow 和 Done 提供实际单子、非单位标记和 roots 函数图，再接原 blockStage_step／flatten.step（身份、边界、top 分支保留）。精确范围、复合映射自然性、完整 Timeline、L／全模式和已有基础继续复用，不另建塔或递归后端。
 
-**仍在原第 8 阶段。** Probe 映射分支、全体实际 stage-cell 家族及后续第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 统一实际后继附件家族、完整 CellTower／stepCell 及后续第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

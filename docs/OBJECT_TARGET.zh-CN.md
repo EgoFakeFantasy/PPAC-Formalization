@@ -321,3 +321,7 @@ ConstructionRangeObject.construction_kernel_certificate 在普通 nativeZF 中�
 ## 2026-10-31：固定原执行呈现的 Merger 范围识别已验收
 
 ConstructionMappedMerger.construction_kernel_certificate 在普通 nativeZF 原核中构造字面范围上的完整 Merger 呈现、实际保守模拟／内部逆、固定所有旧元素且精确覆盖原指定范围的嵌入；原 W/G/unit/O/roots 和 f/g/N/R/n 不变。目标范围适配由 ConstructionRangeObject 直接消去，不另假定映射呈现、模拟或范围同构。25 个槽位全称闭包、19 个存在输出均在对象语言内，不限制为外部标准 n 或外部有限词。Probe 分支及同一 SelectedAt 家族仍待装配；原 OperationSource.Alpha 已有的 TerminalTable/ConeLaws 必须继续消费，不重造。最终内部 Con 未证明。验收见 verification/mapped-merger-acceptance.json。
+
+## 2026-10-31：实际 Probe 源记录的范围构造已验收
+
+ConstructionMappedProbe.construction_kernel_certificate 在普通 nativeZF 原核中完成实际 Probe 的映射呈现、保守模拟、内部逆和精确范围识别。原 gen 到目标 genN 的方程及所有旧元素固定条件均保留。21 个槽位全称闭包，27 个内部存在输出；TerminalTable/ConeLaws 来自原 Source.Alpha，已有呈现提取证明正文仅作两处输出保留调整并机械核对。Probe 与 Merger 的单次范围构造均已完成；统一 SelectedAt 家族、完整 CellTower 和最终内部 Con 尚未完成。验收见 verification/mapped-probe-acceptance.json。
