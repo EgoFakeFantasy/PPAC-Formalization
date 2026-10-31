@@ -13570,4 +13570,29 @@ example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B 
       (ConstructionGermLeastBound.covarianceSentence w D I mul unit q zero root vertices chain H G N X reps K C B det pi R U alpha beta)) :=
   ConstructionGermLeastBound.covariance_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B det pi R U alpha beta
 
+example {m : Nat} (G T O order F : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermBestCoset.existenceSentence G T O order F)) :=
+  ConstructionGermBestCoset.existence_kernel_certificate G T O order F
+
+example {m : Nat} (G T O order F c d : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermBestCoset.uniquenessSentence G T O order F c d)) :=
+  ConstructionGermBestCoset.uniqueness_kernel_certificate G T O order F c d
+
+example {m : Nat} (w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act O order c e : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermBestCoset.covarianceSentence w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act O order c e)) :=
+  ConstructionGermBestCoset.covariance_kernel_certificate w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act O order c e
+
+example {m : Nat} (w N B K : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternOrder.coverSentence w N B K)) :=
+  ConstructionGermPatternOrder.cover_kernel_certificate w N B K
+
+example {m : Nat} (w N B K : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermPatternOrder.constructionSentence w N B K))) :=
+  ConstructionGermPatternOrder.construction_kernel_certificate w N B K
+
 end PPAC.Migration.Step4Checks

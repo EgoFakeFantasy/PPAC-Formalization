@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：内部 leastBound 已接通 → bestCoset／conditionSelector
+## 当前执行入口：bestCoset 与共同 pattern 顺序已接通 → conditionSelector
 
-ConstructionGermLeastBound 对实际区分界建立对象谓词：完整函数空间、Eventual 商／投影、整个 germ pattern 及其单射都由内部集合见证。通过分离在内部序数 K 中取得候选集，直接复用原生良序最小元；没有宿主良基假设或新的最小化后端。
+ConstructionGermBestCoset 在实际 pattern 值域上复用原生 unique_minimum，取得最小值对应的商类；在区分界处由 pattern 单射证明唯一性，并消费实际商左乘和 pattern 协变证明选择协变。存在、单射下唯一性和协变三个端点均为普通 nativeZF 原核证书。
 
-已完成源 leastBound／leastBound_distinguishes／leastBound_covariance，以及 leastBound_le、Good.complete_least 和 leastBound_extension。五个普通 nativeZF 原核端点分别给出存在、Good 下构造、最小界处 Complete、扩张时界相等、置换时界相等。
+ConstructionGermPatternOrder 构造每个内部界的完整且唯一的 pattern 空间，用收集与并集取得覆盖所有 alpha∈K 的共同集合。保留已有 ConstructionScheduleOrder 的良序证明体，仅去除未使用的乘积专用形参；固定顺序通过已完成 L/Choice 桥取得 L 相对原核证书，覆盖集合本身有普通 nativeZF 证书。顺序不依赖条件或 rows。
 
-本批全量验收通过：3118 个构建任务、36324 项声明、2673 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；36292 项旧依赖足迹全部不变，新增 32 项声明无新增公理依赖。记录见 verification/germ-least-bound-acceptance.json。
+本批全量验收通过：3120 个构建任务、36362 项声明、2675 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；36324 项旧依赖足迹全部不变，新增 38 项声明无新增公理依赖。两项既有证明体复用合同通过。记录见 verification/germ-best-coset-acceptance.json。
 
-**仍在原第 8 阶段。** 下一项为在固定 pattern 对象良序下的 bestCoset、selector 和 conditionSelector，继而 OrbitAssignments 与具体商双射。leastBound／稳定性、商左乘、pattern_covariance、Good.permute 及此前 good_dense 均不再列作待做。Base、L、全模式、递归、Proof/Sat 等底座不重做。第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
+**仍在原第 8 阶段。** 下一项为把同一顺序、leastBound 和 bestCoset 组装成统一 conditionSelector／Selected，并证明扩张保持、置换协变及兼容唯一性；继而 OrbitAssignments 与具体商双射。已有最小界、商左乘、pattern 协变和 Good 稳定性不重做。Base、L、全模式、递归、Proof/Sat 底座不重做。第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -31,7 +31,7 @@ ConstructionGermLeastBound 对实际区分界建立对象谓词：完整函数�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；下一项为 bestCoset、selector 和 conditionSelector。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；bestCoset 最小值／区分界唯一性／协变与共同固定 pattern 顺序已接通；下一项为统一 conditionSelector／Selected。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
