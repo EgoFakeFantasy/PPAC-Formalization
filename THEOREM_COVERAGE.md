@@ -902,4 +902,10 @@ ConstructionGermPatternCongruence migrates rawPattern_congr by consuming the acc
 
 ConstructionGermPatternInjectivity supplies StableSelectors.good_dense:207-219 using actual unequal-germ separation, eventual site coverage, opposite bits below one bound and the actual pattern graph. One common internal natural index yields the false/true contradiction. ConstructionGermGoodDense consumes the accepted bounded Complete extension, constructs its actual default-false rows and full pattern, and proves Complete plus pattern injectivity for the SAME extending condition. This completes concrete good_dense:183-219 for the source's regular Hartogs(omega) index through the existing L interpretation; it is an L-relative original nativeZF kernel certificate.
 
-Complete.pattern_eq/permutation, Good.mono/permutation and leastBound/conditionSelector remain next. OrbitAssignments, concrete quotient bijection, stages 9-11 and final internal Con are not complete.
+Complete.pattern_eq/permutation and Good.mono are supplied below. Quotient-level pattern covariance, Good.permute and leastBound/conditionSelector remain next. OrbitAssignments, concrete quotient bijection, stages 9-11 and final internal Con are not complete.
+
+## Actual pattern stability and row covariance (2026-11-01)
+
+ConstructionGermPatternStability migrates Complete.pattern_eq:109-116 and Good.mono:140-143. Complete assignments yield common bounded row slices on an internal tail; exact Eventual projection yields literal equality of the whole pattern graph. Extension preserves the SAME actual quotient spaces and SAME injective pattern graph. It exposes ordinary nativeZF original-kernel preservation, equality and monotonicity certificates.
+
+ConstructionGermRowCovariance migrates actual rows_permute, rawPattern_moveRows:442 and Complete.permute:117-126. Existing condition coordinate transport induces transport of total rows, and actual graph composition gives literal equality of bounded slices, sequences and rawPattern graphs. Existing component-stabilizer inverse/composition closure proves Complete under actual condition permutation. All three certificates are ordinary nativeZF. No quotient-level action or Good.permute completion is inferred: pattern_covariance on germ classes, Good.permute and leastBound/conditionSelector are next. Final internal Con remains unproved.

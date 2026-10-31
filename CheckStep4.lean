@@ -13495,4 +13495,34 @@ example {m : Nat} (w D I mul q zero root vertices chain H G N X reps det J K C B
       (ConstructibleGround.relative (ConstructionGermGoodDense.constructionSentence w D I mul q zero root vertices chain H G N X reps det J K C B S lo hi p))) :=
   ConstructionGermGoodDense.construction_kernel_certificate w D I mul q zero root vertices chain H G N X reps det J K C B S lo hi p
 
+example {m : Nat} (w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternStability.preservationSentence w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F)) :=
+  ConstructionGermPatternStability.preservation_kernel_certificate w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F
+
+example {m : Nat} (w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F Q : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternStability.equalitySentence w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F Q)) :=
+  ConstructionGermPatternStability.equality_kernel_certificate w D I mul q root chain H G N X K C B alpha A Seq E T det p R U pr F Q
+
+example {m : Nat} (w D I mul q root chain H G N X K C B S lo hi det p r : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternStability.monotonicitySentence w D I mul q root chain H G N X K C B S lo hi det p r)) :=
+  ConstructionGermPatternStability.monotonicity_kernel_certificate w D I mul q root chain H G N X K C B S lo hi det p r
+
+example {m : Nat} (I K C B lo hi pi p q R U : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermRowCovariance.rowsSentence I K C B lo hi pi p q R U)) :=
+  ConstructionGermRowCovariance.rows_kernel_certificate I K C B lo hi pi p q R U
+
+example {m : Nat} (w N X I alpha B A E det pi g product R U pr P Q : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermRowCovariance.rawSentence w N X I alpha B A E det pi g product R U pr P Q)) :=
+  ConstructionGermRowCovariance.raw_kernel_certificate w N X I alpha B A E det pi g product R U pr P Q
+
+example {m : Nat} (w D I mul unit q root H N det alpha pi p r : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermRowCovariance.completeSentence w D I mul unit q root H N det alpha pi p r)) :=
+  ConstructionGermRowCovariance.complete_kernel_certificate w D I mul unit q root H N det alpha pi p r
+
 end PPAC.Migration.Step4Checks
