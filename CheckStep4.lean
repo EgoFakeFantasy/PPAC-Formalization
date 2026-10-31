@@ -13084,4 +13084,14 @@ example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF k
       (ConstructionActualBlocks.familyConstructionSentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces)) :=
   ConstructionActualBlocks.familyConstruction_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces
 
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockBoundary.constructionSentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces)) :=
+  ConstructionBlockBoundary.construction_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces
+
+example {m : Nat} (B P history outerF kappa V zero i code j N W fromBase after J Domains E F L Out Images codeNext next Nnext Wnext fromNext afterNext Jnext DomainsNext Enext Fnext Lnext OutNext ImagesNext Schedule last inner Steps Events Roots A Anew : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockBoundary.boundarySentence B P history outerF kappa V zero i code j N W fromBase after J Domains E F L Out Images codeNext next Nnext Wnext fromNext afterNext Jnext DomainsNext Enext Fnext Lnext OutNext ImagesNext Schedule last inner Steps Events Roots A Anew)) :=
+  ConstructionBlockBoundary.boundary_kernel_certificate B P history outerF kappa V zero i code j N W fromBase after J Domains E F L Out Images codeNext next Nnext Wnext fromNext afterNext Jnext DomainsNext Enext Fnext Lnext OutNext ImagesNext Schedule last inner Steps Events Roots A Anew
+
 end PPAC.Migration.Step4Checks

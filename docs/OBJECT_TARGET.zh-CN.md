@@ -238,4 +238,12 @@ ConstructionActualBlocks 的两个原核证书均为普通 nativeZF 对象句。
 
 familyConstruction_kernel_certificate 进一步消费同一外层 Valid／Matrix／终行及实际 Family，从该终行内部构造每一轮的 afterRound，保留 outerF 中的实际 Product，故调用者无需逐轮提供终端映射。对象 forall 覆盖全部内部记录和索引，不以外部有限列举替代。外层长度的后继关系已有 ConstructionSaturationIndex.Data 提供；未新增 Choice、良基或递归基础。
 
-本结论仍是对象语言中的逐外轮存在断言，单一 flattened 阶段函数图尚待汇集。实际底端方程必须继续从既有 Initial.Value 取出身份映射，接既有自然性和范围等式；跨轮阶段相等、连续性和 stepCell 尚未完成。本批未证明完整 BlockTower／Timeline 或最终内部 Con。15 项新声明与两个原核端点已全量验收，见 verification/actual-blocks-acceptance.json。
+本结论仍是对象语言中的逐外轮存在断言，单一 flattened 阶段函数图尚待汇集。实际底端和跨轮范围相等已由后续 ConstructionBlockBoundary 完成；连续性与 stepCell 仍待装配。本批未证明完整 BlockTower／Timeline 或最终内部 Con。15 项新声明与两个原核端点已全量验收，见 verification/actual-blocks-acceptance.json。
+
+## 实际底端方程与跨轮字面范围相等（2026-10-31）
+
+ConstructionBlockBoundary.zero_row 读取同一实际递归的零点输出和限制历史，使用既有 valid_step 排除非初始分支，取出 Initial.Value 中已证明的身份映射。trace_base 对齐同一 Trace／Data 的九字段记录，消费原 tower Natural、node_comp 和 range_comp_surjective，证明每个底端范围就是实际源载体经原外层终端映射的范围；没有要求调用者提供底端同构或底端相等。
+
+construction_kernel_certificate 是普通 nativeZF 对象句：对实际 Family 的每个内部阶段／记录，存在 Realized，包含真实源／后继载体字段、同一外层矩阵中的两个终端映射、完整实际 block 数据及上述底端方程。boundary_kernel_certificate 从相邻 Realized 和同一真实末点记录推出两个范围集合字面相等：载体按 history 的 Field 0 唯一性对齐，终端映射按同一 outerF 函数值对齐，再消费已完成顶端范围方程和新底端方程。
+
+该结果完成源 blockStage_base 与 blocks.boundary 所需的实际范围等式。内外连续性、统一 flattened 阶段函数图、边界身份 attachment／stepCell 的包装仍待接通，完整 Timeline 与最终内部 Con 未完成。19 项新声明和两个原核端点已全量验收，见 verification/block-boundary-acceptance.json。后续连续性复用既有 ConstructionSaturationCover.exists_rep 及内轮极限行投影／cocone，不重造极限对象。
