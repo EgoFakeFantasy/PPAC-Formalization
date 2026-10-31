@@ -13545,4 +13545,29 @@ example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B 
       (ConstructionGermPatternCovariance.goodSentence w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi p r)) :=
   ConstructionGermPatternCovariance.good_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi p r
 
+example {m : Nat} (w D chain H G N K B det R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeastBound.existenceSentence w D chain H G N K B det R)) :=
+  ConstructionGermLeastBound.existence_kernel_certificate w D chain H G N K B det R
+
+example {m : Nat} (w D chain H G N K C B lo hi det p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeastBound.constructionSentence w D chain H G N K C B lo hi det p)) :=
+  ConstructionGermLeastBound.construction_kernel_certificate w D chain H G N K C B lo hi det p
+
+example {m : Nat} (w D chain H G N K C B lo hi det p R alpha : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeastBound.completeSentence w D chain H G N K C B lo hi det p R alpha)) :=
+  ConstructionGermLeastBound.complete_kernel_certificate w D chain H G N K C B lo hi det p R alpha
+
+example {m : Nat} (w D I mul q root chain H G N X K C B S lo hi det p r R U alpha beta : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeastBound.extensionSentence w D I mul q root chain H G N X K C B S lo hi det p r R U alpha beta)) :=
+  ConstructionGermLeastBound.extension_kernel_certificate w D I mul q root chain H G N X K C B S lo hi det p r R U alpha beta
+
+example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B det pi R U alpha beta : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeastBound.covarianceSentence w D I mul unit q zero root vertices chain H G N X reps K C B det pi R U alpha beta)) :=
+  ConstructionGermLeastBound.covariance_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B det pi R U alpha beta
+
 end PPAC.Migration.Step4Checks
