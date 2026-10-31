@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：实际 attachment／stepCell 与全局依赖装配
+## 当前执行入口：实际记录的呈现适配 → rangeAttachment → stepCell
 
-ConstructionFlatTimeline 已完成同一实际 S、V、I、R 上现有 FirstAppearance.Timeline 的全部条件：内部良序、总阶段函数、最小 cut、范围有界、同轮及跨轮全局单调性、覆盖，以及所有非初始无前驱 cut 的连续性。top、内轮非零极限、外轮零位置极限三个分支均已闭合。完整 Timeline 不再列为待做；它尚不包含源 CellTower 的 step／attachment 字段。
+ConstructionCellSimulationEquiv 已迁移固定源 Cell.simulation_surjective / simulationEquiv，并完成 rangeAttachment 的范围识别核心。复用两类实际 cell 的既有生成性，证明同一个 simulation H 满射；复用原生逆图构造证明逆同态。将逆 simulation 与实际终端映射复合，内部构造单射同态，固定每个字面旧元素，并保留同一个实际新阶段范围 R。
 
-assembly_kernel_certificate 为普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 为既有 L 相对化对象句的 nativeZF 原核证明，封装证明体逐字复用前一已验收模块并由验证器机械核对。实际递归调用端保留原 Family、cut 索引和所有实际范围图，在结论中返回完整 Timeline，没有新增最小 cut／单调性／连续性／覆盖前提或替换终端载体。
+四个证书均为普通 nativeZF 对象句在原 FirstOrder.Derives 中的证明，覆盖所有内部元素、词及索引。Probe／Merger 适配消费既有真实呈现并消去生成性前提；实际呈现、simulation 与其端点证据仍是输入。尚需从 SelectedAt.Provenance 取出这些共同见证，并在字面旧范围上消费既有映射构造。因此本批不宣称完整 request_rangeAttachment、blockStage_step 或 CellTower.step 已完成。
 
-本批全量验收：3064 项构建、35251 项声明、9 条命令／5 次 trust=0、零警告；35235 项旧声明依赖不变，2619 项文件哈希匹配，无新增公理依赖。见 verification/flat-timeline-acceptance.json。
+本批全量验收：3065 项构建、35277 项声明、26 新声明、4 个原核证书、9 条命令／5 次 trust=0、零警告；35251 项旧声明依赖不变，2620 项文件哈希匹配，无新增公理依赖。见 verification/cell-simulation-equiv-acceptance.json。
 
-下一实际调用链：由已有 TowerExecution／SelectedAt 记录消费两类实际 cell 的范围 attachment 生产端，完成 blockStage_step → 用已有内轮／跨轮 Cover 与字面边界相等装配 flatten.step／stepCell（保留身份边界和 top 分支） → 将真实 stage-cell 族与已完成 Timeline 接入全局 dependencies → restrict_selected／future_cut／可数重排／germ/selector。不重建完整 Timeline、cell 参数／生成性／有限系数、递归、商或 L 基础。
+已完成的完整 Timeline、L／全模式、递归、cell 生成性／参数／有限系数继续复用，不再列作缺失。下一实际调用链：SelectedAt 的原操作见证 → 同一呈现及字面旧范围上的映射呈现 → 消费本批范围同构 → blockStage_step → flatten.step／stepCell（保留身份边界和 top 分支）→ 全局 dependencies → restrict_selected／future_cut／重排／germ-selector。
 
-**仍在原第 8 阶段。** 完整源 CellTower／Saturation.cells 尚缺实际 attachment／stepCell 装配；全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段仍未完成，最终内部 Con 未证明。
+**仍在原第 8 阶段。** 源 CellTower／Saturation.cells、后续构造链和第 9–11 阶段尚未完成；最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

@@ -896,3 +896,4 @@ import PPAC.Migration.ConstructionCutLimits
 import PPAC.Migration.ConstructionFlatStages
 import PPAC.Migration.ConstructionFlatOuter
 import PPAC.Migration.ConstructionFlatTimeline
+import PPAC.Migration.ConstructionCellSimulationEquiv

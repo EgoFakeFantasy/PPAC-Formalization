@@ -289,3 +289,15 @@ assemblySentence 有普通 nativeZF 原核证书；实际递归 constructionSent
 此前关于“同一图的全局单调性／所有 cut 连续性／完整 Timeline 待装配”的待办由本节取代。源 CellTower 还需要实际 attachment／stepCell 字段；全局依赖及其后的完整迁移仍未完成，不能将 Timeline 当作整个源 CellTower 或最终 Con。
 
 实际验收：3064 构建任务、35251 声明、16 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35235 声明依赖不变，2619 文件哈希匹配，无新增公理依赖。报告 verification/flat-timeline-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。
+
+## 源 simulation 同构及实际范围识别（2026-10-31）
+
+ConstructionCellSimulationEquiv 已迁移固定源 Cell.simulation_surjective / simulationEquiv，并完成 rangeAttachment 的范围识别核心。复用两类实际 cell 的既有生成性，证明同一个 simulation H 满射；复用原生逆图构造证明逆同态。将逆 simulation 与实际终端映射复合，内部构造单射同态，固定每个字面旧元素，并保留同一个实际新阶段范围 R。
+
+四个证书均为普通 nativeZF 对象句在原 FirstOrder.Derives 中的证明，覆盖所有内部元素、词及索引。Probe／Merger 适配消费既有真实呈现并消去生成性前提；实际呈现、simulation 与其端点证据仍是输入。尚需从 SelectedAt.Provenance 取出这些共同见证，并在字面旧范围上消费既有映射构造。因此本批不宣称完整 request_rangeAttachment、blockStage_step 或 CellTower.step 已完成。
+
+本批全量验收：3065 项构建、35277 项声明、26 新声明、4 个原核证书、9 条命令／5 次 trust=0、零警告；35251 项旧声明依赖不变，2620 项文件哈希匹配，无新增公理依赖。见 verification/cell-simulation-equiv-acceptance.json。
+
+已完成的完整 Timeline、L／全模式、递归、cell 生成性／参数／有限系数继续复用，不再列作缺失。下一实际调用链：SelectedAt 的原操作见证 → 同一呈现及字面旧范围上的映射呈现 → 消费本批范围同构 → blockStage_step → flatten.step／stepCell（保留身份边界和 top 分支）→ 全局 dependencies → restrict_selected／future_cut／重排／germ-selector。
+
+**仍在原第 8 阶段。** 源 CellTower／Saturation.cells、后续构造链和第 9–11 阶段尚未完成；最终内部 Con 未证明。

@@ -13149,4 +13149,24 @@ example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P o
       (ConstructibleGround.relative (ConstructionFlatTimeline.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
   ConstructionFlatTimeline.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
 
+example {m : Nat} (D N I W WN G GN unit unitN O ON P PN f H : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellSimulationEquiv.simulationSentence D N I W WN G GN unit unitN O ON P PN f H)) :=
+  ConstructionCellSimulationEquiv.simulation_kernel_certificate D N I W WN G GN unit unitN O ON P PN f H
+
+example {m : Nat} (D N W WN V G GN GV unit unitN unitV O ON f H inv g R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellSimulationEquiv.rangeSentence D N W WN V G GN GV unit unitN unitV O ON f H inv g R)) :=
+  ConstructionCellSimulationEquiv.range_kernel_certificate D N W WN V G GN GV unit unitN unitV O ON f H inv g R
+
+example {m : Nat} (w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O N mulN eN aN bN dN nodeN factorN terminalN targetN LN CN projectionN IN actN EN WN unitN GN KN PN ON f H : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellSimulationEquiv.probeSentence w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O N mulN eN aN bN dN nodeN factorN terminalN targetN LN CN projectionN IN actN EN WN unitN GN KN PN ON f H)) :=
+  ConstructionCellSimulationEquiv.probe_kernel_certificate w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O N mulN eN aN bN dN nodeN factorN terminalN targetN LN CN projectionN IN actN EN WN unitN GN KN PN ON f H
+
+example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f H : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCellSimulationEquiv.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f H)) :=
+  ConstructionCellSimulationEquiv.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f H
+
 end PPAC.Migration.Step4Checks
