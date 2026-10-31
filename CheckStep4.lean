@@ -13525,4 +13525,24 @@ example {m : Nat} (w D I mul unit q root H N det alpha pi p r : Fin m) :
       (ConstructionGermRowCovariance.completeSentence w D I mul unit q root H N det alpha pi p r)) :=
   ConstructionGermRowCovariance.complete_kernel_certificate w D I mul unit q root H N det alpha pi p r
 
+example {m : Nat} (w D I mul unit q zero root vertices chain H G pi : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermLeftAction.constructionSentence w D I mul unit q zero root vertices chain H G pi)) :=
+  ConstructionGermLeftAction.construction_kernel_certificate w D I mul unit q zero root vertices chain H G pi
+
+example {m : Nat} (w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternCovariance.covarianceSentence w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act)) :=
+  ConstructionGermPatternCovariance.covariance_kernel_certificate w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act
+
+example {m : Nat} (w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternCovariance.injectionSentence w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act)) :=
+  ConstructionGermPatternCovariance.injection_kernel_certificate w D I mul unit q root chain H G N X alpha B A E T det pi R U pr F Q act
+
+example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi p r : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternCovariance.goodSentence w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi p r)) :=
+  ConstructionGermPatternCovariance.good_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi p r
+
 end PPAC.Migration.Step4Checks

@@ -947,3 +947,5 @@ import PPAC.Migration.ConstructionGermPatternInjectivity
 import PPAC.Migration.ConstructionGermGoodDense
 import PPAC.Migration.ConstructionGermPatternStability
 import PPAC.Migration.ConstructionGermRowCovariance
+import PPAC.Migration.ConstructionGermLeftAction
+import PPAC.Migration.ConstructionGermPatternCovariance
