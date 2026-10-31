@@ -13273,4 +13273,16 @@ example {m : Nat} (D T retained cut next I W G unit V GV e O P F old generators 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSelectedCellRestriction.rangeSentence D T retained cut next I W G unit V GV e O P F old generators)) :=
   ConstructionSelectedCellRestriction.range_kernel_certificate D T retained cut next I W G unit V GV e O P F old generators
 
+example {m : Nat} (w zero cut cutMul e D mul a b d node factor terminal target L C projection I act E W unit G K P O inc : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionRestrictedCellSimulation.probeSentence w zero cut cutMul e D mul a b d node factor terminal target L C projection I act E W unit G K P O inc)) :=
+  ConstructionRestrictedCellSimulation.probe_kernel_certificate w zero cut cutMul e D mul a b d node factor terminal target L C projection I act E W unit G K P O inc
+
+example {m : Nat} (w n zero cut cutMul e D mul P C L projection A W T B G unit O roots inc : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionRestrictedCellSimulation.mergerSentence w n zero cut cutMul e D mul P C L projection A W T B G unit O roots inc)) :=
+  ConstructionRestrictedCellSimulation.merger_kernel_certificate w n zero cut cutMul e D mul P C L projection A W T B G unit O roots inc
+
+example {m : Nat} (D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P0 H V GV old inc generators : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionRestrictedCellPushout.workSentence D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P0 H V GV old inc generators)) :=
+  ConstructionRestrictedCellPushout.work_kernel_certificate D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P0 H V GV old inc generators
+
 end PPAC.Migration.Step4Checks

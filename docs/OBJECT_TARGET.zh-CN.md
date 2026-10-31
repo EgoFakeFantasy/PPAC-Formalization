@@ -349,3 +349,7 @@ ConstructionSelectedCellWords.selected_kernel_certificate 在普通 nativeZF 原
 ## 2026-11-01：源 restrict_selected 的限制基底与精确像
 
 ConstructionSelectedCellRestriction.base_kernel_certificate 在原 nativeZF 中构造指定交集上的乘法图、消去／锥性／条件并及保守恒等包含；range_kernel_certificate 对同一给定模拟证明像精确等于保留集合与后继阶段的交集。反像使用已有原生分离，生成性和 selected_word 均量化内部集合与元素，不依赖外部标准 ω。它们是完整 restrict_selected 的中间对象推导，实际两类 cell 模拟、附件／推挤装配及最终内部 Con 仍未完成。
+
+## 2026-11-01：两类实际原像模拟与完整 work
+
+ConstructionRestrictedCellSimulation.probe_kernel_certificate／merger_kernel_certificate 在普通 nativeZF 原核中构造原像完整呈现及到同一原呈现的实际保守模拟和推挤。原子 Merger 处方的完整表良构性从已有 mapped graph 保留到固定 cell；没有新增调用者数学假设。ConstructionRestrictedCellPushout.work_kernel_certificate 构造精确范围上的乘法、内部逆和限制包含，并通过既有 map_apex/change_left 传输全体内部目标的通用性质。三个端点均为中间对象推导；尚待固定 cell 分支解包、完整 Cell/Attachment 类型与包含同态的统一装配，不能据此把完整 restrict_selected 或最终 Con 标为完成。

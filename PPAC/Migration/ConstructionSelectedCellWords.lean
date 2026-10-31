@@ -117,7 +117,7 @@ theorem from_cell (hM : FirstOrder.Theory.Models M nativeZF)
     obtain ⟨hp,hg,cut,hcut,hwords⟩ := retained_result hM hResult hLocal hx hxT hxD
     exact ⟨cut,w,W,O,P,F,parameters,old,generators,supports,localDeps,zero,presentation,hPack,hResult,hp,hg,hcut,hwords⟩
   · obtain ⟨mul,n,P,C,L,projection,A,W,B,T',G,unit,O,roots,F,p0,presentation,parameters,old,generators,supports,localDeps,
-      _,_,_,_,_,_,_,_,_,_,_,_,_,hResult,hPack,_,_,_,_⟩ := h
+      _,_,_,_,_,_,_,_,_,_,_,_,_,hResult,hPack,_,_,_,_,_⟩ := h
     have hField : ConstructionStepCell.DependencyField zero cell localDeps :=
       ⟨one,presentation,parameters,old,generators,supports,hPack⟩
     have hLocal := local_closed hM hTimeline hIndex hCells hGlobal hClosed hij hD hT hc hField hResult.2.2.2.2.2.1
