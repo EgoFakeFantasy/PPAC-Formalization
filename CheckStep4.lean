@@ -13425,4 +13425,24 @@ example {m : Nat} (w D I mul unit q zero root vertices chain H Q reps N X det : 
       (ConstructibleGround.relative (ConstructionGermSeparation.constructionSentence w D I mul unit q zero root vertices chain H Q reps N X det))) :=
   ConstructionGermSeparation.relative_kernel_certificate w D I mul unit q zero root vertices chain H Q reps N X det
 
+example {m : Nat} (w C B S A p bit : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCohenFill.constructionSentence w C B S A p bit)) :=
+  ConstructionCohenFill.construction_kernel_certificate w C B S A p bit
+
+example {m : Nat} (w D I mul q root chain H N X reps det J K C B S bit alpha p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermComplete.constructionSentence w D I mul q root chain H N X reps det J K C B S bit alpha p)) :=
+  ConstructionGermComplete.construction_kernel_certificate w D I mul q root chain H N X reps det J K C B S bit alpha p
+
+example {m : Nat} (w D I mul q root chain H N X reps det J K C B S bit alpha p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermComplete.constructionSentence w D I mul q root chain H N X reps det J K C B S bit alpha p))) :=
+  ConstructionGermComplete.relative_kernel_certificate w D I mul q root chain H N X reps det J K C B S bit alpha p
+
+example {m : Nat} (S w A R base : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCohenFusion.constructionSentence S w A R base))) :=
+  ConstructionCohenFusion.construction_kernel_certificate S w A R base
+
 end PPAC.Migration.Step4Checks

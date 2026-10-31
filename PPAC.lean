@@ -932,3 +932,6 @@ import PPAC.Migration.ConstructionCountableGerms
 import PPAC.Migration.ConstructionGermDetectors
 import PPAC.Migration.ConstructionGermDetectorSites
 import PPAC.Migration.ConstructionGermSeparation
+import PPAC.Migration.ConstructionCohenFill
+import PPAC.Migration.ConstructionGermComplete
+import PPAC.Migration.ConstructionCohenFusion
