@@ -13059,4 +13059,19 @@ example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kapp
       (ConstructibleGround.relative (ConstructionBlockIndex.recursiveSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa))) :=
   ConstructionBlockIndex.recursive_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa
 
+example {m : Nat} (w Q R top zero one K mu history F kappa traces Indices A r I order : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockCuts.constructionSentence w Q R top zero one K mu history F kappa traces Indices A r I order)) :=
+  ConstructionBlockCuts.construction_kernel_certificate w Q R top zero one K mu history F kappa traces Indices A r I order
+
+example {m : Nat} (kappa traces Indices A r I R i J j c : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockCuts.innerLimitSentence kappa traces Indices A r I R i J j c)) :=
+  ConstructionBlockCuts.innerLimit_kernel_certificate kappa traces Indices A r I R i J j c
+
+example {m : Nat} (kappa traces Indices I R zero i c : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockCuts.outerLimitSentence kappa traces Indices I R zero i c)) :=
+  ConstructionBlockCuts.outerLimit_kernel_certificate kappa traces Indices I R zero i c
+
 end PPAC.Migration.Step4Checks

@@ -206,7 +206,7 @@ ConstructionBlockStages 的五个端点均为直接 nativeZF 原核推导。cons
 
 subobject_kernel_certificate 消费实际保守同态及原单子／条件交合同，证明它的精确范围满足现有 Closure：包含单位、乘法闭包、因子闭包和实际条件交闭包。交唯一性复用 ConstructionCountableConservativeHull.join_unique；没有另造子对象或代数基础。
 
-每阶段一致的实际内轮历史已由 ConstructionBlockTraces 完成，实际依赖索引载体／内部良序已由 ConstructionBlockIndex 完成；cut 后继、cell、身份边界／连续性的具体实例化仍待装配；本批不是完整 BlockTower，更不是最终 Con。全量验收见 verification/block-stages-acceptance.json。
+每阶段一致的实际内轮历史已由 ConstructionBlockTraces 完成，实际依赖索引载体／内部良序已由 ConstructionBlockIndex 完成；cut 后继及跨轮索引 Cover 已由 ConstructionBlockCuts 完成；cell、阶段身份边界／连续性的具体实例化仍待装配；本批不是完整 BlockTower，更不是最终 Con。全量验收见 verification/block-stages-acceptance.json。
 
 ## 同一外层递归的实际内轮记录函数族（2026-10-31）
 
@@ -214,7 +214,7 @@ ConstructionBlockTraces.construction_kernel_certificate 在原 nativeZF 中证�
 
 recursive_family 实际调用已完成的 map_succ_selected，并复用已有 successor_before_last、Pack、L 内 least_denote、原生 functionalImage 和函数图构造。记录不依赖任何词或有限支撑查询；PickedAt 唯一，整个 Family 亦唯一。family_row 暴露同一记录的九字段供既有 Field/Chart 公式消费。没有要求调用者提供逐阶段完整轮次，没有另造递归／选择基础。
 
-依赖字典序索引载体和内部良序已由后续 ConstructionBlockIndex 完成；cut 后继／边界、完整 cell／Timeline、全局依赖和最终 Con 仍未完成。本证书不表示第 8 阶段完成。实际全量验收见 verification/block-traces-acceptance.json。
+依赖字典序索引载体和内部良序已由后续 ConstructionBlockIndex 完成；cut 后继与跨轮索引 Cover 已由 ConstructionBlockCuts 完成；阶段子对象边界相等、完整 cell／Timeline、全局依赖和最终 Con 仍未完成。本证书不表示第 8 阶段完成。实际全量验收见 verification/block-traces-acceptance.json。
 
 ## 实际依赖 block 索引与对象内部良序（2026-10-31）
 
@@ -222,4 +222,12 @@ ConstructionBlockIndex.construction_kernel_certificate 直接在 nativeZF 原核
 
 内部良序的 least 条件覆盖全部内部非空子集：先对其出现的外层阶段分离取最小元，再对相应内轮位置分离取最小元。均调用已完成的原生序数最小元；不以宿主 WellFoundedLT 或标准序数替代。载体由原生函数值域、并集、积与分离构造；WithTop 复用 ConstructionScheduleOrder.exists_index_order。
 
-recursive_kernel_certificate 则在既有 L 解释内，直接消费原实际 Context／Recursive／Matrix／κ∈B，先调用已验收 recursive_family，再构造完整 Data；调用者不必提供记录族或索引。新增40项声明、两个原核对象端点已全量验收，见 verification/block-index-acceptance.json。cut 的紧邻后继、跨轮身份边界、内外极限及实际 stepCell/flatten 装配仍未完成；本批没有关闭第8阶段或最终Con。
+recursive_kernel_certificate 则在既有 L 解释内，直接消费原实际 Context／Recursive／Matrix／κ∈B，先调用已验收 recursive_family，再构造完整 Data；调用者不必提供记录族或索引。新增40项声明、两个原核对象端点已全量验收，见 verification/block-index-acceptance.json。cut 的紧邻后继与跨轮索引 Cover 已由 ConstructionBlockCuts 完成；阶段子对象跨轮相等、内外连续性及实际 stepCell/flatten 装配仍未完成；本批没有关闭第8阶段或最终Con。
+
+## 实际全阶段 cut 后继与内外无前驱传输（2026-10-31）
+
+ConstructionBlockCuts 的三个证书均直接在原 nativeZF 推导核中证明对象句。construction_kernel_certificate 从同一实际 Family、Data 与 κ 的序数性推出 AllSuccessors：每个外层阶段具有来自同一固定记录的 J／last、精确索引字段、J 是 last 的内部后继、空零点属于 J、全部内轮后继 cut 和跨轮紧邻 Cover。actual_ends 实际消费 Built 的调度末点关系，初点成员性复用原生 empty_mem_of_nonempty；不存在未消去的逐阶段末点／初点假设。
+
+innerLimit_kernel_certificate 和 outerLimit_kernel_certificate 分别把 cut 无 Cover 前驱传到内轮与外层序数不是后继。外层传输消费 all_successors 中的实际跨轮端点，按 cut_unique 对齐同一 cut。这里完成的是源 inner_limit/outer_limit 的无前驱部分；初始 cut 排除、实际阶段连续性与完整 IsSuccLimit 装配仍须接通，不能将本批称作完整 flatten。
+
+跨轮索引 Cover 与跨轮阶段子对象相等是不同义务；后者及身份 attachment 尚待消费现有范围等式与实际初行／末行证明。现成 ConstructionTowerInitial.Value 已包含身份映射，无需重建。45 项新增声明及三个原核端点的全量验收见 verification/block-cuts-acceptance.json。原第8阶段及最终内部Con仍未完成。

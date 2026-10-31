@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：cut 后继／身份边界与逐阶段 cell 装配
+## 当前执行入口：同终端阶段族、跨轮子对象相等与 stepCell 装配
 
-ConstructionBlockIndex 已消费固定内轮记录 Family，从同一记录第 0 字段提取全部实际内轮序数，构造原 BlockIndex.Interior 的精确依赖配对载体及“外层优先、内轮其次”的字典序。每个内部非空子集的最小元通过两次有界 Separation 和已有序数最小元取得，未借用模型外部良基性。再复用现成 WithTop 构造及 exists_index_order，得到同一载体上的末端 top 和内部良序；内轮末点保留在依赖载体中。
+ConstructionBlockCuts 已消费同一实际 Family／Data，证明 cut 的精确字典序比较、内轮紧邻后继和末点到下一轮初点的跨轮 Cover。actual_ends 从固定记录读取原 CompleteRound.Built 的真实末点后继关系及空零点，并调用已有原生定理消去下一轮初点成员性；all_successors 构造全部实际阶段的后继合同，不要求调用者另给末点／初点或逐阶段后继见证。
 
-本批两个原 nativeZF 证书：construction_kernel_certificate 直接从固定 Family 构造索引 Data；recursive_kernel_certificate 在既有 L 解释内，从同一外层 Context、Recursive、Matrix 和 κ∈B 直接产生 Family 与 Data。实际记录、序数族、精确依赖载体、两层良序及精确关系图全部保留。没有新增对象 Choice、外部良基前提、proof kernel 或递归实现。
+本批三个普通 nativeZF 原核端点：全阶段 cut 后继、内轮无前驱传输、外层无前驱传输。后两者证明 cut 无 Cover 前驱时相应内部序数不是后继，使用同一个索引及实际跨轮见证。没有新增 Choice、外部良基、proof kernel 或递归基础。这里已完成的是索引边界 Cover；跨轮两端阶段子对象相等及其身份 attachment 尚待实际装配。
 
-本批全量验收：3056 项构建、35053 项声明、9 条命令／5 次 trust=0、零警告；35013 项旧声明依赖不变，2611 项文件哈希匹配，无新增公理依赖。见 verification/block-index-acceptance.json。
+本批全量验收：3057 项构建、35098 项声明、9 条命令／5 次 trust=0、零警告；35053 项旧声明依赖不变，2612 项文件哈希匹配，无新增公理依赖。见 verification/block-cuts-acceptance.json。
 
-下一实际调用链：在已完成的实际依赖索引上证明 cut 后继、内轮末点到下一轮初点的身份边界 → 汇集已完成的同终端精确范围并实例化内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。内轮记录选择、依赖载体及内部良序不再列作待做。
+下一实际调用链：汇集已完成的同终端精确范围为实际阶段族 → 消费现有初行身份／末行图，实例化 blockStage_base/top 与跨轮子对象相等 → 完成初点排除和内外连续性 → 统一 stepCell／局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。实际记录、依赖索引／内部良序、cut 后继与无前驱传输不再列作待做；ConstructionTowerInitial.Value 已有身份映射，不重建底端同构基础。
 
-**仍在原第 8 阶段。** cut 后继／边界实例、完整 Saturation.cells/flattened Timeline、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、实际阶段相等／连续性／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -21,7 +21,7 @@ ConstructionBlockIndex 已消费固定内轮记录 Family，从同一记录第 0
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族及实际依赖索引良序；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
