@@ -37092,3 +37092,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congrSentence
 #print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congr_models
 #print axioms PPAC.Migration.ForcingGermCorrectedCongruence.congr_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedEquality.corrected_reindex
+#print axioms PPAC.Migration.ForcingGermCorrectedEquality.corrected_eq_iff
+#print axioms PPAC.Migration.ForcingGermCorrectedEquality.equalitySentence
+#print axioms PPAC.Migration.ForcingGermCorrectedEquality.equality_models
+#print axioms PPAC.Migration.ForcingGermCorrectedEquality.equality_kernel_certificate

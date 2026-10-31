@@ -1015,3 +1015,17 @@ monoid, presentation, group/filter, vertex code and HS name inputs remain explic
 Full acceptance passed: 3129 build jobs, 36479 audited declarations, 2684 hashed
 files, nine commands including five trust=0 checks, zero warnings. All 36475 prior
 footprints are unchanged and there are no new axiom dependencies. This does not prove corrected_eq_iff, complete orbit assignment or Con.
+
+
+`ForcingGermCorrectedEquality.equality_kernel_certificate` migrates fixed
+StableSelectors.corrected_eq_iff:480 to the original nativeZF kernel, relative
+to the same existing internal L. Two arbitrary Corrected witnesses are aligned
+to the first representative using proved corrected_selected. Literal inverse
+label/name images are constructed; preliminary_eq_iff and EqF symmetry give
+forced name equality iff the original labels are equal. No aligned-representative
+or equality oracle is assumed. Concrete source contracts remain explicit.
+The existing L closing proof is retained with three checked substitutions.
+Full acceptance passed: 3130 build jobs, 36484 audited declarations, 2685 hashed
+files, nine commands including five trust=0 checks, zero warnings. All 36479 prior
+footprints are unchanged; five new declarations add no axiom dependencies. Still stage 8; permute/descend, StableAt,
+complete orbit assignment and final internal Con remain open.
