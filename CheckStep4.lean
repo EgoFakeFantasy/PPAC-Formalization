@@ -13194,4 +13194,14 @@ example {m : Nat} (w zero D mul e a b d node W unit G O gen V GV unitV f g N R :
       (ConstructionMappedProbe.constructionSentence w zero D mul e a b d node W unit G O gen V GV unitV f g N R)) :=
   ConstructionMappedProbe.construction_kernel_certificate w zero D mul e a b d node W unit G O gen V GV unitV f g N R
 
+example {m : Nat} (w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j raw A0 A1 : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionSelectedAttachments.selectedSentence w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j raw A0 A1)) :=
+  ConstructionSelectedAttachments.selected_kernel_certificate w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j raw A0 A1
+
+example {m : Nat} (w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j A0 A1 : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionSelectedAttachments.mapSuccSentence w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j A0 A1)) :=
+  ConstructionSelectedAttachments.mapSucc_kernel_certificate w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j A0 A1
+
 end PPAC.Migration.Step4Checks

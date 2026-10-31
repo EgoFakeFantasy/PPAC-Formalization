@@ -901,3 +901,4 @@ import PPAC.Migration.ConstructionExecutedCellPresentation
 import PPAC.Migration.ConstructionRangeObject
 import PPAC.Migration.ConstructionMappedMerger
 import PPAC.Migration.ConstructionMappedProbe
+import PPAC.Migration.ConstructionSelectedAttachments

@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：同一 SelectedAt 两分支范围附件 → blockStage_step → flatten.step
+## 当前执行入口：实际外轮 blockStage_step → 同一 Timeline 的 flatten.step
 
-ConstructionMappedProbe 已从实际 OperationSource.Probe 构造字面旧范围上的完整映射呈现、实际保守模拟及内部逆，再取得固定每个旧元素、精确覆盖原终端范围 R 的嵌入。原 W/unit/G/O/gen 与 f/g/N/R 不变；原 gen 到目标 genN 的实际模拟方程显式保留。TerminalTable/ConeLaws 直接取自原 Alpha，不新增这两个前提。源呈现提取的已有证明正文通过两处精确替换核对，仅多保留两个已有输出。
+ConstructionSelectedAttachments 已把两种范围附件构造接入同一个实际 SelectedAt。原 19 个见证、raw、请求、源/目标记录及 9 个字段完整保留，原字段正文有机械一致性核对。两端映射从同一 Out 提取；完整映射性质、复合交换律和精确 Images 范围分别从已有 Valid、CompositeFamily、Ranges 推出，没有新增未证明的附件或自然性前提。
 
-construction_kernel_certificate 是普通 nativeZF 原 FirstOrder.Derives 闭句，21 个槽位全称闭包、27 个内部存在输出；目标范围对象及映射请求／因子／端点／字母表／单词／模拟全部消费现成生产者。Probe 和上一批 Merger 的单次范围构造均已完成，不再列作待做。
+selected_kernel_certificate 与 mapSucc_kernel_certificate 均为普通 nativeZF 原 FirstOrder.Derives 闭句。前者保留实际已选 raw，后者从 Context／Recursive／Matrix 产生同一 raw 的 SelectedAt 和附件。分别有 43／42 个全称槽位；两分支构造见证在对象语言内部存在量化，适用任意内部后继索引。
 
-本批全量验收：3069 项构建、35334 项声明、10 新声明、1 个原核证书，9 条命令／5 次 trust=0，零警告；35324 项旧声明依赖不变，2624 项文件哈希匹配，无新增公理依赖。见 verification/mapped-probe-acceptance.json。
+本批全量验收：3070 项构建、35359 项声明、25 新声明、2 个原核证书，9 条命令／5 次 trust=0，零警告；35334 项旧声明依赖不变，2625 项文件哈希匹配，无新增公理依赖。见 verification/selected-attachments-acceptance.json。
 
-下一步统一同一 SelectedAt 的两分支：保持原 19 见证及 raw 字段，使用现有 recursive_valid／StageRow 和 Done 提供实际单子、非单位标记和 roots 函数图，再接原 blockStage_step／flatten.step（身份、边界、top 分支保留）。精确范围、复合映射自然性、完整 Timeline、L／全模式和已有基础继续复用，不另建塔或递归后端。
+下一步直接从已保存 Trace 与 Realized 提取同一内轮及实际外轮终端映射，接原 blockStage_step，再接完整 Timeline 的 flatten.step（身份、边界、top 分支保留）。两种单次范围构造、实际 SelectedAt 逐后继装配、完整 Timeline、L／全模式及既有递归基础均已完成，不再重复开发。
 
-**仍在原第 8 阶段。** 统一实际后继附件家族、完整 CellTower／stepCell 及后续第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 本批完成逐内部后继的实际附件生产者；完整实际外轮 BlockTower／CellTower 的 step 装配、后续构造及第 9–11 阶段未完成，最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

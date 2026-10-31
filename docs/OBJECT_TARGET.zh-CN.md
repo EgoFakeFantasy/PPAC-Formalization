@@ -325,3 +325,7 @@ ConstructionMappedMerger.construction_kernel_certificate 在普通 nativeZF 原�
 ## 2026-10-31：实际 Probe 源记录的范围构造已验收
 
 ConstructionMappedProbe.construction_kernel_certificate 在普通 nativeZF 原核中完成实际 Probe 的映射呈现、保守模拟、内部逆和精确范围识别。原 gen 到目标 genN 的方程及所有旧元素固定条件均保留。21 个槽位全称闭包，27 个内部存在输出；TerminalTable/ConeLaws 来自原 Source.Alpha，已有呈现提取证明正文仅作两处输出保留调整并机械核对。Probe 与 Merger 的单次范围构造均已完成；统一 SelectedAt 家族、完整 CellTower 和最终内部 Con 尚未完成。验收见 verification/mapped-probe-acceptance.json。
+
+## 2026-10-31：同一实际 SelectedAt 的两分支范围附件已验收
+
+ConstructionSelectedAttachments.selected_kernel_certificate／mapSucc_kernel_certificate 在普通 nativeZF 原核中完成实际已选后继的两种范围附件装配。保留原 19 个见证、raw 和全部 9 个字段；同一 Out 的两端映射及交换律由真实历史 Valid 和复合图推出，字面范围使用同一 Images。43／42 个全称槽位覆盖任意内部后继；Probe 的 27 个、Merger 的 19 个内部构造输出消费已验收生产者。原字段正文另作精确一致性检查，不能以此替代对象推导。全量 3070 构建、35359 声明、2 原核证书通过；35334 旧足迹不变，无新增公理依赖。验收见 verification/selected-attachments-acceptance.json。下一步仅接现成 Trace／Realized 的实际外轮 blockStage_step 及同一 Timeline 的 flatten.step；完整 CellTower 与最终内部 Con 未完成。

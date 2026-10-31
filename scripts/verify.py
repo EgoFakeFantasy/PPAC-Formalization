@@ -2462,7 +2462,8 @@ def main() -> None:
                                ('construction_executed_cell_presentation', 'ConstructionExecutedCellPresentation', 27),
                                ('construction_range_object', 'ConstructionRangeObject', 10),
                                ('construction_mapped_merger', 'ConstructionMappedMerger', 10),
-                               ('construction_mapped_probe', 'ConstructionMappedProbe', 10)):
+                               ('construction_mapped_probe', 'ConstructionMappedProbe', 10),
+                               ('construction_selected_attachments', 'ConstructionSelectedAttachments', 25)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
