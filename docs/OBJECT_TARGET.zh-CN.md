@@ -271,3 +271,11 @@ ConstructionFlatStages 迁移固定源 BlockTower.flatStage／flatStage_cut／fl
 两个原 FirstOrder.Derives nativeZF [] 证书分别构造图与传输成员关系。后者对每个实际 Realized 呈现成立，保留任意内部阶段和元素，不使用外部标准性或新增对象 Choice。这里由 top 提供的总体覆盖不等于 top 处严格较早覆盖。外轮范围／区块底端对齐、严格较早 top 覆盖、同一图上的全局单调性与极限连续性及 stepCell 仍需消费已有证明完成接线；没有把图存在冒充完整 Timeline。
 
 实际验收：3062 构建任务、35212 声明、33 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35179 声明依赖不变，2617 文件哈希匹配，无新增公理依赖。报告 verification/flat-stages-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。
+
+## 实际外轮底端对齐与严格较早终端覆盖（2026-10-31）
+
+ConstructionFlatOuter 消费既有 Realized.Base、原矩阵 matrix_at、Chart／Field 与范围唯一性，证明任意实际零位置 cut 在统一 S 中的成员关系与同一外轮范围一致。通过实际终行身份映射识别终端范围为 V，再消费 SaturationIndex.Data 的现有正则性 isLimitOrdinal 和 OuterData.Continuous，为每个 V 中元素给出严格早于终端 top 的底端 cut 见证。本节已完成此前记录的外轮底端对齐与严格较早 top 覆盖，不应再次将它们列作数学缺失。
+
+assemblySentence 有普通 nativeZF 的原 FirstOrder.Derives 证书。constructionSentence 从同一真实递归输入共同构造实际 Family、cut 索引、统一 S 及外轮范围图，底端对齐和严格覆盖均在结论中；其既有 L 相对化句有 nativeZF 原核证书，源 Choice／order 通过已完成的 L 解释消去，没有新增普通 ZF 的选择假设。量词覆盖全部内部索引与全部 V 中元素。
+
+全局单调性和其余 cut 连续性仍需传到同一 S 并装配完整 Timeline，stepCell／identity attachment 仍待消费现有生产端。实际验收：3063 构建任务、35235 声明、23 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35212 声明依赖不变，2618 文件哈希匹配，无新增公理依赖。报告 verification/flat-outer-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。

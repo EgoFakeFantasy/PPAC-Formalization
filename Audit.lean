@@ -35813,3 +35813,27 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionFlatStages.transportSentence
 #print axioms PPAC.Migration.ConstructionFlatStages.transport_models
 #print axioms PPAC.Migration.ConstructionFlatStages.transport_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionFlatOuter.outer_range
+#print axioms PPAC.Migration.ConstructionFlatOuter.base_at
+#print axioms PPAC.Migration.ConstructionFlatOuter.realized_zero
+#print axioms PPAC.Migration.ConstructionFlatOuter.realized_index
+#print axioms PPAC.Migration.ConstructionFlatOuter.Bottoms
+#print axioms PPAC.Migration.ConstructionFlatOuter.Covers
+#print axioms PPAC.Migration.ConstructionFlatOuter.align_bottoms
+#print axioms PPAC.Migration.ConstructionFlatOuter.outer_top
+#print axioms PPAC.Migration.ConstructionFlatOuter.strict_cover
+#print axioms PPAC.Migration.ConstructionFlatOuter.assembly
+#print axioms PPAC.Migration.ConstructionFlatOuter.construction
+#print axioms PPAC.Migration.ConstructionFlatOuter.bottoms
+#print axioms PPAC.Migration.ConstructionFlatOuter.bottoms_freeClosed
+#print axioms PPAC.Migration.ConstructionFlatOuter.bottoms_semantics
+#print axioms PPAC.Migration.ConstructionFlatOuter.covers
+#print axioms PPAC.Migration.ConstructionFlatOuter.covers_freeClosed
+#print axioms PPAC.Migration.ConstructionFlatOuter.covers_semantics
+#print axioms PPAC.Migration.ConstructionFlatOuter.assemblySentence
+#print axioms PPAC.Migration.ConstructionFlatOuter.assembly_models
+#print axioms PPAC.Migration.ConstructionFlatOuter.assembly_kernel_certificate
+#print axioms PPAC.Migration.ConstructionFlatOuter.constructionSentence
+#print axioms PPAC.Migration.ConstructionFlatOuter.construction_models
+#print axioms PPAC.Migration.ConstructionFlatOuter.construction_kernel_certificate

@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：外轮底端对齐、严格较早终端覆盖与 Timeline／stepCell 装配
+## 当前执行入口：同一阶段图的全局单调性、完整 Timeline 与 stepCell 装配
 
-ConstructionFlatStages 已从同一实际 Valid／Matrix／终行／Family／Index.Data 构造一张内部总阶段函数图 S。每个 interior cut 的值严格等于原选中轮的实际范围；同一轮的不同辅助图呈现由现有记录、字段、复合及范围唯一性证明给出字面相等。空集编码的 top 映到同一个最终载体 V，全部阶段范围包含于 V。
+ConstructionFlatOuter 已将每个实际区块底端 cut 的成员关系与同一外轮范围图逐点双向对齐。实际终行保存的身份图给出外轮终端范围 = V；现有正则索引的 isLimitOrdinal 及 OuterData.Continuous 于是为每个 V 中元素产生严格较早的外轮及底端 cut。终端 top 自身从不作为较早见证。外轮底端对齐与严格较早终端覆盖不再列为待做。
 
-construction_kernel_certificate 与 transport_kernel_certificate 均为普通 nativeZF 对象句的原 FirstOrder.Derives 证书。transport 对每个实际 Realized 呈现给出统一图与原区块 Images 的成员关系双向等价。统一实际阶段函数图及逐区块成员传输不再列为待做；Result 的覆盖可使用 top 自身，绝不等同于 top 处严格较早覆盖或完整连续 Timeline。
+assembly_kernel_certificate 是普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 是既有 L 相对化对象句在 nativeZF 中的原核证明，Choice／order 由已完成 L 解释消去。实际调用端从同一 Context／Recursive／SaturationIndex.Data／Matrix／终行共同构造 Family、cut 索引、统一 S 和外轮范围图，并将底端对齐及严格覆盖放在结论中，没有额外假设这些图或覆盖。
 
-本批全量验收：3062 项构建、35212 项声明、9 条命令／5 次 trust=0、零警告；35179 项旧声明依赖不变，2617 项文件哈希匹配，无新增公理依赖。固定源声明定位已校准。见 verification/flat-stages-acceptance.json。
+本批全量验收：3063 项构建、35235 项声明、9 条命令／5 次 trust=0、零警告；35212 项旧声明依赖不变，2618 项文件哈希匹配，无新增公理依赖。见 verification/flat-outer-acceptance.json。
 
-下一实际调用链：用既有 Realized.Base、Chart／Field 唯一性和 matrix_at 对齐外轮范围与区块底端 → 消费既有 SaturationCover.exists_rep 取得严格较早终端覆盖，并将现成单调性／极限见证传入同一 S → 装配 Timeline → 消费已有实际 attachment 和边界等式装配 stepCell／全局依赖 → restrict_selected／future_cut／可数重排／germ/selector。不重建函数图、序数分类、递归、colimit 或 L 基础。
+下一实际调用链：将已有内轮单调性、顶端／跨轮范围等式和外轮单调性传入同一 S → 以内轮实际连续性／CutLimits 分类、底端对齐及本批严格终端覆盖完成所有 cut 的连续性 → 装配 FirstAppearance.Timeline → 消费已有实际 attachment 和边界等式装配 stepCell／全局依赖 → restrict_selected／future_cut／可数重排／germ/selector。不重建已完成的范围、覆盖、函数图、正则性、递归或 L 基础。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、外轮底端对齐／严格较早终端覆盖／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、全局单调性／非终端 cut 连续性装配／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
