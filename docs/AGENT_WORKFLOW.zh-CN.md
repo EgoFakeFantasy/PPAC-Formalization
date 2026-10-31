@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：精确 availability 传输 → StableAt／OrbitAssignments
+## 当前执行入口：StableAt 置换已接通 → corrected_stable／OrbitAssignments
 
-Corrected 主要定律已在提交 fd0e6a3 完成全量验收。本批继续固定源 forcedAvailable_permute_iff:550、forcedAvailability_permute:568：实际搬移规范局部名字、子图、精确支撑像与固定子群，反向用同一逆作用恢复见证；通过既有 EqF 传输证明同一个理想 U 保持不变。
+本批迁移固定源 StableAt:581、stableAt_permute:589、stableAt_permute_iff:619。纯对象公式保留同一个规范局部名字、完整 isClass 强迫和每个内部更强条件下的精确 availability 理想。证明实际搬移支撑像／固定子群／名字，并把每个更强条件经 Cohen 双射拉回；反向使用已有逆作用。
 
-两个普通 nativeZF 原核端点及 8 项声明已通过定向编译／trust=0，无新增公理依赖；本批全量验收已通过：3133 个构建任务、36500 项声明审计、2688 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36492 项旧依赖保持不变。直接消费者为 stableAt_permute:589，不新建名字、支撑、强迫或解释底座。
+最终接口消费真实 labelSet 和 bound，导出标签固定性与界支撑性，从源 μ 无限基数条件导出 ω 小性和滤子正规性，再从源 E 支撑导出 E 固定性。普通 nativeZF 原核闭句及 10 项声明已通过定向编译／trust=0，无新增公理依赖；本批全量验收已通过：3134 个构建任务、36510 项声明审计、2689 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36500 项旧依赖保持不变。
 
-**仍在原第 8 阶段。** 接下来沿 StableAt → OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
+**仍在原第 8 阶段。** 下一个真实消费者为 OrbitAssignments.corrected_stable:30，随后继续 OrbitAssignments → assignmentGraph_bijection → 具体商双射。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

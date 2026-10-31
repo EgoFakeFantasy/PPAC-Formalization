@@ -965,3 +965,4 @@ import PPAC.Migration.ForcingGermCorrectedEquality
 import PPAC.Migration.ForcingGermCorrectedPermutation
 import PPAC.Migration.ForcingGermCorrectedDescent
 import PPAC.Migration.ForcingForcedAvailabilityTransport
+import PPAC.Migration.ForcingStableAt

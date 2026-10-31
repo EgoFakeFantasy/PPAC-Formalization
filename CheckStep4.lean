@@ -13712,4 +13712,8 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one bound 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingForcedAvailabilityTransport.carrierSentence rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act index U)) :=
   ForcingForcedAvailabilityTransport.carrier_kernel_certificate rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act index U
 
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul act ai I K B w mu pi inv c one bound labels E q ac d movedD vertex movedVertex tau movedTau labelMap top bit Hq : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingStableAt.permutationSentence rho G F mul act ai I K B w mu pi inv c one bound labels E q ac d movedD vertex movedVertex tau movedTau labelMap top bit Hq)) :=
+  ForcingStableAt.permutation_kernel_certificate rho G F mul act ai I K B w mu pi inv c one bound labels E q ac d movedD vertex movedVertex tau movedTau labelMap top bit Hq
+
 end PPAC.Migration.Step4Checks

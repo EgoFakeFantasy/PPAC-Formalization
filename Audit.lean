@@ -37117,3 +37117,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrierSentence
 #print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrier_models
 #print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrier_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingStableAt.StableAt
+#print axioms PPAC.Migration.ForcingStableAt.stableAt
+#print axioms PPAC.Migration.ForcingStableAt.stableAt_freeClosed
+#print axioms PPAC.Migration.ForcingStableAt.stableAt_semantics
+#print axioms PPAC.Migration.ForcingStableAt.permute
+#print axioms PPAC.Migration.ForcingStableAt.permute_iff
+#print axioms PPAC.Migration.ForcingStableAt.literal_permute_iff
+#print axioms PPAC.Migration.ForcingStableAt.permutationSentence
+#print axioms PPAC.Migration.ForcingStableAt.permutation_models
+#print axioms PPAC.Migration.ForcingStableAt.permutation_kernel_certificate
