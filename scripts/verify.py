@@ -2515,7 +2515,8 @@ def main() -> None:
                                ('construction_germ_best_coset', 'ConstructionGermBestCoset', 18),
                                ('construction_germ_pattern_order', 'ConstructionGermPatternOrder', 20),
                                ('construction_germ_selected', 'ConstructionGermSelected', 31),
-                               ('construction_germ_condition_selector', 'ConstructionGermConditionSelector', 17)):
+                               ('construction_germ_condition_selector', 'ConstructionGermConditionSelector', 17),
+                               ('construction_concrete_selector', 'ConstructionConcreteSelector', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

@@ -954,3 +954,4 @@ import PPAC.Migration.ConstructionGermBestCoset
 import PPAC.Migration.ConstructionGermPatternOrder
 import PPAC.Migration.ConstructionGermSelected
 import PPAC.Migration.ConstructionGermConditionSelector
+import PPAC.Migration.ConstructionConcreteSelector

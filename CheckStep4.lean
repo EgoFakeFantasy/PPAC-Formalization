@@ -13635,4 +13635,19 @@ example {m : Nat} (w D chain H G N K C B lo hi det S : Fin m) :
       (ConstructibleGround.relative (ConstructionGermConditionSelector.constructionSentence w D chain H G N K C B lo hi det S))) :=
   ConstructionGermConditionSelector.construction_kernel_certificate w D chain H G N K C B lo hi det S
 
+example {m : Nat} (w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionConcreteSelector.representativeSentence w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f p)) :=
+  ConstructionConcreteSelector.representative_kernel_certificate w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f p
+
+example {m : Nat} (w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f unit vertices pi p c : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionConcreteSelector.permutationSentence w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f unit vertices pi p c)) :=
+  ConstructionConcreteSelector.permutation_kernel_certificate w D I mul q root chain kappa zero group quotient projection reps N X det J hi bits coords S O order Psel f unit vertices pi p c
+
+example {m : Nat} (w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionConcreteSelector.constructionSentence w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain))) :=
+  ConstructionConcreteSelector.construction_kernel_certificate w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain
+
 end PPAC.Migration.Step4Checks
