@@ -2492,7 +2492,8 @@ def main() -> None:
                                ('construction_countable_quotient', 'ConstructionCountableQuotient', 4),
                                ('construction_countable_germs', 'ConstructionCountableGerms', 6),
                                ('construction_germ_detectors', 'ConstructionGermDetectors', 38),
-                               ('construction_germ_detector_sites', 'ConstructionGermDetectorSites', 19)):
+                               ('construction_germ_detector_sites', 'ConstructionGermDetectorSites', 19),
+                               ('construction_germ_separation', 'ConstructionGermSeparation', 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
