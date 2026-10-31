@@ -362,4 +362,6 @@ ConstructionUnionPushout.union_kernel_certificate 在普通 nativeZF 原核中�
 
 ConstructionCellBaseChange 的 mapped／realization／attachment、ConstructionIntermediate 的 apexSup／intermediate 和 ConstructionFutureFamily 的实际四函数族构造均已取得普通 nativeZF 原核证书并通过全量验收。四个族由对象存在量词绑定为集合，保留精确交集、普通生成上确界、乘法图类型及单调性；对象句没有断言所有未来上确界已是保守子对象。其保守闭包／完整 Square 仍须由完整 future_cut 内部归纳证明，reordered 和最终内部 Con 亦未完成。
 
-ConstructionFutureCut 的 initial／selected／omitted／limit 四个普通 nativeZF 原核证书现已通过全量验收。selected 实际消费 intermediate 并粘合，apex_sup 保留普通生成上确界；omitted 从实际 Cover 和无保留 NewAt 推出交集相等；limit 从实际内部函数族、LocalSquares、单调性和保留侧连续并集产生另一侧的实际并集及完整 Square。LocalSquares 的逐阶段归纳来源、Timeline 前段区间／连续性及实际 selected 图对齐仍须在完整内部归纳中消去。不能将这四条带明确输入的分支句子称为完整 future_cut，更不能称为最终内部 Con。
+ConstructionFutureCut 的 initial／selected／omitted／limit 四个普通 nativeZF 原核证书现已通过全量验收。selected 实际消费 intermediate 并粘合，apex_sup 保留普通生成上确界；omitted 从实际 Cover 和无保留 NewAt 推出交集相等；limit 从实际内部函数族、LocalSquares、单调性和保留侧连续并集产生另一侧的实际并集及完整 Square。Timeline 前段区间／连续性现由下述 ConstructionFutureLimit 实际消去；完整内部归纳及实际 selected 图对齐仍须完成。不能将这四条带明确输入的分支句子称为完整 future_cut，更不能称为最终内部 Con。
+
+ConstructionFutureLimit.limit_kernel_certificate 在同一纯成员语言和 nativeZF 原核中完成实际极限分支：内部区间与反身序、四族限制、单调性和保留切割连续性均从现有 Timeline 与集合族推出。结论证明同一个 Futures(b) 是保守子对象并具有完整 Square，保留普通生成上确界；唯一剩余的分支前提 EarlierSquares 严格限制于 a≤i<b。它是归纳步骤，不是假定终点 b 的结论，也不是已经完成全体指标的归纳。完整 future_cut／reordered 及最终内部 Con 仍未完成。

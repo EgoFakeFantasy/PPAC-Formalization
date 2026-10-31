@@ -13358,4 +13358,8 @@ example {m : Nat} (V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic : F
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureCut.limitSentence V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic)) :=
   ConstructionFutureCut.limit_kernel_certificate V GV e K E Bs Ds BMs DMs A B C PA PB PC GA GB GC ia ib ic
 
+example {m : Nat} (V GV e I R bottom S retained a b CutsGraph Futures CutMuls FutureMuls A C PA PC GA GC ia ic B F : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureLimit.limitSentence V GV e I R bottom S retained a b CutsGraph Futures CutMuls FutureMuls A C PA PC GA GC ia ic B F)) :=
+  ConstructionFutureLimit.limit_kernel_certificate V GV e I R bottom S retained a b CutsGraph Futures CutMuls FutureMuls A C PA PC GA GC ia ic B F
+
 end PPAC.Migration.Step4Checks
