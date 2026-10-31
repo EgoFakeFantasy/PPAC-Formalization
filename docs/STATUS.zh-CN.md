@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：Attachment 有限系数传输与选中后继
+## 当前执行入口：实际依赖图与选中后继
 
-ConstructionCellCoefficients 已完成固定源 Cell.finite_coefficients 的实际迁移：用原生 Separation 实现闭包归纳，四个分支依次使用旧系数单点、新生成元空支撑、单位元空支撑、乘法的有限并集。两个原 nativeZF 证书对实际 Probe/Merger 扩张的每个内部元素给出同一个旧系数集合 S、内部自然数 n、S 到 n 的单射界，以及 S 的内部有限满射枚举和精确闭包成员性。
+ConstructionAttachmentCoefficients 已完成固定源 Attachment.finite_coefficients 的同一系数传输：通过原生 Separation 构造实际同态的子单子原像，沿同一个映射传输有限旧系数集合 S。两类实际 cell 的原核证书保留输入中具名的同一个 Attachment 目标 R，并构造实际复合的旧包含图和完整生成元图；旧包含图在 D 上为恒等图。
 
-并集复用原生 ZF 序数加法和函数图构造；基数界直接复用供体 ExistingOrdinalImage 的最小原像证明。整个新生成元族保留，不限制为外部标准字长，不使用 Lean Finset，不添加对象 Choice 前提，也没有调用要求 ZFC 的拼接封装。
+第三个原核证书构造 retained ∩ D，并在“本次选定的 S 已保留”的显式前提下证明 selected_word 所需的闭包单调性推论。这是局部推论；实际 tower 的统一支撑选择、dependencies 图及其闭合前提尚未在本批构造或消去。
 
-本批全量验收：3049 项构建、34767 项声明、9 条命令／5 次 trust=0、零警告；34738 项旧声明依赖不变，2604 项文件哈希匹配，无新增公理依赖。见 verification/cell-coefficients-acceptance.json。
+本批全量验收：3050 项构建、34799 项声明、9 条命令／5 次 trust=0、零警告；34767 项旧声明依赖不变，2605 项文件哈希匹配，无新增公理依赖。见 verification/attachment-coefficients-acceptance.json。
 
-下一实际调用链：CellTowers.Attachment.finite_coefficients:203 → coefficients/dependencies:299–325 → CellCuts.selected_word:108 → restrict_selected:128 → CellReorder.future_cut:182。先沿实际 attachment 映射传输同一个有限系数集合，再消费依赖闭包与实际模拟像，复用现成 map_apex/change_left、保守模拟／推送和可数保守包。已有 attachment_gateStep 与可数闭包后端不重做。
+下一实际调用链：CellTowers.stepCell/coefficients/dependencies:295–325 → CellCuts.selected_dependencies/selected_word:94–123 → restrict_selected:128 → CellReorder.future_cut:182。每个阶段必须固定同一个 cell，再产生内部支撑函数和实际依赖图。复用 ConstructionRoundSelection.least_denote、原生函数图构造和已有 L 背景；不把逐元素存在性冒充已构造的统一图，不重做可数保守包或推送识别。
 
-**仍在原第 8 阶段。真正剩余为上述实际 Attachment／依赖消费者接线、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 两类 cell 的有限旧系数、生成性、实际普通闭包、完整保守模拟／推送、参数原像、有限下降及对齐均已完成；不得把这些或 L、全公理模式、递归、推导核重新列为待做。
+**仍在原第 8 阶段。真正剩余为上述实际依赖消费者接线、选中后继、可数重排、完整 germ/selector 与赋值商双射，以及第 9–11 阶段和最终内部 Con。** 两类 cell 的有限旧系数及 Attachment 同一系数传输、生成性、实际普通闭包、完整保守模拟／推送、参数原像、有限下降及对齐均已完成；不得把这些或 L、全公理模式、递归、推导核重新列为待做。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -23,7 +23,7 @@ ConstructionCellCoefficients 已完成固定源 Cell.finite_coefficients 的实�
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包与有限旧系数 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数与 Attachment 传输 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

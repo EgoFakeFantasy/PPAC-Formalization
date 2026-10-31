@@ -12969,4 +12969,19 @@ example {m : Nat} (w zero D mul e a b d node factor terminal target L C projecti
       (ConstructionCellCoefficients.probeSentence w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O)) :=
   ConstructionCellCoefficients.probe_kernel_certificate w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O
 
+example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots V H eV F R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionAttachmentCoefficients.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots V H eV F R)) :=
+  ConstructionAttachmentCoefficients.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots V H eV F R
+
+example {m : Nat} (w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionAttachmentCoefficients.probeSentence w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R)) :=
+  ConstructionAttachmentCoefficients.probe_kernel_certificate w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R
+
+example {m : Nat} (I V H e old generators coefficients D retained x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionAttachmentCoefficients.retainedSentence I V H e old generators coefficients D retained x)) :=
+  ConstructionAttachmentCoefficients.retained_kernel_certificate I V H e old generators coefficients D retained x
+
 end PPAC.Migration.Step4Checks

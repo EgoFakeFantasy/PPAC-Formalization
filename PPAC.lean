@@ -881,3 +881,4 @@ import PPAC.Migration.ConstructionMergerCopiesMap
 import PPAC.Migration.ConstructionMergerWordTransport
 import PPAC.Migration.ConstructionCellGeneration
 import PPAC.Migration.ConstructionCellCoefficients
+import PPAC.Migration.ConstructionAttachmentCoefficients

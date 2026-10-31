@@ -156,16 +156,22 @@ ConstructionMergerCopiesMap.source_kernel_certificate 在原 nativeZF 推导核�
 
 ConstructionMergerWordTransport.source_kernel_certificate 复用完整 MergerPushout 的 24 个内部存在输出，并新增四项 Conservative 结论：单射、目标右因子留在旧像、所有旧交的保持、共同倍数反射。因子按内部结果字归纳；共同下界按任意内部目标字归纳，调用已验收的 Copies 因子与共同下界。raw_eq_simulation 证明该 Raw 图等于此前实际构造的 mergerSimulation，故不是另一个兼容映射的替代结论。
 
-与上一批对象句子的差异已核对为只增加实际模拟的 Conservative 合取项；原对象量词、基理论和完整推送性质保持。该源缺口现已关闭，不能继续列为待做。ConservativeCells 生成性／有限旧系数、所选后继、可数重排及第 9–11 阶段仍须推进；最终内部 Con 尚未完成。实际全量验收见 verification/merger-word-transport-acceptance.json。
+与上一批对象句子的差异已核对为只增加实际模拟的 Conservative 合取项；原对象量词、基理论和完整推送性质保持。该源缺口现已关闭，不能继续列为待做。ConservativeCells 生成性／有限旧系数现已由后续批次完成；实际依赖图、所选后继、可数重排及第 9–11 阶段仍须推进；最终内部 Con 尚未完成。实际全量验收见 verification/merger-word-transport-acceptance.json。
 
 ## 两类生成性与实际普通闭包的原核证书（2026-10-30）
 
 ConstructionCellGeneration 的 merger_kernel_certificate／probe_kernel_certificate 在同一实际呈现前提下，证明任意内部普通子单子若包含全部旧像及全部新生成元像，就等于整个扩张；并证明每个内部元素属于这两族像生成的闭包。证明直接消费原呈现提升和唯一性，未添加对象选择公理，也没有把子单子加强成保守包。
 
-closure_kernel_certificate 由原生 Separation 构造实际内部最小子单子，闭包成员公式量化全部内部子单子。源 Cell.finite_coefficients 仍未证明；其有限旧系数不能等同于给整个可数新生成元族加有限支撑。现有 PureSequenceConcatenation 封装要求 ZFC，下一步应复用其下层原生 ZF 接口，不能偷加背景。实际全量验收见 verification/cell-generation-acceptance.json；最终内部 Con 未完成。
+closure_kernel_certificate 由原生 Separation 构造实际内部最小子单子，闭包成员公式量化全部内部子单子。源 Cell.finite_coefficients 已由后续 ConstructionCellCoefficients 完成；其有限旧系数不能等同于给整个可数新生成元族加有限支撑。实现复用了下层原生 ZF 接口，没有调用要求 ZFC 的 PureSequenceConcatenation 封装。实际全量验收见 verification/cell-generation-acceptance.json；最终内部 Con 未完成。
 
 ## 两类 cell 有限旧系数的原核证书（2026-10-30）
 
 ConstructionCellCoefficients.merger_kernel_certificate／probe_kernel_certificate 已证明固定源 Cell.finite_coefficients 的对象版本：对同一实际扩张中的每个内部 x，存在同一内部旧系数集合 S 与内部自然数 n，使 S⊆D、S 可单射到 n、S 有内部有限满射枚举，并且 x 属于 old(S) 和全部新生成元像生成的实际闭包。后者复用上一批已构造的原生 Separation 闭包。
 
-源闭包归纳的空集、单点、并集分支均已实现；有限并用底座 ZF 序数加法和函数图构造，有限界用已固定供体的最小原像证明。没有外部标准长度限制、宿主 Finset 或额外对象 Choice 前提。CellTowers.Attachment.finite_coefficients 的同一系数传输与 dependencies/selected_word/restrict_selected 尚待接合，不等同于本批 cell 本身结论未完成。实际全量验收见 verification/cell-coefficients-acceptance.json；最终内部 Con 未完成。
+源闭包归纳的空集、单点、并集分支均已实现；有限并用底座 ZF 序数加法和函数图构造，有限界用已固定供体的最小原像证明。没有外部标准长度限制、宿主 Finset 或额外对象 Choice 前提。CellTowers.Attachment.finite_coefficients 的同一系数传输已由后续 ConstructionAttachmentCoefficients 完成；实际 dependencies/selected_word/restrict_selected 尚待接合，不等同于本批 cell 本身结论未完成。实际全量验收见 verification/cell-coefficients-acceptance.json；最终内部 Con 未完成。
+
+## Attachment 同一系数传输与局部保留闭包（2026-10-31）
+
+ConstructionAttachmentCoefficients 的 merger/probe 原核证书以实际呈现、实际同态 F、旧元素固定性及具名目标 R 的精确值域为前提，结论保留同一个 R，构造实际复合旧包含图／完整生成元图，并给出 R 中每个内部元素的有限旧系数。证明在同态原像子单子上应用已有闭包性质，使用同一个 S；原生值域唯一性将构造结果识别到输入 R。背景仍为 nativeZF，不添加 Choice。
+
+retained_kernel_certificate 在显式给定本次 S 的旧像被保留的前提下，构造 retained ∩ D 并传输闭包成员性。它没有构造 tower 的支撑选择或 dependencies 图，也没有消去依赖闭合前提，不能称作整个 selected_word 或 restrict_selected 已完成。实际依赖图需保持每阶段同一 cell，继续复用已有 L／全局序和内部函数构造。三个端点和全仓验收见 verification/attachment-coefficients-acceptance.json；最终内部 Con 未完成。
