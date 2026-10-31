@@ -335,3 +335,9 @@ ConstructionSelectedAttachments.selected_kernel_certificate／mapSucc_kernel_cer
 ConstructionBlockAttachments 的 realized／family 两端点从原 Trace／Realized 和外轮 Valid 推出全部内部后继附件，完整 afterRound 映射由原记录消去。ConstructionFlatAttachments 的 assembly／coverStep 两端点证明同一 S/I/R/V 的全部后继及任意 Cover：内轮附件、块边界恒等、最终 top 恒等三个分支齐全。construction_kernel_certificate 保留已有递归构造的 11 个输出和 7 项结论（含完整 Timeline），增加同图 Steps；它逐字复用已有 L 解释传输，在 nativeZF 原核中证明相对化对象句，不新增 Choice/order 背景。全量 3072 构建、35401 声明、5 个端点通过，35359 旧足迹不变、无新增公理依赖。验收见 verification/block-attachments-acceptance.json。
 
 下一步是固定非恒等阶段的同一个内部 stepCell 函数族，连接现成单附件参数／生成元／有限系数／可数依赖到全局 dependencies。Merger 的 n∈ω 从保存 Trace 的 Context.Requests 通过请求编码对齐取得；不能把 Picked 单独当成 Request，也不需要重做有限性基础。完整 CellTower 的后续消费者和最终内部 Con 仍未完成。
+
+## 2026-10-31：固定内部 cell 族与全局依赖的对象端点
+
+ConstructionStepCellSelection.construction_kernel_certificate 与 ConstructionGlobalDependencies.construction_kernel_certificate 在 nativeZF 原核中证明同一既有递归输出上的 L 相对化对象句；完整 cell 只按内部阶段选定一次，内部首次出现索引和终端 V 上的依赖函数均为集合图。全局 assembly／at／bottom 是普通 nativeZF 对象句证书；活动行读取同一个 cell 的固定局部依赖图，底层行为空，每行内部可数。保留原 11 个输出和 8 项结论，仅追加 cells/index/deps，不重建 L、全模式、递归或证明核。
+
+本批 3075 项构建、35484 项声明、83 新声明、8 原核端点、5 次 trust=0、零警告通过；35401 项旧声明依赖不变。仍属原第 8 阶段，restrict_selected／future_cut／重排及后续源模型消费者尚未闭合，全部内部／非标准证明码的最终 Con 蕴含没有完成。验收记录：verification/step-cell-acceptance.json。

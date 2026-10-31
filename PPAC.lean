@@ -904,3 +904,6 @@ import PPAC.Migration.ConstructionMappedProbe
 import PPAC.Migration.ConstructionSelectedAttachments
 import PPAC.Migration.ConstructionBlockAttachments
 import PPAC.Migration.ConstructionFlatAttachments
+import PPAC.Migration.ConstructionStepCell
+import PPAC.Migration.ConstructionStepCellSelection
+import PPAC.Migration.ConstructionGlobalDependencies

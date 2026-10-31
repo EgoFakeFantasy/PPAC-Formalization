@@ -13229,4 +13229,36 @@ example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P o
       (ConstructibleGround.relative (ConstructionFlatAttachments.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
   ConstructionFlatAttachments.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
 
+example {m : Nat} (w zero one V GV unitV D R cell : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionStepCell.dependenciesSentence w zero one V GV unitV D R cell)) :=
+  ConstructionStepCell.dependencies_kernel_certificate w zero one V GV unitV D R cell
+
+example {m : Nat} (w Q values top zero one K mu history outerF kappa traces V GV unitV A0 A1 : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ConstructionStepCell.constructionSentence w Q values top zero one K mu history outerF kappa traces V GV unitV A0 A1))) :=
+  ConstructionStepCell.construction_kernel_certificate w Q values top zero one K mu history outerF kappa traces V GV unitV A0 A1
+
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ConstructionStepCellSelection.assemblySentence w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S))) :=
+  ConstructionStepCellSelection.assembly_kernel_certificate w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S
+
+example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV : Fin m) : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ConstructionStepCellSelection.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
+  ConstructionStepCellSelection.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
+
+example {m : Nat} (w zero one V GV unitV I R bottom S index cells : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionGlobalDependencies.assemblySentence w zero one V GV unitV I R bottom S index cells)) :=
+  ConstructionGlobalDependencies.assembly_kernel_certificate w zero one V GV unitV I R bottom S index cells
+
+example {m : Nat} (zero V I R bottom S index cells deps i cell localDeps x Y : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionGlobalDependencies.atSentence zero V I R bottom S index cells deps i cell localDeps x Y)) :=
+  ConstructionGlobalDependencies.at_kernel_certificate zero V I R bottom S index cells deps i cell localDeps x Y
+
+example {m : Nat} (zero V I R bottom S index cells deps x Y : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionGlobalDependencies.bottomSentence zero V I R bottom S index cells deps x Y)) :=
+  ConstructionGlobalDependencies.bottom_kernel_certificate zero V I R bottom S index cells deps x Y
+
+example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV : Fin m) : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ConstructionGlobalDependencies.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
+  ConstructionGlobalDependencies.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
+
 end PPAC.Migration.Step4Checks
