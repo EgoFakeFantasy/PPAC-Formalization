@@ -13400,4 +13400,9 @@ example {m : Nat} (w zero one V GV e I R bottom S index cells D kappa traces Ind
       (ConstructibleGround.relative (ConstructionCountableQuotient.constructionSentence w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain))) :=
   ConstructionCountableQuotient.construction_kernel_certificate w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain
 
+example {m : Nat} (w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCountableGerms.constructionSentence w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain))) :=
+  ConstructionCountableGerms.construction_kernel_certificate w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain
+
 end PPAC.Migration.Step4Checks

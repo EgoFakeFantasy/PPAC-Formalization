@@ -1,16 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：完整 countable_quotient_of_cells 已接通 → 具体 countable_germs
+## 当前执行入口：具体 countable_germs 已接通 → 实际 selector
 
-ConstructionCountableAlignments 构造实际链 index 的可数值域，消费现成可数重排与实际索引有限下降。同一新底在量化所有分量稳定子元素之前构造；已有 alignment 的非空、有界、替换和尾等价定律被真实消费。旧 alignment_replacement API 保留，证明仅增加返回其已经产生的右因子成员性，原 31 项依赖足迹未变。
+ConstructionCountableGerms 直接消费已有饱和递归的零阶段和同一展开阶段的 Bottoms，得到真实底阶段是内部 ω 初始底座的像；复用已有序数像基数界证明其可数性。实际 cell 家族、阶段闭包和首次出现索引全部由现成生产者构造，再调用完整 countable_quotient_of_cells。结论包含整个 germ 商、投影、精确尾等价判据和商到内部 ω 的单射；没有保留可数底、下降门或重排假设。
 
-ConstructionGermCosets 构造完整分量稳定子、全部尾等价类集合及商投影。其内部关系与原源码的“π⁻¹σ 固定某个链尾”精确等价。ω×新底中的 alignment 对映满整个商，调用现成最小原像编码界得到商到内部 ω 的单射；没有用宿主 Quotient 或抽取宿主代表替代。
+最终接口是 nativeZF 中已有 L 解释下的原核证书，输入为已完成具体饱和构造的 Context／Recursive／Matrix／terminal Row，以及任意实际分量链。未重建 Base、L、完整公理模式、递归或 Proof/Sat。
 
-ConstructionCountableQuotient 将以上装成原 countable_quotient_of_cells 的完整原核证书：保留原源码的原底可数前提；其余重排、alignment、商与单射均由实际源记录构造。背景为 nativeZF 中已有 L 解释，未给 nativeZF 添加 Choice。
+本批全量验收通过：3097 个构建任务、35949 项声明、2652 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；35943 项旧声明依赖全部不变，新增 6 项声明无新增公理依赖。验收记录：verification/concrete-germs-acceptance.json。上一批 countable_quotient_of_cells 的全量验收和清理后编译已通过，本地提交 6d619a6。
 
-本批全量验收通过：3096 个构建任务、35943 项声明、2651 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；35865 项旧依赖足迹全部不变，新增 78 项声明未引入新公理。记录见 verification/countable-quotient-acceptance.json。
-
-**仍在原第 8 阶段。** 下一项是将已有初始 Base 和 blockStage_base/Bottoms 连接到具体 countable_germs，以消去原底可数前提，然后消费实际 selector、OrbitAssignments 与商双射。初始底座、可数 hull、L、全公理模式、递归和 Proof/Sat 均已存在，不重做。第 9–11 阶段、最终内部 Con 与原 Comparator 仍未完成。
+**仍在原第 8 阶段。** 下一项为原 component_selector_dense／selected_covariant 的实际输入接线，继而 OrbitAssignments 和具体商双射；第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -21,7 +19,7 @@ ConstructionCountableQuotient 将以上装成原 countable_quotient_of_cells 的
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围 | 实际 selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
@@ -41,7 +39,7 @@ ConstructionCountableQuotient 将以上装成原 countable_quotient_of_cells 的
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.countable_germs → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；下一项为具体初始底/flattening 消费及 countable_germs。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；下一项为实际 selector。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

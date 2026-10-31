@@ -36554,3 +36554,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionCountableQuotient.constructionSentence
 #print axioms PPAC.Migration.ConstructionCountableQuotient.construction_models
 #print axioms PPAC.Migration.ConstructionCountableQuotient.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionCountableGerms.initial_row
+#print axioms PPAC.Migration.ConstructionCountableGerms.bottom_countable
+#print axioms PPAC.Migration.ConstructionCountableGerms.construction
+#print axioms PPAC.Migration.ConstructionCountableGerms.constructionSentence
+#print axioms PPAC.Migration.ConstructionCountableGerms.construction_models
+#print axioms PPAC.Migration.ConstructionCountableGerms.construction_kernel_certificate
