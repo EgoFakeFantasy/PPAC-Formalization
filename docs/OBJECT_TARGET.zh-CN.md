@@ -231,3 +231,11 @@ ConstructionBlockCuts 的三个证书均直接在原 nativeZF 推导核中证明
 innerLimit_kernel_certificate 和 outerLimit_kernel_certificate 分别把 cut 无 Cover 前驱传到内轮与外层序数不是后继。外层传输消费 all_successors 中的实际跨轮端点，按 cut_unique 对齐同一 cut。这里完成的是源 inner_limit/outer_limit 的无前驱部分；初始 cut 排除、实际阶段连续性与完整 IsSuccLimit 装配仍须接通，不能将本批称作完整 flatten。
 
 跨轮索引 Cover 与跨轮阶段子对象相等是不同义务；后者及身份 attachment 尚待消费现有范围等式与实际初行／末行证明。现成 ConstructionTowerInitial.Value 已包含身份映射，无需重建。45 项新增声明及三个原核端点的全量验收见 verification/block-cuts-acceptance.json。原第8阶段及最终内部Con仍未完成。
+
+## 同一实际终端中的逐轮 blockMap／blockStage（2026-10-31）
+
+ConstructionActualBlocks 的两个原核证书均为普通 nativeZF 对象句。traceConstruction_kernel_certificate 消费同一已保存 Trace，利用 recursive_valid、末行 incoming、Homs／Composition 和现有图／值域构造，生成所有内部阶段的实际 blockMap 与精确范围，并给出同一图上的自然性、范围单调性和终端有界性。末点复合图字面等于 after，末点阶段精确等于 W 经 after 的值域；源 blockStage_top 所需的实际顶端方程不再列作待做。
+
+familyConstruction_kernel_certificate 进一步消费同一外层 Valid／Matrix／终行及实际 Family，从该终行内部构造每一轮的 afterRound，保留 outerF 中的实际 Product，故调用者无需逐轮提供终端映射。对象 forall 覆盖全部内部记录和索引，不以外部有限列举替代。外层长度的后继关系已有 ConstructionSaturationIndex.Data 提供；未新增 Choice、良基或递归基础。
+
+本结论仍是对象语言中的逐外轮存在断言，单一 flattened 阶段函数图尚待汇集。实际底端方程必须继续从既有 Initial.Value 取出身份映射，接既有自然性和范围等式；跨轮阶段相等、连续性和 stepCell 尚未完成。本批未证明完整 BlockTower／Timeline 或最终内部 Con。15 项新声明与两个原核端点已全量验收，见 verification/actual-blocks-acceptance.json。

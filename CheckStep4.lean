@@ -13074,4 +13074,14 @@ example {m : Nat} (kappa traces Indices I R zero i c : Fin m) :
       (ConstructionBlockCuts.outerLimitSentence kappa traces Indices I R zero i c)) :=
   ConstructionBlockCuts.outerLimit_kernel_certificate kappa traces Indices I R zero i c
 
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionActualBlocks.traceConstructionSentence w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V)) :=
+  ConstructionActualBlocks.traceConstruction_kernel_certificate w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V
+
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionActualBlocks.familyConstructionSentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces)) :=
+  ConstructionActualBlocks.familyConstruction_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces
+
 end PPAC.Migration.Step4Checks

@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：同终端阶段族、跨轮子对象相等与 stepCell 装配
+## 当前执行入口：实际底端方程、跨轮阶段相等与连续性
 
-ConstructionBlockCuts 已消费同一实际 Family／Data，证明 cut 的精确字典序比较、内轮紧邻后继和末点到下一轮初点的跨轮 Cover。actual_ends 从固定记录读取原 CompleteRound.Built 的真实末点后继关系及空零点，并调用已有原生定理消去下一轮初点成员性；all_successors 构造全部实际阶段的后继合同，不要求调用者另给末点／初点或逐阶段后继见证。
+ConstructionActualBlocks 已直接消费固定 Trace，提取末行保存的完整入射映射族，并调用现有复合与精确值域生产者，构造该轮所有 blockMap／blockStage。at_block 从同一外层终行取出 afterRound，保留它在同一个 outerF 中的 Product；family_blocks 在对象语言中覆盖实际 Family 的每个记录，所有结果落在同一个终端 V。
 
-本批三个普通 nativeZF 原核端点：全阶段 cut 后继、内轮无前驱传输、外层无前驱传输。后两者证明 cut 无 Cover 前驱时相应内部序数不是后继，使用同一个索引及实际跨轮见证。没有新增 Choice、外部良基、proof kernel 或递归基础。这里已完成的是索引边界 Cover；跨轮两端阶段子对象相等及其身份 attachment 尚待实际装配。
+顶端方程已实际完成：末点 blockMap 字面等于该外层终端映射，末点阶段是它的精确值域。两个普通 nativeZF 原核证书不新增 Choice、order 或递归前提；外层 B 是 κ 的后继已在 ConstructionSaturationIndex.Data 中，不再作为缺失基础。当前结论是逐外轮的对象量化构造，尚未汇集为单一 flattened 阶段图。
 
-本批全量验收：3057 项构建、35098 项声明、9 条命令／5 次 trust=0、零警告；35053 项旧声明依赖不变，2612 项文件哈希匹配，无新增公理依赖。见 verification/block-cuts-acceptance.json。
+本批全量验收：3058 项构建、35113 项声明、9 条命令／5 次 trust=0、零警告；35098 项旧声明依赖不变，2613 项文件哈希匹配，无新增公理依赖。见 verification/actual-blocks-acceptance.json。
 
-下一实际调用链：汇集已完成的同终端精确范围为实际阶段族 → 消费现有初行身份／末行图，实例化 blockStage_base/top 与跨轮子对象相等 → 完成初点排除和内外连续性 → 统一 stepCell／局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。实际记录、依赖索引／内部良序、cut 后继与无前驱传输不再列作待做；ConstructionTowerInitial.Value 已有身份映射，不重建底端同构基础。
+下一实际调用链：从现有 Recursive／valid_step 取出 Initial.Value 中的初行身份，接自然性与 range_comp_surjective 完成 blockStage_base → 与已证明的顶端方程合成跨轮阶段相等 → 汇集阶段图并接初点排除／内外连续性 → stepCell／全局依赖 → 现有可数保守包及 restrict_selected／future_cut。固定记录、依赖索引内部良序、cut 后继、无前驱传输、逐轮实际同终端映射与精确范围均已完成，不再重做。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、实际阶段相等／连续性／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、底端与跨轮阶段相等／连续性／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
