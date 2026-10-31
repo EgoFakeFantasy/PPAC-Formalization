@@ -13362,4 +13362,16 @@ example {m : Nat} (V GV e I R bottom S retained a b CutsGraph Futures CutMuls Fu
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureLimit.limitSentence V GV e I R bottom S retained a b CutsGraph Futures CutMuls FutureMuls A C PA PC GA GC ia ic B F)) :=
   ConstructionFutureLimit.limit_kernel_certificate V GV e I R bottom S retained a b CutsGraph Futures CutMuls FutureMuls A C PA PC GA GC ia ic B F
 
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained i j x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureSelected.selectedSentence w zero one V GV e I R bottom S index cells deps retained i j x)) :=
+  ConstructionFutureSelected.selected_kernel_certificate w zero one V GV e I R bottom S index cells deps retained i j x
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained a i j x A B C P E F PA PB PC PP GA GB GC GP ia ib ic ip : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureSelected.advanceSentence w zero one V GV e I R bottom S index cells deps retained a i j x A B C P E F PA PB PC PP GA GB GC GP ia ib ic ip)) :=
+  ConstructionFutureSelected.advance_kernel_certificate w zero one V GV e I R bottom S index cells deps retained a i j x A B C P E F PA PB PC PP GA GB GC GP ia ib ic ip
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained a b B A C PA PC GA GC ia ic : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionFutureInduction.futureCutSentence w zero one V GV e I R bottom S index cells deps retained a b B A C PA PC GA GC ia ic)) :=
+  ConstructionFutureInduction.futureCut_kernel_certificate w zero one V GV e I R bottom S index cells deps retained a b B A C PA PC GA GC ia ic
+
 end PPAC.Migration.Step4Checks

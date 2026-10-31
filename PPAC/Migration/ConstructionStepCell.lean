@@ -21,6 +21,27 @@ set_option maxHeartbeats 8000000
 universe u
 variable {M : FirstOrder.Structure.{0,0,0,u} ℒ}
 
+/-- Keep the multiplication typing already supplied by the actual range
+producer. This witness is not a new premise on the original attachment. -/
+def TypedProduct (D mul : M.Carrier .set) : Prop :=
+  ∃ pairs, ConstructionProbeLetters.Representatives D D pairs ∧ ForcingSupportSize.MapsTo pairs D mul
+
+def typedProduct {m : Nat} (D mul : Fin m) : Project.Formula 1 m :=
+  .existsE (.conj (ConstructionProbeLetters.representatives D.succ D.succ 0)
+    (ProjectSyntax.encode id (Source.SetLanguage.mapsTo mul.succ 0 D.succ)))
+
+theorem typedProduct_freeClosed {m : Nat} (D mul : Fin m) : (typedProduct D mul).FreeClosed := by
+  simp -implicitDefEqProofs [typedProduct,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,
+    ConstructionProbeLetters.representatives_freeClosed]
+
+theorem typedProduct_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (D mul : Fin m) :
+    Project.Formula.satisfies env (typedProduct D mul) ↔ TypedProduct (env.bound D) (env.bound mul) := by
+  simp only [typedProduct,TypedProduct,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),
+    ConstructionProbeLetters.representatives_semantics hM,ForcingSupportSize.mapsTo_semantics (M := M)]
+  rfl
+
 def Probe (hM : FirstOrder.Theory.Models M nativeZF)
     (w zero V GV unitV D R cell : M.Carrier .set) : Prop :=
   ∃ mul a b d node factor terminal target L C projection I act E W unit G K P O F
@@ -36,7 +57,7 @@ def Probe (hM : FirstOrder.Theory.Models M nativeZF)
     Pack zero presentation parameters old generators supports deps zero zero cell ∧ b ≠ unitV ∧ d ≠ unitV ∧
     ConstructionProbePath.TerminalTable w D mul node a terminal ∧
     ConstructionProbeConservative.Conservative D W mul G O ∧
-    ConstructionConservativeHull.Closure V GV unitV D ∧ ConstructionConservativeHull.ProductGraph D GV mul
+    ConstructionConservativeHull.Closure V GV unitV D ∧ ConstructionConservativeHull.ProductGraph D GV mul ∧ TypedProduct D mul
 
 def Merger (w zero one V GV unitV D R cell : M.Carrier .set) : Prop :=
   ∃ mul n P C L projection A W T B G unit O roots F p0 presentation parameters old generators supports deps,
@@ -50,7 +71,7 @@ def Merger (w zero one V GV unitV D R cell : M.Carrier .set) : Prop :=
     ConstructionCellParameters.MergerParameters P parameters ∧
     ConstructionCellParameters.Result w D n W V GV unitV O roots F R parameters old generators supports deps ∧
     Pack one presentation parameters old generators supports deps zero zero cell ∧ LeftCancelMonoid W G unit ∧ Conical W G unit ∧
-    ConstructionConservativeHull.Closure V GV unitV D ∧ ConstructionConservativeHull.ProductGraph D GV mul ∧ ConstructionRequestCarrier.WellFormed n D P
+    ConstructionConservativeHull.Closure V GV unitV D ∧ ConstructionConservativeHull.ProductGraph D GV mul ∧ ConstructionRequestCarrier.WellFormed n D P ∧ TypedProduct D mul
 
 def Data (hM : FirstOrder.Theory.Models M nativeZF)
     (w zero one V GV unitV D R cell : M.Carrier .set) : Prop :=
@@ -94,7 +115,7 @@ theorem from_attached (hM : FirstOrder.Theory.Models M nativeZF)
     ∃ cell, Data hM w zero one V GV unitV S R cell := by
   rcases h with ⟨a,b,node,fa,fb,mapped,_,_,_,_,h⟩ | ⟨n,P,PN,hCode,_,h⟩
   · obtain ⟨basePairs,mulS,inc,baseInv,aa,bb,dd,nn,factor,terminal,target,L,C,projection,I,act,E,WW,uu,GG,K,PP,OO,gen,H,inv,F,hBase,hMapped⟩ := h
-    obtain ⟨hBaseClosed,_,_,hBaseProduct,hm,hc,hJ,_⟩ := hBase
+    obtain ⟨hBaseClosed,hBasePairs,hBaseMap,hBaseProduct,hm,hc,hJ,_⟩ := hBase
     obtain ⟨_,_,_,_,hA,hTerminal,hCons,_,_,_,_,_,_,_,_,hF,hInj,_,hFixed,hRange,hbne,hdne⟩ := hMapped
     obtain ⟨parameters,old,generators,supports,deps,hParams,hResult⟩ :=
       ConstructionCellParameters.actual_probe hM hOrder hw hz hzw hA hF hFixed hRange
@@ -103,14 +124,14 @@ theorem from_attached (hM : FirstOrder.Theory.Models M nativeZF)
     obtain ⟨presentation,hp⟩ := ConstructionRoundSelection.pack_exists hM PP OO F p0 p1 zero zero zero zero
     obtain ⟨cell,hcell⟩ := ConstructionRoundSelection.pack_exists hM zero presentation parameters old generators supports deps zero zero
     exact ⟨cell,Or.inl ⟨mulS,aa,bb,dd,nn,factor,terminal,target,L,C,projection,I,act,E,WW,uu,GG,K,PP,OO,F,
-      p0,p1,presentation,parameters,old,generators,supports,deps,h0,h1,hp,hm,hc,hJ,hA,hF,hInj,hFixed,hRange,hParams,hResult,hcell,hbne,hdne,hTerminal,hCons,hBaseClosed,hBaseProduct⟩⟩
+      p0,p1,presentation,parameters,old,generators,supports,deps,h0,h1,hp,hm,hc,hJ,hA,hF,hInj,hFixed,hRange,hParams,hResult,hcell,hbne,hdne,hTerminal,hCons,hBaseClosed,hBaseProduct,basePairs,hBasePairs,hBaseMap⟩⟩
   · have hn : (Project.FirstOrderSemantics.reduct M).mem n w := by
       rcases hRequest with ⟨a,b,node,hProbe,_⟩ | ⟨n',P',hCode',hn,_⟩
       · exact (ConstructionRequestSchedule.code_disjoint hne hProbe hCode).elim
       · have en := (ConstructionRequestSchedule.merger_code_injective hCode hCode').1
         exact en ▸ hn
     obtain ⟨basePairs,mulS,inc,baseInv,PP,C,L,projection,A,WW,T,B,GG,uu,OO,rr,H,inv,F,hBase,hMapped⟩ := h
-    obtain ⟨hBaseClosed,_,_,hBaseProduct,hm,hc,hJ,_⟩ := hBase
+    obtain ⟨hBaseClosed,hBasePairs,hBaseMap,hBaseProduct,hm,hc,hJ,_⟩ := hBase
     obtain ⟨hGraph,hValid,hA,hmW,hcW,_,_,_,_,_,_,_,hF,hInj,_,hFixed,hRange⟩ := hMapped
     obtain ⟨parameters,old,generators,supports,deps,hParams,hResult⟩ :=
       ConstructionCellParameters.actual_merger hM hOrder hw hn hz hzw hA hF hFixed hRange
@@ -118,7 +139,7 @@ theorem from_attached (hM : FirstOrder.Theory.Models M nativeZF)
     obtain ⟨presentation,hp⟩ := ConstructionRoundSelection.pack_exists hM B GG uu OO rr F p0 zero zero
     obtain ⟨cell,hcell⟩ := ConstructionRoundSelection.pack_exists hM one presentation parameters old generators supports deps zero zero
     exact ⟨cell,Or.inr ⟨mulS,n,PP,C,L,projection,A,WW,T,B,GG,uu,OO,rr,F,p0,presentation,parameters,old,generators,supports,deps,
-      h0,hp,hn,hm,hc,hJ,hValid,hA,hF,hInj,hFixed,hRange,hParams,hResult,hcell,hmW,hcW,hBaseClosed,hBaseProduct,ConstructionRequestCarrier.wellFormed_of_graph hGraph hA.prescription⟩⟩
+      h0,hp,hn,hm,hc,hJ,hValid,hA,hF,hInj,hFixed,hRange,hParams,hResult,hcell,hmW,hcW,hBaseClosed,hBaseProduct,ConstructionRequestCarrier.wellFormed_of_graph hGraph hA.prescription,basePairs,hBasePairs,hBaseMap⟩⟩
 
 /-- Recover Context.Requests from the same serialized complete round.
 The already selected original raw and both literal ranges stay unchanged. -/
@@ -201,16 +222,16 @@ def probe {m : Nat} (w zero V GV unitV D R cell : Fin m) : Project.Formula 1 m :
   5 4 3 2 1 0
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  cell.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (.neg (Project.Formula.extensionalEq (.bound 26) (.bound unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (.neg (Project.Formula.extensionalEq (.bound 25) (.bound unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (ConstructionProbePath.terminalTable w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 28 24 27 22) (.conj (ConstructionProbeConservativeSyntax.conservative D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 14 28 12 9) (.conj (ConstructionConservativeHull.closure V.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (ConstructionConservativeHull.productGraph D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 28)))))))))))))))))))))))))))))))))))))))))))))))))
+  cell.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (.neg (Project.Formula.extensionalEq (.bound 26) (.bound unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (.neg (Project.Formula.extensionalEq (.bound 25) (.bound unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (ConstructionProbePath.terminalTable w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 28 24 27 22) (.conj (ConstructionProbeConservativeSyntax.conservative D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 14 28 12 9) (.conj (ConstructionConservativeHull.closure V.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (ConstructionConservativeHull.productGraph D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 28) (typedProduct D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 28))))))))))))))))))))))))))))))))))))))))))))))))))
 
 theorem probe_freeClosed {m : Nat} (w zero V GV unitV D R cell : Fin m) :
     (probe w zero V GV unitV D R cell).FreeClosed := by
-  simp -implicitDefEqProofs [probe,Definitional.Formula.FreeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,Project.Formula.extensionalEq,ConstructionProbePath.terminalTable_freeClosed,ConstructionProbeConservativeSyntax.conservative_freeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionProbePushoutSyntax.presentation_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionAttachmentCoefficients.oldFixed_freeClosed,ConstructionCellParameters.probeParameters_freeClosed,ConstructionCellParameters.result_freeClosed]
+  simp -implicitDefEqProofs [probe,Definitional.Formula.FreeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,Project.Formula.extensionalEq,ConstructionProbePath.terminalTable_freeClosed,ConstructionProbeConservativeSyntax.conservative_freeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionProbePushoutSyntax.presentation_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionAttachmentCoefficients.oldFixed_freeClosed,ConstructionCellParameters.probeParameters_freeClosed,ConstructionCellParameters.result_freeClosed,typedProduct_freeClosed]
 
 theorem probe_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w zero V GV unitV D R cell : Fin m) :
     Project.Formula.satisfies env (probe w zero V GV unitV D R cell) ↔ Probe hM (env.bound w) (env.bound zero) (env.bound V) (env.bound GV) (env.bound unitV) (env.bound D) (env.bound R) (env.bound cell) := by
-  simp only [probe,Probe,ConstructionConservativeHull.closure_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,Project.Formula.satisfies_neg_iff,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),ConstructionProbePath.terminalTable_semantics hM,ConstructionProbeConservativeSyntax.conservative_semantics hM,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingSupportSize.injection_semantics (M := M),ForcingSupportedNames.range_semantics (M := M),ConstructionRoundSelection.pack_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionProbePushoutSyntax.presentation_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionAttachmentCoefficients.oldFixed_semantics hM,ConstructionCellParameters.probeParameters_semantics hM,ConstructionCellParameters.result_semantics hM]
+  simp only [probe,Probe,ConstructionConservativeHull.closure_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,Project.Formula.satisfies_neg_iff,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),ConstructionProbePath.terminalTable_semantics hM,ConstructionProbeConservativeSyntax.conservative_semantics hM,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingSupportSize.injection_semantics (M := M),ForcingSupportedNames.range_semantics (M := M),ConstructionRoundSelection.pack_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionProbePushoutSyntax.presentation_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionAttachmentCoefficients.oldFixed_semantics hM,ConstructionCellParameters.probeParameters_semantics hM,ConstructionCellParameters.result_semantics hM,typedProduct_semantics hM]
   rfl
 
 def merger {m : Nat} (w zero one V GV unitV D R cell : Fin m) : Project.Formula 1 m :=
@@ -266,16 +287,16 @@ def merger {m : Nat} (w zero one V GV unitV D R cell : Fin m) : Project.Formula 
   5 4 3 2 1 0
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
   zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ
-  cell.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid 14 11 10)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical 14 11 10)) (.conj (ConstructionConservativeHull.closure V.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (ConstructionConservativeHull.productGraph D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 21) (ConstructionRequestCarrier.wellFormed 20 D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 19))))))))))))))))))))))))))))))))))))))))))
+  cell.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid 14 11 10)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical 14 11 10)) (.conj (ConstructionConservativeHull.closure V.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unitV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (.conj (ConstructionConservativeHull.productGraph D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ GV.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 21) (.conj (ConstructionRequestCarrier.wellFormed 20 D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 19) (typedProduct D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 21)))))))))))))))))))))))))))))))))))))))))))
 
 theorem merger_freeClosed {m : Nat} (w zero one V GV unitV D R cell : Fin m) :
     (merger w zero one V GV unitV D R cell).FreeClosed := by
-  simp -implicitDefEqProofs [merger,Definitional.Formula.FreeClosed,ConstructionRequestCarrier.wellFormed_freeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionMergerRelations.valid_freeClosed,ConstructionMergerPushout.presentation_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionAttachmentCoefficients.oldFixed_freeClosed,ConstructionCellParameters.mergerParameters_freeClosed,ConstructionCellParameters.result_freeClosed]
+  simp -implicitDefEqProofs [merger,Definitional.Formula.FreeClosed,ConstructionRequestCarrier.wellFormed_freeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,ProjectSyntax.freeClosed,ConstructionRoundSelection.pack_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionMergerRelations.valid_freeClosed,ConstructionMergerPushout.presentation_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionAttachmentCoefficients.oldFixed_freeClosed,ConstructionCellParameters.mergerParameters_freeClosed,ConstructionCellParameters.result_freeClosed,typedProduct_freeClosed]
 
 theorem merger_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w zero one V GV unitV D R cell : Fin m) :
     Project.Formula.satisfies env (merger w zero one V GV unitV D R cell) ↔ Merger (env.bound w) (env.bound zero) (env.bound one) (env.bound V) (env.bound GV) (env.bound unitV) (env.bound D) (env.bound R) (env.bound cell) := by
-  simp only [merger,Merger,ConstructionRequestCarrier.wellFormed_semantics hM,ConstructionConservativeHull.closure_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingSupportSize.injection_semantics (M := M),ForcingSupportedNames.range_semantics (M := M),ConstructionRoundSelection.pack_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionMergerRelations.valid_semantics hM,ConstructionMergerPushout.presentation_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionAttachmentCoefficients.oldFixed_semantics hM,ConstructionCellParameters.mergerParameters_semantics hM,ConstructionCellParameters.result_semantics hM]
+  simp only [merger,Merger,ConstructionRequestCarrier.wellFormed_semantics hM,ConstructionConservativeHull.closure_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingSupportSize.injection_semantics (M := M),ForcingSupportedNames.range_semantics (M := M),ConstructionRoundSelection.pack_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionMergerRelations.valid_semantics hM,ConstructionMergerPushout.presentation_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionAttachmentCoefficients.oldFixed_semantics hM,ConstructionCellParameters.mergerParameters_semantics hM,ConstructionCellParameters.result_semantics hM,typedProduct_semantics hM]
   rfl
 
 def data {m : Nat} (w zero one V GV unitV D R cell : Fin m) : Project.Formula 1 m :=

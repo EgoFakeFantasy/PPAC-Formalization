@@ -124,7 +124,9 @@ def Restricted (hM : FirstOrder.Theory.Models M nativeZF)
     IdentityGraph D old ∧ Hom D T mul GT e e old ∧ Conservative D T mul GT old ∧
     Hom cut next cutMul GNext e e inc ∧ Conservative cut next cutMul GNext inc ∧
     Hom next T GNext GT e e inclusion ∧ Conservative next T GNext GT inclusion ∧ IdentityGraph next inclusion ∧
-    IsPushout D next T mul GNext GT e e e inc inc inclusion old ∧ Attachment hM w zero cut cutMul e next GNext
+    IsPushout D next T mul GNext GT e e e inc inc inclusion old ∧ Attachment hM w zero cut cutMul e next GNext ∧
+    ConstructionStepCell.TypedProduct D mul ∧ ConstructionStepCell.TypedProduct T GT ∧
+    ConstructionStepCell.TypedProduct next GNext
 
 /-- Complete the typed conservative square and the literal Attachment after
 the existing work theorem. Every inclusion uses its original identity graph. -/
@@ -133,7 +135,8 @@ theorem finish (hM : FirstOrder.Theory.Models M nativeZF)
       W G unit F W0 G0 unit0 O0 H embedding pairsT invF pairsNext invEmbedding : M.Carrier .set}
     (hv : LeftCancelMonoid V GV e) (hc : Conical V GV e) (hJ : ConditionalJoins V GV)
     (hD : Closure V GV e D) (hT : Closure V GV e T) (hRet : Closure V GV e retained)
-    (hProduct : ProductGraph D GV mul) (hDT : Subset D T)
+    (hProduct : ProductGraph D GV mul) (hTypedD : ConstructionStepCell.TypedProduct D mul)
+    (hDT : Subset D T)
     (hCut : ∀ z, (Project.FirstOrderSemantics.reduct M).mem z cut ↔
       (Project.FirstOrderSemantics.reduct M).mem z retained ∧ (Project.FirstOrderSemantics.reduct M).mem z D)
     (hNext : ∀ z, (Project.FirstOrderSemantics.reduct M).mem z next ↔
@@ -147,7 +150,7 @@ theorem finish (hM : FirstOrder.Theory.Models M nativeZF)
     Restricted hM w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion := by
   have hBaseKeep := hBase
   obtain ⟨hCutD,_,_,hProductCut,_,_,hIdInc,hInc,_,_⟩ := hBase
-  obtain ⟨_,_,hProdT,hmT,_,_,_,_,_,hProdNext,hmNext,hEmb,hInv,hInverse,_,_,_,hFixed,hRange,hIncl, hInclId,hPush⟩ := hWork
+  obtain ⟨hPairsT,hMapT,hProdT,hmT,_,_,_,hPairsNext,hMapNext,hProdNext,hmNext,hEmb,hInv,hInverse,_,_,_,hFixed,hRange,hIncl, hInclId,hPush⟩ := hWork
   have hCutV := intersection_closed hRet hD hCut
   have hNextV := intersection_closed hRet hT hNext
   have hcT := ConstructionConservativeHull.conical hc hT.1 hProdT
@@ -170,7 +173,8 @@ theorem finish (hM : FirstOrder.Theory.Models M nativeZF)
   obtain ⟨_,hNextCons⟩ := identity_inclusion hmT hcT hJT hNextInT hProdNextT hIncl.1.1 hInclId
   exact ⟨hBaseKeep,hProduct,hRet,hCutV,hNextV,hProdT,hProdNext,hmT,hcT,hJT,hmNext,hcNext,hJNext,
     hOldId,hOldHom,hOldCons,hCutHom,hCutCons,hIncl,hNextCons,hInclId,hPush,
-    W0,G0,unit0,O0,embedding,invEmbedding,hCell,hm0,hO0,hCons0,hEmb,hInv,hInverse,hFixed,hRange⟩
+    ⟨W0,G0,unit0,O0,embedding,invEmbedding,hCell,hm0,hO0,hCons0,hEmb,hInv,hInverse,hFixed,hRange⟩,
+    hTypedD,⟨pairsT,hPairsT,hMapT⟩,⟨pairsNext,hPairsNext,hMapNext⟩⟩
 
 /-- Turn the existing pointwise generator equations into the SAME complete
 composite graph. Totality comes from the actual two presentations. -/
@@ -207,7 +211,7 @@ theorem restrict_cell (hM : FirstOrder.Theory.Models M nativeZF)
   rcases hData with hData | hData
   · obtain ⟨mul,a,b,d,node,factor,terminal,target,L,C,projection,I,act,E,W,unit,G,K,P,O,F,
       p0,p1,presentation,parameters,old,generators,supports,deps,
-      _,_,_,hmD,_,_,hA,hF,hFInj,hFixed,hRange,hParams,hResult,hPack,hbne,hdne,hTerminal,hOldCons,hD,hProduct⟩ := hData
+      _,_,_,hmD,_,_,hA,hF,hFInj,hFixed,hRange,hParams,hResult,hPack,hbne,hdne,hTerminal,hOldCons,hD,hProduct,hTypedD⟩ := hData
     obtain ⟨_,_,hDT,hOldMap,hOldId,_,hGenMap,hGen,_⟩ := hResult.1
     obtain ⟨hParamsRet,hGensRet,hCut,hWords⟩ := ConstructionSelectedCellWords.read_retained hSelected hPack hGenMap
     obtain ⟨pairs,cutMul,inc,hBase⟩ := ConstructionSelectedCellRestriction.base hM hv hc hJ hD hProduct hRet hCut
@@ -230,9 +234,9 @@ theorem restrict_cell (hM : FirstOrder.Theory.Models M nativeZF)
       ConstructionRestrictedCellPushout.work hM hmW hm0 hv hA.old_map hA0.old_map hA0.probes_map
         hF hFInj hRange hH hConH.1 hPush hFixed hOldId hIncId hGenerated hGen hGen0 hGensRet hRetSub hCut hNext hWords
     exact ⟨mul,pairs,cutMul,inc,GT,GNext,old,inclusion,
-      finish hM hv hc hJ hD hT hRet hProduct hDT hCut hNext hBaseKeep hOldMap hOldId hCell hm0 hO0 hOld0Cons hWork⟩
+      finish hM hv hc hJ hD hT hRet hProduct hTypedD hDT hCut hNext hBaseKeep hOldMap hOldId hCell hm0 hO0 hOld0Cons hWork⟩
   · obtain ⟨mul,n,P,C,L,projection,A,W,TW,B,G,unit,O,roots,F,p0,presentation,parameters,old,generators,supports,deps,
-      _,_,hn,_,_,_,hValid,hA,hF,hFInj,hFixed,hRange,hParams,hResult,hPack,hmW,_,hD,hProduct,hWell⟩ := hData
+      _,_,hn,_,_,_,hValid,hA,hF,hFInj,hFixed,hRange,hParams,hResult,hPack,hmW,_,hD,hProduct,hWell,hTypedD⟩ := hData
     obtain ⟨_,_,hDT,hOldMap,hOldId,_,hGenMap,hGen,_⟩ := hResult.1
     obtain ⟨hParamsRet,hGensRet,hCut,hWords⟩ := ConstructionSelectedCellWords.read_retained hSelected hPack hGenMap
     obtain ⟨pairs,cutMul,inc,hBase⟩ := ConstructionSelectedCellRestriction.base hM hv hc hJ hD hProduct hRet hCut
@@ -252,7 +256,7 @@ theorem restrict_cell (hM : FirstOrder.Theory.Models M nativeZF)
       ConstructionRestrictedCellPushout.work hM hmW hm0 hv hA.old_hom.1 hA0.old_hom.1 hA0.roots_map
         hF hFInj hRange hH hConH.1 hPush hFixed hOldId hIncId hGenerated hGen hRoots hGensRet hRetSub hCut hNext hWords
     exact ⟨mul,pairs,cutMul,inc,GT,GNext,old,inclusion,
-      finish hM hv hc hJ hD hT hRet hProduct hDT hCut hNext hBaseKeep hOldMap hOldId hCell hm0 hA0.old_hom hOld0Cons hWork⟩
+      finish hM hv hc hJ hD hT hRet hProduct hTypedD hDT hCut hNext hBaseKeep hOldMap hOldId hCell hm0 hA0.old_hom hOld0Cons hWork⟩
 
 /-- The source CellTower.stage values are conservative subobjects of V.
 This field is explicit and must be supplied by the actual tower constructor. -/
@@ -414,16 +418,16 @@ theorem attachmentFormula_semantics (hM : FirstOrder.Theory.Models M nativeZF) {
   rfl
 
 def restricted {m : Nat} (w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion : Fin m) : Project.Formula 1 m :=
-  (.conj (ConstructionSelectedCellRestriction.baseFormula D mul e cut pairs cutMul inc) (.conj (ConstructionConservativeHull.productGraph D GV mul) (.conj (ConstructionConservativeHull.closure V GV e retained) (.conj (ConstructionConservativeHull.closure V GV e cut) (.conj (ConstructionConservativeHull.closure V GV e next) (.conj (ConstructionConservativeHull.productGraph T GV GT) (.conj (ConstructionConservativeHull.productGraph next GV GNext) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid T GT e)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical T GT e)) (.conj (ConstructionProbeSharedIntersections.conditionalJoins T GT) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid next GNext e)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical next GNext e)) (.conj (ConstructionProbeSharedIntersections.conditionalJoins next GNext) (.conj (ProjectSyntax.encode id (ForcingConditionGraphs.identityGraph D old)) (.conj (ConstructionProbePushoutSyntax.hom D T mul GT e e old) (.conj (ConstructionProbeConservativeSyntax.conservative D T mul GT old) (.conj (ConstructionProbePushoutSyntax.hom cut next cutMul GNext e e inc) (.conj (ConstructionProbeConservativeSyntax.conservative cut next cutMul GNext inc) (.conj (ConstructionProbePushoutSyntax.hom next T GNext GT e e inclusion) (.conj (ConstructionProbeConservativeSyntax.conservative next T GNext GT inclusion) (.conj (ProjectSyntax.encode id (ForcingConditionGraphs.identityGraph next inclusion)) (.conj (ConstructionProbePushoutSyntax.isPushout D next T mul GNext GT e e e inc inc inclusion old) (attachmentFormula w zero cut cutMul e next GNext)))))))))))))))))))))))
+  (.conj (ConstructionSelectedCellRestriction.baseFormula D mul e cut pairs cutMul inc) (.conj (ConstructionConservativeHull.productGraph D GV mul) (.conj (ConstructionConservativeHull.closure V GV e retained) (.conj (ConstructionConservativeHull.closure V GV e cut) (.conj (ConstructionConservativeHull.closure V GV e next) (.conj (ConstructionConservativeHull.productGraph T GV GT) (.conj (ConstructionConservativeHull.productGraph next GV GNext) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid T GT e)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical T GT e)) (.conj (ConstructionProbeSharedIntersections.conditionalJoins T GT) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.leftCancelMonoid next GNext e)) (.conj (ProjectSyntax.encode id (ForcingDiagramPoset.conical next GNext e)) (.conj (ConstructionProbeSharedIntersections.conditionalJoins next GNext) (.conj (ProjectSyntax.encode id (ForcingConditionGraphs.identityGraph D old)) (.conj (ConstructionProbePushoutSyntax.hom D T mul GT e e old) (.conj (ConstructionProbeConservativeSyntax.conservative D T mul GT old) (.conj (ConstructionProbePushoutSyntax.hom cut next cutMul GNext e e inc) (.conj (ConstructionProbeConservativeSyntax.conservative cut next cutMul GNext inc) (.conj (ConstructionProbePushoutSyntax.hom next T GNext GT e e inclusion) (.conj (ConstructionProbeConservativeSyntax.conservative next T GNext GT inclusion) (.conj (ProjectSyntax.encode id (ForcingConditionGraphs.identityGraph next inclusion)) (.conj (ConstructionProbePushoutSyntax.isPushout D next T mul GNext GT e e e inc inc inclusion old) (.conj (attachmentFormula w zero cut cutMul e next GNext) (.conj (ConstructionStepCell.typedProduct D mul) (.conj (ConstructionStepCell.typedProduct T GT) (ConstructionStepCell.typedProduct next GNext))))))))))))))))))))))))))
 
 theorem restricted_freeClosed {m : Nat} (w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion : Fin m) :
     (restricted w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion).FreeClosed := by
-  simp -implicitDefEqProofs [restricted,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionSelectedCellRestriction.baseFormula_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionProbeConservativeSyntax.conservative_freeClosed,ConstructionProbePushoutSyntax.isPushout_freeClosed,attachmentFormula_freeClosed]
+  simp -implicitDefEqProofs [restricted,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed,ConstructionSelectedCellRestriction.baseFormula_freeClosed,ConstructionConservativeHull.productGraph_freeClosed,ConstructionConservativeHull.closure_freeClosed,ConstructionProbeSharedIntersections.conditionalJoins_freeClosed,ConstructionProbePushoutSyntax.hom_freeClosed,ConstructionProbeConservativeSyntax.conservative_freeClosed,ConstructionProbePushoutSyntax.isPushout_freeClosed,attachmentFormula_freeClosed,ConstructionStepCell.typedProduct_freeClosed]
 
 theorem restricted_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion : Fin m) :
     Project.Formula.satisfies env (restricted w zero V GV e D T retained cut next mul pairs cutMul inc GT GNext old inclusion) ↔ Restricted hM (env.bound w) (env.bound zero) (env.bound V) (env.bound GV) (env.bound e) (env.bound D) (env.bound T) (env.bound retained) (env.bound cut) (env.bound next) (env.bound mul) (env.bound pairs) (env.bound cutMul) (env.bound inc) (env.bound GT) (env.bound GNext) (env.bound old) (env.bound inclusion) := by
-  simp only [restricted,Restricted,Project.Formula.satisfies_conj_iff,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingConditionGraphs.identityGraph_semantics (M := M),ConstructionSelectedCellRestriction.baseFormula_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,ConstructionConservativeHull.closure_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionProbeConservativeSyntax.conservative_semantics hM,ConstructionProbePushoutSyntax.isPushout_semantics hM,attachmentFormula_semantics hM]
+  simp only [restricted,Restricted,Project.Formula.satisfies_conj_iff,GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingDiagramPoset.leftCancelMonoid_semantics (M := M),ForcingDiagramPoset.conical_semantics (M := M),ForcingConditionGraphs.identityGraph_semantics (M := M),ConstructionSelectedCellRestriction.baseFormula_semantics hM,ConstructionConservativeHull.productGraph_semantics hM,ConstructionConservativeHull.closure_semantics hM,ConstructionProbeSharedIntersections.conditionalJoins_semantics hM,ConstructionProbePushoutSyntax.hom_semantics hM,ConstructionProbeConservativeSyntax.conservative_semantics hM,ConstructionProbePushoutSyntax.isPushout_semantics hM,attachmentFormula_semantics hM,ConstructionStepCell.typedProduct_semantics hM]
   rfl
 
 def stages {m : Nat} (V GV e S : Fin m) : Project.Formula 1 m :=
