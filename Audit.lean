@@ -36462,3 +36462,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionReordered.actualSentence
 #print axioms PPAC.Migration.ConstructionReordered.actual_models
 #print axioms PPAC.Migration.ConstructionReordered.actual_kernel_certificate
+#print axioms PPAC.Migration.ConstructionCountableReordering.Result
+#print axioms PPAC.Migration.ConstructionCountableReordering.construction
+#print axioms PPAC.Migration.ConstructionCountableReordering.resultFormula
+#print axioms PPAC.Migration.ConstructionCountableReordering.resultFormula_freeClosed
+#print axioms PPAC.Migration.ConstructionCountableReordering.resultFormula_semantics
+#print axioms PPAC.Migration.ConstructionCountableReordering.constructionSentence
+#print axioms PPAC.Migration.ConstructionCountableReordering.construction_models
+#print axioms PPAC.Migration.ConstructionCountableReordering.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionReorderedDescent.cell_gate
+#print axioms PPAC.Migration.ConstructionReorderedDescent.attachment_gate
+#print axioms PPAC.Migration.ConstructionReorderedDescent.finite_descent
+#print axioms PPAC.Migration.ConstructionReorderedDescent.sourceSentence
+#print axioms PPAC.Migration.ConstructionReorderedDescent.source_models
+#print axioms PPAC.Migration.ConstructionReorderedDescent.source_kernel_certificate

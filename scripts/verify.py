@@ -2484,7 +2484,9 @@ def main() -> None:
                                ('construction_future_selected', 'ConstructionFutureSelected', 16),
                                ('construction_future_induction', 'ConstructionFutureInduction', 9),
                                ('construction_future_tower', 'ConstructionFutureTower', 7),
-                               ('construction_reordered', 'ConstructionReordered', 24)):
+                               ('construction_reordered', 'ConstructionReordered', 24),
+                               ('construction_countable_reordering', 'ConstructionCountableReordering', 8),
+                               ('construction_reordered_descent', 'ConstructionReorderedDescent', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

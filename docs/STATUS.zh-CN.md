@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：完整 future/reordered 原核证书已取得 → countable_reordering 与 germ-selector
+## 当前执行入口：可数重排与实际索引有限下降已接通 → countable_quotient_of_cells
 
-ConstructionFutureTower 直接消费已验收的完整 future_cut，构造同一内部索引上的实际 future 载体与乘法函数族。每个值是“原阶段与保留子对象的普通生成上确界”，并已证明全部保守阶段、单调性、终值及内部连续性；不另取保守闭包。
+ConstructionCountableReordering 迁移 CellReorder.countable_reordering：在给定可数集合与原底阶段的并上调用现成可数保守依赖 hull，再调用完整 actual reordered。实际全局依赖也由已有 producer 构造；输出同一终端单子、同一 BlockIndex 上的完整塔、新底可数及给定集合包含关系。原核端点为 nativeZF 中的 L 相对化句子，源背景所需 Choice 由现成 L/ZFC 提供。
 
-ConstructionReordered 从已有 Probe/Merger 记录和现成 inverse_hom 恢复原 attachment；选中 cell 给出同一 future 载体，省略的非恒等 cell 通过已有推送方块消去及 attachment 传输。完整输出含原索引的相邻步和同一索引的恒等步，以及原底阶段包含于 retained 时的精确新底。actual_top 直接消费既有 BlockIndex/FlatStages，消去了顶点成员性、最大性及终值输入，没有重建索引。
+ConstructionReorderedDescent 复用已有 Probe/Merger gate、同构保守性、attachment_gateStep 和内部有限路径，把有限下降接到实际集合编码良序索引。内部坏阶段集合的分离与最小元替代原有序数接口；不要求重建索引或对象模型外部良基。该有限下降有普通 nativeZF 原核证书，仍显式保留原源码的 alignment Inputs。
 
-对象句为 constructionSentence／actualSentence，均由原 FirstOrder.Derives 在完整 nativeZF 中证明。本批全量验收通过：3091 个构建任务、35851 项声明、2646 个文件哈希、0 条警告；原有 35820 项声明依赖未变，新增 31 项未引入新公理依赖。两个临时文件清理后再次构建通过。记录见 verification/reordered-acceptance.json。
+本批统一验收通过：3093 个构建任务、35865 项声明、2648 个文件哈希、0 条警告；原有 35851 项声明依赖未变，新增 14 项未引入新公理依赖。两个临时文件清理后再次构建通过。记录见 verification/countable-reordering-acceptance.json。
 
-**仍在原第 8 阶段；future_cut 和完整 future/reordered 已证明，第 8 阶段未整体完成。** 下一项是将现成可数依赖闭包结果接到 countable_reordering，再进入 germ-selector／OrbitAssignments／具体商双射。可数 hull 本身已存在且不重做。第 9–11 阶段、全部内部／非标准证明码的最终 Con 蕴含及原 Comparator 尚未完成。现成 L／全模式、递归、Proof/Sat 和原核回传继续复用。
+**仍在原第 8 阶段。** 完整 future_cut、future/reordered、可数重排及实际索引有限下降已证明；真正下一项是把现成 alignment 数据接入下降结果，并构造整个商集的可数编码，即原 ConcreteQuotients.countable_quotient_of_cells/countable_germs，再接具体 selector、OrbitAssignments 与商双射。未宣称商可数性已完成。第 9–11 阶段、最终内部 Con 以及原 Comparator 仍待完成。L、全公理模式、递归、Proof/Sat 均继续复用。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -39,7 +39,7 @@ ConstructionReordered 从已有 Probe/Merger 记录和现成 inverse_hom 恢复�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellReorder.countable_reordering → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；下一项将现成可数 hull 接入 countable_reordering。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.countable_quotient_of_cells/countable_germs → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；下一项为 alignment 消费与全商可数编码。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
