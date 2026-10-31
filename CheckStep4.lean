@@ -13390,4 +13390,14 @@ example {m : Nat} (w zero V GV e I R bottom stages base n A a : Fin m) :
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionReorderedDescent.sourceSentence w zero V GV e I R bottom stages base n A a)) :=
   ConstructionReorderedDescent.source_kernel_certificate w zero V GV e I R bottom stages base n A a
 
+example {m : Nat} (w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCountableAlignments.constructionSentence w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain))) :=
+  ConstructionCountableAlignments.construction_kernel_certificate w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCountableQuotient.constructionSentence w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain))) :=
+  ConstructionCountableQuotient.construction_kernel_certificate w zero one V GV e I R bottom S index cells D kappa traces Indices A r history outerF labels q root vertices chain
+
 end PPAC.Migration.Step4Checks

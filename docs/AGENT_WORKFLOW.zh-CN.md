@@ -1,14 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：可数重排与实际索引有限下降已接通 → countable_quotient_of_cells
+## 当前执行入口：完整 countable_quotient_of_cells 已接通 → 具体 countable_germs
 
-ConstructionCountableReordering 迁移 CellReorder.countable_reordering：在给定可数集合与原底阶段的并上调用现成可数保守依赖 hull，再调用完整 actual reordered。实际全局依赖也由已有 producer 构造；输出同一终端单子、同一 BlockIndex 上的完整塔、新底可数及给定集合包含关系。原核端点为 nativeZF 中的 L 相对化句子，源背景所需 Choice 由现成 L/ZFC 提供。
+ConstructionCountableAlignments 构造实际链 index 的可数值域，消费现成可数重排与实际索引有限下降。同一新底在量化所有分量稳定子元素之前构造；已有 alignment 的非空、有界、替换和尾等价定律被真实消费。旧 alignment_replacement API 保留，证明仅增加返回其已经产生的右因子成员性，原 31 项依赖足迹未变。
 
-ConstructionReorderedDescent 复用已有 Probe/Merger gate、同构保守性、attachment_gateStep 和内部有限路径，把有限下降接到实际集合编码良序索引。内部坏阶段集合的分离与最小元替代原有序数接口；不要求重建索引或对象模型外部良基。该有限下降有普通 nativeZF 原核证书，仍显式保留原源码的 alignment Inputs。
+ConstructionGermCosets 构造完整分量稳定子、全部尾等价类集合及商投影。其内部关系与原源码的“π⁻¹σ 固定某个链尾”精确等价。ω×新底中的 alignment 对映满整个商，调用现成最小原像编码界得到商到内部 ω 的单射；没有用宿主 Quotient 或抽取宿主代表替代。
 
-本批统一验收通过：3093 个构建任务、35865 项声明、2648 个文件哈希、0 条警告；原有 35851 项声明依赖未变，新增 14 项未引入新公理依赖。两个临时文件清理后再次构建通过。记录见 verification/countable-reordering-acceptance.json。
+ConstructionCountableQuotient 将以上装成原 countable_quotient_of_cells 的完整原核证书：保留原源码的原底可数前提；其余重排、alignment、商与单射均由实际源记录构造。背景为 nativeZF 中已有 L 解释，未给 nativeZF 添加 Choice。
 
-**仍在原第 8 阶段。** 完整 future_cut、future/reordered、可数重排及实际索引有限下降已证明；真正下一项是把现成 alignment 数据接入下降结果，并构造整个商集的可数编码，即原 ConcreteQuotients.countable_quotient_of_cells/countable_germs，再接具体 selector、OrbitAssignments 与商双射。未宣称商可数性已完成。第 9–11 阶段、最终内部 Con 以及原 Comparator 仍待完成。L、全公理模式、递归、Proof/Sat 均继续复用。
+本批全量验收通过：3096 个构建任务、35943 项声明、2651 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；35865 项旧依赖足迹全部不变，新增 78 项声明未引入新公理。记录见 verification/countable-quotient-acceptance.json。
+
+**仍在原第 8 阶段。** 下一项是将已有初始 Base 和 blockStage_base/Bottoms 连接到具体 countable_germs，以消去原底可数前提，然后消费实际 selector、OrbitAssignments 与商双射。初始底座、可数 hull、L、全公理模式、递归和 Proof/Sat 均已存在，不重做。第 9–11 阶段、最终内部 Con 与原 Comparator 仍未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -19,7 +21,7 @@ ConstructionReorderedDescent 复用已有 Probe/Merger gate、同构保守性、
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收 | 完整 restrict_selected／实际阶段闭包／Square.union／Cell.map／realization／attachment／intermediate 及完整 future_cut 内部归纳已接通；可数重排及实际索引有限下降已接通；继续 countable_quotient_of_cells/countable_germs → selector／OrbitAssignments／具体商双射；不重造已完成底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收 | 完整 restrict_selected／实际阶段闭包／Square.union／Cell.map／realization／attachment／intermediate 及完整 future_cut 内部归纳已接通；可数重排及实际索引有限下降已接通；完整 countable_quotient_of_cells 已接通；继续具体 countable_germs → selector／OrbitAssignments／具体商双射；不重造已完成底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
@@ -31,7 +33,7 @@ ConstructionReorderedDescent 复用已有 Probe/Merger gate、同构保守性、
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.countable_quotient_of_cells/countable_germs → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；下一项为 alignment 消费与全商可数编码。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.countable_germs → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；下一项为具体初始底/flattening 消费及 countable_germs。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

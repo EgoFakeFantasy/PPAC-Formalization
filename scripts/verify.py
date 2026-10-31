@@ -2430,7 +2430,7 @@ def main() -> None:
                                ('forcing_concrete_ordinal_count', 'ForcingConcreteOrdinalCount', 6),
                                ('forcing_ideal_probe_count', 'ForcingIdealProbeCount', 6),
                                ('forcing_concrete_germ_density', 'ForcingConcreteGermDensity', 8),
-                               ('forcing_germ_alignments', 'ForcingGermAlignments', 31),
+                               ('forcing_germ_alignments', 'ForcingGermAlignments', 32),
                                ('construction_cell_descent', 'ConstructionCellDescent', 30),
                                ('construction_finite_descent', 'ConstructionFiniteDescent', 31),
                                ('construction_pushout_pasting', 'ConstructionPushoutPasting', 22),
@@ -2486,7 +2486,10 @@ def main() -> None:
                                ('construction_future_tower', 'ConstructionFutureTower', 7),
                                ('construction_reordered', 'ConstructionReordered', 24),
                                ('construction_countable_reordering', 'ConstructionCountableReordering', 8),
-                               ('construction_reordered_descent', 'ConstructionReorderedDescent', 6)):
+                               ('construction_reordered_descent', 'ConstructionReorderedDescent', 6),
+                               ('construction_countable_alignments', 'ConstructionCountableAlignments', 20),
+                               ('construction_germ_cosets', 'ConstructionGermCosets', 53),
+                               ('construction_countable_quotient', 'ConstructionCountableQuotient', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

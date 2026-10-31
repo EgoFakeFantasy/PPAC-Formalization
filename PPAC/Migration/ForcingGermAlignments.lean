@@ -123,7 +123,8 @@ theorem alignment_bounded
   obtain ⟨n,_,hn⟩ := (hm.2.1 a (arrow_index_mem ha)).1 d (arrow_index_mem hd)
   exact ⟨N,n,⟨t,hNt,arrow_comp_product hm ha hd hn⟩,d,arrow_index_mem hd,hn⟩
 
-theorem alignment_replacement (hM : FirstOrder.Theory.Models M nativeZF)
+/- Retain the actual right-factor membership already proved by the source arrow. -/
+theorem alignment_replacement_typed (hM : FirstOrder.Theory.Models M nativeZF)
     {w D I mul e q zero root vertices chain pi rootT i a N ni nN : M.Carrier .set}
     (hm : LeftCancelMonoid D mul e)
     (hJ : ConstructionProbeSharedIntersections.ConditionalJoins D mul)
@@ -135,7 +136,7 @@ theorem alignment_replacement (hM : FirstOrder.Theory.Models M nativeZF)
     (hMove : Move D I mul q pi root rootT) (hCommon : EncodedCommon D I mul q root rootT)
     (ha : Alignment D I mul q root chain pi i a)
     (hi : Index D I mul q root chain i ni) (hN : Index D I mul q root chain N nN) :
-    ∃ j d b nj, Alignment D I mul q root chain pi j b ∧ NatLe i j ∧
+    ∃ j d b nj, (Project.FirstOrderSemantics.reduct M).mem d D ∧ Alignment D I mul q root chain pi j b ∧ NatLe i j ∧
       Product mul a d b ∧ Product mul ni d nj ∧ Index D I mul q root chain j nj ∧
         Divides D mul nN b := by
   obtain ⟨v,V,hiv,hv,hav⟩ := ha
@@ -167,8 +168,26 @@ theorem alignment_replacement (hM : FirstOrder.Theory.Models M nativeZF)
   obtain ⟨b',_,hb'⟩ := (hm.2.1 nN (arrow_index_mem hNarrow)).1 gf (arrow_index_mem hNtoT)
   have he := arrow_index_unique hm (arrow_comp_product hm hNarrow hNtoT hb') hRootT
   obtain ⟨nj,hnj⟩ := index_exists hM hw hz hC (ForcingConditionGraphs.function_input hC.1.1 hjt)
-  exact ⟨j,d,b,nj,⟨t,T,hjt,hT,hRootT⟩,hij,hb,index_transition hm hC hi hnj hiv hjt hd,
+  exact ⟨j,d,b,nj,arrow_index_mem hd,⟨t,T,hjt,hT,hRootT⟩,hij,hb,index_transition hm hC hi hnj hiv hjt hd,
     hnj,gf,arrow_index_mem hNtoT,he ▸ hb'⟩
+
+theorem alignment_replacement (hM : FirstOrder.Theory.Models M nativeZF)
+    {w D I mul e q zero root vertices chain pi rootT i a N ni nN : M.Carrier .set}
+    (hm : LeftCancelMonoid D mul e)
+    (hJ : ConstructionProbeSharedIntersections.ConditionalJoins D mul)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega w)
+    (hz : ∀ x, ¬ (Project.FirstOrderSemantics.reduct M).mem x zero)
+    (hX : Carrier D I mul q vertices) (hC : Chain w D I mul q zero root vertices chain)
+    (hq : ForcingSupportSize.Injection D I q)
+    (hp : Permutation I pi) (hFix : CompositionGraph D pi q q)
+    (hMove : Move D I mul q pi root rootT) (hCommon : EncodedCommon D I mul q root rootT)
+    (ha : Alignment D I mul q root chain pi i a)
+    (hi : Index D I mul q root chain i ni) (hN : Index D I mul q root chain N nN) :
+    ∃ j d b nj, Alignment D I mul q root chain pi j b ∧ NatLe i j ∧
+      Product mul a d b ∧ Product mul ni d nj ∧ Index D I mul q root chain j nj ∧
+        Divides D mul nN b := by
+  obtain ⟨j,d,b,nj,_,h⟩ := alignment_replacement_typed hM hm hJ hw hz hX hC hq hp hFix hMove hCommon ha hi hN
+  exact ⟨j,d,b,nj,h⟩
 
 /-- Source coset_eq_of_alignment, in the original equivalence relation:
     inverse(pi) * sigma fixes an actual tail of the same internal chain. -/
