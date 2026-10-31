@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：统一阶段图、终端覆盖与 stepCell 装配
+## 当前执行入口：外轮底端对齐、严格较早终端覆盖与 Timeline／stepCell 装配
 
-ConstructionCutLimits 已消费现有 BlockCuts 后继／无前驱事实和 YesMetaZFC 原生序数分类，构造同一实际索引中的最小 cut，并把每个非初始、无前驱 cut 完整分类为终端 top、内轮非零极限或外轮极限的零位置 cut。内外两类范围连续性现均给出严格较早 cut 见证；外轮见证仍位于现有实际 OuterData 范围图，尚未冒称已汇入统一 flattened 阶段图。
+ConstructionFlatStages 已从同一实际 Valid／Matrix／终行／Family／Index.Data 构造一张内部总阶段函数图 S。每个 interior cut 的值严格等于原选中轮的实际范围；同一轮的不同辅助图呈现由现有记录、字段、复合及范围唯一性证明给出字面相等。空集编码的 top 映到同一个最终载体 V，全部阶段范围包含于 V。
 
-三个 construction／inner／outer_kernel_certificate 均为普通 nativeZF 对象句的原 FirstOrder.Derives 证书，覆盖全部内部索引与元素，无新增对象 Choice 或外部标准性前提。初始 cut 排除和内外极限 cut 分类不再列为待做；完整统一阶段图、终端 top 覆盖和 stepCell 仍待接线。
+construction_kernel_certificate 与 transport_kernel_certificate 均为普通 nativeZF 对象句的原 FirstOrder.Derives 证书。transport 对每个实际 Realized 呈现给出统一图与原区块 Images 的成员关系双向等价。统一实际阶段函数图及逐区块成员传输不再列为待做；Result 的覆盖可使用 top 自身，绝不等同于 top 处严格较早覆盖或完整连续 Timeline。
 
-本批全量验收：3061 项构建、35179 项声明、9 条命令／5 次 trust=0、零警告；35150 项旧声明依赖不变，2616 项文件哈希匹配，无新增公理依赖。见 verification/cut-limits-acceptance.json。
+本批全量验收：3062 项构建、35212 项声明、9 条命令／5 次 trust=0、零警告；35179 项旧声明依赖不变，2617 项文件哈希匹配，无新增公理依赖。固定源声明定位已校准。见 verification/flat-stages-acceptance.json。
 
-下一实际调用链：复用原函数图构造器与现有 chart_unique／value_unique／range_unique 汇集一致的实际阶段图，并对齐实际外轮图与区块底端 → 接通终端覆盖、全局单调性和已有连续性 → 消费底端／顶端／跨轮范围等式与实际 attachment 装配 stepCell → flattened Timeline／全局依赖 → 现有可数保守包及 restrict_selected／future_cut。不重建递归、colimit、序数分类、范围连续性或 L 基础。
+下一实际调用链：用既有 Realized.Base、Chart／Field 唯一性和 matrix_at 对齐外轮范围与区块底端 → 消费既有 SaturationCover.exists_rep 取得严格较早终端覆盖，并将现成单调性／极限见证传入同一 S → 装配 Timeline → 消费已有实际 attachment 和边界等式装配 stepCell／全局依赖 → restrict_selected／future_cut／可数重排／germ/selector。不重建函数图、序数分类、递归、colimit 或 L 基础。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、统一阶段图／终端覆盖／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、外轮底端对齐／严格较早终端覆盖／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

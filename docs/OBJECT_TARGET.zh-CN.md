@@ -263,3 +263,11 @@ ConstructionCutLimits 对应固定源 BlockIndex.cut_bot／inner_limit／outer_l
 三句均有原 FirstOrder.Derives nativeZF [] 证书。外轮证书显式保留现有 OuterData 输入，尚需将这个实际图对齐到统一 flattened 区块底端图；本批没有把宿主层语义结论或条件范围图当作完整 Timeline。初始 cut 排除、内外极限分类以及相应严格较早 cut 见证已完成，不能再次报作缺失。原生 L／全模式／序数分类／递归／范围构造全部复用。
 
 实际验收：3061 构建任务、35179 声明、29 新声明、三个原核证书、9 条命令／5 次 trust=0、零警告；旧 35150 声明依赖不变，2616 文件哈希匹配，无新增公理依赖。报告 verification/cut-limits-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。
+
+## 同一终端中的统一实际阶段函数图（2026-10-31）
+
+ConstructionFlatStages 迁移固定源 BlockTower.flatStage／flatStage_cut／flatten.terminal：直接消费既有 family_realized 和原生函数图构造器，给出同一依赖 cut 索引上的总函数 S。每个 interior cut 对应原选中轮到同一 V 的范围；同轮辅助呈现的字面范围唯一性由现有 pack_injective／chart_unique／value_unique／range_unique 取得。top 映到 V，所有阶段有界于 V。统一函数图的集合级汇集已完成，先前该项待办由本节取代。
+
+两个原 FirstOrder.Derives nativeZF [] 证书分别构造图与传输成员关系。后者对每个实际 Realized 呈现成立，保留任意内部阶段和元素，不使用外部标准性或新增对象 Choice。这里由 top 提供的总体覆盖不等于 top 处严格较早覆盖。外轮范围／区块底端对齐、严格较早 top 覆盖、同一图上的全局单调性与极限连续性及 stepCell 仍需消费已有证明完成接线；没有把图存在冒充完整 Timeline。
+
+实际验收：3062 构建任务、35212 声明、33 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35179 声明依赖不变，2617 文件哈希匹配，无新增公理依赖。报告 verification/flat-stages-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。

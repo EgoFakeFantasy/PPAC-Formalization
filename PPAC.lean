@@ -893,3 +893,4 @@ import PPAC.Migration.ConstructionActualBlocks
 import PPAC.Migration.ConstructionBlockBoundary
 import PPAC.Migration.ConstructionBlockContinuity
 import PPAC.Migration.ConstructionCutLimits
+import PPAC.Migration.ConstructionFlatStages

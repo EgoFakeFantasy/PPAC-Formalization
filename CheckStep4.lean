@@ -13119,4 +13119,14 @@ example {m : Nat} (kappa traces Indices A r I R zero bottom i c B history F term
       (ConstructionCutLimits.outerSentence kappa traces Indices A r I R zero bottom i c B history F terminalLegs V Domains E Images x)) :=
   ConstructionCutLimits.outer_kernel_certificate kappa traces Indices A r I R zero bottom i c B history F terminalLegs V Domains E Images x
 
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFlatStages.constructionSentence w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R)) :=
+  ConstructionFlatStages.construction_kernel_certificate w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R
+
+example {m : Nat} (P history outerF kappa V zero traces I S i j c code next N W fromBase after J Domains E F L Out Images x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFlatStages.transportSentence P history outerF kappa V zero traces I S i j c code next N W fromBase after J Domains E F L Out Images x)) :=
+  ConstructionFlatStages.transport_kernel_certificate P history outerF kappa V zero traces I S i j c code next N W fromBase after J Domains E F L Out Images x
+
 end PPAC.Migration.Step4Checks
