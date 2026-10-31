@@ -13104,4 +13104,19 @@ example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kapp
       (ConstructibleGround.relative (ConstructionBlockContinuity.outerSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
   ConstructionBlockContinuity.outer_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa V mulV unitV markV HV CV terminalLegs baseV
 
+example {m : Nat} (w Q values top zero one K mu history F kappa traces Indices A r I R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCutLimits.constructionSentence w Q values top zero one K mu history F kappa traces Indices A r I R)) :=
+  ConstructionCutLimits.construction_kernel_certificate w Q values top zero one K mu history F kappa traces Indices A r I R
+
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images kappa traces Indices A r I R i j c x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCutLimits.innerSentence w Q values top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images kappa traces Indices A r I R i j c x)) :=
+  ConstructionCutLimits.inner_kernel_certificate w Q values top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images kappa traces Indices A r I R i j c x
+
+example {m : Nat} (kappa traces Indices A r I R zero bottom i c B history F terminalLegs V Domains E Images x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCutLimits.outerSentence kappa traces Indices A r I R zero bottom i c B history F terminalLegs V Domains E Images x)) :=
+  ConstructionCutLimits.outer_kernel_certificate kappa traces Indices A r I R zero bottom i c B history F terminalLegs V Domains E Images x
+
 end PPAC.Migration.Step4Checks

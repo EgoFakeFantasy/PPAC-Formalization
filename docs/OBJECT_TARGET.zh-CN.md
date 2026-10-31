@@ -254,4 +254,12 @@ ConstructionBlockContinuity.inner_kernel_certificate 在普通 nativeZF 中，�
 
 outer_kernel_certificate 通过既有 L 解释，在原 nativeZF 核中证明相对化对象句：从同一实际饱和 Context／Recursive／Matrix／终行，构造真实终行 incoming 映射的外层范围图，给出单调性、有界性及所有内部极限处的连续性。外轮直接调用已完成 ConstructionSaturationCover.exists_rep；没有新增 Choice 公理、全局递归或 colimit 基础。
 
-本批覆盖内部序数极限，尚未完成 flattened 非初始 cut 的统一分类和阶段图汇集。现有 BlockCuts 无前驱传输及原生 IsOrdinal.classify 可用于后续接线；初始 cut 排除、stepCell／边界身份 attachment 及完整 Timeline 尚未装配。18 项新声明和两个原核端点全量验收见 verification/block-continuity-acceptance.json。原第8阶段和最终内部 Con 仍未完成。
+本批覆盖内部序数极限；后续 ConstructionCutLimits 已消费 BlockCuts 无前驱传输及原生 IsOrdinal.classify，完成初始 cut 排除与 flattened 非初始 cut 分类（见下节）。阶段图汇集、stepCell／边界身份 attachment 及完整 Timeline 尚未装配。18 项新声明和两个原核端点全量验收见 verification/block-continuity-acceptance.json。原第8阶段和最终内部 Con 仍未完成。
+
+## 非初始 cut 分类与严格较早 cut（2026-10-31）
+
+ConstructionCutLimits 对应固定源 BlockIndex.cut_bot／inner_limit／outer_limit 及 BlockTower.flatten.continuous 的两个 interior 分支。constructionSentence 在实际 Family、原 Index.Data 及非空内部 kappa 下构造字面最小 cut，保留全后继事实，并分类全部非初始无前驱 cut；末端 top 是独立分类分支，不假称其覆盖已完成。innerSentence 和 outerSentence 消费既有实际范围连续性，产生同一依赖索引中严格较早的 cut 和原范围元素见证。
+
+三句均有原 FirstOrder.Derives nativeZF [] 证书。外轮证书显式保留现有 OuterData 输入，尚需将这个实际图对齐到统一 flattened 区块底端图；本批没有把宿主层语义结论或条件范围图当作完整 Timeline。初始 cut 排除、内外极限分类以及相应严格较早 cut 见证已完成，不能再次报作缺失。原生 L／全模式／序数分类／递归／范围构造全部复用。
+
+实际验收：3061 构建任务、35179 声明、29 新声明、三个原核证书、9 条命令／5 次 trust=0、零警告；旧 35150 声明依赖不变，2616 文件哈希匹配，无新增公理依赖。报告 verification/cut-limits-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。
