@@ -13169,4 +13169,14 @@ example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots N mu
       (ConstructionCellSimulationEquiv.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f H)) :=
   ConstructionCellSimulationEquiv.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots N mulN eN PN CN LN projectionN AN WN TN BN GN unitN ON rootsN f H
 
+example {m : Nat} (w Q R top D mul e mark H C zero one u lengthBound Schedule history F i j raw : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionExecutedCellPresentation.selectedSentence w Q R top D mul e mark H C zero one u lengthBound Schedule history F i j raw)) :=
+  ConstructionExecutedCellPresentation.selected_kernel_certificate w Q R top D mul e mark H C zero one u lengthBound Schedule history F i j raw
+
+example {m : Nat} (w Q R top D mul e mark H C zero one u lengthBound Schedule history P F i j : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionExecutedCellPresentation.mapSuccSentence w Q R top D mul e mark H C zero one u lengthBound Schedule history P F i j)) :=
+  ConstructionExecutedCellPresentation.mapSucc_kernel_certificate w Q R top D mul e mark H C zero one u lengthBound Schedule history P F i j
+
 end PPAC.Migration.Step4Checks

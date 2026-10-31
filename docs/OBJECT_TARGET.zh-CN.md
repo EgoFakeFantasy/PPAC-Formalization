@@ -301,3 +301,15 @@ ConstructionCellSimulationEquiv 已迁移固定源 Cell.simulation_surjective / 
 已完成的完整 Timeline、L／全模式、递归、cell 生成性／参数／有限系数继续复用，不再列作缺失。下一实际调用链：SelectedAt 的原操作见证 → 同一呈现及字面旧范围上的映射呈现 → 消费本批范围同构 → blockStage_step → flatten.step／stepCell（保留身份边界和 top 分支）→ 全局 dependencies → restrict_selected／future_cut／重排／germ-selector。
 
 **仍在原第 8 阶段。** 源 CellTower／Saturation.cells、后续构造链和第 9–11 阶段尚未完成；最终内部 Con 未证明。
+
+## 实际执行记录的两类 cell 呈现（2026-10-31）
+
+ConstructionExecutedCellPresentation 已从实际 SelectedAt 提取两类 cell 的完整现有 Presentation 接口。全部 19 个后继见证原样保留，包括同一 request、源/目标记录、乘法、旧嵌入、raw 的第九 roots 字段和转移 Product。Probe 的 TargetGraph／EqualityLaw 从原保留表推出；Merger 的原 roots 函数图条件从 Done 取得，并用请求编码唯一性／分支互斥对齐到 Provenance，没有替换载体或 roots 图。
+
+两个端点均为普通 nativeZF 对象句的原 FirstOrder.Derives 证书：任意实际已选执行的呈现提取，以及从原 Context／Recursive／Matrix 和内部相邻序数直接产出同一个 raw 的 SelectedAt 与呈现。没有额外的“实际呈现存在”前提。原请求形状和 19 字段记录形状还通过精确替换清单机械核对；该核对只是结构保留证据，数学结论由上述原核证书承担。
+
+本批全量验收：3066 项构建、35304 项声明、27 新声明、2 个原核证书、9 条命令／5 次 trust=0、零警告；35277 项旧声明依赖不变，2621 项文件哈希匹配，无新增公理依赖。见 verification/executed-cell-presentation-acceptance.json。
+
+“从 SelectedAt 的原操作记录提取实际呈现”不再列作待做。下一实际调用链：既有 range_closed／ConservativeHull.exists_submonoid 处理同一个字面旧范围 → 消费既有 Probe/Merger 映射构造 → 上一批 simulationEquiv／范围识别 → request_rangeAttachment／blockStage_step → flatten.step／stepCell（身份边界、top 分支保留）→ 全局 dependencies／restrict_selected／future_cut／重排／germ-selector。完整 Timeline、范围闭包／限制乘法／保守子对象、L／全模式、递归、生成性／参数／有限系数均已有并继续复用。
+
+**仍在原第 8 阶段。** 字面旧范围上的映射呈现和全体 stage-cell 家族尚未装配；源 CellTower／Saturation.cells、后续构造和第 9–11 阶段仍未完成，最终内部 Con 未证明。
