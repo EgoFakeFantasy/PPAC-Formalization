@@ -13009,4 +13009,14 @@ example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots V H 
       (ConstructibleGround.relative (ConstructionCellParameters.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots V H eV F R))) :=
   ConstructionCellParameters.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots V H eV F R
 
+example {m : Nat} (T J r bottom S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFirstAppearance.constructionSentence T J r bottom S)) :=
+  ConstructionFirstAppearance.construction_kernel_certificate T J r bottom S
+
+example {m : Nat} (w T J r bottom S index retained : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFirstAppearance.selectedSentence w T J r bottom S index retained)) :=
+  ConstructionFirstAppearance.selected_kernel_certificate w T J r bottom S index retained
+
 end PPAC.Migration.Step4Checks

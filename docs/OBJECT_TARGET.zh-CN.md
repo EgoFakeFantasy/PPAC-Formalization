@@ -191,3 +191,11 @@ ConstructionCellParameters.probe_kernel_certificate／merger_kernel_certificate 
 Merger 参数恰为实际 start 的两坐标；补默认单位只用于构造计数上界，随后 Separation 保证精确参数集。证明覆盖全部内部 n∈ω，未要求外部标准性。Probe 使用完整内部路径值域与三个指定参数。计数复用 ExistingOrdinalImage、ExistingCardinalBounds 和原生 ZF 函数／分离接口，背景解释复用已完成的 L。
 
 本句仍为单个实际 attachment；首次出现索引、全 tower 汇总、restrict_selected、重排和最终 Con 未完成。实际验收见 verification/cell-parameters-acceptance.json。
+
+## 内部首次出现索引与精确选中阶段集（2026-10-31）
+
+ConstructionFirstAppearance.construction_kernel_certificate 直接在 nativeZF 原核中，从同一内部集合编码良序、底点及连续阶段族推出内部 newIndex 函数存在。首次出现阶段通过 Separation 后调用已有内部良序最小元取得；连续性排除非初始极限处首次出现，Cover 表示同一序中的紧邻后继。证明没有使用模型外部良基性或对象 Choice。
+
+selected_kernel_certificate 同样直接在 nativeZF 中构造任意内部可数保留集的精确选中阶段集并证明内部可数；它实际消费 newIndex 对 NewAt 的值定理，限制原索引函数后复用 ConstructionCellParameters.range_small 和 small_subset。选中集不等于整个索引像，底层旧元素的默认值须按精确谓词排除。
+
+具体 BlockTowers.flatten/Saturation.cells 的 Timeline 前提、统一逐阶段 cell/局部依赖族仍待装配；已有实际历史、阶段映射和极限覆盖不是未完成的基础。上述证书不替代全局 dependencies、restrict_selected 或最终 Con。全量验收见 verification/first-appearance-acceptance.json。

@@ -2445,7 +2445,8 @@ def main() -> None:
                                ('construction_cell_coefficients', 'ConstructionCellCoefficients', 29),
                                ('construction_attachment_coefficients', 'ConstructionAttachmentCoefficients', 32),
                                ('construction_attachment_dependencies', 'ConstructionAttachmentDependencies', 38),
-                               ('construction_cell_parameters', 'ConstructionCellParameters', 40)):
+                               ('construction_cell_parameters', 'ConstructionCellParameters', 40),
+                               ('construction_first_appearance', 'ConstructionFirstAppearance', 44)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
