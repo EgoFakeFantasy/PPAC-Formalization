@@ -941,3 +941,7 @@ import PPAC.Migration.ConstructionGermBoundedRows
 import PPAC.Migration.ConstructionCohenRows
 import PPAC.Migration.ConstructionGermEventual
 import PPAC.Migration.ConstructionGermRawPattern
+import PPAC.Migration.ConstructionGermPatternCongruence
+import PPAC.Migration.ConstructionGermPattern
+import PPAC.Migration.ConstructionGermPatternInjectivity
+import PPAC.Migration.ConstructionGermGoodDense

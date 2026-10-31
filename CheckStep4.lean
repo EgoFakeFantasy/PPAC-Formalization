@@ -13475,4 +13475,24 @@ example {m : Nat} (w N X I K C B det g R alpha : Fin m) :
       (ConstructionGermRawPattern.constructionSentence w N X I K C B det g R alpha)) :=
   ConstructionGermRawPattern.construction_kernel_certificate w N X I K C B det g R alpha
 
+example {m : Nat} (w D I mul q zero root vertices chain X reps det N alpha B A Q g h R pr P T : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternCongruence.congruenceSentence w D I mul q zero root vertices chain X reps det N alpha B A Q g h R pr P T)) :=
+  ConstructionGermPatternCongruence.congruence_kernel_certificate w D I mul q zero root vertices chain X reps det N alpha B A Q g h R pr P T
+
+example {m : Nat} (w D I mul q zero root vertices chain H G N X reps K C B alpha det R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPattern.constructionSentence w D I mul q zero root vertices chain H G N X reps K C B alpha det R)) :=
+  ConstructionGermPattern.construction_kernel_certificate w D I mul q zero root vertices chain H G N X reps K C B alpha det R
+
+example {m : Nat} (w D chain H G N alpha B A E T det R pr F J pairs p lo hi : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermPatternInjectivity.constructionSentence w D chain H G N alpha B A E T det R pr F J pairs p lo hi)) :=
+  ConstructionGermPatternInjectivity.construction_kernel_certificate w D chain H G N alpha B A E T det R pr F J pairs p lo hi
+
+example {m : Nat} (w D I mul q zero root vertices chain H G N X reps det J K C B S lo hi p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermGoodDense.constructionSentence w D I mul q zero root vertices chain H G N X reps det J K C B S lo hi p))) :=
+  ConstructionGermGoodDense.construction_kernel_certificate w D I mul q zero root vertices chain H G N X reps det J K C B S lo hi p
+
 end PPAC.Migration.Step4Checks

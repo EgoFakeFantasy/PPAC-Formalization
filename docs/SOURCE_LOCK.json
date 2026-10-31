@@ -130567,6 +130567,544 @@
         "ZF.exists_functionalImage"
       ],
       "scope": "Actual internal function N -> Eventual(alpha -> B), with exact detector/action/rows evaluation. Native unique-function constructors form slices and sequences and the existing Eventual projection forms the quotient values; all spaces, quotient, projection and pattern graph are constructed in the same nativeZF object sentence. Generic total R is the source rawPattern input, instantiated by ConstructionCohenRows.Rows. No new choice or function backend. rawPattern_congr, pattern descent, stability/covariance, Good, selector and final Con remain unproved."
+    },
+    "construction_germ_pattern_congruence": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/GermSelectors.lean",
+      "source_sha256": "e7eaf1b05a356e2c22091d2fdc1894709cec6f7a7bc15324470470cddd906aaf",
+      "adapter": "PPAC/Migration/ConstructionGermPatternCongruence.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionGermRawPattern.lean": "f451745cb398afd95479484768759a46c01c1bf74f581bddb8603d6cae8068b3",
+        "PPAC/Migration/ConstructionGermDetectors.lean": "29f2daecc06ce9fdbc2505bc21f94154b94206aa7535b7e2d85806e0af2715f4",
+        "PPAC/Migration/ConstructionGermEventual.lean": "3033fe0f9840a23eef34a8d5535810c7f0a27651109ee70a34a65116b9618255",
+        "PPAC/Migration/ConstructionGermCosets.lean": "4fa4e06f3fb5e4be45a737758a77a5e942a82346ac0b5a138af62943f597535b",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionGermPatternCongruence.value_congr": [],
+        "PPAC.Migration.ConstructionGermPatternCongruence.slice_congr": [],
+        "PPAC.Migration.ConstructionGermPatternCongruence.sequence_same": [],
+        "PPAC.Migration.ConstructionGermPatternCongruence.at_congr": [],
+        "PPAC.Migration.ConstructionGermPatternCongruence.rawPattern_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternCongruence.rawPattern_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternCongruence.congruenceSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPatternCongruence.congruence_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternCongruence.congruence_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "source_declarations": [
+        "TailData.rawPattern_congr:416-427"
+      ],
+      "consumers": [
+        "StableSelectors.Good.mono/permutation",
+        "StableSelectors.conditionSelector",
+        "ConcreteQuotients.component_selector_dense:249",
+        "ConcreteQuotients.quotient_bijection_above:370"
+      ],
+      "reuse_producers": [
+        "ConstructionGermRawPattern",
+        "ConstructionGermDetectors",
+        "ConstructionGermEventual",
+        "ConstructionGermCosets",
+        "ModelTransfer"
+      ],
+      "scope": "Existing detector same_eventually and actual Eventual equality imply equality of actual full rawPattern graphs. Ordinary nativeZF original-kernel congruence certificate."
+    },
+    "construction_germ_pattern": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/GermSelectors.lean",
+      "source_sha256": "e7eaf1b05a356e2c22091d2fdc1894709cec6f7a7bc15324470470cddd906aaf",
+      "adapter": "PPAC/Migration/ConstructionGermPattern.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionGermPatternCongruence.lean": "1ee9fdf2a6d3b0c01fc4049b59b35f96cd6ab58090e97ddc6272b6a9f47b7b3e",
+        "PPAC/Migration/ConstructionGermRawPattern.lean": "f451745cb398afd95479484768759a46c01c1bf74f581bddb8603d6cae8068b3",
+        "PPAC/Migration/ConstructionGermEventual.lean": "3033fe0f9840a23eef34a8d5535810c7f0a27651109ee70a34a65116b9618255",
+        "PPAC/Migration/ConstructionGermCosets.lean": "4fa4e06f3fb5e4be45a737758a77a5e942a82346ac0b5a138af62943f597535b",
+        "PPAC/Migration/ForcingSupportSize.lean": "6fe83b986cddac3c4c13b92293a21241073715dad2251ab0dc11007a351aaab6",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionGermPattern.At": [],
+        "PPAC.Migration.ConstructionGermPattern.atFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.atFormula_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.atFormula_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.at_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.Pattern": [],
+        "PPAC.Migration.ConstructionGermPattern.pattern": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.pattern_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.pattern_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.exists_pattern": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.Realizes": [],
+        "PPAC.Migration.ConstructionGermPattern.pattern_mk": [],
+        "PPAC.Migration.ConstructionGermPattern.realizes": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.realizes_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.realizes_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.construction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPattern.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "source_declarations": [
+        "TailData.pattern:430-433",
+        "TailData.pattern_mk:435-437"
+      ],
+      "consumers": [
+        "StableSelectors.Good.mono/permutation",
+        "StableSelectors.conditionSelector",
+        "ConcreteQuotients.component_selector_dense:249",
+        "ConcreteQuotients.quotient_bijection_above:370"
+      ],
+      "reuse_producers": [
+        "ConstructionGermPatternCongruence",
+        "ConstructionGermRawPattern",
+        "ConstructionGermEventual",
+        "ConstructionGermCosets",
+        "ForcingSupportSize",
+        "ModelTransfer"
+      ],
+      "scope": "Construct the actual entire germ-quotient-to-pattern-space graph and all value spaces, using congruence for unique values. Prove evaluation at EVERY representative, with no additional representative choice. Ordinary nativeZF original-kernel certificate."
+    },
+    "construction_germ_pattern_injectivity": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/StableSelectors.lean",
+      "source_sha256": "ec960846da7bb550f69510db96c7c05b859880202ac39ccc220b2043f02605e3",
+      "adapter": "PPAC/Migration/ConstructionGermPatternInjectivity.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionGermPattern.lean": "1165efafaea0df72f597900363d0e48b1ab5435c437c6c04444dd42695c4fca7",
+        "PPAC/Migration/ConstructionGermSeparation.lean": "feacb0491e154bab5965816d662dc70fa24c582f1f464089c9c432d9468fca6a",
+        "PPAC/Migration/ConstructionGermDetectorSites.lean": "a4330b71b08a43cf936f62950d0aa7297e1a26fab65f7447e6e19f5d6c9e8ae2",
+        "PPAC/Migration/ConstructionCohenPairSeparation.lean": "a58b39237ca5559a7f97d54ec37d3b2f7d44d733e76feece13085956112c222a",
+        "PPAC/Migration/ConstructionFractionOrder.lean": "63e371ab1978f35a8cf303d78ac560fe3f5a8535efd678fff30f8d7a49a31797",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionGermPatternInjectivity.injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternInjectivity.construction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternInjectivity.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermPatternInjectivity.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermPatternInjectivity.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "source_declarations": [
+        "TailData.good_dense:207-219"
+      ],
+      "consumers": [
+        "StableSelectors.Good.mono/permutation",
+        "StableSelectors.conditionSelector",
+        "ConcreteQuotients.component_selector_dense:249",
+        "ConcreteQuotients.quotient_bijection_above:370"
+      ],
+      "reuse_producers": [
+        "ConstructionGermPattern",
+        "ConstructionGermSeparation",
+        "ConstructionGermDetectorSites",
+        "ConstructionCohenPairSeparation",
+        "ConstructionFractionOrder",
+        "ModelTransfer"
+      ],
+      "scope": "Actual full germ pattern injectivity follows from actual detector separation, eventual site coverage, opposite bits below alpha and actual Eventual projection equality. A common INTERNAL natural index yields zero=one; no external standard omega or finite approximation. Ordinary nativeZF original-kernel certificate."
+    },
+    "construction_germ_good_dense": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/StableSelectors.lean",
+      "source_sha256": "ec960846da7bb550f69510db96c7c05b859880202ac39ccc220b2043f02605e3",
+      "adapter": "PPAC/Migration/ConstructionGermGoodDense.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionGermPatternInjectivity.lean": "faee933832daf830f87594d88b461610a76e3aadf7523851aa76593768dbe438",
+        "PPAC/Migration/ConstructionGermBoundedRows.lean": "fbb83220500f3f14d5d0fac2f5318669a82118c8016bed7454cfdec0d9a2b839",
+        "PPAC/Migration/ConstructionCohenRows.lean": "02cb10ded7be69976c7a9a03cf6673802d359324a092ceeabf0e253039c4fb6c",
+        "PPAC/Migration/ConstructionGermPattern.lean": "1165efafaea0df72f597900363d0e48b1ab5435c437c6c04444dd42695c4fca7",
+        "PPAC/Migration/ConstructionGermComplete.lean": "9f7a0ce2b51fa39bbe81c497b5844f820e293c3d7ce759453e0e60c2f37c4b47",
+        "PPAC/Migration/ConstructionSaturationIndex.lean": "34709dae6442552d49658472aafaef61843dce6f3fad7ef5a189ba0296aaa8eb",
+        "PPAC/Migration/ConstructibleSource.lean": "3e0753271c6e98902b29cf15fe0161d0b1113865606300d0ab478ce9fc491add",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/FunctionConstruction.lean": "62f22e6f9d97179f72ddd0fdd5f32ab10e992e8f703922cc8c09695d9b02aa8c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionGermGoodDense.Good": [],
+        "PPAC.Migration.ConstructionGermGoodDense.good": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.good_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.good_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.good_dense": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ConstructionGermGoodDense.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.ZF.omega_selfMultiplication._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_dag_clause_compile.ax_1_18",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_preprocessing.ax_1_16",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinal.classify._native.prove_auto_native_replay_material.ax_1_17",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsOrdinalMaximum.mem._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsRecursiveSequence.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_dag_clause_compile.ax_1_6",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_preprocessing.ax_1_4",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsSequenceOfLength.restriction._native.prove_auto_native_replay_material.ax_1_5",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsSuccessorLengthSequenceWithLast.not_limitLength._native.prove_auto_native_replay_material.ax_1_2",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
+          "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ]
+      },
+      "source_declarations": [
+        "TailData.Good:137-138",
+        "TailData.good_dense:183-219"
+      ],
+      "consumers": [
+        "StableSelectors.Good.mono/permutation",
+        "StableSelectors.conditionSelector",
+        "ConcreteQuotients.component_selector_dense:249",
+        "ConcreteQuotients.quotient_bijection_above:370"
+      ],
+      "reuse_producers": [
+        "ConstructionGermPatternInjectivity",
+        "ConstructionGermBoundedRows",
+        "ConstructionCohenRows",
+        "ConstructionGermPattern",
+        "ConstructionGermComplete",
+        "ConstructionSaturationIndex",
+        "ConstructibleSource",
+        "ModelTransfer"
+      ],
+      "scope": "For the existing concrete regular Hartogs(omega) bit index, every actual condition has ONE extending condition with Complete and injective full germ pattern of its actual default-false rows. All row/function/sequence/quotient/pattern objects are constructed. All bit requirement, common bound, fill and injectivity obligations are discharged by accepted producers. NativeZF original-kernel L-relative certificate through the existing ConstructibleSource closure. Complete/Good stability and covariance, leastBound/conditionSelector, OrbitAssignments, concrete quotient bijection and final internal Con remain incomplete.",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/ConcreteSystem.lean": "0b01722d8c774fa659f027e3dac89769cfff85fb1f07c4bcb15e5e0162be60c5",
+        "lean/OAI/SetTheory/PartitionConsistency/Models/GermSelectors.lean": "e7eaf1b05a356e2c22091d2fdc1894709cec6f7a7bc15324470470cddd906aaf"
+      }
     }
   },
   "selected_route_consumer_audit": {

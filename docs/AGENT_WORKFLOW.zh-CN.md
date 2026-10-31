@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：实际 rows／Eventual／rawPattern → germ 不变性与 bounded-pattern 区分性
+## 当前执行入口：actual pattern／good_dense → 稳定性、协变与 conditionSelector
 
-ConstructionCohenRows 保留固定源默认 false 的定义，构造整个 I×K 上的内部总函数图并保留条件已有赋值。ConstructionGermEventual 复用函数空间、分离和函数像，构造全部内部序列的最终相等等价类、真实商集与投影，并证明投影相等当且仅当内部 ω 上最终相等。
+ConstructionGermPatternCongruence 复用现成探测器最终一致性，取得实际 rawPattern 图的代表元无关性。ConstructionGermPattern 构造完整 germ 商到实际 pattern 空间的函数，并证明每个代表元上的 pattern_mk；不新增代表元选择。
 
-ConstructionGermRawPattern 按固定源 rawPattern:413–414，把探测函数、标签作用和总 rows 图实际装配成 N → Eventual(α → B)。有界行函数、序列、全部函数空间和商投影均为内部集合；没有新增选择或函数后端。三个构造均有普通 nativeZF 原推导核证书。
+ConstructionGermPatternInjectivity 接通固定源 good_dense:207–219 的实际有界 pattern 单射性。ConstructionGermGoodDense 将已有统一严格界和 Complete 扩张、实际 rows、完整 pattern 及单射性合并到同一扩张条件，完成具体 κ＝Hartogs(ω) 路线的 good_dense:183–219。前三个端点是普通 nativeZF 原核证书；good_dense 复用既有 L 解释，取得 L-relative 原核证书。
 
-本批全量验收通过：3109 个构建任务、36183 项声明、2664 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；36099 项旧依赖足迹全部不变，新增 84 项声明无新增公理依赖。记录见 verification/germ-rows-eventual-acceptance.json。
+本批全量验收通过：3113 个构建任务、36224 项声明、2668 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；36183 项旧依赖足迹全部不变，新增 41 项声明无新增公理依赖。记录见 verification/germ-pattern-acceptance.json。
 
-**仍在原第 8 阶段。** 下一项为 rawPattern_congr、下降到 germ 类的 pattern、Complete.pattern_eq／置换协变、bounded-pattern 单射性及 Good/selector，继而 OrbitAssignments 和具体商双射。rows／Eventual／rawPattern 对象构造、标签对要求、fusion、统一严格比特界及 Complete 填充均已接通，不再列作待做。Base、L、全模式、递归、Proof/Sat 等已完成底座不重做。第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
+**仍在原第 8 阶段。** 下一项是 Complete.pattern_eq／置换协变、Good.mono／置换保持、leastBound 和 conditionSelector，继而 OrbitAssignments 和具体商双射。rawPattern_congr、pattern 下降、bounded-pattern 单射性及具体 good_dense 已接通，不再列作待做。Base、L、全模式、递归、Proof/Sat 等底座不重做。第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -31,7 +31,7 @@ ConstructionGermRawPattern 按固定源 rawPattern:413–414，把探测函数�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；下一项为 rawPattern_congr、pattern 下降、稳定性／协变和 bounded-pattern 单射性及 Good/selector。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；下一项为 Complete／Good 稳定性与协变、leastBound 和 conditionSelector。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
