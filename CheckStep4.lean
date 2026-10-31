@@ -12984,4 +12984,19 @@ example {m : Nat} (I V H e old generators coefficients D retained x : Fin m) :
       (ConstructionAttachmentCoefficients.retainedSentence I V H e old generators coefficients D retained x)) :=
   ConstructionAttachmentCoefficients.retained_kernel_certificate I V H e old generators coefficients D retained x
 
+example {m : Nat} (w D I W V H e O P F R old generators parameters : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionAttachmentDependencies.constructionSentence w D I W V H e O P F R old generators parameters))) :=
+  ConstructionAttachmentDependencies.construction_kernel_certificate w D I W V H e O P F R old generators parameters
+
+example {m : Nat} (w D I V H e old generators R C parameters deps retained x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionAttachmentDependencies.selectedSentence w D I V H e old generators R C parameters deps retained x)) :=
+  ConstructionAttachmentDependencies.selected_kernel_certificate w D I V H e old generators R C parameters deps retained x
+
+example {m : Nat} (w D I V H e old generators R C parameters deps : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionAttachmentDependencies.countableSentence w D I V H e old generators R C parameters deps)) :=
+  ConstructionAttachmentDependencies.countable_kernel_certificate w D I V H e old generators R C parameters deps
+
 end PPAC.Migration.Step4Checks

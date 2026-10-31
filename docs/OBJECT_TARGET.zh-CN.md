@@ -174,4 +174,12 @@ ConstructionCellCoefficients.merger_kernel_certificate／probe_kernel_certificat
 
 ConstructionAttachmentCoefficients 的 merger/probe 原核证书以实际呈现、实际同态 F、旧元素固定性及具名目标 R 的精确值域为前提，结论保留同一个 R，构造实际复合旧包含图／完整生成元图，并给出 R 中每个内部元素的有限旧系数。证明在同态原像子单子上应用已有闭包性质，使用同一个 S；原生值域唯一性将构造结果识别到输入 R。背景仍为 nativeZF，不添加 Choice。
 
-retained_kernel_certificate 在显式给定本次 S 的旧像被保留的前提下，构造 retained ∩ D 并传输闭包成员性。它没有构造 tower 的支撑选择或 dependencies 图，也没有消去依赖闭合前提，不能称作整个 selected_word 或 restrict_selected 已完成。实际依赖图需保持每阶段同一 cell，继续复用已有 L／全局序和内部函数构造。三个端点和全仓验收见 verification/attachment-coefficients-acceptance.json；最终内部 Con 未完成。
+retained_kernel_certificate 在显式给定本次 S 的旧像被保留的前提下，构造 retained ∩ D 并传输闭包成员性。它没有构造 tower 的支撑选择或 dependencies 图，也没有消去依赖闭合前提，不能称作整个 selected_word 或 restrict_selected 已完成。单 attachment 的内部支撑／依赖图已由后续 ConstructionAttachmentDependencies 构造；全 tower 汇总仍需保持每阶段同一 cell，继续复用已有 L／全局序和内部函数构造。三个端点和全仓验收见 verification/attachment-coefficients-acceptance.json；最终内部 Con 未完成。
+
+## 单 Attachment 可数依赖图与实际保留词消费（2026-10-31）
+
+ConstructionAttachmentDependencies.construction_kernel_certificate 是原 nativeZF 中的 L 相对化对象句：在同一个实际 ImageResult/R/旧包含图/完整生成元图上产生内部支撑函数 C 和精确依赖图 deps。选定支撑取已有全局序下的最小见证，调用 ConstructionRoundSelection.least_denote；实际函数图调用原生 Replacement/函数构造，L 背景由现成解释消去。
+
+selected_kernel_certificate 直接在 nativeZF 中从这个 deps 的依赖闭合推出参数及全部生成元被保留，并构造 retained ∩ D 上的闭包证明。此前局部证书中的额外支撑保留前提已在本批实际消去。countable_kernel_certificate 直接在 nativeZF 中证明每个内部依赖行可数，沿用源参数集／生成元索引可数条件；有限旧支撑与完整生成元族不混淆。
+
+严格边界：这是一个固定 attachment 的图，旧元素的空局部行不能替代全 tower 中由 newIndex 选择的早期依赖。全 tower 的 BlockTowers.flatten/Saturation.cells、统一 stepCell/首次出现索引及实际参数集计数实例化仍待接合；restrict_selected、重排和最终内部 Con 均未完成。全量验收见 verification/attachment-dependencies-acceptance.json。
