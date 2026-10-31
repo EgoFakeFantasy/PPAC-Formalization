@@ -1,14 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：映射 cell 呈现 → rangeAttachment → stepCell
+## 当前执行入口：Probe 映射呈现 → 两分支实际范围附件 → stepCell
 
-ConstructionRangeObject 已完成源 Cell.rangeAttachment 中 f.rangeEquiv 的对象层范围适配：在同一个字面范围 S 上，复用范围闭包、限制乘法及保守子对象构造；同一张 f 图保留四项保守性，并构造其内部逆同态、恒等包含图及两类完整请求映射。没有重新构造范围载体或假定范围同构存在。construction_kernel_certificate 是普通 nativeZF 中原 FirstOrder.Derives 的全量词闭句。
+ConstructionMappedMerger 已固定原执行的 W/G/unit/O/roots，构造字面旧范围 N 上的完整 Merger 映射呈现、同一实际模拟的保守性／满射性及内部逆，再构造固定每个旧元素且精确覆盖指定终端范围 R 的嵌入。直接消费 ConstructionRangeObject，目标范围的限制乘法、包含及原图 f 的范围同构全部由现有构造产出。未重新选择原执行 cell，未假定映射呈现或模拟存在。
 
-本批实际验收：3067 项构建、35314 项声明、10 新声明、1 个原核证书，9 条命令／5 次 trust=0，零警告；35304 项旧声明依赖不变，2622 项文件哈希匹配，无新增公理依赖。见 verification/range-object-acceptance.json。
+construction_kernel_certificate 是普通 nativeZF 中原 FirstOrder.Derives 闭句：25 个外部槽位全称闭包，19 个内部存在输出。现有 Merger Word 生产者的单子／conical 性直接保留，原处方 n、两张终端图 f/g、N/R 原样保留。它可供现有 actual_merger 的 Presentation／Hom／OldFixed／Range 输入；还不等于全体 stage-cell 家族。
 
-原 SelectedAt 的实际呈现提取，以及本批字面范围对象／原图到范围的同构适配，均不再列作待做。下一步固定原执行呈现，复用现有 Probe/Merger 构造生成其映射呈现 → simulationEquiv／范围识别 → request_rangeAttachment／blockStage_step → flatten.step（保留身份、边界和 top 分支）→ 全局依赖与 germ/selector。完整 Timeline、L／全模式、递归、范围闭包和单 cell 基础继续复用。
+本批全量验收：3068 项构建、35324 项声明、10 新声明、1 个原核证书，9 条命令／5 次 trust=0，零警告；35314 项旧声明依赖不变，2623 项文件哈希匹配，无新增公理依赖。见 verification/mapped-merger-acceptance.json。
 
-**仍在原第 8 阶段。** 完整映射 cell 呈现、全体 stage-cell 家族及后续第 9–11 阶段尚未完成；最终内部 Con 未证明。
+下一步：Probe 从原 OperationSource.Alpha 取已有 TerminalTable/ConeLaws，复用因子／端点／字母表映射和实际模拟；不要把简化 Presentation 没有存的字段误报为数学缺口。然后在同一 SelectedAt 家族合并两分支 → request_rangeAttachment／blockStage_step → flatten.step（身份、边界、top）→ 全局依赖与 germ/selector。实际呈现提取、字面范围适配、Merger 映射呈现与范围识别均不再列作待做；L／全模式、Timeline 和已验收基础继续复用。
+
+**仍在原第 8 阶段。** Probe 映射分支、全体实际 stage-cell 家族及后续第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

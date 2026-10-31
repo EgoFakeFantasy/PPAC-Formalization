@@ -13184,4 +13184,9 @@ example {m : Nat} (w zero D V mul G e unit f S : Fin m) :
       (ConstructionRangeObject.constructionSentence w zero D V mul G e unit f S)) :=
   ConstructionRangeObject.construction_kernel_certificate w zero D V mul G e unit f S
 
+example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots V GV unitV f g N R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionMappedMerger.constructionSentence w n zero D mul e P C L projection A W T B G unit O roots V GV unitV f g N R)) :=
+  ConstructionMappedMerger.construction_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots V GV unitV f g N R
+
 end PPAC.Migration.Step4Checks

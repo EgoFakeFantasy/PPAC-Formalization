@@ -35919,3 +35919,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionRangeObject.constructionSentence
 #print axioms PPAC.Migration.ConstructionRangeObject.construction_models
 #print axioms PPAC.Migration.ConstructionRangeObject.construction_kernel_certificate
+#print axioms PPAC.Migration.ConstructionMappedMerger.exists_conical_presentation
+#print axioms PPAC.Migration.ConstructionMappedMerger.Data
+#print axioms PPAC.Migration.ConstructionMappedMerger.range_attachment
+#print axioms PPAC.Migration.ConstructionMappedMerger.construction
+#print axioms PPAC.Migration.ConstructionMappedMerger.data
+#print axioms PPAC.Migration.ConstructionMappedMerger.data_freeClosed
+#print axioms PPAC.Migration.ConstructionMappedMerger.data_semantics
+#print axioms PPAC.Migration.ConstructionMappedMerger.constructionSentence
+#print axioms PPAC.Migration.ConstructionMappedMerger.construction_models
+#print axioms PPAC.Migration.ConstructionMappedMerger.construction_kernel_certificate

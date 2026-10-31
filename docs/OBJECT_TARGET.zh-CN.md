@@ -317,3 +317,7 @@ ConstructionExecutedCellPresentation 已从实际 SelectedAt 提取两类 cell �
 ## 2026-10-31：同一字面范围上的原图适配已验收
 
 ConstructionRangeObject.construction_kernel_certificate 在普通 nativeZF 中正式推出同一范围 S 的限制乘法、保守包含、原图 f 的保守满射同态、内部逆图及两类 MapsRequests。闭句全称量化 w/zero/D/V/mul/G/e/unit/f/S，四个构造见证在对象语言内存在量化；背景仅为原有单子、保守映射和精确 Range 前提。复用已有 ModelTransfer.derives；未添加选择背景或新的推导核。原 SelectedAt 呈现提取和本范围适配均已完成，不能再列为数学缺口。映射的完整 cell 呈现、实际 stepCell 与最终内部 Con 仍未完成。验收见 verification/range-object-acceptance.json。
+
+## 2026-10-31：固定原执行呈现的 Merger 范围识别已验收
+
+ConstructionMappedMerger.construction_kernel_certificate 在普通 nativeZF 原核中构造字面范围上的完整 Merger 呈现、实际保守模拟／内部逆、固定所有旧元素且精确覆盖原指定范围的嵌入；原 W/G/unit/O/roots 和 f/g/N/R/n 不变。目标范围适配由 ConstructionRangeObject 直接消去，不另假定映射呈现、模拟或范围同构。25 个槽位全称闭包、19 个存在输出均在对象语言内，不限制为外部标准 n 或外部有限词。Probe 分支及同一 SelectedAt 家族仍待装配；原 OperationSource.Alpha 已有的 TerminalTable/ConeLaws 必须继续消费，不重造。最终内部 Con 未证明。验收见 verification/mapped-merger-acceptance.json。
