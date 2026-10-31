@@ -1043,3 +1043,8 @@ Derives certificates for pure set sentences, with concrete source contracts expl
 Directed compilation and eight-declaration trust=0 audit passed with no new axiom
 dependencies. Full acceptance passed: 3132 build jobs, 36492 audited declarations, 2687 file hashes, nine commands including five trust-zero checks, zero warnings; all 36484 old footprints are unchanged. Still stage 8; StableAt, complete orbit
 assignment/quotient bijection, model assembly and final internal Con remain open.
+
+
+### Exact forced availability under permutation (2026-11-01)
+
+ForcingForcedAvailabilityTransport migrates fixed StableSelectors.forcedAvailable_permute_iff:550 and forcedAvailability_permute:568, directly consumed by stableAt_permute:589. It transports the actual normalized local witness, exact subdiagram range and fixing subgroup, and uses the inverse action for the converse. The SAME ideal U is preserved pointwise. Two ordinary nativeZF original-kernel certificates and eight declarations passed directed build/trust-zero audit with no new axiom dependencies. Full acceptance passed: 3133 build jobs, 36500 declarations, 2688 file hashes; nine commands/five trust-zero checks all passed with zero warnings; all 36492 old footprints are unchanged. StableAt, downstream orbit/quotient assembly and final internal Con remain unproved.

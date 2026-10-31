@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：Corrected 主要定律已接通 → StableAt／OrbitAssignments
+## 当前执行入口：精确 availability 传输 → StableAt／OrbitAssignments
 
-本批迁移固定源 corrected_permute:491 和 corrected_descend:519。前者实际构造乘积代表元、逆图和商类，将同一个消去复合分别用于条件、顶点、标签和名字，保留原 Preliminary 见证。后者实际构造逆移目标顶点、精确支撑像及固定子群，消费已有 local_name_move 和 preliminary_descend；不新建基础层。
+Corrected 主要定律已在提交 fd0e6a3 完成全量验收。本批继续固定源 forcedAvailable_permute_iff:550、forcedAvailability_permute:568：实际搬移规范局部名字、子图、精确支撑像与固定子群，反向用同一逆作用恢复见证；通过既有 EqF 传输证明同一个理想 U 保持不变。
 
-两个原核端点（permutation 为普通 nativeZF，descent 为同一内部 L 相对 nativeZF）及 8 项声明已通过定向编译／trust=0，零警告、无新增公理依赖；L 收尾正文三个精确替换已核对。本批全量验收已通过：3132 个构建任务、36492 项声明审计、2687 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36484 项旧声明依赖保持不变，新增 8 项未引入新公理依赖。Corrected 定义、代表无关性、common、mono、restrict、congr、eq_iff、permute、descend 现均已接通，不再列为待开发。
+两个普通 nativeZF 原核端点及 8 项声明已通过定向编译／trust=0，无新增公理依赖；本批全量验收已通过：3133 个构建任务、36500 项声明审计、2688 个文件哈希，9 条命令（含 5 条 trust=0）全部退出 0，零警告；36492 项旧依赖保持不变。直接消费者为 stableAt_permute:589，不新建名字、支撑、强迫或解释底座。
 
-**仍在原第 8 阶段。** 接下来沿 StableAt → OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。源实际父输入仍显式保留并由既有生产者继续装配；完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
+**仍在原第 8 阶段。** 接下来沿 StableAt → OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

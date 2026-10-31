@@ -13703,4 +13703,13 @@ example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incom
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingGermCorrectedDescent.descentSentence rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label germGroup quotient nonidentity high detector patternOrder))) :=
   ForcingGermCorrectedDescent.descent_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul q zero root vertices chain names bound d source target n tau labels E codes order ranks selection top rankBound labelSet tab initialRoot label germGroup quotient nonidentity high detector patternOrder
 
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act n : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingForcedAvailabilityTransport.availableSentence rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act n)) :=
+  ForcingForcedAvailabilityTransport.available_kernel_certificate rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act n
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act index U : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingForcedAvailabilityTransport.carrierSentence rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act index U)) :=
+  ForcingForcedAvailabilityTransport.carrier_kernel_certificate rho I K B w G F mu pi inv c ai one bound ac d movedD r movedRoot tau movedTau mul act index U
+
 end PPAC.Migration.Step4Checks

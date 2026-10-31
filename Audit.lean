@@ -37108,3 +37108,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedDescent.descentSentence
 #print axioms PPAC.Migration.ForcingGermCorrectedDescent.descent_models
 #print axioms PPAC.Migration.ForcingGermCorrectedDescent.descent_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.available_permute_iff
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrier_permute_iff
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.availableSentence
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.available_models
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.available_kernel_certificate
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrierSentence
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrier_models
+#print axioms PPAC.Migration.ForcingForcedAvailabilityTransport.carrier_kernel_certificate
