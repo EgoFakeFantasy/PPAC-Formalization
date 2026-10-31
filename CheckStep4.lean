@@ -13460,4 +13460,19 @@ example {m : Nat} (w D I mul q root chain H N X reps det J K C B S lo hi p : Fin
       (ConstructibleGround.relative (ConstructionGermBoundedRows.constructionSentence w D I mul q root chain H N X reps det J K C B S lo hi p))) :=
   ConstructionGermBoundedRows.construction_kernel_certificate w D I mul q root chain H N X reps det J K C B S lo hi p
 
+example {m : Nat} (C B S w z o p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionCohenRows.constructionSentence C B S w z o p)) :=
+  ConstructionCohenRows.construction_kernel_certificate C B S w z o p
+
+example {m : Nat} (w A : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermEventual.constructionSentence w A)) :=
+  ConstructionGermEventual.construction_kernel_certificate w A
+
+example {m : Nat} (w N X I K C B det g R alpha : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermRawPattern.constructionSentence w N X I K C B det g R alpha)) :=
+  ConstructionGermRawPattern.construction_kernel_certificate w N X I K C B det g R alpha
+
 end PPAC.Migration.Step4Checks

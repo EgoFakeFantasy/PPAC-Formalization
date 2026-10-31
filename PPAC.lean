@@ -938,3 +938,6 @@ import PPAC.Migration.ConstructionCohenFusion
 import PPAC.Migration.ConstructionCohenSeparation
 import PPAC.Migration.ConstructionCohenPairSeparation
 import PPAC.Migration.ConstructionGermBoundedRows
+import PPAC.Migration.ConstructionCohenRows
+import PPAC.Migration.ConstructionGermEventual
+import PPAC.Migration.ConstructionGermRawPattern

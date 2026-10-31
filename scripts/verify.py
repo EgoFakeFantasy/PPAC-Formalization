@@ -2499,7 +2499,10 @@ def main() -> None:
                                ('construction_cohen_fusion', 'ConstructionCohenFusion', 13),
                                ('construction_cohen_separation', 'ConstructionCohenSeparation', 15),
                                ('construction_cohen_pair_separation', 'ConstructionCohenPairSeparation', 15),
-                               ('construction_germ_bounded_rows', 'ConstructionGermBoundedRows', 9)):
+                               ('construction_germ_bounded_rows', 'ConstructionGermBoundedRows', 9),
+                               ('construction_cohen_rows', 'ConstructionCohenRows', 17),
+                               ('construction_germ_eventual', 'ConstructionGermEventual', 36),
+                               ('construction_germ_raw_pattern', 'ConstructionGermRawPattern', 31)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
