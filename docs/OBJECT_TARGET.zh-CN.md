@@ -182,4 +182,12 @@ ConstructionAttachmentDependencies.construction_kernel_certificate 是原 native
 
 selected_kernel_certificate 直接在 nativeZF 中从这个 deps 的依赖闭合推出参数及全部生成元被保留，并构造 retained ∩ D 上的闭包证明。此前局部证书中的额外支撑保留前提已在本批实际消去。countable_kernel_certificate 直接在 nativeZF 中证明每个内部依赖行可数，沿用源参数集／生成元索引可数条件；有限旧支撑与完整生成元族不混淆。
 
-严格边界：这是一个固定 attachment 的图，旧元素的空局部行不能替代全 tower 中由 newIndex 选择的早期依赖。全 tower 的 BlockTowers.flatten/Saturation.cells、统一 stepCell/首次出现索引及实际参数集计数实例化仍待接合；restrict_selected、重排和最终内部 Con 均未完成。全量验收见 verification/attachment-dependencies-acceptance.json。
+严格边界：这是一个固定 attachment 的图，旧元素的空局部行不能替代全 tower 中由 newIndex 选择的早期依赖。全 tower 的 BlockTowers.flatten/Saturation.cells、统一 stepCell/首次出现索引仍待接合；实际参数集计数已由后续 ConstructionCellParameters 完成；restrict_selected、重排和最终内部 Con 均未完成。全量验收见 verification/attachment-dependencies-acceptance.json。
+
+## 实际参数集及内部可数依赖图（2026-10-31）
+
+ConstructionCellParameters.probe_kernel_certificate／merger_kernel_certificate 在原 nativeZF 中证明 L 相对化对象句：从实际呈现、同态、旧元素固定性及给定 R 的精确值域，存在精确参数集、复合旧包含／生成元图、有限支撑函数与 deps，满足同一个 R 上的 ImageResult 和 Dependencies ω R deps。参数集可数性和索引可数性已实际证明，调用者无需另给。
+
+Merger 参数恰为实际 start 的两坐标；补默认单位只用于构造计数上界，随后 Separation 保证精确参数集。证明覆盖全部内部 n∈ω，未要求外部标准性。Probe 使用完整内部路径值域与三个指定参数。计数复用 ExistingOrdinalImage、ExistingCardinalBounds 和原生 ZF 函数／分离接口，背景解释复用已完成的 L。
+
+本句仍为单个实际 attachment；首次出现索引、全 tower 汇总、restrict_selected、重排和最终 Con 未完成。实际验收见 verification/cell-parameters-acceptance.json。

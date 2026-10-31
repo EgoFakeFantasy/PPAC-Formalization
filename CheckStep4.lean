@@ -12999,4 +12999,14 @@ example {m : Nat} (w D I V H e old generators R C parameters deps : Fin m) :
       (ConstructionAttachmentDependencies.countableSentence w D I V H e old generators R C parameters deps)) :=
   ConstructionAttachmentDependencies.countable_kernel_certificate w D I V H e old generators R C parameters deps
 
+example {m : Nat} (w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCellParameters.probeSentence w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R))) :=
+  ConstructionCellParameters.probe_kernel_certificate w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O V H eV F R
+
+example {m : Nat} (w n zero D mul e P C L projection A W T B G unit O roots V H eV F R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionCellParameters.mergerSentence w n zero D mul e P C L projection A W T B G unit O roots V H eV F R))) :=
+  ConstructionCellParameters.merger_kernel_certificate w n zero D mul e P C L projection A W T B G unit O roots V H eV F R
+
 end PPAC.Migration.Step4Checks

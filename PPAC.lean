@@ -883,3 +883,4 @@ import PPAC.Migration.ConstructionCellGeneration
 import PPAC.Migration.ConstructionCellCoefficients
 import PPAC.Migration.ConstructionAttachmentCoefficients
 import PPAC.Migration.ConstructionAttachmentDependencies
+import PPAC.Migration.ConstructionCellParameters
