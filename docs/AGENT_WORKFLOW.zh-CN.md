@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：AssignmentPoint 四坐标搬移 → 尾群不变性／Corrected
+## 当前执行入口：尾群双向不变性／同 coset 逆移等价 → Corrected 选择器接线
 
-已完成的具体 component selector 保留。ForcingAssignmentCovariance 现直接复用原 CommonFibers、实际内部链和 Preliminary 协变，证明尾群固定实际标签索引，并同时搬移条件／顶点／标签／名字；没有替换为粘合商标签或新增作用后端。
+既有具体 selector 和四坐标单向搬移保留。本批 ForcingAssignmentInvariant 实际构造逆共轭／逆 Cohen 作用，复用 selected_reindex 与原子强迫重索引，得到完整双向不变性；ForcingAssignmentCosets 从精确 Same 商关系构造差置换和四坐标作用，得到实际 Preliminary 的同 coset 逆移等价。没有假定不变性或新增作用后端。
 
-本批两个原核端点定向编译及逐声明 trust=0 审计已通过：标签固定在普通 nativeZF 中，四坐标搬移在 nativeZF 的 L 相对化中；既有 L 收尾正文仅作精确参数接线复用。本批全量验收通过：3124 构建任务、36440 项声明、2679 个文件哈希、9 条命令（含 5 个 trust=0）、零警告；36432 项旧足迹全部不变，新增 8 项无新增公理依赖。报告见 verification/assignment-covariance-acceptance.json。
+两个 L 相对 nativeZF 原核端点及 11 项声明的定向编译／trust=0 已通过，无新增公理依赖。两个原 L 收尾正文仅作精确端点／参数接线复用。全量验收通过：3126 构建任务、36451 项声明、2681 个文件哈希、9 条命令（含 5 个 trust=0）、零警告；36440 项旧足迹全部不变。报告见 verification/assignment-invariant-acceptance.json。
 
-**仍在原第 8 阶段。** 尚需源 preliminaryPoint_invariant 的逆作用方向、Corrected 的代表无关性及定律，再沿 OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。已完成底座、L、全模式、selector 和具体 germ／detector 密集性不重做；现有实际父输入合同仍显式保留，整体模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 均未完成。
+**仍在原第 8 阶段。** 接下来把已证明的逆移等价接入实际 selector 的 Corrected／corrected_selected，再完成其余 Corrected 定律、OrbitAssignments、assignmentGraph_bijection 和具体商双射。现有实际父输入合同仍显式保留；整体模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。已完成底座、L、全模式、selector 和 germ／detector 密集性不重做。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

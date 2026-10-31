@@ -953,6 +953,22 @@ existing L closing proof. Existing input contracts remain explicit.
 Full verification passed: 3124 build jobs, 36440 audited declarations, 2679 file
 hashes, nine commands including five trust=0 checks, zero warnings. All 36432
 prior declaration footprints are unchanged; eight new declarations add no new
-axiom dependencies. Bidirectional tail invariance and
-Corrected representative independence are still pending; this is not the final
-internal consistency implication.
+axiom dependencies. Bidirectional tail invariance and actual coset shifts are
+now certified by the modules below. Corrected selector packaging remains
+pending; this is not the final internal consistency implication.
+
+## Source tail invariance and actual coset shifts (stage 8, 2026-11-01)
+
+`ForcingAssignmentInvariant.preliminaryPoint_invariant` migrates the two-way
+four-coordinate statement in StableSelectors:401. Inverse action witnesses are
+constructed using existing graphs; actual names are retained as the source domain.
+`ForcingAssignmentCosets.shift_eq` specializes StableSelectors:348 to the actual
+Preliminary predicate: it constructs the difference permutation and all four
+coordinate actions from the exact germ-coset relation. Existing atomic and selected
+reindexing, Cohen/name/vertex composition and tail invariance are directly reused.
+Both modules have L-relative nativeZF original-kernel endpoints. Full batch
+verification passed: 3126 build jobs, 36451 declarations, 2681 file hashes,
+nine commands including five trust=0 checks, zero warnings. The 36440 prior
+footprints are unchanged and the eleven added declarations introduce no new
+axiom dependencies. Corrected/corrected_selected packaging and downstream
+orbit assignment remain pending; the final internal Con theorem remains unproved.

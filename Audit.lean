@@ -37051,3 +37051,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignmentCovariance.covarianceSentence
 #print axioms PPAC.Migration.ForcingAssignmentCovariance.covariance_models
 #print axioms PPAC.Migration.ForcingAssignmentCovariance.covariance_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.preliminary_reindex
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.cohen_inverse
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.preliminaryPoint_invariant
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.invarianceSentence
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.invariance_models
+#print axioms PPAC.Migration.ForcingAssignmentInvariant.invariance_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignmentCosets.cohen_composition
+#print axioms PPAC.Migration.ForcingAssignmentCosets.shift_eq
+#print axioms PPAC.Migration.ForcingAssignmentCosets.shiftSentence
+#print axioms PPAC.Migration.ForcingAssignmentCosets.shift_models
+#print axioms PPAC.Migration.ForcingAssignmentCosets.shift_kernel_certificate
