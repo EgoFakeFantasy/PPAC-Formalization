@@ -13094,4 +13094,14 @@ example {m : Nat} (B P history outerF kappa V zero i code j N W fromBase after J
       (ConstructionBlockBoundary.boundarySentence B P history outerF kappa V zero i code j N W fromBase after J Domains E F L Out Images codeNext next Nnext Wnext fromNext afterNext Jnext DomainsNext Enext Fnext Lnext OutNext ImagesNext Schedule last inner Steps Events Roots A Anew)) :=
   ConstructionBlockBoundary.boundary_kernel_certificate B P history outerF kappa V zero i code j N W fromBase after J Domains E F L Out Images codeNext next Nnext Wnext fromNext afterNext Jnext DomainsNext Enext Fnext Lnext OutNext ImagesNext Schedule last inner Steps Events Roots A Anew
 
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockContinuity.innerSentence w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images)) :=
+  ConstructionBlockContinuity.inner_kernel_certificate w Q R top D mul e mark H C zero one K mu Requests W G unitW markW HW CW O code after V J Domains E F L Out Images
+
+example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kappa V mulV unitV markV HV CV terminalLegs baseV : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionBlockContinuity.outerSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
+  ConstructionBlockContinuity.outer_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa V mulV unitV markV HV CV terminalLegs baseV
+
 end PPAC.Migration.Step4Checks

@@ -246,4 +246,12 @@ ConstructionBlockBoundary.zero_row 读取同一实际递归的零点输出和限
 
 construction_kernel_certificate 是普通 nativeZF 对象句：对实际 Family 的每个内部阶段／记录，存在 Realized，包含真实源／后继载体字段、同一外层矩阵中的两个终端映射、完整实际 block 数据及上述底端方程。boundary_kernel_certificate 从相邻 Realized 和同一真实末点记录推出两个范围集合字面相等：载体按 history 的 Field 0 唯一性对齐，终端映射按同一 outerF 函数值对齐，再消费已完成顶端范围方程和新底端方程。
 
-该结果完成源 blockStage_base 与 blocks.boundary 所需的实际范围等式。内外连续性、统一 flattened 阶段函数图、边界身份 attachment／stepCell 的包装仍待接通，完整 Timeline 与最终内部 Con 未完成。19 项新声明和两个原核端点已全量验收，见 verification/block-boundary-acceptance.json。后续连续性复用既有 ConstructionSaturationCover.exists_rep 及内轮极限行投影／cocone，不重造极限对象。
+该结果完成源 blockStage_base 与 blocks.boundary 所需的实际范围等式。内外范围在内部序数极限处的连续性已由 ConstructionBlockContinuity 完成；统一 flattened 阶段函数图、非初始 cut 分类及边界身份 attachment／stepCell 的包装仍待接通，完整 Timeline 与最终内部 Con 未完成。19 项新声明和两个原核端点已全量验收，见 verification/block-boundary-acceptance.json。后续连续性复用既有 ConstructionSaturationCover.exists_rep 及内轮极限行投影／cocone，不重造极限对象。
+
+## 实际内外范围的内部序数极限连续性（2026-10-31）
+
+ConstructionBlockContinuity.inner_kernel_certificate 在普通 nativeZF 中，从同一实际 Trace／Data 推出 Continuous J Images：任一内部极限 j 和其范围中的任意元素，均有严格早于 j 的实际阶段范围见证。inner_exists_rep 保留现有 SaturationCover.exists_rep 的极限投影证明，只适配实际内轮 Context／Recursive／valid_step 接口，11 处差异已登记并由 verify.py 机械核对。严格关系直接实例化原生 RelationSchema.membership／exists_setRelationOn_of_denote；范围传输调用已完成 ranges_earlier。
+
+outer_kernel_certificate 通过既有 L 解释，在原 nativeZF 核中证明相对化对象句：从同一实际饱和 Context／Recursive／Matrix／终行，构造真实终行 incoming 映射的外层范围图，给出单调性、有界性及所有内部极限处的连续性。外轮直接调用已完成 ConstructionSaturationCover.exists_rep；没有新增 Choice 公理、全局递归或 colimit 基础。
+
+本批覆盖内部序数极限，尚未完成 flattened 非初始 cut 的统一分类和阶段图汇集。现有 BlockCuts 无前驱传输及原生 IsOrdinal.classify 可用于后续接线；初始 cut 排除、stepCell／边界身份 attachment 及完整 Timeline 尚未装配。18 项新声明和两个原核端点全量验收见 verification/block-continuity-acceptance.json。原第8阶段和最终内部 Con 仍未完成。

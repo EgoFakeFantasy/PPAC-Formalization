@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：实际阶段图、内外连续性与 stepCell 装配
+## 当前执行入口：统一阶段图、非初始 cut 分类与 stepCell 装配
 
-ConstructionBlockBoundary 已从同一内轮 Recursive 取出零点的真实初行，消费既有 Initial.Value 身份映射、自然性和 range_comp_surjective，完成实际 blockStage_base。construction_kernel_certificate 为实际 Family 的每个内部记录构造 Realized，保留真实源／后继载体、同一 outerF 中的两个终端映射、实际 block 数据和底端方程；没有把底端等式作为额外假设。
+ConstructionBlockContinuity 已完成实际内外范围在全部内部序数极限处的连续性。内轮从同一 Trace 的真实极限输出提取较早代表，再消费既有 ranges_earlier；内轮代表提取按现有 SaturationCover.exists_rep 进行 11 处精确接口适配，验证器机械核对保留证明体。外轮直接调用现成 exists_rep，并从同一终行 incoming 构造实际外层阶段范围图、单调性、有界性和连续性。
 
-boundary_kernel_certificate 把相邻两轮的共享载体与终端映射按同一外层历史／函数图对齐，结合已完成顶端方程，证明上一轮顶端范围与下一轮底端范围字面相等。两个普通 nativeZF 原核证书不新增 Choice、同构或递归基础。实际底端、顶端和跨轮范围相等不再列为待做；边界身份 attachment 的包装仍须消费该相等。
+inner_kernel_certificate 为普通 nativeZF 对象句；outer_kernel_certificate 为既有 L 相对化对象句的 nativeZF 原核证明，选择／order 由已完成 L 解释消去。量词覆盖全部内部极限阶段及全部范围元素，没有外部标准性或有限索引限制。内外序数极限范围连续性不再列为待做；flatten 的非初始 cut 分类及全局阶段图仍需接线。
 
-本批全量验收：3059 项构建、35132 项声明、9 条命令／5 次 trust=0、零警告；35113 项旧声明依赖不变，2614 项文件哈希匹配，无新增公理依赖。见 verification/block-boundary-acceptance.json。
+本批全量验收：3060 项构建、35150 项声明、9 条命令／5 次 trust=0、零警告；35132 项旧声明依赖不变，2615 项文件哈希匹配，无新增公理依赖。见 verification/block-continuity-acceptance.json。
 
-下一实际调用链：汇集一致的实际阶段图并接内外连续性 → 消费边界相等及已有 Cover 装配身份 attachment／stepCell → flattened Timeline／全局依赖 → 现有可数保守包及 restrict_selected／future_cut。外轮极限代表已有 ConstructionSaturationCover.exists_rep，内轮极限行已有实际投影和覆盖数据；不重建 colimit 或递归。
+下一实际调用链：汇集一致的实际阶段图，消费已有 cut 无前驱传输与原生 IsOrdinal.classify，完成初点排除并接入本批连续性 → 消费已有底端／顶端／跨轮范围等式和 Cover 装配身份 attachment／stepCell → flattened Timeline／全局依赖 → 现有可数保守包及 restrict_selected／future_cut。不重建递归、colimit、范围连续性或 L 基础。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、阶段图／连续性／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、统一阶段图／非初始 cut 接线／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

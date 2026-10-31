@@ -2452,7 +2452,8 @@ def main() -> None:
                                ('construction_block_index', 'ConstructionBlockIndex', 40),
                                ('construction_block_cuts', 'ConstructionBlockCuts', 45),
                                ('construction_actual_blocks', 'ConstructionActualBlocks', 15),
-                               ('construction_block_boundary', 'ConstructionBlockBoundary', 19)):
+                               ('construction_block_boundary', 'ConstructionBlockBoundary', 19),
+                               ('construction_block_continuity', 'ConstructionBlockContinuity', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
