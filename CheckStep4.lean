@@ -13265,4 +13265,12 @@ example {m : Nat} (w zero one V GV unitV I R bottom S index cells deps retained 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSelectedCellWords.selectedSentence w zero one V GV unitV I R bottom S index cells deps retained i x)) :=
   ConstructionSelectedCellWords.selected_kernel_certificate w zero one V GV unitV I R bottom S index cells deps retained i x
 
+example {m : Nat} (V GV e D mul retained cut : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSelectedCellRestriction.baseSentence V GV e D mul retained cut)) :=
+  ConstructionSelectedCellRestriction.base_kernel_certificate V GV e D mul retained cut
+
+example {m : Nat} (D T retained cut next I W G unit V GV e O P F old generators : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSelectedCellRestriction.rangeSentence D T retained cut next I W G unit V GV e O P F old generators)) :=
+  ConstructionSelectedCellRestriction.range_kernel_certificate D T retained cut next I W G unit V GV e O P F old generators
+
 end PPAC.Migration.Step4Checks

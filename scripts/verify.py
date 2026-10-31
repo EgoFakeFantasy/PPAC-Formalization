@@ -2469,7 +2469,8 @@ def main() -> None:
                                ('construction_step_cell', 'ConstructionStepCell', 27),
                                ('construction_step_cell_selection', 'ConstructionStepCellSelection', 28),
                                ('construction_global_dependencies', 'ConstructionGlobalDependencies', 28),
-                               ('construction_selected_cell_words', 'ConstructionSelectedCellWords', 15)):
+                               ('construction_selected_cell_words', 'ConstructionSelectedCellWords', 15),
+                               ('construction_selected_cell_restriction', 'ConstructionSelectedCellRestriction', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

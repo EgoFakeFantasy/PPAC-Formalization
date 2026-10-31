@@ -345,3 +345,7 @@ ConstructionStepCellSelection.construction_kernel_certificate 与 ConstructionGl
 ## 2026-11-01：固定 cell 上的全局选中词与记录补齐
 
 ConstructionSelectedCellWords.selected_kernel_certificate 在普通 nativeZF 原核中证明全局依赖闭合到固定 cell 的参数、生成元与全部保留新词的同一基底交集闭包。对象句保留任意内部阶段、元素和集合图，不假设外部标准性。MappedProbe／StepCell 同步补存已有生产者证明但旧记录遗漏的非单位、终端表、保守性、父阶段闭包／乘法图等条件，旧足迹保持不变。完整 restrict_selected 附件／推挤及最终 Con 均未完成；验收见 verification/selected-cell-words-acceptance.json。
+
+## 2026-11-01：源 restrict_selected 的限制基底与精确像
+
+ConstructionSelectedCellRestriction.base_kernel_certificate 在原 nativeZF 中构造指定交集上的乘法图、消去／锥性／条件并及保守恒等包含；range_kernel_certificate 对同一给定模拟证明像精确等于保留集合与后继阶段的交集。反像使用已有原生分离，生成性和 selected_word 均量化内部集合与元素，不依赖外部标准 ω。它们是完整 restrict_selected 的中间对象推导，实际两类 cell 模拟、附件／推挤装配及最终内部 Con 仍未完成。

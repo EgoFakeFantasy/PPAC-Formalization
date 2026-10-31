@@ -36106,3 +36106,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionSelectedCellWords.selectedSentence
 #print axioms PPAC.Migration.ConstructionSelectedCellWords.selected_models
 #print axioms PPAC.Migration.ConstructionSelectedCellWords.selected_kernel_certificate
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.cut_closed
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.Base
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.base
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.exact_range
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.baseFormula
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.baseFormula_freeClosed
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.baseFormula_semantics
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.baseSentence
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.base_models
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.base_kernel_certificate
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.rangeSentence
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.range_models
+#print axioms PPAC.Migration.ConstructionSelectedCellRestriction.range_kernel_certificate
