@@ -341,3 +341,7 @@ ConstructionBlockAttachments 的 realized／family 两端点从原 Trace／Reali
 ConstructionStepCellSelection.construction_kernel_certificate 与 ConstructionGlobalDependencies.construction_kernel_certificate 在 nativeZF 原核中证明同一既有递归输出上的 L 相对化对象句；完整 cell 只按内部阶段选定一次，内部首次出现索引和终端 V 上的依赖函数均为集合图。全局 assembly／at／bottom 是普通 nativeZF 对象句证书；活动行读取同一个 cell 的固定局部依赖图，底层行为空，每行内部可数。保留原 11 个输出和 8 项结论，仅追加 cells/index/deps，不重建 L、全模式、递归或证明核。
 
 本批 3075 项构建、35484 项声明、83 新声明、8 原核端点、5 次 trust=0、零警告通过；35401 项旧声明依赖不变。仍属原第 8 阶段，restrict_selected／future_cut／重排及后续源模型消费者尚未闭合，全部内部／非标准证明码的最终 Con 蕴含没有完成。验收记录：verification/step-cell-acceptance.json。
+
+## 2026-11-01：固定 cell 上的全局选中词与记录补齐
+
+ConstructionSelectedCellWords.selected_kernel_certificate 在普通 nativeZF 原核中证明全局依赖闭合到固定 cell 的参数、生成元与全部保留新词的同一基底交集闭包。对象句保留任意内部阶段、元素和集合图，不假设外部标准性。MappedProbe／StepCell 同步补存已有生产者证明但旧记录遗漏的非单位、终端表、保守性、父阶段闭包／乘法图等条件，旧足迹保持不变。完整 restrict_selected 附件／推挤及最终 Con 均未完成；验收见 verification/selected-cell-words-acceptance.json。

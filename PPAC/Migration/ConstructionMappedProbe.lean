@@ -108,7 +108,7 @@ def Data (hM : FirstOrder.Theory.Models M nativeZF)
     Conservative W WN G GN H ∧ SquareComm O f H ON ∧ PureKuratowski.PairMember M gen genN H ∧
     Range W H WN ∧ Hom WN W GN G unitN unit inv ∧ InverseGraph H inv ∧
     Hom WN V GN GV unitN unitV embedding ∧ Injection WN V embedding ∧
-    NodeMap inv g embedding ∧ ConstructionAttachmentCoefficients.OldFixed ON embedding ∧ Range WN embedding R
+    NodeMap inv g embedding ∧ ConstructionAttachmentCoefficients.OldFixed ON embedding ∧ Range WN embedding R ∧ fb ≠ eN ∧ fd ≠ eN
 
 /-- Pinned d.map e, conservative simulation, simulationEquiv and literal range
 identification. Original Source/old graph/raw gen are never regenerated. -/
@@ -165,7 +165,7 @@ theorem construction (hM : FirstOrder.Theory.Models M nativeZF)
     ConstructionCellSimulationEquiv.range_identification hM hO hB.old_map hH hInv hInverse
       hg hInj hRange hOld hPush.1 hTerminalRange
   exact ⟨basePairs,mulN,inc,baseInv,fa,fb,fd,mapped,factorN,terminalN,targetN,SN,CN,projectionN,IN,actN,EN,WN,unitN,GN,KN,PN,ON,genN,H,inv,embedding,hKeep,
-    hfa,hfb,hfd,hMapped,hB,hTerminalN,hConON,hgenN,hH,hConH,hPush.1,hGenMap,hOnto,hInv,hInverse,hEmbedding,hEmbeddingInj,hComp,hFixed,hExact⟩
+    hfa,hfb,hfd,hMapped,hB,hTerminalN,hConON,hgenN,hH,hConH,hPush.1,hGenMap,hOnto,hInv,hInverse,hEmbedding,hEmbeddingInj,hComp,hFixed,hExact,hfbne,hfdne⟩
 
 def data {m : Nat} (w zero a b d node W unit G O gen N mulN eN f V GV unitV g R fa fb fd mapped factorN terminalN targetN SN CN projectionN IN actN EN WN unitN GN KN PN ON genN H inv embedding : Fin m) : Project.Formula 1 m :=
   .conj (ProjectSyntax.encode id (Source.SetLanguage.edge f a fa))
@@ -187,11 +187,11 @@ def data {m : Nat} (w zero a b d node W unit G O gen N mulN eN f V GV unitV g R 
     (.conj (ProjectSyntax.encode id (Source.SetLanguage.injection embedding WN V))
     (.conj (ConstructionProbeMappedPathSyntax.nodeMap inv g embedding)
     (.conj (ConstructionAttachmentCoefficients.oldFixed ON embedding)
-    (ProjectSyntax.encode id (ForcingSupportedNames.range WN embedding R))))))))))))))))))))
+    (.conj (ProjectSyntax.encode id (ForcingSupportedNames.range WN embedding R)) (.conj (.neg (Project.Formula.extensionalEq (.bound fb) (.bound eN))) (.neg (Project.Formula.extensionalEq (.bound fd) (.bound eN)))))))))))))))))))))))
 
 theorem data_freeClosed {m : Nat} (w zero a b d node W unit G O gen N mulN eN f V GV unitV g R fa fb fd mapped factorN terminalN targetN SN CN projectionN IN actN EN WN unitN GN KN PN ON genN H inv embedding : Fin m) :
     (data w zero a b d node W unit G O gen N mulN eN f V GV unitV g R fa fb fd mapped factorN terminalN targetN SN CN projectionN IN actN EN WN unitN GN KN PN ON genN H inv embedding).FreeClosed := by
-  simp -implicitDefEqProofs [data,Definitional.Formula.FreeClosed,
+  simp -implicitDefEqProofs [data,Definitional.Formula.FreeClosed,Project.Formula.extensionalEq,
     ProjectSyntax.freeClosed,
     ConstructionProbeMappedPathSyntax.nodeMap_freeClosed,
     ConstructionProbePushoutSyntax.presentation_freeClosed,
@@ -205,7 +205,7 @@ theorem data_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w zero a b d node W unit G O gen N mulN eN f V GV unitV g R fa fb fd mapped factorN terminalN targetN SN CN projectionN IN actN EN WN unitN GN KN PN ON genN H inv embedding : Fin m) :
     Project.Formula.satisfies env (data w zero a b d node W unit G O gen N mulN eN f V GV unitV g R fa fb fd mapped factorN terminalN targetN SN CN projectionN IN actN EN WN unitN GN KN PN ON genN H inv embedding) ↔
       Data hM (env.bound w) (env.bound zero) (env.bound a) (env.bound b) (env.bound d) (env.bound node) (env.bound W) (env.bound unit) (env.bound G) (env.bound O) (env.bound gen) (env.bound N) (env.bound mulN) (env.bound eN) (env.bound f) (env.bound V) (env.bound GV) (env.bound unitV) (env.bound g) (env.bound R) (env.bound fa) (env.bound fb) (env.bound fd) (env.bound mapped) (env.bound factorN) (env.bound terminalN) (env.bound targetN) (env.bound SN) (env.bound CN) (env.bound projectionN) (env.bound IN) (env.bound actN) (env.bound EN) (env.bound WN) (env.bound unitN) (env.bound GN) (env.bound KN) (env.bound PN) (env.bound ON) (env.bound genN) (env.bound H) (env.bound inv) (env.bound embedding) := by
-  simp only [data,Data,Project.Formula.satisfies_conj_iff,
+  simp only [data,Data,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_neg_iff,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),Project.Term.eval_bound,
     GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),
     KuratowskiZF.source_edge,
     ConstructionProbeMappedPathSyntax.nodeMap_semantics hM,

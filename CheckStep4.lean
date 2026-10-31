@@ -13261,4 +13261,8 @@ example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P o
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ConstructionGlobalDependencies.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
   ConstructionGlobalDependencies.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
 
+example {m : Nat} (w zero one V GV unitV I R bottom S index cells deps retained i x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionSelectedCellWords.selectedSentence w zero one V GV unitV I R bottom S index cells deps retained i x)) :=
+  ConstructionSelectedCellWords.selected_kernel_certificate w zero one V GV unitV I R bottom S index cells deps retained i x
+
 end PPAC.Migration.Step4Checks

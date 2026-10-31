@@ -1,16 +1,16 @@
-# 原 1–11 阶段迁移流程（2026-10-31）
+# 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：全局依赖已接通 → 原 restrict_selected／future_cut／重排与选择器
+## 当前执行入口：全局选中词已接通 → 原 restrict_selected／future_cut／重排与选择器
 
-ConstructionStepCell 已将实际 Probe／Merger 的完整呈现、终端嵌入、参数、生成元、有限系数支持图和局部依赖图编码为同一内部记录。ConstructionStepCellSelection 复用现成 Jensen 最小元及原生函数图构造，固定每个活动阶段的同一个内部 cell；全部内部 NewAt 元素读取同一记录，不随查询元素重选。
+ConstructionSelectedCellWords 从同一 Timeline、固定 cell 与全局 dependencies_at 推出局部 Closed、参数和生成元保留，以及所有保留新元素的同一基底交集上的有限生成闭包；参数原像覆盖消费已有 Probe／Merger 接口。selected_kernel_certificate 是普通 nativeZF 原核中的对象句推导，保留全部内部量词。
 
-ConstructionGlobalDependencies 已消费同一 Timeline、首次出现索引和固定 cell 族，构造终端 V 上的全局内部依赖函数：底层行为空，活动行精确等于选中 cell 的原局部依赖行，所有行均有内部可数性证明。原递归的 11 个输出和 8 项已有结论全部保留，只追加 cells/index/deps 及其性质；旧输出形状和既有 L 传输证明正文均机械比对通过。
+本批修正了此前 cell 记录的不完整：ConstructionMappedProbe 保留已证明的两个非单位条件；ConstructionStepCell 保留 Probe 终端表、旧包含的保守性、Merger 扩张的消去律／锥性及两分支父阶段的 Closure／ProductGraph。这些均来自已有生产者，不增加数学前提；原先记录足以构造依赖，但不足以直接用于完整 restrict_selected。
 
-本批全量验收：3075 项构建、35484 项声明、83 项新声明、8 个 nativeZF 原核证书（4 个普通对象句、4 个经现成 L 相对化的对象句）；9 条命令／5 次 trust=0，零警告；35401 项旧声明依赖不变，2630 项文件哈希匹配，75 项固定源哈希匹配，无新增公理依赖。见 verification/step-cell-acceptance.json。
+全量验收：3076 项构建、35499 项声明、15 项新声明、1 个新增普通 nativeZF 原核证书；9 条命令／5 次 trust=0，零警告；35484 项旧声明依赖不变，2631 项文件哈希匹配，无新增公理依赖。见 verification/selected-cell-words-acceptance.json。
 
-固定内部 stepCell 函数族、全局 dependencies、dependencies_countable 和 dependencies_at 已完成，不再列作待做。下一步把全局 Closed 条件经 dependencies_at 接到已完成的局部 selected_word，消费现成参数原像、simulation／pushout，完成原 restrict_selected，然后沿 future_cut／重排进入 germ-selector。局部有限系数、参数原像、可数 hull 后端均已完成，不重做。
+固定 stepCell、全局 dependencies/countable/at/bottom、全局 Closed 到局部 selected_word 已完成，不再列作待做。下一步消费现成子结构、参数原像、simulation／pushout，完成源 restrict_selected 的完整附件与推挤方块，然后沿 future_cut／重排进入 germ-selector；局部有限系数、参数原像、可数 hull 后端不重做。
 
-**仍在原第 8 阶段。** 本批不宣称完整 CellTower 下游消费者、第 9–11 阶段或最终内部 Con 已完成。原 Comparator 仍是独立未验项；CheckStep4 不能替代。
+**仍在原第 8 阶段。** 完整 restrict_selected、第 9–11 阶段及最终全部内部／非标准证明码上的 Con 蕴含未完成。原 Comparator 仍独立未验，CheckStep4 不能替代。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -33,7 +33,7 @@ ConstructionGlobalDependencies 已消费同一 Timeline、首次出现索引和�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellCuts.restrict_selected → CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at 已验收；局部 selected_word、参数原像、simulation 与 pushout 已有 | 接全局 Closed 到选中 cell 的局部条件，再消费原源限制／重排；不重证局部生产者，也不把当前全局依赖误报为未完成 |
+| 8 当前 | CellCuts.restrict_selected → CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at 已验收；局部 selected_word、参数原像、simulation 与 pushout 已有 | 全局 Closed 到选中 cell 的局部条件已完成；消费原源限制／重排；不重证局部生产者，也不把当前全局依赖误报为未完成 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
