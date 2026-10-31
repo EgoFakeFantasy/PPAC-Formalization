@@ -199,3 +199,11 @@ ConstructionFirstAppearance.construction_kernel_certificate 直接在 nativeZF �
 selected_kernel_certificate 同样直接在 nativeZF 中构造任意内部可数保留集的精确选中阶段集并证明内部可数；它实际消费 newIndex 对 NewAt 的值定理，限制原索引函数后复用 ConstructionCellParameters.range_small 和 small_subset。选中集不等于整个索引像，底层旧元素的默认值须按精确谓词排除。
 
 具体 BlockTowers.flatten/Saturation.cells 的 Timeline 前提、统一逐阶段 cell/局部依赖族仍待装配；已有实际历史、阶段映射和极限覆盖不是未完成的基础。上述证书不替代全局 dependencies、restrict_selected 或最终 Con。全量验收见 verification/first-appearance-acceptance.json。
+
+## 实际复合图的精确阶段范围与保守子对象（2026-10-31）
+
+ConstructionBlockStages 的五个端点均为直接 nativeZF 原核推导。construction_kernel_certificate 复用已完成的整族复合图生产者，内部存在量化 Out 和 Images，给出精确范围、稳定性及包含关系；不要求调用者提供这些输出。boundary_kernel_certificate 证明源满射边界的字面范围相等。limit/coverage 端点将同一实际阶段图的代表和覆盖传到精确范围，保持同一终端元素。
+
+subobject_kernel_certificate 消费实际保守同态及原单子／条件交合同，证明它的精确范围满足现有 Closure：包含单位、乘法闭包、因子闭包和实际条件交闭包。交唯一性复用 ConstructionCountableConservativeHull.join_unique；没有另造子对象或代数基础。
+
+完整外层依赖 block 索引、每阶段一致的实际内轮历史与 cell、身份边界／连续性的具体实例化仍待装配；本批不是完整 BlockTower，更不是最终 Con。全量验收见 verification/block-stages-acceptance.json。

@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-30）
 
-## 当前执行入口：实际 block tower 与全局依赖装配
+## 当前执行入口：统一实际 block 索引与逐阶段 cell 装配
 
-ConstructionFirstAppearance 已迁移 CellTowers.NewAt/exists_newAt/newIndex/newIndex_eq：对同一内部良序及连续阶段族，证明非底层元素有唯一首次新增步骤，并构造同一索引集上的实际内部函数。底层旧元素取默认底点；最小元使用原生内部良序接口，不要求 Lean 外部良基或外部标准索引。
+ConstructionBlockStages 已直接复用 ConstructionTowerSuccessor.exists_family/stable_comp 构造全部实际 blockMap 复合图，再构造同一个终端载体中的精确阶段值域族，证明自然包含。满射初始／顶端映射的范围等式是字面集合相等；极限代表和覆盖传输保持同一个终端元素。保守同态的精确范围已证明对乘法、因子和实际条件交封闭，对应源 Subobject.range。
 
-已接上 CellCuts.selected_countable：从任意内部可数保留集构造精确选中阶段集，经实际索引图的限制和值域证明内部可数；默认底点不会自动混入选中集。两个端点是直接 nativeZF 原核对象推导。实际 Probe/Merger 精确参数集、参数／索引计数及同一 R 上的 Attachment 可数依赖图均已完成（206fd5f），不再列为缺口。
+本批有五个直接 nativeZF 原核对象端点：范围族构造、边界范围相等、极限代表传输、覆盖传输和保守范围闭包。没有添加对象 Choice 或外部良基前提。已有实际参数集／可数性、单 attachment 依赖图、内部首次出现索引、选中阶段计数及精确阶段像／保守范围继续保留，不再列为缺失。
 
-本批全量验收：3053 项构建、34921 项声明、9 条命令／5 次 trust=0、零警告；34877 项旧声明依赖不变，2608 项文件哈希匹配，无新增公理依赖。见 verification/first-appearance-acceptance.json。
+本批全量验收：3054 项构建、34984 项声明、9 条命令／5 次 trust=0、零警告；34921 项旧声明依赖不变，2609 项文件哈希匹配，无新增公理依赖。见 verification/block-stages-acceptance.json。
 
-下一实际调用链：已有 CompleteRound.Built/实际内外历史及阶段映射 → BlockTowers.blockStage/blocks/flatten、Saturation.cells 的同一终端内阶段族 → 统一逐阶段 stepCell/局部依赖族 → 已完成 newIndex 的全 tower 依赖汇总 → 现有可数保守包 → CellCuts.restrict_selected → CellReorder.future_cut。已有 ConstructionSaturationCover.exists_rep 的极限覆盖、TowerTransitions/Cocone、L、递归和原推导核继续复用。
+下一实际调用链：从已有 CompleteRound.Built/SaturationStep.Candidate 为每个外层阶段统一保留一个实际内轮历史 → 构造依赖 block 索引并汇集本批精确范围 → 用已验收范围等式／极限传输实例化身份边界与内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。现成历史、映射、覆盖、L、全公理模式和递归均不重做。
 
-**仍在原第 8 阶段。** 本批已完成首次出现与选中阶段计数接口，但尚未给出具体饱和 tower 的 Timeline 实例及一致的逐阶段 cell 族；完整全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段仍未完成。最终内部 Con 未证明。
+**仍在原第 8 阶段。** 当前没有完整的 Saturation.cells/flattened Timeline 实例，也未完成全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段；最终内部 Con 未证明。范围族及其传输证书不能替代这些实际装配。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -23,7 +23,7 @@ ConstructionFirstAppearance 已迁移 CellTowers.NewAt/exists_newAt/newIndex/new
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引和选中阶段计数 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围 | 分量 germ/selector、OrbitAssignments、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |

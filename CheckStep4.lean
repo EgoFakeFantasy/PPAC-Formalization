@@ -13019,4 +13019,29 @@ example {m : Nat} (w T J r bottom S index retained : Fin m) :
       (ConstructionFirstAppearance.selectedSentence w T J r bottom S index retained)) :=
   ConstructionFirstAppearance.selected_kernel_certificate w T J r bottom S index retained
 
+example {m : Nat} (J E Domains F K N O V : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockStages.constructionSentence J E Domains F K N O V)) :=
+  ConstructionBlockStages.construction_kernel_certificate J E Domains F K N O V
+
+example {m : Nat} (D N f O out A B : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockStages.boundarySentence D N f O out A B)) :=
+  ConstructionBlockStages.boundary_kernel_certificate D N f O out A B
+
+example {m : Nat} (J E r Domains F V Legs Images j : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockStages.limitSentence J E r Domains F V Legs Images j)) :=
+  ConstructionBlockStages.limit_kernel_certificate J E r Domains F V Legs Images j
+
+example {m : Nat} (J Domains K N O V Out Images R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockStages.coverageSentence J Domains K N O V Out Images R)) :=
+  ConstructionBlockStages.coverage_kernel_certificate J Domains K N O V Out Images R
+
+example {m : Nat} (D V mul G e unit f R : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockStages.subobjectSentence D V mul G e unit f R)) :=
+  ConstructionBlockStages.subobject_kernel_certificate D V mul G e unit f R
+
 end PPAC.Migration.Step4Checks
