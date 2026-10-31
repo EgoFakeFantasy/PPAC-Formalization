@@ -1,16 +1,16 @@
-# 当前状态：原 1–11 阶段（2026-10-30）
+# 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：统一实际 block 索引与逐阶段 cell 装配
+## 当前执行入口：实际依赖 block 索引与逐阶段 cell 装配
 
-ConstructionBlockStages 已直接复用 ConstructionTowerSuccessor.exists_family/stable_comp 构造全部实际 blockMap 复合图，再构造同一个终端载体中的精确阶段值域族，证明自然包含。满射初始／顶端映射的范围等式是字面集合相等；极限代表和覆盖传输保持同一个终端元素。保守同态的精确范围已证明对乘法、因子和实际条件交封闭，对应源 Subobject.range。
+ConstructionBlockTraces 已从同一外层 Recursive 历史与全局 Matrix，直接调用已有 map_succ_selected，构造覆盖全部 i∈κ 的内部记录函数族。每条记录固定内轮 J、Schedule、last、history、F、Steps、Events、Roots、末行 incoming 九字段；完整保留 Built 的全部十项构造义务、原选择输出、原外层两行、同一个全局包含图及 base 复合等式。选择与被查询的词、支撑无关，记录及整个函数族唯一。
 
-本批有五个直接 nativeZF 原核对象端点：范围族构造、边界范围相等、极限代表传输、覆盖传输和保守范围闭包。没有添加对象 Choice 或外部良基前提。已有实际参数集／可数性、单 attachment 依赖图、内部首次出现索引、选中阶段计数及精确阶段像／保守范围继续保留，不再列为缺失。
+本批一个原 nativeZF 证书证明既有 L 解释内的 constructionSentence。阶段逐点存在性由实际外层递归消去，不要求调用者另给内轮见证；复用既有 Pack、least_denote 和原生函数构造器。没有重做轮次、L、全公理模式或递归，没有新增对象 Choice 或外部良基前提。此前的精确阶段范围／保守范围与内部首次出现索引均保留。
 
-本批全量验收：3054 项构建、34984 项声明、9 条命令／5 次 trust=0、零警告；34921 项旧声明依赖不变，2609 项文件哈希匹配，无新增公理依赖。见 verification/block-stages-acceptance.json。
+本批全量验收：3055 项构建、35013 项声明、9 条命令／5 次 trust=0、零警告；34984 项旧声明依赖不变，2610 项文件哈希匹配，无新增公理依赖。见 verification/block-traces-acceptance.json。
 
-下一实际调用链：从已有 CompleteRound.Built/SaturationStep.Candidate 为每个外层阶段统一保留一个实际内轮历史 → 构造依赖 block 索引并汇集本批精确范围 → 用已验收范围等式／极限传输实例化身份边界与内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。现成历史、映射、覆盖、L、全公理模式和递归均不重做。
+下一实际调用链：从已固定内轮记录函数族构造依赖 block 索引 → 汇集已完成的同终端精确范围并实例化身份边界／内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。每阶段一致的内轮历史选择已完成，不再列作待做。
 
-**仍在原第 8 阶段。** 当前没有完整的 Saturation.cells/flattened Timeline 实例，也未完成全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段；最终内部 Con 未证明。范围族及其传输证书不能替代这些实际装配。
+**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

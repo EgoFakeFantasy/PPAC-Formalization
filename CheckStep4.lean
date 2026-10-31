@@ -13044,4 +13044,9 @@ example {m : Nat} (D V mul G e unit f R : Fin m) :
       (ConstructionBlockStages.subobjectSentence D V mul G e unit f R)) :=
   ConstructionBlockStages.subobject_kernel_certificate D V mul G e unit f R
 
+example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kappa : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionBlockTraces.constructionSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa))) :=
+  ConstructionBlockTraces.construction_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa
+
 end PPAC.Migration.Step4Checks

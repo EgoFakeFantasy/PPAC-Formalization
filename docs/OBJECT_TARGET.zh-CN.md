@@ -190,7 +190,7 @@ ConstructionCellParameters.probe_kernel_certificate／merger_kernel_certificate 
 
 Merger 参数恰为实际 start 的两坐标；补默认单位只用于构造计数上界，随后 Separation 保证精确参数集。证明覆盖全部内部 n∈ω，未要求外部标准性。Probe 使用完整内部路径值域与三个指定参数。计数复用 ExistingOrdinalImage、ExistingCardinalBounds 和原生 ZF 函数／分离接口，背景解释复用已完成的 L。
 
-本句仍为单个实际 attachment；首次出现索引、全 tower 汇总、restrict_selected、重排和最终 Con 未完成。实际验收见 verification/cell-parameters-acceptance.json。
+本句仍为单个实际 attachment；首次出现索引已由后续 ConstructionFirstAppearance 完成，全 tower 汇总、restrict_selected、重排和最终 Con 仍未完成。实际验收见 verification/cell-parameters-acceptance.json。
 
 ## 内部首次出现索引与精确选中阶段集（2026-10-31）
 
@@ -206,4 +206,12 @@ ConstructionBlockStages 的五个端点均为直接 nativeZF 原核推导。cons
 
 subobject_kernel_certificate 消费实际保守同态及原单子／条件交合同，证明它的精确范围满足现有 Closure：包含单位、乘法闭包、因子闭包和实际条件交闭包。交唯一性复用 ConstructionCountableConservativeHull.join_unique；没有另造子对象或代数基础。
 
-完整外层依赖 block 索引、每阶段一致的实际内轮历史与 cell、身份边界／连续性的具体实例化仍待装配；本批不是完整 BlockTower，更不是最终 Con。全量验收见 verification/block-stages-acceptance.json。
+每阶段一致的实际内轮历史已由后续 ConstructionBlockTraces 完成；完整依赖 block 索引、cell、身份边界／连续性的具体实例化仍待装配；本批不是完整 BlockTower，更不是最终 Con。全量验收见 verification/block-stages-acceptance.json。
+
+## 同一外层递归的实际内轮记录函数族（2026-10-31）
+
+ConstructionBlockTraces.construction_kernel_certificate 在原 nativeZF 中证明既有 L 相对化对象句：从同一外层 Context、Recursive、Matrix 和 κ∈B，存在域为 κ 的内部 Family。每个阶段选中一个固定九字段 code，包含实际内轮索引、调度、末点、历史、全局内轮映射、步骤集、执行图、根表及末行 incoming。At 同时保留实际选择输出、外层源／目标两行及全局包含与 base 复合等式；Trace 保留 CompleteRound.Built 的全部十项义务。
+
+recursive_family 实际调用已完成的 map_succ_selected，并复用已有 successor_before_last、Pack、L 内 least_denote、原生 functionalImage 和函数图构造。记录不依赖任何词或有限支撑查询；PickedAt 唯一，整个 Family 亦唯一。family_row 暴露同一记录的九字段供既有 Field/Chart 公式消费。没有要求调用者提供逐阶段完整轮次，没有另造递归／选择基础。
+
+依赖字典序 block 索引、完整 cell／Timeline、全局依赖和最终 Con 仍未完成。本证书不表示第 8 阶段完成。实际全量验收见 verification/block-traces-acceptance.json。
