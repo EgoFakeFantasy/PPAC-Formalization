@@ -37098,3 +37098,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedEquality.equalitySentence
 #print axioms PPAC.Migration.ForcingGermCorrectedEquality.equality_models
 #print axioms PPAC.Migration.ForcingGermCorrectedEquality.equality_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedPermutation.corrected_permute
+#print axioms PPAC.Migration.ForcingGermCorrectedPermutation.permutationSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedPermutation.permutation_models
+#print axioms PPAC.Migration.ForcingGermCorrectedPermutation.permutation_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedDescent.corrected_descend
+#print axioms PPAC.Migration.ForcingGermCorrectedDescent.descentSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedDescent.descent_models
+#print axioms PPAC.Migration.ForcingGermCorrectedDescent.descent_kernel_certificate

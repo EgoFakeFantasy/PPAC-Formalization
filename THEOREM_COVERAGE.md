@@ -1029,3 +1029,17 @@ Full acceptance passed: 3130 build jobs, 36484 audited declarations, 2685 hashed
 files, nine commands including five trust=0 checks, zero warnings. All 36479 prior
 footprints are unchanged; five new declarations add no axiom dependencies. Still stage 8; permute/descend, StableAt,
 complete orbit assignment and final internal Con remain open.
+
+
+`ForcingGermCorrectedPermutation` and `ForcingGermCorrectedDescent` migrate fixed
+StableSelectors.corrected_permute:491 and corrected_descend:519. Permutation
+constructs the actual product representative, inverse and coset; one cancellation
+graph is consumed on all four coordinates and the same Preliminary witness is kept.
+Descent constructs the moved target and its exact support image/fixing subgroup,
+then consumes existing local-name transport and Preliminary descent. The permutation
+endpoint is ordinary nativeZF; descent is nativeZF relative to the same existing L,
+with the retained closing proof checked under three substitutions. Both are original
+Derives certificates for pure set sentences, with concrete source contracts explicit.
+Directed compilation and eight-declaration trust=0 audit passed with no new axiom
+dependencies. Full acceptance passed: 3132 build jobs, 36492 audited declarations, 2687 file hashes, nine commands including five trust-zero checks, zero warnings; all 36484 old footprints are unchanged. Still stage 8; StableAt, complete orbit
+assignment/quotient bijection, model assembly and final internal Con remain open.

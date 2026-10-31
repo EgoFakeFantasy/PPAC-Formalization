@@ -2523,7 +2523,9 @@ def main() -> None:
                                ('forcing_germ_corrected', 'ForcingGermCorrected', 16),
                                ('forcing_germ_corrected_stability', 'ForcingGermCorrectedStability', 8),
                                ('forcing_germ_corrected_congruence', 'ForcingGermCorrectedCongruence', 4),
-                               ('forcing_germ_corrected_equality', 'ForcingGermCorrectedEquality', 5)):
+                               ('forcing_germ_corrected_equality', 'ForcingGermCorrectedEquality', 5),
+                               ('forcing_germ_corrected_permutation', 'ForcingGermCorrectedPermutation', 4),
+                               ('forcing_germ_corrected_descent', 'ForcingGermCorrectedDescent', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
