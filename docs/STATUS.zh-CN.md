@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：同一阶段图的全局单调性、完整 Timeline 与 stepCell 装配
+## 当前执行入口：实际 attachment／stepCell 与全局依赖装配
 
-ConstructionFlatOuter 已将每个实际区块底端 cut 的成员关系与同一外轮范围图逐点双向对齐。实际终行保存的身份图给出外轮终端范围 = V；现有正则索引的 isLimitOrdinal 及 OuterData.Continuous 于是为每个 V 中元素产生严格较早的外轮及底端 cut。终端 top 自身从不作为较早见证。外轮底端对齐与严格较早终端覆盖不再列为待做。
+ConstructionFlatTimeline 已完成同一实际 S、V、I、R 上现有 FirstAppearance.Timeline 的全部条件：内部良序、总阶段函数、最小 cut、范围有界、同轮及跨轮全局单调性、覆盖，以及所有非初始无前驱 cut 的连续性。top、内轮非零极限、外轮零位置极限三个分支均已闭合。完整 Timeline 不再列为待做；它尚不包含源 CellTower 的 step／attachment 字段。
 
-assembly_kernel_certificate 是普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 是既有 L 相对化对象句在 nativeZF 中的原核证明，Choice／order 由已完成 L 解释消去。实际调用端从同一 Context／Recursive／SaturationIndex.Data／Matrix／终行共同构造 Family、cut 索引、统一 S 和外轮范围图，并将底端对齐及严格覆盖放在结论中，没有额外假设这些图或覆盖。
+assembly_kernel_certificate 为普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 为既有 L 相对化对象句的 nativeZF 原核证明，封装证明体逐字复用前一已验收模块并由验证器机械核对。实际递归调用端保留原 Family、cut 索引和所有实际范围图，在结论中返回完整 Timeline，没有新增最小 cut／单调性／连续性／覆盖前提或替换终端载体。
 
-本批全量验收：3063 项构建、35235 项声明、9 条命令／5 次 trust=0、零警告；35212 项旧声明依赖不变，2618 项文件哈希匹配，无新增公理依赖。见 verification/flat-outer-acceptance.json。
+本批全量验收：3064 项构建、35251 项声明、9 条命令／5 次 trust=0、零警告；35235 项旧声明依赖不变，2619 项文件哈希匹配，无新增公理依赖。见 verification/flat-timeline-acceptance.json。
 
-下一实际调用链：将已有内轮单调性、顶端／跨轮范围等式和外轮单调性传入同一 S → 以内轮实际连续性／CutLimits 分类、底端对齐及本批严格终端覆盖完成所有 cut 的连续性 → 装配 FirstAppearance.Timeline → 消费已有实际 attachment 和边界等式装配 stepCell／全局依赖 → restrict_selected／future_cut／可数重排／germ/selector。不重建已完成的范围、覆盖、函数图、正则性、递归或 L 基础。
+下一实际调用链：由已有 TowerExecution／SelectedAt 记录消费两类实际 cell 的范围 attachment 生产端，完成 blockStage_step → 用已有内轮／跨轮 Cover 与字面边界相等装配 flatten.step／stepCell（保留身份边界和 top 分支） → 将真实 stage-cell 族与已完成 Timeline 接入全局 dependencies → restrict_selected／future_cut／可数重排／germ/selector。不重建完整 Timeline、cell 参数／生成性／有限系数、递归、商或 L 基础。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、全局单调性／非终端 cut 连续性装配／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整源 CellTower／Saturation.cells 尚缺实际 attachment／stepCell 装配；全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段仍未完成，最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

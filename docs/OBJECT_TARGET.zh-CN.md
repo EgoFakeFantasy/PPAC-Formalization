@@ -279,3 +279,13 @@ ConstructionFlatOuter 消费既有 Realized.Base、原矩阵 matrix_at、Chart�
 assemblySentence 有普通 nativeZF 的原 FirstOrder.Derives 证书。constructionSentence 从同一真实递归输入共同构造实际 Family、cut 索引、统一 S 及外轮范围图，底端对齐和严格覆盖均在结论中；其既有 L 相对化句有 nativeZF 原核证书，源 Choice／order 通过已完成的 L 解释消去，没有新增普通 ZF 的选择假设。量词覆盖全部内部索引与全部 V 中元素。
 
 全局单调性和其余 cut 连续性仍需传到同一 S 并装配完整 Timeline，stepCell／identity attachment 仍待消费现有生产端。实际验收：3063 构建任务、35235 声明、23 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35212 声明依赖不变，2618 文件哈希匹配，无新增公理依赖。报告 verification/flat-outer-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。
+
+## 完整实际 Timeline 的原核证书（2026-10-31）
+
+ConstructionFlatTimeline 完成现有 ConstructionFirstAppearance.Timeline 全部条件，并直接复用其 timeline 对象 AST：同一 I／R 的内部良序、S 的总性、实际最小 cut、所有范围包含于同一 V、同轮／跨轮全局单调性、覆盖，以及所有非初始无前驱 cut 连续性。top 分支消费严格较早覆盖，内轮极限消费真实 Trace 连续性，外轮底端极限消费既有 Bottoms 和 OuterData.Continuous；完整 CutLimits 分类确保没有漏掉非初始 cut。
+
+assemblySentence 有普通 nativeZF 原核证书；实际递归 constructionSentence 的既有 L 相对化句有 nativeZF 原核证书。递归输入共同构造所有实际图及完整 Timeline，未额外假设单调性、连续性、覆盖或最小 cut。L 封装证明体逐字复用 ConstructionFlatOuter，由验证器机械核对，没有新造解释或选择后端。量词覆盖全部内部索引及元素。
+
+此前关于“同一图的全局单调性／所有 cut 连续性／完整 Timeline 待装配”的待办由本节取代。源 CellTower 还需要实际 attachment／stepCell 字段；全局依赖及其后的完整迁移仍未完成，不能将 Timeline 当作整个源 CellTower 或最终 Con。
+
+实际验收：3064 构建任务、35251 声明、16 新声明、两个原核证书、9 条命令／5 次 trust=0、零警告；旧 35235 声明依赖不变，2619 文件哈希匹配，无新增公理依赖。报告 verification/flat-timeline-acceptance.json。仍在原第 8 阶段，最终内部 Con 未证明。

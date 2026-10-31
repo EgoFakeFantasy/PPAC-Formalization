@@ -1,16 +1,16 @@
 # 原 1–11 阶段迁移流程（2026-10-31）
 
-## 当前执行入口：同一阶段图的全局单调性、完整 Timeline 与 stepCell 装配
+## 当前执行入口：实际 attachment／stepCell 与全局依赖装配
 
-ConstructionFlatOuter 已将每个实际区块底端 cut 的成员关系与同一外轮范围图逐点双向对齐。实际终行保存的身份图给出外轮终端范围 = V；现有正则索引的 isLimitOrdinal 及 OuterData.Continuous 于是为每个 V 中元素产生严格较早的外轮及底端 cut。终端 top 自身从不作为较早见证。外轮底端对齐与严格较早终端覆盖不再列为待做。
+ConstructionFlatTimeline 已完成同一实际 S、V、I、R 上现有 FirstAppearance.Timeline 的全部条件：内部良序、总阶段函数、最小 cut、范围有界、同轮及跨轮全局单调性、覆盖，以及所有非初始无前驱 cut 的连续性。top、内轮非零极限、外轮零位置极限三个分支均已闭合。完整 Timeline 不再列为待做；它尚不包含源 CellTower 的 step／attachment 字段。
 
-assembly_kernel_certificate 是普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 是既有 L 相对化对象句在 nativeZF 中的原核证明，Choice／order 由已完成 L 解释消去。实际调用端从同一 Context／Recursive／SaturationIndex.Data／Matrix／终行共同构造 Family、cut 索引、统一 S 和外轮范围图，并将底端对齐及严格覆盖放在结论中，没有额外假设这些图或覆盖。
+assembly_kernel_certificate 为普通 nativeZF 对象句的原 FirstOrder.Derives 证书；construction_kernel_certificate 为既有 L 相对化对象句的 nativeZF 原核证明，封装证明体逐字复用前一已验收模块并由验证器机械核对。实际递归调用端保留原 Family、cut 索引和所有实际范围图，在结论中返回完整 Timeline，没有新增最小 cut／单调性／连续性／覆盖前提或替换终端载体。
 
-本批全量验收：3063 项构建、35235 项声明、9 条命令／5 次 trust=0、零警告；35212 项旧声明依赖不变，2618 项文件哈希匹配，无新增公理依赖。见 verification/flat-outer-acceptance.json。
+本批全量验收：3064 项构建、35251 项声明、9 条命令／5 次 trust=0、零警告；35235 项旧声明依赖不变，2619 项文件哈希匹配，无新增公理依赖。见 verification/flat-timeline-acceptance.json。
 
-下一实际调用链：将已有内轮单调性、顶端／跨轮范围等式和外轮单调性传入同一 S → 以内轮实际连续性／CutLimits 分类、底端对齐及本批严格终端覆盖完成所有 cut 的连续性 → 装配 FirstAppearance.Timeline → 消费已有实际 attachment 和边界等式装配 stepCell／全局依赖 → restrict_selected／future_cut／可数重排／germ/selector。不重建已完成的范围、覆盖、函数图、正则性、递归或 L 基础。
+下一实际调用链：由已有 TowerExecution／SelectedAt 记录消费两类实际 cell 的范围 attachment 生产端，完成 blockStage_step → 用已有内轮／跨轮 Cover 与字面边界相等装配 flatten.step／stepCell（保留身份边界和 top 分支） → 将真实 stage-cell 族与已完成 Timeline 接入全局 dependencies → restrict_selected／future_cut／可数重排／germ/selector。不重建完整 Timeline、cell 参数／生成性／有限系数、递归、商或 L 基础。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、全局单调性／非终端 cut 连续性装配／stepCell、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** 完整源 CellTower／Saturation.cells 尚缺实际 attachment／stepCell 装配；全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段仍未完成，最终内部 Con 未证明。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -21,7 +21,7 @@ assembly_kernel_certificate 是普通 nativeZF 对象句的原 FirstOrder.Derive
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造 | 按固定源推进分量 germ/selector → OrbitAssignments → assignmentGraph_bijection → 具体商双射；统一实际父输入并完成局部列表消费者。不重造已有底座 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |

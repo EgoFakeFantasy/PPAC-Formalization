@@ -13139,4 +13139,14 @@ example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P o
       (ConstructibleGround.relative (ConstructionFlatOuter.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
   ConstructionFlatOuter.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
 
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R S ODomains OE OImages : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFlatTimeline.assemblySentence w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R S ODomains OE OImages)) :=
+  ConstructionFlatTimeline.assembly_kernel_certificate w Q values top D mul e mark H C zero one K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV traces Indices A r I R S ODomains OE OImages
+
+example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionFlatTimeline.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
+  ConstructionFlatTimeline.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
+
 end PPAC.Migration.Step4Checks
