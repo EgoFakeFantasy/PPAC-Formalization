@@ -37134,3 +37134,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedStable.stableSentence
 #print axioms PPAC.Migration.ForcingGermCorrectedStable.stable_models
 #print axioms PPAC.Migration.ForcingGermCorrectedStable.stable_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.label_move
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.InverseCounts
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.inverseCounts
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.inverseCounts_freeClosed
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.inverseCounts_semantics
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.corrected_total
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.totalSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.total_models
+#print axioms PPAC.Migration.ForcingGermCorrectedDensity.total_kernel_certificate
