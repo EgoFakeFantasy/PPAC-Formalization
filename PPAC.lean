@@ -898,3 +898,4 @@ import PPAC.Migration.ConstructionFlatOuter
 import PPAC.Migration.ConstructionFlatTimeline
 import PPAC.Migration.ConstructionCellSimulationEquiv
 import PPAC.Migration.ConstructionExecutedCellPresentation
+import PPAC.Migration.ConstructionRangeObject

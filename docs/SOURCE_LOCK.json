@@ -118411,6 +118411,104 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
         ]
       }
+    },
+    "construction_range_object": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Construction/BlockTowers.lean",
+      "source_sha256": "39647b75e6ad3eee0447895ec9165dadf2ca87388ae793f3c71d03f5a82bac31",
+      "adapter": "PPAC/Migration/ConstructionRangeObject.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ConstructionBlockStages.lean": "92fcf5060f03ffa9acfbeb05db4253f2d1511a1452c66c2d643d465f98930f62",
+        "PPAC/Migration/ConstructionConservativeHull.lean": "7499e4382e7cd9134457d45c75027716733918406d4876beca27cbf8cd4fac13",
+        "PPAC/Migration/ConstructionCellGeneration.lean": "e811dbca2a4e086ef6a3e4981df2d4e7691f0a131bc4ac8517a74191be5ec3a6",
+        "PPAC/Migration/ConstructionCellSimulationEquiv.lean": "6ce28e9417562aa313371904895f1756797a072410d54b1d7246a784611f3ed0",
+        "PPAC/Migration/ConstructionPushoutIdentification.lean": "a50b021339d3247d9e52109ee63c1b9779f8541d3e02098d6b753db630511297",
+        "PPAC/Migration/ConstructionRequestMaps.lean": "42d942887b0bedc48cd4cd225213fad243a6b8fdaa98ccedf73688d72d1cbe6c",
+        "PPAC/Migration/ConstructionRequestMapsSyntax.lean": "c8c10f7bd57ceb1be94881a81299763dd79da36cfc3b6ddd4f97b02e2b1a8825",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "source_declarations": [
+        "Cell.rangeAttachment: let e := ofMulEquiv f.rangeEquiv",
+        "Cell.rangeAttachment: f.rangeEquiv.surjective"
+      ],
+      "consumers": [
+        "Mapped Probe/Merger presentations over the SAME literal old range",
+        "Cell.rangeAttachment -> request_rangeAttachment -> Saturation.blockStage_step -> BlockTower.flatten.step"
+      ],
+      "reuse_producers": [
+        "ConstructionBlockStages.range_closed",
+        "ConstructionConservativeHull.exists_submonoid / join_reflect / divides_iff",
+        "ConstructionCellGeneration.hom_restrict",
+        "ConstructionCellSimulationEquiv.inverse_hom",
+        "ConstructionPushoutIdentification.right_identity",
+        "ConstructionRequestMaps.maps_requests"
+      ],
+      "scope": "Ordinary nativeZF original-kernel construction of the SAME literal range S as a conservative subobject: restricted multiplication, identity inclusion, SAME graph f corestricted as conservative surjective Hom, internal inverse Hom with inverse graph, and both existing full request-mapping branches. The eight existing algebra/map/range premises are explicit; these constructed range data are outputs, not assumed. All object sets and internally coded requests are quantified. This supplies rangeEquiv base change only; full mapped cell presentations, CellTower/stepCell and final internal Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ConstructionRangeObject.corestrict_maps": [],
+        "PPAC.Migration.ConstructionRangeObject.corestrict_conservative": [],
+        "PPAC.Migration.ConstructionRangeObject.Data": [],
+        "PPAC.Migration.ConstructionRangeObject.construction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.data_freeClosed": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.data_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.constructionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.construction_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ConstructionRangeObject.construction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

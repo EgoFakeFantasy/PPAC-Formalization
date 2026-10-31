@@ -313,3 +313,7 @@ ConstructionExecutedCellPresentation 已从实际 SelectedAt 提取两类 cell �
 “从 SelectedAt 的原操作记录提取实际呈现”不再列作待做。下一实际调用链：既有 range_closed／ConservativeHull.exists_submonoid 处理同一个字面旧范围 → 消费既有 Probe/Merger 映射构造 → 上一批 simulationEquiv／范围识别 → request_rangeAttachment／blockStage_step → flatten.step／stepCell（身份边界、top 分支保留）→ 全局 dependencies／restrict_selected／future_cut／重排／germ-selector。完整 Timeline、范围闭包／限制乘法／保守子对象、L／全模式、递归、生成性／参数／有限系数均已有并继续复用。
 
 **仍在原第 8 阶段。** 字面旧范围上的映射呈现和全体 stage-cell 家族尚未装配；源 CellTower／Saturation.cells、后续构造和第 9–11 阶段仍未完成，最终内部 Con 未证明。
+
+## 2026-10-31：同一字面范围上的原图适配已验收
+
+ConstructionRangeObject.construction_kernel_certificate 在普通 nativeZF 中正式推出同一范围 S 的限制乘法、保守包含、原图 f 的保守满射同态、内部逆图及两类 MapsRequests。闭句全称量化 w/zero/D/V/mul/G/e/unit/f/S，四个构造见证在对象语言内存在量化；背景仅为原有单子、保守映射和精确 Range 前提。复用已有 ModelTransfer.derives；未添加选择背景或新的推导核。原 SelectedAt 呈现提取和本范围适配均已完成，不能再列为数学缺口。映射的完整 cell 呈现、实际 stepCell 与最终内部 Con 仍未完成。验收见 verification/range-object-acceptance.json。

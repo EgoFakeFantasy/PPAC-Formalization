@@ -35909,3 +35909,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionExecutedCellPresentation.mapSuccSentence
 #print axioms PPAC.Migration.ConstructionExecutedCellPresentation.mapSucc_models
 #print axioms PPAC.Migration.ConstructionExecutedCellPresentation.mapSucc_kernel_certificate
+#print axioms PPAC.Migration.ConstructionRangeObject.corestrict_maps
+#print axioms PPAC.Migration.ConstructionRangeObject.corestrict_conservative
+#print axioms PPAC.Migration.ConstructionRangeObject.Data
+#print axioms PPAC.Migration.ConstructionRangeObject.construction
+#print axioms PPAC.Migration.ConstructionRangeObject.data
+#print axioms PPAC.Migration.ConstructionRangeObject.data_freeClosed
+#print axioms PPAC.Migration.ConstructionRangeObject.data_semantics
+#print axioms PPAC.Migration.ConstructionRangeObject.constructionSentence
+#print axioms PPAC.Migration.ConstructionRangeObject.construction_models
+#print axioms PPAC.Migration.ConstructionRangeObject.construction_kernel_certificate

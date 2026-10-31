@@ -13179,4 +13179,9 @@ example {m : Nat} (w Q R top D mul e mark H C zero one u lengthBound Schedule hi
       (ConstructionExecutedCellPresentation.mapSuccSentence w Q R top D mul e mark H C zero one u lengthBound Schedule history P F i j)) :=
   ConstructionExecutedCellPresentation.mapSucc_kernel_certificate w Q R top D mul e mark H C zero one u lengthBound Schedule history P F i j
 
+example {m : Nat} (w zero D V mul G e unit f S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionRangeObject.constructionSentence w zero D V mul G e unit f S)) :=
+  ConstructionRangeObject.construction_kernel_certificate w zero D V mul G e unit f S
+
 end PPAC.Migration.Step4Checks
