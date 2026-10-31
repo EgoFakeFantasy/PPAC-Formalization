@@ -1,16 +1,16 @@
 # 当前状态：原 1–11 阶段（2026-10-31）
 
-## 当前执行入口：实际依赖 block 索引与逐阶段 cell 装配
+## 当前执行入口：cut 后继／身份边界与逐阶段 cell 装配
 
-ConstructionBlockTraces 已从同一外层 Recursive 历史与全局 Matrix，直接调用已有 map_succ_selected，构造覆盖全部 i∈κ 的内部记录函数族。每条记录固定内轮 J、Schedule、last、history、F、Steps、Events、Roots、末行 incoming 九字段；完整保留 Built 的全部十项构造义务、原选择输出、原外层两行、同一个全局包含图及 base 复合等式。选择与被查询的词、支撑无关，记录及整个函数族唯一。
+ConstructionBlockIndex 已消费固定内轮记录 Family，从同一记录第 0 字段提取全部实际内轮序数，构造原 BlockIndex.Interior 的精确依赖配对载体及“外层优先、内轮其次”的字典序。每个内部非空子集的最小元通过两次有界 Separation 和已有序数最小元取得，未借用模型外部良基性。再复用现成 WithTop 构造及 exists_index_order，得到同一载体上的末端 top 和内部良序；内轮末点保留在依赖载体中。
 
-本批一个原 nativeZF 证书证明既有 L 解释内的 constructionSentence。阶段逐点存在性由实际外层递归消去，不要求调用者另给内轮见证；复用既有 Pack、least_denote 和原生函数构造器。没有重做轮次、L、全公理模式或递归，没有新增对象 Choice 或外部良基前提。此前的精确阶段范围／保守范围与内部首次出现索引均保留。
+本批两个原 nativeZF 证书：construction_kernel_certificate 直接从固定 Family 构造索引 Data；recursive_kernel_certificate 在既有 L 解释内，从同一外层 Context、Recursive、Matrix 和 κ∈B 直接产生 Family 与 Data。实际记录、序数族、精确依赖载体、两层良序及精确关系图全部保留。没有新增对象 Choice、外部良基前提、proof kernel 或递归实现。
 
-本批全量验收：3055 项构建、35013 项声明、9 条命令／5 次 trust=0、零警告；34984 项旧声明依赖不变，2610 项文件哈希匹配，无新增公理依赖。见 verification/block-traces-acceptance.json。
+本批全量验收：3056 项构建、35053 项声明、9 条命令／5 次 trust=0、零警告；35013 项旧声明依赖不变，2611 项文件哈希匹配，无新增公理依赖。见 verification/block-index-acceptance.json。
 
-下一实际调用链：从已固定内轮记录函数族构造依赖 block 索引 → 汇集已完成的同终端精确范围并实例化身份边界／内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。每阶段一致的内轮历史选择已完成，不再列作待做。
+下一实际调用链：在已完成的实际依赖索引上证明 cut 后继、内轮末点到下一轮初点的身份边界 → 汇集已完成的同终端精确范围并实例化内外连续性 → 统一 stepCell 和局部依赖族 → 已完成 newIndex 的全局依赖 → 现有可数保守包 → restrict_selected → future_cut。内轮记录选择、依赖载体及内部良序不再列作待做。
 
-**仍在原第 8 阶段。** 完整 Saturation.cells/flattened Timeline、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
+**仍在原第 8 阶段。** cut 后继／边界实例、完整 Saturation.cells/flattened Timeline、全局依赖、选中后继、可数重排、germ/selector、赋值商双射及第 9–11 阶段未完成；最终内部 Con 未证明。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 

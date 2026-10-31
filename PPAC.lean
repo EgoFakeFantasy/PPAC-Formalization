@@ -887,3 +887,4 @@ import PPAC.Migration.ConstructionCellParameters
 import PPAC.Migration.ConstructionFirstAppearance
 import PPAC.Migration.ConstructionBlockStages
 import PPAC.Migration.ConstructionBlockTraces
+import PPAC.Migration.ConstructionBlockIndex

@@ -13049,4 +13049,14 @@ example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kapp
       (ConstructibleGround.relative (ConstructionBlockTraces.constructionSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa))) :=
   ConstructionBlockTraces.construction_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa
 
+example {m : Nat} (w Q R top zero one K mu history F kappa traces : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockIndex.constructionSentence w Q R top zero one K mu history F kappa traces)) :=
+  ConstructionBlockIndex.construction_kernel_certificate w Q R top zero one K mu history F kappa traces
+
+example {m : Nat} (w Q R top D mul e mark H C zero one u K mu B history P F kappa : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionBlockIndex.recursiveSentence w Q R top D mul e mark H C zero one u K mu B history P F kappa))) :=
+  ConstructionBlockIndex.recursive_kernel_certificate w Q R top D mul e mark H C zero one u K mu B history P F kappa
+
 end PPAC.Migration.Step4Checks
