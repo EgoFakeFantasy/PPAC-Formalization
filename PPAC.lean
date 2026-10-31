@@ -902,3 +902,5 @@ import PPAC.Migration.ConstructionRangeObject
 import PPAC.Migration.ConstructionMappedMerger
 import PPAC.Migration.ConstructionMappedProbe
 import PPAC.Migration.ConstructionSelectedAttachments
+import PPAC.Migration.ConstructionBlockAttachments
+import PPAC.Migration.ConstructionFlatAttachments

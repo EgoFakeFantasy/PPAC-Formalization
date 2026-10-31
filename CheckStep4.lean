@@ -13204,4 +13204,29 @@ example {m : Nat} (w Q R top D mul e mark H C zero one u J Schedule history P F 
       (ConstructionSelectedAttachments.mapSuccSentence w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j A0 A1)) :=
   ConstructionSelectedAttachments.mapSucc_kernel_certificate w Q R top D mul e mark H C zero one u J Schedule history P F E Domains last T GT eT markT HT CT L baseT V GV unitV markV HV CV after Out Images i j A0 A1
 
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockAttachments.realizedSentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images)) :=
+  ConstructionBlockAttachments.realized_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images
+
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images traces : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionBlockAttachments.familySentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images traces)) :=
+  ConstructionBlockAttachments.family_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV i code next N W fromBase after J Domains E F L Out Images traces
+
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFlatAttachments.assemblySentence w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S)) :=
+  ConstructionFlatAttachments.assembly_kernel_certificate w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S
+
+example {m : Nat} (w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S c d A0 A1 : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionFlatAttachments.coverStepSentence w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S c d A0 A1)) :=
+  ConstructionFlatAttachments.coverStep_kernel_certificate w Q values top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces Indices A r I R S c d A0 A1
+
+example {m : Nat} (w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionFlatAttachments.constructionSentence w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV))) :=
+  ConstructionFlatAttachments.construction_kernel_certificate w Q values top D mul e mark H C zero one u K mu B history P outerF kappa V mulV unitV markV HV CV terminalLegs baseV
+
 end PPAC.Migration.Step4Checks

@@ -329,3 +329,9 @@ ConstructionMappedProbe.construction_kernel_certificate 在普通 nativeZF 原�
 ## 2026-10-31：同一实际 SelectedAt 的两分支范围附件已验收
 
 ConstructionSelectedAttachments.selected_kernel_certificate／mapSucc_kernel_certificate 在普通 nativeZF 原核中完成实际已选后继的两种范围附件装配。保留原 19 个见证、raw 和全部 9 个字段；同一 Out 的两端映射及交换律由真实历史 Valid 和复合图推出，字面范围使用同一 Images。43／42 个全称槽位覆盖任意内部后继；Probe 的 27 个、Merger 的 19 个内部构造输出消费已验收生产者。原字段正文另作精确一致性检查，不能以此替代对象推导。全量 3070 构建、35359 声明、2 原核证书通过；35334 旧足迹不变，无新增公理依赖。验收见 verification/selected-attachments-acceptance.json。下一步仅接现成 Trace／Realized 的实际外轮 blockStage_step 及同一 Timeline 的 flatten.step；完整 CellTower 与最终内部 Con 未完成。
+
+## 2026-10-31：实际块后继和完整 flatten.step 已验收
+
+ConstructionBlockAttachments 的 realized／family 两端点从原 Trace／Realized 和外轮 Valid 推出全部内部后继附件，完整 afterRound 映射由原记录消去。ConstructionFlatAttachments 的 assembly／coverStep 两端点证明同一 S/I/R/V 的全部后继及任意 Cover：内轮附件、块边界恒等、最终 top 恒等三个分支齐全。construction_kernel_certificate 保留已有递归构造的 11 个输出和 7 项结论（含完整 Timeline），增加同图 Steps；它逐字复用已有 L 解释传输，在 nativeZF 原核中证明相对化对象句，不新增 Choice/order 背景。全量 3072 构建、35401 声明、5 个端点通过，35359 旧足迹不变、无新增公理依赖。验收见 verification/block-attachments-acceptance.json。
+
+下一步是固定非恒等阶段的同一个内部 stepCell 函数族，连接现成单附件参数／生成元／有限系数／可数依赖到全局 dependencies。Merger 的 n∈ω 从保存 Trace 的 Context.Requests 通过请求编码对齐取得；不能把 Picked 单独当成 Request，也不需要重做有限性基础。完整 CellTower 的后续消费者和最终内部 Con 仍未完成。
