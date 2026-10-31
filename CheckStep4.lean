@@ -13595,4 +13595,44 @@ example {m : Nat} (w N B K : Fin m) :
       (ConstructibleGround.relative (ConstructionGermPatternOrder.constructionSentence w N B K))) :=
   ConstructionGermPatternOrder.construction_kernel_certificate w N B K
 
+example {m : Nat} (w D chain H G N K C B lo hi det order O p c d : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.uniquenessSentence w D chain H G N K C B lo hi det order O p c d)) :=
+  ConstructionGermSelected.uniqueness_kernel_certificate w D chain H G N K C B lo hi det order O p c d
+
+example {m : Nat} (w D I mul q root chain H G N X K C B S lo hi det order O p r c e : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.extensionSentence w D I mul q root chain H G N X K C B S lo hi det order O p r c e)) :=
+  ConstructionGermSelected.extension_kernel_certificate w D I mul q root chain H G N X K C B S lo hi det order O p r c e
+
+example {m : Nat} (w D I mul q root chain H G N X K C B S lo hi det order O p r c : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.monotonicitySentence w D I mul q root chain H G N X K C B S lo hi det order O p r c)) :=
+  ConstructionGermSelected.monotonicity_kernel_certificate w D I mul q root chain H G N X K C B S lo hi det order O p r c
+
+example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.covarianceSentence w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e)) :=
+  ConstructionGermSelected.covariance_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e
+
+example {m : Nat} (w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.permutationSentence w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e)) :=
+  ConstructionGermSelected.permutation_kernel_certificate w D I mul unit q zero root vertices chain H G N X reps K C B lo hi det pi order O p r act c e
+
+example {m : Nat} (w D I mul q root chain H G N X K C B S lo hi det order O p r c e : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermSelected.compatibilitySentence w D I mul q root chain H G N X K C B S lo hi det order O p r c e)) :=
+  ConstructionGermSelected.compatibility_kernel_certificate w D I mul q root chain H G N X K C B S lo hi det order O p r c e
+
+example {m : Nat} (w D chain H G N K C B lo hi det order O S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructionGermConditionSelector.existenceSentence w D chain H G N K C B lo hi det order O S)) :=
+  ConstructionGermConditionSelector.existence_kernel_certificate w D chain H G N K C B lo hi det order O S
+
+example {m : Nat} (w D chain H G N K C B lo hi det S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ConstructionGermConditionSelector.constructionSentence w D chain H G N K C B lo hi det S))) :=
+  ConstructionGermConditionSelector.construction_kernel_certificate w D chain H G N K C B lo hi det S
+
 end PPAC.Migration.Step4Checks

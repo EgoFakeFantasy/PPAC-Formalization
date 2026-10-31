@@ -2513,7 +2513,9 @@ def main() -> None:
                                ('construction_germ_pattern_covariance', 'ConstructionGermPatternCovariance', 15),
                                ('construction_germ_least_bound', 'ConstructionGermLeastBound', 32),
                                ('construction_germ_best_coset', 'ConstructionGermBestCoset', 18),
-                               ('construction_germ_pattern_order', 'ConstructionGermPatternOrder', 20)):
+                               ('construction_germ_pattern_order', 'ConstructionGermPatternOrder', 20),
+                               ('construction_germ_selected', 'ConstructionGermSelected', 31),
+                               ('construction_germ_condition_selector', 'ConstructionGermConditionSelector', 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

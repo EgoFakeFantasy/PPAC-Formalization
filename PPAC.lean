@@ -952,3 +952,5 @@ import PPAC.Migration.ConstructionGermPatternCovariance
 import PPAC.Migration.ConstructionGermLeastBound
 import PPAC.Migration.ConstructionGermBestCoset
 import PPAC.Migration.ConstructionGermPatternOrder
+import PPAC.Migration.ConstructionGermSelected
+import PPAC.Migration.ConstructionGermConditionSelector
