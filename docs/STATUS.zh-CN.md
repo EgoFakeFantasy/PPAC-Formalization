@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：Corrected／corrected_selected／corrected_common 已接通 → 剩余 Corrected 定律
+## 当前执行入口：Corrected 单调性／限制传输已接通 → congr／eq_iff／permute／descend
 
-ForcingGermCorrected 保留固定源的 Selected 商类存在式，并给出实际逆移 Shift 和 Corrected 的纯对象公式及精确语义。corrected_selected 直接消费既有实际 selector 图：函数唯一性得到所选类相等，class_eq_iff 转成精确 Same，已证实际 shift_eq 完成代表无关性。corrected_common 直接消费实际 component stabilizer 与既有搬移／共同分量定律。
+ForcingGermCorrectedStability 直接迁移固定源 corrected_mono:438 与 corrected_restrict:511。单调性消费同一 ConstructionConcreteSelector.Result、Selected.mono、Cohen 逆作用保序及 Preliminary.mono；根图单射由已有链和精确 root Code 推出。限制传输复用 exists_move 和 move_arrow，保持同一个实际所选代表元、条件和名字作用。没有新建 selector、递归或基础层。
 
-两个原核端点（selected 为 L 相对 nativeZF，common 为普通 nativeZF）及 16 项声明的定向编译／trust=0 已通过，无新增公理依赖；原 L 收尾正文仅作精确端点／参数接线复用。全量验收通过：3127 构建任务、36467 项声明、2682 个文件哈希、9 条命令（含 5 个 trust=0）、零警告；36451 项旧足迹全部不变。报告见 verification/germ-corrected-acceptance.json。
+两个普通 nativeZF 原核对象端点及 8 项声明的定向编译／trust=0 已通过。全量验收通过：3128 构建任务、36475 项声明、2683 个文件哈希、9 条命令（含 5 个 trust=0）、零警告；36467 项旧足迹全部不变，无新增公理依赖。报告见 verification/germ-corrected-stability-acceptance.json。此前 Corrected 定义、代表无关性、common 和具体 selector 已完成，不再列为待做。
 
-**仍在原第 8 阶段。** 接下来迁移 corrected_mono、congr／eq_iff、permute、restrict／descend 和 StableAt，再沿 OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。上述 Corrected 定义、代表无关性、common、尾群双向不变性和同 coset 逆移等价已经完成，不再列为缺口。整体模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成；现有具体父输入仍显式保留，已完成底座、L、全模式与 selector／germ 构造不重做。
+**仍在原第 8 阶段。** 后续为 congr／eq_iff、permute、descend 和 StableAt，再沿 OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。具体父输入仍显式保留；完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。现成底座、L、全模式、germ／selector 构造不重做。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -37,7 +37,7 @@ ForcingGermCorrected 保留固定源的 Selected 商类存在式，并给出实�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；bestCoset 最小值／区分界唯一性／协变与共同固定 pattern 顺序已接通；统一 conditionSelector／Selected 的完整函数图及六项定律已接通；具体 component_selector_dense 与实际置换协变已从同一终行接通；Corrected／corrected_selected／corrected_common 已接通；下一项为剩余 Corrected 定律。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；bestCoset 最小值／区分界唯一性／协变与共同固定 pattern 顺序已接通；统一 conditionSelector／Selected 的完整函数图及六项定律已接通；具体 component_selector_dense 与实际置换协变已从同一终行接通；Corrected／corrected_selected／corrected_common／corrected_mono／corrected_restrict 已接通；下一项为 congr／eq_iff／permute／descend 与 StableAt。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

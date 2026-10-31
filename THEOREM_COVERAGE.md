@@ -989,3 +989,17 @@ checks, zero warnings. All 36451 prior footprints are unchanged; the sixteen new
 declarations introduce no new axiom dependencies.
 The remaining Corrected laws, orbit assignment, actual quotient bijection,
 model assembly and final internal consistency implication remain incomplete.
+
+
+`ForcingGermCorrectedStability` migrates fixed StableSelectors.corrected_mono:438
+and corrected_restrict:511. Both endpoints are original `Derives nativeZF []`
+certificates for pure set sentences. The first consumes the actual concrete selector
+result and the literal inverse Cohen order action, and derives root injection from
+the existing chain/root code. The second constructs the inverse-moved source vertex
+and transports the actual arrow, retaining the same Selected representative and
+name action. All source conditions remain internal; existing concrete background
+contracts are explicit. No selector, order or recursion backend is rebuilt.
+Full acceptance passed: 3128 build jobs, 36475 audited declarations, 2683 hashed
+files, nine commands including five trust=0 checks, zero warnings. All 36467 prior
+footprints are unchanged, with no new axiom dependencies. Still stage 8; remaining Corrected laws,
+StableAt, orbit assignments, complete quotient bijection and final internal Con remain open.

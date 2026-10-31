@@ -37078,3 +37078,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrected.selectedSentence
 #print axioms PPAC.Migration.ForcingGermCorrected.selected_models
 #print axioms PPAC.Migration.ForcingGermCorrected.selected_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.corrected_mono
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.monoSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.mono_models
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.mono_kernel_certificate
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.corrected_restrict
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.restrictSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.restrict_models
+#print axioms PPAC.Migration.ForcingGermCorrectedStability.restrict_kernel_certificate
