@@ -359,3 +359,5 @@ ConstructionCellRestriction 本批普通 nativeZF 原核证书覆盖完整同一
 ConstructionSubobjectUnion 的 directedSup／lift／factorization 普通 nativeZF 原核句子量化全部内部集合索引与任意目标图；兼容同态图的集合并、逐阶段复合方程和唯一性均实际证明。目标不附加单射、保守性或左消去条件。此为源 future_cut 极限分支所需的并集接口；局部 lift 函数族与完整 Square.union 现由 ConstructionUnionPushout 消费，完整 future_cut 尚未完成。
 
 ConstructionUnionPushout.union_kernel_certificate 在普通 nativeZF 原核中证明同一终端单子内完整 Square.union：四条保守包含、任意内部目标的 lift、两条实际复合方程与唯一性。局部 lift 族通过已证明的纯公式总唯一关系和原生函数构造器取得，不把宿主选择函数当作内部集合，不假设对象 Choice。该源端点已验收；实际 intermediate／future_cut／reordered 和最终内部 Con 保持未完成。
+
+ConstructionCellBaseChange 的 mapped／realization／attachment 三个普通 nativeZF 原核句子现已通过全量验收。它们量化内部集合、图和任意目标单子，构造实际 cell 与指定顶点的比较、逆、旧／新方程及满值域；不以宿主同构存在替代对象句。Cell 的终端表和 MappedProbe 的乘法图类型证书由已有生产者保留，不新增对象假设。精确 intermediate、完整 future_cut／reordered 和最终内部 Con 仍未完成。

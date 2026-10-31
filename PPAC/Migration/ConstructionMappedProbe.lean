@@ -69,7 +69,8 @@ theorem exists_presentation (hM : FirstOrder.Theory.Models M nativeZF)
     (hPath : Path w D mul e zero a node) :
     ∃ factor terminal target S C projection I act E W unit G K P O,
       Presentation hM w zero D mul e a b d node factor terminal target S C projection I act E W unit G K P O ∧
-      TerminalTable w D mul node a terminal ∧ Conservative D W mul G O := by
+      TerminalTable w D mul node a terminal ∧ Conservative D W mul G O ∧
+      ∃ pairs, ConstructionProbeLetters.Representatives W W pairs ∧ MapsTo pairs W G := by
   obtain ⟨pairs,hpairs⟩ := ConstructionProbePath.exists_ordered_pairs hM w
   obtain ⟨factor,_,hFactor⟩ := ConstructionProbePath.exists_factor_table hM hm hPath hpairs
   obtain ⟨terminal,hTerminalMap,hTerminal⟩ := ConstructionProbePath.exists_terminal_table hM hm hPath
@@ -86,13 +87,13 @@ theorem exists_presentation (hM : FirstOrder.Theory.Models M nativeZF)
   obtain ⟨E,hEMap,hExit⟩ := ConstructionProbeAlphabet.exists_exit hM hm hTargetMap hd
   have hAlpha := ConstructionProbeAlphabet.alphabet_laws hm hc hI hActMap hAct hTargetMap hTargetLaws hd hdne hEMap hExit
   have hCone := ConstructionProbeCones.cone_laws hM hm hPath hFactor hTable hC hS hp hProjection hEq hMeets hI hActMap hAction hAct hTargetMap hTargetLaws
-  obtain ⟨W,unit,J,G,hW,hUnit,_,_,hG,_,_,_⟩ := ConstructionProbeConditionalJoins.exists_extension hM hw hz hzw hm hc hAlpha hb hbne hCone hJ
+  obtain ⟨W,unit,J,G,hW,hUnit,hPairs,hMapG,hG,_,_,_⟩ := ConstructionProbeConditionalJoins.exists_extension hM hw hz hzw hm hc hAlpha hb hbne hCone hJ
   obtain ⟨O,hOld,_,hConO⟩ := ConstructionProbeConservative.exists_conservative_old hM hw hz hzw hm hAlpha hW hb hG hUnit hCone
   obtain ⟨K,hK,hGen⟩ := ConstructionProbeGenerator.exists_generator_graph hM hw hz hzw hc hW hb hbne hUnit
   obtain ⟨P,hP,hProbe⟩ := ConstructionProbeIndexedGenerators.exists_probe_graph hM hC hp hm.1.1 hK
   exact ⟨factor,terminal,target,S,C,projection,I,act,E,W,unit,G,K,P,O,
     ⟨hm,hAlpha,hW,hb,hUnit,hG,hK,hGen,hC,hS,hp,hProjection,hEq,hAction,hPath,hFactor,
-      hP,hProbe,hTerminalMap,hTarget,hExit,hd,hOld,hConO.1.1⟩,hTerminal,hConO⟩
+      hP,hProbe,hTerminalMap,hTarget,hExit,hd,hOld,hConO.1.1⟩,hTerminal,hConO,J,hPairs,hMapG⟩
 
 /-- Mapped source parameters, full target presentation and actual simulation
 identified with the SAME terminal range. The raw distinguished generator is
@@ -139,7 +140,7 @@ theorem construction (hM : FirstOrder.Theory.Models M nativeZF)
     ConstructionRequestMaps.probe_map hM hConsN hfN.2.2 hfN.2.1 hA.b_mem hbne hA.path
   obtain ⟨fd,hfd,_⟩ := hfN.1.1.2 d hd
   have hfdne : fd ≠ unitV := fun heq => hdne (hConsN.1.2 d e unitV (heq ▸ hfd) hfN.2.1)
-  obtain ⟨factorN,terminalN,targetN,SN,CN,projectionN,IN,actN,EN,WN,unitN,GN,KN,PN,ON,hB,hTerminalN,hConON⟩ :=
+  obtain ⟨factorN,terminalN,targetN,SN,CN,projectionN,IN,actN,EN,WN,unitN,GN,KN,PN,ON,hB,hTerminalN,hConON,_⟩ :=
     exists_presentation hM hw hz hzw hmN hcN hJN hfbN hfbne (hfN.1.2 d fd hfd) hfdne hPathN
   have hFactorMap := ConstructionProbeMappedPath.factor_map hA.path hfN.1 hMapped hfN.2.2 hA.factors hB.factors
   have hTerminalMap := ConstructionProbeMappedPath.terminal_map hA.path hfN.1 hMapped hfN.2.2 hfa hTerminal hTerminalN

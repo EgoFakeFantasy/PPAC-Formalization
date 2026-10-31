@@ -55,7 +55,7 @@ theorem probe (hM : FirstOrder.Theory.Models M nativeZF)
         a0 b0 d0 node0 factor0 terminal0 target0 L0 C0 projection0 I0 act0 E0 W0 unit0 G0 K0 P0 O0 H := by
   obtain ⟨a0,b0,d0,node0,ha,hb,hd,hNode,hPath,hb0,hb0ne,hd0,hd0ne⟩ :=
     ConstructionCellPreimage.probe_preimage hM hmCut hA.monoid hCon hInc hA.path hbne hdne hCovered
-  obtain ⟨factor0,terminal0,target0,L0,C0,projection0,I0,act0,E0,W0,unit0,G0,K0,P0,O0,hB,hTerminal0,hOld0⟩ :=
+  obtain ⟨factor0,terminal0,target0,L0,C0,projection0,I0,act0,E0,W0,unit0,G0,K0,P0,O0,hB,hTerminal0,hOld0,_⟩ :=
     ConstructionMappedProbe.exists_presentation hM hw hz hzw hmCut hcCut hJCut hb0 hb0ne hd0 hd0ne hPath
   have hFactorMap := ConstructionProbeMappedPath.factor_map hB.path hInc.1 hNode hInc.2.2 hB.factors hA.factors
   have hTerminalMap := ConstructionProbeMappedPath.terminal_map hB.path hInc.1 hNode hInc.2.2 ha hTerminal0 hTerminal

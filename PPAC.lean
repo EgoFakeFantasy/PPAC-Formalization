@@ -914,3 +914,4 @@ import PPAC.Migration.ConstructionRestrictedCellPushout
 import PPAC.Migration.ConstructionCellRestriction
 import PPAC.Migration.ConstructionSubobjectUnion
 import PPAC.Migration.ConstructionUnionPushout
+import PPAC.Migration.ConstructionCellBaseChange

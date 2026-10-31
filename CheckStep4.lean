@@ -13317,4 +13317,16 @@ example {m : Nat} (V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia i
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionUnionPushout.unionSentence V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia ib ic idD)) :=
   ConstructionUnionPushout.union_kernel_certificate V GV e K E Bs Ds BMs DMs A B C D PA PB PC PD GA GB GC GD ia ib ic idD
 
+example {m : Nat} (w zero D mul e W G unit O N mulN eN f : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellBaseChange.mappedSentence w zero D mul e W G unit O N mulN eN f)) :=
+  ConstructionCellBaseChange.mapped_kernel_certificate w zero D mul e W G unit O N mulN eN f
+
+example {m : Nat} (w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD W G unit O F inv : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellBaseChange.realizationSentence w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD W G unit O F inv)) :=
+  ConstructionCellBaseChange.realization_kernel_certificate w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD W G unit O F inv
+
+example {m : Nat} (w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellBaseChange.attachmentSentence w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD)) :=
+  ConstructionCellBaseChange.attachment_kernel_certificate w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD
+
 end PPAC.Migration.Step4Checks

@@ -37,7 +37,8 @@ all defining data and their full actual extension presentation. -/
 def Cell (hM : FirstOrder.Theory.Models M nativeZF)
     (w zero D mul e W G unit O : M.Carrier .set) : Prop :=
   (∃ a b d node factor terminal target L C projection I act E K P,
-    b ≠ e ∧ d ≠ e ∧ ConstructionProbePushout.Presentation hM w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O) ∨
+    b ≠ e ∧ d ≠ e ∧ ConstructionProbePushout.Presentation hM w zero D mul e a b d node factor terminal target L C projection I act E W unit G K P O ∧
+    ConstructionProbePath.TerminalTable w D mul node a terminal) ∨
   ∃ n P C L projection A T B roots, (Project.FirstOrderSemantics.reduct M).mem n w ∧
     ConstructionRequestCarrier.WellFormed n D P ∧ ConstructionMergerRelations.Valid n D mul P ∧
     ConstructionMergerPushout.Presentation w n zero D mul e P C L projection A W T B G unit O roots
@@ -214,12 +215,12 @@ theorem restrict_cell (hM : FirstOrder.Theory.Models M nativeZF)
     obtain ⟨_,_,_,_,hmCut,hcCut,hIncId,hInc,hCons,hJCut⟩ := hBase
     have hCovered := ConstructionSelectedCellWords.probe_covered hParams hResult.2.1 hParamsRet hCut hIncId
     obtain ⟨a0,b0,d0,node0,factor0,terminal0,target0,L0,C0,projection0,I0,act0,E0,W0,unit0,G0,K0,P0,O0,H,
-      _,hb0,hd0,_,hA0,_,hOld0Cons,hm0,hGenerated,hH,hConH,hEnd,hPush⟩ :=
+      _,hb0,hd0,_,hA0,hTerminal0,hOld0Cons,hm0,hGenerated,hH,hConH,hEnd,hPush⟩ :=
       ConstructionRestrictedCellSimulation.probe hM hw hz hzw hmCut hcCut hJCut hA hTerminal hOldCons hbne hdne hInc hCons hCovered
     have hb0ne : b0 ≠ e := fun he => hbne (function_unique hInc.1.1 (he ▸ hb0) hInc.2.1)
     have hd0ne : d0 ≠ e := fun he => hdne (function_unique hInc.1.1 (he ▸ hd0) hInc.2.1)
     have hCell : Cell hM w zero cut cutMul e W0 G0 unit0 O0 := Or.inl
-      ⟨a0,b0,d0,node0,factor0,terminal0,target0,L0,C0,projection0,I0,act0,E0,K0,P0,hb0ne,hd0ne,hA0⟩
+      ⟨a0,b0,d0,node0,factor0,terminal0,target0,L0,C0,projection0,I0,act0,E0,K0,P0,hb0ne,hd0ne,hA0,hTerminal0⟩
     have hmW := ConstructionProbeWordMonoid.monoid_laws hM hw hz hzw hmD hA.alphabet hA.word hA.b_mem hA.old_unit hA.multiplication
     have hOld0 := ConstructionProbeOldEmbeddingSyntax.embedding_laws hM hw hz hzw hmCut hA0.alphabet hA0.word hA0.b_mem hA0.old_unit hA0.multiplication hA0.old_graph
     have hO0 : Hom cut W0 cutMul G0 e unit0 O0 := ⟨hA0.old_map,hOld0.1,
@@ -386,17 +387,17 @@ theorem selected (hM : FirstOrder.Theory.Models M nativeZF)
     hCell,hCover,hD,hT,hData,hSelected,hNext,hResult⟩
 
 def cellFormula {m : Nat} (w zero D mul e W G unit O : Fin m) : Project.Formula 1 m :=
-  (.disj (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (.neg (Project.Formula.extensionalEq (.bound 13) (.bound e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (.neg (Project.Formula.extensionalEq (.bound 12) (.bound e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (ConstructionProbePushoutSyntax.presentation w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 14 13 12 11 10 9 8 7 6 5 4 3 2 W.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unit.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ G.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 1 0 O.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))))))))))))))))))
+  (.disj (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (.neg (Project.Formula.extensionalEq (.bound 13) (.bound e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (.neg (Project.Formula.extensionalEq (.bound 12) (.bound e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ))) (.conj (ConstructionProbePushoutSyntax.presentation w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ zero.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ e.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 14 13 12 11 10 9 8 7 6 5 4 3 2 W.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ unit.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ G.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 1 0 O.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ) (ConstructionProbePath.terminalTable w.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ mul.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ.succ 11 14 9)))))))))))))))))))
  (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.existsE (.conj (.mem (.bound 8) (.bound w.succ.succ.succ.succ.succ.succ.succ.succ.succ)) (.conj (ConstructionRequestCarrier.wellFormed 8 D.succ.succ.succ.succ.succ.succ.succ.succ.succ 7) (.conj (ConstructionMergerRelations.valid 8 D.succ.succ.succ.succ.succ.succ.succ.succ.succ mul.succ.succ.succ.succ.succ.succ.succ.succ.succ 7) (ConstructionMergerPushout.presentation w.succ.succ.succ.succ.succ.succ.succ.succ.succ 8 zero.succ.succ.succ.succ.succ.succ.succ.succ.succ D.succ.succ.succ.succ.succ.succ.succ.succ.succ mul.succ.succ.succ.succ.succ.succ.succ.succ.succ e.succ.succ.succ.succ.succ.succ.succ.succ.succ 7 6 5 4 3 W.succ.succ.succ.succ.succ.succ.succ.succ.succ 2 1 G.succ.succ.succ.succ.succ.succ.succ.succ.succ unit.succ.succ.succ.succ.succ.succ.succ.succ.succ O.succ.succ.succ.succ.succ.succ.succ.succ.succ 0))))))))))))))
 
 theorem cellFormula_freeClosed {m : Nat} (w zero D mul e W G unit O : Fin m) :
     (cellFormula w zero D mul e W G unit O).FreeClosed := by
-  simp -implicitDefEqProofs [cellFormula,Definitional.Formula.FreeClosed,Project.Formula.extensionalEq,ConstructionProbePushoutSyntax.presentation_freeClosed,ConstructionRequestCarrier.wellFormed_freeClosed,ConstructionMergerRelations.valid_freeClosed,ConstructionMergerPushout.presentation_freeClosed]
+  simp -implicitDefEqProofs [cellFormula,ConstructionProbePath.terminalTable_freeClosed,Definitional.Formula.FreeClosed,Project.Formula.extensionalEq,ConstructionProbePushoutSyntax.presentation_freeClosed,ConstructionRequestCarrier.wellFormed_freeClosed,ConstructionMergerRelations.valid_freeClosed,ConstructionMergerPushout.presentation_freeClosed]
 
 theorem cellFormula_semantics (hM : FirstOrder.Theory.Models M nativeZF) {m : Nat}
     (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) m) (w zero D mul e W G unit O : Fin m) :
     Project.Formula.satisfies env (cellFormula w zero D mul e W G unit O) ↔ Cell hM (env.bound w) (env.bound zero) (env.bound D) (env.bound mul) (env.bound e) (env.bound W) (env.bound G) (env.bound unit) (env.bound O) := by
-  simp only [cellFormula,Cell,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_disj_iff,Project.Formula.satisfies_mem_iff,Project.Formula.satisfies_neg_iff,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),Project.Term.eval_bound,ConstructionProbePushoutSyntax.presentation_semantics hM,ConstructionRequestCarrier.wellFormed_semantics hM,ConstructionMergerRelations.valid_semantics hM,ConstructionMergerPushout.presentation_semantics hM]
+  simp only [cellFormula,Cell,ConstructionProbePath.terminalTable_semantics hM,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_disj_iff,Project.Formula.satisfies_mem_iff,Project.Formula.satisfies_neg_iff,Project.Formula.satisfies_extensionalEq_iff_eq (ModelTransfer.extensionality hM),Project.Term.eval_bound,ConstructionProbePushoutSyntax.presentation_semantics hM,ConstructionRequestCarrier.wellFormed_semantics hM,ConstructionMergerRelations.valid_semantics hM,ConstructionMergerPushout.presentation_semantics hM]
   rfl
 
 def attachmentFormula {m : Nat} (w zero D mul e T GT : Fin m) : Project.Formula 1 m :=
