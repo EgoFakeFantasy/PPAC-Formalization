@@ -911,3 +911,4 @@ import PPAC.Migration.ConstructionSelectedCellWords
 import PPAC.Migration.ConstructionSelectedCellRestriction
 import PPAC.Migration.ConstructionRestrictedCellSimulation
 import PPAC.Migration.ConstructionRestrictedCellPushout
+import PPAC.Migration.ConstructionCellRestriction

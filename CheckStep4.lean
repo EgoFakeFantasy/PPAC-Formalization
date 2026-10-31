@@ -13285,4 +13285,20 @@ example {m : Nat} (D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionRestrictedCellPushout.workSentence D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P0 H V GV old inc generators)) :=
   ConstructionRestrictedCellPushout.work_kernel_certificate D mul e T next retained cut I W G unit O P F W0 G0 unit0 O0 P0 H V GV old inc generators
 
+example {m : Nat} (w zero one V GV e D T retained cut next cell : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellRestriction.restrictCellSentence w zero one V GV e D T retained cut next cell)) :=
+  ConstructionCellRestriction.restrictCell_kernel_certificate w zero one V GV e D T retained cut next cell
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained i x : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellRestriction.selectedSentence w zero one V GV e I R bottom S index cells deps retained i x)) :=
+  ConstructionCellRestriction.selected_kernel_certificate w zero one V GV e I R bottom S index cells deps retained i x
+
+example {m : Nat} (w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces I S : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellRestriction.actualStagesSentence w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces I S)) :=
+  ConstructionCellRestriction.actualStages_kernel_certificate w Q R top D mul e mark H C zero one K mu B history P outerF kappa V GV unitV markV HV CV terminalLegs baseV traces I S
+
+example {m : Nat} (w zero one V GV e I R bottom S index cells deps retained i x Q values top baseN baseMul baseUnit mark H C K mu B history P outerF kappa markV HV CV terminalLegs baseV traces : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellRestriction.selectedActualSentence w zero one V GV e I R bottom S index cells deps retained i x Q values top baseN baseMul baseUnit mark H C K mu B history P outerF kappa markV HV CV terminalLegs baseV traces)) :=
+  ConstructionCellRestriction.selectedActual_kernel_certificate w zero one V GV e I R bottom S index cells deps retained i x Q values top baseN baseMul baseUnit mark H C K mu B history P outerF kappa markV HV CV terminalLegs baseV traces
+
 end PPAC.Migration.Step4Checks
