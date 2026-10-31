@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-01）
 
-## 当前执行入口：具体 component selector 已接通 → StableSelectors.Corrected
+## 当前执行入口：AssignmentPoint 四坐标搬移 → 尾群不变性／Corrected
 
-ConstructionConcreteSelector 已从同一实际饱和终行的已有 context／history／index／matrix／row／component chain 接通完整可数 germ 商、探测器／坐标集、分离性和正则 Hartogs 界，构造全部 Good 条件上的统一选择器图。对每个内部 Cohen 条件均存在进入该图定义域的加强条件。商非空由实际恒等置换推出，未增加可数性、分离性或非空预言。
+已完成的具体 component selector 保留。ForcingAssignmentCovariance 现直接复用原 CommonFibers、实际内部链和 Preliminary 协变，证明尾群固定实际标签索引，并同时搬移条件／顶点／标签／名字；没有替换为粘合商标签或新增作用后端。
 
-L 相对原核构造句存在量化 16 个实际输出集合，原样复用 CountableGerms 的 L 收尾证明。两个普通 nativeZF 端点分别给出所选类的实际代表元，以及构造被置换条件／商左作用后仍落在同一选择器图中的值。本批全量验收通过：3123 个构建任务、36432 项声明、2678 个文件哈希、9 条命令（含 5 个 trust=0 检查）、零警告；36410 项旧依赖足迹全部不变，新增 22 项声明无新增公理依赖。记录见 verification/concrete-selector-acceptance.json。
+本批两个原核端点定向编译及逐声明 trust=0 审计已通过：标签固定在普通 nativeZF 中，四坐标搬移在 nativeZF 的 L 相对化中；既有 L 收尾正文仅作精确参数接线复用。本批全量验收通过：3124 构建任务、36440 项声明、2679 个文件哈希、9 条命令（含 5 个 trust=0）、零警告；36432 项旧足迹全部不变，新增 8 项无新增公理依赖。报告见 verification/assignment-covariance-acceptance.json。
 
-**仍在原第 8 阶段。** 本批八项既有具体父输入合同仍显式保留，不据此宣称整个模型系统已无条件装配。下一项为源 StableSelectors.Corrected（条件／顶点／标签／名字同时逆移及代表无关性），再沿 OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。已完成底座、L、全模式、selector 和具体 germ／detector 密集性不重做；第 9–11 阶段、最终内部 Con 和原 Comparator 未完成。
+**仍在原第 8 阶段。** 尚需源 preliminaryPoint_invariant 的逆作用方向、Corrected 的代表无关性及定律，再沿 OrbitAssignments → assignmentGraph_bijection → 具体商双射推进。已完成底座、L、全模式、selector 和具体 germ／detector 密集性不重做；现有实际父输入合同仍显式保留，整体模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 均未完成。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|

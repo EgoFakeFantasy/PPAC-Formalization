@@ -955,3 +955,4 @@ import PPAC.Migration.ConstructionGermPatternOrder
 import PPAC.Migration.ConstructionGermSelected
 import PPAC.Migration.ConstructionGermConditionSelector
 import PPAC.Migration.ConstructionConcreteSelector
+import PPAC.Migration.ForcingAssignmentCovariance

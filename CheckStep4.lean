@@ -13650,4 +13650,13 @@ example {m : Nat} (w Q values top mul unit mark H C zero one u K mu B history P 
       (ConstructibleGround.relative (ConstructionConcreteSelector.constructionSentence w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain))) :=
   ConstructionConcreteSelector.construction_kernel_certificate w Q values top mul unit mark H C zero one u K mu B history P outerF kappa V GV e markV HV CV terminalLegs baseV labels q root vertices chain
 
+example {k : Nat} (w D I mul q zero root vertices chain diagrams objImage objects maps labelSet pi label : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingAssignmentCovariance.tailLabelSentence w D I mul q zero root vertices chain diagrams objImage objects maps labelSet pi label)) :=
+  ForcingAssignmentCovariance.tailLabel_kernel_certificate w D I mul q zero root vertices chain diagrams objImage objects maps labelSet pi label
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label diagrams objImage objects maps movedLabel : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingAssignmentCovariance.covarianceSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label diagrams objImage objects maps movedLabel))) :=
+  ForcingAssignmentCovariance.covariance_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound pi inv c act ai zero root vertices chain names codes order group r idx U ranks selection rankBound labelSet tab ac d movedD vertex movedVertex tau movedTau label diagrams objImage objects maps movedLabel
+
 end PPAC.Migration.Step4Checks

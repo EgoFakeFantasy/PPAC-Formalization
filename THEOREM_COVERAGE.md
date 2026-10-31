@@ -939,3 +939,20 @@ ConstructionGermConditionSelector separates ALL good conditions from the existin
 ConstructionConcreteSelector consumes the SAME accepted saturated-terminal context, recursive history, index, transition matrix, row and actual component chain. It calls ConstructionCountableGerms, constructs detector/site data from its full quotient, derives separation from the actual terminal monoid, and consumes the existing regular Hartogs index in good_dense. Identity in the actual component stabilizer proves the quotient nonempty. Native successors/cartesian products and the accepted selector producer return 16 internal output sets, including a fixed order and the full selector graph with dense domain for EVERY internal Cohen condition. The L-relative nativeZF original-kernel construction endpoint retains the accepted CountableGerms closing proof verbatim.
 
 Two ordinary nativeZF endpoints cover OrbitAssignments.selected_exists:53 (existential representative, no new representative function) and ConcreteQuotients.component_selected_covariant:256 (construct the moved condition and actual left-action graph; return the transformed value as an edge of the SAME selector). The source component_selector_dense:249 consumer is supplied by the resulting graph and good_dense theorem. Previously pending abstract selector-input obligations are now discharged from the eight existing concrete parent contracts; those parent contracts themselves remain explicit, so this is not a claim that the complete concrete model assembly is closed. Next: StableSelectors.Corrected with all four arguments inverse-moved, then OrbitAssignments, assignmentGraph_bijection and the concrete quotient bijection. Final internal Con remains unproved.
+
+## Source assignment-point action (stage 8, 2026-11-01)
+
+`ForcingAssignmentCovariance` consumes existing actual common label fibers and
+`ForcingGermCovariance.preliminary_permute` to migrate
+`QuotientActions.Chain.tailFixer_fixes_label:327` and
+`StableSelectors.preliminaryPoint_move:392`. The raw label permutation is used
+along with the same actual condition, vertex and name actions.
+`tailLabel_kernel_certificate` is an ordinary nativeZF derivation;
+`covariance_kernel_certificate` is an L-relative nativeZF derivation using the
+existing L closing proof. Existing input contracts remain explicit.
+Full verification passed: 3124 build jobs, 36440 audited declarations, 2679 file
+hashes, nine commands including five trust=0 checks, zero warnings. All 36432
+prior declaration footprints are unchanged; eight new declarations add no new
+axiom dependencies. Bidirectional tail invariance and
+Corrected representative independence are still pending; this is not the final
+internal consistency implication.

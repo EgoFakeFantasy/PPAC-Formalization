@@ -37043,3 +37043,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionConcreteSelector.permutation_models
 #print axioms PPAC.Migration.ConstructionConcreteSelector.permutation_kernel_certificate
 #print axioms PPAC.Migration.ConstructionConcreteSelector.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.tail_fixes_label
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.tailLabelSentence
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.tailLabel_models
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.tailLabel_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.preliminaryPoint_move
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.covarianceSentence
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.covariance_models
+#print axioms PPAC.Migration.ForcingAssignmentCovariance.covariance_kernel_certificate
