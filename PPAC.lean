@@ -915,3 +915,4 @@ import PPAC.Migration.ConstructionCellRestriction
 import PPAC.Migration.ConstructionSubobjectUnion
 import PPAC.Migration.ConstructionUnionPushout
 import PPAC.Migration.ConstructionCellBaseChange
+import PPAC.Migration.ConstructionIntermediate

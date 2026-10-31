@@ -360,4 +360,4 @@ ConstructionSubobjectUnion 的 directedSup／lift／factorization 普通 nativeZ
 
 ConstructionUnionPushout.union_kernel_certificate 在普通 nativeZF 原核中证明同一终端单子内完整 Square.union：四条保守包含、任意内部目标的 lift、两条实际复合方程与唯一性。局部 lift 族通过已证明的纯公式总唯一关系和原生函数构造器取得，不把宿主选择函数当作内部集合，不假设对象 Choice。该源端点已验收；实际 intermediate／future_cut／reordered 和最终内部 Con 保持未完成。
 
-ConstructionCellBaseChange 的 mapped／realization／attachment 三个普通 nativeZF 原核句子现已通过全量验收。它们量化内部集合、图和任意目标单子，构造实际 cell 与指定顶点的比较、逆、旧／新方程及满值域；不以宿主同构存在替代对象句。Cell 的终端表和 MappedProbe 的乘法图类型证书由已有生产者保留，不新增对象假设。精确 intermediate、完整 future_cut／reordered 和最终内部 Con 仍未完成。
+ConstructionCellBaseChange 的 mapped／realization／attachment 以及 ConstructionIntermediate 的 apexSup／intermediate 普通 nativeZF 原核句子已通过全量验收。中间对象结论保留原后继包含、完整 Attachment／Square，以及对所有普通内部子幺半群的精确生成最小性。相应集合、映射、逆与生成性均在对象句中量化；已有模型内证明通过现成 ModelTransfer 返回原 FirstOrder.Derives。完整 future_cut／reordered 和最终内部 Con 仍未完成。

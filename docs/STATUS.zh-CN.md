@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：Cell.map／realization／attachment 已验收 → intermediate／future_cut／reordered
+## 当前执行入口：完整 Square.intermediate 已验收 → future_cut／reordered
 
-ConstructionCellBaseChange 接通固定 ConservativeCells.Cell.map／simulation／pushout 与 CellCuts.Square.realization／attachment：保留原输入 cell，沿任意保守基底同态构造两类实际 cell、完整保守模拟及任意内部目标的推挤；通过现有 change_left／exists_comparison 与指定原顶点比较，保留正反向旧／新方程和精确满值域。没有增加满射前提、对象 Choice 或新后端。
+ConstructionIntermediate 接通固定 CellCuts.Square.intermediate 与 apex_eq_sup。两次实际 cell 基底变换经现有推挤粘合／比较，对应源 map_comp／cast 的识别，保留旧／新方程；实际像与既有 RangeObject 构造给出同一终端单子内、包含于原后继的中间对象，以及完整 Attachment／Square。生成性量化所有普通内部子幺半群，精确等于原后继侧与中间基底生成的上确界，没有替换成更大的保守闭包。
 
-同时修复两处记录遗漏：Cell 保留已有生产者给出的 TerminalTable，MappedProbe.exists_presentation 保留已有乘法代表集及 MapsTo。没有增加调用者需证明的假设，相关原核证书重新验收。
+本批复用 RoundFields.map_comp 的原保守复合证明正文、现有函数图／值域／普通逆像和原核回传；未修改底座、源证明或供体，未增加对象 Choice、满射或宿主良基前提。
 
-本批完整验收：3083 项构建、35673 项声明、22 项新增声明、3 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35651 项旧声明依赖全部不变，2638 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/cell-basechange-acceptance.json。
+本批完整验收：3084 项构建、35689 项声明、16 项新增声明、2 个普通 nativeZF 原核对象证书；9 条命令／5 次 trust=0，零警告。35673 项旧声明依赖全部不变，2639 项文件哈希、75 项固定源哈希匹配，无新增公理依赖。记录见 verification/intermediate-acceptance.json。
 
-**仍在原第 8 阶段。** 已完成的 restrict_selected、实际阶段闭包、Square.union 和本批基底变换均保留复用。下一项是原 Square.intermediate 的实际中间值域及恰好生成子幺半群，再接 future_cut 完整归纳、reordered、germ-selector／OrbitAssignments／具体商双射。第 9–11 阶段、最终全部内部／非标准证明码的 Con 蕴含和原 Comparator 未完成。
+**仍在原第 8 阶段。** 完整 restrict_selected、实际阶段闭包、Square.union、Cell.map／realization／attachment 和本批 intermediate 均已完成并保留复用。下一项是原 future_cut 的完整内部归纳，再接 reordered、germ-selector／OrbitAssignments／具体商双射。现有 Timeline 已有内部集合良序、单调性及极限连续性，不重复建设。第 9–11 阶段、最终全部内部／非标准证明码的 Con 蕴含和原 Comparator 未完成。
 
 固定源 OpenAI 1581d4cbdd69a0faf34b2089614fe2a814316a6a；活动 YesMetaZFC 039c8e132cc19671d73a3933c66b4799d2599dd6；供体 79793365c2145c53db37eaf8ab23a64826bd9738。三者干净，均未修改。
 
@@ -41,7 +41,7 @@ ConstructionCellBaseChange 接通固定 ConservativeCells.Cell.map／simulation�
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 Square.union、Cell.map／realization／attachment 已验收；继续精确 intermediate 和 future_cut 完整归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | CellReorder.future_cut/reordered → GermSelectors → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 Square.union、Cell.map／realization／attachment／intermediate 已验收；继续 future_cut 完整内部归纳，再接 reordered。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |

@@ -13329,4 +13329,12 @@ example {m : Nat} (w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD : 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionCellBaseChange.attachmentSentence w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD)) :=
   ConstructionCellBaseChange.attachment_kernel_certificate w zero V GV e A B C D PA PB PC PD GA GB GC GD ia ib ic idD
 
+example {m : Nat} (V GV e A B E F PB PE PF GA GB GE GF ia ib ie iF : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionIntermediate.apexSupSentence V GV e A B E F PB PE PF GA GB GE GF ia ib ie iF)) :=
+  ConstructionIntermediate.apexSup_kernel_certificate V GV e A B E F PB PE PF GA GB GE GF ia ib ie iF
+
+example {m : Nat} (w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib ic idD ie : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructionIntermediate.intermediateSentence w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib ic idD ie)) :=
+  ConstructionIntermediate.intermediate_kernel_certificate w zero V GV e A B C D E PA PB PC PD PE GA GB GC GD GE ia ib ic idD ie
+
 end PPAC.Migration.Step4Checks
