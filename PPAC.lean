@@ -1010,3 +1010,5 @@ import PPAC.Migration.ForcingRelationGraphSupport
 import PPAC.Migration.ForcingRelationGraphForcing
 import PPAC.Migration.ForcingPairFormula
 import PPAC.Migration.ForcingRelationGraphApplication
+import PPAC.Migration.ForcingRelationGraphFunctions
+import PPAC.Migration.ForcingAssignedRelation

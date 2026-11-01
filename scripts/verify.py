@@ -2375,7 +2375,7 @@ def main() -> None:
                                ('forcing_cohen_selection', 'ForcingCohenSelection', 20),
                                ('forcing_cohen_rank_consumers', 'ForcingCohenRankConsumers', 16),
                                ('forcing_tail_group', 'ForcingTailGroup', 21),
-                               ('forcing_code_selection', 'ForcingCodeSelection', 15),
+                               ('forcing_code_selection', 'ForcingCodeSelection', 16),
                                ('forcing_code_ranks', 'ForcingCodeRanks', 6),
                                ('forcing_code_rank_consumers', 'ForcingCodeRankConsumers', 6),
                                ('forcing_code_links', 'ForcingCodeLinks', 16),
@@ -2571,7 +2571,9 @@ def main() -> None:
                                ('forcing_relation_graph_support', 'ForcingRelationGraphSupport', 14),
                                ('forcing_relation_graph_forcing', 'ForcingRelationGraphForcing', 21),
                                ('forcing_pair_formula', 'ForcingPairFormula', 9),
-                               ('forcing_relation_graph_application', 'ForcingRelationGraphApplication', 7)):
+                               ('forcing_relation_graph_application', 'ForcingRelationGraphApplication', 7),
+                               ('forcing_relation_graph_functions', 'ForcingRelationGraphFunctions', 19),
+                               ('forcing_assigned_relation', 'ForcingAssignedRelation', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

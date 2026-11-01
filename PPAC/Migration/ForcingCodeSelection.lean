@@ -26,7 +26,7 @@ private theorem decode_term {d n : Nat} (r : Fin d → Fin n) (t : Project.Term 
   | free x => cases h
 
 /-- Consumer bridge for the EXISTING decoder, with arbitrary bound assignments. -/
-private theorem decode_realizes (hM : FirstOrder.Theory.Models M nativeZF) {d n : Nat}
+theorem decode_realizes (hM : FirstOrder.Theory.Models M nativeZF) {d n : Nat}
     (r : Fin d → Fin n) (p : Project.Formula 1 d) (h : p.FreeClosed)
     (env : Fin n → M.Carrier .set) (free : FreeVarId → M.Carrier .set) :
     Source.Formula.Realize (Project.FirstOrderSemantics.reduct M).mem env (ProjectDecode.formula r p h) ↔

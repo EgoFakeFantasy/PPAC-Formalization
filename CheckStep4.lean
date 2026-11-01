@@ -13975,4 +13975,17 @@ example {n : Nat} (Q : Source.Formula (n+3)) (rho : Fin 7 → Fin n)
       (ForcingRelationGraphApplication.applicationSentence Q rho I K B w G F mul t X Y name x y p)) :=
   ForcingRelationGraphApplication.application_kernel_certificate Q rho I K B w G F mul t X Y name x y p
 
+example {n : Nat} (Q : Source.Formula (n+3)) (rho : Fin 7 → Fin n)
+    (I K B w G F mul t X Y name p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationGraphFunctions.functionsSentence Q rho I K B w G F mul t X Y name p)) :=
+  ForcingRelationGraphFunctions.functions_kernel_certificate Q rho I K B w G F mul t X Y name p
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I G F mul q bound labels E w top K B zero Q labelMap bit one : Fin k)
+    (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingAssignedRelation.lawsSentence rho I G F mul q bound labels E w top K B zero Q labelMap bit one families)) :=
+  ForcingAssignedRelation.laws_kernel_certificate rho I G F mul q bound labels E w top K B zero Q labelMap bit one families
+
 end PPAC.Migration.Step4Checks
