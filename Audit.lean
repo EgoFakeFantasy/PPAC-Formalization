@@ -37646,3 +37646,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedGraphMove.moveSentence
 #print axioms PPAC.Migration.ForcingAssignedGraphMove.move_models
 #print axioms PPAC.Migration.ForcingAssignedGraphMove.move_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingLabelSeparation.mem_label_of_bit
+#print axioms PPAC.Migration.ForcingLabelSeparation.mem_label
+#print axioms PPAC.Migration.ForcingLabelSeparation.not_mem_label_of_bit
+#print axioms PPAC.Migration.ForcingLabelSeparation.label_not_equal
+#print axioms PPAC.Migration.ForcingLabelSeparation.separationSentence
+#print axioms PPAC.Migration.ForcingLabelSeparation.separation_models
+#print axioms PPAC.Migration.ForcingLabelSeparation.separation_kernel_certificate

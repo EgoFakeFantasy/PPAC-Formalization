@@ -1169,3 +1169,12 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `move_kernel_certificate` is ordinary original nativeZF Derives. Existing labelSet/labelBound construction discharges bound support; existing support-filter/cardinal theorem discharges normality. No additional object Choice, abstract stability or graph-movement premise. This does not change the earlier relative-L scope of bounds.
 - Full regression: 3183 jobs, 37013 declarations, 2738 hashes; all 37008 previous footprints unchanged, five new declarations, nine commands including five trust=0 runs exited 0, zero warnings, no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-move-acceptance.json.
 - Still stage 8: actual graph one/inj/total/onto and assignmentGraph_bijection, concrete quotient bijection and common final parents. Existing compatible_one/compatible_inj are the next reusable producers. Stages 9-11, final internal Con and original Comparator remain pending.
+
+
+## Actual label separation required by graph single-valuedness (2026-11-01)
+
+- `ForcingLabelSeparation` migrates ProductNames.mem_label_of_bit:263, mem_label:270, not_mem_label_of_bit:292 and label_not_equal:304. Actual canonical labels and the complete local-witness membership characterization are preserved.
+- Existing Cohen separate_labels constructs an actual extension with opposite bits. Existing check-name equality reflection and Bit functionality exclude negative membership. Existing condition-below handles top as well as every genuine condition. No assumed label distinctness, alternative name/forcing backend or object Choice.
+- `separation_kernel_certificate` is ordinary original nativeZF Derives of the full closed separation sentence. Uncountability is internal not-Small(K,omega); all internally coded injections, labels and conditions are retained.
+- Full regression: 3184 jobs, 37020 declarations, 2739 hashes; all 37013 old footprints unchanged, seven new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/label-separation-acceptance.json.
+- Still stage 8. This is the direct label-separation dependency of AssignedGraphs.graphRelation_one, not completion of graph one/inj/total/onto/bijection. Existing fields_of_record/assigned_iff_at, LabelVertex construction and compatible_one/compatible_inj are the next producers to consume. Final internal Con and original Comparator remain pending.
