@@ -13748,4 +13748,12 @@ example {k : Nat} (D I q A G Hq pi : Fin k) :
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrbitAssignment.rootGroupSentence D I q A G Hq pi)) :=
   ForcingOrbitAssignment.rootGroup_kernel_certificate D I q A G Hq pi
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder s sAct sAc d e vertex movedVertex label movedLabel tau movedTau : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrbitPermutation.permutationSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder s sAct sAc d e vertex movedVertex label movedLabel tau movedTau)) :=
+  ForcingOrbitPermutation.permutation_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder s sAct sAc d e vertex movedVertex label movedLabel tau movedTau
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrbitCongruence.congrSentence rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma)) :=
+  ForcingOrbitCongruence.congr_kernel_certificate rho I G F mul q bound labels E root w chain codes order ranks selection top rankBound labelSet tab r K B zero germGroup quotient nonidentity high detector patternOrder one mu d vertex localRoot index U label tau sigma
+
 end PPAC.Migration.Step4Checks

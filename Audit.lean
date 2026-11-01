@@ -37181,3 +37181,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrbitAssignment.rootGroupSentence
 #print axioms PPAC.Migration.ForcingOrbitAssignment.rootGroup_models
 #print axioms PPAC.Migration.ForcingOrbitAssignment.rootGroup_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitPermutation.orbitAssignment_permute
+#print axioms PPAC.Migration.ForcingOrbitPermutation.permutationSentence
+#print axioms PPAC.Migration.ForcingOrbitPermutation.permutation_models
+#print axioms PPAC.Migration.ForcingOrbitPermutation.permutation_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitCongruence.orbitAssignment_congr
+#print axioms PPAC.Migration.ForcingOrbitCongruence.congrSentence
+#print axioms PPAC.Migration.ForcingOrbitCongruence.congr_models
+#print axioms PPAC.Migration.ForcingOrbitCongruence.congr_kernel_certificate

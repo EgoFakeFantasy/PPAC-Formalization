@@ -136635,6 +136635,194 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
+    },
+    "forcing_orbit_permutation": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/OrbitAssignments.lean",
+      "source_sha256": "5018988865d91edf51dd6672e82f1e801a5b78b0a54d87c931a47172921d848f",
+      "adapter": "PPAC/Migration/ForcingOrbitPermutation.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingGermCorrectedPermutation.lean": "715d78b2ea08d25fc11a76d3550abd3c0e9581971e5096b6f1ce0182c51a2376",
+        "PPAC/Migration/ForcingOrbitAssignment.lean": "5adba5a34f35096e05774756ddb8f295fef40464dc9ab5a55a22c8fae0a8b992",
+        "PPAC/Migration/ForcingProductFamily.lean": "c33f24cc2e5b7c5f7090d814e0b6d4dcae5f463dcf3376062826076184cf1423",
+        "PPAC/Migration/ForcingNameConjugacy.lean": "622b2d2eda03988397c31889a2ba65968f5deacc15da01ff27fdf66f3c22ae38",
+        "PPAC/Migration/ForcingComponentMove.lean": "bd3d1e48de34cb8d6a112e3b6c09b5527d3662e199e936ab65dd18dec42db5ef",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        "PPAC/Migration/ForcingAssignmentCosets.lean": "4ada09ad534d26a283154e0ed61d2b537965dd9e7922eed0ed17cd72ffa4c8f0",
+        "PPAC/Migration/ConstructionGermSeparation.lean": "feacb0491e154bab5965816d662dc70fa24c582f1f464089c9c432d9468fca6a",
+        "PPAC/Migration/ForcingDiagramCarrier.lean": "bc438bb0c6b53131e432550c870a8f5b5e08f9150b50c6fb5978b5f093d1b1fd"
+      },
+      "source_declarations": [
+        "OrbitAssignments.orbitAssignment_permute:232-238"
+      ],
+      "consumers": [
+        "OrbitAssignments.orbitAssignment_eq_iff",
+        "AssignedGraphs.assignmentGraph_bijection"
+      ],
+      "reuse_producers": [
+        "ForcingGermCorrectedPermutation",
+        "ForcingOrbitAssignment",
+        "ForcingProductFamily",
+        "ForcingNameConjugacy",
+        "ForcingComponentMove",
+        "ModelTransfer",
+        "ForcingAssignmentCosets",
+        "ConstructionGermSeparation",
+        "ForcingDiagramCarrier"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOrbitPermutation.orbitAssignment_permute": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingOrbitPermutation.permutationSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingOrbitPermutation.permutation_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingOrbitPermutation.permutation_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original-kernel certificate for the full RootGroup orbit action. Construct s*pi and its inverse; reuse the existing inverse cancellation proof with only its two permutation projections changed. Existing product/Cohen/name actions and vertex uniqueness align the same inverse witnesses; preserve the exact inner Corrected witness and old label. No component-stabilizer premise is imposed on s. Remaining descent/stability/equality/orbit quotient/totality/onto and final internal Con remain incomplete.",
+      "retained_existing_producer": {
+        "producer_file": "PPAC/Migration/ForcingGermCorrectedPermutation.lean",
+        "producer_sha256": "715d78b2ea08d25fc11a76d3550abd3c0e9581971e5096b6f1ce0182c51a2376",
+        "source_start": "  have hCancel : CompositionGraph (env I) productInv (env s) inv := by\n",
+        "source_end": "  obtain ⟨newClass,hNewClass⟩",
+        "target_start": "  have hCancel : CompositionGraph (env I) productInv (env s) inv := by\n",
+        "target_end": "  obtain ⟨newAct,hNewAct⟩",
+        "replacements": [
+          [
+            "hsStab.1.1.1.2",
+            "hs.1.1.2"
+          ],
+          [
+            "hsStab.1.2.1",
+            "hs.2.1"
+          ]
+        ],
+        "normalized_body_sha256": "9f27de8afebb114055c8b0140361c054f7222d921e931ef6c5f7b8257d4c74ee"
+      }
+    },
+    "forcing_orbit_congruence": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/OrbitAssignments.lean",
+      "source_sha256": "5018988865d91edf51dd6672e82f1e801a5b78b0a54d87c931a47172921d848f",
+      "adapter": "PPAC/Migration/ForcingOrbitCongruence.lean",
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingGermCorrectedCongruence.lean": "56821934bc14fd2f17afd52c14968b0898e42bade8acd1a0c2a16d4417b25cd7",
+        "PPAC/Migration/ForcingOrbitAssignment.lean": "5adba5a34f35096e05774756ddb8f295fef40464dc9ab5a55a22c8fae0a8b992",
+        "PPAC/Migration/ForcingProductFamily.lean": "c33f24cc2e5b7c5f7090d814e0b6d4dcae5f463dcf3376062826076184cf1423",
+        "PPAC/Migration/ForcingNameConjugacy.lean": "622b2d2eda03988397c31889a2ba65968f5deacc15da01ff27fdf66f3c22ae38",
+        "PPAC/Migration/ForcingComponentMove.lean": "bd3d1e48de34cb8d6a112e3b6c09b5527d3662e199e936ab65dd18dec42db5ef",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843",
+        "PPAC/Migration/ForcingPersistentCovariance.lean": "54ff2db4c3fee9e1e23d62571d7ddca16b33d708ae4cb7237483edc09f3d3218",
+        "PPAC/Migration/ForcingProductCovariance.lean": "c1d1ceff4c5b3643a0a4fae470dc391bb48b0b201517913e6b453bc2ce1d1871",
+        "PPAC/Migration/ForcingConjugationGraph.lean": "d8480bfac774e7948bbef4b43f6f403b1ab907661cfe363bb15bb24ef301d8a2"
+      },
+      "source_declarations": [
+        "OrbitAssignments.orbitAssignment_congr:240-245"
+      ],
+      "consumers": [
+        "OrbitAssignments.orbitAssignment_eq_iff",
+        "AssignedGraphs.assignmentGraph_bijection"
+      ],
+      "reuse_producers": [
+        "ForcingGermCorrectedCongruence",
+        "ForcingOrbitAssignment",
+        "ForcingProductFamily",
+        "ForcingNameConjugacy",
+        "ForcingComponentMove",
+        "ModelTransfer",
+        "ForcingPersistentCovariance",
+        "ForcingProductCovariance",
+        "ForcingConjugationGraph"
+      ],
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOrbitCongruence.orbitAssignment_congr": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingOrbitCongruence.congrSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingOrbitCongruence.congr_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingOrbitCongruence.congr_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/SymmetricNames.lean": "23d89734c63cddae558be651a2d280279498558bddd3f3d39d98c8ac63f2cc6a"
+      },
+      "scope": "Ordinary nativeZF original-kernel certificate for orbit assignment congruence under the actual root EqF. Retain the existing inverse system construction, HS action and EqF transport proof verbatim; consume corrected_congr after the existing corrected_reindex calculation. The target HS premise is the original S.Name subtype domain (SymmetricNames:49), not an added mathematical assumption. Preserve the outer permutation and label. Remaining descent/stability/equality/orbit quotient/totality/onto and final internal Con remain incomplete.",
+      "retained_existing_producer": {
+        "producer_file": "PPAC/Migration/ForcingGermCorrectedCongruence.lean",
+        "producer_sha256": "56821934bc14fd2f17afd52c14968b0898e42bade8acd1a0c2a16d4417b25cd7",
+        "source_start": "  have hReverse :",
+        "source_end": "  have hMovedD :=",
+        "target_start": "  have hReverse :",
+        "target_end": "  let targetEnv :",
+        "replacements": [],
+        "normalized_body_sha256": "02cad423d79817a4a1d0865d0c2bbf5ad0c627c9921992a278baf7c2ce77cd74"
+      }
     }
   },
   "selected_route_consumer_audit": {
