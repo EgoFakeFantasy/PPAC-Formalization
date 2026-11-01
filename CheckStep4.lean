@@ -13907,4 +13907,30 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingAssignedCompatibility.injSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order group r rootIndex rootU ranks selection rankBound labelSet tab f targetOne tau label diagrams objImage objects maps germGroup quotient nonidentity high detector patternOrder selectorDomain selector commonRoot commonIndex commonIdeal otherLabel sigma projection reps detectorDomain detectorSites patternCarrier Q pr a d vertex arrows mapImage vertexLabels commonObjects oldRoot oldIndex oldIdeal rootSecond chainSecond codesSecond orderSecond ranksSecond selectionSecond rankBoundSecond labelSetSecond tabSecond rSecond germGroupSecond quotientSecond nonidentitySecond highSecond detectorSecond patternOrderSecond rootIndexSecond rootUSecond projectionSecond repsSecond detectorDomainSecond detectorSitesSecond patternCarrierSecond selectorDomainSecond selectorSecond e vertexSecond aSecond vertexLabelsSecond targetTwo oldRootSecond oldIndexSecond oldIdealSecond commonIdealSecond families))) :=
   ForcingAssignedCompatibility.inj_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order group r rootIndex rootU ranks selection rankBound labelSet tab f targetOne tau label diagrams objImage objects maps germGroup quotient nonidentity high detector patternOrder selectorDomain selector commonRoot commonIndex commonIdeal otherLabel sigma projection reps detectorDomain detectorSites patternCarrier Q pr a d vertex arrows mapImage vertexLabels commonObjects oldRoot oldIndex oldIdeal rootSecond chainSecond codesSecond orderSecond ranksSecond selectionSecond rankBoundSecond labelSetSecond tabSecond rSecond germGroupSecond quotientSecond nonidentitySecond highSecond detectorSecond patternOrderSecond rootIndexSecond rootUSecond projectionSecond repsSecond detectorDomainSecond detectorSitesSecond patternCarrierSecond selectorDomainSecond selectorSecond e vertexSecond aSecond vertexLabelsSecond targetTwo oldRootSecond oldIndexSecond oldIdealSecond commonIdealSecond families
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I G F mul q bound labels E w top K B zero Q labelMap bit one p r x y u v : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingAssignedGraph.lawsSentence rho I G F mul q bound labels E w top K B zero Q labelMap bit one p r x y u v families)) :=
+  ForcingAssignedGraph.laws_kernel_certificate rho I G F mul q bound labels E w top K B zero Q labelMap bit one p r x y u v families
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingOrderedPairName.existenceSentence) :=
+  ForcingOrderedPairName.existence_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingOrderedPairName.uniquenessSentence) :=
+  ForcingOrderedPairName.uniqueness_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingOrderedPairName.nameSentence) :=
+  ForcingOrderedPairName.name_kernel_certificate
+
+example {n : Nat} (f : Source.Formula (n+2)) (t sigma tau name q x y output : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingOrderedPairName.mappingSentence f t sigma tau name q x y output)) :=
+  ForcingOrderedPairName.mapping_kernel_certificate f t sigma tau name q x y output
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingOrderedPairName.hsSentence) :=
+  ForcingOrderedPairName.hs_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductEntries.constructionSentence) :=
+  ForcingProductEntries.construction_kernel_certificate
+
+example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductEntries.hsSentence) :=
+  ForcingProductEntries.hs_kernel_certificate
+
 end PPAC.Migration.Step4Checks

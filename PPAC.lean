@@ -1001,3 +1001,6 @@ import PPAC.Migration.ForcingAssignedIdeal
 import PPAC.Migration.ForcingLabelVertices
 import PPAC.Migration.ForcingAssignedExtension
 import PPAC.Migration.ForcingAssignedCompatibility
+import PPAC.Migration.ForcingAssignedGraph
+import PPAC.Migration.ForcingOrderedPairName
+import PPAC.Migration.ForcingProductEntries

@@ -1102,3 +1102,11 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - Assigned 理想与实际扩张：`ForcingForcedAvailabilityCongruence` 给出实际 EqF 可用性同余；`ForcingAssignedIdeal` 复用已有 stable 并对齐顶点编码；`ForcingLabelVertices` 构造实际标签顶点、标签成员关系与箭头，复用 availability_sub；`ForcingAssignedExtension` 直接组合原 label/mono/restrict 与实际箭头。五个原 nativeZF 端点（其中 ideal 相对化到同一已有内部 L）全量验收：3168 jobs、36809 声明、27 新声明、36782 旧指纹不变、9 命令/5 trust=0、零警告、无新增公理依赖。目标 LabelVertex 的存在有独立构造；仍需 compatible_one/inj、赋值图、共同父输入实例化、具体模型及最终内部 Con。
 
 - Assigned 两条兼容性：`ForcingAssignedCompatibility` 在两个独立原顶点及其实际轨道数据下，调用两侧已完成扩张；沿实际箭头传输原投影和同一局部名。`compatible_one` 用标签顶点唯一性与既有 eq_iff；`compatible_inj` 实际消费两侧 Assigned 理想、可用性同余和编码唯一性，再用 eq_iff。两个同一内部 L 相对化的原 nativeZF 端点全量验收：3169 jobs、36819 声明、10 新声明、36809 旧指纹不变、9 命令/5 trust=0、零警告、无新增公理。显式实际扩张顶点表示已有存在构造；父输入/见证实例化、赋值图、模型及最终内部 Con 仍未完成。
+
+## Assigned graph relation and literal product entries (2026-11-01)
+
+- `ForcingAssignedGraph`: exact actual assignment/literal-label/atomic-equality witnesses and their internal density closure; original nativeZF certificate for condition membership, witness/holds monotonicity, witness introduction, regularity and equality congruence.
+- `ForcingOrderedPairName`: source `OrbitNames.Name.opair` is exactly three existing PairName constructions; original nativeZF certificates for existence, uniqueness, name closure, HS closure and condition mapping.
+- `ForcingProductEntries`: source `TailGraphs.ProductEntries/productEntry` becomes an actual internal Cartesian set and a native constructed set-function, with exact edge characterization and all values satisfying the existing collector FamilyHS.
+- Direct consumer: `TailGraphs.BinaryRelation.graph` -> `AssignedGraphs.assignmentGraph`; this is not the retired leastCode branch.
+- Still unproved here: relation test/movement and collected graph assembly, ordered-pair forced characterization, assignment graph bounds/move/one/inj/total/onto, bijection, final parent instantiation and final internal Con. Full regression passed: 3172 jobs, 36876 declarations, 2727 hashes; all 36819 previous footprints unchanged, 57 new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. Report: verification/assigned-graph-acceptance.json.

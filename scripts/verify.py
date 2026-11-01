@@ -2562,7 +2562,10 @@ def main() -> None:
                                ('forcing_assigned_ideal', 'ForcingAssignedIdeal', 4),
                                ('forcing_label_vertices', 'ForcingLabelVertices', 14),
                                ('forcing_assigned_extension', 'ForcingAssignedExtension', 4),
-                               ('forcing_assigned_compatibility', 'ForcingAssignedCompatibility', 10)):
+                               ('forcing_assigned_compatibility', 'ForcingAssignedCompatibility', 10),
+                               ('forcing_assigned_graph', 'ForcingAssignedGraph', 18),
+                               ('forcing_ordered_pair_name', 'ForcingOrderedPairName', 23),
+                               ('forcing_product_entries', 'ForcingProductEntries', 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
