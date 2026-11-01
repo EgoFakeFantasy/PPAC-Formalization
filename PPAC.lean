@@ -1012,3 +1012,4 @@ import PPAC.Migration.ForcingPairFormula
 import PPAC.Migration.ForcingRelationGraphApplication
 import PPAC.Migration.ForcingRelationGraphFunctions
 import PPAC.Migration.ForcingAssignedRelation
+import PPAC.Migration.ForcingQuotientName

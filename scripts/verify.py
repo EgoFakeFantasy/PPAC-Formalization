@@ -2573,7 +2573,8 @@ def main() -> None:
                                ('forcing_pair_formula', 'ForcingPairFormula', 9),
                                ('forcing_relation_graph_application', 'ForcingRelationGraphApplication', 7),
                                ('forcing_relation_graph_functions', 'ForcingRelationGraphFunctions', 19),
-                               ('forcing_assigned_relation', 'ForcingAssignedRelation', 8)):
+                               ('forcing_assigned_relation', 'ForcingAssignedRelation', 8),
+                               ('forcing_quotient_name', 'ForcingQuotientName', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

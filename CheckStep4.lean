@@ -13988,4 +13988,14 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingAssignedRelation.lawsSentence rho I G F mul q bound labels E w top K B zero Q labelMap bit one families)) :=
   ForcingAssignedRelation.laws_kernel_certificate rho I G F mul q bound labels E w top K B zero Q labelMap bit one families
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F mul c t b labels E : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingQuotientName.constructionSentence rho I K B w mu G F mul c t b labels E)) :=
+  ForcingQuotientName.construction_kernel_certificate rho I K B w mu G F mul c t b labels E
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F mul c t b labels E name g a y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingQuotientName.lawsSentence rho I K B w mu G F mul c t b labels E name g a y p)) :=
+  ForcingQuotientName.laws_kernel_certificate rho I K B w mu G F mul c t b labels E name g a y p
+
 end PPAC.Migration.Step4Checks
