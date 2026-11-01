@@ -14015,4 +14015,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w one mul values c top lo hi ro
       (ForcingLabelSeparation.separationSentence rho I K B w one mul values c top lo hi root j l left right p)) :=
   ForcingLabelSeparation.separation_kernel_certificate rho I K B w one mul values c top lo hi root j l left right p
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records groundValues lo p x y z : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedGraphOne.oneSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records groundValues lo p x y z families))) :=
+  ForcingAssignedGraphOne.one_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records groundValues lo p x y z families
+
 end PPAC.Migration.Step4Checks

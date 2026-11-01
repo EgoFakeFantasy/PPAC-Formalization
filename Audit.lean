@@ -37654,3 +37654,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingLabelSeparation.separationSentence
 #print axioms PPAC.Migration.ForcingLabelSeparation.separation_models
 #print axioms PPAC.Migration.ForcingLabelSeparation.separation_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphOne.holds_one
+#print axioms PPAC.Migration.ForcingAssignedGraphOne.oneSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphOne.one_models
+#print axioms PPAC.Migration.ForcingAssignedGraphOne.one_kernel_certificate

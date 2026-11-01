@@ -1178,3 +1178,12 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `separation_kernel_certificate` is ordinary original nativeZF Derives of the full closed separation sentence. Uncountability is internal not-Small(K,omega); all internally coded injections, labels and conditions are retained.
 - Full regression: 3184 jobs, 37020 declarations, 2739 hashes; all 37013 old footprints unchanged, seven new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/label-separation-acceptance.json.
 - Still stage 8. This is the direct label-separation dependency of AssignedGraphs.graphRelation_one, not completion of graph one/inj/total/onto/bijection. Existing fields_of_record/assigned_iff_at, LabelVertex construction and compatible_one/compatible_inj are the next producers to consume. Final internal Con and original Comparator remain pending.
+
+
+## Actual Assigned graph single-valuedness (2026-11-01)
+
+- `ForcingAssignedGraphOne.holds_one` migrates fixed AssignedGraphs.graphRelation_one:109-132. Both actual dense witnesses and the genuine common condition are constructed; existing actual label separation forces equality of labels.
+- Both whole-orbit records are retrieved from the SAME family. Existing fields_of_record aligns all sixteen projections; existing LabelVertices.construct supplies the common label vertex. Existing compatible_one/selected_reindex and atomic density finish the actual graph conclusion. No abstract compatibility oracle or duplicate foundation.
+- `one_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed sentence. The existing L/Choice bridge discharges helper Choice. Shared final parent-system inputs remain explicit; all internal conditions and names are retained.
+- Full regression: 3185 jobs, 37024 declarations, 2740 hashes; all 37020 old footprints unchanged, four new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-graph-one-acceptance.json.
+- Still stage 8: actual graph inj/total/onto/bijection and final common parents remain incomplete. Next source consumer is graphRelation_inj:136 using existing compatible_inj. Stages 9-11, final internal Con and original Comparator remain pending.
