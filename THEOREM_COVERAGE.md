@@ -1110,3 +1110,10 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `ForcingProductEntries`: source `TailGraphs.ProductEntries/productEntry` becomes an actual internal Cartesian set and a native constructed set-function, with exact edge characterization and all values satisfying the existing collector FamilyHS.
 - Direct consumer: `TailGraphs.BinaryRelation.graph` -> `AssignedGraphs.assignmentGraph`; this is not the retired leastCode branch.
 - Still unproved here: relation test/movement and collected graph assembly, ordered-pair forced characterization, assignment graph bounds/move/one/inj/total/onto, bijection, final parent instantiation and final internal Con. Full regression passed: 3172 jobs, 36876 declarations, 2727 hashes; all 36819 previous footprints unchanged, 57 new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. Report: verification/assigned-graph-acceptance.json.
+
+## Forced ordered pairs and actual raw relation graph (2026-11-01)
+
+- `ForcingOrderedPairForcing`: fixed OrbitNames pair congruence, singleton and cancellation arguments; original nativeZF certificate for forced ordered-pair equality iff both component equalities. Actual pair names, atomic forcing and density regularity are consumed.
+- `ForcingRelationGraph`: fixed TailGraphs relation test retains both forced memberships plus arbitrary object ternary relation. Existing ProductEntries and CollectedName construct the actual raw relation name, prove IsName and the exact literal entry equation. Construction is an original nativeZF derivation, with no assumed graph existence.
+- Remaining consumers: test permutation/HS support, forced graph membership/application, concrete Assigned relation instantiation/bijection, final parent assembly and final internal Con. The raw name certificate does not establish these.
+- Full regression passed: 3174 jobs, 36901 declarations, 2729 hashes; all 36876 previous footprints unchanged, 25 new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. Report: verification/relation-graph-acceptance.json.

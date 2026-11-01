@@ -13933,4 +13933,12 @@ example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductEnt
 example : FirstOrder.Derives nativeZF [] (Translation.sentence ForcingProductEntries.hsSentence) :=
   ForcingProductEntries.hs_kernel_certificate
 
+example {n : Nat} (R : Source.Formula (n+2)) (P t x y x' y' a b p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingOrderedPairForcing.equalitySentence R P t x y x' y' a b p)) :=
+  ForcingOrderedPairForcing.equality_kernel_certificate R P t x y x' y' a b p
+
+example {n : Nat} (R : Source.Formula (n+2)) (Q : Source.Formula (n+3)) (P t X Y : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingRelationGraph.constructionSentence R Q P t X Y)) :=
+  ForcingRelationGraph.construction_kernel_certificate R Q P t X Y
+
 end PPAC.Migration.Step4Checks

@@ -1004,3 +1004,5 @@ import PPAC.Migration.ForcingAssignedCompatibility
 import PPAC.Migration.ForcingAssignedGraph
 import PPAC.Migration.ForcingOrderedPairName
 import PPAC.Migration.ForcingProductEntries
+import PPAC.Migration.ForcingOrderedPairForcing
+import PPAC.Migration.ForcingRelationGraph
