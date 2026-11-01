@@ -37258,3 +37258,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrbitChains.constructionSentence
 #print axioms PPAC.Migration.ForcingOrbitChains.construction_models
 #print axioms PPAC.Migration.ForcingOrbitChains.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingOrbitDensity.inverseCounts_reindex
+#print axioms PPAC.Migration.ForcingOrbitDensity.orbitAssignment_total_at
+#print axioms PPAC.Migration.ForcingOrbitDensity.totalSentence
+#print axioms PPAC.Migration.ForcingOrbitDensity.total_models
+#print axioms PPAC.Migration.ForcingOrbitDensity.total_kernel_certificate
+#print axioms PPAC.Migration.ForcingOrbitOnto.orbitAssignment_onto_at
+#print axioms PPAC.Migration.ForcingOrbitOnto.ontoSentence
+#print axioms PPAC.Migration.ForcingOrbitOnto.onto_models
+#print axioms PPAC.Migration.ForcingOrbitOnto.onto_kernel_certificate

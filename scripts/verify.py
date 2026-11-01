@@ -2539,7 +2539,9 @@ def main() -> None:
                                ('forcing_orbit_equality', 'ForcingOrbitEquality', 5),
                                ('forcing_orbit_quotient', 'ForcingOrbitQuotient', 31),
                                ('forcing_orbit_representatives', 'ForcingOrbitRepresentatives', 9),
-                               ('forcing_orbit_chains', 'ForcingOrbitChains', 8)):
+                               ('forcing_orbit_chains', 'ForcingOrbitChains', 8),
+                               ('forcing_orbit_density', 'ForcingOrbitDensity', 5),
+                               ('forcing_orbit_onto', 'ForcingOrbitOnto', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
