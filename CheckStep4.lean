@@ -13947,4 +13947,16 @@ example {k : Nat} (Q : Source.Formula (k+3)) (rho : Fin 7 → Fin k)
       (ForcingRelationGraphSupport.constructionSentence Q rho I K B w G F H mul t X Y)) :=
   ForcingRelationGraphSupport.construction_kernel_certificate Q rho I K B w G F H mul t X Y
 
+example {n : Nat} (R A : Source.Formula (n+2)) (Q : Source.Formula (n+3))
+    (P G F t X Y name nu p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationGraphForcing.membershipSentence R A Q P G F t X Y name nu p)) :=
+  ForcingRelationGraphForcing.membership_kernel_certificate R A Q P G F t X Y name nu p
+
+example {n : Nat} (R A : Source.Formula (n+2)) (Q : Source.Formula (n+3))
+    (P G F t X Y name x y a p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationGraphForcing.pairMembershipSentence R A Q P G F t X Y name x y a p)) :=
+  ForcingRelationGraphForcing.pairMembership_kernel_certificate R A Q P G F t X Y name x y a p
+
 end PPAC.Migration.Step4Checks

@@ -1125,3 +1125,12 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - Existing `ForcingCollectedHS.collect_HS/fixed` constructs the actual relation graph with hereditary symmetry and the same subgroup support. The fully closed object sentence has an original `FirstOrder.Derives nativeZF` certificate.
 - Full acceptance: 3175 jobs, 36915 declarations, 2730 hashes; all 36901 old footprints unchanged, 14 new declarations, nine successful commands including five trust=0 checks, zero warnings, no new axiom dependencies; 75 source hashes and three clean pins verified.
 - Still stage 8: concrete Assigned relation movement and parent instantiation, forced graph membership/application, assignment graph bijection, final common parents, stages 9-11 and final internal Con remain unfinished. Report: verification/relation-support-acceptance.json.
+
+
+## Forced relation graph membership with HS witnesses (2026-11-01)
+
+- `ForcingRelationGraphForcing.mem_graph` directly migrates fixed TailGraphs.BinaryRelation.mem_graph: forced membership in the actual collected graph iff dense witnesses consist of HS components, their bounded memberships, the actual relation, and forced equality with the literal ordered-pair name. Both directions use the existing raw edge equation, actual parent entries and atomic/pair congruence.
+- `pair_mem_graph` migrates the canonical-pair membership core of source app_graph using relation regularity and ordered-pair forced equality. Actual pair membership iff both bounded memberships plus the relation.
+- Both statements have fully closed original nativeZF certificates; the monotone/congruent/regular assumptions are explicit object formulas with HS guards, not external assumed graph existence.
+- Full regression: 3176 jobs, 36936 declarations, 2731 hashes; all 36915 old footprints unchanged, 21 new declarations, nine commands including five trust=0 runs exited 0, zero warnings, no new axiom dependencies, 75 source hashes and three clean pins verified. Report: verification/graph-forcing-acceptance.json.
+- Still pending: source App formula to canonical pair membership via OrbitNames.forces_unorderedPair/forces_orderedPair/app_iff_mem_opair; graph function/surjection/injection; concrete Assigned instance/bijection and common parents; stages 9-11 and final internal Con. Existing eq_of_same_members, force_all/imp/disj/ex, ForcingSound.rename, mem_pair and ProductHSPair.pair_hs are the next reusable producers.
