@@ -37191,3 +37191,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrbitCongruence.congrSentence
 #print axioms PPAC.Migration.ForcingOrbitCongruence.congr_models
 #print axioms PPAC.Migration.ForcingOrbitCongruence.congr_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitDescent.orbitAssignment_descend
+#print axioms PPAC.Migration.ForcingOrbitDescent.descentSentence
+#print axioms PPAC.Migration.ForcingOrbitDescent.descent_models
+#print axioms PPAC.Migration.ForcingOrbitDescent.descent_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitStable.orbitAssignment_stable
+#print axioms PPAC.Migration.ForcingOrbitStable.stableSentence
+#print axioms PPAC.Migration.ForcingOrbitStable.stable_models
+#print axioms PPAC.Migration.ForcingOrbitStable.stable_kernel_certificate

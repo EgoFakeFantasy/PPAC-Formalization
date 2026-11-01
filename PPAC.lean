@@ -972,3 +972,5 @@ import PPAC.Migration.ForcingGermCorrectedOnto
 import PPAC.Migration.ForcingOrbitAssignment
 import PPAC.Migration.ForcingOrbitPermutation
 import PPAC.Migration.ForcingOrbitCongruence
+import PPAC.Migration.ForcingOrbitDescent
+import PPAC.Migration.ForcingOrbitStable

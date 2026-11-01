@@ -2533,7 +2533,9 @@ def main() -> None:
                                ('forcing_germ_corrected_onto', 'ForcingGermCorrectedOnto', 5),
                                ('forcing_orbit_assignment', 'ForcingOrbitAssignment', 30),
                                ('forcing_orbit_permutation', 'ForcingOrbitPermutation', 4),
-                               ('forcing_orbit_congruence', 'ForcingOrbitCongruence', 4)):
+                               ('forcing_orbit_congruence', 'ForcingOrbitCongruence', 4),
+                               ('forcing_orbit_descent', 'ForcingOrbitDescent', 4),
+                               ('forcing_orbit_stable', 'ForcingOrbitStable', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
