@@ -1117,3 +1117,11 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `ForcingRelationGraph`: fixed TailGraphs relation test retains both forced memberships plus arbitrary object ternary relation. Existing ProductEntries and CollectedName construct the actual raw relation name, prove IsName and the exact literal entry equation. Construction is an original nativeZF derivation, with no assumed graph existence.
 - Remaining consumers: test permutation/HS support, forced graph membership/application, concrete Assigned relation instantiation/bijection, final parent assembly and final internal Con. The raw name certificate does not establish these.
 - Full regression passed: 3174 jobs, 36901 declarations, 2729 hashes; all 36876 previous footprints unchanged, 25 new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. Report: verification/relation-graph-acceptance.json.
+
+
+## Relation graph hereditary symmetry and support (2026-11-01)
+
+- `ForcingRelationGraphSupport` directly migrates fixed `TailGraphs.BinaryRelation.test_permute/graph/graph_fixed`. Parent HS and fixedness give actual mapped entries; existing forcing symmetry transports both membership tests; the source HS-guarded relation movement transports the relation test. The collector permutation premise is derived.
+- Existing `ForcingCollectedHS.collect_HS/fixed` constructs the actual relation graph with hereditary symmetry and the same subgroup support. The fully closed object sentence has an original `FirstOrder.Derives nativeZF` certificate.
+- Full acceptance: 3175 jobs, 36915 declarations, 2730 hashes; all 36901 old footprints unchanged, 14 new declarations, nine successful commands including five trust=0 checks, zero warnings, no new axiom dependencies; 75 source hashes and three clean pins verified.
+- Still stage 8: concrete Assigned relation movement and parent instantiation, forced graph membership/application, assignment graph bijection, final common parents, stages 9-11 and final internal Con remain unfinished. Report: verification/relation-support-acceptance.json.

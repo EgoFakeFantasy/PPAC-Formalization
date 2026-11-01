@@ -37533,3 +37533,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationGraph.constructionSentence
 #print axioms PPAC.Migration.ForcingRelationGraph.construction_models
 #print axioms PPAC.Migration.ForcingRelationGraph.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.Move
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.Moves
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.relation
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.relation_semantics
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.move
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.move_semantics
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.moves
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.moves_semantics
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.move_entries
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.permutes
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.construct
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.constructionSentence
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.construction_models
+#print axioms PPAC.Migration.ForcingRelationGraphSupport.construction_kernel_certificate

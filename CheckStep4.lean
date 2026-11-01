@@ -13941,4 +13941,10 @@ example {n : Nat} (R : Source.Formula (n+2)) (Q : Source.Formula (n+3)) (P t X Y
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingRelationGraph.constructionSentence R Q P t X Y)) :=
   ForcingRelationGraph.construction_kernel_certificate R Q P t X Y
 
+example {k : Nat} (Q : Source.Formula (k+3)) (rho : Fin 7 → Fin k)
+    (I K B w G F H mul t X Y : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationGraphSupport.constructionSentence Q rho I K B w G F H mul t X Y)) :=
+  ForcingRelationGraphSupport.construction_kernel_certificate Q rho I K B w G F H mul t X Y
+
 end PPAC.Migration.Step4Checks
