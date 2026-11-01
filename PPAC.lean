@@ -983,3 +983,6 @@ import PPAC.Migration.ForcingOrbitOnto
 import PPAC.Migration.ForcingOrbitIndex
 import PPAC.Migration.ForcingOrbitCounts
 import PPAC.Migration.ForcingOrbitRepresentativeDensity
+import PPAC.Migration.ForcingAssigned
+import PPAC.Migration.ForcingAssignedEquality
+import PPAC.Migration.ForcingAssignedDensity
