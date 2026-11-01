@@ -37664,3 +37664,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedGraphInj.injSentence
 #print axioms PPAC.Migration.ForcingAssignedGraphInj.inj_models
 #print axioms PPAC.Migration.ForcingAssignedGraphInj.inj_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.AllCounts
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.allCounts
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.allCounts_freeClosed
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.allCounts_semantics
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.holds_total
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.totalSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.total_models
+#print axioms PPAC.Migration.ForcingAssignedGraphTotal.total_kernel_certificate

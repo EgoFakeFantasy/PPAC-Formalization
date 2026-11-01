@@ -14025,4 +14025,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
       (ForcingAssignedGraphInj.injSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records p x y z families))) :=
   ForcingAssignedGraphInj.inj_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records p x y z families
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 p x : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedGraphTotal.totalSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 p x families))) :=
+  ForcingAssignedGraphTotal.total_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 p x families
+
 end PPAC.Migration.Step4Checks
