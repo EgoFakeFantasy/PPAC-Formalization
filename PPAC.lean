@@ -1014,3 +1014,4 @@ import PPAC.Migration.ForcingRelationGraphFunctions
 import PPAC.Migration.ForcingAssignedRelation
 import PPAC.Migration.ForcingQuotientName
 import PPAC.Migration.ForcingAssignedGraphBounds
+import PPAC.Migration.ForcingAssignedGraphMove

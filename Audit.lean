@@ -37640,3 +37640,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedGraphBounds.boundsSentence
 #print axioms PPAC.Migration.ForcingAssignedGraphBounds.bounds_models
 #print axioms PPAC.Migration.ForcingAssignedGraphBounds.bounds_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphMove.witness_move
+#print axioms PPAC.Migration.ForcingAssignedGraphMove.holds_move
+#print axioms PPAC.Migration.ForcingAssignedGraphMove.moveSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphMove.move_models
+#print axioms PPAC.Migration.ForcingAssignedGraphMove.move_kernel_certificate
