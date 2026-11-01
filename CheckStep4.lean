@@ -13770,4 +13770,13 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
       (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingOrbitEquality.equalitySentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order group r rootIndex rootU ranks selection rankBound labelSet tab d vertex tau label diagrams objImage objects maps germGroup quotient nonidentity high detector patternOrder selectorDomain selector localRoot index U otherLabel sigma projection reps detectorDomain detectorSites patternCarrier))) :=
   ForcingOrbitEquality.equality_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero root vertices chain names codes order group r rootIndex rootU ranks selection rankBound labelSet tab d vertex tau label diagrams objImage objects maps germGroup quotient nonidentity high detector patternOrder selectorDomain selector localRoot index U otherLabel sigma projection reps detectorDomain detectorSites patternCarrier
 
+example {k : Nat} (D I mul one q : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrbitQuotient.constructionSentence D I mul one q)) :=
+  ForcingOrbitQuotient.construction_kernel_certificate D I mul one q
+
+example {k : Nat} (D I mul one q V Q pr : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingOrbitRepresentatives.representativeSentence D I mul one q V Q pr))) :=
+  ForcingOrbitRepresentatives.representative_kernel_certificate D I mul one q V Q pr
+
 end PPAC.Migration.Step4Checks

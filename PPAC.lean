@@ -975,3 +975,5 @@ import PPAC.Migration.ForcingOrbitCongruence
 import PPAC.Migration.ForcingOrbitDescent
 import PPAC.Migration.ForcingOrbitStable
 import PPAC.Migration.ForcingOrbitEquality
+import PPAC.Migration.ForcingOrbitQuotient
+import PPAC.Migration.ForcingOrbitRepresentatives
