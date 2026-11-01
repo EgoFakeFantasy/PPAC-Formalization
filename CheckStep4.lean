@@ -13779,4 +13779,10 @@ example {k : Nat} (D I mul one q V Q pr : Fin k) :
       (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative (ForcingOrbitRepresentatives.representativeSentence D I mul one q V Q pr))) :=
   ForcingOrbitRepresentatives.representative_kernel_certificate D I mul one q V Q pr
 
+example {k : Nat} (w rationals reals top D I mul one mark H cells q zero V Q reps : Fin k) :
+    FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+        (ForcingOrbitChains.constructionSentence w rationals reals top D I mul one mark H cells q zero V Q reps))) :=
+  ForcingOrbitChains.construction_kernel_certificate w rationals reals top D I mul one mark H cells q zero V Q reps
+
 end PPAC.Migration.Step4Checks

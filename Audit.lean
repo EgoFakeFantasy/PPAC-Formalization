@@ -37249,3 +37249,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrbitRepresentatives.representativeSentence
 #print axioms PPAC.Migration.ForcingOrbitRepresentatives.representative_models
 #print axioms PPAC.Migration.ForcingOrbitRepresentatives.representative_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitChains.Family
+#print axioms PPAC.Migration.ForcingOrbitChains.family
+#print axioms PPAC.Migration.ForcingOrbitChains.family_freeClosed
+#print axioms PPAC.Migration.ForcingOrbitChains.family_semantics
+#print axioms PPAC.Migration.ForcingOrbitChains.exists_family
+#print axioms PPAC.Migration.ForcingOrbitChains.constructionSentence
+#print axioms PPAC.Migration.ForcingOrbitChains.construction_models
+#print axioms PPAC.Migration.ForcingOrbitChains.construction_kernel_certificate
