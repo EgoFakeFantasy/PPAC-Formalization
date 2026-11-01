@@ -2557,7 +2557,11 @@ def main() -> None:
                                ('forcing_orbit_parameter_family', 'ForcingOrbitParameterFamily', 12),
                                ('forcing_assigned_parameter_fields', 'ForcingAssignedParameterFields', 19),
                                ('forcing_assigned_parameters', 'ForcingAssignedParameters', 12),
-                               ('forcing_assigned_parameter_construction', 'ForcingAssignedParameterConstruction', 4)):
+                               ('forcing_assigned_parameter_construction', 'ForcingAssignedParameterConstruction', 4),
+                               ('forcing_forced_availability_congruence', 'ForcingForcedAvailabilityCongruence', 5),
+                               ('forcing_assigned_ideal', 'ForcingAssignedIdeal', 4),
+                               ('forcing_label_vertices', 'ForcingLabelVertices', 14),
+                               ('forcing_assigned_extension', 'ForcingAssignedExtension', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

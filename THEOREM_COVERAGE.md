@@ -1098,3 +1098,5 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - 全轨道商参数统一：`ForcingOrbitParameterRecord` 构造同一根/链的完整 27 字段内部记录；`ForcingOrbitParameterFamily` 消费实际记录构造、原生 Collection 与既有 uniformize_formula_l，生成整个轨道商上的实际集合函数。两个原 nativeZF 内部 L 相对化存在性端点通过全量验收：3161 jobs、36747 声明、9 命令/5 trust=0、零警告、无新增公理。Assigned 的 16 字段投影、实际父输入统一、赋值图/模型及最终内部 Con 仍未完成。
 
 - 完整 Assigned 辅助函数族：`ForcingAssignedParameterFields` 从同一实际记录取得唯一字段并复用原生函数图；`ForcingAssignedParameters` 构造十四个新投影并原样保留 reps/chains，给出全部 16 函数及 Functions/Fields/Germs；普通 nativeZF 装配端点已验收。`ForcingAssignedParameterConstruction` 消费实际全轨道商记录构造，不假设记录族存在；在同一内部 L 的原 nativeZF 端点同时给出记录族、全部投影与 Germs。全量 3164 jobs、36782 声明、9 命令/5 trust=0、零警告、无新增公理。父输入实例化、源剩余 Assigned 兼容性、赋值图/模型及最终内部 Con 仍未完成。
+
+- Assigned 理想与实际扩张：`ForcingForcedAvailabilityCongruence` 给出实际 EqF 可用性同余；`ForcingAssignedIdeal` 复用已有 stable 并对齐顶点编码；`ForcingLabelVertices` 构造实际标签顶点、标签成员关系与箭头，复用 availability_sub；`ForcingAssignedExtension` 直接组合原 label/mono/restrict 与实际箭头。五个原 nativeZF 端点（其中 ideal 相对化到同一已有内部 L）全量验收：3168 jobs、36809 声明、27 新声明、36782 旧指纹不变、9 命令/5 trust=0、零警告、无新增公理依赖。目标 LabelVertex 的存在有独立构造；仍需 compatible_one/inj、赋值图、共同父输入实例化、具体模型及最终内部 Con。
