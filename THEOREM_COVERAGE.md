@@ -1096,3 +1096,5 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - 实际轨道参数：`ForcingOrbitCodeParameters.construct` 消费现成代码载体/良序/CodeRanks/RawRank/Table 构造，给出九个实际内部见证和完整 Data；`ConstructionSelectorPresentation.construction_in_presentation` 消费既有具体选择器并对齐同一 high/bits/coords/space，保留完整 Result。两个同一内部 L 的原 nativeZF 存在证书已验收；12 新声明无新增公理依赖。完整轨道商上的 16 函数族、具体赋值图与最终内部 Con 仍未完成。
 
 - 全轨道商参数统一：`ForcingOrbitParameterRecord` 构造同一根/链的完整 27 字段内部记录；`ForcingOrbitParameterFamily` 消费实际记录构造、原生 Collection 与既有 uniformize_formula_l，生成整个轨道商上的实际集合函数。两个原 nativeZF 内部 L 相对化存在性端点通过全量验收：3161 jobs、36747 声明、9 命令/5 trust=0、零警告、无新增公理。Assigned 的 16 字段投影、实际父输入统一、赋值图/模型及最终内部 Con 仍未完成。
+
+- 完整 Assigned 辅助函数族：`ForcingAssignedParameterFields` 从同一实际记录取得唯一字段并复用原生函数图；`ForcingAssignedParameters` 构造十四个新投影并原样保留 reps/chains，给出全部 16 函数及 Functions/Fields/Germs；普通 nativeZF 装配端点已验收。`ForcingAssignedParameterConstruction` 消费实际全轨道商记录构造，不假设记录族存在；在同一内部 L 的原 nativeZF 端点同时给出记录族、全部投影与 Germs。全量 3164 jobs、36782 声明、9 命令/5 trust=0、零警告、无新增公理。父输入实例化、源剩余 Assigned 兼容性、赋值图/模型及最终内部 Con 仍未完成。
