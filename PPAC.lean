@@ -1019,3 +1019,4 @@ import PPAC.Migration.ForcingLabelSeparation
 import PPAC.Migration.ForcingAssignedGraphOne
 import PPAC.Migration.ForcingAssignedGraphInj
 import PPAC.Migration.ForcingAssignedGraphTotal
+import PPAC.Migration.ConstructionIdealStability

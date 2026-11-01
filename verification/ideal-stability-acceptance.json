@@ -1,0 +1,202 @@
+{
+  "verified_at": "2026-11-01T19:29:27.685958+11:00",
+  "stage": 8,
+  "base_commit": "19369e9959186978e1e2d9b0c9e3d68d904325df",
+  "adapters": [
+    "PPAC/Migration/ConstructionIdealStability.lean"
+  ],
+  "kernel_endpoints": [
+    "PPAC.Migration.ConstructionIdealStability.construction_kernel_certificate"
+  ],
+  "background": "Original pure-set nativeZF and original FirstOrder.Derives of the SAME internal L-relative constructionSentence. Existing L/ZFC bridge discharges helper Choice; no object Choice is added to ordinary nativeZF. All actual internal Cohen conditions, cone ideals and omega indices remain quantified.",
+  "source_consumer_chain": [
+    "GraphFusion.HeightCost.dense_stable_ideal:420-465",
+    "GraphFusion.forcedAvailability_dense_stable:605-613",
+    "AssignedGraphs.graphRelation_onto:236"
+  ],
+  "completed": [
+    "Internal source height-approximation recursion on the actual condition carrier; future possible ideal elements and their exact height supremum are formed by Separation and existing supremum_exists.",
+    "Existing approximate and indexed_choice_l build an actual internal omega sequence; existing countably_closed supplies one common extension.",
+    "Existing positive small_cost_step, conditional joins and UniformMargins exclude every still-missing future element. Equality holds at every stronger internal condition.",
+    "Family is an explicit object formula for a set graph of monotone cone ideals, with semantics and FreeClosed. The closed universally quantified stability theorem has an original nativeZF kernel certificate relative to the SAME internal L."
+  ],
+  "dense_stable_ideal_proved": true,
+  "actual_forced_availability_stability_instantiated": false,
+  "actual_graph_one_proved": true,
+  "actual_graph_inj_proved": true,
+  "actual_graph_total_proved": true,
+  "actual_graph_onto_proved": false,
+  "assignment_graph_bijection_proved": false,
+  "actual_final_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Instantiate the family with actual forcedAvailability; its carrier formula, principal-filter eligible-system constructors and carrier_ideal already exist. The adapter is pending, not the underlying ideal mathematics.",
+    "Actual graph onto/bijection, concrete quotient bijection and final common parents, including AllCounts and concrete cardinal/complement inputs.",
+    "Original stages 9-11, all internal/nonstandard proof-code Con, and original Comparator."
+  ],
+  "next_existing_reuse": [
+    "ForcingRelationClass.actual_labelClass already gives the actual normalized local class and forces_isClass at EVERY actual condition; do not list this as missing.",
+    "ForcingForcedAvailability.exists_carrier/actual_available_iff/exists_fiber_principal; ForcingEligibleFamily.exists_family_over; ForcingEligibleMapFamily.exists_family_at_filter; ForcingEligibleSystem.system_of_families; ForcingSystemAvailability.carrier_ideal.",
+    "ForcingPrincipalFilter.eqF_mono supplies actual availability monotonicity; existing native functional-image/set-function constructors form the unique family graph.",
+    "Then existing assigned_onto, AllCounts and actual quotient membership close the source graph onto consumer."
+  ],
+  "build_jobs": 3188,
+  "audited_declarations": 37044,
+  "old_footprints_unchanged": 37036,
+  "new_declarations": 8,
+  "file_hashes": 2743,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "resolved_verification_failure": "First full run loaded CheckStep4 before its appended endpoint example was moved into the existing namespace. The example was corrected, the full nine-command verification rerun, and all commands exited 0. No mathematical premise or proof was weakened.",
+  "cleanup": {
+    "unused_workspace_processes_found": 0,
+    "logical_bytes_deleted": 13975703.0,
+    "free_bytes_before": 19318255616,
+    "removed_files": [
+      {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\ideal-stability-check.tmp.log",
+        "path": "verification/ideal-stability-check.tmp.log",
+        "bytes": 0
+      },
+      {
+        "sha256": "8df11602f2d0c8fc6ba36d9ff3565068c19a4ae4ba8f67e2d885dbf6618312c3",
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\ideal-stability-baseline.tmp.json",
+        "path": "verification/ideal-stability-baseline.tmp.json",
+        "bytes": 13961763
+      },
+      {
+        "sha256": "8f3f8ca8bdab6730c8ee136552bc89dc35d9b5a5747c1dd60ecb42f4c271cf78",
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\IdealStabilityAudit.tmp.lean",
+        "path": "verification/IdealStabilityAudit.tmp.lean",
+        "bytes": 638
+      },
+      {
+        "sha256": "97584d703891b28b01477e15c2de98283352baeeafb27ce6b186f3563080012e",
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\ideal-stability-build.tmp.log",
+        "path": "verification/ideal-stability-build.tmp.log",
+        "bytes": 114
+      },
+      {
+        "sha256": "8c28bd4f9296bc949f15308f0bd88b2a2d23958c5972447136c7219e6858fdd5",
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\ideal-stability-audit.tmp.log",
+        "path": "verification/ideal-stability-audit.tmp.log",
+        "bytes": 13188
+      }
+    ],
+    "measured_free_space_gain": 13983744,
+    "free_bytes_after": 19332239360,
+    "lean_lake_processes_before": 0
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3188,
+    "all_summary_hashes_verified": true
+  }
+}

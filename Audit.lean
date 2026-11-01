@@ -37673,3 +37673,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedGraphTotal.totalSentence
 #print axioms PPAC.Migration.ForcingAssignedGraphTotal.total_models
 #print axioms PPAC.Migration.ForcingAssignedGraphTotal.total_kernel_certificate
+
+#print axioms PPAC.Migration.ConstructionIdealStability.Family
+#print axioms PPAC.Migration.ConstructionIdealStability.family
+#print axioms PPAC.Migration.ConstructionIdealStability.family_freeClosed
+#print axioms PPAC.Migration.ConstructionIdealStability.family_semantics
+#print axioms PPAC.Migration.ConstructionIdealStability.dense_stable_ideal
+#print axioms PPAC.Migration.ConstructionIdealStability.constructionSentence
+#print axioms PPAC.Migration.ConstructionIdealStability.construction_models
+#print axioms PPAC.Migration.ConstructionIdealStability.construction_kernel_certificate

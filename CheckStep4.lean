@@ -14030,4 +14030,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa 
       (ForcingAssignedGraphTotal.totalSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 p x families))) :=
   ForcingAssignedGraphTotal.total_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 p x families
 
+example {m : Nat} (S w Q R top D mul e mark H C a F p : Fin m) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ConstructionIdealStability.constructionSentence S w Q R top D mul e mark H C a F p))) :=
+  ConstructionIdealStability.construction_kernel_certificate S w Q R top D mul e mark H C a F p
+
 end PPAC.Migration.Step4Checks
