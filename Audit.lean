@@ -37659,3 +37659,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedGraphOne.oneSentence
 #print axioms PPAC.Migration.ForcingAssignedGraphOne.one_models
 #print axioms PPAC.Migration.ForcingAssignedGraphOne.one_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphInj.holds_inj
+#print axioms PPAC.Migration.ForcingAssignedGraphInj.injSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphInj.inj_models
+#print axioms PPAC.Migration.ForcingAssignedGraphInj.inj_kernel_certificate

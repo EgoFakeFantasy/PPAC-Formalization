@@ -1187,3 +1187,12 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `one_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed sentence. The existing L/Choice bridge discharges helper Choice. Shared final parent-system inputs remain explicit; all internal conditions and names are retained.
 - Full regression: 3185 jobs, 37024 declarations, 2740 hashes; all 37020 old footprints unchanged, four new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-graph-one-acceptance.json.
 - Still stage 8: actual graph inj/total/onto/bijection and final common parents remain incomplete. Next source consumer is graphRelation_inj:136 using existing compatible_inj. Stages 9-11, final internal Con and original Comparator remain pending.
+
+
+## Actual Assigned graph injectivity (2026-11-01)
+
+- `ForcingAssignedGraphInj.holds_inj` migrates fixed AssignedGraphs.graphRelation_inj:136-154. Both actual dense witnesses yield one genuine common condition and forced output equality.
+- The SAME whole-orbit family provides both records and all sixteen field projections. Existing LabelVertices.construct supplies both actual vertices; original local-name entries and equality feed existing compatible_inj, ideal comparison and assigned_eq_iff. Label-name uniqueness and atomic density finish actual input equality.
+- `inj_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed sentence, with helper Choice discharged by the existing bridge. No uncountability or injective ground-coding hypothesis is added; all internal conditions/names and the weaker source scope remain. Shared final global parents remain explicit.
+- Full regression: 3186 jobs, 37028 declarations, 2741 hashes; all 37024 old footprints unchanged, four new declarations, nine commands including five trust=0 runs exited 0, zero warnings, no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-graph-inj-acceptance.json.
+- Still stage 8: graph total/onto/bijection and final parents remain incomplete. Next consume existing assigned_total/assigned_onto, RootCounts, diagram coverage and actual membership/graph witnesses. Stages 9-11, final internal Con and original Comparator remain pending.
