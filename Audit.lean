@@ -37144,3 +37144,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGermCorrectedDensity.totalSentence
 #print axioms PPAC.Migration.ForcingGermCorrectedDensity.total_models
 #print axioms PPAC.Migration.ForcingGermCorrectedDensity.total_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingGermCorrectedOnto.works_reindex
+#print axioms PPAC.Migration.ForcingGermCorrectedOnto.corrected_onto
+#print axioms PPAC.Migration.ForcingGermCorrectedOnto.ontoSentence
+#print axioms PPAC.Migration.ForcingGermCorrectedOnto.onto_models
+#print axioms PPAC.Migration.ForcingGermCorrectedOnto.onto_kernel_certificate
