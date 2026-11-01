@@ -37441,3 +37441,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedExtension.extensionSentence
 #print axioms PPAC.Migration.ForcingAssignedExtension.extension_models
 #print axioms PPAC.Migration.ForcingAssignedExtension.extension_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.projection_at_arrow
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.entry_at_arrow
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.compatible_one
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.oneSentence
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.one_models
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.one_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.compatible_inj
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.injSentence
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.inj_models
+#print axioms PPAC.Migration.ForcingAssignedCompatibility.inj_kernel_certificate

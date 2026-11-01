@@ -2561,7 +2561,8 @@ def main() -> None:
                                ('forcing_forced_availability_congruence', 'ForcingForcedAvailabilityCongruence', 5),
                                ('forcing_assigned_ideal', 'ForcingAssignedIdeal', 4),
                                ('forcing_label_vertices', 'ForcingLabelVertices', 14),
-                               ('forcing_assigned_extension', 'ForcingAssignedExtension', 4)):
+                               ('forcing_assigned_extension', 'ForcingAssignedExtension', 4),
+                               ('forcing_assigned_compatibility', 'ForcingAssignedCompatibility', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

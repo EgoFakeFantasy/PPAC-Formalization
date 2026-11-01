@@ -1000,3 +1000,4 @@ import PPAC.Migration.ForcingForcedAvailabilityCongruence
 import PPAC.Migration.ForcingAssignedIdeal
 import PPAC.Migration.ForcingLabelVertices
 import PPAC.Migration.ForcingAssignedExtension
+import PPAC.Migration.ForcingAssignedCompatibility
