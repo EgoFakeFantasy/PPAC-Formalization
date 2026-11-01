@@ -37682,3 +37682,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ConstructionIdealStability.constructionSentence
 #print axioms PPAC.Migration.ConstructionIdealStability.construction_models
 #print axioms PPAC.Migration.ConstructionIdealStability.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingForcedAvailabilityStable.class_dense_stable
+#print axioms PPAC.Migration.ForcingForcedAvailabilityStable.class_dense_vertex
+#print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stabilitySentence
+#print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stability_models
+#print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stability_kernel_certificate

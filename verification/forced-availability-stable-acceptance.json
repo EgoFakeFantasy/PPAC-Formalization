@@ -1,0 +1,201 @@
+{
+  "verified_at": "2026-11-01T19:42:32.855178+11:00",
+  "stage": 8,
+  "base_commit": "ed4781f014f6aac369ba7460910d1863a78f2551",
+  "adapters": [
+    "PPAC/Migration/ForcingForcedAvailabilityStable.lean"
+  ],
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingForcedAvailabilityStable.stability_kernel_certificate"
+  ],
+  "background": "Original pure-set nativeZF and original FirstOrder.Derives of the SAME internal L-relative stabilitySentence. Existing L/ZFC bridge discharges helper Choice; no object Choice is added to ordinary nativeZF. All internal Cohen conditions remain quantified.",
+  "source_consumer_chain": [
+    "GraphFusion.forcedAvailability and forcedAvailability_mono",
+    "GraphFusion.forcedAvailability_dense_stable:605-613",
+    "AssignedGraphs.graphRelation_onto:236-240 -> assigned_onto"
+  ],
+  "completed": [
+    "Constructed the literal availability graph over ALL internal Cohen conditions by existing Separation and unique functional-image/set-function constructors. No supplied graph or host choice of ideals.",
+    "For each condition, existing principal-filter eligible objects/maps, system_of_families, exists_fiber_principal and carrier_ideal prove cone ideality. No abstract ideal oracle. Existing eqF_mono proves actual monotonicity.",
+    "Existing source dense_stable_ideal gives one extension and the SAME availability ideal at every stronger condition for the original unchanged local-class name.",
+    "Existing code_total builds the actual vertex over the SAME root/index/ideal. The original local name yields Entry and StableAt, ready for existing assigned_onto. The closed object endpoint includes the real vertex and both interfaces."
+  ],
+  "scope_boundary": "Specialized to the actual normalized local-class consumer of graphRelation_onto. The local-name and isClass-at-every-condition premises are the existing actual_labelClass result. This does not claim the source helper for arbitrary unrelated local names. Shared construction/height/global parents remain explicit.",
+  "actual_local_class_availability_stability_instantiated": true,
+  "actual_stable_vertex_constructed": true,
+  "actual_graph_one_proved": true,
+  "actual_graph_inj_proved": true,
+  "actual_graph_total_proved": true,
+  "actual_graph_onto_proved": false,
+  "assignment_graph_bijection_proved": false,
+  "actual_final_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Wire the actual quotient-membership local class and this stable vertex into the existing whole-orbit record/assigned_onto proof; then close actual GraphHolds onto and assignmentGraph_bijection.",
+    "Concrete quotient bijection and final common parents, including source AllCounts and concrete cardinal/complement data.",
+    "Original stages 9-11, all internal/nonstandard proof-code Con, and original Comparator."
+  ],
+  "next_existing_reuse": [
+    "ForcingQuotientName.mem_quotient and ForcingRelationClassMove.family_semantics give the actual label class; actual_labelClass and congr align the normalized local class.",
+    "ConstructionDiagramCoverage.extend_through, ForcingForcedAvailabilityStable.class_dense_vertex and existing StableAt reindexing provide actual conditions/vertices.",
+    "Reuse the complete record/fields_of_record, RootCounts reindexing and AllCounts assembly already used by ForcingAssignedGraphTotal. assigned_onto additionally consumes the existing full Candidates contract for names, whose producer is ForcingPowerName.exists_candidates.",
+    "ForcingAssignedDensity.assigned_onto, actual labels, graph Witness and witness_holds close the fixed source consumer; no new name, ideal, quotient or forcing backend."
+  ],
+  "build_jobs": 3189,
+  "audited_declarations": 37049,
+  "old_footprints_unchanged": 37044,
+  "new_declarations": 5,
+  "file_hashes": 2744,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup": {
+    "logical_bytes_deleted": 13992816.0,
+    "lean_lake_processes_before": 0,
+    "measured_free_space_gain": 13996032,
+    "removed_files": [
+      {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "path": "verification/forced-availability-stable-check.tmp.log",
+        "bytes": 0,
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\forced-availability-stable-check.tmp.log"
+      },
+      {
+        "sha256": "f4295416c2f6beae03bc591bed6083ba852fea9f890761b5bbd9fa9c6ee7383b",
+        "path": "verification/forced-availability-stable-baseline.tmp.json",
+        "bytes": 13975853,
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\forced-availability-stable-baseline.tmp.json"
+      },
+      {
+        "sha256": "45af596d20ab29fd1ac01020d9a2c84579540a27dd64611e3bc90bfdb8243326",
+        "path": "verification/ForcedAvailabilityStableAudit.tmp.lean",
+        "bytes": 461,
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\ForcedAvailabilityStableAudit.tmp.lean"
+      },
+      {
+        "sha256": "4fe31ff518c30c9c517dcb7608915b156a86db9f8de865f66fa55334b3455fbd",
+        "path": "verification/forced-availability-stable-build.tmp.log",
+        "bytes": 119,
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\forced-availability-stable-build.tmp.log"
+      },
+      {
+        "sha256": "f2bf7090a084268ceaa2a739062aa736f29a2cbe06ad5fddd659ef54d3c95807",
+        "path": "verification/forced-availability-stable-audit.tmp.log",
+        "bytes": 16383,
+        "absolute_path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\forced-availability-stable-audit.tmp.log"
+      }
+    ],
+    "free_bytes_before": 20162215936,
+    "free_bytes_after": 20176211968
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3189,
+    "all_summary_hashes_verified": true
+  }
+}

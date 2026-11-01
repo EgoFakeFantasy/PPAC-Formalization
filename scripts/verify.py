@@ -2581,7 +2581,8 @@ def main() -> None:
                                ('forcing_assigned_graph_one', 'ForcingAssignedGraphOne', 4),
                                ('forcing_assigned_graph_inj', 'ForcingAssignedGraphInj', 4),
                                ('forcing_assigned_graph_total', 'ForcingAssignedGraphTotal', 8),
-                               ('construction_ideal_stability', 'ConstructionIdealStability', 8)):
+                               ('construction_ideal_stability', 'ConstructionIdealStability', 8),
+                               ('forcing_forced_availability_stable', 'ForcingForcedAvailabilityStable', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

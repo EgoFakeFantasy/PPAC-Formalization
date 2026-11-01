@@ -1020,3 +1020,4 @@ import PPAC.Migration.ForcingAssignedGraphOne
 import PPAC.Migration.ForcingAssignedGraphInj
 import PPAC.Migration.ForcingAssignedGraphTotal
 import PPAC.Migration.ConstructionIdealStability
+import PPAC.Migration.ForcingForcedAvailabilityStable

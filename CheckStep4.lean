@@ -14035,4 +14035,9 @@ example {m : Nat} (S w Q R top D mul e mark H C a F p : Fin m) :
       (ConstructionIdealStability.constructionSentence S w Q R top D mul e mark H C a F p))) :=
   ConstructionIdealStability.construction_kernel_certificate S w Q R top D mul e mark H C a F p
 
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul w mu history kappa one mark H C incoming base I K B labelMap top bit labels bound E q Aq Hq Ar Hr r a tau d Qcuts Rcuts realTop : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingForcedAvailabilityStable.stabilitySentence rho G F mul w mu history kappa one mark H C incoming base I K B labelMap top bit labels bound E q Aq Hq Ar Hr r a tau d Qcuts Rcuts realTop))) :=
+  ForcingForcedAvailabilityStable.stability_kernel_certificate rho G F mul w mu history kappa one mark H C incoming base I K B labelMap top bit labels bound E q Aq Hq Ar Hr r a tau d Qcuts Rcuts realTop
+
 end PPAC.Migration.Step4Checks
