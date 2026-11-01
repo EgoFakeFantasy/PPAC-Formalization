@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-01）
 
-## 当前执行入口：corrected_onto 已验收 → OrbitAssignment
+## 当前执行入口：OrbitAssignment 定义及四项定律已验收 → 其余轨道定律
 
-本批迁移固定源 OrbitAssignments.corrected_onto:88–118。实际 selector 给出代表元；消费既有 StableAt 逆作用、exists_linked_working_of_stable、Works/Links 单调性及 onto_at，最后将实际标签移回。保留输入的同一个名字 τ，不用另一个局部名字替代。标签纤维作用直接复用上一批证明。
+本批迁移固定源 OrbitRel:136、OrbitAssignment:202，以及 orbit/label/mono/restrict 四项定律。对象公式使用固定根图的完整 RootGroup；分量稳定子只保留在内层 Corrected 中。实际群等价 RootGroup = Fix(range q) 已取得双向对象证书；四项定律直接消费现成 Corrected common/mono/restrict 与实际标签纤维作用。
 
-对象句子及同一既有内部 L 相对的 nativeZF 原核端点已定向编译／trust=0 通过，5 项新增声明无新增公理依赖；全量验收已通过：3137 个构建任务、36529 项声明审计、2692 个文件哈希；9 条命令（含 5 条 trust=0）全部退出 0，零警告，36524 项旧依赖保持不变。精确保留全部逆移条件 OrdinalCount；源的规范候选名字集合合同显式消费已有 Candidates。L 收尾正文沿用上一批，仅替换三个输出端点。
+五个端点均为普通 nativeZF 的原 FirstOrder.Derives，无额外 L 相对化。30 项声明已通过定向编译／trust=0，且无新增公理依赖；全量验收已通过：3138 个构建任务、36559 项声明审计、2693 个文件哈希；9 条命令（含 5 条 trust=0）全部退出 0，零警告，36529 项旧依赖保持不变。仅补实际坐标的重索引适配，不重建群、商、强迫或完备性基础。
 
-**仍在原第 8 阶段。** corrected_total 已于 0bf63d3 完整验收；当前接通 corrected_onto 后，下一段为固定源 OrbitAssignment:202 及其定律、total_at/onto_at，再接 assignmentGraph_bijection 和具体商双射。实际父输入统一、完整模型装配、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
+**仍在原第 8 阶段。** corrected_total 和 corrected_onto 已完整验收。下一源消费者为 orbitAssignment_permute:232，随后是 congr/descend/stable/eq_iff、轨道等价／商装配及 total_at/onto_at，再接 assignmentGraph_bijection 和具体商双射。实际父输入统一、第 9–11 阶段、最终内部 Con 和原 Comparator 尚未完成。
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -17,7 +17,7 @@
 | 5 名字／图／递归基础 | 完整已验收基础包、实际条件／作用／HS 接线 | 后续同一具体系统消费者归 8–10 |
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 的最终具体系统实例化；全部内部码归 10 |
-| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收；corrected_total 已验收；corrected_onto 已验收 | OrbitAssignment 定义／定律及其全量词 total_at/onto_at、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
+| 8 构造核心 | 同一 Base/T 与饱和终行、理想/基数；实际 System、纤维/粘合、标签与传输；Works/Selected、rank/type、CodeLinks、固定序数表及 Preliminary；实际 OrdinalCount、全部内部条件下的密集总性/满射性、链对齐与实际索引图、cell/attachment 下降门及内部有限下降定理、完整推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收；corrected_total 已验收；corrected_onto 已验收；OrbitAssignment 定义、RootGroup 等价及 orbit/label/mono/restrict 已验收 | 其余轨道定律／轨道商及全量词 total_at/onto_at、assignmentGraph_bijection；实际父输入统一、局部列表消费者及具体商双射 |
 | 9 模型应用 | 源及条件前端已锁定 | 同一具体系统的 SVC、ACwo、全局商编码单射、¬AC |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
@@ -37,7 +37,7 @@
 | 8 已完成 | ConcreteSystem.Vertex.permute/Arrow.move/Common.move；QuotientTransport.ReindexIso.gluedEquiv_toGlued:252–293 | 原图置换、完整顶点/箭头/Common、实际纤维限制图、实际整个分量商与 toGlued 交换律均已消费 | 两个普通 nativeZF 原核端点；全量验收见本批报告。未宣称整个 RootGroup 的单位/复合作用律已迁移 |
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
-| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；bestCoset 最小值／区分界唯一性／协变与共同固定 pattern 顺序已接通；统一 conditionSelector／Selected 的完整函数图及六项定律已接通；具体 component_selector_dense 与实际置换协变已从同一终行接通；Corrected 定义、selected／common／mono／restrict／congr／eq_iff／permute／descend 已接通；下一项为 StableAt 与 OrbitAssignments。保留同一终端单子与精确生成子幺半群 |
+| 8 当前 | ConcreteQuotients.component_selector_dense → actual selector → OrbitAssignments → AssignedGraphs.assignmentGraph_bijection → ConcreteQuotients.quotient_bijection_above | 同一固定 cell／全局 dependencies_at、实际阶段闭包、完整 restrict_selected、有向并集／unionLift 和完整 Square.union 已验收 | 完整 future_cut 与实际 future/reordered 已取得原核证书：现成逆同态、推送消去与实际顶点均被消费；现成可数 hull 已接入 countable_reordering，实际索引有限下降已取得原核证书；alignment 消费与全商可数编码已接通；具体初始底/flattening 消费及 countable_germs 已接通；实际尾探测函数及完整可数坐标集已接通；不同 coset 的 detector_separates 已取得原核证书；实际 fill、Complete 覆盖扩张和 countable_fusion 已取得原核证书；实际标签对稠密要求、统一严格比特界与同一 Complete 条件已接通；实际 rows／Eventual 商与 rawPattern 函数已构造；rawPattern_congr、pattern 下降、bounded-pattern 单射性和具体 good_dense 已完成；Complete.pattern_eq／置换保持、Good.mono 与 rawPattern_moveRows 已完成；整个 germ 商左乘、pattern_covariance、distinguishes_moveRows_iff 和 Good.permute 已接通；内部 leastBound、Complete 最小界和扩张／置换稳定性已接通；bestCoset 最小值／区分界唯一性／协变与共同固定 pattern 顺序已接通；统一 conditionSelector／Selected 的完整函数图及六项定律已接通；具体 component_selector_dense 与实际置换协变已从同一终行接通；Corrected 定义及 selected／common／mono／restrict／congr／eq_iff／permute／descend、StableAt 及 corrected_stable／total／onto 均已验收；OrbitAssignment 定义、RootGroup 等价及 orbit／label／mono／restrict 本批已验收，下一项为其余轨道定律与 total_at／onto_at。保留同一终端单子与精确生成子幺半群 |
 | 9 | Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
