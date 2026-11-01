@@ -37325,3 +37325,24 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedDensity.ontoSentence
 #print axioms PPAC.Migration.ForcingAssignedDensity.onto_models
 #print axioms PPAC.Migration.ForcingAssignedDensity.onto_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedTransport.assigned_permute
+#print axioms PPAC.Migration.ForcingAssignedTransport.permutationSentence
+#print axioms PPAC.Migration.ForcingAssignedTransport.permutation_models
+#print axioms PPAC.Migration.ForcingAssignedTransport.permutation_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedTransport.assigned_restrict
+#print axioms PPAC.Migration.ForcingAssignedTransport.restrictSentence
+#print axioms PPAC.Migration.ForcingAssignedTransport.restrict_models
+#print axioms PPAC.Migration.ForcingAssignedTransport.restrict_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedLaws.assigned_label
+#print axioms PPAC.Migration.ForcingAssignedLaws.labelSentence
+#print axioms PPAC.Migration.ForcingAssignedLaws.label_models
+#print axioms PPAC.Migration.ForcingAssignedLaws.label_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedLaws.assigned_mono
+#print axioms PPAC.Migration.ForcingAssignedLaws.monoSentence
+#print axioms PPAC.Migration.ForcingAssignedLaws.mono_models
+#print axioms PPAC.Migration.ForcingAssignedLaws.mono_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedStable.assigned_stable
+#print axioms PPAC.Migration.ForcingAssignedStable.stableSentence
+#print axioms PPAC.Migration.ForcingAssignedStable.stable_models
+#print axioms PPAC.Migration.ForcingAssignedStable.stable_kernel_certificate

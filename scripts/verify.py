@@ -2547,7 +2547,10 @@ def main() -> None:
                                ('forcing_orbit_representative_density', 'ForcingOrbitRepresentativeDensity', 9),
                                ('forcing_assigned', 'ForcingAssigned', 24),
                                ('forcing_assigned_equality', 'ForcingAssignedEquality', 4),
-                               ('forcing_assigned_density', 'ForcingAssignedDensity', 8)):
+                               ('forcing_assigned_density', 'ForcingAssignedDensity', 8),
+                               ('forcing_assigned_transport', 'ForcingAssignedTransport', 8),
+                               ('forcing_assigned_laws', 'ForcingAssignedLaws', 8),
+                               ('forcing_assigned_stable', 'ForcingAssignedStable', 4)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
