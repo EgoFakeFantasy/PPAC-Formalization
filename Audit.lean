@@ -37201,3 +37201,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrbitStable.stableSentence
 #print axioms PPAC.Migration.ForcingOrbitStable.stable_models
 #print axioms PPAC.Migration.ForcingOrbitStable.stable_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOrbitEquality.component_difference
+#print axioms PPAC.Migration.ForcingOrbitEquality.orbitAssignment_eq_iff
+#print axioms PPAC.Migration.ForcingOrbitEquality.equalitySentence
+#print axioms PPAC.Migration.ForcingOrbitEquality.equality_models
+#print axioms PPAC.Migration.ForcingOrbitEquality.equality_kernel_certificate
