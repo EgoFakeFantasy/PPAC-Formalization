@@ -13959,4 +13959,20 @@ example {n : Nat} (R A : Source.Formula (n+2)) (Q : Source.Formula (n+3))
       (ForcingRelationGraphForcing.pairMembershipSentence R A Q P G F t X Y name x y a p)) :=
   ForcingRelationGraphForcing.pairMembership_kernel_certificate R A Q P G F t X Y name x y a p
 
+example {n : Nat} (rho : Fin 7 → Fin n) (I K B w G F mul t a x y b p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingPairFormula.orderedPairSentence rho I K B w G F mul t a x y b p)) :=
+  ForcingPairFormula.orderedPair_kernel_certificate rho I K B w G F mul t a x y b p
+
+example {n : Nat} (rho : Fin 7 → Fin n) (I K B w G F mul t f x y b p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingPairFormula.appSentence rho I K B w G F mul t f x y b p)) :=
+  ForcingPairFormula.app_kernel_certificate rho I K B w G F mul t f x y b p
+
+example {n : Nat} (Q : Source.Formula (n+3)) (rho : Fin 7 → Fin n)
+    (I K B w G F mul t X Y name x y p : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingRelationGraphApplication.applicationSentence Q rho I K B w G F mul t X Y name x y p)) :=
+  ForcingRelationGraphApplication.application_kernel_certificate Q rho I K B w G F mul t X Y name x y p
+
 end PPAC.Migration.Step4Checks
