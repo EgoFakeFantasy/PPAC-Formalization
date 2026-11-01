@@ -37634,3 +37634,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingQuotientName.lawsSentence
 #print axioms PPAC.Migration.ForcingQuotientName.laws_models
 #print axioms PPAC.Migration.ForcingQuotientName.laws_kernel_certificate
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.assigned_stable_from_records
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.witness_bounds
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.holds_bounds
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.boundsSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.bounds_models
+#print axioms PPAC.Migration.ForcingAssignedGraphBounds.bounds_kernel_certificate

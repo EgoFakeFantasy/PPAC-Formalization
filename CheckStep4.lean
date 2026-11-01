@@ -13998,4 +13998,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F mul c t b labels E nam
       (ForcingQuotientName.lawsSentence rho I K B w mu G F mul c t b labels E name g a y p)) :=
   ForcingQuotientName.laws_kernel_certificate rho I K B w mu G F mul c t b labels E name g a y p
 
+example {k : Nat} (rho : Fin 7 → Fin k) (w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero vertices names Q high objects maps records name p x y : Fin k)
+    (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedGraphBounds.boundsSentence rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero vertices names Q high objects maps records name p x y families))) :=
+  ForcingAssignedGraphBounds.bounds_kernel_certificate rho w mu history kappa one mark H C incoming base I K B G F mul labelMap top bit labels bound E q Aq Hq zero vertices names Q high objects maps records name p x y families
+
 end PPAC.Migration.Step4Checks

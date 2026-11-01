@@ -1,0 +1,174 @@
+{
+  "verified_at": "2026-11-01T17:50:03.004693+11:00",
+  "stage": 8,
+  "base_commit": "395068294a1b175cc54d89dd2e47a706dac0031c",
+  "adapters": [
+    "PPAC/Migration/ForcingAssignedGraphBounds.lean"
+  ],
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingAssignedGraphBounds.bounds_kernel_certificate"
+  ],
+  "background": "Original pure-set nativeZF, original FirstOrder.Derives. Endpoint is explicitly Project.fo_sentence(ConstructibleGround.relative(boundsSentence)); existing Choice use is discharged in the SAME internal L via the existing ConstructibleSource bridge, not added to outer nativeZF.",
+  "completed": [
+    "Unpack the actual Assigned orbit witness and align root/chain/code/germ fields with the SAME existing internal record/projection functions.",
+    "Call existing OrbitStable theorem on those actual fields; no new abstract stability premise.",
+    "Source GraphWitness bounds: actual input is forced into labelSet and actual output into the constructed quotientName.",
+    "The actual GraphHolds density closure has the same bounds using existing atomic regularity."
+  ],
+  "actual_assigned_graph_bounds_proved": true,
+  "assignment_graph_bijection_proved": false,
+  "actual_final_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Assigned graph move/one/inj/total/onto and assignmentGraph_bijection.",
+    "Concrete quotient bijection and final common parent-system instantiation.",
+    "Original stages 9-11, all internal/nonstandard proof-code Con and original Comparator."
+  ],
+  "next_source_consumer": "AssignedGraphs.graphWitness_move -> graphRelation_move -> assignmentGraph",
+  "next_existing_reuse": "ForcingAssignedTransport.assigned_permute and permutation_kernel_certificate already exist with the SAME sixteen field functions. Reuse them together with actual name/local-name, label and condition action/symmetry; do not reprove Assigned covariance.",
+  "build_jobs": 3182,
+  "audited_declarations": 37008,
+  "old_footprints_unchanged": 37002,
+  "new_declarations": 6,
+  "file_hashes": 2737,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup_completed": true,
+  "pushed": false,
+  "cleanup": {
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\assigned-bounds-baseline.tmp.json",
+        "bytes": 13885182,
+        "sha256": "a1607f20b38c03600d3cec15fff10258eed2af7b20b4f2cc0a0d8696603981cc"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\assigned-bounds-audit.tmp.lean",
+        "bytes": 497,
+        "sha256": "958031cdb68d85225476fe3c93e4fa5f58144a4e2fc91ea7381a481053dd12eb"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\assigned-bounds-audit.tmp.log",
+        "bytes": 17475,
+        "sha256": "a2a24c37d0bc34f65c5abdeeb131a673a0443fce84f74e1a12a14ebc019e226c"
+      }
+    ],
+    "logical_deleted_bytes": 13903154.0,
+    "free_before": 19322437632,
+    "free_after": 19336245248,
+    "measured_free_change": 13807616,
+    "scope": "Three exact ignored untracked task temporaries; no recursive deletion"
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3182,
+    "log": "verification/assigned-bounds-post-cleanup.log"
+  },
+  "current_hashes_verified_after_cleanup": true
+}
