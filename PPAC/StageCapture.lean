@@ -120,9 +120,11 @@ All interfaces are satisfied and the conclusions are non-vacuous: there is a
 genuine Final `s`-subset (`u = o1`), it is a genuine member of `p = o2`, and
 the capturing stage contains it. -/
 
+/-- The three objects `o0 = ∅`, `o1 = {o0}`, `o2 = {o0, o1}` of the example. -/
 inductive ExObj : Type where
   | o0 | o1 | o2
 
+/-- The membership table of the example. -/
 def exMem : ExObj → ExObj → Prop :=
   fun z x =>
     match x with
@@ -130,9 +132,11 @@ def exMem : ExObj → ExObj → Prop :=
     | .o1 => z = .o0
     | .o2 => z = .o0 ∨ z = .o1
 
+/-- The two stage indices `st0 ≤ st1` of the example. -/
 inductive ExIx : Type where
   | st0 | st1
 
+/-- Stage contents: `st0 = {o0, o1}` and `st1` contains every object. -/
 def exStage : ExIx → ExObj → Prop :=
   fun i x =>
     match i with
@@ -143,6 +147,7 @@ def exStage : ExIx → ExObj → Prop :=
       | .o2 => False
     | .st1 => True
 
+/-- The `Final` predicate of the example: `{o1, o2}`. -/
 def exFinal : ExObj → Prop :=
   fun x =>
     match x with
@@ -150,6 +155,7 @@ def exFinal : ExObj → Prop :=
     | .o1 => True
     | .o2 => True
 
+/-- The stage order: `st0 ≤ st1`, and each stage is below itself. -/
 def exLe : ExIx → ExIx → Prop :=
   fun i j =>
     match j with

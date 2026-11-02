@@ -53,6 +53,7 @@ structure PredFamily (X : Type) where
   ym : YM → X → Prop
   ymdec : ∀ y x, ym y x ∨ ¬ ym y x
 
+/-- `Unit` is countable, with the trivial enumeration. -/
 theorem countable_unit : Countable Unit :=
   ⟨fun _ => 0, fun x y _ => Subsingleton.elim x y⟩
 
@@ -240,6 +241,9 @@ theorem denseTwoBranch {B A X : Type} (XA : X → A)
 def RanG {B A : Type} (G : RCond B A → Prop) (a : A) : Prop :=
   ∃ p b, G p ∧ p.rel b a
 
+/-- Over a directed generic family, a point cannot be both forbidden by one condition and in the
+range of another: a common extension would contain both, contradicting disjointness of its range and
+forbidden set. -/
 theorem FGRan_false {B A : Type} {G : RCond B A → Prop} {a : A}
     (hdir : ∀ p p', G p → G p' → ∃ p'' : RCond B A, G p'' ∧
       RCondLe p p'' ∧ RCondLe p' p'')

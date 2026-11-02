@@ -51,6 +51,7 @@ def prodLex {S A : Type} (rS : S → S → Prop) (rA : A → A → Prop)
     (p q : S × A) : Prop :=
   spliceRel rA (Prod.snd) (fun _a x y _ _ => rS x.1 y.1) p q
 
+/-- Each fibre of the lexicographic product order is trichotomous when the stage order is. -/
 theorem fiberTrich {S A : Type} {rS : S → S → Prop} (hS : Trich rS) (a : A) :
     Trich (FiberRel (Prod.snd : S × A → A) (fun _a x y _ _ => rS x.1 y.1) a) := by
   intro p q
@@ -62,10 +63,12 @@ theorem fiberTrich {S A : Type} {rS : S → S → Prop} (hS : Trich rS) (a : A) 
       exact Or.inr (Or.inl (Subtype.ext (Prod.ext h (p.2.trans q.2.symm))))
     | inr h => exact Or.inr (Or.inr h)
 
+/-- The lexicographic product of trichotomous relations is trichotomous. -/
 theorem prodLex_trich {S A : Type} {rS : S → S → Prop} {rA : A → A → Prop}
     (hS : Trich rS) (hA : Trich rA) : Trich (prodLex rS rA) :=
   splice_trich rA (Prod.snd) _ hA (fun a => fiberTrich hS a)
 
+/-- The lexicographic product of well-founded relations is well-founded. -/
 theorem prodLex_wf {S A : Type} {rS : S → S → Prop} {rA : A → A → Prop}
     (hwfS : WellFounded rS) (hwfA : WellFounded rA) : WellFounded (prodLex rS rA) :=
   splice_wf rA (Prod.snd) (fun _a x y _ _ => rS x.1 y.1) hwfA
