@@ -1,29 +1,34 @@
-⚠ [8/16] Replayed PPAC.Repair.Projection
+⚠ [7/16] Replayed PPAC.Repair.Projection
 warning: PPAC/Repair/Projection.lean:94:5: Variable name `hdir` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _hdir
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [9/16] Replayed PPAC.Repair.Parity
+⚠ [8/16] Replayed PPAC.Repair.Parity
 warning: PPAC/Repair/Parity.lean:53:49: Variable name `BC` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _BC
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [10/16] Replayed PPAC.Repair.NameEval
-warning: PPAC/Repair/NameEval.lean:219:5: Variable name `FP` is not explicitly referenced.
+✔ [9/16] Built PPAC.StageCapture (685ms)
+⚠ [10/16] Built PPAC.Repair.NameEval (757ms)
+warning: PPAC/Repair/NameEval.lean:222:5: Variable name `FP` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _FP
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [12/16] Replayed PPAC.Cohen.Locality
+✔ [11/16] Built PPAC.ClassObstruction.Obstruction (487ms)
+⚠ [12/16] Built PPAC.Cohen.Locality (354ms)
 warning: PPAC/Cohen/Locality.lean:106:32: Variable name `hHStar` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _hHStar
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [13/16] Built PPAC.Random.Approx (396ms)
+✔ [14/16] Built PPAC.FuchsPrikry.Criterion (354ms)
+✔ [15/16] Built PPAC (238ms)
 Build completed successfully (16 jobs).

@@ -1,5 +1,19 @@
-/-
-PPAC.lean — aggregate module.
+import PPAC.Pullback
+import PPAC.StageCapture
+import PPAC.Choice.Basic
+import PPAC.Choice.Splice
+import PPAC.Choice.Splitting
+import PPAC.Repair.Forcing
+import PPAC.Repair.Projection
+import PPAC.Repair.Parity
+import PPAC.Repair.NameEval
+import PPAC.ClassObstruction.Obstruction
+import PPAC.Cohen.Locality
+import PPAC.Random.Approx
+import PPAC.FuchsPrikry.Criterion
+
+/-!
+Aggregate module for the PPAC formalization.
 
 Batch 1: pullback identity under an old surjection (part A) and
 capture/stabilization of Final `s`-subsets at transitive stages (part B).
@@ -24,17 +38,3 @@ footprint of every exported theorem below.
 No claim is made about ZF + PP → AC, countermodels, forcing, SVC, or any
 complete fixed-seed forcing obstruction.
 -/
-
-import PPAC.Pullback
-import PPAC.StageCapture
-import PPAC.Choice.Basic
-import PPAC.Choice.Splice
-import PPAC.Choice.Splitting
-import PPAC.Repair.Forcing
-import PPAC.Repair.Projection
-import PPAC.Repair.Parity
-import PPAC.Repair.NameEval
-import PPAC.ClassObstruction.Obstruction
-import PPAC.Cohen.Locality
-import PPAC.Random.Approx
-import PPAC.FuchsPrikry.Criterion
