@@ -2601,7 +2601,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_nonwellorderable_image', 'ForcingNonwellorderableImage', 8),
                                 ('forcing_choice_failure', 'ForcingChoiceFailure', 21),
                                 ('forcing_root_probes', 'ForcingRootProbes', 13),
-                                ('forcing_ordinal_choice', 'ForcingOrdinalChoice', 16)):
+                                ('forcing_ordinal_choice', 'ForcingOrdinalChoice', 16),
+                                ('forcing_witness_placement', 'ForcingWitnessPlacement', 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6130,6 +6131,8 @@ def main(source_check_only: bool = False) -> None:
         "source_ChoiceFailure_same_system_forces_not_AC_complete": True,
         "source_OrdinalChoice_same_system_rootProbes_complete": True,
         "source_OrdinalChoice_exact_dense_ACwo_logical_bridge_complete": True,
+        "source_DiagramPlacements_witness_placement_object_schema_complete": True,
+        "source_DiagramPlacements_localized_existential_complete": False,
         "source_OrdinalChoice_actual_dense_choice_and_forces_ACwo_complete": False,
         "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
         "original_stage9_model_applications_complete": False,

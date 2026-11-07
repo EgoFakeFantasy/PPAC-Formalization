@@ -14166,4 +14166,11 @@ example {k : Nat} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (P : Fin
     FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrdinalChoice.sentence R H P)) :=
   ForcingOrdinalChoice.kernel_certificate R H P
 
+-- Full arbitrary-rank source placement, inside native ZF's internal L.
+example {k n : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F mul unit mark index p q s b d c Jp Hp Js Hs Jq Hq delta tau z : Fin k)
+    (v : Fin n → Fin k) (phi : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingWitnessPlacement.sentence rho I K B w mu G F mul unit mark index p q s b d c Jp Hp Js Hs Jq Hq delta tau z v phi))) :=
+  ForcingWitnessPlacement.kernel_certificate rho I K B w mu G F mul unit mark index p q s b d c Jp Hp Js Hs Jq Hq delta tau z v phi
+
 end PPAC.Migration.Step4Checks

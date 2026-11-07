@@ -37986,3 +37986,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOrdinalChoice.sentence
 #print axioms PPAC.Migration.ForcingOrdinalChoice.models
 #print axioms PPAC.Migration.ForcingOrdinalChoice.kernel_certificate
+#print axioms PPAC.Migration.ForcingWitnessPlacement.transported_name_supported
+#print axioms PPAC.Migration.ForcingWitnessPlacement.Copy
+#print axioms PPAC.Migration.ForcingWitnessPlacement.copy
+#print axioms PPAC.Migration.ForcingWitnessPlacement.copy_freeClosed
+#print axioms PPAC.Migration.ForcingWitnessPlacement.copy_semantics
+#print axioms PPAC.Migration.ForcingWitnessPlacement.construct_copies
+#print axioms PPAC.Migration.ForcingWitnessPlacement.place_condition_nonunit
+#print axioms PPAC.Migration.ForcingWitnessPlacement.witness_placement
+#print axioms PPAC.Migration.ForcingWitnessPlacement.resultFormula
+#print axioms PPAC.Migration.ForcingWitnessPlacement.resultFormula_freeClosed
+#print axioms PPAC.Migration.ForcingWitnessPlacement.resultFormula_semantics
+#print axioms PPAC.Migration.ForcingWitnessPlacement.sentence
+#print axioms PPAC.Migration.ForcingWitnessPlacement.models
+#print axioms PPAC.Migration.ForcingWitnessPlacement.kernel_certificate

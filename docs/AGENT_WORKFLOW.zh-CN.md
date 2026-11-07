@@ -1,6 +1,13 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 本批验收（2026-11-08）：实际RootProbes及ACwo对象逻辑桥
+## 当前迁移：源 witness_placement 对象模式（2026-11-08）
+
+ForcingWitnessPlacement迁移固定源DiagramPlacements:73–151：精确目标支撑传输、单位／非单位放置、内部移动条件族、非根支撑不交及实际兼容副本选择，再通过完整公式对称性／单调性取得任意秩HS见证。q仍在见证之前选定；加强的只是Cohen条件。原宿主choose改用现成原生有界uniformization，所有族、图、置换和名字均为内部集合。
+
+原核端点为nativeZF中的内部L相对化完整源引理模式，保留源RootProbes／基数／图／支撑假设，不假定输出放置或见证；RootProbes已由同一Core构造。原生内部L消去地面Choice。完整验收以verification/witness-placement-acceptance.json为准。当前仍为原阶段9；下一源消费者是localized_existential→localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator仍未完成。
+
+
+## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
 ForcingRootProbes消费同一Core已有的AllIdeals／最终Row，在实际单元单点理想上直接取得同一探针族，证明原Source RootProbes的乘积与独立右锥定律，并证明探针索引内部不可数。原nativeZF／FirstOrder.Derives端点强化同一个内部L的40集合存在句，保留完整Core、商、非良序像及¬AC强迫结论；没有新建饱和历史或给定探针族前提。探针索引按源K=μ.ord.ToType对应env13，Cohen坐标κ=ω₁对应env14。
 
@@ -10,7 +17,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 远端55f4b4e的同一次CI仍在全量构建，固定检出、依赖、源码及跨平台回归检查已通过；本批先本地保存，避免叠加推送。当前本地也已通过3份固定干净依赖、75份OpenAI源哈希及5项跨平台回归检查。
 
-当前仍为原阶段9。ACwo下一直接源码消费者是DiagramPlacements.witness_placement→localized_existential→OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement本批已迁移，ACwo下一直接源码消费者是DiagramPlacements.localized_existential→OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 

@@ -313,3 +313,5 @@ ForcingPersistentCovariance 已直接消费 principal_move、eqG_principal、loc
 ## PersistentCodes 全条件协变的实际复用
 
 ForcingWorksCovariance.represented_covariance 对每个条件调用已有主滤子、对象族、限制图、system_of_families、eligible app、available_iff 和 ComponentRebase.exists_transport，实际消去此前 represented_transport_iff 的两侧呈现、自然性和双射输入。仅泛化三个既有族收集器的环境参数位置，未重建函数、Collection、选择、L 或商后端。完整 Works 再处理所有更强条件；Selected 直接消费 Works/Same，代码序保持字面不变。原核证书及全量验收均通过，证据见 STATUS；下一个源消费者为 exists_working_code_of_stable:371。
+
+源DiagramPlacements:73–151现由ForcingWitnessPlacement直接消费既有SupportedNames同图相等、Product作用复合、内部目标族、兼容副本与Cohen并集，形成原核内部L相对化完整witness_placement模式。原host choose通过已有有界原生uniformization实现；不新建共轭／新鲜性／选择后端。保留源背景假设，下一源localized_existential消费该结果；实际ACwo仍未完成。
