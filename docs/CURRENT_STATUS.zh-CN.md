@@ -1,12 +1,14 @@
 # 本地工作进度（2026-11-07）
 
-## 本批验收（2026-11-07）：最小出现下标关系，仍为阶段 8
+## 本批验收（2026-11-07）：实际逆图与持久列表外成员，仍为阶段 8
 
-`ForcingUniformInverse` 忠实迁移 `UniformNames.UniformInverse:117–209` 的最小出现关系，并把地面良序实现为既有内部序数枚举的成员序。所有更强内部条件下的负相等、正则化、单值性、单射性及同一局部列表上的全域性均已证明。现有 `ObjectOrdinalLeast.native_existence` 提供最小候选，未使用外部良基性或对象 Choice。
+`ForcingUniformInverseGraph` 消费已完成的最小下标关系，迁移固定源 `UniformInverse.least_move/relation_move:212–233`、实际逆图／限制逆图单射 `UniformNames:239–277`，以及 `outside_uniformRange:282–311` 对实际完整局部名字列表的消费者 `ClassFibers.outside_localList:224–241`。现有条件置换的逆像保持每个更强条件下的负相等，现有 `map_checked` 给出核名字固定性；现有 HS 图构造器与 `graph_injection` 产生真实受支撑图和完整强迫单射公式。
 
-`kernel_certificate` 和 `laws_kernel_certificate` 分别给出最小候选稠密存在、关系单值／单射闭句在原 `nativeZF` 中的 `FirstOrder.Derives`。实际受支撑逆图名字、强迫单射及 `outside_uniformRange` 尚未接通，不能宣称非良序商稠密双射或最终内部 Con 已完成。
+非良序性直接排除这个实际单射，再用已有成员正则性取得稠密的持久列表外成员；未把不存在单射或逆图当作额外前提。`construction_kernel_certificate` 与 `outside_kernel_certificate` 均为普通 `nativeZF` 中的原 `FirstOrder.Derives` 对象闭句证书，量化全部内部 HS 名字、条件与下标。局部载体／序数枚举／根支撑的父输入仍显式保留，其生产者 `ForcingLocalList.construct` 已有。
 
-全量验收已通过：9 条命令退出 0，零警告，旧声明足迹不变，无新增公理依赖。报告：`verification/uniform-inverse-acceptance.json`。下一步直接消费现有 `ForcingRelationGraph` 支撑与函数图接口构造真实单射，不重建 L、全模式、递归或 Proof/Sat 基础。
+全量验收已通过：9 条命令（5 条 trust=0）退出 0，零警告，37104 项旧声明足迹不变，无新增公理依赖。报告：`verification/uniform-inverse-graph-acceptance.json`。
+
+下一项仍是固定源 `outsideClassSet_denseBelow:265`：把成员与实际商的 canonical 类对齐，扩图覆盖条件支撑及标签，并证明右因子非平凡；随后接 `nonwellorderable_quotient_bijection`。这些及阶段 9–11、最终内部 Con 尚未完成。L、全公理模式、递归与 Proof/Sat 基础继续复用，不重建。
 
 本分支迁移固定 OpenAI PPAC 源证明到 YesMetaZFC 的原对象推导核，继续采用原计划 1–11 阶段。当前仍在第 8 阶段，最终目标尚未完成。
 

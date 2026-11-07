@@ -37748,3 +37748,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingUniformInverse.lawsSentence
 #print axioms PPAC.Migration.ForcingUniformInverse.laws_models
 #print axioms PPAC.Migration.ForcingUniformInverse.laws_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.least_move
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.checked_fixed
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.relation_move
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.relation
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.relation_semantics
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.relation_moves
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.monotone
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.congruent
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.regular
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.construct
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.outside_localList
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.subset
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.subset_semantics
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.constructionResult
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.premises
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.constructionSentence
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.construction_models
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.construction_kernel_certificate
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.outsideResult
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.outsideSentence
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.outside_models
+#print axioms PPAC.Migration.ForcingUniformInverseGraph.outside_kernel_certificate

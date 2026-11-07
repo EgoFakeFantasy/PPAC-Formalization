@@ -14073,4 +14073,16 @@ example {k n : Nat} (R : Source.Formula (k+2)) (lp : Fin k → Fin n)
       (ForcingUniformInverse.lawsSentence R lp P X f top p x y z)) :=
   ForcingUniformInverse.laws_kernel_certificate R lp P X f top p x y z
 
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F H mul top bound names alpha enum list nalpha Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingUniformInverseGraph.constructionSentence rho I K B w G F H mul top bound names alpha enum list nalpha Y p)) :=
+  ForcingUniformInverseGraph.construction_kernel_certificate rho I K B w G F H mul top bound names alpha enum list nalpha Y p
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F H mul top bound names alpha enum list nalpha Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingUniformInverseGraph.outsideSentence rho I K B w G F H mul top bound names alpha enum list nalpha Y p)) :=
+  ForcingUniformInverseGraph.outside_kernel_certificate rho I K B w G F H mul top bound names alpha enum list nalpha Y p
+
 end PPAC.Migration.Step4Checks

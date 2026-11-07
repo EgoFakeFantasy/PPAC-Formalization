@@ -1026,3 +1026,4 @@ import PPAC.Migration.ForcingAssignedGraphBijection
 import PPAC.Migration.ForcingConcreteQuotientBijection
 import PPAC.Migration.ForcingCheckOrdinal
 import PPAC.Migration.ForcingUniformInverse
+import PPAC.Migration.ForcingUniformInverseGraph
