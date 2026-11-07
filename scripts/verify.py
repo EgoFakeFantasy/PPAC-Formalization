@@ -2617,7 +2617,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_subset_image', 'ForcingSubsetImage', 12),
                                 ('forcing_least_occurrence', 'ForcingLeastOccurrence', 18),
                                 ('forcing_ordered_sections', 'ForcingOrderedSections', 15),
-                                ('forcing_least_relation', 'ForcingLeastRelation', 36)):
+                                ('forcing_least_relation', 'ForcingLeastRelation', 36),
+                                ('forcing_indexed_image', 'ForcingIndexedImage', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6166,7 +6167,9 @@ def main(source_check_only: bool = False) -> None:
         "source_OrderedSections_indexedSection_exists_complete": True,
         "source_OrderedSections_leastRelation_injection_complete": False,
         "source_OrderedSections_checked_index_leastRelation_injection_complete": True,
-        "source_OrderedSections_leastRelation_scope": "Actual supported HS graph and full source injection in ordinary nativeZF for INTERNAL ordinal checked-index forcing families; source Cover/OneAt/common support/check(O) remain explicit. Arbitrary host-selected wellorder families and actual indexedImage/section/slice consumers are not claimed complete.",
+        "source_OrderedSections_actual_indexedImage_cover_one_complete": True,
+        "source_OrderedSections_wellorderable_image_complete": True,
+        "source_OrderedSections_leastRelation_scope": "Actual supported HS graph and full source injection in ordinary nativeZF for INTERNAL ordinal checked-index forcing families; source Cover/OneAt/common support/check(O) remain explicit. Arbitrary host-selected wellorder families are not claimed; actual indexedImage/wellorderable_image are complete in their adapter. Uniform section/slice consumers remain incomplete.",
         "source_OrderedSections_uniform_section_injection_and_wellorderable_target_complete": False,
         "source_UniformImages_uniform_maximum_dense_family_wrapper_complete": False,
         "source_OrderedSections_and_full_slice_geometry_assembly_complete": False,

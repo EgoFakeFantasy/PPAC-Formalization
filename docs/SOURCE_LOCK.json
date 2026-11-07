@@ -155483,6 +155483,228 @@
         ]
       },
       "scope": "Ordinary original nativeZF object-kernel injection for all INTERNAL ordinal indices O and definable checked-index forcing occurrences phi with finite source-name parameters. Constructs the actual supported HS graph, proves movement from actual formula symmetry/check fixedness, and proves FULL source injection including functionOn/no-junk. Source Cover, per-index OneAt, common parameter/Y support, presentation/preorder and the already-constructed check(O) remain explicit original inputs. No graph, movement, final function law, outer Choice/L, host wellorder or external standardness premise. This is the exact required checked-index specialization; no claim to arbitrary host-selected ground wellorders or arbitrary unencoded families. Actual indexedImage/wellorderable_image consumers, uniform maximum FAMILY wrapper, section/target injection, remaining slices, global reverse injection, PP/Main and all-internal Con remain incomplete."
+    },
+    "forcing_indexed_image": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/OrderedSections.lean",
+      "source_sha256": "9b644a950e4faabc16d20d96e887a07d2fa843ad8c91a8261f260b48f4654a65",
+      "source_declarations": [
+        "OrderedSections.indexedImage/indexedImage_move/indexedImage_one/indexedImage_cover:192-247",
+        "OrderedSections.wellorderable_image:249-274"
+      ],
+      "adapter": "PPAC/Migration/ForcingIndexedImage.lean",
+      "consumers": [
+        "wellorderable_target_injection -> SliceAssembly.slice_candidate -> presentation_reverse_injection -> Main.reverse_injection_dense"
+      ],
+      "reuse_producers": [
+        "ForcingLeastRelation",
+        "ForcingOrderedSections",
+        "ForcingTupleStabilizer",
+        "ForcingMapCalculus",
+        "ForcingKernelImage",
+        "ForcingImageQuotient",
+        "ForcingCheckOrdinal",
+        "ForcingInfinity",
+        "ForcingHSCheck",
+        "ForcingHS",
+        "ForcingProductFamily",
+        "ForcingSeparation",
+        "ProjectSyntax",
+        "GodelDefRecursion",
+        "ModelTransfer"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingIndexedImage.lean": "3a245d087320b34c9a8817a1cad8087d8afea3617ab324437d85eb11fe02b678",
+        "PPAC/Migration/ForcingLeastRelation.lean": "8b0cab24257f695d07123e4524812d9c5370527ef6d65ddcabbc4bf9132abcdb",
+        "PPAC/Migration/ForcingOrderedSections.lean": "7ee6fae70e54179704829902f2127bf78ab8f39d01c587adbf6bd5f716d27cc3",
+        "PPAC/Migration/ForcingTupleStabilizer.lean": "c8fdf8d39c72189a8fd32e21a365d7fbfd9d57c4053216befc316a6d5bdf4a33",
+        "PPAC/Migration/ForcingMapCalculus.lean": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+        "PPAC/Migration/ForcingKernelImage.lean": "92365dde368cafb6203e6c79594809e95cb1a21bdd66a3a8eb3df1eb56c158e9",
+        "PPAC/Migration/ForcingImageQuotient.lean": "4a0d340dcf8435ae280122a1eac3177bdc52381a76f76e58d5a4876160ab01b2",
+        "PPAC/Migration/ForcingCheckOrdinal.lean": "939a9e47f293f25caa3a4c3a1b2a01c8fb6e822c80249b05fe85eab8740ebb5d",
+        "PPAC/Migration/ForcingInfinity.lean": "0b17b3f3670b343109db8eb0b5e66d9bcaaa4a0d6697ada41b2c29c3f39e086b",
+        "PPAC/Migration/ForcingHSCheck.lean": "6478768eee99314efdfd8a20bbe02dfe58ebad24b56bc2393504b94d67fc4411",
+        "PPAC/Migration/ForcingHS.lean": "d0c6b63f0d9bf2bf3f8d237dba99e30a1945c4a1970bf281ad4c61a9bb128166",
+        "PPAC/Migration/ForcingProductFamily.lean": "a014639bf5287d3916383372f19c7ac3c76746e67aff576b4ede14b33649ae4e",
+        "PPAC/Migration/ForcingSeparation.lean": "fe1c7bc6bc54602771a12541ca6f9425746e8c801afd11d71bd519dc0519eac3",
+        "PPAC/Migration/ProjectSyntax.lean": "2c0c698a756cad58fefea3c39d26f8dab23988bc43ff45d198ee2fc87131b5e2",
+        "PPAC/Migration/GodelDefRecursion.lean": "f97aad965246e4ec4a140231cb8da876cbe3ca8987c74f3d73dbe25d196ffb83",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingIndexedImage.imageFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.image_force_dense": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.indexedImage": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.indexedImage_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.indexedImage_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.indexedImage_cover": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.parameters": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.construct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.wellorderable_image": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.imageSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.image_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingIndexedImage.image_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ForcingMapCalculus.lean",
+          "producer_sha256": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+          "source_start": "private theorem app_congr ",
+          "source_end": "private theorem injection_mapsTo ",
+          "target_start": "private theorem app_congr ",
+          "target_end": "private theorem injection_mapsTo ",
+          "replacements": [],
+          "normalized_body_sha256": "c9f6f5b7826f6b585c0b5ed7e75d270de735006312fbde8ea9ccc516f909875f"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingMapCalculus.lean",
+          "producer_sha256": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+          "source_start": "private theorem injection_mapsTo ",
+          "source_end": "private theorem injection_one ",
+          "target_start": "private theorem injection_mapsTo ",
+          "target_end": "private theorem injection_one ",
+          "replacements": [],
+          "normalized_body_sha256": "bf9969771bfb921e52f1e0b3c3e3f2e4fd17d625df0c0676311dee04a3572eb8"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingMapCalculus.lean",
+          "producer_sha256": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+          "source_start": "private theorem injection_one ",
+          "source_end": "/-- Parameters f,g,X,Y,Z",
+          "target_start": "private theorem injection_one ",
+          "target_end": "/-- Parameters f,J,X,Y,check(O)",
+          "replacements": [],
+          "normalized_body_sha256": "124e0ea39288342249c8ce2da76e3e83aae9bac65733009b87effe9c2bb42d7e"
+        }
+      ],
+      "scope": "Ordinary nativeZF original-kernel FULL wellorderable_image along the pinned source least-preimage proof. Actual source surjection + wellorderability and HS name inputs produce wellorderability of the WHOLE image at every internal condition. Existing dense ordinal/check/injection presentation, actual tuple stabilizer, least occurrence graph, check fixedness/HS closure and existing check-injection-to-wellorderable theorem discharge all actual ordinal/check/injection/common-support witnesses. Auxiliary indexedImage graph endpoint discharges Cover/OneAt from full source mapsTo/surjection/injection; exact dense inverse-bounded-app/composition formula retains every membership guard (duplicate X guard combined by conjunction idempotence). Movement is inherited from actual finite-source-parameter forcing symmetry. Three existing private function/App eliminators retained verbatim and producer untouched. No outer Choice/L, host wellorder, external standardness, rank cutoff or new foundation. Uniform maximum internal FAMILY wrapper, section/target injection, remaining slices/global reverse injection, PP/Main/internal Con and Comparator remain incomplete."
     }
   },
   "selected_route_consumer_audit": {

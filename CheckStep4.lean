@@ -14272,4 +14272,16 @@ example {k n : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top O Y checkedO 
       (ForcingLeastRelation.sentence rho I K B w G F S mul top O Y checkedO p names phi)) :=
   ForcingLeastRelation.kernel_certificate rho I K B w G F S mul top O Y checkedO p names phi
 
+-- Full source wellorderable_image: actual dense ordinal/check/injection/support witnesses eliminated.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top f X Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingIndexedImage.imageSentence rho I K B w G F mul top f X Y p)) :=
+  ForcingIndexedImage.image_kernel_certificate rho I K B w G F mul top f X Y p
+
+-- Actual indexedImage discharges source coverage and per-index uniqueness.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top f J X Y O checkedO p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingIndexedImage.sentence rho I K B w G F S mul top f J X Y O checkedO p)) :=
+  ForcingIndexedImage.kernel_certificate rho I K B w G F S mul top f J X Y O checkedO p
+
 end PPAC.Migration.Step4Checks

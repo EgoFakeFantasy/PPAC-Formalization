@@ -1054,3 +1054,4 @@ import PPAC.Migration.ForcingSubsetImage
 import PPAC.Migration.ForcingLeastOccurrence
 import PPAC.Migration.ForcingOrderedSections
 import PPAC.Migration.ForcingLeastRelation
+import PPAC.Migration.ForcingIndexedImage

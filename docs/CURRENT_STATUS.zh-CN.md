@@ -1,12 +1,12 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：内部序数最小索引注入图（2026-11-08）
+## 当前迁移：实际 indexedImage 与像良序性（2026-11-08）
 
-ForcingLeastRelation将固定OrderedSections的LeastOccurrence.relation、relation_one、relation_inj、relation_move和exists_injection迁移为普通nativeZF原核定理模式。索引遍历内部序数O，发生关系是带有限源名字参数的实际check(i)强迫公式；对象端点实际构造共同支撑下的HS图，并证明完整injection（含functionOn／无杂项）。移动定律从已有公式对称性和检查名固定性推出，最小性复用已经完成的内部序数最小元，图构造复用已有关系图收集器。没有给定图／移动／最终函数律，没有外层Choice、L、外部良基或标准性前提。
+ForcingIndexedImage沿固定OrderedSections的indexedImage、indexedImage_one、indexedImage_cover和wellorderable_image完成两个普通nativeZF原核端点。实际满射和检查序数上的注入已经消去最小索引图所需的Cover／OneAt；完整wellorderable_image从实际满射及定义域良序性出发，复用已完成的稠密序数／check名／注入表示、原元组稳定子、实际HS最小索引图和check注入到良序性的证明，消去实际序数、check名、注入及共同支撑见证。结论覆盖所有内部条件和完整像，没有外层Choice、L、宿主良序、标准性或秩截断。
 
-源定理的Cover、逐指标OneAt、Y／有限参数的共同支撑、条件呈现及已构造check(O)仍是明确输入。本端点是后续indexedImage和截面／切片消费者所需的检查名指标特化；没有把任意宿主所选良序或未编码关系家族冒称为已迁移。wellorderable_check_dense和单纤维indexedSection_exists已经完成并保留。
+源boundedApp逆与复合的稠密存在公式保留全部成员守卫（重复X成员合取等价合并），三个原函数／App消去证明逐字复用且生产者未改。ForcingLeastRelation的普通原核图构造已被本批真实消费；任意宿主所选良序／未编码关系家族不冒称完成。验收报告为verification/indexed-image-acceptance.json，仅在完整验收生成后有效。
 
-验收入口为verification/least-relation-acceptance.json；仅在本批完整验收生成后有效。当前仍为原阶段9：实际indexedImage／wellorderable_image、统一最大值内部家族包装、统一截面／目标注入、剩余SliceGeometry／SliceAssembly及全局反向单射尚未完成。完整ordinal_presentation、子集像满射、局部最大值、实际ACwo、¬AC、L及全公理模式已存在并复用。PP/Main、全部内部／非标准证明码Con、Comparator及终验仍未完成；最终对象Con未证明。
+当前仍为原阶段9：统一最大值内部家族包装、统一截面／目标注入、剩余SliceGeometry／SliceAssembly及全局反向单射尚未完成。完整ordinal_presentation、子集像满射、局部最大值、实际ACwo、¬AC、L及全公理模式均已存在并复用。PP/Main、全部内部／非标准证明码Con、Comparator及终验仍未完成；最终对象Con未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 
