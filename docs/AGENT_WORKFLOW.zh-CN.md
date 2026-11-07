@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：完整 localized_maximum 对象模式（2026-11-08）
+## 当前迁移：实际 indexedGraph 及完整函数图（2026-11-08）
 
-ForcingLocalizedMaximum迁移固定源OrdinalChoice:64–147：实际构造同一稠密Cohen候选族／极大反链，用原生Collection及已有有界内部选择取得任意秩HS名字族，再构造实际激活图与HS混合名字。精确q支撑使激活固定；实际反链消去相容性前提，所有更强条件通过localized_existential、实际共同下界、限制／Cohen并、混合等式及完整元组等值替换完成密度论证。结论位于原Cohen条件d₀及预定q，不缩成仅有进一步加强条件。
+ForcingIndexedGraph迁移固定源GraphFusion:16–93。给定实际内部函数图f及共同支撑，直接复用原生Collection、唯一check／有序对名字和collect，构造实际内部名字族与字面indexedGraph。输出同时保留全部条件权重的精确边方程、HS、原共同支撑、实际check(X)，以及全部内部条件上的完整functionOn（含无垃圾边及唯一值）、成员／应用双向定律；量词遍历全部内部集合和任意秩HS名字。
 
-原nativeZF推导核给出内部L相对化完整模式，保留原背景守卫及精确Fix(q.range)，地面Choice由现有L消去，不假定名字族／混合／相容／稠密性或最终强迫结论。完整验收见verification/localized-maximum-acceptance.json。当前仍为原阶段9；下一沿源ground_family_choice（接通indexedGraph）→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
+端点是普通nativeZF原推导核的FirstOrder.Derives，无地面Choice前提，也无需L相对化。未新增基础或假定输出图。localized_maximum已完成；当前仍为原阶段9，下一直接源消费者为OrdinalChoice.indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部／非标准证明码Con及Comparator仍未完成。验收登记：verification/indexed-graph-acceptance.json。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -16,7 +16,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 兼容性修复后前三轮远端CI均完整成功。已一次上传四个验收提交至c592fe5；新CI42393495880的固定检出、依赖、源码及跨平台回归已通过，目前仍在同一次全量构建／审计。此后新增工作先本地验收保存，不叠加推送。
 
-当前仍为原阶段9。witness_placement与localized_existential已迁移，ACwo下一直接源码消费者是OrdinalChoice.ground_family_choice→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement、localized_existential、localized_maximum及indexedGraph已迁移，ACwo下一直接源码消费者是OrdinalChoice.indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 

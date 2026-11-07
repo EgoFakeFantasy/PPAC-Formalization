@@ -1042,3 +1042,4 @@ import PPAC.Migration.ForcingWitnessPlacement
 import PPAC.Migration.ForcingLocalizedExistential
 import PPAC.Migration.ForcingMaximalAntichain
 import PPAC.Migration.ForcingLocalizedMaximum
+import PPAC.Migration.ForcingIndexedGraph

@@ -14192,4 +14192,10 @@ example {k n : Nat} (rho : Fin 7 → Fin k) (w mu history kappa unit mark H C in
       (ForcingLocalizedMaximum.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 v phi))) :=
   ForcingLocalizedMaximum.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 v phi
 
+-- Actual indexed graph, full functionOn, exact common support and all-condition laws.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F support mul t X f : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingIndexedGraph.sentence rho I K B w G F support mul t X f)) :=
+  ForcingIndexedGraph.kernel_certificate rho I K B w G F support mul t X f
+
 end PPAC.Migration.Step4Checks

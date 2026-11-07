@@ -1329,7 +1329,7 @@ ForcingChoiceFailure沿固定ChoiceFailure:13–263、ProductNames:411–455，�
 
 ## 原阶段9：实际RootProbes与ACwo精确对象逻辑桥（2026-11-08）
 
-ForcingRootProbes直接消费同一AllIdeals／最终Row，单元单点理想产生实际探针族，证明原乘积／独立锥定律及索引env13的内部不可数性；与Cohenκ的env14分开。原核端点保留同一40集合Core／商／像／¬AC存在句。ForcingOrdinalChoice完整保留源序数族／选择族／成员公式及functionOn，在原核证明DenseChoice与所有内部条件的ACwo强迫精确等价；它是逻辑桥，实际DenseChoice和forces_ACwo仍未完成。全量验收3206任务／37326声明，37297旧足迹不变、29项新增，9命令／5条trust=0全0，零警告／无新依赖，2764哈希匹配；清理6临时文件后构建0。报告：verification/ordinal-choice-acceptance.json。下一沿源witness_placement／localized_existential／localized_maximum／ground_family_choice_dense接实际ACwo；SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
+ForcingRootProbes直接消费同一AllIdeals／最终Row，单元单点理想产生实际探针族，证明原乘积／独立锥定律及索引env13的内部不可数性；与Cohenκ的env14分开。原核端点保留同一40集合Core／商／像／¬AC存在句。ForcingOrdinalChoice完整保留源序数族／选择族／成员公式及functionOn，在原核证明DenseChoice与所有内部条件的ACwo强迫精确等价；它是逻辑桥，实际DenseChoice和forces_ACwo仍未完成。全量验收3206任务／37326声明，37297旧足迹不变、29项新增，9命令／5条trust=0全0，零警告／无新依赖，2764哈希匹配；清理6临时文件后构建0。报告：verification/ordinal-choice-acceptance.json。witness_placement／localized_existential／localized_maximum／indexedGraph现已完成；下一沿源indexedGraph_choiceForFamily／ground_family_choice／ground_family_choice_dense接实际ACwo；SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
 
 ## 原阶段9：完整 witness_placement 对象模式（2026-11-08）
 
@@ -1345,4 +1345,10 @@ ForcingMaximalAntichain consumes OrdinalChoice:16–49 at its localized_maximum 
 
 ## 原阶段9：完整 localized_maximum 对象模式（2026-11-08）
 
-ForcingLocalizedMaximum consumes pinned OrdinalChoice:64–147. Actually construct source dense Cohen family, internal maximal antichain, unrestricted-rank HS name family via existing Collection/uniformization, activation graph and HS mixture. Exact q-support fixes activations; antichain proves coherence. All-stronger-condition proof consumes localized_existential, actual common lower bounds, restrictions/Cohen union, eq_mix_at and full tuple_congr. Original nativeZF Derives of internal-L-relative full source scheme at EXACT d0 and predetermined q, not merely a stronger Cohen condition. No supplied family/mix/coherence/density/final-force oracle, ground Choice discharged by existing L. Full acceptance: verification/localized-maximum-acceptance.json. Next ground_family_choice/indexedGraph→ground_family_choice_dense; actual ACwo and internal Con remain incomplete.
+ForcingLocalizedMaximum consumes pinned OrdinalChoice:64–147. Actually construct source dense Cohen family, internal maximal antichain, unrestricted-rank HS name family via existing Collection/uniformization, activation graph and HS mixture. Exact q-support fixes activations; antichain proves coherence. All-stronger-condition proof consumes localized_existential, actual common lower bounds, restrictions/Cohen union, eq_mix_at and full tuple_congr. Original nativeZF Derives of internal-L-relative full source scheme at EXACT d0 and predetermined q, not merely a stronger Cohen condition. No supplied family/mix/coherence/density/final-force oracle, ground Choice discharged by existing L. Full acceptance: verification/localized-maximum-acceptance.json. IndexedGraph is now completed; next indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense; actual ACwo and internal Con remain incomplete.
+
+## 当前迁移：实际 indexedGraph 及完整函数图（2026-11-08）
+
+ForcingIndexedGraph迁移固定源GraphFusion:16–93。给定实际内部函数图f及共同支撑，直接复用原生Collection、唯一check／有序对名字和collect，构造实际内部名字族与字面indexedGraph。输出同时保留全部条件权重的精确边方程、HS、原共同支撑、实际check(X)，以及全部内部条件上的完整functionOn（含无垃圾边及唯一值）、成员／应用双向定律；量词遍历全部内部集合和任意秩HS名字。
+
+端点是普通nativeZF原推导核的FirstOrder.Derives，无地面Choice前提，也无需L相对化。未新增基础或假定输出图。localized_maximum已完成；当前仍为原阶段9，下一直接源消费者为OrdinalChoice.indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部／非标准证明码Con及Comparator仍未完成。验收登记：verification/indexed-graph-acceptance.json。
