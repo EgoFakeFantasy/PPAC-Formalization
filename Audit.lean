@@ -37932,3 +37932,26 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingNonwellorderableImage.sentence
 #print axioms PPAC.Migration.ForcingNonwellorderableImage.models
 #print axioms PPAC.Migration.ForcingNonwellorderableImage.kernel_certificate
+
+-- Fixed ChoiceFailure: same actual system forces the full encoded negation of Choice.
+#print axioms PPAC.Migration.ForcingChoiceFailure.forces_nonempty
+#print axioms PPAC.Migration.ForcingChoiceFailure.functionOn_total
+#print axioms PPAC.Migration.ForcingChoiceFailure.functionOn_unique
+#print axioms PPAC.Migration.ForcingChoiceFailure.forces_choiceOn
+#print axioms PPAC.Migration.ForcingChoiceFailure.perm_mem_iff
+#print axioms PPAC.Migration.ForcingChoiceFailure.OutsideIndex
+#print axioms PPAC.Migration.ForcingChoiceFailure.exists_outside_index
+#print axioms PPAC.Migration.ForcingChoiceFailure.Outside
+#print axioms PPAC.Migration.ForcingChoiceFailure.exists_outside
+#print axioms PPAC.Migration.ForcingChoiceFailure.edge_outside
+#print axioms PPAC.Migration.ForcingChoiceFailure.outside_HS_and_fixed
+#print axioms PPAC.Migration.ForcingChoiceFailure.mem_outside
+#print axioms PPAC.Migration.ForcingChoiceFailure.outside_subset
+#print axioms PPAC.Migration.ForcingChoiceFailure.label_mem_outside
+#print axioms PPAC.Migration.ForcingChoiceFailure.on_core
+#print axioms PPAC.Migration.ForcingChoiceFailure.outcomeFormula
+#print axioms PPAC.Migration.ForcingChoiceFailure.outcomeFormula_freeClosed
+#print axioms PPAC.Migration.ForcingChoiceFailure.outcomeFormula_semantics
+#print axioms PPAC.Migration.ForcingChoiceFailure.sentence
+#print axioms PPAC.Migration.ForcingChoiceFailure.models
+#print axioms PPAC.Migration.ForcingChoiceFailure.kernel_certificate

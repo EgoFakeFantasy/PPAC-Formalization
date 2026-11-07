@@ -1035,3 +1035,4 @@ import PPAC.Migration.ForcingKernelImage
 import PPAC.Migration.ForcingImageQuotient
 import PPAC.Migration.ForcingMapCalculus
 import PPAC.Migration.ForcingNonwellorderableImage
+import PPAC.Migration.ForcingChoiceFailure

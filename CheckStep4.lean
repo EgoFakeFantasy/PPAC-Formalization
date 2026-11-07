@@ -14152,4 +14152,9 @@ example : FirstOrder.Derives nativeZF []
       (ConstructibleGround.relative ForcingNonwellorderableImage.sentence)) :=
   ForcingNonwellorderableImage.kernel_certificate
 
+-- Same concrete Core/quotient/image system, with all-condition non-Choice.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingChoiceFailure.sentence)) :=
+  ForcingChoiceFailure.kernel_certificate
+
 end PPAC.Migration.Step4Checks

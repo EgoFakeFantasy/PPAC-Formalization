@@ -1322,3 +1322,7 @@ ForcingMapCalculus沿固定源:200–359，以两个nativeZF原核存在句实�
 ## 原阶段9：同系统非良序像双射（2026-11-08）
 
 ForcingNonwellorderableImage 沿固定 UniformImages:243–276，在原 nativeZF 推导核中强化同一个内部 L 的40集合存在句，保留原 Core／商 Outcome并加入全称像 Outcome。任意内部 HS 名称和条件下，完整源 A→B 满射及B的强迫非良序给出更强条件上的实际 HS 完整 A↔B 双射。实际像商／像图、任意强迫序数单射、原商双射、源逆图和复合图均复用；没有给定商／图／最终双射回调，原生产者正文不变。全量验收3203任务／37276声明、37265旧足迹不变、11项新增、9命令／5条trust=0全0、零警告／无新依赖；两项后续完成状态文字修正单独通过源码预检。报告：verification/nonwellorderable-image-acceptance.json。原阶段9其余模型应用、第10 PP/Main和全部内部Con、第11终验及原第4 Comparator仍未完成。
+
+## 原阶段9：同系统完整ChoiceFailure强迫¬AC（2026-11-08）
+
+ForcingChoiceFailure沿固定ChoiceFailure:13–263、ProductNames:411–455，在原nativeZF推导核中强化同一个内部L的40集合存在句，保留完整Core／商及像Outcome，并在每个内部条件证明完整源AC.neg。实际构造外标签收集器及同一支撑固定性，复用幂名／非空分离、名称支撑／覆盖、实际兼容放置／标签作用、完整图唯一性及标签不等；没有给定输出见证或无选择回调，没有名称秩截断。全量验收3204任务／37297声明，37276旧足迹不变、21项新增，9命令／5条trust=0全0，零警告／无新增依赖，2762当前文本哈希匹配；清理4临时文件后构建0。报告：verification/choice-failure-acceptance.json。远端7352330全量Linux CI已成功；本批上传后的新CI须独立核对。阶段9仍缺SVC／序数呈现、ACwo及全局商编码单射；PP/Main和全部内部Con、终验及Comparator未完成。

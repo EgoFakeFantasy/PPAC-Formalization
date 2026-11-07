@@ -1,16 +1,17 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 本批验收（2026-11-08）：同一系统的非良序像双射
+## 本批验收（2026-11-08）：同一系统完整强迫¬AC
 
-固定 UniformImages.nonwellorderable_image_bijection:243–276 已迁移至 ForcingNonwellorderableImage。原 nativeZF／FirstOrder.Derives 端点证明同一个内部 L 的40集合存在句：保留原 Core 与商 Outcome，并在同一系统全称证明像 Outcome。对任意内部 HS 名称 h、B 和条件 p，完整源满射 A→B 加 B 的强迫非良序，得到更强条件 q 与实际构造的 HS 完整双射 A↔B。
+固定 ChoiceFailure:13–263 与 ProductNames:411–455 已迁移至 ForcingChoiceFailure。原 nativeZF／FirstOrder.Derives 端点强化同一个内部 L 的40集合存在句：保留原 Core、商 Outcome、非良序像 Outcome，并在每个内部原条件上证明完整源 AC.neg。未把宿主层“不存在某个给定选择函数”当成最终交付。
 
-严格复用既有像商／像图、完整非良序商双射及源复合／逆名字图：实际像单射 B→Q 传递序数单射，推出 Q 非良序；原 Outcome 给出 A↔Q，逆图和复合图给出 A↔B。不接收商／像图／逆图／最终双射见证，闭合端点没有 Core／Outcome 回调前提。三个旧生产者仅追加复用接口，原证明正文逐字节保持不变；不重证 L、模式、递归或名字／图基础。
+实际用现有原生分离构造 I\J 索引，复用标签收集器得到精确原始外标签名、HS 和同一支撑的固定性；用现有幂名和非空分离构造完整反例族。对任意内部 HS 选择图，完整 functionOn／choiceOn 公式提供实际被选标签；已有支撑、覆盖、兼容放置及公式对称保持图与参数，同时移动标签，在实际共同下界用完整图唯一性与现有标签不等定理矛盾。没有给定置换／共同下界／选择图不存在的回调，没有名称秩截断或全族默认元素选择。
 
-完整本地验收：3203构建任务、37276项声明；全部37265项旧足迹保持不变，11项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖。完成状态文字随后仅修正于两份非Lean元数据，源码预检单独记录，不冒称重复了全量验收。报告：verification/nonwellorderable-image-acceptance.json。
+完整本地验收：3204构建任务、37297项声明；全部37276项旧足迹不变，21项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2762个当前规范文本哈希全部匹配完整验收快照。旧迁移模块源码逐字节保留；4个本批临时文件已精确清理，清理后构建再次退出0。报告：verification/choice-failure-acceptance.json。
 
-远端兼容修复 bc9367f 已通过完整 Linux CI。像商图7352330的同一次CI仍在完整构建，固定依赖及源码检查通过；本地后续两批先保存，待它结束再一次推送，避免堆叠通知。各提交的本地／远端状态分别记录。
+远端7352330的完整Linux CI已成功：37224项声明、零警告。后续复合／逆图、非良序像双射与本批¬AC均已本地完整验收，将一次推送并独立核对新提交CI；不套用旧提交成功。推送前3份固定干净依赖、75份OpenAI源哈希和5项跨平台回归检查全部通过。
 
-仍在原阶段9。非良序像双射已完成，后续为同一系统的SVC、ACwo、全局商编码单射、¬AC模型应用；第10 PP/Main／全部内部与非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
+仍在原阶段9：非良序像双射与¬AC强迫应用已完成，剩余同一系统SVC／序数呈现、ACwo及全局商编码单射应用。第10 PP/Main／全部内部与非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
+
 
 
 
@@ -25,7 +26,7 @@
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射原核证书已验收 | 在同一系统接 SVC、ACwo、全局商编码单射、¬AC，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
+| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫原核证书已验收 | 在同一系统接 SVC、ACwo、全局商编码单射；¬AC强迫应用已完成，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
@@ -37,7 +38,7 @@
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
 | 8 已完成 | component_selector_dense → OrbitAssignments → assignmentGraph_bijection → quotient_bijection_above → nonwellorderable_quotient_bijection → 同一具体系统全局实例 | 同一实际塔／hRec／hMatrix／最终行、全部内部参数／商／记录及图构造器已复用 | ForcingConcreteSystem.kernel_certificate 无系统输入地存在量化全部内部见证，并全称消费源商双射；全量验收见 concrete-system-acceptance.json。下一活动行是 9 |
-| 9 当前 | UniformImages → Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端；kernelGraph／同值类／imageClassRelation、像商图、源复合／逆图及同系统非良序像双射已完成 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
+| 9 当前 | UniformImages → Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端；kernelGraph／同值类／imageClassRelation、像商图、源复合／逆图及同系统非良序像双射已完成 | SVC、ACwo、全局商编码单射；¬AC强迫应用已完成，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
