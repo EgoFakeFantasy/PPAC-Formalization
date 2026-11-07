@@ -14264,4 +14264,12 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top f X Y J O i p : F
       (ForcingOrderedSections.sectionSentence rho I K B w G F mul top f X Y J O i p)) :=
   ForcingOrderedSections.section_kernel_certificate rho I K B w G F mul top f X Y J O i p
 
+-- Actual supported least-index graph for INTERNAL ordinal checked-index forcing families.
+-- Original Cover/OneAt/finite-parameter support remain explicit source hypotheses.
+example {k n : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top O Y checkedO p : Fin k)
+    (names : Fin n → Fin k) (phi : Source.Formula (n+2)) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingLeastRelation.sentence rho I K B w G F S mul top O Y checkedO p names phi)) :=
+  ForcingLeastRelation.kernel_certificate rho I K B w G F S mul top O Y checkedO p names phi
+
 end PPAC.Migration.Step4Checks

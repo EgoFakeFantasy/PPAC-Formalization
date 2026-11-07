@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
-## 本批迁移：内部最小发生与有序截面消费者（2026-11-08）
+## 当前迁移：内部序数最小索引注入图（2026-11-08）
 
-ForcingLeastOccurrence在原nativeZF推导核中给出实际内部序数O全部指标上的稠密最小发生与字面指标唯一性。直接将兼容发生公式代入已经完成的ObjectOrdinalLeast模式，复用内部序数比较／自反禁止；单调、同余和正则性中间引理也保留源UnaryRelation的名字域条件。对实际序数指标采用内部成员关系序；没有外部良基、标准性、秩界或删除指标。此处没有宣称任意地面集合的宿主所选良序翻译或实际leastRelation注入图已完成。
+ForcingLeastRelation将固定OrderedSections的LeastOccurrence.relation、relation_one、relation_inj、relation_move和exists_injection迁移为普通nativeZF原核定理模式。索引遍历内部序数O，发生关系是带有限源名字参数的实际check(i)强迫公式；对象端点实际构造共同支撑下的HS图，并证明完整injection（含functionOn／无杂项）。移动定律从已有公式对称性和检查名固定性推出，最小性复用已经完成的内部序数最小元，图构造复用已有关系图收集器。没有给定图／移动／最终函数律，没有外层Choice、L、外部良基或标准性前提。
 
-ForcingOrderedSections的两个普通nativeZF原核端点迁移wellorderable_check_dense和indexedSection_exists。前者复用已存在的完整wellorderable解释／内部序数决策／秩／check名HS／元组同余，在每个内部条件以下取得实际序数、check名和注入图。后者逐字保留indexedSection AST（仅edge命名空间替换），按源占用／未占用两分支证明单纤维存在性；辅助空名输入已由既有实际作用族／正规滤子／HS空名消去。原MapCalculus私有注入消去证明逐字保留且供体文件未改。没有同时选取一族默认、给定截面、加强函数假设或新增Choice／L／基础设施。
+源定理的Cover、逐指标OneAt、Y／有限参数的共同支撑、条件呈现及已构造check(O)仍是明确输入。本端点是后续indexedImage和截面／切片消费者所需的检查名指标特化；没有把任意宿主所选良序或未编码关系家族冒称为已迁移。wellorderable_check_dense和单纤维indexedSection_exists已经完成并保留。
 
-本批验收见verification/ordered-sections-acceptance.json。原阶段9保持未完成：接实际leastRelation图／统一最大值家族包装／统一截面注入，再完成剩余SliceGeometry／SliceAssembly和全局反向单射。局部最大值、序数决策、最小序数、完整ordinal_presentation、子集像满射、实际ACwo、¬AC、L和全公理模式均已存在并复用；不得误报为待从头实现。PP/Main及全部内部／非标准证明码Con、Comparator和终验仍未完成。
+验收入口为verification/least-relation-acceptance.json；仅在本批完整验收生成后有效。当前仍为原阶段9：实际indexedImage／wellorderable_image、统一最大值内部家族包装、统一截面／目标注入、剩余SliceGeometry／SliceAssembly及全局反向单射尚未完成。完整ordinal_presentation、子集像满射、局部最大值、实际ACwo、¬AC、L及全公理模式已存在并复用。PP/Main、全部内部／非标准证明码Con、Comparator及终验仍未完成；最终对象Con未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 
