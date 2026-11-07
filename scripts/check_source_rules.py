@@ -1,5 +1,6 @@
 """Check that all 19 input rules match the pinned OpenAI excerpt."""
 from pathlib import Path
+from source_hash import source_sha256
 import hashlib
 import json
 
@@ -7,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     lock = json.loads((ROOT / "docs/SOURCE_RULES_LOCK.json").read_text(encoding="utf-8"))
     ref = ROOT / "third_party/openai/PartitionConsistency.rules.txt"
-    if hashlib.sha256(ref.read_bytes()).hexdigest() != lock["rules_excerpt_sha256"]:
+    if source_sha256(ref) != lock["rules_excerpt_sha256"]:
         raise RuntimeError("Pinned source rules excerpt changed")
     expected = ref.read_text(encoding="utf-8")
     replacements = [

@@ -1,10 +1,10 @@
 {
   "yesmeta_pin": "039c8e132cc19671d73a3933c66b4799d2599dd6",
   "files": {
-    "YesMetaZFC/Automation/ObjectProofNode.lean": "0876832d7ebed91a237d982c91203b7687afbdf3bd707adacbed9b36d8be5e8c",
-    "YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "9bd650055d9f37e7719975396d8e30ce203fad32bc0e882eab5e7ba3edb7ce07",
-    "YesMetaZFC/Automation/ObjectTermSyntax.lean": "3fe52577ca2b3506065815a292b6cb12a494dd3e5706a44f1d4a2135e09f5ccb",
-    "YesMetaZFC/Logic/FirstOrder/Nonlogical/BasicSetTheory/Language.lean": "a7e60fa3e0f09ca164d890329a6c4fdd8c621c58efbc322f693f73c30af670a1"
+    "YesMetaZFC/Automation/ObjectProofNode.lean": "48e59f29768695f0a712399dc547322971bd22062f574c7d390764516f60f066",
+    "YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "3f4d607af3aec3b36b57b312f9525e6e73626bd57998feb831df12e6df75f655",
+    "YesMetaZFC/Automation/ObjectTermSyntax.lean": "3991538f3f1c7f7855ee1d5e8173d3c33fdb71d52a29eb8f784ca35163f09782",
+    "YesMetaZFC/Logic/FirstOrder/Nonlogical/BasicSetTheory/Language.lean": "dba946e3b26834b2f5cfa7a5308561691f45c493b9c06d91d20b04229f8f26e3"
   },
   "proof_shape_count": 6,
   "logical_shape_count": 27,

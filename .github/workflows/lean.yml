@@ -5,16 +5,43 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ppac-yesmeta-migration
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: ppac-yesmeta-migration
+      - name: Check out pinned L proof donor
+        uses: actions/checkout@v4
+        with:
+          repository: EgoFakeFantasy/YesMetaZFC
+          ref: 79793365c2145c53db37eaf8ab23a64826bd9738
+          path: yesmetazfc-analytic-comprehension
+      - name: Check out pinned OpenAI source
+        uses: actions/checkout@v4
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: openai-math-ppac-source
       - name: Install elan
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned Lean dependencies before source checks
+        run: lake update
+      - name: Check clean inputs and cross-platform source locks
+        run: |
+          python3 scripts/check_ci_inputs.py
+          python3 -m unittest discover -s scripts -p test_ci_compatibility.py
       - name: Build and audit
         run: python3 scripts/verify.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: verification
-          path: verification/
+          path: |
+            ppac-yesmeta-migration/verification/ci-inputs.json
+            ppac-yesmeta-migration/verification/summary.json
+            ppac-yesmeta-migration/verification/commands.json
+            ppac-yesmeta-migration/verification/*.log

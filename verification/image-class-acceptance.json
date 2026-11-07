@@ -1,0 +1,340 @@
+{
+  "verified_at": "2026-11-07T23:00:42.145254+11:00",
+  "stage": 9,
+  "base_commit": "e80f441f9c1b1e3ea09af0088d953ef834eabab1",
+  "adapter": "PPAC/Migration/ForcingKernelImage.lean",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingKernelImage.image_kernel_certificate"
+  ],
+  "object_sentence": "Original FirstOrder.Derives nativeZF [] (Project.fo_sentence (imageSentence ...)). From the SAME eight actual source-system/HS guards, EXISTS the exact three-name support and raw HS kernel graph, then proves Monotone/Congruent/Regular, actual Moves under that constructed support, and One/Injective at EVERY internal condition under the FULL original mapsTo/functionOn formula. No supplied kernel graph, common support, graph fixedness or final relation law.",
+  "source_declarations": [
+    "UniformImages.imageClassRelation:93-116",
+    "UniformImages.imageClassRelation_move:118-128",
+    "UniformImages.imageClassRelation_one:130-143",
+    "UniformImages.imageClassRelation_inj:145-169"
+  ],
+  "source_consumers": [
+    "UniformImages.imageQuotient and mem_imageQuotient:177-186",
+    "UniformImages.imageQuotientGraph:188-201",
+    "UniformImages.imageQuotientGraph_mapsTo/injection/surjection:203-240",
+    "UniformImages.nonwellorderable_image_bijection:243-276"
+  ],
+  "completed": [
+    "Internal relation formula uses actual separated HS class witnesses; their literal uniqueness is the existing class_unique, not a quotient representative or selected value.",
+    "Reproduce source monotonicity/regularity/congruence and imageClassRelation_move; use existing HS action closure and relationClass_move on actual newly produced class names.",
+    "Reproduce source one/inj on the SAME actual kernel graph, consuming the previously proved kernel value and same-value class equations with the full forced function formula.",
+    "Invoke the old actual kernel constructor; existing atomic_congr/force_congr transfer the SAME graph and recursion witnesses after its two new binders, then consume all relation laws on those witnesses.",
+    "Closed original nativeZF object existence certificate, retaining all 27 earlier kernel declarations byte-identical except no body changes."
+  ],
+  "retained_original_kernel_body_byte_identical": true,
+  "original_stage8_global_assembly_exit_gate_passed": true,
+  "original_stage9_model_applications_complete": false,
+  "imageClassRelation_laws_complete": true,
+  "image_quotient_graph_and_bijection_complete": false,
+  "final_PP_Main_complete": false,
+  "final_internal_Con_proved": false,
+  "original_Comparator_verified": false,
+  "pending": [
+    "Pinned UniformImages.imageQuotient/mem_imageQuotient:177-186, imageQuotientGraph:188-201 and mapsTo/injection/surjection:203-240; reuse the existing actual quotient/class/name/graph constructors.",
+    "Nonwellorderable image bijection:243-276; then same-system SVC/ACwo/global quotient-injection/not-AC.",
+    "Original10-11 PP/Main and all-internal/nonstandard Proof/Con transfer/final closed theorem, clean proof reproduction; original4 Comparator remains separate."
+  ],
+  "build_jobs": 3200,
+  "audited_declarations": 37209,
+  "old_footprints_unchanged": 37193,
+  "old_kernel_footprints_unchanged": 27,
+  "new_declarations": 16,
+  "related_declarations_trust_zero_audited": 43,
+  "file_hashes": 2758,
+  "source_hash_policy": "sha256/text-crlf-to-lf/v1",
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "clean_pins": {
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+  },
+  "source_hashes_verified": 75,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingKernelImage.ImageHolds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageHolds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageHolds_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageRelation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageRelation_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_congruent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_inj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_move": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_moves": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageResult": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.imageSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.image_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "ImageClassAudit.tmp.lean",
+        "length": 2738,
+        "sha256": "1115a58a83586292ed826aa92993b2e768d734c87c6500c6f37be3c988a5da95"
+      },
+      {
+        "path": "verification/image-class-baseline.tmp.json",
+        "length": 14148408,
+        "sha256": "a75f0b1191fc98db1e5be90ee83b6741a1845b3bc5f87dee6275f93f56682c3b"
+      },
+      {
+        "path": "verification/image-class-check.tmp.log",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "verification/image-class-build.tmp.log",
+        "length": 140,
+        "sha256": "c0258e1bb5476d5957679b3322e7967299c796f392054e8dc88a4a3583ff0302"
+      },
+      {
+        "path": "verification/image-class-audit.tmp.log",
+        "length": 15957,
+        "sha256": "1fdfa1d6f3502c8cd84db88df6fa9e6d4254c461382b784374d91811ff6dffd1"
+      },
+      {
+        "path": "verification/ci-lock-migration.tmp.json",
+        "length": 2663857,
+        "sha256": "86ccb0227a75c5739806ad9da93e5929e07e203c01fb7a16e39eebcf48372a68"
+      },
+      {
+        "path": "verification/ci-clean-checkout.tmp.json",
+        "length": 880,
+        "sha256": "28018ecd0dfd3a5301da167477ea60aa7d6013a8cda15176459d2325681fc292"
+      }
+    ],
+    "fresh_checkout_directory": ".local/ci-clean-20261107",
+    "files_removed": 7,
+    "snapshot_removed": true,
+    "measured": {
+      "free_after": 79679827968,
+      "free_before": 76141981696,
+      "files_removed": 7,
+      "snapshot_logical_bytes": 3143800060.0,
+      "snapshot_removed": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-clean-20261107"
+    }
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3200,
+    "log": "verification/image-class-post-cleanup.log"
+  },
+  "post_cleanup_current_hashes_rechecked": 2758
+}

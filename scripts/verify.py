@@ -8,6 +8,7 @@ import json
 import re
 import subprocess
 from pathlib import Path
+from source_hash import POLICY, source_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "verification"
@@ -60,7 +61,7 @@ def check_mode_three_scope() -> dict:
     text = {}
     for name, expected_hash in inventory["files"].items():
         path = base / name
-        if hashlib.sha256(path.read_bytes()).hexdigest() != expected_hash:
+        if source_sha256(path) != expected_hash:
             raise RuntimeError(f"Mode3 source inventory changed: {name}")
         text[Path(name).name] = strip_comments(path.read_text(encoding="utf-8-sig"))
     node = text["ObjectProofNode.lean"]
@@ -1814,7 +1815,7 @@ def check_Project_compiler_source_validity() -> dict:
 
 
 
-def main() -> None:
+def main(source_check_only: bool = False) -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
     raw_projection_definition = check_raw_projection_definitions()
@@ -1860,7 +1861,6 @@ def main() -> None:
     Project_compiler_source_validity = check_Project_compiler_source_validity()
     mode_three_scope = check_mode_three_scope()
     OUT.mkdir(exist_ok=True)
-    (OUT / "summary.json").unlink(missing_ok=True)
     sources = sorted([ROOT / "PPAC.lean", ROOT / "Audit.lean", ROOT / "Check.lean", ROOT / "CheckStep2.lean", ROOT / "CheckStep3.lean", ROOT / "CheckStep4.lean", *ROOT.glob("PPAC/**/*.lean")])
     # .axiom is the upstream Kind constructor; declaration-level axiom remains forbidden.
     forbidden = re.compile(r"\b(sorry|admit|unsafe|native_decide)\b|(?<!\.)\baxiom\b")
@@ -1891,6 +1891,8 @@ def main() -> None:
     if not relativization_names or not relativization_names <= set(expected):
         raise RuntimeError("Incomplete relativization declaration audit")
     source_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))
+    if source_lock.get("source_hash_policy") != POLICY:
+        raise RuntimeError("Source lock hash convention changed")
     forcing_name_lock = source_lock["source_proof_adaptations"]["forcing_name_induction"]
     if source_lock["files"][forcing_name_lock["source_file"]] != forcing_name_lock["source_sha256"]:
         raise RuntimeError("Original forcing-name source lock changed")
@@ -2593,14 +2595,14 @@ def main() -> None:
                                 ('forcing_assigned_parent_system', 'ForcingAssignedParentSystem', 9),
                                 ('forcing_nonwellorderable_quotient', 'ForcingNonwellorderableQuotient', 7),
                                 ('forcing_concrete_system', 'ForcingConcreteSystem', 14),
-                                ('forcing_kernel_image', 'ForcingKernelImage', 27)):
+                                ('forcing_kernel_image', 'ForcingKernelImage', 43)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
             retained_entries.append(adapter_lock["retained_existing_producer"])
         for retained in retained_entries:
             producer_path = ROOT / retained["producer_file"]
-            if hashlib.sha256(producer_path.read_bytes()).hexdigest() != retained["producer_sha256"]:
+            if source_sha256(producer_path) != retained["producer_sha256"]:
                 raise RuntimeError("Existing retained producer source changed")
             producer = producer_path.read_text(encoding="utf-8")
             selected = producer[producer.index(retained["source_start"]):producer.index(retained["source_end"], producer.index(retained["source_start"]))]
@@ -2615,7 +2617,7 @@ def main() -> None:
 
         if "native_source_file" in adapter_lock:
             native_path = ROOT / adapter_lock["native_source_file"]
-            if hashlib.sha256(native_path.read_bytes()).hexdigest() != adapter_lock["native_source_sha256"]:
+            if source_sha256(native_path) != adapter_lock["native_source_sha256"]:
                 raise RuntimeError("Native condition-graph constructor source changed")
         if source_lock["files"][adapter_lock["source_file"]] != adapter_lock["source_sha256"]:
             raise RuntimeError("Original condition-map source lock changed")
@@ -2623,7 +2625,7 @@ def main() -> None:
             if source_lock["files"][extra_source] != extra_digest:
                 raise RuntimeError("Additional forcing source lock changed: " + extra_source)
         for native_file, native_digest in adapter_lock.get("certificate_source_files", {}).items():
-            if hashlib.sha256((ROOT / native_file).read_bytes()).hexdigest() != native_digest:
+            if source_sha256(ROOT / native_file) != native_digest:
                 raise RuntimeError("Native certificate source changed: " + native_file)
         for axiom in adapter_lock.get("additional_native_certificate_axioms", []):
             if "`" + axiom not in (ROOT / "Check.lean").read_text(encoding="utf-8"):
@@ -2645,7 +2647,7 @@ def main() -> None:
         map_recursion_footprints.update(adapter_lock["exact_declaration_footprints"])
     l_reuse = source_lock["companion_reuse"]["native_internal_L"]
     l_manifest_path = ROOT / l_reuse["manifest"]
-    if hashlib.sha256(l_manifest_path.read_bytes()).hexdigest() != l_reuse["manifest_sha256"]:
+    if source_sha256(l_manifest_path) != l_reuse["manifest_sha256"]:
         raise RuntimeError("Native L reuse manifest changed")
     l_manifest = json.loads(l_manifest_path.read_text(encoding="utf-8"))
     if len(l_manifest["proof_modules"]) != 140 or len(l_manifest["exact_declaration_footprints"]) != 2818:
@@ -2653,7 +2655,7 @@ def main() -> None:
     l_paths = set()
     for entry in l_manifest["proof_modules"]:
         target = ROOT / entry["adapter"]
-        if hashlib.sha256(target.read_bytes()).hexdigest() != entry["adapter_sha256"]:
+        if source_sha256(target) != entry["adapter_sha256"]:
             raise RuntimeError("Reused L adapter changed: " + entry["adapter"])
         normalized = re.sub(r"^import\s+.*\n", "", target.read_text(encoding="utf-8"), flags=re.MULTILINE)
         if hashlib.sha256(normalized.encode("utf-8")).hexdigest() != entry["normalized_nonimport_body_sha256"]:
@@ -2662,7 +2664,7 @@ def main() -> None:
     if l_paths != {f.resolve() for f in (ROOT / "PPAC/Companion").rglob("*.lean")}:
         raise RuntimeError("Unreviewed or missing companion L proof module")
     for name, digest in (l_manifest["native_existing_dependency_files"] | l_manifest["auxiliary_files"]).items():
-        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != digest:
+        if source_sha256(ROOT / name) != digest:
             raise RuntimeError("Native L dependency/notice changed: " + name)
     if not set(l_manifest["exact_declaration_footprints"]) <= set(expected):
         raise RuntimeError("Incomplete L public/generated declaration audit")
@@ -2697,7 +2699,7 @@ def main() -> None:
     indexed_expected = ""
     for block in indexed_reuse["blocks"]:
         path = ROOT / block["donor_file"]
-        if hashlib.sha256(path.read_bytes()).hexdigest() != block["donor_sha256"]:
+        if source_sha256(path) != block["donor_sha256"]:
             raise RuntimeError("Indexed choice donor source changed")
         source = path.read_text(encoding="utf-8")
         start = source.index(block["start_marker"])
@@ -2721,7 +2723,7 @@ def main() -> None:
         raise RuntimeError("Successor regularity donor revision changed")
     for module, reuse in successor_reuse["modules"].items():
         donor_path = ROOT / reuse["donor_file"]
-        if hashlib.sha256(donor_path.read_bytes()).hexdigest() != reuse["donor_sha256"]:
+        if source_sha256(donor_path) != reuse["donor_sha256"]:
             raise RuntimeError("Successor regularity donor source changed: " + module)
         donor = donor_path.read_text(encoding="utf-8")
         namespace = reuse["donor_namespace"]
@@ -2755,7 +2757,7 @@ def main() -> None:
     if normalized_hartogs != original_hartogs or hashlib.sha256(original_hartogs.encode("utf-8")).hexdigest() != ordinal_reuse["native_hartogs_original_block_sha256"]:
         raise RuntimeError("Hartogs proof differs beyond the one explicit successor-extensionality step")
     for name, digest in cardinal_reuse["certificate_source_files"].items():
-        if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / name).read_bytes()).hexdigest() != digest:
+        if source_sha256(ROOT / ".lake/packages/YesMetaZFC" / name) != digest:
             raise RuntimeError("Pinned cardinal certificate source changed")
     for name in cardinal_reuse["additional_native_certificate_axioms"]:
         if "`" + name not in (ROOT / "Check.lean").read_text(encoding="utf-8"):
@@ -2808,7 +2810,7 @@ def main() -> None:
     # Reuse the pinned internal three-way recursion, with exact inherited native certificates.
     recursion_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))["companion_reuse"]["native_godel_recursion"]
     for source, digest in recursion_lock["sources"].items():
-        if hashlib.sha256((ROOT / ".lake/packages/YesMetaZFC" / source).read_bytes()).hexdigest() != digest:
+        if source_sha256(ROOT / ".lake/packages/YesMetaZFC" / source) != digest:
             raise RuntimeError("Pinned native recursion source changed: " + source)
     recursion_names = {"PPAC.Migration.GodelDefRecursion." + n for n in re.findall(
         r"^(?:def|theorem)\s+([A-Za-z_][A-Za-z_0-9]*)",
@@ -2906,6 +2908,14 @@ def main() -> None:
             found = re.search(r"(?ms)^def " + declaration + r"\b.*?(?=^(?:def|theorem|abbrev|structure|inductive|end)\b|\Z)", body)
             if not found or formula_local_oracle.search(found.group(0)):
                 raise RuntimeError(f"Legacy/host oracle in pure numeric formula case: {module}.{declaration}")
+    if source_check_only:
+        # A fresh LF checkout can exercise every source/dependency guard without
+        # requiring or trusting any local Lean build cache.
+        subprocess.run([sys.executable, "scripts/check_source_rules.py"], cwd=ROOT, check=True)
+        subprocess.run([sys.executable, "scripts/check_source_theory.py"], cwd=ROOT, check=True)
+        print("PASS: source/dependency preflight (no Lean build or declaration audit); " + POLICY)
+        return
+    (OUT / "summary.json").unlink(missing_ok=True)
     run([sys.executable, "scripts/check_source_rules.py"], "source-rules.log")
     run([sys.executable, "scripts/check_source_theory.py"], "source-theory.log")
     version = run(["lake", "env", "lean", "--version"], "lean-version.log").strip()
@@ -2936,7 +2946,7 @@ def main() -> None:
     if inherited_choice != {"YesMetaZFC.SetTheory.Axioms.choice._native.native_decide.ax_1"}:
         raise RuntimeError("Unexpected native-choice certificate baseline")
     choice_source = ROOT / choice_baseline["source_file"]
-    if hashlib.sha256(choice_source.read_bytes()).hexdigest() != choice_baseline["source_sha256"]:
+    if source_sha256(choice_source) != choice_baseline["source_sha256"]:
         raise RuntimeError("Native-choice original source hash changed")
     contracts = {x for x in footprints if x.startswith("PPAC.Migration.target_derives_")} | {
         "PPAC.Migration.consistent_ZF_of_target", "PPAC.Migration.no_AC_of_target_consistent"}
@@ -5917,8 +5927,9 @@ def main() -> None:
                 raise RuntimeError(f"Unexpected arithmetic core certificate footprint: {core}")
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
-    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/source_hash.py", "scripts/check_ci_inputs.py", "scripts/test_ci_compatibility.py", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
+        "source_hash_policy": POLICY,
         "lean_version": version,
         "source_forcing_Child_formula_indexed_induction_proved": True,
         "source_forcing_Child_external_wellFounded_claimed": False,
@@ -6106,8 +6117,8 @@ def main() -> None:
         "original_stage8_global_parent_inputs_discharged": True,
         "source_UniformImages_actual_kernel_graph_HS_support_and_application_native_kernel_proved": True,
         "source_UniformImages_kernel_value_and_same_value_class_construction_native_kernel_proved": True,
-        "source_UniformImages_kernel_value_and_image_class_laws_complete": False,
-        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-90. The actual three-name stabilizer/HS kernel graph and full App iff regular bounded composition are proved. Consume the FULL forced source mapsTo/functionOn formula, including its exact graph domain, to prove kernel membership iff equality of actual function values. Actually construct both separated HS classes on the SAME graph and prove forced equality when the values coincide. Original nativeZF Derives endpoints cover the full kernel-value statement and actual existential class result; no selected class representatives, supplied class names, or assumed final equalities. imageClassRelation:93-169 and the final image quotient/bijection remain pending; original stage9, PP/Main and all-internal/nonstandard Con are not claimed complete.",
+        "source_UniformImages_kernel_value_and_image_class_laws_complete": True,
+        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Image quotient/graph/bijection, stage9 completion, PP/Main and all-internal/nonstandard Con remain pending.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
@@ -7505,7 +7516,7 @@ def main() -> None:
         "original_argument_numeric_matrix_scope": "Original nil/cons heads and both cons premises correspond to actual numeric kind1/kind2 five-field rows. Internal Num0/Num3 discharges the original nil mode<4 guard. At a given original kind2 candidate row and natural actual assignment, nil/cons full local matrices are equivalent to exact input/output Nil/Cons structure and real child traces, without preassuming candidate structure. This does not yet eliminate original arity assignment blocks, construct all root rows, prove full raw argument-run equations or arbitrary internal list induction; formula/checker/Proof/Con gates remain unproved.",
         "original_argument_whole_run_equation_scope": "Original nil/cons arity=3/7 object assignment blocks are eliminated in both directions. Exact original metadata equalities align all three parameters; four cons components are internally existentially quantified, and their naturality follows from actual child runs. Original whole-table relational Trace at any original kind2 row is exactly Nil/Nil or the cons case, without a shared-trace premise. Actual root construction eliminates the given row and preassumed input/output naturality: under Omega, Num0/3 and natural depth/parameter, Run2 is equivalent to those outcomes for every internal input/output. This is an exact recursive equation, not yet all-internal typed-list transformation correctness/totality/uniqueness, original extended-language quotation equivalence, full formulas, rules/Proof checker or Con.",
         "footprints": footprints,
-        "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest() for path in hashed},
+        "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): source_sha256(path) for path in hashed},
     }
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     print(f"PASS: {len(footprints)} audited declarations; "
@@ -7515,4 +7526,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-check-only", action="store_true",
+                        help="Check source/dependency guards without a Lean build or axiom audit")
+    args = parser.parse_args()
+    main(source_check_only=args.source_check_only)

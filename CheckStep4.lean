@@ -14125,4 +14125,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B graph a b
       (SetTheory.Definitional.Project.fo_sentence (ForcingKernelImage.classSentence rho I K two w G F mul top h A B graph a b y p q)) :=
   ForcingKernelImage.class_kernel_certificate rho I K two w G F mul top h A B graph a b y p q
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingKernelImage.imageSentence rho I K two w G F mul top h A B)) :=
+  ForcingKernelImage.image_kernel_certificate rho I K two w G F mul top h A B
+
 end PPAC.Migration.Step4Checks

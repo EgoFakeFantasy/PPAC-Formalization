@@ -676,4 +676,447 @@ theorem class_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k)
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (classSentence rho I K two w G F mul top h A B graph a b y p q)) :=
   ModelTransfer.derives (fun _ hM => class_models rho I K two w G F mul top h A B graph a b y p q hM)
 
+/- Pinned UniformImages.imageClassRelation:93-169. The extra internal class
+witness is the unique genuine separated name, by the existing class_unique;
+it is not a chosen representative of a quotient. -/
+def ImageHolds {k : Nat} (R : Formula (k+2)) (H : Formula (k+1))
+    (env : Fin k → M.Carrier .set) (P h A E p y C : M.Carrier .set) : Prop :=
+  ∀ q, (Project.FirstOrderSemantics.reduct M).mem q P → MapRel R env q p →
+    ∃ r, (Project.FirstOrderSemantics.reduct M).mem r P ∧ MapRel R env r q ∧
+      ∃ a ca, ForcingClassEvaluation.Predicate H env a ∧ ForcingClassEvaluation.Predicate H env ca ∧
+        ForcingRelationClass.Class R H env P A E a ca ∧ Forces false R env P a A r ∧
+        Force R H env (args3 h a y) P r (Source.SetLanguage.edge 0 1 2) ∧ Forces true R env P C ca r
+
+def imageHolds {k m : Nat} (R : Formula (k+2)) (H : Formula (k+1)) (base : Fin k → Fin m)
+    (P h A E p y C : Fin m) : Formula m :=
+  let up2 : Fin m → Fin (m+2) := fun j => j.castSucc.castSucc
+  let up4 : Fin m → Fin (m+4) := fun j => j.castSucc.castSucc.castSucc.castSucc
+  let a : Fin (m+4) := (Fin.last (m+2)).castSucc
+  let ca : Fin (m+4) := Fin.last (m+3)
+  let r : Fin (m+4) := (Fin.last (m+1)).castSucc.castSucc
+  let body := (MinimalPredicates.pred H (fun j => up4 (base j)) a).conj
+    ((MinimalPredicates.pred H (fun j => up4 (base j)) ca).conj
+    ((ForcingRelationClass.relationClass R H (fun j => up4 (base j)) (up4 P) (up4 A) (up4 E) a ca).conj
+    ((ForcingAtomicRelations.forces false R (fun j => up4 (base j)) (up4 P) a (up4 A) r).conj
+    ((ForcingFormula.formula R H (fun j => up4 (base j)) (args3 (up4 h) a (up4 y)) (up4 P) r
+      (Source.SetLanguage.edge 0 1 2)).conj
+      (ForcingAtomicRelations.forces true R (fun j => up4 (base j)) (up4 P) (up4 C) ca r)))))
+  .all ((Formula.mem (Fin.last m) P.castSucc).imp
+    ((ReplacementPredicates.rel R (fun j => (base j).castSucc) (Fin.last m) p.castSucc).imp
+      (.ex ((Formula.mem (Fin.last (m+1)) (up2 P)).conj
+        ((ReplacementPredicates.rel R (fun j => up2 (base j)) (Fin.last (m+1)) (Fin.last m).castSucc).conj
+          (.ex (.ex body)))))))
+
+theorem imageHolds_semantics {k m : Nat} (env : Fin m → M.Carrier .set)
+    (R : Formula (k+2)) (H : Formula (k+1)) (base : Fin k → Fin m) (P h A E p y C : Fin m) :
+    Formula.Realize (Project.FirstOrderSemantics.reduct M).mem env (imageHolds R H base P h A E p y C) ↔
+      ImageHolds R H (fun j => env (base j)) (env P) (env h) (env A) (env E) (env p) (env y) (env C) := by
+  simp only [imageHolds,ImageHolds,Formula.Realize,ForcingMapConditions.rel_semantics,
+    ForcingClassEvaluation.predicate_semantics,ForcingRelationClass.relationClass_semantics,
+    ForcingAtomicRelations.forces_semantics,ForcingFormula.formula_semantics,
+    Fin.lastCases_last,Fin.lastCases_castSucc,args3_map]
+  rfl
+
+def imageRelation {k : Nat} (rho : Fin 7 → Fin k) (G F mul h A E : Fin k) : Formula (k+3) :=
+  let up : Fin k → Fin (k+3) := fun j => j.castSucc.castSucc.castSucc
+  imageHolds (orderFormula (rho 0) mul) (domain rho G F) up (up (rho 6)) (up h) (up A) (up E)
+    (Fin.last k).castSucc.castSucc (Fin.last (k+1)).castSucc (Fin.last (k+2))
+
+theorem imageRelation_semantics {k : Nat} (env : Fin k → M.Carrier .set)
+    (rho : Fin 7 → Fin k) (G F mul h A E : Fin k) (p y C : M.Carrier .set) :
+    Holds (imageRelation rho G F mul h A E) env p y C ↔
+      ImageHolds (orderFormula (rho 0) mul) (domain rho G F) env
+        (env (rho 6)) (env h) (env A) (env E) p y C := by
+  unfold Holds imageRelation
+  rw [imageHolds_semantics]
+  simp only [Fin.lastCases_last,Fin.lastCases_castSucc]
+
+private theorem image_mono_core {k : Nat} {R : Formula (k+2)} {H : Formula (k+1)}
+    {env : Fin k → M.Carrier .set} {P h A E p q y C : M.Carrier .set}
+    (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hi : ImageHolds R H env P h A E p y C) : ImageHolds R H env P h A E q y C := by
+  intro r hr hrq
+  exact hi r hr (hpre.2 r q p hr hq hp hrq hqp)
+
+private theorem image_regular_core {k : Nat} {R : Formula (k+2)} {H : Formula (k+1)}
+    {env : Fin k → M.Carrier .set} {P h A E p y C : M.Carrier .set}
+    (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hi : ∀ q, (Project.FirstOrderSemantics.reduct M).mem q P → MapRel R env q p →
+      ∃ r, (Project.FirstOrderSemantics.reduct M).mem r P ∧ MapRel R env r q ∧ ImageHolds R H env P h A E r y C) :
+    ImageHolds R H env P h A E p y C := by
+  intro q hq hqp
+  obtain ⟨r,hr,hrq,hh⟩ := hi q hq hqp
+  obtain ⟨s,hs,hsr,a,ca,ha⟩ := hh r hr (hpre.1 r hr)
+  exact ⟨s,hs,hpre.2 s r q hs hr hq hsr hrq,a,ca,ha⟩
+
+private theorem image_congr_core (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P h A E p y y' C C' : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hy : Forces true R env P y y' p) (hC : Forces true R env P C C' p) :
+    ImageHolds R H env P h A E p y C ↔ ImageHolds R H env P h A E p y' C' := by
+  have hp := ForcingAtomicBasic.condition hM hy
+  have step {y y' C C' : M.Carrier .set} (hy : Forces true R env P y y' p)
+      (hC : Forces true R env P C C' p) (hi : ImageHolds R H env P h A E p y C) :
+      ImageHolds R H env P h A E p y' C' := by
+    intro q hq hqp
+    obtain ⟨r,hr,hrq,a,ca,ha,hca,hClass,haA,hay,he⟩ := hi q hq hqp
+    have hrp := hpre.2 r q p hr hq hp hrq hqp
+    have hy' := ForcingAtomicBasic.eq_mono hM hpre hr hrp hy
+    have hc := ForcingFormula.tuple_congr (H := H) hM hpre (Source.SetLanguage.edge (0 : Fin 3) 1 2)
+      (args3 h a y) (args3 h a y') r hr
+      (fun j => Fin.cases (ForcingAtomicBasic.eq_refl hM hpre h r hr)
+        (Fin.cases (ForcingAtomicBasic.eq_refl hM hpre a r hr) (Fin.cases hy' (fun j => Fin.elim0 j))) j)
+    exact ⟨r,hr,hrq,a,ca,ha,hca,hClass,haA,hc.mp hay,
+      ForcingAtomicLaws.eq_trans hM hpre (ForcingAtomicBasic.eq_symm hM
+        (ForcingAtomicBasic.eq_mono hM hpre hr hrp hC)) he⟩
+  exact ⟨step hy hC,step (ForcingAtomicBasic.eq_symm hM hy) (ForcingAtomicBasic.eq_symm hM hC)⟩
+
+theorem image_monotone {k : Nat} (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul h A E : Fin k)
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6))) :
+    Monotone (orderFormula (rho 0) mul) (ForcingRelationGraphApplication.actionAt rho)
+      (imageRelation rho G F mul h A E) env (env (rho 6)) (env G) (env F) := by
+  intro p q y C hp hq hqp _ _ hi
+  exact (imageRelation_semantics env rho G F mul h A E q y C).mpr
+    (image_mono_core hpre hp hq hqp ((imageRelation_semantics env rho G F mul h A E p y C).mp hi))
+
+theorem image_congruent (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul h A E : Fin k)
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6))) :
+    Congruent (orderFormula (rho 0) mul) (ForcingRelationGraphApplication.actionAt rho)
+      (imageRelation rho G F mul h A E) env (env (rho 6)) (env G) (env F) := by
+  intro p y C y' C' _ _ _ _ hy hC
+  rw [imageRelation_semantics,imageRelation_semantics]
+  exact image_congr_core hM hpre hy hC
+
+theorem image_regular {k : Nat} (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul h A E : Fin k)
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6))) :
+    Regular (orderFormula (rho 0) mul) (ForcingRelationGraphApplication.actionAt rho)
+      (imageRelation rho G F mul h A E) env (env (rho 6)) (env G) (env F) := by
+  intro p y C _ _ _ hi
+  apply (imageRelation_semantics env rho G F mul h A E p y C).mpr
+  apply image_regular_core hpre
+  intro q hq hqp
+  obtain ⟨r,hr,hrq,hh⟩ := hi q hq hqp
+  exact ⟨r,hr,hrq,(imageRelation_semantics env rho G F mul h A E r y C).mp hh⟩
+
+/-- Pinned imageClassRelation_one:130-143. -/
+theorem image_one    (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul top h A B E : Fin k)
+    {I K two w p : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6)))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hE : ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A (env E))
+    (hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hf : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) (env A) (env B))
+      (env (rho 6)) p (Source.SetLanguage.mapsTo 0 1 2)) :
+    ForcingRelationGraphFunctions.One (orderFormula (rho 0) mul) (ForcingRelationGraphApplication.actionAt rho)
+      (imageRelation rho G F mul h A E) env (env (rho 6)) (env G) (env F) p := by
+  intro q hq hqp y C D hy _ _ hC hD
+  have hyHS := (ForcingRelationGraphApplication.hs_actionAt env rho _ _ _ _).mp hy
+  have hC := (imageRelation_semantics env rho G F mul h A E q y C).mp hC
+  have hD := (imageRelation_semantics env rho G F mul h A E q y D).mp hD
+  apply ForcingAtomicBasic.eq_of_dense hM hpre hq
+  intro r hr hrq
+  obtain ⟨s,hs,hsr,a,ca,ha,hca,haClass,haA,hay,hCa⟩ := hC r hr hrq
+  have hsq := hpre.2 s r q hs hr hq hsr hrq
+  obtain ⟨t,htc,hts,b,cb,hb,hcb,hbClass,hbA,hby,hDb⟩ := hD s hs hsq
+  have htp := hpre.2 t q p htc hq hpW (hpre.2 t s q htc hs hq hts hsq) hqp
+  have hc := kernel_class_same_value hM env rho G F mul top h A B hp hG hF ht hpre hA hE
+    ((domain_semantics env rho G F a).mp ha) ((domain_semantics env rho G F b).mp hb) hyHS
+    hpW htc htp hf (ForcingAtomicBasic.mem_mono hM hpre htc hts haA)
+    (ForcingFormula.mono hM hpre _ _ hs htc hts hay) hbA hby
+    ((domain_semantics env rho G F ca).mp hca) ((domain_semantics env rho G F cb).mp hcb) haClass hbClass
+  exact ⟨t,htc,hpre.2 t s r htc hs hr hts hsr,ForcingAtomicLaws.eq_trans hM hpre
+    (ForcingAtomicBasic.eq_mono hM hpre htc hts hCa)
+    (ForcingAtomicLaws.eq_trans hM hpre hc (ForcingAtomicBasic.eq_symm hM hDb))⟩
+
+/-- Pinned imageClassRelation_inj:145-169. -/
+theorem image_inj    (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul top h A B E : Fin k)
+    {I K two w p : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6)))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hE : ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A (env E))
+    (hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hf : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) (env A) (env B))
+      (env (rho 6)) p (Source.SetLanguage.mapsTo 0 1 2)) :
+    ForcingRelationGraphFunctions.Injective (orderFormula (rho 0) mul) (ForcingRelationGraphApplication.actionAt rho)
+      (imageRelation rho G F mul h A E) env (env (rho 6)) (env G) (env F) p := by
+  intro q hq hqp y z C hy hz _ hY hZ
+  have hyHS := (ForcingRelationGraphApplication.hs_actionAt env rho _ _ _ _).mp hy
+  have hzHS := (ForcingRelationGraphApplication.hs_actionAt env rho _ _ _ _).mp hz
+  have hY := (imageRelation_semantics env rho G F mul h A E q y C).mp hY
+  have hZ := (imageRelation_semantics env rho G F mul h A E q z C).mp hZ
+  apply ForcingAtomicBasic.eq_of_dense hM hpre hq
+  intro r hr hrq
+  obtain ⟨s,hs,hsr,a,ca,ha,_hca,haClass,haA,hay,hCa⟩ := hY r hr hrq
+  have hsq := hpre.2 s r q hs hr hq hsr hrq
+  obtain ⟨t,htc,hts,b,cb,hb,_hcb,hbClass,hbA,hbz,hCb⟩ := hZ s hs hsq
+  have htp := hpre.2 t q p htc hq hpW (hpre.2 t s q htc hs hq hts hsq) hqp
+  have ham := ForcingAtomicBasic.mem_mono hM hpre htc hts haA
+  have haym := ForcingFormula.mono hM hpre _ _ hs htc hts hay
+  have haHS := (domain_semantics env rho G F a).mp ha
+  have hbHS := (domain_semantics env rho G F b).mp hb
+  have haa : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) a ca t :=
+    (ForcingRelationClass.mem_class hM hpre haClass htc).mpr ⟨ham,
+      (app_kernelGraph_value hM env rho G F mul top h A B hp hG hF ht hpre hA hE haHS haHS hyHS
+        hpW htc htp hf ham haym).mpr ⟨ham,haym⟩⟩
+  have heab := ForcingAtomicLaws.eq_trans hM hpre
+    (ForcingAtomicBasic.eq_symm hM (ForcingAtomicBasic.eq_mono hM hpre htc hts hCa)) hCb
+  have hab := (ForcingRelationClass.mem_class hM hpre hbClass htc).mp
+    ((ForcingAtomicLaws.mem_congr_right hM hpre heab).mp haa)
+  have haz := ((app_kernelGraph_value hM env rho G F mul top h A B hp hG hF ht hpre hA hE hbHS haHS hzHS
+    hpW htc htp hf hbA hbz).mp hab.2).2
+  exact ⟨t,htc,hpre.2 t s r htc hs hr hts hsr,mapsTo_unique hM hpre hpW htc htp hf
+    ha ((domain_semantics env rho G F y).mpr hyHS) ((domain_semantics env rho G F z).mpr hzHS) ham haym haz⟩
+
+/-- Pinned imageClassRelation_move:118-128, consuming the already fixed
+kernel graph. The public moves theorem below discharges this fixedness
+from the SAME graph's constructed three-name support. -/
+theorem image_move (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul h A E : Fin k)
+    {I K two w pi action p p' y y' C C' : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (hpi : ForcingConditionGraphs.Permutation I pi)
+    (haction : MapRel actionFormula (fun j => env (rho j)) pi action)
+    (hAHS : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hEHS : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env E))
+    (hfixh : Action (env (rho 6)) action (env h) (env h))
+    (hfixA : Action (env (rho 6)) action (env A) (env A))
+    (hfixE : Action (env (rho 6)) action (env E) (env E))
+    (_hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hpp : PureKuratowski.PairMember M p p' action)
+    (hyy : Action (env (rho 6)) action y y') (hCC : Action (env (rho 6)) action C C')
+    (hi : ImageHolds (orderFormula (rho 0) mul) (domain rho G F) env
+      (env (rho 6)) (env h) (env A) (env E) p y C) :
+    ImageHolds (orderFormula (rho 0) mul) (domain rho G F) env
+      (env (rho 6)) (env h) (env A) (env E) p' y' C' := by
+  have hdata := (mapRel_action _ _ _).mp haction
+  have har := ForcingProductFamily.action_permutation hdata
+  have ho := ForcingProductFamily.order hM (env mul) hp hpi hdata
+  obtain ⟨inv,hinv,hpii⟩ := ForcingConditionGraphs.exists_inverse hM hpi
+  obtain ⟨ia,hia⟩ := ForcingProductFamily.exists_action hM hp hinv
+  obtain ⟨conj,hconj,hc⟩ := ForcingConjugationGraph.exists_graph hM hG hpi hinv hpii
+  have hctx := ForcingSeparation.normal_context hM (fun j => env (rho j)) hp hG hF hpi hinv hpii hconj hc
+    haction ((mapRel_action _ _ _).mpr hia)
+  intro q' hq' hqp'
+  obtain ⟨q,hq,hqq⟩ := har.2.2 q' hq'
+  have hqp : MapRel (orderFormula (rho 0) mul) env q p :=
+    (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul q p).mpr
+      ((ho q p q' p' hqq hpp).mpr ((ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul q' p').mp hqp'))
+  obtain ⟨r,hr,hrq,a,ca,ha,hca,hClass,haA,hay,he⟩ := hi q hq hqp
+  obtain ⟨r',hrr,_⟩ := har.1.1.2 r hr
+  have hr' := har.1.2 r r' hrr
+  have hrq' : MapRel (orderFormula (rho 0) mul) env r' q' :=
+    (ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul r' q').mpr
+      ((ho r q r' q' hrr hqq).mp ((ForcingProductSymmetry.orderFormula_semantics env (rho 0) mul r q).mp hrq))
+  obtain ⟨a',haa⟩ := ForcingNameConjugacy.exists_action hM har.1 a
+  have ha'HS := ForcingHSAction.hs_action hM hctx a ((domain_semantics env rho G F a).mp ha) a' haa
+  obtain ⟨ca',hca'HS,hClass'⟩ := ForcingRelationClass.exists_class hM env rho G F mul hp hG hF hAHS hEHS ha'HS
+  have hcaAct := ForcingRelationClassMove.relationClass_move hM env rho G F mul hp hG hF hpi haction
+    (ForcingHS.isName hAHS) (ForcingHS.isName hca'HS) hfixA hfixE haa hClass hClass'
+  have hmem := (ForcingSeparation.symmetry hM env rho G F mul hp hG hF hpi haction (.mem (0 : Fin 2) 1)
+    (Source.SetLanguage.args2 a (env A)) (Source.SetLanguage.args2 a' (env A))
+    (fun j => Fin.cases haa (Fin.cases hfixA (fun j => Fin.elim0 j)) j) hr hrr).mp haA
+  have happ := (ForcingSeparation.symmetry hM env rho G F mul hp hG hF hpi haction (Source.SetLanguage.edge 0 1 2)
+    (args3 (env h) a y) (args3 (env h) a' y')
+    (fun j => Fin.cases hfixh (Fin.cases haa (Fin.cases hyy (fun j => Fin.elim0 j))) j) hr hrr).mp hay
+  have heq := (ForcingSeparation.symmetry hM env rho G F mul hp hG hF hpi haction (.equal (0 : Fin 2) 1)
+    (Source.SetLanguage.args2 C ca) (Source.SetLanguage.args2 C' ca')
+    (fun j => Fin.cases hCC (Fin.cases hcaAct (fun j => Fin.elim0 j)) j) hr hrr).mp he
+  exact ⟨r',hr',hrq',a',ca',(domain_semantics env rho G F a').mpr ha'HS,
+    (domain_semantics env rho G F ca').mpr hca'HS,hClass',hmem,happ,heq⟩
+
+theorem image_moves (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I K two w G F mul h A B E S : Fin k)
+    (hp : Presentation (env (rho 0)) (env I) (env K) (env two) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G))
+    (hF : ForcingNormalFilter.Normal (env I) (env G) (env F))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hE : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env E))
+    (hTuple : ForcingTupleStabilizer.TupleFixed (fun j => env (rho j)) (env G) (env (rho 6))
+      (args3 (env h) (env A) (env B)) (env S))
+    (hFixed : ForcingSupportedNames.Supported (fun j => env (rho j)) (env S) (env E)) :
+    ForcingRelationGraphSupport.Moves (imageRelation rho G F mul h A E) env rho G F S := by
+  intro pi hpi action ha p q y C y' C' hpW hpq _ _ hyy hCC hi
+  have hfix := ForcingTupleStabilizer.fixed_action hM hTuple hpi ha
+  apply (imageRelation_semantics env rho G F mul h A E q y' C').mpr
+  exact image_move hM env rho G F mul h A E hp hG hF ((hG pi).mp ((hTuple pi).mp hpi).1) ha hA hE
+    (hfix 0) (hfix 1) (hFixed pi hpi action ha) hpW hpq hyy hCC
+    ((imageRelation_semantics env rho G F mul h A E p y C).mp hi)
+
+/-- Change only parameter slots; the collected graph and every recursion
+witness remain the SAME internal sets. Reuse the existing forcing congruence. -/
+private theorem kernel_graph_reindex {k n : Nat} (env : Fin k → M.Carrier .set)
+    (other : Fin n → M.Carrier .set) (base : Fin k → Fin n) (he : ∀ j, other (base j) = env j)
+    (rho : Fin 7 → Fin k) (G F mul top h A B : Fin k) (E : M.Carrier .set) :
+    ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A E ↔
+    ForcingRelationGraph.Graph (orderFormula (base (rho 0)) (base mul))
+      (relation (fun j => base (rho j)) (base G) (base F) (base mul) (base h) (base A) (base B))
+      other (base (rho 6)) (base top) (base A) (base A) E := by
+  let R := orderFormula (rho 0) mul
+  let T := orderFormula (base (rho 0)) (base mul)
+  let H := domain rho G F
+  let J := domain (fun j => base (rho j)) (base G) (base F)
+  have hR (x y : M.Carrier .set) : MapRel R env x y ↔ MapRel T other x y := by
+    simp only [R,T,ForcingProductSymmetry.orderFormula_semantics,he]
+  have hH (x : M.Carrier .set) : ForcingClassEvaluation.Predicate H env x ↔ ForcingClassEvaluation.Predicate J other x := by
+    simp only [H,J,domain_semantics,he]
+  have hQ (p x y : M.Carrier .set) : Holds (relation rho G F mul h A B) env p x y ↔
+      Holds (relation (fun j => base (rho j)) (base G) (base F) (base mul) (base h) (base A) (base B)) other p x y := by
+    rw [relation_semantics,relation_semantics]
+    simp only [he]
+    exact ForcingSeparation.force_congr hR hH kernelFormula _ _ _
+  have hTest (i p : M.Carrier .set) :
+      MapRel (ForcingRelationGraph.testFormula R (relation rho G F mul h A B) (rho 6) A A) env i p ↔
+      MapRel (ForcingRelationGraph.testFormula T
+        (relation (fun j => base (rho j)) (base G) (base F) (base mul) (base h) (base A) (base B))
+        (base (rho 6)) (base A) (base A)) other i p := by
+    rw [ForcingRelationGraph.testFormula_semantics,ForcingRelationGraph.testFormula_semantics]
+    simp only [ForcingRelationGraph.Test,he]
+    apply exists_congr; intro a
+    apply exists_congr; intro b
+    apply exists_congr; intro x
+    apply exists_congr; intro c
+    apply exists_congr; intro y
+    apply exists_congr; intro d
+    exact and_congr Iff.rfl (and_congr Iff.rfl (and_congr Iff.rfl
+      (and_congr (ForcingSeparation.atomic_congr hR false _ _ _ _) (and_congr
+        (ForcingSeparation.atomic_congr hR false _ _ _ _) (hQ p x y)))))
+  dsimp only [R,T] at hTest
+  unfold ForcingRelationGraph.Graph
+  simp only [he]
+  apply exists_congr; intro carrier
+  apply exists_congr; intro entries
+  refine and_congr Iff.rfl (and_congr Iff.rfl ?_)
+  simp only [ForcingCollectedName.Collected,ForcingCollectedName.Entry,ForcingCollectedName.Admissible,hTest]
+
+def imageResult {k : Nat} (rho : Fin 7 → Fin k) (I G F mul top h A B : Fin k) : Project.Formula 1 k :=
+  let up : Fin k → Fin (k+2) := fun j => j.succ.succ
+  let ra : Fin 7 → Fin (k+2) := fun j => up (rho j)
+  let R := orderFormula (ra 0) (up mul)
+  let H := domain ra (up G) (up F)
+  let Q := imageRelation ra (up G) (up F) (up mul) (up h) (up A) 0
+  let tail : Project.Formula 1 (k+2) := .forallE (.imp (.mem (.bound 0) (.bound (ra 6).succ))
+    (.imp (ProjectSyntax.encode id (ForcingFormula.formula R H Fin.succ
+      (args3 (up h).succ (up A).succ (up B).succ) (ra 6).succ 0 (Source.SetLanguage.mapsTo 0 1 2)))
+      (.conj (ProjectSyntax.encode id (ForcingRelationGraphFunctions.one R (ForcingRelationGraphApplication.actionAt ra)
+        Q Fin.succ (ra 6).succ (up G).succ (up F).succ 0))
+        (ProjectSyntax.encode id (ForcingRelationGraphFunctions.injective R (ForcingRelationGraphApplication.actionAt ra)
+          Q Fin.succ (ra 6).succ (up G).succ (up F).succ 0)))))
+  let fields : List (Project.Formula 1 (k+2)) :=
+    [ProjectSyntax.encode id (ForcingConjugationGraph.subgroup (up I) (up G) 1),
+     .mem (.bound 1) (.bound (up F)),
+     ProjectSyntax.encode id (ForcingTupleStabilizer.tupleFixed ra (up G) (ra 6) (args3 (up h) (up A) (up B)) 1),
+     ProjectSyntax.encode id (ForcingRelationGraph.graph R (relation ra (up G) (up F) (up mul) (up h) (up A) (up B))
+       id (ra 6) (up top) (up A) (up A) 0),
+     ProjectSyntax.encode id (ForcingHS.hs actionFormula ra (up G) (ra 6) (up F) 0),
+     ProjectSyntax.encode id (ForcingEquivariantMix.fixedAll ra 1 0),
+     ProjectSyntax.encode id (ForcingRelationGraphForcing.monotone R (ForcingRelationGraphApplication.actionAt ra) Q id (ra 6) (up G) (up F)),
+     ProjectSyntax.encode id (ForcingRelationGraphForcing.congruent R (ForcingRelationGraphApplication.actionAt ra) Q id (ra 6) (up G) (up F)),
+     ProjectSyntax.encode id (ForcingRelationGraphForcing.regular R (ForcingRelationGraphApplication.actionAt ra) Q id (ra 6) (up G) (up F)),
+     ProjectSyntax.encode id (ForcingRelationGraphSupport.moves Q id ra (up G) (up F) 1)]
+  .existsE (.existsE (fields.foldr (fun a b => .conj a b) tail))
+
+def imageSentence {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k) : Project.Sentence where
+  formula := Project.Formula.forallClosure k ((premises rho I K two w G F mul top h A B).foldr
+    (fun a b => .imp a b) (imageResult rho I G F mul top h A B))
+  freeClosed := by
+    simp -implicitDefEqProofs [premises,imageResult,List.foldr,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed]
+
+theorem image_models {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k)
+    (hM : FirstOrder.Theory.Models M nativeZF) :
+    (Project.fo_sentence (imageSentence rho I K two w G F mul top h A B)).TrueIn M := by
+  rw [Project.FirstOrderSemantics.sentence_correct (ModelTransfer.extensionality hM),SetTheory.Structure.satisfiesSentence_iff]
+  intro free
+  apply (Project.Formula.satisfies_forallClosure_iff free _).mpr
+  intro env
+  simp only [premises,List.foldr,Project.Formula.satisfies_imp_iff,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingProductFamily.presentation_semantics,
+    ForcingLabelPermutations.carrier_semantics,ForcingNormalFilter.normal_semantics,ForcingWithTopCarrier.empty_semantics,
+    ForcingAtomicBasic.preorder_semantics,ForcingHS.hs_semantics,id_eq]
+  intro hp hG hF ht hpre hh hA hB
+  obtain ⟨S,E,hS,hSF,hTuple,hGraph,hEHS,hFixed,_⟩ := construct hM env rho I K two w G F mul top h A B
+    hp hG hF ht hpre hh hA hB
+  let up : Fin k → Fin (k+2) := fun j => j.succ.succ
+  let ra : Fin 7 → Fin (k+2) := fun j => up (rho j)
+  let other : Fin (k+2) → M.Carrier .set := Fin.cases E (Fin.cases S env)
+  have he (j : Fin k) : other (up j) = env j := rfl
+  have hEVal : other (0 : Fin (k+2)) = E := rfl
+  have hSVal : other (1 : Fin (k+2)) = S := by
+    change Fin.cases E (Fin.cases S env) (Fin.succ (0 : Fin (k+1))) = S
+    rw [Fin.cases_succ,Fin.cases_zero]
+  have hp' : Presentation (other (ra 0)) (other (up I)) (other (up K)) (other (up two)) (other (up w))
+      (other (ra 1)) (other (ra 2)) (other (ra 3)) (other (ra 4)) (other (ra 5)) (other (ra 6)) := by
+    simpa only [ra,he] using hp
+  have hG' : ForcingLabelPermutations.Carrier (other (up I)) (other (up G)) := by simpa only [he] using hG
+  have hF' : ForcingNormalFilter.Normal (other (up I)) (other (up G)) (other (up F)) := by simpa only [he] using hF
+  have ht' : ForcingWithTopCarrier.Empty (other (up top)) := by simpa only [he] using ht
+  have hA' : HS actionFormula (fun j => other (ra j)) (other (up G)) (other (ra 6)) (other (up F)) (other (up A)) := by
+    simpa only [ra,he] using hA
+  have hE' : HS actionFormula (fun j => other (ra j)) (other (up G)) (other (ra 6)) (other (up F)) (other 0) := by
+    simpa only [ra,he,hEVal] using hEHS
+  have hTuple' : ForcingTupleStabilizer.TupleFixed (fun j => other (ra j)) (other (up G)) (other (ra 6))
+      (args3 (other (up h)) (other (up A)) (other (up B))) (other 1) := by
+    simpa only [ra,he,hSVal,hEVal] using hTuple
+  have hFixed' : ForcingSupportedNames.Supported (fun j => other (ra j)) (other 1) (other 0) := by
+    simpa only [ra,he,hSVal,hEVal] using hFixed
+  have hR (x y : M.Carrier .set) : MapRel (orderFormula (rho 0) mul) env x y ↔
+      MapRel (orderFormula (ra 0) (up mul)) other x y := by
+    simp only [ForcingProductSymmetry.orderFormula_semantics,ra,he]
+  have hpre' : ForcingAtomicBasic.PreorderOn (orderFormula (ra 0) (up mul)) other (other (ra 6)) := by
+    constructor
+    · intro p hpW
+      exact (hR p p).mp (hpre.1 p hpW)
+    · intro p q r hpW hqW hrW hpq hqr
+      exact (hR p r).mp (hpre.2 p q r hpW hqW hrW ((hR p q).mpr hpq) ((hR q r).mpr hqr))
+  have hGraph' : ForcingRelationGraph.Graph (orderFormula (ra 0) (up mul))
+      (relation ra (up G) (up F) (up mul) (up h) (up A) (up B)) other (ra 6) (up top) (up A) (up A) (other 0) :=
+    (kernel_graph_reindex env other up he rho G F mul top h A B E).mp hGraph
+  have hMono := image_monotone other ra (up G) (up F) (up mul) (up h) (up A) 0 hpre'
+  have hCong := image_congruent hM other ra (up G) (up F) (up mul) (up h) (up A) 0 hpre'
+  have hReg := image_regular other ra (up G) (up F) (up mul) (up h) (up A) 0 hpre'
+  have hMove := image_moves hM other ra (up I) (up K) (up two) (up w) (up G) (up F) (up mul)
+    (up h) (up A) (up B) 0 1 hp' hG' hF' hA' hE' hTuple' hFixed'
+  have hFunctions (p : M.Carrier .set) (hpW : (Project.FirstOrderSemantics.reduct M).mem p (other (ra 6)))
+      (hf : Force (orderFormula (ra 0) (up mul)) (domain ra (up G) (up F)) other
+        (args3 (other (up h)) (other (up A)) (other (up B))) (other (ra 6)) p (Source.SetLanguage.mapsTo 0 1 2)) :
+      ForcingRelationGraphFunctions.One (orderFormula (ra 0) (up mul)) (ForcingRelationGraphApplication.actionAt ra)
+        (imageRelation ra (up G) (up F) (up mul) (up h) (up A) 0) other (other (ra 6)) (other (up G)) (other (up F)) p ∧
+      ForcingRelationGraphFunctions.Injective (orderFormula (ra 0) (up mul)) (ForcingRelationGraphApplication.actionAt ra)
+        (imageRelation ra (up G) (up F) (up mul) (up h) (up A) 0) other (other (ra 6)) (other (up G)) (other (up F)) p :=
+    ⟨image_one hM other ra (up G) (up F) (up mul) (up top) (up h) (up A) (up B) 0 hp' hG' hF' ht' hpre' hA' hGraph' hpW hf,
+      image_inj hM other ra (up G) (up F) (up mul) (up top) (up h) (up A) (up B) 0 hp' hG' hF' ht' hpre' hA' hGraph' hpW hf⟩
+  simp only [imageResult,List.foldr,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,
+    Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,Project.Formula.satisfies_forall_iff,Project.Formula.satisfies_imp_iff,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingConjugationGraph.subgroup_semantics,
+    ForcingTupleStabilizer.tupleFixed_semantics,ForcingRelationGraph.graph_semantics,ForcingHS.hs_semantics,
+    ForcingSupportedNames.supported_semantics,ForcingRelationGraphForcing.monotone_semantics,ForcingRelationGraphForcing.congruent_semantics,
+    ForcingRelationGraphForcing.regular_semantics,ForcingRelationGraphSupport.moves_semantics,ForcingFormula.formula_semantics,
+    ForcingRelationGraphFunctions.one_semantics,ForcingRelationGraphFunctions.injective_semantics,args3_map,id_eq]
+  exact ⟨S,E,hS,hSF,hTuple',hGraph',hE',hFixed',hMono,hCong,hReg,hMove,hFunctions⟩
+
+theorem image_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k) :
+    FirstOrder.Derives nativeZF [] (Project.fo_sentence (imageSentence rho I K two w G F mul top h A B)) :=
+  ModelTransfer.derives (fun _ hM => image_models rho I K two w G F mul top h A B hM)
+
 end PPAC.Migration.ForcingKernelImage

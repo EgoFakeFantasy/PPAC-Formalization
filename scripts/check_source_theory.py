@@ -2,6 +2,7 @@
 import hashlib
 import json
 from pathlib import Path
+from source_hash import source_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -11,7 +12,7 @@ def main():
     if lock["openai_commit"] != provenance["openai_commit"] or lock["source_sha256"] != provenance["files"][lock["source_path"]]:
         raise RuntimeError("Source ZF provenance disagrees with SOURCE_LOCK")
     ref = ROOT / "third_party/openai/PartitionConsistency.zf-axioms.txt"
-    if hashlib.sha256(ref.read_bytes()).hexdigest() != lock["excerpt_sha256"]:
+    if source_sha256(ref) != lock["excerpt_sha256"]:
         raise RuntimeError("Pinned source ZF excerpt changed")
     expected = ref.read_text(encoding="utf-8").strip()
     actual = (ROOT / "PPAC/Migration/SourceTheory.lean").read_text(encoding="utf-8-sig")

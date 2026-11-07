@@ -1,0 +1,171 @@
+{
+  "verified_at": "2026-11-07T23:00:42.145254+11:00",
+  "cause": "GitHub Actions invoked source audit before lake update; .lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofNode.lean was absent. Exact repeated failure confirmed from two latest job logs.",
+  "failed_runs": [
+    {
+      "run_id": 42366961070,
+      "job_id": 128386931880,
+      "commit": "e80f441f9c1b1e3ea09af0088d953ef834eabab1"
+    },
+    {
+      "run_id": 42365644797,
+      "job_id": 128383008647,
+      "commit": "e22f51d66b8e49b31974fb43d616aec1260f0848"
+    }
+  ],
+  "fixes": [
+    "Explicit exact-commit checkouts of the L donor and OpenAI source as siblings of the project.",
+    "Run lake update before any dependency source audit, then verify all three clean pinned repositories and 75 OpenAI source hashes.",
+    "Canonical text hash converts ONLY CRLF to LF. Whitespace, lone CR, BOM and all other bytes remain strict. Binary archives are rejected by this source-only hash API and keep their original raw hash logic.",
+    "Migrate seven active lock metadata files to the canonical policy; proof source files and historical acceptance records are untouched by the lock conversion. Full axiom checks, forbidden-token checks and all nine verification commands remain enabled."
+  ],
+  "source_hash_policy": "sha256/text-crlf-to-lf/v1",
+  "active_lock_files": [
+    "docs/CHOICE_TRUST_BASELINE.json",
+    "docs/L_REUSE_LOCK.json",
+    "docs/MODE3_CHECKER_SCOPE.json",
+    "docs/SOURCE_LOCK.json",
+    "docs/SOURCE_RULES_LOCK.json",
+    "docs/SOURCE_THEORY_LOCK.json",
+    "docs/TRUST_BASELINE.json"
+  ],
+  "hash_policy_field_updates": 3532,
+  "source_eol_witness_count": 5316,
+  "lock_migration_manifest_sha256": "86ccb0227a75c5739806ad9da93e5929e07e203c01fb7a16e39eebcf48372a68",
+  "regression_tests": 5,
+  "regression_result": "all pass, including changed text/whitespace/lone CR/BOM and binary rejection",
+  "fresh_git_checkout": {
+    "directory": ".local/ci-clean-20261107",
+    "base_commit": "e80f441f9c1b1e3ea09af0088d953ef834eabab1",
+    "overlay_files": [
+      ".github/workflows/lean.yml",
+      "Audit.lean",
+      "CheckStep4.lean",
+      "PPAC/Migration/ForcingKernelImage.lean",
+      "README.md",
+      "docs/CHOICE_TRUST_BASELINE.json",
+      "docs/L_REUSE_LOCK.json",
+      "docs/MODE3_CHECKER_SCOPE.json",
+      "docs/SOURCE_LOCK.json",
+      "docs/SOURCE_RULES_LOCK.json",
+      "docs/SOURCE_THEORY_LOCK.json",
+      "docs/TRUST_BASELINE.json",
+      "scripts/check_ci_inputs.py",
+      "scripts/check_source_rules.py",
+      "scripts/check_source_theory.py",
+      "scripts/source_hash.py",
+      "scripts/test_ci_compatibility.py",
+      "scripts/verify.py"
+    ],
+    "compiled_lean_artifacts": 0,
+    "scope": "Fresh Git LF checkout with exact pinned sources and current edits. Source preflight only; no claim of a Linux Lean build.",
+    "cleaned_after_validation": true
+  },
+  "fresh_pinned_inputs_log": "verification/ci-clean-inputs.log",
+  "fresh_regression_log": "verification/ci-clean-regressions.log",
+  "fresh_source_preflight_log": "verification/ci-clean-source-preflight.log",
+  "fresh_source_preflight_exit": 0,
+  "fresh_checkout_scope": "Git LF checkout, no .olean/.ilean, source/dependency preflight only. This is NOT a Linux Lean build.",
+  "full_local_verification": {
+    "build_jobs": 3200,
+    "declarations": 37209,
+    "old_footprints_unchanged": 37193,
+    "warnings": 0,
+    "new_axiom_dependencies": [],
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ]
+  },
+  "remote_ci": "Must be verified on the new pushed commit. Local acceptance is not a remote success claim.",
+  "post_cleanup_build_exit_code": 0
+}

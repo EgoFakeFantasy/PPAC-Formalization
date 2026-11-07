@@ -1307,6 +1307,6 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 
 这关闭原第 8 阶段最后的全局父输入装配门，下一活动阶段为 9；SVC／ACwo／全局商编码单射／¬AC、PP/Main、全部内部／非标准 Proof/Con、原 Comparator 与最终终验仍未完成。9 条命令／5 条 trust=0 均退出 0，37152 项旧足迹不变，零警告，无新增公理依赖。报告：verification/concrete-system-acceptance.json。
 
-## 原阶段 9：kernelGraph、同值应用和实际同值类（2026-11-07）
+## 原阶段9：kernel及完整像类关系（2026-11-07）
 
-固定源 UniformImages:16–90 已由 ForcingKernelImage 迁移。原 nativeZF 对象句实际构造三名字稳定子与 HS kernel 图，全称证明其应用定律；追加的 value_kernel_certificate 保留完整源 mapsTo/functionOn，并证明 kernel 应用与相同实际函数值的等价。class_kernel_certificate 实际产生同一图上的两个分离 HS 类，并证明同值时的强迫相等，不假定两类名字或最终相等。原有16项声明足迹不变，追加11项；完整验收3200构建／37193声明、全部37182旧足迹不变、零警告／无新公理依赖，见 verification/kernel-values-acceptance.json。下一源 imageClassRelation:93–169、像商图／双射尚待迁移；原第9阶段及最终内部Con仍未完成。
+固定UniformImages:16–169已迁移。原nativeZF的image_kernel_certificate实际存在量化同一支撑/kernel图，在同一见证上证明像类关系的Monotone/Congruent/Regular、Moves及在完整mapsTo前提下的全称One/Injective；不接受图／支撑／固定性／最终定律输入。此前27项正文保留，追加16项；全量本地验收3200构建、37209声明、全部37193旧足迹不变、零警告／无新公理依赖。见verification/image-class-acceptance.json。CI依赖引导及规范文本哈希已修复，本地完整验收和干净LF源码预检通过；远端Linux CI单独核对。下一源imageQuotient／图及双射:177–276，原阶段9及最终内部Con仍未完成。

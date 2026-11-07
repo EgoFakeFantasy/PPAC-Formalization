@@ -37844,3 +37844,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingKernelImage.classSentence
 #print axioms PPAC.Migration.ForcingKernelImage.class_models
 #print axioms PPAC.Migration.ForcingKernelImage.class_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingKernelImage.ImageHolds
+#print axioms PPAC.Migration.ForcingKernelImage.imageHolds
+#print axioms PPAC.Migration.ForcingKernelImage.imageHolds_semantics
+#print axioms PPAC.Migration.ForcingKernelImage.imageRelation
+#print axioms PPAC.Migration.ForcingKernelImage.imageRelation_semantics
+#print axioms PPAC.Migration.ForcingKernelImage.image_monotone
+#print axioms PPAC.Migration.ForcingKernelImage.image_congruent
+#print axioms PPAC.Migration.ForcingKernelImage.image_regular
+#print axioms PPAC.Migration.ForcingKernelImage.image_one
+#print axioms PPAC.Migration.ForcingKernelImage.image_inj
+#print axioms PPAC.Migration.ForcingKernelImage.image_move
+#print axioms PPAC.Migration.ForcingKernelImage.image_moves
+#print axioms PPAC.Migration.ForcingKernelImage.imageResult
+#print axioms PPAC.Migration.ForcingKernelImage.imageSentence
+#print axioms PPAC.Migration.ForcingKernelImage.image_models
+#print axioms PPAC.Migration.ForcingKernelImage.image_kernel_certificate

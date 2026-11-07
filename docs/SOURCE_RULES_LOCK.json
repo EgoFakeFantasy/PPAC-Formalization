@@ -1,7 +1,7 @@
 {
   "openai_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
   "original_file": "lean/ComparatorChallenges/PartitionConsistency.lean",
-  "original_sha256": "a0b0b3e3e2362c601a648011ef57e432cc8e4f2978eebea74aabff835f51df41",
+  "original_sha256": "7b68f2154b044771ced4c3335f58a31e2070abe27ba600d947ebfd82958eb4ae",
   "rules_excerpt_sha256": "226d1e88643f28c7491a708c7e11f1752b023fb6ca26b9c16c69861e398f4a27",
   "rule_names": [
     "hyp",
