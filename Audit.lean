@@ -37832,3 +37832,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingKernelImage.sentence
 #print axioms PPAC.Migration.ForcingKernelImage.models
 #print axioms PPAC.Migration.ForcingKernelImage.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingKernelImage.app_kernelGraph_value
+#print axioms PPAC.Migration.ForcingKernelImage.kernel_class_same_value
+#print axioms PPAC.Migration.ForcingKernelImage.construct_equal_classes
+#print axioms PPAC.Migration.ForcingKernelImage.valueResult
+#print axioms PPAC.Migration.ForcingKernelImage.valueSentence
+#print axioms PPAC.Migration.ForcingKernelImage.value_models
+#print axioms PPAC.Migration.ForcingKernelImage.value_kernel_certificate
+#print axioms PPAC.Migration.ForcingKernelImage.classResult
+#print axioms PPAC.Migration.ForcingKernelImage.classSentence
+#print axioms PPAC.Migration.ForcingKernelImage.class_models
+#print axioms PPAC.Migration.ForcingKernelImage.class_kernel_certificate

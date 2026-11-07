@@ -1,5 +1,6 @@
 /- Pinned UniformImages.kernelRelation/kernelRelation_move/kernelGraph/
-app_kernelGraph:16-59. Direct consumer: imageClassRelation and
+app_kernelGraph, app_kernelGraph_value and kernel_class_same_value:16-90.
+Direct consumer: imageClassRelation and
 nonwellorderable_image_bijection:243-276. The relation is the regular
 existential composition of the two bounded applications, with no selected
 function values or class representatives. Reuse the actual collector,
@@ -343,5 +344,336 @@ theorem models {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : 
 theorem kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k) :
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (sentence rho I K two w G F mul top h A B)) :=
   ModelTransfer.derives (fun _ hM => models rho I K two w G F mul top h A B hM)
+
+/- Source RelationCalculus mapsTo_value/mapsTo_unique, specialized by
+app_kernelGraph_value. Consume the FULL source function formula. -/
+private theorem mapsTo_value (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p q h A B x y : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2))
+    (hx : ForcingClassEvaluation.Predicate H env x) (hy : ForcingClassEvaluation.Predicate H env y)
+    (hxA : Forces false R env P x A q)
+    (hxy : Force R H env (args3 h x y) P q (Source.SetLanguage.edge 0 1 2)) :
+    Forces false R env P y B q := by
+  rw [Source.SetLanguage.mapsTo,ForcingSound.rename hM hpre _ _ _ _ hp,ForcingFormula.force_conj] at hf
+  have hh := (ForcingFormula.force_all hM hpre hp _ _).mp hf.2 x hx
+  have hh := (ForcingFormula.force_all hM hpre hp _ _).mp hh y hy
+  have hh := (ForcingFormula.force_imp hM hpre hp _ _ _).mp hh q hq hqp hxA
+  have hh := (ForcingFormula.force_imp hM hpre hq _ _ _).mp hh q hq (hpre.1 q hq)
+  apply hh
+  exact (ForcingRelationClass.edge_formula hM hpre hq _ (0 : Fin 5) 3 4).mpr hxy
+
+private theorem mapsTo_function (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p h A B : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2)) :
+    Force R H env (Source.SetLanguage.args2 h A) P p (Source.SetLanguage.functionOn 0 1) := by
+  rw [Source.SetLanguage.mapsTo,ForcingSound.rename hM hpre _ _ _ _ hp,ForcingFormula.force_conj] at hf
+  rw [Source.SetLanguage.functionOn,ForcingSound.rename hM hpre _ _ _ _ hp]
+  have hh := hf.1
+  rw [Source.SetLanguage.functionOn,ForcingSound.rename hM hpre _ _ _ _ hp] at hh
+  exact hh
+
+private theorem mapsTo_unique (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p q h A B x y z : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2))
+    (hx : ForcingClassEvaluation.Predicate H env x) (hy : ForcingClassEvaluation.Predicate H env y)
+    (hz : ForcingClassEvaluation.Predicate H env z)
+    (hxA : Forces false R env P x A q)
+    (hxy : Force R H env (args3 h x y) P q (Source.SetLanguage.edge 0 1 2))
+    (hxz : Force R H env (args3 h x z) P q (Source.SetLanguage.edge 0 1 2)) :
+    Forces true R env P y z q := by
+  have hfunc := ForcingFormula.mono hM hpre (Source.SetLanguage.functionOn 0 1) _ hp hq hqp
+    (mapsTo_function hM hpre hp hf)
+  rw [Source.SetLanguage.functionOn,ForcingSound.rename hM hpre _ _ _ _ hq,ForcingFormula.force_conj] at hfunc
+  have htotal := (ForcingFormula.force_all hM hpre hq _ _).mp hfunc.2 x hx
+  have htotal := (ForcingFormula.force_imp hM hpre hq _ _ _).mp htotal q hq (hpre.1 q hq) hxA
+  apply ForcingAtomicBasic.eq_of_dense hM hpre hq
+  intro r hr hrq
+  obtain ⟨s,hs,hsr,t,ht,hxt,huniq⟩ := (ForcingFormula.force_ex R H env _ P q _).mp htotal r hr hrq
+  have hsq := hpre.2 s r q hs hr hq hsr hrq
+  have compare (u : M.Carrier .set) (hu : ForcingClassEvaluation.Predicate H env u)
+      (hxu : Force R H env (args3 h x u) P q (Source.SetLanguage.edge 0 1 2)) :
+      Forces true R env P u t s := by
+    have hu' := (ForcingFormula.force_all hM hpre hs _ _).mp huniq u hu
+    have hu' := (ForcingFormula.force_imp hM hpre hs _ _ _).mp hu' s hs (hpre.1 s hs)
+    apply hu'
+    apply (ForcingRelationClass.edge_formula hM hpre hs _ (0 : Fin 5) 2 4).mpr
+    exact ForcingFormula.mono hM hpre _ _ hq hs hsq hxu
+  exact ⟨s,hs,hsr,ForcingAtomicLaws.eq_trans hM hpre (compare y hy hxy)
+    (ForcingAtomicBasic.eq_symm hM (compare z hz hxz))⟩
+
+private theorem kernel_value (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p q h A B a b y : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2))
+    (ha : ForcingClassEvaluation.Predicate H env a) (_hb : ForcingClassEvaluation.Predicate H env b)
+    (hy : ForcingClassEvaluation.Predicate H env y)
+    (haA : Forces false R env P a A q)
+    (hay : Force R H env (args3 h a y) P q (Source.SetLanguage.edge 0 1 2)) :
+    Force R H env (Fin.lastCases b (Fin.lastCases a (args3 h A B))) P q kernelFormula ↔
+      Forces false R env P b A q ∧ Force R H env (args3 h b y) P q (Source.SetLanguage.edge 0 1 2) := by
+  rw [kernel_semantics hM hpre]
+  constructor
+  · intro hi
+    have hd (r : M.Carrier .set) (hr : (Project.FirstOrderSemantics.reduct M).mem r P)
+        (hrq : MapRel R env r q) :
+        ∃ t, (Project.FirstOrderSemantics.reduct M).mem t P ∧ MapRel R env t r ∧
+          Forces false R env P b A t ∧ Force R H env (args3 h b y) P t (Source.SetLanguage.edge 0 1 2) := by
+      obtain ⟨t,ht,htr,z,hz,haA',hbA,_,haz,hbz⟩ := hi r hr hrq
+      have htq := hpre.2 t r q ht hr hq htr hrq
+      have htp := hpre.2 t q p ht hq hp htq hqp
+      have he := mapsTo_unique hM hpre hp ht htp hf ha hz hy haA' haz
+        (ForcingFormula.mono hM hpre _ _ hq ht htq hay)
+      have hc := ForcingFormula.tuple_congr (H := H) hM hpre (Source.SetLanguage.edge (0 : Fin 3) 1 2)
+        (args3 h b z) (args3 h b y) t ht
+        (fun j => Fin.cases (ForcingAtomicBasic.eq_refl hM hpre h t ht)
+          (Fin.cases (ForcingAtomicBasic.eq_refl hM hpre b t ht) (Fin.cases he (fun j => Fin.elim0 j))) j)
+      exact ⟨t,ht,htr,hbA,hc.mp hbz⟩
+    constructor
+    · apply ForcingAtomicBasic.mem_of_dense hM hpre hq
+      intro r hr hrq
+      obtain ⟨t,ht,htr,hbA,_⟩ := hd r hr hrq
+      exact ⟨t,ht,htr,hbA⟩
+    · apply ForcingFormula.of_dense hM hpre _ _ hq
+      intro r hr hrq
+      obtain ⟨t,ht,htr,_,hby⟩ := hd r hr hrq
+      exact ⟨t,ht,htr,hby⟩
+  · rintro ⟨hbA,hby⟩ r hr hrq
+    have hyB := mapsTo_value hM hpre hp hq hqp hf ha hy haA hay
+    exact ⟨r,hr,hpre.1 r hr,y,hy,ForcingAtomicBasic.mem_mono hM hpre hr hrq haA,
+      ForcingAtomicBasic.mem_mono hM hpre hr hrq hbA,ForcingAtomicBasic.mem_mono hM hpre hr hrq hyB,
+      ForcingFormula.mono hM hpre _ _ hq hr hrq hay,ForcingFormula.mono hM hpre _ _ hq hr hrq hby⟩
+
+/-- Pinned UniformImages.app_kernelGraph_value:61-78. -/
+theorem app_kernelGraph_value    (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul top h A B : Fin k)
+    {I K two w graph p q a b y : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6)))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hGraph : ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A graph)
+    (ha : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) a)
+    (hb : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) b)
+    (hy : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) y)
+    (hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hqW : (Project.FirstOrderSemantics.reduct M).mem q (env (rho 6)))
+    (hqp : MapRel (orderFormula (rho 0) mul) env q p)
+    (hf : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) (env A) (env B))
+      (env (rho 6)) p (Source.SetLanguage.mapsTo 0 1 2))
+    (haA : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) a (env A) q)
+    (hay : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) a y)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2)) :
+    Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 graph a b)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2) ↔
+      Forces false (orderFormula (rho 0) mul) env (env (rho 6)) b (env A) q ∧
+        Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) b y)
+          (env (rho 6)) q (Source.SetLanguage.edge 0 1 2) := by
+  rw [app_kernelGraph hM env rho G F mul top h A B hp hG hF ht hpre hA hGraph ha hb hqW,
+    relation_semantics]
+  exact kernel_value hM hpre hpW hqW hqp hf
+    ((domain_semantics env rho G F a).mpr ha) ((domain_semantics env rho G F b).mpr hb)
+    ((domain_semantics env rho G F y).mpr hy) haA hay
+
+/-- Pinned kernel_class_same_value:80-90, for the actual separated names. -/
+theorem kernel_class_same_value    (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul top h A B : Fin k)
+    {I K two w graph p q a b y ca cb : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6)))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hGraph : ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A graph)
+    (ha : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) a)
+    (hb : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) b)
+    (hy : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) y)
+    (hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hqW : (Project.FirstOrderSemantics.reduct M).mem q (env (rho 6)))
+    (hqp : MapRel (orderFormula (rho 0) mul) env q p)
+    (hf : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) (env A) (env B))
+      (env (rho 6)) p (Source.SetLanguage.mapsTo 0 1 2))
+    (haA : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) a (env A) q)
+    (hay : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) a y)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2))
+    (hbA : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) b (env A) q)
+    (hby : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) b y)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2))
+    (hcaHS : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) ca)
+    (hcbHS : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) cb)
+    (hca : ForcingRelationClass.Class (orderFormula (rho 0) mul) (domain rho G F) env (env (rho 6)) (env A) graph a ca)
+    (hcb : ForcingRelationClass.Class (orderFormula (rho 0) mul) (domain rho G F) env (env (rho 6)) (env A) graph b cb) :
+    Forces true (orderFormula (rho 0) mul) env (env (rho 6)) ca cb q := by
+  apply ForcingBasicSetAxioms.eq_of_same_members hM hpre hcaHS hcbHS hqW
+  intro x hx r hr hrq
+  have hrp := hpre.2 r q p hr hqW hpW hrq hqp
+  rw [ForcingRelationClass.mem_class hM hpre hca hr,ForcingRelationClass.mem_class hM hpre hcb hr,
+    app_kernelGraph_value hM env rho G F mul top h A B hp hG hF ht hpre hA hGraph ha hx hy hpW hr hrp hf
+      (ForcingAtomicBasic.mem_mono hM hpre hr hrq haA) (ForcingFormula.mono hM hpre _ _ hqW hr hrq hay),
+    app_kernelGraph_value hM env rho G F mul top h A B hp hG hF ht hpre hA hGraph hb hx hy hpW hr hrp hf
+      (ForcingAtomicBasic.mem_mono hM hpre hr hrq hbA) (ForcingFormula.mono hM hpre _ _ hqW hr hrq hby)]
+
+/-- Consume the existing exact class constructor twice; no supplied classes. -/
+theorem construct_equal_classes    (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (G F mul top h A B : Fin k)
+    {I K two w graph p q a b y : M.Carrier .set}
+    (hp : Presentation (env (rho 0)) I K two w (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier I (env G))
+    (hF : ForcingNormalFilter.Normal I (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6)))
+    (hA : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env A))
+    (hGraph : ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A graph)
+    (ha : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) a)
+    (hb : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) b)
+    (hy : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) y)
+    (hpW : (Project.FirstOrderSemantics.reduct M).mem p (env (rho 6)))
+    (hqW : (Project.FirstOrderSemantics.reduct M).mem q (env (rho 6)))
+    (hqp : MapRel (orderFormula (rho 0) mul) env q p)
+    (hf : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) (env A) (env B))
+      (env (rho 6)) p (Source.SetLanguage.mapsTo 0 1 2))
+    (haA : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) a (env A) q)
+    (hay : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) a y)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2))
+    (hbA : Forces false (orderFormula (rho 0) mul) env (env (rho 6)) b (env A) q)
+    (hby : Force (orderFormula (rho 0) mul) (domain rho G F) env (args3 (env h) b y)
+      (env (rho 6)) q (Source.SetLanguage.edge 0 1 2))
+    (hGraphHS : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) graph) :
+    ∃ ca cb, HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) ca ∧
+      HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) cb ∧
+      ForcingRelationClass.Class (orderFormula (rho 0) mul) (domain rho G F) env (env (rho 6)) (env A) graph a ca ∧
+      ForcingRelationClass.Class (orderFormula (rho 0) mul) (domain rho G F) env (env (rho 6)) (env A) graph b cb ∧
+      Forces true (orderFormula (rho 0) mul) env (env (rho 6)) ca cb q := by
+  obtain ⟨ca,hcaHS,hca⟩ := ForcingRelationClass.exists_class hM env rho G F mul hp hG hF hA hGraphHS ha
+  obtain ⟨cb,hcbHS,hcb⟩ := ForcingRelationClass.exists_class hM env rho G F mul hp hG hF hA hGraphHS hb
+  exact ⟨ca,cb,hcaHS,hcbHS,hca,hcb,kernel_class_same_value hM env rho G F mul top h A B
+    hp hG hF ht hpre hA hGraph ha hb hy hpW hqW hqp hf haA hay hbA hby hcaHS hcbHS hca hcb⟩
+
+private def valuePremises {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) : List (Project.Formula 1 k) :=
+  premises rho I K two w G F mul top h A B ++
+  [ProjectSyntax.encode id (ForcingRelationGraph.graph (orderFormula (rho 0) mul)
+      (relation rho G F mul h A B) id (rho 6) top A A graph),
+   ProjectSyntax.encode id (ForcingHS.hs actionFormula rho G (rho 6) F a),
+   ProjectSyntax.encode id (ForcingHS.hs actionFormula rho G (rho 6) F b),
+   ProjectSyntax.encode id (ForcingHS.hs actionFormula rho G (rho 6) F y),
+   .mem (.bound p) (.bound (rho 6)),.mem (.bound q) (.bound (rho 6)),
+   ProjectSyntax.encode id (ReplacementPredicates.rel (orderFormula (rho 0) mul) id q p),
+   ProjectSyntax.encode id (ForcingFormula.formula (orderFormula (rho 0) mul) (domain rho G F)
+     id (args3 h A B) (rho 6) p (Source.SetLanguage.mapsTo 0 1 2)),
+   ProjectSyntax.encode id (ForcingAtomicRelations.forces false (orderFormula (rho 0) mul) id (rho 6) a A q),
+   ProjectSyntax.encode id (ForcingFormula.formula (orderFormula (rho 0) mul) (domain rho G F)
+     id (args3 h a y) (rho 6) q (Source.SetLanguage.edge 0 1 2))]
+
+def valueResult {k : Nat} (rho : Fin 7 → Fin k) (G F mul h A graph a b y q : Fin k) : Project.Formula 1 k :=
+  let lhs := ProjectSyntax.encode id (ForcingFormula.formula (orderFormula (rho 0) mul) (domain rho G F)
+    id (args3 graph a b) (rho 6) q (Source.SetLanguage.edge 0 1 2))
+  let rhs : Project.Formula 1 k := .conj
+    (ProjectSyntax.encode id (ForcingAtomicRelations.forces false (orderFormula (rho 0) mul) id (rho 6) b A q))
+    (ProjectSyntax.encode id (ForcingFormula.formula (orderFormula (rho 0) mul) (domain rho G F)
+      id (args3 h b y) (rho 6) q (Source.SetLanguage.edge 0 1 2)))
+  .conj (.imp lhs rhs) (.imp rhs lhs)
+
+def valueSentence {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) : Project.Sentence where
+  formula := Project.Formula.forallClosure k ((valuePremises rho I K two w G F mul top h A B graph a b y p q).foldr
+    (fun a b => .imp a b) (valueResult rho G F mul h A graph a b y q))
+  freeClosed := by
+    simp -implicitDefEqProofs [valuePremises,premises,valueResult,List.foldr,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed]
+
+theorem value_models {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) (hM : FirstOrder.Theory.Models M nativeZF) :
+    (Project.fo_sentence (valueSentence rho I K two w G F mul top h A B graph a b y p q)).TrueIn M := by
+  rw [Project.FirstOrderSemantics.sentence_correct (ModelTransfer.extensionality hM),SetTheory.Structure.satisfiesSentence_iff]
+  intro free
+  apply (Project.Formula.satisfies_forallClosure_iff free _).mpr
+  intro env
+  simp only [valuePremises,premises,List.foldr_append,List.foldr,Project.Formula.satisfies_imp_iff,
+    Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingProductFamily.presentation_semantics,
+    ForcingLabelPermutations.carrier_semantics,ForcingNormalFilter.normal_semantics,ForcingWithTopCarrier.empty_semantics,
+    ForcingAtomicBasic.preorder_semantics,ForcingHS.hs_semantics,ForcingRelationGraph.graph_semantics,
+    ForcingMapConditions.rel_semantics,ForcingFormula.formula_semantics,ForcingAtomicRelations.forces_semantics,args3_map,id_eq]
+  intro hp hG hF ht hpre _hHS hA _hB hGraph ha hb hy hpW hqW hqp hf haA hay
+  have hv := app_kernelGraph_value hM env rho G F mul top h A B hp hG hF ht hpre hA hGraph ha hb hy hpW hqW hqp hf haA hay
+  simp only [valueResult,Project.Formula.satisfies_conj_iff,Project.Formula.satisfies_imp_iff,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingFormula.formula_semantics,
+    ForcingAtomicRelations.forces_semantics,args3_map,id_eq]
+  exact ⟨hv.mp,hv.mpr⟩
+
+theorem value_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) :
+    FirstOrder.Derives nativeZF [] (Project.fo_sentence (valueSentence rho I K two w G F mul top h A B graph a b y p q)) :=
+  ModelTransfer.derives (fun _ hM => value_models rho I K two w G F mul top h A B graph a b y p q hM)
+
+def classResult {k : Nat} (rho : Fin 7 → Fin k) (G F mul A graph a b q : Fin k) : Project.Formula 1 k :=
+  let up : Fin k → Fin (k+2) := fun j => j.succ.succ
+  .existsE (.existsE (.conj
+    (ProjectSyntax.encode id (ForcingHS.hs actionFormula (fun j => up (rho j)) (up G) (up (rho 6)) (up F) 1))
+    (.conj (ProjectSyntax.encode id (ForcingHS.hs actionFormula (fun j => up (rho j)) (up G) (up (rho 6)) (up F) 0))
+    (.conj (ProjectSyntax.encode id (ForcingRelationClass.relationClass (orderFormula (rho 0) mul) (domain rho G F)
+      up (up (rho 6)) (up A) (up graph) (up a) 1))
+    (.conj (ProjectSyntax.encode id (ForcingRelationClass.relationClass (orderFormula (rho 0) mul) (domain rho G F)
+      up (up (rho 6)) (up A) (up graph) (up b) 0))
+      (ProjectSyntax.encode id (ForcingAtomicRelations.forces true (orderFormula (rho 0) mul) up (up (rho 6)) 1 0 (up q))))))))
+
+private def classPremises {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) : List (Project.Formula 1 k) :=
+  valuePremises rho I K two w G F mul top h A B graph a b y p q ++
+  [ProjectSyntax.encode id (ForcingAtomicRelations.forces false (orderFormula (rho 0) mul) id (rho 6) b A q),
+   ProjectSyntax.encode id (ForcingFormula.formula (orderFormula (rho 0) mul) (domain rho G F)
+     id (args3 h b y) (rho 6) q (Source.SetLanguage.edge 0 1 2)),
+   ProjectSyntax.encode id (ForcingHS.hs actionFormula rho G (rho 6) F graph)]
+
+def classSentence {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) : Project.Sentence where
+  formula := Project.Formula.forallClosure k ((classPremises rho I K two w G F mul top h A B graph a b y p q).foldr
+    (fun a b => .imp a b) (classResult rho G F mul A graph a b q))
+  freeClosed := by
+    simp -implicitDefEqProofs [classPremises,valuePremises,premises,classResult,List.foldr,Definitional.Formula.FreeClosed,ProjectSyntax.freeClosed]
+
+theorem class_models {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) (hM : FirstOrder.Theory.Models M nativeZF) :
+    (Project.fo_sentence (classSentence rho I K two w G F mul top h A B graph a b y p q)).TrueIn M := by
+  rw [Project.FirstOrderSemantics.sentence_correct (ModelTransfer.extensionality hM),SetTheory.Structure.satisfiesSentence_iff]
+  intro free
+  apply (Project.Formula.satisfies_forallClosure_iff free _).mpr
+  intro env
+  simp only [classPremises,valuePremises,premises,List.foldr_append,List.foldr,Project.Formula.satisfies_imp_iff,
+    Project.Formula.satisfies_mem_iff,Project.Term.eval_bound,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingProductFamily.presentation_semantics,
+    ForcingLabelPermutations.carrier_semantics,ForcingNormalFilter.normal_semantics,ForcingWithTopCarrier.empty_semantics,
+    ForcingAtomicBasic.preorder_semantics,ForcingHS.hs_semantics,ForcingRelationGraph.graph_semantics,
+    ForcingMapConditions.rel_semantics,ForcingFormula.formula_semantics,ForcingAtomicRelations.forces_semantics,args3_map,id_eq]
+  intro hp hG hF ht hpre _hHS hA _hB hGraph ha hb hy hpW hqW hqp hf haA hay hbA hby hGraphHS
+  obtain ⟨ca,cb,hcaHS,hcbHS,hca,hcb,he⟩ := construct_equal_classes hM env rho G F mul top h A B
+    hp hG hF ht hpre hA hGraph ha hb hy hpW hqW hqp hf haA hay hbA hby hGraphHS
+  simp only [classResult,Project.Formula.satisfies_exists_iff,Project.Formula.satisfies_conj_iff,
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingHS.hs_semantics,
+    ForcingRelationClass.relationClass_semantics,ForcingAtomicRelations.forces_semantics,id_eq]
+  exact ⟨ca,cb,hcaHS,hcbHS,hca,hcb,he⟩
+
+theorem class_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w G F mul top h A B graph a b y p q : Fin k) :
+    FirstOrder.Derives nativeZF [] (Project.fo_sentence (classSentence rho I K two w G F mul top h A B graph a b y p q)) :=
+  ModelTransfer.derives (fun _ hM => class_models rho I K two w G F mul top h A B graph a b y p q hM)
 
 end PPAC.Migration.ForcingKernelImage

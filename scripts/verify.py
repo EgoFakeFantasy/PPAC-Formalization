@@ -2593,7 +2593,7 @@ def main() -> None:
                                 ('forcing_assigned_parent_system', 'ForcingAssignedParentSystem', 9),
                                 ('forcing_nonwellorderable_quotient', 'ForcingNonwellorderableQuotient', 7),
                                 ('forcing_concrete_system', 'ForcingConcreteSystem', 14),
-                                ('forcing_kernel_image', 'ForcingKernelImage', 16)):
+                                ('forcing_kernel_image', 'ForcingKernelImage', 27)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6105,8 +6105,9 @@ def main() -> None:
         "source_ConcreteSystem_closed_exists_native_kernel_and_uniform_quotient_consequence_proved": True,
         "original_stage8_global_parent_inputs_discharged": True,
         "source_UniformImages_actual_kernel_graph_HS_support_and_application_native_kernel_proved": True,
+        "source_UniformImages_kernel_value_and_same_value_class_construction_native_kernel_proved": True,
         "source_UniformImages_kernel_value_and_image_class_laws_complete": False,
-        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-59. Actually construct the exact three-name stabilizer and raw collected HS kernel graph on A x A from arbitrary internal HS h,A,B, and prove the SAME graph's full universal App iff regular bounded-app composition in original nativeZF Derives. No supplied graph, common support, selected function value or quotient representative. This source constructor is the next stage9 application operator; app_kernelGraph_value:61-78, image-class laws and the final nonwellorderable image bijection are still pending. The SAME stage8 concrete system remains constructed; final stage9/PP/Main/all-internal Con are not claimed.",
+        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-90. The actual three-name stabilizer/HS kernel graph and full App iff regular bounded composition are proved. Consume the FULL forced source mapsTo/functionOn formula, including its exact graph domain, to prove kernel membership iff equality of actual function values. Actually construct both separated HS classes on the SAME graph and prove forced equality when the values coincide. Original nativeZF Derives endpoints cover the full kernel-value statement and actual existential class result; no selected class representatives, supplied class names, or assumed final equalities. imageClassRelation:93-169 and the final image quotient/bijection remain pending; original stage9, PP/Main and all-internal/nonstandard Con are not claimed complete.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
