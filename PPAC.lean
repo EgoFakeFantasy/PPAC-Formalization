@@ -1021,3 +1021,8 @@ import PPAC.Migration.ForcingAssignedGraphInj
 import PPAC.Migration.ForcingAssignedGraphTotal
 import PPAC.Migration.ConstructionIdealStability
 import PPAC.Migration.ForcingForcedAvailabilityStable
+import PPAC.Migration.ForcingAssignedGraphOnto
+import PPAC.Migration.ForcingAssignedGraphBijection
+import PPAC.Migration.ForcingConcreteQuotientBijection
+import PPAC.Migration.ForcingCheckOrdinal
+import PPAC.Migration.ForcingUniformInverse

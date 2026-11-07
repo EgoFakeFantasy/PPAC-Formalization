@@ -1,0 +1,182 @@
+{
+  "verified_at": "2026-11-07T18:44:20.505194+11:00",
+  "stage": 8,
+  "base_commit": "5601de7f05fff3def8d2eadc7a6cfbbe6b0ca0f1",
+  "adapter": "PPAC/Migration/ForcingUniformInverse.lean",
+  "source": "UniformNames.UniformInverse:117-209 (ordinal-index realization for the local-list consumer)",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingUniformInverse.kernel_certificate",
+    "PPAC.Migration.ForcingUniformInverse.laws_kernel_certificate"
+  ],
+  "background": "Original pure-set nativeZF; original FirstOrder.Derives. No object Choice and no external well-foundedness premise. All conditions, ordinal indices and graph entries are internal sets of the same arbitrary nativeZF model.",
+  "completed": [
+    "Persistent least-value test and formula/semantics, monotonicity, equality congruence and least-index uniqueness.",
+    "Regularized relation and formula/semantics, monotonicity, equality congruence, regularity, one and inj.",
+    "Dense least-index existence from the existing ObjectOrdinalLeast.native_existence schema, with a closed sentence and original-kernel derivation.",
+    "Actual same local-list membership, entire ordinal enumeration and collected-name contracts produce relation_total; no assumed least-selector or host choice function.",
+    "Closed relation one/inj sentence and original-kernel derivation."
+  ],
+  "scope_boundary": "The source ground wellorder for least occurrences is realized by membership on the existing internal ordinal enumeration. This supplies the required least-index relation but does not yet construct the actual supported inverse graph/name or claim its forced injection. The two kernel endpoints certify dense least candidates and relation one/inj; relation_total is proved in the same module and still awaits the final graph assembly certificate.",
+  "actual_supported_inverse_graph_constructed": false,
+  "uniformSubsetInverse_injection_proved": false,
+  "outside_uniformRange_proved": false,
+  "outsideClassSet_denseBelow_proved": false,
+  "nonwellorderable_quotient_bijection_proved": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Use existing ForcingRelationGraph support/symmetry and graph_injection to construct the actual least-index inverse and its restricted supported graph.",
+    "Migrate source outside_uniformRange, outside_localList and outsideClassSet_denseBelow, then consume the existing concrete quotient bijection.",
+    "Shared concrete parents, original stages 9-11 and original Comparator."
+  ],
+  "build_jobs": 3194,
+  "audited_declarations": 37104,
+  "old_footprints_unchanged": 37079,
+  "new_declarations": 25,
+  "file_hashes": 2749,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "UniformInverseAudit.tmp.lean",
+        "length": 1654,
+        "sha256": "001e368539b9a3010431ab3b9a32c116dcf7566e922e23148cff98d2b3de6f20"
+      },
+      {
+        "path": "verification/uniform-inverse-baseline.tmp.json",
+        "length": 14050590,
+        "sha256": "4a165c67855971bf500741fd30d81b6c5e9952a2314f7df32699d6ead95d9cd8"
+      },
+      {
+        "path": "verification/uniform-inverse-check.tmp.log",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "verification/uniform-inverse-build.tmp.log",
+        "length": 109,
+        "sha256": "790fbde7f7b6d77e5129b8a9ab7f6a2f115f8744caffd20c970049bf76744748"
+      },
+      {
+        "path": "verification/uniform-inverse-audit.tmp.log",
+        "length": 8354,
+        "sha256": "eac47c9e5af554625f8d7a7ee11cc3744146c358460346ebc5f44f208753a7ab"
+      }
+    ],
+    "logical_bytes": 14060707.0,
+    "free_before": 87340535808,
+    "free_after": 87354396672
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3194,
+    "log": "verification/uniform-inverse-post-cleanup.log"
+  }
+}

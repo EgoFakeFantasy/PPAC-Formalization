@@ -37688,3 +37688,63 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stabilitySentence
 #print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stability_models
 #print axioms PPAC.Migration.ForcingForcedAvailabilityStable.stability_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphOnto.holds_onto
+#print axioms PPAC.Migration.ForcingAssignedGraphOnto.ontoSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphOnto.onto_models
+#print axioms PPAC.Migration.ForcingAssignedGraphOnto.onto_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.relation_moves
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.exists_assignmentGraph
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.assignmentGraph_bijection
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.bijectionSentence
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.bijection_models
+#print axioms PPAC.Migration.ForcingAssignedGraphBijection.bijection_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.restricted_fixed_subset
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.all_counts
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.quotient_bijection_above
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.bijectionSentence
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.bijection_models
+#print axioms PPAC.Migration.ForcingConcreteQuotientBijection.bijection_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingCheckOrdinal.wellorderableFormula
+#print axioms PPAC.Migration.ForcingCheckOrdinal.wellorderable
+#print axioms PPAC.Migration.ForcingCheckOrdinal.transF_checkOrdinal
+#print axioms PPAC.Migration.ForcingCheckOrdinal.ordF_checkOrdinal
+#print axioms PPAC.Migration.ForcingCheckOrdinal.forces_membershipWellFounded
+#print axioms PPAC.Migration.ForcingCheckOrdinal.forces_checkOrdinal
+#print axioms PPAC.Migration.ForcingCheckOrdinal.forces_wellorderable
+#print axioms PPAC.Migration.ForcingCheckOrdinal.wellorderable_of_check_injection
+#print axioms PPAC.Migration.ForcingCheckOrdinal.no_check_injection_of_not_wellorderable
+#print axioms PPAC.Migration.ForcingCheckOrdinal.childClosed
+#print axioms PPAC.Migration.ForcingCheckOrdinal.childClosed_semantics
+#print axioms PPAC.Migration.ForcingCheckOrdinal.sentence
+#print axioms PPAC.Migration.ForcingCheckOrdinal.models
+#print axioms PPAC.Migration.ForcingCheckOrdinal.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingUniformInverse.LeastValue
+#print axioms PPAC.Migration.ForcingUniformInverse.leastValue
+#print axioms PPAC.Migration.ForcingUniformInverse.leastValue_semantics
+#print axioms PPAC.Migration.ForcingUniformInverse.least_mono
+#print axioms PPAC.Migration.ForcingUniformInverse.least_congr
+#print axioms PPAC.Migration.ForcingUniformInverse.least_unique
+#print axioms PPAC.Migration.ForcingUniformInverse.Holds
+#print axioms PPAC.Migration.ForcingUniformInverse.holds
+#print axioms PPAC.Migration.ForcingUniformInverse.holds_semantics
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_congr
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_mono
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_regular
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_one
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_inj
+#print axioms PPAC.Migration.ForcingUniformInverse.possible
+#print axioms PPAC.Migration.ForcingUniformInverse.possible_semantics
+#print axioms PPAC.Migration.ForcingUniformInverse.dense_least
+#print axioms PPAC.Migration.ForcingUniformInverse.relation_total
+#print axioms PPAC.Migration.ForcingUniformInverse.denseLeastResult
+#print axioms PPAC.Migration.ForcingUniformInverse.sentence
+#print axioms PPAC.Migration.ForcingUniformInverse.models
+#print axioms PPAC.Migration.ForcingUniformInverse.kernel_certificate
+#print axioms PPAC.Migration.ForcingUniformInverse.lawsSentence
+#print axioms PPAC.Migration.ForcingUniformInverse.laws_models
+#print axioms PPAC.Migration.ForcingUniformInverse.laws_kernel_certificate

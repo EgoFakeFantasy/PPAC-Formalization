@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-11-03T17:27:50+11:00",
+  "stage": 8,
+  "base_commit": "5601de7f05fff3def8d2eadc7a6cfbbe6b0ca0f1",
+  "adapters": [
+    "PPAC/Migration/ForcingConcreteQuotientBijection.lean"
+  ],
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingConcreteQuotientBijection.bijection_kernel_certificate"
+  ],
+  "background": "Original pure-set nativeZF and original FirstOrder.Derives of the SAME internal L-relative bijectionSentence. Existing L/ZFC bridge discharges helper Choice; no object Choice is added to ordinary nativeZF. All internal conditions and names remain quantified.",
+  "completed": [
+    "Proved restricted_fixed_subset: every product permutation fixing all labels in the root label image Ap fixes the restricted Cohen condition d0 = d.restrict Ap under ForcingCohenOrderAction.act.",
+    "Fixed ConcreteQuotients.preliminary_ordinalCount:339-353 (all_counts): assembled ForcingAssignedGraphTotal.AllCounts across all orbit-parameter records in Q from ForcingOrbitParameterFamily.mem_family, ForcingOrbitParameterRecord.fields_of_record, ForcingAssignedParameters.records_of_parameters, ForcingAssignedParameterFields.unpack, ForcingOrbitCodeParameters.exists_parameters and ForcingConcreteOrdinalCount.ordinal_count.",
+    "Fixed ConcreteQuotients.quotient_bijection_above:369-397 (quotient_bijection_above): constructed the concrete orbit-parameter family Q, orbit-quotient name qName, restricted product condition z = (d.restrict (p.sub e).range, p), and HS relation-graph name G forcing BijectionF(check(labelSet), qName, G) at z via ForcingAssignedGraphBijection.assignmentGraph_bijection."
+  ],
+  "actual_graph_one_proved": true,
+  "actual_graph_inj_proved": true,
+  "actual_graph_total_proved": true,
+  "actual_graph_onto_proved": true,
+  "assignment_graph_bijection_proved": true,
+  "preliminary_all_counts_proved": true,
+  "concrete_quotient_bijection_above_proved": true,
+  "actual_final_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Concrete Cardinals/mark/complement data and shared global parents remain explicit and must be discharged in the final common system.",
+    "Nonwellorderable quotient dense bijection (ConcreteQuotients.nonwellorderable_quotient_bijection:401-443) and final parent-system instantiation.",
+    "Original stages 9-11, all internal/nonstandard proof-code Con, and original Comparator."
+  ],
+  "next_source_consumer": "ConcreteQuotients.nonwellorderable_quotient_bijection:401-443",
+  "next_existing_reuse": "Consume ForcingConcreteQuotientBijection.quotient_bijection_above and outsideClassSet_denseBelow in ConcreteQuotients.nonwellorderable_quotient_bijection and discharge shared parent parameters without rebuilding L/full schemas, Proof/Sat or forcing/count foundations.",
+  "build_jobs": 3192,
+  "audited_declarations": 37065,
+  "old_footprints_unchanged": 37059,
+  "new_declarations": 6,
+  "file_hashes": 2747,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ]
+}

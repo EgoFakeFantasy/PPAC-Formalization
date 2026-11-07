@@ -1223,3 +1223,48 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 - `class_dense_vertex` constructs the actual vertex over the SAME root/index/ideal and returns Entry plus StableAt for the SAME original name. The closed object endpoint has original nativeZF Derives relative to the SAME internal L, using the existing L/ZFC Choice bridge.
 - Full regression: 3189 jobs, 37049 declarations, 2744 hashes; all 37044 old footprints unchanged, five new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/forced-availability-stable-acceptance.json.
 - Still stage 8. Next connect actual quotient membership, actual_labelClass/congr, this stable vertex and existing whole-orbit records/assigned_onto. Graph onto/bijection, final parents, stages 9-11, final internal Con and original Comparator remain incomplete. Existing full Candidates and its producer are reused, not rebuilt.
+
+
+## Actual Assigned graph surjectivity (2026-11-03)
+
+- `ForcingAssignedGraphOnto.holds_onto` migrates fixed AssignedGraphs.graphRelation_onto:218-249. It returns an actual HS input label name, labelSet membership and GraphHolds below every internal extension.
+- Reuse AllCounts, whole-orbit record/field extraction and RootCounts reindexing from ForcingAssignedGraphTotal, actual quotient membership from ForcingQuotientName.mem_quotient, actual local-class construction and uniqueness from ForcingRelationClass.actual_labelClass and ForcingRelationClassMove.class_unique, actual availability stabilization and vertex construction from ForcingForcedAvailabilityStable.class_dense_vertex, and ForcingAssignedDensity.assigned_onto with the existing Candidates contract.
+- `onto_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed sentence; existing L/ZFC discharges helper Choice. AllCounts, concrete Cardinals/mark/complement data and shared final parents remain explicit hypotheses, not completed final instantiations.
+- Full regression: 3190 jobs, 37053 declarations, 2745 hashes; all 37049 old footprints unchanged, four new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-graph-onto-acceptance.json.
+- Still stage 8: assignmentGraph_bijection, concrete quotient bijection and final parents remain incomplete. Stages 9-11, final internal Con and original Comparator remain pending.
+
+
+## Actual Assigned graph construction and forced bijection (2026-11-03)
+
+- `ForcingAssignedGraphBijection.exists_assignmentGraph` migrates fixed AssignedGraphs.assignmentGraph:100-105, constructing the actual relation-graph name with `ForcingRelationGraph.Graph`, `ForcingHS.HS` and `ForcingSupportedNames.Supported` from `ForcingRelationGraphSupport.construct`, `ForcingConjugationGraph.fixing_subgroup`, `ForcingLabelSet.HS_and_fixed`, `ForcingQuotientName.hs_and_fixed` and `relation_moves` (via `ForcingAssignedGraphMove.holds_move`).
+- `ForcingAssignedGraphBijection.assignmentGraph_bijection` migrates fixed AssignedGraphs.assignmentGraph_bijection:253-269, proving that at the base condition `z0`, the constructed relation-graph name forces both `surjection` and `injection` from the ground label set to the orbit quotient name by combining `ForcingAssignedRelation.{monotone, congruent, regular}`, `ForcingRelationGraphFunctions.{graph_surjection, graph_injection}` and the four actual dense GraphHolds properties (`holds_total`, `holds_one`, `holds_onto`, `holds_inj`).
+- `bijection_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed `bijectionSentence`; existing L/ZFC discharges helper Choice. AllCounts, concrete Cardinals/mark/complement data and shared final parents remain explicit hypotheses, not completed final instantiations.
+- Full regression: 3191 jobs, 37059 declarations, 2746 hashes; all 37053 old footprints unchanged, six new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/assigned-graph-bijection-acceptance.json.
+- Still stage 8: concrete quotient bijection (`ConcreteQuotients.quotient_bijection_above:369-397`) and final parents remain incomplete. Stages 9-11, final internal Con and original Comparator remain pending.
+
+
+## Concrete quotient bijection above a non-outside witness (2026-11-03)
+
+- `ForcingConcreteQuotientBijection.restricted_fixed_subset` proves that for a Cohen condition `d` restricted to the root label image `Ap` (`d0`), every product permutation fixing all labels in `Ap` fixes `d0` under the Cohen condition action (`ForcingCohenOrderAction.act`).
+- `ForcingConcreteQuotientBijection.all_counts` migrates fixed `ConcreteQuotients.preliminary_ordinalCount:339-353`, assembling `ForcingAssignedGraphTotal.AllCounts` across all orbit-parameter records in `Q` from `ForcingOrbitParameterFamily.mem_family`, `ForcingOrbitParameterRecord.fields_of_record`, `ForcingAssignedParameters.records_of_parameters`, `ForcingAssignedParameterFields.unpack`, `ForcingOrbitCodeParameters.exists_parameters` and `ForcingConcreteOrdinalCount.ordinal_count`.
+- `ForcingConcreteQuotientBijection.quotient_bijection_above` migrates fixed `ConcreteQuotients.quotient_bijection_above:369-397`, constructing the concreteorbit-parameter family `Q`, the orbit-quotient name `qName`, the restricted product condition `z = (d.restrict (p.sub e).range, p)`, and the HS relation-graph name `G` forcing `BijectionF(check(labelSet), qName, G)` at `z` via `ForcingAssignedGraphBijection.assignmentGraph_bijection`.
+- `bijection_kernel_certificate` is original nativeZF Derives of the SAME internal L-relative closed `bijectionSentence`; existing L/ZFC discharges helper Choice.
+- Full regression: 3192 jobs, 37065 declarations, 2747 hashes; all 37059 old footprints unchanged, six new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/concrete-quotient-bijection-acceptance.json.
+- Still stage 8: `ConcreteQuotients.nonwellorderable_quotient_bijection:401-443` (`outsideClassSet_denseBelow` consumer) and final parent-system unification remain incomplete. Stages 9-11, final internal Con and original Comparator remain pending.
+
+
+## Forced ordinality of checked ordinals and check-injection wellorderability reflection (2026-11-03)
+
+- `ForcingCheckOrdinal.transF_checkOrdinal`, `ordF_checkOrdinal`, `forces_membershipWellFounded` and `forces_checkOrdinal` migrate fixed `UniformNames.transF_checkOrdinal:336-341`, `ordF_checkOrdinal:343-352`, `forces_membershipWellFounded:354-379` and `forces_checkOrdinal:381-386` in ordinary `nativeZF` without Choice. Reuses `ForcingOrdinalDecision.check_child_iff`, `ForcingCheckReflection.mem_check_check` / `eq_check_iff`, `ForcingCheckName.check_exists`, `ForcingOrdinalMembership.mem_trans` / `ordinal_trichotomy`, `ForcingFoundation.minimal_member` and ground ZF Foundation.
+- `ForcingCheckOrdinal.wellorderableFormula`, `wellorderable`, `forces_wellorderable`, `wellorderable_of_check_injection` and `no_check_injection_of_not_wellorderable` migrate fixed `ClassFibers.wellorderableFormula:12-13`, `wellorderable:15-17`, `forces_wellorderable:27-63`, `wellorderable_of_check_injection:65-71` and `no_check_injection_of_not_wellorderable:73-93`, bridging `WellorderableF` with `ForcingRelationGraphFunctions.injection` into `check(α)`.
+- `kernel_certificate` is an ordinary `nativeZF` `FirstOrder.Derives` certificate of `Translation.sentence sentence` (using only the 7 pure ZF axioms + standard 3 Lean axioms, no Choice axiom certificate).
+- Full regression: 3193 jobs, 37079 declarations, 2748 hashes; all 37065 old footprints unchanged, 14 new declarations, nine commands including five trust=0 runs exited 0, zero warnings and no new axiom dependencies. 75 source hashes and three clean pins verified. Report: verification/forcing-check-ordinal-acceptance.json.
+- Still stage 8/9 boundary: `ClassFibers.outsideClassSet_denseBelow` / `not_wellorderable_of_outsideClassSet_dense`, `ConcreteQuotients.nonwellorderable_quotient_bijection:401-443` and final parent-system unification remain incomplete. Stages 9-11, final internal Con and original Comparator remain pending.
+
+## 本批验收（2026-11-07）：最小出现下标关系，仍为阶段 8
+
+`ForcingUniformInverse` 忠实迁移 `UniformNames.UniformInverse:117–209` 的最小出现关系，并把地面良序实现为既有内部序数枚举的成员序。所有更强内部条件下的负相等、正则化、单值性、单射性及同一局部列表上的全域性均已证明。现有 `ObjectOrdinalLeast.native_existence` 提供最小候选，未使用外部良基性或对象 Choice。
+
+`kernel_certificate` 和 `laws_kernel_certificate` 分别给出最小候选稠密存在、关系单值／单射闭句在原 `nativeZF` 中的 `FirstOrder.Derives`。实际受支撑逆图名字、强迫单射及 `outside_uniformRange` 尚未接通，不能宣称非良序商稠密双射或最终内部 Con 已完成。
+
+全量验收已通过：9 条命令退出 0，零警告，旧声明足迹不变，无新增公理依赖。报告：`verification/uniform-inverse-acceptance.json`。下一步直接消费现有 `ForcingRelationGraph` 支撑与函数图接口构造真实单射，不重建 L、全模式、递归或 Proof/Sat 基础。

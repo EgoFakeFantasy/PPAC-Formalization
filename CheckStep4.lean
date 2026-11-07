@@ -14040,4 +14040,37 @@ example {k : Nat} (rho : Fin 7 → Fin k) (G F mul w mu history kappa one mark H
       (ForcingForcedAvailabilityStable.stabilitySentence rho G F mul w mu history kappa one mark H C incoming base I K B labelMap top bit labels bound E q Aq Hq Ar Hr r a tau d Qcuts Rcuts realTop))) :=
   ForcingForcedAvailabilityStable.stability_kernel_certificate rho G F mul w mu history kappa one mark H C incoming base I K B labelMap top bit labels bound E q Aq Hq Ar Hr r a tau d Qcuts Rcuts realTop
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop p y : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedGraphOnto.ontoSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop p y families))) :=
+  ForcingAssignedGraphOnto.onto_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop p y families
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedGraphBijection.bijectionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo families))) :=
+  ForcingAssignedGraphBijection.bijection_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo families
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo p b Ap Hp XP ordinal enum list Power continuum s j sigma d z : Fin k) (families : Fin 16 → Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingConcreteQuotientBijection.bijectionSentence rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo p b Ap Hp XP ordinal enum list Power continuum s j sigma d z families))) :=
+  ForcingConcreteQuotientBijection.bijection_kernel_certificate rho I K B w G F mul one mu history kappa mark H C incoming base q A Hq labelMap top bit labels E bound zero vertices names diagrams objImage objects maps Q pr arrows mapImage high records d0 name z0 Qcuts Rcuts realTop groundValues lo p b Ap Hp XP ordinal enum list Power continuum s j sigma d z families
+
+example {k m : Nat} (L : Source.Formula (k+2)) (H : Source.Formula (k+1)) (lp : Fin k → Fin m)
+    (P top alpha nalpha Y J p : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingCheckOrdinal.sentence L H lp P top alpha nalpha Y J p)) :=
+  ForcingCheckOrdinal.kernel_certificate L H lp P top alpha nalpha Y J p
+
+example {k n : Nat} (R : Source.Formula (k+2)) (lp : Fin k → Fin n)
+    (P X f q x : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingUniformInverse.sentence R lp P X f q x)) :=
+  ForcingUniformInverse.kernel_certificate R lp P X f q x
+
+example {k n : Nat} (R : Source.Formula (k+2)) (lp : Fin k → Fin n)
+    (P X f top p x y z : Fin n) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingUniformInverse.lawsSentence R lp P X f top p x y z)) :=
+  ForcingUniformInverse.laws_kernel_certificate R lp P X f top p x y z
+
 end PPAC.Migration.Step4Checks
