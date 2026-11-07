@@ -14215,4 +14215,10 @@ example {k : Nat} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (P f X x
     FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingDefaultRelation.sentence R H P f X x0)) :=
   ForcingDefaultRelation.kernel_certificate R H P f X x0
 
+-- Full pinned completionGraph_surjection: constructed Cartesian domain and graph.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top O f A X x0 p : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (ForcingCompletionGraph.sentence rho I K B w G F mul top O f A X x0 p)) :=
+  ForcingCompletionGraph.kernel_certificate rho I K B w G F mul top O f A X x0 p
+
 end PPAC.Migration.Step4Checks

@@ -1,0 +1,382 @@
+{
+  "verified_at": "2026-11-07T19:40:09.354711+00:00",
+  "base_commit": "1ed6c36ddcb31551efc38ca2d43b57df5950edd3",
+  "original_stage": 9,
+  "source": [
+    "OrdinalPresentation.completionRelation/at/symmetry/unique/total/completionGraph/completionGraph_surjection:149-271",
+    "TailGraphs.cartesianName/mem_cartesianName/opair_mem_cartesianName:312-367"
+  ],
+  "adapter": "PPAC/Migration/ForcingCompletionGraph.lean",
+  "kernel_endpoint": "PPAC.Migration.ForcingCompletionGraph.kernel_certificate",
+  "target": "Ordinary original nativeZF FirstOrder.Derives scheme constructing the actual common support, check(O), literal Cartesian domain and HS completion graph with FULL functionOn/mapsTo/onto surjection; no Choice or L wrapper.",
+  "source_inputs_retained": [
+    "Internal full function graph O -> names, with full source functionOn and FamilyHS guards",
+    "Every family value fixed by ALL internal group elements and their actual action graphs",
+    "Original PARTIAL-function uniqueness at ALL internal conditions and names",
+    "Default name is actually forced to belong to X at p",
+    "Exact source dense family coverage below every stronger condition"
+  ],
+  "constructed_outputs": [
+    "Common three-name stabilizer in the actual normal filter",
+    "check(O) with actual HS closure",
+    "Literal Cartesian product-entry/collected name at the common support",
+    "Actual collected HS completed graph fixed by that support",
+    "Full surjection, including no-junk domain entries and unique values"
+  ],
+  "quantifiers": "All internal conditions, sets and unrestricted-rank HS names; internal function family, not an external Type-indexed family. Source coverage is explicitly retained for this auxiliary theorem, not claimed constructed.",
+  "reuse": "Existing default relation, product-entry/collected name, tuple stabilizer, check/pair HS, atomic congruence/density/reflection, actual Product symmetry and full graph_surjection. Cartesian collector is the existing graph specialization to True.",
+  "new_foundation_or_object_choice_premise": false,
+  "new_kernel_consumes_object_Choice_axiom_certificate": false,
+  "all_previous_migration_modules_canonical_sources_unchanged": true,
+  "previous_migration_modules_compared": 2601,
+  "existing_git_worktree_eol_only_differences": 162,
+  "eol_note": "Pre-existing CRLF/LF-only differences checked under deployed canonical policy; no raw-byte equality claim for those old files.",
+  "build_jobs": 3215,
+  "audited_declarations": 37513,
+  "old_footprints_unchanged": 37478,
+  "new_declarations": 35,
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingCompletionGraph.Completed": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.CartesianValue": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.Cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.completion": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.completion_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.relation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.relation_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.mono": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.regular": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.at_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.onto": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.trueRelation": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.cartesian_construct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.cartesian_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.cartesian_pair_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.cover_congr": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.partialUnique_congr": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.construct_graph": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.Built": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.construct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.covering": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.covering_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.invariant": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.invariant_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.partialFamily": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.partialFamily_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.construction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.construction_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingCompletionGraph.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "all_9_commands_exit_0": true,
+  "trust_zero_commands": 5,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "current_source_hashes_checked": 2773,
+  "compatibility": {
+    "clean_pins": 3,
+    "locked_OpenAI_source_hashes": 75,
+    "regression_tests": 5,
+    "result": "PASS"
+  },
+  "actual_all_condition_ACwo_already_complete": true,
+  "actual_notAC_already_complete": true,
+  "actual_presentation_family_ordinal_enumeration_coverage_and_SVC_complete": false,
+  "original_stage9_complete": false,
+  "global_reverse_injection_complete": false,
+  "PP_Main_all_internal_nonstandard_Con_complete": false,
+  "Comparator_complete": false,
+  "final_object_Con_proved": false,
+  "remaining_source_consumers": "Actual OrbitNames partial orbit graph -> PresentationIndex/presentationPartial family, uniqueness and dense coverage -> existing internal ordinal enumeration -> ordinal_presentation/SVC -> Main reverse injection and PP; full internal Proof/Con remains stage10.",
+  "remote_at_acceptance": {
+    "last_complete_success_run": 42399254602,
+    "last_complete_success_audited_declarations": 37442,
+    "last_complete_success_warning_lines": 0,
+    "consecutive_successes_after_compatibility_fix": 5,
+    "current_run": 42405610709,
+    "current_job": 128502537210,
+    "current_head": "1ed6c36ddcb31551efc38ca2d43b57df5950edd3",
+    "last_verified_status": "in_progress",
+    "this_batch_uploaded_at_acceptance": false
+  },
+  "cleanup": {
+    "status": "completed",
+    "files": [
+      {
+        "path": "CompletionGraphAudit.tmp.lean",
+        "bytes": 2307,
+        "sha256": "f808e5c3f9c25c6628fd94e4f07d3711a36df5a1b1d0f6170c49fad54c826c3a"
+      },
+      {
+        "path": "verification/completion-graph-baseline.tmp.json",
+        "bytes": 14398034,
+        "sha256": "daaca9caea58b0de3eda43133156c1729501b0d8a44d4a75c46ad18ab9f8c874"
+      },
+      {
+        "path": "verification/completion-graph-audit.tmp.log",
+        "bytes": 9851,
+        "sha256": "188b6a999d40b94203874058b17b5c19c52262b9c958e2b75f0ece7e36a335d1"
+      },
+      {
+        "path": "verification/completion-graph-build.log",
+        "bytes": 111,
+        "sha256": "f41c49046272fc36a20873c690e8fafd7c817298d7fe065f771c4801a22a438c"
+      },
+      {
+        "path": "verification/completion-graph-source-check.log",
+        "bytes": 246,
+        "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+      },
+      {
+        "path": "verification/completion-graph-ci-inputs.log",
+        "bytes": 91,
+        "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+      },
+      {
+        "path": "verification/completion-graph-compatibility.log",
+        "bytes": 108,
+        "sha256": "58cef839c86be5536ccf415d5737a03e32f6795649aa55399acb8458b5cade67"
+      },
+      {
+        "path": "verification/completion-graph-full.log",
+        "bytes": 153,
+        "sha256": "184a48fb4a1b9b5ee13e022b46b753b8461fe803bf1f5fe10249e13daee0c992"
+      }
+    ],
+    "parser": "PowerShell ConvertFrom-Json -AsHashtable",
+    "files_removed": 8,
+    "containment_and_plain_file_and_untracked_and_raw_size_sha256_verified": true,
+    "no_active_workspace_lean_lake_process_at_cleanup": true
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3215,
+    "log": "verification/completion-graph-post-cleanup.log",
+    "raw_sha256": "78da244966e563efcbef22c55dcb4d131a3d95d147c2ee06bcc9850f437791ac"
+  },
+  "post_cleanup_current_hashes_rechecked": 2773
+}

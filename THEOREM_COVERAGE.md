@@ -1370,3 +1370,8 @@ ForcingActualOrdinalChoice迁移固定源OrdinalChoice.ground_family_choice_dens
 ForcingDefaultRelation迁移固定源OrdinalPresentation:50–145，defaultFormula的五变量AST逐字保留，仅调整SetLanguage命名空间。NoValue仍量化全部更强内部条件及实际域中的全部名字；普通nativeZF原推导核给出完整分支双向等价、值实际属于X的稠密全定义性，以及原偏函数唯一性到补全唯一性的推导。原偏函数唯一性和默认元素属于X是源显式前提；补全后的全定义性／唯一性均为证明输出。
 
 单调性、正则性、同余、relationOf及实际Product公式对称性直接复用现有接口；没有新建图构造、递归或选择基础，也不需要L相对化。实际全条件ACwo已完成并保留。当前仍为原阶段9；下一直接源码消费者为completionRelation／completionGraph_surjection→presentationPartial／ordinal_presentation，再接全局反向单射和PP/Main。SVC、最终全部内部／非标准Proof/Con及Comparator仍未完成。验收登记：verification/default-relation-acceptance.json。
+
+
+## Pinned auxiliary completion graph (2026-11-08)
+
+ForcingCompletionGraph.kernel_certificate is an ordinary original nativeZF Derives scheme for OrdinalPresentation:149–271. It constructs the common support, check(O), literal Cartesian domain and actual HS completed graph, with full source functionOn/mapsTo/onto. The family is an internal full function graph; its HS values, all-group invariance, partial uniqueness, default member and original exact dense coverage remain explicit source inputs. Existing product-entry collectors, tuple support, check/pair closures, forcing and full graph_surjection are reused. All internal conditions and unrestricted HS names remain quantified. This closes the auxiliary completionGraph_surjection, not the actual presentation family/coverage or ordinal_presentation/SVC. Actual all-condition ACwo and notAC are already complete. Global reverse injection, PP/Main/all-internal Con and Comparator remain incomplete. Acceptance: verification/completion-graph-acceptance.json.

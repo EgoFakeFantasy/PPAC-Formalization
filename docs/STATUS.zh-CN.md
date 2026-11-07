@@ -1,10 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
-## 当前迁移：OrdinalPresentation 默认关系（2026-11-08）
+## 当前迁移：OrdinalPresentation 完成图满射（2026-11-08）
 
-ForcingDefaultRelation迁移固定源OrdinalPresentation:50–145，defaultFormula的五变量AST逐字保留，仅调整SetLanguage命名空间。NoValue仍量化全部更强内部条件及实际域中的全部名字；普通nativeZF原推导核给出完整分支双向等价、值实际属于X的稠密全定义性，以及原偏函数唯一性到补全唯一性的推导。原偏函数唯一性和默认元素属于X是源显式前提；补全后的全定义性／唯一性均为证明输出。
+ForcingCompletionGraph迁移固定源OrdinalPresentation:149–271：完成关系的单调、正则、同余、对称、唯一性、Cartesian域上的全定义性及完整completionGraph_surjection。普通nativeZF原推导核中的kernel_certificate构造共同三名字支撑、check(O)、实际Cartesian域和实际HS图；surjection保留完整functionOn／mapsTo／onto，包括无杂项和唯一值。内部函数族、FamilyHS、全群不变性、原偏函数唯一性、默认成员及精确稠密覆盖是源显式前提，补全后的全定义性和满射均由证明输出。
 
-单调性、正则性、同余、relationOf及实际Product公式对称性直接复用现有接口；没有新建图构造、递归或选择基础，也不需要L相对化。实际全条件ACwo已完成并保留。当前仍为原阶段9；下一直接源码消费者为completionRelation／completionGraph_surjection→presentationPartial／ordinal_presentation，再接全局反向单射和PP/Main。SVC、最终全部内部／非标准Proof/Con及Comparator仍未完成。验收登记：verification/default-relation-acceptance.json。
+Cartesian域直接特化已有product-entry／collected关系图到True，满射图直接消费已有graph_surjection；没有新建收集器、递归、公理基础或选择接口。全部内部条件及无秩上限HS名字均保留。实际全条件ACwo、¬AC及L／全模式原核设施已完成并继续复用。
+
+当前仍为原阶段9。本批仅完成源辅助完成图；下一直接消费者是实际PresentationIndex／presentationPartial家族、其唯一性与稠密覆盖、内部序数枚举及ordinal_presentation，再接全局反向单射。SVC、第10 PP/Main及全部内部／非标准证明码Con、第11终验和原第4 Comparator仍未完成。最终对象Con未证明。验收登记：verification/completion-graph-acceptance.json。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -14,7 +16,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-兼容性修复后连续四轮远端CI完整成功；最新42393495880（c592fe5）的实际日志确认37379项声明通过、零警告，固定检出／依赖／源码和五项跨平台回归全部通过。此后新增工作先完成本地全量验收，再统一推送；不叠加尚在运行中的提交。
+兼容性修复后连续五轮远端CI完整成功；最新已完成的42399254602（10e8c6b）的实际日志确认37442项声明通过、零警告，固定检出／依赖／源码和五项跨平台回归全部通过。已验收的实际ACwo及默认关系统一推送至1ed6c36，其远端42405610709仍在编译，本批辅助完成图先保留本地，不叠加推送。此后新增工作先完成本地全量验收，再统一推送；不叠加尚在运行中的提交。
 
 当前仍为原阶段9。witness_placement、localized_existential、localized_maximum、indexedGraph、ground_family_choice、ground_family_choice_dense及实际forces_ACwo已迁移，下一沿源SVC／全局反向单射接PP/Main；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
