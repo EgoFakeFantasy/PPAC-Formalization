@@ -14284,4 +14284,13 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top f J X Y O check
       (ForcingIndexedImage.sentence rho I K B w G F S mul top f J X Y O checkedO p)) :=
   ForcingIndexedImage.kernel_certificate rho I K B w G F S mul top f J X Y O checkedO p
 
+-- Full INTERNAL set-indexed uniform maximum family; same actual condition and support.
+-- Existing L discharges source ground Choice; n is source arity, never an index bound.
+example {k n : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa unit mark H C incoming base I K B G F mul index S start X : Fin k)
+    (Q : Source.Formula (k+1+n)) (phi : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingUniformMaximum.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index S start X Q phi))) :=
+  ForcingUniformMaximum.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index S start X Q phi
+
 end PPAC.Migration.Step4Checks
