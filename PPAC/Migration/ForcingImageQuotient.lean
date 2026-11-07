@@ -502,4 +502,46 @@ theorem kernel_certificate {k : Nat} (rho : Fin 7 → Fin k)
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (sentence rho I K two w mu G F mul c top bit A h B)) :=
   ModelTransfer.derives (fun _ hM => models rho I K two w mu G F mul c top bit A h B hM)
 
+
+/-- Reuse the complete source function-formula eliminator without changing its existing proof. -/
+theorem surjection_mapsTo_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p h A B : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.surjection 0 1 2)) :
+    Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2) :=
+  surjection_mapsTo hM hpre hp hf
+
+
+/-- Reuse the complete source function-formula eliminator without changing its existing proof. -/
+theorem surjection_onto_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p h A B y q r : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.surjection 0 1 2))
+    (hy : ForcingClassEvaluation.Predicate H env y)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hyB : Forces false R env P y B q)
+    (hr : (Project.FirstOrderSemantics.reduct M).mem r P) (hrq : MapRel R env r q) :
+    ∃ s, (Project.FirstOrderSemantics.reduct M).mem s P ∧ MapRel R env s r ∧
+      ∃ a, ForcingClassEvaluation.Predicate H env a ∧ Forces false R env P a A s ∧
+        Force R H env (args3 h a y) P s (Source.SetLanguage.edge 0 1 2) :=
+  surjection_onto hM hpre hp hf hy hq hqp hyB hr hrq
+
+
+/-- Reuse the complete source function-formula eliminator without changing its existing proof. -/
+theorem mapsTo_total_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p h A B a q r : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2))
+    (ha : ForcingClassEvaluation.Predicate H env a)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (haA : Forces false R env P a A q)
+    (hr : (Project.FirstOrderSemantics.reduct M).mem r P) (hrq : MapRel R env r q) :
+    ∃ s, (Project.FirstOrderSemantics.reduct M).mem s P ∧ MapRel R env s r ∧
+      ∃ y, ForcingClassEvaluation.Predicate H env y ∧ Forces false R env P y B s ∧
+        Force R H env (args3 h a y) P s (Source.SetLanguage.edge 0 1 2) :=
+  mapsTo_total hM hpre hp hf ha hq hqp haA hr hrq
+
 end PPAC.Migration.ForcingImageQuotient

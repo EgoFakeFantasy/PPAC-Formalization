@@ -1131,4 +1131,20 @@ theorem kernel_graph_transport {k n : Nat} (env : Fin k → M.Carrier .set)
       other (base (rho 6)) (base top) (base A) (base A) E :=
   kernel_graph_reindex env other base he rho G F mul top h A B E
 
+
+/-- Reuse the complete source function-formula eliminator without changing its existing proof. -/
+theorem mapsTo_unique_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+    {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
+    {P p q h A B x y z : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
+    (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
+    (hq : (Project.FirstOrderSemantics.reduct M).mem q P) (hqp : MapRel R env q p)
+    (hf : Force R H env (args3 h A B) P p (Source.SetLanguage.mapsTo 0 1 2))
+    (hx : ForcingClassEvaluation.Predicate H env x) (hy : ForcingClassEvaluation.Predicate H env y)
+    (hz : ForcingClassEvaluation.Predicate H env z)
+    (hxA : Forces false R env P x A q)
+    (hxy : Force R H env (args3 h x y) P q (Source.SetLanguage.edge 0 1 2))
+    (hxz : Force R H env (args3 h x z) P q (Source.SetLanguage.edge 0 1 2)) :
+    Forces true R env P y z q :=
+  mapsTo_unique hM hpre hp hq hqp hf hx hy hz hxA hxy hxz
+
 end PPAC.Migration.ForcingKernelImage

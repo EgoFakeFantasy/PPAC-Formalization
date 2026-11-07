@@ -1314,3 +1314,7 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 ## 原阶段9：实际 imageQuotient／imageQuotientGraph（2026-11-08）
 
 固定UniformImages:177–240由ForcingImageQuotient迁移。nativeZF原核存在句构造同一支撑/kernel/商名/像图四个内部集合，保留原始收集器、HS及同一支撑、全称成员刻画和在完整源surjection前提下的全称mapsTo/surjection/injection；不接受四个见证、代表或最终函数定律输入。仅公开复用两项既有参数传输，旧模块正文不变。完整本地验收3201构建／37224声明，全部37209旧足迹不变，15项新增声明，零警告／无新公理依赖。报告：verification/image-quotient-acceptance.json。远端兼容修复bc9367f的冷构建尚在运行，本批尚未上传。下一源nonwellorderable_image_bijection:243–276；原阶段9、PP/Main及最终内部Con未完成。
+
+## 原阶段9：源 RelationCalculus 复合／逆名字图（2026-11-08）
+
+ForcingMapCalculus沿固定源:200–359，以两个nativeZF原核存在句实际构造对应精确稳定子和原始HS图；复合图全称保持完整mapsTo/surjection/injection，逆图在完整双射前提下全称为满射/单射，不接受支撑、图或最终关系定律输入。复用既有图／稳定子／强迫和函数消去，仅公开四项原证明别名。全量本地验收3202构建／37265声明，全部37224旧足迹不变，41项新增，零警告／无新公理依赖／无对象Choice证书依赖。报告：verification/map-calculus-acceptance.json。兼容修复bc9367f的远端完整CI已成功；已上传像商图7352330的CI仍在构建，本批尚未上传。下一固定源UniformImages.nonwellorderable_image_bijection:243–276；阶段9、PP/Main和最终内部Con仍未完成。

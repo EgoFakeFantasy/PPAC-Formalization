@@ -14135,4 +14135,14 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K two w mu G F mul c top bit A h B 
       (SetTheory.Definitional.Project.fo_sentence (ForcingImageQuotient.sentence rho I K two w mu G F mul c top bit A h B)) :=
   ForcingImageQuotient.kernel_certificate rho I K two w mu G F mul c top bit A h B
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top f g X Y Z : Fin k) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingMapCalculus.compositionSentence rho I K two w G F mul top f g X Y Z)) :=
+  ForcingMapCalculus.composition_kernel_certificate rho I K two w G F mul top f g X Y Z
+
+example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top f X Y : Fin k) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingMapCalculus.inverseSentence rho I K two w G F mul top f X Y)) :=
+  ForcingMapCalculus.inverse_kernel_certificate rho I K two w G F mul top f X Y
+
 end PPAC.Migration.Step4Checks

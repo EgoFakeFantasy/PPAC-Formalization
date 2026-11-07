@@ -148898,7 +148898,7 @@
         "ForcingConjugationGraph"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingKernelImage.lean": "b1a85cdafc1d7a00b61b979f87f7312e67e74f076fbf96cfc13bf3b61002b55d",
+        "PPAC/Migration/ForcingKernelImage.lean": "92365dde368cafb6203e6c79594809e95cb1a21bdd66a3a8eb3df1eb56c158e9",
         "PPAC/Migration/ForcingRelationGraphFunctions.lean": "92868626944eb9a75593d3bde5f14f9b7a7ca73b9e06f3d2054fe7f06823c9b1",
         "PPAC/Migration/ForcingRelationGraphApplication.lean": "99bcd4e9b77a547568fdb0acc521a3a7d8c78b9b9576cc3cbf9de8c204bb2526",
         "PPAC/Migration/ForcingRelationGraphForcing.lean": "4d8aa0134ccaef3c7fa08d4365381f499f1a61496d87726c041fd169df2b80e9",
@@ -148922,7 +148922,7 @@
         "PPAC/Migration/ForcingProductCovariance.lean": "849e34022808205b719a9f37df3032ccbe823f4bf13fd89956739b126542584c",
         "PPAC/Migration/ForcingConjugationGraph.lean": "6ac6ec9fd79ce79dc88ec10a5ea1d018cad7cb7e8babcca36ef4eba87b91610a"
       },
-      "scope": "Original nativeZF Derives, fixed UniformImages:16-169. Actually construct the SAME exact three-name support and raw collected HS kernel graph, then prove the full source image-class relation Monotone/Congruent/Regular, movement under that constructed support, and One/Injective at EVERY internal original condition under the FULL original mapsTo/functionOn formula. The new closed object existence sentence takes NO supplied kernel graph, common support, graph fixedness or final law. Existing atomic_congr/force_congr transfer that SAME graph after its two new binders; no second graph or different recursion witness is chosen. Explicit internal separated-class witnesses encode the unique genuine class name (existing class_unique); actual class movement and HS action closure are reused. Existing 27 public declarations retained unchanged, 16 direct source-consumer declarations appended. No selected class representative, new kernel, object Choice/inaccessible, or fresh foundation. Image quotient/name/graph/bijection and stage9 completion/PP/Main/all-internal Con/original Comparator are not complete. Existing private parameter transport is now exposed for the direct UniformImages image-quotient consumer; the old proof body and old declarations are unchanged.",
+      "scope": "Original nativeZF Derives, fixed UniformImages:16-169. Actually construct the SAME exact three-name support and raw collected HS kernel graph, then prove the full source image-class relation Monotone/Congruent/Regular, movement under that constructed support, and One/Injective at EVERY internal original condition under the FULL original mapsTo/functionOn formula. The new closed object existence sentence takes NO supplied kernel graph, common support, graph fixedness or final law. Existing atomic_congr/force_congr transfer that SAME graph after its two new binders; no second graph or different recursion witness is chosen. Explicit internal separated-class witnesses encode the unique genuine class name (existing class_unique); actual class movement and HS action closure are reused. Existing 27 public declarations retained unchanged, 16 direct source-consumer declarations appended. No selected class representative, new kernel, object Choice/inaccessible, or fresh foundation. Actual image quotient/name/graph function steps are completed by forcing_image_quotient. Nonwellorderable image bijection, stage9 completion/PP/Main/all-internal Con and original Comparator are not complete. Existing private parameter transport is now exposed for the direct UniformImages image-quotient consumer; the old proof body and old declarations are unchanged. Complete original forcing-function eliminators are now exposed unchanged for RelationCalculus composition/inverse graph consumers.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingKernelImage.kernelFormula": [
           "propext",
@@ -149297,6 +149297,18 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingKernelImage.mapsTo_unique_reuse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
     },
@@ -149337,8 +149349,8 @@
         "ModelTransfer"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingImageQuotient.lean": "9ac1982953f12910bb4d7d3e8a834a2ea0acc8c9aa31ca445bb87ab5459f6131",
-        "PPAC/Migration/ForcingKernelImage.lean": "b1a85cdafc1d7a00b61b979f87f7312e67e74f076fbf96cfc13bf3b61002b55d",
+        "PPAC/Migration/ForcingImageQuotient.lean": "e1020b8d30241dba6b38c551255bdd715a5cf2b5bad4be0afef1298c4ff3787c",
+        "PPAC/Migration/ForcingKernelImage.lean": "92365dde368cafb6203e6c79594809e95cb1a21bdd66a3a8eb3df1eb56c158e9",
         "PPAC/Migration/ForcingNonwellorderableQuotient.lean": "484563029399ea20b28d1f67de2383cb68a57d5034d0bbf124ce9f641bb359cf",
         "PPAC/Migration/ForcingQuotientName.lean": "06f35f83a3d91c04442d49c2ac44b96ef68aec6b4bd622a54822439b809872b7",
         "PPAC/Migration/ForcingRelationClass.lean": "955a3b83dd590379af51918a9371ba2cdde07a677458bd55cae21abe84cdebe9",
@@ -149352,7 +149364,7 @@
         "PPAC/Migration/ForcingSeparation.lean": "fe1c7bc6bc54602771a12541ca6f9425746e8c801afd11d71bd519dc0519eac3",
         "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
       },
-      "scope": "Original nativeZF Derives: from the original concrete-system and HS guards, actually EXISTS the SAME support S, raw kernel E, source quotient Q, and raw collected image graph J. Retain subgroup/filter membership, exact three-name fixation, raw graph/quotient collector predicates, HS and common support for E/Q/J, universal membership iff isClass for EVERY internal HS class and condition, and full original mapsTo/surjection/injection for J at EVERY internal condition under the FULL original surjection h:A->B. No supplied E/Q/J, support, class representatives, graph functionhood, Total/One/Onto/Injective oracle or final law. The source mem/app/total/onto/function steps:177-240 directly consume existing quotientName, relationClass and relation-graph constructors. Reuse the existing private kernel/quotient parameter transports by public aliases, with all old proof bodies unchanged. Still stage9: nonwellorderable_image_bijection:243-276 and model applications are not yet complete; final PP/Main, all-internal/nonstandard Proof/Con and original Comparator remain unproved/unverified.",
+      "scope": "Original nativeZF Derives: from the original concrete-system and HS guards, actually EXISTS the SAME support S, raw kernel E, source quotient Q, and raw collected image graph J. Retain subgroup/filter membership, exact three-name fixation, raw graph/quotient collector predicates, HS and common support for E/Q/J, universal membership iff isClass for EVERY internal HS class and condition, and full original mapsTo/surjection/injection for J at EVERY internal condition under the FULL original surjection h:A->B. No supplied E/Q/J, support, class representatives, graph functionhood, Total/One/Onto/Injective oracle or final law. The source mem/app/total/onto/function steps:177-240 directly consume existing quotientName, relationClass and relation-graph constructors. Reuse the existing private kernel/quotient parameter transports by public aliases, with all old proof bodies unchanged. Still stage9: nonwellorderable_image_bijection:243-276 and model applications are not yet complete; final PP/Main, all-internal/nonstandard Proof/Con and original Comparator remain unproved/unverified. Complete original forcing-function eliminators are now exposed unchanged for RelationCalculus composition/inverse graph consumers.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingImageQuotient.mem_imageQuotient": [
           "propext",
@@ -149645,6 +149657,447 @@
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_dag_clause_compile.ax_1_3",
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_preprocessing.ax_1_1",
           "YesMetaZFC.SetTheory.Structure.IsZeroLengthSequence.not_successorLength._native.prove_auto_native_replay_material.ax_1_2"
+        ],
+        "PPAC.Migration.ForcingImageQuotient.surjection_mapsTo_reuse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingImageQuotient.surjection_onto_reuse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingImageQuotient.mapsTo_total_reuse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      }
+    },
+    "forcing_map_calculus": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/RelationCalculus.lean",
+      "source_sha256": "1d13b50760be9195490aa6151f508247772804550ec9193f579c1cc18050c06e",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Models/UniformImages.lean": "c8e3e828ce3ca14037afee65cbc42b362f49197f4b32e69905352daa04cd3968"
+      },
+      "source_declarations": [
+        "mapsTo_total:152-159",
+        "mapsTo_unique:161-166",
+        "surjection_mapsTo:168-170",
+        "surjection_onto:172-178",
+        "boundedApp/boundedApp_move:200-211",
+        "compositionRelation/compositionRelation_move:213-224",
+        "compositionGraph:226-233",
+        "app_compositionGraph:235-247",
+        "compositionRelation_one:249-267",
+        "compositionGraph_mapsTo:269-282",
+        "compositionGraph_surjection:284-297",
+        "compositionGraph_injection:299-313",
+        "inverseGraph:317-323",
+        "app_inverseGraph:325-331",
+        "inverseGraph_injection:333-345",
+        "inverseGraph_surjection:347-359"
+      ],
+      "adapter": "PPAC/Migration/ForcingMapCalculus.lean",
+      "consumers": [
+        "UniformImages.nonwellorderable_image_bijection:243-276",
+        "Same-system model applications, original stage9"
+      ],
+      "reuse_producers": [
+        "ForcingImageQuotient",
+        "ForcingKernelImage",
+        "ForcingRelationGraphSupport",
+        "ForcingRelationGraphApplication",
+        "ForcingRelationGraphFunctions",
+        "ForcingRelationGraphForcing",
+        "ForcingTupleStabilizer",
+        "ForcingSeparation",
+        "ForcingFormula",
+        "ForcingSound",
+        "ForcingAtomicBasic",
+        "ForcingAtomicLaws",
+        "ForcingHS",
+        "ForcingProductFamily",
+        "ForcingProductSymmetry",
+        "ForcingPairUnion",
+        "ModelTransfer"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingMapCalculus.lean": "a2229c43745d142a6880294c389aa5ab62f3d88206a79b2abfb1702f2addf0b1",
+        "PPAC/Migration/ForcingImageQuotient.lean": "e1020b8d30241dba6b38c551255bdd715a5cf2b5bad4be0afef1298c4ff3787c",
+        "PPAC/Migration/ForcingKernelImage.lean": "92365dde368cafb6203e6c79594809e95cb1a21bdd66a3a8eb3df1eb56c158e9",
+        "PPAC/Migration/ForcingRelationGraphSupport.lean": "ef8034b90feef4f60092e492f88f9254ef05f6b387a7eebeecbfd596de2f54f0",
+        "PPAC/Migration/ForcingRelationGraphApplication.lean": "99bcd4e9b77a547568fdb0acc521a3a7d8c78b9b9576cc3cbf9de8c204bb2526",
+        "PPAC/Migration/ForcingRelationGraphFunctions.lean": "92868626944eb9a75593d3bde5f14f9b7a7ca73b9e06f3d2054fe7f06823c9b1",
+        "PPAC/Migration/ForcingRelationGraphForcing.lean": "4d8aa0134ccaef3c7fa08d4365381f499f1a61496d87726c041fd169df2b80e9",
+        "PPAC/Migration/ForcingTupleStabilizer.lean": "c8fdf8d39c72189a8fd32e21a365d7fbfd9d57c4053216befc316a6d5bdf4a33",
+        "PPAC/Migration/ForcingSeparation.lean": "fe1c7bc6bc54602771a12541ca6f9425746e8c801afd11d71bd519dc0519eac3",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/ForcingSound.lean": "633e6271bdcc9b9e0b6e7ddbee322e281bdf50dc8181fb3da36313950e8c9b00",
+        "PPAC/Migration/ForcingAtomicBasic.lean": "c966cffafae564a0c2b3a678fd386432c19556e5fd7b0622298bd39c16bea2e4",
+        "PPAC/Migration/ForcingAtomicLaws.lean": "035e2d2278ab6e7a5f3821cbe75f712ddf5b7fd0a8aa5d3631d35d039a9db794",
+        "PPAC/Migration/ForcingHS.lean": "d0c6b63f0d9bf2bf3f8d237dba99e30a1945c4a1970bf281ad4c61a9bb128166",
+        "PPAC/Migration/ForcingProductFamily.lean": "a014639bf5287d3916383372f19c7ac3c76746e67aff576b4ede14b33649ae4e",
+        "PPAC/Migration/ForcingProductSymmetry.lean": "fb9ed525ab2ec2843749194efa66bd19448121569ed2a06cbfad5b74a0b92f19",
+        "PPAC/Migration/ForcingPairUnion.lean": "e542e90ac01b7f4d76a20b5e1507182b410bbfa05048db44d5c496162b75ab16",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "scope": "Two original nativeZF Derives existence certificates. Each actually constructs its own exact SOURCE tuple stabilizer and raw HS relation graph, retaining subgroup/filter membership, exact tuple fixedness, raw Graph collector, HS and that SAME support. Composition retains the exact dense two bounded applications and proves all three full original mapsTo/surjection/injection preservation implications at EVERY internal condition, with the FULL two input formulas. Inverse retains the exact reversed bounded application and proves full surjection/injection at EVERY internal condition under the FULL source bijection input. Total/One/Onto/Injective, application, congruence, regularity and movement obligations are discharged, not supplied. The generic existing forcing/tuple/graph constructors are reused; four previously proved complete source function eliminators are exposed by aliases with old proof bodies byte-identical. No supplied graph or stabilizer, chosen intermediate value/representative, object Choice certificate, internal truth oracle or alternative proof route. These are the literal RelationCalculus HS NAME graph operations required by UniformImages:243-276, not ground condition permutations or the ordinal least-value UniformInverse construction. Nonwellorderable image bijection and the remaining stage9 model applications/PP/Main/all-internal Con/original Comparator are still incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingMapCalculus.five": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.relationOf": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.relationOf_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.monotone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.congruent": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.regular": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.move": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.construct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.compositionFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.compositionRelation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverseFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverseRelation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_total": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_onto": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_total": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_onto": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_app": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_app": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_graph_functions": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_graph_functions": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.compositionLaws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverseLaws": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.compositionResult": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverseResult": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.compositionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverseSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.composition_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingMapCalculus.inverse_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
     }
