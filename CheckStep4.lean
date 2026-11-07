@@ -14091,4 +14091,11 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingOutsideClassSet.densitySentence rho I K B w G F mul one mu mark q A Hq labelMap top bit labels E bound names alpha enum list nalpha Y d0 z0))) :=
   ForcingOutsideClassSet.density_kernel_certificate rho I K B w G F mul one mu mark q A Hq labelMap top bit labels E bound names alpha enum list nalpha Y d0 z0
 
+
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu history mark H C incoming base q A Hq labelMap top bit labels E bound zero high Q values groundTop seedMul seedUnit seedMark seedH seedC ordinalOne u seedK stageBound P outerF : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingAssignedParentSystem.constructionSentence rho I K B w G F mul one mu history mark H C incoming base q A Hq labelMap top bit labels E bound zero high Q values groundTop seedMul seedUnit seedMark seedH seedC ordinalOne u seedK stageBound P outerF))) :=
+  ForcingAssignedParentSystem.construction_kernel_certificate rho I K B w G F mul one mu history mark H C incoming base q A Hq labelMap top bit labels E bound zero high Q values groundTop seedMul seedUnit seedMark seedH seedC ordinalOne u seedK stageBound P outerF
+
 end PPAC.Migration.Step4Checks

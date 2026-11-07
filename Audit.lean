@@ -37782,3 +37782,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOutsideClassSet.densitySentence
 #print axioms PPAC.Migration.ForcingOutsideClassSet.density_models
 #print axioms PPAC.Migration.ForcingOutsideClassSet.density_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.Parents
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.construct
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.parents
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.parents_freeClosed
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.parents_semantics
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.premises
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.constructionSentence
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.construction_models
+#print axioms PPAC.Migration.ForcingAssignedParentSystem.construction_kernel_certificate

@@ -1288,3 +1288,9 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 全量验收通过：9 条命令（5 条 trust=0）退出 0，零警告，37126 项旧声明足迹不变，无新增公理依赖。报告：`verification/outside-class-set-acceptance.json`。
 
 下一主线为 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`：消费上述见证和已完成的具体商双射，并从既有构造器统一最终父输入。此项、阶段 9–11、最终内部 Con 仍未完成。完整局部列表、逆图、持久列表外成员和实际类密度不再列为待从头证明的基础。
+
+## 同根辅助父系统（2026-11-07）
+
+`ForcingAssignedParentSystem.construct` 从明确的原始／全局父条件实际生成同根标签系统、完整顶点／候选名字、轨道商／投影、代表／链、整族记录和全部投影共 27 个内部集合／函数，直接调用已有生产者。`construction_kernel_certificate` 是原 nativeZF 中同一内部 L 相对化存在句的原核 Derives；辅助 Choice／全局序已由现有 L/ZFC 消去。
+
+全量验收 9 条命令（5 条 trust=0）均退出 0，37136 项旧足迹不变，零警告，无新增公理依赖。仍在阶段 8；原始／全局父参数最终实例化、nonwellorderable_quotient_bijection、阶段 9–11 与最终内部 Con 尚未完成。报告：verification/assigned-parent-system-acceptance.json。
