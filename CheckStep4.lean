@@ -14227,4 +14227,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top one values c lo h
       (ForcingPartialOrbitGraph.sentence rho I K B w G F mul top one values c lo hi root J H sigma labels)) :=
   ForcingPartialOrbitGraph.kernel_certificate rho I K B w G F mul top one values c lo hi root J H sigma labels
 
+-- Actual full PresentationIndex and canonical internal partial-map family, in ordinary ZF.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top one values c lo hi X labels : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPresentationFamily.sentence rho I K B w G F mul top one values c lo hi X labels)) :=
+  ForcingPresentationFamily.kernel_certificate rho I K B w G F mul top one values c lo hi X labels
+
 end PPAC.Migration.Step4Checks
