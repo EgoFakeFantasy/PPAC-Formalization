@@ -1,0 +1,378 @@
+{
+  "verified_at": "2026-11-07T21:48:58.828296+11:00",
+  "stage": 9,
+  "base_commit": "f62bbef93700d884b7962cda2d63d9dc87aaba98",
+  "adapter": "PPAC/Migration/ForcingKernelImage.lean",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingKernelImage.kernel_certificate"
+  ],
+  "object_sentence": "Original FirstOrder.Derives nativeZF [] (Project.fo_sentence (ForcingKernelImage.sentence rho I K two w G F mul top h A B)). Closed universal guarded sentence: for every actual presentation/group/normal filter/top/preorder and arbitrary internal HS h,A,B, EXISTS the actual three-name stabilizer and collected HS kernel graph, with full universal application iff the regular bounded-application composition on the SAME graph.",
+  "background": "Original nativeZF and existing pure-set signature. Presentation/normality/preorder are source-system guards, not a new kernel or new object axiom. The actual system itself was already constructed by ForcingConcreteSystem. No source functionhood or equivalence relation premise, supplied common support, supplied graph, chosen value or quotient representative.",
+  "source_declarations": [
+    "kernelRelation:16-17",
+    "kernelRelation_move:19-27",
+    "kernelGraph:29-34",
+    "kernelGraph_fixed:36-42",
+    "app_kernelGraph:44-59"
+  ],
+  "source_consumers": [
+    "UniformImages.app_kernelGraph_value:61-78",
+    "UniformImages.kernel_class_same_value:80-90",
+    "UniformImages.imageClassRelation:93-169",
+    "UniformImages.nonwellorderable_image_bijection:243-276"
+  ],
+  "completed": [
+    "Actual exact three-name stabilizer from ForcingTupleStabilizer.exists_tuple; its subgroup/filter membership and exact TupleFixed equation.",
+    "Actual relation graph via existing product-entry and collected-name constructors; exact HS closure and fixedness on the SAME graph.",
+    "Source kernelRelation regular composition, with arbitrary internal HS intermediate name and the two bounded applications; duplicate B-membership is contracted logically.",
+    "Source app_kernelGraph: recover both A-membership bounds by existing atomic regularity, then consume the existing full graph application theorem.",
+    "Full object universal/existential sentence and original nativeZF kernel certificate. Existing Project block encoding avoids eagerly expanding the source forcing predicate during semantic simplification."
+  ],
+  "reuse_producers": [
+    "ForcingRelationGraphFunctions",
+    "ForcingRelationGraphApplication",
+    "ForcingRelationGraphForcing",
+    "ForcingRelationGraphSupport",
+    "ForcingRelationGraph",
+    "ForcingTupleStabilizer",
+    "ForcingProductEntries",
+    "ForcingCollectedName",
+    "ForcingCollectedHS",
+    "ForcingRelationClass",
+    "ForcingSeparation",
+    "ForcingFormula",
+    "ForcingSound",
+    "ModelTransfer"
+  ],
+  "original_stage8_global_assembly_exit_gate_passed": true,
+  "original_stage9_model_applications_complete": false,
+  "kernel_value_and_image_class_laws_complete": false,
+  "final_PP_Main_complete": false,
+  "final_internal_Con_proved": false,
+  "original_Comparator_verified": false,
+  "pending": [
+    "Continue pinned UniformImages.app_kernelGraph_value:61-78, kernel_class_same_value:80-90, imageClassRelation:93-169; use these SAME graph/class constructors.",
+    "Finish original stage9 image quotient graph/bijection, SVC, ACwo, global quotient/injection and not-AC on the SAME previously constructed system.",
+    "Original stages10-11: PP/Main, all-internal/nonstandard Proof/Con transfer and final original-kernel Con theorem, clean checkout reproduction; original stage4 Comparator remains separately unverified."
+  ],
+  "build_jobs": 3200,
+  "audited_declarations": 37182,
+  "old_footprints_unchanged": 37166,
+  "new_declarations": 16,
+  "file_hashes": 2755,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingKernelImage.kernelFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.relation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.relation_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.kernel_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.congruent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.relation_move": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.app_kernelGraph": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.construct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.application": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.application_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.result": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingKernelImage.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingKernelImage.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "KernelImageAudit.tmp.lean",
+        "length": 1011,
+        "sha256": "8a43df3f6b9a0a239a4efdd669ef98bba26d007a89073ceb047ff3ba6d847e23"
+      },
+      {
+        "path": "KernelImageProfile.tmp.lean",
+        "length": 21636,
+        "sha256": "5a9f4b421725cfc6c65a10b767c7d093fe102821d8a70d7fe58e37af870bf2d0"
+      },
+      {
+        "path": "verification/kernel-image-progress.tmp.txt",
+        "length": 29,
+        "sha256": "a89325aa99adb6c75d13203bab91d6c9de7972414a4f84d75ad8069e59153dfa"
+      },
+      {
+        "path": "verification/kernel-image-baseline.tmp.json",
+        "length": 14135255,
+        "sha256": "331cb19f761028998be4da86d069c17e019b864c3a871bd6de2fd8eec63ed32f"
+      },
+      {
+        "path": "verification/kernel-image-check.tmp.log",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "verification/kernel-image-build.tmp.log",
+        "length": 140,
+        "sha256": "519568055d9b1089e1af1601eedcb1aa53e67bfe29fb55c2b770f9ba7a7ae531"
+      },
+      {
+        "path": "verification/kernel-image-audit.tmp.log",
+        "length": 6418,
+        "sha256": "b52141e50b3f594dfad8a58d90f6f35ba9294374dd74762ae4583d9bee8600d0"
+      },
+      {
+        "path": "verification/kernel-image-profile.tmp.log",
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "logical_bytes": 14164489,
+    "temporary_files_remaining": 0,
+    "free_before": 83469058048,
+    "free_after": 83483140096
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "environment": {
+      "LEAN_NUM_THREADS": "1"
+    },
+    "exit_code": 0,
+    "build_jobs": 3200,
+    "log": "verification/kernel-image-post-cleanup.log",
+    "current_snapshot_hashes_rechecked": 2755,
+    "temporary_files_remaining": 0,
+    "live_lean_lake_processes": 0
+  }
+}

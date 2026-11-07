@@ -1306,3 +1306,7 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 `ForcingConcreteSystem.kernel_certificate` 在原 nativeZF／FirstOrder.Derives 中证明同一内部 L 的无外部系统参数存在句：40 个内部集合、全部 37 原始系统条件及同一组见证上的全称非良序商稠密双射后果。实际 ω 由原生 ZF 提供，塔的 hRec／hMatrix／最终 Row 原样保留，强迫／群／滤子／标签／界全由已有生产者构造。native K 是 Cohen κ=ω₁，seedK 是饱和预算 μ；辅助 Choice／序由既有 L/ZFC 消去。
 
 这关闭原第 8 阶段最后的全局父输入装配门，下一活动阶段为 9；SVC／ACwo／全局商编码单射／¬AC、PP/Main、全部内部／非标准 Proof/Con、原 Comparator 与最终终验仍未完成。9 条命令／5 条 trust=0 均退出 0，37152 项旧足迹不变，零警告，无新增公理依赖。报告：verification/concrete-system-acceptance.json。
+
+## 原阶段 9：实际 kernelGraph（2026-11-07）
+
+固定源 UniformImages:16–59 已由 ForcingKernelImage 的 16 项声明迁移。原 nativeZF 的对象存在句实际构造三名字稳定子和同值关系 HS 图，全称证明同一图的 App 与正则有界应用复合等价；不假定图／共同支撑，不选择函数值／商代表。3200 构建、37182 声明、全部 37166 旧足迹不变、零警告／无新公理依赖，见 verification/kernel-image-acceptance.json。app_kernelGraph_value:61–78、同值类／像类及最终像商双射尚待迁移；原阶段9及最终内部 Con 仍未完成。

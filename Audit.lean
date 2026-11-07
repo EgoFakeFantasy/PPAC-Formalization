@@ -37815,3 +37815,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingConcreteSystem.sentence
 #print axioms PPAC.Migration.ForcingConcreteSystem.models
 #print axioms PPAC.Migration.ForcingConcreteSystem.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingKernelImage.kernelFormula
+#print axioms PPAC.Migration.ForcingKernelImage.relation
+#print axioms PPAC.Migration.ForcingKernelImage.relation_semantics
+#print axioms PPAC.Migration.ForcingKernelImage.kernel_semantics
+#print axioms PPAC.Migration.ForcingKernelImage.monotone
+#print axioms PPAC.Migration.ForcingKernelImage.congruent
+#print axioms PPAC.Migration.ForcingKernelImage.regular
+#print axioms PPAC.Migration.ForcingKernelImage.relation_move
+#print axioms PPAC.Migration.ForcingKernelImage.app_kernelGraph
+#print axioms PPAC.Migration.ForcingKernelImage.construct
+#print axioms PPAC.Migration.ForcingKernelImage.application
+#print axioms PPAC.Migration.ForcingKernelImage.application_semantics
+#print axioms PPAC.Migration.ForcingKernelImage.result
+#print axioms PPAC.Migration.ForcingKernelImage.sentence
+#print axioms PPAC.Migration.ForcingKernelImage.models
+#print axioms PPAC.Migration.ForcingKernelImage.kernel_certificate
