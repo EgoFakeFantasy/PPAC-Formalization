@@ -1,11 +1,10 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：源 witness_placement 对象模式（2026-11-08）
+## 当前迁移：源 localized_existential 对象模式（2026-11-08）
 
-ForcingWitnessPlacement迁移固定源DiagramPlacements:73–151：精确目标支撑传输、单位／非单位放置、内部移动条件族、非根支撑不交及实际兼容副本选择，再通过完整公式对称性／单调性取得任意秩HS见证。q仍在见证之前选定；加强的只是Cohen条件。原宿主choose改用现成原生有界uniformization，所有族、图、置换和名字均为内部集合。
+ForcingLocalizedExistential迁移固定源DiagramPlacements:156–218，消费已完成的witness_placement。实际强迫存在量词提供任意内部秩HS见证；同一支撑滤子提供名字支撑，已有extend_through与forces_at_supporting_root把见证放入预定q。最后实际限制Cohen条件到q.range，并保留c⊆a、同一HS名、精确Fix(q.range)、原WithTop编码与完整公式强迫。没有给定见证／局部化／稠密性结论。
 
-原核端点为nativeZF中的内部L相对化完整源引理模式，保留源RootProbes／基数／图／支撑假设，不假定输出放置或见证；RootProbes已由同一Core构造。原生内部L消去地面Choice。完整验收以verification/witness-placement-acceptance.json为准。当前仍为原阶段9；下一源消费者是localized_existential→localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator仍未完成。
-
+原核端点为nativeZF中的内部L相对化完整源引理模式，原饱和／基数／图／支撑假设保留，地面Choice由现有内部L消去。完整验收见verification/localized-existential-acceptance.json。当前仍为原阶段9；下一源消费者为OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator仍未完成。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -17,7 +16,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 远端55f4b4e的同一次CI仍在全量构建，固定检出、依赖、源码及跨平台回归检查已通过；本批先本地保存，避免叠加推送。当前本地也已通过3份固定干净依赖、75份OpenAI源哈希及5项跨平台回归检查。
 
-当前仍为原阶段9。witness_placement本批已迁移，ACwo下一直接源码消费者是DiagramPlacements.localized_existential→OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement与localized_existential已迁移，ACwo下一直接源码消费者是OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 

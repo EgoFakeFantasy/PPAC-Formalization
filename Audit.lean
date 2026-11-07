@@ -38000,3 +38000,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWitnessPlacement.sentence
 #print axioms PPAC.Migration.ForcingWitnessPlacement.models
 #print axioms PPAC.Migration.ForcingWitnessPlacement.kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalizedExistential.localized_existential
+#print axioms PPAC.Migration.ForcingLocalizedExistential.resultFormula
+#print axioms PPAC.Migration.ForcingLocalizedExistential.resultFormula_freeClosed
+#print axioms PPAC.Migration.ForcingLocalizedExistential.resultFormula_semantics
+#print axioms PPAC.Migration.ForcingLocalizedExistential.sentence
+#print axioms PPAC.Migration.ForcingLocalizedExistential.models
+#print axioms PPAC.Migration.ForcingLocalizedExistential.kernel_certificate

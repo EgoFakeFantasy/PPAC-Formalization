@@ -1039,3 +1039,4 @@ import PPAC.Migration.ForcingChoiceFailure
 import PPAC.Migration.ForcingRootProbes
 import PPAC.Migration.ForcingOrdinalChoice
 import PPAC.Migration.ForcingWitnessPlacement
+import PPAC.Migration.ForcingLocalizedExistential

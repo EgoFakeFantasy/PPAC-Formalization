@@ -14173,4 +14173,11 @@ example {k n : Nat} (rho : Fin 7 → Fin k) (I K B w mu G F mul unit mark index 
       (ForcingWitnessPlacement.sentence rho I K B w mu G F mul unit mark index p q s b d c Jp Hp Js Hs Jq Hq delta tau z v phi))) :=
   ForcingWitnessPlacement.kernel_certificate rho I K B w mu G F mul unit mark index p q s b d c Jp Hp Js Hs Jq Hq delta tau z v phi
 
+-- Full existential localization, including the final Cohen q-support.
+example {k n : Nat} (rho : Fin 7 → Fin k) (w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 c Jp Hp Jq Hq z0 : Fin k)
+    (v : Fin n → Fin k) (phi : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingLocalizedExistential.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 c Jp Hp Jq Hq z0 v phi))) :=
+  ForcingLocalizedExistential.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 c Jp Hp Jq Hq z0 v phi
+
 end PPAC.Migration.Step4Checks
