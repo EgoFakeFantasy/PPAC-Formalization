@@ -1,0 +1,343 @@
+{
+  "verified_at": "2026-11-07T21:21:49.363983+00:00",
+  "base_commit": "25e0a5cc56853fad1410342769153776b5447028",
+  "original_stage": 9,
+  "source": [
+    "SliceGeometry.defaultRelation_unique_on:17-32",
+    "SliceGeometry.subsetImageGraph/subset_image_surjection:34-69"
+  ],
+  "adapter": "PPAC/Migration/ForcingSubsetImage.lean",
+  "kernel_endpoint": "PPAC.Migration.ForcingSubsetImage.kernel_certificate",
+  "target": "Ordinary original nativeZF Derives constructs the actual full tuple-supported bounded-default HS graph and proves source subset_image_surjection at ALL internal conditions.",
+  "constructed_outputs": [
+    "Actual common tuple support with subgroup/filter/fixedness proofs",
+    "Actual full raw bounded-default HS graph and support",
+    "Full forced surjection including functionOn/no-junk/mapsTo/onto at all internal conditions"
+  ],
+  "source_inputs_retained": [
+    "Surjection f:A -> target",
+    "Forced subset D of target",
+    "The SINGLE given member d of D",
+    "Original product presentation/normal filter/top and HS parameters"
+  ],
+  "uniqueness_uses_mapsTo_only_on_original_domain": true,
+  "extra_global_partial_unique_premise": false,
+  "given_graph_support_or_output_surjection": false,
+  "simultaneous_family_of_defaults": false,
+  "all_internal_conditions_and_unrestricted_HS_ranks": true,
+  "reuse": [
+    "ForcingDefaultRelation",
+    "ForcingMapCalculus",
+    "ForcingRelationGraphFunctions",
+    "ForcingRelationGraphSupport",
+    "ForcingTupleStabilizer",
+    "ForcingKernelImage",
+    "ForcingImageQuotient",
+    "ForcingPowerName",
+    "ForcingFormula",
+    "ForcingAtomicBasic",
+    "ForcingAtomicLaws",
+    "ForcingSeparation",
+    "ForcingProductFamily",
+    "ForcingHS",
+    "ModelTransfer"
+  ],
+  "new_foundation_or_Choice_or_L_premise": false,
+  "new_kernel_consumes_object_Choice_FreeClosed_certificate": false,
+  "previous_migration_modules_compared": 2605,
+  "all_previous_migration_modules_canonical_sources_unchanged": true,
+  "existing_git_worktree_eol_only_differences": 162,
+  "eol_note": "Canonical prior source equality verified; no raw-byte equality claim for existing CRLF/LF differences.",
+  "build_jobs": 3219,
+  "audited_declarations": 37586,
+  "old_footprints_unchanged": 37574,
+  "new_declarations": 12,
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingSubsetImage.unique_on": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.four": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.subsetFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.relation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.relation_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.graph_surjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.laws": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.result": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.result_freeClosed": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSubsetImage.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "all_9_commands_exit_0": true,
+  "trust_zero_commands": 5,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "current_source_hashes_checked": 2777,
+  "full_verification_commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log",
+      "log_sha256": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log",
+      "log_sha256": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log",
+      "log_sha256": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log",
+      "log_sha256": "2c175e721a11c6e3080e2e4822e9de5671f91de1b93bb7fdb9c7184c9e791120"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log",
+      "log_sha256": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log",
+      "log_sha256": "d1aaa83f0be7bca3bd646f563af0d88a0c26c1a884435e912b49d88a093a91b4"
+    }
+  ],
+  "compatibility": {
+    "fixed_clean_repositories": 3,
+    "OpenAI_source_hashes": 75,
+    "regressions": 5,
+    "result": "all pass"
+  },
+  "source_actual_subset_image_surjection_complete": true,
+  "full_OrderedSections_SliceGeometry_SliceAssembly_complete": false,
+  "actual_full_ordinal_presentation_already_complete": true,
+  "actual_same_system_ACwo_and_notAC_already_complete": true,
+  "internal_L_and_full_schemas_already_complete": true,
+  "original_stage9_complete": false,
+  "global_reverse_injection_complete": false,
+  "PP_Main_all_internal_nonstandard_Con_complete": false,
+  "Comparator_complete": false,
+  "final_object_Con_proved": false,
+  "remaining_source_consumers": [
+    "OrderedSections.LeastOccurrence/wellordered image and target injection (reuse existing original ordinal minima/decision/graph/choice)",
+    "Remaining SliceGeometry slice families/cover/disjointness -> SliceAssembly -> Main.reverse_injection_dense",
+    "Full PP/Main and all internal/nonstandard Proof/Con correctness",
+    "Original stage4 Comparator and stage11 final acceptance"
+  ],
+  "remote_at_acceptance": {
+    "head": "25e0a5cc56853fad1410342769153776b5447028",
+    "run_id": 42414480476,
+    "job_id": 128529488771,
+    "last_observed_status": "in_progress",
+    "last_observed_steps": "fixed source/dependency/bootstrap/compatibility checks succeeded; build and audit running",
+    "publication_policy": "Keep this locally accepted batch until the existing run is terminal; do not stack pushes."
+  },
+  "cleanup": {
+    "status": "completed",
+    "files": [
+      {
+        "path": "SubsetImageAudit.tmp.lean",
+        "bytes": 756,
+        "sha256": "70e55edd1dade4a11fc11dd4ff41922e0312c8e1904c8295847d1f7a835a15d2"
+      },
+      {
+        "path": "verification/subset-image-baseline.tmp.json",
+        "bytes": 12923020,
+        "sha256": "4e703a9243ebe19e82afaee9462c4ffc56d117ac4d75f95dc00aed7acd87fdba"
+      },
+      {
+        "path": "verification/subset-image-audit.tmp.log",
+        "bytes": 3538,
+        "sha256": "dfb65817456d8779d16c945189a6954e3bdea94a582de2f781e82925c03921a9"
+      },
+      {
+        "path": "verification/subset-image-build.log",
+        "bytes": 106,
+        "sha256": "3bc036ec7265f4fc2a2a543118d5c0cfcbfe134b7ef7f691635f681e17f663b9"
+      },
+      {
+        "path": "verification/subset-image-source-check.log",
+        "bytes": 246,
+        "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+      },
+      {
+        "path": "verification/subset-image-ci-inputs.log",
+        "bytes": 91,
+        "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+      },
+      {
+        "path": "verification/subset-image-compatibility.log",
+        "bytes": 108,
+        "sha256": "30cf38070aec5cd27957d079a14331bb3d309888573adcc44476506b44d8368c"
+      },
+      {
+        "path": "verification/subset-image-full.log",
+        "bytes": 153,
+        "sha256": "5b305e2f104c59cfeab982d30f4f552451650ff6d59af646fcbe64c9554d2c6b"
+      }
+    ],
+    "parser": "PowerShell ConvertFrom-Json -AsHashtable",
+    "files_removed": 8,
+    "containment_and_plain_file_and_untracked_and_raw_size_sha256_verified": true,
+    "no_active_workspace_lean_lake_process_at_cleanup": true
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "build_jobs": 3219,
+    "log": "verification/subset-image-post-cleanup.log",
+    "log_sha256": "83198aae517b45c6f1320073ec792943669e14daea2cce8ca5bf908f3298b384"
+  },
+  "post_cleanup_current_hashes_rechecked": 2777
+}

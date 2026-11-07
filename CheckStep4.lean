@@ -14241,4 +14241,10 @@ example {k : Nat} (rho : Fin 7 → Fin k)
         (ForcingPresentationCover.sentence rho w mu I K B G F mul one mark top values c lo hi X x0 labels p))) :=
   ForcingPresentationCover.kernel_certificate rho w mu I K B G F mul one mark top values c lo hi X x0 labels p
 
+-- Actual source subsetImageGraph with all-condition full surjection laws in ordinary ZF.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top f A target D d : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSubsetImage.sentence rho I K B w G F mul top f A target D d)) :=
+  ForcingSubsetImage.kernel_certificate rho I K B w G F mul top f A target D d
+
 end PPAC.Migration.Step4Checks

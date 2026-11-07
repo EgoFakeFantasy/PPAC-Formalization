@@ -2613,7 +2613,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_completion_graph', 'ForcingCompletionGraph', 35),
                                 ('forcing_partial_orbit_graph', 'ForcingPartialOrbitGraph', 24),
                                 ('forcing_presentation_family', 'ForcingPresentationFamily', 27),
-                                ('forcing_presentation_cover', 'ForcingPresentationCover', 10)):
+                                ('forcing_presentation_cover', 'ForcingPresentationCover', 10),
+                                ('forcing_subset_image', 'ForcingSubsetImage', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6156,6 +6157,8 @@ def main(source_check_only: bool = False) -> None:
         "source_OrdinalPresentation_actual_index_and_partial_family_complete": True,
         "source_OrdinalPresentation_actual_family_and_ordinal_presentation_complete": True,
         "source_OrdinalPresentation_actual_dense_coverage_complete": True,
+        "source_SliceGeometry_actual_subset_image_surjection_complete": True,
+        "source_OrderedSections_and_full_slice_geometry_assembly_complete": False,
         "source_OrdinalPresentation_scope": "Full pinned OrdinalPresentation:342-412. Actual full index/family, supporting diagram extension, dense cover, existing INTERNAL ordinal reindexing and actual Cartesian/completion graph surjection; all internal conditions and unrestricted HS names. The nativeZF object-kernel endpoint uses the already completed internal L interpretation to discharge ground Choice. Source mathematical background guards remain explicit. No given family, cover, ordinal enumeration, Cartesian domain or final surjection. Main global reverse injection, PP and all-internal/nonstandard Con remain incomplete.",
         "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
         "original_stage9_model_applications_complete": False,

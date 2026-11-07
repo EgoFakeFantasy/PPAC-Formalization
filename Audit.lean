@@ -38234,3 +38234,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPresentationCover.sentence
 #print axioms PPAC.Migration.ForcingPresentationCover.models
 #print axioms PPAC.Migration.ForcingPresentationCover.kernel_certificate
+#print axioms PPAC.Migration.ForcingSubsetImage.unique_on
+#print axioms PPAC.Migration.ForcingSubsetImage.four
+#print axioms PPAC.Migration.ForcingSubsetImage.subsetFormula
+#print axioms PPAC.Migration.ForcingSubsetImage.relation
+#print axioms PPAC.Migration.ForcingSubsetImage.relation_semantics
+#print axioms PPAC.Migration.ForcingSubsetImage.graph_surjection
+#print axioms PPAC.Migration.ForcingSubsetImage.laws
+#print axioms PPAC.Migration.ForcingSubsetImage.result
+#print axioms PPAC.Migration.ForcingSubsetImage.result_freeClosed
+#print axioms PPAC.Migration.ForcingSubsetImage.sentence
+#print axioms PPAC.Migration.ForcingSubsetImage.models
+#print axioms PPAC.Migration.ForcingSubsetImage.kernel_certificate

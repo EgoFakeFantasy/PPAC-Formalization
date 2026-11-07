@@ -1,5 +1,11 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
+## 本批迁移：源子集像满射（2026-11-08）
+
+ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。
+
+本批验收见verification/subset-image-acceptance.json。当前仍为原阶段9；完整ordinal_presentation、实际ACwo、¬AC、L及全公理模式已完成。余下沿固定OrderedSections及剩余SliceGeometry／SliceAssembly接全局反向单射，不把已完成的子集像满射或现有基础重新列为待从头实现。PP/Main、全部内部／非标准证明码Con、Comparator及终验仍未完成。
+
 ## 当前迁移：完整 ordinal_presentation（2026-11-08）
 
 ForcingPresentationCover迁移固定源OrdinalPresentation的presentationPartial_cover与ordinal_presentation。实际全部索引／规范偏映射家族、支撑图式扩张、全内部条件上的稠密覆盖、内部序数重新编号及完整完成图满射现在已连通。输出实际序数、check名、字面Cartesian域及HS满射图；不给定家族、覆盖、枚举、Cartesian域或满射，也没有名字秩截断。重新编号复用已有内部序数满射枚举及原生函数复合，正向值／全部记录提升两条定律实现源序数等价在结论中的作用。
