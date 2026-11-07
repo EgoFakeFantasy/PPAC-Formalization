@@ -14205,4 +14205,9 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingGroundFamilyChoice.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 top X checkedX family zq))) :=
   ForcingGroundFamilyChoice.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 top X checkedX family zq
 
+-- SAME actual system, with ACTUAL all-condition ACwo; no DenseChoice input.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingActualOrdinalChoice.sentence)) :=
+  ForcingActualOrdinalChoice.kernel_certificate
+
 end PPAC.Migration.Step4Checks

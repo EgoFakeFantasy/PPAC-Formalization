@@ -38102,3 +38102,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGroundFamilyChoice.sentence
 #print axioms PPAC.Migration.ForcingGroundFamilyChoice.models
 #print axioms PPAC.Migration.ForcingGroundFamilyChoice.kernel_certificate
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.ground_family_choice_dense
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.dense_choice
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.forces_ACwo
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.on_core
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.outcomeFormula
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.outcomeFormula_freeClosed
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.outcomeFormula_semantics
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.sentence
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.models
+#print axioms PPAC.Migration.ForcingActualOrdinalChoice.kernel_certificate
