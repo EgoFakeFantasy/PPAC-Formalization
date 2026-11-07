@@ -1,10 +1,10 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：同一实际系统上的完整 ACwo（2026-11-08）
+## 当前迁移：OrdinalPresentation 默认关系（2026-11-08）
 
-ForcingActualOrdinalChoice迁移固定源OrdinalChoice.ground_family_choice_dense／ProductForcing.forces_ACwo／ConcreteSystem.forces_ACwo。原生Hartogs与内部单射直接构造初始根；已有条件下界、名字支撑滤子、Cohen支撑、小集合并及extend_through实际把两种支撑放进同一根，再调用完整ground_family_choice构造内部选择图。已有任意秩／序数决定、完整tuple_congr及ACwo逻辑桥被直接消费；DenseChoice已实际构造，不再作为假设。
+ForcingDefaultRelation迁移固定源OrdinalPresentation:50–145，defaultFormula的五变量AST逐字保留，仅调整SetLanguage命名空间。NoValue仍量化全部更强内部条件及实际域中的全部名字；普通nativeZF原推导核给出完整分支双向等价、值实际属于X的稠密全定义性，以及原偏函数唯一性到补全唯一性的推导。原偏函数唯一性和默认元素属于X是源显式前提；补全后的全定义性／唯一性均为证明输出。
 
-闭合nativeZF原推导核证书存在量化同一个内部L中的全部40集合，保留Core、原商结论、非良序像、所有条件上的¬AC及实际RootProbes／探针索引不可数性，并加入所有内部条件上的完整ACwo强迫。探针索引为mu（slot13），Cohen kappa仍为slot14。没有给定系统、根、名字族、密度或最终ACwo前提。当前仍为原阶段9；真正剩余为SVC／全局反向单射及PP/Main、全部内部／非标准证明码Con和Comparator。验收登记：verification/actual-ordinal-choice-acceptance.json。最终对象Con尚未证明。
+单调性、正则性、同余、relationOf及实际Product公式对称性直接复用现有接口；没有新建图构造、递归或选择基础，也不需要L相对化。实际全条件ACwo已完成并保留。当前仍为原阶段9；下一直接源码消费者为completionRelation／completionGraph_surjection→presentationPartial／ordinal_presentation，再接全局反向单射和PP/Main。SVC、最终全部内部／非标准Proof/Con及Comparator仍未完成。验收登记：verification/default-relation-acceptance.json。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 

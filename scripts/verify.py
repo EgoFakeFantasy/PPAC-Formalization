@@ -2608,7 +2608,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_localized_maximum', 'ForcingLocalizedMaximum', 14),
                                 ('forcing_indexed_graph', 'ForcingIndexedGraph', 36),
                                 ('forcing_ground_family_choice', 'ForcingGroundFamilyChoice', 13),
-                                ('forcing_actual_ordinal_choice', 'ForcingActualOrdinalChoice', 10)):
+                                ('forcing_actual_ordinal_choice', 'ForcingActualOrdinalChoice', 10),
+                                ('forcing_default_relation', 'ForcingDefaultRelation', 26)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6145,6 +6146,7 @@ def main(source_check_only: bool = False) -> None:
         "source_OrdinalChoice_ground_family_choice_complete": True,
         "source_OrdinalChoice_ground_family_choice_dense_complete": True,
         "source_OrdinalChoice_actual_dense_choice_and_forces_ACwo_complete": True,
+        "source_OrdinalPresentation_default_relation_complete": True,
         "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",

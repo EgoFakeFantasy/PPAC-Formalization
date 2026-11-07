@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：同一实际系统上的完整 ACwo（2026-11-08）
+## 当前迁移：OrdinalPresentation 默认关系（2026-11-08）
 
-ForcingActualOrdinalChoice迁移固定源OrdinalChoice.ground_family_choice_dense／ProductForcing.forces_ACwo／ConcreteSystem.forces_ACwo。原生Hartogs与内部单射直接构造初始根；已有条件下界、名字支撑滤子、Cohen支撑、小集合并及extend_through实际把两种支撑放进同一根，再调用完整ground_family_choice构造内部选择图。已有任意秩／序数决定、完整tuple_congr及ACwo逻辑桥被直接消费；DenseChoice已实际构造，不再作为假设。
+ForcingDefaultRelation迁移固定源OrdinalPresentation:50–145，defaultFormula的五变量AST逐字保留，仅调整SetLanguage命名空间。NoValue仍量化全部更强内部条件及实际域中的全部名字；普通nativeZF原推导核给出完整分支双向等价、值实际属于X的稠密全定义性，以及原偏函数唯一性到补全唯一性的推导。原偏函数唯一性和默认元素属于X是源显式前提；补全后的全定义性／唯一性均为证明输出。
 
-闭合nativeZF原推导核证书存在量化同一个内部L中的全部40集合，保留Core、原商结论、非良序像、所有条件上的¬AC及实际RootProbes／探针索引不可数性，并加入所有内部条件上的完整ACwo强迫。探针索引为mu（slot13），Cohen kappa仍为slot14。没有给定系统、根、名字族、密度或最终ACwo前提。当前仍为原阶段9；真正剩余为SVC／全局反向单射及PP/Main、全部内部／非标准证明码Con和Comparator。验收登记：verification/actual-ordinal-choice-acceptance.json。最终对象Con尚未证明。
+单调性、正则性、同余、relationOf及实际Product公式对称性直接复用现有接口；没有新建图构造、递归或选择基础，也不需要L相对化。实际全条件ACwo已完成并保留。当前仍为原阶段9；下一直接源码消费者为completionRelation／completionGraph_surjection→presentationPartial／ordinal_presentation，再接全局反向单射和PP/Main。SVC、最终全部内部／非标准Proof/Con及Comparator仍未完成。验收登记：verification/default-relation-acceptance.json。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -33,7 +33,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择及实际全条件ACwo原核存在句已接通 | 同一系统的实际ACwo与¬AC强迫均已完成；接SVC与全局商编码单射，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
+| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句及默认关系对象规律已接通 | 同一系统的实际ACwo与¬AC强迫均已完成；接SVC与全局商编码单射，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 

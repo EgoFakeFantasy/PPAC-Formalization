@@ -1045,3 +1045,4 @@ import PPAC.Migration.ForcingLocalizedMaximum
 import PPAC.Migration.ForcingIndexedGraph
 import PPAC.Migration.ForcingGroundFamilyChoice
 import PPAC.Migration.ForcingActualOrdinalChoice
+import PPAC.Migration.ForcingDefaultRelation

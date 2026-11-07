@@ -14210,4 +14210,9 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative ForcingActualOrdinalChoice.sentence)) :=
   ForcingActualOrdinalChoice.kernel_certificate
 
+-- Full pinned default logic, dense totality in X and partial-function uniqueness preservation.
+example {k : Nat} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (P f X x0 : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingDefaultRelation.sentence R H P f X x0)) :=
+  ForcingDefaultRelation.kernel_certificate R H P f X x0
+
 end PPAC.Migration.Step4Checks

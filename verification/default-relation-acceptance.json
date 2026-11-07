@@ -1,0 +1,400 @@
+{
+  "verified_at": "2026-11-07T18:48:36.023452+00:00",
+  "base_commit": "35a410969c0e3a563143528ee5ace358155da29a",
+  "original_stage": 9,
+  "source": [
+    "OrdinalPresentation.defaultFormula/NoValue/noValue_mono/defaultRelation_iff/defaultRelation_of_app/defaultRelation_total/defaultRelation_unique/defaultRelation_symmetry:50-145"
+  ],
+  "adapter": "PPAC/Migration/ForcingDefaultRelation.lean",
+  "kernel_endpoint": "PPAC.Migration.ForcingDefaultRelation.kernel_certificate",
+  "target": "Ordinary original nativeZF FirstOrder.Derives of the complete source default-relation sentence scheme, without Choice or L-relative wrapping: exact branch iff, actual densely total values IN X from a default member, and preservation of the source partial-function uniqueness.",
+  "quantifiers": "Arbitrary fixed finite R/H ambient formulas, ALL internal conditions and sets and unrestricted-rank names in the actual formula domain. NoValue quantifies ALL stronger conditions, not merely the current condition. Original partial uniqueness and default-member input retained; completed totality/uniqueness are outputs.",
+  "source_default_formula_body_preserved_exactly_after_SetLanguage_namespace_qualification": true,
+  "reuse": "Existing forcing disjunction/negation/existential, atomic density/equality, full tuple congruence, relationOf compiler and actual Product formula symmetry with fixed f/X/x0 and moved argument/value names. No new collector, recursion, proof kernel, choice or global truth machinery.",
+  "new_foundation_or_object_choice_premise": false,
+  "new_kernel_consumes_object_Choice_axiom_certificate": false,
+  "all_previous_migration_modules_canonical_sources_unchanged": true,
+  "previous_migration_modules_compared": 2600,
+  "existing_git_worktree_eol_only_differences": 162,
+  "eol_note": "Pre-existing CRLF/LF-only git/worktree differences are compared under deployed canonical source policy; no raw-byte equality claim.",
+  "build_jobs": 3214,
+  "audited_declarations": 37478,
+  "old_footprints_unchanged": 37452,
+  "new_declarations": 26,
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingDefaultRelation.defaultFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.Default": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.NoValue": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.noValue_mono": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.default_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.of_app": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.PartialUnique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.relation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.relation_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.noValue": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.noValue_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.pointFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.pointFormula_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.totalFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.totalFormula_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.uniqueFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.uniqueFormula_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDefaultRelation.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axiom_dependencies": [],
+  "axiom_note": "Inherited Lean/native certificate dependencies recorded and trust=0 rechecked; no blanket axiom-free claim.",
+  "warning_lines": 0,
+  "current_hashes_rechecked": 2772,
+  "full_verification_summary_raw_sha256": "daaca9caea58b0de3eda43133156c1729501b0d8a44d4a75c46ad18ab9f8c874",
+  "full_commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "compatibility": {
+    "pinned_clean_repositories": 3,
+    "source_hashes": 75,
+    "regression_tests": 5,
+    "exit_code": 0,
+    "policy": "sha256/text-crlf-to-lf/v1"
+  },
+  "actual_default_relation_complete": true,
+  "actual_DenseChoice_and_forces_ACwo_complete": true,
+  "actual_SVC_ordinal_presentation_complete": false,
+  "original_stage9_model_applications_complete": false,
+  "final_internal_Con_complete": false,
+  "next_source_consumer": "OrdinalPresentation.completionRelation/completionGraph_surjection -> presentationPartial/ordinal_presentation -> full global reverse injection -> PP/Main. Reuse existing raw/HS relation graph and partial/orbit backends, not new foundation. All-internal/nonstandard Proof/Con remains original stage10.",
+  "remote_ci": {
+    "run_id": 42399254602,
+    "job_id": 128483258602,
+    "head": "10e8c6b67b3a3629b971fe247de0016b062c8bcf",
+    "last_verified_status": "in_progress",
+    "this_batch_uploaded_at_acceptance": false
+  },
+  "cleanup": {
+    "status": "completed",
+    "files": [
+      {
+        "path": "DefaultRelationAudit.tmp.lean",
+        "bytes": 1714,
+        "sha256": "8aa17ad9bb466859543edb116dd3b45c02571eb70dc588e2e55bafef414024bd"
+      },
+      {
+        "path": "verification/default-relation-baseline.tmp.json",
+        "bytes": 14389655,
+        "sha256": "eff5a4e94210630fd76a42abbe8b5c362d67777d6e749c08afa6b0e58fd33e89"
+      },
+      {
+        "path": "verification/default-relation-audit.tmp.log",
+        "bytes": 7501,
+        "sha256": "4718af720d2cde5ccef5174e55ee86330b530de21e80cb8214cf53d838578929"
+      },
+      {
+        "path": "verification/default-relation-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "verification/default-relation-build.log",
+        "bytes": 111,
+        "sha256": "f18b8144ee1cea03dba384c263a6d89af48c0ac28f3062b41ba7004fd2e28ef4"
+      },
+      {
+        "path": "verification/default-relation-source-check.log",
+        "bytes": 246,
+        "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+      },
+      {
+        "path": "verification/default-relation-ci-inputs.log",
+        "bytes": 91,
+        "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+      },
+      {
+        "path": "verification/default-relation-compatibility.log",
+        "bytes": 108,
+        "sha256": "d0f9a479b7829427ff9a5a578e8fa0163470a5fe1e85d3f6edcbed814623cb37"
+      },
+      {
+        "path": "verification/default-relation-full.log",
+        "bytes": 153,
+        "sha256": "41bcd1c2962fabdb20ebeffd3bafd5e935d57b04b966bfcae6c309bcf2704c39"
+      }
+    ],
+    "parser": "PowerShell ConvertFrom-Json -AsHashtable",
+    "containment_and_plain_file_and_untracked_and_raw_size_sha256_verified": true,
+    "files_removed": 9,
+    "no_active_workspace_lean_lake_process_at_cleanup": true
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3214,
+    "log": "verification/default-relation-post-cleanup.log",
+    "raw_sha256": "43ce3862977922a572c868ea4b53954c0013d5460d14ede32636727c3272c11a"
+  },
+  "post_cleanup_current_hashes_rechecked": 2772
+}
