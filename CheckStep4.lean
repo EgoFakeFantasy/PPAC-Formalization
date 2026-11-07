@@ -14233,4 +14233,12 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top one values c lo h
       (ForcingPresentationFamily.sentence rho I K B w G F mul top one values c lo hi X labels)) :=
   ForcingPresentationFamily.kernel_certificate rho I K B w G F mul top one values c lo hi X labels
 
+-- Actual unrestricted-rank source ordinal_presentation; existing internal L discharges ground Choice.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu I K B G F mul one mark top values c lo hi X x0 labels p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative
+        (ForcingPresentationCover.sentence rho w mu I K B G F mul one mark top values c lo hi X x0 labels p))) :=
+  ForcingPresentationCover.kernel_certificate rho w mu I K B G F mul one mark top values c lo hi X x0 labels p
+
 end PPAC.Migration.Step4Checks

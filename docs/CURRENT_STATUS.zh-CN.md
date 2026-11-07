@@ -1,12 +1,12 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：全部实际表示记录与规范内部家族（2026-11-08）
+## 当前迁移：完整 ordinal_presentation（2026-11-08）
 
-ForcingPresentationFamily迁移固定源OrdinalPresentation:305–337。普通nativeZF原推导核中的kernel_certificate构造全部PresentationIndex及规范presentationPartial内部函数图。索引恰有原始名字边和支撑图式两个坐标，范围集合及固定子群只作为性质的内部见证；既有Cartesian集合与Separation保留所有记录，无秩截断或选取子集。
+ForcingPresentationCover迁移固定源OrdinalPresentation的presentationPartial_cover与ordinal_presentation。实际全部索引／规范偏映射家族、支撑图式扩张、全内部条件上的稠密覆盖、内部序数重新编号及完整完成图满射现在已连通。输出实际序数、check名、字面Cartesian域及HS满射图；不给定家族、覆盖、枚举、Cartesian域或满射，也没有名字秩截断。重新编号复用已有内部序数满射枚举及原生函数复合，正向值／全部记录提升两条定律实现源序数等价在结论中的作用。
 
-已验收的实际偏轨道图构造提供每个值。记录解码、激活编码、标签、有序对及原始Graph的唯一性共同证明函数值规范，继而直接复用原生函数像／Replacement和完整函数图构造，在普通ZF中完成家族，不新增Choice或L前提。输出完整functionOn（含无杂项及唯一值）、所有边的精确规范，以及全部值的HS、全群不变性和全部内部条件上的偏函数唯一性；这些均为已证明的输出。
+对象端点ForcingPresentationCover.kernel_certificate为原推导核的Derives nativeZF []，目标是上述源定理模式的L相对化句。语义引理中的背景Choice由已经完成的内部L模型及其Choice证明消去，不添加外层AC前提，也不重建L／公理模式。10项声明的trust=0局部检查已通过，完整工程验收以verification/presentation-cover-acceptance.json为准。
 
-当前仍为原阶段9。实际索引及偏映射家族现已完成；下一是源presentationPartial_cover的实际稠密覆盖，再复用已有内部序数枚举完成重新编号／ordinal_presentation／SVC，并接全局反向单射。辅助完成图满射、实际全条件ACwo、¬AC及L／全公理模式原核设施继续保留。第10 PP/Main及全部内部／非标准证明码Con、第11终验和原第4 Comparator仍未完成。最终对象Con未证明。验收登记：verification/presentation-family-acceptance.json。
+当前仍为原阶段9：源ordinal_presentation已完成，下一沿Main.reverse_injection_dense复用已有关系图／统一选择／非良序像双射，迁移固定源OrderedSections、SliceGeometry、SliceAssembly并接全局反向单射；不额外设立未被源码消费者使用的SVC公理包装任务。实际全条件ACwo、¬AC、L及全公理模式均已完成并保留。第10 PP/Main及全部内部／非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -16,9 +16,9 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-兼容性修复后连续五轮远端CI完整成功；最新已完成的42399254602（10e8c6b）的实际日志确认37442项声明通过、零警告，固定检出／依赖／源码和五项跨平台回归全部通过。已验收的实际ACwo及默认关系统一推送至1ed6c36，其远端42405610709仍在编译，辅助完成图、实际偏轨道图及规范内部表示族先保留本地，不叠加推送。此后新增工作先完成本地全量验收，再统一推送；不叠加尚在运行中的提交。
+兼容性修复后连续六轮远端CI完整成功。最新42405610709（1ed6c36）的实际日志确认37478项声明通过、零警告，固定检出／依赖／源码及五项跨平台回归全部通过。后续每批先完成本地全量验收，再统一推送；不叠加尚在运行中的提交。
 
-当前仍为原阶段9。witness_placement、localized_existential、localized_maximum、indexedGraph、ground_family_choice、ground_family_choice_dense及实际forces_ACwo已迁移，下一沿源SVC／全局反向单射接PP/Main；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement、localized_existential、localized_maximum、indexedGraph、ground_family_choice、ground_family_choice_dense及实际forces_ACwo已迁移，源ordinal_presentation现已完成，下一沿Main.reverse_injection_dense接全局切片单射及PP/Main。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 
@@ -31,7 +31,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 ## 必要的后续工作
 
-1. 第9阶段：固定源非良序像双射:243–276已完成；继续在同一系统完成SVC、ACwo和全局商编码单射；¬AC强迫应用已完成。kernel、完整imageClassRelation、实际imageQuotient及像图的完整函数定律均已完成；复用现有关系图构造、完整函数定律、序数及原非良序商双射；RelationCalculus 的逆／复合名字图也已迁移，同系统非良序像双射也已连接完成。
+1. 第9阶段：固定源非良序像双射:243–276已完成；源ordinal_presentation和实际全条件ACwo已完成；继续在同一系统完成全局商编码单射，¬AC强迫应用已完成。kernel、完整imageClassRelation、实际imageQuotient及像图的完整函数定律均已完成；复用现有关系图构造、完整函数定律、序数及原非良序商双射；RelationCalculus 的逆／复合名字图也已迁移，同系统非良序像双射也已连接完成。
 2. 第 10 阶段：接通完整 PP/Main，复用 ZF/U 的既有 Proof/Sat 配套完成全部内部／非标准矛盾码传输及最终 Con。
 3. 第 11 阶段：最终对象推导主句、干净检出复现及剩余验收；原第 4 阶段 OpenAI Comparator 仍单列未验收。
 

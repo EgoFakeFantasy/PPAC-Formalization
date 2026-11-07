@@ -38224,3 +38224,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPresentationFamily.sentence
 #print axioms PPAC.Migration.ForcingPresentationFamily.models
 #print axioms PPAC.Migration.ForcingPresentationFamily.kernel_certificate
+#print axioms PPAC.Migration.ForcingPresentationCover.cover
+#print axioms PPAC.Migration.ForcingPresentationCover.reindex
+#print axioms PPAC.Migration.ForcingPresentationCover.Presented
+#print axioms PPAC.Migration.ForcingPresentationCover.ordinal_presentation
+#print axioms PPAC.Migration.ForcingPresentationCover.presentation
+#print axioms PPAC.Migration.ForcingPresentationCover.presentation_freeClosed
+#print axioms PPAC.Migration.ForcingPresentationCover.presentation_semantics
+#print axioms PPAC.Migration.ForcingPresentationCover.sentence
+#print axioms PPAC.Migration.ForcingPresentationCover.models
+#print axioms PPAC.Migration.ForcingPresentationCover.kernel_certificate
