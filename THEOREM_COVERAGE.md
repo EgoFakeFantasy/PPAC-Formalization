@@ -1278,3 +1278,13 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 全量验收已通过：9 条命令（5 条 trust=0）退出 0，零警告，37104 项旧声明足迹不变，无新增公理依赖。报告：`verification/uniform-inverse-graph-acceptance.json`。
 
 下一项仍是固定源 `outsideClassSet_denseBelow:265`：把成员与实际商的 canonical 类对齐，扩图覆盖条件支撑及标签，并证明右因子非平凡；随后接 `nonwellorderable_quotient_bijection`。这些及阶段 9–11、最终内部 Con 尚未完成。L、全公理模式、递归与 Proof/Sat 基础继续复用，不重建。
+
+## 本批验收（2026-11-07）：实际 outsideClassSet_denseBelow，仍为阶段 8
+
+`ForcingOutsideClassSet` 已迁移固定源 `ClassFibers.outsideClassSet:255–262` 与 `outsideClassSet_denseBelow:265–306`。对每个更强内部 Cohen 条件，从非良序性及实际商名字取得 canonical 类，复用现有支撑构造、二集合并基数界及扩图，覆盖完整条件支撑和标签；用 `actual_labelClass/class_unique` 保留同一个实际类并得到本地名字。若右因子为单位，`sub_one` 与根／值域／固定子群唯一性将该名字送回完整原根局部列表，与持久非成员矛盾，因此因子非平凡。
+
+`density_kernel_certificate` 是原 `nativeZF` 中同一内部 L 相对化密度闭句的 `FirstOrder.Derives`，由已完成的 L/ZFC 桥消去辅助 Choice；没有向普通 nativeZF 添加对象 Choice。完整见证保留实际条件、新根、右因子、值域／固定子群、条件码、canonical 类及全部更强条件下的排除。
+
+全量验收通过：9 条命令（5 条 trust=0）退出 0，零警告，37126 项旧声明足迹不变，无新增公理依赖。报告：`verification/outside-class-set-acceptance.json`。
+
+下一主线为 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`：消费上述见证和已完成的具体商双射，并从既有构造器统一最终父输入。此项、阶段 9–11、最终内部 Con 仍未完成。完整局部列表、逆图、持久列表外成员和实际类密度不再列为待从头证明的基础。

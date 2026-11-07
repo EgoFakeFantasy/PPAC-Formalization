@@ -1,14 +1,14 @@
 # 本地工作进度（2026-11-07）
 
-## 本批验收（2026-11-07）：实际逆图与持久列表外成员，仍为阶段 8
+## 本批验收（2026-11-07）：实际 outsideClassSet_denseBelow，仍为阶段 8
 
-`ForcingUniformInverseGraph` 消费已完成的最小下标关系，迁移固定源 `UniformInverse.least_move/relation_move:212–233`、实际逆图／限制逆图单射 `UniformNames:239–277`，以及 `outside_uniformRange:282–311` 对实际完整局部名字列表的消费者 `ClassFibers.outside_localList:224–241`。现有条件置换的逆像保持每个更强条件下的负相等，现有 `map_checked` 给出核名字固定性；现有 HS 图构造器与 `graph_injection` 产生真实受支撑图和完整强迫单射公式。
+`ForcingOutsideClassSet` 已迁移固定源 `ClassFibers.outsideClassSet:255–262` 与 `outsideClassSet_denseBelow:265–306`。对每个更强内部 Cohen 条件，从非良序性及实际商名字取得 canonical 类，复用现有支撑构造、二集合并基数界及扩图，覆盖完整条件支撑和标签；用 `actual_labelClass/class_unique` 保留同一个实际类并得到本地名字。若右因子为单位，`sub_one` 与根／值域／固定子群唯一性将该名字送回完整原根局部列表，与持久非成员矛盾，因此因子非平凡。
 
-非良序性直接排除这个实际单射，再用已有成员正则性取得稠密的持久列表外成员；未把不存在单射或逆图当作额外前提。`construction_kernel_certificate` 与 `outside_kernel_certificate` 均为普通 `nativeZF` 中的原 `FirstOrder.Derives` 对象闭句证书，量化全部内部 HS 名字、条件与下标。局部载体／序数枚举／根支撑的父输入仍显式保留，其生产者 `ForcingLocalList.construct` 已有。
+`density_kernel_certificate` 是原 `nativeZF` 中同一内部 L 相对化密度闭句的 `FirstOrder.Derives`，由已完成的 L/ZFC 桥消去辅助 Choice；没有向普通 nativeZF 添加对象 Choice。完整见证保留实际条件、新根、右因子、值域／固定子群、条件码、canonical 类及全部更强条件下的排除。
 
-全量验收已通过：9 条命令（5 条 trust=0）退出 0，零警告，37104 项旧声明足迹不变，无新增公理依赖。报告：`verification/uniform-inverse-graph-acceptance.json`。
+全量验收通过：9 条命令（5 条 trust=0）退出 0，零警告，37126 项旧声明足迹不变，无新增公理依赖。报告：`verification/outside-class-set-acceptance.json`。
 
-下一项仍是固定源 `outsideClassSet_denseBelow:265`：把成员与实际商的 canonical 类对齐，扩图覆盖条件支撑及标签，并证明右因子非平凡；随后接 `nonwellorderable_quotient_bijection`。这些及阶段 9–11、最终内部 Con 尚未完成。L、全公理模式、递归与 Proof/Sat 基础继续复用，不重建。
+下一主线为 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`：消费上述见证和已完成的具体商双射，并从既有构造器统一最终父输入。此项、阶段 9–11、最终内部 Con 仍未完成。完整局部列表、逆图、持久列表外成员和实际类密度不再列为待从头证明的基础。
 
 本分支迁移固定 OpenAI PPAC 源证明到 YesMetaZFC 的原对象推导核，继续采用原计划 1–11 阶段。当前仍在第 8 阶段，最终目标尚未完成。
 

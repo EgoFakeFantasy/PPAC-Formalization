@@ -2588,7 +2588,8 @@ def main() -> None:
                                ('forcing_concrete_quotient_bijection', 'ForcingConcreteQuotientBijection', 6),
                                 ('forcing_check_ordinal', 'ForcingCheckOrdinal', 14),
                                 ('forcing_uniform_inverse', 'ForcingUniformInverse', 25),
-                                ('forcing_uniform_inverse_graph', 'ForcingUniformInverseGraph', 22)):
+                                ('forcing_uniform_inverse_graph', 'ForcingUniformInverseGraph', 22),
+                                ('forcing_outside_class_set', 'ForcingOutsideClassSet', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

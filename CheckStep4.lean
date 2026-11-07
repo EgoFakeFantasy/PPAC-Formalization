@@ -14085,4 +14085,10 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingUniformInverseGraph.outsideSentence rho I K B w G F H mul top bound names alpha enum list nalpha Y p)) :=
   ForcingUniformInverseGraph.outside_kernel_certificate rho I K B w G F H mul top bound names alpha enum list nalpha Y p
 
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F mul one mu mark q A Hq labelMap top bit labels E bound names alpha enum list nalpha Y d0 z0 : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingOutsideClassSet.densitySentence rho I K B w G F mul one mu mark q A Hq labelMap top bit labels E bound names alpha enum list nalpha Y d0 z0))) :=
+  ForcingOutsideClassSet.density_kernel_certificate rho I K B w G F mul one mu mark q A Hq labelMap top bit labels E bound names alpha enum list nalpha Y d0 z0
+
 end PPAC.Migration.Step4Checks

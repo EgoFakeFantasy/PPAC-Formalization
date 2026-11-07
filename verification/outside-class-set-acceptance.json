@@ -1,0 +1,199 @@
+{
+  "verified_at": "2026-11-07T19:31:24.765989+11:00",
+  "stage": 8,
+  "base_commit": "29741d8e8199e8e00a69a4f33a3d9f415da085f8",
+  "adapter": "PPAC/Migration/ForcingOutsideClassSet.lean",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingOutsideClassSet.density_kernel_certificate"
+  ],
+  "background": "Original nativeZF and original FirstOrder.Derives of the SAME internal L-relative densitySentence. Existing ConstructibleSource L/ZFC bridge discharges helper Choice. No object Choice is added to ordinary nativeZF; all conditions and names of that same internal L remain quantified.",
+  "source_consumer_chain": [
+    "ClassFibers.outside_localList:224",
+    "ClassFibers.outsideClassSet:255-262",
+    "ClassFibers.outsideClassSet_denseBelow:265-306",
+    "ConcreteQuotients.nonwellorderable_quotient_bijection:401-443"
+  ],
+  "completed": [
+    "For every internal Cohen extension d of d0, obtain an actual further Cohen condition a and a source outsideClassSet witness from nonwellorderability.",
+    "Actual quotientName membership supplies a label and canonical class. actual_labelClass/class_unique identify its literal normalized name at the new root, preserving the SAME class and entire local list.",
+    "Existing exists_support, infinite_union_two_l and extend_through cover the full condition support plus the label. The actual root, right factor, range, fixing subgroup and condition code are retained.",
+    "sub_one, literal root/range/fixing uniqueness and localName_mem_localList contradict persistent exclusion if the right factor is the unit; hence it is nontrivial.",
+    "Closed densitySentence and existing same-L original-kernel replay certify the full internal density and complete actual witness."
+  ],
+  "scope_boundary": "Actual source denseBelow at a supplied supported root, complete LocalName carrier and ordinal enumeration. Their existing producers, including ForcingLocalList.construct, are retained; shared final parent instantiation is not claimed. The endpoint is the same-L relative object theorem, not an ordinary-V Choice theorem or final Con. It does not yet assemble nonwellorderable_quotient_bijection or the final common system.",
+  "outsideClassSet_denseBelow_proved": true,
+  "canonical_class_identified_and_normalized": true,
+  "full_condition_support_covered": true,
+  "nontrivial_right_factor_proved": true,
+  "nonwellorderable_quotient_bijection_proved": false,
+  "actual_final_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Feed this actual class/root/factor/condition witness into the existing ConcreteQuotientBijection.quotient_bijection_above proof and complete source nonwellorderable_quotient_bijection.",
+    "Instantiate the final common parent system from existing constructors; do not rebuild L, full schemas, recursion, local-name enumeration or Proof/Sat foundations.",
+    "Original stages 9-11, final all-internal/nonstandard proof-code Con, and original Comparator."
+  ],
+  "reuse_producers": [
+    "ForcingUniformInverseGraph.outside_localList",
+    "ForcingQuotientName.mem_quotient/hs_and_fixed",
+    "ConstructionCohenCompatibility.exists_support",
+    "ExistingCardinalBounds.infinite_union_two_l",
+    "ConstructionDiagramCoverage.extend_through",
+    "ForcingRelationClass.actual_labelClass",
+    "ForcingRelationClassMove.class_unique",
+    "ForcingDiagramPoset.sub_one",
+    "ForcingLocalList.localName_mem_localList",
+    "ConstructibleSource"
+  ],
+  "build_jobs": 3196,
+  "audited_declarations": 37136,
+  "old_footprints_unchanged": 37126,
+  "new_declarations": 10,
+  "file_hashes": 2751,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "OutsideClassSetAudit.tmp.lean",
+        "length": 710,
+        "sha256": "413a3da778eb1ce8a8d5f5b612e601ad3ccc985abe78c54df03d83c429fe9ca8"
+      },
+      {
+        "path": "verification/outside-class-set-baseline.tmp.json",
+        "length": 14068416,
+        "sha256": "426608d5df0532506123bd36182a92df353356565f217383107b5185ac0bfc5b"
+      },
+      {
+        "path": "verification/outside-class-set-check.tmp.log",
+        "length": 1026,
+        "sha256": "762005550ba69b474f950d92c2915b24ca7b3b76012ff0d0645ed027f03a60a4"
+      },
+      {
+        "path": "verification/outside-class-set-build.tmp.log",
+        "length": 110,
+        "sha256": "6ded2fcac0ef4b7e63af7c2a39c74eef0003c1e1e7e38033a844c43e847a7448"
+      },
+      {
+        "path": "verification/outside-class-set-audit.tmp.log",
+        "length": 11941,
+        "sha256": "c4059acb0e273d687531e8ead69a34a4071ddd71b361ee04b772178eb35ae8e6"
+      }
+    ],
+    "logical_bytes": 14082203.0,
+    "free_before": 86239264768,
+    "free_after": 86253355008
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3196,
+    "log": "verification/outside-class-set-post-cleanup.log"
+  }
+}

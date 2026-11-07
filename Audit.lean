@@ -37771,3 +37771,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingUniformInverseGraph.outsideSentence
 #print axioms PPAC.Migration.ForcingUniformInverseGraph.outside_models
 #print axioms PPAC.Migration.ForcingUniformInverseGraph.outside_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOutsideClassSet.Witness
+#print axioms PPAC.Migration.ForcingOutsideClassSet.denseBelow
+#print axioms PPAC.Migration.ForcingOutsideClassSet.witness
+#print axioms PPAC.Migration.ForcingOutsideClassSet.witness_freeClosed
+#print axioms PPAC.Migration.ForcingOutsideClassSet.witness_semantics
+#print axioms PPAC.Migration.ForcingOutsideClassSet.densityResult
+#print axioms PPAC.Migration.ForcingOutsideClassSet.premises
+#print axioms PPAC.Migration.ForcingOutsideClassSet.densitySentence
+#print axioms PPAC.Migration.ForcingOutsideClassSet.density_models
+#print axioms PPAC.Migration.ForcingOutsideClassSet.density_kernel_certificate
