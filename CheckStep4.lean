@@ -14221,4 +14221,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top O f A X x0 p : Fi
       (ForcingCompletionGraph.sentence rho I K B w G F mul top O f A X x0 p)) :=
   ForcingCompletionGraph.kernel_certificate rho I K B w G F mul top O f A X x0 p
 
+-- Actual source orbit graph, with partial uniqueness proved from label separation/support.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top one values c lo hi root J H sigma labels : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingPartialOrbitGraph.sentence rho I K B w G F mul top one values c lo hi root J H sigma labels)) :=
+  ForcingPartialOrbitGraph.kernel_certificate rho I K B w G F mul top one values c lo hi root J H sigma labels
+
 end PPAC.Migration.Step4Checks
