@@ -1300,3 +1300,9 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 `ForcingNonwellorderableQuotient.nonwellorderable` 迁移 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`，从任意原内部条件实际构造支撑覆盖根、完整局部列表、列表外类见证、第二根、全体同根记录／投影和最终 HS 双射图，证明最终限制条件强于原条件。`kernel_certificate` 是原 nativeZF 中同一内部 L 的纯对象闭句证书，消去辅助 Choice／全局序；未假定任何局部／Outside／记录／最终双射见证。
 
 仍有 41 个原始／源全局条件等待由现成具体构造器统一实例化，故仍在阶段 8。直接源消费者是 `UniformImages.nonwellorderable_image_bijection:243–276`，264 行调用；阶段 9–11、原 Comparator 和最终内部 Con 未完成。9 条验收命令／5 条 trust=0 均退出 0，全部 37145 项旧足迹不变，零警告，无新增公理依赖。报告：verification/nonwellorderable-quotient-acceptance.json。
+
+## 原阶段 8 全局装配门完成（2026-11-07）
+
+`ForcingConcreteSystem.kernel_certificate` 在原 nativeZF／FirstOrder.Derives 中证明同一内部 L 的无外部系统参数存在句：40 个内部集合、全部 37 原始系统条件及同一组见证上的全称非良序商稠密双射后果。实际 ω 由原生 ZF 提供，塔的 hRec／hMatrix／最终 Row 原样保留，强迫／群／滤子／标签／界全由已有生产者构造。native K 是 Cohen κ=ω₁，seedK 是饱和预算 μ；辅助 Choice／序由既有 L/ZFC 消去。
+
+这关闭原第 8 阶段最后的全局父输入装配门，下一活动阶段为 9；SVC／ACwo／全局商编码单射／¬AC、PP/Main、全部内部／非标准 Proof/Con、原 Comparator 与最终终验仍未完成。9 条命令／5 条 trust=0 均退出 0，37152 项旧足迹不变，零警告，无新增公理依赖。报告：verification/concrete-system-acceptance.json。

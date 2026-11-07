@@ -1,0 +1,222 @@
+{
+  "verified_at": "2026-11-07T21:08:59.684719+11:00",
+  "stage": 9,
+  "original_stage8_global_assembly_exit_gate_passed": true,
+  "base_commit": "6a827cdd28fdd0429cb37e38decd5a46147aef94",
+  "adapter": "PPAC/Migration/ForcingConcreteSystem.lean",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingConcreteSystem.kernel_certificate"
+  ],
+  "object_sentence": "Original FirstOrder.Derives nativeZF [] (fo_sentence (ConstructibleGround.relative ForcingConcreteSystem.sentence)). The closed sentence EXISTS forty actual internal sets, Core with all 37 static concrete-system guards, and Outcome universally quantified over all internal HS relation names, their actual quotients and original Product/WithTop conditions.",
+  "background": "Original nativeZF. The SAME existing internal L supplies helper Choice and global order through ConstructibleSource; neither object Choice nor an inaccessible is added to ordinary nativeZF. Native omega existence discharges the last basic input. No supplied omega, system, tower, history, row, presentation, filter, coding, bound or final bijection remains in the object sentence.",
+  "source_declarations": [
+    "mu / aleph_one_le_mu / mu_countable_power / mu_regular:61-72",
+    "saturation K / T and final cardinal/merger/complement data:85-113",
+    "I / kappa / P / S:117-136"
+  ],
+  "source_consumers": [
+    "ConcreteQuotients.nonwellorderable_quotient_bijection:401-443",
+    "UniformImages.nonwellorderable_image_bijection:243-276, direct call at 264",
+    "Original stage 9 SAME-system SVC/ACwo/global quotient-injection/Choice-failure applications"
+  ],
+  "completed": [
+    "Directly consume ConcreteBase.exists_tower_data and preserve its SAME actual hRec, hMatrix, Context, index and final Row. Produce the actual weighted target, mergers, all ideals and full cardinal/complement witnesses without rebuilding saturation.",
+    "Produce I=Hartogs(mu), native K=Cohen kappa=internal omega1, source saturation budget seedK=mu, mu=successor continuum and the existing Base zero/one/two. Keep actual unit distinct from the ordinal-one/bit slots.",
+    "Construct the actual internal Cohen/product/WithTop presentation, permutation group and small-support filter, injective ordinal identity coding, label HS name and universally fixed literal bound using existing producers.",
+    "Construct ALL 37 static guards, and actually apply ForcingNonwellorderableQuotient on the SAME witnesses for every internal HS relation name, actual quotient name and original condition.",
+    "The existential object sentence, its full semantics, and ordinary nativeZF SAME-L kernel certificate have NO remaining system or omega parameter. This closes the documented original stage 8 global-parent assembly gate."
+  ],
+  "internal_existential_sets_including_omega": 40,
+  "static_source_guards_actually_constructed": 37,
+  "supplied_system_or_omega_parameters_in_object_sentence": 0,
+  "same_history_context_matrix_final_row_preserved": true,
+  "same_system_universal_dense_quotient_bijection_consumed": true,
+  "actual_final_global_parent_system_instantiated": true,
+  "standalone_concrete_full_schema_exports_newly_claimed": false,
+  "original_stage9_model_applications_complete": false,
+  "final_PP_Main_complete": false,
+  "final_internal_Con_proved": false,
+  "original_Comparator_verified": false,
+  "scope_boundary": "The SAME actual source concrete system and its uniform quotient consequence exist in the original object derivation kernel. This does not establish SVC, ACwo, the global quotient/injection application, not-AC, PP/Main, the final all-internal/nonstandard Proof/Con transfer or original Comparator. Existing fixed-schema forcing/action/HS mathematics is retained; consuming its supplied Core parents in stage 9 is specialization work, not missing foundations.",
+  "pending": [
+    "Original stage 9: consume the SAME constructed Core/Outcome in the source model applications SVC, ACwo, global quotient encoding/injection and Choice failure. Direct quotient consumer: UniformImages.nonwellorderable_image_bijection:243-276, call at 264.",
+    "Original stage 10: source reverse_injection_dense / forces_PP / forces_target and ZF/U-specific all-internal/nonstandard proof-code consistency transfer using existing Proof/Sat foundations.",
+    "Original stage 11: final object Con theorem, clean checkout reproduction and residual source-language/theory/background gates. Original stage 4 Comparator remains separately unverified."
+  ],
+  "reuse_producers": [
+    "ForcingNonwellorderableQuotient",
+    "ConstructionConcreteBase",
+    "ConstructionConcreteTower",
+    "ConstructionSaturationIndex",
+    "ConstructionIdealProbes",
+    "ConstructionSaturationCardinals",
+    "ForcingProductFamily",
+    "ForcingLabelPermutations",
+    "ForcingSupportFilter",
+    "ForcingNormalFilter",
+    "ForcingLabelSet",
+    "ForcingPowerName",
+    "ForcingLabelBound",
+    "ExistingOrdinalEnumeration",
+    "ConstructibleSource",
+    "ConstructibleGround",
+    "ModelTransfer"
+  ],
+  "build_jobs": 3199,
+  "audited_declarations": 37166,
+  "old_footprints_unchanged": 37152,
+  "new_declarations": 14,
+  "file_hashes": 2754,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "ConcreteSystemAudit.tmp.lean",
+        "length": 967,
+        "sha256": "244a5218f8990c583c252826cfbf4317f423c7f6c67433c9cdfc91cea43c63e9"
+      },
+      {
+        "path": "verification/concrete-system-baseline.tmp.json",
+        "length": 14109848,
+        "sha256": "85952b3db7fcec17e2a14dab479be18ebc619668229566b3d08e69580de7ffd1"
+      },
+      {
+        "path": "verification/concrete-system-check.tmp.log",
+        "length": 109,
+        "sha256": "533f2dbc9fae1a85c010be5f5e11e2b02702b7ad4138df6d3f9053dc589ad13e"
+      },
+      {
+        "path": "verification/concrete-system-build.tmp.log",
+        "length": 43,
+        "sha256": "10b0418b679abf24c6eae868fc2c90d4cb49d3751fd238b2fe3ce14c5d425fe9"
+      },
+      {
+        "path": "verification/concrete-system-audit.tmp.log",
+        "length": 22909,
+        "sha256": "3bb0ffaae4e80ce6f88431aa0f07aa6ef1303c0e1ae058f3f1fd3fe724e763be"
+      }
+    ],
+    "free_before": 84532441088,
+    "logical_bytes": 14133876,
+    "free_after": 84546383872
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "environment": {
+      "LEAN_NUM_THREADS": "1"
+    },
+    "exit_code": 0,
+    "build_jobs": 3199,
+    "log": "verification/concrete-system-post-cleanup.log",
+    "current_snapshot_hashes_rechecked": 2754,
+    "temporary_files_remaining": 0,
+    "live_lean_lake_processes": 0
+  }
+}

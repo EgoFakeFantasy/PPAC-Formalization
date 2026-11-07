@@ -37800,3 +37800,18 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingNonwellorderableQuotient.sentence
 #print axioms PPAC.Migration.ForcingNonwellorderableQuotient.models
 #print axioms PPAC.Migration.ForcingNonwellorderableQuotient.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingConcreteSystem.Core
+#print axioms PPAC.Migration.ForcingConcreteSystem.construct_core
+#print axioms PPAC.Migration.ForcingConcreteSystem.Outcome
+#print axioms PPAC.Migration.ForcingConcreteSystem.consequences
+#print axioms PPAC.Migration.ForcingConcreteSystem.construct
+#print axioms PPAC.Migration.ForcingConcreteSystem.coreFormula
+#print axioms PPAC.Migration.ForcingConcreteSystem.coreFormula_freeClosed
+#print axioms PPAC.Migration.ForcingConcreteSystem.coreFormula_semantics
+#print axioms PPAC.Migration.ForcingConcreteSystem.outcomeFormula
+#print axioms PPAC.Migration.ForcingConcreteSystem.outcomeFormula_freeClosed
+#print axioms PPAC.Migration.ForcingConcreteSystem.outcomeFormula_semantics
+#print axioms PPAC.Migration.ForcingConcreteSystem.sentence
+#print axioms PPAC.Migration.ForcingConcreteSystem.models
+#print axioms PPAC.Migration.ForcingConcreteSystem.kernel_certificate

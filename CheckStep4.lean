@@ -14105,4 +14105,9 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingNonwellorderableQuotient.sentence rho I K B w G F mul one mu history mark H C incoming base labelMap top bit labels E bound zero high Q values groundTop seedMul seedUnit seedMark seedH seedC ordinalOne u seedK stageBound P outerF name groundValues lo Power continuum initial))) :=
   ForcingNonwellorderableQuotient.kernel_certificate rho I K B w G F mul one mu history mark H C incoming base labelMap top bit labels E bound zero high Q values groundTop seedMul seedUnit seedMark seedH seedC ordinalOne u seedK stageBound P outerF name groundValues lo Power continuum initial
 
+
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingConcreteSystem.sentence)) :=
+  ForcingConcreteSystem.kernel_certificate
+
 end PPAC.Migration.Step4Checks
