@@ -1,10 +1,10 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：源Cohen极大反链对象定理（2026-11-08）
+## 当前迁移：完整 localized_maximum 对象模式（2026-11-08）
 
-ForcingMaximalAntichain迁移OrdinalChoice.maximal_antichain:16–49在localized_maximum所用的Cohen实例。对任意内部Cohen条件族D，实际构造内部A⊆D，保留所有成员／所有共同下界量词，并为每个d∈D构造实际共同加强条件。复用已接受的内部序数枚举、原生超限递归、分离和带可定义反例集合的内部序数归纳；显式贪心算子及完整历史均实际构造，不假定极大性、历史或宿主良基性，不新建通用Zorn／递归／选择后端。
+ForcingLocalizedMaximum迁移固定源OrdinalChoice:64–147：实际构造同一稠密Cohen候选族／极大反链，用原生Collection及已有有界内部选择取得任意秩HS名字族，再构造实际激活图与HS混合名字。精确q支撑使激活固定；实际反链消去相容性前提，所有更强条件通过localized_existential、实际共同下界、限制／Cohen并、混合等式及完整元组等值替换完成密度论证。结论位于原Cohen条件d₀及预定q，不缩成仅有进一步加强条件。
 
-原nativeZF核给出内部L相对化证书，地面Choice由现有L消去。完整验收见verification/maximal-antichain-acceptance.json。witness_placement／localized_existential已完成；原阶段9下一继续localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
+原nativeZF推导核给出内部L相对化完整模式，保留原背景守卫及精确Fix(q.range)，地面Choice由现有L消去，不假定名字族／混合／相容／稠密性或最终强迫结论。完整验收见verification/localized-maximum-acceptance.json。当前仍为原阶段9；下一沿源ground_family_choice（接通indexedGraph）→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -14,9 +14,9 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-远端55f4b4e的CI42386010526已完整成功：37297项声明、零警告，固定依赖／75份源哈希／5项跨平台回归通过。兼容性修复后连续三轮远端验收成功；本批完整本地验收后再一次正常推送积累提交。
+兼容性修复后前三轮远端CI均完整成功。已一次上传四个验收提交至c592fe5；新CI42393495880的固定检出、依赖、源码及跨平台回归已通过，目前仍在同一次全量构建／审计。此后新增工作先本地验收保存，不叠加推送。
 
-当前仍为原阶段9。witness_placement与localized_existential已迁移，ACwo下一直接源码消费者是OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement与localized_existential已迁移，ACwo下一直接源码消费者是OrdinalChoice.ground_family_choice→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 
@@ -33,7 +33,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes及ACwo逻辑桥原核证书已验收 | 在同一系统接 SVC、ACwo、全局商编码单射；¬AC强迫应用已完成，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
+| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum原核模式已接通 | 在同一系统接 SVC、ACwo、全局商编码单射；¬AC强迫应用已完成，沿 UniformImages 等真实依赖保留全部量词；复用已有模式数学 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 

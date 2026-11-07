@@ -1041,3 +1041,4 @@ import PPAC.Migration.ForcingOrdinalChoice
 import PPAC.Migration.ForcingWitnessPlacement
 import PPAC.Migration.ForcingLocalizedExistential
 import PPAC.Migration.ForcingMaximalAntichain
+import PPAC.Migration.ForcingLocalizedMaximum

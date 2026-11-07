@@ -14185,4 +14185,11 @@ example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sent
     (ConstructibleGround.relative ForcingMaximalAntichain.sentence)) :=
   ForcingMaximalAntichain.kernel_certificate
 
+-- Actual unrestricted-rank HS maximum at EXACT original d0 and prescribed q.
+example {k n : Nat} (rho : Fin 7 → Fin k) (w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 : Fin k)
+    (v : Fin n → Fin k) (phi : Source.Formula (n+1)) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingLocalizedMaximum.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 v phi))) :=
+  ForcingLocalizedMaximum.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 v phi
+
 end PPAC.Migration.Step4Checks

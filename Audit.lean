@@ -38039,3 +38039,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingMaximalAntichain.sentence
 #print axioms PPAC.Migration.ForcingMaximalAntichain.models
 #print axioms PPAC.Migration.ForcingMaximalAntichain.kernel_certificate
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.ChoiceAt
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.choiceAt
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.choiceAt_freeClosed
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.choiceAt_semantics
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.choose_family
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.candidates
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.activations
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.localized_maximum
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.resultFormula
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.resultFormula_freeClosed
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.resultFormula_semantics
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.sentence
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.models
+#print axioms PPAC.Migration.ForcingLocalizedMaximum.kernel_certificate
