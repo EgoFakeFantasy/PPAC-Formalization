@@ -14198,4 +14198,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F support mul t X f : Fin k
       (ForcingIndexedGraph.sentence rho I K B w G F support mul t X f)) :=
   ForcingIndexedGraph.kernel_certificate rho I K B w G F support mul t X f
 
+-- Actual ground-indexed family choice at the prescribed Cohen d0 and q.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 top X checkedX family zq : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingGroundFamilyChoice.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 top X checkedX family zq))) :=
+  ForcingGroundFamilyChoice.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 Jp Hp Jq Hq z0 top X checkedX family zq
+
 end PPAC.Migration.Step4Checks

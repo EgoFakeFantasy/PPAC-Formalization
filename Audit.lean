@@ -38089,3 +38089,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingIndexedGraph.sentence
 #print axioms PPAC.Migration.ForcingIndexedGraph.models
 #print axioms PPAC.Migration.ForcingIndexedGraph.kernel_certificate
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.indexedGraph_choiceForFamily
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.Selected
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.selected
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.selected_freeClosed
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.selected_semantics
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.choose_family
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.ground_family_choice
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.resultFormula
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.resultFormula_freeClosed
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.resultFormula_semantics
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.sentence
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.models
+#print axioms PPAC.Migration.ForcingGroundFamilyChoice.kernel_certificate

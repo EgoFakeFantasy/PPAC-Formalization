@@ -1,10 +1,10 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：实际 indexedGraph 及完整函数图（2026-11-08）
+## 当前迁移：实际 ground_family_choice（2026-11-08）
 
-ForcingIndexedGraph迁移固定源GraphFusion:16–93。给定实际内部函数图f及共同支撑，直接复用原生Collection、唯一check／有序对名字和collect，构造实际内部名字族与字面indexedGraph。输出同时保留全部条件权重的精确边方程、HS、原共同支撑、实际check(X)，以及全部内部条件上的完整functionOn（含无垃圾边及唯一值）、成员／应用双向定律；量词遍历全部内部集合和任意秩HS名字。
+ForcingGroundFamilyChoice迁移固定源OrdinalChoice:301–379：已完成indexedGraph_choiceForFamily和完整ground_family_choice。对全部内部i∈X调用已验收localized_maximum，见证均位于原Cohen d₀及同一个预定q；实际条件码唯一性统一输出条件。原生Collection先界定任意秩HS见证，再用现有有界内部选择构造实际函数族f，随后调用已完成indexedGraph构造实际选择图。精确Fix(q.range)、完整functionOn及choiceForFamily均保留，不给定选中名字族或输出图。
 
-端点是普通nativeZF原推导核的FirstOrder.Derives，无地面Choice前提，也无需L相对化。未新增基础或假定输出图。localized_maximum已完成；当前仍为原阶段9，下一直接源消费者为OrdinalChoice.indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部／非标准证明码Con及Comparator仍未完成。验收登记：verification/indexed-graph-acceptance.json。
+端点是nativeZF原推导核中的内部L相对化对象句子；地面Choice由现成L解释消去。indexedGraph本身的普通ZF原核证书仍保留。当前仍为原阶段9；真正下一源消费者是ground_family_choice_dense→实际forces_ACwo。已有ForcingOrdinalDecision.forces_ordinal_decide及ForcingOrdinalChoice的DenseChoice逻辑桥直接复用，不重证序数保存或另建选择逻辑。实际DenseChoice／ACwo、SVC／全局单射、PP/Main、全部内部／非标准证明码Con及Comparator仍未完成。验收登记：verification/ground-family-choice-acceptance.json。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -14,9 +14,9 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-兼容性修复后前三轮远端CI均完整成功。已一次上传四个验收提交至c592fe5；新CI42393495880的固定检出、依赖、源码及跨平台回归已通过，目前仍在同一次全量构建／审计。此后新增工作先本地验收保存，不叠加推送。
+兼容性修复后连续四轮远端CI完整成功；最新42393495880（c592fe5）的实际日志确认37379项声明通过、零警告，固定检出／依赖／源码和五项跨平台回归全部通过。此后新增工作先完成本地全量验收，再统一推送；不叠加尚在运行中的提交。
 
-当前仍为原阶段9。witness_placement、localized_existential、localized_maximum及indexedGraph已迁移，ACwo下一直接源码消费者是OrdinalChoice.indexedGraph_choiceForFamily→ground_family_choice→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
+当前仍为原阶段9。witness_placement、localized_existential、localized_maximum、indexedGraph及ground_family_choice已迁移，ACwo下一直接源码消费者是OrdinalChoice.ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 
