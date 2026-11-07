@@ -1310,3 +1310,7 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 ## 原阶段9：kernel及完整像类关系（2026-11-07）
 
 固定UniformImages:16–169已迁移。原nativeZF的image_kernel_certificate实际存在量化同一支撑/kernel图，在同一见证上证明像类关系的Monotone/Congruent/Regular、Moves及在完整mapsTo前提下的全称One/Injective；不接受图／支撑／固定性／最终定律输入。此前27项正文保留，追加16项；全量本地验收3200构建、37209声明、全部37193旧足迹不变、零警告／无新公理依赖。见verification/image-class-acceptance.json。CI依赖引导及规范文本哈希已修复，本地完整验收和干净LF源码预检通过；远端Linux CI单独核对。下一源imageQuotient／图及双射:177–276，原阶段9及最终内部Con仍未完成。
+
+## 原阶段9：实际 imageQuotient／imageQuotientGraph（2026-11-08）
+
+固定UniformImages:177–240由ForcingImageQuotient迁移。nativeZF原核存在句构造同一支撑/kernel/商名/像图四个内部集合，保留原始收集器、HS及同一支撑、全称成员刻画和在完整源surjection前提下的全称mapsTo/surjection/injection；不接受四个见证、代表或最终函数定律输入。仅公开复用两项既有参数传输，旧模块正文不变。完整本地验收3201构建／37224声明，全部37209旧足迹不变，15项新增声明，零警告／无新公理依赖。报告：verification/image-quotient-acceptance.json。远端兼容修复bc9367f的冷构建尚在运行，本批尚未上传。下一源nonwellorderable_image_bijection:243–276；原阶段9、PP/Main及最终内部Con未完成。

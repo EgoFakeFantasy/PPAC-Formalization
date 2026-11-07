@@ -1119,4 +1119,16 @@ theorem image_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K two w G 
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (imageSentence rho I K two w G F mul top h A B)) :=
   ModelTransfer.derives (fun _ hM => image_models rho I K two w G F mul top h A B hM)
 
+
+/-- Public reuse of the existing parameter-slot transport; the raw graph and all collector witnesses are retained. -/
+theorem kernel_graph_transport {k n : Nat} (env : Fin k → M.Carrier .set)
+    (other : Fin n → M.Carrier .set) (base : Fin k → Fin n) (he : ∀ j, other (base j) = env j)
+    (rho : Fin 7 → Fin k) (G F mul top h A B : Fin k) (E : M.Carrier .set) :
+    ForcingRelationGraph.Graph (orderFormula (rho 0) mul) (relation rho G F mul h A B)
+      env (rho 6) top A A E ↔
+    ForcingRelationGraph.Graph (orderFormula (base (rho 0)) (base mul))
+      (relation (fun j => base (rho j)) (base G) (base F) (base mul) (base h) (base A) (base B))
+      other (base (rho 6)) (base top) (base A) (base A) E :=
+  kernel_graph_reindex env other base he rho G F mul top h A B E
+
 end PPAC.Migration.ForcingKernelImage

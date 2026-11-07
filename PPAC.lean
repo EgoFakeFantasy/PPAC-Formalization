@@ -1032,3 +1032,4 @@ import PPAC.Migration.ForcingAssignedParentSystem
 import PPAC.Migration.ForcingNonwellorderableQuotient
 import PPAC.Migration.ForcingConcreteSystem
 import PPAC.Migration.ForcingKernelImage
+import PPAC.Migration.ForcingImageQuotient

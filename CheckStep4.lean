@@ -14130,4 +14130,9 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top h A B : Fin k) 
       (SetTheory.Definitional.Project.fo_sentence (ForcingKernelImage.imageSentence rho I K two w G F mul top h A B)) :=
   ForcingKernelImage.image_kernel_certificate rho I K two w G F mul top h A B
 
+example {k : Nat} (rho : Fin 7 → Fin k) (I K two w mu G F mul c top bit A h B : Fin k) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (SetTheory.Definitional.Project.fo_sentence (ForcingImageQuotient.sentence rho I K two w mu G F mul c top bit A h B)) :=
+  ForcingImageQuotient.kernel_certificate rho I K two w mu G F mul c top bit A h B
+
 end PPAC.Migration.Step4Checks

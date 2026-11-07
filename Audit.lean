@@ -37861,3 +37861,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingKernelImage.imageSentence
 #print axioms PPAC.Migration.ForcingKernelImage.image_models
 #print axioms PPAC.Migration.ForcingKernelImage.image_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingKernelImage.kernel_graph_transport
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.quotient_transport
+#print axioms PPAC.Migration.ForcingImageQuotient.mem_imageQuotient
+#print axioms PPAC.Migration.ForcingImageQuotient.image_total
+#print axioms PPAC.Migration.ForcingImageQuotient.image_onto
+#print axioms PPAC.Migration.ForcingImageQuotient.app_imageQuotientGraph
+#print axioms PPAC.Migration.ForcingImageQuotient.image_graph_forces
+#print axioms PPAC.Migration.ForcingImageQuotient.functionLaws
+#print axioms PPAC.Migration.ForcingImageQuotient.functionLaws_semantics
+#print axioms PPAC.Migration.ForcingImageQuotient.membershipLaw
+#print axioms PPAC.Migration.ForcingImageQuotient.membershipLaw_semantics
+#print axioms PPAC.Migration.ForcingImageQuotient.result
+#print axioms PPAC.Migration.ForcingImageQuotient.sentence
+#print axioms PPAC.Migration.ForcingImageQuotient.models
+#print axioms PPAC.Migration.ForcingImageQuotient.kernel_certificate

@@ -1,16 +1,17 @@
-# 当前状态：原 1–11 阶段（2026-11-07）
+# 当前状态：原 1–11 阶段（2026-11-08）
 
-## 本批验收（2026-11-07）：原阶段 9 的完整 imageClassRelation 定律
+## 本批验收（2026-11-08）：原阶段9的实际像商及像图
 
-固定源 UniformImages:93–169 的像类关系定义、单调／正则／等号不变、移动、单值和单射性已迁移。image_kernel_certificate 在原 nativeZF／FirstOrder.Derives 中实际存在量化同一个三名字支撑和 HS kernel 图，并在这些见证上给出全部定律；对任意内部原条件，保留完整 mapsTo/functionOn 前提以取得 One／Injective。没有额外输入 kernel 图、图固定性或最终定律。
+固定源 UniformImages:177–240 已迁移至 ForcingImageQuotient。kernel_certificate 在 nativeZF／FirstOrder.Derives 原核中，实际存在量化同一支撑 S、kernel 图 E、源商名 Q 和像图 J；保留原始 Graph／Quotient 收集器、HS 及同一支撑、全内部类／条件的成员 iff isClass，并对任意内部条件，在完整原 surjection 前提下证明同一 J 的 mapsTo／surjection／injection。没有输入 S/E/Q/J、类代表、函数性或 Total/One/Onto/Injective 定律。
 
-类名字直接复用现有实际分离构造／字面唯一性、relationClass_move 和 HS 作用闭包；量词后仅以已有 atomic_congr／force_congr 传输同一图和递归见证。原有27项 kernel 正文保持逐字节不变，追加16项直接源消费者。下一项是 imageQuotient／imageQuotientGraph:177–240，再接 nonwellorderable_image_bijection:243–276。
+直接复用现有 quotientName／relationClass／relationGraph 构造和完整函数定理；仅将既有 kernel／商名的私有参数传输公开为两个复用接口，原有模块正文保持逐字节不变。没有重建 L、模式、递归或其他底座。下一源消费者为 nonwellorderable_image_bijection:243–276。
 
-全量本地验收：3200 构建任务、37209 项声明；全部37193项旧足迹不变；9条命令（5条trust=0）退出0，零警告、无新增公理依赖；2758个当前规范文本哈希已复核。报告：verification/image-class-acceptance.json。
+完整本地验收：3201 构建任务、37224 项声明；全部37209项旧足迹不变，15项新增声明；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖；2759个规范文本哈希已复核。报告：verification/image-quotient-acceptance.json。
 
-CI兼容修复：工作流先检出固定供体／源并执行lake update，再运行源码审计；活动源码锁统一为仅CRLF→LF的严格文本哈希。五项回归和无Lean缓存的Git LF源码预检均通过；本地验收与远端Linux CI分开记录，后者必须核对本次推送的实际运行。报告：verification/ci-compatibility-acceptance.json。
+CI与本地验收分开：已上传的 bc9367f 修复了依赖引导／CRLF-LF源码锁，远端固定检出、依赖和源码回归已通过；其完整Linux冷构建仍在运行。本批先保留本地，不为此重复触发CI，后续核对真实终态再上传。历史七次失败日志均确认是相同的依赖未下载错误。
 
-当前仍在原阶段9。像商图／双射及SVC、ACwo、全局商编码单射、¬AC尚未全部接完；第10 PP/Main／全部内部与非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
+仍在原阶段9。非良序像双射及 SVC、ACwo、全局商编码单射、¬AC 模型应用尚未全部闭合；第10 PP/Main／全部内部与非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
+
 
 | 原阶段 | 已完成 | 真实未完项 |
 |---|---|---|
@@ -22,7 +23,7 @@ CI兼容修复：工作流先检出固定供体／源并执行lake update，再�
 | 6 背景／解释／universe | 同一任意原生 ZF 模型内部完整 L/ZFC、原生与源全模式、Choice/order/非空、逐点域与解释背景实际消去 | 原范围已完成；内部 Proof/Con 归 10 |
 | 7 强迫前端 | 固定 ZF 公理与全模式原核证书、实际作用／滤子／全秩 HS 合同 | 第 8 已给出实际系统；同一系统的模型应用归 9，全部内部码归 10 |
 | 8 构造核心 | 同一 Base/T、饱和历史／转移／最终行、完整选择器／轨道／记录和 Assigned 图、实际局部列表及完整非良序商稠密双射均已验收；ForcingConcreteSystem 在无参数原核存在句内构造全部 37 原始条件／40 内部集合并消费同一系统全称结论 | 全局装配门已完成；后续模型应用归 9 |
-| 9 模型应用 | 同一实际 Core／Outcome；固定源 kernelGraph、同值应用／类及完整imageClassRelation定律原核证书已验收 | 同一系统的 SVC、ACwo、全局商编码单射、¬AC；模型应用端点未验收 |
+| 9 模型应用 | 同一实际 Core／Outcome；固定源 kernelGraph、同值应用／类、完整imageClassRelation、实际像商及像图函数原核证书已验收 | 同一系统的 SVC、ACwo、全局商编码单射、¬AC；模型应用端点未验收 |
 | 10 PP/Main/内部 Con | 源 Main 链、Con 固定规格及底座通用 Proof/Sat 已有 | 全秩 PP/Main、ZF/U 专用内部检查、全部非标准矛盾码传输、最终闭句 |
 | 11 终验 | 审计工具现成 | 最终主定理终验未开始 |
 
@@ -42,7 +43,7 @@ CI兼容修复：工作流先检出固定供体／源并执行lake update，再�
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
 | 8 已完成 | component_selector_dense → OrbitAssignments → assignmentGraph_bijection → quotient_bijection_above → nonwellorderable_quotient_bijection → 同一具体系统全局实例 | 同一实际塔／hRec／hMatrix／最终行、全部内部参数／商／记录及图构造器已复用 | ForcingConcreteSystem.kernel_certificate 无系统输入地存在量化全部内部见证，并全称消费源商双射；全量验收见 concrete-system-acceptance.json。下一活动行是 9 |
-| 9 当前 | UniformImages → Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端；kernelGraph／同值类／imageClassRelation已完成，下一imageQuotient／像商图与双射 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
+| 9 当前 | UniformImages → Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端；kernelGraph／同值类／imageClassRelation及像商图已完成，下一非良序像双射 | SVC、ACwo、全局商编码单射、¬AC，保留源全部量词 |
 | 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |

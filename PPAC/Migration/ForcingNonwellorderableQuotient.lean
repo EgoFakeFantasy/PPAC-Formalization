@@ -598,4 +598,15 @@ theorem kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul on
 
 
 
+
+/-- Reuse the existing quotient-name transport on identical family and collector witnesses. -/
+theorem quotient_transport {k n : Nat}
+    (env : Fin k → M.Carrier .set) (other : Fin n → M.Carrier .set)
+    (base : Fin k → Fin n) (he : ∀ i, other (base i) = env i)
+    (rho : Fin 7 → Fin k) (G F mul I K c t b labels E : Fin k) (name : M.Carrier .set) :
+    ForcingQuotientName.Quotient other (fun j => base (rho j)) (base G) (base F) (base mul) (base I)
+      (base K) (base c) (base t) (base b) (base labels) (base E) name ↔
+      ForcingQuotientName.Quotient env rho G F mul I K c t b labels E name :=
+  quotient_reindex env other base he rho G F mul I K c t b labels E name
+
 end PPAC.Migration.ForcingNonwellorderableQuotient
