@@ -1,0 +1,212 @@
+{
+  "verified_at": "2026-11-07T20:37:23.545839+11:00",
+  "stage": 8,
+  "base_commit": "6342c479166e076c7005f04332feae129d1a01ef",
+  "adapter": "PPAC/Migration/ForcingNonwellorderableQuotient.lean",
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingNonwellorderableQuotient.kernel_certificate"
+  ],
+  "background": "Original nativeZF / FirstOrder.Derives of the SAME internal L-relative sentence. Auxiliary Choice and global order are discharged by the existing ConstructibleSource L/ZFC bridge. No object Choice is added to ordinary nativeZF.",
+  "source_theorem": "ConcreteQuotients.nonwellorderable_quotient_bijection:401-443",
+  "direct_source_consumer": {
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Models/UniformImages.lean",
+    "sha256": "7ffbccd5e4aeab1b7648485220f8fdefddabb61a02355ae6bff95d4c71852518",
+    "declaration": "UniformImages.nonwellorderable_image_bijection:243-276",
+    "call_line": 264
+  },
+  "completed": [
+    "From any original internal Product/WithTop condition and actual HS relation name, obtain a genuine condition, actual stabilizer/small support, and a root covering the name support AND entire original Cohen support.",
+    "Construct the entire LocalName carrier, internal ordinal bijection, local list and check name. Convert its native internal wellorder to the existing Source ordinal predicate using native extensionality, without external well-foundedness.",
+    "Actually consume outsideClassSet_denseBelow to produce a stronger Cohen condition, canonical class, supported root, nontrivial right factor and persistent exclusion.",
+    "Construct the next root, its actual common-parent system, full orbit records/projections and concrete forced quotient bijection. Directly reuse selected_reindex and forcing congruence to preserve the SAME records/classes/quotient under temporary slots.",
+    "Construct the restricted final condition and prove it extends the original Cohen graph and original diagram, yielding a true stronger internal Product condition and actual HS graph with full forced bijection.",
+    "Close the pure object sentence over all original internal conditions and names and obtain original nativeZF same-L Derives. No given local list, outside witness, supported root, assignment/record family or final bijection remains in the public theorem premises."
+  ],
+  "scope_boundary": "The source nonwellorderable_quotient_bijection is proved at 41 explicit primitive/source concrete-system guards. The actual primitive tower/context/history/index/transitions, weighted target, product presentation/filter, label/coding/cardinal parents still require a final shared global instantiation from existing constructors. The existing mathematical producers are present; they are not listed as missing foundations. This is NOT the final PP/Main theorem or internal Con.",
+  "nonwellorderable_quotient_bijection_proved_at_explicit_primitive_parents": true,
+  "arbitrary_original_internal_condition_including_WithTop": true,
+  "actual_stronger_condition_proved": true,
+  "given_local_or_outside_or_record_family_required": false,
+  "primitive_source_guards": 41,
+  "actual_final_global_parent_system_instantiated": false,
+  "final_internal_Con_proved": false,
+  "pending": [
+    "Instantiate the remaining shared primitive/global parents. Reuse ConstructionConcreteBase.TowerData and preserve its existing actual hRec/hMatrix/Row when producing the target; reuse product/group/filter/label/bound constructors.",
+    "Follow the pinned direct consumer UniformImages.nonwellorderable_image_bijection:243-276, call at 264, in the SAME concrete system. Do not restart a generic classFiber/reader route.",
+    "Original stages 9-11, original Comparator and final all-internal/nonstandard proof-code Con remain incomplete."
+  ],
+  "reuse_producers": [
+    "ForcingAssignedParentSystem",
+    "ForcingAssignedParameterConstruction",
+    "ForcingOutsideClassSet",
+    "ForcingConcreteQuotientBijection",
+    "ForcingCodeRanks",
+    "ForcingQuotientName",
+    "ForcingRelationClassMove",
+    "ConstructionDiagramAmalgamation",
+    "ConstructionDiagramCoverage",
+    "ConstructionCohenCompatibility",
+    "ConstructionDescentPlacement",
+    "ForcingLocalList",
+    "ForcingCheckName",
+    "ForcingSupportFilter",
+    "ForcingSupportedNames",
+    "ForcingSupportingRoot",
+    "ForcingSeparation",
+    "ForcingHS",
+    "ConstructibleSource",
+    "ConstructibleGround",
+    "ModelTransfer"
+  ],
+  "build_jobs": 3198,
+  "audited_declarations": 37152,
+  "old_footprints_unchanged": 37145,
+  "new_declarations": 7,
+  "file_hashes": 2753,
+  "current_hashes_verified": true,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "source_hashes_verified": 75,
+  "clean_pins": {
+    "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+    "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738"
+  },
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "cleanup": {
+    "status": "complete",
+    "files": [
+      {
+        "path": "NonwellorderableQuotientAudit.tmp.lean",
+        "length": 567,
+        "sha256": "484305f748ceb4ffd6dec41d62aeff8ecb7d4550b24a20c5a606df3f39afd362"
+      },
+      {
+        "path": "verification/nonwellorderable-quotient-baseline.tmp.json",
+        "length": 14096199,
+        "sha256": "57cae0b2d2c2b78875988aaab126fa2d2022924cf7f5ec6158e6f38b450c0d5e"
+      },
+      {
+        "path": "verification/nonwellorderable-quotient-check.tmp.log",
+        "length": 119,
+        "sha256": "105938d273a696244afd5634bd75754b2e8b0bc0fcda97c0755156544b88d126"
+      },
+      {
+        "path": "verification/nonwellorderable-quotient-build.tmp.log",
+        "length": 43,
+        "sha256": "1b2de3433cd95f0787c80bfcd2e17d950f18298c959f5c9f43fdd5fe5d44adf4"
+      },
+      {
+        "path": "verification/nonwellorderable-quotient-audit.tmp.log",
+        "length": 12750,
+        "sha256": "3a098b99e73ad71b802ad7a147a25c50456df3a55388a3697ecc5997033a73bf"
+      }
+    ],
+    "free_before": 85048397824,
+    "logical_bytes": 14109678,
+    "free_after": 85062406144
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "jobs": 3198,
+    "log": "verification/nonwellorderable-quotient-post-cleanup.log"
+  }
+}

@@ -37792,3 +37792,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAssignedParentSystem.constructionSentence
 #print axioms PPAC.Migration.ForcingAssignedParentSystem.construction_models
 #print axioms PPAC.Migration.ForcingAssignedParentSystem.construction_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.nonwellorderable
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.result
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.result_freeClosed
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.premises
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.sentence
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.models
+#print axioms PPAC.Migration.ForcingNonwellorderableQuotient.kernel_certificate

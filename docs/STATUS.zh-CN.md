@@ -1,14 +1,14 @@
 # 当前状态：原 1–11 阶段（2026-11-07）
 
-## 本批验收（2026-11-07）：同根辅助父系统实际构造，仍为阶段 8
+## 本批验收（2026-11-07）：完整非良序商稠密双射，原始参数仍显式，阶段 8
 
-`ForcingAssignedParentSystem.construct` 直接复用已有标签系统、顶点／候选名字、完整轨道商／投影、代表与共尾链构造器，再调用既有 `ForcingAssignedParameterConstruction.construct`。在同一个给定根下实际生成 27 个兼容内部集合／函数，保留同一整族记录、全部投影及 Germs；不把轨道、链、记录或参数表作为未消去的输入。
+`ForcingNonwellorderableQuotient.nonwellorderable` 已沿固定源 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443` 完成实际调用链。从任意原内部 Product／WithTop 条件和实际 HS 名字取得支撑，扩根覆盖名字及全部 Cohen 支撑，构造完整局部列表／内部序数枚举／核名字；实际消费 outsideClassSet 见证，构造第二根、同根全体父集合／记录／投影，并调用具体商双射。最终限制条件仍扩张原 Cohen 图及原根，结论产生实际更强条件和 HS 双射图。
 
-`construction_kernel_certificate` 是原 `nativeZF`／`FirstOrder.Derives` 中同一内部 L 的对象闭句证书，存在量化全部输出。辅助 Choice／全局序由既有 L/ZFC 桥消去；普通背景不增加对象 Choice。原始塔／Context／历史／转移、加权目标、强迫呈现／基数和给定支撑根仍是明确前提，其现成生产者不重建；本批不声称最终全局实例化已完成。
+`kernel_certificate` 是原 `nativeZF`／`FirstOrder.Derives` 中同一内部 L 的纯对象闭句证书。它量化任意原内部条件及名字，结论内构造全部局部见证；不再要求提供局部列表、列表外见证、支撑根、记录族或最终双射。辅助 Choice／全局序由已有 L/ZFC 桥消去，不向普通背景增加对象 Choice。
 
-全量验收通过：3197 构建任务，37145 项声明；全部 37136 项旧足迹不变，9 条命令（5 条 trust=0）退出 0，零警告，无新增公理依赖；2752 个当前文件哈希、75 份源哈希及三个干净固定版本均已核对。报告：`verification/assigned-parent-system-acceptance.json`。
+全量验收通过：3198 构建任务，37152 项声明；全部 37145 项旧足迹不变；9 条命令（5 条 trust=0）均退出 0，零警告，无新增公理依赖；2753 个当前文件哈希、75 份源哈希及三个干净固定版本已复核。报告：`verification/nonwellorderable-quotient-acceptance.json`。
 
-下一主线仍是 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`：将已完成的实际 outsideClassSet 见证、新根辅助父系统及具体商双射接到同一加强条件，再从现成具体构造器消去最终全局父输入。此项、阶段 9–11、最终覆盖所有内部／非标准证明码的 Con 及原 Comparator 尚未完成。完整局部列表、逆图、持久列表外成员、实际类密度及同根轨道／记录辅助装配均不再列作待从头证明的基础。
+本定理仍保留 41 个原始／源具体系统条件。下一项是从已有 ConcreteBase/TowerData 保留实际递归历史与转移表，并统一强迫呈现、群／滤子、标签／界和基数参数，完成剩余全局实例化；这些生产者的数学已经存在，不重建。固定源直接消费者为 `UniformImages.nonwellorderable_image_bijection:243–276`（264 行调用）。原阶段 9–11、原 Comparator 和覆盖全部内部／非标准证明码的最终 Con 仍未完成。
 
 ## 此前已验收：核名字序数强迫与良序反射（ForcingCheckOrdinal）
 

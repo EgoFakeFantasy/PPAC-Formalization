@@ -1,14 +1,14 @@
 # 原 1–11 阶段迁移流程（2026-11-07）
 
-## 本批验收（2026-11-07）：同根辅助父系统实际构造，仍为阶段 8
+## 本批验收（2026-11-07）：完整非良序商稠密双射，原始参数仍显式，阶段 8
 
-`ForcingAssignedParentSystem.construct` 直接复用已有标签系统、顶点／候选名字、完整轨道商／投影、代表与共尾链构造器，再调用既有 `ForcingAssignedParameterConstruction.construct`。在同一个给定根下实际生成 27 个兼容内部集合／函数，保留同一整族记录、全部投影及 Germs；不把轨道、链、记录或参数表作为未消去的输入。
+`ForcingNonwellorderableQuotient.nonwellorderable` 已沿固定源 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443` 完成实际调用链。从任意原内部 Product／WithTop 条件和实际 HS 名字取得支撑，扩根覆盖名字及全部 Cohen 支撑，构造完整局部列表／内部序数枚举／核名字；实际消费 outsideClassSet 见证，构造第二根、同根全体父集合／记录／投影，并调用具体商双射。最终限制条件仍扩张原 Cohen 图及原根，结论产生实际更强条件和 HS 双射图。
 
-`construction_kernel_certificate` 是原 `nativeZF`／`FirstOrder.Derives` 中同一内部 L 的对象闭句证书，存在量化全部输出。辅助 Choice／全局序由既有 L/ZFC 桥消去；普通背景不增加对象 Choice。原始塔／Context／历史／转移、加权目标、强迫呈现／基数和给定支撑根仍是明确前提，其现成生产者不重建；本批不声称最终全局实例化已完成。
+`kernel_certificate` 是原 `nativeZF`／`FirstOrder.Derives` 中同一内部 L 的纯对象闭句证书。它量化任意原内部条件及名字，结论内构造全部局部见证；不再要求提供局部列表、列表外见证、支撑根、记录族或最终双射。辅助 Choice／全局序由已有 L/ZFC 桥消去，不向普通背景增加对象 Choice。
 
-全量验收通过：3197 构建任务，37145 项声明；全部 37136 项旧足迹不变，9 条命令（5 条 trust=0）退出 0，零警告，无新增公理依赖；2752 个当前文件哈希、75 份源哈希及三个干净固定版本均已核对。报告：`verification/assigned-parent-system-acceptance.json`。
+全量验收通过：3198 构建任务，37152 项声明；全部 37145 项旧足迹不变；9 条命令（5 条 trust=0）均退出 0，零警告，无新增公理依赖；2753 个当前文件哈希、75 份源哈希及三个干净固定版本已复核。报告：`verification/nonwellorderable-quotient-acceptance.json`。
 
-下一主线仍是 `ConcreteQuotients.nonwellorderable_quotient_bijection:401–443`：将已完成的实际 outsideClassSet 见证、新根辅助父系统及具体商双射接到同一加强条件，再从现成具体构造器消去最终全局父输入。此项、阶段 9–11、最终覆盖所有内部／非标准证明码的 Con 及原 Comparator 尚未完成。完整局部列表、逆图、持久列表外成员、实际类密度及同根轨道／记录辅助装配均不再列作待从头证明的基础。
+本定理仍保留 41 个原始／源具体系统条件。下一项是从已有 ConcreteBase/TowerData 保留实际递归历史与转移表，并统一强迫呈现、群／滤子、标签／界和基数参数，完成剩余全局实例化；这些生产者的数学已经存在，不重建。固定源直接消费者为 `UniformImages.nonwellorderable_image_bijection:243–276`（264 行调用）。原阶段 9–11、原 Comparator 和覆盖全部内部／非标准证明码的最终 Con 仍未完成。
 
 ## 此前已验收：核名字序数强迫与良序反射（ForcingCheckOrdinal）
 
@@ -31,7 +31,7 @@
 | 5 | 内部名字、图、元组、递归 | 对象配对／图／ω／序列／内部递归、Def 与历史接口已验收；原 Child 归纳、IsName、evaluate、mapConditions 及作用律已验收；checkName、pairName、unionName 的精确构造、求值及条件作用均已验收 | 本基础名字包不再列为待做；实际统一条件／群作用、HS 实例及强迫公式解释也已接通。真正剩余消费者为 8–10 的最终具体单子及模型装配；不重造现成基础或重启字节兼容 |
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 阶段提供具体构造。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
-| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收；corrected_total 已验收；corrected_onto 已验收；OrbitAssignment 定义、RootGroup 等价及 orbit/label/mono/restrict/permute/congr/descend/stable/eq_iff 已验收；完整轨道等价／全商／投影与代表函数、orbit_rep、统一 orbitChain、全量词 orbitAssignment_total_at／onto_at、orbitAssignment_index、全根群计数归约及实际代表链 total/onto、Assigned 公式/同轨道归约及固定参数族下 eq_iff/total/onto、label/mono/permute/restrict/stable、实际代码数据、选择器呈现、全轨道商统一记录函数及完整 16 字段函数族，以及实际 Assigned 理想、标签顶点/箭头和 at_extension 已验收；两条兼容性、GraphWitness/GraphHolds 关系定律及实际条目函数图已全量验收；有序对强迫相等及 raw 关系名字构造已全量验收；四条图函数结论和实际 Assigned 关系的 Source 公式／三项基本定律已验收；实际 quotientName 及其成员／固定性已验收；实际 Assigned 图两个成员界限及实际图置换、实际标签分离及实际图单值性／单射性／全域性／满射性、源理想稠密稳定化、实际局部类可用性／顶点、实际赋值图／assignmentGraph_bijection 及具体商双射（preliminary_ordinalCount／quotient_bijection_above）已验收；实际最小逆图／持久列表外成员及 outsideClassSet_denseBelow、同根 27 个辅助父集合／函数的实际构造已验收 | 非良序商稠密双射（nonwellorderable_quotient_bijection）与剩余原始／全局父参数实例化 |
+| 8 | 源代数／构造核心 | 同一 Base/T、饱和终行及理想/基数；实际 System、纤维/粘合、标签/传输、持久选择、rank/type、CodeLinks；Preliminary 定律与实际全量词密集总性/满射性、实际索引图及对齐、cell/attachment 下降门、内部有限下降定理、推送粘合/消去、实际比较与换元、两类 cell 参数原像、两类生成性、实际普通闭包、有限旧系数、Attachment 传输、实际参数集／可数性、单 attachment 可数依赖图／保留词消费、内部首次出现索引、选中阶段计数及精确阶段像／保守范围、固定内轮记录函数族、实际依赖索引良序、全阶段cut后继及无前驱传输、统一实际阶段图与完整 Timeline；秩与表已构造；固定内部 cell 族、同一 V 上的全局依赖函数、可数性及精确活动行已验收；统一 conditionSelector／Selected、具体 component_selector_dense、StableAt 定义及双向置换、corrected_stable 已验收；corrected_total 已验收；corrected_onto 已验收；OrbitAssignment 定义、RootGroup 等价及 orbit/label/mono/restrict/permute/congr/descend/stable/eq_iff 已验收；完整轨道等价／全商／投影与代表函数、orbit_rep、统一 orbitChain、全量词 orbitAssignment_total_at／onto_at、orbitAssignment_index、全根群计数归约及实际代表链 total/onto、Assigned 公式/同轨道归约及固定参数族下 eq_iff/total/onto、label/mono/permute/restrict/stable、实际代码数据、选择器呈现、全轨道商统一记录函数及完整 16 字段函数族，以及实际 Assigned 理想、标签顶点/箭头和 at_extension 已验收；两条兼容性、GraphWitness/GraphHolds 关系定律及实际条目函数图已全量验收；有序对强迫相等及 raw 关系名字构造已全量验收；四条图函数结论和实际 Assigned 关系的 Source 公式／三项基本定律已验收；实际 quotientName 及其成员／固定性已验收；实际 Assigned 图两个成员界限及实际图置换、实际标签分离及实际图单值性／单射性／全域性／满射性、源理想稠密稳定化、实际局部类可用性／顶点、实际赋值图／assignmentGraph_bijection 及具体商双射（preliminary_ordinalCount／quotient_bijection_above）已验收；实际最小逆图／持久列表外成员及 outsideClassSet_denseBelow、同根 27 个辅助父集合／函数、完整 nonwellorderable_quotient_bijection 的同一 L 原核证书（原始全局参数显式）已验收 | 剩余原始／全局父参数统一实例化及同一具体系统消费 |
 | 9 | 源模型应用 | Models 27 文件已锁定，尚未完成目标端迁移 | 接同一系统的 SVC、ACwo、全局商编码单射、非选择见证；不得只证局部／定秩替代物 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
