@@ -1,0 +1,515 @@
+{
+  "verified_at": "2026-11-07T22:03:16.535889+00:00",
+  "base_commit": "367fad73b3e938357ba615c6a980ebacd2d6590b",
+  "original_stage": 9,
+  "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/OrderedSections.lean",
+  "adapters": [
+    "PPAC/Migration/ForcingLeastOccurrence.lean",
+    "PPAC/Migration/ForcingOrderedSections.lean"
+  ],
+  "kernel_endpoints": [
+    "PPAC.Migration.ForcingLeastOccurrence.kernel_certificate",
+    "PPAC.Migration.ForcingOrderedSections.kernel_certificate",
+    "PPAC.Migration.ForcingOrderedSections.section_kernel_certificate"
+  ],
+  "object_background": "Ordinary original nativeZF FirstOrder.Derives. No outer Choice or L premise. Existing completed original ordinal minimum/decision/check/HS and forcing interfaces are consumed.",
+  "proved_native_outputs": [
+    "Dense least occurrence and literal index uniqueness at ALL internal indices of the ACTUAL ground ordinal O",
+    "Full source wellorderable_check_dense: actual ordinal/check/injection witnesses below every internal condition",
+    "Exact source indexedSection_exists: original single-fiber occupied/unoccupied proof, actual HS empty-name helper premise discharged"
+  ],
+  "least_occurrence_order_scope": "Actual ordinal-index consumers only. Every internal member of O is retained. Canonical INTERNAL membership replaces arbitrary chosen ground wellorder only in the minimality/linearity roles used by source. No external WF/standardness, rank cutoff or selected subset. Does NOT assert all ground sets are ordinals, host-order literal identity, or completion of arbitrary-ground-set chosen-order translation.",
+  "least_occurrence_semantic_intermediates": [
+    "Source mono with original name-domain guards",
+    "Source congr with literal index retained",
+    "Source predicate regularity; not claimed as a separately exported closed native-predicate certificate"
+  ],
+  "least_occurrence_actual_leastRelation_injection_graph_complete": false,
+  "indexedSection_AST_exact_after_namespace_only_substitution": true,
+  "indexedSection_generic_empty_helper_premise_discharged_in_native_endpoint": true,
+  "simultaneous_family_of_defaults_or_assumed_sections": false,
+  "retained_injection_eliminator_verbatim": {
+    "producer_file": "PPAC/Migration/ForcingMapCalculus.lean",
+    "producer_sha256": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+    "source_start": "private theorem injection_one ",
+    "source_end": "/-- Parameters f,g,X,Y,Z",
+    "target_start": "private theorem injection_one ",
+    "target_end": "/-- Source formula retained exactly",
+    "replacements": [],
+    "normalized_body_sha256": "124e0ea39288342249c8ce2da76e3e83aae9bac65733009b87effe9c2bb42d7e"
+  },
+  "retained_producer_unchanged": true,
+  "all_internal_conditions_and_unrestricted_HS_ranks": true,
+  "new_foundations_or_object_Choice_L_premise": false,
+  "new_kernel_Choice_FreeClosed_certificate": {
+    "PPAC.Migration.ForcingLeastOccurrence.kernel_certificate": false,
+    "PPAC.Migration.ForcingOrderedSections.kernel_certificate": false,
+    "PPAC.Migration.ForcingOrderedSections.section_kernel_certificate": false
+  },
+  "elaboration_compatibility": {
+    "final_focused_build_seconds": 9.7,
+    "final_focused_warning_lines": 0,
+    "existing_Project_sentence_bridge_used": true,
+    "explicit_finite_environments_formulas_and_tuple_slot_equalities": true,
+    "no_unbounded_implicit_formula_search_retained": true,
+    "ordered_sections_maxHeartbeats": 100000,
+    "local_Lean_builds_serial": true,
+    "new_permanent_debug_or_test_scripts": false
+  },
+  "previous_migration_modules_compared": 2606,
+  "all_previous_migration_modules_canonical_sources_unchanged": true,
+  "existing_git_worktree_eol_only_differences": 162,
+  "eol_note": "Canonical equality verified; no raw-byte equality claim for pre-existing CRLF/LF-only differences.",
+  "build_jobs": 3221,
+  "audited_declarations": 37619,
+  "old_footprints_unchanged": 37586,
+  "new_declarations": 33,
+  "exact_new_declaration_footprints": {
+    "PPAC.Migration.ForcingLeastOccurrence.At": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.atFormula": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.at_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.Possible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.possible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.possible_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.least_possible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.dense": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.mono": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.regular": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.Dense": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.densely": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.densely_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingLeastOccurrence.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.Witness": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.wellorderable_check_dense": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.witness": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.witness_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.denseChecked": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.denseChecked_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.indexedSection": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.forces_indexedSection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.indexedSection_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.sectionSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.section_models": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingOrderedSections.section_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "all_9_commands_exit_0": true,
+  "trust_zero_commands": 5,
+  "warning_lines": 0,
+  "new_axiom_dependencies": [],
+  "current_source_hashes_checked": 2779,
+  "full_verification_commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log",
+      "log_sha256": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log",
+      "log_sha256": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log",
+      "log_sha256": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log",
+      "log_sha256": "932fba6354a80bb53d1805a732296060b693c815fa46cd1c0e3d0906ab812187"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log",
+      "log_sha256": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log",
+      "log_sha256": "b6e1203e024ed5d4a578239e35d8c48aacfe6723cd37ee9f9a152d34787efc36"
+    }
+  ],
+  "compatibility": {
+    "fixed_clean_repositories": 3,
+    "OpenAI_source_hashes": 75,
+    "regressions": 5,
+    "result": "all pass"
+  },
+  "actual_ordinal_minimum_decision_check_HS_localized_maximum_already_complete": true,
+  "full_ordinal_presentation_subset_image_ACwo_notAC_L_schemas_already_complete": true,
+  "source_OrderedSections_full_complete": false,
+  "actual_uniform_maximum_dense_family_wrapper_complete": false,
+  "original_stage9_complete": false,
+  "global_reverse_injection_complete": false,
+  "PP_Main_all_internal_nonstandard_Con_complete": false,
+  "Comparator_complete": false,
+  "final_object_Con_proved": false,
+  "remaining_source_consumers": [
+    "LeastOccurrence.relation/exists_injection and indexedImage/wellorderable_image consumers",
+    "UniformImages.uniform_maximum_dense: actual INTERNAL family wrapper around existing common-root/localized maximum and native Collection/Choice",
+    "section_injection_of_uniform/wellorderable_target_injection",
+    "Remaining actual SliceGeometry/SliceAssembly -> global reverse_injection_dense",
+    "Full PP/Main and all-internal/nonstandard proof-code correctness/Con implication",
+    "Original stage4 Comparator and stage11 final acceptance"
+  ],
+  "remote_at_acceptance": {
+    "head": "25e0a5cc56853fad1410342769153776b5447028",
+    "run_id": 42414480476,
+    "job_id": 128529488771,
+    "last_observed_status": "in_progress",
+    "last_observed_steps": "Pinned source/bootstrap/compatibility passed; build and audit running",
+    "policy": "Keep accepted local batches until this existing run is terminal; no stacked pushes"
+  },
+  "cleanup": {
+    "status": "completed",
+    "files": [
+      {
+        "path": "OrderedSectionsAudit.tmp.lean",
+        "bytes": 2186,
+        "sha256": "ce1728ef0d557c3615cda341a9f6f40510f8df1e3e0e2d8a614699ffe6625be1"
+      },
+      {
+        "path": "verification/ordered-sections-baseline.tmp.json",
+        "bytes": 12926633,
+        "sha256": "25c223571fcbe080eeae8fa4c31ae362fd2cba42de1c3d29e0f13b7dddb48298"
+      },
+      {
+        "path": "verification/ordered-sections-audit.tmp.log",
+        "bytes": 9660,
+        "sha256": "229d064655dfe55065b8083cb6d153159d225328682726c9cb6ed70e33e55829"
+      },
+      {
+        "path": "verification/least-occurrence-build.log",
+        "bytes": 111,
+        "sha256": "4090e28628abcd51f6652ccf3b9a429e403aa121942d59c6bd29a0597bbbbc4e"
+      },
+      {
+        "path": "verification/ordered-sections-build.log",
+        "bytes": 111,
+        "sha256": "94a6c2f8cbc4098235109939571d8e8b28593d7fa2959fe6fb7f0210e85f1be1"
+      },
+      {
+        "path": "verification/ordered-sections-source-check.log",
+        "bytes": 246,
+        "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+      },
+      {
+        "path": "verification/ordered-sections-ci-inputs.log",
+        "bytes": 91,
+        "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+      },
+      {
+        "path": "verification/ordered-sections-compatibility.log",
+        "bytes": 108,
+        "sha256": "1962b8aa29bbd8cc6ea11f0685af7f6310b3657b7843ef82f36980b1046604a0"
+      },
+      {
+        "path": "verification/ordered-sections-full.log",
+        "bytes": 153,
+        "sha256": "f547de330fd8ed04e3646e6ed7632e7254b87598552996cfdcd936720a05a95f"
+      }
+    ],
+    "parser": "PowerShell ConvertFrom-Json -AsHashtable",
+    "files_removed": 9,
+    "containment_and_plain_file_and_untracked_and_raw_size_sha256_verified": true,
+    "no_active_workspace_lean_lake_process_at_cleanup": true
+  },
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "build_jobs": 3221,
+    "log": "verification/ordered-sections-post-cleanup.log",
+    "log_sha256": "bcb820bac4dec0121b0b3c8f1bed0e6f76621881cde96bc35c01aa6e44a7720f"
+  },
+  "post_cleanup_current_hashes_rechecked": 2779
+}

@@ -14247,4 +14247,21 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top f A target D d : 
       (ForcingSubsetImage.sentence rho I K B w G F mul top f A target D d)) :=
   ForcingSubsetImage.kernel_certificate rho I K B w G F mul top f A target D d
 
+-- Actual INTERNAL ordinal indices: original-kernel dense minimum and literal uniqueness.
+example {k : Nat} (L : Source.Formula (k+2)) (Q : Source.Formula (k+3)) (P O p x i j : Fin k) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ForcingLeastOccurrence.sentence L Q P O p x i j)) :=
+  ForcingLeastOccurrence.kernel_certificate L Q P O p x i j
+
+-- Full source wellorderable_check_dense; no supplied decision/check/injection witness.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top X p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrderedSections.sentence rho I K B w G F mul top X p)) :=
+  ForcingOrderedSections.kernel_certificate rho I K B w G F mul top X p
+
+-- Exact source single-fiber section existence; helper empty premise discharged.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top f X Y J O i p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingOrderedSections.sectionSentence rho I K B w G F mul top f X Y J O i p)) :=
+  ForcingOrderedSections.section_kernel_certificate rho I K B w G F mul top f X Y J O i p
+
 end PPAC.Migration.Step4Checks

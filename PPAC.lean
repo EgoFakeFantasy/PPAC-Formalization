@@ -1051,3 +1051,5 @@ import PPAC.Migration.ForcingPartialOrbitGraph
 import PPAC.Migration.ForcingPresentationFamily
 import PPAC.Migration.ForcingPresentationCover
 import PPAC.Migration.ForcingSubsetImage
+import PPAC.Migration.ForcingLeastOccurrence
+import PPAC.Migration.ForcingOrderedSections

@@ -1,5 +1,13 @@
 # 本地工作进度（2026-11-08）
 
+## 本批迁移：内部最小发生与有序截面消费者（2026-11-08）
+
+ForcingLeastOccurrence在原nativeZF推导核中给出实际内部序数O全部指标上的稠密最小发生与字面指标唯一性。直接将兼容发生公式代入已经完成的ObjectOrdinalLeast模式，复用内部序数比较／自反禁止；单调、同余和正则性中间引理也保留源UnaryRelation的名字域条件。对实际序数指标采用内部成员关系序；没有外部良基、标准性、秩界或删除指标。此处没有宣称任意地面集合的宿主所选良序翻译或实际leastRelation注入图已完成。
+
+ForcingOrderedSections的两个普通nativeZF原核端点迁移wellorderable_check_dense和indexedSection_exists。前者复用已存在的完整wellorderable解释／内部序数决策／秩／check名HS／元组同余，在每个内部条件以下取得实际序数、check名和注入图。后者逐字保留indexedSection AST（仅edge命名空间替换），按源占用／未占用两分支证明单纤维存在性；辅助空名输入已由既有实际作用族／正规滤子／HS空名消去。原MapCalculus私有注入消去证明逐字保留且供体文件未改。没有同时选取一族默认、给定截面、加强函数假设或新增Choice／L／基础设施。
+
+本批验收见verification/ordered-sections-acceptance.json。原阶段9保持未完成：接实际leastRelation图／统一最大值家族包装／统一截面注入，再完成剩余SliceGeometry／SliceAssembly和全局反向单射。局部最大值、序数决策、最小序数、完整ordinal_presentation、子集像满射、实际ACwo、¬AC、L和全公理模式均已存在并复用；不得误报为待从头实现。PP/Main及全部内部／非标准证明码Con、Comparator和终验仍未完成。
+
 ## 本批迁移：源子集像满射（2026-11-08）
 
 ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。
