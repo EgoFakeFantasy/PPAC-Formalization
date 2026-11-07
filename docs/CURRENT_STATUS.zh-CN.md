@@ -1,10 +1,10 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：源 localized_existential 对象模式（2026-11-08）
+## 当前迁移：源Cohen极大反链对象定理（2026-11-08）
 
-ForcingLocalizedExistential迁移固定源DiagramPlacements:156–218，消费已完成的witness_placement。实际强迫存在量词提供任意内部秩HS见证；同一支撑滤子提供名字支撑，已有extend_through与forces_at_supporting_root把见证放入预定q。最后实际限制Cohen条件到q.range，并保留c⊆a、同一HS名、精确Fix(q.range)、原WithTop编码与完整公式强迫。没有给定见证／局部化／稠密性结论。
+ForcingMaximalAntichain迁移OrdinalChoice.maximal_antichain:16–49在localized_maximum所用的Cohen实例。对任意内部Cohen条件族D，实际构造内部A⊆D，保留所有成员／所有共同下界量词，并为每个d∈D构造实际共同加强条件。复用已接受的内部序数枚举、原生超限递归、分离和带可定义反例集合的内部序数归纳；显式贪心算子及完整历史均实际构造，不假定极大性、历史或宿主良基性，不新建通用Zorn／递归／选择后端。
 
-原核端点为nativeZF中的内部L相对化完整源引理模式，原饱和／基数／图／支撑假设保留，地面Choice由现有内部L消去。完整验收见verification/localized-existential-acceptance.json。当前仍为原阶段9；下一源消费者为OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator仍未完成。
+原nativeZF核给出内部L相对化证书，地面Choice由现有L消去。完整验收见verification/maximal-antichain-acceptance.json。witness_placement／localized_existential已完成；原阶段9下一继续localized_maximum→ground_family_choice_dense→实际forces_ACwo。实际ACwo、SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。
 
 ## 前批验收：实际RootProbes及ACwo对象逻辑桥
 
@@ -14,7 +14,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 
 完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-远端55f4b4e的同一次CI仍在全量构建，固定检出、依赖、源码及跨平台回归检查已通过；本批先本地保存，避免叠加推送。当前本地也已通过3份固定干净依赖、75份OpenAI源哈希及5项跨平台回归检查。
+远端55f4b4e的CI42386010526已完整成功：37297项声明、零警告，固定依赖／75份源哈希／5项跨平台回归通过。兼容性修复后连续三轮远端验收成功；本批完整本地验收后再一次正常推送积累提交。
 
 当前仍为原阶段9。witness_placement与localized_existential已迁移，ACwo下一直接源码消费者是OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 

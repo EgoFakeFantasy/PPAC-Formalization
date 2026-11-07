@@ -14180,4 +14180,9 @@ example {k n : Nat} (rho : Fin 7 → Fin k) (w mu history kappa unit mark H C in
       (ForcingLocalizedExistential.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 c Jp Hp Jq Hq z0 v phi))) :=
   ForcingLocalizedExistential.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index p q d0 c Jp Hp Jq Hq z0 v phi
 
+-- Actual internal Cohen maximal antichain with full common-lower-bound witnesses.
+example : FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+    (ConstructibleGround.relative ForcingMaximalAntichain.sentence)) :=
+  ForcingMaximalAntichain.kernel_certificate
+
 end PPAC.Migration.Step4Checks
