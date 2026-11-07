@@ -1318,3 +1318,7 @@ Fixed source OrbitAssignments.orbitChain:173–175 is migrated in ForcingOrbitCh
 ## 原阶段9：源 RelationCalculus 复合／逆名字图（2026-11-08）
 
 ForcingMapCalculus沿固定源:200–359，以两个nativeZF原核存在句实际构造对应精确稳定子和原始HS图；复合图全称保持完整mapsTo/surjection/injection，逆图在完整双射前提下全称为满射/单射，不接受支撑、图或最终关系定律输入。复用既有图／稳定子／强迫和函数消去，仅公开四项原证明别名。全量本地验收3202构建／37265声明，全部37224旧足迹不变，41项新增，零警告／无新公理依赖／无对象Choice证书依赖。报告：verification/map-calculus-acceptance.json。兼容修复bc9367f的远端完整CI已成功；已上传像商图7352330的CI仍在构建，本批尚未上传。下一固定源UniformImages.nonwellorderable_image_bijection:243–276；阶段9、PP/Main和最终内部Con仍未完成。
+
+## 原阶段9：同系统非良序像双射（2026-11-08）
+
+ForcingNonwellorderableImage 沿固定 UniformImages:243–276，在原 nativeZF 推导核中强化同一个内部 L 的40集合存在句，保留原 Core／商 Outcome并加入全称像 Outcome。任意内部 HS 名称和条件下，完整源 A→B 满射及B的强迫非良序给出更强条件上的实际 HS 完整 A↔B 双射。实际像商／像图、任意强迫序数单射、原商双射、源逆图和复合图均复用；没有给定商／图／最终双射回调，原生产者正文不变。全量验收3203任务／37276声明、37265旧足迹不变、11项新增、9命令／5条trust=0全0、零警告／无新依赖；两项后续完成状态文字修正单独通过源码预检。报告：verification/nonwellorderable-image-acceptance.json。原阶段9其余模型应用、第10 PP/Main和全部内部Con、第11终验及原第4 Comparator仍未完成。

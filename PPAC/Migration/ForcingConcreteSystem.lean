@@ -342,4 +342,8 @@ theorem kernel_certificate :
 
 
 
+
+/-- Existing literal source forcing frame, exposed for same-system consumers. -/
+def forcingRho : Fin 7 → Fin 40 := rho
+
 end PPAC.Migration.ForcingConcreteSystem

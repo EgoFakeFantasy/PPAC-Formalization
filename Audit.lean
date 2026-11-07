@@ -37919,3 +37919,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingMapCalculus.inverse_models
 #print axioms PPAC.Migration.ForcingMapCalculus.composition_kernel_certificate
 #print axioms PPAC.Migration.ForcingMapCalculus.inverse_kernel_certificate
+
+-- Fixed UniformImages nonwellorderable image bijection on the SAME concrete system.
+#print axioms PPAC.Migration.ForcingConcreteSystem.forcingRho
+#print axioms PPAC.Migration.ForcingImageQuotient.result_from_inputs
+#print axioms PPAC.Migration.ForcingMapCalculus.actual_reuse
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.ImageOutcome
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.on_core
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.imageOutcomeFormula
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.imageOutcomeFormula_freeClosed
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.imageOutcomeFormula_semantics
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.sentence
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.models
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.kernel_certificate

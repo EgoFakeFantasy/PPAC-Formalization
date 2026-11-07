@@ -2594,10 +2594,11 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_outside_class_set', 'ForcingOutsideClassSet', 10),
                                 ('forcing_assigned_parent_system', 'ForcingAssignedParentSystem', 9),
                                 ('forcing_nonwellorderable_quotient', 'ForcingNonwellorderableQuotient', 8),
-                                ('forcing_concrete_system', 'ForcingConcreteSystem', 14),
+                                ('forcing_concrete_system', 'ForcingConcreteSystem', 15),
                                 ('forcing_kernel_image', 'ForcingKernelImage', 45),
-                                ('forcing_image_quotient', 'ForcingImageQuotient', 16),
-                                ('forcing_map_calculus', 'ForcingMapCalculus', 37)):
+                                ('forcing_image_quotient', 'ForcingImageQuotient', 17),
+                                ('forcing_map_calculus', 'ForcingMapCalculus', 38),
+                                ('forcing_nonwellorderable_image', 'ForcingNonwellorderableImage', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6122,7 +6123,8 @@ def main(source_check_only: bool = False) -> None:
         "source_UniformImages_kernel_value_and_image_class_laws_complete": True,
         "source_UniformImages_imageQuotient_graph_functions_complete": True,
         "source_RelationCalculus_composition_and_inverse_graphs_complete": True,
-        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Image quotient/graph/bijection, stage9 completion, PP/Main and all-internal/nonstandard Con remain pending.",
+        "source_UniformImages_nonwellorderable_image_bijection_complete": True,
+        "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,

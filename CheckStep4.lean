@@ -14145,4 +14145,11 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K two w G F mul top f X Y : Fin k) 
       (SetTheory.Definitional.Project.fo_sentence (ForcingMapCalculus.inverseSentence rho I K two w G F mul top f X Y)) :=
   ForcingMapCalculus.inverse_kernel_certificate rho I K two w G F mul top f X Y
 
+
+-- Same actual forty-set system, now with the source arbitrary-image consequence.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative ForcingNonwellorderableImage.sentence)) :=
+  ForcingNonwellorderableImage.kernel_certificate
+
 end PPAC.Migration.Step4Checks

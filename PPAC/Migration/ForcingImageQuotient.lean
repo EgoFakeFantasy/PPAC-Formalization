@@ -544,4 +544,36 @@ theorem mapsTo_total_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
         Force R H env (args3 h a y) P s (Source.SetLanguage.edge 0 1 2) :=
   mapsTo_total hM hpre hp hf ha hq hqp haA hr hrq
 
+
+/-- Instantiate the already proved closed object sentence at actual inputs;
+no raw kernel, quotient, image graph or final function law is assumed. -/
+theorem result_from_inputs {k : Nat} (rho : Fin 7 → Fin k)
+    (I K two w mu G F mul c top bit A h B : Fin k)
+    (hM : FirstOrder.Theory.Models M nativeZF)
+    (env : SetTheory.Env (Project.FirstOrderSemantics.reduct M) k)
+    (hw : (Project.FirstOrderSemantics.reduct M).IsOmega (env.bound w))
+    (hMu : (Project.FirstOrderSemantics.reduct M).IsInfiniteCardinal (KuratowskiZF.interpretation hM) (env.bound w) (env.bound mu))
+    (hp : Presentation (env.bound (rho 0)) (env.bound I) (env.bound K) (env.bound two) (env.bound w)
+      (env.bound (rho 1)) (env.bound (rho 2)) (env.bound (rho 3)) (env.bound (rho 4)) (env.bound (rho 5)) (env.bound (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env.bound I) (env.bound G))
+    (hF : ForcingSupportFilter.Filter (env.bound I) (env.bound G) (env.bound mu) (env.bound F))
+    (hc : ForcingConditionGraphs.FunctionOn (env.bound K) (env.bound c))
+    (ht : ForcingWithTopCarrier.Empty (env.bound top))
+    (hLabels : ForcingLabelSet.LabelSet (env.bound (rho 6)) (env.bound I) (env.bound K) (env.bound c) (env.bound top) (env.bound bit) (env.bound A))
+    (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env.bound (env.bound (rho 6)))
+    (hh : HS actionFormula (fun j => env.bound (rho j)) (env.bound G) (env.bound (rho 6)) (env.bound F) (env.bound h))
+    (hB : HS actionFormula (fun j => env.bound (rho j)) (env.bound G) (env.bound (rho 6)) (env.bound F) (env.bound B)) :
+    Project.Formula.satisfies env (result rho I K G F mul c top bit A h B) := by
+  have hs := models rho I K two w mu G F mul c top bit A h B hM
+  rw [Project.FirstOrderSemantics.sentence_correct (ModelTransfer.extensionality hM),
+    SetTheory.Structure.satisfiesSentence_iff] at hs
+  have hs := (Project.Formula.satisfies_forallClosure_iff env.free _).mp (hs env.free) env.bound
+  simp only [premises,List.foldr,Project.Formula.satisfies_imp_iff,Project.Formula.satisfies_isOmega_iff,
+    Project.Formula.satisfies_isInfiniteCardinal_iff (KuratowskiZF.interpretation hM) (ModelTransfer.extensionality hM),
+    GodelDefRecursion.encode_semantics (ModelTransfer.extensionality hM),ForcingProductFamily.presentation_semantics,
+    ForcingLabelPermutations.carrier_semantics,ForcingSupportFilter.filter_semantics,
+    ForcingConditionGraphs.functionOn_semantics,ForcingWithTopCarrier.empty_semantics,
+    ForcingLabelSet.labelSet_semantics,ForcingAtomicBasic.preorder_semantics,ForcingHS.hs_semantics,id_eq] at hs
+  exact hs hw hMu hp hG hF hc ht hLabels hpre hh hB
+
 end PPAC.Migration.ForcingImageQuotient

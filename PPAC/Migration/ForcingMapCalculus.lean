@@ -808,4 +808,26 @@ theorem inverse_kernel_certificate {k : Nat} (rho : Fin 7 → Fin k) (I K two w 
     FirstOrder.Derives nativeZF [] (Project.fo_sentence (inverseSentence rho I K two w G F mul top f X Y)) :=
   ModelTransfer.derives (fun _ hM => inverse_models rho I K two w G F mul top f X Y hM)
 
+
+/-- Reuse the existing actual source stabilizer/graph constructor. -/
+theorem actual_reuse (hM : FirstOrder.Theory.Models M nativeZF) {k l : Nat}
+    (env : Fin k → M.Carrier .set) (rho : Fin 7 → Fin k) (I K two w G F mul top : Fin k)
+    (names : Fin l → Fin k) (phi : Formula (l+2)) (d e : Fin l)
+    (hp : Presentation (env (rho 0)) (env I) (env K) (env two) (env w) (env (rho 1)) (env (rho 2))
+      (env (rho 3)) (env (rho 4)) (env (rho 5)) (env (rho 6)))
+    (hG : ForcingLabelPermutations.Carrier (env I) (env G))
+    (hF : ForcingNormalFilter.Normal (env I) (env G) (env F))
+    (ht : ForcingWithTopCarrier.Empty (env top))
+    (hNames : ∀ j, HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) (env (names j))) :
+    ∃ S J,
+      ForcingConjugationGraph.Subgroup (env I) (env G) S ∧
+      (Project.FirstOrderSemantics.reduct M).mem S (env F) ∧
+      ForcingTupleStabilizer.TupleFixed (fun j => env (rho j)) (env G) (env (rho 6)) (fun j => env (names j)) S ∧
+      ForcingRelationGraph.Graph (orderFormula (rho 0).succ mul.succ)
+        (relationOf (fun j => (rho j).succ) G.succ F.succ mul.succ (fun j => (names j).succ) phi)
+        (Fin.cases S env) (rho 6).succ top.succ (names d).succ (names e).succ J ∧
+      HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) J ∧
+      ForcingSupportedNames.Supported (fun j => env (rho j)) S J :=
+  actual hM env rho I K two w G F mul top names phi d e hp hG hF ht hNames
+
 end PPAC.Migration.ForcingMapCalculus
