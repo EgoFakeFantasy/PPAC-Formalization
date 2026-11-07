@@ -1036,3 +1036,5 @@ import PPAC.Migration.ForcingImageQuotient
 import PPAC.Migration.ForcingMapCalculus
 import PPAC.Migration.ForcingNonwellorderableImage
 import PPAC.Migration.ForcingChoiceFailure
+import PPAC.Migration.ForcingRootProbes
+import PPAC.Migration.ForcingOrdinalChoice

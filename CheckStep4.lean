@@ -14157,4 +14157,13 @@ example : FirstOrder.Derives nativeZF []
     (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingChoiceFailure.sentence)) :=
   ForcingChoiceFailure.kernel_certificate
 
+-- Actual probes on the same system; actual dense choice/ACwo is a later consumer.
+example : FirstOrder.Derives nativeZF []
+    (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative ForcingRootProbes.sentence)) :=
+  ForcingRootProbes.kernel_certificate
+
+example {k : Nat} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (P : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ForcingOrdinalChoice.sentence R H P)) :=
+  ForcingOrdinalChoice.kernel_certificate R H P
+
 end PPAC.Migration.Step4Checks

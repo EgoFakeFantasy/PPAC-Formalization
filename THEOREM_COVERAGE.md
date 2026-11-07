@@ -1326,3 +1326,7 @@ ForcingNonwellorderableImage 沿固定 UniformImages:243–276，在原 nativeZF
 ## 原阶段9：同系统完整ChoiceFailure强迫¬AC（2026-11-08）
 
 ForcingChoiceFailure沿固定ChoiceFailure:13–263、ProductNames:411–455，在原nativeZF推导核中强化同一个内部L的40集合存在句，保留完整Core／商及像Outcome，并在每个内部条件证明完整源AC.neg。实际构造外标签收集器及同一支撑固定性，复用幂名／非空分离、名称支撑／覆盖、实际兼容放置／标签作用、完整图唯一性及标签不等；没有给定输出见证或无选择回调，没有名称秩截断。全量验收3204任务／37297声明，37276旧足迹不变、21项新增，9命令／5条trust=0全0，零警告／无新增依赖，2762当前文本哈希匹配；清理4临时文件后构建0。报告：verification/choice-failure-acceptance.json。远端7352330全量Linux CI已成功；本批上传后的新CI须独立核对。阶段9仍缺SVC／序数呈现、ACwo及全局商编码单射；PP/Main和全部内部Con、终验及Comparator未完成。
+
+## 原阶段9：实际RootProbes与ACwo精确对象逻辑桥（2026-11-08）
+
+ForcingRootProbes直接消费同一AllIdeals／最终Row，单元单点理想产生实际探针族，证明原乘积／独立锥定律及索引env13的内部不可数性；与Cohenκ的env14分开。原核端点保留同一40集合Core／商／像／¬AC存在句。ForcingOrdinalChoice完整保留源序数族／选择族／成员公式及functionOn，在原核证明DenseChoice与所有内部条件的ACwo强迫精确等价；它是逻辑桥，实际DenseChoice和forces_ACwo仍未完成。全量验收3206任务／37326声明，37297旧足迹不变、29项新增，9命令／5条trust=0全0，零警告／无新依赖，2764哈希匹配；清理6临时文件后构建0。报告：verification/ordinal-choice-acceptance.json。下一沿源witness_placement／localized_existential／localized_maximum／ground_family_choice_dense接实际ACwo；SVC／全局单射、PP/Main、全部内部Con及Comparator未完成。

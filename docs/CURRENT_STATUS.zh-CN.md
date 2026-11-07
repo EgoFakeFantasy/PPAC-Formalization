@@ -1,22 +1,23 @@
 # 本地工作进度（2026-11-08）
 
-## 本批验收（2026-11-08）：同一系统完整强迫¬AC
+## 本批验收（2026-11-08）：实际RootProbes及ACwo对象逻辑桥
 
-固定 ChoiceFailure:13–263 与 ProductNames:411–455 已迁移至 ForcingChoiceFailure。原 nativeZF／FirstOrder.Derives 端点强化同一个内部 L 的40集合存在句：保留原 Core、商 Outcome、非良序像 Outcome，并在每个内部原条件上证明完整源 AC.neg。未把宿主层“不存在某个给定选择函数”当成最终交付。
+ForcingRootProbes消费同一Core已有的AllIdeals／最终Row，在实际单元单点理想上直接取得同一探针族，证明原Source RootProbes的乘积与独立右锥定律，并证明探针索引内部不可数。原nativeZF／FirstOrder.Derives端点强化同一个内部L的40集合存在句，保留完整Core、商、非良序像及¬AC强迫结论；没有新建饱和历史或给定探针族前提。探针索引按源K=μ.ord.ToType对应env13，Cohen坐标κ=ω₁对应env14。
 
-实际用现有原生分离构造 I\J 索引，复用标签收集器得到精确原始外标签名、HS 和同一支撑的固定性；用现有幂名和非空分离构造完整反例族。对任意内部 HS 选择图，完整 functionOn／choiceOn 公式提供实际被选标签；已有支撑、覆盖、兼容放置及公式对称保持图与参数，同时移动标签，在实际共同下界用完整图唯一性与现有标签不等定理矛盾。没有给定置换／共同下界／选择图不存在的回调，没有名称秩截断或全族默认元素选择。
+ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMember逻辑及函数唯一性消费者，并取得原核中的精确等价：全部内部条件上的ACwo强迫，等价于保留全部内部序数、族、选择名量词的DenseChoice合同。完整functionOn子句均保留。这个端点是逻辑桥：实际DenseChoice仍未构造，实际forces_ACwo尚未完成，不把显式稠密选择前提当成已经消去。
 
-完整本地验收：3204构建任务、37297项声明；全部37276项旧足迹不变，21项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2762个当前规范文本哈希全部匹配完整验收快照。旧迁移模块源码逐字节保留；4个本批临时文件已精确清理，清理后构建再次退出0。报告：verification/choice-failure-acceptance.json。
+完整本地验收：3206构建任务、37326项声明；全部37297项旧足迹不变，29项新增；9条命令（5条trust=0）均退出0，零警告、无新增公理依赖，2764个当前文本哈希匹配完整验收快照。旧迁移模块源码不变；6个本批临时文件已精确清理，清理后构建退出0。报告：verification/ordinal-choice-acceptance.json。
 
-远端7352330的完整Linux CI已成功：37224项声明、零警告。后续复合／逆图、非良序像双射与本批¬AC均已本地完整验收，将一次推送并独立核对新提交CI；不套用旧提交成功。推送前3份固定干净依赖、75份OpenAI源哈希和5项跨平台回归检查全部通过。
+远端55f4b4e的同一次CI仍在全量构建，固定检出、依赖、源码及跨平台回归检查已通过；本批先本地保存，避免叠加推送。当前本地也已通过3份固定干净依赖、75份OpenAI源哈希及5项跨平台回归检查。
 
-仍在原阶段9：非良序像双射与¬AC强迫应用已完成，剩余同一系统SVC／序数呈现、ACwo及全局商编码单射应用。第10 PP/Main／全部内部与非标准证明码Con、第11终验及原第4 Comparator仍未完成。最终对象Con未证明。
-
-
+当前仍为原阶段9。ACwo下一直接源码消费者是DiagramPlacements.witness_placement→localized_existential→OrdinalChoice.localized_maximum→ground_family_choice_dense→实际forces_ACwo；源SVC／ordinal_presentation及全局切片单射应用也未完成。原第10 PP/Main与全部内部／非标准证明码Con、第11终验及原第4 Comparator保持未完成。最终对象Con未证明。
 
 
 
-本分支迁移固定 OpenAI PPAC 源证明到 YesMetaZFC 的原对象推导核，继续采用原计划 1–11 阶段。原第 8 阶段的全局装配门已通过；当前为第 9 阶段，固定源kernelGraph／同值类／imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫应用已迁移，最终目标尚未完成。
+
+
+
+本分支迁移固定 OpenAI PPAC 源证明到 YesMetaZFC 的原对象推导核，继续采用原计划 1–11 阶段。原第 8 阶段的全局装配门已通过；当前为第 9 阶段，固定源kernelGraph／同值类／imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes和ACwo逻辑桥已迁移，最终目标尚未完成。
 
 最终目标：`FirstOrder.Derives nativeZF [] (Con_ZF → Con_U)`，其中 `U = ZF + PP + ACwo + ¬AC`。内部 Con 必须覆盖全部内部证明编码，包括非标准编码。
 

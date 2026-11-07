@@ -37955,3 +37955,34 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingChoiceFailure.sentence
 #print axioms PPAC.Migration.ForcingChoiceFailure.models
 #print axioms PPAC.Migration.ForcingChoiceFailure.kernel_certificate
+
+-- Same-system actual RootProbes and exact source dense-ACwo logical bridge.
+#print axioms PPAC.Migration.ForcingRootProbes.RootProbes
+#print axioms PPAC.Migration.ForcingRootProbes.of_ideal_probes
+#print axioms PPAC.Migration.ForcingRootProbes.on_core
+#print axioms PPAC.Migration.ForcingRootProbes.witness
+#print axioms PPAC.Migration.ForcingRootProbes.rootProbes
+#print axioms PPAC.Migration.ForcingRootProbes.rootProbes_freeClosed
+#print axioms PPAC.Migration.ForcingRootProbes.rootProbes_semantics
+#print axioms PPAC.Migration.ForcingRootProbes.outcomeFormula
+#print axioms PPAC.Migration.ForcingRootProbes.outcomeFormula_freeClosed
+#print axioms PPAC.Migration.ForcingRootProbes.outcomeFormula_semantics
+#print axioms PPAC.Migration.ForcingRootProbes.sentence
+#print axioms PPAC.Migration.ForcingRootProbes.models
+#print axioms PPAC.Migration.ForcingRootProbes.kernel_certificate
+#print axioms PPAC.Migration.ForcingOrdinalChoice.familyMember
+#print axioms PPAC.Migration.ForcingOrdinalChoice.forces_familyMember
+#print axioms PPAC.Migration.ForcingOrdinalChoice.forces_nonemptyFamily
+#print axioms PPAC.Migration.ForcingOrdinalChoice.forces_choiceForFamily
+#print axioms PPAC.Migration.ForcingOrdinalChoice.nonemptyFamily_member
+#print axioms PPAC.Migration.ForcingOrdinalChoice.familyMember_mem
+#print axioms PPAC.Migration.ForcingOrdinalChoice.DenseChoice
+#print axioms PPAC.Migration.ForcingOrdinalChoice.forces_ACwo_of_dense
+#print axioms PPAC.Migration.ForcingOrdinalChoice.dense_of_forces_ACwo
+#print axioms PPAC.Migration.ForcingOrdinalChoice.denseChoice
+#print axioms PPAC.Migration.ForcingOrdinalChoice.allACwo
+#print axioms PPAC.Migration.ForcingOrdinalChoice.denseChoice_semantics
+#print axioms PPAC.Migration.ForcingOrdinalChoice.allACwo_semantics
+#print axioms PPAC.Migration.ForcingOrdinalChoice.sentence
+#print axioms PPAC.Migration.ForcingOrdinalChoice.models
+#print axioms PPAC.Migration.ForcingOrdinalChoice.kernel_certificate
