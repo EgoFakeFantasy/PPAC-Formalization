@@ -1,0 +1,224 @@
+{
+  "verified_at": "2026-11-08T16:25:46.118376+00:00",
+  "baseline_commit": "02a5a4c1ec03802378a8618e07b94854a30adc7a",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declaration": "ForcingQuotient.AtomicData.Force existential branch, exact inner r<=q and H(x) guards",
+  "object_result": "Reuse the accepted guard compiler for H(x) by ignoring the second relation argument; the exact Source AST equality is proved. For the inner order guard, compile the reverse relation and apply actual condition rebinding, obtaining precisely R(r0,q1). Internal heads, guard code and rebind outputs are constructed and eliminated inside object EX. Independent executions give the same typed inner-order code; the domain predicate code is typed unique at an actually constructed new-name bvar0.",
+  "endpoints": [
+    "PPAC.Migration.ForcingExistGuardsCode.kernel_certificate",
+    "PPAC.Migration.ForcingExistGuardsCode.unique_kernel_certificate",
+    "PPAC.Migration.ForcingExistGuardsCode.domain_kernel_certificate"
+  ],
+  "explicit_parents": {
+    "inner_order": [
+      "Omega(w)",
+      "a in omega",
+      "successor(A,a)",
+      "successor(B,A)",
+      "Num_(n+2)(f)",
+      "Num_(n+1)(j)"
+    ],
+    "domain_at_new_name": [
+      "Omega(w)",
+      "a in omega",
+      "successor(A,a)",
+      "Num_(n+2)(f)"
+    ]
+  },
+  "reuse": [
+    "ForcingGuardCode total/type/independent uniqueness, not a second template compiler",
+    "ForcingConditionRebind actual total/type/independent uniqueness",
+    "Existing SyntaxMixedImageHead and original object omega arithmetic",
+    "Original finite Source.Derives, TheoryTransport and ordinary nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38255,
+    "new_public_declarations": 22,
+    "all_prior_38233_footprints_unchanged": true,
+    "all_old_proof_module_hashes_unchanged": true,
+    "changed_prior_input_hashes": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "input_hashes": 2823,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "actionlint_exit": 0,
+    "build_log_last_lines": [
+      "✔ [3266/3267] Built PPAC (17s)",
+      "Build completed successfully (3267 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "internal_nonstandard_bound_scopes_and_output_candidates": true,
+    "R_H_and_parameter_count_fixed_external_scheme_indices": true,
+    "free_scope_and_current_condition_slot_exact_object_numerals": true,
+    "inner_order_direction_R_r0_q1": true,
+    "domain_predicate_formula_code_not_a_claim_of_domain_inhabitation": true,
+    "new_template_backend": false,
+    "new_object_axioms": false,
+    "existential_child_three_binder_rescoping_complete": false,
+    "complete_existential_outer_code_step": false,
+    "full_recursive_forcing_interpreter_complete": false,
+    "uniform_internal_axiom_forcing_complete": false,
+    "all_internal_Proof_contradiction_reduction_complete": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-draft.lean",
+      "size": 22596,
+      "sha256": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-build.log",
+      "size": 111,
+      "sha256": "bca2ad6257f5fc96e7143f93c773d726b3669afacd0403fce849d2a8a985ab3a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-audit.lean",
+      "size": 1508,
+      "sha256": "56867101d24dc6666ff6d212a153cdd40fd814bc3a308dd9a8cf10fb7185e991"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-audit.log",
+      "size": 3756,
+      "sha256": "613906b8a8fc95fb27fb1bbf66b23d75d0e8ecb8381f95f1b8a739addaa5f106"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-parent-summary.json",
+      "size": 14766946,
+      "sha256": "646c6d7c5af47354b0f2d30f9c33ed12bf6ee1525cee333fac4ca42d34da5457"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-source-preflight.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-guards-full-verify.log",
+      "size": 153,
+      "sha256": "e6f0f5f13983c8f7494579c2d2f4750278ebfac8a1741c0bf48d12d3c18775b6"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; await preceding whole CI success before next normal push",
+    "preceding_run": 42492087042,
+    "linux_baseline_sha": "5c9b0bff783a869c4c1b2eede38356733a6e61f6",
+    "guard_job": 128766454058,
+    "guard_conclusion": "success",
+    "native_job": 128766565151,
+    "native_conclusion": "success",
+    "actual_native_log_read_back": true,
+    "actual_native_log_pass": "2026-11-08T16:18:18.9314727Z PASS: 38172 audited declarations; 2260 without axioms; 35912 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+    "original_comparator_job": 128788060157,
+    "original_comparator_last_observed_status": "in_progress, running actual Comparator",
+    "full_original_comparator_accepted": false
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

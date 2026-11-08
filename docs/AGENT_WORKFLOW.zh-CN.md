@@ -50,3 +50,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10的字面守卫代码：ForcingGuardCode已构造q∈P／R(q,p)模板的内部带类型唯一输出，允许内部非标准绑定范围和候选；自由范围为固定R参数数目加P/p的对象numeral。bound_guards_total在同一对象EX内构造bvar0和两个守卫，negative_inputs_kernel_certificate实际消费ForcingConditionRebind的子码重绑定。旧原子证明正文不变，仅新增八个直接调用旧证明的复用端口。守卫模块本身不提供外层公式；否定分支的完整码构造现由ForcingNegCode接通。存在分支与全递归、统一公理强迫及Proof/Con归约仍未完成。验收见verification/forcing-guard-code-acceptance.json。
 
 原第10的完整否定码分支：ForcingNegCode实际构造子码重绑定、同一新条件的两守卫、falsum、三次imp和forall，取得普通nativeZF原核带类型唯一输出及独立执行唯一性。子码与绑定范围可内部非标准；R和参数数目为固定外部模式，条件free槽严格为对象numeral(n+1)。本项不再列为待做；原始全构造递归、存在分支、统一内部公理强迫及全部Proof/Con归约仍未完成。验收见verification/forcing-neg-code-acceptance.json。
+
+原第10存在分支的守卫复用：ForcingExistGuardsCode用已有守卫编译器构造域谓词H(x)，原AST等式证明它是关系模板的特例；用逆序关系守卫加实际重绑定构造方向准确的R(r0,q1)，取得内部带类型唯一输出。没有第二套模板后端。新名字head也在对象EX内构造。仍需存在子码在两个条件和新名字下的binder重排、完整外层exists码及全递归／Proof／Con归约；不再把H模板或内部守卫方向列作缺口。验收见verification/forcing-exist-guards-code-acceptance.json。

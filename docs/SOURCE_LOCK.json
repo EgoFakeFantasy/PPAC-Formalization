@@ -162080,6 +162080,153 @@
           "propext"
         ]
       }
+    },
+    "forcing_exist_guards_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingExistGuardsCode.lean",
+      "source_declarations": [
+        "AtomicData.Force existential branch: inner r<=q condition and H(x) name domain"
+      ],
+      "consumers": [
+        "Existential forcing-code constructor: exact R(r0,q1) in the two-condition body and H(x0) below the new-name binder",
+        "InternalConsistency.reduction after full internal forcing and proof interpretation"
+      ],
+      "reuse_producers": [
+        "ForcingGuardCode original typed unique guard compiler: H is obtained by ignoring the second relation argument, with an exact Source AST equality",
+        "The reverse-order relation followed by ForcingConditionRebind yields R(r0,q1); exact reverse Source AST equality proved",
+        "Existing SyntaxMixedImageHead and previous guard/rebind independent uniqueness",
+        "Original finite Source.Derives, TheoryTransport and ordinary nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
+        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
+      },
+      "scope": "Constructs actual typed unique inner order guard without any supplied head, guard or rebind execution; the relation direction is R(r0,q1), not R(q1,r0). Constructs H(x) typed unique code at an actual internally obtained new-name bvar0 by direct reuse of the existing guard compiler. Internal bound scopes/candidates may be nonstandard; R/H and parameter count are external fixed scheme indices with object-numeral f=n+2,j=n+1. Does not yet rescope the interpreted existential child under the two conditions and new name, construct the complete outer existential branch, full recursion, uniform coded axiom forcing or final Proof/Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistGuardsCode.domainOrder": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.reverseOrder": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domain_relation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.reverse_relation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domainFiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domainAtNewName": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domain_at_new_name_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domainSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.domain_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistGuardsCode.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
