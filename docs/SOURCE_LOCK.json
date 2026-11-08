@@ -159388,6 +159388,151 @@
           "propext"
         ]
       }
+    },
+    "schema_closure_typing": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (full internal axiom-code consumer)",
+        "Original native SchemaClosure: complete internal-count tag9 prefix"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/SchemaClosure.lean",
+      "native_source_sha256": "086b7498c9daa7ba9c9fe92784ad3e29c9bb2d27975294d44e2f41c0caa1164d",
+      "adapter": "PPAC/Migration/SchemaClosureTyping.lean",
+      "consumers": [
+        "Original Separation/Collection complete axiom-code test: type correctness of whole internal forall closure",
+        "All-internal and nonstandard six-rule Proof/Con transport"
+      ],
+      "reuse_producers": [
+        "Existing exact original unary iterator and zero/successor equations",
+        "Existing full object omega induction with Separation instance",
+        "Existing internal addition, successor shift and arithmetic context",
+        "Existing FormulaCode constructors and exact quantifier typing",
+        "Existing original-kernel ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/SchemaClosureTyping.lean": "1dbc1d277a99b257b32ed1c09ad76e7635acaa96091f9358182cc11372cbab62",
+        "PPAC/Migration/SchemaAxiomAssembly.lean": "767c54bd08bfb606c2bf5672264afaaf10122a7609ed5c68271fb8db5bda504e",
+        "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/SchemaClosure.lean": "086b7498c9daa7ba9c9fe92784ad3e29c9bb2d27975294d44e2f41c0caa1164d",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationSyntax.lean": "a2ef34d0f9be1e8b35065ee99db3b2b21eb51a396303800ee10c59d72662c7d3",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationCore.lean": "2740c9c415a0084585df368190b2714d06d7c831cc821483c32b462af8c37e85",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationLaws.lean": "49c638be0e47e4d7746eb1d729df894d9ab643c69a11874e2b8a7a331a291d00",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
+        "PPAC/Migration/Internal/FormulaCodeTransport.lean": "e24951d7d66f9b95eeb2a2b952f13c44b479091860d14c0a2d4f31c8618882d7",
+        "PPAC/Migration/Internal/NaturalAdditionShift.lean": "30e13dee88b1acc4b318e7a43f254effbdcd0570339e8d3e168514570bc091e5",
+        "PPAC/Migration/Internal/ZFArithmetic.lean": "c7feb6a48896cc6b2fcd68e415db3c10581aaed9f146533b714e6bbcc030a8a3",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
+        "PPAC/Migration/OmegaInduction.lean": "f81765e5eee49ce965132ae7fd8a5bf57a687d607c69fe25788d079fa821b76d",
+        "PPAC/Migration/OmegaInductionSyntax.lean": "e4048c2a717b3efc5d2367b82331721cda4e19f9d96a940acd19c4b383243efe"
+      },
+      "scope": "Ordinary nativeZF original-kernel Derives proves exact type preservation for original tag9 forall closure at EVERY INTERNAL count. Internal sum b+n=d links the remaining bound context b to the initial context d; all initial code, free context, count, bounds and output are object quantified. Actual object omega induction uses the existing induction kernel, old internal iterator equations and existing addition shift, not host induction on a standard count. The closed instance n→zero is integrated with the existing actual unique iteration producer: the result contains the whole closure trace, closed FormulaCode type and uniqueness against ALL internal candidate runs. No output/trace/typed-result oracle, Type data choice, new arithmetic/recursor/L/proof kernel, retired Packet reader or reflection. Input core FormulaCode remains an explicit parent: finite original schema-shell typing from raw body is NOT claimed complete by this result. Full schema typing/uniqueness and original certificate-tag/row test, full ZF/U axiom test, all-internal Proof/Con, Comparator and final Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.SchemaClosureTyping.point": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.property": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.point_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.property_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.matrix": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.matrix_pred": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.property_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.all_typed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.typed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.closed": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.source_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.closedFiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.closedFiber_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.closed_fiber": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.fiber_sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.fiber_source_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaClosureTyping.fiber_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

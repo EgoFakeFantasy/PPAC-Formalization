@@ -14410,4 +14410,9 @@ example {m : Nat} (collection : Bool) (w count z body : Fin m) (scopes : Fin 4 â
       (SchemaAxiomCompilation.schema_sentence collection w count z body scopes)) :=
   SchemaAxiomCompilation.schema_kernel_certificate collection w count z body scopes
 
+-- EVERY internal count: actual closed, typed, unique original forall output.
+example {m : Nat} (w n a z : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureTyping.fiber_sentence w n a z)) :=
+  SchemaClosureTyping.fiber_kernel_certificate w n a z
+
 end PPAC.Migration.Step4Checks

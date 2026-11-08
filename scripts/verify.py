@@ -2634,7 +2634,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_reverse_injection', 'ForcingReverseInjection', 5),
                                 ('forcing_target_theory', 'ForcingTargetTheory', 7),
                                 ('schema_axiom_assembly', 'SchemaAxiomAssembly', 17),
-                                ('schema_axiom_compilation', 'SchemaAxiomCompilation', 29)):
+                                ('schema_axiom_compilation', 'SchemaAxiomCompilation', 29),
+                                ('schema_closure_typing', 'SchemaClosureTyping', 19)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7477,6 +7478,8 @@ def main(source_check_only: bool = False) -> None:
         'object_schema_shell_exact_native_quotation_for_every_original_matrix': True,
         'object_original_schema_raw_body_actual_compilation_and_three_renaming_sites_proved': True,
         'object_original_schema_raw_body_to_shell_and_all_internal_closure_output_exists': True,
+        'object_original_forall_closure_all_internal_scope_type_preservation_proved': True,
+        'object_original_forall_closure_actual_closed_typed_unique_fiber_proved': True,
         'object_original_schema_full_output_type_unique_integration_proved': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 

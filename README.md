@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-当前为原第10阶段。源数学应用、实际PP及完整目标理论的逐实例装配均已接通；本批从同一原Project正文实际构造编译／三个重命名出口，再接通原模式模板和整个内部ω次数闭包的普通nativeZF原核存在证书；既有装配唯一性保留。完整ZF/U公理测试、全部内部／非标准Proof/Con传输、原第4 Comparator与第11终验仍未闭合。**最终对象Con未证明。** 当前状态和原阶段表见下列文档，本批报告为verification/schema-compilation-acceptance.json。
+当前为原第10阶段。源数学应用、实际PP及完整目标理论的逐实例装配均已接通；本批从同一原Project正文实际构造编译／三个重命名出口，再接通原模式模板和整个内部ω次数闭包的普通nativeZF原核存在证书；既有装配唯一性保留。本批补齐所有内部次数闭包的精确类型保持及实际带类型唯一输出。完整ZF/U公理测试、全部内部／非标准Proof/Con传输、原第4 Comparator与第11终验仍未闭合。**最终对象Con未证明。** 当前状态和原阶段表见下列文档，本批报告为verification/schema-closure-typing-acceptance.json。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

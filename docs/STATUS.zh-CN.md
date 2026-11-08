@@ -10,9 +10,10 @@
 | 5–7：内部基础、L解释、强迫前端 | 名字／图／递归、任意ZF模型内的同一L/ZFC及全部模式、Choice／全局序／非空、逐源公理与模式强迫原核证书已完成 |
 | 8–9：同一实际系统及源模型应用 | 实际Core、ACwo、¬AC、完整ordinal_presentation、切片／候选族／assemble、全集合reverse_injection_dense及实际forces_PP均已完成 |
 | 10：目标理论装配 | ForcingTargetTheory逐源接通Main.forces_target，每个完整源目标公理／模式与PP/ACwo/¬AC共用实际系统的原核存在证书；模式索引仍外部 |
-| 10：本批模式输入到码装配 | SchemaAxiomCompilation从同一原Project正文实际构造编译和三个重命名出口，再消费原SchemaTemplate与整个内部ω次数全称闭包；普通nativeZF原核证书已验收。既有装配唯一性与任意原正文的native quotation对应保留 |
+| 10：模式输入到码装配 | SchemaAxiomCompilation从同一原Project正文实际构造编译和三个重命名出口，再消费原SchemaTemplate与整个内部ω次数全称闭包；普通nativeZF原核证书已验收。既有装配唯一性与任意原正文的native quotation对应保留 |
+| 10：闭包类型 | SchemaClosureTyping用既有对象ω归纳、加法及原迭代方程证明全部内部次数的精确作用域类型保持，并实际构造带闭公式类型的唯一整个闭包输出；无给定输出或轨迹 |
 
-本批端点的显式输入为ω、内部自然数次数、空零、原四级后继作用域链和指定作用域下有效的原Project正文。编译、索引图、码、恒等重命名、全部矩阵、原模板输出和整个闭包轨迹均在对象证明中构造；不再要求给定重命名码槽位。完整结果类型／唯一性接线、公理证书标签／行测试和最终Con仍未闭合。
+模式输入端点的显式输入为ω、内部自然数次数、空零、原四级后继作用域链和指定作用域下有效的原Project正文。编译、索引图、码、恒等重命名、全部矩阵、原模板输出和整个闭包轨迹均在对象证明中构造；不再要求给定重命名码槽位。本批闭包端点从已有FormulaCode输入构造带类型的实际唯一闭包输出。有限原模板从三个已类型化矩阵到核心FormulaCode的接线、整个模式唯一性、公理证书标签／行测试和最终Con仍未闭合。
 
 ## 真正仍需完成
 
@@ -22,6 +23,6 @@
 
 ## 本批实际验收
 
-`verification/schema-compilation-acceptance.json`：37955项声明；全部37926项旧足迹及2625份旧迁移模块保持不变；2797个当前源码哈希；九条命令、五条trust=0均退出0，零警告、无新增公理依赖。清理后的复核见报告。
+`verification/schema-closure-typing-acceptance.json`：37974项声明；全部37955项旧足迹及2626份旧迁移模块保持不变；2798个当前源码哈希；九条命令、五条trust=0均退出0，零警告、无新增公理依赖。清理后的复核见报告。
 
 内部Con精确规格见OBJECT_TARGET；原1–11阶段表及执行入口见AGENT_WORKFLOW；逐声明来源与依赖见SOURCE_LOCK。旧批进度在Git及相应验收报告中，不作为当前待办。

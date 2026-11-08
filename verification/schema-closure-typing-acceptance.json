@@ -1,0 +1,238 @@
+{
+  "verified_at": "2026-11-08T18:13:30.239902+11:00",
+  "baseline_commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaClosureTyping.kernel_certificate",
+    "PPAC.Migration.SchemaClosureTyping.fiber_kernel_certificate"
+  ],
+  "actual_object_result": "For EVERY INTERNAL count n, remaining bound scope b, initial scope d with internal b+n=d and arbitrary initial code/free scope/output, the original tag9 whole forall closure preserves FormulaCode with resulting scope b. Actual object omega induction, old iteration equations and old arithmetic establish the invariant. The exact n→zero closed instance is connected to the old actual unique-output producer, constructing the WHOLE trace, closed FormulaCode and uniqueness against ALL candidate runs inside the object proof.",
+  "explicit_parents": [
+    "omega w",
+    "count n is an internal natural",
+    "empty zero z",
+    "initial original FormulaCode has n bound variables and empty free context"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_counts_codes_and_scope_lengths": true,
+    "genuine_object_omega_induction_not_host_induction_on_count": true,
+    "exact_original_tag9_and_whole_closure_trace": true,
+    "remaining_scope_plus_count_equals_initial_scope": true,
+    "actual_closed_typed_unique_output_constructed": true,
+    "uniqueness_against_all_internal_candidates": true,
+    "given_output_trace_or_typed_result_oracle": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "finite_schema_shell_typing_from_raw_body_complete": false,
+    "full_schema_output_unique_integration_complete": false,
+    "full_ZF_U_certificate_tag_row_test_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Existing original SyntaxUnaryIterationCore and SyntaxUnaryIterationLaws",
+    "Existing OmegaInduction and exact Separation instance",
+    "Existing NaturalAdditionShift and ZFArithmetic, no new recursor",
+    "Existing FormulaCodeKnownLogical.quantified_iff and FormulaCodeTransport",
+    "Existing ordinary nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "audited_declarations": 37974,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35718,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaClosureTyping.all_typed",
+      "PPAC.Migration.SchemaClosureTyping.closed",
+      "PPAC.Migration.SchemaClosureTyping.closedFiber",
+      "PPAC.Migration.SchemaClosureTyping.closedFiber_rename",
+      "PPAC.Migration.SchemaClosureTyping.closed_fiber",
+      "PPAC.Migration.SchemaClosureTyping.fiber_kernel_certificate",
+      "PPAC.Migration.SchemaClosureTyping.fiber_sentence",
+      "PPAC.Migration.SchemaClosureTyping.fiber_source_certificate",
+      "PPAC.Migration.SchemaClosureTyping.kernel_certificate",
+      "PPAC.Migration.SchemaClosureTyping.matrix",
+      "PPAC.Migration.SchemaClosureTyping.matrix_pred",
+      "PPAC.Migration.SchemaClosureTyping.point",
+      "PPAC.Migration.SchemaClosureTyping.point_rename",
+      "PPAC.Migration.SchemaClosureTyping.property",
+      "PPAC.Migration.SchemaClosureTyping.property_at",
+      "PPAC.Migration.SchemaClosureTyping.property_rename",
+      "PPAC.Migration.SchemaClosureTyping.sentence",
+      "PPAC.Migration.SchemaClosureTyping.source_certificate",
+      "PPAC.Migration.SchemaClosureTyping.typed"
+    ],
+    "old_footprints_unchanged": 37955,
+    "old_module_review": {
+      "modules": 2626,
+      "unchanged_canonical": 2626,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2798,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3246,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75
+  },
+  "remote_CI": {
+    "run_id": 42456708909,
+    "job_id": 128657173921,
+    "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+    "last_observed_status": "in_progress",
+    "success_claimed": false,
+    "publication_policy": "Do not stack another remote run while the preceding accepted commit CI is still live; accepted local work is preserved in Git."
+  },
+  "documentation_cleanup": {
+    "file": "docs/OBJECT_TARGET.zh-CN.md",
+    "previous_lines": 367,
+    "current_lines": 41,
+    "removed_only_obsolete_duplicate_status_history": true,
+    "fixed_theory_Con_encoding_and_six_rules_preserved": true,
+    "history_retained_at_commit": "6bb0b0b33523601aed41681f7927ce958b36853a"
+  },
+  "cleanup": {
+    "other_projects_or_applications_touched": false,
+    "recursive_deletion": false,
+    "exact_plain_task_files": [
+      {
+        "bytes": 108,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-closure-typing-build.log",
+        "sha256": "3e457a08293449a19f94ba2d84f18f9e02e463cc8abce757d0ebf1ead3575a62",
+        "path": "verification/schema-closure-typing-build.log"
+      },
+      {
+        "bytes": 2943,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-closure-typing-local-axioms.log",
+        "sha256": "9546ee0a35511fd96424ead2d916da85cf17633383fa143c9d832e318a5384df",
+        "path": "verification/schema-closure-typing-local-axioms.log"
+      },
+      {
+        "bytes": 14837148,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-closure-typing-baseline.tmp.json",
+        "sha256": "0532512127007715a0ae2010d2be94c2fc3b891f4e5473865a7fa19b55916dd6",
+        "path": "verification/schema-closure-typing-baseline.tmp.json"
+      },
+      {
+        "bytes": 153,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-closure-typing-full-wrapper.log",
+        "sha256": "2ddfc4dae8e2dd91018530eb60e2acfb6fe3358b6710ad24dced4d35d15ec948",
+        "path": "verification/schema-closure-typing-full-wrapper.log"
+      },
+      {
+        "bytes": 1227,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SchemaClosureTypingAudit.lean",
+        "sha256": "aa9f2796bb6ff71fd352cb88da4a8dda910f72a8c2e18a4bef524d8e31c17229",
+        "path": ".local/SchemaClosureTypingAudit.lean"
+      }
+    ],
+    "removed_files": 5
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3246,
+    "current_source_hashes_verified": 2798,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false,
+    "fixed_theory_Con_encoding_six_rule_contract_exactly_unchanged": true
+  }
+}

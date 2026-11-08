@@ -1071,3 +1071,4 @@ import PPAC.Migration.ForcingReverseInjection
 import PPAC.Migration.ForcingTargetTheory
 import PPAC.Migration.SchemaAxiomAssembly
 import PPAC.Migration.SchemaAxiomCompilation
+import PPAC.Migration.SchemaClosureTyping
