@@ -1,14 +1,12 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：实际 slice_candidate 与内部候选函数族（2026-11-08）
+## 当前迁移：完整源 assemble 的普通原核端点（2026-11-08）
 
-ForcingSliceCandidate.kernel_certificate 是普通 nativeZF 原推导核的 Derives 端点，证明同一内部 L 上的实际候选函数族定理。背景 Choice／全局序由已有 ConstructibleSource／ConstructionRoundSelection 消去；没有新增外层 AC、L、公理模式或名字递归。给定原源父输入（同一 Core、已有共同支撑、实际 Cartesian 名字及两条完整满射），精确迁移 SliceAssembly.slice_candidate:118–156 的两个分支，并保留全部内部条件及任意内部指标。
+ForcingSliceAssembly.kernel_certificate 在普通 nativeZF 原推导核中证明固定 SliceAssembly.SliceData.assemble:61–105。对象结论保留实际收集图 Graph、HS、同一共同支撑 Supported，以及完整源 injection／functionOn／无杂项子句；没有只交付宿主关系或名字 AST。
 
-良序像分支复用完整 wellorderable_target_injection；非良序分支只在一个较强条件下取一个实际 HS 默认成员，复用 subset_image_surjection、两次同系统 nonwellorderable_image_bijection、原逆图和复合。结果是反向单射，不额外要求成为原 f 的截面。六个现有辅助接口仅去掉 private，数学正文保持不变；删除了对这些图运算的重复实现。
+候选 FunctionOn 图及其共同支撑是原源 assemble 的输入；实际构造已经由上一批 ForcingSliceCandidate 完成。本批从同一实际双名字 ParameterSpec 的原始选择／分离方程消去切片前提：总性复用已完成的 occurrence 覆盖与内部序数最小指标；函数唯一性用目标分片及字面参数／函数唯一性；单射性用源分片互斥。没有要求 Spart 覆盖 X 或候选成为原 f 的截面，没有新造 Choice、L、收集器、名字递归或参数族图。两项现有 IndexedImage 注入消去接口仅公开，证明正文不改。
 
-实际双名字参数关系的四项 UniformMaximum.Inputs 现在全部证明，包括 force(ex injection)。candidate_family 已实际调用已有 uniform_maximum_dense，构造全内部指标上的 FunctionOn 候选函数族及其一个共同支撑；没有另造参数族图，也没有把候选族当作前提。
-
-本批全量验收以 verification/slice-candidate-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一真正义务是固定源 assemble／presentation_reverse_injection，再接全局反向单射。实际 ACwo、¬AC、ordinal_presentation、切片名字、图满射／互斥／覆盖、空域及参数全域唯一等均已完成，不重做。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
+本批全量验收以 verification/slice-assembly-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一是把已完成的实际候选族与 assemble 经现有支撑交集及上下文传输接成 presentation_reverse_injection，再接 Main.reverse_injection_dense。候选构造和 assemble 本身不再列为待做。实际 ACwo、¬AC、ordinal_presentation、全部切片名字／满射／互斥／覆盖、L及公理模式均已完成，不重建。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 

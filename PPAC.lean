@@ -1065,3 +1065,4 @@ import PPAC.Migration.ForcingSliceCoverage
 import PPAC.Migration.ForcingEmptyDomain
 import PPAC.Migration.ForcingSliceParameters
 import PPAC.Migration.ForcingSliceCandidate
+import PPAC.Migration.ForcingSliceAssembly

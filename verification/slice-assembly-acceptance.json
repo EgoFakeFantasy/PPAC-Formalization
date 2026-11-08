@@ -1,0 +1,226 @@
+{
+  "verified_at": "2026-11-08T04:15:16.217977+00:00",
+  "baseline_commit": "d2212931218bd5d497f002d036a7e6eaf97d6392",
+  "original_stage": 9,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingSliceAssembly.kernel_certificate"
+  ],
+  "actual_source_results": [
+    "FULL pinned SliceAssembly.SliceData.assemble:61-105 consumer",
+    "Exact boundedApp/familyUnion on ALL internal ordinal indices and all internal conditions",
+    "ACTUAL ParameterSpec constructor equations discharge Ypart member/partition and Spart subset/preimage/disjointness consumers",
+    "Existing dense occurrence cover, internal ordinal minimum, parameter/function LITERAL uniqueness and parent/candidate full function/injection rules consumed",
+    "Existing collector ACTUALLY constructs ONE HS graph with common support; object output retains Graph, HS, Supported and FULL source injection/functionOn/no-junk"
+  ],
+  "scope": {
+    "ordinary_nativeZF_original_kernel": true,
+    "actual_collected_graph_in_object_conclusion": true,
+    "actual_HS_support_and_full_injection_in_object_conclusion": true,
+    "all_internal_indices_and_conditions": true,
+    "arbitrary_name_ranks": true,
+    "original_source_assemble_consumer_complete": true,
+    "candidate_FunctionOn_and_support_are_original_assemble_inputs": true,
+    "candidate_FunctionOn_already_constructed_by_previous_adapter": true,
+    "candidate_to_assemble_composition_complete": false,
+    "presentation_reverse_injection_complete": false,
+    "source_piece_cover_X_assumed": false,
+    "candidates_assumed_sections_of_f": false,
+    "extra_parameter_FunctionOn_required": false,
+    "new_object_Choice_L_collector_or_foundation": false,
+    "simultaneous_default_or_wellorder_or_quotient_family": false,
+    "external_wellFounded_or_standard_index_bound": false,
+    "original_stage9_complete": false,
+    "PP_Main_complete": false,
+    "all_internal_nonstandard_Proof_Con_complete": false,
+    "original_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Existing source forcing/atomic monotonicity, dense equality and formula congruence/symmetry",
+    "Actual SliceParameters.parameter_spec_iff/parameter_exists/parameter_unique/parameter_fixed and exact selector/separator equations",
+    "Existing occurrence cover, internal ordinal minimum, source mapsTo totality/uniqueness and full injection elimination",
+    "Existing ForcingRelationGraphSupport.construct and ForcingRelationGraphFunctions.graph_injection; no new collector",
+    "Existing object Graph/HS/support/forcing encoders and ModelTransfer",
+    "Two IndexedImage helper declarations exposed by removing private; mathematical proof bodies preserved exactly, including 3 retained producer blocks with only 2 explicit visibility-annotation replacements"
+  ],
+  "acceptance": {
+    "audited_declarations": 37887,
+    "new_public_declarations": 18,
+    "newly_exposed_existing_helpers": 2,
+    "old_footprints_unchanged": 37867,
+    "old_module_review": {
+      "modules": 2620,
+      "unchanged_canonical": 2619,
+      "preexisting_EOL_only_differences": 162,
+      "visibility_only_modules": [
+        "PPAC/Migration/ForcingIndexedImage.lean"
+      ],
+      "unchanged_proof_bodies": true
+    },
+    "current_source_hashes_verified": 2792,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3234,
+    "cross_platform_tests": 5,
+    "clean_pinned_repositories": 3
+  },
+  "remote_CI": {
+    "last_completed_run": 42437134328,
+    "last_completed_job": 128598282636,
+    "last_completed_commit": "56aad5e907806fcb3adc75e0fd1c724d1906555d",
+    "last_completed_actual_log_audit": {
+      "declarations": 37826,
+      "warning_lines": 0
+    },
+    "consecutive_complete_successes_since_bootstrap_fix": 10,
+    "published_accepted_commit": "d2212931218bd5d497f002d036a7e6eaf97d6392",
+    "published_candidate_blob": "86bc1912425b0848899f36c00eadee3bcdb3b6c7",
+    "published_candidate_acceptance_blob": "b96cffccb8ae1e6ac7f0502933654aab038f1031",
+    "new_specific_run": 42444551725,
+    "new_specific_job": 128620625267,
+    "new_specific_run_last_observed_status": "in_progress",
+    "new_assemble_push_deferred_until_specific_run_terminal": true,
+    "main_preserved": "721d331a4ddd3c1d759a719a55f09388ade4fa30"
+  },
+  "remaining": [
+    "Compose existing actual candidate family with existing support intersection/context transport into presentation_reverse_injection",
+    "Main.reverse_injection_dense / forces_PP / forces_target / Main",
+    "All INTERNAL/nonstandard proof codes and final object Con_ZF -> Con_(ZF+PP+ACwo+notAC)",
+    "Original stage4 full Comparator and stage11 final acceptance"
+  ],
+  "cleanup": {
+    "removed_files": [
+      {
+        "path": ".local/SliceAssemblyAudit.lean",
+        "size": 1289,
+        "raw_sha256": "c74fc5651e6e6cbc705fa0445d420d8f1f7bc913956fb0611edee0074ed24b64"
+      },
+      {
+        "path": "verification/slice-assembly-build.log",
+        "size": 108,
+        "raw_sha256": "416d4acc325a7c73307479eedce9ea0dde6667afd815374da466a44ef248ec3d"
+      },
+      {
+        "path": "verification/slice-assembly-local-axioms.log",
+        "size": 5383,
+        "raw_sha256": "c51e04aafa6f1916c51d0015adce046ddb105e9aa5b0e15c801599a75d650f02"
+      },
+      {
+        "path": "verification/slice-assembly-baseline.tmp.json",
+        "size": 14445010,
+        "raw_sha256": "5bd310a3243f1c18bdee3a670015da896f915b5cc9fe332b269984cbbb023f01"
+      },
+      {
+        "path": "verification/slice-assembly-full-verify.log",
+        "size": 153,
+        "raw_sha256": "665608a4a4a9cf507ac6e6d166a318aea61fb05155008f52fd204d58682cd2db"
+      }
+    ],
+    "post_cleanup_build": {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "build_jobs": 3234
+    },
+    "post_cleanup_current_source_hashes_verified": 2792
+  }
+}

@@ -14374,4 +14374,11 @@ example {k : Nat} (root : Fin 40 → Fin k) (S f s X Y O checkedO Cart p : Fin k
       (ForcingSliceCandidate.sentence root S f s X Y O checkedO Cart p))) :=
   ForcingSliceCandidate.kernel_certificate root S f s X Y O checkedO Cart p
 
+-- Full pinned SliceAssembly.assemble in the ordinary nativeZF original kernel.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (I K B w G F S H mul top O f s A X Y checkedO Cart choices p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceAssembly.sentence rho I K B w G F S H mul top O f s A X Y checkedO Cart choices p)) :=
+  ForcingSliceAssembly.kernel_certificate rho I K B w G F S H mul top O f s A X Y checkedO Cart choices p
+
 end PPAC.Migration.Step4Checks

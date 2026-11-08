@@ -39,7 +39,7 @@ private theorem app_congr (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
   intro j
   exact Fin.cases hf (Fin.cases hx (Fin.cases hy (fun i => Fin.elim0 i))) j
 
-private theorem injection_mapsTo (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+theorem injection_mapsTo (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
     {P p f X Y : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
     (hp : (Project.FirstOrderSemantics.reduct M).mem p P)
@@ -48,7 +48,7 @@ private theorem injection_mapsTo (hM : FirstOrder.Theory.Models M nativeZF) {k :
   rw [Source.SetLanguage.injection,ForcingSound.rename hM hpre _ _ _ _ hp,ForcingFormula.force_conj] at hf
   exact hf.1
 
-private theorem injection_one (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
+theorem injection_one (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
     {R : Formula (k+2)} {H : Formula (k+1)} {env : Fin k → M.Carrier .set}
     {P p q f X Y x y z : M.Carrier .set} (hpre : ForcingAtomicBasic.PreorderOn R env P)
     (hp : (Project.FirstOrderSemantics.reduct M).mem p P)

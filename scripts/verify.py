@@ -2618,7 +2618,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_least_occurrence', 'ForcingLeastOccurrence', 18),
                                 ('forcing_ordered_sections', 'ForcingOrderedSections', 15),
                                 ('forcing_least_relation', 'ForcingLeastRelation', 36),
-                                ('forcing_indexed_image', 'ForcingIndexedImage', 15),
+                                ('forcing_indexed_image', 'ForcingIndexedImage', 17),
                                 ('forcing_uniform_maximum', 'ForcingUniformMaximum', 17),
                                 ('forcing_section_injection', 'ForcingSectionInjection', 28),
                                 ('forcing_wellordered_target', 'ForcingWellorderedTarget', 14),
@@ -2628,7 +2628,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_slice_coverage', 'ForcingSliceCoverage', 18),
                                 ('forcing_empty_domain', 'ForcingEmptyDomain', 17),
                                 ('forcing_slice_parameters', 'ForcingSliceParameters', 11),
-                                ('forcing_slice_candidate', 'ForcingSliceCandidate', 7)):
+                                ('forcing_slice_candidate', 'ForcingSliceCandidate', 7),
+                                ('forcing_slice_assembly', 'ForcingSliceAssembly', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6183,12 +6184,12 @@ def main(source_check_only: bool = False) -> None:
         "source_OrderedSections_uniform_section_injection_and_wellorderable_target_complete": True,
         "source_UniformImages_uniform_maximum_dense_family_wrapper_complete": True,
         "source_UniformImages_uniform_maximum_dense_family_scope": "Actual internal FunctionOn family over ALL members of an arbitrary internal index set, for definable functional Q parameters; same condition and support prepared before witnesses. Existing localized_maximum, Collection and donor uniformization genuinely consumed. Ordinary nativeZF kernel SAME-L relative sentence discharges ground Choice. Source n is finite syntactic arity, not an index bound. Arbitrary external Sort families and actual section/slice consumers are not claimed complete.",
-        "source_OrderedSections_and_full_slice_geometry_assembly_complete": False,
+        "source_OrderedSections_and_full_slice_geometry_assembly_complete": True,
         "source_OrdinalPresentation_scope": "Full pinned OrdinalPresentation:342-412. Actual full index/family, supporting diagram extension, dense cover, existing INTERNAL ordinal reindexing and actual Cartesian/completion graph surjection; all internal conditions and unrestricted HS names. The nativeZF object-kernel endpoint uses the already completed internal L interpretation to discharge ground Choice. Source mathematical background guards remain explicit. No given family, cover, ordinal enumeration, Cartesian domain or final surjection. Main global reverse injection, PP and all-internal/nonstandard Con remain incomplete.",
         "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
         "source_SliceGeometry_piece_family_original_kernel_constructed": True,
         "source_SliceGeometry_support_before_all_internal_indices": True,
-        "source_SliceGeometry_full_graph_surjections_source_disjointness_cover_and_assembly_complete": False,
+        "source_SliceGeometry_full_graph_surjections_source_disjointness_cover_and_assembly_complete": True,
         "source_SliceGeometry_full_slice_and_part_graph_surjections_native_kernel_complete": True,
         "source_SliceGeometry_Spart_disjointness_native_kernel_complete": True,
         "source_SliceGeometry_occurrence_and_actual_Ypart_name_cover_native_kernel_complete": True,
@@ -6198,8 +6199,11 @@ def main(source_check_only: bool = False) -> None:
         "source_SliceAssembly_actual_slice_candidate_native_kernel_complete": True,
         "source_SliceAssembly_all_four_actual_UniformMaximum_inputs_complete": True,
         "source_SliceAssembly_actual_internal_candidate_FunctionOn_family_constructed": True,
-        "source_SliceAssembly_slice_candidate_and_assemble_complete": False,
-        "source_SliceGeometry_piece_family_scope": "Ordinary nativeZF Derives constructs one actual common support, then check(i), B/Ypart/Spart names for every INTERNAL i in the WHOLE O, with exact raw edges and same-support HS. Source literal-pair slice equivalence, exact B/occurrence/Ypart/Spart member laws and internal-ordinal Ypart disjointness are compiled helpers. No supplied support/check/piece family, finite-index/rank cutoff, new Choice/L/foundation, external family, or completed FunctionOn graph of all pieces. Actual slice/part graph surjections, Spart disjointness, occurrence and actual Ypart-name cover now have separate ordinary nativeZF endpoints. The actual definable two-name parameter relation is now total/unique/HS/fixed in nativeZF; existing UniformMaximum consumes it directly, so a separate parameter FunctionOn is not required. Actual slice_candidate, force(ex injection), all four UniformMaximum.Inputs and the actual all-internal FunctionOn candidate family now have an ordinary nativeZF L-relative original-kernel endpoint. Source assemble/presentation_reverse_injection/global reverse injection, PP/Main/all-internal nonstandard Con and Comparator remain pending.",
+        "source_SliceAssembly_actual_assemble_native_kernel_complete": True,
+        "source_SliceAssembly_actual_assemble_output_retains_Graph_HS_support_full_injection": True,
+        "source_SliceAssembly_slice_candidate_and_assemble_complete": True,
+        "source_SliceAssembly_presentation_reverse_injection_complete": False,
+        "source_SliceGeometry_piece_family_scope": "Ordinary nativeZF Derives constructs one actual common support, then check(i), B/Ypart/Spart names for every INTERNAL i in the WHOLE O, with exact raw edges and same-support HS. Source literal-pair slice equivalence, exact B/occurrence/Ypart/Spart member laws and internal-ordinal Ypart disjointness are compiled helpers. No supplied support/check/piece family, finite-index/rank cutoff, new Choice/L/foundation, external family, or completed FunctionOn graph of all pieces. Actual slice/part graph surjections, Spart disjointness, occurrence and actual Ypart-name cover now have separate ordinary nativeZF endpoints. The actual definable two-name parameter relation is now total/unique/HS/fixed in nativeZF; existing UniformMaximum consumes it directly, so a separate parameter FunctionOn is not required. Actual slice_candidate, force(ex injection), all four UniformMaximum.Inputs and the actual all-internal FunctionOn candidate family now have an ordinary nativeZF L-relative original-kernel endpoint. Source assemble now has a separate ordinary nativeZF original-kernel endpoint retaining actual Graph, HS, support and FULL injection/functionOn/no-junk. Its candidate FunctionOn and support are exactly the original source consumer inputs, already separately constructed by ForcingSliceCandidate. The support-intersection/context composition into presentation_reverse_injection/global reverse injection, PP/Main/all-internal nonstandard Con and Comparator remain pending.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
