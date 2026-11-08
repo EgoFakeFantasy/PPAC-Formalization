@@ -38936,3 +38936,18 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistChildCode.uniqueOutput
 #print axioms PPAC.Migration.ForcingExistChildCode.uniqueSentence
 #print axioms PPAC.Migration.ForcingExistChildCode.unique_kernel_certificate
+
+-- Literal full existential code step, arbitrary internal child codes.
+#print axioms PPAC.Migration.ForcingExistCode.compiled
+#print axioms PPAC.Migration.ForcingExistCode.compiled_rename
+#print axioms PPAC.Migration.ForcingExistCode.existsCompiled
+#print axioms PPAC.Migration.ForcingExistCode.total
+#print axioms PPAC.Migration.ForcingExistCode.compiled_type
+#print axioms PPAC.Migration.ForcingExistCode.unique
+#print axioms PPAC.Migration.ForcingExistCode.uniqueOutput
+#print axioms PPAC.Migration.ForcingExistCode.fiber
+#print axioms PPAC.Migration.ForcingExistCode.fiber_total
+#print axioms PPAC.Migration.ForcingExistCode.sentence
+#print axioms PPAC.Migration.ForcingExistCode.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistCode.uniqueSentence
+#print axioms PPAC.Migration.ForcingExistCode.unique_kernel_certificate

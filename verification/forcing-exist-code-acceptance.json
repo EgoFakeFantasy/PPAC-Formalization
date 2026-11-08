@@ -1,0 +1,297 @@
+{
+  "verified_at": "2026-11-08T17:50:23.740151+00:00",
+  "baseline_commit": "e2636ce699d53e670e3595c225485d1e9d6caf42",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declaration": "AtomicData.Force.ex; faithful existing ForcingFormula.basic.ex",
+  "object_result": "The full one-step existential forcing-code operation constructs all head, guards, child rebinding, AND/EX/IMP/ALL constructor outputs internally, proves exact output typing and uniqueness across independent executions.",
+  "exact_output": "ALL q (q in P -> (R(q,p) -> EX r (r in P AND (R(r,q) AND EX x (H(x) AND child[v+x,p:=r])))))",
+  "endpoints": [
+    "PPAC.Migration.ForcingExistCode.kernel_certificate",
+    "PPAC.Migration.ForcingExistCode.unique_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the original kernel",
+  "reuse": [
+    "ForcingExistChildCode full actual mixed child rescoping",
+    "ForcingGuardCode existing guard compiler",
+    "ForcingExistGuardsCode actual R(r0,q1) and domainOrder H",
+    "SyntaxMixedImageHead existing head and term_at_zero",
+    "Existing FormulaCodeConstructors and SyntaxConstructors.unique",
+    "Original TheoryTransport and nativeZF ZFReplay"
+  ],
+  "eliminated_witnesses": {
+    "outer_record": [
+      "empty zero",
+      "actual bvar0 term",
+      "q membership",
+      "q order",
+      "r membership",
+      "r order",
+      "name domain",
+      "rescoping output"
+    ],
+    "shell_record": [
+      "domain AND child",
+      "EX name",
+      "r order AND EX name",
+      "r membership AND body",
+      "EX r",
+      "q order IMPLIES EX r",
+      "q membership IMPLIES body"
+    ],
+    "final_output": "ALL q"
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38283,
+    "new_branch_declarations": 13,
+    "all_prior_38270_footprints_unchanged": true,
+    "all_old_proof_module_hashes_unchanged": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2829,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_13_declaration_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.ForcingExistCode.compiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.compiled_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.existsCompiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.compiled_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.uniqueOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.fiber": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.fiber_total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingExistCode.uniqueSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingExistCode.unique_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "build_log_last_lines": [
+      "✔ [3268/3269] Built PPAC (10s)",
+      "Build completed successfully (3269 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "arbitrary_internal_including_nonstandard_bound_scopes_and_child_output_candidates": true,
+    "source_child_scope": "A=successor(a)",
+    "target_scope": "a; inner body C=successor(successor(A))",
+    "templates": "R/H and parameter count are fixed external templates; free count f has object numeral n+2; condition slot j has object numeral n+1",
+    "no_supplied_output_execution_or_canonical_witness": true,
+    "full_existential_code_step_on_already_interpreted_child": true,
+    "full_raw_recursive_forcing_interpreter": false,
+    "uniform_internal_coded_axiom_forcing": false,
+    "all_internal_six_rule_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-build.log",
+      "size": 105,
+      "sha256": "56509bb889879f5bba1a706a8929e672f676b6ac8395d581deb599affac49913"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-audit.lean",
+      "size": 804,
+      "sha256": "96c39b51890fd8569c432218614d9149d70c4d91c2442e5dec58b709988269f2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-audit.log",
+      "size": 2235,
+      "sha256": "2e9e83a7ca51fb0185a3b65db07e7593bcb97c7d147482e6e0e1eae4fe150a41"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-parent-summary.json",
+      "size": 14776054,
+      "sha256": "ac5b73a924a028c3772fb89da65f3b4c4e4af0afa841bb0594d2f0a113473940"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-source-preflight.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-code-full-verify.log",
+      "size": 153,
+      "sha256": "62aded5703fe2520c8c7a7f7f2a82f33b3abc3756138aeb18d7e902d53b24f73"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; wait for preceding full remote CI success and actual logs before next normal push",
+    "preceding_run": 42501489198,
+    "preceding_sha": "db4d19856e349b250123a6546ceb69ff8c1d6a75",
+    "native_job": 128795001419,
+    "native_last_observed_status": "in_progress",
+    "official_original_comparator_already_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

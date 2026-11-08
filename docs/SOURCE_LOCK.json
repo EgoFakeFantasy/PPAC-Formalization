@@ -162341,6 +162341,112 @@
           "propext"
         ]
       }
+    },
+    "forcing_exist_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingExistCode.lean",
+      "source_declarations": [
+        "AtomicData.Force existential branch: forall q <= p, exists r <= q, exists x in HS, child with extended name assignment and condition r",
+        "Existing ForcingFormula.basic.ex literal ALL/IMP/IMP/EX/AND/AND/EX/AND body"
+      ],
+      "consumers": [
+        "Full internal forcing-code recursion at its existential step",
+        "InternalConsistency.reduction after uniform coded forcing/axiom/proof interpretation"
+      ],
+      "reuse_producers": [
+        "ForcingExistChildCode complete actual child rescoping from A=a+1 to C=a+3, preserving name0 and condition r1",
+        "ForcingGuardCode existing membership/order compiler and ForcingExistGuardsCode inner R(r0,q1)/domainOrder H",
+        "Existing SyntaxMixedImageHead head/term_at_zero and ordinary omega successor closure",
+        "Existing FormulaCodeConstructors binary0/binary2/existential/universal and SyntaxConstructors unique",
+        "Original Source.Derives, TheoryTransport and nativeZF ZFReplay; no new kernel, recursion or syntax backend"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
+        "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
+        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
+      },
+      "scope": "Complete one-step literal existential forcing code on an already interpreted arbitrary internal child N at A=a+1. Construct head, five guards, actual child rescoping and seven intermediate AND/EX/IMP outputs, ending with ALL at a. Exact order R(r,q); new name at bound0, current condition r at bound1, q at bound2. All executions are internally existential and independently unique. Arbitrary internal/nonstandard a/A/B/C and child/output codes; fixed external R/H parameter count, exact object numeral free count n+2 and condition slot n+1. Not the full raw recursive interpreter, uniform internal axiom forcing, proof/contradiction reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
