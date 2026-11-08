@@ -21,3 +21,5 @@
 实际原子公式码入口：ForcingAtomCode覆盖假／真／成员／相等四分支，直接解析原实际公式码，消去外给字段；成员／相等复用既有ForcingAtomicCode，常量保留原码。真常量经既有Reverse.formula回译的bottom→bottom与原toBasic强迫取得原核规范化证明。三个普通nativeZF端点的定向及全量验收均通过；准确类型、独立解析见证下唯一性与带类型唯一输出的实际结果见verification/forcing-atom-dispatch-acceptance.json。源自由范围仍为零，完整逻辑／binder递归解释、全部Proof和Con仍未完成。
 
 远端42483548594：原核主线成功，真实Comparator在开始比较前因ABI10要求与runner ABI8不匹配停止。兼容修复保持固定官方源码和全部验收项目，明确最低ABI8并按官方参数调用，以外层全网络／io_uring拒绝和五项实测文件拒绝覆盖所需守卫；快速Linux预检前置。新策略仅本地回归／静态检查通过，真实Linux仍待重验，原第4不可记为完成。
+
+5596a08已上传，快速预检在28秒内发现systemd255瞬态D-Bus属性不接受字面none，原核长构建与Comparator均未启动。本轮仅将两处RestrictAddressFamilies改成空允许列表（D-Bus实际编码deny all）；全网络／io_uring过滤和ABI8／文件拒绝守卫不变。全部Lean、原核及其他2818项验收输入哈希未变，沿用5596a08形式化全量验收；兼容复验见verification/comparator-systemd255-property-fix.json。

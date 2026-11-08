@@ -1,0 +1,62 @@
+{
+  "verified_at": "2026-11-08T14:50:50.617505+00:00",
+  "baseline_commit": "5596a0818323ffeffbc3aba0299a53bd8768dd40",
+  "failed_run": 42491514293,
+  "failed_job": 128764709266,
+  "cause": "systemd255 transient RestrictAddressFamilies=(bas) setter rejects family name none; an empty allow-list encodes denial of all families.",
+  "fix": "Use --property=RestrictAddressFamilies= in both transient commands. This sends allow_list=true and an empty string array; unit serialization emits RestrictAddressFamilies=none. Network syscall filter, io_uring filter, ABI>=8 floor, non-root/NoNewPrivs/capabilities and five actual filesystem probes are unchanged. Explicit SystemCallErrorNumber=EPERM lets the mandatory denial probes observe denied calls without SIGSYS termination; SystemCallArchitectures=native prevents alternate-ABI filter bypass.",
+  "source": "https://github.com/systemd/systemd/blob/v255/src/core/dbus-execute.c",
+  "client_source": "https://github.com/systemd/systemd/blob/v255/src/shared/bus-unit-util.c",
+  "validation": {
+    "all_prior_2819_hashed_inputs_except_workflow_unchanged": true,
+    "all_Lean_and_kernel_inputs_unchanged": true,
+    "formal_acceptance_baseline": "verification/forcing-atom-dispatch-acceptance.json",
+    "baseline_audited_declarations": 38172,
+    "guard_regressions": 7,
+    "cross_platform_hash_regressions": 5,
+    "actionlint_exit": 0,
+    "bash_blocks_checked": 7,
+    "source_preflight_exit": 0,
+    "real_Linux_passed": false,
+    "git_diff_check_exit": 0
+  },
+  "failed_log_sha256": "9dc952d0788b822a8103de03816541b588d073de850e6dba9a5c032b2d9f24f8",
+  "execution_semantics_source": "https://www.freedesktop.org/software/systemd/man/255/systemd.exec.html",
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-0.sh",
+      "size": 187,
+      "sha256": "904ae6ddc8b4c6b4af6c46e1621d5bd8a506e36bcece03cc792a2b37bae0b9cf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-1.sh",
+      "size": 180,
+      "sha256": "534b141405e5f75092fb3651bb15c73ca00174ed4246f0ef03c76e561741bb23"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-2.sh",
+      "size": 635,
+      "sha256": "df78f55aedf7d128d8beb37cdd8c80d4d05bb05d2417e745beb095ebaa4778e8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-3.sh",
+      "size": 187,
+      "sha256": "904ae6ddc8b4c6b4af6c46e1621d5bd8a506e36bcece03cc792a2b37bae0b9cf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-4.sh",
+      "size": 258,
+      "sha256": "257747eeca65389a7c1a816ba0fa1b4c74dda19d8925bc862a952a6a0c018c09"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-5.sh",
+      "size": 321,
+      "sha256": "5dea6b3624e15b7dfc4f533abf3fa8ec54348d3543bfa8bc7a9011118bdad780"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\systemd255-shell-6.sh",
+      "size": 918,
+      "sha256": "2ef4fdf0d995dc6d908795823094c6cf5f9ccb3c7d95b110e7b524ea6101fadb"
+    }
+  ]
+}
