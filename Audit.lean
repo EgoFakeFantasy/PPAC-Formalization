@@ -39238,3 +39238,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPointwiseCode.typed_unique_total
 #print axioms PPAC.Migration.ForcingPointwiseCode.sentence
 #print axioms PPAC.Migration.ForcingPointwiseCode.kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeStepUnique.select_binary
+#print axioms PPAC.Migration.ForcingCodeBinary.binary
+#print axioms PPAC.Migration.ForcingCodeBinary.input
+#print axioms PPAC.Migration.ForcingCodeBinary.sentence
+#print axioms PPAC.Migration.ForcingCodeBinary.kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeBinary.conjunction_iff
+#print axioms PPAC.Migration.ForcingCodeBinary.conjunctionSentence
+#print axioms PPAC.Migration.ForcingCodeBinary.conjunction_kernel_certificate

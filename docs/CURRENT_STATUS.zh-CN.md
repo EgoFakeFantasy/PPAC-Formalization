@@ -21,3 +21,5 @@
 发布门：只在前一整轮远端CI成功并读回实际日志后推送；推送后核对远端HEAD、所有改动blob及关键证明／报告实际字节。本地验收不冒充远端通过，不以文档中的历史批次号替代GitHub实际状态。
 
 原第10逐点开放代码适配：ForcingOpenLayout复用原恒等／加法Replacement图、变量像和混合替换列表，在全部内部／非标准范围构造名字前缀i、参数偏移b+i及唯一环境；ForcingPointwiseCode实际消费该环境、既有reify_total、十一构造强迫编译总唯一性及原混合替换，得到free范围t=b+f的逐点开放输出。未插入forallClosure。已取得nativeZF原核中的类型化总唯一证书；重命名／raise／instantiate交换、语义对应、强迫六规则保真、reduction与最终Con仍未证明。完整九项验收及五项trust=0通过，零警告；全部38504项旧足迹与旧证明正文保持，12项兼容回归和三库／75哈希预检通过。源声明名称核对至固定原文forcing_sound；验收见verification/forcing-pointwise-acceptance.json。
+
+原第10实际二元编译计算律：ForcingCodeBinary从真实父／子compiled判断推出四种原ForcingLogicalCode.binary结果；历史在对象EX内生成，直接复用compiled_step、既有分支选择、有界读取和独立子输出唯一性。ForcingCodeStepUnique仅追加公开选择入口，全部旧正文不变。空源bound时，实际合取编译已接到原Node／Root证明构造，取得两种完整ZF/U测试下Proved(Q)↔(Proved(N)∧Proved(M))。所有运行码／范围允许内部非标准。原AbstractTopFormulaOperation、InstantiateTopFormulaOperation与execution_iff早已完成，相关旧False标志纠正；不重新证明这些桥。逐点开放交换、规范化强迫MP桥、统一公理／Proof正确性、reduction及最终Con仍未证明。完整九项验收、五项trust=0通过，38570项声明、零警告；全部38562项旧足迹和旧证明正文保持，12项兼容回归及三库／75哈希预检通过。验收见verification/forcing-code-binary-acceptance.json。

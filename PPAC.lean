@@ -1108,3 +1108,4 @@ import PPAC.Migration.InternalProofTemplates
 import PPAC.Migration.InternalProofImplication
 import PPAC.Migration.ForcingOpenLayout
 import PPAC.Migration.ForcingPointwiseCode
+import PPAC.Migration.ForcingCodeBinary

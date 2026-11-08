@@ -1,0 +1,287 @@
+{
+  "verified_at": "2026-11-08T23:17:31.214999+00:00",
+  "baseline_commit": "fc221c6c72084c670770a4ff031612e53d735208",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "All four actual source binary constructors (conjunction, disjunction, implication and equivalence) now determine the exact existing ForcingLogicalCode.binary output on independently compiled actual child outputs. The parent and both children are genuine ForcingCodeRecursion.compiled judgments; no local binary answer, history, availability or functionality oracle is supplied. Original internal graph existence, compiled_step, retained branch selectors, bounded reads and independent child-output uniqueness are reused; all source codes, outputs and scopes include internal nonstandard values. Three successor scope witnesses are the existing internal compiler bookkeeping, not external standard counts. For empty source bound scope, the conjunction law feeds the accepted original native proof constructors and yields Proved(Q) iff (Proved(N) AND Proved(M)) for either unchanged complete ZF/U test. This does not prove pointwise open rename/raise/instantiate commutation, normalized forcing MP preservation, uniform coded semantic/axiom/proof correctness, reduction or final Con.",
+  "endpoints": [
+    "PPAC.Migration.ForcingCodeBinary.kernel_certificate",
+    "PPAC.Migration.ForcingCodeBinary.conjunction_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_main_object_contract": {
+    "all_four_binary_cases": "Omega(w), n IN w, successor(A,a), successor(B,A), successor(C,B), actual BinaryCode(kind,x,y,n), actual Compiled(a,n,Q), Compiled(a,x,N), Compiled(a,y,M) imply the exact existing ForcingLogicalCode.binary(kind,R,w,a,A,f,j,N,M,Q). The graph is internally constructed; child executions are aligned using independent output uniqueness. No local branch answer or history is an input.",
+    "actual_conjunction_proof_consumer": "For empty source bound/free scope z, the kind0 computation law supplies the actual AND relation to the accepted original proof operations: Proved(Q) iff (Proved(N) AND Proved(M)). Both exact complete original ZF and U tests are supported. Native Node/header and Root at empty target free scope are retained. This closed-source consumer is not uniform open-node rule preservation."
+  },
+  "reuse": [
+    "PPAC/Migration/ForcingCodeStepUnique.lean",
+    "PPAC/Migration/ForcingCodeUnique.lean",
+    "PPAC/Migration/ForcingCodeRecursion.lean",
+    "PPAC/Migration/ForcingLogicalCode.lean",
+    "PPAC/Migration/InternalProofTemplates.lean",
+    "PPAC/Migration/Internal/StructuralListTraceOrder.lean"
+  ],
+  "corrected_old_status": {
+    "field": "object_internal_mixed_formula_InstantiateTop_AbstractFreeTop_proved",
+    "old": false,
+    "new": true,
+    "meaning": "Existing all-internal original operation to pure mixed-formula correspondence; not the new pointwise forcing compiler commutation.",
+    "already_audited_proofs": [
+      "PPAC.Migration.Internal.FormulaTransformRecursionCorrectness.execution_iff",
+      "PPAC.Migration.Internal.AbstractTopFormulaOperation.run_iff",
+      "PPAC.Migration.Internal.InstantiateTopFormulaOperation.run_iff"
+    ],
+    "new_proof_of_these_claimed": false
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38570,
+    "new_declarations": 8,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingCodeStepUnique.select_binary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.binary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.conjunction_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.conjunctionSentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeBinary.conjunction_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "previous_footprints_unchanged": 38562,
+    "previous_proof_files": 2811,
+    "unmodified_previous_proof_file_hashes_unchanged": 2810,
+    "only_changed_previous_proof_file": "PPAC/Migration/ForcingCodeStepUnique.lean",
+    "entire_previous_proof_module_prefix_unchanged": true,
+    "append_only_public_selector_lines": 14,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingCodeStepUnique.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_code_step_unique",
+      "forcing_code_unique"
+    ],
+    "reason_for_previous_source_adaptation_updates": "Only the exact hash of the append-only selector file changed in two certificate-source maps; its own footprint table gained the public selector. Existing proof footprints are unchanged.",
+    "sealed_input_count": 2844,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0,
+    "source_placeholder_hits": 0
+  },
+  "scope": {
+    "actual_all_four_binary_computation_laws_proved": true,
+    "actual_closed_source_conjunction_native_proof_iff_proved": true,
+    "pointwise_open_rename_raise_instantiate_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_semantic_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-binary-selector-build.log",
+      "bytes": 173,
+      "sha256": "708afe65322b9dc1e59db3b22b0a133658ffb58f34633f203466e3dfd6384914"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-build.log",
+      "bytes": 106,
+      "sha256": "31421119dda1a1f84f42bec8bc3826acc3cc32c71c5a6c1435331863f0e81a8e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-audit.lean",
+      "bytes": 542,
+      "sha256": "a9a4ee258b01b34c55d385b4e13b9c2e7672d8f4d428b5a2b8abd256ac41eb32"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-audit.log",
+      "bytes": 2261,
+      "sha256": "e66ea8febd68fc3fdc320382c429d2afe8ff03a11b8cd7ee7b61b68f40324a83"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-parent-summary.json",
+      "bytes": 14849372,
+      "sha256": "ef89c6374333a6d21deb4409f9f7492f21a3f63eed1a5753f586d3b2157e16f6"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-binary-full.log",
+      "bytes": 153,
+      "sha256": "ccbc038bdc9ad33b402e2fc1b8bed31cb7dcc9cda64630e3ee6878b95b663bd7"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "authority": "Existing user approval to upload all current accepted work.",
+    "policy": "Do not push until entire preceding remote run succeeds and actual native success log is read.",
+    "preceding_remote_run": 42532862262,
+    "status_at_acceptance": "not yet published; preceding remote CI still live"
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-08T23:18:00.437902+00:00"
+}

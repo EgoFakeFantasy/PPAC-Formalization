@@ -694,4 +694,18 @@ theorem kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.Formula 
   exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) _) R H w z f j a A B C h n Q V
     (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl))))) (.hyp (Or.inr (Or.inr (Or.inl rfl))))
     (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+/-- Expose the already proved exact branch selectors to the actual compiler
+computation laws; no branch-disjointness proof is repeated. -/
+theorem select_binary {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C h n Q x y : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode kind w x y n))
+    (hs : Derives Γ (ForcingCodeStep.cases R H w z f j a A B C h n Q)) :
+    Derives Γ (ForcingCodeStep.binary kind R w z f j a A B C h n Q) := by
+  have hk : kind = 0 ∨ kind = 1 ∨ kind = 2 ∨ kind = 3 := by omega
+  rcases hk with rfl | rfl | rfl | rfl
+  · exact select_b0 hZ R H w z f j a A B C h n Q x y hw hc hs
+  · exact select_b1 hZ R H w z f j a A B C h n Q x y hw hc hs
+  · exact select_b2 hZ R H w z f j a A B C h n Q x y hw hc hs
+  · exact select_b3 hZ R H w z f j a A B C h n Q x y hw hc hs
+
 end PPAC.Migration.ForcingCodeStepUnique

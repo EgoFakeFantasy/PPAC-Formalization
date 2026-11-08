@@ -2695,7 +2695,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_step', 'ForcingCodeStep', 36),
                                 ('forcing_code_recursion', 'ForcingCodeRecursion', 42),
                                 ('forcing_code_total', 'ForcingCodeTotal', 11),
-                                ('forcing_code_step_unique', 'ForcingCodeStepUnique', 6),
+                                ('forcing_code_step_unique', 'ForcingCodeStepUnique', 7),
                                 ('forcing_code_unique', 'ForcingCodeUnique', 12),
                                 ('forcing_open_code', 'ForcingOpenCode', 24),
                                 ('internal_mp_proof', 'InternalMPProof', 12),
@@ -2704,7 +2704,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_proof_templates', 'InternalProofTemplates', 9),
                                 ('internal_proof_implication', 'InternalProofImplication', 7),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
-                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 23)):
+                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 23),
+                                ('forcing_code_binary', 'ForcingCodeBinary', 7)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7382,6 +7383,9 @@ def main(source_check_only: bool = False) -> None:
         "object_pointwise_open_forcing_code_typed_total_unique_proved": True,
         "object_pointwise_open_forcing_code_scope": 'Actual pointwise OPEN code production: source FormulaCode(w,n,z,b), with empty z, is reified by the accepted original mixed substitution to bound b/free z; the accepted actual eleven-constructor forcing compiler is used at bound b WITHOUT forallClosure; the existing mixed substitution opens names to prefix i<b and parameters to b+i, giving target FormulaCode(w,Q,z,t) for t=b+f. Every environment, reified code, forcing history and output is internally constructed; totality, typing and independent-output uniqueness cover all internal/nonstandard codes and scopes. The typed total theorem is replayed to the unchanged original FirstOrder.Derives nativeZF kernel. This is code production, NOT quotation/semantic correspondence, rename/raise/instantiate commutation or interpreted six-rule preservation. The normalized forcing MP bridge, uniform coded semantic/axiom/proof correctness, InternalConsistency.reduction and final Con remain unproved.',
         "object_pointwise_open_rename_raise_instantiate_commutation_proved": False,
+        "object_actual_forcing_compiler_four_binary_computation_laws_proved": True,
+        "object_actual_closed_source_conjunction_compilation_native_proof_iff_proved": True,
+        "object_actual_forcing_compiler_binary_scope": 'All four actual source binary constructors (conjunction, disjunction, implication and equivalence) now determine the exact existing ForcingLogicalCode.binary output on independently compiled actual child outputs. The parent and both children are genuine ForcingCodeRecursion.compiled judgments; no local binary answer, history, availability or functionality oracle is supplied. Original internal graph existence, compiled_step, retained branch selectors, bounded reads and independent child-output uniqueness are reused; all source codes, outputs and scopes include internal nonstandard values. Three successor scope witnesses are the existing internal compiler bookkeeping, not external standard counts. For empty source bound scope, the conjunction law feeds the accepted original native proof constructors and yields Proved(Q) iff (Proved(N) AND Proved(M)) for either unchanged complete ZF/U test. This does not prove pointwise open rename/raise/instantiate commutation, normalized forcing MP preservation, uniform coded semantic/axiom/proof correctness, reduction or final Con.',
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),
@@ -7406,7 +7410,7 @@ def main(source_check_only: bool = False) -> None:
         "object_internal_mixed_formula_actual_exists_unique_fiber_input_iff_proved": True,
         "object_internal_mixed_formula_eleven_constructor_exact_endpoint_laws_proved": True,
         "object_internal_mixed_formula_original_operation_quotation_correspondence_proved": False,
-        "object_internal_mixed_formula_InstantiateTop_AbstractFreeTop_proved": False,
+        "object_internal_mixed_formula_InstantiateTop_AbstractFreeTop_proved": True,
         "object_internal_index_graph_to_variable_term_image_actual_unique_proved": True,
         "object_internal_identity_shift_variable_term_tables_actual_unique_proved": True,
         "object_internal_InstantiateTop_complete_environment_tables_actual_unique_proved": True,
