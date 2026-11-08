@@ -1,0 +1,235 @@
+{
+  "verified_at": "2026-11-08T19:01:20.951790+11:00",
+  "baseline_commit": "b5b0d3ccff409de61f9398d7c14090eab32402be",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaAxiomUnique.kernel_certificate",
+    "PPAC.Migration.SchemaAxiomUnique.comparison_kernel_certificate"
+  ],
+  "actual_object_result": "The SAME raw valid original Project body now constructs an actual COMPLETE CLOSED FormulaCode together with ALL-candidate uniqueness after compilation, three renamings, original finite Separation/Collection template and WHOLE internal forall closure. Component uniqueness is reused, not reproved. A separate ordinary nativeZF comparison endpoint also permits independently constructed original four-successor scope chains. All count/body/map/code/matrix/trace witnesses are internal, including nonstandard counts.",
+  "explicit_parents": [
+    "omega(w)",
+    "n in w",
+    "empty(z)",
+    "original four-successor scope chain at n",
+    "raw original Project body sourceCode at the original source scope and zero free variables"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_counts_and_raw_bodies": true,
+    "actual_complete_typed_unique_output_constructed_from_raw_body": true,
+    "fiber_uniqueness_quantifies_all_schemaResult_candidates_at_input_scope_chain": true,
+    "separate_comparison_endpoint_allows_independent_scope_chain_witnesses": true,
+    "all_independent_compiler_index_graph_map_code_identity_matrix_core_whole_closure_witnesses": true,
+    "unchanged_original_finite_templates_and_hole_order": true,
+    "given_output_trace_map_type_or_functional_oracle": false,
+    "host_induction_on_parameter_count": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "whole_schema_type_unique_integration_complete": true,
+    "full_ZF_U_original_certificate_tag_row_test_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "SyntaxFreeShiftGraph.unique_map",
+    "SchemaDoubleShiftGraph.unique_map",
+    "SyntaxIndexLift.unique",
+    "SyntaxMapCode.unique_code",
+    "SyntaxIdentityUnique.code_unique",
+    "SyntaxRenameOutputClassify.unique_output_of_renamed",
+    "SyntaxRenameFiberUnique.at_unique",
+    "ProjectCompilerUnique.unique_outputs",
+    "SchemaAxiomAssembly.output_unique",
+    "SchemaShellTyping.output_exists_typed",
+    "OmegaUniversal.successor_unique",
+    "original Derives.eqSubst and ZFReplay.replay"
+  ],
+  "acceptance": {
+    "audited_declarations": 38002,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35746,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaAxiomUnique.comparison_kernel_certificate",
+      "PPAC.Migration.SchemaAxiomUnique.comparison_sentence",
+      "PPAC.Migration.SchemaAxiomUnique.comparison_source_certificate",
+      "PPAC.Migration.SchemaAxiomUnique.compiled_unique",
+      "PPAC.Migration.SchemaAxiomUnique.fiber",
+      "PPAC.Migration.SchemaAxiomUnique.fiber_rename",
+      "PPAC.Migration.SchemaAxiomUnique.index_graph_unique",
+      "PPAC.Migration.SchemaAxiomUnique.kernel_certificate",
+      "PPAC.Migration.SchemaAxiomUnique.output_exists_typed_unique",
+      "PPAC.Migration.SchemaAxiomUnique.renamed_unique",
+      "PPAC.Migration.SchemaAxiomUnique.result_unique",
+      "PPAC.Migration.SchemaAxiomUnique.result_unique_across_scopes",
+      "PPAC.Migration.SchemaAxiomUnique.scope_chain_unique",
+      "PPAC.Migration.SchemaAxiomUnique.sentence",
+      "PPAC.Migration.SchemaAxiomUnique.source_certificate",
+      "PPAC.Migration.SchemaAxiomUnique.uniqueResult",
+      "PPAC.Migration.SchemaAxiomUnique.uniqueResult_rename"
+    ],
+    "old_footprints_unchanged": 37985,
+    "old_module_review": {
+      "modules": 2628,
+      "unchanged_canonical": 2628,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2800,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3248,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75
+  },
+  "remote_CI": {
+    "run_id": 42456708909,
+    "job_id": 128657173921,
+    "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+    "last_observed_status": "in_progress",
+    "success_claimed": false,
+    "publication_policy": "Retain fully accepted local commits; wait for previous remote run terminal result before another push."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/schema-unique-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-unique-build.log",
+        "bytes": 106,
+        "sha256": "15e583c476cb4a69633d49c725016ecd8651fa68776adf86302d7e1fe80d6200"
+      },
+      {
+        "path": "verification/schema-unique-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-unique-local-axioms.log",
+        "bytes": 2822,
+        "sha256": "a86831b08b8442ed5b31bfd4e8c76e2834104a48346e11cd530c0aba461430fd"
+      },
+      {
+        "path": "verification/schema-unique-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-unique-baseline.tmp.json",
+        "bytes": 14842634,
+        "sha256": "7ae19e315b679007cc6e09a65065b0df8d0d0570b085fef8789e1494e5209b08"
+      },
+      {
+        "path": "verification/schema-unique-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-unique-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "ee46cf5126ef0c8632d5ac51fe9ebb1171bd265258f60d8652fef2ce8b7e2b1f"
+      },
+      {
+        "path": ".local/SchemaUniqueAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SchemaUniqueAudit.lean",
+        "bytes": 1156,
+        "sha256": "9128250b8689df462fc0838dbd82f305459e4901a41782734ac57b9edcbb881c"
+      }
+    ],
+    "removed_files": 5,
+    "recursive_deletion": false,
+    "other_projects_or_applications_touched": false
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3248,
+    "current_source_hashes_verified": 2800,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false
+  }
+}

@@ -14420,4 +14420,14 @@ example {m : Nat} (collection : Bool) (w n z body : Fin m) (scopes : Fin 4 → F
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaShellTyping.sentence collection w n z body scopes)) :=
   SchemaShellTyping.kernel_certificate collection w n z body scopes
 
+-- Complete original raw-body pipeline: actual closed typed output, ALL-candidate uniqueness.
+example {m : Nat} (collection : Bool) (w n z body : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomUnique.sentence collection w n z body scopes)) :=
+  SchemaAxiomUnique.kernel_certificate collection w n z body scopes
+
+-- Comparison also permits independently constructed successor-scope chains.
+example {m : Nat} (collection : Bool) (w n z body out other : Fin m) (xs ys : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomUnique.comparison_sentence collection w n z body out other xs ys)) :=
+  SchemaAxiomUnique.comparison_kernel_certificate collection w n z body out other xs ys
+
 end PPAC.Migration.Step4Checks
