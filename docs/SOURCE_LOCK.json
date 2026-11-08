@@ -162447,6 +162447,158 @@
           "propext"
         ]
       }
+    },
+    "forcing_logical_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingLogicalCode.lean",
+      "source_declarations": [
+        "Formula.toBasic OR/IMP/ALL normalization; AtomicData.Force conjunction/negative/existential branches",
+        "Existing Reverse.formula native iff -> Source.iff, with the original conjunction-of-implications abbreviation"
+      ],
+      "consumers": [
+        "Complete internal raw forcing-code dispatcher for all eleven native constructors",
+        "Uniform internal coded axiom/proof interpretation before InternalConsistency.reduction"
+      ],
+      "reuse_producers": [
+        "ForcingNegCode complete actual negative code operation",
+        "ForcingExistCode complete actual existential code operation",
+        "Original FormulaCodeConstructors.binary0 and SyntaxConstructors.unique for native AND",
+        "Existing internal equality transport, object EX and original TheoryTransport/nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
+        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/SourceSyntax.lean": "82c0118456216b3cd3ca8abb3570c9a3505ea8922133efe1828f316d60bfa16c",
+        "PPAC/Migration/ReverseSyntax.lean": "8fbf87804ba7d32b82b39f4b25b8508992f34033f98d1d747dc27f8eb332e4e0",
+        "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
+      },
+      "scope": "Concrete one-step operations on already interpreted arbitrary internal child codes. Native binary tag order 5/6/7/8 is AND/OR/IMP/IFF. OR is NEG(AND(NEG left,NEG right)); IMP is NEG(AND(left,NEG right)); IFF is AND of both normalized implications; native ALL is NEG(EX(NEG child)). Every intermediate is internally existentially produced; exact output type and independent-execution uniqueness are proved. Arbitrary internal/nonstandard bound scopes and code candidates; fixed external R/H templates, object numeral free count n+2 and current-condition slot n+1. This does not yet supply the complete raw recursion, uniform internal coded semantic/axiom correctness, all six-rule proof reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingLogicalCode.binary": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.existsBinary": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.existsUniversal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binarySentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binaryUniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.binary_unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universalSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universalUniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingLogicalCode.universal_unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

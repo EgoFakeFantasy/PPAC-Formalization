@@ -38951,3 +38951,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistCode.kernel_certificate
 #print axioms PPAC.Migration.ForcingExistCode.uniqueSentence
 #print axioms PPAC.Migration.ForcingExistCode.unique_kernel_certificate
+
+-- Exact source normalization of all remaining native logical operations.
+#print axioms PPAC.Migration.ForcingLogicalCode.binary
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_rename
+#print axioms PPAC.Migration.ForcingLogicalCode.existsBinary
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_total
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_type
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_unique
+#print axioms PPAC.Migration.ForcingLogicalCode.universal
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_rename
+#print axioms PPAC.Migration.ForcingLogicalCode.existsUniversal
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_total
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_type
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_unique
+#print axioms PPAC.Migration.ForcingLogicalCode.binarySentence
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_kernel_certificate
+#print axioms PPAC.Migration.ForcingLogicalCode.binaryUniqueSentence
+#print axioms PPAC.Migration.ForcingLogicalCode.binary_unique_kernel_certificate
+#print axioms PPAC.Migration.ForcingLogicalCode.universalSentence
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_kernel_certificate
+#print axioms PPAC.Migration.ForcingLogicalCode.universalUniqueSentence
+#print axioms PPAC.Migration.ForcingLogicalCode.universal_unique_kernel_certificate

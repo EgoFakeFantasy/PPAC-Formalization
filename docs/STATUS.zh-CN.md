@@ -63,3 +63,5 @@
 原第10存在子码重排：ForcingExistChildCode从已解释子码的A=a+1作用域实际构造到C=a+3的完整混合替换，复用两次位移、项像推送、指定free槽图、原binder提升及编码列表。名字0保持方程和条件槽后继重命名方程均在同一对象EX记录中实际证明；12见证独立执行唯一性和准确类型已有普通nativeZF端点。全部范围／候选允许内部非标准，未给定任何输出或执行。完整外层exists现已由ForcingExistCode接通；全递归／统一公理强迫／Proof／Con仍未完成。验收见verification/forcing-exist-child-code-acceptance.json。
 
 原第10完整存在码分支：ForcingExistCode实际构造同一head、五个守卫、子码搬移、三次AND、两次EX、两次IMP及最外层ALL，准确实现原Force.ex；所有见证在对象EX内生成，独立输出有准确类型且唯一。两个普通nativeZF原核端点及完整九项验收均已通过，五项trust=0、零警告，旧证明正文和全部38270项足迹不变；见verification/forcing-exist-code-acceptance.json；最终Con仍未证明，不能将本分支误称为全原始递归或全部非标准Proof归约。
+
+原第10的其余原生逻辑操作：ForcingLogicalCode按固定源toBasic规范化接通AND／OR／IMP／IFF及ALL；OR=NEG(AND(NEG左,NEG右))，IMP=NEG(AND(左,NEG右))，IFF为两方向IMP的AND，ALL=NEG(EX(NEG子式))。全部中间码在对象EX内实际生成，输出有准确类型且独立执行唯一；四个普通nativeZF原核端点及完整九项验收均已通过，五项trust=0、零警告；旧证明正文和全部38283项既有足迹不变。已有原子／NEG／EX与本项共同提供全部11种原生构造所需的局部操作；完整原始递归、统一内部公理强迫、全六规则Proof和最终Con仍未完成。实际验收见verification/forcing-logical-code-acceptance.json。

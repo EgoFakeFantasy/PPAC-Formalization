@@ -2690,7 +2690,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_code', 'ForcingNegCode', 13),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
-                                ('forcing_exist_code', 'ForcingExistCode', 13)):
+                                ('forcing_exist_code', 'ForcingExistCode', 13),
+                                ('forcing_logical_code', 'ForcingLogicalCode', 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7331,6 +7332,8 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_existential_child_scope": "Source A=a+1 to target C=a+3: actual two shifts, selected free condition map, original binder lift and mixed substitution. Same witness retains name-head0 and selected-condition successor-renaming equations. Arbitrary internal free/bound scopes and candidates. The separate full existential outer code is now proved; raw recursion, uniform axiom forcing and final Proof/Con remain incomplete.",
         "object_forcing_complete_literal_existential_code_step_total_typed_unique_proved": True,
         "object_forcing_existential_step_scope": "Actual head, five guards, child binder rescoping, three ANDs, two EXs, two IMPs and final ALL; all outputs constructed internally and independent executions unique. Arbitrary internal already interpreted child at A=a+1, output at a. Fixed external R/H templates and exact numeral parameter/free-condition slots. Not the complete raw recursive interpreter, uniform coded axiom forcing or Proof/Con reduction.",
+        "object_forcing_remaining_native_logical_operations_total_typed_unique_proved": True,
+        "object_forcing_remaining_logical_operations_scope": "All four native binary tags and native ALL follow the pinned source normalization using actual existing NEG/EX operations and native AND. Every intermediate is constructed and independent executions have one typed output. Child codes/scopes may be internally nonstandard; R/H and free-count/condition numerals are fixed. Complete raw recursion, uniform coded axiom forcing and all internal Proof/Con reduction remain incomplete.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

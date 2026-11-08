@@ -1094,3 +1094,4 @@ import PPAC.Migration.ForcingNegCode
 import PPAC.Migration.ForcingExistGuardsCode
 import PPAC.Migration.ForcingExistChildCode
 import PPAC.Migration.ForcingExistCode
+import PPAC.Migration.ForcingLogicalCode

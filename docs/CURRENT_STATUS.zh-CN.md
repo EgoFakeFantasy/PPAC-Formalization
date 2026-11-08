@@ -10,4 +10,6 @@
 
 存在子码绑定重排现已由ForcingExistChildCode在同一对象记录内实际构造，并证明名字0保持和条件槽后继流；独立执行有唯一带类型输出。完整存在码现已由ForcingExistCode接通。真正剩余：原全构造递归解释、统一内部／非标准ZF/U公理强迫、全部六规则Proof矛盾码归约，以及原第11最终验收。不得改成全宇宙统一真值／强迫谓词，不得限制外部标准码，不重建已完成的L、数学模式或通用Proof/Sat配套。
 
-最新对象代码验收见`verification/forcing-exist-code-acceptance.json`及`verification/forcing-exist-child-code-acceptance.json`及`verification/forcing-exist-guards-code-acceptance.json`和`verification/forcing-neg-code-acceptance.json`；均已完成九条命令、五项trust=0和精确旧足迹对比。GitHub运行42492087042的守卫、原核主线、官方Comparator三任务均成功，且实际日志与工件已读回。后续批次继续遵守上一整轮成功并读回日志后再推送的门禁。
+最新对象代码验收见`verification/forcing-logical-code-acceptance.json`及`verification/forcing-exist-code-acceptance.json`及`verification/forcing-exist-child-code-acceptance.json`及`verification/forcing-exist-guards-code-acceptance.json`和`verification/forcing-neg-code-acceptance.json`；均已完成九条命令、五项trust=0和精确旧足迹对比。GitHub运行42492087042的守卫、原核主线、官方Comparator三任务均成功，且实际日志与工件已读回。后续批次继续遵守上一整轮成功并读回日志后再推送的门禁。
+
+其余原生逻辑的局部操作现由ForcingLogicalCode接通，复用原NEG／EX并保持固定源的规范化。完整原始递归解释及最终对象Con仍未证明；验收见`verification/forcing-logical-code-acceptance.json`。
