@@ -14475,4 +14475,12 @@ example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.BinarySc
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaTemplateQuotation.collectionSentence schema w count y env)) :=
   SchemaTemplateQuotation.collection_kernel_certificate schema w count y env
 
+-- Actual pure index renaming, with the two conversions built inside object exists.
+example {m : Nat} {sb sf tb tf : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm sb sf)
+    (ρ : ∀ {sort}, FirstOrder.Variable sb sort → FirstOrder.Variable tb sort)
+    (τ : ∀ {sort}, FirstOrder.Variable sf sort → FirstOrder.Variable tf sort)
+    (w I J a b c d n q r s : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (Internal.NativeIndexFormulaQuotation.sentence input ρ τ w I J a b c d n q r s)) :=
+  Internal.NativeIndexFormulaQuotation.kernel_certificate input ρ τ w I J a b c d n q r s
+
 end PPAC.Migration.Step4Checks

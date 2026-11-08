@@ -6,7 +6,11 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-当前为原第10阶段。源数学应用、实际PP及完整目标理论逐实例装配均已接通；从原正文经实际编译、三个重命名出口、原模板和整个内部次数闭包，现已在普通nativeZF原核中构造完整闭公式码并证明唯一性，包括独立作用域链的比较。结构证书的完整分支表、标签／行接口和模式输出存在／类型／唯一性现已接通；原正文十二构造子的准确编译quotation模式亦已取得原核双条件；本批整个原全称闭包与准确原生Separation/Collection句的quotation双条件已在原核接通，正文／次数仍为外部模式索引；本批已消费原有限模板quotation等式，原模板执行和整个闭包与准确原生两模式句的对象双条件已接通；原矩阵重命名quotation及统一内部公理正确性、全部内部／非标准Proof/Con传输、原第4 Comparator与第11终验仍未闭合。**最终对象Con未证明。** 当前状态和原阶段表见下列文档，本批报告为verification/template-quotation-acceptance.json。
+当前为原第10阶段。同一实际系统的源数学应用、全集合PP及完整目标理论逐实例装配已接通。原正文经实际编译、三个重命名出口、原模板及整个内部次数闭包的存在、闭类型和独立见证唯一性已证明。
+
+准确quotation的证明模式已覆盖原正文编译、原有限模板和整个闭包。本批还接通三个实际索引图的原生嵌入取值、实际双转换环境的quotation识别，以及纯索引重命名到原生变量替换quotation的普通nativeZF原核双条件。正文、上下文和原生映射仍为外部模式索引。
+
+仍需连接原Project翻译／重命名交换和三个实际编译矩阵消费者，再完成统一内部ZF/U公理正确性、全部内部／非标准Proof/Con传输、原第4 Comparator及第11终验。**最终对象Con未证明。** 本批报告为`verification/native-index-quotation-acceptance.json`。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

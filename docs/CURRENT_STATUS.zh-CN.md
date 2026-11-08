@@ -2,8 +2,8 @@
 
 当前为原第10阶段；最终对象Con未证明。完整状态见[STATUS](STATUS.zh-CN.md)，原1–11阶段及agent入口见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)。
 
-本批SchemaTemplateQuotation已直接消费已有两个原有限模板quotation等式。在普通nativeZF原推导核证明：现有实际assembled关系（原有限模板执行及整个全称闭包）等价于准确原生Separation/Collection句的quotation。原成员标量／字段、原项子树及Collection两处不同矩阵均保留；现成结构图关系、唯一性、quotation存在及整个闭包推导全部复用。实际重命名矩阵quotation仍为显式前提；正文／次数是外部模式索引，统一非标准正确性未证明。
+本批三个实际schema索引图的原生嵌入取值已证明，含零参数。两处Collection映射保持不同。实际索引到项像的转换结果由现成字段读取及全内部列表外延唯一性识别为原生quotation环境。复用IndexTermImageEnvironment、IndexFormulaRenameBridge与NativeFormulaQuotationCorrespondence，在对象存在量词中实际构造两份转换，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件；没有给定正确混合环境或输出。
 
-下一步只补实际矩阵环境的quotation识别：IndexFormulaRenameBridge.rename_iff及IndexTermImageEnvironment.exists_environment已经存在，不重建。将它们的真实索引／项像环境接到NativeSubstitutionSyntax.environment，再消费NativeFormulaQuotationCorrespondence.formula_iff。之后仍需统一内部公理正确性、全部内部／非标准Proof/Con传输、原第4 Comparator与第11终验；不重做现成L、数学模式、编译、闭包或模板。
+原生正文、上下文和映射仍为外部模式索引。下一步接原Project.fo_formula／原生重命名的交换元数据，特化三个实际compiledMatrix消费者，再消费已经验收的原模板＋整个闭包quotation。实际图值、转换环境识别、纯索引桥、正文编译、原有限模板、整个闭包、L及完整数学模式不重做。之后仍需统一内部／非标准ZF/U公理正确性、全部内部Proof/Con传输、原第4 Comparator与第11终验。
 
-最新报告：`verification/template-quotation-acceptance.json`。九条命令、五条trust=0均通过、零警告。本批先保留本地；远端父提交f794920的CI run 42468430542仍在运行，终态成功并读实际日志后再推送。
+最新报告：`verification/native-index-quotation-acceptance.json`。九条命令、五条trust=0均通过，零警告、无新增公理依赖。本批与c48653e先保留本地；远端父提交f794920的run 42468430542仍在运行，终态成功并读实际日志后才统一推送。

@@ -15,23 +15,23 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | reverse_injection_dense→forces_PP→forces_target已接通；同一实际系统上的完整源目标公理／模式有原核L相对化证书；原模式码装配及全内部次数闭包已有原核存在唯一证书；同一原正文的实际编译、三个重命名出口和完整装配存在已接通；内部次数闭包的精确类型及实际带类型唯一输出已证明；有限原模板和完整原正文流水线类型已接通；复用现成唯一性合成整个流水线的带类型唯一输出，并证明独立作用域链的比较；原结构证书表已接入六规则公理行，模式分支实际产生闭类型唯一输出；本批原正文全部十二构造子的实际编译／原生quotation双条件有普通nativeZF原核证书，正文和深度仍为外部模式索引；本批整个原全称闭包与准确原生Separation/Collection句的quotation双条件及三个原核端点已接通，次数亦为外部模式索引；本批直接消费原有限模板quotation等式，实际assembled关系与准确原生两模式句的对象双条件已接通 | 原矩阵重命名quotation、统一内部公理正确性、全部内部／非标准证明码正确性和矛盾码归约、最终内部Con蕴含仍需接通；逐实例模式或宿主quotation等式不替代此门 |
+| 10 | 原 Main 全局装配与对象内部化 | 同一实际系统的完整源目标理论及reverse_injection_dense→forces_PP→forces_target已接通；原公理行、原正文编译／三个重命名出口／原模板／整个内部闭包的存在、类型、独立见证唯一性已证明；原正文、有限模板和整个闭包的准确quotation模式已接通；本批完成实际三索引图原生取值、实际双转换环境识别及纯索引重命名quotation原核双条件。正文／上下文／映射仍为外部模式索引 | 连接原Project翻译／重命名交换和三个实际编译矩阵消费者；统一内部ZF/U公理正确性、全部内部／非标准Proof及矛盾码归约、最终内部Con蕴含。外部模式不替代此门 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
 
 | 已有输入 | 当前消费者 | 真正的验收门 |
 |---|---|---|
-| 同一原Project正文→实际编译／三个重命名出口→SchemaAxiomAssembly，已有原核存在证书 | ZF/U的完整公理测试 | 原矩阵重命名quotation和统一内部公理正确性；正文编译quotation模式、原结构证书标签／行接口、模式输出存在／完整类型／跨独立见证唯一性均已接通，不重做 |
+| 同一原Project正文→实际编译／三个重命名出口→SchemaAxiomAssembly，已有原核存在证书 | ZF/U的完整公理测试 | 原Project翻译／重命名交换、三个实际编译矩阵的quotation消费和统一内部公理正确性；正文编译quotation模式、原结构证书标签／行接口、模式输出存在／完整类型／跨独立见证唯一性均已接通，不重做 |
 | 现有六节点、27逻辑模式、语法操作、证明树和Proof/Sat配套 | 全内部及非标准证明码归约 | 不限外部标准码；不另建通用核、编码器或满足关系 |
 | 全部源数学应用和上述内部传输 | 最终对象Con蕴含 | `FirstOrder.Derives nativeZF []`的原核闭句；最终主句仍未证明 |
 | 原4.34.1 Main构建与五端点审计已通过 | 原Comparator／原第11最终复现 | Comparator仍单列未验收；本仓CheckStep4不是Comparator |
 
-从同一有效原Project正文产生实际编译／三个重命名矩阵，再消费两个原模式模板和整个内部次数闭包的存在、完整闭公式类型及跨独立见证唯一性均已接通。原核比较端点还消除了独立作用域链的选择差异。本批原结构证书表已接入真实六规则axiomTest行，保留原标签／字段，并证明有效输入实际产生输出和独立内部见证唯一性。原正文十二构造子的准确编译quotation模式已取得原核双条件；已有有限模板quotation等式现已由对象推导消费；下一步复用IndexFormulaRenameBridge.rename_iff及IndexTermImageEnvironment.exists_environment，接通实际矩阵环境quotation及统一内部公理正确性，再处理全内部Proof/Con。完整数学公理模式、L、递归、具体系统和现成组件唯一性不重做。
+当前只连接原Project翻译／重命名交换和三个实际compiledMatrix到已验收的准确quotation链，随后完成统一内部公理正确性及全内部Proof/Con。实际三图取值、转换环境识别及纯索引重命名桥本批已接通；正文编译、原模板、整个闭包、L、完整数学模式、具体系统和现成唯一性不重做。
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/template-quotation-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/native-index-quotation-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先完成源码／跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。

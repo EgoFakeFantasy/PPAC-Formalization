@@ -2641,7 +2641,10 @@ def main(source_check_only: bool = False) -> None:
                                 ('original_axiom_code_test', 'OriginalAxiomCodeTest', 51),
                                 ('project_compiler_quotation', 'ProjectCompilerQuotation', 5),
                                 ('schema_closure_quotation', 'SchemaClosureQuotation', 14),
-                                ('schema_template_quotation', 'SchemaTemplateQuotation', 12)):
+                                ('schema_template_quotation', 'SchemaTemplateQuotation', 12),
+                                ('schema_index_quotation', 'Internal.SchemaIndexQuotation', 6),
+                                ('index_image_quotation', 'Internal.IndexImageQuotation', 2),
+                                ('native_index_formula_quotation', 'Internal.NativeIndexFormulaQuotation', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7503,6 +7506,12 @@ def main(source_check_only: bool = False) -> None:
         'object_original_finite_schema_templates_and_whole_closure_exact_native_quotation_schema_original_kernel_proved': True,
         'object_original_schema_template_quotation_actual_renamed_matrix_parents_retained': True,
         'object_original_schema_template_quotation_uniform_nonstandard_body_count_claimed': False,
+        'object_original_three_schema_graphs_exact_native_embedding_values_proved': True,
+        'object_actual_index_to_term_conversion_native_quotation_environment_identification_proved': True,
+        'object_actual_pure_index_renaming_native_formula_quotation_schema_original_kernel_proved': True,
+        'object_pure_index_renaming_quotation_body_context_map_indices_external': True,
+        'object_actual_Project_schema_compiled_matrix_quotation_discharge_complete': False,
+        'object_pure_index_renaming_quotation_uniform_nonstandard_body_claimed': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 
         'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,

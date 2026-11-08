@@ -17,17 +17,18 @@
 | 10：原正文编译quotation模式 | ProjectCompilerQuotation覆盖原Project全部十二构造子，在普通nativeZF原核证明现有实际编译关系与原fo_formula纯quotation的准确双条件；全部候选码为内部对象，正文／深度仍为外部模式索引，不替代统一内部正确性 |
 | 10：原整个闭包quotation模式 | SchemaClosureQuotation复用现成内部迭代方程、唯一性和quotation存在，取得原整个全称闭包及准确原生Separation/Collection句的quotation双条件与三个普通nativeZF原核端点；原核心quotation为显式前提，正文／次数为外部模式索引，不替代统一非标准正确性 |
 | 10：原有限模板quotation的对象消费 | SchemaTemplateQuotation直接消费现成原模板quotation等式，复用原结构图关系与整个闭包，在普通nativeZF原核证明实际assembled关系与准确原生Separation/Collection句的双条件；实际重命名矩阵quotation为显式前提，正文／次数仍为外部模式索引 |
+| 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 
-模式输入端点的显式输入为ω、内部自然数次数、空零、原四级后继作用域链和指定作用域下有效的原Project正文。编译、索引图、码、恒等重命名、全部矩阵、原模板输出和整个闭包轨迹均在对象证明中构造；不再要求给定重命名码槽位。闭包和有限原模板的类型现已全部接通：原正文流水线在对象层构造完整闭FormulaCode，且覆盖所有内部候选输出。整条流水线在独立编译／索引图／码／矩阵／整个闭包见证间的唯一性已合成，独立作用域链比较亦已证明。结构证书标签／行接口已接通；证书值严格采用原树的Quine结构码，不把NatPacket字节包冒充结构码。原正文编译quotation模式现已接通；原矩阵重命名quotation、统一内部公理正确性和最终Con仍未闭合。
+模式输入端点的显式输入为ω、内部自然数次数、空零、原四级后继作用域链和指定作用域下有效的原Project正文。编译、索引图、码、恒等重命名、全部矩阵、原模板输出和整个闭包轨迹均在对象证明中构造；不再要求给定重命名码槽位。闭包和有限原模板的类型现已全部接通：原正文流水线在对象层构造完整闭FormulaCode，且覆盖所有内部候选输出。整条流水线在独立编译／索引图／码／矩阵／整个闭包见证间的唯一性已合成，独立作用域链比较亦已证明。结构证书标签／行接口已接通；证书值严格采用原树的Quine结构码，不把NatPacket字节包冒充结构码。原正文编译quotation模式现已接通；原Project翻译／重命名交换及实际编译矩阵消费、统一内部公理正确性和最终Con仍未闭合。
 
 ## 真正仍需完成
 
-- 原第10：接通原矩阵重命名quotation与完整公理表，再完成统一内部公理正确性、六规则Proof的全内部／非标准矛盾码传输及最终Con蕴含。已接通的正文编译quotation模式、标签／行接口、模式输出存在／类型／唯一性不再列作待做。
+- 原第10：接通原Project翻译／重命名交换、三个实际编译矩阵的quotation消费与完整公理表，再完成统一内部公理正确性、六规则Proof的全内部／非标准矛盾码传输及最终Con蕴含。已接通的正文编译quotation模式、标签／行接口、模式输出存在／类型／唯一性不再列作待做。
 - 原第4：原Main的8998任务构建及五个trust=0端点已通过；完整Comparator仍未验收，本机实测未安装WSL。
 - 原第11：最终主句原核验收、源到目标对应和干净复现。不得以逐实例证书或构建成功替代。
 
 ## 本批实际验收
 
-`verification/template-quotation-acceptance.json`：38084项声明；全部38072项旧足迹及2632份旧迁移模块保持不变；2804个当前源码哈希；九条命令、五条trust=0均退出0，零警告、无新增公理依赖。清理后的复核见报告。
+`verification/native-index-quotation-acceptance.json`：38097项声明；全部38084项旧足迹及2633份旧迁移模块保持不变；2807个当前源码哈希；九条命令、五条trust=0均退出0，零警告、无新增公理依赖。清理后的复核见报告。
 
 内部Con精确规格见OBJECT_TARGET；原1–11阶段表及执行入口见AGENT_WORKFLOW；逐声明来源与依赖见SOURCE_LOCK。旧批进度在Git及相应验收报告中，不作为当前待办。

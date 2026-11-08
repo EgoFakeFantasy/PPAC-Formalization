@@ -38748,3 +38748,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.SchemaTemplateQuotation.collection_source_certificate
 #print axioms PPAC.Migration.SchemaTemplateQuotation.separation_kernel_certificate
 #print axioms PPAC.Migration.SchemaTemplateQuotation.collection_kernel_certificate
+
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value_rename
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value_at
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.separation_value
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.collection_one_value
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.collection_two_value
+#print axioms PPAC.Migration.Internal.IndexImageQuotation.converted_images
+#print axioms PPAC.Migration.Internal.IndexImageQuotation.renaming_environment
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.formula_iff
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.points
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.sentence
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.source_certificate
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.kernel_certificate
