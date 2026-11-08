@@ -161392,6 +161392,99 @@
           "propext"
         ]
       }
+    },
+    "forcing_atomic_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+      "source_sha256": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53",
+      "adapter": "PPAC/Migration/ForcingAtomicCode.lean",
+      "source_declarations": [
+        "AtomicForcing.MemAt / EqAt and their existing ForcingAtomicRelations.forces migration; literal native template"
+      ],
+      "consumers": [
+        "Uniform coded forcing interpreter: construct membership/equality atom output from closed-source term codes; InternalConsistency.reduction remains unproved"
+      ],
+      "reuse_producers": [
+        "Existing ForcingAtomicRelations.forces and Translation.formula",
+        "PureQuotationTypedFormulas.exists_typed",
+        "SyntaxForests.exists_forest and TypedArgumentListConstruction",
+        "SyntaxIdentityCode and IndexTermImageCodeExistence/Typing",
+        "SyntaxMixedFormulaOutputInduction.actual_exists and SyntaxMixedFormulaJudgment.target_type",
+        "Original Source.Derives, TheoryTransport, ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingAtomicCode.lean": "39ecc154b6851cdad93e22e06ccb1bf43f1cb0248e112b0de95bf764e8a40d4f",
+        "PPAC/Migration/ForcingAtomicRelations.lean": "88604483a29c61ee5e14217e92c52a1d894033d53cec18bb9365b217170c5f95",
+        "PPAC/Migration/Internal/PureQuotationTypedFormulas.lean": "a893d1091b517f795e6bbcb1004e4a5e6c754c5a45aa9b91bb3d307292e8bd10",
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b",
+        "PPAC/Migration/Internal/FreeSubstImageCode.lean": "a2c6ce135300db852a656f17524feddd3761f14add40d926929960f9632b3191",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgment.lean": "9334d07beb806d2d9488795c6594a620c8d8564c4ad67f6425bc28e06593c03d"
+      },
+      "scope": "Closed-source atomic forcing compiler: all internal/nonstandard bound scopes and term codes; zero source-free scope. Ground order template and its parameter count are fixed external scheme indices. All template codes, numeral scopes, bound/free images and substitution output are constructed internally. Two ordinary nativeZF endpoints prove totality and exact target type. No full recursive forcing interpreter, arbitrary source-free contexts, axiom forcing proof compiler, all-internal Proof reduction, or final Con claim.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicCode.sourceTemplate": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.template": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.typed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.typeSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.type_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

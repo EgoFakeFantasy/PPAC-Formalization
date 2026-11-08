@@ -41,3 +41,5 @@
 当前内部证明生产基例：`InternalAxiomProof.from_query`消费实际完整ZF/U公理查询，统一构造同一理论的内部自然数证明码及真实原node/root轨迹；原核端点为`kernel_certificate`，不要求外给闭类型或任何轨迹。U到ZF的解释／矛盾码归约未证明，不能把同一理论内的公理证明当作此归约。验收见`verification/internal-axiom-proof-acceptance.json`。
 
 原Comparator入口本批已准备，工具在原4.34.1兼容编译、原78输入与静态工作流检查通过；真实Linux沙箱验收仍待执行。此门串行依赖原核CI并仅由显式标记／手动参数激活，不替代对象Con。见`verification/original-comparator-preflight-acceptance.json`。
+
+原第10的原子编译分支：`ForcingAtomicCode.kernel_certificate`与`type_kernel_certificate`提供现有原子强迫公式的内部代码总性及准确类型。实际构造模板码、两个作用域次数、反向y/x绑定像列表、恒等自由像列表和混合替换输出。输入绑定范围和项码为内部变量，源自由范围为零；R及参数数目为固定外部模式索引。下一消费者是同一解释的递归公式代码编译器；不是全公式编译、统一内部公理强迫或最终Con。全量验收及旧声明足迹对比见`verification/forcing-atomic-code-acceptance.json`。

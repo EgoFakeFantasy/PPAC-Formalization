@@ -1086,3 +1086,4 @@ import PPAC.Migration.SchemaAxiomQuotation
 import PPAC.Migration.OriginalAxiomTyping
 import PPAC.Migration.InternalConsistency
 import PPAC.Migration.InternalAxiomProof
+import PPAC.Migration.ForcingAtomicCode

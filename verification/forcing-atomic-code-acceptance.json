@@ -1,0 +1,215 @@
+{
+  "verified_at": "2026-11-08T13:48:52.452707+00:00",
+  "baseline_commit": "43e876ea9998a41e1f7a32b17dac6d2d5009bad6",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+  "object_result": "Internal construction and exact type of the literal existing ForcingAtomicRelations.forces native template after actual mixed substitution of two closed-source term codes; no given quote, image list, scope numeral, or output.",
+  "endpoints": [
+    "PPAC.Migration.ForcingAtomicCode.kernel_certificate",
+    "PPAC.Migration.ForcingAtomicCode.type_kernel_certificate"
+  ],
+  "explicit_parents": [
+    "Omega(w)",
+    "Empty(z)",
+    "Both raw term codes typed at bound scope a and free scope z"
+  ],
+  "quantifier_scope": "All internal/nonstandard source bound scopes and candidate term codes; source free scope is zero. Fixed ground-order formula R and its parameter count remain external scheme indices; this is not the full recursive formula compiler.",
+  "constructed_in_object_theory": [
+    "Two and fixed target-free scope numerals",
+    "Literal native template quotation",
+    "Exact two-element bound-term forest in y,x order",
+    "Identity free-index map and actual converted free-term list",
+    "Typed bound/free image lists",
+    "Actual complete mixed-formula substitution output"
+  ],
+  "reuse": [
+    "ForcingAtomicRelations.forces",
+    "PureQuotationTypedFormulas.exists_typed",
+    "SyntaxForests.exists_forest",
+    "TypedArgumentListConstruction",
+    "SyntaxIdentityCode",
+    "IndexTermImageCodeExistence/Typing",
+    "SyntaxMixedFormulaOutputInduction.actual_exists",
+    "SyntaxMixedFormulaJudgment.target_type",
+    "Source.Derives / TheoryTransport / ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3262,
+    "audited_declarations": 38148,
+    "old_footprints_unchanged": 38137,
+    "new_declarations": [
+      "PPAC.Migration.ForcingAtomicCode.compiled",
+      "PPAC.Migration.ForcingAtomicCode.compiled_type",
+      "PPAC.Migration.ForcingAtomicCode.existsCompiled",
+      "PPAC.Migration.ForcingAtomicCode.kernel_certificate",
+      "PPAC.Migration.ForcingAtomicCode.sentence",
+      "PPAC.Migration.ForcingAtomicCode.sourceTemplate",
+      "PPAC.Migration.ForcingAtomicCode.template",
+      "PPAC.Migration.ForcingAtomicCode.total",
+      "PPAC.Migration.ForcingAtomicCode.typeSentence",
+      "PPAC.Migration.ForcingAtomicCode.type_kernel_certificate",
+      "PPAC.Migration.ForcingAtomicCode.typed"
+    ],
+    "warning_lines": 0,
+    "new_axiom_dependencies": [],
+    "source_hashes": 2817,
+    "changed_previous_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "source_sha256": "39ecc154b6851cdad93e22e06ccb1bf43f1cb0248e112b0de95bf764e8a40d4f",
+    "full_summary_sha256": "6606b063967614ce2e6dbff8f6dbc754be5dce38c79408bbea51cc613bcf58a6"
+  },
+  "scope": {
+    "closed_source_atomic_compiler_total_typed": true,
+    "source_bound_scope_can_be_internal_nonstandard": true,
+    "arbitrary_source_free_scope": false,
+    "whole_recursive_formula_compiler": false,
+    "uniform_forcing_axiom_proof_compiler": false,
+    "whole_internal_Proof_reduction": false,
+    "final_object_Con_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atomic-code-draft.lean",
+      "size": 27315,
+      "sha256": "b25969157ac17fc8d9cad18de4b28b2bf04179f736096d515c1258bfe43c7e04"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atomic-code-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atomic-code-audit.lean",
+      "size": 27998,
+      "sha256": "44bbc32a64a8be86f9d2f56a17c532311ababa1a2059589fdc24e28e9f0e9e12"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atomic-code-audit.log",
+      "size": 2012,
+      "sha256": "1b34d65917b0c13bb737bcffac8f3aa88d766ae44df5383b102896cfdd3f8e76"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atomic-code-parent-summary.json",
+      "size": 14746570,
+      "sha256": "16c88acb2bd94d2261593b31cd1bda1f6794a305dfaa7e1d37d606bc183a6ba4"
+    }
+  ],
+  "cleanup_completed": true,
+  "post_cleanup_checks": {
+    "all_2817_verified_source_hashes_unchanged": true,
+    "native_module_trust_zero_exit": 0,
+    "native_module_warning_lines": 0,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75,
+    "cross_platform_regressions": 5,
+    "actionlint_exit": 0,
+    "git_diff_check_exit": 0,
+    "linux_ci_verified_for_this_batch": false,
+    "source_dependency_preflight_exit": 0
+  },
+  "publication": {
+    "prior_remote_commit": "43e876ea9998a41e1f7a32b17dac6d2d5009bad6",
+    "prior_run_id": 42483548594,
+    "prior_run_last_observed_status": "in_progress",
+    "current_batch_uploaded": false,
+    "reason": "Wait for preceding remote CI including original Comparator to reach success and inspect actual log before next push."
+  }
+}

@@ -38803,3 +38803,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalAxiomProof.from_query
 #print axioms PPAC.Migration.InternalAxiomProof.sentence
 #print axioms PPAC.Migration.InternalAxiomProof.kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomicCode.sourceTemplate
+#print axioms PPAC.Migration.ForcingAtomicCode.template
+#print axioms PPAC.Migration.ForcingAtomicCode.compiled
+#print axioms PPAC.Migration.ForcingAtomicCode.existsCompiled
+#print axioms PPAC.Migration.ForcingAtomicCode.total
+#print axioms PPAC.Migration.ForcingAtomicCode.typed
+#print axioms PPAC.Migration.ForcingAtomicCode.compiled_type
+#print axioms PPAC.Migration.ForcingAtomicCode.sentence
+#print axioms PPAC.Migration.ForcingAtomicCode.typeSentence
+#print axioms PPAC.Migration.ForcingAtomicCode.kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomicCode.type_kernel_certificate
