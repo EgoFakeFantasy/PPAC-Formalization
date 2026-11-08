@@ -13,6 +13,8 @@ permissions:
   contents: read
 jobs:
   verify:
+    needs: comparator-preflight
+    if: always() && (needs.comparator-preflight.result == 'success' || needs.comparator-preflight.result == 'skipped')
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,6 +45,7 @@ jobs:
         run: |
           python3 scripts/check_ci_inputs.py
           python3 -m unittest discover -s scripts -p test_ci_compatibility.py
+          python3 -m unittest discover -s scripts -p test_original_comparator_guard.py
       - name: Build and audit
         run: python3 scripts/verify.py
       - uses: actions/upload-artifact@v4
@@ -54,6 +57,49 @@ jobs:
             ppac-yesmeta-migration/verification/summary.json
             ppac-yesmeta-migration/verification/commands.json
             ppac-yesmeta-migration/verification/*.log
+  comparator-preflight:
+    name: Comparator Linux guard preflight
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.original_comparator) ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[original-comparator]'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: migration
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Zouuup/landrun
+          ref: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
+          path: tools/landrun
+          persist-credentials: false
+      - name: Test fail-closed guard policy
+        run: python3 -m unittest discover -s migration/scripts -p test_original_comparator_guard.py
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: tools/landrun/go.mod
+          cache-dependency-path: tools/landrun/go.sum
+      - name: Build pinned real landrun
+        run: cd tools/landrun && go build -trimpath -o landrun cmd/landrun/main.go
+      - name: Check real guards before any long Lean build
+        run: |
+          sudo systemd-run --quiet --wait --pipe --collect \
+            --uid="$(id -u)" --gid="$(id -g)" \
+            --property=NoNewPrivileges=true \
+            --property=RestrictAddressFamilies=none \
+            '--property=SystemCallFilter=~@network-io io_uring_setup io_uring_enter io_uring_register' \
+            --working-directory="$GITHUB_WORKSPACE" \
+            --setenv=PATH="$PATH" --setenv=HOME="$HOME" \
+            /usr/bin/python3 "$GITHUB_WORKSPACE/migration/scripts/original_comparator.py" guard \
+            --landrun "$GITHUB_WORKSPACE/tools/landrun/landrun" \
+            --output "$GITHUB_WORKSPACE/guard-verification"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparator-guard-preflight
+          path: guard-verification/
   original-comparator:
     name: Original PPAC Comparator (Lean 4.34.1)
     needs: verify
@@ -113,7 +159,8 @@ jobs:
           sudo systemd-run --quiet --wait --pipe --collect \
             --uid="$(id -u)" --gid="$(id -g)" \
             --property=NoNewPrivileges=true \
-            --property=RestrictAddressFamilies=~AF_UNIX \
+            --property=RestrictAddressFamilies=none \
+            '--property=SystemCallFilter=~@network-io io_uring_setup io_uring_enter io_uring_register' \
             --working-directory="$GITHUB_WORKSPACE/original-proof" \
             --setenv=PATH="$PATH" --setenv=HOME="$HOME" --setenv=LEAN_NUM_THREADS=1 \
             /usr/bin/python3 "$GITHUB_WORKSPACE/migration/scripts/original_comparator.py" run \

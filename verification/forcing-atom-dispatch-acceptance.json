@@ -1,0 +1,257 @@
+{
+  "verified_at": "2026-11-08T14:44:47.889061+00:00",
+  "baseline_commit": "0737d7f",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "The ACTUAL four-way original atomic formula code, without externally supplied fields, constructs a typed unique forcing-code output. Falsum/truth retain their original code; members/equalities use the literal existing forcing compiler. All parsed fields and independent execution witnesses are object existentials.",
+  "endpoints": [
+    "PPAC.Migration.ForcingAtomCode.kernel_certificate",
+    "PPAC.Migration.ForcingAtomCode.unique_kernel_certificate",
+    "PPAC.Migration.ForcingAtomCode.truth_normalization_kernel_certificate"
+  ],
+  "explicit_parents": [
+    "Omega(w)",
+    "Empty(z)",
+    "Actual atomic(w,a,z,n) code grammar"
+  ],
+  "eliminated_parents": [
+    "Externally parsed member/equal term fields",
+    "Given output code/type",
+    "Shared tag branch or parsed fields",
+    "Shared quotation/scope/list/identity/substitution execution",
+    "Given output uniqueness"
+  ],
+  "truth_normalization": "Native Reverse.formula maps truth to bottom -> bottom. The exact existing original ForcingFormula.formula of that formula is object-provably equivalent to bottom -> bottom, for arbitrary fixed R/H/configuration. This normalization certificate is not a uniform all-code truth predicate.",
+  "reuse": [
+    "SyntaxAtomLogic field elimination",
+    "SyntaxAtomCases constructor conflicts",
+    "SyntaxAtomUnique field injectivity",
+    "ForcingAtomicCode total/type/unique",
+    "FormulaCodeRecursive for constant target typing",
+    "Actual Source.Derives and nativeZF replay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3263,
+    "audited_declarations": 38172,
+    "old_footprints_unchanged": 38156,
+    "new_declarations": [
+      "PPAC.Migration.ForcingAtomCode.compiled",
+      "PPAC.Migration.ForcingAtomCode.compiled_rename",
+      "PPAC.Migration.ForcingAtomCode.compiled_type",
+      "PPAC.Migration.ForcingAtomCode.existsCompiled",
+      "PPAC.Migration.ForcingAtomCode.fiber",
+      "PPAC.Migration.ForcingAtomCode.fiber_total",
+      "PPAC.Migration.ForcingAtomCode.kernel_certificate",
+      "PPAC.Migration.ForcingAtomCode.sentence",
+      "PPAC.Migration.ForcingAtomCode.total",
+      "PPAC.Migration.ForcingAtomCode.truthNormalizationSentence",
+      "PPAC.Migration.ForcingAtomCode.truth_normalization_kernel_certificate",
+      "PPAC.Migration.ForcingAtomCode.unique",
+      "PPAC.Migration.ForcingAtomCode.uniqueOutput",
+      "PPAC.Migration.ForcingAtomCode.uniqueSentence",
+      "PPAC.Migration.ForcingAtomCode.unique_kernel_certificate",
+      "PPAC.Migration.ForcingAtomicCode.compiled_rename"
+    ],
+    "prior_19_atomic_public_bodies_unchanged": true,
+    "existing_rename_proof_only_visibility_changed": true,
+    "warnings": 0,
+    "new_axiom_dependencies": [],
+    "source_hashes": 2819,
+    "changed_previous_hashed_inputs": [
+      ".github/workflows/lean.yml",
+      "Audit.lean",
+      "PPAC.lean",
+      "PPAC/Migration/ForcingAtomicCode.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/original_comparator.py",
+      "scripts/verify.py"
+    ],
+    "summary_sha256": "551ee41d1f09eb90d53965d90544d1cb372532ab53be1988c4ce27f69a80bd6d"
+  },
+  "scope": {
+    "four_original_atomic_branches": true,
+    "actual_parsed_fields_and_typed_unique_output_constructed": true,
+    "source_bound_scope_and_candidates_may_be_internal_nonstandard": true,
+    "source_free_scope_for_totality_zero": true,
+    "ground_order_and_parameter_count_external_fixed_scheme_indices": true,
+    "full_recursive_formula_interpreter": false,
+    "all_internal_forcing_axiom_proof_compiler": false,
+    "whole_internal_Proof_reduction": false,
+    "final_object_Con_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atom-dispatch-draft.lean",
+      "size": 32302,
+      "sha256": "d3b8a0776bc2ddaa9e0a8ad1bf0ffabcb143dd2641eab8382340cd48bc026128"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atom-dispatch-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atom-dispatch-audit.lean",
+      "size": 33274,
+      "sha256": "1d000ed59940b24135be724b3c00e08d6c53aa0beedf7fe8d04ade1e7521713f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atom-dispatch-audit.log",
+      "size": 3044,
+      "sha256": "0662c6261129da27db508ad7f385af14c3ba83e853064223aa19d7b242c6bef1"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-atom-dispatch-parent-summary.json",
+      "size": 14750823,
+      "sha256": "0a4c924b05b23fd5e789f02a3e1e70478394f371a495f4a7791df69361df8fe0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-0.sh",
+      "size": 187,
+      "sha256": "904ae6ddc8b4c6b4af6c46e1621d5bd8a506e36bcece03cc792a2b37bae0b9cf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-1.sh",
+      "size": 180,
+      "sha256": "534b141405e5f75092fb3651bb15c73ca00174ed4246f0ef03c76e561741bb23"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-2.sh",
+      "size": 550,
+      "sha256": "37beccd3fc3ec9fbba6038ae048cca8661a775ccd98a59eb440e82e5dc57698c"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-3.sh",
+      "size": 187,
+      "sha256": "904ae6ddc8b4c6b4af6c46e1621d5bd8a506e36bcece03cc792a2b37bae0b9cf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-4.sh",
+      "size": 258,
+      "sha256": "257747eeca65389a7c1a816ba0fa1b4c74dda19d8925bc862a952a6a0c018c09"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-5.sh",
+      "size": 321,
+      "sha256": "5dea6b3624e15b7dfc4f533abf3fa8ec54348d3543bfa8bc7a9011118bdad780"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\comparator-guard-shell-6.sh",
+      "size": 833,
+      "sha256": "f0473af2fa270377acada1dcf6d8284f2375af605dd2b872a95288604e6760ce"
+    }
+  ],
+  "cleanup_completed": true,
+  "post_cleanup_checks": {
+    "all_2819_source_hashes_unchanged": true,
+    "module_trust_zero_exit": 0,
+    "module_warning_lines": 0,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75,
+    "cross_platform_and_guard_regressions": 12,
+    "actionlint_exit": 0,
+    "multiline_bash_blocks_checked": 7,
+    "git_diff_check_exit": 0,
+    "real_Linux_guard_recheck_complete": false,
+    "source_dependency_preflight_exit": 0
+  },
+  "publication": {
+    "uploaded": false,
+    "previous_remote_native_CI": "success at 43e876e, run 42483548594 job 128740426678",
+    "previous_original_Comparator": "Failed before comparison: strict ABI10 requested, runner ABI8",
+    "repair": "Same batch includes measured fail-closed ABI>=8 preflight and early Linux gate; real Linux recheck pending"
+  }
+}

@@ -194,7 +194,7 @@ private def body {n m} (equality : Bool) (R : Source.Formula (n+2))
 def compiled {n m} (equality : Bool) (R : Source.Formula (n+2))
     (w a x y q : Fin m) : Formula m := existsMany 5 (body equality R w a x y q)
 
-private theorem compiled_rename {n m l} (equality : Bool) (R : Source.Formula (n+2))
+theorem compiled_rename {n m l} (equality : Bool) (R : Source.Formula (n+2))
     (w a x y q : Fin m) (r : Fin m → Fin l) :
     (compiled equality R w a x y q).rename r = compiled equality R (r w) (r a) (r x) (r y) (r q) := by
   simp only [compiled, existsMany_rename, body, matrix_rename, lift_old, lift_slot]

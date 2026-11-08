@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-11-08T14:44:47.889061+00:00",
+  "failure_run": 42483548594,
+  "failed_job": 128756371045,
+  "prior_native_job": 128740426678,
+  "prior_native_result": "success",
+  "failure": "Original Comparator did not start: custom strict landrun preflight requires Landlock ABI10, runner ABI8",
+  "official_tools_and_pins_unchanged": true,
+  "original_input_prepare_and_check_ASTs_unchanged": true,
+  "all_previous_native_job_steps_retained": true,
+  "repair": [
+    "Official best-effort invocation with fail-closed ABI>=8 floor",
+    "Required unprivileged NoNewPrivileges and zero effective capabilities",
+    "Outer SystemCallFilter denies network and io_uring; RestrictAddressFamilies=none",
+    "Real positive landrun execution plus create/overwrite/truncate/rename/unlink denial probes",
+    "Reject absence of any UNIX/TCP/UDP socket guard",
+    "Fast Linux guard preflight before long native build; failure skips subsequent builds"
+  ],
+  "local_checks": {
+    "guard_regressions": 7,
+    "cross_platform_hash_regressions": 5,
+    "actionlint_exit": 0,
+    "multiline_bash_blocks_checked": 7,
+    "native_full_verification_report": "verification/forcing-atom-dispatch-acceptance.json"
+  },
+  "scope": {
+    "real_linux_ABI8_guard_passed": false,
+    "original_Comparator_accepted": false,
+    "final_object_Con_proved": false
+  },
+  "sources": [
+    "https://github.com/leanprover/comparator/blob/d03acab154d269c06e60e4de7e4cc85deebff94b/Main.lean#L80",
+    "https://github.com/Zouuup/landrun/blob/ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a/internal/sandbox/sandbox.go",
+    "https://www.freedesktop.org/software/systemd/man/255/systemd.exec.html"
+  ],
+  "logs": {
+    ".local\\original-comparator-42483548594-failed.log": "1f2e6c2f643534ffbc0631ecc1b541b446019ab1b9cff959ab820d336e6dcd18",
+    ".local\\native-ci-42483548594-success.log": "25dc9aaa6d01a2a47b7dc318a22d79362f8dcefd38e1cd5aaf8fd63924661d78"
+  }
+}

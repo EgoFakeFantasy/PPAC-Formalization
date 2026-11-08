@@ -2651,7 +2651,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('original_axiom_typing', 'OriginalAxiomTyping', 6),
                                 ('internal_consistency_closing', 'InternalConsistency', 8),
                                 ('internal_axiom_proof', 'InternalAxiomProof', 5),
-                                ('forcing_atomic_code', 'ForcingAtomicCode', 19)):
+                                ('forcing_atomic_code', 'ForcingAtomicCode', 20),
+                                ('forcing_atom_code', 'ForcingAtomCode', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -5983,7 +5984,7 @@ def main(source_check_only: bool = False) -> None:
                 raise RuntimeError(f"Unexpected arithmetic core certificate footprint: {core}")
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
-    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/source_hash.py", "scripts/check_ci_inputs.py", "scripts/test_ci_compatibility.py", "scripts/original_comparator.py", ".github/workflows/lean.yml", "docs/ORIGINAL_COMPARATOR_LOCK.json", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
+    hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/source_hash.py", "scripts/check_ci_inputs.py", "scripts/test_ci_compatibility.py", "scripts/original_comparator.py", "scripts/test_original_comparator_guard.py", ".github/workflows/lean.yml", "docs/ORIGINAL_COMPARATOR_LOCK.json", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
     summary = {
         "source_hash_policy": POLICY,
         "lean_version": version,

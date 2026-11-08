@@ -161401,7 +161401,8 @@
         "OAI.PartitionConsistency.SetForcingNames.MemAt / EqAt and their existing ForcingAtomicRelations.forces migration; literal native template"
       ],
       "consumers": [
-        "Coded forcing recursion: its atomic branch now has a constructed typed unique output, with independently chosen actual witnesses; InternalConsistency.reduction remains unproved"
+        "Coded forcing recursion: its atomic branch now has a constructed typed unique output, with independently chosen actual witnesses; InternalConsistency.reduction remains unproved",
+        "ForcingAtomCode: actual parsed member/equal formula fields, without supplied term metadata"
       ],
       "reuse_producers": [
         "Existing ForcingAtomicRelations.forces and Translation.formula",
@@ -161412,7 +161413,7 @@
         "Original Source.Derives, TheoryTransport, ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingAtomicCode.lean": "afefce970be2a4c439e59f9249413b9fc96c117c240c0c7743f7e360cfa1297a",
+        "PPAC/Migration/ForcingAtomicCode.lean": "2cbf3d0e5bb0fe3cc64a6ef06e5809d7e0db96cadd2af1684877923632f651f6",
         "PPAC/Migration/ForcingAtomicRelations.lean": "88604483a29c61ee5e14217e92c52a1d894033d53cec18bb9365b217170c5f95",
         "PPAC/Migration/Internal/PureQuotationTypedFormulas.lean": "a893d1091b517f795e6bbcb1004e4a5e6c754c5a45aa9b91bb3d307292e8bd10",
         "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b",
@@ -161525,6 +161526,134 @@
           "propext"
         ],
         "PPAC.Migration.ForcingAtomicCode.fiber_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomicCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_atom_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+      "source_sha256": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingAtomCode.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.SetForcingNames.MemAt / EqAt",
+        "ForcingQuotient.BasicFormula / Formula.toBasic and AtomicData.Force; existing native Reverse.formula truth normalization"
+      ],
+      "consumers": [
+        "Full raw formula forcing compiler: complete atomic dispatch with parsed term fields, exact target type and independent unique output",
+        "InternalConsistency.reduction, after the remaining logical/binder/Proof interpretation"
+      ],
+      "reuse_producers": [
+        "Existing actual SyntaxAtomSyntax four-way grammar, SyntaxAtomLogic parsed-field elimination, SyntaxAtomCases tag rejection and SyntaxAtomUnique field injectivity",
+        "ForcingAtomicCode actual totality, typing, unique output and unchanged compiled_rename proof",
+        "Existing FormulaCodeRecursive for constant target typing",
+        "Original Source.Derives and nativeZF TheoryTransport/ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingAtomCode.lean": "d3b8a0776bc2ddaa9e0a8ad1bf0ffabcb143dd2641eab8382340cd48bc026128",
+        "PPAC/Migration/ForcingAtomicCode.lean": "2cbf3d0e5bb0fe3cc64a6ef06e5809d7e0db96cadd2af1684877923632f651f6",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/ReverseSyntax.lean": "8fbf87804ba7d32b82b39f4b25b8508992f34033f98d1d747dc27f8eb332e4e0",
+        "PPAC/Migration/Internal/SyntaxAtomCases.lean": "be815ca25ecffb38b290d390f811b443b57e41a6714df33f6286332d9865a9a3",
+        "PPAC/Migration/Internal/SyntaxAtomUnique.lean": "2892dc69445a6ffe93f5ae37c22c7811813f9bf5bf8c3aa301f84c34c84d5680",
+        "PPAC/Migration/Internal/FormulaCodeRecursive.lean": "4bcdae1dcb2e0927d22a76b9c7d87526bdfad7bc4dab8b906f0827690d19c09d"
+      },
+      "scope": "All four actual atomic-code branches: falsum/truth retain their original code; native Reverse.formula maps truth to bottom -> bottom, whose exact original forcing-basis normalization is proved in nativeZF. Member/equal parse all actual internal fields and construct literal forcing codes without external term fields. Source bound scope and candidates may be internal/nonstandard; source-free scope is zero for totality, fixed ground-order R and parameter count remain external scheme indices. Ordinary nativeZF endpoints prove a typed unique output and independent all-candidate uniqueness. Not a full recursive formula interpreter, all-internal forcing-axiom proof compiler, Proof reduction, or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.truthNormalizationSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.truth_normalization_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.unique_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -161653,14 +161782,22 @@
   },
   "source_hash_policy": "sha256/text-crlf-to-lf/v1",
   "original_comparator": {
-    "status": "pinned_tools_and_real_guarded_Linux_CI_prepared_not_yet_accepted",
+    "status": "native_CI_succeeded_original_Comparator_stopped_at_ABI10_vs_ABI8_guard; compatible_measured_guard_pending_Linux_recheck",
     "lock": "docs/ORIGINAL_COMPARATOR_LOCK.json",
     "runner": "scripts/original_comparator.py",
-    "workflow": ".github/workflows/lean.yml: original-comparator, needs verify",
+    "workflow": ".github/workflows/lean.yml: optional comparator-preflight -> verify -> original-comparator",
     "activation": "workflow_dispatch input original_comparator=true, or push commit marker [original-comparator]",
     "Windows_tool_compatibility": "Official pinned comparator and lean4export compiled at original Lean 4.34.1; this is not Comparator acceptance.",
-    "Linux_guard": "Non-root, no effective capabilities, NoNewPrivileges, AF_UNIX syscall denied; real strict Landlock positive execution and negative write checks.",
+    "Linux_guard": "Non-root, zero effective capabilities, NoNewPrivileges, minimum Landlock ABI8; all network syscalls and io_uring denied by outer systemd filter. Official best-effort landrun invocation with real execution and five actual filesystem denials; no ABI<8 fallback.",
     "is_comparator_acceptance": false,
-    "is_final_internal_Con": false
+    "is_final_internal_Con": false,
+    "last_run": {
+      "id": 42483548594,
+      "native_job": 128740426678,
+      "native_result": "success",
+      "comparator_job": 128756371045,
+      "comparator_result": "failure_before_comparison",
+      "reason": "Runner ABI8 cannot satisfy old custom strict preflight requiring all ABI10 features"
+    }
   }
 }

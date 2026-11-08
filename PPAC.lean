@@ -1087,3 +1087,4 @@ import PPAC.Migration.OriginalAxiomTyping
 import PPAC.Migration.InternalConsistency
 import PPAC.Migration.InternalAxiomProof
 import PPAC.Migration.ForcingAtomicCode
+import PPAC.Migration.ForcingAtomCode

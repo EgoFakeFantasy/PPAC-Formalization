@@ -45,3 +45,7 @@
 原第10的原子编译分支：`ForcingAtomicCode.kernel_certificate`与`type_kernel_certificate`提供现有原子强迫公式的内部代码总性及准确类型。实际构造模板码、两个作用域次数、反向y/x绑定像列表、恒等自由像列表和混合替换输出。输入绑定范围和项码为内部变量，源自由范围为零；R及参数数目为固定外部模式索引。下一消费者是同一解释的递归公式代码编译器；不是全公式编译、统一内部公理强迫或最终Con。全量验收及旧声明足迹对比见`verification/forcing-atomic-code-acceptance.json`。
 
 原子编译递归前提的本轮闭合：`ForcingAtomicCode.unique`比较独立的次数、模板码、绑定项表、自由像表与完整混合替换见证；两张内部恒等码也通过既有唯一性消去。`fiber_total`实际构造带准确类型且对全部候选唯一的输出。两个新增普通nativeZF原核端点为`unique_kernel_certificate`和`fiber_kernel_certificate`。本轮没有扩大总性的源自由范围，没有完成全公式编译或最终Con；验收见`verification/forcing-atomic-unique-acceptance.json`。
+
+本轮实际原子码消费者：ForcingAtomCode的四分支解析总性、准确类型、独立字段／标签／执行见证的输出唯一性及原真常量规范化已取得普通nativeZF原核证书。没有给定项字段，原有效性guard完整保留。输入绑定范围与候选允许内部非标准，源自由范围为零，R为固定外部模板；完整公式／内部Proof／Con仍未完成。验收见verification/forcing-atom-dispatch-acceptance.json。
+
+远端第4验收状态：42483548594的verify成功，Comparator在Landlock预检失败而未开始比较；原因是自定义严格预检要求ABI10而runner是ABI8。已改为最低ABI8＋官方参数＋实测五项文件拒绝，并用外层全网络／io_uring拒绝覆盖可选网络能力；预检放在长构建前。当前仅本地回归／静态通过，Linux未复验。
