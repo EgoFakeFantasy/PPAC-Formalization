@@ -8,7 +8,9 @@
 
 原第10的代码生产已完成：原ZF/U公理表统一闭类型及实际理论公理证明；全部11原公式构造的实际forcing递归、带类型总性、输出唯一性及任意内部自由范围的开放公式闭包解释；原六类目标证明码构造器。各项均有原nativeZF证书，实际Node／头字段和空free时Root已构造。源码、范围及既有依赖见SOURCE_LOCK和对应验收报告；这些代码生产结论不等于强迫规则保真。
 
-原第10内部合取证明组合：InternalProofConjunction以原rule11完整头、两项实际语法查询及27模式表生成逻辑证明，再调用两次真实MP。从任意内部／非标准A、B及其实际证明出发，合取公式、两个蕴含公式、证书／查询行和全部父证明均在对象EX内构造，不给定逻辑测试或中间结果。原free字段和空free时Root保留；已直接消费ForcingLogicalCode.binary 0的实际AND编译输出，子式类型从同一输出的完整FormulaCode内取得；原forceFormula_conj的这一代码级合取证明组合已接通。单调性／稠密性归纳仍须完成其余分支。强迫规则保真、统一内部公理正确性、reduction及最终Con仍未完成。九项完整验收及五项trust=0通过，零警告；全部38473项既有声明足迹和旧证明正文不变。12项兼容回归和三库来源预检通过。验收见verification/internal-proof-conjunction-acceptance.json。
+原第10实际AND双向证明组合：InternalProofTemplates直接复用原ObjectTreeTemplate及ObjectLogicalAxiom.prop／shapes，为固定模板取得完整FormulaCode并生成原逻辑证书、完整查询与真实父证明；原表成员是已核实的外部固定模式条件，洞内公式码允许内部非标准。具体消费者为原rule12／13及真实MP，两个投影已直接消费同一ForcingLogicalCode.binary 0输出；结合已验收的正向组合，在空目标bound、任意内部free范围取得Proved(Q)↔(Proved(N)∧Proved(M))。保留原Node／头字段与空free时Root，无新语法／检查器／核。开放闭包传输、完整单调性／稠密性、MP强迫桥、统一公理／Proof正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38488项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-templates-acceptance.json。
+
+正向AND组合及原rule11证明生产保留，见verification/internal-proof-conjunction-acceptance.json。
 
 真正剩余：强迫解释的MP蕴含桥、其他统一六规则保真、内部／非标准ZF/U公理及语义／Proof正确性、同一矛盾码reduction与最终Con，以及原第11最终验收。不得以标准quotation模式或辅助构建代替这些门，不建立全宇宙统一真值／强迫谓词。
 

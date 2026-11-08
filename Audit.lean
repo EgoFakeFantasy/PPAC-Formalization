@@ -39164,3 +39164,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalProofConjunction.compiled_conjunction
 #print axioms PPAC.Migration.InternalProofConjunction.forcingSentence
 #print axioms PPAC.Migration.InternalProofConjunction.forcing_kernel_certificate
+#print axioms PPAC.Migration.InternalProofTemplates.admissible
+#print axioms PPAC.Migration.InternalProofTemplates.template_type
+#print axioms PPAC.Migration.InternalProofTemplates.logical_proof
+#print axioms PPAC.Migration.InternalProofTemplates.template_axiom
+#print axioms PPAC.Migration.InternalProofTemplates.project
+#print axioms PPAC.Migration.InternalProofTemplates.project_compiled
+#print axioms PPAC.Migration.InternalProofTemplates.compiled_iff
+#print axioms PPAC.Migration.InternalProofTemplates.sentence
+#print axioms PPAC.Migration.InternalProofTemplates.kernel_certificate

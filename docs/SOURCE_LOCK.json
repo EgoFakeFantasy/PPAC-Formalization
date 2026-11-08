@@ -163972,6 +163972,102 @@
           "propext"
         ]
       }
+    },
+    "internal_proof_templates": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectTreeTemplate.lean",
+      "native_source_sha256": "292b58d9a2198a1634d85033f7ec6efb8bbf3a0b4da1e5e963c0b41f987f02f3",
+      "adapter": "PPAC/Migration/InternalProofTemplates.lean",
+      "source_declarations": [
+        "forceFormula_conj exact literal AND proof-code composition",
+        "force_of_dense conjunction branch logical projection consumers",
+        "forceFormula_imp fixed propositional proof-step consumers"
+      ],
+      "consumers": [
+        "All-internal coded forcing monotonicity/regularity conjunction branches",
+        "Fixed source logical proof steps for the forcing-specific implication bridge",
+        "Same original all-internal proof-code contradiction reduction"
+      ],
+      "reuse_producers": [
+        "Original ObjectTreeTemplate.Template/expr and original graph value constructors",
+        "Original ObjectLogicalAxiom.prop and exact shapes membership guard",
+        "Original FormulaCode constructor/type equivalences and HornExprExistence/Constructor",
+        "Accepted InternalProofOperations.logical and original actual MP producer",
+        "Accepted forward literal-AND proof composition from InternalProofConjunction",
+        "Same original ZF/U tests, Node/header/Root and nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/InternalProofTemplates.lean": "70b082bad99a6b166d3495ed5fb46ae0f8272a5ee79a69585d049e18b188e680",
+        "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
+        "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
+        "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
+        "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
+        "PPAC/Migration/Internal/HornExprExistence.lean": "0e865bb9504614ef79a3f16839ab1f8176c68c9c86dd8579b0e288fa9b0f3486",
+        "PPAC/Migration/Internal/HornExprConstructor.lean": "ee8b2a4ddb2c12dcd1bdec75eb0b070f40601d9e1772f32914a33afcb91c2a97",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
+        "PPAC/Migration/Internal/LogicalStaticQueries.lean": "3d94514d4d013a0c124ead9f85989a195f34803c1efd9bafdb8b4d82e7d60d6d",
+        "PPAC/Migration/Internal/LogicalOriginalNodes.lean": "b79ca474a0d02f6acba692e52153177e490c24dd50adcd726d46d580006b1e13",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectTreeTemplate.lean": "292b58d9a2198a1634d85033f7ec6efb8bbf3a0b4da1e5e963c0b41f987f02f3",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "3f4d607af3aec3b36b57b312f9525e6e73626bd57998feb831df12e6df75f655"
+      },
+      "scope": "Reuse the existing ORIGINAL ObjectTreeTemplate.Template, ObjectLogicalAxiom.prop/shapes and existing constructor/type laws for fixed propositional proof templates; no new object syntax, checker, proof kernel or truth backend. Admissible is only an external fixed-template structural condition; holes hold arbitrary internal formula codes, including nonstandard, and the generic type adapter allows arbitrary internal bound/free scopes. The axiom factory requires a kernel-proved external membership in the unchanged original axiom table, genuine hole/input types and the actual output graph. It constructs the original certificate, complete grammar query list, table row and actual logical proof. The concrete consumers are exact original rule12/13; each generates the implication code and then a real MP parent. Both projections directly consume the SAME ForcingLogicalCode.binary 0 output, recovering child types from that output. Combined with accepted forward conjunction composition, the native endpoint proves Proved(Q) iff Proved(N) AND Proved(M), for that exact literal AND compilation at empty target bound scope, arbitrary internal free scope and arbitrary internal/nonstandard formulas/proofs. Original Node/header and Root at empty free scope are retained. This is proof-code composition, not truth or open universal-closure transport. Full forcing monotonicity/regularity, the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.InternalProofTemplates.template_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.logical_proof": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.template_axiom": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.project": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.project_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.compiled_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.admissible": []
+      }
     }
   },
   "selected_route_consumer_audit": {
