@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingOpenLayout
+import PPAC.Migration.ForcingCodeBinary
 
 /-! Pointwise adapter for the pinned source's `forcing_sound` name
 assignment. Reify the source free slots, use the ACTUAL forcing compiler with
@@ -308,5 +309,176 @@ theorem kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.Formula 
   exact typed_unique_total (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) _) _) _) R H w z f j b n t
     (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl))))))) (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl))))))
     (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl))))) (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+
+private theorem opened_in_environment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z b f t n Q L S : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (formulaCode w n b f))
+    (he : Derives Γ (ForcingOpenLayout.environment w z b f t L S)) (ho : Derives Γ (opened w z b f t n Q)) :
+    Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L S b f z t n Q) := by
+  let E := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc L.castSucc S.castSucc b.castSucc f.castSucc z.castSucc t.castSucc n.castSucc (Fin.last m)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) (SyntaxMixedFormulaOutputInduction.actual_exists hZ w L S b f z t n hw
+    (.conjI hc (ForcingOpenLayout.environment_types w z b f t L S he)))
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw E)
+  have he1 := of_eq (ForcingOpenLayout.environment_rename w z b f t L S Fin.castSucc) (under he E)
+  have ho1 := of_eq (opened_rename w z b f t n Q Fin.castSucc) (under ho E)
+  have hu := intro_opened w.castSucc z.castSucc b.castSucc f.castSucc t.castSucc n.castSucc (Fin.last m) L.castSucc S.castSucc he1 hE
+  have eq := opened_unique (ZFContext.under hZ E) w.castSucc z.castSucc b.castSucc f.castSucc t.castSucc n.castSucc (Fin.last m) Q.castSucc hw1 hu ho1
+  exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w L S b f z t n Q Fin.castSucc).symm
+    (SyntaxMixedFormulaJudgmentSubst.subst_q w.castSucc L.castSucc S.castSucc b.castSucc f.castSucc z.castSucc t.castSucc n.castSucc (Fin.last m) Q.castSucc eq hE)
+
+/-- Actual independent pointwise opening outputs preserve every literal
+binary node. All three source types follow from the one parent source type. -/
+theorem opened_binary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w z b f t n x y Q X Y : Fin m)
+    (hw : Derives Γ (omega w)) (hn : Derives Γ (formulaCode w n b f))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode kind w x y n))
+    (hp : Derives Γ (opened w z b f t n Q)) (hx : Derives Γ (opened w z b f t x X)) (hy : Derives Γ (opened w z b f t y Y)) :
+    Derives Γ (SyntaxLogicalSyntax.binaryCode kind w X Y Q) := by
+  have ht : Derives Γ (FormulaCodeBranchSyntax.binaryTypes w b f x y) := by
+    have hk : kind = 0 ∨ kind = 1 ∨ kind = 2 ∨ kind = 3 := by omega
+    rcases hk with rfl | rfl | rfl | rfl
+    · exact .impE (.conjL (FormulaCodeKnownLogical.binary0_iff hZ w b f x y n hw hc)) hn
+    · exact .impE (.conjL (FormulaCodeKnownLogical.binary1_iff hZ w b f x y n hw hc)) hn
+    · exact .impE (.conjL (FormulaCodeKnownLogical.binary2_iff hZ w b f x y n hw hc)) hn
+    · exact .impE (.conjL (FormulaCodeKnownLogical.binary3_iff hZ w b f x y n hw hc)) hn
+  let E := openBody w z b f t n Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hp
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ2 := HornBinderRules.zf_body 2 hZ E
+  have hw2 := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)
+  have he : Derives Δ (ForcingOpenLayout.environment (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (slot 2 0) (slot 2 1)) := .conjL hE
+  have hx2 := of_eq (opened_rename w z b f t x X (old 2)) (HornBinderRules.under_body 2 hx E)
+  have hy2 := of_eq (opened_rename w z b f t y Y (old 2)) (HornBinderRules.under_body 2 hy E)
+  have hX := opened_in_environment hZ2 (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 x) (old 2 X) (slot 2 0) (slot 2 1)
+    hw2 (of_eq (formulaCode_rename w x b f (old 2)) (HornBinderRules.under_body 2 (.conjL (.conjR ht)) E)) he hx2
+  have hY := opened_in_environment hZ2 (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 y) (old 2 Y) (slot 2 0) (slot 2 1)
+    hw2 (of_eq (formulaCode_rename w y b f (old 2)) (HornBinderRules.under_body 2 (.conjR (.conjR ht)) E)) he hy2
+  exact of_eq (SyntaxLogicalSyntax.binaryCode_rename kind w X Y Q (old 2)).symm
+    (ForcingMixedBinary.binary_constructor hZ2 kind (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 t)
+      (old 2 n) (old 2 x) (old 2 y) (old 2 Q) (old 2 X) (old 2 Y) hw2
+      (.conjI (of_eq (formulaCode_rename w n b f (old 2)) (HornBinderRules.under_body 2 hn E))
+        (ForcingOpenLayout.environment_types _ _ _ _ _ _ _ he))
+      (of_eq (SyntaxLogicalSyntax.binaryCode_rename kind w x y n (old 2)) (HornBinderRules.under_body 2 hc E)) (.conjR hE) hX hY)
+
+private theorem conjunction_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) (v u s : Fin 2 → Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w x y n))
+    (hp : Derives Γ (data R H w z f j b n t Q v)) (hx : Derives Γ (data R H w z f j b x t X u))
+    (hy : Derives Γ (data R H w z f j b y t Y s)) : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w X Y Q) := by
+  have hReify := ForcingOpenCode.reified_binary hZ 0 w z b n x y (v 0) (u 0) (s 0) hw hc (.conjL hp) (.conjL hx) (.conjL hy)
+  have hn := Derives.conjL (FormulaCodeProperties.guards w (v 0) b z (ForcingOpenCode.reified_type w z b n (v 0) (.conjL hp)))
+  have hRaw := ForcingCodeBinary.binary hZ 0 R H w z f j b A B C (v 0) (v 1) (u 0) (s 0) (u 1) (s 1)
+    hw hn hA hB hC hReify (.conjL (.conjR hp)) (.conjL (.conjR hx)) (.conjL (.conjR hy))
+  exact opened_binary hZ 0 w z b f t (v 1) (u 1) (s 1) Q X Y hw
+    (ForcingCodeRecursion.target_type R H w z f j b (v 0) (v 1) (.conjL (.conjR hp))) (.conjL hRaw)
+    (.conjR (.conjR hp)) (.conjR (.conjR hx)) (.conjR (.conjR hy))
+
+private theorem conjunction_at_two_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) (v u : Fin 2 → Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w x y n))
+    (hp : Derives Γ (data R H w z f j b n t Q v)) (hx : Derives Γ (data R H w z f j b x t X u))
+    (hy : Derives Γ (compiled R H w z f j b y t Y)) : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w X Y Q) := by
+  let E := body R H w z f j b y t Y
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hy
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w X Y Q (old 2)).symm
+    (conjunction_data (HornBinderRules.zf_body 2 hZ E) R H (old 2 w) (old 2 z) (old 2 f) (old 2 j) (old 2 b) (old 2 n) (old 2 x) (old 2 y)
+      (old 2 t) (old 2 Q) (old 2 X) (old 2 Y) (old 2 A) (old 2 B) (old 2 C) (fun i => old 2 (v i)) (fun i => old 2 (u i)) (slot 2)
+      (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+      (of_eq (successor_rename A b (old 2)) (HornBinderRules.under_body 2 hA E))
+      (of_eq (successor_rename B A (old 2)) (HornBinderRules.under_body 2 hB E))
+      (of_eq (successor_rename C B (old 2)) (HornBinderRules.under_body 2 hC E))
+      (of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w x y n (old 2)) (HornBinderRules.under_body 2 hc E))
+      (of_eq (data_rename R H w z f j b n t Q v (old 2)) (HornBinderRules.under_body 2 hp E))
+      (of_eq (data_rename R H w z f j b x t X u (old 2)) (HornBinderRules.under_body 2 hx E)) hE)
+
+private theorem conjunction_at_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) (v : Fin 2 → Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w x y n))
+    (hp : Derives Γ (data R H w z f j b n t Q v)) (hx : Derives Γ (compiled R H w z f j b x t X))
+    (hy : Derives Γ (compiled R H w z f j b y t Y)) : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w X Y Q) := by
+  let E := body R H w z f j b x t X
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hx
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w X Y Q (old 2)).symm
+    (conjunction_at_two_data (HornBinderRules.zf_body 2 hZ E) R H (old 2 w) (old 2 z) (old 2 f) (old 2 j) (old 2 b) (old 2 n) (old 2 x) (old 2 y)
+      (old 2 t) (old 2 Q) (old 2 X) (old 2 Y) (old 2 A) (old 2 B) (old 2 C) (fun i => old 2 (v i)) (slot 2)
+      (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+      (of_eq (successor_rename A b (old 2)) (HornBinderRules.under_body 2 hA E))
+      (of_eq (successor_rename B A (old 2)) (HornBinderRules.under_body 2 hB E))
+      (of_eq (successor_rename C B (old 2)) (HornBinderRules.under_body 2 hC E))
+      (of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w x y n (old 2)) (HornBinderRules.under_body 2 hc E))
+      (of_eq (data_rename R H w z f j b n t Q v (old 2)) (HornBinderRules.under_body 2 hp E)) hE
+      (of_eq (compiled_rename R H w z f j b y t Y (old 2)) (HornBinderRules.under_body 2 hy E)))
+
+/-- Exact conjunction commutation for arbitrary independently generated
+POINTWISE open compilations. Names stay open; b and t may be nonstandard. -/
+theorem conjunction {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w x y n))
+    (hp : Derives Γ (compiled R H w z f j b n t Q)) (hx : Derives Γ (compiled R H w z f j b x t X))
+    (hy : Derives Γ (compiled R H w z f j b y t Y)) : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w X Y Q) := by
+  let E := body R H w z f j b n t Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hp
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w X Y Q (old 2)).symm
+    (conjunction_at_data (HornBinderRules.zf_body 2 hZ E) R H (old 2 w) (old 2 z) (old 2 f) (old 2 j) (old 2 b) (old 2 n) (old 2 x) (old 2 y)
+      (old 2 t) (old 2 Q) (old 2 X) (old 2 Y) (old 2 A) (old 2 B) (old 2 C) (slot 2)
+      (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+      (of_eq (successor_rename A b (old 2)) (HornBinderRules.under_body 2 hA E))
+      (of_eq (successor_rename B A (old 2)) (HornBinderRules.under_body 2 hB E))
+      (of_eq (successor_rename C B (old 2)) (HornBinderRules.under_body 2 hC E))
+      (of_eq (SyntaxLogicalSyntax.binaryCode_rename 0 w x y n (old 2)) (HornBinderRules.under_body 2 hc E)) hE
+      (of_eq (compiled_rename R H w z f j b x t X (old 2)) (HornBinderRules.under_body 2 hx E))
+      (of_eq (compiled_rename R H w z f j b y t Y (old 2)) (HornBinderRules.under_body 2 hy E)))
+
+def conjunctionInput {k m} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) : Formula m :=
+  (omega w).conj ((successor A b).conj ((successor B A).conj ((successor C B).conj
+    ((SyntaxLogicalSyntax.binaryCode 0 w x y n).conj ((compiled R H w z f j b n t Q).conj
+      ((compiled R H w z f j b x t X).conj (compiled R H w z f j b y t Y)))))))
+private theorem conjunction_from_input {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m)
+    (hI : Derives Γ (conjunctionInput R H w z f j b n x y t Q X Y A B C)) : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w X Y Q) :=
+  conjunction hZ R H w z f j b n x y t Q X Y A B C (.conjL hI) (.conjL (.conjR hI))
+    (.conjL (.conjR (.conjR hI))) (.conjL (.conjR (.conjR (.conjR hI))))
+    (.conjL (.conjR (.conjR (.conjR (.conjR hI))))) (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hI))))))
+    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hI)))))))
+    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hI)))))))
+
+/-- Source conjunction introduction/projections are now available on the
+ACTUAL pointwise outputs at arbitrary internal open free scope t=b+f. -/
+theorem conjunction_iff {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m)
+    (hz : Derives Γ (empty z)) (hI : Derives Γ (conjunctionInput R H w z f j b n x y t Q X Y A B C)) :
+    Derives Γ ((InternalProofConjunction.proved test w z t Q).iff
+      ((InternalProofConjunction.proved test w z t X).conj (InternalProofConjunction.proved test w z t Y))) := by
+  have hc := conjunction_from_input hZ R H w z f j b n x y t Q X Y A B C hI
+  have hp : Derives Γ (compiled R H w z f j b n t Q) := .conjL (.conjR (.conjR (.conjR (.conjR (.conjR hI)))))
+  have hb : Derives Γ (ForcingLogicalCode.binary 0 R w z A t j X Y Q) := .conjI hc (target_type R H w z f j b n t Q hp)
+  exact InternalProofTemplates.compiled_iff hZ test R w z A t j X Y Q (.conjL hI) hz hb
+
+def conjunctionSentence {k m} (target : Bool) (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) : Source.Sentence :=
+  ((empty z).imp ((conjunctionInput R H w z f j b n x y t Q X Y A B C).imp
+    ((InternalProofConjunction.proved (OriginalAxiomCodeTest.test target) w z t Q).iff
+      ((InternalProofConjunction.proved (OriginalAxiomCodeTest.test target) w z t X).conj
+        (InternalProofConjunction.proved (OriginalAxiomCodeTest.test target) w z t Y))))).close
+
+theorem conjunction_kernel_certificate {k m} (target : Bool) (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n x y t Q X Y A B C : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (conjunctionSentence target R H w z f j b n x y t Q X Y A B C)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  exact conjunction_iff (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) (OriginalAxiomCodeTest.test target)
+    R H w z f j b n x y t Q X Y A B C (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingPointwiseCode

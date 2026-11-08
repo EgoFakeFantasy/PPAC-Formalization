@@ -1109,3 +1109,4 @@ import PPAC.Migration.InternalProofImplication
 import PPAC.Migration.ForcingOpenLayout
 import PPAC.Migration.ForcingPointwiseCode
 import PPAC.Migration.ForcingCodeBinary
+import PPAC.Migration.ForcingMixedBinary

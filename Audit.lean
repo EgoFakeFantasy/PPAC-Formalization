@@ -39246,3 +39246,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeBinary.conjunction_iff
 #print axioms PPAC.Migration.ForcingCodeBinary.conjunctionSentence
 #print axioms PPAC.Migration.ForcingCodeBinary.conjunction_kernel_certificate
+#print axioms PPAC.Migration.ForcingMixedBinary.binary_constructor
+#print axioms PPAC.Migration.ForcingOpenCode.reified_binary
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_binary
+#print axioms PPAC.Migration.ForcingPointwiseCode.conjunction
+#print axioms PPAC.Migration.ForcingPointwiseCode.conjunctionInput
+#print axioms PPAC.Migration.ForcingPointwiseCode.conjunction_iff
+#print axioms PPAC.Migration.ForcingPointwiseCode.conjunctionSentence
+#print axioms PPAC.Migration.ForcingPointwiseCode.conjunction_kernel_certificate

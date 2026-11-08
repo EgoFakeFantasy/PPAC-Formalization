@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingCodeUnique
+import PPAC.Migration.ForcingMixedBinary
 import PPAC.Migration.SchemaClosureTyping
 import PPAC.Migration.Internal.SyntaxVariableTableFields
 import PPAC.Migration.Internal.SyntaxMixedImageCodePairs
@@ -370,4 +371,54 @@ theorem unique_kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.F
   apply Derives.impI
   exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) R H w z f j b n Q V
     (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+private theorem reified_in_environment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z b n t r s L S : Fin m)
+    (hw : Derives Γ (omega w)) (hr : Derives Γ (SyntaxVariableTableSyntax.identity false w b z r))
+    (hs : Derives Γ (SyntaxVariableTableSyntax.identity true w b z s))
+    (he : Derives Γ (SyntaxMixedImageCodeSyntax.encodings w r s z b b z L S))
+    (ht : Derives Γ (reified w z b n t)) : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L S z b b z n t) := by
+  let E := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc L.castSucc S.castSucc z.castSucc b.castSucc b.castSucc z.castSucc n.castSucc (Fin.last m)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) (SyntaxMixedFormulaOutputInduction.actual_exists hZ w L S z b b z n hw
+    (.conjI (.conjL ht) (SyntaxMixedImageCodePairs.term_lists w r s z b b z L S he)))
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw E)
+  have hr1 := of_eq (SyntaxVariableTableSyntax.identity_rename false w b z r Fin.castSucc) (under hr E)
+  have hs1 := of_eq (SyntaxVariableTableSyntax.identity_rename true w b z s Fin.castSucc) (under hs E)
+  have he1 := of_eq (SyntaxMixedImageCodeSyntax.encodings_rename w r s z b b z L S Fin.castSucc) (under he E)
+  have hc1 := of_eq (formulaCode_rename w n z b Fin.castSucc) (under (.conjL ht) E)
+  have ht1 := of_eq (reified_rename w z b n t Fin.castSucc) (under ht E)
+  let v : Fin 4 → Fin (m+1) := Fin.cases r.castSucc (Fin.cases s.castSucc (SyntaxAtomSyntax.two L.castSucc S.castSucc))
+  have hu := intro_reified w.castSucc z.castSucc b.castSucc n.castSucc (Fin.last m) v hc1 (.conjI hr1 (.conjI hs1 (.conjI he1 hE)))
+  have eq := reified_unique (ZFContext.under hZ E) w.castSucc z.castSucc b.castSucc n.castSucc (Fin.last m) t.castSucc hw1 hu ht1
+  exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w L S z b b z n t Fin.castSucc).symm
+    (SyntaxMixedFormulaJudgmentSubst.subst_q w.castSucc L.castSucc S.castSucc z.castSucc b.castSucc b.castSucc z.castSucc n.castSucc (Fin.last m) t.castSucc eq hE)
+
+/-- Arbitrary independent reifications preserve all four literal binary nodes.
+Use one actual parent environment, then existing totality/uniqueness to align
+both child outputs with it. No caller-supplied environment or standard scope. -/
+theorem reified_binary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w z b n x y Q X Y : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode kind w x y n))
+    (hn : Derives Γ (reified w z b n Q)) (hx : Derives Γ (reified w z b x X)) (hy : Derives Γ (reified w z b y Y)) :
+    Derives Γ (SyntaxLogicalSyntax.binaryCode kind w X Y Q) := by
+  let E := reifyBody w z b n Q
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ (.conjR hn)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ4 := HornBinderRules.zf_body 4 hZ E
+  have hw4 := of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 hw E)
+  have he : Derives Δ (SyntaxMixedImageCodeSyntax.encodings (old 4 w) (slot 4 0) (slot 4 1) (old 4 z) (old 4 b) (old 4 b) (old 4 z) (slot 4 2) (slot 4 3)) := .conjL (.conjR (.conjR hE))
+  have hx4 := of_eq (reified_rename w z b x X (old 4)) (HornBinderRules.under_body 4 hx E)
+  have hy4 := of_eq (reified_rename w z b y Y (old 4)) (HornBinderRules.under_body 4 hy E)
+  have hX := reified_in_environment hZ4 (old 4 w) (old 4 z) (old 4 b) (old 4 x) (old 4 X) (slot 4 0) (slot 4 1) (slot 4 2) (slot 4 3)
+    hw4 (.conjL hE) (.conjL (.conjR hE)) he hx4
+  have hY := reified_in_environment hZ4 (old 4 w) (old 4 z) (old 4 b) (old 4 y) (old 4 Y) (slot 4 0) (slot 4 1) (slot 4 2) (slot 4 3)
+    hw4 (.conjL hE) (.conjL (.conjR hE)) he hy4
+  exact of_eq (SyntaxLogicalSyntax.binaryCode_rename kind w X Y Q (old 4)).symm
+    (ForcingMixedBinary.binary_constructor hZ4 kind (old 4 w) (slot 4 2) (slot 4 3) (old 4 z) (old 4 b) (old 4 b) (old 4 z)
+      (old 4 n) (old 4 x) (old 4 y) (old 4 Q) (old 4 X) (old 4 Y) hw4
+      (.conjI (of_eq (formulaCode_rename w n z b (old 4)) (HornBinderRules.under_body 4 (.conjL hn) E))
+        (SyntaxMixedImageCodePairs.term_lists _ _ _ _ _ _ _ _ _ he))
+      (of_eq (SyntaxLogicalSyntax.binaryCode_rename kind w x y n (old 4)) (HornBinderRules.under_body 4 hc E))
+      (.conjR (.conjR (.conjR hE))) hX hY)
+
 end PPAC.Migration.ForcingOpenCode
