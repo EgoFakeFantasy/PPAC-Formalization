@@ -1074,3 +1074,4 @@ import PPAC.Migration.SchemaAxiomCompilation
 import PPAC.Migration.SchemaClosureTyping
 import PPAC.Migration.SchemaShellTyping
 import PPAC.Migration.SchemaAxiomUnique
+import PPAC.Migration.OriginalAxiomCodeTest

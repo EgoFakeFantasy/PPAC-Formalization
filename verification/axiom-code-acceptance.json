@@ -1,0 +1,301 @@
+{
+  "verified_at": "2026-11-08T19:23:03.596343+11:00",
+  "baseline_commit": "48e4371ffc6d04bea4642ed06992fa9a4f2ab43b",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "OriginalAxiomCodeTest.row_kernel_certificate",
+    "OriginalAxiomCodeTest.schema_unique_kernel_certificate",
+    "OriginalAxiomCodeTest.schema_existence_kernel_certificate"
+  ],
+  "actual_object_result": "One pure finite ZF/U certificate table now includes the original fixed ZF tags, both original parameter/body schema envelopes and optional PP/ACwo/notAC tags, and is connected to the actual original six-rule unary axiomTest row. Original certificate tree fields are preserved. At ALL INTERNAL/nonstandard counts and raw valid bodies, input certificates ACTUALLY produce schema outputs; all such outputs have closed FormulaCode type and are unique across independent count/body/empty-zero/scope/compilation/map/trace witnesses. Existing component and pipeline proofs are reused. This is NOT a completed full original decoder/quotation correctness or internal Proof/Con proof.",
+  "encoding": {
+    "certificate_value": "Quine STRUCTURAL value of original NativeAxiomCertificateData.encode/targetEncode tree",
+    "NatPacket_encode_byte_serialization_used_as_structural_value": false,
+    "old_fixed_packet_partial_table_changed_or_restored": false,
+    "fixed_ZF_tags": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "schema_tags": {
+      "separation": 8,
+      "collection": 9
+    },
+    "target_extra_tags": [
+      10,
+      11,
+      12
+    ],
+    "Choice_tag_7_rejected_in_base_and_target_tables": true,
+    "schema_fields": [
+      "scalar count leaf",
+      "original raw Project body"
+    ],
+    "input_environment_slots": [
+      "internal count",
+      "raw Project body",
+      "empty zero",
+      "scope n+1",
+      "scope n+2",
+      "scope n+3",
+      "scope n+4",
+      "scalar count leaf code"
+    ],
+    "row": "original structural node 0 [certificate, closed formula]"
+  },
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_counts_bodies_certificates_rows": true,
+    "exact_original_certificate_tree_shape_for_both_schema_constructors": true,
+    "actual_original_six_rule_unary_axiomTest_row_equivalence": true,
+    "fixed_structural_tags_match_exact_original_native_sentences": true,
+    "Choice_rejected_by_all_fixed_and_schema_branches": true,
+    "all_candidate_schema_outputs_closed_typed": true,
+    "schema_output_uniqueness_across_independent_input_and_execution_witnesses": true,
+    "actual_schema_output_existence_from_valid_input_certificate": true,
+    "given_output_compiler_map_or_trace_oracle": false,
+    "host_induction_on_parameter_count": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "full_original_decoder_quotation_correctness_complete": false,
+    "full_uniform_internal_ZF_U_axiom_correctness_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "NativeAxiomCertificateData and original AxiomEncode envelope tags/fields",
+    "SchemaShellTyping.output_exists_typed/result_type",
+    "SchemaAxiomUnique.result_unique_across_scopes",
+    "Existing SyntaxNodeInjective/SyntaxNodes.tags_equal",
+    "Existing SyntaxConstructors.disjoint",
+    "Existing ProofTreeConstructorFacts.field_equal",
+    "Existing empty-zero uniqueness and original Derives.eqSubst",
+    "Existing six-rule AxiomTestSyntax.holds and nativeZF replay"
+  ],
+  "next_real_consumer": "Complete original decoder/quotation correctness and internal axiom forcing, then ALL INTERNAL/nonstandard six-rule Proof/Con reduction. Do not redo the completed row interface, schema output existence/type/uniqueness, L or mathematical axiom schemas.",
+  "acceptance": {
+    "audited_declarations": 38053,
+    "declarations_without_axioms": 2257,
+    "declarations_with_recorded_dependencies": 35796,
+    "new_public_declarations": [
+      "PPAC.Migration.OriginalAxiomCodeTest.closedCode",
+      "PPAC.Migration.OriginalAxiomCodeTest.closedCode_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.collection_certificate_shape",
+      "PPAC.Migration.OriginalAxiomCodeTest.existsOutput",
+      "PPAC.Migration.OriginalAxiomCodeTest.existsOutput_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.exists_output",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedBranch",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedBranch_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedTable",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedTable_at",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedTable_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.fixedTag_ne_schema",
+      "PPAC.Migration.OriginalAxiomCodeTest.intro_fixed",
+      "PPAC.Migration.OriginalAxiomCodeTest.intro_row",
+      "PPAC.Migration.OriginalAxiomCodeTest.intro_schema",
+      "PPAC.Migration.OriginalAxiomCodeTest.intro_schema_table",
+      "PPAC.Migration.OriginalAxiomCodeTest.reject_choice_table",
+      "PPAC.Migration.OriginalAxiomCodeTest.rowBody",
+      "PPAC.Migration.OriginalAxiomCodeTest.rowSentence",
+      "PPAC.Migration.OriginalAxiomCodeTest.rowTest",
+      "PPAC.Migration.OriginalAxiomCodeTest.rowTest_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.row_at",
+      "PPAC.Migration.OriginalAxiomCodeTest.row_kernel_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.row_omega_subst",
+      "PPAC.Migration.OriginalAxiomCodeTest.row_source_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaBody",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaBranch",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaBranch_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaBranch_typed",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaBranch_unique",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaExistenceSentence",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaInput",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaInput_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaMatrix",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaMatrix_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaTag",
+      "PPAC.Migration.OriginalAxiomCodeTest.schemaUniqueSentence",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_existence_kernel_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_existence_source_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_matrix_unique",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_unique_kernel_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_unique_source_certificate",
+      "PPAC.Migration.OriginalAxiomCodeTest.schema_wrong_tag",
+      "PPAC.Migration.OriginalAxiomCodeTest.separation_certificate_shape",
+      "PPAC.Migration.OriginalAxiomCodeTest.table",
+      "PPAC.Migration.OriginalAxiomCodeTest.table_at_fixed",
+      "PPAC.Migration.OriginalAxiomCodeTest.table_inputs",
+      "PPAC.Migration.OriginalAxiomCodeTest.table_rename",
+      "PPAC.Migration.OriginalAxiomCodeTest.test",
+      "PPAC.Migration.OriginalAxiomCodeTest.test_at",
+      "PPAC.Migration.OriginalAxiomCodeTest.test_iff_row"
+    ],
+    "old_footprints_unchanged": 38002,
+    "old_module_review": {
+      "modules": 2629,
+      "unchanged_canonical": 2629,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2801,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3249,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75
+  },
+  "remote_CI": {
+    "run_id": 42456708909,
+    "job_id": 128657173921,
+    "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+    "last_observed_status": "in_progress",
+    "success_claimed": false,
+    "publication_policy": "Do not stack pushes while the previous remote CI is live; all local accepted commits remain retained."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/axiom-code-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\axiom-code-build.log",
+        "bytes": 110,
+        "sha256": "0d9291f4b53d2b35864e989d8550965a03bd7354b684f4aae7d5d77bd293739e"
+      },
+      {
+        "path": "verification/axiom-code-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\axiom-code-local-axioms.log",
+        "bytes": 17916,
+        "sha256": "55fc1b31f9bdd9902040d4848206880f964d1946f9e0d6624b6913515669d6d2"
+      },
+      {
+        "path": "verification/axiom-code-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\axiom-code-baseline.tmp.json",
+        "bytes": 13277235,
+        "sha256": "e8712226b3a8e1914c0949fd523360633564507f0a6e0a20cc48bedd31b79c8b"
+      },
+      {
+        "path": "verification/axiom-code-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\axiom-code-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "1d3b6891b45994cb88f5c8705c77c319da10f4102702b2c74bf4f76cf6b4282f"
+      },
+      {
+        "path": ".local/AxiomCodeAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\AxiomCodeAudit.lean",
+        "bytes": 3509,
+        "sha256": "4217209137aa88f04b570ef0f70b32f6ffabdb24cef68f084df5fe3afc71ca64"
+      }
+    ],
+    "removed_files": 5,
+    "recursive_deletion": false,
+    "other_projects_or_applications_touched": false
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3249,
+    "current_source_hashes_verified": 2801,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false
+  }
+}

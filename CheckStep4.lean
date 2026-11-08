@@ -14430,4 +14430,17 @@ example {m : Nat} (collection : Bool) (w n z body out other : Fin m) (xs ys : Fi
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomUnique.comparison_sentence collection w n z body out other xs ys)) :=
   SchemaAxiomUnique.comparison_kernel_certificate collection w n z body out other xs ys
 
+-- Original certificate trees, with actual six-rule axiom rows and ALL internal witnesses.
+example {m : Nat} (target : Bool) (w row c f : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (OriginalAxiomCodeTest.rowSentence target w row c f)) :=
+  OriginalAxiomCodeTest.row_kernel_certificate target w row c f
+
+example {m : Nat} (collection : Bool) (w c f g : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (OriginalAxiomCodeTest.schemaUniqueSentence collection w c f g)) :=
+  OriginalAxiomCodeTest.schema_unique_kernel_certificate collection w c f g
+
+example {m : Nat} (collection : Bool) (w c : Fin m) (env : Fin 8 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (OriginalAxiomCodeTest.schemaExistenceSentence collection w c env)) :=
+  OriginalAxiomCodeTest.schema_existence_kernel_certificate collection w c env
+
 end PPAC.Migration.Step4Checks
