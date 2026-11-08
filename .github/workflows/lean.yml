@@ -1,5 +1,14 @@
 name: Lean verification
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      original_comparator:
+        description: Run the pinned original OpenAI Comparator after native verification
+        required: false
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -45,3 +54,76 @@ jobs:
             ppac-yesmeta-migration/verification/summary.json
             ppac-yesmeta-migration/verification/commands.json
             ppac-yesmeta-migration/verification/*.log
+  original-comparator:
+    name: Original PPAC Comparator (Lean 4.34.1)
+    needs: verify
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.original_comparator) ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[original-comparator]'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      ELAN_TOOLCHAIN: leanprover/lean4:v4.34.1
+      LEAN_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: migration
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: openai/math
+          ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+          path: original-source
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: leanprover/comparator
+          ref: d03acab154d269c06e60e4de7e4cc85deebff94b
+          path: tools/comparator
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Zouuup/landrun
+          ref: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
+          path: tools/landrun
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: tools/landrun/go.mod
+          cache-dependency-path: tools/landrun/go.sum
+      - name: Install original Lean toolchain
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build pinned real Comparator and sandbox tools
+        run: |
+          (cd tools/landrun && go build -trimpath -o landrun cmd/landrun/main.go)
+          (cd tools/comparator && lake --wfail build lean4export comparator)
+          test "$(git -C tools/comparator/.lake/packages/lean4export rev-parse HEAD)" = 076e8e57707e813375e8f9da8bf989799ace9680
+      - name: Prepare unchanged original proof and trusted dependencies
+        run: |
+          python3 migration/scripts/original_comparator.py prepare --source original-source --project original-proof
+          mkdir -p comparator-verification
+          cp original-proof/comparator-inputs.json comparator-verification/
+          (cd original-proof && lake update mathlib && lake exe cache get)
+          test ! -d original-proof/.lake/build/lib/lean/OAI
+      - name: Run original Comparator under verified real guards
+        run: |
+          sudo systemd-run --quiet --wait --pipe --collect \
+            --uid="$(id -u)" --gid="$(id -g)" \
+            --property=NoNewPrivileges=true \
+            --property=RestrictAddressFamilies=~AF_UNIX \
+            --working-directory="$GITHUB_WORKSPACE/original-proof" \
+            --setenv=PATH="$PATH" --setenv=HOME="$HOME" --setenv=LEAN_NUM_THREADS=1 \
+            /usr/bin/python3 "$GITHUB_WORKSPACE/migration/scripts/original_comparator.py" run \
+            --project "$GITHUB_WORKSPACE/original-proof" \
+            --comparator "$GITHUB_WORKSPACE/tools/comparator/.lake/build/bin/comparator" \
+            --landrun "$GITHUB_WORKSPACE/tools/landrun/landrun" \
+            --exporter "$GITHUB_WORKSPACE/tools/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export" \
+            --output "$GITHUB_WORKSPACE/comparator-verification"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: original-comparator
+          path: comparator-verification/

@@ -161506,5 +161506,16 @@
     "review": "verification/class-fiber-nonmain-review.json",
     "rule": "Do not expand the generic-filter class-fiber branch. Use direct named declarations inside CodeCardinals and its actual ConcreteQuotients consumer."
   },
-  "source_hash_policy": "sha256/text-crlf-to-lf/v1"
+  "source_hash_policy": "sha256/text-crlf-to-lf/v1",
+  "original_comparator": {
+    "status": "pinned_tools_and_real_guarded_Linux_CI_prepared_not_yet_accepted",
+    "lock": "docs/ORIGINAL_COMPARATOR_LOCK.json",
+    "runner": "scripts/original_comparator.py",
+    "workflow": ".github/workflows/lean.yml: original-comparator, needs verify",
+    "activation": "workflow_dispatch input original_comparator=true, or push commit marker [original-comparator]",
+    "Windows_tool_compatibility": "Official pinned comparator and lean4export compiled at original Lean 4.34.1; this is not Comparator acceptance.",
+    "Linux_guard": "Non-root, no effective capabilities, NoNewPrivileges, AF_UNIX syscall denied; real strict Landlock positive execution and negative write checks.",
+    "is_comparator_acceptance": false,
+    "is_final_internal_Con": false
+  }
 }

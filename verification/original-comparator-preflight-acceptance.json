@@ -1,0 +1,177 @@
+{
+  "verified_at": "2026-11-08T12:41:26.458712+00:00",
+  "baseline_commit": "5ffb994930e7f0d91ab44ec72f6a581973e2e5bb",
+  "original_stage": 4,
+  "status": "prepared_and_locally_checked_NOT_Linux_Comparator_accepted",
+  "lock": {
+    "openai_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "lean4export_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a",
+    "comparator_config": {
+      "challenge_module": "ComparatorChallenges.PartitionConsistency",
+      "solution_module": "OAI.SetTheory.PartitionConsistency.Main",
+      "theorem_names": [
+        "OAI.PartitionConsistency.main_consistency"
+      ],
+      "definition_names": [],
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "enable_nanoda": false
+    },
+    "scope": "Original external OpenAI Comparator baseline only. Does not prove the nativeZF internal Con goal. No fake landrun or optional external kernel."
+  },
+  "official_instructions": "https://github.com/leanprover/comparator/blob/d03acab154d269c06e60e4de7e4cc85deebff94b/README.md",
+  "local_preflight": {
+    "source_copies_checked": 78,
+    "changed_original_source_rejected": true,
+    "all_source_copies_restored_and_checked": true,
+    "Windows_real_sandbox_acceptance_rejected": true,
+    "solution_never_precompiled_by_preparation": true,
+    "workflow_actionlint_exit_code": 0,
+    "Linux_Comparator_acceptance": false,
+    "bash_syntax_checked_blocks": 8,
+    "existing_native_verify_job_byte_identical": true,
+    "official_pinned_tools_compiled_on_original_Lean_4_34_1": true,
+    "first_clean_tool_build_jobs": 21,
+    "wfail_cached_tool_build_jobs": 20,
+    "tool_source_unmodified": true,
+    "actionlint_version": "1.7.12",
+    "actionlint_official_archive_checksum_verified": true,
+    "actionlint_archive_sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9"
+  },
+  "activation": "Native verify success is mandatory. Only an explicit [original-comparator] push marker or workflow_dispatch input enables the isolated job.",
+  "real_Linux_acceptance_required": [
+    "Official exact challenge JSON and byte-identical original sources",
+    "Original Lean 4.34.1, fixed mathlib/comparator/exporter/landrun revisions",
+    "Nonroot UID, zero effective capabilities, NoNewPrivileges",
+    "AF_UNIX socket syscall rejected",
+    "Strict real Landlock execution succeeds and a write to an otherwise writable directory is denied",
+    "Official Comparator exits zero AND prints Your solution is okay!",
+    "All 78 original inputs and trusted minimal lakefile hashes unchanged"
+  ],
+  "native_regression": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38137,
+    "Lean_warning_lines": 0,
+    "hashes_verified": 2816,
+    "changed_Lean_or_kernel_input_files": [],
+    "proof_source_and_original_verify_job_unchanged": true,
+    "new_object_theorems_claimed": false,
+    "object_Con_theorem_proved": false
+  },
+  "remote": {
+    "preceding_run_id": 42475062234,
+    "last_observed_status": "in_progress",
+    "this_batch_uploaded_at_preflight": false,
+    "original_Comparator_run_accepted": false
+  },
+  "cleanup": {
+    "exact_manifest": ".local/original-comparator-cleanup.json",
+    "manifest_sha256": "d9e988f403062db8db9dfa417d6aab4e168cf32a81043859775f0bc6373ef401",
+    "own_plain_files": 92,
+    "scope": "Only this batch preflight copy, temporary syntax inputs, download archives and temporary logs. Retain pinned tool caches for diagnostics and final reports.",
+    "performed": true
+  },
+  "post_cleanup": {
+    "all_2816_acceptance_hashes_unchanged": true,
+    "only_exact_own_plain_files_removed": true
+  }
+}

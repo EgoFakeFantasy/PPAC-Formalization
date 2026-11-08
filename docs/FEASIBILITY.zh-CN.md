@@ -1,4 +1,4 @@
-> 2026-10-26 原环境基线更新：隔离 Lean 4.34.1 的原 Main 已完成 8998 项构建，退出 0；main_consistency 等五个关键端点的 --trust=0 审计退出 0，均仅依赖 propext、Classical.choice、Quot.sound。78 份源副本哈希全部匹配。完整 Comparator 仍未运行，缺 Linux/landrun；原 Main 的外部证明通过不等于本仓对象 Con 完成。精确命令及日志哈希见 SOURCE_LOCK.original_build。
+> 2026-10-26 原环境基线更新：隔离 Lean 4.34.1 的原 Main 已完成 8998 项构建，退出 0；main_consistency 等五个关键端点的 --trust=0 审计退出 0，均仅依赖 propext、Classical.choice、Quot.sound。78 份源副本哈希全部匹配。完整Comparator尚未取得接受结果；2026-11-08已准备固定版本的真实Linux/landrun隔离CI，见ORIGINAL_COMPARATOR_LOCK及当前状态；原 Main 的外部证明通过不等于本仓对象 Con 完成。精确命令及日志哈希见 SOURCE_LOCK.original_build。
 
 > 2026-10-28：已将新版 YesMetaZFC 完整内部 L/ZFC 的必要源码闭包复用到固定旧版，并取得 nativeZF 中全部原生公理／模式、Choice、内部全局序及非空性的 L 相对化原核证书。Source 域公式和 InterpretedZF 背景／非空消费现也已验收，全部内部 Proof/Con 及最终主句仍未完成；当前状态见 STATUS，来源及足迹见 L_REUSE_LOCK。
 

@@ -39,3 +39,5 @@
 当前内部Con入口：`InternalConsistency.nativeCon`使用同一实际完整公理测试、六规则根和准确falsum码，`goal`为对象Con蕴含；`reduction`量化全部内部／非标准矛盾证明码。`closing_kernel_certificate`仅证明原核中的`reduction → goal`。精确归约与最终目标仍未证明；完整验收见`verification/internal-consistency-closing-acceptance.json`。
 
 当前内部证明生产基例：`InternalAxiomProof.from_query`消费实际完整ZF/U公理查询，统一构造同一理论的内部自然数证明码及真实原node/root轨迹；原核端点为`kernel_certificate`，不要求外给闭类型或任何轨迹。U到ZF的解释／矛盾码归约未证明，不能把同一理论内的公理证明当作此归约。验收见`verification/internal-axiom-proof-acceptance.json`。
+
+原Comparator入口本批已准备，工具在原4.34.1兼容编译、原78输入与静态工作流检查通过；真实Linux沙箱验收仍待执行。此门串行依赖原核CI并仅由显式标记／手动参数激活，不替代对象Con。见`verification/original-comparator-preflight-acceptance.json`。
