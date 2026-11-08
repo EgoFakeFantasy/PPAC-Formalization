@@ -1,0 +1,321 @@
+{
+  "verified_at": "2026-11-08T20:08:21.580692+00:00",
+  "baseline_commit": "b639cf4b3ed2b350cbfb440581330783e1d55e76",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "For every native open formula with arbitrary internal free scope b, original variable tables and coded mixed substitution send fvar i to bvar i, original internal forallClosure closes all b name slots, and the exact existing forcing-code compiler generates a unique target code of the precise type. No environment, renamed formula, closure, output, execution or standardness is provided. This is code production for the upcoming six-rule proof consumer, not proof preservation.",
+  "endpoints": [
+    "PPAC.Migration.ForcingOpenCode.kernel_certificate",
+    "PPAC.Migration.ForcingOpenCode.unique_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the original YesMetaZFC kernel",
+  "actual_main_object_contract": "Omega(w) -> empty(z) -> numeral(k+2,f) -> numeral(k+1,j) -> FormulaCode(w,N,z,b) -> EX Q (OpenCompiled(R,H,w,z,f,j,b,N,Q) AND FormulaCode(w,Q,z,f) AND ALL V (OpenCompiled(R,H,w,z,f,j,b,N,V) -> V=Q)). OpenCompiled uses actual existing variable tables, mixed-substituted bound code, entire b-count forallClosure and existing ForcingCodeRecursion.compiled; it does not change the original Proof/Con.",
+  "reuse": [
+    "Original identity variable tables, exact index field law and unique graph outputs",
+    "Original graph-to-coded-list existence/uniqueness and full mixed formula substitution with binder lifting",
+    "Original SchemaClosureTyping.closed_fiber and all-internal SyntaxUnaryIterationCore",
+    "Accepted ForcingCodeTotal and ForcingCodeUnique, with all old proof modules unchanged",
+    "Original nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "build_jobs": 3276,
+    "audited_declarations": 38434,
+    "new_declarations": 24,
+    "all_prior_38410_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "new_kernel_endpoint_dependencies_do_not_exceed_prior_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2836,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.ForcingOpenCode.reified": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reified_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.existsReified": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.existsReified_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reified_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reify_total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reified_unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.compiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.compiled_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.existsCompiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.existsCompiled_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.source_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.uniqueOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.uniqueOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.typedUniqueOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.typedUniqueOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.typed_unique_total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingOpenCode.uniqueSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.unique_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    }
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "arbitrary_internal_including_nonstandard_FREE_scopes_and_codes": true,
+    "source_bound_scope": "The internal empty zero. Free scope b is unrestricted within internal omega.",
+    "target_bound_scope": "The internal empty zero after actual complete name closure.",
+    "target_free_scope": "The existing exact object numeral f=k+2, condition slot j=k+1, fixed external R/H templates.",
+    "all_tables_codes_renamed_formulas_closures_outputs_object_existential": true,
+    "fvar_i_to_bvar_i_uses_existing_identity_table_and_mixed_binder_lifting": true,
+    "actual_code_production_total_unique_and_exactly_typed": true,
+    "no_supplied_environment_renamed_code_closure_output_execution_or_standardness": true,
+    "six_rule_proof_preservation": false,
+    "uniform_internal_coded_semantic_or_axiom_correctness": false,
+    "all_internal_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-directed.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-build.log",
+      "size": 104,
+      "sha256": "cf0f424f0bd5cc60425364499fb30d4f616de04c0b7be4918500f2cffd4e2da7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-audit.lean",
+      "size": 1479,
+      "sha256": "4d63505d47cde063572088f47ab5e3a77a77f110007bc296c031408098dd08c1"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-audit.log",
+      "size": 3403,
+      "sha256": "1b9e3ece53e4ade813e50b54545a343c58fc87f393e834f8d2aad156f11866eb"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-parent-summary.json",
+      "size": 14807277,
+      "sha256": "44d7f38abe44bf93f7a73b4d958ca77ef1330f0e852d41f1ad8dfcfafe86f805"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-code-full-verify.log",
+      "size": 153,
+      "sha256": "9813ded02f5cd2aefe14bc95ff21e29e060768144de66594816d47f1ae8a9b0e"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "Local full acceptance; waiting for preceding entire remote CI success and actual logs before next push.",
+    "preceding_run": 42517118960,
+    "preceding_sha": "b639cf4b3ed2b350cbfb440581330783e1d55e76",
+    "native_job": 128842463273,
+    "native_last_observed_status": "in_progress",
+    "official_original_comparator_already_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

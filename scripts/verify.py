@@ -2696,7 +2696,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_recursion', 'ForcingCodeRecursion', 42),
                                 ('forcing_code_total', 'ForcingCodeTotal', 11),
                                 ('forcing_code_step_unique', 'ForcingCodeStepUnique', 6),
-                                ('forcing_code_unique', 'ForcingCodeUnique', 12)):
+                                ('forcing_code_unique', 'ForcingCodeUnique', 12),
+                                ('forcing_open_code', 'ForcingOpenCode', 24)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7351,6 +7352,9 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_actual_recursive_formula_output_unique_proved": True,
         "object_forcing_actual_recursive_typed_unique_total_proved": True,
         "object_forcing_actual_recursive_output_unique_scope": 'Original internal omega member induction proves equality of any two independent candidates in the EXACT existing ForcingCodeRecursion.compiled relation, for every input n in the internal omega, arbitrary internal bound scopes and candidate outputs. Original graph uniqueness aligns histories; actual row/state injectivity and successor uniqueness align every scope and output field. Bounded reads plus the internal induction hypothesis discharge earlier-read functionality, with NO supplied execution/history/availability/functionality or external standardness. Combined with the accepted totality and target type, every legal source formula at internal empty free scope has exactly one typed recursive output. Fixed external R/H and numeral target f/j remain. Uniform coded semantic/axiom/proof correctness, full open six-rule proof transport, InternalConsistency.reduction and final Con remain unproved.',
+        "object_forcing_all_internal_open_formula_code_production_typed_unique_total_proved": True,
+        "object_forcing_open_six_rule_proof_preservation_proved": False,
+        "object_forcing_open_formula_code_production_scope": 'Actual code production for every native open proof formula FormulaCode(w,N,z,b), at internal empty bound scope z and arbitrary internal FREE scope b, including nonstandard b/codes. Original identity variable tables and original graph/list encoding construct both complete mixed-substitution environments; fvar i maps to bvar i and original binder lifting preserves internal binders. Original forallClosure then closes every name slot, and the exact accepted recursive forcing-code compiler constructs the resulting target code at bound zero/free f. All graph/code/renamed formula/closure/output witnesses are object existential. Existence, precise source/target type and uniqueness hold for independent executions without supplied environments, results or standardness. This proves CODE PRODUCTION, not six-rule proof preservation, uniform coded axiom/semantic correctness, InternalConsistency.reduction or final Con. Fixed external R/H templates and exact object numeral f=k+2/j=k+1 are retained.',
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

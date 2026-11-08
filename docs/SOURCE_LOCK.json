@@ -163336,6 +163336,167 @@
           "propext"
         ]
       }
+    },
+    "forcing_open_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingOpenCode.lean",
+      "source_declarations": [
+        "ForcingTruth forceFormula_rename/raise/instantiate and forcing_sound open-variable contract; this native six-rule code producer is an adapter, not yet a uniform proof-preservation theorem"
+      ],
+      "consumers": [
+        "All-internal six-rule proof interpretation: associate each open node with a unique actual universally name-closed forcing code",
+        "Uniform coded axiom/proof correctness before InternalConsistency.reduction"
+      ],
+      "reuse_producers": [
+        "Original SyntaxVariableTable existence, identity field law and uniqueness",
+        "Original SyntaxMixedImageCode graph/list encoding, full mixed-formula totality/type/uniqueness and binder lifting",
+        "Original SchemaClosureTyping.closed_fiber and SyntaxUnaryIterationCore uniqueness at every internal count",
+        "Existing actual ForcingCodeTotal and ForcingCodeUnique, unchanged compiled relation",
+        "Original nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingOpenCode.lean": "50599265d44bf3bd1085e7e98918db09a6a7af6fa01bbe246ef572764d608be1",
+        "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
+        "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
+        "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
+        "PPAC/Migration/SchemaClosureTyping.lean": "1dbc1d277a99b257b32ed1c09ad76e7635acaa96091f9358182cc11372cbab62",
+        "PPAC/Migration/Internal/SyntaxVariableTableExistence.lean": "124960b1480ea817d9c4c99a5fb5b07bd1f422a4d4bd38743388cd1dee4279d2",
+        "PPAC/Migration/Internal/SyntaxVariableTableFields.lean": "d0cbd47f67f689f9229238b314bbdb621ac446a630368278b458a0df03007c94",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodePairs.lean": "0666eb7d80e82ea4ba9bb1167074dcde03c54f68d093f5d924c9a06733aa8e0c",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgment.lean": "9334d07beb806d2d9488795c6594a620c8d8564c4ad67f6425bc28e06593c03d",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationCore.lean": "2740c9c415a0084585df368190b2714d06d7c831cc821483c32b462af8c37e85"
+      },
+      "scope": "Actual code production for every native open proof formula FormulaCode(w,N,z,b), at internal empty bound scope z and arbitrary internal FREE scope b, including nonstandard b/codes. Original identity variable tables and original graph/list encoding construct both complete mixed-substitution environments; fvar i maps to bvar i and original binder lifting preserves internal binders. Original forallClosure then closes every name slot, and the exact accepted recursive forcing-code compiler constructs the resulting target code at bound zero/free f. All graph/code/renamed formula/closure/output witnesses are object existential. Existence, precise source/target type and uniqueness hold for independent executions without supplied environments, results or standardness. This proves CODE PRODUCTION, not six-rule proof preservation, uniform coded axiom/semantic correctness, InternalConsistency.reduction or final Con. Fixed external R/H templates and exact object numeral f=k+2/j=k+1 are retained.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOpenCode.reified": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.reified_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.existsReified": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.existsReified_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.reified_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.reify_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.reified_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.existsCompiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.source_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.uniqueOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.typedUniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.typedUniqueOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.typed_unique_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

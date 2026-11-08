@@ -68,3 +68,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10全内部码实际总性：ForcingCodeTotal复用原成员归纳，在同一ForcingCodeRecursion.compiled关系上为每个合法源码构造带类型输出，并为实际父历史消去ForcingCodeStep.available前提。历史／值集合、三个后继作用域、状态及输出均在对象EX内生成，没有给定输出或外部标准性。源free范围为内部空零，任意内部／非标准绑定范围及码均覆盖；目标f/j为固定R/H的对象numeral。两个普通nativeZF原核端点及完整九项验收均已通过，五项trust=0、零警告；旧证明正文和全部38381项既有足迹不变。此项不再列为缺口；公式输出唯一性、统一内部公理／Proof正确性、全部开放六规则证明与最终Con仍未完成。完整验收见verification/forcing-code-total-acceptance.json。
 
 原第10实际解释器唯一性：ForcingCodeStepUnique用原字段注入及标签排斥接通全11构造的一步确定性；ForcingCodeUnique由实际历史／状态／后继唯一性恢复同一步，再用原BoundedInduction对全部内部ω消去更小子码读取功能性。同一现有compiled关系中的两个独立输出相等，且与已有总性／类型合成对象存在唯一带类型输出；没有给定历史、输出、执行或标准性。九项完整验收和五项trust=0全部通过，38410项声明、零警告，全部38392项既有足迹及旧证明正文不变；见verification/forcing-code-unique-acceptance.json。公式输出唯一性不再列为缺口；统一内部公理／Proof正确性、开放六规则传输、同一reduction及最终Con仍未证明。
+
+原第10开放节点代码生产：ForcingOpenCode复用原变量表与混合替换，把fvar i送到bvar i，再消费原内部forallClosure和已验收的实际解释器。任意内部／非标准自由范围b及开放源码均有唯一、准确类型的闭包强迫码；两张变量图、两份列表码、重命名公式、整个闭包和最终输出全部在对象量词内生成，无给定环境或执行。未修改既有替换、闭包、解释器或证明核。此项仅完成六规则消费者所需的代码生产；统一六规则保真、公理／语义正确性、reduction与最终Con仍未证明。九项完整验收和五项trust=0均通过，38434项审计零警告，全部38410项既有足迹及旧证明正文不变；验收见verification/forcing-open-code-acceptance.json。
