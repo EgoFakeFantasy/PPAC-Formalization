@@ -39173,3 +39173,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalProofTemplates.compiled_iff
 #print axioms PPAC.Migration.InternalProofTemplates.sentence
 #print axioms PPAC.Migration.InternalProofTemplates.kernel_certificate
+#print axioms PPAC.Migration.InternalProofImplication.apply_axiom
+#print axioms PPAC.Migration.InternalProofImplication.weaken_proof
+#print axioms PPAC.Migration.InternalProofImplication.distribute
+#print axioms PPAC.Migration.InternalProofImplication.compose
+#print axioms PPAC.Migration.InternalProofImplication.input
+#print axioms PPAC.Migration.InternalProofImplication.sentence
+#print axioms PPAC.Migration.InternalProofImplication.kernel_certificate

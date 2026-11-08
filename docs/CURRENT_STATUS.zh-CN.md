@@ -12,6 +12,10 @@
 
 正向AND组合及原rule11证明生产保留，见verification/internal-proof-conjunction-acceptance.json。
 
+原第10内部蕴含证明组合：InternalProofImplication复用已验收原模板工厂及原K/rule2、S/rule0，不给定公理证明或中间码；从实际A→B、B→C码及其真实证明构造三个实际MP父节点，取得同一A→C码的证明。固定原模式成员由内核验证，全部运行公式／free范围／证明码允许内部非标准；原Node／头字段和空free时Root保持。它是原强迫证明所需的普通字面蕴含证明操作，不是ForcingLogicalCode.binary 2的规范化强迫蕴含桥；该桥、完整统一保真、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38497项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-implication-acceptance.json。
+
+后续开放节点按原ForcingSound.sound的名字赋值逐点结构核对解释，保留名字／固定参数索引和原free头计数。既有ForcingOpenCode是“先forallClosure再forcing”的已验收代码生产，不冒称逐点开放解释或六规则保真。变量图、混合替换、类型和唯一性配套已存在，优先核对并消费精确合同，不另建后端。
+
 真正剩余：强迫解释的MP蕴含桥、其他统一六规则保真、内部／非标准ZF/U公理及语义／Proof正确性、同一矛盾码reduction与最终Con，以及原第11最终验收。不得以标准quotation模式或辅助构建代替这些门，不建立全宇宙统一真值／强迫谓词。
 
 发布门：只在前一整轮远端CI成功并读回实际日志后推送；推送后核对远端HEAD、所有改动blob及关键证明／报告实际字节。本地验收不冒充远端通过，不以文档中的历史批次号替代GitHub实际状态。

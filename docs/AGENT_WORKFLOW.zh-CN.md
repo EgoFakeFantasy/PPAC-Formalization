@@ -78,3 +78,7 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10内部合取证明组合：InternalProofConjunction以原rule11完整头、两项实际语法查询及27模式表生成逻辑证明，再调用两次真实MP。从任意内部／非标准A、B及其实际证明出发，合取公式、两个蕴含公式、证书／查询行和全部父证明均在对象EX内构造，不给定逻辑测试或中间结果。原free字段和空free时Root保留；已直接消费ForcingLogicalCode.binary 0的实际AND编译输出，子式类型从同一输出的完整FormulaCode内取得；原forceFormula_conj的这一代码级合取证明组合已接通。单调性／稠密性归纳仍须完成其余分支。强迫规则保真、统一内部公理正确性、reduction及最终Con仍未完成。九项完整验收及五项trust=0通过，零警告；全部38473项既有声明足迹和旧证明正文不变。12项兼容回归和三库来源预检通过。验收见verification/internal-proof-conjunction-acceptance.json。
 
 原第10实际AND双向证明组合：InternalProofTemplates直接复用原ObjectTreeTemplate及ObjectLogicalAxiom.prop／shapes，为固定模板取得完整FormulaCode并生成原逻辑证书、完整查询与真实父证明；原表成员是已核实的外部固定模式条件，洞内公式码允许内部非标准。具体消费者为原rule12／13及真实MP，两个投影已直接消费同一ForcingLogicalCode.binary 0输出；结合已验收的正向组合，在空目标bound、任意内部free范围取得Proved(Q)↔(Proved(N)∧Proved(M))。保留原Node／头字段与空free时Root，无新语法／检查器／核。开放闭包传输、完整单调性／稠密性、MP强迫桥、统一公理／Proof正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38488项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-templates-acceptance.json。
+
+原第10内部蕴含证明组合：InternalProofImplication复用已验收原模板工厂及原K/rule2、S/rule0，不给定公理证明或中间码；从实际A→B、B→C码及其真实证明构造三个实际MP父节点，取得同一A→C码的证明。固定原模式成员由内核验证，全部运行公式／free范围／证明码允许内部非标准；原Node／头字段和空free时Root保持。它是原强迫证明所需的普通字面蕴含证明操作，不是ForcingLogicalCode.binary 2的规范化强迫蕴含桥；该桥、完整统一保真、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38497项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-implication-acceptance.json。
+
+后续开放节点按原ForcingSound.sound的名字赋值逐点结构核对解释，保留名字／固定参数索引和原free头计数。既有ForcingOpenCode是“先forallClosure再forcing”的已验收代码生产，不冒称逐点开放解释或六规则保真。变量图、混合替换、类型和唯一性配套已存在，优先核对并消费精确合同，不另建后端。

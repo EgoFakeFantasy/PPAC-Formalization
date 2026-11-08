@@ -1,0 +1,252 @@
+{
+  "verified_at": "2026-11-08T22:03:33.283961+00:00",
+  "baseline_commit": "f30d0a6137b900774f24b0e127dff78457967e81",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Original fixed K/rule2 and S/rule0 are instantiated through the accepted original ObjectTreeTemplate / original axiom-table factory, with kernel-proved exact memberships. apply_axiom constructs the axiom code, certificate, full grammar queries, exact logical proof and an actual MP parent from a genuine proof of its antecedent. weaken_proof maps a real proof of B to a proof of the actual A->B code. distribute maps proofs of A->(B->C) and A->B to a proof of the actual A->C code, generating the intermediate implication and both actual MP parents. compose consumes actual typed A/B/C, actual original implication constructors I=A->B, J=B->C and K=A->C, and real proofs of I and J; it generates all additional implication/axiom/certificate/query/proof codes and three original MP parents to prove K. Empty target bound scope is retained, while the free scope, formulas and all proof codes range over all internal omega including nonstandard. Original Node/header and Root at empty free scope are retained, both complete original ZF/U tests are supported, and no new object syntax/checker/kernel/background axiom is introduced. This is NATIVE literal implication proof composition needed for the fixed logical steps of the source forcing proof. It is NOT the ForcingLogicalCode.binary 2 normalized forcing-implication preservation bridge; full regularity/monotonicity, open closure transport, uniform coded semantic/axiom/proof correctness, InternalConsistency.reduction and final Con remain unproved.",
+  "endpoints": [
+    "PPAC.Migration.InternalProofImplication.kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the unchanged YesMetaZFC kernel",
+  "actual_main_object_contract": {
+    "composition": "Omega(w) -> empty(z) -> FormulaCode(w,A,z,b) -> FormulaCode(w,B,z,b) -> FormulaCode(w,C,z,b) -> Constructor(2,7,[A,B],I) -> Constructor(2,7,[B,C],J) -> Constructor(2,7,[A,C],K) -> Proved(I) -> Proved(J) -> Proved(K). Proved is the unchanged actual existential original Node/header, with original Root whenever free scope is empty. Both unchanged complete ZF/U tests are supported.",
+    "actual_operations": "Original K/rule2 yields B -> (A -> B) and original S/rule0 yields (A -> (B -> C)) -> ((A -> B) -> (A -> C)). Their external table memberships are kernel-proved. Every axiom code, certificate, grammar query row, actual logical proof and intermediate implication is constructed inside object existentials. Three original actual MP nodes produce the conclusion proof; neither an axiom proof nor an intermediate parent proof is supplied. The conclusion code K is specified by its actual original A/C constructor, not a proof oracle.",
+    "not_the_forcing_bridge": "This composes ordinary literal native implication proofs. It does not prove preservation of ForcingLogicalCode.binary 2, whose pinned forcing normalization is NEG(AND(left,NEG(right))). Uniform forcing regularity/monotonicity and the distinct forcing-specific bridge remain unproved."
+  },
+  "reuse": [
+    "Accepted original fixed template factory and exact original logical-table membership guard",
+    "Original K/rule2 and S/rule0 with literal constructor tags and full grammar queries",
+    "Accepted actual MP proof producer and same original Node/header/Root predicates",
+    "Original implication constructors, FormulaCode typing and nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "build_jobs": 3281,
+    "audited_declarations": 38504,
+    "new_declarations": 7,
+    "all_prior_38497_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "old_proof_modules_compared": 2808,
+    "new_dependencies_do_not_exceed_prior_MP_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2841,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_trust_zero_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.InternalProofImplication.apply_axiom": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofImplication.weaken_proof": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofImplication.distribute": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofImplication.compose": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofImplication.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofImplication.sentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofImplication.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    }
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "original_K_and_S_memberships_kernel_proved": true,
+    "accepted_original_fixed_template_factory_reused": true,
+    "actual_certificates_full_queries_and_logical_proofs_constructed": true,
+    "three_actual_original_MP_parents_constructed": true,
+    "all_additional_intermediate_formula_and_proof_codes_object_existential": true,
+    "no_supplied_axiom_or_intermediate_parent_proofs": true,
+    "empty_target_bound_scope_retained": true,
+    "arbitrary_internal_nonstandard_free_scopes_formulas_and_proof_codes": true,
+    "original_root_at_empty_free_scope_retained": true,
+    "no_new_syntax_checker_kernel_or_background_axiom": true,
+    "literal_native_implication_proof_composition_proved": true,
+    "ForcingLogicalCode_binary2_preservation_proved": false,
+    "full_forcing_monotonicity_and_regularity_proved": false,
+    "open_universal_closure_proof_transport_proved": false,
+    "forcing_specific_MP_bridge_proved": false,
+    "uniform_interpreted_six_rule_preservation_proved": false,
+    "uniform_internal_coded_semantic_or_axiom_correctness": false,
+    "all_internal_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-directed.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-build.log",
+      "size": 113,
+      "sha256": "866dcec9e5612ff608cebad3d51d170e2d16ae2b35738b2042b79165f7b52d91"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-audit.lean",
+      "size": 503,
+      "sha256": "e7d002a0c9d42cdd2549f31c6a1870c5f0989bd8d97825c8396df3e66eb40594"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-audit.log",
+      "size": 1708,
+      "sha256": "3cf397bae111dfd25694bc7724fbea5c99cf840885ce31f4769ff7ae313be48e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-parent-summary.json",
+      "size": 14836347,
+      "sha256": "4a958e3548c52b07e4c3c8cd5a37b8f5db69cfa443415713a7c3d5b20f28e571"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-implication-full-verify.log",
+      "size": 153,
+      "sha256": "bf212c06207602168ea6bc928cf32b99fedab6dc4c9d70b225bf8049b4a03ce9"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "Local full acceptance; preceding entire remote CI success and actual log readback required before push.",
+    "preceding_run": 42522588134,
+    "preceding_sha": "088f844c406e4f4d7f55a28f920b801fd7807e3f",
+    "native_job": 128859119088,
+    "native_last_observed_status": "in_progress",
+    "official_original_comparator_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}
