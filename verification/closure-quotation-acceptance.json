@@ -1,0 +1,252 @@
+{
+  "verified_at": "2026-11-08T20:42:32.394461+11:00",
+  "baseline_commit": "7d3eb8b679adfd0efa247a5ae6ec7900c62812c7",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaClosureQuotation.kernel_certificate",
+    "PPAC.Migration.SchemaClosureQuotation.separation_kernel_certificate",
+    "PPAC.Migration.SchemaClosureQuotation.collection_kernel_certificate"
+  ],
+  "actual_object_result": "The UNCHANGED actual forallClosure relation is equivalent to quotation of the ORIGINAL native whole closure. Specializations yield the exact original native Separation/Collection sentence, given quotation of its original core. Existing internal iteration equations, all-candidate uniqueness and quotation witness existence are reused.",
+  "quantifiers": {
+    "body_and_parameter_count": "EXTERNAL proof-scheme indices; numeral(count,n) is an explicit premise",
+    "candidate_count_core_and_output_codes": "Internal object variables",
+    "uniform_nonstandard_body_count_quotation_correctness_claimed": false
+  },
+  "explicit_parents": [
+    "omega(w)",
+    "numeral(original parameter count,n)",
+    "quotation of the original native schema core at a"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "exact_original_whole_closure_quotation_biconditional": true,
+    "exact_original_native_Separation_Collection_sentence_quotation": true,
+    "all_internal_candidate_outputs_at_each_quoted_input": true,
+    "output_quotation_existence_derived_not_supplied": true,
+    "existing_all_internal_closure_existence_typing_uniqueness_preserved": true,
+    "existing_original_finite_template_quotation_metadata_preserved": true,
+    "source_kernel_signature_or_templates_changed": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "uniform_nonstandard_body_count_quotation_correctness_complete": false,
+    "original_matrix_renaming_quotation_and_template_object_consumption_complete": false,
+    "full_uniform_internal_ZF_U_axiom_correctness_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Original Project.Sentence.forallClosure / fo_sentence / NativeAxiomCertificateData.sentence",
+    "Existing SyntaxUnaryIterationLaws zero/successor equations and uniqueness",
+    "Existing OriginalTreeQuotationExistence and quotation properties",
+    "Existing SchemaAxiomAssembly core definitions and original full schema metadata",
+    "Existing Source.Derives, TheoryTransport and ZFReplay"
+  ],
+  "next_real_consumer": "Connect original matrix renaming quotation and object consumption of EXISTING finite Separation/Collection template quotation identities; then uniform internal ZF/U axiom correctness and ALL internal/nonstandard six-rule Proof/Con reduction. Do not rebuild L, mathematical schemas, compiler quotation, whole closure quotation modes, or existing type/unique components.",
+  "acceptance": {
+    "audited_declarations": 38072,
+    "declarations_without_axioms": 2258,
+    "declarations_with_recorded_dependencies": 35814,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaClosureQuotation.collectionSentence",
+      "PPAC.Migration.SchemaClosureQuotation.collection_iff",
+      "PPAC.Migration.SchemaClosureQuotation.collection_kernel_certificate",
+      "PPAC.Migration.SchemaClosureQuotation.construct",
+      "PPAC.Migration.SchemaClosureQuotation.kernel_certificate",
+      "PPAC.Migration.SchemaClosureQuotation.native_formula_iff",
+      "PPAC.Migration.SchemaClosureQuotation.original_closure_tree",
+      "PPAC.Migration.SchemaClosureQuotation.sentence",
+      "PPAC.Migration.SchemaClosureQuotation.separationSentence",
+      "PPAC.Migration.SchemaClosureQuotation.separation_iff",
+      "PPAC.Migration.SchemaClosureQuotation.separation_kernel_certificate",
+      "PPAC.Migration.SchemaClosureQuotation.source_certificate",
+      "PPAC.Migration.SchemaClosureQuotation.tree_iff",
+      "PPAC.Migration.SchemaClosureQuotation.wrapped"
+    ],
+    "old_footprints_unchanged": 38058,
+    "old_module_review": {
+      "modules": 2631,
+      "unchanged_canonical": 2631,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2803,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3251,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_OpenAI_source_hashes_verified": 75,
+    "git_diff_check_before_final_freeze": true
+  },
+  "remote_CI": {
+    "completed_prior_run": {
+      "run_id": 42456708909,
+      "job_id": 128657173921,
+      "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+      "conclusion": "success",
+      "actual_logs_read": true,
+      "audited_declarations": 37955,
+      "warning_lines": 0
+    },
+    "published_parent": {
+      "run_id": 42463175158,
+      "job_id": 128676686002,
+      "commit": "3be43489308550f81904d45636ba229c80644068",
+      "last_observed_status": "completed",
+      "success_claimed": true,
+      "remote_main_unchanged": "721d331a4ddd3c1d759a719a55f09388ade4fa30",
+      "conclusion": "success",
+      "actual_logs_read": true,
+      "audited_declarations": 38053,
+      "warning_lines": 0
+    },
+    "current_batch_uploaded": false,
+    "publication_policy": "Wait for the same live published-parent CI terminal result before another push; retain accepted local commits."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/closure-quotation-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\closure-quotation-build.log",
+        "bytes": 111,
+        "sha256": "d62c335679e7c9dfda695019db518a6811d42f970d4991dfaf82cb10d6d499a3"
+      },
+      {
+        "path": "verification/closure-quotation-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\closure-quotation-local-axioms.log",
+        "bytes": 4877,
+        "sha256": "487311a6c88e093496784dcb90f613002af13e8cba58fcfd4a9e1d1064c6a2b6"
+      },
+      {
+        "path": "verification/closure-quotation-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\closure-quotation-baseline.tmp.json",
+        "bytes": 13295821,
+        "sha256": "1a7bb2c24dfac7381d5e2700b5181db46dfe12c4cbde3a4c4d573e2af7ca0e40"
+      },
+      {
+        "path": "verification/closure-quotation-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\closure-quotation-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "f648454f08cc523addbe7f40e9cf1a48dba156a63bc69aabb660243e9f062f3a"
+      },
+      {
+        "path": ".local/ClosureQuotationAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ClosureQuotationAudit.lean",
+        "bytes": 1016,
+        "sha256": "f0d81df4c69e92d78b248ac754cc8f95712cb21eedde75dd28229d2ca20a94fe"
+      }
+    ],
+    "removal_complete": true
+  },
+  "post_cleanup": {
+    "complete": true,
+    "build_exit_code": 0,
+    "build_jobs": 3251,
+    "current_source_hashes_verified": 2803,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false,
+    "active_Lean_Lake_processes": 0
+  }
+}

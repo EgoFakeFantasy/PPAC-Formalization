@@ -38720,3 +38720,18 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ProjectCompilerQuotation.sentence
 #print axioms PPAC.Migration.ProjectCompilerQuotation.source_certificate
 #print axioms PPAC.Migration.ProjectCompilerQuotation.kernel_certificate
+
+#print axioms PPAC.Migration.SchemaClosureQuotation.wrapped
+#print axioms PPAC.Migration.SchemaClosureQuotation.construct
+#print axioms PPAC.Migration.SchemaClosureQuotation.tree_iff
+#print axioms PPAC.Migration.SchemaClosureQuotation.original_closure_tree
+#print axioms PPAC.Migration.SchemaClosureQuotation.native_formula_iff
+#print axioms PPAC.Migration.SchemaClosureQuotation.separation_iff
+#print axioms PPAC.Migration.SchemaClosureQuotation.collection_iff
+#print axioms PPAC.Migration.SchemaClosureQuotation.sentence
+#print axioms PPAC.Migration.SchemaClosureQuotation.source_certificate
+#print axioms PPAC.Migration.SchemaClosureQuotation.kernel_certificate
+#print axioms PPAC.Migration.SchemaClosureQuotation.separationSentence
+#print axioms PPAC.Migration.SchemaClosureQuotation.collectionSentence
+#print axioms PPAC.Migration.SchemaClosureQuotation.separation_kernel_certificate
+#print axioms PPAC.Migration.SchemaClosureQuotation.collection_kernel_certificate

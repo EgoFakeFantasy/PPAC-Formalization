@@ -14450,4 +14450,18 @@ example {m depth : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formu
     FirstOrder.Derives nativeZF [] (Translation.sentence (ProjectCompilerQuotation.sentence input hc w b z n q)) :=
   ProjectCompilerQuotation.kernel_certificate input hc w b z n q
 
+-- Whole original forall closure, with the original native sentence quotation.
+example {m depth : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formula 1 depth)
+    (hc : input.FreeClosed) (w a n y : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureQuotation.sentence input hc w a n y)) :=
+  SchemaClosureQuotation.kernel_certificate input hc w a n y
+
+example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.UnarySchema k) (w a n y : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureQuotation.separationSentence schema w a n y)) :=
+  SchemaClosureQuotation.separation_kernel_certificate schema w a n y
+
+example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.BinarySchema k) (w a n y : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureQuotation.collectionSentence schema w a n y)) :=
+  SchemaClosureQuotation.collection_kernel_certificate schema w a n y
+
 end PPAC.Migration.Step4Checks
