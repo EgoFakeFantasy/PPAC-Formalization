@@ -163835,6 +163835,143 @@
           "propext"
         ]
       }
+    },
+    "internal_proof_conjunction": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofTree.lean",
+      "native_source_sha256": "2727cae83c6f05b0dae9c232e9ea198c8b86f6eb9f9f0baa97334281a6481029",
+      "adapter": "PPAC/Migration/InternalProofConjunction.lean",
+      "source_declarations": [
+        "force_of_dense conjunction branch",
+        "forceFormula_mono conjunction branch",
+        "forcing_sound conjunction introduction consumer",
+        "forceFormula_conj exact AND compiler output proof-composition consumer"
+      ],
+      "consumers": [
+        "Uniform internal forcing monotonicity and regularity certificates, conjunction branches",
+        "Uniform interpreted six-rule proof construction and same all-internal contradiction reduction"
+      ],
+      "reuse_producers": [
+        "Original rule11 exact numeric head, complete original grammar queries and 27-pattern table",
+        "Accepted InternalProofOperations.logical and InternalMPProof.produce",
+        "Existing actual formula constructors and exact FormulaCode type equivalences",
+        "Original same-test Node/header and Root predicates, original nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
+        "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
+        "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
+        "PPAC/Migration/Internal/LogicalRule11Head.lean": "98aef7c3301ef85e717768def6ec394ed525319fcd7807ae69e7cc2c66321ec8",
+        "PPAC/Migration/Internal/LogicalStaticQueries.lean": "3d94514d4d013a0c124ead9f85989a195f34803c1efd9bafdb8b4d82e7d60d6d",
+        "PPAC/Migration/Internal/LogicalStaticPatterns.lean": "11461450897ab309a4b002fccbff709e27adbaa9b782ab1ac35a35cc23b1bba6",
+        "PPAC/Migration/Internal/LogicalOriginalNodes.lean": "b79ca474a0d02f6acba692e52153177e490c24dd50adcd726d46d580006b1e13",
+        "PPAC/Migration/Internal/LogicalTableRenaming.lean": "6f11efc7fbce2ce397f96a1a9a7698d5bb074d76afd68377314f30a649a9110b",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
+        "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289"
+      },
+      "scope": "Native target-proof conjunction composition on arbitrary internally typed formula codes and free scopes, including nonstandard. Proved is an actual existential internal original Node with exact header and original Root at empty free scope. Existing original rule11, its complete original two grammar queries and the entire 27-pattern table are constructed from genuine typed A/B and actual constructor equations. No logical-test or axiom-proof premise is supplied. Total composition generates the conjunction formula, both nested implication formulas, rule11 certificate, actual query row and logical proof; two actual original MP nodes then produce the conjunction proof from two genuine child proofs. Every intermediate code is object existential and no standardness or supplied output/intermediate proof is assumed. Uses the same original ZF/U tests, original checker and nativeZF kernel. This is the conjunction proof operation needed by the pinned forceFormula_mono / force_of_dense / forcing_sound conjunction branches. It does NOT yet prove the forcing-specific MP bridge, uniform interpreted rule preservation, uniform coded axiom/semantic correctness, InternalConsistency.reduction or final Con. Direct compiler consumer compiled_conjunction and its native forcing_kernel_certificate accept the EXACT ForcingLogicalCode.binary 0 relation at empty target bound scope, recover both child types from its actual full output type, and produce the proof of that SAME compiled output from the two real child proofs. This is the literal AND proof-composition branch only; full forcing monotonicity, regularity, interpreted rule preservation and Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.InternalProofConjunction.proved": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.proved_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.modus_ponens": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.conjunction_axiom": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.conjoin": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.conjoined": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.conjoined_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.conjoin_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.input_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.compiled_conjunction": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.forcingSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofConjunction.forcing_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
