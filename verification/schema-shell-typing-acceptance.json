@@ -1,0 +1,224 @@
+{
+  "verified_at": "2026-11-08T18:36:43.235915+11:00",
+  "baseline_commit": "41ea4c1c7805b8728c22e0d6201d4fb21ecf8ff7",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaShellTyping.kernel_certificate"
+  ],
+  "actual_object_result": "At EVERY INTERNAL/nonstandard parameter count and valid original Project body, the actual compiler, all original renaming outputs, unchanged native Separation/Collection template and WHOLE internal forall closure now construct a COMPLETE CLOSED FormulaCode. result_type proves typing for EVERY candidate schemaResult, not only the selected output. Fixed finite helper proof schemes return actual Source.Derives; no host induction over input count and no given output type. ZFReplay returns ordinary nativeZF original-kernel Derives.",
+  "explicit_parents": [
+    "omega w",
+    "internal natural parameter count n",
+    "empty zero z",
+    "original four-successor scope chain",
+    "valid raw original Project body at the original source scope with empty free context"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_counts_and_raw_bodies": true,
+    "unchanged_original_finite_templates_and_hole_order": true,
+    "actual_bound_variable_small_index_guards_from_internal_scope_chain": true,
+    "finite_core_FormulaCode_type_proved": true,
+    "all_candidate_complete_schemaResult_outputs_are_closed_FormulaCode": true,
+    "actual_complete_typed_output_constructed_from_raw_body": true,
+    "all_compiler_map_identity_matrix_core_whole_trace_witnesses_internal": true,
+    "given_compiled_body_map_output_trace_or_output_type_oracle": false,
+    "host_induction_on_parameter_count": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "whole_schema_uniqueness_across_independent_map_witnesses_complete": false,
+    "full_ZF_U_original_certificate_tag_row_test_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Unchanged original native SchemaTemplate.separation/collection and exact hole order",
+    "Existing HornExpr actual values and constructor iff",
+    "Existing FormulaCode member/binary/quantifier typing and variable/scalar rules",
+    "Existing internal ordinal/successor and numeral bounds",
+    "Accepted SchemaAxiomCompilation actual raw-body pipeline",
+    "Accepted SchemaClosureTyping all-internal exact-scope closure theorem",
+    "Existing compiler/fixed-map renamer/shell/iteration component uniqueness preserved for next composition"
+  ],
+  "acceptance": {
+    "audited_declarations": 37985,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35729,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaShellTyping.assembled_type",
+      "PPAC.Migration.SchemaShellTyping.core_type",
+      "PPAC.Migration.SchemaShellTyping.existsTyped",
+      "PPAC.Migration.SchemaShellTyping.existsTyped_rename",
+      "PPAC.Migration.SchemaShellTyping.kernel_certificate",
+      "PPAC.Migration.SchemaShellTyping.matrixScope",
+      "PPAC.Migration.SchemaShellTyping.matrixScope_map",
+      "PPAC.Migration.SchemaShellTyping.output_exists_typed",
+      "PPAC.Migration.SchemaShellTyping.result_type",
+      "PPAC.Migration.SchemaShellTyping.sentence",
+      "PPAC.Migration.SchemaShellTyping.source_certificate"
+    ],
+    "old_footprints_unchanged": 37974,
+    "old_module_review": {
+      "modules": 2627,
+      "unchanged_canonical": 2627,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2799,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3247,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75
+  },
+  "remote_CI": {
+    "run_id": 42456708909,
+    "job_id": 128657173921,
+    "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+    "last_observed_status": "in_progress",
+    "success_claimed": false,
+    "publication_policy": "Retain fully accepted local commits; wait for previous remote run terminal result before another push."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/schema-shell-typing-build.log",
+        "sha256": "47ac93a7357f507955abc269b2ef72ce9cd1c2af71944bbcd90218d485152413",
+        "bytes": 106,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-shell-typing-build.log"
+      },
+      {
+        "path": "verification/schema-shell-typing-local-axioms.log",
+        "sha256": "2b0c7f42aa485ffcaf99349bc5da619fcd65d0bc1a79031d03fa81b997a31853",
+        "bytes": 1589,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-shell-typing-local-axioms.log"
+      },
+      {
+        "path": "verification/schema-shell-typing-baseline.tmp.json",
+        "sha256": "4c485db1d26919615b5eb7641ae9abc5e0ae44340b1e0156e1355f62ac9ff546",
+        "bytes": 14840653,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-shell-typing-baseline.tmp.json"
+      },
+      {
+        "path": "verification/schema-shell-typing-full-wrapper.log",
+        "sha256": "11efe032b6b9f1b1756888b7fc0134509dd2496329bcb1d52a2db5322bfdddb4",
+        "bytes": 153,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-shell-typing-full-wrapper.log"
+      },
+      {
+        "path": ".local/SchemaShellTypingAudit.lean",
+        "sha256": "25b40d5ab3cbed9fdc93909472e94384a67d634a305c816faab19354a5d41bf3",
+        "bytes": 720,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SchemaShellTypingAudit.lean"
+      }
+    ],
+    "removed_files": 5,
+    "recursive_deletion": false,
+    "other_projects_or_applications_touched": false
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3247,
+    "current_source_hashes_verified": 2799,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false
+  }
+}

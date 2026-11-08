@@ -14415,4 +14415,9 @@ example {m : Nat} (w n a z : Fin m) :
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureTyping.fiber_sentence w n a z)) :=
   SchemaClosureTyping.fiber_kernel_certificate w n a z
 
+-- Raw original body -> actual complete typed original Separation/Collection.
+example {m : Nat} (collection : Bool) (w n z body : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaShellTyping.sentence collection w n z body scopes)) :=
+  SchemaShellTyping.kernel_certificate collection w n z body scopes
+
 end PPAC.Migration.Step4Checks

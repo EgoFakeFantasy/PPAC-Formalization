@@ -38634,3 +38634,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.SchemaClosureTyping.fiber_sentence
 #print axioms PPAC.Migration.SchemaClosureTyping.fiber_source_certificate
 #print axioms PPAC.Migration.SchemaClosureTyping.fiber_kernel_certificate
+#print axioms PPAC.Migration.SchemaShellTyping.matrixScope
+#print axioms PPAC.Migration.SchemaShellTyping.matrixScope_map
+#print axioms PPAC.Migration.SchemaShellTyping.core_type
+#print axioms PPAC.Migration.SchemaShellTyping.assembled_type
+#print axioms PPAC.Migration.SchemaShellTyping.result_type
+#print axioms PPAC.Migration.SchemaShellTyping.existsTyped
+#print axioms PPAC.Migration.SchemaShellTyping.existsTyped_rename
+#print axioms PPAC.Migration.SchemaShellTyping.output_exists_typed
+#print axioms PPAC.Migration.SchemaShellTyping.sentence
+#print axioms PPAC.Migration.SchemaShellTyping.source_certificate
+#print axioms PPAC.Migration.SchemaShellTyping.kernel_certificate
