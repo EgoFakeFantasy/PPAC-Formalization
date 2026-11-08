@@ -51,6 +51,8 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 
 原第10的完整否定码分支：ForcingNegCode实际构造子码重绑定、同一新条件的两守卫、falsum、三次imp和forall，取得普通nativeZF原核带类型唯一输出及独立执行唯一性。子码与绑定范围可内部非标准；R和参数数目为固定外部模式，条件free槽严格为对象numeral(n+1)。本项不再列为待做；原始全构造递归、存在分支、统一内部公理强迫及全部Proof/Con归约仍未完成。验收见verification/forcing-neg-code-acceptance.json。
 
-原第10存在分支的守卫复用：ForcingExistGuardsCode用已有守卫编译器构造域谓词H(x)，原AST等式证明它是关系模板的特例；用逆序关系守卫加实际重绑定构造方向准确的R(r0,q1)，取得内部带类型唯一输出。没有第二套模板后端。新名字head也在对象EX内构造。仍需存在子码在两个条件和新名字下的binder重排、完整外层exists码及全递归／Proof／Con归约；不再把H模板或内部守卫方向列作缺口。验收见verification/forcing-exist-guards-code-acceptance.json。
+原第10存在分支的守卫复用：ForcingExistGuardsCode用已有守卫编译器构造域谓词H(x)，原AST等式证明它是关系模板的特例；用逆序关系守卫加实际重绑定构造方向准确的R(r0,q1)，取得内部带类型唯一输出。没有第二套模板后端。新名字head也在对象EX内构造。子码binder重排现已由ForcingExistChildCode接通；完整外层exists码及全递归／Proof／Con归约仍未完成；不再把H模板或内部守卫方向列作缺口。验收见verification/forcing-exist-guards-code-acceptance.json。
 
 原第4最终接受证据已于2026-11-09读回：官方日志含“Lean default kernel accepts the solution”和“Your solution is okay!”；退出码0，78输入哈希不变，固定工具／三项公理／nanoda=false均与原锁一致。五份原始工件及哈希清单已归档并纳入源码预检；不再重跑此未修改的已完成基线。对象Con终点仍未完成。
+
+原第10存在子码重排：ForcingExistChildCode从已解释子码的A=a+1作用域实际构造到C=a+3的完整混合替换，复用两次位移、项像推送、指定free槽图、原binder提升及编码列表。名字0保持方程和条件槽后继重命名方程均在同一对象EX记录中实际证明；12见证独立执行唯一性和准确类型已有普通nativeZF端点。全部范围／候选允许内部非标准，未给定任何输出或执行。完整外层exists及全递归／统一公理强迫／Proof／Con仍未完成。验收见verification/forcing-exist-child-code-acceptance.json。

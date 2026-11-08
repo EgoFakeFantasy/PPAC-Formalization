@@ -1092,3 +1092,4 @@ import PPAC.Migration.ForcingConditionRebind
 import PPAC.Migration.ForcingGuardCode
 import PPAC.Migration.ForcingNegCode
 import PPAC.Migration.ForcingExistGuardsCode
+import PPAC.Migration.ForcingExistChildCode

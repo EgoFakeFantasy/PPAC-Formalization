@@ -161722,7 +161722,7 @@
         "Original Source.Derives, TheoryTransport and nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/SyntaxTopAbstractExistence.lean": "40d927f59d80e73d2a45d11f4b2fe01c91ebb69b49cf7520f4bb70f03e7ac826",
         "PPAC/Migration/Internal/SyntaxVariableTableExistence.lean": "124960b1480ea817d9c4c99a5fb5b07bd1f422a4d4bd38743388cd1dee4279d2",
@@ -161832,6 +161832,16 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.selected_map_exists": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.selected_map_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -161855,7 +161865,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
         "PPAC/Migration/ForcingAtomicCode.lean": "4ad5432e3006b47f871d9e3ef3503c2b06d6381e90b1eefe0eb8531cc4557371",
-        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
       },
       "scope": "Actual q in P and R(q,p) literal templates; target bound scope and condition term/code may be internal/nonstandard, free scope is an object numeral for the fixed external R parameter count plus P/p. Constructs/eliminates numeral1, template quotation, bound forest, identity free list and substitution execution. Independent outputs are typed and unique. Both guards are constructed at the same actual object-existential bvar0; the negative-input endpoint consumes previous actual child rebinding. Outer negative/existential formula constructors, full recursion, uniform internal axiom forcing, Proof reduction and final Con remain incomplete.",
@@ -161999,7 +162009,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
-        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
@@ -162101,7 +162111,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
-        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
       },
       "scope": "Constructs actual typed unique inner order guard without any supplied head, guard or rebind execution; the relation direction is R(r0,q1), not R(q1,r0). Constructs H(x) typed unique code at an actual internally obtained new-name bvar0 by direct reuse of the existing guard compiler. Internal bound scopes/candidates may be nonstandard; R/H and parameter count are external fixed scheme indices with object-numeral f=n+2,j=n+1. Does not yet rescope the interpreted existential child under the two conditions and new name, construct the complete outer existential branch, full recursion, uniform coded axiom forcing or final Proof/Con.",
@@ -162215,6 +162225,110 @@
           "propext"
         ],
         "PPAC.Migration.ForcingExistGuardsCode.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_exist_child_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingExistChildCode.lean",
+      "source_declarations": [
+        "AtomicData.Force existential branch: child name is preserved while inserting the two condition binders and replacing current condition by r"
+      ],
+      "consumers": [
+        "Full existential forcing-code branch: interpreted child at source A=a+1 goes to C=a+3 with name0/r1/q2 and old names shifted",
+        "InternalConsistency.reduction after full coded forcing and proof interpretation"
+      ],
+      "reuse_producers": [
+        "Existing shifted variable table, free shift index graphs, identity index graph and term image push",
+        "Existing selected free image graph; only two thin public ports call the unchanged old private Replacement/unique proofs",
+        "Existing mixed binder lift, complete image-list encoding and whole mixed substitution",
+        "Existing zero/free binder field laws; exact kept-name and selected-condition-flow equations are retained in the object witness",
+        "Original Source.Derives and nativeZF TheoryTransport/ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
+        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/Internal/SyntaxMixedImageLiftExistence.lean": "c37d64629ad7e2a7cfac6cf161e5b7a40d7908df8a33ee1db8cb7556d9b1a3fd",
+        "PPAC/Migration/Internal/SyntaxMixedImageLiftFields.lean": "67849188babbad7c15c170a7c9cc5014f45e398d18838b0218f1fa05e06d4cc4",
+        "PPAC/Migration/Internal/SyntaxMixedImageLiftUnique.lean": "964dac4152daf3a5f51e4ac1103c72aeb2e92580d915e944190575e60d61d849",
+        "PPAC/Migration/Internal/SyntaxTermImagePushGraph.lean": "75a9500d8372f4c3f7d187964692e046244424c7af58a2fdc85eee17c9819770",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
+      },
+      "scope": "All internal/nonstandard source/target bound scopes, free scope, designated free index and child/output codes. Source child scope A=succ(a), target C=succ(succ(A)). Construct every head/index/table/pushed table/selected graph/lifted pair/encoded list/substitution witness in object EX. Explicit kept-name0 and selected-free-condition-through-successor-renaming laws are constructed in the same record. Independent 12-witness executions have one typed output. No output/canonical execution/recursion oracle is assumed. Full existential outer formula, complete raw recursion, uniform internal axiom forcing, Proof/contradiction and final Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistChildCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCode.unique_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

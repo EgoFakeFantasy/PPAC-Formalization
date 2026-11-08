@@ -1,0 +1,246 @@
+{
+  "verified_at": "2026-11-08T17:30:36.705264+00:00",
+  "baseline_commit": "db4d19856e349b250123a6546ceb69ff8c1d6a75",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declaration": "ForcingQuotient.AtomicData.Force existential child: same name, two new condition binders, current condition replaced by r",
+  "object_result": "In ordinary nativeZF, an arbitrary internal interpreted child code at source A=a+1 has an actual typed unique mixed-substitution output at C=a+3. All 12 head/index/table/push/selected-map/lifted-pair/list witnesses and full substitution execution are constructed inside object EX. The same record formally proves kept name-head0 and the selected free condition passing through the actual successor target-renaming operation. Two independent 12-witness executions yield the same code.",
+  "endpoints": [
+    "PPAC.Migration.ForcingExistChildCode.kernel_certificate",
+    "PPAC.Migration.ForcingExistChildCode.unique_kernel_certificate"
+  ],
+  "explicit_parents": [
+    "Omega(w)",
+    "a in omega",
+    "successor(A,a)",
+    "successor(B,A)",
+    "successor(C,B)",
+    "FormulaCode(w,N,A,f)"
+  ],
+  "eliminated_witnesses": [
+    "empty/bvar0 head",
+    "first bound shift table",
+    "both target successor index graphs",
+    "free identity index graph",
+    "pushed old-bound term images",
+    "actual selected free condition term-image graph",
+    "actual binder-lifted pair",
+    "both actual encoded mixed-image lists",
+    "whole mixed-substitution execution/output"
+  ],
+  "reuse": {
+    "all_old_rebind_statement_proof_text_unchanged": true,
+    "retained_old_rebind_prefix_sha256": "9017f3c177eeb2cff4be239a16f4dfdb35fb6236832a060132d40d20f1a43f84",
+    "two_public_ports_call_unchanged_old_private_proofs": true,
+    "existing_term_image_push_and_original_binder_lift_used": true,
+    "new_foundation_backend": false,
+    "new_object_axioms": false
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38270,
+    "new_child_declarations": 13,
+    "new_reuse_ports": 2,
+    "all_prior_38255_footprints_unchanged": true,
+    "all_other_old_proof_module_hashes_unchanged": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingConditionRebind.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "input_hashes": 2828,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "actionlint_exit": 0,
+    "build_log_last_lines": [
+      "✔ [3267/3268] Built PPAC (10s)",
+      "Build completed successfully (3268 jobs)."
+    ],
+    "scope_summary_review_full_exit": 0,
+    "scope_review_all_38270_footprints_and_Lean_inputs_unchanged": true,
+    "scope_review_changed_input_hashes": [
+      "scripts/verify.py"
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "arbitrary_internal_including_nonstandard_bound_free_scopes_indices_and_candidates": true,
+    "no_supplied_output_or_execution_or_canonical_witness": true,
+    "explicit_kept_name_head_equation": true,
+    "explicit_selected_condition_successor_renaming_equation_guarded_by_index_membership": true,
+    "complete_existential_child_rescoping_operation": true,
+    "complete_existential_outer_formula_code_step": false,
+    "full_raw_recursive_forcing_interpreter_complete": false,
+    "uniform_internal_axiom_forcing_complete": false,
+    "all_internal_Proof_contradiction_reduction_complete": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-reuse-build.log",
+      "size": 111,
+      "sha256": "12f42bb90097bceb99261d268bfef3d14bf6ecaf50d613bdd24a7915ccd74475"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-draft.lean",
+      "size": 50436,
+      "sha256": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-build.log",
+      "size": 43,
+      "sha256": "dd16eed80a7c1fdb7b9f0be02a504953143f282af922e56c3ceb071d24b5808d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-audit.lean",
+      "size": 2228,
+      "sha256": "ce14b0e2e890fabadfdc495ffac89bbdb8711236ab679ea5f8176322988d7de4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-audit.log",
+      "size": 5454,
+      "sha256": "eae1fdc38433dcb1f1534ced875d14363979e3728b891b997c46fef3893863ec"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-parent-summary.json",
+      "size": 14772452,
+      "sha256": "ef6782b8b6f50c25205b7a9dd34668da027f5613bfbcf5ac5ebee9091eba4c1b"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-source-preflight.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-full-verify.log",
+      "size": 153,
+      "sha256": "e1c484cbe71c3d30e4c37721907895146020523432f5a48c09ecedfb647ad028"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding full CI must succeed before next normal push",
+    "preceding_run": 42501489198,
+    "preceding_sha": "db4d19856e349b250123a6546ceb69ff8c1d6a75",
+    "native_job": 128795001419,
+    "native_last_observed_status": "in_progress",
+    "original_stage4_already_complete": true,
+    "original_comparator_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "scope_summary_review_cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-scope-review-parent.json",
+      "size": 14775880,
+      "sha256": "e3ee12618a7fad93679caf15792ee5f104a8dcb20af2d4af39507935d6b5eb8e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-exist-child-scope-review-full.log",
+      "size": 153,
+      "sha256": "e1c484cbe71c3d30e4c37721907895146020523432f5a48c09ecedfb647ad028"
+    }
+  ],
+  "scope_summary_review_cleanup_completed": true,
+  "scope_summary_review_post_cleanup_target_trust_zero_exit": 0
+}

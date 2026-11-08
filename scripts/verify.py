@@ -2685,10 +2685,11 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_axiom_proof', 'InternalAxiomProof', 5),
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 15),
-                                ('forcing_condition_rebind', 'ForcingConditionRebind', 19),
+                                ('forcing_condition_rebind', 'ForcingConditionRebind', 21),
                                 ('forcing_guard_code', 'ForcingGuardCode', 21),
                                 ('forcing_neg_code', 'ForcingNegCode', 13),
-                                ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22)):
+                                ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
+                                ('forcing_exist_child_code', 'ForcingExistChildCode', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7317,14 +7318,16 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_condition_rebind_scope": "Given Omega, successor target bound scope, and an actual source FormulaCode, construct bvar0 head, shift all old bounds, replace designated free condition index, construct both actual image lists, and run existing full mixed substitution; internal scopes and candidates may be nonstandard. Two independent executions have one output. This is an operation for the pinned negative/existential forcing branches, not the full recursive compiler, uniform internal axiom forcing, Proof/Con reduction, or final goal.",
         "object_forcing_literal_guard_code_total_typed_unique_proved": True,
         "object_forcing_actual_negative_branch_rebind_and_bound_guard_inputs_proved": True,
-        "object_forcing_literal_guard_scope": "Exact membership/order templates, fixed external R/free parameter count, arbitrary internal target bounds/term/candidates; both guards at an actually constructed bvar0 and actual consumption of child rebind. Not the outer neg/ex constructor, full recursion, uniform internal axiom forcing, Proof/Con reduction or final goal.",
+        "object_forcing_literal_guard_scope": "Exact membership/order templates, fixed external R/free parameter count, arbitrary internal target bounds/term/candidates; both guards at an actually constructed bvar0 and actual consumption of child rebind. These guard endpoints do not themselves contain outer constructors. The separate complete negative code step is proved; the complete existential outer step, raw recursion, uniform internal axiom forcing and final Proof/Con remain incomplete.",
         "object_forcing_complete_literal_negative_code_step_total_typed_unique_proved": True,
         "object_forcing_negative_step_scope": "Actual rebind/head/guards and literal ALL/IMP/IMP/IMP/BOT on an already interpreted arbitrary internal child code; all execution witnesses constructed, independent candidates unique. Exact object numeral condition slot n+1 and free scope n+2 for fixed R. Not the full raw recursive compiler, uniform axiom forcing or final Proof/Con reduction.",
         "object_forcing_existential_inner_order_guard_typed_unique_proved": True,
         "object_forcing_existential_name_domain_guard_reuses_existing_compiler_proved": True,
-        "object_forcing_existential_guard_scope": "Actual R(r0,q1) from reverse-order guard plus rebind, and H(x0) at an internally constructed name head; no second template compiler. Child binder rescoping, complete existential outer code, full recursion and final Proof/Con remain incomplete.",
+        "object_forcing_existential_guard_scope": "Actual R(r0,q1) from reverse-order guard plus rebind, and H(x0) at an internally constructed name head; no second template compiler. The separate ForcingExistChildCode now proves child binder rescoping; the complete existential outer code, raw recursion and final Proof/Con remain incomplete.",
         "original_OpenAI_official_Comparator_baseline_accepted": original_comparator_receipt["status"] == "accepted",
         "original_OpenAI_official_Comparator_acceptance_record": "verification/original-comparator-acceptance.json",
+        "object_forcing_existential_child_rebind_all_internal_total_typed_unique_proved": True,
+        "object_forcing_existential_child_scope": "Source A=a+1 to target C=a+3: actual two shifts, selected free condition map, original binder lift and mixed substitution. Same witness retains name-head0 and selected-condition successor-renaming equations. Arbitrary internal free/bound scopes and candidates. Full existential outer code, raw recursion, uniform axiom forcing and final Proof/Con remain incomplete.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

@@ -521,4 +521,17 @@ theorem unique_kernel_certificate {m} (w a f A j n q v : Fin m) :
   exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _)
     w a f A j n q v (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+
+/- Reuse ports for the existential child environment; the old private
+Replacement proofs and every old public proof body remain unchanged. -/
+theorem selected_map_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w j t f A : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxTermSyntax.contexts w A f))
+    (ht : Derives Γ (SyntaxTermSyntax.term w A f t)) :
+    Derives Γ (.ex (mapped w.castSucc j.castSucc t.castSucc f.castSucc A.castSucc (Fin.last m))) :=
+  exists_map hZ w j t f A hw hc ht
+
+theorem selected_map_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w j t f A g h : Fin m)
+    (hg : Derives Γ (mapped w j t f A g)) (hh : Derives Γ (mapped w j t f A h)) : Derives Γ (.equal g h) :=
+  mapped_unique hZ w j t f A g h hg hh
+
 end PPAC.Migration.ForcingConditionRebind
