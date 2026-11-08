@@ -2697,7 +2697,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_total', 'ForcingCodeTotal', 11),
                                 ('forcing_code_step_unique', 'ForcingCodeStepUnique', 6),
                                 ('forcing_code_unique', 'ForcingCodeUnique', 12),
-                                ('forcing_open_code', 'ForcingOpenCode', 24)):
+                                ('forcing_open_code', 'ForcingOpenCode', 24),
+                                ('internal_mp_proof', 'InternalMPProof', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7355,6 +7356,10 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_all_internal_open_formula_code_production_typed_unique_total_proved": True,
         "object_forcing_open_six_rule_proof_preservation_proved": False,
         "object_forcing_open_formula_code_production_scope": 'Actual code production for every native open proof formula FormulaCode(w,N,z,b), at internal empty bound scope z and arbitrary internal FREE scope b, including nonstandard b/codes. Original identity variable tables and original graph/list encoding construct both complete mixed-substitution environments; fvar i maps to bvar i and original binder lifting preserves internal binders. Original forallClosure then closes every name slot, and the exact accepted recursive forcing-code compiler constructs the resulting target code at bound zero/free f. All graph/code/renamed formula/closure/output witnesses are object existential. Existence, precise source/target type and uniqueness hold for independent executions without supplied environments, results or standardness. This proves CODE PRODUCTION, not six-rule proof preservation, uniform coded axiom/semantic correctness, InternalConsistency.reduction or final Con. Fixed external R/H templates and exact object numeral f=k+2/j=k+1 are retained.',
+        "object_original_MP_actual_proof_code_production_all_internal_free_scopes_proved": True,
+        "object_original_MP_parent_payload_uniqueness_proved": True,
+        "object_forcing_specific_MP_implication_bridge_proved": False,
+        "object_original_MP_actual_code_production_scope": 'Actual original six-rule MP proof production for any fixed original theory test, specialized to both complete ZF/U tests at native endpoints. Free scopes, child codes, formulas and candidate parents range over ALL internal omega, including nonstandard. Consume real child Node predicates with exact original free/conclusion fields, both formula types, and actual tag-7 implication code. Construct the original tag-2 four-field parent, validate the original six MP queries and both actual recursive children, then construct Node and exact header metadata. If the free header is empty, construct the same original Root trace. The actual parent payload is unique for fixed inputs. No supplied parent payload, local table, valid execution or external standardness. This is the NATIVE target proof-code MP constructor; the forcing-specific compiled-implication-to-MP bridge, other interpreted rules, uniform coded axiom correctness, InternalConsistency.reduction and final Con remain unproved.',
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

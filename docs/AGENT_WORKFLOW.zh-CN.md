@@ -70,3 +70,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10实际解释器唯一性：ForcingCodeStepUnique用原字段注入及标签排斥接通全11构造的一步确定性；ForcingCodeUnique由实际历史／状态／后继唯一性恢复同一步，再用原BoundedInduction对全部内部ω消去更小子码读取功能性。同一现有compiled关系中的两个独立输出相等，且与已有总性／类型合成对象存在唯一带类型输出；没有给定历史、输出、执行或标准性。九项完整验收和五项trust=0全部通过，38410项声明、零警告，全部38392项既有足迹及旧证明正文不变；见verification/forcing-code-unique-acceptance.json。公式输出唯一性不再列为缺口；统一内部公理／Proof正确性、开放六规则传输、同一reduction及最终Con仍未证明。
 
 原第10开放节点代码生产：ForcingOpenCode复用原变量表与混合替换，把fvar i送到bvar i，再消费原内部forallClosure和已验收的实际解释器。任意内部／非标准自由范围b及开放源码均有唯一、准确类型的闭包强迫码；两张变量图、两份列表码、重命名公式、整个闭包和最终输出全部在对象量词内生成，无给定环境或执行。未修改既有替换、闭包、解释器或证明核。此项仅完成六规则消费者所需的代码生产；统一六规则保真、公理／语义正确性、reduction与最终Con仍未证明。九项完整验收和五项trust=0均通过，38434项审计零警告，全部38410项既有足迹及旧证明正文不变；验收见verification/forcing-open-code-acceptance.json。
+
+原第10实际MP证明码生产：InternalMPProof直接消费两个实际子Node、原free／结论字段、完整两公式类型和原tag7蕴含码，构造原tag2四字段父载荷，接通原六项MP查询、两个实际递归子证明及原Node轨迹。任意内部／非标准free范围和证明码均覆盖；输出保留可组合头字段，自由范围为空时实际构造同一Root轨迹；相同输入的父载荷唯一。原泛型证明树、局部表与根构造全部复用，未建立新核。这是目标证明码MP构造器，不是强迫解释的MP保真桥；该桥、其他解释规则、统一公理正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，38446项审计零警告，全部38434项既有足迹及旧证明正文不变；见verification/internal-mp-proof-acceptance.json。

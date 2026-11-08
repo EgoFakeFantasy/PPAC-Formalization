@@ -163497,6 +163497,124 @@
           "propext"
         ]
       }
+    },
+    "internal_mp_proof": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofTree.lean",
+      "native_source_sha256": "2727cae83c6f05b0dae9c232e9ea198c8b86f6eb9f9f0baa97334281a6481029",
+      "adapter": "PPAC/Migration/InternalMPProof.lean",
+      "source_declarations": [
+        "forcing_sound MP consumer: native six-rule proof production adapter; does NOT claim the forcing-specific implication bridge"
+      ],
+      "consumers": [
+        "Actual uniform internal six-rule proof interpretation: combine target proof codes after implication preservation",
+        "All-internal contradiction reduction in the unchanged OriginalAxiomCodeTest and ProofTreeEntry root"
+      ],
+      "reuse_producers": [
+        "Unchanged original ProofTreeNodeBackward and ProofTreeRootBackward recursive traces",
+        "Existing complete ProofMPNode and ProofMPAllQueries exact six-query correspondence",
+        "Existing ProofAllNodes.table_iff with the same complete ZF/U theory test",
+        "Original SyntaxConstructors, actual raw header fields and numeral existence",
+        "Original nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
+        "PPAC/Migration/InternalAxiomProof.lean": "b62eb209a511c9c5d4774b20fded68538183a5577342bd333105c263f8669b6f",
+        "PPAC/Migration/Internal/ProofMPNode.lean": "76cf8406105f1b89453af588a1f2358d54733ce37b01b82411dd4cf0c5fd2007",
+        "PPAC/Migration/Internal/ProofMPAllQueries.lean": "474936e3c198025635e38f9a24aba3c933c64e966cf9e0f05d74f2cf01853232",
+        "PPAC/Migration/Internal/ProofAllNodes.lean": "05038f31bf457fd9b13c19440e4575b0b9ba3ed72a967a7d738ecd0d34b1ca1f",
+        "PPAC/Migration/Internal/ProofTreeNodeBackward.lean": "9d2b72dd369d7f460391219df412ee94756b2c5a9a2231a4edb3c2c9915e70b8",
+        "PPAC/Migration/Internal/ProofTreeRootBackward.lean": "3a765d347c68a18e75bad1fa7138f6d0705ae8dae073a7f44c050af038229998",
+        "PPAC/Migration/Internal/RawCodeFieldAtConstructor.lean": "7d688c0f71e500ad7f21567697b0fa625bad43ec29f557985261c27a97fdd12b",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
+      },
+      "scope": "Actual original six-rule MP proof production for any fixed original theory test, specialized to both complete ZF/U tests at native endpoints. Free scopes, child codes, formulas and candidate parents range over ALL internal omega, including nonstandard. Consume real child Node predicates with exact original free/conclusion fields, both formula types, and actual tag-7 implication code. Construct the original tag-2 four-field parent, validate the original six MP queries and both actual recursive children, then construct Node and exact header metadata. If the free header is empty, construct the same original Root trace. The actual parent payload is unique for fixed inputs. No supplied parent payload, local table, valid execution or external standardness. This is the NATIVE target proof-code MP constructor; the forcing-specific compiled-implication-to-MP bridge, other interpreted rules, uniform coded axiom correctness, InternalConsistency.reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.InternalMPProof.annotated": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.annotated_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.built": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.built_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.existsBuilt": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.existsBuilt_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.produce": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.parent_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.uniqueSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalMPProof.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

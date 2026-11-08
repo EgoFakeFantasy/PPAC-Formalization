@@ -39110,3 +39110,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOpenCode.kernel_certificate
 #print axioms PPAC.Migration.ForcingOpenCode.uniqueSentence
 #print axioms PPAC.Migration.ForcingOpenCode.unique_kernel_certificate
+#print axioms PPAC.Migration.InternalMPProof.annotated
+#print axioms PPAC.Migration.InternalMPProof.annotated_rename
+#print axioms PPAC.Migration.InternalMPProof.built
+#print axioms PPAC.Migration.InternalMPProof.built_rename
+#print axioms PPAC.Migration.InternalMPProof.existsBuilt
+#print axioms PPAC.Migration.InternalMPProof.existsBuilt_rename
+#print axioms PPAC.Migration.InternalMPProof.produce
+#print axioms PPAC.Migration.InternalMPProof.parent_unique
+#print axioms PPAC.Migration.InternalMPProof.sentence
+#print axioms PPAC.Migration.InternalMPProof.kernel_certificate
+#print axioms PPAC.Migration.InternalMPProof.uniqueSentence
+#print axioms PPAC.Migration.InternalMPProof.unique_kernel_certificate
