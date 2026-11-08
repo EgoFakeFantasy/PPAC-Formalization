@@ -2619,7 +2619,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_ordered_sections', 'ForcingOrderedSections', 15),
                                 ('forcing_least_relation', 'ForcingLeastRelation', 36),
                                 ('forcing_indexed_image', 'ForcingIndexedImage', 15),
-                                ('forcing_uniform_maximum', 'ForcingUniformMaximum', 17)):
+                                ('forcing_uniform_maximum', 'ForcingUniformMaximum', 17),
+                                ('forcing_section_injection', 'ForcingSectionInjection', 28),
+                                ('forcing_wellordered_target', 'ForcingWellorderedTarget', 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6171,7 +6173,7 @@ def main(source_check_only: bool = False) -> None:
         "source_OrderedSections_actual_indexedImage_cover_one_complete": True,
         "source_OrderedSections_wellorderable_image_complete": True,
         "source_OrderedSections_leastRelation_scope": "Actual supported HS graph and full source injection in ordinary nativeZF for INTERNAL ordinal checked-index forcing families; source Cover/OneAt/common support/check(O) remain explicit. Arbitrary host-selected wellorder families are not claimed; actual indexedImage/wellorderable_image are complete in their adapter. Uniform section/slice consumers remain incomplete.",
-        "source_OrderedSections_uniform_section_injection_and_wellorderable_target_complete": False,
+        "source_OrderedSections_uniform_section_injection_and_wellorderable_target_complete": True,
         "source_UniformImages_uniform_maximum_dense_family_wrapper_complete": True,
         "source_UniformImages_uniform_maximum_dense_family_scope": "Actual internal FunctionOn family over ALL members of an arbitrary internal index set, for definable functional Q parameters; same condition and support prepared before witnesses. Existing localized_maximum, Collection and donor uniformization genuinely consumed. Ordinary nativeZF kernel SAME-L relative sentence discharges ground Choice. Source n is finite syntactic arity, not an index bound. Arbitrary external Sort families and actual section/slice consumers are not claimed complete.",
         "source_OrderedSections_and_full_slice_geometry_assembly_complete": False,

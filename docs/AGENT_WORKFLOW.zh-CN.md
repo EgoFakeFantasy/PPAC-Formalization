@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：内部统一最大值家族（2026-11-08）
+## 当前迁移：统一截面与良序目标反向单射（2026-11-08）
 
-ForcingUniformMaximum沿固定UniformImages.uniform_maximum_dense构造覆盖整个内部指标集X的一张实际FunctionOn函数图，包含无杂项、唯一值、逐值HS、同一支撑群及同一条件上的全部强迫结论。参数族由任意可定义、总且单值的对象关系Q给出；n仅为有限源公式的参数个数，不限制指标数量、内部基数或名字秩。没有使用外部家族选择函数或给定最大值家族。
+ForcingSectionInjection迁移固定OrderedSections.sectionPart／section_injection_of_uniform：实际内部FunctionOn截面家族的正则并关系被已有原始图收集器构造成同一支撑下的HS注入图，保留完整functionOn、无杂项、总性及单射性。J只需源mapsTo；源逐纤维hs与对象Sections的等价已证明，没有补加J单射或全局函数唯一性前提。
 
-原ground_family_choice_dense中的支撑／条件覆盖几何被复用，先于所有参数向量和见证选定共同p／q／Hq／zq；已完成localized_maximum逐实例消费，实际Code唯一性把所有输出统一到同一zq。原生Collection和已有供体uniformize_formula_l对精确Selected公式构造内部家族图。源参数族总性／单值性、共同支撑和force(ex phi)均被编码为对象输入；结论同时量化Q的全部参数向量。原核端点是普通nativeZF中的同一L相对化句，复用已完成内部L的Choice消去源地面Choice，无新增外层Choice或基础设施。任意外部Sort索引的非内部家族不冒称完成。
+ForcingWellorderedTarget迁移固定wellorderable_target_injection：由原满射和目标良序性实际取得检查名表示及J，构造[f,X,Y,J]共同支撑，证明精确对象参数族[f,X,Y,J,check(i)]的总性／单值性／固定性及每个indexedSection存在性，再消费已验收uniform_maximum_dense内部家族，取实际滤子交并调用截面图。序数、J、支撑、家族、截面定律与最终图均没有作为最终端点前提。普通nativeZF原核证明同一L相对化句，源地面Choice由既有L消去；无新增外层Choice、基础设施或名字秩截断。
 
-验收报告为verification/uniform-maximum-acceptance.json，仅在完整验收生成后有效。当前仍为原阶段9：下一将此实际家族用于section_injection_of_uniform／wellorderable_target_injection及SliceAssembly，再完成剩余切片和全局反向单射。完整ordinal_presentation、子集像满射、检查名指标最小索引图、完整indexedImage／wellorderable_image、局部最大值、实际ACwo、¬AC、L及全公理模式已完成。PP/Main、全部内部／非标准证明码Con、Comparator及终验仍未完成；最终对象Con未证明。
+本批完整验收报告为verification/section-target-acceptance.json；报告生成前只记局部通过。当前仍为原阶段9：统一截面与良序目标消费者完成后，下一是剩余SliceGeometry／SliceAssembly及全局反向单射。实际ACwo、¬AC、完整ordinal_presentation、子集像满射、检查名指标最小索引图、完整indexedImage／wellorderable_image、内部统一最大值家族、L及全公理模式均已完成并复用。PP/Main、全部内部／非标准证明码Con、原第4 Comparator和终验仍未完成；最终对象Con未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 

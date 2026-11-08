@@ -14293,4 +14293,17 @@ example {k n : Nat} (rho : Fin 7 → Fin k)
       (ForcingUniformMaximum.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index S start X Q phi))) :=
   ForcingUniformMaximum.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index S start X Q phi
 
+-- Actual uniformly supported section union, retaining the full source injection formula.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top f X Y J A checkedA choices p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSectionInjection.sentence rho I K B w G F S mul top f X Y J A checkedA choices p)) :=
+  ForcingSectionInjection.kernel_certificate rho I K B w G F S mul top f X Y J A checkedA choices p
+
+-- Full source wellorderable target consumer: all intermediate family/support witnesses constructed.
+example {k : Nat} (rho : Fin 7 → Fin k)
+    (w mu history kappa unit mark H C incoming base I K B G F mul index top f X Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingWellorderedTarget.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index top f X Y p))) :=
+  ForcingWellorderedTarget.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index top f X Y p
+
 end PPAC.Migration.Step4Checks

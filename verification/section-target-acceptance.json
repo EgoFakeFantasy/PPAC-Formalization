@@ -1,0 +1,222 @@
+{
+  "verified_at": "2026-11-08T00:26:17.239119+00:00",
+  "baseline_commit": "f9ee7559209160ec912ae90992510670383d7569",
+  "original_stage": 9,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_nativeZF_kernel_endpoints": {
+    "PPAC.Migration.ForcingSectionInjection.kernel_certificate": "Actual HS supported section familyUnion graph; FULL injection formula; source pointwise hs iff encoded Sections; only mapsTo of J.",
+    "PPAC.Migration.ForcingWellorderedTarget.kernel_certificate": "SAME-L relative full source wellorderable_target_injection; source ground Choice discharged by already accepted internal L."
+  },
+  "actual_source_consumer_inputs": [
+    "full source surjection f:X -> Y",
+    "forced source wellorderability of Y",
+    "existing source concrete-system parents and HS names"
+  ],
+  "constructed_not_assumed": [
+    "ordinal/check representation and full injection J",
+    "tuple support of [f,X,Y,J]",
+    "canonical INTERNAL functional parameter relation [f,X,Y,J,check(i)]",
+    "all four uniform-family input clauses, including indexedSection existential",
+    "ONE actual INTERNAL FunctionOn family on the whole ordinal, with HS and common support",
+    "actual normal-filter support intersection",
+    "actual final HS reverse injection graph at a stronger condition, with functionOn/no-junk/totality/injectivity"
+  ],
+  "scope": {
+    "all_internal_indices_conditions": true,
+    "arbitrary_name_ranks": true,
+    "finite_or_external_index_replacement": false,
+    "external_family_choice_assumed": false,
+    "new_outer_object_Choice": false,
+    "new_foundation": false,
+    "inherited_L_Choice_native_certificate_recorded": true
+  },
+  "full_local_verification": {
+    "build_jobs": 3226,
+    "audited_declarations": 37729,
+    "unchanged_old_declaration_footprints": 37687,
+    "new_declarations": 42,
+    "current_canonical_source_hashes": 2784,
+    "all_current_hashes_match_full_run": true,
+    "warning_lines": 0,
+    "new_axiom_dependencies": [],
+    "old_inherited_axiom_union": 41,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ]
+  },
+  "old_sources": {
+    "old_tracked_migration_modules": 2611,
+    "canonical_old_modules_unchanged": 2611,
+    "preexisting_EOL_only_differences": 162,
+    "canonical_content_differences": [],
+    "method": "one git cat-file --batch using git ls-tree HEAD; only CRLF converted to LF"
+  },
+  "old_source_adaptation_contracts_unchanged": 705,
+  "exact_retained_existing_proof_blocks": 3,
+  "new_source_adaptation_keys": [
+    "forcing_section_injection",
+    "forcing_wellordered_target"
+  ],
+  "kernel_dependency_counts": {
+    "PPAC.Migration.ForcingSectionInjection.kernel_certificate": 10,
+    "PPAC.Migration.ForcingWellorderedTarget.kernel_certificate": 41
+  },
+  "full_source_fidelity": "Fixed OrderedSections sectionPart/section_injection_of_uniform/wellorderable_target_injection, with internal graph families replacing source ground-set-indexed host functions. Generic section source assumptions explicit; actual target consumer constructs and discharges them. No claim to arbitrary external noninternal Sort families.",
+  "remaining": {
+    "stage9_SliceGeometry_SliceAssembly_global_reverse_injection": true,
+    "stage10_PP_Main_all_internal_nonstandard_Proof_Con": true,
+    "original_stage4_Linux_Comparator": true,
+    "stage11_final_acceptance": true
+  },
+  "final_object_Con_proved": false,
+  "acceptance_artifact_sha256": {
+    "PPAC/Migration/ForcingSectionInjection.lean": "31fa228c9a7bb7a643b4ad50068413813eab8e839192c346a5d2a57f249d182e",
+    "PPAC/Migration/ForcingWellorderedTarget.lean": "6634cd40e6834d4b7ab9de3a863b16f5d2a6b952249c1c89e3715b2143b5ccfc",
+    "PPAC.lean": "bfdbe9feece7967f7dce805e4630afc7f05a414fd75076c71147f08a6af38f87",
+    "Audit.lean": "00b9094e15419d3072639dddce4412cbebcb75fb3a69e4a499d6825687e86867",
+    "CheckStep4.lean": "6c526f3e06330213da1d3772aeec5cdd6ee2e66db1c3afcd3edaf5d1005f3f55",
+    "scripts/verify.py": "5f189d858d472bfc3cb7f1753ee03931f184b4687cc1b882e673d1af4d122a6f",
+    "docs/SOURCE_LOCK.json": "8da292097404a16c284d9bae1b149d6899fe9dc55e8c1105a86398f81b409f89"
+  },
+  "precise_temporary_cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\SectionTargetAudit.tmp.lean",
+      "size": 2838,
+      "sha256": "c4e99c6b1b268af97813e1985db51d497872c5745c2b177793ae271752581777"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-baseline.tmp.json",
+      "size": 14518928,
+      "sha256": "79aa66fa3ef9492b11c45b00cd819d46327ddb0b7a27899ddd0610ae604efde4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-footprints.tmp.json",
+      "size": 24937,
+      "sha256": "daa263d76e39c56d3de6a19b52480944bd1f9026595617852ba1896aee6bf8f7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-old-sources.tmp.json",
+      "size": 259,
+      "sha256": "600da60782c042429270722772f1caf8e032a8dac9cb3ee7210dfcdc26ce5043"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-source-preflight.tmp.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-full.tmp.log",
+      "size": 153,
+      "sha256": "430a857ffe4b623e5fdd3a403253384b006781556c197e44841afc8bc8a59a7e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\section-target-audit.tmp.log",
+      "size": 23966,
+      "sha256": "1a89b93aa3b6dfbd41d99ebd0ad824b587cab983868bc9a0d433a64c2b2c18ac"
+    }
+  ],
+  "temporary_cleanup_completed": true,
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "build_jobs": 3226,
+    "log": "verification/section-target-post-cleanup-build.log"
+  },
+  "post_cleanup_all_current_hashes_match": true,
+  "full_summary_sha256": "fa3b8ab744aeda5c7b7e27be65ebf31a36f48e2e9f9b0bfa839d99cc245c60c2"
+}

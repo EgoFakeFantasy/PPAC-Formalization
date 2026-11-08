@@ -1056,3 +1056,5 @@ import PPAC.Migration.ForcingOrderedSections
 import PPAC.Migration.ForcingLeastRelation
 import PPAC.Migration.ForcingIndexedImage
 import PPAC.Migration.ForcingUniformMaximum
+import PPAC.Migration.ForcingSectionInjection
+import PPAC.Migration.ForcingWellorderedTarget
