@@ -38557,3 +38557,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSliceCandidate.selected_transport
 #print axioms PPAC.Migration.ForcingSliceCandidate.separated_transport
 #print axioms PPAC.Migration.ForcingSliceCandidate.graph_transport
+#print axioms PPAC.Migration.ForcingReverseInjection.reverse_injection_dense
+#print axioms PPAC.Migration.ForcingReverseInjection.forces_PP
+#print axioms PPAC.Migration.ForcingReverseInjection.sentence
+#print axioms PPAC.Migration.ForcingReverseInjection.models
+#print axioms PPAC.Migration.ForcingReverseInjection.kernel_certificate

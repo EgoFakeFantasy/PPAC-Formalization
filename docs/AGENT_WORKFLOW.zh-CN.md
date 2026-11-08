@@ -1,5 +1,15 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
+## 当前验收：全集合反向单射及实际 PP（2026-11-08）
+
+ForcingReverseInjection 逐源迁移固定 Main.reverse_injection_dense:133–148、forces_PP_of_dense:90–121 与 forces_PP:151–152。非空分支复用已完成 ordinal_presentation，实际构造内部序数、check／Cartesian 名字、HS 满射及五名字父支撑，再消费 presentation_reverse_injection；空分支复用原满射 onto 与 empty_domain_injection。保留所有内部条件、集合、全秩 HS 名字与完整 functionOn／无杂项子句。
+
+普通 nativeZF 原核 kernel_certificate 证明同一内部 L 上的合取句：同一 Core 与 p∈P 直接推出实际完整 PP 强迫；另一合取项给出任意 HS 满射的稠密反向单射。PP 外层没有满射／HS 或给定稠密性前提。辅助语义的 Choice 与全局序由既有同一 L 解释消去，不新建基础。
+
+本批完整验收以 verification/reverse-injection-acceptance.json 为准；报告生成前仅为局部通过。验收通过后原第9阶段模型应用链闭合，当前进入原第10阶段：接 forces_target／Main，再复用现有 ZF/U ProofSat 配套完成全部内部及非标准矛盾证明码归约与内部 Con 蕴含。原第4 Comparator 和第11终验仍未完成。最终对象 Con 未证明。以下旧批段落是历史记录，当前状态以本段及原阶段表为准。
+
+CI 修复 bc9367f 已上线：先 lake update、固定三个源码／依赖、仅规范 CRLF→LF 文本哈希。修复后连续11次 Linux 全量成功；最新完成的42444551725实际日志确认37867项声明、零 Lean 警告，固定源码检查及5项跨平台测试均通过。本轮3个固定仓／75源码哈希与5项跨平台回归复跑全部通过；未关闭任何验收门。
+
 ## 当前迁移：实际 presentation_reverse_injection（2026-11-08）
 
 ForcingSlicePresentation.kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的固定 SliceAssembly.presentation_reverse_injection:161–191。保留原 SliceData 父输入（同一 Core、原父支撑、内部序数、实际 Cartesian 名字及两条完整满射），在证明内部实际构造候选 FunctionOn 族及其支撑、取现有 KP／正规滤子／子群交集，再消费完整 assemble，得到较强条件上的实际 HS 反向单射。
@@ -49,8 +59,8 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句、默认关系对象规律及完整ordinal_presentation已接通 | 同一系统的实际ACwo与¬AC强迫、完整ordinal_presentation均已完成；OrderedSections及切片图满射／互斥／覆盖已完成，实际双名字参数关系、slice_candidate、内部候选族、完整assemble及实际支撑交集／presentation_reverse_injection原核端点已接通，继续Main.reverse_injection_dense的全集合归约，保留全部量词；复用已有模式数学 |
-| 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
+| 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
+| 10 | 原 Main 全局装配与对象内部化 | reverse_injection_dense→forces_PP已接通；最终内部Con规格固定，专用内部检查器尚未闭合 | 接forces_target／Main；复用既有ZF/U ProofSat，在ZF内证明全部内部及非标准矛盾证明码归约与最终Con蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## Agent 执行入口
@@ -61,8 +71,8 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 8 已完成 | QuotientTransport.eligibleSystemTransport:309–337 | 已有逐图 assemble_app、Data 唯一性和原生函数构造器；两侧已有对象/限制族 | ForcingEligibleReindex.construction_kernel_certificate 同时构造全 app 函数并证明 Apps/Natural；不再列作待做 |
 | 8 已完成 | QuotientTransport.rebaseGlued/componentEquiv:353–421 | 现有 Common 传递性、同一商集/投影、全分量传输及自然性 | ForcingComponentRebase.construction_kernel_certificate 将目标换回原根，保留同一双射图；原组件稳定条件显式保留 |
 | 8 已完成 | component_selector_dense → OrbitAssignments → assignmentGraph_bijection → quotient_bijection_above → nonwellorderable_quotient_bijection → 同一具体系统全局实例 | 同一实际塔／hRec／hMatrix／最终行、全部内部参数／商／记录及图构造器已复用 | ForcingConcreteSystem.kernel_certificate 无系统输入地存在量化全部内部见证，并全称消费源商双射；全量验收见 concrete-system-acceptance.json。下一活动行是 9 |
-| 9 当前 | UniformImages → Models／具体 ProductNames | 同一具体系统、全秩 HS／正规滤子／强迫前端；kernelGraph／同值类／imageClassRelation、像商图、源复合／逆图及同系统非良序像双射已完成 | ordinal_presentation、实际ACwo及¬AC强迫已完成；下一迁移OrderedSections／SliceGeometry／SliceAssembly接全局反向单射，保留源全部量词 |
-| 10 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
+| 9 已完成 | 源模型应用链 | 全集合反向单射及实际PP的同一系统原核端点已接通 | 不重做已完成的L、公理模式、呈现、支撑、切片或稠密反向单射 |
+| 10 当前 | PP／Main 和内部矛盾码归约 | 源反向单射链；底座 ObjectProofNode/ReducedProofPresentation/PureProvability/Sat | ZF/U 全模式专用公理检查、全部内部/非标准证明码的正确性及原核内部 Con 蕴含 |
 | 11 | 最终交付 | scripts/verify.py、源锁/足迹/原核端点 | 最终主句、完整理论/语言/背景核查及干净检出复现；当前本地验收不替代终验 |
 | 4 独立未验项 | 原 Comparator | 隔离原 Lean 4.34.1 的 Main 与五端点已通过 | Linux/landrun；本仓 CheckStep4 不是 Comparator |
 

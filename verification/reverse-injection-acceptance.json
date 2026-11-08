@@ -1,0 +1,220 @@
+{
+  "verified_at": "2026-11-08T16:08:23.463692+11:00",
+  "baseline_commit": "e5fb4f229a09ea5db781b970253123c04165c7c9",
+  "original_stage": 10,
+  "original_stage9_model_application_chain_complete": true,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingReverseInjection.kernel_certificate"
+  ],
+  "source_results": [
+    "Main.reverse_injection_dense:133-148: both original empty/nonempty cases, all internal sets/conditions/HS names and unrestricted ranks",
+    "Main.forces_PP_of_dense:90-121 exact source forcing-logic witness conversion",
+    "Main.forces_PP:151-152: ACTUAL full PP, dense hypothesis discharged"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "same_existing_internal_L_relative": true,
+    "same_actual_Core": true,
+    "actual_ordinal_check_Cartesian_map_parent_support_constructed": true,
+    "empty_and_nonempty_source_branches": true,
+    "all_internal_conditions_sets_and_HS_names": true,
+    "full_functionOn_no_junk_retained": true,
+    "actual_full_PP_from_Core_and_condition_alone": true,
+    "given_dense_or_surjection_oracle_for_PP": false,
+    "new_Choice_L_collector_or_foundation": false,
+    "external_wellFounded_or_standard_rank_index_bound": false,
+    "forces_target_Main_complete": false,
+    "all_internal_nonstandard_Proof_Con_complete": false,
+    "original_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Existing ordinal_presentation and actual presentation_reverse_injection",
+    "Existing empty_domain_injection and full surjection_onto",
+    "Existing tuple stabilizer/support, label HS and exact graph/reindex transports",
+    "Existing SAME L/Choice/l_order, relative_models and original ModelTransfer; no rebuilt foundations"
+  ],
+  "acceptance": {
+    "audited_declarations": 37902,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35646,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingReverseInjection.forces_PP",
+      "PPAC.Migration.ForcingReverseInjection.kernel_certificate",
+      "PPAC.Migration.ForcingReverseInjection.models",
+      "PPAC.Migration.ForcingReverseInjection.reverse_injection_dense",
+      "PPAC.Migration.ForcingReverseInjection.sentence"
+    ],
+    "old_footprints_unchanged": 37897,
+    "old_module_review": {
+      "modules": 2622,
+      "unchanged_canonical": 2622,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2794,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3236,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "cross_platform_tests": 5,
+    "all_three_pins_and_75_source_hashes_pass": true
+  },
+  "remote_CI_at_start": {
+    "fix_commit": "bc9367fc55f0547bfca81527f9dca6674076c484",
+    "consecutive_completed_successes_after_fix": 11,
+    "latest_run_id": 42444551725,
+    "latest_job_id": 128620625267,
+    "commit": "d2212931218bd5d497f002d036a7e6eaf97d6392",
+    "actual_log_audited_declarations": 37867,
+    "actual_log_warning_lines": 0,
+    "clean_pins_source_hashes_and_five_tests_pass": true,
+    "current_batch_remote_CI_pass_claimed": false
+  },
+  "cleanup": {
+    "recursive_delete": false,
+    "pending": false,
+    "only_current_owned_plain_untracked_files": true,
+    "all_removed": true,
+    "files": [
+      {
+        "sha256": "af5eb0d25b563b27725741f4f1b8ac09d589fab8abebdcf85b66ee0c7a99a0de",
+        "path": "verification/reverse-injection-build.log",
+        "length": 111
+      },
+      {
+        "sha256": "4212db53f1aa528d0e98d651ef2b16cb91cba4a9df33c23b080845d4a9f50cba",
+        "path": "verification/reverse-injection-local-axioms.log",
+        "length": 16375
+      },
+      {
+        "sha256": "1970d5a4b6e66dd8d4282d0fa54c229270b1587f4f94b4fec9aa940d0d1c619f",
+        "path": "verification/reverse-injection-baseline.tmp.json",
+        "length": 14464736
+      },
+      {
+        "sha256": "86e0676f45b974991feb55f15e1b4eab00140f33f96ab1fe486871e9f4531ce2",
+        "path": "verification/reverse-injection-full-verify.log",
+        "length": 153
+      },
+      {
+        "sha256": "0ba0f561f41ac81ebc29e23ad290d4635f19cb5ecb47c95b873001aa57110761",
+        "path": ".local/ReverseInjectionAudit.lean",
+        "length": 380
+      }
+    ]
+  },
+  "post_cleanup": {
+    "pending": false,
+    "build_command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "build_exit_code": 0,
+    "build_jobs": 3236,
+    "all_2794_live_hashes_match_full_acceptance": true,
+    "remaining_Lean_Lake_processes": 0
+  },
+  "remaining": [
+    "Original stage10 forces_target/Main target assembly",
+    "ALL INTERNAL/nonstandard source and target Proof/Con, using existing ZF/U ProofSat",
+    "Original stage4 full OpenAI Comparator acceptance; original stage11 final object theorem and clean reproduction"
+  ]
+}

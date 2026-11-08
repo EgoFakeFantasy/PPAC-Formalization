@@ -1,5 +1,15 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
+## 当前验收：全集合反向单射及实际 PP（2026-11-08）
+
+ForcingReverseInjection 逐源迁移固定 Main.reverse_injection_dense:133–148、forces_PP_of_dense:90–121 与 forces_PP:151–152。非空分支复用已完成 ordinal_presentation，实际构造内部序数、check／Cartesian 名字、HS 满射及五名字父支撑，再消费 presentation_reverse_injection；空分支复用原满射 onto 与 empty_domain_injection。保留所有内部条件、集合、全秩 HS 名字与完整 functionOn／无杂项子句。
+
+普通 nativeZF 原核 kernel_certificate 证明同一内部 L 上的合取句：同一 Core 与 p∈P 直接推出实际完整 PP 强迫；另一合取项给出任意 HS 满射的稠密反向单射。PP 外层没有满射／HS 或给定稠密性前提。辅助语义的 Choice 与全局序由既有同一 L 解释消去，不新建基础。
+
+本批完整验收以 verification/reverse-injection-acceptance.json 为准；报告生成前仅为局部通过。验收通过后原第9阶段模型应用链闭合，当前进入原第10阶段：接 forces_target／Main，再复用现有 ZF/U ProofSat 配套完成全部内部及非标准矛盾证明码归约与内部 Con 蕴含。原第4 Comparator 和第11终验仍未完成。最终对象 Con 未证明。以下旧批段落是历史记录，当前状态以本段及原阶段表为准。
+
+CI 修复 bc9367f 已上线：先 lake update、固定三个源码／依赖、仅规范 CRLF→LF 文本哈希。修复后连续11次 Linux 全量成功；最新完成的42444551725实际日志确认37867项声明、零 Lean 警告，固定源码检查及5项跨平台测试均通过。本轮3个固定仓／75源码哈希与5项跨平台回归复跑全部通过；未关闭任何验收门。
+
 ## 当前迁移：实际 presentation_reverse_injection（2026-11-08）
 
 ForcingSlicePresentation.kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的固定 SliceAssembly.presentation_reverse_injection:161–191。保留原 SliceData 父输入（同一 Core、原父支撑、内部序数、实际 Cartesian 名字及两条完整满射），在证明内部实际构造候选 FunctionOn 族及其支撑、取现有 KP／正规滤子／子群交集，再消费完整 assemble，得到较强条件上的实际 HS 反向单射。

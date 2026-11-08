@@ -14387,4 +14387,10 @@ example {k : Nat} (root : Fin 40 → Fin k) (S f s X Y O checkedO Cart p : Fin k
       (ForcingSlicePresentation.sentence root S f s X Y O checkedO Cart p))) :=
   ForcingSlicePresentation.kernel_certificate root S f s X Y O checkedO Cart p
 
+-- Actual all-set density and unconditional PP on the SAME Core, in original nativeZF.
+example {k : Nat} (root : Fin 40 → Fin k) (f X Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingReverseInjection.sentence root f X Y p))) :=
+  ForcingReverseInjection.kernel_certificate root f X Y p
+
 end PPAC.Migration.Step4Checks
