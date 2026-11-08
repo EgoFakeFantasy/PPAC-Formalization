@@ -2652,7 +2652,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_consistency_closing', 'InternalConsistency', 8),
                                 ('internal_axiom_proof', 'InternalAxiomProof', 5),
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 20),
-                                ('forcing_atom_code', 'ForcingAtomCode', 15)):
+                                ('forcing_atom_code', 'ForcingAtomCode', 15),
+                                ('forcing_condition_rebind', 'ForcingConditionRebind', 19)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7274,6 +7275,8 @@ def main(source_check_only: bool = False) -> None:
         "relative_consistency_proved": False,
         "internal_explicit_declaration_audit_coverage_complete": True,
         "internal_explicit_declarations_coverage_checked": len(internal_explicit),
+        "object_forcing_condition_rebind_all_internal_total_typed_unique_proved": True,
+        "object_forcing_condition_rebind_scope": "Given Omega, successor target bound scope, and an actual source FormulaCode, construct bvar0 head, shift all old bounds, replace designated free condition index, construct both actual image lists, and run existing full mixed substitution; internal scopes and candidates may be nonstandard. Two independent executions have one output. This is an operation for the pinned negative/existential forcing branches, not the full recursive compiler, uniform internal axiom forcing, Proof/Con reduction, or final goal.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

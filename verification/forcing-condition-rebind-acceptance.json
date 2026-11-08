@@ -1,0 +1,208 @@
+{
+  "verified_at": "2026-11-08T15:29:07.277887+00:00",
+  "baseline_commit": "5c9b0bff783a869c4c1b2eede38356733a6e61f6",
+  "formal_baseline_commit": "5596a0818323ffeffbc3aba0299a53bd8768dd40",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "In ordinary nativeZF, all internal valid formula codes and scopes admit a typed unique output for exact condition-variable rebinding. A newly bound condition replaces the designated free index and old bounds shift. Every empty/head/table/encoded-list/substitution witness is constructed and existentially eliminated inside the object derivation.",
+  "endpoints": [
+    "PPAC.Migration.ForcingConditionRebind.kernel_certificate",
+    "PPAC.Migration.ForcingConditionRebind.unique_kernel_certificate"
+  ],
+  "explicit_parents": [
+    "Omega(w)",
+    "successor(A,a)",
+    "FormulaCode(w,n,a,f)"
+  ],
+  "eliminated_parents": [
+    "No supplied zero or bvar0 code",
+    "No supplied bound/free table or code list",
+    "No supplied substitution output/execution",
+    "No independent-witness canonicalization premise"
+  ],
+  "source_consumer": "Pinned ForcingQuotient.AtomicData.Force negative/existential branches; recursive forcing formula compiler requires rebinding the current condition.",
+  "reuse": [
+    "Original ZF Replacement and RelationGraph unique graph",
+    "Existing SyntaxMixedImageHead and shifted bound-variable table",
+    "Existing encoded mixed term-image lists and entire mixed formula substitution",
+    "Original Source.Derives, TheoryTransport, ZFReplay and native FirstOrder.Derives"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audit_passed": true,
+    "audited_declarations": 38191,
+    "new_public_declarations": 19,
+    "all_prior_38172_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "changed_prior_input_hashes": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      ".github/workflows/lean.yml",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "input_hashes": 2820,
+    "warning_lines": 0,
+    "build_log_last_lines": [
+      "✔ [3263/3264] Built PPAC (10s)",
+      "Build completed successfully (3264 jobs)."
+    ]
+  },
+  "scope": {
+    "all_internal_including_nonstandard_scopes_and_codes": true,
+    "output_candidates_arbitrary_internal_objects": true,
+    "ordinary_nativeZF": true,
+    "full_recursive_forcing_formula_compiler_complete": false,
+    "uniform_internal_axiom_forcing_complete": false,
+    "all_internal_proof_contradiction_reduction_complete": false,
+    "final_internal_Con_goal_proved": false,
+    "new_object_axioms": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-draft.lean",
+      "size": 36536,
+      "sha256": "9788fe01b468fcb6a95e3f5e87580a86f12379643ef56f209bc77dd59017f33a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-audit.lean",
+      "size": 1255,
+      "sha256": "c745fdb0daf0abdbbd2122aed57127e4c9f945227a1f31810b3547cb86a3fd80"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-audit.log",
+      "size": 2914,
+      "sha256": "2bd4ddfd9b52ab949e320a5295e831c0a2d3d0eb8168a1d3534647dd570b9c88"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-build.log",
+      "size": 111,
+      "sha256": "59b2e0c14994dd6374fe1e698d0c79b22b2498c1e9aa67d17a1c8085f678e130"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-full-verify.log",
+      "size": 153,
+      "sha256": "8d458281582c32c8670fbacc0a6e00db8788856255982458863207a4a4948d99"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-rebind-parent-summary.json",
+      "size": 14754409,
+      "sha256": "551ee41d1f09eb90d53965d90544d1cb372532ab53be1988c4ce27f69a80bd6d"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local acceptance; waiting for preceding CI run to finish successfully before next normal push",
+    "preceding_run": 42492087042,
+    "preceding_sha": "5c9b0bff783a869c4c1b2eede38356733a6e61f6",
+    "guard_job": 128766454058,
+    "guard_conclusion": "success",
+    "native_job": 128766565151,
+    "native_last_observed_status": "in_progress",
+    "full_original_comparator_accepted": false
+  },
+  "post_cleanup_checks": {
+    "target_module_trust_zero_exit": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "actionlint_exit": 0
+  }
+}

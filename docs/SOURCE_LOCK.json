@@ -161666,6 +161666,136 @@
           "propext"
         ]
       }
+    },
+    "forcing_condition_rebind": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingConditionRebind.lean",
+      "source_declarations": [
+        "AtomicData.Force negative and existential branches: newly quantified condition replaces current p, older bound variables shift"
+      ],
+      "consumers": [
+        "Recursive forcing formula code compiler: actual rebinding before negative and existential constructors",
+        "InternalConsistency.reduction after remaining full coded forcing and proof interpretation"
+      ],
+      "reuse_producers": [
+        "Existing ZF Replacement/RelationGraph unique graph",
+        "Existing SyntaxMixedImageHead, shifted bound-variable table, actual mixed image encodings and full mixed substitution",
+        "Original Source.Derives, TheoryTransport and nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/Internal/SyntaxTopAbstractExistence.lean": "40d927f59d80e73d2a45d11f4b2fe01c91ebb69b49cf7520f4bb70f03e7ac826",
+        "PPAC/Migration/Internal/SyntaxVariableTableExistence.lean": "124960b1480ea817d9c4c99a5fb5b07bd1f422a4d4bd38743388cd1dee4279d2",
+        "PPAC/Migration/Internal/SyntaxVariableTableUnique.lean": "23b9d484d4c166489bd93f1e70c81ad05292903d93a0eb1eab2de1fcb11fb793",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeUnique.lean": "31f52613f290b5432ad103e2af916df7cf7a673f55735865b587651c1db0d52b",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
+      },
+      "scope": "All internal source/target bound scopes with target=successor(source), internal free scope and arbitrary designated index; no external standardness. Constructs and eliminates every internal table/head/list/execution witness. Independent output uniqueness. Not the complete forcing compiler, arbitrary axiom forcing or proof/contradiction reduction. No new choice premise or object axiom.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingConditionRebind.value": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.value_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.law": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.mapped": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.law_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.mapped_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

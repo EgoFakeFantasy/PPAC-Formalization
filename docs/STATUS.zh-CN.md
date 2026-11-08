@@ -48,4 +48,6 @@
 
 本轮实际原子码消费者：ForcingAtomCode的四分支解析总性、准确类型、独立字段／标签／执行见证的输出唯一性及原真常量规范化已取得普通nativeZF原核证书。没有给定项字段，原有效性guard完整保留。输入绑定范围与候选允许内部非标准，源自由范围为零，R为固定外部模板；完整公式／内部Proof／Con仍未完成。验收见verification/forcing-atom-dispatch-acceptance.json。
 
-远端第4验收状态：42483548594的verify成功，Comparator在Landlock预检失败而未开始比较；原因是自定义严格预检要求ABI10而runner是ABI8。已改为最低ABI8＋官方参数＋实测五项文件拒绝，并用外层全网络／io_uring拒绝覆盖可选网络能力；预检放在长构建前。当前仅本地回归／静态通过，Linux未复验。
+远端第4验收状态：42483548594的verify成功，Comparator在Landlock预检失败而未开始比较；原因是自定义严格预检要求ABI10而runner是ABI8。已改为最低ABI8＋官方参数＋实测五项文件拒绝，并用外层全网络／io_uring拒绝覆盖可选网络能力；预检放在长构建前。后续systemd255参数修复已发布5c9b0bf；42492087042的真实Linux守卫预检成功，verify仍运行，完整Comparator尚未取得接受结果。
+
+当前条件重绑定操作：ForcingConditionRebind构造源Force否定／存在分支需要的bvar0新条件、全旧bound位移、指定free索引替换及两张实际编码项表，复用既有完整混合替换。total／compiled_type／unique／fiber_total及两个普通nativeZF原核端点覆盖全部内部候选与范围；完整递归解释、统一公理强迫和最终Proof／Con归约仍未完成。验收见verification/forcing-condition-rebind-acceptance.json。
