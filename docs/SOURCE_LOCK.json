@@ -163170,6 +163170,172 @@
           "propext"
         ]
       }
+    },
+    "forcing_code_step_unique": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingCodeStepUnique.lean",
+      "source_declarations": [
+        "AtomicData.Force and Formula.toBasic exact constructor recursion, through the existing concrete forcing-code interpreter"
+      ],
+      "consumers": [
+        "Actual global recursive formula-output uniqueness"
+      ],
+      "reuse_producers": [
+        "Existing concrete full forcing-code dispatcher and all atomic/NEG/EX/binary/ALL compiled uniqueness",
+        "Original constructor disjointness and raw field injectivity",
+        "Existing original ordinal-recursion graph uniqueness, value equations and bounded read correspondence",
+        "Original BoundedInduction with Separation and Foundation; original successor existence/uniqueness",
+        "Original nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "9188ebd36a20d4bc2b8bea95d1000143a3cf0b389f8bd2290f3c504905f97893",
+        "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
+        "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
+        "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
+        "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
+        "PPAC/Migration/Internal/FormulaCodeCaseLogic.lean": "deed8a2c2615bf33ae4deb029ad0dd283ea9a138cf336a1066d9d6665eaa89c6"
+      },
+      "scope": "Concrete all-eleven-constructor step output determinism under an ordinary OBJECT earlier-read functionality formula. Actual source tags reject cross-branch candidates; original field injectivity aligns child indices and existing compiled NEG/EX/binary/ALL uniqueness aligns outputs. This premise is discharged by the separate ForcingCodeUnique actual internal induction.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCodeStepUnique.functional": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.functional_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.functional_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_code_unique": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingCodeUnique.lean",
+      "source_declarations": [
+        "AtomicData.Force and Formula.toBasic exact constructor recursion, through the existing concrete forcing-code interpreter"
+      ],
+      "consumers": [
+        "Uniform all-internal coded axiom and six-rule proof correctness before InternalConsistency.reduction"
+      ],
+      "reuse_producers": [
+        "Existing concrete full forcing-code dispatcher and all atomic/NEG/EX/binary/ALL compiled uniqueness",
+        "Original constructor disjointness and raw field injectivity",
+        "Existing original ordinal-recursion graph uniqueness, value equations and bounded read correspondence",
+        "Original BoundedInduction with Separation and Foundation; original successor existence/uniqueness",
+        "Original nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
+        "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
+        "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
+        "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
+        "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
+        "PPAC/Migration/Internal/FormulaCodeCaseLogic.lean": "deed8a2c2615bf33ae4deb029ad0dd283ea9a138cf336a1066d9d6665eaa89c6",
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "9188ebd36a20d4bc2b8bea95d1000143a3cf0b389f8bd2290f3c504905f97893",
+        "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
+        "PPAC/Migration/InsertExistence.lean": "5cc94d35296fa256a1ec50652f5d1b6e082acd06b538df11320ade9c1c44555b"
+      },
+      "scope": "Original internal omega member induction proves equality of any two independent candidates in the EXACT existing ForcingCodeRecursion.compiled relation, for every input n in the internal omega, arbitrary internal bound scopes and candidate outputs. Original graph uniqueness aligns histories; actual row/state injectivity and successor uniqueness align every scope and output field. Bounded reads plus the internal induction hypothesis discharge earlier-read functionality, with NO supplied execution/history/availability/functionality or external standardness. Combined with the accepted totality and target type, every legal source formula at internal empty free scope has exactly one typed recursive output. Fixed external R/H and numeral target f/j remain. Uniform coded semantic/axiom/proof correctness, full open six-rule proof transport, InternalConsistency.reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCodeUnique.row_step": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.compiled_step": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.uniqueOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.typedUniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.typedUniqueOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.typed_unique_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.totalSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnique.total_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
