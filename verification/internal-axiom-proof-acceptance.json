@@ -1,0 +1,243 @@
+{
+  "verified_at": "2026-11-08T12:05:55.850375+00:00",
+  "baseline_commit": "e889f920f6a9bcf963636cd016b98d0433805a9f",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Actual complete original ZF/U axiom query implies an internal natural proof code with the same formula and original complete six-rule root trace. Both node/root traces are constructed.",
+  "endpoint": "PPAC.Migration.InternalAxiomProof.kernel_certificate",
+  "explicit_parents": [
+    "Omega(w)",
+    "Actual original full unary axiom query at certificate c and formula f"
+  ],
+  "quantifiers": "All internal/nonstandard candidate certificates/formulas and source schema bodies/counts. No external AST body/index or standard-code restriction.",
+  "eliminated_parents": [
+    "Given closed formula code",
+    "Given natural certificate/formula fields",
+    "Given proof code",
+    "Given accepted local node",
+    "Given valid child/node/root traces"
+  ],
+  "scope": {
+    "same_theory_axiom_proof_production": true,
+    "actual_original_node_and_root_constructed": true,
+    "U_axiom_converted_to_ZF_axiom": false,
+    "uniform_forcing_interpreted_axiom_proof": false,
+    "whole_internal_U_to_ZF_reduction": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "OriginalAxiomTyping.query_typed",
+    "SyntaxConstructors.exists_constructor and child_member; existing omega transitivity",
+    "Original exact ProofTheoryNode/ProofAllNodes equivalences",
+    "ProofTreeNodeBackward.matrix_backward/ProofTreeRootBackward.matrix_backward",
+    "Original Source.Derives, TheoryTransport, ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3261,
+    "audited_declarations": 38137,
+    "declarations_without_axioms": 2260,
+    "declarations_with_recorded_dependencies": 35877,
+    "all_old_footprints_unchanged": 38132,
+    "old_Lean_modules_changed": [],
+    "new_public_declarations": [
+      "PPAC.Migration.InternalAxiomProof.axiomQuery",
+      "PPAC.Migration.InternalAxiomProof.from_query",
+      "PPAC.Migration.InternalAxiomProof.kernel_certificate",
+      "PPAC.Migration.InternalAxiomProof.provable",
+      "PPAC.Migration.InternalAxiomProof.sentence"
+    ],
+    "new_axiom_dependencies": [],
+    "Lean_warnings": 0,
+    "hashes_verified": 2813,
+    "cross_platform_regressions": {
+      "tests": 5,
+      "exit_code": 0,
+      "clean_pinned_repositories": 3,
+      "pinned_source_hashes": 75
+    },
+    "footprints": {
+      "PPAC.Migration.InternalAxiomProof.axiomQuery": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalAxiomProof.from_query": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalAxiomProof.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalAxiomProof.provable": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalAxiomProof.sentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    }
+  },
+  "remote_CI": {
+    "previous_uploaded_commit": "0284ad7ba916b43787b89b469f768ba2017d1f94",
+    "preceding_run_id": 42475062234,
+    "last_observed_status": "in_progress",
+    "this_batch_uploaded_at_acceptance": false,
+    "policy": "Do not push until preceding remote CI succeeds and actual terminal log is inspected."
+  },
+  "cleanup": {
+    "scope": "Only these three own temporary plain files under project .local. Preserve final sources/reports, dependencies and unrelated processes.",
+    "exact_files": [
+      {
+        "path": ".local/internal-axiom-proof-audit.lean",
+        "bytes": 340,
+        "sha256": "5aba780c371e8eae1321b2e9d9f4de432f3e9c77ce0d5fbe18e79c1ef413ab52"
+      },
+      {
+        "path": ".local/internal-axiom-proof-audit.log",
+        "bytes": 2864,
+        "sha256": "1630f739ab2d0775ee73ee2d4b9ee843b5693b7bac96c968849dd74e54d0ae8a"
+      },
+      {
+        "path": ".local/internal-axiom-proof-parent-summary.json",
+        "bytes": 14743022,
+        "sha256": "468d0ccc923fdcea61edf7ef875378d4dbbdb3af826bec019f7f9ea6bb4682d5"
+      }
+    ],
+    "performed": true
+  },
+  "post_cleanup": {
+    "all_2813_acceptance_hashes_unchanged": true,
+    "removed_only_exact_own_files": true
+  }
+}

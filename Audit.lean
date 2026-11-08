@@ -38798,3 +38798,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalConsistency.nativeCon
 #print axioms PPAC.Migration.InternalConsistency.goal
 #print axioms PPAC.Migration.InternalConsistency.closing_kernel_certificate
+#print axioms PPAC.Migration.InternalAxiomProof.axiomQuery
+#print axioms PPAC.Migration.InternalAxiomProof.provable
+#print axioms PPAC.Migration.InternalAxiomProof.from_query
+#print axioms PPAC.Migration.InternalAxiomProof.sentence
+#print axioms PPAC.Migration.InternalAxiomProof.kernel_certificate

@@ -1085,3 +1085,4 @@ import PPAC.Migration.Internal.NativeIndexFormulaQuotation
 import PPAC.Migration.SchemaAxiomQuotation
 import PPAC.Migration.OriginalAxiomTyping
 import PPAC.Migration.InternalConsistency
+import PPAC.Migration.InternalAxiomProof
