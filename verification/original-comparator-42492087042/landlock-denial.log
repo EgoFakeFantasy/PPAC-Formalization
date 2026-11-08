@@ -1,0 +1,24 @@
+[create] exit=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+PermissionError: [Errno 13] Permission denied: '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-created-probe'
+
+[overwrite] exit=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+PermissionError: [Errno 13] Permission denied: '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-existing-probe'
+
+[truncate] exit=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+PermissionError: [Errno 13] Permission denied: '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-existing-probe'
+
+[rename] exit=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+PermissionError: [Errno 13] Permission denied: '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-existing-probe' -> '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-renamed-probe'
+
+[unlink] exit=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+PermissionError: [Errno 13] Permission denied: '/home/runner/work/PPAC-Formalization/PPAC-Formalization/comparator-verification/landlock-existing-probe'

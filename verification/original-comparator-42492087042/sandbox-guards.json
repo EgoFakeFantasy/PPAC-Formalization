@@ -1,0 +1,16 @@
+{
+  "landlock_abi": 8,
+  "minimum_abi": 8,
+  "unprivileged": true,
+  "NoNewPrivileges": true,
+  "AF_UNIX_TCP_UDP_socket_creation_denied": true,
+  "real_landrun_positive_execution": true,
+  "real_filesystem_denials": [
+    "create",
+    "overwrite",
+    "truncate",
+    "rename",
+    "unlink"
+  ],
+  "official_best_effort_invocation_with_fail_closed_abi_floor": true
+}

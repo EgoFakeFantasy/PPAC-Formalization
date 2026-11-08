@@ -1815,6 +1815,37 @@ def check_Project_compiler_source_validity() -> dict:
 
 
 
+
+def check_original_comparator_receipt(source_lock: dict) -> dict:
+    """Check the recorded official external acceptance, never the object Con goal."""
+    receipt = json.loads((OUT / "original-comparator-acceptance.json").read_text(encoding="utf-8"))
+    for name, digest in receipt["files_sha256"].items():
+        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != digest:
+            raise RuntimeError("Official Comparator evidence changed: " + name)
+    accepted = json.loads((ROOT / receipt["acceptance_file"]).read_text(encoding="utf-8"))
+    lock = json.loads((ROOT / "docs/ORIGINAL_COMPARATOR_LOCK.json").read_text(encoding="utf-8"))
+    base = (ROOT / receipt["acceptance_file"]).parent
+    log = (base / "comparator.log").read_text(encoding="utf-8")
+    inputs = json.loads((base / "comparator-inputs.json").read_text(encoding="utf-8"))
+    guards = json.loads((base / "sandbox-guards.json").read_text(encoding="utf-8"))
+    if (receipt["status"] != "accepted" or receipt["final_internal_Con_goal_proved"] is not False
+            or accepted["status"] != "accepted" or accepted["exit_code"] != 0
+            or accepted["lock"] != lock or inputs["lock"] != lock
+            or accepted["input_hashes_unchanged"] != 78 or len(inputs["source_copies"]) != 78
+            or inputs["solution_precompiled_at_preparation"] is not False
+            or "Your solution is okay!" not in log or "Lean default kernel accepts the solution" not in log
+            or hashlib.sha256((base / "comparator.log").read_bytes()).hexdigest() != accepted["comparator_log_sha256"]
+            or accepted["sandbox_guards"] != guards or guards["landlock_abi"] < 8
+            or not all(guards[k] for k in ("unprivileged", "NoNewPrivileges", "AF_UNIX_TCP_UDP_socket_creation_denied",
+                                            "real_landrun_positive_execution"))
+            or guards["real_filesystem_denials"] != ["create", "overwrite", "truncate", "rename", "unlink"]):
+        raise RuntimeError("Incomplete official external Comparator acceptance")
+    matched = {"lean/" + n: digest for n, digest in inputs["source_copies"].items() if "lean/" + n in source_lock["files"]}
+    if len(matched) != 75 or any(source_lock["files"][n] != digest for n, digest in matched.items()):
+        raise RuntimeError("Official Comparator original proof source hashes differ")
+    return receipt
+
+
 def main(source_check_only: bool = False) -> None:
     pure_syntax_definition = check_pure_syntax_definition()
     pure_proof_query_definition = check_pure_proof_query_definitions()
@@ -1891,6 +1922,7 @@ def main(source_check_only: bool = False) -> None:
     if not relativization_names or not relativization_names <= set(expected):
         raise RuntimeError("Incomplete relativization declaration audit")
     source_lock = json.loads((ROOT / "docs/SOURCE_LOCK.json").read_text(encoding="utf-8"))
+    original_comparator_receipt = check_original_comparator_receipt(source_lock)
     if source_lock.get("source_hash_policy") != POLICY:
         raise RuntimeError("Source lock hash convention changed")
     forcing_name_lock = source_lock["source_proof_adaptations"]["forcing_name_induction"]
@@ -5989,6 +6021,9 @@ def main(source_check_only: bool = False) -> None:
             if set(footprints.get(native, [])) != standard_core | inherited:
                 raise RuntimeError(f"Unexpected arithmetic native certificate footprint: {native}")
     hashed = sources + sorted(ROOT.glob("third_party/openai/*.txt")) + [ROOT / x for x in ["lean-toolchain", "lakefile.toml", "lake-manifest.json", "scripts/verify.py", "scripts/source_hash.py", "scripts/check_ci_inputs.py", "scripts/test_ci_compatibility.py", "scripts/original_comparator.py", "scripts/test_original_comparator_guard.py", ".github/workflows/lean.yml", "docs/ORIGINAL_COMPARATOR_LOCK.json", "scripts/check_source_rules.py", "scripts/check_source_theory.py", "docs/SOURCE_THEORY_LOCK.json", "docs/SOURCE_RULES_LOCK.json", "docs/SOURCE_LOCK.json", "docs/L_REUSE_LOCK.json", "docs/TRUST_BASELINE.json", "docs/CHOICE_TRUST_BASELINE.json", "docs/MODE3_CHECKER_SCOPE.json"]]
+    # Raw log bytes are checked by the receipt above; canonical source hashes
+    # cover the JSON manifest and JSON artifacts, without broadening source_hash.
+    hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
         "lean_version": version,
@@ -6231,7 +6266,7 @@ def main(source_check_only: bool = False) -> None:
         "source_SliceAssembly_slice_candidate_and_assemble_complete": True,
         "source_SliceAssembly_presentation_reverse_injection_complete": True,
         "source_SliceAssembly_actual_candidate_support_intersection_and_assembly_composed": True,
-        "source_SliceGeometry_piece_family_scope": "Ordinary nativeZF Derives constructs one actual common support, then check(i), B/Ypart/Spart names for every INTERNAL i in the WHOLE O, with exact raw edges and same-support HS. Source literal-pair slice equivalence, exact B/occurrence/Ypart/Spart member laws and internal-ordinal Ypart disjointness are compiled helpers. No supplied support/check/piece family, finite-index/rank cutoff, new Choice/L/foundation, external family, or completed FunctionOn graph of all pieces. Actual slice/part graph surjections, Spart disjointness, occurrence and actual Ypart-name cover now have separate ordinary nativeZF endpoints. The actual definable two-name parameter relation is now total/unique/HS/fixed in nativeZF; existing UniformMaximum consumes it directly, so a separate parameter FunctionOn is not required. Actual slice_candidate, force(ex injection), all four UniformMaximum.Inputs and the actual all-internal FunctionOn candidate family now have an ordinary nativeZF L-relative original-kernel endpoint. Source assemble now has a separate ordinary nativeZF original-kernel endpoint retaining actual Graph, HS, support and FULL injection/functionOn/no-junk. Its candidate FunctionOn and support are exactly the original source consumer inputs, already separately constructed by ForcingSliceCandidate. The actual candidate family, existing support intersection, strict raw ParameterSpec/graph transport and full assemble are now composed in the ordinary nativeZF L-relative presentation_reverse_injection endpoint. Full Main all-set reverse_injection_dense and actual forces_PP now have an ordinary nativeZF L-relative endpoint, with actual presentation/support and both branches discharged. forces_target is complete in its own same-system native kernel adapter; all-internal Main/nonstandard Con and Comparator remain pending.",
+        "source_SliceGeometry_piece_family_scope": "Ordinary nativeZF Derives constructs one actual common support, then check(i), B/Ypart/Spart names for every INTERNAL i in the WHOLE O, with exact raw edges and same-support HS. Source literal-pair slice equivalence, exact B/occurrence/Ypart/Spart member laws and internal-ordinal Ypart disjointness are compiled helpers. No supplied support/check/piece family, finite-index/rank cutoff, new Choice/L/foundation, external family, or completed FunctionOn graph of all pieces. Actual slice/part graph surjections, Spart disjointness, occurrence and actual Ypart-name cover now have separate ordinary nativeZF endpoints. The actual definable two-name parameter relation is now total/unique/HS/fixed in nativeZF; existing UniformMaximum consumes it directly, so a separate parameter FunctionOn is not required. Actual slice_candidate, force(ex injection), all four UniformMaximum.Inputs and the actual all-internal FunctionOn candidate family now have an ordinary nativeZF L-relative original-kernel endpoint. Source assemble now has a separate ordinary nativeZF original-kernel endpoint retaining actual Graph, HS, support and FULL injection/functionOn/no-junk. Its candidate FunctionOn and support are exactly the original source consumer inputs, already separately constructed by ForcingSliceCandidate. The actual candidate family, existing support intersection, strict raw ParameterSpec/graph transport and full assemble are now composed in the ordinary nativeZF L-relative presentation_reverse_injection endpoint. Full Main all-set reverse_injection_dense and actual forces_PP now have an ordinary nativeZF L-relative endpoint, with actual presentation/support and both branches discharged. forces_target is complete in its own same-system native kernel adapter; original Comparator passed in recorded run 42492087042; all-internal Main/nonstandard Con remains pending.",
         "original_stage9_model_applications_complete": True,
         "source_Main_all_set_reverse_injection_dense_complete": True,
         "source_Main_actual_full_PP_forced_on_same_Core": True,
@@ -6240,7 +6275,7 @@ def main(source_check_only: bool = False) -> None:
         "source_Main_target_axiom_schema_native_kernel_existence_complete": True,
         "source_Main_target_schema_index_is_external": True,
         "source_Main_target_uniform_internal_coded_axiom_forcing_complete": False,
-        "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage9 model applications and actual PP are complete in ForcingReverseInjection. forces_target is complete in its own same-system native kernel adapter; all-internal Main/Proof/Con and Comparator remain incomplete.",
+        "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage9 model applications and actual PP are complete in ForcingReverseInjection. forces_target is complete in its own same-system native kernel adapter; original Comparator passed in recorded run 42492087042; all-internal Main/Proof/Con remains incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
         "source_initial_base_left_cancel_conical_unit_and_generator_proved": True,
         "source_initial_base_le_iff_and_pair_joins_proved": True,
@@ -7288,6 +7323,8 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_existential_inner_order_guard_typed_unique_proved": True,
         "object_forcing_existential_name_domain_guard_reuses_existing_compiler_proved": True,
         "object_forcing_existential_guard_scope": "Actual R(r0,q1) from reverse-order guard plus rebind, and H(x0) at an internally constructed name head; no second template compiler. Child binder rescoping, complete existential outer code, full recursion and final Proof/Con remain incomplete.",
+        "original_OpenAI_official_Comparator_baseline_accepted": original_comparator_receipt["status"] == "accepted",
+        "original_OpenAI_official_Comparator_acceptance_record": "verification/original-comparator-acceptance.json",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

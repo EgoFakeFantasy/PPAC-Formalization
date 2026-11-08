@@ -1,0 +1,56 @@
+{
+  "status": "accepted",
+  "command": [
+    "lake",
+    "env",
+    "/home/runner/work/PPAC-Formalization/PPAC-Formalization/tools/comparator/.lake/build/bin/comparator",
+    "ComparatorChallenges/PartitionConsistency.json"
+  ],
+  "exit_code": 0,
+  "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "unprivileged": true,
+  "NoNewPrivileges": true,
+  "AF_UNIX_denied": true,
+  "sandbox_guards": {
+    "landlock_abi": 8,
+    "minimum_abi": 8,
+    "unprivileged": true,
+    "NoNewPrivileges": true,
+    "AF_UNIX_TCP_UDP_socket_creation_denied": true,
+    "real_landrun_positive_execution": true,
+    "real_filesystem_denials": [
+      "create",
+      "overwrite",
+      "truncate",
+      "rename",
+      "unlink"
+    ],
+    "official_best_effort_invocation_with_fail_closed_abi_floor": true
+  },
+  "input_hashes_unchanged": 78,
+  "lock": {
+    "openai_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "lean4export_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun_commit": "ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a",
+    "comparator_config": {
+      "challenge_module": "ComparatorChallenges.PartitionConsistency",
+      "solution_module": "OAI.SetTheory.PartitionConsistency.Main",
+      "theorem_names": [
+        "OAI.PartitionConsistency.main_consistency"
+      ],
+      "definition_names": [],
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "enable_nanoda": false
+    },
+    "scope": "Original external OpenAI Comparator baseline only. Does not prove the nativeZF internal Con goal. No fake landrun or optional external kernel."
+  },
+  "comparator_log_sha256": "c6f8e478debfe8cc2cfdcf33420183996265e42f4c17067cff99a4f851a32826",
+  "scope": "Original external Comparator passed; nativeZF internal Con is NOT proved by this run."
+}

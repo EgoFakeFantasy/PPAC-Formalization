@@ -1,0 +1,175 @@
+{
+  "verified_at": "2026-11-08T16:42:54.337991+00:00",
+  "baseline_commit": "fd47d69e57efcd84ccc33c92874c892619d70ebd",
+  "object_scope": "No Lean proof/source changed by this external receipt batch. Exact final nativeZF object internal Con remains unproved.",
+  "original_stage4_status": "complete",
+  "official_acceptance_record": "verification/original-comparator-acceptance.json",
+  "actual_official_log_and_five_artifacts_read_back": true,
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audit_passed": true,
+    "audited_declarations": 38255,
+    "all_prior_38255_footprints_unchanged": true,
+    "all_Lean_source_hashes_unchanged": true,
+    "changed_prior_hashed_inputs": [
+      "scripts/verify.py"
+    ],
+    "new_canonical_input_files": [
+      "verification/original-comparator-42492087042/acceptance.json",
+      "verification/original-comparator-42492087042/comparator-inputs.json",
+      "verification/original-comparator-42492087042/sandbox-guards.json",
+      "verification/original-comparator-acceptance.json"
+    ],
+    "all_five_artifact_raw_byte_hashes_validated_in_preflight": true,
+    "warnings": 0
+  },
+  "local_compatibility_fix": {
+    "initial_summary_exit": 1,
+    "cause": "The canonical source hash function intentionally rejects .log; all nine native check commands themselves had exited 0 before summary writing failed.",
+    "fix": "Keep source_hash policy unchanged. Mandatory receipt preflight checks all five raw artifact byte hashes, including both logs. Canonical hashes cover the receipt JSON and three JSON artifacts. Actual files were checked before rerunning all nine commands.",
+    "fixed_full_verification_exit": 0
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-original-comparator-42492087042\\acceptance.json",
+      "size": 2082,
+      "sha256": "21123f0ced4cf2d12563ecaf527e363bcb4ce695580832e4f16a8d57f444a7bf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-original-comparator-42492087042\\comparator-inputs.json",
+      "size": 11937,
+      "sha256": "b1aad6ac370c2793a691c328ad668d019aa7f7e6dc9efa4aa9de6ff63c778b53"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-original-comparator-42492087042\\comparator.log",
+      "size": 7796,
+      "sha256": "c6f8e478debfe8cc2cfdcf33420183996265e42f4c17067cff99a4f851a32826"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-original-comparator-42492087042\\landlock-denial.log",
+      "size": 1331,
+      "sha256": "f9f1e4855d7dadab3d8941add83ecf46a245d5a533156a75e25f2b5ac017d7ff"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-original-comparator-42492087042\\sandbox-guards.json",
+      "size": 368,
+      "sha256": "9c55441a1b83bddb00ff870de88f858fbfad6a2163d7ae1cacd5e2adacc70d97"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\original-comparator-receipt-parent-summary.json",
+      "size": 14771649,
+      "sha256": "84d41027816f0c76f738a94a75ac2c019d37f1c574dda80c3c013219d146d327"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\original-comparator-receipt-first-failed.log",
+      "size": 991,
+      "sha256": "c35832265c38bcb3c55ad2fe9b8ed99b7fb60b01366e51327a86995571e8ff57"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\original-comparator-receipt-source-check.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\original-comparator-receipt-full-verify.log",
+      "size": 153,
+      "sha256": "e6f0f5f13983c8f7494579c2d2f4750278ebfac8a1741c0bf48d12d3c18775b6"
+    }
+  ],
+  "cleanup_completed": true,
+  "final_internal_Con_goal_proved": false,
+  "post_cleanup_target_trust_zero_exit": 0
+}

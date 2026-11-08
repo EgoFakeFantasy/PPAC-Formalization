@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-11-08T16:31:06.498794+00:00",
+  "original_stage": 4,
+  "status": "accepted",
+  "workflow_run": 42492087042,
+  "job_id": 128788060157,
+  "artifact_id": 13625510186,
+  "head_sha": "5c9b0bff783a869c4c1b2eede38356733a6e61f6",
+  "run_url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42492087042",
+  "actual_job_log_read_back": true,
+  "artifact_downloaded_and_read_back": true,
+  "acceptance_file": "verification/original-comparator-42492087042/acceptance.json",
+  "files_sha256": {
+    "verification/original-comparator-42492087042/acceptance.json": "21123f0ced4cf2d12563ecaf527e363bcb4ce695580832e4f16a8d57f444a7bf",
+    "verification/original-comparator-42492087042/comparator-inputs.json": "b1aad6ac370c2793a691c328ad668d019aa7f7e6dc9efa4aa9de6ff63c778b53",
+    "verification/original-comparator-42492087042/comparator.log": "c6f8e478debfe8cc2cfdcf33420183996265e42f4c17067cff99a4f851a32826",
+    "verification/original-comparator-42492087042/landlock-denial.log": "f9f1e4855d7dadab3d8941add83ecf46a245d5a533156a75e25f2b5ac017d7ff",
+    "verification/original-comparator-42492087042/sandbox-guards.json": "9c55441a1b83bddb00ff870de88f858fbfad6a2163d7ae1cacd5e2adacc70d97"
+  },
+  "proof_scope": "Pinned original external OpenAI Comparator, Lean 4.34.1, 78 unchanged original inputs, full 8998-job Main build, official default-kernel acceptance with exactly three permitted standard axioms, no nanoda. Stage4 complete. Final nativeZF object internal Con is unproved.",
+  "final_internal_Con_goal_proved": false
+}

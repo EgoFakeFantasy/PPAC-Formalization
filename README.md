@@ -10,7 +10,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 本批已接通原正文到完整原生Separation/Collection句的准确quotation双条件：实际编译、三个原重命名出口、两个不同Collection矩阵、原模板及整个闭包均由对象推导消费，不再给定中间quotation。五个普通nativeZF原核端点已验收。正文／参数数目仍为外部模式索引，原始有效输入guard保留。
 
-真正剩余为统一内部ZF/U公理正确性／强迫、全部内部／非标准六规则Proof/Con传输、原第4 Comparator及第11终验。**最终对象Con未证明。** 本批报告为`verification/schema-matrix-quotation-acceptance.json`。
+真正剩余为统一内部ZF/U公理正确性／强迫、全部内部／非标准六规则Proof/Con传输及第11终验。原第4官方Comparator已实际接受，证据见`verification/original-comparator-acceptance.json`。**最终对象Con未证明。** 最新对象代码报告为`verification/forcing-exist-guards-code-acceptance.json`；完整否定码分支亦已验收，仍需存在子码绑定重排和完整递归。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

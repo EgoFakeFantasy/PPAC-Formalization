@@ -25,7 +25,7 @@
 ## 真正仍需完成
 
 - 原第10：统一内部／非标准ZF/U公理正确性与强迫，六规则Proof的全部内部矛盾码传输及最终Con蕴含。原完整标准quotation链、实际矩阵／模板／整个闭包、标签／行接口及存在／类型／唯一性不再列作待做。
-- 原第4：原Main的8998任务构建及五个trust=0端点已通过；完整Comparator仍未验收，本机实测未安装WSL。
+- 原第4已完成：原Main的8998任务构建、五个trust=0端点及官方Comparator均通过；真实Linux原核接受工件见verification/original-comparator-acceptance.json。
 - 原第11：最终主句原核验收、源到目标对应和干净复现。不得以逐实例证书或构建成功替代。
 
 ## 本批实际验收
@@ -40,7 +40,7 @@
 
 当前内部证明生产基例：`InternalAxiomProof.from_query`消费实际完整ZF/U公理查询，统一构造同一理论的内部自然数证明码及真实原node/root轨迹；原核端点为`kernel_certificate`，不要求外给闭类型或任何轨迹。U到ZF的解释／矛盾码归约未证明，不能把同一理论内的公理证明当作此归约。验收见`verification/internal-axiom-proof-acceptance.json`。
 
-原Comparator入口本批已准备，工具在原4.34.1兼容编译、原78输入与静态工作流检查通过；真实Linux沙箱验收仍待执行。此门串行依赖原核CI并仅由显式标记／手动参数激活，不替代对象Con。见`verification/original-comparator-preflight-acceptance.json`。
+原Comparator现已真实接受：42492087042／128788060157退出码0且含官方接受标记；原4.34.1、78输入及固定工具均与锁一致，真实Linux沙箱守卫通过。此门串行依赖原核CI并仅由显式标记／手动参数激活，不替代对象Con。见`verification/original-comparator-preflight-acceptance.json`。
 
 原第10的原子编译分支：`ForcingAtomicCode.kernel_certificate`与`type_kernel_certificate`提供现有原子强迫公式的内部代码总性及准确类型。实际构造模板码、两个作用域次数、反向y/x绑定像列表、恒等自由像列表和混合替换输出。输入绑定范围和项码为内部变量，源自由范围为零；R及参数数目为固定外部模式索引。下一消费者是同一解释的递归公式代码编译器；不是全公式编译、统一内部公理强迫或最终Con。全量验收及旧声明足迹对比见`verification/forcing-atomic-code-acceptance.json`。
 
@@ -48,7 +48,7 @@
 
 本轮实际原子码消费者：ForcingAtomCode的四分支解析总性、准确类型、独立字段／标签／执行见证的输出唯一性及原真常量规范化已取得普通nativeZF原核证书。没有给定项字段，原有效性guard完整保留。输入绑定范围与候选允许内部非标准，源自由范围为零，R为固定外部模板；完整公式／内部Proof／Con仍未完成。验收见verification/forcing-atom-dispatch-acceptance.json。
 
-远端第4验收状态：42483548594的verify成功，Comparator在Landlock预检失败而未开始比较；原因是自定义严格预检要求ABI10而runner是ABI8。已改为最低ABI8＋官方参数＋实测五项文件拒绝，并用外层全网络／io_uring拒绝覆盖可选网络能力；预检放在长构建前。后续systemd255参数修复已发布5c9b0bf；42492087042的真实Linux守卫和verify均成功，实际Linux日志确认38172项审计零警告；原Comparator任务128788060157已开始运行，尚未取得完整接受结果。
+远端第4验收状态：42483548594的verify成功，Comparator在Landlock预检失败而未开始比较；原因是自定义严格预检要求ABI10而runner是ABI8。已改为最低ABI8＋官方参数＋实测五项文件拒绝，并用外层全网络／io_uring拒绝覆盖可选网络能力；预检放在长构建前。后续systemd255参数修复已发布5c9b0bf；42492087042的真实Linux守卫和verify均成功，实际Linux日志确认38172项审计零警告；原Comparator任务128788060157也已完成成功；已读回实际接受日志和五份原工件，原第4验收完成。
 
 当前条件重绑定操作：ForcingConditionRebind构造源Force否定／存在分支需要的bvar0新条件、全旧bound位移、指定free索引替换及两张实际编码项表，复用既有完整混合替换。total／compiled_type／unique／fiber_total及两个普通nativeZF原核端点覆盖全部内部候选与范围；完整递归解释、统一公理强迫和最终Proof／Con归约仍未完成。验收见verification/forcing-condition-rebind-acceptance.json。
 
@@ -57,3 +57,5 @@
 原第10的完整否定码分支：ForcingNegCode实际构造子码重绑定、同一新条件的两守卫、falsum、三次imp和forall，取得普通nativeZF原核带类型唯一输出及独立执行唯一性。子码与绑定范围可内部非标准；R和参数数目为固定外部模式，条件free槽严格为对象numeral(n+1)。本项不再列为待做；原始全构造递归、存在分支、统一内部公理强迫及全部Proof/Con归约仍未完成。验收见verification/forcing-neg-code-acceptance.json。
 
 原第10存在分支的守卫复用：ForcingExistGuardsCode用已有守卫编译器构造域谓词H(x)，原AST等式证明它是关系模板的特例；用逆序关系守卫加实际重绑定构造方向准确的R(r0,q1)，取得内部带类型唯一输出。没有第二套模板后端。新名字head也在对象EX内构造。仍需存在子码在两个条件和新名字下的binder重排、完整外层exists码及全递归／Proof／Con归约；不再把H模板或内部守卫方向列作缺口。验收见verification/forcing-exist-guards-code-acceptance.json。
+
+原第4最终接受：官方Comparator的默认Lean核实际接受原main_consistency，78原输入哈希不变、8998任务构建通过、仅标准三项公理、nanoda=false。工件和精确哈希清单已保存并在verify预检核对，见verification/original-comparator-acceptance.json。原第10内部Proof/Con仍未完成，不将本外部基线当作对象Con证明。
