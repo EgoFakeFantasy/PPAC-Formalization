@@ -2644,7 +2644,10 @@ def main(source_check_only: bool = False) -> None:
                                 ('schema_template_quotation', 'SchemaTemplateQuotation', 12),
                                 ('schema_index_quotation', 'Internal.SchemaIndexQuotation', 6),
                                 ('index_image_quotation', 'Internal.IndexImageQuotation', 2),
-                                ('native_index_formula_quotation', 'Internal.NativeIndexFormulaQuotation', 5)):
+                                ('native_index_formula_quotation', 'Internal.NativeIndexFormulaQuotation', 8),
+                                ('project_native_renaming', 'ProjectNativeRenaming', 5),
+                                ('schema_matrix_quotation', 'SchemaMatrixQuotation', 7),
+                                ('schema_axiom_quotation', 'SchemaAxiomQuotation', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7510,7 +7513,12 @@ def main(source_check_only: bool = False) -> None:
         'object_actual_index_to_term_conversion_native_quotation_environment_identification_proved': True,
         'object_actual_pure_index_renaming_native_formula_quotation_schema_original_kernel_proved': True,
         'object_pure_index_renaming_quotation_body_context_map_indices_external': True,
-        'object_actual_Project_schema_compiled_matrix_quotation_discharge_complete': False,
+        'object_actual_Project_schema_compiled_matrix_quotation_discharge_complete': True,
+        'original_Project_fo_formula_native_bound_renaming_commutation_all_constructors_proved': True,
+        'object_original_raw_schema_pipeline_exact_native_Separation_Collection_quotation_original_kernel_proved': True,
+        'object_original_raw_schema_pipeline_intermediate_quotation_parents_discharged': True,
+        'object_original_raw_schema_quotation_body_count_indices_external': True,
+        'object_original_raw_schema_quotation_uniform_nonstandard_axiom_forcing_claimed': False,
         'object_pure_index_renaming_quotation_uniform_nonstandard_body_claimed': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 

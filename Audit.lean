@@ -38762,3 +38762,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.sentence
 #print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.source_certificate
 #print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.kernel_certificate
+
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_at
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_rename
+#print axioms PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_intro
+#print axioms PPAC.Migration.ProjectNativeRenaming.nativeVariable
+#print axioms PPAC.Migration.ProjectNativeRenaming.variable_index
+#print axioms PPAC.Migration.ProjectNativeRenaming.variable_at
+#print axioms PPAC.Migration.ProjectNativeRenaming.formula_rename
+#print axioms PPAC.Migration.ProjectNativeRenaming.formula_substitute
+#print axioms PPAC.Migration.SchemaMatrixQuotation.separation_iff
+#print axioms PPAC.Migration.SchemaMatrixQuotation.collection_one_iff
+#print axioms PPAC.Migration.SchemaMatrixQuotation.collection_two_iff
+#print axioms PPAC.Migration.SchemaMatrixQuotation.sentence
+#print axioms PPAC.Migration.SchemaMatrixQuotation.separation_kernel_certificate
+#print axioms PPAC.Migration.SchemaMatrixQuotation.collection_one_kernel_certificate
+#print axioms PPAC.Migration.SchemaMatrixQuotation.collection_two_kernel_certificate
+#print axioms PPAC.Migration.SchemaAxiomQuotation.separation_iff
+#print axioms PPAC.Migration.SchemaAxiomQuotation.collection_iff
+#print axioms PPAC.Migration.SchemaAxiomQuotation.separationSentence
+#print axioms PPAC.Migration.SchemaAxiomQuotation.separation_kernel_certificate
+#print axioms PPAC.Migration.SchemaAxiomQuotation.collectionSentence
+#print axioms PPAC.Migration.SchemaAxiomQuotation.collection_kernel_certificate

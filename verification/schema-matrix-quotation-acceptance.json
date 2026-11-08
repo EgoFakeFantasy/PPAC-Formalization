@@ -1,0 +1,274 @@
+{
+  "verified_at": "2026-11-08T22:14:44.071615+11:00",
+  "baseline_commit": "24dbc3c6ff0deff2c635fb48f3e146a5d1dff6de",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaMatrixQuotation.separation_kernel_certificate",
+    "PPAC.Migration.SchemaMatrixQuotation.collection_one_kernel_certificate",
+    "PPAC.Migration.SchemaMatrixQuotation.collection_two_kernel_certificate",
+    "PPAC.Migration.SchemaAxiomQuotation.separation_kernel_certificate",
+    "PPAC.Migration.SchemaAxiomQuotation.collection_kernel_certificate"
+  ],
+  "actual_object_result": "For EVERY original externally indexed native Separation/Collection schema, the ENTIRE UNCHANGED actual raw schemaResult pipeline is exactly equivalent to quotation of its EXACT ORIGINAL native axiom sentence. Actual compilation, all three genuine renaming sites, both distinct Collection occurrences, original finite template and WHOLE closure are consumed. The endpoints require NO intermediate compiler/map/code/conversion/matrix/output quotation correctness parent. Original raw quotation and raw-source validity guards remain explicit. Three exact compiledMatrix biconditionals and their ordinary nativeZF endpoints are also proved. Original Project/native renaming commutation covers ALL original constructors, including subset real extra forall, and reuses existing native renameMapped/substituteMapped equivalence.",
+  "quantifiers": {
+    "original_schema_body_and_parameter_count": "EXTERNAL proof-scheme indices; numeral(parameter count,count) is explicit",
+    "runtime_body_count_zero_scopes_maps_codes_fields_executions_and_outputs": "Internal object variables; every candidate output at each quoted original input is covered",
+    "uniform_nonstandard_body_count_axiom_forcing_correctness_claimed": false
+  },
+  "explicit_parents": [
+    "omega(w)",
+    "numeral(original parameter count,count)",
+    "empty(z)",
+    "original four successor scope chain",
+    "quotation of ORIGINAL raw ProjectEncode.formula(schema.body)",
+    "ORIGINAL raw-source validity guard at the actual first-site source scope"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "original_Project_fo_formula_native_renaming_commutation_ALL_constructors": true,
+    "all_three_ACTUAL_compiledMatrix_exact_native_quotation_biconditionals": true,
+    "ENTIRE_actual_raw_schemaResult_exact_ORIGINAL_native_Separation_Collection_sentence_biconditional": true,
+    "both_distinct_Collection_matrices_and_all_original_quantifiers_preserved": true,
+    "intermediate_compilation_map_identity_conversion_or_matrix_quotation_correctness_parents": false,
+    "actual_original_exists_compiled_and_schema_output_exists_reused": true,
+    "all_internal_candidate_outputs_at_quoted_original_schema_inputs": true,
+    "actual_raw_source_validity_guard_preserved": true,
+    "original_templates_kernel_signature_and_actual_execution_relations_changed": false,
+    "new_arithmetic_recursion_L_satisfaction_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "uniform_nonstandard_body_count_axiom_forcing_correctness_complete": false,
+    "full_uniform_internal_ZF_U_axiom_correctness_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Original Project/Binding and ALL twelve Project constructor translations, unchanged",
+    "Existing native Formula.renameMapped_eq_substituteMapped",
+    "Existing ProjectCompilerQuotation, actual schema index graph values and NativeIndexFormulaQuotation",
+    "Existing original raw compiled-matrix/schema output existence and original quotation uniqueness",
+    "Existing SchemaTemplateQuotation exact original finite shell plus WHOLE closure",
+    "Existing original Source.Derives, TheoryTransport and nativeZF replay"
+  ],
+  "next_real_consumer": "Uniform INTERNAL ZF/U axiom correctness/forcing and ALL INTERNAL/nonstandard six-rule Proof/Con reduction, using existing ObjectProofNode, ReducedProofPresentation, PureProvability/PureSourceLocalTests and the SAME original migrated forcing interpretation. The complete standard quotation scheme, actual Project/native commutation, all three actual matrices, original raw schema pipeline, type/unique, L and mathematical schemas are DONE and must not be re-listed as missing. The external scheme does not itself supply uniform truth/forcing for arbitrary nonstandard internal bodies. Original Comparator and final acceptance remain separate required gates.",
+  "acceptance": {
+    "audited_declarations": 38118,
+    "declarations_without_axioms": 2260,
+    "declarations_with_recorded_dependencies": 35858,
+    "new_public_declarations": [
+      "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_at",
+      "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_intro",
+      "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_rename",
+      "PPAC.Migration.ProjectNativeRenaming.formula_rename",
+      "PPAC.Migration.ProjectNativeRenaming.formula_substitute",
+      "PPAC.Migration.ProjectNativeRenaming.nativeVariable",
+      "PPAC.Migration.ProjectNativeRenaming.variable_at",
+      "PPAC.Migration.ProjectNativeRenaming.variable_index",
+      "PPAC.Migration.SchemaAxiomQuotation.collectionSentence",
+      "PPAC.Migration.SchemaAxiomQuotation.collection_iff",
+      "PPAC.Migration.SchemaAxiomQuotation.collection_kernel_certificate",
+      "PPAC.Migration.SchemaAxiomQuotation.separationSentence",
+      "PPAC.Migration.SchemaAxiomQuotation.separation_iff",
+      "PPAC.Migration.SchemaAxiomQuotation.separation_kernel_certificate",
+      "PPAC.Migration.SchemaMatrixQuotation.collection_one_iff",
+      "PPAC.Migration.SchemaMatrixQuotation.collection_one_kernel_certificate",
+      "PPAC.Migration.SchemaMatrixQuotation.collection_two_iff",
+      "PPAC.Migration.SchemaMatrixQuotation.collection_two_kernel_certificate",
+      "PPAC.Migration.SchemaMatrixQuotation.sentence",
+      "PPAC.Migration.SchemaMatrixQuotation.separation_iff",
+      "PPAC.Migration.SchemaMatrixQuotation.separation_kernel_certificate"
+    ],
+    "old_footprints_unchanged": 38097,
+    "old_module_review": {
+      "modules": 2636,
+      "unchanged_canonical": 2635,
+      "preexisting_EOL_only_differences": 162,
+      "reviewed_modified_old_modules": [
+        {
+          "path": "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean",
+          "change": "Expose EXISTING points_at unchanged; add points_rename and points_intro. ALL preexisting proof bodies unchanged after removing this exact API-only edit."
+        }
+      ]
+    },
+    "current_source_hashes_verified": 2810,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3258,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_OpenAI_source_hashes_verified": 75,
+    "git_diff_check_before_final_freeze": true
+  },
+  "remote_CI": {
+    "published_parent": {
+      "run_id": 42468430542,
+      "job_id": 128693268405,
+      "commit": "f7949202e1988c96e1f6fa2d1c2b260f4f1a1078",
+      "last_observed_status": "completed",
+      "conclusion": "success",
+      "actual_logs_read": true,
+      "audited_declarations": 38072,
+      "warning_lines": 0,
+      "completed_at": "2026-11-08T10:59:27Z",
+      "remote_main_expected_unchanged": "721d331a4ddd3c1d759a719a55f09388ade4fa30"
+    },
+    "current_batch_uploaded_at_acceptance": false,
+    "publication_policy": "After committing this FULLY accepted batch, push it WITH the accepted c48653e and 24dbc3c in ONE fast-forward push; verify remote refs, actual blobs and new run. This acceptance record is a pre-publication snapshot, not a claim about the new remote run."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/project-native-renaming-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\project-native-renaming-build.log",
+        "bytes": 110,
+        "sha256": "5348653f62e6b2d2a5c37e548e0307d31367217080212d9290700f7b92f4cb77"
+      },
+      {
+        "path": "verification/schema-matrix-quotation-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-matrix-quotation-build.log",
+        "bytes": 110,
+        "sha256": "4605f94bc637d2ea7ca646bf58407d618b2507fb7d615ad863083df121ebc49d"
+      },
+      {
+        "path": "verification/schema-axiom-quotation-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-axiom-quotation-build.log",
+        "bytes": 109,
+        "sha256": "678fec5bdcca366864885a39c7a0665542f4337be5ee4a5bad97cc5875132f14"
+      },
+      {
+        "path": "verification/schema-matrix-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-matrix-local-axioms.log",
+        "bytes": 7670,
+        "sha256": "772c05c504b61a8c409839fb077622d7ac3c189912bd1e04188d264dfd3aee96"
+      },
+      {
+        "path": "verification/schema-matrix-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-matrix-baseline.tmp.json",
+        "bytes": 13308540,
+        "sha256": "1109850c35368042ef4cad9828d31641b4d7bd660d743fba020b9fa9e6a14cb5"
+      },
+      {
+        "path": "verification/schema-matrix-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-matrix-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "c961d94a2c91e2d9a2af0c5a197083ea2deb92930d4d2a17cfd9b34bfa79f870"
+      },
+      {
+        "path": ".local/SchemaMatrixAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SchemaMatrixAudit.lean",
+        "bytes": 1950,
+        "sha256": "eb43181825d88d04fbd6a90b13aa0f8bc309b6cce77e1a97d9ea5ea59e2fcaa5"
+      }
+    ],
+    "removal_complete": true
+  },
+  "post_cleanup": {
+    "complete": true,
+    "build_exit_code": 0,
+    "build_jobs": 3258,
+    "current_source_hashes_verified": 2810,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false,
+    "active_Lean_Lake_processes": 0
+  }
+}

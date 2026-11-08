@@ -160630,7 +160630,7 @@
       "certificate_source_files": {
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "285ad7f1c5775ca60ba7238cd2904cbe73bab6459c9d457bbc30c0b6f16d3d41",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexSyntax.lean": "2391fbc8c2c0bd7fe0bf582a49e2c07654710f4f6525a0650a6e93a3e8e23fdc",
         "PPAC/Migration/Internal/SchemaIndexFacts.lean": "a72baf6ce70247550b8b206efc6b490bda63abc082aa783dac75bc17a385ebbd",
         "PPAC/Migration/Internal/IndexTermImageCodeFields.lean": "c1213e02dfebfc8a48daaa2a13fbca971cdb0addcb84155f9ced62ac6922f711",
@@ -160696,7 +160696,7 @@
       "certificate_source_files": {
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "285ad7f1c5775ca60ba7238cd2904cbe73bab6459c9d457bbc30c0b6f16d3d41",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexSyntax.lean": "2391fbc8c2c0bd7fe0bf582a49e2c07654710f4f6525a0650a6e93a3e8e23fdc",
         "PPAC/Migration/Internal/SchemaIndexFacts.lean": "a72baf6ce70247550b8b206efc6b490bda63abc082aa783dac75bc17a385ebbd",
         "PPAC/Migration/Internal/IndexTermImageCodeFields.lean": "c1213e02dfebfc8a48daaa2a13fbca971cdb0addcb84155f9ced62ac6922f711",
@@ -160746,7 +160746,7 @@
       "certificate_source_files": {
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "285ad7f1c5775ca60ba7238cd2904cbe73bab6459c9d457bbc30c0b6f16d3d41",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexSyntax.lean": "2391fbc8c2c0bd7fe0bf582a49e2c07654710f4f6525a0650a6e93a3e8e23fdc",
         "PPAC/Migration/Internal/SchemaIndexFacts.lean": "a72baf6ce70247550b8b206efc6b490bda63abc082aa783dac75bc17a385ebbd",
         "PPAC/Migration/Internal/IndexTermImageCodeFields.lean": "c1213e02dfebfc8a48daaa2a13fbca971cdb0addcb84155f9ced62ac6922f711",
@@ -160758,7 +160758,7 @@
         "PPAC/Migration/Internal/StructuralListCodeInduction.lean": "284406bc2b9c5f650da01bad4c70a38d74a2ade83f39274a59aabc74cd16c6fb",
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Binding.lean": "2ca71977339f0af8cff8d262d43472ebd69c716e1a8fb24e8d479e694f7488fe"
       },
-      "scope": "Ordinary nativeZF proves the exact biconditional between the EXISTING actual pure index-renaming judgment and original native variable-substitution quotation. BOTH converted environments and intermediate codes are actually built inside object exists using EXISTING IndexTermImageEnvironment.exists_environment, IndexFormulaRenameBridge.rename_iff and NativeFormulaQuotationCorrespondence.formula_iff. Original encoded index graphs, their formal native values, context numerals and original input quotation remain explicit parents. Native body/contexts/maps are EXTERNAL scheme indices. Actual Project fo_formula/rename commutation and the three compiled-matrix consumers still need assembly; uniform nonstandard axiom correctness and internal Proof/Con are not proved.",
+      "scope": "Ordinary nativeZF proves the exact biconditional between the EXISTING actual pure index-renaming judgment and original native variable-substitution quotation. BOTH converted environments and intermediate codes are actually built inside object exists using EXISTING IndexTermImageEnvironment.exists_environment, IndexFormulaRenameBridge.rename_iff and NativeFormulaQuotationCorrespondence.formula_iff. Original encoded index graphs, their formal native values, context numerals and original input quotation remain explicit parents. Native body/contexts/maps are EXTERNAL scheme indices. Actual Project commutation and the three compiled-matrix consumers are supplied separately by SchemaMatrixQuotation/SchemaAxiomQuotation; this generic module does not itself assert their full pipeline correctness; uniform nonstandard axiom correctness and internal Proof/Con are not proved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.Internal.NativeIndexFormulaQuotation.formula_iff": [
           "Classical.choice",
@@ -160766,6 +160766,19 @@
           "propext"
         ],
         "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points": [],
+        "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_at": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.Internal.NativeIndexFormulaQuotation.points_intro": [
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.Internal.NativeIndexFormulaQuotation.sentence": [
           "Quot.sound",
           "propext"
@@ -160776,6 +160789,283 @@
           "propext"
         ],
         "PPAC.Migration.Internal.NativeIndexFormulaQuotation.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "project_native_renaming": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (original complete axiom-code consumer)",
+        "Original native Project.fo_formula, BoundEmbedding, complete Separation/Collection and exact original certificate sentences"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean",
+      "native_source_sha256": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+      "adapter": "PPAC/Migration/ProjectNativeRenaming.lean",
+      "consumers": [
+        "Original complete structural schema certificate/axiomTest correctness",
+        "Uniform internal ZF/U axiom correctness and ALL internal Proof/Con"
+      ],
+      "reuse_producers": [
+        "Original native Project/Binding definitions, unchanged",
+        "Existing native renameMapped/substituteMapped equivalence",
+        "Existing exact compiler, actual three schema graph values and native index/quotation bridges",
+        "Existing actual raw compilation/schema output existence, internal type and uniqueness",
+        "Existing original finite-template and WHOLE closure quotation",
+        "Existing original quotation uniqueness, Source.Derives, TheoryTransport and nativeZF replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f",
+        "PPAC/Migration/SchemaMatrixQuotation.lean": "d7539fb2fa55075b806cebfab112f1655c9282c71b16de357eadd45afa3a2524",
+        "PPAC/Migration/SchemaAxiomQuotation.lean": "2bba8cc5beb706e03898dcdc1f59498783dd5d29f07437bb40786c7884ae0983",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
+        "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
+        "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
+        "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
+        "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
+        "PPAC/Migration/Internal/OriginalTreeQuotationUnique.lean": "13619f310f6292caca9adf34817e1f5f67ee15d32fa569747d0b6f0b78f2c3a6",
+        "PPAC/Migration/Internal/NativeAxiomCertificateData.lean": "37ce03f51458756cff3d2cea0f4e650b13c2c89461f512ff37efcadf5165e953",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Binding.lean": "2ca71977339f0af8cff8d262d43472ebd69c716e1a8fb24e8d479e694f7488fe",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Language.lean": "113255f847890db7cb09c20af2eb58203c62cc0a0e4dad8fa5eb5e08fb974178",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/Derivation/Substitution/Basic.lean": "a0431a7a0d8a1cdcc0a1444b0d992f74943608e4cab10a892681dd91061f58d6"
+      },
+      "scope": "Metadata commutation of ORIGINAL Project.fo_formula with native bound renaming for ALL original constructors, including primitive equality, exact membership fields, subset real extra forall and BOTH binders. Reuses native Formula.renameMapped_eq_substituteMapped; no native formula substitution recursion is reimplemented. This is CONSUMED by actual SchemaMatrixQuotation object proofs, not presented as an object theorem by itself.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ProjectNativeRenaming.nativeVariable": [
+          "propext"
+        ],
+        "PPAC.Migration.ProjectNativeRenaming.variable_index": [
+          "propext"
+        ],
+        "PPAC.Migration.ProjectNativeRenaming.variable_at": [
+          "propext"
+        ],
+        "PPAC.Migration.ProjectNativeRenaming.formula_rename": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectNativeRenaming.formula_substitute": [
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "schema_matrix_quotation": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (original complete axiom-code consumer)",
+        "Original native Project.fo_formula, BoundEmbedding, complete Separation/Collection and exact original certificate sentences"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean",
+      "native_source_sha256": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+      "adapter": "PPAC/Migration/SchemaMatrixQuotation.lean",
+      "consumers": [
+        "Original complete structural schema certificate/axiomTest correctness",
+        "Uniform internal ZF/U axiom correctness and ALL internal Proof/Con"
+      ],
+      "reuse_producers": [
+        "Original native Project/Binding definitions, unchanged",
+        "Existing native renameMapped/substituteMapped equivalence",
+        "Existing exact compiler, actual three schema graph values and native index/quotation bridges",
+        "Existing actual raw compilation/schema output existence, internal type and uniqueness",
+        "Existing original finite-template and WHOLE closure quotation",
+        "Existing original quotation uniqueness, Source.Derives, TheoryTransport and nativeZF replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f",
+        "PPAC/Migration/SchemaMatrixQuotation.lean": "d7539fb2fa55075b806cebfab112f1655c9282c71b16de357eadd45afa3a2524",
+        "PPAC/Migration/SchemaAxiomQuotation.lean": "2bba8cc5beb706e03898dcdc1f59498783dd5d29f07437bb40786c7884ae0983",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
+        "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
+        "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
+        "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
+        "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
+        "PPAC/Migration/Internal/OriginalTreeQuotationUnique.lean": "13619f310f6292caca9adf34817e1f5f67ee15d32fa569747d0b6f0b78f2c3a6",
+        "PPAC/Migration/Internal/NativeAxiomCertificateData.lean": "37ce03f51458756cff3d2cea0f4e650b13c2c89461f512ff37efcadf5165e953",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Binding.lean": "2ca71977339f0af8cff8d262d43472ebd69c716e1a8fb24e8d479e694f7488fe",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Language.lean": "113255f847890db7cb09c20af2eb58203c62cc0a0e4dad8fa5eb5e08fb974178",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/Derivation/Substitution/Basic.lean": "a0431a7a0d8a1cdcc0a1444b0d992f74943608e4cab10a892681dd91061f58d6"
+      },
+      "scope": "Exact object biconditional for ALL THREE ORIGINAL actual compiledMatrix sites, consuming original Project compiler quotation, actual schema graph values, index/native environment bridge, and ORIGINAL Project/native renaming commutation. Three ordinary nativeZF endpoints have ONLY original raw quotation/validity, omega, count numeral, empty zero and original scope-chain parents. There are NO given intermediate compiled/map/code/output/quotation witnesses. External body/count indices are explicit; uniform nonstandard axiom correctness and internal Proof/Con are not asserted.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.SchemaMatrixQuotation.separation_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.collection_one_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.collection_two_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.separation_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.collection_one_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaMatrixQuotation.collection_two_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "schema_axiom_quotation": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (original complete axiom-code consumer)",
+        "Original native Project.fo_formula, BoundEmbedding, complete Separation/Collection and exact original certificate sentences"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean",
+      "native_source_sha256": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+      "adapter": "PPAC/Migration/SchemaAxiomQuotation.lean",
+      "consumers": [
+        "Original complete structural schema certificate/axiomTest correctness",
+        "Uniform internal ZF/U axiom correctness and ALL internal Proof/Con"
+      ],
+      "reuse_producers": [
+        "Original native Project/Binding definitions, unchanged",
+        "Existing native renameMapped/substituteMapped equivalence",
+        "Existing exact compiler, actual three schema graph values and native index/quotation bridges",
+        "Existing actual raw compilation/schema output existence, internal type and uniqueness",
+        "Existing original finite-template and WHOLE closure quotation",
+        "Existing original quotation uniqueness, Source.Derives, TheoryTransport and nativeZF replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f",
+        "PPAC/Migration/SchemaMatrixQuotation.lean": "d7539fb2fa55075b806cebfab112f1655c9282c71b16de357eadd45afa3a2524",
+        "PPAC/Migration/SchemaAxiomQuotation.lean": "2bba8cc5beb706e03898dcdc1f59498783dd5d29f07437bb40786c7884ae0983",
+        "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
+        "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
+        "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
+        "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
+        "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
+        "PPAC/Migration/Internal/OriginalTreeQuotationUnique.lean": "13619f310f6292caca9adf34817e1f5f67ee15d32fa569747d0b6f0b78f2c3a6",
+        "PPAC/Migration/Internal/NativeAxiomCertificateData.lean": "37ce03f51458756cff3d2cea0f4e650b13c2c89461f512ff37efcadf5165e953",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Binding.lean": "2ca71977339f0af8cff8d262d43472ebd69c716e1a8fb24e8d479e694f7488fe",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Language.lean": "113255f847890db7cb09c20af2eb58203c62cc0a0e4dad8fa5eb5e08fb974178",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/Derivation/Substitution/Basic.lean": "a0431a7a0d8a1cdcc0a1444b0d992f74943608e4cab10a892681dd91061f58d6"
+      },
+      "scope": "The WHOLE ORIGINAL raw schemaResult pipeline is exactly equivalent to ORIGINAL native Separation/Collection sentence quotation. Consumes all actual compilation/renaming sites, both distinct Collection matrix occurrences, original finite templates and whole closure; no intermediate quotation is given. Two ordinary nativeZF endpoints apply to EVERY original externally indexed schema/count, retaining actual raw-source validity guards and ALL internal candidate outputs/fields/executions. Body/count remain EXTERNAL indices. This does NOT prove uniform forcing for arbitrary nonstandard internal schema bodies/counts, all-internal six-rule Proof/Con or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.SchemaAxiomQuotation.separation_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomQuotation.collection_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomQuotation.separationSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomQuotation.separation_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomQuotation.collectionSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomQuotation.collection_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

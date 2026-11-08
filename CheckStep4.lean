@@ -14483,4 +14483,32 @@ example {m : Nat} {sb sf tb tf : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuo
     FirstOrder.Derives nativeZF [] (Translation.sentence (Internal.NativeIndexFormulaQuotation.sentence input ρ τ w I J a b c d n q r s)) :=
   Internal.NativeIndexFormulaQuotation.kernel_certificate input ρ τ w I J a b c d n q r s
 
+example {m n : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formula 1 (n+1)) (hc : input.FreeClosed)
+    (w count z body out : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (SchemaMatrixQuotation.sentence n 0 input hc YesMetaZFC.SetTheory.BoundEmbedding.unaryUnderTwo w count z body out scopes)) :=
+  SchemaMatrixQuotation.separation_kernel_certificate input hc w count z body out scopes
+
+example {m n : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formula 1 (n+2)) (hc : input.FreeClosed)
+    (w count z body out : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (SchemaMatrixQuotation.sentence n 1 input hc YesMetaZFC.SetTheory.BoundEmbedding.binaryUnderOne w count z body out scopes)) :=
+  SchemaMatrixQuotation.collection_one_kernel_certificate input hc w count z body out scopes
+
+example {m n : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formula 1 (n+2)) (hc : input.FreeClosed)
+    (w count z body out : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (SchemaMatrixQuotation.sentence n 2 input hc YesMetaZFC.SetTheory.BoundEmbedding.binaryUnderTwo w count z body out scopes)) :=
+  SchemaMatrixQuotation.collection_two_kernel_certificate input hc w count z body out scopes
+
+example {m n : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.UnarySchema n)
+    (w count z body out : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomQuotation.separationSentence schema w count z body out scopes)) :=
+  SchemaAxiomQuotation.separation_kernel_certificate schema w count z body out scopes
+
+example {m n : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.BinarySchema n)
+    (w count z body out : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomQuotation.collectionSentence schema w count z body out scopes)) :=
+  SchemaAxiomQuotation.collection_kernel_certificate schema w count z body out scopes
+
 end PPAC.Migration.Step4Checks

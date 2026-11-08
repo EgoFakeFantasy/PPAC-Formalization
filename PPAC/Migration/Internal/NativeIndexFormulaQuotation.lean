@@ -72,7 +72,7 @@ def points {m} : (k : Nat) → (Fin k → Nat) → Fin m → Source.Formula m
   | k+1, targets, r => (points k (fun j => targets j.castSucc) r).conj
       (SchemaIndexQuotation.value k (targets (Fin.last k)) r)
 
-private theorem points_at {m k} {Γ : Context m} (targets : Fin k → Nat) (r : Fin m)
+theorem points_at {m k} {Γ : Context m} (targets : Fin k → Nat) (r : Fin m)
     (h : Derives Γ (points k targets r)) (j : Fin k) :
     Derives Γ (SchemaIndexQuotation.value j.val (targets j) r) := by
   induction k with
@@ -81,6 +81,19 @@ private theorem points_at {m k} {Γ : Context m} (targets : Fin k → Nat) (r : 
     refine Fin.lastCases ?_ (fun i => ?_) j
     · exact .conjR h
     · exact ih (fun i => targets i.castSucc) (.conjL h) i
+
+theorem points_rename {m l} (k : Nat) (targets : Fin k → Nat) (r : Fin m) (ρ : Fin m → Fin l) :
+    (points k targets r).rename ρ = points k targets (ρ r) := by
+  induction k with
+  | zero => rfl
+  | succ k ih => simp only [points,Formula.rename,ih,SchemaIndexQuotation.value_rename]
+
+theorem points_intro {m k} {Γ : Context m} (targets : Fin k → Nat) (r : Fin m)
+    (h : ∀ j : Fin k, Derives Γ (SchemaIndexQuotation.value j.val (targets j) r)) :
+    Derives Γ (points k targets r) := by
+  induction k with
+  | zero => exact .eqRefl r
+  | succ k ih => exact .conjI (ih (fun j => targets j.castSucc) (fun j => h j.castSucc)) (h (Fin.last k))
 
 private def assumptions {m} {sb sf tb tf : PureSyntaxQuotation.Ctx} (input : PureSyntaxQuotation.Fm sb sf)
     (ρ : ∀ {sort}, YesMetaZFC.Logic.FirstOrder.Variable sb sort → YesMetaZFC.Logic.FirstOrder.Variable tb sort)

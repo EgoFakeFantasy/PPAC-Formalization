@@ -2,8 +2,8 @@
 
 当前为原第10阶段；最终对象Con未证明。完整状态见[STATUS](STATUS.zh-CN.md)，原1–11阶段及agent入口见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)。
 
-本批三个实际schema索引图的原生嵌入取值已证明，含零参数。两处Collection映射保持不同。实际索引到项像的转换结果由现成字段读取及全内部列表外延唯一性识别为原生quotation环境。复用IndexTermImageEnvironment、IndexFormulaRenameBridge与NativeFormulaQuotationCorrespondence，在对象存在量词中实际构造两份转换，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件；没有给定正确混合环境或输出。
+本批原完整标准模式quotation链已闭合：原Project全构造子翻译／重命名交换、三个实际compiledMatrix、原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件全部接通。五个普通nativeZF原核端点通过，且不要求给定任何中间编译／映射／转换／矩阵quotation。原始raw正文quotation、有效性guard、ω、参数次数numeral、空零和四级作用域链为显式输入；正文／参数数目仍为外部证明模式索引。
 
-原生正文、上下文和映射仍为外部模式索引。下一步接原Project.fo_formula／原生重命名的交换元数据，特化三个实际compiledMatrix消费者，再消费已经验收的原模板＋整个闭包quotation。实际图值、转换环境识别、纯索引桥、正文编译、原有限模板、整个闭包、L及完整数学模式不重做。之后仍需统一内部／非标准ZF/U公理正确性、全部内部Proof/Con传输、原第4 Comparator与第11终验。
+下一步只做统一内部／非标准ZF/U公理正确性与强迫、六规则Proof的全部内部矛盾码传输及最终Con。复用现成ObjectProofNode、ReducedProofPresentation、PureProvability/PureSourceLocalTests及同一原强迫解释；不能用刚完成的外部quotation模式冒充非标准正文的统一真值／强迫。完整标准quotation、所有三个矩阵、原模板、整个闭包、L及完整数学模式不重做。原第4 Comparator及第11终验仍待完成。
 
-最新报告：`verification/native-index-quotation-acceptance.json`。九条命令、五条trust=0均通过，零警告、无新增公理依赖。本批与c48653e先保留本地；远端父提交f794920的run 42468430542仍在运行，终态成功并读实际日志后才统一推送。
+最新报告：`verification/schema-matrix-quotation-acceptance.json`。九条命令、五条trust=0均通过，零Lean警告、无新增公理依赖。父提交f794920的远端run 42468430542已成功并读取实际日志；本轮三批已验收提交统一推送，新运行的验收结果另行核实。

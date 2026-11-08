@@ -1081,3 +1081,5 @@ import PPAC.Migration.SchemaClosureQuotation
 import PPAC.Migration.SchemaTemplateQuotation
 
 import PPAC.Migration.Internal.NativeIndexFormulaQuotation
+
+import PPAC.Migration.SchemaAxiomQuotation
