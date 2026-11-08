@@ -123,7 +123,7 @@ theorem occurrence_cover (hM : FirstOrder.Theory.Models M nativeZF) {k : Nat}
 
 /-- Binder transport for the SAME source occurrence, with no new forcing
 relation and no replacement of the internal index by an external ordinal. -/
-private theorem occurrence_reindex {k l : Nat} (env : Fin k → M.Carrier .set)
+theorem occurrence_reindex {k l : Nat} (env : Fin k → M.Carrier .set)
     (other : Fin l → M.Carrier .set) (base : Fin k → Fin l)
     (he : ∀ j, other (base j) = env j) (rho : Fin 7 → Fin k)
     (G F mul top f s A X Y : Fin k) (p x i : M.Carrier .set) :
@@ -148,7 +148,7 @@ private theorem occurrence_reindex {k l : Nat} (env : Fin k → M.Carrier .set)
   simpa only [he] using ForcingSeparation.force_congr hR hH occurrenceFormula
     (Fin.lastCases x (Fin.lastCases ci (fun j => env (ForcingMapCalculus.five f s A X Y j)))) (env (rho 6)) p
 
-private theorem at_reindex {k l : Nat} (env : Fin k → M.Carrier .set)
+theorem at_reindex {k l : Nat} (env : Fin k → M.Carrier .set)
     (other : Fin l → M.Carrier .set) (base : Fin k → Fin l)
     (he : ∀ j, other (base j) = env j) (rho : Fin 7 → Fin k)
     (G F mul top O f s A X Y : Fin k) (p x i : M.Carrier .set) :

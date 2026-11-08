@@ -42,7 +42,7 @@ private def CompLaws {k : Nat} (env : Fin k → M.Carrier .set) (rho : Fin 7 →
     MapForce env rho G F mul J X Z p (Source.SetLanguage.injection 0 1 2))
 
 /-- Only parameter slots change. The underlying forcing relation is the SAME. -/
-private theorem force_reindex {k n l : Nat} (env : Fin k → M.Carrier .set) (other : Fin n → M.Carrier .set)
+theorem force_reindex {k n l : Nat} (env : Fin k → M.Carrier .set) (other : Fin n → M.Carrier .set)
     (base : Fin k → Fin n) (he : ∀ j, other (base j) = env j)
     (rho : Fin 7 → Fin k) (G F mul : Fin k) (phi : Formula l)
     (v : Fin l → M.Carrier .set) (p : M.Carrier .set) :
@@ -55,7 +55,7 @@ private theorem force_reindex {k n l : Nat} (env : Fin k → M.Carrier .set) (ot
   · intro x
     simp only [domain_semantics,he]
 
-private theorem pre_reindex {k n : Nat} (env : Fin k → M.Carrier .set) (other : Fin n → M.Carrier .set)
+theorem pre_reindex {k n : Nat} (env : Fin k → M.Carrier .set) (other : Fin n → M.Carrier .set)
     (base : Fin k → Fin n) (he : ∀ j, other (base j) = env j)
     (rho : Fin 7 → Fin k) (mul : Fin k)
     (hpre : ForcingAtomicBasic.PreorderOn (orderFormula (rho 0) mul) env (env (rho 6))) :
@@ -83,7 +83,7 @@ include hM hp hG hF ht hpre
 
 /-- Instantiate the already proved literal composition constructor at arbitrary
 internal HS names and return its laws to the original environment. -/
-private theorem compose {f g X Y Z : M.Carrier .set}
+theorem compose {f g X Y Z : M.Carrier .set}
     (hf : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) f)
     (hg : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) g)
     (hX : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) X)
@@ -150,7 +150,7 @@ private theorem compose {f g X Y Z : M.Carrier .set}
       exact (cast _ _).mpr (hOp.2.2 ((cast _ _).mp hf) ((cast _ _).mp hg))
 
 /-- Literal inverse graph, instantiated at actual internal names. -/
-private theorem inverse {f X Y : M.Carrier .set}
+theorem inverse {f X Y : M.Carrier .set}
     (hf : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) f)
     (hX : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) X)
     (hY : HS actionFormula (fun j => env (rho j)) (env G) (env (rho 6)) (env F) Y) :

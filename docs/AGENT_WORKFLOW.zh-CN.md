@@ -1,14 +1,15 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：SliceAssembly 空域消费者及实际切片参数（2026-11-08）
+## 当前迁移：实际 slice_candidate 与内部候选函数族（2026-11-08）
 
-ForcingEmptyDomain 的两个普通 nativeZF 原核端点迁移源空域注入、空域良序与非良序集合的稠密成员。实际共同支撑／HS 图、空序数及 check 名均复用已有构造器；完整 injection/functionOn 保留。稠密成员给出的是一个条件下的一个实际 HS 成员，等价于完整源 nonempty 强迫，不是同时选一族默认元素。
+ForcingSliceCandidate.kernel_certificate 是普通 nativeZF 原推导核的 Derives 端点，证明同一内部 L 上的实际候选函数族定理。背景 Choice／全局序由已有 ConstructibleSource／ConstructionRoundSelection 消去；没有新增外层 AC、L、公理模式或名字递归。给定原源父输入（同一 Core、已有共同支撑、实际 Cartesian 名字及两条完整满射），精确迁移 SliceAssembly.slice_candidate:118–156 的两个分支，并保留全部内部条件及任意内部指标。
 
-ForcingSliceParameters.kernel_certificate 在普通 nativeZF 中给出完整内部指标上的实际 [Ypart_i,Spart_i] 参数关系：全域存在、字面唯一、HS、同一已有共同支撑固定，以及精确 check／选择／分离器边方程。原始名字外延性证明正文逐字复用已验收 SliceSelection；无新选择或名字递归。大强迫公式保持为参数后再作实例化，模块局部编译约11秒。
+良序像分支复用完整 wellorderable_target_injection；非良序分支只在一个较强条件下取一个实际 HS 默认成员，复用 subset_image_surjection、两次同系统 nonwellorderable_image_bijection、原逆图和复合。结果是反向单射，不额外要求成为原 f 的截面。六个现有辅助接口仅去掉 private，数学正文保持不变；删除了对这些图运算的重复实现。
 
-修正工程流程：已有 UniformMaximum.Inputs 直接接受可定义且全域唯一的内部参数关系；不再要求额外造一张参数族 FunctionOn 图。该关系已接通前三项输入，下一实际义务是源 slice_candidate 给出的 force(ex injection)，再由已有统一最大值实际构造候选注入族，并沿原源 assemble／presentation_reverse_injection 装配。候选注入族仍必须实际构造，不能以参数关系代替。
+实际双名字参数关系的四项 UniformMaximum.Inputs 现在全部证明，包括 force(ex injection)。candidate_family 已实际调用已有 uniform_maximum_dense，构造全内部指标上的 FunctionOn 候选函数族及其一个共同支撑；没有另造参数族图，也没有把候选族当作前提。
 
-完整验收见 verification/empty-parameters-acceptance.json，报告生成前仅算局部通过。仍在原第9阶段。此前切片名字／共同支撑、sliceGraph／partGraph 完整满射、Spart互斥、occurrence及实际Ypart名字覆盖均已完成。剩余 slice_candidate、assemble、presentation_reverse_injection、全局反向单射、PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator及终验；最终对象 Con 未证明。
+本批全量验收以 verification/slice-candidate-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一真正义务是固定源 assemble／presentation_reverse_injection，再接全局反向单射。实际 ACwo、¬AC、ordinal_presentation、切片名字、图满射／互斥／覆盖、空域及参数全域唯一等均已完成，不重做。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
+
 ## 本批迁移：源子集像满射（2026-11-08）
 
 ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。
@@ -50,7 +51,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句、默认关系对象规律及完整ordinal_presentation已接通 | 同一系统的实际ACwo与¬AC强迫、完整ordinal_presentation均已完成；OrderedSections及切片图满射／互斥／覆盖已完成，实际双名字参数关系已接通，继续slice_candidate及SliceAssembly接全局反向单射，保留全部量词；复用已有模式数学 |
+| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句、默认关系对象规律及完整ordinal_presentation已接通 | 同一系统的实际ACwo与¬AC强迫、完整ordinal_presentation均已完成；OrderedSections及切片图满射／互斥／覆盖已完成，实际双名字参数关系、slice_candidate及内部候选函数族已接通，继续assemble／presentation_reverse_injection接全局反向单射，保留全部量词；复用已有模式数学 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 

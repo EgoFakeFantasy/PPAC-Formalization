@@ -1,14 +1,15 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
-## 当前迁移：SliceAssembly 空域消费者及实际切片参数（2026-11-08）
+## 当前迁移：实际 slice_candidate 与内部候选函数族（2026-11-08）
 
-ForcingEmptyDomain 的两个普通 nativeZF 原核端点迁移源空域注入、空域良序与非良序集合的稠密成员。实际共同支撑／HS 图、空序数及 check 名均复用已有构造器；完整 injection/functionOn 保留。稠密成员给出的是一个条件下的一个实际 HS 成员，等价于完整源 nonempty 强迫，不是同时选一族默认元素。
+ForcingSliceCandidate.kernel_certificate 是普通 nativeZF 原推导核的 Derives 端点，证明同一内部 L 上的实际候选函数族定理。背景 Choice／全局序由已有 ConstructibleSource／ConstructionRoundSelection 消去；没有新增外层 AC、L、公理模式或名字递归。给定原源父输入（同一 Core、已有共同支撑、实际 Cartesian 名字及两条完整满射），精确迁移 SliceAssembly.slice_candidate:118–156 的两个分支，并保留全部内部条件及任意内部指标。
 
-ForcingSliceParameters.kernel_certificate 在普通 nativeZF 中给出完整内部指标上的实际 [Ypart_i,Spart_i] 参数关系：全域存在、字面唯一、HS、同一已有共同支撑固定，以及精确 check／选择／分离器边方程。原始名字外延性证明正文逐字复用已验收 SliceSelection；无新选择或名字递归。大强迫公式保持为参数后再作实例化，模块局部编译约11秒。
+良序像分支复用完整 wellorderable_target_injection；非良序分支只在一个较强条件下取一个实际 HS 默认成员，复用 subset_image_surjection、两次同系统 nonwellorderable_image_bijection、原逆图和复合。结果是反向单射，不额外要求成为原 f 的截面。六个现有辅助接口仅去掉 private，数学正文保持不变；删除了对这些图运算的重复实现。
 
-修正工程流程：已有 UniformMaximum.Inputs 直接接受可定义且全域唯一的内部参数关系；不再要求额外造一张参数族 FunctionOn 图。该关系已接通前三项输入，下一实际义务是源 slice_candidate 给出的 force(ex injection)，再由已有统一最大值实际构造候选注入族，并沿原源 assemble／presentation_reverse_injection 装配。候选注入族仍必须实际构造，不能以参数关系代替。
+实际双名字参数关系的四项 UniformMaximum.Inputs 现在全部证明，包括 force(ex injection)。candidate_family 已实际调用已有 uniform_maximum_dense，构造全内部指标上的 FunctionOn 候选函数族及其一个共同支撑；没有另造参数族图，也没有把候选族当作前提。
 
-完整验收见 verification/empty-parameters-acceptance.json，报告生成前仅算局部通过。仍在原第9阶段。此前切片名字／共同支撑、sliceGraph／partGraph 完整满射、Spart互斥、occurrence及实际Ypart名字覆盖均已完成。剩余 slice_candidate、assemble、presentation_reverse_injection、全局反向单射、PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator及终验；最终对象 Con 未证明。
+本批全量验收以 verification/slice-candidate-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一真正义务是固定源 assemble／presentation_reverse_injection，再接全局反向单射。实际 ACwo、¬AC、ordinal_presentation、切片名字、图满射／互斥／覆盖、空域及参数全域唯一等均已完成，不重做。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
+
 ## 本批迁移：源子集像满射（2026-11-08）
 
 ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。

@@ -38514,3 +38514,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSliceParameters.sentence
 #print axioms PPAC.Migration.ForcingSliceParameters.models
 #print axioms PPAC.Migration.ForcingSliceParameters.kernel_certificate
+#print axioms PPAC.Migration.ForcingSliceCandidate.slice_candidate
+#print axioms PPAC.Migration.ForcingSliceCandidate.parameter_forces_exists
+#print axioms PPAC.Migration.ForcingSliceCandidate.uniform_inputs
+#print axioms PPAC.Migration.ForcingSliceCandidate.candidate_family
+#print axioms PPAC.Migration.ForcingSliceCandidate.sentence
+#print axioms PPAC.Migration.ForcingSliceCandidate.models
+#print axioms PPAC.Migration.ForcingSliceCandidate.kernel_certificate
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.force_reindex
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.pre_reindex
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.compose
+#print axioms PPAC.Migration.ForcingNonwellorderableImage.inverse
+#print axioms PPAC.Migration.ForcingSliceCoverage.occurrence_reindex
+#print axioms PPAC.Migration.ForcingSliceCoverage.at_reindex

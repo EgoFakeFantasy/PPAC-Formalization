@@ -1,0 +1,221 @@
+{
+  "verified_at": "2026-11-08T03:43:39.007560+00:00",
+  "baseline_commit": "32de8984922c07542a8f0baa29eaf47b5013db9f",
+  "original_stage": 9,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingSliceCandidate.kernel_certificate"
+  ],
+  "actual_source_results": [
+    "Exact SliceAssembly.slice_candidate:118-156 on actual parameter names and SAME actual Core: wellordered and nonwellordered cases",
+    "Actual local default below one condition; full subset-image surjection, two SAME-system actual image bijections, inverse and composition",
+    "Full source force(ex injection) below EVERY internal condition",
+    "All FOUR actual UniformMaximum.Inputs: totality, literal uniqueness, SAME-support fixedness and forced injection existence",
+    "Existing uniform_maximum_dense ACTUALLY constructs one FunctionOn candidate family on ALL internal indices and one common support"
+  ],
+  "reuse": [
+    "Already accepted raw compose/inverse and forcing/context transports: six declarations made public, bodies unchanged",
+    "Existing full sliceGraph/partGraph surjections, literal selected/separated piece equations and actual Cartesian NAME",
+    "Existing wellorderable_target_injection, wellorderable_image, nonwellorderable_member_dense, subset_image_surjection",
+    "Same completed Core/Outcome and nonwellorderable_image_bijection twice",
+    "Actual two-name ParameterSpec plus existing uniform_maximum_dense/Collection/ground uniformization",
+    "Existing same internal L, model_zf/model_choice/l_order/relative_models/ModelTransfer; no new foundational proof"
+  ],
+  "scope": {
+    "ordinary_nativeZF_original_kernel": true,
+    "same_internal_L_background_Choice_and_order_discharged": true,
+    "full_injection_functionOn_retained": true,
+    "all_internal_indices_and_conditions": true,
+    "arbitrary_name_ranks": true,
+    "actual_all_four_UniformMaximum_inputs_complete": true,
+    "slice_candidate_complete": true,
+    "actual_internal_candidate_FunctionOn_family_constructed": true,
+    "separate_parameter_FunctionOn_required": false,
+    "given_candidate_or_classification_oracle": false,
+    "simultaneous_default_or_wellorder_or_quotient_bijection_family": false,
+    "new_object_Choice_L_or_foundation": false,
+    "external_wellFounded": false,
+    "reverse_injection_assumed_section_of_original_f": false,
+    "Spart_covers_X_claimed": false,
+    "assembly_complete": false,
+    "presentation_reverse_injection_complete": false,
+    "PP_Main_complete": false,
+    "all_internal_nonstandard_Proof_Con_complete": false,
+    "original_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "acceptance": {
+    "audited_declarations": 37867,
+    "new_public_declarations": 7,
+    "newly_exposed_existing_helpers": 6,
+    "old_footprints_unchanged": 37854,
+    "old_module_review": {
+      "modules": 2619,
+      "unchanged_canonical": 2617,
+      "preexisting_EOL_only_differences": 162,
+      "visibility_only_modules": [
+        "PPAC/Migration/ForcingNonwellorderableImage.lean",
+        "PPAC/Migration/ForcingSliceCoverage.lean"
+      ],
+      "unchanged_proof_bodies": true
+    },
+    "current_source_hashes_verified": 2791,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3233,
+    "cross_platform_tests": 5,
+    "clean_pinned_repositories": 3
+  },
+  "remote_CI": {
+    "prior_specific_run": 42437134328,
+    "commit": "56aad5e907806fcb3adc75e0fd1c724d1906555d",
+    "last_observed_status": "in_progress",
+    "latest_completed_consecutive_successes": 9,
+    "new_push_deferred_until_specific_run_terminal": true
+  },
+  "remaining": [
+    "Source assemble/presentation_reverse_injection and Main.reverse_injection_dense",
+    "forces_PP/forces_target and full Main",
+    "All INTERNAL/nonstandard proof codes and final Con_ZF -> Con_(ZF+PP+ACwo+notAC)",
+    "Original stage4 full Comparator and stage11 final acceptance"
+  ],
+  "cleanup": {
+    "removed_files": [
+      {
+        "path": ".local/SliceGraphsBindingDraft.tmp",
+        "size": 65,
+        "raw_sha256": "c200d885eea196d1a4e58d9394eec994892a4287e28b6fa0ac0f75a2c46186c1"
+      },
+      {
+        "path": ".local/SliceCandidateAudit.lean",
+        "size": 912,
+        "raw_sha256": "5cc98405b9efb9767d6e7f785ef610e1d559fd0e6c652529038ebeb8078ae1dd"
+      },
+      {
+        "path": "verification/slice-candidate-build.log",
+        "size": 109,
+        "raw_sha256": "79bbdd4395ae8822bdd04df05607b6525a96244b2c37da133c258a9efdc181be"
+      },
+      {
+        "path": "verification/slice-candidate-local-axioms.log",
+        "size": 26113,
+        "raw_sha256": "eb0d559f60bb74a996a13c1c3c40d31a1b8c9fc06c8eef93eded0fbb2a724759"
+      },
+      {
+        "path": "verification/slice-candidate-baseline.tmp.json",
+        "size": 14417209,
+        "raw_sha256": "d6e1e7a96cd6e18903828c50bcbaa75becbd363d18dc47a58e127b869df06e56"
+      },
+      {
+        "path": "verification/slice-candidate-full-verify.log",
+        "size": 153,
+        "raw_sha256": "0c9e57324e7961ab0241af6679017cc45aa597966eb726f7e451456cba03aabc"
+      }
+    ],
+    "post_cleanup_build": {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "build_jobs": 3233
+    },
+    "post_cleanup_current_source_hashes_verified": 2791
+  }
+}

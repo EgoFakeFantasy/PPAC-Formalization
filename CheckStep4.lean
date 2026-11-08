@@ -14368,4 +14368,10 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top O f s A X Y i a
       (ForcingSliceParameters.sentence rho I K B w G F S mul top O f s A X Y i a b aPrime bPrime)) :=
   ForcingSliceParameters.kernel_certificate rho I K B w G F S mul top O f s A X Y i a b aPrime bPrime
 
+-- Actual pinned slice candidate FUNCTION; ordinary original nativeZF kernel.
+example {k : Nat} (root : Fin 40 → Fin k) (S f s X Y O checkedO Cart p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingSliceCandidate.sentence root S f s X Y O checkedO Cart p))) :=
+  ForcingSliceCandidate.kernel_certificate root S f s X Y O checkedO Cart p
+
 end PPAC.Migration.Step4Checks
