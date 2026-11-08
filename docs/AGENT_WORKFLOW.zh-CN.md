@@ -72,3 +72,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10开放节点代码生产：ForcingOpenCode复用原变量表与混合替换，把fvar i送到bvar i，再消费原内部forallClosure和已验收的实际解释器。任意内部／非标准自由范围b及开放源码均有唯一、准确类型的闭包强迫码；两张变量图、两份列表码、重命名公式、整个闭包和最终输出全部在对象量词内生成，无给定环境或执行。未修改既有替换、闭包、解释器或证明核。此项仅完成六规则消费者所需的代码生产；统一六规则保真、公理／语义正确性、reduction与最终Con仍未证明。九项完整验收和五项trust=0均通过，38434项审计零警告，全部38410项既有足迹及旧证明正文不变；验收见verification/forcing-open-code-acceptance.json。
 
 原第10实际MP证明码生产：InternalMPProof直接消费两个实际子Node、原free／结论字段、完整两公式类型和原tag7蕴含码，构造原tag2四字段父载荷，接通原六项MP查询、两个实际递归子证明及原Node轨迹。任意内部／非标准free范围和证明码均覆盖；输出保留可组合头字段，自由范围为空时实际构造同一Root轨迹；相同输入的父载荷唯一。原泛型证明树、局部表与根构造全部复用，未建立新核。这是目标证明码MP构造器，不是强迫解释的MP保真桥；该桥、其他解释规则、统一公理正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，38446项审计零警告，全部38434项既有足迹及旧证明正文不变；见verification/internal-mp-proof-acceptance.json。
+
+原第10目标证明码操作：InternalProofOperations复用原完整27类逻辑查询、AbstractFreeTop、WeakenFree及任意参数列表mode3替换，实际构造逻辑／forall／strengthening／substitution四类父载荷、完整局部查询、实际Node与原头字段，并在free为空时构造Root。全部内部／非标准范围和证明码均保留；没有给定父证明或新增检查器／推导核。结合既有axiom和MP，六类目标证明码构造器齐备，但强迫解释六规则保真、统一公理正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，38473项审计零警告；全部38446项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。见verification/internal-proof-operations-acceptance.json；等待前一整轮远端CI成功后再上传。

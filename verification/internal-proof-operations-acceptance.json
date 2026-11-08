@@ -1,0 +1,383 @@
+{
+  "verified_at": "2026-11-08T20:53:14.983331+00:00",
+  "baseline_commit": "e26c8822c996ce6a0c56804653a59919050fecd8",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Actual native original logical, forall, strengthening and substitution proof-code production, specialized to both unchanged complete ZF/U tests. Every scope, formula, argument list and proof code ranges over all internal omega including nonstandard. Logical production consumes the original complete 27-pattern query. Forall consumes the original AbstractFreeTop execution with its actual successor scopes and binder lift. Strengthening uses the original successor scope and WeakenFree execution in its exact scope-removing direction. Substitution consumes the original mode-3 arbitrary argument-list execution. The unary rules consume genuine child Node and exact original free/conclusion fields. All four construct the original parent payload, validate the complete original local queries and recursive children, and construct Node/header plus Root at empty free scope. No supplied parent, local table, proof execution or external standardness. Existing syntax operations, original checker and original kernel are unchanged. This completes target proof-code constructors alongside accepted axiom and MP constructors; it does NOT prove the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction or final Con.",
+  "endpoints": [
+    "PPAC.Migration.InternalProofOperations.logical_kernel_certificate",
+    "PPAC.Migration.InternalProofOperations.forall_kernel_certificate",
+    "PPAC.Migration.InternalProofOperations.strengthening_kernel_certificate",
+    "PPAC.Migration.InternalProofOperations.substitution_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the unchanged YesMetaZFC kernel",
+  "actual_main_object_contract": {
+    "logical": "Omega(w) -> empty(z) -> (FormulaCode(w,F,z,b) AND c in w AND original27PatternQuery(w,[b,c,F])) -> EX r OriginalConstructor(3,0,[b,F,c],r) AND original Node/header AND (empty(b) -> original Root).",
+    "forall": "OriginalAbstractFreeTop(w,z,b,a,B,F,G) AND genuine Annotated(w,z,B,F,p) with p in w -> EX U,r OriginalConstructor(1,9,[G],U) AND OriginalConstructor(3,3,[b,U,p],r) AND original Node/header AND (empty(b) -> original Root).",
+    "strengthening": "successor(B,b) AND original WeakenFree(w,z,b,B,F,N) AND genuine Annotated(w,z,B,N,p) with p in w -> EX r OriginalConstructor(3,4,[b,F,p],r) AND original Node/header AND (empty(b) -> original Root).",
+    "substitution": "Original mode3 FreeSubst(w,z,a,b,L,N,F) AND genuine Annotated(w,z,a,N,p) with p in w -> EX r OriginalConstructor(5,5,[b,F,a,L,p],r) AND original Node/header AND (empty(b) -> original Root).",
+    "fixed_parent_uniqueness": "Actual result payloads with the same kind and exact same original field vector are equal; no canonical execution is supplied."
+  },
+  "reuse": [
+    "Original complete 27-pattern logical query",
+    "Original AbstractFreeTop, WeakenFree and arbitrary-list mode-3 syntax operations",
+    "Existing exact local-query correspondences and ProofAllNodes table",
+    "Original ProofTreeNodeBackward, ProofTreeRootBackward, SyntaxConstructors and header projections",
+    "Original nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "build_jobs": 3278,
+    "audited_declarations": 38473,
+    "new_declarations": 27,
+    "all_prior_38446_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "old_proof_modules_compared": 2805,
+    "new_dependencies_do_not_exceed_prior_MP_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2838,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_trust_zero_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.InternalProofOperations.result": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.result_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.existsResult": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.existsResult_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.logicalInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.logicalInput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.strengtheningInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.strengtheningInput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.substitutionInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.substitutionInput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.logical": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.strengthening": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.substitution": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.forallInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.forallInput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.forallResult": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.forallResult_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.forall_produce": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.result_unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofOperations.logicalSentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.logical_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.strengtheningSentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.strengthening_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.substitutionSentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.substitution_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.forallSentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.InternalProofOperations.forall_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    }
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "all_internal_including_nonstandard_scopes_formulas_lists_proof_codes": true,
+    "same_original_checker_and_kernel": true,
+    "complete_original_queries_consumed": true,
+    "actual_parent_payload_node_header_constructed": true,
+    "original_root_constructed_at_empty_free_scope": true,
+    "all_six_native_target_proof_constructors_available": true,
+    "no_supplied_parent_local_table_proof_execution_or_standardness": true,
+    "forcing_specific_MP_bridge_proved": false,
+    "uniform_interpreted_six_rule_preservation_proved": false,
+    "uniform_internal_coded_semantic_or_axiom_correctness": false,
+    "all_internal_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-directed.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-build.log",
+      "size": 112,
+      "sha256": "492c792c9b05936c37b2fd948cfcc278ff7f75ab9bcd770ce7e7bf98f4ccb1bd"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-audit.lean",
+      "size": 1972,
+      "sha256": "053815c57f854dfca65cda13b57fd19d21ca78d0f5c5078c6aa6884b46b23988"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-audit.log",
+      "size": 6840,
+      "sha256": "c3c8ea35fd9baa50b0fc223a481691e42f5413c4ae33831eb3e45d4390a43a20"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-parent-summary.json",
+      "size": 14817185,
+      "sha256": "d4d74581ac98a8adeb96aae63d7ba871ed1d179a83aee04c417152034cf7f0f1"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\internal-proof-operations-full-verify.log",
+      "size": 153,
+      "sha256": "8b11410a35ed15d2cb12d88287e6c24dda77608561d69e3a24a85bb08699c6d3"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "Local full acceptance; wait for preceding entire remote CI success and actual log readback before push.",
+    "preceding_run": 42517118960,
+    "preceding_sha": "b639cf4b3ed2b350cbfb440581330783e1d55e76",
+    "native_job": 128842463273,
+    "native_last_observed_status": "in_progress",
+    "original_comparator_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

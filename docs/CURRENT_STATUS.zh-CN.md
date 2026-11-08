@@ -14,6 +14,8 @@
 
 本批InternalMPProof接通原目标证明码MP构造：真实两个子Node、原六项查询、实际tag2四字段父载荷和Node／关闭时Root轨迹均已构造，输出原头字段可继续组合，父载荷唯一；free范围与子证明码允许内部非标准。未改变原检查器或推导核。九项完整验收和五项trust=0通过，38446项审计零警告，全部38434项既有足迹及旧证明正文不变；见verification/internal-mp-proof-acceptance.json。它仍须消费待证的强迫蕴含桥。
 
+原第10目标证明码操作：InternalProofOperations复用原完整27类逻辑查询、AbstractFreeTop、WeakenFree及任意参数列表mode3替换，实际构造逻辑／forall／strengthening／substitution四类父载荷、完整局部查询、实际Node与原头字段，并在free为空时构造Root。全部内部／非标准范围和证明码均保留；没有给定父证明或新增检查器／推导核。结合既有axiom和MP，六类目标证明码构造器齐备，但强迫解释六规则保真、统一公理正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，38473项审计零警告；全部38446项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。见verification/internal-proof-operations-acceptance.json；等待前一整轮远端CI成功后再上传。
+
 真正剩余：强迫解释的MP蕴含桥、其他统一六规则保真、内部／非标准ZF/U公理及语义／Proof正确性、同一矛盾码reduction与最终Con，以及原第11最终验收。公式码解释器总性、类型、输出唯一性均不再列为缺口。不得以标准quotation模式或辅助构建代替这些门，不建立全宇宙统一真值／强迫谓词。
 
 最近已发布b639cf4，四份对象证明和三份验收报告实际字节已从远端读回；对应42517118960正在Build and audit。本批本地验收通过后仍须等待上一整轮远端CI成功、实际日志读回，才推送下一批。

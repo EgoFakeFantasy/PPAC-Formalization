@@ -1102,3 +1102,4 @@ import PPAC.Migration.ForcingCodeStepUnique
 import PPAC.Migration.ForcingCodeUnique
 import PPAC.Migration.ForcingOpenCode
 import PPAC.Migration.InternalMPProof
+import PPAC.Migration.InternalProofOperations
