@@ -35,3 +35,5 @@
 内部Con精确规格见OBJECT_TARGET；原1–11阶段表及执行入口见AGENT_WORKFLOW；逐声明来源与依赖见SOURCE_LOCK。旧批进度在Git及相应验收报告中，不作为当前待办。
 
 当前批统一公理闭类型：`OriginalAxiomTyping.table_typed`覆盖实际原ZF/U公理表的全部内部正文／次数；`actual_theory_matrix_typed`直接消费原六规则theoryShape有界查询，`kernel_certificate`给出普通nativeZF原核闭句。全部旧足迹不变，无新增依赖。此项不证明统一强迫或最终Con；验收见`verification/original-axiom-typing-acceptance.json`。
+
+当前内部Con入口：`InternalConsistency.nativeCon`使用同一实际完整公理测试、六规则根和准确falsum码，`goal`为对象Con蕴含；`reduction`量化全部内部／非标准矛盾证明码。`closing_kernel_certificate`仅证明原核中的`reduction → goal`。精确归约与最终目标仍未证明；完整验收见`verification/internal-consistency-closing-acceptance.json`。

@@ -39,3 +39,9 @@ Proof_T不限制外部标准证明码；内部非标准ω、语法与序列也�
 - 原ReducedProofPresentation／PureProvability的ZFC支撑背景和签名必须明确适配到ZF/U，不得直接把它们当成本目标的专用检查器。
 - 完整公理码测试须覆盖七固定公理与任意参数／正文的Separation／Collection，以及目标三句；六规则及二十七逻辑模式的作用域、替换和前驱必须保持原规格。
 - 已有成果和真正未闭合项只在STATUS和原阶段表维护；完整数学公理模式、L解释或既有递归不能因某个消费者未接通而重新列作待证。
+
+## 当前实际句子与唯一逻辑封闭门
+
+`PPAC/Migration/InternalConsistency.lean` 的 `nativeCon false/true` 分别使用实际完整原ZF/U公理测试及原六规则根关系定义Con，`goal`准确为二者的对象蕴含。`contradiction`内部存在量化准确的原生falsum码；`inconsistentAt`量化全部内部ω上的证明码，未限制外部标准性。
+
+`reduction`是纯对象闭句：对同一内部ω中的每个U矛盾证明码p，存在其中一个ZF矛盾证明码q。`closing_kernel_certificate`在原nativeZF核中证明`reduction → goal`，通过同一ω见证消去全部存在量词，没有新增选择前提。该封闭门不证明`reduction`，也不是最终`Derives nativeZF [] goal`；两者仍未验收。下一主线应证明此精确归约句，不能把封闭门的条件当作已完成。

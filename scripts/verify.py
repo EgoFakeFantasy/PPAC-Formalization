@@ -2648,7 +2648,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('project_native_renaming', 'ProjectNativeRenaming', 5),
                                 ('schema_matrix_quotation', 'SchemaMatrixQuotation', 7),
                                 ('schema_axiom_quotation', 'SchemaAxiomQuotation', 6),
-                                ('original_axiom_typing', 'OriginalAxiomTyping', 6)):
+                                ('original_axiom_typing', 'OriginalAxiomTyping', 6),
+                                ('internal_consistency_closing', 'InternalConsistency', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

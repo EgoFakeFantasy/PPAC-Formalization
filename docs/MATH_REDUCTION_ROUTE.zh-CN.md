@@ -18,3 +18,5 @@
 NatPacket／字节兼容、外部泛滤选择、atomic_truth支线、独立L重建、GCH特化及退役反射均不恢复。固定OpenAI的宿主一致性证明边界见[可行性审查](FEASIBILITY.zh-CN.md)；本工程仍须取得上述更强的对象层内部Con推导，不能用源Lean类型冒充。
 
 内部化边界：上述“统一正确性／强迫”是对全部内部码的句法归约和可检查证明证书的正确性，不能要求一个表达全宇宙全部公式真值的统一谓词。若消费现成TarskiTruth／Sat，只能按其实际集合结构和支撑理论合同使用，不能把其定义公理或ZFC支撑直接视为nativeZF定理。实际公理表的统一闭类型已经由OriginalAxiomTyping接入原theoryShape，不再单列为未完成。
+
+实际最终消费者现为`InternalConsistency.goal`。剩余内部码归约句已固定为`InternalConsistency.reduction`，并已取得普通nativeZF原核中的`reduction → goal`证书；这只消去最终逻辑封闭步骤，不消去该归约句的数学证明义务。

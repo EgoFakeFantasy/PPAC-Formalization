@@ -38790,3 +38790,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.OriginalAxiomTyping.actual_theory_matrix_typed
 #print axioms PPAC.Migration.OriginalAxiomTyping.sentence
 #print axioms PPAC.Migration.OriginalAxiomTyping.kernel_certificate
+#print axioms PPAC.Migration.InternalConsistency.contradiction
+#print axioms PPAC.Migration.InternalConsistency.inconsistentAt
+#print axioms PPAC.Migration.InternalConsistency.inconsistent
+#print axioms PPAC.Migration.InternalConsistency.con
+#print axioms PPAC.Migration.InternalConsistency.reduction
+#print axioms PPAC.Migration.InternalConsistency.nativeCon
+#print axioms PPAC.Migration.InternalConsistency.goal
+#print axioms PPAC.Migration.InternalConsistency.closing_kernel_certificate
