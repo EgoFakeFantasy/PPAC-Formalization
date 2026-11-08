@@ -38886,3 +38886,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGuardCode.uniqueOutput
 #print axioms PPAC.Migration.ForcingGuardCode.uniqueSentence
 #print axioms PPAC.Migration.ForcingGuardCode.unique_kernel_certificate
+#print axioms PPAC.Migration.ForcingNegCode.compiled
+#print axioms PPAC.Migration.ForcingNegCode.compiled_rename
+#print axioms PPAC.Migration.ForcingNegCode.existsCompiled
+#print axioms PPAC.Migration.ForcingNegCode.total
+#print axioms PPAC.Migration.ForcingNegCode.compiled_type
+#print axioms PPAC.Migration.ForcingNegCode.unique
+#print axioms PPAC.Migration.ForcingNegCode.uniqueOutput
+#print axioms PPAC.Migration.ForcingNegCode.fiber
+#print axioms PPAC.Migration.ForcingNegCode.fiber_total
+#print axioms PPAC.Migration.ForcingNegCode.sentence
+#print axioms PPAC.Migration.ForcingNegCode.uniqueSentence
+#print axioms PPAC.Migration.ForcingNegCode.kernel_certificate
+#print axioms PPAC.Migration.ForcingNegCode.unique_kernel_certificate

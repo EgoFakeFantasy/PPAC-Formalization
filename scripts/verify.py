@@ -2654,7 +2654,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 15),
                                 ('forcing_condition_rebind', 'ForcingConditionRebind', 19),
-                                ('forcing_guard_code', 'ForcingGuardCode', 21)):
+                                ('forcing_guard_code', 'ForcingGuardCode', 21),
+                                ('forcing_neg_code', 'ForcingNegCode', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7281,6 +7282,8 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_literal_guard_code_total_typed_unique_proved": True,
         "object_forcing_actual_negative_branch_rebind_and_bound_guard_inputs_proved": True,
         "object_forcing_literal_guard_scope": "Exact membership/order templates, fixed external R/free parameter count, arbitrary internal target bounds/term/candidates; both guards at an actually constructed bvar0 and actual consumption of child rebind. Not the outer neg/ex constructor, full recursion, uniform internal axiom forcing, Proof/Con reduction or final goal.",
+        "object_forcing_complete_literal_negative_code_step_total_typed_unique_proved": True,
+        "object_forcing_negative_step_scope": "Actual rebind/head/guards and literal ALL/IMP/IMP/IMP/BOT on an already interpreted arbitrary internal child code; all execution witnesses constructed, independent candidates unique. Exact object numeral condition slot n+1 and free scope n+2 for fixed R. Not the full raw recursive compiler, uniform axiom forcing or final Proof/Con reduction.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

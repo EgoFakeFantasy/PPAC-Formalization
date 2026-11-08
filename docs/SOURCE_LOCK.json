@@ -161976,6 +161976,110 @@
           "propext"
         ]
       }
+    },
+    "forcing_neg_code": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingNegCode.lean",
+      "source_declarations": [
+        "AtomicData.Force, exact negative branch: forall q <= p, not Force child at q",
+        "Existing ForcingFormula.basic negative branch literal ALL/IMP/IMP/IMP/BOT target"
+      ],
+      "consumers": [
+        "Full internal forcing-code recursive dispatcher at its negative step",
+        "InternalConsistency.reduction after remaining internal forcing/axiom/proof interpretation"
+      ],
+      "reuse_producers": [
+        "ForcingConditionRebind complete actual mixed condition rebind",
+        "ForcingGuardCode actual membership/order template code constructors and uniqueness",
+        "Existing SyntaxMixedImageHead actual object-existential bvar0",
+        "Existing FormulaCodeConstructors nullary false / binary2 / universal and SyntaxConstructors unique; no new syntax backend",
+        "Original Source.Derives, TheoryTransport, nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingConditionRebind.lean": "a36d20a8d069bc777034195f7941c9835150a47f39107ce6bdf84198522803d0",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
+      },
+      "scope": "Complete one-step literal negative code operation on an arbitrary internal already-interpreted child code N. Actual rebind, new condition, both guards, falsum, three implications and forall code are all constructed/eliminated in object EX. Arbitrary internal/nonstandard bound scopes, child and output candidates; source target A is successor(a). Fixed external R and its parameter count give object numeral f=n+2 and exact current-condition free slot j=n+1. Independent executions have the same typed output. Not a raw all-constructor recursive compiler, uniform coded axiom forcing, Proof/contradiction reduction, or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegCode.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.compiled_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.fiber_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.uniqueSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.unique_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

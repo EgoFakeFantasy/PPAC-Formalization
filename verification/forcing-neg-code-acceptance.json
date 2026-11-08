@@ -1,0 +1,218 @@
+{
+  "verified_at": "2026-11-08T16:09:43.758368+00:00",
+  "baseline_commit": "a0945cd2fb2e950ade0d99f0ef6a32cae11832df",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declaration": "ForcingQuotient.AtomicData.Force negative branch; literal native ALL/IMP/IMP/IMP/BOT recipe",
+  "object_result": "Ordinary nativeZF constructs a typed unique code for the complete one-step literal negative forcing operation. Every new bound condition, child rebind, membership/order guard, falsum, three implications and forall output is constructed and eliminated in object EX. Independent head/guard/rebind/constructor executions yield the same code.",
+  "endpoints": [
+    "PPAC.Migration.ForcingNegCode.kernel_certificate",
+    "PPAC.Migration.ForcingNegCode.unique_kernel_certificate"
+  ],
+  "explicit_parents": [
+    "Omega(w)",
+    "successor(A,a)",
+    "Num_(n+2)(f)",
+    "Num_(n+1)(j), the exact free condition slot",
+    "FormulaCode(w,N,a,f), an already interpreted child code"
+  ],
+  "eliminated_witnesses": [
+    "empty and bvar0 head",
+    "actual child rebind code/output",
+    "both literal guard code/output executions",
+    "falsum constructor output",
+    "all three actual implication outputs",
+    "actual forall constructor output"
+  ],
+  "reuse": [
+    "ForcingConditionRebind total/type/independent uniqueness",
+    "ForcingGuardCode total/type/independent uniqueness",
+    "Existing SyntaxMixedImageHead",
+    "Existing FormulaCodeConstructors.nullary false / binary2 / universal, and SyntaxConstructors.unique",
+    "Original finite Source.Derives and nativeZF TheoryTransport/ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audit_passed": true,
+    "audited_declarations": 38233,
+    "new_public_declarations": 13,
+    "all_prior_38220_footprints_unchanged": true,
+    "all_old_proof_module_hashes_unchanged": true,
+    "changed_prior_input_hashes": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "input_hashes": 2822,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "actionlint_exit": 0,
+    "build_log_last_lines": [
+      "✔ [3265/3266] Built PPAC (9.5s)",
+      "Build completed successfully (3266 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "arbitrary_internal_including_nonstandard_bound_scopes_and_child_output_candidates": true,
+    "R_fixed_external_formula_scheme": true,
+    "free_scope_and_current_condition_slot_exact_object_numerals": true,
+    "complete_one_step_negative_code_operation": true,
+    "child_is_already_interpreted_formula_code_not_raw_negative_input": true,
+    "all_raw_constructor_recursive_forcing_interpreter_complete": false,
+    "existential_code_step_complete": false,
+    "uniform_internal_axiom_forcing_complete": false,
+    "all_internal_Proof_contradiction_reduction_complete": false,
+    "final_internal_Con_goal_proved": false,
+    "new_object_axioms": false,
+    "new_foundation_backend": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-draft.lean",
+      "size": 37008,
+      "sha256": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-build.log",
+      "size": 103,
+      "sha256": "eec8ace074dc980de2ea6759021197a5605872326a872266ad993f09d394d1f4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-audit.lean",
+      "size": 776,
+      "sha256": "4f00de18baf602caf598da262b7f6723859df49e8b44cc300c3397fe05151326"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-audit.log",
+      "size": 2209,
+      "sha256": "6e2c41fe3e5baf85bbe21de7ec33b2d630628619c3d334ea899b28730494b5c3"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-parent-summary.json",
+      "size": 14763916,
+      "sha256": "34748aca2b231804521ddc4911846d0a74b06cfe683e4c8f698b7ea855521bc3"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-source-preflight.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-full-verify.log",
+      "size": 153,
+      "sha256": "e0290ec5cd62556124984440b86f39beb06626791783341dcd84d23495117db6"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding CI must succeed before next normal push",
+    "preceding_run": 42492087042,
+    "guard_job": 128766454058,
+    "guard_conclusion": "success",
+    "native_job": 128766565151,
+    "native_last_observed_status": "in_progress",
+    "full_original_comparator_accepted": false
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}
