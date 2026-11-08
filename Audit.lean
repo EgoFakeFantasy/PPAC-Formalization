@@ -38562,3 +38562,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingReverseInjection.sentence
 #print axioms PPAC.Migration.ForcingReverseInjection.models
 #print axioms PPAC.Migration.ForcingReverseInjection.kernel_certificate
+#print axioms PPAC.Migration.ForcingTargetTheory.forces_target
+#print axioms PPAC.Migration.ForcingTargetTheory.allForces
+#print axioms PPAC.Migration.ForcingTargetTheory.allForces_freeClosed
+#print axioms PPAC.Migration.ForcingTargetTheory.allForces_semantics
+#print axioms PPAC.Migration.ForcingTargetTheory.sentence
+#print axioms PPAC.Migration.ForcingTargetTheory.models
+#print axioms PPAC.Migration.ForcingTargetTheory.kernel_certificate

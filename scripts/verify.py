@@ -2631,7 +2631,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_slice_candidate', 'ForcingSliceCandidate', 12),
                                 ('forcing_slice_assembly', 'ForcingSliceAssembly', 18),
                                 ('forcing_slice_presentation', 'ForcingSlicePresentation', 5),
-                                ('forcing_reverse_injection', 'ForcingReverseInjection', 5)):
+                                ('forcing_reverse_injection', 'ForcingReverseInjection', 5),
+                                ('forcing_target_theory', 'ForcingTargetTheory', 7)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6211,7 +6212,10 @@ def main(source_check_only: bool = False) -> None:
         "source_Main_all_set_reverse_injection_dense_complete": True,
         "source_Main_actual_full_PP_forced_on_same_Core": True,
         "source_Main_PP_requires_no_dense_or_surjection_oracle": True,
-        "source_Main_forces_target_complete": False,
+        "source_Main_forces_target_complete": True,
+        "source_Main_target_axiom_schema_native_kernel_existence_complete": True,
+        "source_Main_target_schema_index_is_external": True,
+        "source_Main_target_uniform_internal_coded_axiom_forcing_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage9 model applications and actual PP are complete in ForcingReverseInjection. forces_target/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
         "source_initial_base_left_cancel_conical_unit_and_generator_proved": True,

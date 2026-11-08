@@ -1,5 +1,13 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
+## 当前验收：完整目标理论公理装配（2026-11-08）
+
+ForcingTargetTheory 逐源迁移 Main.forces_target:156–163：直接复用完整 forces_ZF 模式与实际 forces_PP／forces_ACwo／forces_not_AC，所有结论使用同一实际 Core 和全部内部条件。kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的实际40集合存在句，同时保留 PP、ACwo、¬AC 强迫及任意选定源目标公理／模式；不增加系统、稠密性、模型存在或外层 Choice 前提。
+
+本批全量验收以 verification/target-theory-acceptance.json 为准，报告生成前只算局部通过。原第10阶段的 forces_target 装配已接通；逐模式外部索引明确保留，这不是全部内部公式／非标准证明码的统一正确性。真正剩余为 Main 的全内部 Proof/Con 传输、原第4完整 Comparator、第11最终原核 Con 主句及干净复现。L/ZFC解释、全部公理模式、实际系统、呈现、切片与PP均已完成，不再列为从头重做任务。
+
+已复核底座 ReducedProofPresentation/PureProvability：前者实际背景为 intrinsic_zfc_theory 支撑理论，不能未经对应证明直接当 nativeZF/U 检查器；本仓已有六节点、27逻辑模式、语法变换、固定公理测试及证明树接口仍保留复用。当前验收不宣称专用ZF/U完整公理测试或全部内部Proof/Con已完成。以下旧批段落按历史记录读取，当前状态以本段及原阶段表为准。
+
 ## 当前验收：全集合反向单射及实际 PP（2026-11-08）
 
 ForcingReverseInjection 逐源迁移固定 Main.reverse_injection_dense:133–148、forces_PP_of_dense:90–121 与 forces_PP:151–152。非空分支复用已完成 ordinal_presentation，实际构造内部序数、check／Cartesian 名字、HS 满射及五名字父支撑，再消费 presentation_reverse_injection；空分支复用原满射 onto 与 empty_domain_injection。保留所有内部条件、集合、全秩 HS 名字与完整 functionOn／无杂项子句。

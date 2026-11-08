@@ -1,5 +1,13 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
+## 当前验收：完整目标理论公理装配（2026-11-08）
+
+ForcingTargetTheory 逐源迁移 Main.forces_target:156–163：直接复用完整 forces_ZF 模式与实际 forces_PP／forces_ACwo／forces_not_AC，所有结论使用同一实际 Core 和全部内部条件。kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的实际40集合存在句，同时保留 PP、ACwo、¬AC 强迫及任意选定源目标公理／模式；不增加系统、稠密性、模型存在或外层 Choice 前提。
+
+本批全量验收以 verification/target-theory-acceptance.json 为准，报告生成前只算局部通过。原第10阶段的 forces_target 装配已接通；逐模式外部索引明确保留，这不是全部内部公式／非标准证明码的统一正确性。真正剩余为 Main 的全内部 Proof/Con 传输、原第4完整 Comparator、第11最终原核 Con 主句及干净复现。L/ZFC解释、全部公理模式、实际系统、呈现、切片与PP均已完成，不再列为从头重做任务。
+
+已复核底座 ReducedProofPresentation/PureProvability：前者实际背景为 intrinsic_zfc_theory 支撑理论，不能未经对应证明直接当 nativeZF/U 检查器；本仓已有六节点、27逻辑模式、语法变换、固定公理测试及证明树接口仍保留复用。当前验收不宣称专用ZF/U完整公理测试或全部内部Proof/Con已完成。以下旧批段落按历史记录读取，当前状态以本段及原阶段表为准。
+
 ## 当前验收：全集合反向单射及实际 PP（2026-11-08）
 
 ForcingReverseInjection 逐源迁移固定 Main.reverse_injection_dense:133–148、forces_PP_of_dense:90–121 与 forces_PP:151–152。非空分支复用已完成 ordinal_presentation，实际构造内部序数、check／Cartesian 名字、HS 满射及五名字父支撑，再消费 presentation_reverse_injection；空分支复用原满射 onto 与 empty_domain_injection。保留所有内部条件、集合、全秩 HS 名字与完整 functionOn／无杂项子句。
@@ -60,7 +68,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | reverse_injection_dense→forces_PP已接通；最终内部Con规格固定，专用内部检查器尚未闭合 | 接forces_target／Main；复用既有ZF/U ProofSat，在ZF内证明全部内部及非标准矛盾证明码归约与最终Con蕴含 |
+| 10 | 原 Main 全局装配与对象内部化 | reverse_injection_dense→forces_PP→forces_target已接通；每个完整源目标公理／模式在同一实际系统上有普通nativeZF原核L相对化存在证书 | 外部模式索引保留；复用既有ZF/U ProofSat，在ZF内完成全部内部及非标准证明码的正确性／矛盾码归约及内部Con蕴含；不以逐实例证书替代 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## Agent 执行入口

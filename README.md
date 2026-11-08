@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-当前进入原第10阶段。第8同一具体系统及第9源模型应用链已接通；最新 ForcingReverseInjection 在普通nativeZF原推导核中证明同一内部L上的全集合稠密反向单射与实际完整PP强迫，复用已完成的呈现／切片／支撑／空域模块，保留全部内部条件、集合和全秩名字。PP只假设同一Core与p∈P，无给定稠密性或满射前提。当前剩余forces_target／Main、全部内部及非标准Proof/Con、第11终验和原第4 Comparator。**最终对象Con未证明。** 本批全量验收以verification/reverse-injection-acceptance.json为准，报告生成前仅局部通过。当前精确状态以以下文档为准：
+当前进入原第10阶段。第8同一具体系统及第9源模型应用链已接通；最新 ForcingReverseInjection 在普通nativeZF原推导核中证明同一内部L上的全集合稠密反向单射与实际完整PP强迫，复用已完成的呈现／切片／支撑／空域模块，保留全部内部条件、集合和全秩名字。PP只假设同一Core与p∈P，无给定稠密性或满射前提。完整forces_target目标公理装配现也已取得同一实际系统的普通nativeZF原核L相对化存在证书（保留外部模式索引）。当前剩余Main的全部内部及非标准Proof/Con、第11终验和原第4 Comparator。**最终对象Con未证明。** 本批全量验收以verification/target-theory-acceptance.json为准，报告生成前仅局部通过。当前精确状态以以下文档为准：
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

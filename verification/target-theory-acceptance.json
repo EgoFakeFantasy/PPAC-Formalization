@@ -1,0 +1,222 @@
+{
+  "verified_at": "2026-11-08T16:24:07.781225+11:00",
+  "baseline_commit": "265e1190d8779ac8b5714fab5da63be80249b768",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingTargetTheory.kernel_certificate"
+  ],
+  "actual_source_result": "Exact Main.forces_target:156-163 targetTheory membership split, reusing full ZF forcing schemas and ACTUAL PP/ACwo/notAC on the SAME actual Core at EVERY internal condition.",
+  "scope": {
+    "ordinary_nativeZF_original_Derives": true,
+    "same_completed_internal_L_relative": true,
+    "actual_forty_set_system_exists": true,
+    "same_Core_for_selected_axiom_PP_ACwo_notAC": true,
+    "every_internal_condition_and_unrestricted_HS_rank": true,
+    "full_separation_replacement_parameter_schemas_retained": true,
+    "external_source_axiom_schema_indices_retained": true,
+    "supplied_Core_dense_or_forcing_conclusion_in_native_endpoint": false,
+    "added_outer_Choice_order_model_existence_or_inaccessible": false,
+    "new_L_axiom_schema_arithmetic_proof_kernel_or_truth_foundation": false,
+    "uniform_all_internal_coded_axiom_forcing": false,
+    "all_internal_nonstandard_Proof_Con_transfer": false,
+    "original_full_Comparator": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "ForcingZFAxioms.forces_ZF with ALL original schemas",
+    "ForcingReverseInjection.forces_PP on SAME Core",
+    "ForcingActualOrdinalChoice.on_core and ForcingChoiceFailure.on_core",
+    "Existing concrete-system construct, normal filter, product preorder",
+    "Existing SAME L/Choice/l_order, relative_models and ModelTransfer"
+  ],
+  "existing_foundation_review": {
+    "internal_Truth_TruthRules_TruthSyntax_already_in_companion_closure": true,
+    "existing_Proof_tree_and_27_logical_modes_and_arithmetic_retained": true,
+    "ReducedProofPresentation_background_is_intrinsic_zfc_theory": true,
+    "PureProvability_has_pure_ZFC_support_transfer": true,
+    "these_are_existing_foundations_not_unproved_mathematics": true,
+    "current_ZF_U_specialization_and_internal_code_transport_not_claimed_complete": true,
+    "retired_reflection_or_Packet_reader_restored": false
+  },
+  "acceptance": {
+    "audited_declarations": 37909,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35653,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingTargetTheory.allForces",
+      "PPAC.Migration.ForcingTargetTheory.allForces_freeClosed",
+      "PPAC.Migration.ForcingTargetTheory.allForces_semantics",
+      "PPAC.Migration.ForcingTargetTheory.forces_target",
+      "PPAC.Migration.ForcingTargetTheory.kernel_certificate",
+      "PPAC.Migration.ForcingTargetTheory.models",
+      "PPAC.Migration.ForcingTargetTheory.sentence"
+    ],
+    "old_footprints_unchanged": 37902,
+    "old_module_review": {
+      "modules": 2623,
+      "unchanged_canonical": 2623,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2795,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3237,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "cross_platform_tests": 5,
+    "three_clean_pins_and_75_OpenAI_source_hashes_pass": true
+  },
+  "cleanup": {
+    "files": [
+      {
+        "sha256": "a5385fa23d46ad7db23c3b8f7eb3c00d1f762e7cf017e2ede2f1cce703fb51f4",
+        "path": "verification/target-theory-build.log",
+        "length": 107
+      },
+      {
+        "sha256": "f05040fb6ad62c3c4a3c0829bd237a5b02db3fb944629ca0ba7dc8319b1e4bd6",
+        "path": "verification/target-theory-local-axioms.log",
+        "length": 13088
+      },
+      {
+        "sha256": "9b04c7d25dcbf0c8c27c55445c79b362e256d6a572df1c9dbb72d2868e2a56b5",
+        "path": "verification/target-theory-baseline.tmp.json",
+        "length": 14482208
+      },
+      {
+        "sha256": "bea7b50f1d74c5f9f2ab90d4cfdc4c3801ab885c22822e42b71c3fe849e4f3e4",
+        "path": "verification/target-theory-full-verify.log",
+        "length": 153
+      },
+      {
+        "sha256": "7b2dc3b3d2170c61189d7bac7ede0cbdc66f29fd11a65b62947510fbcdc26a39",
+        "path": ".local/TargetTheoryAudit.lean",
+        "length": 485
+      }
+    ],
+    "only_current_owned_plain_untracked_files": true,
+    "recursive_delete": false,
+    "pending": false,
+    "all_removed": true
+  },
+  "post_cleanup": {
+    "pending": false,
+    "build_command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "build_exit_code": 0,
+    "build_jobs": 3237,
+    "all_2795_live_hashes_match_full_acceptance": true,
+    "remaining_Lean_Lake_processes": 0
+  },
+  "remaining": [
+    "Original Main object-internal ALL INTERNAL/nonstandard Proof/Con transport using existing ZF/U infrastructure",
+    "Original stage4 full Comparator, distinct from original Main 8998-job build and five trust=0 endpoint audits already passed",
+    "Original stage11 final object-native Con implication and clean-checkout final reproduction"
+  ],
+  "publication": {
+    "current_batch_remote_pass_claimed": false,
+    "previous_run_id": 42449624248,
+    "previous_job_id": 128635852922,
+    "previous_run_status_at_check": "in_progress",
+    "hold_next_push_until_previous_run_terminal": true
+  }
+}

@@ -14393,4 +14393,10 @@ example {k : Nat} (root : Fin 40 → Fin k) (f X Y p : Fin k) :
       (ForcingReverseInjection.sentence root f X Y p))) :=
   ForcingReverseInjection.kernel_certificate root f X Y p
 
+-- EVERY full source target axiom/schema, with one actual common system.
+example (phi : Source.Sentence) (hphi : Source.SetLanguage.targetTheory phi) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ConstructibleGround.relative (ForcingTargetTheory.sentence phi))) :=
+  ForcingTargetTheory.kernel_certificate phi hphi
+
 end PPAC.Migration.Step4Checks
