@@ -1,0 +1,244 @@
+{
+  "verified_at": "2026-11-08T17:54:12.593121+11:00",
+  "baseline_commit": "f69931b99f1688583f5367b769fb075ec1f080e2",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaAxiomCompilation.kernel_certificate",
+    "PPAC.Migration.SchemaAxiomCompilation.schema_kernel_certificate"
+  ],
+  "actual_object_result": "Original nativeZF Derives constructs actual compilation and typed recursive renaming at all three original schema sites, then supplies original Separation/Collection shell and WHOLE internal-count forall closure from the same raw Project source body. All compiler/map/code/identity/matrix/core/output/trace witnesses are inside the object proof.",
+  "explicit_parents": [
+    "omega w",
+    "count is an internal natural",
+    "empty zero",
+    "original four successor-scope chain",
+    "raw Project body valid at the original source scope with no free variables"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_counts_and_raw_bodies": true,
+    "actual_three_original_renaming_sites_constructed": true,
+    "same_raw_body_for_both_collection_outputs": true,
+    "original_unchanged_schema_templates_consumed": true,
+    "actual_whole_closure_trace_constructed": true,
+    "individual_renamed_matrix_target_typing": true,
+    "given_compiler_map_renamed_tuple_core_or_output": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "full_assembled_output_typing_and_unique_integration": false,
+    "full_ZF_U_certificate_tag_and_row_test": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Existing ProjectCompilerComplete and retained ProjectCompilerUniqueFiber",
+    "Existing SchemaIndexGraphExistence and three original index/rename systems",
+    "Existing SyntaxMapCodeExistence and SyntaxIdentityCode",
+    "Existing SyntaxRenameJudgment with actual recursive output and target typing",
+    "Accepted SchemaAxiomAssembly and its original unchanged native SchemaTemplate consumer"
+  ],
+  "acceptance": {
+    "audited_declarations": 37955,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35699,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaAxiomCompilation.compiledBody",
+      "PPAC.Migration.SchemaAxiomCompilation.compiledMatrix",
+      "PPAC.Migration.SchemaAxiomCompilation.compiledMatrix_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.compiled_target_type",
+      "PPAC.Migration.SchemaAxiomCompilation.existsCompiled",
+      "PPAC.Migration.SchemaAxiomCompilation.existsCompiled_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.existsRenamed",
+      "PPAC.Migration.SchemaAxiomCompilation.existsRenamed_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.existsSchema",
+      "PPAC.Migration.SchemaAxiomCompilation.existsSchema_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.exists_compiled",
+      "PPAC.Migration.SchemaAxiomCompilation.exists_renamed",
+      "PPAC.Migration.SchemaAxiomCompilation.firstSite",
+      "PPAC.Migration.SchemaAxiomCompilation.kernel_certificate",
+      "PPAC.Migration.SchemaAxiomCompilation.renamedBody",
+      "PPAC.Migration.SchemaAxiomCompilation.renamedBody_lift",
+      "PPAC.Migration.SchemaAxiomCompilation.renamedMatrix",
+      "PPAC.Migration.SchemaAxiomCompilation.renamedMatrix_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.renamed_target_type",
+      "PPAC.Migration.SchemaAxiomCompilation.schemaBody",
+      "PPAC.Migration.SchemaAxiomCompilation.schemaBody_lift",
+      "PPAC.Migration.SchemaAxiomCompilation.schemaResult",
+      "PPAC.Migration.SchemaAxiomCompilation.schemaResult_rename",
+      "PPAC.Migration.SchemaAxiomCompilation.schema_kernel_certificate",
+      "PPAC.Migration.SchemaAxiomCompilation.schema_output_exists",
+      "PPAC.Migration.SchemaAxiomCompilation.schema_sentence",
+      "PPAC.Migration.SchemaAxiomCompilation.schema_source_certificate",
+      "PPAC.Migration.SchemaAxiomCompilation.sentence",
+      "PPAC.Migration.SchemaAxiomCompilation.source_certificate"
+    ],
+    "old_footprints_unchanged": 37926,
+    "old_module_review": {
+      "modules": 2625,
+      "unchanged_canonical": 2625,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2797,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3245,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_regression_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75
+  },
+  "remote_CI": {
+    "run_id": 42449624248,
+    "job_id": 128635852922,
+    "commit": "265e1190d8779ac8b5714fab5da63be80249b768",
+    "last_observed_status": "completed",
+    "conclusion": "success",
+    "actual_audited_declarations": 37902,
+    "warnings": 0,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75,
+    "cross_platform_tests_passed": 5,
+    "publication_policy": "Previous remote run terminal and successful, including actual full audit logs; publish only fully accepted local commits on migration branch."
+  },
+  "cleanup": {
+    "recursive_deletion": false,
+    "exact_plain_task_files": [
+      {
+        "bytes": 111,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-compilation-build.log",
+        "path": "verification/schema-compilation-build.log",
+        "sha256": "b5cc39e75be2e3868fd57ce08e04a9d954e0f4765cda5b6955ad031e344918bc"
+      },
+      {
+        "bytes": 4127,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-compilation-local-axioms.log",
+        "path": "verification/schema-compilation-local-axioms.log",
+        "sha256": "5fce2d5d46c95f16b1487d3cd89aefeda81ca8c9a5bc2956364e43e8671d0662"
+      },
+      {
+        "bytes": 14832353,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-compilation-baseline.tmp.json",
+        "path": "verification/schema-compilation-baseline.tmp.json",
+        "sha256": "0d4e6bd3e07b40423135825785d9cd2140390e5929a199da17f77873f32782c5"
+      },
+      {
+        "bytes": 153,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\schema-compilation-full-wrapper.log",
+        "path": "verification/schema-compilation-full-wrapper.log",
+        "sha256": "d45a80da1c86e048505d77aee3cc273540500169f0ec4e1f671b0de83f66f9d7"
+      },
+      {
+        "bytes": 2050,
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SchemaCompilationAudit.lean",
+        "path": ".local/SchemaCompilationAudit.lean",
+        "sha256": "dcf816ecfa60f271576f1fdc0385aa84779498e434f0bcea5ce4f26b72832402"
+      }
+    ],
+    "removed_files": 5,
+    "other_projects_or_applications_touched": false
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3245,
+    "current_source_hashes_verified": 2797,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false
+  }
+}

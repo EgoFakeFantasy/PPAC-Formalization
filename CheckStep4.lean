@@ -14404,4 +14404,10 @@ example {m : Nat} (collection : Bool) (w count : Fin m) (v : Fin 3 → Fin m) :
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomAssembly.sentence collection w count v)) :=
   SchemaAxiomAssembly.kernel_certificate collection w count v
 
+-- Actual raw original schema input supplies all compiled/renamed matrices and closure.
+example {m : Nat} (collection : Bool) (w count z body : Fin m) (scopes : Fin 4 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence
+      (SchemaAxiomCompilation.schema_sentence collection w count z body scopes)) :=
+  SchemaAxiomCompilation.schema_kernel_certificate collection w count z body scopes
+
 end PPAC.Migration.Step4Checks

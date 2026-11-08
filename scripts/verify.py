@@ -2633,7 +2633,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_slice_presentation', 'ForcingSlicePresentation', 5),
                                 ('forcing_reverse_injection', 'ForcingReverseInjection', 5),
                                 ('forcing_target_theory', 'ForcingTargetTheory', 7),
-                                ('schema_axiom_assembly', 'SchemaAxiomAssembly', 17)):
+                                ('schema_axiom_assembly', 'SchemaAxiomAssembly', 17),
+                                ('schema_axiom_compilation', 'SchemaAxiomCompilation', 29)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7474,6 +7475,9 @@ def main(source_check_only: bool = False) -> None:
         'object_fixed_axiom_test_witnesses_object_eliminated': True,
         'object_actual_schema_shell_and_all_internal_count_closure_output_exists_unique': True,
         'object_schema_shell_exact_native_quotation_for_every_original_matrix': True,
+        'object_original_schema_raw_body_actual_compilation_and_three_renaming_sites_proved': True,
+        'object_original_schema_raw_body_to_shell_and_all_internal_closure_output_exists': True,
+        'object_original_schema_full_output_type_unique_integration_proved': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 
         'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,
