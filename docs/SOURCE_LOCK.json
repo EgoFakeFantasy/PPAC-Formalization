@@ -162599,6 +162599,217 @@
           "propext"
         ]
       }
+    },
+    "forcing_code_step": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingCodeStep.lean",
+      "source_declarations": [
+        "Formula.toBasic and AtomicData.Force: concrete eleven-native-constructor dispatch using the fixed source normalization",
+        "Actual child calls use strictly smaller parsed raw code fields and actual internally encoded scope/output states"
+      ],
+      "consumers": [
+        "Original ordinal-recursion set-valued table for the complete internal forcing-code interpreter",
+        "InternalConsistency.reduction after remaining uniform coded axiom/proof interpretation"
+      ],
+      "reuse_producers": [
+        "Existing four-way ForcingAtomCode, complete ForcingNegCode and ForcingExistCode, and all ForcingLogicalCode native operations",
+        "Original FormulaCodeRecursive.recursive_iff and FormulaCodeCaseLogic.all_imp over all eleven native constructors",
+        "Existing SyntaxForestSyntax two-field state, SyntaxForests.exists_forest and SyntaxForestInjective.input_eq",
+        "Original object EX/equality rules and TheoryTransport/nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
+        "PPAC/Migration/ForcingAtomCode.lean": "d3b8a0776bc2ddaa9e0a8ad1bf0ffabcb143dd2641eab8382340cd48bc026128",
+        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
+        "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
+        "PPAC/Migration/Internal/FormulaCodeCaseLogic.lean": "deed8a2c2615bf33ae4deb029ad0dd283ea9a138cf336a1066d9d6665eaa89c6",
+        "PPAC/Migration/Internal/SyntaxForests.lean": "c810791580753ef8fbce8d7bf151408eb0f659e42794a29e4c752a293ae56af5",
+        "PPAC/Migration/Internal/SyntaxForestInjective.lean": "74bb327927f81b6aadbb2b691893dd45256887ef333e78e416e6db0eeea37751"
+      },
+      "scope": "Concrete full raw dispatch over all eleven native constructors; source free range is the internal empty zero, source bound scopes and raw/output codes may be nonstandard. All parsed fields, history child results and operation outputs are object witnesses. Closure has the explicit object available premise: every strictly smaller legal child at every internal bound scope has a typed state read from the same history graph. Exact source and target typing, real encoded state construction/read introduction and same-state field recovery are proved. This does not discharge earlier-history availability, prove full recursive output existence/uniqueness, transport arbitrary open six-rule proof nodes, prove uniform coded axiom forcing or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCodeStep.state": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.state_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.read": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.read_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.read_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existsRead": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existsRead_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.available": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.available_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.available_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.binaryData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.binaryData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.binary": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.binary_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.negative": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.negative_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.universal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.universal_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existential": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existential_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.cases": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.step": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.cases_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.step_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existsStep": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.source_type": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.existsState": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.state_exists": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.intro_read": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.state_fields": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.typeSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStep.type_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

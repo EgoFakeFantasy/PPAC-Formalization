@@ -1,0 +1,383 @@
+{
+  "verified_at": "2026-11-08T18:29:24.417822+00:00",
+  "baseline_commit": "28d915fcffb589e03c2a3512eb81cdfa098f82ba",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Concrete complete eleven-native-constructor history dispatch. Actual source fields, history child states and operation outputs are internally existential. Exact source/target typing, real encoded state existence/read introduction and same-state field recovery are proved. The closure theorem retains the exact object available premise.",
+  "endpoints": [
+    "PPAC.Migration.ForcingCodeStep.kernel_certificate",
+    "PPAC.Migration.ForcingCodeStep.type_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the original kernel",
+  "explicit_object_induction_premise": "For every raw child x in the current source code n and every internal bound scope a, FormulaCode(w,x,a,emptyZero) implies existence of a state read from the same history graph. This premise is not yet discharged.",
+  "reuse": [
+    "Existing full native FormulaCodeRecursive/CaseLogic classification",
+    "Existing actual ForcingAtomCode/ForcingNegCode/ForcingExistCode/ForcingLogicalCode",
+    "Existing SyntaxForestSyntax/SyntaxForests/SyntaxForestInjective for two-field internal states",
+    "Original object equality/EX rules and TheoryTransport/nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38339,
+    "new_dispatch_declarations": 36,
+    "all_prior_38303_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "new_kernel_endpoint_footprints_equal_prior_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2831,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.ForcingCodeStep.state": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.state_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.read": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.read_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.read_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existsRead": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existsRead_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.available": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.available_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.available_at": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.binaryData": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.binaryData_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.binary": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.binary_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.negative": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.negative_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.universal": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.universal_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existential": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existential_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.cases": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.step": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.cases_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.step_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existsStep": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.source_type": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeStep.target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.existsState": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.state_exists": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.intro_read": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.state_fields": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.typeSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStep.type_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "build_log_last_lines": [
+      "✔ [3270/3271] Built PPAC (10s)",
+      "Build completed successfully (3271 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "all_eleven_native_constructors_dispatched": true,
+    "actual_strictly_smaller_source_child_fields": true,
+    "arbitrary_internal_including_nonstandard_bound_scopes_and_raw_output_candidates": true,
+    "source_free_scope": "Internal empty zero. This is not a restriction of the final six-rule Proof objective; open nodes still require the existing mixed-substitution/closure route.",
+    "target_free_scope": "Fixed external R/H templates and exact object numerals f=k+2 and condition slot j=k+1.",
+    "object_earlier_history_availability_remains_explicit": true,
+    "closure_actually_constructs_all_operation_outputs": true,
+    "exact_source_and_target_typing": true,
+    "actual_two_field_encoded_state_existence_and_recovery": true,
+    "complete_recursive_interpreter_without_history_premise": false,
+    "global_recursive_output_uniqueness": false,
+    "arbitrary_open_six_rule_proof_node_transport": false,
+    "uniform_internal_coded_axiom_forcing": false,
+    "all_internal_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-build.log",
+      "size": 104,
+      "sha256": "080a4681a49764addef433fdb2850e265db908b637150a672c549e0deba56ec6"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-audit.lean",
+      "size": 2097,
+      "sha256": "2f74c061a02e86f1f3b4f96360260090f5dcbf6b70cc65ed1df1a48fc2006364"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-audit.log",
+      "size": 4453,
+      "sha256": "c65db09568de4d784a6cedece8e4c301185b8a4db1130fcd21c61c13f9a7575a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-parent-summary.json",
+      "size": 14784402,
+      "sha256": "251b858b9d4e6040f081f7fe742936537459579bbab1d66613b137b8cea15782"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-step-full-verify.log",
+      "size": 153,
+      "sha256": "190f24ced8ffab031b82a27d98220a06d1595e6b9455630d9fc40ae99f7ce544"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding entire remote CI succeeded and actual native job logs read; ready for the combined normal push",
+    "preceding_run": 42501489198,
+    "preceding_sha": "db4d19856e349b250123a6546ceb69ff8c1d6a75",
+    "native_job": 128795001419,
+    "native_last_observed_status": "completed",
+    "official_original_comparator_already_accepted_run": 42492087042,
+    "preceding_run_status": "completed",
+    "preceding_run_conclusion": "success",
+    "native_conclusion": "success",
+    "actual_native_pass_line": "2026-11-08T18:28:48.3629987Z PASS: 38255 audited declarations; 2260 without axioms; 35995 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+    "actual_clean_input_log_line": "2026-11-08T16:46:28.6601455Z PASS: all three pinned clean repositories and 75 source hashes; sha256/text-crlf-to-lf/v1"
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

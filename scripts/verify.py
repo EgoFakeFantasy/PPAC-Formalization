@@ -2691,7 +2691,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
                                 ('forcing_exist_code', 'ForcingExistCode', 13),
-                                ('forcing_logical_code', 'ForcingLogicalCode', 20)):
+                                ('forcing_logical_code', 'ForcingLogicalCode', 20),
+                                ('forcing_code_step', 'ForcingCodeStep', 36)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7334,6 +7335,9 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_existential_step_scope": "Actual head, five guards, child binder rescoping, three ANDs, two EXs, two IMPs and final ALL; all outputs constructed internally and independent executions unique. Arbitrary internal already interpreted child at A=a+1, output at a. Fixed external R/H templates and exact numeral parameter/free-condition slots. Not the complete raw recursive interpreter, uniform coded axiom forcing or Proof/Con reduction.",
         "object_forcing_remaining_native_logical_operations_total_typed_unique_proved": True,
         "object_forcing_remaining_logical_operations_scope": "All four native binary tags and native ALL follow the pinned source normalization using actual existing NEG/EX operations and native AND. Every intermediate is constructed and independent executions have one typed output. Child codes/scopes may be internally nonstandard; R/H and free-count/condition numerals are fixed. Complete raw recursion, uniform coded axiom forcing and all internal Proof/Con reduction remain incomplete.",
+        "object_forcing_all_eleven_raw_dispatch_closure_with_explicit_history_availability_proved": True,
+        "object_forcing_raw_dispatch_source_and_target_typing_proved": True,
+        "object_forcing_raw_dispatch_scope": "Actual source fields, strictly smaller child code history reads, and all eleven native operations; every execution is object existential. Earlier-history availability remains an explicit object premise. Source free range is internal empty zero, bound scopes/codes may be nonstandard, target free count/condition slot are fixed numerals. Actual state construction and field recovery are proved. Full recursion/output uniqueness, all open six-rule proof transport, uniform coded axiom forcing and final Con remain incomplete.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

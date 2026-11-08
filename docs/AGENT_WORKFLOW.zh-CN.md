@@ -60,3 +60,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10完整存在码分支：ForcingExistCode实际消费上述既有head／守卫／子码搬移，构造三次AND、两次EX、两次IMP和最外层ALL。源子码在A=a+1，输出在a；内层顺序严格为R(r,q)，新名字0、条件r1与q2保留。所有执行在对象EX内产生，独立执行的带类型输出唯一；R/H为固定外部模板，子码和绑定范围允许内部非标准。普通nativeZF原核端点及完整九项验收均已通过；五项trust=0、零警告，旧证明正文和全部38270项足迹不变，见verification/forcing-exist-code-acceptance.json。完整原始递归、统一内部公理强迫及全部Proof/Con归约仍是未完成门。
 
 原第10的其余原生逻辑操作：ForcingLogicalCode按固定源toBasic规范化接通AND／OR／IMP／IFF及ALL；OR=NEG(AND(NEG左,NEG右))，IMP=NEG(AND(左,NEG右))，IFF为两方向IMP的AND，ALL=NEG(EX(NEG子式))。全部中间码在对象EX内实际生成，输出有准确类型且独立执行唯一；四个普通nativeZF原核端点及完整九项验收均已通过，五项trust=0、零警告；旧证明正文和全部38283项既有足迹不变。已有原子／NEG／EX与本项共同提供全部11种原生构造所需的局部操作；完整原始递归、统一内部公理强迫、全六规则Proof和最终Con仍未完成。实际验收见verification/forcing-logical-code-acceptance.json。
+
+原第10完整原始码单步调度：ForcingCodeStep用原FormulaCodeRecursive／CaseLogic对全部11种原生构造分类，实际消去源码字段，读取同一历史图内编码的(scope,output)状态，并调用已验收原子／NEG／EX／逻辑操作。源／目标准确类型、真实状态码存在、历史读取引入及同状态字段恢复均已证明。闭包端点明确保留对象available前提：对所有严格较小的合法子码及所有内部绑定范围，历史提供结果；未把该前提说成已消去。源free范围为内部空零，绑定范围及码允许非标准；全部开放六规则证明仍需现成混合替换／闭包路径接入。两个原核端点与九项完整验收均已通过，五项trust=0、零警告；旧证明正文和全部38303项既有足迹不变，见verification/forcing-code-step-acceptance.json。完整递归的结果存在／唯一性、统一内部公理强迫和最终Con仍未完成。
