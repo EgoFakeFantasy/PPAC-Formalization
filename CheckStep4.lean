@@ -14318,4 +14318,35 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top O f s A X Y : Fin
       (ForcingSliceGeometry.familySentence rho I K B w G F mul top O f s A X Y)) :=
   ForcingSliceGeometry.family_kernel_certificate rho I K B w G F mul top O f s A X Y
 
+
+-- Actual source slice consumer, ordinary native ZF original kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top s A X O checkedO i ci Bi Cart p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceGraphs.sliceSentence rho I K B w G F S mul top s A X O checkedO i ci Bi Cart p)) :=
+  ForcingSliceGraphs.slice_kernel_certificate rho I K B w G F S mul top s A X O checkedO i ci Bi Cart p
+
+-- Actual source part consumer, ordinary native ZF original kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top O f s A X Y i ci Bi Yi Si p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceGraphs.partSentence rho I K B w G F S mul top O f s A X Y i ci Bi Yi Si p)) :=
+  ForcingSliceGraphs.part_kernel_certificate rho I K B w G F S mul top O f s A X Y i ci Bi Yi Si p
+
+-- Actual source disjoint consumer, ordinary native ZF original kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (G F mul top O f s A X Y i j ci Bi Bj Yi Yj Si Sj p q x : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceGraphs.disjointSentence rho G F mul top O f s A X Y i j ci Bi Bj Yi Yj Si Sj p q x)) :=
+  ForcingSliceGraphs.disjoint_kernel_certificate rho G F mul top O f s A X Y i j ci Bi Bj Yi Yj Si Sj p q x
+
+-- Internal source occurrence cover; all index/name quantifiers retained.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top s f A X Y O checkedO Cart p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceCoverage.occurrenceSentence rho I K B w G F mul top s f A X Y O checkedO Cart p)) :=
+  ForcingSliceCoverage.occurrence_kernel_certificate rho I K B w G F mul top s f A X Y O checkedO Cart p
+
+-- Internal source yCover cover; all index/name quantifiers retained.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top s f A X Y O checkedO Cart p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceCoverage.yCoverSentence rho I K B w G F mul top s f A X Y O checkedO Cart p)) :=
+  ForcingSliceCoverage.yCover_kernel_certificate rho I K B w G F mul top s f A X Y O checkedO Cart p
+
 end PPAC.Migration.Step4Checks

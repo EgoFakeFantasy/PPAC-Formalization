@@ -1,13 +1,12 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：实际切片名字与全内部指标共同支撑（2026-11-08）
+## 当前迁移：切片图满射、互斥与实际名字覆盖（2026-11-08）
 
-ForcingSliceGeometry.family_kernel_certificate在普通nativeZF原核中，先实际构造固定[f,s,A,X,Y]的共同支撑，再对整个内部指标集O中的每个i构造check(i)、B_i、Ypart_i、Spart_i。三种名字均带精确原始边方程、HS及同一支撑固定性；不给定支撑、检查名族、切片名字族或正确性结构。当前交付的是对象forall-exists族，不冒称已经构造全部切片名字的FunctionOn图。指标数量、内部基数和名字秩均不截断。
+ForcingSliceGraphs 的 slice／part／disjoint_kernel_certificate 在普通 nativeZF 原推导核中分别构造实际 HS 图并证明完整 sliceGraph／partGraph 满射，以及 Spart 互斥。完整 functionOn、总性及无杂项均保留；函数唯一性只用于源定义域。切片、check、Cartesian 与共同支撑输入是已验收构造器的精确输出方程，不是假设结论正确的结构。
 
-沿固定SliceGeometry定义，切片公式已证明等价于使用实际有序对名字的源关系；B的成员恰好是该切片的像。实际occurrence与image(boundedApp f B_i Y)的完整稠密语义等价，直接代入B成员公式，无需另选辅助B家族。既有内部序数最小出现给出Ypart及其成员律和内部序数指标互斥。Spart直接复用已完成的参数值分离器及separated_move，获得同一支撑和精确原像成员律。ForcingSliceSelection仅是既有原始边收集器／HS核的源UnaryRelation.select应用，无新选择、L或递归基础。
+ForcingSliceCoverage 的 occurrence／yCover_kernel_certificate 从两个完整满射取得稠密内部指标，并复用已有内部序数最小性和实际共同支撑切片构造。输出实际 HS Ypart 名字、完整字面选择器边方程及强迫成员关系；不是仅有抽象 At 谓词。所有内部指标与任意名字秩均保留，未同时选择外部名字家族。公式封装直接复用既有 covering，不增加新强迫／选择／L／编码基础。
 
-完整验收报告为verification/slice-family-acceptance.json；生成前仅记局部通过。当前仍为原阶段9：真实未完的是sliceGraph／partGraph满射、Spart互斥、occurrence／Ypart覆盖、SliceAssembly及全局反向单射。统一截面／良序目标注入、完整ordinal_presentation、子集像满射、实际ACwo、¬AC、L及全公理模式均已完成并复用。PP/Main、全部内部／非标准证明码Con、原第4 Comparator和终验保持未完成；最终对象Con未证明。
-
+完整验收见 verification/slice-graphs-acceptance.json；报告生成前只算局部编译通过。仍在原第9阶段：真正剩余为供装配消费的内部切片参数图、SliceAssembly（空域／稠密成员、slice_candidate、assemble、presentation_reverse_injection）及全局反向单射。切片名字、共同支撑、两图满射、互斥及目标覆盖不再列作待从头实现。Spart 不要求覆盖 X。PP/Main、全部内部／非标准证明码 Con、原第4 Comparator及终验未完成；最终对象 Con 未证明。
 ## 本批迁移：源子集像满射（2026-11-08）
 
 ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。

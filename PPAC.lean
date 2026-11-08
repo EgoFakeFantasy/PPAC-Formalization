@@ -1060,3 +1060,5 @@ import PPAC.Migration.ForcingSectionInjection
 import PPAC.Migration.ForcingWellorderedTarget
 import PPAC.Migration.ForcingSliceSelection
 import PPAC.Migration.ForcingSliceGeometry
+import PPAC.Migration.ForcingSliceGraphs
+import PPAC.Migration.ForcingSliceCoverage
