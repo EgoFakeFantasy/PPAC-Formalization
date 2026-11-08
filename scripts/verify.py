@@ -2692,7 +2692,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
                                 ('forcing_exist_code', 'ForcingExistCode', 13),
                                 ('forcing_logical_code', 'ForcingLogicalCode', 20),
-                                ('forcing_code_step', 'ForcingCodeStep', 36)):
+                                ('forcing_code_step', 'ForcingCodeStep', 36),
+                                ('forcing_code_recursion', 'ForcingCodeRecursion', 42)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7338,6 +7339,9 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_all_eleven_raw_dispatch_closure_with_explicit_history_availability_proved": True,
         "object_forcing_raw_dispatch_source_and_target_typing_proved": True,
         "object_forcing_raw_dispatch_scope": "Actual source fields, strictly smaller child code history reads, and all eleven native operations; every execution is object existential. Earlier-history availability remains an explicit object premise. Source free range is internal empty zero, bound scopes/codes may be nonstandard, target free count/condition slot are fixed numerals. Actual state construction and field recovery are proved. Full recursion/output uniqueness, all open six-rule proof transport, uniform coded axiom forcing and final Con remain incomplete.",
+        "object_forcing_actual_original_ordinal_recursion_table_exists_unique_proved": True,
+        "object_forcing_actual_parent_history_read_iff_recursive_interpretation_proved": True,
+        "object_forcing_actual_recursion_scope": "Concrete complete forcing-code dispatch rows, actual unique Separation value sets and original unique ordinal recursion histories. Bounded parent reads iff actual recursive interpretation, with target type. All indices/scopes/candidates are internal. Legal-input row occupancy and unique formula outputs are not yet proved; neither are full open Proof transport, uniform coded axiom forcing or final Con. Table existence is not row occupancy.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

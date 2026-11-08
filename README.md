@@ -10,7 +10,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 本批已接通原正文到完整原生Separation/Collection句的准确quotation双条件：实际编译、三个原重命名出口、两个不同Collection矩阵、原模板及整个闭包均由对象推导消费，不再给定中间quotation。五个普通nativeZF原核端点已验收。正文／参数数目仍为外部模式索引，原始有效输入guard保留。
 
-真正剩余为统一内部ZF/U公理正确性／强迫、全部内部／非标准六规则Proof/Con传输及第11终验。原第4官方Comparator已实际接受，证据见`verification/original-comparator-acceptance.json`。**最终对象Con未证明。** 最新对象代码报告为`verification/forcing-code-step-acceptance.json`；完整否定码分支亦已验收，存在子码绑定重排亦已接通，完整外层exists现已由ForcingExistCode接通；完整递归仍未完成。
+真正剩余为统一内部ZF/U公理正确性／强迫、全部内部／非标准六规则Proof/Con传输及第11终验。原第4官方Comparator已实际接受，证据见`verification/original-comparator-acceptance.json`。**最终对象Con未证明。** 最新对象代码报告为`verification/forcing-code-recursion-acceptance.json`；完整否定码分支亦已验收，存在子码绑定重排亦已接通，完整外层exists现已由ForcingExistCode接通；完整递归仍未完成。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)
@@ -51,3 +51,5 @@ NatPacket／字节兼容、泛滤真值支线及独立 L 重建均已退出开�
 其余原生逻辑的局部操作现由ForcingLogicalCode接通，复用原NEG／EX并保持固定源的规范化。完整原始递归解释及最终对象Con仍未证明；验收见`verification/forcing-logical-code-acceptance.json`。
 
 全11构造子的原始码单步调度现由ForcingCodeStep接通，闭包明确保留对象层先前历史可用性前提；完整递归及最终内部Con仍未证明。实际验收见`verification/forcing-code-step-acceptance.json`。
+
+实际forcing码历史现由ForcingCodeRecursion调用原内部序数递归产生，并证明父历史读取与真实递归解释的对应；合法行的输出存在／唯一性及最终Con仍未证明。实际验收见`verification/forcing-code-recursion-acceptance.json`。

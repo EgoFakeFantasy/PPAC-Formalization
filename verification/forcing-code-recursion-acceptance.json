@@ -1,0 +1,435 @@
+{
+  "verified_at": "2026-11-08T18:59:23.978333+00:00",
+  "baseline_commit": "cd11bdecd8fce3e3414ca3c02a5012d89fef9a9c",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "The concrete complete forcing-code row/state predicate is used by actual Separation value sets and the original internal ordinal recursion. Actual histories and value sets exist uniquely. Independent evaluations of the table agree. At bounded indices, actual parent-history edges and reads are equivalent to independently specified recursive evaluation and interpretation. Target formula typing is proved. Legal-row occupancy and formula-output uniqueness are not proved.",
+  "endpoints": [
+    "PPAC.Migration.ForcingCodeRecursion.recursion_kernel_certificate",
+    "PPAC.Migration.ForcingCodeRecursion.evaluation_kernel_certificate",
+    "PPAC.Migration.ForcingCodeRecursion.evaluationUnique_kernel_certificate",
+    "PPAC.Migration.ForcingCodeRecursion.boundedRead_kernel_certificate",
+    "PPAC.Migration.ForcingCodeRecursion.targetType_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the original kernel",
+  "reuse": [
+    "Actual ForcingCodeStep complete eleven-native-constructor row and encoded state",
+    "Existing Separation/extensionality",
+    "Existing ObjectTransfiniteRecursion.source_uniqueness and OrdinalRecursionCompatibility.unique_same_domain",
+    "Existing OrdinalRecursionRestriction.recursor_restrict and exact equations_at",
+    "Existing GraphProperties.output_exists and original object equality/EX rules",
+    "Original TheoryTransport/nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38381,
+    "new_recursion_consumer_declarations": 42,
+    "all_prior_38339_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "new_kernel_endpoint_dependencies_do_not_exceed_prior_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2832,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.ForcingCodeRecursion.row": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.row_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.value": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.value_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.existsValue": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.value_at": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.exists_value": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.unique_value": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.intro_row": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.recursors": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.graph": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.graph_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.existsGraph": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.all_unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.at_ordinal": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.exists_graph": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.graph_unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.existsEvaluation": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.intro_evaluation": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation_exists": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation_unique": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.edge_evaluation": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation_edge": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.compiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.compiled_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.intro_compiled": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.read_to_compiled": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.compiled_to_read": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.bounded_read_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.recursionSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.recursion_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluationSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluation_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluationUniqueSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.evaluationUnique_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.boundedReadSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.boundedRead_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.targetTypeSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeRecursion.targetType_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "build_log_last_lines": [
+      "✔ [3271/3272] Built PPAC (10s)",
+      "Build completed successfully (3272 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "actual_complete_dispatch_rows_not_supplied_transition_oracle": true,
+    "original_internal_ordinal_recursion_not_host_wellfounded_recursion": true,
+    "actual_histories_and_Separation_state_values_exist_unique": true,
+    "arbitrary_internal_including_nonstandard_bound_scopes_ordinals_and_code_candidates": true,
+    "actual_parent_read_iff_recursive_interpretation_on_bounded_indices": true,
+    "compiled_output_formula_type": true,
+    "legal_input_row_nonempty_proved": false,
+    "unique_formula_output_proved": false,
+    "remaining_object_code_induction_discharge_of_history_availability_completed": false,
+    "source_free_scope": "Internal empty zero; arbitrary open internal proof nodes still need the existing mixed-substitution/closure route.",
+    "target_free_scope": "Fixed external R/H templates; actual application uses f=k+2 and condition index j=k+1 as object numerals.",
+    "all_internal_six_rule_proof_transport": false,
+    "uniform_internal_coded_axiom_forcing": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "next_exact_object_consumer": "From Omega(w), empty(z), numeral(k+2,f), numeral(k+1,j), and FormulaCode(w,N,a,z), prove existence of Q with this exact compiled relation, using the existing internal code induction. Table existence alone does not establish this consumer.",
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-build.log",
+      "size": 109,
+      "sha256": "581259dc1d871e97319c0f40f5742edb063b5330fc107022d3f20c4ad2748acb"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-audit.lean",
+      "size": 2814,
+      "sha256": "4dff0eb447ca6e67e445e5590e338cd604d277b21e82be15c31898c85d18f2ee"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-audit.log",
+      "size": 6920,
+      "sha256": "39c64f2dfa7ea73159f328b2081fa5a4b9260953034874aafda5cc211dc636f8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-parent-summary.json",
+      "size": 14790227,
+      "sha256": "26ba93146b0dd3bf5e0431fed990ef549f80eb34d21aa9a9db26041c0c47b7f3"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-recursion-full-verify.log",
+      "size": 153,
+      "sha256": "1795fe88c5a9feb1b89cf9f9dfc3406c597ef2aa56b28a35ae7b0801035a445a"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding full remote CI must succeed with actual logs before next normal push",
+    "preceding_run": 42510467502,
+    "preceding_sha": "cd11bdecd8fce3e3414ca3c02a5012d89fef9a9c",
+    "native_job": 128822210329,
+    "native_last_observed_status": "in_progress",
+    "official_original_comparator_already_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

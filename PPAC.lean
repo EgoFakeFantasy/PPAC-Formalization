@@ -1096,3 +1096,4 @@ import PPAC.Migration.ForcingExistChildCode
 import PPAC.Migration.ForcingExistCode
 import PPAC.Migration.ForcingLogicalCode
 import PPAC.Migration.ForcingCodeStep
+import PPAC.Migration.ForcingCodeRecursion
