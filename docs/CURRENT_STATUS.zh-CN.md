@@ -1,12 +1,14 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：切片图满射、互斥与实际名字覆盖（2026-11-08）
+## 当前迁移：SliceAssembly 空域消费者及实际切片参数（2026-11-08）
 
-ForcingSliceGraphs 的 slice／part／disjoint_kernel_certificate 在普通 nativeZF 原推导核中分别构造实际 HS 图并证明完整 sliceGraph／partGraph 满射，以及 Spart 互斥。完整 functionOn、总性及无杂项均保留；函数唯一性只用于源定义域。切片、check、Cartesian 与共同支撑输入是已验收构造器的精确输出方程，不是假设结论正确的结构。
+ForcingEmptyDomain 的两个普通 nativeZF 原核端点迁移源空域注入、空域良序与非良序集合的稠密成员。实际共同支撑／HS 图、空序数及 check 名均复用已有构造器；完整 injection/functionOn 保留。稠密成员给出的是一个条件下的一个实际 HS 成员，等价于完整源 nonempty 强迫，不是同时选一族默认元素。
 
-ForcingSliceCoverage 的 occurrence／yCover_kernel_certificate 从两个完整满射取得稠密内部指标，并复用已有内部序数最小性和实际共同支撑切片构造。输出实际 HS Ypart 名字、完整字面选择器边方程及强迫成员关系；不是仅有抽象 At 谓词。所有内部指标与任意名字秩均保留，未同时选择外部名字家族。公式封装直接复用既有 covering，不增加新强迫／选择／L／编码基础。
+ForcingSliceParameters.kernel_certificate 在普通 nativeZF 中给出完整内部指标上的实际 [Ypart_i,Spart_i] 参数关系：全域存在、字面唯一、HS、同一已有共同支撑固定，以及精确 check／选择／分离器边方程。原始名字外延性证明正文逐字复用已验收 SliceSelection；无新选择或名字递归。大强迫公式保持为参数后再作实例化，模块局部编译约11秒。
 
-完整验收见 verification/slice-graphs-acceptance.json；报告生成前只算局部编译通过。仍在原第9阶段：真正剩余为供装配消费的内部切片参数图、SliceAssembly（空域／稠密成员、slice_candidate、assemble、presentation_reverse_injection）及全局反向单射。切片名字、共同支撑、两图满射、互斥及目标覆盖不再列作待从头实现。Spart 不要求覆盖 X。PP/Main、全部内部／非标准证明码 Con、原第4 Comparator及终验未完成；最终对象 Con 未证明。
+修正工程流程：已有 UniformMaximum.Inputs 直接接受可定义且全域唯一的内部参数关系；不再要求额外造一张参数族 FunctionOn 图。该关系已接通前三项输入，下一实际义务是源 slice_candidate 给出的 force(ex injection)，再由已有统一最大值实际构造候选注入族，并沿原源 assemble／presentation_reverse_injection 装配。候选注入族仍必须实际构造，不能以参数关系代替。
+
+完整验收见 verification/empty-parameters-acceptance.json，报告生成前仅算局部通过。仍在原第9阶段。此前切片名字／共同支撑、sliceGraph／partGraph 完整满射、Spart互斥、occurrence及实际Ypart名字覆盖均已完成。剩余 slice_candidate、assemble、presentation_reverse_injection、全局反向单射、PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator及终验；最终对象 Con 未证明。
 ## 本批迁移：源子集像满射（2026-11-08）
 
 ForcingSubsetImage.kernel_certificate在普通nativeZF原核中构造SliceGeometry:17–69的实际共同支撑及bounded-default原始HS图，保留所有内部条件上的完整subset_image_surjection。唯一性只消费原函数在其定义域上的mapsTo，不添加全局偏函数唯一性；默认元素仍是源显式给定的单个元素，不同时选择一族默认。图的functionOn／无杂项／mapsTo／onto全部保留。直接复用已有默认关系、TupleStabilizer、relationOf／actual_reuse、关系图满射及函数消去规则，无新Choice、L、收集器或基础设施。

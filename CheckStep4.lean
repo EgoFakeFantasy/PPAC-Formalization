@@ -14349,4 +14349,23 @@ example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top s f A X Y O check
       (ForcingSliceCoverage.yCoverSentence rho I K B w G F mul top s f A X Y O checkedO Cart p)) :=
   ForcingSliceCoverage.yCover_kernel_certificate rho I K B w G F mul top s f A X Y O checkedO Cart p
 
+
+-- Pinned SliceAssembly consumer; ordinary nativeZF original proof kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top X Y p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingEmptyDomain.injectionSentence rho I K B w G F mul top X Y p)) :=
+  ForcingEmptyDomain.injection_kernel_certificate rho I K B w G F mul top X Y p
+
+-- Pinned SliceAssembly consumer; ordinary nativeZF original proof kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top X p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingEmptyDomain.emptySentence rho I K B w G F mul top X p)) :=
+  ForcingEmptyDomain.empty_kernel_certificate rho I K B w G F mul top X p
+
+-- Pinned SliceAssembly consumer; ordinary nativeZF original proof kernel.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F S mul top O f s A X Y i a b aPrime bPrime : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceParameters.sentence rho I K B w G F S mul top O f s A X Y i a b aPrime bPrime)) :=
+  ForcingSliceParameters.kernel_certificate rho I K B w G F S mul top O f s A X Y i a b aPrime bPrime
+
 end PPAC.Migration.Step4Checks

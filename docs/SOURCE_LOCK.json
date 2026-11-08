@@ -157558,6 +157558,305 @@
         ]
       },
       "scope": "Ordinary original nativeZF kernel; actual source slice/part HS graphs with full functionOn/mapsTo/onto and same explicit support; source exact piece/check/Cartesian equations consumed, never correctness oracles. Spart disjointness uses mapsTo only on X. Coverage retains every internal ordinal index and constructs actual HS Ypart names with exact selector equations, no chosen external family. No claim of Spart covering X, internal FunctionOn graph of all pieces, SliceAssembly/global reverse injection, PP/Main or all-internal Con."
+    },
+    "forcing_empty_domain": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/SliceAssembly.lean",
+      "source_sha256": "2f5b3499612908decd8d25aead075f1ca0d9431d846b21f7ec162265a8bfa285",
+      "source_declarations": [
+        "falseRelation",
+        "empty_domain_injection",
+        "empty_domain_wellorderable",
+        "nonwellorderable_member_dense"
+      ],
+      "adapter": "PPAC/Migration/ForcingEmptyDomain.lean",
+      "consumers": [
+        "SliceAssembly.slice_candidate -> presentation_reverse_injection -> Main.reverse_injection_dense"
+      ],
+      "reuse_producers": [
+        "ForcingMapCalculus",
+        "ForcingTupleStabilizer",
+        "ForcingCheckOrdinal",
+        "ObjectOrdinalBasic",
+        "ForcingCheckName",
+        "ForcingSectionInjection",
+        "ForcingHS",
+        "ForcingFormula",
+        "ModelTransfer"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingEmptyDomain.lean": "145baf3dfe157397dab3d2f6907b2f09a2de3bc14080347cd74c64dbc2ecf6be",
+        "PPAC/Migration/ForcingMapCalculus.lean": "698171506cace42a71bed76fbdd7f66a688c25bd7179ccd63b387a25f8c8a87c",
+        "PPAC/Migration/ForcingTupleStabilizer.lean": "c8fdf8d39c72189a8fd32e21a365d7fbfd9d57c4053216befc316a6d5bdf4a33",
+        "PPAC/Migration/ForcingCheckOrdinal.lean": "939a9e47f293f25caa3a4c3a1b2a01c8fb6e822c80249b05fe85eab8740ebb5d",
+        "PPAC/Migration/ObjectOrdinalBasic.lean": "caa3aaeef60d886688a8758d24a3a8bc39b5746356143b70eefaa192a1ec46f6",
+        "PPAC/Migration/ForcingCheckName.lean": "6f4129ffb6c8a817ab2db969fa276dd36d968841f0d2cf8716a7816842d0cb98",
+        "PPAC/Migration/ForcingSectionInjection.lean": "31fa228c9a7bb7a643b4ad50068413813eab8e839192c346a5d2a57f249d182e",
+        "PPAC/Migration/ForcingHS.lean": "d0c6b63f0d9bf2bf3f8d237dba99e30a1945c4a1970bf281ad4c61a9bb128166",
+        "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingEmptyDomain.falseRelation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.falseRelation_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.Empty": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.empty_domain_injection": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.empty_domain_wellorderable": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.nonwellorderable_member_dense": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.nonwellorderable_nonempty": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.emptyFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.emptyFormula_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.injectionResult": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.injectionResult_semantics": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.injectionSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.injection_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.injection_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.emptySentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.empty_models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingEmptyDomain.empty_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original kernel. Actual empty-domain HS injection and checked empty ordinal supply wellorderability; nonwellorderability gives dense single actual members, exactly source nonempty forcing, not simultaneous defaults. Actual source [Ypart_i,Spart_i] parameter formula is total, literally unique, HS and same-support fixed on every INTERNAL index. Existing UniformMaximum consumes this definable functional relation directly; no separate parameter FunctionOn graph or new Choice/L/foundation. Actual slice_candidate force(ex injection), candidate uniform family, SliceAssembly/Main and internal nonstandard Proof/Con remain incomplete."
+    },
+    "forcing_slice_parameters": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Models/SliceAssembly.lean",
+      "source_sha256": "2f5b3499612908decd8d25aead075f1ca0d9431d846b21f7ec162265a8bfa285",
+      "source_declarations": [
+        "presentation_reverse_injection: actual v(i)=[D.Ypart i,D.Spart i] and its hv"
+      ],
+      "adapter": "PPAC/Migration/ForcingSliceParameters.lean",
+      "consumers": [
+        "SliceAssembly.slice_candidate -> presentation_reverse_injection -> Main.reverse_injection_dense"
+      ],
+      "reuse_producers": [
+        "ForcingSliceGeometry",
+        "ForcingSliceSelection",
+        "ForcingSeparation",
+        "ForcingUniformMaximum",
+        "ForcingHS",
+        "ForcingEquivariantMix",
+        "ModelTransfer"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingSliceParameters.lean": "51f51865e0ace40c2ec07f383cc5266f54f2485c2dd57990e96fcd408c166c09",
+        "PPAC/Migration/ForcingSliceGeometry.lean": "1e784deb692bffbccf13dd02b77181504a29e1087e3046b8715bf84de53e3ef4",
+        "PPAC/Migration/ForcingSliceSelection.lean": "ab45899fa481b812665235227b826e5c9f9262bcc2c7d9957fddb7c110a0497d",
+        "PPAC/Migration/ForcingSeparation.lean": "fe1c7bc6bc54602771a12541ca6f9425746e8c801afd11d71bd519dc0519eac3",
+        "PPAC/Migration/ForcingUniformMaximum.lean": "6e8a6aef71a87d1513ca3f462d55590ece74859a4e0ad47fe00dbed99f3bf243",
+        "PPAC/Migration/ForcingHS.lean": "d0c6b63f0d9bf2bf3f8d237dba99e30a1945c4a1970bf281ad4c61a9bb128166",
+        "PPAC/Migration/ForcingEquivariantMix.lean": "bace2ec8546d28860c1561aca49ff1070700c434f965373ccebd2af356bf9971",
+        "PPAC/Migration/ModelTransfer.lean": "5785e3a214156e9d9d55b125f1ad28247b492434207db67ed425223e7509a843"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingSliceParameters.PiecesWith": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.Spec": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameterFormula": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameter_spec_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameter_exists": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameter_unique": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameter_fixed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.parameter_hs": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.models": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSliceParameters.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original kernel. Actual empty-domain HS injection and checked empty ordinal supply wellorderability; nonwellorderability gives dense single actual members, exactly source nonempty forcing, not simultaneous defaults. Actual source [Ypart_i,Spart_i] parameter formula is total, literally unique, HS and same-support fixed on every INTERNAL index. Existing UniformMaximum consumes this definable functional relation directly; no separate parameter FunctionOn graph or new Choice/L/foundation. Actual slice_candidate force(ex injection), candidate uniform family, SliceAssembly/Main and internal nonstandard Proof/Con remain incomplete.",
+      "retained_existing_producer": {
+        "producer_file": "PPAC/Migration/ForcingSliceSelection.lean",
+        "producer_sha256": "ab45899fa481b812665235227b826e5c9f9262bcc2c7d9957fddb7c110a0497d",
+        "source_start": "  have hsub {a b : M.Carrier .set}",
+        "source_end": "\n\n\ndef selected",
+        "target_start": "  have hsub {a b : M.Carrier .set}",
+        "target_end": "\ntheorem parameter_unique",
+        "replacements": [],
+        "normalized_body_sha256": "3e236c7981f82af33b2d9e89175d91c64721c2c628e003cfaa2662bbe59511ab"
+      }
     }
   },
   "selected_route_consumer_audit": {
