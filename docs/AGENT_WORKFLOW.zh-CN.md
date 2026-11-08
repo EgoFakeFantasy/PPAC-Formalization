@@ -46,3 +46,5 @@
 CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就被ABI要求拦截。修复后的快速Linux守卫预检先于长构建。上一轮失败时，先读日志并修复，经本地完整验收后只推送包含修复的合并批次；不得重跑同一未修复错误或连续推送其他批次。正常批次继续等待上一轮成功终态和实际日志。
 
 原第10当前新增操作：ForcingConditionRebind在普通nativeZF内为任意内部合法公式码／范围构造准确的条件变量重绑定，全部实际head／表／编码列表／替换见证均在对象EX内消去，结果有类型且不依赖执行见证。它对应原Force否定／存在分支；下一消费者仍为逻辑／binder完整递归，不是最终Con。验收见verification/forcing-condition-rebind-acceptance.json。
+
+原第10的字面守卫代码：ForcingGuardCode已构造q∈P／R(q,p)模板的内部带类型唯一输出，允许内部非标准绑定范围和候选；自由范围为固定R参数数目加P/p的对象numeral。bound_guards_total在同一对象EX内构造bvar0和两个守卫，negative_inputs_kernel_certificate实际消费ForcingConditionRebind的子码重绑定。旧原子证明正文不变，仅新增八个直接调用旧证明的复用端口。外层否定／存在构造、全递归、统一公理强迫、Proof与最终Con归约仍未完成。验收见verification/forcing-guard-code-acceptance.json。

@@ -1,0 +1,230 @@
+{
+  "verified_at": "2026-11-08T15:51:06.385732+00:00",
+  "baseline_commit": "8d0613c8e81c58f63bc01da59bd83d70c84b09f9",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declaration": "ForcingQuotient.AtomicData.Force negative/existential condition guards",
+  "object_result": "Literal membership q in P and order R(q,p) guard templates have actual typed unique internal code outputs in ordinary nativeZF. The same internal bvar0 head supplies both guards. The negative-input endpoint actually invokes the previous child-rebind fiber certificate; it assumes no output, image list or execution witness.",
+  "endpoints": [
+    "PPAC.Migration.ForcingGuardCode.kernel_certificate",
+    "PPAC.Migration.ForcingGuardCode.unique_kernel_certificate",
+    "PPAC.Migration.ForcingGuardCode.negative_inputs_kernel_certificate"
+  ],
+  "explicit_parents": {
+    "guard_total": [
+      "Omega(w)",
+      "Num_(n+2)(f)",
+      "TermCode(w,x,a,f)"
+    ],
+    "negative_inputs": [
+      "Omega(w)",
+      "successor(A,a)",
+      "Num_(n+2)(f)",
+      "FormulaCode(w,N,a,f)"
+    ]
+  },
+  "eliminated_witnesses": [
+    "Numeral 1",
+    "Literal typed template quotation",
+    "Actual single-term bound image forest",
+    "Original identity free-image code list",
+    "Actual full mixed-substitution execution/output",
+    "Actual empty/bvar0 head for bound guards",
+    "Previous actual child-code rebinding execution/output"
+  ],
+  "reuse": {
+    "eight_public_ports_call_unchanged_old_private_proofs": true,
+    "all_old_atomic_statement_proof_text_unchanged": true,
+    "retained_old_atomic_prefix_sha256": "2b7fcc4abebc3bdd23b874b0b38709ff1a9d151a6a9900694398d47b932bea5d",
+    "new_foundation_backend": false,
+    "new_object_axioms": false
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38220,
+    "all_prior_38191_footprints_unchanged": true,
+    "new_guard_declarations": 21,
+    "new_reuse_ports": 8,
+    "all_other_old_proof_module_hashes_unchanged": true,
+    "changed_input_hashes": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingAtomicCode.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "input_hashes": 2821,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "actionlint_exit": 0,
+    "build_log_last_lines": [
+      "✔ [3264/3265] Built PPAC (9.8s)",
+      "Build completed successfully (3265 jobs)."
+    ]
+  },
+  "scope": {
+    "internal_nonstandard_bound_scopes_and_term_candidates": true,
+    "free_scope_fixed_external_R_parameters_plus_P_p_object_numeral": true,
+    "R_fixed_external_formula_scheme": true,
+    "two_guards_at_same_actual_bvar0_head": true,
+    "previous_rebind_actually_consumed": true,
+    "ordinary_nativeZF": true,
+    "outer_negative_existential_constructor_complete": false,
+    "full_recursive_formula_forcing_compiler_complete": false,
+    "uniform_internal_axiom_forcing_complete": false,
+    "all_internal_Proof_contradiction_reduction_complete": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-reuse-build.log",
+      "size": 105,
+      "sha256": "261e7c9c59740c205288ff4e77d2fd08e125dacc0676d10ca1e3fd8fcf405e17"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-draft.lean",
+      "size": 28370,
+      "sha256": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-draft.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-build.log",
+      "size": 234,
+      "sha256": "8fc7af12fc85c7b4ac2e082c9ec69a72a480427aa86ffb3ad1a6d2afae94077e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-audit.lean",
+      "size": 3081,
+      "sha256": "92aa99f2f4ff834abf340cf2cb26e8b24bf0de95e8fa5bf6e0769b417ce837fe"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-audit.log",
+      "size": 8305,
+      "sha256": "7f9325ddc27c8b25680ee6a9eefbc873aa26af4493d2ab809c0e2dba309ce23e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-parent-summary.json",
+      "size": 14758387,
+      "sha256": "cdad40d68da4208cd8639ce533f94bf4e15d2d619553d32679f3becc9ac7afd1"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-source-preflight.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-guard-full-verify.log",
+      "size": 153,
+      "sha256": "35a71186efd8951a2ed817cefa7e039ee0629420806803be22d7665d988ca65b"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding CI must succeed before next normal push",
+    "preceding_run": 42492087042,
+    "guard_job": 128766454058,
+    "guard_conclusion": "success",
+    "native_job": 128766565151,
+    "native_last_observed_status": "in_progress",
+    "full_original_comparator_accepted": false
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

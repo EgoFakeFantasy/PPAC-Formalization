@@ -2651,9 +2651,10 @@ def main(source_check_only: bool = False) -> None:
                                 ('original_axiom_typing', 'OriginalAxiomTyping', 6),
                                 ('internal_consistency_closing', 'InternalConsistency', 8),
                                 ('internal_axiom_proof', 'InternalAxiomProof', 5),
-                                ('forcing_atomic_code', 'ForcingAtomicCode', 20),
+                                ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 15),
-                                ('forcing_condition_rebind', 'ForcingConditionRebind', 19)):
+                                ('forcing_condition_rebind', 'ForcingConditionRebind', 19),
+                                ('forcing_guard_code', 'ForcingGuardCode', 21)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7277,6 +7278,9 @@ def main(source_check_only: bool = False) -> None:
         "internal_explicit_declarations_coverage_checked": len(internal_explicit),
         "object_forcing_condition_rebind_all_internal_total_typed_unique_proved": True,
         "object_forcing_condition_rebind_scope": "Given Omega, successor target bound scope, and an actual source FormulaCode, construct bvar0 head, shift all old bounds, replace designated free condition index, construct both actual image lists, and run existing full mixed substitution; internal scopes and candidates may be nonstandard. Two independent executions have one output. This is an operation for the pinned negative/existential forcing branches, not the full recursive compiler, uniform internal axiom forcing, Proof/Con reduction, or final goal.",
+        "object_forcing_literal_guard_code_total_typed_unique_proved": True,
+        "object_forcing_actual_negative_branch_rebind_and_bound_guard_inputs_proved": True,
+        "object_forcing_literal_guard_scope": "Exact membership/order templates, fixed external R/free parameter count, arbitrary internal target bounds/term/candidates; both guards at an actually constructed bvar0 and actual consumption of child rebind. Not the outer neg/ex constructor, full recursion, uniform internal axiom forcing, Proof/Con reduction or final goal.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

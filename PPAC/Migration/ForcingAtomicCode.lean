@@ -647,4 +647,36 @@ theorem fiber_kernel_certificate {n m} (equality : Bool) (R : Source.Formula (n+
     equality R w a z x y (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))
     (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+
+/- Public reuse ports for the next literal forcing guards. Existing private
+proofs and all previously public statements/bodies are unchanged. -/
+theorem bound_forest_typed {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w size a b L : Fin m) (xs : Fin k → Fin m) (hw : Derives Γ (omega w))
+    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k size)) (hc : Derives Γ (SyntaxTermSyntax.contexts w a b))
+    (ht : ∀ i, Derives Γ (SyntaxTermSyntax.term w a b (xs i)))
+    (hf : Derives Γ (SyntaxForestSyntax.forest k w xs L)) :
+    Derives Γ (SyntaxMixedImageCodeSyntax.termList w size a b L) := forest_typed hZ w size a b L xs hw hn hc ht hf
+
+def identityImages {m} (w a f S : Fin m) : Formula m := freeImages w a f S
+
+theorem identityImages_rename {m l} (w a f S : Fin m) (r : Fin m → Fin l) :
+    (identityImages w a f S).rename r = identityImages (r w) (r a) (r f) (r S) := freeImages_rename w a f S r
+
+def existsIdentityImages {m} (w a f : Fin m) : Formula m := existsFreeImages w a f
+
+theorem existsIdentityImages_rename {m l} (w a f : Fin m) (r : Fin m → Fin l) :
+    (existsIdentityImages w a f).rename r = existsIdentityImages (r w) (r a) (r f) := existsFreeImages_rename w a f r
+
+theorem identityImages_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a f : Fin m) (hw : Derives Γ (omega w)) (ha : Derives Γ (.mem a w)) (hf : Derives Γ (.mem f w)) :
+    Derives Γ (existsIdentityImages w a f) := freeImages_exists hZ w a f hw ha hf
+
+theorem identityImages_typed {m} {Γ : Context m} (w a f S : Fin m)
+    (h : Derives Γ (identityImages w a f S)) : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f a f S) :=
+  freeImages_typed w a f S h
+
+theorem identityImages_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a f S T : Fin m)
+    (hw : Derives Γ (omega w)) (hS : Derives Γ (identityImages w a f S)) (hT : Derives Γ (identityImages w a f T)) :
+    Derives Γ (.equal S T) := freeImages_unique hZ w a f S T hw hS hT
+
 end PPAC.Migration.ForcingAtomicCode

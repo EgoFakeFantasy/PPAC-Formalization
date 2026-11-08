@@ -1089,3 +1089,4 @@ import PPAC.Migration.InternalAxiomProof
 import PPAC.Migration.ForcingAtomicCode
 import PPAC.Migration.ForcingAtomCode
 import PPAC.Migration.ForcingConditionRebind
+import PPAC.Migration.ForcingGuardCode
