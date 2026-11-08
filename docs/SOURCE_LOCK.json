@@ -163075,6 +163075,101 @@
           "propext"
         ]
       }
+    },
+    "forcing_code_total": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingCodeTotal.lean",
+      "source_declarations": [
+        "AtomicData.Force / Formula.toBasic structural recursion, through the exact existing complete raw forcing-code dispatcher",
+        "Actual legal input rows of the original ordinal-recursion forcing-code table"
+      ],
+      "consumers": [
+        "Actual global formula-output uniqueness for the same forcing-code interpreter",
+        "Uniform internal coded axiom and six-rule proof correctness before InternalConsistency.reduction"
+      ],
+      "reuse_producers": [
+        "Original BoundedInduction.induction_on_set, full Separation and Foundation over the internal omega",
+        "Existing ForcingCodeRecursion actual histories/values, compiled_to_read and target typing",
+        "Existing complete ForcingCodeStep.total and actual encoded state construction",
+        "Original InsertExistence.exists_insert to generate all three successor scopes internally",
+        "Original TheoryTransport/nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
+        "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
+        "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
+        "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
+        "PPAC/Migration/InsertExistence.lean": "5cc94d35296fa256a1ec50652f5d1b6e082acd06b538df11320ade9c1c44555b"
+      },
+      "scope": "For every internally valid raw formula code at internal empty free scope and arbitrary internal bound scope, construct an output in the exact existing recursive compiled relation and prove its target FormulaCode type. Code/scopes/candidates may be nonstandard; fixed external R/H give exact object numerals f=k+2 and condition j=k+1. Original internal member induction closes all smaller-child output existence; the bounded actual-history bridge discharges the formerly supplied available premise. Actual histories, values, three successor scopes, encoded state and outputs are internally generated. No supplied history availability, output, execution or external standardness. Actual parent histories have all legal smaller child reads. This does not yet prove unique formula output, uniform coded semantic/axiom correctness, arbitrary open six-rule proof transport or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCodeTotal.existsCompiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.existsCompiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.typedOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.typedOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.typed_total": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.actual_available": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.availabilitySentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeTotal.availability_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

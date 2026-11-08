@@ -10,10 +10,12 @@
 
 存在子码绑定重排现已由ForcingExistChildCode在同一对象记录内实际构造，并证明名字0保持和条件槽后继流；独立执行有唯一带类型输出。完整存在码现已由ForcingExistCode接通。真正剩余：原全构造递归解释、统一内部／非标准ZF/U公理强迫、全部六规则Proof矛盾码归约，以及原第11最终验收。不得改成全宇宙统一真值／强迫谓词，不得限制外部标准码，不重建已完成的L、数学模式或通用Proof/Sat配套。
 
-最新对象代码验收见`verification/forcing-code-recursion-acceptance.json`及`verification/forcing-code-step-acceptance.json`及`verification/forcing-logical-code-acceptance.json`及`verification/forcing-exist-code-acceptance.json`及`verification/forcing-exist-child-code-acceptance.json`及`verification/forcing-exist-guards-code-acceptance.json`和`verification/forcing-neg-code-acceptance.json`；均已完成九条命令、五项trust=0和精确旧足迹对比。GitHub运行42492087042的守卫、原核主线、官方Comparator三任务均成功，且实际日志与工件已读回。后续批次继续遵守上一整轮成功并读回日志后再推送的门禁。
+最新对象代码验收见`verification/forcing-code-total-acceptance.json`及`verification/forcing-code-recursion-acceptance.json`及`verification/forcing-code-step-acceptance.json`及`verification/forcing-logical-code-acceptance.json`及`verification/forcing-exist-code-acceptance.json`及`verification/forcing-exist-child-code-acceptance.json`及`verification/forcing-exist-guards-code-acceptance.json`和`verification/forcing-neg-code-acceptance.json`；均已完成九条命令、五项trust=0和精确旧足迹对比。GitHub运行42492087042的守卫、原核主线、官方Comparator三任务均成功，且实际日志与工件已读回。后续批次继续遵守上一整轮成功并读回日志后再推送的门禁。
 
 其余原生逻辑的局部操作现由ForcingLogicalCode接通，复用原NEG／EX并保持固定源的规范化。完整原始递归解释及最终对象Con仍未证明；验收见`verification/forcing-logical-code-acceptance.json`。
 
-全11构造子的原始码单步调度现由ForcingCodeStep接通，闭包明确保留对象层先前历史可用性前提；完整递归及最终内部Con仍未证明。实际验收见`verification/forcing-code-step-acceptance.json`。
+全11构造子的原始码单步调度现由ForcingCodeStep接通，原单步闭包的对象层历史可用性前提现已由ForcingCodeTotal对实际历史消去；全局公式输出唯一性及最终内部Con仍未证明。实际验收见`verification/forcing-code-step-acceptance.json`。
 
-实际forcing码历史现由ForcingCodeRecursion调用原内部序数递归产生，并证明父历史读取与真实递归解释的对应；合法行的输出存在／唯一性及最终Con仍未证明。实际验收见`verification/forcing-code-recursion-acceptance.json`。
+实际forcing码历史现由ForcingCodeRecursion调用原内部序数递归产生，并证明父历史读取与真实递归解释的对应；合法行的带类型输出存在性现已由ForcingCodeTotal证明；全局公式输出唯一性及最终Con仍未证明。实际验收见`verification/forcing-code-recursion-acceptance.json`。
+
+原第10全内部码实际总性：ForcingCodeTotal复用原成员归纳，在同一ForcingCodeRecursion.compiled关系上为每个合法源码构造带类型输出，并为实际父历史消去ForcingCodeStep.available前提。历史／值集合、三个后继作用域、状态及输出均在对象EX内生成，没有给定输出或外部标准性。源free范围为内部空零，任意内部／非标准绑定范围及码均覆盖；目标f/j为固定R/H的对象numeral。两个普通nativeZF原核端点及完整九项验收均已通过，五项trust=0、零警告；旧证明正文和全部38381项既有足迹不变。此项不再列为缺口；公式输出唯一性、统一内部公理／Proof正确性、全部开放六规则证明与最终Con仍未完成。完整验收见verification/forcing-code-total-acceptance.json。

@@ -1,0 +1,264 @@
+{
+  "verified_at": "2026-11-08T19:20:56.808399+00:00",
+  "baseline_commit": "d6762b4ecb50b9f1e37efe882743258a93365498",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Original internal omega member induction proves that every internally legal source formula code at empty source free scope and arbitrary internal bound scope has an actual output in the exact existing ForcingCodeRecursion.compiled relation, with the exact target FormulaCode type. Actual parent histories now provide all legal smaller child reads; no supplied available premise remains.",
+  "endpoints": [
+    "PPAC.Migration.ForcingCodeTotal.kernel_certificate",
+    "PPAC.Migration.ForcingCodeTotal.availability_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the original kernel",
+  "actual_main_object_contract": "Omega(w) -> empty(z) -> numeral(k+2,f) -> numeral(k+1,j) -> FormulaCode(w,N,a,z) -> EX Q (compiled(R,H,w,z,f,j,a,N,Q) AND FormulaCode(w,Q,a,f)).",
+  "reuse": [
+    "Original BoundedInduction.induction_on_set with full Separation and Foundation",
+    "Existing actual ForcingCodeRecursion histories, values and compiled_to_read",
+    "Existing complete ForcingCodeStep.total, target typing and encoded state construction",
+    "Original InsertExistence.exists_insert for the three actual successor scopes",
+    "Original TheoryTransport/nativeZF ZFReplay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38392,
+    "new_totality_declarations": 11,
+    "all_prior_38381_footprints_unchanged": true,
+    "all_prior_proof_module_hashes_unchanged": true,
+    "new_kernel_endpoint_dependencies_do_not_exceed_prior_endpoint": true,
+    "changed_prior_hashed_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "docs/SOURCE_LOCK.json",
+      "scripts/verify.py"
+    ],
+    "input_hashes": 2833,
+    "warning_lines": 0,
+    "cross_platform_regressions": 5,
+    "guard_policy_regressions": 7,
+    "check_ci_inputs_exit": 0,
+    "target_trust_zero_exit": 0,
+    "actual_module_build_exit": 0,
+    "actual_public_declaration_audit_exit": 0,
+    "new_declaration_footprints": {
+      "PPAC.Migration.ForcingCodeTotal.existsCompiled": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.existsCompiled_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.typedOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.typedOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.typed_total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.actual_available": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.availabilitySentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeTotal.availability_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "build_log_last_lines": [
+      "✔ [3272/3273] Built PPAC (10s)",
+      "Build completed successfully (3273 jobs)."
+    ]
+  },
+  "scope": {
+    "ordinary_nativeZF": true,
+    "all_internally_valid_formula_codes_typed_actual_compilation_total": true,
+    "arbitrary_internal_including_nonstandard_bound_scopes_and_codes": true,
+    "source_free_scope": "The internal empty zero. This does not yet transport arbitrary open internal proof nodes.",
+    "target_free_scope": "Fixed external R/H templates; actual object numeral f=k+2 and condition index j=k+1.",
+    "all_histories_values_scope_successors_states_outputs_constructed_inside_object_exists": true,
+    "no_supplied_output_execution_or_external_standardness": true,
+    "object_earlier_history_availability_premise_discharged": true,
+    "actual_parent_histories_have_all_legal_smaller_child_reads": true,
+    "unique_formula_output_proved": false,
+    "uniform_internal_coded_semantic_or_axiom_correctness": false,
+    "all_open_internal_six_rule_proof_transport": false,
+    "all_internal_proof_contradiction_reduction": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-draft.log",
+      "size": 365,
+      "sha256": "4b79bf67a3072d528f0fac0806e815efb2a8d267cb4550348d17f239e02d59d2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-build.log",
+      "size": 105,
+      "sha256": "a35857f9ba81f8172171b0e4b874b1be31319e01f8ee514c369d22d91e516879"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-audit.lean",
+      "size": 729,
+      "sha256": "7449978ba700f1c9c22cb4d8b5a5cec030be6023a48d853e4b960fb1416f341e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-audit.log",
+      "size": 2100,
+      "sha256": "e3588b7d2cf04bf2f92244b8f6a2a267a54e6712d244c9cf2f7cc5776490d551"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-parent-summary.json",
+      "size": 14798678,
+      "sha256": "54d3ae984efc29ce959e5b9eed6ad7794de40a2e43f4937603a943eb36c7b5ce"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-total-full-verify.log",
+      "size": 153,
+      "sha256": "e1df0d5cae1af2f62d3385d5fa6adfe9224d28362843ebb16131754cfef46166"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local full acceptance; preceding complete remote CI and actual success logs required before next normal push",
+    "preceding_run": 42510467502,
+    "preceding_sha": "cd11bdecd8fce3e3414ca3c02a5012d89fef9a9c",
+    "native_job": 128822210329,
+    "native_last_observed_status": "in_progress",
+    "official_original_comparator_already_accepted_run": 42492087042
+  },
+  "post_cleanup_target_trust_zero_exit": 0
+}

@@ -2693,7 +2693,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_code', 'ForcingExistCode', 13),
                                 ('forcing_logical_code', 'ForcingLogicalCode', 20),
                                 ('forcing_code_step', 'ForcingCodeStep', 36),
-                                ('forcing_code_recursion', 'ForcingCodeRecursion', 42)):
+                                ('forcing_code_recursion', 'ForcingCodeRecursion', 42),
+                                ('forcing_code_total', 'ForcingCodeTotal', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7338,10 +7339,13 @@ def main(source_check_only: bool = False) -> None:
         "object_forcing_remaining_logical_operations_scope": "All four native binary tags and native ALL follow the pinned source normalization using actual existing NEG/EX operations and native AND. Every intermediate is constructed and independent executions have one typed output. Child codes/scopes may be internally nonstandard; R/H and free-count/condition numerals are fixed. Complete raw recursion, uniform coded axiom forcing and all internal Proof/Con reduction remain incomplete.",
         "object_forcing_all_eleven_raw_dispatch_closure_with_explicit_history_availability_proved": True,
         "object_forcing_raw_dispatch_source_and_target_typing_proved": True,
-        "object_forcing_raw_dispatch_scope": "Actual source fields, strictly smaller child code history reads, and all eleven native operations; every execution is object existential. Earlier-history availability remains an explicit object premise. Source free range is internal empty zero, bound scopes/codes may be nonstandard, target free count/condition slot are fixed numerals. Actual state construction and field recovery are proved. Full recursion/output uniqueness, all open six-rule proof transport, uniform coded axiom forcing and final Con remain incomplete.",
+        "object_forcing_raw_dispatch_scope": "Actual source fields, strictly smaller child code history reads, and all eleven native operations; every execution is object existential. Earlier-history availability is explicit in this one-step theorem; ForcingCodeTotal now discharges it for actual histories. Source free range is internal empty zero, bound scopes/codes may be nonstandard, target free count/condition slot are fixed numerals. Actual state construction and field recovery are proved. Actual global compilation totality and type are now proved separately; formula-output uniqueness, all open six-rule proof transport, uniform coded axiom forcing and final Con remain incomplete.",
         "object_forcing_actual_original_ordinal_recursion_table_exists_unique_proved": True,
         "object_forcing_actual_parent_history_read_iff_recursive_interpretation_proved": True,
-        "object_forcing_actual_recursion_scope": "Concrete complete forcing-code dispatch rows, actual unique Separation value sets and original unique ordinal recursion histories. Bounded parent reads iff actual recursive interpretation, with target type. All indices/scopes/candidates are internal. Legal-input row occupancy and unique formula outputs are not yet proved; neither are full open Proof transport, uniform coded axiom forcing or final Con. Table existence is not row occupancy.",
+        "object_forcing_actual_recursion_scope": "Concrete complete forcing-code dispatch rows, actual unique Separation value sets and original unique ordinal recursion histories. Bounded parent reads iff actual recursive interpretation, with target type. All indices/scopes/candidates are internal. ForcingCodeTotal now proves legal-input row occupancy with typed output and discharges history availability. Unique formula outputs, full open Proof transport, uniform coded axiom forcing and final Con remain incomplete. Table existence alone is not row occupancy; the added internal code induction establishes occupancy.",
+        "object_forcing_all_internal_actual_code_compilation_typed_total_proved": True,
+        "object_forcing_actual_history_availability_no_oracle_discharged_proved": True,
+        "object_forcing_actual_compilation_total_scope": "All internally valid source formula codes at empty source free scope and arbitrary internal bounds have an actual typed output in the same original-recursion compiled relation. Internal omega member induction generates histories, values, scopes, states and output and discharges history availability; no standardness or supplied outputs. Fixed external R/H and object numeral target free/condition slots. Formula-output uniqueness, uniform coded axiom/proof correctness, full open six-rule proof transport and final Con remain incomplete.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

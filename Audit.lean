@@ -39055,3 +39055,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeRecursion.boundedRead_kernel_certificate
 #print axioms PPAC.Migration.ForcingCodeRecursion.targetTypeSentence
 #print axioms PPAC.Migration.ForcingCodeRecursion.targetType_kernel_certificate
+
+-- All-internal actual compilation totality; history availability is discharged.
+#print axioms PPAC.Migration.ForcingCodeTotal.existsCompiled
+#print axioms PPAC.Migration.ForcingCodeTotal.existsCompiled_rename
+#print axioms PPAC.Migration.ForcingCodeTotal.total
+#print axioms PPAC.Migration.ForcingCodeTotal.typedOutput
+#print axioms PPAC.Migration.ForcingCodeTotal.typedOutput_rename
+#print axioms PPAC.Migration.ForcingCodeTotal.typed_total
+#print axioms PPAC.Migration.ForcingCodeTotal.actual_available
+#print axioms PPAC.Migration.ForcingCodeTotal.sentence
+#print axioms PPAC.Migration.ForcingCodeTotal.kernel_certificate
+#print axioms PPAC.Migration.ForcingCodeTotal.availabilitySentence
+#print axioms PPAC.Migration.ForcingCodeTotal.availability_kernel_certificate
