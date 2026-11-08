@@ -2638,7 +2638,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('schema_closure_typing', 'SchemaClosureTyping', 19),
                                 ('schema_shell_typing', 'SchemaShellTyping', 11),
                                 ('schema_axiom_unique', 'SchemaAxiomUnique', 17),
-                                ('original_axiom_code_test', 'OriginalAxiomCodeTest', 51)):
+                                ('original_axiom_code_test', 'OriginalAxiomCodeTest', 51),
+                                ('project_compiler_quotation', 'ProjectCompilerQuotation', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7491,6 +7492,9 @@ def main(source_check_only: bool = False) -> None:
         'object_original_structural_axiom_certificate_tree_row_interface_proved': True,
         'object_original_structural_schema_certificate_output_exists_typed_unique_proved': True,
         'object_original_fixed_structural_certificate_tags_and_Choice_rejection_proved': True,
+        'object_original_Project_compiler_exact_native_quotation_schema_original_kernel_proved': True,
+        'object_original_Project_compiler_quotation_body_depth_indices_external': True,
+        'object_original_Project_compiler_quotation_uniform_nonstandard_body_claimed': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 
         'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,

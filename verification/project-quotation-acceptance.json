@@ -1,0 +1,236 @@
+{
+  "verified_at": "2026-11-08T20:12:08.108262+11:00",
+  "baseline_commit": "3be43489308550f81904d45636ba229c80644068",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoint": "PPAC.Migration.ProjectCompilerQuotation.kernel_certificate",
+  "actual_object_result": "For EVERY original free-closed Project.Formula 1 depth, ordinary nativeZF proves the EXACT biconditional between the EXISTING actual compiler relation at its original ProjectEncode source and the ORIGINAL pure native quotation of Project.fo_formula. All twelve original constructors are covered, including original membership scalar/field order, primitive equality, exact subset expansion, all four binary connectives and both genuine binder advances. Existing compiler recursive equations, constructor proofs, tree quotation witnesses and scalar uniqueness are reused unchanged.",
+  "quantifiers": {
+    "original_Project_body_and_scope_depth": "EXTERNAL proof-scheme indices; numeral(depth,b) is an explicit scope premise",
+    "input_and_output_candidates": "ALL internal object candidates at those quoted original inputs, not supplied host numbers",
+    "intermediate_fields_maps_and_traces": "Internal object witnesses; existing tree-quotation existence is consumed",
+    "finite_private_block": "Indexes only finitely many fields of a FIXED external AST step, never an internal parameter count",
+    "uniform_nonstandard_body_or_count_correctness_claimed": false
+  },
+  "explicit_parents": [
+    "omega(w)",
+    "numeral(depth,b)",
+    "empty(z)",
+    "original ProjectEncode.formula(input) quotation at n"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_original_twelve_Project_constructors": true,
+    "exact_existing_actual_compiler_to_original_native_quotation_biconditional": true,
+    "all_internal_candidate_outputs_for_each_original_quoted_input": true,
+    "output_quote_existence_derived_not_given_as_correctness_premise": true,
+    "existing_compiler_recursion_and_uniqueness_reused": true,
+    "original_fol_signature_and_templates_changed": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "external_body_depth_scheme_indices": true,
+    "uniform_nonstandard_body_or_count_correctness_complete": false,
+    "original_full_schema_rename_and_closure_quotation_complete": false,
+    "full_uniform_internal_ZF_U_axiom_correctness_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Original native Project.fo_formula and ZFC.ProjectEncode.formula",
+    "Existing ProjectCompilerRecursive recursive equation and ProjectCompilerUnique",
+    "Existing ProjectCompilerCompleteIntro/Constructors and ProjectCompilerBase",
+    "Existing OriginalTreeQuotation existence and constructor/field recovery",
+    "Existing SyntaxNumerals, original omega successor and code-field membership",
+    "Existing ProjectBoundShiftSyntax and ProjectSubsetSyntax, with EXACT original native weakening",
+    "Existing Source.Derives, TheoryTransport and ZFReplay"
+  ],
+  "next_real_consumer": "Compose original schema renaming and WHOLE closure quotation, then full uniform internal ZF/U axiom correctness and ALL INTERNAL/nonstandard six-rule Proof/Con reduction. Do not redo completed compiler quotation, type/uniqueness, mathematical schemas or L.",
+  "acceptance": {
+    "audited_declarations": 38058,
+    "declarations_without_axioms": 2257,
+    "declarations_with_recorded_dependencies": 35801,
+    "new_public_declarations": [
+      "PPAC.Migration.ProjectCompilerQuotation.construct",
+      "PPAC.Migration.ProjectCompilerQuotation.formula_iff",
+      "PPAC.Migration.ProjectCompilerQuotation.kernel_certificate",
+      "PPAC.Migration.ProjectCompilerQuotation.sentence",
+      "PPAC.Migration.ProjectCompilerQuotation.source_certificate"
+    ],
+    "old_footprints_unchanged": 38053,
+    "old_module_review": {
+      "modules": 2630,
+      "unchanged_canonical": 2630,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2802,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3250,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": 3,
+    "pinned_OpenAI_source_hashes_verified": 75,
+    "git_diff_check_before_final_freeze": true
+  },
+  "remote_CI": {
+    "completed_prior_run": {
+      "run_id": 42456708909,
+      "job_id": 128657173921,
+      "commit": "6bb0b0b33523601aed41681f7927ce958b36853a",
+      "conclusion": "success",
+      "actual_logs_read": true,
+      "audited_declarations": 37955,
+      "warning_lines": 0
+    },
+    "published_parent": {
+      "run_id": 42463175158,
+      "job_id": 128676686002,
+      "commit": "3be43489308550f81904d45636ba229c80644068",
+      "last_observed_status": "in_progress",
+      "success_claimed": false,
+      "remote_main_unchanged": "721d331a4ddd3c1d759a719a55f09388ade4fa30"
+    },
+    "current_batch_uploaded": false,
+    "publication_policy": "Wait for the same live published-parent CI terminal result before another push; retain accepted local commits."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/project-quotation-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\project-quotation-build.log",
+        "bytes": 113,
+        "sha256": "1800483620e46addcd6cb74a3d0de9a17f1f0630c46833210e5fb1306e0236ef"
+      },
+      {
+        "path": "verification/project-quotation-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\project-quotation-local-axioms.log",
+        "bytes": 1038,
+        "sha256": "3f90419726ee42630ea3f3538b61c3d583fb15033169335effe9a8018266de27"
+      },
+      {
+        "path": "verification/project-quotation-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\project-quotation-baseline.tmp.json",
+        "bytes": 13294617,
+        "sha256": "77774e5c28aa697c16525d139fc4669ac47cb4461e55198c451ed4db05f7e7b7"
+      },
+      {
+        "path": "verification/project-quotation-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\project-quotation-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "ee86d603ee96ca2195ed73d8a25f1442eb8f86a4fbe8aa826078295a0b60500f"
+      },
+      {
+        "path": ".local/ProjectQuotationAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ProjectQuotationAudit.lean",
+        "bytes": 386,
+        "sha256": "5ce0fc58f3434177a7538914b988452ead2be9c406208f78831cf69887b40163"
+      }
+    ],
+    "removed_files": 5,
+    "recursive_deletion": false,
+    "other_projects_or_applications_touched": false
+  },
+  "post_cleanup": {
+    "build_exit_code": 0,
+    "build_jobs": 3250,
+    "current_source_hashes_verified": 2802,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false
+  }
+}

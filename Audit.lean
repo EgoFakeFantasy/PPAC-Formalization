@@ -38714,3 +38714,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.OriginalAxiomCodeTest.schemaExistenceSentence
 #print axioms PPAC.Migration.OriginalAxiomCodeTest.schema_existence_source_certificate
 #print axioms PPAC.Migration.OriginalAxiomCodeTest.schema_existence_kernel_certificate
+
+#print axioms PPAC.Migration.ProjectCompilerQuotation.construct
+#print axioms PPAC.Migration.ProjectCompilerQuotation.formula_iff
+#print axioms PPAC.Migration.ProjectCompilerQuotation.sentence
+#print axioms PPAC.Migration.ProjectCompilerQuotation.source_certificate
+#print axioms PPAC.Migration.ProjectCompilerQuotation.kernel_certificate

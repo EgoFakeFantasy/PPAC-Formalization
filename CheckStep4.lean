@@ -14443,4 +14443,11 @@ example {m : Nat} (collection : Bool) (w c : Fin m) (env : Fin 8 → Fin m) :
     FirstOrder.Derives nativeZF [] (Translation.sentence (OriginalAxiomCodeTest.schemaExistenceSentence collection w c env)) :=
   OriginalAxiomCodeTest.schema_existence_kernel_certificate collection w c env
 
+-- EVERY original Project body: exact actual compiler/native quotation biconditional.
+-- The body/depth are external scheme indices; candidate codes stay object variables.
+example {m depth : Nat} (input : YesMetaZFC.SetTheory.Definitional.Project.Formula 1 depth)
+    (hc : input.FreeClosed) (w b z n q : Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (ProjectCompilerQuotation.sentence input hc w b z n q)) :=
+  ProjectCompilerQuotation.kernel_certificate input hc w b z n q
+
 end PPAC.Migration.Step4Checks

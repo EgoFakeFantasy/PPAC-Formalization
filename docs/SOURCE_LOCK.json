@@ -160227,6 +160227,78 @@
           "propext"
         ]
       }
+    },
+    "project_compiler_quotation": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (original target-axiom quotation consumer)",
+        "Original native Project.fo_formula and ZFC.ProjectEncode.formula: ALL twelve original constructors"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean",
+      "native_source_sha256": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+      "adapter": "PPAC/Migration/ProjectCompilerQuotation.lean",
+      "consumers": [
+        "Original schema body/renaming/template/full-closure quotation correspondence",
+        "Complete original ZF/U axiom correctness and internal Proof/Con"
+      ],
+      "reuse_producers": [
+        "Existing actual Project compiler recursive equation",
+        "Existing all-internal compiler scalar uniqueness",
+        "Existing actual constructor introduction rules",
+        "Existing tree quotation existence/field recovery/unique output",
+        "Original native fo_formula and ProjectEncode without modified constructors"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/Internal/ProjectCompilerRecursive.lean": "49a131875c75702b1512fae266a37dae2ac74e54e4419e773fdfe2363c03d8d3",
+        "PPAC/Migration/Internal/ProjectCompilerUnique.lean": "ec428969105da229798cfe491b1e6a0c295e7c0c82d92e206a16c08c0e372ee7",
+        "PPAC/Migration/Internal/ProjectCompilerCompleteIntro.lean": "7067274fb4ed8e4bb41aa3c8694c5af27c178834d434076aa91cadd42220d64b",
+        "PPAC/Migration/Internal/ProjectCompilerCompleteConstructors.lean": "8a931008a49d5a7f72d4f41226b528acaac1fb25d1ca300a25b7aa97f5db65ae",
+        "PPAC/Migration/Internal/ProjectCompilerBase.lean": "586b6072432c4e59f43cb7bcbb9dd85599e59b898867810820c84c56ce105588",
+        "PPAC/Migration/Internal/ProjectAtomicSyntax.lean": "5dd623c8e1d2a540f12f88580ee50f86436f619779b1ec9088a8299a83271919",
+        "PPAC/Migration/Internal/ProjectSubsetSyntax.lean": "ae112664c55721c889fecd74df9c6a3556925e3370acd18fee57af0c0428eac6",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
+        "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12",
+        "PPAC/Migration/PureSyntaxQuotation.lean": "11531dfcdedff5dc77900790cbc38ff3f5e228f98a23fb27e6c7884c1be3b185",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/AxiomEncode.lean": "040166f8880c435521491d6a1d576f35a1c57396ed5b0291bf8145ab3002fa22"
+      },
+      "scope": "For EVERY original free-closed Project.Formula 1 depth, ordinary nativeZF proves the EXACT biconditional between the EXISTING actual compiled relation and the ORIGINAL pure native quotation of Project.fo_formula. All twelve constructors, including exact subset expansion, primitive equality, relation scalar 0, four binary connectives and both binder advances, are covered. Input/output candidates and all syntax/trace witnesses are internal objects, not chosen host numbers. A finite private quotation block only bundles existing object witness theorems; it does not recurse over an internal count. The original Project formula and scope depth remain EXTERNAL proof-scheme indices, with numeral depth as the scope premise. This is NOT the uniform nonstandard-body/count forcing correctness required for final internal Con. Full original schema renaming/closure quotation, uniform internal axiom forcing, Proof/Con and final Con remain incomplete.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ProjectCompilerQuotation.construct": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectCompilerQuotation.formula_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectCompilerQuotation.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectCompilerQuotation.source_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectCompilerQuotation.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
