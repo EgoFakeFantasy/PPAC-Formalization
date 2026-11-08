@@ -1,0 +1,247 @@
+{
+  "verified_at": "2026-11-08T01:13:54.394992+00:00",
+  "baseline_commit": "9bf68a2867eb5ddb18485c24fd402d4559f9382e",
+  "original_stage": 9,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingSliceSelection.kernel_certificate",
+    "PPAC.Migration.ForcingSliceGeometry.kernel_certificate",
+    "PPAC.Migration.ForcingSliceGeometry.family_kernel_certificate"
+  ],
+  "family_endpoint_actual_quantifier_order": "EXISTS one actual subgroup S in F, fixing [f,s,A,X,Y], BEFORE FORALL internal i in the WHOLE internal O, EXISTS actual check(i), B_i, Ypart_i, Spart_i with exact raw equations, HS and SAME support.",
+  "constructed_not_assumed": [
+    "one common parent support BEFORE all indices",
+    "each actual internal check(i)",
+    "actual selected B and least-occurrence Ypart names",
+    "actual separated preimage Spart name",
+    "all three names HS and fixed by the SAME common support"
+  ],
+  "compiled_source_correctness_helpers": [
+    "slice_force_iff: literal ordered-pair NAME vs existential ordered-pair formula",
+    "mem_B: exact regular image, no residual extra guard",
+    "occurrence_iff_B: exactly image(boundedApp f B_i Y)",
+    "mem_Ypart and internal-ordinal Ypart_disjoint",
+    "preimage_force_dense and mem_Spart"
+  ],
+  "helper_boundary": "The individual source correctness lemmas are compiled helpers for actual object consumers. No separate quoted original-kernel sentence for each helper is asserted here. The accepted object endpoint constructs ALL actual names with universally quantified raw constructor equations.",
+  "reuse": [
+    "existing literal child family and collected-name/HS kernels",
+    "existing full formula symmetry and finite parameter tuples",
+    "existing actual ordered-pair names and pair formula equivalence",
+    "existing INTERNAL ordinal least occurrence",
+    "existing parameter-value Separation and separated_move",
+    "existing class_unique raw-edge extensionality proof body, verbatim"
+  ],
+  "scope": {
+    "whole_internal_index_set": true,
+    "support_precedes_index_quantifier": true,
+    "arbitrary_name_ranks": true,
+    "finite_index_cutoff": false,
+    "external_Sort_or_choice_family": false,
+    "given_support_check_or_piece_names": false,
+    "actual_FunctionOn_graph_of_all_pieces_claimed": false,
+    "new_object_Choice_L_or_foundation": false,
+    "source_ordinal_restriction": "Ypart disjointness consumes INTERNAL Ordinal O, as supplied by the already completed actual ordinal presentation; no arbitrary external host wellorder is substituted."
+  },
+  "full_local_verification": {
+    "build_jobs": 3228,
+    "declarations": 37788,
+    "old_footprints_unchanged": 37729,
+    "new_public_declarations": 59,
+    "warnings": 0,
+    "new_axiom_dependencies": [],
+    "old_inherited_axiom_union": 41,
+    "current_canonical_source_hashes": 2786,
+    "all_current_hashes_match": true,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ]
+  },
+  "old_source_verification": {
+    "old_migration_modules": 2613,
+    "canonical_old_modules_unchanged": 2613,
+    "preexisting_EOL_only_differences": 162,
+    "other_content_changes": [],
+    "method": "one git cat-file --batch of git ls-tree HEAD; only CRLF -> LF"
+  },
+  "old_adapter_contracts_unchanged": 707,
+  "exact_retained_existing_proof_blocks": 2,
+  "family_kernel_footprint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound",
+    "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+  ],
+  "actual_remaining": [
+    "sliceGraph and partGraph full surjections",
+    "Spart disjointness",
+    "occurrence and Ypart coverage",
+    "SliceAssembly and global reverse_injection_dense",
+    "PP/Main",
+    "all-internal/nonstandard Proof and Con transport",
+    "original stage4 Linux Comparator",
+    "stage11 final acceptance"
+  ],
+  "final_object_Con_proved": false,
+  "artifact_sha256": {
+    "PPAC/Migration/ForcingSliceSelection.lean": "ab45899fa481b812665235227b826e5c9f9262bcc2c7d9957fddb7c110a0497d",
+    "PPAC/Migration/ForcingSliceGeometry.lean": "1e784deb692bffbccf13dd02b77181504a29e1087e3046b8715bf84de53e3ef4",
+    "PPAC.lean": "70c9a088dbe67b52dcfcc00cf04d367dc152df42743fade015b2586bc8e89dff",
+    "Audit.lean": "34d76dd3fc542c36ea3b735163df14cf36747baa52df50cee74e4a64ced58e45",
+    "CheckStep4.lean": "e230239821590ae50a70b71c6f5865ff94d671907a0e26560452aea1d7ece36c",
+    "scripts/verify.py": "1ed5fba045bcfe3cd6cbff3485ba27833d0334216a4ee7ee0a135f0a79980de8",
+    "docs/SOURCE_LOCK.json": "61692d54ee2ea1f9d3036f9928431639f076cf4ed4ad41311a234184d04c692b"
+  },
+  "precise_own_temporary_cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\SliceFamilyAudit.lean",
+      "size": 3856,
+      "sha256": "39edcfd196951f5b28648e468f988fd2c354d41a1e2bfdd80bf4f6302f8718e4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-baseline.tmp.json",
+      "size": 14544940,
+      "sha256": "fa3b8ab744aeda5c7b7e27be65ebf31a36f48e2e9f9b0bfa839d99cc245c60c2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-footprints.tmp.json",
+      "size": 19959,
+      "sha256": "c0f4edff91fdcf28308714e87defd9902a3fac90cd2d4e7b5699d277637340ce"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-audit.tmp.log",
+      "size": 19102,
+      "sha256": "f8ee2153f8b69e5cbcbed371bccd24c0f719545b2a5c8b1c777c627272bf89a0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-preflight.tmp.log",
+      "size": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-old-sources.tmp.json",
+      "size": 230,
+      "sha256": "bf593bdb3054c183ea2dbe3c9caeea01f1760a6599b103c9dd99fa1334c15514"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-family-full.tmp.log",
+      "size": 153,
+      "sha256": "8d06cd6da90cc5e771ca83c9d0f541c1d6b78c0dae181af5e273006ad23ce74d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\slice-selection-local.json",
+      "size": 7308,
+      "sha256": "839f35de46dd0067f2ec34ee6a7efbd307461dd3fba97aa2f572c54e82fa1c00"
+    }
+  ],
+  "own_temporary_cleanup_completed": true,
+  "post_cleanup_build": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "exit_code": 0,
+    "build_jobs": 3228,
+    "log": "verification/slice-family-post-cleanup-build.log"
+  },
+  "post_cleanup_all_current_hashes_match": true,
+  "full_summary_sha256": "89d2c5b191edc3c3bfaa31db35505259b6e1ce0b7bdbefe1828f816f2b10388a"
+}

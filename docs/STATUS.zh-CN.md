@@ -1,12 +1,12 @@
 # 当前状态：原 1–11 阶段（2026-11-08）
 
-## 当前迁移：统一截面与良序目标反向单射（2026-11-08）
+## 当前迁移：实际切片名字与全内部指标共同支撑（2026-11-08）
 
-ForcingSectionInjection迁移固定OrderedSections.sectionPart／section_injection_of_uniform：实际内部FunctionOn截面家族的正则并关系被已有原始图收集器构造成同一支撑下的HS注入图，保留完整functionOn、无杂项、总性及单射性。J只需源mapsTo；源逐纤维hs与对象Sections的等价已证明，没有补加J单射或全局函数唯一性前提。
+ForcingSliceGeometry.family_kernel_certificate在普通nativeZF原核中，先实际构造固定[f,s,A,X,Y]的共同支撑，再对整个内部指标集O中的每个i构造check(i)、B_i、Ypart_i、Spart_i。三种名字均带精确原始边方程、HS及同一支撑固定性；不给定支撑、检查名族、切片名字族或正确性结构。当前交付的是对象forall-exists族，不冒称已经构造全部切片名字的FunctionOn图。指标数量、内部基数和名字秩均不截断。
 
-ForcingWellorderedTarget迁移固定wellorderable_target_injection：由原满射和目标良序性实际取得检查名表示及J，构造[f,X,Y,J]共同支撑，证明精确对象参数族[f,X,Y,J,check(i)]的总性／单值性／固定性及每个indexedSection存在性，再消费已验收uniform_maximum_dense内部家族，取实际滤子交并调用截面图。序数、J、支撑、家族、截面定律与最终图均没有作为最终端点前提。普通nativeZF原核证明同一L相对化句，源地面Choice由既有L消去；无新增外层Choice、基础设施或名字秩截断。
+沿固定SliceGeometry定义，切片公式已证明等价于使用实际有序对名字的源关系；B的成员恰好是该切片的像。实际occurrence与image(boundedApp f B_i Y)的完整稠密语义等价，直接代入B成员公式，无需另选辅助B家族。既有内部序数最小出现给出Ypart及其成员律和内部序数指标互斥。Spart直接复用已完成的参数值分离器及separated_move，获得同一支撑和精确原像成员律。ForcingSliceSelection仅是既有原始边收集器／HS核的源UnaryRelation.select应用，无新选择、L或递归基础。
 
-本批完整验收报告为verification/section-target-acceptance.json；报告生成前只记局部通过。当前仍为原阶段9：统一截面与良序目标消费者完成后，下一是剩余SliceGeometry／SliceAssembly及全局反向单射。实际ACwo、¬AC、完整ordinal_presentation、子集像满射、检查名指标最小索引图、完整indexedImage／wellorderable_image、内部统一最大值家族、L及全公理模式均已完成并复用。PP/Main、全部内部／非标准证明码Con、原第4 Comparator和终验仍未完成；最终对象Con未证明。
+完整验收报告为verification/slice-family-acceptance.json；生成前仅记局部通过。当前仍为原阶段9：真实未完的是sliceGraph／partGraph满射、Spart互斥、occurrence／Ypart覆盖、SliceAssembly及全局反向单射。统一截面／良序目标注入、完整ordinal_presentation、子集像满射、实际ACwo、¬AC、L及全公理模式均已完成并复用。PP/Main、全部内部／非标准证明码Con、原第4 Comparator和终验保持未完成；最终对象Con未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 

@@ -14306,4 +14306,16 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingWellorderedTarget.sentence rho w mu history kappa unit mark H C incoming base I K B G F mul index top f X Y p))) :=
   ForcingWellorderedTarget.kernel_certificate rho w mu history kappa unit mark H C incoming base I K B G F mul index top f X Y p
 
+-- Actual source literal-child unary selection, ordinary native ZF.
+example {k : Nat} (Q : Source.Formula (k+2)) (rho : Fin 7 → Fin k) (I K B w G F S mul X : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceSelection.sentence Q rho I K B w G F S mul X)) :=
+  ForcingSliceSelection.kernel_certificate Q rho I K B w G F S mul X
+
+-- Support is constructed BEFORE all INTERNAL indices; no given piece/check family.
+example {k : Nat} (rho : Fin 7 → Fin k) (I K B w G F mul top O f s A X Y : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence
+      (ForcingSliceGeometry.familySentence rho I K B w G F mul top O f s A X Y)) :=
+  ForcingSliceGeometry.family_kernel_certificate rho I K B w G F mul top O f s A X Y
+
 end PPAC.Migration.Step4Checks

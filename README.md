@@ -6,7 +6,7 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-当前处于原第 9 阶段。第 8 阶段的同一具体系统已完成；完整 L/ZFC、全公理模式、名字／图／内部递归及强迫前端已经存在并被复用。第 9 阶段已完成实际 ACwo、¬AC、完整 ordinal_presentation、子集像满射、检查名指标最小索引图、完整 indexedImage／wellorderable_image，全内部集合指标的统一最大值家族，以及统一截面／良序目标反向单射。下一是剩余切片装配及全局反向单射。第 10 的 PP/Main／全部内部及非标准证明码传输、第 11 终验和原第 4 Comparator 尚未完成。**最终对象 Con 未证明。** 当前精确验收以以下文档为准：
+当前处于原第 9 阶段。第 8 阶段的同一具体系统已完成；完整 L/ZFC、全公理模式、名字／图／内部递归及强迫前端已经存在并被复用。第 9 阶段已完成实际 ACwo、¬AC、完整 ordinal_presentation、子集像满射、检查名指标最小索引图、完整 indexedImage／wellorderable_image，全内部集合指标的统一最大值家族，以及统一截面／良序目标反向单射。切片B／Ypart／Spart名字及先于全内部指标的共同支撑现已实际构造；下一是切片图满射／覆盖／装配及全局反向单射。第 10 的 PP/Main／全部内部及非标准证明码传输、第 11 终验和原第 4 Comparator 尚未完成。**最终对象 Con 未证明。** 当前精确验收以以下文档为准：
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

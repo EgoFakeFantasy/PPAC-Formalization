@@ -1058,3 +1058,5 @@ import PPAC.Migration.ForcingIndexedImage
 import PPAC.Migration.ForcingUniformMaximum
 import PPAC.Migration.ForcingSectionInjection
 import PPAC.Migration.ForcingWellorderedTarget
+import PPAC.Migration.ForcingSliceSelection
+import PPAC.Migration.ForcingSliceGeometry

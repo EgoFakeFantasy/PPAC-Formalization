@@ -2621,7 +2621,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_indexed_image', 'ForcingIndexedImage', 15),
                                 ('forcing_uniform_maximum', 'ForcingUniformMaximum', 17),
                                 ('forcing_section_injection', 'ForcingSectionInjection', 28),
-                                ('forcing_wellordered_target', 'ForcingWellorderedTarget', 14)):
+                                ('forcing_wellordered_target', 'ForcingWellorderedTarget', 14),
+                                ('forcing_slice_selection', 'ForcingSliceSelection', 19),
+                                ('forcing_slice_geometry', 'ForcingSliceGeometry', 40)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6179,6 +6181,10 @@ def main(source_check_only: bool = False) -> None:
         "source_OrderedSections_and_full_slice_geometry_assembly_complete": False,
         "source_OrdinalPresentation_scope": "Full pinned OrdinalPresentation:342-412. Actual full index/family, supporting diagram extension, dense cover, existing INTERNAL ordinal reindexing and actual Cartesian/completion graph surjection; all internal conditions and unrestricted HS names. The nativeZF object-kernel endpoint uses the already completed internal L interpretation to discharge ground Choice. Source mathematical background guards remain explicit. No given family, cover, ordinal enumeration, Cartesian domain or final surjection. Main global reverse injection, PP and all-internal/nonstandard Con remain incomplete.",
         "source_UniformImages_kernel_graph_scope": "Pinned UniformImages:16-169. Original nativeZF Derives actually constructs the SAME three-name support and raw HS kernel graph, then proves the regular/monotone/congruent imageClassRelation, exact movement under the constructed support, and conditional One/Injective at EVERY internal condition under the FULL original mapsTo formula. Exact separated-class witnesses use the existing literal class uniqueness and class movement, with no quotient representative. Existing force_congr/atomic_congr transport the SAME graph into its extended binder environment; no graph/support/fixedness or final law is supplied to the new existence sentence. Actual image quotient/graph and the SAME-system nonwellorderable image bijection are now complete in their own source adapters. Remaining stage9 model applications, PP/Main and all-internal/nonstandard Con remain pending.",
+        "source_SliceGeometry_piece_family_original_kernel_constructed": True,
+        "source_SliceGeometry_support_before_all_internal_indices": True,
+        "source_SliceGeometry_full_graph_surjections_source_disjointness_cover_and_assembly_complete": False,
+        "source_SliceGeometry_piece_family_scope": "Ordinary nativeZF Derives constructs one actual common support, then check(i), B/Ypart/Spart names for every INTERNAL i in the WHOLE O, with exact raw edges and same-support HS. Source literal-pair slice equivalence, exact B/occurrence/Ypart/Spart member laws and internal-ordinal Ypart disjointness are compiled helpers. No supplied support/check/piece family, finite-index/rank cutoff, new Choice/L/foundation, external family, or completed FunctionOn graph of all pieces. Slice/part graph surjections, Spart disjointness, occurrence/Ypart cover, actual assembly/global reverse injection, PP/Main/all-internal nonstandard Con and Comparator remain pending.",
         "original_stage9_model_applications_complete": False,
         "source_ConcreteSystem_scope": "ForcingConcreteSystem.kernel_certificate proves existence of all actual same-L primitive parents and the SAME-system uniform quotient consequence. No given omega/system remains. Existing fixed-schema forcing/action proofs are retained; standalone concrete full-schema export booleans do not claim a new export here. Stage 9 source model applications, PP/Main, all-internal Proof/Con and Comparator remain incomplete.",
         "source_initial_base_internal_omega_addition_table_constructed": True,
