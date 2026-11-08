@@ -82,3 +82,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10内部蕴含证明组合：InternalProofImplication复用已验收原模板工厂及原K/rule2、S/rule0，不给定公理证明或中间码；从实际A→B、B→C码及其真实证明构造三个实际MP父节点，取得同一A→C码的证明。固定原模式成员由内核验证，全部运行公式／free范围／证明码允许内部非标准；原Node／头字段和空free时Root保持。它是原强迫证明所需的普通字面蕴含证明操作，不是ForcingLogicalCode.binary 2的规范化强迫蕴含桥；该桥、完整统一保真、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38497项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-implication-acceptance.json。
 
 后续开放节点按原ForcingSound.sound的名字赋值逐点结构核对解释，保留名字／固定参数索引和原free头计数。既有ForcingOpenCode是“先forallClosure再forcing”的已验收代码生产，不冒称逐点开放解释或六规则保真。变量图、混合替换、类型和唯一性配套已存在，优先核对并消费精确合同，不另建后端。
+
+原第10逐点开放代码适配：ForcingOpenLayout复用原恒等／加法Replacement图、变量像和混合替换列表，在全部内部／非标准范围构造名字前缀i、参数偏移b+i及唯一环境；ForcingPointwiseCode实际消费该环境、既有reify_total、十一构造强迫编译总唯一性及原混合替换，得到free范围t=b+f的逐点开放输出。未插入forallClosure。已取得nativeZF原核中的类型化总唯一证书；重命名／raise／instantiate交换、语义对应、强迫六规则保真、reduction与最终Con仍未证明。完整九项验收及五项trust=0通过，零警告；全部38504项旧足迹与旧证明正文保持，12项兼容回归和三库／75哈希预检通过。源声明名称核对至固定原文forcing_sound；验收见verification/forcing-pointwise-acceptance.json。

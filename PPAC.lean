@@ -1106,3 +1106,5 @@ import PPAC.Migration.InternalProofOperations
 import PPAC.Migration.InternalProofConjunction
 import PPAC.Migration.InternalProofTemplates
 import PPAC.Migration.InternalProofImplication
+import PPAC.Migration.ForcingOpenLayout
+import PPAC.Migration.ForcingPointwiseCode

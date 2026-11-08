@@ -19,3 +19,5 @@
 真正剩余：强迫解释的MP蕴含桥、其他统一六规则保真、内部／非标准ZF/U公理及语义／Proof正确性、同一矛盾码reduction与最终Con，以及原第11最终验收。不得以标准quotation模式或辅助构建代替这些门，不建立全宇宙统一真值／强迫谓词。
 
 发布门：只在前一整轮远端CI成功并读回实际日志后推送；推送后核对远端HEAD、所有改动blob及关键证明／报告实际字节。本地验收不冒充远端通过，不以文档中的历史批次号替代GitHub实际状态。
+
+原第10逐点开放代码适配：ForcingOpenLayout复用原恒等／加法Replacement图、变量像和混合替换列表，在全部内部／非标准范围构造名字前缀i、参数偏移b+i及唯一环境；ForcingPointwiseCode实际消费该环境、既有reify_total、十一构造强迫编译总唯一性及原混合替换，得到free范围t=b+f的逐点开放输出。未插入forallClosure。已取得nativeZF原核中的类型化总唯一证书；重命名／raise／instantiate交换、语义对应、强迫六规则保真、reduction与最终Con仍未证明。完整九项验收及五项trust=0通过，零警告；全部38504项旧足迹与旧证明正文保持，12项兼容回归和三库／75哈希预检通过。源声明名称核对至固定原文forcing_sound；验收见verification/forcing-pointwise-acceptance.json。
