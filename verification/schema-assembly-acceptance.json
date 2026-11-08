@@ -1,0 +1,234 @@
+{
+  "verified_at": "2026-11-08T17:15:19.417164+11:00",
+  "baseline_commit": "37aa01075558ca3fc9afbf16fbc5c591db28d9c9",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaAxiomAssembly.kernel_certificate"
+  ],
+  "actual_object_result": "Ordinary nativeZF original-kernel Derives constructs the exact original Separation/Collection shell output and WHOLE forall closure, with scalar uniqueness for EVERY INTERNAL omega count and every natural already-renamed matrix-code tuple.",
+  "metadata_result": "separation_quotation and collection_quotation verify EXACT actual native quotation for EVERY original schema matrix and parameter scope; metadata identity is explicitly distinct from the object existence/uniqueness theorem.",
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "all_internal_nonstandard_omega_counts": true,
+    "actual_core_code_and_whole_closure_trace_constructed": true,
+    "unique_all_candidate_outputs": true,
+    "original_donor_schema_templates_imported_unchanged": true,
+    "sole_finite_atom_adaptation_preserves_membership_fields": true,
+    "general_exact_original_matrix_native_quotation": true,
+    "external_standard_count_rank_bound_given_output_or_trace": false,
+    "Type_level_data_choice_or_new_arithmetic_recursion_kernel_L": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "full_ZF_U_schema_certificate_input_test": false,
+    "all_internal_type_correctness_integration": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Original native SchemaTemplate.separation/collection and unchanged hole order",
+    "Existing HornExprExistence/HornExprUnique over nativeZF",
+    "Existing SyntaxUnaryIterationCore tag9 with WHOLE internal trace",
+    "Existing PureSyntaxQuotation signature/code bridge",
+    "Existing Project compiler and three schema index/renaming systems retained as next producers"
+  ],
+  "acceptance": {
+    "audited_declarations": 37926,
+    "declarations_without_axioms": 2256,
+    "declarations_with_recorded_dependencies": 35670,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaAxiomAssembly.assembled",
+      "PPAC.Migration.SchemaAxiomAssembly.assembled_rename",
+      "PPAC.Migration.SchemaAxiomAssembly.collection_quotation",
+      "PPAC.Migration.SchemaAxiomAssembly.coreProgram",
+      "PPAC.Migration.SchemaAxiomAssembly.existsOutput",
+      "PPAC.Migration.SchemaAxiomAssembly.existsOutput_rename",
+      "PPAC.Migration.SchemaAxiomAssembly.fiber",
+      "PPAC.Migration.SchemaAxiomAssembly.fiber_rename",
+      "PPAC.Migration.SchemaAxiomAssembly.kernel_certificate",
+      "PPAC.Migration.SchemaAxiomAssembly.output_exists",
+      "PPAC.Migration.SchemaAxiomAssembly.output_exists_unique",
+      "PPAC.Migration.SchemaAxiomAssembly.output_unique",
+      "PPAC.Migration.SchemaAxiomAssembly.sentence",
+      "PPAC.Migration.SchemaAxiomAssembly.separation_quotation",
+      "PPAC.Migration.SchemaAxiomAssembly.source_certificate",
+      "PPAC.Migration.SchemaAxiomAssembly.uniqueOutput",
+      "PPAC.Migration.SchemaAxiomAssembly.uniqueOutput_rename"
+    ],
+    "old_footprints_unchanged": 37909,
+    "old_module_review": {
+      "modules": 2624,
+      "unchanged_canonical": 2624,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2796,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3244,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "three_clean_pins_and_75_source_hashes_pass": true,
+    "cross_platform_tests": 5
+  },
+  "status_document_cleanup": {
+    "original_1_to_11_stage_table_preserved": true,
+    "duplicate_historical_current_sections_pruned": true,
+    "historical_progress_retained_in_git_and_acceptance_reports": true,
+    "STATUS_is_authoritative_CURRENT_STATUS_is_short_index": true,
+    "documentation_only_after_full_source_verification": true,
+    "all_2796_proof_source_hashes_still_match": true
+  },
+  "cleanup": {
+    "pending": false,
+    "all_removed": true,
+    "recursive_delete": false,
+    "files": [
+      {
+        "sha256": "e7969d790e5025b4313b1b2921b04277454f346d906a07396e7fa2549a06325f",
+        "length": 108,
+        "path": "verification/schema-assembly-build.log"
+      },
+      {
+        "sha256": "22e4e2f9bb9d0ae4d624b86200ef326071980522d9d87215293f7c4a0eeb728e",
+        "length": 2232,
+        "path": "verification/schema-assembly-local-axioms.log"
+      },
+      {
+        "sha256": "fad5cef21aace41394d86c21b8f2e04b458bd89446eb77a7c6ddc58db5d0bbb2",
+        "length": 14496219,
+        "path": "verification/schema-assembly-baseline.tmp.json"
+      },
+      {
+        "sha256": "4deb0c57e0f0ead9fba6f055227534f3290c8ae64ec2923185bdb11a6d20cd84",
+        "length": 153,
+        "path": "verification/schema-assembly-full-verify.log"
+      },
+      {
+        "sha256": "bfe079220f8e70919a076c050783952cb53535d319cfda632bf977ef36411852",
+        "length": 1137,
+        "path": ".local/SchemaAssemblyAudit.lean"
+      }
+    ],
+    "only_current_owned_plain_untracked_files": true
+  },
+  "post_cleanup": {
+    "pending": false,
+    "build_command": [
+      "lake",
+      "--no-cache",
+      "--wfail",
+      "build"
+    ],
+    "build_exit_code": 0,
+    "build_jobs": 3244,
+    "all_2796_live_hashes_match_full_acceptance": true,
+    "remaining_Lean_Lake_processes": 0
+  },
+  "remaining": [
+    "Connect existing Project compiler, three actual renaming sites and this shell/closure consumer to COMPLETE ZF/U schema certificate tests",
+    "ALL INTERNAL/nonstandard six-rule Proof correctness and contradiction-code transport, using existing infrastructure",
+    "Original stage4 full Comparator; original stage11 final native object Con theorem and clean reproduction"
+  ],
+  "publication": {
+    "current_batch_remote_CI_pass_claimed": false,
+    "previous_run_id": 42449624248,
+    "previous_job_id": 128635852922,
+    "previous_run_status_at_check": "in_progress",
+    "hold_next_push_until_previous_run_terminal": true
+  }
+}

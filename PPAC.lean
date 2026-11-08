@@ -1069,3 +1069,4 @@ import PPAC.Migration.ForcingSliceAssembly
 import PPAC.Migration.ForcingSlicePresentation
 import PPAC.Migration.ForcingReverseInjection
 import PPAC.Migration.ForcingTargetTheory
+import PPAC.Migration.SchemaAxiomAssembly

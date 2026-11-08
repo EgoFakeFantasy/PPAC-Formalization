@@ -159079,6 +159079,129 @@
           "propext"
         ]
       }
+    },
+    "schema_axiom_assembly": {
+      "native_source_revision": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Main.lean",
+      "source_sha256": "d5e350dc6b01857f9ebb71cdb76a265b82ce06f700c05c3224938a302e433156",
+      "source_declarations": [
+        "Main.forces_target:156-163 (internal target-axiom-code consumer)",
+        "Original native SchemaTemplate.separation and SchemaTemplate.collection"
+      ],
+      "native_source_file": ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/SchemaTemplate.lean",
+      "native_source_sha256": "c820029826e18a45234665547a10804f4c24af17e6ff174b040df22fc8b18f07",
+      "adapter": "PPAC/Migration/SchemaAxiomAssembly.lean",
+      "consumers": [
+        "Complete ZF/U axiom-code test, using existing Project compiler and three schema renaming sites",
+        "All-internal/nonstandard original six-rule Proof/Con transport"
+      ],
+      "reuse_producers": [
+        "Original native SchemaTemplate (imported unchanged)",
+        "Existing Expr evaluation/uniqueness",
+        "Existing internal forall-closure recursion",
+        "Existing pure signature quotation bridge",
+        "Existing actual Project compiler and schema index/renaming systems (next inputs)"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/SchemaAxiomAssembly.lean": "767c54bd08bfb606c2bf5672264afaaf10122a7609ed5c68271fb8db5bda504e",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/SchemaTemplate.lean": "c820029826e18a45234665547a10804f4c24af17e6ff174b040df22fc8b18f07",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectTreeTemplate.lean": "292b58d9a2198a1634d85033f7ec6efb8bbf3a0b4da1e5e963c0b41f987f02f3",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
+        "PPAC/Migration/PureSyntaxQuotation.lean": "11531dfcdedff5dc77900790cbc38ff3f5e228f98a23fb27e6c7884c1be3b185",
+        "PPAC/Migration/Internal/HornExprSyntax.lean": "af7aedc54e38c8e6149d8f0b6c87a486edd00d4016fdffbec77fbd702a9ff4b5",
+        "PPAC/Migration/Internal/HornExprExistence.lean": "0e865bb9504614ef79a3f16839ab1f8176c68c9c86dd8579b0e288fa9b0f3486",
+        "PPAC/Migration/Internal/HornExprUnique.lean": "81eda7303b0d856e50f53d97b9d165a6764cd0ab6348a3eae49ce14f9734f728",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationSyntax.lean": "a2ef34d0f9be1e8b35065ee99db3b2b21eb51a396303800ee10c59d72662c7d3",
+        "PPAC/Migration/Internal/SyntaxUnaryIterationCore.lean": "2740c9c415a0084585df368190b2714d06d7c831cc821483c32b462af8c37e85",
+        "PPAC/Migration/Internal/SchemaIndexRenameSystem.lean": "46656522ac30946f1686a6911eaed8e3671a179d4ef645916796a9fd6c734f4e",
+        "PPAC/Migration/Internal/ObjectSchemaIndex.lean": "fca20b04f136404d4e1fcbae1312e467e6f7b6e6dac25db38278d9cfd976ec2e"
+      },
+      "scope": "Ordinary original nativeZF kernel proves ACTUAL existence/uniqueness of the two original schema-shell outputs and their whole closure at EVERY INTERNAL omega count, for natural already-renamed matrix-code slots. Reuse the original native SchemaTemplate shells without re-proving Separation/Collection mathematics. Sole finite atom adaptation inserts the original pure membership relation scalar, preserving both term fields. General separation_quotation/collection_quotation prove exact original native quotation for EVERY original matrix and parameter scope, not examples. All internal scalar outputs and intermediate traces are existentially constructed; no external standard count, rank cutoff, trace, precomputed output, Type-level choice, new arithmetic/recursor/L/proof kernel or retired Packet reader. This is the actual shell/closure consumer, NOT the full schema input/certificate-label test, NOT its all-internal type-correctness integration, NOT Proof/Con or final Con. External quotation metadata lemmas are distinguished from the actual object-kernel existence/uniqueness theorem.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.SchemaAxiomAssembly.coreProgram": [
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.assembled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.existsOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.uniqueOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.fiber": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.assembled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.existsOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.uniqueOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.fiber_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.output_exists": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.output_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.output_exists_unique": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.source_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.separation_quotation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.SchemaAxiomAssembly.collection_quotation": [
+          "Quot.sound",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

@@ -14399,4 +14399,9 @@ example (phi : Source.Sentence) (hphi : Source.SetLanguage.targetTheory phi) :
       (ConstructibleGround.relative (ForcingTargetTheory.sentence phi))) :=
   ForcingTargetTheory.kernel_certificate phi hphi
 
+-- Actual original schema shell + whole INTERNAL-count closure, with unique output.
+example {m : Nat} (collection : Bool) (w count : Fin m) (v : Fin 3 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaAxiomAssembly.sentence collection w count v)) :=
+  SchemaAxiomAssembly.kernel_certificate collection w count v
+
 end PPAC.Migration.Step4Checks
