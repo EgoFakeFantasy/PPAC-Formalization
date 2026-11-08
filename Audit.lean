@@ -38814,3 +38814,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicCode.typeSentence
 #print axioms PPAC.Migration.ForcingAtomicCode.kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicCode.type_kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomicCode.unique
+#print axioms PPAC.Migration.ForcingAtomicCode.uniqueOutput
+#print axioms PPAC.Migration.ForcingAtomicCode.fiber
+#print axioms PPAC.Migration.ForcingAtomicCode.fiber_total
+#print axioms PPAC.Migration.ForcingAtomicCode.uniqueSentence
+#print axioms PPAC.Migration.ForcingAtomicCode.fiberSentence
+#print axioms PPAC.Migration.ForcingAtomicCode.unique_kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomicCode.fiber_kernel_certificate

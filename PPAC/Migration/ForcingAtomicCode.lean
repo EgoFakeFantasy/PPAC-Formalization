@@ -3,6 +3,8 @@ import PPAC.Migration.Internal.PureQuotationTypedFormulas
 import PPAC.Migration.Internal.TypedArgumentListConstruction
 import PPAC.Migration.Internal.FreeSubstImageCode
 import PPAC.Migration.Internal.ProofTreeEntryFacts
+import PPAC.Migration.Internal.SyntaxIdentityUnique
+import PPAC.Migration.Internal.IndexTermImageCodeUnique
 
 /-! Literal migrated atomic-forcing code: internal construction, not a Con proof.
 The input atom terms are arbitrary internal codes in a closed source context.
@@ -436,5 +438,213 @@ theorem type_kernel_certificate {n m} (equality : Bool) (R : Source.Formula (n+2
   apply close_derives
   apply Derives.impI
   exact compiled_type equality R w a x y q (.hyp (Or.inl rfl))
+
+
+private theorem freeImages_scope_subst {m} {Γ : Context m} (w a f g S : Fin m)
+    (he : Derives Γ (.equal f g)) (h : Derives Γ (freeImages w a f S)) :
+    Derives Γ (freeImages w a g S) := by
+  let F := freeImages w.castSucc a.castSucc (Fin.last m) S.castSucc
+  exact of_eq (by simp only [F, Formula.instantiate, freeImages_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (.eqSubst F he (of_eq (by simp only [F, Formula.instantiate, freeImages_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h))
+
+private theorem converted_index_subst {m} {Γ : Context m} (w I J T f a : Fin m)
+    (he : Derives Γ (.equal I J))
+    (h : Derives Γ (IndexTermImageCodeSyntax.converted false w I T f a f)) :
+    Derives Γ (IndexTermImageCodeSyntax.converted false w J T f a f) := by
+  let F := IndexTermImageCodeSyntax.converted false w.castSucc (Fin.last m) T.castSucc f.castSucc a.castSucc f.castSucc
+  exact of_eq (by simp only [F, Formula.instantiate, IndexTermImageCodeSyntax.converted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (.eqSubst F he (of_eq (by simp only [F, Formula.instantiate, IndexTermImageCodeSyntax.converted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h))
+
+private theorem freeImages_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a f S T : Fin m) (hw : Derives Γ (omega w))
+    (hS : Derives Γ (freeImages w a f S)) (hT : Derives Γ (freeImages w a f T)) :
+    Derives Γ (.equal S T) := by
+  let B := (SyntaxIdentityMapSyntax.identityCode w.castSucc f.castSucc (Fin.last m)).conj
+    (IndexTermImageCodeSyntax.converted false w.castSucc (Fin.last m) S.castSucc f.castSucc a.castSucc f.castSucc)
+  let Δ := Context.add B (Context.image Formula.raise Γ)
+  apply Derives.exE (p := B) hS
+  have hB : Derives Δ B := .hyp (Or.inl rfl)
+  have hT1 := of_eq (freeImages_rename w a f T Fin.castSucc) (under hT B)
+  let C := (SyntaxIdentityMapSyntax.identityCode w.castSucc.castSucc f.castSucc.castSucc (Fin.last (m+1))).conj
+    (IndexTermImageCodeSyntax.converted false w.castSucc.castSucc (Fin.last (m+1)) T.castSucc.castSucc
+      f.castSucc.castSucc a.castSucc.castSucc f.castSucc.castSucc)
+  let Ξ := Context.add C (Context.image Formula.raise Δ)
+  apply Derives.exE (p := C) hT1
+  have hC : Derives Ξ C := .hyp (Or.inl rfl)
+  have hZ2 := ZFContext.under (ZFContext.under hZ B) C
+  have hw2 : Derives Ξ (omega w.castSucc.castSucc) :=
+    of_eq (by simp only [Formula.raise, omega_rename]) (under (under hw B) C)
+  have hId := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w.castSucc f.castSucc (Fin.last m) Fin.castSucc)
+    (under (.conjL hB) C)
+  have hConv := of_eq (IndexTermImageCodeSyntax.converted_rename false w.castSucc (Fin.last m) S.castSucc
+    f.castSucc a.castSucc f.castSucc Fin.castSucc) (under (.conjR hB) C)
+  have he := SyntaxIdentityUnique.code_unique hZ2 w.castSucc.castSucc f.castSucc.castSucc
+    (Fin.last m).castSucc (Fin.last (m+1)) hw2 hId (.conjL hC)
+  have hc := converted_index_subst w.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))
+    S.castSucc.castSucc f.castSucc.castSucc a.castSucc.castSucc he hConv
+  exact IndexTermImageCodeUnique.unique hZ2 false w.castSucc.castSucc (Fin.last (m+1))
+    S.castSucc.castSucc T.castSucc.castSucc f.castSucc.castSucc a.castSucc.castSucc f.castSucc.castSucc
+    hw2 hc (.conjR hC)
+
+private theorem mixed_inputs_subst {m} {Γ : Context m} (w a q : Fin m)
+    (xs ys : Fin 5 → Fin m) (he : ∀ i, Derives Γ (.equal (xs i) (ys i)))
+    (h : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (xs 3) (xs 4) (xs 0) (xs 1) a (xs 1) (xs 2) q)) :
+    Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (ys 3) (ys 4) (ys 0) (ys 1) a (ys 1) (ys 2) q) := by
+  let F0 := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc (xs 3).castSucc (xs 4).castSucc (Fin.last m) (xs 1).castSucc a.castSucc (xs 1).castSucc (xs 2).castSucc q.castSucc
+  have h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (xs 3) (xs 4) (ys 0) (xs 1) a (xs 1) (xs 2) q) := by
+    exact of_eq (by simp only [F0, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst F0 (he 0) (of_eq (by simp only [F0, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h))
+  let F1 := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc (xs 3).castSucc (xs 4).castSucc (ys 0).castSucc (Fin.last m) a.castSucc (Fin.last m) (xs 2).castSucc q.castSucc
+  have h2 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (xs 3) (xs 4) (ys 0) (ys 1) a (ys 1) (xs 2) q) := by
+    exact of_eq (by simp only [F1, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst F1 (he 1) (of_eq (by simp only [F1, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h1))
+  let F2 := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc (xs 3).castSucc (xs 4).castSucc (ys 0).castSucc (ys 1).castSucc a.castSucc (ys 1).castSucc (Fin.last m) q.castSucc
+  have h3 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (xs 3) (xs 4) (ys 0) (ys 1) a (ys 1) (ys 2) q) := by
+    exact of_eq (by simp only [F2, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst F2 (he 2) (of_eq (by simp only [F2, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h2))
+  let F3 := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc (Fin.last m) (xs 4).castSucc (ys 0).castSucc (ys 1).castSucc a.castSucc (ys 1).castSucc (ys 2).castSucc q.castSucc
+  have h4 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (ys 3) (xs 4) (ys 0) (ys 1) a (ys 1) (ys 2) q) := by
+    exact of_eq (by simp only [F3, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst F3 (he 3) (of_eq (by simp only [F3, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h3))
+  let F4 := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc (ys 3).castSucc (Fin.last m) (ys 0).castSucc (ys 1).castSucc a.castSucc (ys 1).castSucc (ys 2).castSucc q.castSucc
+  have h5 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w (ys 3) (ys 4) (ys 0) (ys 1) a (ys 1) (ys 2) q) := by
+    exact of_eq (by simp only [F4, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst F4 (he 4) (of_eq (by simp only [F4, Formula.instantiate, SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h4))
+  exact h5
+
+private theorem matrix_unique {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (n+2)) (w a x y q v : Fin m)
+    (xs ys : Fin 5 → Fin m) (hw : Derives Γ (omega w))
+    (hx : Derives Γ (matrix equality R w a x y q xs))
+    (hy : Derives Γ (matrix equality R w a x y v ys)) : Derives Γ (.equal q v) := by
+  have ht := SyntaxNumerals.unique hZ 2 (xs 0) (ys 0) (.conjL hx) (.conjL hy)
+  have hf := SyntaxNumerals.unique hZ (n+2) (xs 1) (ys 1) (.conjL (.conjR hx)) (.conjL (.conjR hy))
+  have hNx := Derives.conjL (.conjR (.conjR hx))
+  have hNy := Derives.conjL (.conjR (.conjR hy))
+  have hN := PureQuotationSyntax.formula_unique hZ (template equality R) w (xs 2) (ys 2) hw (.conjL hNx) (.conjL hNy)
+  have hUx := Derives.conjL (.conjR (.conjR (.conjR hx)))
+  have hUy := Derives.conjL (.conjR (.conjR (.conjR hy)))
+  have hU := SyntaxForests.unique hZ 2 w (SetLanguage.args2 y x) (xs 3) (ys 3) hw hUx hUy
+  have hVx := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hx)))))
+  have hVy := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hy)))))
+  have hVa := freeImages_scope_subst w a (xs 1) (ys 1) (xs 4) hf hVx
+  have hV := freeImages_unique hZ w a (ys 1) (xs 4) (ys 4) hw hVa hVy
+  have hQx := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hx)))))
+  have hQy := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hy)))))
+  have he : ∀ i, Derives Γ (.equal (xs i) (ys i)) := by
+    intro i
+    exact Fin.cases ht (Fin.cases hf (Fin.cases hN (Fin.cases hU (Fin.cases hV (fun j => Fin.elim0 j))))) i
+  have hQa := mixed_inputs_subst w a q xs ys he hQx
+  exact SyntaxMixedFormulaOutputInduction.unique hZ w (ys 3) (ys 4) (ys 0) (ys 1) a (ys 1) (ys 2) q v hw hQa hQy
+
+/-- Independent quotation/length/list/identity witnesses give the same output.
+No canonical witness, supplied recursive correctness, or output type is assumed. -/
+theorem unique {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (n+2)) (w a x y q v : Fin m)
+    (hw : Derives Γ (omega w))
+    (hq : Derives Γ (compiled equality R w a x y q))
+    (hv : Derives Γ (compiled equality R w a x y v)) : Derives Γ (.equal q v) := by
+  let B := body equality R w a x y q
+  let Δ := Context.add B (raisedContext 5 Γ)
+  apply HornBinderRules.eliminate_many 5 B _ hq
+  have hB : Derives Δ B := .hyp (Or.inl rfl)
+  have hv1 := of_eq (compiled_rename equality R w a x y v (old 5)) (HornBinderRules.under_body 5 hv B)
+  let C := body equality R (old 5 w) (old 5 a) (old 5 x) (old 5 y) (old 5 v)
+  let Ξ := Context.add C (raisedContext 5 Δ)
+  apply HornBinderRules.eliminate_many 5 C _ hv1
+  have hC : Derives Ξ C := .hyp (Or.inl rfl)
+  have hw2 : Derives Ξ (omega (old 5 (old 5 w))) :=
+    of_eq (by simp only [omega_rename])
+      (HornBinderRules.under_body 5 (HornBinderRules.under_body 5 hw B) C)
+  have hx2 : Derives Ξ (matrix equality R (old 5 (old 5 w)) (old 5 (old 5 a))
+      (old 5 (old 5 x)) (old 5 (old 5 y)) (old 5 (old 5 q)) (fun i => old 5 (slot 5 i))) :=
+    of_eq (by simp only [B, body, matrix_rename]) (HornBinderRules.under_body 5 hB C)
+  exact matrix_unique (HornBinderRules.zf_body 5 (HornBinderRules.zf_body 5 hZ B) C) equality R
+    (old 5 (old 5 w)) (old 5 (old 5 a)) (old 5 (old 5 x)) (old 5 (old 5 y))
+    (old 5 (old 5 q)) (old 5 (old 5 v)) (fun i => old 5 (slot 5 i)) (slot 5) hw2 hx2 hC
+
+
+/-- Every candidate using any actual compiler witnesses equals this result. -/
+def uniqueOutput {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a x y q : Fin m) : Formula m := .all
+  ((compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)).imp (.equal (Fin.last m) q.castSucc))
+
+private theorem uniqueOutput_rename {n m l} (equality : Bool) (R : Source.Formula (n+2))
+    (w a x y q : Fin m) (r : Fin m → Fin l) :
+    (uniqueOutput equality R w a x y q).rename r = uniqueOutput equality R (r w) (r a) (r x) (r y) (r q) := by
+  simp only [uniqueOutput, Formula.rename, compiled_rename, Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]
+
+private theorem unique_output {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (n+2)) (w a x y q : Fin m)
+    (hw : Derives Γ (omega w)) (hq : Derives Γ (compiled equality R w a x y q)) :
+    Derives Γ (uniqueOutput equality R w a x y q) := by
+  apply Derives.allI
+  apply Derives.impI
+  let B := compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw B)
+  have hq1 := of_eq (compiled_rename equality R w a x y q Fin.castSucc) (under hq B)
+  exact unique (ZFContext.under hZ B) equality R w.castSucc a.castSucc x.castSucc y.castSucc
+    (Fin.last m) q.castSucc hw1 (.hyp (Or.inl rfl)) hq1
+
+/-- Typed unique output, with every witness still existential inside ZF. -/
+def fiber {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a x y : Fin m) : Formula m := .ex
+  ((compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)).conj
+    ((typed n w.castSucc a.castSucc (Fin.last m)).conj
+      (uniqueOutput equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m))))
+
+private theorem fiber_rename {n m l} (equality : Bool) (R : Source.Formula (n+2))
+    (w a x y : Fin m) (r : Fin m → Fin l) :
+    (fiber equality R w a x y).rename r = fiber equality R (r w) (r a) (r x) (r y) := by
+  simp only [fiber, Formula.rename, compiled_rename, typed_rename, uniqueOutput_rename,
+    Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]
+
+theorem fiber_total {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (n+2)) (w a z x y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Derives Γ (SyntaxTermSyntax.term w a z y)) :
+    Derives Γ (fiber equality R w a x y) := by
+  let B := compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)
+  let Δ := Context.add B (Context.image Formula.raise Γ)
+  apply Derives.exE (p := B) (total hZ equality R w a z x y hw hz hx hy)
+  have hB : Derives Δ B := .hyp (Or.inl rfl)
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw B)
+  have ht := compiled_type equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m) hB
+  have hu := unique_output (ZFContext.under hZ B) equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m) hw1 hB
+  have ho : Derives Δ (fiber equality R w.castSucc a.castSucc x.castSucc y.castSucc) := by
+    apply Derives.exI (Fin.last m)
+    exact of_eq (by simp only [B, Formula.instantiate, Formula.rename, compiled_rename, typed_rename,
+      uniqueOutput_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI hB (.conjI ht hu))
+  exact of_eq (fiber_rename equality R w a x y Fin.castSucc).symm ho
+
+def uniqueSentence {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a x y q v : Fin m) : Source.Sentence :=
+  ((omega w).imp ((compiled equality R w a x y q).imp
+    ((compiled equality R w a x y v).imp (.equal q v)))).close
+
+def fiberSentence {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a z x y : Fin m) : Source.Sentence :=
+  ((omega w).imp ((empty z).imp ((SyntaxTermSyntax.term w a z x).imp
+    ((SyntaxTermSyntax.term w a z y).imp (fiber equality R w a x y))))).close
+
+theorem unique_kernel_certificate {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a x y q v : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (uniqueSentence equality R w a x y q v)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _)
+    equality R w a x y q v (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+
+theorem fiber_kernel_certificate {n m} (equality : Bool) (R : Source.Formula (n+2)) (w a z x y : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (fiberSentence equality R w a z x y)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  exact fiber_total (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) _)
+    equality R w a z x y (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))
+    (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingAtomicCode

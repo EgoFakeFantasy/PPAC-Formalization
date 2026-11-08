@@ -43,3 +43,5 @@
 原Comparator入口本批已准备，工具在原4.34.1兼容编译、原78输入与静态工作流检查通过；真实Linux沙箱验收仍待执行。此门串行依赖原核CI并仅由显式标记／手动参数激活，不替代对象Con。见`verification/original-comparator-preflight-acceptance.json`。
 
 原第10的原子编译分支：`ForcingAtomicCode.kernel_certificate`与`type_kernel_certificate`提供现有原子强迫公式的内部代码总性及准确类型。实际构造模板码、两个作用域次数、反向y/x绑定像列表、恒等自由像列表和混合替换输出。输入绑定范围和项码为内部变量，源自由范围为零；R及参数数目为固定外部模式索引。下一消费者是同一解释的递归公式代码编译器；不是全公式编译、统一内部公理强迫或最终Con。全量验收及旧声明足迹对比见`verification/forcing-atomic-code-acceptance.json`。
+
+原子编译递归前提的本轮闭合：`ForcingAtomicCode.unique`比较独立的次数、模板码、绑定项表、自由像表与完整混合替换见证；两张内部恒等码也通过既有唯一性消去。`fiber_total`实际构造带准确类型且对全部候选唯一的输出。两个新增普通nativeZF原核端点为`unique_kernel_certificate`和`fiber_kernel_certificate`。本轮没有扩大总性的源自由范围，没有完成全公式编译或最终Con；验收见`verification/forcing-atomic-unique-acceptance.json`。
