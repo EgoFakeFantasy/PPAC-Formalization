@@ -1,0 +1,246 @@
+{
+  "verified_at": "2026-11-08T11:38:23.066425+00:00",
+  "baseline_commit": "0284ad7ba916b43787b89b469f768ba2017d1f94",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "object_result": "Actual original ZF/U axiom table and actual bounded ObjectProofNode.theoryShape query imply a closed native formula code. Ordinary nativeZF original FirstOrder.Derives endpoint.",
+  "kernel_endpoint": "PPAC.Migration.OriginalAxiomTyping.kernel_certificate",
+  "quantifiers": "All internal/nonstandard source schema bodies and counts, candidate certificates, formula and row codes. target Bool indexes ZF/U; no external schema-body index or quotation parent.",
+  "explicit_parents": [
+    "Omega(w)",
+    "empty(z)",
+    "Original actual theoryShape boundedMatrix with the complete original axiom test"
+  ],
+  "reused": [
+    "OriginalAxiomCodeTest.schemaBranch_typed",
+    "PureQuotationFormulaTyping.formula_type",
+    "OriginalAxiomCodeTest.test_iff_row/row_at",
+    "ProofTheoryNode.matrix_iff",
+    "Original Source.Derives, TheoryTransport and nativeZF replay"
+  ],
+  "scope": {
+    "uniform_closed_axiom_typing": true,
+    "actual_theory_query_consumed": true,
+    "uniform_coded_forcing_soundness": false,
+    "all_internal_Proof_Con_reduction": false,
+    "final_object_Con_theorem": false,
+    "original_Comparator": false
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38124,
+    "declarations_without_axioms": 2260,
+    "declarations_with_recorded_dependencies": 35864,
+    "new_public_declarations": [
+      "PPAC.Migration.OriginalAxiomTyping.actual_theory_matrix_typed",
+      "PPAC.Migration.OriginalAxiomTyping.kernel_certificate",
+      "PPAC.Migration.OriginalAxiomTyping.query_typed",
+      "PPAC.Migration.OriginalAxiomTyping.sentence",
+      "PPAC.Migration.OriginalAxiomTyping.table_typed",
+      "PPAC.Migration.OriginalAxiomTyping.theory_matrix_typed"
+    ],
+    "all_old_footprints_unchanged": 38118,
+    "old_Lean_modules_changed": [],
+    "new_axiom_dependencies": [],
+    "Lean_warnings": 0,
+    "hashes_verified": 2811,
+    "build_jobs": 3259,
+    "footprints": {
+      "PPAC.Migration.OriginalAxiomTyping.actual_theory_matrix_typed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.OriginalAxiomTyping.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.OriginalAxiomTyping.query_typed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.OriginalAxiomTyping.sentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.OriginalAxiomTyping.table_typed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.OriginalAxiomTyping.theory_matrix_typed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    }
+  },
+  "remote_CI": {
+    "previously_published_commit": "0284ad7ba916b43787b89b469f768ba2017d1f94",
+    "run_id": 42475062234,
+    "observed_status": "in_progress",
+    "current_batch_uploaded_at_acceptance": false,
+    "policy": "Do not push this batch before the preceding remote CI terminates successfully and its actual log is inspected."
+  },
+  "cleanup": {
+    "scope": "Only three own temporary plain files in project .local; preserve all sources, final reports, dependencies and unrelated processes.",
+    "exact_files": [
+      {
+        "path": ".local/axiom-typing-audit.lean",
+        "bytes": 435,
+        "sha256": "7026107d0e573076cda47531ab962781270a39cf5089ffcdfbd68e15776fb2be"
+      },
+      {
+        "path": ".local/axiom-typing-audit.log",
+        "bytes": 3523,
+        "sha256": "a023f5a1ba978042a58da54e22f0489548b45f765112d6eb5df249176a4d9c48"
+      },
+      {
+        "path": ".local/axiom-typing-parent-summary.json",
+        "bytes": 14734011,
+        "sha256": "9559f82d58455730bcdf5ca9bae033b22586cdcbb67e2a378f11964999d92436"
+      }
+    ],
+    "performed": true
+  },
+  "post_cleanup": {
+    "all_2811_acceptance_hashes_unchanged": true,
+    "removed_only_exact_own_files": true
+  }
+}

@@ -6,4 +6,6 @@
 
 下一步只做统一内部／非标准ZF/U公理正确性与强迫、六规则Proof的全部内部矛盾码传输及最终Con。复用现成ObjectProofNode、ReducedProofPresentation、PureProvability/PureSourceLocalTests及同一原强迫解释；不能用刚完成的外部quotation模式冒充非标准正文的统一真值／强迫。完整标准quotation、所有三个矩阵、原模板、整个闭包、L及完整数学模式不重做。原第4 Comparator及第11终验仍待完成。
 
-最新报告：`verification/schema-matrix-quotation-acceptance.json`。九条命令、五条trust=0均通过，零Lean警告、无新增公理依赖。父提交f794920的远端run 42468430542已成功并读取实际日志；本轮三批已验收提交统一推送，新运行的验收结果另行核实。
+本批另完成实际原ZF/U公理表的统一闭类型证明：任意内部正文／参数次数均保留，结论直接由原六规则theoryShape的实际有界查询消费；不要求给定模式正文quotation。这是闭类型，不是统一强迫可靠性。
+
+最新报告：`verification/original-axiom-typing-acceptance.json`；完整标准quotation链报告保留为`verification/schema-matrix-quotation-acceptance.json`。九条命令、五条trust=0均通过，零Lean警告、无新增公理依赖。父提交f794920的远端run 42468430542已成功并读取实际日志；本轮三批已验收提交统一推送，新运行的验收结果另行核实。

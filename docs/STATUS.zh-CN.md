@@ -33,3 +33,5 @@
 `verification/schema-matrix-quotation-acceptance.json`：38118项声明；全部38097项旧足迹保持不变；2636份旧迁移模块中2635份正文不变，另一份仅开放／扩展既有有限points接口；2810个当前源码哈希；九条命令、五条trust=0均退出0，零警告、无新增公理依赖。清理后的复核见报告。
 
 内部Con精确规格见OBJECT_TARGET；原1–11阶段表及执行入口见AGENT_WORKFLOW；逐声明来源与依赖见SOURCE_LOCK。旧批进度在Git及相应验收报告中，不作为当前待办。
+
+当前批统一公理闭类型：`OriginalAxiomTyping.table_typed`覆盖实际原ZF/U公理表的全部内部正文／次数；`actual_theory_matrix_typed`直接消费原六规则theoryShape有界查询，`kernel_certificate`给出普通nativeZF原核闭句。全部旧足迹不变，无新增依赖。此项不证明统一强迫或最终Con；验收见`verification/original-axiom-typing-acceptance.json`。

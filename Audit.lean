@@ -38784,3 +38784,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.SchemaAxiomQuotation.separation_kernel_certificate
 #print axioms PPAC.Migration.SchemaAxiomQuotation.collectionSentence
 #print axioms PPAC.Migration.SchemaAxiomQuotation.collection_kernel_certificate
+#print axioms PPAC.Migration.OriginalAxiomTyping.table_typed
+#print axioms PPAC.Migration.OriginalAxiomTyping.query_typed
+#print axioms PPAC.Migration.OriginalAxiomTyping.theory_matrix_typed
+#print axioms PPAC.Migration.OriginalAxiomTyping.actual_theory_matrix_typed
+#print axioms PPAC.Migration.OriginalAxiomTyping.sentence
+#print axioms PPAC.Migration.OriginalAxiomTyping.kernel_certificate
