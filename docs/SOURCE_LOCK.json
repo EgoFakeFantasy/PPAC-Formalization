@@ -163189,7 +163189,7 @@
         "Original nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingCodeStepUnique.lean": "16ecb1938bf791dee7e693c3fedf000e19ad9dc8ba1cfa47792a24305bcaeefa",
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "e13a92eca0f577d60b563e378953e2c8c4fc90ae4ed50a9af0e8048365b400c8",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
@@ -163237,6 +163237,26 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.select_atomic": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.select_negative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.select_universal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeStepUnique.select_existential": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -163264,7 +163284,7 @@
         "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
         "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
         "PPAC/Migration/Internal/FormulaCodeCaseLogic.lean": "deed8a2c2615bf33ae4deb029ad0dd283ea9a138cf336a1066d9d6665eaa89c6",
-        "PPAC/Migration/ForcingCodeStepUnique.lean": "16ecb1938bf791dee7e693c3fedf000e19ad9dc8ba1cfa47792a24305bcaeefa",
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "e13a92eca0f577d60b563e378953e2c8c4fc90ae4ed50a9af0e8048365b400c8",
         "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
         "PPAC/Migration/InsertExistence.lean": "5cc94d35296fa256a1ec50652f5d1b6e082acd06b538df11320ade9c1c44555b"
       },
@@ -164594,7 +164614,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingCodeBinary.lean": "a51c6ff26e4c7a01fa2bda93ac521f48e9b90d172d953ce69df35122fc44bb86",
-        "PPAC/Migration/ForcingCodeStepUnique.lean": "16ecb1938bf791dee7e693c3fedf000e19ad9dc8ba1cfa47792a24305bcaeefa",
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "e13a92eca0f577d60b563e378953e2c8c4fc90ae4ed50a9af0e8048365b400c8",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
@@ -164687,6 +164707,116 @@
         "PPAC.Migration.ForcingMixedBinary.binary_constructor": [
           "Classical.choice",
           "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_code_unary": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingCodeUnary.lean",
+      "source_declarations": [
+        "forceFormula_bot",
+        "forceFormula_mem",
+        "forceFormula_equal",
+        "forceFormula_neg",
+        "forceFormula_all",
+        "forceFormula_ex",
+        "forcing_sound"
+      ],
+      "consumers": [
+        "Actual pointwise negation and quantifier compiler commutation",
+        "Uniform coded logical-rule and axiom proof interpretation",
+        "Same original all-internal contradiction reduction"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingCodeStepUnique.lean",
+        "PPAC/Migration/ForcingCodeUnique.lean",
+        "PPAC/Migration/ForcingCodeRecursion.lean",
+        "PPAC/Migration/ForcingCodeStep.lean",
+        "PPAC/Migration/ForcingAtomCode.lean",
+        "PPAC/Migration/ForcingNegCode.lean",
+        "PPAC/Migration/ForcingLogicalCode.lean",
+        "PPAC/Migration/ForcingExistCode.lean",
+        "PPAC/Migration/Internal/StructuralListTraceOrder.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingCodeUnary.lean": "e62f790d6b81f1054f4f431f4704289a8bbbe0be2c110e6a390b49a65de37f7a",
+        "PPAC/Migration/ForcingCodeStepUnique.lean": "e13a92eca0f577d60b563e378953e2c8c4fc90ae4ed50a9af0e8048365b400c8",
+        "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
+        "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
+        "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
+        "PPAC/Migration/ForcingAtomCode.lean": "d3b8a0776bc2ddaa9e0a8ad1bf0ffabcb143dd2641eab8382340cd48bc026128",
+        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
+        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
+      },
+      "scope": "Actual atomic and negation/forall/exists compiler computation laws on genuine ForcingCodeRecursion.compiled judgments. Original recursion constructs the history inside object EX; completed selectors and bounded-read correspondence expose the selected existing fragment, and independent child-output uniqueness aligns arbitrary child compilations. Negation uses the original ForcingNegCode fragment and child bound a; forall/exists use the original universal/existential fragments and child bound A=a+1, with original three successor scope witnesses. All codes, outputs, scopes and histories include internal nonstandard values. Atomic law covers the original four atomic cases; combined with the accepted four binary laws, all eleven raw compiler constructor computation laws are available. This is code computation, not pointwise quantifier/negation commutation, forcing MP, semantic/proof preservation or final internal Con. Four existing selector proof bodies were only made public; none were re-proved or replaced.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingCodeUnary.tag": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.childScope": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.output": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.output_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.unary": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.atomic": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.atomicInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.atomicSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingCodeUnary.atomic_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
         ]
       }

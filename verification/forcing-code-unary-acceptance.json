@@ -1,0 +1,323 @@
+{
+  "verified_at": "2026-11-08T23:53:35.991263+00:00",
+  "baseline_commit": "598286c68537617ea9f36d5c9df04ae0980deaca",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_bot",
+    "forceFormula_mem",
+    "forceFormula_equal",
+    "forceFormula_neg",
+    "forceFormula_all",
+    "forceFormula_ex",
+    "forcing_sound"
+  ],
+  "object_result": "Actual atomic and negation/forall/exists compiler computation laws on genuine ForcingCodeRecursion.compiled judgments. Original recursion constructs the history inside object EX; completed selectors and bounded-read correspondence expose the selected existing fragment, and independent child-output uniqueness aligns arbitrary child compilations. Negation uses the original ForcingNegCode fragment and child bound a; forall/exists use the original universal/existential fragments and child bound A=a+1, with original three successor scope witnesses. All codes, outputs, scopes and histories include internal nonstandard values. Atomic law covers the original four atomic cases; combined with the accepted four binary laws, all eleven raw compiler constructor computation laws are available. This is code computation, not pointwise quantifier/negation commutation, forcing MP, semantic/proof preservation or final internal Con. Four existing selector proof bodies were only made public; none were re-proved or replaced.",
+  "endpoints": [
+    "PPAC.Migration.ForcingCodeUnary.kernel_certificate",
+    "PPAC.Migration.ForcingCodeUnary.atomic_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in the unchanged original YesMetaZFC kernel",
+  "actual_main_object_contract": {
+    "unary": "Omega(w), n IN w, succ(A,a), succ(B,A), succ(C,B), actual SingleCode(tag,x,n), actual Compiled(a,n,Q), actual Compiled(childScope,x,N) imply the exact original output fragment. tag4 negation has childScope=a and ForcingNegCode output; tag9 forall and tag10 exists have childScope=A=a+1 and their existing universal/existential outputs. All running codes/scopes are internal including nonstandard. No history or local output is given.",
+    "atomic": "Under the same internal bookkeeping, the original four-way atomic source guard and actual Compiled(a,n,Q) imply the exact existing ForcingAtomCode.compiled judgment. The graph is constructed inside object EX.",
+    "all_eleven_computation_coverage": "Existing binary laws cover tags5/6/7/8; current unary laws cover4/9/10; atomic dispatch covers0/1/2/3. This is raw compiler computation coverage, not proof preservation or the final Con theorem."
+  },
+  "reuse": [
+    "PPAC/Migration/ForcingCodeStepUnique.lean",
+    "PPAC/Migration/ForcingCodeUnique.lean",
+    "PPAC/Migration/ForcingCodeRecursion.lean",
+    "PPAC/Migration/ForcingCodeStep.lean",
+    "PPAC/Migration/ForcingAtomCode.lean",
+    "PPAC/Migration/ForcingNegCode.lean",
+    "PPAC/Migration/ForcingLogicalCode.lean",
+    "PPAC/Migration/ForcingExistCode.lean",
+    "PPAC/Migration/Internal/StructuralListTraceOrder.lean"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38594,
+    "new_audit_entries": 16,
+    "new_module_declarations": 12,
+    "previously_proved_selector_exports": 4,
+    "selector_exports": [
+      "select_atomic",
+      "select_negative",
+      "select_universal",
+      "select_existential"
+    ],
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingCodeStepUnique.select_atomic": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStepUnique.select_negative": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStepUnique.select_universal": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeStepUnique.select_existential": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.tag": [
+        "propext"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.childScope": [
+        "propext"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.output": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.output_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.unary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.atomic": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.atomicInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.atomicSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.atomic_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "previous_footprints_unchanged": 38578,
+    "previous_proof_files": 2813,
+    "unmodified_previous_proof_file_hashes_unchanged": 2812,
+    "only_changed_previous_proof_file": "PPAC/Migration/ForcingCodeStepUnique.lean",
+    "entire_old_file_matches_after_only_four_visibility_changes": true,
+    "old_proof_bodies_rewritten": 0,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingCodeStepUnique.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_code_step_unique",
+      "forcing_code_unique",
+      "forcing_code_binary"
+    ],
+    "reason_for_source_updates": "Only selector visibility changed; its exact file hash and public audit set were updated, together with existing source references. All mathematical proof bodies and previous public axiom footprints are unchanged.",
+    "sealed_input_count": 2846,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0
+  },
+  "scope": {
+    "actual_all_eleven_raw_compiler_computation_laws": true,
+    "actual_pointwise_open_conjunction_already_proved": true,
+    "full_pointwise_negation_quantifier_original_operation_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-unary-selector-build.log",
+      "bytes": 173,
+      "sha256": "17fbd2315428bdf01a2a003092375bbaadc1023e7e3f23c093d7b765c6e72ea0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-build.log",
+      "bytes": 105,
+      "sha256": "4e9f7078f1a07e42fcb777a0d73eb8fad0db825f54a0f5dd6e862229dc5b28a7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-audit.lean",
+      "bytes": 997,
+      "sha256": "41841c70dd35991d8c0dfa61b318ecf6e658f4692cfccf77b9359d79a24e7799"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-audit.log",
+      "bytes": 2530,
+      "sha256": "8a119eaf99a1e3348c958b1c3bac4f63219f91c3d2d64ba0b66246d24e0d300d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-parent-summary.json",
+      "bytes": 14856383,
+      "sha256": "559c728d27ee746ab67739e89850b61349205a64ca9f89724051b866f3587863"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-code-unary-full.log",
+      "bytes": 153,
+      "sha256": "cb23890d40839583362f925d3ead3e90118daa00f72eb582afd7a3b90216f2f0"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "authority": "Existing user approval to upload all accepted work.",
+    "policy": "No push before entire preceding remote CI succeeds and actual native success logs are read.",
+    "preceding_remote_run": 42532862262,
+    "status_at_acceptance": "not yet published; preceding remote CI still live"
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-08T23:54:10.070488+00:00"
+}

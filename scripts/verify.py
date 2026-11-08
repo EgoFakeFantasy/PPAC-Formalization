@@ -2695,7 +2695,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_step', 'ForcingCodeStep', 36),
                                 ('forcing_code_recursion', 'ForcingCodeRecursion', 42),
                                 ('forcing_code_total', 'ForcingCodeTotal', 11),
-                                ('forcing_code_step_unique', 'ForcingCodeStepUnique', 7),
+                                ('forcing_code_step_unique', 'ForcingCodeStepUnique', 11),
                                 ('forcing_code_unique', 'ForcingCodeUnique', 12),
                                 ('forcing_open_code', 'ForcingOpenCode', 25),
                                 ('internal_mp_proof', 'InternalMPProof', 12),
@@ -2706,7 +2706,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
                                 ('forcing_pointwise_code', 'ForcingPointwiseCode', 29),
                                 ('forcing_code_binary', 'ForcingCodeBinary', 7),
-                                ('forcing_mixed_binary', 'ForcingMixedBinary', 1)):
+                                ('forcing_mixed_binary', 'ForcingMixedBinary', 1),
+                                ('forcing_code_unary', 'ForcingCodeUnary', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7389,6 +7390,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_forcing_compiler_binary_scope": 'All four actual source binary constructors (conjunction, disjunction, implication and equivalence) now determine the exact existing ForcingLogicalCode.binary output on independently compiled actual child outputs. The parent and both children are genuine ForcingCodeRecursion.compiled judgments; no local binary answer, history, availability or functionality oracle is supplied. Original internal graph existence, compiled_step, retained branch selectors, bounded reads and independent child-output uniqueness are reused; all source codes, outputs and scopes include internal nonstandard values. Three successor scope witnesses are the existing internal compiler bookkeeping, not external standard counts. For empty source bound scope, the conjunction law feeds the accepted original native proof constructors and yields Proved(Q) iff (Proved(N) AND Proved(M)) for either unchanged complete ZF/U test. This does not prove pointwise open rename/raise/instantiate commutation, normalized forcing MP preservation, uniform coded semantic/axiom/proof correctness, reduction or final Con.',
         "object_pointwise_open_actual_conjunction_constructor_and_proof_iff_proved": True,
         "object_pointwise_open_actual_conjunction_scope": 'Additional actual POINTWISE conjunction commutation and native proof equivalence are now proved at arbitrary internal/nonstandard source free scope b and target free scope t=b+f. The original source AND constructor and three independent actual pointwise compilations determine the literal AND of the child outputs. Reify binary transport, exact raw forcing binary computation and actual opening binary transport are composed, without universal name closure or supplied local forcing answer. Both complete original ZF/U tests yield Proved(parent output) iff (Proved(left output) AND Proved(right output)); native Node/header and Root at empty target free scope are retained. Full rename/raise/instantiate commutation, forcing-specific normalized MP, uniform coded semantic/axiom/proof correctness, reduction and final Con remain unproved.',
+        "object_actual_forcing_compiler_atomic_unary_binder_computation_laws_proved": True,
+        "object_actual_forcing_compiler_all_eleven_constructor_computation_laws_proved": True,
+        "object_actual_forcing_compiler_atomic_unary_scope": 'Actual atomic and negation/forall/exists compiler computation laws on genuine ForcingCodeRecursion.compiled judgments. Original recursion constructs the history inside object EX; completed selectors and bounded-read correspondence expose the selected existing fragment, and independent child-output uniqueness aligns arbitrary child compilations. Negation uses the original ForcingNegCode fragment and child bound a; forall/exists use the original universal/existential fragments and child bound A=a+1, with original three successor scope witnesses. All codes, outputs, scopes and histories include internal nonstandard values. Atomic law covers the original four atomic cases; combined with the accepted four binary laws, all eleven raw compiler constructor computation laws are available. This is code computation, not pointwise quantifier/negation commutation, forcing MP, semantic/proof preservation or final internal Con. Four existing selector proof bodies were only made public; none were re-proved or replaced.',
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

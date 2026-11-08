@@ -295,7 +295,7 @@ private theorem binary_atomic_reject {k m} {Γ : Context m} (hZ : ZFContext.Evid
     (old 4 w) (old 4 a) (old 4 z) (old 4 n) (SyntaxAtomSyntax.two (slot 4 0) (slot 4 1))
     (of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 hw T)) (.conjL (.conjL hT))
     (of_eq (SyntaxAtomSyntax.atomic_rename w a z n (old 4)) (HornBinderRules.under_body 4 ha T))
-private theorem select_atomic {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem select_atomic {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C h n Q : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxAtomSyntax.atomic w a z n))
     (hs : Derives Γ (ForcingCodeStep.cases R H w z f j a A B C h n Q)) : Derives Γ ((SyntaxAtomSyntax.atomic w a z n).conj (ForcingAtomCode.compiled R w a z n Q)) := by
@@ -325,7 +325,7 @@ private theorem select_atomic {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
     exact .botE (existential_atomic_reject (ZFContext.add hZ _) R H w z f j a A B C h n Q (add hw _) (add hc _) (.hyp (Or.inl rfl)))
   exact .impE (FormulaCodeCaseLogic.disj_imp h_atomic (FormulaCodeCaseLogic.disj_imp h_negative (FormulaCodeCaseLogic.disj_imp h_b0 (FormulaCodeCaseLogic.disj_imp h_b1 (FormulaCodeCaseLogic.disj_imp h_b2 (FormulaCodeCaseLogic.disj_imp h_b3 (FormulaCodeCaseLogic.disj_imp h_universal h_existential))))))) hs
 
-private theorem select_negative {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem select_negative {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C h n Q x : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 1 4 w (fun _ => x) n))
     (hs : Derives Γ (ForcingCodeStep.cases R H w z f j a A B C h n Q)) : Derives Γ (ForcingCodeStep.negative R H w z f j a A B C h n Q) := by
@@ -475,7 +475,7 @@ private theorem select_b3 {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     exact .botE (existential_reject (ZFContext.add hZ _) 2 8 (by decide) R H w z f j a A B C h n Q (SyntaxAtomSyntax.two x y) (add hw _) (add hc _) (.hyp (Or.inl rfl)))
   exact .impE (FormulaCodeCaseLogic.disj_imp h_atomic (FormulaCodeCaseLogic.disj_imp h_negative (FormulaCodeCaseLogic.disj_imp h_b0 (FormulaCodeCaseLogic.disj_imp h_b1 (FormulaCodeCaseLogic.disj_imp h_b2 (FormulaCodeCaseLogic.disj_imp h_b3 (FormulaCodeCaseLogic.disj_imp h_universal h_existential))))))) hs
 
-private theorem select_universal {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem select_universal {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C h n Q x : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 1 9 w (fun _ => x) n))
     (hs : Derives Γ (ForcingCodeStep.cases R H w z f j a A B C h n Q)) : Derives Γ (ForcingCodeStep.universal R H w z f j a A B C h n Q) := by
@@ -505,7 +505,7 @@ private theorem select_universal {k m} {Γ : Context m} (hZ : ZFContext.Evidence
     exact .botE (existential_reject (ZFContext.add hZ _) 1 9 (by decide) R H w z f j a A B C h n Q (fun _ => x) (add hw _) (add hc _) (.hyp (Or.inl rfl)))
   exact .impE (FormulaCodeCaseLogic.disj_imp h_atomic (FormulaCodeCaseLogic.disj_imp h_negative (FormulaCodeCaseLogic.disj_imp h_b0 (FormulaCodeCaseLogic.disj_imp h_b1 (FormulaCodeCaseLogic.disj_imp h_b2 (FormulaCodeCaseLogic.disj_imp h_b3 (FormulaCodeCaseLogic.disj_imp h_universal h_existential))))))) hs
 
-private theorem select_existential {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem select_existential {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C h n Q x : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 1 10 w (fun _ => x) n))
     (hs : Derives Γ (ForcingCodeStep.cases R H w z f j a A B C h n Q)) : Derives Γ (ForcingCodeStep.existential R H w z f j a A B C h n Q) := by
