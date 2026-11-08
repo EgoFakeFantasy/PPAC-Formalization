@@ -1,12 +1,12 @@
 # 原 1–11 阶段迁移流程（2026-11-08）
 
-## 当前迁移：完整源 assemble 的普通原核端点（2026-11-08）
+## 当前迁移：实际 presentation_reverse_injection（2026-11-08）
 
-ForcingSliceAssembly.kernel_certificate 在普通 nativeZF 原推导核中证明固定 SliceAssembly.SliceData.assemble:61–105。对象结论保留实际收集图 Graph、HS、同一共同支撑 Supported，以及完整源 injection／functionOn／无杂项子句；没有只交付宿主关系或名字 AST。
+ForcingSlicePresentation.kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的固定 SliceAssembly.presentation_reverse_injection:161–191。保留原 SliceData 父输入（同一 Core、原父支撑、内部序数、实际 Cartesian 名字及两条完整满射），在证明内部实际构造候选 FunctionOn 族及其支撑、取现有 KP／正规滤子／子群交集，再消费完整 assemble，得到较强条件上的实际 HS 反向单射。
 
-候选 FunctionOn 图及其共同支撑是原源 assemble 的输入；实际构造已经由上一批 ForcingSliceCandidate 完成。本批从同一实际双名字 ParameterSpec 的原始选择／分离方程消去切片前提：总性复用已完成的 occurrence 覆盖与内部序数最小指标；函数唯一性用目标分片及字面参数／函数唯一性；单射性用源分片互斥。没有要求 Spart 覆盖 X 或候选成为原 f 的截面，没有新造 Choice、L、收集器、名字递归或参数族图。两项现有 IndexedImage 注入消去接口仅公开，证明正文不改。
+新绑定只容纳这些已构造见证。parameter_pullback 从实际 check／B／Ypart／Spart 选择与分离方程严格回传同一原始名字；既有图传输保留同一 Cartesian 名字。不提供候选族或新的共同支撑前提，不另造参数族图、Choice、L、收集器或递归。五项已有上下文／图辅助接口仅公开，证明正文不变。源语义辅助中的 Choice／全局序仍由已经完成的同一内部 L 消去。
 
-本批全量验收以 verification/slice-assembly-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一是把已完成的实际候选族与 assemble 经现有支撑交集及上下文传输接成 presentation_reverse_injection，再接 Main.reverse_injection_dense。候选构造和 assemble 本身不再列为待做。实际 ACwo、¬AC、ordinal_presentation、全部切片名字／满射／互斥／覆盖、L及公理模式均已完成，不重建。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
+本批全量验收以 verification/slice-presentation-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一真实消费者是 Main.reverse_injection_dense 的全集合归约：非空分支复用已完成 ordinal_presentation 与本端点，空分支复用已完成 empty_domain_injection；不重做这些基础。slice_candidate、候选族、assemble、支撑交集及 presentation_reverse_injection 均不再列为待做。随后接 forces_PP／forces_target／Main、全部内部／非标准 Proof/Con、原第4 Comparator与终验；最终对象 Con 未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 
@@ -49,7 +49,7 @@ ForcingOrdinalChoice迁移原完整nonemptyFamily／choiceForFamily／familyMemb
 | 6 | 背景、解释、universe | 供体完整 L/ZFC 已在固定旧版复用；原生与源语言逐公理／全模式、Choice、全局序及非空原核证书齐备。ConstructibleSource 逐点域对应、源 binder 对应、解释背景和非空前提实际消去，既有 InterpretedZF 已被真实消费 | 原 f28b033 第 6 行固定背景／universe、逐实例 Derives、不加不可达的验收门已完成；不再列作待做。全部内部／非标准 Proof/Con 归 10，不重证 L 或增加 GCH |
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
-| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句、默认关系对象规律及完整ordinal_presentation已接通 | 同一系统的实际ACwo与¬AC强迫、完整ordinal_presentation均已完成；OrderedSections及切片图满射／互斥／覆盖已完成，实际双名字参数关系、slice_candidate、内部候选函数族及完整assemble原核端点已接通，继续支撑交集／上下文传输接presentation_reverse_injection与全局反向单射，保留全部量词；复用已有模式数学 |
+| 9 | 源模型应用 | 第 8 的同一实际 Core／Outcome、通用强迫／对称／HS 后端及 kernelGraph／同值应用／实际同值类、imageClassRelation、实际像商图、源复合／逆图及同系统非良序像双射／¬AC强迫、实际RootProbes、ACwo逻辑桥、witness_placement／localized_existential／localized_maximum、完整地面族选择、实际全条件ACwo原核存在句、默认关系对象规律及完整ordinal_presentation已接通 | 同一系统的实际ACwo与¬AC强迫、完整ordinal_presentation均已完成；OrderedSections及切片图满射／互斥／覆盖已完成，实际双名字参数关系、slice_candidate、内部候选族、完整assemble及实际支撑交集／presentation_reverse_injection原核端点已接通，继续Main.reverse_injection_dense的全集合归约，保留全部量词；复用已有模式数学 |
 | 10 | 原 Main 全局装配与对象内部化 | 原 Main 证明链及最终对象 Con 合同已固定；专用内部检查器尚未闭合 | 接原 reverse_injection_dense→forces_PP→forces_target；复用底座证明图实例化 ZF/U，再在 ZF 内证明全部内部矛盾证明码的归约与最终 Con 蕴含 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 

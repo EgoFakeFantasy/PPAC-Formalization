@@ -14381,4 +14381,10 @@ example {k : Nat} (rho : Fin 7 → Fin k)
       (ForcingSliceAssembly.sentence rho I K B w G F S H mul top O f s A X Y checkedO Cart choices p)) :=
   ForcingSliceAssembly.kernel_certificate rho I K B w G F S H mul top O f s A X Y checkedO Cart choices p
 
+-- Actual candidate family + support intersection + full source assembly.
+example {k : Nat} (root : Fin 40 → Fin k) (S f s X Y O checkedO Cart p : Fin k) :
+    FirstOrder.Derives nativeZF [] (SetTheory.Definitional.Project.fo_sentence (ConstructibleGround.relative
+      (ForcingSlicePresentation.sentence root S f s X Y O checkedO Cart p))) :=
+  ForcingSlicePresentation.kernel_certificate root S f s X Y O checkedO Cart p
+
 end PPAC.Migration.Step4Checks

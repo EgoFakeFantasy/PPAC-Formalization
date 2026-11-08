@@ -38547,3 +38547,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSliceAssembly.kernel_certificate
 #print axioms PPAC.Migration.ForcingIndexedImage.injection_mapsTo
 #print axioms PPAC.Migration.ForcingIndexedImage.injection_one
+#print axioms PPAC.Migration.ForcingSlicePresentation.parameter_pullback
+#print axioms PPAC.Migration.ForcingSlicePresentation.presentation_reverse_injection
+#print axioms PPAC.Migration.ForcingSlicePresentation.sentence
+#print axioms PPAC.Migration.ForcingSlicePresentation.models
+#print axioms PPAC.Migration.ForcingSlicePresentation.kernel_certificate
+#print axioms PPAC.Migration.ForcingSliceCandidate.unary_reindex
+#print axioms PPAC.Migration.ForcingSliceCandidate.four_map
+#print axioms PPAC.Migration.ForcingSliceCandidate.selected_transport
+#print axioms PPAC.Migration.ForcingSliceCandidate.separated_transport
+#print axioms PPAC.Migration.ForcingSliceCandidate.graph_transport

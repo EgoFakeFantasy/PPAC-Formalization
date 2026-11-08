@@ -39,7 +39,7 @@ private abbrev coreRho {k : Nat} (root : Fin 40 → Fin k) : Fin 7 → Fin k := 
 private theorem coreRho_last {k : Nat} (root : Fin 40 → Fin k) : coreRho root 6 = root 33 := by
   rfl
 
-private theorem unary_reindex {k l n : Nat} (env : Fin k → M.Carrier .set) (other : Fin l → M.Carrier .set)
+theorem unary_reindex {k l n : Nat} (env : Fin k → M.Carrier .set) (other : Fin l → M.Carrier .set)
     (base : Fin k → Fin l) (he : ∀ j, other (base j) = env j) (rho : Fin 7 → Fin k)
     (G F mul : Fin k) (names : Fin n → Fin k) (phi : Formula (n+1)) (p x : M.Carrier .set) :
     MapRel (ForcingSliceGeometry.unaryOf rho G F mul names phi) env p x ↔
@@ -54,12 +54,12 @@ private theorem unary_reindex {k l n : Nat} (env : Fin k → M.Carrier .set) (ot
   · intro a
     simp only [domain_semantics,he]
 
-private theorem four_map {a : Type v} {b : Type u} (g : a → b) (s A X ci : a) :
+theorem four_map {a : Type v} {b : Type u} (g : a → b) (s A X ci : a) :
     (fun j => g (ForcingSliceGeometry.four s A X ci j)) = ForcingSliceGeometry.four (g s) (g A) (g X) (g ci) := by
   funext j
   exact Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun t => Fin.elim0 t)))) j
 
-private theorem selected_transport {k l : Nat} {R Q : Formula (k+2)} {R' Q' : Formula (l+2)}
+theorem selected_transport {k l : Nat} {R Q : Formula (k+2)} {R' Q' : Formula (l+2)}
     {env : Fin k → M.Carrier .set} {other : Fin l → M.Carrier .set}
     (hR : ∀ a b, MapRel R env a b ↔ MapRel R' other a b)
     (hQ : ∀ a b, MapRel Q env a b ↔ MapRel Q' other a b)
@@ -69,7 +69,7 @@ private theorem selected_transport {k l : Nat} {R Q : Formula (k+2)} {R' Q' : Fo
   exact (hName child p).trans (and_congr Iff.rfl (and_congr Iff.rfl
     (and_congr (ForcingSeparation.atomic_congr hR false P child X p) (hQ p child))))
 
-private theorem separated_transport {k l n : Nat} {R : Formula (k+2)} {H : Formula (k+1)}
+theorem separated_transport {k l n : Nat} {R : Formula (k+2)} {H : Formula (k+1)}
     {R' : Formula (l+2)} {H' : Formula (l+1)}
     {env : Fin k → M.Carrier .set} {other : Fin l → M.Carrier .set}
     (hR : ∀ a b, MapRel R env a b ↔ MapRel R' other a b)
@@ -84,7 +84,7 @@ private theorem separated_transport {k l n : Nat} {R : Formula (k+2)} {H : Formu
 
 /-- Keep the SAME literal collected graph and its existing product-entry
 family. Only equivalent R/Q tests and parameter coordinates change. -/
-private theorem graph_transport {k l : Nat} {R : Formula (k+2)} {Q : Formula (k+3)}
+theorem graph_transport {k l : Nat} {R : Formula (k+2)} {Q : Formula (k+3)}
     {R' : Formula (l+2)} {Q' : Formula (l+3)}
     (env : Fin k → M.Carrier .set) (other : Fin l → M.Carrier .set)
     (P t X Y : Fin k) (P' t' X' Y' : Fin l)

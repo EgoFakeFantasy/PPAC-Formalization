@@ -1,12 +1,12 @@
 # 本地工作进度（2026-11-08）
 
-## 当前迁移：完整源 assemble 的普通原核端点（2026-11-08）
+## 当前迁移：实际 presentation_reverse_injection（2026-11-08）
 
-ForcingSliceAssembly.kernel_certificate 在普通 nativeZF 原推导核中证明固定 SliceAssembly.SliceData.assemble:61–105。对象结论保留实际收集图 Graph、HS、同一共同支撑 Supported，以及完整源 injection／functionOn／无杂项子句；没有只交付宿主关系或名字 AST。
+ForcingSlicePresentation.kernel_certificate 在普通 nativeZF 原推导核中证明同一内部 L 上的固定 SliceAssembly.presentation_reverse_injection:161–191。保留原 SliceData 父输入（同一 Core、原父支撑、内部序数、实际 Cartesian 名字及两条完整满射），在证明内部实际构造候选 FunctionOn 族及其支撑、取现有 KP／正规滤子／子群交集，再消费完整 assemble，得到较强条件上的实际 HS 反向单射。
 
-候选 FunctionOn 图及其共同支撑是原源 assemble 的输入；实际构造已经由上一批 ForcingSliceCandidate 完成。本批从同一实际双名字 ParameterSpec 的原始选择／分离方程消去切片前提：总性复用已完成的 occurrence 覆盖与内部序数最小指标；函数唯一性用目标分片及字面参数／函数唯一性；单射性用源分片互斥。没有要求 Spart 覆盖 X 或候选成为原 f 的截面，没有新造 Choice、L、收集器、名字递归或参数族图。两项现有 IndexedImage 注入消去接口仅公开，证明正文不改。
+新绑定只容纳这些已构造见证。parameter_pullback 从实际 check／B／Ypart／Spart 选择与分离方程严格回传同一原始名字；既有图传输保留同一 Cartesian 名字。不提供候选族或新的共同支撑前提，不另造参数族图、Choice、L、收集器或递归。五项已有上下文／图辅助接口仅公开，证明正文不变。源语义辅助中的 Choice／全局序仍由已经完成的同一内部 L 消去。
 
-本批全量验收以 verification/slice-assembly-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一是把已完成的实际候选族与 assemble 经现有支撑交集及上下文传输接成 presentation_reverse_injection，再接 Main.reverse_injection_dense。候选构造和 assemble 本身不再列为待做。实际 ACwo、¬AC、ordinal_presentation、全部切片名字／满射／互斥／覆盖、L及公理模式均已完成，不重建。PP/Main、全部内部／非标准 Proof/Con、原第4 Comparator和终验仍未完成；最终对象 Con 未证明。
+本批全量验收以 verification/slice-presentation-acceptance.json 为准，报告产生前仅算局部通过。仍处原第9阶段；下一真实消费者是 Main.reverse_injection_dense 的全集合归约：非空分支复用已完成 ordinal_presentation 与本端点，空分支复用已完成 empty_domain_injection；不重做这些基础。slice_candidate、候选族、assemble、支撑交集及 presentation_reverse_injection 均不再列为待做。随后接 forces_PP／forces_target／Main、全部内部／非标准 Proof/Con、原第4 Comparator与终验；最终对象 Con 未证明。
 
 ## 本批迁移：源子集像满射（2026-11-08）
 

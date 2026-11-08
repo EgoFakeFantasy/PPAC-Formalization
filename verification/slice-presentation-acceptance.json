@@ -1,0 +1,223 @@
+{
+  "verified_at": "2026-11-08T04:33:52.255094+00:00",
+  "baseline_commit": "a635bd5f8b94eda859a7461ce21992382d6ac188",
+  "original_stage": 9,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.ForcingSlicePresentation.kernel_certificate"
+  ],
+  "actual_source_results": [
+    "Full pinned SliceAssembly.presentation_reverse_injection:161-191 on SAME Core/source SliceData parents",
+    "ACTUALLY construct candidate FunctionOn family and its support using the completed candidate_family",
+    "ACTUALLY construct common support with existing KP intersection, subgroup/filter intersection rules",
+    "Strict ACTUAL ParameterSpec pullback through newly constructed witness bindings; same raw names/check/B/Ypart/Spart equations, same Cartesian NAME",
+    "Consume full existing assemble to obtain an ACTUAL HS reverse injection at a stronger condition; full functionOn/no-junk retained",
+    "Ordinary nativeZF original kernel proves SAME-L relative sentence; existing internal L/Choice/l_order eliminates semantic-helper Choice/order"
+  ],
+  "scope": {
+    "ordinary_nativeZF_original_kernel": true,
+    "same_actual_Core": true,
+    "original_SliceData_parent_support_retained": true,
+    "source_ordinal_exact_Cartesian_and_full_surjections_retained": true,
+    "actual_candidate_FunctionOn_family_constructed": true,
+    "actual_new_common_support_intersection_constructed": true,
+    "actual_candidate_to_assemble_composition_complete": true,
+    "presentation_reverse_injection_complete": true,
+    "all_original_internal_conditions": true,
+    "all_internal_indices_and_unrestricted_name_ranks": true,
+    "same_raw_parameter_names_and_Cartesian_NAME": true,
+    "given_candidate_family_or_new_common_support": false,
+    "given_classification_default_or_correctness_oracle": false,
+    "separate_parameter_FunctionOn_required": false,
+    "simultaneous_default_wellorder_quotient_family": false,
+    "new_object_Choice_L_collector_or_foundation": false,
+    "external_wellFounded_standard_index_or_rank_bound": false,
+    "source_piece_cover_X_or_section_of_f_assumed": false,
+    "original_stage9_complete": false,
+    "Main_all_set_reverse_injection_dense_complete": false,
+    "PP_Main_complete": false,
+    "all_internal_nonstandard_Proof_Con_complete": false,
+    "original_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "Existing candidate_family and actual all-internal uniform maximum",
+    "Existing KP/filter/subgroup support intersection, as already used by ForcingWellorderedTarget",
+    "Five existing context and actual raw graph transports publicized with proof bodies unchanged",
+    "Existing actual ParameterSpec/selector/separator equations; no extra parameter family graph",
+    "Existing full source assemble and actual Graph/HS/support/injection construction",
+    "Existing internal L/ZFC/Choice/global order/relative_models and ModelTransfer; no new foundational proof"
+  ],
+  "acceptance": {
+    "audited_declarations": 37897,
+    "new_public_declarations": 5,
+    "newly_exposed_existing_helpers": 5,
+    "old_footprints_unchanged": 37887,
+    "old_module_review": {
+      "modules": 2621,
+      "unchanged_canonical": 2620,
+      "preexisting_EOL_only_differences": 162,
+      "visibility_only_modules": [
+        "PPAC/Migration/ForcingSliceCandidate.lean"
+      ],
+      "unchanged_proof_bodies": true
+    },
+    "current_source_hashes_verified": 2793,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "build_jobs": 3235,
+    "cross_platform_tests": 5,
+    "clean_pinned_repositories": 3
+  },
+  "remote_CI": {
+    "last_completed_run": 42437134328,
+    "last_completed_job": 128598282636,
+    "consecutive_complete_successes_since_bootstrap_fix": 10,
+    "published_accepted_commit": "d2212931218bd5d497f002d036a7e6eaf97d6392",
+    "current_specific_run": 42444551725,
+    "current_specific_job": 128620625267,
+    "current_specific_run_last_observed_status": "in_progress",
+    "new_push_deferred_until_specific_run_terminal": true,
+    "main_preserved": "721d331a4ddd3c1d759a719a55f09388ade4fa30"
+  },
+  "remaining": [
+    "Fixed Main.reverse_injection_dense all-set reduction: reuse completed ordinal_presentation plus this presentation_reverse_injection in nonempty case; reuse completed empty_domain_injection in empty case",
+    "forces_PP / forces_target / full Main",
+    "All INTERNAL/nonstandard proof codes and final object Con_ZF -> Con_(ZF+PP+ACwo+notAC)",
+    "Original stage4 full Comparator and stage11 final acceptance"
+  ],
+  "cleanup": {
+    "removed_files": [
+      {
+        "path": ".local/SlicePresentationAudit.lean",
+        "size": 735,
+        "raw_sha256": "18b6d9b184f7283195f7416e3cda366fca39811025b7d6b73402a16bcd204a73"
+      },
+      {
+        "path": "verification/slice-presentation-build.log",
+        "size": 113,
+        "raw_sha256": "e05b15622af2db0d9e466c1dc11a17e5e8da3fa3fed0af71a50fbc2622fd57fc"
+      },
+      {
+        "path": "verification/slice-presentation-local-axioms.log",
+        "size": 12982,
+        "raw_sha256": "1bea47c6860b5ff94102525b0c472af1d79ba2fe1192aa1afb2b58dbdae543ab"
+      },
+      {
+        "path": "verification/slice-presentation-baseline.tmp.json",
+        "size": 14451025,
+        "raw_sha256": "3edd909f5171c9b12e2c8a466b2482cf582c142d9d2c0b9d075de79277aa9476"
+      },
+      {
+        "path": "verification/slice-presentation-full-verify.log",
+        "size": 153,
+        "raw_sha256": "86b89aac08a602a8413e570bd27e92c6e3a7887b91ab9ecd84af00153b2dba5e"
+      }
+    ],
+    "post_cleanup_build": {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "build_jobs": 3235
+    },
+    "post_cleanup_current_source_hashes_verified": 2793
+  }
+}
