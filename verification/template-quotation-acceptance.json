@@ -1,0 +1,247 @@
+{
+  "verified_at": "2026-11-08T21:01:23.356256+11:00",
+  "baseline_commit": "f7949202e1988c96e1f6fa2d1c2b260f4f1a1078",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "ordinary_original_nativeZF_endpoints": [
+    "PPAC.Migration.SchemaTemplateQuotation.separation_kernel_certificate",
+    "PPAC.Migration.SchemaTemplateQuotation.collection_kernel_certificate"
+  ],
+  "actual_object_result": "Consumes the EXISTING exact native finite Separation/Collection template quotation identities. Ordinary nativeZF proves the exact biconditional between the UNCHANGED actual schema assembled relation (original finite coreProgram AND whole forallClosure) and the ORIGINAL native Separation/Collection sentence quotation. Original membership scalar/field order, raw term children, both distinct Collection matrix occurrences and all original quantifiers are retained. Existing raw/list graph lemmas, uniqueness, tree-quotation witness existence and whole closure quotation are reused.",
+  "quantifiers": {
+    "original_schema_body_and_parameter_count": "EXTERNAL proof-scheme indices; numeral(parameter-count,count) is explicit",
+    "matrix_core_output_and_intermediate_candidates": "ALL internal object code values at those quoted schema inputs",
+    "uniform_nonstandard_body_count_quotation_correctness_claimed": false
+  },
+  "explicit_parents": [
+    "omega(w)",
+    "numeral(original parameter count,count)",
+    "quotations of the original renamed matrices at the ACTUAL environment slots; no given output or execution trace"
+  ],
+  "scope": {
+    "ordinary_original_nativeZF_Derives": true,
+    "EXISTING_finite_original_template_identities_consumed_in_object_graph_proof": true,
+    "exact_original_actual_coreProgram_graph_native_quotation_biconditional": true,
+    "exact_original_assembled_whole_closure_native_Separation_Collection_sentence_quotation": true,
+    "all_internal_candidate_outputs_at_each_quoted_input": true,
+    "output_quotation_witnesses_derived_not_supplied": true,
+    "existing_all_internal_closure_existence_typing_uniqueness_preserved": true,
+    "both_distinct_original_Collection_matrices_retained": true,
+    "source_kernel_signature_or_templates_changed": false,
+    "new_arithmetic_recursion_L_or_proof_kernel": false,
+    "retired_Packet_reader_or_reflection_restored": false,
+    "actual_original_renamed_matrix_quotation_discharge_complete": false,
+    "uniform_nonstandard_body_count_axiom_correctness_complete": false,
+    "full_uniform_internal_ZF_U_axiom_correctness_complete": false,
+    "all_internal_nonstandard_Proof_Con_transport": false,
+    "original_stage10_complete": false,
+    "original_full_Comparator_complete": false,
+    "final_object_Con_proved": false
+  },
+  "reuse": [
+    "SchemaAxiomAssembly.separation_quotation/collection_quotation, not reproved",
+    "Original native Template.expr/plug and SchemaTemplate; existing treeValue injectivity",
+    "HornExprStructural.raw_graph/nil_graph/cons_graph; HornExprUnique",
+    "Existing original tree quotation existence/uniqueness and Source exists elimination",
+    "SchemaClosureQuotation whole original forall-closure quotation",
+    "Existing Source.Derives, TheoryTransport and ZFReplay"
+  ],
+  "next_real_consumer": "Discharge actual original matrix-renaming quotation parents. REUSE IndexFormulaRenameBridge.rename_iff (pure index renaming iff coded mixed substitution) and IndexTermImageEnvironment.exists_environment (actual conversions already exist); connect their actual index/image environment to NativeSubstitutionSyntax.environment, then consume NativeFormulaQuotationCorrespondence.formula_iff. Do not rebuild the bridge, its environments, original finite template quotation, compiler, whole closure quotation, L or mathematical schemas. Uniform internal axiom correctness and ALL internal/nonstandard Proof/Con remain required.",
+  "acceptance": {
+    "audited_declarations": 38084,
+    "declarations_without_axioms": 2258,
+    "declarations_with_recorded_dependencies": 35826,
+    "new_public_declarations": [
+      "PPAC.Migration.SchemaTemplateQuotation.collectionInputs",
+      "PPAC.Migration.SchemaTemplateQuotation.collectionSentence",
+      "PPAC.Migration.SchemaTemplateQuotation.collection_core_iff",
+      "PPAC.Migration.SchemaTemplateQuotation.collection_iff",
+      "PPAC.Migration.SchemaTemplateQuotation.collection_kernel_certificate",
+      "PPAC.Migration.SchemaTemplateQuotation.collection_source_certificate",
+      "PPAC.Migration.SchemaTemplateQuotation.separationInputs",
+      "PPAC.Migration.SchemaTemplateQuotation.separationSentence",
+      "PPAC.Migration.SchemaTemplateQuotation.separation_core_iff",
+      "PPAC.Migration.SchemaTemplateQuotation.separation_iff",
+      "PPAC.Migration.SchemaTemplateQuotation.separation_kernel_certificate",
+      "PPAC.Migration.SchemaTemplateQuotation.separation_source_certificate"
+    ],
+    "old_footprints_unchanged": 38072,
+    "old_module_review": {
+      "modules": 2632,
+      "unchanged_canonical": 2632,
+      "preexisting_EOL_only_differences": 162,
+      "changed_old_modules": []
+    },
+    "current_source_hashes_verified": 2804,
+    "warning_lines": 0,
+    "inherited_axiom_union_size": 41,
+    "new_axiom_dependencies": [],
+    "build_jobs": 3252,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_tests_passed": 5,
+    "clean_pinned_repositories": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_OpenAI_source_hashes_verified": 75,
+    "git_diff_check_before_final_freeze": true
+  },
+  "remote_CI": {
+    "completed_prior_run": {
+      "run_id": 42463175158,
+      "job_id": 128676686002,
+      "commit": "3be43489308550f81904d45636ba229c80644068",
+      "conclusion": "success",
+      "actual_logs_read": true,
+      "audited_declarations": 38053,
+      "warning_lines": 0
+    },
+    "published_parent": {
+      "run_id": 42468430542,
+      "job_id": 128693268405,
+      "commit": "f7949202e1988c96e1f6fa2d1c2b260f4f1a1078",
+      "last_observed_status": "in_progress",
+      "success_claimed": false,
+      "remote_main_unchanged": "721d331a4ddd3c1d759a719a55f09388ade4fa30"
+    },
+    "current_batch_uploaded": false,
+    "publication_policy": "Wait for the SAME published-parent CI terminal success and actual logs before another push."
+  },
+  "cleanup": {
+    "exact_plain_task_files": [
+      {
+        "path": "verification/template-quotation-build.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\template-quotation-build.log",
+        "bytes": 112,
+        "sha256": "8afcbc7f04a8d6046a1c8d982752383d6d154c284fd65b4f8b960fadf8d726fb"
+      },
+      {
+        "path": "verification/template-quotation-local-axioms.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\template-quotation-local-axioms.log",
+        "bytes": 5214,
+        "sha256": "fc23f62c3e200bf7e133c15306100fb23cb247ffed66d26b48016ccf67731d04"
+      },
+      {
+        "path": "verification/template-quotation-baseline.tmp.json",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\template-quotation-baseline.tmp.json",
+        "bytes": 13300712,
+        "sha256": "af7d2c194491ccb4545dc8a2898933852405fbe25f66d8b30cbe5ce17fbc5599"
+      },
+      {
+        "path": "verification/template-quotation-full-wrapper.log",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\verification\\template-quotation-full-wrapper.log",
+        "bytes": 153,
+        "sha256": "a7433f4f6332dd8c47bf5ca6597925ba6ca8fb07fbed737a1c1dd1a11da79d83"
+      },
+      {
+        "path": ".local/TemplateQuotationAudit.lean",
+        "absolute": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\TemplateQuotationAudit.lean",
+        "bytes": 944,
+        "sha256": "2c06c42ebc468ab6ab706379336a86cc5eb1a1303b0fb88416b4a8d2b96bb2c7"
+      }
+    ],
+    "removal_complete": true
+  },
+  "post_cleanup": {
+    "complete": true,
+    "build_exit_code": 0,
+    "build_jobs": 3252,
+    "current_source_hashes_verified": 2804,
+    "reviewed_temporary_files_absent": true,
+    "proof_source_edits_after_full_verification": false,
+    "active_Lean_Lake_processes": 0
+  }
+}

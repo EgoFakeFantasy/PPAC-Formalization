@@ -1077,3 +1077,5 @@ import PPAC.Migration.SchemaAxiomUnique
 import PPAC.Migration.OriginalAxiomCodeTest
 import PPAC.Migration.ProjectCompilerQuotation
 import PPAC.Migration.SchemaClosureQuotation
+
+import PPAC.Migration.SchemaTemplateQuotation

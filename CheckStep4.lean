@@ -14464,4 +14464,15 @@ example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.BinarySc
     FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaClosureQuotation.collectionSentence schema w a n y)) :=
   SchemaClosureQuotation.collection_kernel_certificate schema w a n y
 
+-- Actual original finite templates and whole closure, with explicit matrix quotation.
+example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.UnarySchema k)
+    (w count y : Fin m) (env : Fin 3 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaTemplateQuotation.separationSentence schema w count y env)) :=
+  SchemaTemplateQuotation.separation_kernel_certificate schema w count y env
+
+example {m k : Nat} (schema : YesMetaZFC.SetTheory.Definitional.Project.BinarySchema k)
+    (w count y : Fin m) (env : Fin 3 → Fin m) :
+    FirstOrder.Derives nativeZF [] (Translation.sentence (SchemaTemplateQuotation.collectionSentence schema w count y env)) :=
+  SchemaTemplateQuotation.collection_kernel_certificate schema w count y env
+
 end PPAC.Migration.Step4Checks

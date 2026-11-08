@@ -2640,7 +2640,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('schema_axiom_unique', 'SchemaAxiomUnique', 17),
                                 ('original_axiom_code_test', 'OriginalAxiomCodeTest', 51),
                                 ('project_compiler_quotation', 'ProjectCompilerQuotation', 5),
-                                ('schema_closure_quotation', 'SchemaClosureQuotation', 14)):
+                                ('schema_closure_quotation', 'SchemaClosureQuotation', 14),
+                                ('schema_template_quotation', 'SchemaTemplateQuotation', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7499,6 +7500,9 @@ def main(source_check_only: bool = False) -> None:
         'object_original_whole_forall_closure_exact_native_quotation_schema_original_kernel_proved': True,
         'object_original_whole_forall_closure_quotation_count_body_indices_external': True,
         'object_original_whole_forall_closure_quotation_uniform_nonstandard_count_claimed': False,
+        'object_original_finite_schema_templates_and_whole_closure_exact_native_quotation_schema_original_kernel_proved': True,
+        'object_original_schema_template_quotation_actual_renamed_matrix_parents_retained': True,
+        'object_original_schema_template_quotation_uniform_nonstandard_body_count_claimed': False,
         'object_full_Separation_Collection_axiom_test_proved': False,
 
         'object_original_proof_tree_all_object_code_recursive_equation_unique_proved': True,
