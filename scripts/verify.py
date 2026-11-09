@@ -2712,7 +2712,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_mixed_unary', 'ForcingMixedUnary', 6),
                                 ('internal_proof_quantifier', 'InternalProofQuantifier', 22),
                                 ('forcing_neg_proof', 'ForcingNegProof', 6),
-                                ('forcing_open_lift', 'ForcingOpenLift', 13),
+                                ('forcing_open_lift', 'ForcingOpenLift', 15),
                                 ('forcing_open_instantiate', 'ForcingOpenInstantiate', 12),
                                 ('forcing_condition_instance', 'ForcingConditionInstance', 9),
                                 ('forcing_rebind_terms', 'ForcingRebindTerms', 11),
@@ -2743,7 +2743,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
                                 ('forcing_preorder_code', 'ForcingPreorderCode', 23),
-                                ('forcing_preorder_instances', 'ForcingPreorderInstances', 27)):
+                                ('forcing_preorder_instances', 'ForcingPreorderInstances', 27),
+                                ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
+                                ('forcing_binder_formula', 'ForcingBinderFormula', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6086,6 +6088,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_preorder_original_internal_proof_consumer_connected": True,
         "object_actual_preorder_negative_guard_compiler_codes_identified": False,
         "object_actual_preorder_instances_scope": "Actual raw source quotation -> generated empty bound table and real target parent/child opening -> THREE native instances -> FIVE IMP fields -> FIVE typed local backgrounds -> original internal G0-to-member/order proofs. No supplied target row, codes/proofs or guard/preorder truth. Runtime terms/free scope/codes include internal nonstandard values. Fixed outer pattern is only the pinned 3-ALL/5-IMP source shape. Exact negative/existential guard compiler identification, canonical context/fresh forall, full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
+        "object_actual_binder_instance_all_internal_terms_collapsed": True,
+        "object_actual_binder_instance_all_internal_formulas_collapsed": True,
+        "object_actual_binder_instance_identity_and_native_environments_eliminated": True,
+        "object_actual_binder_instance_scope": "ForcingBinderInstantiation/ForcingBinderFormula: one real lifted opening plus native InstantiateTop equals direct Cons(P,R),S mixed substitution for ALL internal formulas/scopes. Existing full internal cancellation/identity/index-mixed bridges are reused; four identity codes and two actual native environments object-eliminated; original omega decomposition handles nonstandard term indices. No canonical-offset restriction after earlier instances or supplied desired equality. Exact whole-preorder to negative/existential guard compiler identification and all later mono/dense/MP/Proof/reduction/finalCon remain unproved.",
         "object_literal_source_preorder_raw_row_internally_generated": True,
         "object_literal_source_preorder_raw_row_scope": "Existing literal preorder AST; sixteen actual typed raw quotations and nine AND/ALL/IMP fields internally generated from omega/numeral metadata only. Ordinary nativeZF original-kernel certificate. Actual mixed opening and three native instances are now generated and consumed by ForcingPreorderInstances; exact negative/existential guard compiler identification and later mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_internal_single_and_double_local_deduction_producers_proved": True,

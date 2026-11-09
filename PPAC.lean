@@ -1147,3 +1147,5 @@ import PPAC.Migration.ForcingTransitiveGuardProof
 import PPAC.Migration.InternalProofCurry
 import PPAC.Migration.ForcingPreorderCode
 import PPAC.Migration.ForcingPreorderInstances
+import PPAC.Migration.ForcingBinderInstantiation
+import PPAC.Migration.ForcingBinderFormula

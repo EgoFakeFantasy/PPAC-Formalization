@@ -214,3 +214,79 @@ theorem zero_kernel_certificate {m} (w z a f T A C R S K H : Fin m) :
     (.conjL h) (.conjL (.conjR h)) (.conjL (.conjR (.conjR h))) (.conjR (.conjR (.conjR h)))
 
 end PPAC.Migration.ForcingOpenLift
+
+namespace PPAC.Migration.ForcingOpenLift
+open Internal Source SourceAlgebra SourceLogic OmegaSyntax HornBinderSyntax
+open SyntaxRenameQuerySyntax (of_eq)
+open StructuralListFieldSyntax (field field_rename)
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+
+/-- The same existing at_maps proof for ANY actual closed term tables. Earlier
+native instances insert legal closed terms, so the original canonical-name
+layout is no longer a legitimate premise at the next binder. -/
+theorem old_fields_from_lists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound : Bool)
+    (w z a f T A C R S K H i I q v : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hLists : Derives Γ (SyntaxMixedImageCodeSyntax.termLists w a f z T R S))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w R S a f z T A C K H))
+    (hi : Derives Γ (.mem i (SyntaxTermSyntax.limit bound a f)))
+    (hf : Derives Γ (field w (SyntaxIndexMapSyntax.selectMap bound R S) i q)) (hs : Derives Γ (step bound i I)) :
+    Derives Γ (equation bound w A f K H i I q v) := by
+  have hList : Derives Γ (SyntaxMixedImageCodeSyntax.termList w (SyntaxTermSyntax.limit bound a f) z T (SyntaxIndexMapSyntax.selectMap bound R S)) := by
+    cases bound
+    · exact .conjR hLists
+    · exact .conjL hLists
+  have hterm := SyntaxMixedImageCodeFields.field_type w (SyntaxTermSyntax.limit bound a f) z T (SyntaxIndexMapSyntax.selectMap bound R S) i q hList hi hf
+  have hclosed := InstantiateOperationFrameSyntax.intro_closedParameter w T q z hz hterm
+  have hctx := Derives.conjL (.conjR (.conjL hLists))
+  have hsucc := Derives.conjR (.conjR (SyntaxCodedMixedBinderTyping.input_of_lifted w R S a f z T A C K H hl))
+  let E := mapsBody w z T C
+  let Δ := Context.add E (raisedContext 3 Γ)
+  apply HornBinderRules.eliminate_many 3 E _ (maps_total hZ w z T C hw (.conjL hctx) (.conjR hctx) hsucc hz)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact of_eq (equation_rename bound w A f K H i I q v (old 3)).symm
+    (at_maps (HornBinderRules.zf_body 3 hZ E) bound (old 3 w) (old 3 z) (old 3 a) (old 3 f) (old 3 T) (old 3 A) (old 3 C)
+      (old 3 R) (old 3 S) (old 3 K) (old 3 H) (old 3 i) (old 3 I) (old 3 q) (old 3 v) (slot 3 0) (slot 3 1) (slot 3 2)
+      (of_eq (omega_rename w (old 3)) (HornBinderRules.under_body 3 hw E))
+      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w R S a f z T A C K H (old 3)) (HornBinderRules.under_body 3 hl E))
+      (of_eq (by simp only [Formula.rename, SyntaxTermSyntax.limit_map]) (HornBinderRules.under_body 3 hi E))
+      (of_eq (by cases bound <;> simp only [field_rename, SyntaxIndexMapSyntax.selectMap_map]) (HornBinderRules.under_body 3 hf E))
+      (of_eq (step_rename bound i I (old 3)) (HornBinderRules.under_body 3 hs E))
+      (of_eq (InstantiateOperationFrameSyntax.closedParameter_rename w T q (old 3)) (HornBinderRules.under_body 3 hclosed E))
+      (.conjL hE) (.conjL (.conjR hE)) (.conjR (.conjR hE)))
+
+/-- The actual lifted head is still the original bvar0 code for arbitrary
+closed term tables. All auxiliary maps/head remain object witnesses. -/
+theorem zero_code_from_lists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f T A C R S K H q : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hLists : Derives Γ (SyntaxMixedImageCodeSyntax.termLists w a f z T R S))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w R S a f z T A C K H))
+    (hq : Derives Γ ((Formula.mem z A).conj (field w K z q))) :
+    Derives Γ (SyntaxVariableSyntax.code true w z q) := by
+  have hctx := Derives.conjL (Derives.conjR (Derives.conjL hLists))
+  have hsucc := Derives.conjR (Derives.conjR (SyntaxCodedMixedBinderTyping.input_of_lifted w R S a f z T A C K H hl))
+  let E := mapsBody w z T C
+  let Δ := Context.add E (raisedContext 3 Γ)
+  apply HornBinderRules.eliminate_many 3 E _ (maps_total hZ w z T C hw (Derives.conjL hctx) (Derives.conjR hctx) hsucc hz)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ3 := HornBinderRules.zf_body 3 hZ E
+  have hw3 := of_eq (omega_rename w (old 3)) (HornBinderRules.under_body 3 hw E)
+  have hl3 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w R S a f z T A C K H (old 3)) (HornBinderRules.under_body 3 hl E)
+  have hq3 : Derives Δ ((Formula.mem (old 3 z) (old 3 A)).conj (field (old 3 w) (old 3 K) (old 3 z) (old 3 q))) :=
+    of_eq (by simp only [Formula.rename, field_rename]) (HornBinderRules.under_body 3 hq E)
+  have hh := Derives.conjR (Derives.conjR hE)
+  have hzero := SyntaxCodedMixedBinderFields.zero_iff hZ3 (old 3 w) (old 3 R) (old 3 S) (old 3 a) (old 3 f) (old 3 z) (old 3 T)
+    (old 3 A) (old 3 C) (old 3 K) (old 3 H) (slot 3 0) (slot 3 1) (old 3 z) (slot 3 2) (old 3 q)
+    hw3 hl3 (Derives.conjL hE) (Derives.conjL (Derives.conjR hE)) hh
+  have heq := Derives.impE (Derives.conjL hzero) hq3
+  let V := SyntaxVariableSyntax.code true (old 3 w).castSucc (old 3 z).castSucc (Fin.last (m+3))
+  have hn : Derives Δ (V.instantiate (slot 3 2)) := of_eq
+    (by simp only [V, Formula.instantiate, SyntaxVariableSyntax.code_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (Derives.conjL (Derives.conjR hh))
+  have hout : Derives Δ (SyntaxVariableSyntax.code true (old 3 w) (old 3 z) (old 3 q)) := of_eq
+    (by simp only [V, Formula.instantiate, SyntaxVariableSyntax.code_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (Derives.eqSubst V (eq_symm heq) hn)
+  exact of_eq (SyntaxVariableSyntax.code_rename true w z q (old 3)).symm hout
+
+end PPAC.Migration.ForcingOpenLift

@@ -1,0 +1,261 @@
+{
+  "verified_at": "2026-11-09T16:18:41.724173+00:00",
+  "baseline_commit": "a046b48e6d757fe05bdcd17f3f4b3da271dcf9f9",
+  "original_stage": 10,
+  "background": "Original YesMetaZFC pure membership language; nativeZF; original six-rule FirstOrder.Derives and existing 19-rule source transport; no additional choice/inaccessible assumption.",
+  "result": "One actual lifted opening followed by the same native InstantiateTop used by the original preorder instance chain equals direct original mixed substitution with Cons(P,R),S for ALL internal formula codes, contexts and term indices. Existing full internal cancellation/identity/index-mixed bridges are reused. Four identity codes and two actual native environment tables are constructed/eliminated in the object theory; cons table typing is derived from the actual cons.",
+  "proof_boundaries": {
+    "all_internal_nonstandard_codes_and_scopes": true,
+    "canonical_offset_restriction_after_earlier_instances": false,
+    "desired_equality_or_identity_environment_answers_assumed": false,
+    "original_kernel_certificates": 3,
+    "whole_preorder_to_negative_existential_compiler_guard_identification_complete": false,
+    "complete_force_mono_force_of_dense_forcingMP": false,
+    "all_internal_ZF_U_axioms_six_rule_Proof_preservation": false,
+    "reduction_and_final_internal_Con": false
+  },
+  "actual_source_consumers": [
+    "Pinned ForcingQuotient.force_mono neg/ex: hr.trans hqp",
+    "Actual ForcingPreorderInstances native instance chain",
+    "Precise original preorder versus negative/existential compiled guard code correspondence"
+  ],
+  "validation": {
+    "audited_declarations": 39173,
+    "without_axioms": 2263,
+    "with_recorded_dependencies": 36910,
+    "warnings": 0,
+    "old_footprints_unchanged": 39154,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingBinderFormula.formula",
+      "PPAC.Migration.ForcingBinderFormula.kernel_certificate",
+      "PPAC.Migration.ForcingBinderFormula.native",
+      "PPAC.Migration.ForcingBinderFormula.nativeInput",
+      "PPAC.Migration.ForcingBinderFormula.nativeSentence",
+      "PPAC.Migration.ForcingBinderFormula.native_kernel_certificate",
+      "PPAC.Migration.ForcingBinderFormula.path",
+      "PPAC.Migration.ForcingBinderFormula.path_rename",
+      "PPAC.Migration.ForcingBinderFormula.sentence",
+      "PPAC.Migration.ForcingBinderInstantiation.closed_output",
+      "PPAC.Migration.ForcingBinderInstantiation.frame",
+      "PPAC.Migration.ForcingBinderInstantiation.frame_rename",
+      "PPAC.Migration.ForcingBinderInstantiation.kernel_certificate",
+      "PPAC.Migration.ForcingBinderInstantiation.path",
+      "PPAC.Migration.ForcingBinderInstantiation.path_rename",
+      "PPAC.Migration.ForcingBinderInstantiation.sentence",
+      "PPAC.Migration.ForcingBinderInstantiation.term",
+      "PPAC.Migration.ForcingOpenLift.old_fields_from_lists",
+      "PPAC.Migration.ForcingOpenLift.zero_code_from_lists"
+    ],
+    "new_axioms": [],
+    "old_PPAC_proof_files_unchanged": 2849,
+    "old_lifting_file_exact_byte_prefix_preserved": 14940,
+    "mechanically_retained_existing_lifting_body": true,
+    "sealed_inputs_rehashed": 2885,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "regressions": {
+      "ci_compatibility": 9,
+      "original_comparator_guard": 7
+    },
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "local_log_sha256": {
+      ".local/binder-formula-full-verification.log": "bad50548c7cc8b375e090aec3fa6649b31e240f5b660d642ee0c04ebe966de1e",
+      ".local/binder-formula-preaudit.log": "32c61f6c877fc7589da26c75a57072a1acdd3ad168c02b323934b19c0e1c4cbb",
+      ".local/binder-formula-source-preflight.log": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24",
+      ".local/binder-formula-ci-regressions.log": "c3aa7efcbc0b97d428827d1f4a98e282ec998e2d0459a53e7e70727ecff17fa5",
+      ".local/binder-formula-guard-regressions.log": "a5dd445a4678dc7648b4ccb6c0be4bc997d2499ef47761eaef27aaae95f20410",
+      ".local/binder-formula-clean-inputs.log": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+    },
+    "old_lifting_prefix_sha256": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc"
+  },
+  "remote_scope": "Local full acceptance only. This batch still needs its own clean Linux CI; old published a046b48 CI does not certify these pending changes.",
+  "cleanup": {
+    "removed_files": 16,
+    "removed_bytes": 15023830,
+    "entries": [
+      {
+        "name": "binder-instantiation-lift.log",
+        "bytes": 2161,
+        "sha256": "009a6834b82e5c7f551feaaa6b8f8568af9ff6a5910a0dea67a44cfcfc0ddc7b"
+      },
+      {
+        "name": "binder-instantiation-lift-fixed.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "binder-instantiation-closed.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "binder-instantiation-points.py",
+        "bytes": 5843,
+        "sha256": "749d23c1ef6ba1262cc51317d5f57f1eb96141d4de015be7bd8568c1d525e849"
+      },
+      {
+        "name": "binder-instantiation-points.log",
+        "bytes": 1074,
+        "sha256": "d2646d7fabe03c44fed1c4f2f86791a2d42fc8781b99a22f4a65db06061a1eda"
+      },
+      {
+        "name": "binder-instantiation-term.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "binder-formula-identity.log",
+        "bytes": 5277,
+        "sha256": "01853e5cccb88a9d4258744d0d26b5b0e3b38cf73174830adb368c2e79f11f21"
+      },
+      {
+        "name": "binder-formula-identity-fixed.log",
+        "bytes": 109,
+        "sha256": "9247f5a72133b1d2ec9b470a865842d62d9cea31a2456010ede38b92f7dd030a"
+      },
+      {
+        "name": "binder-formula-diagram.log",
+        "bytes": 109,
+        "sha256": "9efe247da1e96c3176d5ea72df89c84572404bbb949d7c7249200058a181eedb"
+      },
+      {
+        "name": "binder-formula-full.log",
+        "bytes": 109,
+        "sha256": "f6510adf4633a0eeccc1e55d94f8a4814b13c4f141717a3b2f3f41a560c2d46f"
+      },
+      {
+        "name": "binder-formula-native.log",
+        "bytes": 109,
+        "sha256": "10b1b3eb625488854a3d4414ec42e13b3739f59c3f63948ba429e92df163c34f"
+      },
+      {
+        "name": "binder-instantiation-original-ForcingOpenLift.lean",
+        "bytes": 14940,
+        "sha256": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc"
+      },
+      {
+        "name": "binder-instantiation-baseline-summary.json",
+        "bytes": 14985053,
+        "sha256": "2056c4626114e949baf4c19f470f66a10356009d346ceba0780d99df8fdb9108"
+      },
+      {
+        "name": "binder-formula-finalize.py",
+        "bytes": 5543,
+        "sha256": "0744b1014615d937ac6eb05bb81177409095234bfd440555086307de70be675c"
+      },
+      {
+        "name": "binder-formula-preaudit.lean",
+        "bytes": 2019,
+        "sha256": "24282928bd94bdc9894a55ddd5f74aea201afc920773267affdaba791e0d6ac5"
+      },
+      {
+        "name": "binder-formula-registration.json",
+        "bytes": 1484,
+        "sha256": "e3d056cba607dede7aed6854cbf92f02ceba0b7f46b3931a5374460eb76b7ac8"
+      }
+    ],
+    "no_unrelated_processes_files_or_dependencies_removed": true,
+    "postcleanup_actual_source_trust0_exit_code": 0,
+    "postcleanup_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sealed_inputs_rehashed_after_cleanup": 2885
+  }
+}
