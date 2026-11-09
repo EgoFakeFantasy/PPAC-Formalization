@@ -39356,3 +39356,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOpenLift.kernel_certificate
 #print axioms PPAC.Migration.ForcingOpenLift.zeroSentence
 #print axioms PPAC.Migration.ForcingOpenLift.zero_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOpenInstantiate.oldResult
+#print axioms PPAC.Migration.ForcingOpenInstantiate.oldResult_rename
+#print axioms PPAC.Migration.ForcingOpenInstantiate.old_iff
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zeroResult
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zeroResult_rename
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zero_iff
+#print axioms PPAC.Migration.ForcingOpenInstantiate.input
+#print axioms PPAC.Migration.ForcingOpenInstantiate.sentence
+#print axioms PPAC.Migration.ForcingOpenInstantiate.kernel_certificate
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zeroInput
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zeroSentence
+#print axioms PPAC.Migration.ForcingOpenInstantiate.zero_kernel_certificate

@@ -165557,6 +165557,107 @@
           "propext"
         ]
       }
+    },
+    "forcing_open_instantiate": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingOpenInstantiate.lean",
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "consumers": [
+        "Actual term-variable composition for condition-rebind/open/original InstantiateTop cancellation",
+        "Actual negative fragment instance identification before normalized forcing MP"
+      ],
+      "reuse_producers": [
+        "Actual ForcingOpenLift old-field and original zero-field equations",
+        "Existing original kind1 mode2 InstantiateVariableRun.run_iff",
+        "Existing bound-at-point and free-identity value specializations",
+        "Existing closed-parameter free-branch elimination and term-code range"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
+        "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
+        "PPAC/Migration/ForcingOpenLayout.lean": "9a12e3bc775127f4da1165033bf6ad93f4860ff0a661ecf0c6f42dc937dc8d10",
+        "PPAC/Migration/Internal/InstantiateVariableRun.lean": "29773a95b8d0ee81e1271b098d1607bdd3368675a0727b4da9763f1bb8109a10",
+        "PPAC/Migration/Internal/InstantiateVariableSpecialization.lean": "025cb237407de70825f2d5fec469dca2c8f50c8cb128bef762dcacddb13193e3",
+        "PPAC/Migration/Internal/InstantiateOperationFrameSyntax.lean": "1e5b5068ce5e18f6606b541dd18267eb165b38cd1afb1a426d4c859c4bd489d7",
+        "PPAC/Migration/Internal/SyntaxTerms.lean": "c9436ba90d5c74f013683258565389ccc5c5b81b07df842f89cbfac3086aaf52"
+      },
+      "scope": "For SAME actual opening and original coded binder lift, internally generate intermediate original image codes and ORIGINAL kind1/mode2 Run execution. The old bound-name/free-parameter composite is equivalent to exact original code equality; the new zero composite is equivalent to equality with the given legal closed parameter. Runtime scopes/indices/codes include internal nonstandard values; no intermediate image/run/output answer is a premise. Two nativeZF original-kernel certificates. This is the actual two-operation TERM variable composition, not full formula condition-rebind/open/InstantiateTop cancellation, full source operation commutation, normalized forcing MP or uniform coded axiom/proof preservation; reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOpenInstantiate.oldResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.oldResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.old_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zeroResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zeroResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zero_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zeroInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zeroSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenInstantiate.zero_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
