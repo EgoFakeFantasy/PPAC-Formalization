@@ -40019,3 +40019,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPreorderMember.reversed_bound
 #print axioms PPAC.Migration.ForcingPreorderMember.same_result
 #print axioms PPAC.Migration.ForcingPreorderMember.sentence
+
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.carrier_field
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.memberInput
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.memberSentence
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.member_from_instance
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.member_kernel_certificate
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.relationInput
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.relationSentence
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.relation_from_instance
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.relation_kernel_certificate
+#print axioms PPAC.Migration.ForcingPreorderGuardTables.replacement_index

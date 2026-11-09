@@ -2754,7 +2754,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_relation_raw_formula', 'ForcingRelationRawFormula', 9),
                                 ('forcing_preorder_leaves', 'ForcingPreorderLeaves', 18),
                                 ('forcing_preorder_leaf_target', 'ForcingPreorderLeafTarget', 10),
-                                ('forcing_preorder_member', 'ForcingPreorderMember', 13)):
+                                ('forcing_preorder_member', 'ForcingPreorderMember', 13),
+                                ('forcing_preorder_guard_tables', 'ForcingPreorderGuardTables', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6092,6 +6093,9 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_actual_preorder_updated_member_native_instance_codes_identified": True,
+        "object_actual_preorder_updated_relation_native_instance_codes_identified": True,
+        "object_actual_preorder_guard_tables_scope": "Consumes SAME original actual free-condition replacement S[j:=P2]=Sg, SAME retained raw/native row, actual compiler/head/lifted opening and native InstantiateTop. Member carrier slot k is proved unchanged by object numeral separation k!=k+1; its value generated internally. relation_from_instance internally eliminates original four compiler, five common-source, four argument-table and one singleton-forest witnesses, recovers original S type and P0/P2 term types from SAME row/parent, identifies generated condition index by original numeral uniqueness, then calls existing same-row relation leaf bridge. Exact member and R(P0,P2) raw/guard output equalities, two ordinary nativeZF original-kernel certificates. No supplied raw leaf query, quotation child, common-source/image/forest witness, carrier value or expected code equality; no guard/preorder truth, no new kernel/checker/recursor/induction. Runtime scopes/codes internal/nonstandard; fixed R arity and 3-ALL/5-IMP are source metadata only. Whole actual negative/existential compiler identity, canonical contexts/fresh forall, joint mono/dense/MP/all internal axioms/Proof/reduction/finalCon remain unproved.",
         "object_actual_preorder_same_five_IMP_eleven_queries_extracted": True,
         "object_actual_preorder_same_targetData_24_witnesses_retained": True,
         "object_actual_preorder_relation_leaf_query_premise_recovered_from_data": True,

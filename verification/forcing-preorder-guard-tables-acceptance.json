@@ -1,0 +1,191 @@
+{
+  "verified_at": "2026-11-09T20:22:40.798481+00:00",
+  "baseline_commit": "e8eedda83ad3786f1ccd43f482480ec4f0900ed4",
+  "original_stage": 10,
+  "background": "Original pure membership/equality language, ordinary full nativeZF, original FirstOrder.Derives via accepted replay; no object Choice or new kernel/checker/recursor/induction.",
+  "result": [
+    "Actual original free-condition replacement preserves carrier slot by object numeral separation; carrier field value generated internally",
+    "Actual updated member compiler/head/opening and native InstantiateTop -> SAME original raw member leaf, no supplied carrier/leaf-query/equality answer",
+    "Actual updated relation compiler/head/opening/native InstantiateTop -> SAME raw R(P0,P2) leaf; original 4 compiler +5 common-source +4 argument-table +1 singleton-forest witnesses all internally eliminated",
+    "Original free-table type and condition-term types recovered from SAME retained actual raw/native records; generated condition-slot numeral identified by existing uniqueness",
+    "Two ordinary nativeZF original-kernel closed-sentence certificates"
+  ],
+  "proof_boundaries": {
+    "runtime_scopes_and_codes_internal_including_nonstandard": true,
+    "source_arity_and_outer_pattern_only_fixed_metadata": true,
+    "same_actual_updated_member_native_guard_identified": true,
+    "same_actual_updated_relation_native_guard_identified": true,
+    "supplied_source_image_forest_carrier_leaf_query_or_equality_answer": false,
+    "guard_or_preorder_truth_assumed": false,
+    "whole_actual_negative_existential_compiler_identity_completed": false,
+    "canonical_context_and_fresh_forall_completed": false,
+    "full_internal_force_mono_dense_MP_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39338,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37072,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39328,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingPreorderGuardTables.carrier_field",
+      "PPAC.Migration.ForcingPreorderGuardTables.memberInput",
+      "PPAC.Migration.ForcingPreorderGuardTables.memberSentence",
+      "PPAC.Migration.ForcingPreorderGuardTables.member_from_instance",
+      "PPAC.Migration.ForcingPreorderGuardTables.member_kernel_certificate",
+      "PPAC.Migration.ForcingPreorderGuardTables.relationInput",
+      "PPAC.Migration.ForcingPreorderGuardTables.relationSentence",
+      "PPAC.Migration.ForcingPreorderGuardTables.relation_from_instance",
+      "PPAC.Migration.ForcingPreorderGuardTables.relation_kernel_certificate",
+      "PPAC.Migration.ForcingPreorderGuardTables.replacement_index"
+    ],
+    "new_axioms": [],
+    "ALL_old_PPAC_proof_files_completely_unchanged": 2861,
+    "sealed_inputs_rehashed": 2895,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "same_turn_unchanged_CI_compatibility_scripts_regressions_passed": 9,
+    "same_turn_unchanged_original_comparator_guard_regressions_passed": 7,
+    "clean_pins": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_source_hashes_verified": 75,
+    "post_cleanup_source_trust0_command": {
+      "module": "ForcingPreorderGuardTables",
+      "exit_code": 0,
+      "log": ".local/preorder-guard-tables-postcleanup-source.log"
+    },
+    "sealed_inputs_rehashed_after_cleanup": 2895
+  },
+  "next_actual_source_consumer": "ForcingNegCondition.from_instance -> compiledData(5) -> shellResult(4) -> normalizedData(6) -> finalData(6). Use both actual guard query chains with GuardTables native consumers, rewrite outer/middle IMP inputs using existing SyntaxRenameLogicalSubst.binary_x, then existing ForcingTransitiveGuardProof.at_negative_under; no new proof kernel.",
+  "remaining": "Whole actual negative/existential compiler identity; canonical local contexts/fresh forall; original joint force_mono/force_of_dense/exists_force_neg/forceFormula_imp internal induction, normalized MP, all internal/nonstandard ZF/U axioms and six-rule Proof, reduction/finalCon. Stages1-9 not reopened; stage11 not started.",
+  "local_acceptance_is_not_remote_Linux_acceptance": true,
+  "cleanup": {
+    "exact_own_temporary_files_removed": 5,
+    "bytes_removed": 12947559,
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-guard-tables-baseline.json",
+        "bytes": 12944377,
+        "sha256": "0f826348e744ccc765b9ef3d5f440edf1aec07726e8ed378f908493ed7e6431f"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-guard-tables-footprints.json",
+        "bytes": 2259,
+        "sha256": "b55952418ce5d00abecc1f8c11c6e5f43db6338acca1711185bea32edc24bcf1"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-guard-tables-preaudit.lean",
+        "bytes": 808,
+        "sha256": "98d72dcda1cb9e2b2f5f61a1bc5948229c744dac4a34d40162a37bc52186ca88"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-guard-tables-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-guard-tables-build.log",
+        "bytes": 115,
+        "sha256": "44dbd841003b0319929f1fa6db323bffdb1cd41a409070660731a4b662a59194"
+      }
+    ],
+    "other_project_or_dependency_files_removed": false,
+    "no_residual_Lean_Lake_processes_observed": true
+  },
+  "completed_at": "2026-11-09T20:23:51.738360+00:00"
+}

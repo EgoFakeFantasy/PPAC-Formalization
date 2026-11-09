@@ -56,6 +56,8 @@
 
 | 同一原五IMP叶查询与member叶码对应 | ForcingPreorderLeaves／LeafTarget已从同一原rawData／targetData／instancesProved保留6＋10＋5个见证及内部证明，内部生成原三张prefix表与十一条实际查询；24个见证均在对象量词内。relation_from_data自行恢复空表类型、条件自然性与关系叶查询。ForcingPreorderMember内部生成树码子字段及原载体槽字段，证明实际raw member叶与原guard编译／开口／实例化结果同码。两个新增普通nativeZF原核闭句证书及44项新增公共声明的trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39328项声明、零警告。全部39284项旧足迹不变，无新增公理；清理后四个受影响源码的trust=0也全部退出0。没有给定叶查询、载体值、期望码等式或guard真值，运行码与目标作用域允许内部非标准值。 |
 
+| 原条件槽更新后的完整guard记录消费 | ForcingPreorderGuardTables已接通原free-condition实际替换后的两类guard：用对象numeral不等证明载体槽保留，并在对象量词内生成载体值；实际relation compiler／native InstantiateTop到原R(P0,P2)叶的同码证明内部消去4个compiler、5个共同源、4个实参表和1个singleton森林见证。没有给定共同源／像表／森林／码等式答案，原空表类型和条件项类型从同一原记录恢复。两个普通nativeZF原核证书及10项trust=0预审通过；该后续批次九项完整验收／五项trust=0全部退出0，39338项声明、零警告；39328项旧足迹与2861份旧证明源码不变，无新增公理。整段负／存在compiler与后续Proof／Con仍未完成。 |
+
 ## 当前真正缺口及依赖顺序
 
 - 原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。
@@ -65,7 +67,7 @@
 
 ## 最新实际验收
 
-`verification/forcing-preorder-leaves-acceptance.json`：九项完整验收及五项trust=0均退出0；39328项声明、零警告，全部39284项既有足迹保持，44项新增公共声明无新增公理。2857份旧PPAC证明源码完全不变，原PreorderCode仅追加三个AST元数据引理、全部旧证明前缀及26项旧足迹不变；2894项密封输入重算。16项回归、三个干净锁定依赖及75源哈希通过。仅清理8个本轮临时文件（13031596字节），清理后四个受影响源码trust=0退出0，未见残留Lean／Lake进程。本批为本地验收，后续Linux须由对应新提交独立取得。
+`verification/forcing-preorder-guard-tables-acceptance.json`：九项完整验收及五项trust=0全部退出0；39338项声明、零警告，39328项旧足迹与2861份既有PPAC证明源码不变，10项新增公共声明无新增公理；2895项密封输入重算。现有16项CI回归本轮已通过、兼容性脚本未再修改，三个干净锁定依赖及75源哈希通过。仅删除本批5个临时文件（12947559字节），清理后guard消费源码trust=0退出0，未见残留Lean／Lake进程。前一已接受批次见verification/forcing-preorder-leaves-acceptance.json；两个批次均为本地验收，Linux须由对应新提交独立取得。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 

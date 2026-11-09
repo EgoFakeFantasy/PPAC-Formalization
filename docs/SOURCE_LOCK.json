@@ -171089,6 +171089,112 @@
           "propext"
         ]
       }
+    },
+    "forcing_preorder_guard_tables": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingPreorderGuardTables.lean",
+      "source_declarations": [
+        "Original force_mono neg/ex: actual condition parameter update and R(r,q),R(q,p),R(r,p)",
+        "Original member/relation guards, lifted opening and native instantiation"
+      ],
+      "consumers": [
+        "Actual updated member native guard instance -> SAME original raw member leaf",
+        "Actual updated relation native guard instance -> SAME original raw R(P0,P2) leaf",
+        "Next: whole actual negative/existential normalized record and original local guard-proof consumption"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderMember.lean",
+        "PPAC/Migration/ForcingPreorderLeaves.lean",
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingRelationImages.lean",
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/ForcingGuardOpening.lean",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean",
+        "PPAC/Migration/Internal/SyntaxNumerals.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
+        "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/Internal/SyntaxNumerals.lean": "f4bfec6f423e7813de6c53fb0fc222859b48cc584661b0bd805df885095d7c79",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5"
+      },
+      "scope": "Consumes SAME original actual free-condition replacement S[j:=P2]=Sg, SAME retained raw/native row, actual compiler/head/lifted opening and native InstantiateTop. Member carrier slot k is proved unchanged by object numeral separation k!=k+1; its value generated internally. relation_from_instance internally eliminates original four compiler, five common-source, four argument-table and one singleton-forest witnesses, recovers original S type and P0/P2 term types from SAME row/parent, identifies generated condition index by original numeral uniqueness, then calls existing same-row relation leaf bridge. Exact member and R(P0,P2) raw/guard output equalities, two ordinary nativeZF original-kernel certificates. No supplied raw leaf query, quotation child, common-source/image/forest witness, carrier value or expected code equality; no guard/preorder truth, no new kernel/checker/recursor/induction. Runtime scopes/codes internal/nonstandard; fixed R arity and 3-ALL/5-IMP are source metadata only. Whole actual negative/existential compiler identity, canonical contexts/fresh forall, joint mono/dense/MP/all internal axioms/Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPreorderGuardTables.carrier_field": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.replacement_index": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.member_from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.relation_from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.memberInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.memberSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.member_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.relationInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.relationSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderGuardTables.relation_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
