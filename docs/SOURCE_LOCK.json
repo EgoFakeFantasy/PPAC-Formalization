@@ -168205,6 +168205,159 @@
           "propext"
         ]
       }
+    },
+    "internal_proof_universal": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/InternalProofUniversal.lean",
+      "source_declarations": [
+        "ForcingQuotient.AtomicData.force_mono neg/ex pointwise closure",
+        "ForcingTruth.force_of_dense neg/ex closure",
+        "forcing_sound allI / same-background quantified proof steps"
+      ],
+      "consumers": [
+        "Joint all-internal-code monotonicity/regularity: close pointwise implications under forall with SAME fixed background; final forcing consumer still required"
+      ],
+      "reuse_producers": [
+        "Original actual native mode3 AbstractFreeTop and binary abstraction iff",
+        "Original InternalProofOperations.forall_produce with accepted Node/header and conditional Root",
+        "Original rule21/22 complete numeric heads, all ordered grammar/transform queries and original27-case logical table",
+        "Existing original MP and implication compose",
+        "EXACT original logical_proof result packaging, adapted only from node-kind0 to3",
+        "Ordinary nativeZF ZFReplay; no new kernel/checker/recursor/truth backend"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
+        "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
+        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
+        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
+        "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
+        "PPAC/Migration/Internal/LogicalAbstractNode.lean": "c9707847afc4c26a540db10ffd86b157bef241c281864b7a0f0c889888fa5e69",
+        "PPAC/Migration/Internal/LogicalRule21Head.lean": "98b7fcb056a6f72741ad6585d7f117b63568f1be14b6974a9f3214285e37b2d9",
+        "PPAC/Migration/Internal/LogicalRule22Head.lean": "e265b0bcf4db6b3290e68d54e039688397248ea816bb1c0aa18ca0c62f53c0aa",
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "3f4d607af3aec3b36b57b312f9525e6e73626bd57998feb831df12e6df75f655"
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/InternalProofTemplates.lean",
+          "source_start": "theorem logical_proof",
+          "source_end": "\nprivate theorem template_at_row",
+          "target_start": "private theorem forall_proof",
+          "target_end": "\n/-- Original forall body",
+          "replacements": [
+            [
+              "theorem logical_proof",
+              "private theorem forall_proof"
+            ],
+            [
+              "existsResult test 0",
+              "existsResult test 3"
+            ],
+            [
+              "result test 0",
+              "result test 3"
+            ]
+          ],
+          "producer_sha256": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+          "normalized_body_sha256": "b1c86d15cbb220b84e79ec225849ad68ae08ef61516e0506eb710e3e6f134b30"
+        }
+      ],
+      "scope": "Actual mode3 W→SAME G and F→J, valid G with bound scope0, and legitimate child internal proof of I=(W→F) at extended free scopeB. Actual abstractions enforce internal successor A/B and fixed-background freshness; all runtime scopes/codes/proofs can be nonstandard. INTERNALLY construct inner implication and its real mode3 abstraction, original forall node/proof, rule21+22 certificates/rows/complete queries, all forall/implication codes and original MP/compose proofs. Produce actual internal proof G→ALL J plus generated forall code; keep original conditional Root when free scope is empty. No ProvedG, desired conclusion proof, logical certificate/query or output-code oracle supplied. This closes a necessary original quantified proof step; it does NOT yet establish uniform forcing monotonicity/regularity, normalized forcing MP, all-internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.InternalProofUniversal.distributionData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.distributionData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.distribution_axiom": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.vacuityData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.vacuityData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.vacuity_axiom": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.allProved": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.allProved_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.generalize": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.input_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.guarded": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.guarded_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.guarded_generalize": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofUniversal.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

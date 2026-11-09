@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-真实完整否定实例现已在同一个固定条件背景G下移除成员和关系两层guard：复用原完整正规化及5+4+6+6共21个内部见证，内部生成两类guard证明；用原head／compiler／mixed opening唯一性对齐独立的实际关系输出，再用原S/MP两次消去前件，取得G→(D→原falsum)的内部证明，D为同一实际直接opening。没有给定guard真值／证明或ProvedG。
+本批已接通原mode3、forall_produce和逻辑公理21／22：消费实际抽象W→同一G、F→J和扩展自由作用域B中的原内部子证明I=(W→F)，内部生成所有中间／目标公式、逻辑证书、数值行、原Node／proof／Root以及G→∀J的内部证明。G具有原零绑定作用域，固定背景／新变量条件由实际抽象与类型判断约束；运行时作用域、公式码、证明码仍覆盖内部／非标准值，不假设G已证明或给定目标证明。
 
-下一实际消费者为原force_of_dense／exists_force_neg／forceFormula_imp的统一内部regularity／单调性及规范化强迫MP，随后为全部内部／非标准ZF/U公理和六规则Proof保真、精确reduction与最终Con。G作为同一条件背景保留，在最终根节点由已有完整具体系统消去；不增加任意自由条件下无条件证明G的任务，不重做已有L／偏序数学／完整模式／递归。 最新本地完整验收见`verification/forcing-neg-guard-proof-acceptance.json`；Linux远端验收单独记录。
+两类真实guard的同背景证明和完整否定实例双前件消去已经完成；本批全称引入原证明步骤也已完成。下一实际消费者仍是原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点条件背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。 最新本地完整验收见`verification/internal-proof-universal-acceptance.json`；Linux远端验收单独记录。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

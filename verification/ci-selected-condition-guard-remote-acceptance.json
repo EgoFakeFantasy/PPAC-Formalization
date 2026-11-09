@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-11-09T11:45:00.517909+00:00",
+  "run_id": 42596880794,
+  "job_id": 129091585533,
+  "head_sha": "10d2fa46824f7980ce4cd17c1ac2684f8259df2a",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42596880794",
+  "conclusion": "success",
+  "actual_decoded_job_log_read": true,
+  "actual_native_PASS": "2026-11-09T11:38:04.6839769Z PASS: 38972 audited declarations; 2262 without axioms; 36710 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "all_verify_job_steps_succeeded": true,
+  "clean_pinned_repositories": 3,
+  "original_source_hashes": 75,
+  "regression_tests": {
+    "ci_compatibility": 9,
+    "original_comparator_guard": 7
+  },
+  "elan_release": "v4.2.4",
+  "elan_official_asset_id": 529114798,
+  "elan_sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+  "proof_checks_retried_or_bypassed": false,
+  "scope": "Actual full clean Linux acceptance of OLD published10d2fa4. Does NOT claim Linux acceptance of pending8e08999,c7341aa or new quantified proof batch, and NOT final Con."
+}

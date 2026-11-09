@@ -1,0 +1,144 @@
+{
+  "verified_at": "2026-11-09T11:45:00.509575+00:00",
+  "baseline_commit": "c7341aa7e9c0c62af7b43b7dc18f08733ef9b21a",
+  "original_stage": "10 active;1-9 complete;11 not started",
+  "background": "Original pure-set signature, ordinary nativeZF and original FirstOrder.Derives; original ZF/U tests and six-rule Root; pinned OpenAI/YesMetaZFC unchanged",
+  "result": "Actual mode3 W→SAME G and F→J, G with bound scope0, and legitimate existing child internal proof of I=(W→F) in extended free scopeB. Internally build inner implication/mode3 output, original forall node/proof, all intermediate/conclusion codes, original rule21/22 certificates/rows/complete ordered queries, original MP/compose and complete proof/conditional-Root package. Produce generated forall U=ALL J and actual internal proof G→U. No ProvedG, desired proof, logical certificate/query or output oracle supplied. Actual abstractions enforce internal successor scopes and background freshness; no external standardness restriction.",
+  "proof_boundaries": {
+    "actual_rule21_rule22_complete_queries_certificates_rows_and_proofs_generated": true,
+    "actual_mode3_and_original_forall_Node_producer_consumed": true,
+    "same_fixed_background_G_and_child_proof_at_actual_extended_scope": true,
+    "all_intermediate_and_conclusion_codes_and_proofs_generated_internally": true,
+    "original_conditional_Root_for_empty_free_scope_retained": true,
+    "runtime_scopes_codes_and_proofs_arbitrary_internal_nonstandard": true,
+    "ProvedG_or_desired_proof_or_query_or_certificate_assumed": false,
+    "uniform_internal_forcing_monotonicity": false,
+    "uniform_internal_force_of_dense_regularity": false,
+    "normalized_forcing_MP": false,
+    "all_internal_axiom_and_Proof_preservation": false,
+    "exact_reduction": false,
+    "final_internal_Con_goal": false
+  },
+  "actual_source_consumers": "ForcingQuotient.force_mono neg/ex and ForcingTruth.force_of_dense quantified pointwise closures. The necessary original quantified proof operator is complete; the joint all-internal forcing-code induction still must be connected. Do not misreport existing mode3 or original forall kernel as missing.",
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_commands": 5,
+    "audited_declarations": 39019,
+    "without_axioms": 2262,
+    "with_recorded_dependencies": 36757,
+    "warning_lines": 0,
+    "all_old_footprints_unchanged": 39003,
+    "all_old_PPAC_proof_source_hashes_unchanged": 2843,
+    "new_public_declarations": 16,
+    "new_axiom_dependencies": [],
+    "sealed_inputs": 2877,
+    "all_sealed_inputs_rehashed": true,
+    "original_complete_proof_Root_package_body_retained_with_only_kind0_to3_adaptation": true,
+    "ci_compatibility_tests": 9,
+    "comparator_guard_tests": 7,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75
+  },
+  "remote_scope": "This is LOCAL full acceptance. Published10d2fa4 Linux42596880794 now terminalSUCCESS with actual decodedPASS38972. Pending3 local proof batches are not yet Linux accepted; publish together only after this full local batch is committed.",
+  "cleanup": {
+    "exact_own_disposable_files": 6,
+    "bytes_removed": 14968466,
+    "absolute_paths_sizes_SHA256_checked": true,
+    "manifest_sha256": "45d0ea9fd506c3f6ddc9de9056ba29858aa584df2e2cb39335230f08c52a461e",
+    "actual_new_source_postcleanup_trust0_exit": 0,
+    "all_postcleanup_sealed_hashes_match": 2877,
+    "unrelated_projects_caches_or_processes_removed": false
+  }
+}
