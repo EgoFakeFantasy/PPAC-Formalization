@@ -60,16 +60,18 @@
 
 | 完整原负分支记录及同一局部证明柯里化 | ForcingPreorderNegative直接消费原完整否定compiler、实际body开口和native InstantiateTop；5＋4＋6＋6个原见证在对象量词内消去。实际两层guard查询经既有GuardTables识别为同一H0／H5，原逻辑字段替换后调用既有内部证明规则解除两个前件。既有Curry生产器实际消费同一局部证明，将整个G0前件移入蕴含并保留Extra；同一原falsum和实际剩余IMP码留在对象EX内。parent是Ctx下的内部条件证明，未假定Ctx／guard／preorder真值，其类型由实际native实例恢复。普通nativeZF原核闭句证书及9项trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39347项声明、零警告；39338项旧足迹及2862份旧证明源码不变，无新增公理。规范源上下文布局／fresh全称化、完整存在分支及后续内部Proof／Con尚未完成。 |
 
+| 原完整存在记录及实际外层guard消费 | ForcingPreorderExistential直接消费已有完整存在compiler、实际body opening与native InstantiateTop。原8个compiler／7个ALL-EX-EX壳见证以及两层各4个mixed输出均内部生成／消去。原共用head由同一lift输入和既有term_at_zero在实际A作用域重新定型；原GuardTables、内部投影／链／前件解除及Curry生产器给出实际剩余尾部的类型、Ctx下证明和同一G0柯里化，保留原目标两层IMP字段。原存在producer仅公开6项记录接口，全部证明正文及13项旧足迹不变。普通nativeZF原核证书和17项新增公共声明trust=0预审通过；本批九项完整验收／五项trust=0全部退出0，39364项声明、零警告；39347项旧足迹保持，无新增公理。清理后两个受影响源码trust=0也全部退出0。这里完成记录／外层守卫消费，尾部跨条件不变性及规范上下文／fresh全称化尚未完成。 |
+
 ## 当前真正缺口及依赖顺序
 
-- 原完整负compiler、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现已实际消费。下一项是完整存在分支的实际记录消费、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
+- 原完整负compiler和完整存在compiler记录、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现均已实际消费；存在尾部跨条件不变性仍未证明。下一项是存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-preorder-negative-acceptance.json`：九项完整验收及五项trust=0全部退出0；39347项声明、零警告，39338项旧足迹与2862份既有PPAC证明源码不变，9项新增公共声明无新增公理；2896项密封输入重算。16项CI回归、三个干净锁定依赖及75源哈希通过。仅删除本批5个临时文件（12948642字节），清理后源码trust=0退出0，未见残留Lean／Lake进程。本地完整通过不代表当前新提交已获Linux验收。
+`verification/forcing-preorder-existential-acceptance.json`：九项完整验收及五项trust=0全部退出0；39364项声明、零警告，全部39347项旧足迹保持，17项新增公共声明无新增公理。2862份旧证明源码完全不变；原存在producer仅公开6项实际记录接口，全部其他源码与证明正文不变、13项旧公共足迹保持。2897项密封输入重算；16项CI回归、三个干净锁定依赖及75源哈希通过。只删除7个本轮临时文件（13016763字节），清理后两个受影响源码trust=0退出0，未见残留Lean／Lake进程。这里是本地完整验收，当前新提交尚需独立Linux结果。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 

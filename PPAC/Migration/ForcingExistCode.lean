@@ -26,12 +26,12 @@ private theorem quantAt_rename {m l} (tag : Nat) (w b f x Q : Fin m) (r : Fin m 
     (quantAt tag w b f x Q).rename r = quantAt tag (r w) (r b) (r f) (r x) (r Q) := by
   simp only [quantAt, typedAt_rename]
 
-private def shellData {m} (w a A B C f qM qO rM rO D Nc Q : Fin m) (v : Fin 7 → Fin m) : Formula m :=
+def shellData {m} (w a A B C f qM qO rM rO D Nc Q : Fin m) (v : Fin 7 → Fin m) : Formula m :=
   (binAt 5 w C f D Nc (v 0)).conj ((quantAt 10 w B f (v 0) (v 1)).conj ((binAt 5 w B f rO (v 1) (v 2)).conj ((binAt 5 w B f rM (v 2) (v 3)).conj ((quantAt 10 w A f (v 3) (v 4)).conj ((binAt 7 w A f qO (v 4) (v 5)).conj ((binAt 7 w A f qM (v 5) (v 6)).conj (quantAt 9 w a f (v 6) Q)))))))
-private theorem shellData_rename {m l} (w a A B C f qM qO rM rO D Nc Q : Fin m) (v : Fin 7 → Fin m) (r : Fin m → Fin l) :
+theorem shellData_rename {m l} (w a A B C f qM qO rM rO D Nc Q : Fin m) (v : Fin 7 → Fin m) (r : Fin m → Fin l) :
     (shellData w a A B C f qM qO rM rO D Nc Q v).rename r = shellData (r w) (r a) (r A) (r B) (r C) (r f) (r qM) (r qO) (r rM) (r rO) (r D) (r Nc) (r Q) (fun i => r (v i)) := by
   simp only [shellData, Formula.rename, binAt_rename, quantAt_rename]
-private def shellBody {m} (w a A B C f qM qO rM rO D Nc Q : Fin m) : Formula (m+7) :=
+def shellBody {m} (w a A B C f qM qO rM rO D Nc Q : Fin m) : Formula (m+7) :=
   shellData (old 7 w) (old 7 a) (old 7 A) (old 7 B) (old 7 C) (old 7 f) (old 7 qM) (old 7 qO) (old 7 rM) (old 7 rO) (old 7 D) (old 7 Nc) (old 7 Q) (slot 7)
 private def shell {m} (w a A B C f qM qO rM rO D Nc Q : Fin m) : Formula m := existsMany 7 (shellBody w a A B C f qM qO rM rO D Nc Q)
 private theorem shell_rename {m l} (w a A B C f qM qO rM rO D Nc Q : Fin m) (r : Fin m → Fin l) :
@@ -315,14 +315,14 @@ private theorem shell_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (old 7 (old 7 w)) (old 7 (old 7 a)) (old 7 (old 7 A)) (old 7 (old 7 B)) (old 7 (old 7 C)) (old 7 (old 7 f)) (old 7 (old 7 qM)) (old 7 (old 7 qO)) (old 7 (old 7 rM)) (old 7 (old 7 rO)) (old 7 (old 7 D)) (old 7 (old 7 Nc)) (old 7 (old 7 Q)) (old 7 (old 7 V))
     (fun i => old 7 (slot 7 i)) (slot 7) hw2 hx2 hU
 
-private def data {n m} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m) (v : Fin 8 → Fin m) : Formula m :=
+def data {n m} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m) (v : Fin 8 → Fin m) : Formula m :=
   (SyntaxMixedImageHead.head w C f (v 0) (v 1)).conj ((ForcingGuardCode.compiled false R w A f (v 1) (v 2)).conj ((ForcingGuardCode.compiled true R w A f (v 1) (v 3)).conj ((ForcingGuardCode.compiled false R w B f (v 1) (v 4)).conj ((ForcingExistGuardsCode.compiled R w A B f j (v 5)).conj ((ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder H) w C f (v 1) (v 6)).conj ((ForcingExistChildCode.compiled w a A B C f j N (v 7)).conj (shell w a A B C f (v 2) (v 3) (v 4) (v 5) (v 6) (v 7) Q)))))))
-private theorem data_rename {n m l} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m)
+theorem data_rename {n m l} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m)
     (v : Fin 8 → Fin m) (r : Fin m → Fin l) :
     (data R H w a A B C f j N Q v).rename r = data R H (r w) (r a) (r A) (r B) (r C) (r f) (r j) (r N) (r Q) (fun i => r (v i)) := by
   simp only [data, Formula.rename, SyntaxMixedImageHead.head_rename, ForcingGuardCode.compiled_rename,
     ForcingExistGuardsCode.compiled_rename, ForcingExistChildCode.compiled_rename, shell_rename]
-private def body {n m} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m) : Formula (m+8) :=
+def body {n m} (R : Source.Formula (n+2)) (H : Source.Formula (n+1)) (w a A B C f j N Q : Fin m) : Formula (m+8) :=
   data R H (old 8 w) (old 8 a) (old 8 A) (old 8 B) (old 8 C) (old 8 f) (old 8 j) (old 8 N) (old 8 Q) (slot 8)
 
 /-- Literal ALL/EX/EX code, with all executions existentially bound internally.

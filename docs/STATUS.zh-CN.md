@@ -18,16 +18,12 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-既有原preorder报价、真实mixed开口、三次native实例、五IMP行、五个局部背景和同一G0→member／order内部证明均已生成消费。共同R源记录、两次替换实参表、原guard及raw路径的全内部项／公式相消和关系叶桥已验收；现成L／完整模式、递归、mode3／forall及原局部证明生产器均继续复用。
+既有原preorder报价、真实mixed开口、三次native实例、五IMP行及内部证明已生成消费；共同R、两路径全内部项／公式相消、原完整负compiler实际guard解除及同一G0柯里化均已接通。原L／全模式、对象递归、mode3／forall及原内部证明规则均继续复用。
 
-ForcingPreorderLeaves／LeafTarget已从同一原rawData／targetData／instancesProved保留6＋10＋5个见证及内部证明，内部生成原三张prefix表与十一条实际查询；24个见证均在对象量词内。relation_from_data自行恢复空表类型、条件自然性与关系叶查询。ForcingPreorderMember内部生成树码子字段及原载体槽字段，证明实际raw member叶与原guard编译／开口／实例化结果同码。两个新增普通nativeZF原核闭句证书及44项新增公共声明的trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39328项声明、零警告。全部39284项旧足迹不变，无新增公理；清理后四个受影响源码的trust=0也全部退出0。没有给定叶查询、载体值、期望码等式或guard真值，运行码与目标作用域允许内部非标准值。
+本批ForcingPreorderExistential直接消费已有完整存在compiler、实际body opening和native InstantiateTop。原8个compiler／7个ALL-EX-EX壳见证及两层各4个mixed输出内部消去；原共用head由同一lift输入重新定型，现成GuardTables／投影／链／前件解除／Curry给出准确目标IMP字段、实际typed尾部的Ctx下证明及同一G0柯里化。旧生产器只公开6项记录接口，其余源码和全部证明正文不变，13项旧公共足迹保持。这里完成记录及外层guard消费，未证明尾部跨条件不变性或完整统一存在单调性。
 
-ForcingPreorderGuardTables已接通原free-condition实际替换后的两类guard：用对象numeral不等证明载体槽保留，并在对象量词内生成载体值；实际relation compiler／native InstantiateTop到原R(P0,P2)叶的同码证明内部消去4个compiler、5个共同源、4个实参表和1个singleton森林见证。没有给定共同源／像表／森林／码等式答案，原空表类型和条件项类型从同一原记录恢复。两个普通nativeZF原核证书及10项trust=0预审通过；该后续批次九项完整验收／五项trust=0全部退出0，39338项声明、零警告；39328项旧足迹与2861份旧证明源码不变，无新增公理。整段负／存在compiler与后续Proof／Con仍未完成。
+当前仍在原第10阶段。真正剩余为存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始，最终对象Con未证明。
 
-ForcingPreorderNegative直接消费原完整否定compiler、实际body开口和native InstantiateTop；5＋4＋6＋6个原见证在对象量词内消去。实际两层guard查询经既有GuardTables识别为同一H0／H5，原逻辑字段替换后调用既有内部证明规则解除两个前件。既有Curry生产器实际消费同一局部证明，将整个G0前件移入蕴含并保留Extra；同一原falsum和实际剩余IMP码留在对象EX内。parent是Ctx下的内部条件证明，未假定Ctx／guard／preorder真值，其类型由实际native实例恢复。普通nativeZF原核闭句证书及9项trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39347项声明、零警告；39338项旧足迹及2862份旧证明源码不变，无新增公理。规范源上下文布局／fresh全称化、完整存在分支及后续内部Proof／Con尚未完成。
+最新本地验收见verification/forcing-preorder-existential-acceptance.json：39364项声明、2266项无公理、37098项仅既有记录依赖，零警告。39347项旧足迹保持，2862份旧证明源码完全不变；旧存在producer仅6处可见性前缀改变、所有证明正文不变，2897项密封输入已重算。16回归、三个干净锁定依赖及75源哈希通过。只清理7个本轮临时文件（13016763字节），清理后两个受影响源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交Linux结果。
 
-当前仍为原第10阶段。真正剩余为完整存在分支的实际记录消费、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始。
-
-最新本地验收见verification/forcing-preorder-negative-acceptance.json：39347项声明、2266项无公理、37081项仅既有记录依赖，零警告。39338项旧足迹和2862份旧证明源码不变，2896项密封输入已重算；16回归、三个干净锁定依赖及75源哈希通过。仅清理5个本轮临时文件（12948642字节），清理后源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交的Linux结果。
-
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。历史批次以Git和不可改写验收报告为据。最新Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，39284项声明；f74c26f的42680491232现已独立Linux成功，实际解码日志报告39284项声明、零警告，见verification/ci-relation-raw-remote-acceptance.json；后续本地提交尚不在该Linux范围。
+详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，f74c26f／39284项声明；后续a0665fa独立CI仍在运行，本批39364项不在已有Linux成功范围。历史批次以Git和不可改写回执为据。

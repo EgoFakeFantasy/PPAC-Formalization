@@ -2690,7 +2690,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_code', 'ForcingNegCode', 22),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
-                                ('forcing_exist_code', 'ForcingExistCode', 13),
+                                ('forcing_exist_code', 'ForcingExistCode', 19),
                                 ('forcing_logical_code', 'ForcingLogicalCode', 20),
                                 ('forcing_code_step', 'ForcingCodeStep', 36),
                                 ('forcing_code_recursion', 'ForcingCodeRecursion', 42),
@@ -2756,7 +2756,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_leaf_target', 'ForcingPreorderLeafTarget', 10),
                                 ('forcing_preorder_member', 'ForcingPreorderMember', 13),
                                 ('forcing_preorder_guard_tables', 'ForcingPreorderGuardTables', 10),
-                                ('forcing_preorder_negative', 'ForcingPreorderNegative', 9)):
+                                ('forcing_preorder_negative', 'ForcingPreorderNegative', 9),
+                                ('forcing_preorder_existential', 'ForcingPreorderExistential', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6094,6 +6095,11 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_actual_complete_existential_compiler_outer_guards_discharged": True,
+        "object_actual_complete_existential_8_7_4_4_witnesses_object_eliminated": True,
+        "object_actual_complete_existential_typed_actual_tail_and_same_G0_curry": True,
+        "object_actual_existential_tail_cross_condition_invariance_completed": False,
+        "object_actual_complete_existential_preorder_scope": "Consumes ACTUAL COMPLETE original ForcingExistCode compiler, actual quantified body opening and native InstantiateTop. Original 8 compiler +7 literal ALL/EX/EX shell witnesses eliminated; EXISTING mixed binary outputs internally generate/eliminate four first-query and four final-query outputs. Compiler shared bound-zero head is retyped at actual A using SAME original lifted environment/input and old term_at_zero, with no target scope standardness. Both actual guard chains become SAME original H0/H5 by existing GuardTables; old projection/chain/discharge and existing Curry.from_implication produce actual typed residual tail proof under Ctx and SAME local G0 curried under unchanged Extra. Actual target outer/middle IMP fields and tail type retained with object-generated tail/middle codes. Parent is an INTERNAL conditional proof, never truth of Ctx/preorder/guard; Y type recovered from actual native instantiation. No field/query/guard-equality/final-proof answer; no new compiler/checker/kernel/recursor/induction. Runtime formulas/scopes/codes internal including nonstandard; fixed R/Domain arities and outer source shape are pinned metadata. Ordinary nativeZF original-kernel closed-sentence certificate. This is complete compiler RECORD/OUTER-GUARD consumption, NOT remaining tail invariance between different conditions, canonical contexts/fresh forall, full joint mono/dense/MP/internal axioms/Proof/reduction/finalCon.",
         "object_actual_complete_negative_compiler_preorder_guards_discharged": True,
         "object_actual_complete_negative_compiler_21_witnesses_object_eliminated": True,
         "object_actual_complete_negative_same_local_G0_curried": True,

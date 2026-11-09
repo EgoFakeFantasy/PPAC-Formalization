@@ -162452,7 +162452,7 @@
         "Original Source.Derives, TheoryTransport and nativeZF ZFReplay; no new kernel, recursion or syntax backend"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
@@ -162461,7 +162461,7 @@
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
       },
-      "scope": "Complete one-step literal existential forcing code on an already interpreted arbitrary internal child N at A=a+1. Construct head, five guards, actual child rescoping and seven intermediate AND/EX/IMP outputs, ending with ALL at a. Exact order R(r,q); new name at bound0, current condition r at bound1, q at bound2. All executions are internally existential and independently unique. Arbitrary internal/nonstandard a/A/B/C and child/output codes; fixed external R/H parameter count, exact object numeral free count n+2 and condition slot n+1. Not the full raw recursive interpreter, uniform internal axiom forcing, proof/contradiction reduction or final Con.",
+      "scope": "Complete one-step literal existential forcing code on an already interpreted arbitrary internal child N at A=a+1. Construct head, five guards, actual child rescoping and seven intermediate AND/EX/IMP outputs, ending with ALL at a. Exact order R(r,q); new name at bound0, current condition r at bound1, q at bound2. All executions are internally existential and independently unique. Arbitrary internal/nonstandard a/A/B/C and child/output codes; fixed external R/H parameter count, exact object numeral free count n+2 and condition slot n+1. Not the full raw recursive interpreter, uniform internal axiom forcing, proof/contradiction reduction or final Con. Six existing actual data/shell records and rename/body interfaces are now public for the original complete consumer; ALL proof bodies remain exactly unchanged apart from visibility prefixes, and ALL thirteen old public axiom footprints preserved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistCode.compiled": [
           "Quot.sound",
@@ -162535,6 +162535,32 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.shellData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.shellData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.shellBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistCode.body": [
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -162559,7 +162585,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
-        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/SourceSyntax.lean": "82c0118456216b3cd3ca8abb3570c9a3505ea8922133efe1828f316d60bfa16c",
         "PPAC/Migration/ReverseSyntax.lean": "8fbf87804ba7d32b82b39f4b25b8508992f34033f98d1d747dc27f8eb332e4e0",
@@ -162712,7 +162738,7 @@
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
-        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
         "PPAC/Migration/Internal/FormulaCodeCaseLogic.lean": "deed8a2c2615bf33ae4deb029ad0dd283ea9a138cf336a1066d9d6665eaa89c6",
@@ -164999,7 +165025,7 @@
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
-        "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
       },
       "scope": "Actual atomic and negation/forall/exists compiler computation laws on genuine ForcingCodeRecursion.compiled judgments. Original recursion constructs the history inside object EX; completed selectors and bounded-read correspondence expose the selected existing fragment, and independent child-output uniqueness aligns arbitrary child compilations. Negation uses the original ForcingNegCode fragment and child bound a; forall/exists use the original universal/existential fragments and child bound A=a+1, with original three successor scope witnesses. All codes, outputs, scopes and histories include internal nonstandard values. Atomic law covers the original four atomic cases; combined with the accepted four binary laws, all eleven raw compiler constructor computation laws are available. This is code computation, not pointwise quantifier/negation commutation, forcing MP, semantic/proof preservation or final internal Con. Four existing selector proof bodies were only made public; none were re-proved or replaced. Additional nullary proves the exact constant code identity through the real full compiler, consuming existing source typing and atomic computation.",
@@ -171274,6 +171300,110 @@
           "propext"
         ],
         "PPAC.Migration.ForcingPreorderNegative.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_preorder_existential": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingPreorderExistential.lean",
+      "source_declarations": [
+        "AtomicData.force_mono ex branch: fun r hr => h r (hr.trans hqp)",
+        "Original exact ALL q, two guard IMPs and EX r/EX x shell, existing actual child rescoping compiler"
+      ],
+      "consumers": [
+        "Actual full compiler/opening/native instance -> exact target two IMP fields and typed tail, both guard antecedents discharged",
+        "Existing local internal proof and same whole G0 curry under unchanged Extra",
+        "Next: existing child/guard/coded-lift composition proves cross-condition tail invariance, then canonical source context/fresh forall and full internal proof reduction"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingExistCode.lean",
+        "PPAC/Migration/ForcingExistChildCode.lean",
+        "PPAC/Migration/ForcingExistGuardsCode.lean",
+        "PPAC/Migration/ForcingPreorderGuardTables.lean",
+        "PPAC/Migration/ForcingPreorderLeaves.lean",
+        "PPAC/Migration/ForcingFormulaDiagram.lean",
+        "PPAC/Migration/ForcingTransitiveGuardProof.lean",
+        "PPAC/Migration/InternalProofCurry.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingPreorderExistential.lean": "a23475f4ce816522404ba5b2975f21d6b1c730496757df2ecaa9896910bb1bdd",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
+        "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
+        "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
+        "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
+        "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5"
+      },
+      "scope": "Consumes ACTUAL COMPLETE original ForcingExistCode compiler, actual quantified body opening and native InstantiateTop. Original 8 compiler +7 literal ALL/EX/EX shell witnesses eliminated; EXISTING mixed binary outputs internally generate/eliminate four first-query and four final-query outputs. Compiler shared bound-zero head is retyped at actual A using SAME original lifted environment/input and old term_at_zero, with no target scope standardness. Both actual guard chains become SAME original H0/H5 by existing GuardTables; old projection/chain/discharge and existing Curry.from_implication produce actual typed residual tail proof under Ctx and SAME local G0 curried under unchanged Extra. Actual target outer/middle IMP fields and tail type retained with object-generated tail/middle codes. Parent is an INTERNAL conditional proof, never truth of Ctx/preorder/guard; Y type recovered from actual native instantiation. No field/query/guard-equality/final-proof answer; no new compiler/checker/kernel/recursor/induction. Runtime formulas/scopes/codes internal including nonstandard; fixed R/Domain arities and outer source shape are pinned metadata. Ordinary nativeZF original-kernel closed-sentence certificate. This is complete compiler RECORD/OUTER-GUARD consumption, NOT remaining tail invariance between different conditions, canonical contexts/fresh forall, full joint mono/dense/MP/internal axioms/Proof/reduction/finalCon.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPreorderExistential.basis": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.basis_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.resultData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.resultData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.resultBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderExistential.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
