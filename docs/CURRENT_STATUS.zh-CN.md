@@ -28,25 +28,22 @@
 | 实际原mode2完整正文相消 | 同一原compiled重绑定／lifted opening／原Run3公式输出等于直接opening；复用现成mode2公式桥，原六个compiler见证也在对象层消去。实际守卫／regularity及强迫MP仍未证明 |
 | 实际完整否定实例的字段正规化 | 从同一完整 NegCode.compiled／raw量词体／lifted opening／原 InstantiateTop 实例，内部消去原五个compiler和四个shell见证及两轮六字段；最终操作数等于直接opening，保持同一falsum，并保留原头和两实际guard编译。普通nativeZF原核证书已验收；守卫有效性及规范化强迫MP未完成 |
 | 实际成员守卫的码级交换 | 从原compiled false取得原条件项和精确P自由槽；同一lifted opening／原InstantiateTop输出为字面的P∈V成员码，V是同一原参数表S的P槽实际字段，内部名字前缀偏移不变。原四个compiler／三个quotation字段、两轮原子子输出及head零槽内部消去；普通nativeZF原核证书。不是guard内部证明或强迫MP |
-| 两类实际guard的三段代码交换 | 原member／relation guard编译、同一lifted opening及原InstantiateTop实际输出满足：同一原quotation经[P]和原free表S的直接替换判断。原四compiler见证、直接表和输出候选均内部构造/消去；完整内部公式归纳及原binder闭包直接复用。尚未消费选中p槽字段取得自反guard内部证明，不声称guard有效或强迫MP |
+| 两类实际guard的三段代码交换 | 原member／relation guard编译、同一lifted opening及原InstantiateTop实际输出满足：同一原quotation经[P]和原free表S的直接替换判断。原四compiler见证、直接表和输出候选均内部构造/消去；完整内部公式归纳及原binder闭包直接复用。选中p槽字段的对角体码交换已由下行完成；guard内部证明仍未完成，不声称guard有效或强迫MP |
 | 实际成员guard内部证明 | 同一原guard编译／own head／lifted opening／原InstantiateTop／实际P槽字段，内部构造规范共同背景G=B∧(P∈V)及原证明码，证明G→同一实际输出M；另有固定同一G任意候选的原核端点。G只取决于固定B/P/V/作用域，内部存在唯一，不依当前公式选取；P/V类型从实际输出取得。不假设G或M已证明/为真；relation guard、强迫MP及最终Con未证明 |
 | 实际完整否定实例的成员前件消去 | 消费同一完整compiler／raw量词体／lifted opening／原InstantiateTop，以及合法父证明G→Y；内部生成真实成员guard证明，再用原S/MP取得G→Rest。同一Y=M→Rest、Rest=O→Inner、Inner=D→原falsum，D为同一直接opening输出。5+4+6+6共21个原见证内部消去；不假设G/guard为真或已证明；关系guard O仍保留，尚非规范化强迫MP |
+| 实际守卫的选中条件对角体实例码对应 | 原member／relation guard、同一own head／lifted opening／原InstantiateTop实际输出Y，消费同一S[j]=P及原p槽k+1。原Replacement项像图和原列表编码内部生成bound-zero／替换表／对角体F；全部内部索引的精确字段规律及具体项图已证，复用完成的全内部公式归纳，得到原InstantiateTop(F,P)的同一实际输出Y。全部compiler／直接表／head／替换表／正文／实例候选内部构造消去，非给定输出或等式。guard内部证明及强迫MP仍未完成 |
 
 ## 当前真正缺口及依赖顺序
 
-- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；成员guard的实际码级交换现也已完成；两类guard的三段码级交换现已完成到同一原quotation/[P]/原S；成员guard的共同背景内部证明已完成；剩余是消费现成选中条件字段及偏序自反性/regularity证书的relation guard内部证明与强迫MP。
+- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；成员guard的实际码级交换现也已完成；两类guard的三段码级交换现已完成到同一原quotation/[P]/原S；成员guard的共同背景内部证明已完成；选中条件字段的对角体实例码交换现已完成；剩余是把共同背景内现成偏序自反性变为relation guard原内部证明，并消费统一regularity完成强迫MP。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-neg-member-proof-acceptance.json`：九项命令及五项trust=0均退出0；38939项声明、零警告；全部38930项旧足迹及2838份旧PPAC证明哈希不变。16项兼容性测试、三个干净锁定依赖及75项源哈希通过。真实完整否定实例的成员前件已通过实际内部证明消去；relation guard、统一内部regularity／规范化强迫MP、完整内部公理与Proof保真、reduction及最终Con仍未完成。本批未推送；上一轮42583363761仍活跃，本地通过不冒充Linux结果。
+`verification/forcing-reflexive-guard-code-acceptance.json`：九项命令及五项trust=0均退出0；38972项声明、零警告；全部38939项旧足迹及2839份旧PPAC证明哈希不变。16项兼容性测试、三个干净锁定依赖及75项源哈希通过。选中p字段与两类真实guard对角体原实例的码对应已完成；共同背景偏序自反性的guard内部证明、统一regularity／规范化强迫MP、全部内部公理与Proof保真、reduction及最终Con仍未完成。上一轮42583363761／1277882现已完整Linux成功并读取实际PASS；本批新证明仍须发布后的独立Linux验收。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42570016667在Lean工具链下载及elan安装器下载分别收到上游HTTP504，均发生在编译前；原证明验收未执行。安装专用重试现限定最多4次、单次退避不超过30秒，固定4.33.1／4.34.1版本不变，编译／源检查／公理审计不重试或放行。已确认的安装故障可先发布经回归验证的安装修复，远端完整证明验收仍须等实际成功日志。
-
-远端42571499876／a3bbb4c已完整成功；已读取实际native日志：2026-11-09T07:19:10.2179909Z，38800项声明、零警告，15项回归通过。证据见`verification/ci-download-remote-acceptance.json`；这仅验收该旧提交，本批新证明仍需发布后的独立Linux验收。
-
-最新已发布ad5ff6a的42580228155在elan安装连续4次上游HTTP504，未进入编译。现改为官方固定v4.2.4资产API（529114798）及官方SHA256；版本化release URL也504，而资产API及新二进制重试链已实际下载校验通过。两工具链版本不变；仅安装下载重试，全部证明门保留。见`verification/ci-pinned-elan-acceptance.json`；本批修复发布后的Linux安装及全量证明结果仍待实际验收。
+远端42583363761／1277882现已完整成功：实际native日志于2026-11-09T09:48:55.7647572Z报告38905项声明、零警告；16项回归、三个干净锁定依赖及75项源哈希均通过。固定v4.2.4官方资产API下载与SHA256校验已在真实Linux安装及完整证明验收中通过，未重试／跳过任何证明检查。证据见`verification/ci-pinned-elan-remote-acceptance.json`。该结果只覆盖已发布1277882；本批38972项新证明需发布后的独立Linux验收，最终Con仍未完成。

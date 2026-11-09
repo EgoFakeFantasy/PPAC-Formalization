@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-11-09T09:52:09.688390+00:00",
+  "run_id": 42583363761,
+  "job_id": 129047181584,
+  "head_sha": "12778829e36d077e39297c9f9c503b384e50d546",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42583363761",
+  "conclusion": "success",
+  "actual_decoded_job_log_read": true,
+  "actual_native_PASS": "2026-11-09T09:48:55.7647572Z PASS: 38905 audited declarations; 2262 without axioms; 36643 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "install_elan": "success",
+  "pinned_dependencies": "success",
+  "clean_inputs_and_cross_platform_tests": "success",
+  "build_and_audit": "success",
+  "artifact_upload": "success",
+  "clean_pinned_repositories": 3,
+  "canonical_source_hashes": 75,
+  "regression_tests": {
+    "ci_compatibility": 9,
+    "original_comparator_guard": 7
+  },
+  "elan_release": "v4.2.4",
+  "elan_official_asset_id": 529114798,
+  "elan_sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+  "download_route": "Official GitHub asset API, bounded setup-only retries, SHA256 verification before extraction/execution",
+  "proof_checks_retried_or_bypassed": false,
+  "scope": "Actual full clean Linux acceptance of OLD published1277882, including fixed asset download and all proof checks. Does NOT claim Linux acceptance of pending38972-declaration proof batch or final Con."
+}

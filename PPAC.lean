@@ -1136,3 +1136,5 @@ import PPAC.Migration.ForcingGuardOpening
 import PPAC.Migration.InternalProofBackground
 import PPAC.Migration.ForcingMemberGuardProof
 import PPAC.Migration.ForcingNegMemberProof
+import PPAC.Migration.ForcingReflexiveImages
+import PPAC.Migration.ForcingReflexiveDiagram

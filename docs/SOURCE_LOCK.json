@@ -167666,6 +167666,239 @@
           "propext"
         ]
       }
+    },
+    "forcing_reflexive_images": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingReflexiveImages.lean",
+      "source_declarations": [
+        "AtomicData.Force neg/ex guard in ForcingQuotient",
+        "forceFormula_imp self-condition instance",
+        "forceFormula_neg",
+        "forcing_sound impE uses same p and le_rfl"
+      ],
+      "consumers": [
+        "Actual same-condition reflexivity guard internal proof from the common background, then normalized forcing MP"
+      ],
+      "reuse_producers": [
+        "Original SyntaxTermImageGraph.exists_image (existing Replacement total-function constructor)",
+        "Original mixed-image decoder/structural-list encoder/field exact laws",
+        "Completed original guard compiler/opening/native InstantiateTop and existing zero_image/free_image",
+        "Completed ForcingFormulaInduction.cancel with all internal formulas and original binder lifts",
+        "Original native InstantiateTop totality/coded-field laws and original nativeZF replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxTermImageGraph.lean": "646053eb1cf61430c2c6e06580cd391a198ecfd67a1f53fd1cc6507ae697a7e6",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935"
+      },
+      "scope": "Specific diagonal update for SAME actual lifted free table H: selected internal slot j takes generated bound-zero term, every other slot keeps original value. Existing original Replacement total/function graph and original structural-list decoder/encoder are consumed unchanged; no new recursion, coding or proof backend. Actual replacement code exists and exact field iff is proved for ALL internal/nonstandard indices and candidate values. Concrete consumer from_compiled constructs bound-zero, updated table and SAME actual member OR relation guard mixed-substitution output, all three witnesses internally quantified. No equality/truth/proof oracle or output is supplied. This is syntactic construction; relation guard proof, uniform regularity/normalized forcing MP, internal axiom/Proof preservation, reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingReflexiveImages.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.replacement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.replacement_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.existsReplacement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.existsReplacement_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.exists_replacement": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.fieldResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.fieldResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.field_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.diagonalData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.diagonalData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.diagonalBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.diagonal": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.diagonal_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveImages.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_reflexive_diagram": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingReflexiveDiagram.lean",
+      "source_declarations": [
+        "AtomicData.Force neg/ex guard in ForcingQuotient",
+        "forceFormula_imp self-condition instance",
+        "forceFormula_neg",
+        "forcing_sound impE uses same p and le_rfl"
+      ],
+      "consumers": [
+        "Actual same-condition reflexivity guard internal proof from the common background, then normalized forcing MP"
+      ],
+      "reuse_producers": [
+        "Original SyntaxTermImageGraph.exists_image (existing Replacement total-function constructor)",
+        "Original mixed-image decoder/structural-list encoder/field exact laws",
+        "Completed original guard compiler/opening/native InstantiateTop and existing zero_image/free_image",
+        "Completed ForcingFormulaInduction.cancel with all internal formulas and original binder lifts",
+        "Original native InstantiateTop totality/coded-field laws and original nativeZF replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxTermImageGraph.lean": "646053eb1cf61430c2c6e06580cd391a198ecfd67a1f53fd1cc6507ae697a7e6",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/ForcingReflexiveDiagram.lean": "3f8925630b0a8b518e37a327ad818415245c86e7f0461d10b14c878c911aa0e6",
+        "PPAC/Migration/ForcingGuardDiagram.lean": "eacc37653694c94d3d0b4fa5a81cfb746b04ceed4022f5645720a1c32eaa2436",
+        "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572"
+      },
+      "scope": "SAME actual original member OR relation guard compiler/head, lifted opening and native InstantiateTop output Y. Consume ACTUAL selected p-field S[j]=P and its original fixed p-slot numeral k+1 (external relation-template arity; runtime formula/proof/scopes remain arbitrary internal). Internally construct target head, actual updated lifted free table, diagonal guard body F and native instance candidates. Four-path root term invariant splits actual selected index INSIDE object equality; changed bound-zero maps to SAME P, other fields reuse original free_image. Existing COMPLETE ForcingFormulaInduction.cancel is consumed unchanged. SAME Y is proved to be original native InstantiateTop(F,P), with all guard compiler/direct-list and all head/table/body/instance candidates internally constructed/eliminated, no output-shape/equality/term-diagram premise. Original ordinary nativeZF FirstOrder.Derives endpoint. This does NOT assert relation guard truth/proof or background reflexivity proof; it closes the actual diagonal-body/selected-condition code commutation. Still need existing preorder reflexivity/common-background proof consumer, uniform internal regularity/normalized forcing MP, internal axiom/Proof preservation, reduction and final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingReflexiveDiagram.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.input_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.diagram": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.diagram_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.commutes": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.resultData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.resultData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.resultBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.sourceInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingReflexiveDiagram.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

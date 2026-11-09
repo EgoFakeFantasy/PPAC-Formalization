@@ -2732,7 +2732,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_guard_opening', 'ForcingGuardOpening', 13),
                                 ('internal_proof_background', 'InternalProofBackground', 10),
                                 ('forcing_member_guard_proof', 'ForcingMemberGuardProof', 14),
-                                ('forcing_neg_member_proof', 'ForcingNegMemberProof', 9)):
+                                ('forcing_neg_member_proof', 'ForcingNegMemberProof', 9),
+                                ('forcing_reflexive_images', 'ForcingReflexiveImages', 18),
+                                ('forcing_reflexive_diagram', 'ForcingReflexiveDiagram', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7459,6 +7461,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_guard_same_output_implication_internal_proof_constructed": True,
         "object_actual_member_guard_fixed_background_candidate_internal_proof_proved": True,
         "object_actual_relation_guard_internal_proof_proved": False,
+        "object_actual_guard_diagonal_free_table_exists_and_exact_all_internal_field_law_proved": True,
+        "object_actual_selected_p_field_consumed_for_diagonal_guard_code_commutation": True,
+        "object_actual_member_and_relation_guard_same_output_as_generated_diagonal_body_native_instance": True,
+        "object_actual_guard_diagonal_code_commutation_scope": "SAME actual guard compiler/head/lifted opening/native InstantiateTop output Y, actual selected S[j]=P and fixed original p-slot numeral k+1 yield internally generated bound-zero, updated H and diagonal body F such that native InstantiateTop(F,P) has SAME actual output Y. Exact replacement fields are proved for all internal/nonstandard indices. Original Replacement image/list codec, zero_image/free_image, full formula induction and native instance totality reused; all compiler/direct-table/head/update/body/instance candidates internally constructed/eliminated. No output, equality, term-invariant, guard truth/proof supplied. This closes selected-condition diagonal CODE commutation, not actual preorder/common-background guard proof, uniform regularity, normalized forcing MP, all-internal axiom/Proof preservation, reduction or final Con.",
         "object_actual_full_negative_instance_member_antecedent_removed_by_internal_proof": True,
         "object_actual_full_negative_instance_member_elimination_21_original_witnesses_internal": True,
         "object_actual_full_negative_instance_relation_antecedent_retained": True,

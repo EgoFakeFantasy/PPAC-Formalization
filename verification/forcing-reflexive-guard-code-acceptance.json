@@ -1,0 +1,395 @@
+{
+  "verified_at": "2026-11-09T09:52:09.663173+00:00",
+  "baseline_commit": "049b666a2aa5039f91e2243acc5d0c2839476e4c",
+  "original_stage": "10 active; 1-9 complete; 11 not started",
+  "background": "Original pure-set YesMetaZFC signature; ordinary nativeZF; original FirstOrder.Derives; unchanged pinned OpenAI/YesMetaZFC sources and toolchains",
+  "result": "SAME actual original member OR relation guard compiler, own head, lifted opening and native InstantiateTop result Y. Consume SAME selected p-field S[j]=P and original p-slot numeral k+1. Original Replacement/image graph and structural-list codec internally build target bound-zero and actual updated H table; exact selected/other field law covers ALL internal/nonstandard indices. Four-path concrete term diagram consumes the selected field; unchanged COMPLETE ForcingFormulaInduction.cancel proves identical actual output. Internally build guard diagonal body F and native instance candidates; SAME original Y is actual native InstantiateTop(F,P). No supplied table/body/instance output, term invariant or equality oracle.",
+  "proof_boundaries": {
+    "actual_guard_diagonal_free_table_exists": true,
+    "exact_selected_and_other_fields_for_all_internal_indices": true,
+    "same_original_selected_p_field_consumed_in_term_diagram": true,
+    "unchanged_full_internal_formula_induction_consumed": true,
+    "actual_member_and_relation_guard_same_output_as_generated_diagonal_body_native_instance": true,
+    "all_head_table_body_instance_and_compiler_direct_table_witnesses_internal": true,
+    "guard_truth_or_proof_assumed_or_concluded": false,
+    "relation_guard_internal_proof_from_common_background_preorder": false,
+    "uniform_internal_regularity": false,
+    "normalized_forcing_MP": false,
+    "uniform_internal_axiom_and_Proof_preservation": false,
+    "reduction": false,
+    "final_internal_Con_goal": false
+  },
+  "reuse": [
+    "Existing original SyntaxTermImageGraph.exists_image, Replacement total-function graph and original list decoder/encoder",
+    "Existing SyntaxCodedMixedTermFields, original lift fields, original native instantiate_zero and zero_image/free_image",
+    "Completed ForcingGuardOpening real source quotation/direct substitution result",
+    "Completed ForcingFormulaInduction.cancel: all runtime formula codes and binder changes, unchanged",
+    "Original native InstantiateTop existence and equality substitution, same nativeZF ZFReplay"
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_commands": 5,
+    "audited_declarations": 38972,
+    "declarations_without_axioms": 2262,
+    "declarations_with_recorded_dependencies": 36710,
+    "warning_lines": 0,
+    "all_38939_old_declaration_footprints_unchanged": true,
+    "all_2839_old_PPAC_proof_hashes_unchanged": true,
+    "current_PPAC_proof_sources": 2841,
+    "sealed_input_count": 2874,
+    "all_sealed_hashes_verified": true,
+    "regressions": {
+      "ci_compatibility": {
+        "count": 9,
+        "exit_code": 0
+      },
+      "original_comparator_guard": {
+        "count": 7,
+        "exit_code": 0
+      }
+    },
+    "clean_pinned_repositories": 3,
+    "cross_platform_source_hashes": 75,
+    "exact_declaration_footprints": {
+      "PPAC.Migration.ForcingReflexiveImages.data": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.data_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.body": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.replacement": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.replacement_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.existsReplacement": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.existsReplacement_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.exists_replacement": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.fieldResult": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.fieldResult_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.field_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.target_type": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.diagonalData": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.diagonalData_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.diagonalBody": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.diagonal": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.diagonal_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveImages.from_compiled": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.input": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.input_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.diagram": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.diagram_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.root": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.commutes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.resultData": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.resultData_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.resultBody": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.result": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.result_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.from_instance": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.sourceInput": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.sentence": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingReflexiveDiagram.kernel_certificate": [
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ]
+    },
+    "final_namespace_closure_recheck": {
+      "all_38972_footprints_identical_to_prior_full_run": true,
+      "mathematical_source_body_unchanged_beyond_explicit_namespace_end_and_trailing_whitespace": true
+    }
+  },
+  "source_sha256": {
+    "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+    "PPAC/Migration/ForcingReflexiveDiagram.lean": "3f8925630b0a8b518e37a327ad818415245c86e7f0461d10b14c878c911aa0e6"
+  },
+  "cleanup_completed": true,
+  "new_batch_linux_pass_claimed": false,
+  "publication": "Prior Linux run42583363761 at1277882 is now terminal success and its actual native PASS log has been read. New 38972-declaration proof batch has local full acceptance and awaits its own post-push Linux run.",
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-images-parent-summary.json",
+      "bytes": 14941023,
+      "sha256": "d2291baa0ee9b8dcf6dfe9e88ce1e93b536f1f76eee53562339e15c00df66a52"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-images-build.log",
+      "bytes": 111,
+      "sha256": "2d37125041fa2477b4ce02f66fb91330b80606c7042f31fb737c8cf7b5a1c592"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-diagram-build.log",
+      "bytes": 180,
+      "sha256": "cf4c249c557ac083f285853ca197eaada6e82451a4ecee40408df26d4f5732cb"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-guard-audit.lean",
+      "bytes": 2201,
+      "sha256": "aadbdc82a4163145bbdbc932efe82194544e0879e3d19b6bdc98b14614ac036a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-guard-audit.log",
+      "bytes": 3950,
+      "sha256": "a4b60e17565ab32579495ef5b69f4ad598f7a2664eba560b0ed38636be9c0df0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-guard-full.log",
+      "bytes": 153,
+      "sha256": "8c40b712257b6447450fec2f20dd15dd7c008e48bd5e1ac27383467c942b674c"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-end-parent-summary.json",
+      "bytes": 14946849,
+      "sha256": "148394e30e93535fde8330af0b74ecaa3dc91a9ca416f42eaf4349c2de1e7411"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-final-full.log",
+      "bytes": 153,
+      "sha256": "8c40b712257b6447450fec2f20dd15dd7c008e48bd5e1ac27383467c942b674c"
+    }
+  ],
+  "fixed_p_slot_numeral_scope": "The source endpoint retains numeral(k+1,j) to locate the original fixed relation-template p slot. The commutation proof itself is stronger: it works for any internal selected slot whose actual S field is P. This does not restrict runtime formula/proof codes or internal name-prefix offsets to standard values.",
+  "cleanup_verified_at": "2026-11-09T09:53:34.018551+00:00",
+  "post_cleanup_checks": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "PPAC/Migration/ForcingReflexiveImages.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "PPAC/Migration/ForcingReflexiveDiagram.lean"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "post_cleanup_all_2874_sealed_hashes_verified": true,
+  "final_cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-end-parent-summary.json",
+      "bytes": 14946849,
+      "sha256": "148394e30e93535fde8330af0b74ecaa3dc91a9ca416f42eaf4349c2de1e7411"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\reflexive-final-full.log",
+      "bytes": 153,
+      "sha256": "8c40b712257b6447450fec2f20dd15dd7c008e48bd5e1ac27383467c942b674c"
+    }
+  ]
+}
