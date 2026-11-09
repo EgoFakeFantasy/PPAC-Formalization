@@ -18,10 +18,10 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。
+本批完成原始preorder报价码生产：ForcingPreorderCode直接消费既有ForcingAtomicBasic.preorder；五项rfl检查锁定原AND、三层ALL及五前件IMP的准确结构。在对象存在量词内生成全部16个带类型raw quotation码和9项AND/ALL/IMP字段，并取得普通nativeZF原核证书。公开生产器只接收omega及0/1/2/3/(n+2)的源码作用域numeral证明，不接收报价输出、目标码／证明或guard／preorder真值。 固定外部源关系R及其原始报价作用域；此处未将任意内部目标码限制为标准值，也尚未完成其mixed opening、三次运行时native实例化和实际guard识别。源局部guard上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction与最终Con仍未完成。
 
-任意条件完整否定归一化、给定三实例／五前件码行下的局部传递性证明、任意Extra背景及本批单／双前件解除和实际局部否定块消费均已完成。原数学预序、任意条件guard opening、mode3／forall、L、完整模式和递归不重建。真正剩余是从实际完整预序／guard构造识别编码行，整理源局部guard上下文并装配fresh全称化，再完成原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。
+任意条件完整否定归一化、局部传递性码行证明、任意Extra背景传输和单／双局部前件解除已有验收；原数学预序、guard opening、mode3／forall、L、完整模式及递归不重建。原始preorder报价与字段本批已实际生成；下一项是其mixed opening、三次native运行实例及实际guard码识别，再整理源局部guard上下文并装配fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链及全部内部Proof／Con。
 
-本轮最终代码的九项完整验收及五项trust=0均退出0；39104项声明、零警告，全部39078项旧足迹保持，2846份旧PPAC证明源码哈希不变。旧InternalProofImplication仅插入从原distribute_at精确适配的map_from_left；移除此新helper可逐字还原整个旧文件。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。
+本轮九项完整验收及五项trust=0均退出0；39127项声明、零警告，全部39104项既有足迹和2848份既有PPAC证明源码哈希保持，23项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2882项密封输入全部重算。已按路径／大小／SHA256清理本轮12个自建临时文件（56943字节），清理后源码trust=0复编译退出0。此处为本地验收，未冒充新提交独立Linux通过。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/internal-proof-curry-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-preorder-code-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。

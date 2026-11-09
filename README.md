@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。
+本批完成原始preorder报价码生产：ForcingPreorderCode直接消费既有ForcingAtomicBasic.preorder；五项rfl检查锁定原AND、三层ALL及五前件IMP的准确结构。在对象存在量词内生成全部16个带类型raw quotation码和9项AND/ALL/IMP字段，并取得普通nativeZF原核证书。公开生产器只接收omega及0/1/2/3/(n+2)的源码作用域numeral证明，不接收报价输出、目标码／证明或guard／preorder真值。 固定外部源关系R及其原始报价作用域；此处未将任意内部目标码限制为标准值，也尚未完成其mixed opening、三次运行时native实例化和实际guard识别。源局部guard上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction与最终Con仍未完成。
 
-任意条件完整否定归一化、给定三实例／五前件码行下的局部传递性证明、任意Extra背景及本批单／双前件解除和实际局部否定块消费均已完成。原数学预序、任意条件guard opening、mode3／forall、L、完整模式和递归不重建。真正剩余是从实际完整预序／guard构造识别编码行，整理源局部guard上下文并装配fresh全称化，再完成原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。 最新本地完整验收见`verification/internal-proof-curry-acceptance.json`；Linux远端验收单独记录。
+任意条件完整否定归一化、局部传递性码行证明、任意Extra背景传输和单／双局部前件解除已有验收；原数学预序、guard opening、mode3／forall、L、完整模式及递归不重建。原始preorder报价与字段本批已实际生成；下一项是其mixed opening、三次native运行实例及实际guard码识别，再整理源局部guard上下文并装配fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链及全部内部Proof／Con。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)
