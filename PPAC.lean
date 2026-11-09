@@ -1123,3 +1123,5 @@ import PPAC.Migration.ForcingRebindOpeningTriangle
 import PPAC.Migration.ForcingMixedTermLift
 import PPAC.Migration.ForcingTermDiagram
 import PPAC.Migration.ForcingFormulaDiagram
+import PPAC.Migration.ForcingFormulaAtoms
+import PPAC.Migration.ForcingFormulaLifts

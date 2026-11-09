@@ -1,0 +1,296 @@
+{
+  "verified_at": "2026-11-09T05:31:53.225475+00:00",
+  "baseline_commit": "57b03635ac2493483ab2c3bbc94914bf868b881e",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "All four original atomic formula base cases and internally constructed coherent mixed binder frame for the SAME four-table term diagram. Every source atomic field and actual operand output is internally eliminated. Four shared successor scopes and eight actual lifted tables are OBJECT existential witnesses; resulting frame includes the preserved term diagram and all four table typings. No chosen-lift/frame witness premise remains.",
+  "endpoints": [
+    "PPAC.Migration.ForcingFormulaAtoms.kernel_certificate",
+    "PPAC.Migration.ForcingFormulaLifts.kernel_certificate"
+  ],
+  "endpoint_type": "YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence ...sentence)",
+  "reuse": {
+    "forcing_formula_atoms": [
+      "Actual original tag cases and nullary substitution uniqueness",
+      "Original atomic field injectivity and term-source/field equality substitution",
+      "Already proved four-table term diagram; no new term/formula evaluator",
+      "Existing source atomic split and allMany/exMany original rules"
+    ],
+    "forcing_formula_lifts": [
+      "OriginalBinderStepSyntax.successor_exists for four shared object successor scopes",
+      "Existing SyntaxCodedMixedBinderExistence.exists_pair and output list typing",
+      "ForcingTermDiagram.lifted; no assumed new term diagram",
+      "Original 4/8/12 witness blocks; structural Fin.ext slot equations only"
+    ]
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38771,
+    "new_audit_entries": 17,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingFormulaAtoms.atomCode": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.atomCode_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.atom": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.nullary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.from_atomic": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaAtoms.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.input_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.input_lifted": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.frameBody": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.existsFrame": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.existsFrame_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.exists_frame": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaLifts.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38754,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2826,
+    "all_prior_SOURCE_LOCK_entries_unchanged": true,
+    "proof_files_now": 2828,
+    "sealed_inputs": 2860,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "build.log": "6af79a106b1e30a6a7a4ba7a6bbdb96b733d18c8fe72e4abc9176abda48323b4",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "93cfafbf28752343144801d1353dad294a7ab23a6e0f9e8a40d47963c6b6ddf6"
+    },
+    "summary_sha256": "2fe7ea13fe4446d88a02e2fbec2390739f14c3864f54fea4fc04a2d585bf8124"
+  },
+  "scope": {
+    "all_four_atomic_base_cases_complete": true,
+    "all_seven_nonatomic_steps_previously_proved": true,
+    "all_eleven_local_constructor_cases_covered": true,
+    "shared_original_lift_frame_internally_constructed": true,
+    "all_twelve_frame_witnesses_object_quantified": true,
+    "no_chosen_lift_witness_premise": true,
+    "lifted_term_diagram_and_four_table_typings_proved": true,
+    "full_mode2_formula_operation_bridge_previously_proved_and_to_reuse": true,
+    "uniform_internal_formula_induction_complete": false,
+    "complete_actual_original_mode2_formula_cancellation_proved": false,
+    "normalized_forcing_MP_proved": false,
+    "uniform_internal_axiom_proof_preservation_proved": false,
+    "reduction_proved": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingFormulaBasesAudit.lean",
+      "bytes": 1115,
+      "sha256": "30ca6d2978ed7886b0b249251c3d3bd902f02fffdfccc512a40c5cfb0ddbe4a6"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-bases-audit.log",
+      "bytes": 2640,
+      "sha256": "203a0fcc69706e7d168b5ed87fd2e175ff4a94bed22eb530bd90994de2169aae"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-bases-full.log",
+      "bytes": 153,
+      "sha256": "8adaad04ed88dd966090561eab95cc33b770dec22d3ba88b0906c1ad8c2e1948"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-bases-parent-summary.json",
+      "bytes": 14903195,
+      "sha256": "fddea41384a8b3219838ad54814137d0309f70466629aa10db4aff9e5f7c45ae"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-lifts-diagnostic.log",
+      "bytes": 4466,
+      "sha256": "4c25d2ce49cfa3f23657e649267cea7c0a3a8b2308435f5a3a10bd8e7bbe0511"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42559428352
+  },
+  "post_cleanup_target_trust_zero_checks": {
+    "ForcingFormulaAtoms": 0,
+    "ForcingFormulaLifts": 0
+  },
+  "cleanup_verified_at": "2026-11-09T05:34:04.440143+00:00"
+}

@@ -119,3 +119,5 @@
 原第10完整项组合binder闭包及实际根部：ForcingTermDiagram把三段coded替换／直接opening不变式的五个候选码全量保留在对象全称量词内；从四张真实原mixed binder lift推出整个新层不变式，八张shift／identity图、旧路径输出及角色／索引见证均内部构造消去。实际原重绑定／opening／mode2根部亦已装配到同一coded不变式，直接复用现成guarded_coded_iff／from_actual_input，不给定Run或相等答案。两项原nativeZF证书已完整验收；所有运行范围／码可为内部非标准。完整公式归纳／相消、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38737项声明、零警告；38721项旧足迹和全部2824份旧证明哈希保持，既有SOURCE_LOCK条目不变。12项兼容回归及三库／75哈希预检通过。见verification/forcing-term-diagram-acceptance.json。
 
 2026-11-09：四路径公式非原子归纳步已定向通过。对象全称的四个候选输出包括两段中间结果；否定／两个原量词内部消去四子输出，四类二元构造器内部消去八子输出。量词复用原AdvancedOutput.at_lift，保留共同作用域的四个实际lift；子公式相消前提是对象公式。三个普通nativeZF原核证书已核对依赖。全量九命令／五trust=0通过，38754项声明零警告，全部38737旧依赖及2825旧证明哈希不变（verification/forcing-formula-diagram-acceptance.json）；原子四分支、统一内部归纳及共同lift存在消去尚未闭合，完整公式相消／规范化强迫MP／reduction／最终Con仍未证明。
+
+2026-11-09：原子四基础分支及共同量词帧构造已定向通过。原子分支复用项图并内部消去实际输出；四个共同后继作用域和八张原提升表在对象层构造，输出同时包含同一lift及子输入（项图、四表类型）。此前七类非原子步骤已完成。下一缺口是变化参数全部对象量化的完整公式集合归纳，不再把原子分支或共同lift存在性报为未做；全量九命令／五trust=0通过，38771项声明零警告，全部38754旧依赖及2826旧证明哈希不变（verification/forcing-formula-bases-acceptance.json）。完整实际原mode2公式相消、强迫MP、reduction与最终Con仍未证明。

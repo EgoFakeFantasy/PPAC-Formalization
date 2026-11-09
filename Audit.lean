@@ -39437,3 +39437,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFormulaDiagram.binaryInput
 #print axioms PPAC.Migration.ForcingFormulaDiagram.binarySentence
 #print axioms PPAC.Migration.ForcingFormulaDiagram.binary_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaAtoms.atomCode
+#print axioms PPAC.Migration.ForcingFormulaAtoms.atomCode_rename
+#print axioms PPAC.Migration.ForcingFormulaAtoms.atom
+#print axioms PPAC.Migration.ForcingFormulaAtoms.nullary
+#print axioms PPAC.Migration.ForcingFormulaAtoms.from_atomic
+#print axioms PPAC.Migration.ForcingFormulaAtoms.input
+#print axioms PPAC.Migration.ForcingFormulaAtoms.sentence
+#print axioms PPAC.Migration.ForcingFormulaAtoms.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaLifts.input
+#print axioms PPAC.Migration.ForcingFormulaLifts.input_rename
+#print axioms PPAC.Migration.ForcingFormulaLifts.input_lifted
+#print axioms PPAC.Migration.ForcingFormulaLifts.frameBody
+#print axioms PPAC.Migration.ForcingFormulaLifts.existsFrame
+#print axioms PPAC.Migration.ForcingFormulaLifts.existsFrame_rename
+#print axioms PPAC.Migration.ForcingFormulaLifts.exists_frame
+#print axioms PPAC.Migration.ForcingFormulaLifts.sentence
+#print axioms PPAC.Migration.ForcingFormulaLifts.kernel_certificate

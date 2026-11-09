@@ -2719,7 +2719,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_rebind_opening_triangle', 'ForcingRebindOpeningTriangle', 4),
                                 ('forcing_mixed_term_lift', 'ForcingMixedTermLift', 4),
                                 ('forcing_term_diagram', 'ForcingTermDiagram', 16),
-                                ('forcing_formula_diagram', 'ForcingFormulaDiagram', 17)):
+                                ('forcing_formula_diagram', 'ForcingFormulaDiagram', 17),
+                                ('forcing_formula_atoms', 'ForcingFormulaAtoms', 8),
+                                ('forcing_formula_lifts', 'ForcingFormulaLifts', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7431,6 +7433,8 @@ def main(source_check_only: bool = False) -> None:
         "object_full_three_operation_term_diagram_binder_closure_proved": True,
         "object_actual_rebind_original_mode2_coded_root_diagram_proved": True,
         "object_formula_four_path_nonatomic_constructor_steps_proved": True,
+        "object_formula_four_path_all_atomic_base_cases_proved": True,
+        "object_formula_four_path_coherent_lifted_frame_exists_proved": True,
         "object_formula_four_path_internal_induction_complete": False,
         "object_complete_condition_rebind_open_instantiate_cancellation_proved": False,
         "object_actual_complete_negative_fragment_instance_scope": "Actual full negative compilation (both guards and rebind), actual pointwise opening and actual G -> opened-negative proof produce the same actual raw/target bodies, environment/lift, instance code and G -> instance proof. No proof/truth of G or unconditional opened-negative proof, no supplied body/output/local answer. This is the outer forall instance step, not complete guard/rebinding commutation, normalized forcing MP or uniform proof correctness/Con.",
