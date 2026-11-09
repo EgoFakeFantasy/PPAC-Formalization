@@ -50,7 +50,8 @@
 | 原preorder实际开口／三实例及原证明消费 | ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 精确guard编译码识别与完整mono／Proof／Con仍未完成。 |
 | 原三实例与前缀表精确码对应 | ForcingPreorderPrefix.at_target直接消费已生成的原rawData／targetData，内部消去同一六个native体／实例见证，并生成三张原顺序cons前缀表、类型和对子公式的准确direct mixed输出。每次输出码都是原实例的同一个实际值，最终表为[P2,P1,P0]++R。复用已有ALL端点、binder总性和一步全内部公式相消；不另给实例行、表码、期望等式或guard真值。固定外层仅为原三binder，运行码／作用域允许内部非标准值。两个普通nativeZF原核证书及九项完整验收／五项trust=0已通过。整段preorder与负／存在guard编译器输出的最终对应仍未完成。 |
 | 原preorder关系原子／guard的共同R源查询 | ForcingRelationSource.from_compiled直接消费原rawData及guard编译，内部生成同一R报价、四张真实native项像表和到原关系原子／guard原报价的两条mixed查询。原四compiler及新五共同源见证均为对象量词；完整guard矩阵／头及任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)与guard R(q,p)的AST读出复用既有Syntax自然性，无新归纳／核／checker。只有中间SOURCE的0／1／3和原有限arity是报价元数据；未要求forcing目标作用域标准。普通nativeZF原核证书及九项完整验收／五项trust=0已通过。两条路径的实际目标码相消及完整guard对应尚未完成。 |
-| 同一裸R实参表／实际guard全内部项比较 | ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。完整公式相消、raw preorder／member叶码及完整guard对应仍未完成。 |
+| 同一裸R实参表／实际guard全内部项比较 | ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。guard完整公式相消已由ForcingRelationGuardFormula接通；raw preorder／member叶码及完整guard对应仍未完成。 |
+| 同一原guard的全内部公式相消／共同查询生成 | ForcingRelationGuardFormula复用既有全内部公式归纳／恒等码及index-mixed桥，将guard两路径比较提升到全部内部公式。四项恒等码／项像见证内部生成并消去；from_source_to_direct消费同一R记录的原native映射／查询及实际guard开口，内部生成裸R共同查询并使其输出就是原guard同一实际输出，不给定共同查询／输出答案。目标作用域和运行公式码允许内部非标准值，无guard真值或新核／checker／递归／归纳。两个普通nativeZF原核端点及12项新增声明trust=0预审已通过；本批9项完整验收／5项trust=0已通过，39268项声明、零警告；验收见verification/forcing-relation-guard-formula-acceptance.json。raw preorder路径的公式相消、member／order叶码与完整负／存在guard对应仍待接入。 |
 
 ## 当前真正缺口及依赖顺序
 
@@ -61,8 +62,8 @@
 
 ## 最新实际验收
 
-`verification/forcing-relation-source-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39230项声明、零警告，全部39195项既有足迹保持，35项新增公开声明无新增公理依赖。2851份旧PPAC证明源码原样；GuardCode与PreorderCode仅追加模板读出，原29873／75092字节及全部50个旧公开声明完整保留。16项回归、三个干净锁定依赖和75项源哈希通过，2887项密封输入全部重算。本批为本地验收，其对应独立Linux验收尚未取得。
+`verification/forcing-relation-guard-formula-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39268项声明、零警告，全部39256项既有足迹保持，12项新增公开声明无新增公理依赖。2854份旧PPAC证明源码原样；BinderFormula仅追加原恒等项证明的调用包装，原20810字节证明正文前缀及全部9个旧公开声明保留。16项回归、三个干净锁定依赖和75项源哈希通过，2889项密封输入全部重算。本批为本地验收，其对应独立Linux验收尚未取得。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42643888667／a046b48已独立完整Linux成功，实际解码日志2026-11-09T17:09:37.9823009Z报告39154项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-instances-remote-acceptance.json。前两批已验收证明已上传7167663（39195项），14个变更blob已实际逐字回读，main未改动；对应新CI42662706463仍在Build and audit，尚非通过。本批39230项为新的本地验收，不能由旧远端回执替代。最终Con仍未完成。
+远端42643888667／a046b48已独立完整Linux成功，实际解码日志2026-11-09T17:09:37.9823009Z报告39154项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-instances-remote-acceptance.json。前两批已验收证明已上传7167663（39195项），14个变更blob已实际逐字回读，main未改动；对应新CI42662706463仍在Build and audit，尚非通过。本批39268项为新的本地验收，不能由旧远端回执替代。最终Con仍未完成。

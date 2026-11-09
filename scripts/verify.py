@@ -2745,10 +2745,11 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_code', 'ForcingPreorderCode', 26),
                                 ('forcing_preorder_instances', 'ForcingPreorderInstances', 27),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
-                                ('forcing_binder_formula', 'ForcingBinderFormula', 9),
+                                ('forcing_binder_formula', 'ForcingBinderFormula', 10),
                                 ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
                                 ('forcing_relation_source', 'ForcingRelationSource', 30),
-                                ('forcing_relation_images', 'ForcingRelationImages', 26)):
+                                ('forcing_relation_images', 'ForcingRelationImages', 26),
+                                ('forcing_relation_guard_formula', 'ForcingRelationGuardFormula', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6093,6 +6094,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_preorder_generated_targetData_consumed_by_prefix_normalization": True,
         "object_actual_preorder_six_native_witnesses_and_three_prefix_tables_object_bound": True,
         "object_actual_preorder_prefix_scope": "ForcingPreorderPrefix.at_target directly consumes existing rawData/targetData, object-eliminates SAME six native body/instance witnesses, generates all three original ordered cons prefix lists/types, and proves exact direct mixed opening to each SAME native output. Existing ALL endpoints/lift totality and prior full internal binder cancellation reused; no separate row/table/output/equality answer or guard truth, no new kernel/checker/recursion. All runtime codes/scopes may be nonstandard; only outer three-binder pattern is fixed. Whole negative/existential guard compiler ID, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
+        "object_actual_guard_two_path_all_internal_formulas_collapsed": True,
+        "object_actual_guard_common_query_generated_to_same_output": True,
+        "object_actual_guard_common_formula_scope": "ForcingRelationGuardFormula specializes EXISTING full internal formula cancellation to actual guard term comparison, reusing original identity_term through one public wrapper. Four identity code/image witnesses are object-generated/eliminated. from_source_to_direct consumes SAME original R record/native guard mapping/query and actual singleton/free-p guard direct opening, INTERNALLY generates bare-R direct query and proves it ends in SAME actual guard output; no independent common-query/output answer. All formula codes and target c,d remain internal/nonstandard; fixed R source arity is quotation metadata. Two ordinary nativeZF kernel endpoints. Raw preorder formula path, member/order leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
         "object_actual_common_R_argument_tables_generated": True,
         "object_actual_guard_two_path_all_internal_terms_collapsed": True,
         "object_actual_common_R_argument_scope": "ForcingRelationImages.produce object-generates both slot numerals and both actual replacement tables; original forcing S remains separate. guard_term consumes SAME actual native guard map/query, original singleton-bound opening and original free-p replacement, plus bare-R direct query. Exact guard output equality is proved for ALL internal terms using existing object source-arity disjunction and native quotation/field readout; no host decoder, supplied field/equality answer or guard truth, no new kernel/checker/recursor/formula induction. Fixed source arity is quotation metadata; target scopes/codes remain arbitrary internal/nonstandard. Two ordinary nativeZF kernel certificates. Full FORMULA cancellation, raw preorder/member leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",

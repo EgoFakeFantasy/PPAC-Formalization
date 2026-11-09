@@ -169821,7 +169821,8 @@
       ],
       "consumers": [
         "Exact code collapse of the actual ForcingPreorderInstances native binder instances against direct prefixed bound tables",
-        "Negative/existential guard compiler code identification before original force_mono/force_of_dense/forcing MP"
+        "Negative/existential guard compiler code identification before original force_mono/force_of_dense/forcing MP",
+        "ForcingRelationGuardFormula reuses original private identity_term proof through the sole public identity_term_output wrapper; existing 9 public declarations and all original proof bodies retained"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingBinderInstantiation.lean",
@@ -169833,7 +169834,7 @@
         "PPAC/Migration/Internal/SyntaxTopFormulaSyntax.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingBinderFormula.lean": "e61ef8c151d305367c5969508d21e401e6b89795dc023224d18440379632b9f3",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingBinderInstantiation.lean": "8b2ca6f736bbc3dad19cca76ac1393fb9b1a40a80d0ceb56cf106ac07e86d9f6",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
@@ -169898,6 +169899,11 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.ForcingBinderFormula.identity_term_output": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -169933,7 +169939,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
-        "PPAC/Migration/ForcingBinderFormula.lean": "e61ef8c151d305367c5969508d21e401e6b89795dc023224d18440379632b9f3",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
         "PPAC/Migration/ForcingPreorderCode.lean": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4",
         "PPAC/Migration/Internal/SyntaxMixedFormulaEndpoints.lean": "39c182c223136e945a4dbf84113a4e6399587e036196afbeccb39b8bc747f4e7",
@@ -170410,6 +170416,120 @@
           "propext"
         ],
         "PPAC.Migration.ForcingRelationImages.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_relation_guard_formula": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationGuardFormula.lean",
+      "source_declarations": [
+        "force_mono neg/ex: original R(q,p) guard in actual negative/existential output",
+        "Same R source and exact original parameter/left/right argument positions"
+      ],
+      "consumers": [
+        "formula: specialize EXISTING full internal formula cancellation to actual guard two-path term comparison; four identity index/image codes internally generated/eliminated",
+        "from_source: consumes SAME ForcingRelationSource.data native guard mapping/query, preserving same source R record/raw relation query",
+        "from_source_to_direct: internally generates common bare-R query and proves it reaches SAME actual guard output; no independent common-query/output answer supplied",
+        "Next: raw preorder prefix path cancellation, SAME member/order leaf codes and actual negative/existential guard identities"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingBinderFormula.lean",
+        "PPAC/Migration/ForcingRelationImages.lean",
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingFormulaInduction.lean",
+        "PPAC/Migration/ForcingTermDiagram.lean",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean",
+        "PPAC/Migration/Internal/SyntaxIdentityInduction.lean",
+        "PPAC/Migration/Internal/IndexFormulaRenameBridge.lean",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
+        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean": "0fcfdf31ee781127a766773e07a255845cd8295219c7d3b4fdf311f45efb2ce9",
+        "PPAC/Migration/Internal/SyntaxIdentityInduction.lean": "dafbbcf6ab87fb73c4fb45903bf000c74f199b6d68629d1df5f684e6d8f92d5e",
+        "PPAC/Migration/Internal/IndexFormulaRenameBridge.lean": "79d8c40cdff1070bc604692539c05dab72f62f5b3931fb3a3a618aec9fafca37",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean": "05feac015bdc3b5828ad806fd9e6d45ed138498cb46e6f96d35b6c12eeffa4ad",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean": "db72736a9278396e8c95a3cccdd00b7fa5b4b6167c2de5fe10d730a7d4a3dc97"
+      },
+      "scope": "Two ordinary nativeZF original-kernel closed-sentence certificates: full INTERNAL guard formula cancellation and generated direct common-source query to SAME actual guard output. Existing all-internal formula induction/term diagram, original identity-term proof, identity codes/index-mixed bridge, actual mixed output existence and output substitution reused unchanged. Four auxiliary identity witnesses are internally generated/eliminated. Consumes SAME source R data native guard map/query; no separately supplied native map/query or common output answer. Fixed source arity is original quotation metadata; runtime formula/term codes and target c,d remain arbitrary internal/nonstandard. Original forcing S separate from NEW bare-R table. No guard truth, new kernel/checker/recursor/induction. Raw preorder formula path/member/order leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationGuardFormula.directInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.directSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.direct_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.from_source": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.from_source_to_direct": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.path": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.path_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.to_direct": [
           "Classical.choice",
           "Quot.sound",
           "propext"

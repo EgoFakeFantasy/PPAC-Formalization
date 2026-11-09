@@ -259,4 +259,15 @@ theorem native_kernel_certificate {m} (w z a f T A C R S K H P D n u v y : Fin m
   exact native (ZFContext.add (ZFContext.source_ZF m) E) w z a f T A C R S K H P D n u v y
     (Derives.conjL h)    (Derives.conjL (Derives.conjR h))    (Derives.conjL (Derives.conjR (Derives.conjR h)))    (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR h))))    (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR h)))))    (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR h))))))    (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR h)))))))    (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR h)))))))
 
+/-- Public access to the existing identity-term proof. The original private
+proof is reused verbatim; no second identity argument or decoder is added. -/
+theorem identity_term_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a b I J R S x u : Fin m) (hw : Derives Γ (omega w))
+    (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w a I))
+    (hJ : Derives Γ (SyntaxIdentityMapSyntax.identityCode w b J))
+    (he : Derives Γ (IndexTermImageCodeSyntax.environment w I J R S a b a b))
+    (hq : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a b a b x u)) :
+    Derives Γ (.equal x u) :=
+  identity_term hZ w a b I J R S x u hw hI hJ he hq
+
 end PPAC.Migration.ForcingBinderFormula

@@ -1,0 +1,226 @@
+{
+  "verified_at": "2026-11-09T18:39:56.719158+00:00",
+  "baseline_commit": "fb4126ebb6ec73c22863da97495e9dce0efd958e",
+  "original_stage": 10,
+  "background": "Original pure membership/equality language, full ordinary nativeZF, original FirstOrder.Derives through already accepted source replay; no object Choice or new kernel.",
+  "result": [
+    "Full guard two-path equality for ALL internal formula codes with arbitrary internal/nonstandard target c,d",
+    "Four identity index/image witnesses object-generated and eliminated, using unchanged existing full formula induction",
+    "from_source_to_direct consumes SAME original R data native guard mapping/query and actual guard direct opening, INTERNALLY generates common bare-R direct query to SAME actual guard output; no supplied common query/output answer",
+    "Two ordinary nativeZF original-kernel closed-sentence certificates: formula equality and actual direct query production"
+  ],
+  "proof_boundaries": {
+    "fixed_source_arity": "original R quotation metadata only; target scopes/codes remain internal/nonstandard",
+    "actual_guard_formula_path_completed": true,
+    "common_query_answer_premise_eliminated": true,
+    "actual_raw_preorder_formula_path_and_member_order_leaf_identity_completed": false,
+    "canonical_context_and_fresh_forall_completed": false,
+    "full_internal_force_mono_dense_MP_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "actual_source_consumers": [
+    "ForcingRelationSource.data SAME source R and native guard mapping/query; existing raw-relation query retained",
+    "ForcingRelationImages.guard_term; existing ForcingFormulaInduction.cancel, original identity_term through one public wrapper, native identity/index-mixed bridges and mixed output existence/substitution",
+    "Next: raw preorder prefix path formula cancellation and SAME actual relation/member leaf codes"
+  ],
+  "validation": {
+    "audited_declarations": 39268,
+    "without_axioms": 2264,
+    "with_recorded_dependencies": 37004,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39256,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingBinderFormula.identity_term_output",
+      "PPAC.Migration.ForcingRelationGuardFormula.directInput",
+      "PPAC.Migration.ForcingRelationGuardFormula.directSentence",
+      "PPAC.Migration.ForcingRelationGuardFormula.direct_kernel_certificate",
+      "PPAC.Migration.ForcingRelationGuardFormula.formula",
+      "PPAC.Migration.ForcingRelationGuardFormula.from_source",
+      "PPAC.Migration.ForcingRelationGuardFormula.from_source_to_direct",
+      "PPAC.Migration.ForcingRelationGuardFormula.kernel_certificate",
+      "PPAC.Migration.ForcingRelationGuardFormula.path",
+      "PPAC.Migration.ForcingRelationGuardFormula.path_rename",
+      "PPAC.Migration.ForcingRelationGuardFormula.sentence",
+      "PPAC.Migration.ForcingRelationGuardFormula.to_direct"
+    ],
+    "new_axioms": [],
+    "old_PPAC_proof_files_completely_unchanged": 2854,
+    "old_Binder_original_prefix_bytes_unchanged": 20810,
+    "old_Binder_original_prefix_sha256": "750151e12f24b02810b94c59f97b294f1969279b2c0d4d49f17a8ede857fd71e",
+    "old_Binder_change": "One public wrapper before existing namespace end; original private identity proof and all 9 original public declarations untouched",
+    "sealed_inputs_rehashed": 2889,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust_zero_command_count": 5,
+    "compatibility_tests": 9,
+    "comparator_guard_tests": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75,
+    "full_summary_sha256": "c85b837e9679971d2bcf807e4083f0607e2788a691983d0d38449e27c4a62f33",
+    "logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "e980702ad97afa2fa494ea1042275d63982861676aa33ad905bde26d55689ced",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "8da8364981bbd11d4c4fd2d271444688b65fb658188255cf8945ba04dfbe8d30"
+    },
+    "post_cleanup_sources_trust_zero": {
+      "actual_exit_codes": {
+        "new_guard_formula_source_trust_zero_exit": 0,
+        "original_binder_source_trust_zero_exit": 0
+      },
+      "sealed_inputs_rehashed_after_cleanup": 2889,
+      "log_sha256": {
+        "relation-guard-formula-post-cleanup-binder.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "relation-guard-formula-post-cleanup-source.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "remote_scope": {
+    "last_verified_remote_branch_commit": "7167663c0de08c938fcc2d460e284ec65721c13d",
+    "that_CI_run": 42662706463,
+    "that_CI_last_observed": "in_progress; expected 39195 declarations; does not cover this batch",
+    "this_batch_Linux_verified": false
+  },
+  "cleanup": {
+    "removed_files": 8,
+    "removed_bytes": 12960880,
+    "entries": [
+      {
+        "name": "relation-guard-formula-baseline.json",
+        "bytes": 12934075,
+        "sha256": "08b2729d1d1210bbac1178a9c2a8bba3c5061ee463793ab507598423a8b5f56f"
+      },
+      {
+        "name": "relation-guard-formula-original-binder.lean",
+        "bytes": 20851,
+        "sha256": "e61ef8c151d305367c5969508d21e401e6b89795dc023224d18440379632b9f3"
+      },
+      {
+        "name": "relation-guard-formula-binder.log",
+        "bytes": 109,
+        "sha256": "aae97587ee9ec1de6e4c7ec6a36071b8897899e0cf3e5393c8bbd882d9607cc3"
+      },
+      {
+        "name": "relation-guard-formula-build.log",
+        "bytes": 116,
+        "sha256": "6f5cec22679b7e1b7d18291dcc50223e8106b79c4c647bf54ea6851e870111d9"
+      },
+      {
+        "name": "relation-guard-formula-direct.log",
+        "bytes": 116,
+        "sha256": "a8820038917dea3532007934d6235916835cf045ea311a13c5e37f3330bfd9c0"
+      },
+      {
+        "name": "relation-guard-formula-preaudit.lean",
+        "bytes": 898,
+        "sha256": "2f53fe4254d284de7e8372e52840bb9ac9e12e861120fe5c98d66435e1bffb9b"
+      },
+      {
+        "name": "relation-guard-formula-preaudit.log",
+        "bytes": 2310,
+        "sha256": "6bb12d55c4b3c502c0de4fb2374553be6d1144170ebeea392ea1616441677b97"
+      },
+      {
+        "name": "relation-guard-formula-footprints.json",
+        "bytes": 2405,
+        "sha256": "99bfdc0d42f1f93e42f51309009a34a94ffdac464d1fae77f2738347134fb3d0"
+      }
+    ]
+  }
+}

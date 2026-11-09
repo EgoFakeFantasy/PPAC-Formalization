@@ -39944,3 +39944,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationImages.right_field
 #print axioms PPAC.Migration.ForcingRelationImages.sentence
 #print axioms PPAC.Migration.ForcingRelationImages.target_type
+
+#print axioms PPAC.Migration.ForcingBinderFormula.identity_term_output
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.directInput
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.directSentence
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.direct_kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.formula
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.from_source
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.from_source_to_direct
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.path
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.path_rename
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.sentence
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct
