@@ -2686,7 +2686,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 16),
                                 ('forcing_condition_rebind', 'ForcingConditionRebind', 23),
-                                ('forcing_guard_code', 'ForcingGuardCode', 21),
+                                ('forcing_guard_code', 'ForcingGuardCode', 27),
                                 ('forcing_neg_code', 'ForcingNegCode', 22),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
@@ -2716,16 +2716,18 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_open_instantiate', 'ForcingOpenInstantiate', 12),
                                 ('forcing_condition_instance', 'ForcingConditionInstance', 9),
                                 ('forcing_rebind_terms', 'ForcingRebindTerms', 11),
-                                ('forcing_rebind_opening_triangle', 'ForcingRebindOpeningTriangle', 4),
+                                ('forcing_rebind_opening_triangle', 'ForcingRebindOpeningTriangle', 5),
                                 ('forcing_mixed_term_lift', 'ForcingMixedTermLift', 4),
                                 ('forcing_term_diagram', 'ForcingTermDiagram', 16),
                                 ('forcing_formula_diagram', 'ForcingFormulaDiagram', 23),
-                                ('forcing_formula_atoms', 'ForcingFormulaAtoms', 8),
+                                ('forcing_formula_atoms', 'ForcingFormulaAtoms', 14),
                                 ('forcing_formula_lifts', 'ForcingFormulaLifts', 9),
                                 ('forcing_formula_induction', 'ForcingFormulaInduction', 21),
                                 ('forcing_formula_cancellation', 'ForcingFormulaCancellation', 8),
                                 ('forcing_neg_shell', 'ForcingNegShell', 19),
-                                ('forcing_neg_normalization', 'ForcingNegNormalization', 17)):
+                                ('forcing_neg_normalization', 'ForcingNegNormalization', 17),
+                                ('forcing_member_guard', 'ForcingMemberGuard', 10),
+                                ('forcing_member_guard_opening', 'ForcingMemberGuardOpening', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7445,6 +7447,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_original_mode2_compiled_root_all_six_compiler_witnesses_eliminated": True,
         "object_actual_complete_negative_two_stage_shell_fields_and_operand_normalization_proved": True,
         "object_actual_complete_negative_all_five_compiler_and_four_shell_witnesses_eliminated": True,
+        "object_actual_member_guard_compiler_exact_original_P_slot_proved": True,
+        "object_actual_member_guard_open_instantiate_literal_membership_code_proved": True,
+        "object_actual_member_guard_compiler_head_zero_alignment_internal": True,
+        "object_actual_member_guard_code_commutation_scope": 'The SAME actual member guard compilation/lifted opening/native InstantiateTop result is literally memberCode(P,V) at the actual candidate output; V is the ORIGINAL P-slot field of SAME opening free table S, retaining arbitrary internal name-prefix offset. All raw guard witnesses, actual two-stage atom child outputs, auxiliary head witnesses and compiler head zero alignment are eliminated internally. Reuses original new-head existence/field uniqueness, InstantiateTop coded fields, original mode2 term bridge and old-parameter theorem. No supplied output shape/equality/regularity or guard truth/proof. Pure nativeZF original-kernel certificate; this proves member-guard CODE commutation, not its internal proof, relation-guard commutation, normalized forcing MP, uniform axiom/Proof preservation, reduction or final Con.',
         "object_actual_complete_negative_structural_normalization_scope": 'Consumes ACTUAL complete ForcingNegCode.compiled, SAME raw forall body, SAME lifted opening, and SAME original native InstantiateTop instance. All five original compiler and four raw shell witnesses are eliminated internally. Retains original head and both actual guard compilations together with two stages of actual child outputs. Final rebound operand equals actual direct opening and falsum stays identical, via ForcingNegShell and existing complete formula cancellation. No supplied operand equality, guard truth/proof or alternate compiler. Structural negative-instance normalization is proved in ordinary nativeZF; actual guard validity/regularity, normalized forcing MP, uniform internal axiom/Proof preservation, reduction and final Con are NOT proved.',
         "object_complete_condition_cancellation_scope": "Complete INTERNAL whole-formula syntactic body cancellation for SAME original compiled rebind, lifted opening, original mode2 Run3 and actual direct opening. All16 varying slots and4 output candidates object-quantified; original ZF Foundation/Separation discharges IH. All12 common lift witnesses and6 actual compiler witnesses internal. Actual guard/regularity, normalized forcing MP, uniform proof/axiom preservation, reduction and final Con remain unproved.",
         "object_actual_complete_negative_fragment_instance_scope": "Actual full negative compilation (both guards and rebind), actual pointwise opening and actual G -> opened-negative proof produce the same actual raw/target bodies, environment/lift, instance code and G -> instance proof. No proof/truth of G or unconditional opened-negative proof, no supplied body/output/local answer. This is the outer forall instance step. Complete rebind/open/original-mode2 BODY cancellation is now proved separately in ForcingFormulaCancellation. Actual guard/regularity commutation, normalized forcing MP and uniform proof correctness/Con remain unproved.",

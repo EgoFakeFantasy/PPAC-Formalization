@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-11-09T07:33:02.438178+00:00",
+  "run": 42571499876,
+  "job": 129009672087,
+  "commit": "a3bbb4c7b398a4d8bc5782548dd4e2712748cba4",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "native_actual_log_line": "2026-11-09T07:19:10.2179909Z PASS: 38800 audited declarations; 2262 without axioms; 36538 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "compatibility_tests_passed": 15,
+  "clean_pinned_repositories": 3,
+  "source_hashes_verified": 75,
+  "actual_decoded_native_job_logs_read": true,
+  "applies_to_this_new_local_batch": false
+}

@@ -27,18 +27,21 @@
 | 完整内部公式归纳 | 16个变化表／作用域参数及4个实际输出均在对象全称内；原ZF基础／分离关闭全内部公式码归纳，十一构造器、子公式前提及共同lift均已消去 |
 | 实际原mode2完整正文相消 | 同一原compiled重绑定／lifted opening／原Run3公式输出等于直接opening；复用现成mode2公式桥，原六个compiler见证也在对象层消去。实际守卫／regularity及强迫MP仍未证明 |
 | 实际完整否定实例的字段正规化 | 从同一完整 NegCode.compiled／raw量词体／lifted opening／原 InstantiateTop 实例，内部消去原五个compiler和四个shell见证及两轮六字段；最终操作数等于直接opening，保持同一falsum，并保留原头和两实际guard编译。普通nativeZF原核证书已验收；守卫有效性及规范化强迫MP未完成 |
+| 实际成员守卫的码级交换 | 从原compiled false取得原条件项和精确P自由槽；同一lifted opening／原InstantiateTop输出为字面的P∈V成员码，V是同一原参数表S的P槽实际字段，内部名字前缀偏移不变。原四个compiler／三个quotation字段、两轮原子子输出及head零槽内部消去；普通nativeZF原核证书。不是guard内部证明或强迫MP |
 
 ## 当前真正缺口及依赖顺序
 
-- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；剩余是实际guard码的有效性与强迫MP。
+- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；成员guard的实际码级交换现也已完成；剩余是关系guard的码级交换、两guard的内部证明消费与强迫MP。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-neg-normalization-acceptance.json`：九项命令及五项trust=0均退出0；38848项声明、零警告；全部38800项旧依赖足迹不变。旧2830份PPAC证明中2828份哈希不变，其余两份仅去除共12个private标记，已逐字核对正文不变；SOURCE_LOCK中10处证书哈希引用据实刷新。15项兼容性回归、三个干净锁定依赖及75项源哈希检查通过。完整否定编译／实例的结构正规化已消费现成正文相消；实际guard码有效性／已有regularity与单调性证书的码级消费、规范化强迫MP、统一内部公理/Proof保真、reduction及最终Con仍未证明。
+`verification/forcing-member-guard-acceptance.json`：九项命令及五项trust=0均退出0；38881项声明、零警告；全部38848项旧依赖足迹不变。原2832份PPAC证明中2829份哈希不变，其余三份旧证明正文逐字不变，仅公开12项接口，GuardCode另添固定模板编号引理；SOURCE_LOCK中8处证书哈希引用刷新。15项兼容性回归、三个干净锁定依赖及75项源哈希检查通过。成员guard码级交换已完成；guard内部证明、关系guard交换、规范化强迫MP、全部内部公理/Proof保真、reduction和最终Con未证明。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
 远端42570016667在Lean工具链下载及elan安装器下载分别收到上游HTTP504，均发生在编译前；原证明验收未执行。安装专用重试现限定最多4次、单次退避不超过30秒，固定4.33.1／4.34.1版本不变，编译／源检查／公理审计不重试或放行。已确认的安装故障可先发布经回归验证的安装修复，远端完整证明验收仍须等实际成功日志。
+
+远端42571499876／a3bbb4c已完整成功；已读取实际native日志：2026-11-09T07:19:10.2179909Z，38800项声明、零警告，15项回归通过。证据见`verification/ci-download-remote-acceptance.json`；这仅验收该旧提交，本批新证明仍需发布后的独立Linux验收。

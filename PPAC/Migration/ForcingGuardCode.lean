@@ -31,22 +31,55 @@ def template {n} (order : Bool) (R : Source.Formula (n+2)) :
     PureSyntaxQuotation.Fm (fo_bound_context 1) (fo_bound_context (n+2)) :=
   (Translation.formula fo_bound_variable (sourceTemplate order R)).substituteMapped
     (roles n) (fun {sort} (v : FirstOrder.Variable ([] : FirstOrder.SortContext ℒ) sort) => nomatch v)
+
+open FirstOrder.FormalSystem.ProofT.NatPacket (Tree leaf)
+
+private theorem member_roles (n : Nat) :
+    ∃ entry : FirstOrder.Variable (fo_bound_context (n+2)) SetSort.set,
+      entry.index = n ∧
+      roles n (fo_bound_variable (Fin.last n).castSucc.castSucc) = .fvar entry ∧
+      roles n (fo_bound_variable (Fin.last (n+2))) = .bvar .here := by
+  induction n with
+  | zero => exact ⟨.here, rfl, rfl, rfl⟩
+  | succ n ih =>
+    obtain ⟨entry, hi, hp, hq⟩ := ih
+    refine ⟨.there entry, congrArg Nat.succ hi, ?_, ?_⟩
+    · change (roles n (fo_bound_variable (Fin.last n).castSucc.castSucc)).weakenFree SetSort.set = .fvar (.there entry)
+      rw [hp]
+      rfl
+    · change (roles n (fo_bound_variable (Fin.last (n+2)))).weakenFree SetSort.set = .bvar .here
+      rw [hq]
+      rfl
+
+/-- Literal original q∈P: bound index zero and the ORIGINAL free P slot n.
+This finite native-template identity does not restrict any internal code. -/
+theorem member_template_tree {n} (R : Source.Formula (n+2)) :
+    PureSyntaxQuotation.formulaTree (template false R) =
+      Tree.node 2 ([leaf 0, Tree.node 0 ([leaf 0]), Tree.node 1 ([leaf n])]) := by
+  obtain ⟨entry, hi, hp, hq⟩ := member_roles n
+  change Tree.node 2 ([leaf 0,
+    PureSyntaxQuotation.termTree (roles n (fo_bound_variable (Fin.last (n+2)))),
+    PureSyntaxQuotation.termTree (roles n (fo_bound_variable (Fin.last n).castSucc.castSucc))]) = _
+  rw [hq, hp]
+  change Tree.node 2 ([leaf 0, Tree.node 0 ([leaf 0]), Tree.node 1 ([leaf entry.index])]) = _
+  rw [hi]
+
 end Templates
 open Internal Source SourceAlgebra SourceLogic OmegaSyntax HornBinderSyntax
 open SyntaxRenameQuerySyntax (of_eq)
 open ForcingAtomicCode (identityImages identityImages_rename)
 set_option maxRecDepth 16384
 
-private def quotation {n m} (order : Bool) (R : Source.Formula (n+2)) (w t f N : Fin m) : Formula m :=
+def quotation {n m} (order : Bool) (R : Source.Formula (n+2)) (w t f N : Fin m) : Formula m :=
   PureQuotationTypedSyntax.formulaValue (template order R) w t f N
 
-private theorem quotation_rename {n m l} (order : Bool) (R : Source.Formula (n+2))
+theorem quotation_rename {n m l} (order : Bool) (R : Source.Formula (n+2))
     (w t f N : Fin m) (r : Fin m → Fin l) :
     (quotation order R w t f N).rename r = quotation order R (r w) (r t) (r f) (r N) := by
   simp only [quotation, PureQuotationTypedSyntax.formulaValue, Formula.rename,
     PureQuotationSyntax.formula_rename, FormulaCodeSyntax.formulaCode_rename]
 
-private def matrix {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : Fin m) (v : Fin 4 → Fin m) : Formula m :=
+def matrix {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : Fin m) (v : Fin 4 → Fin m) : Formula m :=
   (SyntaxNumeralSyntax.numeral 1 (v 0)).conj
     ((quotation order R w (v 0) f (v 1)).conj
       ((SyntaxForestSyntax.forest 1 w (fun _ => x) (v 2)).conj
@@ -54,14 +87,14 @@ private def matrix {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : 
           ((identityImages w a f (v 3)).conj
             (SyntaxMixedFormulaJudgmentSyntax.substituted w (v 2) (v 3) (v 0) f a f (v 1) q)))))
 
-private theorem matrix_rename {n m l} (order : Bool) (R : Source.Formula (n+2))
+theorem matrix_rename {n m l} (order : Bool) (R : Source.Formula (n+2))
     (w a f x q : Fin m) (v : Fin 4 → Fin m) (r : Fin m → Fin l) :
     (matrix order R w a f x q v).rename r = matrix order R (r w) (r a) (r f) (r x) (r q) (fun i => r (v i)) := by
   simp only [matrix, Formula.rename, SyntaxNumeralSyntax.numeral_rename, quotation_rename,
     SyntaxForestSyntax.forest_rename, SyntaxMixedImageCodeSyntax.termList_rename, identityImages_rename,
     SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
 
-private def body {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : Fin m) : Formula (m+4) :=
+def body {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : Fin m) : Formula (m+4) :=
   matrix order R (old 4 w) (old 4 a) (old 4 f) (old 4 x) (old 4 q) (slot 4)
 
 def compiled {n m} (order : Bool) (R : Source.Formula (n+2)) (w a f x q : Fin m) : Formula m :=

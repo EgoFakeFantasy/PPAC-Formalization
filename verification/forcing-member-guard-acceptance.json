@@ -1,0 +1,272 @@
+{
+  "verified_at": "2026-11-09T07:33:02.439092+00:00",
+  "baseline_commit": "75b754594c8fa7874f87fbb134b5987d7b76216f",
+  "original_stage": "10 active; 1-9 complete; 11 not started",
+  "background": "Original YesMetaZFC pure-set signature; ordinary nativeZF; original FirstOrder.Derives; unchanged OpenAI pin",
+  "result": "ForcingMemberGuardOpening.kernel_certificate: the ACTUAL original member guard compiled from its original P free slot, SAME lifted opening, SAME native InstantiateTop instance is a literal memberCode(P,V), where V is the ORIGINAL P-slot of the SAME opening free table S with arbitrary internal name-prefix offset. Compiler, quotation, both actual atom child-output and head-zero witnesses are internally eliminated. No output shape/equality or guard truth/proof premise.",
+  "proof_boundaries": {
+    "member_guard_raw_compiler_exact_P_slot": true,
+    "member_guard_actual_opening_instance_code_commutation": true,
+    "guard_internal_proof_or_truth_derived": false,
+    "relation_guard_code_commutation": false,
+    "normalized_forcing_MP": false,
+    "uniform_all_internal_axiom_and_Proof_preservation": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal": false
+  },
+  "reuse": [
+    "Actual original guard compiler sourceTemplate/template/body",
+    "ForcingFormulaAtoms.atom_output (existing proof unchanged)",
+    "Original identity graph/coded variables/quotation/forest field rules",
+    "ForcingOpenLift.zero_field and existing field uniqueness",
+    "ForcingOpenInstantiate.old_iff and InstantiateTopTermOperation.coded_iff",
+    "Original InstantiateTop formula-code bridge and object empty uniqueness"
+  ],
+  "exact_visibility_changes": {
+    "ForcingGuardCode": [
+      "quotation",
+      "quotation_rename",
+      "matrix",
+      "matrix_rename",
+      "body"
+    ],
+    "ForcingFormulaAtoms": [
+      "atomData",
+      "atomData_rename",
+      "atomBody",
+      "atomOutput",
+      "atomOutput_rename",
+      "atom_output"
+    ],
+    "ForcingRebindOpeningTriangle": [
+      "intro_old"
+    ]
+  },
+  "existing_proof_bodies_unchanged": true,
+  "only_new_host_syntax_lemma": "ForcingGuardCode.member_template_tree",
+  "prior_certificate_hash_references_updated": [
+    [
+      "forcing_guard_code",
+      "PPAC/Migration/ForcingGuardCode.lean"
+    ],
+    [
+      "forcing_neg_code",
+      "PPAC/Migration/ForcingGuardCode.lean"
+    ],
+    [
+      "forcing_exist_guards_code",
+      "PPAC/Migration/ForcingGuardCode.lean"
+    ],
+    [
+      "forcing_exist_code",
+      "PPAC/Migration/ForcingGuardCode.lean"
+    ],
+    [
+      "forcing_rebind_opening_triangle",
+      "PPAC/Migration/ForcingRebindOpeningTriangle.lean"
+    ],
+    [
+      "forcing_term_diagram",
+      "PPAC/Migration/ForcingRebindOpeningTriangle.lean"
+    ],
+    [
+      "forcing_formula_atoms",
+      "PPAC/Migration/ForcingFormulaAtoms.lean"
+    ],
+    [
+      "forcing_formula_induction",
+      "PPAC/Migration/ForcingFormulaAtoms.lean"
+    ]
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38881,
+    "declarations_without_axioms": 2262,
+    "declarations_with_recorded_dependencies": 36619,
+    "warning_lines": 0,
+    "all_prior_38848_declaration_footprints_unchanged": true,
+    "old_PPAC_proof_files": 2832,
+    "unchanged_old_PPAC_proof_files": 2829,
+    "changed_old_proof_files": [
+      "PPAC/Migration/ForcingFormulaAtoms.lean",
+      "PPAC/Migration/ForcingGuardCode.lean",
+      "PPAC/Migration/ForcingRebindOpeningTriangle.lean"
+    ],
+    "new_proof_files": [
+      "PPAC/Migration/ForcingMemberGuard.lean",
+      "PPAC/Migration/ForcingMemberGuardOpening.lean"
+    ],
+    "PPAC_proof_files": 2834,
+    "sealed_inputs": 2867,
+    "all_current_sealed_input_hashes_match": true,
+    "compatibility_regression_tests_passed": 15,
+    "clean_pinned_repositories": 3,
+    "source_hashes_verified": 75,
+    "post_cleanup_trust_zero_source_checks": [
+      {
+        "file": "PPAC/Migration/ForcingMemberGuard.lean",
+        "exit_code": 0
+      },
+      {
+        "file": "PPAC/Migration/ForcingMemberGuardOpening.lean",
+        "exit_code": 0
+      }
+    ],
+    "all_2867_sealed_hashes_verified_after_cleanup": true
+  },
+  "publication_gate_previous_remote_success": {
+    "run": 42571499876,
+    "job": 129009672087,
+    "commit": "a3bbb4c7b398a4d8bc5782548dd4e2712748cba4",
+    "run_status": "completed",
+    "run_conclusion": "success",
+    "native_actual_log_line": "2026-11-09T07:19:10.2179909Z PASS: 38800 audited declarations; 2262 without axioms; 36538 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+    "compatibility_tests_passed": 15,
+    "clean_pinned_repositories": 3,
+    "source_hashes_verified": 75,
+    "actual_decoded_native_job_logs_read": true,
+    "applies_to_this_new_local_batch": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-parent-summary.json",
+      "bytes": 14920419,
+      "sha256": "2c48d4d912a146ca7f727f3732d614eeec64572b99707d47683d50d31c8ce6e1"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-export-review.json",
+      "bytes": 512,
+      "sha256": "203a14cc60c0e6c9a90e77ddeb96a2cba8b8533ad387d78186ec99931e81bdc4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-lock-review.json",
+      "bytes": 2517,
+      "sha256": "80a413fa3caed2e8283f22f0a379556a3566f96469b21289ff40754fe48f0b14"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\GuardMemberAudit.lean",
+      "bytes": 4110,
+      "sha256": "3a17efb85221ebc8ca54ab8da675527faaef630024b5816c059b1425dc953fa6"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-audit.log",
+      "bytes": 9993,
+      "sha256": "5e3bcec7788ce6d7ccb321de0a166f33a0ab2fc5f329289b7ce78836aebab9b8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-build.log",
+      "bytes": 105,
+      "sha256": "94fb548c7ebabe13b538ee5bd5b5b30cf2bdad2f2769829144d5e09870edbec2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-consumer-build.log",
+      "bytes": 107,
+      "sha256": "3aec99e3c96d7f90c343ed280cc2500d348d1178d586fbc637ca1e044f1ee5f8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-opening-build.log",
+      "bytes": 114,
+      "sha256": "ec889b1e3c362f5cfc387c085004d4cf1025fe0a935ca5605989209b66461486"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-member-full.log",
+      "bytes": 153,
+      "sha256": "d1bc1b56ee3d281935636040f5867240d104ced4edd91cae3f316515be4d88ad"
+    }
+  ],
+  "cleanup_completed": true,
+  "current_local_batch_remote_pass_claimed": false,
+  "cleanup_verified_at": "2026-11-09T07:33:37.455648+00:00"
+}

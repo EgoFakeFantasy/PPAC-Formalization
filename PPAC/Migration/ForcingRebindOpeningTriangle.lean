@@ -63,7 +63,7 @@ private theorem Inputs.under {m} {Γ : Context m} {w mode z a f T A C R S K H j 
   direct := of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w R S a f z T x o Fin.castSucc) (SourceLogic.under h.direct B)
 }
 
-private theorem intro_old {m} {Γ : Context m} (bound : Bool) (w mode z P A f K H i I t y : Fin m)
+theorem intro_old {m} {Γ : Context m} (bound : Bool) (w mode z P A f K H i I t y : Fin m)
     (hf : Derives Γ ((Formula.mem (if bound then I else i) (SyntaxTermSyntax.limit bound A f)).conj
       (field w (SyntaxIndexMapSyntax.selectMap bound K H) (if bound then I else i) t)))
     (hr : Derives Γ (OriginalTransformRowSyntax.run 1 w mode z P t y)) :

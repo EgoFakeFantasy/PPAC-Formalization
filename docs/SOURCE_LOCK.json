@@ -161877,7 +161877,7 @@
         "Original Source.Derives and nativeZF TheoryTransport/ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingAtomicCode.lean": "4ad5432e3006b47f871d9e3ef3503c2b06d6381e90b1eefe0eb8531cc4557371",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
@@ -161889,6 +161889,32 @@
           "propext"
         ],
         "PPAC.Migration.ForcingGuardCode.template": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.member_template_tree": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.quotation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.quotation_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.matrix": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.matrix_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingGuardCode.body": [
           "Quot.sound",
           "propext"
         ],
@@ -162022,7 +162048,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
-        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -162164,7 +162190,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
-        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
       },
@@ -162419,7 +162445,7 @@
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
-        "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -165890,7 +165916,7 @@
         "Original encoded fields, empty/field uniqueness and internal variable/successor existence"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "714a4578d2523b2925e78bc0b4a790692fc7e1c8f3f9e884be15ad78208d9684",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
         "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
         "PPAC/Migration/ForcingConditionInstance.lean": "40d02c5e051d047cc5315474b766f40b568c4803f9c844fb2fef2a7522677411",
         "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
@@ -165901,6 +165927,11 @@
       },
       "scope": "For EVERY internal pure source term, compare the ACTUAL three-step rebind/lifted-opening/ORIGINAL kind1 mode2 output with the actual direct-opening output, in the SAME real compiler tables and opening/lift. Equality follows from real original operation judgments and the ACTUAL selected parameter-field premise. Variable role, index, successor and new-head witnesses are internally derived; runtime terms/scopes/codes may be nonstandard. This is a root TERM commuting diagram, not full formula cancellation. Operation judgments and actual parameter field ARE premises, not an equality oracle; this theorem does not construct those judgments. Generic binder closure of the whole diagram, normalized forcing MP, uniform proof/axiom preservation, reduction and final Con remain unproved.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRebindOpeningTriangle.intro_old": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.ForcingRebindOpeningTriangle.term": [
           "Classical.choice",
           "Quot.sound",
@@ -166013,7 +166044,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingMixedTermLift.lean": "0845ce075fe503f1008b32282b99a6441866a076505543b6ec965ffe89082a6e",
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "714a4578d2523b2925e78bc0b4a790692fc7e1c8f3f9e884be15ad78208d9684",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
         "PPAC/Migration/Internal/SyntaxCodedMixedTermExistence.lean": "ee4bb1983ff381986b623b02c1a4c16c6053c1e7d664c3520640e8eacf75f90f",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean": "f5dac3f0824fbdf5350718bad07f176b9f0a6576033de7fbba7bfbb1028297e7",
@@ -166297,7 +166328,7 @@
         "Existing source atomic split and allMany/exMany original rules"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingFormulaAtoms.lean": "2c5db373db38d3aaedebf01c7c18ec4e441da3d7038be8aa9d1be9387b733749",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
@@ -166313,6 +166344,33 @@
           "propext"
         ],
         "PPAC.Migration.ForcingFormulaAtoms.atomCode_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atomData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atomData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atomBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atomOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atomOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaAtoms.atom_output": [
           "Classical.choice",
           "Quot.sound",
           "propext"
@@ -166465,7 +166523,7 @@
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
-        "PPAC/Migration/ForcingFormulaAtoms.lean": "2c5db373db38d3aaedebf01c7c18ec4e441da3d7038be8aa9d1be9387b733749",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
         "PPAC/Migration/ForcingFormulaLifts.lean": "2aa70d5295c4067acd652322557025a5c35234fa79cbd780ecce399bafefe7e5",
         "PPAC/Migration/Internal/FormulaCodeRecursive.lean": "4bcdae1dcb2e0927d22a76b9c7d87526bdfad7bc4dab8b906f0827690d19c09d",
         "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
@@ -166905,6 +166963,188 @@
           "propext"
         ],
         "PPAC.Migration.ForcingNegNormalization.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_member_guard": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingMemberGuard.lean",
+      "consumers": [
+        "Actual complete-negative instance member guard; normalized forcing MP with original compiler leaves"
+      ],
+      "reuse_producers": [
+        "ForcingGuardCode original sourceTemplate/template/compiler body; literal source-slot identity only",
+        "Existing ForcingFormulaAtoms.atom_output (proof body unchanged)",
+        "Original identity graph, mixed term fields, forest fields and quotation existence",
+        "ForcingOpenLift.zero_field; ForcingOpenInstantiate.old_iff; original InstantiateTopTermOperation.coded_iff",
+        "Original native InstantiateTop formula bridge; compiler head zero aligned by original empty uniqueness"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingMemberGuard.lean": "3780ffffc6c30a03bda17fcbf30c26d6a37293057f427fe6cc9b845d5fbbc3b2",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
+        "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
+        "PPAC/Migration/Internal/InstantiateTopTermOperation.lean": "42112bf53805614d4fd230c1c0a489d4b68c49dfe24278ccc22ae2b7973035c6",
+        "PPAC/Migration/Internal/IndexTermImageCodeFields.lean": "c1213e02dfebfc8a48daaa2a13fbca971cdb0addcb84155f9ced62ac6922f711"
+      },
+      "scope": "ACTUAL original compiled false member guard has memberCode with SAME condition term and ORIGINAL P free slot k. The actual template tree q in P is proved for external finite parameter count k, while all bound scopes/compiler outputs/table codes are unrestricted internal values. Same four compiler witnesses and three quotation fields internally generated/eliminated. Existing atom_output and original identity index/term graphs recover fields; no new checker, recursor or evaluator, no guard truth/proof assumed. Ordinary nativeZF original-kernel certificate. Opening/InstantiateTop commutation is supplied by ForcingMemberGuardOpening. Order-guard commutation, guard validity/internal proofs, normalized forcing MP, uniform internal axiom/Proof preservation, reduction and Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingMemberGuard.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.from_matrix": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuard.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_member_guard_opening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingMemberGuardOpening.lean",
+      "consumers": [
+        "Actual complete-negative instance member guard; normalized forcing MP with original compiler leaves"
+      ],
+      "reuse_producers": [
+        "ForcingGuardCode original sourceTemplate/template/compiler body; literal source-slot identity only",
+        "Existing ForcingFormulaAtoms.atom_output (proof body unchanged)",
+        "Original identity graph, mixed term fields, forest fields and quotation existence",
+        "ForcingOpenLift.zero_field; ForcingOpenInstantiate.old_iff; original InstantiateTopTermOperation.coded_iff",
+        "Original native InstantiateTop formula bridge; compiler head zero aligned by original empty uniqueness"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingMemberGuard.lean": "3780ffffc6c30a03bda17fcbf30c26d6a37293057f427fe6cc9b845d5fbbc3b2",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "0b9582ed72816102d8dc3899439219672b257b917bfc5eb44e8b5a314af71950",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
+        "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
+        "PPAC/Migration/Internal/InstantiateTopTermOperation.lean": "42112bf53805614d4fd230c1c0a489d4b68c49dfe24278ccc22ae2b7973035c6",
+        "PPAC/Migration/Internal/IndexTermImageCodeFields.lean": "c1213e02dfebfc8a48daaa2a13fbca971cdb0addcb84155f9ced62ac6922f711"
+      },
+      "scope": "The SAME actual member guard compilation/lifted opening/native InstantiateTop result is literally memberCode(P,V) at the actual candidate output; V is the ORIGINAL P-slot field of SAME opening free table S, retaining arbitrary internal name-prefix offset. All raw guard witnesses, actual two-stage atom child outputs, auxiliary head witnesses and compiler head zero alignment are eliminated internally. Reuses original new-head existence/field uniqueness, InstantiateTop coded fields, original mode2 term bridge and old-parameter theorem. No supplied output shape/equality/regularity or guard truth/proof. Pure nativeZF original-kernel certificate; this proves member-guard CODE commutation, not its internal proof, relation-guard commutation, normalized forcing MP, uniform axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingMemberGuardOpening.frame": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.frame_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.from_head": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMemberGuardOpening.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

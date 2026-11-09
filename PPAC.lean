@@ -1129,3 +1129,5 @@ import PPAC.Migration.ForcingFormulaInduction
 import PPAC.Migration.ForcingFormulaCancellation
 import PPAC.Migration.ForcingNegShell
 import PPAC.Migration.ForcingNegNormalization
+import PPAC.Migration.ForcingMemberGuard
+import PPAC.Migration.ForcingMemberGuardOpening

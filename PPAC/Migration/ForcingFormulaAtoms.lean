@@ -24,20 +24,20 @@ theorem atomCode_rename {m l} (member : Bool) (w sym x y n : Fin m) (r : Fin m �
     (atomCode member w sym x y n).rename r = atomCode member (r w) (r sym) (r x) (r y) (r n) := by
   cases member <;> simp only [atomCode, Bool.false_eq_true, if_false, if_true, SyntaxAtomSyntax.memberCode_rename, SyntaxAtomSyntax.equalCode_rename]
 
-private def atomData {m} (member : Bool) (w sym R S a b c d x y q X Y : Fin m) : Formula m :=
+def atomData {m} (member : Bool) (w sym R S a b c d x y q X Y : Fin m) : Formula m :=
   (atomCode member w sym X Y q).conj ((SyntaxCodedMixedTermSyntax.substituted w R S a b c d x X).conj
     (SyntaxCodedMixedTermSyntax.substituted w R S a b c d y Y))
-private theorem atomData_rename {m l} (member : Bool) (w sym R S a b c d x y q X Y : Fin m) (r : Fin m → Fin l) :
+theorem atomData_rename {m l} (member : Bool) (w sym R S a b c d x y q X Y : Fin m) (r : Fin m → Fin l) :
     (atomData member w sym R S a b c d x y q X Y).rename r = atomData member (r w) (r sym) (r R) (r S) (r a) (r b) (r c) (r d) (r x) (r y) (r q) (r X) (r Y) := by
   simp only [atomData, Formula.rename, atomCode_rename, SyntaxCodedMixedTermSyntax.substituted_rename]
-private def atomBody {m} (member : Bool) (w sym R S a b c d x y q : Fin m) : Formula (m+2) :=
+def atomBody {m} (member : Bool) (w sym R S a b c d x y q : Fin m) : Formula (m+2) :=
   atomData member (old 2 w) (old 2 sym) (old 2 R) (old 2 S) (old 2 a) (old 2 b) (old 2 c) (old 2 d) (old 2 x) (old 2 y) (old 2 q) (slot 2 0) (slot 2 1)
-private def atomOutput {m} (member : Bool) (w sym R S a b c d x y q : Fin m) : Formula m := existsMany 2 (atomBody member w sym R S a b c d x y q)
-private theorem atomOutput_rename {m l} (member : Bool) (w sym R S a b c d x y q : Fin m) (r : Fin m → Fin l) :
+def atomOutput {m} (member : Bool) (w sym R S a b c d x y q : Fin m) : Formula m := existsMany 2 (atomBody member w sym R S a b c d x y q)
+theorem atomOutput_rename {m l} (member : Bool) (w sym R S a b c d x y q : Fin m) (r : Fin m → Fin l) :
     (atomOutput member w sym R S a b c d x y q).rename r = atomOutput member (r w) (r sym) (r R) (r S) (r a) (r b) (r c) (r d) (r x) (r y) (r q) := by
   simp only [atomOutput, existsMany_rename, atomBody, atomData_rename, lift_old, lift_slot]
 
-private theorem atom_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (member : Bool) (w sym R S a b c d n x y q : Fin m)
+theorem atom_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (member : Bool) (w sym R S a b c d n x y q : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (atomCode member w sym x y n))
     (hp : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a b c d n q)) :
     Derives Γ (atomOutput member w sym R S a b c d x y q) := by
