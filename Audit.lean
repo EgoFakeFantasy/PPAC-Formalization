@@ -39419,3 +39419,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingTermDiagram.rootInput
 #print axioms PPAC.Migration.ForcingTermDiagram.rootSentence
 #print axioms PPAC.Migration.ForcingTermDiagram.root_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaDiagram.step
+#print axioms PPAC.Migration.ForcingFormulaDiagram.step_rename
+#print axioms PPAC.Migration.ForcingFormulaDiagram.atSource
+#print axioms PPAC.Migration.ForcingFormulaDiagram.atSource_rename
+#print axioms PPAC.Migration.ForcingFormulaDiagram.apply_atSource
+#print axioms PPAC.Migration.ForcingFormulaDiagram.negation
+#print axioms PPAC.Migration.ForcingFormulaDiagram.quantified
+#print axioms PPAC.Migration.ForcingFormulaDiagram.binary
+#print axioms PPAC.Migration.ForcingFormulaDiagram.negationInput
+#print axioms PPAC.Migration.ForcingFormulaDiagram.negationSentence
+#print axioms PPAC.Migration.ForcingFormulaDiagram.negation_kernel_certificate
+#print axioms PPAC.Migration.ForcingFormulaDiagram.quantifiedInput
+#print axioms PPAC.Migration.ForcingFormulaDiagram.quantifiedSentence
+#print axioms PPAC.Migration.ForcingFormulaDiagram.quantified_kernel_certificate
+#print axioms PPAC.Migration.ForcingFormulaDiagram.binaryInput
+#print axioms PPAC.Migration.ForcingFormulaDiagram.binarySentence
+#print axioms PPAC.Migration.ForcingFormulaDiagram.binary_kernel_certificate

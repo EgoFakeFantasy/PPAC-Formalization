@@ -1,0 +1,285 @@
+{
+  "verified_at": "2026-11-09T04:56:27.109015+00:00",
+  "baseline_commit": "f348c4397abcf0b5da640b07d6f9f19f2ea332fd",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "Seven original non-atomic formula constructors preserve object-quantified four-path cancellation. Four unary/eight binary ACTUAL child outputs are constructed and eliminated. Quantifiers reuse four coherent original mixed lifts; the child object cancellation property and actual lifts remain induction-step premises.",
+  "endpoints": [
+    "PPAC.Migration.ForcingFormulaDiagram.negation_kernel_certificate",
+    "PPAC.Migration.ForcingFormulaDiagram.quantified_kernel_certificate",
+    "PPAC.Migration.ForcingFormulaDiagram.binary_kernel_certificate"
+  ],
+  "endpoint_type": "YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence ...Sentence)",
+  "reuse": [
+    "Actual original mixed unary outputs; no new syntax evaluator or proof kernel",
+    "Original mixed binary case filtering, source-field uniqueness and original constructor uniqueness",
+    "Existing chosen-lift equivalence for each actual quantified child; four actual lift premises retained",
+    "Original allI/allE/exI/exE blocks only"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38754,
+    "new_audit_entries": 17,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingFormulaDiagram.step": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.step_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.atSource": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.atSource_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.apply_atSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.negation": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.quantified": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.binary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.negationInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.negationSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.negation_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.quantifiedInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.quantifiedSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.quantified_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.binaryInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.binarySentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingFormulaDiagram.binary_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38737,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2825,
+    "all_prior_SOURCE_LOCK_entries_unchanged": true,
+    "proof_files_now": 2826,
+    "sealed_inputs": 2858,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "build.log": "c043a0346ae3f13d28bbae900cd46b15a1ba90f0cb7e451708e1bc45d2b86a6c",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "669ea110dfeaaa809f7dd835960d0870ed971bac3a5d59ab2beb86a74fa4a92d"
+    },
+    "summary_sha256": "fddea41384a8b3219838ad54814137d0309f70466629aa10db4aff9e5f7c45ae"
+  },
+  "scope": {
+    "full_term_binder_closure_and_actual_root_previously_proved": true,
+    "all_seven_nonatomic_constructor_induction_steps_proved": true,
+    "child_cancellation_is_an_object_formula": true,
+    "actual_child_output_witnesses_internally_eliminated": true,
+    "quantified_steps_retain_four_actual_lifts": true,
+    "atomic_cases_complete": false,
+    "uniform_internal_formula_induction_complete": false,
+    "complete_formula_cancellation_proved": false,
+    "normalized_forcing_MP_proved": false,
+    "uniform_internal_axiom_proof_preservation_proved": false,
+    "reduction_proved": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingFormulaDiagramAudit.lean",
+      "bytes": 1172,
+      "sha256": "bd8da2423775a19e27b57aec386e8276e31ca2acba14758ebd711113541c84fe"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-diagram-audit.log",
+      "bytes": 3187,
+      "sha256": "0bd27669261a85c97795eb20098243500bafcec99aece1feba29d4a334d9d342"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-diagram-full.log",
+      "bytes": 153,
+      "sha256": "c68859b2b5595c03cecda76e420d57fdcac28ed821896a0f4e435c6589e2b7d9"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-formula-diagram-parent-summary.json",
+      "bytes": 14899389,
+      "sha256": "2df10b31b88074427a2f94b9c33a31a661ef6d358f38a3322c72b9aa27f77640"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42559428352
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "cleanup_verified_at": "2026-11-09T04:57:20.445479+00:00"
+}
