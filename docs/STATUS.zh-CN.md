@@ -1,4 +1,4 @@
-# 当前状态：原第10阶段（2026-11-09）
+# 当前状态：原第10阶段（2026-11-10）
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
 
@@ -18,10 +18,10 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-本批接通完整原否定编译器在任意合法条件的实际实例：ForcingNegCondition.produce内部构造原Replacement更新表及直接子公式输出，消去原五项compiler、四项shell和两组六字段替换见证，保留同一原头部、两个guard的实际编译／替换判断及同一falsum。正文ALL2相消性质由已有原rebind／opening／mode2证明内部取得，非给定答案；原NegShell全文件逐字保留为前缀。运行范围及码仍覆盖内部非标准值。
+本批完成局部传递性码行的内部证明生产：在原三次ALL／native实例化及五个蕴含字段输入下，内部生成成员守卫与R(r,p)的原证明，并消费负实例的两个guard前件，结论保留同一子公式／falsum字段。任意额外固定背景Extra通过Ctx=Extra∧G0传输，父证明与guard使用同一Ctx。没有给定背景／守卫真值或目标证明；运行码／作用域可为内部非标准值。该码行仍须从实际完整预序及实际guard构造识别，含r的局部前件仍须在全称化前解除。
 
-两类真实guard的同背景证明、完整否定实例双前件消去、同背景全称引入及任意条件的完整否定实例归一化已经完成。已有ForcingGuardOpening本来支持任意合法实例条件，不重做。下一实际消费者是原预序传递性到非对角order guard的内部证明，再接通原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。
+任意条件的完整否定实例归一化已完成，现有ForcingGuardOpening本来支持任意合法实例条件，不重做。本批给定码行下的局部传递性证明生产、双guard消去及任意Extra背景传输已完成。真正缺口是从原完整预序／实际guard构造识别该码行，以及解除局部条件；随后接通原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。原预序数学、L、完整模式、mode3、原forall核和递归均不重建。
 
-本轮新的九项完整验收及五项trust=0均退出0；39059项声明、零警告，全部39034项旧足迹保持，2844份旧PPAC证明源码哈希不变。唯一旧源码变化是追加NegShell通用相消消费接口，整个旧文件及旧证明正文逐字保留为前缀。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。
+本轮最终代码的九项完整验收及五项trust=0均退出0；39078项声明、零警告，全部39059项旧足迹保持，2845份旧PPAC证明源码哈希不变。唯一旧源码变化是公开原project／chain／instantiate三项helper，正文和旧公开接口完全保持。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-neg-condition-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-transitive-guard-proof-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。

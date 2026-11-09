@@ -2735,11 +2735,12 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_member_proof', 'ForcingNegMemberProof', 10),
                                 ('forcing_reflexive_images', 'ForcingReflexiveImages', 18),
                                 ('forcing_reflexive_diagram', 'ForcingReflexiveDiagram', 16),
-                                ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 18),
+                                ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 21),
                                 ('forcing_neg_guard_proof', 'ForcingNegGuardProof', 11),
                                 ('internal_proof_universal', 'InternalProofUniversal', 16),
                                 ('forcing_condition_opening', 'ForcingConditionOpening', 13),
-                                ('forcing_neg_condition', 'ForcingNegCondition', 18)):
+                                ('forcing_neg_condition', 'ForcingNegCondition', 18),
+                                ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6077,6 +6078,12 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_local_transitivity_code_row_proof_producer_proved": True,
+        "object_local_transitivity_additional_fixed_background_preserved": True,
+        "object_local_transitivity_negative_target_guards_discharge_proved": True,
+        "object_local_transitivity_actual_source_row_constructed": False,
+        "object_local_transitivity_local_antecedents_curried_for_forall": False,
+        "object_local_transitivity_scope": "Conditional actual-code row: original three forall/native instances and five implication antecedents retained. Local G0 includes all antecedents; actual original projections/rule20/S/MP produce internal G0->member/order and discharge negative target guards retaining SAME falsum. Source preorder/actual guards still must construct and identify this row, and local conditions must be curried before forall. No claim of full mono/dense/forcingMP/Con.",
         "object_actual_negative_arbitrary_condition_normalization_proved": True,
         "object_actual_negative_arbitrary_condition_update_and_operand_constructed": True,
         "object_actual_negative_arbitrary_condition_scope": "ForcingNegCondition.produce internally generates actual S[j:=P] and direct operand, retains original full negative compiler/head/both guards/SAME falsum and both actual substitutions. ALL2 operand property proved from original rebind/open/mode2. No answer/guard truth/proof oracle. Non-diagonal guard transitivity and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",

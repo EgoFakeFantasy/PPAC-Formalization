@@ -16,7 +16,7 @@ open InternalProofConjunction (proved proved_rename)
 set_option maxRecDepth 32768
 attribute [local irreducible] NaturalRecursionSyntax.matrix
 
-private theorem project {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (right : Bool)
+theorem project {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (right : Bool)
     (w z b A B C : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b))
     (hC : Derives Γ (formulaCode w C z b))
@@ -47,7 +47,7 @@ private theorem project {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test 
       exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hPair
     exact of_eq (by simp only [Formula.raise, implication_rename]) hout
 
-private theorem chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+theorem chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b A B C : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b)) (hC : Derives Γ (formulaCode w C z b))
     (hp : Derives Γ (implication test w z b A B)) (hq : Derives Γ (implication test w z b B C)) :
@@ -71,7 +71,7 @@ private theorem chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : 
     exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hPair
   exact of_eq (by simp only [Formula.raise, implication_rename]) hout
 
-private theorem instantiate {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+theorem instantiate {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b A F term N U G : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hG : Derives Γ (formulaCode w G z b)) (hN : Derives Γ (formulaCode w N z b))
     (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z b A term F N))
