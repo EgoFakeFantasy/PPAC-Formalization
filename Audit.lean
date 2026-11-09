@@ -39301,3 +39301,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPointwiseCode.opened_negation
 #print axioms PPAC.Migration.ForcingPointwiseCode.openedNegationSentence
 #print axioms PPAC.Migration.ForcingPointwiseCode.opened_negation_kernel_certificate
+#print axioms PPAC.Migration.ForcingMixedUnary.singleOutput
+#print axioms PPAC.Migration.ForcingMixedUnary.singleOutput_rename
+#print axioms PPAC.Migration.ForcingMixedUnary.single_output
+#print axioms PPAC.Migration.ForcingPointwiseCode.openedQuantified
+#print axioms PPAC.Migration.ForcingPointwiseCode.openedQuantified_rename
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_quantified
+#print axioms PPAC.Migration.ForcingPointwiseCode.openedQuantifiedSentence
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_quantified_kernel_certificate
+#print axioms PPAC.Migration.ForcingMixedUnary.single_output_iff
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_quantified_iff

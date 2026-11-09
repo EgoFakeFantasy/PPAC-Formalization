@@ -1,0 +1,295 @@
+{
+  "verified_at": "2026-11-09T01:16:30.762094+00:00",
+  "baseline_commit": "fcedc520ae3996373e73b492d2ed3f69f8904279",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "Exact actual forall/exists opening equation in original nativeZF. The real unary parent substitution internally supplies its target body, both original source/target successor scopes, both actual lifted code tables and genuine child substitution. The typed converse reconstructs the real parent. The direct pointwise consumer preserves its original parent input type and gives an iff with those existential witnesses. No supplied child/lift/history/local compilation answer, no external-standard restriction, and no new proof/syntax/recursion backend. This is the literal quantifier layer needed by normalized forcing fragments, not complete condition-rebinding or forcing MP preservation.",
+  "endpoints": [
+    "PPAC.Migration.ForcingMixedUnary.single_output",
+    "PPAC.Migration.ForcingMixedUnary.single_output_iff",
+    "PPAC.Migration.ForcingPointwiseCode.opened_quantified",
+    "PPAC.Migration.ForcingPointwiseCode.opened_quantified_iff",
+    "PPAC.Migration.ForcingPointwiseCode.opened_quantified_kernel_certificate"
+  ],
+  "endpoint_type": "Source.Derives on actual internal coded substitutions, with the exact pointwise quantifier equation replayed to original FirstOrder.Derives nativeZF []",
+  "actual_contract": "Omega(w) -> FormulaCode(w,n,b,f) -> OriginalSingleCode(tag forall/exists,w,x,n) -> (ActualOpened(w,z,b,f,t,n,Q) iff Exists actual opening environment plus actual target quantifier body and original advanced mixed-substitution witnesses). All runtime scopes, codes and witnesses may be internally nonstandard.",
+  "reuse": [
+    "Original SyntaxMixedFormulaLogicalKnown.single_of_substituted",
+    "Original constructor injectivity for the source child",
+    "Original SyntaxMixedFormulaEndpoints.single_iff",
+    "Original advanced mixed-binder predicate with actual code tables and child judgment",
+    "Existing actual pointwise opening environment and original HornBinder object quantifier rules"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38635,
+    "new_audit_entries": 10,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingMixedUnary.singleOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedUnary.singleOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedUnary.single_output": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.openedQuantified": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.openedQuantified_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_quantified": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.openedQuantifiedSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_quantified_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingMixedUnary.single_output_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_quantified_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "previous_footprints_unchanged": 38625,
+    "previous_proof_files": 2816,
+    "unmodified_previous_proof_files": 2814,
+    "unmodified_previous_proof_file_hashes_unchanged": true,
+    "append_only_previous_modules": {
+      "PPAC/Migration/ForcingMixedUnary.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "b827f5f0ef30cd5e0e13ee5fa563d1d3049aa926615508d1abeb7df7ac0df66d"
+      },
+      "PPAC/Migration/ForcingPointwiseCode.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "77321a2a0ef9a3a4969dfcb59abc793eb8cb17a869c3a53ba07fcf42064c5b24"
+      }
+    },
+    "old_proof_bodies_rewritten": false,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingMixedUnary.lean",
+      "PPAC/Migration/ForcingPointwiseCode.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_pointwise_code",
+      "internal_false_root",
+      "forcing_mixed_unary"
+    ],
+    "reason_for_source_updates": "Actual appended module hashes, new exact footprints, explicit already-existing producers and append-only scope clarification; previous contracts and footprints retained.",
+    "sealed_input_count": 2848,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0
+  },
+  "scope": {
+    "actual_unary_output_child_exact_equation": true,
+    "actual_pointwise_forall_exists_opening_body_exact_equation": true,
+    "supplied_child_or_lifting_witness": false,
+    "complete_ForcingNegCode_opening_commutation": false,
+    "complete_condition_rebinding_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-build.log",
+      "bytes": 172,
+      "sha256": "bbefc5cd34bc80482fc3ea02ddc75c667c8c2984dfb391c70adb0d546f914272"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-pointwise.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-audit.lean",
+      "bytes": 739,
+      "sha256": "2405b2611e44634042c0f938ab8d57adcf47c2a15909ac6f02530953dbe357da"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-audit.log",
+      "bytes": 1599,
+      "sha256": "2a193ca546f5635829359febfb27c40044e825d70d4d94d81af0d02f9429f862"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-parent-summary.json",
+      "bytes": 14872760,
+      "sha256": "6004cc86747a236e5fb4a6dfe86d0f6e657e3c384be3b8c117f3d1ec31cb33f9"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-compatibility.log",
+      "bytes": 218,
+      "sha256": "7de07b2f98ab22fa429d56ec6b3d80172f2260b6b4a9e59632a7a0d8d7ebda83"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-ci-inputs.log",
+      "bytes": 91,
+      "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-quantified-opening-full-verify.log",
+      "bytes": 153,
+      "sha256": "081396f7bfdc3f7c56a599d4eccaa465dac0509c969a60514cd702ab5d269d57"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native log read before pushing",
+    "preceding_run": 42540122797
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T01:17:08.681197+00:00"
+}

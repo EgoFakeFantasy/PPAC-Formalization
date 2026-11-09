@@ -629,4 +629,102 @@ theorem opened_negation_kernel_certificate {m} (w z b f t n x Q X : Fin m) :
     (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl))))) (.hyp (Or.inr (Or.inr (Or.inl rfl))))
     (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+private def quantifiedData {m} (universal : Bool) (w z b f t x Q : Fin m) (v : Fin 2 → Fin m) : Formula m :=
+  (ForcingOpenLayout.environment w z b f t (v 0) (v 1)).conj
+    (ForcingMixedUnary.singleOutput (SyntaxLogicalSyntax.quantifierTag universal) true w (v 0) (v 1) b f z t x Q)
+private theorem quantifiedData_rename {m l} (universal : Bool) (w z b f t x Q : Fin m) (v : Fin 2 → Fin m) (r : Fin m → Fin l) :
+    (quantifiedData universal w z b f t x Q v).rename r = quantifiedData universal (r w) (r z) (r b) (r f) (r t) (r x) (r Q) (fun i => r (v i)) := by
+  simp only [quantifiedData, Formula.rename, ForcingOpenLayout.environment_rename, ForcingMixedUnary.singleOutput_rename]
+private def quantifiedBody {m} (universal : Bool) (w z b f t x Q : Fin m) : Formula (m+2) :=
+  quantifiedData universal (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 x) (old 2 Q) (slot 2)
+
+/-- Actual target quantifier body and its original lifted mixed environment.
+All parent environments, body codes, successor scopes and lifted code tables
+are inside object EX. No child-output or lifting premise is added. -/
+def openedQuantified {m} (universal : Bool) (w z b f t x Q : Fin m) : Formula m :=
+  existsMany 2 (quantifiedBody universal w z b f t x Q)
+
+theorem openedQuantified_rename {m l} (universal : Bool) (w z b f t x Q : Fin m) (r : Fin m → Fin l) :
+    (openedQuantified universal w z b f t x Q).rename r = openedQuantified universal (r w) (r z) (r b) (r f) (r t) (r x) (r Q) := by
+  simp only [openedQuantified, existsMany_rename, quantifiedBody, quantifiedData_rename, lift_old, lift_slot]
+
+private theorem intro_quantified {m} {Γ : Context m} (universal : Bool) (w z b f t x Q L S : Fin m)
+    (he : Derives Γ (ForcingOpenLayout.environment w z b f t L S))
+    (hq : Derives Γ (ForcingMixedUnary.singleOutput (SyntaxLogicalSyntax.quantifierTag universal) true w L S b f z t x Q)) :
+    Derives Γ (openedQuantified universal w z b f t x Q) := by
+  apply HornBinderRules.intro_many 2 _ (SyntaxAtomSyntax.two L S)
+  exact of_eq (by simp only [quantifiedBody, quantifiedData_rename, assign_old, assign_slot]; rfl) (.conjI he hq)
+
+/-- Extract the genuine body of an actual opened forall/exists fragment.
+The original parent output supplies every environment and child witness. -/
+theorem opened_quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (universal : Bool) (w z b f t n x Q : Fin m)
+    (hw : Derives Γ (omega w))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n))
+    (hp : Derives Γ (opened w z b f t n Q)) :
+    Derives Γ (openedQuantified universal w z b f t x Q) := by
+  let E := openBody w z b f t n Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hp
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have valid : ((SyntaxLogicalSyntax.quantifierTag universal) = 4 ∧ true = false) ∨
+      ((SyntaxLogicalSyntax.quantifierTag universal) = 9 ∧ true = true) ∨
+      ((SyntaxLogicalSyntax.quantifierTag universal) = 10 ∧ true = true) := by
+    cases universal <;> simp only [SyntaxLogicalSyntax.quantifierTag] <;> simp
+  have hout := ForcingMixedUnary.single_output (HornBinderRules.zf_body 2 hZ E) (SyntaxLogicalSyntax.quantifierTag universal) true valid
+    (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 t) (old 2 n) (old 2 x) (old 2 Q)
+    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename (SyntaxLogicalSyntax.quantifierTag universal) w x n (old 2)) (HornBinderRules.under_body 2 hc E)) (.conjR hE)
+  exact of_eq (openedQuantified_rename universal w z b f t x Q (old 2)).symm
+    (intro_quantified universal (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 x) (old 2 Q) (slot 2 0) (slot 2 1) (.conjL hE) hout)
+
+private theorem from_opened_quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (universal : Bool) (w z b f t n x Q : Fin m)
+    (hw : Derives Γ (omega w)) (hn : Derives Γ (formulaCode w n b f))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n))
+    (hq : Derives Γ (openedQuantified universal w z b f t x Q)) : Derives Γ (opened w z b f t n Q) := by
+  let E := quantifiedBody universal w z b f t x Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hq
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have valid : ((SyntaxLogicalSyntax.quantifierTag universal) = 4 ∧ true = false) ∨
+      ((SyntaxLogicalSyntax.quantifierTag universal) = 9 ∧ true = true) ∨
+      ((SyntaxLogicalSyntax.quantifierTag universal) = 10 ∧ true = true) := by
+    cases universal <;> simp only [SyntaxLogicalSyntax.quantifierTag] <;> simp
+  have hi : Derives Δ (SyntaxMixedFormulaOutputSyntax.input (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 t) (old 2 n)) :=
+    .conjI (of_eq (formulaCode_rename w n b f (old 2)) (HornBinderRules.under_body 2 hn E))
+      (ForcingOpenLayout.environment_types _ _ _ _ _ _ _ (.conjL hE))
+  have hiff := ForcingMixedUnary.single_output_iff (HornBinderRules.zf_body 2 hZ E) (SyntaxLogicalSyntax.quantifierTag universal) true valid
+    (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 t) (old 2 n) (old 2 x) (old 2 Q)
+    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)) hi
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename (SyntaxLogicalSyntax.quantifierTag universal) w x n (old 2)) (HornBinderRules.under_body 2 hc E))
+  exact of_eq (opened_rename w z b f t n Q (old 2)).symm
+    (intro_opened (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 n) (old 2 Q) (slot 2 0) (slot 2 1)
+      (.conjL hE) (Derives.impE (.conjR hiff) (.conjR hE)))
+
+/-- Exact actual forall/exists opening equation, including all genuinely
+lifted environments and target body witnesses, not assumed local outputs. -/
+theorem opened_quantified_iff {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (universal : Bool) (w z b f t n x Q : Fin m)
+    (hw : Derives Γ (omega w)) (hn : Derives Γ (formulaCode w n b f))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n)) :
+    Derives Γ ((opened w z b f t n Q).iff (openedQuantified universal w z b f t x Q)) := by
+  apply Derives.conjI
+  · apply Derives.impI
+    exact opened_quantified (ZFContext.add hZ _) universal w z b f t n x Q (add hw _) (add hc _) (.hyp (Or.inl rfl))
+  · apply Derives.impI
+    exact from_opened_quantified (ZFContext.add hZ _) universal w z b f t n x Q (add hw _) (add hn _) (add hc _) (.hyp (Or.inl rfl))
+
+def openedQuantifiedSentence {m} (universal : Bool) (w z b f t n x Q : Fin m) : Source.Sentence :=
+  ((omega w).imp ((formulaCode w n b f).imp ((SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n).imp
+    ((opened w z b f t n Q).iff (openedQuantified universal w z b f t x Q))))).close
+
+theorem opened_quantified_kernel_certificate {m} (universal : Bool) (w z b f t n x Q : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (openedQuantifiedSentence universal w z b f t n x Q)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  exact opened_quantified_iff (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) universal w z b f t n x Q
+    (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+
 end PPAC.Migration.ForcingPointwiseCode

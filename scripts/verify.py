@@ -2704,12 +2704,12 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_proof_templates', 'InternalProofTemplates', 9),
                                 ('internal_proof_implication', 'InternalProofImplication', 7),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
-                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 40),
+                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 46),
                                 ('forcing_code_binary', 'ForcingCodeBinary', 7),
                                 ('forcing_mixed_binary', 'ForcingMixedBinary', 1),
                                 ('forcing_code_unary', 'ForcingCodeUnary', 13),
                                 ('internal_false_root', 'InternalFalseRoot', 14),
-                                ('forcing_mixed_unary', 'ForcingMixedUnary', 2)):
+                                ('forcing_mixed_unary', 'ForcingMixedUnary', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7403,6 +7403,8 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_mixed_unary_constructor_transport_proved": True,
         "object_actual_reified_opened_literal_negation_transport_proved": True,
         "object_actual_mixed_unary_transport_scope": "Literal negation and both quantifiers use existing actual substitution outputs, original mixed binder lifts and output uniqueness; actual independent reification/opening negation consumers are proved. This is not complete forcing-negation/quantifier commutation, normalized forcing MP or uniform proof correctness/Con.",
+        "object_actual_opened_quantifier_body_exact_equation_proved": True,
+        "object_actual_opened_quantifier_body_scope": "The actual opened forall/exists parent is exactly equivalent, under its original typed source input, to an internally witnessed target body and original lifted mixed environment. All successor counts, both lifted tables and child substitution stay in object EX; no child/lift witness is supplied. Complete normalized forcing-negation/rebinding and uniform proof preservation/Con remain unproved.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

@@ -33,3 +33,5 @@
 原第10开放反证关闭：InternalFalseRoot复用原strengthening、常量弱化和对象ω归纳，将全部内部／非标准free范围的实际falsum证明关闭为原Root；直接消费同一quotation和实际逐点输出证明，取得既定InternalConsistency.inconsistentAt，普通nativeZF原核证书已接入。该反证尾部不再列为缺口；实际输出证明的统一构造、强迫MP、完整内部公理／Proof保真、reduction及最终Con仍未完成。完整九项验收及五项trust=0通过，38619项声明、零警告；38605项旧足迹和2814份旧证明哈希不变，12项兼容回归及三库／75哈希预检通过。见verification/internal-false-root-acceptance.json。
 
 原第10字面单目构造交换：复用原混合替换端点、实际binder提升及输出唯一性，取得否定和双量词的构造交换；实际独立名字重编码／逐点打开的否定消费者已接通，原nativeZF证书通过定向检查。完整ForcingNegCode片段、条件重绑定及强迫MP仍待接通；不把字面否定交换当作强迫否定。完整九项验收、五项trust=0通过，38625项声明、零警告；38619项旧足迹与全部旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-mixed-unary-acceptance.json。
+
+原第10实际量词打开方程：从真实父输出内部取得目标量词体、原源／目标后继范围、两张实际提升码表及子替换判断，并证明保留原父输入类型的双向等价；逐点forall／exists消费者取得普通nativeZF原核证书。未把目标体或提升见证作为前提。完整否定片段、条件重绑定和规范化强迫MP仍未接通，统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38635项声明、零警告；38625项旧足迹与旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-quantified-opening-acceptance.json。
