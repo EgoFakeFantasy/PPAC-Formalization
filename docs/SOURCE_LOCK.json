@@ -170233,6 +170233,188 @@
         ],
         "PPAC.Migration.ForcingRelationSource.emptyMap": []
       }
+    },
+    "forcing_relation_images": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationImages.lean",
+      "source_declarations": [
+        "force_mono neg/ex: literal R(q,p) guard and hr.trans hqp",
+        "Original R parameters and its two relation argument slots, retained from the pinned preorder/guard quotations"
+      ],
+      "consumers": [
+        "ForcingRelationImages.produce generates both actual slot numerals and both replacement tables inside object existentials, retaining the original forcing table",
+        "ForcingRelationImages.guard_term consumes SAME actual native guard map/query, singleton-bound guard opening and original free-p update, and actual bare-R direct query; proves output equality for ALL internal terms",
+        "Next: specialize existing full formula cancellation to this guard term comparison and exact raw preorder prefix path; whole leaf/guard identity remains pending"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/TermImageQuotationFields.lean",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean",
+        "PPAC/Migration/Internal/SyntaxPositionSyntax.lean",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean",
+        "PPAC/Migration/ProjectNativeRenaming.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/TermImageQuotationFields.lean": "a37d32c41ec07e2ef5d3ab901648155e21c8e7f74291aa9b593ea0414d3dbae1",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
+        "PPAC/Migration/Internal/SyntaxPositionSyntax.lean": "bc4c0b5d1c069af16efbed34e0631f362395ea9f1295a56454f843f6565ad2a6",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean": "46e7187e0e3ed817db18a0ffb7678eb9dd63a3f95f2acc5ae324ce7c01cd6c8c",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f"
+      },
+      "scope": "Two ordinary nativeZF original-kernel certificates: actual bare-R argument table production and full INTERNAL guard two-path TERM equality. Original single-slot replacement/encoding and quotation/field theorems reused. Actual native mapped outputs are derived from existing query fields. Complete object finite-index disjunction handles all source terms at fixed original R arity, including arbitrary internal term/output candidates; arbitrary target scopes c,d and codes may be nonstandard. Original forcing S and its carrier slot remain separate from NEW bare-R table. No requested equality, supplied image-field answer, guard truth, new checker/kernel/recursor or formula induction. Full FORMULA cancellation, actual raw preorder/member leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationImages.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guardFrame": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guardFrame_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guardPath": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guardPath_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guardSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guard_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guard_left_path": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guard_parameter_path": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guard_right_path": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.guard_term": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.left_field": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.mapped_field": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.mapped_variable": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.outside": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.parameter_field": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.produce": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.produced": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.produced_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.right_field": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

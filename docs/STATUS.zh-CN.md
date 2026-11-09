@@ -22,6 +22,8 @@
 
 本批ForcingRelationSource.from_compiled直接消费原rawData和真实guard编译，内部生成同一个R报价、四张实际native项像表，以及到原关系原子／guard原报价的两条mixed查询。四个compiler和五个共同源见证均留在对象量词；原完整编译矩阵／头和任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)及guard R(q,p)的AST身份复用既有Syntax自然性，没有新增公式归纳／核／checker／递归。仅中间SOURCE的0／1／3和原有限arity为报价元数据，不要求forcing目标作用域标准。普通nativeZF原核证书已完整验收；两条路径的实际目标码相消及完整guard对应尚未完成。
 
+ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。完整公式相消、raw preorder／member叶码及完整guard对应仍未完成。
+
 下一项是从同一R的两条实际查询及原三前缀／guard直接输出完成点式目标码相消和member／order guard对应，再消费既有局部解除／fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原L、全模式、递归及已验收数学／码行不重建。
 
 本轮九项完整验收及五项trust=0均退出0；39230项声明、零警告，全部39195项既有足迹保持，35项新增公开声明无新增公理依赖。2851份旧PPAC证明源码原样；GuardCode与PreorderCode仅追加模板读出，原29873／75092字节及全部50个旧公开声明完整保留。16项回归、三个干净锁定依赖和75项源哈希通过，2887项密封输入全部重算。本批为本地验收，其对应独立Linux验收尚未取得。

@@ -2747,7 +2747,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 9),
                                 ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
-                                ('forcing_relation_source', 'ForcingRelationSource', 30)):
+                                ('forcing_relation_source', 'ForcingRelationSource', 30),
+                                ('forcing_relation_images', 'ForcingRelationImages', 26)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6092,6 +6093,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_preorder_generated_targetData_consumed_by_prefix_normalization": True,
         "object_actual_preorder_six_native_witnesses_and_three_prefix_tables_object_bound": True,
         "object_actual_preorder_prefix_scope": "ForcingPreorderPrefix.at_target directly consumes existing rawData/targetData, object-eliminates SAME six native body/instance witnesses, generates all three original ordered cons prefix lists/types, and proves exact direct mixed opening to each SAME native output. Existing ALL endpoints/lift totality and prior full internal binder cancellation reused; no separate row/table/output/equality answer or guard truth, no new kernel/checker/recursion. All runtime codes/scopes may be nonstandard; only outer three-binder pattern is fixed. Whole negative/existential guard compiler ID, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
+        "object_actual_common_R_argument_tables_generated": True,
+        "object_actual_guard_two_path_all_internal_terms_collapsed": True,
+        "object_actual_common_R_argument_scope": "ForcingRelationImages.produce object-generates both slot numerals and both actual replacement tables; original forcing S remains separate. guard_term consumes SAME actual native guard map/query, original singleton-bound opening and original free-p replacement, plus bare-R direct query. Exact guard output equality is proved for ALL internal terms using existing object source-arity disjunction and native quotation/field readout; no host decoder, supplied field/equality answer or guard truth, no new kernel/checker/recursor/formula induction. Fixed source arity is quotation metadata; target scopes/codes remain arbitrary internal/nonstandard. Two ordinary nativeZF kernel certificates. Full FORMULA cancellation, raw preorder/member leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
         "object_actual_preorder_guard_common_source_R_queries_generated": True,
         "object_actual_guard_compiled_and_preorder_rawData_consumed_by_common_source": True,
         "object_actual_common_R_quotation_and_four_image_tables_internally_generated": True,
