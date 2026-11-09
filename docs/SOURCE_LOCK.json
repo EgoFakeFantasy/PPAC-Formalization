@@ -162012,14 +162012,14 @@
         "Original Source.Derives, TheoryTransport, nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
         "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
       },
-      "scope": "Complete one-step literal negative code operation on an arbitrary internal already-interpreted child code N. Actual rebind, new condition, both guards, falsum, three implications and forall code are all constructed/eliminated in object EX. Arbitrary internal/nonstandard bound scopes, child and output candidates; source target A is successor(a). Fixed external R and its parameter count give object numeral f=n+2 and exact current-condition free slot j=n+1. Independent executions have the same typed output. Not a raw all-constructor recursive compiler, uniform coded axiom forcing, Proof/contradiction reduction, or final Con.",
+      "scope": "Complete one-step literal negative code operation on an arbitrary internal already-interpreted child code N. Actual rebind, new condition, both guards, falsum, three implications and forall code are all constructed/eliminated in object EX. Arbitrary internal/nonstandard bound scopes, child and output candidates; source target A is successor(a). Fixed external R and its parameter count give object numeral f=n+2 and exact current-condition free slot j=n+1. Independent executions have the same typed output. Not a raw all-constructor recursive compiler, uniform coded axiom forcing, Proof/contradiction reduction, or final Con. The actual outer forall constructor and its typed raw body are now projected directly from the complete actual negative compilation; no supplied raw body, history or local answer. All original guard/rebinding and shell proof bodies are unchanged.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingNegCode.compiled": [
           "Quot.sound",
@@ -162092,6 +162092,20 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.bodyOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.bodyOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.body_output": [
+          "Classical.choice",
+          "Quot.sound",
           "propext"
         ]
       }
@@ -162473,7 +162487,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
-        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/SourceSyntax.lean": "82c0118456216b3cd3ca8abb3570c9a3505ea8922133efe1828f316d60bfa16c",
@@ -162626,7 +162640,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
-        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
@@ -164876,7 +164890,7 @@
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
-        "PPAC/Migration/ForcingNegCode.lean": "daf22042b77bdd4091c716191e5ddaad618e919b8bab6e58aa0e77029eb54b94",
+        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
@@ -165200,7 +165214,7 @@
         "Accepted actual pointwise quantifier opening with original mixed lift"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofQuantifier.lean": "2fd21a20f05dd51c4893c19cfe0ddbda05bd80228a2010f6ee49ce1dcfded1db",
+        "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/InternalProofTemplates.lean": "70b082bad99a6b166d3495ed5fb46ae0f8272a5ee79a69585d049e18b188e680",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
@@ -165216,7 +165230,7 @@
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
         "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98"
       },
-      "scope": "Construct actual original rule20 axiom certificates, complete queries, original logical parent and MP parent. From a typed actual forall proof and legal term, internally generate the bound-one scope, the actual InstantiateTop output and its actual original proof; no instance code, transform judgment, axiom proof, local compilation answer or history is supplied. Direct actual opened pointwise forall consumer retains the same opening environment, real target body and original lifted child judgment together with its generated instance proof. Common-background elimination reuses existing K/S composition: B -> forall F yields B -> its actual instance without assuming B provable/true; only actual typed literal code endpoints and the actual InstantiateTop judgment are used. All runtime scope/formula/term/proof values include internal nonstandard. Both complete original ZF/U tests are supported and original Node/header/Root at empty free scope retained. These are native quantifier proof operations, NOT normalized forcing-specific MP preservation, full condition rebinding, uniform coded axiom/proof preservation, InternalConsistency.reduction or final Con.",
+      "scope": "Construct actual original rule20 axiom certificates, complete queries, original logical parent and MP parent. From a typed actual forall proof and legal term, internally generate the bound-one scope, the actual InstantiateTop output and its actual original proof; no instance code, transform judgment, axiom proof, local compilation answer or history is supplied. Direct actual opened pointwise forall consumer retains the same opening environment, real target body and original lifted child judgment together with its generated instance proof. Common-background elimination reuses existing K/S composition: B -> forall F yields B -> its actual instance without assuming B provable/true; only actual typed literal code endpoints and the actual InstantiateTop judgment are used. All runtime scope/formula/term/proof values include internal nonstandard. Both complete original ZF/U tests are supported and original Node/header/Root at empty free scope retained. These are native quantifier proof operations, NOT normalized forcing-specific MP preservation, full condition rebinding, uniform coded axiom/proof preservation, InternalConsistency.reduction or final Con. Common-background instance production is now total over legal inputs: original parent typing internally generates the bound-one scope, actual output code and G->output code/proof. The actual pointwise forall consumer retains its SAME environment/body/original mixed lift without requiring a proof/truth premise for G or an unconditional proof of the opened forall.",
       "exact_declaration_footprints": {
         "PPAC.Migration.InternalProofQuantifier.universal_axiom": [
           "Classical.choice",
@@ -165323,6 +165337,111 @@
           "propext"
         ],
         "PPAC.Migration.InternalProofQuantifier.guarded_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guardedInstance": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guardedInstance_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guarded_instantiate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guardedOpenedInstance": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guardedOpenedInstance_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofQuantifier.guarded_opened_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_neg_proof": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingNegProof.lean",
+      "source_declarations": [
+        "forceFormula_instantiate",
+        "forcing_sound",
+        "AtomicData.Force exact negative branch in pinned ForcingQuotient"
+      ],
+      "consumers": [
+        "Actual outer-forall term instance while interpreting the complete normalized negative fragment under a common background",
+        "Same native guarded instance proof for subsequent actual guard/condition-rebinding transport in forcing MP"
+      ],
+      "reuse_producers": [
+        "Original complete ForcingNegCode guard/rebinding/ALL-IMP-IMP-IMP-BOT compilation",
+        "Actual pointwise quantifier opening and original mixed lift",
+        "Original rule20 actual axiom/logical/MP proof generation",
+        "Existing InstantiateTop totality and original complete queries",
+        "Existing original K/S common-background composition"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegProof.lean": "2ca4c390e5e1a954a5beec0344a0d4e3d20dc9c5c5499347d63ec157c76a9d7c",
+        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
+        "PPAC/Migration/ForcingPointwiseCode.lean": "ab81dd07ef01f3cc2daee5cac21a0a5b889d5a805bab8c14bbc3cb1c2f733150",
+        "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
+        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572"
+      },
+      "scope": "Consume the ACTUAL full original negative compilation including both guards and actual condition rebinding, its ACTUAL pointwise opening, and an actual native proof of G -> opened-negative. Internally obtain its real typed raw forall body, the SAME real opening environment, target body and original lifted child judgment, and the actual instance/output implication code and proof under the SAME G. No supplied body, lifting witness, instance code, transform judgment, history or local compilation answer; G itself and the opened negative are not assumed unconditionally provable/true. Runtime formulas/terms/scopes/proofs include internal nonstandard values. Existing old proof bodies are retained verbatim. This constructs the negative OUTER forall instance step, not full guard/condition-rebinding commutation or normalized forcing-specific MP. Uniform coded axiom/proof preservation, InternalConsistency.reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegProof.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegProof.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegProof.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegProof.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegProof.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegProof.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

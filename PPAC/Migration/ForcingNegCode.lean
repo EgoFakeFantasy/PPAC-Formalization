@@ -490,4 +490,37 @@ theorem unique_kernel_certificate {n m} (R : Source.Formula (n+2)) (w a A f j N 
   exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _)
     R w a A f j N Q V (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+/-- The actual raw forall body of this complete negative fragment. The
+source compiled judgment retains its actual guards and condition rebinding. -/
+def bodyOutput {m} (w A f Q : Fin m) : Formula m := .ex
+  ((SyntaxLogicalSyntax.singleCode 9 w.castSucc (Fin.last m) Q.castSucc).conj
+    (formulaCode w.castSucc (Fin.last m) A.castSucc f.castSucc))
+
+theorem bodyOutput_rename {m l} (w A f Q : Fin m) (r : Fin m → Fin l) :
+    (bodyOutput w A f Q).rename r = bodyOutput (r w) (r A) (r f) (r Q) := by
+  simp only [bodyOutput, Formula.rename, SyntaxLogicalSyntax.singleCode_rename, formulaCode_rename,
+    Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]
+
+/-- Read the real outer forall and its typed body from the ACTUAL full
+negative compilation; no body code, history or local answer is supplied. -/
+theorem body_output {n m} {Γ : Context m} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m)
+    (hc : Derives Γ (compiled R w a A f j N Q)) : Derives Γ (bodyOutput w A f Q) := by
+  let E := body R w a A f j N Q
+  let Δ := Context.add E (raisedContext 5 Γ)
+  apply HornBinderRules.eliminate_many 5 E _ (.conjR hc)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  let B := shellBody (old 5 w) (old 5 a) (old 5 A) (old 5 f) (slot 5 3) (slot 5 4) (slot 5 2) (old 5 Q)
+  let Ξ := Context.add B (raisedContext 4 Δ)
+  have hout : Derives Δ (bodyOutput (old 5 w) (old 5 A) (old 5 f) (old 5 Q)) := by
+    apply HornBinderRules.eliminate_many 4 B _ (.conjR (.conjR (.conjR (.conjR hE))))
+    have hB : Derives Ξ B := .hyp (Or.inl rfl)
+    have hlast := Derives.conjL (.conjR (.conjR (.conjR hB)))
+    have hall := Derives.conjR (.conjR (.conjR (.conjR hB)))
+    have result : Derives Ξ (bodyOutput (old 4 (old 5 w)) (old 4 (old 5 A)) (old 4 (old 5 f)) (old 4 (old 5 Q))) := by
+      apply Derives.exI (slot 4 3)
+      exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxLogicalSyntax.singleCode_rename,
+        formulaCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl) (.conjI (.conjL hall) (.conjR hlast))
+    exact of_eq (bodyOutput_rename (old 5 w) (old 5 A) (old 5 f) (old 5 Q) (old 4)).symm result
+  exact of_eq (bodyOutput_rename w A f Q (old 5)).symm hout
+
 end PPAC.Migration.ForcingNegCode

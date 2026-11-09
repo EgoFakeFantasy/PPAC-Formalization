@@ -394,4 +394,171 @@ theorem guarded_kernel_certificate {m} (target : Bool) (w z b A F term N U B I K
     (.hyp (Or.inr (Or.inl rfl)))
     (.hyp (Or.inl rfl))
 
+private def guardedResultData {m} (test : Formula 1) (w z b F term G A N K : Fin m) : Formula m :=
+  (successor A z).conj ((SyntaxTopFormulaSyntax.instantiated w z b A term F N).conj
+    ((SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G N) K).conj (proved test w z b K)))
+private theorem guardedResultData_rename {m l} (test : Formula 1) (w z b F term G A N K : Fin m) (r : Fin m → Fin l) :
+    (guardedResultData test w z b F term G A N K).rename r = guardedResultData test (r w) (r z) (r b) (r F) (r term) (r G) (r A) (r N) (r K) := by
+  simp only [guardedResultData, Formula.rename, successor_rename, SyntaxTopFormulaSyntax.instantiated_rename,
+    SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map, proved_rename]
+private def guardedResultBody {m} (test : Formula 1) (w z b F term G : Fin m) : Formula (m+3) :=
+  guardedResultData test (old 3 w) (old 3 z) (old 3 b) (old 3 F) (old 3 term) (old 3 G) (slot 3 0) (slot 3 1) (slot 3 2)
+
+/-- Actual instance and proof under the SAME background G. A,N,K and the
+actual operation judgment are generated internally, not supplied. -/
+def guardedInstance {m} (test : Formula 1) (w z b F term G : Fin m) : Formula m := existsMany 3 (guardedResultBody test w z b F term G)
+
+theorem guardedInstance_rename {m l} (test : Formula 1) (w z b F term G : Fin m) (r : Fin m → Fin l) :
+    (guardedInstance test w z b F term G).rename r = guardedInstance test (r w) (r z) (r b) (r F) (r term) (r G) := by
+  simp only [guardedInstance, existsMany_rename, guardedResultBody, guardedResultData_rename, lift_old, lift_slot]
+
+private theorem intro_guarded_instance {m} {Γ : Context m} (test : Formula 1) (w z b F term G A N K : Fin m)
+    (hA : Derives Γ (successor A z)) (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z b A term F N))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G N) K)) (hp : Derives Γ (proved test w z b K)) :
+    Derives Γ (guardedInstance test w z b F term G) := by
+  apply HornBinderRules.intro_many 3 _ (SetLanguage.args3 A N K)
+  exact of_eq (by simp only [guardedResultBody, guardedResultData_rename, assign_old, assign_slot]; rfl) (.conjI hA (.conjI hi (.conjI hc hp)))
+
+private theorem guarded_at_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b A F term N U G I : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z b A term F N))
+    (hu : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w F U)) (hG : Derives Γ (formulaCode w G z b))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G U) I)) (hp : Derives Γ (proved test w z b I)) :
+    Derives Γ (guardedInstance test w z b F term G) := by
+  have hN := SyntaxTopFormulaTyping.instantiate_target_type w z b A term F N hi
+  have hin := SyntaxForestSyntax.intro_inputs 2 w (SyntaxAtomSyntax.two G N)
+    (fun i => Fin.cases (.conjL (FormulaCodeProperties.guards w G z b hG))
+      (fun i => Fin.cases (.conjL (FormulaCodeProperties.guards w N z b hN)) (fun e => Fin.elim0 e) i) i)
+  let E := (Formula.mem (Fin.last m) w.castSucc).conj (SyntaxNodeSyntax.constructor 2 7 w.castSucc (SyntaxAtomSyntax.two G.castSucc N.castSucc) (Fin.last m))
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  have hex : Derives Γ (.ex E) := of_eq (by simp only [E, SyntaxNodeSyntax.existsConstructor, SyntaxAtomSyntax.two_map])
+    (SyntaxConstructors.exists_constructor hZ 2 7 w (SyntaxAtomSyntax.two G N) hw hin)
+  apply Derives.exE (p := E) hex
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hi1 := of_eq (SyntaxTopFormulaSyntax.instantiated_rename w z b A term F N Fin.castSucc) (under hi E)
+  have hproof := guarded_eliminate (ZFContext.under hZ E) test w.castSucc z.castSucc b.castSucc A.castSucc F.castSucc term.castSucc N.castSucc U.castSucc G.castSucc I.castSucc (Fin.last m)
+    (of_eq (omega_rename w Fin.castSucc) (under hw E)) (of_eq (empty_rename z Fin.castSucc) (under hz E)) hi1
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w F U Fin.castSucc) (under hu E))
+    (of_eq (formulaCode_rename w G z b Fin.castSucc) (under hG E))
+    (of_eq (by simp only [Formula.raise, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map]) (under hI E)) (.conjR hE)
+    (of_eq (proved_rename test w z b I Fin.castSucc) (under hp E))
+  exact of_eq (guardedInstance_rename test w z b F term G Fin.castSucc).symm
+    (intro_guarded_instance test w.castSucc z.castSucc b.castSucc F.castSucc term.castSucc G.castSucc A.castSucc N.castSucc (Fin.last m)
+      (.conjR (SyntaxTopFormulaTyping.instantiate_environment _ _ _ _ _ _ _ hi1)) hi1 (.conjR hE) hproof)
+
+private theorem guarded_at_scope {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b A F term U G I : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hA : Derives Γ (successor A z))
+    (hF : Derives Γ (formulaCode w F A b)) (ht : Derives Γ (SyntaxTermSyntax.term w z b term))
+    (hu : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w F U)) (hG : Derives Γ (formulaCode w G z b))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G U) I)) (hp : Derives Γ (proved test w z b I)) :
+    Derives Γ (guardedInstance test w z b F term G) := by
+  let E := SyntaxTopFormulaSyntax.instantiated w.castSucc z.castSucc b.castSucc A.castSucc term.castSucc F.castSucc (Fin.last m)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) (SyntaxTopFormulaExistence.instantiate_exists hZ w z b A term F hw (.conjI (.conjI ht hA) hF))
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hout := guarded_at_instance (ZFContext.under hZ E) test w.castSucc z.castSucc b.castSucc A.castSucc F.castSucc term.castSucc (Fin.last m) U.castSucc G.castSucc I.castSucc
+    (of_eq (omega_rename w Fin.castSucc) (under hw E)) (of_eq (empty_rename z Fin.castSucc) (under hz E)) hE
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w F U Fin.castSucc) (under hu E))
+    (of_eq (formulaCode_rename w G z b Fin.castSucc) (under hG E))
+    (of_eq (by simp only [Formula.raise, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map]) (under hI E))
+    (of_eq (proved_rename test w z b I Fin.castSucc) (under hp E))
+  exact of_eq (guardedInstance_rename test w z b F term G Fin.castSucc).symm hout
+
+/-- Generate the actual instance AND G→instance proof from the actual
+G→forall parent. G is not assumed true or proved; no output is supplied. -/
+theorem guarded_instantiate {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b F term U G I : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hU : Derives Γ (formulaCode w U z b))
+    (hu : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w F U)) (ht : Derives Γ (SyntaxTermSyntax.term w z b term))
+    (hG : Derives Γ (formulaCode w G z b))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G U) I)) (hp : Derives Γ (proved test w z b I)) :
+    Derives Γ (guardedInstance test w z b F term G) := by
+  have htypes := Derives.impE (.conjL (FormulaCodeKnownLogical.forall_iff hZ w z b F U hw hu)) hU
+  let E := (successor (Fin.last m) z.castSucc).conj (formulaCode w.castSucc F.castSucc (Fin.last m) b.castSucc)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) (.conjR htypes)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hout := guarded_at_scope (ZFContext.under hZ E) test w.castSucc z.castSucc b.castSucc (Fin.last m) F.castSucc term.castSucc U.castSucc G.castSucc I.castSucc
+    (of_eq (omega_rename w Fin.castSucc) (under hw E)) (of_eq (empty_rename z Fin.castSucc) (under hz E)) (.conjL hE) (.conjR hE)
+    (of_eq (SyntaxTermSyntax.term_rename w z b term Fin.castSucc) (under ht E))
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w F U Fin.castSucc) (under hu E))
+    (of_eq (formulaCode_rename w G z b Fin.castSucc) (under hG E))
+    (of_eq (by simp only [Formula.raise, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map]) (under hI E))
+    (of_eq (proved_rename test w z b I Fin.castSucc) (under hp E))
+  exact of_eq (guardedInstance_rename test w z b F term G Fin.castSucc).symm hout
+
+private def guardedOpeningData {m} (test : Formula 1) (w z b f T x Q term G : Fin m) (v : Fin 3 → Fin m) : Formula m :=
+  (ForcingOpenLayout.environment w z b f T (v 0) (v 1)).conj
+    ((SyntaxLogicalSyntax.singleCode 9 w (v 2) Q).conj
+      ((SyntaxMixedFormulaRecursiveSyntax.check true w x (v 0) (v 1) b f z T (v 2)).conj
+        (guardedInstance test w z T (v 2) term G)))
+private theorem guardedOpeningData_rename {m l} (test : Formula 1) (w z b f T x Q term G : Fin m) (v : Fin 3 → Fin m) (r : Fin m → Fin l) :
+    (guardedOpeningData test w z b f T x Q term G v).rename r = guardedOpeningData test (r w) (r z) (r b) (r f) (r T) (r x) (r Q) (r term) (r G) (fun i => r (v i)) := by
+  simp only [guardedOpeningData, Formula.rename, ForcingOpenLayout.environment_rename, SyntaxLogicalSyntax.singleCode_rename,
+    SyntaxMixedFormulaRecursiveSyntax.check_rename, guardedInstance_rename]
+private def guardedOpeningBody {m} (test : Formula 1) (w z b f T x Q term G : Fin m) : Formula (m+3) :=
+  guardedOpeningData test (old 3 w) (old 3 z) (old 3 b) (old 3 f) (old 3 T) (old 3 x) (old 3 Q) (old 3 term) (old 3 G) (slot 3)
+
+/-- SAME actual pointwise environment/body/lift, with a generated original
+G→instance proof. The background G is not assumed true or proved. -/
+def guardedOpenedInstance {m} (test : Formula 1) (w z b f T x Q term G : Fin m) : Formula m := existsMany 3 (guardedOpeningBody test w z b f T x Q term G)
+
+theorem guardedOpenedInstance_rename {m l} (test : Formula 1) (w z b f T x Q term G : Fin m) (r : Fin m → Fin l) :
+    (guardedOpenedInstance test w z b f T x Q term G).rename r = guardedOpenedInstance test (r w) (r z) (r b) (r f) (r T) (r x) (r Q) (r term) (r G) := by
+  simp only [guardedOpenedInstance, existsMany_rename, guardedOpeningBody, guardedOpeningData_rename, lift_old, lift_slot]
+
+private theorem intro_guarded_opening {m} {Γ : Context m} (test : Formula 1) (w z b f T x Q term G L S X : Fin m)
+    (he : Derives Γ (ForcingOpenLayout.environment w z b f T L S))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w X Q))
+    (hx : Derives Γ (SyntaxMixedFormulaRecursiveSyntax.check true w x L S b f z T X))
+    (hp : Derives Γ (guardedInstance test w z T X term G)) : Derives Γ (guardedOpenedInstance test w z b f T x Q term G) := by
+  apply HornBinderRules.intro_many 3 _ (SetLanguage.args3 L S X)
+  exact of_eq (by simp only [guardedOpeningBody, guardedOpeningData_rename, assign_old, assign_slot]; rfl) (.conjI he (.conjI hc (.conjI hx hp)))
+
+private theorem at_guarded_environment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b f T x Q term G I L S : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hQ : Derives Γ (formulaCode w Q z T))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z T term)) (hG : Derives Γ (formulaCode w G z T))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G Q) I)) (hp : Derives Γ (proved test w z T I))
+    (he : Derives Γ (ForcingOpenLayout.environment w z b f T L S))
+    (hs : Derives Γ (ForcingMixedUnary.singleOutput 9 true w L S b f z T x Q)) :
+    Derives Γ (guardedOpenedInstance test w z b f T x Q term G) := by
+  let E := (SyntaxLogicalSyntax.singleCode 9 w.castSucc (Fin.last m) Q.castSucc).conj
+    (SyntaxMixedFormulaRecursiveSyntax.check true w.castSucc x.castSucc L.castSucc S.castSucc b.castSucc f.castSucc z.castSucc T.castSucc (Fin.last m))
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) hs
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hinst := guarded_instantiate (ZFContext.under hZ E) test w.castSucc z.castSucc T.castSucc (Fin.last m) term.castSucc Q.castSucc G.castSucc I.castSucc
+    (of_eq (omega_rename w Fin.castSucc) (under hw E)) (of_eq (empty_rename z Fin.castSucc) (under hz E))
+    (of_eq (formulaCode_rename w Q z T Fin.castSucc) (under hQ E)) (.conjL hE)
+    (of_eq (SyntaxTermSyntax.term_rename w z T term Fin.castSucc) (under ht E))
+    (of_eq (formulaCode_rename w G z T Fin.castSucc) (under hG E))
+    (of_eq (by simp only [Formula.raise, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map]) (under hI E))
+    (of_eq (proved_rename test w z T I Fin.castSucc) (under hp E))
+  exact of_eq (guardedOpenedInstance_rename test w z b f T x Q term G Fin.castSucc).symm
+    (intro_guarded_opening test w.castSucc z.castSucc b.castSucc f.castSucc T.castSucc x.castSucc Q.castSucc term.castSucc G.castSucc L.castSucc S.castSucc (Fin.last m)
+      (of_eq (ForcingOpenLayout.environment_rename w z b f T L S Fin.castSucc) (under he E)) (.conjL hE) (.conjR hE) hinst)
+
+/-- Consume a REAL opened forall under a common background, generating the
+instance and its actual original proof without assuming the background. -/
+theorem guarded_opened_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b f T n x Q term G I : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w x n)) (ho : Derives Γ (ForcingPointwiseCode.opened w z b f T n Q))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z T term)) (hG : Derives Γ (formulaCode w G z T))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two G Q) I)) (hp : Derives Γ (proved test w z T I)) :
+    Derives Γ (guardedOpenedInstance test w z b f T x Q term G) := by
+  have hq := ForcingPointwiseCode.opened_quantified hZ true w z b f T n x Q hw hc ho
+  have hQ := ForcingPointwiseCode.opened_type w z b f T n Q ho
+  let E := (ForcingOpenLayout.environment (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 T) (slot 2 0) (slot 2 1)).conj
+    (ForcingMixedUnary.singleOutput 9 true (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 T) (old 2 x) (old 2 Q))
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hq
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hout := at_guarded_environment (HornBinderRules.zf_body 2 hZ E) test (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 T) (old 2 x) (old 2 Q) (old 2 term) (old 2 G) (old 2 I) (slot 2 0) (slot 2 1)
+    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)) (of_eq (empty_rename z (old 2)) (HornBinderRules.under_body 2 hz E))
+    (of_eq (formulaCode_rename w Q z T (old 2)) (HornBinderRules.under_body 2 hQ E))
+    (of_eq (SyntaxTermSyntax.term_rename w z T term (old 2)) (HornBinderRules.under_body 2 ht E))
+    (of_eq (formulaCode_rename w G z T (old 2)) (HornBinderRules.under_body 2 hG E))
+    (of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.two_map]) (HornBinderRules.under_body 2 hI E))
+    (of_eq (proved_rename test w z T I (old 2)) (HornBinderRules.under_body 2 hp E)) (.conjL hE) (.conjR hE)
+  exact of_eq (guardedOpenedInstance_rename test w z b f T x Q term G (old 2)).symm hout
+
 end PPAC.Migration.InternalProofQuantifier

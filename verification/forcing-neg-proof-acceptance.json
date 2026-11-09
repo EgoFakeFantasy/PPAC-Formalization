@@ -1,0 +1,328 @@
+{
+  "verified_at": "2026-11-09T02:02:31.604220+00:00",
+  "baseline_commit": "f8deb66f65eb9e6b9058f02701e5116716b35d1b",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_instantiate",
+    "forcing_sound",
+    "AtomicData.Force exact negative branch in pinned ForcingQuotient"
+  ],
+  "object_result": "Consume the ACTUAL complete negative compiler (including both guards and original condition rebinding), ACTUAL pointwise opening and a genuine original proof of G -> opened-negative. Internally obtain its real typed raw forall body, SAME real opening environment, actual target body/original lifted child judgment, actual term instance code and actual original G -> instance proof. G is not assumed proved/true and the opened negative is not assumed unconditionally provable. No supplied body/lifting/output/transform judgment, history or local compilation answer. Runtime codes/scopes include internal nonstandard values. This is the actual negative outer-forall instance step, not complete guard/rebinding commutation or normalized forcing MP preservation.",
+  "endpoints": [
+    "PPAC.Migration.ForcingNegProof.kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "Omega(w), empty(z), full actual ForcingNegCode.compiled(R,w,a,A,f,j,N,Q), actual opened(w,z,a,f,T,Q,V), legal term in (z,T), typed background G, exact native implication code I=(G->V) and actual Proved(I) yield internally existential real raw forall body plus SAME actual pointwise environment/body/lift and internally generated instance/output implication code/proof under SAME G. All predecessor/output codes and witness scopes are object values.",
+  "reuse": [
+    "Existing complete original negative branch and all guard/rebinding/shell proof bodies unchanged",
+    "Existing pointwise quantifier opening with original mixed lift",
+    "Original rule20 logical/MP proof generation",
+    "Existing InstantiateTop totality and exact original queries",
+    "Existing original K/S common-background composition"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38666,
+    "new_audit_entries": 15,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingNegCode.bodyOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegCode.bodyOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegCode.body_output": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guardedInstance": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guardedInstance_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guarded_instantiate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guardedOpenedInstance": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guardedOpenedInstance_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.InternalProofQuantifier.guarded_opened_instance": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegProof.result": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegProof.result_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegProof.derive": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegProof.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingNegProof.sentence": [
+        "propext",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingNegProof.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "previous_footprints_unchanged": 38651,
+    "previous_proof_files": 2817,
+    "unmodified_previous_proof_files": 2815,
+    "unmodified_previous_proof_file_hashes_unchanged": true,
+    "append_only_previous_modules": {
+      "PPAC/Migration/ForcingNegCode.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "4bf4d6127c57988f155edc05daa2983aaab3c794bc9dad7d64255cdf87073c68"
+      },
+      "PPAC/Migration/InternalProofQuantifier.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "fbf5c34319fc9523b9f7e91c5d5153c67071b32b040209e4640270a7c48932a3"
+      }
+    },
+    "old_proof_bodies_rewritten": false,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingNegCode.lean",
+      "PPAC/Migration/InternalProofQuantifier.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_neg_code",
+      "forcing_logical_code",
+      "forcing_code_step",
+      "forcing_code_unary",
+      "internal_proof_quantifier"
+    ],
+    "reason_for_source_updates": "Only actual appended module source hashes, exact new footprints and appended scope clarification; prior contracts/footprints preserved.",
+    "sealed_input_count": 2850,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0
+  },
+  "scope": {
+    "actual_complete_negative_fragment_guarded_outer_instance_proof": true,
+    "internally_generated_common_background_instance_code_and_proof": true,
+    "same_actual_pointwise_environment_and_lift_retained": true,
+    "background_proof_or_truth_assumed": false,
+    "unconditional_opened_negative_proof_assumed": false,
+    "complete_guard_or_condition_rebinding_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-fields.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-guarded.log",
+      "bytes": 323,
+      "sha256": "3ff16da0769fb7afa5d7129faf9585ee466d66a9b58b821d945edcdfb0c65c16"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-build.log",
+      "bytes": 104,
+      "sha256": "89aaead82dd3326099fccf2b74e4598ac213afd61fefd83bf4561f3819c5c2eb"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-audit.lean",
+      "bytes": 995,
+      "sha256": "2ec4a68cfd9c36e50720b6e6777f81fb91efa80577797f130b506791af9106a5"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-audit.log",
+      "bytes": 2533,
+      "sha256": "c5f203247e34877b2b3f011286d90cd1c71010a359ca142bea48f52f2f601568"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-parent-summary.json",
+      "bytes": 14881031,
+      "sha256": "38a85e99e921c155946fb05a3e1e0053d851f8c3027d52a7280b6286e5da04e2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-compatibility.log",
+      "bytes": 218,
+      "sha256": "a6e39c84a4008cbeef1be23b41a4a1ba8696847086e470fa6322e8ff7c2c276b"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-ci-inputs.log",
+      "bytes": 91,
+      "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-neg-proof-full-verify.log",
+      "bytes": 153,
+      "sha256": "633cefe2c566b471e444b45f8ec1776bb99d1fe509f89c301de724058e8a54e9"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native log read before pushing",
+    "preceding_run": 42540122797
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T02:03:24.987400+00:00"
+}

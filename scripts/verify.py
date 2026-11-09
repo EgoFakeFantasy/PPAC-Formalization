@@ -2687,7 +2687,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_atom_code', 'ForcingAtomCode', 16),
                                 ('forcing_condition_rebind', 'ForcingConditionRebind', 21),
                                 ('forcing_guard_code', 'ForcingGuardCode', 21),
-                                ('forcing_neg_code', 'ForcingNegCode', 13),
+                                ('forcing_neg_code', 'ForcingNegCode', 16),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
                                 ('forcing_exist_code', 'ForcingExistCode', 13),
@@ -2710,7 +2710,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_unary', 'ForcingCodeUnary', 13),
                                 ('internal_false_root', 'InternalFalseRoot', 14),
                                 ('forcing_mixed_unary', 'ForcingMixedUnary', 6),
-                                ('internal_proof_quantifier', 'InternalProofQuantifier', 16)):
+                                ('internal_proof_quantifier', 'InternalProofQuantifier', 22),
+                                ('forcing_neg_proof', 'ForcingNegProof', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7410,6 +7411,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_opened_pointwise_forall_instance_proof_consumer_proved": True,
         "object_common_background_original_universal_elimination_proved": True,
         "object_actual_original_rule20_proof_scope": "Original complete rule20 queries, InstantiateTop typing/totality and public logical proof projection were already proved and are reused. Actual axiom/logical/MP nodes now generate the instance code and its proof, and actual pointwise opened forall plus common-background B -> forall F consumers are connected. B is not assumed proved/true. All runtime codes/scopes include nonstandard omega. This is not normalized forcing-specific MP, uniform interpreted proof correctness, reduction or final Con.",
+        "object_actual_common_background_instance_code_and_proof_total_production_proved": True,
+        "object_actual_complete_negative_fragment_guarded_outer_instance_proved": True,
+        "object_actual_complete_negative_fragment_instance_scope": "Actual full negative compilation (both guards and rebind), actual pointwise opening and actual G -> opened-negative proof produce the same actual raw/target bodies, environment/lift, instance code and G -> instance proof. No proof/truth of G or unconditional opened-negative proof, no supplied body/output/local answer. This is the outer forall instance step, not complete guard/rebinding commutation, normalized forcing MP or uniform proof correctness/Con.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),
