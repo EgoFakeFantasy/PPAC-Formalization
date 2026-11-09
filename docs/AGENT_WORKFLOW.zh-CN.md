@@ -31,7 +31,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-quantified-opening-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/internal-proof-quantifier-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先完成源码／跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
@@ -98,3 +98,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10字面单目构造交换：复用原混合替换端点、实际binder提升及输出唯一性，取得否定和双量词的构造交换；实际独立名字重编码／逐点打开的否定消费者已接通，原nativeZF证书通过定向检查。完整ForcingNegCode片段、条件重绑定及强迫MP仍待接通；不把字面否定交换当作强迫否定。完整九项验收、五项trust=0通过，38625项声明、零警告；38619项旧足迹与全部旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-mixed-unary-acceptance.json。
 
 原第10实际量词打开方程：从真实父输出内部取得目标量词体、原源／目标后继范围、两张实际提升码表及子替换判断，并证明保留原父输入类型的双向等价；逐点forall／exists消费者取得普通nativeZF原核证书。未把目标体或提升见证作为前提。完整否定片段、条件重绑定和规范化强迫MP仍未接通，统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38635项声明、零警告；38625项旧足迹与旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-quantified-opening-acceptance.json。
+
+原第10实际全称实例证明：InternalProofQuantifier直接复用已有原规则20完整查询／节点、InstantiateTop类型／总性及公开逻辑证明投影，内部构造公理证书和真实logical／MP父节点，生成实例码及其证明；实际逐点forall打开保留同一环境／提升子判断的消费者已接通。共同背景B→forall F到B→实例F直接复用已有K/S，不假定B已可证／为真。全部运行码／范围允许内部非标准；原Node／头字段／空free时Root保留。该原生量词操作不等于规范化强迫MP；完整重绑定、统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38651项声明、零警告；38635项旧足迹和2816份旧证明哈希不变，12项兼容回归及三库／75哈希预检通过。见verification/internal-proof-quantifier-acceptance.json。
