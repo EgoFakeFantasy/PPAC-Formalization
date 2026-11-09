@@ -1,0 +1,285 @@
+{
+  "verified_at": "2026-11-09T03:23:16.888973+00:00",
+  "baseline_commit": "0e00fab0f37af19dc2e3fcd7eaa012eb1b44a91a",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "AtomicData.Force exact condition rebinding in the negative and existential branches",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "Consume the ACTUAL complete original rebind compiler and preserve its SAME six witnesses including the original full formula-substitution judgment. Actual coded term substitution is iff the original bound-successor or conditional-free variable value. No replacement table, graph field, intermediate term or local compiler answer; all runtime codes/scopes/indices may be internally nonstandard.",
+  "endpoints": [
+    "PPAC.Migration.ForcingRebindTerms.kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "From Omega(w), original complete compiled(w,a,f,A,j,n,q), legal known bound/free variable x at i, and its successor index I for the bound role, internally expose the SAME original head, shifted graph/encoded table, conditional graph/encoded table and complete formula Subst. Prove the actual original coded term substitution using those very tables iff bvar(I,y) or the original conditional free value(j,head,i,y). Output y is arbitrary internal object. Exact old compiler data and its rename lemma are merely made public; no original mathematical body changed.",
+  "reuse": [
+    "Existing full ForcingConditionRebind six-witness compiler data",
+    "Existing original encoded table fields and shifted variable graph",
+    "Existing conditional free-variable graph and original coded mixed term operation",
+    "Existing scope elimination and original ZF replay"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38713,
+    "new_audit_entries": 13,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingConditionRebind.data": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionRebind.data_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.termValue": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.termValue_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.equation": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.equation_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.from_data": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.result": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.result_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.derive": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindTerms.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38700,
+    "all_prior_mathematical_bodies_unchanged": true,
+    "prior_PPAC_proof_files": 2821,
+    "byte_identical_prior_PPAC_proof_files": 2820,
+    "retained_producer_public_interface_change": {
+      "path": "PPAC/Migration/ForcingConditionRebind.lean",
+      "prior_sha256": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+      "current_sha256": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
+      "exact_replacements": [
+        [
+          "private def data {m}",
+          "def data {m}"
+        ],
+        [
+          "private theorem data_rename {m l}",
+          "theorem data_rename {m l}"
+        ]
+      ],
+      "all_other_bytes_unchanged": true
+    },
+    "proof_files_now": 2822,
+    "sealed_inputs": 2854,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "99425c5e7527f47f51007b10ea7281813749d639e938ac8e77c2a42d605a60ad",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "fad478f09a7b8732f58728d6929d74ed528472302b8788ce4785be4da09bd639"
+    },
+    "summary_sha256": "1cd8626b8d6778190642426b2124d4bd091699e0d3db92c84e29b4515b6f069a"
+  },
+  "scope": {
+    "actual_complete_rebind_same_witness_term_equations_proved": true,
+    "complete_original_formula_substitution_judgment_retained": true,
+    "existing_data_contract_and_rename_lemma_public_without_body_edits": true,
+    "runtime_nonstandard_indices_and_codes_included": true,
+    "full_three_operation_formula_cancellation": false,
+    "binder_composition_closure": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingRebindTermsAudit.lean",
+      "bytes": 814,
+      "sha256": "586fc976bf92e4682253c02ab6b5ee7c253fc49ec99bef9ca8204144c3ff6d31"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-audit.log",
+      "bytes": 1766,
+      "sha256": "de0f69d92ab2e596f82a09fea6f7d6c9c65176824e6cdd9eb09470796077cbcd"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-directed.log",
+      "bytes": 452,
+      "sha256": "564d6d0b03fb2e652497b7c25fa8b8958c4afd3a9cccbe7d988f9ec3eb3a5e4d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-producer-build.log",
+      "bytes": 111,
+      "sha256": "c53f296b5c0bcaae82e45f384b7916fda5b5a3fa1d0d0bac971861fabc223683"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-build.log",
+      "bytes": 107,
+      "sha256": "d8fd3f5485b5f3fd85503529257256f1ec41c8d12cdd8c967934e50db6323ed7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-full.log",
+      "bytes": 153,
+      "sha256": "d0a025224f49d6327a2528bea237812f56cba4e6839e1b554baf25e22cf709af"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-terms-parent-summary.json",
+      "bytes": 14891828,
+      "sha256": "ddc778e4d108594d5d6d8444c8d47470957ab679f7014920b799cc1d89e940ab"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42549940926
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_producer_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T03:24:08.130613+00:00"
+}

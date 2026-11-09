@@ -2685,7 +2685,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_axiom_proof', 'InternalAxiomProof', 5),
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 16),
-                                ('forcing_condition_rebind', 'ForcingConditionRebind', 21),
+                                ('forcing_condition_rebind', 'ForcingConditionRebind', 23),
                                 ('forcing_guard_code', 'ForcingGuardCode', 21),
                                 ('forcing_neg_code', 'ForcingNegCode', 16),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
@@ -2714,7 +2714,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_proof', 'ForcingNegProof', 6),
                                 ('forcing_open_lift', 'ForcingOpenLift', 13),
                                 ('forcing_open_instantiate', 'ForcingOpenInstantiate', 12),
-                                ('forcing_condition_instance', 'ForcingConditionInstance', 9)):
+                                ('forcing_condition_instance', 'ForcingConditionInstance', 9),
+                                ('forcing_rebind_terms', 'ForcingRebindTerms', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7420,6 +7421,7 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_opening_original_bound_zero_field_internally_generated": True,
         "object_actual_opening_lift_original_mode2_term_variable_composition_proved": True,
         "object_actual_opening_selected_condition_parameter_and_offset_identified": True,
+        "object_actual_complete_rebind_same_six_witness_coded_term_equations_proved": True,
         "object_complete_condition_rebind_open_instantiate_cancellation_proved": False,
         "object_actual_complete_negative_fragment_instance_scope": "Actual full negative compilation (both guards and rebind), actual pointwise opening and actual G -> opened-negative proof produce the same actual raw/target bodies, environment/lift, instance code and G -> instance proof. No proof/truth of G or unconditional opened-negative proof, no supplied body/output/local answer. This is the outer forall instance step, not complete guard/rebinding commutation, normalized forcing MP or uniform proof correctness/Con.",
         "audited_declarations": len(footprints),

@@ -1118,3 +1118,4 @@ import PPAC.Migration.ForcingNegProof
 import PPAC.Migration.ForcingOpenLift
 import PPAC.Migration.ForcingOpenInstantiate
 import PPAC.Migration.ForcingConditionInstance
+import PPAC.Migration.ForcingRebindTerms

@@ -161727,7 +161727,7 @@
         "Original Source.Derives, TheoryTransport and nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/SyntaxTopAbstractExistence.lean": "40d927f59d80e73d2a45d11f4b2fe01c91ebb69b49cf7520f4bb70f03e7ac826",
         "PPAC/Migration/Internal/SyntaxVariableTableExistence.lean": "124960b1480ea817d9c4c99a5fb5b07bd1f422a4d4bd38743388cd1dee4279d2",
@@ -161736,7 +161736,7 @@
         "PPAC/Migration/Internal/SyntaxMixedImageCodeUnique.lean": "31f52613f290b5432ad103e2af916df7cf7a673f55735865b587651c1db0d52b",
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
       },
-      "scope": "All internal source/target bound scopes with target=successor(source), internal free scope and arbitrary designated index; no external standardness. Constructs and eliminates every internal table/head/list/execution witness. Independent output uniqueness. Not the complete forcing compiler, arbitrary axiom forcing or proof/contradiction reduction. No new choice premise or object axiom.",
+      "scope": "All internal source/target bound scopes with target=successor(source), internal free scope and arbitrary designated index; no external standardness. Constructs and eliminates every internal table/head/list/execution witness. Independent output uniqueness. Not the complete forcing compiler, arbitrary axiom forcing or proof/contradiction reduction. No new choice premise or object axiom. Existing data/data_rename are now public for the actual SAME-table term/formula composition consumer; only those two private modifiers were removed, and all mathematical bodies are retained exactly.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingConditionRebind.value": [
           "Quot.sound",
@@ -161847,6 +161847,15 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionRebind.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -161870,7 +161879,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
         "PPAC/Migration/ForcingAtomicCode.lean": "4ad5432e3006b47f871d9e3ef3503c2b06d6381e90b1eefe0eb8531cc4557371",
-        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
       },
       "scope": "Actual q in P and R(q,p) literal templates; target bound scope and condition term/code may be internal/nonstandard, free scope is an object numeral for the fixed external R parameter count plus P/p. Constructs/eliminates numeral1, template quotation, bound forest, identity free list and substitution execution. Independent outputs are typed and unique. Both guards are constructed at the same actual object-existential bvar0; the negative-input endpoint consumes previous actual child rebinding. Outer negative/existential formula constructors, full recursion, uniform internal axiom forcing, Proof reduction and final Con remain incomplete.",
@@ -162014,7 +162023,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
-        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
@@ -162130,7 +162139,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
-        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340"
       },
       "scope": "Constructs actual typed unique inner order guard without any supplied head, guard or rebind execution; the relation direction is R(r0,q1), not R(q1,r0). Constructs H(x) typed unique code at an actual internally obtained new-name bvar0 by direct reuse of the existing guard compiler. Internal bound scopes/candidates may be nonstandard; R/H and parameter count are external fixed scheme indices with object-numeral f=n+2,j=n+1. Does not yet rescope the interpreted existential child under the two conditions and new name, construct the complete outer existential branch, full recursion, uniform coded axiom forcing or final Proof/Con.",
@@ -162277,7 +162286,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistChildCode.lean": "65bda110a6ec9d3385625b64eea5ad1ca7c6fef2414112e662b496fe6213934c",
-        "PPAC/Migration/ForcingConditionRebind.lean": "96f02d2975824b04a3f7ea0b75ac3270d3166cdea20e8bbccbcfdad77367ed3d",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/Internal/SyntaxMixedImageLiftExistence.lean": "c37d64629ad7e2a7cfac6cf161e5b7a40d7908df8a33ee1db8cb7556d9b1a3fd",
         "PPAC/Migration/Internal/SyntaxMixedImageLiftFields.lean": "67849188babbad7c15c170a7c9cc5014f45e398d18838b0218f1fa05e06d4cc4",
         "PPAC/Migration/Internal/SyntaxMixedImageLiftUnique.lean": "964dac4152daf3a5f51e4ac1103c72aeb2e92580d915e944190575e60d61d849",
@@ -165727,6 +165736,98 @@
           "propext"
         ],
         "PPAC.Migration.ForcingConditionInstance.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_rebind_terms": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingRebindTerms.lean",
+      "source_declarations": [
+        "AtomicData.Force exact condition rebinding in the negative and existential branches",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "consumers": [
+        "Actual first term operation of SAME-table condition-rebind/open/original InstantiateTop formula cancellation",
+        "Uniform variable cases to be consumed under original mixed binder advances"
+      ],
+      "reuse_producers": [
+        "Original complete ForcingConditionRebind data and compiled six-witness judgment; existing bodies retained",
+        "Original encoded table fields and actual shifted bound-variable graph",
+        "Original conditional free-variable graph and complete coded mixed term substitution",
+        "Existing exact scope elimination and original object source replay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
+        "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
+        "PPAC/Migration/Internal/SyntaxVariableTableFields.lean": "d0cbd47f67f689f9229238b314bbdb621ac446a630368278b458a0df03007c94",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
+        "PPAC/Migration/Internal/AbstractTopVariablePoint.lean": "323a65854ff772b6446f44bbe6e647af22e460b662134757ff311a417f9782ae"
+      },
+      "scope": "Consume the ACTUAL complete original condition-rebinding compiler and internally expose its SAME six witnesses: original head, shifted bound graph/encoded table, conditional free graph/encoded table, and complete original formula-substitution judgment. Prove the actual coded term-substitution iff the original bound-successor or conditional free-variable value at each legal known source variable. No replacement table, graph field, intermediate term or local compiler answer is assumed. All runtime indices/scopes/codes include nonstandard internal values; nativeZF original-kernel certificate. The public original data/data_rename expose already proved contracts; only two private modifiers removed and all old mathematical bodies preserved. Complete three-operation formula cancellation, binder composition closure, normalized forcing MP, uniform coded axiom/proof preservation, reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRebindTerms.termValue": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.termValue_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.equation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.equation_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.from_data": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindTerms.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

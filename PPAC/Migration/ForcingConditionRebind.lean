@@ -271,13 +271,13 @@ private theorem target_contexts {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
   have hc := Derives.conjR (FormulaCodeProperties.guards w n a f h.hn)
   exact .conjI (OmegaStructureAlgebra.successor_member w A a (ZFContext.arithmetic hZ).base.extensionality h.hw (.conjL hc) h.hs) (.conjR hc)
 
-private def data {m} (w a f A j n q : Fin m) (v : Fin 6 → Fin m) : Formula m :=
+def data {m} (w a f A j n q : Fin m) (v : Fin 6 → Fin m) : Formula m :=
   (SyntaxMixedImageHead.head w A f (v 0) (v 1)).conj
     ((boundData w a f A (v 2) (v 3)).conj
       ((freeData w j (v 1) f A (v 4) (v 5)).conj
         (SyntaxMixedFormulaJudgmentSyntax.substituted w (v 3) (v 5) a f A f n q)))
 
-private theorem data_rename {m l} (w a f A j n q : Fin m) (v : Fin 6 → Fin m) (r : Fin m → Fin l) :
+theorem data_rename {m l} (w a f A j n q : Fin m) (v : Fin 6 → Fin m) (r : Fin m → Fin l) :
     (data w a f A j n q v).rename r = data (r w) (r a) (r f) (r A) (r j) (r n) (r q) (fun i => r (v i)) := by
   simp only [data, Formula.rename, SyntaxMixedImageHead.head_rename, boundData_rename, freeData_rename,
     SyntaxMixedFormulaJudgmentSyntax.substituted_rename]

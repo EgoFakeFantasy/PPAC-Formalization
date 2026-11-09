@@ -39379,3 +39379,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingConditionInstance.input
 #print axioms PPAC.Migration.ForcingConditionInstance.sentence
 #print axioms PPAC.Migration.ForcingConditionInstance.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingConditionRebind.data
+#print axioms PPAC.Migration.ForcingConditionRebind.data_rename
+#print axioms PPAC.Migration.ForcingRebindTerms.termValue
+#print axioms PPAC.Migration.ForcingRebindTerms.termValue_rename
+#print axioms PPAC.Migration.ForcingRebindTerms.equation
+#print axioms PPAC.Migration.ForcingRebindTerms.equation_rename
+#print axioms PPAC.Migration.ForcingRebindTerms.from_data
+#print axioms PPAC.Migration.ForcingRebindTerms.result
+#print axioms PPAC.Migration.ForcingRebindTerms.result_rename
+#print axioms PPAC.Migration.ForcingRebindTerms.derive
+#print axioms PPAC.Migration.ForcingRebindTerms.input
+#print axioms PPAC.Migration.ForcingRebindTerms.sentence
+#print axioms PPAC.Migration.ForcingRebindTerms.kernel_certificate

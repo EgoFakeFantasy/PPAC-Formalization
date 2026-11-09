@@ -31,7 +31,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-condition-instance-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/forcing-rebind-terms-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先完成源码／跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
@@ -108,3 +108,5 @@ CI故障先定位再修复：42483548594主线成功，Comparator尚未开始就
 原第10实际opening／mode2项组合：ForcingOpenInstantiate实际消费上一批原提升字段方程及原InstantiateVariableRun，内部生成中间项码和原kind1／mode2执行，证明旧名字／参数的两段组合精确保持原码，新增bound-zero项的组合精确等于合法参数。中间码、执行或输出答案均非前提，全部运行索引／长度／码允许内部非标准；两项nativeZF原核证书已通过完整验收。完整公式相消、条件参数的实际识别、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38691项声明、零警告；38679项旧足迹和2819份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-instantiate-acceptance.json。
 
 原第10实际条件项识别：ForcingConditionInstance从同一opening的真实参数表内部取得选中字段P及偏移J=a+j，直接消费上一批原头部／mode2项运行双条件和现有parameters_field，证明该组合结果精确等于J处原自由变量码。P、偏移、头码和原Run均非给定答案，全部运行索引／范围／码允许内部非标准；原nativeZF证书已通过完整验收。完整公式相消、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38700项声明、零警告；38691项旧足迹和2820份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-condition-instance-acceptance.json。
+
+原第10实际重绑定项方程：ForcingRebindTerms从完整原compiler内部取得同一六项见证及完整公式Subst，证明实际coded term substitution与原bound后继／free条件分支的精确双条件。未给定替代码表、字段或项答案；仅公开既有data和data_rename，原数学正文完全保持，全部运行索引／码可为内部非标准。原nativeZF证书已通过完整验收。完整三段公式相消及binder组合闭包、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38713项声明、零警告；38700项旧足迹全部保持，原重绑定仅公开两项接口而原正文完全不变，其余2820份旧证明哈希保持。12项兼容回归及三库／75哈希预检通过。见verification/forcing-rebind-terms-acceptance.json。
