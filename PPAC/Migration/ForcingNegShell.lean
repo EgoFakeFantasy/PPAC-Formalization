@@ -221,3 +221,105 @@ theorem normalize {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   exact of_eq (normalized_rename w K H A f C T M O q B F r s z Y D (old 6)).symm hout
 
 end PPAC.Migration.ForcingNegShell
+
+namespace PPAC.Migration.ForcingNegShell
+open Internal Source SourceAlgebra SourceLogic OmegaSyntax HornBinderSyntax
+open SyntaxRenameQuerySyntax (of_eq)
+set_option maxRecDepth 32768
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+
+/-- A property of both ACTUAL operand substitutions. Both candidate codes are
+universally quantified in the object language. Concrete callers derive this
+from original compiler operations; it is not a desired proof-code premise. -/
+def operandPoint {m} (w K H A f C T q r s z D I Y : Fin m) : Formula m :=
+  ((SyntaxMixedFormulaJudgmentSyntax.substituted w K H A f C T q I).conj
+    (SyntaxMixedFormulaJudgmentSyntax.substituted w r s C T z T I Y)).imp (.equal Y D)
+
+theorem operandPoint_rename {m l} (w K H A f C T q r s z D I Y : Fin m) (ρ : Fin m → Fin l) :
+    (operandPoint w K H A f C T q r s z D I Y).rename ρ = operandPoint (ρ w) (ρ K) (ρ H) (ρ A) (ρ f) (ρ C) (ρ T) (ρ q) (ρ r) (ρ s) (ρ z) (ρ D) (ρ I) (ρ Y) := by
+  simp only [operandPoint, Formula.rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
+
+def operandBody {m} (w K H A f C T q r s z D : Fin m) : Formula (m+2) :=
+  operandPoint (old 2 w) (old 2 K) (old 2 H) (old 2 A) (old 2 f) (old 2 C) (old 2 T) (old 2 q) (old 2 r) (old 2 s) (old 2 z) (old 2 D) (slot 2 0) (slot 2 1)
+def operandCancellation {m} (w K H A f C T q r s z D : Fin m) : Formula m :=
+  OriginalUniversalBlock.allMany 2 (operandBody w K H A f C T q r s z D)
+
+theorem operandCancellation_rename {m l} (w K H A f C T q r s z D : Fin m) (ρ : Fin m → Fin l) :
+    (operandCancellation w K H A f C T q r s z D).rename ρ = operandCancellation (ρ w) (ρ K) (ρ H) (ρ A) (ρ f) (ρ C) (ρ T) (ρ q) (ρ r) (ρ s) (ρ z) (ρ D) := by
+  simp only [operandCancellation, OriginalUniversalBlock.allMany_rename, operandBody, operandPoint_rename, lift_old, lift_slot]
+
+theorem operand_at {m} {Γ : Context m} (w K H A f C T q r s z D I Y : Fin m)
+    (hc : Derives Γ (operandCancellation w K H A f C T q r s z D))
+    (ho : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H A f C T q I))
+    (hi : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w r s C T z T I Y)) : Derives Γ (.equal Y D) := by
+  have hp : Derives Γ (operandPoint w K H A f C T q r s z D I Y) := of_eq
+    (by simp only [operandBody, operandPoint_rename, assign_old, assign_slot]; rfl)
+    (OriginalUniversalBlock.at_many 2 _ (SetLanguage.args2 I Y) hc)
+  exact .impE hp (.conjI ho hi)
+
+private theorem second_with {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f T A C K H q r s D M O B F Y : Fin m) (v : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w))
+    (hc : Derives Γ (operandCancellation w K H A f C T q r s z D))
+    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))
+    (hv : Derives Γ (chainData w K H A f C T M O q B F v))
+    (hp : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w r s C T z T F Y)) :
+    Derives Γ (finalFields w r s C T z Y D B v) := by
+  have he := transform hZ w r s C T z T (v 0) (v 1) (v 2) (v 3) (v 4) (v 5) F Y hw
+    (.conjL (.conjR (.conjR hv))) (.conjL (.conjR hv)) (.conjL hv) hp
+  let E := chainBody w r s C T z T (v 0) (v 1) (v 2) (v 3) Y
+  let Δ := Context.add E (raisedContext 6 Γ)
+  apply HornBinderRules.eliminate_many 6 E _ he
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ6 := HornBinderRules.zf_body 6 hZ E
+  have hw6 := of_eq (omega_rename w (old 6)) (HornBinderRules.under_body 6 hw E)
+  have hc6 := of_eq (operandCancellation_rename w K H A f C T q r s z D (old 6)) (HornBinderRules.under_body 6 hc E)
+  have hv6 := of_eq (chainData_rename w K H A f C T M O q B F v (old 6)) (HornBinderRules.under_body 6 hv E)
+  have hB6 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (old 6 w) Fin.elim0 (old 6 B)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (HornBinderRules.under_body 6 hB E)
+  have eqOperand := operand_at (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 q) (old 6 r) (old 6 s) (old 6 z) (old 6 D) (old 6 (v 2)) (slot 6 2) hc6
+    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))
+    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hE))))))
+  have eqB := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 K) (old 6 H)
+    (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 B) (old 6 (v 3)) hw6 hB6
+    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))
+  have hLast := SyntaxMixedFormulaJudgmentSubst.subst_n (old 6 w) (old 6 r) (old 6 s) (old 6 C) (old 6 T)
+    (old 6 z) (old 6 T) (old 6 (v 3)) (slot 6 3) (old 6 B) eqB
+    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hE))))))
+  have eqBottom := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 r) (old 6 s)
+    (old 6 C) (old 6 T) (old 6 z) (old 6 T) (old 6 B) (slot 6 3) hw6 hB6 hLast
+  have hout : Derives Δ (finalFields (old 6 w) (old 6 r) (old 6 s) (old 6 C) (old 6 T)
+      (old 6 z) (old 6 Y) (old 6 D) (old 6 B) (fun i => old 6 (v i))) := by
+    apply HornBinderRules.intro_many 6 _ (slot 6)
+    exact of_eq (by simp only [finalBody, finalData_rename, assign_old, assign_slot]; rfl)
+      (.conjI hE (.conjI eqOperand eqBottom))
+  exact of_eq (finalFields_rename w r s C T z Y D B v (old 6)).symm hout
+
+theorem normalize_with_cancellation {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f T A C K H q r s D M O B N I J F Y : Fin m)
+    (hw : Derives Γ (omega w))
+    (hc : Derives Γ (operandCancellation w K H A f C T q r s z D))
+    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))
+    (hN : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w q B N))
+    (hI : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w O N I))
+    (hJ : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w M I J))
+    (ho : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H A f C T J F))
+    (hi : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w r s C T z T F Y)) :
+    Derives Γ (normalized w K H A f C T M O q B F r s z Y D) := by
+  have he := transform hZ w K H A f C T M O q B N I J F hw hN hI hJ ho
+  let E := chainBody w K H A f C T M O q B F
+  let Δ := Context.add E (raisedContext 6 Γ)
+  apply HornBinderRules.eliminate_many 6 E _ he
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hw6 := of_eq (omega_rename w (old 6)) (HornBinderRules.under_body 6 hw E)
+  have hc6 := of_eq (operandCancellation_rename w K H A f C T q r s z D (old 6)) (HornBinderRules.under_body 6 hc E)
+  have hB6 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (old 6 w) Fin.elim0 (old 6 B)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (HornBinderRules.under_body 6 hB E)
+  have hi6 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 6)) (HornBinderRules.under_body 6 hi E)
+  have hf := second_with (HornBinderRules.zf_body 6 hZ E) (old 6 w) (old 6 z) (old 6 f) (old 6 T) (old 6 A) (old 6 C) (old 6 K) (old 6 H) (old 6 q) (old 6 r) (old 6 s) (old 6 D) (old 6 M) (old 6 O) (old 6 B) (old 6 F) (old 6 Y) (slot 6) hw6 hc6 hB6 hE hi6
+  have hout : Derives Δ (normalized (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 M) (old 6 O) (old 6 q) (old 6 B) (old 6 F) (old 6 r) (old 6 s) (old 6 z) (old 6 Y) (old 6 D)) := by
+    apply HornBinderRules.intro_many 6 _ (slot 6)
+    exact of_eq (by simp only [normalizedBody, normalizedData_rename, assign_old, assign_slot]; rfl) (.conjI hE hf)
+  exact of_eq (normalized_rename w K H A f C T M O q B F r s z Y D (old 6)).symm hout
+
+end PPAC.Migration.ForcingNegShell

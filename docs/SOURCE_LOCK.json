@@ -166773,7 +166773,7 @@
         "SyntaxMixedFormulaNullary.unique, SyntaxLogicalFields.single_fields, original object equality and existence rules"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
@@ -166868,8 +166868,104 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operandPoint": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operandPoint_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operandBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operandCancellation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operandCancellation_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.operand_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalize_with_cancellation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
-      }
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ForcingNegShell.lean",
+          "producer_sha256": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
+          "source_start": "private theorem second {m}",
+          "source_end": "\ndef normalizedData",
+          "target_start": "private theorem second_with {m}",
+          "target_end": "\ntheorem normalize_with_cancellation",
+          "replacements": [
+            [
+              "private theorem second {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q P r s D M O B F Y : Fin m) (v : Fin 6 → Fin m)\n    (hb : Derives Γ (cancellationBase w mode z a f T A C R S K H j n q P r s D))\n    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))\n",
+              "private theorem second_with {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w z f T A C K H q r s D M O B F Y : Fin m) (v : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w))\n    (hc : Derives Γ (operandCancellation w K H A f C T q r s z D))\n    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))\n"
+            ],
+            [
+              "    Derives Γ (finalFields w r s C T z Y D B v) := by\n  have hw := Derives.conjL hb\n  have he := transform hZ w r s C T z T (v 0) (v 1) (v 2) (v 3) (v 4) (v 5) F Y hw\n",
+              "    Derives Γ (finalFields w r s C T z Y D B v) := by\n  have he := transform hZ w r s C T z T (v 0) (v 1) (v 2) (v 3) (v 4) (v 5) F Y hw\n"
+            ],
+            [
+              "  have hZ6 := HornBinderRules.zf_body 6 hZ E\n  have hb6 := of_eq (cancellationBase_rename w mode z a f T A C R S K H j n q P r s D (old 6)) (HornBinderRules.under_body 6 hb E)\n  have hv6 := of_eq (chainData_rename w K H A f C T M O q B F v (old 6)) (HornBinderRules.under_body 6 hv E)\n",
+              "  have hZ6 := HornBinderRules.zf_body 6 hZ E\n  have hw6 := of_eq (omega_rename w (old 6)) (HornBinderRules.under_body 6 hw E)\n  have hc6 := of_eq (operandCancellation_rename w K H A f C T q r s z D (old 6)) (HornBinderRules.under_body 6 hc E)\n  have hv6 := of_eq (chainData_rename w K H A f C T M O q B F v (old 6)) (HornBinderRules.under_body 6 hv E)\n"
+            ],
+            [
+              "    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (HornBinderRules.under_body 6 hB E)\n  have eqOperand := cancel_operand hZ6 (old 6 w) (old 6 mode) (old 6 z) (old 6 a) (old 6 f) (old 6 T) (old 6 A) (old 6 C) (old 6 R) (old 6 S) (old 6 K) (old 6 H) (old 6 j) (old 6 n) (old 6 q) (old 6 P) (old 6 r) (old 6 s) (old 6 D) (old 6 (v 2)) (slot 6 2) hb6\n    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))\n",
+              "    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (HornBinderRules.under_body 6 hB E)\n  have eqOperand := operand_at (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 q) (old 6 r) (old 6 s) (old 6 z) (old 6 D) (old 6 (v 2)) (slot 6 2) hc6\n    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))\n"
+            ],
+            [
+              "  have eqB := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 K) (old 6 H)\n    (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 B) (old 6 (v 3)) (.conjL hb6) hB6\n    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))\n",
+              "  have eqB := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 K) (old 6 H)\n    (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 B) (old 6 (v 3)) hw6 hB6\n    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hv6))))))\n"
+            ],
+            [
+              "  have eqBottom := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 r) (old 6 s)\n    (old 6 C) (old 6 T) (old 6 z) (old 6 T) (old 6 B) (slot 6 3) (.conjL hb6) hB6 hLast\n  have hout : Derives Δ (finalFields (old 6 w) (old 6 r) (old 6 s) (old 6 C) (old 6 T)\n",
+              "  have eqBottom := SyntaxMixedFormulaNullary.unique hZ6 false (old 6 w) (old 6 r) (old 6 s)\n    (old 6 C) (old 6 T) (old 6 z) (old 6 T) (old 6 B) (slot 6 3) hw6 hB6 hLast\n  have hout : Derives Δ (finalFields (old 6 w) (old 6 r) (old 6 s) (old 6 C) (old 6 T)\n"
+            ]
+          ],
+          "normalized_body_sha256": "4be891c5ab1a128f6bf2d002cdc3e4793135ebd0184c2c252b325dfb60aa9f2d"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegShell.lean",
+          "producer_sha256": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
+          "source_start": "theorem normalize {m}",
+          "source_end": "\nend PPAC.Migration.ForcingNegShell",
+          "target_start": "theorem normalize_with_cancellation {m}",
+          "target_end": "\nend PPAC.Migration.ForcingNegShell",
+          "replacements": [
+            [
+              "theorem normalize {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q P r s D M O B N I J F Y : Fin m)\n    (hb : Derives Γ (cancellationBase w mode z a f T A C R S K H j n q P r s D))\n    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))\n",
+              "theorem normalize_with_cancellation {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w z f T A C K H q r s D M O B N I J F Y : Fin m)\n    (hw : Derives Γ (omega w))\n    (hc : Derives Γ (operandCancellation w K H A f C T q r s z D))\n    (hB : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 B))\n"
+            ],
+            [
+              "    Derives Γ (normalized w K H A f C T M O q B F r s z Y D) := by\n  have he := transform hZ w K H A f C T M O q B N I J F (.conjL hb) hN hI hJ ho\n  let E := chainBody w K H A f C T M O q B F\n",
+              "    Derives Γ (normalized w K H A f C T M O q B F r s z Y D) := by\n  have he := transform hZ w K H A f C T M O q B N I J F hw hN hI hJ ho\n  let E := chainBody w K H A f C T M O q B F\n"
+            ],
+            [
+              "  have hE : Derives Δ E := .hyp (Or.inl rfl)\n  have hb6 := of_eq (cancellationBase_rename w mode z a f T A C R S K H j n q P r s D (old 6)) (HornBinderRules.under_body 6 hb E)\n  have hB6 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (old 6 w) Fin.elim0 (old 6 B)) :=\n",
+              "  have hE : Derives Δ E := .hyp (Or.inl rfl)\n  have hw6 := of_eq (omega_rename w (old 6)) (HornBinderRules.under_body 6 hw E)\n  have hc6 := of_eq (operandCancellation_rename w K H A f C T q r s z D (old 6)) (HornBinderRules.under_body 6 hc E)\n  have hB6 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (old 6 w) Fin.elim0 (old 6 B)) :=\n"
+            ],
+            [
+              "  have hi6 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 6)) (HornBinderRules.under_body 6 hi E)\n  have hf := second (HornBinderRules.zf_body 6 hZ E) (old 6 w) (old 6 mode) (old 6 z) (old 6 a) (old 6 f) (old 6 T) (old 6 A) (old 6 C) (old 6 R) (old 6 S) (old 6 K) (old 6 H) (old 6 j) (old 6 n) (old 6 q) (old 6 P) (old 6 r) (old 6 s) (old 6 D) (old 6 M) (old 6 O) (old 6 B) (old 6 F) (old 6 Y) (slot 6) hb6 hB6 hE hi6\n  have hout : Derives Δ (normalized (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 M) (old 6 O) (old 6 q) (old 6 B) (old 6 F) (old 6 r) (old 6 s) (old 6 z) (old 6 Y) (old 6 D)) := by\n",
+              "  have hi6 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 6)) (HornBinderRules.under_body 6 hi E)\n  have hf := second_with (HornBinderRules.zf_body 6 hZ E) (old 6 w) (old 6 z) (old 6 f) (old 6 T) (old 6 A) (old 6 C) (old 6 K) (old 6 H) (old 6 q) (old 6 r) (old 6 s) (old 6 D) (old 6 M) (old 6 O) (old 6 B) (old 6 F) (old 6 Y) (slot 6) hw6 hc6 hB6 hE hi6\n  have hout : Derives Δ (normalized (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 M) (old 6 O) (old 6 q) (old 6 B) (old 6 F) (old 6 r) (old 6 s) (old 6 z) (old 6 Y) (old 6 D)) := by\n"
+            ]
+          ],
+          "normalized_body_sha256": "e9f8ec7715995ad7cb631dbbc039ceecc331efbcf9994fc221c1f344645015a3"
+        }
+      ]
     },
     "forcing_neg_normalization": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -166895,7 +166991,7 @@
         "SyntaxMixedFormulaNullary.unique, SyntaxLogicalFields.single_fields, original object equality and existence rules"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
         "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
@@ -167614,7 +167710,7 @@
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
-        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff"
@@ -168075,7 +168171,7 @@
         "PPAC/Migration/ForcingNegGuardProof.lean": "f0cd394a37259544ce6bced7658352105d9fa772512046cbc714b5f1c54cab3b",
         "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
         "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
-        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingRelationGuardProof.lean": "0ac8da8ca1fe762526746982cc5df3585a6a92419cc159f1d2464c5cc1490f85",
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
         "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
@@ -168658,6 +168754,231 @@
             ]
           ],
           "normalized_body_sha256": "fb792132e546c614ea047a3284e41c863cd29141e02c207c4ae03de0838decae"
+        }
+      ]
+    },
+    "forcing_neg_condition": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingNegCondition.lean",
+      "source_declarations": [
+        "ForcingQuotient.AtomicData.force_mono negative branch",
+        "ForcingTruth.force_of_dense negative branch",
+        "forceFormula_instantiate"
+      ],
+      "consumers": [
+        "Normalize original negative compiler instance at arbitrary stronger condition before transitivity and same-background forall closure",
+        "Uniform internal forcing monotonicity/regularity and forcing-specific MP"
+      ],
+      "reuse_producers": [
+        "Original complete ForcingNegCode head, both guard compilers and original shell",
+        "Existing ForcingNegNormalization compiledData/shellResult and all witness encodings reused exactly",
+        "ForcingConditionOpening.from_compiled with actual arbitrary condition and original mixed/native mode2 bridges",
+        "Original ForcingNegShell transform/normalized fields and falsum uniqueness; generic operand property is proved internally",
+        "Original Replacement/list encoding and full mixed-formula totality internally generate table and direct operand",
+        "Ordinary nativeZF ZFReplay; no new grammar, checker, recursion, truth or proof kernel"
+      ],
+      "scope": "The actual full original negative compiler and its native instance at an arbitrary legal condition, WITHOUT S[j]=P. Internally construct actual update table L and direct operand D; consume all original five compiler/four shell and two six-field substitution witness blocks. Preserve actual head, BOTH guard compilation/substitution judgments and SAME original falsum. The object ALL2 operand-cancellation property is derived from actual rebind/lift/open/native mode2, not an input to concrete public endpoints. Source formula type is an explicit legitimate input to produce. No desired update/output/equality/guard truth/proof oracle. Codes and scopes include internal nonstandard values. This is actual negative-instance normalization; non-diagonal relation guard truth/transitivity, uniform force_mono/force_of_dense, forcing MP, all-internal axiom/Proof preservation, reduction and finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegCondition.operations": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.operations_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.common": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.common_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generatedData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generatedData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generatedBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generated": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generated_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.produce": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generatedInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generatedSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCondition.generated_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegCondition.lean": "61e44ea59f40057910daedad81d89e1c03f2fec10c39491aeed0bdf22918b677",
+        "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
+        "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+        "PPAC/Migration/ForcingConditionOpening.lean": "19a828a9777a11a9a5a45bbab0f6b290003a540cd5f8596a799354589195fb19",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ForcingNegNormalization.lean",
+          "producer_sha256": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+          "source_start": "private theorem normalize_shell",
+          "source_end": "/-- Original head",
+          "target_start": "private theorem normalize_shell",
+          "target_end": "private theorem from_data",
+          "replacements": [
+            [
+              "private theorem normalize_shell {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n P r s D q M O Q J F Y : Fin m) (v : Fin 4 → Fin m)\n    (hb : Derives Γ (ForcingNegShell.cancellationBase w mode z a f T A C R S K H j n q P r s D))\n    (hs : Derives Γ (ForcingNegCode.shellData w a A f M O q Q v))\n",
+              "private theorem normalize_shell {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w z a f T A C K H r s D q M O Q J F Y : Fin m) (v : Fin 4 → Fin m)\n    (hw : Derives Γ (omega w))\n    (hc : Derives Γ (ForcingNegShell.operandCancellation w K H A f C T q r s z D))\n    (hs : Derives Γ (ForcingNegCode.shellData w a A f M O q Q v))\n"
+            ],
+            [
+              "    Derives Γ (ForcingNegShell.normalized w K H A f C T M O q (v 0) F r s z Y D) := by\n  have hAll : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w (v 3) Q) := .conjL (.conjR (.conjR (.conjR (.conjR hs))))\n  have eqJ := SyntaxLogicalFields.single_fields hZ 9 w J (v 3) Q (.conjL hb) hJ hAll\n  have hOpen := SyntaxMixedFormulaJudgmentSubst.subst_n w K H A f C T J F (v 3) eqJ ho\n  exact ForcingNegShell.normalize hZ w mode z a f T A C R S K H j n q P r s D M O (v 0) (v 1) (v 2) (v 3) F Y hb\n    (.conjL (.conjL hs)) (.conjL (.conjL (.conjR hs)))\n    (.conjL (.conjL (.conjR (.conjR hs)))) (.conjL (.conjL (.conjR (.conjR (.conjR hs))))) hOpen hi\n\n",
+              "    Derives Γ (ForcingNegShell.normalized w K H A f C T M O q (v 0) F r s z Y D) := by\n  have hAll : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w (v 3) Q) := .conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hs))))\n  have eqJ := SyntaxLogicalFields.single_fields hZ 9 w J (v 3) Q hw hJ hAll\n  have hOpen := SyntaxMixedFormulaJudgmentSubst.subst_n w K H A f C T J F (v 3) eqJ ho\n  exact ForcingNegShell.normalize_with_cancellation hZ w z f T A C K H q r s D M O (v 0) (v 1) (v 2) (v 3) F Y hw hc\n    (Derives.conjL (Derives.conjL hs)) (Derives.conjL (Derives.conjL (Derives.conjR hs)))\n    (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR hs)))) (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hs))))) hOpen hi\n\n"
+            ]
+          ],
+          "normalized_body_sha256": "8e37b6195e8b68d37e11452d9602290e52580ae6ec0669b430b199a85155341a"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegNormalization.lean",
+          "producer_sha256": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+          "source_start": "private theorem from_data",
+          "source_end": "/-- Consume the actual complete compiler",
+          "target_start": "private theorem from_data",
+          "target_end": "/-- Consume the actual complete compiler",
+          "replacements": [
+            [
+              "private theorem from_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s D Q J F Y : Fin m) (v : Fin 5 → Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s D))\n    (hd : Derives Γ (ForcingNegCode.data relation w a A f j n Q v))\n",
+              "private theorem from_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s L D Q J F Y : Fin m) (v : Fin 5 → Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s L D))\n    (hd : Derives Γ (ForcingNegCode.data relation w a A f j n Q v))\n"
+            ],
+            [
+              "    Derives Γ (compiledData relation w a A f j n Q K H C T F r s z Y D v) := by\n  have hb := with_rebind w mode z a f T A C R S K H j n P r s D (v 2) hop (.conjL (.conjR hd))\n  let E := ForcingNegCode.shellBody w a A f (v 3) (v 4) (v 2) Q\n",
+              "    Derives Γ (compiledData relation w a A f j n Q K H C T F r s z Y D v) := by\n  have hb := cancellation hZ w mode z a f T A C R S K H j n P r s L D (v 2) hop (Derives.conjL (Derives.conjR hd))\n  let E := ForcingNegCode.shellBody w a A f (v 3) (v 4) (v 2) Q\n"
+            ],
+            [
+              "  have hShell : Derives Γ (shellResult w a A f (v 3) (v 4) (v 2) Q K H C T F r s z Y D) := by\n    apply HornBinderRules.eliminate_many 4 E _ (.conjR (.conjR (.conjR (.conjR hd))))\n    have hE : Derives Δ E := .hyp (Or.inl rfl)\n    have hb4 := of_eq (ForcingNegShell.cancellationBase_rename w mode z a f T A C R S K H j n (v 2) P r s D (old 4)) (HornBinderRules.under_body 4 hb E)\n    have hJ4 := of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w J Q (old 4)) (HornBinderRules.under_body 4 hJ E)\n",
+              "  have hShell : Derives Γ (shellResult w a A f (v 3) (v 4) (v 2) Q K H C T F r s z Y D) := by\n    apply HornBinderRules.eliminate_many 4 E _ (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hd))))\n    have hE : Derives Δ E := .hyp (Or.inl rfl)\n    have hb4 := of_eq (ForcingNegShell.operandCancellation_rename w K H A f C T (v 2) r s z D (old 4)) (HornBinderRules.under_body 4 hb E)\n    have hJ4 := of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w J Q (old 4)) (HornBinderRules.under_body 4 hJ E)\n"
+            ],
+            [
+              "    have hi4 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 4)) (HornBinderRules.under_body 4 hi E)\n    have hn := normalize_shell (HornBinderRules.zf_body 4 hZ E) (old 4 w) (old 4 mode) (old 4 z) (old 4 a) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 R) (old 4 S) (old 4 K) (old 4 H) (old 4 j) (old 4 n) (old 4 P) (old 4 r) (old 4 s) (old 4 D)\n      (old 4 (v 2)) (old 4 (v 3)) (old 4 (v 4)) (old 4 Q) (old 4 J) (old 4 F) (old 4 Y) (slot 4) hb4 hE hJ4 ho4 hi4\n    have hout : Derives Δ (shellResult (old 4 w) (old 4 a) (old 4 A) (old 4 f) (old 4 (v 3)) (old 4 (v 4))\n",
+              "    have hi4 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 4)) (HornBinderRules.under_body 4 hi E)\n    have hn := normalize_shell (HornBinderRules.zf_body 4 hZ E) (old 4 w) (old 4 z) (old 4 a) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 K) (old 4 H) (old 4 r) (old 4 s) (old 4 D)\n      (old 4 (v 2)) (old 4 (v 3)) (old 4 (v 4)) (old 4 Q) (old 4 J) (old 4 F) (old 4 Y) (slot 4)\n      (of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 (Derives.conjL hop) E)) hb4 hE hJ4 ho4 hi4\n    have hout : Derives Δ (shellResult (old 4 w) (old 4 a) (old 4 A) (old 4 f) (old 4 (v 3)) (old 4 (v 4))\n"
+            ],
+            [
+              "    exact of_eq (shellResult_rename w a A f (v 3) (v 4) (v 2) Q K H C T F r s z Y D (old 4)).symm hout\n  exact .conjI (.conjL hd) (.conjI (.conjL (.conjR hd))\n    (.conjI (.conjL (.conjR (.conjR hd))) (.conjI (.conjL (.conjR (.conjR (.conjR hd)))) hShell)))\n\n",
+              "    exact of_eq (shellResult_rename w a A f (v 3) (v 4) (v 2) Q K H C T F r s z Y D (old 4)).symm hout\n  exact .conjI (Derives.conjL hd) (.conjI (Derives.conjL (Derives.conjR hd))\n    (.conjI (Derives.conjL (Derives.conjR (Derives.conjR hd))) (.conjI (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hd)))) hShell)))\n\n"
+            ]
+          ],
+          "normalized_body_sha256": "ef5e2ee6a43b9efe02b5a4f7e967e932555e203619fd55051757b318c13597fc"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegNormalization.lean",
+          "producer_sha256": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+          "source_start": "theorem from_compiled {k m}",
+          "source_end": "/-- The same actual native",
+          "target_start": "theorem from_compiled {k m}",
+          "target_end": "/-- The same actual native",
+          "replacements": [
+            [
+              "theorem from_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s D Q J F Y : Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s D))\n    (hc : Derives Γ (ForcingNegCode.compiled relation w a A f j n Q))\n",
+              "theorem from_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s L D Q J F Y : Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s L D))\n    (hc : Derives Γ (ForcingNegCode.compiled relation w a A f j n Q))\n"
+            ],
+            [
+              "  let Δ := Context.add E (raisedContext 5 Γ)\n  apply HornBinderRules.eliminate_many 5 E _ (.conjR hc)\n  have hE : Derives Δ E := .hyp (Or.inl rfl)\n  have hop5 := of_eq (operations_rename w mode z a f T A C R S K H j n P r s D (old 5)) (HornBinderRules.under_body 5 hop E)\n  have hJ5 := of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w J Q (old 5)) (HornBinderRules.under_body 5 hJ E)\n",
+              "  let Δ := Context.add E (raisedContext 5 Γ)\n  apply HornBinderRules.eliminate_many 5 E _ (Derives.conjR hc)\n  have hE : Derives Δ E := .hyp (Or.inl rfl)\n  have hop5 := of_eq (operations_rename w mode z a f T A C R S K H j n P r s L D (old 5)) (HornBinderRules.under_body 5 hop E)\n  have hJ5 := of_eq (SyntaxLogicalSyntax.singleCode_rename 9 w J Q (old 5)) (HornBinderRules.under_body 5 hJ E)\n"
+            ],
+            [
+              "  have hi5 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 5)) (HornBinderRules.under_body 5 hi E)\n  have hn := from_data (HornBinderRules.zf_body 5 hZ E) relation (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C) (old 5 R) (old 5 S) (old 5 K) (old 5 H) (old 5 j) (old 5 n) (old 5 P) (old 5 r) (old 5 s) (old 5 D) (old 5 Q) (old 5 J) (old 5 F) (old 5 Y) (slot 5) hop5 hE hJ5 ho5 hi5\n  have hout : Derives Δ (compiled relation (old 5 w) (old 5 a) (old 5 A) (old 5 f) (old 5 j) (old 5 n) (old 5 Q) (old 5 K) (old 5 H) (old 5 C) (old 5 T) (old 5 F) (old 5 r) (old 5 s) (old 5 z) (old 5 Y) (old 5 D)) := by\n",
+              "  have hi5 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w r s C T z T F Y (old 5)) (HornBinderRules.under_body 5 hi E)\n  have hn := from_data (HornBinderRules.zf_body 5 hZ E) relation (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C) (old 5 R) (old 5 S) (old 5 K) (old 5 H) (old 5 j) (old 5 n) (old 5 P) (old 5 r) (old 5 s) (old 5 L) (old 5 D) (old 5 Q) (old 5 J) (old 5 F) (old 5 Y) (slot 5) hop5 hE hJ5 ho5 hi5\n  have hout : Derives Δ (compiled relation (old 5 w) (old 5 a) (old 5 A) (old 5 f) (old 5 j) (old 5 n) (old 5 Q) (old 5 K) (old 5 H) (old 5 C) (old 5 T) (old 5 F) (old 5 r) (old 5 s) (old 5 z) (old 5 Y) (old 5 D)) := by\n"
+            ]
+          ],
+          "normalized_body_sha256": "d01e042fedfa39613f3ce545b561c253feaf8bdcfff9dc43a28ee2052c27b34a"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegNormalization.lean",
+          "producer_sha256": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+          "source_start": "theorem from_instance {k m}",
+          "source_end": "\ndef input",
+          "target_start": "theorem from_instance {k m}",
+          "target_end": "\ndef input",
+          "replacements": [
+            [
+              "theorem from_instance {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s D Q J F Y : Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s D))\n    (hc : Derives Γ (ForcingNegCode.compiled relation w a A f j n Q))\n",
+              "theorem from_instance {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (relation : Source.Formula (k+2)) (w mode z a f T A C R S K H j n P r s L D Q J F Y : Fin m)\n    (hop : Derives Γ (operations w mode z a f T A C R S K H j n P r s L D))\n    (hc : Derives Γ (ForcingNegCode.compiled relation w a A f j n Q))\n"
+            ],
+            [
+              "    Derives Γ (compiled relation w a A f j n Q K H C T F r s z Y D) := by\n  have ht := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hop))))))))\n  have hcode := Derives.impE (.conjL (SyntaxTopFormulaCodes.instantiate_at_codes hZ w z T C P F Y r s (.conjL hop) ht)) hi\n  exact from_compiled hZ relation w mode z a f T A C R S K H j n P r s D Q J F Y hop hc hJ ho hcode\n",
+              "    Derives Γ (compiled relation w a A f j n Q K H C T F r s z Y D) := by\n  have ht := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hop)))))))))\n  have hcode := Derives.impE (Derives.conjL (SyntaxTopFormulaCodes.instantiate_at_codes hZ w z T C P F Y r s (Derives.conjL hop) ht)) hi\n  exact from_compiled hZ relation w mode z a f T A C R S K H j n P r s L D Q J F Y hop hc hJ ho hcode\n"
+            ]
+          ],
+          "normalized_body_sha256": "8ba9558ed25deb2884fb0903967e7a3ad0c4eb1d597e735e433d6360e8197997"
         }
       ]
     }

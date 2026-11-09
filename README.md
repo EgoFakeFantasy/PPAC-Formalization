@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批完成任意条件的实际正文相消：ForcingConditionOpening.normalize不再要求代入条件等于外层条件；在对象量词内部使用原Replacement／列表编码构造S[j:=r]，用现成全内部mixed公式总性构造直接输出，并经原四路径公式归纳证明它与实际重绑定／opening／原mode2输出相等。原六个compiler见证内部消去，运行范围及公式／项码允许内部非标准值；不以更新表、输出或相等答案为前提。
+本批接通完整原否定编译器在任意合法条件的实际实例：ForcingNegCondition.produce内部构造原Replacement更新表及直接子公式输出，消去原五项compiler、四项shell和两组六字段替换见证，保留同一原头部、两个guard的实际编译／替换判断及同一falsum。正文ALL2相消性质由已有原rebind／opening／mode2证明内部取得，非给定答案；原NegShell全文件逐字保留为前缀。运行范围及码仍覆盖内部非标准值。
 
-两类真实guard的同背景证明、完整否定实例双前件消去及同背景全称引入已经完成；任意条件下的完整正文相消本批已接通。下一实际消费者仍是原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点条件背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。 最新本地完整验收见`verification/forcing-condition-opening-acceptance.json`；Linux远端验收单独记录。
+两类真实guard的同背景证明、完整否定实例双前件消去、同背景全称引入及任意条件的完整否定实例归一化已经完成。已有ForcingGuardOpening本来支持任意合法实例条件，不重做。下一实际消费者是原预序传递性到非对角order guard的内部证明，再接通原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。 最新本地完整验收见`verification/forcing-neg-condition-acceptance.json`；Linux远端验收单独记录。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

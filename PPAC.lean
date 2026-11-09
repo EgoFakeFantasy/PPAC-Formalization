@@ -1142,3 +1142,4 @@ import PPAC.Migration.ForcingRelationGuardProof
 import PPAC.Migration.ForcingNegGuardProof
 import PPAC.Migration.InternalProofUniversal
 import PPAC.Migration.ForcingConditionOpening
+import PPAC.Migration.ForcingNegCondition

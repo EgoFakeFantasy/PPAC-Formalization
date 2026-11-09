@@ -2724,7 +2724,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_formula_lifts', 'ForcingFormulaLifts', 9),
                                 ('forcing_formula_induction', 'ForcingFormulaInduction', 21),
                                 ('forcing_formula_cancellation', 'ForcingFormulaCancellation', 8),
-                                ('forcing_neg_shell', 'ForcingNegShell', 19),
+                                ('forcing_neg_shell', 'ForcingNegShell', 26),
                                 ('forcing_neg_normalization', 'ForcingNegNormalization', 17),
                                 ('forcing_member_guard', 'ForcingMemberGuard', 11),
                                 ('forcing_member_guard_opening', 'ForcingMemberGuardOpening', 12),
@@ -2738,7 +2738,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 18),
                                 ('forcing_neg_guard_proof', 'ForcingNegGuardProof', 11),
                                 ('internal_proof_universal', 'InternalProofUniversal', 16),
-                                ('forcing_condition_opening', 'ForcingConditionOpening', 13)):
+                                ('forcing_condition_opening', 'ForcingConditionOpening', 13),
+                                ('forcing_neg_condition', 'ForcingNegCondition', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6076,6 +6077,9 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_actual_negative_arbitrary_condition_normalization_proved": True,
+        "object_actual_negative_arbitrary_condition_update_and_operand_constructed": True,
+        "object_actual_negative_arbitrary_condition_scope": "ForcingNegCondition.produce internally generates actual S[j:=P] and direct operand, retains original full negative compiler/head/both guards/SAME falsum and both actual substitutions. ALL2 operand property proved from original rebind/open/mode2. No answer/guard truth/proof oracle. Non-diagonal guard transitivity and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_arbitrary_condition_rebind_open_mode2_cancellation_proved": True,
         "object_arbitrary_condition_update_and_direct_output_internally_constructed": True,
         "object_arbitrary_condition_cancellation_scope": "ForcingConditionOpening.normalize removes the diagonal field S[j]=P restriction. Original rebind/lift/open and mode2 retained; original Replacement constructs S[j:=P], existing all-internal mixed-formula totality constructs O, actual Y=O proved by original four-path induction. No supplied answer. Necessary for source force_mono neg/ex at arbitrary stronger conditions; uniform monotonicity/regularity/MP/reduction/finalCon remain unproved.",
