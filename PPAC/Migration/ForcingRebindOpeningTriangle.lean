@@ -86,13 +86,13 @@ private theorem intro_zero {m} {Γ : Context m} (w mode z P T C K t y : Fin m)
   exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxMixedImageHead.head_rename, field_rename,
     OriginalTransformRowSyntax.run_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI hh (.conjI hf hr))
 
-private theorem field_index {m} {Γ : Context m} (w S i j x : Fin m)
+theorem field_index {m} {Γ : Context m} (w S i j x : Fin m)
     (he : Derives Γ (.equal i j)) (hf : Derives Γ (field w S i x)) : Derives Γ (field w S j x) := by
   let F := field w.castSucc S.castSucc (Fin.last m) x.castSucc
   have hh : Derives Γ (F.instantiate i) := of_eq (by simp only [F, Formula.instantiate, field_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hf
   exact of_eq (by simp only [F, Formula.instantiate, field_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (Derives.eqSubst F he hh)
 
-private theorem zero_from_field {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem zero_from_field {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w mode z P a f T A C R S K H t y : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (he : Derives Γ (ForcingOpenLayout.environment w z a f T R S))

@@ -18,10 +18,10 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-本批已接通原mode3、forall_produce和逻辑公理21／22：消费实际抽象W→同一G、F→J和扩展自由作用域B中的原内部子证明I=(W→F)，内部生成所有中间／目标公式、逻辑证书、数值行、原Node／proof／Root以及G→∀J的内部证明。G具有原零绑定作用域，固定背景／新变量条件由实际抽象与类型判断约束；运行时作用域、公式码、证明码仍覆盖内部／非标准值，不假设G已证明或给定目标证明。
+本批完成任意条件的实际正文相消：ForcingConditionOpening.normalize不再要求代入条件等于外层条件；在对象量词内部使用原Replacement／列表编码构造S[j:=r]，用现成全内部mixed公式总性构造直接输出，并经原四路径公式归纳证明它与实际重绑定／opening／原mode2输出相等。原六个compiler见证内部消去，运行范围及公式／项码允许内部非标准值；不以更新表、输出或相等答案为前提。
 
-两类真实guard的同背景证明和完整否定实例双前件消去已经完成；本批全称引入原证明步骤也已完成。下一实际消费者仍是原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点条件背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。
+两类真实guard的同背景证明、完整否定实例双前件消去及同背景全称引入已经完成；任意条件下的完整正文相消本批已接通。下一实际消费者仍是原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳，随后为规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。最终根节点条件背景由已有具体系统消去；不重建L、完整模式、mode3、原forall核或递归。
 
-本轮新的九项完整验收及五项trust=0均退出0；39019项声明、零警告，全部39003项旧足迹与2843份旧PPAC证明源码哈希不变，无新增公理依赖。16项兼容性回归、三个干净锁定依赖和75项原源哈希通过。
+本轮新的九项完整验收及五项trust=0均退出0；39034项声明、零警告，全部39019项旧足迹保持，2843份旧PPAC证明源码哈希不变；唯一旧源码变化是公开两项现有helper，证明正文及原公开接口未改。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/internal-proof-universal-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-condition-opening-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。

@@ -165922,7 +165922,7 @@
         "Original encoded fields, empty/field uniqueness and internal variable/successor existence"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
         "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
         "PPAC/Migration/ForcingConditionInstance.lean": "40d02c5e051d047cc5315474b766f40b568c4803f9c844fb2fef2a7522677411",
         "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
@@ -165961,6 +165961,16 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindOpeningTriangle.field_index": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRebindOpeningTriangle.zero_from_field": [
+          "Classical.choice",
+          "Quot.sound",
           "propext"
         ]
       }
@@ -166050,7 +166060,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingMixedTermLift.lean": "0845ce075fe503f1008b32282b99a6441866a076505543b6ec965ffe89082a6e",
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
         "PPAC/Migration/Internal/SyntaxCodedMixedTermExistence.lean": "ee4bb1983ff381986b623b02c1a4c16c6053c1e7d664c3520640e8eacf75f90f",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean": "f5dac3f0824fbdf5350718bad07f176b9f0a6576033de7fbba7bfbb1028297e7",
@@ -167009,7 +167019,7 @@
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
         "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
         "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
         "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
         "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
@@ -167105,7 +167115,7 @@
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
         "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
-        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "7d54278b528bac2f7fb9658210ae72712c43046446f0cf215d7e26d32e9edf8c",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
         "PPAC/Migration/ForcingOpenLift.lean": "91625278645c5527dc3d04df31acf8f691a8edc892d64be3c050ea2459d3becc",
         "PPAC/Migration/ForcingOpenInstantiate.lean": "64c4429fca3d1302866f4ca8ed958de82677376da6448b9f3754387279606d2b",
         "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
@@ -168358,6 +168368,298 @@
           "propext"
         ]
       }
+    },
+    "forcing_condition_opening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingConditionOpening.lean",
+      "source_declarations": [
+        "AtomicData.force_mono neg/ex branches",
+        "forceFormula_instantiate",
+        "force_of_dense"
+      ],
+      "consumers": [
+        "Original force_mono negative/existential branches must instantiate at arbitrary stronger r, independently of the outer p stored in S[j]",
+        "Actual complete negative shell guard normalization at arbitrary condition before uniform forcing MP"
+      ],
+      "reuse_producers": [
+        "Original ForcingRebindOpeningTriangle internal variable analysis with exact retained finite adaptations",
+        "Existing ForcingReflexiveImages Replacement/list encoder, no alternate table constructor",
+        "Existing full ForcingFormulaInduction.cancel and original mode2 formula bridges",
+        "Existing full mixed-formula actual_exists, original six compiler witnesses and ordinary ZFReplay"
+      ],
+      "scope": "ARBITRARY legal internally coded condition P, without field S[j]=P. Original compiler/lift/open/native mode2 judgments are retained. Internally construct exact S[j:=P] via original Replacement/encoding and direct formula output O via existing all-internal mixed-formula totality; prove actual Y=O. No desired output/table/equality oracle in normalize. Runtime scopes/terms/codes may be nonstandard. Original same-condition interfaces remain valid; two existing helper bodies are only exposed. This generalizes an essential diagonal restriction before negative/existential monotonicity; does NOT prove force_mono, force_of_dense, forcing MP, all-internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingConditionOpening.term": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.term_diagram": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.resultData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.resultData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.resultBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.normalize": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingConditionOpening.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingConditionOpening.lean": "19a828a9777a11a9a5a45bbab0f6b290003a540cd5f8596a799354589195fb19",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
+        "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+        "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98"
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ForcingRebindOpeningTriangle.lean",
+          "producer_sha256": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
+          "source_start": "private structure Inputs",
+          "source_end": "\ntheorem intro_old",
+          "target_start": "private structure Inputs",
+          "target_end": "\nprivate theorem bound_point",
+          "replacements": [
+            [
+              "private structure Inputs {m} (Γ : Context m) (w mode z a f T A C R S K H j n q P x u t y o : Fin m) (d : Fin 6 → Fin m) : Prop where\n  zf : ZFContext.Evidence Γ\n",
+              "private structure Inputs {m} (Γ : Context m) (w mode z a f T A C R S D K H j n q P x u t y o : Fin m) (d : Fin 6 → Fin m) : Prop where\n  zf : ZFContext.Evidence Γ\n"
+            ],
+            [
+              "  condition : Derives Γ (Formula.mem j f)\n  parameter : Derives Γ (field w S j P)\n  first : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (d 3) (d 5) a f A f x u)\n",
+              "  condition : Derives Γ (Formula.mem j f)\n  parameter : Derives Γ (SyntaxTermSyntax.term w z T P)\n  replacement : Derives Γ (ForcingReflexiveImages.replacement w f z T S j P D)\n  first : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (d 3) (d 5) a f A f x u)\n"
+            ],
+            [
+              "  run : Derives Γ (OriginalTransformRowSyntax.run 1 w mode z P t y)\n  direct : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a f z T x o)\n\nprivate theorem Inputs.add {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (E : Formula m) : Inputs (Context.add E Γ) w mode z a f T A C R S K H j n q P x u t y o d := {\n  zf := ZFContext.add h.zf E\n",
+              "  run : Derives Γ (OriginalTransformRowSyntax.run 1 w mode z P t y)\n  direct : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R D a f z T x o)\n\nprivate theorem Inputs.add {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (E : Formula m) : Inputs (Context.add E Γ) w mode z a f T A C R S D K H j n q P x u t y o d := {\n  zf := ZFContext.add h.zf E\n"
+            ],
+            [
+              "  parameter := SourceLogic.add h.parameter E\n  first := SourceLogic.add h.first E\n",
+              "  parameter := SourceLogic.add h.parameter E\n  replacement := SourceLogic.add h.replacement E\n  first := SourceLogic.add h.first E\n"
+            ],
+            [
+              "\nprivate theorem Inputs.under {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (B : Formula (m+1)) :\n    Inputs (Context.add B (Context.image Formula.raise Γ)) w.castSucc mode.castSucc z.castSucc a.castSucc f.castSucc T.castSucc A.castSucc C.castSucc R.castSucc S.castSucc K.castSucc H.castSucc j.castSucc n.castSucc q.castSucc P.castSucc x.castSucc u.castSucc t.castSucc y.castSucc o.castSucc (fun k => (d k).castSucc) := {\n  zf := ZFContext.under h.zf B\n",
+              "\nprivate theorem Inputs.under {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (B : Formula (m+1)) :\n    Inputs (Context.add B (Context.image Formula.raise Γ)) w.castSucc mode.castSucc z.castSucc a.castSucc f.castSucc T.castSucc A.castSucc C.castSucc R.castSucc S.castSucc D.castSucc K.castSucc H.castSucc j.castSucc n.castSucc q.castSucc P.castSucc x.castSucc u.castSucc t.castSucc y.castSucc o.castSucc (fun k => (d k).castSucc) := {\n  zf := ZFContext.under h.zf B\n"
+            ],
+            [
+              "  condition := SourceLogic.under h.condition B\n  parameter := of_eq (field_rename w S j P Fin.castSucc) (SourceLogic.under h.parameter B)\n  first := of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w (d 3) (d 5) a f A f x u Fin.castSucc) (SourceLogic.under h.first B)\n",
+              "  condition := SourceLogic.under h.condition B\n  parameter := of_eq (SyntaxTermSyntax.term_rename w z T P Fin.castSucc) (SourceLogic.under h.parameter B)\n  replacement := of_eq (ForcingReflexiveImages.replacement_rename w f z T S j P D Fin.castSucc) (SourceLogic.under h.replacement B)\n  first := of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w (d 3) (d 5) a f A f x u Fin.castSucc) (SourceLogic.under h.first B)\n"
+            ],
+            [
+              "  run := of_eq (OriginalTransformRowSyntax.run_rename 1 w mode z P t y Fin.castSucc) (SourceLogic.under h.run B)\n  direct := of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w R S a f z T x o Fin.castSucc) (SourceLogic.under h.direct B)\n}\n",
+              "  run := of_eq (OriginalTransformRowSyntax.run_rename 1 w mode z P t y Fin.castSucc) (SourceLogic.under h.run B)\n  direct := of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w R D a f z T x o Fin.castSucc) (SourceLogic.under h.direct B)\n}\n"
+            ]
+          ],
+          "normalized_body_sha256": "7ab36921c0a7417b708849d89aadb43992037e81c83f06ea65a3dd69b1bb36a6"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingRebindOpeningTriangle.lean",
+          "producer_sha256": "99a45f81f96cede43b8f667c007e252a0b5da0b49e2bd175abc7d461cc14bc71",
+          "source_start": "private theorem bound_point",
+          "source_end": "\ndef input",
+          "target_start": "private theorem bound_point",
+          "target_end": "\nprivate def quad",
+          "replacements": [
+            [
+              "private theorem bound_point {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (i I : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code true w i x))\n    (hs : Derives Γ (successor I i)) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w R S a f z T x o i h.omega hLists hx)) h.direct\n  have hr := ForcingRebindTerms.from_data h.zf true w a f A j n q x u i I d h.omega h.data hx (.conjL hd) hs\n",
+              "private theorem bound_point {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (i I : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code true w i x))\n    (hs : Derives Γ (successor I i)) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hNew := Derives.conjI (.conjL hLists) (ForcingReflexiveImages.target_type w f z T S j P D h.replacement)\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w R D a f z T x o i h.omega hNew hx)) h.direct\n  have hr := ForcingRebindTerms.from_data h.zf true w a f A j n q x u i I d h.omega h.data hx (.conjL hd) hs\n"
+            ],
+            [
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w K H A f C T u t I h.omega hOut hu)) h.second\n  have hp := SyntaxMixedImageCodeFields.field_type w f z T S j P (.conjR hLists) h.condition h.parameter\n  have ho := intro_old true w mode z P A f K H i I t y ht h.run\n",
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w K H A f C T u t I h.omega hOut hu)) h.second\n  have hp := h.parameter\n  have ho := intro_old true w mode z P A f K H i I t y ht h.run\n"
+            ],
+            [
+              "\nprivate theorem away_point {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (i : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code false w i x))\n    (hne : Derives Γ (Formula.equal i j).neg) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w R S a f z T x o i h.omega hLists hx)) h.direct\n  have hs : Derives Γ (ForcingOpenLift.step false i i) := .impI (.hyp (Or.inl rfl))\n",
+              "\nprivate theorem away_point {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (i : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code false w i x))\n    (hne : Derives Γ (Formula.equal i j).neg) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hNew := Derives.conjI (.conjL hLists) (ForcingReflexiveImages.target_type w f z T S j P D h.replacement)\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w R D a f z T x o i h.omega hNew hx)) h.direct\n  have hc := Derives.impE (.conjL (ForcingReflexiveImages.field_iff w f z T S j P D i o h.replacement (.conjL hd))) (.conjR hd)\n  have hOld : Derives Γ (field w S i o) := by\n    apply Derives.disjE hc\n    · exact .botE (.impE (add hne _) (.conjL (.hyp (Or.inl rfl))))\n    · exact .conjR (.hyp (Or.inl rfl))\n  have hs : Derives Γ (ForcingOpenLift.step false i i) := .impI (.hyp (Or.inl rfl))\n"
+            ],
+            [
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w K H A f C T u t i h.omega hOut hu)) h.second\n  have hp := SyntaxMixedImageCodeFields.field_type w f z T S j P (.conjR hLists) h.condition h.parameter\n  have ho := intro_old false w mode z P A f K H i i t y ht h.run\n  exact .impE (.conjL (ForcingOpenInstantiate.old_iff h.zf false w mode z P a f T A C R S K H i i o y\n    h.omega h.isMode h.zero hp h.opening h.lift (.conjL hd) (.conjR hd) hs)) ho\n\n\nprivate theorem selected_point {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (i : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code false w i x))\n    (hij : Derives Γ (.equal i j)) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w R S a f z T x o i h.omega hLists hx)) h.direct\n  have hs : Derives Γ (ForcingOpenLift.step false i i) := .impI (.hyp (Or.inl rfl))\n",
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w K H A f C T u t i h.omega hOut hu)) h.second\n  have hp := h.parameter\n  have ho := intro_old false w mode z P A f K H i i t y ht h.run\n  exact .impE (.conjL (ForcingOpenInstantiate.old_iff h.zf false w mode z P a f T A C R S K H i i o y\n    h.omega h.isMode h.zero hp h.opening h.lift (.conjL hd) hOld hs)) ho\n\n\nprivate theorem selected_point {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (i : Fin m) (hx : Derives Γ (SyntaxVariableSyntax.code false w i x))\n    (hij : Derives Γ (.equal i j)) : Derives Γ (.equal y o) := by\n  have hLists := ForcingOpenLayout.environment_types w z a f T R S h.opening\n  have hNew := Derives.conjI (.conjL hLists) (ForcingReflexiveImages.target_type w f z T S j P D h.replacement)\n  have hd := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf false w R D a f z T x o i h.omega hNew hx)) h.direct\n  have hs : Derives Γ (ForcingOpenLift.step false i i) := .impI (.hyp (Or.inl rfl))\n"
+            ],
+            [
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w K H A f C T u t z h.omega hOut hU)) h.second\n  have hp := SyntaxMixedImageCodeFields.field_type w f z T S j P (.conjR hLists) h.condition h.parameter\n  have ho := zero_from_field h.zf w mode z P a f T A C R S K H t y h.omega h.zero h.opening h.lift (.conjR ht) h.run\n  have hyp := Derives.impE (.conjL (ForcingOpenInstantiate.zero_iff h.zf w mode z P a f T A C R S K H y h.omega h.isMode h.zero hp h.opening h.lift)) ho\n  have hjo := field_index w S i j o hij (.conjR hd)\n  have hjn := StructuralListTraceOrder.member_member h.zf w j f h.omega (.conjL (.conjR hLists)) h.condition\n  have hop := StructuralListFieldValues.unique h.zf w S j o P h.omega hjn hjo h.parameter\n  exact eq_trans hyp (eq_symm hop)\n\n",
+              "  have ht := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field h.zf true w K H A f C T u t z h.omega hOut hU)) h.second\n  have hp := h.parameter\n  have ho := zero_from_field h.zf w mode z P a f T A C R S K H t y h.omega h.zero h.opening h.lift (.conjR ht) h.run\n  have hyp := Derives.impE (.conjL (ForcingOpenInstantiate.zero_iff h.zf w mode z P a f T A C R S K H y h.omega h.isMode h.zero hp h.opening h.lift)) ho\n  have hc := Derives.impE (.conjL (ForcingReflexiveImages.field_iff w f z T S j P D i o h.replacement (.conjL hd))) (.conjR hd)\n  have hop : Derives Γ (.equal o P) := by\n    apply Derives.disjE hc\n    · exact .conjR (.hyp (Or.inl rfl))\n    · exact .botE (.impE (.conjL (.hyp (Or.inl rfl))) (add hij _))\n  exact eq_trans hyp (eq_symm hop)\n\n\n"
+            ],
+            [
+              "\nprivate theorem point {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) (bound : Bool) (i I : Fin m)\n    (hx : Derives Γ (SyntaxVariableSyntax.code bound w i x)) (hs : Derives Γ (ForcingOpenLift.step bound i I)) :\n",
+              "\nprivate theorem point {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) (bound : Bool) (i I : Fin m)\n    (hx : Derives Γ (SyntaxVariableSyntax.code bound w i x)) (hs : Derives Γ (ForcingOpenLift.step bound i I)) :\n"
+            ],
+            [
+              "\nprivate theorem all_terms {m} {Γ : Context m} {w mode z a f T A C R S K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S K H j n q P x u t y o d) : Derives Γ (.equal y o) := by\n  have hx := SyntaxCodedMixedTermTyping.source_type w R S a f z T x o h.direct\n  apply Derives.disjE (.conjR hx)\n",
+              "\nprivate theorem all_terms {m} {Γ : Context m} {w mode z a f T A C R S D K H j n q P x u t y o : Fin m} {d : Fin 6 → Fin m}\n    (h : Inputs Γ w mode z a f T A C R S D K H j n q P x u t y o d) : Derives Γ (.equal y o) := by\n  have hx := SyntaxCodedMixedTermTyping.source_type w R D a f z T x o h.direct\n  apply Derives.disjE (.conjR hx)\n"
+            ],
+            [
+              "    have h1 := (h.add E).under B\n    have htype := SyntaxCodedMixedTermTyping.source_type w.castSucc R.castSucc S.castSucc a.castSucc f.castSucc z.castSucc T.castSucc x.castSucc o.castSucc h1.direct\n    have hin := StructuralListTraceOrder.member_member h1.zf w.castSucc (Fin.last m) a.castSucc h1.omega (.conjL (.conjL htype)) (.conjL hB)\n",
+              "    have h1 := (h.add E).under B\n    have htype := SyntaxCodedMixedTermTyping.source_type w.castSucc R.castSucc D.castSucc a.castSucc f.castSucc z.castSucc T.castSucc x.castSucc o.castSucc h1.direct\n    have hin := StructuralListTraceOrder.member_member h1.zf w.castSucc (Fin.last m) a.castSucc h1.omega (.conjL (.conjL htype)) (.conjL hB)\n"
+            ],
+            [
+              "theorem term {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q P x u t y o : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode))\n",
+              "theorem term {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S D K H j n q P x u t y o : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode))\n"
+            ],
+            [
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d))\n    (hj : Derives Γ (.mem j f)) (hp : Derives Γ (field w S j P))\n    (hFirst : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (d 3) (d 5) a f A f x u))\n",
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d))\n    (hj : Derives Γ (.mem j f)) (hp : Derives Γ (SyntaxTermSyntax.term w z T P))\n    (hD : Derives Γ (ForcingReflexiveImages.replacement w f z T S j P D))\n    (hFirst : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (d 3) (d 5) a f A f x u))\n"
+            ],
+            [
+              "    (hRun : Derives Γ (OriginalTransformRowSyntax.run 1 w mode z P t y))\n    (hDirect : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a f z T x o)) : Derives Γ (.equal y o) :=\n  all_terms {\n",
+              "    (hRun : Derives Γ (OriginalTransformRowSyntax.run 1 w mode z P t y))\n    (hDirect : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R D a f z T x o)) : Derives Γ (.equal y o) :=\n  all_terms {\n"
+            ],
+            [
+              "    parameter := hp\n    first := hFirst\n",
+              "    parameter := hp\n    replacement := hD\n    first := hFirst\n"
+            ]
+          ],
+          "normalized_body_sha256": "816bf548a754a9ef874cc11e9776488bc3220208d164713f1cbedbadee28c3c2"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingTermDiagram.lean",
+          "producer_sha256": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+          "source_start": "theorem root {m}",
+          "source_end": "\ndef rootInput",
+          "target_start": "theorem term_diagram {m}",
+          "target_end": "\ntheorem formula {m}",
+          "replacements": [
+            [
+              "theorem root {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q P r s : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode)) (hz : Derives Γ (empty z))\n",
+              "theorem term_diagram {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S D K H j n q P r s : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode)) (hz : Derives Γ (empty z))\n"
+            ],
+            [
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d)) (hj : Derives Γ (.mem j f))\n    (hp : Derives Γ (StructuralListFieldSyntax.field w S j P))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s)) :\n    Derives Γ (rootDiagram w z a f T A C R S K H r s d) := by\n  have hf := InstantiateOperationFrameRoot.from_actual_input hZ w mode z P T C r s hw hm hz hi\n",
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d)) (hj : Derives Γ (.mem j f))\n    (hp : Derives Γ (SyntaxTermSyntax.term w z T P))\n    (hUpdate : Derives Γ (ForcingReflexiveImages.replacement w f z T S j P D))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s)) :\n    Derives Γ (ForcingTermDiagram.diagram w (quad a A C z) (quad f f T T) (quad (d 3) K r R) (quad (d 5) H s D)) := by\n  have hf := InstantiateOperationFrameRoot.from_actual_input hZ w mode z P T C r s hw hm hz hi\n"
+            ],
+            [
+              "  apply Derives.impI\n  let D := runs (old 5 w) (fun i => old 5 (quad a A C z i)) (fun i => old 5 (quad f f T T i))\n    (fun i => old 5 (quad (d 3) K r R i)) (fun i => old 5 (quad (d 5) H s S i))\n    (slot 5 0) (slot 5 1) (slot 5 2) (slot 5 3) (slot 5 4)\n  let Δ := Context.add D (raisedContext 5 Γ)\n  have hD : Derives Δ D := .hyp (Or.inl rfl)\n  have hZ5 := HornBinderRules.zf_body 5 hZ D\n  have hw5 := of_eq (omega_rename w (old 5)) (HornBinderRules.under_body 5 hw D)\n  have hf5 := of_eq (InstantiateOperationFrameSyntax.frame_rename w mode z P C T z T r s (old 5)) (HornBinderRules.under_body 5 hf D)\n  have hr := Derives.conjR (Derives.impE (.conjR (InstantiateFrameTerm.guarded_coded_iff hZ5\n",
+              "  apply Derives.impI\n  let B := runs (old 5 w) (fun i => old 5 (quad a A C z i)) (fun i => old 5 (quad f f T T i))\n    (fun i => old 5 (quad (d 3) K r R i)) (fun i => old 5 (quad (d 5) H s D i))\n    (slot 5 0) (slot 5 1) (slot 5 2) (slot 5 3) (slot 5 4)\n  let Δ := Context.add B (raisedContext 5 Γ)\n  have hD : Derives Δ B := .hyp (Or.inl rfl)\n  have hZ5 := HornBinderRules.zf_body 5 hZ B\n  have hw5 := of_eq (omega_rename w (old 5)) (HornBinderRules.under_body 5 hw B)\n  have hf5 := of_eq (InstantiateOperationFrameSyntax.frame_rename w mode z P C T z T r s (old 5)) (HornBinderRules.under_body 5 hf B)\n  have hr := Derives.conjR (Derives.impE (.conjR (InstantiateFrameTerm.guarded_coded_iff hZ5\n"
+            ],
+            [
+              "    (slot 5 2) (slot 5 3) hw5 hf5)) (.conjL (.conjR (.conjR hD))))\n  exact ForcingRebindOpeningTriangle.term hZ5 (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C)\n    (old 5 R) (old 5 S) (old 5 K) (old 5 H) (old 5 j) (old 5 n) (old 5 q) (old 5 P)\n    (slot 5 0) (slot 5 1) (slot 5 2) (slot 5 3) (slot 5 4) (fun i => old 5 (d i))\n    hw5 (of_eq (SyntaxNumeralSyntax.numeral_rename 2 mode (old 5)) (HornBinderRules.under_body 5 hm D))\n    (of_eq (empty_rename z (old 5)) (HornBinderRules.under_body 5 hz D))\n    (of_eq (ForcingOpenLayout.environment_rename w z a f T R S (old 5)) (HornBinderRules.under_body 5 he D))\n    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w R S a f z T A C K H (old 5)) (HornBinderRules.under_body 5 hl D))\n    (of_eq (ForcingConditionRebind.data_rename w a f A j n q d (old 5)) (HornBinderRules.under_body 5 hd D))\n    (HornBinderRules.under_body 5 hj D)\n    (of_eq (StructuralListFieldSyntax.field_rename w S j P (old 5)) (HornBinderRules.under_body 5 hp D))\n    (.conjL hD) (.conjL (.conjR hD)) hr (.conjR (.conjR (.conjR hD)))\n",
+              "    (slot 5 2) (slot 5 3) hw5 hf5)) (.conjL (.conjR (.conjR hD))))\n  exact term hZ5 (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C)\n    (old 5 R) (old 5 S) (old 5 D) (old 5 K) (old 5 H) (old 5 j) (old 5 n) (old 5 q) (old 5 P)\n    (slot 5 0) (slot 5 1) (slot 5 2) (slot 5 3) (slot 5 4) (fun i => old 5 (d i))\n    hw5 (of_eq (SyntaxNumeralSyntax.numeral_rename 2 mode (old 5)) (HornBinderRules.under_body 5 hm B))\n    (of_eq (empty_rename z (old 5)) (HornBinderRules.under_body 5 hz B))\n    (of_eq (ForcingOpenLayout.environment_rename w z a f T R S (old 5)) (HornBinderRules.under_body 5 he B))\n    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w R S a f z T A C K H (old 5)) (HornBinderRules.under_body 5 hl B))\n    (of_eq (ForcingConditionRebind.data_rename w a f A j n q d (old 5)) (HornBinderRules.under_body 5 hd B))\n    (HornBinderRules.under_body 5 hj B)\n    (of_eq (SyntaxTermSyntax.term_rename w z T P (old 5)) (HornBinderRules.under_body 5 hp B))\n    (of_eq (ForcingReflexiveImages.replacement_rename w f z T S j P D (old 5)) (HornBinderRules.under_body 5 hUpdate B))\n    (.conjL hD) (.conjL (.conjR hD)) hr (.conjR (.conjR (.conjR hD)))\n"
+            ]
+          ],
+          "normalized_body_sha256": "c50640c16765825103e0f280e5875785da5df975decd5006cb26ea0c50376d27"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingFormulaCancellation.lean",
+          "producer_sha256": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+          "source_start": "theorem root {m}",
+          "source_end": "\ndef input",
+          "target_start": "theorem formula {m}",
+          "target_end": "\ntheorem from_compiled {m}",
+          "replacements": [
+            [
+              "theorem root {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q I Y O P r s : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode)) (hz : Derives Γ (empty z))\n",
+              "theorem formula {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S D K H j n q I Y O P r s : Fin m) (d : Fin 6 → Fin m)\n    (hw : Derives Γ (omega w)) (hm : Derives Γ (SyntaxNumeralSyntax.numeral 2 mode)) (hz : Derives Γ (empty z))\n"
+            ],
+            [
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d)) (hj : Derives Γ (.mem j f))\n    (hp : Derives Γ (StructuralListFieldSyntax.field w S j P))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s))\n",
+              "    (hd : Derives Γ (ForcingConditionRebind.data w a f A j n q d)) (hj : Derives Γ (.mem j f))\n    (hp : Derives Γ (SyntaxTermSyntax.term w z T P))\n    (hD : Derives Γ (ForcingReflexiveImages.replacement w f z T S j P D))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s))\n"
+            ],
+            [
+              "    (hrun : Derives Γ (OriginalTransformRowSyntax.run 3 w mode z P I Y))\n    (hdirect : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a f z T n O)) : Derives Γ (.equal Y O) := by\n  have hdiagram := ForcingTermDiagram.root hZ w mode z a f T A C R S K H j n q P r s d hw hm hz he hl hd hj hp hi\n  have htype := SyntaxMixedFormulaJudgment.target_type w K H A f C T q I hopen\n",
+              "    (hrun : Derives Γ (OriginalTransformRowSyntax.run 3 w mode z P I Y))\n    (hdirect : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R D a f z T n O)) : Derives Γ (.equal Y O) := by\n  have hdiagram := term_diagram hZ w mode z a f T A C R S D K H j n q P r s d hw hm hz he hl hd hj hp hD hi\n  have htype := SyntaxMixedFormulaJudgment.target_type w K H A f C T q I hopen\n"
+            ],
+            [
+              "  have hreb := Derives.conjR (.conjR (.conjR hd))\n  exact ForcingFormulaInduction.cancel hZ w (four a A C z) (four f f T T) (four (d 3) K r R) (four (d 5) H s S)\n    n q I Y O hw hdiagram hreb hopen hcode hdirect\n",
+              "  have hreb := Derives.conjR (.conjR (.conjR hd))\n  exact ForcingFormulaInduction.cancel hZ w (quad a A C z) (quad f f T T) (quad (d 3) K r R) (quad (d 5) H s D)\n    n q I Y O hw hdiagram hreb hopen hcode hdirect\n"
+            ]
+          ],
+          "normalized_body_sha256": "ffd2eb84559d8a61b46de5387ca324515e1bdca2594aa3ad1aff0e7a4f47de76"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingFormulaCancellation.lean",
+          "producer_sha256": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+          "source_start": "theorem from_compiled {m}",
+          "source_end": "\ndef compiledInput",
+          "target_start": "theorem from_compiled {m}",
+          "target_end": "\n/-- The actual condition-update",
+          "replacements": [
+            [
+              "theorem from_compiled {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S K H j n q I Y O P r s : Fin m)\n    (hw : Derives Γ (omega w))\n",
+              "theorem from_compiled {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)\n    (w mode z a f T A C R S D K H j n q I Y O P r s : Fin m)\n    (hw : Derives Γ (omega w))\n"
+            ],
+            [
+              "    (hj : Derives Γ (Formula.mem j f))\n    (hp : Derives Γ (StructuralListFieldSyntax.field w S j P))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s))\n",
+              "    (hj : Derives Γ (Formula.mem j f))\n    (hp : Derives Γ (SyntaxTermSyntax.term w z T P))\n    (hD : Derives Γ (ForcingReflexiveImages.replacement w f z T S j P D))\n    (hi : Derives Γ (SyntaxTopCodedEnvironmentSyntax.instantiateCoded w z T C P r s))\n"
+            ],
+            [
+              "    (hr : Derives Γ (OriginalTransformRowSyntax.run 3 w mode z P I Y))\n    (hdir : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a f z T n O)) : Derives Γ (.equal Y O) := by\n  let B := ForcingConditionRebind.data (HornBinderSyntax.old 6 w) (HornBinderSyntax.old 6 a) (HornBinderSyntax.old 6 f) (HornBinderSyntax.old 6 A)\n",
+              "    (hr : Derives Γ (OriginalTransformRowSyntax.run 3 w mode z P I Y))\n    (hdir : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R D a f z T n O)) : Derives Γ (.equal Y O) := by\n  let B := ForcingConditionRebind.data (HornBinderSyntax.old 6 w) (HornBinderSyntax.old 6 a) (HornBinderSyntax.old 6 f) (HornBinderSyntax.old 6 A)\n"
+            ],
+            [
+              "  have hB : Derives Δ B := .hyp (Or.inl rfl)\n  exact root (HornBinderRules.zf_body 6 hZ B)\n    (HornBinderSyntax.old 6 w) (HornBinderSyntax.old 6 mode) (HornBinderSyntax.old 6 z) (HornBinderSyntax.old 6 a) (HornBinderSyntax.old 6 f) (HornBinderSyntax.old 6 T) (HornBinderSyntax.old 6 A) (HornBinderSyntax.old 6 C) (HornBinderSyntax.old 6 R) (HornBinderSyntax.old 6 S) (HornBinderSyntax.old 6 K) (HornBinderSyntax.old 6 H) (HornBinderSyntax.old 6 j) (HornBinderSyntax.old 6 n) (HornBinderSyntax.old 6 q) (HornBinderSyntax.old 6 I) (HornBinderSyntax.old 6 Y) (HornBinderSyntax.old 6 O) (HornBinderSyntax.old 6 P) (HornBinderSyntax.old 6 r) (HornBinderSyntax.old 6 s) (HornBinderSyntax.slot 6)\n    (of_eq (omega_rename w (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hw B))\n",
+              "  have hB : Derives Δ B := .hyp (Or.inl rfl)\n  exact formula (HornBinderRules.zf_body 6 hZ B)\n    (HornBinderSyntax.old 6 w) (HornBinderSyntax.old 6 mode) (HornBinderSyntax.old 6 z) (HornBinderSyntax.old 6 a) (HornBinderSyntax.old 6 f) (HornBinderSyntax.old 6 T) (HornBinderSyntax.old 6 A) (HornBinderSyntax.old 6 C) (HornBinderSyntax.old 6 R) (HornBinderSyntax.old 6 S) (HornBinderSyntax.old 6 D) (HornBinderSyntax.old 6 K) (HornBinderSyntax.old 6 H) (HornBinderSyntax.old 6 j) (HornBinderSyntax.old 6 n) (HornBinderSyntax.old 6 q) (HornBinderSyntax.old 6 I) (HornBinderSyntax.old 6 Y) (HornBinderSyntax.old 6 O) (HornBinderSyntax.old 6 P) (HornBinderSyntax.old 6 r) (HornBinderSyntax.old 6 s) (HornBinderSyntax.slot 6)\n    (of_eq (omega_rename w (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hw B))\n"
+            ],
+            [
+              "    (HornBinderRules.under_body 6 hj B)\n    (of_eq (StructuralListFieldSyntax.field_rename w S j P (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hp B))\n    (of_eq (SyntaxTopCodedEnvironmentSyntax.instantiateCoded_rename w z T C P r s (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hi B))\n",
+              "    (HornBinderRules.under_body 6 hj B)\n    (of_eq (SyntaxTermSyntax.term_rename w z T P (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hp B))\n    (of_eq (ForcingReflexiveImages.replacement_rename w f z T S j P D (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hD B))\n    (of_eq (SyntaxTopCodedEnvironmentSyntax.instantiateCoded_rename w z T C P r s (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hi B))\n"
+            ],
+            [
+              "    (of_eq (OriginalTransformRowSyntax.run_rename 3 w mode z P I Y (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hr B))\n    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w R S a f z T n O (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hdir B))\n",
+              "    (of_eq (OriginalTransformRowSyntax.run_rename 3 w mode z P I Y (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hr B))\n    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w R D a f z T n O (HornBinderSyntax.old 6)) (HornBinderRules.under_body 6 hdir B))\n"
+            ]
+          ],
+          "normalized_body_sha256": "fb792132e546c614ea047a3284e41c863cd29141e02c207c4ae03de0838decae"
+        }
+      ]
     }
   },
   "selected_route_consumer_audit": {

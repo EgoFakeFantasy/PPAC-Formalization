@@ -1141,3 +1141,4 @@ import PPAC.Migration.ForcingReflexiveDiagram
 import PPAC.Migration.ForcingRelationGuardProof
 import PPAC.Migration.ForcingNegGuardProof
 import PPAC.Migration.InternalProofUniversal
+import PPAC.Migration.ForcingConditionOpening
