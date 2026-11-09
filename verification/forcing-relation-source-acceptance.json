@@ -1,0 +1,303 @@
+{
+  "verified_at": "2026-11-09T17:47:25.565380+00:00",
+  "baseline_commit": "7167663c0de08c938fcc2d460e284ec65721c13d",
+  "original_stage": 10,
+  "background": "Original YesMetaZFC pure membership language, nativeZF, original six-rule FirstOrder.Derives and existing19-rule source replay.",
+  "result": "Directly consumes original ForcingPreorderCode.rawData and actual ForcingGuardCode.compiled true. The SAME source R quotation, FOUR actual native image tables and both actual mixed queries to selected preorder relation atom / original guard quotation are internally constructed. All FOUR compiler and FIVE common-source witnesses are handled in object quantifiers; full compiler matrix/head and arbitrary internal guard scope are retained. Original Syntax naturality, variable index readout, native quotation/environment totality are reused; no new kernel/checker/recursor/formula induction.",
+  "proof_boundaries": {
+    "ordinary_nativeZF_kernel_certificates": 1,
+    "original_guard_R_q_p_and_three_preorder_relation_atoms_exact_AST_readout": true,
+    "same_source_R_quotation_and_all_four_maps_and_queries_object_generated": true,
+    "actual_guard_compilation_and_rawData_consumed": true,
+    "fixed_intermediate_SOURCE_profiles_only": "0/1/3 and the original finite source arity are quotation metadata; no forcing target scope is required standard.",
+    "arbitrary_internal_guard_scope_and_runtime_codes_preserved": true,
+    "matrix_source_quote_map_query_or_equality_answer_assumed": false,
+    "guard_or_preorder_truth_assumed": false,
+    "whole_two_path_target_code_cancellation_and_guard_ID_complete": false,
+    "canonical_context_fresh_forall_full_mono_dense_MP_complete": false,
+    "all_internal_axioms_Proof_reduction_finalCon_complete": false
+  },
+  "actual_source_consumers": [
+    "Pinned original force_mono neg/ex: hr.trans hqp",
+    "Original literal R(r,q),R(q,p),R(r,p) and R(q,p) guard with original parameter/P/p slots",
+    "Next: pointwise target-code diagrams combining ForcingPreorderPrefix and ForcingGuardOpening direct outputs"
+  ],
+  "validation": {
+    "audited_declarations": 39230,
+    "without_axioms": 2264,
+    "with_recorded_dependencies": 36966,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39195,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingGuardCode.relation_template",
+      "PPAC.Migration.ForcingGuardCode.template_source",
+      "PPAC.Migration.ForcingPreorderCode.atom_qp",
+      "PPAC.Migration.ForcingPreorderCode.atom_rp",
+      "PPAC.Migration.ForcingPreorderCode.atom_rq",
+      "PPAC.Migration.ForcingRelationSource.arguments",
+      "PPAC.Migration.ForcingRelationSource.atom",
+      "PPAC.Migration.ForcingRelationSource.atomMap",
+      "PPAC.Migration.ForcingRelationSource.atom_source",
+      "PPAC.Migration.ForcingRelationSource.body",
+      "PPAC.Migration.ForcingRelationSource.data",
+      "PPAC.Migration.ForcingRelationSource.data_rename",
+      "PPAC.Migration.ForcingRelationSource.emptyMap",
+      "PPAC.Migration.ForcingRelationSource.from_compiled",
+      "PPAC.Migration.ForcingRelationSource.from_matrix",
+      "PPAC.Migration.ForcingRelationSource.guardBody",
+      "PPAC.Migration.ForcingRelationSource.guardData",
+      "PPAC.Migration.ForcingRelationSource.guardData_rename",
+      "PPAC.Migration.ForcingRelationSource.guardMap",
+      "PPAC.Migration.ForcingRelationSource.guardResult",
+      "PPAC.Migration.ForcingRelationSource.guardResult_rename",
+      "PPAC.Migration.ForcingRelationSource.guard_source",
+      "PPAC.Migration.ForcingRelationSource.input",
+      "PPAC.Migration.ForcingRelationSource.kernel_certificate",
+      "PPAC.Migration.ForcingRelationSource.leftIndex",
+      "PPAC.Migration.ForcingRelationSource.mapping",
+      "PPAC.Migration.ForcingRelationSource.mapping_at",
+      "PPAC.Migration.ForcingRelationSource.produce",
+      "PPAC.Migration.ForcingRelationSource.produced",
+      "PPAC.Migration.ForcingRelationSource.produced_rename",
+      "PPAC.Migration.ForcingRelationSource.rawSlot",
+      "PPAC.Migration.ForcingRelationSource.rightIndex",
+      "PPAC.Migration.ForcingRelationSource.sentence",
+      "PPAC.Migration.ForcingRelationSource.source",
+      "PPAC.Migration.ForcingRelationSource.source_substitute"
+    ],
+    "new_axioms": [],
+    "old_PPAC_proof_files_completely_unchanged": 2851,
+    "old_append_only_modules_exact_prefixes": {
+      "PPAC/Migration/ForcingGuardCode.lean": {
+        "exact_original_bytes": 29873,
+        "original_prefix_sha256": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c"
+      },
+      "PPAC/Migration/ForcingPreorderCode.lean": {
+        "exact_original_bytes": 75092,
+        "original_prefix_sha256": "5e3672151156a4f81244340c07e83a1aa0cb4472e0410dfe6e7ae6d1962842ce"
+      }
+    },
+    "old_guard_preorder_public_footprints_unchanged": 50,
+    "sealed_inputs_rehashed": 2887,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "regression_tests": {
+      "ci_compatibility": 9,
+      "original_comparator_guard": 7
+    },
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "local_log_sha256": {
+      ".local/relation-templates-full-verification.log": "03ffcd532c3f811e99e93cecdb2bdea37da05586142bb622bfb5a95371e3b49b",
+      ".local/relation-templates-preaudit.log": "fea7d10a5e42b735d67ce42bac9d1109ac9687175cbeb59237fcac5d7c65b85d",
+      ".local/relation-templates-source-preflight.log": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24",
+      ".local/relation-templates-ci-regressions.log": "362a73853012ca90ed71876d2475013293a2be877d056268d9b129bced37c738",
+      ".local/relation-templates-guard-regressions.log": "d58e7fd165dff5818e2a8f69f524977ffc00eaf800dc09df6763c8ad98e28fe3",
+      ".local/relation-templates-clean-inputs.log": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+    }
+  },
+  "remote_scope": "Local full acceptance only; new source edits are not yet published and still need their own independent Linux CI. Remote7167663 is the OLD39195-declaration accepted prefix/binder batch, current CI42662706463. Remote old a046b48 actual PASS39154 was decoded and archived separately.",
+  "cleanup": {
+    "removed_files": 19,
+    "removed_bytes": 15149500,
+    "entries": [
+      {
+        "name": "relation-templates-original-ForcingGuardCode.lean",
+        "bytes": 29873,
+        "sha256": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c"
+      },
+      {
+        "name": "relation-templates-original-ForcingPreorderCode.lean",
+        "bytes": 75092,
+        "sha256": "5e3672151156a4f81244340c07e83a1aa0cb4472e0410dfe6e7ae6d1962842ce"
+      },
+      {
+        "name": "relation-templates-baseline-summary.json",
+        "bytes": 14994623,
+        "sha256": "c638b0c6b77a6ed92d53f5f23062f4867a35e112943f92ac044fa6a9adab9ff4"
+      },
+      {
+        "name": "relation-templates-guard.log",
+        "bytes": 4511,
+        "sha256": "145b0361ee3a5c92d990f0bac49205ca2c6dbd09534f86270ce9935c5299160b"
+      },
+      {
+        "name": "relation-templates-guard-fixed.log",
+        "bytes": 4505,
+        "sha256": "93847e9a77d401c7ee133ec4853293cd5a98aaf6e9d89bce1c12f019939577e5"
+      },
+      {
+        "name": "relation-templates-guard-final.log",
+        "bytes": 105,
+        "sha256": "29359349a6d2170e68048ee3a067d3173ab22460b9d73e142c9da3e1ec1074da"
+      },
+      {
+        "name": "relation-templates-preorder.log",
+        "bytes": 6120,
+        "sha256": "2ca47ead8a745fdc6b996080dcce9d9f9637843c0e28dabc14a646fbd3d70007"
+      },
+      {
+        "name": "relation-templates-preorder-fixed.log",
+        "bytes": 9429,
+        "sha256": "8b4cbfefa82cfad7e0cdde960e0057119a9a2b3ea95199f4cff75010192f6ac5"
+      },
+      {
+        "name": "relation-templates-preorder-final.log",
+        "bytes": 107,
+        "sha256": "770a3b8d9d616ad41e98d5bc44e8af34b134d44d01f8a7cc97c3e4358e3eaeab"
+      },
+      {
+        "name": "relation-templates-all-atoms.log",
+        "bytes": 1485,
+        "sha256": "f016caa0a693b7f6710e855b5e528b3aff6bea2919cdab8547ebe9ebaef3c928"
+      },
+      {
+        "name": "relation-templates-source.log",
+        "bytes": 2504,
+        "sha256": "f55b1fddb110049bb13931ec2400ea1b074a7f19dbc584f9b4e7b9350c86be82"
+      },
+      {
+        "name": "relation-templates-source-fixed.log",
+        "bytes": 1730,
+        "sha256": "0ea62d11de9e7e2d0ef5d76c0b33e370a526117ff7d5e1a84d99eb545b46789e"
+      },
+      {
+        "name": "relation-templates-producer.log",
+        "bytes": 2509,
+        "sha256": "4c63eeee3e80d7e43477c662704b30a9e7ac8238c4e37500b9e3a0409dda0f7b"
+      },
+      {
+        "name": "relation-templates-producer-fixed.log",
+        "bytes": 2191,
+        "sha256": "f6808d488ed3ede83883a7ac787d3ba758bae9fe41cc2eaf625f019515b052de"
+      },
+      {
+        "name": "relation-templates-producer-final.log",
+        "bytes": 109,
+        "sha256": "95667f652564677fe9bb32fc835879c6eb245bd65af41f3b8680980cdc50eac9"
+      },
+      {
+        "name": "relation-templates-compiled.log",
+        "bytes": 109,
+        "sha256": "7ac9a4e0310fb73c1a19303642da08468a6170acc589dacf829693028ad0f655"
+      },
+      {
+        "name": "relation-templates-preaudit.lean",
+        "bytes": 5197,
+        "sha256": "6b20a80e5619de1876e852407a62c7c312b5e615aabd98bae75ec928e06891e9"
+      },
+      {
+        "name": "relation-templates-registration.json",
+        "bytes": 3360,
+        "sha256": "95cc5c8a89772f9aac669f4c3f528c306f173a7933ecc624330555a5822b4917"
+      },
+      {
+        "name": "relation-templates-finalize.py",
+        "bytes": 5941,
+        "sha256": "7261c2a8ceeda31fcea217372d9c1fbfec6ca0d124c7776f4823545da1500a69"
+      }
+    ],
+    "no_unrelated_files_processes_or_dependencies_removed": true,
+    "postcleanup_actual_source_trust0_exit_code": 0,
+    "postcleanup_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sealed_inputs_rehashed_after_cleanup": 2887
+  }
+}

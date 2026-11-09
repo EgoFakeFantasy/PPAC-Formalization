@@ -430,3 +430,67 @@ theorem negative_inputs_kernel_certificate {n m} (R : Source.Formula (n+2)) (w a
     (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingGuardCode
+
+
+namespace PPAC.Migration.ForcingGuardCode
+open YesMetaZFC YesMetaZFC.Logic YesMetaZFC.Logic.FirstOrder YesMetaZFC.SetTheory
+open SetTheory.Definitional.Project (fo_bound_context fo_bound_variable)
+attribute [local implicit_reducible] SetTheory.signature
+
+/-- Readout of the EXISTING roles map, not a new variable substitution. -/
+private theorem roles_variables (n : Nat) (i : Fin (n+3)) :
+    roles n (fo_bound_variable i) =
+      Fin.lastCases (.bvar .here) (fun j => .fvar (fo_bound_variable j)) i := by
+  induction n with
+  | zero =>
+    refine Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun i => Fin.elim0 i))) i
+  | succ n ih =>
+    refine Fin.cases ?_ (fun j => ?_) i
+    · change (.fvar .here : PureSyntaxQuotation.Tm (fo_bound_context 1) (fo_bound_context (n+3))) =
+        Fin.lastCases (.bvar .here) (fun j => .fvar (fo_bound_variable j)) (0 : Fin (n+3)).castSucc
+      rw [Fin.lastCases_castSucc]
+      rfl
+    · change (roles n (fo_bound_variable j)).weakenFree SetSort.set = _
+      rw [ih j]
+      refine Fin.lastCases ?_ (fun k => ?_) j
+      · rw [Fin.lastCases_last]
+        change (.bvar .here : PureSyntaxQuotation.Tm (fo_bound_context 1) (fo_bound_context (n+2))).weakenFree SetSort.set =
+          Fin.lastCases (.bvar .here) (fun j => .fvar (fo_bound_variable j)) (Fin.last (n+3))
+        rw [Fin.lastCases_last]
+        rfl
+      · rw [Fin.lastCases_castSucc]
+        change (.fvar (fo_bound_variable k) : PureSyntaxQuotation.Tm (fo_bound_context 1) (fo_bound_context (n+2))).weakenFree SetSort.set =
+          Fin.lastCases (.bvar .here) (fun j => .fvar (fo_bound_variable j)) k.succ.castSucc
+        rw [Fin.lastCases_castSucc]
+        rfl
+
+/-- Exact source-language view of the original guard AST. Reuses the
+completed Syntax.old_formula/substitute bridge for ALL source constructors. -/
+theorem template_source {n} (order : Bool) (R : Source.Formula (n+2)) :
+    template order R = Syntax.formula
+      (Fin.lastCases (.bvar .here) (fun j => .fvar (fo_bound_variable j))) (sourceTemplate order R) := by
+  unfold template
+  rw [← Syntax.old_formula, Syntax.substitute]
+  congr 1
+  funext i
+  exact roles_variables n i
+
+/-- The literal R(q,p) guard, with original free parameters and p-slot.
+Only AST metadata are identified here; object queries use the existing
+NativeFormulaQuotationCorrespondence theorem. -/
+theorem relation_template {n} (R : Source.Formula (n+2)) :
+    template true R = Syntax.formula
+      (Fin.lastCases (.fvar (fo_bound_variable (Fin.last (n+1))))
+        (Fin.lastCases (.bvar .here) (fun i => .fvar (fo_bound_variable i.castSucc.castSucc)))) R := by
+  rw [template_source]
+  change Syntax.formula _ (ReplacementPredicates.rel R (fun i => i.castSucc.castSucc.castSucc)
+    (Fin.last (n+2)) (Fin.last (n+1)).castSucc) = _
+  unfold ReplacementPredicates.rel Source.SetLanguage.relation
+  rw [Syntax.rename]
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Fin.lastCases_last, Fin.lastCases_castSucc]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;> simp only [Fin.lastCases_last, Fin.lastCases_castSucc]
+
+end PPAC.Migration.ForcingGuardCode

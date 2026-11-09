@@ -940,3 +940,66 @@ theorem kernel_certificate {n m} (R : Source.Formula (n+2)) (w z A1 A2 A3 f : Fi
     (.conjR (.conjR (.conjR (.conjR (.conjR h)))))
 
 end PPAC.Migration.ForcingPreorderCode
+
+
+namespace PPAC.Migration.ForcingPreorderCode
+open YesMetaZFC YesMetaZFC.Logic YesMetaZFC.Logic.FirstOrder YesMetaZFC.SetTheory
+open SetTheory.Definitional.Project (fo_bound_context fo_bound_variable)
+attribute [local implicit_reducible] SetTheory.signature
+
+private theorem native_source {k} (input : Source.Formula k) :
+    native input = Syntax.formula (fun i => .fvar (fo_bound_variable i)) input := by
+  unfold native
+  rw [← Syntax.old_formula, Syntax.substitute]
+  rfl
+
+/-- The original first relation atom is literally R(r,q), with bound
+indices r=2 and q=1; all original parameter slots are retained. -/
+theorem atom_rq {n} (R : Source.Formula (n+2)) :
+    atoms R 3 = Syntax.formula
+      (Fin.lastCases (.bvar (.there .here))
+        (Fin.lastCases (.bvar (.there (.there .here)))
+          (fun i => .fvar (fo_bound_variable i.castSucc.castSucc)))) R := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    ReplacementPredicates.rel, Source.SetLanguage.relation, Syntax.rename]
+  change Syntax.formula _ R = _
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;> simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar]
+
+/-- The original second relation atom is literally R(q,p). -/
+theorem atom_qp {n} (R : Source.Formula (n+2)) :
+    atoms R 4 = Syntax.formula
+      (Fin.lastCases (.bvar .here)
+        (Fin.lastCases (.bvar (.there .here))
+          (fun i => .fvar (fo_bound_variable i.castSucc.castSucc)))) R := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    ReplacementPredicates.rel, Source.SetLanguage.relation, Syntax.rename]
+  change Syntax.formula _ R = _
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Syntax.lift, Fin.lastCases_last, Term.weakenBound_fvar]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;> simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar]
+
+/-- The original concluding relation atom is literally R(r,p). -/
+theorem atom_rp {n} (R : Source.Formula (n+2)) :
+    atoms R 5 = Syntax.formula
+      (Fin.lastCases (.bvar .here)
+        (Fin.lastCases (.bvar (.there (.there .here)))
+          (fun i => .fvar (fo_bound_variable i.castSucc.castSucc)))) R := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    ReplacementPredicates.rel, Source.SetLanguage.relation, Syntax.rename]
+  change Syntax.formula _ R = _
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Syntax.lift, Fin.lastCases_last, Term.weakenBound_fvar]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;> simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar]
+
+end PPAC.Migration.ForcingPreorderCode

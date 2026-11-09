@@ -2686,7 +2686,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_atomic_code', 'ForcingAtomicCode', 28),
                                 ('forcing_atom_code', 'ForcingAtomCode', 16),
                                 ('forcing_condition_rebind', 'ForcingConditionRebind', 23),
-                                ('forcing_guard_code', 'ForcingGuardCode', 27),
+                                ('forcing_guard_code', 'ForcingGuardCode', 29),
                                 ('forcing_neg_code', 'ForcingNegCode', 22),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
                                 ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
@@ -2742,11 +2742,12 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_condition', 'ForcingNegCondition', 18),
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
-                                ('forcing_preorder_code', 'ForcingPreorderCode', 23),
+                                ('forcing_preorder_code', 'ForcingPreorderCode', 26),
                                 ('forcing_preorder_instances', 'ForcingPreorderInstances', 27),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 9),
-                                ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22)):
+                                ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
+                                ('forcing_relation_source', 'ForcingRelationSource', 30)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6091,6 +6092,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_preorder_generated_targetData_consumed_by_prefix_normalization": True,
         "object_actual_preorder_six_native_witnesses_and_three_prefix_tables_object_bound": True,
         "object_actual_preorder_prefix_scope": "ForcingPreorderPrefix.at_target directly consumes existing rawData/targetData, object-eliminates SAME six native body/instance witnesses, generates all three original ordered cons prefix lists/types, and proves exact direct mixed opening to each SAME native output. Existing ALL endpoints/lift totality and prior full internal binder cancellation reused; no separate row/table/output/equality answer or guard truth, no new kernel/checker/recursion. All runtime codes/scopes may be nonstandard; only outer three-binder pattern is fixed. Whole negative/existential guard compiler ID, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
+        "object_actual_preorder_guard_common_source_R_queries_generated": True,
+        "object_actual_guard_compiled_and_preorder_rawData_consumed_by_common_source": True,
+        "object_actual_common_R_quotation_and_four_image_tables_internally_generated": True,
+        "object_actual_common_R_scope": "ForcingRelationSource.from_compiled directly consumes existing rawData and actual guard compiled output. Existing Syntax naturality identifies original R(r,q)/R(q,p)/R(r,p) and guard R(q,p). SAME source R quotation plus FOUR actual native maps/queries are object-generated; FOUR compiler and FIVE common-source witnesses remain object-existential, full guard matrix/head/arbitrary internal scope retained. Only intermediate SOURCE profiles/arity are fixed quotation metadata; no forcing target scope made standard, no matrix/map/query/equality answer or guard truth, no new kernel/checker/recursor/formula induction. Whole two-path target-code cancellation, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
         "object_actual_preorder_negative_guard_compiler_codes_identified": False,
         "object_actual_preorder_instances_scope": "Actual raw source quotation -> generated empty bound table and real target parent/child opening -> THREE native instances -> FIVE IMP fields -> FIVE typed local backgrounds -> original internal G0-to-member/order proofs. No supplied target row, codes/proofs or guard/preorder truth. Runtime terms/free scope/codes include internal nonstandard values. Fixed outer pattern is only the pinned 3-ALL/5-IMP source shape. Exact negative/existential guard compiler identification, canonical context/fresh forall, full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_actual_binder_instance_all_internal_terms_collapsed": True,

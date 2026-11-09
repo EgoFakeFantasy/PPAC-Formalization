@@ -18,12 +18,12 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-既有验收完成原preorder实际开口、三实例及原内部证明消费：ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 原始preorder的实际目标开口、三次实例及row生成／原证明消费本批已完成，不再列为待做。精确识别这些guard码与ForcingNegCondition／ForcingGuardOpening的编译输出仍未完成；规范局部上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction和最终Con仍未证明。固定外部有限模式仅描述原preorder的3-ALL／5-IMP外层；目标free作用域、项索引和运行码仍允许内部非标准值。
+既有原preorder报价、真实mixed开口、三次native实例、五IMP行、五个局部背景和同一G0→member／order内部证明均已生成消费。ForcingPreorderPrefix已直接消费同一六个native见证，生成三张原顺序cons前缀表及每层准确direct输出；一步binder相消、原K／S／AND11／MP局部解除及mode3／forall生产器均不重建。
 
-本批ForcingPreorderPrefix.at_target直接消费已生成的ForcingPreorderCode.rawData／ForcingPreorderInstances.targetData，内部消去同一六个native体／实例见证，生成三张原顺序cons前缀表、类型和每层对子公式的准确direct mixed输出。最终表为[P2,P1,P0]++R；每层目标都是原native实例的同一个实际码。复用原ALL端点、binder总性及已完成的一步全内部公式相消；没有另给六状态实例行、表码、期望等式或guard真值，没有新核／checker／递归。两个普通nativeZF原核证书已完整验收。运行码／作用域包含内部非标准值；固定外层仅为原三binder。整段preorder与负／存在guard编译码最终对应、规范上下文／fresh全称化、完整mono／dense／MP／Proof／reduction及最终Con仍未完成。
+本批ForcingRelationSource.from_compiled直接消费原rawData和真实guard编译，内部生成同一个R报价、四张实际native项像表，以及到原关系原子／guard原报价的两条mixed查询。四个compiler和五个共同源见证均留在对象量词；原完整编译矩阵／头和任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)及guard R(q,p)的AST身份复用既有Syntax自然性，没有新增公式归纳／核／checker／递归。仅中间SOURCE的0／1／3和原有限arity为报价元数据，不要求forcing目标作用域标准。普通nativeZF原核证书已完整验收；两条路径的实际目标码相消及完整guard对应尚未完成。
 
-原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。
+下一项是从同一R的两条实际查询及原三前缀／guard直接输出完成点式目标码相消和member／order guard对应，再消费既有局部解除／fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原L、全模式、递归及已验收数学／码行不重建。
 
-本轮九项完整验收及五项trust=0均退出0；39195项声明、零警告，全部39173项既有足迹和2852份既有PPAC证明源码哈希保持，22项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2886项密封输入全部重算。本批为本地验收，其对应独立Linux验收仍待执行。
+本轮九项完整验收及五项trust=0均退出0；39230项声明、零警告，全部39195项既有足迹保持，35项新增公开声明无新增公理依赖。2851份旧PPAC证明源码原样；GuardCode与PreorderCode仅追加模板读出，原29873／75092字节及全部50个旧公开声明完整保留。16项回归、三个干净锁定依赖和75项源哈希通过，2887项密封输入全部重算。本批为本地验收，其对应独立Linux验收尚未取得。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-preorder-prefix-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-relation-source-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
