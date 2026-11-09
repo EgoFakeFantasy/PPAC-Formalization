@@ -1125,3 +1125,5 @@ import PPAC.Migration.ForcingTermDiagram
 import PPAC.Migration.ForcingFormulaDiagram
 import PPAC.Migration.ForcingFormulaAtoms
 import PPAC.Migration.ForcingFormulaLifts
+import PPAC.Migration.ForcingFormulaInduction
+import PPAC.Migration.ForcingFormulaCancellation

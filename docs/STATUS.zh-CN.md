@@ -121,3 +121,5 @@
 2026-11-09：四路径公式非原子归纳步已定向通过。对象全称的四个候选输出包括两段中间结果；否定／两个原量词内部消去四子输出，四类二元构造器内部消去八子输出。量词复用原AdvancedOutput.at_lift，保留共同作用域的四个实际lift；子公式相消前提是对象公式。三个普通nativeZF原核证书已核对依赖。全量九命令／五trust=0通过，38754项声明零警告，全部38737旧依赖及2825旧证明哈希不变（verification/forcing-formula-diagram-acceptance.json）；原子四分支、统一内部归纳及共同lift存在消去尚未闭合，完整公式相消／规范化强迫MP／reduction／最终Con仍未证明。
 
 2026-11-09：原子四基础分支及共同量词帧构造已定向通过。原子分支复用项图并内部消去实际输出；四个共同后继作用域和八张原提升表在对象层构造，输出同时包含同一lift及子输入（项图、四表类型）。此前七类非原子步骤已完成。下一缺口是变化参数全部对象量化的完整公式集合归纳，不再把原子分支或共同lift存在性报为未做；全量九命令／五trust=0通过，38771项声明零警告，全部38754旧依赖及2826旧证明哈希不变（verification/forcing-formula-bases-acceptance.json）。完整实际原mode2公式相消、强迫MP、reduction与最终Con仍未证明。
+
+2026-11-09：完整内部公式归纳及实际原compiled正文相消已定向通过。16个变化表／作用域参数和4个实际输出由对象量词覆盖，复用原ZF集合归纳关闭IH；实际同一rebind/open/原mode2 Run3等于直接opening，已消费现成mode2完整公式桥，六个compiler见证内部消去。以上均不再是缺口。全量九命令／五trust=0通过，38800项声明零警告，全部38771旧依赖及2828旧证明哈希不变（verification/forcing-formula-cancellation-acceptance.json）；实际guard/regularity、规范化强迫MP、统一内部公理/Proof保真、reduction及最终Con仍未证明。

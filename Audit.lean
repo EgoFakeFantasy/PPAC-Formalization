@@ -39456,3 +39456,34 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFormulaLifts.exists_frame
 #print axioms PPAC.Migration.ForcingFormulaLifts.sentence
 #print axioms PPAC.Migration.ForcingFormulaLifts.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaInduction.property
+#print axioms PPAC.Migration.ForcingFormulaInduction.property_rename
+#print axioms PPAC.Migration.ForcingFormulaInduction.property_at
+#print axioms PPAC.Migration.ForcingFormulaInduction.earlier
+#print axioms PPAC.Migration.ForcingFormulaInduction.earlier_rename
+#print axioms PPAC.Migration.ForcingFormulaInduction.property_from_earlier
+#print axioms PPAC.Migration.ForcingFormulaInduction.matrix
+#print axioms PPAC.Migration.ForcingFormulaInduction.curried
+#print axioms PPAC.Migration.ForcingFormulaInduction.matrix_pred
+#print axioms PPAC.Migration.ForcingFormulaInduction.curried_rename
+#print axioms PPAC.Migration.ForcingFormulaInduction.earlier_of_curried
+#print axioms PPAC.Migration.ForcingFormulaInduction.progressive
+#print axioms PPAC.Migration.ForcingFormulaInduction.all_properties
+#print axioms PPAC.Migration.ForcingFormulaInduction.at_natural
+#print axioms PPAC.Migration.ForcingFormulaInduction.at_code
+#print axioms PPAC.Migration.ForcingFormulaInduction.sentence
+#print axioms PPAC.Migration.ForcingFormulaInduction.kernel_certificate
+#print axioms PPAC.Migration.ForcingFormulaInduction.cancel
+#print axioms PPAC.Migration.ForcingFormulaInduction.cancelInput
+#print axioms PPAC.Migration.ForcingFormulaInduction.cancelSentence
+#print axioms PPAC.Migration.ForcingFormulaInduction.cancel_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingFormulaCancellation.root
+#print axioms PPAC.Migration.ForcingFormulaCancellation.input
+#print axioms PPAC.Migration.ForcingFormulaCancellation.sentence
+#print axioms PPAC.Migration.ForcingFormulaCancellation.kernel_certificate
+#print axioms PPAC.Migration.ForcingFormulaCancellation.from_compiled
+#print axioms PPAC.Migration.ForcingFormulaCancellation.compiledInput
+#print axioms PPAC.Migration.ForcingFormulaCancellation.compiledSentence
+#print axioms PPAC.Migration.ForcingFormulaCancellation.compiled_kernel_certificate

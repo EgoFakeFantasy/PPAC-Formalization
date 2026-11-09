@@ -166383,6 +166383,244 @@
           "propext"
         ]
       }
+    },
+    "forcing_formula_induction": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingFormulaInduction.lean",
+      "consumers": [
+        "Actual complete-negative body/guard normalization before normalized forcing MP",
+        "Uniform internal proof preservation consuming SAME source compiler operations"
+      ],
+      "reuse_producers": [
+        "All four atomic bases in ForcingFormulaAtoms",
+        "All seven non-atomic steps in ForcingFormulaDiagram",
+        "ForcingFormulaLifts.exists_frame: same actual12 object witnesses plus lifted input",
+        "Existing BoundedInduction.induction_on_set using original Foundation and Separation, following SyntaxFormulaComposeInduction proof method",
+        "Original formula constructor split and original strict child, never a larger substituted AST"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "2c5db373db38d3aaedebf01c7c18ec4e441da3d7038be8aa9d1be9387b733749",
+        "PPAC/Migration/ForcingFormulaLifts.lean": "2aa70d5295c4067acd652322557025a5c35234fa79cbd780ecce399bafefe7e5",
+        "PPAC/Migration/Internal/FormulaCodeRecursive.lean": "4bcdae1dcb2e0927d22a76b9c7d87526bdfad7bc4dab8b906f0827690d19c09d",
+        "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
+        "PPAC/Migration/Internal/SyntaxFormulaComposeInduction.lean": "c20d3ed62ac8a7b1c513f1f357361c3b72bc3d343aabe20ae4a5932269c046b2",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
+      },
+      "scope": "FULL uniform INTERNAL formula-code induction is discharged by ORIGINAL ZF Foundation/Separation. All16 changing table/scope slots are object-quantified; atSource object-quantifies all4 intermediate/final output candidates. All eleven original constructors, original strict source-child membership, four shared successor scopes/eight lifted tables, and every child IH are discharged. No host formula/code induction, externally standard code restriction, chosen lift, child correctness premise, supplied output equality, new evaluator or new recursion backend. Actual four formula judgments plus the term diagram imply final code equality; all list typings and source naturality are recovered internally. Ordinary nativeZF original-kernel certificates. Actual guard/regularity, normalized forcing MP, uniform internal axiom/proof preservation, reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingFormulaInduction.property": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.property_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.property_at": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.earlier": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.earlier_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.property_from_earlier": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.matrix": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.curried": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.matrix_pred": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.curried_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.earlier_of_curried": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.progressive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.all_properties": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.at_natural": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.at_code": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.cancel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.cancelInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.cancelSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaInduction.cancel_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_formula_cancellation": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingFormulaCancellation.lean",
+      "consumers": [
+        "Actual complete-negative body/guard normalization before normalized forcing MP",
+        "Uniform internal proof preservation consuming SAME source compiler operations"
+      ],
+      "reuse_producers": [
+        "ForcingFormulaInduction.cancel closes full internal formula diagram",
+        "ForcingTermDiagram.root supplies the actual SAME-root term invariant",
+        "Completed InstantiateTopFormulaOperation.at_codes_iff and SyntaxTopFormulaCodes.instantiate_at_codes; no rebuilt mode2 bridge",
+        "Original ForcingConditionRebind.compiled/data and six-witness elimination"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
+        "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5"
+      },
+      "scope": "The ACTUAL same-root complete rebind / lifted pointwise opening / ORIGINAL mode2 whole-FORMULA output equals actual direct opening, for arbitrary internal/nonstandard valid formula codes. Uses SAME original compiled rebind data/tables and actual selected parameter field/InstantiateTop environment. Reuses completed original Run3->InstantiateTop->mixed formula substitution bridges; no alternate operation, supplied code equality or type/list premise. from_compiled consumes the original compiled rebind predicate and internally eliminates SAME six compiler witnesses; no external chosen compiler data premise. Ordinary nativeZF original-kernel certificates. This COMPLETES syntactic body cancellation; guards/regularity and normalized forcing MP, uniform internal axiom/proof preservation, reduction and final Con are NOT proved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingFormulaCancellation.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.compiledInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.compiledSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaCancellation.compiled_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
