@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-11-09T17:13:56.055346+00:00",
+  "run_id": 42643888667,
+  "job_id": 129251826848,
+  "head_sha": "a046b48e6d757fe05bdcd17f3f4b3da271dcf9f9",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42643888667",
+  "conclusion": "success",
+  "actual_decoded_job_log_read": true,
+  "actual_native_PASS": "2026-11-09T17:09:37.9823009Z PASS: 39154 audited declarations; 2263 without axioms; 36891 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "actual_log_bytes": 40192,
+  "actual_log_sha256": "002b5c6540cdb44e2d0a1488aa7e6823d5b69704da5e719b1abac152170aea47",
+  "install_elan": "success",
+  "pinned_dependencies": "success",
+  "clean_inputs_and_cross_platform_tests": "success",
+  "build_and_audit": "success",
+  "artifact_upload": "success",
+  "clean_pinned_repositories": 3,
+  "canonical_source_hashes": 75,
+  "regression_tests": {
+    "ci_compatibility": 9,
+    "original_comparator_guard": 7
+  },
+  "scope": "Independent complete Linux acceptance of OLD a046b48 (39154 declarations). Does NOT certify pending 26aad0f/6cb6fef (39195 declarations), current relation-template WIP, or final Con."
+}
