@@ -39295,3 +39295,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalFalseRoot.compiledInput
 #print axioms PPAC.Migration.InternalFalseRoot.compiledSentence
 #print axioms PPAC.Migration.InternalFalseRoot.compiled_kernel_certificate
+#print axioms PPAC.Migration.ForcingMixedUnary.negation_constructor
+#print axioms PPAC.Migration.ForcingMixedUnary.quantified_constructor
+#print axioms PPAC.Migration.ForcingOpenCode.reified_negation
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_negation
+#print axioms PPAC.Migration.ForcingPointwiseCode.openedNegationSentence
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_negation_kernel_certificate

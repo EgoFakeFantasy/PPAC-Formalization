@@ -2697,18 +2697,19 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_code_total', 'ForcingCodeTotal', 11),
                                 ('forcing_code_step_unique', 'ForcingCodeStepUnique', 11),
                                 ('forcing_code_unique', 'ForcingCodeUnique', 12),
-                                ('forcing_open_code', 'ForcingOpenCode', 26),
+                                ('forcing_open_code', 'ForcingOpenCode', 27),
                                 ('internal_mp_proof', 'InternalMPProof', 12),
                                 ('internal_proof_operations', 'InternalProofOperations', 27),
                                 ('internal_proof_conjunction', 'InternalProofConjunction', 15),
                                 ('internal_proof_templates', 'InternalProofTemplates', 9),
                                 ('internal_proof_implication', 'InternalProofImplication', 7),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
-                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 37),
+                                ('forcing_pointwise_code', 'ForcingPointwiseCode', 40),
                                 ('forcing_code_binary', 'ForcingCodeBinary', 7),
                                 ('forcing_mixed_binary', 'ForcingMixedBinary', 1),
                                 ('forcing_code_unary', 'ForcingCodeUnary', 13),
-                                ('internal_false_root', 'InternalFalseRoot', 14)):
+                                ('internal_false_root', 'InternalFalseRoot', 14),
+                                ('forcing_mixed_unary', 'ForcingMixedUnary', 2)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7399,6 +7400,9 @@ def main(source_check_only: bool = False) -> None:
         "object_open_falsum_proof_original_closed_root_proved": True,
         "object_actual_pointwise_falsum_output_proof_to_original_inconsistency_proved": True,
         "object_open_falsum_root_scope": "Original strengthening and object omega induction close every internal/nonstandard free scope; exact original falsum quotation and unchanged Root give InternalConsistency.inconsistentAt. Actual pointwise output proofs are consumed via existing falsum-code identity. Uniform interpreted proof construction, forcing MP, reduction and final Con remain unproved.",
+        "object_actual_mixed_unary_constructor_transport_proved": True,
+        "object_actual_reified_opened_literal_negation_transport_proved": True,
+        "object_actual_mixed_unary_transport_scope": "Literal negation and both quantifiers use existing actual substitution outputs, original mixed binder lifts and output uniqueness; actual independent reification/opening negation consumers are proved. This is not complete forcing-negation/quantifier commutation, normalized forcing MP or uniform proof correctness/Con.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

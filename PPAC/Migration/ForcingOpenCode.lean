@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingCodeUnique
 import PPAC.Migration.ForcingMixedBinary
+import PPAC.Migration.ForcingMixedUnary
 import PPAC.Migration.SchemaClosureTyping
 import PPAC.Migration.Internal.SyntaxVariableTableFields
 import PPAC.Migration.Internal.SyntaxMixedImageCodePairs
@@ -434,5 +435,29 @@ theorem reified_nullary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth
     (of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 hw E))
     (of_eq (SyntaxNodeSyntax.constructor_rename 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n (old 4)) (HornBinderRules.under_body 4 hc E))
     (.conjR (.conjR (.conjR hE)))
+
+/-- Actual independent name reifications preserve literal negation, using
+one genuine environment and the existing independent-output uniqueness. -/
+theorem reified_negation {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z b n x Q X : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxLogicalSyntax.singleCode 4 w x n))
+    (hn : Derives Γ (reified w z b n Q)) (hx : Derives Γ (reified w z b x X)) :
+    Derives Γ (SyntaxLogicalSyntax.singleCode 4 w X Q) := by
+  let E := reifyBody w z b n Q
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ (.conjR hn)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ4 := HornBinderRules.zf_body 4 hZ E
+  have hw4 := of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 hw E)
+  have he : Derives Δ (SyntaxMixedImageCodeSyntax.encodings (old 4 w) (slot 4 0) (slot 4 1) (old 4 z) (old 4 b) (old 4 b) (old 4 z) (slot 4 2) (slot 4 3)) := .conjL (.conjR (.conjR hE))
+  have hx4 := of_eq (reified_rename w z b x X (old 4)) (HornBinderRules.under_body 4 hx E)
+  have hX := reified_in_environment hZ4 (old 4 w) (old 4 z) (old 4 b) (old 4 x) (old 4 X) (slot 4 0) (slot 4 1) (slot 4 2) (slot 4 3)
+    hw4 (.conjL hE) (.conjL (.conjR hE)) he hx4
+  exact of_eq (SyntaxLogicalSyntax.singleCode_rename 4 w X Q (old 4)).symm
+    (ForcingMixedUnary.negation_constructor hZ4 (old 4 w) (slot 4 2) (slot 4 3) (old 4 z) (old 4 b) (old 4 b) (old 4 z)
+      (old 4 n) (old 4 x) (old 4 Q) (old 4 X) hw4
+      (.conjI (of_eq (formulaCode_rename w n z b (old 4)) (HornBinderRules.under_body 4 (.conjL hn) E))
+        (SyntaxMixedImageCodePairs.term_lists _ _ _ _ _ _ _ _ _ he))
+      (of_eq (SyntaxLogicalSyntax.singleCode_rename 4 w x n (old 4)) (HornBinderRules.under_body 4 hc E))
+      (.conjR (.conjR (.conjR hE))) hX)
 
 end PPAC.Migration.ForcingOpenCode

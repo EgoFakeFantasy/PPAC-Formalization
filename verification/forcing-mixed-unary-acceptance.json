@@ -1,0 +1,277 @@
+{
+  "verified_at": "2026-11-09T00:58:54.490879+00:00",
+  "baseline_commit": "7d963ffed2a5b2056204de175b27615de4614f1e",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "Actual mixed substitution transports literal negation and both quantifier constructors using original endpoints, a constructed actual candidate and independent-output uniqueness. Quantifier child judgments use the actual ORIGINAL mixed binder lift with independent source/target successor scopes. Direct actual independent name reification and pointwise opening preserve literal negation; the opening consumer has an original nativeZF certificate. All runtime scopes and codes include internal/nonstandard values. This is not complete ForcingNegCode or normalized forcing MP preservation.",
+  "endpoints": [
+    "PPAC.Migration.ForcingMixedUnary.negation_constructor",
+    "PPAC.Migration.ForcingMixedUnary.quantified_constructor",
+    "PPAC.Migration.ForcingOpenCode.reified_negation",
+    "PPAC.Migration.ForcingPointwiseCode.opened_negation_kernel_certificate"
+  ],
+  "endpoint_type": "Source.Derives on actual coded substitution judgments, with the direct opening sentence replayed to original FirstOrder.Derives nativeZF []",
+  "reuse": [
+    "Original SyntaxMixedFormulaEndpoints.single_iff",
+    "Original SyntaxMixedFormulaAdvancedOutput.at_lift",
+    "Original SyntaxConstructors.exists_constructor",
+    "Original mixed output uniqueness",
+    "Accepted original independent environment alignment for reification/opening",
+    "Existing native K/S composition was confirmed available and not reimplemented"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38625,
+    "new_audit_entries": 6,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingMixedUnary.negation_constructor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedUnary.quantified_constructor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reified_negation": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_negation": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.openedNegationSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_negation_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "previous_footprints_unchanged": 38619,
+    "previous_proof_files": 2815,
+    "unmodified_previous_proof_files": 2813,
+    "unmodified_previous_proof_file_hashes_unchanged": true,
+    "append_only_previous_modules": {
+      "PPAC/Migration/ForcingOpenCode.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "8bd0f739330816a99d07e2390e037c491edb617c53f5bb5a75575a08bb7d1006"
+      },
+      "PPAC/Migration/ForcingPointwiseCode.lean": {
+        "previous_complete_nonimport_body_preserved": true,
+        "previous_body_sha256": "c7f40012579fcb2103b0b7f2b6f90b53f48eb1c7820a2a906c41a25c0f7f3d36"
+      }
+    },
+    "old_proof_bodies_rewritten": false,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingOpenCode.lean",
+      "PPAC/Migration/ForcingPointwiseCode.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_open_code",
+      "forcing_open_layout",
+      "forcing_pointwise_code",
+      "internal_false_root"
+    ],
+    "reason_for_source_updates": "Only real append/import hashes and appended public declaration footprints; old adapter contracts and footprints unchanged.",
+    "sealed_input_count": 2848,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0
+  },
+  "scope": {
+    "actual_mixed_literal_negation_and_quantifier_constructor_transfer": true,
+    "actual_reification_and_pointwise_opening_literal_negation_transfer": true,
+    "complete_ForcingNegCode_opening_commutation": false,
+    "complete_pointwise_quantifier_and_condition_rebinding_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-build.log",
+      "bytes": 172,
+      "sha256": "9f1c409aa9c50ac1a5ff3c1c5c20537e6389f3d13f88be9883b29dc66261b6ef"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-pointwise.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-audit.lean",
+      "bytes": 467,
+      "sha256": "818595c4a04d58a94cad133fc5afc7624d3d5a210c4bd32f308fded2212f4411"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-audit.log",
+      "bytes": 1171,
+      "sha256": "5f13f4aa88681bdfd0a9f2a7075d7bc5150380bc40a292494a854681bdbf4336"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-parent-summary.json",
+      "bytes": 14870841,
+      "sha256": "30123220fc03453238d9a20015cb9f792aa345d3fd3892177e83464374f14996"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-compatibility.log",
+      "bytes": 218,
+      "sha256": "b081e577591a858b61de65f3dda367de0d368b13ebbc2aecef641e1c95f1263e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-ci-inputs.log",
+      "bytes": 91,
+      "sha256": "f33af5c90899ea61e3a225f020a9cdeaec62e489a62f7a51ef1f99d38998c9d4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-unary-full-verify.log",
+      "bytes": 153,
+      "sha256": "b689b30bc218ff30e0dca9c868b55bf9d48497f01a5afe4093a4cb1d1557ab64"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native log read before pushing",
+    "preceding_run": 42540122797
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T00:59:31.795103+00:00"
+}

@@ -584,4 +584,49 @@ theorem falsum_kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.F
     (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))) (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))
     (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+/-- Literal negation inside an actual raw forcing fragment survives actual
+pointwise opening. This is NOT forcing negation: that fragment also contains
+quantification, both guards and actual condition rebinding. -/
+theorem opened_negation {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w z b f t n x Q X : Fin m)
+    (hw : Derives Γ (omega w)) (hn : Derives Γ (formulaCode w n b f))
+    (hc : Derives Γ (SyntaxLogicalSyntax.singleCode 4 w x n))
+    (hp : Derives Γ (opened w z b f t n Q)) (hx : Derives Γ (opened w z b f t x X)) :
+    Derives Γ (SyntaxLogicalSyntax.singleCode 4 w X Q) := by
+  have ht := Derives.impE (.conjL (FormulaCodeKnownLogical.negation_iff hZ w b f x n hw hc)) hn
+  let E := openBody w z b f t n Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hp
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hZ2 := HornBinderRules.zf_body 2 hZ E
+  have hw2 := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)
+  have he : Derives Δ (ForcingOpenLayout.environment (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (slot 2 0) (slot 2 1)) := .conjL hE
+  have hx2 := of_eq (opened_rename w z b f t x X (old 2)) (HornBinderRules.under_body 2 hx E)
+  have hX := opened_in_environment hZ2 (old 2 w) (old 2 z) (old 2 b) (old 2 f) (old 2 t) (old 2 x) (old 2 X) (slot 2 0) (slot 2 1)
+    hw2 (of_eq (formulaCode_rename w x b f (old 2)) (HornBinderRules.under_body 2 (.conjR ht) E)) he hx2
+  exact of_eq (SyntaxLogicalSyntax.singleCode_rename 4 w X Q (old 2)).symm
+    (ForcingMixedUnary.negation_constructor hZ2 (old 2 w) (slot 2 0) (slot 2 1) (old 2 b) (old 2 f) (old 2 z) (old 2 t)
+      (old 2 n) (old 2 x) (old 2 Q) (old 2 X) hw2
+      (.conjI (of_eq (formulaCode_rename w n b f (old 2)) (HornBinderRules.under_body 2 hn E))
+        (ForcingOpenLayout.environment_types _ _ _ _ _ _ _ he))
+      (of_eq (SyntaxLogicalSyntax.singleCode_rename 4 w x n (old 2)) (HornBinderRules.under_body 2 hc E)) (.conjR hE) hX)
+
+def openedNegationSentence {m} (w z b f t n x Q X : Fin m) : Source.Sentence :=
+  ((omega w).imp ((formulaCode w n b f).imp ((SyntaxLogicalSyntax.singleCode 4 w x n).imp
+    ((opened w z b f t n Q).imp ((opened w z b f t x X).imp (SyntaxLogicalSyntax.singleCode 4 w X Q)))))).close
+
+theorem opened_negation_kernel_certificate {m} (w z b f t n x Q X : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (openedNegationSentence w z b f t n x Q X)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  exact opened_negation (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) _) _)
+    w z b f t n x Q X (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl))))))
+    (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl))))) (.hyp (Or.inr (Or.inr (Or.inl rfl))))
+    (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+
 end PPAC.Migration.ForcingPointwiseCode

@@ -163386,7 +163386,7 @@
         "Original nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingOpenCode.lean": "47c76a6d00759391d8c60396348d7a54fea0c031870fc42316b19217bf3c75d9",
+        "PPAC/Migration/ForcingOpenCode.lean": "9689c62992f31aa99403e5fc50bce90aadbb3ecf7659e5c4e50d4c80203a761c",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
@@ -163533,6 +163533,11 @@
           "propext"
         ],
         "PPAC.Migration.ForcingOpenCode.reified_nullary": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingOpenCode.reified_negation": [
           "Classical.choice",
           "Quot.sound",
           "propext"
@@ -164218,7 +164223,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingOpenLayout.lean": "9a12e3bc775127f4da1165033bf6ad93f4860ff0a661ecf0c6f42dc937dc8d10",
-        "PPAC/Migration/ForcingOpenCode.lean": "47c76a6d00759391d8c60396348d7a54fea0c031870fc42316b19217bf3c75d9",
+        "PPAC/Migration/ForcingOpenCode.lean": "9689c62992f31aa99403e5fc50bce90aadbb3ecf7659e5c4e50d4c80203a761c",
         "PPAC/Migration/Internal/NaturalAdditionMonotone.lean": "488d6dd88ee58b7680b320353cbd3ed6677a233a9df5e599f75e4f1c36b85c60",
         "PPAC/Migration/Internal/NaturalAdditionOrderLaws.lean": "73f4c663d8644faf96dc8093e6b41fb64c5f6c603656853f468f9175abab961a",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd",
@@ -164429,9 +164434,9 @@
         "Internal/SyntaxMixedFormulaJudgmentSubst"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingPointwiseCode.lean": "3034713384417bbc4bc83a77f138ba4231586f75b00ddaef1f2cc2623fece0b8",
+        "PPAC/Migration/ForcingPointwiseCode.lean": "46050547a4540f62118c0e75fb9b314abd79351ed489e0aecc63d38cb0739efb",
         "PPAC/Migration/ForcingOpenLayout.lean": "9a12e3bc775127f4da1165033bf6ad93f4860ff0a661ecf0c6f42dc937dc8d10",
-        "PPAC/Migration/ForcingOpenCode.lean": "47c76a6d00759391d8c60396348d7a54fea0c031870fc42316b19217bf3c75d9",
+        "PPAC/Migration/ForcingOpenCode.lean": "9689c62992f31aa99403e5fc50bce90aadbb3ecf7659e5c4e50d4c80203a761c",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
@@ -164644,6 +164649,27 @@
           "propext"
         ],
         "PPAC.Migration.ForcingPointwiseCode.falsum_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPointwiseCode.opened_negation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPointwiseCode.openedNegationSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPointwiseCode.opened_negation_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
@@ -164919,7 +164945,7 @@
         "PPAC/Migration/Internal/SyntaxRenameNullary.lean": "9d593b452cb1b3a8a36de50f064d5e71337203f3b9e2c5ab60f7947b3c21fcb6",
         "PPAC/Migration/OmegaInduction.lean": "f81765e5eee49ce965132ae7fd8a5bf57a687d607c69fe25788d079fa821b76d",
         "PPAC/Migration/InternalConsistency.lean": "596d407547a97dbce4a2a0dd0c2051b8f6eded058817c843d1420e515c4b2efe",
-        "PPAC/Migration/ForcingPointwiseCode.lean": "3034713384417bbc4bc83a77f138ba4231586f75b00ddaef1f2cc2623fece0b8",
+        "PPAC/Migration/ForcingPointwiseCode.lean": "46050547a4540f62118c0e75fb9b314abd79351ed489e0aecc63d38cb0739efb",
         "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12"
       },
       "scope": "Actual open falsum Proved(test,w,z,b,F) closes to the unchanged original Root by internal omega induction over b, with real original strengthening nodes and all weakening witnesses constructed. Exact original quoted falsum and Root yield the unchanged InternalConsistency.inconsistentAt for full ZF/U. The actual pointwise compiler output proof is consumed via its existing equality to the same original falsum code, with target free scope t internally natural. All runtime scopes/proof codes include nonstandard omega. This proves the contradiction tail assuming an actual output proof; it does NOT construct the uniform interpreted proof translation, forcing-specific MP, uniform axiom/proof correctness, InternalConsistency.reduction or final internal Con.",
@@ -165050,6 +165076,47 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_mixed_unary": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingMixedUnary.lean",
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "consumers": [
+        "Actual ForcingOpenCode.reified_negation",
+        "Actual ForcingPointwiseCode.opened_negation inside normalized forcing fragments",
+        "Quantifier shells under the actual original mixed binder lift"
+      ],
+      "reuse_producers": [
+        "SyntaxMixedFormulaEndpoints.single_iff",
+        "SyntaxMixedFormulaAdvancedOutput.at_lift",
+        "SyntaxMixedFormulaOutputInduction.unique",
+        "Original SyntaxConstructors.exists_constructor"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingMixedUnary.lean": "09cec444fdf086d8efa950044c9b5420c86d4cdc4e4fd5878c1bffaf1326cb3c",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaEndpoints.lean": "39c182c223136e945a4dbf84113a4e6399587e036196afbeccb39b8bc747f4e7",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaAdvancedOutput.lean": "b25f5dba4c0a23e74abb4be8e68d58bd1b55b78c0364e93641f94a13cc8707cd"
+      },
+      "scope": "Actual mixed substitution transports literal negation and both quantifier constructors. Quantifier children use the actual ORIGINAL lifted environment, independent source/target successor scopes, and a genuine child substitution judgment. Parent outputs are independently given actual outputs; the existing endpoint and constructed candidate are aligned by existing output uniqueness. Direct consumers align actual independent name reifications and pointwise openings for literal negation. No external-standard restriction or new syntax/recursion/kernel is added. This does NOT yet transport the complete ForcingNegCode fragment, condition rebinding, full pointwise quantifier commutation or normalized forcing MP; uniform axiom/proof preservation, reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingMixedUnary.negation_constructor": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingMixedUnary.quantified_constructor": [
+          "Classical.choice",
+          "Quot.sound",
           "propext"
         ]
       }
