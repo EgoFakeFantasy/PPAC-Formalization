@@ -1,0 +1,244 @@
+{
+  "verified_at": "2026-11-09T03:03:57.490725+00:00",
+  "baseline_commit": "0ee27e106992c8ff94dc2a5493dc4abec3c0a122",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_instantiate",
+    "forcing_sound",
+    "AtomicData.Force exact negative branch in pinned ForcingQuotient"
+  ],
+  "object_result": "Internally generate ACTUAL selected condition parameter P from the SAME opening parameter table and its exact offset J=a+j. The actual original new-head/kind1-mode2 term execution at that P is equivalent to the ORIGINAL free-variable code at J. No supplied P, offset, intermediate head or Run; all runtime indices/scopes/codes include internal nonstandard values. This is actual root condition parameter identification, not complete formula cancellation or normalized forcing MP.",
+  "endpoints": [
+    "PPAC.Migration.ForcingConditionInstance.kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "Omega(w), original mode numeral2, empty(z), SAME actual environment(w,z,a,f,T,R,S), SAME original lifted(w,R,S,a,f,z,T,A,C,K,H), and legal condition j∈f imply internally existential offset J=a+j and the exact iff between existential ACTUAL field S[j]=P plus actual original head/mode2 execution at P and code(false,w,J,v). v is an arbitrary object candidate. The legal parameter, intermediate image/head and execution are generated internally; all underlying previously accepted proof bodies unchanged.",
+  "reuse": [
+    "ForcingOpenInstantiate.zero_iff actual original term execution",
+    "ForcingOpenLayout.parameters_field exact original variable-image law",
+    "Existing StructuralListFieldValues.exists_value and typed field projection",
+    "Existing internal addition existence and original variable-code equality"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38700,
+    "new_audit_entries": 9,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingConditionInstance.conditionResult": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.conditionResult_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.condition_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.totalResult": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.totalResult_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.total": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingConditionInstance.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38691,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2820,
+    "proof_files_now": 2821,
+    "sealed_inputs": 2853,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "dd73ac830b44f2288b261b33ef8a3423096bab6a9cb021ae562bf4ea03e34786",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "74f71a8129dedf349e5d43eff23b4a9acb8b021ca06a4418f55226fd9d068aec"
+    },
+    "summary_sha256": "ddc778e4d108594d5d6d8444c8d47470957ab679f7014920b799cc1d89e940ab"
+  },
+  "scope": {
+    "actual_selected_condition_parameter_identified": true,
+    "exact_original_a_plus_j_variable_code_identified": true,
+    "offset_parameter_head_and_original_execution_internally_generated": true,
+    "runtime_nonstandard_indices_and_codes_included": true,
+    "full_formula_condition_rebind_open_instantiate_cancellation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "current_status_cleanup": "Replaced chronological repeated batch notes in CURRENT_STATUS with compact current completed assets and exact remaining original-stage-10 obligations. Historical acceptance reports unchanged; existing original 1-11 plan retained.",
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingConditionInstanceAudit.lean",
+      "bytes": 657,
+      "sha256": "3d047168020654c869795cf1868b3c1d9680465e437e3451c99460dc9069ac75"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-instance-audit.log",
+      "bytes": 1451,
+      "sha256": "58a72627382723e3caeee52e86d22dcb989aaf69027085fedb18aecc0555e035"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-instance-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-instance-build.log",
+      "bytes": 113,
+      "sha256": "bcf33fdbc3f92f2c3c85ea20d620d404db2b93b1694273ec0d6074b2836d6694"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-instance-full.log",
+      "bytes": 153,
+      "sha256": "377664fbec5b99f06a33534e453cdb39d4e6ce2f68cdd07a11a0f72b81eb3938"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-condition-instance-parent-summary.json",
+      "bytes": 14890027,
+      "sha256": "9aa8c037014f695e9dadd5fe56e8bb902c55ae65afa7af5ad5f8ab22139f5c57"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42549940926
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T03:04:33.291842+00:00"
+}

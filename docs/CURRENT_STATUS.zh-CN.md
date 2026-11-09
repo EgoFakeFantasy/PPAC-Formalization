@@ -1,45 +1,32 @@
 # 当前工作入口（2026-11-09）
 
-当前为原第10阶段；最终对象Con未证明。原1–11阶段见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，来源与可信边界见[FEASIBILITY](FEASIBILITY.zh-CN.md)。
+当前处于原1–11规划的第10阶段；第11阶段未开始，最终对象Con尚未证明。原阶段表见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，对象规格见[OBJECT_TARGET](OBJECT_TARGET.zh-CN.md)。本页只列当前结论；历史批次以Git和不可改写的逐批验收报告为据。
 
-最终目标保持普通nativeZF原核中的`Con_ZF → Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。`InternalConsistency.closing_kernel_certificate`只证明同一`reduction → goal`；reduction及最终goal仍未证明。
+最终目标仍为原YesMetaZFC纯集合语言／普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`。`goal`准确为 `nativeCon false → nativeCon true`，目标理论为ZF+PP+ACwo+¬AC；Con覆盖全部内部／非标准ω证明码及完整公理测试和原六规则Root。`closing_kernel_certificate`只证明`reduction → goal`，不能代替尚未证明的reduction或goal。
 
-原1–9已完成并保留：语言／19规则源推导传输、完整理论及数学模式、任意ZF模型内同一L/ZFC解释、实际具体系统和全部源模型应用。原第4官方Comparator已在固定Lean4.34.1及真实Linux沙箱下接受，78原输入不变；见`verification/original-comparator-acceptance.json`。不重建这些基础。
+## 已完成并必须复用
 
-原第10的代码生产已完成：原ZF/U公理表统一闭类型及实际理论公理证明；全部11原公式构造的实际forcing递归、带类型总性、输出唯一性及任意内部自由范围的开放公式闭包解释；原六类目标证明码构造器。各项均有原nativeZF证书，实际Node／头字段和空free时Root已构造。源码、范围及既有依赖见SOURCE_LOCK和对应验收报告；这些代码生产结论不等于强迫规则保真。
+| 已有资产 | 当前精确边界 |
+|---|---|
+| 原1–3语言／19规则／全理论对应 | 已有原核证书；不是待重做的基础。全部内部Proof/Con仍属第10 |
+| 原第4外部基线 | 原4.34.1 Main／五端点与官方Comparator均已接受，运行42492087042；与目标4.33.1保持隔离 |
+| 原第6内部L/ZFC及完整模式 | 任意ZF模型内部L、原生／源全部模式、Choice、全局序及解释背景／非空消费均已完成；不重新建立L或真值后端 |
+| 原第5、7–9数学前端和实际系统 | 沿固定OpenAI源及既有供体完成；当前消费者见SOURCE_LOCK和REUSE_CONTRACTS，不从旧批次叙述重新开工 |
+| 原内部语法／证明配套 | AbstractTop／InstantiateTop／execution_iff、原27逻辑模式和六证明构造器已有。完整ZF/U公理码生产、全11构造实际raw强迫编译、类型化总唯一性、开放闭包代码已有 |
+| 实际逐点opening与原证明操作 | 名字前缀和参数偏移的实际环境总唯一；无forallClosure。准确AND组合、原K/S、原rule20共同背景实例、同一falsum到原闭Root均已接入 |
+| 完整否定外层实例 | 从真实完整NegCode及opening生成同一量词体／环境／lift和G→实例证明；完整守卫／重绑定交换及规范化强迫MP仍未证明 |
+| opening／lift／mode2的变量部分 | 旧名字／参数项经真实lift和原kind1 mode2运行保持精确码；新头变为指定合法参数。均有普通nativeZF原核证书 |
+| 实际条件参数识别 | 从同一opening真实参数表内部生成选中字段P和偏移J=a+j，证明新头／原mode2组合结果恰为J处原自由变量码。P、偏移、头码和执行均非给定答案；覆盖内部非标准索引及码 |
 
-原第10实际AND双向证明组合：InternalProofTemplates直接复用原ObjectTreeTemplate及ObjectLogicalAxiom.prop／shapes，为固定模板取得完整FormulaCode并生成原逻辑证书、完整查询与真实父证明；原表成员是已核实的外部固定模式条件，洞内公式码允许内部非标准。具体消费者为原rule12／13及真实MP，两个投影已直接消费同一ForcingLogicalCode.binary 0输出；结合已验收的正向组合，在空目标bound、任意内部free范围取得Proved(Q)↔(Proved(N)∧Proved(M))。保留原Node／头字段与空free时Root，无新语法／检查器／核。开放闭包传输、完整单调性／稠密性、MP强迫桥、统一公理／Proof正确性、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38488项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-templates-acceptance.json。
+## 当前真正缺口及依赖顺序
 
-正向AND组合及原rule11证明生产保留，见verification/internal-proof-conjunction-acceptance.json。
+- 将上述变量方程用于同一实际条件重绑定／混合opening／原InstantiateTop，处理原binder advance并完成**全内部公式相消**。现有纯索引重命名复合及编码解码往返定理已有，但尚未建立它们对跨bound/free混合替换的直接适用性；不把已有接口本身误报缺失。
+- 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
+- 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
+- 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
-原第10内部蕴含证明组合：InternalProofImplication复用已验收原模板工厂及原K/rule2、S/rule0，不给定公理证明或中间码；从实际A→B、B→C码及其真实证明构造三个实际MP父节点，取得同一A→C码的证明。固定原模式成员由内核验证，全部运行公式／free范围／证明码允许内部非标准；原Node／头字段和空free时Root保持。它是原强迫证明所需的普通字面蕴含证明操作，不是ForcingLogicalCode.binary 2的规范化强迫蕴含桥；该桥、完整统一保真、reduction及最终Con仍未证明。九项完整验收和五项trust=0通过，零警告；全部38497项既有足迹及旧证明正文不变，12项兼容回归和三库来源预检通过。验收见verification/internal-proof-implication-acceptance.json。
+## 最新实际验收
 
-后续开放节点按原ForcingSound.sound的名字赋值逐点结构核对解释，保留名字／固定参数索引和原free头计数。既有ForcingOpenCode是“先forallClosure再forcing”的已验收代码生产，不冒称逐点开放解释或六规则保真。变量图、混合替换、类型和唯一性配套已存在，优先核对并消费精确合同，不另建后端。
+`verification/forcing-condition-instance-acceptance.json`：九项命令和五项trust=0均退出0；38700项声明，零警告；38691项旧依赖足迹和2820份旧证明源码哈希全部保持。12项跨平台回归、三个干净锁定依赖及75项源哈希检查通过。该验收证明上述实际条件项组件，不证明完整公式相消、强迫MP、reduction或最终Con。
 
-真正剩余：强迫解释的MP蕴含桥、其他统一六规则保真、内部／非标准ZF/U公理及语义／Proof正确性、同一矛盾码reduction与最终Con，以及原第11最终验收。不得以标准quotation模式或辅助构建代替这些门，不建立全宇宙统一真值／强迫谓词。
-
-发布门：只在前一整轮远端CI成功并读回实际日志后推送；推送后核对远端HEAD、所有改动blob及关键证明／报告实际字节。本地验收不冒充远端通过，不以文档中的历史批次号替代GitHub实际状态。
-
-原第10逐点开放代码适配：ForcingOpenLayout复用原恒等／加法Replacement图、变量像和混合替换列表，在全部内部／非标准范围构造名字前缀i、参数偏移b+i及唯一环境；ForcingPointwiseCode实际消费该环境、既有reify_total、十一构造强迫编译总唯一性及原混合替换，得到free范围t=b+f的逐点开放输出。未插入forallClosure。已取得nativeZF原核中的类型化总唯一证书；重命名／raise／instantiate交换、语义对应、强迫六规则保真、reduction与最终Con仍未证明。完整九项验收及五项trust=0通过，零警告；全部38504项旧足迹与旧证明正文保持，12项兼容回归和三库／75哈希预检通过。源声明名称核对至固定原文forcing_sound；验收见verification/forcing-pointwise-acceptance.json。
-
-原第10实际二元编译计算律：ForcingCodeBinary从真实父／子compiled判断推出四种原ForcingLogicalCode.binary结果；历史在对象EX内生成，直接复用compiled_step、既有分支选择、有界读取和独立子输出唯一性。ForcingCodeStepUnique仅追加公开选择入口，全部旧正文不变。空源bound时，实际合取编译已接到原Node／Root证明构造，取得两种完整ZF/U测试下Proved(Q)↔(Proved(N)∧Proved(M))。所有运行码／范围允许内部非标准。原AbstractTopFormulaOperation、InstantiateTopFormulaOperation与execution_iff早已完成，相关旧False标志纠正；不重新证明这些桥。逐点开放交换、规范化强迫MP桥、统一公理／Proof正确性、reduction及最终Con仍未证明。完整九项验收、五项trust=0通过，38570项声明、零警告；全部38562项旧足迹和旧证明正文保持，12项兼容回归及三库／75哈希预检通过。验收见verification/forcing-code-binary-acceptance.json。
-
-原第10实际逐点开放合取交换：ForcingMixedBinary只消费已有二元替换端点、构造存在和输出唯一性；reified_binary／opened_binary把任意独立输出对齐到同一实际父环境。ForcingPointwiseCode.conjunction实际复合重编码、原四分支编译计算律及逐点打开，取得任意内部／非标准source free范围b、target free范围t=b+f的准确AND输出；未插入forallClosure，无给定局部强迫答案／历史。conjunction_iff进一步接到原Node／Root证明构造，两种完整ZF/U测试下取得实际父可证性↔两个实际子输出可证性。原两个模块旧正文不变，仅增加导入与追加必要消费者。完整重命名／raise／instantiate交换、规范化强迫MP桥、统一内部公理／Proof正确性、reduction及最终Con仍未完成。完整九项验收、五项trust=0通过，38578项声明、零警告；全部38570项旧足迹和旧证明正文保持，12项兼容回归及三库／75哈希预检通过。验收见verification/pointwise-conjunction-acceptance.json。
-
-原第10实际原子／否定／量词计算律：ForcingCodeUnary从真实父及独立子compiled判断推出原ForcingAtomCode、ForcingNegCode、universal和ForcingExistCode片段。历史在对象EX内生成；直接复用既有选择器、有界读取与输出唯一性。否定子式保留bound a，全称／存在子式使用A=a+1，原三层successor合同不变，全部运行码和范围允许内部非标准。四项原选择证明只去掉private修饰，正文完全保持；不是新证明这四个选择器。结合既有四种二元计算律，11类原raw编译构造均有实际输出计算接口。该结果不替代逐点否定／量词／原操作交换、强迫MP和统一规则／公理保真；reduction及最终Con仍未完成。完整九项验收、五项trust=0通过，38594项声明、零警告；全部38578项旧足迹及既有证明正文保持，12项兼容回归和三库／75哈希预检通过。验收见verification/forcing-code-unary-acceptance.json。
-
-原第10原假码逐点传输：实际reified、原强迫compiled及opened三段均保持原常量码；ForcingPointwiseCode.falsum直接消费InternalConsistency.contradiction中的同一个PureQuotationSyntax.formula(.falsum : Fm [] [])，原核证明实际输出Q等于原码n，全部运行范围和见证允许内部非标准。复用已有constant_candidate、混合nullary唯一性、原子编译计算律及quotation到原构造子的证明；未换矛盾公式，未插入名字全称闭包。Bool通用恒等仅为代码事实，不宣称新增truth语义归一化。该假码批次未构造闭Root，后续InternalFalseRoot已接通此反证尾部；统一证明翻译、reduction和最终Con仍未证明。四个旧模块只增加必要导入／追加消费者，旧正文不变。完整九项验收、五项trust=0通过，38605项声明、零警告；全部38594项旧足迹及旧证明正文保持，12项兼容回归和三库／75哈希预检通过。验收见verification/pointwise-nullary-acceptance.json。
-
-原第10开放反证关闭：InternalFalseRoot复用原strengthening、常量弱化和对象ω归纳，将全部内部／非标准free范围的实际falsum证明关闭为原Root；直接消费同一quotation和实际逐点输出证明，取得既定InternalConsistency.inconsistentAt，普通nativeZF原核证书已接入。该反证尾部不再列为缺口；实际输出证明的统一构造、强迫MP、完整内部公理／Proof保真、reduction及最终Con仍未完成。完整九项验收及五项trust=0通过，38619项声明、零警告；38605项旧足迹和2814份旧证明哈希不变，12项兼容回归及三库／75哈希预检通过。见verification/internal-false-root-acceptance.json。
-
-原第10字面单目构造交换：复用原混合替换端点、实际binder提升及输出唯一性，取得否定和双量词的构造交换；实际独立名字重编码／逐点打开的否定消费者已接通，原nativeZF证书通过定向检查。完整ForcingNegCode片段、条件重绑定及强迫MP仍待接通；不把字面否定交换当作强迫否定。完整九项验收、五项trust=0通过，38625项声明、零警告；38619项旧足迹与全部旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-mixed-unary-acceptance.json。
-
-原第10实际量词打开方程：从真实父输出内部取得目标量词体、原源／目标后继范围、两张实际提升码表及子替换判断，并证明保留原父输入类型的双向等价；逐点forall／exists消费者取得普通nativeZF原核证书。未把目标体或提升见证作为前提。完整否定片段、条件重绑定和规范化强迫MP仍未接通，统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38635项声明、零警告；38625项旧足迹与旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-quantified-opening-acceptance.json。
-
-原第10实际全称实例证明：InternalProofQuantifier直接复用已有原规则20完整查询／节点、InstantiateTop类型／总性及公开逻辑证明投影，内部构造公理证书和真实logical／MP父节点，生成实例码及其证明；实际逐点forall打开保留同一环境／提升子判断的消费者已接通。共同背景B→forall F到B→实例F直接复用已有K/S，不假定B已可证／为真。全部运行码／范围允许内部非标准；原Node／头字段／空free时Root保留。该原生量词操作不等于规范化强迫MP；完整重绑定、统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38651项声明、零警告；38635项旧足迹和2816份旧证明哈希不变，12项兼容回归及三库／75哈希预检通过。见verification/internal-proof-quantifier-acceptance.json。
-
-原第10实际否定外层实例：ForcingNegProof从完整原否定编译（两守卫及实际重绑定）、真实逐点打开和G→打开否定式的实际原核证明，内部生成同一raw／target量词体、真实环境／提升子判断、实例码及G→实例证明。共同背景G不要求可证／为真，也不要求打开后的否定式无条件可证；未给定体码、提升或实例输出。原NegCode／原规则20／InstantiateTop／K/S证明均复用，旧正文不变。完整守卫／条件重绑定交换、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明。完整九项验收及五项trust=0通过，38666项声明、零警告；38651项旧足迹与旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-neg-proof-acceptance.json。
-
-原第10实际opening提升变量方程：ForcingOpenLift直接复用现有闭参数重命名不变性和原mixed binder的zero／bound／free字段方程，在同一实际环境／提升表中保持旧名字与参数的精确码，并内部生成原bvar0头码及其实际字段；两项普通nativeZF原核证书已通过验收。所有运行码／索引／长度可为内部非标准。完整公式的条件重绑定／opening／InstantiateTop相消、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38679项声明、零警告；38666项旧足迹和2818份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-lift-acceptance.json。
-
-原第10实际opening／mode2项组合：ForcingOpenInstantiate实际消费上一批原提升字段方程及原InstantiateVariableRun，内部生成中间项码和原kind1／mode2执行，证明旧名字／参数的两段组合精确保持原码，新增bound-zero项的组合精确等于合法参数。中间码、执行或输出答案均非前提，全部运行索引／长度／码允许内部非标准；两项nativeZF原核证书已通过完整验收。完整公式相消、条件参数的实际识别、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38691项声明、零警告；38679项旧足迹和2819份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-instantiate-acceptance.json。
+每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。

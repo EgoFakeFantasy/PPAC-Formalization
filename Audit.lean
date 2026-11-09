@@ -39369,3 +39369,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingOpenInstantiate.zeroInput
 #print axioms PPAC.Migration.ForcingOpenInstantiate.zeroSentence
 #print axioms PPAC.Migration.ForcingOpenInstantiate.zero_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingConditionInstance.conditionResult
+#print axioms PPAC.Migration.ForcingConditionInstance.conditionResult_rename
+#print axioms PPAC.Migration.ForcingConditionInstance.condition_iff
+#print axioms PPAC.Migration.ForcingConditionInstance.totalResult
+#print axioms PPAC.Migration.ForcingConditionInstance.totalResult_rename
+#print axioms PPAC.Migration.ForcingConditionInstance.total
+#print axioms PPAC.Migration.ForcingConditionInstance.input
+#print axioms PPAC.Migration.ForcingConditionInstance.sentence
+#print axioms PPAC.Migration.ForcingConditionInstance.kernel_certificate

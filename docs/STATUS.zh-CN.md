@@ -109,3 +109,5 @@
 原第10实际opening提升变量方程：ForcingOpenLift直接复用现有闭参数重命名不变性和原mixed binder的zero／bound／free字段方程，在同一实际环境／提升表中保持旧名字与参数的精确码，并内部生成原bvar0头码及其实际字段；两项普通nativeZF原核证书已通过验收。所有运行码／索引／长度可为内部非标准。完整公式的条件重绑定／opening／InstantiateTop相消、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38679项声明、零警告；38666项旧足迹和2818份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-lift-acceptance.json。
 
 原第10实际opening／mode2项组合：ForcingOpenInstantiate实际消费上一批原提升字段方程及原InstantiateVariableRun，内部生成中间项码和原kind1／mode2执行，证明旧名字／参数的两段组合精确保持原码，新增bound-zero项的组合精确等于合法参数。中间码、执行或输出答案均非前提，全部运行索引／长度／码允许内部非标准；两项nativeZF原核证书已通过完整验收。完整公式相消、条件参数的实际识别、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38691项声明、零警告；38679项旧足迹和2819份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-instantiate-acceptance.json。
+
+原第10实际条件项识别：ForcingConditionInstance从同一opening的真实参数表内部取得选中字段P及偏移J=a+j，直接消费上一批原头部／mode2项运行双条件和现有parameters_field，证明该组合结果精确等于J处原自由变量码。P、偏移、头码和原Run均非给定答案，全部运行索引／范围／码允许内部非标准；原nativeZF证书已通过完整验收。完整公式相消、规范化强迫MP、统一内部公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38700项声明、零警告；38691项旧足迹和2820份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-condition-instance-acceptance.json。
