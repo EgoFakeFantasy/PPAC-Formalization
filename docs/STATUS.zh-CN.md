@@ -20,10 +20,10 @@
 
 既有验收完成原preorder实际开口、三实例及原内部证明消费：ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 原始preorder的实际目标开口、三次实例及row生成／原证明消费本批已完成，不再列为待做。精确识别这些guard码与ForcingNegCondition／ForcingGuardOpening的编译输出仍未完成；规范局部上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction和最终Con仍未证明。固定外部有限模式仅描述原preorder的3-ALL／5-IMP外层；目标free作用域、项索引和运行码仍允许内部非标准值。
 
-本批新增ForcingBinderInstantiation／ForcingBinderFormula：任意实际closed项表的一次lifted opening＋原native InstantiateTop，等于Cons(P,R),S直接替换的准确输出码。复用既有全内部公式相消、恒等重命名及index／mixed桥；四个恒等码和两个实际native环境均内部构造／消去，前缀表类型由真实cons推出。覆盖全部内部非标准公式、作用域和项索引，不假设后续bound表仍为初始变量偏移布局，不给定期望等式。三个普通nativeZF原核证书已完整验收。这完成了精确guard码对应所需的一步binder相消；整个preorder与负／存在guard编译码的组合仍待完成，完整mono／dense／MP／Proof／reduction及最终Con未证明。
+本批ForcingPreorderPrefix.at_target直接消费已生成的ForcingPreorderCode.rawData／ForcingPreorderInstances.targetData，内部消去同一六个native体／实例见证，生成三张原顺序cons前缀表、类型和每层对子公式的准确direct mixed输出。最终表为[P2,P1,P0]++R；每层目标都是原native实例的同一个实际码。复用原ALL端点、binder总性及已完成的一步全内部公式相消；没有另给六状态实例行、表码、期望等式或guard真值，没有新核／checker／递归。两个普通nativeZF原核证书已完整验收。运行码／作用域包含内部非标准值；固定外层仅为原三binder。整段preorder与负／存在guard编译码最终对应、规范上下文／fresh全称化、完整mono／dense／MP／Proof／reduction及最终Con仍未完成。
 
 原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。
 
-本轮九项完整验收及五项trust=0均退出0；39173项声明、零警告，全部39154项既有足迹保持，19项新增公开声明无新增公理依赖。2849份既有PPAC证明源码哈希保持；唯一旧文件ForcingOpenLift追加一般closed表接口，原14940字节和13个公开声明完整保留，适配正文机械核对一致。16项回归、三个干净锁定依赖和75项源哈希通过，2885项密封输入全部重算。本批为本地验收，其对应独立Linux验收仍待执行。
+本轮九项完整验收及五项trust=0均退出0；39195项声明、零警告，全部39173项既有足迹和2852份既有PPAC证明源码哈希保持，22项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2886项密封输入全部重算。本批为本地验收，其对应独立Linux验收仍待执行。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-binder-formula-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-preorder-prefix-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。

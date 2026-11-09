@@ -48,7 +48,7 @@
 | 单／双局部前件解除及局部否定消费 | 本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。 实际源行现已生成消费；精确guard编译码识别、规范guard上下文及fresh全称化仍未装配。 |
 
 | 原preorder实际开口／三实例及原证明消费 | ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 精确guard编译码识别与完整mono／Proof／Con仍未完成。 |
-| 实际binder一步原生实例化的全内部码相消 | ForcingBinderInstantiation／ForcingBinderFormula：任意实际closed项表在一次lifted opening＋原InstantiateTop后，与原Cons(P,R),S直接替换得到同一码。复用既有全内部公式归纳、恒等重命名及index／mixed桥，四个恒等码和两个实际native环境均在对象层生成／消去，前缀表类型由真实cons推导。允许全部内部非标准公式、作用域和项索引；不要求后续bound表仍为初始变量偏移布局，不给定期望等式。三个普通nativeZF原核端点已通过九项全量验收及五项trust=0；整个preorder到负／存在guard编译码的对应仍待组合。 |
+| 原三实例与前缀表精确码对应 | ForcingPreorderPrefix.at_target直接消费已生成的原rawData／targetData，内部消去同一六个native体／实例见证，并生成三张原顺序cons前缀表、类型和对子公式的准确direct mixed输出。每次输出码都是原实例的同一个实际值，最终表为[P2,P1,P0]++R。复用已有ALL端点、binder总性和一步全内部公式相消；不另给实例行、表码、期望等式或guard真值。固定外层仅为原三binder，运行码／作用域允许内部非标准值。两个普通nativeZF原核证书及九项完整验收／五项trust=0已通过。整段preorder与负／存在guard编译器输出的最终对应仍未完成。 |
 
 ## 当前真正缺口及依赖顺序
 
@@ -59,7 +59,7 @@
 
 ## 最新实际验收
 
-`verification/forcing-binder-formula-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39173项声明、零警告，全部39154项既有足迹保持，19项新增公开声明无新增公理依赖。2849份既有PPAC证明源码哈希保持；唯一旧文件ForcingOpenLift追加一般closed表接口，原14940字节和13个公开声明完整保留，适配正文机械核对一致。16项回归、三个干净锁定依赖和75项源哈希通过，2885项密封输入全部重算。本批为本地验收，其对应独立Linux验收仍待执行。
+`verification/forcing-preorder-prefix-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39195项声明、零警告，全部39173项既有足迹和2852份既有PPAC证明源码哈希保持，22项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2886项密封输入全部重算。本批为本地验收，其对应独立Linux验收仍待执行。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 

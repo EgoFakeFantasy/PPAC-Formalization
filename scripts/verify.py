@@ -2745,7 +2745,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_code', 'ForcingPreorderCode', 23),
                                 ('forcing_preorder_instances', 'ForcingPreorderInstances', 27),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
-                                ('forcing_binder_formula', 'ForcingBinderFormula', 9)):
+                                ('forcing_binder_formula', 'ForcingBinderFormula', 9),
+                                ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6086,6 +6087,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_preorder_opening_and_three_native_instances_generated": True,
         "object_actual_preorder_five_implications_and_typed_local_backgrounds_generated": True,
         "object_actual_preorder_original_internal_proof_consumer_connected": True,
+        "object_actual_preorder_three_native_instances_direct_prefix_tables_generated": True,
+        "object_actual_preorder_generated_targetData_consumed_by_prefix_normalization": True,
+        "object_actual_preorder_six_native_witnesses_and_three_prefix_tables_object_bound": True,
+        "object_actual_preorder_prefix_scope": "ForcingPreorderPrefix.at_target directly consumes existing rawData/targetData, object-eliminates SAME six native body/instance witnesses, generates all three original ordered cons prefix lists/types, and proves exact direct mixed opening to each SAME native output. Existing ALL endpoints/lift totality and prior full internal binder cancellation reused; no separate row/table/output/equality answer or guard truth, no new kernel/checker/recursion. All runtime codes/scopes may be nonstandard; only outer three-binder pattern is fixed. Whole negative/existential guard compiler ID, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
         "object_actual_preorder_negative_guard_compiler_codes_identified": False,
         "object_actual_preorder_instances_scope": "Actual raw source quotation -> generated empty bound table and real target parent/child opening -> THREE native instances -> FIVE IMP fields -> FIVE typed local backgrounds -> original internal G0-to-member/order proofs. No supplied target row, codes/proofs or guard/preorder truth. Runtime terms/free scope/codes include internal nonstandard values. Fixed outer pattern is only the pinned 3-ALL/5-IMP source shape. Exact negative/existential guard compiler identification, canonical context/fresh forall, full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_actual_binder_instance_all_internal_terms_collapsed": True,
