@@ -40030,3 +40030,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPreorderGuardTables.relation_from_instance
 #print axioms PPAC.Migration.ForcingPreorderGuardTables.relation_kernel_certificate
 #print axioms PPAC.Migration.ForcingPreorderGuardTables.replacement_index
+
+#print axioms PPAC.Migration.ForcingPreorderNegative.basis
+#print axioms PPAC.Migration.ForcingPreorderNegative.basis_rename
+#print axioms PPAC.Migration.ForcingPreorderNegative.derive
+#print axioms PPAC.Migration.ForcingPreorderNegative.input
+#print axioms PPAC.Migration.ForcingPreorderNegative.kernel_certificate
+#print axioms PPAC.Migration.ForcingPreorderNegative.result
+#print axioms PPAC.Migration.ForcingPreorderNegative.resultBody
+#print axioms PPAC.Migration.ForcingPreorderNegative.result_rename
+#print axioms PPAC.Migration.ForcingPreorderNegative.sentence

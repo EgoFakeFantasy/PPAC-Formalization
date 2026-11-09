@@ -58,17 +58,19 @@
 
 | 原条件槽更新后的完整guard记录消费 | ForcingPreorderGuardTables已接通原free-condition实际替换后的两类guard：用对象numeral不等证明载体槽保留，并在对象量词内生成载体值；实际relation compiler／native InstantiateTop到原R(P0,P2)叶的同码证明内部消去4个compiler、5个共同源、4个实参表和1个singleton森林见证。没有给定共同源／像表／森林／码等式答案，原空表类型和条件项类型从同一原记录恢复。两个普通nativeZF原核证书及10项trust=0预审通过；该后续批次九项完整验收／五项trust=0全部退出0，39338项声明、零警告；39328项旧足迹与2861份旧证明源码不变，无新增公理。整段负／存在compiler与后续Proof／Con仍未完成。 |
 
+| 完整原负分支记录及同一局部证明柯里化 | ForcingPreorderNegative直接消费原完整否定compiler、实际body开口和native InstantiateTop；5＋4＋6＋6个原见证在对象量词内消去。实际两层guard查询经既有GuardTables识别为同一H0／H5，原逻辑字段替换后调用既有内部证明规则解除两个前件。既有Curry生产器实际消费同一局部证明，将整个G0前件移入蕴含并保留Extra；同一原falsum和实际剩余IMP码留在对象EX内。parent是Ctx下的内部条件证明，未假定Ctx／guard／preorder真值，其类型由实际native实例恢复。普通nativeZF原核闭句证书及9项trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39347项声明、零警告；39338项旧足迹及2862份旧证明源码不变，无新增公理。规范源上下文布局／fresh全称化、完整存在分支及后续内部Proof／Con尚未完成。 |
+
 ## 当前真正缺口及依赖顺序
 
-- 原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。
+- 原完整负compiler、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现已实际消费。下一项是完整存在分支的实际记录消费、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-preorder-guard-tables-acceptance.json`：九项完整验收及五项trust=0全部退出0；39338项声明、零警告，39328项旧足迹与2861份既有PPAC证明源码不变，10项新增公共声明无新增公理；2895项密封输入重算。现有16项CI回归本轮已通过、兼容性脚本未再修改，三个干净锁定依赖及75源哈希通过。仅删除本批5个临时文件（12947559字节），清理后guard消费源码trust=0退出0，未见残留Lean／Lake进程。前一已接受批次见verification/forcing-preorder-leaves-acceptance.json；两个批次均为本地验收，Linux须由对应新提交独立取得。
+`verification/forcing-preorder-negative-acceptance.json`：九项完整验收及五项trust=0全部退出0；39347项声明、零警告，39338项旧足迹与2862份既有PPAC证明源码不变，9项新增公共声明无新增公理；2896项密封输入重算。16项CI回归、三个干净锁定依赖及75源哈希通过。仅删除本批5个临时文件（12948642字节），清理后源码trust=0退出0，未见残留Lean／Lake进程。本地完整通过不代表当前新提交已获Linux验收。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42662706463／7167663已独立完整Linux成功；实际解码日志2026-11-09T19:00:30.4884732Z报告39195项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-prefix-remote-acceptance.json。此前14个变更blob已实际逐字回读，main未由本任务改动。后续本地共同R／实参表／guard及本批raw路径仍不在此Linux回执范围；最终Con未完成。
+远端42680491232／f74c26f已独立完整Linux成功；实际解码日志2026-11-09T20:34:30.4267947Z报告39284项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact成功，见verification/ci-relation-raw-remote-acceptance.json。后续本地39347项范围尚需新提交独立Linux验收；最终Con未完成。

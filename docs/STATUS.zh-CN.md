@@ -24,8 +24,10 @@ ForcingPreorderLeaves／LeafTarget已从同一原rawData／targetData／instance
 
 ForcingPreorderGuardTables已接通原free-condition实际替换后的两类guard：用对象numeral不等证明载体槽保留，并在对象量词内生成载体值；实际relation compiler／native InstantiateTop到原R(P0,P2)叶的同码证明内部消去4个compiler、5个共同源、4个实参表和1个singleton森林见证。没有给定共同源／像表／森林／码等式答案，原空表类型和条件项类型从同一原记录恢复。两个普通nativeZF原核证书及10项trust=0预审通过；该后续批次九项完整验收／五项trust=0全部退出0，39338项声明、零警告；39328项旧足迹与2861份旧证明源码不变，无新增公理。整段负／存在compiler与后续Proof／Con仍未完成。
 
-当前仍为原第10阶段。真正剩余为整段负／存在guard编译结果的精确对应、源局部上下文整理与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始。
+ForcingPreorderNegative直接消费原完整否定compiler、实际body开口和native InstantiateTop；5＋4＋6＋6个原见证在对象量词内消去。实际两层guard查询经既有GuardTables识别为同一H0／H5，原逻辑字段替换后调用既有内部证明规则解除两个前件。既有Curry生产器实际消费同一局部证明，将整个G0前件移入蕴含并保留Extra；同一原falsum和实际剩余IMP码留在对象EX内。parent是Ctx下的内部条件证明，未假定Ctx／guard／preorder真值，其类型由实际native实例恢复。普通nativeZF原核闭句证书及9项trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39347项声明、零警告；39338项旧足迹及2862份旧证明源码不变，无新增公理。规范源上下文布局／fresh全称化、完整存在分支及后续内部Proof／Con尚未完成。
 
-最新本地验收见verification/forcing-preorder-guard-tables-acceptance.json：39338项声明、2266项无公理、37072项仅既有记录依赖，零警告。39328项旧足迹及2861份既有PPAC证明源码不变；2895项密封输入重算。前一已接受批次为verification/forcing-preorder-leaves-acceptance.json，39328项声明。两批共清理13个本轮临时文件（25979155字节），清理后受影响源码trust=0均退出0，未见残留Lean／Lake进程。本地验收不替代新提交的Linux结果。
+当前仍为原第10阶段。真正剩余为完整存在分支的实际记录消费、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。历史批次以Git和不可改写验收报告为据。最新Linux成功回执仍为verification/ci-preorder-prefix-remote-acceptance.json，39195项声明；f74c26f的42680491232仍在Build and audit，不计作成功。
+最新本地验收见verification/forcing-preorder-negative-acceptance.json：39347项声明、2266项无公理、37081项仅既有记录依赖，零警告。39338项旧足迹和2862份旧证明源码不变，2896项密封输入已重算；16回归、三个干净锁定依赖及75源哈希通过。仅清理5个本轮临时文件（12948642字节），清理后源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交的Linux结果。
+
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。历史批次以Git和不可改写验收报告为据。最新Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，39284项声明；f74c26f的42680491232现已独立Linux成功，实际解码日志报告39284项声明、零警告，见verification/ci-relation-raw-remote-acceptance.json；后续本地提交尚不在该Linux范围。

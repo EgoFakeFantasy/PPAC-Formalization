@@ -1,0 +1,12 @@
+{
+  "run_id": 42680491232,
+  "job_id": 129373389084,
+  "commit": "f74c26ff82a2f1682612b4251f97bda0729888e7",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42680491232",
+  "actual_live_job_conclusion": "success",
+  "actual_decoded_PASS_line": "2026-11-09T20:34:30.4267947Z PASS: 39284 audited declarations; 2264 without axioms; 37020 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39284,
+  "warnings": 0,
+  "scope": "Independent clean Linux predecessor run; excludes later e8eedda/b95801e and current negative consumer. Final object Con unproved.",
+  "decoded_log_sha256_lf": "40076e4cc65ef7a7d189eb751505fd7b77b6792192988b431f91911385c03414"
+}

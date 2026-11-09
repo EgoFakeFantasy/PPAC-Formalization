@@ -1,0 +1,195 @@
+{
+  "verified_at": "2026-11-09T20:42:13.206742+00:00",
+  "baseline_commit": "b95801ea30d89212b1d8fa6626b5ce9c6b19f800",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: same-row leaf/member proof and actual updated native guard consumers committed in two locally accepted batches; this turn consumes complete original negative compiler and same local currying",
+  "background": "Original pure membership/equality language, ordinary full nativeZF and original FirstOrder.Derives through accepted replay; no object Choice or new kernel/checker/recursor/induction.",
+  "source_consumer": "Pinned ForcingQuotient.force_mono neg branch: h r (hr.trans hqp); old ForcingNegCondition.from_instance, exact actual row guards, old TransitiveGuardProof and InternalProofCurry producers.",
+  "result": [
+    "Direct complete original negative compiler, actual body opening and native InstantiateTop consumed",
+    "SAME 5 compiler +4 shell +6 first-query +6 final-query witnesses all internally eliminated",
+    "Both actual guard query chains identified with original H0/H5 by accepted updated native guard consumers; old logical field substitution and original internal proof rules discharge guard antecedents",
+    "Actual parent Y type recovered from native instantiation, no target type answer supplied",
+    "Existing InternalProofCurry.from_implication actually consumes same local proof: SAME whole G0 curried under unchanged Extra",
+    "SAME original falsum and actual residual IMP code generated/object-bound, BOTH local and curried INTERNAL proofs retained",
+    "Ordinary nativeZF original-kernel closed-sentence certificate"
+  ],
+  "proof_boundaries": {
+    "runtime_scopes_and_codes_internal_including_nonstandard": true,
+    "fixed_source_arity_and_outer_pattern_are_quotation_metadata_only": true,
+    "parent_input": "Legitimate INTERNAL conditional proof under Ctx; no truth of Ctx/preorder/guards is assumed",
+    "all_21_original_negative_witnesses_object_eliminated": true,
+    "same_original_negative_guards_discharged": true,
+    "same_whole_local_G0_curried_with_existing_producer": true,
+    "supplied_guard_query_equality_or_final_proof_answer": false,
+    "canonical_source_context_layout_and_fresh_forall_completed": false,
+    "complete_actual_existential_branch_consumed": false,
+    "full_internal_joint_mono_dense_MP_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39347,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37081,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39338,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingPreorderNegative.basis",
+      "PPAC.Migration.ForcingPreorderNegative.basis_rename",
+      "PPAC.Migration.ForcingPreorderNegative.derive",
+      "PPAC.Migration.ForcingPreorderNegative.input",
+      "PPAC.Migration.ForcingPreorderNegative.kernel_certificate",
+      "PPAC.Migration.ForcingPreorderNegative.result",
+      "PPAC.Migration.ForcingPreorderNegative.resultBody",
+      "PPAC.Migration.ForcingPreorderNegative.result_rename",
+      "PPAC.Migration.ForcingPreorderNegative.sentence"
+    ],
+    "new_axioms": [],
+    "ALL_old_PPAC_proof_files_completely_unchanged": 2862,
+    "sealed_inputs_rehashed": 2896,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_regressions_passed": 9,
+    "original_comparator_guard_regressions_passed": 7,
+    "clean_pins": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_source_hashes_verified": 75,
+    "earlier_local_attempt_not_counted": "Stopped only its own verified process tree to correct extra EOF blank line rejected by git diff --check. Source lock refreshed; full nine-command run above restarted and completed independently.",
+    "post_cleanup_source_trust0_command": {
+      "module": "ForcingPreorderNegative",
+      "exit_code": 0,
+      "log": ".local/preorder-negative-postcleanup-source.log"
+    },
+    "sealed_inputs_rehashed_after_cleanup": 2896
+  },
+  "remaining": "Canonical original context layout/fresh forall, complete original existential consumer, original joint mono/dense/exists_force_neg/forceFormula_imp internal induction, normalized MP, all internal/nonstandard ZF/U axioms and six-rule Proof, exact reduction/finalCon. Stages1-9 not reopened, stage11 not started.",
+  "local_acceptance_is_not_remote_Linux_acceptance": true,
+  "cleanup": {
+    "exact_own_temporary_files_removed": 5,
+    "bytes_removed": 12948642,
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-negative-baseline.json",
+        "bytes": 12946417,
+        "sha256": "07c9758f7c75620d7d8420b8957f0988937c6be1fc37590338966022cd39fb86"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-negative-build.log",
+        "bytes": 112,
+        "sha256": "c08479b61c24585d52e0ff224bd559276ec711e6e40d4692e2d8f0f56614eb0c"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-negative-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-negative-footprints.json",
+        "bytes": 1488,
+        "sha256": "2b7640a876dbaa469bbb9942991cf12d322dc2c77149887cb51305f5c23e5d1f"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-negative-preaudit.lean",
+        "bytes": 625,
+        "sha256": "980f10268187a208bb3e2c3976c27a034200ee4788dc6e05b6c26520475d099a"
+      }
+    ],
+    "other_project_or_dependency_files_removed": false,
+    "no_residual_Lean_Lake_processes_observed": true
+  },
+  "completed_at": "2026-11-09T20:44:18.224834+00:00"
+}
