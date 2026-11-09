@@ -2707,7 +2707,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_pointwise_code', 'ForcingPointwiseCode', 37),
                                 ('forcing_code_binary', 'ForcingCodeBinary', 7),
                                 ('forcing_mixed_binary', 'ForcingMixedBinary', 1),
-                                ('forcing_code_unary', 'ForcingCodeUnary', 13)):
+                                ('forcing_code_unary', 'ForcingCodeUnary', 13),
+                                ('internal_false_root', 'InternalFalseRoot', 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7395,6 +7396,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_forcing_compiler_atomic_unary_scope": 'Actual atomic and negation/forall/exists compiler computation laws on genuine ForcingCodeRecursion.compiled judgments. Original recursion constructs the history inside object EX; completed selectors and bounded-read correspondence expose the selected existing fragment, and independent child-output uniqueness aligns arbitrary child compilations. Negation uses the original ForcingNegCode fragment and child bound a; forall/exists use the original universal/existential fragments and child bound A=a+1, with original three successor scope witnesses. All codes, outputs, scopes and histories include internal nonstandard values. Atomic law covers the original four atomic cases; combined with the accepted four binary laws, all eleven raw compiler constructor computation laws are available. This is code computation, not pointwise quantifier/negation commutation, forcing MP, semantic/proof preservation or final internal Con. Four existing selector proof bodies were only made public; none were re-proved or replaced.',
         "object_pointwise_open_original_falsum_and_constant_codes_preserved_proved": True,
         "object_pointwise_open_original_falsum_scope": 'Actual full POINTWISE compilation preserves the ORIGINAL native constant code, in particular the exact PureQuotationSyntax.formula(.falsum : Fm [] []) used by InternalConsistency.contradiction. The real reification, original forcing compilation and actual name-opening witnesses are consumed; each is aligned by existing constant/actual output uniqueness, giving output Q = original code n at all internal/nonstandard scopes b and t=b+f. No universal name closure, replacement false formula, supplied history or local compilation answer is used. The nativeZF falsum certificate directly consumes the original Con falsum quotation. The Bool-generic constant identity is only a code statement; no additional semantic truth normalization is claimed. This does not construct a closed ZF contradiction proof, prove the uniform proof translation, InternalConsistency.reduction or final Con.',
+        "object_open_falsum_proof_original_closed_root_proved": True,
+        "object_actual_pointwise_falsum_output_proof_to_original_inconsistency_proved": True,
+        "object_open_falsum_root_scope": "Original strengthening and object omega induction close every internal/nonstandard free scope; exact original falsum quotation and unchanged Root give InternalConsistency.inconsistentAt. Actual pointwise output proofs are consumed via existing falsum-code identity. Uniform interpreted proof construction, forcing MP, reduction and final Con remain unproved.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),
         "declarations_with_allowed_axioms": sum(bool(value) for value in footprints.values()),

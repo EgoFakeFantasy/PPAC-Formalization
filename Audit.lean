@@ -39281,3 +39281,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPointwiseCode.falsum
 #print axioms PPAC.Migration.ForcingPointwiseCode.falsumSentence
 #print axioms PPAC.Migration.ForcingPointwiseCode.falsum_kernel_certificate
+#print axioms PPAC.Migration.InternalFalseRoot.weaken_falsum
+#print axioms PPAC.Migration.InternalFalseRoot.drop_scope
+#print axioms PPAC.Migration.InternalFalseRoot.closed
+#print axioms PPAC.Migration.InternalFalseRoot.closed_rename
+#print axioms PPAC.Migration.InternalFalseRoot.close
+#print axioms PPAC.Migration.InternalFalseRoot.inconsistent_of_closed
+#print axioms PPAC.Migration.InternalFalseRoot.inconsistent
+#print axioms PPAC.Migration.InternalFalseRoot.input
+#print axioms PPAC.Migration.InternalFalseRoot.sentence
+#print axioms PPAC.Migration.InternalFalseRoot.kernel_certificate
+#print axioms PPAC.Migration.InternalFalseRoot.compiled_inconsistent
+#print axioms PPAC.Migration.InternalFalseRoot.compiledInput
+#print axioms PPAC.Migration.InternalFalseRoot.compiledSentence
+#print axioms PPAC.Migration.InternalFalseRoot.compiled_kernel_certificate
