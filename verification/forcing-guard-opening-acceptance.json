@@ -1,0 +1,226 @@
+{
+  "verified_at": "2026-11-09T08:01:59.401279+00:00",
+  "baseline_commit": "ad5ff6a2c91be1aa9407f9b26f2caa5f5dd31760",
+  "original_stage": "10 active; 1-9 complete; 11 not started",
+  "background": "Original YesMetaZFC pure-set signature; ordinary nativeZF; original FirstOrder.Derives; unchanged source and toolchains",
+  "result": "ForcingGuardOpening.kernel_certificate consumes ACTUAL member OR relation guard compiler, SAME head, lifted opening and native InstantiateTop instance. SAME actual output satisfies direct substitution of SAME original guard quotation by bound table [P] and SAME original free table S. Four actual compiler witnesses, direct bound forest and direct output candidates internally constructed/eliminated. Completed original full formula induction and binder lifts reused unchanged.",
+  "proof_boundaries": {
+    "all_internal_guard_root_term_diagram": true,
+    "actual_member_and_relation_guard_three_stage_code_commutation_to_same_direct_quotation": true,
+    "actual_selected_condition_field_consumed_for_reflexive_guard_internal_proof": false,
+    "guard_internal_proofs": false,
+    "normalized_forcing_MP": false,
+    "uniform_internal_axiom_and_Proof_preservation": false,
+    "reduction": false,
+    "final_internal_Con_goal": false
+  },
+  "reuse": [
+    "ForcingMemberGuard.identity_field",
+    "ForcingMemberGuardOpening.zero_image/free_image",
+    "Original ForcingTermDiagram all-five-candidate invariant and original joint binder lifts",
+    "ForcingFormulaInduction.cancel (completed full internal induction unchanged)",
+    "Original guard matrix/quotation/actual native InstantiateTop",
+    "Original forest totality/typing and actual mixed formula total output"
+  ],
+  "exact_visibility_only_changes": {
+    "ForcingMemberGuard": [
+      "identity_field"
+    ],
+    "ForcingMemberGuardOpening": [
+      "zero_image",
+      "free_image"
+    ]
+  },
+  "old_producer_bodies_unchanged": true,
+  "prior_certificate_hash_references_updated": [
+    [
+      "forcing_member_guard",
+      "PPAC/Migration/ForcingMemberGuard.lean"
+    ],
+    [
+      "forcing_member_guard_opening",
+      "PPAC/Migration/ForcingMemberGuard.lean"
+    ],
+    [
+      "forcing_member_guard_opening",
+      "PPAC/Migration/ForcingMemberGuardOpening.lean"
+    ]
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38905,
+    "declarations_without_axioms": 2262,
+    "declarations_with_recorded_dependencies": 36643,
+    "warning_lines": 0,
+    "all_prior_38881_declaration_footprints_unchanged": true,
+    "old_PPAC_proof_files": 2834,
+    "unchanged_old_PPAC_proof_files": 2832,
+    "changed_old_visibility_only_proof_files": [
+      "PPAC/Migration/ForcingMemberGuard.lean",
+      "PPAC/Migration/ForcingMemberGuardOpening.lean"
+    ],
+    "new_proof_files": [
+      "PPAC/Migration/ForcingGuardDiagram.lean",
+      "PPAC/Migration/ForcingGuardOpening.lean"
+    ],
+    "PPAC_proof_files": 2836,
+    "sealed_inputs": 2869,
+    "all_sealed_hashes_verified": true,
+    "compatibility_tests_passed": 16,
+    "clean_pinned_repositories": 3,
+    "source_hashes_verified": 75,
+    "post_cleanup_trust_zero_source_checks": [
+      {
+        "file": "PPAC/Migration/ForcingGuardDiagram.lean",
+        "exit_code": 0
+      },
+      {
+        "file": "PPAC/Migration/ForcingGuardOpening.lean",
+        "exit_code": 0
+      }
+    ],
+    "all_2869_sealed_hashes_verified_after_cleanup": true
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-parent-summary.json",
+      "bytes": 14926533,
+      "sha256": "9a3a005aa0839076176be5571a6a98b572d056b4fbcc39dedfe8e4a8e62f9fcc"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-export-review.json",
+      "bytes": 128,
+      "sha256": "6e06eb2bd146ae6681c59c2dc19c77a85a1a1daa667ea1ad0e1f7e6facf59075"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-lock-review.json",
+      "bytes": 1916,
+      "sha256": "cd32beaf75947227c64a598e4048f7bfab8dc89988d7d31bd192fe062ce5ae0b"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\GuardDiagramAudit.lean",
+      "bytes": 2731,
+      "sha256": "65fd61a7b6c1f2318ddaa25837c632eb1c99a8117dc76cffb52397116b0a2457"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-audit.log",
+      "bytes": 6385,
+      "sha256": "bb2cf3d3ff4ae54314cfbdfe3adadb4b27e4b02d0df3287cd6f8829a081bcf7f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-build.log",
+      "bytes": 108,
+      "sha256": "63967ea77cfdca69f75734c88d0981c4b8af79c675725251d9aedfc3c4ae5192"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-opening-build.log",
+      "bytes": 108,
+      "sha256": "794b54ed4d83d8c5251a6b890ced8c75ddb1d12df337050679cf489cbf1e8b54"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\guard-diagram-full.log",
+      "bytes": 153,
+      "sha256": "d47686205657f4d953550df07ce8800263528ab807a14d32ff8d215e39fdef16"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\elan-4.2.4-linux-x86_64.tar.gz",
+      "bytes": 4996571,
+      "sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63"
+    }
+  ],
+  "cleanup_completed": true,
+  "new_batch_linux_pass_claimed": false,
+  "cleanup_verified_at": "2026-11-09T08:03:13.561917+00:00"
+}

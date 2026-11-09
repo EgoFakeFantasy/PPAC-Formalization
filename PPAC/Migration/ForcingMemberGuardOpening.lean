@@ -18,7 +18,7 @@ theorem frame_rename {m l} (w mode z a f T A C R S K H P r s : Fin m) (ρ : Fin 
     ForcingOpenLayout.environment_rename, SyntaxCodedMixedBinderSyntax.lifted_rename,
     SyntaxTopCodedEnvironmentSyntax.instantiateCoded_rename, SyntaxTermSyntax.term_rename]
 
-private theorem zero_image {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem zero_image {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w mode z a f T A C R S K H P r s x X Y : Fin m)
     (hf : Derives Γ (frame w mode z a f T A C R S K H P r s))
     (hx : Derives Γ (SyntaxVariableSyntax.code true w z x))
@@ -52,7 +52,7 @@ private theorem zero_image {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have hi1 := of_eq (SyntaxTopCodedEnvironmentSyntax.instantiateCoded_rename w z T C P r s Fin.castSucc) (under hi B)
   exact of_eq (by rfl) (Derives.impE (.conjL (SyntaxTopCodedEnvironmentFields.instantiate_zero hZ1 w.castSucc z.castSucc T.castSucc C.castSucc P.castSucc r.castSucc s.castSucc z.castSucc Y.castSucc hw1 hi1 hz1)) hactual)
 
-private theorem free_image {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem free_image {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w mode z a f T A C R S K H P r s i V x X Y : Fin m)
     (hf : Derives Γ (frame w mode z a f T A C R S K H P r s))
     (hx : Derives Γ (SyntaxVariableSyntax.code false w i x))

@@ -64,6 +64,29 @@ class SetupDownloadRetryTests(unittest.TestCase):
     def test_persistent_failure_is_bounded_and_remains_failure(self):
         self.assertEqual(self.exercise(9), (7, 4))
 
+    def test_binary_download_replaces_partial_bytes_without_retry_log_pollution(self):
+        with tempfile.TemporaryDirectory() as folder:
+            counter = Path(folder) / "counter.txt"
+            artifact = Path(folder) / "setup artifact.bin"
+            child = Path(folder) / "download.py"
+            child.write_text(
+                "import pathlib, sys\n"
+                "p = pathlib.Path(sys.argv[1])\n"
+                "n = int(p.read_text()) + 1 if p.exists() else 1\n"
+                "p.write_text(str(n))\n"
+                "sys.stdout.buffer.write(b'partial' if n == 1 else b'\\x1f\\x8b\\xff\\x00\\r\\n')\n"
+                "sys.exit(7 if n == 1 else 0)\n",
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [sys.executable, str(self.retry), "--delay", "0", "--output", str(artifact), "--",
+                 sys.executable, str(child), str(counter)], capture_output=True,
+            )
+            self.assertEqual(result.returncode, 0)
+            self.assertEqual(counter.read_text(), "2")
+            self.assertIn(b"CI setup attempt 1/4", result.stdout)
+            self.assertEqual(artifact.read_bytes(), b"\x1f\x8b\xff\x00\r\n")
+
     def test_missing_program_is_not_retried_as_a_download(self):
         with tempfile.TemporaryDirectory() as folder:
             result = subprocess.run(

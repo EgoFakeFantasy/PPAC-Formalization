@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
+from pathlib import Path
 import subprocess
 import sys
 import time
@@ -11,6 +13,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--attempts", type=int, choices=range(1, 5), default=4)
     parser.add_argument("--delay", type=float, default=10)
+    parser.add_argument("--output", type=Path, help="Capture only command stdout, replacing partial output on each attempt")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
@@ -18,7 +21,8 @@ def main() -> int:
         parser.error("supply a command and a delay between zero and 30 seconds")
     for attempt in range(1, args.attempts + 1):
         try:
-            code = subprocess.run(command, check=False).returncode
+            with args.output.open("wb") if args.output else nullcontext(None) as output:
+                code = subprocess.run(command, check=False, stdout=output).returncode
         except OSError as exc:
             print(f"Cannot start CI setup command (errno {exc.errno})", file=sys.stderr)
             return 127

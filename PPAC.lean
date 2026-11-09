@@ -1131,3 +1131,5 @@ import PPAC.Migration.ForcingNegShell
 import PPAC.Migration.ForcingNegNormalization
 import PPAC.Migration.ForcingMemberGuard
 import PPAC.Migration.ForcingMemberGuardOpening
+import PPAC.Migration.ForcingGuardDiagram
+import PPAC.Migration.ForcingGuardOpening

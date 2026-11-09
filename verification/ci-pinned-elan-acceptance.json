@@ -1,0 +1,38 @@
+{
+  "verified_at": "2026-11-09T08:01:59.504446+00:00",
+  "failed_run": 42580228155,
+  "failed_commit": "ad5ff6a2c91be1aa9407f9b26f2caa5f5dd31760",
+  "failed_job": 129036935153,
+  "failed_step": "Install elan",
+  "compilation_started": false,
+  "actual_failure": "All4 bounded attempts to the elan latest release download URL received HTTP504",
+  "official_asset": {
+    "elan_version": "v4.2.4",
+    "official_release": "https://github.com/leanprover/elan/releases/tag/v4.2.4",
+    "official_asset_id": 529114798,
+    "asset_name": "elan-x86_64-unknown-linux-gnu.tar.gz",
+    "asset_sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+    "download": "GitHub official release asset API with gh api Accept: application/octet-stream; bounded retry captures binary stdout separately",
+    "verification": "sha256sum --check before extracting/running elan-init; toolchain versions remain unchanged"
+  },
+  "download_validation": {
+    "direct_versioned_release_url_also_returned_HTTP504": true,
+    "official_asset_API_succeeded": true,
+    "asset_API_succeeded_through_actual_new_ci_retry_output_capture": true,
+    "bytes": 4996571,
+    "sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+    "official_release_digest_matched": true,
+    "archive_contains_only": "elan-init",
+    "ELF_header_verified": true,
+    "installer_executed_locally": false
+  },
+  "fix": "Both existing native/Comparator installation steps use SAME pinned official asset API, binary output capture and checksum before extraction/execution. Only setup downloads retry. Lean versions, proof checks, source checks and audits unchanged. No installer shell/latest redirect.",
+  "tests": {
+    "ci_compatibility": 9,
+    "original_comparator_guard": 7,
+    "binary_partial_retry_output_replaced_and_logs_excluded": true,
+    "full_native_local_audit_declarations": 38905,
+    "full_native_local_warning_lines": 0
+  },
+  "linux_installation_and_full_proof_after_this_fix_verified": false
+}

@@ -39,7 +39,7 @@ private theorem identity_converted_field {m} {Γ : Context m} (hZ : ZFContext.Ev
   exact of_eq (by simp only [Formula.raise, SyntaxVariableSyntax.code_rename])
     (SyntaxVariableImagePoint.code_subst_index false (old 2 w).castSucc (Fin.last (m+2)) (old 2 Y).castSucc (old 2 i).castSucc (eq_symm heq) (.conjL (.conjR hB)))
 
-private theorem identity_field {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a f S i Y : Fin m)
+theorem identity_field {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a f S i Y : Fin m)
     (hS : Derives Γ (ForcingAtomicCode.identityImages w a f S))
     (hi : Derives Γ (Formula.mem i f)) (hY : Derives Γ (StructuralListFieldSyntax.field w S i Y)) :
     Derives Γ (SyntaxVariableSyntax.code false w i Y) := by

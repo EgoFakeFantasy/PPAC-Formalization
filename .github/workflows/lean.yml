@@ -36,9 +36,15 @@ jobs:
           ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
           path: openai-math-ppac-source
       - name: Install elan
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python3 scripts/ci_retry.py -- bash -o pipefail -c \
-            'curl --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none'
+          archive="$RUNNER_TEMP/elan-v4.2.4-linux-x86_64.tar.gz"
+          python3 scripts/ci_retry.py --output "$archive" -- \
+            gh api repos/leanprover/elan/releases/assets/529114798 -H 'Accept: application/octet-stream'
+          printf '%s  %s\n' '42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63' "$archive" | sha256sum --check --status
+          tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP" elan-init
+          "$RUNNER_TEMP/elan-init" -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Resolve pinned Lean dependencies before source checks
         run: |
@@ -144,9 +150,15 @@ jobs:
           go-version-file: tools/landrun/go.mod
           cache-dependency-path: tools/landrun/go.sum
       - name: Install original Lean toolchain
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python3 migration/scripts/ci_retry.py -- bash -o pipefail -c \
-            'curl --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none'
+          archive="$RUNNER_TEMP/elan-v4.2.4-linux-x86_64.tar.gz"
+          python3 migration/scripts/ci_retry.py --output "$archive" -- \
+            gh api repos/leanprover/elan/releases/assets/529114798 -H 'Accept: application/octet-stream'
+          printf '%s  %s\n' '42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63' "$archive" | sha256sum --check --status
+          tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP" elan-init
+          "$RUNNER_TEMP/elan-init" -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
           python3 migration/scripts/ci_retry.py -- "$HOME/.elan/bin/elan" toolchain install "$ELAN_TOOLCHAIN"
       - name: Build pinned real Comparator and sandbox tools
