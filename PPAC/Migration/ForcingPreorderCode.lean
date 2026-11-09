@@ -1002,4 +1002,27 @@ theorem atom_rp {n} (R : Source.Formula (n+2)) :
   · simp only [Syntax.lift, Fin.lastCases_last, Term.weakenBound_fvar]
   · refine Fin.lastCases ?_ (fun k => ?_) j <;> simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar]
 
+/-- Literal original member leaves, using the existing source/nativity bridge. -/
+theorem atom_member_r {n} (R : Source.Formula (n+2)) :
+    atoms R 0 = .rel .membership (.cons (.bvar (.there (.there .here)))
+      (.cons (.fvar (fo_bound_variable (Fin.last n).castSucc)) .nil)) := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar] <;> rfl
+
+theorem atom_member_q {n} (R : Source.Formula (n+2)) :
+    atoms R 1 = .rel .membership (.cons (.bvar (.there .here))
+      (.cons (.fvar (fo_bound_variable (Fin.last n).castSucc)) .nil)) := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar] <;> rfl
+
+theorem atom_member_p {n} (R : Source.Formula (n+2)) :
+    atoms R 2 = .rel .membership (.cons (.bvar .here)
+      (.cons (.fvar (fo_bound_variable (Fin.last n).castSucc)) .nil)) := by
+  simp only [atoms, t1, t2, t3, t4, matrix, body2, body1, transitive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
+    Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar] <;> rfl
+
+
 end PPAC.Migration.ForcingPreorderCode

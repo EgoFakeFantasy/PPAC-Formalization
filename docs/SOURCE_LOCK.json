@@ -169431,9 +169431,9 @@
         "Existing HornBinderRules.intro_many and original exE; single-layer private proof composition",
         "Original nativeZF ZFReplay; no new syntax checker, recursion or proof kernel"
       ],
-      "scope": "For arbitrary fixed external source relation R, internally produces all sixteen correctly scoped original raw quotation codes and all nine exact AND/ALL/IMP constructor fields. Three carrier antecedents and two relation antecedents, direction R(r,q), R(q,p) -> R(r,p), unchanged. Only omega and numeral metadata 0/1/2/3/(n+2) are inputs; no quotation output, target code/proof, preorder truth or guard truth. Original source free/bound scopes are fixed raw metadata, not restrictions on later runtime target codes. Private single-witness lemmas avoid sixteen nested context expansion. Includes an ordinary nativeZF original-kernel certificate. Actual mixed target opening, three native runtime instances, guard identification, canonical context/fresh forall assembly, uniform monotonicity/density/forcingMP, all-internal Proof/reduction/finalCon remain unproved. Append-only metadata readout of the SAME actual native roles/AST: original guard is literal R(q,p), and original preorder relation leaves are literal R(r,q),R(q,p),R(r,p). Existing Syntax.rename/substitute/old_formula are reused, with no new formula induction. Original source bytes and old public footprints are preserved; full target guard-code cancellation remains unproved.",
+      "scope": "For arbitrary fixed external source relation R, internally produces all sixteen correctly scoped original raw quotation codes and all nine exact AND/ALL/IMP constructor fields. Three carrier antecedents and two relation antecedents, direction R(r,q), R(q,p) -> R(r,p), unchanged. Only omega and numeral metadata 0/1/2/3/(n+2) are inputs; no quotation output, target code/proof, preorder truth or guard truth. Original source free/bound scopes are fixed raw metadata, not restrictions on later runtime target codes. Private single-witness lemmas avoid sixteen nested context expansion. Includes an ordinary nativeZF original-kernel certificate. Actual mixed target opening, three native runtime instances, guard identification, canonical context/fresh forall assembly, uniform monotonicity/density/forcingMP, all-internal Proof/reduction/finalCon remain unproved. Append-only metadata readout of the SAME actual native roles/AST: original guard is literal R(q,p), and original preorder relation leaves are literal R(r,q),R(q,p),R(r,p). Existing Syntax.rename/substitute/old_formula are reused, with no new formula induction. Original source bytes and old public footprints are preserved; full target guard-code cancellation remains unproved. Append-only exact metadata for the three original member AST leaves is now also exposed; all original proof bodies and old footprints preserved.",
       "certificate_source_files": {
-        "PPAC/Migration/ForcingPreorderCode.lean": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
         "PPAC/Migration/ForcingAtomicBasic.lean": "c966cffafae564a0c2b3a678fd386432c19556e5fd7b0622298bd39c16bea2e4",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/Internal/PureQuotationTypedFormulas.lean": "a893d1091b517f795e6bbcb1004e4a5e6c754c5a45aa9b91bb3d307292e8bd10",
@@ -169555,7 +169555,22 @@
           "Quot.sound",
           "propext"
         ],
-        "PPAC.Migration.ForcingPreorderCode.input": []
+        "PPAC.Migration.ForcingPreorderCode.input": [],
+        "PPAC.Migration.ForcingPreorderCode.atom_member_r": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderCode.atom_member_q": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderCode.atom_member_p": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     "forcing_preorder_instances": {
@@ -169587,7 +169602,7 @@
       "scope": "From omega, fixed raw-source numeral metadata, a legal actual free term table, target bound successor and THREE legal arbitrary internal terms, produces the actual original quotation, empty bound table, actual parent and child target substitutions, THREE native instances, FIVE IMP fields, FIVE typed local-background conjunction codes and the original internal conditional member/order proofs. Target free scope, term indices and runtime codes may be internally nonstandard; only pinned finite source quotation metadata are numerals. No source/target quotation answer, target preorder code, row, background code/proof or guard/preorder truth is supplied. Ordinary original nativeZF kernel certificate. The exact equalities with ForcingNegCondition/ForcingGuardOpening guard compiler codes, canonical local-context reordering/freshness/forall assembly, complete force_mono/force_of_dense/forcingMP, all-internal axioms/Proof/reduction/finalCon remain unproved.",
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
-        "PPAC/Migration/ForcingPreorderCode.lean": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
@@ -169941,7 +169956,7 @@
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
-        "PPAC/Migration/ForcingPreorderCode.lean": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
         "PPAC/Migration/Internal/SyntaxMixedFormulaEndpoints.lean": "39c182c223136e945a4dbf84113a4e6399587e036196afbeccb39b8bc747f4e7",
         "PPAC/Migration/Internal/SyntaxMixedFormulaAdvancedOutput.lean": "b25f5dba4c0a23e74abb4be8e68d58bd1b55b78c0364e93641f94a13cc8707cd",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
@@ -170098,7 +170113,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
-        "PPAC/Migration/ForcingPreorderCode.lean": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
         "PPAC/Migration/SyntaxTransport.lean": "a55b7e59d15b59049c58e6c119e3b6bd49a8ea6353fe41c0809ace606ec3b5ee",
         "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f",
         "PPAC/Migration/Internal/NativeFormulaQuotationCorrespondence.lean": "79a113514a7972f4fd2f9189ec6f561aa59067ee8e4db3ca6acfdf2ccc597b85",
@@ -170721,6 +170736,356 @@
         "PPAC.Migration.ForcingRelationRawFormula.to_direct": [
           "Classical.choice",
           "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_preorder_leaves": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingPreorderLeaves.lean",
+      "source_declarations": [
+        "Original force_mono neg/ex preorder: three carrier antecedents, R(r,q), R(q,p), R(r,p)",
+        "Actual original three native instances and five implication row; original member guard compiler"
+      ],
+      "consumers": [
+        "Consumes SAME original rawData/backgroundData and actual parent mixed query. Existing three prefix tables generated internally; original five-IMP row yields all ELEVEN mixed queries, six leaves and five tails. Original internal proof row retained. relation_from_data recovers its own raw leaf query, typed empty table and condition-code naturality, then reuses accepted relation_leaf bridge. No row/query/code-equality answer or guard truth. Runtime target scopes/codes may be nonstandard; fixed outer 3-ALL/5-IMP shape is pinned source metadata.",
+        "Next: whole negative/existential compiler identity, canonical context/fresh forall, full mono/dense/MP/internal Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderCode.lean",
+        "PPAC/Migration/ForcingPreorderInstances.lean",
+        "PPAC/Migration/ForcingPreorderPrefix.lean",
+        "PPAC/Migration/ForcingRelationRawTerms.lean",
+        "PPAC/Migration/ForcingRelationRawFormula.lean",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean",
+        "PPAC/Migration/ForcingFormulaAtoms.lean",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean",
+        "PPAC/Migration/ProjectNativeRenaming.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
+        "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
+        "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
+        "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
+        "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean": "2c590d792934f471e6607d97144cab18384f3f248b0a3c3f374d17e0457708e6",
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f"
+      },
+      "scope": "Consumes SAME original rawData/backgroundData and actual parent mixed query. Existing three prefix tables generated internally; original five-IMP row yields all ELEVEN mixed queries, six leaves and five tails. Original internal proof row retained. relation_from_data recovers its own raw leaf query, typed empty table and condition-code naturality, then reuses accepted relation_leaf bridge. No row/query/code-equality answer or guard truth. Runtime target scopes/codes may be nonstandard; fixed outer 3-ALL/5-IMP shape is pinned source metadata. Whole negative/existential compiler identity, canonical contexts/fresh forall, full original mono/dense/forcingMP, all internal ZF/U axioms/Proof, reduction and finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPreorderLeaves.leafSlot": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.tailSlot": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.queries": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.queries_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.extract": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.leaf_at": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.produced": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.produced_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.from_row": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.from_numbers": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.tail_at": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.relationPosition": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.relation_slot": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.conditions_natural": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeaves.relation_from_data": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_preorder_leaf_target": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingPreorderLeafTarget.lean",
+      "source_declarations": [
+        "Original force_mono neg/ex preorder: three carrier antecedents, R(r,q), R(q,p), R(r,p)",
+        "Actual original three native instances and five implication row; original member guard compiler"
+      ],
+      "consumers": [
+        "Directly consumes original targetData and its SAME actual instancesProved: original six native, ten matrix, five background witnesses remain object-existential. Existing three prefix witnesses and ELEVEN actual queries are generated internally. All 24 witnesses and internal background proofs retained; no separately supplied native instances, row, leaf/query/code answer. Ordinary nativeZF original-kernel closed-sentence certificate.",
+        "Next: whole negative/existential compiler identity, canonical context/fresh forall, full mono/dense/MP/internal Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderLeaves.lean",
+        "PPAC/Migration/ForcingPreorderCode.lean",
+        "PPAC/Migration/ForcingPreorderInstances.lean",
+        "PPAC/Migration/ForcingPreorderPrefix.lean",
+        "PPAC/Migration/ForcingRelationRawTerms.lean",
+        "PPAC/Migration/ForcingRelationRawFormula.lean",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean",
+        "PPAC/Migration/ForcingFormulaAtoms.lean",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean",
+        "PPAC/Migration/ProjectNativeRenaming.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingPreorderLeafTarget.lean": "548c9b1475475bc98ad0b44407a9ae4312d0255e7c52ec089dbd7d0377ebc926",
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
+        "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
+        "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
+        "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
+        "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean": "2c590d792934f471e6607d97144cab18384f3f248b0a3c3f374d17e0457708e6",
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f"
+      },
+      "scope": "Directly consumes original targetData and its SAME actual instancesProved: original six native, ten matrix, five background witnesses remain object-existential. Existing three prefix witnesses and ELEVEN actual queries are generated internally. All 24 witnesses and internal background proofs retained; no separately supplied native instances, row, leaf/query/code answer. Ordinary nativeZF original-kernel closed-sentence certificate. Whole negative/existential compiler identity, canonical contexts/fresh forall, full original mono/dense/forcingMP, all internal ZF/U axioms/Proof, reduction and finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPreorderLeafTarget.background": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.background_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.matrix": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.matrix_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.instances": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.instances_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.at_target": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderLeafTarget.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_preorder_member": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingPreorderMember.lean",
+      "source_declarations": [
+        "Original force_mono neg/ex preorder: three carrier antecedents, R(r,q), R(q,p), R(r,p)",
+        "Actual original three native instances and five implication row; original member guard compiler"
+      ],
+      "consumers": [
+        "SAME actual original member leaf quotes, five-IMP row queries and original prefix forest supply raw P-in-carrier code. Original quotation child codes and SAME original carrier field are generated and eliminated internally. Existing original member guard compiled output, actual head, opening and instantiation yield SAME literal member result; original symbol/constructor uniqueness proves exact raw/guard output-code equality. Ordinary nativeZF original-kernel closed-sentence certificate. No raw quote child, field value, leaf query, desired output/equality answer or guard/preorder truth. All runtime codes/scopes remain internal, including nonstandard; only fixed pinned source metadata is external.",
+        "Next: whole negative/existential compiler identity, canonical context/fresh forall, full mono/dense/MP/internal Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderLeaves.lean",
+        "PPAC/Migration/ForcingPreorderLeafTarget.lean",
+        "PPAC/Migration/ForcingPreorderCode.lean",
+        "PPAC/Migration/ForcingPreorderInstances.lean",
+        "PPAC/Migration/ForcingPreorderPrefix.lean",
+        "PPAC/Migration/ForcingRelationRawTerms.lean",
+        "PPAC/Migration/ForcingRelationRawFormula.lean",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean",
+        "PPAC/Migration/ForcingFormulaAtoms.lean",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean",
+        "PPAC/Migration/ProjectNativeRenaming.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingPreorderLeafTarget.lean": "548c9b1475475bc98ad0b44407a9ae4312d0255e7c52ec089dbd7d0377ebc926",
+        "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
+        "PPAC/Migration/ForcingPreorderInstances.lean": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
+        "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
+        "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
+        "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean": "2c590d792934f471e6607d97144cab18384f3f248b0a3c3f374d17e0457708e6",
+        "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f"
+      },
+      "scope": "SAME actual original member leaf quotes, five-IMP row queries and original prefix forest supply raw P-in-carrier code. Original quotation child codes and SAME original carrier field are generated and eliminated internally. Existing original member guard compiled output, actual head, opening and instantiation yield SAME literal member result; original symbol/constructor uniqueness proves exact raw/guard output-code equality. Ordinary nativeZF original-kernel closed-sentence certificate. No raw quote child, field value, leaf query, desired output/equality answer or guard/preorder truth. All runtime codes/scopes remain internal, including nonstandard; only fixed pinned source metadata is external. Whole negative/existential compiler identity, canonical contexts/fresh forall, full original mono/dense/forcingMP, all internal ZF/U axioms/Proof, reduction and finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingPreorderMember.memberPosition": [],
+        "PPAC.Migration.ForcingPreorderMember.boundIndex": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.memberTree": [],
+        "PPAC.Migration.ForcingPreorderMember.raw_tree": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.raw_member": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.member_quote": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.reversed_bound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.raw_from_data": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.same_result": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.from_head": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingPreorderMember.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
         ]
       }

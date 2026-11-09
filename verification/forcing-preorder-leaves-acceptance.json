@@ -1,0 +1,261 @@
+{
+  "verified_at": "2026-11-09T20:06:47.628317+00:00",
+  "baseline_commit": "f74c26ff82a2f1682612b4251f97bda0729888e7",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: live CI failures diagnosed and compatibility regressions rerun; this turn completes actual same-row leaf extraction and member leaf identity",
+  "background": "Original pure membership/equality language, ordinary full nativeZF and original FirstOrder.Derives via accepted source replay; no object Choice or new kernel/checker/recursor/induction.",
+  "result": [
+    "Same original five-IMP raw/native row yields all eleven actual mixed queries, six leaves and five tails",
+    "Direct actual targetData/instancesProved consumer retains same 6+10+5 original witnesses and proofs, generates original three prefix tables, all 24 witnesses object-bound",
+    "Relation leaf consumer recovers its own actual query, original empty-table type and condition-code naturality from SAME retained records",
+    "Raw member quote/forest/query yields literal P-in-carrier code with three quotation child codes generated internally",
+    "Same original carrier field generated internally; actual guard head/compiler/opening/instantiation yields same literal member code, original symbol/constructor uniqueness proves exact code equality",
+    "Two ordinary nativeZF original-kernel closed-sentence certificates"
+  ],
+  "proof_boundaries": {
+    "runtime_target_scopes_and_codes_internal_including_nonstandard": true,
+    "fixed_source_metadata_only": "Pinned finite arity/outer three-ALL and five-IMP source pattern, not runtime code restriction",
+    "same_actual_five_IMP_row_leaf_queries_extracted": true,
+    "actual_member_leaf_guard_codes_identified": true,
+    "supplied_raw_leaf_query_carrier_value_or_equality_answer": false,
+    "guard_or_preorder_truth_assumed": false,
+    "whole_negative_existential_guard_compiler_identity_completed": false,
+    "canonical_context_and_fresh_forall_completed": false,
+    "full_internal_force_mono_dense_MP_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39328,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37062,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39284,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingPreorderCode.atom_member_p",
+      "PPAC.Migration.ForcingPreorderCode.atom_member_q",
+      "PPAC.Migration.ForcingPreorderCode.atom_member_r",
+      "PPAC.Migration.ForcingPreorderLeafTarget.at_target",
+      "PPAC.Migration.ForcingPreorderLeafTarget.background",
+      "PPAC.Migration.ForcingPreorderLeafTarget.background_rename",
+      "PPAC.Migration.ForcingPreorderLeafTarget.input",
+      "PPAC.Migration.ForcingPreorderLeafTarget.instances",
+      "PPAC.Migration.ForcingPreorderLeafTarget.instances_rename",
+      "PPAC.Migration.ForcingPreorderLeafTarget.kernel_certificate",
+      "PPAC.Migration.ForcingPreorderLeafTarget.matrix",
+      "PPAC.Migration.ForcingPreorderLeafTarget.matrix_rename",
+      "PPAC.Migration.ForcingPreorderLeafTarget.sentence",
+      "PPAC.Migration.ForcingPreorderLeaves.body",
+      "PPAC.Migration.ForcingPreorderLeaves.conditions_natural",
+      "PPAC.Migration.ForcingPreorderLeaves.data",
+      "PPAC.Migration.ForcingPreorderLeaves.data_rename",
+      "PPAC.Migration.ForcingPreorderLeaves.extract",
+      "PPAC.Migration.ForcingPreorderLeaves.from_numbers",
+      "PPAC.Migration.ForcingPreorderLeaves.from_row",
+      "PPAC.Migration.ForcingPreorderLeaves.leafSlot",
+      "PPAC.Migration.ForcingPreorderLeaves.leaf_at",
+      "PPAC.Migration.ForcingPreorderLeaves.produced",
+      "PPAC.Migration.ForcingPreorderLeaves.produced_rename",
+      "PPAC.Migration.ForcingPreorderLeaves.queries",
+      "PPAC.Migration.ForcingPreorderLeaves.queries_rename",
+      "PPAC.Migration.ForcingPreorderLeaves.relationPosition",
+      "PPAC.Migration.ForcingPreorderLeaves.relation_from_data",
+      "PPAC.Migration.ForcingPreorderLeaves.relation_slot",
+      "PPAC.Migration.ForcingPreorderLeaves.tailSlot",
+      "PPAC.Migration.ForcingPreorderLeaves.tail_at",
+      "PPAC.Migration.ForcingPreorderMember.boundIndex",
+      "PPAC.Migration.ForcingPreorderMember.from_head",
+      "PPAC.Migration.ForcingPreorderMember.input",
+      "PPAC.Migration.ForcingPreorderMember.kernel_certificate",
+      "PPAC.Migration.ForcingPreorderMember.memberPosition",
+      "PPAC.Migration.ForcingPreorderMember.memberTree",
+      "PPAC.Migration.ForcingPreorderMember.member_quote",
+      "PPAC.Migration.ForcingPreorderMember.raw_from_data",
+      "PPAC.Migration.ForcingPreorderMember.raw_member",
+      "PPAC.Migration.ForcingPreorderMember.raw_tree",
+      "PPAC.Migration.ForcingPreorderMember.reversed_bound",
+      "PPAC.Migration.ForcingPreorderMember.same_result",
+      "PPAC.Migration.ForcingPreorderMember.sentence"
+    ],
+    "new_axioms": [],
+    "old_PPAC_proof_files_completely_unchanged": 2857,
+    "old_PreorderCode_proof_prefix_unchanged_bytes": 78412,
+    "old_PreorderCode_proof_prefix_sha256": "bfab18d1b6c442af39a1ee33b58a8a37b5b89b179bbd8b506ef3d443710f73bf",
+    "old_PreorderCode_public_footprints_unchanged": 26,
+    "sealed_inputs_rehashed": 2894,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "cross_platform_regressions_passed": 9,
+    "original_comparator_guard_regressions_passed": 7,
+    "clean_pins": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "pinned_source_hashes_verified": 75,
+    "post_cleanup_source_trust0_commands": [
+      {
+        "module": "ForcingPreorderCode",
+        "exit_code": 0,
+        "log": ".local/preorder-member-postcleanup-ForcingPreorderCode.log"
+      },
+      {
+        "module": "ForcingPreorderLeaves",
+        "exit_code": 0,
+        "log": ".local/preorder-member-postcleanup-ForcingPreorderLeaves.log"
+      },
+      {
+        "module": "ForcingPreorderLeafTarget",
+        "exit_code": 0,
+        "log": ".local/preorder-member-postcleanup-ForcingPreorderLeafTarget.log"
+      },
+      {
+        "module": "ForcingPreorderMember",
+        "exit_code": 0,
+        "log": ".local/preorder-member-postcleanup-ForcingPreorderMember.log"
+      }
+    ],
+    "sealed_inputs_rehashed_after_cleanup": 2894
+  },
+  "remaining": "Whole actual negative/existential guard compiler identity; canonical local contexts/fresh forall; original force_mono/force_of_dense/exists_force_neg/forceFormula_imp internal induction; normalized forcing MP, all internal/nonstandard ZF/U axioms and six-rule Proof, exact reduction and finalCon. Stages1-9 not reopened, stage11 not started.",
+  "local_acceptance_is_not_remote_Linux_acceptance": true,
+  "cleanup": {
+    "exact_own_temporary_files_removed": 8,
+    "bytes_removed": 13031596,
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-leaves-baseline.json",
+        "bytes": 12939356,
+        "sha256": "807e0d19a2188106a7a1674c4286cbf81cdde890aa2e502e9b43f6fae49644e0"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-leaves-original-preorder-code.lean",
+        "bytes": 78451,
+        "sha256": "b79670a260d002e074074d00b31ed5ebc6736870d0629f3d38a352d08fd0d8f4"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-leaves-preaudit.lean",
+        "bytes": 1770,
+        "sha256": "4e4d6d59657843132165fefe7b6e2bb44388200070e0868a633d4382c03d4c08"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-leaves-preaudit.log",
+        "bytes": 3225,
+        "sha256": "089025a2970a3c781890d843c5142f2e7aa238f5359f76b2e0a4863d52292051"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-leaves-build.log",
+        "bytes": 110,
+        "sha256": "1d03c990de046fb55c6e0cdfe45dbb2a98954defb51ab85ea656966bbc7529a5"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-member-preaudit.lean",
+        "bytes": 2888,
+        "sha256": "b82b40149ee7c6301b3e6b5ca842520daf6176d66eb81f28881dd561263693a7"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-member-footprints.json",
+        "bytes": 5796,
+        "sha256": "4cb764e842c4dedf9722b86b6db29e0e11f43e28e0d1c636224fa6af8dfa995c"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\preorder-member-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "other_project_or_dependency_files_removed": false,
+    "no_residual_Lean_Lake_processes_observed": true
+  },
+  "completed_at": "2026-11-09T20:09:11.481820+00:00"
+}

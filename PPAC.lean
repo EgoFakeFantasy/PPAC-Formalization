@@ -1155,3 +1155,7 @@ import PPAC.Migration.ForcingRelationImages
 import PPAC.Migration.ForcingRelationGuardFormula
 import PPAC.Migration.ForcingRelationRawTerms
 import PPAC.Migration.ForcingRelationRawFormula
+
+import PPAC.Migration.ForcingPreorderLeaves
+import PPAC.Migration.ForcingPreorderLeafTarget
+import PPAC.Migration.ForcingPreorderMember

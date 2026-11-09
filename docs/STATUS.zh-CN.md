@@ -18,18 +18,12 @@
 | 10：实际索引／项像环境及原生quotation | SchemaIndexQuotation证明原三个实际图精确实现原生三个嵌入；IndexImageQuotation用现成字段读取及全内部列表唯一性识别实际转换环境；NativeIndexFormulaQuotation在对象量词内实际构造双转换并消费现成桥，取得纯索引重命名与原生变量替换quotation的普通nativeZF原核双条件。原生正文／上下文／映射仍为外部模式索引 |
 | 10：原完整模式quotation链 | ProjectNativeRenaming、SchemaMatrixQuotation与SchemaAxiomQuotation完成原Project全构造子交换、三个实际编译矩阵及原正文→实际编译／重命名→原模板→整个闭包→准确原生Separation/Collection句的对象双条件；五个普通nativeZF原核端点已验收。无给定中间quotation；正文／次数仍为外部模式索引，原输入有效性guard保留 |
 
-既有原preorder报价、真实mixed开口、三次native实例、五IMP行、五个局部背景和同一G0→member／order内部证明均已生成消费。ForcingPreorderPrefix已直接消费同一六个native见证，生成三张原顺序cons前缀表及每层准确direct输出；一步binder相消、原K／S／AND11／MP局部解除及mode3／forall生产器均不重建。
+既有原preorder报价、真实mixed开口、三次native实例、五IMP行、五个局部背景和同一G0→member／order内部证明均已生成消费。共同R源记录、两次替换实参表、原guard及raw路径的全内部项／公式相消和关系叶桥已验收；现成L／完整模式、递归、mode3／forall及原局部证明生产器均继续复用。
 
-本批ForcingRelationSource.from_compiled直接消费原rawData和真实guard编译，内部生成同一个R报价、四张实际native项像表，以及到原关系原子／guard原报价的两条mixed查询。四个compiler和五个共同源见证均留在对象量词；原完整编译矩阵／头和任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)及guard R(q,p)的AST身份复用既有Syntax自然性，没有新增公式归纳／核／checker／递归。仅中间SOURCE的0／1／3和原有限arity为报价元数据，不要求forcing目标作用域标准。普通nativeZF原核证书已完整验收；两条路径的实际目标码相消及完整guard对应尚未完成。
+ForcingPreorderLeaves／LeafTarget已从同一原rawData／targetData／instancesProved保留6＋10＋5个见证及内部证明，内部生成原三张prefix表与十一条实际查询；24个见证均在对象量词内。relation_from_data自行恢复空表类型、条件自然性与关系叶查询。ForcingPreorderMember内部生成树码子字段及原载体槽字段，证明实际raw member叶与原guard编译／开口／实例化结果同码。两个新增普通nativeZF原核闭句证书及44项新增公共声明的trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39328项声明、零警告。全部39284项旧足迹不变，无新增公理；清理后四个受影响源码的trust=0也全部退出0。没有给定叶查询、载体值、期望码等式或guard真值，运行码与目标作用域允许内部非标准值。
 
-ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。guard完整公式相消已由ForcingRelationGuardFormula接通；raw关系叶码等词现已接通；同一五IMP行查询提取、member叶及完整guard对应仍未完成。
+当前仍为原第10阶段。真正剩余为整段负／存在guard编译结果的精确对应、源局部上下文整理与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始。
 
-ForcingRelationGuardFormula复用既有全内部公式归纳／恒等码及index-mixed桥，将guard两路径比较提升到全部内部公式。四项恒等码／项像见证内部生成并消去；from_source_to_direct消费同一R记录的原native映射／查询及实际guard开口，内部生成裸R共同查询并使其输出就是原guard同一实际输出，不给定共同查询／输出答案。目标作用域和运行公式码允许内部非标准值，无guard真值或新核／checker／递归／归纳。两个普通nativeZF原核端点及12项新增声明trust=0预审已通过；本批9项完整验收／5项trust=0已通过，39268项声明、零警告；验收见verification/forcing-relation-guard-formula-acceptance.json。raw preorder路径的公式相消及关系叶码等词现由ForcingRelationRawFormula接通；同一五IMP行查询提取、member叶及完整负／存在guard对应仍待接入。
+本批本地验收见verification/forcing-preorder-leaves-acceptance.json：39328项声明、2266项无公理、37062项仅既有记录依赖，零警告。39284项旧足迹、2857份旧PPAC源码和原PreorderCode全部证明前缀不变；2894项密封输入已重算，16项回归及三个干净依赖／75源哈希通过。仅删除8个本轮临时文件（13031596字节），清理后四个受影响源码trust=0全部退出0，未见残留Lean／Lake进程。当前为本地验收，不替代新提交的Linux验收。
 
-ForcingRelationRawTerms从实际三张prefixData及有类型原空表恢复同一[P2,P1,P0]森林，使用原native atomMap、字段读取和对象有限析取完成全部内部项比较。ForcingRelationRawFormula复用既有完整公式归纳／恒等桥，内部生成并消去四项恒等见证，生成到原raw叶同一实际输出的共同查询。relation_leaf从同一R记录、同一前缀及实际raw／guard查询内部生成两条相同共同查询，原输出唯一性给出关系叶码等词；没有给定森林、共同查询／输出或期望等式，不假定guard／preorder真值。源有限arity／0-1-2-3仅为报价元数据，目标范围／码保持内部及非标准。三个普通nativeZF原核端点和16项新增声明trust=0预审通过；本批9项完整验收／5项trust=0已通过，39284项声明、零警告；见verification/forcing-relation-raw-acceptance.json。同一五IMP行的叶查询提取、member叶及整段负／存在compiler对应仍待接入。
-
-下一项是从同一五IMP实际矩阵行提取准确的六个叶查询，接通member叶与完整负／存在guard对应，再消费既有局部解除／fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原L、全模式、递归及已验收数学／码行不重建。
-
-本轮九项完整验收及五项trust=0均退出0；39284项声明、零警告，全部39268项既有足迹保持，16项新增公开声明无新增公理依赖。2856份旧PPAC证明源码完全不变，2891项密封输入全部重算；16项回归、三个干净锁定依赖和75项源哈希通过。本批为本地验收，后续Linux结果须由对应新提交独立取得。
-
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-relation-raw-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。历史批次以Git和不可改写验收报告为据。最新Linux成功回执仍为verification/ci-preorder-prefix-remote-acceptance.json，39195项声明；f74c26f的42680491232仍在Build and audit，不计作成功。
