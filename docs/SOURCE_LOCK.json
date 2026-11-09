@@ -167575,6 +167575,97 @@
           "propext"
         ]
       }
+    },
+    "forcing_neg_member_proof": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingNegMemberProof.lean",
+      "source_declarations": [
+        "forceFormula_imp",
+        "forceFormula_neg",
+        "forcing_sound impE self-condition instance",
+        "AtomicData.Force neg branch from ForcingQuotient"
+      ],
+      "consumers": [
+        "Normalized forcing implication/MP at the same selected condition: remove actual member antecedent; relation antecedent and regularity remain"
+      ],
+      "reuse_producers": [
+        "Completed same full ForcingNegNormalization.from_instance and two-stage literal IMP fields",
+        "ForcingMemberGuardOpening.from_head and ForcingMemberGuardProof.at_background; no assumed member proof",
+        "Original InternalProofImplication.distribute (S) and actual MP nodes",
+        "Original typed constructor totality, exact original falsum and actual direct opening equality",
+        "Original ZF/U tests, annotated original Node/header/Root and nativeZF ZFReplay"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegMemberProof.lean": "e33deecf26cdd5d514071a1936aa90cfc236945ffd0d17f22040aff4cb57c445",
+        "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
+        "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
+        "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
+        "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
+        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff"
+      },
+      "scope": "From SAME actual complete negative compiler, raw forall body, lifted opening and native InstantiateTop instance Y, construct an actual internal proof of G→Rest, retaining exact Y=M→Rest, Rest=O→Inner and Inner=D→SAME original falsum. D is SAME actual direct opening. Canonical fixed G=B∧(P∈V) is supplied as constructor DATA only; G/member truth or proof are NOT supplied. The actual parent proof G→Y is the legitimate original rule20/IH parent. Its actual member guard proof is generated, not supplied. All five compiler/four shell/two six-field witness blocks (21 total) are internally eliminated; original S/MP is reused without new proof or syntax backend. Relation guard O remains, with no validity/proof assumed; this does NOT prove normalized forcing MP, uniform internal regularity, all-internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegMemberProof.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegMemberProof.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

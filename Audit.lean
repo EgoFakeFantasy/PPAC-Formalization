@@ -39617,3 +39617,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingMemberGuardProof.kernel_certificate
 #print axioms PPAC.Migration.ForcingMemberGuardProof.sentence_at_background
 #print axioms PPAC.Migration.ForcingMemberGuardProof.kernel_certificate_at_background
+#print axioms PPAC.Migration.ForcingNegMemberProof.data
+#print axioms PPAC.Migration.ForcingNegMemberProof.data_rename
+#print axioms PPAC.Migration.ForcingNegMemberProof.body
+#print axioms PPAC.Migration.ForcingNegMemberProof.result
+#print axioms PPAC.Migration.ForcingNegMemberProof.result_rename
+#print axioms PPAC.Migration.ForcingNegMemberProof.input
+#print axioms PPAC.Migration.ForcingNegMemberProof.derive
+#print axioms PPAC.Migration.ForcingNegMemberProof.sentence
+#print axioms PPAC.Migration.ForcingNegMemberProof.kernel_certificate

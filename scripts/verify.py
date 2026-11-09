@@ -2731,7 +2731,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_guard_diagram', 'ForcingGuardDiagram', 8),
                                 ('forcing_guard_opening', 'ForcingGuardOpening', 13),
                                 ('internal_proof_background', 'InternalProofBackground', 10),
-                                ('forcing_member_guard_proof', 'ForcingMemberGuardProof', 14)):
+                                ('forcing_member_guard_proof', 'ForcingMemberGuardProof', 14),
+                                ('forcing_neg_member_proof', 'ForcingNegMemberProof', 9)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7458,6 +7459,10 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_guard_same_output_implication_internal_proof_constructed": True,
         "object_actual_member_guard_fixed_background_candidate_internal_proof_proved": True,
         "object_actual_relation_guard_internal_proof_proved": False,
+        "object_actual_full_negative_instance_member_antecedent_removed_by_internal_proof": True,
+        "object_actual_full_negative_instance_member_elimination_21_original_witnesses_internal": True,
+        "object_actual_full_negative_instance_relation_antecedent_retained": True,
+        "object_actual_negative_member_elimination_scope": "Actual full negative compiler/raw body/lifted opening/native InstantiateTop and genuine parent internal proof G→Y yield actual internal proof G→Rest. SAME Y=M→Rest, Rest=O→Inner, Inner=D→SAME original falsum; D equals actual direct opening. SAME canonical G is constructor data, never proved/true premise. Member proof is internally generated from actual guard, existing original S/MP removes that antecedent; 21 original witness values internally eliminated. Relation guard O retained, validity/proof not supplied. Not normalized forcing MP, regularity, all-internal axiom/Proof preservation, reduction or final Con.",
         "object_actual_member_guard_internal_proof_scope": "SAME actual original guard/head/lifted opening/native instance/P-slot field yields an actual original internal proof of G→M. Canonical G=B∧(P∈V) is internally constructed and unique from B/P/V/scopes, independent of current formula or guard output; proof also holds for every fixed candidate G. No G/M proof or truth assumed. Actual output typing gives P/V types. All implication/proof/code candidates remain internal/nonstandard. Both endpoints are ordinary nativeZF original FirstOrder.Derives. This does not prove relation guard, normalized forcing MP, uniform axiom/Proof preservation, reduction or final Con.",
         "object_actual_guard_root_all_term_candidate_diagram_proved": True,
         "object_actual_member_and_relation_guard_same_output_direct_quotation_substitution_proved": True,

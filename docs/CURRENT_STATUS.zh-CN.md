@@ -30,6 +30,7 @@
 | 实际成员守卫的码级交换 | 从原compiled false取得原条件项和精确P自由槽；同一lifted opening／原InstantiateTop输出为字面的P∈V成员码，V是同一原参数表S的P槽实际字段，内部名字前缀偏移不变。原四个compiler／三个quotation字段、两轮原子子输出及head零槽内部消去；普通nativeZF原核证书。不是guard内部证明或强迫MP |
 | 两类实际guard的三段代码交换 | 原member／relation guard编译、同一lifted opening及原InstantiateTop实际输出满足：同一原quotation经[P]和原free表S的直接替换判断。原四compiler见证、直接表和输出候选均内部构造/消去；完整内部公式归纳及原binder闭包直接复用。尚未消费选中p槽字段取得自反guard内部证明，不声称guard有效或强迫MP |
 | 实际成员guard内部证明 | 同一原guard编译／own head／lifted opening／原InstantiateTop／实际P槽字段，内部构造规范共同背景G=B∧(P∈V)及原证明码，证明G→同一实际输出M；另有固定同一G任意候选的原核端点。G只取决于固定B/P/V/作用域，内部存在唯一，不依当前公式选取；P/V类型从实际输出取得。不假设G或M已证明/为真；relation guard、强迫MP及最终Con未证明 |
+| 实际完整否定实例的成员前件消去 | 消费同一完整compiler／raw量词体／lifted opening／原InstantiateTop，以及合法父证明G→Y；内部生成真实成员guard证明，再用原S/MP取得G→Rest。同一Y=M→Rest、Rest=O→Inner、Inner=D→原falsum，D为同一直接opening输出。5+4+6+6共21个原见证内部消去；不假设G/guard为真或已证明；关系guard O仍保留，尚非规范化强迫MP |
 
 ## 当前真正缺口及依赖顺序
 
@@ -40,9 +41,7 @@
 
 ## 最新实际验收
 
-`verification/forcing-member-guard-proof-acceptance.json`：九项命令及五项trust=0均退出0；38930项声明、零警告；全部38905项旧足迹不变。2836份旧PPAC证明中2835份哈希不变；唯一改动为现有rule12/13公理证明前半段的精确提取，原公开接口与原MP消费者保留。16项兼容性测试、三个干净锁定依赖及75项源哈希通过。实际成员guard的G→M内部证明完成；relation guard内部证明、规范化强迫MP、全部内部公理/Proof保真、reduction及最终Con尚未完成。本批尚未推送：上一轮42583363761仍运行中，不把本地结果冒充Linux结果。
-
-`verification/forcing-guard-opening-acceptance.json`：九项命令及五项trust=0均退出0；38905项声明、零警告；全部38881项旧依赖足迹不变。原2834份PPAC证明中2832份哈希不变，另外两份仅公开3项现成叶证明，正文逐字不变；SOURCE_LOCK中3处证书哈希引用刷新。16项兼容性回归、三个干净锁定依赖及75项源哈希通过。两类实际guard完整三段码级交换已完成；guard内部证明、规范化强迫MP、全部内部公理/Proof保真、reduction和最终Con未证明。
+`verification/forcing-neg-member-proof-acceptance.json`：九项命令及五项trust=0均退出0；38939项声明、零警告；全部38930项旧足迹及2838份旧PPAC证明哈希不变。16项兼容性测试、三个干净锁定依赖及75项源哈希通过。真实完整否定实例的成员前件已通过实际内部证明消去；relation guard、统一内部regularity／规范化强迫MP、完整内部公理与Proof保真、reduction及最终Con仍未完成。本批未推送；上一轮42583363761仍活跃，本地通过不冒充Linux结果。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
