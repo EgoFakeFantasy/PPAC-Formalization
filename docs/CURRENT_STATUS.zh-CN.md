@@ -45,17 +45,19 @@
 
 | 局部传递性码行的内部证明生产 | 本批完成局部传递性码行的内部证明生产：在原三次ALL／native实例化及五个蕴含字段输入下，内部生成成员守卫与R(r,p)的原证明，并消费负实例的两个guard前件，结论保留同一子公式／falsum字段。任意额外固定背景Extra通过Ctx=Extra∧G0传输，父证明与guard使用同一Ctx。没有给定背景／守卫真值或目标证明；运行码／作用域可为内部非标准值。该码行仍须从实际完整预序及实际guard构造识别，含r的局部前件仍须在全称化前解除。 仅此行所述输入下的码证明已验收；源行构造／识别、局部条件解除和完整单调性仍未完成。 |
 
+| 单／双局部前件解除及局部否定消费 | 本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。 实际源行构造／识别、规范guard上下文及fresh全称化仍未装配。 |
+
 ## 当前真正缺口及依赖顺序
 
-- 任意条件的完整否定实例归一化已完成，现有ForcingGuardOpening本来支持任意合法实例条件，不重做。本批给定码行下的局部传递性证明生产、双guard消去及任意Extra背景传输已完成。真正缺口是从原完整预序／实际guard构造识别该码行，以及解除局部条件；随后接通原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。原预序数学、L、完整模式、mode3、原forall核和递归均不重建。
+- 任意条件完整否定归一化、给定三实例／五前件码行下的局部传递性证明、任意Extra背景及本批单／双前件解除和实际局部否定块消费均已完成。原数学预序、任意条件guard opening、mode3／forall、L、完整模式和递归不重建。真正剩余是从实际完整预序／guard构造识别编码行，整理源局部guard上下文并装配fresh全称化，再完成原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-transitive-guard-proof-acceptance.json`：本轮最终代码的九项完整验收及五项trust=0均退出0；39078项声明、零警告，全部39059项旧足迹保持，2845份旧PPAC证明源码哈希不变。唯一旧源码变化是公开原project／chain／instantiate三项helper，正文和旧公开接口完全保持。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。 本地通过不冒充新提交独立Linux通过。
+`verification/internal-proof-curry-acceptance.json`：本轮最终代码的九项完整验收及五项trust=0均退出0；39104项声明、零警告，全部39078项旧足迹保持，2846份旧PPAC证明源码哈希不变。旧InternalProofImplication仅插入从原distribute_at精确适配的map_from_left；移除此新helper可逐字还原整个旧文件。无新增公理依赖。16项兼容回归及三个干净锁定依赖／75项原源哈希通过。 本地通过不冒充新提交独立Linux通过。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42596880794／10d2fa4现已完整Linux成功，实际原始作业日志2026-11-09T11:38:04.6839769Z报告38972项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计和artifact上传全部成功。见`verification/ci-selected-condition-guard-remote-acceptance.json`。该结果仅覆盖旧10d2fa4；最新已发布2599ca6仍由运行42612572831验收；本地新批39078项尚未独立Linux验收，最终Con仍未完成。
+远端42612572831／2599ca6已独立完整Linux成功，实际解码日志2026-11-09T13:19:42.1176781Z报告39019项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact全部成功，见`verification/ci-internal-proof-universal-remote-acceptance.json`。此回执仅覆盖旧2599ca6；本地39104项的新批次需要其对应提交的独立Linux验收。最终Con仍未完成。

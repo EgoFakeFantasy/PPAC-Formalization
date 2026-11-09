@@ -164218,7 +164218,7 @@
         "Original implication constructors, FormulaCode typing and nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
@@ -164275,8 +164275,38 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.InternalProofImplication.map_from_left": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
-      }
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/InternalProofImplication.lean",
+          "producer_sha256": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
+          "source_start": "private theorem distribute_at {m}",
+          "source_end": "/-- Original S/rule0 plus",
+          "target_start": "theorem map_from_left {m}",
+          "target_end": "private theorem distribute_at {m}",
+          "replacements": [
+            [
+              "private theorem distribute_at {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)\n    (w z b A B C I J K L D : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))\n",
+              "theorem map_from_left {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)\n    (w z b A B C I J K L D : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))\n"
+            ],
+            [
+              "    (hD : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two I K) D))\n    (hpL : Derives Γ (proved test w z b L)) (hpI : Derives Γ (proved test w z b I)) : Derives Γ (proved test w z b K) := by\n  let env := four b A B C\n",
+              "    (hD : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two I K) D))\n    (hpL : Derives Γ (proved test w z b L)) : Derives Γ (proved test w z b D) := by\n  let env := four b A B C\n"
+            ],
+            [
+              "  have hpD := apply_axiom hZ test 0 sLeft sRight s_admissible s_original w z L D env hw hz (.conjR hgA) hn hTypes hs gL gD hpL\n  exact modus_ponens hZ test w z b I K D hw hz (imp_type hZ w z b A B I hw hA hB hI)\n    (imp_type hZ w z b A C K hw hA hC hK) hD hpI hpD\n\n",
+              "  have hpD := apply_axiom hZ test 0 sLeft sRight s_admissible s_original w z L D env hw hz (.conjR hgA) hn hTypes hs gL gD hpL\n  exact hpD\n\n"
+            ]
+          ],
+          "normalized_body_sha256": "d1b5bb9feacd21744b90cdd2cc7665f4977e89d2b5c8e6377f7f74c076dcc4b5"
+        }
+      ]
     },
     "forcing_open_layout": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -165285,7 +165315,7 @@
         "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/ForcingPointwiseCode.lean": "ab81dd07ef01f3cc2daee5cac21a0a5b889d5a805bab8c14bbc3cb1c2f733150",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/Internal/LogicalRule20Head.lean": "6cd1613f086177c135d844311df8d531ca905019e80fe32d9d5a266ad36bace0",
@@ -165474,7 +165504,7 @@
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/ForcingPointwiseCode.lean": "ab81dd07ef01f3cc2daee5cac21a0a5b889d5a805bab8c14bbc3cb1c2f733150",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572"
       },
       "scope": "Consume the ACTUAL full original negative compilation including both guards and actual condition rebinding, its ACTUAL pointwise opening, and an actual native proof of G -> opened-negative. Internally obtain its real typed raw forall body, the SAME real opening environment, target body and original lifted child judgment, and the actual instance/output implication code and proof under the SAME G. No supplied body, lifting witness, instance code, transform judgment, history or local compilation answer; G itself and the opened negative are not assumed unconditionally provable/true. Runtime formulas/terms/scopes/proofs include internal nonstandard values. Existing old proof bodies are retained verbatim. This constructs the negative OUTER forall instance step, not full guard/condition-rebinding commutation or normalized forcing-specific MP. Uniform coded axiom/proof preservation, InternalConsistency.reduction and final Con remain unproved.",
@@ -167713,7 +167743,7 @@
         "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff"
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296"
       },
       "scope": "From SAME actual complete negative compiler, raw forall body, lifted opening and native InstantiateTop instance Y, construct an actual internal proof of G→Rest, retaining exact Y=M→Rest, Rest=O→Inner and Inner=D→SAME original falsum. D is SAME actual direct opening. Canonical fixed G=B∧(P∈V) is supplied as constructor DATA only; G/member truth or proof are NOT supplied. The actual parent proof G→Y is the legitimate original rule20/IH parent. Its actual member guard proof is generated, not supplied. All five compiler/four shell/two six-field witness blocks (21 total) are internally eliminated; original S/MP is reused without new proof or syntax backend. Relation guard O remains, with no validity/proof assumed; this does NOT prove normalized forcing MP, uniform internal regularity, all-internal axiom/Proof preservation, reduction or final Con.",
       "exact_declaration_footprints": {
@@ -168047,7 +168077,7 @@
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
         "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a"
@@ -168355,7 +168385,7 @@
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
         "PPAC/Migration/Internal/LogicalAbstractNode.lean": "c9707847afc4c26a540db10ffd86b157bef241c281864b7a0f0c889888fa5e69",
@@ -169142,8 +169172,197 @@
         "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
         "PPAC/Migration/ForcingAtomicBasic.lean": "c966cffafae564a0c2b3a678fd386432c19556e5fd7b0622298bd39c16bea2e4",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
-        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/ForcingNegCondition.lean": "61e44ea59f40057910daedad81d89e1c03f2fec10c39491aeed0bdf22918b677"
+      }
+    },
+    "internal_proof_curry": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/InternalProofCurry.lean",
+      "source_declarations": [
+        "ForcingQuotient.force_mono neg/ex local antecedent discharge",
+        "ForcingTruth.force_of_dense",
+        "forcing_sound fixed-background deduction"
+      ],
+      "consumers": [
+        "Discharge local r-in-V and r<=q antecedents BEFORE original same-background forall introduction",
+        "Actual accepted local negative consumer at Ctx=Extra AND G0, moved to SAME Extra -> (G0 -> Rest) preserving actual operand/falsum"
+      ],
+      "reuse_producers": [
+        "Existing original S/rule0 proof body extracted with finite checked adaptations as map_from_left",
+        "Original K weaken_proof, AND11 conjunction_axiom and implication compose; every proof/certificate/query/MP parent is generated",
+        "Original constructors generate all SIX intermediate implication codes internally",
+        "Existing original existential proof/conditional Root package",
+        "Accepted ForcingTransitiveGuardProof.at_negative_under, arbitrary fixed Extra preserved",
+        "Original nativeZF ZFReplay; no new syntax, proof kernel, checker, truth or recursion backend"
+      ],
+      "scope": "Single local-conjunction discharge: actual original internal proof (G AND A)->D yields generated J=A->D and actual original internal proof G->J; all six intermediate codes generated internally and all witness/proof codes object-existential. from_implication consumes the original existential parent proof directly. twice discharges ((G AND A) AND B)->D into SAME G->(A->(B->D)), both output nodes internally constructed. from_local_negative actually consumes the accepted negative target-fields endpoint at Ctx=Extra AND G0 and returns SAME Extra->(G0->Rest), retaining SAME operand/falsum data. No G/local guard truth, desired code/proof or chosen witness. Codes/scopes/proofs allow internal nonstandard values; original conditional Root retained. This completes the GENERIC local deduction producers and whole-local-block negative consumer, not construction/identification of the actual source preorder row, source-specific local guard reordering/freshness/forall assembly, uniform force_mono/force_of_dense/forcingMP, all-internal axiom/Proof preservation, reduction or finalCon.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.InternalProofCurry.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.at_codes": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.produce": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.from_implication": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.twice": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.doubleSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.double_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.negativeCurried": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.negativeCurried_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.from_local_negative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.negativeInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.negativeSentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofCurry.negative_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      },
+      "certificate_source_files": {
+        "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
+        "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
+        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
+        "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
       }
     }
   },

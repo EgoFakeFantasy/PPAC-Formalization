@@ -130,6 +130,41 @@ private theorem s_original : ObjectLogicalAxiom.prop 0 3 sTemplate.expr ∈ Obje
 private theorem s_no_zero : 0 ∉ sTemplate.expr.variables := by decide
 private def four {m} (b A B C : Fin m) : Fin 4 → Fin m := Fin.cases b (Fin.cases A (SyntaxAtomSyntax.two B C))
 
+/-- Original S/rule0 consumes an actual proof of A→(B→C) and
+constructs an actual proof of (A→B)→(A→C). No logical query or proof oracle. -/
+theorem map_from_left {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (w z b A B C I J K L D : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b)) (hC : Derives Γ (formulaCode w C z b))
+    (hI : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two A B) I))
+    (hJ : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two B C) J))
+    (hK : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two A C) K))
+    (hL : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two A J) L))
+    (hD : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two I K) D))
+    (hpL : Derives Γ (proved test w z b L)) : Derives Γ (proved test w z b D) := by
+  let env := four b A B C
+  have hgA := FormulaCodeProperties.guards w A z b hA
+  have hgB := FormulaCodeProperties.guards w B z b hB
+  have hgC := FormulaCodeProperties.guards w C z b hC
+  have hn : Derives Γ (environmentNat 4 w env) := .conjI (.conjR (.conjR hgA))
+    (.conjI (.conjL hgA) (.conjI (.conjL hgB) (.conjI (.conjL hgC) HornRuleSyntax.truth_proved)))
+  have hs : ∀ i, i ∈ sTemplate.expr.variables → Derives Γ (formulaCode w (env i) z b) := by
+    intro i
+    refine Fin.cases ?_ (fun i => Fin.cases (fun _ => hA) (fun i => Fin.cases (fun _ => hB)
+      (fun i => Fin.cases (fun _ => hC) (fun e => Fin.elim0 e) i) i) i) i
+    intro hi
+    exact False.elim (s_no_zero hi)
+  have hTypes : Derives Γ (LogicalStaticQueries.types 3 false w z env) := .conjI hA (.conjI hB (.conjI hC HornRuleSyntax.truth_proved))
+  have gA : Derives Γ (graph sA.expr w env A) := .conjI (.conjL hgA) (.eqRefl _)
+  have gB : Derives Γ (graph sB.expr w env B) := .conjI (.conjL hgB) (.eqRefl _)
+  have gC : Derives Γ (graph sC.expr w env C) := .conjI (.conjL hgC) (.eqRefl _)
+  have gJ := imp_graph sB sC w B C J env gB gC hJ
+  have gL := imp_graph sA (.binary 7 sB sC) w A J L env gA gJ hL
+  have gI := imp_graph sA sB w A B I env gA gB hI
+  have gK := imp_graph sA sC w A C K env gA gC hK
+  have gD := imp_graph (.binary 7 sA sB) (.binary 7 sA sC) w I K D env gI gK hD
+  have hpD := apply_axiom hZ test 0 sLeft sRight s_admissible s_original w z L D env hw hz (.conjR hgA) hn hTypes hs gL gD hpL
+  exact hpD
+
 private theorem distribute_at {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b A B C I J K L D : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b)) (hC : Derives Γ (formulaCode w C z b))

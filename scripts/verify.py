@@ -2702,7 +2702,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_proof_operations', 'InternalProofOperations', 27),
                                 ('internal_proof_conjunction', 'InternalProofConjunction', 15),
                                 ('internal_proof_templates', 'InternalProofTemplates', 10),
-                                ('internal_proof_implication', 'InternalProofImplication', 7),
+                                ('internal_proof_implication', 'InternalProofImplication', 8),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
                                 ('forcing_pointwise_code', 'ForcingPointwiseCode', 46),
                                 ('forcing_code_binary', 'ForcingCodeBinary', 7),
@@ -2740,7 +2740,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_proof_universal', 'InternalProofUniversal', 16),
                                 ('forcing_condition_opening', 'ForcingConditionOpening', 13),
                                 ('forcing_neg_condition', 'ForcingNegCondition', 18),
-                                ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16)):
+                                ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
+                                ('internal_proof_curry', 'InternalProofCurry', 25)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6078,6 +6079,9 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_internal_single_and_double_local_deduction_producers_proved": True,
+        "object_actual_local_negative_block_curried_at_same_Extra_proved": True,
+        "object_internal_local_deduction_scope": "InternalProofCurry internally builds six intermediate implication codes and original K/S/AND11/MP proofs. Existential parent proof is consumed directly. Single and double local conjunction discharge keep SAME G; accepted local negative consumer moves whole G0 block to implication under SAME Extra while preserving operand/falsum. Source preorder row identification, canonical guard-context reordering/freshness/forall assembly and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_local_transitivity_code_row_proof_producer_proved": True,
         "object_local_transitivity_additional_fixed_background_preserved": True,
         "object_local_transitivity_negative_target_guards_discharge_proved": True,

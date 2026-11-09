@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批完成局部传递性码行的内部证明生产：在原三次ALL／native实例化及五个蕴含字段输入下，内部生成成员守卫与R(r,p)的原证明，并消费负实例的两个guard前件，结论保留同一子公式／falsum字段。任意额外固定背景Extra通过Ctx=Extra∧G0传输，父证明与guard使用同一Ctx。没有给定背景／守卫真值或目标证明；运行码／作用域可为内部非标准值。该码行仍须从实际完整预序及实际guard构造识别，含r的局部前件仍须在全称化前解除。
+本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。
 
-任意条件的完整否定实例归一化已完成，现有ForcingGuardOpening本来支持任意合法实例条件，不重做。本批给定码行下的局部传递性证明生产、双guard消去及任意Extra背景传输已完成。真正缺口是从原完整预序／实际guard构造识别该码行，以及解除局部条件；随后接通原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp的联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。原预序数学、L、完整模式、mode3、原forall核和递归均不重建。 最新本地完整验收见`verification/forcing-transitive-guard-proof-acceptance.json`；Linux远端验收单独记录。
+任意条件完整否定归一化、给定三实例／五前件码行下的局部传递性证明、任意Extra背景及本批单／双前件解除和实际局部否定块消费均已完成。原数学预序、任意条件guard opening、mode3／forall、L、完整模式和递归不重建。真正剩余是从实际完整预序／guard构造识别编码行，整理源局部guard上下文并装配fresh全称化，再完成原force_mono负／存在分支与force_of_dense／exists_force_neg／forceFormula_imp联合全内部码归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof保真、精确reduction及最终Con。 最新本地完整验收见`verification/internal-proof-curry-acceptance.json`；Linux远端验收单独记录。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

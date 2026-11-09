@@ -1144,3 +1144,4 @@ import PPAC.Migration.InternalProofUniversal
 import PPAC.Migration.ForcingConditionOpening
 import PPAC.Migration.ForcingNegCondition
 import PPAC.Migration.ForcingTransitiveGuardProof
+import PPAC.Migration.InternalProofCurry
