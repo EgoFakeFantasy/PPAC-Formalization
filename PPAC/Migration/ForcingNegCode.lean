@@ -25,14 +25,14 @@ private theorem allAt_rename {m l} (w a f J Q : Fin m) (r : Fin m → Fin l) :
     (allAt w a f J Q).rename r = allAt (r w) (r a) (r f) (r J) (r Q) := by
   simp only [allAt, typedAt_rename]
 
-private def shellData {m} (w a A f M O C Q : Fin m) (v : Fin 4 → Fin m) : Formula m :=
+def shellData {m} (w a A f M O C Q : Fin m) (v : Fin 4 → Fin m) : Formula m :=
   (botAt w A f (v 0)).conj ((impAt w A f C (v 0) (v 1)).conj
     ((impAt w A f O (v 1) (v 2)).conj ((impAt w A f M (v 2) (v 3)).conj
       (allAt w a f (v 3) Q))))
-private theorem shellData_rename {m l} (w a A f M O C Q : Fin m) (v : Fin 4 → Fin m) (r : Fin m → Fin l) :
+theorem shellData_rename {m l} (w a A f M O C Q : Fin m) (v : Fin 4 → Fin m) (r : Fin m → Fin l) :
     (shellData w a A f M O C Q v).rename r = shellData (r w) (r a) (r A) (r f) (r M) (r O) (r C) (r Q) (fun i => r (v i)) := by
   simp only [shellData, Formula.rename, botAt_rename, impAt_rename, allAt_rename]
-private def shellBody {m} (w a A f M O C Q : Fin m) : Formula (m+4) :=
+def shellBody {m} (w a A f M O C Q : Fin m) : Formula (m+4) :=
   shellData (old 4 w) (old 4 a) (old 4 A) (old 4 f) (old 4 M) (old 4 O) (old 4 C) (old 4 Q) (slot 4)
 private def shell {m} (w a A f M O C Q : Fin m) : Formula m := existsMany 4 (shellBody w a A f M O C Q)
 private theorem shell_rename {m l} (w a A f M O C Q : Fin m) (r : Fin m → Fin l) :
@@ -207,18 +207,18 @@ private theorem shell_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (old 4 (old 4 M)) (old 4 (old 4 O)) (old 4 (old 4 C)) (old 4 (old 4 Q)) (old 4 (old 4 V))
     (fun i => old 4 (slot 4 i)) (slot 4) hw2 hx2 hT
 
-private def data {n m} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m) (v : Fin 5 → Fin m) : Formula m :=
+def data {n m} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m) (v : Fin 5 → Fin m) : Formula m :=
   (SyntaxMixedImageHead.head w A f (v 0) (v 1)).conj
     ((ForcingConditionRebind.compiled w a f A j N (v 2)).conj
       ((ForcingGuardCode.compiled false R w A f (v 1) (v 3)).conj
         ((ForcingGuardCode.compiled true R w A f (v 1) (v 4)).conj
           (shell w a A f (v 3) (v 4) (v 2) Q))))
-private theorem data_rename {n m l} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m)
+theorem data_rename {n m l} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m)
     (v : Fin 5 → Fin m) (r : Fin m → Fin l) :
     (data R w a A f j N Q v).rename r = data R (r w) (r a) (r A) (r f) (r j) (r N) (r Q) (fun i => r (v i)) := by
   simp only [data, Formula.rename, SyntaxMixedImageHead.head_rename, ForcingConditionRebind.compiled_rename,
     ForcingGuardCode.compiled_rename, shell_rename]
-private def body {n m} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m) : Formula (m+5) :=
+def body {n m} (R : Source.Formula (n+2)) (w a A f j N Q : Fin m) : Formula (m+5) :=
   data R (old 5 w) (old 5 a) (old 5 A) (old 5 f) (old 5 j) (old 5 N) (old 5 Q) (slot 5)
 
 /-- Actual child rebinding, both literal guards, and the whole ALL/IMP/BOT code

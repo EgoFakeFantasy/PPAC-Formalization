@@ -1127,3 +1127,5 @@ import PPAC.Migration.ForcingFormulaAtoms
 import PPAC.Migration.ForcingFormulaLifts
 import PPAC.Migration.ForcingFormulaInduction
 import PPAC.Migration.ForcingFormulaCancellation
+import PPAC.Migration.ForcingNegShell
+import PPAC.Migration.ForcingNegNormalization

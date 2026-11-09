@@ -26,17 +26,18 @@
 | 量词共同帧的内部存在 | 四个共同后继作用域和八张实际提升表均由原存在性内部构造，所得同一帧保持项图及四表类型；不再把共同lift的存在误报为缺口 |
 | 完整内部公式归纳 | 16个变化表／作用域参数及4个实际输出均在对象全称内；原ZF基础／分离关闭全内部公式码归纳，十一构造器、子公式前提及共同lift均已消去 |
 | 实际原mode2完整正文相消 | 同一原compiled重绑定／lifted opening／原Run3公式输出等于直接opening；复用现成mode2公式桥，原六个compiler见证也在对象层消去。实际守卫／regularity及强迫MP仍未证明 |
+| 实际完整否定实例的字段正规化 | 从同一完整 NegCode.compiled／raw量词体／lifted opening／原 InstantiateTop 实例，内部消去原五个compiler和四个shell见证及两轮六字段；最终操作数等于直接opening，保持同一falsum，并保留原头和两实际guard编译。普通nativeZF原核证书已验收；守卫有效性及规范化强迫MP未完成 |
 
 ## 当前真正缺口及依赖顺序
 
-- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。下一步将该相消用于实际完整否定编译与原rule20实例产生的同一正文／守卫字段。
+- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；剩余是实际guard码的有效性与强迫MP。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-formula-cancellation-acceptance.json`：九项命令及五项trust=0均退出0；38800项声明、零警告；全部38771项旧依赖足迹和2828份旧证明源码哈希不变，旧SOURCE_LOCK条目保持。12项兼容性回归、三个干净锁定依赖及75项源哈希检查通过。完整内部公式归纳和实际原compiled正文相消均已完成，旧mode2公式桥已实际复用；实际guard/regularity、规范化强迫MP、统一内部公理/Proof保真、reduction及最终Con仍未证明。
+`verification/forcing-neg-normalization-acceptance.json`：九项命令及五项trust=0均退出0；38848项声明、零警告；全部38800项旧依赖足迹不变。旧2830份PPAC证明中2828份哈希不变，其余两份仅去除共12个private标记，已逐字核对正文不变；SOURCE_LOCK中10处证书哈希引用据实刷新。15项兼容性回归、三个干净锁定依赖及75项源哈希检查通过。完整否定编译／实例的结构正规化已消费现成正文相消；实际guard码有效性／已有regularity与单调性证书的码级消费、规范化强迫MP、统一内部公理/Proof保真、reduction及最终Con仍未证明。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 

@@ -1,0 +1,269 @@
+{
+  "verified_at": "2026-11-09T06:51:14.423846+00:00",
+  "baseline_commit": "a3bbb4c7b398a4d8bc5782548dd4e2712748cba4",
+  "original_stage": "10 active; 1-9 complete; 11 not started",
+  "background": "Original pure-set YesMetaZFC signature; ordinary nativeZF; original FirstOrder.Derives; unchanged pinned OpenAI source",
+  "result": "ForcingNegNormalization.kernel_certificate: actual complete negative compiler, SAME raw forall body and lifted opening, SAME original InstantiateTop instance -> internally witnessed original head/guards/shell and two actual substitution stages; final operand equals actual direct opening and SAME original falsum is preserved.",
+  "not_proved": [
+    "actual guard-code validity / consumption of existing regularity and monotonicity certificates",
+    "normalized forcing MP",
+    "uniform all-internal axiom and six-rule Proof preservation",
+    "InternalConsistency.reduction",
+    "FirstOrder.Derives nativeZF [] InternalConsistency.goal"
+  ],
+  "reuse": [
+    "ForcingFormulaDiagram.binary_output reused three times per stage",
+    "ForcingFormulaCancellation.from_compiled via original InstantiateTopFormulaOperation and SyntaxTopFormulaCodes bridges",
+    "Original ForcingNegCode data/shell; all five compiler and four shell witnesses internally eliminated",
+    "SyntaxMixedFormulaNullary.unique; original equality and existence rules"
+  ],
+  "proof_visibility_changes_only": {
+    "ForcingFormulaDiagram": [
+      "binaryData",
+      "binaryData_rename",
+      "binaryBody",
+      "binaryOutput",
+      "binaryOutput_rename",
+      "binary_output"
+    ],
+    "ForcingNegCode": [
+      "shellData",
+      "shellData_rename",
+      "shellBody",
+      "data",
+      "data_rename",
+      "body"
+    ]
+  },
+  "old_producer_bodies_unchanged_beyond_exact_private_removals": true,
+  "prior_certificate_hash_references_updated": [
+    [
+      "forcing_neg_code",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    [
+      "forcing_logical_code",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    [
+      "forcing_code_step",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    [
+      "forcing_code_unary",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    [
+      "forcing_neg_proof",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    [
+      "forcing_formula_diagram",
+      "PPAC/Migration/ForcingFormulaDiagram.lean"
+    ],
+    [
+      "forcing_formula_atoms",
+      "PPAC/Migration/ForcingFormulaDiagram.lean"
+    ],
+    [
+      "forcing_formula_lifts",
+      "PPAC/Migration/ForcingFormulaDiagram.lean"
+    ],
+    [
+      "forcing_formula_induction",
+      "PPAC/Migration/ForcingFormulaDiagram.lean"
+    ],
+    [
+      "forcing_formula_cancellation",
+      "PPAC/Migration/ForcingFormulaDiagram.lean"
+    ]
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38848,
+    "declarations_without_axioms": 2262,
+    "declarations_with_recorded_dependencies": 36586,
+    "warning_lines": 0,
+    "all_prior_38800_declaration_footprints_unchanged": true,
+    "old_PPAC_proof_files": 2830,
+    "unchanged_old_PPAC_proof_files": 2828,
+    "old_proof_files_with_visibility_only_changes": [
+      "PPAC/Migration/ForcingFormulaDiagram.lean",
+      "PPAC/Migration/ForcingNegCode.lean"
+    ],
+    "new_proof_files": [
+      "PPAC/Migration/ForcingNegNormalization.lean",
+      "PPAC/Migration/ForcingNegShell.lean"
+    ],
+    "total_PPAC_proof_files": 2832,
+    "sealed_inputs": 2865,
+    "all_current_sealed_input_hashes_match": true,
+    "compatibility_regression_tests_passed": 15,
+    "clean_pinned_repositories": 3,
+    "source_hashes_verified": 75,
+    "post_cleanup_trust_zero_source_checks": [
+      {
+        "file": "PPAC/Migration/ForcingNegShell.lean",
+        "exit_code": 0
+      },
+      {
+        "file": "PPAC/Migration/ForcingNegNormalization.lean",
+        "exit_code": 0
+      }
+    ],
+    "sealed_hashes_verified_after_cleanup": 2865
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-parent-summary.json",
+      "bytes": 13320200,
+      "sha256": "bb4e1b23dfb5ff5d436259af106129c6abbd509552975d529513cad9dfa1db99"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-export-review.json",
+      "bytes": 292,
+      "sha256": "fcbb6fc0a9800a2adea91922bd3001127998dfa95647e53f5f3d94bf1d34fe73"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-source-lock-review.json",
+      "bytes": 2471,
+      "sha256": "620c546050ad7ef8422c7c6a0735bfd75b3b77c56a17961c3ddfaeef42fb8cbd"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-footprints.json",
+      "bytes": 11425,
+      "sha256": "1febe714c026ab5dfcbd1cea1d5737e29133f5945167d5b30aa5830fdddcf29f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\NegNormalizationAudit.lean",
+      "bytes": 5072,
+      "sha256": "0036c9c7287e52b6dab5f9aafcc16b8e41ff4df8de3d01d8be2d54ede9b0958e"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-audit.log",
+      "bytes": 11042,
+      "sha256": "8e224cd5af2a3775567a9cc2bae7612702c0334ed0412a4690a6652177ff02d6"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-shell-build.log",
+      "bytes": 104,
+      "sha256": "9d99ba69d255e3029749fed54f43095bddf19d24825b1f403e58cde0d45c2abf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-build.log",
+      "bytes": 112,
+      "sha256": "c95a40c6a8337d55c2c3cd45020622ca70755b78357370049f9df7f868afba31"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-source-check.log",
+      "bytes": 246,
+      "sha256": "d6910a1ed6a1d33d17bcb55646e7b9e68218f5f85a1d1d530d0207902da90e24"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\neg-normalization-full.log",
+      "bytes": 153,
+      "sha256": "c79873e745446ef7bc1700d9fec89afdfd088e72a30e2eaf920db29fc8c5c888"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "local_batch_published": false,
+    "previous_remote_run": 42571499876,
+    "previous_remote_sha": "a3bbb4c7b398a4d8bc5782548dd4e2712748cba4",
+    "last_observed_status": "in_progress: Build and audit",
+    "do_not_push_another_proof_batch_before_previous_complete_success": true
+  },
+  "cleanup_verified_at": "2026-11-09T06:51:54.693875+00:00"
+}

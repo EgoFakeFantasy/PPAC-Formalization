@@ -162021,7 +162021,7 @@
         "Original Source.Derives, TheoryTransport, nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingGuardCode.lean": "3db7ae939efa38b179e59a394e9945c7759f0f14739fd27ac4a6d993350048b2",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
@@ -162030,6 +162030,32 @@
       },
       "scope": "Complete one-step literal negative code operation on an arbitrary internal already-interpreted child code N. Actual rebind, new condition, both guards, falsum, three implications and forall code are all constructed/eliminated in object EX. Arbitrary internal/nonstandard bound scopes, child and output candidates; source target A is successor(a). Fixed external R and its parameter count give object numeral f=n+2 and exact current-condition free slot j=n+1. Independent executions have the same typed output. Not a raw all-constructor recursive compiler, uniform coded axiom forcing, Proof/contradiction reduction, or final Con. The actual outer forall constructor and its typed raw body are now projected directly from the complete actual negative compilation; no supplied raw body, history or local answer. All original guard/rebinding and shell proof bodies are unchanged.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegCode.shellData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.shellData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.shellBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegCode.body": [
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.ForcingNegCode.compiled": [
           "Quot.sound",
           "propext"
@@ -162496,7 +162522,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
-        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/SourceSyntax.lean": "82c0118456216b3cd3ca8abb3570c9a3505ea8922133efe1828f316d60bfa16c",
@@ -162649,7 +162675,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
-        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/Internal/FormulaCodeRecursiveSyntax.lean": "a68c5ca4e7427bb19133edf78c99144e42252af946ceecbaa8de8c05b15960a0",
@@ -164899,7 +164925,7 @@
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
-        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingExistCode.lean": "69ef7f12c0525e7373aa690c841328bbc9e76039b657cee19a40eefa88dda3ae",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
@@ -165412,7 +165438,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingNegProof.lean": "2ca4c390e5e1a954a5beec0344a0d4e3d20dc9c5c5499347d63ec157c76a9d7c",
-        "PPAC/Migration/ForcingNegCode.lean": "ab22684c2ecec5f8f0bc2ef97f88a0c8da898ee0439d74a0ad674c6c4a95f709",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/ForcingPointwiseCode.lean": "ab81dd07ef01f3cc2daee5cac21a0a5b889d5a805bab8c14bbc3cb1c2f733150",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
@@ -166109,7 +166135,7 @@
         "Original allI/allE/exI/exE blocks only"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/Internal/SyntaxMixedFormulaEndpoints.lean": "39c182c223136e945a4dbf84113a4e6399587e036196afbeccb39b8bc747f4e7",
@@ -166150,6 +166176,33 @@
           "propext"
         ],
         "PPAC.Migration.ForcingFormulaDiagram.quantified": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binaryData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binaryData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binaryBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binaryOutput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binaryOutput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingFormulaDiagram.binary_output": [
           "Classical.choice",
           "Quot.sound",
           "propext"
@@ -166245,7 +166298,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingFormulaAtoms.lean": "2c5db373db38d3aaedebf01c7c18ec4e441da3d7038be8aa9d1be9387b733749",
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/SyntaxMixedFormulaTagCases.lean": "f175a10fd7059930cbbb62d78dfc2af958cd7bdbff17d34c701c48ee5350a9bd",
@@ -166325,7 +166378,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingFormulaLifts.lean": "2aa70d5295c4067acd652322557025a5c35234fa79cbd780ecce399bafefe7e5",
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
@@ -166410,7 +166463,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingFormulaAtoms.lean": "2c5db373db38d3aaedebf01c7c18ec4e441da3d7038be8aa9d1be9387b733749",
         "PPAC/Migration/ForcingFormulaLifts.lean": "2aa70d5295c4067acd652322557025a5c35234fa79cbd780ecce399bafefe7e5",
@@ -166561,7 +166614,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "fa5379ed09abde6409fe4c7a61ab0c2fb781c7e5597b980ced0426c19f4f1eef",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
@@ -166609,6 +166662,249 @@
           "propext"
         ],
         "PPAC.Migration.ForcingFormulaCancellation.compiled_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_neg_shell": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingNegShell.lean",
+      "consumers": [
+        "Actual complete negative-instance guard normalization before normalized forcing MP",
+        "Uniform all-internal proof preservation with SAME original compiler operations"
+      ],
+      "reuse_producers": [
+        "Original ForcingFormulaDiagram.binary_output and object six-field elimination; no new syntax evaluator",
+        "ForcingFormulaCancellation.from_compiled; complete internal formula/body cancellation reused",
+        "Original complete ForcingNegCode data/shell and original native InstantiateTop coded environment",
+        "SyntaxMixedFormulaNullary.unique, SyntaxLogicalFields.single_fields, original object equality and existence rules"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
+        "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
+      },
+      "scope": "The three ACTUAL original negative IMP nodes are decomposed through each real mixed substitution. All six outputs per stage are internally generated and existentially retained. Completed original compiled root formula cancellation proves the actual final operand equals the actual direct opening; the SAME original falsum code is preserved through BOTH stages. Both guard leaves retain actual operation judgments. No child-output equality, truth/proof of either guard, regularity or child induction hypothesis is assumed. This is structural normalization, NOT guard validity, normalized forcing MP, uniform internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegShell.chainData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.chainData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.chainBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.chain": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.chain_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.transform": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.cancellationBase": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.cancellationBase_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.finalData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.finalData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.finalBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.finalFields": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.finalFields_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalizedData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalizedData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalizedBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalized": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalized_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegShell.normalize": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_neg_normalization": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "adapter": "PPAC/Migration/ForcingNegNormalization.lean",
+      "consumers": [
+        "Actual complete negative-instance guard normalization before normalized forcing MP",
+        "Uniform all-internal proof preservation with SAME original compiler operations"
+      ],
+      "reuse_producers": [
+        "Original ForcingFormulaDiagram.binary_output and object six-field elimination; no new syntax evaluator",
+        "ForcingFormulaCancellation.from_compiled; complete internal formula/body cancellation reused",
+        "Original complete ForcingNegCode data/shell and original native InstantiateTop coded environment",
+        "SyntaxMixedFormulaNullary.unique, SyntaxLogicalFields.single_fields, original object equality and existence rules"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+        "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
+        "PPAC/Migration/Internal/SyntaxTopFormulaCodes.lean": "13084c6a1ec525c93f019f8a3aed1a5d4941bb20914ea5be20f43b754baaedc5",
+        "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
+      },
+      "scope": "Consumes ACTUAL complete ForcingNegCode.compiled, SAME raw forall body, SAME lifted opening, and SAME original native InstantiateTop instance. All five original compiler and four raw shell witnesses are eliminated internally. Retains original head and both actual guard compilations together with two stages of actual child outputs. Final rebound operand equals actual direct opening and falsum stays identical, via ForcingNegShell and existing complete formula cancellation. No supplied operand equality, guard truth/proof or alternate compiler. Structural negative-instance normalization is proved in ordinary nativeZF; actual guard validity/regularity, normalized forcing MP, uniform internal axiom/Proof preservation, reduction and final Con are NOT proved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegNormalization.operations": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.operations_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.shellResultData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.shellResultData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.shellResultBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.shellResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.shellResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.compiledData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.compiledData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.compiledBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.compiled": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.compiled_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.from_instance": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegNormalization.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

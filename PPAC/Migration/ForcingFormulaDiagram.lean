@@ -215,21 +215,21 @@ theorem quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (universal 
     (of_eq (ForcingTermDiagram.lifts_rename w a b A R S K H (old 4)) (HornBinderRules.under_body 4 hl B))
     (.hyp (Or.inl rfl))
 
-private def binaryData {m} (kind : Fin 4) (w R S a b c d x y q X Y : Fin m) : Formula m :=
+def binaryData {m} (kind : Fin 4) (w R S a b c d x y q X Y : Fin m) : Formula m :=
   (SyntaxLogicalSyntax.binaryCode kind w X Y q).conj
     ((SyntaxMixedFormulaJudgmentSyntax.substituted w R S a b c d x X).conj
       (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a b c d y Y))
-private theorem binaryData_rename {m l} (kind : Fin 4) (w R S a b c d x y q X Y : Fin m) (r : Fin m → Fin l) :
+theorem binaryData_rename {m l} (kind : Fin 4) (w R S a b c d x y q X Y : Fin m) (r : Fin m → Fin l) :
     (binaryData kind w R S a b c d x y q X Y).rename r = binaryData kind (r w) (r R) (r S) (r a) (r b) (r c) (r d) (r x) (r y) (r q) (r X) (r Y) := by
   simp only [binaryData, Formula.rename, SyntaxLogicalSyntax.binaryCode_rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
-private def binaryBody {m} (kind : Fin 4) (w R S a b c d x y q : Fin m) : Formula (m+2) :=
+def binaryBody {m} (kind : Fin 4) (w R S a b c d x y q : Fin m) : Formula (m+2) :=
   binaryData kind (old 2 w) (old 2 R) (old 2 S) (old 2 a) (old 2 b) (old 2 c) (old 2 d) (old 2 x) (old 2 y) (old 2 q) (slot 2 0) (slot 2 1)
-private def binaryOutput {m} (kind : Fin 4) (w R S a b c d x y q : Fin m) : Formula m := existsMany 2 (binaryBody kind w R S a b c d x y q)
-private theorem binaryOutput_rename {m l} (kind : Fin 4) (w R S a b c d x y q : Fin m) (r : Fin m → Fin l) :
+def binaryOutput {m} (kind : Fin 4) (w R S a b c d x y q : Fin m) : Formula m := existsMany 2 (binaryBody kind w R S a b c d x y q)
+theorem binaryOutput_rename {m l} (kind : Fin 4) (w R S a b c d x y q : Fin m) (r : Fin m → Fin l) :
     (binaryOutput kind w R S a b c d x y q).rename r = binaryOutput kind (r w) (r R) (r S) (r a) (r b) (r c) (r d) (r x) (r y) (r q) := by
   simp only [binaryOutput, existsMany_rename, binaryBody, binaryData_rename, lift_old, lift_slot]
 
-private theorem binary_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w R S a b c d n x y q : Fin m)
+theorem binary_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind : Fin 4) (w R S a b c d n x y q : Fin m)
     (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode kind w x y n))
     (hp : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a b c d n q)) :
     Derives Γ (binaryOutput kind w R S a b c d x y q) := by
