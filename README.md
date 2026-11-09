@@ -8,9 +8,9 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批从两类原guard的实际compiler／own head／lifted opening／native InstantiateTop及同一选中p／载体字段，内部生成一张共享替换表、两个对角体、准确的载体限制自反性行U=∀q(q∈V→R(q,q))、B=Rest∧U和同一个G=B∧(P∈V)，并用原投影／rule20／S／MP生成G→实际成员输出和G→实际关系输出的内部证明。没有给定G或guard的真值／证明，全部码和证明见证均为对象存在量词。
+真实完整否定实例现已在同一个固定条件背景G下移除成员和关系两层guard：复用原完整正规化及5+4+6+6共21个内部见证，内部生成两类guard证明；用原head／compiler／mixed opening唯一性对齐独立的实际关系输出，再用原S/MP两次消去前件，取得G→(D→原falsum)的内部证明，D为同一实际直接opening。没有给定guard真值／证明或ProvedG。
 
-仍需将该G的内部证明与完整源系统的固定背景／quotation装配闭合，完成统一内部regularity／规范化强迫MP、全部内部／非标准ZF/U公理及六规则Proof保真、精确reduction和最终Con。已完成的L／完整模式／19规则／语法及递归不重做。 最新本地完整验收见`verification/forcing-relation-guard-proof-acceptance.json`；Linux远端验收单独记录，不能由本地通过替代。
+下一实际消费者为原force_of_dense／exists_force_neg／forceFormula_imp的统一内部regularity／单调性及规范化强迫MP，随后为全部内部／非标准ZF/U公理和六规则Proof保真、精确reduction与最终Con。G作为同一条件背景保留，在最终根节点由已有完整具体系统消去；不增加任意自由条件下无条件证明G的任务，不重做已有L／偏序数学／完整模式／递归。 最新本地完整验收见`verification/forcing-neg-guard-proof-acceptance.json`；Linux远端验收单独记录。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

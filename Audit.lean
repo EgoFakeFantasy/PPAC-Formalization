@@ -39679,3 +39679,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationGuardProof.kernel_certificate
 #print axioms PPAC.Migration.ForcingReflexiveDiagram.at_body
 #print axioms PPAC.Migration.ForcingNegMemberProof.discharge
+#print axioms PPAC.Migration.ForcingNegGuardProof.fixed
+#print axioms PPAC.Migration.ForcingNegGuardProof.fixed_rename
+#print axioms PPAC.Migration.ForcingNegGuardProof.data
+#print axioms PPAC.Migration.ForcingNegGuardProof.data_rename
+#print axioms PPAC.Migration.ForcingNegGuardProof.body
+#print axioms PPAC.Migration.ForcingNegGuardProof.result
+#print axioms PPAC.Migration.ForcingNegGuardProof.result_rename
+#print axioms PPAC.Migration.ForcingNegGuardProof.input
+#print axioms PPAC.Migration.ForcingNegGuardProof.derive
+#print axioms PPAC.Migration.ForcingNegGuardProof.sentence
+#print axioms PPAC.Migration.ForcingNegGuardProof.kernel_certificate

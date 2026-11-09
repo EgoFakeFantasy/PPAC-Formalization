@@ -45,3 +45,13 @@ Proof_T不限制外部标准证明码；内部非标准ω、语法与序列也�
 `PPAC/Migration/InternalConsistency.lean` 的 `nativeCon false/true` 分别使用实际完整原ZF/U公理测试及原六规则根关系定义Con，`goal`准确为二者的对象蕴含。`contradiction`内部存在量化准确的原生falsum码；`inconsistentAt`量化全部内部ω上的证明码，未限制外部标准性。
 
 `reduction`是纯对象闭句：对同一内部ω中的每个U矛盾证明码p，存在其中一个ZF矛盾证明码q。`closing_kernel_certificate`在原nativeZF核中证明`reduction → goal`，通过同一ω见证消去全部存在量词，没有新增选择前提。该封闭门不证明`reduction`，也不是最终`Derives nativeZF [] goal`；两者仍未验收。下一主线应证明此精确归约句，不能把封闭门的条件当作已完成。
+
+## 中间条件背景与最终消去
+
+全内部保真中的G编码同一源系统合同、名字赋值条件及所选条件P∈V。
+`G→实际编译输出`的内部证明生成不以G或guard已经为真／可证为前提；
+中间证明节点的作用域和参数仍覆盖任意内部／非标准码，不能限制为宿主有限AST。
+固定的G须随原规则的作用域变换正确传输，并在最终根节点由已有完整具体系统
+及其实际所选条件消去。任意自由P∈V不成为新的无条件定理义务。
+最终验收仍要求无额外背景前提的`FirstOrder.Derives nativeZF [] goal`；
+仅完成同背景guard消去、码对应或reduction→goal均不能宣称最终目标完成。

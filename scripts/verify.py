@@ -2735,7 +2735,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_member_proof', 'ForcingNegMemberProof', 10),
                                 ('forcing_reflexive_images', 'ForcingReflexiveImages', 18),
                                 ('forcing_reflexive_diagram', 'ForcingReflexiveDiagram', 16),
-                                ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 18)):
+                                ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 18),
+                                ('forcing_neg_guard_proof', 'ForcingNegGuardProof', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6745,6 +6746,8 @@ def main(source_check_only: bool = False) -> None:
         "object_omega_induction_schema_proved": True,
         "object_omega_induction_has_arbitrary_parameters_and_formulas": True,
         "object_actual_original_guards_shared_table_and_same_common_background_internal_proofs": True,
+        "object_actual_complete_negative_instance_both_guard_antecedents_eliminated": True,
+        "object_negative_instance_guard_context_independent_of_current_operand": True,
         "object_guarded_reflexivity_background_truth_or_proof_assumed": False,
         "object_common_background_validity_from_complete_source_system_closed": False,
         "object_all_sets_irreflexive_using_Foundation_and_Pairing": True,

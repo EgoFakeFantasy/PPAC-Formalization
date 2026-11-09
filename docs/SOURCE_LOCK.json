@@ -168037,6 +168037,174 @@
           "propext"
         ]
       }
+    },
+    "forcing_neg_guard_proof": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingNegGuardProof.lean",
+      "source_declarations": [
+        "forceFormula_neg same-condition guarded instance",
+        "forceFormula_imp and forcing_sound impE self-condition elimination",
+        "AtomicData.Force neg guard shell in ForcingQuotient"
+      ],
+      "consumers": [
+        "Uniform original negative/implication proof preservation under one fixed condition background; subsequent regularity and normalized forcing MP"
+      ],
+      "reuse_producers": [
+        "Unchanged complete ForcingNegNormalization.from_instance and SAME full body cancellation",
+        "Completed ForcingRelationGuardProof.at_background from previously generated FIXED code data; no supplied relation proof",
+        "Existing member producer and unchanged ForcingNegMemberProof.discharge using original S/MP twice",
+        "Original head/guard compiler/mixed substitution uniqueness aligns independent actual candidates",
+        "Exact retained three existing5+4+6+6 witness-block eliminators with finite context/consumer adaptations",
+        "Ordinary original nativeZF ZFReplay; no new kernel/checker/recursor/truth backend"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingNegGuardProof.lean": "f0cd394a37259544ce6bced7658352105d9fa772512046cbc714b5f1c54cab3b",
+        "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
+        "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
+        "PPAC/Migration/ForcingNegShell.lean": "9856042ab031bbd3f7fbe323a2ff25e49c15217b8ee1bdb0d17bab4b21746feb",
+        "PPAC/Migration/ForcingRelationGuardProof.lean": "0ac8da8ca1fe762526746982cc5df3585a6a92419cc159f1d2464c5cc1490f85",
+        "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
+        "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
+        "PPAC/Migration/Internal/SyntaxVariables.lean": "be47a52d9535f3b9196506dfa3276f3ce685a6112580ac7077fef91607ff1a30",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
+      },
+      "retained_existing_producers": [
+        {
+          "producer_file": "PPAC/Migration/ForcingNegMemberProof.lean",
+          "producer_sha256": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
+          "source_start": "private theorem from_normalized",
+          "source_end": "private theorem from_shell",
+          "target_start": "private theorem from_normalized",
+          "target_end": "private theorem from_shell",
+          "replacements": [
+            [
+              "      (of_eq (by simp only [SyntaxMixedImageHead.head_rename]; all_goals rfl) (lift12 hh))\n      (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (lift12 hc))\n      (of_eq (ForcingNegShell.chainData_rename (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 M) (old 6 O) (old 6 q) (old 6 Bottom) (old 6 F) (slot 6) (old 6)) (.conjL (HornBinderRules.under_body 6 hX Z))) hZf\n      (of_eq (by simp only [SyntaxAtomSyntax.zeroScalar_rename]; all_goals rfl) (lift12 hBottom))\n      (of_eq (by simp only [InternalProofBackground.data_rename]; all_goals rfl) (lift12 hBG))\n      (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (lift12 hY))\n      (of_eq (by simp only [implication_rename]; all_goals rfl) (lift12 hp))\n",
+              "      (of_eq (by simp only [SyntaxMixedImageHead.head_rename]; all_goals rfl) (lift12 hh))\n      (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (lift12 hc))\n      (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (lift12 hco))\n      (of_eq (ForcingNegShell.chainData_rename (old 6 w) (old 6 K) (old 6 H) (old 6 A) (old 6 f) (old 6 C) (old 6 T) (old 6 M) (old 6 O) (old 6 q) (old 6 Bottom) (old 6 F) (slot 6) (old 6)) (.conjL (HornBinderRules.under_body 6 hX Z))) hZf\n      (of_eq (by simp only [SyntaxAtomSyntax.zeroScalar_rename]; all_goals rfl) (lift12 hBottom))\n      (of_eq (by simp only [fixed_rename]; all_goals rfl) (lift12 hFixed))\n      (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (lift12 hY))\n      (of_eq (by simp only [implication_rename]; all_goals rfl) (lift12 hp))\n"
+            ],
+            [
+              "    have lift12 {Q : Formula m} (hQ : Derives Γ Q) := HornBinderRules.under_body 6 (HornBinderRules.under_body 6 hQ X) Z\n    have hpoint := point (HornBinderRules.zf_body 6 (HornBinderRules.zf_body 6 hZ X) Z) test Reln\n      (old 12 w) (old 12 mode) (old 12 z) (old 12 a) (old 12 f) (old 12 T) (old 12 A) (old 12 C) (old 12 R) (old 12 S) (old 12 K) (old 12 H) (old 12 P) (old 12 r) (old 12 s) (old 12 i) (old 12 V) (old 12 own) (old 12 head) (old 12 M) (old 12 O) (old 12 q) (old 12 Bottom) (old 12 F) (old 12 Y) (old 12 D) (old 12 B) (old 12 sym) (old 12 E) (old 12 G) (fun j => old 6 (slot 6 j)) (slot 6)\n      (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (lift12 hf))\n      (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (lift12 hn))\n",
+              "    have lift12 {Q : Formula m} (hQ : Derives Γ Q) := HornBinderRules.under_body 6 (HornBinderRules.under_body 6 hQ X) Z\n    have hpoint := point (HornBinderRules.zf_body 6 (HornBinderRules.zf_body 6 hZ X) Z) test Reln\n      (old 12 w) (old 12 mode) (old 12 z) (old 12 a) (old 12 f) (old 12 T) (old 12 A) (old 12 C) (old 12 R) (old 12 S) (old 12 K) (old 12 H) (old 12 P) (old 12 r) (old 12 s) (old 12 i) (old 12 V) (old 12 own) (old 12 head) (old 12 M) (old 12 O) (old 12 q) (old 12 Bottom) (old 12 F) (old 12 Y) (old 12 D) (old 12 B) (old 12 sym) (old 12 E) (old 12 G) (fun j => old 6 (slot 6 j)) (slot 6) (fun j => old 12 (ctx j))\n      (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (lift12 hf))\n      (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (lift12 hn))\n"
+            ],
+            [
+              "private theorem from_normalized {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V own head M O q Bottom F Y D B sym E G : Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hh : Derives Γ (SyntaxMixedImageHead.head w A f own head))\n    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head M))\n    (hnorm : Derives Γ (ForcingNegShell.normalized w K H A f C T M O q Bottom F r s z Y D))\n    (hBottom : Derives Γ (SyntaxAtomSyntax.zeroScalar w Bottom))\n    (hBG : Derives Γ (InternalProofBackground.data w z T P V B sym E G))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n",
+              "private theorem from_normalized {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V own head M O q Bottom F Y D B sym E G : Fin m) (ctx : Fin 11 → Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hh : Derives Γ (SyntaxMixedImageHead.head w A f own head))\n    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head M))\n    (hco : Derives Γ (ForcingGuardCode.compiled true Reln w A f head O))\n    (hnorm : Derives Γ (ForcingNegShell.normalized w K H A f C T M O q Bottom F r s z Y D))\n    (hBottom : Derives Γ (SyntaxAtomSyntax.zeroScalar w Bottom))\n    (hFixed : Derives Γ (fixed Reln w mode z a f T A C R S K H P r s V B sym E G ctx))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n"
+            ]
+          ],
+          "normalized_body_sha256": "780348f890428a958cac97bcd320505ca27ed376b05ed1ee55b507c33e0599bb"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegMemberProof.lean",
+          "producer_sha256": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
+          "source_start": "private theorem from_shell",
+          "source_end": "private theorem from_compiled_data",
+          "target_start": "private theorem from_shell",
+          "target_end": "private theorem from_compiled_data",
+          "replacements": [
+            [
+              "    (of_eq (by simp only [SyntaxMixedImageHead.head_rename]; all_goals rfl) (HornBinderRules.under_body 4 hh X))\n    (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (HornBinderRules.under_body 4 hc X))\n    (.conjR hX) (.conjL (.conjL (.conjL hX)))\n    (of_eq (by simp only [InternalProofBackground.data_rename]; all_goals rfl) (HornBinderRules.under_body 4 hBG X))\n    (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (HornBinderRules.under_body 4 hY X))\n    (of_eq (by simp only [implication_rename]; all_goals rfl) (HornBinderRules.under_body 4 hp X))\n",
+              "    (of_eq (by simp only [SyntaxMixedImageHead.head_rename]; all_goals rfl) (HornBinderRules.under_body 4 hh X))\n    (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (HornBinderRules.under_body 4 hc X))\n    (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (HornBinderRules.under_body 4 hco X))\n    (.conjR hX) (.conjL (.conjL (.conjL hX)))\n    (of_eq (by simp only [fixed_rename]; all_goals rfl) (HornBinderRules.under_body 4 hFixed X))\n    (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (HornBinderRules.under_body 4 hY X))\n    (of_eq (by simp only [implication_rename]; all_goals rfl) (HornBinderRules.under_body 4 hp X))\n"
+            ],
+            [
+              "  have hX : Derives Δ X := .hyp (Or.inl rfl)\n  have hout := from_normalized (HornBinderRules.zf_body 4 hZ X) test Reln\n    (old 4 w) (old 4 mode) (old 4 z) (old 4 a) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 R) (old 4 S) (old 4 K) (old 4 H) (old 4 P) (old 4 r) (old 4 s) (old 4 i) (old 4 V) (old 4 own) (old 4 head) (old 4 M) (old 4 O) (old 4 q) (slot 4 0) (old 4 F) (old 4 Y) (old 4 D) (old 4 B) (old 4 sym) (old 4 E) (old 4 G)\n    (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (HornBinderRules.under_body 4 hf X))\n    (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (HornBinderRules.under_body 4 hn X))\n",
+              "  have hX : Derives Δ X := .hyp (Or.inl rfl)\n  have hout := from_normalized (HornBinderRules.zf_body 4 hZ X) test Reln\n    (old 4 w) (old 4 mode) (old 4 z) (old 4 a) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 R) (old 4 S) (old 4 K) (old 4 H) (old 4 P) (old 4 r) (old 4 s) (old 4 i) (old 4 V) (old 4 own) (old 4 head) (old 4 M) (old 4 O) (old 4 q) (slot 4 0) (old 4 F) (old 4 Y) (old 4 D) (old 4 B) (old 4 sym) (old 4 E) (old 4 G) (fun j => old 4 (ctx j))\n    (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (HornBinderRules.under_body 4 hf X))\n    (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (HornBinderRules.under_body 4 hn X))\n"
+            ],
+            [
+              "private theorem from_shell {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V own head M O q F Y D B sym E G Q : Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hh : Derives Γ (SyntaxMixedImageHead.head w A f own head))\n    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head M))\n    (hshell : Derives Γ (ForcingNegNormalization.shellResult w a A f M O q Q K H C T F r s z Y D))\n    (hBG : Derives Γ (InternalProofBackground.data w z T P V B sym E G))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n",
+              "private theorem from_shell {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V own head M O q F Y D B sym E G Q : Fin m) (ctx : Fin 11 → Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hh : Derives Γ (SyntaxMixedImageHead.head w A f own head))\n    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head M))\n    (hco : Derives Γ (ForcingGuardCode.compiled true Reln w A f head O))\n    (hshell : Derives Γ (ForcingNegNormalization.shellResult w a A f M O q Q K H C T F r s z Y D))\n    (hFixed : Derives Γ (fixed Reln w mode z a f T A C R S K H P r s V B sym E G ctx))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n"
+            ]
+          ],
+          "normalized_body_sha256": "5068d937c992b56add96ac1c318636fd81a1aaf68c51e60c6cd9b51ba797192f"
+        },
+        {
+          "producer_file": "PPAC/Migration/ForcingNegMemberProof.lean",
+          "producer_sha256": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
+          "source_start": "private theorem from_compiled_data",
+          "source_end": "def input",
+          "target_start": "private theorem from_compiled_data",
+          "target_end": "def input",
+          "replacements": [
+            [
+              "  have hX : Derives Δ X := .hyp (Or.inl rfl)\n  have hout := from_shell (HornBinderRules.zf_body 5 hZ X) test Reln\n    (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C) (old 5 R) (old 5 S) (old 5 K) (old 5 H) (old 5 P) (old 5 r) (old 5 s) (old 5 i) (old 5 V) (slot 5 0) (slot 5 1) (slot 5 3) (slot 5 4) (slot 5 2) (old 5 F) (old 5 Y) (old 5 D) (old 5 B) (old 5 sym) (old 5 E) (old 5 G) (old 5 Q)\n    (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (HornBinderRules.under_body 5 hf X))\n    (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (HornBinderRules.under_body 5 hn X))\n    (of_eq (by simp only [StructuralListFieldSyntax.field_rename]; all_goals rfl) (HornBinderRules.under_body 5 hv X))\n    (.conjL hX) (.conjL (.conjR (.conjR hX))) (.conjR (.conjR (.conjR (.conjR hX))))\n    (of_eq (by simp only [InternalProofBackground.data_rename]; all_goals rfl) (HornBinderRules.under_body 5 hBG X))\n    (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (HornBinderRules.under_body 5 hY X))\n    (of_eq (by simp only [implication_rename]; all_goals rfl) (HornBinderRules.under_body 5 hp X))\n  exact of_eq (result_rename test w z T G Y D (old 5)).symm hout\n\n",
+              "  have hX : Derives Δ X := .hyp (Or.inl rfl)\n  have hout := from_shell (HornBinderRules.zf_body 5 hZ X) test Reln\n    (old 5 w) (old 5 mode) (old 5 z) (old 5 a) (old 5 f) (old 5 T) (old 5 A) (old 5 C) (old 5 R) (old 5 S) (old 5 K) (old 5 H) (old 5 P) (old 5 r) (old 5 s) (old 5 i) (old 5 V) (slot 5 0) (slot 5 1) (slot 5 3) (slot 5 4) (slot 5 2) (old 5 F) (old 5 Y) (old 5 D) (old 5 B) (old 5 sym) (old 5 E) (old 5 G) (old 5 Q) (fun j => old 5 (ctx j))\n    (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (HornBinderRules.under_body 5 hf X))\n    (of_eq (by simp only [SyntaxNumeralSyntax.numeral_rename]; all_goals rfl) (HornBinderRules.under_body 5 hn X))\n    (of_eq (by simp only [StructuralListFieldSyntax.field_rename]; all_goals rfl) (HornBinderRules.under_body 5 hv X))\n    (.conjL hX) (.conjL (.conjR (.conjR hX))) (.conjL (.conjR (.conjR (.conjR hX)))) (.conjR (.conjR (.conjR (.conjR hX))))\n    (of_eq (by simp only [fixed_rename]; all_goals rfl) (HornBinderRules.under_body 5 hFixed X))\n    (of_eq (by simp only [formulaCode_rename]; all_goals rfl) (HornBinderRules.under_body 5 hY X))\n    (of_eq (by simp only [implication_rename]; all_goals rfl) (HornBinderRules.under_body 5 hp X))\n  exact of_eq (result_rename test w z T G Y D (old 5)).symm hout\n"
+            ],
+            [
+              "private theorem from_compiled_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V F Y D B sym E G j n Q : Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hcompiled : Derives Γ (ForcingNegNormalization.compiled Reln w a A f j n Q K H C T F r s z Y D))\n    (hBG : Derives Γ (InternalProofBackground.data w z T P V B sym E G))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n",
+              "private theorem from_compiled_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))\n    (w mode z a f T A C R S K H P r s i V F Y D B sym E G j n Q : Fin m) (ctx : Fin 11 → Fin m)\n    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))\n    (hn : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hv : Derives Γ (StructuralListFieldSyntax.field w S i V))\n    (hcompiled : Derives Γ (ForcingNegNormalization.compiled Reln w a A f j n Q K H C T F r s z Y D))\n    (hFixed : Derives Γ (fixed Reln w mode z a f T A C R S K H P r s V B sym E G ctx))\n    (hY : Derives Γ (formulaCode w Y z T)) (hp : Derives Γ (implication test w z T G Y)) :\n    Derives Γ (result test w z T G Y D) := by\n"
+            ]
+          ],
+          "normalized_body_sha256": "bd254fdba635ba9488c152fe7c232977d8474ae1e14180801babec3b883dd9e2"
+        }
+      ],
+      "scope": "SAME actual full original negative compiler, opening/native-instance Y, legitimate parent internal proof G→Y and ONE previously generated fixed condition-background code record. Construct both guard proofs, align ACTUAL final relation guard to fixed ACTUAL original reference using original unique head/compiler/openings, and apply original S/MP twice. Internally retain SAME original falsum Bottom and actual direct opening D, producing code I=(D→Bottom) and internal proof G→I. All5+4+6+6 original witnesses internally eliminated. No guard proof/truth, ProvedG, equality answer or external standardness restriction supplied. Fixed background independent of current operand/negative output; final concrete-system instantiation remains required. NOT uniform internal regularity, normalized forcing MP, all-internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegGuardProof.fixed": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.fixed_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.sentence": [
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingNegGuardProof.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
