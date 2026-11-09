@@ -39393,3 +39393,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRebindTerms.input
 #print axioms PPAC.Migration.ForcingRebindTerms.sentence
 #print axioms PPAC.Migration.ForcingRebindTerms.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingRebindOpeningTriangle.term
+#print axioms PPAC.Migration.ForcingRebindOpeningTriangle.input
+#print axioms PPAC.Migration.ForcingRebindOpeningTriangle.sentence
+#print axioms PPAC.Migration.ForcingRebindOpeningTriangle.kernel_certificate
+#print axioms PPAC.Migration.ForcingMixedTermLift.natural
+#print axioms PPAC.Migration.ForcingMixedTermLift.input
+#print axioms PPAC.Migration.ForcingMixedTermLift.sentence
+#print axioms PPAC.Migration.ForcingMixedTermLift.kernel_certificate

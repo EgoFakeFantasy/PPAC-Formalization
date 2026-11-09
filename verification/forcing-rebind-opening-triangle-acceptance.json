@@ -1,0 +1,269 @@
+{
+  "verified_at": "2026-11-09T03:52:26.374909+00:00",
+  "baseline_commit": "1a4037c98bb98a5dc60f0a58c670a5b8cf20c648",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": {
+    "root_term_triangle": "For every internal pure source term, SAME actual rebind compiler tables, original lifted opening and ORIGINAL kind1/mode2 execution outputs agree with direct opening. Source role/index/successor and new-head witnesses are internally derived. Actual parameter-table field and actual operation judgments ARE premises, not equality answers; no claim those judgments are generated here.",
+    "arbitrary_scope_binder_term_naturality": "For arbitrary internal target bound scope, an actual old coded mixed substitution and actual source shift imply: actual lifted substitution iff ORIGINAL target shift/free identity rename of the old output. Source/target shift/identity maps are genuine structural inputs. New head and variable/index/successor witnesses are internally constructed/eliminated."
+  },
+  "endpoints": [
+    "PPAC.Migration.ForcingRebindOpeningTriangle.kernel_certificate",
+    "PPAC.Migration.ForcingMixedTermLift.kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "Root: actual complete compiler data (same six witnesses/full formula Subst), actual opening/lift, mode2 numeral, zero, legal condition j and actual S[j]=P, actual rebind-term / lifted-opening-term / original Run / direct-opening judgments imply exact output equality. No source-role/index/successor premises. Generic binder: original old/new scope sizes and actual mixed binder lift, actual source and target bound-shift/free-identity maps, old substitution and actual source rename yield exact iff at every target candidate. All runtime scopes/terms/codes include internal nonstandard values.",
+  "reuse": [
+    "Original complete ForcingConditionRebind data and ForcingRebindTerms",
+    "Actual ForcingOpenInstantiate old/zero original mode2 term equations",
+    "Existing exact coded mixed binder fields and bound/free rename equations",
+    "Existing internal field/empty uniqueness and variable/successor/head existence",
+    "Existing original ZF replay; no new kernel/checker/recursor/truth backend"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38721,
+    "new_audit_entries": 8,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingRebindOpeningTriangle.term": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindOpeningTriangle.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindOpeningTriangle.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingRebindOpeningTriangle.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingMixedTermLift.natural": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedTermLift.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedTermLift.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingMixedTermLift.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38713,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2822,
+    "all_prior_SOURCE_LOCK_entries_unchanged": true,
+    "proof_files_now": 2824,
+    "sealed_inputs": 2856,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "fcca6d19215002e4433ce5b7d16c2ac4344739f0b914f0ee60423c443106173a",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "3719dd04275b1bcae922fce66df474b01aee075cabb6f1da4e98c2e0bc8b99b9"
+    },
+    "summary_sha256": "73a36042a6c1fa37b70d1f9cd7a5fa673cd7c8876769ad743e559df0a87ebc9e"
+  },
+  "scope": {
+    "actual_rebind_lift_original_mode2_root_term_diagram": true,
+    "arbitrary_target_bound_scope_single_operation_mixed_term_binder_naturality": true,
+    "runtime_nonstandard_terms_indices_scopes_included": true,
+    "source_role_index_successor_and_head_witnesses_internal": true,
+    "actual_parameter_field_and_operation_judgments_are_premises": true,
+    "single_operation_structural_shift_identity_maps_are_inputs": true,
+    "full_three_operation_term_diagram_binder_closure": false,
+    "full_formula_condition_rebind_open_instantiate_cancellation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingRebindOpeningTriangleAudit.lean",
+      "bytes": 607,
+      "sha256": "3095bbf93d2748ea7022e594e504489e09cc7e6329abbe58da11f889e9d2fe88"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-opening-triangle-audit.log",
+      "bytes": 1779,
+      "sha256": "2f11e0cd6c333fe81cdb59192dc2d0c790f5fc1195da641f3f94c81212744559"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-opening-triangle-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-opening-triangle-build.log",
+      "bytes": 117,
+      "sha256": "7651039c308f00bb5dc384bc30f8864f019eb584f9c0dec97f1358f008c37603"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-term-lift-directed.log",
+      "bytes": 353,
+      "sha256": "800998d9a92ce1b633a5e7758390290f7e5ad47372e1c3cb5cae32585ae197d2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-mixed-term-lift-build.log",
+      "bytes": 109,
+      "sha256": "1cf2a9adc94e8a289084b92387630bbeb7b47772c193544e1ccbece9a52712cf"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-opening-triangle-full.log",
+      "bytes": 153,
+      "sha256": "dad3bf549df47681a06bd17e25ee3e8bc9155fceca3fab3b4f8e02606541d20f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-rebind-opening-triangle-parent-summary.json",
+      "bytes": 14893992,
+      "sha256": "1cd8626b8d6778190642426b2124d4bd091699e0d3db92c84e29b4515b6f069a"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42549940926
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_target_exits": {
+    "ForcingRebindOpeningTriangle": 0,
+    "ForcingMixedTermLift": 0
+  },
+  "post_cleanup_verified_at": "2026-11-09T03:54:03.053212+00:00"
+}

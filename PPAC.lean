@@ -1119,3 +1119,5 @@ import PPAC.Migration.ForcingOpenLift
 import PPAC.Migration.ForcingOpenInstantiate
 import PPAC.Migration.ForcingConditionInstance
 import PPAC.Migration.ForcingRebindTerms
+import PPAC.Migration.ForcingRebindOpeningTriangle
+import PPAC.Migration.ForcingMixedTermLift
