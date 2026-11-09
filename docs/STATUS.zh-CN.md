@@ -20,10 +20,10 @@
 
 既有原preorder报价、真实mixed开口、三次native实例、五IMP行及内部证明已生成消费；共同R、两路径全内部项／公式相消、原完整负compiler实际guard解除及同一G0柯里化均已接通。原L／全模式、对象递归、mode3／forall及原内部证明规则均继续复用。
 
-本批ForcingPreorderExistential直接消费已有完整存在compiler、实际body opening和native InstantiateTop。原8个compiler／7个ALL-EX-EX壳见证及两层各4个mixed输出内部消去；原共用head由同一lift输入重新定型，现成GuardTables／投影／链／前件解除／Curry给出准确目标IMP字段、实际typed尾部的Ctx下证明及同一G0柯里化。旧生产器只公开6项记录接口，其余源码和全部证明正文不变，13项旧公共足迹保持。这里完成记录及外层guard消费，未证明尾部跨条件不变性或完整统一存在单调性。
+本批 ForcingExistChildTerms 直接消费原完整 child 编译器的同一12见证，在八重对象全称量词内证明全部四类实际coded项动作：新名字头保持bound0，选中条件free槽变为bound1，其余free索引保持，旧bound索引增加2。中间push项码由原生产器在对象EX内生成／消去，完整原公式替换判断保留。只公开原生产器3项记录接口，其余源码与全部证明正文不变；没有新编译器／归纳／核或给定目标等式。此为同一存在尾部跨条件公式相消的实际项输入，尚未完成整个尾部不变性、规范上下文／fresh全称化或最终Con。
 
 当前仍在原第10阶段。真正剩余为存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始，最终对象Con未证明。
 
-最新本地验收见verification/forcing-preorder-existential-acceptance.json：39364项声明、2266项无公理、37098项仅既有记录依赖，零警告。39347项旧足迹保持，2862份旧证明源码完全不变；旧存在producer仅6处可见性前缀改变、所有证明正文不变，2897项密封输入已重算。16回归、三个干净锁定依赖及75源哈希通过。只清理7个本轮临时文件（13016763字节），清理后两个受影响源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交Linux结果。
+最新本地验收见verification/forcing-exist-child-terms-acceptance.json：39379项声明、2266项无公理、37113项仅既有记录依赖，零警告。39364项旧足迹保持，2863份旧证明源码完全不变；原child生产器仅3处可见性前缀改变、所有证明正文不变，2898项密封输入已重算。16回归、三个干净锁定依赖及75源哈希通过。只清理9个本轮临时文件（27263951字节），清理后两个受影响源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交Linux结果。
 
-详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，f74c26f／39284项声明；后续a0665fa独立CI仍在运行，本批39364项不在已有Linux成功范围。历史批次以Git和不可改写回执为据。
+详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，f74c26f／39284项声明；后续a0665fa独立CI仍在运行，本批39379项不在已有Linux成功范围。历史批次以Git和不可改写回执为据。

@@ -2689,7 +2689,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_guard_code', 'ForcingGuardCode', 29),
                                 ('forcing_neg_code', 'ForcingNegCode', 22),
                                 ('forcing_exist_guards_code', 'ForcingExistGuardsCode', 22),
-                                ('forcing_exist_child_code', 'ForcingExistChildCode', 13),
+                                ('forcing_exist_child_code', 'ForcingExistChildCode', 16),
                                 ('forcing_exist_code', 'ForcingExistCode', 19),
                                 ('forcing_logical_code', 'ForcingLogicalCode', 20),
                                 ('forcing_code_step', 'ForcingCodeStep', 36),
@@ -2757,7 +2757,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_member', 'ForcingPreorderMember', 13),
                                 ('forcing_preorder_guard_tables', 'ForcingPreorderGuardTables', 10),
                                 ('forcing_preorder_negative', 'ForcingPreorderNegative', 9),
-                                ('forcing_preorder_existential', 'ForcingPreorderExistential', 11)):
+                                ('forcing_preorder_existential', 'ForcingPreorderExistential', 11),
+                                ('forcing_exist_child_terms', 'ForcingExistChildTerms', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6094,6 +6095,9 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_existential_child_all_four_term_actions_proved": True,
+        "object_actual_existential_child_same_12_witnesses_8_object_universal_candidates": True,
+        "object_actual_existential_child_term_scope": 'Consumes the original complete twelve-witness existential CHILD compiler. SAME twelve witnesses retain original formula substitution and satisfy ALL FOUR precise coded term laws under EIGHT OBJECT universal candidate parameters: empty source bound head maps to SAME original head code; selected free condition maps to bound1; every other free index remains itself; old bound i maps to i+2. Original variable table, two shifts, selected image, pushed graph, mixed binder lift, encoded-list fields and rename-at-index reused. Intermediate pushed term code constructed/eliminated in OBJECT EX, not an answer premise. Only three existing record interfaces exposed; all original producer proof bodies unchanged. Runtime scopes/indices/term/formula codes internal including nonstandard, no host decode, new kernel/checker/recursor/induction or guard truth. Ordinary nativeZF original-kernel closed sentence. Remaining entire-tail cross-condition invariance, canonical context/fresh forall, joint mono/dense/MP/all internal axioms/Proof/reduction/finalCon NOT yet proved.',
         "source_hash_policy": POLICY,
         "object_actual_complete_existential_compiler_outer_guards_discharged": True,
         "object_actual_complete_existential_8_7_4_4_witnesses_object_eliminated": True,

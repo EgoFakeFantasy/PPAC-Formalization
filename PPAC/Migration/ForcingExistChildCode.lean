@@ -84,17 +84,17 @@ private theorem condition_flow {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     w.castSucc R.castSucc I.castSucc G.castSucc D.castSucc a.castSucc f.castSucc B.castSucc f.castSucc A.castSucc C.castSucc
     t.castSucc K.castSucc H.castSucc j.castSucc t.castSucc (Fin.last m) hl1 hp1
 
-private def data {m} (w a A B C f j N Q : Fin m) (v : Fin 12 → Fin m) : Formula m :=
+def data {m} (w a A B C f j N Q : Fin m) (v : Fin 12 → Fin m) : Formula m :=
   (SyntaxMixedImageHead.head w C f (v 0) (v 1)).conj ((SyntaxVariableTableSyntax.shifted true w a A f (v 2)).conj ((SyntaxFreeShiftSyntax.shiftMap w A B (v 3)).conj ((SyntaxFreeShiftSyntax.shiftMap w B C (v 4)).conj ((SyntaxIdentityMapSyntax.identityMap w f (v 5)).conj ((SyntaxTermImagePushSyntax.pushed w (v 3) (v 5) A f B f (v 2) a (v 6)).conj ((ForcingConditionRebind.mapped w j (v 1) f B (v 7)).conj ((SyntaxMixedImageLiftSyntax.lifted w (v 4) (v 5) (v 6) (v 7) a f B f A C (v 1) (v 8) (v 9)).conj ((SyntaxMixedImageCodeSyntax.encoded w (v 8) A C f (v 10)).conj ((SyntaxMixedImageCodeSyntax.encoded w (v 9) f C f (v 11)).conj ((SyntaxMixedFormulaJudgmentSyntax.substituted w (v 10) (v 11) A f C f N Q).conj ((keepsHead (v 8) (v 0) (v 1)).conj (conditionFlow w (v 4) (v 5) B C f (v 1) (v 9) j))))))))))))
 
-private theorem data_rename {m l} (w a A B C f j N Q : Fin m) (v : Fin 12 → Fin m) (r : Fin m → Fin l) :
+theorem data_rename {m l} (w a A B C f j N Q : Fin m) (v : Fin 12 → Fin m) (r : Fin m → Fin l) :
     (data w a A B C f j N Q v).rename r = data (r w) (r a) (r A) (r B) (r C) (r f) (r j) (r N) (r Q) (fun i => r (v i)) := by
   simp only [data, Formula.rename, SyntaxMixedImageHead.head_rename, SyntaxVariableTableSyntax.shifted_rename,
     SyntaxFreeShiftSyntax.shiftMap_rename, SyntaxIdentityMapSyntax.identityMap_rename,
     SyntaxTermImagePushSyntax.pushed_rename, ForcingConditionRebind.mapped_rename,
     SyntaxMixedImageLiftSyntax.lifted_rename, SyntaxMixedImageCodeSyntax.encoded_rename,
     SyntaxMixedFormulaJudgmentSyntax.substituted_rename, keepsHead_rename, conditionFlow_rename]
-private def body {m} (w a A B C f j N Q : Fin m) : Formula (m+12) :=
+def body {m} (w a A B C f j N Q : Fin m) : Formula (m+12) :=
   data (old 12 w) (old 12 a) (old 12 A) (old 12 B) (old 12 C) (old 12 f) (old 12 j) (old 12 N) (old 12 Q) (slot 12)
 def compiled {m} (w a A B C f j N Q : Fin m) : Formula m := existsMany 12 (body w a A B C f j N Q)
 theorem compiled_rename {m l} (w a A B C f j N Q : Fin m) (r : Fin m → Fin l) :

@@ -40058,3 +40058,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPreorderExistential.resultData_rename
 #print axioms PPAC.Migration.ForcingPreorderExistential.result_rename
 #print axioms PPAC.Migration.ForcingPreorderExistential.sentence
+
+#print axioms PPAC.Migration.ForcingExistChildCode.body
+#print axioms PPAC.Migration.ForcingExistChildCode.data
+#print axioms PPAC.Migration.ForcingExistChildCode.data_rename
+#print axioms PPAC.Migration.ForcingExistChildTerms.at_laws
+#print axioms PPAC.Migration.ForcingExistChildTerms.derive
+#print axioms PPAC.Migration.ForcingExistChildTerms.from_data
+#print axioms PPAC.Migration.ForcingExistChildTerms.input
+#print axioms PPAC.Migration.ForcingExistChildTerms.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistChildTerms.laws
+#print axioms PPAC.Migration.ForcingExistChildTerms.laws_rename
+#print axioms PPAC.Migration.ForcingExistChildTerms.point
+#print axioms PPAC.Migration.ForcingExistChildTerms.point_rename
+#print axioms PPAC.Migration.ForcingExistChildTerms.result
+#print axioms PPAC.Migration.ForcingExistChildTerms.result_rename
+#print axioms PPAC.Migration.ForcingExistChildTerms.sentence
