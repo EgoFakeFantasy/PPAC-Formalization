@@ -187,4 +187,21 @@ theorem atomic_kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.F
     (.conjL (.conjR (.conjR h))) (.conjL (.conjR (.conjR (.conjR h)))) (.conjL (.conjR (.conjR (.conjR (.conjR h)))))
     (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR h)))))) (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR h))))))
 
+/-- Genuine full compiler outputs on either native constant are the same
+constant code. Source typing comes from existing compiler/reification guards. -/
+theorem nullary {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j a A B C n Q : Fin m)
+    (hw : Derives Γ (omega w)) (hn : Derives Γ (FormulaCodeSyntax.formulaCode w n a z))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n))
+    (hQ : Derives Γ (ForcingCodeRecursion.compiled R H w z f j a n Q)) : Derives Γ (.equal Q n) := by
+  have hg := FormulaCodeProperties.guards w n a z hn
+  have hconst : Derives Γ (SyntaxAtomSyntax.nullary truth w a z n) := .conjI (.conjR hg) hc
+  have hAtom : Derives Γ (SyntaxAtomSyntax.atomic w a z n) := by
+    cases truth
+    · exact .disjL (.disjL hconst)
+    · exact .disjL (.disjR hconst)
+  exact ForcingAtomCode.nullary_output hZ truth R w a z n Q hw hconst
+    (atomic hZ R H w z f j a A B C n Q hw (.conjL hg) hA hB hC hAtom hQ)
+
 end PPAC.Migration.ForcingCodeUnary

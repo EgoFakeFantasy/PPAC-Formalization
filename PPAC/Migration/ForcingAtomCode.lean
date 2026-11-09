@@ -466,4 +466,17 @@ theorem unique_kernel_certificate {k m} (R : Formula (k+2)) (w a z n q v : Fin m
   exact unique (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _)
     R w a z n q v (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
+/-- The existing constant candidate theorem fixes the actual atomic output
+code; no source truth normalization or semantic claim is added here. -/
+theorem nullary_output {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (R : Formula (k+2)) (w a z n q : Fin m) (hw : Derives Γ (omega w))
+    (hn : Derives Γ (SyntaxAtomSyntax.nullary truth w a z n)) (hq : Derives Γ (compiled R w a z n q)) : Derives Γ (.equal q n) := by
+  have hc : Derives Γ (constant w a z n n) := by
+    apply Derives.conjI
+    · cases truth
+      · exact .disjL hn
+      · exact .disjR hn
+    · exact .eqRefl n
+  exact eq_symm (constant_candidate hZ R w a z n n q hw hc hq)
+
 end PPAC.Migration.ForcingAtomCode

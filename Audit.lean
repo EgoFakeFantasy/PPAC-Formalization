@@ -39270,3 +39270,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingCodeUnary.atomicInput
 #print axioms PPAC.Migration.ForcingCodeUnary.atomicSentence
 #print axioms PPAC.Migration.ForcingCodeUnary.atomic_kernel_certificate
+#print axioms PPAC.Migration.ForcingAtomCode.nullary_output
+#print axioms PPAC.Migration.ForcingOpenCode.reified_nullary
+#print axioms PPAC.Migration.ForcingCodeUnary.nullary
+#print axioms PPAC.Migration.ForcingPointwiseCode.opened_nullary
+#print axioms PPAC.Migration.ForcingPointwiseCode.nullary
+#print axioms PPAC.Migration.ForcingPointwiseCode.nullaryInput
+#print axioms PPAC.Migration.ForcingPointwiseCode.nullarySentence
+#print axioms PPAC.Migration.ForcingPointwiseCode.nullary_kernel_certificate
+#print axioms PPAC.Migration.ForcingPointwiseCode.falsum
+#print axioms PPAC.Migration.ForcingPointwiseCode.falsumSentence
+#print axioms PPAC.Migration.ForcingPointwiseCode.falsum_kernel_certificate

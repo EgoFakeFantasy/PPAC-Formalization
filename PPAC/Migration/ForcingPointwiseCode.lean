@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingOpenLayout
 import PPAC.Migration.ForcingCodeBinary
+import PPAC.Migration.ForcingCodeUnary
 
 /-! Pointwise adapter for the pinned source's `forcing_sound` name
 assignment. Reify the source free slots, use the ACTUAL forcing compiler with
@@ -480,5 +481,107 @@ theorem conjunction_kernel_certificate {k m} (target : Bool) (R : Source.Formula
   apply Derives.impI
   exact conjunction_iff (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) (OriginalAxiomCodeTest.test target)
     R H w z f j b n x y t Q X Y A B C (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
+
+/-- The actual name-opening substitution leaves native constants unchanged. -/
+theorem opened_nullary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool) (w z b f t n Q : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n))
+    (ho : Derives Γ (opened w z b f t n Q)) : Derives Γ (.equal Q n) := by
+  let E := openBody w z b f t n Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ ho
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact SyntaxMixedFormulaNullary.unique (HornBinderRules.zf_body 2 hZ E) truth (old 2 w) (slot 2 0) (slot 2 1)
+    (old 2 b) (old 2 f) (old 2 z) (old 2 t) (old 2 n) (old 2 Q)
+    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+    (of_eq (SyntaxNodeSyntax.constructor_rename 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n (old 2)) (HornBinderRules.under_body 2 hc E)) (.conjR hE)
+
+private theorem nullary_code_subst {m} {Γ : Context m} (truth : Bool) (w n q : Fin m)
+    (he : Derives Γ (.equal n q)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n)) :
+    Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 q) := by
+  let P := SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w.castSucc Fin.elim0 (Fin.last m)
+  have emptyArgs (v : Fin m) : (fun i : Fin 0 => Fin.lastCases v id (Fin.elim0 i : Fin (m+1))) = (Fin.elim0 : Fin 0 → Fin m) := by
+    funext i
+    exact Fin.elim0 i
+  exact of_eq (by simp only [P, Formula.instantiate, SyntaxNodeSyntax.constructor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq, emptyArgs])
+    (.eqSubst P he (of_eq (by simp only [P, Formula.instantiate, SyntaxNodeSyntax.constructor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq, emptyArgs]) hc))
+private theorem nullary_data {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) (v : Fin 2 → Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n))
+    (hp : Derives Γ (data R H w z f j b n t Q v)) : Derives Γ (.equal Q n) := by
+  have er := ForcingOpenCode.reified_nullary hZ truth w z b n (v 0) hw hc (.conjL hp)
+  have hr := nullary_code_subst truth w n (v 0) (eq_symm er) hc
+  have ec := ForcingCodeUnary.nullary hZ truth R H w z f j b A B C (v 0) (v 1) hw
+    (ForcingOpenCode.reified_type w z b n (v 0) (.conjL hp)) hA hB hC hr (.conjL (.conjR hp))
+  have hraw := nullary_code_subst truth w (v 0) (v 1) (eq_symm ec) hr
+  have eo := opened_nullary hZ truth w z b f t (v 1) Q hw hraw (.conjR (.conjR hp))
+  exact eq_trans eo (eq_trans ec er)
+
+/-- The actual full pointwise compiler preserves the ORIGINAL constant code,
+in particular the exact falsum code needed for the final contradiction path. -/
+theorem nullary {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n))
+    (hp : Derives Γ (compiled R H w z f j b n t Q)) : Derives Γ (.equal Q n) := by
+  let E := body R H w z f j b n t Q
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hp
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact nullary_data (HornBinderRules.zf_body 2 hZ E) truth R H (old 2 w) (old 2 z) (old 2 f) (old 2 j) (old 2 b) (old 2 n) (old 2 t) (old 2 Q)
+    (old 2 A) (old 2 B) (old 2 C) (slot 2) (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+    (of_eq (successor_rename A b (old 2)) (HornBinderRules.under_body 2 hA E))
+    (of_eq (successor_rename B A (old 2)) (HornBinderRules.under_body 2 hB E))
+    (of_eq (successor_rename C B (old 2)) (HornBinderRules.under_body 2 hC E))
+    (of_eq (SyntaxNodeSyntax.constructor_rename 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n (old 2)) (HornBinderRules.under_body 2 hc E)) hE
+
+def nullaryInput {k m} (truth : Bool) (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) : Formula m :=
+  (omega w).conj ((successor A b).conj ((successor B A).conj ((successor C B).conj
+    ((SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n).conj (compiled R H w z f j b n t Q)))))
+def nullarySentence {k m} (truth : Bool) (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) : Source.Sentence :=
+  ((nullaryInput truth R H w z f j b n t Q A B C).imp (.equal Q n)).close
+theorem nullary_kernel_certificate {k m} (truth : Bool) (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (nullarySentence truth R H w z f j b n t Q A B C)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let E := nullaryInput truth R H w z f j b n t Q A B C
+  let Γ := Context.add E (Source.SetLanguage.ZF.at m)
+  have h : Derives Γ E := .hyp (Or.inl rfl)
+  exact nullary (ZFContext.add (ZFContext.source_ZF m) E) truth R H w z f j b n t Q A B C (.conjL h) (.conjL (.conjR h))
+    (.conjL (.conjR (.conjR h))) (.conjL (.conjR (.conjR (.conjR h))))
+    (.conjL (.conjR (.conjR (.conjR (.conjR h))))) (.conjR (.conjR (.conjR (.conjR (.conjR h)))))
+
+/-- Consume the EXACT quoted native falsum occurring in
+InternalConsistency.contradiction, rather than a replacement target formula. -/
+theorem falsum {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A b)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hn : Derives Γ (PureQuotationSyntax.formula (.falsum : PureSyntaxQuotation.Fm [] []) w n))
+    (hp : Derives Γ (compiled R H w z f j b n t Q)) : Derives Γ (.equal Q n) :=
+  nullary hZ false R H w z f j b n t Q A B C hw hA hB hC
+    (OriginalQuotationNodeFields.tree_to_constructor hZ 0 List.nil w n Fin.elim0 hw (.eqRefl w) hn) hp
+
+def falsumSentence {k m} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) : Source.Sentence :=
+  ((omega w).imp ((successor A b).imp ((successor B A).imp ((successor C B).imp
+    ((PureQuotationSyntax.formula (.falsum : PureSyntaxQuotation.Fm [] []) w n).imp
+      ((compiled R H w z f j b n t Q).imp (.equal Q n))))))).close
+
+theorem falsum_kernel_certificate {k m} (R : Source.Formula (k+2)) (H : Source.Formula (k+1)) (w z f j b n t Q A B C : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (falsumSentence R H w z f j b n t Q A B C)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  apply Derives.impI
+  exact falsum (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.add (ZFContext.source_ZF m) _) _) _) _) _) _)
+    R H w z f j b n t Q A B C (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))))
+    (.hyp (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))) (.hyp (Or.inr (Or.inr (Or.inr (Or.inl rfl)))))
+    (.hyp (Or.inr (Or.inr (Or.inl rfl)))) (.hyp (Or.inr (Or.inl rfl))) (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingPointwiseCode

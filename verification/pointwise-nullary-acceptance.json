@@ -1,0 +1,319 @@
+{
+  "verified_at": "2026-11-09T00:13:54.037258+00:00",
+  "baseline_commit": "5d43f8bc46618b27854bb3316ecde97b93727402",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_bot",
+    "forcing_sound falsum branch"
+  ],
+  "object_result": "Actual full POINTWISE compilation preserves the ORIGINAL native constant code, in particular the exact PureQuotationSyntax.formula(.falsum : Fm [] []) used by InternalConsistency.contradiction. The real reification, original forcing compilation and actual name-opening witnesses are consumed; each is aligned by existing constant/actual output uniqueness, giving output Q = original code n at all internal/nonstandard scopes b and t=b+f. No universal name closure, replacement false formula, supplied history or local compilation answer is used. The nativeZF falsum certificate directly consumes the original Con falsum quotation. The Bool-generic constant identity is only a code statement; no additional semantic truth normalization is claimed. This does not construct a closed ZF contradiction proof, prove the uniform proof translation, InternalConsistency.reduction or final Con.",
+  "endpoints": [
+    "PPAC.Migration.ForcingPointwiseCode.nullary_kernel_certificate",
+    "PPAC.Migration.ForcingPointwiseCode.falsum_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_main_object_contract": {
+    "exact_original_falsum": "Omega(w) -> succ(A,b) -> succ(B,A) -> succ(C,B) -> PureQuotationSyntax.formula(.falsum : Fm [] [],w,n) -> actual PointwiseCompiled(R,H,w,z,f,j,b,n,t,Q) -> Q=n. The quotation is the exact one in InternalConsistency.contradiction, not a substituted contradiction formula. All scope/code/witness values are internal, including nonstandard; R/H remain the existing fixed templates.",
+    "composed_path": "Actual reified output r equals original n by existing mixed nullary uniqueness. Actual raw output c equals r by existing constant_candidate plus actual atomic computation. Actual opened output Q equals c by mixed nullary uniqueness. Equality composition yields Q=n. No history, local compilation answer or universal name closure is supplied.",
+    "constant_identity_scope": "The Bool-generic code identity includes native truth constant code but adds no claim of semantic truth normalization."
+  },
+  "reuse": [
+    "Existing ForcingAtomCode.constant_candidate",
+    "Existing mixed-formula nullary output uniqueness",
+    "Accepted actual atomic full compiler computation law",
+    "Existing OriginalQuotationNodeFields.tree_to_constructor for the exact native falsum quotation",
+    "Existing original reification/opening code production and equality rules"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38605,
+    "new_audit_entries": 11,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingAtomCode.nullary_output": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenCode.reified_nullary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingCodeUnary.nullary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.opened_nullary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.nullary": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.nullaryInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.nullarySentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.nullary_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.falsum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.falsumSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingPointwiseCode.falsum_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "previous_footprints_unchanged": 38594,
+    "previous_proof_files": 2814,
+    "unmodified_previous_proof_file_hashes_unchanged": 2810,
+    "append_only_previous_modules": {
+      "PPAC/Migration/ForcingAtomCode.lean": {
+        "old_body_unchanged": true,
+        "only_new_import": "",
+        "appended_from": "/-- The existing constant candidate theorem"
+      },
+      "PPAC/Migration/ForcingOpenCode.lean": {
+        "old_body_unchanged": true,
+        "only_new_import": "",
+        "appended_from": "/-- Constant codes survive the actual reification"
+      },
+      "PPAC/Migration/ForcingCodeUnary.lean": {
+        "old_body_unchanged": true,
+        "only_new_import": "",
+        "appended_from": "/-- Genuine full compiler outputs on either native constant"
+      },
+      "PPAC/Migration/ForcingPointwiseCode.lean": {
+        "old_body_unchanged": true,
+        "only_new_import": "import PPAC.Migration.ForcingCodeUnary",
+        "appended_from": "/-- The actual name-opening substitution leaves native constants unchanged."
+      }
+    },
+    "old_proof_bodies_rewritten": 0,
+    "changed_existing_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingAtomCode.lean",
+      "PPAC/Migration/ForcingCodeUnary.lean",
+      "PPAC/Migration/ForcingOpenCode.lean",
+      "PPAC/Migration/ForcingPointwiseCode.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "changed_previous_source_adaptations": [
+      "forcing_atom_code",
+      "forcing_code_step",
+      "forcing_open_code",
+      "forcing_open_layout",
+      "forcing_pointwise_code",
+      "forcing_code_unary"
+    ],
+    "reason_for_source_updates": "Only exact hashes, appended consumer footprints and scopes were updated for the four extended modules, together with existing dependent source references. Original Con definition is unchanged and its hash is explicitly locked as the consumer contract.",
+    "sealed_input_count": 2846,
+    "all_current_sealed_hashes_match": true,
+    "warning_lines": 0,
+    "new_custom_axioms": [],
+    "new_dependency_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "compatibility_regressions": 12,
+    "compatibility_exit": 0,
+    "three_clean_pins_and_75_hashes_exit": 0
+  },
+  "scope": {
+    "exact_original_Con_falsum_code_preserved_by_actual_pointwise_compilation": true,
+    "full_raw_eleven_constructor_computation_already_proved": true,
+    "actual_open_conjunction_proof_iff_already_proved": true,
+    "open_falsum_proof_to_closed_ZF_contradiction_root": false,
+    "full_pointwise_unary_quantifier_original_operation_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-reify-build.log",
+      "bytes": 935,
+      "sha256": "3783cd786d23db67724e0a1b62803235fe59a55e5a31b347fe0db2cac891114f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-raw-build.log",
+      "bytes": 105,
+      "sha256": "61a85fc6cc704beb24914fdb005f74a8f42a1e1a001a6449a20bc5d3f9f63a84"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-build.log",
+      "bytes": 373,
+      "sha256": "b58083f391fe9c2c133861e2d16c748bea8ab5bd3cfba47c507abdc422059be8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-audit.lean",
+      "bytes": 745,
+      "sha256": "77dfbe6c5b6d82e601a42d73883a0dc7431eef5ad7834a62bee316e426cbe611"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-audit.log",
+      "bytes": 2130,
+      "sha256": "4e6b0b904a5ab56b2668966c12a4c9cb99a4e7a09e263f800a6ca6ed7356e1ed"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-parent-summary.json",
+      "bytes": 14860537,
+      "sha256": "814b73794530a188e2d20939ee1d073761a8b2034ad766b6fccd7f313bca0e99"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\pointwise-nullary-full.log",
+      "bytes": 153,
+      "sha256": "42d201061e26a3583aec7f40a1ed4c8c238a873d7dacb898138cff424a260bb8"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "authority": "Existing user approval to upload all accepted work.",
+    "policy": "Push only after entire preceding remote CI succeeds and actual native success logs are read.",
+    "preceding_remote_run": 42532862262,
+    "status_at_acceptance": "not yet published; preceding remote CI last confirmed live"
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T00:14:51.348937+00:00"
+}

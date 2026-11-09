@@ -421,4 +421,18 @@ theorem reified_binary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (kind :
       (of_eq (SyntaxLogicalSyntax.binaryCode_rename kind w x y n (old 4)) (HornBinderRules.under_body 4 hc E))
       (.conjR (.conjR (.conjR hE))) hX hY)
 
+/-- Constant codes survive the actual reification, including falsum. -/
+theorem reified_nullary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool) (w z b n t : Fin m)
+    (hw : Derives Γ (omega w)) (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n))
+    (hr : Derives Γ (reified w z b n t)) : Derives Γ (.equal t n) := by
+  let E := reifyBody w z b n t
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ (.conjR hr)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  exact SyntaxMixedFormulaNullary.unique (HornBinderRules.zf_body 4 hZ E) truth (old 4 w) (slot 4 2) (slot 4 3)
+    (old 4 z) (old 4 b) (old 4 b) (old 4 z) (old 4 n) (old 4 t)
+    (of_eq (omega_rename w (old 4)) (HornBinderRules.under_body 4 hw E))
+    (of_eq (SyntaxNodeSyntax.constructor_rename 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 n (old 4)) (HornBinderRules.under_body 4 hc E))
+    (.conjR (.conjR (.conjR hE)))
+
 end PPAC.Migration.ForcingOpenCode
