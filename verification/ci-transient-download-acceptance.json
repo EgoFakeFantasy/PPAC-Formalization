@@ -1,0 +1,166 @@
+{
+  "verified_at": "2026-11-09T06:10:57.782085+00:00",
+  "baseline_commit": "ceac296ead488d698cdcef70e2435aa4b823b05f",
+  "failures": [
+    {
+      "run": 42570016667,
+      "job": 129004986681,
+      "attempt": 1,
+      "step": "Resolve pinned Lean dependencies before source checks",
+      "http_status": 504,
+      "download": "Lean4.33.1 Linux toolchain",
+      "compilation_started": false
+    },
+    {
+      "run": 42570016667,
+      "job": 129006205168,
+      "attempt": 2,
+      "step": "Install elan",
+      "http_status": 504,
+      "download": "elan Linux installer release",
+      "compilation_started": false
+    }
+  ],
+  "change": "Retry only4 external installer/toolchain commands with literal argv, maximum4 attempts and per-wait cap30s. Installer pipelines use pipefail. Missing programs fail immediately. Persistent failures keep nonzero exit. Proof builds, source locks, sandbox tests and axiom audits are NOT wrapped in retry.",
+  "toolchains_unchanged": [
+    "leanprover/lean4:v4.33.1",
+    "leanprover/lean4:v4.34.1"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38800,
+    "all_prior_38800_declaration_footprints_unchanged": true,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "PPAC_proof_files": 2830,
+    "warning_lines": 0,
+    "compatibility_tests_passed": 15,
+    "new_black_box_tests": [
+      "transient failure recovers and stops at success",
+      "persistent failure stops after4 attempts with same failure exit",
+      "missing executable fails immediately with127; argv with spaces/metacharacters preserved"
+    ],
+    "sealed_inputs": 2863,
+    "changed_old_sealed_inputs": [
+      "scripts/verify.py",
+      "scripts/test_ci_compatibility.py",
+      ".github/workflows/lean.yml"
+    ],
+    "new_sealed_input": "scripts/ci_retry.py",
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75
+  },
+  "formal_goal": {
+    "internal_formula_induction_complete": true,
+    "actual_original_mode2_compiled_body_cancellation_complete": true,
+    "guard_regularity_and_normalized_forcing_MP_complete": false,
+    "reduction_proved": false,
+    "final_internal_Con_goal_proved": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-download-parent-summary.json",
+      "bytes": 14913168,
+      "sha256": "9f3b7e95893714bbfdd495114fbbc890ce6a9d4b75baea00bad77ed397c76fc0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ci-download-full.log",
+      "bytes": 153,
+      "sha256": "e65612d8cada12ca55bdd64dd9945106004097be5f4cd5200aac66385bd7d945"
+    }
+  ],
+  "cleanup_completed": true,
+  "remote_fixed_setup_proof_run_complete": false,
+  "cleanup_verified_at": "2026-11-09T06:10:58.124792+00:00"
+}

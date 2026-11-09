@@ -1,5 +1,7 @@
 """Regressions for the actual Windows/Linux source-lock mismatch."""
 import hashlib
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -31,6 +33,44 @@ class SourceHashTests(unittest.TestCase):
     def test_binary_archive_cannot_use_source_hash(self):
         with self.assertRaises(ValueError):
             self.digest(b"PK\x03\x04\r\n", ".zip")
+
+
+class SetupDownloadRetryTests(unittest.TestCase):
+    retry = Path(__file__).with_name("ci_retry.py")
+
+    def exercise(self, threshold):
+        with tempfile.TemporaryDirectory() as folder:
+            counter = Path(folder) / "counter.txt"
+            child = Path(folder) / "setup command.py"
+            child.write_text(
+                "import pathlib, sys\n"
+                "p = pathlib.Path(sys.argv[1])\n"
+                "n = int(p.read_text()) + 1 if p.exists() else 1\n"
+                "p.write_text(str(n))\n"
+                "assert sys.argv[3] == 'literal space ; $value'\n"
+                "sys.exit(0 if n >= int(sys.argv[2]) else 7)\n",
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [sys.executable, str(self.retry), "--delay", "0", "--",
+                 sys.executable, str(child), str(counter), str(threshold), "literal space ; $value"],
+                capture_output=True,
+            )
+            return result.returncode, int(counter.read_text())
+
+    def test_transient_download_failure_recovers_and_stops(self):
+        self.assertEqual(self.exercise(3), (0, 3))
+
+    def test_persistent_failure_is_bounded_and_remains_failure(self):
+        self.assertEqual(self.exercise(9), (7, 4))
+
+    def test_missing_program_is_not_retried_as_a_download(self):
+        with tempfile.TemporaryDirectory() as folder:
+            result = subprocess.run(
+                [sys.executable, str(self.retry), "--delay", "0", "--", str(Path(folder) / "missing-program")],
+                capture_output=True,
+            )
+            self.assertEqual(result.returncode, 127)
 
 
 if __name__ == "__main__":

@@ -37,10 +37,13 @@ jobs:
           path: openai-math-ppac-source
       - name: Install elan
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          python3 scripts/ci_retry.py -- bash -o pipefail -c \
+            'curl --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none'
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Resolve pinned Lean dependencies before source checks
-        run: lake update
+        run: |
+          python3 scripts/ci_retry.py -- elan toolchain install "$(cat lean-toolchain)"
+          lake update
       - name: Check clean inputs and cross-platform source locks
         run: |
           python3 scripts/check_ci_inputs.py
@@ -142,8 +145,10 @@ jobs:
           cache-dependency-path: tools/landrun/go.sum
       - name: Install original Lean toolchain
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          python3 migration/scripts/ci_retry.py -- bash -o pipefail -c \
+            'curl --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none'
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          python3 migration/scripts/ci_retry.py -- "$HOME/.elan/bin/elan" toolchain install "$ELAN_TOOLCHAIN"
       - name: Build pinned real Comparator and sandbox tools
         run: |
           (cd tools/landrun && go build -trimpath -o landrun cmd/landrun/main.go)
