@@ -1138,3 +1138,4 @@ import PPAC.Migration.ForcingMemberGuardProof
 import PPAC.Migration.ForcingNegMemberProof
 import PPAC.Migration.ForcingReflexiveImages
 import PPAC.Migration.ForcingReflexiveDiagram
+import PPAC.Migration.ForcingRelationGuardProof

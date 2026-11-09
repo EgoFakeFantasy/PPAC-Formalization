@@ -17,7 +17,7 @@ open InternalProofConjunction (proved proved_rename)
 set_option maxRecDepth 32768
 attribute [local irreducible] NaturalRecursionSyntax.matrix
 
-private theorem discharge {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+theorem discharge {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b G M Rest Y : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hG : Derives Γ (formulaCode w G z b)) (hY : Derives Γ (formulaCode w Y z b))
     (hCtor : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two M Rest) Y))

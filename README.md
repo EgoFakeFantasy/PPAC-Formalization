@@ -6,11 +6,11 @@
 FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 ```
 
-当前为原第10阶段。同一实际系统的源数学应用、全集合PP及完整目标理论逐实例装配已接通。原公理行和全部原模式码流水线的存在、闭类型、独立见证唯一性均已证明。
+当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批已接通原正文到完整原生Separation/Collection句的准确quotation双条件：实际编译、三个原重命名出口、两个不同Collection矩阵、原模板及整个闭包均由对象推导消费，不再给定中间quotation。五个普通nativeZF原核端点已验收。正文／参数数目仍为外部模式索引，原始有效输入guard保留。
+本批从两类原guard的实际compiler／own head／lifted opening／native InstantiateTop及同一选中p／载体字段，内部生成一张共享替换表、两个对角体、准确的载体限制自反性行U=∀q(q∈V→R(q,q))、B=Rest∧U和同一个G=B∧(P∈V)，并用原投影／rule20／S／MP生成G→实际成员输出和G→实际关系输出的内部证明。没有给定G或guard的真值／证明，全部码和证明见证均为对象存在量词。
 
-真正剩余为统一内部ZF/U公理正确性／强迫、全部内部／非标准六规则Proof/Con传输及第11终验。原第4官方Comparator已实际接受，证据见`verification/original-comparator-acceptance.json`。**最终对象Con未证明。** 最新对象代码报告为`verification/forcing-code-total-acceptance.json`；完整否定码分支亦已验收，存在子码绑定重排亦已接通，完整外层exists现已由ForcingExistCode接通；完整递归仍未完成。
+仍需将该G的内部证明与完整源系统的固定背景／quotation装配闭合，完成统一内部regularity／规范化强迫MP、全部内部／非标准ZF/U公理及六规则Proof保真、精确reduction和最终Con。已完成的L／完整模式／19规则／语法及递归不重做。 最新本地完整验收见`verification/forcing-relation-guard-proof-acceptance.json`；Linux远端验收单独记录，不能由本地通过替代。
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

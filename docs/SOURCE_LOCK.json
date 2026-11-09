@@ -167600,7 +167600,7 @@
         "Original ZF/U tests, annotated original Node/header/Root and nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingNegMemberProof.lean": "e33deecf26cdd5d514071a1936aa90cfc236945ffd0d17f22040aff4cb57c445",
+        "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
@@ -167611,6 +167611,11 @@
       },
       "scope": "From SAME actual complete negative compiler, raw forall body, lifted opening and native InstantiateTop instance Y, construct an actual internal proof of G→Rest, retaining exact Y=M→Rest, Rest=O→Inner and Inner=D→SAME original falsum. D is SAME actual direct opening. Canonical fixed G=B∧(P∈V) is supplied as constructor DATA only; G/member truth or proof are NOT supplied. The actual parent proof G→Y is the legitimate original rule20/IH parent. Its actual member guard proof is generated, not supplied. All five compiler/four shell/two six-field witness blocks (21 total) are internally eliminated; original S/MP is reused without new proof or syntax backend. Relation guard O remains, with no validity/proof assumed; this does NOT prove normalized forcing MP, uniform internal regularity, all-internal axiom/Proof preservation, reduction or final Con.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingNegMemberProof.discharge": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.ForcingNegMemberProof.data": [
           "Quot.sound",
           "propext"
@@ -167814,7 +167819,7 @@
         "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
         "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
-        "PPAC/Migration/ForcingReflexiveDiagram.lean": "3f8925630b0a8b518e37a327ad818415245c86e7f0461d10b14c878c911aa0e6",
+        "PPAC/Migration/ForcingReflexiveDiagram.lean": "bd181d28eb6cf4b7135912ebf1ffd96dfbd933b797e1ef5d37bfcb007a7a4ca7",
         "PPAC/Migration/ForcingGuardDiagram.lean": "eacc37653694c94d3d0b4fa5a81cfb746b04ceed4022f5645720a1c32eaa2436",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
         "PPAC/Migration/ForcingGuardCode.lean": "3911d08d28f7af48f4e12a44a4706650ca630560852cd6b6e6bbef172249634c",
@@ -167873,6 +167878,11 @@
           "Quot.sound",
           "propext"
         ],
+        "PPAC.Migration.ForcingReflexiveDiagram.at_body": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
         "PPAC.Migration.ForcingReflexiveDiagram.from_instance": [
           "Classical.choice",
           "Quot.sound",
@@ -167887,6 +167897,134 @@
           "propext"
         ],
         "PPAC.Migration.ForcingReflexiveDiagram.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_relation_guard_proof": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationGuardProof.lean",
+      "source_declarations": [
+        "forceFormula_imp / forceFormula_neg",
+        "forcing_sound impE self-condition and le_rfl",
+        "AtomicData.Force guarded neg/ex in ForcingQuotient"
+      ],
+      "consumers": [
+        "Same common-background actual member/relation guard proofs; uniform internal negative/MP preservation"
+      ],
+      "reuse_producers": [
+        "Same original compiled guards, actual opening/native InstantiateTop and completed full formula induction via ForcingReflexiveDiagram.at_body",
+        "Existing Replacement/list codec to internally construct ONE shared updated free table",
+        "Original typed binary/forall constructors and native InstantiateTop binary law",
+        "Existing canonical background and actual member proof producer",
+        "Original projection axioms, rule20, S/MP and unchanged ForcingNegMemberProof.discharge body",
+        "Original nativeZF ZFReplay; no new proof kernel or axiom"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationGuardProof.lean": "0ac8da8ca1fe762526746982cc5df3585a6a92419cc159f1d2464c5cc1490f85",
+        "PPAC/Migration/ForcingReflexiveDiagram.lean": "bd181d28eb6cf4b7135912ebf1ffd96dfbd933b797e1ef5d37bfcb007a7a4ca7",
+        "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
+        "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
+        "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
+        "PPAC/Migration/InternalProofImplication.lean": "a50bff31b9ac4214cb217f3e43d8a1568b64a6221b2f44b692a9a4ca54a67eff",
+        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
+        "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a"
+      },
+      "scope": "From BOTH ACTUAL original guard compilers, same raw head/lifted opening/native-instance outputs M,O, SAME selected p-field and carrier field, INTERNALLY generate ONE shared bound head/replacement table, BOTH diagonal bodies, EXACT guarded forall body Dm→Do, U=ALL(Dm→Do), B=Rest∧U, SAME canonical G=B∧(P∈V), and original internal proof codes of G→M and G→O. All code/proof witnesses are object existential quantifiers, with exact source-program origins retained. No proof/truth of G/U/M/O or arbitrary term-diagram/equality oracle supplied. Original free arity is fixed by source relation template; runtime names/scopes/codes remain internal/nonstandard. This does NOT assert that G is already an internal theorem: final source-system background proof/quotation validity remains an assembly obligation. Does NOT prove uniform internal regularity, normalized forcing MP, all-internal axiom/Proof preservation, reduction or final Con.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationGuardProof.row": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.row_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.at_background": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.from_bodies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.commonData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.commonData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.commonBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.common": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.common_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.from_instances": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardProof.kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

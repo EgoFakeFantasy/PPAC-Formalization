@@ -224,6 +224,41 @@ theorem result_rename {m l} (w z f T A C K H P j Q Y : Fin m) (ρ : Fin m → Fi
     (result w z f T A C K H P j Q Y).rename ρ = result (ρ w) (ρ z) (ρ f) (ρ T) (ρ A) (ρ C) (ρ K) (ρ H) (ρ P) (ρ j) (ρ Q) (ρ Y) := by
   simp only [result, existsMany_rename, resultBody, resultData_rename, lift_old, lift_slot]
 
+/-- For ANY actual chosen diagonal body, generate its native instance and
+identify it with the SAME original guard output. This lets both guards share
+one replacement table; no instance/equality output is supplied. -/
+theorem at_body {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (order : Bool) (Reln : Source.Formula (k+2))
+    (w mode z a f T A C R S K H P r s own head j Q U Y bzero EMap F : Fin m)
+    (hf : Derives Γ (ForcingMemberGuardOpening.frame w mode z a f T A C R S K H P r s))
+    (hh : Derives Γ (SyntaxMixedImageHead.head w A f own head))
+    (hc : Derives Γ (ForcingGuardCode.compiled order Reln w A f head Q))
+    (ho : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H A f C T Q U))
+    (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z T C P U Y))
+    (hd : Derives Γ (ForcingReflexiveImages.diagonalData w z f T A C K H j Q bzero EMap F))
+    (hj : Derives Γ (StructuralListFieldSyntax.field w S j P)) :
+    Derives Γ (SyntaxTopFormulaSyntax.instantiated w z T C P F Y) := by
+  have hP := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hf)))))
+  have hl := Derives.conjL (.conjR (.conjR (.conjR (.conjR hf))))
+  have hC := Derives.conjR (.conjR (SyntaxCodedMixedBinderTyping.input_of_lifted w R S a f z T A C K H hl))
+  have hF := SyntaxMixedFormulaJudgment.target_type w K EMap A f C T Q F (.conjR (.conjR hd))
+  have he := SyntaxTopFormulaExistence.instantiate_exists hZ w z T C P F (.conjL hf) (.conjI (.conjI hP hC) hF)
+  let X := SyntaxTopFormulaSyntax.instantiated w.castSucc z.castSucc T.castSucc C.castSucc P.castSucc F.castSucc (Fin.last m)
+  let Δ := Context.add X (Context.image Formula.raise Γ)
+  apply Derives.exE (p := X) he
+  have hX : Derives Δ X := .hyp (Or.inl rfl)
+  have lift1 {B : Formula m} (hB : Derives Γ B) := under hB X
+  have hEq := commutes (ZFContext.under hZ X) order Reln
+    w.castSucc mode.castSucc z.castSucc a.castSucc f.castSucc T.castSucc A.castSucc C.castSucc R.castSucc S.castSucc K.castSucc H.castSucc P.castSucc r.castSucc s.castSucc own.castSucc head.castSucc j.castSucc Q.castSucc U.castSucc Y.castSucc bzero.castSucc EMap.castSucc F.castSucc (Fin.last m)
+    (of_eq (ForcingMemberGuardOpening.frame_rename w mode z a f T A C R S K H P r s Fin.castSucc) (lift1 hf))
+    (of_eq (SyntaxMixedImageHead.head_rename w A f own head Fin.castSucc) (lift1 hh))
+    (of_eq (ForcingGuardCode.compiled_rename order Reln w A f head Q Fin.castSucc) (lift1 hc))
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w K H A f C T Q U Fin.castSucc) (lift1 ho))
+    (of_eq (SyntaxTopFormulaSyntax.instantiated_rename w z T C P U Y Fin.castSucc) (lift1 hi))
+    (of_eq (ForcingReflexiveImages.diagonalData_rename w z f T A C K H j Q bzero EMap F Fin.castSucc) (lift1 hd)) hX
+    (of_eq (StructuralListFieldSyntax.field_rename w S j P Fin.castSucc) (lift1 hj))
+  exact of_eq (SyntaxTopFormulaSyntax.instantiated_rename w z T C P F Y Fin.castSucc).symm
+    (instance_target_subst w.castSucc z.castSucc T.castSucc C.castSucc P.castSucc F.castSucc (Fin.last m) Y.castSucc hEq hX)
+
 /-- Internally BUILD the target head, updated table, body and native instance.
 The SAME original guard output Y is the actual instance of that body at P.
 No output, environment, term-diagram or equality witness is supplied. -/
@@ -239,37 +274,21 @@ theorem from_instance {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (order
     Derives Γ (result w z f T A C K H P j Q Y) := by
   have he := ForcingReflexiveImages.from_compiled hZ order Reln w mode z a f T A C R S K H P r s j head Q hf hc
   let B := ForcingReflexiveImages.diagonalBody w z f T A C K H j Q
-  let Δ3 := Context.add B (raisedContext 3 Γ)
+  let Δ := Context.add B (raisedContext 3 Γ)
   apply HornBinderRules.eliminate_many 3 B _ he
-  have hB : Derives Δ3 B := .hyp (Or.inl rfl)
-  have hZ3 := HornBinderRules.zf_body 3 hZ B
-  have hf3 := of_eq (ForcingMemberGuardOpening.frame_rename w mode z a f T A C R S K H P r s (old 3)) (HornBinderRules.under_body 3 hf B)
-  have hP3 := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hf3)))))
-  have hl3 := Derives.conjL (.conjR (.conjR (.conjR (.conjR hf3))))
-  have hC3 := Derives.conjR (.conjR (SyntaxCodedMixedBinderTyping.input_of_lifted (old 3 w) (old 3 R) (old 3 S) (old 3 a) (old 3 f) (old 3 z) (old 3 T) (old 3 A) (old 3 C) (old 3 K) (old 3 H) hl3))
-  have hF3 := SyntaxMixedFormulaJudgment.target_type (old 3 w) (old 3 K) (slot 3 1) (old 3 A) (old 3 f) (old 3 C) (old 3 T) (old 3 Q) (slot 3 2) (.conjR (.conjR hB))
-  have hEx := SyntaxTopFormulaExistence.instantiate_exists hZ3 (old 3 w) (old 3 z) (old 3 T) (old 3 C) (old 3 P) (slot 3 2) (.conjL hf3) (.conjI (.conjI hP3 hC3) hF3)
-  let X := SyntaxTopFormulaSyntax.instantiated (old 3 w).castSucc (old 3 z).castSucc (old 3 T).castSucc (old 3 C).castSucc (old 3 P).castSucc (slot 3 2).castSucc (Fin.last (m+3))
-  let Δ4 := Context.add X (Context.image Formula.raise Δ3)
-  have hout : Derives Δ3 (result (old 3 w) (old 3 z) (old 3 f) (old 3 T) (old 3 A) (old 3 C) (old 3 K) (old 3 H) (old 3 P) (old 3 j) (old 3 Q) (old 3 Y)) := by
-    apply Derives.exE (p := X) hEx
-    have hX : Derives Δ4 X := .hyp (Or.inl rfl)
-    have lift4 {Q : Formula m} (hQ : Derives Γ Q) := under (HornBinderRules.under_body 3 hQ B) X
-    have hB4 : Derives Δ4 (ForcingReflexiveImages.diagonalData (old 4 w) (old 4 z) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 K) (old 4 H) (old 4 j) (old 4 Q) (slot 3 0).castSucc (slot 3 1).castSucc (slot 3 2).castSucc) :=
-      of_eq (by simp only [B, Formula.raise, ForcingReflexiveImages.diagonalBody, ForcingReflexiveImages.diagonalData_rename]; rfl) (under hB X)
-    have hEq := commutes (ZFContext.under hZ3 X) order Reln
-      (old 4 w) (old 4 mode) (old 4 z) (old 4 a) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 R) (old 4 S) (old 4 K) (old 4 H) (old 4 P) (old 4 r) (old 4 s) (old 4 own) (old 4 head) (old 4 j) (old 4 Q) (old 4 U) (old 4 Y) (slot 3 0).castSucc (slot 3 1).castSucc (slot 3 2).castSucc (Fin.last (m+3))
-      (of_eq (by simp only [ForcingMemberGuardOpening.frame_rename]; all_goals rfl) (lift4 hf))
-      (of_eq (by simp only [SyntaxMixedImageHead.head_rename]; all_goals rfl) (lift4 hh))
-      (of_eq (by simp only [ForcingGuardCode.compiled_rename]; all_goals rfl) (lift4 hc))
-      (of_eq (by simp only [SyntaxMixedFormulaJudgmentSyntax.substituted_rename]; all_goals rfl) (lift4 ho))
-      (of_eq (by simp only [SyntaxTopFormulaSyntax.instantiated_rename]; all_goals rfl) (lift4 hi)) hB4 hX
-      (of_eq (by simp only [StructuralListFieldSyntax.field_rename]; all_goals rfl) (lift4 hj))
-    have hSame := instance_target_subst (old 4 w) (old 4 z) (old 4 T) (old 4 C) (old 4 P) (slot 3 2).castSucc (Fin.last (m+3)) (old 4 Y) hEq hX
-    have hResult : Derives Δ4 (result (old 4 w) (old 4 z) (old 4 f) (old 4 T) (old 4 A) (old 4 C) (old 4 K) (old 4 H) (old 4 P) (old 4 j) (old 4 Q) (old 4 Y)) := by
-      apply HornBinderRules.intro_many 3 _ (Source.SetLanguage.args3 (slot 3 0).castSucc (slot 3 1).castSucc (slot 3 2).castSucc)
-      exact of_eq (by simp only [resultBody, resultData_rename, assign_old, assign_slot]; rfl) (.conjI hB4 hSame)
-    exact of_eq (result_rename (old 3 w) (old 3 z) (old 3 f) (old 3 T) (old 3 A) (old 3 C) (old 3 K) (old 3 H) (old 3 P) (old 3 j) (old 3 Q) (old 3 Y) Fin.castSucc).symm hResult
+  have hB : Derives Δ B := .hyp (Or.inl rfl)
+  have lift3 {X : Formula m} (hX : Derives Γ X) := HornBinderRules.under_body 3 hX B
+  have hSame := at_body (HornBinderRules.zf_body 3 hZ B) order Reln
+    (old 3 w) (old 3 mode) (old 3 z) (old 3 a) (old 3 f) (old 3 T) (old 3 A) (old 3 C) (old 3 R) (old 3 S) (old 3 K) (old 3 H) (old 3 P) (old 3 r) (old 3 s) (old 3 own) (old 3 head) (old 3 j) (old 3 Q) (old 3 U) (old 3 Y) (slot 3 0) (slot 3 1) (slot 3 2)
+    (of_eq (ForcingMemberGuardOpening.frame_rename w mode z a f T A C R S K H P r s (old 3)) (lift3 hf))
+    (of_eq (SyntaxMixedImageHead.head_rename w A f own head (old 3)) (lift3 hh))
+    (of_eq (ForcingGuardCode.compiled_rename order Reln w A f head Q (old 3)) (lift3 hc))
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w K H A f C T Q U (old 3)) (lift3 ho))
+    (of_eq (SyntaxTopFormulaSyntax.instantiated_rename w z T C P U Y (old 3)) (lift3 hi)) hB
+    (of_eq (StructuralListFieldSyntax.field_rename w S j P (old 3)) (lift3 hj))
+  have hout : Derives Δ (result (old 3 w) (old 3 z) (old 3 f) (old 3 T) (old 3 A) (old 3 C) (old 3 K) (old 3 H) (old 3 P) (old 3 j) (old 3 Q) (old 3 Y)) := by
+    apply HornBinderRules.intro_many 3 _ (slot 3)
+    exact of_eq (by simp only [resultBody, resultData_rename, assign_old, assign_slot]; rfl) (.conjI hB hSame)
   exact of_eq (result_rename w z f T A C K H P j Q Y (old 3)).symm hout
 
 def sourceInput {k m} (order : Bool) (Reln : Source.Formula (k+2)) (w mode z a f T A C R S K H P r s own head j Q U Y : Fin m) : Formula m :=

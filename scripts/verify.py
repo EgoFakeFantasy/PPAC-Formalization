@@ -2732,9 +2732,10 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_guard_opening', 'ForcingGuardOpening', 13),
                                 ('internal_proof_background', 'InternalProofBackground', 10),
                                 ('forcing_member_guard_proof', 'ForcingMemberGuardProof', 14),
-                                ('forcing_neg_member_proof', 'ForcingNegMemberProof', 9),
+                                ('forcing_neg_member_proof', 'ForcingNegMemberProof', 10),
                                 ('forcing_reflexive_images', 'ForcingReflexiveImages', 18),
-                                ('forcing_reflexive_diagram', 'ForcingReflexiveDiagram', 15)):
+                                ('forcing_reflexive_diagram', 'ForcingReflexiveDiagram', 16),
+                                ('forcing_relation_guard_proof', 'ForcingRelationGuardProof', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6743,6 +6744,9 @@ def main(source_check_only: bool = False) -> None:
         "object_omega_membership_characterization_proved": True,
         "object_omega_induction_schema_proved": True,
         "object_omega_induction_has_arbitrary_parameters_and_formulas": True,
+        "object_actual_original_guards_shared_table_and_same_common_background_internal_proofs": True,
+        "object_guarded_reflexivity_background_truth_or_proof_assumed": False,
+        "object_common_background_validity_from_complete_source_system_closed": False,
         "object_all_sets_irreflexive_using_Foundation_and_Pairing": True,
         "object_omega_zero_successor_decomposition_proved": True,
         "object_omega_and_all_its_elements_transitive_proved": True,
