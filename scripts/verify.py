@@ -2711,7 +2711,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_false_root', 'InternalFalseRoot', 14),
                                 ('forcing_mixed_unary', 'ForcingMixedUnary', 6),
                                 ('internal_proof_quantifier', 'InternalProofQuantifier', 22),
-                                ('forcing_neg_proof', 'ForcingNegProof', 6)):
+                                ('forcing_neg_proof', 'ForcingNegProof', 6),
+                                ('forcing_open_lift', 'ForcingOpenLift', 13)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7413,6 +7414,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_original_rule20_proof_scope": "Original complete rule20 queries, InstantiateTop typing/totality and public logical proof projection were already proved and are reused. Actual axiom/logical/MP nodes now generate the instance code and its proof, and actual pointwise opened forall plus common-background B -> forall F consumers are connected. B is not assumed proved/true. All runtime codes/scopes include nonstandard omega. This is not normalized forcing-specific MP, uniform interpreted proof correctness, reduction or final Con.",
         "object_actual_common_background_instance_code_and_proof_total_production_proved": True,
         "object_actual_complete_negative_fragment_guarded_outer_instance_proved": True,
+        "object_actual_opening_old_field_exact_code_under_original_binder_lift_proved": True,
+        "object_actual_opening_original_bound_zero_field_internally_generated": True,
+        "object_complete_condition_rebind_open_instantiate_cancellation_proved": False,
         "object_actual_complete_negative_fragment_instance_scope": "Actual full negative compilation (both guards and rebind), actual pointwise opening and actual G -> opened-negative proof produce the same actual raw/target bodies, environment/lift, instance code and G -> instance proof. No proof/truth of G or unconditional opened-negative proof, no supplied body/output/local answer. This is the outer forall instance step, not complete guard/rebinding commutation, normalized forcing MP or uniform proof correctness/Con.",
         "audited_declarations": len(footprints),
         "declarations_without_axioms": sum(not value for value in footprints.values()),

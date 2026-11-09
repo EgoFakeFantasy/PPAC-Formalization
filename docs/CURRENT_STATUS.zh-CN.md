@@ -39,3 +39,5 @@
 原第10实际全称实例证明：InternalProofQuantifier直接复用已有原规则20完整查询／节点、InstantiateTop类型／总性及公开逻辑证明投影，内部构造公理证书和真实logical／MP父节点，生成实例码及其证明；实际逐点forall打开保留同一环境／提升子判断的消费者已接通。共同背景B→forall F到B→实例F直接复用已有K/S，不假定B已可证／为真。全部运行码／范围允许内部非标准；原Node／头字段／空free时Root保留。该原生量词操作不等于规范化强迫MP；完整重绑定、统一公理／Proof保真、reduction和最终Con仍未证明。完整九项验收及五项trust=0通过，38651项声明、零警告；38635项旧足迹和2816份旧证明哈希不变，12项兼容回归及三库／75哈希预检通过。见verification/internal-proof-quantifier-acceptance.json。
 
 原第10实际否定外层实例：ForcingNegProof从完整原否定编译（两守卫及实际重绑定）、真实逐点打开和G→打开否定式的实际原核证明，内部生成同一raw／target量词体、真实环境／提升子判断、实例码及G→实例证明。共同背景G不要求可证／为真，也不要求打开后的否定式无条件可证；未给定体码、提升或实例输出。原NegCode／原规则20／InstantiateTop／K/S证明均复用，旧正文不变。完整守卫／条件重绑定交换、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明。完整九项验收及五项trust=0通过，38666项声明、零警告；38651项旧足迹与旧证明正文保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-neg-proof-acceptance.json。
+
+原第10实际opening提升变量方程：ForcingOpenLift直接复用现有闭参数重命名不变性和原mixed binder的zero／bound／free字段方程，在同一实际环境／提升表中保持旧名字与参数的精确码，并内部生成原bvar0头码及其实际字段；两项普通nativeZF原核证书已通过验收。所有运行码／索引／长度可为内部非标准。完整公式的条件重绑定／opening／InstantiateTop相消、规范化强迫MP、统一公理／Proof保真、reduction及最终Con仍未证明；完整九项验收及五项trust=0通过，38679项声明、零警告；38666项旧足迹和2818份旧证明哈希全部保持，12项兼容回归及三库／75哈希预检通过。见verification/forcing-open-lift-acceptance.json。

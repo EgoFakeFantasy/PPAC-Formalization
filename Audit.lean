@@ -39342,3 +39342,17 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingNegProof.input
 #print axioms PPAC.Migration.ForcingNegProof.sentence
 #print axioms PPAC.Migration.ForcingNegProof.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingOpenLift.step
+#print axioms PPAC.Migration.ForcingOpenLift.step_rename
+#print axioms PPAC.Migration.ForcingOpenLift.equation
+#print axioms PPAC.Migration.ForcingOpenLift.equation_rename
+#print axioms PPAC.Migration.ForcingOpenLift.old_fields
+#print axioms PPAC.Migration.ForcingOpenLift.zeroOutput
+#print axioms PPAC.Migration.ForcingOpenLift.zeroOutput_rename
+#print axioms PPAC.Migration.ForcingOpenLift.zero_field
+#print axioms PPAC.Migration.ForcingOpenLift.input
+#print axioms PPAC.Migration.ForcingOpenLift.sentence
+#print axioms PPAC.Migration.ForcingOpenLift.kernel_certificate
+#print axioms PPAC.Migration.ForcingOpenLift.zeroSentence
+#print axioms PPAC.Migration.ForcingOpenLift.zero_kernel_certificate

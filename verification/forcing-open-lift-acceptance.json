@@ -1,0 +1,267 @@
+{
+  "verified_at": "2026-11-09T02:39:48.643143+00:00",
+  "baseline_commit": "f7c0f2730cce4ae26762bc11343ee8c5cd624ff4",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": "For the SAME actual pointwise opening and original coded mixed binder lift at empty target bound scope, old bound-name images move to successor indices and old free-parameter images remain at their indices with EXACT unchanged codes. All auxiliary shift/identity maps and original bvar0 head code are internally generated, and the actual new zero field is proved. This is a necessary root-variable component of actual condition-rebind/open/InstantiateTop cancellation, not its full formula theorem.",
+  "endpoints": [
+    "PPAC.Migration.ForcingOpenLift.kernel_certificate",
+    "PPAC.Migration.ForcingOpenLift.zero_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "Omega(w), empty(z), actual ForcingOpenLayout.environment(w,z,a,f,T,R,S), SAME original lifted(w,R,S,a,f,z,T,A,C,K,H). For any actual old source field i->q and legal source index, the lifted field is exactly q at i+1 for bound names or at i for parameters. Additionally internally generate the actual original bound-zero head code n and its SAME K zero field. No auxiliary map/head, output image, external standard index or semantic-only certificate is supplied.",
+  "reuse": [
+    "Existing opening environment term-list typing",
+    "InstantiateClosedParameterRename.closed_iff",
+    "Original SyntaxCodedMixedBinderFields zero/bound/free equations",
+    "Existing shift-map, identity-map and original head-code existence"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38679,
+    "new_audit_entries": 13,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingOpenLift.step": [],
+      "PPAC.Migration.ForcingOpenLift.step_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.equation": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.equation_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.old_fields": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.zeroOutput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.zeroOutput_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.zero_field": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingOpenLift.zeroSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingOpenLift.zero_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38666,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2818,
+    "proof_files_now": 2819,
+    "sealed_inputs": 2851,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "e75fa21b093146c4d01b0f0e5f3a552739c12b0d9dbda821875250e7dd54393c",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "f7860afeaddb4d257717e35713f88027d85aaf713cd5ec5248ad55f8d2bd26ce"
+    },
+    "summary_sha256": "bf6fbca0bb340137346b41aa8a59c6f486a005633a3f3c20c5a69344bafe74ec"
+  },
+  "scope": {
+    "actual_opening_old_images_exact_under_original_binder_lift": true,
+    "original_bvar0_and_actual_zero_field_generated_internally": true,
+    "runtime_nonstandard_indices_and_codes_included": true,
+    "complete_condition_rebind_open_instantiate_cancellation": false,
+    "full_pointwise_rename_raise_instantiate_commutation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingOpenLiftAudit.lean",
+      "bytes": 787,
+      "sha256": "dabc0c65ae4ba1b5702db5ced981db6681fe713f830827f232a93d6725eee097"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-lift-audit.log",
+      "bytes": 2208,
+      "sha256": "8635130a691b681dce394e2d8910ae7342d52ec37346d0c2ef718e083506f5b7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-lift-directed.log",
+      "bytes": 390,
+      "sha256": "8e889b578fb3638b27d9b6f065d8b002fe8f413670a66b87632807bbc722bb6f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-lift-build.log",
+      "bytes": 104,
+      "sha256": "568e6f4266fa3cb756fd5a757dccf98015319ee6ecef95709f59d75643cdf1ef"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-lift-full.log",
+      "bytes": 153,
+      "sha256": "071e7e146e30c632e7b48d6808c58478dee82ab7e147317b212b0fcdfa8b8970"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-open-lift-parent-summary.json",
+      "bytes": 14884628,
+      "sha256": "e756364f61ea02f9b206009f27f476203be3db75d2420cf15ff1aeb9e90d4b28"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await current entire remote CI success and actual native PASS log before publishing",
+    "preceding_run": 42549940926
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "post_cleanup_verified_at": "2026-11-09T02:40:25.485922+00:00"
+}

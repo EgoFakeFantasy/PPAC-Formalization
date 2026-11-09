@@ -1115,3 +1115,4 @@ import PPAC.Migration.InternalFalseRoot
 import PPAC.Migration.ForcingMixedUnary
 import PPAC.Migration.InternalProofQuantifier
 import PPAC.Migration.ForcingNegProof
+import PPAC.Migration.ForcingOpenLift
