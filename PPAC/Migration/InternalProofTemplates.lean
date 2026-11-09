@@ -278,21 +278,20 @@ private theorem projection_variables (right : Bool) (i : Fin 3) :
   cases right <;> simp [projectionTemplate, selected, Template.expr, ObjectHorn.Expr.node,
     ObjectHorn.Expr.list, ObjectHorn.Expr.variables, or_comm]
 
-private theorem project_at_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (right : Bool)
+/-- The EXISTING original rule12/13 axiom proof, factored from its former
+MP consumer. No truth or proof of the conjunction C is assumed. -/
+theorem projection_axiom {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (right : Bool)
     (w z b A B C I : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b))
     (hc : Derives Γ (SyntaxNodeSyntax.constructor 2 5 w (SyntaxAtomSyntax.two A B) C))
-    (hi : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two C (selected right A B)) I))
-    (hp : Derives Γ (InternalProofConjunction.proved test w z b C)) :
-    Derives Γ (InternalProofConjunction.proved test w z b (selected right A B)) := by
+    (hi : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two C (selected right A B)) I)) :
+    Derives Γ (InternalProofConjunction.proved test w z b I) := by
   let env := SetLanguage.args3 b A B
   have hgA := FormulaCodeProperties.guards w A z b hA
   have hgB := FormulaCodeProperties.guards w B z b hB
   have hn : Derives Γ (environmentNat 3 w env) :=
     .conjI (.conjR (.conjR hgA)) (.conjI (.conjL hgA) (.conjI (.conjL hgB) HornRuleSyntax.truth_proved))
   have hctx : Derives Γ (SyntaxTermSyntax.contexts w z b) := .conjR hgA
-  have ht : Derives Γ (formulaCode w (selected right A B) z b) := by cases right <;> assumption
-  have hCT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b A B C hw hc)) (.conjI hctx (.conjI hA hB))
   have hs (i : Fin 3) (hmem : i ∈ (projectionTemplate right).expr.variables) : Derives Γ (formulaCode w (env i) z b) := by
     rcases (projection_variables right i).mp hmem with rfl | rfl
     · exact hA
@@ -316,6 +315,20 @@ private theorem project_at_implication {m} {Γ : Context m} (hZ : ZFContext.Evid
       (fun i => Fin.cases hcG (fun i => Fin.cases htG (fun e => Fin.elim0 e) i) i) hi
   have haxiom := template_axiom hZ test (selected right 12 13) (projectionTemplate right) (projection_admissible right)
     (projection_original right) w z I env hw hz hctx hn htypes hs hiG
+  exact haxiom
+
+
+private theorem project_at_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (right : Bool)
+    (w z b A B C I : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (formulaCode w A z b)) (hB : Derives Γ (formulaCode w B z b))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 2 5 w (SyntaxAtomSyntax.two A B) C))
+    (hi : Derives Γ (SyntaxNodeSyntax.constructor 2 7 w (SyntaxAtomSyntax.two C (selected right A B)) I))
+    (hp : Derives Γ (InternalProofConjunction.proved test w z b C)) :
+    Derives Γ (InternalProofConjunction.proved test w z b (selected right A B)) := by
+  have ht : Derives Γ (formulaCode w (selected right A B) z b) := by cases right <;> assumption
+  have hctx := Derives.conjR (FormulaCodeProperties.guards w A z b hA)
+  have hCT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b A B C hw hc)) (.conjI hctx (.conjI hA hB))
+  have haxiom := projection_axiom hZ test right w z b A B C I hw hz hA hB hc hi
   exact InternalProofConjunction.modus_ponens hZ test w z b C (selected right A B) I hw hz hCT ht hi hp haxiom
 
 /-- Actual original rule12/13 plus one actual MP, for arbitrary internal codes.

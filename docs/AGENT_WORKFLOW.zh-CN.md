@@ -15,7 +15,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 同一实际系统的源目标理论及reverse_injection_dense→forces_PP→forces_target已接通；原公理行和完整模式流水线的存在、闭类型、独立见证唯一性已证明；实际ZF/U完整公理表的统一闭类型现由原六规则theoryShape有界查询消费；本批原正文→实际编译／三个原重命名矩阵→原模板→整个闭包→准确原生Separation/Collection句的quotation对象双条件已全部接通，五个普通nativeZF原核端点通过。正文／次数仍为外部模式索引，原始有效输入guard保留；同一实际内部Con及精确reduction现已组装，原核reduction→goal逻辑封闭门已验收；实际完整公理查询到同一理论原node/root证明的内部生产基例已构造 | 统一内部／非标准ZF/U公理正确性／强迫、全部内部六规则Proof及矛盾码归约、最终内部Con蕴含。标准quotation模式不替代此门 |
+| 10 | 原 Main 全局装配与对象内部化 | 同一实际系统的源目标理论及reverse_injection_dense→forces_PP→forces_target已接通；原公理行和完整模式流水线的存在、闭类型、独立见证唯一性已证明；实际ZF/U完整公理表的统一闭类型现由原六规则theoryShape有界查询消费；本批原正文→实际编译／三个原重命名矩阵→原模板→整个闭包→准确原生Separation/Collection句的quotation对象双条件已全部接通，五个普通nativeZF原核端点通过。正文／次数仍为外部模式索引，原始有效输入guard保留；同一实际内部Con及精确reduction现已组装，原核reduction→goal逻辑封闭门已验收；实际完整公理查询到同一理论原node/root证明的内部生产基例已构造；同一实际member guard现有规范共同背景G及G→实际输出的原内部证明，固定同一G候选亦成立，不假设G已证明 | 统一内部／非标准ZF/U公理正确性／强迫、全部内部六规则Proof及矛盾码归约、最终内部Con蕴含。标准quotation模式不替代此门 |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口

@@ -29,15 +29,18 @@
 | 实际完整否定实例的字段正规化 | 从同一完整 NegCode.compiled／raw量词体／lifted opening／原 InstantiateTop 实例，内部消去原五个compiler和四个shell见证及两轮六字段；最终操作数等于直接opening，保持同一falsum，并保留原头和两实际guard编译。普通nativeZF原核证书已验收；守卫有效性及规范化强迫MP未完成 |
 | 实际成员守卫的码级交换 | 从原compiled false取得原条件项和精确P自由槽；同一lifted opening／原InstantiateTop输出为字面的P∈V成员码，V是同一原参数表S的P槽实际字段，内部名字前缀偏移不变。原四个compiler／三个quotation字段、两轮原子子输出及head零槽内部消去；普通nativeZF原核证书。不是guard内部证明或强迫MP |
 | 两类实际guard的三段代码交换 | 原member／relation guard编译、同一lifted opening及原InstantiateTop实际输出满足：同一原quotation经[P]和原free表S的直接替换判断。原四compiler见证、直接表和输出候选均内部构造/消去；完整内部公式归纳及原binder闭包直接复用。尚未消费选中p槽字段取得自反guard内部证明，不声称guard有效或强迫MP |
+| 实际成员guard内部证明 | 同一原guard编译／own head／lifted opening／原InstantiateTop／实际P槽字段，内部构造规范共同背景G=B∧(P∈V)及原证明码，证明G→同一实际输出M；另有固定同一G任意候选的原核端点。G只取决于固定B/P/V/作用域，内部存在唯一，不依当前公式选取；P/V类型从实际输出取得。不假设G或M已证明/为真；relation guard、强迫MP及最终Con未证明 |
 
 ## 当前真正缺口及依赖顺序
 
-- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；成员guard的实际码级交换现也已完成；两类guard的三段码级交换现已完成到同一原quotation/[P]/原S；剩余是消费现成选中条件字段及自反性/regularity证书的guard内部证明与强迫MP。
+- 全部内部公式归纳及同一原compiled／opening／mode2的完整**正文公式相消已完成**。现成mode2公式桥已实际消费；不再列为待做，也不重建L、语法或求值后端。该相消现已用于同一完整否定编译／实际InstantiateTop实例，取得内部字段结构正规化；成员guard的实际码级交换现也已完成；两类guard的三段码级交换现已完成到同一原quotation/[P]/原S；成员guard的共同背景内部证明已完成；剩余是消费现成选中条件字段及偏序自反性/regularity证书的relation guard内部证明与强迫MP。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
+
+`verification/forcing-member-guard-proof-acceptance.json`：九项命令及五项trust=0均退出0；38930项声明、零警告；全部38905项旧足迹不变。2836份旧PPAC证明中2835份哈希不变；唯一改动为现有rule12/13公理证明前半段的精确提取，原公开接口与原MP消费者保留。16项兼容性测试、三个干净锁定依赖及75项源哈希通过。实际成员guard的G→M内部证明完成；relation guard内部证明、规范化强迫MP、全部内部公理/Proof保真、reduction及最终Con尚未完成。本批尚未推送：上一轮42583363761仍运行中，不把本地结果冒充Linux结果。
 
 `verification/forcing-guard-opening-acceptance.json`：九项命令及五项trust=0均退出0；38905项声明、零警告；全部38881项旧依赖足迹不变。原2834份PPAC证明中2832份哈希不变，另外两份仅公开3项现成叶证明，正文逐字不变；SOURCE_LOCK中3处证书哈希引用刷新。16项兼容性回归、三个干净锁定依赖及75项源哈希通过。两类实际guard完整三段码级交换已完成；guard内部证明、规范化强迫MP、全部内部公理/Proof保真、reduction和最终Con未证明。
 

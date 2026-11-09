@@ -2701,7 +2701,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_mp_proof', 'InternalMPProof', 12),
                                 ('internal_proof_operations', 'InternalProofOperations', 27),
                                 ('internal_proof_conjunction', 'InternalProofConjunction', 15),
-                                ('internal_proof_templates', 'InternalProofTemplates', 9),
+                                ('internal_proof_templates', 'InternalProofTemplates', 10),
                                 ('internal_proof_implication', 'InternalProofImplication', 7),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
                                 ('forcing_pointwise_code', 'ForcingPointwiseCode', 46),
@@ -2729,7 +2729,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_member_guard', 'ForcingMemberGuard', 11),
                                 ('forcing_member_guard_opening', 'ForcingMemberGuardOpening', 12),
                                 ('forcing_guard_diagram', 'ForcingGuardDiagram', 8),
-                                ('forcing_guard_opening', 'ForcingGuardOpening', 13)):
+                                ('forcing_guard_opening', 'ForcingGuardOpening', 13),
+                                ('internal_proof_background', 'InternalProofBackground', 10),
+                                ('forcing_member_guard_proof', 'ForcingMemberGuardProof', 14)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -7452,6 +7454,11 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_guard_compiler_exact_original_P_slot_proved": True,
         "object_actual_member_guard_open_instantiate_literal_membership_code_proved": True,
         "object_actual_member_guard_compiler_head_zero_alignment_internal": True,
+        "object_actual_member_guard_canonical_background_exists_unique_proved": True,
+        "object_actual_member_guard_same_output_implication_internal_proof_constructed": True,
+        "object_actual_member_guard_fixed_background_candidate_internal_proof_proved": True,
+        "object_actual_relation_guard_internal_proof_proved": False,
+        "object_actual_member_guard_internal_proof_scope": "SAME actual original guard/head/lifted opening/native instance/P-slot field yields an actual original internal proof of G→M. Canonical G=B∧(P∈V) is internally constructed and unique from B/P/V/scopes, independent of current formula or guard output; proof also holds for every fixed candidate G. No G/M proof or truth assumed. Actual output typing gives P/V types. All implication/proof/code candidates remain internal/nonstandard. Both endpoints are ordinary nativeZF original FirstOrder.Derives. This does not prove relation guard, normalized forcing MP, uniform axiom/Proof preservation, reduction or final Con.",
         "object_actual_guard_root_all_term_candidate_diagram_proved": True,
         "object_actual_member_and_relation_guard_same_output_direct_quotation_substitution_proved": True,
         "object_actual_guard_direct_bound_table_and_output_candidates_internally_eliminated": True,

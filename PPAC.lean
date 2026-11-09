@@ -1133,3 +1133,5 @@ import PPAC.Migration.ForcingMemberGuard
 import PPAC.Migration.ForcingMemberGuardOpening
 import PPAC.Migration.ForcingGuardDiagram
 import PPAC.Migration.ForcingGuardOpening
+import PPAC.Migration.InternalProofBackground
+import PPAC.Migration.ForcingMemberGuardProof

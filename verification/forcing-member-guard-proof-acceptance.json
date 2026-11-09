@@ -1,0 +1,478 @@
+{
+  "verified_at": "2026-11-09T08:40:06.850625+00:00",
+  "baseline_commit": "12778829e36d077e39297c9f9c503b384e50d546",
+  "original_stage": "10 active; 1-9 complete; 11 not started",
+  "background": "Original YesMetaZFC pure-set signature; ordinary nativeZF; original FirstOrder.Derives; unchanged OpenAI/YesMetaZFC inputs and both Lean toolchains",
+  "result": "Actual SAME original member guard/head/lifted opening/native InstantiateTop and P-slot field produce canonical G=B∧(P∈V) and an ACTUAL original internal proof of G→SAME final output M. A second original-kernel endpoint proves this implication for ANY fixed candidate G of the same canonical background. Background existence/uniqueness depends only on fixed B/P/V/scopes; actual typing recovers P/V term types. Neither G nor M is assumed proved or true. Symbols, background/member/implication/proof codes are internally quantified, without external standardness.",
+  "proof_boundaries": {
+    "actual_member_guard_three_stage_code_commutation": true,
+    "canonical_common_background_internal_existence_and_uniqueness": true,
+    "same_actual_member_output_implication_internal_proof_constructed": true,
+    "fixed_canonical_background_candidate_internal_proof_constructed": true,
+    "background_or_guard_assumed_proved_or_true": false,
+    "relation_guard_internal_proof": false,
+    "normalized_forcing_MP": false,
+    "uniform_internal_axiom_and_Proof_preservation": false,
+    "reduction": false,
+    "final_internal_Con_goal": false
+  },
+  "reuse": [
+    "SAME existing original rule13 logical axiom prelude from InternalProofTemplates (mechanically compared after exact extraction)",
+    "Original member/conjunction/implication constructors and member/output uniqueness",
+    "Completed actual guard compiler/opening/native InstantiateTop normalization",
+    "Original target typing, ZF/U tests, actual logical proof, annotated header and conditional closed Root",
+    "Original ZFReplay and TheoryTransport into ordinary nativeZF"
+  ],
+  "existing_proof_refactor": {
+    "baseline_commit": "12778829e36d077e39297c9f9c503b384e50d546",
+    "old_public_template_footprints_unchanged": true,
+    "existing_axiom_prelude_exact_after_removing_two_moved_type_lemmas": true,
+    "new_projection_axiom_body_sha256": "dbfe89eb127d1292e3beb2e89b0d11d30a033ca28711e819a6b909d7f4622208",
+    "refreshed_certificate_references": [
+      "internal_proof_templates",
+      "internal_proof_implication",
+      "forcing_code_binary",
+      "internal_proof_quantifier"
+    ],
+    "new_public_declarations": [
+      "PPAC.Migration.InternalProofTemplates.projection_axiom",
+      "PPAC.Migration.InternalProofBackground.data",
+      "PPAC.Migration.InternalProofBackground.data_rename",
+      "PPAC.Migration.InternalProofBackground.body",
+      "PPAC.Migration.InternalProofBackground.background",
+      "PPAC.Migration.InternalProofBackground.background_rename",
+      "PPAC.Migration.InternalProofBackground.background_exists",
+      "PPAC.Migration.InternalProofBackground.background_unique",
+      "PPAC.Migration.InternalProofBackground.implication",
+      "PPAC.Migration.InternalProofBackground.implication_rename",
+      "PPAC.Migration.InternalProofBackground.project_member",
+      "PPAC.Migration.ForcingMemberGuardProof.data",
+      "PPAC.Migration.ForcingMemberGuardProof.data_rename",
+      "PPAC.Migration.ForcingMemberGuardProof.body",
+      "PPAC.Migration.ForcingMemberGuardProof.result",
+      "PPAC.Migration.ForcingMemberGuardProof.result_rename",
+      "PPAC.Migration.ForcingMemberGuardProof.at_background",
+      "PPAC.Migration.ForcingMemberGuardProof.from_member",
+      "PPAC.Migration.ForcingMemberGuardProof.input",
+      "PPAC.Migration.ForcingMemberGuardProof.from_instance_at_background",
+      "PPAC.Migration.ForcingMemberGuardProof.from_instance",
+      "PPAC.Migration.ForcingMemberGuardProof.sentence",
+      "PPAC.Migration.ForcingMemberGuardProof.kernel_certificate",
+      "PPAC.Migration.ForcingMemberGuardProof.sentence_at_background",
+      "PPAC.Migration.ForcingMemberGuardProof.kernel_certificate_at_background"
+    ],
+    "old_audit_count": 38905,
+    "expected_new_audit_count": 38930,
+    "expected_new_PPAC_sources": 2838
+  },
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38930,
+    "declarations_without_axioms": 2262,
+    "declarations_with_recorded_dependencies": 36668,
+    "warning_lines": 0,
+    "all_old_38905_footprints_unchanged": true,
+    "old_PPAC_sources": 2836,
+    "old_PPAC_sources_unchanged": 2835,
+    "old_PPAC_source_changes": [
+      "PPAC/Migration/InternalProofTemplates.lean"
+    ],
+    "changed_prior_sealed_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/InternalProofTemplates.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "current_PPAC_sources": 2838,
+    "sealed_input_count": 2871,
+    "all_sealed_hashes_verified": true,
+    "regressions": {
+      "ci_compatibility": {
+        "count": 9,
+        "exit_code": 0
+      },
+      "original_comparator_guard": {
+        "count": 7,
+        "exit_code": 0
+      }
+    },
+    "clean_pinned_repositories": 3,
+    "cross_platform_source_hashes": 75,
+    "new_public_declaration_footprints": {
+      "PPAC.Migration.InternalProofTemplates.admissible": [],
+      "PPAC.Migration.InternalProofTemplates.template_type": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.logical_proof": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.template_axiom": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.projection_axiom": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.project": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.project_compiled": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.compiled_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.sentence": [
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofTemplates.kernel_certificate": [
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.data": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.data_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.body": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.background": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.background_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.background_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.background_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.implication": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.implication_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.InternalProofBackground.project_member": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.data": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.data_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.body": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.result": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.result_rename": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.at_background": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.from_member": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.input": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.from_instance_at_background": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.from_instance": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.sentence": [
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.kernel_certificate": [
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.sentence_at_background": [
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ],
+      "PPAC.Migration.ForcingMemberGuardProof.kernel_certificate_at_background": [
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+        "propext"
+      ]
+    }
+  },
+  "source_sha256": {
+    "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
+    "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
+    "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d"
+  },
+  "cleanup_completed": true,
+  "new_batch_linux_pass_claimed": false,
+  "publication": "Not pushed: prior run 42583363761 is still live; wait for terminal success and actual PASS log before publication.",
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-audit.lean",
+      "bytes": 2309,
+      "sha256": "2f8e599974d7e0bc49cfcdb7887f2467ce3225f1598eaf194821f54dc8508420"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-audit.log",
+      "bytes": 6528,
+      "sha256": "bafc9cbaaf0859b2e84ac4b967c8d237da23abe62687408d5d04feb930e4ecc5"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-background-build.log",
+      "bytes": 180,
+      "sha256": "2fdaaaa515d36fcf7ec645ed039ce0c6895a474ed1ed00a1fce0cc02cda5f0f7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-consumer-build.log",
+      "bytes": 112,
+      "sha256": "5671b6714e81e4b56c12216fb724e7c5769210bc191a0cd4ee5b3c446d003586"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-full.log",
+      "bytes": 153,
+      "sha256": "24261b51036cc4f45b99bb3c013bc24c4ef934907d3845e548cddce6cac5d24d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-parent-summary.json",
+      "bytes": 14931628,
+      "sha256": "a6a0da10a1e7910f90781b993e7a4d1dc521f93f8b5e17bc71a0fe3c9d79d2f8"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-refactor-review.json",
+      "bytes": 2110,
+      "sha256": "440e946606bae44309831375e67ce419628f4d1cea71a708c3374ac464bf021b"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-template-before.lean.txt",
+      "bytes": 3117,
+      "sha256": "0731deca7812fa3642acf78c58b0132d751b8b1737e48692660b58434b8690c7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-template-build.log",
+      "bytes": 111,
+      "sha256": "9a74bed674593ee3cc278542d24baa3122395a08659ff0b77f09d60ad63ad447"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\member-proof-template-extracted.lean.txt",
+      "bytes": 2156,
+      "sha256": "1e1050f03bf0a274c325f98728dc62ba7e3911fc74a048d87b88db2ee046f37b"
+    }
+  ],
+  "cleanup_verified_at": "2026-11-09T08:41:59.501483+00:00",
+  "post_cleanup_checks": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "PPAC/Migration/InternalProofBackground.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "PPAC/Migration/ForcingMemberGuardProof.lean"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "post_cleanup_all_2871_sealed_hashes_verified": true
+}
