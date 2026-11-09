@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-11-09T19:03:19.825797+00:00",
+  "run_id": 42662706463,
+  "job_id": 129318142285,
+  "head_sha": "7167663c0de08c938fcc2d460e284ec65721c13d",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42662706463",
+  "conclusion": "success",
+  "actual_decoded_job_log_read": true,
+  "actual_native_PASS": "2026-11-09T19:00:30.4884732Z PASS: 39195 audited declarations; 2263 without axioms; 36932 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "actual_log_bytes": 40200,
+  "actual_log_sha256": "44f455d7ad256b931d4d29a7b93edc00f8eb56f2a9c216f1a409b2744c2c1eee",
+  "install_elan": "success",
+  "pinned_dependencies": "success",
+  "clean_inputs_and_cross_platform_tests": "success",
+  "build_and_audit": "success",
+  "artifact_upload": "success",
+  "clean_pinned_repositories": 3,
+  "canonical_source_hashes": 75,
+  "regression_tests": {
+    "ci_compatibility": 9,
+    "original_comparator_guard": 7
+  },
+  "scope": "Independent complete Linux acceptance of 7167663 and prior binder/prefix commits (39195 declarations). Does NOT certify later relation source/images/guard formula commits (39230/39256/39268), current raw path/leaf work (expected 39284), or final Con."
+}

@@ -170106,7 +170106,7 @@
         "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
       },
-      "scope": "Ordinary nativeZF original-kernel certificate. Source AST/roles readout reuses existing Syntax old_formula/substitute/rename; native variable index readout reuses ProjectNativeRenaming.variable_index. Existing tree quotation existence and NativeSubstitutionEnvironment/NativeFormulaQuotationCorrespondence produce shared source R and all four actual maps/queries within OBJECT quantifiers. Actual rawData and original guard compiled output are consumed; no source quote, matrix, map/query/equality answer or guard/preorder truth is supplied. Only intermediate profiles 0/1/3 and original finite source arity are quotation metadata. Actual guard head/scope and runtime codes remain internal, and no forcing target scope is made standard. No new kernel/checker/recursor or formula induction. Full two-path target-code cancellation, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
+      "scope": "Ordinary nativeZF original-kernel certificate. Source AST/roles readout reuses existing Syntax old_formula/substitute/rename; native variable index readout reuses ProjectNativeRenaming.variable_index. Existing tree quotation existence and NativeSubstitutionEnvironment/NativeFormulaQuotationCorrespondence produce shared source R and all four actual maps/queries within OBJECT quantifiers. Actual rawData and original guard compiled output are consumed; no source quote, matrix, map/query/equality answer or guard/preorder truth is supplied. Only intermediate profiles 0/1/3 and original finite source arity are quotation metadata. Actual guard head/scope and runtime codes remain internal, and no forcing target scope is made standard. No new kernel/checker/recursor or formula induction. Whole actual five-IMP/member/negative-existential compiler code identification, canonical contexts/fresh forall, mono/dense/MP/Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingRelationSource.mapping": [
           "propext"
@@ -170282,7 +170282,7 @@
         "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
         "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f"
       },
-      "scope": "Two ordinary nativeZF original-kernel certificates: actual bare-R argument table production and full INTERNAL guard two-path TERM equality. Original single-slot replacement/encoding and quotation/field theorems reused. Actual native mapped outputs are derived from existing query fields. Complete object finite-index disjunction handles all source terms at fixed original R arity, including arbitrary internal term/output candidates; arbitrary target scopes c,d and codes may be nonstandard. Original forcing S and its carrier slot remain separate from NEW bare-R table. No requested equality, supplied image-field answer, guard truth, new checker/kernel/recursor or formula induction. Full FORMULA cancellation, actual raw preorder/member leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
+      "scope": "Two ordinary nativeZF original-kernel certificates: actual bare-R argument table production and full INTERNAL guard two-path TERM equality. Original single-slot replacement/encoding and quotation/field theorems reused. Actual native mapped outputs are derived from existing query fields. Complete object finite-index disjunction handles all source terms at fixed original R arity, including arbitrary internal term/output candidates; arbitrary target scopes c,d and codes may be nonstandard. Original forcing S and its carrier slot remain separate from NEW bare-R table. No requested equality, supplied image-field answer, guard truth, new checker/kernel/recursor or formula induction. SAME actual five-IMP leaf-query extraction, member guard identity, whole negative/existential compiler codes, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingRelationImages.body": [
           "Quot.sound",
@@ -170467,7 +170467,7 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
         "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean": "db72736a9278396e8c95a3cccdd00b7fa5b4b6167c2de5fe10d730a7d4a3dc97"
       },
-      "scope": "Two ordinary nativeZF original-kernel closed-sentence certificates: full INTERNAL guard formula cancellation and generated direct common-source query to SAME actual guard output. Existing all-internal formula induction/term diagram, original identity-term proof, identity codes/index-mixed bridge, actual mixed output existence and output substitution reused unchanged. Four auxiliary identity witnesses are internally generated/eliminated. Consumes SAME source R data native guard map/query; no separately supplied native map/query or common output answer. Fixed source arity is original quotation metadata; runtime formula/term codes and target c,d remain arbitrary internal/nonstandard. Original forcing S separate from NEW bare-R table. No guard truth, new kernel/checker/recursor/induction. Raw preorder formula path/member/order leaf identity, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
+      "scope": "Two ordinary nativeZF original-kernel closed-sentence certificates: full INTERNAL guard formula cancellation and generated direct common-source query to SAME actual guard output. Existing all-internal formula induction/term diagram, original identity-term proof, identity codes/index-mixed bridge, actual mixed output existence and output substitution reused unchanged. Four auxiliary identity witnesses are internally generated/eliminated. Consumes SAME source R data native guard map/query; no separately supplied native map/query or common output answer. Fixed source arity is original quotation metadata; runtime formula/term codes and target c,d remain arbitrary internal/nonstandard. Original forcing S separate from NEW bare-R table. No guard truth, new kernel/checker/recursor/induction. SAME actual five-IMP leaf-query extraction, member guard identity, whole negative/existential compiler codes, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingRelationGuardFormula.directInput": [
           "Quot.sound",
@@ -170530,6 +170530,195 @@
           "propext"
         ],
         "PPAC.Migration.ForcingRelationGuardFormula.to_direct": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_relation_raw_terms": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationRawTerms.lean",
+      "source_declarations": [
+        "force_mono neg/ex: hr.trans hqp; literal R(r,q),R(q,p),R(r,p)",
+        "Original same three preorder instances, final three-cons prefix and R(q,p) guard with original parameter/P/p positions"
+      ],
+      "consumers": [
+        "forest_from_prefix consumes SAME actual three cons operations and original typed empty bound table, without constructing a new forest/table",
+        "term compares original native raw relation argument map + SAME final prefix field with common bare-R actual table for ALL internal terms",
+        "Actual consumer: ForcingRelationRawFormula.from_prefix and relation_leaf"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderPrefix.lean",
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingRelationImages.lean",
+        "PPAC/Migration/Internal/StructuralListLengthConstruct.lean",
+        "PPAC/Migration/Internal/SyntaxForestSyntax.lean",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean",
+        "PPAC/Migration/Internal/SyntaxPositionSyntax.lean",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
+        "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
+        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/Internal/StructuralListLengthConstruct.lean": "1ea9ba8d08af88664273dd986e1f96c9a9c25197d61eb7f36a4289a515664964",
+        "PPAC/Migration/Internal/SyntaxForestSyntax.lean": "b66d174cd3d4ff97fc5cf65a87abf05b07161b349c33403df0b8770e8b403f9e",
+        "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
+        "PPAC/Migration/Internal/SyntaxPositionSyntax.lean": "bc4c0b5d1c069af16efbed34e0631f362395ea9f1295a56454f843f6565ad2a6",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean": "46e7187e0e3ed817db18a0ffb7678eb9dd63a3f95f2acc5ae324ce7c01cd6c8c"
+      },
+      "scope": "Original prefixData -> SAME forest [P2,P1,P0], using only existing empty-length/forest cons laws. Original native atomMap -> exact original bound/free variables -> common bare-R table for ALL internal terms, with no image-field/equality answer or preorder truth. Source finite arity/profiles are pinned quotation metadata only; target c,d and runtime codes may be nonstandard. Ordinary nativeZF kernel endpoint. No new kernel/checker/recursor/induction.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationRawTerms.forest_from_prefix": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.frame": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.frame_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.reversed": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawTerms.term": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_relation_raw_formula": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationRawFormula.lean",
+      "source_declarations": [
+        "force_mono neg/ex: hr.trans hqp; literal R(r,q),R(q,p),R(r,p)",
+        "Original same three preorder instances, final three-cons prefix and R(q,p) guard with original parameter/P/p positions"
+      ],
+      "consumers": [
+        "formula/to_direct specialize existing full formula cancellation and generate SAME-output raw common query",
+        "from_prefix recovers SAME actual prefix forest, consumes same source R native map/query and actual raw leaf query, without supplied forest/common query/output answer",
+        "relation_leaf connects SAME source/prefix data and actual guard query to original internal output uniqueness; ordinary nativeZF leaf_kernel_certificate",
+        "Next: actual five-IMP matrix leaf-query extraction and member/whole negative-existential guard identity"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingRelationRawTerms.lean",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean",
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingPreorderPrefix.lean",
+        "PPAC/Migration/ForcingBinderFormula.lean",
+        "PPAC/Migration/ForcingFormulaInduction.lean",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean",
+        "PPAC/Migration/Internal/SyntaxIdentityInduction.lean",
+        "PPAC/Migration/Internal/IndexFormulaRenameBridge.lean",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
+        "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
+        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean": "0fcfdf31ee781127a766773e07a255845cd8295219c7d3b4fdf311f45efb2ce9",
+        "PPAC/Migration/Internal/SyntaxIdentityInduction.lean": "dafbbcf6ab87fb73c4fb45903bf000c74f199b6d68629d1df5f684e6d8f92d5e",
+        "PPAC/Migration/Internal/IndexFormulaRenameBridge.lean": "79d8c40cdff1070bc604692539c05dab72f62f5b3931fb3a3a618aec9fafca37",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean": "05feac015bdc3b5828ad806fd9e6d45ed138498cb46e6f96d35b6c12eeffa4ad",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean": "db72736a9278396e8c95a3cccdd00b7fa5b4b6167c2de5fe10d730a7d4a3dc97"
+      },
+      "scope": "ALL internal raw-path formula cancellation, existing full induction/identity/index-mixed bridge reused; four identity witnesses internally generated/eliminated. from_prefix consumes SAME source R data, actual original prefixData and actual raw leaf query, internally creates common query to SAME raw output. relation_leaf consumes SAME source data and both ACTUAL raw/guard queries; BOTH common queries generated internally under SAME table D and compared by existing mixed output uniqueness. Three ordinary nativeZF kernel endpoints across two raw modules. No common-query/output/equality answer or guard/preorder truth supplied, no new kernel/checker/recursor/induction; target scopes/codes remain arbitrary internal/nonstandard. Extraction of SAME five-IMP leaf queries, member guards, whole negative/existential compiler codes, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationRawFormula.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.from_prefix": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.leafInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.leafSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.leaf_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.relation_leaf": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationRawFormula.to_direct": [
           "Classical.choice",
           "Quot.sound",
           "propext"

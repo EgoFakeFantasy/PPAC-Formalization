@@ -22,12 +22,14 @@
 
 本批ForcingRelationSource.from_compiled直接消费原rawData和真实guard编译，内部生成同一个R报价、四张实际native项像表，以及到原关系原子／guard原报价的两条mixed查询。四个compiler和五个共同源见证均留在对象量词；原完整编译矩阵／头和任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)及guard R(q,p)的AST身份复用既有Syntax自然性，没有新增公式归纳／核／checker／递归。仅中间SOURCE的0／1／3和原有限arity为报价元数据，不要求forcing目标作用域标准。普通nativeZF原核证书已完整验收；两条路径的实际目标码相消及完整guard对应尚未完成。
 
-ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。guard完整公式相消已由ForcingRelationGuardFormula接通；raw preorder／member叶码及完整guard对应仍未完成。
+ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。guard完整公式相消已由ForcingRelationGuardFormula接通；raw关系叶码等词现已接通；同一五IMP行查询提取、member叶及完整guard对应仍未完成。
 
-ForcingRelationGuardFormula复用既有全内部公式归纳／恒等码及index-mixed桥，将guard两路径比较提升到全部内部公式。四项恒等码／项像见证内部生成并消去；from_source_to_direct消费同一R记录的原native映射／查询及实际guard开口，内部生成裸R共同查询并使其输出就是原guard同一实际输出，不给定共同查询／输出答案。目标作用域和运行公式码允许内部非标准值，无guard真值或新核／checker／递归／归纳。两个普通nativeZF原核端点及12项新增声明trust=0预审已通过；本批9项完整验收／5项trust=0已通过，39268项声明、零警告；验收见verification/forcing-relation-guard-formula-acceptance.json。raw preorder路径的公式相消、member／order叶码与完整负／存在guard对应仍待接入。
+ForcingRelationGuardFormula复用既有全内部公式归纳／恒等码及index-mixed桥，将guard两路径比较提升到全部内部公式。四项恒等码／项像见证内部生成并消去；from_source_to_direct消费同一R记录的原native映射／查询及实际guard开口，内部生成裸R共同查询并使其输出就是原guard同一实际输出，不给定共同查询／输出答案。目标作用域和运行公式码允许内部非标准值，无guard真值或新核／checker／递归／归纳。两个普通nativeZF原核端点及12项新增声明trust=0预审已通过；本批9项完整验收／5项trust=0已通过，39268项声明、零警告；验收见verification/forcing-relation-guard-formula-acceptance.json。raw preorder路径的公式相消及关系叶码等词现由ForcingRelationRawFormula接通；同一五IMP行查询提取、member叶及完整负／存在guard对应仍待接入。
 
-下一项是从同一R的raw preorder实际查询及原三前缀／guard直接输出完成点式目标码相消和member／order guard对应，再消费既有局部解除／fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原L、全模式、递归及已验收数学／码行不重建。
+ForcingRelationRawTerms从实际三张prefixData及有类型原空表恢复同一[P2,P1,P0]森林，使用原native atomMap、字段读取和对象有限析取完成全部内部项比较。ForcingRelationRawFormula复用既有完整公式归纳／恒等桥，内部生成并消去四项恒等见证，生成到原raw叶同一实际输出的共同查询。relation_leaf从同一R记录、同一前缀及实际raw／guard查询内部生成两条相同共同查询，原输出唯一性给出关系叶码等词；没有给定森林、共同查询／输出或期望等式，不假定guard／preorder真值。源有限arity／0-1-2-3仅为报价元数据，目标范围／码保持内部及非标准。三个普通nativeZF原核端点和16项新增声明trust=0预审通过；本批9项完整验收／5项trust=0已通过，39284项声明、零警告；见verification/forcing-relation-raw-acceptance.json。同一五IMP行的叶查询提取、member叶及整段负／存在compiler对应仍待接入。
 
-本轮九项完整验收及五项trust=0均退出0；39268项声明、零警告，全部39256项既有足迹保持，12项新增公开声明无新增公理依赖。2854份旧PPAC证明源码原样；BinderFormula仅追加原恒等项证明的调用包装，原20810字节证明正文前缀及全部9个旧公开声明保留。16项回归、三个干净锁定依赖和75项源哈希通过，2889项密封输入全部重算。本批为本地验收，其对应独立Linux验收尚未取得。
+下一项是从同一五IMP实际矩阵行提取准确的六个叶查询，接通member叶与完整负／存在guard对应，再消费既有局部解除／fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原L、全模式、递归及已验收数学／码行不重建。
 
-当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-relation-guard-formula-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。
+本轮九项完整验收及五项trust=0均退出0；39284项声明、零警告，全部39268项既有足迹保持，16项新增公开声明无新增公理依赖。2856份旧PPAC证明源码完全不变，2891项密封输入全部重算；16项回归、三个干净锁定依赖和75项源哈希通过。本批为本地验收，后续Linux结果须由对应新提交独立取得。
+
+当前详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)、[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)；最新不可改写验收见`verification/forcing-relation-raw-acceptance.json`。历史批次以Git和对应验收报告保留，不把旧状态段用作当前执行指令。

@@ -1153,3 +1153,5 @@ import PPAC.Migration.ForcingPreorderPrefix
 import PPAC.Migration.ForcingRelationSource
 import PPAC.Migration.ForcingRelationImages
 import PPAC.Migration.ForcingRelationGuardFormula
+import PPAC.Migration.ForcingRelationRawTerms
+import PPAC.Migration.ForcingRelationRawFormula

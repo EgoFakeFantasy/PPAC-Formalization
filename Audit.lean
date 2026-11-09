@@ -39957,3 +39957,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.path_rename
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.sentence
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct
+
+#print axioms PPAC.Migration.ForcingRelationRawFormula.formula
+#print axioms PPAC.Migration.ForcingRelationRawFormula.from_prefix
+#print axioms PPAC.Migration.ForcingRelationRawFormula.kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationRawFormula.leafInput
+#print axioms PPAC.Migration.ForcingRelationRawFormula.leafSentence
+#print axioms PPAC.Migration.ForcingRelationRawFormula.leaf_kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationRawFormula.relation_leaf
+#print axioms PPAC.Migration.ForcingRelationRawFormula.sentence
+#print axioms PPAC.Migration.ForcingRelationRawFormula.to_direct
+#print axioms PPAC.Migration.ForcingRelationRawTerms.forest_from_prefix
+#print axioms PPAC.Migration.ForcingRelationRawTerms.frame
+#print axioms PPAC.Migration.ForcingRelationRawTerms.frame_rename
+#print axioms PPAC.Migration.ForcingRelationRawTerms.kernel_certificate
+#print axioms PPAC.Migration.ForcingRelationRawTerms.reversed
+#print axioms PPAC.Migration.ForcingRelationRawTerms.sentence
+#print axioms PPAC.Migration.ForcingRelationRawTerms.term
