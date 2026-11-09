@@ -1,0 +1,242 @@
+{
+  "verified_at": "2026-11-09T15:16:56.835648+00:00",
+  "baseline_commit": "45f6fc5f955a836577b1f9422201b5a4bf4707b9",
+  "original_stage": 10,
+  "background": "Original YesMetaZFC pure-set signature, ordinary nativeZF, original FirstOrder.Derives; final internal Con goal unchanged",
+  "result": "ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。",
+  "proof_boundaries": "原始preorder的实际目标开口、三次实例及row生成／原证明消费本批已完成，不再列为待做。精确识别这些guard码与ForcingNegCondition／ForcingGuardOpening的编译输出仍未完成；规范局部上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction和最终Con仍未证明。固定外部有限模式仅描述原preorder的3-ALL／5-IMP外层；目标free作用域、项索引和运行码仍允许内部非标准值。",
+  "actual_source_consumers": [
+    "Pinned AtomicForcing / ForcingQuotient preorder and original r<=q,q<=p direction",
+    "Accepted ForcingPreorderCode.produce; existing real mixed totality / binary_output / advanced quantifier lifting",
+    "Original InstantiateTop totality and exact source/target typing",
+    "Original typed binary0 constructor and original ForcingTransitiveGuardProof.at_background; no externally supplied final row"
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_commands": 5,
+    "audited_declarations": 39154,
+    "without_axioms": 2263,
+    "with_recorded_dependencies": 36891,
+    "warning_lines": 0,
+    "all_old_footprints_unchanged": 39127,
+    "old_PPAC_proof_source_hashes_unchanged": 2849,
+    "new_public_declarations": 27,
+    "new_axiom_dependencies": [],
+    "sealed_inputs": 2883,
+    "all_sealed_inputs_rehashed_before_and_after_cleanup": true,
+    "source_dependency_preflight_exit": 0,
+    "single_module_compile_exit": 0,
+    "single_module_trust0_exit": 0,
+    "all_27_public_footprints_audited": true,
+    "postcleanup_source_trust0_exit": 0,
+    "ci_compatibility_tests": 9,
+    "comparator_guard_tests": 7,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75,
+    "portable_posix_manifest_paths_verified": true,
+    "actual_source_row_constructed": true,
+    "exact_negative_guard_compiler_identification_proved": false,
+    "adapter_sha256": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4"
+  },
+  "remote_scope": {
+    "this_batch": "Local full acceptance only; new commit still requires independent Linux acceptance",
+    "previous_published_commit": "fe641d1e0c701ab1c09ca00e5820e1632a0629bc",
+    "previous_run": 42626115245,
+    "previous_run_status": "completed",
+    "previous_run_conclusion": "success",
+    "previous_actual_native_PASS": 39104,
+    "previous_receipt": "verification/ci-internal-proof-curry-remote-acceptance.json",
+    "publication_gate_satisfied": true
+  },
+  "cleanup": {
+    "files": 18,
+    "bytes": 30010660,
+    "exact_paths_sizes_and_sha256": [
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-core.log",
+        "bytes": 4904,
+        "sha256": "a2cd30d4c1841b53c60a74d3dae3c73f8881d55c2eee52d1d08e01ad2ff45718"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-core-fixed.log",
+        "bytes": 993,
+        "sha256": "bce54a3c49fde4093e68e971c5e34d15423cc5c6890bb0b1d7fee8a6515cf220"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-chain.log",
+        "bytes": 1351,
+        "sha256": "4325c8d68b2cd5eb5eaa4a75364a1f13cc81008a166fed863682fc285f8675cc"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-opening.log",
+        "bytes": 3709,
+        "sha256": "5c7ef5f9c712b75001eb3e3164af9b8d0fd891193e109c4b6b2dc7ee8ebab2c6"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-opening-fixed.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-producer.log",
+        "bytes": 892,
+        "sha256": "a797a0badbd1dbdf7e4858eb3cf4cceb35ffda0676792a2a43dd7c814af3d0cf"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-background.log",
+        "bytes": 3633,
+        "sha256": "56d9033d22e82878e5535f531dd0ba929ce7fd4cbb91c1ec5542db1f6c0edf48"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-background-fixed.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-consumer.log",
+        "bytes": 2985,
+        "sha256": "d282693d5b8b43026dbf437481e419f1e79eaf96e790fbc2cdfaa9f82ce8acae"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-integrated.log",
+        "bytes": 3668,
+        "sha256": "e8b5937499788a3d3ad821b2d639978a6d0bac7a1097b028c2b4ca1a25ac821a"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-final.log",
+        "bytes": 1435,
+        "sha256": "7e9b29f8de2c8d31d6ab910d06e5d7631e2a13bc8678802b7437580d2680ff94"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-final-fixed.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-assemble.py",
+        "bytes": 9750,
+        "sha256": "e3cddbb38e7dc2979d15a8e5925cc3cb9c1456dd45c3b9a250df12dedd560deb"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-consume.py",
+        "bytes": 10267,
+        "sha256": "b17daa5ad68aa4f618953131f522926cac627549f8f343e0b2e4ee066cb5402b"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-register.py",
+        "bytes": 8132,
+        "sha256": "3ffd50ea873f9b938c69289f61f8ea16d6a08da37b422a82c1d7632311ec114d"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-preaudit.lean",
+        "bytes": 1930,
+        "sha256": "8e0a1be7aa310720d6e8e3282929f2bbe967b21154cf588e662227925d7f1912"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-instances-baseline-summary.json",
+        "bytes": 14980221,
+        "sha256": "4d8d205371dbb91fa482ed148b6b1a719d2cfcf184dd7a0051c06a315bfba333"
+      },
+      {
+        "path": "C:/Users/17857/Documents/Codex/2026-07-24/zhe/work/ppac-yesmeta-migration/.local/preorder-code-baseline-summary.json",
+        "bytes": 14976790,
+        "sha256": "b44bd1f449ccc880c29eeff4d61b91fddb4d57b2d247f11e94fe1a1fdadc5b2a"
+      }
+    ],
+    "scope": "Exact own failed probes, unused generators, redundant logs and no-longer-needed baseline summary copies only; no unrelated files/processes or build caches",
+    "postcleanup_trust0_exit": 0,
+    "remaining_local_Lean_Lake_jobs": 0
+  }
+}

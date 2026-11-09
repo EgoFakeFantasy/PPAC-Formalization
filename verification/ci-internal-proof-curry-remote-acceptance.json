@@ -1,0 +1,93 @@
+{
+  "repository": "EgoFakeFantasy/PPAC-Formalization",
+  "branch": "migration/yesmeta-step3",
+  "commit": "fe641d1e0c701ab1c09ca00e5820e1632a0629bc",
+  "run_id": 42626115245,
+  "job_id": 129190229832,
+  "run_url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42626115245",
+  "conclusion": "success",
+  "run_completed_at": "2026-11-09T14:58:39Z",
+  "verified_from": "Fresh GitHub run/job APIs and actual decoded job log",
+  "actual_native_PASS": "2026-11-09T14:58:32.8822218Z PASS: 39104 audited declarations; 2262 without axioms; 36842 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39104,
+  "without_axioms": 2262,
+  "with_recorded_dependencies": 36842,
+  "warning_lines": 0,
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pinned L proof donor",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pinned OpenAI source",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install elan",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Resolve pinned Lean dependencies before source checks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check clean inputs and cross-platform source locks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build and audit",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Check out pinned OpenAI source",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Check out pinned L proof donor",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "compatibility_test_log_lines": [
+    "2026-11-09T13:31:48.2132838Z PASS: all three pinned clean repositories and 75 source hashes; sha256/text-crlf-to-lf/v1",
+    "2026-11-09T13:31:48.9575138Z Ran 9 tests in 0.670s",
+    "2026-11-09T13:31:49.1231793Z Ran 7 tests in 0.002s"
+  ],
+  "scope": "Independent clean Linux acceptance of fe641d1 only; not later 45f6fc5 or ForcingPreorderInstances commits or final internal Con.",
+  "final_internal_Con_proved": false,
+  "decoded_job_log_sha256": "ce4f574166b306b0900364e817a2baeff99799d71254b95d87e528c742c5a2c8",
+  "decoded_job_log_utf8_bytes": 39868,
+  "verified_at": "2026-11-09T15:14:31.252721+00:00"
+}

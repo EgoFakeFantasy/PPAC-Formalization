@@ -2742,7 +2742,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_condition', 'ForcingNegCondition', 18),
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
-                                ('forcing_preorder_code', 'ForcingPreorderCode', 23)):
+                                ('forcing_preorder_code', 'ForcingPreorderCode', 23),
+                                ('forcing_preorder_instances', 'ForcingPreorderInstances', 27)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6080,17 +6081,22 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "source_hash_policy": POLICY,
+        "object_actual_preorder_opening_and_three_native_instances_generated": True,
+        "object_actual_preorder_five_implications_and_typed_local_backgrounds_generated": True,
+        "object_actual_preorder_original_internal_proof_consumer_connected": True,
+        "object_actual_preorder_negative_guard_compiler_codes_identified": False,
+        "object_actual_preorder_instances_scope": "Actual raw source quotation -> generated empty bound table and real target parent/child opening -> THREE native instances -> FIVE IMP fields -> FIVE typed local backgrounds -> original internal G0-to-member/order proofs. No supplied target row, codes/proofs or guard/preorder truth. Runtime terms/free scope/codes include internal nonstandard values. Fixed outer pattern is only the pinned 3-ALL/5-IMP source shape. Exact negative/existential guard compiler identification, canonical context/fresh forall, full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_literal_source_preorder_raw_row_internally_generated": True,
-        "object_literal_source_preorder_raw_row_scope": "Existing literal preorder AST; sixteen actual typed raw quotations and nine AND/ALL/IMP fields internally generated from omega/numeral metadata only. Ordinary nativeZF original-kernel certificate. Actual mixed target opening, three runtime native instances and source guard identification remain pending; no claim of full mono/dense/forcingMP/Proof/reduction/finalCon.",
+        "object_literal_source_preorder_raw_row_scope": "Existing literal preorder AST; sixteen actual typed raw quotations and nine AND/ALL/IMP fields internally generated from omega/numeral metadata only. Ordinary nativeZF original-kernel certificate. Actual mixed opening and three native instances are now generated and consumed by ForcingPreorderInstances; exact negative/existential guard compiler identification and later mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_internal_single_and_double_local_deduction_producers_proved": True,
         "object_actual_local_negative_block_curried_at_same_Extra_proved": True,
-        "object_internal_local_deduction_scope": "InternalProofCurry internally builds six intermediate implication codes and original K/S/AND11/MP proofs. Existential parent proof is consumed directly. Single and double local conjunction discharge keep SAME G; accepted local negative consumer moves whole G0 block to implication under SAME Extra while preserving operand/falsum. Source preorder row identification, canonical guard-context reordering/freshness/forall assembly and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
+        "object_internal_local_deduction_scope": "InternalProofCurry internally builds six intermediate implication codes and original K/S/AND11/MP proofs. Existential parent proof is consumed directly. Single and double local conjunction discharge keep SAME G; accepted local negative consumer moves whole G0 block to implication under SAME Extra while preserving operand/falsum. Exact negative/existential guard compiler identification, canonical guard-context reordering/freshness/forall assembly and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",
         "object_local_transitivity_code_row_proof_producer_proved": True,
         "object_local_transitivity_additional_fixed_background_preserved": True,
         "object_local_transitivity_negative_target_guards_discharge_proved": True,
-        "object_local_transitivity_actual_source_row_constructed": False,
+        "object_local_transitivity_actual_source_row_constructed": True,
         "object_local_transitivity_local_antecedents_curried_for_forall": False,
-        "object_local_transitivity_scope": "Conditional actual-code row: original three forall/native instances and five implication antecedents retained. Local G0 includes all antecedents; actual original projections/rule20/S/MP produce internal G0->member/order and discharge negative target guards retaining SAME falsum. Source preorder/actual guards still must construct and identify this row, and local conditions must be curried before forall. No claim of full mono/dense/forcingMP/Con.",
+        "object_local_transitivity_scope": "ForcingTransitiveGuardProof consumes the original three-instance/five-IMP row. ForcingPreorderInstances now generates and consumes this actual row from the original raw preorder and real mixed/native operations, generating all local backgrounds and conditional member/order proofs. Exact identity with negative/existential guard compiler outputs and canonical local discharge/fresh forall remain pending; full mono/dense/forcingMP/Con are unproved.",
         "object_actual_negative_arbitrary_condition_normalization_proved": True,
         "object_actual_negative_arbitrary_condition_update_and_operand_constructed": True,
         "object_actual_negative_arbitrary_condition_scope": "ForcingNegCondition.produce internally generates actual S[j:=P] and direct operand, retains original full negative compiler/head/both guards/SAME falsum and both actual substitutions. ALL2 operand property proved from original rebind/open/mode2. No answer/guard truth/proof oracle. Non-diagonal guard transitivity and full mono/dense/forcingMP/Proof/reduction/finalCon remain unproved.",

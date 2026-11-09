@@ -43,23 +43,23 @@
 
 | 完整负编译器任意条件实例 | 本批接通完整原否定编译器在任意合法条件的实际实例：ForcingNegCondition.produce内部构造原Replacement更新表及直接子公式输出，消去原五项compiler、四项shell和两组六字段替换见证，保留同一原头部、两个guard的实际编译／替换判断及同一falsum。正文ALL2相消性质由已有原rebind／opening／mode2证明内部取得，非给定答案；原NegShell全文件逐字保留为前缀。运行范围及码仍覆盖内部非标准值。 此处未证明非对角guard、完整单调性／regularity或最终Con。 |
 
-| 局部传递性码行的内部证明生产 | 本批完成局部传递性码行的内部证明生产：在原三次ALL／native实例化及五个蕴含字段输入下，内部生成成员守卫与R(r,p)的原证明，并消费负实例的两个guard前件，结论保留同一子公式／falsum字段。任意额外固定背景Extra通过Ctx=Extra∧G0传输，父证明与guard使用同一Ctx。没有给定背景／守卫真值或目标证明；运行码／作用域可为内部非标准值。该码行仍须从实际完整预序及实际guard构造识别，含r的局部前件仍须在全称化前解除。 仅此行所述输入下的码证明已验收；源行构造／识别、局部条件解除和完整单调性仍未完成。 |
+| 局部传递性码行的内部证明生产 | 原ForcingTransitiveGuardProof保留三次ALL／native实例及五个IMP字段的准确合同，原内部member／order和负实例双guard消去、任意Extra背景传输已有验收。本批ForcingPreorderInstances已从实际raw源和真实操作生成整行并直接消费，不再把这份row作为给定输入。负／存在guard编译器输出的精确码识别仍未接通；局部条件整理与fresh全称化仍未装配。 |
 
-| 单／双局部前件解除及局部否定消费 | 本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。 实际源行构造／识别、规范guard上下文及fresh全称化仍未装配。 |
+| 单／双局部前件解除及局部否定消费 | 本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。 实际源行现已生成消费；精确guard编译码识别、规范guard上下文及fresh全称化仍未装配。 |
 
-| 原始preorder报价码与字面字段 | ForcingPreorderCode直接消费既有ForcingAtomicBasic.preorder；五项rfl检查锁定原AND、三层ALL及五前件IMP的准确结构。在对象存在量词内生成全部16个带类型raw quotation码和9项AND/ALL/IMP字段，并取得普通nativeZF原核证书。公开生产器只接收omega及0/1/2/3/(n+2)的源码作用域numeral证明，不接收报价输出、目标码／证明或guard／preorder真值。 只完成raw源行；三次目标运行实例及实际guard识别仍未接通。 |
+| 原preorder实际开口／三实例及原证明消费 | ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 精确guard编译码识别与完整mono／Proof／Con仍未完成。 |
 
 ## 当前真正缺口及依赖顺序
 
-- 任意条件完整否定归一化、局部传递性码行证明、任意Extra背景传输和单／双局部前件解除已有验收；原数学预序、guard opening、mode3／forall、L、完整模式及递归不重建。原始preorder报价与字段本批已实际生成；下一项是其mixed opening、三次native运行实例及实际guard码识别，再整理源局部guard上下文并装配fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链及全部内部Proof／Con。
+- 原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-preorder-code-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39127项声明、零警告，全部39104项既有足迹和2848份既有PPAC证明源码哈希保持，23项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2882项密封输入全部重算。已按路径／大小／SHA256清理本轮12个自建临时文件（56943字节），清理后源码trust=0复编译退出0。此处为本地验收，未冒充新提交独立Linux通过。
+`verification/forcing-preorder-instances-acceptance.json`：本轮九项完整验收及五项trust=0均退出0；39154项声明、零警告，全部39127项既有足迹和2849份既有PPAC证明源码哈希保持，27项新增公开声明无新增公理依赖。16项回归、三个干净锁定依赖和75项源哈希通过，2883项密封输入全部重算。清理18个自建临时文件（30010660字节），清理后源码trust=0复编译退出0。本批为本地验收，新提交仍需独立Linux验收。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42612572831／2599ca6已独立完整Linux成功，实际解码日志2026-11-09T13:19:42.1176781Z报告39019项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact全部成功，见`verification/ci-internal-proof-universal-remote-acceptance.json`。此回执仅覆盖旧2599ca6；本地39104项的新批次需要其对应提交的独立Linux验收。最终Con仍未完成。
+远端42626115245／fe641d1已独立完整Linux成功，实际解码日志2026-11-09T14:58:32.8822218Z报告39104项声明、零警告；安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact全部成功，见`verification/ci-internal-proof-curry-remote-acceptance.json`。此回执仅覆盖旧fe641d1；本地39154项的新提交需要其对应独立Linux验收。最终Con仍未完成。
