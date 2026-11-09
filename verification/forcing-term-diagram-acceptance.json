@@ -1,0 +1,291 @@
+{
+  "verified_at": "2026-11-09T04:35:08.160412+00:00",
+  "baseline_commit": "fed093484f7cbd71addb4ddb011e5d4156125f09",
+  "original_stage": 10,
+  "source_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_declarations": [
+    "forceFormula_rename",
+    "forceFormula_raise",
+    "forceFormula_instantiate",
+    "forcing_sound"
+  ],
+  "object_result": {
+    "whole_binder_closure": "The WHOLE object-quantified four-table TERM diagram (three original coded substitutions versus direct opening) is preserved by four ACTUAL original mixed binder lifts. All eight shift/identity maps, old source codes and all four old-run outputs are constructed/eliminated inside the object theory. No auxiliary map, old-run, variable-role/index or successor premise is retained.",
+    "actual_root": "Package the ACTUAL original rebind data, SAME opening/lift, selected parameter field and original InstantiateTop coded environment as the same coded invariant. Existing completed InstantiateFrameTerm.guarded_coded_iff and from_actual_input are reused; no original Run or equality answer is supplied. All five term candidates are object quantified."
+  },
+  "endpoints": [
+    "PPAC.Migration.ForcingTermDiagram.kernel_certificate",
+    "PPAC.Migration.ForcingTermDiagram.root_kernel_certificate"
+  ],
+  "endpoint_type": "FirstOrder.Derives nativeZF [] (Translation.sentence (...)) in unchanged original YesMetaZFC kernel",
+  "actual_contract": "Closure input is only Omega(w), the old object allMany5 term diagram, and four real original coded mixed binder lifts with coherent node scopes. Output is the entire new object allMany5 term diagram. Eight structural maps and all old path witnesses are internal. Actual root input is genuine complete compiler data/SAME opening and lift/mode2/zero/legal condition/actual parameter-table field/original InstantiateTop coded environment; output is the precise coded diagram for those SAME tables. No Run/equality-answer premise. All runtime counts and codes include internally nonstandard values.",
+  "reuse": [
+    "OriginalUniversalBlock.intro_many/at_many",
+    "ForcingMixedTermLift.natural on all four actual tables",
+    "Original coded term totality/typing and rename uniqueness",
+    "Original internal zero/predecessor/variable/head/shift/identity graph interfaces",
+    "Existing actual root triangle and complete original mode2/coded frame bridge"
+  ],
+  "acceptance": {
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "audited_declarations": 38737,
+    "new_audit_entries": 16,
+    "new_exact_footprints": {
+      "PPAC.Migration.ForcingTermDiagram.step": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.step_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.diagram": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.diagram_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.apply_diagram": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.lifts": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.lifts_rename": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.lifted": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.input": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.sentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.rootDiagram": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.root": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.rootInput": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.rootSentence": [
+        "propext",
+        "Quot.sound"
+      ],
+      "PPAC.Migration.ForcingTermDiagram.root_kernel_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound",
+        "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+        "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+      ]
+    },
+    "all_prior_declaration_footprints_unchanged": true,
+    "prior_declaration_count": 38721,
+    "all_prior_PPAC_proof_hashes_unchanged": true,
+    "prior_PPAC_proof_files": 2824,
+    "all_prior_SOURCE_LOCK_entries_unchanged": true,
+    "proof_files_now": 2825,
+    "sealed_inputs": 2857,
+    "warning_lines": 0,
+    "compatibility_regressions": 12,
+    "clean_pinned_repositories": 3,
+    "pinned_source_hashes": 75,
+    "actual_logs_sha256": {
+      "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+      "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+      "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+      "build.log": "d83f7188031e895085bb14cd958905de5440a7acaf282e051d22469bb9369184",
+      "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+      "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audit.log": "1da06fca410c7c53418c37396bcf85a57325848fb03540e70d7d14642c55008d"
+    },
+    "summary_sha256": "2df10b31b88074427a2f94b9c33a31a661ef6d358f38a3322c72b9aa27f77640"
+  },
+  "scope": {
+    "whole_four_table_term_diagram_binder_closure": true,
+    "actual_original_mode2_coded_root_invariant_constructed": true,
+    "all_auxiliary_maps_old_runs_roles_indices_internal": true,
+    "five_term_candidates_object_quantified": true,
+    "runtime_nonstandard_terms_indices_scopes_included": true,
+    "actual_root_structural_data_environment_parameter_field_are_premises": true,
+    "supplied_original_Run_or_equality_answer": false,
+    "full_formula_condition_rebind_open_instantiate_cancellation": false,
+    "forcing_specific_MP_bridge": false,
+    "uniform_coded_axiom_proof_correctness": false,
+    "InternalConsistency_reduction": false,
+    "final_internal_Con_goal_proved": false,
+    "original_stage_11_started": false
+  },
+  "cleanup_manifest": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\ForcingTermDiagramAudit.lean",
+      "bytes": 987,
+      "sha256": "8bb6b638eed9643a9f49855ce0d353551c4f3b37c347c233cdb2de0da8229e62"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-term-diagram-audit.log",
+      "bytes": 2524,
+      "sha256": "00d496e1c90386ba579e2fe2439784a2abcf88af2b56dced9266c4cbdc563782"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-term-diagram-directed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-term-diagram-build.log",
+      "bytes": 107,
+      "sha256": "22724f8d3484190f4c47b6e72012cf38eb087d2f6b32be92120a878420bfde52"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-term-diagram-full.log",
+      "bytes": 153,
+      "sha256": "7f863ebe7595cb851d1bed4982776aaa73cdced411c18dca4b3ce881ce9229f5"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-term-diagram-parent-summary.json",
+      "bytes": 14896411,
+      "sha256": "73a36042a6c1fa37b70d1f9cd7a5fa673cd7c8876769ad743e559df0a87ebc9e"
+    }
+  ],
+  "cleanup_completed": true,
+  "publication": {
+    "state": "local accepted; await entire preceding GitHub CI success and actual native PASS log before pushing",
+    "preceding_run": 42559428352
+  },
+  "post_cleanup_target_trust_zero_exit": 0,
+  "cleanup_verified_at": "2026-11-09T04:40:18.981853+00:00"
+}

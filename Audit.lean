@@ -39402,3 +39402,20 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingMixedTermLift.input
 #print axioms PPAC.Migration.ForcingMixedTermLift.sentence
 #print axioms PPAC.Migration.ForcingMixedTermLift.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingTermDiagram.step
+#print axioms PPAC.Migration.ForcingTermDiagram.step_rename
+#print axioms PPAC.Migration.ForcingTermDiagram.diagram
+#print axioms PPAC.Migration.ForcingTermDiagram.diagram_rename
+#print axioms PPAC.Migration.ForcingTermDiagram.apply_diagram
+#print axioms PPAC.Migration.ForcingTermDiagram.lifts
+#print axioms PPAC.Migration.ForcingTermDiagram.lifts_rename
+#print axioms PPAC.Migration.ForcingTermDiagram.lifted
+#print axioms PPAC.Migration.ForcingTermDiagram.input
+#print axioms PPAC.Migration.ForcingTermDiagram.sentence
+#print axioms PPAC.Migration.ForcingTermDiagram.kernel_certificate
+#print axioms PPAC.Migration.ForcingTermDiagram.rootDiagram
+#print axioms PPAC.Migration.ForcingTermDiagram.root
+#print axioms PPAC.Migration.ForcingTermDiagram.rootInput
+#print axioms PPAC.Migration.ForcingTermDiagram.rootSentence
+#print axioms PPAC.Migration.ForcingTermDiagram.root_kernel_certificate

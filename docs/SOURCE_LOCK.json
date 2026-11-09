@@ -165960,6 +165960,131 @@
           "propext"
         ]
       }
+    },
+    "forcing_term_diagram": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20"
+      },
+      "adapter": "PPAC/Migration/ForcingTermDiagram.lean",
+      "source_declarations": [
+        "forceFormula_rename",
+        "forceFormula_raise",
+        "forceFormula_instantiate",
+        "forcing_sound"
+      ],
+      "consumers": [
+        "Internal full-formula induction for actual condition-rebind/open/InstantiateTop cancellation",
+        "SAME actual root and mixed binder invariant before normalized forcing MP"
+      ],
+      "reuse_producers": [
+        "OriginalUniversalBlock allMany intro/at rules; no new quantifier kernel",
+        "ForcingMixedTermLift.natural for the four actual tables",
+        "Existing original coded term existence/typing, variable decomposition, fresh-zero fields and rename uniqueness",
+        "Actual ForcingRebindOpeningTriangle and completed InstantiateFrameTerm.guarded_coded_iff/from_actual_input"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
+        "PPAC/Migration/ForcingMixedTermLift.lean": "0845ce075fe503f1008b32282b99a6441866a076505543b6ec965ffe89082a6e",
+        "PPAC/Migration/ForcingRebindOpeningTriangle.lean": "714a4578d2523b2925e78bc0b4a790692fc7e1c8f3f9e884be15ad78208d9684",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermExistence.lean": "ee4bb1983ff381986b623b02c1a4c16c6053c1e7d664c3520640e8eacf75f90f",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean": "f5dac3f0824fbdf5350718bad07f176b9f0a6576033de7fbba7bfbb1028297e7",
+        "PPAC/Migration/Internal/SyntaxRenameTermUnique.lean": "e96f4bceb14a436530a0d76eb22cc6df5e48403fbf9ca3c361c0183cd0e3d57a",
+        "PPAC/Migration/Internal/SyntaxIndexLiftOrder.lean": "f005dc30b3b63c95562fd808d45d6b7c3d4abb89015a97b1d609d940abdbb1c4",
+        "PPAC/Migration/Internal/InstantiateFrameTerm.lean": "df77c4acb598ae5634ac6f62f1fa2416e6f66d33fcf3457f8bdbf42662c3b47d",
+        "PPAC/Migration/Internal/InstantiateOperationFrameRoot.lean": "007fc03650941a5606d24195631e2ca55ac0c91ff29abee1aee9fc50b7614da8"
+      },
+      "scope": "The WHOLE object-quantified four-table term diagram (three actual coded substitutions versus direct opening) is preserved by four ORIGINAL mixed binder advances. All eight shift/identity maps and every old-run witness are constructed and eliminated internally; no role/index/map/old-run premise remains. All scopes and term candidates may be internally nonstandard. Actual original rebind/open/mode2 root is also packaged as this coded invariant, REUSING the already completed mode2/coded bridge, with actual root data/selected parameter field/InstantiateTop environment as premises and no supplied Run/equality answer. Ordinary nativeZF original-kernel certificates for closure and actual root. Full FORMULA induction/cancellation, normalized forcing MP, uniform internal axiom/proof preservation, reduction and final Con remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingTermDiagram.step": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.step_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.diagram": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.diagram_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.apply_diagram": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.lifts": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.lifts_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.lifted": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.rootDiagram": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.rootInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.rootSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingTermDiagram.root_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {

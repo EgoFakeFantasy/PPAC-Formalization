@@ -19,17 +19,18 @@
 | 实际条件参数识别 | 从同一opening真实参数表内部生成选中字段P和偏移J=a+j，证明新头／原mode2组合结果恰为J处原自由变量码。P、偏移、头码和执行均非给定答案；覆盖内部非标准索引及码 |
 | 实际原重绑定的项方程 | 从完整compiler取得同一六见证和公式Subst；实际coded项替换精确对应原bound后继／free条件分支。只公开两项已有数据接口，原正文保持；完整三段公式相消仍未证明 |
 | 实际三段根项组合 | 对任意内部纯项，真实重绑定／lifted opening／原mode2输出等于直接opening输出；实际操作判断和选中参数字段是前提，变量角色／索引／后继内部取得 |
-| 任意目标深度的单步binder项交换 | 原mixed substitution与真实binder lift交换，输出为旧输出的原移位rename；复用实际shift／identity图，头码／变量见证内部取得。整组三段组合的binder闭包尚未证明 |
+| 任意目标深度的单步binder项交换 | 原mixed substitution与真实binder lift交换，输出为旧输出的原移位rename；复用实际shift／identity图，头码／变量见证内部取得。整组闭包现已由下行完成，完整公式相消尚未证明 |
+| 完整项组合的binder闭包／实际根部 | 对象全称的四表项不变式已证明在四个原mixed lift下保持；八张辅助图和旧运行全部内部取得。实际mode2根部已复用现有coded桥装配；完整公式归纳仍待完成 |
 
 ## 当前真正缺口及依赖顺序
 
-- 根部项组合和单步项交换已完成；下一消费者是三段操作与直接opening四张真实码表的整组binder闭包，使用`ForcingMixedTermLift.natural`及已有`InstantiateFrameTerm.coded_iff`衔接原mode2，再做内部公式归纳以完成**全内部公式相消**。现有纯索引重命名复合及编码解码往返定理已有，但尚未建立它们对跨bound/free混合替换的直接适用性；不把已有接口本身误报缺失。
+- 四表项不变式的整组binder闭包及实际原mode2/coded根部装配均已完成；下一步以此做全内部公式归纳，复用现有完整`InstantiateTopFormulaOperation.run_iff`对齐原模式2公式运算，完成**全内部公式相消**。已有项／公式桥不重建。现有纯索引重命名复合及编码解码往返定理已有，但尚未建立它们对跨bound/free混合替换的直接适用性；不把已有接口本身误报缺失。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-rebind-opening-triangle-acceptance.json`：九项命令和五项trust=0均退出0；38721项声明，零警告；38713项旧依赖足迹和全部2822份旧证明源码哈希不变，全部既有SOURCE_LOCK条目保持。12项跨平台回归、三个干净锁定依赖及75项源哈希检查通过。已取得根部全内部纯项的真实三段组合和任意目标bound深度下的单步binder项交换，不证明整组组合binder闭包、完整公式相消、强迫MP、reduction或最终Con。
+`verification/forcing-term-diagram-acceptance.json`：九项命令和五项trust=0均退出0；38737项声明，零警告；38721项旧依赖足迹和全部2824份旧证明源码哈希不变，既有SOURCE_LOCK条目保持。12项跨平台回归、三个干净锁定依赖及75项源哈希检查通过。整组四表项不变式的binder闭包和实际原mode2/coded根部均已证明；完整公式归纳／相消、强迫MP、reduction及最终Con尚未证明。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
