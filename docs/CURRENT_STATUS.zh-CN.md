@@ -6,7 +6,7 @@
 
 ## 已完成并必须复用
 
-最新验收为 `ForcingExistTailOpening`：原 shell 加实际尾部查询现已给出全部16个内部执行见证，保留两次真实 binder 提升、三次 AND 构造和全部四个叶子查询。完整九命令／五项 trust=0 通过，39502项声明零警告，旧39483足迹和2872份旧证明文件不变。见 [验收回执](../verification/forcing-exist-tail-opening-acceptance.json)。跨条件尾部比较仍未完成；直接在同一记录上消费四个已完成比较，不重证这些组件。闭项提升直接复用 `EmptyBoundFreeInputs.term_free`；替换表的作用域传输可保留原两张图，以 `SyntaxMixedImageCodeFields.from_fields` 重定类型，不生产候选表或新后端。
+最新验收为 `ForcingExistTailOpening.prepare_shell/scope_alignment`：直接消费已完成的16见证读取，复用原 `graph_free/graph_mixed` 保留同一输入表码和两张实际替换图，在两次真实目标作用域导出原表／基表类型及同一覆盖；由原后继唯一性导出两次执行的四个作用域等式。原19项证明正文及旧39502足迹不变，九命令／五项 trust=0 通过，39515项声明零警告。见 [验收回执](../verification/forcing-exist-tail-scopes-acceptance.json)。这些作用域条件已完成，不再列为待做。下一步生成共同 head 与 canonical child 帧；只调用一次现成 `ForcingExistChildCanonical.derive` 生成共用 r-head 和两侧覆盖／提升／输出，其同一覆盖也用于 order 帧，不重复生产。再消费四个已证组件比较、封装两次 EX；完整尾部比较和最终 Con 仍未完成。
 
 | 已有资产 | 当前精确边界 |
 |---|---|

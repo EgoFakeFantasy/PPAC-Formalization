@@ -1,6 +1,8 @@
 import PPAC.Migration.ForcingExistCode
 import PPAC.Migration.ForcingMixedUnary
 import PPAC.Migration.ForcingFormulaDiagram
+import PPAC.Migration.ForcingReflexiveImages
+import PPAC.Migration.Internal.EmptyBoundFreeInputs
 
 /-! Read the WHOLE literal original existential tail at an ACTUAL mixed output.
 Both EX binder lifts and all three AND outputs are object witnesses. The source
@@ -275,5 +277,218 @@ theorem kernel_certificate {m} (w R S a f c T Q : Fin m) (s : Fin 9 → Fin m) :
   have hG : Derives Γ G := .hyp (Or.inl rfl)
   exact from_query (ZFContext.add (ZFContext.source_ZF m) G) w R S a f c T Q s
     (.conjL hG) (.conjL (.conjR hG)) (.conjR (.conjR hG))
+
+/-- Retag the SAME already encoded graph of closed terms. The original
+free/mixed bridges do all term work; the structural encoding is untouched. -/
+private theorem encoded_at_scope {m} {Γ : Context m}
+    (w a z C T L G : Fin m) (hz : Derives Γ (empty z))
+    (hC : Derives Γ (.mem C w))
+    (he : Derives Γ (SyntaxMixedImageCodeSyntax.encoded w G a z T L)) :
+    Derives Γ (SyntaxMixedImageCodeSyntax.encoded w G a C T L) :=
+  .conjI (EmptyBoundFreeInputs.graph_mixed w G a C T hC
+    (EmptyBoundFreeInputs.graph_free w G a z T hz (.conjL he))) (.conjR he)
+
+/-- Read the original source encodings from the FIRST actual lift and retain
+both closed code tables at an arbitrary actual target scope. No new graphs. -/
+private theorem lists_at_scope {m} {Γ : Context m}
+    (w R S a f z T A C K H D : Fin m) (hz : Derives Γ (empty z))
+    (hD : Derives Γ (.mem D w))
+    (hl : Derives Γ (lifted w R S a f z T A C K H)) :
+    Derives Γ (SyntaxMixedImageCodeSyntax.termLists w a f D T R S) := by
+  let E := SyntaxCodedMixedBinderSyntax.body w R S a f z T A C K H
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ hl
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hz4 := of_eq (empty_rename z (old 4)) (HornBinderRules.under_body 4 hz E)
+  have hD4 := HornBinderRules.under_body 4 hD E
+  have hR := encoded_at_scope (old 4 w) (old 4 a) (old 4 z) (old 4 D) (old 4 T)
+    (old 4 R) (slot 4 0) hz4 hD4 (.conjL (.conjL hE))
+  have hS := encoded_at_scope (old 4 w) (old 4 f) (old 4 z) (old 4 D) (old 4 T)
+    (old 4 S) (slot 4 1) hz4 hD4 (.conjR (.conjL hE))
+  have hLists : Derives Δ (SyntaxMixedImageCodeSyntax.termLists (old 4 w) (old 4 a) (old 4 f)
+      (old 4 D) (old 4 T) (old 4 R) (old 4 S)) :=
+    .conjI (SyntaxMixedImageCodeFields.term_list (old 4 w) (slot 4 0) (old 4 a) (old 4 D) (old 4 T) (old 4 R) hR)
+      (SyntaxMixedImageCodeFields.term_list (old 4 w) (slot 4 1) (old 4 f) (old 4 D) (old 4 T) (old 4 S) hS)
+  exact of_eq (SyntaxMixedImageCodeSyntax.termLists_rename w a f D T R S (old 4)).symm hLists
+
+/-- Preserve BOTH actual replacement graphs and the SAME result list.
+Neither a replacement candidate nor a list uniqueness comparison is needed. -/
+private theorem replacement_at_scope {m} {Γ : Context m}
+    (w a z C T Base j p S : Fin m) (hz : Derives Γ (empty z))
+    (hC : Derives Γ (.mem C w))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w a z T Base j p S)) :
+    Derives Γ ((SyntaxMixedImageCodeSyntax.termList w a C T Base).conj
+      (ForcingReflexiveImages.replacement w a C T Base j p S)) := by
+  let E := ForcingReflexiveImages.body w a z T Base j p S
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ hr
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hz2 := of_eq (empty_rename z (old 2)) (HornBinderRules.under_body 2 hz E)
+  have hC2 := HornBinderRules.under_body 2 hC E
+  have hInput := encoded_at_scope (old 2 w) (old 2 a) (old 2 z) (old 2 C) (old 2 T)
+    (old 2 Base) (slot 2 0) hz2 hC2 (.conjL hE)
+  have hOutput := encoded_at_scope (old 2 w) (old 2 a) (old 2 z) (old 2 C) (old 2 T)
+    (old 2 S) (slot 2 1) hz2 hC2 (.conjR (.conjR hE))
+  have hData : Derives Δ (ForcingReflexiveImages.data (old 2 w) (old 2 a) (old 2 C) (old 2 T)
+      (old 2 Base) (old 2 j) (old 2 p) (old 2 S) (slot 2 0) (slot 2 1)) :=
+    .conjI hInput (.conjI (.conjL (.conjR hE)) hOutput)
+  have hRep : Derives Δ (ForcingReflexiveImages.replacement (old 2 w) (old 2 a) (old 2 C) (old 2 T)
+      (old 2 Base) (old 2 j) (old 2 p) (old 2 S)) := by
+    apply HornBinderRules.intro_many 2 _ (slot 2)
+    exact of_eq (by simp only [ForcingReflexiveImages.body, ForcingReflexiveImages.data_rename, assign_old, assign_slot]) hData
+  have hType := SyntaxMixedImageCodeFields.term_list (old 2 w) (slot 2 0) (old 2 a) (old 2 C) (old 2 T) (old 2 Base) hInput
+  exact of_eq (by simp only [Formula.rename, SyntaxMixedImageCodeSyntax.termList_rename,
+    ForcingReflexiveImages.replacement_rename]) (.conjI hType hRep)
+
+/-- SAME sixteen actual tail witnesses, now with the actual source/target
+successors and the SAME closed base/overwrite at BOTH target scopes. -/
+def scopeData {m} (w R S a f z T Q Base j p : Fin m)
+    (s : Fin 9 → Fin m) (v : Fin 16 → Fin m) : Formula m :=
+  (data w R S a f z T Q s v).conj
+    ((SyntaxCodedMixedBinderSyntax.input w R S a f z T (v 1) (v 2)).conj
+      ((SyntaxCodedMixedBinderSyntax.input w (v 3) (v 4) (v 1) f (v 2) T (v 10) (v 11)).conj
+        ((SyntaxMixedImageCodeSyntax.termLists w a f (v 2) T R S).conj
+          ((SyntaxMixedImageCodeSyntax.termLists w a f (v 11) T R S).conj
+        (((SyntaxMixedImageCodeSyntax.termList w f (v 2) T Base).conj
+          (ForcingReflexiveImages.replacement w f (v 2) T Base j p S)).conj
+          ((SyntaxMixedImageCodeSyntax.termList w f (v 11) T Base).conj
+            (ForcingReflexiveImages.replacement w f (v 11) T Base j p S)))))))
+
+theorem scopeData_rename {m l} (w R S a f z T Q Base j p : Fin m)
+    (s : Fin 9 → Fin m) (v : Fin 16 → Fin m) (ρ : Fin m → Fin l) :
+    (scopeData w R S a f z T Q Base j p s v).rename ρ =
+      scopeData (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ z) (ρ T) (ρ Q) (ρ Base) (ρ j) (ρ p)
+        (fun i => ρ (s i)) (fun i => ρ (v i)) := by
+  simp only [scopeData, Formula.rename, data_rename, SyntaxCodedMixedBinderSyntax.input_rename,
+    SyntaxMixedImageCodeSyntax.termList_rename, ForcingReflexiveImages.replacement_rename,
+    SyntaxMixedImageCodeSyntax.termLists_rename]
+
+def scopeBody {m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m) : Formula (m+16) :=
+  scopeData (old 16 w) (old 16 R) (old 16 S) (old 16 a) (old 16 f) (old 16 z) (old 16 T) (old 16 Q)
+    (old 16 Base) (old 16 j) (old 16 p) (fun i => old 16 (s i)) (slot 16)
+def scopeResult {m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m) : Formula m :=
+  existsMany 16 (scopeBody w R S a f z T Q Base j p s)
+
+theorem scopeResult_rename {m l} (w R S a f z T Q Base j p : Fin m)
+    (s : Fin 9 → Fin m) (ρ : Fin m → Fin l) :
+    (scopeResult w R S a f z T Q Base j p s).rename ρ =
+      scopeResult (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ z) (ρ T) (ρ Q) (ρ Base) (ρ j) (ρ p)
+        (fun i => ρ (s i)) := by
+  simp only [scopeResult, existsMany_rename, scopeBody, scopeData_rename, lift_old, lift_slot]
+
+/-- All scope/base operations required here are read from the SAME actual
+tail lifts and closed replacement. No target-scope typing is assumed. -/
+theorem prepare_records {m} {Γ : Context m} (w R S a f z T Q Base j p : Fin m)
+    (s : Fin 9 → Fin m) (v : Fin 16 → Fin m)
+    (hz : Derives Γ (empty z))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T Base j p S))
+    (hd : Derives Γ (data w R S a f z T Q s v)) :
+    Derives Γ (scopeData w R S a f z T Q Base j p s v) := by
+  have hLift0 := Derives.conjL (.conjR (.conjL hd))
+  have hLift1 := Derives.conjL (.conjR (.conjL (.conjR (.conjR (.conjR hd)))))
+  have hFirst := SyntaxCodedMixedBinderTyping.input_of_lifted w R S a f z T (v 1) (v 2) (v 3) (v 4) hLift0
+  have hSecond := SyntaxCodedMixedBinderTyping.input_of_lifted w (v 3) (v 4) (v 1) f (v 2) T (v 10) (v 11) (v 12) (v 13) hLift1
+  have hOut0 := SyntaxCodedMixedBinderTyping.output_lists w R S a f z T (v 1) (v 2) (v 3) (v 4) hLift0
+  have hOut1 := SyntaxCodedMixedBinderTyping.output_lists w (v 3) (v 4) (v 1) f (v 2) T (v 10) (v 11) (v 12) (v 13) hLift1
+  have hBase0 := replacement_at_scope w f z (v 2) T Base j p S hz
+    (.conjL (.conjL (.conjR (.conjL hOut0)))) hr
+  have hBase1 := replacement_at_scope w f z (v 11) T Base j p S hz
+    (.conjL (.conjL (.conjR (.conjL hOut1)))) hr
+  have hRoots0 := lists_at_scope w R S a f z T (v 1) (v 2) (v 3) (v 4) (v 2) hz
+    (.conjL (.conjL (.conjR (.conjL hOut0)))) hLift0
+  have hRoots1 := lists_at_scope w R S a f z T (v 1) (v 2) (v 3) (v 4) (v 11) hz
+    (.conjL (.conjL (.conjR (.conjL hOut1)))) hLift0
+  exact .conjI hd (.conjI hFirst (.conjI hSecond (.conjI hRoots0 (.conjI hRoots1 (.conjI hBase0 hBase1)))))
+
+/-- Enrich the already proved whole-tail reader, without changing or
+reproducing its sixteen witnesses. -/
+theorem prepare_result {m} {Γ : Context m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m)
+    (hz : Derives Γ (empty z))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T Base j p S))
+    (he : Derives Γ (result w R S a f z T Q s)) :
+    Derives Γ (scopeResult w R S a f z T Q Base j p s) := by
+  let E := body w R S a f z T Q s
+  let Δ := Context.add E (raisedContext 16 Γ)
+  apply HornBinderRules.eliminate_many 16 E _ he
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hd := prepare_records (old 16 w) (old 16 R) (old 16 S) (old 16 a) (old 16 f) (old 16 z) (old 16 T) (old 16 Q)
+    (old 16 Base) (old 16 j) (old 16 p) (fun i => old 16 (s i)) (slot 16)
+    (of_eq (empty_rename z (old 16)) (HornBinderRules.under_body 16 hz E))
+    (of_eq (ForcingReflexiveImages.replacement_rename w f z T Base j p S (old 16)) (HornBinderRules.under_body 16 hr E)) hE
+  have hout : Derives Δ (scopeResult (old 16 w) (old 16 R) (old 16 S) (old 16 a) (old 16 f) (old 16 z) (old 16 T) (old 16 Q)
+      (old 16 Base) (old 16 j) (old 16 p) (fun i => old 16 (s i))) := by
+    apply HornBinderRules.intro_many 16 _ (slot 16)
+    exact of_eq (by simp only [scopeBody, scopeData_rename, assign_old, assign_slot]) hd
+  exact of_eq (scopeResult_rename w R S a f z T Q Base j p s (old 16)).symm hout
+
+theorem prepare_query {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T Base j p S))
+    (hs : Derives Γ (source w s))
+    (hq : Derives Γ (substituted w R S a f z T (s 0) Q)) :
+    Derives Γ (scopeResult w R S a f z T Q Base j p s) :=
+  prepare_result w R S a f z T Q Base j p s hz hr (from_query hZ w R S a f z T Q s hw hs hq)
+
+theorem prepare_shell {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A B C f qM qO rM rO D Nc Q R S z T Y Base j p : Fin m) (v : Fin 7 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T Base j p S))
+    (hs : Derives Γ (ForcingExistCode.shellData w a A B C f qM qO rM rO D Nc Q v))
+    (hy : Derives Γ (substituted w R S A f z T (v 4) Y)) :
+    Derives Γ (scopeResult w R S A f z T Y Base j p (shellCodes rM rO D Nc v)) :=
+  prepare_result w R S A f z T Y Base j p (shellCodes rM rO D Nc v) hz hr
+    (from_shell hZ w a A B C f qM qO rM rO D Nc Q R S z T Y v hw hs hy)
+
+def preparedInput {m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m) : Formula m :=
+  (input w R S a f z T Q s).conj ((empty z).conj
+    (ForcingReflexiveImages.replacement w f z T Base j p S))
+def preparedSentence {m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m) : Source.Sentence :=
+  ((preparedInput w R S a f z T Q Base j p s).imp (scopeResult w R S a f z T Q Base j p s)).close
+
+theorem prepared_kernel_certificate {m} (w R S a f z T Q Base j p : Fin m) (s : Fin 9 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (preparedSentence w R S a f z T Q Base j p s)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let G := preparedInput w R S a f z T Q Base j p s
+  let Γ := Context.add G (Source.SetLanguage.ZF.at m)
+  have hG : Derives Γ G := .hyp (Or.inl rfl)
+  have hI := Derives.conjL hG
+  exact prepare_query (ZFContext.add (ZFContext.source_ZF m) G) w R S a f z T Q Base j p s
+    (.conjL hI) (.conjL (.conjR hG)) (.conjR (.conjR hG))
+    (.conjL (.conjR hI)) (.conjR (.conjR hI))
+
+private theorem successor_predecessor {m} {Γ : Context m} (s i j : Fin m)
+    (he : Derives Γ (.equal i j)) (hs : Derives Γ (successor s i)) :
+    Derives Γ (successor s j) := by
+  let P := successor s.castSucc (Fin.last m)
+  exact of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (Derives.eqSubst P he
+      (of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hs))
+
+/-- TWO independent actual tail executions have equal source/target
+successors. No externally standard depth or supplied scope equality. -/
+theorem scope_alignment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w R S S1 a f z T Q Q1 Base j p q : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
+    (hv : Derives Γ (scopeData w R S a f z T Q Base j p s v))
+    (hu : Derives Γ (scopeData w R S1 a f z T Q1 Base j q s u)) :
+    Derives Γ ((Formula.equal (v 1) (u 1)).conj
+      ((Formula.equal (v 2) (u 2)).conj
+        ((Formula.equal (v 10) (u 10)).conj (.equal (v 11) (u 11))))) := by
+  have hv0 := Derives.conjL (.conjR hv)
+  have hu0 := Derives.conjL (.conjR hu)
+  have hv1 := Derives.conjL (.conjR (.conjR hv))
+  have hu1 := Derives.conjL (.conjR (.conjR hu))
+  have he := (ZFContext.arithmetic hZ).base.extensionality
+  have eA := OmegaUniversal.successor_unique (v 1) (u 1) a he (.conjL (.conjR hv0)) (.conjL (.conjR hu0))
+  have ec := OmegaUniversal.successor_unique (v 2) (u 2) z he (.conjR (.conjR hv0)) (.conjR (.conjR hu0))
+  have hA := successor_predecessor (u 10) (u 1) (v 1) (eq_symm eA) (.conjL (.conjR hu1))
+  have hc := successor_predecessor (u 11) (u 2) (v 2) (eq_symm ec) (.conjR (.conjR hu1))
+  exact .conjI eA (.conjI ec (.conjI
+    (OmegaUniversal.successor_unique (v 10) (u 10) (v 1) he (.conjL (.conjR hv1)) hA)
+    (OmegaUniversal.successor_unique (v 11) (u 11) (v 2) he (.conjR (.conjR hv1)) hc)))
 
 end PPAC.Migration.ForcingExistTailOpening

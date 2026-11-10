@@ -2,7 +2,7 @@
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
 
-本批 `ForcingExistTailOpening.from_shell` 已直接消费原 `ForcingExistCode.shellData` 与实际尾部查询，复用现有 unary/binary 输出读取，取得两次 EX、三次 AND 及四个叶子查询的同一次执行记录。全部16个输出／后继／提升表见证在对象存在量词内产生、消去；普通 nativeZF 原核闭句已通过。九条完整验收命令／五项 trust=0 全通过，39502项声明零警告，39483项旧足迹及2872份旧 PPAC 证明文件保持，2906项密封输入重算，见 [实际尾部读取验收](../verification/forcing-exist-tail-opening-acceptance.json)。**这不等于尾部跨条件相等**：还须在这些同一记录上统一作用域、闭参数基表与 head，消费已完成的成员／次序／域／child 四个比较并封装两次 EX，随后推进原联合强迫归纳、全部内部公理／六规则 Proof、reduction 与最终 Con。
+`ForcingExistTailOpening.from_shell` 的完整16见证读取已完成并保持。本批 `prepare_shell` 直接消费同一读取结果，保留原两张替换图和原名字／自由表码，取得两次实际目标作用域下的原表类型、同一闭基表类型及同一外条件覆盖；`scope_alignment` 由原后继唯一性推出两次独立执行的四个作用域等式，不再作为前提。新增普通 nativeZF 原核闭句；既有19项证明正文不变。九条完整命令／五项 trust=0 全通过，39515项声明零警告，39502项旧足迹和2872份其他证明文件不变，2906项密封输入重算，见 [同一图作用域验收](../verification/forcing-exist-tail-scopes-acceptance.json)。**完整尾部跨条件相等仍未完成**：还须生成共用 head／canonical child 操作帧，在同一16见证上消费已证成员／次序／域／child 四个比较并封装两次 EX，然后推进原联合强迫归纳、全部内部公理／六规则 Proof、reduction 和最终 Con。不重做已完成的读取、作用域传输及四个组件比较。
 
 | 原阶段／资产 | 实际状态 |
 |---|---|

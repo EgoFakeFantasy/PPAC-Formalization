@@ -40207,3 +40207,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailOpening.input
 #print axioms PPAC.Migration.ForcingExistTailOpening.sentence
 #print axioms PPAC.Migration.ForcingExistTailOpening.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistTailOpening.scopeData
+#print axioms PPAC.Migration.ForcingExistTailOpening.scopeData_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.scopeBody
+#print axioms PPAC.Migration.ForcingExistTailOpening.scopeResult
+#print axioms PPAC.Migration.ForcingExistTailOpening.scopeResult_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.prepare_records
+#print axioms PPAC.Migration.ForcingExistTailOpening.prepare_result
+#print axioms PPAC.Migration.ForcingExistTailOpening.prepare_query
+#print axioms PPAC.Migration.ForcingExistTailOpening.prepare_shell
+#print axioms PPAC.Migration.ForcingExistTailOpening.preparedInput
+#print axioms PPAC.Migration.ForcingExistTailOpening.preparedSentence
+#print axioms PPAC.Migration.ForcingExistTailOpening.prepared_kernel_certificate
+#print axioms PPAC.Migration.ForcingExistTailOpening.scope_alignment

@@ -172421,17 +172421,25 @@
         "PPAC/Migration/ForcingMixedUnary.lean",
         "PPAC/Migration/ForcingFormulaDiagram.lean",
         "PPAC/Migration/Internal/HornBinderRules.lean",
-        "PPAC/Migration/Internal/SyntaxMixedFormulaRecursiveSyntax.lean"
+        "PPAC/Migration/Internal/SyntaxMixedFormulaRecursiveSyntax.lean",
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean",
+        "PPAC/Migration/OmegaUniversal.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistTailOpening.lean": "cd1e1d39df3847461942ec8068e2e599e79dfd88647053e11d5b7216c5918ed9",
+        "PPAC/Migration/ForcingExistTailOpening.lean": "5d244fe331925fe356517f148a749439e69f6ce89ff639e95266872f33eb4843",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
-        "PPAC/Migration/Internal/SyntaxMixedFormulaRecursiveSyntax.lean": "4d1699c02fea244de8a1655c47c01b373e310490464b7181c209f832a1ef077f"
+        "PPAC/Migration/Internal/SyntaxMixedFormulaRecursiveSyntax.lean": "4d1699c02fea244de8a1655c47c01b373e310490464b7181c209f832a1ef077f",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean": "51b9f83c0f755d53f1a5ad26acdd79203d91fde2fb1949d98d48acd254920a7b",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
+        "PPAC/Migration/OmegaUniversal.lean": "9581783ce0c6063bb68a0ecc4ea822a0284ffe95c90570fcd124fe57b3174762"
       },
-      "scope": "Whole ACTUAL original existential TAIL output decomposition. Reads the SAME original ForcingExistCode.shellData source constructors and actual mixed query at original shell v[4]. Internally produces and eliminates SIXTEEN actual output/binder witnesses, retaining BOTH EX target constructors, BOTH actual coded binder lifts, all THREE AND target constructors and actual queries for member, order, domain and child. Existing ForcingMixedUnary.single_output and ForcingFormulaDiagram.binary_output only; no new compiler/kernel/checker/recursor/induction. Runtime source/target depths, free counts, raw formulas, image tables and all sixteen values remain internal including nonstandard. No canonical tables, expected query results or output equality as premise. Ordinary nativeZF original-kernel closed sentence. This is actual tail-reading, NOT cross-condition equality: common scope/base/head normalization and consumption of the FOUR already complete component comparisons, then two-EX equality packaging remain; canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon are unproved.",
+      "scope": "Whole ACTUAL original existential TAIL output decomposition. Reads the SAME original ForcingExistCode.shellData source constructors and actual mixed query at original shell v[4]. Internally produces and eliminates SIXTEEN actual output/binder witnesses, retaining BOTH EX target constructors, BOTH actual coded binder lifts, all THREE AND target constructors and actual queries for member, order, domain and child. Existing ForcingMixedUnary.single_output and ForcingFormulaDiagram.binary_output only; no new compiler/kernel/checker/recursor/induction. Runtime source/target depths, free counts, raw formulas, image tables and all sixteen values remain internal including nonstandard. No canonical tables, expected query results or output equality as premise. Ordinary nativeZF original-kernel closed sentence. This is actual tail-reading, NOT cross-condition equality: common head/canonical child frame generation and consumption of the FOUR already complete component comparisons, then two-EX equality packaging remain; canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon are unproved. Stronger SAME-module scope consumer is now proved: prepare_shell/prepare_query call the existing whole reader, preserve its SAME16 witnesses and original first-lift source graphs. Original graph_free/graph_mixed retain UNCHANGED root bound/free list codes and SAME replacement input/output graphs at BOTH actual target scopes. Both base typings and SAME outer-condition overwrite are generated; no new graph, field induction, candidate table or desired table equality is a premise. scope_alignment derives FOUR source/target scope equalities for TWO independent executions using original successor_unique and original equal substitution. Original19 mathematical bodies and footprints unchanged; new prepared nativeZF closed sentence. SAME common heads/canonical child frame production and consumption of all four already complete component comparisons, two-EX equality packaging and finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistTailOpening.openedData": [
           "Quot.sound",
@@ -172522,6 +172530,73 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scopeData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scopeData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scopeBody": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scopeResult": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scopeResult_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.prepare_records": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.prepare_result": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.prepare_query": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.prepare_shell": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.preparedInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.preparedSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.prepared_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailOpening.scope_alignment": [
+          "Classical.choice",
+          "Quot.sound",
           "propext"
         ]
       }

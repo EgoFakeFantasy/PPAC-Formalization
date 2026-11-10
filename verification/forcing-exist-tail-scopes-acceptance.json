@@ -1,0 +1,165 @@
+{
+  "verified_at": "2026-11-10T13:20:35.774459+00:00",
+  "baseline_commit": "392871a957a1bc7109bb18bbe4a2f2e20ce2d3c5",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual original whole-tail sixteen-witness reader accepted and committed 392871a; final Con active",
+  "background": "Original pure membership/equality and full nativeZF, original FirstOrder.Derives via unchanged replay. All runtime scopes and codes internal including nonstandard. No object Choice/new kernel/checker/recursor/induction.",
+  "source_consumers": [
+    "Same actual original existential tail: original shell and mixed query",
+    "All FOUR already complete component comparisons must consume the SAME actual scope/base/head operations"
+  ],
+  "result": [
+    "prepare_shell/prepare_query CONSUME existing whole-tail reader and preserve its SAME SIXTEEN actual witnesses",
+    "Original graph_free/graph_mixed transport SAME first-lift source graph encodings; UNCHANGED original bound/free table codes typed at BOTH target scopes",
+    "Original SAME TWO point-update replacement graphs and SAME result code retained at BOTH actual target scopes, together with typed SAME base",
+    "All source/target successors read from actual lifts; scope_alignment DERIVES FOUR scope equalities between TWO independent executions with original successor_unique and equality substitution",
+    "New ordinary nativeZF prepared_kernel_certificate, no target-scope typing or desired scope equality premise",
+    "Original19 public proof bodies and footprints unchanged, no new Lean module"
+  ],
+  "proof_boundaries": {
+    "actual_two_EX_three_AND_and_all_four_leaf_queries_preserved": true,
+    "both_target_scopes_same_root_tables_and_base_and_original_overwrite_derived": true,
+    "no_new_map_or_table_or_candidate_producer": true,
+    "no_expected_target_type_or_scope_equality_premise": true,
+    "four_actual_source_target_scope_equalities_derived": true,
+    "all_four_component_comparisons_already_proved_and_preserved": true,
+    "common_head_and_canonical_child_operation_frames_generated": false,
+    "four_component_comparisons_consumed_and_both_EX_equalities_packaged": false,
+    "canonical_proof_context_fresh_forall_joint_forcing_MP_all_internal_axioms_six_rule_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39515,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37249,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39502,
+    "old_proof_files_byte_identical": 2872,
+    "only_extended_existing_proof_file": "PPAC/Migration/ForcingExistTailOpening.lean",
+    "old19_public_mathematical_bodies_and_footprints_unchanged": true,
+    "sealed_source_inputs_all_fresh": 2906,
+    "expected_changed_existing_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingExistTailOpening.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "all_five_trust_zero_commands_passed": true,
+    "preaudited_current_module_declarations": 32,
+    "compatibility_regressions_passed": 9,
+    "comparator_guard_regressions_passed": 7,
+    "three_clean_pins_and_original_source_hashes": 75,
+    "full_summary_sha256": "12a9b3b5c7de3360ed9b87609a3116526cddee0c1148b7088a6b063660bbefa5",
+    "audit_log_sha256": "a89b651874da7e2b8f9bdcea2d2ebbd9556ec576f2a5563372177c3771670b68"
+  },
+  "cleanup": {
+    "manifest": ".local/exist-tail-scopes-cleanup.json",
+    "exact_own_temporary_files": 5,
+    "total_bytes": 13227746,
+    "performed": true,
+    "retained_source_postcleanup_trust_zero_exit_code": 0,
+    "residual_Lean_Lake_processes": 0
+  },
+  "remote_predecessor_CI": {
+    "run_id": 42808631919,
+    "commit": "905a63f5196052e133a7e9deebdb0bb5882a6c24",
+    "last_observed_status": "in_progress",
+    "job_id": 129804112802,
+    "current_step": "Build and audit",
+    "next_push_waits_for_actual_terminal_PASS": true
+  },
+  "next_required_step": "Do NOT repeat whole-tail reader, same-table scope transport or four scope alignment. Normalize the SECOND trace to FIRST actual source/target scopes using these derived equalities. Use existing ForcingExistChildCanonical.derive ONCE to generate the common r-head AND BOTH canonical replacement/lift/query records; the SAME replacements also satisfy order-guard frames, so do not regenerate overwrite tables. Existing source base-R closed-list bridge may be needed for canonical old bound table (use original list_free graph witness and graph_mixed, not new induction). Generate common name0 head by original SyntaxMixedImageHead.code_exists on the actual second successor. CONSUME all four previously proved member/order/domain/child comparisons at SAME16 records; original single/binary constructor uniqueness packages the two EX. Then canonical contexts/fresh forall/original joint mono/dense/MP/all internal axioms/six-rule Proof/reduction/finalCon."
+}

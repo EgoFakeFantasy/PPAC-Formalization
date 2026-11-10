@@ -2766,7 +2766,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_source', 'ForcingExistDomainSource', 19),
                                 ('forcing_exist_domain_images', 'ForcingExistDomainImages', 12),
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
-                                ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 19)):
+                                ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6104,6 +6104,9 @@ def main(source_check_only: bool = False) -> None:
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
         "object_actual_existential_whole_tail_sixteen_witnesses_read": True,
+        "object_actual_existential_whole_tail_same_root_tables_at_both_target_scopes_generated": True,
+        "object_actual_existential_whole_tail_same_replacement_graphs_at_both_target_scopes_retained": True,
+        "object_actual_existential_whole_tail_four_scope_equalities_derived_for_two_actual_executions": True,
         "object_actual_existential_whole_tail_two_EX_three_AND_actual_leaf_queries_retained": True,
         "object_actual_existential_whole_tail_cross_condition_comparison_proved": False,
         "object_actual_existential_whole_tail_scope": source_lock["source_proof_adaptations"]["forcing_exist_tail_opening"]["scope"],
