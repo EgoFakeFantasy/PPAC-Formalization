@@ -2781,7 +2781,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_member_rows', 'ForcingMemberRows', 18),
                                 ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
                                 ('forcing_global_weakening', 'ForcingGlobalWeakening', 11),
-                                ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8)):
+                                ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8),
+                                ('forcing_source_mono', 'ForcingSourceMono', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6171,6 +6172,10 @@ def main(source_check_only: bool = False) -> None:
         "object_source_conjunction_mono_branch_proved": True,
         "object_source_conjunction_mono_full_induction_discharged": False,
         "object_source_conjunction_mono_scope": source_lock["source_proof_adaptations"]["forcing_conjunction_mono"]["scope"],
+        "object_source_mono_both_child_compilations_generated_and_consumed": True,
+        "object_source_mono_constant_bases_without_IH_proved": True,
+        "object_source_mono_full_induction_discharged": False,
+        "object_source_mono_scope": source_lock["source_proof_adaptations"]["forcing_source_mono"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,

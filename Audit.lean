@@ -40442,3 +40442,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingConjunctionMono.sentence
 #print axioms PPAC.Migration.ForcingConjunctionMono.kernel_certificate
 #print axioms PPAC.Migration.ForcingProofContext.join
+#print axioms PPAC.Migration.ForcingSourceMono.atSource
+#print axioms PPAC.Migration.ForcingSourceMono.atSource_rename
+#print axioms PPAC.Migration.ForcingSourceMono.apply_atSource
+#print axioms PPAC.Migration.ForcingSourceMono.nullary
+#print axioms PPAC.Migration.ForcingSourceMono.conjunctionInput
+#print axioms PPAC.Migration.ForcingSourceMono.conjunctionInput_rename
+#print axioms PPAC.Migration.ForcingSourceMono.conjunction
+#print axioms PPAC.Migration.ForcingSourceMono.conjunctionSentence
+#print axioms PPAC.Migration.ForcingSourceMono.conjunction_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceMono.nullarySentence
+#print axioms PPAC.Migration.ForcingSourceMono.nullary_kernel_certificate

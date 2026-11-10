@@ -174321,6 +174321,116 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives. Necessary original force_mono conjunction induction BRANCH, not full monotonicity. source_step consumes actual original CodeBinary.input (independently compiled whole source parent and both children); actual binary compiler derives SAME compiled parent AND constructor. transfer is OBJECT forall over BOTH arbitrary internal mixed-query outputs with SAME G conditional Root-proof transport; child transfer formulas are explicitly induction hypotheses, NOT discharged in this branch. derive actually calls original binary_output TWICE, generates and eliminates all FOUR child outputs, derives actual child typing from those queries, calls original projection and chain for both old conjuncts, instantiates both OBJECT child universal hypotheses, then unchanged original ProofContext.join produces conditional Root proof of SAME actual new parent. No given target AND constructor, child output, child proof answer, G truth/proof, host callback or external-standardness restriction. Original join only made public; full proof text unchanged. Full internal formula induction, other mono cases, dense/neg/imp, all internal axioms/six-rule Proof/reduction/final Con remain unproved; no new kernel/checker/recursor/Choice premise."
+    },
+    "forcing_source_mono": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingSourceMono.lean",
+      "source_declarations": [
+        "AtomicData.force_mono bot and conjunction source-code induction steps; native truth constant preserved by actual compiler"
+      ],
+      "consumers": [
+        "All internal SOURCE formula-code monotonicity induction: constants complete, source AND step now generates both child compiler outputs before consuming paired-query branch; remaining atomic/negative/existential and normalization cases required"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingConjunctionMono.lean",
+        "PPAC/Migration/ForcingCodeTotal.lean",
+        "PPAC/Migration/ForcingCodeUnary.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingSourceMono.lean": "55a34b5890c5b812dd8f3dddf8aa7a439d864fd8c2c69f8cca14c19b7ee6aa2e",
+        "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
+        "PPAC/Migration/ForcingCodeTotal.lean": "0ba37aaa3bff5a79ddc3020af613d82124408e924921000f22eb6e21095f4b07",
+        "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingSourceMono.atSource": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.atSource_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.apply_atSource": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.nullary": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.conjunctionInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.conjunctionInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.conjunction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceMono.conjunctionSentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceMono.conjunction_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceMono.nullarySentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceMono.nullary_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; atSource universally quantifies ACTUAL compiler output inside OBJECT theory, feeding existing transfer which universally quantifies BOTH actual mixed-query outputs. This is a specified-runtime-frame SOURCE induction property, NOT a claim of full monotonicity for arbitrary maps/G. conjunction consumes OBJECT source child IHs, typed original source AND and metadata; obtains both typed source children by original binary0_iff, ACTUALLY calls existing CodeTotal.total TWICE to generate/eliminate both child compilations, instantiates both OBJECT source IHs and consumes accepted ConjunctionMono.source_step. That existing branch ACTUALLY generates/eliminates FOUR queried child outputs and constructs SAME G conditional Root proof by unchanged projection/chain/join. No given child compilation/output/transport answer, output equality, G truth/proof, host induction callback or external-standardness restriction. nullary proves source false and native true bases WITHOUT IH using actual CodeUnary.nullary and two original SyntaxMixedFormulaNullary.unique queries; actual code equalities derived internally then original equality substitution carries conditional Root proof. Two nativeZF closed certificates. All 2888 old proof Git blobs unchanged. Explicit single-binder contexts and local opacity of already-named predicates avoid expanding proof-checker bodies during finite-frame matching; original default heartbeat budget retained. Full source formula induction, correct atomic/modal frame assembly and full mono/dense/neg/imp, all internal axioms/six-ruleProof/reduction/finalCon remain UNPROVED; no new checker/kernel/recursor/object Choice."
     }
   },
   "selected_route_consumer_audit": {

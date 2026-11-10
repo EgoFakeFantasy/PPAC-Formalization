@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-ForcingConjunctionMono.source_step 已消费原 CodeBinary.input 的父／两个子公式独立编译记录，取得实际父 AND 构造。transfer 将两个查询输出及子归纳假设保留为对象全称公式；derive 实际调用原 binary_output 两次，在对象层产生消去四个子输出，以原投影／chain／同背景 join 构造 SAME G 下的原 Root 条件证明。已有 join 仅去掉 private，正文原样；其余2886份旧证明Git正文、39719项旧依赖足迹全部保持。完整九命令／五项trust=0通过，39728项声明、零警告；16项兼容性测试及3个固定库／75哈希通过，见[原合取归纳分支验收](../verification/forcing-conjunction-mono-acceptance.json)。这是原 force_mono 的必要合取归纳分支；子归纳假设尚未由全内部归纳消去，不是整体单调性或最终Con。此前 SAME canonical Global 弱化及原 guarded forall 消费已完成，不再列为缺口。
+ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atSource 在对象语言中全称量化任意实际编译输出，apply_atSource 实例化对象子归纳假设；conjunction 调用原 CodeTotal.total 两次，在对象层产生消去两个子编译结果，再实际消费已验收的双查询合取步骤（该步骤内部产生消去四个查询子输出）。不再要求调用方给定子编译结果。假／真常元基例复用原编译常元律和两次实际查询唯一性，不带归纳假设。两个普通 nativeZF 原核闭句、完整九命令／五项trust=0通过，39739项声明、零警告；39728项旧依赖足迹和2888份旧证明Git正文全部保持；16项兼容性测试与3个固定库／75源码哈希通过，见[源公式单调性步骤验收](../verification/forcing-source-mono-acceptance.json)。仍是原第10阶段：这是指定运行框架上的源归纳步骤，原子证明的内部Root实例化、neg／ex实际框架装配及全内部公式归纳、dense／neg／imp、完整公理／Proof／reduction／最终Con尚未完成；没有宣称任意映射和G都满足单调性。此前 canonical Global／fresh forall 已完成，不重做。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@ ForcingConjunctionMono.source_step 已消费原 CodeBinary.input 的父／两个
 
 ## 当前真正缺口与依赖顺序
 
-1. SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的实际合取分支已接通；继续将其余必要分支和现有原子／neg／ex消费者接成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
+1. SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；继续实际接入原子／neg／ex运行框架并完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
@@ -30,3 +30,5 @@ ForcingConjunctionMono.source_step 已消费原 CodeBinary.input 的父／两个
 - [Linux CI实际完成回执](../verification/ci-proof-universal-remote-acceptance.json)：远端613a6f0，39573项声明、零警告；后续提交CI以实际作业终态为准。
 
 - [原源码合取单调性归纳分支](../verification/forcing-conjunction-mono-acceptance.json)：39728项声明，零警告；子公式归纳假设未消去，整体mono／Con未证明。
+
+- [源公式码常元基例及合取步骤](../verification/forcing-source-mono-acceptance.json)：39739项声明，零警告；指定运行框架上的源子归纳假设保留，整体mono／Con未证明。
