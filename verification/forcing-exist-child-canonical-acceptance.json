@@ -1,0 +1,210 @@
+{
+  "verified_at": "2026-11-10T10:19:37.879087+00:00",
+  "baseline_commit": "d0843a7fc6611d559ae884069fde9c0ee251d702",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "verified wait before user pause: same live Linux job 129427677971 observed; pause respected without edits. Resumed turn decoded its PASS39347, published all accepted work and proved canonical child equality.",
+  "background": "Original pure membership/equality, ordinary full nativeZF and original FirstOrder.Derives via existing replay; no object Choice or new kernel/checker/recursor/induction.",
+  "source_consumer": "Pinned Force.ex child uses same inner condition in place of current p; force_mono ex is fun r hr => h r (hr.trans hqp). Canonical child opens new name0 and shifts selected inner condition from bound0 to bound1 through existing original binder.",
+  "result": [
+    "Two actual outer-condition replacements from SAME base table followed by SAME inner-condition overwrite have equal final lists; original complete internal list uniqueness reused",
+    "Existing binder pair uniqueness and whole mixed formula uniqueness compare FULL canonical child formula outputs on arbitrary internal/nonstandard formula codes",
+    "Existing producers internally construct ONE shared bound0 code and BOTH four-witness executions: nine OBJECT EX witnesses in total",
+    "EIGHT OBJECT-universal candidate execution codes guarantee equality of every pair of actual outputs; at_agreement consumes the actual records",
+    "Ordinary nativeZF original-kernel closed-sentence certificate"
+  ],
+  "proof_boundaries": {
+    "source_scopes_indices_lists_formulas_execution_codes_internal_including_nonstandard": true,
+    "target_c_succ_b_and_C_succ_c_with_b_arbitrary_internal": true,
+    "object_existential_witnesses_produced": 9,
+    "object_universal_candidate_execution_parameters": 8,
+    "expected_formula_code_equality_or_operation_answer_supplied": false,
+    "new_compiler_checker_kernel_recursor_induction_or_guard_truth": false,
+    "canonical_full_child_condition_independence_completed": true,
+    "original_raw_child_two_lift_opening_to_canonical_triangle_completed": false,
+    "whole_actual_raw_tail_cross_condition_invariance_completed": false,
+    "canonical_proof_context_and_fresh_forall_completed": false,
+    "full_joint_mono_dense_MP_internal_axioms_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39394,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37128,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39379,
+    "ALL_old_PPAC_proof_files_completely_unchanged": 2865,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingExistChildCanonical.agreement",
+      "PPAC.Migration.ForcingExistChildCanonical.agreement_rename",
+      "PPAC.Migration.ForcingExistChildCanonical.at_agreement",
+      "PPAC.Migration.ForcingExistChildCanonical.data",
+      "PPAC.Migration.ForcingExistChildCanonical.data_rename",
+      "PPAC.Migration.ForcingExistChildCanonical.derive",
+      "PPAC.Migration.ForcingExistChildCanonical.formula",
+      "PPAC.Migration.ForcingExistChildCanonical.input",
+      "PPAC.Migration.ForcingExistChildCanonical.kernel_certificate",
+      "PPAC.Migration.ForcingExistChildCanonical.oneData",
+      "PPAC.Migration.ForcingExistChildCanonical.oneData_rename",
+      "PPAC.Migration.ForcingExistChildCanonical.overwrite",
+      "PPAC.Migration.ForcingExistChildCanonical.result",
+      "PPAC.Migration.ForcingExistChildCanonical.result_rename",
+      "PPAC.Migration.ForcingExistChildCanonical.sentence"
+    ],
+    "new_axioms": [],
+    "sealed_inputs_rehashed": 2899,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "preaudit_declarations": 15,
+    "preaudit_log_sha256": "6460ea9c2feb9ca2f5b0e209bdaf0d4d4e59111398c70cafaf8f86705f1f4f8b",
+    "full_log_sha256": "eb4ce900b22ca921077215f7e8bab7c2c7734ae9e042989636e7c943d996a7dd",
+    "cross_platform_compatibility_regressions_passed": 9,
+    "original_comparator_guard_regressions_passed": 7,
+    "clean_pinned_repositories_verified": 3,
+    "original_source_hashes_verified": 75
+  },
+  "cleanup": {
+    "status": "completed: all six exact temporary files removed and independently verified absent",
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-baseline.json",
+        "bytes": 13776269,
+        "sha256": "a8d4d0ee60edf25662144aee5842ad347e211a9c7ead199b795c689706521670"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-build.log",
+        "bytes": 115,
+        "sha256": "c1a53667491bd2697e6103a4e9884116050e9c4ed1ed9e4bfdf42a477f09bae8"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-preaudit.lean",
+        "bytes": 1065,
+        "sha256": "7c1ace32ac2a2b5d3d176e0fe5acbc3e095b77b50d43b2b5358592bc458f8e89"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-preaudit.log",
+        "bytes": 2089,
+        "sha256": "6460ea9c2feb9ca2f5b0e209bdaf0d4d4e59111398c70cafaf8f86705f1f4f8b"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-footprints.json",
+        "bytes": 2248,
+        "sha256": "44c114967f7c6885ede5ca8c2582ffb588c4abc10e3728196d914ca6ad31f2b5"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-child-canonical-full-verification.log",
+        "bytes": 153,
+        "sha256": "eb4ce900b22ca921077215f7e8bab7c2c7734ae9e042989636e7c943d996a7dd"
+      }
+    ],
+    "other_project_or_dependency_files_removed": false,
+    "deleted_files": 6,
+    "deleted_bytes": 13781939,
+    "source_postcleanup_trust0": [
+      {
+        "file": "PPAC/Migration/ForcingExistChildCanonical.lean",
+        "exit_code": 0
+      }
+    ],
+    "no_residual_Lean_Lake_processes_observed": true
+  },
+  "publication": {
+    "earlier_accepted_commits_published": "d0843a7fc6611d559ae884069fde9c0ee251d702",
+    "all_fourteen_changed_remote_blobs_read_back_exact_bytes": 16824706,
+    "current_batch_published": false,
+    "predecessor_Linux_run": 42794638958,
+    "predecessor_expected_audited_declarations": 39379,
+    "predecessor_last_observed_status": "in_progress"
+  },
+  "completed_at": "2026-11-10T10:20:17.777158+00:00"
+}

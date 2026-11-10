@@ -40074,3 +40074,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistChildTerms.result
 #print axioms PPAC.Migration.ForcingExistChildTerms.result_rename
 #print axioms PPAC.Migration.ForcingExistChildTerms.sentence
+
+#print axioms PPAC.Migration.ForcingExistChildCanonical.agreement
+#print axioms PPAC.Migration.ForcingExistChildCanonical.agreement_rename
+#print axioms PPAC.Migration.ForcingExistChildCanonical.at_agreement
+#print axioms PPAC.Migration.ForcingExistChildCanonical.data
+#print axioms PPAC.Migration.ForcingExistChildCanonical.data_rename
+#print axioms PPAC.Migration.ForcingExistChildCanonical.derive
+#print axioms PPAC.Migration.ForcingExistChildCanonical.formula
+#print axioms PPAC.Migration.ForcingExistChildCanonical.input
+#print axioms PPAC.Migration.ForcingExistChildCanonical.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistChildCanonical.oneData
+#print axioms PPAC.Migration.ForcingExistChildCanonical.oneData_rename
+#print axioms PPAC.Migration.ForcingExistChildCanonical.overwrite
+#print axioms PPAC.Migration.ForcingExistChildCanonical.result
+#print axioms PPAC.Migration.ForcingExistChildCanonical.result_rename
+#print axioms PPAC.Migration.ForcingExistChildCanonical.sentence

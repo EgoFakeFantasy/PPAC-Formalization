@@ -2758,7 +2758,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_guard_tables', 'ForcingPreorderGuardTables', 10),
                                 ('forcing_preorder_negative', 'ForcingPreorderNegative', 9),
                                 ('forcing_preorder_existential', 'ForcingPreorderExistential', 11),
-                                ('forcing_exist_child_terms', 'ForcingExistChildTerms', 12)):
+                                ('forcing_exist_child_terms', 'ForcingExistChildTerms', 12),
+                                ('forcing_exist_child_canonical', 'ForcingExistChildCanonical', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6095,6 +6096,10 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_canonical_existential_child_double_update_absorption_proved": True,
+        "object_canonical_existential_child_whole_formula_condition_independence_proved": True,
+        "object_canonical_existential_child_nine_witnesses_and_eight_object_all_produced": True,
+        "object_canonical_existential_child_scope": 'Canonical existential CHILD, not the complete actual raw tail: two ACTUAL outer-condition replacements from SAME base table followed by SAME actual inner-condition overwrite have equal final lists, proved at ALL internal fields using existing list uniqueness. SAME original binder pair uniqueness and full mixed formula uniqueness compare complete canonical child formula outputs, with no expected equality or formula-output answer. Existing Replacement/binder/full-formula producers internally generate ONE shared bound0 code and BOTH four-witness executions (nine OBJECT EX witnesses total), plus EIGHT OBJECT-universal candidate parameters guaranteeing all actual outputs equal. Source N, scopes, indices, lists and formula/proof codes remain internal including nonstandard; c=succ(b), C=succ(c), b arbitrary internal, so target scopes are not forced externally standard. No new compiler/checker/kernel/recursor/induction, no guard/preorder truth or object Choice. Ordinary nativeZF original-kernel closed sentence. Original raw-child compiler/opening to canonical triangle, complete raw-tail cross-condition invariance, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/Proof/reduction/finalCon NOT yet proved.',
         "object_actual_existential_child_all_four_term_actions_proved": True,
         "object_actual_existential_child_same_12_witnesses_8_object_universal_candidates": True,
         "object_actual_existential_child_term_scope": 'Consumes the original complete twelve-witness existential CHILD compiler. SAME twelve witnesses retain original formula substitution and satisfy ALL FOUR precise coded term laws under EIGHT OBJECT universal candidate parameters: empty source bound head maps to SAME original head code; selected free condition maps to bound1; every other free index remains itself; old bound i maps to i+2. Original variable table, two shifts, selected image, pushed graph, mixed binder lift, encoded-list fields and rename-at-index reused. Intermediate pushed term code constructed/eliminated in OBJECT EX, not an answer premise. Only three existing record interfaces exposed; all original producer proof bodies unchanged. Runtime scopes/indices/term/formula codes internal including nonstandard, no host decode, new kernel/checker/recursor/induction or guard truth. Ordinary nativeZF original-kernel closed sentence. Remaining entire-tail cross-condition invariance, canonical context/fresh forall, joint mono/dense/MP/all internal axioms/Proof/reduction/finalCon NOT yet proved.',

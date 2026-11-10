@@ -171540,6 +171540,123 @@
           "propext"
         ]
       }
+    },
+    "forcing_exist_child_canonical": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingExistChildCanonical.lean",
+      "source_declarations": [
+        "AtomicData.Force ex: inner condition replaces current p before child formula, followed by new-name binder",
+        "AtomicData.force_mono ex: fun r hr => h r (hr.trans hqp)"
+      ],
+      "consumers": [
+        "Raw child/compiler plus two actual opening binder advances versus SAME canonical child opening; consume existing ForcingExistChildTerms and full formula cancellation",
+        "Complete actual existential raw tail invariance; original joint mono/dense/MP and InternalConsistency.reduction"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderUnique.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean",
+        "PPAC/Migration/Internal/StructuralListCodeInduction.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean",
+        "PPAC/Migration/Internal/HornBinderRules.lean",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderUnique.lean": "f369d89a05956464242dad16b89c3a2c16ae8b6973d6e4ced49dd24f8392f5d1",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/StructuralListCodeInduction.lean": "284406bc2b9c5f650da01bad4c70a38d74a2ade83f39274a59aabc74cd16c6fb",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+      },
+      "scope": "Canonical existential CHILD, not the complete actual raw tail: two ACTUAL outer-condition replacements from SAME base table followed by SAME actual inner-condition overwrite have equal final lists, proved at ALL internal fields using existing list uniqueness. SAME original binder pair uniqueness and full mixed formula uniqueness compare complete canonical child formula outputs, with no expected equality or formula-output answer. Existing Replacement/binder/full-formula producers internally generate ONE shared bound0 code and BOTH four-witness executions (nine OBJECT EX witnesses total), plus EIGHT OBJECT-universal candidate parameters guaranteeing all actual outputs equal. Source N, scopes, indices, lists and formula/proof codes remain internal including nonstandard; c=succ(b), C=succ(c), b arbitrary internal, so target scopes are not forced externally standard. No new compiler/checker/kernel/recursor/induction, no guard/preorder truth or object Choice. Ordinary nativeZF original-kernel closed sentence. Original raw-child compiler/opening to canonical triangle, complete raw-tail cross-condition invariance, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/Proof/reduction/finalCon NOT yet proved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistChildCanonical.overwrite": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.oneData": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.oneData_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.agreement": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.agreement_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.at_agreement": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.result_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.derive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildCanonical.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
     }
   },
   "selected_route_consumer_audit": {
