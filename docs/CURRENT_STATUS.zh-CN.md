@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-ForcingMemberRows.produce 已实际消去两侧原 LeafTarget.instances 的6／10／5／3层存在块，分别调用现成 MemberWeakening.from_rows 取得 q1、p2 的原成员叶 weakened；两份完整实际叶记录及全部48个原见证在同一对象存在输出中保留。输入为已经产生的原实例记录、原项像及实际 q/p 项重命名，未给定叶记录、载体字段、成员码或弱化答案，也不要求 fresh r 相同。原 LeafTarget 只开放三个既有正文定义，所有证明正文原样。普通 nativeZF 原核闭句、九命令及五项trust=0通过，39699项声明、零警告；原39678项依赖及2883份其他旧证明Git源码保持，见[验收回执](../verification/forcing-member-rows-acceptance.json)。裸R／Extra／完整canonical Global和最终Con仍未完成。
+ForcingRelationWeakening.from_rows 已从实际两侧原行内部产生消去十四个源／双覆盖记录见证，调用原 from_prefix 和双覆盖消费者取得裸R(q,p)弱化。ForcingGlobalWeakening.produce 读取 SAME FreshPreorder 的 Pre 弱化及原双行 q/p 弱化，实际调用裸R消费者；原 exists_output 产生 Extra 弱化，原布局生产器产生六码，四个原 AND 构造律取得 weakened oldCtx3 SAME newCtx3，七个新见证在对象量词内。generalize_layout 已实际消费该 Global 与同一原 ProofUniversal.resultData，消去弱化Global／抽象前提。两个普通 nativeZF 原核闭句及完整九命令／五项trust=0通过，39719项声明、零警告，原39699项依赖及2883份其他旧证明Git正文保持；见[验收回执](../verification/forcing-global-weakening-acceptance.json)。联合全内部 forcing、完整公理／Proof／reduction和最终Con仍未证明。
 
 ## 已完成，必须复用
 
@@ -18,15 +18,13 @@ ForcingMemberRows.produce 已实际消去两侧原 LeafTarget.instances 的6／1
 
 ## 当前真正缺口与依赖顺序
 
-1. 两侧实际原存在叶记录的 q/p 成员比较已由 ForcingMemberRows.produce 完成，48个见证及两份完整原行保留；native到叶展开、fresh实际接线、成员比较不再列为待办。下一步读取裸R(q,p)的实际 H4 查询，优先复用 ForcingRelationRawFormula.from_prefix（leaf1／raw14）、原 ForcingRelationSource／ForcingRelationImages 生产器及已完成的 WeakenedOverwrite.from_double_queries；随后处理 Extra 与四AND 的 SAME canonical Global，接入现成 ProofContext／FreshBackground／ProofUniversal。
-2. 完成原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部码归纳及规范化强迫MP；普通字面蕴含组合或外层实例不能替代此门。
+1. SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。下一步沿固定源将 ForcingQuotient.force_mono（171行）与 ForcingTruth.force_of_dense（60行）接成全部内部公式码的原Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
+2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
 
 ## 当前可核验材料
 
-- [本批源弱化与实际forall消费](../verification/forcing-weakened-images-acceptance.json)：39632项声明，零警告，九命令及五项trust=0通过。
+- [本批裸R／完整canonical Global与实际forall消费](../verification/forcing-global-weakening-acceptance.json)：39719项声明，零警告，九命令及五项trust=0通过。
 - [上一批全内部项像／公式比较](../verification/forcing-reindexed-images-acceptance.json)及[首槽相消](../verification/forcing-fresh-background-acceptance.json)。
 - [Linux CI实际完成回执](../verification/ci-proof-universal-remote-acceptance.json)：远端613a6f0，39573项声明、零警告；后续提交CI以实际作业终态为准。
-
-本批成员叶实际源记录传输已完整验收：见[验收回执](../verification/forcing-member-weakening-acceptance.json)。39668项声明、零警告，九命令及五项trust=0通过；原39658项依赖和2882份旧证明Git正文保持。最终内部Con仍未证明。

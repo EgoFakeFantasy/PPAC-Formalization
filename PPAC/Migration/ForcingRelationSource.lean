@@ -193,7 +193,7 @@ theorem produce {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R : Source.
 /-- The three ORIGINAL relation leaves of the literal preorder raw row. -/
 def rawSlot : Fin 3 → Fin 16 := Fin.cases 13 (Fin.cases 14 (fun _ => 15))
 
-private theorem raw_quotation {n m} {Γ : Context m} (R : Source.Formula (n+2)) (i : Fin 3)
+theorem raw_quotation {n m} {Γ : Context m} (R : Source.Formula (n+2)) (i : Fin 3)
     (w z A1 A2 A3 f : Fin m) (v : Fin 16 → Fin m)
     (hr : Derives Γ (ForcingPreorderCode.rawData R w z A1 A2 A3 f v)) :
     Derives Γ (PureQuotationSyntax.formula (atom R i) w (v (rawSlot i))) := by

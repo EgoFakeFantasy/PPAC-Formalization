@@ -2747,7 +2747,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 10),
                                 ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
-                                ('forcing_relation_source', 'ForcingRelationSource', 30),
+                                ('forcing_relation_source', 'ForcingRelationSource', 31),
                                 ('forcing_relation_images', 'ForcingRelationImages', 28),
                                 ('forcing_relation_guard_formula', 'ForcingRelationGuardFormula', 11),
                                 ('forcing_relation_raw_terms', 'ForcingRelationRawTerms', 7),
@@ -2768,7 +2768,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
                                 ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
-                                ('forcing_proof_context', 'ForcingProofContext', 17),
+                                ('forcing_proof_context', 'ForcingProofContext', 19),
                                 ('forcing_proof_universal', 'ForcingProofUniversal', 21),
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
@@ -2778,7 +2778,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_preorder', 'ForcingFreshPreorder', 10),
                                 ('forcing_member_weakening', 'ForcingMemberWeakening', 10),
                                 ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10),
-                                ('forcing_member_rows', 'ForcingMemberRows', 18)):
+                                ('forcing_member_rows', 'ForcingMemberRows', 18),
+                                ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
+                                ('forcing_global_weakening', 'ForcingGlobalWeakening', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6157,6 +6159,14 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_rows_q_and_p_weakenings_derived_and_all48_witnesses_retained": True,
         "object_actual_member_rows_expected_leaf_row_or_weak_answer_given": False,
         "object_actual_member_rows_scope": source_lock["source_proof_adaptations"]["forcing_member_rows"]["scope"],
+        "object_actual_bare_R_from_original_rows_and_generated_double_queries_weakening_proved": True,
+        "object_actual_bare_R_given_source_code_table_or_expected_query_answer": False,
+        "object_actual_bare_R_weakening_scope": source_lock["source_proof_adaptations"]["forcing_relation_weakening"]["scope"],
+        "object_actual_canonical_Global_from_source_records_all_five_leaves_and_four_AND_weakened_proved": True,
+        "object_actual_canonical_Global_Extra_and_all_six_layout_codes_generated": True,
+        "object_actual_canonical_Global_given_weak_answer_new_layout_or_abstraction": False,
+        "object_actual_canonical_Global_ACTUALLY_consumed_by_original_guarded_forall": True,
+        "object_actual_canonical_Global_scope": source_lock["source_proof_adaptations"]["forcing_global_weakening"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,

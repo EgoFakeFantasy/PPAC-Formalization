@@ -226,7 +226,7 @@ private theorem and_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (FormulaCodeConstructors.binary0 hZ w z b A B hw
       (Derives.conjI (Derives.conjR (FormulaCodeProperties.guards w A z b ha)) (Derives.conjI ha hb)))
 
-private def layoutBody {m} (w z b Extra Pre : Fin m) (H : Fin 6 → Fin m) : Formula (m+6) :=
+def layoutBody {m} (w z b Extra Pre : Fin m) (H : Fin 6 → Fin m) : Formula (m+6) :=
   layoutData (old 6 w) (old 6 z) (old 6 b) (old 6 Extra) (old 6 Pre) (fun i => old 6 (H i)) (slot 6)
 
 def layoutExists {m} (w z b Extra Pre : Fin m) (H : Fin 6 → Fin m) : Formula m :=
@@ -330,6 +330,15 @@ private theorem layout_produce {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   apply HornBinderRules.intro_many 6 _ vals
   exact of_eq (by simp only [layoutBody, layoutData_rename, assign_old, assign_slot]; rfl)
     (.conjI u0_6 (.conjI u1_6 (.conjI u2_6 (.conjI u3_6 (.conjI u4_6 u5_6)))))
+
+/-- Public typed-input interface to the unchanged original layout producer. -/
+theorem layout_from_typed {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b Extra Pre : Fin m) (H : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w)) (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hPre : Derives Γ (formulaCode w Pre z b))
+    (hH : ∀ i : Fin 5, Derives Γ (formulaCode w (H i.castSucc) z b)) :
+    Derives Γ (layoutExists w z b Extra Pre H) :=
+  layout_produce hZ w z b Extra Pre H ⟨hw,hExtra,hPre,hH⟩
 
 def resultData {m} (test : Formula 1) (w z b Extra Pre Tail : Fin m) (H v : Fin 6 → Fin m) : Formula m :=
   (layoutData w z b Extra Pre H v).conj

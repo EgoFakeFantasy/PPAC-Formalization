@@ -17,7 +17,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码、quotation、axiom Node/Root基例、原重绑定、完整公式归纳和raw存在尾部全部比较已完成；六个canonical上下文码、Curry、正文抽象／guarded forall、范围恒等提升、首槽weak/abstract相消已完成。实际旧／新项像推送、原弱化查询、原q/p双覆盖记录传输、SAME raw的新r/q/p及Pre/native三实例和Pre弱化均已完成，全部新项／操作／输出见证在对象层产生消去 | 两侧原存在叶记录的q/p成员比较已完成；接实际裸R、Extra及四AND的canonical Global匹配；原联合force_mono／force_of_dense／exists_force_neg／forceFormula_imp、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall | 原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：两侧实际原存在叶记录的 q/p 成员比较已由 ForcingMemberRows.produce 完成，48个见证及两份完整原行保留；native到叶展开、fresh实际接线、成员比较不再列为待办。下一步读取裸R(q,p)的实际 H4 查询，优先复用 ForcingRelationRawFormula.from_prefix（leaf1／raw14）、原 ForcingRelationSource／ForcingRelationImages 生产器及已完成的 WeakenedOverwrite.from_double_queries；随后处理 Extra 与四AND 的 SAME canonical Global，接入现成 ProofContext／FreshBackground／ProofUniversal。
+当前下一原消费者：SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。下一步沿固定源将 ForcingQuotient.force_mono（171行）与 ForcingTruth.force_of_dense（60行）接成全部内部公式码的原Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。

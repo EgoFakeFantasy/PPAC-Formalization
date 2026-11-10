@@ -1,0 +1,215 @@
+{
+  "verified_at": "2026-11-10T19:29:28.353131+00:00",
+  "baseline_commit": "98014f8453fb2fd81e6ef512dcac5e594fce8ba5",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual paired q/p member weak certificates accepted39699, committed98014f8",
+  "background": "Original pure-set nativeZF and original FirstOrder.Derives. Runtime target scopes, conditions, lists, fields, formulas, Root proofs and operation codes remain internally quantified, including nonstandard objects.",
+  "result": [
+    "BareR: internally generate guard quotation and SAME bareR core/source maps, both actual double-overwrite records; original numeral uniqueness reindexes actual table operations; actual from_prefix queries consumed by existing from_double_queries",
+    "All14 explicit outer bareR source/operation witnesses generated/eliminated; no source-code/table/leaf-query/output equality or weak-answer premise",
+    "Global: read actual same-source Pre weak from FreshPreorder.data and actual q/p weak from MemberRows.data; ACTUALLY call RelationWeakening.from_rows for H4",
+    "Original exists_output generates actual newExtra weakening; unchanged original layout_produce called through typed-input wrapper generates all6 layout codes",
+    "Consume original4 binary_iff AND laws with SAME actual identity/shift v0/v1, deriving original weakened oldCtx3 SAMEnewCtx3",
+    "All7 newExtra/layout witnesses object-bound; preserve exact old actual layout and all actual source records",
+    "ACTUALLY call original FreshBackground.generalize_layout from generatedGlobaldata plus SAME actual ProofUniversal.resultData, eliminating prior weakGlobal/abstraction premise",
+    "TWO ordinary nativeZF original-kernel closed endpoints; no new compiler/checker/recursion/induction backend/kernel/object Choice"
+  ],
+  "proof_boundaries": {
+    "actual_bare_R_q_p_weakening_from_paired_source_rows_proved": true,
+    "Extra_weakening_and_all6_layout_codes_generated": true,
+    "all5_global_leaf_weak_relations_derived_from_original_producers_or_records": true,
+    "all4_original_AND_laws_consumed": true,
+    "SAME_canonical_Global_weakening_proved": true,
+    "generated_Global_ACTUALLY_consumed_by_original_guarded_forall": true,
+    "expected_newExtra_newlayout_weakGlobal_output_equality_or_abstraction_given": false,
+    "computational_inputs_actual_paired_rows_FreshPreorder_data_oldExtra_typing_oldLayout": true,
+    "guarded_forall_requires_SAME_actual_Curry_Root_result_record": true,
+    "additional_whole_Global_pair_of_raw_queries_required": false,
+    "joint_all_internal_forcing_rule_preservation_proved": false,
+    "all_internal_ZF_U_axiom_Proof_reduction_proved": false,
+    "final_internal_Con_proved": false
+  },
+  "verification": {
+    "audited_declarations": 39719,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37453,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "build_jobs": 3359,
+    "new_module_build_seconds": {
+      "ForcingRelationWeakening": 8.3,
+      "ForcingGlobalWeakening": 8.2
+    },
+    "previous_exact_footprints_unchanged": 39699,
+    "other_existing_proof_Git_blobs_unchanged": 2883,
+    "BOTH_donor_original_proof_bodies_exact": true,
+    "donor_changes": {
+      "PPAC/Migration/ForcingRelationSource.lean": "Only remove private before existing raw_quotation",
+      "PPAC/Migration/ForcingProofContext.lean": "Only expose existing layoutBody; add typed-input wrapper calling unchanged private layout_produce"
+    },
+    "sealed_inputs_checked": 2920,
+    "sorted_seal_manifest_sha256": "ec15d546e47df8548f6a48ddce38b889116f85564e4a22595b8019f8ddc8d4c1",
+    "new_public_declarations": 20,
+    "relation_module_declarations": 6,
+    "global_module_declarations": 11,
+    "donor_new_public_interfaces": 3,
+    "both_modules_and_preaudit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "original_source_hashes": 75,
+    "post_cleanup_all4_changed_modules_trust0_passed": true
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingRelationWeakening.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationWeakening.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationWeakening.from_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationWeakening.enrich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationWeakening.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationWeakening.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.data": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.data_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.body": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.produced": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.produced_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.produce": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.generalize_layout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingGlobalWeakening.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRelationSource.raw_quotation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.layoutBody": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.layout_from_typed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "cleanup_exact_own_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-relation-weakening-baseline.tmp.json",
+      "bytes": 13173998,
+      "raw_sha256": "4265955a68657e2f734333bdd2be309e150bcf51a7087d3d83e39313559d042f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-relation-weakening-donor-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-relation-weakening-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-global-weakening-donor-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-global-weakening-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-global-weakening-audit.tmp.lean",
+      "bytes": 1338,
+      "raw_sha256": "3ef0fa109587f20c0823319220425246cbecf5032309f0df36e12f3dc9bcb22a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-global-weakening-preaudit.tmp.log",
+      "bytes": 3024,
+      "raw_sha256": "1b4d43ca67ec37c21594c977400ea9127436c831ea2e9da1f60b63da58bbc1a6"
+    }
+  ],
+  "next_actual_source_consumer": "CanonicalGlobal matching and actual guardedforall consumer NOW DONE; do not redo members,bareR,Extra,ANDs,weak/abstract cancellation,rawtails or whole-query alternative. Follow PINNED SOURCE: ForcingQuotient.force_mono line171 and ForcingTruth.force_of_dense line60 internal-code Root proof generation, using existing formula-code induction and source atomic/coded premises. Original exists_force_neg line84 derives from dense; forceFormula_imp line121 derives from neg+mono. Do not invent extra independent inductions or reopen fixed-formula/source mathematics. Then actual normalizedforcingMP, all internal ZF/U axioms and six-rule Proof preservation, exact reduction and finalgoal. Original stages1–9complete,10active11unstarted.",
+  "cleanup_verified": {
+    "exact_own_files_removed": 7,
+    "bytes_removed": 13178360,
+    "all_targets_absent": true,
+    "resolved_parent_and_raw_hash_verified": true
+  }
+}

@@ -170155,7 +170155,7 @@
         "PPAC/Migration/Internal/HornBinderRules.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingPreorderCode.lean": "f9329015038fa56ac67828bd6400702c294c3dc31e4839dfe5386e3e51217d97",
         "PPAC/Migration/SyntaxTransport.lean": "a55b7e59d15b59049c58e6c119e3b6bd49a8ea6353fe41c0809ace606ec3b5ee",
@@ -170296,7 +170296,11 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
         ],
-        "PPAC.Migration.ForcingRelationSource.emptyMap": []
+        "PPAC.Migration.ForcingRelationSource.emptyMap": [],
+        "PPAC.Migration.ForcingRelationSource.raw_quotation": [
+          "propext",
+          "Quot.sound"
+        ]
       }
     },
     "forcing_relation_images": {
@@ -170330,7 +170334,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/Internal/TermImageQuotationFields.lean": "a37d32c41ec07e2ef5d3ab901648155e21c8e7f74291aa9b593ea0414d3dbae1",
         "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
@@ -170526,7 +170530,7 @@
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/Internal/SyntaxIdentityCode.lean": "0fcfdf31ee781127a766773e07a255845cd8295219c7d3b4fdf311f45efb2ce9",
@@ -170636,7 +170640,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/Internal/StructuralListLengthConstruct.lean": "1ea9ba8d08af88664273dd986e1f96c9a9c25197d61eb7f36a4289a515664964",
         "PPAC/Migration/Internal/SyntaxForestSyntax.lean": "b66d174cd3d4ff97fc5cf65a87abf05b07161b349c33403df0b8770e8b403f9e",
@@ -170723,7 +170727,7 @@
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
@@ -171189,7 +171193,7 @@
         "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
@@ -172083,7 +172087,7 @@
         "PPAC/Migration/ForcingExistDomainSource.lean": "9ee16ce203575caa730b61efeabd5faf9057cdd546240918f3e8e07ab799ea53",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
-        "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
         "PPAC/Migration/Internal/NativeSubstitutionEnvironment.lean": "3749c5b2225e03bca3e32a08a3edde8bf5d866a990c2af97e845d745f9f5b86f",
         "PPAC/Migration/Internal/NativeFormulaQuotationCorrespondence.lean": "79a113514a7972f4fd2f9189ec6f561aa59067ee8e4db3ca6acfdf2ccc597b85",
         "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
@@ -172807,7 +172811,7 @@
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingProofContext.lean": "02ab74700cf66d1da6c0c37f92295799f8094960df0632e4525e8d6788cfd300",
+        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
         "PPAC/Migration/ForcingPreorderExistential.lean": "a23475f4ce816522404ba5b2975f21d6b1c730496757df2ecaa9896910bb1bdd",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
@@ -172910,6 +172914,15 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingProofContext.layoutBody": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofContext.layout_from_typed": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
       "scope": "Original force_mono/ex proof-context consumer. Reads SAME actual preorder row G0=Pre AND(H0 AND(H1 AND(H2 AND(H3 AND H4)))), where H0/H1/H2 are r/q/p membership, H3=R(r,q), H4=R(q,p). Produces exactly SIX internal AND code witnesses using existing typed binary0 constructors. Canonical global=Extra AND(Pre AND(H1 AND(H2 AND H4))); r-local=H0 AND H3; canonicalCtx=global AND local. Original projections, composition, rule11 and SAME-background discharge/S+MP prove canonicalCtx->oldCtx WITHOUT assuming guard/preorder truth. The ACTUAL ForcingPreorderExistential.resultData Tail proof is transported to canonicalCtx and existing Curry.from_implication curries ONLY r-local. All SIX layout witnesses remain object existentially bound in result. from_queries ACTUALLY CALLS unchanged FULL raw-tail comparison from TWO queries and eqSubst transports canonical proof to its SAME actual second tail. Two ordinary nativeZF original-kernel closed sentence endpoints; runtime scopes/formula/proof-operation codes remain arbitrary internal including nonstandard. No given layout/expected rearrangement/equality answer, no new compiler/checker/kernel/recursor/induction or object Choice. This completes generated canonical proof-context rearrangement and raw tail transfer ONLY. DOES NOT prove free0 freshness/global weakening inverse, two actual mode3 abstractions or their guarded forall consumer, original JOINT forcing mono/dense/exists_neg/imp/MP, all internal ZF/U axiom/six-rule Proof correctness, reduction or finalCon. mode3 abstracts FIRST free slot0; existing free variables must shift, not a last-free-variable assumption."
@@ -172939,7 +172952,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
-        "PPAC/Migration/ForcingProofContext.lean": "02ab74700cf66d1da6c0c37f92295799f8094960df0632e4525e8d6788cfd300",
+        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
@@ -174058,6 +174071,170 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives, all runtime target contexts, conditions, lists, fields, formulas and proof codes internal including nonstandard codes. Input is BOTH actual already-produced original LeafTarget.instances, SAME raw16 and weak-image data, original numeral carrier metadata, and actual q/p term rename queries. NO separately supplied actual leaf row, carrier field, member code, symbol, comparison equality or weak answer. Original fixed6/10/5/3 objectEX blocks consumed on BOTH sides through existing HornBinderRules, exposing actual original Leaves.data. ACTUALLY call MemberWeakening.from_rows twice for q1/p2, so its internal carrier/symbol producers and original atomic weakening law are consumed. Repack all48 original witnesses in SAME objectEX output alongside both whole actual rows and both derived weak-member relations. Fresh r need not match and no rename premise imposed on it. Original LeafTarget producer proof bodies unchanged; only its three existing fixed body definitions made public for actual consumer. Fin index metadata equalities use external Fin.ext/val to avoid unfolding huge slot recursion; not a new object recursion/backend. Ordinary nativeZF closed endpoint. Still no actual bare-R/Extra/fourAND canonicalGlobal match, jointforcing, allinternalaxioms/sixruleProof/reduction/finalCon; no new checker/kernel/object Choice/standardness assumption."
+    },
+    "forcing_relation_weakening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingRelationWeakening.lean",
+      "source_declarations": [
+        "Actual SAME raw14 R(q,p) query source transfer and first-free0 weakening"
+      ],
+      "consumers": [
+        "Original same-source force_mono/neg/ex actual background and original guarded forall",
+        "Then joint internal forcing induction and full axiom/Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingMemberRows.lean",
+        "PPAC/Migration/ForcingRelationSource.lean",
+        "PPAC/Migration/ForcingRelationImages.lean",
+        "PPAC/Migration/ForcingRelationRawFormula.lean",
+        "PPAC/Migration/ForcingPreorderGuardTables.lean",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingRelationWeakening.lean": "d925d5c9eb9731890c7e5afb4c06b59186dd2368cf2765cc781dce35df725d45",
+        "PPAC/Migration/ForcingMemberRows.lean": "dc038bf03f7446f39b2aa6b8485a2e63119950dff27f712c55417037f4dcb1b5",
+        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
+        "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
+        "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationWeakening.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationWeakening.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationWeakening.from_rows": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationWeakening.enrich": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationWeakening.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationWeakening.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; all runtime term/list/scope/formula codes internal including nonstandard. Input is actual MemberRows.data (BOTH full original rows, all48 witnesses, derived q/p member weak relations) plus original source numeral3 context. Original tree quotation existence internally generates guard template G; existing RelationSource.produce consumes actual old raw_quotation and creates SAME source coreR code X plus4maps. Existing RelationImages.produce called TWICE to generate both actual double-overwrite records. Original numeral unique and replacement_index align independently generated indices without changing actual tables. Existing RelationRawFormula.from_prefix consumes BOTH actual original raw H4 queries to SAME coreR direct queries; ACTUALLY call completed WeakenedOverwrite.from_double_queries. All14 outer source/operation record witnesses generated/eliminated, no guard/core quotation, index, overwrite table, row-query/weak-answer premise. enrich preserves input. Original raw_quotation proof only made public. NativeZF closed endpoint. Not full jointforcing/allinternalaxioms/sixruleProof/reduction/Con; no new compiler/checker/recursion/induction backend/kernel/object Choice/standardness assumption."
+    },
+    "forcing_global_weakening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingGlobalWeakening.lean",
+      "source_declarations": [
+        "Actual original canonical Global freshening, Extra,4AND and guarded forall consumer"
+      ],
+      "consumers": [
+        "Original same-source force_mono/neg/ex actual background and original guarded forall",
+        "Then joint internal forcing induction and full axiom/Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingRelationWeakening.lean",
+        "PPAC/Migration/ForcingFreshPreorder.lean",
+        "PPAC/Migration/ForcingProofContext.lean",
+        "PPAC/Migration/ForcingFreshBackground.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeOutput.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogical.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
+        "PPAC/Migration/ForcingRelationWeakening.lean": "d925d5c9eb9731890c7e5afb4c06b59186dd2368cf2765cc781dce35df725d45",
+        "PPAC/Migration/ForcingFreshPreorder.lean": "f8a2bef82eca81987ce3264b9614dbd9b01a62d1213d495fde91be996429debc",
+        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
+        "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeOutput.lean": "6d0045b39716cd2f834a956c4765af50b9c3cd7d7c4a5dbedd1698a495d868b7",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogical.lean": "525d3bb7a44cd3b76cb1bbb7e42fe3b1780924f4e5ca260c3e6e4bd7691fd846"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingGlobalWeakening.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.data_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.body": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.produced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.produce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.generalize_layout": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingGlobalWeakening.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; all runtime scopes/codes internal including nonstandard. Computational inputs are actual RelationWeakening.input/paired MemberRows data, SAME raw/source actual FreshPreorder.data with newr/q/p/Pre/Refl/transitivity outputs identified by original tuples, original Extra formula typing and actual old canonical layout. No given weakPre/member/R answers beyond existing generated records; RelationWeakening.from_rows ACTUALLY called, Pre weakness read from SAME FreshPreorder.data, q/p weakness read from actual paired record. Original exists_output produces actual newExtra weak relation internally; original ProofContext.layout_produce reused via typed-input wrapper, producing all6 original new AND codes. Original four binary_iff laws use SAME actual identity/shift codes v0/v1 to derive weakened oldCtx3 newCtx3 for SAME generated layout, not an arbitrary new global. All7 newExtra/layout witnesses object-bound. No given newExtra/newlayout/weakGlobal/output equality or abstraction. Public generalize_layout ACTUALLY calls unchanged FreshBackground.generalize_layout using this generated Global and SAME original ProofUniversal.resultData, removing weakGlobal/abstraction premises; actual Curry/Root proof record remains a computational input, not unconditional jointforcing. Main canonical Global matching dependency complete by direct original weakening construction; an additional whole-global pair-of-source-queries route is unnecessary. NativeZF closed production endpoint. Existing layout_produce proof body unchanged; only layoutBody visibility plus typed-input interface added. Jointforcing/fullinternalaxioms/sixruleProof/reduction/finalCon still unproved; no new compiler/checker/recursor/induction/kernel/object Choice/standardness premise."
     }
   },
   "selected_route_consumer_audit": {

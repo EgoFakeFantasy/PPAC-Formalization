@@ -1183,3 +1183,5 @@ import PPAC.Migration.ForcingFreshPreorder
 import PPAC.Migration.ForcingMemberWeakening
 import PPAC.Migration.ForcingFreshLeaves
 import PPAC.Migration.ForcingMemberRows
+import PPAC.Migration.ForcingRelationWeakening
+import PPAC.Migration.ForcingGlobalWeakening
