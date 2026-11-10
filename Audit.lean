@@ -40106,3 +40106,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistChildOpening.query
 #print axioms PPAC.Migration.ForcingExistChildOpening.sentence
 #print axioms PPAC.Migration.ForcingExistChildOpening.term
+
+#print axioms PPAC.Migration.ForcingExistOrderOpening.formula
+#print axioms PPAC.Migration.ForcingExistOrderOpening.frame
+#print axioms PPAC.Migration.ForcingExistOrderOpening.frame_rename
+#print axioms PPAC.Migration.ForcingExistOrderOpening.from_compiled
+#print axioms PPAC.Migration.ForcingExistOrderOpening.guard_compare
+#print axioms PPAC.Migration.ForcingExistOrderOpening.input
+#print axioms PPAC.Migration.ForcingExistOrderOpening.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistOrderOpening.path
+#print axioms PPAC.Migration.ForcingExistOrderOpening.path_rename
+#print axioms PPAC.Migration.ForcingExistOrderOpening.query
+#print axioms PPAC.Migration.ForcingExistOrderOpening.sentence
+#print axioms PPAC.Migration.ForcingExistOrderOpening.term

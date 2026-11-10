@@ -20,10 +20,12 @@
 
 既有原preorder报价、真实mixed开口、三次native实例、五IMP行及内部证明已生成消费；共同R、两路径全内部项／公式相消、原完整负compiler实际guard解除及同一G0柯里化均已接通。原L／全模式、对象递归、mode3／forall及原内部证明规则均继续复用。
 
-本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需对齐成员／内层R／域guard并组装两次EX，最终Con未完成。
+本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需对齐成员／域guard并消费本批内层R比较、组装两次EX，最终Con未完成。
+
+本批 ForcingExistOrderOpening 直接消费原内层次序守卫 R(r,q) 的完整编译器，保留仍绑定的r；用现有重绑定项律／闭项开口字段和完整内部公式相消，内部生成并消去4个恒等见证及规范候选。两边各3个guard见证和6个rebind见证均对象消去，源guard码由现成head／guard唯一性识别，原overwrite吸收和完整mixed唯一性证明实际开口输出同码。目标typed覆盖表和实际lift仍是操作判断，不预设输出等式或guard真值，不建新编译器／核／递归／归纳。局部原核闭句及12项预审通过；本批九项完整验收／五项trust=0均退出0，39421项声明零警告；全部39409项旧足迹及2867份旧证明不变，无新增公理，2901项密封输入重算。详见verification/forcing-exist-order-opening-acceptance.json。
 
 当前仍在原第10阶段。真正剩余为存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始，最终对象Con未证明。
 
-最新本地验收见verification/forcing-exist-child-opening-acceptance.json：39409项声明、2266项无公理、37143项仅既有记录依赖，零警告。39394项旧足迹和全部2866份旧证明源码保持；2900项密封输入重算。16回归、三个干净锁定依赖及75源哈希通过。清理／源码补验见回执，本地通过不替代独立Linux结果。
+最新本地验收见verification/forcing-exist-order-opening-acceptance.json：39421项声明、2266项无公理、37155项仅既有记录依赖，零警告。39409项旧足迹和全部2867份旧证明源码保持；2901项密封输入重算。16回归、三个干净锁定依赖及75源哈希通过。仅清理本批5份临时文件（13439386字节），保留源码trust=0补验退出0；本地通过不替代独立Linux结果。
 
-详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-preorder-negative-remote-acceptance.json：a0665fa／39347项声明，实际PASS时间2026-11-09T22:10:46.0494708Z；已推送d0843a7的39379项正在独立Linux验收；后续本地39409项尚未推送。历史批次以Git和不可改写回执为据。
+详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-preorder-negative-remote-acceptance.json：a0665fa／39347项声明，实际PASS时间2026-11-09T22:10:46.0494708Z；d0843a7的39379项也已独立Linux成功，实际PASS时间2026-11-10T11:22:33.5406351Z，见verification/ci-exist-child-remote-acceptance.json；本地39421项完整验收已通过；该批独立Linux结果须另看其发布后的Actions，不能用前一批结果替代。历史批次以Git和不可改写回执为据。

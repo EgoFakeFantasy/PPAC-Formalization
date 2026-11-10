@@ -1,0 +1,13 @@
+{
+  "run_id": 42794638958,
+  "job_id": 129756537024,
+  "commit": "d0843a7fc6611d559ae884069fde9c0ee251d702",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42794638958",
+  "actual_live_run_conclusion": "success",
+  "actual_decoded_PASS_line": "2026-11-10T11:22:33.5406351Z PASS: 39379 audited declarations; 2266 without axioms; 37113 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39379,
+  "warnings": 0,
+  "scope": "Independent clean Linux verification of the complete existential outer-guard consumer and all four actual existential-child term actions. Excludes later canonical-child, two-opening and order-opening batches. Final internal Con unproved.",
+  "decoded_log_sha256_lf": "81f94ccc4f21cdf294bfd18c690f08ce7111378c73634d2e756f52d7bf9e8f32",
+  "observed_at": "2026-11-10T11:25:03.455015+00:00"
+}
