@@ -549,4 +549,53 @@ theorem kernel_certificate {m} (w z b A G : Fin m) :
   exact promote (ZFContext.add (ZFContext.source_ZF m) E) w z b A G (.conjL hE)
     (.conjL (.conjR hE)) (.conjL (.conjR (.conjR hE))) (.conjR (.conjR (.conjR hE)))
 
+private theorem identity_term {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a b c d I J R S x u : Fin m) (hw : Derives Γ (omega w))
+    (hI : Derives Γ (diagonalCode w a c I))
+    (hJ : Derives Γ (diagonalCode w b d J))
+    (he : Derives Γ (IndexTermImageCodeSyntax.environment w I J R S a b c d))
+    (hq : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a b c d x u)) :
+    Derives Γ (.equal x u) := by
+  let B := (SyntaxMapCodeSyntax.encoded w.castSucc (Fin.last m) a.castSucc c.castSucc I.castSucc).conj
+    (SyntaxRenameTermIdentity.diagonal (Fin.last m))
+  let Δ := Context.add B (Context.image Formula.raise Γ)
+  apply Derives.exE (p := B) hI
+  have hB : Derives Δ B := .hyp (Or.inl rfl)
+  have hJ1 := of_eq (diagonalCode_rename w b d J Fin.castSucc) (under hJ B)
+  let E := (SyntaxMapCodeSyntax.encoded w.castSucc.castSucc (Fin.last (m+1)) b.castSucc.castSucc d.castSucc.castSucc J.castSucc.castSucc).conj
+    (SyntaxRenameTermIdentity.diagonal (Fin.last (m+1)))
+  let Ξ := Context.add E (Context.image Formula.raise Δ)
+  apply Derives.exE (p := E) hJ1
+  have hE : Derives Ξ E := .hyp (Or.inl rfl)
+  have hB2 : Derives Ξ ((SyntaxMapCodeSyntax.encoded w.castSucc.castSucc (Fin.last m).castSucc a.castSucc.castSucc c.castSucc.castSucc I.castSucc.castSucc).conj
+    (SyntaxRenameTermIdentity.diagonal (Fin.last m).castSucc)) := of_eq
+    (by simp only [B, Formula.raise, Formula.rename, SyntaxMapCodeSyntax.encoded_rename, SyntaxRenameTermIdentity.diagonal_rename]) (under hB E)
+  have hZ2 := ZFContext.under (ZFContext.under hZ B) E
+  have hw2 : Derives Ξ (omega w.castSucc.castSucc) := of_eq (by simp only [Formula.raise, omega_rename]) (under (under hw B) E)
+  have he2 : Derives Ξ (IndexTermImageCodeSyntax.environment w.castSucc.castSucc I.castSucc.castSucc J.castSucc.castSucc R.castSucc.castSucc S.castSucc.castSucc a.castSucc.castSucc b.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc) := of_eq (by simp only [Formula.raise, IndexTermImageCodeSyntax.environment_rename]) (under (under he B) E)
+  have hq2 : Derives Ξ (SyntaxCodedMixedTermSyntax.substituted w.castSucc.castSucc R.castSucc.castSucc S.castSucc.castSucc a.castSucc.castSucc b.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc x.castSucc.castSucc u.castSucc.castSucc) := of_eq (by simp only [Formula.raise, SyntaxCodedMixedTermSyntax.substituted_rename]) (under (under hq B) E)
+  have hp := Derives.impE (Derives.conjR (TermTransformProgramCorrectness.checked_iff hZ2
+    w.castSucc.castSucc R.castSucc.castSucc S.castSucc.castSucc a.castSucc.castSucc b.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc
+    x.castSucc.castSucc u.castSucc.castSucc hw2)) hq2
+  have hr := Derives.impE (Derives.conjL (IndexTermImageEnvironment.term_program_iff hZ2
+    w.castSucc.castSucc I.castSucc.castSucc J.castSucc.castSucc R.castSucc.castSucc S.castSucc.castSucc a.castSucc.castSucc b.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc
+    (Fin.last m).castSucc (Fin.last (m+1)) x.castSucc.castSucc u.castSucc.castSucc hw2 he2 (Derives.conjL hB2) (Derives.conjL hE))) hp
+  exact SyntaxRenameTermIdentity.identity hZ2 w.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))
+    a.castSucc.castSucc b.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc x.castSucc.castSucc u.castSucc.castSucc
+    hw2 (Derives.conjR hB2) (Derives.conjR hE) hr
+
+
+/-- The DIRECT promoted leg on arbitrary actual term candidates. Reuse the
+existing raw term identity and actual index/mixed environment, not a second
+term recursion. This is consumed by the weak/abstract four-path diagram. -/
+theorem promoted_term_identity {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A G x q : Fin m) (v : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hv : Derives Γ (promotedData w z b A G v))
+    (hq : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (v 2) (v 3) z b A b x q)) :
+    Derives Γ (.equal x q) :=
+  identity_term hZ w z b A b (v 0) (v 1) (v 2) (v 3) x q hw
+    (empty_shift w z A (v 0) hz (.conjL hv)) (.conjL (.conjR hv))
+    (.conjL (.conjR (.conjR hv))) hq
+
 end PPAC.Migration.ForcingScopeIdentity

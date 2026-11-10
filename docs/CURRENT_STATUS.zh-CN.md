@@ -6,7 +6,7 @@
 
 ## 已完成并必须复用
 
-ForcingScopeIdentity.promote 已补齐闭背景的实际范围适配：复用原项恒等、图解码唯一性、对角提升及原子／逻辑证明步骤，将原同范围公式恒等推广到独立源／目标范围；六个元数据参数在对象层全称量化，量词生成各自的内部后继。具体消费者从原闭 G 类型、空 z 及其后继 A 出发，内部产生空域位移／自由恒等／两张 mixed 表四个码，取得同一个 G 在 A 范围下的真实 G→G 查询和类型；没有给定目标类型或答案，四见证保留在对象 EX4。普通 nativeZF 原核闭句／九命令／五项 trust=0 全通过，39585项声明零警告，旧39573足迹和全部2876份旧证明正文不变，2910项密封输入重算，见 [范围适配验收](../verification/forcing-scope-identity-acceptance.json)。这关闭了已有四路径比较的 direct 同码范围提升一侧；首槽弱化后再抽象的相消以及同一源 Global 匹配仍未完成，现有 ForcingProofUniversal 的全局抽象前提尚未消去。原上下文重排、正文抽象与 guarded forall 消费、完整公式归纳／相消、L／全模式均继续复用，不重做。仍在原第10阶段，最终 Con 未证明，第11未开始。
+ForcingFreshBackground.derive 已证明任意内部／非标准闭背景码的实际首槽0相消：从原 weakened G W 出发，内部生成并消去十三个操作／输出见证，读取真实位移及原抽象前缀字段，复用完整 ForcingFormulaInduction.cancel 得到 abstracted W G；没有给定 frame、操作表、抽象输出、相等答案或 IH。generalize_layout 已实际消费该证明及现有 guarded forall，消去原全局抽象关系和闭G类型前提；仍保留“同一实际 canonical Global 是原 G 的弱化输出”这一操作关系，其源 freshening 记录匹配尚未证明。两个普通 nativeZF 原核闭句、九命令／五项 trust=0 全通过，39600项声明零警告；旧39585足迹不变，2876份其他旧证明保持，扩展 ScopeIdentity 原12项正文完整保留，2911项密封输入重算，见 [首槽相消验收](../verification/forcing-fresh-background-acceptance.json)。通用弱化／抽象相消、范围提升、正文抽象及原 forall 消费现均已完成，不再列为待办。下一项是同一源 canonical Global 的实际弱化匹配，然后原联合强迫、全部内部公理、六规则 Proof、reduction 和最终 Con。仍在原第10阶段，最终 Con 未证明，第11未开始。
 
 | 已有资产 | 当前精确边界 |
 |---|---|

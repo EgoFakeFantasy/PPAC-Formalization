@@ -40294,3 +40294,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingScopeIdentity.closed_type
 #print axioms PPAC.Migration.ForcingScopeIdentity.sentence
 #print axioms PPAC.Migration.ForcingScopeIdentity.kernel_certificate
+
+#print axioms PPAC.Migration.ForcingScopeIdentity.promoted_term_identity
+#print axioms PPAC.Migration.ForcingFreshBackground.term
+#print axioms PPAC.Migration.ForcingFreshBackground.frame
+#print axioms PPAC.Migration.ForcingFreshBackground.frame_rename
+#print axioms PPAC.Migration.ForcingFreshBackground.term_diagram
+#print axioms PPAC.Migration.ForcingFreshBackground.formula
+#print axioms PPAC.Migration.ForcingFreshBackground.input
+#print axioms PPAC.Migration.ForcingFreshBackground.input_rename
+#print axioms PPAC.Migration.ForcingFreshBackground.derive
+#print axioms PPAC.Migration.ForcingFreshBackground.sentence
+#print axioms PPAC.Migration.ForcingFreshBackground.kernel_certificate
+#print axioms PPAC.Migration.ForcingFreshBackground.generalize_layout
+#print axioms PPAC.Migration.ForcingFreshBackground.guardedInput
+#print axioms PPAC.Migration.ForcingFreshBackground.guardedSentence
+#print axioms PPAC.Migration.ForcingFreshBackground.guarded_kernel_certificate

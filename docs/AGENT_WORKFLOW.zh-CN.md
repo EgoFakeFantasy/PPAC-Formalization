@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-第10阶段最新已验收消费者：ForcingScopeIdentity.promote 已补齐闭背景的实际范围适配：复用原项恒等、图解码唯一性、对角提升及原子／逻辑证明步骤，将原同范围公式恒等推广到独立源／目标范围；六个元数据参数在对象层全称量化，量词生成各自的内部后继。具体消费者从原闭 G 类型、空 z 及其后继 A 出发，内部产生空域位移／自由恒等／两张 mixed 表四个码，取得同一个 G 在 A 范围下的真实 G→G 查询和类型；没有给定目标类型或答案，四见证保留在对象 EX4。普通 nativeZF 原核闭句／九命令／五项 trust=0 全通过，39585项声明零警告，旧39573足迹和全部2876份旧证明正文不变，2910项密封输入重算，见 [范围适配验收](../verification/forcing-scope-identity-acceptance.json)。这关闭了已有四路径比较的 direct 同码范围提升一侧；首槽弱化后再抽象的相消以及同一源 Global 匹配仍未完成，现有 ForcingProofUniversal 的全局抽象前提尚未消去。原上下文重排、正文抽象与 guarded forall 消费、完整公式归纳／相消、L／全模式均继续复用，不重做。仍在原第10阶段，最终 Con 未证明，第11未开始。
+第10阶段最新已验收消费者：ForcingFreshBackground.derive 已证明任意内部／非标准闭背景码的实际首槽0相消：从原 weakened G W 出发，内部生成并消去十三个操作／输出见证，读取真实位移及原抽象前缀字段，复用完整 ForcingFormulaInduction.cancel 得到 abstracted W G；没有给定 frame、操作表、抽象输出、相等答案或 IH。generalize_layout 已实际消费该证明及现有 guarded forall，消去原全局抽象关系和闭G类型前提；仍保留“同一实际 canonical Global 是原 G 的弱化输出”这一操作关系，其源 freshening 记录匹配尚未证明。两个普通 nativeZF 原核闭句、九命令／五项 trust=0 全通过，39600项声明零警告；旧39585足迹不变，2876份其他旧证明保持，扩展 ScopeIdentity 原12项正文完整保留，2911项密封输入重算，见 [首槽相消验收](../verification/forcing-fresh-background-acceptance.json)。通用弱化／抽象相消、范围提升、正文抽象及原 forall 消费现均已完成，不再列为待办。下一项是同一源 canonical Global 的实际弱化匹配，然后原联合强迫、全部内部公理、六规则 Proof、reduction 和最终 Con。仍在原第10阶段，最终 Con 未证明，第11未开始。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳与实际重绑定相消已验收；原preorder三次native实例／五IMP行、共同R、负compiler的guard解除与G0柯里化已有。完整存在compiler与实际双层查询、成员／关系／域／child四组件、完整原始尾部跨条件等式及全部trace／canonical见证消去均已验收。本批六个canonical上下文合取码内部生成、同背景重排、只对r-local的Curry及实际raw尾部证明传输也已通过普通nativeZF原核闭句。本批同一Curry正文及其实际首槽抽象也已内部构造，原guarded forall已被实际消费；该消费者仍保留全局背景抽象操作与闭G类型前提。本批跨作用域恒等及同一闭G的direct范围提升／实际mixed查询也已验收，四码内部生成。既有mode3／forall、Curry和reduction→goal封闭门继续复用 | 候选Global的首槽0弱化／抽象对应及其前提消去，以关闭完整源fresh全称化；原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳与实际重绑定相消已验收；原preorder三次native实例／五IMP行、共同R、负compiler的guard解除与G0柯里化已有。完整存在compiler与实际双层查询、成员／关系／域／child四组件、完整原始尾部跨条件等式及全部trace／canonical见证消去均已验收。本批六个canonical上下文合取码内部生成、同背景重排、只对r-local的Curry及实际raw尾部证明传输也已通过普通nativeZF原核闭句。本批同一Curry正文及其实际首槽抽象也已内部构造，原guarded forall已被实际消费；该消费者仍保留全局背景抽象操作与闭G类型前提。本批跨作用域恒等及同一闭G的direct范围提升／实际mixed查询也已验收，四码内部生成。本批全内部首槽弱化／抽象相消完成，十三见证生成消去；实际 guarded forall 的全局抽象答案前提已消去。既有mode3／forall、Curry和reduction→goal封闭门继续复用 | 同一源canonical Global与原首槽弱化输出匹配，以关闭完整源fresh全称化；原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
