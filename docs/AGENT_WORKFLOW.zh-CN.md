@@ -15,7 +15,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳及实际重绑定相消已验收。原三native／五IMP行、共同R、两路径项／公式相消及完整负compiler guard解除／G0柯里化已接通。本批完整存在compiler实际8＋7记录与两层4＋4查询已消费，复用原head类型、guard证明及Curry，保留准确目标IMP字段和typed尾部局部／curried内部证明；原child同一12见证下全部四类项动作及八重对象全称封装现已原核验收，规范child同一内层条件覆盖后的完整公式独立性及9个内部存在见证／8重对象全称现也已验收，39394项声明零警告，见最新回执。既有mode3／forall继续复用；reduction→goal封闭门已有，reduction／goal未证明 | 存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳及实际重绑定相消已验收。原三native／五IMP行、共同R、两路径项／公式相消及完整负compiler guard解除／G0柯里化已接通。本批完整存在compiler实际8＋7记录与两层4＋4查询已消费，复用原head类型、guard证明及Curry，保留准确目标IMP字段和typed尾部局部／curried内部证明；原child同一12见证下全部四类项动作及八重对象全称封装现已原核验收，规范child同一内层条件覆盖后的完整公式独立性及9个内部存在见证／8重对象全称现也已验收，原实际child／两次opening到canonical及跨条件child整公式同码也已完成，39409项声明零警告，见最新回执。既有mode3／forall继续复用；reduction→goal封闭门已有，reduction／goal未证明 | 存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -31,10 +31,10 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-child-canonical-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-child-opening-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：完整存在compiler及同一预序外层守卫消费已接通；下一步为原raw child／两次实际opening到规范child环境的三角形，再关闭整个尾部跨条件不变性；直接消费ForcingExistChildTerms同一12见证／八重对象全称四律和新验收的ForcingExistChildCanonical完整公式独立性／9个对象见证，并复用现成shift／lift和全内部公式相消；不重新实现这些compiler。规范源上下文布局及fresh全称化复用既有InternalProofCurry、InternalProofUniversal和mode3生产器。随后关闭原联合mono／dense／MP内部归纳、全部内部公理／六规则Proof、reduction及最终Con。历史批次仅以Git和不可改写验收回执为据，不以旧批次的待办描述覆盖当前阶段表。
+当前下一原消费者：完整存在compiler及同一预序外层守卫消费已接通；原raw child／两次实际opening到canonical及跨条件child整公式同码现由ForcingExistChildOpening完成，不再列作缺口；下一步直接消费已有完整原存在compiler／实际EX输出和ForcingPreorderExistential记录，对齐成员／内层R／域guard并组装两层EX，关闭整个raw尾部跨条件不变性；直接复用新验收的ForcingExistChildOpening.compare，不重证项图或完整公式归纳；不重新实现这些compiler。规范源上下文布局及fresh全称化复用既有InternalProofCurry、InternalProofUniversal和mode3生产器。随后关闭原联合mono／dense／MP内部归纳、全部内部公理／六规则Proof、reduction及最终Con。历史批次仅以Git和不可改写验收回执为据，不以旧批次的待办描述覆盖当前阶段表。

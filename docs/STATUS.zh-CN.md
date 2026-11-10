@@ -20,10 +20,10 @@
 
 既有原preorder报价、真实mixed开口、三次native实例、五IMP行及内部证明已生成消费；共同R、两路径全内部项／公式相消、原完整负compiler实际guard解除及同一G0柯里化均已接通。原L／全模式、对象递归、mode3／forall及原内部证明规则均继续复用。
 
-本批 ForcingExistChildCanonical 直接消费两次实际外部条件槽更新及同一内层条件覆盖，用原完整列表唯一性证明最终表相等，再用原binder对唯一性及完整mixed公式唯一性证明整个规范child输出公式同码。原生产器内部生成同一bound0码和两组各4个执行见证，共9个对象EX；八重对象全称保证所有实际执行输出相等，at_agreement直接消费原记录。运行作用域／索引／码均可内部非标准，目标c=succ(b)、C=succ(c)中的b任意内部值；没有给定输出或码等式，没有新编译器／归纳／核。这里只完成规范child的条件独立性；原raw child与两次实际opening到该规范环境的三角形、整段raw尾部不变性及最终Con尚未完成。
+本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需对齐成员／内层R／域guard并组装两次EX，最终Con未完成。
 
 当前仍在原第10阶段。真正剩余为存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con。原1–9不重做，第11终验未开始，最终对象Con未证明。
 
-最新本地验收见verification/forcing-exist-child-canonical-acceptance.json：39394项声明、2266项无公理、37128项仅既有记录依赖，零警告。39379项旧足迹保持，全部2865份旧证明源码完全不变；2899项密封输入已重算。16回归、三个干净锁定依赖及75源哈希通过。只删除6个本批临时文件（13781939字节），清理后最终源码trust=0退出0，未见残留Lean／Lake进程；本地验收不替代Linux结果。
+最新本地验收见verification/forcing-exist-child-opening-acceptance.json：39409项声明、2266项无公理、37143项仅既有记录依赖，零警告。39394项旧足迹和全部2866份旧证明源码保持；2900项密封输入重算。16回归、三个干净锁定依赖及75源哈希通过。清理／源码补验见回执，本地通过不替代独立Linux结果。
 
-详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-preorder-negative-remote-acceptance.json：a0665fa／39347项声明，实际PASS时间2026-11-09T22:10:46.0494708Z；已推送d0843a7的39379项正在独立Linux验收；本地39394项尚未推送。历史批次以Git和不可改写回执为据。
+详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-preorder-negative-remote-acceptance.json：a0665fa／39347项声明，实际PASS时间2026-11-09T22:10:46.0494708Z；已推送d0843a7的39379项正在独立Linux验收；后续本地39409项尚未推送。历史批次以Git和不可改写回执为据。

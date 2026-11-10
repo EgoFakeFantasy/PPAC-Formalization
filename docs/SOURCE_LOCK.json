@@ -171578,7 +171578,7 @@
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
       },
-      "scope": "Canonical existential CHILD, not the complete actual raw tail: two ACTUAL outer-condition replacements from SAME base table followed by SAME actual inner-condition overwrite have equal final lists, proved at ALL internal fields using existing list uniqueness. SAME original binder pair uniqueness and full mixed formula uniqueness compare complete canonical child formula outputs, with no expected equality or formula-output answer. Existing Replacement/binder/full-formula producers internally generate ONE shared bound0 code and BOTH four-witness executions (nine OBJECT EX witnesses total), plus EIGHT OBJECT-universal candidate parameters guaranteeing all actual outputs equal. Source N, scopes, indices, lists and formula/proof codes remain internal including nonstandard; c=succ(b), C=succ(c), b arbitrary internal, so target scopes are not forced externally standard. No new compiler/checker/kernel/recursor/induction, no guard/preorder truth or object Choice. Ordinary nativeZF original-kernel closed sentence. Original raw-child compiler/opening to canonical triangle, complete raw-tail cross-condition invariance, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/Proof/reduction/finalCon NOT yet proved.",
+      "scope": "Canonical existential CHILD, not the complete actual raw tail: two ACTUAL outer-condition replacements from SAME base table followed by SAME actual inner-condition overwrite have equal final lists, proved at ALL internal fields using existing list uniqueness. SAME original binder pair uniqueness and full mixed formula uniqueness compare complete canonical child formula outputs, with no expected equality or formula-output answer. Existing Replacement/binder/full-formula producers internally generate ONE shared bound0 code and BOTH four-witness executions (nine OBJECT EX witnesses total), plus EIGHT OBJECT-universal candidate parameters guaranteeing all actual outputs equal. Source N, scopes, indices, lists and formula/proof codes remain internal including nonstandard; c=succ(b), C=succ(c), b arbitrary internal, so target scopes are not forced externally standard. No new compiler/checker/kernel/recursor/induction, no guard/preorder truth or object Choice. Ordinary nativeZF original-kernel closed sentence. Original raw-child compiler/opening to canonical triangle and actual child condition-independence are now proved by ForcingExistChildOpening, reusing this canonical result. Complete raw-TAIL cross-condition invariance, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistChildCanonical.overwrite": [
           "Classical.choice",
@@ -171645,6 +171645,144 @@
           "propext"
         ],
         "PPAC.Migration.ForcingExistChildCanonical.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ]
+      }
+    },
+    "forcing_exist_child_opening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean": "fce3e4691b496002465407d97b55556010c3bf2fbeb92279856afe8091a02a53"
+      },
+      "adapter": "PPAC/Migration/ForcingExistChildOpening.lean",
+      "source_declarations": [
+        "AtomicData.Force ex: preserve new name0, insert inner r1 and q2, substitute current condition by r",
+        "AtomicData.force_mono ex: fun r hr => h r (hr.trans hqp)"
+      ],
+      "consumers": [
+        "Full ACTUAL raw existential tail: align member/inner R/domain guards and package two actual EX outputs, using this complete raw child comparison",
+        "Original joint force_mono/force_of_dense/exists_force_neg/forceFormula_imp internal induction; internal Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingExistChildTerms.lean",
+        "PPAC/Migration/ForcingExistChildCanonical.lean",
+        "PPAC/Migration/ForcingExistChildCode.lean",
+        "PPAC/Migration/ForcingBinderFormula.lean",
+        "PPAC/Migration/ForcingFormulaInduction.lean",
+        "PPAC/Migration/ForcingOpenLift.lean",
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean",
+        "PPAC/Migration/Internal/InstantiateClosedParameterRename.lean",
+        "PPAC/Migration/Internal/AbstractBinderRename.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/StructuralListFieldCons.lean",
+        "PPAC/Migration/Internal/HornBinderRules.lean",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistChildOpening.lean": "6d74b60e222c7f4ccb0a98d07ccf804360b8a00f7244ce900d004687d146eb43",
+        "PPAC/Migration/ForcingExistChildTerms.lean": "841f15cc00a5b70126189931d2954e98a22185e2fb9958079a5d071f9f2c4c79",
+        "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
+        "PPAC/Migration/ForcingExistChildCode.lean": "8aa7154469917b7e0ac0f3f612daf09e32ef9d61f394d0e178074034ff8fad74",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingOpenLift.lean": "946980017210e9ed4127ae2aaf464c854e02f37c229461a0627970142c558ddc",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean": "f5dac3f0824fbdf5350718bad07f176b9f0a6576033de7fbba7bfbb1028297e7",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
+        "PPAC/Migration/Internal/InstantiateClosedParameterRename.lean": "076d67c442a9b91b8c93149bdfc4e1feb66dd3d30b6188427914ffc3f3e980dd",
+        "PPAC/Migration/Internal/AbstractBinderRename.lean": "22359a700c27b8615be71554b3e132b4ad11da5a44494c86cd80a962ddb99578",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/StructuralListFieldCons.lean": "51d8a13233519f8253070ad7deca887fa1baf6f42a1f4b3166b06e5383b76d6f",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+      },
+      "scope": "ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Whole raw-tail member/inner-order/domain guard alignment and two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistChildOpening.frame": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.frame_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.path": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.path_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.term": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.query": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.from_compiled": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.compare": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.compareInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.compareSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.compare_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

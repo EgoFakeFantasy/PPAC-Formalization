@@ -64,19 +64,21 @@
 
 | 原存在child全部内部项动作 | 本批 ForcingExistChildTerms 直接消费原完整 child 编译器的同一12见证，在八重对象全称量词内证明全部四类实际coded项动作：新名字头保持bound0，选中条件free槽变为bound1，其余free索引保持，旧bound索引增加2。中间push项码由原生产器在对象EX内生成／消去，完整原公式替换判断保留。只公开原生产器3项记录接口，其余源码与全部证明正文不变；没有新编译器／归纳／核或给定目标等式。此为同一存在尾部跨条件公式相消的实际项输入，尚未完成整个尾部不变性、规范上下文／fresh全称化或最终Con。 普通nativeZF原核闭句及28项接口预审通过；九项完整验收／五项trust=0全部退出0，39379项声明零警告；全部39364项旧足迹及2863份旧证明源码不变，无新增公理。 |
 
-| 规范存在child的完整公式条件独立性 | 本批 ForcingExistChildCanonical 直接消费两次实际外部条件槽更新及同一内层条件覆盖，用原完整列表唯一性证明最终表相等，再用原binder对唯一性及完整mixed公式唯一性证明整个规范child输出公式同码。原生产器内部生成同一bound0码和两组各4个执行见证，共9个对象EX；八重对象全称保证所有实际执行输出相等，at_agreement直接消费原记录。运行作用域／索引／码均可内部非标准，目标c=succ(b)、C=succ(c)中的b任意内部值；没有给定输出或码等式，没有新编译器／归纳／核。这里只完成规范child的条件独立性；原raw child与两次实际opening到该规范环境的三角形、整段raw尾部不变性及最终Con尚未完成。 普通nativeZF原核闭句及15项预审通过；九项完整验收／五项trust=0全部退出0，39394项声明零警告，全部39379项旧足迹及2865份旧证明源码保持，无新增公理。 |
+| 规范存在child的完整公式条件独立性 | 本批 ForcingExistChildCanonical 直接消费两次实际外部条件槽更新及同一内层条件覆盖，用原完整列表唯一性证明最终表相等，再用原binder对唯一性及完整mixed公式唯一性证明整个规范child输出公式同码。原生产器内部生成同一bound0码和两组各4个执行见证，共9个对象EX；八重对象全称保证所有实际执行输出相等，at_agreement直接消费原记录。运行作用域／索引／码均可内部非标准，目标c=succ(b)、C=succ(c)中的b任意内部值；没有给定输出或码等式，没有新编译器／归纳／核。规范child的原raw child／两次opening三角形现由ForcingExistChildOpening接通；整段raw尾部不变性及最终Con尚未完成。 普通nativeZF原核闭句及15项预审通过；九项完整验收／五项trust=0全部退出0，39394项声明零警告，全部39379项旧足迹及2865份旧证明源码保持，无新增公理。 |
+
+| 原实际child与两次opening到canonical及跨条件整公式同码 | 本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需对齐成员／内层R／域guard并组装两次EX，最终Con未完成。 九项完整验收／五项trust=0全部退出0，39409项声明零警告；39394项旧足迹及2866份旧证明源码保持，15项新增公共声明无新增公理。 |
 
 ## 当前真正缺口及依赖顺序
 
-- 原完整负compiler和完整存在compiler记录、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现均已实际消费；现已取得同一原child全部内部项的四律及八重对象全称封装，规范child双更新覆盖及完整公式同码现也已完成；原raw child／两次opening到规范环境的三角形与整个raw存在尾部跨条件不变性仍未证明。下一项是存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
+- 原完整负compiler和完整存在compiler记录、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现均已实际消费；现已取得同一原child全部内部项的四律及八重对象全称封装，规范child双更新覆盖及完整公式同码现也已完成；原raw child／两次opening到规范环境的三角形及实际child跨条件整公式同码现已完成；整个raw存在尾部仍待成员／内层R／域guard对齐及两层EX组装。下一项是存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
 - 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
 - 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
 - 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
 
 ## 最新实际验收
 
-`verification/forcing-exist-child-canonical-acceptance.json`：九项完整验收及五项trust=0全部退出0；39394项声明、零警告，全部39379项旧足迹和2865份旧证明源码保持，15项新增公共声明无新增公理；2899项密封输入重算。16项CI回归、三个干净锁定依赖及75源哈希通过。清理／补验结果见回执；当前本地范围待独立Linux验收。
+`verification/forcing-exist-child-opening-acceptance.json`：九项完整验收及五项trust=0全部退出0；39409项声明、零警告，全部39394项旧足迹和2866份旧证明源码保持，15项新增公共声明无新增公理；2900项密封输入重算。16项CI回归、三个干净锁定依赖及75源哈希通过，清理／源码补验见回执；当前本地范围待独立Linux验收。
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。已推送d0843a7的39379项正在独立Linux验收；后续本地39394项尚未推送；最终Con未完成。
+远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。已推送d0843a7的39379项正在独立Linux验收；后续本地39409项尚未推送；最终Con未完成。

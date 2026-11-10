@@ -1164,3 +1164,4 @@ import PPAC.Migration.ForcingPreorderNegative
 import PPAC.Migration.ForcingPreorderExistential
 import PPAC.Migration.ForcingExistChildTerms
 import PPAC.Migration.ForcingExistChildCanonical
+import PPAC.Migration.ForcingExistChildOpening

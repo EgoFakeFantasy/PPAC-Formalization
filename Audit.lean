@@ -40090,3 +40090,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistChildCanonical.result
 #print axioms PPAC.Migration.ForcingExistChildCanonical.result_rename
 #print axioms PPAC.Migration.ForcingExistChildCanonical.sentence
+
+#print axioms PPAC.Migration.ForcingExistChildOpening.compare
+#print axioms PPAC.Migration.ForcingExistChildOpening.compareInput
+#print axioms PPAC.Migration.ForcingExistChildOpening.compareSentence
+#print axioms PPAC.Migration.ForcingExistChildOpening.compare_kernel_certificate
+#print axioms PPAC.Migration.ForcingExistChildOpening.formula
+#print axioms PPAC.Migration.ForcingExistChildOpening.frame
+#print axioms PPAC.Migration.ForcingExistChildOpening.frame_rename
+#print axioms PPAC.Migration.ForcingExistChildOpening.from_compiled
+#print axioms PPAC.Migration.ForcingExistChildOpening.input
+#print axioms PPAC.Migration.ForcingExistChildOpening.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistChildOpening.path
+#print axioms PPAC.Migration.ForcingExistChildOpening.path_rename
+#print axioms PPAC.Migration.ForcingExistChildOpening.query
+#print axioms PPAC.Migration.ForcingExistChildOpening.sentence
+#print axioms PPAC.Migration.ForcingExistChildOpening.term
