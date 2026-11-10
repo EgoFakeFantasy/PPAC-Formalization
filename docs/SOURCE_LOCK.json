@@ -173287,6 +173287,124 @@
         ]
       },
       "scope": "Actual original FIRST-free-slot0 weak/abstract cancellation on ALL internal/nonstandard closed-bound formula codes. free_at reads actual shift index graph and original abstract_free prefix fields and internally produces/eliminates its successor index; term uses original bound/free source-term elimination, with empty bound branch impossible. term_diagram reuses existing SAME-scope identity_term_output for edge2 and SAME actual promoted_term_identity for direct edge3. SAME promoted free identity/list used by both edges; no extra free map producer. formula CALLS completed ForcingFormulaInduction.cancel, not a new formula recursion/induction; all formula/binder cases already proved and reused. derive starts ONLY with Omega/empty z/source successor A and actual original SyntaxWeakenFreeSyntax.weakened G W. It internally reads original weak I/J; generates both actual index/mixed tables; generates actual original abstractCoded K/H; calls existing promoted consumer for FOUR direct codes; generates ONE bound identity and ONE bound image only, reusing SAME promoted free identity/list; produces actual abstract output Q, derives Q=G by full formula cancellation and transports actual abstracted(W,Q) to abstracted(W,G). ALL THIRTEEN operation/code/output witnesses generated/eliminated; no frame/head/table/output/equality/IH answer premise. TWO ordinary nativeZF certificates. generalize_layout ACTUALLY consumes this new cancellation and existing ForcingProofUniversal.generalize_layout; former Global abstraction relation and source-G type premises eliminated, recovered from original actual weakening. ONLY actual original weakened G -> SAME canonical Global(v3) remains a computational input, whose source freshening MATCH IS NOT YET PROVED. This does NOT complete full source fresh forall, joint forcing, all internal axiom/six-rule Proof/reduction/finalCon. No new compiler/checker/kernel/recursor/induction backend, object Choice, external standardness or changed theory. Native runtime source/target scopes and original codes unrestricted internally; fixed metadata coordinate counts are not standardness bounds."
+    },
+    "forcing_reindexed_images": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingReindexedImages.lean",
+      "source_declarations": [
+        "AtomicData.force_mono/neg and ex source background target-free freshening"
+      ],
+      "consumers": [
+        "Actual old/fresh Extra, Pre, q/p member and relation records needed by ForcingFreshBackground.generalize_layout; source canonical Global matching still pending"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/Internal/SyntaxTermImagePushBoth.lean",
+        "PPAC/Migration/Internal/SyntaxTermImagePushGraph.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodePairs.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean",
+        "PPAC/Migration/Internal/IndexTermRenameTransport.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean",
+        "PPAC/Migration/Internal/OriginalTermScopeElimination.lean",
+        "PPAC/Migration/ForcingFormulaInduction.lean",
+        "PPAC/Migration/ForcingBinderFormula.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingReindexedImages.lean": "5248436d3b24dc2bade2b256035eff3e7606535112a578f45acff86548d3c9b7",
+        "PPAC/Migration/Internal/SyntaxTermImagePushBoth.lean": "41dd45d1214ccb22d0bd69439f23389ffffa1ec9b624473c7d5772f21652065a",
+        "PPAC/Migration/Internal/SyntaxTermImagePushGraph.lean": "75a9500d8372f4c3f7d187964692e046244424c7af58a2fdc85eee17c9819770",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodePairs.lean": "0666eb7d80e82ea4ba9bb1167074dcde03c54f68d093f5d924c9a06733aa8e0c",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
+        "PPAC/Migration/Internal/IndexTermRenameTransport.lean": "1c67e81472dfbc43af599790e5b3f3d29e619d649069e45eb245264bafebdf44",
+        "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
+        "PPAC/Migration/Internal/OriginalTermScopeElimination.lean": "776279442b3dd6fbb381991a79b12ffe5f4471edc3f36bb5fde425e6ef9bbd1b",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingReindexedImages.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.data_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.body": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.produced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.produce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.field_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.comparisonInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.comparisonInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.compare": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.comparisonSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.comparison_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.produceSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingReindexedImages.produce_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Produce SIX actual old decoded graphs, target-index pushed graphs and new original list codes using EXISTING SyntaxMixedImageCodePairs/TermImagePushBoth and original Replacement; no new graph/list recursion. field_iff reads actual old/new fields and original pushed graph law. Root term compares actual sequential and direct outputs by original two source-variable branches and original index term single-valuedness. Full formula covariance CALLS completed ForcingFormulaInduction.cancel; all internal formula codes, source/target scopes and indices, including nonstandard, remain unrestricted. compare internally generates/eliminates FOUR identity-index/image witnesses. NativeZF original FirstOrder.Derives certificates for six-witness production and actual three-query comparison. Actual push/realization records are computational inputs, not assumed field laws or expected formula equalities. Does NOT yet identify source canonical Global as original weak output, eliminate the index realization witnesses, or complete joint forcing/all internal axioms/six-rule Proof/reduction/finalCon. No new kernel/checker/induction backend or object Choice."
     }
   },
   "selected_route_consumer_audit": {

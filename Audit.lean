@@ -40310,3 +40310,18 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFreshBackground.guardedInput
 #print axioms PPAC.Migration.ForcingFreshBackground.guardedSentence
 #print axioms PPAC.Migration.ForcingFreshBackground.guarded_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingReindexedImages.data
+#print axioms PPAC.Migration.ForcingReindexedImages.data_rename
+#print axioms PPAC.Migration.ForcingReindexedImages.body
+#print axioms PPAC.Migration.ForcingReindexedImages.produced
+#print axioms PPAC.Migration.ForcingReindexedImages.produced_rename
+#print axioms PPAC.Migration.ForcingReindexedImages.produce
+#print axioms PPAC.Migration.ForcingReindexedImages.field_iff
+#print axioms PPAC.Migration.ForcingReindexedImages.comparisonInput
+#print axioms PPAC.Migration.ForcingReindexedImages.comparisonInput_rename
+#print axioms PPAC.Migration.ForcingReindexedImages.compare
+#print axioms PPAC.Migration.ForcingReindexedImages.comparisonSentence
+#print axioms PPAC.Migration.ForcingReindexedImages.comparison_kernel_certificate
+#print axioms PPAC.Migration.ForcingReindexedImages.produceSentence
+#print axioms PPAC.Migration.ForcingReindexedImages.produce_kernel_certificate
