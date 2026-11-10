@@ -40187,3 +40187,23 @@ import PPAC.Auxiliary
 
 #print axioms PPAC.Migration.ForcingRelationImages.mapped_field_arity
 #print axioms PPAC.Migration.ForcingRelationImages.mapped_variable_arity
+
+#print axioms PPAC.Migration.ForcingExistTailOpening.openedData
+#print axioms PPAC.Migration.ForcingExistTailOpening.openedData_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.openedBody
+#print axioms PPAC.Migration.ForcingExistTailOpening.opened
+#print axioms PPAC.Migration.ForcingExistTailOpening.opened_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantified
+#print axioms PPAC.Migration.ForcingExistTailOpening.source
+#print axioms PPAC.Migration.ForcingExistTailOpening.source_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.data
+#print axioms PPAC.Migration.ForcingExistTailOpening.data_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.body
+#print axioms PPAC.Migration.ForcingExistTailOpening.result
+#print axioms PPAC.Migration.ForcingExistTailOpening.result_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.from_query
+#print axioms PPAC.Migration.ForcingExistTailOpening.shellCodes
+#print axioms PPAC.Migration.ForcingExistTailOpening.from_shell
+#print axioms PPAC.Migration.ForcingExistTailOpening.input
+#print axioms PPAC.Migration.ForcingExistTailOpening.sentence
+#print axioms PPAC.Migration.ForcingExistTailOpening.kernel_certificate

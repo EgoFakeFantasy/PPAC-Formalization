@@ -1,10 +1,12 @@
-# 当前工作入口（2026-11-10）
+# 当前工作入口（2026-11-11）
 
 当前处于原1–11规划的第10阶段；第11阶段未开始，最终对象Con尚未证明。原阶段表见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，对象规格见[OBJECT_TARGET](OBJECT_TARGET.zh-CN.md)。本页只列当前结论；历史批次以Git和不可改写的逐批验收报告为据。
 
 最终目标仍为原YesMetaZFC纯集合语言／普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`。`goal`准确为 `nativeCon false → nativeCon true`，目标理论为ZF+PP+ACwo+¬AC；Con覆盖全部内部／非标准ω证明码及完整公理测试和原六规则Root。`closing_kernel_certificate`只证明`reduction → goal`，不能代替尚未证明的reduction或goal。
 
 ## 已完成并必须复用
+
+最新验收为 `ForcingExistTailOpening`：原 shell 加实际尾部查询现已给出全部16个内部执行见证，保留两次真实 binder 提升、三次 AND 构造和全部四个叶子查询。完整九命令／五项 trust=0 通过，39502项声明零警告，旧39483足迹和2872份旧证明文件不变。见 [验收回执](../verification/forcing-exist-tail-opening-acceptance.json)。跨条件尾部比较仍未完成；直接在同一记录上消费四个已完成比较，不重证这些组件。闭项提升直接复用 `EmptyBoundFreeInputs.term_free`；替换表的作用域传输可保留原两张图，以 `SyntaxMixedImageCodeFields.from_fields` 重定类型，不生产候选表或新后端。
 
 | 已有资产 | 当前精确边界 |
 |---|---|

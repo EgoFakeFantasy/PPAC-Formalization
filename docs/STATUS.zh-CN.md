@@ -1,6 +1,8 @@
-# 当前状态：原第10阶段（2026-11-10）
+# 当前状态：原第10阶段（2026-11-11）
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
+
+本批 `ForcingExistTailOpening.from_shell` 已直接消费原 `ForcingExistCode.shellData` 与实际尾部查询，复用现有 unary/binary 输出读取，取得两次 EX、三次 AND 及四个叶子查询的同一次执行记录。全部16个输出／后继／提升表见证在对象存在量词内产生、消去；普通 nativeZF 原核闭句已通过。九条完整验收命令／五项 trust=0 全通过，39502项声明零警告，39483项旧足迹及2872份旧 PPAC 证明文件保持，2906项密封输入重算，见 [实际尾部读取验收](../verification/forcing-exist-tail-opening-acceptance.json)。**这不等于尾部跨条件相等**：还须在这些同一记录上统一作用域、闭参数基表与 head，消费已完成的成员／次序／域／child 四个比较并封装两次 EX，随后推进原联合强迫归纳、全部内部公理／六规则 Proof、reduction 与最终 Con。
 
 | 原阶段／资产 | 实际状态 |
 |---|---|

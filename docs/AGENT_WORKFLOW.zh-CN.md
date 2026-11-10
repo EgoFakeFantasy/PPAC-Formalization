@@ -1,8 +1,10 @@
-# 原 1–11 阶段迁移流程（2026-11-08）
+# 原 1–11 阶段迁移流程（2026-11-11）
 
 当前为原第10阶段。最终目标是普通 nativeZF 原推导核中的对象句
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
+
+第10阶段最新已验收消费者：`ForcingExistTailOpening.from_shell` 从原 shell 及实际尾部查询读出同一次执行的全部16个对象见证，准确保留两次 EX、三次 AND 和四个实际叶子查询；九命令／五项 trust=0 全通过，39502项声明零警告。见 `verification/forcing-exist-tail-opening-acceptance.json`。这只是完整尾部读取；跨条件相等仍须统一同一记录上的作用域／闭基表／head，消费四个已证组件比较并封装两次 EX。之后仍沿原联合强迫／全部内部公理／六规则 Proof／reduction／最终 Con，不增加新阶段或重复基础。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -31,7 +33,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-domain-opening-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-opening-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。

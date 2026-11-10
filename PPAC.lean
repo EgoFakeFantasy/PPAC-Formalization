@@ -1170,3 +1170,4 @@ import PPAC.Migration.ForcingExistMemberOpening
 import PPAC.Migration.ForcingExistDomainSource
 import PPAC.Migration.ForcingExistDomainImages
 import PPAC.Migration.ForcingExistDomainOpening
+import PPAC.Migration.ForcingExistTailOpening

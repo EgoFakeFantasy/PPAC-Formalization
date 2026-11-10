@@ -1,0 +1,156 @@
+{
+  "verified_at": "2026-11-10T13:02:44.961675+00:00",
+  "baseline_commit": "84830737588a77e90a4aee8945b514acaaf8bd66",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: diagnosed actual remote CI failures and revalidated 16 compatibility/guard regressions; prior mathematical batch complete; final goal active",
+  "background": "Original pure membership/equality language, full ordinary nativeZF, original FirstOrder.Derives via unchanged replay; no object Choice/new kernel/checker/recursor/induction.",
+  "source_consumers": [
+    "Pinned AtomicData.Force existential tail at the SAME original ForcingExistCode.shellData v[4]",
+    "Next same-tail cross-condition comparison consuming the four ALREADY COMPLETE member/order/domain/child theorems"
+  ],
+  "result": [
+    "from_shell directly consumes every original tail source constructor and the ACTUAL original tail mixed query",
+    "Both EX and all three AND are read using the EXISTING unary/binary output readers",
+    "All SIXTEEN actual child-output/successor/lift-table witnesses remain object-bound and are internally produced/eliminated; actual four leaf queries are retained",
+    "Ordinary nativeZF original-kernel closed sentence, 19 declarations individually preaudited with trust=0"
+  ],
+  "proof_boundaries": {
+    "all_runtime_codes_scopes_and_witnesses_internal_including_nonstandard": true,
+    "original_shell_consumed_without_replacement_compiler": true,
+    "expected_output_or_lift_table_or_leaf_query_answer_as_premise": false,
+    "both_actual_EX_lifts_three_ANDs_four_leaf_queries_read": true,
+    "all_four_component_comparisons_already_proved_and_preserved": true,
+    "whole_tail_cross_condition_comparison_completed": false,
+    "component_frame_scope_base_head_normalization_and_comparison_consumption_completed": false,
+    "full_internal_Proof_reduction_and_final_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39502,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37236,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39483,
+    "all_old_PPAC_proof_files_byte_identical": 2872,
+    "sealed_source_inputs_all_fresh": 2906,
+    "sealed_existing_inputs_changed_only_entry_audit_source_lock_and_verifier": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "five_trust_zero_commands_passed": true,
+    "compatibility_regressions_passed": 9,
+    "comparator_guard_regressions_passed": 7,
+    "three_clean_pins_and_original_source_hashes": 75,
+    "full_summary_sha256": "fd112341730750dc7a504415b635d335118eb385f4bfa46a40441d9e7bff532b",
+    "audit_log_sha256": "b1a8e3def30f8bed2e7f2e6fa6c6dd9a09cf9de16c9c657efb7cabd2da4ab44d"
+  },
+  "cleanup": {
+    "exact_own_temporary_files": 6,
+    "total_bytes": 13229271,
+    "manifest": ".local/exist-tail-opening-cleanup.json",
+    "performed": true,
+    "retained_source_postcleanup_trust_zero_exit_code": 0,
+    "residual_Lean_Lake_processes": 0
+  },
+  "remote_predecessor_CI": {
+    "run_id": 42808631919,
+    "commit": "905a63f5196052e133a7e9deebdb0bb5882a6c24",
+    "last_observed_status": "in_progress",
+    "next_push_waits_for_actual_terminal_PASS": true
+  },
+  "next_required_step": "At these SAME 16 actual tail records normalize common scopes/base/head using existing input_of_lifted/output_lists/successor_unique. Closed term transport needs only EmptyBoundFreeInputs.term_free and target contexts. Replacement scope transport can preserve the SAME two actual graph witnesses: retag encoded input/output via SyntaxMixedImageCodeFields.from_fields; functionGraph is scope-independent. No candidate list, new map/head producer or new induction is necessary. Then CONSUME all four completed component comparisons and original constructor uniqueness to package both actual EX. Continue original proof contexts/fresh forall/joint mono/dense/MP/all internal axioms/six-rule Proof/reduction/finalCon."
+}
