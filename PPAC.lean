@@ -1187,3 +1187,4 @@ import PPAC.Migration.ForcingRelationWeakening
 import PPAC.Migration.ForcingGlobalWeakening
 import PPAC.Migration.ForcingConjunctionMono
 import PPAC.Migration.ForcingSourceMono
+import PPAC.Migration.ForcingNestedGuardProof

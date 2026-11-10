@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atSource 在对象语言中全称量化任意实际编译输出，apply_atSource 实例化对象子归纳假设；conjunction 调用原 CodeTotal.total 两次，在对象层产生消去两个子编译结果，再实际消费已验收的双查询合取步骤（该步骤内部产生消去四个查询子输出）。不再要求调用方给定子编译结果。假／真常元基例复用原编译常元律和两次实际查询唯一性，不带归纳假设。两个普通 nativeZF 原核闭句、完整九命令／五项trust=0通过，39739项声明、零警告；39728项旧依赖足迹和2888份旧证明Git正文全部保持；16项兼容性测试与3个固定库／75源码哈希通过，见[源公式单调性步骤验收](../verification/forcing-source-mono-acceptance.json)。仍是原第10阶段：这是指定运行框架上的源归纳步骤，原子证明的内部Root实例化、neg／ex实际框架装配及全内部公式归纳、dense／neg／imp、完整公理／Proof／reduction／最终Con尚未完成；没有宣称任意映射和G都满足单调性。此前 canonical Global／fresh forall 已完成，不重做。
+ForcingNestedGuardProof 已把 canonical 上下文中的 Global AND(M AND O) 实际 Tail 证明恢复为原编译器字面 M→(O→Tail)。复用原 and_exists 内部产生消去两个重排 AND 码，原投影／join／chain 导出新上下文证明，并实际调用现成 Curry.twice 产生两个嵌套正文码。随后实际消费 FreshBackground.derive、原 mode3 存在和 unchanged generalize_body／guarded forall，三个正文／抽象输出见证保留在对象EX3内。from_global 直接读取同一 Global.data 的实际弱化、元数据和旧Global类型；无需另给弱化或抽象答案，也不再要求此前单Local正文的mode3记录。输入还保留实际Context.resultData和Tail类型元数据，不假定守卫为真。两个普通 nativeZF 闭句及完整九命令／五项trust=0通过，39751项声明、零警告；39739项旧足迹及2888份其他旧证明Git正文保持，原and_exists仅去掉private、正文精确保留；16项兼容性测试与3个固定库／75哈希通过，见[字面双守卫验收](../verification/forcing-nested-guard-acceptance.json)。原第10阶段继续：完整新父公式实际查询与生成全称码的最终识别、原子模板的内部Root实例化与全内部源归纳、dense／neg／imp、全部公理／Proof／reduction／最终Con尚未证明；未宣称整个neg／ex单调性完成。源常元无IH基例及内部产生两个子编译结果的源合取步骤此前已验收，不重做。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@ ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atS
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall；源合取步骤已内部生成两个子编译结果并消费双查询分支；常元基例不带归纳假设 | 消去子归纳假设，完成原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall；源合取步骤已内部生成两个子编译结果并消费双查询分支；常元基例不带归纳假设；原字面嵌套双守卫已实际进入mode3／forall | 完成实际新父公式识别并消去子归纳假设，完成原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -39,4 +39,4 @@ ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atS
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；继续实际接入原子／neg／ex运行框架并完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
+当前下一原消费者：SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；字面双守卫的实际mode3／forall生产现也完成；继续识别完整新父公式的实际查询，接通原子模板的内部Root实例化与实际源消费者，完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。

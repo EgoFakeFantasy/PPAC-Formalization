@@ -40453,3 +40453,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceMono.conjunction_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceMono.nullarySentence
 #print axioms PPAC.Migration.ForcingSourceMono.nullary_kernel_certificate
+#print axioms PPAC.Migration.ForcingNestedGuardProof.data
+#print axioms PPAC.Migration.ForcingNestedGuardProof.data_rename
+#print axioms PPAC.Migration.ForcingNestedGuardProof.body
+#print axioms PPAC.Migration.ForcingNestedGuardProof.produced
+#print axioms PPAC.Migration.ForcingNestedGuardProof.produced_rename
+#print axioms PPAC.Migration.ForcingNestedGuardProof.produce
+#print axioms PPAC.Migration.ForcingNestedGuardProof.from_global
+#print axioms PPAC.Migration.ForcingNestedGuardProof.sentence
+#print axioms PPAC.Migration.ForcingNestedGuardProof.kernel_certificate
+#print axioms PPAC.Migration.ForcingNestedGuardProof.globalSentence
+#print axioms PPAC.Migration.ForcingNestedGuardProof.global_kernel_certificate
+#print axioms PPAC.Migration.ForcingProofContext.and_exists

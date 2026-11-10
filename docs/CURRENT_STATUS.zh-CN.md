@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atSource 在对象语言中全称量化任意实际编译输出，apply_atSource 实例化对象子归纳假设；conjunction 调用原 CodeTotal.total 两次，在对象层产生消去两个子编译结果，再实际消费已验收的双查询合取步骤（该步骤内部产生消去四个查询子输出）。不再要求调用方给定子编译结果。假／真常元基例复用原编译常元律和两次实际查询唯一性，不带归纳假设。两个普通 nativeZF 原核闭句、完整九命令／五项trust=0通过，39739项声明、零警告；39728项旧依赖足迹和2888份旧证明Git正文全部保持；16项兼容性测试与3个固定库／75源码哈希通过，见[源公式单调性步骤验收](../verification/forcing-source-mono-acceptance.json)。仍是原第10阶段：这是指定运行框架上的源归纳步骤，原子证明的内部Root实例化、neg／ex实际框架装配及全内部公式归纳、dense／neg／imp、完整公理／Proof／reduction／最终Con尚未完成；没有宣称任意映射和G都满足单调性。此前 canonical Global／fresh forall 已完成，不重做。
+ForcingNestedGuardProof 已把 canonical 上下文中的 Global AND(M AND O) 实际 Tail 证明恢复为原编译器字面 M→(O→Tail)。复用原 and_exists 内部产生消去两个重排 AND 码，原投影／join／chain 导出新上下文证明，并实际调用现成 Curry.twice 产生两个嵌套正文码。随后实际消费 FreshBackground.derive、原 mode3 存在和 unchanged generalize_body／guarded forall，三个正文／抽象输出见证保留在对象EX3内。from_global 直接读取同一 Global.data 的实际弱化、元数据和旧Global类型；无需另给弱化或抽象答案，也不再要求此前单Local正文的mode3记录。输入还保留实际Context.resultData和Tail类型元数据，不假定守卫为真。两个普通 nativeZF 闭句及完整九命令／五项trust=0通过，39751项声明、零警告；39739项旧足迹及2888份其他旧证明Git正文保持，原and_exists仅去掉private、正文精确保留；16项兼容性测试与3个固定库／75哈希通过，见[字面双守卫验收](../verification/forcing-nested-guard-acceptance.json)。原第10阶段继续：完整新父公式实际查询与生成全称码的最终识别、原子模板的内部Root实例化与全内部源归纳、dense／neg／imp、全部公理／Proof／reduction／最终Con尚未证明；未宣称整个neg／ex单调性完成。源常元无IH基例及内部产生两个子编译结果的源合取步骤此前已验收，不重做。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@ ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atS
 
 ## 当前真正缺口与依赖顺序
 
-1. SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；继续实际接入原子／neg／ex运行框架并完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
+1. SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；字面双守卫的实际mode3／forall生产现也完成；继续识别完整新父公式的实际查询，接通原子模板的内部Root实例化与实际源消费者，完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
@@ -32,3 +32,5 @@ ForcingSourceMono 已将原单调性合取步骤提升到 SOURCE 公式码：atS
 - [原源码合取单调性归纳分支](../verification/forcing-conjunction-mono-acceptance.json)：39728项声明，零警告；子公式归纳假设未消去，整体mono／Con未证明。
 
 - [源公式码常元基例及合取步骤](../verification/forcing-source-mono-acceptance.json)：39739项声明，零警告；指定运行框架上的源子归纳假设保留，整体mono／Con未证明。
+
+- [原字面双守卫与实际mode3／forall消费](../verification/forcing-nested-guard-acceptance.json)：39751项声明，零警告；完整新父公式查询匹配仍未证明。

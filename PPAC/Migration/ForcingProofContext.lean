@@ -218,7 +218,7 @@ private theorem Leaves.under {m} {Γ : Context m} {w z b Extra Pre : Fin m} {H :
    of_eq (formulaCode_rename w Pre z b Fin.castSucc) (SourceLogic.under h.pre E),
    fun i => of_eq (formulaCode_rename w (H i.castSucc) z b Fin.castSucc) (SourceLogic.under (h.guards i) E)⟩
 
-private theorem and_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem and_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b A B : Fin m) (hw : Derives Γ (omega w))
     (ha : Derives Γ (formulaCode w A z b)) (hb : Derives Γ (formulaCode w B z b)) :
     Derives Γ (FormulaCodeConstructSyntax.typedExists 2 5 w (SyntaxAtomSyntax.two A B) z b) :=

@@ -2768,7 +2768,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
                                 ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
-                                ('forcing_proof_context', 'ForcingProofContext', 20),
+                                ('forcing_proof_context', 'ForcingProofContext', 21),
                                 ('forcing_proof_universal', 'ForcingProofUniversal', 21),
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
@@ -2782,7 +2782,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
                                 ('forcing_global_weakening', 'ForcingGlobalWeakening', 11),
                                 ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8),
-                                ('forcing_source_mono', 'ForcingSourceMono', 11)):
+                                ('forcing_source_mono', 'ForcingSourceMono', 11),
+                                ('forcing_nested_guard_proof', 'ForcingNestedGuardProof', 11)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6176,6 +6177,9 @@ def main(source_check_only: bool = False) -> None:
         "object_source_mono_constant_bases_without_IH_proved": True,
         "object_source_mono_full_induction_discharged": False,
         "object_source_mono_scope": source_lock["source_proof_adaptations"]["forcing_source_mono"]["scope"],
+        "object_literal_nested_guard_body_double_Curry_and_forall_consumed": True,
+        "object_literal_nested_guard_whole_new_parent_match_proved": False,
+        "object_literal_nested_guard_scope": source_lock["source_proof_adaptations"]["forcing_nested_guard_proof"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,
