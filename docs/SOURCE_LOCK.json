@@ -172811,7 +172811,7 @@
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
+        "PPAC/Migration/ForcingProofContext.lean": "3bda4debccb3e080b516a4b00e6845fbfb96a0612586297866d81c1b89339cf9",
         "PPAC/Migration/ForcingPreorderExistential.lean": "a23475f4ce816522404ba5b2975f21d6b1c730496757df2ecaa9896910bb1bdd",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
@@ -172923,6 +172923,11 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofContext.join": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
       "scope": "Original force_mono/ex proof-context consumer. Reads SAME actual preorder row G0=Pre AND(H0 AND(H1 AND(H2 AND(H3 AND H4)))), where H0/H1/H2 are r/q/p membership, H3=R(r,q), H4=R(q,p). Produces exactly SIX internal AND code witnesses using existing typed binary0 constructors. Canonical global=Extra AND(Pre AND(H1 AND(H2 AND H4))); r-local=H0 AND H3; canonicalCtx=global AND local. Original projections, composition, rule11 and SAME-background discharge/S+MP prove canonicalCtx->oldCtx WITHOUT assuming guard/preorder truth. The ACTUAL ForcingPreorderExistential.resultData Tail proof is transported to canonicalCtx and existing Curry.from_implication curries ONLY r-local. All SIX layout witnesses remain object existentially bound in result. from_queries ACTUALLY CALLS unchanged FULL raw-tail comparison from TWO queries and eqSubst transports canonical proof to its SAME actual second tail. Two ordinary nativeZF original-kernel closed sentence endpoints; runtime scopes/formula/proof-operation codes remain arbitrary internal including nonstandard. No given layout/expected rearrangement/equality answer, no new compiler/checker/kernel/recursor/induction or object Choice. This completes generated canonical proof-context rearrangement and raw tail transfer ONLY. DOES NOT prove free0 freshness/global weakening inverse, two actual mode3 abstractions or their guarded forall consumer, original JOINT forcing mono/dense/exists_neg/imp/MP, all internal ZF/U axiom/six-rule Proof correctness, reduction or finalCon. mode3 abstracts FIRST free slot0; existing free variables must shift, not a last-free-variable assumption."
@@ -172952,7 +172957,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
-        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
+        "PPAC/Migration/ForcingProofContext.lean": "3bda4debccb3e080b516a4b00e6845fbfb96a0612586297866d81c1b89339cf9",
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
@@ -174170,7 +174175,7 @@
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingRelationWeakening.lean": "d925d5c9eb9731890c7e5afb4c06b59186dd2368cf2765cc781dce35df725d45",
         "PPAC/Migration/ForcingFreshPreorder.lean": "f8a2bef82eca81987ce3264b9614dbd9b01a62d1213d495fde91be996429debc",
-        "PPAC/Migration/ForcingProofContext.lean": "27e6546fa1aeb7e56f1b831591dfc1345f4c47c5d3ddd5f2b206859d29ad30ae",
+        "PPAC/Migration/ForcingProofContext.lean": "3bda4debccb3e080b516a4b00e6845fbfb96a0612586297866d81c1b89339cf9",
         "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
         "PPAC/Migration/Internal/SyntaxWeakenFreeOutput.lean": "6d0045b39716cd2f834a956c4765af50b9c3cd7d7c4a5dbedd1698a495d868b7",
         "PPAC/Migration/Internal/SyntaxWeakenFreeLogical.lean": "525d3bb7a44cd3b76cb1bbb7e42fe3b1780924f4e5ca260c3e6e4bd7691fd846"
@@ -174235,6 +174240,87 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives; all runtime scopes/codes internal including nonstandard. Computational inputs are actual RelationWeakening.input/paired MemberRows data, SAME raw/source actual FreshPreorder.data with newr/q/p/Pre/Refl/transitivity outputs identified by original tuples, original Extra formula typing and actual old canonical layout. No given weakPre/member/R answers beyond existing generated records; RelationWeakening.from_rows ACTUALLY called, Pre weakness read from SAME FreshPreorder.data, q/p weakness read from actual paired record. Original exists_output produces actual newExtra weak relation internally; original ProofContext.layout_produce reused via typed-input wrapper, producing all6 original new AND codes. Original four binary_iff laws use SAME actual identity/shift codes v0/v1 to derive weakened oldCtx3 newCtx3 for SAME generated layout, not an arbitrary new global. All7 newExtra/layout witnesses object-bound. No given newExtra/newlayout/weakGlobal/output equality or abstraction. Public generalize_layout ACTUALLY calls unchanged FreshBackground.generalize_layout using this generated Global and SAME original ProofUniversal.resultData, removing weakGlobal/abstraction premises; actual Curry/Root proof record remains a computational input, not unconditional jointforcing. Main canonical Global matching dependency complete by direct original weakening construction; an additional whole-global pair-of-source-queries route is unnecessary. NativeZF closed production endpoint. Existing layout_produce proof body unchanged; only layoutBody visibility plus typed-input interface added. Jointforcing/fullinternalaxioms/sixruleProof/reduction/finalCon still unproved; no new compiler/checker/recursor/induction/kernel/object Choice/standardness premise."
+    },
+    "forcing_conjunction_mono": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingConjunctionMono.lean",
+      "source_declarations": [
+        "AtomicData.force_mono: conjunction branch, original line 178"
+      ],
+      "consumers": [
+        "Full internal formula-code force_mono induction: actual compiled conjunction branch; then original dense/neg/imp, normalized MP, full axioms/Proof/reduction/Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingProofContext.lean",
+        "PPAC/Migration/ForcingCodeBinary.lean",
+        "PPAC/Migration/ForcingFormulaDiagram.lean",
+        "PPAC/Migration/ForcingRelationGuardProof.lean",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
+        "PPAC/Migration/ForcingProofContext.lean": "3bda4debccb3e080b516a4b00e6845fbfb96a0612586297866d81c1b89339cf9",
+        "PPAC/Migration/ForcingCodeBinary.lean": "a51c6ff26e4c7a01fa2bda93ac521f48e9b90d172d953ce69df35122fc44bb86",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/ForcingRelationGuardProof.lean": "4718ab469fa479f75beff7c1c054f3180b2474682cc38164ca37f6a6ddbc093c",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingConjunctionMono.transfer": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.transfer_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.apply_transfer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.derive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.conjunction": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.source_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.sentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingConjunctionMono.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives. Necessary original force_mono conjunction induction BRANCH, not full monotonicity. source_step consumes actual original CodeBinary.input (independently compiled whole source parent and both children); actual binary compiler derives SAME compiled parent AND constructor. transfer is OBJECT forall over BOTH arbitrary internal mixed-query outputs with SAME G conditional Root-proof transport; child transfer formulas are explicitly induction hypotheses, NOT discharged in this branch. derive actually calls original binary_output TWICE, generates and eliminates all FOUR child outputs, derives actual child typing from those queries, calls original projection and chain for both old conjuncts, instantiates both OBJECT child universal hypotheses, then unchanged original ProofContext.join produces conditional Root proof of SAME actual new parent. No given target AND constructor, child output, child proof answer, G truth/proof, host callback or external-standardness restriction. Original join only made public; full proof text unchanged. Full internal formula induction, other mono cases, dense/neg/imp, all internal axioms/six-rule Proof/reduction/final Con remain unproved; no new kernel/checker/recursor/Choice premise."
     }
   },
   "selected_route_consumer_audit": {

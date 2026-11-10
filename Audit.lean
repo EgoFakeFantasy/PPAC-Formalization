@@ -40433,3 +40433,12 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationSource.raw_quotation
 #print axioms PPAC.Migration.ForcingProofContext.layoutBody
 #print axioms PPAC.Migration.ForcingProofContext.layout_from_typed
+#print axioms PPAC.Migration.ForcingConjunctionMono.transfer
+#print axioms PPAC.Migration.ForcingConjunctionMono.transfer_rename
+#print axioms PPAC.Migration.ForcingConjunctionMono.apply_transfer
+#print axioms PPAC.Migration.ForcingConjunctionMono.derive
+#print axioms PPAC.Migration.ForcingConjunctionMono.conjunction
+#print axioms PPAC.Migration.ForcingConjunctionMono.source_step
+#print axioms PPAC.Migration.ForcingConjunctionMono.sentence
+#print axioms PPAC.Migration.ForcingConjunctionMono.kernel_certificate
+#print axioms PPAC.Migration.ForcingProofContext.join

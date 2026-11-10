@@ -2768,7 +2768,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
                                 ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
-                                ('forcing_proof_context', 'ForcingProofContext', 19),
+                                ('forcing_proof_context', 'ForcingProofContext', 20),
                                 ('forcing_proof_universal', 'ForcingProofUniversal', 21),
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
@@ -2780,7 +2780,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10),
                                 ('forcing_member_rows', 'ForcingMemberRows', 18),
                                 ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
-                                ('forcing_global_weakening', 'ForcingGlobalWeakening', 11)):
+                                ('forcing_global_weakening', 'ForcingGlobalWeakening', 11),
+                                ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6167,6 +6168,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_canonical_Global_given_weak_answer_new_layout_or_abstraction": False,
         "object_actual_canonical_Global_ACTUALLY_consumed_by_original_guarded_forall": True,
         "object_actual_canonical_Global_scope": source_lock["source_proof_adaptations"]["forcing_global_weakening"]["scope"],
+        "object_source_conjunction_mono_branch_proved": True,
+        "object_source_conjunction_mono_full_induction_discharged": False,
+        "object_source_conjunction_mono_scope": source_lock["source_proof_adaptations"]["forcing_conjunction_mono"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,

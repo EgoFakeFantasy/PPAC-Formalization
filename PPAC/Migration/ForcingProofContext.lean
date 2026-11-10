@@ -72,7 +72,7 @@ private theorem join_after_first {m} {Γ : Context m} (hZ : ZFContext.Evidence �
     (of_eq (implication_rename test w z b G B Fin.castSucc) (under pb E))
   exact of_eq (implication_rename test w z b G C Fin.castSucc).symm out
 
-private theorem join {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+theorem join {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b G A B C : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hg : Derives Γ (formulaCode w G z b)) (ha : Derives Γ (formulaCode w A z b))
     (hb : Derives Γ (formulaCode w B z b)) (hc : Derives Γ (binaryCode 0 w A B C))
