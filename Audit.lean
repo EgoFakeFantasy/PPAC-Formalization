@@ -40119,3 +40119,36 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistOrderOpening.query
 #print axioms PPAC.Migration.ForcingExistOrderOpening.sentence
 #print axioms PPAC.Migration.ForcingExistOrderOpening.term
+
+#print axioms PPAC.Migration.ForcingExistMemberOpening.body
+#print axioms PPAC.Migration.ForcingExistMemberOpening.compare
+#print axioms PPAC.Migration.ForcingExistMemberOpening.data
+#print axioms PPAC.Migration.ForcingExistMemberOpening.data_rename
+#print axioms PPAC.Migration.ForcingExistMemberOpening.frame
+#print axioms PPAC.Migration.ForcingExistMemberOpening.frame_rename
+#print axioms PPAC.Migration.ForcingExistMemberOpening.from_compiled
+#print axioms PPAC.Migration.ForcingExistMemberOpening.input
+#print axioms PPAC.Migration.ForcingExistMemberOpening.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistMemberOpening.result
+#print axioms PPAC.Migration.ForcingExistMemberOpening.result_rename
+#print axioms PPAC.Migration.ForcingExistMemberOpening.sentence
+
+#print axioms PPAC.Migration.ForcingExistDomainSource.arguments
+#print axioms PPAC.Migration.ForcingExistDomainSource.body
+#print axioms PPAC.Migration.ForcingExistDomainSource.compilerBody
+#print axioms PPAC.Migration.ForcingExistDomainSource.compilerData
+#print axioms PPAC.Migration.ForcingExistDomainSource.compilerData_rename
+#print axioms PPAC.Migration.ForcingExistDomainSource.compilerResult
+#print axioms PPAC.Migration.ForcingExistDomainSource.compilerResult_rename
+#print axioms PPAC.Migration.ForcingExistDomainSource.data
+#print axioms PPAC.Migration.ForcingExistDomainSource.data_rename
+#print axioms PPAC.Migration.ForcingExistDomainSource.from_compiled
+#print axioms PPAC.Migration.ForcingExistDomainSource.input
+#print axioms PPAC.Migration.ForcingExistDomainSource.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistDomainSource.mapping
+#print axioms PPAC.Migration.ForcingExistDomainSource.produce
+#print axioms PPAC.Migration.ForcingExistDomainSource.produced
+#print axioms PPAC.Migration.ForcingExistDomainSource.produced_rename
+#print axioms PPAC.Migration.ForcingExistDomainSource.sentence
+#print axioms PPAC.Migration.ForcingExistDomainSource.source
+#print axioms PPAC.Migration.ForcingExistDomainSource.source_template

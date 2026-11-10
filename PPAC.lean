@@ -1166,3 +1166,5 @@ import PPAC.Migration.ForcingExistChildTerms
 import PPAC.Migration.ForcingExistChildCanonical
 import PPAC.Migration.ForcingExistChildOpening
 import PPAC.Migration.ForcingExistOrderOpening
+import PPAC.Migration.ForcingExistMemberOpening
+import PPAC.Migration.ForcingExistDomainSource
