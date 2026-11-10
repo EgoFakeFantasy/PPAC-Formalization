@@ -1,0 +1,156 @@
+{
+  "baseline_commit": "96950daca0f3e92f68628c8ff777b686e096e39f",
+  "original_stage": 10,
+  "stage11_started": false,
+  "native_endpoint": "PPAC.Migration.ForcingRawModalBody.existential_root_kernel_certificate",
+  "native_endpoint_type": "YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (existentialRootSentence ...))",
+  "result": "The actual original existential compiler and opened parent yield the two implications and the member/order/tail queries. On the shared preorder row the member matches H0 and the order matches H3. The existing raw existential comparison proves the tail equality. Constructor uniqueness transfers the canonical nested proof to the actual body and the original Root consumer.",
+  "remaining_endpoint_premises": [
+    "actual compiler and shell records",
+    "shared preorder row and old/new condition replacements",
+    "old tail query on the same prefixed bound table",
+    "canonical nested proof from that old tail"
+  ],
+  "still_open": [
+    "assemble the existential inputs from the original enclosing monotonicity step",
+    "normalize the negative tail and complete the negative step",
+    "complete internal force_mono and downstream proof translation and Con"
+  ],
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "warning_lines": 0,
+  "audited_declarations": 39868,
+  "new_public_declarations": 35,
+  "existing_footprints_unchanged": 39833,
+  "existing_nonentry_lean_blobs_unchanged": 2897,
+  "lean_build_jobs": 3366,
+  "compatibility_tests": 16,
+  "pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "sealed_input_hashes": 2927,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "native_endpoint_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound",
+    "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+  ],
+  "full_verification_log_sha256": "65a92a0f470a8429a149b3446a94c916777ca7fb2e78d87b897e23307b1557e3",
+  "temporary_files": [
+    {
+      "path": ".local/raw-modal-baseline.tmp.json",
+      "sha256": "aca3732e3a9b54ed0d7e0919d8b10f3037ce349b08004b5388843a837da9c2e1"
+    },
+    {
+      "path": ".local/raw-modal-audit.tmp.lean",
+      "sha256": "81e3fc535238ebf9aa6022e82917faf460fb62182002aaef3f6d48653bbddeff"
+    },
+    {
+      "path": ".local/raw-modal-audit.tmp.log",
+      "sha256": "ca2468e1dbe0d3846d69da5671a182ee4c0b63d9a2ae6b8ac8094496c5b7e586"
+    },
+    {
+      "path": ".local/raw-modal-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "post_cleanup_trust_zero_passed": true
+}
