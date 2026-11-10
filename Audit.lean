@@ -40259,3 +40259,25 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProofContext.from_queries
 #print axioms PPAC.Migration.ForcingProofContext.rawSentence
 #print axioms PPAC.Migration.ForcingProofContext.raw_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingProofUniversal.bodyData
+#print axioms PPAC.Migration.ForcingProofUniversal.bodyData_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.bodyResult
+#print axioms PPAC.Migration.ForcingProofUniversal.bodyResult_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.at_layout
+#print axioms PPAC.Migration.ForcingProofUniversal.generalize_body
+#print axioms PPAC.Migration.ForcingProofUniversal.resultData
+#print axioms PPAC.Migration.ForcingProofUniversal.resultData_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.result
+#print axioms PPAC.Migration.ForcingProofUniversal.result_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.input
+#print axioms PPAC.Migration.ForcingProofUniversal.input_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.derive
+#print axioms PPAC.Migration.ForcingProofUniversal.sentence
+#print axioms PPAC.Migration.ForcingProofUniversal.kernel_certificate
+#print axioms PPAC.Migration.ForcingProofUniversal.guarded
+#print axioms PPAC.Migration.ForcingProofUniversal.guarded_rename
+#print axioms PPAC.Migration.ForcingProofUniversal.generalize_layout
+#print axioms PPAC.Migration.ForcingProofUniversal.guardedInput
+#print axioms PPAC.Migration.ForcingProofUniversal.guardedSentence
+#print axioms PPAC.Migration.ForcingProofUniversal.guarded_kernel_certificate

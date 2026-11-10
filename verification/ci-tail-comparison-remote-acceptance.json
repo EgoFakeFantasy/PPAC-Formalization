@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-11-10 15:09:03 UTC",
+  "repo": "EgoFakeFantasy/PPAC-Formalization",
+  "branch": "migration/yesmeta-step3",
+  "commit": "25590bcf9834dd853c09c6440a370c9032aea3df",
+  "run_id": 42826957612,
+  "job_id": 129866671492,
+  "run_attempt": 1,
+  "status": "completed",
+  "conclusion": "success",
+  "updated_at": "2026-11-10T14:58:02Z",
+  "pass_line": "2026-11-10T14:57:57.3021321Z PASS: 39525 audited declarations; 2266 without axioms; 37259 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39525,
+  "warning_lines": 0,
+  "all_job_steps_success": true,
+  "confirmation": "Decoded actual job log and fresh attempt-specific terminal success, not a cached generic run listing",
+  "final_internal_Con_proved": false,
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42826957612",
+  "decoded_job_log_raw_sha256": "3188c789759cf95964297f09c6252fc4dcc39a613fe5afd5e3871ae54a3489c4"
+}

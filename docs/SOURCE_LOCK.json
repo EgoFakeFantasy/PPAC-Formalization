@@ -172896,6 +172896,153 @@
         ]
       },
       "scope": "Original force_mono/ex proof-context consumer. Reads SAME actual preorder row G0=Pre AND(H0 AND(H1 AND(H2 AND(H3 AND H4)))), where H0/H1/H2 are r/q/p membership, H3=R(r,q), H4=R(q,p). Produces exactly SIX internal AND code witnesses using existing typed binary0 constructors. Canonical global=Extra AND(Pre AND(H1 AND(H2 AND H4))); r-local=H0 AND H3; canonicalCtx=global AND local. Original projections, composition, rule11 and SAME-background discharge/S+MP prove canonicalCtx->oldCtx WITHOUT assuming guard/preorder truth. The ACTUAL ForcingPreorderExistential.resultData Tail proof is transported to canonicalCtx and existing Curry.from_implication curries ONLY r-local. All SIX layout witnesses remain object existentially bound in result. from_queries ACTUALLY CALLS unchanged FULL raw-tail comparison from TWO queries and eqSubst transports canonical proof to its SAME actual second tail. Two ordinary nativeZF original-kernel closed sentence endpoints; runtime scopes/formula/proof-operation codes remain arbitrary internal including nonstandard. No given layout/expected rearrangement/equality answer, no new compiler/checker/kernel/recursor/induction or object Choice. This completes generated canonical proof-context rearrangement and raw tail transfer ONLY. DOES NOT prove free0 freshness/global weakening inverse, two actual mode3 abstractions or their guarded forall consumer, original JOINT forcing mono/dense/exists_neg/imp/MP, all internal ZF/U axiom/six-rule Proof correctness, reduction or finalCon. mode3 abstracts FIRST free slot0; existing free variables must shift, not a last-free-variable assumption."
+    },
+    "forcing_proof_universal": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingProofUniversal.lean",
+      "source_declarations": [
+        "AtomicData.force_mono ex actual r-local body and fresh forall step"
+      ],
+      "consumers": [
+        "Source FIRST-free0 Global weakening/abstraction matching: supply the remaining actual Global operation for generalize_layout",
+        "Original joint forcing soundness, all internal axiom/six-rule Proof correctness, reduction and final Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingProofContext.lean",
+        "PPAC/Migration/InternalProofCurry.lean",
+        "PPAC/Migration/InternalProofUniversal.lean",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean",
+        "PPAC/Migration/Internal/SyntaxTopFormulaTyping.lean",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean",
+        "PPAC/Migration/Internal/HornBinderRules.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
+        "PPAC/Migration/ForcingProofContext.lean": "02ab74700cf66d1da6c0c37f92295799f8094960df0632e4525e8d6788cfd300",
+        "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
+        "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
+        "PPAC/Migration/Internal/SyntaxTopFormulaTyping.lean": "b4589d18eac368e64c352fd322c607f44bb488f6a75ccb891be90cf9783c046b",
+        "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingProofUniversal.bodyData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.bodyData_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.bodyResult": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.bodyResult_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.at_layout": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.generalize_body": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.resultData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.resultData_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.result": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.result_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.derive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.guarded": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.guarded_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.generalize_layout": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.guardedInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.guardedSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofUniversal.guarded_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Actual original force_mono/ex Curry-body and FIRST-free-slot0 forall consumer. derive calls unchanged ForcingProofContext.derive to generate all SIX canonical context codes; consumes the SAME original Tail type from ForcingPreorderExistential.resultData, reads ONLY its actual Curry EX witness F=Local->Tail, derives F typing from original binary2 iff, and calls unchanged SyntaxTopFormulaExistence.abstract_exists to GENERATE actual J plus original abstracted F J and its target FormulaCode. ALL SIX layout plus F/J remain OBJECT witnesses. No given F/J, expected body abstraction, alternate syntax operation, new compiler/checker/kernel/recursor/induction or Choice. generalize_layout ACTUALLY consumes these generated records and generalize_body, eliminates the internal implication proof-code witness, then CALLS existing InternalProofUniversal.guarded_generalize to generate actual forall code and same-background original proof. TWO ordinary nativeZF certificates: complete body generation from original old-context input; conditional forall from actual ONE GLOBAL abstraction operation and original closed G typing. IMPORTANT: source Global freshening/weakening matching and abstract(weaken G)=SAME G are NOT proved or erased; global operation is an EXPLICIT conditional certificate premise, not a proved freshness result. Existing mode3/full formula induction and guarded forall themselves are ALREADY proved and reused. Full source fresh forall, joint forcing mono/dense/exists_neg/imp/MP, all internal axioms/six-rule Proof/reduction/finalCon remain unproved. Runtime scopes, child/formula/proof/operation codes remain internal including nonstandard; fixed six/two witness coordinates are metadata only."
     }
   },
   "selected_route_consumer_audit": {

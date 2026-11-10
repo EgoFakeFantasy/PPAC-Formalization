@@ -1,0 +1,310 @@
+{
+  "verified_at": "2026-11-10T15:13:33.398766+00:00",
+  "baseline_commit": "437bd651cbfe2d9cbcaae80e2e57a8eff9acd4d2",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: all SIX context codes generated, old-context proof rearranged/curry preserved and both actual raw tail query proof transferred;39552 full acceptance and committed437bd65",
+  "background": "Original ordinary nativeZF, pure membership/equality, original FirstOrder.Derives through unchanged replay. All runtime scopes, child/formula/proof/operation codes and outputs internal including nonstandard. No object Choice or substitute proof/transform backend.",
+  "source_consumer": "Pinned AtomicData.force_mono/ex actual r-local Curry body and fresh forall step",
+  "result": [
+    "derive calls unchanged ForcingProofContext.derive and generates ALL SIX canonical context codes",
+    "Read SAME actual Curry body F=Local->Tail, derive original FormulaCode typing, call existing SyntaxTopFormulaExistence.abstract_exists to produce J and original actual abstracted F J",
+    "Return all SIX context codes and BOTH body/abstraction outputs inside object EX6/EX2, retaining actual constructors and internal proofs",
+    "generalize_layout consumes generated body and calls existing guarded_generalize after internally eliminating the actual implication proof-code witness",
+    "TWO ordinary nativeZF kernel closed sentences: full body generation from original proof input; conditional guarded forall under an EXPLICIT actual global abstraction operation plus closed G typing"
+  ],
+  "proof_boundaries": {
+    "six_context_and_both_body_output_witnesses_generated": true,
+    "given_body_code_or_body_abstraction_answer": false,
+    "existing_guarded_forall_actually_called": true,
+    "guarded_forall_has_explicit_actual_global_abstraction_and_closed_G_premises": true,
+    "source_global_freshening_weakening_abstraction_matching_completed": false,
+    "full_source_fresh_forall_without_that_operation_premise_completed": false,
+    "new_kernel_checker_recursion_or_induction_backend": false,
+    "all_internal_joint_forcing_axioms_six_rules_reduction_complete": false,
+    "final_internal_Con_proved": false
+  },
+  "next_actual_consumer": "Match SAME generated Global to original first-free-slot0 weakening and abstract(weaken G)=SAME bound-promoted G. Existing term identity accepts differing scopes; existing SyntaxIdentityInduction.reflexive only SAME a/b and cannot silently be used across z->A. Existing full formula cancellation and binder invariant remain available; do not redo them or call source Global freshness proved from its label. Then original joint forcing and full internal axiom/six-rule Proof/reduction/final Con.",
+  "validation": {
+    "audited_declarations": 39573,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37307,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39552,
+    "all_old_proof_files_byte_identical": 2875,
+    "sealed_source_inputs_all_fresh": 2909,
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_checks": 5,
+    "compatibility_tests": 9,
+    "guard_tests": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75
+  },
+  "sealed_inputs": {
+    "count": 2909,
+    "canonical_sorted_manifest_sha256": "90991cd8e31894d60ddae2d102d30ab24ee3bbad42ef6914fec07e6095efc9cb",
+    "changed_input_hashes": {
+      "Audit.lean": "2ceba1c86a0d8b60e03bf479c32eb2499fea516cee7e71e270c6b35b8e01c85b",
+      "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
+      "PPAC.lean": "7f81718df460829e80da7887eb67cdf4b4a8cdc790dea07c6673c9fedc3096b8",
+      "scripts/verify.py": "6408f015a894717ab23777e971498da87c549ef637c9964adcaaa8f146ad396a",
+      "docs/SOURCE_LOCK.json": "700451bcb235c7df4c4d3a08a03b784d72cdf7693af0c49f896d7c18a8ee6ce2"
+    },
+    "manifest_reproduction": "Fresh full scripts/verify.py summary sha256; all old proof files separately byte-checked. Aggregate avoids repeating 2909 unchanged seals."
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingProofUniversal.bodyData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.bodyData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.bodyResult": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.bodyResult_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.at_layout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.generalize_body": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.resultData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.resultData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.result": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.result_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.derive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.guarded": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.guarded_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.generalize_layout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.guardedInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.guardedSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofUniversal.guarded_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "log_raw_sha256": {
+    "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+    "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+    "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+    "build.log": "5a55af808bedcdee9771910fb97237399e94c7d175242d404689d745ba4afa6a",
+    "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+    "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit.log": "8b12d1ac9dd5b0ab4c729e015739ce79a93a5a322e57168e0a425412f5d7d878"
+  },
+  "cleanup": {
+    "status": "complete",
+    "files_removed": 6,
+    "bytes_removed": 15446767,
+    "exact_inventory": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-baseline-summary.json",
+        "bytes": 15085672,
+        "raw_sha256": "864d79f2f99d97703dc21a388108bca8d7cfd43046a737ebc4b9121b30124186"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-baseline-proofs.json",
+        "bytes": 356394,
+        "raw_sha256": "644a5f8690cf0af691887c323b5fa4e8dd8836f528d604b556a1a6b1f93382fa"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-preaudit.lean",
+        "bytes": 1396,
+        "raw_sha256": "db7162f99b423869527337e96a3dc7c2151b0516f13e531029e51ed9f02d38fe"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-preaudit.log",
+        "bytes": 3152,
+        "raw_sha256": "bf90ac0192d10805e246851b421eb8b8bf619924b1cc87f67f12cf70e5af63e6"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-check.log",
+        "bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-universal-full-verification.log",
+        "bytes": 153,
+        "raw_sha256": "30f5eb342c8664c24fbdec87863e76b19ae138dbd4c4c6d7d4568c711374b3af"
+      }
+    ],
+    "recursive_deletion": false,
+    "unrelated_files_or_processes_touched": false,
+    "retained_source_post_cleanup_trust0_exit_code": 0,
+    "retained_source_post_cleanup_log_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
