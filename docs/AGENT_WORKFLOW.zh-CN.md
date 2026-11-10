@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-ForcingNestedGuardProof 已把 canonical 上下文中的 Global AND(M AND O) 实际 Tail 证明恢复为原编译器字面 M→(O→Tail)。复用原 and_exists 内部产生消去两个重排 AND 码，原投影／join／chain 导出新上下文证明，并实际调用现成 Curry.twice 产生两个嵌套正文码。随后实际消费 FreshBackground.derive、原 mode3 存在和 unchanged generalize_body／guarded forall，三个正文／抽象输出见证保留在对象EX3内。from_global 直接读取同一 Global.data 的实际弱化、元数据和旧Global类型；无需另给弱化或抽象答案，也不再要求此前单Local正文的mode3记录。输入还保留实际Context.resultData和Tail类型元数据，不假定守卫为真。两个普通 nativeZF 闭句及完整九命令／五项trust=0通过，39751项声明、零警告；39739项旧足迹及2888份其他旧证明Git正文保持，原and_exists仅去掉private、正文精确保留；16项兼容性测试与3个固定库／75哈希通过，见[字面双守卫验收](../verification/forcing-nested-guard-acceptance.json)。原第10阶段继续：完整新父公式实际查询与生成全称码的最终识别、原子模板的内部Root实例化与全内部源归纳、dense／neg／imp、全部公理／Proof／reduction／最终Con尚未证明；未宣称整个neg／ex单调性完成。源常元无IH基例及内部产生两个子编译结果的源合取步骤此前已验收，不重做。
+ForcingFreshOpeningInverse 已证明原新鲜正文的完整 WEAK→INSTANCE→ABSTRACT 三操作逆向。bound0 与任意内部free索引均通过原字段定理及作用域消元处理；全部五个项候选在对象全称量词内，原完整四路径 FormulaInduction.cancel 被实际调用。from_operations 直接消费原三份操作判断，内部消去八个实际操作／环境见证及三个恒等见证；复用WEAK原bound恒等码，不给定表码或码相等。derive 进一步内部产生抽象输出并证明其回到SAME原正文，无抽象答案前提。identify_nested／consume_nested 已实际消费此前NestedGuardProof.data，将生成的全称码及原条件Root传到指定实际父ALL码；仍显式要求实际native实例化到K及父ALL构造，完整原始父查询尚未产生这些记录。四个普通nativeZF闭句及完整九命令／五项trust=0通过，39774项声明、零警告；全部39751项旧足迹与2890份旧证明Git正文保持，16项兼容性测试及3固定库／75源码哈希通过，见[新鲜正文逆向与Root消费验收](../verification/forcing-fresh-opening-inverse-acceptance.json)。原第10阶段继续，整体mono／dense、公理／Proof／reduction及最终Con仍未证明。不要再把三操作逆向、恒等表生成、全公式归纳后端或嵌套正文／mode3／forall列作未实现。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@ ForcingNestedGuardProof 已把 canonical 上下文中的 Global AND(M AND O) 实
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall；源合取步骤已内部生成两个子编译结果并消费双查询分支；常元基例不带归纳假设；原字面嵌套双守卫已实际进入mode3／forall | 完成实际新父公式识别并消去子归纳假设，完成原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall；源合取步骤已内部生成两个子编译结果并消费双查询分支；常元基例不带归纳假设；原字面嵌套双守卫已实际进入mode3／forall；新鲜三操作逆向及父ALL码Root消费已接通 | 从完整raw父查询实际产生native实例化到K及ALL记录，消去子归纳假设，完成原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -39,4 +39,4 @@ ForcingNestedGuardProof 已把 canonical 上下文中的 Global AND(M AND O) 实
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；字面双守卫的实际mode3／forall生产现也完成；继续识别完整新父公式的实际查询，接通原子模板的内部Root实例化与实际源消费者，完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
+当前下一原消费者：SAME canonical Global 弱化、Extra、裸R、q/p、四AND及原 guarded forall 消费现已完成；不要重做，也不再要求另造整个Global的双原查询路线。原 force_mono 的假／真常元基例与源合取步骤已接通，两个子编译结果由原总性内部产生；字面双守卫的实际mode3／forall生产现也完成；新鲜三操作逆向及给定实际实例化记录后的父ALL识别／Root消费现也完成；当前下一步从完整原始父查询产生所需WEAK／INSTANCE-to-K及ALL记录，接通原子模板内部Root实例化与源消费者，完成全内部公式归纳，再接原 ForcingTruth.force_of_dense（60行）的Root证明生成；再依原源由 dense 导出 exists_force_neg（84行），由 neg／mono 导出 forceFormula_imp（121行）。复用现成公式码归纳、原子数学和证明操作，不增加新的归纳后端；随后规范化强迫MP、全内部ZF/U公理／六规则Proof、精确reduction及finalgoal。
