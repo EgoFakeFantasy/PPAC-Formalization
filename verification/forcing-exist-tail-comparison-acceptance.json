@@ -1,0 +1,161 @@
+{
+  "verified_at": "2026-11-10T13:39:55.217548+00:00",
+  "baseline_commit": "24ea284983be16aea02fcd2d35a0e7be957e9bb1",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: SAME actual scope/base/type conditions and FOUR scope equalities kernel-certified and committed 24ea284",
+  "background": "Original ordinary full nativeZF, pure membership/equality, original FirstOrder.Derives via unchanged replay. Runtime codes/scopes/tables/outputs internal including nonstandard; finite8/16 are existing witness coordinates only. No new kernel/compiler/checker/recursor/induction or object Choice.",
+  "source_consumers": [
+    "Pinned AtomicData.Force ex literal SAME original whole tail",
+    "AtomicData.force_mono ex SAME tail under two actual outer-condition updates"
+  ],
+  "result": [
+    "Derive member/order/domain operation frames from SAME actual16 trace and SAME canonical-child operation record, previous scope/base facts and existing target_type",
+    "ACTUALLY call ALL FOUR existing member/order/domain/child comparison theorems, with SAME original Reln and Dom, full original source compilers and actual four leaf queries",
+    "All FOUR leaf equalities DERIVED, never supplied; original eqSubst and binary_unique/single_unique package THREE AND and BOTH EX into actual Y=Y1",
+    "Ordinary nativeZF original-kernel closed sentence; all10 declarations individually preaudited trust=0"
+  ],
+  "proof_boundaries": {
+    "all_four_complete_original_compilers_and_actual_queries_consumed": true,
+    "all_four_leaf_equalities_derived_not_hypotheses": true,
+    "whole_three_AND_two_EX_comparison_at_given_common_actual_operation_frames_completed": true,
+    "given_guard_truth_or_output_equality_answer": false,
+    "common_head_and_canonical_operation_frames_generated_and_discharged": false,
+    "arbitrary_two_trace_scope_normalization_at_final_caller_discharged": false,
+    "unconditional_actual_raw_tail_invariance_completed": false,
+    "joint_forcing_internal_axioms_six_rule_Proof_reduction_finalCon_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39525,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37259,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39515,
+    "all_old_PPAC_proof_files_byte_identical": 2873,
+    "all_sealed_inputs_fresh": 2907,
+    "expected_changed_existing_inputs": [
+      "Audit.lean",
+      "PPAC.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "all_five_trust_zero_commands_passed": true,
+    "preaudited_new_public_declarations": 10,
+    "compatibility_regressions_passed": 9,
+    "comparator_guard_regressions_passed": 7,
+    "three_clean_pins_and_original_source_hashes": 75,
+    "full_summary_sha256": "fe013af7487b687373820218fce079b657e74b980220269e9b0988c2cb032ab7",
+    "audit_log_sha256": "17774f0976546e37fcd72f2acb6b3e163c0247b28fd56d96b5db15eee82d0f37"
+  },
+  "cleanup": {
+    "manifest": ".local/exist-tail-comparison-cleanup.json",
+    "exact_own_temporary_files": 5,
+    "total_bytes": 13226965,
+    "performed": true,
+    "retained_source_postcleanup_trust_zero_exit_code": 0,
+    "residual_Lean_Lake_processes": 0
+  },
+  "remote_predecessor_CI": {
+    "run_id": 42808631919,
+    "attempt": 1,
+    "commit": "905a63f5196052e133a7e9deebdb0bb5882a6c24",
+    "status": "completed",
+    "conclusion": "success",
+    "actual_decoded_PASS_declarations": 39421,
+    "receipt": "verification/ci-exist-order-remote-acceptance.json",
+    "metadata_cache_delay_resolved_by_fresh_attempt_endpoint_and_decoded_actual_logs": true
+  },
+  "next_required_step": "Do NOT redo FOUR component comparison consumption, THREE AND/BOTH EX equality packaging, sixteen-witness reader or scope transport/alignment. Existing ForcingExistChildCanonical.derive ONCE generates shared r-head and BOTH replacement/lift/query records; SAME E/E1 serve both child and order frames. No separate name-head producer is necessary: existing SyntaxMixedImageHead.term_at_zero at actual successor d of c retags SAME canonical bvar0 code to target d, so set Name=head. Original list_free graph witness + graph_mixed suffices for old closed R0 table at target c, if needed. Normalize actual second trace through ALREADY DERIVED four scope equalities (and fixed source successors through original successor_unique), then CALL this completed compare consumer. After these input operations are internally produced/eliminated, advance original canonical proof contexts/fresh forall, joint mono/dense/MP, all internal axioms/six-rule Proof/reduction/finalCon."
+}

@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-第10阶段最新已验收消费者：`ForcingExistTailOpening.prepare_shell` 在既有完整16见证读取上，保留同一原表码及两张替换图，导出两次目标作用域下的原表／闭基表类型及同一覆盖；`scope_alignment` 导出两次独立执行的四个作用域等式。既有19项证明正文不变；九命令／五项 trust=0 全通过，39515项声明零警告，见 `verification/forcing-exist-tail-scopes-acceptance.json`。读取及这些作用域条件均已完成；仍需生成共用 head／canonical child 帧，在同一记录上消费四个已证组件比较并封装两次 EX。之后沿原联合强迫／全部内部公理／六规则 Proof／reduction／最终 Con，不增加新阶段或重复基础。
+第10阶段最新已验收消费者：`ForcingExistTailComparison.compare` 已在同一实际16记录和给定共用 head／canonical 操作帧下，消费全部四个组件比较，封装三次 AND、两次 EX，取得原核尾部相等闭句。九命令／五项 trust=0 全通过，39525项声明零警告，旧39515足迹和2873份旧证明不变；见 `verification/forcing-exist-tail-comparison-acceptance.json`。共同操作帧尚未内部生成／消去，完整原始尾部不变性仍未完成。下一步一次消费原 canonical 生成器及原 term_at_zero（同一头码供两个目标作用域），用已证作用域等式规范化实际记录，再调用本批 compare；不重做四组件消费／两次 EX 合并。之后沿原联合强迫／全部内部公理／六规则 Proof／reduction／最终 Con。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -33,7 +33,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-scopes-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-comparison-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。

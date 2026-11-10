@@ -2,7 +2,7 @@
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
 
-`ForcingExistTailOpening.from_shell` 的完整16见证读取已完成并保持。本批 `prepare_shell` 直接消费同一读取结果，保留原两张替换图和原名字／自由表码，取得两次实际目标作用域下的原表类型、同一闭基表类型及同一外条件覆盖；`scope_alignment` 由原后继唯一性推出两次独立执行的四个作用域等式，不再作为前提。新增普通 nativeZF 原核闭句；既有19项证明正文不变。九条完整命令／五项 trust=0 全通过，39515项声明零警告，39502项旧足迹和2872份其他证明文件不变，2906项密封输入重算，见 [同一图作用域验收](../verification/forcing-exist-tail-scopes-acceptance.json)。**完整尾部跨条件相等仍未完成**：还须生成共用 head／canonical child 操作帧，在同一16见证上消费已证成员／次序／域／child 四个比较并封装两次 EX，然后推进原联合强迫归纳、全部内部公理／六规则 Proof、reduction 和最终 Con。不重做已完成的读取、作用域传输及四个组件比较。
+完整16见证读取、同一原表／替换图的两目标作用域条件和四个作用域等式均已完成。本批 `ForcingExistTailComparison.compare` 已在**给定共用 head／canonical 操作帧**下，直接消费原成员／次序／域／child 的全部四个比较和同一实际叶子查询，导出四个叶子等式，再以原构造器唯一性封装三次 AND、两次 EX，取得实际尾部 `Y=Y1` 的普通 nativeZF 原核闭句。九命令／五项 trust=0 全通过，39525项声明零警告，39515项旧足迹和全部2873份旧证明文件不变，2907项密封输入重算，见 [四组件实际尾部合并验收](../verification/forcing-exist-tail-comparison-acceptance.json)。**这些共用操作帧的前提尚未消去，无前提的原始尾部不变性及最终 Con 仍未完成。** 下一步消费一次原 `ForcingExistChildCanonical.derive`，其同一两侧覆盖表兼供 child／order；原 `SyntaxMixedImageHead.term_at_zero` 可把同一头码重定类型到第二作用域，无需另造 name-head。配合已证作用域等式规范化实际两条记录后调用本批 compare；之后沿原联合强迫／内部公理／六规则 Proof／reduction／最终 Con。不重做已经完成的四组件消费或两次 EX 合并。
 
 | 原阶段／资产 | 实际状态 |
 |---|---|

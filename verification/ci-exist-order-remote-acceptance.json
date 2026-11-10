@@ -1,0 +1,102 @@
+{
+  "verified_at": "2026-11-10T13:36:46.612915+00:00",
+  "repository": "EgoFakeFantasy/PPAC-Formalization",
+  "run_id": 42808631919,
+  "attempt": 1,
+  "job_id": 129804112802,
+  "commit": "905a63f5196052e133a7e9deebdb0bb5882a6c24",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42808631919",
+  "status": "completed",
+  "conclusion": "success",
+  "completed_state_updated_at": "2026-11-10T13:24:48Z",
+  "proof_scope": "Independent cold Linux build and original nativeZF audit at 905a63f. This is the preceding inner-order batch, not the newer local tail work or finalCon.",
+  "actual_decoded_PASS": "2026-11-10T13:24:42.4587506Z PASS: 39421 audited declarations; 2266 without axioms; 37155 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39421,
+  "without_axioms": 2266,
+  "with_recorded_dependencies": 37155,
+  "Lean_warning_lines": 0,
+  "all_job_steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Check out pinned L proof donor",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Check out pinned OpenAI source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Install elan",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Resolve pinned Lean dependencies before source checks",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Check clean inputs and cross-platform source locks",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7
+    },
+    {
+      "name": "Build and audit",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9
+    },
+    {
+      "name": "Post Check out pinned OpenAI source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16
+    },
+    {
+      "name": "Post Check out pinned L proof donor",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 18
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19
+    }
+  ],
+  "metadata_observation": "Previously read summary endpoints lagged in_progress. Fresh attempt-specific run endpoint and fresh job-steps endpoint both confirm terminal success; decoded actual log confirms exact PASS.",
+  "final_internal_Con_proved": false,
+  "decoded_log_local_path": ".local/ci-exist-order-remote-job.log",
+  "decoded_log_local_sha256": "faecf00fe9641e105eb9ef95630f1d5321934b0540895bd81e5f5503fd1235db"
+}

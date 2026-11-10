@@ -2766,7 +2766,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_source', 'ForcingExistDomainSource', 19),
                                 ('forcing_exist_domain_images', 'ForcingExistDomainImages', 12),
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
-                                ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32)):
+                                ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
+                                ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6103,6 +6104,10 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_existential_whole_tail_ALL_FOUR_component_comparisons_consumed_at_common_operation_frames": True,
+        "object_actual_existential_whole_tail_three_AND_and_BOTH_EX_equalities_packaged_at_common_operation_frames": True,
+        "object_actual_existential_whole_tail_common_head_canonical_frame_production_discharged": False,
+        "object_actual_existential_whole_tail_comparison_scope": source_lock["source_proof_adaptations"]["forcing_exist_tail_comparison"]["scope"],
         "object_actual_existential_whole_tail_sixteen_witnesses_read": True,
         "object_actual_existential_whole_tail_same_root_tables_at_both_target_scopes_generated": True,
         "object_actual_existential_whole_tail_same_replacement_graphs_at_both_target_scopes_retained": True,

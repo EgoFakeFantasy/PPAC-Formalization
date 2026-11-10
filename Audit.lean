@@ -40220,3 +40220,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailOpening.preparedSentence
 #print axioms PPAC.Migration.ForcingExistTailOpening.prepared_kernel_certificate
 #print axioms PPAC.Migration.ForcingExistTailOpening.scope_alignment
+
+#print axioms PPAC.Migration.ForcingExistTailComparison.values
+#print axioms PPAC.Migration.ForcingExistTailComparison.trace
+#print axioms PPAC.Migration.ForcingExistTailComparison.trace_rename
+#print axioms PPAC.Migration.ForcingExistTailComparison.frame
+#print axioms PPAC.Migration.ForcingExistTailComparison.frame_rename
+#print axioms PPAC.Migration.ForcingExistTailComparison.compare
+#print axioms PPAC.Migration.ForcingExistTailComparison.input
+#print axioms PPAC.Migration.ForcingExistTailComparison.input_rename
+#print axioms PPAC.Migration.ForcingExistTailComparison.sentence
+#print axioms PPAC.Migration.ForcingExistTailComparison.kernel_certificate
