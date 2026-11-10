@@ -2787,7 +2787,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_opening_inverse', 'ForcingFreshOpeningInverse', 23),
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 29),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 35)):
+                                ('forcing_raw_negative_tail', 'ForcingRawNegTail', 1),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 40)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6195,6 +6196,8 @@ def main(source_check_only: bool = False) -> None:
         "object_canonical_overwritten_parent_opening_same_New_table_proved": True,
         "object_actual_raw_guard_opening_scope": source_lock["source_proof_adaptations"]["forcing_raw_guard_opening"]["scope"],
         "object_existential_opened_parent_root_from_original_records_proved": True,
+        "object_negative_opened_parent_root_from_original_compiler_proved": True,
+        "object_actual_raw_negative_tail_scope": source_lock["source_proof_adaptations"]["forcing_raw_negative_tail"]["scope"],
         "object_actual_raw_modal_body_scope": source_lock["source_proof_adaptations"]["forcing_raw_modal_body"]["scope"],
         "object_actual_new_parent_raw_fresh_opening_scope": source_lock["source_proof_adaptations"]["forcing_fresh_parent_opening"]["scope"],
         "object_fresh_opening_inverse_scope": source_lock["source_proof_adaptations"]["forcing_fresh_opening_inverse"]["scope"],

@@ -40582,3 +40582,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.consume_existential_root
 #print axioms PPAC.Migration.ForcingRawModalBody.existentialRootSentence
 #print axioms PPAC.Migration.ForcingRawModalBody.existential_root_kernel_certificate
+#print axioms PPAC.Migration.ForcingRawNegTail.compare
+#print axioms PPAC.Migration.ForcingRawModalBody.negativeRootInput
+#print axioms PPAC.Migration.ForcingRawModalBody.negativeRootInput_rename
+#print axioms PPAC.Migration.ForcingRawModalBody.consume_negative_root
+#print axioms PPAC.Migration.ForcingRawModalBody.negativeRootSentence
+#print axioms PPAC.Migration.ForcingRawModalBody.negative_root_kernel_certificate

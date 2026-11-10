@@ -1,0 +1,162 @@
+{
+  "baseline_commit": "1f195fadfb12dfe14af535bb0ef523bbc749bc48",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "The whole original negative compiler and opened parent are consumed. Five compiler, four source-shell and four raw-body witnesses are eliminated in the object theory. The actual rebind operand is compared with the original child at the fresh condition using old bound, selected free and preserved free fields; the original false atom is identified by constructor uniqueness. This tail and both guards align with the same canonical nested proof, producing the original Root implication.",
+  "native_endpoint": "PPAC.Migration.ForcingRawModalBody.negative_root_kernel_certificate",
+  "native_endpoint_type": "YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence (negativeRootSentence ...))",
+  "remaining_endpoint_premises": [
+    "actual opened parent",
+    "shared preorder row",
+    "old/new condition replacements",
+    "direct child query at the fresh condition",
+    "canonical nested proof"
+  ],
+  "still_open": [
+    "produce and connect canonical context and tail from the original enclosing monotonicity input for neg and ex",
+    "combine the original atomic, constant, conjunction, negative and existential cases in full internal source induction",
+    "downstream dense/negative/implication, all interpreted axiom and Proof rules, reduction and final Con"
+  ],
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "audited_declarations": 39874,
+  "warning_lines": 0,
+  "lean_build_jobs": 3367,
+  "new_public_declarations": 6,
+  "existing_footprints_unchanged": 39868,
+  "other_existing_lean_blobs_unchanged": 2898,
+  "existing_raw_modal_body_proofs_unchanged": true,
+  "compatibility_tests": 16,
+  "pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "sealed_input_hashes": 2928,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "native_endpoint_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound",
+    "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+    "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+  ],
+  "full_verification_log_sha256": "27e12b47e69dcb069245707efcd94b72fa98eca16d7fde8cd019df5df08322ee",
+  "temporary_files": [
+    {
+      "path": ".local/raw-negative-root-baseline.tmp.json",
+      "sha256": "2fcf7ab8463e5953b5fa7e15a4007c715a4ef26c364625631fc425d63d44c092"
+    },
+    {
+      "path": ".local/raw-negative-root-audit.tmp.lean",
+      "sha256": "e87f1c626dafe0b04eccbc488ae22fa7b80b58cba49af6d9fc100dea888faa9f"
+    },
+    {
+      "path": ".local/raw-negative-root-audit.tmp.log",
+      "sha256": "899bfc2e155a907583c15fca6086b4224951eb7a88c1d495e16244660360b80b"
+    },
+    {
+      "path": ".local/raw-neg-tail-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".local/raw-modal-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "post_cleanup_trust_zero_passed": true
+}

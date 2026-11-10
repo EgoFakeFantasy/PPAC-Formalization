@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-存在分支的实际 fresh 父开口现已接到原 Root 消费者。ForcingRawModalBody 读取原编译外层两条蕴含，在同一预序记录上生成载体并证明成员对应 H0、关系 R(r,q) 对应 H3；用已有 raw 尾部比较定理将实际尾部和旧执行对齐，再由原构造唯一性转移嵌套证明。普通 nativeZF 原核闭句通过全仓验收，39868 项声明、零 Lean 警告。该闭句仍需要旧执行的尾部查询与规范嵌套证明、原编译字段和共享预序记录。负式已读出三条实际查询，尾部对齐待做。见[实际存在父开口 Root 验收](../verification/forcing-raw-modal-body-acceptance.json)。
+负式和存在分支的实际父开口均已接到原 Root 消费者。负式从完整原编译消去见证，按原 Cons 后继、零位和共享 free 表的字段定理相消重绑定子式，再用原假式和蕴含构造唯一性对齐整个尾部，与同一预序记录中的两条守卫一起导出原核闭句。全仓通过 9 项验收，其中 5 项使用 trust=0，审计 39874 项声明、零 Lean 警告。两支仍需由外层单调性输入产生同一规范上下文和尾部证明。见[负式 Root 验收](../verification/forcing-raw-negative-root-acceptance.json)与[存在式 Root 验收](../verification/forcing-raw-modal-body-acceptance.json)。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 存在分支已将实际新父开口的三个叶子接到原 Root。下一步将旧尾部查询与规范嵌套证明接入同一编译记录，完成存在步骤装配；负式复用现有条件重绑定和原字段定理完成实际尾部对齐，然后合并两支和已验证基例、合取及原子端点，完成全部内部码的 force_mono。 后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
+1. 复用现有原父实例化、ForcingProofContext 和 ForcingNestedGuardProof.from_global，把旧父证明产生的规范上下文与两支的实际编译记录接到同一预序行。随后复用已有常元、合取证明和原子模板，把两支接入 ForcingSourceMono 的全部内部码归纳。 后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

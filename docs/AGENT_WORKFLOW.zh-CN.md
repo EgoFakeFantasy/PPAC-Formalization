@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-存在分支的实际 fresh 父开口现已接到原 Root 消费者。ForcingRawModalBody 读取原编译外层两条蕴含，在同一预序记录上生成载体并证明成员对应 H0、关系 R(r,q) 对应 H3；用已有 raw 尾部比较定理将实际尾部和旧执行对齐，再由原构造唯一性转移嵌套证明。普通 nativeZF 原核闭句通过全仓验收，39868 项声明、零 Lean 警告。该闭句仍需要旧执行的尾部查询与规范嵌套证明、原编译字段和共享预序记录。负式已读出三条实际查询，尾部对齐待做。见[实际存在父开口 Root 验收](../verification/forcing-raw-modal-body-acceptance.json)。
+负式和存在分支的实际父开口均已接到原 Root 消费者。负式从完整原编译消去见证，按原 Cons 后继、零位和共享 free 表的字段定理相消重绑定子式，再用原假式和蕴含构造唯一性对齐整个尾部，与同一预序记录中的两条守卫一起导出原核闭句。全仓通过 9 项验收，其中 5 项使用 trust=0，审计 39874 项声明、零 Lean 警告。两支仍需由外层单调性输入产生同一规范上下文和尾部证明。见[负式 Root 验收](../verification/forcing-raw-negative-root-acceptance.json)与[存在式 Root 验收](../verification/forcing-raw-modal-body-acceptance.json)。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-存在分支已将实际新父开口的三个叶子接到原 Root。下一步将旧尾部查询与规范嵌套证明接入同一编译记录，完成存在步骤装配；负式复用现有条件重绑定和原字段定理完成实际尾部对齐，然后合并两支和已验证基例、合取及原子端点，完成全部内部码的 force_mono。 按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
+复用现有原父实例化、ForcingProofContext 和 ForcingNestedGuardProof.from_global，把旧父证明产生的规范上下文与两支的实际编译记录接到同一预序行。随后复用已有常元、合取证明和原子模板，把两支接入 ForcingSourceMono 的全部内部码归纳。 按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。

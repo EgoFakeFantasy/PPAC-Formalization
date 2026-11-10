@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingRawGuardOpening
 import PPAC.Migration.ForcingExistTailComparison
+import PPAC.Migration.ForcingRawNegTail
 
 /-! The two outer implications of the original negative and existential
 compilers, queried in the actual fresh table of the opened parent. -/
@@ -928,6 +929,207 @@ theorem existential_root_kernel_certificate {k m} (test : Formula 1) (Reln : Sou
   apply Derives.impI
   exact consume_existential_root (ZFContext.add (ZFContext.source_ZF m) _) test Reln Dom w z a f alpha beta gamma b A B R S j N n x Parent A1 A2
     A3 C T Base Refl Pre i Old Tail G W I K J v u cv sv raw Gb H U F P N0 D
+    (.hyp (Or.inl rfl))
+
+
+/-- Data at the actual fresh parent and the shared preorder row. The
+canonical tail uses the original child at the fresh condition. -/
+def negativeRootInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) : Formula m :=
+  (ForcingFreshParentOpening.data w z a f alpha b A B (P 0) R S n x Parent v u).conj
+    ((ForcingNegCode.compiled Reln w a alpha f j N n).conj
+      ((SyntaxNumeralSyntax.numeral 0 z).conj
+        ((SyntaxNumeralSyntax.numeral 1 A1).conj
+          ((SyntaxNumeralSyntax.numeral 2 A2).conj
+            ((SyntaxNumeralSyntax.numeral 3 A3).conj
+              ((SyntaxNumeralSyntax.numeral (k+2) f).conj
+                ((SyntaxNumeralSyntax.numeral (k+1) j).conj
+                  ((SyntaxNumeralSyntax.numeral k i).conj
+                    ((ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f B C T Base Refl Pre raw Gb H U F P N0 D).conj
+                      ((ForcingReflexiveImages.replacement w f z B Base j (P 0) Sel).conj
+                        ((ForcingReflexiveImages.replacement w f z B Base j (P 1) (v 9)).conj
+                          ((substituted w (v 8) Sel a f z B N Operand).conj
+                            ((SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 FalseCode).conj
+                              ((binaryCode 2 w Operand FalseCode Tail).conj
+                                ((ForcingNestedGuardProof.data test w z b A B G W (H 0) (H 3) Tail I K J))))))))))))))))
+
+theorem negativeRootInput_rename {k m l} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (rho : Fin m → Fin l) :
+    (negativeRootInput test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J v u raw
+      Gb H U F P N0 D).rename rho =
+      negativeRootInput test Reln (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho R) (rho S) (rho j) (rho N) (rho n) (rho
+        x) (rho Parent) (rho A1) (rho A2) (rho A3) (rho C) (rho T) (rho Base) (rho Refl) (rho Pre) (rho i) (rho Sel) (rho Operand) (rho FalseCode)
+        (rho Tail) (rho G) (rho W) (rho I) (rho K) (rho J) (fun i => rho (v i)) (fun i => rho (u i)) (fun i => rho (raw i)) (fun i => rho (Gb i))
+        (fun i => rho (H i)) (fun i => rho (U i)) (fun i => rho (F i)) (fun i => rho (P i)) (fun i => rho (N0 i)) (fun i => rho (D i)) := by
+  simp only [negativeRootInput, Formula.rename, ForcingFreshParentOpening.data_rename, ForcingNegCode.compiled_rename,
+    SyntaxNumeralSyntax.numeral_rename, ForcingPreorderLeaves.data_rename, ForcingReflexiveImages.replacement_rename,
+    substituted_rename, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map,
+    binaryCode_rename, ForcingNestedGuardProof.data_rename]
+
+private theorem negative_root_at_outputs {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (cv : Fin 5 → Fin m) (sv r : Fin 4 → Fin m)
+    (hi : Derives Γ (negativeRootInput test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G
+      W I K J v u raw Gb H U F P N0 D))
+    (records : Derives Γ (negativeRecord Reln w z a f alpha b A B (P 0) R S j N n x Parent v u cv sv))
+    (hr : Derives Γ (guardData Reln w (u 7) (v 9) alpha f z B (P 0) (cv 1) (cv 3) (cv 4) (sv 1) (sv 2) (u 8) r)) :
+    Derives Γ (InternalProofBackground.implication test w z b G Parent) := by
+  have parent := Derives.conjL hi
+  have rest := Derives.conjR hi
+  have rest := Derives.conjR rest
+  have zero := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have one := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have two := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have three := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have free := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have condition := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have carrier := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have row := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have selTable := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have newTable := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have operand := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have falseCode := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have tailCode := Derives.conjL rest
+  have nested := Derives.conjR rest
+  have hc := Derives.conjL (.conjR records)
+  have hs := Derives.conjL (.conjR (.conjR records))
+  have rawOutputs := Derives.conjL hr
+  have member := compare_member_from_row hZ test Reln w z a f alpha b A B R S n x Parent
+    A1 A2 A3 C T Base Refl Pre i j (cv 0) (cv 1) (cv 3) (r 1) v u raw Gb H U F P N0 D
+    parent (.conjL hc) (.conjL (.conjR (.conjR hc))) (.conjL (.conjR (.conjL rawOutputs)))
+    zero one two free condition carrier row newTable
+  have src := Derives.conjL parent
+  have hw := Derives.conjL src
+  have order := compare_order hZ test Reln w z A1 A2 A3 f B C T Base Refl Pre j (v 9) alpha
+    (cv 1) (cv 4) (r 2) raw Gb H U F P N0 D hw zero one two three free condition row newTable
+    (.conjR (.conjR hr))
+  have hTerm := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR src))))))
+  have hCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR parent)))))))
+  have tailEq := ForcingRawNegTail.compare hZ w z a alpha f B (v 8) (u 7) (v 9) Base j
+    (P 0) (P 1) Sel N (cv 2) (sv 0) (sv 1) (r 3) Operand FalseCode Tail hw (.conjL (.conjR src))
+    hTerm hCons newTable selTable (.conjL (.conjR hc)) (.conjL (.conjL (.conjR hs))) (.conjL (.conjL hs))
+    (.conjR (.conjR (.conjR rawOutputs))) operand falseCode tailCode
+  exact consume_matched hZ test w z a f alpha b A B (P 0) R S n x Parent
+    (cv 3) (cv 4) (sv 1) (sv 2) G W (H 0) (H 3) Tail I K J
+    v u r parent rawOutputs nested member order tailEq
+
+private theorem negative_root_at_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (cv : Fin 5 → Fin m) (sv : Fin 4 → Fin m)
+    (hi : Derives Γ (negativeRootInput test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G
+      W I K J v u raw Gb H U F P N0 D))
+    (records : Derives Γ (negativeRecord Reln w z a f alpha b A B (P 0) R S j N n x Parent v u cv sv)) :
+    Derives Γ (InternalProofBackground.implication test w z b G Parent) := by
+  let E := guardData Reln (old 4 w) (old 4 (u 7)) (old 4 (v 9)) (old 4 alpha) (old 4 f) (old 4 z) (old 4 B)
+    (old 4 (P 0)) (old 4 (cv 1)) (old 4 (cv 3)) (old 4 (cv 4)) (old 4 (sv 1)) (old 4 (sv 2)) (old 4 (u 8)) (slot 4)
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ (.conjR (.conjR (.conjR records)))
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hi4 := of_eq (negativeRootInput_rename test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode
+    Tail G W I K J v u raw Gb H U F P N0 D (old 4))
+    (HornBinderRules.under_body 4 hi E)
+  have rec4 := of_eq (negativeRecord_rename Reln w z a f alpha b A B (P 0) R S j N n x Parent v u cv sv (old 4))
+    (HornBinderRules.under_body 4 records E)
+  apply of_eq (InternalProofBackground.implication_rename test w z b G Parent (old 4)).symm
+  exact negative_root_at_outputs (HornBinderRules.zf_body 4 hZ E) test Reln (old 4 w) (old 4 z) (old 4 a) (old 4 f) (old 4 alpha) (old 4 b) (old 4
+    A) (old 4 B) (old 4 R) (old 4 S) (old 4 j) (old 4 N) (old 4 n) (old 4 x) (old 4 Parent) (old 4 A1) (old 4 A2) (old 4 A3) (old 4 C) (old 4 T)
+    (old 4 Base) (old 4 Refl) (old 4 Pre) (old 4 i) (old 4 Sel) (old 4 Operand) (old 4 FalseCode) (old 4 Tail) (old 4 G) (old 4 W) (old 4 I) (old
+    4 K) (old 4 J) (fun i => old 4 (v i)) (fun i => old 4 (u i)) (fun i => old 4 (raw i)) (fun i => old 4 (Gb i)) (fun i => old 4 (H i)) (fun i =>
+    old 4 (U i)) (fun i => old 4 (F i)) (fun i => old 4 (P i)) (fun i => old 4 (N0 i)) (fun i => old 4 (D i))
+    (fun i => old 4 (cv i)) (fun i => old 4 (sv i)) (slot 4) hi4 rec4 hE
+
+/-- The actual negative compiler supplies all source and output witnesses.
+Each of the three comparisons is proved at those same witnesses. -/
+theorem consume_negative_root {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (hi : Derives Γ (negativeRootInput test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G
+      W I K J v u raw Gb H U F P N0 D)) :
+    Derives Γ (InternalProofBackground.implication test w z b G Parent) := by
+  have records := from_negative hZ Reln w z a f alpha b A B (P 0) R S j N n x Parent v u (.conjL hi) (.conjL (.conjR hi))
+  let E := negativeAt Reln (old 5 w) (old 5 z) (old 5 a) (old 5 f) (old 5 alpha) (old 5 b) (old 5 A) (old 5 B) (old 5 (P 0)) (old 5 R) (old 5 S)
+    (old 5 j) (old 5 N) (old 5 n) (old 5 x) (old 5 Parent)
+    (fun i => old 5 (v i)) (fun i => old 5 (u i)) (slot 5)
+  let Δ := Context.add E (raisedContext 5 Γ)
+  apply HornBinderRules.eliminate_many 5 E _ records
+  apply of_eq (InternalProofBackground.implication_rename test w z b G Parent (old 5)).symm
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  let L := negativeRecord Reln ((old 4 ∘ old 5) w) ((old 4 ∘ old 5) z) ((old 4 ∘ old 5) a) ((old 4 ∘ old 5) f) ((old 4 ∘ old 5) alpha) ((old 4 ∘
+    old 5) b) ((old 4 ∘ old 5) A) ((old 4 ∘ old 5) B) ((old 4 ∘ old 5) (P 0)) ((old 4 ∘ old 5) R) ((old 4 ∘ old 5) S) ((old 4 ∘ old 5) j) ((old 4
+    ∘ old 5) N) ((old 4 ∘ old 5) n) ((old 4 ∘ old 5) x) ((old 4 ∘ old 5) Parent)
+    (fun i => old 4 (old 5 (v i))) (fun i => old 4 (old 5 (u i))) (fun i => old 4 (slot 5 i)) (slot 4)
+  let Ξ := Context.add L (raisedContext 4 Δ)
+  apply HornBinderRules.eliminate_many 4 L _ hE
+  have hL : Derives Ξ L := .hyp (Or.inl rfl)
+  have hi5 := of_eq (negativeRootInput_rename test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode
+    Tail G W I K J v u raw Gb H U F P N0 D (old 5)) (HornBinderRules.under_body 5 hi E)
+  have hi9 := of_eq (negativeRootInput_rename test Reln (old 5 w) (old 5 z) (old 5 a) (old 5 f) (old 5 alpha) (old 5 b) (old 5 A) (old 5 B) (old 5
+    R) (old 5 S) (old 5 j) (old 5 N) (old 5 n) (old 5 x) (old 5 Parent) (old 5 A1) (old 5 A2) (old 5 A3) (old 5 C) (old 5 T) (old 5 Base) (old 5
+    Refl) (old 5 Pre) (old 5 i) (old 5 Sel) (old 5 Operand) (old 5 FalseCode) (old 5 Tail) (old 5 G) (old 5 W) (old 5 I) (old 5 K) (old 5 J) (fun
+    i => old 5 (v i)) (fun i => old 5 (u i)) (fun i => old 5 (raw i)) (fun i => old 5 (Gb i)) (fun i => old 5 (H i)) (fun i => old 5 (U i)) (fun i
+    => old 5 (F i)) (fun i => old 5 (P i)) (fun i => old 5 (N0 i)) (fun i => old 5 (D i)) (old 4)) (HornBinderRules.under_body 4 hi5 L)
+  apply of_eq (InternalProofBackground.implication_rename test (old 5 w) (old 5 z) (old 5 b)
+    (old 5 G) (old 5 Parent) (old 4)).symm
+  exact negative_root_at_records (HornBinderRules.zf_body 4 (HornBinderRules.zf_body 5 hZ E) L)
+    test Reln ((old 4 ∘ old 5) w) ((old 4 ∘ old 5) z) ((old 4 ∘ old 5) a) ((old 4 ∘ old 5) f) ((old 4 ∘ old 5) alpha) ((old 4 ∘ old 5) b) ((old 4
+      ∘ old 5) A) ((old 4 ∘ old 5) B) ((old 4 ∘ old 5) R) ((old 4 ∘ old 5) S) ((old 4 ∘ old 5) j) ((old 4 ∘ old 5) N) ((old 4 ∘ old 5) n) ((old 4
+      ∘ old 5) x) ((old 4 ∘ old 5) Parent) ((old 4 ∘ old 5) A1) ((old 4 ∘ old 5) A2) ((old 4 ∘ old 5) A3) ((old 4 ∘ old 5) C) ((old 4 ∘ old 5) T)
+      ((old 4 ∘ old 5) Base) ((old 4 ∘ old 5) Refl) ((old 4 ∘ old 5) Pre) ((old 4 ∘ old 5) i) ((old 4 ∘ old 5) Sel) ((old 4 ∘ old 5) Operand)
+      ((old 4 ∘ old 5) FalseCode) ((old 4 ∘ old 5) Tail) ((old 4 ∘ old 5) G) ((old 4 ∘ old 5) W) ((old 4 ∘ old 5) I) ((old 4 ∘ old 5) K) ((old 4 ∘
+      old 5) J) (fun i => (old 4 ∘ old 5) (v i)) (fun i => (old 4 ∘ old 5) (u i)) (fun i => (old 4 ∘ old 5) (raw i)) (fun i => (old 4 ∘ old 5) (Gb
+      i)) (fun i => (old 4 ∘ old 5) (H i)) (fun i => (old 4 ∘ old 5) (U i)) (fun i => (old 4 ∘ old 5) (F i)) (fun i => (old 4 ∘ old 5) (P i)) (fun
+      i => (old 4 ∘ old 5) (N0 i)) (fun i => (old 4 ∘ old 5) (D i)) (fun i => old 4 (slot 5 i)) (slot 4) hi9 hL
+
+def negativeRootSentence {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) : Source.Sentence :=
+  ((negativeRootInput test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J v u raw
+    Gb H U F P N0 D).imp
+    (InternalProofBackground.implication test w z b G Parent)).close
+
+theorem negative_root_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand FalseCode Tail G W I K J : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (negativeRootSentence test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl Pre i Sel Operand
+        FalseCode Tail G W I K J v u raw Gb H U F P N0 D)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact consume_negative_root (ZFContext.add (ZFContext.source_ZF m) _) test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl
+    Pre i Sel Operand FalseCode Tail G W I K J v u raw Gb H U F P N0 D
     (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingRawModalBody
