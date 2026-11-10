@@ -174723,6 +174723,210 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives; ALL runtime formula/term/index codes internal including nonstandard. Actual three operations, not a 2-op shortcut: weak free scope b->B at boundA; InstantiateTop boundA->zero at SAME freeB using actual fvar0; AbstractTop bound0/freeB->boundA/freeb. Original empty/successor scope eliminates bound0, original variable field laws handle free index successor and middle actual instantiate_free; no standardness assumption. term_diagram quantifies ALL5 term candidates and proves actual 3-leg+identity diagram. Existing complete FormulaInduction.cancel ACTUALLY used for all internal formulas; SAME original bound identity code from WEAK reused, free identity and 2converted tables produced/eliminated. from_operations consumes actual WEAK/INSTANCE/ABSTRACT original predicates directly, internally opens8operation/environment witnesses plus3identity witnesses; no supplied tables, given code equality, external induction or checker. derive additionally generates actual abstract output internally and proves abstracted(V,SAME originalF), discharging abstraction/output/equality premise. identify_nested and consume_nested ACTUALLY consume existing NestedGuardProof.data, its SAME generated actual abstract/forall; actual native fresh INSTANCE into generated K and actual parent ALL constructor remain explicit computational inputs, NOT claimed produced from complete raw parent here. Constructor uniqueness/equality substitution transports original generated conditional Root proof to SAME parent. FOUR ordinary nativeZF certificates (coded queries, original operations, generated inverse, actual nested consumer). All old proof Git blobs and dependency footprints retained. Complete raw new-parent -> required INSTANCE/ALL inputs, full source mono/dense/neg/imp, all axioms/six-ruleProof/reduction/finalCon remain UNPROVED. No new recursor, compiler, syntax checker, kernel, object Choice or generic reflection backend."
+    },
+    "forcing_fresh_parent_opening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingFreshParentOpening.lean",
+      "source_declarations": [
+        "force_mono neg/ex: open actual newly queried ALL at fresh condition; literal three-operation reclosure of actual parent body"
+      ],
+      "consumers": [
+        "Existing FreshOpeningInverse.derive ACTUALLY consumes generated WEAK and native INSTANCE to SAME direct raw-query output; no abstract output or desired code equality supplied",
+        "consume_opened ACTUALLY calls original FreshOpeningInverse.consume_nested; the NestedGuardProof.data must be at the SAME generated raw body. Producing canonical member/order/tail identification is STILL UNPROVED."
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingFreshOpeningInverse.lean",
+        "PPAC/Migration/ForcingWeakenedImages.lean",
+        "PPAC/Migration/ForcingMixedUnary.lean",
+        "PPAC/Migration/ForcingBinderFormula.lean",
+        "PPAC/Migration/ForcingNegCode.lean",
+        "PPAC/Migration/ForcingExistCode.lean",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogicalInternal.lean",
+        "PPAC/Migration/Internal/StructuralConsCore.lean",
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "61f89026208652826a5f84199cee0f94fe906070d3f0f7defd1f393c5db79fd9",
+        "PPAC/Migration/ForcingFreshOpeningInverse.lean": "efdbc8fc671626f729c2064383232441c3fa0d226cf138c08267eefe123b35f5",
+        "PPAC/Migration/ForcingWeakenedImages.lean": "6154e010c5a182e50bcab7912f7aff12a95b55421be151a7217f12303b8b9b4b",
+        "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
+        "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
+        "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
+        "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogicalInternal.lean": "23b9c6aa711b8bdbc4b297e3093367016adc38063b84ec3c57ff680ccf816cfb",
+        "PPAC/Migration/Internal/StructuralConsCore.lean": "5bb5ae36d094c70983c6c24434874f253eda15ae4ce3d744c0f9573bd3b45d74",
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingFreshParentOpening.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.data_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.atImages": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.atImages_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.body": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.produced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.produce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.consume_opened": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.consumeSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.consume_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.frame": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.frame_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.compiledOpened": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.compiledOpened_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.negativeInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.negativeInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.from_negative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.negativeSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.negative_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.existentialInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.existentialInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.from_existential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.existentialSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.existential_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; ALL internal scopes/codes including nonstandard omega. ONE actual new-parent mixed query, source ALL constructor, runtime omega/empty/successor/fresh-term metadata. produce internally generates20 construction witnesses: existing weakened images10, both literal binder lift pairs4, original/weakened bodies2, weakened whole parent1, native fresh instance1, cons bound table1, direct raw-body query output1. Retains19; independent native output eliminated via existing generic BinderFormula.native and full formula cancellation. Existing quantified_constructor applied BOTH parents, existing WeakenedImages.from_queries gives WHOLE-parent WEAK, original quantified_iff gives BODY WEAK with SAME bound successor; no new weak/lift commutation infrastructure. Native instance to SAME actual direct raw body is derived, not given; existing FreshOpeningInverse.derive gives abstraction to SAME actual parent body. Four ordinary nativeZF endpoints: generic production, actual nested-record consumption, complete original negative compilation, complete original existential compilation. from_negative consumes existing NegCode.body_output. from_existential consumes ALL8 original compiler plus7 literal shell witnesses; correct outer guards at slots2/3, inner4/5, domain6 and child7; internally generates source body, no expected source body/parent constructor input. consume_opened requires original NestedGuardProof.data at SAME produced raw body; canonical concrete member/order/tail matching to that generated body is STILL UNPROVED. Thus complete raw-parent-to-required-canonical-NestedK, full mono/dense/axioms/six-rule Proof/reduction/final Con remain UNPROVED. No old proof change, new kernel/checker/recursor/Choice/object-standardness restriction."
     }
   },
   "selected_route_consumer_audit": {
