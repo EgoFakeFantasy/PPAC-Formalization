@@ -648,7 +648,7 @@ theorem targetExists_rename {m l} (test : Formula 1) (w z f T C B S N L M : Fin 
     (targetExists test w z f T C B S N L M P).rename ρ = targetExists test (ρ w) (ρ z) (ρ f) (ρ T) (ρ C) (ρ B) (ρ S) (ρ N) (ρ L) (ρ M) (fun i => ρ (P i)) := by
   simp only [targetExists, existsMany_rename, targetBody, targetData_rename test, lift_old, lift_slot]
 
-private theorem open_target {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (R : Source.Formula (n+2))
+theorem open_target {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (R : Source.Formula (n+2))
     (w z A1 A2 A3 f T C B S : Fin m) (P : Fin 3 → Fin m) (v : Fin 16 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hC : Derives Γ (successor C z))
     (hP : ∀ i, Derives Γ (SyntaxTermSyntax.term w z T (P i)))

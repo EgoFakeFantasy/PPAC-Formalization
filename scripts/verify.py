@@ -2743,7 +2743,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
                                 ('forcing_preorder_code', 'ForcingPreorderCode', 29),
-                                ('forcing_preorder_instances', 'ForcingPreorderInstances', 27),
+                                ('forcing_preorder_instances', 'ForcingPreorderInstances', 28),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 10),
                                 ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
@@ -2774,7 +2774,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
                                 ('forcing_reindexed_images', 'ForcingReindexedImages', 14),
                                 ('forcing_weakened_images', 'ForcingWeakenedImages', 18),
-                                ('forcing_weakened_overwrite', 'ForcingWeakenedOverwrite', 15)):
+                                ('forcing_weakened_overwrite', 'ForcingWeakenedOverwrite', 15),
+                                ('forcing_fresh_preorder', 'ForcingFreshPreorder', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6134,6 +6135,11 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_weak_overwrite_expected_table_equality_or_weak_answer_given": False,
         "object_actual_weak_overwrite_final_canonical_global_match_proved": False,
         "object_actual_weak_overwrite_scope": source_lock["source_proof_adaptations"]["forcing_weakened_overwrite"]["scope"],
+        "object_actual_fresh_preorder_same_raw_r_q_p_and_three_native_instances_generated": True,
+        "object_actual_fresh_preorder_whole_Pre_query_weak_correspondence_proved": True,
+        "object_actual_fresh_preorder_original_open_target_proof_body_retained": True,
+        "object_actual_fresh_preorder_canonical_global_full_match_proved": False,
+        "object_actual_fresh_preorder_scope": source_lock["source_proof_adaptations"]["forcing_fresh_preorder"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,

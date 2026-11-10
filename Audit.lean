@@ -40360,3 +40360,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.kernel_certificate
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleSentence
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.double_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingPreorderInstances.open_target
+#print axioms PPAC.Migration.ForcingFreshPreorder.input
+#print axioms PPAC.Migration.ForcingFreshPreorder.input_rename
+#print axioms PPAC.Migration.ForcingFreshPreorder.data
+#print axioms PPAC.Migration.ForcingFreshPreorder.data_rename
+#print axioms PPAC.Migration.ForcingFreshPreorder.body
+#print axioms PPAC.Migration.ForcingFreshPreorder.produced
+#print axioms PPAC.Migration.ForcingFreshPreorder.produced_rename
+#print axioms PPAC.Migration.ForcingFreshPreorder.produce
+#print axioms PPAC.Migration.ForcingFreshPreorder.sentence
+#print axioms PPAC.Migration.ForcingFreshPreorder.kernel_certificate

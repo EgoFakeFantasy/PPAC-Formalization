@@ -1,0 +1,99 @@
+{
+  "verified_at": "2026-11-10T17:43:41.689788+00:00",
+  "baseline_commit": "01e20b87c4523e4f26dbf4fde8640fb0eb131903",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual q/p double-overwrite weak transmission accepted39647, committed01e20b8, all generic image/weak/cancel operations already complete",
+  "background": "Original nativeZF and original FirstOrder.Derives; all runtime free scopes, condition terms, formula and operation outputs internal including nonstandard",
+  "source_consumer": "Pinned force_mono/neg and ex SAME raw source fresh r/q/p preorder/native instances",
+  "result": [
+    "Original open_target proof reused unchanged; only private visibility keyword removed",
+    "Generate fresh r as original free0 code, actual q/p renamed target terms and their own original index rename queries",
+    "Pass SAME rawData, actual generated bound/free images and actual three new terms to original open_target; no re-quotation or replacement native producer",
+    "Retain whole actual Pre/Refl/transitivity targetData and ALL3 native instance/proof records from old producer",
+    "Six new terms/formula outputs object-bound; expected target Pre/query/weak answer not an input",
+    "ACTUALLY consume same old/new whole Pre queries with existing WeakenedImages.from_queries, producing original weakened Pre PreNew in SAME output data",
+    "NativeZF original-kernel closed sentence for complete fresh record production"
+  ],
+  "proof_boundaries": {
+    "same_raw_fresh_r_q_p_and_Pre_outputs_generated": true,
+    "all_three_native_instances_and_original_proof_records_retained": true,
+    "same_whole_Pre_actual_query_weak_correspondence_proved": true,
+    "six_new_output_witnesses_object_bound": true,
+    "chosen_fresh_terms_or_target_Pre_or_expected_query_or_weak_answer_given": false,
+    "existing_actual_weak_image_data_computational_input": true,
+    "full_canonical_Global_match_proved": false,
+    "final_internal_Con_proved": false,
+    "no_new_compiler_checker_recursion_induction_or_kernel": true
+  },
+  "verification": {
+    "audited_declarations": 39658,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37392,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "build_jobs": 3354,
+    "new_module_build_seconds": 7.8,
+    "previous_exact_footprints_unchanged": 39647,
+    "existing_donor_original_proof_bodies_exact": true,
+    "donor_exact_visibility_change": {
+      "file": "PPAC/Migration/ForcingPreorderInstances.lean",
+      "before": "private theorem open_target ",
+      "after": "theorem open_target ",
+      "occurrences": 1,
+      "baseline_text_sha256": "ca84af74e7f6a186cee0b945b39187f93631f17193784320b7d5c26eeb549ec4",
+      "current_text_sha256": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac"
+    },
+    "sealed_inputs_checked": 2915,
+    "sorted_seal_manifest_sha256": "cf17ac9dfac0d322edb21f456d807318a8cb932f96371fc3e4091585ae7b027a",
+    "new_public_declarations": 11,
+    "new_module_public_declarations": 10,
+    "old_producer_newly_public_declarations": 1,
+    "current_source_module_and_pre_audit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75,
+    "metadata_compatibility_fix": "Explicitly case-split three tuple coordinates and use proven three_map to align original targetExists body BEFORE object-existential elimination; no heartbeat increase. Initial whnf timeout fixed; corrected original-budget trust0 check completed in about9 seconds.",
+    "other_previous_committed_proof_Git_blobs_unchanged": 2880,
+    "both_changed_source_modules_postcleanup_trust0_passed": true
+  },
+  "changed_sealed_inputs": {
+    "Audit.lean": "418225b80ebce0733e7daaeb409aab6ea853e4414b582eaf8156af6c77896df3",
+    "PPAC/Migration/ForcingFreshPreorder.lean": "f8a2bef82eca81987ce3264b9614dbd9b01a62d1213d495fde91be996429debc",
+    "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
+    "PPAC.lean": "0185e2daa5d07719292d648776acea7769e064aff773860f183b955d6cf79cb2",
+    "scripts/verify.py": "a3a2f06ef9d03900bc8d74200c0a4d3c553b35638b3d842ab5ec6b0bf20f81b8",
+    "docs/SOURCE_LOCK.json": "0e623eeb5c0649b9304c6e57b18d70988afe8a4fc1a1c4903181d403a6b57206"
+  },
+  "cleanup_exact_owned_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-preorder-baseline.tmp.json",
+      "bytes": 13167408,
+      "raw_sha256": "402d5d692be90ee076724bf873aa7a68821537d556243b26e876ca5a09a4e94a"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-preorder-audit.tmp.lean",
+      "bytes": 723,
+      "raw_sha256": "a54dcb3eb03f5ed947729a3033bf3808286971c5d789bcfb755face219c22c74"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-preorder-preaudit.tmp.log",
+      "bytes": 1583,
+      "raw_sha256": "2e5eed8a7a4e5a204983971afdcf4db1c9d3f0b3037ec1a03e9a1a72c525c10f"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-preorder-check.log",
+      "bytes": 914,
+      "raw_sha256": "82c04d4c8a77bf90b7188da8f1875251feab9511671803131aa0225250bc1863"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-preorder-donor-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cleanup_and_postcleanup_check_pending": false,
+  "next_actual_source_consumer": "当前下一原消费者：读取本批 SAME 源新实例内已经生成的 members／裸R原记录，匹配实际旧、新 q/p 背景输出，再处理 Extra 与四个AND的 SAME canonical Global。新 r/q/p、完整新Pre查询、ALL3 native 实例及 Pre弱化现由 ForcingFreshPreorder.produce完成，不再列为待办；原 q/p 双覆盖／弱化由 ForcingWeakenedOverwrite.from_double_queries完成，也不重做。targetData中的 instancesProved 已有 EX6 native F/U，随后 matrixExists 的 EX10叶及 backgroundExists 的 EX5背景全部由原 open_target产生；只需读取并复用 ForcingPreorderLeaves.from_row、原member/bare-R直接查询、弱化原子构造律及双覆盖消费者。先显式规范化有限元数据函数再做对象存在消去，避免整记录whnf比较。Pre弱化已在同一fresh数据内，q/p项重命名也已实际生成。Extra复用原弱化／证明生产器，四AND复用原逻辑构造律，然后消费现成FreshBackground／ProofUniversal。随后完成原联合mono／dense／exists_neg／imp、规范化强迫MP、全部内部公理／六规则Proof、reduction及最终Con。不得重做L、全模式、完整raw尾部、上下文码、Curry、mode3／forall、范围提升、weak/abstract相消、项像图、双覆盖或本批fresh Pre生产。",
+  "cleanup_completed_at": "2026-11-10T17:46:01.395015+00:00"
+}
