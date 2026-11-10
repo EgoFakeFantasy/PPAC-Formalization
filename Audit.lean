@@ -40241,3 +40241,21 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailComparison.from_queries
 #print axioms PPAC.Migration.ForcingExistTailComparison.rawSentence
 #print axioms PPAC.Migration.ForcingExistTailComparison.raw_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingProofContext.layoutData
+#print axioms PPAC.Migration.ForcingProofContext.layoutData_rename
+#print axioms PPAC.Migration.ForcingProofContext.at_layout
+#print axioms PPAC.Migration.ForcingProofContext.layoutExists
+#print axioms PPAC.Migration.ForcingProofContext.layoutExists_rename
+#print axioms PPAC.Migration.ForcingProofContext.resultData
+#print axioms PPAC.Migration.ForcingProofContext.resultData_rename
+#print axioms PPAC.Migration.ForcingProofContext.result
+#print axioms PPAC.Migration.ForcingProofContext.result_rename
+#print axioms PPAC.Migration.ForcingProofContext.input
+#print axioms PPAC.Migration.ForcingProofContext.input_rename
+#print axioms PPAC.Migration.ForcingProofContext.derive
+#print axioms PPAC.Migration.ForcingProofContext.sentence
+#print axioms PPAC.Migration.ForcingProofContext.kernel_certificate
+#print axioms PPAC.Migration.ForcingProofContext.from_queries
+#print axioms PPAC.Migration.ForcingProofContext.rawSentence
+#print axioms PPAC.Migration.ForcingProofContext.raw_kernel_certificate

@@ -2,7 +2,7 @@
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
 
-本批 ForcingExistTailComparison.from_queries 已完成从两条实际原始尾部查询出发的外条件独立性：内部产生、消去两套共32个执行见证，推导原 source/target 作用域对齐；一次消费现成 canonical 生成器并消去全部9个见证，以同一头码在两个作用域重定类型，调用已证四组件比较、封装三次 AND／两次 EX。raw_kernel_certificate 为普通 nativeZF 原核闭句，不给定 trace／head／canonical 表／作用域等式或叶子相等答案；保留的输入是原闭布局、完整源编译记录和两条实际查询。九命令／五项 trust=0 全通过，39535项声明零警告，旧39525足迹、2873份其他旧证明及原模块10项数学正文不变；2907项密封输入重算，见 [完整原始尾部验收](../verification/forcing-exist-tail-generated-acceptance.json)。原存在尾部不变性、trace 对齐和共用操作帧消去均已完成，不再列作待做。仍在原第10阶段：下一消费者是实际 canonical 证明上下文／fresh 全称化布局，复用已有 Curry／guarded_generalize／mode3 与原公式归纳，再装配原 joint forcing、全部内部公理、六规则 Proof、reduction 和最终 Con；最终主句仍未证明。
+ForcingProofContext.from_queries 已实际消费同一原存在分支的 Tail 证明及两条原始查询的完整尾部等式：内部生成六个合取码，用原投影／rule11／蕴含组合／同背景 MP 证明 canonicalCtx→oldCtx，再用现有 Curry 只柯里化 r-local 的 H0∧H3；六个码全部保留在对象 EX6 中。两个普通 nativeZF 原核闭句已验收；九命令／五项 trust=0 全通过，39552项声明零警告，旧39535足迹和全部2874份旧证明正文不变，2908项密封输入重算，见 [上下文验收](../verification/forcing-proof-context-acceptance.json)。这关闭了 canonical 证明上下文生成、重排和 raw Tail 证明传输。候选 Global 的 fresh-free0 独立性及两条实际 mode3 abstraction 尚未消费，不能仅凭 Global 名称认定已 fresh；mode3 抽象自由首槽0，原自由变量须顺延。下一步消费已有 weakening、完整公式相消、Curry 和 guarded_generalize，完成源 fresh 全称化；原联合强迫、全部内部公理、六规则 Proof、reduction 和最终 Con 仍未完成。既有完整尾部比较／L／模式／mode3／归纳不得重做。
 
 | 原阶段／资产 | 实际状态 |
 |---|---|

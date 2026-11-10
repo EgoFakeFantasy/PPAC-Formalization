@@ -2767,7 +2767,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_images', 'ForcingExistDomainImages', 12),
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
-                                ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20)):
+                                ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
+                                ('forcing_proof_context', 'ForcingProofContext', 17)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6104,6 +6105,11 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_existential_canonical_proof_context_six_codes_generated_and_consumed": True,
+        "object_actual_existential_canonical_proof_context_same_background_rearrangement_proved": True,
+        "object_actual_existential_canonical_proof_context_raw_tail_equality_actually_consumed": True,
+        "object_actual_existential_canonical_proof_context_fresh_free0_abstractions_consumed": False,
+        "object_actual_existential_canonical_proof_context_scope": source_lock["source_proof_adaptations"]["forcing_proof_context"]["scope"],
         "object_actual_existential_whole_tail_BOTH_sixteen_actual_trace_blocks_produced_eliminated": True,
         "object_actual_existential_whole_tail_derived_scope_alignment_actually_consumed": True,
         "object_actual_existential_whole_tail_ALL_NINE_canonical_witnesses_internally_produced_eliminated": True,

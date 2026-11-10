@@ -1,0 +1,298 @@
+{
+  "verified_at": "2026-11-10T14:50:53.914819+00:00",
+  "baseline_commit": "7fb3fe1664067436b4abd7ad65bc6ffd74555751",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: inspected failed CI logs, freshly verified existing compatibility fixes; latest ten completed remote runs successful, current specific remote build live",
+  "background": "Original ordinary nativeZF, pure membership/equality and original FirstOrder.Derives via unchanged replay; full arbitrary internal/nonstandard runtime scopes/formula/proof codes. No object Choice or replacement kernel.",
+  "source_consumers": [
+    "Pinned AtomicData.force_mono ex actual proof background",
+    "Completed ForcingPreorderExistential.resultData and ForcingExistTailComparison.from_queries"
+  ],
+  "result": [
+    "Internally generate ALL SIX actual typed AND layout codes using unchanged original constructors; no layout-code witnesses or expected rearrangement proof supplied",
+    "Separate candidate Global=Extra AND(Pre AND(H1 AND(H2 AND H4))) and r-local=H0 AND H3; original projections/rule11/chain/S+MP prove canonicalCtx->oldCtx without assuming any guard/preorder truth",
+    "Consume SAME actual old-context Tail proof; transfer to canonical context and curry ONLY the r-local pair using existing Curry.from_implication",
+    "Return all six codes inside OBJECT EX6 with original constructor facts, canonical implication and curried proof",
+    "from_queries ACTUALLY CALLS completed raw comparison on TWO original queries and eqSubst transports generated canonical proof to actual second Tail; source runtime codes remain internal",
+    "Two ordinary nativeZF original-kernel closed sentence certificates; seventeen public declarations audited"
+  ],
+  "proof_boundaries": {
+    "canonical_context_six_codes_produced_eliminated": true,
+    "same_background_rearrangement_and_local_only_Curry_completed": true,
+    "raw_tail_comparison_actually_consumed": true,
+    "given_guard_truth_or_proved_guard": false,
+    "given_layout_permutation_or_tail_equality_answer": false,
+    "candidate_Global_freshness_and_actual_mode3_abstractions_consumed": false,
+    "full_source_fresh_forall_consumer_completed": false,
+    "all_internal_joint_forcing_axioms_six_rules_reduction_complete": false,
+    "final_internal_Con_proved": false
+  },
+  "next_actual_consumer": "Fresh FIRST-free-slot0 forall, not last-slot abstraction: obtain actual weakening/cancellation of the SAME candidate Global and actual abstracted Local->Tail. Existing SyntaxWeakenFreeOutput, SyntaxTopFormulaCodes.abstract_at_codes, IndexFormulaRenameBridge, SyntaxIdentityInduction, full ForcingFormulaInduction.cancel and InternalProofUniversal.guarded_generalize are proved and must be consumed, not rebuilt. Candidate Global syntactic independence is not inferred from its name.",
+  "validation": {
+    "audited_declarations": 39552,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37286,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39535,
+    "all_old_proof_files_byte_identical": 2874,
+    "sealed_source_inputs_all_fresh": 2908,
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_checks": 5,
+    "compatibility_tests": 9,
+    "guard_tests": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75,
+    "source_check_only_passed": true
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingProofContext.layoutData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.layoutData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.at_layout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.layoutExists": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.layoutExists_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.resultData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.resultData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.result": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.result_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.derive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingProofContext.from_queries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.rawSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingProofContext.raw_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "log_raw_sha256": {
+    "verification/source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+    "verification/source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+    "verification/lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+    "verification/build.log": "44d7c66d4b7cf3c29d42d96d682270d463b1539650615ff28cd88910bd7fe029",
+    "verification/check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+    "verification/step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/audit.log": "4c277bc6c78f565764f6dcae8997afb105dbf2bcc10bd8360f1ee242c8b154fb"
+  },
+  "cleanup": {
+    "status": "complete",
+    "files_removed": 6,
+    "bytes_removed": 15440724,
+    "exact_inventory": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-baseline-summary.json",
+        "bytes": 15080490,
+        "raw_sha256": "d52f7a0932ca8e2e2312b9f75697ca3a4c9cd41b5e23d638ef82d6737db9b519"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-baseline-proofs.json",
+        "bytes": 356281,
+        "raw_sha256": "c32823ed873b74dc54676a5769a9a48af22cfa74d7ba1641eb805434b2c14b01"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-preaudit.lean",
+        "bytes": 1099,
+        "raw_sha256": "0ae15484cd86da0755442197c009aa899f26d4e6ad518325044c822ce27889e4"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-preaudit.log",
+        "bytes": 2701,
+        "raw_sha256": "681196a1bcc7386394f5b6aec2139d9f65201ed31f8ecae13c8fb3ed1cc6819c"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-check.log",
+        "bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-proof-context-full-verification.log",
+        "bytes": 153,
+        "raw_sha256": "0482b457d29dab069a531f2826bdabf84e651a15f0b86bbebfbc7eec0d5f97e8"
+      }
+    ],
+    "recursive_deletion": false,
+    "unrelated_files_or_processes_touched": false,
+    "retained_source_post_cleanup_trust0_exit_code": 0,
+    "retained_source_post_cleanup_log_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sealed_inputs": {
+    "count": 2908,
+    "all_current_files_checked": true,
+    "canonical_sorted_manifest_sha256": "1f35a227a2ad088995cf1357357c0d8ceb48caaa181b21c99c43602f98723804",
+    "changed_input_hashes": {
+      "Audit.lean": "8765021dad8486995b00ecd6e121c5ea64b176e1ba77af951dafe9d61124d3d5",
+      "PPAC/Migration/ForcingProofContext.lean": "02ab74700cf66d1da6c0c37f92295799f8094960df0632e4525e8d6788cfd300",
+      "PPAC.lean": "a574f12870dafa7fc59db650671c9742566f9afec25be9d39f85afd9141edc8d",
+      "scripts/verify.py": "39f0cd8688f315f0beeade77e54a01a8329bdeaf50a14ab1ec7f2a20e4a62d54",
+      "docs/SOURCE_LOCK.json": "33736225f053bd1d68903a3077e1717208a037a8addf5fbefc5eb514f756456b"
+    },
+    "manifest_reproduction": "Fresh full scripts/verify.py summary sha256; unchanged proof bytes separately checked for all 2874 baseline files. Aggregate retains exact manifest identity without duplicating 2908 unchanged seals."
+  }
+}

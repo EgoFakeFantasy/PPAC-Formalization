@@ -6,7 +6,7 @@
 
 ## 已完成并必须复用
 
-最新验收为 ForcingExistTailComparison.from_queries/raw_kernel_certificate：从两条实际原始尾部查询内部生成并消去32个 trace 见证、全部9个 canonical 见证及实际作用域对齐，不再给定 trace、共用 head、canonical 表或任何期望等式。保留原闭根布局／完整源编译记录／实际点更新及查询输入。九命令／五项 trust=0 全通过，39535项声明零警告，旧39525足迹及2873份其他旧证明不变，见 [验收回执](../verification/forcing-exist-tail-generated-acceptance.json)。完整原存在尾部比较及全部共用帧消去已完成，禁止重做。下一步实际消费原 ForcingPreorderExistential.derive 的 tail／implication／Curry 结果及本批 raw 等式，构造正确的源 canonical 证明上下文与两条 mode3 abstraction，调用已有 InternalProofUniversal.guarded_generalize；该规则、Curry、mode3、公式归纳均已证明，不是待重建数学。原联合强迫／内部公理／六规则 Proof／reduction／最终 Con 仍需装配。
+ForcingProofContext.from_queries 已实际消费同一原存在分支的 Tail 证明及两条原始查询的完整尾部等式：内部生成六个合取码，用原投影／rule11／蕴含组合／同背景 MP 证明 canonicalCtx→oldCtx，再用现有 Curry 只柯里化 r-local 的 H0∧H3；六个码全部保留在对象 EX6 中。两个普通 nativeZF 原核闭句已验收；九命令／五项 trust=0 全通过，39552项声明零警告，旧39535足迹和全部2874份旧证明正文不变，2908项密封输入重算，见 [上下文验收](../verification/forcing-proof-context-acceptance.json)。这关闭了 canonical 证明上下文生成、重排和 raw Tail 证明传输。候选 Global 的 fresh-free0 独立性及两条实际 mode3 abstraction 尚未消费，不能仅凭 Global 名称认定已 fresh；mode3 抽象自由首槽0，原自由变量须顺延。下一步消费已有 weakening、完整公式相消、Curry 和 guarded_generalize，完成源 fresh 全称化；原联合强迫、全部内部公理、六规则 Proof、reduction 和最终 Con 仍未完成。既有完整尾部比较／L／模式／mode3／归纳不得重做。
 
 | 已有资产 | 当前精确边界 |
 |---|---|
