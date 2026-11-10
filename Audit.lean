@@ -40281,3 +40281,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingProofUniversal.guardedInput
 #print axioms PPAC.Migration.ForcingProofUniversal.guardedSentence
 #print axioms PPAC.Migration.ForcingProofUniversal.guarded_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingScopeIdentity.diagonalCode
+#print axioms PPAC.Migration.ForcingScopeIdentity.diagonalCode_rename
+#print axioms PPAC.Migration.ForcingScopeIdentity.reflexive
+#print axioms PPAC.Migration.ForcingScopeIdentity.target_type
+#print axioms PPAC.Migration.ForcingScopeIdentity.promotedData
+#print axioms PPAC.Migration.ForcingScopeIdentity.promotedData_rename
+#print axioms PPAC.Migration.ForcingScopeIdentity.promoted
+#print axioms PPAC.Migration.ForcingScopeIdentity.promoted_rename
+#print axioms PPAC.Migration.ForcingScopeIdentity.promote
+#print axioms PPAC.Migration.ForcingScopeIdentity.closed_type
+#print axioms PPAC.Migration.ForcingScopeIdentity.sentence
+#print axioms PPAC.Migration.ForcingScopeIdentity.kernel_certificate

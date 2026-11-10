@@ -2769,7 +2769,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
                                 ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
                                 ('forcing_proof_context', 'ForcingProofContext', 17),
-                                ('forcing_proof_universal', 'ForcingProofUniversal', 21)):
+                                ('forcing_proof_universal', 'ForcingProofUniversal', 21),
+                                ('forcing_scope_identity', 'ForcingScopeIdentity', 12)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6106,6 +6107,12 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
+        "object_actual_closed_background_scope_identity_independent_successors_retained": True,
+        "object_actual_closed_background_scope_identity_four_witnesses_generated": True,
+        "object_actual_closed_background_scope_identity_given_target_type_or_query_answer": False,
+        "object_actual_closed_background_scope_identity_weakening_abstract_comparison_complete": False,
+        "object_actual_closed_background_scope_identity_scope": source_lock["source_proof_adaptations"]["forcing_scope_identity"]["scope"],
         "object_actual_existential_curried_body_and_mode3_output_both_generated": True,
         "object_actual_existential_generated_body_consumed_by_original_guarded_forall": True,
         "object_actual_existential_generated_body_forall_has_explicit_global_operation_premise": True,

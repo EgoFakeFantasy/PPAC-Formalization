@@ -6,7 +6,7 @@
 
 ## 已完成并必须复用
 
-ForcingProofUniversal.derive 已实际消费原存在分支及 ForcingProofContext 生成的同一上下文／Curry 结果，内部构造全部六个上下文码、正文 F 与其首槽0抽象 J，全部保留在对象 EX6／EX2 中；没有给定正文码或抽象答案。generalize_layout 已消费这些记录并调用现有 guarded_generalize，内部构造 forall 码与原证明节点，但仍明确保留实际 Global→G 抽象操作及 G 的闭 bound 类型前提；该前提尚未由源 freshening／weakening 匹配消去，因此完整源 fresh 全称化仍未完成。两个普通 nativeZF 原核闭句／九命令／五项 trust=0 全通过，39573项声明零警告，旧39552足迹和全部2875份旧证明正文不变，2909项密封输入重算，见 [正文抽象与全称化验收](../verification/forcing-proof-universal-acceptance.json)。仍在原第10阶段；下一步只补同一 Global 的实际首槽弱化／抽象对应，再完成原联合强迫、全部内部公理、六规则 Proof、reduction 与最终 Con。既有上下文重排、完整尾部比较、mode3／forall／公式归纳／L／模式继续复用，不重做。
+ForcingScopeIdentity.promote 已补齐闭背景的实际范围适配：复用原项恒等、图解码唯一性、对角提升及原子／逻辑证明步骤，将原同范围公式恒等推广到独立源／目标范围；六个元数据参数在对象层全称量化，量词生成各自的内部后继。具体消费者从原闭 G 类型、空 z 及其后继 A 出发，内部产生空域位移／自由恒等／两张 mixed 表四个码，取得同一个 G 在 A 范围下的真实 G→G 查询和类型；没有给定目标类型或答案，四见证保留在对象 EX4。普通 nativeZF 原核闭句／九命令／五项 trust=0 全通过，39585项声明零警告，旧39573足迹和全部2876份旧证明正文不变，2910项密封输入重算，见 [范围适配验收](../verification/forcing-scope-identity-acceptance.json)。这关闭了已有四路径比较的 direct 同码范围提升一侧；首槽弱化后再抽象的相消以及同一源 Global 匹配仍未完成，现有 ForcingProofUniversal 的全局抽象前提尚未消去。原上下文重排、正文抽象与 guarded forall 消费、完整公式归纳／相消、L／全模式均继续复用，不重做。仍在原第10阶段，最终 Con 未证明，第11未开始。
 
 | 已有资产 | 当前精确边界 |
 |---|---|

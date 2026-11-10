@@ -1,0 +1,268 @@
+{
+  "verified_at": "2026-11-10T15:37:31.614512+00:00",
+  "baseline_commit": "613a6f0c535658a0000cbfb0d39380f6acac1f87",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: original same-context Curry body F and original mode3 J both generated; existing guarded forall actually called with global operation remaining explicit;39573 full acceptance, all14 changed public blobs exact and remote613a6f0 verified",
+  "background": "Ordinary original nativeZF and pure membership/equality, original FirstOrder.Derives through unchanged replay. All six scopes/maps and formula codes OBJECT-quantified, independent internal source/target successors including nonstandard. No object Choice or external standardness.",
+  "source_consumer": "Original force_mono/ex SAME old closed-background direct leg for fresh-first-free0 abstraction",
+  "result": [
+    "Original generic term identity, original graph decode uniqueness, diagonal binder lift and old atomic/source-case proof steps directly reused with independent target c/d; all old proof files unchanged",
+    "Use original BoundedInduction.induction_on_set/Foundation/Separation with six-parameter scope property, not a new induction backend or syntax recursion",
+    "Source and target successors generated INDEPENDENTLY under quantifiers; never infer their equality",
+    "reflexive proves actual original renamed G->G at different scopes for arbitrary internal FormulaCode; target_type consumes it",
+    "promote generates original empty-source shift I, original free identity J and BOTH actual mixed conversion tables R/S internally; actual IndexFormulaRenameInduction.forward gives literal SAME G->G mixed query at promoted bound A",
+    "ALL FOUR code/table witnesses remain OBJECT EX4; closed_type consumes promoted and eliminates them",
+    "One ordinary nativeZF original-kernel closed sentence certificate. No target FormulaCode, expected direct query, standard code or IH premise"
+  ],
+  "proof_boundaries": {
+    "scope_polymorphic_diagonal_formula_identity_proved": true,
+    "same_literal_closed_G_promoted_type_and_mixed_query_generated": true,
+    "all_four_actual_code_table_witnesses_generated_and_quantified": true,
+    "independent_source_target_successors_retained": true,
+    "new_kernel_checker_recursion_or_induction_backend": false,
+    "given_promoted_G_type_or_expected_query_or_IH": false,
+    "source_weakening_then_abstract_returns_same_G_proved": false,
+    "actual_source_generated_Global_matching_discharged": false,
+    "full_source_fresh_forall_completed": false,
+    "all_internal_joint_forcing_axioms_six_rules_reduction_complete": false,
+    "final_internal_Con_proved": false
+  },
+  "next_actual_consumer": "Existing four-path ForcingFormulaInduction.cancel: e0 original free-head weakening (z,b)->(z,B); e1 actual abstractCoded (z,B)->(A,b); e2 original identity (A,b)->(A,b); e3 NOW COMPLETE actual SAME G promotion (z,b)->(A,b) supplied by ForcingScopeIdentity.promote. Prove root term map commutation using existing SyntaxTopCodedEnvironmentFields.abstract_free, IndexTermImageCodeFields.at_edge, SyntaxCodedMixedTermFields, OriginalTermScopeElimination and existing identity_term_output. Then generate/eliminate original operation tables and consume actual formula cancellation to get abstract(weaken G)=G. SAME generated source Global matching remains necessary. Do not redo full formula induction, scope identity, direct promotion, Curry/body/forall or old mathematics.",
+  "validation": {
+    "audited_declarations": 39585,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37319,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39573,
+    "all_old_proof_files_byte_identical": 2876,
+    "sealed_source_inputs_all_fresh": 2910,
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "trust0_checks": 5,
+    "compatibility_tests": 9,
+    "guard_tests": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75,
+    "old_proof_byte_identity_scope": "Exact original Git blob IDs at baseline and current staged index matched for every old PPAC Lean proof; canonical working source hashes separately verified."
+  },
+  "sealed_inputs": {
+    "count": 2910,
+    "canonical_sorted_manifest_sha256": "e11ea1a7d608b9646fb97c37c337f445226e77b18c20c06c02da5017b8e6b6a1",
+    "changed_input_hashes": {
+      "Audit.lean": "c3e2aef7ff9dbad1d6e8daab393ac8162be75789acb505d92b35f7437490bca2",
+      "PPAC/Migration/ForcingScopeIdentity.lean": "0b89a1cdf2a0b57eb84a60a16e1172bf6ece3d0b1ff660c8f61564693fcaf020",
+      "PPAC.lean": "cd9c6a3480be029d9aa7d27ac5de85c0b58b26afb4d7f07e9287246b69045a6c",
+      "scripts/verify.py": "6804025259653d4a6b93a08da8c379d8934cf7db843bc98af601bf279d8fe6e8",
+      "docs/SOURCE_LOCK.json": "47a83371032635269060024fd1685fc63f1a4a98d13afe00a8f545294c2ccc61"
+    },
+    "manifest_reproduction": "Fresh full scripts/verify.py summary sha256; all old proofs byte-checked; aggregate avoids duplicating unchanged seals."
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingScopeIdentity.diagonalCode": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.diagonalCode_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.reflexive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.target_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.promotedData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.promotedData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.promoted": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.promoted_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.promote": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.closed_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingScopeIdentity.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "log_raw_sha256": {
+    "source-rules.log": "fd224373f79fc640e77808a311957ac4f717de9ff07098346ecfaf5da81dd177",
+    "source-theory.log": "7ebb795e4d6111cda609ec2d475342f9f59d63aec574f81ed4a901c77e7967b8",
+    "lean-version.log": "89c79d9c5b24343255f93bb0203ae89e6b8715c652def77008a34f37656c9c82",
+    "build.log": "e9722d0559a9c46e8bc0e1373066314e8114a15964e9c43a171522fc9626fc08",
+    "check.log": "9fcb8ae651610327c946115ac81262258ba03b4714f1fa173abc8cc73c3493e7",
+    "step2-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step3-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step4-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit.log": "4345a913389d1e2ff1f75e3a0e866beb53b1e6c4c654d7db7573b12214d5db07"
+  },
+  "cleanup": {
+    "status": "complete",
+    "files_removed": 6,
+    "bytes_removed": 15450617,
+    "exact_inventory": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-baseline-summary.json",
+        "bytes": 15091409,
+        "raw_sha256": "873dca76ad67111fa03209c0137afa4baf645306ca2dfc0928fb81d148b94bff"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-baseline-proofs.json",
+        "bytes": 356509,
+        "raw_sha256": "2a5077780fe0a3ab3d786f8464e467eb865563fbb846c332736721c18a2c533e"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-preaudit.lean",
+        "bytes": 804,
+        "raw_sha256": "8aa88a1944b242a5602db17ec92a16672510ee24495df2fe80ac7f6a5b6f0349"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-preaudit.log",
+        "bytes": 1742,
+        "raw_sha256": "5cc38a6041e45e953d1f1f53bb932f111fd233c2e967095e5fa438f36b2af9f6"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-check.log",
+        "bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-scope-identity-full-verification.log",
+        "bytes": 153,
+        "raw_sha256": "c240d7e0a37c34047cb72ae2ff321267efd8a9c74040a321f2c1ecb71795bd73"
+      }
+    ],
+    "recursive_deletion": false,
+    "unrelated_files_or_processes_touched": false,
+    "retained_source_post_cleanup_trust0_exit_code": 0,
+    "retained_source_post_cleanup_log_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

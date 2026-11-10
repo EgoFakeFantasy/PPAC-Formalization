@@ -1174,3 +1174,4 @@ import PPAC.Migration.ForcingExistTailOpening
 import PPAC.Migration.ForcingExistTailComparison
 import PPAC.Migration.ForcingProofContext
 import PPAC.Migration.ForcingProofUniversal
+import PPAC.Migration.ForcingScopeIdentity
