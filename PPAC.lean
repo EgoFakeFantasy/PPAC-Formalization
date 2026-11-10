@@ -1181,3 +1181,4 @@ import PPAC.Migration.ForcingWeakenedImages
 import PPAC.Migration.ForcingWeakenedOverwrite
 import PPAC.Migration.ForcingFreshPreorder
 import PPAC.Migration.ForcingMemberWeakening
+import PPAC.Migration.ForcingFreshLeaves

@@ -173850,6 +173850,89 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives. All runtime formula, field, list, scope and rename codes range over internal objects including nonstandard codes. Consumes SAME raw source and actual old/new ForcingPreorderLeaves.data, previously generated actual weak-image record, source carrier index k and its (k+2) source free scope, and actual rename query for ONLY selected condition q or p. Reads original raw member outputs using existing raw_from_data; internally generates and eliminates old/new carrier-field witnesses, obtains their actual rename query from existing pushed field_iff, and internally eliminates both zero-symbol witnesses via original uniqueness. Existing membership_iff proves original weakened oldMember newMember. No expected member code, whole table equality, carrier value, or desired weak relation given. Fresh r may differ; no irrelevant slot matching. Externally indexed source row/pattern is retained; all runtime variables internally quantified by close and replayed to original nativeZF kernel. Does not yet open the already-produced EX6/EX10/EX5 fresh native records into these rows, align bare-R/Extra/four ANDs/full canonical Global or prove joint forcing/full internal axioms/six-rule Proof/reduction/final Con. No new syntax checker, recursion, induction backend, proof kernel, object Choice or standardness assumption."
+    },
+    "forcing_fresh_leaves": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingFreshLeaves.lean",
+      "source_declarations": [
+        "AtomicData.force_mono/neg/ex SAME source fresh native preorder row and actual leaves"
+      ],
+      "consumers": [
+        "Actual call to ForcingFreshPreorder.produce then unchanged ForcingPreorderLeafTarget.at_target on SAME raw16, actual output6 and pushed v8/v9",
+        "Next compare old and freshly produced rows using already-proved ForcingMemberWeakening.from_rows and bare-R double-overwrite consumer"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingFreshPreorder.lean",
+        "PPAC/Migration/ForcingPreorderLeafTarget.lean",
+        "PPAC/Migration/ForcingPreorderLeaves.lean",
+        "PPAC/Migration/ForcingPreorderInstances.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingFreshLeaves.lean": "c4944fd9234894842778295076990f9ceca7154dcff87cc02877fc4b5e538710",
+        "PPAC/Migration/ForcingFreshPreorder.lean": "f8a2bef82eca81987ce3264b9614dbd9b01a62d1213d495fde91be996429debc",
+        "PPAC/Migration/ForcingPreorderLeafTarget.lean": "548c9b1475475bc98ad0b44407a9ae4312d0255e7c52ec089dbd7d0377ebc926",
+        "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
+        "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingFreshLeaves.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.data_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.body": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.produced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.produce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshLeaves.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; every runtime condition, scope, table and formula code internal, including nonstandard codes. Input is original FreshPreorder.input and original source numeral0/1/2/3 context metadata required by existing at_target (not any leaf/query answer). Directly invoke existing FreshPreorder.produce and consume SAME actual output6 and raw16 via unchanged ForcingPreorderLeafTarget.at_target, which ALREADY implements EX6 native + EX10 matrix + EX5 background elimination and original PreorderLeaves.from_numbers. Retain old FreshPreorder.data (actual q/p rename, Pre weak and full targetData) together with original LeafTarget.instances including all original witnesses and three prefix tables plus ELEVEN actual leaf/tail queries under object existentials. Six fresh output witnesses also object-bound. No expected native/row/leaf/query result or weak-member answer supplied. Existing at_target is not newly implemented: original proof file unchanged. Does not yet combine two actual existential rows to invoke member from_rows, align bare-R/Extra/four ANDs/canonical Global, or prove joint forcing/full internal axioms/sixruleProof/reduction/finalCon. No new decoder, reader, recursion, induction, checker or kernel; no object Choice or standardness assumption."
     }
   },
   "selected_route_consumer_audit": {

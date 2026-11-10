@@ -2776,7 +2776,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_weakened_images', 'ForcingWeakenedImages', 18),
                                 ('forcing_weakened_overwrite', 'ForcingWeakenedOverwrite', 15),
                                 ('forcing_fresh_preorder', 'ForcingFreshPreorder', 10),
-                                ('forcing_member_weakening', 'ForcingMemberWeakening', 10)):
+                                ('forcing_member_weakening', 'ForcingMemberWeakening', 10),
+                                ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6146,6 +6147,11 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_weakening_expected_answer_given": False,
         "object_actual_member_weakening_generated_native_rows_opened": False,
         "object_actual_member_weakening_scope": source_lock["source_proof_adaptations"]["forcing_member_weakening"]["scope"],
+        "object_actual_fresh_native_records_to_leaf_rows_connected": True,
+        "object_actual_fresh_leaves_existing_at_target_reused_unchanged": True,
+        "object_actual_fresh_leaves_expected_row_or_query_given": False,
+        "object_actual_fresh_leaves_paired_member_comparison_consumed": False,
+        "object_actual_fresh_leaves_scope": source_lock["source_proof_adaptations"]["forcing_fresh_leaves"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,

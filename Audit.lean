@@ -40382,3 +40382,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingMemberWeakening.from_rows
 #print axioms PPAC.Migration.ForcingMemberWeakening.sentence
 #print axioms PPAC.Migration.ForcingMemberWeakening.kernel_certificate
+#print axioms PPAC.Migration.ForcingFreshLeaves.input
+#print axioms PPAC.Migration.ForcingFreshLeaves.input_rename
+#print axioms PPAC.Migration.ForcingFreshLeaves.data
+#print axioms PPAC.Migration.ForcingFreshLeaves.data_rename
+#print axioms PPAC.Migration.ForcingFreshLeaves.body
+#print axioms PPAC.Migration.ForcingFreshLeaves.produced
+#print axioms PPAC.Migration.ForcingFreshLeaves.produced_rename
+#print axioms PPAC.Migration.ForcingFreshLeaves.produce
+#print axioms PPAC.Migration.ForcingFreshLeaves.sentence
+#print axioms PPAC.Migration.ForcingFreshLeaves.kernel_certificate

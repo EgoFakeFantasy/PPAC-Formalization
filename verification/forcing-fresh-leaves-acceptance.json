@@ -1,0 +1,128 @@
+{
+  "verified_at": "2026-11-10T18:18:07.803417+00:00",
+  "baseline_commit": "872d6339bc9d08919f08473c21d3d3b9e2e12a71",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: source member weak transfer from actual rows accepted and committed872d633",
+  "background": "Original pure-set nativeZF, original FirstOrder.Derives; all runtime scopes, condition terms, tables, formula and proof codes internal including nonstandard",
+  "audit_correction": "ForcingPreorderLeafTarget.at_target ALREADY implements full native6/matrix10/background5 opening and original leaf production. Earlier handoff broadly described opening these records as pending; generic opening was not missing. This batch ONLY connects that unchanged existing consumer to actual SAME-source FreshPreorder outputs. No replacement producer added.",
+  "result": [
+    "Direct actual call FreshPreorder.produce followed by unchanged LeafTarget.at_target on SAME raw16, actual new terms/Pre/Refl/transitivity6 and pushed v8/v9",
+    "Retain full original fresh data including actual q/p rename queries, actual Pre weakening and targetData",
+    "Retain existing LeafTarget.instances with native6/matrix10/background5/prefix3 witnesses and ELEVEN actual original leaf/tail queries, all object-bound",
+    "Ordinary nativeZF original-kernel closed endpoint for full fresh-and-leaves production; no new decoding, reading, recursion, induction, checker or kernel"
+  ],
+  "proof_boundaries": {
+    "existing_native_to_leaves_consumer_unchanged": true,
+    "actual_fresh_output_to_existing_consumer_connected": true,
+    "original_source_context_numeral_metadata_0_to_3_computational_input": true,
+    "chosen_fresh_terms_or_new_Pre_or_native_row_or_leaf_query_answer_given": false,
+    "all_runtime_witnesses_object_bound": true,
+    "two_actual_existential_rows_member_comparison_consumed": false,
+    "whole_canonical_Global_proved": false,
+    "final_internal_Con_proved": false
+  },
+  "verification": {
+    "audited_declarations": 39678,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37412,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "build_jobs": 3356,
+    "new_module_build_seconds": 7.5,
+    "previous_exact_footprints_unchanged": 39668,
+    "all_existing_proof_Git_blobs_unchanged": 2883,
+    "sealed_inputs_checked": 2917,
+    "sorted_seal_manifest_sha256": "acb2d00ce092bfcf332631b11597918962f035e44efcfbff922a5f60e16ef820",
+    "new_public_declarations": 10,
+    "module_and_preaudit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "original_source_hashes": 75,
+    "post_cleanup_module_trust0_passed": true
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingFreshLeaves.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.data": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.data_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.body": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.produced": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.produced_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.produce": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshLeaves.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "cleanup_exact_own_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-leaves-baseline.tmp.json",
+      "bytes": 13170414,
+      "raw_sha256": "0e2884a9463be51b534e572ad18901a92551bfc8cf73fc09bf01a6cfd1ebb5c4"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-leaves-audit.tmp.lean",
+      "bytes": 634,
+      "raw_sha256": "117d7268abd4ab07869b7654f8158d9896e2f02b39f5076c553d477905b446aa"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-leaves-preaudit.tmp.log",
+      "bytes": 1449,
+      "raw_sha256": "3b352357072cdc9664680371d77f2cd83b1492897004330cb1fd13b4d4c828a0"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-fresh-leaves-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "next_actual_source_consumer": "Both actual original existential leaf records are produced. Consume them under original EX blocks and ACTUALLY invoke existing MemberWeakening.from_rows for selected q1/p2 (no weak answer input), and actual bare-R queries plus completed WeakenedOverwrite.from_double_queries. Then Extra and4AND canonicalGlobal through original logical constructors and existing ProofContext/FreshBackground/ProofUniversal; jointforcing/fullinternalaxioms/sixruleProof/reduction/finalCon remain.",
+  "cleanup_verified": {
+    "exact_own_files_removed": 4,
+    "bytes_removed": 13172497,
+    "all_targets_absent": true,
+    "resolved_parent_and_raw_hash_verified": true
+  }
+}
