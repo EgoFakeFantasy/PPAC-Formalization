@@ -173405,6 +173405,143 @@
         ]
       },
       "scope": "Produce SIX actual old decoded graphs, target-index pushed graphs and new original list codes using EXISTING SyntaxMixedImageCodePairs/TermImagePushBoth and original Replacement; no new graph/list recursion. field_iff reads actual old/new fields and original pushed graph law. Root term compares actual sequential and direct outputs by original two source-variable branches and original index term single-valuedness. Full formula covariance CALLS completed ForcingFormulaInduction.cancel; all internal formula codes, source/target scopes and indices, including nonstandard, remain unrestricted. compare internally generates/eliminates FOUR identity-index/image witnesses. NativeZF original FirstOrder.Derives certificates for six-witness production and actual three-query comparison. Actual push/realization records are computational inputs, not assumed field laws or expected formula equalities. Does NOT yet identify source canonical Global as original weak output, eliminate the index realization witnesses, or complete joint forcing/all internal axioms/six-rule Proof/reduction/finalCon. No new kernel/checker/induction backend or object Choice."
+    },
+    "forcing_weakened_images": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingWeakenedImages.lean",
+      "source_declarations": [
+        "AtomicData.force_mono/neg and ex original first-free0 freshening of actual background image records"
+      ],
+      "consumers": [
+        "ACTUAL existing FreshBackground.generalize_layout consumes from_queries; direct weakened answer premise removed in new generalize_layout",
+        "Match second actual source query to SAME canonical Global through original Pre and q/p raw direct records; this specific canonical query identification is still pending"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingReindexedImages.lean",
+        "PPAC/Migration/ForcingFreshBackground.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogicalInternal.lean",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean",
+        "PPAC/Migration/Internal/SyntaxFreeShiftCode.lean",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean",
+        "PPAC/Migration/Internal/IndexFormulaRenameInduction.lean",
+        "PPAC/Migration/Internal/SyntaxRenameOutputInduction.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeSyntax.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingWeakenedImages.lean": "6154e010c5a182e50bcab7912f7aff12a95b55421be151a7217f12303b8b9b4b",
+        "PPAC/Migration/ForcingReindexedImages.lean": "5248436d3b24dc2bade2b256035eff3e7606535112a578f45acff86548d3c9b7",
+        "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeLogicalInternal.lean": "23b9c6aa711b8bdbc4b297e3093367016adc38063b84ec3c57ff680ccf816cfb",
+        "PPAC/Migration/Internal/SyntaxIdentityCode.lean": "0fcfdf31ee781127a766773e07a255845cd8295219c7d3b4fdf311f45efb2ce9",
+        "PPAC/Migration/Internal/SyntaxFreeShiftCode.lean": "c31c7376efc45c7561ae36de736b9fb2819d56c7f3f45042f31a3ae290d0c2ca",
+        "PPAC/Migration/Internal/IndexTermImageEnvironment.lean": "05feac015bdc3b5828ad806fd9e6d45ed138498cb46e6f96d35b6c12eeffa4ad",
+        "PPAC/Migration/Internal/IndexFormulaRenameInduction.lean": "7c5803100a1e2ac92d4060a1e18cb8648ca0d5294fed904550c82d2536e82a4a",
+        "PPAC/Migration/Internal/SyntaxRenameOutputInduction.lean": "b9c18975344579860d8f0b1b8ac080f12a4696f91444911f08d6e223def0fadc",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeSyntax.lean": "acb1bd8fae114ceafc76c5772985dead81b9575449f77b57df3b60319c37911f"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingWeakenedImages.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.operations": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.operations_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.data": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.data_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.body": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.produced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.produced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.produce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.queryInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.queryInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.from_queries": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.generalize_layout": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.querySentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingWeakenedImages.query_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Original first-free0 weak head operation, all internal/nonstandard source/target scopes, formula and term codes. produce starts ONLY with Omega, original successor D d and typed old mixed-image lists. Generates/eliminates TEN actual index identity/shift codes, their real index graphs, and six existing ReindexedImages old/pushed/encoded witnesses. from_queries consumes this SAME actual data plus TWO actual old/new source formula queries. It internally produces/eliminates both target mixed-image codes, both actual index-realization graphs and actual original renamed output; existing ReindexedImages.compare additionally discharges all4 identity witnesses and calls prior full formula cancellation. Expected original weakened u o is the CONCLUSION, never an input; no given comparison equality, pointwise field law, index realization or mixed operation output. Two ordinary nativeZF original FirstOrder.Derives endpoints for image production and actual query weak covariance. generalize_layout ACTUALLY consumes from_queries and existing FreshBackground.generalize_layout; direct weak answer premise removed. Actual second source query into SAME canonical Global(ctx3) remains an explicit computational input whose correspondence with actual fresh q/p/Pre/Extra layout is NOT YET ESTABLISHED. Does NOT complete source canonical Global query matching, full joint forcing/all internal axioms/six-rule Proof/reduction/finalCon. No new kernel/checker/recursor/induction backend, object Choice or external standardness."
     }
   },
   "selected_route_consumer_audit": {

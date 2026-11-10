@@ -40325,3 +40325,22 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingReindexedImages.comparison_kernel_certificate
 #print axioms PPAC.Migration.ForcingReindexedImages.produceSentence
 #print axioms PPAC.Migration.ForcingReindexedImages.produce_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingWeakenedImages.input
+#print axioms PPAC.Migration.ForcingWeakenedImages.input_rename
+#print axioms PPAC.Migration.ForcingWeakenedImages.operations
+#print axioms PPAC.Migration.ForcingWeakenedImages.operations_rename
+#print axioms PPAC.Migration.ForcingWeakenedImages.data
+#print axioms PPAC.Migration.ForcingWeakenedImages.data_rename
+#print axioms PPAC.Migration.ForcingWeakenedImages.body
+#print axioms PPAC.Migration.ForcingWeakenedImages.produced
+#print axioms PPAC.Migration.ForcingWeakenedImages.produced_rename
+#print axioms PPAC.Migration.ForcingWeakenedImages.produce
+#print axioms PPAC.Migration.ForcingWeakenedImages.queryInput
+#print axioms PPAC.Migration.ForcingWeakenedImages.queryInput_rename
+#print axioms PPAC.Migration.ForcingWeakenedImages.from_queries
+#print axioms PPAC.Migration.ForcingWeakenedImages.generalize_layout
+#print axioms PPAC.Migration.ForcingWeakenedImages.sentence
+#print axioms PPAC.Migration.ForcingWeakenedImages.kernel_certificate
+#print axioms PPAC.Migration.ForcingWeakenedImages.querySentence
+#print axioms PPAC.Migration.ForcingWeakenedImages.query_kernel_certificate

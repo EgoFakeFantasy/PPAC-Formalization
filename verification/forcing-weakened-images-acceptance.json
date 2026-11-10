@@ -1,0 +1,77 @@
+{
+  "verified_at": "2026-11-10T16:52:24.200663+00:00",
+  "baseline_commit": "fc9fc2186a189518846a21780cfd173ffff55c2d",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual six image witnesses/full internal formula covariance and four identity witnesses accepted39614, committedfc9fc21; source canonical Global match unproved",
+  "background": "Original nativeZF, pure membership/equality and unchanged original FirstOrder.Derives replay; runtime scopes, formula/term/operation indices and codes internal including nonstandard",
+  "source_consumer": "Pinned AtomicData.force_mono/neg and ex: original first-free0 source background freshening",
+  "result": [
+    "produce requires only Omega, actual original successor and typed old image lists; generates TEN original identity/shift index codes, actual index graphs and six old/pushed/encoded image witnesses",
+    "from_queries consumes SAME actual data and TWO source queries; actual weakened old-output new-output is the conclusion, never an assumed answer",
+    "Generate/eliminate both mixed-image codes, both actual index realization graphs and actual renamed formula output; ReindexedImages.compare discharges four identity witnesses and calls unchanged full formula cancellation",
+    "generalize_layout ACTUALLY calls new from_queries and existing FreshBackground.generalize_layout; original weak-answer premise removed",
+    "TWO nativeZF original FirstOrder.Derives closed sentence endpoints, for ten operation witnesses and actual source-query weakening"
+  ],
+  "proof_boundaries": {
+    "all_internal_first_free0_source_query_weak_covariance_proved": true,
+    "ten_actual_operation_witnesses_produced": true,
+    "both_mixed_codes_both_realization_graphs_and_output_witness_discharged": true,
+    "existing_four_identity_witnesses_discharged": true,
+    "actual_guarded_forall_consumes_source_query_covariance": true,
+    "expected_weakened_relation_or_query_comparison_equality_given": false,
+    "canonical_global_query_match_proved": false,
+    "final_internal_Con_proved": false,
+    "no_new_kernel_checker_recursion_or_induction_backend": true
+  },
+  "verification": {
+    "audited_declarations": 39632,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37366,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "previous_exact_footprints_unchanged": 39614,
+    "previous_committed_proof_Git_blobs_unchanged": 2879,
+    "sealed_inputs_checked": 2913,
+    "sorted_seal_manifest_sha256": "c8e5c3608a43a873793ec72dc050e58149068defc3204315e83aa0a02fe93d75",
+    "new_module_public_declarations": 18,
+    "current_source_module_and_pre_audit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "pinned_source_hashes": 75,
+    "postcleanup_module_trust0_passed": true
+  },
+  "changed_sealed_inputs": {
+    "Audit.lean": "6d45d9951d07f9ae9e1942cbd40c56e74afa7aac4649bbcd693119719c5544d6",
+    "PPAC/Migration/ForcingWeakenedImages.lean": "6154e010c5a182e50bcab7912f7aff12a95b55421be151a7217f12303b8b9b4b",
+    "PPAC.lean": "f8e8bf7d7df35104bb215fd07b57f55db7ce3ee7ee407576419f3bc1bd8106eb",
+    "scripts/verify.py": "6b4e8f67275dd720d9af7d5a3c6131f37288efaa7f5e9e4de834978b36351622",
+    "docs/SOURCE_LOCK.json": "27e37a0572601d686c3fd3c330c4196f34d48ec228d8a782bffeee7e00133a79"
+  },
+  "cleanup_exact_owned_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-weakened-images-baseline.tmp.json",
+      "bytes": 13162263,
+      "raw_sha256": "672547eb59b327fa06ec12c272ac08794e1c3a44f09376bf2591c27a91cee0b7"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-weakened-images-audit.tmp.lean",
+      "bytes": 1211,
+      "raw_sha256": "9cce67b84298f99fda45e4d8fb240bc3bfda150862d0c69a3a00654126a0be6b"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-weakened-images-preaudit.tmp.log",
+      "bytes": 2822,
+      "raw_sha256": "b8371fae62acfaa7122f43765ef878b98f9d2223a7f8b8858591a930d17f7f72"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-weakened-images-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cleanup_and_postcleanup_check_pending": false,
+  "remaining_actual_source_work": "Actual new q/p relation image maps overwrite the shifted carrier/condition slots; show these are SAME generated pushed old relation maps, using original ForcingRelationImages.left_field/right_field/outside and ReindexedImages.field_iff. Use existing StructuralListCodeInduction.unique or common-field graph uniqueness, not new recursion. Existing bare-R/raw direct query consumers remove irrelevant fresh P0 r; never require fresh r=weak(oldr). Pre query uses SAME source preorder and pushed parameter map; Extra uses original proof weakening/program correspondence. Then four original AND constructors identify canonical Global and existing FreshBackground/ProofUniversal consume it. Joint forcing/full internal axioms/six-rule Proof/reduction/finalCon remain.",
+  "cleanup_completed_at": "2026-11-10T16:52:47.701882+00:00"
+}

@@ -2772,7 +2772,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_proof_universal', 'ForcingProofUniversal', 21),
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
-                                ('forcing_reindexed_images', 'ForcingReindexedImages', 14)):
+                                ('forcing_reindexed_images', 'ForcingReindexedImages', 14),
+                                ('forcing_weakened_images', 'ForcingWeakenedImages', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6120,6 +6121,12 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_reindexed_images_four_identity_witnesses_discharged": True,
         "object_actual_reindexed_images_source_canonical_global_weak_output_match_proved": False,
         "object_actual_reindexed_images_scope": source_lock["source_proof_adaptations"]["forcing_reindexed_images"]["scope"],
+        "object_actual_weakened_images_ten_witnesses_generated": True,
+        "object_actual_weakened_images_from_two_source_queries_proved": True,
+        "object_actual_weakened_images_index_realization_and_output_witnesses_discharged": True,
+        "object_actual_weakened_images_guarded_forall_consumer_proved": True,
+        "object_actual_weakened_images_canonical_global_query_match_proved": False,
+        "object_actual_weakened_images_scope": source_lock["source_proof_adaptations"]["forcing_weakened_images"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,
