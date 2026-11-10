@@ -1,0 +1,254 @@
+{
+  "verified_at": "2026-11-10T12:35:25.207592+00:00",
+  "baseline_commit": "1d990bbf23f2798e1a20ed5d98570a90570b80d9",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual member guard comparison and same-H source leg complete, full verified and locally committed; predecessor Linux still running.",
+  "background": "Ordinary full nativeZF; pure membership/equality; original FirstOrder.Derives via unchanged replay. No object Choice or new compiler/kernel/checker/recursor/induction.",
+  "source_consumers": [
+    "Pinned AtomicData.Force ex domain H(x) with second order argument unused, and original force_mono ex same-tail condition updates",
+    "Next complete original raw existential tail: consume ALL already proved component comparisons and actual EX/binary compiler outputs"
+  ],
+  "result": [
+    "ForcingExistDomainImages internally generates THREE actual original overwrite, complete H-prefix field graph and encoded argument table witnesses; original numeral/field typing and encoder reused, no replacement graph/list backend",
+    "ForcingExistDomainOpening proves actual same-H source query -> original domain compiler -> TWO actual openings equals canonical direct H query by unchanged full internal formula cancellation",
+    "compare internally generates/erases all THREE canonical image witnesses, consumes BOTH complete original domain compilers (actual raw-code equality derived internally), eliminates original FOUR compiler plus THREE H-source witnesses, internally generates/erases direct candidates and proves actual opened formula codes equal",
+    "Two ordinary nativeZF original-kernel closed sentence endpoints"
+  ],
+  "exact_existing_reuse_edits": [
+    {
+      "file": "PPAC/Migration/ForcingExistChildOpening.lean",
+      "exact_allowed_edits": "Only remove private on closed_fields and zero_fields; full mathematical bodies unchanged"
+    },
+    {
+      "file": "PPAC/Migration/ForcingRelationImages.lean",
+      "exact_allowed_edits": "Move original mapped_field/mapped_variable proofs to _arity variants, generalize exactly five arity annotations n+2 to n and redirect the one internal helper call; retain original n+2 theorem signatures as exact specialization wrappers. No new mathematical proof reasoning; original API preserved."
+    }
+  ],
+  "proof_boundaries": {
+    "runtime_original_a_A_B_target_d_T_and_codes_internal_including_nonstandard": true,
+    "finite_H_k_are_original_fixed_source_guard_metadata": true,
+    "original_public_n_plus_two_mapped_field_and_variable_signatures_preserved": true,
+    "canonical_H_images_internally_produced_not_answer_hypotheses": true,
+    "actual_domain_guard_full_formula_output_comparison_completed": true,
+    "all_member_order_domain_child_component_comparisons_completed": true,
+    "actual_opening_operations_typed_base_and_same_actual_name_zero_head_remain_explicit_operation_hypotheses": true,
+    "expected_source_query_or_output_code_equality_premise": false,
+    "guard_or_preorder_truth_premise": false,
+    "whole_original_raw_tail_component_consumption_and_two_EX_packaging_completed": false,
+    "canonical_proof_context_fresh_forall_joint_forcing_MP_internal_axioms_six_rule_Proof_reduction_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39483,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37217,
+    "warnings": 0,
+    "ALL_old_footprints_unchanged": 39452,
+    "old_PPAC_proof_files_byte_identical": 2868,
+    "old_PPAC_files_with_ONLY_exact_verified_reuse_edits": 2,
+    "new_public_declarations": [
+      "PPAC.Migration.ForcingExistChildOpening.closed_fields",
+      "PPAC.Migration.ForcingExistChildOpening.zero_fields",
+      "PPAC.Migration.ForcingExistDomainImages.body",
+      "PPAC.Migration.ForcingExistDomainImages.data",
+      "PPAC.Migration.ForcingExistDomainImages.data_rename",
+      "PPAC.Migration.ForcingExistDomainImages.field_iff",
+      "PPAC.Migration.ForcingExistDomainImages.input",
+      "PPAC.Migration.ForcingExistDomainImages.input_rename",
+      "PPAC.Migration.ForcingExistDomainImages.kernel_certificate",
+      "PPAC.Migration.ForcingExistDomainImages.produce",
+      "PPAC.Migration.ForcingExistDomainImages.produced",
+      "PPAC.Migration.ForcingExistDomainImages.produced_rename",
+      "PPAC.Migration.ForcingExistDomainImages.sentence",
+      "PPAC.Migration.ForcingExistDomainImages.target_type",
+      "PPAC.Migration.ForcingExistDomainOpening.compare",
+      "PPAC.Migration.ForcingExistDomainOpening.formula",
+      "PPAC.Migration.ForcingExistDomainOpening.frame",
+      "PPAC.Migration.ForcingExistDomainOpening.frame_rename",
+      "PPAC.Migration.ForcingExistDomainOpening.input",
+      "PPAC.Migration.ForcingExistDomainOpening.kernel_certificate",
+      "PPAC.Migration.ForcingExistDomainOpening.opening",
+      "PPAC.Migration.ForcingExistDomainOpening.opening_rename",
+      "PPAC.Migration.ForcingExistDomainOpening.path",
+      "PPAC.Migration.ForcingExistDomainOpening.path_rename",
+      "PPAC.Migration.ForcingExistDomainOpening.query",
+      "PPAC.Migration.ForcingExistDomainOpening.rows",
+      "PPAC.Migration.ForcingExistDomainOpening.rows_rename",
+      "PPAC.Migration.ForcingExistDomainOpening.sentence",
+      "PPAC.Migration.ForcingExistDomainOpening.term",
+      "PPAC.Migration.ForcingRelationImages.mapped_field_arity",
+      "PPAC.Migration.ForcingRelationImages.mapped_variable_arity"
+    ],
+    "new_axioms": [],
+    "sealed_inputs_rehashed": 2905,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "preaudit_declarations": 31,
+    "preaudit_log_sha256": "4859d63707af7b959ce9c1b55a8e2eaf06dc7e7c6ef7a7898c92b3c66438ca5c",
+    "full_log_sha256": "b6e99d1728688ea8af9185ce649a861a2c96c12217a7939bc8b80c64f396f015",
+    "cross_platform_compatibility_regressions_passed": 9,
+    "original_comparator_guard_regressions_passed": 7,
+    "clean_pinned_repositories_verified": 3,
+    "original_source_hashes_verified": 75
+  },
+  "cleanup": {
+    "status": "completed; six exact paths/sizes/SHA256 checked before removal; BOTH retained source trust=0 postchecks passed",
+    "files": [
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-baseline.json",
+        "bytes": 13446076,
+        "sha256": "045d7d06edc00867e30959d6d2457fafd2db4d550d0212a1b8bbe3e28cc998e7"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-preaudit.lean",
+        "bytes": 2110,
+        "sha256": "c80c5293298c30d41c3b5b4e014cc7687f64e5b1e06f5d57e4f8bd37cbf852a2"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-preaudit.log",
+        "bytes": 4255,
+        "sha256": "4859d63707af7b959ce9c1b55a8e2eaf06dc7e7c6ef7a7898c92b3c66438ca5c"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-footprints.json",
+        "bytes": 4426,
+        "sha256": "25b94d4adf72e1351a311bbae33350e59bf4fd1a54815a2dc41589c2e612a776"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-full-verification.log",
+        "bytes": 153,
+        "sha256": "b6e99d1728688ea8af9185ce649a861a2c96c12217a7939bc8b80c64f396f015"
+      },
+      {
+        "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\exist-domain-opening-reuse-edits.json",
+        "bytes": 583,
+        "sha256": "c7c5b497713f68bf84741122397dd2c6650caa9f2f66fb51dbe5090bb1d25a46"
+      }
+    ],
+    "other_project_or_dependency_files_removed": false,
+    "removed_files": 6,
+    "removed_bytes": 13457603,
+    "source_postcleanup_commands": [
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "PPAC/Migration/ForcingExistDomainImages.lean"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "PPAC/Migration/ForcingExistDomainOpening.lean"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "completed_at": "2026-11-10T12:36:41.747511+00:00"
+  },
+  "publication": {
+    "last_verified_remote": "905a63f5196052e133a7e9deebdb0bb5882a6c24",
+    "current_batch_published_at_receipt_creation": false,
+    "predecessor_Linux_run": 42808631919,
+    "predecessor_Linux_job": 129804112802,
+    "predecessor_last_observed_status": "in_progress",
+    "predecessor_expected_audited_declarations": 39421
+  }
+}

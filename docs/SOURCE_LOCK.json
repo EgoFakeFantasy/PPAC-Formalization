@@ -170324,7 +170324,7 @@
         "PPAC/Migration/ProjectNativeRenaming.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/Internal/TermImageQuotationFields.lean": "a37d32c41ec07e2ef5d3ab901648155e21c8e7f74291aa9b593ea0414d3dbae1",
@@ -170473,6 +170473,16 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.mapped_field_arity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.mapped_variable_arity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -170510,7 +170520,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
-        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
@@ -170622,7 +170632,7 @@
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
-        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/Internal/StructuralListLengthConstruct.lean": "1ea9ba8d08af88664273dd986e1f96c9a9c25197d61eb7f36a4289a515664964",
         "PPAC/Migration/Internal/SyntaxForestSyntax.lean": "b66d174cd3d4ff97fc5cf65a87abf05b07161b349c33403df0b8770e8b403f9e",
         "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
@@ -171163,7 +171173,7 @@
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
         "PPAC/Migration/ForcingRelationSource.lean": "7970f192f797e21136ae39482278dd22183019df1be2ae8c4d2e143f587ca678",
-        "PPAC/Migration/ForcingRelationImages.lean": "bbb783b167d94ceb48b4fa73eab4cad317e4d3f9375d9577eed37f784c7aa1df",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
@@ -171692,7 +171702,7 @@
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistChildOpening.lean": "6d74b60e222c7f4ccb0a98d07ccf804360b8a00f7244ce900d004687d146eb43",
+        "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
         "PPAC/Migration/ForcingExistChildTerms.lean": "841f15cc00a5b70126189931d2954e98a22185e2fb9958079a5d071f9f2c4c79",
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
         "PPAC/Migration/ForcingExistChildCode.lean": "8aa7154469917b7e0ac0f3f612daf09e32ef9d61f394d0e178074034ff8fad74",
@@ -171709,7 +171719,7 @@
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
       },
-      "scope": "ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Inner-order actual guard comparison is now separately proved by ForcingExistOrderOpening. Actual member guard comparison is now separately proved by ForcingExistMemberOpening; domain source-H query by ForcingExistDomainSource. Whole raw-tail domain comparison and component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "scope": "ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Inner-order actual guard comparison is now separately proved by ForcingExistOrderOpening. Actual member guard comparison is now separately proved by ForcingExistMemberOpening; domain source-H query by ForcingExistDomainSource. Actual domain guard comparison is now proved by ForcingExistDomainOpening. Whole raw-tail component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistChildOpening.frame": [
           "Quot.sound",
@@ -171793,6 +171803,16 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.closed_fields": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistChildOpening.zero_fields": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -171842,7 +171862,7 @@
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
       },
-      "scope": "Actual ORIGINAL existential INNER ORDER guard R(r,q), preserving the still BOUND r and exact reverse relation. For arbitrary internal source a/A and free f/T, original SIX-witness rebind followed by ONE actual lifted opening yields the SAME canonical mixed query at the ACTUAL raw output. Existing three term actions, original field/successor existence and unchanged full internal formula cancellation are consumed; four identity witnesses and direct formula candidate are object-generated/eliminated. guard_compare consumes BOTH complete ForcingExistGuardsCode compilers, eliminates both THREE-witness outer records and SIX-witness rebind executions, internally identifies their original source guard codes by existing head/guard uniqueness, and uses original overwrite absorption plus whole mixed formula uniqueness to prove the actual opened codes equal under two outer-condition updates of SAME base. No expected source/output equality, guard truth, new compiler/checker/kernel/recursor/induction, object Choice or external standard-code restriction. Actual lifted opening and typed canonical overwrite tables remain operation hypotheses; fixed Reln is original finite source AST metadata. Ordinary nativeZF original-kernel closed sentence. Actual member guard comparison is now proved by ForcingExistMemberOpening and domain source-H query by ForcingExistDomainSource. Whole raw existential tail domain comparison and component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "scope": "Actual ORIGINAL existential INNER ORDER guard R(r,q), preserving the still BOUND r and exact reverse relation. For arbitrary internal source a/A and free f/T, original SIX-witness rebind followed by ONE actual lifted opening yields the SAME canonical mixed query at the ACTUAL raw output. Existing three term actions, original field/successor existence and unchanged full internal formula cancellation are consumed; four identity witnesses and direct formula candidate are object-generated/eliminated. guard_compare consumes BOTH complete ForcingExistGuardsCode compilers, eliminates both THREE-witness outer records and SIX-witness rebind executions, internally identifies their original source guard codes by existing head/guard uniqueness, and uses original overwrite absorption plus whole mixed formula uniqueness to prove the actual opened codes equal under two outer-condition updates of SAME base. No expected source/output equality, guard truth, new compiler/checker/kernel/recursor/induction, object Choice or external standard-code restriction. Actual lifted opening and typed canonical overwrite tables remain operation hypotheses; fixed Reln is original finite source AST metadata. Ordinary nativeZF original-kernel closed sentence. Actual member guard comparison is now proved by ForcingExistMemberOpening and domain source-H query by ForcingExistDomainSource. Actual domain guard comparison is now proved by ForcingExistDomainOpening. Whole raw existential tail component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistOrderOpening.formula": [
           "Classical.choice",
@@ -171951,7 +171971,7 @@
         "PPAC/Migration/Internal/SyntaxAtomUnique.lean": "2892dc69445a6ffe93f5ae37c22c7811813f9bf5bf8c3aa301f84c34c84d5680",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
       },
-      "scope": "Actual still-BOUND existential MEMBER guard r in P. from_compiled consumes COMPLETE original ForcingGuardCode false compiler through existing ForcingMemberGuard.from_compiled and original mixed atomic output, internally eliminates original compiler/quotation/source atom and actual output operands, generates/erases one common base-field lookup witness, and returns an OBJECT EXISTS-three normal record: original zero symbol, actual bvar0 condition term, SAME original base carrier field, and actual member output code. k != k+1 is derived from original carrier-slot and condition-slot numeral judgments, not supplied as a desired field/equality answer. compare consumes BOTH actual compiler queries under two real condition updates of SAME base and derives equal complete member output codes using original scalar/variable/field/constructor uniqueness. Ordinary nativeZF original-kernel closed sentence. All runtime scopes, tables, indices and candidate codes remain internal; finite k and Reln are original source metadata. No native InstantiateTop eliminates r, no guard truth, object Choice or new compiler/kernel/checker/recursor/induction. Domain guard comparison, consuming these component comparisons in the complete raw tail and packaging two EX, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "scope": "Actual still-BOUND existential MEMBER guard r in P. from_compiled consumes COMPLETE original ForcingGuardCode false compiler through existing ForcingMemberGuard.from_compiled and original mixed atomic output, internally eliminates original compiler/quotation/source atom and actual output operands, generates/erases one common base-field lookup witness, and returns an OBJECT EXISTS-three normal record: original zero symbol, actual bvar0 condition term, SAME original base carrier field, and actual member output code. k != k+1 is derived from original carrier-slot and condition-slot numeral judgments, not supplied as a desired field/equality answer. compare consumes BOTH actual compiler queries under two real condition updates of SAME base and derives equal complete member output codes using original scalar/variable/field/constructor uniqueness. Ordinary nativeZF original-kernel closed sentence. All runtime scopes, tables, indices and candidate codes remain internal; finite k and Reln are original source metadata. No native InstantiateTop eliminates r, no guard truth, object Choice or new compiler/kernel/checker/recursor/induction. Actual domain guard comparison is now separately proved by ForcingExistDomainOpening. Consuming these component comparisons in the complete raw tail and packaging two EX, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistMemberOpening.body": [
           "Quot.sound",
@@ -172054,7 +172074,7 @@
         "PPAC/Migration/Internal/TermQuotationEnvironment.lean": "8e248bbd847ac2049912237e417ae78ae5a0d7362d5b22dfea708b56576a9ea8",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
       },
-      "scope": "Actual SOURCE LEG of the existential DOMAIN guard: H has k parameters and the new name, while the original binary guard compiler uses domainOrder H = H.rename castSucc and ignores its second condition argument. Reads the ORIGINAL template by existing Syntax.substitute/rename and original relation_template; no replacement template/checker is defined. NativeSubstitutionEnvironment and NativeFormulaQuotationCorrespondence internally generate the SAME bare H quotation and TWO actual native image tables, and prove the actual mixed query from H to SAME original domain-template output. from_compiled consumes COMPLETE original domain ForcingGuardCode matrix, retains SAME four original compiler witnesses and attaches the produced three-witness source query, all inside OBJECT EX. The source free-length k+1 can be instantiated by the existing condition-slot numeral j; no new arithmetic backend. Ordinary nativeZF original-kernel closed sentence. This does NOT yet compare the two actual domain/opening outputs: canonical H argument images and original full formula cancellation remain to be connected. Runtime original bound a and candidate codes remain internal; finite H/k are pinned source metadata and finite quotation leg does not restrict arbitrary internal target free T in the next leg. No guard truth, expected source/query answer, object Choice or new kernel/compiler/checker/recursor/induction. Entire raw-tail EX assembly and finalCon remain unproved.",
+      "scope": "Actual SOURCE LEG of the existential DOMAIN guard: H has k parameters and the new name, while the original binary guard compiler uses domainOrder H = H.rename castSucc and ignores its second condition argument. Reads the ORIGINAL template by existing Syntax.substitute/rename and original relation_template; no replacement template/checker is defined. NativeSubstitutionEnvironment and NativeFormulaQuotationCorrespondence internally generate the SAME bare H quotation and TWO actual native image tables, and prove the actual mixed query from H to SAME original domain-template output. from_compiled consumes COMPLETE original domain ForcingGuardCode matrix, retains SAME four original compiler witnesses and attaches the produced three-witness source query, all inside OBJECT EX. The source free-length k+1 can be instantiated by the existing condition-slot numeral j; no new arithmetic backend. Ordinary nativeZF original-kernel closed sentence. This source leg is NOW consumed by ForcingExistDomainOpening, which actually proves both complete domain/opening outputs equal using ForcingExistDomainImages and existing full formula cancellation. Runtime original bound a and candidate codes remain internal; finite H/k are pinned source metadata and finite quotation leg does not restrict arbitrary internal target free T in the next leg. No guard truth, expected source/query answer, object Choice or new kernel/compiler/checker/recursor/induction. Entire raw-tail EX assembly and finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistDomainSource.arguments": [
           "Quot.sound",
@@ -172148,6 +172168,238 @@
           "propext"
         ]
       }
+    },
+    "forcing_exist_domain_images": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingExistDomainImages.lean",
+      "source_declarations": [
+        "AtomicData.Force ex: actual domain H(x), exact parameter roles and two inner binders",
+        "AtomicData.force_mono ex: same original tail under outer condition update"
+      ],
+      "consumers": [
+        "Whole ACTUAL original raw existential tail: consume the now complete member/order/domain/child comparisons and original unary/binary output records",
+        "Original joint forcing induction, internal six-rule Proof/reduction/final Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/StructuralListFieldGraphFiber.lean",
+        "PPAC/Migration/Internal/StructuralListFieldGraphSyntax.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean",
+        "PPAC/Migration/Internal/HornBinderRules.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistDomainImages.lean": "29828ebef9a2dcfa3ae59bca50caad9b09d698574f12ccb9472fd3be9922f485",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/StructuralListFieldGraphFiber.lean": "8dbc66d6bcfe947242157566d56974ae3eebcfff88a7d463fe0e0169e0dd598a",
+        "PPAC/Migration/Internal/StructuralListFieldGraphSyntax.lean": "f9ca6377ff62c36004bd56fde992dac7a7f8996c6f6c053cf071056331bb6028",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
+        "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean": "46e7187e0e3ed817db18a0ffb7678eb9dd63a3f95f2acc5ae324ce7c01cd6c8c",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b"
+      },
+      "scope": "Canonical argument images of SAME bare H in original Force.ex: replace original carrier slot k by actual new-name term in SAME base table, then read the EXISTING complete field graph only at H arity k+1 and use EXISTING image encoder. All THREE overwrite/field-graph/encoded-table witnesses object-generated and eliminated by produce; all internal fields in H arity obey original overwrite law. Original field graph already supplies complete sequence/function structure; existing full-list field typing and numeral member_iff/below_imp attach term values without new graph/list construction or recursion. Ordinary nativeZF original-kernel closed sentence. Runtime target bound/free counts and term codes arbitrary internal, source H/k fixed finite source metadata. Actual formula comparison consumes this in ForcingExistDomainOpening; entire raw existential tail assembly and finalCon unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistDomainImages.body": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.data": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.data_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.field_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.input_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.produce": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.produced": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.produced_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainImages.target_type": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    "forcing_exist_domain_opening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingExistDomainOpening.lean",
+      "source_declarations": [
+        "AtomicData.Force ex: actual domain H(x), exact parameter roles and two inner binders",
+        "AtomicData.force_mono ex: same original tail under outer condition update"
+      ],
+      "consumers": [
+        "Whole ACTUAL original raw existential tail: consume the now complete member/order/domain/child comparisons and original unary/binary output records",
+        "Original joint forcing induction, internal six-rule Proof/reduction/final Con"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingExistDomainSource.lean",
+        "PPAC/Migration/ForcingExistDomainImages.lean",
+        "PPAC/Migration/ForcingExistChildOpening.lean",
+        "PPAC/Migration/ForcingRelationImages.lean",
+        "PPAC/Migration/ForcingGuardCode.lean",
+        "PPAC/Migration/ForcingFormulaInduction.lean",
+        "PPAC/Migration/ForcingMemberGuard.lean",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean",
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean",
+        "PPAC/Migration/Internal/HornBinderRules.lean",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingExistDomainOpening.lean": "361e37209d974d7afba3cd72d537d03e2ae650ac7add68542e4fc5d8ddc53a53",
+        "PPAC/Migration/ForcingExistDomainSource.lean": "9ee16ce203575caa730b61efeabd5faf9057cdd546240918f3e8e07ab799ea53",
+        "PPAC/Migration/ForcingExistDomainImages.lean": "29828ebef9a2dcfa3ae59bca50caad9b09d698574f12ccb9472fd3be9922f485",
+        "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
+        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
+        "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
+        "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
+        "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b",
+        "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+      },
+      "scope": "Actual complete DOMAIN guard cross-condition output comparison. SAME bare H native query -> SAME original domain compiler -> TWO actual binder openings equals canonical direct H query. Fixed source H arity classified internally by original numeral member_iff/below_imp; source bound-zero branch impossible by empty_at, name branch uses original singleton/head and zero_fields, parameter branch uses original identity/overwrite and TWO closed_fields applications. Existing full internal formula cancellation is unchanged. compare internally generates/erases THREE canonical image witnesses, consumes BOTH complete original domain compilers (derives their actual output equality using existing compiler uniqueness), eliminates original FOUR compiler plus THREE source-H witnesses, internally produces/erases direct candidates, and proves the TWO ACTUAL opened formula outputs equal. Source/query/output equality answers and canonical image tables are NOT theorem premises. Ordinary nativeZF original-kernel closed sentence. Opening operations, same typed original base, same actual name0 head and original numeral roles remain explicit operation hypotheses; runtime original a/A/B and target d/T plus codes are internal, including nonstandard. No guard/preorder truth, object Choice or new compiler/kernel/checker/recursor/induction. Whole original raw-tail component consumption and two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistDomainOpening.compare": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.formula": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.frame": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.frame_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.opening": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.opening_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.path": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.path_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.query": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.rows": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.rows_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.sentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistDomainOpening.term": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "exact_existing_reuse_edits": [
+        {
+          "file": "PPAC/Migration/ForcingExistChildOpening.lean",
+          "exact_allowed_edits": "Only remove private on closed_fields and zero_fields; full mathematical bodies unchanged"
+        },
+        {
+          "file": "PPAC/Migration/ForcingRelationImages.lean",
+          "exact_allowed_edits": "Move original mapped_field/mapped_variable proofs to _arity variants, generalize exactly five arity annotations n+2 to n and redirect the one internal helper call; retain original n+2 theorem signatures as exact specialization wrappers. No new mathematical proof reasoning; original API preserved."
+        }
+      ]
     }
   },
   "selected_route_consumer_audit": {

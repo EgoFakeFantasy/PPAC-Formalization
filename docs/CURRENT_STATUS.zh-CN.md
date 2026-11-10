@@ -64,13 +64,15 @@
 
 | 原存在child全部内部项动作 | 本批 ForcingExistChildTerms 直接消费原完整 child 编译器的同一12见证，在八重对象全称量词内证明全部四类实际coded项动作：新名字头保持bound0，选中条件free槽变为bound1，其余free索引保持，旧bound索引增加2。中间push项码由原生产器在对象EX内生成／消去，完整原公式替换判断保留。只公开原生产器3项记录接口，其余源码与全部证明正文不变；没有新编译器／归纳／核或给定目标等式。此为同一存在尾部跨条件公式相消的实际项输入，尚未完成整个尾部不变性、规范上下文／fresh全称化或最终Con。 普通nativeZF原核闭句及28项接口预审通过；九项完整验收／五项trust=0全部退出0，39379项声明零警告；全部39364项旧足迹及2863份旧证明源码不变，无新增公理。 |
 
-| 原实际成员guard比较与域H源端 | ForcingExistMemberOpening 已消费完整原成员compiler和实际mixed原子输出，内部消去所有原compiler／quotation／输出项见证和一个底表lookup见证，返回仍绑定r与同一底表载体字段的实际成员码，证明两次条件更新后的整个输出同码。ForcingExistDomainSource 已消费完整原域compiler，保留同一4个见证并内部生成裸H码／原native双表，证明到同一域模板的实际查询。后者只完成源端；实际域开口比较和整段尾部装配仍未完成。两个普通nativeZF原核闭句和31项预审通过，九项完整验收／五项trust=0全部通过，39452项声明零警告；39421项旧足迹及2868份旧证明保持，2903项密封输入重算，见verification/forcing-exist-member-domain-source-acceptance.json。 |
+| 原实际域guard整公式比较 | 本批 ForcingExistDomainImages 复用原覆盖表／完整字段图／编码器，生成同一H的规范参数表及全部内部字段定律；ForcingExistDomainOpening 实际消费同一H源查询、原域compiler和两次opening，复用原完整公式相消。规范表3见证、原compiler4＋源H3见证及直接候选内部生成／消去，两边完整compiler的码相等也内部推导，不给定目标答案。普通nativeZF原核闭句及31项预审通过；九项完整验收／五项trust=0全部通过，39483项声明零警告；39452项旧足迹不变，2905项密封输入重算，见verification/forcing-exist-domain-opening-acceptance.json。当前成员／内层R／域／child各项比较均已证明，完整raw尾部消费／两次EX装配及最终Con未完成。 |
+
+| 原实际成员guard比较与域H源端 | ForcingExistMemberOpening 已消费完整原成员compiler和实际mixed原子输出，内部消去所有原compiler／quotation／输出项见证和一个底表lookup见证，返回仍绑定r与同一底表载体字段的实际成员码，证明两次条件更新后的整个输出同码。ForcingExistDomainSource 已消费完整原域compiler，保留同一4个见证并内部生成裸H码／原native双表，证明到同一域模板的实际查询。后者的源端现由ForcingExistDomainOpening消费，实际域开口比较本批已局部完成；整段尾部装配仍未完成。两个普通nativeZF原核闭句和31项预审通过，九项完整验收／五项trust=0全部通过，39452项声明零警告；39421项旧足迹及2868份旧证明保持，2903项密封输入重算，见verification/forcing-exist-member-domain-source-acceptance.json。 |
 
 | 原实际内层次序guard的完整开口比较 | 本批 ForcingExistOrderOpening 消费两边完整 ForcingExistGuardsCode／原rebind，保留绑定r并证明实际R(r,q)开口输出在同一底表的两次条件更新下同码；两边各3＋6个实际见证及辅助恒等／候选均内部消去。现有项律、开口字段、完整公式相消、head／guard唯一性、overwrite和mixed唯一性全部直接复用。普通nativeZF原核闭句及12项预审已通过；九项完整验收／五项trust=0均通过，39421项声明零警告；旧39409足迹和2867份旧证明不变，2901项密封输入重算，见verification/forcing-exist-order-opening-acceptance.json。目标typed覆盖表／实际lift作为操作判断保留，成员／域guard及完整尾部EX装配、最终Con尚未完成。 |
 
 | 规范存在child的完整公式条件独立性 | 本批 ForcingExistChildCanonical 直接消费两次实际外部条件槽更新及同一内层条件覆盖，用原完整列表唯一性证明最终表相等，再用原binder对唯一性及完整mixed公式唯一性证明整个规范child输出公式同码。原生产器内部生成同一bound0码和两组各4个执行见证，共9个对象EX；八重对象全称保证所有实际执行输出相等，at_agreement直接消费原记录。运行作用域／索引／码均可内部非标准，目标c=succ(b)、C=succ(c)中的b任意内部值；没有给定输出或码等式，没有新编译器／归纳／核。规范child的原raw child／两次opening三角形现由ForcingExistChildOpening接通；整段raw尾部不变性及最终Con尚未完成。 普通nativeZF原核闭句及15项预审通过；九项完整验收／五项trust=0全部退出0，39394项声明零警告，全部39379项旧足迹及2865份旧证明源码保持，无新增公理。 |
 
-| 原实际child与两次opening到canonical及跨条件整公式同码 | 本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需直接消费已完成成员／内层R比较，关闭域guard实际输出比较并组装两次EX，最终Con未完成。 九项完整验收／五项trust=0全部退出0，39409项声明零警告；39394项旧足迹及2866份旧证明源码保持，15项新增公共声明无新增公理。 |
+| 原实际child与两次opening到canonical及跨条件整公式同码 | 本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需直接消费已完成成员／内层R／域／child比较，关闭整个raw尾部并组装两次EX，最终Con未完成。 九项完整验收／五项trust=0全部退出0，39409项声明零警告；39394项旧足迹及2866份旧证明源码保持，15项新增公共声明无新增公理。 |
 
 ## 当前真正缺口及依赖顺序
 
@@ -85,4 +87,4 @@
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。d0843a7的39379项也已独立Linux成功，实际PASS时间2026-11-10T11:22:33.5406351Z，见verification/ci-exist-child-remote-acceptance.json；905a63f的39421项独立Linux验收仍在运行（42808631919）；本地39452项已完整验收，本批待前批Linux终态成功后统一发布；最终Con未完成。
+远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。d0843a7的39379项也已独立Linux成功，实际PASS时间2026-11-10T11:22:33.5406351Z，见verification/ci-exist-child-remote-acceptance.json；905a63f的39421项独立Linux验收仍在运行（42808631919）；本地39483项已完整验收，两个后续批次待前批Linux终态成功后统一发布；最终Con未完成。

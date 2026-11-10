@@ -67,7 +67,7 @@ private theorem closed_at_maps {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
       (SyntaxCodedMixedBinderFields.bound_iff hZ w R S a b c d A C K H (v 0) (v 1) (v 2) (v 3) I i t q
         hw hl (.conjL hm) (.conjL (.conjR hm)) (.conjR (.conjR hm)) hi hs hf) he
 
-private theorem closed_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound : Bool)
+theorem closed_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound : Bool)
     (w R S a b c d A C K H i I t q : Fin m)
     (hw : Derives Γ (omega w)) (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w R S a b c d A C K H))
     (hi : Derives Γ (.mem i (SyntaxTermSyntax.limit bound a b)))
@@ -169,7 +169,7 @@ private theorem zero_at_maps {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have hCode := AbstractBinderRename.code_iff_equal hZ true w z (v 3) q hw hc
   exact SyntaxTypeLocalTransfer.iff_trans hZero (.conjI (.conjR hCode) (.conjL hCode))
 
-private theorem zero_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem zero_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z R S a b c d A C K H q : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w R S a b c d A C K H)) :

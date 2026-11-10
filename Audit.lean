@@ -40152,3 +40152,38 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistDomainSource.sentence
 #print axioms PPAC.Migration.ForcingExistDomainSource.source
 #print axioms PPAC.Migration.ForcingExistDomainSource.source_template
+
+#print axioms PPAC.Migration.ForcingExistDomainImages.body
+#print axioms PPAC.Migration.ForcingExistDomainImages.data
+#print axioms PPAC.Migration.ForcingExistDomainImages.data_rename
+#print axioms PPAC.Migration.ForcingExistDomainImages.field_iff
+#print axioms PPAC.Migration.ForcingExistDomainImages.input
+#print axioms PPAC.Migration.ForcingExistDomainImages.input_rename
+#print axioms PPAC.Migration.ForcingExistDomainImages.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistDomainImages.produce
+#print axioms PPAC.Migration.ForcingExistDomainImages.produced
+#print axioms PPAC.Migration.ForcingExistDomainImages.produced_rename
+#print axioms PPAC.Migration.ForcingExistDomainImages.sentence
+#print axioms PPAC.Migration.ForcingExistDomainImages.target_type
+
+#print axioms PPAC.Migration.ForcingExistDomainOpening.compare
+#print axioms PPAC.Migration.ForcingExistDomainOpening.formula
+#print axioms PPAC.Migration.ForcingExistDomainOpening.frame
+#print axioms PPAC.Migration.ForcingExistDomainOpening.frame_rename
+#print axioms PPAC.Migration.ForcingExistDomainOpening.input
+#print axioms PPAC.Migration.ForcingExistDomainOpening.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistDomainOpening.opening
+#print axioms PPAC.Migration.ForcingExistDomainOpening.opening_rename
+#print axioms PPAC.Migration.ForcingExistDomainOpening.path
+#print axioms PPAC.Migration.ForcingExistDomainOpening.path_rename
+#print axioms PPAC.Migration.ForcingExistDomainOpening.query
+#print axioms PPAC.Migration.ForcingExistDomainOpening.rows
+#print axioms PPAC.Migration.ForcingExistDomainOpening.rows_rename
+#print axioms PPAC.Migration.ForcingExistDomainOpening.sentence
+#print axioms PPAC.Migration.ForcingExistDomainOpening.term
+
+#print axioms PPAC.Migration.ForcingExistChildOpening.closed_fields
+#print axioms PPAC.Migration.ForcingExistChildOpening.zero_fields
+
+#print axioms PPAC.Migration.ForcingRelationImages.mapped_field_arity
+#print axioms PPAC.Migration.ForcingRelationImages.mapped_variable_arity

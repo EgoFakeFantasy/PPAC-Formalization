@@ -211,14 +211,14 @@ theorem kernel_certificate {m} (k : Nat) (w f c d S L R : Fin m) :
 
 /-- Read an ACTUAL native map field by its original source-variable index.
 The native term-image quotation and original list-field theorem are reused. -/
-theorem mapped_field {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
-    (hZ : ZFContext.Evidence Γ) (ρ : Fin (n+2) → PureSyntaxQuotation.Tm tb tf) (j : Fin (n+2))
+theorem mapped_field_arity {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
+    (hZ : ZFContext.Evidence Γ) (ρ : Fin n → PureSyntaxQuotation.Tm tb tf) (j : Fin n)
     (w z f A T B F I q : Fin m) (hw : Derives Γ (omega w))
     (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
       (ForcingRelationSource.mapping ρ) w z f A T B F))
     (hi : Derives Γ (SyntaxNumeralSyntax.numeral j.val I)) :
     Derives Γ ((field w F I q).iff (PureQuotationSyntax.term (ρ j) w q)) := by
-  let σ : NativeSubstitutionSyntax.Mapping (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_context (n+2)) tb tf := ForcingRelationSource.mapping ρ
+  let σ : NativeSubstitutionSyntax.Mapping (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_context n) tb tf := ForcingRelationSource.mapping ρ
   let v := YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable j
   have hIndex : v.index = j.val := ProjectNativeRenaming.variable_index (fun _ : Fin 1 => j)
     (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (0 : Fin 1))
@@ -231,8 +231,8 @@ theorem mapped_field {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
 
 /-- The real first mixed term-query gives the literal mapped-variable
 quotation. No image-field or output-code answer is supplied. -/
-theorem mapped_variable {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
-    (hZ : ZFContext.Evidence Γ) (ρ : Fin (n+2) → PureSyntaxQuotation.Tm tb tf) (j : Fin (n+2))
+theorem mapped_variable_arity {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
+    (hZ : ZFContext.Evidence Γ) (ρ : Fin n → PureSyntaxQuotation.Tm tb tf) (j : Fin n)
     (w z f A T B F I x u : Fin m) (hw : Derives Γ (omega w))
     (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
       (ForcingRelationSource.mapping ρ) w z f A T B F))
@@ -242,7 +242,28 @@ theorem mapped_variable {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
     Derives Γ (PureQuotationSyntax.term (ρ j) w u) := by
   have hAt := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B F z f A T x u I
     hw (Derives.conjR he) hx)) hq
-  exact Derives.impE (Derives.conjL (mapped_field hZ ρ j w z f A T B F I u hw he hi)) (Derives.conjR hAt)
+  exact Derives.impE (Derives.conjL (mapped_field_arity hZ ρ j w z f A T B F I u hw he hi)) (Derives.conjR hAt)
+
+/-- Preserve the original n+2 public interface for existing consumers. -/
+theorem mapped_field {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
+    (hZ : ZFContext.Evidence Γ) (ρ : Fin (n+2) → PureSyntaxQuotation.Tm tb tf) (j : Fin (n+2))
+    (w z f A T B F I q : Fin m) (hw : Derives Γ (omega w))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.mapping ρ) w z f A T B F))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral j.val I)) :
+    Derives Γ ((field w F I q).iff (PureQuotationSyntax.term (ρ j) w q)) :=
+  mapped_field_arity hZ ρ j w z f A T B F I q hw he hi
+
+theorem mapped_variable {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
+    (hZ : ZFContext.Evidence Γ) (ρ : Fin (n+2) → PureSyntaxQuotation.Tm tb tf) (j : Fin (n+2))
+    (w z f A T B F I x u : Fin m) (hw : Derives Γ (omega w))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.mapping ρ) w z f A T B F))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral j.val I))
+    (hx : Derives Γ (SyntaxVariableSyntax.code false w I x))
+    (hq : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w B F z f A T x u)) :
+    Derives Γ (PureQuotationSyntax.term (ρ j) w u) :=
+  mapped_variable_arity hZ ρ j w z f A T B F I x u hw he hi hx hq
 
 /-- Left-argument part of the ACTUAL guard two-path term diagram.
 All three queries are real coded operations; the target table and guard

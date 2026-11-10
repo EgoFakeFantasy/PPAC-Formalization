@@ -1168,3 +1168,5 @@ import PPAC.Migration.ForcingExistChildOpening
 import PPAC.Migration.ForcingExistOrderOpening
 import PPAC.Migration.ForcingExistMemberOpening
 import PPAC.Migration.ForcingExistDomainSource
+import PPAC.Migration.ForcingExistDomainImages
+import PPAC.Migration.ForcingExistDomainOpening

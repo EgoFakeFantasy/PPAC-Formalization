@@ -2748,7 +2748,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 10),
                                 ('forcing_preorder_prefix', 'ForcingPreorderPrefix', 22),
                                 ('forcing_relation_source', 'ForcingRelationSource', 30),
-                                ('forcing_relation_images', 'ForcingRelationImages', 26),
+                                ('forcing_relation_images', 'ForcingRelationImages', 28),
                                 ('forcing_relation_guard_formula', 'ForcingRelationGuardFormula', 11),
                                 ('forcing_relation_raw_terms', 'ForcingRelationRawTerms', 7),
                                 ('forcing_relation_raw_formula', 'ForcingRelationRawFormula', 9),
@@ -2760,10 +2760,12 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_preorder_existential', 'ForcingPreorderExistential', 11),
                                 ('forcing_exist_child_terms', 'ForcingExistChildTerms', 12),
                                 ('forcing_exist_child_canonical', 'ForcingExistChildCanonical', 15),
-                                ('forcing_exist_child_opening', 'ForcingExistChildOpening', 15),
+                                ('forcing_exist_child_opening', 'ForcingExistChildOpening', 17),
                                 ('forcing_exist_order_opening', 'ForcingExistOrderOpening', 12),
                                 ('forcing_exist_member_opening', 'ForcingExistMemberOpening', 12),
-                                ('forcing_exist_domain_source', 'ForcingExistDomainSource', 19)):
+                                ('forcing_exist_domain_source', 'ForcingExistDomainSource', 19),
+                                ('forcing_exist_domain_images', 'ForcingExistDomainImages', 12),
+                                ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6100,12 +6102,16 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_existential_domain_canonical_three_witness_images_produced": True,
+        "object_actual_existential_domain_same_H_full_formula_double_opening_cancellation_proved": True,
+        "object_actual_existential_domain_complete_compilers_and_source_witnesses_eliminated": True,
+        "object_actual_existential_domain_scope": source_lock["source_proof_adaptations"]["forcing_exist_domain_opening"]["scope"],
         "object_actual_existential_member_guard_still_bound_output_comparison_proved": True,
         "object_actual_existential_member_guard_original_compiler_and_output_operands_eliminated": True,
         "object_actual_existential_member_guard_scope": source_lock["source_proof_adaptations"]["forcing_exist_member_opening"]["scope"],
         "object_actual_existential_domain_guard_same_bare_H_source_query_produced": True,
         "object_actual_existential_domain_guard_complete_compiler_source_leg_connected": True,
-        "object_actual_existential_domain_guard_cross_condition_comparison_proved": False,
+        "object_actual_existential_domain_guard_cross_condition_comparison_proved": True,
         "object_actual_existential_domain_guard_source_scope": source_lock["source_proof_adaptations"]["forcing_exist_domain_source"]["scope"],
         "object_actual_existential_inner_order_one_opening_canonical_query_proved": True,
         "object_actual_existential_inner_order_complete_three_plus_six_witnesses_eliminated": True,
@@ -6114,7 +6120,7 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_raw_existential_child_two_openings_to_canonical_query_proved": True,
         "object_actual_raw_existential_child_complete_12_witnesses_eliminated": True,
         "object_actual_raw_existential_child_cross_condition_formula_codes_equal": True,
-        "object_actual_raw_existential_child_opening_scope": 'ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Inner-order actual guard comparison is now separately proved by ForcingExistOrderOpening. Actual member guard comparison is now separately proved by ForcingExistMemberOpening; domain source-H query by ForcingExistDomainSource. Whole raw-tail domain comparison and component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.',
+        "object_actual_raw_existential_child_opening_scope": 'ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Inner-order actual guard comparison is now separately proved by ForcingExistOrderOpening. Actual member guard comparison is now separately proved by ForcingExistMemberOpening; domain source-H query by ForcingExistDomainSource. Actual domain guard comparison is now proved by ForcingExistDomainOpening. Whole raw-tail component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.',
         "object_canonical_existential_child_double_update_absorption_proved": True,
         "object_canonical_existential_child_whole_formula_condition_independence_proved": True,
         "object_canonical_existential_child_nine_witnesses_and_eight_object_all_produced": True,
