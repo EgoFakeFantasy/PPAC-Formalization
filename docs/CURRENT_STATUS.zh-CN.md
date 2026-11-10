@@ -1,92 +1,30 @@
 # 当前工作入口（2026-11-11）
 
-当前处于原1–11规划的第10阶段；第11阶段未开始，最终对象Con尚未证明。原阶段表见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，对象规格见[OBJECT_TARGET](OBJECT_TARGET.zh-CN.md)。本页只列当前结论；历史批次以Git和不可改写的逐批验收报告为据。
+当前为原1–11规划的第10阶段；第11阶段未开始。阶段表见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，对象规格见[OBJECT_TARGET](OBJECT_TARGET.zh-CN.md)。历史逐批验收保存在Git和不可改写的验收报告；旧报告中的待办不代表当前缺口。
 
-最终目标仍为原YesMetaZFC纯集合语言／普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`。`goal`准确为 `nativeCon false → nativeCon true`，目标理论为ZF+PP+ACwo+¬AC；Con覆盖全部内部／非标准ω证明码及完整公理测试和原六规则Root。`closing_kernel_certificate`只证明`reduction → goal`，不能代替尚未证明的reduction或goal。
-
-## 已完成并必须复用
-
-ForcingFreshBackground.derive 已证明任意内部／非标准闭背景码的实际首槽0相消：从原 weakened G W 出发，内部生成并消去十三个操作／输出见证，读取真实位移及原抽象前缀字段，复用完整 ForcingFormulaInduction.cancel 得到 abstracted W G；没有给定 frame、操作表、抽象输出、相等答案或 IH。generalize_layout 已实际消费该证明及现有 guarded forall，消去原全局抽象关系和闭G类型前提；仍保留“同一实际 canonical Global 是原 G 的弱化输出”这一操作关系，其源 freshening 记录匹配尚未证明。两个普通 nativeZF 原核闭句、九命令／五项 trust=0 全通过，39600项声明零警告；旧39585足迹不变，2876份其他旧证明保持，扩展 ScopeIdentity 原12项正文完整保留，2911项密封输入重算，见 [首槽相消验收](../verification/forcing-fresh-background-acceptance.json)。通用弱化／抽象相消、范围提升、正文抽象及原 forall 消费现均已完成，不再列为待办。下一项是同一源 canonical Global 的实际弱化匹配，然后原联合强迫、全部内部公理、六规则 Proof、reduction 和最终 Con。仍在原第10阶段，最终 Con 未证明，第11未开始。
-
-| 已有资产 | 当前精确边界 |
-|---|---|
-| 原1–3语言／19规则／全理论对应 | 已有原核证书；不是待重做的基础。全部内部Proof/Con仍属第10 |
-| 原第4外部基线 | 原4.34.1 Main／五端点与官方Comparator均已接受，运行42492087042；与目标4.33.1保持隔离 |
-| 原第6内部L/ZFC及完整模式 | 任意ZF模型内部L、原生／源全部模式、Choice、全局序及解释背景／非空消费均已完成；不重新建立L或真值后端 |
-| 原第5、7–9数学前端和实际系统 | 沿固定OpenAI源及既有供体完成；当前消费者见SOURCE_LOCK和REUSE_CONTRACTS，不从旧批次叙述重新开工 |
-| 原内部语法／证明配套 | AbstractTop／InstantiateTop／execution_iff、原27逻辑模式和六证明构造器已有。完整ZF/U公理码生产、全11构造实际raw强迫编译、类型化总唯一性、开放闭包代码已有 |
-| 实际逐点opening与原证明操作 | 名字前缀和参数偏移的实际环境总唯一；无forallClosure。准确AND组合、原K/S、原rule20共同背景实例、同一falsum到原闭Root均已接入 |
-| 完整否定外层实例 | 从真实完整NegCode及opening生成同一量词体／环境／lift和G→实例证明；重绑定正文的完整公式相消现已完成；实际守卫／regularity及规范化强迫MP仍未证明 |
-| opening／lift／mode2的变量部分 | 旧名字／参数项经真实lift和原kind1 mode2运行保持精确码；新头变为指定合法参数。均有普通nativeZF原核证书 |
-| 实际条件参数识别 | 从同一opening真实参数表内部生成选中字段P和偏移J=a+j，证明新头／原mode2组合结果恰为J处原自由变量码。P、偏移、头码和执行均非给定答案；覆盖内部非标准索引及码 |
-| 实际原重绑定的项方程 | 从完整compiler取得同一六见证和公式Subst；实际coded项替换精确对应原bound后继／free条件分支。只公开两项已有数据接口，原正文保持；完整三段公式相消已由下行完成 |
-| 实际三段根项组合 | 对任意内部纯项，真实重绑定／lifted opening／原mode2输出等于直接opening输出；实际操作判断和选中参数字段是前提，变量角色／索引／后继内部取得 |
-| 任意目标深度的单步binder项交换 | 原mixed substitution与真实binder lift交换，输出为旧输出的原移位rename；复用实际shift／identity图，头码／变量见证内部取得。整组闭包现已由下行完成，全公式相消已由下行完成 |
-| 完整项组合的binder闭包／实际根部 | 对象全称的四表项不变式已证明在四个原mixed lift下保持；八张辅助图和旧运行全部内部取得。实际mode2根部已复用现有coded桥装配；完整公式归纳已由下行完成 |
-| 四路径公式的七类非原子归纳步 | 否定、两个原量词和四类二元构造器均保留对象全称的四候选相消性质；实际四／八子输出内部消去。量词仍保留四个共同作用域的实际lift及对象子公式归纳前提；该步的对象子前提已由下行统一归纳消去 |
-| 全部四个原子基础情形 | 常元、等词及成员关系的四路径相消已全量验收；源字段和实际项输出内部消去，复用完整项图，不保留子公式前提 |
-| 量词共同帧的内部存在 | 四个共同后继作用域和八张实际提升表均由原存在性内部构造，所得同一帧保持项图及四表类型；不再把共同lift的存在误报为缺口 |
-| 完整内部公式归纳 | 16个变化表／作用域参数及4个实际输出均在对象全称内；原ZF基础／分离关闭全内部公式码归纳，十一构造器、子公式前提及共同lift均已消去 |
-| 实际原mode2完整正文相消 | 同一原compiled重绑定／lifted opening／原Run3公式输出等于直接opening；复用现成mode2公式桥，原六个compiler见证也在对象层消去。实际守卫／regularity及强迫MP仍未证明 |
-| 实际完整否定实例的字段正规化 | 从同一完整 NegCode.compiled／raw量词体／lifted opening／原 InstantiateTop 实例，内部消去原五个compiler和四个shell见证及两轮六字段；最终操作数等于直接opening，保持同一falsum，并保留原头和两实际guard编译。普通nativeZF原核证书已验收；守卫有效性及规范化强迫MP未完成 |
-| 实际成员守卫的码级交换 | 从原compiled false取得原条件项和精确P自由槽；同一lifted opening／原InstantiateTop输出为字面的P∈V成员码，V是同一原参数表S的P槽实际字段，内部名字前缀偏移不变。原四个compiler／三个quotation字段、两轮原子子输出及head零槽内部消去；普通nativeZF原核证书。不是guard内部证明或强迫MP |
-| 两类实际guard的三段代码交换 | 原member／relation guard编译、同一lifted opening及原InstantiateTop实际输出满足：同一原quotation经[P]和原free表S的直接替换判断。原四compiler见证、直接表和输出候选均内部构造/消去；完整内部公式归纳及原binder闭包直接复用。选中p槽字段的对角体码交换已由下行完成；同背景内部证明现由ForcingRelationGuardProof完成；背景本身内部证明与强迫MP仍未闭合 |
-| 实际成员guard内部证明 | 同一原guard编译／own head／lifted opening／原InstantiateTop／实际P槽字段，内部构造规范共同背景G=B∧(P∈V)及原证明码，证明G→同一实际输出M；另有固定同一G任意候选的原核端点。G只取决于固定B/P/V/作用域，内部存在唯一，不依当前公式选取；P/V类型从实际输出取得。不假设G或M已证明/为真；后续已生成同背景relation guard内部证明；背景本身内部证明、强迫MP及最终Con未完成 |
-| 实际完整否定实例的成员前件消去 | 消费同一完整compiler／raw量词体／lifted opening／原InstantiateTop，以及合法父证明G→Y；内部生成真实成员guard证明，再用原S/MP取得G→Rest。同一Y=M→Rest、Rest=O→Inner、Inner=D→原falsum，D为同一直接opening输出。5+4+6+6共21个原见证内部消去；不假设G/guard为真或已证明；关系guard O仍保留，尚非规范化强迫MP |
-| 实际守卫的选中条件对角体实例码对应 | 原member／relation guard、同一own head／lifted opening／原InstantiateTop实际输出Y，消费同一S[j]=P及原p槽k+1。原Replacement项像图和原列表编码内部生成bound-zero／替换表／对角体F；全部内部索引的精确字段规律及具体项图已证，复用完成的全内部公式归纳，得到原InstantiateTop(F,P)的同一实际输出Y。全部compiler／直接表／head／替换表／正文／实例候选内部构造消去，非给定输出或等式。两类同背景guard内部证明已由后续消费者完成，强迫MP仍未完成 |
-
-| 两类实际guard的同背景原内部证明 | 本批从两类原guard的实际compiler／own head／lifted opening／native InstantiateTop及同一选中p／载体字段，内部生成一张共享替换表、两个对角体、准确的载体限制自反性行U=∀q(q∈V→R(q,q))、B=Rest∧U和同一个G=B∧(P∈V)，并用原投影／rule20／S／MP生成G→实际成员输出和G→实际关系输出的内部证明。没有给定G或guard的真值／证明，全部码和证明见证均为对象存在量词。 背景本身的内部证明仍待完整源系统装配，不将条件性guard证明冒充最终Con。 |
-
-| 真实完整否定实例的双guard消去 | 真实完整否定实例现已在同一个固定条件背景G下移除成员和关系两层guard：复用原完整正规化及5+4+6+6共21个内部见证，内部生成两类guard证明；用原head／compiler／mixed opening唯一性对齐独立的实际关系输出，再用原S/MP两次消去前件，取得G→(D→原falsum)的内部证明，D为同一实际直接opening。没有给定guard真值／证明或ProvedG。 仅为负实例的实际前向消去，尚非统一regularity或规范化强迫MP。 |
-
-| 同背景全称原内部证明生成 | 本批已接通原mode3、forall_produce和逻辑公理21／22：消费实际抽象W→同一G、F→J和扩展自由作用域B中的原内部子证明I=(W→F)，内部生成所有中间／目标公式、逻辑证书、数值行、原Node／proof／Root以及G→∀J的内部证明。G具有原零绑定作用域，固定背景／新变量条件由实际抽象与类型判断约束；运行时作用域、公式码、证明码仍覆盖内部／非标准值，不假设G已证明或给定目标证明。 此原量词步骤并不等于完整强迫单调性／regularity，原强迫消费者仍待联合内部码归纳接入。 |
-
-| 任意条件的实际正文相消 | 本批完成任意条件的实际正文相消：ForcingConditionOpening.normalize不再要求代入条件等于外层条件；在对象量词内部使用原Replacement／列表编码构造S[j:=r]，用现成全内部mixed公式总性构造直接输出，并经原四路径公式归纳证明它与实际重绑定／opening／原mode2输出相等。原六个compiler见证内部消去，运行范围及公式／项码允许内部非标准值；不以更新表、输出或相等答案为前提。 此为负／存在分支在任意更强条件处实例化所需的码对应，尚未完成整个单调性／regularity。 |
-
-| 完整负编译器任意条件实例 | 本批接通完整原否定编译器在任意合法条件的实际实例：ForcingNegCondition.produce内部构造原Replacement更新表及直接子公式输出，消去原五项compiler、四项shell和两组六字段替换见证，保留同一原头部、两个guard的实际编译／替换判断及同一falsum。正文ALL2相消性质由已有原rebind／opening／mode2证明内部取得，非给定答案；原NegShell全文件逐字保留为前缀。运行范围及码仍覆盖内部非标准值。 此处未证明非对角guard、完整单调性／regularity或最终Con。 |
-
-| 局部传递性码行的内部证明生产 | 原ForcingTransitiveGuardProof保留三次ALL／native实例及五个IMP字段的准确合同，原内部member／order和负实例双guard消去、任意Extra背景传输已有验收。本批ForcingPreorderInstances已从实际raw源和真实操作生成整行并直接消费，不再把这份row作为给定输入。负／存在guard编译器输出的精确码识别仍未接通；局部条件整理与fresh全称化仍未装配。 |
-
-| 单／双局部前件解除及局部否定消费 | 本批完成原内部证明的单／双局部前件解除：InternalProofCurry内部构造全部六个中间蕴含码及原K／S／AND11／MP证明，将(G∧A)→D变为同一G→(A→D)，并将((G∧A)∧B)→D变为同一G→(A→(B→D))。直接消费原存在式父证明，保留原conditional Root；没有给定目标码／证明。已消费上一批局部否定端点，把Ctx=Extra∧G0的整个局部块移到蕴含前件，Extra、子公式和同一falsum完全保持。所有运行码／作用域／证明码仍覆盖内部非标准值。 实际源行现已生成消费；精确guard编译码识别、规范guard上下文及fresh全称化仍未装配。 |
-
-| 原preorder实际开口／三实例及原证明消费 | ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 精确guard编译码识别与完整mono／Proof／Con仍未完成。 |
-| 原三实例与前缀表精确码对应 | ForcingPreorderPrefix.at_target直接消费已生成的原rawData／targetData，内部消去同一六个native体／实例见证，并生成三张原顺序cons前缀表、类型和对子公式的准确direct mixed输出。每次输出码都是原实例的同一个实际值，最终表为[P2,P1,P0]++R。复用已有ALL端点、binder总性和一步全内部公式相消；不另给实例行、表码、期望等式或guard真值。固定外层仅为原三binder，运行码／作用域允许内部非标准值。两个普通nativeZF原核证书及九项完整验收／五项trust=0已通过。整段preorder与负／存在guard编译器输出的最终对应仍未完成。 |
-| 原preorder关系原子／guard的共同R源查询 | ForcingRelationSource.from_compiled直接消费原rawData及guard编译，内部生成同一R报价、四张真实native项像表和到原关系原子／guard原报价的两条mixed查询。原四compiler及新五共同源见证均为对象量词；完整guard矩阵／头及任意内部guard作用域保留。原R(r,q)、R(q,p)、R(r,p)与guard R(q,p)的AST读出复用既有Syntax自然性，无新归纳／核／checker。只有中间SOURCE的0／1／3和原有限arity是报价元数据；未要求forcing目标作用域标准。普通nativeZF原核证书及九项完整验收／五项trust=0已通过。两条路径的实际目标码相消及完整guard对应尚未完成。 |
-| 同一裸R实参表／实际guard全内部项比较 | ForcingRelationImages已生成两项原槽numeral和两张真实替换表，原forcing参数表与新裸R实参表分别保留。guard_term从同一原native guard映射／实际项查询、原singleton bound开口及原free-p替换，与裸R直接查询证明全部内部项的输出相等。完整对象有限索引析取消去源项分类，没有宿主解码或新归纳／核／checker／递归；原R的有限arity仅为源报价元数据，目标作用域／项码允许内部非标准值。两个普通nativeZF原核端点及26项trust=0足迹已通过；本批9项全仓验收／5项trust=0已通过，39256项声明、零警告；全部39230项旧足迹与2854份旧证明源码不变，见verification/forcing-relation-images-acceptance.json。guard完整公式相消已由ForcingRelationGuardFormula接通；raw关系叶码等词现已接通；同一五IMP行查询提取及member叶现由下述模块接通；完整guard对应仍待完成。 |
-| 同一原guard的全内部公式相消／共同查询生成 | ForcingRelationGuardFormula复用既有全内部公式归纳／恒等码及index-mixed桥，将guard两路径比较提升到全部内部公式。四项恒等码／项像见证内部生成并消去；from_source_to_direct消费同一R记录的原native映射／查询及实际guard开口，内部生成裸R共同查询并使其输出就是原guard同一实际输出，不给定共同查询／输出答案。目标作用域和运行公式码允许内部非标准值，无guard真值或新核／checker／递归／归纳。两个普通nativeZF原核端点及12项新增声明trust=0预审已通过；本批9项完整验收／5项trust=0已通过，39268项声明、零警告；验收见verification/forcing-relation-guard-formula-acceptance.json。raw preorder路径的公式相消及关系叶码等词现由ForcingRelationRawFormula接通；同一五IMP行查询提取及member叶现由下述模块接通；完整负／存在guard对应仍待接入。 |
-| 原raw路径与同一关系叶码对应 | ForcingRelationRawTerms从实际三张prefixData及有类型原空表恢复同一[P2,P1,P0]森林，使用原native atomMap、字段读取和对象有限析取完成全部内部项比较。ForcingRelationRawFormula复用既有完整公式归纳／恒等桥，内部生成并消去四项恒等见证，生成到原raw叶同一实际输出的共同查询。relation_leaf从同一R记录、同一前缀及实际raw／guard查询内部生成两条相同共同查询，原输出唯一性给出关系叶码等词；没有给定森林、共同查询／输出或期望等式，不假定guard／preorder真值。源有限arity／0-1-2-3仅为报价元数据，目标范围／码保持内部及非标准。三个普通nativeZF原核端点和16项新增声明trust=0预审通过；本批9项完整验收／5项trust=0已通过，39284项声明、零警告；见verification/forcing-relation-raw-acceptance.json。同一五IMP行的叶查询提取及member叶现由下述模块接通；整段负／存在compiler对应仍待接入。 |
-
-| 同一原五IMP叶查询与member叶码对应 | ForcingPreorderLeaves／LeafTarget已从同一原rawData／targetData／instancesProved保留6＋10＋5个见证及内部证明，内部生成原三张prefix表与十一条实际查询；24个见证均在对象量词内。relation_from_data自行恢复空表类型、条件自然性与关系叶查询。ForcingPreorderMember内部生成树码子字段及原载体槽字段，证明实际raw member叶与原guard编译／开口／实例化结果同码。两个新增普通nativeZF原核闭句证书及44项新增公共声明的trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39328项声明、零警告。全部39284项旧足迹不变，无新增公理；清理后四个受影响源码的trust=0也全部退出0。没有给定叶查询、载体值、期望码等式或guard真值，运行码与目标作用域允许内部非标准值。 |
-
-| 原条件槽更新后的完整guard记录消费 | ForcingPreorderGuardTables已接通原free-condition实际替换后的两类guard：用对象numeral不等证明载体槽保留，并在对象量词内生成载体值；实际relation compiler／native InstantiateTop到原R(P0,P2)叶的同码证明内部消去4个compiler、5个共同源、4个实参表和1个singleton森林见证。没有给定共同源／像表／森林／码等式答案，原空表类型和条件项类型从同一原记录恢复。两个普通nativeZF原核证书及10项trust=0预审通过；该后续批次九项完整验收／五项trust=0全部退出0，39338项声明、零警告；39328项旧足迹与2861份旧证明源码不变，无新增公理。整段负／存在compiler与后续Proof／Con仍未完成。 |
-
-| 完整原负分支记录及同一局部证明柯里化 | ForcingPreorderNegative直接消费原完整否定compiler、实际body开口和native InstantiateTop；5＋4＋6＋6个原见证在对象量词内消去。实际两层guard查询经既有GuardTables识别为同一H0／H5，原逻辑字段替换后调用既有内部证明规则解除两个前件。既有Curry生产器实际消费同一局部证明，将整个G0前件移入蕴含并保留Extra；同一原falsum和实际剩余IMP码留在对象EX内。parent是Ctx下的内部条件证明，未假定Ctx／guard／preorder真值，其类型由实际native实例恢复。普通nativeZF原核闭句证书及9项trust=0预审通过；本批九项完整验收／五项trust=0均退出0，39347项声明、零警告；39338项旧足迹及2862份旧证明源码不变，无新增公理。规范源上下文布局／fresh全称化、完整存在分支及后续内部Proof／Con尚未完成。 |
-
-| 原完整存在记录及实际外层guard消费 | ForcingPreorderExistential直接消费已有完整存在compiler、实际body opening与native InstantiateTop。原8个compiler／7个ALL-EX-EX壳见证以及两层各4个mixed输出均内部生成／消去。原共用head由同一lift输入和既有term_at_zero在实际A作用域重新定型；原GuardTables、内部投影／链／前件解除及Curry生产器给出实际剩余尾部的类型、Ctx下证明和同一G0柯里化，保留原目标两层IMP字段。原存在producer仅公开6项记录接口，全部证明正文及13项旧足迹不变。普通nativeZF原核证书和17项新增公共声明trust=0预审通过；本批九项完整验收／五项trust=0全部退出0，39364项声明、零警告；39347项旧足迹保持，无新增公理。清理后两个受影响源码trust=0也全部退出0。这里完成记录／外层守卫消费，尾部跨条件不变性及规范上下文／fresh全称化尚未完成。 |
-
-| 原存在child全部内部项动作 | 本批 ForcingExistChildTerms 直接消费原完整 child 编译器的同一12见证，在八重对象全称量词内证明全部四类实际coded项动作：新名字头保持bound0，选中条件free槽变为bound1，其余free索引保持，旧bound索引增加2。中间push项码由原生产器在对象EX内生成／消去，完整原公式替换判断保留。只公开原生产器3项记录接口，其余源码与全部证明正文不变；没有新编译器／归纳／核或给定目标等式。此为同一存在尾部跨条件公式相消的实际项输入，尚未完成整个尾部不变性、规范上下文／fresh全称化或最终Con。 普通nativeZF原核闭句及28项接口预审通过；九项完整验收／五项trust=0全部退出0，39379项声明零警告；全部39364项旧足迹及2863份旧证明源码不变，无新增公理。 |
-
-| 原实际域guard整公式比较 | 本批 ForcingExistDomainImages 复用原覆盖表／完整字段图／编码器，生成同一H的规范参数表及全部内部字段定律；ForcingExistDomainOpening 实际消费同一H源查询、原域compiler和两次opening，复用原完整公式相消。规范表3见证、原compiler4＋源H3见证及直接候选内部生成／消去，两边完整compiler的码相等也内部推导，不给定目标答案。普通nativeZF原核闭句及31项预审通过；九项完整验收／五项trust=0全部通过，39483项声明零警告；39452项旧足迹不变，2905项密封输入重算，见verification/forcing-exist-domain-opening-acceptance.json。当前成员／内层R／域／child各项比较均已证明，完整raw尾部消费／两次EX装配及最终Con未完成。 |
-
-| 原实际成员guard比较与域H源端 | ForcingExistMemberOpening 已消费完整原成员compiler和实际mixed原子输出，内部消去所有原compiler／quotation／输出项见证和一个底表lookup见证，返回仍绑定r与同一底表载体字段的实际成员码，证明两次条件更新后的整个输出同码。ForcingExistDomainSource 已消费完整原域compiler，保留同一4个见证并内部生成裸H码／原native双表，证明到同一域模板的实际查询。后者的源端现由ForcingExistDomainOpening消费，实际域开口比较本批已局部完成；整段尾部装配仍未完成。两个普通nativeZF原核闭句和31项预审通过，九项完整验收／五项trust=0全部通过，39452项声明零警告；39421项旧足迹及2868份旧证明保持，2903项密封输入重算，见verification/forcing-exist-member-domain-source-acceptance.json。 |
-
-| 原实际内层次序guard的完整开口比较 | 本批 ForcingExistOrderOpening 消费两边完整 ForcingExistGuardsCode／原rebind，保留绑定r并证明实际R(r,q)开口输出在同一底表的两次条件更新下同码；两边各3＋6个实际见证及辅助恒等／候选均内部消去。现有项律、开口字段、完整公式相消、head／guard唯一性、overwrite和mixed唯一性全部直接复用。普通nativeZF原核闭句及12项预审已通过；九项完整验收／五项trust=0均通过，39421项声明零警告；旧39409足迹和2867份旧证明不变，2901项密封输入重算，见verification/forcing-exist-order-opening-acceptance.json。目标typed覆盖表／实际lift作为操作判断保留，成员／域guard及完整尾部EX装配、最终Con尚未完成。 |
-
-| 规范存在child的完整公式条件独立性 | 本批 ForcingExistChildCanonical 直接消费两次实际外部条件槽更新及同一内层条件覆盖，用原完整列表唯一性证明最终表相等，再用原binder对唯一性及完整mixed公式唯一性证明整个规范child输出公式同码。原生产器内部生成同一bound0码和两组各4个执行见证，共9个对象EX；八重对象全称保证所有实际执行输出相等，at_agreement直接消费原记录。运行作用域／索引／码均可内部非标准，目标c=succ(b)、C=succ(c)中的b任意内部值；没有给定输出或码等式，没有新编译器／归纳／核。规范child的原raw child／两次opening三角形现由ForcingExistChildOpening接通；整段raw尾部不变性及最终Con尚未完成。 普通nativeZF原核闭句及15项预审通过；九项完整验收／五项trust=0全部退出0，39394项声明零警告，全部39379项旧足迹及2865份旧证明源码保持，无新增公理。 |
-
-| 原实际child与两次opening到canonical及跨条件整公式同码 | 本批 ForcingExistChildOpening 直接消费原完整child编译器、两次真实binder opening及同一规范覆盖／提升。原coded binder的4个图见证及原4个shift／identity／head见证只读取消去；四类项动作及内部omega分类由已有定理完成，完整公式相消也直接复用。from_compiled在对象层消去原12个compiler见证，内部生成4个恒等辅助见证及规范输出候选，返回同一实际raw输出的canonical查询；compare实际消费ForcingExistChildCanonical.formula，证明同一原参数底表上两次外部条件更新后的实际raw child整公式输出同码。两个普通nativeZF原核闭句已验收；没有给定目标等式、规范query答案或guard真值，没有新核／checker／递归／归纳。这里只关闭整个child；完整raw存在尾部仍需直接消费已完成成员／内层R／域／child比较，关闭整个raw尾部并组装两次EX，最终Con未完成。 九项完整验收／五项trust=0全部退出0，39409项声明零警告；39394项旧足迹及2866份旧证明源码保持，15项新增公共声明无新增公理。 |
-
-## 当前真正缺口及依赖顺序
-
-- 原完整负compiler和完整存在compiler记录、实际opening／native实例、同一两层guard查询、原前件解除及同一G0柯里化现均已实际消费；现已取得同一原child全部内部项的四律及八重对象全称封装，规范child双更新覆盖及完整公式同码现也已完成；原raw child／两次opening到规范环境的三角形及实际child跨条件整公式同码现已完成；整个raw存在尾部仍待成员／内层R／域guard对齐及两层EX组装。下一项是存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con；原L、全模式、递归、mode3／forall及原证明生产器不重建。
-- 消费真实守卫、regularity／单调性，完成**规范化强迫MP**及其余统一内部六规则保真。普通字面蕴含组合和外层量词实例不能替代此门。
-- 接通全部内部／非标准ZF/U公理实例及完整Proof正确性，证明同一矛盾码的`InternalConsistency.reduction`，再取得最终`goal`。外部固定正文的quotation模式不替代此门。
-- 最终对象主句及量词／依赖／固定源对应全部满足后，才进入原第11阶段终验。
+最终目标仍是纯集合语言／普通nativeZF中原推导核的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`。`goal`准确为 `nativeCon false → nativeCon true`，目标理论为ZF+PP+ACwo+¬AC；Con覆盖全部内部／非标准ω证明码、完整公理测试及原六规则Root。最终主句与reduction尚未证明，`closing_kernel_certificate`只证明`reduction → goal`。
 
 ## 最新实际验收
 
-`verification/forcing-exist-child-opening-acceptance.json`：九项完整验收及五项trust=0全部退出0；39409项声明、零警告，全部39394项旧足迹和2866份旧证明源码保持，15项新增公共声明无新增公理；2900项密封输入重算。16项CI回归、三个干净锁定依赖及75源哈希通过，清理／源码补验见回执；当前本地范围待独立Linux验收。
+ForcingWeakenedImages.produce 已从旧项像合法性、Omega 和原后继关系生成十个实际弱化／图／列表见证；from_queries 已从同一记录及两次实际源公式查询推导原 weakened 关系，两个 mixed 码、两个 realization 图和实际输出在对象层生成消去，并调用已完成的 ReindexedImages 全内部公式比较。generalize_layout 已实际消费该结论和已有 FreshBackground／guarded forall。没有给定 weakened 答案、点态字段律、相等答案或新的归纳后端。完整九命令／五项 trust=0 通过，39632项声明、零警告；全部39614旧足迹及2879份旧证明源码保持，2913项密封输入与实际提交源码核对一致，见[源弱化验收](../verification/forcing-weakened-images-acceptance.json)。仍未证明同一 canonical Global 的实际源查询对应，最终 Con 未证明；原第10阶段继续，第11未开始。
 
-每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
+## 已完成，必须复用
 
-远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。d0843a7的39379项也已独立Linux成功，实际PASS时间2026-11-10T11:22:33.5406351Z，见verification/ci-exist-child-remote-acceptance.json；905a63f的39421项独立Linux验收仍在运行（42808631919）；本地39483项已完整验收，两个后续批次待前批Linux终态成功后统一发布；最终Con未完成。
+- 原第1–9阶段已验收资产依原阶段表保留；包括原L于ZF解释及全公理模式、实际具体系统、Assigned商与第9阶段模型应用，不重新迁移或重建。
+- 原完整negative/existential compiler、同一预序三次native实例／五IMP行、bare-R／member／domain／child查询对应、完整raw尾部两层EX及跨条件比较均已完成；ForcingExistTailComparison.from_queries/raw_kernel_certificate生成消去两次全部trace和canonical见证。
+- ForcingProofContext生成六个实际上下文合取码，完成重排、只对r-local的Curry及实际raw尾部证明传输；ForcingProofUniversal生成同一Curry正文及实际原mode3抽象并消费guarded forall。
+- ForcingScopeIdentity完成全内部独立作用域恒等与同一闭G提升；ForcingFreshBackground.derive从实际weakening产生消去十三见证并证明abstracted(W,G)，已消去全局抽象答案／类型前提。
+- ForcingReindexedImages复用原TermImagePushBoth／图解码／编码，产生六个实际图及列表见证，复用已有完整公式相消；ForcingWeakenedImages进一步产生原首槽弱化码／真实索引图，推导两次实际源查询的原weakened对应并消费全称化。不得再把项像图、index realization、弱化／抽象相消或完整公式归纳列为待实现。
+
+## 当前真正缺口与依赖顺序
+
+1. 同一实际新参数底表和 q/p 双槽覆盖记录的字段匹配。直接复用 ForcingWeakenedImages.produce/from_queries、ForcingReindexedImages.field_iff、ForcingRelationImages.left_field/right_field/outside，以及现有裸R／raw直接查询和原列表字段唯一性；不重建图、列表递归或公式归纳。先证明新双覆盖表就是旧双覆盖表的实际弱化像；fresh r 为新free0，不得要求它等于旧r的弱化。再对应实际 Pre、q/p 成员与关系、Extra，用原四个AND构造识别 SAME canonical Global，消费已完成的 FreshBackground／ProofUniversal。
+2. 完成原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部码归纳及规范化强迫MP；普通字面蕴含组合或外层实例不能替代此门。
+3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
+4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
+
+## 当前可核验材料
+
+- [本批源弱化与实际forall消费](../verification/forcing-weakened-images-acceptance.json)：39632项声明，零警告，九命令及五项trust=0通过。
+- [上一批全内部项像／公式比较](../verification/forcing-reindexed-images-acceptance.json)及[首槽相消](../verification/forcing-fresh-background-acceptance.json)。
+- [Linux CI实际完成回执](../verification/ci-proof-universal-remote-acceptance.json)：远端613a6f0，39573项声明、零警告；后续提交CI以实际作业终态为准。
