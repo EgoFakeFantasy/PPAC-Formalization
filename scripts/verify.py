@@ -2767,7 +2767,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_images', 'ForcingExistDomainImages', 12),
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
-                                ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 10)):
+                                ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6104,16 +6104,20 @@ def main(source_check_only: bool = False) -> None:
     # cover the JSON manifest and JSON artifacts, without broadening source_hash.
     hashed += [OUT / "original-comparator-acceptance.json"] + [ROOT / p for p in sorted(original_comparator_receipt["files_sha256"]) if Path(p).suffix == ".json"]
     summary = {
+        "object_actual_existential_whole_tail_BOTH_sixteen_actual_trace_blocks_produced_eliminated": True,
+        "object_actual_existential_whole_tail_derived_scope_alignment_actually_consumed": True,
+        "object_actual_existential_whole_tail_ALL_NINE_canonical_witnesses_internally_produced_eliminated": True,
+        "object_actual_existential_whole_tail_RAW_queries_no_given_trace_head_canonical_or_equality_answers": True,
         "object_actual_existential_whole_tail_ALL_FOUR_component_comparisons_consumed_at_common_operation_frames": True,
         "object_actual_existential_whole_tail_three_AND_and_BOTH_EX_equalities_packaged_at_common_operation_frames": True,
-        "object_actual_existential_whole_tail_common_head_canonical_frame_production_discharged": False,
+        "object_actual_existential_whole_tail_common_head_canonical_frame_production_discharged": True,
         "object_actual_existential_whole_tail_comparison_scope": source_lock["source_proof_adaptations"]["forcing_exist_tail_comparison"]["scope"],
         "object_actual_existential_whole_tail_sixteen_witnesses_read": True,
         "object_actual_existential_whole_tail_same_root_tables_at_both_target_scopes_generated": True,
         "object_actual_existential_whole_tail_same_replacement_graphs_at_both_target_scopes_retained": True,
         "object_actual_existential_whole_tail_four_scope_equalities_derived_for_two_actual_executions": True,
         "object_actual_existential_whole_tail_two_EX_three_AND_actual_leaf_queries_retained": True,
-        "object_actual_existential_whole_tail_cross_condition_comparison_proved": False,
+        "object_actual_existential_whole_tail_cross_condition_comparison_proved": True,
         "object_actual_existential_whole_tail_scope": source_lock["source_proof_adaptations"]["forcing_exist_tail_opening"]["scope"],
         "object_actual_existential_domain_canonical_three_witness_images_produced": True,
         "object_actual_existential_domain_same_H_full_formula_double_opening_cancellation_proved": True,

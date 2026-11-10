@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-第10阶段最新已验收消费者：`ForcingExistTailComparison.compare` 已在同一实际16记录和给定共用 head／canonical 操作帧下，消费全部四个组件比较，封装三次 AND、两次 EX，取得原核尾部相等闭句。九命令／五项 trust=0 全通过，39525项声明零警告，旧39515足迹和2873份旧证明不变；见 `verification/forcing-exist-tail-comparison-acceptance.json`。共同操作帧尚未内部生成／消去，完整原始尾部不变性仍未完成。下一步一次消费原 canonical 生成器及原 term_at_zero（同一头码供两个目标作用域），用已证作用域等式规范化实际记录，再调用本批 compare；不重做四组件消费／两次 EX 合并。之后沿原联合强迫／全部内部公理／六规则 Proof／reduction／最终 Con。
+第10阶段最新已验收消费者：ForcingExistTailComparison.from_queries 已从两条实际原始查询内部生成、消去32个 trace／9个 canonical 见证及 source/target 对齐，复用四组件比较和原构造器唯一性得到完整原存在尾部等式；普通 nativeZF 原核闭句。九命令／五项 trust=0 全通过，39535项声明零警告，旧39525足迹和2873份其他旧证明不变，见 verification/forcing-exist-tail-generated-acceptance.json。尾部不变性／trace 对齐／共用帧消去均已完成。下一步实际接通源 canonical 证明上下文与 fresh 全称化，消费已有 ForcingPreorderExistential、Curry、guarded_generalize 和 mode3，不重做这些定理；然后原 joint forcing／内部公理／六规则 Proof／reduction／最终 Con。最终 Con 未证明，第11未开始。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳及实际重绑定相消已验收。原三native／五IMP行、共同R、两路径项／公式相消及完整负compiler guard解除／G0柯里化已接通。本批完整存在compiler实际8＋7记录与两层4＋4查询已消费，复用原head类型、guard证明及Curry，保留准确目标IMP字段和typed尾部局部／curried内部证明；原child同一12见证下全部四类项动作及八重对象全称封装现已原核验收，规范child同一内层条件覆盖后的完整公式独立性及9个内部存在见证／8重对象全称现也已验收，原实际child／两次opening到canonical及跨条件child整公式同码也已完成，39409项声明零警告，见已验收回执；原内层R(r,q)完整guard的跨条件开口比较本批已局部通过原核闭句及12项预审，九项完整验收／五项trust=0均通过，39421项声明零警告；旧39409足迹和2867份旧证明不变，2901项密封输入重算，见verification/forcing-exist-order-opening-acceptance.json。原实际成员guard比较和域H源端本批已通过两个原核闭句／31预审，九项完整验收／五项trust=0全部通过，39452项声明零警告；39421项旧足迹及2868份旧证明保持，2903项密封输入重算，见verification/forcing-exist-member-domain-source-acceptance.json。实际域guard完整比较本批已局部通过原核闭句／31预审（原H表／compiler／全部见证内部生产消去），九项完整验收／五项trust=0全部通过，39483项声明零警告；39452项旧足迹不变，2905项密封输入重算，见verification/forcing-exist-domain-opening-acceptance.json。既有mode3／forall继续复用；reduction→goal封闭门已有，reduction／goal未证明 | 存在尾部跨条件不变性、规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码与quotation、axiom Node/Root基例、全部内部公式归纳及实际重绑定相消已验收。原三native／五IMP行、共同R、两路径项／公式相消及完整负compiler guard解除／G0柯里化已接通。本批完整存在compiler实际8＋7记录与两层4＋4查询已消费，复用原head类型、guard证明及Curry，保留准确目标IMP字段和typed尾部局部／curried内部证明；原child同一12见证下全部四类项动作及八重对象全称封装现已原核验收，规范child同一内层条件覆盖后的完整公式独立性及9个内部存在见证／8重对象全称现也已验收，原实际child／两次opening到canonical及跨条件child整公式同码也已完成，39409项声明零警告，见已验收回执；原内层R(r,q)完整guard的跨条件开口比较本批已局部通过原核闭句及12项预审，九项完整验收／五项trust=0均通过，39421项声明零警告；旧39409足迹和2867份旧证明不变，2901项密封输入重算，见verification/forcing-exist-order-opening-acceptance.json。原实际成员guard比较和域H源端本批已通过两个原核闭句／31预审，九项完整验收／五项trust=0全部通过，39452项声明零警告；39421项旧足迹及2868份旧证明保持，2903项密封输入重算，见verification/forcing-exist-member-domain-source-acceptance.json。实际域guard完整比较本批已局部通过原核闭句／31预审（原H表／compiler／全部见证内部生产消去），九项完整验收／五项trust=0全部通过，39483项声明零警告；39452项旧足迹不变，2905项密封输入重算，见verification/forcing-exist-domain-opening-acceptance.json。既有mode3／forall继续复用；reduction→goal封闭门已有，reduction／goal未证明 | 规范源上下文布局与fresh全称化、原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部归纳、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -33,7 +33,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-comparison-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-generated-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。

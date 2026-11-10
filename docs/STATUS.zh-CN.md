@@ -2,7 +2,7 @@
 
 最终目标为原YesMetaZFC纯集合语言、普通nativeZF中的 `FirstOrder.Derives nativeZF [] InternalConsistency.goal`，准确为`Con_ZF→Con_(ZF+PP+ACwo+¬AC)`，覆盖全部内部／非标准证明码。**最终主句尚未证明，第11终验未开始。**
 
-完整16见证读取、同一原表／替换图的两目标作用域条件和四个作用域等式均已完成。本批 `ForcingExistTailComparison.compare` 已在**给定共用 head／canonical 操作帧**下，直接消费原成员／次序／域／child 的全部四个比较和同一实际叶子查询，导出四个叶子等式，再以原构造器唯一性封装三次 AND、两次 EX，取得实际尾部 `Y=Y1` 的普通 nativeZF 原核闭句。九命令／五项 trust=0 全通过，39525项声明零警告，39515项旧足迹和全部2873份旧证明文件不变，2907项密封输入重算，见 [四组件实际尾部合并验收](../verification/forcing-exist-tail-comparison-acceptance.json)。**这些共用操作帧的前提尚未消去，无前提的原始尾部不变性及最终 Con 仍未完成。** 下一步消费一次原 `ForcingExistChildCanonical.derive`，其同一两侧覆盖表兼供 child／order；原 `SyntaxMixedImageHead.term_at_zero` 可把同一头码重定类型到第二作用域，无需另造 name-head。配合已证作用域等式规范化实际两条记录后调用本批 compare；之后沿原联合强迫／内部公理／六规则 Proof／reduction／最终 Con。不重做已经完成的四组件消费或两次 EX 合并。
+本批 ForcingExistTailComparison.from_queries 已完成从两条实际原始尾部查询出发的外条件独立性：内部产生、消去两套共32个执行见证，推导原 source/target 作用域对齐；一次消费现成 canonical 生成器并消去全部9个见证，以同一头码在两个作用域重定类型，调用已证四组件比较、封装三次 AND／两次 EX。raw_kernel_certificate 为普通 nativeZF 原核闭句，不给定 trace／head／canonical 表／作用域等式或叶子相等答案；保留的输入是原闭布局、完整源编译记录和两条实际查询。九命令／五项 trust=0 全通过，39535项声明零警告，旧39525足迹、2873份其他旧证明及原模块10项数学正文不变；2907项密封输入重算，见 [完整原始尾部验收](../verification/forcing-exist-tail-generated-acceptance.json)。原存在尾部不变性、trace 对齐和共用操作帧消去均已完成，不再列作待做。仍在原第10阶段：下一消费者是实际 canonical 证明上下文／fresh 全称化布局，复用已有 Curry／guarded_generalize／mode3 与原公式归纳，再装配原 joint forcing、全部内部公理、六规则 Proof、reduction 和最终 Con；最终主句仍未证明。
 
 | 原阶段／资产 | 实际状态 |
 |---|---|

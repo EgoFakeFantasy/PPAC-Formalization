@@ -172439,7 +172439,7 @@
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
         "PPAC/Migration/OmegaUniversal.lean": "9581783ce0c6063bb68a0ecc4ea822a0284ffe95c90570fcd124fe57b3174762"
       },
-      "scope": "Whole ACTUAL original existential TAIL output decomposition. Reads the SAME original ForcingExistCode.shellData source constructors and actual mixed query at original shell v[4]. Internally produces and eliminates SIXTEEN actual output/binder witnesses, retaining BOTH EX target constructors, BOTH actual coded binder lifts, all THREE AND target constructors and actual queries for member, order, domain and child. Existing ForcingMixedUnary.single_output and ForcingFormulaDiagram.binary_output only; no new compiler/kernel/checker/recursor/induction. Runtime source/target depths, free counts, raw formulas, image tables and all sixteen values remain internal including nonstandard. No canonical tables, expected query results or output equality as premise. Ordinary nativeZF original-kernel closed sentence. This is actual tail-reading, NOT cross-condition equality: common head/canonical child frame generation and consumption of the FOUR already complete component comparisons, then two-EX equality packaging remain; canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon are unproved. Stronger SAME-module scope consumer is now proved: prepare_shell/prepare_query call the existing whole reader, preserve its SAME16 witnesses and original first-lift source graphs. Original graph_free/graph_mixed retain UNCHANGED root bound/free list codes and SAME replacement input/output graphs at BOTH actual target scopes. Both base typings and SAME outer-condition overwrite are generated; no new graph, field induction, candidate table or desired table equality is a premise. scope_alignment derives FOUR source/target scope equalities for TWO independent executions using original successor_unique and original equal substitution. Original19 mathematical bodies and footprints unchanged; new prepared nativeZF closed sentence. SAME common heads/canonical child frame production remains unproved. ForcingExistTailComparison now actually consumes all four already completed component comparisons and packages both EX at common actual operation frames; that conditional assembly is COMPLETE. Discharging those frames and finalCon remain unproved.",
+      "scope": "Whole ACTUAL original existential TAIL output decomposition. Reads the SAME original ForcingExistCode.shellData source constructors and actual mixed query at original shell v[4]. Internally produces and eliminates SIXTEEN actual output/binder witnesses, retaining BOTH EX target constructors, BOTH actual coded binder lifts, all THREE AND target constructors and actual queries for member, order, domain and child. Existing ForcingMixedUnary.single_output and ForcingFormulaDiagram.binary_output only; no new compiler/kernel/checker/recursor/induction. Runtime source/target depths, free counts, raw formulas, image tables and all sixteen values remain internal including nonstandard. No canonical tables, expected query results or output equality as premise. Ordinary nativeZF original-kernel closed sentence. This is actual tail-reading, NOT cross-condition equality: common head/canonical child frame generation and consumption of the FOUR already complete component comparisons, then two-EX equality packaging remain; canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon are unproved. Stronger SAME-module scope consumer is now proved: prepare_shell/prepare_query call the existing whole reader, preserve its SAME16 witnesses and original first-lift source graphs. Original graph_free/graph_mixed retain UNCHANGED root bound/free list codes and SAME replacement input/output graphs at BOTH actual target scopes. Both base typings and SAME outer-condition overwrite are generated; no new graph, field induction, candidate table or desired table equality is a premise. scope_alignment derives FOUR source/target scope equalities for TWO independent executions using original successor_unique and original equal substitution. Original19 mathematical bodies and footprints unchanged; new prepared nativeZF closed sentence. SAME common heads/canonical child frame production remains unproved. ForcingExistTailComparison now actually consumes all four already completed component comparisons and packages both EX at common actual operation frames; that conditional assembly is COMPLETE. Discharging those frames and finalCon remain unproved. The subsequent TailComparison.from_queries now consumes these operations and fully generates/eliminates both actual16 traces, their scope alignment and ALL common canonical/head operations; whole raw-tail equality is COMPLETE. Earlier pending-tail/frame statements are superseded by that actual consumer. No repeated tail reader, scope or head producer is required.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistTailOpening.openedData": [
           "Quot.sound",
@@ -172613,8 +172613,8 @@
         "AtomicData.force_mono ex SAME tail under two different outer-condition updates"
       ],
       "consumers": [
-        "Existing canonical generator and actual two-trace scope alignment must discharge common operation frames",
-        "Original joint forcing induction, full internal six-rule Proof/reduction/final Con"
+        "Original force_mono/ex whole-tail consumer is complete; consume it in original joint forcing induction with canonical proof contexts and fresh forall",
+        "Original force_of_dense/exists_force_neg/forceFormula_imp/normalized MP; all internal axioms and six-rule Proof/reduction/final Con"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingExistCode.lean",
@@ -172624,10 +172624,16 @@
         "PPAC/Migration/ForcingExistDomainOpening.lean",
         "PPAC/Migration/ForcingExistChildOpening.lean",
         "PPAC/Migration/Internal/SyntaxLogicalFields.lean",
-        "PPAC/Migration/Internal/SyntaxConstructors.lean"
+        "PPAC/Migration/Internal/SyntaxConstructors.lean",
+        "PPAC/Migration/ForcingExistChildCanonical.lean",
+        "PPAC/Migration/ForcingReflexiveImages.lean",
+        "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean",
+        "PPAC/Migration/Internal/SyntaxFreeSubstSyntax.lean",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean",
+        "PPAC/Migration/OmegaUniversal.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistTailComparison.lean": "a7f26fd383787443ede6d69cc2fa441718ab02aa6a75e6d40cf8e20377aa3844",
+        "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingExistTailOpening.lean": "5d244fe331925fe356517f148a749439e69f6ce89ff639e95266872f33eb4843",
         "PPAC/Migration/ForcingExistMemberOpening.lean": "0b9a9b53d649da2bf807ae036aec469d388a7b486b64c514056193e6b7091515",
@@ -172635,9 +172641,15 @@
         "PPAC/Migration/ForcingExistDomainOpening.lean": "361e37209d974d7afba3cd72d537d03e2ae650ac7add68542e4fc5d8ddc53a53",
         "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
         "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
-        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
+        "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
+        "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean": "51b9f83c0f755d53f1a5ad26acdd79203d91fde2fb1949d98d48acd254920a7b",
+        "PPAC/Migration/Internal/SyntaxFreeSubstSyntax.lean": "0daea3f19a74d60f836e0f83a979ed1b9ad94584bb6e6c28126cccb3dfd42c9c",
+        "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
+        "PPAC/Migration/OmegaUniversal.lean": "9581783ce0c6063bb68a0ecc4ea822a0284ffe95c90570fcd124fe57b3174762"
       },
-      "scope": "ALL FOUR already completed actual component comparisons are CONSUMED at the SAME original existential-tail trace with common actual operation frames. The SAME Reln and Dom and original member/order/domain/child compilers supply all source guards; each original compiler is actually consumed, not replaced by output/code equality. Member/order/domain operation frames are DERIVED from the SAME actual trace and child/canonical operation records, existing scope/base results and original target_type. Actual raw four leaf queries extracted from original TailOpening.scopeData. Existing member/order/domain/child compare theorems yield all FOUR leaf-output equalities. Original Derives.eqSubst plus SyntaxLogicalFields.binary_unique/single_unique package THREE AND and BOTH EX, proving SAME actual tail outputs Y=Y1. Ordinary nativeZF original-kernel closed sentence. All runtime codes/scopes/tables/outputs internal including nonstandard; finite8/16 are witness-coordinate metadata only. No guard/preorder truth, output equality answer, new compiler/kernel/checker/recursor/induction or object Choice. Common r-head/name-head and complete canonical child operation frames remain EXPLICIT operation hypotheses; production by existing canonical generator and arbitrary pair-of-trace normalization using already proved scope_alignment are NOT yet discharged here. This conditional common-frame tail comparison is complete; do NOT report four-component consumption/two-EX packaging itself as missing. Complete premise-discharge, canonical proof contexts/fresh forall/original joint mono/dense/MP/all internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
+      "scope": "Complete ORIGINAL raw existential-tail outer-condition independence from TWO ACTUAL raw queries. rawInput contains ONLY original closed root old-name layout/cons, internal source a/A/B/C successor operations, arbitrary internal child FormulaCode, SAME base outer-condition point-updates, exact original five tail constructors and complete member/order/domain/child compilers with fixed original Reln/Dom and numeral roles. It assumes NO execution traces, output equality, scope equalities, canonical tables/queries, common head, guard/preorder truth or Choice. from_queries calls existing prepare_query twice and internally produces/eliminates BOTH SIXTEEN actual trace witness blocks. Existing scope_alignment and original successor_unique derive all source/target alignments; four eqSubst steps preserve SAME actual tables/leaf outputs while normalizing scopes. from_initial calls existing ChildCanonical.derive ONCE and generates/eliminates ALL NINE common canonical witnesses. Existing list_free graph witness plus graph_mixed promotes SAME old-name code; SAME generated canonical bvar0 head serves target c and d through original term_at_zero, NO separate name-head producer. SAME generated E/E1 serve both child/order. Completed compare actually consumes ALL FOUR original component comparisons, derives leaf equalities and packages THREE AND/BOTH EX by original constructor uniqueness. THREE ordinary nativeZF original-kernel closed sentence endpoints (common frames, generated canonical frames, actual raw queries). Original10 bodies and footprints unchanged; all runtime source depths/target free count/formula/proof-operation codes and witnesses internal including nonstandard. Fixed Reln/Dom/k and8/16 coordinates are source signature/witness metadata, not a standardness restriction. No new compiler/kernel/checker/recursor/induction or object Choice. Whole raw-tail comparison, arbitrary two-trace alignment and canonical/head premise discharge are NOW COMPLETE; do NOT list them as pending. Canonical proof contexts/fresh forall, original joint mono/dense/exists_neg/imp/MP, ALL internal ZF/U axioms and six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingExistTailComparison.values": [
           "propext"
@@ -172679,6 +172691,66 @@
           "propext"
         ],
         "PPAC.Migration.ForcingExistTailComparison.kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.initialInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.initialInput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.from_initial": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.initialSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.initial_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.rawInput": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.rawInput_rename": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.from_queries": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.rawSentence": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.ForcingExistTailComparison.raw_kernel_certificate": [
           "Classical.choice",
           "Quot.sound",
           "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",

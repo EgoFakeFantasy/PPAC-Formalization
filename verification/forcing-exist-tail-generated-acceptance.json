@@ -1,0 +1,169 @@
+{
+  "verified_at": "2026-11-10T14:08:20.792626+00:00",
+  "baseline_commit": "25590bcf9834dd853c09c6440a370c9032aea3df",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: four actual component comparisons and BOTH EX packaging accepted at common operation frames; full39525 and remote25590bc publication verified",
+  "background": "Original full ordinary nativeZF, pure membership/equality, original FirstOrder.Derives through unchanged replay. Runtime source depths/target free counts/all codes including child/formula/operation/trace witnesses internal including nonstandard. No object Choice or new kernel/compiler/checker/recursor/induction.",
+  "source_consumers": [
+    "Pinned AtomicData.Force ex literal SAME full tail",
+    "AtomicData.force_mono ex: actual SAME tail under two outer-condition point updates"
+  ],
+  "result": [
+    "initialInput contains no common head or canonical overwrite/lift/query record; existing ChildCanonical.derive is CALLED ONCE and ALL NINE object witnesses generated/eliminated",
+    "Original list_free graph witness and graph_mixed retag SAME closed old-name code; same canonical E/E1 reused for BOTH child/order",
+    "Original term_at_zero retags SAME canonical bvar0 head at BOTH target scopes; no extra name-head object or producer",
+    "from_queries accepts TWO actual raw queries, exact source constructors/complete compilers and original closed root/layout/point-update operations ONLY",
+    "Existing prepare_query CALLED TWICE produces/eliminates BOTH SIXTEEN actual trace blocks internally",
+    "Original successor_unique fixes original B/C; existing scope_alignment derives pair scope equalities; four eqSubst steps normalize records retaining actual maps and outputs",
+    "Completed compare actually consumes ALL FOUR component proofs and packages THREE AND/BOTH EX; resulting actual raw output equality Y=Y1",
+    "THREE ordinary nativeZF closed sentence endpoints: common operations, generated canonical frames, raw queries. NO trace/head/canonical/scope equality/leaf equality answer remains a raw endpoint premise"
+  ],
+  "proof_boundaries": {
+    "whole_actual_raw_existential_tail_outer_condition_independence_completed": true,
+    "both32_actual_trace_witnesses_generated_eliminated": true,
+    "all9_canonical_witnesses_generated_eliminated": true,
+    "arbitrary_pair_trace_normalization_and_source_scope_alignment_completed": true,
+    "given_trace_head_canonical_or_scope_equalities_at_raw_endpoint": false,
+    "given_leaf_or_tail_output_equality_or_guard_truth": false,
+    "original_closed_root_layout_numeral_roles_and_complete_source_compilers_remain_input_operations": true,
+    "all_original_force_mono_dense_exists_neg_imp_joint_induction_completed": false,
+    "canonical_proof_context_layout_fresh_forall_and_normalized_MP_actual_consumers_completed": false,
+    "all_internal_ZF_U_axioms_six_rule_Proof_reduction_finalCon_completed": false,
+    "final_internal_Con_proved": false
+  },
+  "validation": {
+    "audited_declarations": 39535,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37269,
+    "warnings": 0,
+    "old_declaration_footprints_unchanged": 39525,
+    "old_proof_files_byte_identical_except_extended_module": 2873,
+    "only_extended_old_proof": "PPAC/Migration/ForcingExistTailComparison.lean",
+    "old10_mathematical_bodies_and_footprints_unchanged": true,
+    "sealed_source_inputs_all_fresh": 2907,
+    "expected_changed_old_inputs": [
+      "Audit.lean",
+      "PPAC/Migration/ForcingExistTailComparison.lean",
+      "scripts/verify.py",
+      "docs/SOURCE_LOCK.json"
+    ],
+    "full_commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "all_five_trust_zero_commands_passed": true,
+    "preaudited_current_module_declarations": 20,
+    "compatibility_regressions_passed": 9,
+    "comparator_guard_regressions_passed": 7,
+    "three_clean_pins_and_original_source_hashes": 75,
+    "full_summary_sha256": "d52f7a0932ca8e2e2312b9f75697ca3a4c9cd41b5e23d638ef82d6737db9b519",
+    "audit_log_sha256": "4ff87d33511fc3229a87daa60f51decdff5c3594cd46f05ce6b02d8476209f19"
+  },
+  "cleanup": {
+    "manifest": ".local/exist-tail-generated-cleanup.json",
+    "exact_own_temporary_files": 5,
+    "total_bytes": 13231646,
+    "performed": true,
+    "retained_source_postcleanup_trust_zero_exit_code": 0,
+    "residual_Lean_Lake_processes": 0
+  },
+  "remote_current_CI": {
+    "run_id": 42826957612,
+    "job_id": 129866671492,
+    "commit": "25590bcf9834dd853c09c6440a370c9032aea3df",
+    "expected_audited_declarations": 39525,
+    "last_observed_status": "in_progress",
+    "fresh_attempt_specific_endpoint_verified": true,
+    "next_push_waits_for_terminal_success_and_actual_decoded_PASS": true
+  },
+  "next_required_step": "Whole original raw existential tail independence is DONE, including actual32 traces, scope/source alignment, canonical9 and same-head premise discharge. Do NOT reprove tail/components or build any head/map/induction backend. Canonical PROOF-context layout and fresh forall actual source consumer must now consume existing ForcingPreorderExistential.derive resultData (actual tail + implication + already produced Curry result) and this raw equality. Existing InternalProofUniversal.guarded_generalize/input and InternalProofCurry.from_implication/twice are ALREADY PROVED, not missing mathematics; input requires actual two abstracted judgments W->G and F->J, binary implication W/F/I and proved I at extended free scope. Produce/identify the actual source G0/context/abstractions using existing mode3 and canonical layouts, then apply the existing theorem. Original full formula induction already exists in ForcingFormulaInduction (cancellation); do not confuse it with still-unassembled original JOINT forcing mono/dense/exists_neg/imp/MP. Then all internal ZF/U axioms, SIX original Root rules, reduction and finalCon."
+}

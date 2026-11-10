@@ -6,7 +6,7 @@
 
 ## 已完成并必须复用
 
-最新验收为 `ForcingExistTailComparison.compare`：在同一实际16记录及给定共用 head／canonical 操作帧下，已实际消费全部四个组件比较，导出叶子等式并用原唯一性封装三次 AND、两次 EX。九命令／五项 trust=0 通过，39525项声明零警告；旧39515足迹和2873份旧证明文件保持，见 [验收回执](../verification/forcing-exist-tail-comparison-acceptance.json)。**共同操作帧尚未内部生成／消去，因此还不是完整原始尾部不变性或最终 Con。** 下一步只消费一次原 `ForcingExistChildCanonical.derive`，其同一两侧覆盖兼供 child 和 order；原 `SyntaxMixedImageHead.term_at_zero` 可将同一 canonical bvar0 头码在第二实际作用域重定类型，令 Name=head，无需额外 head 见证。消费既有作用域等式规范化两条实际 trace，然后调用本批 compare。四组件消费和两层 EX 合并已完成，不再误报为待做。
+最新验收为 ForcingExistTailComparison.from_queries/raw_kernel_certificate：从两条实际原始尾部查询内部生成并消去32个 trace 见证、全部9个 canonical 见证及实际作用域对齐，不再给定 trace、共用 head、canonical 表或任何期望等式。保留原闭根布局／完整源编译记录／实际点更新及查询输入。九命令／五项 trust=0 全通过，39535项声明零警告，旧39525足迹及2873份其他旧证明不变，见 [验收回执](../verification/forcing-exist-tail-generated-acceptance.json)。完整原存在尾部比较及全部共用帧消去已完成，禁止重做。下一步实际消费原 ForcingPreorderExistential.derive 的 tail／implication／Curry 结果及本批 raw 等式，构造正确的源 canonical 证明上下文与两条 mode3 abstraction，调用已有 InternalProofUniversal.guarded_generalize；该规则、Curry、mode3、公式归纳均已证明，不是待重建数学。原联合强迫／内部公理／六规则 Proof／reduction／最终 Con 仍需装配。
 
 | 已有资产 | 当前精确边界 |
 |---|---|

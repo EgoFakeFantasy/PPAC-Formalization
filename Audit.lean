@@ -40231,3 +40231,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailComparison.input_rename
 #print axioms PPAC.Migration.ForcingExistTailComparison.sentence
 #print axioms PPAC.Migration.ForcingExistTailComparison.kernel_certificate
+#print axioms PPAC.Migration.ForcingExistTailComparison.initialInput
+#print axioms PPAC.Migration.ForcingExistTailComparison.initialInput_rename
+#print axioms PPAC.Migration.ForcingExistTailComparison.from_initial
+#print axioms PPAC.Migration.ForcingExistTailComparison.initialSentence
+#print axioms PPAC.Migration.ForcingExistTailComparison.initial_kernel_certificate
+#print axioms PPAC.Migration.ForcingExistTailComparison.rawInput
+#print axioms PPAC.Migration.ForcingExistTailComparison.rawInput_rename
+#print axioms PPAC.Migration.ForcingExistTailComparison.from_queries
+#print axioms PPAC.Migration.ForcingExistTailComparison.rawSentence
+#print axioms PPAC.Migration.ForcingExistTailComparison.raw_kernel_certificate
