@@ -26,4 +26,4 @@
 
 最新本地验收见verification/forcing-exist-child-terms-acceptance.json：39379项声明、2266项无公理、37113项仅既有记录依赖，零警告。39364项旧足迹保持，2863份旧证明源码完全不变；原child生产器仅3处可见性前缀改变、所有证明正文不变，2898项密封输入已重算。16回归、三个干净锁定依赖及75源哈希通过。只清理9个本轮临时文件（27263951字节），清理后两个受影响源码trust=0退出0，未见残留Lean／Lake进程。本地验收不替代新提交Linux结果。
 
-详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-relation-raw-remote-acceptance.json，f74c26f／39284项声明；后续a0665fa独立CI仍在运行，本批39379项不在已有Linux成功范围。历史批次以Git和不可改写回执为据。
+详细入口见[CURRENT_STATUS](CURRENT_STATUS.zh-CN.md)及[原1–11阶段](AGENT_WORKFLOW.zh-CN.md)。最新已解码Linux成功回执为verification/ci-preorder-negative-remote-acceptance.json：a0665fa／39347项声明，实际PASS时间2026-11-09T22:10:46.0494708Z；本地39379项尚需新提交独立Linux验收。历史批次以Git和不可改写回执为据。

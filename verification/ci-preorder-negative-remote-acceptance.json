@@ -1,0 +1,12 @@
+{
+  "run_id": 42695940297,
+  "job_id": 129427677971,
+  "commit": "a0665fa986cb16358b933a95808edcab26f189ff",
+  "url": "https://github.com/EgoFakeFantasy/PPAC-Formalization/actions/runs/42695940297",
+  "actual_live_job_conclusion": "success",
+  "actual_decoded_PASS_line": "2026-11-09T22:10:46.0494708Z PASS: 39347 audited declarations; 2266 without axioms; 37081 with recorded dependencies; 0 warning lines; inherited native certificate axioms recorded.",
+  "audited_declarations": 39347,
+  "warnings": 0,
+  "scope": "Independent clean Linux acceptance of complete negative compiler/guard consumer, including earlier leaf and guard table batches. Excludes later 3a11fba and df180d9. Final internal Con unproved.",
+  "decoded_log_sha256_lf": "f906c899e90c98b86e035dd787bac503ac40107d63133357115533279e98fbda"
+}

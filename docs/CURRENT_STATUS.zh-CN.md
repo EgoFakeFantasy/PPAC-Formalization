@@ -77,4 +77,4 @@
 
 每批发布前等待上一轮远端CI终态成功并读取实际native PASS日志；本地通过不冒充Linux干净环境通过。只清理已核对路径／大小／SHA256的自建临时材料，不清理其他项目或重启仍活跃的任务。
 
-远端42680491232／f74c26f已独立完整Linux成功；实际解码日志2026-11-09T20:34:30.4267947Z报告39284项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact成功，见verification/ci-relation-raw-remote-acceptance.json。当前远端a0665fa的39347项范围仍在独立Linux验收；后续本地39379项尚未推送，最终Con未完成。
+远端42695940297／a0665fa已独立完整Linux成功；实际解码日志2026-11-09T22:10:46.0494708Z报告39347项声明、零警告。安装、锁定依赖、16回归、75源哈希、完整构建／审计及artifact均成功，见verification/ci-preorder-negative-remote-acceptance.json。后续本地39379项需新提交独立Linux验收；最终Con未完成。
