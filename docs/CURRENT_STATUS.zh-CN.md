@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-ForcingWeakenedImages.produce 已从旧项像合法性、Omega 和原后继关系生成十个实际弱化／图／列表见证；from_queries 已从同一记录及两次实际源公式查询推导原 weakened 关系，两个 mixed 码、两个 realization 图和实际输出在对象层生成消去，并调用已完成的 ReindexedImages 全内部公式比较。generalize_layout 已实际消费该结论和已有 FreshBackground／guarded forall。没有给定 weakened 答案、点态字段律、相等答案或新的归纳后端。完整九命令／五项 trust=0 通过，39632项声明、零警告；全部39614旧足迹及2879份旧证明源码保持，2913项密封输入与实际提交源码核对一致，见[源弱化验收](../verification/forcing-weakened-images-acceptance.json)。仍未证明同一 canonical Global 的实际源查询对应，最终 Con 未证明；原第10阶段继续，第11未开始。
+ForcingWeakenedOverwrite 已从同一生成弱化记录、实际旧／新原覆盖记录和实际项重命名查询，推导任意内部槽的覆盖／弱化相容性。内部产生旧字段和六个候选图／码见证，复用原 StructuralListCodeInduction.unique 证明候选表就是 SAME 实际新覆盖表；保留原弱化码、真实索引图和bound表，仅两张改变的free图作为对象见证。from_double_queries 已实际消费两边原 ForcingRelationImages.data 双覆盖记录：第一步传输所得记录直接用于第二步，最后调用已有原弱化查询定理。没有给定表等词、字段律或弱化答案，没有新递归／归纳后端。两个普通nativeZF原核端点及完整九命令／五项trust=0通过，39647项声明、零警告；全部39632旧足迹及2880份旧证明源码保持，见[原双覆盖验收](../verification/forcing-weakened-overwrite-acceptance.json)。原第10阶段继续，canonical Global最终匹配和Con尚未证明，第11未开始。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@ ForcingWeakenedImages.produce 已从旧项像合法性、Omega 和原后继关�
 
 ## 当前真正缺口与依赖顺序
 
-1. 同一实际新参数底表和 q/p 双槽覆盖记录的字段匹配。直接复用 ForcingWeakenedImages.produce/from_queries、ForcingReindexedImages.field_iff、ForcingRelationImages.left_field/right_field/outside，以及现有裸R／raw直接查询和原列表字段唯一性；不重建图、列表递归或公式归纳。先证明新双覆盖表就是旧双覆盖表的实际弱化像；fresh r 为新free0，不得要求它等于旧r的弱化。再对应实际 Pre、q/p 成员与关系、Extra，用原四个AND构造识别 SAME canonical Global，消费已完成的 FreshBackground／ProofUniversal。
+1. 实例化 SAME 原分支的 fresh q/p 项、Pre／成员／Extra 和四个AND，识别 SAME canonical Global。原 q/p 双覆盖与弱化的实际记录传输现已由 ForcingWeakenedOverwrite.from_double_queries完成，不再列为缺口。直接复用 ForcingPreorderInstances 已有 open_target（651行）及 targetData：前者接受同一 rawData、任意合法新目标表／三个条件项，后者保留完整源Pre查询；不重新报价或重写native实例生产器。生成 q/p 的真实项重命名输出和新free0条件r，用同一生成参数表及同一 rawData 产生新Pre／三个native实例，再用现有 member、bare-R/raw 查询对应、原弱化原子／逻辑构造律和已完成单双覆盖传输对齐五个背景叶并合成四个AND。fresh r 不得要求等于旧r的弱化。
 2. 完成原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部码归纳及规范化强迫MP；普通字面蕴含组合或外层实例不能替代此门。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

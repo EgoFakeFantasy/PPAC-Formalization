@@ -1178,3 +1178,4 @@ import PPAC.Migration.ForcingScopeIdentity
 import PPAC.Migration.ForcingFreshBackground
 import PPAC.Migration.ForcingReindexedImages
 import PPAC.Migration.ForcingWeakenedImages
+import PPAC.Migration.ForcingWeakenedOverwrite

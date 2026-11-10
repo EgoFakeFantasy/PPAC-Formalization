@@ -40344,3 +40344,19 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedImages.kernel_certificate
 #print axioms PPAC.Migration.ForcingWeakenedImages.querySentence
 #print axioms PPAC.Migration.ForcingWeakenedImages.query_kernel_certificate
+
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.frame
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.frame_rename
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.field_forward
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.resultBody
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.result
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.result_rename
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.produce
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.from_queries
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame_rename
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.from_double_queries
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.sentence
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.kernel_certificate
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleSentence
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.double_kernel_certificate

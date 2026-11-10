@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-第10阶段最新已验收消费者：ForcingWeakenedImages.produce 已从旧项像合法性、Omega 和原后继关系生成十个实际弱化／图／列表见证；from_queries 已从同一记录及两次实际源公式查询推导原 weakened 关系，两个 mixed 码、两个 realization 图和实际输出在对象层生成消去，并调用已完成的 ReindexedImages 全内部公式比较。generalize_layout 已实际消费该结论和已有 FreshBackground／guarded forall。没有给定 weakened 答案、点态字段律、相等答案或新的归纳后端。完整九命令／五项 trust=0 通过，39632项声明、零警告；全部39614旧足迹及2879份旧证明源码保持，2913项密封输入与实际提交源码核对一致，见[源弱化验收](../verification/forcing-weakened-images-acceptance.json)。仍未证明同一 canonical Global 的实际源查询对应，最终 Con 未证明；原第10阶段继续，第11未开始。
+第10阶段最新已验收消费者：ForcingWeakenedOverwrite 已从同一生成弱化记录、实际旧／新原覆盖记录和实际项重命名查询，推导任意内部槽的覆盖／弱化相容性。内部产生旧字段和六个候选图／码见证，复用原 StructuralListCodeInduction.unique 证明候选表就是 SAME 实际新覆盖表；保留原弱化码、真实索引图和bound表，仅两张改变的free图作为对象见证。from_double_queries 已实际消费两边原 ForcingRelationImages.data 双覆盖记录：第一步传输所得记录直接用于第二步，最后调用已有原弱化查询定理。没有给定表等词、字段律或弱化答案，没有新递归／归纳后端。两个普通nativeZF原核端点及完整九命令／五项trust=0通过，39647项声明、零警告；全部39632旧足迹及2880份旧证明源码保持，见[原双覆盖验收](../verification/forcing-weakened-overwrite-acceptance.json)。原第10阶段继续，canonical Global最终匹配和Con尚未证明，第11未开始。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -17,7 +17,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码、quotation、axiom Node/Root基例、原重绑定、完整公式归纳和raw存在尾部全部比较已完成；六个canonical上下文码、Curry、正文抽象／guarded forall、范围恒等提升、首槽weak/abstract相消已完成。实际旧／新项像推送及原弱化查询对应现已完成，全部操作／输出见证在对象层产生消去 | 同一实际源新参数及q/p覆盖记录与canonical Global查询匹配；原联合force_mono／force_of_dense／exists_force_neg／forceFormula_imp、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码、quotation、axiom Node/Root基例、原重绑定、完整公式归纳和raw存在尾部全部比较已完成；六个canonical上下文码、Curry、正文抽象／guarded forall、范围恒等提升、首槽weak/abstract相消已完成。实际旧／新项像推送、原弱化查询和原q/p双覆盖记录的传输均已完成，全部操作／输出见证在对象层产生消去 | 实例化同一源fresh q/p项、Pre／成员／Extra及四AND的canonical Global匹配；原联合force_mono／force_of_dense／exists_force_neg／forceFormula_imp、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：同一实际新参数底表和 q/p 双槽覆盖记录的字段匹配。直接复用 ForcingWeakenedImages.produce/from_queries、ForcingReindexedImages.field_iff、ForcingRelationImages.left_field/right_field/outside，以及现有裸R／raw直接查询和原列表字段唯一性；不重建图、列表递归或公式归纳。先证明新双覆盖表就是旧双覆盖表的实际弱化像；fresh r 为新free0，不得要求它等于旧r的弱化。再对应实际 Pre、q/p 成员与关系、Extra，用原四个AND构造识别 SAME canonical Global，消费已完成的 FreshBackground／ProofUniversal。随后完成原联合mono／dense／exists_neg／imp、规范化强迫MP、全部内部公理／六规则Proof、reduction和最终Con。完整raw尾部／两层EX比较、六个上下文码、Curry、正文抽象、通用弱化抽象相消及范围提升均已完成，不再列为待办。
+当前下一原消费者：实例化 SAME 原分支的 fresh q/p 项、Pre／成员／Extra 和四个AND，识别 SAME canonical Global。原 q/p 双覆盖与弱化的实际记录传输现已由 ForcingWeakenedOverwrite.from_double_queries完成，不再列为缺口。直接复用 ForcingPreorderInstances 已有 open_target（651行）及 targetData：前者接受同一 rawData、任意合法新目标表／三个条件项，后者保留完整源Pre查询；不重新报价或重写native实例生产器。生成 q/p 的真实项重命名输出和新free0条件r，用同一生成参数表及同一 rawData 产生新Pre／三个native实例，再用现有 member、bare-R/raw 查询对应、原弱化原子／逻辑构造律和已完成单双覆盖传输对齐五个背景叶并合成四个AND。fresh r 不得要求等于旧r的弱化。随后消费现成FreshBackground／ProofUniversal，完成原联合mono／dense／exists_neg／imp、规范化强迫MP、全部内部公理／六规则Proof、reduction及最终Con。完整raw尾部、上下文码、Curry、mode3／forall、范围提升、weak/abstract相消、项像图及双覆盖传输都已完成，不再列为待办。
