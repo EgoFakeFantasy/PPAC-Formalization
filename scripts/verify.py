@@ -2785,7 +2785,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_source_mono', 'ForcingSourceMono', 11),
                                 ('forcing_nested_guard_proof', 'ForcingNestedGuardProof', 11),
                                 ('forcing_fresh_opening_inverse', 'ForcingFreshOpeningInverse', 23),
-                                ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 29)):
+                                ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
+                                ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 29)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6189,6 +6190,9 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_new_parent_raw_fresh_opening_construction_witnesses": 20,
         "object_full_negative_and_existential_compilers_consumed_by_fresh_opening": True,
         "object_actual_new_parent_canonical_guard_tail_to_nested_K_match_proved": False,
+        "object_raw_member_order_guard_compiler_direct_query_normalization_proved": True,
+        "object_canonical_overwritten_parent_opening_same_New_table_proved": True,
+        "object_actual_raw_guard_opening_scope": source_lock["source_proof_adaptations"]["forcing_raw_guard_opening"]["scope"],
         "object_actual_new_parent_raw_fresh_opening_scope": source_lock["source_proof_adaptations"]["forcing_fresh_parent_opening"]["scope"],
         "object_fresh_opening_inverse_scope": source_lock["source_proof_adaptations"]["forcing_fresh_opening_inverse"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,

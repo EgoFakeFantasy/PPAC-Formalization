@@ -375,6 +375,16 @@ private theorem at_images {m} {Gamma : Context m} {p : Params m} {v : Fin 10 →
     exact of_eq (by simp only [data_rename, assign_old, assign_slot]) hd
   exact of_eq (by simp only [atImages_rename]; rfl) result
 
+/-- Reuse the SAME actual weak-image record supplied by an existing source
+producer, including WeakenedOverwrite. This is the unchanged private proof,
+so canonical tables need not be regenerated or identified afterwards. -/
+theorem produce_at_images {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+    (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m)
+    (hi : Derives Gamma (input w z a f alpha b A B t R S n x Parent))
+    (hv : Derives Gamma (ForcingWeakenedImages.data w a f z b B R S v)) :
+    Derives Gamma (atImages w z a f alpha b A B t R S n x Parent v) :=
+  at_images (Gamma := Gamma) (p := ⟨w,z,a,f,alpha,b,A,B,t,R,S,n,x,Parent⟩) (v := v) ⟨hZ,hi,hv⟩
+
 /-- ONE actual parent query suffices. Generate the ten actual weak-image
 records, both pairs of lifted tables, both actual target bodies, weakened
 whole-parent output, native fresh instance, cons table and direct raw-body

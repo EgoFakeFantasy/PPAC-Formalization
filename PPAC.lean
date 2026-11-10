@@ -1190,3 +1190,4 @@ import PPAC.Migration.ForcingSourceMono
 import PPAC.Migration.ForcingNestedGuardProof
 import PPAC.Migration.ForcingFreshOpeningInverse
 import PPAC.Migration.ForcingFreshParentOpening
+import PPAC.Migration.ForcingRawGuardOpening

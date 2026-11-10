@@ -1,0 +1,322 @@
+{
+  "baseline_commit": "ce3746de4894e4a221e267e79ccd5c5de39cd8fc",
+  "source": "Pinned ForcingQuotient.force_mono neg/ex actual fresh guard opening and condition overwrite",
+  "result": "Original member AND order guard compilers normalize to SAME actual raw-query output; exact same canonical overwritten free table can feed unchanged fresh parent opening",
+  "nativeZF_closed_endpoints": 4,
+  "raw_guard_public_declarations": 29,
+  "existing_parent_opening_wrappers_added": 1,
+  "all_original_parent_opening_proof_text_byte_exact_after_single_wrapper_removed": true,
+  "all_internal_template_free_indices": true,
+  "actual_root_term_candidates_object_ALL5": true,
+  "identity_witnesses_generated_eliminated_internally": 4,
+  "existing_full_FormulaInduction_cancel_actually_called": true,
+  "original_guard_compiler_witnesses_opened": 4,
+  "independent_singleton_and_formula_outputs_generated_internally": true,
+  "actual_guard_output_and_actual_free_table_retained": true,
+  "fixed_OpenLayout_required": false,
+  "existing_fresh_parent_opening_actual_data_consumed": true,
+  "cons_zero_field_and_typed_lists_derived_internally": true,
+  "existing_WeakenedOverwrite_produce_actually_called": true,
+  "same_canonical_overwrite_New_reused_without_independent_map_equality": true,
+  "actual_changed_free_graph_witnesses_opened": 2,
+  "concrete_raw_member_order_tail_to_canonical_nested_body_match_proved": false,
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "original_stage": 10,
+  "stage11_started": false,
+  "other_old_non_entry_lean_git_blobs_unchanged": 2895,
+  "all_old_footprints_unchanged": 39803,
+  "audited_declarations": 39833,
+  "warning_lines": 0,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "trust_zero_commands": 5,
+  "build_jobs": 3365,
+  "compatibility_tests_passed": 16,
+  "clean_pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "sealed_working_inputs_verified": 2926,
+  "new_footprints": {
+    "PPAC.Migration.ForcingRawGuardOpening.frame": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.frame_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.path": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.path_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.term_diagram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.formulaPath": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.formulaPath_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.from_matrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.compilerInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.compilerInput_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.from_compiled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.compilerSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.compiler_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.openedInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.openedInput_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.from_opened": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.openedSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.opened_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwrittenBody": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwritten": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwritten_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwrittenInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.open_overwritten": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwrittenSentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawGuardOpening.overwritten_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.produce_at_images": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "full_verification_log_sha256": "99151aa151f3033199e0c21fc9af3a6db28991d1be376baa2286f47dc9b42061",
+  "exact_own_temporary_files_to_remove": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\raw-guard-baseline.tmp.json",
+      "raw_sha256": "99e45fbea8f31f4f3698dcdf15addff6e51e97a087ccdcfe034f56d9c20b457d"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\raw-guard-check.tmp.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\raw-guard-parent-check.tmp.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\raw-guard-audit.tmp.lean",
+      "raw_sha256": "72fa03f1b7847a057ace77d991ec9b11331cc4ae8915efc080eed33e18736994"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\raw-guard-audit.tmp.log",
+      "raw_sha256": "23c46d1d847f8d36b805ab87e8259e765ccd439dc1b436d50a205e1040e6ce74"
+    }
+  ],
+  "post_cleanup_trust_zero_passed": true
+}
