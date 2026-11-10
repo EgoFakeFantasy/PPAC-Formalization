@@ -1,0 +1,135 @@
+{
+  "verified_at": "2026-11-10T18:07:14.970829+00:00",
+  "baseline_commit": "714d04e530ed585d8618874001188a0dfa63aad7",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: authoritative CI failure logs verified; current compatibility repair already accepted and remote verified successes; actual member migration WIP inspected before continuation",
+  "background": "Original nativeZF in pure membership signature, original FirstOrder.Derives; runtime scope/list/formula/field/operation codes internal including nonstandard",
+  "result": [
+    "Consume SAME raw source old/new actual ForcingPreorderLeaves.data via unchanged raw_from_data",
+    "Generate/eliminate both carrier-field witnesses; existing pushed field_iff derives their actual index rename query",
+    "Eliminate both original member-symbol witnesses using zeroScalar uniqueness and actual membership_iff",
+    "Derive original weakened oldMember newMember for selected q or p; fresh r slot need not match",
+    "Ordinary nativeZF closed original-kernel certificate; no new checker/recursion/induction/kernel"
+  ],
+  "proof_boundaries": {
+    "actual_source_row_member_outputs_consumed": true,
+    "carrier_and_symbol_witnesses_object_bound": true,
+    "actual_selected_condition_term_rename_computational_input": true,
+    "actual_old_new_leaf_rows_computational_inputs": true,
+    "generated_native_EX6_EX10_EX5_opened_into_rows": false,
+    "expected_member_code_or_weak_relation_given": false,
+    "whole_canonical_Global_proved": false,
+    "final_internal_Con_proved": false
+  },
+  "verification": {
+    "audited_declarations": 39668,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37402,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "build_jobs": 3355,
+    "new_module_build_seconds": 7.5,
+    "previous_exact_footprints_unchanged": 39658,
+    "all_existing_proof_Git_blobs_unchanged": 2882,
+    "sealed_inputs_checked": 2916,
+    "sorted_seal_manifest_sha256": "1caba1ce90acfaf66879ab9a3536d6a190bbd16e92dd198bb2a9f7c48b201ec2",
+    "new_public_declarations": 10,
+    "module_and_preaudit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "original_source_hashes": 75,
+    "post_cleanup_module_trust0_passed": true
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingMemberWeakening.reader": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.reader_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.from_readers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.rowsFrame": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.rowsFrame_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.from_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberWeakening.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "cleanup_exact_own_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-weakening-baseline.tmp.json",
+      "bytes": 13168933,
+      "raw_sha256": "10de9fd3ccaad60c430a23955abe81d2eef61945d3c0f66d77cddcc58fe97224"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-weakening-audit.tmp.lean",
+      "bytes": 694,
+      "raw_sha256": "1ce93477063e52a3423f8c678453eda9d43b07bfbb72789a1e2571fd8d188c29"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-weakening-precompile.tmp.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-weakening-preaudit.tmp.log",
+      "bytes": 1523,
+      "raw_sha256": "994b13737817d697b6b05b22b7ca1dcc8a14ba5caf1b9d03c6a1581a266275a2"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-weakening-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "next_actual_source_consumer": "Open already-produced EX6 native F/U, EX10 leaves/tails and EX5 backgrounds retained in same FreshPreorder targetData; use existing PreorderLeaves.from_row and current from_rows. No new producer. Read actual bare-R outputs and use completed WeakenedOverwrite.from_double_queries; Extra and4 ANDs align SAME canonical Global, then existing FreshBackground/ProofUniversal. Joint forcing/full internal axioms/sixruleProof/reduction/finalCon remain.",
+  "cleanup_verified": {
+    "exact_own_files_removed": 5,
+    "bytes_removed": 13171150,
+    "all_targets_absent": true,
+    "resolved_parent_and_raw_hash_verified": true,
+    "remaining_Lean_Lake_processes": 0
+  }
+}

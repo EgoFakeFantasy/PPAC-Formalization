@@ -173760,6 +173760,96 @@
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives, all runtime condition terms, free scopes b/B and code/query outputs internal including nonstandard. Input is actual old rawData (SAME sixteen source quotation codes), typed old q/p, old actual WHOLE Pre query, original empty bound/successor and existing actual generated weak-image data (producer already proved). No chosen fresh condition terms, target Pre/native instance outputs, expected new query or weak relation. Original SyntaxTerms generates fresh r as free0; original arbitrary-index SyntaxRenameTermExistence generates q/p actual target terms and rename queries; old open_target consumes SAME rawData and actual already-generated v8/v9 target images, preserving full actual Pre/Refl/transitivity queries and ALL3 native instance/proof records in targetData. All SIX new r/q/p/Pre/Refl/transitivity witnesses generated under object EXs. Actual new WHOLE Pre query immediately consumed with old Pre query by WeakenedImages.from_queries, yielding original weakened oldPre newPre in SAME output data. NativeZF closed kernel certificate for whole result. Donor open_target proof body unchanged; only private keyword removed, old27 footprints preserved. Explicit three_map aligns lifted metadata tuple BEFORE elimination, avoiding whnf unfolding huge native records; no heartbeat increase. Does NOT yet extract and align SAME fresh member/bare-R guard outputs, Extra and4AND canonicalGlobal, nor complete joint forcing/full axioms/sixruleProof/reduction/finalCon. No new compiler/graph/list/term/formula recursion, induction backend/checker/kernel/object Choice or standardness premise."
+    },
+    "forcing_member_weakening": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "additional_source_sha256": {
+        "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b"
+      },
+      "adapter": "PPAC/Migration/ForcingMemberWeakening.lean",
+      "source_declarations": [
+        "AtomicData.force_mono/neg/ex original q/p carrier-member leaves in same raw preorder instances"
+      ],
+      "consumers": [
+        "ForcingPreorderMember.raw_from_data consumes actual old and fresh rows; original membership_iff and pushed field_iff yield original weak relation for selected q/p member leaf",
+        "Next connect already-produced nested native row witnesses and combine actual canonical Global leaves"
+      ],
+      "reuse_producers": [
+        "PPAC/Migration/ForcingPreorderMember.lean",
+        "PPAC/Migration/ForcingWeakenedImages.lean",
+        "PPAC/Migration/ForcingReindexedImages.lean",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeAtoms.lean",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingMemberWeakening.lean": "980fffa0a31111a1e6afe48c0f038235a0199d715940322b14bf10812592989d",
+        "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
+        "PPAC/Migration/ForcingWeakenedImages.lean": "6154e010c5a182e50bcab7912f7aff12a95b55421be151a7217f12303b8b9b4b",
+        "PPAC/Migration/ForcingReindexedImages.lean": "5248436d3b24dc2bade2b256035eff3e7606535112a578f45acff86548d3c9b7",
+        "PPAC/Migration/Internal/SyntaxWeakenFreeAtoms.lean": "3651402492a9879d4059c259ee0c706deec6d38e00ca48d59ceab0be295a7463",
+        "PPAC/Migration/Internal/SyntaxZeroScalar.lean": "2c590d792934f471e6607d97144cab18384f3f248b0a3c3f374d17e0457708e6",
+        "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
+        "PPAC/Migration/Internal/SyntaxNumeralMembers.lean": "46e7187e0e3ed817db18a0ffb7678eb9dd63a3f95f2acc5ae324ce7c01cd6c8c"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingMemberWeakening.reader": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.reader_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.input": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.input_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.from_readers": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.rowsFrame": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.rowsFrame_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.from_rows": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingMemberWeakening.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "Ordinary nativeZF original FirstOrder.Derives. All runtime formula, field, list, scope and rename codes range over internal objects including nonstandard codes. Consumes SAME raw source and actual old/new ForcingPreorderLeaves.data, previously generated actual weak-image record, source carrier index k and its (k+2) source free scope, and actual rename query for ONLY selected condition q or p. Reads original raw member outputs using existing raw_from_data; internally generates and eliminates old/new carrier-field witnesses, obtains their actual rename query from existing pushed field_iff, and internally eliminates both zero-symbol witnesses via original uniqueness. Existing membership_iff proves original weakened oldMember newMember. No expected member code, whole table equality, carrier value, or desired weak relation given. Fresh r may differ; no irrelevant slot matching. Externally indexed source row/pattern is retained; all runtime variables internally quantified by close and replayed to original nativeZF kernel. Does not yet open the already-produced EX6/EX10/EX5 fresh native records into these rows, align bare-R/Extra/four ANDs/full canonical Global or prove joint forcing/full internal axioms/six-rule Proof/reduction/final Con. No new syntax checker, recursion, induction backend, proof kernel, object Choice or standardness assumption."
     }
   },
   "selected_route_consumer_audit": {

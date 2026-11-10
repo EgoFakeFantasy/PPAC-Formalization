@@ -18,7 +18,7 @@ ForcingFreshPreorder 已复用原 open_target，在 SAME 十六项 raw 源记录
 
 ## 当前真正缺口与依赖顺序
 
-1. 读取本批 SAME 源新实例内已经生成的 members／裸R原记录，匹配实际旧、新 q/p 背景输出，再处理 Extra 与四个AND的 SAME canonical Global。新 r/q/p、完整新Pre查询、ALL3 native 实例及 Pre弱化现由 ForcingFreshPreorder.produce完成，不再列为待办；原 q/p 双覆盖／弱化由 ForcingWeakenedOverwrite.from_double_queries完成，也不重做。targetData中的 instancesProved 已有 EX6 native F/U，随后 matrixExists 的 EX10叶及 backgroundExists 的 EX5背景全部由原 open_target产生；只需读取并复用 ForcingPreorderLeaves.from_row、原member/bare-R直接查询、弱化原子构造律及双覆盖消费者。先显式规范化有限元数据函数再做对象存在消去，避免整记录whnf比较。Pre弱化已在同一fresh数据内，q/p项重命名也已实际生成。Extra复用原弱化／证明生产器，四AND复用原逻辑构造律，然后消费现成FreshBackground／ProofUniversal。
+1. 本批 ForcingMemberWeakening.from_rows 已从 SAME raw 的实际旧、新 ForcingPreorderLeaves.data 读取选中 q/p 的成员输出，内部产生消去两侧载体字段和成员符号码，并用原 field_iff／membership_iff 推出原 weakened。它不要求 fresh r 相同，也不预设成员码或弱化答案。下一步仅展开 ForcingFreshPreorder.targetData 内已经产生的 EX6 native F/U、EX10 叶／尾、EX5 背景，复用原 PreorderLeaves.from_row 接入本入口；不能重造这些生产器。然后读取实际裸 R，消费已完成的双覆盖传输，再匹配 Extra 与四个 AND 的 SAME canonical Global。Pre 弱化、新 r/q/p 和 ALL3 native 实例已完成，不重做。
 2. 完成原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部码归纳及规范化强迫MP；普通字面蕴含组合或外层实例不能替代此门。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
@@ -28,3 +28,7 @@ ForcingFreshPreorder 已复用原 open_target，在 SAME 十六项 raw 源记录
 - [本批源弱化与实际forall消费](../verification/forcing-weakened-images-acceptance.json)：39632项声明，零警告，九命令及五项trust=0通过。
 - [上一批全内部项像／公式比较](../verification/forcing-reindexed-images-acceptance.json)及[首槽相消](../verification/forcing-fresh-background-acceptance.json)。
 - [Linux CI实际完成回执](../verification/ci-proof-universal-remote-acceptance.json)：远端613a6f0，39573项声明、零警告；后续提交CI以实际作业终态为准。
+
+本批成员叶实际源记录传输已完整验收：见[验收回执](../verification/forcing-member-weakening-acceptance.json)。39668项声明、零警告，九命令及五项trust=0通过；原39658项依赖和2882份旧证明Git正文保持。最终内部Con仍未证明。
+
+本批[成员叶迁移](../verification/forcing-member-weakening-acceptance.json)从实际旧、新叶记录取得原 weakened 的 nativeZF 原核证书；39668项完整审计、零警告。新实例内已生成的存在见证到该 rows 入口的连接仍待完成，不能把此局部原核证书说成完整 canonical Global 或最终 Con。
