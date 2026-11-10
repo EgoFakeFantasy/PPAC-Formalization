@@ -1182,3 +1182,4 @@ import PPAC.Migration.ForcingWeakenedOverwrite
 import PPAC.Migration.ForcingFreshPreorder
 import PPAC.Migration.ForcingMemberWeakening
 import PPAC.Migration.ForcingFreshLeaves
+import PPAC.Migration.ForcingMemberRows

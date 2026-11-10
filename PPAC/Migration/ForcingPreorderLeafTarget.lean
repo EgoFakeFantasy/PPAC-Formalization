@@ -30,7 +30,7 @@ private theorem v6_map {m l} (a b c d e f : Fin m) (ρ : Fin m → Fin l) :
   funext i
   exact Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun _ => rfl))))) i
 
-private def backgroundBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre : Fin m)
+def backgroundBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre : Fin m)
     (v : Fin 16 → Fin m) (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) : Formula (m+5) :=
   ForcingPreorderLeaves.produced test R (old 5 w) (old 5 z) (old 5 A1) (old 5 A2) (old 5 A3) (old 5 f) (old 5 T) (old 5 C) (old 5 B) (old 5 S) (old 5 Refl) (old 5 Pre) (fun i => old 5 (v i)) (slot 5) (fun i => old 5 (H i)) (fun i => old 5 (U i)) (fun i => old 5 (F i)) (fun i => old 5 (P i)) (fun i => old 5 (N i))
 
@@ -45,7 +45,7 @@ theorem background_rename {k m l} (test : Formula 1) (R : Source.Formula (k+2)) 
       (fun i => ρ (v i)) (fun i => ρ (H i)) (fun i => ρ (U i)) (fun i => ρ (F i)) (fun i => ρ (P i)) (fun i => ρ (N i)) := by
   simp only [background, existsMany_rename, backgroundBody, ForcingPreorderLeaves.produced_rename, lift_old, lift_slot]
 
-private def matrixBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre N0 : Fin m)
+def matrixBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre N0 : Fin m)
     (v : Fin 16 → Fin m) (U F P : Fin 3 → Fin m) : Formula (m+10) :=
   background test R (old 10 w) (old 10 z) (old 10 A1) (old 10 A2) (old 10 A3) (old 10 f) (old 10 T) (old 10 C) (old 10 B) (old 10 S) (old 10 Refl) (old 10 Pre) (fun i => old 10 (v i)) (v6 (slot 10 0) (slot 10 2) (slot 10 4) (slot 10 6) (slot 10 8) (slot 10 9)) (fun i => old 10 (U i)) (fun i => old 10 (F i)) (fun i => old 10 (P i)) (v5 (old 10 N0) (slot 10 1) (slot 10 3) (slot 10 5) (slot 10 7))
 
@@ -59,7 +59,7 @@ theorem matrix_rename {k m l} (test : Formula 1) (R : Source.Formula (k+2)) (w z
       (fun i => ρ (v i)) (fun i => ρ (U i)) (fun i => ρ (F i)) (fun i => ρ (P i)) := by
   simp only [matrix, existsMany_rename, matrixBody, background_rename, v6_map, v5_map, lift_old, lift_slot]
 
-private def instancesBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre U0 : Fin m)
+def instancesBody {k m} (test : Formula 1) (R : Source.Formula (k+2)) (w z A1 A2 A3 f T C B S Refl Pre U0 : Fin m)
     (v : Fin 16 → Fin m) (P : Fin 3 → Fin m) : Formula (m+6) :=
   matrix test R (old 6 w) (old 6 z) (old 6 A1) (old 6 A2) (old 6 A3) (old 6 f) (old 6 T) (old 6 C) (old 6 B) (old 6 S) (old 6 Refl) (old 6 Pre) (slot 6 5) (fun i => old 6 (v i)) (v3 (old 6 U0) (slot 6 1) (slot 6 3)) (v3 (slot 6 0) (slot 6 2) (slot 6 4)) (fun i => old 6 (P i))
 

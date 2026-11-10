@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-ForcingFreshLeaves.produce 已把原 FreshPreorder 的 SAME 源实际输出接到现成 ForcingPreorderLeafTarget.at_target，原 fresh 数据、q/p 重命名、Pre 弱化和完整 targetData 保留，同时得到原 native6／matrix10／background5／prefix3 见证和十一条实际叶／尾查询，全部仍在对象量词下。现成 at_target 的展开证明并非本批新做，本批只是实际接线，原供体源码全部不变。普通 nativeZF 原核闭句和完整九命令／五项trust=0通过，39678项声明、零警告，原39668项依赖及2883份旧证明Git正文保持；见[验收回执](../verification/forcing-fresh-leaves-acceptance.json)。两侧存在记录到成员比较的消费、裸R／Extra／canonical Global和最终Con仍未完成。
+ForcingMemberRows.produce 已实际消去两侧原 LeafTarget.instances 的6／10／5／3层存在块，分别调用现成 MemberWeakening.from_rows 取得 q1、p2 的原成员叶 weakened；两份完整实际叶记录及全部48个原见证在同一对象存在输出中保留。输入为已经产生的原实例记录、原项像及实际 q/p 项重命名，未给定叶记录、载体字段、成员码或弱化答案，也不要求 fresh r 相同。原 LeafTarget 只开放三个既有正文定义，所有证明正文原样。普通 nativeZF 原核闭句、九命令及五项trust=0通过，39699项声明、零警告；原39678项依赖及2883份其他旧证明Git源码保持，见[验收回执](../verification/forcing-member-rows-acceptance.json)。裸R／Extra／完整canonical Global和最终Con仍未完成。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@ ForcingFreshLeaves.produce 已把原 FreshPreorder 的 SAME 源实际输出接�
 
 ## 当前真正缺口与依赖顺序
 
-1. 原 ForcingPreorderLeafTarget.at_target 早已完成 native6／matrix10／background5 到原叶记录的展开，本批 ForcingFreshLeaves.produce 已在 SAME raw16、实际新 r/q/p 和 Pre／Refl／传递性输出上实际调用它，保留原新数据和全部 native／矩阵／背景／prefix3 见证及十一条叶／尾查询。此展开器和生产器不再列为待做。下一消费者是把两侧已经产生的原叶记录在其对象存在块下交给已完成的 ForcingMemberWeakening.from_rows（选中 q1／p2，禁止预设弱化答案），再读取实际裸 R 并调用已完成双覆盖传输，最后匹配 Extra 与四 AND 的 SAME canonical Global；复用原 ProofContext／FreshBackground／ProofUniversal。
+1. 两侧实际原存在叶记录的 q/p 成员比较已由 ForcingMemberRows.produce 完成，48个见证及两份完整原行保留；native到叶展开、fresh实际接线、成员比较不再列为待办。下一步读取裸R(q,p)的实际 H4 查询，优先复用 ForcingRelationRawFormula.from_prefix（leaf1／raw14）、原 ForcingRelationSource／ForcingRelationImages 生产器及已完成的 WeakenedOverwrite.from_double_queries；随后处理 Extra 与四AND 的 SAME canonical Global，接入现成 ProofContext／FreshBackground／ProofUniversal。
 2. 完成原force_mono／force_of_dense／exists_force_neg／forceFormula_imp联合内部码归纳及规范化强迫MP；普通字面蕴含组合或外层实例不能替代此门。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

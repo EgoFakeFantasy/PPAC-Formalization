@@ -17,7 +17,7 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码、quotation、axiom Node/Root基例、原重绑定、完整公式归纳和raw存在尾部全部比较已完成；六个canonical上下文码、Curry、正文抽象／guarded forall、范围恒等提升、首槽weak/abstract相消已完成。实际旧／新项像推送、原弱化查询、原q/p双覆盖记录传输、SAME raw的新r/q/p及Pre/native三实例和Pre弱化均已完成，全部新项／操作／输出见证在对象层产生消去 | 原native到叶展开器已复用并接通fresh实际输出；消费两侧实际存在叶记录的成员比较，再接裸R、Extra及四AND的canonical Global匹配；原联合force_mono／force_of_dense／exists_force_neg／forceFormula_imp、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原目标理论／全模式码、quotation、axiom Node/Root基例、原重绑定、完整公式归纳和raw存在尾部全部比较已完成；六个canonical上下文码、Curry、正文抽象／guarded forall、范围恒等提升、首槽weak/abstract相消已完成。实际旧／新项像推送、原弱化查询、原q/p双覆盖记录传输、SAME raw的新r/q/p及Pre/native三实例和Pre弱化均已完成，全部新项／操作／输出见证在对象层产生消去 | 两侧原存在叶记录的q/p成员比较已完成；接实际裸R、Extra及四AND的canonical Global匹配；原联合force_mono／force_of_dense／exists_force_neg／forceFormula_imp、规范化强迫MP、全部内部ZF/U公理与六规则Proof、精确reduction及最终Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-当前下一原消费者：原 ForcingPreorderLeafTarget.at_target 早已完成 native6／matrix10／background5 到原叶记录的展开，本批 ForcingFreshLeaves.produce 已在 SAME raw16、实际新 r/q/p 和 Pre／Refl／传递性输出上实际调用它，保留原新数据和全部 native／矩阵／背景／prefix3 见证及十一条叶／尾查询。此展开器和生产器不再列为待做。下一消费者是把两侧已经产生的原叶记录在其对象存在块下交给已完成的 ForcingMemberWeakening.from_rows（选中 q1／p2，禁止预设弱化答案），再读取实际裸 R 并调用已完成双覆盖传输，最后匹配 Extra 与四 AND 的 SAME canonical Global；复用原 ProofContext／FreshBackground／ProofUniversal。
+当前下一原消费者：两侧实际原存在叶记录的 q/p 成员比较已由 ForcingMemberRows.produce 完成，48个见证及两份完整原行保留；native到叶展开、fresh实际接线、成员比较不再列为待办。下一步读取裸R(q,p)的实际 H4 查询，优先复用 ForcingRelationRawFormula.from_prefix（leaf1／raw14）、原 ForcingRelationSource／ForcingRelationImages 生产器及已完成的 WeakenedOverwrite.from_double_queries；随后处理 Extra 与四AND 的 SAME canonical Global，接入现成 ProofContext／FreshBackground／ProofUniversal。

@@ -1,0 +1,184 @@
+{
+  "verified_at": "2026-11-10T18:50:53.289090+00:00",
+  "baseline_commit": "ba7d81c974d4aef74b52aed454c5f886e0263279",
+  "original_stage": 10,
+  "previous_goal_turn_classification": "progress: actual same-source fresh native-to-leaf connection accepted and uploadedba7d81c",
+  "background": "Original pure-set nativeZF and original FirstOrder.Derives; all runtime target contexts/conditions/formula/list/field/proof codes internal including nonstandard",
+  "result": [
+    "Consume BOTH actual original LeafTarget.instances using existing fixed6/10/5/3 objectEX rules",
+    "Read actual SAME source old/new Leaves.data without a supplied leaf-row, field, member-code or comparison answer",
+    "ACTUALLY invoke existing MemberWeakening.from_rows TWICE for selected q1 andp2; no fresh-r matching premise",
+    "Retain all48 original native/matrix/background/prefix witnesses, both whole actual rows and both derived member weakenings under SAME objectEX48 output",
+    "Ordinary nativeZF closed original-kernel endpoint; no new checker/recursion/induction backend/kernel/object Choice"
+  ],
+  "proof_boundaries": {
+    "both_actual_original_existential_records_consumed": true,
+    "q_and_p_original_member_weakenings_derived": true,
+    "all48_original_witnesses_and_both_complete_rows_retained": true,
+    "actual_weak_images_and_q_p_term_rename_computational_inputs": true,
+    "actual_source_numeral_scope_metadata_computational_input": true,
+    "expected_leaf_row_carrier_field_member_code_or_weak_answer_given": false,
+    "fresh_r_term_rename_required": false,
+    "bare_R_Extra_four_AND_canonical_Global_match_proved": false,
+    "final_internal_Con_proved": false
+  },
+  "verification": {
+    "audited_declarations": 39699,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37433,
+    "warning_lines": 0,
+    "all_nine_commands_passed": true,
+    "trust_zero_commands": 5,
+    "build_jobs": 3357,
+    "new_module_build_seconds": 8.0,
+    "previous_exact_footprints_unchanged": 39678,
+    "other_existing_proof_Git_blobs_unchanged": 2883,
+    "existing_donor_changed_only_by_three_private_keywords": true,
+    "donor": "PPAC/Migration/ForcingPreorderLeafTarget.lean",
+    "donor_original_bodies_exact": true,
+    "donor_newly_public_existing_definitions": [
+      "instancesBody",
+      "matrixBody",
+      "backgroundBody"
+    ],
+    "sealed_inputs_checked": 2918,
+    "sorted_seal_manifest_sha256": "65cf1cc9f40eb152f577431c78b4a6c2eb240eb2cbad3b910e653842bfefcc93",
+    "new_public_declarations": 21,
+    "new_module_declarations": 18,
+    "existing_body_definitions_newly_public": 3,
+    "module_and_preaudit_trust0_passed": true,
+    "compatibility_tests_passed": 9,
+    "guard_tests_passed": 7,
+    "clean_pins": 3,
+    "original_source_hashes": 75,
+    "post_cleanup_both_changed_modules_trust0_passed": true
+  },
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingMemberRows.nativeFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.proofFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.leafFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.tailFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.backgroundFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.prefixFields": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingMemberRows.rowData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.rowData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.input": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.input_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.data": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.data_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.body": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.produced": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.produced_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.produce": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingMemberRows.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingPreorderLeafTarget.instancesBody": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingPreorderLeafTarget.matrixBody": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingPreorderLeafTarget.backgroundBody": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "cleanup_exact_own_temporary_files": [
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-rows-baseline.tmp.json",
+      "bytes": 13171815,
+      "raw_sha256": "a9ced019ba8044be9a77276fff1f97a7bfd40fcf0a2f741ab160901f520b7e56"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-rows-audit.tmp.lean",
+      "bytes": 1315,
+      "raw_sha256": "13ffc46d898a2de1417e30a6190bee6d4e19863e8a5ee3e6b73a5746b16c0abd"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-rows-preaudit.tmp.log",
+      "bytes": 2396,
+      "raw_sha256": "ec0c8a7576ec8af878f743874d112f089742b00e377a17d005c0d577178313df"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-rows-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\17857\\Documents\\Codex\\2026-07-24\\zhe\\work\\ppac-yesmeta-migration\\.local\\forcing-member-rows-donor-check.log",
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "metadata_normalization": "Fixed finite variable positions ONLY: Fin.ext plus original old/slot val equations and Fin.cases constructor equations; avoid expanding slot24/48 and whole raw record. Original object recursion and all code scopes unchanged; no heartbeat increase.",
+  "next_actual_source_consumer": "q/p members from actual paired records NOW DONE; DO NOT redo or reopen their producer route. Read bare-R(q,p)=H4 using existing RelationRawFormula.from_prefix (leaf1/raw14), original Source.produce/from_matrix and RelationImages.produce. Consume SAME source core quotation and both actual double-overwrite records with completed WeakenedOverwrite.from_double_queries. Extra+4AND canonicalGlobal through existing logical constructors/ProofContext/FreshBackground/ProofUniversal. Then jointforcing/fullinternalaxioms/sixruleProof/reduction/finalCon. Generic nativeEX/leaf production and full raw tail already done.",
+  "cleanup_verified": {
+    "exact_own_files_removed": 5,
+    "bytes_removed": 13175526,
+    "all_targets_absent": true,
+    "resolved_parent_and_raw_hash_verified": true
+  }
+}

@@ -2753,7 +2753,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_relation_raw_terms', 'ForcingRelationRawTerms', 7),
                                 ('forcing_relation_raw_formula', 'ForcingRelationRawFormula', 9),
                                 ('forcing_preorder_leaves', 'ForcingPreorderLeaves', 18),
-                                ('forcing_preorder_leaf_target', 'ForcingPreorderLeafTarget', 10),
+                                ('forcing_preorder_leaf_target', 'ForcingPreorderLeafTarget', 13),
                                 ('forcing_preorder_member', 'ForcingPreorderMember', 13),
                                 ('forcing_preorder_guard_tables', 'ForcingPreorderGuardTables', 10),
                                 ('forcing_preorder_negative', 'ForcingPreorderNegative', 9),
@@ -2777,7 +2777,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_weakened_overwrite', 'ForcingWeakenedOverwrite', 15),
                                 ('forcing_fresh_preorder', 'ForcingFreshPreorder', 10),
                                 ('forcing_member_weakening', 'ForcingMemberWeakening', 10),
-                                ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10)):
+                                ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10),
+                                ('forcing_member_rows', 'ForcingMemberRows', 18)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6145,13 +6146,17 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_member_weakening_from_actual_old_new_rows_proved": True,
         "object_actual_member_weakening_carrier_and_symbol_witnesses_internal": True,
         "object_actual_member_weakening_expected_answer_given": False,
-        "object_actual_member_weakening_generated_native_rows_opened": False,
+        "object_actual_member_weakening_generated_native_rows_opened": True,
         "object_actual_member_weakening_scope": source_lock["source_proof_adaptations"]["forcing_member_weakening"]["scope"],
         "object_actual_fresh_native_records_to_leaf_rows_connected": True,
         "object_actual_fresh_leaves_existing_at_target_reused_unchanged": True,
         "object_actual_fresh_leaves_expected_row_or_query_given": False,
-        "object_actual_fresh_leaves_paired_member_comparison_consumed": False,
+        "object_actual_fresh_leaves_paired_member_comparison_consumed": True,
         "object_actual_fresh_leaves_scope": source_lock["source_proof_adaptations"]["forcing_fresh_leaves"]["scope"],
+        "object_actual_member_rows_both_original_EX_records_consumed": True,
+        "object_actual_member_rows_q_and_p_weakenings_derived_and_all48_witnesses_retained": True,
+        "object_actual_member_rows_expected_leaf_row_or_weak_answer_given": False,
+        "object_actual_member_rows_scope": source_lock["source_proof_adaptations"]["forcing_member_rows"]["scope"],
         "object_actual_closed_background_scope_identity_all_internal_codes_proved": True,
         "object_actual_closed_background_scope_identity_independent_successors_retained": True,
         "object_actual_closed_background_scope_identity_four_witnesses_generated": True,
