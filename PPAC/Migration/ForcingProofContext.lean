@@ -122,20 +122,16 @@ private theorem and_type {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   Derives.impE (Derives.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b A B C hw hc))
     (Derives.conjI (Derives.conjR (FormulaCodeProperties.guards w A z b ha)) (Derives.conjI ha hb))
 
-/-- Read the SAME original G0/Extra context and actual existential result,
-derive canonicalCtx -> oldCtx internally, then transfer the actual Tail proof
-and curry only r-local H0/H3. No rearrangement proof or proved guard supplied. -/
-theorem at_layout {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
-    (w z b C Refl Pre Extra Ctx Tail Y Middle : Fin m)
+/-- The actual canonical context entails both the extra assumption and the
+original preorder row background. -/
+theorem canonical_projections {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (w z b C Refl Pre Extra : Fin m)
     (G : Fin 5 → Fin m) (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (v : Fin 6 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hExtra : Derives Γ (formulaCode w Extra z b))
     (hRow : Derives Γ (ForcingTransitiveGuardProof.row w z b C Refl Pre G H U F P N))
-    (hCtx : Derives Γ (binaryCode 0 w Extra (G 0) Ctx))
-    (hSource : Derives Γ (ForcingPreorderExistential.resultData test w z b Y Ctx Extra (G 0) (H 0) (H 5) Tail Middle))
     (hl : Derives Γ (layoutData w z b Extra Pre H v)) :
-    Derives Γ ((implication test w z b (v 5) Tail).conj
-      (InternalProofCurry.result test w z b (v 3) (v 4) Tail)) := by
+    Derives Γ ((implication test w z b (v 5) Extra).conj (implication test w z b (v 5) (G 0))) := by
   have hG0 := (Derives.conjL hRow)
   have o0 := (Derives.conjL (Derives.conjR (Derives.conjR hRow)))
   have o1 := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hRow))))
@@ -157,7 +153,6 @@ theorem at_layout {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Form
   have tG4 := and_types hZ w z b (H 3) (H 4) (G 4) hw o4 hG4
   have hH3 := Derives.conjL tG4
   have hH4 := Derives.conjR tG4
-  have hOldCtx := and_type hZ w z b Extra (G 0) Ctx hw hCtx hExtra hG0
   have c0 := Derives.conjL (Derives.conjL hl)
   have t0 := Derives.conjR (Derives.conjL hl)
   have c1 := Derives.conjL (Derives.conjL (Derives.conjR hl))
@@ -197,6 +192,32 @@ theorem at_layout {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Form
   have pG2 := join hZ test w z b (v 5) (H 1) (G 3) (G 2) hw hz t5 hH1 hG3 o2 pH1 pG3
   have pG1 := join hZ test w z b (v 5) (H 0) (G 2) (G 1) hw hz t5 hH0 hG2 o1 pH0 pG2
   have pG0 := join hZ test w z b (v 5) Pre (G 1) (G 0) hw hz t5 hPre hG1 o0 pPre pG1
+  exact .conjI pExtra pG0
+
+/-- Read the SAME original G0/Extra context and actual existential result,
+derive canonicalCtx -> oldCtx internally, then transfer the actual Tail proof
+and curry only r-local H0/H3. No rearrangement proof or proved guard supplied. -/
+theorem at_layout {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (w z b C Refl Pre Extra Ctx Tail Y Middle : Fin m)
+    (G : Fin 5 → Fin m) (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (v : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hRow : Derives Γ (ForcingTransitiveGuardProof.row w z b C Refl Pre G H U F P N))
+    (hCtx : Derives Γ (binaryCode 0 w Extra (G 0) Ctx))
+    (hSource : Derives Γ (ForcingPreorderExistential.resultData test w z b Y Ctx Extra (G 0) (H 0) (H 5) Tail Middle))
+    (hl : Derives Γ (layoutData w z b Extra Pre H v)) :
+    Derives Γ ((implication test w z b (v 5) Tail).conj
+      (InternalProofCurry.result test w z b (v 3) (v 4) Tail)) := by
+  have projections := canonical_projections hZ test w z b C Refl Pre Extra G H U F P N v hw hz hExtra hRow hl
+  have hG0 := Derives.conjL hRow
+  have hOldCtx := and_type hZ w z b Extra (G 0) Ctx hw hCtx hExtra hG0
+  have t3 := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hl))))
+  have t4 := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hl)))))
+  have last := Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hl))))
+  have c5 := Derives.conjL last
+  have t5 := Derives.conjR last
+  have pExtra := Derives.conjL projections
+  have pG0 := Derives.conjR projections
   have pCtx := join hZ test w z b (v 5) Extra (G 0) Ctx hw hz t5 hExtra hG0 hCtx pExtra pG0
   have hTail := (Derives.conjL (Derives.conjR (Derives.conjR hSource)))
   have pTail := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hSource))))

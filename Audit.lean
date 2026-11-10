@@ -40588,3 +40588,14 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.consume_negative_root
 #print axioms PPAC.Migration.ForcingRawModalBody.negativeRootSentence
 #print axioms PPAC.Migration.ForcingRawModalBody.negative_root_kernel_certificate
+#print axioms PPAC.Migration.ForcingOldParentInstance.raise_proof
+#print axioms PPAC.Migration.ForcingOldParentInstance.from_opened
+#print axioms PPAC.Migration.ForcingOldParentInstance.sentence
+#print axioms PPAC.Migration.ForcingOldParentInstance.kernel_certificate
+#print axioms PPAC.Migration.ForcingOldParentInstance.consume_guards
+#print axioms PPAC.Migration.ForcingRawModalBody.oldTailInput
+#print axioms PPAC.Migration.ForcingRawModalBody.oldTailInput_rename
+#print axioms PPAC.Migration.ForcingRawModalBody.old_nested_from_opened
+#print axioms PPAC.Migration.ForcingRawModalBody.oldNestedSentence
+#print axioms PPAC.Migration.ForcingRawModalBody.old_nested_kernel_certificate
+#print axioms PPAC.Migration.ForcingProofContext.canonical_projections

@@ -1,0 +1,176 @@
+{
+  "baseline_commit": "047e38ab5e0782329c7bce9590cc1e176332756e",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "The actual old parent proof at the old scope produces the exact fresh instance proof via original proof substitution and guarded forall elimination. Matching old guard codes H0 and H5 in the same preorder row lets the existing canonical context discharge both guards and generate the actual nested proof required by the new-side Root endpoints.",
+  "native_endpoints": {
+    "PPAC.Migration.ForcingOldParentInstance.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.old_nested_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "premises": [
+    "old parent Root proof",
+    "actual old fresh opening and opened compiler outputs",
+    "shared preorder row and actual canonical layout",
+    "actual background weakening and condition replacement"
+  ],
+  "remaining": [
+    "assemble old and new sides on the same original compiler and table record",
+    "discharge all original cases in internal force_mono and continue original downstream proof translation",
+    "final uniform internal reduction and Con"
+  ],
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "audited_declarations": 39885,
+  "warning_lines": 0,
+  "lean_build_jobs": 3368,
+  "existing_footprints_unchanged": 39874,
+  "other_existing_lean_blobs_unchanged": 2898,
+  "existing_canonical_projection_proof_preserved": true,
+  "compatibility_tests": 16,
+  "pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "sealed_input_hashes": 2929,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "full_verification_log_sha256": "064225d595b5f4dea5879d309e1bde0b6206fccd100c8775913b036e18f49fa3",
+  "temporary_files": [
+    {
+      "path": ".local/old-parent-baseline.tmp.json",
+      "sha256": "3eebd771bad55b3c5f608c8b179cbac23b94032e78c0ac9f4ae90c23ef9ac4ea"
+    },
+    {
+      "path": ".local/old-parent-audit.tmp.lean",
+      "sha256": "daf95573e373d64f1f3290cc7d0dd2075fc454e8c6bc97938d1a1b4f1226a24e"
+    },
+    {
+      "path": ".local/old-parent-audit.tmp.log",
+      "sha256": "6e363fab183d120cc11a2f5ba28708a6231bdbc0e2850dddcc71f11b536c2d91"
+    },
+    {
+      "path": ".local/old-parent-context-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".local/old-parent-instance-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".local/raw-modal-check.tmp.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "post_cleanup_trust_zero_passed": true
+}

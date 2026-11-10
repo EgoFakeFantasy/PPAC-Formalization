@@ -2768,7 +2768,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_exist_domain_opening', 'ForcingExistDomainOpening', 15),
                                 ('forcing_exist_tail_opening', 'ForcingExistTailOpening', 32),
                                 ('forcing_exist_tail_comparison', 'ForcingExistTailComparison', 20),
-                                ('forcing_proof_context', 'ForcingProofContext', 21),
+                                ('forcing_proof_context', 'ForcingProofContext', 22),
                                 ('forcing_proof_universal', 'ForcingProofUniversal', 21),
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
@@ -2788,7 +2788,8 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 29),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 1),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 40)):
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 45),
+                                ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:
@@ -6197,6 +6198,8 @@ def main(source_check_only: bool = False) -> None:
         "object_actual_raw_guard_opening_scope": source_lock["source_proof_adaptations"]["forcing_raw_guard_opening"]["scope"],
         "object_existential_opened_parent_root_from_original_records_proved": True,
         "object_negative_opened_parent_root_from_original_compiler_proved": True,
+        "object_old_modal_parent_proof_to_actual_nested_tail_proved": True,
+        "object_old_parent_instance_scope": source_lock["source_proof_adaptations"]["forcing_old_parent_instance"]["scope"],
         "object_actual_raw_negative_tail_scope": source_lock["source_proof_adaptations"]["forcing_raw_negative_tail"]["scope"],
         "object_actual_raw_modal_body_scope": source_lock["source_proof_adaptations"]["forcing_raw_modal_body"]["scope"],
         "object_actual_new_parent_raw_fresh_opening_scope": source_lock["source_proof_adaptations"]["forcing_fresh_parent_opening"]["scope"],

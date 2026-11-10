@@ -172811,7 +172811,7 @@
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingProofContext.lean": "96c5ff54ad65936b3d8faf19d9900aa087984b608177b01b0a14cd9f97fde444",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
         "PPAC/Migration/ForcingPreorderExistential.lean": "a23475f4ce816522404ba5b2975f21d6b1c730496757df2ecaa9896910bb1bdd",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
@@ -172933,9 +172933,14 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingProofContext.canonical_projections": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "Original force_mono/ex proof-context consumer. Reads SAME actual preorder row G0=Pre AND(H0 AND(H1 AND(H2 AND(H3 AND H4)))), where H0/H1/H2 are r/q/p membership, H3=R(r,q), H4=R(q,p). Produces exactly SIX internal AND code witnesses using existing typed binary0 constructors. Canonical global=Extra AND(Pre AND(H1 AND(H2 AND H4))); r-local=H0 AND H3; canonicalCtx=global AND local. Original projections, composition, rule11 and SAME-background discharge/S+MP prove canonicalCtx->oldCtx WITHOUT assuming guard/preorder truth. The ACTUAL ForcingPreorderExistential.resultData Tail proof is transported to canonicalCtx and existing Curry.from_implication curries ONLY r-local. All SIX layout witnesses remain object existentially bound in result. from_queries ACTUALLY CALLS unchanged FULL raw-tail comparison from TWO queries and eqSubst transports canonical proof to its SAME actual second tail. Two ordinary nativeZF original-kernel closed sentence endpoints; runtime scopes/formula/proof-operation codes remain arbitrary internal including nonstandard. No given layout/expected rearrangement/equality answer, no new compiler/checker/kernel/recursor/induction or object Choice. This completes generated canonical proof-context rearrangement and raw tail transfer ONLY. DOES NOT prove free0 freshness/global weakening inverse, two actual mode3 abstractions or their guarded forall consumer, original JOINT forcing mono/dense/exists_neg/imp/MP, all internal ZF/U axiom/six-rule Proof correctness, reduction or finalCon. mode3 abstracts FIRST free slot0; existing free variables must shift, not a last-free-variable assumption."
+      "scope": "Original force_mono/ex proof-context consumer. Reads SAME actual preorder row G0=Pre AND(H0 AND(H1 AND(H2 AND(H3 AND H4)))), where H0/H1/H2 are r/q/p membership, H3=R(r,q), H4=R(q,p). Produces exactly SIX internal AND code witnesses using existing typed binary0 constructors. Canonical global=Extra AND(Pre AND(H1 AND(H2 AND H4))); r-local=H0 AND H3; canonicalCtx=global AND local. Original projections, composition, rule11 and SAME-background discharge/S+MP prove canonicalCtx->oldCtx WITHOUT assuming guard/preorder truth. The ACTUAL ForcingPreorderExistential.resultData Tail proof is transported to canonicalCtx and existing Curry.from_implication curries ONLY r-local. All SIX layout witnesses remain object existentially bound in result. from_queries ACTUALLY CALLS unchanged FULL raw-tail comparison from TWO queries and eqSubst transports canonical proof to its SAME actual second tail. Two ordinary nativeZF original-kernel closed sentence endpoints; runtime scopes/formula/proof-operation codes remain arbitrary internal including nonstandard. No given layout/expected rearrangement/equality answer, no new compiler/checker/kernel/recursor/induction or object Choice. This completes generated canonical proof-context rearrangement and raw tail transfer ONLY. DOES NOT prove free0 freshness/global weakening inverse, two actual mode3 abstractions or their guarded forall consumer, original JOINT forcing mono/dense/exists_neg/imp/MP, all internal ZF/U axiom/six-rule Proof correctness, reduction or finalCon. mode3 abstracts FIRST free slot0; existing free variables must shift, not a last-free-variable assumption. Existing canonical row/background projections are shared with the actual old parent instance consumer; the original at_layout proof uses the same projections."
     },
     "forcing_proof_universal": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -172962,7 +172967,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
-        "PPAC/Migration/ForcingProofContext.lean": "96c5ff54ad65936b3d8faf19d9900aa087984b608177b01b0a14cd9f97fde444",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572",
@@ -174180,7 +174185,7 @@
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingRelationWeakening.lean": "d925d5c9eb9731890c7e5afb4c06b59186dd2368cf2765cc781dce35df725d45",
         "PPAC/Migration/ForcingFreshPreorder.lean": "f8a2bef82eca81987ce3264b9614dbd9b01a62d1213d495fde91be996429debc",
-        "PPAC/Migration/ForcingProofContext.lean": "96c5ff54ad65936b3d8faf19d9900aa087984b608177b01b0a14cd9f97fde444",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
         "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
         "PPAC/Migration/Internal/SyntaxWeakenFreeOutput.lean": "6d0045b39716cd2f834a956c4765af50b9c3cd7d7c4a5dbedd1698a495d868b7",
         "PPAC/Migration/Internal/SyntaxWeakenFreeLogical.lean": "525d3bb7a44cd3b76cb1bbb7e42fe3b1780924f4e5ca260c3e6e4bd7691fd846"
@@ -174265,7 +174270,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
-        "PPAC/Migration/ForcingProofContext.lean": "96c5ff54ad65936b3d8faf19d9900aa087984b608177b01b0a14cd9f97fde444",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
         "PPAC/Migration/ForcingCodeBinary.lean": "a51c6ff26e4c7a01fa2bda93ac521f48e9b90d172d953ce69df35122fc44bb86",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingRelationGuardProof.lean": "4718ab469fa479f75beff7c1c054f3180b2474682cc38164ca37f6a6ddbc093c",
@@ -174458,7 +174463,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingNestedGuardProof.lean": "48dcf4514dc73703a462daba0ae99ee25a23d30e30e4f5215c15f2c5d25ccf51",
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
-        "PPAC/Migration/ForcingProofContext.lean": "96c5ff54ad65936b3d8faf19d9900aa087984b608177b01b0a14cd9f97fde444",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
         "PPAC/Migration/ForcingProofUniversal.lean": "fd4742fe431181e37723d82c443e0e70f8c54fe97a92cb1273eeb2b7f753817e",
@@ -174934,6 +174939,74 @@
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives; ALL internal scopes/codes including nonstandard omega. ONE actual new-parent mixed query, source ALL constructor, runtime omega/empty/successor/fresh-term metadata. produce internally generates20 construction witnesses: existing weakened images10, both literal binder lift pairs4, original/weakened bodies2, weakened whole parent1, native fresh instance1, cons bound table1, direct raw-body query output1. Retains19; independent native output eliminated via existing generic BinderFormula.native and full formula cancellation. Existing quantified_constructor applied BOTH parents, existing WeakenedImages.from_queries gives WHOLE-parent WEAK, original quantified_iff gives BODY WEAK with SAME bound successor; no new weak/lift commutation infrastructure. Native instance to SAME actual direct raw body is derived, not given; existing FreshOpeningInverse.derive gives abstraction to SAME actual parent body. Four ordinary nativeZF endpoints: generic production, actual nested-record consumption, complete original negative compilation, complete original existential compilation. from_negative consumes existing NegCode.body_output. from_existential consumes ALL8 original compiler plus7 literal shell witnesses; correct outer guards at slots2/3, inner4/5, domain6 and child7; internally generates source body, no expected source body/parent constructor input. consume_opened requires original NestedGuardProof.data at SAME produced raw body; canonical concrete member/order/tail matching to that generated body is STILL UNPROVED. Thus complete raw-parent-to-required-canonical-NestedK, full mono/dense/axioms/six-rule Proof/reduction/final Con remain UNPROVED. No old proof change, new kernel/checker/recursor/Choice/object-standardness restriction."
     },
+    "forcing_old_parent_instance": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
+      "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
+      "adapter": "PPAC/Migration/ForcingOldParentInstance.lean",
+      "source_declarations": [
+        "ForcingQuotient.force_mono: neg/ex old parent instantiation"
+      ],
+      "consumers": [
+        "ForcingRawModalBody.old_nested_from_opened"
+      ],
+      "reuse_producers": [
+        "InternalProofOperations.substitution",
+        "SyntaxFreeSubstCode.from_map",
+        "FreeSubstProgramCorrectness.executed_iff",
+        "InternalProofQuantifier.guarded_eliminate",
+        "ForcingMixedUnary.quantified_constructor",
+        "ForcingWeakenedImages.from_queries",
+        "ForcingProofContext.canonical_projections",
+        "ForcingTransitiveGuardProof.at_background",
+        "ForcingNegMemberProof.discharge",
+        "InternalProofCurry.from_implication"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
+        "PPAC/Migration/ForcingOldParentInstance.lean": "7a0f1d496e810690f8a2a8f2bccd312207bc7fabaeda86d55b991e02d779f1bc",
+        "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
+        "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
+        "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
+        "PPAC/Migration/ForcingWeakenedImages.lean": "6154e010c5a182e50bcab7912f7aff12a95b55421be151a7217f12303b8b9b4b",
+        "PPAC/Migration/Internal/SyntaxFreeSubstCode.lean": "a7bb9bf0f3738ce3a0985d581c1ad9e511cdaaee9b9ab8153773a03ae4319655",
+        "PPAC/Migration/Internal/FreeSubstProgramCorrectness.lean": "fb104bb88b3bf40410d788688b1391b388413ecfa54fa49388364a20ae2d6e88"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingOldParentInstance.raise_proof": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingOldParentInstance.from_opened": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingOldParentInstance.sentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingOldParentInstance.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingOldParentInstance.consume_guards": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "scope": "Ordinary nativeZF original proof kernel. Use the actual old G-to-parent proof at the old free scope and the SAME original fresh opening. The proof is raised by the original substitution node with the term-list realization of the existing shift code. The actual weak quantified parent and its actual already opened instance are read from the retained compiler queries. Original guarded forall elimination gives the proof of the actual instance. The existing canonical projections, preorder row and Curry proof consume that instance once the real guards match. No new proof kernel, classical selection, syntax program or code-standardness assumption."
+    },
     "forcing_raw_negative_tail": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
       "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
@@ -174985,7 +175058,9 @@
         "ForcingRawModalBody.consume_existential_root",
         "ForcingRawModalBody.existential_root_kernel_certificate",
         "ForcingRawModalBody.consume_negative_root",
-        "ForcingRawModalBody.negative_root_kernel_certificate"
+        "ForcingRawModalBody.negative_root_kernel_certificate",
+        "ForcingRawModalBody.old_nested_from_opened",
+        "ForcingRawModalBody.old_nested_kernel_certificate"
       ],
       "reuse_producers": [
         "ForcingFormulaDiagram.binary_output",
@@ -174995,10 +175070,13 @@
         "ForcingPreorderLeaves.relation_from_data",
         "ForcingExistTailComparison.from_queries",
         "ForcingFreshParentOpening.consume_opened",
-        "ForcingRawNegTail.compare"
+        "ForcingRawNegTail.compare",
+        "ForcingOldParentInstance.from_opened",
+        "ForcingOldParentInstance.consume_guards",
+        "ForcingNestedGuardProof.produce"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "7bcba54237f0d6a092b15351de9b72b7a5bf0e9d79ff0310801672cde2cc6fb4",
+        "PPAC/Migration/ForcingRawModalBody.lean": "9394eea9b69f75121035fd9cc67a89a85647238f204bdf776b05d8af83a13ed9",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "4479c713ccd4657181f5213463dceab9a0949605c9286731ccb4a6ef45fcf800",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
@@ -175010,7 +175088,9 @@
         "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
         "PPAC/Migration/ForcingExistTailOpening.lean": "5d244fe331925fe356517f148a749439e69f6ce89ff639e95266872f33eb4843",
         "PPAC/Migration/ForcingNestedGuardProof.lean": "48dcf4514dc73703a462daba0ae99ee25a23d30e30e4f5215c15f2c5d25ccf51",
-        "PPAC/Migration/ForcingRawNegTail.lean": "d75780ba3ce91e9551ac4d1c05b4eed9d98bdf83006bc215cd101d92f4ac3fac"
+        "PPAC/Migration/ForcingRawNegTail.lean": "d75780ba3ce91e9551ac4d1c05b4eed9d98bdf83006bc215cd101d92f4ac3fac",
+        "PPAC/Migration/ForcingOldParentInstance.lean": "7a0f1d496e810690f8a2a8f2bccd312207bc7fabaeda86d55b991e02d779f1bc",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingRawModalBody.data": [
@@ -175211,9 +175291,39 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.oldTailInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.oldTailInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.old_nested_from_opened": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.oldNestedSentence": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.old_nested_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives over all internal codes and scopes. Original neg/ex compiler and actual fresh-parent opening determine both raw implications and the member/order/tail outputs by object elimination. The existential Root endpoint consumes the original compiler and shell fields, shared preorder row, old tail execution on the same prefixed bound table, old/new condition replacements and existing canonical nested proof. It generates the new raw outputs and carrier, compares member H0 and relation R(r,q) H3, proves tail equality via the existing actual query comparison and transports the same nested proof through constructor uniqueness to the original Root consumer. One nativeZF closed Root certificate with those premises. The negative endpoint consumes the whole original negative compiler, internally opens its five compiler, four shell and four raw-body witnesses, proves all three leaf matches using the same preorder row and actual negative-tail comparison, and feeds the same nested proof through constructor uniqueness to the original Root consumer. The negative endpoint uses the direct child query at the fresh condition and the canonical nested proof. Both nativeZF certificates still require canonical context production from the enclosing monotonicity step; full force_mono and final internal Con remain unproved."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives over all internal codes and scopes. Original neg/ex compiler and actual fresh-parent opening determine both raw implications and the member/order/tail outputs by object elimination. The existential Root endpoint consumes the original compiler and shell fields, shared preorder row, old tail execution on the same prefixed bound table, old/new condition replacements and existing canonical nested proof. It generates the new raw outputs and carrier, compares member H0 and relation R(r,q) H3, proves tail equality via the existing actual query comparison and transports the same nested proof through constructor uniqueness to the original Root consumer. One nativeZF closed Root certificate with those premises. The negative endpoint consumes the whole original negative compiler, internally opens its five compiler, four shell and four raw-body witnesses, proves all three leaf matches using the same preorder row and actual negative-tail comparison, and feeds the same nested proof through constructor uniqueness to the original Root consumer. The negative endpoint uses the direct child query at the fresh condition and the canonical nested proof. Both nativeZF certificates still require canonical context production from the enclosing monotonicity step; full force_mono and final internal Con remain unproved. The old side now consumes the actual original proof and the same opened compiler record with P2. It produces the old instantiated proof via rule5 and original forall elimination, compares H0/H5, discharges both guards under the existing canonical layout, and produces the canonical nested proof for the old tail, with its two actual body codes and original guarded forall. Joining both sides on the enclosing source mono input remains open."
     },
     "forcing_raw_guard_opening": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",

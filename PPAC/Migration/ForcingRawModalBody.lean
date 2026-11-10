@@ -1,6 +1,7 @@
 import PPAC.Migration.ForcingRawGuardOpening
 import PPAC.Migration.ForcingExistTailComparison
 import PPAC.Migration.ForcingRawNegTail
+import PPAC.Migration.ForcingOldParentInstance
 
 /-! The two outer implications of the original negative and existential
 compilers, queried in the actual fresh table of the opened parent. -/
@@ -507,7 +508,19 @@ theorem compare_member {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
   exact ForcingPreorderMember.same_result hZ w t V Y M hw
     (member_query hZ Reln w z (u 7) (v 9) alpha f B head t i V q Y hw hz head0 zero hi carrier hc hq) hm
 
-private structure OrderInputs {k m} (Γ : Context m) (test : Formula 1) (R : Source.Formula (k+2))
+private def orderLeaf (oldSide : Bool) : Fin 3 := if oldSide then 2 else 0
+private def orderCondition (oldSide : Bool) : Fin 3 := if oldSide then 2 else 1
+
+private theorem order_left {m} (P : Fin 3 → Fin m) (oldSide : Bool) :
+    ForcingRelationRawTerms.reversed P (ForcingRelationSource.leftIndex (orderLeaf oldSide)) = P 0 := by
+  cases oldSide <;> rfl
+
+private theorem order_right {m} (P : Fin 3 → Fin m) (oldSide : Bool) :
+    ForcingRelationRawTerms.reversed P (ForcingRelationSource.rightIndex (orderLeaf oldSide)) =
+      P (orderCondition oldSide) := by
+  cases oldSide <;> rfl
+
+private structure OrderInputs {k m} (Γ : Context m) (test : Formula 1) (R : Source.Formula (k+2)) (oldSide : Bool)
     (w z A1 A2 A3 f T C B S Refl Pre j Sg : Fin m)
     (v : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
     (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (D : Fin 3 → Fin m) : Prop where
@@ -520,17 +533,17 @@ private structure OrderInputs {k m} (Γ : Context m) (test : Formula 1) (R : Sou
   hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f)
   hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j)
   hd : Derives Γ (ForcingPreorderLeaves.data test R w z A1 A2 A3 f T C B S Refl Pre v Gb H U F P N D)
-  hr : Derives Γ (ForcingReflexiveImages.replacement w f z T S j (P 1) Sg)
+  hr : Derives Γ (ForcingReflexiveImages.replacement w f z T S j (P (orderCondition oldSide)) Sg)
   hs : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z T S)
   hp0 : Derives Γ (SyntaxTermSyntax.term w z T (P 0))
-  hp1 : Derives Γ (SyntaxTermSyntax.term w z T (P 1))
+  hp1 : Derives Γ (SyntaxTermSyntax.term w z T (P (orderCondition oldSide)))
 
 private theorem OrderInputs.in_body {k m l} {Γ : Context m} {test : Formula 1} {R : Source.Formula (k+2)}
-    {w z A1 A2 A3 f T C B S Refl Pre j Sg : Fin m}
+    {oldSide : Bool} {w z A1 A2 A3 f T C B S Refl Pre j Sg : Fin m}
     {v : Fin 16 → Fin m} {Gb : Fin 5 → Fin m} {H : Fin 6 → Fin m}
     {U F P : Fin 3 → Fin m} {N : Fin 5 → Fin m} {D : Fin 3 → Fin m}
-    (h : OrderInputs Γ test R w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D) (E : Formula (m+l)) :
-    OrderInputs (Context.add E (raisedContext l Γ)) test R
+    (h : OrderInputs Γ test R oldSide w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D) (E : Formula (m+l)) :
+    OrderInputs (Context.add E (raisedContext l Γ)) test R oldSide
       (old l w) (old l z) (old l A1) (old l A2) (old l A3) (old l f) (old l T) (old l C)
       (old l B) (old l S) (old l Refl) (old l Pre) (old l j) (old l Sg)
       (fun i => old l (v i)) (fun i => old l (Gb i)) (fun i => old l (H i))
@@ -546,74 +559,121 @@ private theorem OrderInputs.in_body {k m l} {Γ : Context m} {test : Formula 1} 
     of_eq (SyntaxNumeralSyntax.numeral_rename (k+1) j (old l)) (HornBinderRules.under_body l h.hj E),
     of_eq (ForcingPreorderLeaves.data_rename test R w z A1 A2 A3 f T C B S Refl Pre v Gb H U F P N D (old l)) (HornBinderRules.under_body l h.hd
       E),
-    of_eq (ForcingReflexiveImages.replacement_rename w f z T S j (P 1) Sg (old l)) (HornBinderRules.under_body l h.hr E),
+    of_eq (ForcingReflexiveImages.replacement_rename w f z T S j (P (orderCondition oldSide)) Sg (old l)) (HornBinderRules.under_body l h.hr E),
     of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f z T S (old l)) (HornBinderRules.under_body l h.hs E),
     of_eq (SyntaxTermSyntax.term_rename w z T (P 0) (old l)) (HornBinderRules.under_body l h.hp0 E),
-    of_eq (SyntaxTermSyntax.term_rename w z T (P 1) (old l)) (HornBinderRules.under_body l h.hp1 E)⟩
+    of_eq (SyntaxTermSyntax.term_rename w z T (P (orderCondition oldSide)) (old l)) (HornBinderRules.under_body l h.hp1 E)⟩
 
-private theorem order_at_direct {k m} {Γ : Context m} (test : Formula 1) (R : Source.Formula (k+2))
+private theorem order_at_direct {k m} {Γ : Context m} (test : Formula 1) (R : Source.Formula (k+2)) (oldSide : Bool)
     (w z A1 A2 A3 f T C B S Refl Pre j Sg g G X I J M W Y : Fin m)
     (v : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
     (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (D : Fin 3 → Fin m) (E : Fin 4 → Fin m)
-    (h : OrderInputs Γ test R w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D)
-    (hSource : Derives Γ (ForcingRelationSource.data R 0 w z g A3 f (v 13) G X E))
-    (hImages : Derives Γ (ForcingRelationImages.data k w f z T S (P 0) (P 1) I J M W))
+    (h : OrderInputs Γ test R oldSide w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D)
+    (hSource : Derives Γ (ForcingRelationSource.data R (orderLeaf oldSide) w z g A3 f (v (ForcingRelationSource.rawSlot (orderLeaf oldSide))) G X
+      E))
+    (hImages : Derives Γ (ForcingRelationImages.data k w f z T S (P 0) (P (orderCondition oldSide)) I J M W))
     (hDirect : Derives Γ (ForcingGuardOpening.direct w z f T (P 0) Sg g G Y)) :
-    Derives Γ (.equal (H 3) Y) := by
+    Derives Γ (.equal (H (ForcingPreorderLeaves.relationPosition (orderLeaf oldSide))) Y) := by
   let V := (SyntaxForestSyntax.forest 1 w.castSucc (fun _ => (P 0).castSucc) (Fin.last m)).conj
     (substituted w.castSucc (Fin.last m) Sg.castSucc g.castSucc f.castSucc z.castSucc T.castSucc G.castSucc Y.castSucc)
   let Δ := Context.add V (Context.image Formula.raise Γ)
   apply Derives.exE (p := V) hDirect
   have hV : Derives Δ V := .hyp (Or.inl rfl)
   have h1 := h.in_body V
-  have hSource1 := of_eq (ForcingRelationSource.data_rename R 0 w z g A3 f (v 13) G X E Fin.castSucc) (under hSource V)
-  have hImages1 := of_eq (ForcingRelationImages.data_rename k w f z T S (P 0) (P 1) I J M W Fin.castSucc) (under hImages V)
+  have hSource1 := of_eq (ForcingRelationSource.data_rename R (orderLeaf oldSide) w z g A3 f (v (ForcingRelationSource.rawSlot (orderLeaf
+    oldSide))) G X E Fin.castSucc) (under hSource V)
+  have hImages1 := of_eq (ForcingRelationImages.data_rename k w f z T S (P 0) (P (orderCondition oldSide)) I J M W Fin.castSucc) (under hImages V)
   have hJ := Derives.conjL (Derives.conjR hImages1)
   have heq := SyntaxNumerals.unique h1.zf (k+1) j.castSucc J.castSucc h1.hj hJ
-  have hr := ForcingPreorderGuardTables.replacement_index w.castSucc f.castSucc z.castSucc T.castSucc S.castSucc j.castSucc (P 1).castSucc
+  have hr := ForcingPreorderGuardTables.replacement_index w.castSucc f.castSucc z.castSucc T.castSucc S.castSucc j.castSucc (P (orderCondition
+    oldSide)).castSucc
     Sg.castSucc J.castSucc heq h1.hr
-  exact ForcingPreorderLeaves.relation_from_data h1.zf test R 0 w.castSucc z.castSucc A1.castSucc A2.castSucc A3.castSucc f.castSucc T.castSucc
+  exact ForcingPreorderLeaves.relation_from_data h1.zf test R (orderLeaf oldSide) w.castSucc z.castSucc A1.castSucc A2.castSucc A3.castSucc
+    f.castSucc T.castSucc
     C.castSucc B.castSucc S.castSucc Refl.castSucc Pre.castSucc
     g.castSucc G.castSucc X.castSucc I.castSucc J.castSucc M.castSucc W.castSucc (Fin.last m) Sg.castSucc Y.castSucc
     (fun i => (v i).castSucc) (fun i => (Gb i).castSucc) (fun i => (H i).castSucc)
     (fun i => (U i).castSucc) (fun i => (F i).castSucc) (fun i => (P i).castSucc)
     (fun i => (N i).castSucc) (fun i => (D i).castSucc) (fun i => (E i).castSucc)
-    h1.hw h1.hz h1.h1 h1.h2 h1.hf h1.hd hSource1 hImages1 (.conjL hV) hr (.conjR hV)
+    h1.hw h1.hz h1.h1 h1.h2 h1.hf h1.hd hSource1
+    (by rw [order_left, order_right]; exact hImages1)
+    (by rw [order_left]; exact .conjL hV)
+    (by simpa only [order_right] using hr) (.conjR hV)
 
-private theorem order_at_guard_data {k m} {Γ : Context m} (test : Formula 1) (R : Source.Formula (k+2))
+private theorem order_at_guard_data {k m} {Γ : Context m} (test : Formula 1) (R : Source.Formula (k+2)) (oldSide : Bool)
     (w z A1 A2 A3 f T C B S Refl Pre j Sg a head q Y : Fin m)
     (v : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
     (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (D : Fin 3 → Fin m) (g : Fin 4 → Fin m)
-    (h : OrderInputs Γ test R w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D)
+    (h : OrderInputs Γ test R oldSide w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D)
     (hg : Derives Γ (ForcingGuardOpening.data true R w z f T (P 0) Sg a head q Y g)) :
-    Derives Γ (.equal (H 3) Y) := by
-  have hSrc := ForcingRelationSource.from_matrix h.zf R 0 w z A1 A2 A3 f a head q v g
+    Derives Γ (.equal (H (ForcingPreorderLeaves.relationPosition (orderLeaf oldSide))) Y) := by
+  have hSrc := ForcingRelationSource.from_matrix h.zf R (orderLeaf oldSide) w z A1 A2 A3 f a head q v g
     h.hw h.hz h.h3 h.hf (.conjL h.hd) (.conjL hg)
-  let E := ForcingRelationSource.body R 0 w z (g 0) A3 f (v 13) (g 1)
+  let E := ForcingRelationSource.body R (orderLeaf oldSide) w z (g 0) A3 f (v (ForcingRelationSource.rawSlot (orderLeaf oldSide))) (g 1)
   let Δ := Context.add E (raisedContext 5 Γ)
   apply HornBinderRules.eliminate_many 5 E _ hSrc
   have hE : Derives Δ E := .hyp (Or.inl rfl)
   have h5 := h.in_body E
   have hd5 := of_eq (ForcingGuardOpening.direct_rename w z f T (P 0) Sg (g 0) (g 1) Y (old 5)) (HornBinderRules.under_body 5 (.conjR hg) E)
-  have hTables := ForcingRelationImages.produce h5.zf k (old 5 w) (old 5 f) (old 5 z) (old 5 T) (old 5 S) (old 5 (P 0)) (old 5 (P 1)) h5.hw h5.hs
+  have hTables := ForcingRelationImages.produce h5.zf k (old 5 w) (old 5 f) (old 5 z) (old 5 T) (old 5 S) (old 5 (P 0)) (old 5 (P (orderCondition
+    oldSide))) h5.hw h5.hs
     h5.hp0 h5.hp1
-  let L := ForcingRelationImages.body k (old 5 w) (old 5 f) (old 5 z) (old 5 T) (old 5 S) (old 5 (P 0)) (old 5 (P 1))
+  let L := ForcingRelationImages.body k (old 5 w) (old 5 f) (old 5 z) (old 5 T) (old 5 S) (old 5 (P 0)) (old 5 (P (orderCondition oldSide)))
   let Ξ := Context.add L (raisedContext 4 Δ)
   apply HornBinderRules.eliminate_many 4 L _ hTables
   have hL : Derives Ξ L := .hyp (Or.inl rfl)
   have h9 := h5.in_body L
   have hd9 := of_eq (ForcingGuardOpening.direct_rename (old 5 w) (old 5 z) (old 5 f) (old 5 T) (old 5 (P 0)) (old 5 Sg) (old 5 (g 0)) (old 5 (g
     1)) (old 5 Y) (old 4)) (HornBinderRules.under_body 4 hd5 L)
-  have hs9 : Derives Ξ (ForcingRelationSource.data R 0 (old 9 w) (old 9 z) (old 9 (g 0)) (old 9 A3) (old 9 f) (old 9 (v 13)) (old 9 (g 1))
+  have hs9 : Derives Ξ (ForcingRelationSource.data R (orderLeaf oldSide) (old 9 w) (old 9 z) (old 9 (g 0)) (old 9 A3) (old 9 f) (old 9 (v
+    (ForcingRelationSource.rawSlot (orderLeaf oldSide)))) (old 9 (g 1))
       (old 4 (slot 5 0)) (fun i => old 4 (slot 5 i.succ))) :=
     of_eq (by simp only [E, ForcingRelationSource.body, ForcingRelationSource.data_rename]; rfl) (HornBinderRules.under_body 4 hE L)
-  exact order_at_direct test R (old 9 w) (old 9 z) (old 9 A1) (old 9 A2) (old 9 A3) (old 9 f) (old 9 T) (old 9 C) (old 9 B) (old 9 S) (old 9 Refl)
+  exact order_at_direct test R oldSide (old 9 w) (old 9 z) (old 9 A1) (old 9 A2) (old 9 A3) (old 9 f) (old 9 T) (old 9 C) (old 9 B) (old 9 S) (old
+    9 Refl)
     (old 9 Pre) (old 9 j) (old 9 Sg)
     (old 9 (g 0)) (old 9 (g 1)) (old 4 (slot 5 0)) (slot 4 0) (slot 4 1) (slot 4 2) (slot 4 3) (old 9 Y)
     (fun i => old 9 (v i)) (fun i => old 9 (Gb i)) (fun i => old 9 (H i))
     (fun i => old 9 (U i)) (fun i => old 9 (F i)) (fun i => old 9 (P i))
     (fun i => old 9 (N i)) (fun i => old 9 (D i)) (fun i => old 4 (slot 5 i.succ))
     h9 hs9 hL hd9
+
+/-- Compare the actual guard with the row’s R(r,p) or R(r,q) leaf. -/
+private theorem compare_order_on {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (R : Source.Formula (k+2)) (oldSide : Bool) (w z A1 A2 A3 f T C B S Refl Pre j Sg a head q Y : Fin m)
+    (v : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (SyntaxNumeralSyntax.numeral 0 z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1)) (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hA3 : Derives Γ (SyntaxNumeralSyntax.numeral 3 A3)) (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hd : Derives Γ (ForcingPreorderLeaves.data test R w z A1 A2 A3 f T C B S Refl Pre v Gb H U F P N D))
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T S j (P (orderCondition oldSide)) Sg))
+    (hg : Derives Γ (ForcingGuardOpening.result true R w z f T (P 0) Sg a head q Y)) :
+    Derives Γ (.equal Y (H (ForcingPreorderLeaves.relationPosition (orderLeaf oldSide)))) := by
+  have row := Derives.conjL (.conjL (.conjR hd))
+  have hParent := Derives.conjL (.conjR (.conjR hd))
+  have hs := Derives.conjR (.conjL (SyntaxMixedFormulaJudgmentTyping.input_of_substituted hZ w B S z f z T (v 2) (U 0) hw hParent))
+  have hp0 := Derives.conjL (SyntaxTopFormulaTyping.instantiate_environment w z T C (P 0) (F 0) (U 1) (.conjL (.conjR (.conjR (.conjR (.conjR
+    (.conjR (.conjR (.conjR (.conjR row))))))))))
+  have hp1 : Derives Γ (SyntaxTermSyntax.term w z T (P (orderCondition oldSide))) := by
+    cases oldSide
+    · exact Derives.conjL (SyntaxTopFormulaTyping.instantiate_environment w z T C (P 1) (F 1) (U 2) (.conjL (.conjR (.conjR (.conjR (.conjR
+    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR row))))))))))))
+    · exact Derives.conjL (SyntaxTopFormulaTyping.instantiate_environment w z T C (P 2) (F 2) (N 0) (.conjL (.conjR (.conjR (.conjR (.conjR
+    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR row))))))))))))))
+  have h : OrderInputs Γ test R oldSide w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D :=
+    ⟨hZ,hw,hz,hA1,hA2,hA3,hf,hj,hd,hr,hs,hp0,hp1⟩
+  let E := ForcingGuardOpening.body true R w z f T (P 0) Sg a head q Y
+  let Δ := Context.add E (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 E _ hg
+  have he : Derives Δ E := .hyp (Or.inl rfl)
+  exact eq_symm (order_at_guard_data test R oldSide (old 4 w) (old 4 z) (old 4 A1) (old 4 A2) (old 4 A3)
+    (old 4 f) (old 4 T) (old 4 C) (old 4 B) (old 4 S) (old 4 Refl) (old 4 Pre) (old 4 j)
+    (old 4 Sg) (old 4 a) (old 4 head) (old 4 q) (old 4 Y)
+    (fun i => old 4 (v i)) (fun i => old 4 (Gb i)) (fun i => old 4 (H i))
+    (fun i => old 4 (U i)) (fun i => old 4 (F i)) (fun i => old 4 (P i))
+    (fun i => old 4 (N i)) (fun i => old 4 (D i)) (slot 4) (h.in_body E) he)
 
 /-- Compare the actual order guard with the first relation leaf, R(r,q). -/
 theorem compare_order {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
@@ -627,26 +687,9 @@ theorem compare_order {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test 
     (hd : Derives Γ (ForcingPreorderLeaves.data test R w z A1 A2 A3 f T C B S Refl Pre v Gb H U F P N D))
     (hr : Derives Γ (ForcingReflexiveImages.replacement w f z T S j (P 1) Sg))
     (hg : Derives Γ (ForcingGuardOpening.result true R w z f T (P 0) Sg a head q Y)) :
-    Derives Γ (.equal Y (H 3)) := by
-  have row := Derives.conjL (.conjL (.conjR hd))
-  have hParent := Derives.conjL (.conjR (.conjR hd))
-  have hs := Derives.conjR (.conjL (SyntaxMixedFormulaJudgmentTyping.input_of_substituted hZ w B S z f z T (v 2) (U 0) hw hParent))
-  have hp0 := Derives.conjL (SyntaxTopFormulaTyping.instantiate_environment w z T C (P 0) (F 0) (U 1) (.conjL (.conjR (.conjR (.conjR (.conjR
-    (.conjR (.conjR (.conjR (.conjR row))))))))))
-  have hp1 := Derives.conjL (SyntaxTopFormulaTyping.instantiate_environment w z T C (P 1) (F 1) (U 2) (.conjL (.conjR (.conjR (.conjR (.conjR
-    (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR row))))))))))))
-  have h : OrderInputs Γ test R w z A1 A2 A3 f T C B S Refl Pre j Sg v Gb H U F P N D :=
-    ⟨hZ,hw,hz,hA1,hA2,hA3,hf,hj,hd,hr,hs,hp0,hp1⟩
-  let E := ForcingGuardOpening.body true R w z f T (P 0) Sg a head q Y
-  let Δ := Context.add E (raisedContext 4 Γ)
-  apply HornBinderRules.eliminate_many 4 E _ hg
-  have he : Derives Δ E := .hyp (Or.inl rfl)
-  exact eq_symm (order_at_guard_data test R (old 4 w) (old 4 z) (old 4 A1) (old 4 A2) (old 4 A3)
-    (old 4 f) (old 4 T) (old 4 C) (old 4 B) (old 4 S) (old 4 Refl) (old 4 Pre) (old 4 j)
-    (old 4 Sg) (old 4 a) (old 4 head) (old 4 q) (old 4 Y)
-    (fun i => old 4 (v i)) (fun i => old 4 (Gb i)) (fun i => old 4 (H i))
-    (fun i => old 4 (U i)) (fun i => old 4 (F i)) (fun i => old 4 (P i))
-    (fun i => old 4 (N i)) (fun i => old 4 (D i)) (slot 4) (h.in_body E) he)
+    Derives Γ (.equal Y (H 3)) :=
+  compare_order_on hZ test R false w z A1 A2 A3 f T C B S Refl Pre j Sg a head q Y
+    v Gb H U F P N D hw hz hA1 hA2 hA3 hf hj hd hr hg
 
 /-- Compare the actual existential tail with the canonical execution on the
 same prefixed bound table. The source constructors and new query come from
@@ -714,7 +757,7 @@ theorem compare_existential_tail {k m} {Γ : Context m} (hZ : ZFContext.Evidence
     (v 8) (u 7) t Base i j p q (cv 1) N Old Tail (v 9) (r 3) s hInput)
 
 private theorem compare_member_from_row {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (condition : Fin 3)
     (w z a f alpha b A B R S n x Parent A1 A2 A3 C T Base Refl Pre i j own head sm Y : Fin m)
     (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
     (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
@@ -730,7 +773,7 @@ private theorem compare_member_from_row {k m} {Γ : Context m} (hZ : ZFContext.E
     (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
     (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i))
     (hd : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f B C T Base Refl Pre raw Gb H U F P N D))
-    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z B Base j (P 1) (v 9))) :
+    (hr : Derives Γ (ForcingReflexiveImages.replacement w f z B Base j (P condition) (v 9))) :
     Derives Γ (.equal Y (H 0)) := by
   have hw := Derives.conjL (.conjL hp)
   have field := StructuralListFieldValues.exists_value hZ w Base i hw (SyntaxNumerals.range hZ k w i hw hi)
@@ -754,7 +797,7 @@ private theorem compare_member_from_row {k m} {Γ : Context m} (hZ : ZFContext.E
   have hi1 := of_eq (SyntaxNumeralSyntax.numeral_rename k i Fin.castSucc) (under hi E)
   have hd1 := of_eq (ForcingPreorderLeaves.data_rename test Reln w z A1 A2 A3 f B C T Base Refl Pre
     raw Gb H U F P N D Fin.castSucc) (under hd E)
-  have hr1 := of_eq (ForcingReflexiveImages.replacement_rename w f z B Base j (P 1) (v 9) Fin.castSucc)
+  have hr1 := of_eq (ForcingReflexiveImages.replacement_rename w f z B Base j (P condition) (v 9) Fin.castSucc)
     (under hr E)
   have member := ForcingPreorderMember.raw_from_data hZ1 test Reln 0
     w.castSucc z.castSucc A1.castSucc A2.castSucc A3.castSucc f.castSucc B.castSucc C.castSucc T.castSucc Base.castSucc Refl.castSucc Pre.castSucc
@@ -764,7 +807,7 @@ private theorem compare_member_from_row {k m} {Γ : Context m} (hZ : ZFContext.E
     hw1 hz1 h11 h21 hi1 hd1 (.conjR hE)
   exact compare_member hZ1 Reln w.castSucc z.castSucc a.castSucc f.castSucc alpha.castSucc b.castSucc A.castSucc B.castSucc (P 0).castSucc
     R.castSucc S.castSucc n.castSucc x.castSucc Parent.castSucc
-    own.castSucc head.castSucc sm.castSucc Y.castSucc Base.castSucc j.castSucc (P 1).castSucc i.castSucc
+    own.castSucc head.castSucc sm.castSucc Y.castSucc Base.castSucc j.castSucc (P condition).castSucc i.castSucc
     (Fin.last m) (H 0).castSucc (fun i => (v i).castSucc) (fun i => (u i).castSucc) hp1 hh1 hc1 hq1 hf1 hj1 hi1 hr1 (.conjR hE) member
 
 /-- The original compiler fields, the shared preorder row, and the canonical
@@ -860,7 +903,7 @@ private theorem existential_root_at_outputs {k m} {Γ : Context m} (hZ : ZFConte
   have head := head_at_parent hZ w z a f alpha b A B (P 0) R S n x Parent gamma
     (cv 0) (cv 1) (.conjL parent) (.conjL compiler)
   have rawOutputs := Derives.conjL hr
-  have member := compare_member_from_row hZ test Reln w z a f alpha b A B R S n x Parent
+  have member := compare_member_from_row hZ test Reln 1 w z a f alpha b A B R S n x Parent
     A1 A2 A3 C T Base Refl Pre i j (cv 0) (cv 1) (cv 2) (r 1)
     v u raw Gb H U F P N0 D parent head (.conjL (.conjR compiler)) (.conjL (.conjR (.conjL rawOutputs)))
     zero one two free condition carrier row newTable
@@ -1015,7 +1058,7 @@ private theorem negative_root_at_outputs {k m} {Γ : Context m} (hZ : ZFContext.
   have hc := Derives.conjL (.conjR records)
   have hs := Derives.conjL (.conjR (.conjR records))
   have rawOutputs := Derives.conjL hr
-  have member := compare_member_from_row hZ test Reln w z a f alpha b A B R S n x Parent
+  have member := compare_member_from_row hZ test Reln 1 w z a f alpha b A B R S n x Parent
     A1 A2 A3 C T Base Refl Pre i j (cv 0) (cv 1) (cv 3) (r 1) v u raw Gb H U F P N0 D
     parent (.conjL hc) (.conjL (.conjR (.conjR hc))) (.conjL (.conjR (.conjL rawOutputs)))
     zero one two free condition carrier row newTable
@@ -1130,6 +1173,167 @@ theorem negative_root_kernel_certificate {k m} (test : Formula 1) (Reln : Source
   apply Derives.impI
   exact consume_negative_root (ZFContext.add (ZFContext.source_ZF m) _) test Reln w z a f alpha b A B R S j N n x Parent A1 A2 A3 C T Base Refl
     Pre i Sel Operand FalseCode Tail G W I K J v u raw Gb H U F P N0 D
+    (.hyp (Or.inl rfl))
+
+
+/-- Shared runtime records for the old p-side of the two modal cases. The
+raw guard results and tail come from the same old compiled parent. -/
+def oldTailInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m) : Formula m :=
+  (ForcingFreshParentOpening.data w z a f alpha b A B (P 0) R S n x Parent v u).conj
+    ((SyntaxMixedImageHead.head w alpha f own head).conj
+      ((ForcingGuardCode.compiled false Reln w alpha f head sm).conj
+        ((guardData Reln w (u 7) (v 9) alpha f z B (P 0) head sm so st si (u 8) r).conj
+          ((SyntaxWeakenFreeSyntax.weakened w z b B G (ctx 3)).conj
+            ((InternalProofBackground.implication test w z b G Parent).conj
+              ((FormulaCodeSyntax.formulaCode w Extra z B).conj
+                ((ForcingProofContext.layoutData w z B Extra Pre H ctx).conj
+                  ((SyntaxNumeralSyntax.numeral 0 z).conj
+                    ((SyntaxNumeralSyntax.numeral 1 A1).conj
+                      ((SyntaxNumeralSyntax.numeral 2 A2).conj
+                        ((SyntaxNumeralSyntax.numeral 3 A3).conj
+                          ((SyntaxNumeralSyntax.numeral (k+2) f).conj
+                            ((SyntaxNumeralSyntax.numeral (k+1) j).conj
+                              ((SyntaxNumeralSyntax.numeral k i).conj
+                                ((ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f B C Bound Base Refl Pre raw Gb H U F P N0 D).conj
+                                  ((ForcingReflexiveImages.replacement w f z B Base j (P 2) (v 9))))))))))))))))))
+
+theorem oldTailInput_rename {k m l} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m) (rho : Fin m → Fin l) :
+    (oldTailInput test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si v u raw Gb H U F P
+      N0 D ctx r).rename rho =
+      oldTailInput test Reln (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho R) (rho S) (rho n) (rho x) (rho Parent) (rho
+        G) (rho Extra) (rho A1) (rho A2) (rho A3) (rho C) (rho Bound) (rho Base) (rho Refl) (rho Pre) (rho i) (rho j) (rho own) (rho head) (rho
+        sm) (rho so) (rho st) (rho si)
+        (fun i => rho (v i)) (fun i => rho (u i)) (fun i => rho (raw i)) (fun i => rho (Gb i)) (fun i => rho (H i)) (fun i => rho (U i)) (fun i =>
+          rho (F i)) (fun i => rho (P i)) (fun i => rho (N0 i)) (fun i => rho (D i)) (fun i => rho (ctx i)) (fun i => rho (r i)) := by
+  simp only [oldTailInput, Formula.rename, ForcingFreshParentOpening.data_rename,
+    SyntaxMixedImageHead.head_rename, ForcingGuardCode.compiled_rename, guardData_rename,
+    SyntaxWeakenFreeSyntax.weakened_rename, InternalProofBackground.implication_rename,
+    FormulaCodeSyntax.formulaCode_rename, ForcingProofContext.layoutData_rename,
+    SyntaxNumeralSyntax.numeral_rename, ForcingPreorderLeaves.data_rename, ForcingReflexiveImages.replacement_rename]
+
+/-- Derive the canonical tail proof from the original old parent proof. Both
+old guard matches and their proof discharge are internal to this endpoint. -/
+private theorem old_tail_from_opened {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m)
+    (hi : Derives Γ (oldTailInput test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si v u
+      raw Gb H U F P N0 D ctx r)) :
+    Derives Γ (ForcingProofContext.resultData test w z B Extra Pre (r 3) H ctx) := by
+  have parent := Derives.conjL hi
+  have rest := Derives.conjR hi
+  have headAt := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have memberCompiler := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have rawData := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have weak := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have oldProof := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have extraType := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have layout := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have zero := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have one := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have two := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have three := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have free := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have condition := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have carrier := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have row := Derives.conjL rest
+  have oldTable := Derives.conjR rest
+  have rawOutputs := Derives.conjL rawData
+  have src := Derives.conjL parent
+  have hw := Derives.conjL src
+  have hz := Derives.conjL (.conjR src)
+  have member := compare_member_from_row hZ test Reln 2 w z a f alpha b A B R S n x Parent
+    A1 A2 A3 C Bound Base Refl Pre i j own head sm (r 1) v u raw Gb H U F P N0 D
+    parent headAt memberCompiler (.conjL (.conjR (.conjL rawOutputs)))
+    zero one two free condition carrier row oldTable
+  have order := compare_order_on hZ test Reln true w z A1 A2 A3 f B C Bound Base Refl Pre j
+    (v 9) alpha head so (r 2) raw Gb H U F P N0 D hw zero one two three free condition row oldTable
+    (.conjR (.conjR rawData))
+  have outer := SyntaxRenameLogicalSubst.binary_x 2 w (r 1) (r 0) (u 8) (H 0) member (.conjL (.conjL rawOutputs))
+  have inner := SyntaxRenameLogicalSubst.binary_x 2 w (r 2) (r 3) (r 0) (H 5) order (.conjL (.conjR rawOutputs))
+  have opened := ForcingOldParentInstance.from_opened hZ test w z a f alpha b A B (P 0) R S n x Parent
+    G (ctx 3) v u parent weak oldProof
+  have hRaw : Derives Γ (substituted w (u 7) (v 9) alpha f z B x (u 8)) :=
+    .conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR parent))))))))
+  have ht := SyntaxMixedFormulaJudgment.target_type w (u 7) (v 9) alpha f z B x (u 8) hRaw
+  exact ForcingOldParentInstance.consume_guards hZ test w z B C Refl Pre Extra (u 8) (r 0) (r 3)
+    Gb H ctx U F P N0 hw hz extraType ht (.conjL (.conjL (.conjR row))) layout outer inner opened
+
+/-- The canonical nested proof used by the new parent comes from the
+actual old parent proof and its actual tail. -/
+theorem old_nested_from_opened {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m)
+    (hi : Derives Γ (oldTailInput test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si v u
+      raw Gb H U F P N0 D ctx r)) :
+    Derives Γ (ForcingNestedGuardProof.produced test w z b A B G (ctx 3) (H 0) (H 3) (r 3)) := by
+  have hd := old_tail_from_opened hZ test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si
+    v u raw Gb H U F P N0 D ctx r hi
+  have src := Derives.conjL (.conjL hi)
+  have hw := Derives.conjL src
+  have tailQuery := Derives.conjR (.conjR (.conjR (.conjL (.conjL (.conjR (.conjR (.conjR hi)))))))
+  have hTail := SyntaxMixedFormulaJudgment.target_type w (u 7) (v 9) alpha f z B st (r 3) tailQuery
+  have weak := Derives.conjL (.conjR (.conjR (.conjR (.conjR hi))))
+  have hG := SyntaxWeakenFreeOutput.source_type hZ w z b B G (ctx 3) hw weak
+  exact ForcingNestedGuardProof.produce hZ test w z b A B G Extra Pre (r 3) H ctx
+    (.conjI hw (.conjI (.conjL (.conjR src)) (.conjI (.conjL (.conjR (.conjR (.conjR src)))) weak)))
+    hG hTail hd
+
+def oldNestedSentence {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m) : Source.Sentence :=
+  ((oldTailInput test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si v u raw Gb H U F P
+    N0 D ctx r).imp
+    (ForcingNestedGuardProof.produced test w z b A B G (ctx 3) (H 0) (H 3) (r 3))).close
+
+theorem old_nested_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm so st si : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) (r : Fin 4 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (oldNestedSentence test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound Base Refl Pre i j own head sm
+        so st si v u raw Gb H U F P N0 D ctx r)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact old_nested_from_opened (ZFContext.add (ZFContext.source_ZF m) _) test Reln w z a f alpha b A B R S n x Parent G Extra A1 A2 A3 C Bound
+    Base Refl Pre i j own head sm so st si v u raw Gb H U F P N0 D ctx r
     (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingRawModalBody
