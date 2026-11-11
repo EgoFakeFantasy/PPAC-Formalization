@@ -40147,6 +40147,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistOrderOpening.from_compiled
 #print axioms PPAC.Migration.ForcingExistOrderOpening.with_rebound_lift_query
 #print axioms PPAC.Migration.ForcingExistOrderOpening.with_rebound_prefixed_query
+#print axioms PPAC.Migration.ForcingExistOrderOpening.with_prefixed_guard
 #print axioms PPAC.Migration.ForcingExistOrderOpening.with_successor_table
 #print axioms PPAC.Migration.ForcingExistOrderOpening.with_lifted_guard
 #print axioms PPAC.Migration.ForcingExistOrderOpening.guard_compare
@@ -40839,6 +40840,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point

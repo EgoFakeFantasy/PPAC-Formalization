@@ -1,0 +1,61 @@
+{
+  "baseline_commit": "9269f3bbb5a8dab4f33978ab5cf6b019fe43385a",
+  "recorded_at": "2026-11-11T16:45:37.254256+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "neg"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results",
+    "PPAC.Migration.ForcingExistOrderOpening.with_prefixed_guard"
+  ],
+  "scope": "Read the original opened density witness membership and order queries. The order uses the actual q head and the very same r condition-slot replacement used by the forcing queries. The combined negative witness eliminator now supplies both exact guard queries alongside its original forcing queries.",
+  "opened_witness_membership_query_proved": true,
+  "opened_witness_order_query_proved": true,
+  "same_witness_condition_replacement_proved": true,
+  "preorder_row_agreement_proved": false,
+  "negative_source_induction_step_proved": false,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40236,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "6a1a77ebd71ac1e30a35008cb81c74d36a79e0a1485cc7363ca18748737a52ba",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "f60c4224a75dbd751579ecbf74b4133d30591fc9eb456f9cc4d5dd6c4536c7e6",
+      "PPAC/Migration/ForcingExistOrderOpening.lean": "8d092a82a92c1de5b927806c8c0ea5b8e8d73e786cf99a3c85394ce2912f1f20",
+      "docs/CURRENT_STATUS.zh-CN.md": "04c0415124b07e9effaceebcc89cb9a6af0aa05e88408e72959e949b3be100e3",
+      "docs/SOURCE_LOCK.json": "8df0a4518e7a7e883c64a9f95ae6cf18fa02b0da4cf61722eb53ff8f0dd03a49",
+      "scripts/verify.py": "ece9eb585e5940c95802c36b55bd510a9c9c1dcc5128a45566f1dd04e261575e"
+    }
+  },
+  "baseline_declarations_compared": 40234,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistOrderOpening.with_prefixed_guard": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

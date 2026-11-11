@@ -626,6 +626,50 @@ private theorem guardRecord_rename {k m l} (Reln : Source.Formula (k+2)) (w a A 
     (guardRecord Reln w a A f j Nraw v).rename r = guardRecord Reln (r w) (r a) (r A) (r f) (r j) (r Nraw) (fun i => r (v i)) := by
   simp only [guardRecord, Formula.rename, SyntaxMixedImageHead.head_rename, ForcingGuardCode.compiled_rename, ForcingConditionRebind.compiled_rename]
 
+
+/-- Read the original inner order guard after both binders have been opened.
+The inner prefix supplies r, and the old head field still supplies q. -/
+theorem with_prefixed_guard {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (w z A B f j b K H U P T F Q Y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hP : Derives Γ (SyntaxTermSyntax.term w z b P))
+    (hU : Derives Γ (SyntaxMixedImageCodeSyntax.termList w A z b U))
+    (hCons : Derives Γ (StructuralListSyntax.consCode w P U K))
+    (hZero : Derives Γ (.mem z A)) (hT : Derives Γ (field w U z T))
+    (hReplace : Derives Γ (ForcingReflexiveImages.replacement w f z b H j P F))
+    (hc : Derives Γ (ForcingExistGuardsCode.compiled R w A B f j Q))
+    (hQuery : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H B f z b Q Y))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (head N : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder R) (r w) (r z)
+        (r f) (r b) (r T) (r F) (r A) head N (r Y)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hPmem := SyntaxTerms.range hZ w z b P hw hP
+  have hUmem := Derives.conjL (.conjL (.conjR (.conjR hU)))
+  have hField := StructuralListFieldCons.zero_value hZ w P U K z hw hPmem hUmem hCons hz
+  refine NativeProofQuotation.eliminate_objects hZ 3
+    (fun r v => guardRecord R (r w) (r A) (r B) (r f) (r j) (r Q) v) (.conjR hc) out ?_
+  intro l Δ r v hZ1 lift hRecord
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hRun := rebound_lift_at_tables hZ1 (r w) (r z) (r A) (r f) (r B) (r z) (r b)
+    (r K) (r H) (r U) (r F) (r P) (r j) (v 2) (r Q) (r Y) hw1 hz1 (lift hPmem) (lift hUmem)
+    (of_eq (StructuralListSyntax.consCode_rename w P U K r) (lift hCons))
+    (of_eq (field_rename w K z P r) (lift hField))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w A z b U r) (lift hU))
+    (of_eq (ForcingReflexiveImages.replacement_rename w f z b H j P F r) (lift hReplace))
+    (.conjR (.conjR hRecord))
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w K H B f z b Q Y r) (lift hQuery))
+  have eZero := OmegaUniversal.empty_unique (v 0) (r z) (ZFContext.arithmetic hZ1).base.extensionality
+    (.conjL (.conjL hRecord)) hz1
+  have hHead := SyntaxVariableImagePoint.code_subst_index true (r w) (v 0) (v 1) (r z)
+    eZero (.conjL (.conjR (.conjL hRecord)))
+  have hGuard := ForcingGuardOpening.from_lifted_at hZ1 true (ForcingExistGuardsCode.reverseOrder R)
+    (r w) (r z) (r A) (r f) (r z) (r b) (r U) (r F) (v 1) (r T) (v 2) (r Y)
+    hw1 hz1 hHead (lift hZero) (of_eq (field_rename w U z T r) (lift hT)) (.conjL (.conjR hRecord)) hRun
+  exact use r (v 1) (v 2) hZ1 lift hGuard
+
 /-- Read the reverse-order compiler and its actual query under both density
 binders. The old head becomes bound one, and the overwritten condition
 slot reads bound zero in the same actual output. -/
