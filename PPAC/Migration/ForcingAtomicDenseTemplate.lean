@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingAtomicCode
 import PPAC.Migration.ForcingDensityInstantiation
+import PPAC.Migration.ForcingGuardOpening
 import PPAC.Migration.Internal.AtomicProgramAlignment
 import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingAtomicMonoImages
@@ -505,6 +506,36 @@ theorem compare_shell_members {k m : Nat} {Γ : Source.Context m} (hZ : ZFContex
       B (v 4) (leaf' 2) (y 1) (y' 1) hw hz hP hV hi hI hif hIg
       (.conjR hOuterFields) (.conjR hOuterFields') hInner hInner'
       (.conjL (.conjR (.conjR (.conjR hd)))) (hQuotes 2) hR hR'
+
+/-- Normalize the actual outer order guard from the density compiler.
+The bound head is taken from the actual lift, and the free list is that
+same lift's output list. The target bound and free scopes are internal. -/
+theorem outer_order_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (w z a A B f j N D b S L A' C K H X : Fin m)
+    (v : Fin 7 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hOuter : Source.Derives Γ (lifted w L S a f z b A' C K H))
+    (hQ : Source.Derives Γ (substituted w K H A' f C b (v 3) X)) :
+    Source.Derives Γ (ForcingGuardOpening.result true R w C f b (v 1) H
+      A' (v 1) (v 3) X) := by
+  have hHead := Source.Derives.conjL hd
+  have e := OmegaUniversal.empty_unique (v 0) z (ZFContext.arithmetic hZ).base.extensionality (.conjL hHead) hz
+  have hP := SyntaxVariableImagePoint.code_subst_index true w (v 0) (v 1) z e (.conjL (.conjR hHead))
+  have hZero := ForcingExistChildOpening.zero_fields hZ w z L S a f z b A' C K H (v 1) hw hz hOuter
+  have hFields := Source.Derives.impE (.conjR hZero) hP
+  have hO := Source.Derives.conjL (.conjR (.conjR hd))
+  have hInput := SyntaxCodedMixedBinderTyping.input_of_lifted w L S a f z b A' C K H hOuter
+  have hEq := OmegaUniversal.successor_unique A A' a (ZFContext.arithmetic hZ).base.extensionality hA (.conjL (.conjR hInput))
+  let P := ForcingGuardCode.compiled true R w.castSucc (Fin.last m) f.castSucc (v 1).castSucc (v 3).castSucc
+  have hO' : Source.Derives Γ (ForcingGuardCode.compiled true R w A' f (v 1) (v 3)) :=
+    of_eq (by simp only [P, Source.Formula.instantiate, ForcingGuardCode.compiled_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst P hEq (of_eq (by simp only [P, Source.Formula.instantiate, ForcingGuardCode.compiled_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hO))
+  exact ForcingGuardOpening.from_lifted hZ true R w z A' f C b K H (v 1) (v 3) X
+    hw hz hP (.conjL hFields) (.conjR hFields) hO' hQ
 
 end MemberGuards
 

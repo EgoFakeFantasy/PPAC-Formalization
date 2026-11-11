@@ -1,0 +1,66 @@
+{
+  "baseline_commit": "3bb70da3f8b343d150f6aa6ddf3f53c82760a1bf",
+  "recorded_at": "2026-11-11T13:31:48.859204+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query",
+    "PPAC.Migration.ForcingGuardOpening.from_lifted",
+    "PPAC.Migration.ForcingRelationGuardFormula.to_direct_at_scope"
+  ],
+  "scope": "The actual outer order compiler and mixed lift imply the direct guard-template query with the same output. The free table is the original lift output, and the bound-zero field is read from that lift. The original and lifted source bounds are equated by successor uniqueness. The comparison to the canonical outer leaf remains open.",
+  "actual_outer_order_direct_query_proved": true,
+  "canonical_outer_order_code_equality_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40198,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "c28e419152f8ec2481deb3a6e2d735c0c5892d5e7a38a9f63af28b6805300817",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "982e2a244ee78c5de9a360fa7c20e20f370a22fce95c456572e12e89035e167f",
+      "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+      "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+      "docs/CURRENT_STATUS.zh-CN.md": "b00e87f3d406645185ab8785293c823ec39ece9e1e08cc2781e7f65d144e5729",
+      "docs/SOURCE_LOCK.json": "150eaab76ccc5a3f40bf1c3bec40e07a18f26fd439177250ba7f8beb4d54faad",
+      "scripts/verify.py": "d96f0c365fe3389249fe29ede972cab24273f82a7065239083cbd923294770a8"
+    }
+  },
+  "baseline_declarations_compared": 40195,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingGuardOpening.from_lifted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingRelationGuardFormula.to_direct_at_scope": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

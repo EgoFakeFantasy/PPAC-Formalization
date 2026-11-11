@@ -80,7 +80,7 @@ private theorem compare_with_identity {m} {Γ : Context m} (hZ : ZFContext.Evide
 
 private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z f t c d B F V K B0 D n u v y : Fin m)
-    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (.mem f w))
+    (hw : Derives Γ (omega w)) (hzW : Derives Γ (.mem z w)) (hf : Derives Γ (.mem f w))
     (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
     (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
       (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
@@ -89,7 +89,6 @@ private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
         (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
     Derives Γ (.equal v y) := by
   let out := Formula.equal v y
-  have hzW := OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz
   refine NativeProofQuotation.eliminate_objects hZ 1
     (fun r x => SyntaxIdentityMapSyntax.identityCode (r w) (r z) (x 0))
     (SyntaxIdentityCode.exists_code hZ w z hw hzW) out ?_
@@ -136,7 +135,8 @@ theorem formula {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have hw := Derives.conjL hF
   have hz := Derives.conjL (.conjR hF)
   have hf := Derives.conjL (.conjR (.conjR hF))
-  apply compare_paths hZ w z f t c d B F V K B0 D n u v y hw hz
+  apply compare_paths hZ w z f t c d B F V K B0 D n u v y hw
+    (OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz)
     (SyntaxNumerals.range hZ (k+2) w f hw hf) hP
   intro l Δ r hZ1 lift x p q a hPath
   exact ForcingRelationImages.guard_term hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r S) (r L)
@@ -180,10 +180,11 @@ theorem from_source {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R : Sou
   exact formula hZ w z f t c d S P Q i j M D (E 2) (E 3) V K B0 X G v y hF (.conjI hNative (.conjI hGuard hCommon))
 
 /-- Turn the supplied comparison of actual term queries into the actual
-direct substitution of the same formula. The direct output is generated. -/
-theorem to_direct_from_terms {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+direct substitution of the same formula. The direct output is generated.
+The initial bound scope can be any internal natural. -/
+theorem to_direct_at_scope {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z f t c d B F V K B0 D n u v : Fin m)
-    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (.mem f w))
+    (hw : Derives Γ (omega w)) (hzW : Derives Γ (.mem z w)) (hf : Derives Γ (.mem f w))
     (hB0 : Derives Γ (SyntaxMixedImageCodeSyntax.termList w z c d B0))
     (hD : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f c d D))
     (h0 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B F z f t f n u))
@@ -206,13 +207,31 @@ theorem to_direct_from_terms {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have h11 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w V K t f c d u v r) (lift h1)
   have hEq := compare_paths hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r B) (r F) (r V) (r K)
     (r B0) (r D) (r n) (r u) (r v) (q 0) (of_eq (omega_rename w r) (lift hw))
-    (of_eq (empty_rename z r) (lift hz)) (lift hf) (.conjI h01 (.conjI h11 hCandidate)) (by
+    (lift hzW) (lift hf) (.conjI h01 (.conjI h11 hCandidate)) (by
       intro l' Δ' s hZ2 lift2 x p q a hPath
       exact compare (s ∘ r) hZ2
         (fun h => of_eq (SourceAlgebra.rename_comp _ r s) (lift2 (lift h))) x p q a hPath)
   exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B0 D z f c d n v r).symm
     (SyntaxMixedFormulaJudgmentSubst.subst_q (r w) (r B0) (r D) (r z) (r f) (r c) (r d)
       (r n) (q 0) (r v) (eq_symm hEq) hCandidate)
+
+/-- Empty-bound specialization used by the original bare-relation routes. -/
+theorem to_direct_from_terms {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d B F V K B0 D n u v : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (.mem f w))
+    (hB0 : Derives Γ (SyntaxMixedImageCodeSyntax.termList w z c d B0))
+    (hD : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f c d D))
+    (h0 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B F z f t f n u))
+    (h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V K t f c d u v))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ x p q a : Fin l,
+      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
+        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+    Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n v) :=
+  to_direct_at_scope hZ w z f t c d B F V K B0 D n u v hw
+    (OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz)
+    hf hB0 hD h0 h1 compare
 
 /-- Generate the common direct query INTERNALLY and rewrite its output
 to the SAME actual guard output. No common query/output is an input. -/

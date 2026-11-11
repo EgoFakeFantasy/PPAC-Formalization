@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingGuardDiagram
+import PPAC.Migration.ForcingRelationGuardFormula
 
 /-! Actual original member OR relation guard compilation, lifted opening and
 native InstantiateTop output is a DIRECT substitution of the SAME original
@@ -120,6 +121,172 @@ theorem from_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (order
     apply HornBinderRules.intro_many 4 _ (slot 4)
     exact of_eq (by simp only [body, data_rename, assign_old, assign_slot]; rfl) (.conjI hE hd)
   exact of_eq (result_rename order Reln w z f T P S A head q Y (old 4)).symm hout
+
+/-- A compiler's one bound image is the actual head, and its free images
+preserve their literal indices. Compare the subsequent mixed lift with the
+single direct query on precisely those target fields. -/
+private theorem lifted_guard_term {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f c d t B F K H V head x u q y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxNumeralSyntax.numeral 1 t))
+    (hh : Derives Γ (SyntaxVariableSyntax.code true w z head))
+    (hB : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => head) B))
+    (hF : Derives Γ (ForcingAtomicCode.identityImages w a f F))
+    (hV : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => head) V))
+    (hK : Derives Γ (StructuralListFieldSyntax.field w K z head))
+    (hPath : Derives Γ (ForcingRelationImages.guardPath w t f a c d B F K H V H x u q y)) :
+    Derives Γ (.equal q y) := by
+  let out := Formula.equal q y
+  have hx := SyntaxCodedMixedTermTyping.source_type w B F t f a f x u (.conjL hPath)
+  apply Derives.disjE (.conjR hx)
+  · let E := SyntaxTermSyntax.branch true w t x
+    let Q := SyntaxTermSyntax.branchWitness true w t x
+    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
+    apply SyntaxTermSyntax.eliminate_branch true w t x out (.hyp (Or.inl rfl))
+    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
+    let r := Fin.castSucc (n := m)
+    let i := Fin.last m
+    have lift {P : Formula m} (h : Derives Γ P) : Derives Δ (P.rename r) := under (add h E) Q
+    have hZ1 := ZFContext.under (ZFContext.add hZ E) Q
+    have hw1 := of_eq (omega_rename w r) (lift hw)
+    have hz1 := of_eq (empty_rename z r) (lift hz)
+    have ht1 := of_eq (SyntaxNumeralSyntax.numeral_rename 1 t r) (lift ht)
+    have hi := Derives.impE (.conjL (SyntaxNumeralMembers.member_iff hZ1 1 (r t) i ht1)) (.conjL hQ)
+    have hi0 : Derives Δ (empty i) :=
+      .disjE hi (.botE (.hyp (Or.inl rfl))) (.hyp (Or.inl rfl))
+    have ei := OmegaUniversal.empty_unique i (r z) (ZFContext.arithmetic hZ1).base.extensionality hi0 hz1
+    have hx1 := SyntaxVariableImagePoint.code_subst_index true (r w) i (r x) (r z) ei (.conjR hQ)
+    have path := of_eq (ForcingRelationImages.guardPath_rename w t f a c d B F K H V H x u q y r) (lift hPath)
+    have p0 := Derives.conjL path
+    have p1 := Derives.conjL (.conjR path)
+    have p2 := Derives.conjR (.conjR path)
+    have L0 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r B) (r F) (r t) (r f) (r a) (r f) (r x) (r u) p0)
+    have L1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r K) (r H) (r a) (r f) (r c) (r d) (r u) (r q) p1)
+    have L2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r V) (r H) (r t) (r f) (r c) (r d) (r x) (r y) p2)
+    have f0 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 true (r w) (r B) (r F) (r t) (r f) (r a) (r f) (r x) (r u) (r z) hw1 L0 hx1)) p0
+    have f2 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 true (r w) (r V) (r H) (r t) (r f) (r c) (r d) (r x) (r y) (r z) hw1 L2 hx1)) p2
+    have e0 := Derives.impE (.conjL (SyntaxForestFieldValues.field_at hZ1 1 (r w) (fun _ => r head) (r B) 0 (r z) (r u)
+      hw1 (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => head) B r) (lift hB)) hz1)) (.conjR f0)
+    have e2 := Derives.impE (.conjL (SyntaxForestFieldValues.field_at hZ1 1 (r w) (fun _ => r head) (r V) 0 (r z) (r y)
+      hw1 (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => head) V r) (lift hV)) hz1)) (.conjR f2)
+    have p1' := SyntaxMixedFormulaAtomicSubst.term_source (r w) (r K) (r H) (r a) (r f) (r c) (r d) (r u) (r q) (r head) e0 p1
+    have f1 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 true (r w) (r K) (r H) (r a) (r f) (r c) (r d) (r head) (r q) (r z) hw1 L1
+      (of_eq (SyntaxVariableSyntax.code_rename true w z head r) (lift hh)))) p1'
+    have hzW := OmegaStructureAlgebra.zero_member (r w) (r z) (ZFContext.arithmetic hZ1).base.extensionality hw1 hz1
+    have e1 := StructuralListFieldValues.unique hZ1 (r w) (r K) (r z) (r q) (r head) hw1 hzW
+      (.conjR f1) (of_eq (StructuralListFieldSyntax.field_rename w K z head r) (lift hK))
+    exact eq_trans e1 (eq_symm e2)
+  · let E := SyntaxTermSyntax.branch false w f x
+    let Q := SyntaxTermSyntax.branchWitness false w f x
+    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
+    apply SyntaxTermSyntax.eliminate_branch false w f x out (.hyp (Or.inl rfl))
+    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
+    let r := Fin.castSucc (n := m)
+    let i := Fin.last m
+    have lift {P : Formula m} (h : Derives Γ P) : Derives Δ (P.rename r) := under (add h E) Q
+    have hZ1 := ZFContext.under (ZFContext.add hZ E) Q
+    have hw1 := of_eq (omega_rename w r) (lift hw)
+    have path := of_eq (ForcingRelationImages.guardPath_rename w t f a c d B F K H V H x u q y r) (lift hPath)
+    have p0 := Derives.conjL path
+    have p1 := Derives.conjL (.conjR path)
+    have p2 := Derives.conjR (.conjR path)
+    have L0 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r B) (r F) (r t) (r f) (r a) (r f) (r x) (r u) p0)
+    have L1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r K) (r H) (r a) (r f) (r c) (r d) (r u) (r q) p1)
+    have L2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted (r w) (r V) (r H) (r t) (r f) (r c) (r d) (r x) (r y) p2)
+    have f0 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false (r w) (r B) (r F) (r t) (r f) (r a) (r f) (r x) (r u) i hw1 L0 (.conjR hQ))) p0
+    have hu := ForcingMemberGuard.identity_field hZ1 (r w) (r a) (r f) (r F) i (r u)
+      (of_eq (ForcingAtomicCode.identityImages_rename w a f F r) (lift hF)) (.conjL f0) (.conjR f0)
+    have f1 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false (r w) (r K) (r H) (r a) (r f) (r c) (r d) (r u) (r q) i hw1 L1 hu)) p1
+    have f2 := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false (r w) (r V) (r H) (r t) (r f) (r c) (r d) (r x) (r y) i hw1 L2 (.conjR hQ))) p2
+    have hfW := Derives.conjR (.conjL (SyntaxCodedMixedTermTyping.source_type (r w) (r B) (r F) (r t) (r f) (r a) (r f) (r x) (r u) p0))
+    have hiW := StructuralListTraceOrder.member_member hZ1 (r w) i (r f) hw1 hfW (.conjL f0)
+    exact StructuralListFieldValues.unique hZ1 (r w) (r H) i (r q) (r y) hw1 hiW (.conjR f1) (.conjR f2)
+
+private theorem lifted_guard_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (order : Bool) (R : Source.Formula (k+2))
+    (w z a f c d K H head q Y V : Fin m) (v : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hh : Derives Γ (SyntaxVariableSyntax.code true w z head))
+    (hp : Derives Γ (SyntaxTermSyntax.term w c d head))
+    (hK : Derives Γ (StructuralListFieldSyntax.field w K z head))
+    (hm : Derives Γ (ForcingGuardCode.matrix order R w a f head q v))
+    (hV : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => head) V))
+    (hY : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H a f c d q Y)) :
+    Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V H (v 0) f c d (v 1) Y) := by
+  have ht := Derives.conjL hm
+  have hB := Derives.conjL (.conjR (.conjR hm))
+  have hF := Derives.conjL (.conjR (.conjR (.conjR (.conjR hm))))
+  have h0 := Derives.conjR (.conjR (.conjR (.conjR (.conjR hm))))
+  have hS := Derives.conjL (.conjR (FormulaCodeProperties.guards w (v 1) (v 0) f (.conjR (.conjL (.conjR hm)))))
+  have hf := Derives.conjR (.conjR (FormulaCodeProperties.guards w (v 1) (v 0) f (.conjR (.conjL (.conjR hm)))))
+  have hH := Derives.conjR (.conjR (SyntaxMixedFormulaOutput.input_of_substituted hZ w K H a f c d q Y hw hY))
+  have hTyped := ForcingAtomicCode.bound_forest_typed hZ w (v 0) c d V (fun _ => head) hw ht (.conjL hp) (fun _ => hp) hV
+  apply ForcingRelationGuardFormula.to_direct_at_scope hZ w (v 0) f a c d (v 2) (v 3) K H V H (v 1) q Y hw hS hf hTyped hH h0 hY
+  intro l Δ r hZ1 lift x u q y hPath
+  exact lifted_guard_term hZ1 (r w) (r z) (r a) (r f) (r c) (r d) (r (v 0)) (r (v 2)) (r (v 3))
+    (r K) (r H) (r V) (r head) x u q y (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename 1 (v 0) r) (lift ht))
+    (of_eq (SyntaxVariableSyntax.code_rename true w z head r) (lift hh))
+    (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => head) (v 2) r) (lift hB))
+    (of_eq (ForcingAtomicCode.identityImages_rename w a f (v 3) r) (lift hF))
+    (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => head) V r) (lift hV))
+    (of_eq (StructuralListFieldSyntax.field_rename w K z head r) (lift hK)) hPath
+
+/-- Read the actual outer guard compiler and its lifted query. The same
+output is the native guard quotation queried with the original free table
+and the single actual target head. Target scopes remain internal. -/
+theorem from_lifted {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (order : Bool) (R : Source.Formula (k+2))
+    (w z a f c d K H head q Y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hh : Derives Γ (SyntaxVariableSyntax.code true w z head))
+    (ha : Derives Γ (.mem z a))
+    (hK : Derives Γ (StructuralListFieldSyntax.field w K z head))
+    (hq : Derives Γ (ForcingGuardCode.compiled order R w a f head q))
+    (hY : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w K H a f c d q Y)) :
+    Derives Γ (result order R w c f d head H a head q Y) := by
+  have hi := SyntaxMixedFormulaOutput.input_of_substituted hZ w K H a f c d q Y hw hY
+  have hp := SyntaxMixedImageCodeFields.field_type w a c d K z head (.conjL (.conjR hi)) ha hK
+  let out := result order R w c f d head H a head q Y
+  let M := ForcingGuardCode.body order R w a f head q
+  let Δ := Context.add M (raisedContext 4 Γ)
+  apply HornBinderRules.eliminate_many 4 M out hq
+  have hM : Derives Δ M := .hyp (Or.inl rfl)
+  let r := old (m := m) 4
+  let v := slot (m := m) 4
+  have lift {P : Formula m} (h : Derives Γ P) : Derives Δ (P.rename r) := HornBinderRules.under_body 4 h M
+  have hZ1 := HornBinderRules.zf_body 4 hZ M
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hN := SyntaxTerms.range hZ1 (r w) (r c) (r d) (r head) hw1 (of_eq (SyntaxTermSyntax.term_rename w c d head r) (lift hp))
+  have existsV := SyntaxForests.exists_forest hZ1 1 (r w) (fun _ => r head) hw1 (.conjI hN (.eqRefl (r w)))
+  let liftedResult := result order R (r w) (r c) (r f) (r d) (r head) (r H) (r a) (r head) (r q) (r Y)
+  have hResult : Derives Δ liftedResult := by
+    let E := (Formula.mem (Fin.last (m+4)) (r w).castSucc).conj
+      (SyntaxForestSyntax.forest 1 (r w).castSucc (fun _ => (r head).castSucc) (Fin.last (m+4)))
+    let Ξ := Context.add E (Context.image Formula.raise Δ)
+    apply Derives.exE (p := E) existsV
+    let s := Fin.castSucc ∘ r
+    let V := Fin.last (m+4)
+    have hE : Derives Ξ E := .hyp (Or.inl rfl)
+    have carry {P : Formula m} (h : Derives Γ P) : Derives Ξ (P.rename s) :=
+      of_eq (SourceAlgebra.rename_comp P r Fin.castSucc) (under (lift h) E)
+    have hM1 := of_eq (ForcingGuardCode.matrix_rename order R (r w) (r a) (r f) (r head) (r q) v Fin.castSucc) (under hM E)
+    have h := lifted_guard_query (ZFContext.under hZ1 E) order R (s w) (s z) (s a) (s f) (s c) (s d)
+      (s K) (s H) (s head) (s q) (s Y) V (fun i => (v i).castSucc)
+      (of_eq (omega_rename w s) (carry hw)) (of_eq (empty_rename z s) (carry hz))
+      (of_eq (SyntaxVariableSyntax.code_rename true w z head s) (carry hh))
+      (of_eq (SyntaxTermSyntax.term_rename w c d head s) (carry hp))
+      (of_eq (StructuralListFieldSyntax.field_rename w K z head s) (carry hK)) hM1 (.conjR hE)
+      (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w K H a f c d q Y s) (carry hY))
+    have directProof : Derives Ξ (direct (s w) (s c) (s f) (s d) (s head) (s H) (v 0).castSucc (v 1).castSucc (s Y)) := by
+      apply Derives.exI V
+      exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxForestSyntax.forest_rename,
+        SyntaxMixedFormulaJudgmentSyntax.substituted_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl) (.conjI (.conjR hE) h)
+    have res : Derives Ξ (result order R (s w) (s c) (s f) (s d) (s head) (s H) (s a) (s head) (s q) (s Y)) := by
+      apply HornBinderRules.intro_many 4 _ (fun i => (v i).castSucc)
+      exact of_eq (by simp only [body, data_rename, assign_old, assign_slot]; rfl) (.conjI hM1 directProof)
+    exact of_eq (result_rename order R (r w) (r c) (r f) (r d) (r head) (r H) (r a) (r head) (r q) (r Y) Fin.castSucc).symm res
+  exact of_eq (result_rename order R w c f d head H a head q Y r).symm hResult
 
 theorem from_instance {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (order : Bool) (Reln : Source.Formula (k+2))
     (w mode z a f T A C R S K H P r s u head q U Y : Fin m)
