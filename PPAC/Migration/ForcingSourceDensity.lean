@@ -4494,6 +4494,21 @@ private theorem density_at_frame {k m} {Γ : Context m} {Reln : Formula (k+2)} {
   have hT : Derives (Context.add T Γ) T := .hyp (Or.inl rfl)
   exact .impE (.impE (SourceLogic.add hN T) (.conjL (FormulaCodeProperties.guards _ _ _ _ hT))) hT
 
+private theorem DensityInputs.of_runtime {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (hZ : ZFContext.Evidence Γ) (hr : Derives Γ (p.runtime Reln))
+    (hA : Derives Γ (successor p.A p.a)) (hB : Derives Γ (successor p.B p.A))
+    (hC : Derives Γ (successor p.C p.B)) : DensityInputs Γ Reln p := by
+  have global := Derives.conjL hr
+  have basis := Derives.conjL (.conjL (.conjL global))
+  have fresh := Derives.conjL (.conjL (.conjR global))
+  have hw : Derives Γ (OmegaSyntax.omega p.w) := .conjL (.conjL (.conjL (.conjR (.conjR fresh))))
+  have hz : Derives Γ (empty p.z) := .conjL fresh
+  have layoutProof := Derives.conjR (.conjR (.conjR global))
+  have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR layoutProof))))
+  have hf := Derives.conjL (.conjR (.conjR (.conjR (.conjR basis))))
+  have hj := Derives.conjL (.conjR (.conjR hr))
+  exact ⟨hZ, hr, hw, hz, hG, hf, hj, hA, hB, hC⟩
+
 /-- Original force_of_dense on every internally legal source code and every
 actual compiled output at the common runtime. -/
 theorem at_code {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -4507,16 +4522,155 @@ theorem at_code {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     Derives Γ (atSource Reln Dom w z a A B f b j T SNew (layout 3) n) := by
   let p : DensityFrame m := ⟨w,z,a,f,j,b,Big,R,S,T,SOld,SNew,A1,A2,A3,K,Extra,A,B,C,
     raw,images,Cr,Refl,Pre,U0,P,rows,layout⟩
-  have global := Derives.conjL hr
-  have basis := Derives.conjL (.conjL (.conjL global))
-  have fresh := Derives.conjL (.conjL (.conjR global))
-  have hw : Derives Γ (omega w) := .conjL (.conjL (.conjL (.conjR (.conjR fresh))))
-  have hz : Derives Γ (empty z) := .conjL fresh
-  have layoutProof := Derives.conjR (.conjR (.conjR global))
-  have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR layoutProof))))
-  have hf := Derives.conjL (.conjR (.conjR (.conjR (.conjR basis))))
-  have hj := Derives.conjL (.conjR (.conjR hr))
-  exact density_at_frame (p := p) ⟨hZ, hr, hw, hz, hG, hf, hj, hA, hB, hC⟩ Dom n
+  exact density_at_frame (DensityInputs.of_runtime (p := p) hZ hr hA hB hC) Dom n
+
+-- Only the two conjunctions depending on Extra change. The inherited
+-- preorder, its rows, and the substitutions used by both queries stay fixed.
+private def DensityFrame.withExtra {m} (p : DensityFrame m) (E G L : Fin m) : DensityFrame m :=
+  { p with
+    Extra := E
+    layout := Fin.cases (p.layout 0) (Fin.cases (p.layout 1)
+      (Fin.cases (p.layout 2) (Fin.cases G (SyntaxAtomSyntax.two (p.layout 4) L)))) }
+
+private theorem DensityInputs.with_extra {k m} {Γ : Context m} {Reln : Formula (k+2)}
+    {p : DensityFrame m} (h : DensityInputs Γ Reln p) (E G L : Fin m)
+    (hE : Derives Γ (formulaCode p.w E p.z p.b))
+    (hG : Derives Γ (FormulaCodeConstructSyntax.typedAt 2 5 p.w
+      (SyntaxAtomSyntax.two E (p.layout 2)) G p.z p.b))
+    (hL : Derives Γ (FormulaCodeConstructSyntax.typedAt 2 5 p.w
+      (SyntaxAtomSyntax.two G (p.layout 4)) L p.z p.b)) :
+    DensityInputs Γ Reln (p.withExtra E G L) := by
+  have glob := Derives.conjL h.runtime
+  have r := Derives.conjR glob
+  have d := Derives.conjR (.conjR r)
+  have h0 := Derives.conjL d
+  have h1 := Derives.conjL (.conjR d)
+  have h2 := Derives.conjL (.conjR (.conjR d))
+  have h4 := Derives.conjL (.conjR (.conjR (.conjR (.conjR d))))
+  refine ⟨h.zf, ?_, h.omega, h.zero, .conjR hG, h.free, h.selected, h.first, h.second, h.third⟩
+  exact .conjI (.conjI (.conjL glob) (.conjI (.conjL r) (.conjI hE
+    (.conjI h0 (.conjI h1 (.conjI h2 (.conjI hG (.conjI h4 hL)))))))) (.conjR h.runtime)
+
+private theorem dense_in_strengthened_context {k m} {Γ : Context m} {Reln : Formula (k+2)}
+    {p : DensityFrame m} (h : DensityInputs Γ Reln p) (Dom : Formula (k+1))
+    (n X D E F G L : Fin m)
+    (hn : Derives Γ (formulaCode p.w n p.a p.z))
+    (hX : Derives Γ (p.compiled Reln Dom n X))
+    (hD : Derives Γ (ForcingDensityCode.compiled Reln p.w p.a p.A p.B p.f p.j X D))
+    (hE : Derives Γ (substituted p.w p.T p.SNew p.a p.f p.z p.b D E))
+    (hF : Derives Γ (substituted p.w p.T p.SNew p.a p.f p.z p.b X F))
+    (h2 : Derives Γ (formulaCode p.w (p.layout 2) p.z p.b))
+    (hG : Derives Γ (FormulaCodeConstructSyntax.typedAt 2 5 p.w
+      (SyntaxAtomSyntax.two E (p.layout 2)) G p.z p.b))
+    (hL : Derives Γ (FormulaCodeConstructSyntax.typedAt 2 5 p.w
+      (SyntaxAtomSyntax.two G (p.layout 4)) L p.z p.b)) :
+    Derives Γ (implication test p.w p.z p.b G F) := by
+  have htE := SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hE
+  have h' := h.with_extra E G L htE hG hL
+  have hd := density_at_frame h' Dom n
+  have hall := Derives.impE hd hn
+  have step : Derives Γ ((p.compiled Reln Dom n X).imp (transfer Reln
+      p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew G X)) := by
+    apply of_eq ?_ (Derives.allE X hall)
+    simp only [DensityFrame.compiled, DensityFrame.withExtra, Formula.instantiate, Formula.rename, ForcingCodeRecursion.compiled_rename, transfer_rename,
+      Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+    rfl
+  have pE := ForcingRelationGuardProof.project h.zf test false p.w p.z p.b E (p.layout 2) G
+    h.omega h.zero htE h2 (.conjR hG) (.conjL hG)
+  exact apply_transfer Reln p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew G X D E F
+    (.impE step hX) hD hE hF pE
+
+private theorem dense_at_frame {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n X D E F : Fin m)
+    (hn : Derives Γ (formulaCode p.w n p.a p.z))
+    (hX : Derives Γ (p.compiled Reln Dom n X))
+    (hD : Derives Γ (ForcingDensityCode.compiled Reln p.w p.a p.A p.B p.f p.j X D))
+    (hE : Derives Γ (substituted p.w p.T p.SNew p.a p.f p.z p.b D E))
+    (hF : Derives Γ (substituted p.w p.T p.SNew p.a p.f p.z p.b X F)) :
+    Derives Γ (InternalProofCurry.result test p.w p.z p.b (p.layout 3) E F) := by
+  let w := p.w
+  let z := p.z
+  let b := p.b
+  let G := p.layout 3
+  let K := p.layout 2
+  let L := p.layout 4
+  have layout := Derives.conjR (.conjR (.conjR (.conjL h.runtime)))
+  have hK : Derives Γ (formulaCode w K z b) := .conjR (.conjL (.conjR (.conjR layout)))
+  have hL := Derives.conjR (.conjL (.conjR (.conjR (.conjR (.conjR layout)))))
+  have hOld := Derives.conjL (.conjL (.conjR (.conjR (.conjR layout))))
+  have hExtra := Derives.conjL (.conjR (.conjR (.conjL h.runtime)))
+  have htE := SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hE
+  have htF := SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hF
+  have pK : Derives Γ (implication test w z b G K) := ForcingRelationGuardProof.project h.zf test true w z b p.Extra K G
+    h.omega h.zero hExtra hK h.background hOld
+  refine with_outer_guard_context h.zf w z b E K L h.omega htE hK hL
+    (InternalProofCurry.result test w z b G E F) ?_
+  intro l Δ r G' L' hZ lift hG' hL'
+  have h' := h.map r hZ lift
+  have htE' := of_eq (formulaCode_rename _ _ _ _ r) (lift htE)
+  have pForce := dense_in_strengthened_context h' Dom (r n) (r X) (r D) (r E) (r F) G' L'
+    (of_eq (formulaCode_rename _ _ _ _ r) (lift hn))
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hX))
+    (of_eq (ForcingDensityCode.compiled_rename Reln _ _ _ _ _ _ _ _ r) (lift hD))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hE))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hF))
+    (of_eq (formulaCode_rename _ _ _ _ r) (lift hK)) hG' hL'
+  refine of_eq (InternalProofCurry.result_rename test w z b G E F r).symm ?_
+  refine eliminate_objects hZ 1 (fun s v => (Formula.mem (v 0) (s (r w))).conj
+    (FormulaCodeConstructSyntax.typedAt 2 5 (s (r w)) (SyntaxAtomSyntax.two (s (r G)) (s (r E)))
+      (v 0) (s (r z)) (s (r b))))
+    (ForcingProofContext.and_exists hZ (r w) (r z) (r b) (r G) (r E) h'.omega h'.background htE') _ ?_
+  intro l' Δ' s v hZ' move hv
+  let ρ := s ∘ r
+  have carry {P : Formula m} (hp : Derives Γ P) : Derives Δ' (P.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (move (lift hp))
+  have hw := of_eq (omega_rename _ ρ) (carry h.omega)
+  have hz := of_eq (empty_rename _ ρ) (carry h.zero)
+  have htG := of_eq (formulaCode_rename _ _ _ _ ρ) (carry h.background)
+  have htE2 := of_eq (formulaCode_rename _ _ _ _ ρ) (carry htE)
+  have htK := of_eq (formulaCode_rename _ _ _ _ ρ) (carry hK)
+  have htF2 := of_eq (formulaCode_rename _ _ _ _ ρ) (carry htF)
+  have hAnd := Derives.conjR hv
+  have htH := Derives.conjR hAnd
+  have hG2 : Derives Δ' (FormulaCodeConstructSyntax.typedAt 2 5 (ρ w)
+      (SyntaxAtomSyntax.two (ρ E) (ρ K)) (s G') (ρ z) (ρ b)) :=
+    of_eq (by simp only [FormulaCodeConstructSyntax.typedAt_rename, SyntaxAtomSyntax.two_map]; rfl) (move hG')
+  have pG := ForcingRelationGuardProof.project hZ' test false (ρ w) (ρ z) (ρ b)
+    (ρ G) (ρ E) (v 0) hw hz htG htE2 htH (.conjL hAnd)
+  have pE := ForcingRelationGuardProof.project hZ' test true (ρ w) (ρ z) (ρ b)
+    (ρ G) (ρ E) (v 0) hw hz htG htE2 htH (.conjL hAnd)
+  have pK2 := ForcingRelationGuardProof.chain hZ' test (ρ w) (ρ z) (ρ b)
+    (v 0) (ρ G) (ρ K) hw hz htH htG htK pG (of_eq (implication_rename _ _ _ _ _ _ ρ) (carry pK))
+  have pG' := ForcingProofContext.join hZ' test (ρ w) (ρ z) (ρ b)
+    (v 0) (ρ E) (ρ K) (s G') hw hz htH htE2 htK (.conjL hG2) pE pK2
+  have pHF := ForcingRelationGuardProof.chain hZ' test (ρ w) (ρ z) (ρ b)
+    (v 0) (s G') (ρ F) hw hz htH (.conjR hG2) htF2 pG'
+    (of_eq (implication_rename _ _ _ _ _ _ s) (move pForce))
+  exact of_eq (InternalProofCurry.result_rename test (r w) (r z) (r b) (r G) (r E) (r F) s).symm
+    (InternalProofCurry.from_implication hZ' test (ρ w) (ρ z) (ρ b) (ρ G) (ρ E) (v 0) (ρ F)
+      hw hz htG htE2 htF2 (.conjL hAnd) pHF)
+
+/-- Produce a Root proof of the coded implication from the actual density
+query to the actual forcing query under the original common background.
+This discharges the density premise used in the source exists_force_neg. -/
+theorem dense_implies_force {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hn : Derives Γ (formulaCode w n a z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n X))
+    (hD : Derives Γ (ForcingDensityCode.compiled Reln w a A B f j X D))
+    (hE : Derives Γ (substituted w T SNew a f z b D E))
+    (hF : Derives Γ (substituted w T SNew a f z b X F)) :
+    Derives Γ (InternalProofCurry.result test w z b (layout 3) E F) := by
+  let p : DensityFrame m := ⟨w,z,a,f,j,b,Big,R,S,T,SOld,SNew,A1,A2,A3,K,Extra,A,B,C,
+    raw,images,Cr,Refl,Pre,U0,P,rows,layout⟩
+  exact dense_at_frame (DensityInputs.of_runtime (p := p) hZ hr hA hB hC) Dom n X D E F hn hX hD hE hF
+
 
 private def densityInput {k m} (Reln : Formula (k+2))
     (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C : Fin m)
@@ -4551,6 +4705,52 @@ theorem density_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formula (
   exact at_code (ZFContext.add (ZFContext.source_ZF m) F) Reln Dom
     w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n raw images Cr Refl Pre U0 P rows layout
     (.conjL hF) (.conjL hRest) (.conjL (.conjR hRest)) (.conjR (.conjR hRest))
+
+
+private def densityImplicationInput {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Formula m :=
+  (densityInput Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C
+    raw images Cr Refl Pre U0 P rows layout).conj
+    ((formulaCode w n a z).conj
+      ((ForcingCodeRecursion.compiled Reln Dom w z f j a n X).conj
+        ((ForcingDensityCode.compiled Reln w a A B f j X D).conj
+          ((substituted w T SNew a f z b D E).conj (substituted w T SNew a f z b X F)))))
+
+def densityImplicationSentence {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Source.Sentence :=
+  ((densityImplicationInput Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F
+    raw images Cr Refl Pre U0 P rows layout).imp
+    (InternalProofCurry.result test w z b (layout 3) E F)).close
+
+theorem density_implication_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (densityImplicationSentence Reln Dom w z a f j b Big R S T SOld SNew
+        A1 A2 A3 K Extra A B C n X D E F raw images Cr Refl Pre U0 P rows layout)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let Input := densityImplicationInput Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra
+    A B C n X D E F raw images Cr Refl Pre U0 P rows layout
+  let Γ := Context.add Input (Source.SetLanguage.ZF.at m)
+  have h : Derives Γ Input := .hyp (Or.inl rfl)
+  have hRuntime := Derives.conjL h
+  have hScopes := Derives.conjR hRuntime
+  have hQueries := Derives.conjR h
+  have hCompiled := Derives.conjR hQueries
+  have hDensity := Derives.conjR hCompiled
+  have hSubst := Derives.conjR hDensity
+  exact dense_implies_force (ZFContext.add (ZFContext.source_ZF m) Input) Reln Dom
+    w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n X D E F raw images Cr Refl Pre U0 P rows layout
+    (.conjL hRuntime) (.conjL hScopes) (.conjL (.conjR hScopes)) (.conjR (.conjR hScopes))
+    (.conjL hQueries) (.conjL hCompiled) (.conjL hDensity) (.conjL hSubst) (.conjR hSubst)
 
 
 end PPAC.Migration.ForcingSourceDensity

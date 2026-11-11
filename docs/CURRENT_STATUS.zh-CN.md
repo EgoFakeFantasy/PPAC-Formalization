@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+OpenAI 原 `exists_force_neg` 所需的密度蕴含已在对象层取得。`ForcingSourceDensity.dense_implies_force` 对实际编译与替换所得的查询生成 `Dense → Force` 的 Root 证明码，使用同一偏序与替换表，并回到原共同背景。`density_implication_kernel_certificate` 给出普通 nativeZF 原核闭句。原定理的反强迫条件见证尚待接入。[整仓验收](../verification/forcing-density-implication-acceptance.json)
+
 OpenAI 原 `force_of_dense` 的完整对象层归纳已闭合。`ForcingSourceDensity.at_code` 在现有共同强迫运行条件下覆盖任意内部合法公式码及其实际编译输出，原编译器中析取、蕴含、双条件及全称式的规范化记录已接入同一归纳。`density_kernel_certificate` 在 `FirstOrder.Derives nativeZF []` 中给出对应闭句。接下来消费该结论迁移原 `exists_force_neg`、`forceFormula_imp` 和强迫 MP。[整仓验收](../verification/forcing-source-density-induction-acceptance.json)
 
 OpenAI 的 `force_of_dense.ex` 已接入原密度归纳谓词。`ForcingSourceDensity.existential_at_condition` 用同一见证 `s` 重组 `q` 处的目标存在式，并消去两次源存在量词。`existential_step_from_runtime` 从实际编译记录闭合原外层守卫和全称式。`existential_kernel_certificate` 在 `FirstOrder.Derives nativeZF []` 中给出对应闭句。完整密度归纳和最终内部 Con 仍待完成。[整仓验收](../verification/forcing-existential-density-branch-acceptance.json)

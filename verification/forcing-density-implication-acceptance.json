@@ -1,0 +1,84 @@
+{
+  "baseline_commit": "ff13bfbb92fa597016186389d5a6dd0803d46cc1",
+  "recorded_at": "2026-11-11T22:34:08.499092+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declarations": [
+      "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+      "OAI.PartitionConsistency.ForcingQuotient.AtomicData.exists_force_neg"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingSourceDensity.dense_implies_force",
+    "PPAC.Migration.ForcingSourceDensity.densityImplicationSentence",
+    "PPAC.Migration.ForcingSourceDensity.density_implication_kernel_certificate"
+  ],
+  "scope": "Generate the actual Root proof code of Dense \u2192 Force under the original background, for all internal legal source formula codes and actual compiler and substitution outputs. Reuse the complete density induction at the same preorder, maps and guard rows, reconstructing only the two layout conjunctions depending on Extra. Discharge the dense query using existing conjunction and curry rules and replay the closed interface in nativeZF.",
+  "actual_density_implication_root_produced": true,
+  "native_density_implication_certificate_proved": true,
+  "exists_force_neg_condition_witness_proved": false,
+  "force_formula_imp_proved": false,
+  "forcing_modus_ponens_proved": false,
+  "final_internal_con_proved": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40285,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "64ef0fb472374d6f6b46648785317b0ba20f3c0750552a9c310f415056c5d031",
+      "PPAC/Migration/ForcingSourceDensity.lean": "8c0f153d7625b9c84b6eaf8d2f89bc808733bfd2cb31c33dc3c4bb31526ad5eb",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "5ab509a29b70cc929c0289b0db48f43db459d99bbdfb022306f062bb03539abe",
+      "docs/CURRENT_STATUS.zh-CN.md": "3ae0ad4b131f00e04d0393707161f6b4b3a5f1bb9f88ad60cb5893948ee0fbf3",
+      "docs/SOURCE_LOCK.json": "07f74289725bfe57341ef666eee310f8e09c59ec27dd6a437494cdef2b2862d1",
+      "scripts/verify.py": "1fdbee1450c14d76ec2c3eb95aaae53d2c2d1278560403d99714d52ea6376d59"
+    }
+  },
+  "baseline_declarations_compared": 40282,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingSourceDensity.dense_implies_force": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.densityImplicationSentence": [
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.density_implication_kernel_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
