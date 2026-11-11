@@ -1,0 +1,63 @@
+{
+  "baseline_commit": "8c5b361ea2f287aa4224757e64651dd028a142f0",
+  "recorded_at": "2026-11-11T20:11:51.339679+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingSourceDensity.with_existential_witnesses"
+  ],
+  "scope": "Feed the actual first density witness and the original parent query at that witness into the reflexive existential proof. Reconstruct the lifted base from the selected update, raise the inherited preorder, and retain the exact second tail proof with the fresh three-condition row.",
+  "two_witness_queries_share_actual_r_and_base_table": true,
+  "second_tail_proof_and_binder_records": true,
+  "fresh_transitive_row_generated_from_same_inherited_preorder": true,
+  "transitive_order_replay_for_source_existential_step_proved": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40262,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "3e0ae9418ca468a53246a414ab53b7d0c7cdd729881e7f1dd31b07ae3681d7bb",
+      "PPAC/Migration/ForcingSourceDensity.lean": "9cdce0869aeb6d02ebf4b37132b9c80f9df44e0f5c0b4c96d3b076c16fc9c0da",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "5ffa271e490662d8edbd0cd6ba36afd9c3881660d0a9bf28e061e176bc3d7497",
+      "docs/CURRENT_STATUS.zh-CN.md": "862a63b33cdd403dd131731bf9c123e4c4d40839b646d993a3de6827ef6eeb61",
+      "docs/SOURCE_LOCK.json": "a47ceda0b533819471975b508e6162012ba1cff322d8db5e408b0943a597e18c",
+      "scripts/verify.py": "61a842adc0b80eb29b33470d17b855ab21cd126a580666f91c1c4a8e8d028d8a"
+    }
+  },
+  "baseline_declarations_compared": 40261,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingSourceDensity.with_existential_witnesses": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceDensity.with_existential_witnesses` 已把原密度前提的见证 `r` 接到原存在式的反身实例。同一提升偏序提供第二次查询的实际存在尾式，以及包含 `s`、`r`、`q` 的下一层偏序行。原 `force_of_dense.ex` 仍需用开式中的顺序守卫推导 `s ≤ q`，保留同一名字见证并闭合原量词。[整仓验收](../verification/forcing-existential-density-joint-acceptance.json)
+
 `ForcingDensityGuards.with_existential_at_reflexive` 用同一偏序把 `r` 处的原存在强迫式实例化于 `r ≤ r`，保留实际存在尾式的推导及条件、名字两层绑定器的开式记录。原否定分支复用提取出的见证偏序行和局部证明背景。原 `force_of_dense.ex` 仍需将两次见证查询接到同一运行记录，证明 `s ≤ q` 并闭合原量词。[整仓验收](../verification/forcing-existential-density-reflexive-acceptance.json)
 
 `ForcingDensityInstantiation.with_existential_density_witness` 已在 nativeZF 推导中从原密度存在式取得实际见证 `r`、`r ≤ q` 和 `r` 处的原存在强迫式查询。反身实例化与见证消去复用原否定分支的证明。原 `force_of_dense.ex` 仍需在 `r ≤ r` 处取第二个见证，证明其到 `q` 的顺序并闭合原存在式。[整仓验收](../verification/forcing-existential-density-witness-acceptance.json)
