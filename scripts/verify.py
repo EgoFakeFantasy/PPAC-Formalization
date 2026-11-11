@@ -2743,7 +2743,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_condition', 'ForcingNegCondition', 18),
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
-                                ('forcing_preorder_code', 'ForcingPreorderCode', 33),
+                                ('forcing_preorder_code', 'ForcingPreorderCode', 34),
                                 ('forcing_preorder_instances', 'ForcingPreorderInstances', 28),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 10),
@@ -2789,7 +2789,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_density_code', 'ForcingDensityCode', 33),
                                 ('forcing_source_density_constant', 'ForcingSourceDensityConstant', 10),
                                 ('forcing_density_instantiation', 'ForcingDensityInstantiation', 29),
-                                ('forcing_density_guards', 'ForcingDensityGuards', 11),
+                                ('forcing_density_guards', 'ForcingDensityGuards', 12),
                                 ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 25),
                                 ('forcing_atomic_mono', 'ForcingAtomicMono', 12),
                                 ('forcing_atomic_mono_images', 'ForcingAtomicMonoImages', 6),
@@ -2799,7 +2799,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 2),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 61),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 62),
                                 ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))

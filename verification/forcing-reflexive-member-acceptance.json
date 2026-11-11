@@ -1,0 +1,56 @@
+{
+  "baseline_commit": "35af7aee1899de07e7688ee86a4c61527700f5a2",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees",
+  "scope": "The actual reflexivity membership instance equals the actual pointwise density membership guard. The original binder lifting is evaluated using the same selected condition, and the original condition-slot replacement preserves the carrier field.",
+  "reflexive_member_instance_aligned_with_density_guard": true,
+  "reflexive_order_instance_aligned_with_density_guard": false,
+  "falsum_existential_elimination_proved": false,
+  "falsum_root_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T08:48:15.405077+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40121,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "staged_source_sha256": {
+      "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+      "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+      "PPAC/Migration/ForcingDensityGuards.lean": "57302255689cc1d29da3b436fba4cfe16bbc896edcd88399fb0d63f250ab5803"
+    },
+    "original_member_atom_body_unchanged": true
+  },
+  "baseline_declarations_compared": 40118,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingPreorderCode.reflexive_member_tree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.member_atom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "new_axioms": []
+}

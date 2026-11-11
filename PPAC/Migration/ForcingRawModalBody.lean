@@ -411,7 +411,7 @@ theorem consume_matched {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) 
   exact ForcingFreshParentOpening.consume_opened hZ test w z a f alpha b A B t R S n x Parent
     G W M O Tail I J v u hp moved
 
-private theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
     (w z D S a f T head P i V q Y sym carrier : Fin m)
     (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
     (hhead : Derives Gamma (SyntaxVariableSyntax.code true w z head))

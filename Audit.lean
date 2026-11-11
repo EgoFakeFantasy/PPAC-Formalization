@@ -39997,6 +39997,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationRawTerms.term
 
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_p
+#print axioms PPAC.Migration.ForcingPreorderCode.reflexive_member_tree
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_q
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_r
 #print axioms PPAC.Migration.ForcingPreorderLeafTarget.at_target
@@ -40596,6 +40597,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.from_existential
 #print axioms PPAC.Migration.ForcingRawModalBody.consume_matched
 #print axioms PPAC.Migration.ForcingRawModalBody.member_query
+#print axioms PPAC.Migration.ForcingRawModalBody.member_atom
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_member
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_order
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_existential_tail
@@ -40808,6 +40810,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.member_from_proof
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.with_reflexive_instances
+#print axioms PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

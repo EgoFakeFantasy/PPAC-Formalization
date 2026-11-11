@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingAtomicBasic
 import PPAC.Migration.ForcingGuardCode
+import PPAC.Migration.ProjectNativeRenaming
 
 /-! The literal original preorder: fixed pinned source AST, not a new preorder
 axiom. Its quotation will be opened by the existing mixed substitution engine,
@@ -1045,5 +1046,25 @@ theorem atom_member_p {n} (R : Source.Formula (n+2)) :
     source, ForcingAtomicBasic.preorder, Syntax.formula, andRight, allBody, impLeft, impRight,
     Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar, Term.weakenBound_fvar] <;> rfl
 
+
+/-- The guard in the original reflexivity sentence is the literal member
+formula with the bound condition at index zero and the original carrier slot. -/
+theorem reflexive_member_tree {n} (R : Source.Formula (n+2)) :
+    PureSyntaxQuotation.formulaTree (reflexiveLeaf R false) =
+      YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree.node 2 ([PureSyntaxQuotation.Original.leaf 0,
+        YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree.node 0 ([PureSyntaxQuotation.Original.leaf 0]),
+        YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket.Tree.node 1 ([PureSyntaxQuotation.Original.leaf n])]) := by
+  have hMember : reflexiveLeaf R false = .rel .membership (.cons (.bvar .here)
+      (.cons (.fvar (fo_bound_variable (Fin.last n).castSucc)) .nil)) := by
+    simp only [reflexiveLeaf, reflexiveBody, reflexive, template, native_source,
+      source, ForcingAtomicBasic.preorder, Syntax.formula, andLeft, allBody, impLeft,
+      Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_bvar,
+      Term.weakenBound_fvar] <;> rfl
+  have hIndex : (fo_bound_variable (Fin.last n).castSucc).index = n :=
+    ProjectNativeRenaming.variable_index (fun _ : Fin 1 => (Fin.last n).castSucc)
+      (fo_bound_variable (0 : Fin 1))
+  simp only [hMember, PureSyntaxQuotation.formulaTree, PureSyntaxQuotation.argumentTrees,
+    PureSyntaxQuotation.termTree, hIndex]
+  rfl
 
 end PPAC.Migration.ForcingPreorderCode
