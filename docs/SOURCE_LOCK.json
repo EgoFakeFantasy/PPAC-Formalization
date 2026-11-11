@@ -177003,13 +177003,15 @@
         "ForcingMixedUnary.single_output",
         "ForcingRawModalBody.from_query",
         "InternalProofQuantifier.guarded_instantiate",
-        "SyntaxTopFormulaSyntax.instantiateState"
+        "SyntaxTopFormulaSyntax.instantiateState",
+        "The actual nested shellInstance, opened, pointGuards, point and raw output records"
       ],
       "consumers": [
-        "Original force_of_dense.bot at q=p and guarded density proof branches"
+        "Original force_of_dense.bot at q=p and guarded density proof branches",
+        "ForcingDensityGuards.falsum_from_compiled_query"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "a146fe0f642bceefc3d0d4158e0dcb232217419b1ad63850ea1c2652361c7053",
         "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
@@ -177350,9 +177352,21 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityInstantiation.with_instance_records": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The original density compiler and its actual mixed query determine an outer ALL. At the selected condition field of that same free table, the original proof of G implying the density query is instantiated. The actual lifted body, native instantiation tables, both implications, all guard and tail queries, and the proof of G implying that precise native instance are retained. The two guards have not yet been discharged by the matching preorder proofs, and the falsum transfer, full density induction and internal Con remain open."
+      "scope": "The original density compiler and its actual mixed query determine an outer ALL. At the selected condition field of that same free table, the original proof of G implying the density query is instantiated. The actual lifted body, native instantiation tables, both implications, all guard and tail queries, and the proof of G implying that precise native instance are retained. The two guards have not yet been discharged by the matching preorder proofs, and the falsum transfer, full density induction and internal Con remain open. The actual instance records can now be eliminated together in dependency order, preserving the same compiler shell, outer open, native instantiation and both raw guard queries."
     },
     "forcing_density_guards": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -177394,7 +177408,8 @@
         "ForcingRawModalBody.nested_from_query and the accepted original existential witness transport",
         "ForcingDensityCode.with_conjunct_compiler for the selected child with all four original guards",
         "Original rule 20 and K/S transport through the two actual guard implications on the shared table",
-        "ForcingFreshBackground.derive and InternalProofUniversal.guarded_generalize for exact outer universal reabstraction"
+        "ForcingFreshBackground.derive and InternalProofUniversal.guarded_generalize for exact outer universal reabstraction",
+        "ForcingDensityInstantiation.with_instance_records, existing reflexive guard alignment, and ForcingDensityCode.rebound_nullary for the exact witness code"
       ],
       "consumers": [
         "Actual selected density instance, original member/order guards and existential tail",
@@ -177408,12 +177423,13 @@
         "ForcingDensityGuards.conjunction_exists_from_compiler_shells",
         "ForcingDensityGuards.conjunction_all_from_compiler_shells",
         "ForcingDensityGuards.with_conjunct_density_proof",
-        "ForcingSourceDensity.conjunction_step"
+        "ForcingSourceDensity.conjunction_step",
+        "ForcingSourceDensity.falsum_step"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityGuards.lean": "40c5737c9925e235432a3819f1d638cdc75f9caf24f3383210d4b59125d0fbf0",
+        "PPAC/Migration/ForcingDensityGuards.lean": "7e91db3b1d8914f7b5a5b0b4e5ac032da9fc1e45ce3b3ae6bef9e9e281f75c5d",
         "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "a146fe0f642bceefc3d0d4158e0dcb232217419b1ad63850ea1c2652361c7053",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
@@ -177637,9 +177653,21 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.falsum_from_compiled_query": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported. The original conjunction density shells now supply both existential tails. The adapter derives their internal implication from the two actual substituted tails, generates a single weakened mixed table, identifies the two prefixed bound tables by uniqueness, and transports either conjunct using the original common witness. The original outer universal is transported to the actual selected child compiler. The caller receives the child compiler, the same-table child substitution and the internal proof from the same background. ForcingSourceDensity.conjunction_step consumes the child records in both object induction hypotheses. Full source density induction remains open."
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported. The original conjunction density shells now supply both existential tails. The adapter derives their internal implication from the two actual substituted tails, generates a single weakened mixed table, identifies the two prefixed bound tables by uniqueness, and transports either conjunct using the original common witness. The original outer universal is transported to the actual selected child compiler. The caller receives the child compiler, the same-table child substitution and the internal proof from the same background. ForcingSourceDensity.conjunction_step consumes the child records in both object induction hypotheses. Full source density induction remains open. The source falsum branch now instantiates the complete given density query at the actual current condition. It computes and discharges its exact member and order guards, then consumes the original witness elimination to conclude the actual falsum query under the same background."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -177895,25 +177923,31 @@
       "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
       "adapter": "PPAC/Migration/ForcingSourceDensity.lean",
       "source_declarations": [
-        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
       ],
       "reuse_producers": [
         "ForcingCodeStep.binaryData and ForcingCodeRecursion.read_to_compiled for both lower source codes",
         "ForcingDensityGuards.with_conjunct_density_proof for actual child density compilations and internal proofs",
         "ForcingFormulaDiagram.binary_output and ForcingProofContext.join for the actual parent forcing conjunction",
-        "OriginalUniversalBlock.at_many and ZFReplay.replay for the object induction hypotheses and native certificate"
+        "OriginalUniversalBlock.at_many and ZFReplay.replay for the object induction hypotheses and native certificate",
+        "ForcingCodeUnary.nullary, ForcingSourceDensityConstant.truth_from_compiler and ForcingDensityGuards.falsum_from_compiled_query"
       ],
       "consumers": [
         "ForcingSourceDensity.conjunction_step",
-        "ForcingSourceDensity.conjunction_kernel_certificate"
+        "ForcingSourceDensity.conjunction_kernel_certificate",
+        "ForcingSourceDensity.truth_step",
+        "ForcingSourceDensity.falsum_step"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingSourceDensity.lean": "9e20ff32cf0e9713300fbcd086b69a3727fea9497b757f702a3a7e8a9868ec13",
-        "PPAC/Migration/ForcingDensityGuards.lean": "40c5737c9925e235432a3819f1d638cdc75f9caf24f3383210d4b59125d0fbf0",
+        "PPAC/Migration/ForcingSourceDensity.lean": "5fb3d15f341cfc40a2546521e59ae650b291c8fd2b5a3d553ff750727bcb733b",
+        "PPAC/Migration/ForcingDensityGuards.lean": "7e91db3b1d8914f7b5a5b0b4e5ac032da9fc1e45ce3b3ae6bef9e9e281f75c5d",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
-        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089"
+        "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
+        "PPAC/Migration/ForcingSourceDensityConstant.lean": "75ef4f7923ec24754784fbd14d9d3d6c9aad79afd727820e0644eee3c8fa28a5",
+        "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingSourceDensity.transfer": [
@@ -178043,9 +178077,33 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceDensity.truth_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceDensity.falsum_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open."
+      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open. The source truth and falsum branches now establish this same transfer predicate. The falsum branch identifies the actual compiled code with the original constant, selects the current condition in the given runtime, and uses the given density compiler and actual forcing output. The complete bounded induction remains open."
     }
   },
   "selected_route_consumer_audit": {

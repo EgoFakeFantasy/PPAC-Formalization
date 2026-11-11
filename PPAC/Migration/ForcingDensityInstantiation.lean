@@ -415,4 +415,97 @@ theorem kernel_certificate {n m} (Reln : Source.Formula (n+2)) (w z a A B f j N 
   exact from_condition_slot (ZFContext.add (ZFContext.source_ZF m) P) Reln w z a A B f j N b L S D E G
     (.conjL h) (.conjL h2) (.conjL h3) (.conjL h4) (.conjL h5) (.conjR h5)
 
+
+/-- Read the complete point record of one actual density instance. Every
+constructor, table, guard and tail remains an output of that instance. -/
+theorem with_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Source.Formula (k+2)) (w z a A B f j N b L S D E p G : Fin m)
+    (hi : Derives Γ (instanceAt Reln w z a A B f j N b L S D E p G))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l)
+      (d : Fin 7 → Fin l) (s o : Fin 5 → Fin l) (u v x : Fin 4 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (ForcingDensityCode.data Reln (r w) (r a) (r A) (r B) (r f) (r j) (r N) (r D) d) →
+      Derives Δ (ForcingDensityCode.shellData (r w) (r a) (r A) (r B) (r f)
+        (d 2) (d 3) (d 4) (d 5) (d 6) (r D) s) →
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r L) (r S) (r a) (r f) (r z) (r b)
+        (o 1) (o 2) (o 3) (o 4)) →
+      Derives Δ (ForcingRawModalBody.data (r w) (o 3) (o 4) (o 1) (r f) (o 2) (r b)
+        (d 2) (d 3) (s 2) (s 3) (o 0) u) →
+      Derives Δ (pointData (r w) (r z) (r b) (o 0) (r p) (r G) (u 1) (u 2) (u 3) (u 0) v) →
+      Derives Δ (ForcingRawModalBody.data (r w) (v 2) (v 3) (v 0) (r b) (r z) (r b)
+        (u 1) (u 2) (u 3) (u 0) (v 1) x) → Derives Δ (out.rename r)) :
+    Derives Γ out := by
+  refine eliminate_objects hZ 7 (fun r d => instanceData Reln (r w) (r z) (r a) (r A) (r B) (r f)
+    (r j) (r N) (r b) (r L) (r S) (r D) (r E) (r p) (r G) d) hi out ?_
+  intro l Δ r d hZ1 lift hd
+  refine eliminate_objects hZ1 5 (fun s u => shellInstanceData (s (r w)) (s (r z)) (s (r a)) (s (r A)) (s (r B))
+    (s (r f)) (s (r b)) (s (r L)) (s (r S)) (s (r D)) (s (r E)) (s (r p)) (s (r G))
+    (s (d 2)) (s (d 3)) (s (d 4)) (s (d 5)) (s (d 6)) u) (.conjR hd) (out.rename r) ?_
+  intro l1 Δ1 s u hZ2 lift1 hs
+  let R := s ∘ r
+  let ds := s ∘ d
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hData := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ d s) (lift1 (.conjL hd))
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine eliminate_objects hZ2 5 (fun t o => openedData (t (R w)) (t (R z)) (t (R a)) (t (R f)) (t (R b))
+    (t (R L)) (t (R S)) (t (R E)) (t (R p)) (t (R G)) (t (ds 2)) (t (ds 3))
+    (t (u 2)) (t (u 3)) (t (u 4)) o) (.conjR hs) (out.rename R) ?_
+  intro l2 Δ2 t o hZ3 lift2 ho
+  let Q := t ∘ R
+  let dt := t ∘ ds
+  let ut := t ∘ u
+  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename Q) :=
+    of_eq (SourceAlgebra.rename_comp F R t) (lift2 (move h))
+  have hData2 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ ds t) (lift2 hData)
+  have hShell := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ u t) (lift2 (.conjL hs))
+  have hLift := Derives.conjL (.conjR ho)
+  refine of_eq (SourceAlgebra.rename_comp out R t).symm ?_
+  refine eliminate_objects hZ3 4 (fun e y => pointGuardsData (e (Q w)) (e (Q z)) (e (o 1)) (e (Q f)) (e (o 2))
+    (e (Q b)) (e (o 3)) (e (o 4)) (e (o 0)) (e (Q p)) (e (Q G)) (e (dt 2)) (e (dt 3)) (e (ut 2)) (e (ut 3)) y)
+    (.conjR (.conjR (.conjR ho))) (out.rename Q) ?_
+  intro l3 Δ3 e y hZ4 lift3 hy
+  let T := e ∘ Q
+  let de := e ∘ dt
+  let ue := e ∘ ut
+  let oe := e ∘ o
+  have move3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename T) :=
+    of_eq (SourceAlgebra.rename_comp F Q e) (lift3 (move2 h))
+  have hData3 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ dt e) (lift3 hData2)
+  have hShell3 := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ ut e) (lift3 hShell)
+  have hLift3 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ e) (lift3 hLift)
+  refine of_eq (SourceAlgebra.rename_comp out Q e).symm ?_
+  refine eliminate_objects hZ4 4 (fun h v => pointData (h (T w)) (h (T z)) (h (T b)) (h (oe 0))
+    (h (T p)) (h (T G)) (h (y 1)) (h (y 2)) (h (y 3)) (h (y 0)) v)
+    (.conjR hy) (out.rename T) ?_
+  intro l4 Δ4 h v hZ5 lift4 hv
+  let P := h ∘ T
+  let dh := h ∘ de
+  let uh := h ∘ ue
+  let oh := h ∘ oe
+  let yh := h ∘ y
+  have move4 {F : Formula m} (hp : Derives Γ F) : Derives Δ4 (F.rename P) :=
+    of_eq (SourceAlgebra.rename_comp F T h) (lift4 (move3 hp))
+  have hData4 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ de h) (lift4 hData3)
+  have hShell4 := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ ue h) (lift4 hShell3)
+  have hLift4 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ h) (lift4 hLift3)
+  have hRaw4 := of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ y h) (lift4 (.conjL hy))
+  refine of_eq (SourceAlgebra.rename_comp out T h).symm ?_
+  refine eliminate_objects hZ5 4 (fun i x => ForcingRawModalBody.data (i (P w)) (i (v 2)) (i (v 3))
+    (i (v 0)) (i (P b)) (i (P z)) (i (P b)) (i (yh 1)) (i (yh 2)) (i (yh 3)) (i (yh 0)) (i (v 1)) x)
+    (.conjL (.conjR (.conjR hv))) (out.rename P) ?_
+  intro l5 Δ5 i x hZ6 lift5 hx
+  let F := i ∘ P
+  have move5 {U : Formula m} (hp : Derives Γ U) : Derives Δ5 (U.rename F) :=
+    of_eq (SourceAlgebra.rename_comp U P i) (lift5 (move4 hp))
+  exact of_eq (SourceAlgebra.rename_comp out P i).symm
+    (use F (i ∘ dh) (i ∘ uh) (i ∘ oh) (i ∘ yh) (i ∘ v) x hZ6 move5
+      (of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ dh i) (lift5 hData4))
+      (of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ uh i) (lift5 hShell4))
+      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ i) (lift5 hLift4))
+      (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ yh i) (lift5 hRaw4))
+      (of_eq (pointData_rename _ _ _ _ _ _ _ _ _ _ v i) (lift5 hv)) hx)
+
 end PPAC.Migration.ForcingDensityInstantiation

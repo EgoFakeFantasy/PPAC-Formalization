@@ -40822,6 +40822,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.input
 #print axioms PPAC.Migration.ForcingDensityInstantiation.sentence
 #print axioms PPAC.Migration.ForcingDensityInstantiation.kernel_certificate
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_instance_records
 #print axioms PPAC.Migration.ForcingDensityGuards.guardPair
 #print axioms PPAC.Migration.ForcingDensityGuards.guardPair_rename
 #print axioms PPAC.Migration.ForcingDensityGuards.discharge
@@ -40841,6 +40842,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_all_from_compiler_shells
 #print axioms PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof
+#print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_compiled_query
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer_rename
 #print axioms PPAC.Migration.ForcingSourceDensity.apply_transfer
@@ -40852,6 +40854,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.conjunction_step
 #print axioms PPAC.Migration.ForcingSourceDensity.conjunctionSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.conjunction_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.truth_step
+#print axioms PPAC.Migration.ForcingSourceDensity.falsum_step
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

@@ -10,7 +10,7 @@
 
 `ForcingDensityInstantiation.kernel_certificate` 读取原稠密性公式的实际全称码，用同一张替换表的指定条件槽作为实例项。它生成 `G → 实例` 的原内部证明，并保留该实例中两个守卫和存在式尾部的精确查询。Windows 整仓验收已通过。两个守卫的原查询对应见上述证书。见[当前条件实例验收](../verification/forcing-density-instantiation-acceptance.json)。
 
-`ForcingSourceDensityConstant.truth_kernel_certificate` 在普通 nativeZF 原核内，从原编译及实际混合查询取得真常元的内部 `G → 输出` 证明，允许任意内部自由作用域。`false_from_compiler` 在实际假常元查询上保留同一 `⊥` 码和原稠密性见证记录。已另行验收实例化后的两个守卫和存在式尾部的消去。假常元分支剩余的是从同一原编译查询生成并接入这些记录。两项已通过 Windows 整仓验收。见[常元验收](../verification/forcing-constant-density-acceptance.json)。
+`ForcingSourceDensityConstant.truth_kernel_certificate` 在普通 nativeZF 原核内，从原编译及实际混合查询取得真常元的内部 `G → 输出` 证明，允许任意内部自由作用域。`false_from_compiler` 在实际假常元查询上保留同一 `⊥` 码和原稠密性见证记录。ForcingSourceDensity.falsum_step 现已从同一原稠密性编译查询生成并接入这些记录。给定实际运行中的自反性记录，它在选定条件消去两条守卫和存在式并推出准确的 ⊥ 输出。ForcingSourceDensity.truth_step 也已接入同一对象归纳谓词。见[源码常元归纳步验收](../verification/forcing-source-density-constants-acceptance.json)。两项已通过 Windows 整仓验收。见[常元验收](../verification/forcing-constant-density-acceptance.json)。
 
 `ForcingDensityCode.kernel_certificate` 在 nativeZF 原核中为任意内部强迫公式码构造原 `force_of_dense` 的稠密性前提。它插入两层条件绑定，只在见证正文中替换指定条件槽。`ForcingDensityCode.from_tables` 使用同一份实际替换表生成该前提的查询码。两项已随主入口通过 Windows 整仓验收。全内部公式码的稠密性推导尚未闭合。见[稠密性前提验收](../verification/forcing-density-code-acceptance.json)。
 
