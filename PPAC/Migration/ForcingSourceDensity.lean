@@ -346,6 +346,54 @@ theorem truth_step {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
 
 /-- The original falsum induction case, with the original compiler and
 the actual runtime at which the reflexive witness is selected. -/
+private theorem falsum_step_from_reflexive_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a A B C f b j R S Base carrierIndex carrier Extra A1 A2 A3 Cr Bd Refl Pre n N : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (I : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hG : Derives Γ (formulaCode w (layout 3) z b))
+    (hIndex : Derives Γ (numeral k carrierIndex))
+    (hf : Derives Γ (numeral (k+2) f)) (hj : Derives Γ (numeral (k+1) j))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) S))
+    (hV : Derives Γ (field w Base carrierIndex carrier))
+    (hA1 : Derives Γ (numeral 1 A1)) (hA2 : Derives Γ (numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P I Ds))
+    (hRun : Derives Γ (substituted w Bd Base z f z b (raw 1) Refl))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hn : Derives Γ (formulaCode w n a z))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 n))
+    (hN : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n N)) :
+    Derives Γ (transfer Reln w z a A B f b j R S (layout 3) N) := by
+  have he := ForcingCodeUnary.nullary hZ false Reln Dom w z f j a A B C n N hw hn hA hB hC hc hN
+  let Ctor := SyntaxNodeSyntax.constructor 0 0 w.castSucc Fin.elim0 (Fin.last m)
+  have eval (q : Fin m) : Ctor.instantiate q = SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 q := by
+    simp only [Ctor, Formula.instantiate, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map,
+      Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+  have hN0 := of_eq (eval N) (.eqSubst Ctor (eq_symm he) (of_eq (eval n).symm hc))
+  refine intro_transfer hZ Reln w z a A B f b j R S (layout 3) N ?_
+  intro l Δ r D E Y hZ1 lift hD hE hY hp
+  have hN1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r w) Fin.elim0 (r N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hN0)
+  exact ForcingDensityGuards.falsum_from_reflexive_query hZ1 Reln (r w) (r z) (r a) (r A) (r B) (r f)
+    (r b) (r j) (r R) (r S) (r Base) (r carrierIndex) (r carrier) (r Extra) (r A1) (r A2) (r A3)
+    (r Cr) (r Bd) (r Refl) (r Pre) D E (r N) Y (r ∘ raw) (r ∘ Gb) (r ∘ H) (r ∘ layout)
+    (r ∘ U) (r ∘ F) (r ∘ P) (r ∘ I) (r ∘ Ds)
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (successor_rename _ _ _) (lift hA)) (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (lift ht))
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hG))
+    (of_eq (numeral_rename _ _ _) (lift hIndex)) (of_eq (numeral_rename _ _ _) (lift hf))
+    (of_eq (numeral_rename _ _ _) (lift hj))
+    (of_eq (replacement_rename _ _ _ _ _ _ _ _ _) (lift hUpdate)) (of_eq (field_rename _ _ _ _ _) (lift hV))
+    (of_eq (numeral_rename _ _ _) (lift hA1)) (of_eq (numeral_rename _ _ _) (lift hA2))
+    (of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (lift hRun))
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hExtra))
+    (of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ _) (lift hLayout)) hN1 (.conjI hD hE) hp hY
+
 theorem falsum_step {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Formula (k+2)) (Dom : Formula (k+1))
     (w z a A B C f b j R S Base carrierIndex carrier Extra A1 A2 A3 Cr Bd Refl Pre n N : Fin m)
@@ -368,32 +416,129 @@ theorem falsum_step {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hn : Derives Γ (formulaCode w n a z))
     (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 n))
     (hN : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n N)) :
-    Derives Γ (transfer Reln w z a A B f b j R S (layout 3) N) := by
-  have he := ForcingCodeUnary.nullary hZ false Reln Dom w z f j a A B C n N hw hn hA hB hC hc hN
-  let Ctor := SyntaxNodeSyntax.constructor 0 0 w.castSucc Fin.elim0 (Fin.last m)
-  have eval (q : Fin m) : Ctor.instantiate q = SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 q := by
-    simp only [Ctor, Formula.instantiate, SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map,
-      Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
-  have hN0 := of_eq (eval N) (.eqSubst Ctor (eq_symm he) (of_eq (eval n).symm hc))
-  refine intro_transfer hZ Reln w z a A B f b j R S (layout 3) N ?_
-  intro l Δ r D E Y hZ1 lift hD hE hY hp
-  have hN1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r w) Fin.elim0 (r N)) :=
-    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hN0)
-  exact ForcingDensityGuards.falsum_from_compiled_query hZ1 Reln (r w) (r z) (r a) (r A) (r B) (r f)
-    (r b) (r j) (r R) (r S) (r Base) (r carrierIndex) (r carrier) (r Extra) (r A1) (r A2) (r A3)
-    (r Cr) (r Bd) (r Refl) (r Pre) D E (r N) Y (r ∘ raw) (r ∘ Gb) (r ∘ H) (r ∘ layout)
-    (r ∘ U) (r ∘ F) (r ∘ P) (r ∘ I) (r ∘ Ds)
-    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
-    (of_eq (successor_rename _ _ _) (lift hA)) (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (lift ht))
-    (of_eq (formulaCode_rename _ _ _ _ _) (lift hG))
-    (of_eq (numeral_rename _ _ _) (lift hIndex)) (of_eq (numeral_rename _ _ _) (lift hf))
-    (of_eq (numeral_rename _ _ _) (lift hj))
-    (of_eq (replacement_rename _ _ _ _ _ _ _ _ _) (lift hUpdate)) (of_eq (field_rename _ _ _ _ _) (lift hV))
-    (of_eq (numeral_rename _ _ _) (lift hA1)) (of_eq (numeral_rename _ _ _) (lift hA2))
-    (of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow))
-    (of_eq (ForcingPreorderInstances.targetData_rename test _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hTarget))
-    (of_eq (formulaCode_rename _ _ _ _ _) (lift hExtra))
-    (of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ _) (lift hLayout)) hN1 (.conjI hD hE) hp hY
+    Derives Γ (transfer Reln w z a A B f b j R S (layout 3) N) :=
+  falsum_step_from_reflexive_query hZ Reln Dom w z a A B C f b j R S Base carrierIndex carrier Extra A1 A2 A3 Cr Bd Refl Pre n N
+    raw Gb H layout U F P I Ds hw hz hA hB hC ht hG hIndex hf hj hUpdate hV hA1 hA2 hRow
+    (.conjL (.conjR (.conjR (.conjR hTarget)))) hExtra hLayout hn hc hN
+
+
+/-- Consume the existing global runtime. The actual current-condition update
+is already retained there; read the reflexive query and the carrier field
+from its original preorder and substitution records. -/
+theorem falsum_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hn : Derives Γ (formulaCode w n a z))
+    (hc : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 n))
+    (hN : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n N)) :
+    Derives Γ (transfer Reln w z a A B f b j T SNew (layout 3) N) := by
+  let row : Fin 24 → Fin m := fun i => rows (i.castAdd 24)
+  let Gb := ForcingMemberRows.backgroundFields row
+  let H := ForcingMemberRows.leafFields row
+  let U := ForcingMemberRows.nativeFields (U0 0) row
+  let F := ForcingMemberRows.proofFields row
+  let I := ForcingMemberRows.tailFields row
+  let Ds := ForcingMemberRows.prefixFields row
+  have hGlobal := Derives.conjL hr
+  have hRows := Derives.conjL (.conjL hGlobal)
+  have hBasis := Derives.conjL hRows
+  have hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b (Cr 0) R S
+      (Refl 0) (Pre 0) raw Gb H U F (P 0) I Ds) :=
+    .conjL (.conjR hRows)
+  have hFresh := Derives.conjL (.conjL (.conjR hGlobal))
+  have hz := Derives.conjL hFresh
+  have hImages := Derives.conjL (.conjR (.conjR hFresh))
+  have hw := Derives.conjL (.conjL hImages)
+  have hBase := Derives.conjR (.conjR (.conjR (.conjL hImages)))
+  have hOldPre := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hFresh)))))
+  have hCore := Derives.conjL (.conjL (.conjR hRow))
+  have hAnd : Derives Γ (binaryCode 0 w (Refl 0) (U0 0) (Pre 0)) := .conjL (.conjR hCore)
+  have hRun := ForcingPreorderInstances.reflexive_query hZ Reln w z A1 A2 A3 f b R S (Pre 0) (Refl 0) (U0 0)
+    raw hw (.conjL hRow) hOldPre hAnd
+  have hf : Derives Γ (numeral (k+2) f) := .conjL (.conjR (.conjR (.conjR (.conjR hBasis))))
+  have hK : Derives Γ (numeral k K) := .conjL (.conjR (.conjR (.conjR hBasis)))
+  have hAux := Derives.conjR hr
+  have hj : Derives Γ (numeral (k+1) j) := .conjL (.conjR hAux)
+  have hUpdate : Derives Γ (replacement w f z b S j (P 0 1) SNew) := .conjR (.conjR (.conjR hAux))
+  have hExtra : Derives Γ (formulaCode w Extra z b) := .conjL (.conjR (.conjR hGlobal))
+  have hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra (Pre 0) H layout) :=
+    .conjR (.conjR (.conjR hGlobal))
+  have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR hLayout))))
+  have ht := ForcingRelationWeakening.row_term test Reln w z A1 A2 A3 f b (Cr 0) R S (Refl 0) (Pre 0)
+    (U0 0) raw (P 0) row hRow 1
+  have hKf : Derives Γ (.mem K f) := SyntaxNumeralMembers.index_member hZ (k+2) (Fin.last k).castSucc f K hf hK
+  have hKw := StructuralListTraceOrder.member_member hZ w K f hw (.conjL hBase) hKf
+  refine eliminate_objects hZ 1 (fun r v => (Formula.mem (v 0) (r w)).conj
+    (field (r w) (r S) (r K) (v 0)))
+    (StructuralListFieldValues.exists_value hZ w S K hw hKw) (transfer Reln w z a A B f b j T SNew (layout 3) N) ?_
+  intro l Δ r v hZ1 lift hField
+  have hc1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r w) Fin.elim0 (r n)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hc)
+  exact of_eq (transfer_rename Reln w z a A B f b j T SNew (layout 3) N r).symm
+    (falsum_step_from_reflexive_query hZ1 Reln Dom (r w) (r z) (r a) (r A) (r B) (r C) (r f) (r b)
+      (r j) (r T) (r SNew) (r S) (r K) (v 0) (r Extra) (r A1) (r A2) (r A3)
+      (r (Cr 0)) (r R) (r (Refl 0)) (r (Pre 0)) (r n) (r N)
+      (r ∘ raw) (r ∘ Gb) (r ∘ H) (r ∘ layout) (r ∘ U) (r ∘ F) (r ∘ P 0) (r ∘ I) (r ∘ Ds)
+      (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+      (of_eq (successor_rename _ _ _) (lift hA)) (of_eq (successor_rename _ _ _) (lift hB))
+      (of_eq (successor_rename _ _ _) (lift hC)) (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (lift ht))
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hG)) (of_eq (numeral_rename _ _ _) (lift hK))
+      (of_eq (numeral_rename _ _ _) (lift hf)) (of_eq (numeral_rename _ _ _) (lift hj))
+      (of_eq (replacement_rename _ _ _ _ _ _ _ _ _) (lift hUpdate)) (.conjR hField)
+      (of_eq (numeral_rename _ _ _) (lift (.conjL (.conjR hBasis))))
+      (of_eq (numeral_rename _ _ _) (lift (.conjL (.conjR (.conjR hBasis)))))
+      (of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow))
+      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (lift hRun))
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hExtra))
+      (of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ _) (lift hLayout))
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hn)) hc1
+      (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hN)))
+
+
+private def falsumRuntimeInput {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Formula m :=
+  (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra
+    raw images Cr Refl Pre U0 P rows layout).conj
+    ((successor A a).conj ((successor B A).conj ((successor C B).conj ((formulaCode w n a z).conj
+      ((SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 n).conj (ForcingCodeRecursion.compiled Reln Dom w z f j a n N))))))
+
+def falsumSentence {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Source.Sentence :=
+  ((falsumRuntimeInput Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N
+    raw images Cr Refl Pre U0 P rows layout).imp
+      (transfer Reln w z a A B f b j T SNew (layout 3) N)).close
+
+theorem falsum_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (falsumSentence Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N
+        raw images Cr Refl Pre U0 P rows layout)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let E := falsumRuntimeInput Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n N
+    raw images Cr Refl Pre U0 P rows layout
+  have h : Derives (Context.add E (Source.SetLanguage.ZF.at m)) E := .hyp (Or.inl rfl)
+  have h1 := Derives.conjR h
+  have h2 := Derives.conjR h1
+  have h3 := Derives.conjR h2
+  have h4 := Derives.conjR h3
+  have h5 := Derives.conjR h4
+  exact falsum_step_from_runtime (ZFContext.add (ZFContext.source_ZF m) E) Reln Dom w z a f j b Big R S T SOld SNew
+    A1 A2 A3 K Extra A B C n N raw images Cr Refl Pre U0 P rows layout
+    (.conjL h) (.conjL h1) (.conjL h2) (.conjL h3) (.conjL h4) (.conjL h5) (.conjR h5)
 
 end Constants
 

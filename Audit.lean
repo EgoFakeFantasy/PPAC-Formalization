@@ -40391,6 +40391,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.double_kernel_certificate
 
 #print axioms PPAC.Migration.ForcingPreorderInstances.open_target
+#print axioms PPAC.Migration.ForcingPreorderInstances.reflexive_query
 #print axioms PPAC.Migration.ForcingFreshPreorder.input
 #print axioms PPAC.Migration.ForcingFreshPreorder.input_rename
 #print axioms PPAC.Migration.ForcingFreshPreorder.data
@@ -40843,6 +40844,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_all_from_compiler_shells
 #print axioms PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_compiled_query
+#print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_reflexive_query
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer_rename
 #print axioms PPAC.Migration.ForcingSourceDensity.apply_transfer
@@ -40856,6 +40858,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.conjunction_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.truth_step
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_step
+#print axioms PPAC.Migration.ForcingSourceDensity.falsum_step_from_runtime
+#print axioms PPAC.Migration.ForcingSourceDensity.falsumSentence
+#print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

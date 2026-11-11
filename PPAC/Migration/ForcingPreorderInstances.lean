@@ -245,6 +245,33 @@ private theorem raw_shape {n m} {Γ : Context m} (R : Source.Formula (n+2))
   have a2 := allPrefix_intro 1 w (v 3) (v 4) c2 a1
   exact .conjI c0 (allPrefix_intro 2 w (v 2) (v 3) c1 a2)
 
+
+/-- Recover the exact raw reflexivity substitution from the same preorder
+query and its actual two-child constructor. -/
+theorem reflexive_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z A1 A2 A3 f b B S Pre Refl U : Fin m) (raw : Fin 16 → Fin m)
+    (hw : Derives Γ (omega w))
+    (hr : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
+    (hPre : Derives Γ (substituted w B S z f z b (raw 0) Pre))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w Refl U Pre)) :
+    Derives Γ (substituted w B S z f z b (raw 1) Refl) := by
+  have hraw := Derives.conjL (raw_shape Reln w z A1 A2 A3 f raw hr)
+  have h := ForcingFormulaDiagram.binary_output hZ 0 w B S z f z b (raw 0) (raw 1) (raw 2) Pre hw hraw hPre
+  let r : Fin m → Fin (m+2) := old 2
+  let E := ForcingFormulaDiagram.binaryBody 0 w B S z f z b (raw 1) (raw 2) Pre
+  let Δ := Context.add E (raisedContext 2 Γ)
+  apply HornBinderRules.eliminate_many 2 E _ h
+  have hd : Derives Δ E := .hyp (Or.inl rfl)
+  have lift {F : Formula m} (hp : Derives Γ F) : Derives Δ (F.rename r) :=
+    HornBinderRules.under_body 2 hp E
+  have he := Derives.conjL (SyntaxLogicalFields.binary_fields (HornBinderRules.zf_body 2 hZ E)
+    0 (r w) (slot 2 0) (slot 2 1) (r Refl) (r U) (r Pre)
+    (of_eq (omega_rename _ _) (lift hw)) (.conjL hd)
+    (of_eq (SyntaxLogicalSyntax.binaryCode_rename _ _ _ _ _ _) (lift hc)))
+  exact of_eq (substituted_rename w B S z f z b (raw 1) Refl r).symm
+    (SyntaxMixedFormulaJudgmentSubst.subst_q (r w) (r B) (r S) (r z) (r f) (r z) (r b)
+      (r (raw 1)) (slot 2 0) (r Refl) he (.conjL (.conjR hd)))
+
 private def nativeCore {m} (w z T C Refl Pre N0 : Fin m) (U F P : Fin 3 → Fin m) : Formula m :=
   (formulaCode w Pre z T).conj ((SyntaxLogicalSyntax.binaryCode 0 w Refl (U 0) Pre).conj ((SyntaxLogicalSyntax.singleCode 9 w (F 0) (U 0)).conj ((SyntaxTopFormulaSyntax.instantiated w z T C (P 0) (F 0) (U 1)).conj ((SyntaxLogicalSyntax.singleCode 9 w (F 1) (U 1)).conj ((SyntaxTopFormulaSyntax.instantiated w z T C (P 1) (F 1) (U 2)).conj ((SyntaxLogicalSyntax.singleCode 9 w (F 2) (U 2)).conj (SyntaxTopFormulaSyntax.instantiated w z T C (P 2) (F 2) N0)))))))
 

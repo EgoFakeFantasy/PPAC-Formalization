@@ -607,12 +607,11 @@ private theorem with_reflexive_outputs {m} {Γ : Context m} (hZ : ZFContext.Evid
 children, then instantiate both at the selected row condition. The queries use
 the original base table and the same lifted
 tables of the recorded substitution. -/
-theorem with_reflexive_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (Reln : Formula (k+2)) (w z A1 A2 A3 f b B Base Cr Pre Refl U0 : Fin m)
+private theorem with_reflexive_query_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z A1 A2 A3 f b B Base Refl : Fin m)
     (raw : Fin 16 → Fin m) (P : Fin 3 → Fin m) (hw : Derives Γ (omega w))
     (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
-    (hTarget : Derives Γ (ForcingPreorderInstances.targetData test w z f b Cr B Base
-      (raw 0) (raw 1) (raw 2) P Pre Refl U0))
+    (hRun : Derives Γ (substituted w B Base z f z b (raw 1) Refl))
     (hp : Derives Γ (SyntaxTermSyntax.term w z b (P 1))) (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
       (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
@@ -628,8 +627,6 @@ theorem with_reflexive_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence
   let Raw := raw 1
   have hQuote : Derives Γ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexive Reln) w Raw) :=
     .conjL (.conjL (.conjR hRaw))
-  have hRun : Derives Γ (substituted w B Base z f z b Raw Refl) :=
-    .conjL (.conjR (.conjR (.conjR hTarget)))
   let body := ForcingPreorderCode.reflexiveBody Reln
   let member := ForcingPreorderCode.reflexiveLeaf Reln false
   let order := ForcingPreorderCode.reflexiveLeaf Reln true
@@ -699,6 +696,27 @@ theorem with_reflexive_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence
     (of_eq (ForcingFormulaDiagram.binaryData_rename 2 (σ w) K H A (σ f) C (σ b) (u (t M)) (u O) F Dm Do τ) (take hChildren))
     (of_eq (instantiated_rename _ _ _ _ _ _ _ d) (lift6 hIM)) hIO
   simpa only [τ, σ, ρ, SourceAlgebra.rename_comp, Function.comp_def] using result
+
+theorem with_reflexive_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z A1 A2 A3 f b B Base Cr Pre Refl U0 : Fin m)
+    (raw : Fin 16 → Fin m) (P : Fin 3 → Fin m) (hw : Derives Γ (omega w))
+    (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
+    (hTarget : Derives Γ (ForcingPreorderInstances.targetData test w z f b Cr B Base
+      (raw 0) (raw 1) (raw 2) P Pre Refl U0))
+    (hp : Derives Γ (SyntaxTermSyntax.term w z b (P 1))) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      ∀ M O A C K H F Dm Do Im Io : Fin l,
+      Derives Δ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexiveLeaf Reln false) (r w) M) →
+      Derives Δ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexiveLeaf Reln true) (r w) O) →
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r B) (r Base) (r z) (r f) (r z) (r b) A C K H) →
+      Derives Δ (SyntaxLogicalSyntax.singleCode 9 (r w) F (r Refl)) →
+      Derives Δ (ForcingFormulaDiagram.binaryData 2 (r w) K H A (r f) C (r b) M O F Dm Do) →
+      Derives Δ (instantiated (r w) (r z) (r b) C (r (P 1)) Dm Im) →
+      Derives Δ (instantiated (r w) (r z) (r b) C (r (P 1)) Do Io) →
+      Derives Δ (out.rename r)) : Derives Γ out :=
+  with_reflexive_query_instances hZ Reln w z A1 A2 A3 f b B Base Refl raw P hw hRaw
+    (.conjL (.conjR (.conjR (.conjR hTarget)))) hp out use
 
 -- The two finite source shapes specialize this helper, so both raw queries
 -- start from one actual quotation of the original relation.
@@ -946,7 +964,7 @@ private theorem instance_value {m} {Γ : Context m} (w z b C p X Y Y' : Fin m)
 /-- Discharge both guards of the pointwise density premise from the actual
 preorder and guard records. The reflexivity child queries and their equality
 with the two density guards are constructed here. -/
-theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+private theorem tail_from_reflexive_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
     (w z a A C f b L Base S K Bnd D head Q Um Ym Qo Yo Tail I j V Extra A1 A2 A3 Cr Bd Refl Pre : Fin m)
     (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
     (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
@@ -966,8 +984,7 @@ theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) 
     (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
     (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
     (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P N Ds))
-    (hTarget : Derives Γ (ForcingPreorderInstances.targetData test w z f b Cr Bd Base
-      (raw 0) (raw 1) (raw 2) P Pre Refl (U 0)))
+    (hRun : Derives Γ (substituted w Bd Base z f z b (raw 1) Refl))
     (hExtra : Derives Γ (formulaCode w Extra z b))
     (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
     (hTail : Derives Γ (discharge w z b (layout 3) Ym Yo Tail)) :
@@ -977,8 +994,8 @@ theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) 
   have hFirst : Derives Γ (instantiated w z b Cr (P 0) (F 0) (U 1)) :=
     .conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hCore))))))))
   have hCr := Derives.conjR (SyntaxTopFormulaTyping.instantiate_environment w z b Cr (P 0) (F 0) (U 1) hFirst)
-  apply with_reflexive_instances hZ Reln w z A1 A2 A3 f b Bd Base Cr Pre Refl (U 0) raw P hw
-    (.conjL hRow) hTarget ht (implication test w z b (layout 3) Tail)
+  apply with_reflexive_query_instances hZ Reln w z A1 A2 A3 f b Bd Base Refl raw P hw
+    (.conjL hRow) hRun ht (implication test w z b (layout 3) Tail)
   intro l Δ r hZ1 lift M O Ar Cr' Kr Hr Fr Dm Do Im Io hM hO hlr hAll hBody hIm hIo
   have hw1 := of_eq (omega_rename w r) (lift hw)
   have hz1 := of_eq (empty_rename z r) (lift hz)
@@ -1026,6 +1043,36 @@ theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) 
     (of_eq (FormulaCodeSyntax.formulaCode_rename _ _ _ _ r) (lift hExtra))
     (of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ r) (lift hLayout))
     hAll (.conjL hBody) hm ho (of_eq (discharge_rename _ _ _ _ _ _ _ r) (lift hTail))
+
+theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z a A C f b L Base S K Bnd D head Q Um Ym Qo Yo Tail I j V Extra A1 A2 A3 Cr Bd Refl Pre : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w L S a f z b A C K Bnd))
+    (hD : Derives Γ (consCode w (P 1) L D)) (hh : Derives Γ (SyntaxVariableSyntax.code true w z head))
+    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head Q))
+    (hUm : Derives Γ (substituted w K Bnd A f C b Q Um))
+    (hYm : Derives Γ (instantiated w z b C (P 1) Um Ym))
+    (hOrder : Derives Γ (ForcingGuardOpening.result true Reln w z f b (P 1) S A head Qo Yo))
+    (hI : Derives Γ (SyntaxNumeralSyntax.numeral k I))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hReplace : Derives Γ (replacement w f z b Base j (P 1) S))
+    (hV : Derives Γ (field w Base I V))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P N Ds))
+    (hTarget : Derives Γ (ForcingPreorderInstances.targetData test w z f b Cr Bd Base
+      (raw 0) (raw 1) (raw 2) P Pre Refl (U 0)))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hTail : Derives Γ (discharge w z b (layout 3) Ym Yo Tail)) :
+    Derives Γ (implication test w z b (layout 3) Tail) :=
+  tail_from_reflexive_query hZ Reln w z a A C f b L Base S K Bnd D head Q Um Ym Qo Yo Tail I j V Extra A1 A2 A3
+    Cr Bd Refl Pre raw Gb H layout U F P N Ds hw hz ht hl hD hh hc hUm hYm hOrder hI hf hj hReplace hV hA1 hA2 hRow
+    (.conjL (.conjR (.conjR (.conjR hTarget)))) hExtra hLayout hTail
 
 open SyntaxLogicalSyntax (singleCode singleCode_rename binaryCode_rename) in
 open SyntaxMixedFormulaRecursiveSyntax (check) in
@@ -2489,8 +2536,7 @@ private structure ReflexiveEvidence {k m} (Γ : Context m) (Reln : Formula (k+2)
   two : Derives Γ (numeral 2 q.two)
   row : Derives Γ (ForcingPreorderLeaves.data test Reln q.w q.z q.one q.two q.three q.f q.b
     q.bound q.boundTable q.base q.reflCode q.pre q.raw q.gb q.guards q.instances q.bodies q.terms q.inner q.prefixed)
-  target : Derives Γ (ForcingPreorderInstances.targetData test q.w q.z q.f q.b q.bound q.boundTable
-    q.base (q.raw 0) (q.raw 1) (q.raw 2) q.terms q.pre q.reflCode (q.instances 0))
+  reflexive : Derives Γ (substituted q.w q.boundTable q.base q.z q.f q.z q.b (q.raw 1) q.reflCode)
   extra : Derives Γ (formulaCode q.w q.extra q.z q.b)
   layout : Derives Γ (ForcingProofContext.layoutData q.w q.z q.b q.extra q.pre q.guards q.layout)
 
@@ -2505,7 +2551,7 @@ private theorem ReflexiveEvidence.map {k m l} {Γ : Context m} {Δ : Context l} 
     of_eq (field_rename _ _ _ _ _) (lift h.carrier), of_eq (numeral_rename _ _ _) (lift h.one),
     of_eq (numeral_rename _ _ _) (lift h.two),
     of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift h.row),
-    of_eq (ForcingPreorderInstances.targetData_rename test _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift h.target),
+    of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift h.reflexive),
     of_eq (formulaCode_rename _ _ _ _ _) (lift h.extra),
     of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ _) (lift h.layout)⟩
 
@@ -2538,13 +2584,13 @@ private theorem falsum_at_instance_with_prefix {k m} {Γ : Context m} (hZ : ZFCo
     (.conjL hv) (.conjR (.conjR hin))
   have hYm := SyntaxTopFormulaSyntax.intro_instantiated q.w q.z q.b (v 0) q.p (u 1) (x 1) (v 2) (v 3)
     (.conjL (.conjL (.conjR hv))) (.conjL (.conjR (.conjL hx)))
-  have hTail := tail_from_compilers hZ Reln q.w q.z a (o 1) (o 2) q.f q.b L q.base S (o 3) (o 4) Pfx
+  have hTail := tail_from_reflexive_query hZ Reln q.w q.z a (o 1) (o 2) q.f q.b L q.base S (o 3) (o 4) Pfx
     (d 1) (d 2) (u 1) (x 1) (d 3) (x 2) (x 3) q.carrierIndex q.j q.carrier q.extra q.one q.two q.three
     q.bound q.boundTable q.reflCode q.pre q.raw q.gb q.guards q.layout q.instances q.bodies q.terms q.inner q.prefixed
     h.omega h.zero h.term hl hPfx hh hm' (.conjL (.conjR (.conjL hu)))
     (instance_scope q.w q.z q.b (v 0) (o 2) q.p (u 1) (x 1) hCe hYm)
     (.conjR (.conjL hGuard)) h.carrierIndex h.freeScope h.conditionIndex h.updated h.carrier
-    h.one h.two h.row h.target h.extra h.layout (.conjR hGuard)
+    h.one h.two h.row h.reflexive h.extra h.layout (.conjR hGuard)
   have hRebound := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hd)))))
   have heq := ForcingDensityCode.rebound_nullary hZ false q.w a A B q.f q.j N (d 6) h.omega hN hRebound
   let C := SyntaxNodeSyntax.constructor 0 0 q.w.castSucc Fin.elim0 (Fin.last m)
@@ -2628,6 +2674,33 @@ private theorem falsum_from_query_at_reflexive_term {k m} {Γ : Context m} (hZ :
 /-- The source falsum branch at the selected condition. Instantiate the actual
 density universal at that condition, discharge the two original guards by
 reflexivity, and eliminate its existential to obtain the exact forcing output. -/
+theorem falsum_from_reflexive_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z a A B f b j L S Base carrierIndex carrier Extra A1 A2 A3 Cr Bd Refl Pre D E N Y : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (I : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hA : Derives Γ (successor A a))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hG : Derives Γ (formulaCode w (layout 3) z b))
+    (hIndex : Derives Γ (numeral k carrierIndex))
+    (hf : Derives Γ (numeral (k+2) f)) (hj : Derives Γ (numeral (k+1) j))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) S))
+    (hV : Derives Γ (field w Base carrierIndex carrier))
+    (hA1 : Derives Γ (numeral 1 A1)) (hA2 : Derives Γ (numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P I Ds))
+    (hRun : Derives Γ (substituted w Bd Base z f z b (raw 1) Refl))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hD : Derives Γ (ForcingDensityCode.queryData Reln w a A B f j N z b L S D E))
+    (hP : Derives Γ (implication test w z b (layout 3) E))
+    (hY : Derives Γ (substituted w L S a f z b N Y)) :
+    Derives Γ (implication test w z b (layout 3) Y) := by
+  let q : ReflexiveRuntime m := ⟨w,z,f,b,j,Base,carrierIndex,carrier,Extra,A1,A2,A3,Cr,Bd,Refl,Pre,
+    raw,Gb,H,layout,U,F,P,I,Ds⟩
+  let hr : ReflexiveEvidence Γ Reln q S :=
+    ⟨hw,hz,ht,hG,hIndex,hf,hj,hUpdate,hV,hA1,hA2,hRow,hRun,hExtra,hLayout⟩
+  exact falsum_from_query_at_reflexive_term hZ hr a A B L D E N Y hA hN hD hP hY
+
 theorem falsum_from_compiled_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
     (w z a A B f b j L S Base carrierIndex carrier Extra A1 A2 A3 Cr Bd Refl Pre D E N Y : Fin m)
     (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
@@ -2649,12 +2722,10 @@ theorem falsum_from_compiled_query {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     (hD : Derives Γ (ForcingDensityCode.queryData Reln w a A B f j N z b L S D E))
     (hP : Derives Γ (implication test w z b (layout 3) E))
     (hY : Derives Γ (substituted w L S a f z b N Y)) :
-    Derives Γ (implication test w z b (layout 3) Y) := by
-  let q : ReflexiveRuntime m := ⟨w,z,f,b,j,Base,carrierIndex,carrier,Extra,A1,A2,A3,Cr,Bd,Refl,Pre,
-    raw,Gb,H,layout,U,F,P,I,Ds⟩
-  let hr : ReflexiveEvidence Γ Reln q S :=
-    ⟨hw,hz,ht,hG,hIndex,hf,hj,hUpdate,hV,hA1,hA2,hRow,hTarget,hExtra,hLayout⟩
-  exact falsum_from_query_at_reflexive_term hZ hr a A B L D E N Y hA hN hD hP hY
+    Derives Γ (implication test w z b (layout 3) Y) :=
+  falsum_from_reflexive_query hZ Reln w z a A B f b j L S Base carrierIndex carrier Extra A1 A2 A3
+    Cr Bd Refl Pre D E N Y raw Gb H layout U F P I Ds hw hz hA ht hG hIndex hf hj hUpdate hV hA1 hA2 hRow
+    (.conjL (.conjR (.conjR (.conjR hTarget)))) hExtra hLayout hN hD hP hY
 
 end FalsumFromCompiler
 end PPAC.Migration.ForcingDensityGuards

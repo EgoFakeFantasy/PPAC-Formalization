@@ -10,7 +10,7 @@
 
 `ForcingDensityInstantiation.kernel_certificate` 读取原稠密性公式的实际全称码，用同一张替换表的指定条件槽作为实例项。它生成 `G → 实例` 的原内部证明，并保留该实例中两个守卫和存在式尾部的精确查询。Windows 整仓验收已通过。两个守卫的原查询对应见上述证书。见[当前条件实例验收](../verification/forcing-density-instantiation-acceptance.json)。
 
-`ForcingSourceDensityConstant.truth_kernel_certificate` 在普通 nativeZF 原核内，从原编译及实际混合查询取得真常元的内部 `G → 输出` 证明，允许任意内部自由作用域。`false_from_compiler` 在实际假常元查询上保留同一 `⊥` 码和原稠密性见证记录。ForcingSourceDensity.falsum_step 现已从同一原稠密性编译查询生成并接入这些记录。给定实际运行中的自反性记录，它在选定条件消去两条守卫和存在式并推出准确的 ⊥ 输出。ForcingSourceDensity.truth_step 也已接入同一对象归纳谓词。见[源码常元归纳步验收](../verification/forcing-source-density-constants-acceptance.json)。两项已通过 Windows 整仓验收。见[常元验收](../verification/forcing-constant-density-acceptance.json)。
+`ForcingSourceDensityConstant.truth_kernel_certificate` 在普通 nativeZF 原核内，从原编译及实际混合查询取得真常元的内部 `G → 输出` 证明，允许任意内部自由作用域。`false_from_compiler` 在实际假常元查询上保留同一 `⊥` 码和原稠密性见证记录。ForcingSourceDensity.falsum_step 现已从同一原稠密性编译查询生成并接入这些记录。ForcingSourceDensity.falsum_step_from_runtime 已从现有运行记录读取同一预序的自反性查询和原表的载体字段，在实际条件消去两条守卫和存在式并推出准确的 ⊥ 输出。封闭推导已在 nativeZF 原核重放。见[假常元运行记录验收](../verification/forcing-source-density-falsum-runtime-acceptance.json)。ForcingSourceDensity.truth_step 也已接入同一对象归纳谓词。见[源码常元归纳步验收](../verification/forcing-source-density-constants-acceptance.json)。两项已通过 Windows 整仓验收。见[常元验收](../verification/forcing-constant-density-acceptance.json)。
 
 `ForcingDensityCode.kernel_certificate` 在 nativeZF 原核中为任意内部强迫公式码构造原 `force_of_dense` 的稠密性前提。它插入两层条件绑定，只在见证正文中替换指定条件槽。`ForcingDensityCode.from_tables` 使用同一份实际替换表生成该前提的查询码。两项已随主入口通过 Windows 整仓验收。全内部公式码的稠密性推导尚未闭合。见[稠密性前提验收](../verification/forcing-density-code-acceptance.json)。
 
@@ -34,7 +34,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 接完原 `ForcingTruth.force_of_dense` 的假常元证明传输、合取、负式和存在式分支，并在全部内部公式码上闭合归纳。复用已通过原核检查的原子稠密性证书和单调性归纳。
+1. 将已验收的成员与相等分支接到统一实际密度查询，接完原 `ForcingTruth.force_of_dense` 的负式和存在式分支，并在全部内部公式码上闭合归纳。复用已通过原核检查的原子稠密性证书和单调性归纳。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
