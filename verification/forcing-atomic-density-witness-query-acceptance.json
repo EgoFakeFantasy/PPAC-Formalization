@@ -1,0 +1,52 @@
+{
+  "baseline_commit": "807a8f20e21cea571cd7058f1f5038718f16b7ea",
+  "recorded_at": "2026-11-11T14:49:47.320055+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query"
+  ],
+  "scope": "Read the actual witness-body query from the density compiler and compose its original weakening and rebind with both actual mixed lifts. The same output code is obtained by directly substituting the original atom with the original bound argument list and the actual free table overwritten at the selected condition slot.",
+  "actual_atomic_witness_query_normalized": true,
+  "canonical_atomic_witness_code_equality_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40212,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "d5c89f22d20eecfd683dba8ad28cb14826aa45d2e16fa80e64c2401c9e76b30f",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "3ed149637cf57ef2698515ba3fa2e67086bef589007baff0f34073a24586a49c",
+      "docs/CURRENT_STATUS.zh-CN.md": "461b788714d612f215afdc077530ddcef01a4babd2136594ec65da76608e9190",
+      "docs/SOURCE_LOCK.json": "e3900d8c65b45c92314a5bd8142096ffb9d0fc7c2faee9c762f29b1bb8332db1",
+      "scripts/verify.py": "81ed2378f59b2ef4ad633f03f762e12bc79bcdf378f2181f8428cf37b9116ce9"
+    }
+  },
+  "baseline_declarations_compared": 40211,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

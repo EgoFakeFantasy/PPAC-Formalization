@@ -40900,6 +40900,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom

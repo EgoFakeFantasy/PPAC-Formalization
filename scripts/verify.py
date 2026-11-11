@@ -2791,7 +2791,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_density_instantiation', 'ForcingDensityInstantiation', 37),
                                 ('forcing_density_guards', 'ForcingDensityGuards', 21),
                                 ('forcing_source_density', 'ForcingSourceDensity', 16),
-                                ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 33),
+                                ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 34),
                                 ('forcing_atomic_mono', 'ForcingAtomicMono', 14),
                                 ('forcing_atomic_mono_images', 'ForcingAtomicMonoImages', 10),
                                 ('forcing_atomic_mono_template', 'ForcingAtomicMonoTemplate', 20),

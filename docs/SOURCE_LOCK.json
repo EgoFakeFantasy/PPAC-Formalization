@@ -177742,7 +177742,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
-        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "255b08aee2f307f6b6ae2d6419b54f9c11f1be64fdabda18425a5c9c2b221f15",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "3ed149637cf57ef2698515ba3fa2e67086bef589007baff0f34073a24586a49c",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
@@ -177752,6 +177752,7 @@
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order": ["propext", "Classical.choice", "Quot.sound"],

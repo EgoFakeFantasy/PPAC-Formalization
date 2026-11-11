@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingAtomicDenseTemplate.with_atomic_witness_query` 从原 `force_of_dense.mem/equal` 的实际密度记录取得见证体查询。在两次作用域提升后，它消去原弱化和条件重绑定，把同一输出码还原为对原强迫原子码的直接查询，保留原名字项和实际的内层条件。该查询与共同表上见证体的码等式仍需接通。
+
 `ForcingAtomicDenseTemplate.with_inner_order_query` 从原稠密性编译记录和两次实际提升得到内层顺序守卫的直接替换推导。外层条件对应绑定索引 1，内层条件对应绑定索引 0。内层守卫已与共同表上的实际输出得到码等式。完整前提只差原子见证体的码等式。[内层守卫码等式验收](../verification/forcing-atomic-density-inner-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-inner-order-acceptance.json)
 
 `ForcingAtomicDenseTemplate.outer_order_query` 从原稠密性编译和实际外层提升表，导出同一顺序守卫输出的直接替换推导。该推导保留外层提升后的自由项表，并从同一次提升读取绑定的零号条件项。该直接推导已用于比较共同表上的外层顺序守卫，码等式由同一个零号绑定项和两张提升表上的自由项对应推出。[外层顺序守卫码等式验收](../verification/forcing-atomic-density-outer-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-outer-order-acceptance.json)
