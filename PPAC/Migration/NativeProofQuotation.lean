@@ -17,7 +17,7 @@ attribute [local irreducible] NaturalRecursionSyntax.matrix
 set_option maxRecDepth 32768
 set_option maxHeartbeats 2000000
 
-private theorem eliminate_objects {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem eliminate_objects {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (k : Nat) (body : ∀ {l}, (Fin m → Fin l) → (Fin k → Fin l) → Formula l)
     (hex : Derives Γ (existsMany k (body (old k) (slot k)))) (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (xs : Fin k → Fin l),
@@ -538,27 +538,37 @@ theorem atomic_monotone {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     Derives Γ (InternalAxiomProof.provable false w F) :=
   from_derives hZ (ForcingAtomicBasic.monotone_kernel_certificate equality R P x y p q) w z F hw hz hF
 
-private def atomicMonoMatrix {n} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n) : Formula n :=
-  (ForcingAtomicBasic.preorder R id P).imp ((Formula.mem q P).imp ((ReplacementPredicates.rel R id q p).imp
-    ((ForcingAtomicRelations.forces equality R id P x y p).imp (ForcingAtomicRelations.forces equality R id P x y q))))
-
 /-- The literal body of the pinned atomic monotonicity sentence, with its
 parameters exposed as free variables in the original pure signature. -/
 def atomicMonoTemplate {n} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n) :
     PureSyntaxQuotation.Fm [] (List.replicate n SetSort.set) :=
-  Syntax.formula Syntax.variables (atomicMonoMatrix equality R P x y p q)
+  Syntax.formula Syntax.variables (ForcingAtomicBasic.monotoneBody equality R id P x y p q)
 
-private theorem atomic_open_derives {n} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n) :
-    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (atomicMonoTemplate equality R P x y p q) := by
-  let M := atomicMonoMatrix equality R P x y p q
-  have h := ReverseZFReplay.source_sentence (ForcingAtomicBasic.monotone_kernel_certificate equality R P x y p q)
+theorem from_source_closure {n} (M : Formula n) (P : Fin n)
+    (hM : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Translation.sentence M.close))
+    {free : PureSyntaxQuotation.Ctx} (v : Fin n → PureSyntaxQuotation.Tm [] free SetSort.set) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] (Syntax.formula v M) := by
+  have h := ReverseZFReplay.source_sentence hM
   have hd : Derives (SetLanguage.ZF.at n) (M.close.rename Fin.elim0) := by
     apply Derives.weaken _ (of_eq (closed_rename M.close (fun _ : Fin 1 => P)) (Derives.rename (fun _ => P) h))
     rintro _ ⟨_, ⟨s, hs, rfl⟩, rfl⟩
     exact ⟨s, hs, (closed_rename s (fun _ : Fin 1 => P)).symm⟩
   have ho := specialize_close M id hd
   rw [Reverse.source_rename_id] at ho
-  exact ZFReplay.source_derives_at ho Syntax.variables
+  exact ZFReplay.source_derives_at ho v
+
+/-- Replay a fixed open native proof at an actual mixed-substitution output.
+The exact image tables and the output remain internal objects. -/
+theorem instantiate_derives {m} {Γ : Context m} {free : PureSyntaxQuotation.Ctx} {φ : PureSyntaxQuotation.Fm [] free}
+    (hZ : ZFContext.Evidence Γ) (hφ : YesMetaZFC.Logic.FirstOrder.Derives nativeZF [] φ)
+    (w z a b B L N F : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ha : Derives Γ (SyntaxNumeralSyntax.numeral free.length a))
+    (hN : Derives Γ (PureQuotationSyntax.formula φ w N))
+    (hF : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B L z a z b N F)) :
+    Derives Γ (proved (OriginalAxiomCodeTest.test false) w z b F) := by
+  obtain ⟨proof⟩ := hφ
+  exact substitute_at_list hZ w z a b L N F hw hz (execution_from_mixed hZ w z a b B L N F hw hz hF)
+    (from_hilbert proof hZ w z a N hw hz ha hN)
 
 /-- Consume a real mixed substitution into the fixed atomic proof. The output,
 term list, and ambient free scope are arbitrary internal codes. The unchanged
@@ -570,9 +580,9 @@ theorem atomic_monotone_instance {n m} {Γ : Context m} (hZ : ZFContext.Evidence
     (hN : Derives Γ (PureQuotationSyntax.formula (atomicMonoTemplate equality R P x y p q) w N))
     (hF : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B L z a z b N F)) :
     Derives Γ (proved (OriginalAxiomCodeTest.test false) w z b F) := by
-  obtain ⟨proof⟩ := atomic_open_derives equality R P x y p q
-  exact substitute_at_list hZ w z a b L N F hw hz (execution_from_mixed hZ w z a b B L N F hw hz hF)
-    (from_hilbert proof hZ w z a N hw hz (of_eq (by rw [List.length_replicate]) ha) hN)
+  have h := from_source_closure (ForcingAtomicBasic.monotoneBody equality R id P x y p q) P
+    (ForcingAtomicBasic.monotone_kernel_certificate equality R P x y p q) Syntax.variables
+  exact instantiate_derives hZ h w z a b B L N F hw hz (of_eq (by rw [List.length_replicate]) ha) hN hF
 
 /-- Closure in the original nativeZF kernel quantifies the actual substituted
 formula, image lists and ambient scope as object variables. -/

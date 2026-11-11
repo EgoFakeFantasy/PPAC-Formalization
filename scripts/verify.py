@@ -1967,7 +1967,7 @@ def main(source_check_only: bool = False) -> None:
                                ("forcing_atomic_graphs", "ForcingAtomicGraphs", 23),
                                ("forcing_atomic_recursion", "ForcingAtomicRecursion", 13),
                                ("forcing_atomic_relations", "ForcingAtomicRelations", 21),
-                               ("forcing_atomic_basic", "ForcingAtomicBasic", 31),
+                               ("forcing_atomic_basic", "ForcingAtomicBasic", 33),
                                ("forcing_triple_induction", "ForcingTripleInduction", 8),
                                ("forcing_atomic_laws", "ForcingAtomicLaws", 16),
                                ("forcing_atomic_symmetry", "ForcingAtomicSymmetry", 20),
@@ -2683,7 +2683,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('original_axiom_typing', 'OriginalAxiomTyping', 6),
                                 ('internal_consistency_closing', 'InternalConsistency', 8),
                                 ('internal_axiom_proof', 'InternalAxiomProof', 8),
-                                ('forcing_atomic_code', 'ForcingAtomicCode', 28),
+                                ('forcing_atomic_code', 'ForcingAtomicCode', 32),
                                 ('forcing_atom_code', 'ForcingAtomCode', 18),
                                 ('forcing_condition_rebind', 'ForcingConditionRebind', 23),
                                 ('forcing_guard_code', 'ForcingGuardCode', 29),
@@ -2702,7 +2702,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('internal_proof_operations', 'InternalProofOperations', 27),
                                 ('internal_proof_conjunction', 'InternalProofConjunction', 15),
                                 ('internal_proof_templates', 'InternalProofTemplates', 15),
-                                ('native_proof_quotation', 'NativeProofQuotation', 5),
+                                ('native_proof_quotation', 'NativeProofQuotation', 8),
                                 ('internal_proof_implication', 'InternalProofImplication', 8),
                                 ('forcing_open_layout', 'ForcingOpenLayout', 35),
                                 ('forcing_pointwise_code', 'ForcingPointwiseCode', 46),
@@ -2743,7 +2743,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_neg_condition', 'ForcingNegCondition', 18),
                                 ('forcing_transitive_guard_proof', 'ForcingTransitiveGuardProof', 16),
                                 ('internal_proof_curry', 'InternalProofCurry', 25),
-                                ('forcing_preorder_code', 'ForcingPreorderCode', 29),
+                                ('forcing_preorder_code', 'ForcingPreorderCode', 30),
                                 ('forcing_preorder_instances', 'ForcingPreorderInstances', 28),
                                 ('forcing_binder_instantiation', 'ForcingBinderInstantiation', 8),
                                 ('forcing_binder_formula', 'ForcingBinderFormula', 10),
@@ -2780,10 +2780,13 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_member_weakening', 'ForcingMemberWeakening', 10),
                                 ('forcing_fresh_leaves', 'ForcingFreshLeaves', 10),
                                 ('forcing_member_rows', 'ForcingMemberRows', 18),
-                                ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
+                                ('forcing_relation_weakening', 'ForcingRelationWeakening', 7),
                                 ('forcing_global_weakening', 'ForcingGlobalWeakening', 11),
                                 ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8),
-                                ('forcing_source_mono', 'ForcingSourceMono', 14),
+                                ('forcing_source_mono', 'ForcingSourceMono', 19),
+                                ('forcing_atomic_mono', 'ForcingAtomicMono', 11),
+                                ('forcing_atomic_mono_images', 'ForcingAtomicMonoImages', 2),
+                                ('forcing_atomic_mono_template', 'ForcingAtomicMonoTemplate', 20),
                                 ('forcing_nested_guard_proof', 'ForcingNestedGuardProof', 11),
                                 ('forcing_fresh_opening_inverse', 'ForcingFreshOpeningInverse', 23),
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
@@ -2831,6 +2834,8 @@ def main(source_check_only: bool = False) -> None:
             prefix = "YesMetaZFC.SetTheory.ZFC."
         names = {prefix + n for n in re.findall(
             r"^(?:def|theorem|abbrev|structure)\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
+        if module == "ForcingAtomicMonoTemplate":
+            names |= {prefix + n for n in re.findall(r"^inductive\s+([A-Za-z_][A-Za-z_0-9]*)", body, re.MULTILINE)}
         if module in ("ExistingFiniteSequenceBounds", "ExistingOrdinalEnumeration", "ExistingOrdinalImage", "ExistingIndexedChoice", "ConstructionCountableHull", "ForcingChainBound", "ForcingCountableTreeEvaluation", "ForcingCountableTreeAlgebra", "ExistingTreeAddresses", "ForcingCountableTreeCodes", "ForcingCountableTreeGraft", "ForcingCountableTreeCardinality", "ForcingCountableTreeValues", "ForcingCountableTreeGraftValues", "ForcingCountableHull", "ForcingCohenCodes", "ForcingCohenCompatibleChoice", "ForcingCohenRestriction", "ForcingCohenFlip", "ForcingCohenOperation", "ForcingCohenAntichain"):
             names |= {prefix + n + "_freeClosed" for n in re.findall(r"^derive_free_closed\s+(\w+)", body, re.MULTILINE)}
         if module == "ForcingFormula":
@@ -6182,6 +6187,7 @@ def main(source_check_only: bool = False) -> None:
         "object_source_conjunction_mono_scope": source_lock["source_proof_adaptations"]["forcing_conjunction_mono"]["scope"],
         "object_source_mono_both_child_compilations_generated_and_consumed": True,
         "object_source_mono_constant_bases_without_IH_proved": True,
+        "object_source_mono_member_and_equality_from_actual_compilers_proved": True,
         "object_source_mono_full_induction_discharged": False,
         "object_source_mono_scope": source_lock["source_proof_adaptations"]["forcing_source_mono"]["scope"],
         "object_literal_nested_guard_body_double_Curry_and_forall_consumed": True,

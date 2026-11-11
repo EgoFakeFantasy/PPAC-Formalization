@@ -1187,6 +1187,9 @@ import PPAC.Migration.ForcingMemberRows
 import PPAC.Migration.ForcingRelationWeakening
 import PPAC.Migration.ForcingGlobalWeakening
 import PPAC.Migration.ForcingConjunctionMono
+import PPAC.Migration.ForcingAtomicMono
+import PPAC.Migration.ForcingAtomicMonoTemplate
+import PPAC.Migration.ForcingAtomicMonoImages
 import PPAC.Migration.ForcingSourceMono
 import PPAC.Migration.ForcingNestedGuardProof
 import PPAC.Migration.ForcingFreshOpeningInverse

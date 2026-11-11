@@ -43,12 +43,45 @@ def template {n} (equality : Bool) (R : Source.Formula (n+2)) :
   (Translation.formula fo_bound_variable (sourceTemplate equality R)).substituteMapped
     (roles n) (fun {sort} (v : FirstOrder.Variable ([] : FirstOrder.SortContext ℒ) sort) => nomatch v)
 
+def sourceRoles (n : Nat) : Fin (n+4) → PureSyntaxQuotation.Tm (fo_bound_context 2) (fo_bound_context (n+2)) :=
+  Fin.lastCases (.bvar .here) (Fin.lastCases (.bvar (.there .here)) (fun i => .fvar (fo_bound_variable i)))
+
+private theorem roles_at (n : Nat) (i : Fin (n+4)) : roles n (fo_bound_variable i) = sourceRoles n i := by
+  induction n with
+  | zero =>
+    refine Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun j => Fin.elim0 j)))) i
+  | succ n ih =>
+    refine Fin.cases ?_ (fun j => ?_) i
+    · rw [show (0 : Fin (n+1+4)) = (0 : Fin (n+1+2)).castSucc.castSucc from by
+        apply Fin.ext
+        simp only [Fin.val_zero, Fin.val_castSucc]]
+      simp only [sourceRoles, Fin.lastCases_castSucc]
+      rfl
+    · change (roles n (fo_bound_variable j)).weakenFree SetSort.set = sourceRoles (n+1) j.succ
+      rw [ih]
+      refine Fin.lastCases ?_ (fun l => ?_) j
+      · rw [show (Fin.last (n+3)).succ = Fin.last (n+4) from Fin.ext rfl]
+        simp only [sourceRoles, Fin.lastCases_last, Term.weakenFree_bvar]
+      · refine Fin.lastCases ?_ (fun k => ?_) l
+        · rw [show (Fin.last (n+2)).castSucc.succ = (Fin.last (n+3)).castSucc from Fin.ext rfl]
+          simp only [sourceRoles, Fin.lastCases_castSucc, Fin.lastCases_last, Term.weakenFree_bvar]
+        · rw [show k.castSucc.castSucc.succ = k.succ.castSucc.castSucc from Fin.ext rfl]
+          simp only [sourceRoles, Fin.lastCases_castSucc]
+          rfl
+
+theorem template_as_source {n} (equality : Bool) (R : Source.Formula (n+2)) :
+    template equality R = Syntax.formula (sourceRoles n) (sourceTemplate equality R) := by
+  rw [template, ← Syntax.old_formula, Syntax.substitute]
+  congr 1
+  funext i
+  exact roles_at n i
+
 end Templates
 
 open Internal Source SourceAlgebra SourceLogic OmegaSyntax HornBinderSyntax
 open SyntaxRenameQuerySyntax (of_eq)
 
-private theorem closed_term_target {m} {Γ : Context m} (w a z b x : Fin m)
+theorem closed_term_target {m} {Γ : Context m} (w a z b x : Fin m)
     (hz : Derives Γ (empty z)) (hc : Derives Γ (SyntaxTermSyntax.contexts w a b))
     (hx : Derives Γ (SyntaxTermSyntax.term w a z x)) :
     Derives Γ (SyntaxTermSyntax.term w a b x) := by
@@ -678,5 +711,29 @@ theorem identityImages_typed {m} {Γ : Context m} (w a f S : Fin m)
 theorem identityImages_unique {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a f S T : Fin m)
     (hw : Derives Γ (omega w)) (hS : Derives Γ (identityImages w a f S)) (hT : Derives Γ (identityImages w a f T)) :
     Derives Γ (.equal S T) := freeImages_unique hZ w a f S T hw hS hT
+
+/-- Use the actual original atomic compiler witnesses under object
+existential elimination. The formula, forest and image records stay linked. -/
+theorem eliminate_compiled {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (n+2)) (w a x y q : Fin m)
+    (h : Derives Γ (compiled equality R w a x y q)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (v : Fin 5 → Fin l),
+      ZFContext.Evidence Δ → (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      Derives Δ (SyntaxNumeralSyntax.numeral 2 (v 0)) →
+      Derives Δ (SyntaxNumeralSyntax.numeral (n+2) (v 1)) →
+      Derives Δ (PureQuotationTypedSyntax.formulaValue (template equality R) (r w) (v 0) (v 1) (v 2)) →
+      Derives Δ (SyntaxForestSyntax.forest 2 (r w) (SetLanguage.args2 (r y) (r x)) (v 3)) →
+      Derives Δ (identityImages (r w) (r a) (v 1) (v 4)) →
+      Derives Δ (SyntaxMixedFormulaJudgmentSyntax.substituted (r w) (v 3) (v 4)
+        (v 0) (v 1) (r a) (v 1) (v 2) (r q)) → Derives Δ (out.rename r)) :
+    Derives Γ out := by
+  let P := body equality R w a x y q
+  apply HornBinderRules.eliminate_many 5 P out h
+  have hP : Derives (Context.add P (raisedContext 5 Γ)) P := .hyp (Or.inl rfl)
+  have hRest := Derives.conjR (.conjR (.conjR (.conjR hP)))
+  exact use (old 5) (slot 5) (HornBinderRules.zf_body 5 hZ P)
+    (fun hp => HornBinderRules.under_body 5 hp P)
+    (.conjL hP) (.conjL (.conjR hP)) (.conjL (.conjR (.conjR hP)))
+    (.conjL (.conjR (.conjR (.conjR hP)))) (.conjL (.conjR hRest)) (.conjR (.conjR hRest))
 
 end PPAC.Migration.ForcingAtomicCode

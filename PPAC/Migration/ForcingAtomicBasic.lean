@@ -167,9 +167,13 @@ theorem eq_refl (hM : FirstOrder.Theory.Models M nativeZF) {n : Nat}
     exact (ForcingAtomicRelations.eq_iff hM R params P y y q).mpr ⟨hq,half,half⟩)
   exact (hm x).mp (all x) p hp
 
+def monotoneBody {n m : Nat} (equality : Bool) (R : Formula (n+2)) (params : Fin n → Fin m)
+    (P x y p q : Fin m) : Formula m :=
+  (preorder R params P).imp ((Formula.mem q P).imp ((ReplacementPredicates.rel R params q p).imp
+    ((forces equality R params P x y p).imp (forces equality R params P x y q))))
+
 def monotoneSentence {n : Nat} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n) : Source.Sentence :=
-  ((preorder R id P).imp ((Formula.mem q P).imp ((ReplacementPredicates.rel R id q p).imp
-    ((forces equality R id P x y p).imp (forces equality R id P x y q))))).close
+  (monotoneBody equality R id P x y p q).close
 
 def denseSentence {n : Nat} (equality : Bool) (R : Formula (n+2)) (P x y p : Fin n) : Source.Sentence :=
   ((preorder R id P).imp ((Formula.mem p P).imp ((dense equality R id P x y p).imp
@@ -185,18 +189,23 @@ def edgeSentence {n : Nat} (R : Formula (n+2)) (P x y nu p r : Fin n) : Source.S
   ((preorder R id P).imp ((Formula.mem r P).imp ((ReplacementPredicates.rel R id p r).imp
     ((Source.SetLanguage.edge y nu r).imp ((forces true R id P x nu p).imp (forces false R id P x y p)))))).close
 
-theorem monotone_models {n : Nat} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n)
-    (hM : FirstOrder.Theory.Models M nativeZF) : (Translation.sentence (monotoneSentence equality R P x y p q)).TrueIn M := by
+theorem monotone_body_models {n m : Nat} (equality : Bool) (R : Formula (n+2)) (params : Fin n → Fin m)
+    (P x y p q : Fin m) (hM : FirstOrder.Theory.Models M nativeZF) :
+    (Translation.sentence (monotoneBody equality R params P x y p q).close).TrueIn M := by
   apply (Translation.realizes_sentence M _).mpr
   apply (GodelDefOutput.close_semantics _ _).mpr
   intro v hpre hq hqp h
-  have hp := (preorder_semantics (M := M) v R id P).mp hpre
-  have hqp' := (ForcingMapConditions.rel_semantics (M := M) v R id q p).mp hqp
-  have h' := (ForcingAtomicRelations.forces_semantics (M := M) v equality R id P x y p).mp h
-  apply (ForcingAtomicRelations.forces_semantics (M := M) v equality R id P x y q).mpr
+  have hp := (preorder_semantics (M := M) v R params P).mp hpre
+  have hqp' := (ForcingMapConditions.rel_semantics (M := M) v R params q p).mp hqp
+  have h' := (ForcingAtomicRelations.forces_semantics (M := M) v equality R params P x y p).mp h
+  apply (ForcingAtomicRelations.forces_semantics (M := M) v equality R params P x y q).mpr
   cases equality with
   | false => exact mem_mono hM hp hq hqp' h'
   | true => exact eq_mono hM hp hq hqp' h'
+
+theorem monotone_models {n : Nat} (equality : Bool) (R : Formula (n+2)) (P x y p q : Fin n)
+    (hM : FirstOrder.Theory.Models M nativeZF) : (Translation.sentence (monotoneSentence equality R P x y p q)).TrueIn M :=
+  monotone_body_models equality R id P x y p q hM
 
 theorem dense_models {n : Nat} (equality : Bool) (R : Formula (n+2)) (P x y p : Fin n)
     (hM : FirstOrder.Theory.Models M nativeZF) : (Translation.sentence (denseSentence equality R P x y p)).TrueIn M := by

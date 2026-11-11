@@ -953,6 +953,10 @@ private theorem native_source {k} (input : Source.Formula k) :
   rw [← Syntax.old_formula, Syntax.substitute]
   rfl
 
+theorem template_as_source {n} (R : Source.Formula (n+2)) :
+    template R = Syntax.formula (fun i => .fvar (fo_bound_variable i)) (source R) :=
+  native_source (source R)
+
 /-- The original first relation atom is literally R(r,q), with bound
 indices r=2 and q=1; all original parameter slots are retained. -/
 theorem atom_rq {n} (R : Source.Formula (n+2)) :

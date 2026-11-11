@@ -28,7 +28,7 @@ theorem input_rename {k m l} (test : Formula 1) (Reln : Source.Formula (k+2)) (w
         (fun s j => ρ (P s j)) (fun j => ρ (x j)) := by
   simp only [input, Formula.rename, ForcingMemberRows.data_rename, SyntaxNumeralSyntax.numeral_rename]
 
-private theorem row_term {k m} {Γ : Context m} (test : Formula 1) (Reln : Source.Formula (k+2))
+theorem row_term {k m} {Γ : Context m} (test : Formula 1) (Reln : Source.Formula (k+2))
     (w z A1 A2 A3 f T C Bound S Refl Pre U0 : Fin m) (raw : Fin 16 → Fin m) (P : Fin 3 → Fin m) (y : Fin 24 → Fin m)
     (hr : Derives Γ (ForcingMemberRows.rowData test Reln w z A1 A2 A3 f T C Bound S Refl Pre U0 raw P y))
     (i : Fin 3) : Derives Γ (SyntaxTermSyntax.term w z T (P i)) := by
