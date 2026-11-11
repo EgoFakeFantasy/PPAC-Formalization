@@ -1215,18 +1215,15 @@ private theorem with_weakened_query {m} {Γ : Context m} (hZ : ZFContext.Evidenc
       (.conjI (of_eq (substituted_rename w L S A f z b Nq Yq r) (move hRun)) hNew))
   exact use r Y hZ1 move hWeak hNew
 
-/-- Reuse the opened witness's maps and free column to raise the inherited
-preorder and the old positive proof to the same free scope as the witness.
-Only the independent empty bound column of the preorder is rebased. -/
-theorem with_raised_witness_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z A f b d L S R RawPre OldPre H Extra Yq AtQ : Fin m) (v : Fin 10 → Fin m)
+/-- Raise the inherited preorder proof using the actual free image table.
+The empty bound column is rebased independently. -/
+theorem with_raised_preorder {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A f b d L S R RawPre OldPre H Extra : Fin m) (v : Fin 10 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hImages : Derives Γ (ForcingWeakenedImages.data w A f z b d L S v))
     (hOldPre : Derives Γ (substituted w R S z f z b RawPre OldPre))
     (hWeakExtra : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d H Extra))
-    (hWeakAtQ : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d Yq AtQ))
     (pPre : Derives Γ (implication test w z b H OldPre))
-    (pAtQ : Derives Γ (implication test w z b H Yq))
     (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Bnd Pre : Fin l), ZFContext.Evidence Δ →
       (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
@@ -1234,7 +1231,6 @@ theorem with_raised_witness_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence
       Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r f) (r z) (r d) (r (v 9))) →
       Derives Δ (substituted (r w) Bnd (r (v 9)) (r z) (r f) (r z) (r d) (r RawPre) Pre) →
       Derives Δ (implication test (r w) (r z) (r d) (r Extra) Pre) →
-      Derives Δ (implication test (r w) (r z) (r d) (r Extra) (r AtQ)) →
       Derives Δ (out.rename r)) : Derives Γ out := by
   have hInput := SyntaxMixedFormulaOutput.input_of_substituted hZ w R S z f z b RawPre OldPre hw hOldPre
   have hRebased := ForcingWeakenedImages.rebase_bound hZ w A z f z b d L S R v hImages
@@ -1264,15 +1260,47 @@ theorem with_raised_witness_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence
   have atPre := ForcingOldParentInstance.raise_implication hZ2 test (e w) (e z) (e b) (e d)
     (e H) (e OldPre) (e Extra) Pre (e (v 0)) (e (v 1)) hw2 hz2 hs hi hj hExtra hWeakPre
     (of_eq (implication_rename test _ _ _ _ _ e) (carry pPre))
-  have atQ := ForcingOldParentInstance.raise_implication hZ2 test (e w) (e z) (e b) (e d)
-    (e H) (e Yq) (e Extra) (e AtQ) (e (v 0)) (e (v 1)) hw2 hz2 hs hi hj hExtra
-    (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ e) (carry hWeakAtQ))
-    (of_eq (implication_rename test _ _ _ _ _ e) (carry pAtQ))
   exact of_eq (SourceAlgebra.rename_comp out r s).symm
     (use e (s (u 8)) Pre hZ2 carry
       (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ s) (move (.conjL hLists)))
       (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ s) (move (.conjR hLists)))
-      hPre atPre atQ)
+      hPre atPre)
+
+/-- Reuse the opened witness's maps and free column to raise the inherited
+preorder and the old positive proof to the same free scope as the witness.
+Only the independent empty bound column of the preorder is rebased. -/
+theorem with_raised_witness_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A f b d L S R RawPre OldPre H Extra Yq AtQ : Fin m) (v : Fin 10 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hImages : Derives Γ (ForcingWeakenedImages.data w A f z b d L S v))
+    (hOldPre : Derives Γ (substituted w R S z f z b RawPre OldPre))
+    (hWeakExtra : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d H Extra))
+    (hWeakAtQ : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d Yq AtQ))
+    (pPre : Derives Γ (implication test w z b H OldPre))
+    (pAtQ : Derives Γ (implication test w z b H Yq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Bnd Pre : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r z) (r z) (r d) Bnd) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r f) (r z) (r d) (r (v 9))) →
+      Derives Δ (substituted (r w) Bnd (r (v 9)) (r z) (r f) (r z) (r d) (r RawPre) Pre) →
+      Derives Δ (implication test (r w) (r z) (r d) (r Extra) Pre) →
+      Derives Δ (implication test (r w) (r z) (r d) (r Extra) (r AtQ)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine with_raised_preorder hZ w z A f b d L S R RawPre OldPre H Extra v
+    hw hz hImages hOldPre hWeakExtra pPre out ?_
+  intro l Δ r Bnd Pre hZ1 lift hBound hFree hPre pPre1
+  have hOps := Derives.conjL (.conjR hImages)
+  have pAtQ1 := ForcingOldParentInstance.raise_implication hZ1 test (r w) (r z) (r b) (r d)
+    (r H) (r Yq) (r Extra) (r AtQ) (r (v 0)) (r (v 1))
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (successor_rename d b r) (lift (.conjL (.conjR (.conjL hImages)))))
+    (of_eq (SyntaxIdentityMapSyntax.identityCode_rename w z (v 0) r) (lift (.conjL hOps)))
+    (of_eq (SyntaxFreeShiftSyntax.shiftCode_rename w b d (v 1) r) (lift (.conjL (.conjR hOps))))
+    (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hWeakExtra))
+    (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hWeakAtQ))
+    (of_eq (implication_rename test _ _ _ _ _ r) (lift pAtQ))
+  exact use r Bnd Pre hZ1 lift hBound hFree hPre pPre1 pAtQ1
 
 private theorem with_weakened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z a A f b d L S K Q j C Nq Yq : Fin m) (images : Fin 10 → Fin m)

@@ -526,12 +526,9 @@ private theorem member_guard_result {k m} {Γ : Context m}
     (of_eq (PureQuotationSyntax.formula_rename _ _ _ s) (move hQuote)) (.conjR hBody)
   simpa only [out, ρ, SourceAlgebra.rename_comp, Function.comp_def, ForcingMemberGuardOpening.result_rename] using hResult
 
-/-- The membership guard at an opened condition and the corresponding
-original preorder row have the same literal member code. Both read the
-same actual carrier field from the retained free table. -/
-theorem witness_member_from_row {k m} {Γ : Context m}
+private theorem witness_member_from_carrier {k m} {Γ : Context m}
     (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2)) (j : Fin 3)
-    (w z A1 A2 A3 f b C R0 Base Refl Pre A head M Y i : Fin m)
+    (w z A1 A2 A3 f b C R0 Base Selected Refl Pre A head M Y i : Fin m)
     (raw : Fin 16 → Fin m) (G : Fin 5 → Fin m) (H : Fin 6 → Fin m)
     (U I P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (V : Fin 3 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
@@ -541,7 +538,10 @@ theorem witness_member_from_row {k m} {Γ : Context m}
     (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i))
     (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
     (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V))
-    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b (P j) Base A head M Y)) :
+    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b (P j) Selected A head M Y))
+    (carrier : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (V : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (field (r w) (r Base) (r i) V) → Derives Δ (field (r w) (r Selected) (r i) V)) :
     Derives Γ (.equal (H (ForcingPreorderMember.memberPosition j)) Y) := by
   let leaf := ForcingPreorderMember.memberPosition j
   let out := Formula.equal (H leaf) Y
@@ -560,10 +560,57 @@ theorem witness_member_from_row {k m} {Γ : Context m}
     (of_eq (SyntaxNumeralSyntax.numeral_rename _ A2 r) (lift hA2)) hi1
     (of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow))
     (.conjR hField)
-  have hNew := member_guard_result hZ1 Reln (r w) (r z) (r f) (r b) (r (P j)) (r Base) (r A)
-    (r head) (r M) (r Y) (r i) (x 0) hw1 hz1 hi1 (.conjR hField)
+  have hNew := member_guard_result hZ1 Reln (r w) (r z) (r f) (r b) (r (P j)) (r Selected) (r A)
+    (r head) (r M) (r Y) (r i) (x 0) hw1 hz1 hi1 (carrier r (x 0) hZ1 lift (.conjR hField))
     (of_eq (ForcingGuardOpening.result_rename false Reln _ _ _ _ _ _ _ _ _ _ r) (lift hGuard))
   exact ForcingPreorderMember.same_result hZ1 (r w) (r (P j)) (x 0) (r (H leaf)) (r Y) hw1 hOld hNew
+
+/-- The membership guard at an opened condition and the corresponding
+original preorder row have the same literal member code. Both read the
+same actual carrier field from the retained free table. -/
+theorem witness_member_from_row {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2)) (j : Fin 3)
+    (w z A1 A2 A3 f b C R0 Base Refl Pre A head M Y i : Fin m)
+    (raw : Fin 16 → Fin m) (G : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U I P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (V : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V))
+    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b (P j) Base A head M Y)) :
+    Derives Γ (.equal (H (ForcingPreorderMember.memberPosition j)) Y) :=
+  witness_member_from_carrier hZ Reln j w z A1 A2 A3 f b C R0 Base Base Refl Pre A head M Y i
+    raw G H U I P N V hw hz hA1 hA2 hf hi hBase hRow hGuard (fun _ _ _ _ h => h)
+
+/-- The actual selected condition changes only the last column. Compare
+membership through the unchanged carrier field of the same two tables. -/
+theorem witness_member_from_updated_row {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2)) (j : Fin 3)
+    (w z A1 A2 A3 f b C R0 Base Selected Refl Pre A head M Y i condition p : Fin m)
+    (raw : Fin 16 → Fin m) (G : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U I P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (V : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V))
+    (hCondition : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) condition))
+    (hUpdate : Derives Γ (ForcingReflexiveImages.replacement w f z b Base condition p Selected))
+    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b (P j) Selected A head M Y)) :
+    Derives Γ (.equal (H (ForcingPreorderMember.memberPosition j)) Y) :=
+  witness_member_from_carrier hZ Reln j w z A1 A2 A3 f b C R0 Base Selected Refl Pre A head M Y i
+    raw G H U I P N V hw hz hA1 hA2 hf hi hBase hRow hGuard (fun r value hZ1 lift hField =>
+      ForcingPreorderGuardTables.carrier_field hZ1 (r w) (r f) (r z) (r b) (r Base) (r condition)
+        (r p) (r Selected) (r i) value
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hf))
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hCondition))
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hi))
+        (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ r) (lift hUpdate)) hField)
 
 private theorem with_reflexive_direct {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z A C f b B Base K H p M Dm Im : Fin m)

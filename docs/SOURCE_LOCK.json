@@ -168072,7 +168072,8 @@
         "forcing_sound impE uses same p and le_rfl"
       ],
       "consumers": [
-        "Actual same-condition reflexivity guard internal proof from the common background, then normalized forcing MP"
+        "Actual same-condition reflexivity guard internal proof from the common background, then normalized forcing MP",
+        "ForcingReflexiveImages.replacement_after_replacement"
       ],
       "reuse_producers": [
         "Original SyntaxTermImageGraph.exists_image (existing Replacement total-function constructor)",
@@ -168082,15 +168083,16 @@
         "Original native InstantiateTop totality/coded-field laws and original nativeZF replay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxTermImageGraph.lean": "646053eb1cf61430c2c6e06580cd391a198ecfd67a1f53fd1cc6507ae697a7e6",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
         "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935"
       },
-      "scope": "Specific diagonal update for SAME actual lifted free table H: selected internal slot j takes generated bound-zero term, every other slot keeps original value. Existing original Replacement total/function graph and original structural-list decoder/encoder are consumed unchanged; no new recursion, coding or proof backend. Actual replacement code exists and exact field iff is proved for ALL internal/nonstandard indices and candidate values. Concrete consumer from_compiled constructs bound-zero, updated table and SAME actual member OR relation guard mixed-substitution output, all three witnesses internally quantified. No equality/truth/proof oracle or output is supplied. This is syntactic construction; relation guard proof, uniform regularity/normalized forcing MP, internal axiom/Proof preservation, reduction and final Con remain unproved.",
+      "scope": "Specific diagonal update for SAME actual lifted free table H: selected internal slot j takes generated bound-zero term, every other slot keeps original value. Existing original Replacement total/function graph and original structural-list decoder/encoder are consumed unchanged; no new recursion, coding or proof backend. Actual replacement code exists and exact field iff is proved for ALL internal/nonstandard indices and candidate values. Concrete consumer from_compiled constructs bound-zero, updated table and SAME actual member OR relation guard mixed-substitution output, all three witnesses internally quantified. No equality/truth/proof oracle or output is supplied. This is syntactic construction; relation guard proof, uniform regularity/normalized forcing MP, internal axiom/Proof preservation, reduction and final Con remain unproved. Two actual updates to the same condition slot now supply the direct update with the final value, as consumed by the negative density witness.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingReflexiveImages.replacement_after_replacement": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingReflexiveImages.data": [
           "Quot.sound",
           "propext"
@@ -168199,7 +168201,7 @@
         "Original native InstantiateTop totality/coded-field laws and original nativeZF replay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxTermImageGraph.lean": "646053eb1cf61430c2c6e06580cd391a198ecfd67a1f53fd1cc6507ae697a7e6",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeFields.lean": "e5c200b37e133a0eb58bc6f880b4703255a842bbc47481e3da65108eecfa20d1",
@@ -168323,7 +168325,7 @@
         "PPAC/Migration/ForcingRelationGuardProof.lean": "4718ab469fa479f75beff7c1c054f3180b2474682cc38164ca37f6a6ddbc093c",
         "PPAC/Migration/ForcingReflexiveDiagram.lean": "bd181d28eb6cf4b7135912ebf1ffd96dfbd933b797e1ef5d37bfcb007a7a4ca7",
         "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
@@ -168858,7 +168860,7 @@
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingFormulaCancellation.lean": "9e5cc6bdec991ec21aa7553896dcb2ee39979d0285e9dfb257f42f42b267d850",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
         "PPAC/Migration/Internal/InstantiateTopFormulaOperation.lean": "be8141bce42fd40471524bd19422012461ce38a81a6aa96c34eec38fb7f40d98"
       },
@@ -169179,7 +169181,7 @@
         "PPAC/Migration/ForcingNegShell.lean": "a855bfc616061d4e38db873df5947ecd7fa647d38a4e6005a3226ece4ecd364f",
         "PPAC/Migration/ForcingNegNormalization.lean": "e180f2931c30d5ef40d6e6197afebc1e1a8833dc5d71a77910c8c30f7966c444",
         "PPAC/Migration/ForcingConditionOpening.lean": "19a828a9777a11a9a5a45bbab0f6b290003a540cd5f8596a799354589195fb19",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
       },
       "retained_existing_producers": [
@@ -170552,7 +170554,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationImages.lean": "c694ebff107aa5ab86d9f376ba64cb929a8d3139cf2eb307c675969e2dae1509",
         "PPAC/Migration/ForcingRelationSource.lean": "5fb9df63b5b1951fea0626daaa767c1d532c88a8e61465caddfb07052cd61d33",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/TermImageQuotationFields.lean": "a37d32c41ec07e2ef5d3ab901648155e21c8e7f74291aa9b593ea0414d3dbae1",
         "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
         "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
@@ -171426,7 +171428,7 @@
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
         "PPAC/Migration/ForcingRelationSource.lean": "5fb9df63b5b1951fea0626daaa767c1d532c88a8e61465caddfb07052cd61d33",
         "PPAC/Migration/ForcingRelationImages.lean": "c694ebff107aa5ab86d9f376ba64cb929a8d3139cf2eb307c675969e2dae1509",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/Internal/SyntaxNumerals.lean": "f4bfec6f423e7813de6c53fb0fc222859b48cc584661b0bd805df885095d7c79",
@@ -171831,7 +171833,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderUnique.lean": "f369d89a05956464242dad16b89c3a2c16ae8b6973d6e4ced49dd24f8392f5d1",
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
@@ -171961,7 +171963,7 @@
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingOpenLift.lean": "946980017210e9ed4127ae2aaf464c854e02f37c229461a0627970142c558ddc",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderFields.lean": "f5dac3f0824fbdf5350718bad07f176b9f0a6576033de7fbba7bfbb1028297e7",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
         "PPAC/Migration/Internal/InstantiateClosedParameterRename.lean": "076d67c442a9b91b8c93149bdfc4e1feb66dd3d30b6188427914ffc3f3e980dd",
@@ -172108,7 +172110,7 @@
         "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
         "PPAC/Migration/ForcingOpenLift.lean": "946980017210e9ed4127ae2aaf464c854e02f37c229461a0627970142c558ddc",
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
@@ -172221,7 +172223,7 @@
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
         "PPAC/Migration/ForcingFormulaAtoms.lean": "1356ab9d93e4dd27a4364414fb5b692bbafe3cf06fd85c8146643455960a14d7",
         "PPAC/Migration/ForcingOpenLift.lean": "946980017210e9ed4127ae2aaf464c854e02f37c229461a0627970142c558ddc",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
         "PPAC/Migration/Internal/SyntaxNumerals.lean": "f4bfec6f423e7813de6c53fb0fc222859b48cc584661b0bd805df885095d7c79",
         "PPAC/Migration/Internal/SyntaxCodedMixedTermFields.lean": "d338622f418a255b0f7818e01c3998c1099b4fbbbf4bc9e5a97f756b256abea4",
@@ -172454,7 +172456,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistDomainImages.lean": "29828ebef9a2dcfa3ae59bca50caad9b09d698574f12ccb9472fd3be9922f485",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/StructuralListFieldGraphFiber.lean": "8dbc66d6bcfe947242157566d56974ae3eebcfff88a7d463fe0e0169e0dd598a",
         "PPAC/Migration/Internal/StructuralListFieldGraphSyntax.lean": "f9ca6377ff62c36004bd56fde992dac7a7f8996c6f6c053cf071056331bb6028",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeExistence.lean": "282815c05a89ccb448be5cbf32f4c7af7c821cd7eec344055d5d5f0006c0937e",
@@ -172693,7 +172695,7 @@
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/Internal/HornBinderRules.lean": "dda72586ce005c62f142a07468315fa4b4189c1cfbd898aa211877e721d5b84b",
         "PPAC/Migration/Internal/SyntaxMixedFormulaRecursiveSyntax.lean": "4d1699c02fea244de8a1655c47c01b373e310490464b7181c209f832a1ef077f",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean": "51b9f83c0f755d53f1a5ad26acdd79203d91fde2fb1949d98d48acd254920a7b",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderTyping.lean": "8103932f815e32008ea84e86a4e63aed18bac8f332acd18af7cf9e21170004d4",
         "PPAC/Migration/OmegaUniversal.lean": "9581783ce0c6063bb68a0ecc4ea822a0284ffe95c90570fcd124fe57b3174762"
@@ -172907,7 +172909,7 @@
         "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/EmptyBoundFreeInputs.lean": "51b9f83c0f755d53f1a5ad26acdd79203d91fde2fb1949d98d48acd254920a7b",
         "PPAC/Migration/Internal/SyntaxFreeSubstSyntax.lean": "0daea3f19a74d60f836e0f83a979ed1b9ad94584bb6e6c28126cccb3dfd42c9c",
         "PPAC/Migration/Internal/SyntaxMixedImageHead.lean": "eb9ad5e84d76be2c3f090f0b58f3065b419d83a96e7b2517a87ba7e77cb4a7e5",
@@ -173869,7 +173871,8 @@
       ],
       "consumers": [
         "ACTUAL original ForcingRelationImages.data pair (two native replacements) is consumed by from_double_queries",
-        "Instantiate SAME old/fresh source Pre and q/p terms/records and combine member/Pre/Extra/fourANDs into canonical Global; final query matching remains unproved"
+        "Instantiate SAME old/fresh source Pre and q/p terms/records and combine member/Pre/Extra/fourANDs into canonical Global; final query matching remains unproved",
+        "ForcingWeakenedOverwrite.with_base_of_update"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingWeakenedImages.lean",
@@ -173883,10 +173886,10 @@
         "PPAC/Migration/Internal/SyntaxTermImagePushPoint.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "a394652f01e38a8dd193555b2d967e353836254cd39eb7c4ad49bc56684449a6",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingReindexedImages.lean": "5248436d3b24dc2bade2b256035eff3e7606535112a578f45acff86548d3c9b7",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/ForcingRelationImages.lean": "c694ebff107aa5ab86d9f376ba64cb929a8d3139cf2eb307c675969e2dae1509",
         "PPAC/Migration/Internal/StructuralListCodeInduction.lean": "284406bc2b9c5f650da01bad4c70a38d74a2ade83f39274a59aabc74cd16c6fb",
         "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
@@ -173895,6 +173898,7 @@
         "PPAC/Migration/Internal/SyntaxTermImagePushPoint.lean": "ca013f9643a762dc2f80c48dad1e844f1372a3f7eac42b67db257df60db79aaf"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingWeakenedOverwrite.with_base_of_update": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingWeakenedOverwrite.frame": [
           "propext",
           "Quot.sound"
@@ -173979,7 +173983,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Actual original replacement commutes with original first-free0 weak operation on arbitrary INTERNAL source slots, lengths, terms, formulas and target scopes. frame contains existing generated weak-image record, actual old/new original replacement records and actual renamed old/new replacement term; NO pointwise field law, generated updated table, table-code equality or desired weak answer. field_forward handles original selected/other slot branches. Internally generated old fields and original pushed graph law give forward field inclusion; candidate values and old field single-valuedness derive reverse fields; CALL existing StructuralListCodeInduction.unique on full internal arity to prove candidate list equals SAME actual new replacement list. Six image candidate witnesses generated/eliminated; SAME old weak codes/real index graphs and SAME bound old/pushed/output tables reused, only TWO changed free graph witnesses retained in result. produce constructs actual updated weak data with original new replacement list. from_queries ACTUALLY consumes produce and existing WeakenedImages.from_queries. from_double_queries ACTUALLY consumes old/new ForcingRelationImages.data records: first real coverage transfer feeds second coverage and its actual formula queries; source indices unchanged and neither actual target table replaced by an assumed weak answer. TWO nativeZF original FirstOrder.Derives closed endpoints for single record and actual double query transfer. Original q/p term rename queries are still computational inputs; SAME source branch must generate these terms/records and corresponding Pre/member/Extra/fourAND canonical Global. This does NOT prove the final canonical Global match, joint forcing/full internal axioms/six-rule Proof/reduction/finalCon. NO new graph/list/formula recursion, induction backend, checker/kernel, object Choice or external standardness."
+      "scope": "Actual original replacement commutes with original first-free0 weak operation on arbitrary INTERNAL source slots, lengths, terms, formulas and target scopes. frame contains existing generated weak-image record, actual old/new original replacement records and actual renamed old/new replacement term; NO pointwise field law, generated updated table, table-code equality or desired weak answer. field_forward handles original selected/other slot branches. Internally generated old fields and original pushed graph law give forward field inclusion; candidate values and old field single-valuedness derive reverse fields; CALL existing StructuralListCodeInduction.unique on full internal arity to prove candidate list equals SAME actual new replacement list. Six image candidate witnesses generated/eliminated; SAME old weak codes/real index graphs and SAME bound old/pushed/output tables reused, only TWO changed free graph witnesses retained in result. produce constructs actual updated weak data with original new replacement list. from_queries ACTUALLY consumes produce and existing WeakenedImages.from_queries. from_double_queries ACTUALLY consumes old/new ForcingRelationImages.data records: first real coverage transfer feeds second coverage and its actual formula queries; source indices unchanged and neither actual target table replaced by an assumed weak answer. TWO nativeZF original FirstOrder.Derives closed endpoints for single record and actual double query transfer. Original q/p term rename queries are still computational inputs; SAME source branch must generate these terms/records and corresponding Pre/member/Extra/fourAND canonical Global. This does NOT prove the final canonical Global match, joint forcing/full internal axioms/six-rule Proof/reduction/finalCon. NO new graph/list/formula recursion, induction backend, checker/kernel, object Choice or external standardness. The negative density runtime reconstructs the lifted base using the actual selected images and their maps, then identifies the selected table with the actual lifted replacement."
     },
     "forcing_fresh_preorder": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -174386,7 +174390,7 @@
         "PPAC/Migration/ForcingRelationImages.lean": "c694ebff107aa5ab86d9f376ba64cb929a8d3139cf2eb307c675969e2dae1509",
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
         "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
-        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "a394652f01e38a8dd193555b2d967e353836254cd39eb7c4ad49bc56684449a6",
         "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c"
       },
       "exact_declaration_footprints": {
@@ -175441,7 +175445,7 @@
         "PPAC/Migration/ForcingRawNegTail.lean": "4936fdbead116589e155caf8c7fdf51040b7c7c16af36690cab2af1051d6688c",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/Internal/StructuralListFieldCons.lean": "51d8a13233519f8253070ad7deca887fa1baf6f42a1f4b3166b06e5383b76d6f",
@@ -175530,8 +175534,8 @@
         "PPAC/Migration/ForcingRawNegTail.lean": "4936fdbead116589e155caf8c7fdf51040b7c7c16af36690cab2af1051d6688c",
         "PPAC/Migration/ForcingOldParentInstance.lean": "71228ac39d10424f7f6610b8db3df00c791298f65d79ab3d96cc56657e2110e9",
         "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
-        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
-        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "a394652f01e38a8dd193555b2d967e353836254cd39eb7c4ad49bc56684449a6",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "576d5434b7dc557fa714fb65e140531b6c521de75405a5afc3677bbb86224fe1",
         "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
@@ -175947,7 +175951,7 @@
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
-        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "a394652f01e38a8dd193555b2d967e353836254cd39eb7c4ad49bc56684449a6",
         "PPAC/Migration/Internal/StructuralListFieldCons.lean": "51d8a13233519f8253070ad7deca887fa1baf6f42a1f4b3166b06e5383b76d6f",
         "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b"
       },
@@ -177068,21 +177072,23 @@
         "ForcingDensityInstantiation.with_negative_density_tail and with_fresh_witness_records",
         "ForcingDensityGuards.negative_reflexive_contradiction for the actual negative witness universal",
         "Original force_of_dense.neg: the actual positive queries at q and r and negative witness query at r on one name table",
-        "ForcingSourceDensity.with_negative_density_transfer"
+        "ForcingSourceDensity.with_negative_density_transfer",
+        "ForcingDensityInstantiation.with_raised_preorder"
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistOrderOpening.lean": "8d092a82a92c1de5b927806c8c0ea5b8e8d73e786cf99a3c85394ce2912f1f20",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingOldParentInstance.lean": "71228ac39d10424f7f6610b8db3df00c791298f65d79ab3d96cc56657e2110e9",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "fe503be60cfffad62e9998f9d62aac87232698b3dbc3be4222fac10c17c25f84",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "d8cc8ee5567f1077c051d096dc0bad208e33c73d053fc9bb7aba6e6561028df7",
         "PPAC/Migration/ForcingDensityCode.lean": "951dc21c0f7fb9a7122bc99c3534f1e466ddee0fa47b953b3bb8e56594db9a3a",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/Internal/SyntaxTopFormulaSyntax.lean": "4c80379c4314f1e486a7c3e83644f3fb2b2f5851fb1f9b95c31833adca3830aa"
       },
-      "scope": "The actual negative density witness query reduces to a direct query of the original negative formula at r. The weakened actual positive operand at q and this negative formula at r now query one actual name table, with separate condition replacements on the same free table. The original monotonicity and reflexive negative contradiction remain to be assembled.",
+      "scope": "The actual negative density witness query reduces to a direct query of the original negative formula at r. The weakened actual positive operand at q and this negative formula at r now query one actual name table, with separate condition replacements on the same free table. The original monotonicity and reflexive negative contradiction remain to be assembled. The original preorder raising is also used for the parent context. The actual base free column is retained while the empty bound column is rebased.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingDensityInstantiation.with_raised_preorder": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingDensityInstantiation.rawShell": ["propext", "Quot.sound"],
         "PPAC.Migration.ForcingDensityInstantiation.rawShell_rename": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingDensityInstantiation.raw_of_shell": ["propext", "Quot.sound"],
@@ -177508,13 +177514,14 @@
         "ForcingDensityGuards.with_conjunct_density_proof",
         "ForcingSourceDensity.conjunction_step",
         "ForcingSourceDensity.falsum_step",
-        "ForcingSourceDensity.falsum_step_from_runtime"
+        "ForcingSourceDensity.falsum_step_from_runtime",
+        "ForcingDensityGuards.witness_member_from_updated_row"
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
-        "PPAC/Migration/ForcingDensityGuards.lean": "cf52d220e1de1007d1b5c98d31828de1ad576fc9a3a7c269c522bf68e61b2d8e",
+        "PPAC/Migration/ForcingDensityGuards.lean": "dca6c41be1b8ec6900fccb44955a4ab0239e079b6c247f660f83482eeb49d618",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "fe503be60cfffad62e9998f9d62aac87232698b3dbc3be4222fac10c17c25f84",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "d8cc8ee5567f1077c051d096dc0bad208e33c73d053fc9bb7aba6e6561028df7",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
@@ -177543,6 +177550,7 @@
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingDensityGuards.witness_member_from_updated_row": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingDensityGuards.guardPair": [
           "propext",
           "Quot.sound"
@@ -177768,7 +177776,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported. The original conjunction density shells now supply both existential tails. The adapter derives their internal implication from the two actual substituted tails, generates a single weakened mixed table, identifies the two prefixed bound tables by uniqueness, and transports either conjunct using the original common witness. The original outer universal is transported to the actual selected child compiler. The caller receives the child compiler, the same-table child substitution and the internal proof from the same background. ForcingSourceDensity.conjunction_step consumes the child records in both object induction hypotheses. Full source density induction remains open. The source falsum branch now instantiates the complete given density query at the actual current condition. It computes and discharges its exact member and order guards, then consumes the original witness elimination to conclude the actual falsum query under the same background. The falsum runtime consumer only requires the actual raw reflexive child query, which suffices for the existing instance generator; the full target record remains accepted by the existing entry point. The actual inner order guard at the density witness and leaf H4 of the actual monotonicity row have equal output codes. Both paths reach the same bare R query with actual r and q in the left and right slots, respectively. The monotonicity runtime and reflexive contradiction still require composition. The compiled r and q membership guards are identified with H1 and H2 of this actual row by the shared carrier field and existing membership result uniqueness. The actual negative witness is instantiated at r itself. Its membership and order proofs come from the same preorder and its reflexive instance. The rebound negative operand is identified with the existing positive r query by ForcingRawNegTail.canonical_code, yielding the exact falsum code under the witness context by original Root MP. The actual witness body and falsum are curried and abstracted under the weakened outer background. The existing guarded universal producer and original exists-elimination axiom return falsum under that outer background on its original free scope."
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported. The original conjunction density shells now supply both existential tails. The adapter derives their internal implication from the two actual substituted tails, generates a single weakened mixed table, identifies the two prefixed bound tables by uniqueness, and transports either conjunct using the original common witness. The original outer universal is transported to the actual selected child compiler. The caller receives the child compiler, the same-table child substitution and the internal proof from the same background. ForcingSourceDensity.conjunction_step consumes the child records in both object induction hypotheses. Full source density induction remains open. The source falsum branch now instantiates the complete given density query at the actual current condition. It computes and discharges its exact member and order guards, then consumes the original witness elimination to conclude the actual falsum query under the same background. The falsum runtime consumer only requires the actual raw reflexive child query, which suffices for the existing instance generator; the full target record remains accepted by the existing entry point. The actual inner order guard at the density witness and leaf H4 of the actual monotonicity row have equal output codes. Both paths reach the same bare R query with actual r and q in the left and right slots, respectively. The monotonicity runtime and reflexive contradiction still require composition. The compiled r and q membership guards are identified with H1 and H2 of this actual row by the shared carrier field and existing membership result uniqueness. The actual negative witness is instantiated at r itself. Its membership and order proofs come from the same preorder and its reflexive instance. The rebound negative operand is identified with the existing positive r query by ForcingRawNegTail.canonical_code, yielding the exact falsum code under the witness context by original Root MP. The actual witness body and falsum are curried and abstracted under the weakened outer background. The existing guarded universal producer and original exists-elimination axiom return falsum under that outer background on its original free scope. The negative density witness compares both actual membership queries with the original row by preserving the carrier field across the selected-condition update."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -178064,7 +178072,9 @@
         "ForcingSourceDensity.atomic_kernel_certificate",
         "ForcingSourceDensity.with_negative_density_transfer",
         "ForcingSourceDensity.negative_step_from_opened",
-        "ForcingSourceDensity.negative_step_from_parent_opening"
+        "ForcingSourceDensity.negative_step_from_parent_opening",
+        "ForcingSourceDensity.negative_step_from_runtime",
+        "ForcingSourceDensity.negative_kernel_certificate"
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderLeafTarget.lean": "c40cc8c06da3d8b91fe671384c30cd8a57c21499842ad2365ceb96cb963ac80e",
@@ -178072,9 +178082,9 @@
         "PPAC/Migration/ForcingSourceMonoInduction.lean": "7c657a72a22f8b29bcfbe08a759893ae5b50956779930235108d1d037f066535",
         "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "3bb7bca74f27911270106a2d4259e884e1cf44974b89e315bd1d14239361526e",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
-        "PPAC/Migration/ForcingSourceDensity.lean": "5771b70c8d60c20fa4d90a3048321e5a11b759d99f6b0835616a38a94e0988c3",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "fe503be60cfffad62e9998f9d62aac87232698b3dbc3be4222fac10c17c25f84",
-        "PPAC/Migration/ForcingDensityGuards.lean": "cf52d220e1de1007d1b5c98d31828de1ad576fc9a3a7c269c522bf68e61b2d8e",
+        "PPAC/Migration/ForcingSourceDensity.lean": "e19c540a70be7896ca9aab9341178fc016b291e2990fb56bc98d0c8da5bb018b",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "d8cc8ee5567f1077c051d096dc0bad208e33c73d053fc9bb7aba6e6561028df7",
+        "PPAC/Migration/ForcingDensityGuards.lean": "dca6c41be1b8ec6900fccb44955a4ab0239e079b6c247f660f83482eeb49d618",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
@@ -178086,6 +178096,9 @@
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingSourceDensity.negative_step_from_runtime": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingSourceDensity.negativeSentence": ["propext", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingSourceDensity.negative_kernel_certificate": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingSourceDensity.transfer": [
           "propext",
           "Quot.sound",
@@ -178281,7 +178294,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open. The source truth and falsum branches now establish this same transfer predicate. The falsum branch identifies the actual compiled code with the original constant, selects the current condition in the given runtime, and uses the given density compiler and actual forcing output. The complete bounded induction remains open. The original falsum branch now consumes the existing global runtime, extracts the same preorder and exact carrier slot, and replays the closed implication into the native ZF kernel. The member and equality branches consume the same global row and exact atomic and density queries, derive the object induction predicate for every actual compiler output, and replay the closed branch certificate in native ZF. The negation and existential branches and the complete internal consistency statement remain open. At the actual density witness, open_target generates the original preorder at q and r, FreshPreorder produces the actual next-scope record, MemberRows produces both original rows, and layout_from_typed constructs the common Global proof context. The original all-internal force_mono induction consumes this runtime and the actual child compilation. Under the generated Global it transfers the supplied positive proof from q to r through the existing projection and Root transfer. The H4 order leaf of the same generated row is proved equal to the actual density witness order guard. The opened local context derives Extra, inherited preorder, both membership guards and the order guard. Exact query equalities and the four actual conjunction constructors give Local to Global, then the original transfer gives Local to the positive child at r. The actual negative density opening now feeds its guard proofs to this replay. Its supplied outer preorder and positive proofs are raised on the same witness free table, so the local witness background yields both the positive and negative r queries from the original compilations. The transfer consumer applies the actual negative universal at the same r, uses the same row to discharge membership and the reflexive order, and derives falsum under the local witness context. The exact original existential is eliminated and falsum is obtained under H at the original outer condition scope. The outer local premises still need assembly from the canonical runtime, followed by closure of the original outer universal and the induction branch. The negative branch now reads the three literal implication nodes from the actual negative compiler and its fresh parent opening. The local conjunctions discharge in reverse order, and the outer universal output is identified with the original parent constructor. The inherited preorder proof at the selected fresh table and the full density-induction runtime remain to be connected."
+      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open. The source truth and falsum branches now establish this same transfer predicate. The falsum branch identifies the actual compiled code with the original constant, selects the current condition in the given runtime, and uses the given density compiler and actual forcing output. The complete bounded induction remains open. The original falsum branch now consumes the existing global runtime, extracts the same preorder and exact carrier slot, and replays the closed implication into the native ZF kernel. The member and equality branches consume the same global row and exact atomic and density queries, derive the object induction predicate for every actual compiler output, and replay the closed branch certificate in native ZF. The negation and existential branches and the complete internal consistency statement remain open. At the actual density witness, open_target generates the original preorder at q and r, FreshPreorder produces the actual next-scope record, MemberRows produces both original rows, and layout_from_typed constructs the common Global proof context. The original all-internal force_mono induction consumes this runtime and the actual child compilation. Under the generated Global it transfers the supplied positive proof from q to r through the existing projection and Root transfer. The H4 order leaf of the same generated row is proved equal to the actual density witness order guard. The opened local context derives Extra, inherited preorder, both membership guards and the order guard. Exact query equalities and the four actual conjunction constructors give Local to Global, then the original transfer gives Local to the positive child at r. The actual negative density opening now feeds its guard proofs to this replay. Its supplied outer preorder and positive proofs are raised on the same witness free table, so the local witness background yields both the positive and negative r queries from the original compilations. The transfer consumer applies the actual negative universal at the same r, uses the same row to discharge membership and the reflexive order, and derives falsum under the local witness context. The exact original existential is eliminated and falsum is obtained under H at the original outer condition scope. The outer local premises still need assembly from the canonical runtime, followed by closure of the original outer universal and the induction branch. The negative branch now reads the three literal implication nodes from the actual negative compiler and its fresh parent opening. The local conjunctions discharge in reverse order, and the outer universal output is identified with the original parent constructor. The original neg clause now proves the full density transfer predicate from the actual negative compiler step and common runtime. It raises the inherited preorder on the base table, preserves the actual selected q/r queries, and uses the already closed outer universal. The corresponding closed nativeZF kernel certificate is included. The existential clause and the complete density induction remain separate obligations."
     }
   },
   "selected_route_consumer_audit": {

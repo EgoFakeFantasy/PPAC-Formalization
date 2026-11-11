@@ -240,6 +240,93 @@ theorem from_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (updated (fun i => old 2 (v i)) (slot 2 0) (slot 2 1) (old 2 New)) (.conjI hE (.conjI h0 h1))
   exact of_eq (SyntaxWeakenFreeSyntax.weakened_rename w c d D u o (old 2)).symm ho
 
+
+/-- Keep the actual selected table and its index maps. Rebuild the base
+table under those same maps, then identify the selected table with the
+actual update of that lifted base. -/
+theorem with_base_of_update {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a f c d D R S j p Selected : Fin m) (v : Fin 10 → Fin m)
+    (hSelected : Derives Γ (ForcingWeakenedImages.data w a f c d D R Selected v))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f c d S))
+    (hp : Derives Γ (SyntaxTermSyntax.term w c d p))
+    (hUpdate : Derives Γ (replacement w f c d S j p Selected))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (base : Fin 10 → Fin l) (p' : Fin l),
+      ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (ForcingWeakenedImages.data (r w) (r a) (r f) (r c) (r d) (r D) (r R) (r S) base) →
+      Derives Δ (SyntaxTermSyntax.term (r w) (r c) (r D) p') →
+      Derives Δ (replacement (r w) (r f) (r c) (r D) (base 9) (r j) p' (r (v 9))) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hInput := Derives.conjL hSelected
+  have hw := Derives.conjL hInput
+  have hOps := Derives.conjL (.conjR hSelected)
+  have hMaps : Derives Γ (SyntaxIndexMapSyntax.maps w (v 2) (v 3) c d c D) :=
+    .conjI (.conjR (.conjL (.conjR (.conjR hOps)))) (.conjR (.conjR (.conjR (.conjR hOps))))
+  have hLift := ForcingReindexedImages.produce hZ w a f c d c D R S (v 2) (v 3) hw hMaps
+    (.conjI (.conjL (.conjR (.conjR hInput))) hBase)
+  refine NativeProofQuotation.eliminate_objects hZ 6 (fun r x =>
+    ForcingReindexedImages.data (r w) (r a) (r f) (r c) (r d) (r c) (r D) (r R) (r S)
+      (r (v 2)) (r (v 3)) x) hLift out ?_
+  intro l Δ r x hZ1 lift hImages
+  let base : Fin 10 → Fin l := Fin.cases (r (v 0)) (Fin.cases (r (v 1))
+    (Fin.cases (r (v 2)) (Fin.cases (r (v 3)) x)))
+  have hInput1 := of_eq (ForcingWeakenedImages.input_rename w a f c d D R Selected r) (lift hInput)
+  have hOps1 := of_eq (ForcingWeakenedImages.operations_rename w c d D (v 0) (v 1) (v 2) (v 3) r) (lift hOps)
+  have hBase1 : Derives Δ (ForcingWeakenedImages.data (r w) (r a) (r f) (r c) (r d) (r D) (r R) (r S) base) :=
+    .conjI (.conjI (.conjL hInput1) (.conjI (.conjL (.conjR hInput1))
+      (.conjI (.conjL (.conjR (.conjR hInput1)))
+        (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ r) (lift hBase)))))
+      (.conjI hOps1 hImages)
+  have hw1 := Derives.conjL hInput1
+  have hTerm := SyntaxRenameTermExistence.for_term hZ1 (r w) (r (v 2)) (r (v 3))
+    (r c) (r d) (r c) (r D) (r p) hw1
+    (of_eq (SyntaxIndexMapSyntax.maps_rename _ _ _ _ _ _ _ r) (lift hMaps))
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ r) (lift hp))
+  refine NativeProofQuotation.eliminate_objects hZ1 1 (fun s t =>
+    (Formula.mem (t 0) (s (r w))).conj (SyntaxRenameTermSyntax.renamed (s (r w)) (s (r (v 2)))
+      (s (r (v 3))) (s (r c)) (s (r d)) (s (r c)) (s (r D)) (s (r p)) (t 0))) hTerm (out.rename r) ?_
+  intro l2 Δ2 s t hZ2 move hTerm2
+  let e := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename e) :=
+    of_eq (rename_comp F r s) (move (lift h))
+  have hw2 := of_eq (omega_rename _ s) (move hw1)
+  have hType := SyntaxRenameTermTyping.target_term (e w) (e (v 2)) (e (v 3)) (e c) (e d)
+    (e c) (e D) (e p) (t 0) (.conjR hTerm2)
+  have hBase2 := of_eq (ForcingWeakenedImages.data_rename _ _ _ _ _ _ _ _ base s) (move hBase1)
+  have hFree := Derives.conjR (SyntaxMixedImageCodePairs.term_lists (e w) (s (base 6)) (s (base 7))
+    (e a) (e f) (e c) (e D) (s (base 8)) (s (base 9)) (.conjR (.conjR (.conjR (.conjR hBase2)))))
+  have hNew := ForcingReflexiveImages.exists_replacement hZ2 (e w) (e f) (e c) (e D) (s (base 9))
+    (e j) (t 0) hw2 hFree hType
+  apply of_eq (rename_comp out r s).symm
+  refine NativeProofQuotation.eliminate_objects hZ2 1 (fun u y =>
+    replacement (u (e w)) (u (e f)) (u (e c)) (u (e D)) (u (s (base 9))) (u (e j)) (u (t 0)) (y 0))
+    hNew (out.rename e) ?_
+  intro l3 Δ3 u y hZ3 move2 hNew3
+  let ρ := u ∘ e
+  have lift3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename ρ) :=
+    of_eq (rename_comp F e u) (move2 (carry h))
+  let base3 := u ∘ s ∘ base
+  have hBase3 := of_eq (ForcingWeakenedImages.data_rename _ _ _ _ _ _ _ _ (s ∘ base) u) (move2 hBase2)
+  have hOld3 := of_eq (replacement_rename _ _ _ _ _ _ _ _ ρ) (lift3 hUpdate)
+  have hRen3 := of_eq (SyntaxRenameTermSyntax.renamed_rename _ _ _ _ _ _ _ _ _ u) (move2 (.conjR hTerm2))
+  have hSelected3 := of_eq (ForcingWeakenedImages.data_rename _ _ _ _ _ _ _ _ v ρ) (lift3 hSelected)
+  have hFrame : Derives Δ3 (frame (ρ w) (ρ a) (ρ f) (ρ c) (ρ d) (ρ D) (ρ R) (ρ S)
+      (ρ j) (ρ p) (u (t 0)) (ρ Selected) (y 0) base3) :=
+    .conjI hBase3 (.conjI hOld3 (.conjI hNew3 hRen3))
+  have candidate : Candidate Δ3 (ρ w) (ρ a) (ρ f) (ρ c) (ρ d) (ρ D) (ρ R) (ρ S)
+      (ρ j) (ρ p) (u (t 0)) (ρ Selected) (y 0) base3 (images (ρ ∘ v)) :=
+    ⟨hZ3, hFrame, .conjR (.conjR hSelected3)⟩
+  have he : Derives Δ3 (.equal (ρ (v 9)) (y 0)) := candidate.equal
+  let F := replacement (ρ w).castSucc (ρ f).castSucc (ρ c).castSucc (ρ D).castSucc
+    (base3 9).castSucc (ρ j).castSucc (u (t 0)).castSucc (Fin.last l3)
+  have hAt (n : Fin l3) : F.instantiate n =
+      replacement (ρ w) (ρ f) (ρ c) (ρ D) (base3 9) (ρ j) (u (t 0)) n := by
+    simp only [F, Formula.instantiate, replacement_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
+  have hActual := of_eq (hAt (ρ (v 9)))
+    (Derives.eqSubst F (eq_symm he) (of_eq (hAt (y 0)).symm hNew3))
+  exact of_eq (rename_comp out e u).symm (use ρ base3 (u (t 0)) hZ3 lift3 hBase3
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ u) (move2 hType)) hActual)
+
 def doubleFrame {m} (k : Nat) (w a b c d D R S L Q Ln Qn i j M Old Mn New : Fin m) (v : Fin 10 → Fin m) : Formula m :=
   (ForcingWeakenedImages.data w a b c d D R S v).conj
     ((ForcingRelationImages.data k w b c d S L Q i j M Old).conj

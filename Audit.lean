@@ -39661,6 +39661,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingReflexiveImages.fieldResult_rename
 #print axioms PPAC.Migration.ForcingReflexiveImages.field_iff
 #print axioms PPAC.Migration.ForcingReflexiveImages.target_type
+#print axioms PPAC.Migration.ForcingReflexiveImages.replacement_after_replacement
 #print axioms PPAC.Migration.ForcingReflexiveImages.diagonalData
 #print axioms PPAC.Migration.ForcingReflexiveImages.diagonalData_rename
 #print axioms PPAC.Migration.ForcingReflexiveImages.diagonalBody
@@ -40401,6 +40402,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.result
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.result_rename
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.produce
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_base_of_update
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.from_queries
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame_rename
@@ -40847,6 +40849,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_witness_proofs
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_preorder
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_outer_instance
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point
@@ -40894,6 +40897,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.negative_reflexive_contradiction
 #print axioms PPAC.Migration.ForcingDensityGuards.negative_witness_discharge
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_row
+#print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_updated_row
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness
@@ -40922,6 +40926,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.with_negative_density_transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_opened
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_parent_opening
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_runtime
+#print axioms PPAC.Migration.ForcingSourceDensity.negativeSentence
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate

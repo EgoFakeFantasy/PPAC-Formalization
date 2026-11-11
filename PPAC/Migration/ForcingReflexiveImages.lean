@@ -246,6 +246,89 @@ theorem target_type {m} {Γ : Context m} (w a c d L j h D : Fin m)
   have hout := SyntaxMixedImageCodeFields.term_list (old 2 w) (slot 2 1) (old 2 a) (old 2 c) (old 2 d) (old 2 D) (.conjR (.conjR hB))
   exact of_eq (termList_rename w a c d D (old 2)).symm hout
 
+
+/-- Compare the field of a twice updated list with the field of a list
+updated directly at the same index. The first update disappears at every
+internal index, including indices that are nonstandard in a model. -/
+private theorem compare_replaced_fields {m} {Γ : Context m}
+    (w a c d L j p M q N D i x : Fin m)
+    (hFirst : Derives Γ (replacement w a c d L j p M))
+    (hLast : Derives Γ (replacement w a c d M j q N))
+    (hDirect : Derives Γ (replacement w a c d L j q D))
+    (hi : Derives Γ (.mem i a)) :
+    Derives Γ ((StructuralListFieldSyntax.field w N i x).iff
+      (StructuralListFieldSyntax.field w D i x)) := by
+  let E := Formula.equal i j
+  let F := StructuralListFieldSyntax.field w L i x
+  let G := StructuralListFieldSyntax.field w M i x
+  have hOld := field_iff w a c d L j p M i x hFirst hi
+  have hSame : Derives (Context.add E.neg Γ) (G.iff F) := by
+    have hNe : Derives (Context.add E.neg Γ) E.neg := .hyp (Or.inl rfl)
+    have h := add hOld E.neg
+    apply Derives.conjI
+    · apply Derives.impI
+      have hG : Derives (Context.add G (Context.add E.neg Γ)) G := .hyp (Or.inl rfl)
+      apply Derives.disjE (Derives.impE (add (.conjL h) G) hG)
+      · have hEq : Derives (Context.add (E.conj (.equal x p)) (Context.add G (Context.add E.neg Γ)))
+            (E.conj (.equal x p)) := .hyp (Or.inl rfl)
+        exact .botE (.impE (add (add hNe G) _) (.conjL hEq))
+      · exact .conjR (.hyp (Or.inl rfl))
+    · apply Derives.impI
+      exact .impE (add (.conjR h) F) (.disjR (.conjI (add hNe F) (.hyp (Or.inl rfl))))
+  have hLastFields := field_iff w a c d M j q N i x hLast hi
+  have hDirectFields := field_iff w a c d L j q D i x hDirect hi
+  have hSameFields := SyntaxTypeLocalTransfer.disj_congr
+    (SyntaxTypeLocalTransfer.iff_refl (E.conj (.equal x q)))
+    (SyntaxMixedFormulaFieldsTransfer.guarded_congr hSame)
+  exact SyntaxTypeLocalTransfer.iff_trans hLastFields
+    (SyntaxTypeLocalTransfer.iff_trans hSameFields (.conjI (.conjR hDirectFields) (.conjL hDirectFields)))
+
+/-- Two updates at the same index have the actual direct update record
+with the final value. This reuses the original update and list extensionality. -/
+theorem replacement_after_replacement {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a c d L j p M q N : Fin m)
+    (hw : Derives Γ (omega w)) (hL : Derives Γ (termList w a c d L))
+    (hq : Derives Γ (SyntaxTermSyntax.term w c d q))
+    (hFirst : Derives Γ (replacement w a c d L j p M))
+    (hLast : Derives Γ (replacement w a c d M j q N)) :
+    Derives Γ (replacement w a c d L j q N) := by
+  let E := replacement w.castSucc a.castSucc c.castSucc d.castSucc L.castSucc j.castSucc
+    q.castSucc (Fin.last m)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  apply Derives.exE (p := E) (exists_replacement hZ w a c d L j q hw hL hq)
+  let r := Fin.castSucc (n := m)
+  let D := Fin.last m
+  have hDirect : Derives Δ E := .hyp (Or.inl rfl)
+  have hLast1 := of_eq (replacement_rename w a c d M j q N r) (under hLast E)
+  have hFirst1 := of_eq (replacement_rename w a c d L j p M r) (under hFirst E)
+  have hw1 := of_eq (omega_rename w r) (under hw E)
+  have hZ1 := ZFContext.under hZ E
+  have hAgree : Derives Δ (StructuralListCodeSyntax.agree (r w) (r a) (r N) D) := by
+    apply Derives.allI
+    apply Derives.allI
+    apply Derives.impI
+    let H := Formula.mem (slot 2 0) (old 2 (r a))
+    have hi : Derives (Context.add H (raisedContext 2 Δ)) H := .hyp (Or.inl rfl)
+    exact compare_replaced_fields
+      (old 2 (r w)) (old 2 (r a)) (old 2 (r c)) (old 2 (r d)) (old 2 (r L))
+      (old 2 (r j)) (old 2 (r p)) (old 2 (r M)) (old 2 (r q)) (old 2 (r N)) (old 2 D)
+      (slot 2 0) (slot 2 1)
+      (of_eq (replacement_rename _ _ _ _ _ _ _ _ (old 2)) (HornBinderRules.under_body 2 hFirst1 H))
+      (of_eq (replacement_rename _ _ _ _ _ _ _ _ (old 2)) (HornBinderRules.under_body 2 hLast1 H))
+      (of_eq (replacement_rename _ _ _ _ _ _ _ _ (old 2)) (HornBinderRules.under_body 2 hDirect H))
+      hi
+  have hN := target_type (r w) (r a) (r c) (r d) (r M) (r j) (r q) (r N) hLast1
+  have hD := target_type (r w) (r a) (r c) (r d) (r L) (r j) (r q) D hDirect
+  have he := StructuralListCodeInduction.unique hZ1 (r w) (r a) (r N) D hw1
+    (.conjR (.conjL (.conjR (.conjR hN)))) (.conjR (.conjL (.conjR (.conjR hD)))) hAgree
+  let K := replacement (r w).castSucc (r a).castSucc (r c).castSucc (r d).castSucc
+    (r L).castSucc (r j).castSucc (r q).castSucc (Fin.last (m+1))
+  have hAtD : Derives Δ (K.instantiate D) :=
+    of_eq (by simp only [K, Formula.instantiate, replacement_rename, Fin.lastCases_last,
+      Fin.lastCases_castSucc, id_eq]; rfl) hDirect
+  exact of_eq (by simp only [K, Formula.instantiate, Formula.raise, replacement_rename, Fin.lastCases_last,
+    Fin.lastCases_castSucc, id_eq]; rfl) (Derives.eqSubst K (eq_symm he) hAtD)
+
 /-- Actual target head, actual updated lifted free table, and actual output
 of the SAME original relation guard under K/updatedH. -/
 def diagonalData {m} (w z f T A C K H j Q head D F : Fin m) : Formula m :=
