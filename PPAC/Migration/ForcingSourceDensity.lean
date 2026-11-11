@@ -1,7 +1,7 @@
 import PPAC.Migration.ForcingDensityGuards
 import PPAC.Migration.ForcingSourceDensityConstant
 import PPAC.Migration.ForcingAtomicDenseTemplate
-import PPAC.Migration.ForcingSourceMono
+import PPAC.Migration.ForcingSourceMonoInduction
 
 /-! The conjunction branch of the original force_of_dense. The two child
 hypotheses quantify over actual density compiler and mixed substitution
@@ -654,5 +654,370 @@ theorem atomic_kernel_certificate {k m} (equality : Bool) (Reln : Formula (k+2))
     (.conjL h) (.conjL h1) (.conjL h2) (.conjL h3) (.conjR h3)
 
 end Atoms
+
+
+private structure WitnessRuntimeArgs (m : Nat) where
+  w : Fin m
+  z : Fin m
+  a : Fin m
+  f : Fin m
+  j : Fin m
+  b : Fin m
+  B : Fin m
+  R : Fin m
+  S : Fin m
+  T : Fin m
+  Old : Fin m
+  New : Fin m
+  A1 : Fin m
+  A2 : Fin m
+  A3 : Fin m
+  K : Fin m
+  C : Fin m
+  Extra : Fin m
+  q : Fin m
+  r : Fin m
+  raw : Fin 16 → Fin m
+
+private def WitnessRuntimeArgs.map {m l} (p : WitnessRuntimeArgs m) (ρ : Fin m → Fin l) : WitnessRuntimeArgs l :=
+  ⟨ρ p.w, ρ p.z, ρ p.a, ρ p.f, ρ p.j, ρ p.b, ρ p.B, ρ p.R, ρ p.S, ρ p.T, ρ p.Old, ρ p.New,
+    ρ p.A1, ρ p.A2, ρ p.A3, ρ p.K, ρ p.C, ρ p.Extra, ρ p.q, ρ p.r, ρ ∘ p.raw⟩
+
+private def WitnessRuntimeArgs.terms {m} (p : WitnessRuntimeArgs m) : Fin 3 → Fin m :=
+  Fin.cases p.r (SyntaxAtomSyntax.two p.r p.q)
+
+private theorem WitnessRuntimeArgs.terms_map {m l} (p : WitnessRuntimeArgs m) (ρ : Fin m → Fin l) :
+    ρ ∘ p.terms = (p.map ρ).terms := by
+  funext i
+  exact Fin.cases rfl (fun j => Fin.cases rfl (fun k => Fin.cases rfl (fun e => e.elim0) k) j) i
+
+private structure WitnessRuntimeInput {k m} (Γ : Context m) (Reln : Formula (k+2))
+    (p : WitnessRuntimeArgs m) : Prop where
+  omega : Derives Γ (omega p.w)
+  zero : Derives Γ (SyntaxNumeralSyntax.numeral 0 p.z)
+  one : Derives Γ (SyntaxNumeralSyntax.numeral 1 p.A1)
+  two : Derives Γ (SyntaxNumeralSyntax.numeral 2 p.A2)
+  three : Derives Γ (SyntaxNumeralSyntax.numeral 3 p.A3)
+  free : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) p.f)
+  carrier : Derives Γ (SyntaxNumeralSyntax.numeral k p.K)
+  condition : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) p.j)
+  boundSuccessor : Derives Γ (successor p.C p.z)
+  freshSuccessor : Derives Γ (successor p.B p.b)
+  emptyBound : Derives Γ (SyntaxMixedImageCodeSyntax.termList p.w p.z p.z p.b p.R)
+  freeBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList p.w p.f p.z p.b p.S)
+  names : Derives Γ (SyntaxMixedImageCodeSyntax.termList p.w p.a p.z p.b p.T)
+  older : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.b p.S p.j p.q p.Old)
+  newer : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.b p.S p.j p.r p.New)
+  extra : Derives Γ (formulaCode p.w p.Extra p.z p.b)
+  terms : ∀ i, Derives Γ (SyntaxTermSyntax.term p.w p.z p.b (p.terms i))
+  raw : Derives Γ (ForcingPreorderCode.rawData Reln p.w p.z p.A1 p.A2 p.A3 p.f p.raw)
+
+private theorem WitnessRuntimeInput.map {k m l} {Γ : Context m} {Δ : Context l}
+    {Reln : Formula (k+2)} {p : WitnessRuntimeArgs m} (h : WitnessRuntimeInput Γ Reln p)
+    (ρ : Fin m → Fin l) (lift : ∀ {F}, Derives Γ F → Derives Δ (F.rename ρ)) :
+    WitnessRuntimeInput Δ Reln (p.map ρ) := by
+  constructor
+  · exact of_eq (omega_rename _ _) (lift h.omega)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.zero)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.one)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.two)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.three)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.free)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.carrier)
+  · exact of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift h.condition)
+  · exact of_eq (successor_rename _ _ _) (lift h.boundSuccessor)
+  · exact of_eq (successor_rename _ _ _) (lift h.freshSuccessor)
+  · exact of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ _) (lift h.emptyBound)
+  · exact of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ _) (lift h.freeBase)
+  · exact of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ _) (lift h.names)
+  · exact of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ _) (lift h.older)
+  · exact of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ _) (lift h.newer)
+  · exact of_eq (formulaCode_rename _ _ _ _ _) (lift h.extra)
+  · intro i
+    have e := congrFun (WitnessRuntimeArgs.terms_map p ρ) i
+    exact of_eq (SyntaxTermSyntax.term_rename _ _ _ _ ρ |>.trans (congrArg (SyntaxTermSyntax.term (ρ p.w) (ρ p.z) (ρ p.b)) e))
+      (lift (h.terms i))
+  · exact of_eq (ForcingPreorderCode.rawData_rename Reln _ _ _ _ _ _ _ _) (lift h.raw)
+
+private def witnessFreshTerms {m} (u : Fin 6 → Fin m) : Fin 3 → Fin m :=
+  Fin.cases (u 0) (SyntaxAtomSyntax.two (u 1) (u 2))
+
+private def witnessRowTerms {m} (p : WitnessRuntimeArgs m) (u : Fin 6 → Fin m) : Fin 2 → Fin 3 → Fin m :=
+  Fin.cases p.terms (fun _ => witnessFreshTerms u)
+
+private def witnessScopes {m} (p : WitnessRuntimeArgs m) : Fin 2 → Fin m := fun _ => p.C
+
+private def witnessRefl {m} (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) : Fin 2 → Fin m :=
+  SyntaxAtomSyntax.two (t 1) (u 4)
+private def witnessPre {m} (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) : Fin 2 → Fin m :=
+  SyntaxAtomSyntax.two (t 0) (u 3)
+private def witnessTail {m} (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) : Fin 2 → Fin m :=
+  SyntaxAtomSyntax.two (t 2) (u 5)
+
+private theorem witnessRowTerms_map {m l} (p : WitnessRuntimeArgs m) (u : Fin 6 → Fin m) (ρ : Fin m → Fin l) :
+    (fun s j => ρ (witnessRowTerms p u s j)) = witnessRowTerms (p.map ρ) (ρ ∘ u) := by
+  funext s j
+  refine Fin.cases ?_ (fun _ => ?_) s
+  · exact congrFun (WitnessRuntimeArgs.terms_map p ρ) j
+  · exact Fin.cases rfl (fun i => Fin.cases rfl (fun k => Fin.cases rfl (fun e => e.elim0) k) i) j
+
+private def WitnessRuntimeArgs.runtime {k m} (p : WitnessRuntimeArgs m) (Reln : Formula (k+2))
+    (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) (images : Fin 10 → Fin m) (rows : Fin 48 → Fin m)
+    (layout : Fin 6 → Fin m) : Formula m :=
+  ForcingRawModalBody.globalModalInput test Reln p.w p.z p.a p.f p.j p.b p.B p.R p.S p.T p.Old p.New
+    p.A1 p.A2 p.A3 p.K p.Extra p.raw images (witnessScopes p) (witnessRefl t u) (witnessPre t u)
+    (witnessTail t u) (witnessRowTerms p u) rows layout
+
+private def WitnessRuntimeArgs.assembled {k m} (p : WitnessRuntimeArgs m) (Reln : Formula (k+2))
+    (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) (images : Fin 10 → Fin m) (rows : Fin 48 → Fin m)
+    (layout : Fin 6 → Fin m) : Formula m :=
+  (p.runtime Reln t u images rows layout).conj
+    (substituted p.w p.R p.S p.z p.f p.z p.b (p.raw 0) (t 0))
+
+private theorem at_witness_rows {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    {Reln : Formula (k+2)} {p : WitnessRuntimeArgs m} (h : WitnessRuntimeInput Γ Reln p)
+    (t : Fin 3 → Fin m) (u : Fin 6 → Fin m) (images : Fin 10 → Fin m) (rows : Fin 48 → Fin m)
+    (hOld : Derives Γ (ForcingPreorderInstances.targetData test p.w p.z p.f p.b p.C p.R p.S
+      (p.raw 0) (p.raw 1) (p.raw 2) p.terms (t 0) (t 1) (t 2)))
+    (hFresh : Derives Γ (ForcingFreshPreorder.data test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.C p.B p.R p.S
+      p.r p.q (t 0) p.raw images u))
+    (hRows : Derives Γ (ForcingMemberRows.data test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.B p.R p.S p.K
+      p.raw images (witnessScopes p) (witnessRefl t u) (witnessPre t u) (witnessTail t u) (witnessRowTerms p u) rows))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l) (layout : Fin 6 → Fin l), ZFContext.Evidence Δ →
+      (∀ {F}, Derives Γ F → Derives Δ (F.rename ρ)) →
+      Derives Δ ((p.map ρ).assembled Reln (ρ ∘ t) (ρ ∘ u) (ρ ∘ images) (ρ ∘ rows) layout) →
+      Derives Δ (out.rename ρ)) : Derives Γ out := by
+  let row : Fin 24 → Fin m := fun i => rows (i.castAdd 24)
+  let H := ForcingMemberRows.leafFields row
+  let V := ForcingMemberRows.prefixFields row
+  have hOldRow := Derives.conjL (.conjR hRows)
+  have hQuery := Derives.conjR (.conjR (.conjR (.conjR hOldRow)))
+  have hType (i : Fin 5) : Derives Γ (formulaCode p.w (H i.castSucc) p.z p.b) :=
+    SyntaxMixedFormulaJudgment.target_type p.w (V 2) p.S p.A3 p.f p.z p.b _ _
+      (ForcingPreorderLeaves.leaf_at p.w (V 2) p.S p.A3 p.f p.z p.b p.raw H
+        (ForcingMemberRows.tailFields row) i.castSucc hQuery)
+  have hLayout := ForcingProofContext.layout_from_typed hZ p.w p.z p.b p.Extra (t 0) H h.omega h.extra
+    (.conjL hOld) hType
+  refine eliminate_objects hZ 6 (fun ρ layout => ForcingProofContext.layoutData (ρ p.w) (ρ p.z) (ρ p.b)
+    (ρ p.Extra) (ρ (t 0)) (ρ ∘ H) layout) hLayout out ?_
+  intro l Δ ρ layout hZ1 lift hLayout1
+  let p1 := p.map ρ
+  have h1 := h.map ρ lift
+  have hRows1 : Derives Δ (ForcingMemberRows.data test Reln p1.w p1.z p1.A1 p1.A2 p1.A3 p1.f p1.b p1.B
+      p1.R p1.S p1.K p1.raw (ρ ∘ images) (witnessScopes p1) (witnessRefl (ρ ∘ t) (ρ ∘ u))
+      (witnessPre (ρ ∘ t) (ρ ∘ u)) (witnessTail (ρ ∘ t) (ρ ∘ u)) (witnessRowTerms p1 (ρ ∘ u)) (ρ ∘ rows)) :=
+    of_eq (by simp only [ForcingMemberRows.data_rename, witnessRowTerms_map, witnessScopes, witnessRefl,
+    witnessPre, witnessTail, SyntaxAtomSyntax.two_map, p1, WitnessRuntimeArgs.map, Function.comp_apply]; rfl)
+    (lift hRows)
+  have hFresh1 := of_eq (ForcingFreshPreorder.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ρ) (lift hFresh)
+  have eH : ρ ∘ H = ForcingMemberRows.leafFields (fun i : Fin 24 => ρ (rows (i.castAdd 24))) := by
+    funext ⟨i, hi⟩
+    have e : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 := by omega
+    rcases e with rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+  rw [eH] at hLayout1
+  have hRuntime : Derives Δ (p1.runtime Reln (ρ ∘ t) (ρ ∘ u) (ρ ∘ images) (ρ ∘ rows) layout) :=
+    .conjI (.conjI (.conjI hRows1 h1.three) (.conjI hFresh1 (.conjI h1.extra hLayout1)))
+      (.conjI h1.names (.conjI h1.condition (.conjI h1.older h1.newer)))
+  exact use ρ layout hZ1 lift (.conjI hRuntime
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (lift (.conjL (.conjR hOld)))))
+
+
+/-- Generate the actual preorder runs and proof context required by the
+original monotonicity certificate at the density witness. Replay that
+certificate on the actual child compilation at q and r. The order leaf
+of this same runtime is identified with the original density guard. -/
+theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b B R S T Old New A1 A2 A3 K C Extra q r n Child AtQ AtR OrderA OrderHead OrderCode OrderOut : Fin m)
+    (raw : Fin 16 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hA3 : Derives Γ (SyntaxNumeralSyntax.numeral 3 A3))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hK : Derives Γ (SyntaxNumeralSyntax.numeral k K))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hC : Derives Γ (successor C z)) (hB : Derives Γ (successor B b))
+    (hR : Derives Γ (SyntaxMixedImageCodeSyntax.termList w z z b R))
+    (hS : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b S))
+    (hT : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z b T))
+    (hOld : Derives Γ (ForcingReflexiveImages.replacement w f z b S j q Old))
+    (hNew : Derives Γ (ForcingReflexiveImages.replacement w f z b S j r New))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hq : Derives Γ (SyntaxTermSyntax.term w z b q))
+    (hr : Derives Γ (SyntaxTermSyntax.term w z b r))
+    (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
+    (hSource : Derives Γ (formulaCode w n a z))
+    (hChild : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n Child))
+    (hAtQ : Derives Γ (substituted w T Old a f z b Child AtQ))
+    (hAtR : Derives Γ (substituted w T New a f z b Child AtR))
+    (hPositive : Derives Γ (implication test w z b Extra AtQ))
+    (hOrder : Derives Γ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln)
+      w z f b q New OrderA OrderHead OrderCode OrderOut))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l)
+      (Refl Pre U0 : Fin 2 → Fin l) (P : Fin 2 → Fin 3 → Fin l)
+      (images : Fin 10 → Fin l) (rows : Fin 48 → Fin l) (layout : Fin 6 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F}, Derives Γ F → Derives Δ (F.rename ρ)) →
+      P 0 1 = ρ r → P 0 2 = ρ q →
+      Derives Δ (ForcingRawModalBody.globalModalInput test Reln (ρ w) (ρ z) (ρ a) (ρ f) (ρ j)
+        (ρ b) (ρ B) (ρ R) (ρ S) (ρ T) (ρ Old) (ρ New) (ρ A1) (ρ A2) (ρ A3)
+        (ρ K) (ρ Extra) (ρ ∘ raw) images (fun _ => ρ C) Refl Pre U0 P rows layout) →
+      Derives Δ (substituted (ρ w) (ρ R) (ρ S) (ρ z) (ρ f) (ρ z) (ρ b) (ρ (raw 0)) (Pre 0)) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (layout 3) (ρ AtR)) →
+      Derives Δ (.equal (ForcingMemberRows.leafFields (fun i => rows (i.castAdd 24)) 4) (ρ OrderOut)) →
+      Derives Δ (out.rename ρ)) : Derives Γ out := by
+  let p : WitnessRuntimeArgs m := ⟨w,z,a,f,j,b,B,R,S,T,Old,New,A1,A2,A3,K,C,Extra,q,r,raw⟩
+  have hTerms (i : Fin 3) : Derives Γ (SyntaxTermSyntax.term w z b (p.terms i)) :=
+    Fin.cases hr (fun j => Fin.cases hr (fun k => Fin.cases hq (fun e => e.elim0) k) j) i
+  have h : WitnessRuntimeInput Γ Reln p := ⟨hw,hz,hA1,hA2,hA3,hf,hK,hj,hC,hB,hR,hS,hT,hOld,hNew,hExtra,hTerms,hRaw⟩
+  have hTarget := ForcingPreorderInstances.open_target hZ test Reln w z A1 A2 A3 f b C R S p.terms raw
+    hw hz hC hTerms hR hS hRaw
+  refine eliminate_objects hZ 3 (fun ρ t => let p1 := p.map ρ
+    ForcingPreorderInstances.targetData test p1.w p1.z p1.f p1.b p1.C p1.R p1.S
+      (p1.raw 0) (p1.raw 1) (p1.raw 2) p1.terms (t 0) (t 1) (t 2)) ?_ out ?_
+  · dsimp only []
+    rw [← WitnessRuntimeArgs.terms_map p (old 3)]
+    exact hTarget
+  intro l Δ ρ t hZ1 lift hTarget1
+  let p1 := p.map ρ
+  have h1 := h.map ρ lift
+  have hImages := ForcingWeakenedImages.produce hZ1 p1.w p1.z p1.f p1.z p1.b p1.B p1.R p1.S
+    (.conjI h1.omega (.conjI h1.freshSuccessor (.conjI h1.emptyBound h1.freeBase)))
+  refine eliminate_objects hZ1 10 (fun σ images => let p2 := p1.map σ
+    ForcingWeakenedImages.data p2.w p2.z p2.f p2.z p2.b p2.B p2.R p2.S images)
+    hImages (out.rename ρ) ?_
+  intro l2 Ξ σ images hZ2 move hImages2
+  let p2 := p1.map σ
+  have h2 := h1.map σ move
+  have hTarget2 : Derives Ξ (ForcingPreorderInstances.targetData test p2.w p2.z p2.f p2.b p2.C p2.R p2.S
+      (p2.raw 0) (p2.raw 1) (p2.raw 2) p2.terms (σ (t 0)) (σ (t 1)) (σ (t 2))) :=
+    of_eq (by
+      dsimp only []
+      rw [ForcingPreorderInstances.targetData_rename]
+      change _ = ForcingPreorderInstances.targetData test _ _ _ _ _ _ _ _ _ _ ((p1.map _).terms) _ _ _
+      rw [← WitnessRuntimeArgs.terms_map]
+      rfl) (move hTarget1)
+  have hFresh := ForcingFreshPreorder.produce hZ2 test Reln p2.w p2.z p2.A1 p2.A2 p2.A3 p2.f p2.b p2.C p2.B
+    p2.R p2.S p2.r p2.q (σ (t 0)) p2.raw images
+    (.conjI h2.zero (.conjI h2.boundSuccessor (.conjI hImages2 (.conjI h2.raw
+      (.conjI (h2.terms 1) (.conjI (h2.terms 2) (.conjL (.conjR hTarget2))))))))
+  refine eliminate_objects hZ2 6 (fun τ u => let p3 := p2.map τ
+    ForcingFreshPreorder.data test Reln p3.w p3.z p3.A1 p3.A2 p3.A3 p3.f p3.b p3.C p3.B p3.R p3.S
+      p3.r p3.q (τ (σ (t 0))) p3.raw (τ ∘ images) u) hFresh ((out.rename ρ).rename σ) ?_
+  intro l3 Ω τ u hZ3 move3 hFresh3
+  let p3 := p2.map τ
+  let t3 := τ ∘ σ ∘ t
+  let images3 := τ ∘ images
+  let P := witnessRowTerms p3 u
+  let C3 := witnessScopes p3
+  let Refl := witnessRefl t3 u
+  let Pre := witnessPre t3 u
+  let U0 := witnessTail t3 u
+  have h3 := h2.map τ move3
+  have hImages3 := of_eq (ForcingWeakenedImages.data_rename _ _ _ _ _ _ _ _ _ τ) (move3 hImages2)
+  have hTarget3 : Derives Ω (ForcingPreorderInstances.targetData test p3.w p3.z p3.f p3.b p3.C p3.R p3.S
+      (p3.raw 0) (p3.raw 1) (p3.raw 2) p3.terms (t3 0) (t3 1) (t3 2)) :=
+    of_eq (by
+      rw [ForcingPreorderInstances.targetData_rename]
+      change _ = ForcingPreorderInstances.targetData test _ _ _ _ _ _ _ _ _ _ ((p2.map _).terms) _ _ _
+      rw [← WitnessRuntimeArgs.terms_map]
+      rfl) (move3 hTarget2)
+  have hTail := Derives.conjR (.conjR (.conjR hFresh3))
+  have hShiftQ := Derives.conjL hTail
+  have hShiftP := Derives.conjL (.conjR hTail)
+  have hNewTarget := Derives.conjL (.conjR (.conjR hTail))
+  have hRow0 := ForcingPreorderLeafTarget.at_target hZ3 test Reln p3.w p3.z p3.A1 p3.A2 p3.A3 p3.f p3.b
+    (C3 0) p3.R p3.S (Refl 0) (Pre 0) (U0 0) p3.raw (P 0)
+    h3.omega h3.zero h3.one h3.two h3.three h3.raw hTarget3
+  have hRow1 := ForcingPreorderLeafTarget.at_target hZ3 test Reln p3.w p3.z p3.A1 p3.A2 p3.A3 p3.f p3.B
+    (C3 1) (images3 8) (images3 9) (Refl 1) (Pre 1) (U0 1) p3.raw (P 1)
+    h3.omega h3.zero h3.one h3.two h3.three h3.raw hNewTarget
+  have hRowsInput : Derives Ω (ForcingMemberRows.input test Reln p3.w p3.z p3.A1 p3.A2 p3.A3 p3.f p3.b
+      p3.B p3.R p3.S p3.K p3.raw images3 C3 Refl Pre U0 P) :=
+    .conjI h3.zero (.conjI h3.one (.conjI h3.two (.conjI h3.carrier (.conjI h3.free
+      (.conjI hImages3 (.conjI hRow0 (.conjI hRow1 (.conjI hShiftQ hShiftP))))))))
+  have hRows := ForcingMemberRows.produce hZ3 test Reln p3.w p3.z p3.A1 p3.A2 p3.A3 p3.f p3.b
+    p3.B p3.R p3.S p3.K p3.raw images3 C3 Refl Pre U0 P hRowsInput
+  let e := τ ∘ σ ∘ ρ
+  have carry {F : Formula m} (hp : Derives Γ F) : Derives Ω (F.rename e) :=
+    of_eq (by simp only [SourceAlgebra.rename_comp]; rfl) (move3 (move (lift hp)))
+  apply of_eq (by simp only [SourceAlgebra.rename_comp]; rfl)
+  refine eliminate_objects hZ3 48 (fun i rows => let p4 := p3.map i
+    ForcingMemberRows.data test Reln p4.w p4.z p4.A1 p4.A2 p4.A3 p4.f p4.b p4.B p4.R p4.S p4.K
+      p4.raw (i ∘ images3) (witnessScopes p4) (witnessRefl (i ∘ t3) (i ∘ u))
+      (witnessPre (i ∘ t3) (i ∘ u)) (witnessTail (i ∘ t3) (i ∘ u)) (witnessRowTerms p4 (i ∘ u)) rows)
+    ?_ (out.rename e) ?_
+  · refine of_eq ?_ hRows
+    dsimp only []
+    simp only [ForcingMemberRows.produced, ForcingMemberRows.body, witnessRowTerms_map,
+      witnessScopes, witnessRefl, witnessPre, witnessTail, SyntaxAtomSyntax.two_map,
+      WitnessRuntimeArgs.map, Function.comp_apply, P, C3, Refl, Pre, U0]
+    rfl
+  intro l4 Λ i rows hZ4 move4 hRows4
+  let p4 := p3.map i
+  have h4 := h3.map i move4
+  have hTarget4 : Derives Λ (ForcingPreorderInstances.targetData test p4.w p4.z p4.f p4.b p4.C p4.R p4.S
+      (p4.raw 0) (p4.raw 1) (p4.raw 2) p4.terms (i (t3 0)) (i (t3 1)) (i (t3 2))) :=
+    of_eq (by
+      rw [ForcingPreorderInstances.targetData_rename]
+      change _ = ForcingPreorderInstances.targetData test _ _ _ _ _ _ _ _ _ _ ((p3.map _).terms) _ _ _
+      rw [← WitnessRuntimeArgs.terms_map]
+      rfl) (move4 hTarget3)
+  have hFresh4 := of_eq (ForcingFreshPreorder.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ i) (move4 hFresh3)
+  apply of_eq (SourceAlgebra.rename_comp out e i).symm
+  refine at_witness_rows hZ4 h4 (i ∘ t3) (i ∘ u) (i ∘ images3) rows hTarget4 hFresh4 hRows4 (out.rename (i ∘ e)) ?_
+  intro l5 Ψ v layout hZ5 move5 hResult
+  let ρ' := v ∘ i ∘ e
+  let p5 := p4.map v
+  let lift' : ∀ {F : Formula m}, Derives Γ F → Derives Ψ (F.rename ρ') :=
+    fun hp => of_eq (by simp only [ρ', SourceAlgebra.rename_comp]; rfl) (move5 (move4 (carry hp)))
+  let Refl5 := witnessRefl (v ∘ i ∘ t3) (v ∘ i ∘ u)
+  let Pre5 := witnessPre (v ∘ i ∘ t3) (v ∘ i ∘ u)
+  let U5 := witnessTail (v ∘ i ∘ t3) (v ∘ i ∘ u)
+  let P5 := witnessRowTerms p5 (v ∘ i ∘ u)
+  let images5 := v ∘ i ∘ images3
+  let rows5 := v ∘ rows
+  have hRuntime := Derives.conjL hResult
+  have hMono := ForcingSourceMonoInduction.at_code hZ5 Reln Dom (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' j)
+    (ρ' b) (ρ' B) (ρ' R) (ρ' S) (ρ' T) (ρ' Old) (ρ' New) (ρ' A1) (ρ' A2) (ρ' A3)
+    (ρ' K) (ρ' Extra) (ρ' n) (ρ' ∘ raw) images5 (fun _ => ρ' C) Refl5 Pre5 U5 P5 rows5 layout
+    hRuntime (of_eq (formulaCode_rename w n a z ρ') (lift' hSource))
+  have hTransfer := ForcingSourceMono.apply_atSource test Reln Dom (ρ' w) (ρ' z) (ρ' f) (ρ' j) (ρ' a)
+    (ρ' b) (layout 3) (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' n) (ρ' Child) hMono
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ') (lift' hChild))
+  let row : Fin 24 → Fin l5 := fun k => rows5 (k.castAdd 24)
+  have hGlobal := Derives.conjL hRuntime
+  have hRows := Derives.conjL (.conjL hGlobal)
+  have hRow := Derives.conjL (.conjR hRows)
+  have h5 := h.map ρ' lift'
+  have hLayout := Derives.conjR (.conjR (.conjR hGlobal))
+  have hMiddle := Derives.conjR (.conjL (.conjR (.conjR hLayout)))
+  have hG := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
+  have hProj := ForcingRelationGuardProof.project hZ5 test false (ρ' w) (ρ' z) (ρ' b)
+    (ρ' Extra) (layout 2) (layout 3) h5.omega h5.zero h5.extra hMiddle (.conjR hG) (.conjL hG)
+  have qQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtQ)
+  have rQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtR)
+  have hQType := SyntaxMixedFormulaJudgment.target_type (ρ' w) (ρ' T) (ρ' Old)
+    (ρ' a) (ρ' f) (ρ' z) (ρ' b) (ρ' Child) (ρ' AtQ) qQuery
+  have hProofQ := ForcingRelationGuardProof.chain hZ5 test (ρ' w) (ρ' z) (ρ' b) (layout 3)
+    (ρ' Extra) (ρ' AtQ) h5.omega h5.zero (.conjR hG) h5.extra hQType hProj
+    (of_eq (implication_rename test _ _ _ _ _ ρ') (lift' hPositive))
+  have hProofR := ForcingConjunctionMono.apply_transfer test (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' b) (layout 3)
+    (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' Child) (ρ' AtQ) (ρ' AtR)
+    hTransfer qQuery rQuery hProofQ
+  have hOrderEq := ForcingDensityGuards.witness_order_from_row hZ5 Reln (ρ' w) (ρ' z) (ρ' A1) (ρ' A2)
+    (ρ' A3) (ρ' f) (ρ' b) (ρ' C) (ρ' R) (ρ' S) (Refl5 0) (Pre5 0) (ρ' New) (ρ' OrderA) (ρ' OrderHead)
+    (ρ' OrderCode) (ρ' OrderOut) (ρ' j) (ρ' ∘ raw) (ForcingMemberRows.backgroundFields row)
+    (ForcingMemberRows.leafFields row) (ForcingMemberRows.nativeFields (U5 0) row)
+    (ForcingMemberRows.proofFields row) (P5 0) (ForcingMemberRows.tailFields row)
+    (ForcingMemberRows.prefixFields row) h5.omega h5.zero h5.one h5.two h5.three h5.free h5.condition
+    h5.terms h5.emptyBound h5.freeBase hRow h5.newer
+    (of_eq (ForcingGuardOpening.result_rename true (ForcingExistGuardsCode.reverseOrder Reln)
+      _ _ _ _ _ _ _ _ _ _ ρ') (lift' hOrder))
+  exact of_eq (SourceAlgebra.rename_comp out (i ∘ e) v).symm
+    (use ρ' Refl5 Pre5 U5 P5 images5 rows5 layout hZ5 lift' rfl rfl hRuntime (.conjR hResult) hProofR hOrderEq)
 
 end PPAC.Migration.ForcingSourceDensity
