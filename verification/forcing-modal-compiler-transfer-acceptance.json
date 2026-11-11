@@ -1,0 +1,147 @@
+{
+  "baseline_commit": "4af499c75ae5c7267c35c70626a8834b3107721b",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "The two original compiler branches now derive the new-parent Root from the complete compiler, actual paired parent queries and shared overwrite and preorder inputs. Each eliminates one original compiler and shell record and uses the same literal source body for both openings. The negative branch derives the fresh replacement and actual selected child query and identifies the literal constructor of its existing old tail code. The existential branch uses object cons uniqueness to move the existing old tail query. Both reuse the same canonical nested old proof and the native new-parent Root consumers.",
+  "native_endpoints": {
+    "PPAC.Migration.ForcingRawModalBody.transfer_negative_from_frames_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.transfer_existential_compiled_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "premises": [
+    "complete original branch compiler and original typed scope",
+    "two actual parent queries and overwrite frames on a shared weakened base",
+    "shared preorder row, canonical context and old parent implication"
+  ],
+  "remaining": [
+    "consume the actual global runtime to supply these branch inputs",
+    "close the internal source induction and full force_mono",
+    "continue the original downstream proof translation through final internal Con"
+  ],
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "audited_declarations": 39898,
+  "existing_footprints_unchanged": 39891,
+  "other_existing_lean_blobs_unchanged": 2899,
+  "warning_lines": 0,
+  "lean_build_jobs": 3368,
+  "compatibility_tests": 16,
+  "pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "temporary_files_cleaned": 5,
+  "post_cleanup_trust0_passed": true
+}

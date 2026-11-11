@@ -1337,15 +1337,11 @@ theorem old_nested_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Fo
     (.hyp (Or.inl rfl))
 
 
-private def existentialTransferData {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
-    (Dom : Source.Formula (k+1))
-    (w z a f alpha beta gamma b B j N n ParentOld A1 A2 A3 C Bound Base Refl Pre i G Extra Old New : Fin m)
-    (cv : Fin 8 → Fin m) (sv : Fin 7 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m)
-    (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
-    (ctx : Fin 6 → Fin m) : Formula m :=
-  (ForcingExistCode.data Reln Dom w a alpha beta gamma f j N n cv).conj
-    ((ForcingExistCode.shellData w a alpha beta gamma f (cv 2) (cv 3) (cv 4) (cv 5) (cv 6) (cv 7) n sv).conj
-    ((successor beta alpha).conj
+private def existentialContextData {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z f alpha beta gamma b B j N ParentOld A1 A2 A3 C Bound Base Refl Pre i G Extra Old New : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m)
+    (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m) : Formula m :=
+  (successor beta alpha).conj
     ((successor gamma beta).conj
     ((FormulaCodeSyntax.formulaCode w N alpha f).conj
     ((SyntaxWeakenFreeSyntax.weakened w z b B G (ctx 3)).conj
@@ -1361,7 +1357,18 @@ private def existentialTransferData {k m} (test : Formula 1) (Reln : Source.Form
     ((SyntaxNumeralSyntax.numeral k i).conj
     ((ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f B C Bound Base Refl Pre raw Gb H U F P N0 D).conj
     ((ForcingReflexiveImages.replacement w f z B Base j (P 2) Old).conj
-    (ForcingReflexiveImages.replacement w f z B Base j (P 1) New))))))))))))))))))
+    (ForcingReflexiveImages.replacement w f z B Base j (P 1) New))))))))))))))))
+
+private def existentialTransferData {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (Dom : Source.Formula (k+1))
+    (w z a f alpha beta gamma b B j N n ParentOld A1 A2 A3 C Bound Base Refl Pre i G Extra Old New : Fin m)
+    (cv : Fin 8 → Fin m) (sv : Fin 7 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m)
+    (H : Fin 6 → Fin m) (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m)
+    (ctx : Fin 6 → Fin m) : Formula m :=
+  (ForcingExistCode.data Reln Dom w a alpha beta gamma f j N n cv).conj
+    ((ForcingExistCode.shellData w a alpha beta gamma f (cv 2) (cv 3) (cv 4) (cv 5) (cv 6) (cv 7) n sv).conj
+    (existentialContextData test Reln w z f alpha beta gamma b B j N ParentOld A1 A2 A3 C Bound Base
+      Refl Pre i G Extra Old New raw Gb H U F P N0 D ctx))
 
 /-- Both openings use the same existential compiler record. The preorder row
 and weakened context are the ones used to derive the old parent's tail. -/
@@ -1391,7 +1398,7 @@ private theorem pairedExistentialInput_rename {k m l} (test : Formula 1) (Reln :
         (fun s => rho (uOld s)) (fun s => rho (vNew s)) (fun s => rho (uNew s)) (fun s => rho (cv s)) (fun s => rho (sv s))
         (fun s => rho (raw s)) (fun s => rho (Gb s)) (fun s => rho (H s)) (fun s => rho (U s)) (fun s => rho (F s))
         (fun s => rho (P s)) (fun s => rho (N0 s)) (fun s => rho (D s)) (fun s => rho (ctx s)) := by
-  simp only [pairedExistentialInput, existentialTransferData, Formula.rename, ForcingFreshParentOpening.data_rename,
+  simp only [pairedExistentialInput, existentialTransferData, existentialContextData, Formula.rename, ForcingFreshParentOpening.data_rename,
     ForcingExistCode.data_rename,
     ForcingExistCode.shellData_rename,
     successor_rename,
@@ -1614,6 +1621,68 @@ def existentialFramesInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2)
       Extra Old New cv sv raw Gb H U F P N0 D ctx))
 
 set_option maxHeartbeats 1500000 in
+private theorem with_overwrites {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f alpha b A B t R S j n x ParentOld ParentNew QOld QNew TOld TNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (target : Formula m)
+    (hoInput : Derives Γ (ForcingRawGuardOpening.overwrittenInput w z a f alpha b A B t R S j QOld TOld SOld Old n x ParentOld v))
+    (hnInput : Derives Γ (ForcingRawGuardOpening.overwrittenInput w z a f alpha b A B t R S j QNew TNew SNew New n x ParentNew v))
+    (consume : ∀ {l} {Δ : Context l} (rho : Fin m → Fin l) (vo vn : Fin 10 → Fin l) (uo un : Fin 9 → Fin l),
+      ZFContext.Evidence Δ → (∀ {p}, Derives Γ p → Derives Δ (p.rename rho)) →
+      vn 8 = vo 8 → vo 9 = rho Old → vn 9 = rho New →
+      Derives Δ (ForcingFreshParentOpening.data (rho w) (rho z) (rho a) (rho f) (rho alpha)
+        (rho b) (rho A) (rho B) (rho t) (rho R) (rho SOld) (rho n) (rho x) (rho ParentOld) vo uo) →
+      Derives Δ (ForcingFreshParentOpening.data (rho w) (rho z) (rho a) (rho f) (rho alpha)
+        (rho b) (rho A) (rho B) (rho t) (rho R) (rho SNew) (rho n) (rho x) (rho ParentNew) vn un) →
+      Derives Δ (target.rename rho)) : Derives Γ target := by
+  have ho := ForcingRawGuardOpening.open_overwritten hZ w z a f alpha b A B t R S j QOld TOld SOld Old n x ParentOld v
+      hoInput
+  have hn := ForcingRawGuardOpening.open_overwritten hZ w z a f alpha b A B t R S j QNew TNew SNew New n x ParentNew v
+      hnInput
+  let EOld := ForcingRawGuardOpening.overwrittenBody w z a f alpha b A B t R SOld Old n x ParentOld v
+  let BOld := ForcingRawGuardOpening.overwrittenData w z a f alpha b A B t R SOld Old n x ParentOld v
+  let ΓOld := Context.add BOld (raisedContext 9 (Context.add EOld (raisedContext 2 Γ)))
+  let first := fun i : Fin m => old 9 (old 2 i)
+  apply ForcingRawGuardOpening.eliminate_overwritten w z a f alpha b A B t R SOld Old n x ParentOld v target ho
+  have moveOld {p : Formula m} (h : Derives Γ p) : Derives ΓOld (p.rename first) :=
+    of_eq (rename_comp p (old 2) (old 9))
+      (HornBinderRules.under_body 9 (HornBinderRules.under_body 2 h EOld) BOld)
+  have hpOld : Derives ΓOld BOld := .hyp (Or.inl rfl)
+  have hnOld : Derives ΓOld (ForcingRawGuardOpening.overwritten (first w) (first z) (first a) (first f) (first alpha)
+      (first b) (first A) (first B) (first t) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
+      (fun s => first (v s))) := by
+    simpa only [ForcingRawGuardOpening.overwritten_rename] using moveOld hn
+  let ENew := ForcingRawGuardOpening.overwrittenBody (first w) (first z) (first a) (first f) (first alpha) (first b)
+      (first A) (first B) (first t) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
+      (fun s => first (v s))
+  let BNew := ForcingRawGuardOpening.overwrittenData (first w) (first z) (first a) (first f) (first alpha) (first b)
+      (first A) (first B) (first t) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
+      (fun s => first (v s))
+  let ΓNew := Context.add BNew (raisedContext 9 (Context.add ENew (raisedContext 2 ΓOld)))
+  let second := fun i : Fin ((m+2)+9) => old 9 (old 2 i)
+  let both := fun i => second (first i)
+  apply ForcingRawGuardOpening.eliminate_overwritten (first w) (first z) (first a) (first f) (first alpha) (first b)
+      (first A) (first B) (first t) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
+      (fun s => first (v s)) _ hnOld
+  have moveNew {p : Formula ((m+2)+9)} (h : Derives ΓOld p) : Derives ΓNew (p.rename second) :=
+    of_eq (rename_comp p (old 2) (old 9))
+      (HornBinderRules.under_body 9 (HornBinderRules.under_body 2 h ENew) BNew)
+  have hpNew : Derives ΓNew BNew := .hyp (Or.inl rfl)
+  let firstImages := fun i => old 9 (ForcingRawGuardOpening.overwriteImages
+    (fun s => old 2 (v s)) (slot 2 0) (slot 2 1) (old 2 Old) i)
+  let vOld := fun i => second (firstImages i)
+  let vNew := fun i => old 9 (ForcingRawGuardOpening.overwriteImages
+    (fun s => old 2 (first (v s))) (slot 2 0) (slot 2 1) (old 2 (first New)) i)
+  have oldMoved := of_eq (ForcingFreshParentOpening.data_rename (first w) (first z) (first a) (first f)
+    (first alpha) (first b) (first A) (first B) (first t) (first R) (first SOld) (first n)
+    (first x) (first ParentOld) firstImages (slot 9) second) (moveNew hpOld)
+  have zfOld := HornBinderRules.zf_body 9 (HornBinderRules.zf_body 2 hZ EOld) BOld
+  have zfNew := HornBinderRules.zf_body 9 (HornBinderRules.zf_body 2 zfOld ENew) BNew
+  have result := consume both vOld vNew (fun i => second (slot 9 i)) (slot 9) zfNew
+    (fun h => of_eq (rename_comp _ first second) (moveNew (moveOld h)))
+    rfl rfl rfl oldMoved hpNew
+  simpa only [rename_comp, both] using result
+
+set_option maxHeartbeats 1500000 in
 /-- Produce both original openings, transfer their actual tail proof, and
 return the original new-parent implication. -/
 theorem transfer_existential_from_frames {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -1626,71 +1695,30 @@ theorem transfer_existential_from_frames {k m} {Γ : Context m} (hZ : ZFContext.
     (hi : Derives Γ (existentialFramesInput test Reln Dom w z a f alpha beta gamma b A B R S j N n x ParentOld ParentNew A1 A2 A3 C Bound Base
       Refl Pre i G Extra QOld QNew SOld SNew Old New v cv sv raw Gb H U F P N0 D ctx)) :
     Derives Γ (InternalProofBackground.implication test w z b G ParentNew) := by
-  have ho := ForcingRawGuardOpening.open_overwritten hZ w z a f alpha b A B (P 0) R S j QOld (P 2) SOld Old n x ParentOld v
-      (.conjL hi)
-  have hn := ForcingRawGuardOpening.open_overwritten hZ w z a f alpha b A B (P 0) R S j QNew (P 1) SNew New n x ParentNew v
-      (.conjL (.conjR hi))
   have shared := Derives.conjR (.conjR hi)
-  let target := InternalProofBackground.implication test w z b G ParentNew
-  let EOld := ForcingRawGuardOpening.overwrittenBody w z a f alpha b A B (P 0) R SOld Old n x ParentOld v
-  let BOld := ForcingRawGuardOpening.overwrittenData w z a f alpha b A B (P 0) R SOld Old n x ParentOld v
-  let ΓOld := Context.add BOld (raisedContext 9 (Context.add EOld (raisedContext 2 Γ)))
-  let first := fun i : Fin m => old 9 (old 2 i)
-  apply ForcingRawGuardOpening.eliminate_overwritten w z a f alpha b A B (P 0) R SOld Old n x ParentOld v target ho
-  have moveOld {p : Formula m} (h : Derives Γ p) : Derives ΓOld (p.rename first) :=
-    of_eq (rename_comp p (old 2) (old 9))
-      (HornBinderRules.under_body 9 (HornBinderRules.under_body 2 h EOld) BOld)
-  have hpOld : Derives ΓOld BOld := .hyp (Or.inl rfl)
-  have hnOld : Derives ΓOld (ForcingRawGuardOpening.overwritten (first w) (first z) (first a) (first f) (first alpha)
-      (first b) (first A) (first B) (first (P 0)) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
-      (fun s => first (v s))) := by
-    simpa only [ForcingRawGuardOpening.overwritten_rename] using moveOld hn
-  let ENew := ForcingRawGuardOpening.overwrittenBody (first w) (first z) (first a) (first f) (first alpha) (first b)
-      (first A) (first B) (first (P 0)) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
-      (fun s => first (v s))
-  let BNew := ForcingRawGuardOpening.overwrittenData (first w) (first z) (first a) (first f) (first alpha) (first b)
-      (first A) (first B) (first (P 0)) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
-      (fun s => first (v s))
-  let ΓNew := Context.add BNew (raisedContext 9 (Context.add ENew (raisedContext 2 ΓOld)))
-  let second := fun i : Fin ((m+2)+9) => old 9 (old 2 i)
-  let both := fun i => second (first i)
-  apply ForcingRawGuardOpening.eliminate_overwritten (first w) (first z) (first a) (first f) (first alpha) (first b)
-      (first A) (first B) (first (P 0)) (first R) (first SNew) (first New) (first n) (first x) (first ParentNew)
-      (fun s => first (v s)) _ hnOld
-  have moveNew {p : Formula ((m+2)+9)} (h : Derives ΓOld p) : Derives ΓNew (p.rename second) :=
-    of_eq (rename_comp p (old 2) (old 9))
-      (HornBinderRules.under_body 9 (HornBinderRules.under_body 2 h ENew) BNew)
-  have hpNew : Derives ΓNew BNew := .hyp (Or.inl rfl)
-  let firstImages := fun i => old 9 (ForcingRawGuardOpening.overwriteImages
-    (fun s => old 2 (v s)) (slot 2 0) (slot 2 1) (old 2 Old) i)
-  let vOld := fun i => second (firstImages i)
-  let vNew := fun i => old 9 (ForcingRawGuardOpening.overwriteImages
-    (fun s => old 2 (first (v s))) (slot 2 0) (slot 2 1) (old 2 (first New)) i)
-  have hshared : Derives ΓNew (existentialTransferData test Reln Dom (both w) (both z) (both a) (both f) (both alpha)
+  apply with_overwrites hZ w z a f alpha b A B (P 0) R S j n x ParentOld ParentNew QOld QNew (P 2) (P 1)
+    SOld SNew Old New v _ (.conjL hi) (.conjL (.conjR hi))
+  intro l Δ both vOld vNew uOld uNew zf move sameBound oldFree newFree hpOld hpNew
+  have hshared : Derives Δ (existentialTransferData test Reln Dom (both w) (both z) (both a) (both f) (both alpha)
       (both beta) (both gamma) (both b) (both B) (both j) (both N) (both n) (both ParentOld) (both A1) (both A2) (both A3)
       (both C) (both Bound) (both Base) (both Refl) (both Pre) (both i) (both G) (both Extra) (both Old) (both New)
       (fun s => both (cv s)) (fun s => both (sv s)) (fun s => both (raw s)) (fun s => both (Gb s)) (fun s => both (H s))
       (fun s => both (U s)) (fun s => both (F s)) (fun s => both (P s)) (fun s => both (N0 s)) (fun s => both (D s))
       (fun s => both (ctx s))) := by
-    simpa only [both, rename_comp, existentialTransferData, Formula.rename,
+    simpa only [existentialTransferData, existentialContextData, Formula.rename,
       ForcingExistCode.data_rename, ForcingExistCode.shellData_rename, successor_rename,
       FormulaCodeSyntax.formulaCode_rename, SyntaxWeakenFreeSyntax.weakened_rename,
       InternalProofBackground.implication_rename, ForcingProofContext.layoutData_rename,
       SyntaxNumeralSyntax.numeral_rename, ForcingPreorderLeaves.data_rename,
-      ForcingReflexiveImages.replacement_rename] using moveNew (moveOld shared)
-  have oldMoved := of_eq (ForcingFreshParentOpening.data_rename (first w) (first z) (first a) (first f)
-    (first alpha) (first b) (first A) (first B) (first (P 0)) (first R) (first SOld) (first n)
-    (first x) (first ParentOld) firstImages (slot 9) second) (moveNew hpOld)
-  have zfOld := HornBinderRules.zf_body 9 (HornBinderRules.zf_body 2 hZ EOld) BOld
-  have zfNew := HornBinderRules.zf_body 9 (HornBinderRules.zf_body 2 zfOld ENew) BNew
-  have result := transfer_existential_opened zfNew test Reln Dom (both w) (both z) (both a) (both f) (both alpha) (both beta)
+      ForcingReflexiveImages.replacement_rename] using move shared
+  have result := transfer_existential_opened zf test Reln Dom (both w) (both z) (both a) (both f) (both alpha) (both beta)
       (both gamma) (both b) (both A) (both B) (both R) (both SOld) (both SNew) (both j) (both N) (both n) (both x)
       (both ParentOld) (both ParentNew) (both A1) (both A2) (both A3) (both C) (both Bound) (both Base) (both Refl)
-      (both Pre) (both i) (both G) (both Extra) vOld (fun s => second (slot 9 s)) vNew (slot 9) (fun s => both (cv s))
+      (both Pre) (both i) (both G) (both Extra) vOld uOld vNew uNew (fun s => both (cv s))
       (fun s => both (sv s)) (fun s => both (raw s)) (fun s => both (Gb s)) (fun s => both (H s)) (fun s => both (U s))
-      (fun s => both (F s)) (fun s => both (P s)) (fun s => both (N0 s)) (fun s => both (D s)) (fun s => both (ctx s)) rfl
-    (.conjI oldMoved (.conjI hpNew hshared))
-  simpa only [target, rename_comp, InternalProofBackground.implication_rename, both] using result
+      (fun s => both (F s)) (fun s => both (P s)) (fun s => both (N0 s)) (fun s => both (D s)) (fun s => both (ctx s)) sameBound
+    (.conjI hpOld (.conjI hpNew (by simpa only [oldFree, newFree] using hshared)))
+  simpa only [InternalProofBackground.implication_rename] using result
 
 theorem transfer_existential_from_frames_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z a f alpha beta gamma b A B R S j N n x ParentOld ParentNew A1 A2 A3 C Bound Base Refl Pre i G Extra
@@ -1710,5 +1738,551 @@ theorem transfer_existential_from_frames_kernel_certificate {k m} (test : Formul
   exact transfer_existential_from_frames (ZFContext.add (ZFContext.source_ZF m) _) test Reln Dom w z a f alpha beta gamma b A
       B R S j N n x ParentOld ParentNew A1 A2 A3 C Bound Base Refl Pre i G Extra QOld QNew SOld SNew Old New v cv sv raw Gb H
       U F P N0 D ctx (.hyp (Or.inl rfl))
+
+
+private structure NegativeArgs (m : Nat) where
+  w : Fin m
+  z : Fin m
+  a : Fin m
+  f : Fin m
+  alpha : Fin m
+  b : Fin m
+  A : Fin m
+  B : Fin m
+  R : Fin m
+  S : Fin m
+  j : Fin m
+  N : Fin m
+  n : Fin m
+  ParentOld : Fin m
+  ParentNew : Fin m
+  A1 : Fin m
+  A2 : Fin m
+  A3 : Fin m
+  C : Fin m
+  Bound : Fin m
+  Refl : Fin m
+  Pre : Fin m
+  i : Fin m
+  G : Fin m
+  Extra : Fin m
+  QOld : Fin m
+  QNew : Fin m
+  SOld : Fin m
+  SNew : Fin m
+  Old : Fin m
+  New : Fin m
+  v : Fin 10 → Fin m
+  raw : Fin 16 → Fin m
+  Gb : Fin 5 → Fin m
+  H : Fin 6 → Fin m
+  U : Fin 3 → Fin m
+  F : Fin 3 → Fin m
+  P : Fin 3 → Fin m
+  N0 : Fin 5 → Fin m
+  D : Fin 3 → Fin m
+  ctx : Fin 6 → Fin m
+
+private def NegativeArgs.map {m l} (p : NegativeArgs m) (rho : Fin m → Fin l) : NegativeArgs l :=
+  ⟨rho p.w, rho p.z, rho p.a, rho p.f, rho p.alpha, rho p.b, rho p.A, rho p.B, rho p.R, rho p.S, rho p.j, rho p.N, rho p.n,
+    rho p.ParentOld, rho p.ParentNew, rho p.A1, rho p.A2, rho p.A3, rho p.C, rho p.Bound, rho p.Refl, rho p.Pre, rho p.i, rho p.G,
+    rho p.Extra, rho p.QOld, rho p.QNew, rho p.SOld, rho p.SNew, rho p.Old, rho p.New, (fun i => rho (p.v i)),
+    (fun i => rho (p.raw i)), (fun i => rho (p.Gb i)), (fun i => rho (p.H i)), (fun i => rho (p.U i)), (fun i => rho (p.F i)),
+    (fun i => rho (p.P i)), (fun i => rho (p.N0 i)), (fun i => rho (p.D i)), (fun i => rho (p.ctx i))⟩
+
+private def NegativeArgs.goal {m} (test : Formula 1) (p : NegativeArgs m) : Formula m :=
+  InternalProofBackground.implication test p.w p.z p.b p.G p.ParentNew
+
+private structure NegativeOpened {k m} (Γ : Context m) (test : Formula 1) (Reln : Source.Formula (k+2))
+    (p : NegativeArgs m) (cv : Fin 5 → Fin m) (sv : Fin 4 → Fin m)
+    (vo vn : Fin 10 → Fin m) (uo un : Fin 9 → Fin m) : Prop where
+  zf : ZFContext.Evidence Γ
+  parentOld : Derives Γ (ForcingFreshParentOpening.data p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SOld p.n (sv 3)
+      p.ParentOld vo uo)
+  parentNew : Derives Γ (ForcingFreshParentOpening.data p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SNew p.n (sv 3)
+      p.ParentNew vn un)
+  compiler : Derives Γ (ForcingNegCode.data Reln p.w p.a p.alpha p.f p.j p.N p.n cv)
+  shell : Derives Γ (ForcingNegCode.shellData p.w p.a p.alpha p.f (cv 3) (cv 4) (cv 2) p.n sv)
+  full : Derives Γ (ForcingNegCode.compiled Reln p.w p.a p.alpha p.f p.j p.N p.n)
+  childType : Derives Γ (FormulaCodeSyntax.formulaCode p.w p.N p.a p.f)
+  weak : Derives Γ (SyntaxWeakenFreeSyntax.weakened p.w p.z p.b p.B p.G (p.ctx 3))
+  oldProof : Derives Γ (InternalProofBackground.implication test p.w p.z p.b p.G p.ParentOld)
+  extraType : Derives Γ (FormulaCodeSyntax.formulaCode p.w p.Extra p.z p.B)
+  layout : Derives Γ (ForcingProofContext.layoutData p.w p.z p.B p.Extra p.Pre p.H p.ctx)
+  zero : Derives Γ (SyntaxNumeralSyntax.numeral 0 p.z)
+  one : Derives Γ (SyntaxNumeralSyntax.numeral 1 p.A1)
+  two : Derives Γ (SyntaxNumeralSyntax.numeral 2 p.A2)
+  three : Derives Γ (SyntaxNumeralSyntax.numeral 3 p.A3)
+  free : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) p.f)
+  carrier : Derives Γ (SyntaxNumeralSyntax.numeral k p.i)
+  row : Derives Γ (ForcingPreorderLeaves.data test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.B p.C p.Bound (p.v 9) p.Refl p.Pre p.raw
+      p.Gb p.H p.U p.F p.P p.N0 p.D)
+  oldTable : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 2) (vo 9))
+  newTable : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 1) (vn 9))
+  baseType : Derives Γ (SyntaxMixedImageCodeSyntax.termList p.w p.f p.z p.B (p.v 9))
+
+private theorem NegativeOpened.in_body {k m l} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (E : Formula (m+l)) :
+    NegativeOpened (Context.add E (raisedContext l Γ)) test Reln (p.map (old l))
+      (fun i => old l (cv i)) (fun i => old l (sv i))
+      (fun i => old l (vo i)) (fun i => old l (vn i)) (fun i => old l (uo i)) (fun i => old l (un i)) := by
+  constructor
+  · exact HornBinderRules.zf_body l h.zf E
+  · simpa only [NegativeArgs.map, ForcingFreshParentOpening.data_rename] using HornBinderRules.under_body l h.parentOld E
+  · simpa only [NegativeArgs.map, ForcingFreshParentOpening.data_rename] using HornBinderRules.under_body l h.parentNew E
+  · simpa only [NegativeArgs.map, ForcingNegCode.data_rename] using HornBinderRules.under_body l h.compiler E
+  · simpa only [NegativeArgs.map, ForcingNegCode.shellData_rename] using HornBinderRules.under_body l h.shell E
+  · simpa only [NegativeArgs.map, ForcingNegCode.compiled_rename] using HornBinderRules.under_body l h.full E
+  · simpa only [NegativeArgs.map, FormulaCodeSyntax.formulaCode_rename] using HornBinderRules.under_body l h.childType E
+  · simpa only [NegativeArgs.map, SyntaxWeakenFreeSyntax.weakened_rename] using HornBinderRules.under_body l h.weak E
+  · simpa only [NegativeArgs.map, InternalProofBackground.implication_rename] using HornBinderRules.under_body l h.oldProof E
+  · simpa only [NegativeArgs.map, FormulaCodeSyntax.formulaCode_rename] using HornBinderRules.under_body l h.extraType E
+  · simpa only [NegativeArgs.map, ForcingProofContext.layoutData_rename] using HornBinderRules.under_body l h.layout E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.zero E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.one E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.two E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.three E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.free E
+  · simpa only [NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using HornBinderRules.under_body l h.carrier E
+  · simpa only [NegativeArgs.map, ForcingPreorderLeaves.data_rename] using HornBinderRules.under_body l h.row E
+  · simpa only [NegativeArgs.map, ForcingReflexiveImages.replacement_rename] using HornBinderRules.under_body l h.oldTable E
+  · simpa only [NegativeArgs.map, ForcingReflexiveImages.replacement_rename] using HornBinderRules.under_body l h.newTable E
+  · simpa only [NegativeArgs.map, SyntaxMixedImageCodeSyntax.termList_rename] using HornBinderRules.under_body l h.baseType E
+
+
+private theorem NegativeArgs.goal_rename {m l} (test : Formula 1) (p : NegativeArgs m) (rho : Fin m → Fin l) :
+    (p.goal test).rename rho = (p.map rho).goal test :=
+  InternalProofBackground.implication_rename test p.w p.z p.b p.G p.ParentNew rho
+
+set_option maxHeartbeats 1000000 in
+private theorem negative_at_nested {k m} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (sameBound : vn 8 = vo 8)
+    (Sel Operand : Fin m)
+    (hSel : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 0) Sel))
+    (hOperand : Derives Γ (substituted p.w (vo 8) Sel p.a p.f p.z p.B p.N Operand))
+    (r : Fin 4 → Fin m)
+    (hr : Derives Γ (guardData Reln p.w (uo 7) (vo 9) p.alpha p.f p.z p.B (p.P 0)
+      (cv 1) (cv 3) (cv 4) (sv 1) (sv 2) (uo 8) r))
+    (s : Fin 3 → Fin m)
+    (hs : Derives Γ (ForcingNestedGuardProof.data test p.w p.z p.b p.A p.B p.G (p.ctx 3)
+      (p.H 0) (p.H 3) (r 3) (s 0) (s 1) (s 2))) : Derives Γ (p.goal test) := by
+  have src := Derives.conjL h.parentOld
+  have hw := Derives.conjL src
+  have hz := Derives.conjL (.conjR src)
+  have hTerm := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR src))))))
+  have hCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR h.parentOld)))))))
+  have bot : Derives Γ (SyntaxNodeSyntax.constructor 0 0 p.w Fin.elim0 (sv 0)) := .conjL (.conjL h.shell)
+  have tail := ForcingRawNegTail.canonical_code h.zf p.w p.z p.a p.alpha p.f p.B (vo 8) (uo 7) (vo 9) (p.v 9)
+    p.j (p.P 0) (p.P 2) Sel p.N (cv 2) (sv 0) (sv 1) (r 3) Operand (sv 0)
+    hw hz hTerm hCons h.oldTable hSel (.conjL (.conjR h.compiler)) (.conjL (.conjL (.conjR h.shell)))
+    bot (.conjR (.conjR (.conjR (.conjL hr)))) hOperand bot
+  have operandNew : Derives Γ (substituted p.w (vn 8) Sel p.a p.f p.z p.B p.N Operand) := by
+    simpa only [sameBound] using hOperand
+  have records := negative_at_records h.zf Reln p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SNew p.j
+    p.N p.n (sv 3) p.ParentNew vn un cv sv h.parentNew h.compiler h.shell
+  apply negative_root_at_records h.zf test Reln p.w p.z p.a p.f p.alpha p.b p.A p.B p.R p.SNew p.j p.N p.n
+    (sv 3) p.ParentNew p.A1 p.A2 p.A3 p.C p.Bound (p.v 9) p.Refl p.Pre p.i Sel Operand (sv 0) (r 3)
+    p.G (p.ctx 3) (s 0) (s 1) (s 2) vn un p.raw p.Gb p.H p.U p.F p.P p.N0 p.D cv sv _ records
+  refine .conjI h.parentNew (.conjI h.full (.conjI h.zero (.conjI h.one (.conjI h.two (.conjI h.three ?_)))))
+  exact .conjI h.free (.conjI (.conjL h.full) (.conjI h.carrier (.conjI h.row (.conjI hSel
+    (.conjI h.newTable (.conjI operandNew (.conjI bot (.conjI tail hs))))))))
+
+set_option maxHeartbeats 1000000 in
+private theorem negative_at_guards {k m} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (sameBound : vn 8 = vo 8)
+    (Sel Operand : Fin m)
+    (hSel : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 0) Sel))
+    (hOperand : Derives Γ (substituted p.w (vo 8) Sel p.a p.f p.z p.B p.N Operand))
+    (r : Fin 4 → Fin m)
+    (hr : Derives Γ (guardData Reln p.w (uo 7) (vo 9) p.alpha p.f p.z p.B (p.P 0)
+      (cv 1) (cv 3) (cv 4) (sv 1) (sv 2) (uo 8) r)) : Derives Γ (p.goal test) := by
+  have nested := old_nested_from_opened h.zf test Reln p.w p.z p.a p.f p.alpha p.b p.A p.B p.R p.SOld
+    p.n (sv 3) p.ParentOld p.G p.Extra p.A1 p.A2 p.A3 p.C p.Bound (p.v 9) p.Refl p.Pre p.i p.j
+    (cv 0) (cv 1) (cv 3) (cv 4) (sv 1) (sv 2) vo uo p.raw p.Gb p.H p.U p.F p.P p.N0 p.D p.ctx r
+    (.conjI h.parentOld (.conjI (.conjL h.compiler) (.conjI (.conjL (.conjR (.conjR h.compiler)))
+      (.conjI hr (.conjI h.weak (.conjI h.oldProof (.conjI h.extraType (.conjI h.layout (.conjI h.zero
+        (.conjI h.one (.conjI h.two (.conjI h.three (.conjI h.free (.conjI (.conjL h.full)
+          (.conjI h.carrier (.conjI h.row h.oldTable))))))))))))))))
+  let E := ForcingNestedGuardProof.body test p.w p.z p.b p.A p.B p.G (p.ctx 3) (p.H 0) (p.H 3) (r 3)
+  apply HornBinderRules.eliminate_many 3 E _ nested
+  apply of_eq (NegativeArgs.goal_rename test p (old 3)).symm
+  exact negative_at_nested (h.in_body E) (congrArg (old 3) sameBound) (old 3 Sel) (old 3 Operand)
+    (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ (old 3)) (HornBinderRules.under_body 3 hSel E))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ (old 3)) (HornBinderRules.under_body 3 hOperand E))
+    (fun i => old 3 (r i))
+    (of_eq (guardData_rename Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ r (old 3)) (HornBinderRules.under_body 3 hr E))
+    (slot 3) (.hyp (Or.inl rfl))
+
+private theorem negative_at_selection {k m} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (sameBound : vn 8 = vo 8)
+    (Sel Operand : Fin m)
+    (hSel : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 0) Sel))
+    (hOperand : Derives Γ (substituted p.w (vo 8) Sel p.a p.f p.z p.B p.N Operand)) : Derives Γ (p.goal test) := by
+  have record := negative_at_records h.zf Reln p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SOld p.j
+    p.N p.n (sv 3) p.ParentOld vo uo cv sv h.parentOld h.compiler h.shell
+  let E := guardData Reln (old 4 p.w) (old 4 (uo 7)) (old 4 (vo 9)) (old 4 p.alpha)
+    (old 4 p.f) (old 4 p.z) (old 4 p.B) (old 4 (p.P 0)) (old 4 (cv 1)) (old 4 (cv 3))
+    (old 4 (cv 4)) (old 4 (sv 1)) (old 4 (sv 2)) (old 4 (uo 8)) (slot 4)
+  apply HornBinderRules.eliminate_many 4 E _ (.conjR (.conjR (.conjR record)))
+  apply of_eq (NegativeArgs.goal_rename test p (old 4)).symm
+  exact negative_at_guards (h.in_body E) (congrArg (old 4) sameBound) (old 4 Sel) (old 4 Operand)
+    (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ (old 4)) (HornBinderRules.under_body 4 hSel E))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ (old 4)) (HornBinderRules.under_body 4 hOperand E))
+    (slot 4) (.hyp (Or.inl rfl))
+
+private theorem negative_at_table {k m} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (sameBound : vn 8 = vo 8)
+    (Sel : Fin m)
+    (hSel : Derives Γ (ForcingReflexiveImages.replacement p.w p.f p.z p.B (p.v 9) p.j (p.P 0) Sel)) :
+    Derives Γ (p.goal test) := by
+  have images := Derives.conjL (.conjR h.parentOld)
+  have lists := SyntaxMixedImageCodePairs.term_lists p.w (vo 6) (vo 7) p.a p.f p.z p.B (vo 8) (vo 9)
+    (.conjR (.conjR (.conjR (.conjR images))))
+  have selected := ForcingReflexiveImages.target_type p.w p.f p.z p.B (p.v 9) p.j (p.P 0) Sel hSel
+  have query := SyntaxMixedFormulaOutputInduction.actual_exists h.zf p.w (vo 8) Sel p.a p.f p.z p.B p.N
+    (.conjL (.conjL h.parentOld)) (.conjI h.childType (.conjI (.conjL lists) selected))
+  let E := substituted (old 1 p.w) (old 1 (vo 8)) (old 1 Sel) (old 1 p.a) (old 1 p.f)
+    (old 1 p.z) (old 1 p.B) (old 1 p.N) (slot 1 0)
+  apply HornBinderRules.eliminate_many 1 E _ query
+  apply of_eq (NegativeArgs.goal_rename test p (old 1)).symm
+  exact negative_at_selection (h.in_body E) (congrArg (old 1) sameBound) (old 1 Sel) (slot 1 0)
+    (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ (old 1)) (HornBinderRules.under_body 1 hSel E))
+    (.hyp (Or.inl rfl))
+
+private theorem transfer_negative_opened {k m} {Γ : Context m} {test : Formula 1}
+    {Reln : Source.Formula (k+2)} {p : NegativeArgs m} {cv : Fin 5 → Fin m} {sv : Fin 4 → Fin m}
+    {vo vn : Fin 10 → Fin m} {uo un : Fin 9 → Fin m}
+    (h : NegativeOpened Γ test Reln p cv sv vo vn uo un) (sameBound : vn 8 = vo 8) :
+    Derives Γ (p.goal test) := by
+  have src := Derives.conjL h.parentOld
+  have term := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR src))))))
+  have sel := ForcingReflexiveImages.exists_replacement h.zf p.w p.f p.z p.B (p.v 9) p.j (p.P 0)
+    (.conjL src) h.baseType term
+  let E := ForcingReflexiveImages.replacement (old 1 p.w) (old 1 p.f) (old 1 p.z) (old 1 p.B)
+    (old 1 (p.v 9)) (old 1 p.j) (old 1 (p.P 0)) (slot 1 0)
+  apply HornBinderRules.eliminate_many 1 E _ sel
+  apply of_eq (NegativeArgs.goal_rename test p (old 1)).symm
+  exact negative_at_table (h.in_body E) (congrArg (old 1) sameBound) (slot 1 0) (.hyp (Or.inl rfl))
+
+
+private theorem with_negative_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Source.Formula (k+2)) (w a alpha f j N n : Fin m) (target : Formula m)
+    (hFull : Derives Γ (ForcingNegCode.compiled Reln w a alpha f j N n))
+    (consume : ∀ {l} {Δ : Context l} (rho : Fin m → Fin l) (cv : Fin 5 → Fin l) (sv : Fin 4 → Fin l),
+      ZFContext.Evidence Δ → (∀ {p}, Derives Γ p → Derives Δ (p.rename rho)) →
+      Derives Δ (ForcingNegCode.data Reln (rho w) (rho a) (rho alpha) (rho f) (rho j) (rho N) (rho n) cv) →
+      Derives Δ (ForcingNegCode.shellData (rho w) (rho a) (rho alpha) (rho f) (cv 3) (cv 4) (cv 2) (rho n) sv) →
+      Derives Δ (target.rename rho)) : Derives Γ target := by
+  let E := ForcingNegCode.body Reln w a alpha f j N n
+  let Δ := Context.add E (raisedContext 5 Γ)
+  apply HornBinderRules.eliminate_many 5 E _ (.conjR hFull)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  let F := ForcingNegCode.shellBody (old 5 w) (old 5 a) (old 5 alpha) (old 5 f)
+    (slot 5 3) (slot 5 4) (slot 5 2) (old 5 n)
+  let Ξ := Context.add F (raisedContext 4 Δ)
+  have shell := Derives.conjR (.conjR (.conjR (.conjR hE)))
+  apply HornBinderRules.eliminate_many 4 F _ shell
+  have hF : Derives Ξ F := .hyp (Or.inl rfl)
+  let rho := fun i : Fin m => old 4 (old 5 i)
+  have move {q : Formula m} (hq : Derives Γ q) : Derives Ξ (q.rename rho) :=
+    of_eq (rename_comp q (old 5) (old 4))
+      (HornBinderRules.under_body 4 (HornBinderRules.under_body 5 hq E) F)
+  have hc := of_eq (ForcingNegCode.data_rename Reln (old 5 w) (old 5 a) (old 5 alpha)
+    (old 5 f) (old 5 j) (old 5 N) (old 5 n) (slot 5) (old 4)) (HornBinderRules.under_body 4 hE F)
+  exact of_eq (rename_comp target (old 5) (old 4)).symm
+    (consume rho (fun i => old 4 (slot 5 i)) (slot 4)
+      (HornBinderRules.zf_body 4 (HornBinderRules.zf_body 5 hZ E) F) move hc hF)
+
+private theorem input_with_constructor {m} {Γ : Context m}
+    (w z a f alpha b A B t R S n x Parent : Fin m)
+    (hf : Derives Γ (ForcingFreshParentOpening.frame w z a f alpha b A B t R S n Parent))
+    (hc : Derives Γ (singleCode 9 w x n)) :
+    Derives Γ (ForcingFreshParentOpening.input w z a f alpha b A B t R S n x Parent) := by
+  refine .conjI (.conjL hf) ?_
+  have h := Derives.conjR hf
+  refine .conjI (.conjL h) ?_
+  have h := Derives.conjR h
+  refine .conjI (.conjL h) ?_
+  have h := Derives.conjR h
+  refine .conjI (.conjL h) ?_
+  have h := Derives.conjR h
+  refine .conjI (.conjL h) ?_
+  have h := Derives.conjR h
+  refine .conjI (.conjL h) ?_
+  have h := Derives.conjR h
+  exact .conjI (.conjL h) (.conjI hc (.conjR h))
+
+private def negativeFrames {k m} (test : Formula 1) (Reln : Source.Formula (k+2)) (p : NegativeArgs m) : Formula m :=
+  (ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.R p.S p.j p.QOld (p.P 2) p.SOld p.Old p.v).conj
+    ((ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.R p.S p.j p.QNew (p.P 1) p.SNew p.New p.v).conj
+    ((ForcingFreshParentOpening.frame p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SOld p.n p.ParentOld).conj
+    ((ForcingFreshParentOpening.frame p.w p.z p.a p.f p.alpha p.b p.A p.B (p.P 0) p.R p.SNew p.n p.ParentNew).conj
+    ((ForcingNegCode.compiled Reln p.w p.a p.alpha p.f p.j p.N p.n).conj
+    ((FormulaCodeSyntax.formulaCode p.w p.N p.a p.f).conj
+    ((SyntaxWeakenFreeSyntax.weakened p.w p.z p.b p.B p.G (p.ctx 3)).conj
+    ((InternalProofBackground.implication test p.w p.z p.b p.G p.ParentOld).conj
+    ((FormulaCodeSyntax.formulaCode p.w p.Extra p.z p.B).conj
+    ((ForcingProofContext.layoutData p.w p.z p.B p.Extra p.Pre p.H p.ctx).conj
+    ((SyntaxNumeralSyntax.numeral 0 p.z).conj
+    ((SyntaxNumeralSyntax.numeral 1 p.A1).conj
+    ((SyntaxNumeralSyntax.numeral 2 p.A2).conj
+    ((SyntaxNumeralSyntax.numeral 3 p.A3).conj
+    ((SyntaxNumeralSyntax.numeral (k+2) p.f).conj
+    ((SyntaxNumeralSyntax.numeral k p.i).conj
+    (ForcingPreorderLeaves.data test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.B p.C p.Bound (p.v 9) p.Refl p.Pre p.raw p.Gb p.H p.U
+      p.F p.P p.N0 p.D))))))))))))))))
+
+set_option maxHeartbeats 1800000 in
+private theorem negative_from_input {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (p : NegativeArgs m)
+    (hi : Derives Γ (negativeFrames test Reln p)) : Derives Γ (p.goal test) := by
+  have oldFrame := Derives.conjL hi
+  have rest := Derives.conjR hi
+  have newFrame := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have sourceOld := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have sourceNew := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have full := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have childType := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have weak := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have oldProof := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have extraType := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have layout := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have zero := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have one := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have two := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have three := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have free := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have carrier := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have row := rest
+  have images := Derives.conjL oldFrame
+  have lists := SyntaxMixedImageCodePairs.term_lists p.w (p.v 6) (p.v 7) p.a p.f p.z p.B (p.v 8) (p.v 9)
+    (.conjR (.conjR (.conjR (.conjR images))))
+  have baseType := Derives.conjR lists
+  have oldTable := Derives.conjL (.conjR (.conjR oldFrame))
+  have newTable := Derives.conjL (.conjR (.conjR newFrame))
+  apply with_negative_records hZ Reln p.w p.a p.alpha p.f p.j p.N p.n _ full
+  intro l Δ rho cv sv zf move compiler shell
+  let p' := p.map rho
+  have frameOld : Derives Δ (ForcingWeakenedOverwrite.frame p'.w p'.a p'.f p'.z p'.b p'.B
+      p'.R p'.S p'.j p'.QOld (p'.P 2) p'.SOld p'.Old p'.v) := by
+    simpa only [p', NegativeArgs.map, ForcingWeakenedOverwrite.frame_rename] using move oldFrame
+  have frameNew : Derives Δ (ForcingWeakenedOverwrite.frame p'.w p'.a p'.f p'.z p'.b p'.B
+      p'.R p'.S p'.j p'.QNew (p'.P 1) p'.SNew p'.New p'.v) := by
+    simpa only [p', NegativeArgs.map, ForcingWeakenedOverwrite.frame_rename] using move newFrame
+  have bodyCode : Derives Δ (singleCode 9 p'.w (sv 3) p'.n) :=
+    .conjL (.conjR (.conjR (.conjR (.conjR shell))))
+  have srcOld : Derives Δ (ForcingFreshParentOpening.frame p'.w p'.z p'.a p'.f p'.alpha p'.b p'.A
+      p'.B (p'.P 0) p'.R p'.SOld p'.n p'.ParentOld) := by
+    simpa only [p', NegativeArgs.map, ForcingFreshParentOpening.frame_rename] using move sourceOld
+  have srcNew : Derives Δ (ForcingFreshParentOpening.frame p'.w p'.z p'.a p'.f p'.alpha p'.b p'.A
+      p'.B (p'.P 0) p'.R p'.SNew p'.n p'.ParentNew) := by
+    simpa only [p', NegativeArgs.map, ForcingFreshParentOpening.frame_rename] using move sourceNew
+  have hOld := input_with_constructor p'.w p'.z p'.a p'.f p'.alpha p'.b p'.A p'.B (p'.P 0)
+    p'.R p'.SOld p'.n (sv 3) p'.ParentOld srcOld bodyCode
+  have hNew := input_with_constructor p'.w p'.z p'.a p'.f p'.alpha p'.b p'.A p'.B (p'.P 0)
+    p'.R p'.SNew p'.n (sv 3) p'.ParentNew srcNew bodyCode
+  apply of_eq (NegativeArgs.goal_rename test p rho).symm
+  apply with_overwrites zf p'.w p'.z p'.a p'.f p'.alpha p'.b p'.A p'.B (p'.P 0) p'.R p'.S p'.j
+    p'.n (sv 3) p'.ParentOld p'.ParentNew p'.QOld p'.QNew (p'.P 2) (p'.P 1)
+    p'.SOld p'.SNew p'.Old p'.New p'.v _ (.conjI frameOld hOld) (.conjI frameNew hNew)
+  intro t Ξ sigma vo vn uo un zf' move' sameBound oldFree newFree parentOld parentNew
+  let q := p'.map sigma
+  have raise {r : Formula m} (hr : Derives Γ r) : Derives Ξ (r.rename (fun i => sigma (rho i))) :=
+    of_eq (rename_comp r rho sigma) (move' (move hr))
+  have opened : NegativeOpened Ξ test Reln q (fun i => sigma (cv i)) (fun i => sigma (sv i)) vo vn uo un := by
+    refine ⟨zf', parentOld, parentNew, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_,
+      ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · simpa only [q, p', NegativeArgs.map, ForcingNegCode.data_rename] using move' compiler
+    · simpa only [q, p', NegativeArgs.map, ForcingNegCode.shellData_rename] using move' shell
+    · simpa only [q, p', NegativeArgs.map, ForcingNegCode.compiled_rename] using raise full
+    · simpa only [q, p', NegativeArgs.map, FormulaCodeSyntax.formulaCode_rename] using raise childType
+    · simpa only [q, p', NegativeArgs.map, SyntaxWeakenFreeSyntax.weakened_rename] using raise weak
+    · simpa only [q, p', NegativeArgs.map, InternalProofBackground.implication_rename] using raise oldProof
+    · simpa only [q, p', NegativeArgs.map, FormulaCodeSyntax.formulaCode_rename] using raise extraType
+    · simpa only [q, p', NegativeArgs.map, ForcingProofContext.layoutData_rename] using raise layout
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise zero
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise one
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise two
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise three
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise free
+    · simpa only [q, p', NegativeArgs.map, SyntaxNumeralSyntax.numeral_rename] using raise carrier
+    · simpa only [q, p', NegativeArgs.map, ForcingPreorderLeaves.data_rename] using raise row
+    · simpa only [q, p', NegativeArgs.map, oldFree, ForcingReflexiveImages.replacement_rename] using raise oldTable
+    · simpa only [q, p', NegativeArgs.map, newFree, ForcingReflexiveImages.replacement_rename] using raise newTable
+    · simpa only [q, p', NegativeArgs.map, SyntaxMixedImageCodeSyntax.termList_rename] using raise baseType
+  exact of_eq (NegativeArgs.goal_rename test p' sigma).symm (transfer_negative_opened opened sameBound)
+
+/-- The two original parent queries, complete negative compiler, overwrite
+frames on one weak base table, and the common canonical context. -/
+def negativeFramesInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m) : Formula m :=
+  negativeFrames test Reln ⟨w, z, a, f, alpha, b, A, B, R, S, j, N, n, ParentOld, ParentNew, A1, A2, A3, C, Bound, Refl, Pre, i, G, Extra, QOld, QNew, SOld,
+      SNew, Old, New, v, raw, Gb, H, U, F, P, N0, D, ctx⟩
+
+theorem transfer_negative_from_frames {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m)
+    (hi : Derives Γ (negativeFramesInput test Reln w z a f alpha b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld
+      SNew Old New v raw Gb H U F P N0 D ctx)) :
+    Derives Γ (InternalProofBackground.implication test w z b G ParentNew) :=
+  negative_from_input hZ test Reln ⟨w, z, a, f, alpha, b, A, B, R, S, j, N, n, ParentOld, ParentNew, A1, A2, A3, C, Bound, Refl, Pre, i, G, Extra, QOld, QNew, SOld,
+      SNew, Old, New, v, raw, Gb, H, U, F, P, N0, D, ctx⟩ hi
+
+theorem transfer_negative_from_frames_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f alpha b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence
+        ((negativeFramesInput test Reln w z a f alpha b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld
+      SNew Old New v raw Gb H U F P N0 D ctx).imp
+          (InternalProofBackground.implication test w z b G ParentNew)).close) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact transfer_negative_from_frames (ZFContext.add (ZFContext.source_ZF m) _) test Reln w z a f alpha b A B R S j N n
+      ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New v raw Gb H U F P N0 D ctx
+      (.hyp (Or.inl rfl))
+
+
+/-- The existential branch starts with the complete original compiler and
+the two actual parent queries. Its source body is chosen by that compiler. -/
+def existentialCompiledInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f alpha beta gamma b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra
+      QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m) : Formula m :=
+  (ForcingWeakenedOverwrite.frame w a f z b B R S j QOld (P 2) SOld Old v).conj
+    ((ForcingWeakenedOverwrite.frame w a f z b B R S j QNew (P 1) SNew New v).conj
+    ((ForcingFreshParentOpening.frame w z a f alpha b A B (P 0) R SOld n ParentOld).conj
+    ((ForcingFreshParentOpening.frame w z a f alpha b A B (P 0) R SNew n ParentNew).conj
+    ((ForcingExistCode.compiled Reln Dom w a alpha beta gamma f j N n).conj
+    (existentialContextData test Reln w z f alpha beta gamma b B j N ParentOld A1 A2 A3 C Bound (v 9) Refl Pre i G Extra Old
+      New raw Gb H U F P N0 D ctx)))))
+
+set_option maxHeartbeats 1500000 in
+theorem transfer_existential_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f alpha beta gamma b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra
+      QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m)
+    (hi : Derives Γ (existentialCompiledInput test Reln Dom w z a f alpha beta gamma b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G
+      Extra QOld QNew SOld SNew Old New v raw Gb H U F P N0 D ctx)) :
+    Derives Γ (InternalProofBackground.implication test w z b G ParentNew) := by
+  have oldFrame := Derives.conjL hi
+  have rest := Derives.conjR hi
+  have newFrame := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have oldParent := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have newParent := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have full := Derives.conjL rest
+  have context := Derives.conjR rest
+  let E := ForcingExistCode.body Reln Dom w a alpha beta gamma f j N n
+  let Δ := Context.add E (raisedContext 8 Γ)
+  apply HornBinderRules.eliminate_many 8 E _ (.conjR full)
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  let FShell := ForcingExistCode.shellBody (old 8 w) (old 8 a) (old 8 alpha) (old 8 beta) (old 8 gamma)
+    (old 8 f) (slot 8 2) (slot 8 3) (slot 8 4) (slot 8 5) (slot 8 6) (slot 8 7) (old 8 n)
+  let Ξ := Context.add FShell (raisedContext 7 Δ)
+  have shell := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hE))))))
+  apply HornBinderRules.eliminate_many 7 FShell _ shell
+  have hF : Derives Ξ FShell := .hyp (Or.inl rfl)
+  let rho := fun i : Fin m => old 7 (old 8 i)
+  let cv := fun i : Fin 8 => old 7 (slot (m := m) 8 i)
+  let sv := slot (m := m+8) 7
+  have lift {q : Formula m} (hq : Derives Γ q) : Derives Ξ (q.rename rho) :=
+    of_eq (rename_comp q (old 8) (old 7))
+      (HornBinderRules.under_body 7 (HornBinderRules.under_body 8 hq E) FShell)
+  have compiler := of_eq (ForcingExistCode.data_rename Reln Dom (old 8 w) (old 8 a) (old 8 alpha)
+    (old 8 beta) (old 8 gamma) (old 8 f) (old 8 j) (old 8 N) (old 8 n) (slot 8) (old 7))
+    (HornBinderRules.under_body 7 hE FShell)
+  have ctor : Derives Ξ (singleCode 9 (rho w) (sv 6) (rho n)) :=
+    .conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hF)))))))
+  have srcOld : Derives Ξ (ForcingFreshParentOpening.frame (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A)
+      (rho B) (rho (P 0)) (rho R) (rho SOld) (rho n) (rho ParentOld)) := by
+    simpa only [ForcingFreshParentOpening.frame_rename] using lift oldParent
+  have srcNew : Derives Ξ (ForcingFreshParentOpening.frame (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A)
+      (rho B) (rho (P 0)) (rho R) (rho SNew) (rho n) (rho ParentNew)) := by
+    simpa only [ForcingFreshParentOpening.frame_rename] using lift newParent
+  have hOld := input_with_constructor (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho (P 0))
+      (rho R) (rho SOld) (rho n) (sv 6) (rho ParentOld) srcOld ctor
+  have hNew := input_with_constructor (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho (P 0))
+      (rho R) (rho SNew) (rho n) (sv 6) (rho ParentNew) srcNew ctor
+  have wOld : Derives Ξ (ForcingWeakenedOverwrite.frame (rho w) (rho a) (rho f) (rho z) (rho b) (rho B) (rho R) (rho S)
+      (rho j) (rho QOld) (rho (P 2)) (rho SOld) (rho Old) (fun i => rho (v i))) := by
+    simpa only [ForcingWeakenedOverwrite.frame_rename] using lift oldFrame
+  have wNew : Derives Ξ (ForcingWeakenedOverwrite.frame (rho w) (rho a) (rho f) (rho z) (rho b) (rho B) (rho R) (rho S)
+      (rho j) (rho QNew) (rho (P 1)) (rho SNew) (rho New) (fun i => rho (v i))) := by
+    simpa only [ForcingWeakenedOverwrite.frame_rename] using lift newFrame
+  have hContext : Derives Ξ (existentialContextData test Reln (rho w) (rho z) (rho f) (rho alpha) (rho beta) (rho gamma)
+      (rho b) (rho B) (rho j) (rho N) (rho ParentOld) (rho A1) (rho A2) (rho A3) (rho C) (rho Bound) (rho (v 9)) (rho Refl)
+      (rho Pre) (rho i) (rho G) (rho Extra) (rho Old) (rho New) (fun i => rho (raw i)) (fun i => rho (Gb i))
+      (fun i => rho (H i)) (fun i => rho (U i)) (fun i => rho (F i)) (fun i => rho (P i)) (fun i => rho (N0 i))
+      (fun i => rho (D i)) (fun i => rho (ctx i))) := by
+    simpa only [existentialContextData, Formula.rename, successor_rename, FormulaCodeSyntax.formulaCode_rename,
+      SyntaxWeakenFreeSyntax.weakened_rename, InternalProofBackground.implication_rename, ForcingProofContext.layoutData_rename,
+      SyntaxNumeralSyntax.numeral_rename, ForcingPreorderLeaves.data_rename, ForcingReflexiveImages.replacement_rename]
+      using lift context
+  have hZ' := HornBinderRules.zf_body 7 (HornBinderRules.zf_body 8 hZ E) FShell
+  have result := transfer_existential_from_frames hZ' test Reln Dom (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho beta)
+      (rho gamma) (rho b) (rho A) (rho B) (rho R) (rho S) (rho j) (rho N) (rho n) (sv 6) (rho ParentOld) (rho ParentNew)
+      (rho A1) (rho A2) (rho A3) (rho C) (rho Bound) (rho (v 9)) (rho Refl) (rho Pre) (rho i) (rho G) (rho Extra) (rho QOld)
+      (rho QNew) (rho SOld) (rho SNew) (rho Old) (rho New) (fun i => rho (v i)) cv sv (fun i => rho (raw i))
+      (fun i => rho (Gb i)) (fun i => rho (H i)) (fun i => rho (U i)) (fun i => rho (F i)) (fun i => rho (P i))
+      (fun i => rho (N0 i)) (fun i => rho (D i)) (fun i => rho (ctx i))
+    (.conjI (.conjI wOld hOld) (.conjI (.conjI wNew hNew) (.conjI compiler (.conjI hF hContext))))
+  simpa only [rename_comp, rho, InternalProofBackground.implication_rename] using result
+
+theorem transfer_existential_compiled_kernel_certificate {k m}
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f alpha beta gamma b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra
+      QOld QNew SOld SNew Old New : Fin m)
+    (v : Fin 10 → Fin m) (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N0 : Fin 5 → Fin m) (D : Fin 3 → Fin m) (ctx : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence
+        ((existentialCompiledInput test Reln Dom w z a f alpha beta gamma b A B R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G
+            Extra QOld QNew SOld SNew Old New v raw Gb H U F P N0 D ctx).imp
+          (InternalProofBackground.implication test w z b G ParentNew)).close) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact transfer_existential_compiled (ZFContext.add (ZFContext.source_ZF m) _) test Reln Dom w z a f alpha beta gamma b A B
+      R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New v raw Gb H U F P N0 D ctx
+      (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingRawModalBody

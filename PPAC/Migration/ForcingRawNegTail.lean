@@ -330,8 +330,8 @@ open SyntaxLogicalSyntax (binaryCode binaryCode_rename)
 
 /-- The literal negative tail is the implication from the original child
 at the freshly selected condition to the original falsum. -/
-theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z a alpha f B R D S Base j t Q E N Rebound Bot SourceTail Y O F Tail : Fin m)
+theorem canonical_code {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a alpha f B R D S Base j t Q E N Rebound Bot SourceTail Y O F : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
     (hCons : Derives Γ (StructuralListSyntax.consCode w t R D))
@@ -342,8 +342,7 @@ theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hBot : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 Bot))
     (hRaw : Derives Γ (query w D S alpha f z B SourceTail Y))
     (hOldQuery : Derives Γ (query w R E a f z B N O))
-    (hFalse : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 F))
-    (hTail : Derives Γ (binaryCode 2 w O F Tail)) : Derives Γ (.equal Y Tail) := by
+    (hFalse : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 F)) : Derives Γ (binaryCode 2 w O F Y) := by
   have outputs := ForcingFormulaDiagram.binary_output hZ 2 w D S alpha f z B SourceTail Rebound Bot Y hw hSrc hRaw
   let G := ForcingFormulaDiagram.binaryBody 2 w D S alpha f z B Rebound Bot Y
   let Δ := Context.add G (raisedContext 2 Γ)
@@ -371,18 +370,28 @@ theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (old 2 alpha) (old 2 f) (old 2 z) (old 2 B) (old 2 Bot) (slot 2 1) hw2 hBot2 (.conjR (.conjR hG))
   have eqFalse := SyntaxConstructors.unique hZ2 0 0 (old 2 w) Fin.elim0 (old 2 Bot) (old 2 F) hw2 hBot2 hFalse2
   have eF := eq_trans eqBottom eqFalse
-  let L := binaryCode 2 (old 2 w).castSucc (Fin.last (m+2)) (slot 2 1).castSucc (old 2 Y).castSucc
-  have left : Derives Δ (binaryCode 2 (old 2 w) (old 2 O) (slot 2 1) (old 2 Y)) :=
-    of_eq (by simp only [L, Formula.instantiate, binaryCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
-      (.eqSubst L eqOperand (of_eq (by simp only [L, Formula.instantiate, binaryCode_rename,
-        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjL hG)))
-  let H := binaryCode 2 (old 2 w).castSucc (old 2 O).castSucc (Fin.last (m+2)) (old 2 Y).castSucc
-  have whole : Derives Δ (binaryCode 2 (old 2 w) (old 2 O) (old 2 F) (old 2 Y)) :=
-    of_eq (by simp only [H, Formula.instantiate, binaryCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
-      (.eqSubst H eF (of_eq (by simp only [H, Formula.instantiate, binaryCode_rename,
-        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) left))
-  have tail2 := of_eq (binaryCode_rename 2 w O F Tail (old 2)) (HornBinderRules.under_body 2 hTail G)
-  exact SyntaxLogicalFields.binary_unique hZ2 2 (old 2 w) (old 2 O) (old 2 F) (old 2 Y) (old 2 Tail)
-    hw2 whole tail2
+  have left := SyntaxRenameLogicalSubst.binary_x 2 (old 2 w) (slot 2 0) (slot 2 1)
+    (old 2 Y) (old 2 O) eqOperand (.conjL hG)
+  have whole := SyntaxRenameLogicalSubst.binary_y 2 (old 2 w) (old 2 O) (slot 2 1)
+    (old 2 Y) (old 2 F) eF left
+  exact of_eq (binaryCode_rename 2 w O F Y (old 2)).symm whole
+
+theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a alpha f B R D S Base j t Q E N Rebound Bot SourceTail Y O F Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
+    (hCons : Derives Γ (StructuralListSyntax.consCode w t R D))
+    (hNew : Derives Γ (ForcingReflexiveImages.replacement w f z B Base j Q S))
+    (hOld : Derives Γ (ForcingReflexiveImages.replacement w f z B Base j t E))
+    (hc : Derives Γ (ForcingConditionRebind.compiled w a f alpha j N Rebound))
+    (hSrc : Derives Γ (binaryCode 2 w Rebound Bot SourceTail))
+    (hBot : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 Bot))
+    (hRaw : Derives Γ (query w D S alpha f z B SourceTail Y))
+    (hOldQuery : Derives Γ (query w R E a f z B N O))
+    (hFalse : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 F))
+    (hTail : Derives Γ (binaryCode 2 w O F Tail)) : Derives Γ (.equal Y Tail) := by
+  have canonical := canonical_code hZ w z a alpha f B R D S Base j t Q E N Rebound Bot SourceTail Y O F
+    hw hz ht hCons hNew hOld hc hSrc hBot hRaw hOldQuery hFalse
+  exact SyntaxLogicalFields.binary_unique hZ 2 w O F Y Tail hw canonical hTail
 
 end PPAC.Migration.ForcingRawNegTail

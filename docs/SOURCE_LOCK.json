@@ -175015,7 +175015,8 @@
         "ForcingQuotient.force_mono: neg"
       ],
       "consumers": [
-        "ForcingRawModalBody.consume_negative_root"
+        "ForcingRawModalBody.consume_negative_root",
+        "ForcingRawNegTail.canonical_code"
       ],
       "reuse_producers": [
         "ForcingRebindTerms.from_data",
@@ -175028,7 +175029,7 @@
         "SyntaxLogicalFields.binary_unique"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawNegTail.lean": "d75780ba3ce91e9551ac4d1c05b4eed9d98bdf83006bc215cd101d92f4ac3fac",
+        "PPAC/Migration/ForcingRawNegTail.lean": "4936fdbead116589e155caf8c7fdf51040b7c7c16af36690cab2af1051d6688c",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingRebindTerms.lean": "dc881444473ae87be1afa87d0b12bf85be9d8227cc7546573c1740f59514cf80",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
@@ -175042,9 +175043,14 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawNegTail.canonical_code": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "Original object-theory negative-tail comparison. Reads the actual original rebind compiler at all internal indices. Bound names follow the original successor field through the actual Cons tail; the selected condition follows the original rebound head to Cons zero; the other free fields agree by the two replacements on one base. The existing full formula cancellation transports arbitrary internal child codes. The original falsum and two operand executions determine the actual tail by binary-constructor uniqueness. This comparison is used by the nativeZF closed negative Root certificate in ForcingRawModalBody."
+      "scope": "Original object-theory negative-tail comparison. Reads the actual original rebind compiler at all internal indices. Bound names follow the original successor field through the actual Cons tail; the selected condition follows the original rebound head to Cons zero; the other free fields agree by the two replacements on one base. The existing full formula cancellation transports arbitrary internal child codes. The original falsum and two operand executions determine the actual tail by binary-constructor uniqueness. This comparison is used by the nativeZF closed negative Root certificate in ForcingRawModalBody. The existing comparison now factors through the literal constructor of the actual raw result. It proves the raw code itself is the implication on the original child at the freshly selected condition and original falsum. The old nested proof can be reused at exactly that code."
     },
     "forcing_raw_modal_body": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -175062,7 +175068,11 @@
         "ForcingRawModalBody.old_nested_from_opened",
         "ForcingRawModalBody.old_nested_kernel_certificate",
         "ForcingRawModalBody.transfer_existential_from_frames",
-        "ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate"
+        "ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate",
+        "ForcingRawModalBody.transfer_negative_from_frames",
+        "ForcingRawModalBody.transfer_negative_from_frames_kernel_certificate",
+        "ForcingRawModalBody.transfer_existential_compiled",
+        "ForcingRawModalBody.transfer_existential_compiled_kernel_certificate"
       ],
       "reuse_producers": [
         "ForcingFormulaDiagram.binary_output",
@@ -175079,10 +175089,13 @@
         "ForcingRawGuardOpening.open_overwritten",
         "ForcingRawGuardOpening.eliminate_overwritten",
         "StructuralConsUnique.unique",
-        "SyntaxMixedFormulaJudgmentSubst.subst_r"
+        "SyntaxMixedFormulaJudgmentSubst.subst_r",
+        "ForcingRawNegTail.canonical_code",
+        "ForcingReflexiveImages.exists_replacement",
+        "SyntaxMixedFormulaOutputInduction.actual_exists"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "7a2b9ce0a5e9cff2fe52a8aa41e5cd577f296ed6eff84df68fb0a0aa0cb294e1",
+        "PPAC/Migration/ForcingRawModalBody.lean": "fb25a1e10652ba9d9fa6630b65b38ff6d3fd9d08d6ec688f8515c0bbca6f9a25",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
@@ -175094,9 +175107,12 @@
         "PPAC/Migration/ForcingExistTailComparison.lean": "716b7bb2d40cab4db7e08f20b4eb6b127ddb20fceef165b8a09bc4e7ca5d43b5",
         "PPAC/Migration/ForcingExistTailOpening.lean": "5d244fe331925fe356517f148a749439e69f6ce89ff639e95266872f33eb4843",
         "PPAC/Migration/ForcingNestedGuardProof.lean": "48dcf4514dc73703a462daba0ae99ee25a23d30e30e4f5215c15f2c5d25ccf51",
-        "PPAC/Migration/ForcingRawNegTail.lean": "d75780ba3ce91e9551ac4d1c05b4eed9d98bdf83006bc215cd101d92f4ac3fac",
+        "PPAC/Migration/ForcingRawNegTail.lean": "4936fdbead116589e155caf8c7fdf51040b7c7c16af36690cab2af1051d6688c",
         "PPAC/Migration/ForcingOldParentInstance.lean": "7a0f1d496e810690f8a2a8f2bccd312207bc7fabaeda86d55b991e02d779f1bc",
-        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3"
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
+        "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
+        "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingRawModalBody.data": [
@@ -175348,9 +175364,51 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.negativeFramesInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_negative_from_frames": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_negative_from_frames_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.existentialCompiledInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_existential_compiled": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_existential_compiled_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives over all internal codes and scopes. Original neg/ex compiler and actual fresh-parent opening determine both raw implications and the member/order/tail outputs by object elimination. The existential Root endpoint consumes the original compiler and shell fields, shared preorder row, old tail execution on the same prefixed bound table, old/new condition replacements and existing canonical nested proof. It generates the new raw outputs and carrier, compares member H0 and relation R(r,q) H3, proves tail equality via the existing actual query comparison and transports the same nested proof through constructor uniqueness to the original Root consumer. One nativeZF closed Root certificate with those premises. The negative endpoint consumes the whole original negative compiler, internally opens its five compiler, four shell and four raw-body witnesses, proves all three leaf matches using the same preorder row and actual negative-tail comparison, and feeds the same nested proof through constructor uniqueness to the original Root consumer. The negative endpoint uses the direct child query at the fresh condition and the canonical nested proof. Both nativeZF certificates still require canonical context production from the enclosing monotonicity step; full force_mono and final internal Con remain unproved. The old side now consumes the actual original proof and the same opened compiler record with P2. It produces the old instantiated proof via rule5 and original forall elimination, compares H0/H5, discharges both guards under the existing canonical layout, and produces the canonical nested proof for the old tail, with its two actual body codes and original guarded forall. The paired existential endpoint calls the original overwrite producer twice on one weakened base table, opens both original parents, derives the actual old nested proof, and transports the old tail query by object cons uniqueness to the same bound table before consuming the new Root. The closed nativeZF certificate takes the two overwrite inputs, shared original compiler and shell records and canonical layout. Full compiler-record opening and enclosure in source induction, paired negative transfer and final internal Con remain open."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives for the original negative and existential cases on all internal codes and scopes. The two closed endpoints take the complete original branch compiler, two actual parent queries, two overwrite frames on one weakened base, and the shared preorder row and canonical context. Each eliminates one original compiler and shell record to supply the same literal ALL body to both actual parent openings. Both use original rule 5 and guarded forall elimination to open the old proof, compare H0/H5, discharge both guards and generate the same nested proof via the existing Curry and forall operations. Existential transport aligns the actual prefixed bound lists by object Cons uniqueness and moves the actual old tail query to the new consumer. Negative transport generates the actual selected replacement and original child query at the fresh condition and identifies the literal constructor of the already-produced old tail code. Both discharge new H0/H3/tail matches with the same compiler and consume the new Root. The independent bound scope of the shared preorder row is retained. Integration with the enclosing global context and source induction, full force_mono and final internal Con remain open."
     },
     "forcing_raw_guard_opening": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
