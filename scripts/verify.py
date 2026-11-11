@@ -2789,6 +2789,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_density_code', 'ForcingDensityCode', 33),
                                 ('forcing_source_density_constant', 'ForcingSourceDensityConstant', 10),
                                 ('forcing_density_instantiation', 'ForcingDensityInstantiation', 29),
+                                ('forcing_density_guards', 'ForcingDensityGuards', 9),
                                 ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 25),
                                 ('forcing_atomic_mono', 'ForcingAtomicMono', 11),
                                 ('forcing_atomic_mono_images', 'ForcingAtomicMonoImages', 6),
@@ -2798,7 +2799,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 2),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 60),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 61),
                                 ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
@@ -6202,6 +6203,9 @@ def main(source_check_only: bool = False) -> None:
         "object_source_density_falsum_same_code_trace_proved": True,
         "object_source_density_actual_selected_condition_instance_proved": True,
         "object_source_density_instance_scope": source_lock["source_proof_adaptations"]["forcing_density_instantiation"]["scope"],
+        "object_source_density_instance_guards_aligned_and_conditional_discharge_proved": True,
+        "object_source_density_actual_membership_proof_transported": True,
+        "object_source_density_guards_scope": source_lock["source_proof_adaptations"]["forcing_density_guards"]["scope"],
         "object_source_density_falsum_root_transfer_proved": False,
         "object_source_density_constant_scope": source_lock["source_proof_adaptations"]["forcing_source_density_constant"]["scope"],
         "object_source_dense_full_induction_discharged": False,

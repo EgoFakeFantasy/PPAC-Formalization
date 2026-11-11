@@ -174549,7 +174549,7 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
@@ -175369,7 +175369,7 @@
         "ForcingMemberRows.rowData"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
@@ -175727,6 +175727,11 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.member_query": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
       "scope": "Ordinary nativeZF original FirstOrder.Derives for the original negative and existential cases on all internal codes and scopes. The two closed endpoints take the complete original branch compiler, two actual parent queries, two overwrite frames on one weakened base, and the shared preorder row and canonical context. Each eliminates one original compiler and shell record to supply the same literal ALL body to both actual parent openings. Both use original rule 5 and guarded forall elimination to open the old proof, compare H0/H5, discharge both guards and generate the same nested proof via the existing Curry and forall operations. Existential transport aligns the actual prefixed bound lists by object Cons uniqueness and moves the actual old tail query to the new consumer. Negative transport generates the actual selected replacement and original child query at the fresh condition and identifies the literal constructor of the already-produced old tail code. Both discharge new H0/H3/tail matches with the same compiler and consume the new Root. The independent bound scope of the shared preorder row is retained. Both branches now consume the enclosing GlobalWeakening input and use its single actual weakened layout and right-hand preorder row. They build both actual weakened replacements on its original free list and reuse the original caller-supplied source replacements. The bound-only rebase keeps the global row at its independent empty scope and provides the parent bound column at arbitrary internal arity. The new endpoints conclude the shared object ForcingConjunctionMono.transfer for all pairs of actual parent outputs. Full force_mono and final internal Con remain open."
@@ -176371,7 +176376,7 @@
         "PPAC/Migration/ForcingSourceLogicalMono.lean": "8259bfd5d37b34de82b87849b93eeeb699ef26c2cc00e42b9b3a621b72cfec7a",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
         "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70"
       },
@@ -176489,7 +176494,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
         "PPAC/Migration/InternalProofTemplates.lean": "728f71c00a6ec3c28c882b70093fe46302e2ea27ee4d0b258f6c187619d34a68"
       },
       "exact_declaration_footprints": {
@@ -176839,7 +176844,7 @@
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
         "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/Internal/SyntaxTopFormulaSyntax.lean": "4c80379c4314f1e486a7c3e83644f3fb2b2f5851fb1f9b95c31833adca3830aa"
       },
@@ -177181,6 +177186,126 @@
       },
       "scope": "The original density compiler and its actual mixed query determine an outer ALL. At the selected condition field of that same free table, the original proof of G implying the density query is instantiated. The actual lifted body, native instantiation tables, both implications, all guard and tail queries, and the proof of G implying that precise native instance are retained. The two guards have not yet been discharged by the matching preorder proofs, and the falsum transfer, full density induction and internal Con remain open."
     },
+    "forcing_density_guards": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingDensityGuards.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+      ],
+      "reuse_producers": [
+        "ForcingBinderFormula.native",
+        "ForcingRawGuardOpening.from_compiled",
+        "ForcingRawModalBody.member_query (visibility only)",
+        "ForcingPreorderMember.same_result",
+        "ForcingNegMemberProof.discharge"
+      ],
+      "consumers": [
+        "Actual selected density instance, original member/order guards and existential tail"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingDensityGuards.lean": "da499b7213b0f28e97abd1a01b5e3213ad1491ae429cefb51a68d837a630d3a3",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
+        "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
+        "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
+        "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
+        "PPAC/Migration/ForcingNegMemberProof.lean": "d6471b30c2c55822a1801429b15699c6a990399b719e3e28c3f2e666f7983347"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingDensityGuards.guardPair": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.guardPair_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.discharge": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.discharge_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.from_records": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.input": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.sentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.member_from_proof": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. The current background's membership and reflexivity premises still need to be wired into the falsum transfer. Full density induction and internal Con are open."
+    },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
       "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
@@ -177206,7 +177331,7 @@
         "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
-        "PPAC/Migration/ForcingRawModalBody.lean": "86963ac2e89fc1c4108223324613a6b05f23187d30f92041669ed7f83e2e966e"
+        "PPAC/Migration/ForcingRawModalBody.lean": "0b64e297687d20c8c8f8787aed45539dd90c3690175b24ba0c7d88249fc208f6"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap": [

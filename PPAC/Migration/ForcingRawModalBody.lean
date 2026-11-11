@@ -452,7 +452,7 @@ private theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gam
       SyntaxAtomSyntax.memberCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI (.conjL hc2) code)
   exact of_eq (ForcingMemberGuardOpening.result_rename w P V Y (old 2)).symm out
 
-private theorem member_query {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (Reln : Source.Formula (k+2))
+theorem member_query {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (Reln : Source.Formula (k+2))
     (w z D S a f T head P i V q Y : Fin m)
     (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
     (hhead : Derives Gamma (SyntaxVariableSyntax.code true w z head))

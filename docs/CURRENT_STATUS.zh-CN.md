@@ -6,7 +6,9 @@
 
 ## 最新实际验收
 
-`ForcingDensityInstantiation.kernel_certificate` 读取原稠密性公式的实际全称码，用同一张替换表的指定条件槽作为实例项。它生成 `G → 实例` 的原内部证明，并保留该实例中两个守卫和存在式尾部的精确查询。Windows 整仓验收已通过。两个守卫与预序证明的对应和假常元的最后一步仍待接通。见[当前条件实例验收](../verification/forcing-density-instantiation-acceptance.json)。
+`ForcingDensityGuards.kernel_certificate` 将当前条件实例的两个实际守卫码与同一条件、同一张表上的原守卫查询对齐。在给定两条守卫的内部证明时，它用原规则消去两层蕴含，得到同一个存在式尾部的证明。`member_from_proof` 已能将同一条件和载体的成员性证明传输到这个实例的成员守卫。当前背景中两条守卫证明的提取与自反性实例的接合，以及假常元的存在式消去仍待完成。见[守卫验收](../verification/forcing-density-guards-acceptance.json)。
+
+`ForcingDensityInstantiation.kernel_certificate` 读取原稠密性公式的实际全称码，用同一张替换表的指定条件槽作为实例项。它生成 `G → 实例` 的原内部证明，并保留该实例中两个守卫和存在式尾部的精确查询。Windows 整仓验收已通过。两个守卫的原查询对应见上述证书。见[当前条件实例验收](../verification/forcing-density-instantiation-acceptance.json)。
 
 `ForcingSourceDensityConstant.truth_kernel_certificate` 在普通 nativeZF 原核内，从原编译及实际混合查询取得真常元的内部 `G → 输出` 证明，允许任意内部自由作用域。`false_from_compiler` 在实际假常元查询上保留同一 `⊥` 码和原稠密性见证记录。假常元的内部证明传输还需消去已实例化的两个守卫和存在式尾部。两项已通过 Windows 整仓验收。见[常元验收](../verification/forcing-constant-density-acceptance.json)。
 

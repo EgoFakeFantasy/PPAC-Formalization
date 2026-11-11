@@ -40592,6 +40592,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.existential_rename
 #print axioms PPAC.Migration.ForcingRawModalBody.from_existential
 #print axioms PPAC.Migration.ForcingRawModalBody.consume_matched
+#print axioms PPAC.Migration.ForcingRawModalBody.member_query
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_member
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_order
 #print axioms PPAC.Migration.ForcingRawModalBody.compare_existential_tail
@@ -40792,6 +40793,15 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.input
 #print axioms PPAC.Migration.ForcingDensityInstantiation.sentence
 #print axioms PPAC.Migration.ForcingDensityInstantiation.kernel_certificate
+#print axioms PPAC.Migration.ForcingDensityGuards.guardPair
+#print axioms PPAC.Migration.ForcingDensityGuards.guardPair_rename
+#print axioms PPAC.Migration.ForcingDensityGuards.discharge
+#print axioms PPAC.Migration.ForcingDensityGuards.discharge_rename
+#print axioms PPAC.Migration.ForcingDensityGuards.from_records
+#print axioms PPAC.Migration.ForcingDensityGuards.input
+#print axioms PPAC.Migration.ForcingDensityGuards.sentence
+#print axioms PPAC.Migration.ForcingDensityGuards.kernel_certificate
+#print axioms PPAC.Migration.ForcingDensityGuards.member_from_proof
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance
