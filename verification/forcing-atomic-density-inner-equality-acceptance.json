@@ -1,0 +1,54 @@
+{
+  "baseline_commit": "c93b068ff6273e8f8ac5a50b581d5b64b4138997",
+  "recorded_at": "2026-11-11T14:32:24.678212+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order"
+  ],
+  "scope": "The actual inner order guard code agrees with the actual canonical output. The selected free condition slot reads the second lift's bound-zero field, the old bound head reads bound one, and all other free fields follow the same closed values through both lifts. The quoted variable-image cancellation is shared with the outer guard.",
+  "canonical_inner_order_code_equality_proved": true,
+  "canonical_atomic_witness_code_equality_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40211,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "1ed8a14291f5a7d8ed4de2d56447dcef9287074fc41a47c0bd0865b265b12129",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "255b08aee2f307f6b6ae2d6419b54f9c11f1be64fdabda18425a5c9c2b221f15",
+      "README.md": "ca33df2ee379c981689dd9acbbffc754f117579d3bdd8bb470ccd25a273fa299",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "ec57b6ea28fbe83cc53e7971fa3d0d58bfb98bda2aea8d8a749253d45b0e31c2",
+      "docs/CURRENT_STATUS.zh-CN.md": "d1f184f09ba276565b950c07b4cc5282d92c0f52f6166e7698c202c18526a4a3",
+      "docs/SOURCE_LOCK.json": "3ac9876e882e0438c906a945448fea1c7316604ba5f72e358035d5de63e331e8",
+      "scripts/verify.py": "7b97ff2d5861fee7796d328f84cd606e84b063e7abb27315c274129cb0d7ce8e"
+    }
+  },
+  "baseline_declarations_compared": 40210,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
