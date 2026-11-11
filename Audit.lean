@@ -40888,6 +40888,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_order_from_row
+#print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness

@@ -468,6 +468,103 @@ private theorem reflexive_member_at_query {k m} {Γ : Context m} (hZ : ZFContext
     (of_eq (substituted_rename w D Base A f z b M Im ρ) (carry hQuery))
   simpa only [out, ρ, SourceAlgebra.rename_comp, Function.comp_def, ForcingMemberGuardOpening.result_rename] using result
 
+
+private theorem member_guard_at_singleton {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z t f b D Base p M Y i V : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hV : Derives Γ (field w Base i V))
+    (hForest : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => p) D))
+    (hQuote : Derives Γ (PureQuotationSyntax.formula (ForcingGuardCode.template false Reln) w M))
+    (hQuery : Derives Γ (substituted w D Base t f z b M Y)) :
+    Derives Γ (ForcingMemberGuardOpening.result w p V Y) := by
+  let bound : PureSyntaxQuotation.Original.Tree := .node 0 [PureSyntaxQuotation.Original.leaf 0]
+  let out := ForcingMemberGuardOpening.result w p V Y
+  have hField := Derives.impE (.conjR (SyntaxForestFieldValues.field_at hZ 1 w (fun _ => p)
+    D 0 z p hw hForest hz)) (.eqRefl p)
+  have hRaw : Derives Γ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexiveLeaf Reln false) w M) :=
+    of_eq (congrArg (fun tree => OriginalTreeQuotationSyntax.tree tree w M)
+      ((ForcingGuardCode.member_template_tree Reln).trans (ForcingPreorderCode.reflexive_member_tree Reln).symm)) hQuote
+  refine with_tree_quote hZ bound w hw out ?_
+  intro l Δ r hZ1 lift head hHead
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  apply of_eq (ForcingMemberGuardOpening.result_rename w p V Y r).symm
+  exact reflexive_member_at_query hZ1 Reln (r w) (r z) (r t) (r f) (r b) (r D) (r Base)
+    (r p) head (r M) (r Y) (r i) (r V) hw1 hz1
+    (OriginalQuotationVariableFields.variable_of_tree hZ1 true 0 (r w) (r z) head hw1 hz1 hHead)
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hi))
+    (of_eq (field_rename _ _ _ _ r) (lift hField)) (of_eq (field_rename _ _ _ _ r) (lift hV))
+    (of_eq (PureQuotationSyntax.formula_rename _ _ _ r) (lift hRaw))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hQuery))
+
+private theorem member_guard_result {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z f b p Base A head M Y i V : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i)) (hV : Derives Γ (field w Base i V))
+    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b p Base A head M Y)) :
+    Derives Γ (ForcingMemberGuardOpening.result w p V Y) := by
+  let out := ForcingMemberGuardOpening.result w p V Y
+  refine eliminate_objects hZ 4 (fun r u => ForcingGuardOpening.data false Reln
+    (r w) (r z) (r f) (r b) (r p) (r Base) (r A) (r head) (r M) (r Y) u) hGuard out ?_
+  intro l Δ r u hZ1 lift hData
+  refine eliminate_objects hZ1 1 (fun s v =>
+    (SyntaxForestSyntax.forest 1 (s (r w)) (fun _ => s (r p)) (v 0)).conj
+      (substituted (s (r w)) (v 0) (s (r Base)) (s (u 0)) (s (r f)) (s (r z)) (s (r b))
+        (s (u 1)) (s (r Y)))) (.conjR hData) (out.rename r) ?_
+  intro l' Ξ s v hZ2 move hBody
+  let ρ := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hQuote := Derives.conjL (.conjL (.conjR (.conjL hData)))
+  have hResult := member_guard_at_singleton hZ2 Reln (ρ w) (ρ z) (s (u 0)) (ρ f) (ρ b) (v 0)
+    (ρ Base) (ρ p) (s (u 1)) (ρ Y) (ρ i) (ρ V)
+    (of_eq (omega_rename w ρ) (carry hw)) (of_eq (empty_rename z ρ) (carry hz))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ i ρ) (carry hi))
+    (of_eq (field_rename _ _ _ _ ρ) (carry hV)) (.conjL hBody)
+    (of_eq (PureQuotationSyntax.formula_rename _ _ _ s) (move hQuote)) (.conjR hBody)
+  simpa only [out, ρ, SourceAlgebra.rename_comp, Function.comp_def, ForcingMemberGuardOpening.result_rename] using hResult
+
+/-- The membership guard at an opened condition and the corresponding
+original preorder row have the same literal member code. Both read the
+same actual carrier field from the retained free table. -/
+theorem witness_member_from_row {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2)) (j : Fin 3)
+    (w z A1 A2 A3 f b C R0 Base Refl Pre A head M Y i : Fin m)
+    (raw : Fin 16 → Fin m) (G : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U I P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (V : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k i))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V))
+    (hGuard : Derives Γ (ForcingGuardOpening.result false Reln w z f b (P j) Base A head M Y)) :
+    Derives Γ (.equal (H (ForcingPreorderMember.memberPosition j)) Y) := by
+  let leaf := ForcingPreorderMember.memberPosition j
+  let out := Formula.equal (H leaf) Y
+  have hIf := SyntaxNumeralMembers.index_member hZ (k+2) (Fin.last k).castSucc f i hf hi
+  have hiW := StructuralListTraceOrder.member_member hZ w i f hw (.conjL hBase) hIf
+  refine eliminate_objects hZ 1 (fun r x => (Formula.mem (x 0) (r w)).conj (field (r w) (r Base) (r i) (x 0)))
+    (StructuralListFieldValues.exists_value hZ w Base i hw hiW) out ?_
+  intro l Δ r x hZ1 lift hField
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hi1 := of_eq (SyntaxNumeralSyntax.numeral_rename _ i r) (lift hi)
+  have hOld := ForcingPreorderMember.raw_from_data hZ1 test Reln j (r w) (r z) (r A1) (r A2) (r A3)
+    (r f) (r b) (r C) (r R0) (r Base) (r Refl) (r Pre) (r i) (x 0)
+    (r ∘ raw) (r ∘ G) (r ∘ H) (r ∘ U) (r ∘ I) (r ∘ P) (r ∘ N) (r ∘ V)
+    hw1 hz1 (of_eq (SyntaxNumeralSyntax.numeral_rename _ A1 r) (lift hA1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ A2 r) (lift hA2)) hi1
+    (of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow))
+    (.conjR hField)
+  have hNew := member_guard_result hZ1 Reln (r w) (r z) (r f) (r b) (r (P j)) (r Base) (r A)
+    (r head) (r M) (r Y) (r i) (x 0) hw1 hz1 hi1 (.conjR hField)
+    (of_eq (ForcingGuardOpening.result_rename false Reln _ _ _ _ _ _ _ _ _ _ r) (lift hGuard))
+  exact ForcingPreorderMember.same_result hZ1 (r w) (r (P j)) (x 0) (r (H leaf)) (r Y) hw1 hOld hNew
+
 private theorem with_reflexive_direct {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z A C f b B Base K H p M Dm Im : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
