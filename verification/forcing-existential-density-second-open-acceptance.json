@@ -1,0 +1,72 @@
+{
+  "baseline_commit": "b59f5c084adbc752c98436419ffb33ed203a57e5",
+  "recorded_at": "2026-11-11T20:24:47.439133+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityGuards.order_from_row",
+    "PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body"
+  ],
+  "scope": "Open the actual second existential at the fresh condition and successor already used by the original preorder. Retain the member, order and name-existential queries. Replay native transitivity under the actual fresh row background and extend the existing order leaf matcher to all three source relation leaves.",
+  "second_actual_witness_opened_at_existing_fresh_condition": true,
+  "same_name_existential_retained": true,
+  "fresh_row_background_derives_transitive_order": true,
+  "actual_witness_body_guards_matched_to_fresh_row": false,
+  "transitive_order_replayed_under_actual_witness_body": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40264,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "059ec2d29ddf1acd0bc5bfe40bde34c7fa0b23cba6652ab682edad075caba805",
+      "PPAC/Migration/ForcingDensityGuards.lean": "beb509fda0991e57a427715d4436b2e6c0a9f7c2ecebda1abff879a17ebdcaa6",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "c1d67dafdac323a8e43a70774ef9c03ee10e7dbaa1ba37ce5e9270baf20cb4ef",
+      "PPAC/Migration/ForcingSourceDensity.lean": "5c35954242ea60e76fb8f912ad570c3f825c1563631cbb2a8794dcd7e31e2289",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "edad5c9a4868a3b04c742145ba2801e542bd6cfb8e4b193683d5d33eee41bb8c",
+      "docs/CURRENT_STATUS.zh-CN.md": "1edfb2218e4180160d0e16ce074d8a6aaaa758566250678f27e1b70846007a83",
+      "docs/SOURCE_LOCK.json": "bea76d222336e495ca9d02576bf62169c46277f74289cbb7241136fc3bb4056f",
+      "scripts/verify.py": "d3864d8e76b5cd2f723a32b02ca94d7dc711db2243dfb37a4a39b3e1e7ceddf1"
+    }
+  },
+  "baseline_declarations_compared": 40262,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityGuards.order_from_row": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

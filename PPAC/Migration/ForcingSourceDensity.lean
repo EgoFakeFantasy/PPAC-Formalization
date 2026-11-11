@@ -1528,7 +1528,8 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
       (Br Fresh Rr Sr Nr Sq Name Extra Local OrderR TailR Bound Pfx TailS : Fin l)
       (ds : Fin 5 → Fin l) (v : Fin 10 → Fin l) (u : Fin 9 → Fin l)
       (Refl Pre U0 : Fin 2 → Fin l) (P : Fin 2 → Fin 3 → Fin l)
-      (nextImages : Fin 10 → Fin l) (rows : Fin 48 → Fin l) (layout : Fin 6 → Fin l),
+      (nextImages : Fin 10 → Fin l) (rows : Fin 48 → Fin l) (layout : Fin 6 → Fin l)
+      (secondImages : Fin 10 → Fin l) (secondOpen : Fin 9 → Fin l) (secondFields : Fin 4 → Fin l),
       ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename ρ)) →
       Derives Δ (ForcingFreshParentOpening.quantifiedData false (ρ w) (ρ z) (ρ A) (ρ f) (ρ B)
         (ρ d) (ρ c) Br (P 0 1) Bound (ρ (images 9)) (ds 2) (ds 1) TailR v u) →
@@ -1545,6 +1546,15 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
       Derives Δ (ForcingExistTailOpening.scopeResult (ρ w) Pfx Nr (ρ A) (ρ f) (ρ z) Br TailS
         Sr (ρ j) (P 0 1) (ForcingExistTailOpening.shellCodes (ρ (cv 4)) (ρ (cv 5))
           (ρ (cv 6)) (ρ (cv 7)) (ρ ∘ sv))) →
+      Derives Δ (ForcingFreshParentOpening.quantifiedData false (ρ w) (ρ z) (ρ A) (ρ f) (ρ B)
+        Br (ρ c) Fresh (P 1 0) Pfx Nr (ρ (sv 4)) (ρ (sv 3)) TailS secondImages secondOpen) →
+      Derives Δ (ForcingRawModalBody.nestedData 0 (ρ w) (secondOpen 7) (secondImages 9) (ρ B) (ρ f)
+        (ρ z) Fresh (ρ (cv 4)) (ρ (cv 5)) (ρ (sv 1)) (ρ (sv 2)) (secondOpen 8) secondFields) →
+      Derives Δ (let freshRow : Fin 24 → Fin l := fun i => rows (i.addNat 24)
+        let background := ForcingMemberRows.backgroundFields freshRow 0
+        let guards := ForcingMemberRows.leafFields freshRow
+        (implication test (ρ w) (ρ z) Fresh background (guards 0)).conj
+          (implication test (ρ w) (ρ z) Fresh background (guards 5))) →
       Derives Δ (implication test (ρ w) (ρ z) Br Local TailS) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   refine ForcingDensityInstantiation.with_existential_density_witness hZ Reln Dom w z a A B C f j N Child
@@ -1672,6 +1682,12 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
   have hLayout := Derives.conjR (.conjR (.conjR hGlobal))
   have hw5 := of_eq (omega_rename _ r1) (lift5 hw)
   have hz5 := of_eq (empty_rename _ r1) (lift5 hz)
+  let freshRow : Fin 24 → Fin l5 := fun k => rows (k.addNat 24)
+  have hFreshRow := Derives.conjL (.conjR (.conjR hRows))
+  have hOrderProof := ForcingTransitiveGuardProof.at_background hZ6 test (r2 w) (r2 z) (δ Fresh)
+    (r2 c) (Refl 1) (Pre 1) (ForcingMemberRows.backgroundFields freshRow) (ForcingMemberRows.leafFields freshRow)
+    (ForcingMemberRows.nativeFields (U0 1) freshRow) (ForcingMemberRows.proofFields freshRow) (P 1)
+    (ForcingMemberRows.tailFields freshRow) hw5 hz5 (.conjL (.conjL (.conjR hFreshRow)))
   have hTerm : Derives Δ5 (SyntaxTermSyntax.term (r2 w) (r2 z) (r1 Br) (P 0 1)) := by
     rw [er]
     exact of_eq (SyntaxTermSyntax.term_rename _ _ _ _ r1) (lift5 hr)
@@ -1705,31 +1721,66 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r1) (lift5 hAtR))
     (of_eq (formulaCode_rename _ _ _ _ r1) (lift5 (.conjR hLocal))) pGlobal
     (of_eq (implication_rename test _ _ _ _ _ r1) (lift5 pAtR)) (out.rename r2) ?_
-  intro l6 Δ6 η Pfx TailS hZ7 transport hPfx _ hPrepared pTailS
-  let ρ := η ∘ r2
-  let ε := η ∘ r1
-  have lift7 {F : Formula m} (p : Derives Γ F) : Derives Δ6 (F.rename ρ) :=
+  intro l6 Δ6 η Pfx TailS hZ7 transport hPfx hTail hPrepared pTailS
+  let sMap := η ∘ r2
+  let fresh := η (δ Fresh)
+  have lift7 {F : Formula m} (p : Derives Γ F) : Derives Δ6 (F.rename sMap) :=
     of_eq (SourceAlgebra.rename_comp F r2 η) (transport (lift6 p))
-  have open1 {F : Formula l} (p : Derives Δ F) : Derives Δ6 (F.rename ε) :=
-    of_eq (SourceAlgebra.rename_comp F r1 η) (transport (lift5 p))
-  have hOpen7 := of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  have hFreshData := Derives.conjL (.conjR hGlobal)
+  have hsCode := Derives.conjL (.conjR hFreshData)
+  have hsTerm := Derives.conjL (.conjR (.conjR hFreshData))
+  have hsScope := of_eq (successor_rename _ _ (η ∘ δ))
+    (of_eq (SourceAlgebra.rename_comp _ δ η) (transport (finish hFresh)))
+  have shell7 := of_eq (ForcingExistCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ sv sMap) (lift7 hShell)
+  have hBody := Derives.conjR (.conjR shell7)
+  apply of_eq (SourceAlgebra.rename_comp out r2 η).symm
+  refine ForcingDensityInstantiation.with_fresh_existential_body hZ7
+    (sMap w) (sMap z) (sMap A) (sMap B) (sMap f) (η (r1 Br)) (sMap c) fresh (η (P 1 0))
+    Pfx (η (r1 Fr)) (sMap (sv 4)) (sMap (sv 3)) TailS (sMap (cv 4)) (sMap (cv 5))
+    (sMap (sv 1)) (sMap (sv 2))
+    (of_eq (omega_rename _ η) (transport hw5)) (of_eq (empty_rename _ η) (transport hz5))
+    (of_eq (successor_rename _ _ sMap) (lift7 hB))
+    (of_eq (successor_rename _ _ (η ∘ r1)) (of_eq (SourceAlgebra.rename_comp _ r1 η) (transport (lift5 hc))))
+    hsScope (of_eq (SyntaxVariableSyntax.code_rename _ _ _ _ η) (transport hsCode))
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ η) (transport hsTerm))
+    (.conjL (.conjL (.conjR (.conjR hBody)))) (.conjL (.conjL (.conjR hBody))) (.conjL (.conjL hBody))
+    hTail (out.rename sMap) ?_
+  intro l7 Δ7 ν secondImages secondOpen secondFields hZ8 last hSecondOpen hSecondFields
+  let secondMap := ν ∘ η
+  let ρ := secondMap ∘ r2
+  let ε := secondMap ∘ r1
+  have carryRuntime {F : Formula l5} (p : Derives Δ5 F) : Derives Δ7 (F.rename secondMap) :=
+    of_eq (SourceAlgebra.rename_comp F η ν) (last (transport p))
+  have lift8 {F : Formula m} (p : Derives Γ F) : Derives Δ7 (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r2 secondMap) (carryRuntime (lift6 p))
+  have open1 {F : Formula l} (p : Derives Δ F) : Derives Δ7 (F.rename ε) :=
+    of_eq (SourceAlgebra.rename_comp F r1 secondMap) (carryRuntime (lift5 p))
+  have hOpen8 := of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _
     v u ε) (open1 hOpen)
-  have er7 : (η ∘ P 0) 1 = ε r := congrArg η er
-  rw [← er7] at hOpen7
-  exact of_eq (SourceAlgebra.rename_comp out r2 η).symm
-    (use ρ (ε Br) (η (δ Fresh)) (η (δ (n Rr))) (η (δ (n (g (baseV 9))))) (ε Fr) (η (δ (i (y 0))))
-      (ε Name) (ε Extra) (ε Local) (ε (x 2)) (ε TailR) (ε Bound) Pfx TailS
-      (ε ∘ ds) (ε ∘ v) (ε ∘ u) (η ∘ Refl) (η ∘ Pre) (η ∘ U0) (fun t => η ∘ P t)
-      (η ∘ nextImages) (η ∘ rows) (η ∘ layout) hZ7 lift7 hOpen7
-      (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ ε) (open1 hWeakExtra))
-      (of_eq (by simp only [FormulaCodeConstructSyntax.typedAt_rename, SyntaxAtomSyntax.two_map]; rfl)
-        (open1 hLocal))
-      (of_eq (implication_rename test _ _ _ _ _ ε) (open1 pTailR))
-      (of_eq (ForcingRawModalBody.globalModalInput_rename test Reln (r2 w) (r2 z) (r2 a) (r2 f) (r2 j)
-        (r1 Br) (δ Fresh) (δ (n Rr)) (δ (n (g (baseV 9)))) (r1 Name) (δ (i (y 0))) (r1 Fr)
-        (r2 A1) (r2 A2) (r2 A3) (r2 K) (r1 Extra) (r2 ∘ raw) nextImages (fun _ => r2 c) Refl Pre U0 P rows layout η) (transport hRuntime))
-      (of_eq (by rfl) (transport hOrderEq))
-      (of_eq (implication_rename test _ _ _ _ _ η) (transport pGlobal)) hPfx hPrepared pTailS)
+  have er8 : (secondMap ∘ P 0) 1 = ε r := congrArg secondMap er
+  rw [← er8] at hOpen8
+  apply of_eq (SourceAlgebra.rename_comp out sMap ν).symm
+  exact use ρ (ε Br) (secondMap (δ Fresh)) (secondMap (δ (n Rr))) (secondMap (δ (n (g (baseV 9))))) (ε Fr) (secondMap (δ (i (y 0))))
+    (ε Name) (ε Extra) (ε Local) (ε (x 2)) (ε TailR) (ε Bound) (ν Pfx) (ν TailS)
+    (ε ∘ ds) (ε ∘ v) (ε ∘ u) (secondMap ∘ Refl) (secondMap ∘ Pre) (secondMap ∘ U0) (fun t => secondMap ∘ P t)
+    (secondMap ∘ nextImages) (secondMap ∘ rows) (secondMap ∘ layout) secondImages secondOpen secondFields hZ8 lift8 hOpen8
+    (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ ε) (open1 hWeakExtra))
+    (of_eq (by simp only [FormulaCodeConstructSyntax.typedAt_rename, SyntaxAtomSyntax.two_map]; rfl)
+      (open1 hLocal))
+    (of_eq (implication_rename test _ _ _ _ _ ε) (open1 pTailR))
+    (of_eq (ForcingRawModalBody.globalModalInput_rename test Reln (r2 w) (r2 z) (r2 a) (r2 f) (r2 j)
+      (r1 Br) (δ Fresh) (δ (n Rr)) (δ (n (g (baseV 9)))) (r1 Name) (δ (i (y 0))) (r1 Fr)
+      (r2 A1) (r2 A2) (r2 A3) (r2 K) (r1 Extra) (r2 ∘ raw) nextImages (fun _ => r2 c) Refl Pre U0 P rows layout secondMap)
+      (carryRuntime hRuntime))
+    (of_eq (by rfl) (carryRuntime hOrderEq))
+    (of_eq (implication_rename test _ _ _ _ _ secondMap) (carryRuntime pGlobal))
+    (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ ν) (last hPfx))
+    (of_eq (ForcingExistTailOpening.scopeResult_rename _ _ _ _ _ _ _ _ _ _ _
+      (ForcingExistTailOpening.shellCodes (sMap (cv 4)) (sMap (cv 5)) (sMap (cv 6)) (sMap (cv 7)) (sMap ∘ sv)) ν)
+      (last hPrepared))
+    hSecondOpen hSecondFields
+    (of_eq (by simp only [Formula.rename, implication_rename]; rfl) (carryRuntime hOrderProof))
+    (of_eq (implication_rename test _ _ _ _ _ ν) (last pTailS))
 
 private theorem curry_into {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b G A C D Y : Fin m)
