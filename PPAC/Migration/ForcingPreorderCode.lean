@@ -1067,4 +1067,20 @@ theorem reflexive_member_tree {n} (R : Source.Formula (n+2)) :
     PureSyntaxQuotation.termTree, hIndex]
   rfl
 
+theorem reflexive_relation {n} (R : Source.Formula (n+2)) :
+    reflexiveLeaf R true = Syntax.formula
+      (Fin.lastCases (.bvar .here)
+        (Fin.lastCases (.bvar .here) (fun i => .fvar (fo_bound_variable i.castSucc.castSucc)))) R := by
+  simp only [reflexiveLeaf, reflexiveBody, reflexive, template, native_source,
+    source, ForcingAtomicBasic.preorder, Syntax.formula, andLeft, allBody, impRight,
+    ReplacementPredicates.rel, Source.SetLanguage.relation, Syntax.rename]
+  change Syntax.formula _ R = _
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Syntax.lift, Fin.lastCases_last, Term.weakenBound_fvar]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;>
+      simp only [Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc,
+        Term.weakenBound_fvar]
+
 end PPAC.Migration.ForcingPreorderCode

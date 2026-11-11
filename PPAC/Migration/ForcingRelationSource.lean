@@ -67,6 +67,16 @@ theorem guard_source {n} (R : Source.Formula (n+2)) :
   rw [source_substitute]
   exact (ForcingGuardCode.relation_template R).symm
 
+/-- The two relation arguments in the reflexivity body are the same bound slot. -/
+def diagonalMap (n : Nat) : NativeSubstitutionSyntax.Mapping (fo_bound_context (n+2)) (fo_bound_context 1) (fo_bound_context (n+2)) :=
+  mapping (arguments (.bvar .here) (.bvar .here))
+
+theorem diagonal_source {n} (R : Source.Formula (n+2)) :
+    (source R).substituteMapped emptyMap (diagonalMap n) = ForcingPreorderCode.reflexiveLeaf R true := by
+  unfold diagonalMap
+  rw [source_substitute]
+  exact (ForcingPreorderCode.reflexive_relation R).symm
+
 theorem atom_source {n} (R : Source.Formula (n+2)) (i : Fin 3) :
     (source R).substituteMapped emptyMap (atomMap n i) = atom R i := by
   unfold atomMap

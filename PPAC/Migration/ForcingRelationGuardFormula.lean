@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingRelationImages
 import PPAC.Migration.ForcingBinderFormula
+import PPAC.Migration.NativeProofQuotation
 
 /-! Full formula cancellation for the ACTUAL original guard route from
 SAME bare R source versus the generated argument-table route. The existing
@@ -25,71 +26,104 @@ theorem path_rename {m l} (w z f t c d B F V K B0 D n u v y : Fin m) (ρ : Fin m
     path (ρ w) (ρ z) (ρ f) (ρ t) (ρ c) (ρ d) (ρ B) (ρ F) (ρ V) (ρ K) (ρ B0) (ρ D) (ρ n) (ρ u) (ρ v) (ρ y) := by
   simp only [path, Formula.rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
 
-private theorem term_diagram {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z f t c d S L R i j M D B F V K B0 I J IB IF : Fin m)
-    (hF : Derives Γ (ForcingRelationImages.guardFrame (k := k) w z f t c d S L R i j M D B F V K))
-    (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
-    (hJ : Derives Γ (SyntaxIdentityMapSyntax.identityCode w f J))
-    (he : Derives Γ (IndexTermImageCodeSyntax.environment w I J IB IF z f z f)) :
-    Derives Γ (ForcingTermDiagram.diagram w (four z z t c) (four f f f d) (four IB B V B0) (four IF F K D)) := by
-  apply OriginalUniversalBlock.intro_many 5
-  apply Derives.impI
-  let E := (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 IB) (old 5 IF) (old 5 z) (old 5 f) (old 5 z) (old 5 f) (slot 5 0) (slot 5 1)).conj
-    ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B) (old 5 F) (old 5 z) (old 5 f) (old 5 t) (old 5 f) (slot 5 1) (slot 5 2)).conj
-      ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 V) (old 5 K) (old 5 t) (old 5 f) (old 5 c) (old 5 d) (slot 5 2) (slot 5 3)).conj
-        (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B0) (old 5 D) (old 5 z) (old 5 f) (old 5 c) (old 5 d) (slot 5 0) (slot 5 4))))
-  let Δ := Context.add E (raisedContext 5 Γ)
-  have hE : Derives Δ E := .hyp (Or.inl rfl)
-  have hZ5 := HornBinderRules.zf_body 5 hZ E
-  have hF5 := of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K (old 5)) (HornBinderRules.under_body 5 hF E)
-  have hI5 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w z I (old 5)) (HornBinderRules.under_body 5 hI E)
-  have hJ5 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w f J (old 5)) (HornBinderRules.under_body 5 hJ E)
-  have he5 := of_eq (IndexTermImageCodeSyntax.environment_rename w I J IB IF z f z f (old 5)) (HornBinderRules.under_body 5 he E)
-  have hEq := ForcingBinderFormula.identity_term_output hZ5 (old 5 w) (old 5 z) (old 5 f) (old 5 I) (old 5 J) (old 5 IB) (old 5 IF)
-    (slot 5 0) (slot 5 1) (Derives.conjL hF5) hI5 hJ5 he5 (Derives.conjL hE)
-  have hNative := SyntaxMixedFormulaAtomicSubst.term_source (old 5 w) (old 5 B) (old 5 F) (old 5 z) (old 5 f) (old 5 t) (old 5 f)
-    (slot 5 1) (slot 5 2) (slot 5 0) (eq_symm hEq) (Derives.conjL (Derives.conjR hE))
-  exact ForcingRelationImages.guard_term hZ5 (old 5 w) (old 5 z) (old 5 f) (old 5 t) (old 5 c) (old 5 d)
-    (old 5 S) (old 5 L) (old 5 R) (old 5 i) (old 5 j) (old 5 M) (old 5 D) (old 5 B) (old 5 F) (old 5 V) (old 5 K)
-    (old 5 B0) (slot 5 0) (slot 5 2) (slot 5 3) (slot 5 4) hF5
-    (.conjI hNative (.conjI (Derives.conjL (Derives.conjR (Derives.conjR hE))) (Derives.conjR (Derives.conjR (Derives.conjR hE)))))
-
-private theorem at_identity {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z f t c d S L R i j M D B F V K B0 I J IB IF n u v y : Fin m)
-    (hF : Derives Γ (ForcingRelationImages.guardFrame (k := k) w z f t c d S L R i j M D B F V K))
+private theorem compare_with_identity {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d B F V K B0 D I J IB IF n u v y : Fin m)
+    (hw : Derives Γ (omega w))
     (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
     (hJ : Derives Γ (SyntaxIdentityMapSyntax.identityCode w f J))
     (he : Derives Γ (IndexTermImageCodeSyntax.environment w I J IB IF z f z f))
-    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y)) : Derives Γ (.equal v y) := by
-  have hw := Derives.conjL hF
+    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ x p q a : Fin l,
+      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
+        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+    Derives Γ (.equal v y) := by
+  let bounds := four z z t c
+  let bs := four f f f d
+  let rs := four IB B V B0
+  let ss := four IF F K D
+  have diagram : Derives Γ (ForcingTermDiagram.diagram w bounds bs rs ss) := by
+    apply OriginalUniversalBlock.intro_many 5
+    apply Derives.impI
+    let E := (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 IB) (old 5 IF)
+      (old 5 z) (old 5 f) (old 5 z) (old 5 f) (slot 5 0) (slot 5 1)).conj
+      ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B) (old 5 F)
+        (old 5 z) (old 5 f) (old 5 t) (old 5 f) (slot 5 1) (slot 5 2)).conj
+        ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 V) (old 5 K)
+          (old 5 t) (old 5 f) (old 5 c) (old 5 d) (slot 5 2) (slot 5 3)).conj
+          (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B0) (old 5 D)
+            (old 5 z) (old 5 f) (old 5 c) (old 5 d) (slot 5 0) (slot 5 4))))
+    let Δ := Context.add E (raisedContext 5 Γ)
+    have hE : Derives Δ E := .hyp (Or.inl rfl)
+    have hZ5 := HornBinderRules.zf_body 5 hZ E
+    have lift {P : Formula m} (h : Derives Γ P) := HornBinderRules.under_body 5 h E
+    have hEq := ForcingBinderFormula.identity_term_output hZ5 (old 5 w) (old 5 z) (old 5 f)
+      (old 5 I) (old 5 J) (old 5 IB) (old 5 IF) (slot 5 0) (slot 5 1)
+      (of_eq (omega_rename w (old 5)) (lift hw))
+      (of_eq (SyntaxIdentityMapSyntax.identityCode_rename w z I (old 5)) (lift hI))
+      (of_eq (SyntaxIdentityMapSyntax.identityCode_rename w f J (old 5)) (lift hJ))
+      (of_eq (IndexTermImageCodeSyntax.environment_rename w I J IB IF z f z f (old 5)) (lift he))
+      (.conjL hE)
+    have hNative := SyntaxMixedFormulaAtomicSubst.term_source (old 5 w) (old 5 B) (old 5 F)
+      (old 5 z) (old 5 f) (old 5 t) (old 5 f) (slot 5 1) (slot 5 2) (slot 5 0)
+      (eq_symm hEq) (.conjL (.conjR hE))
+    exact compare (old 5) hZ5 lift (slot 5 0) (slot 5 2) (slot 5 3) (slot 5 4)
+      (.conjI hNative (.conjR (.conjR hE)))
   have h0 := Derives.conjL hP
   have ht := SyntaxMixedFormulaJudgmentTyping.source_type hZ w B F z f t f n u hw h0
   have hi := SyntaxIdentityInduction.reflexive hZ w I J z f n hw hI hJ ht
-  have hId := Derives.impE (Derives.conjL (IndexFormulaRenameBridge.rename_iff hZ w I J IB IF z f z f n n hw he)) hi
-  have hd := term_diagram hZ w z f t c d S L R i j M D B F V K B0 I J IB IF hF hI hJ he
-  exact ForcingFormulaInduction.cancel hZ w (four z z t c) (four f f f d) (four IB B V B0) (four IF F K D)
-    n n u v y hw hd hId h0 (Derives.conjL (Derives.conjR hP)) (Derives.conjR (Derives.conjR hP))
+  have hId := Derives.impE (.conjL (IndexFormulaRenameBridge.rename_iff hZ w I J IB IF z f z f n n hw he)) hi
+  exact ForcingFormulaInduction.cancel hZ w bounds bs rs ss n n u v y hw diagram hId h0
+    (.conjL (.conjR hP)) (.conjR (.conjR hP))
 
-private theorem at_codes {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z f t c d S L R i j M D B F V K B0 I J n u v y : Fin m)
-    (hF : Derives Γ (ForcingRelationImages.guardFrame (k := k) w z f t c d S L R i j M D B F V K))
-    (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
-    (hJ : Derives Γ (SyntaxIdentityMapSyntax.identityCode w f J))
-    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y)) : Derives Γ (.equal v y) := by
-  have he := IndexTermImageEnvironment.exists_environment hZ w I J z f z f (Derives.conjL hF)
-    (SyntaxIdentityCode.map_code w z I hI) (SyntaxIdentityCode.map_code w f J hJ)
-  let E := IndexTermImageCodeSyntax.environment (old 2 w) (old 2 I) (old 2 J) (slot 2 0) (slot 2 1) (old 2 z) (old 2 f) (old 2 z) (old 2 f)
-  let Δ := Context.add E (raisedContext 2 Γ)
-  apply HornBinderRules.eliminate_many 2 E _ he
-  have hE : Derives Δ E := .hyp (Or.inl rfl)
-  have hZ2 := HornBinderRules.zf_body 2 hZ E
-  have hF2 := of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K (old 2)) (HornBinderRules.under_body 2 hF E)
-  have hI2 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w z I (old 2)) (HornBinderRules.under_body 2 hI E)
-  have hJ2 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w f J (old 2)) (HornBinderRules.under_body 2 hJ E)
-  have hP2 := of_eq (path_rename w z f t c d B F V K B0 D n u v y (old 2)) (HornBinderRules.under_body 2 hP E)
-  exact at_identity hZ2 (old 2 w) (old 2 z) (old 2 f) (old 2 t) (old 2 c) (old 2 d) (old 2 S) (old 2 L) (old 2 R)
-    (old 2 i) (old 2 j) (old 2 M) (old 2 D) (old 2 B) (old 2 F) (old 2 V) (old 2 K) (old 2 B0) (old 2 I) (old 2 J)
-    (slot 2 0) (slot 2 1) (old 2 n) (old 2 u) (old 2 v) (old 2 y) hF2 hI2 hJ2 hE hP2
+
+private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d B F V K B0 D n u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (.mem f w))
+    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ x p q a : Fin l,
+      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
+        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+    Derives Γ (.equal v y) := by
+  let out := Formula.equal v y
+  have hzW := OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz
+  refine NativeProofQuotation.eliminate_objects hZ 1
+    (fun r x => SyntaxIdentityMapSyntax.identityCode (r w) (r z) (x 0))
+    (SyntaxIdentityCode.exists_code hZ w z hw hzW) out ?_
+  intro l Δ r x hZ1 lift hI
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hf1 : Derives Δ (.mem (r f) (r w)) := lift hf
+  refine NativeProofQuotation.eliminate_objects hZ1 1
+    (fun s xs => SyntaxIdentityMapSyntax.identityCode (s (r w)) (s (r f)) (xs 0))
+    (SyntaxIdentityCode.exists_code hZ1 (r w) (r f) hw1 hf1) (out.rename r) ?_
+  intro l' Δ' s ys hZ2 lift2 hJ
+  let ρ := s ∘ r
+  have hw2 := of_eq (omega_rename (r w) s) (lift2 hw1)
+  have hI2 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename (r w) (r z) (x 0) s) (lift2 hI)
+  have env := IndexTermImageEnvironment.exists_environment hZ2 (ρ w) (s (x 0)) (ys 0)
+    (ρ z) (ρ f) (ρ z) (ρ f) hw2
+    (SyntaxIdentityCode.map_code (ρ w) (ρ z) (s (x 0)) hI2)
+    (SyntaxIdentityCode.map_code (ρ w) (ρ f) (ys 0) hJ)
+  refine NativeProofQuotation.eliminate_objects hZ2 2 (fun a q =>
+    IndexTermImageCodeSyntax.environment (a (ρ w)) (a (s (x 0))) (a (ys 0))
+      (q 0) (q 1) (a (ρ z)) (a (ρ f)) (a (ρ z)) (a (ρ f))) env ((out.rename r).rename s) ?_
+  intro l'' Δ'' a q hZ3 lift3 hEnv
+  let σ := a ∘ ρ
+  have carry {P : Formula m} (h : Derives Γ P) : Derives Δ'' (P.rename σ) := by
+    simpa only [σ, ρ, SourceAlgebra.rename_comp, Function.comp_def] using lift3 (lift2 (lift h))
+  have hI3 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename (ρ w) (ρ z) (s (x 0)) a) (lift3 hI2)
+  have hJ3 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename (ρ w) (ρ f) (ys 0) a) (lift3 hJ)
+  have result := compare_with_identity hZ3 (σ w) (σ z) (σ f) (σ t) (σ c) (σ d)
+    (σ B) (σ F) (σ V) (σ K) (σ B0) (σ D) (a (s (x 0))) (a (ys 0)) (q 0) (q 1)
+    (σ n) (σ u) (σ v) (σ y) (of_eq (omega_rename w σ) (carry hw)) hI3 hJ3 hEnv
+    (of_eq (path_rename w z f t c d B F V K B0 D n u v y σ) (carry hP)) (by
+      intro l3 Δ3 r3 hZ4 lift4 x0 p0 q0 a0 hPath
+      exact compare (r3 ∘ σ) hZ4
+        (fun h => of_eq (SourceAlgebra.rename_comp _ σ r3) (lift4 (carry h))) x0 p0 q0 a0 hPath)
+  simpa only [out, σ, ρ, Formula.rename, SourceAlgebra.rename_comp, Function.comp_def] using result
 
 /-- ALL internal formulas, including nonstandard codes, with arbitrary
 internal target scopes c,d. Four auxiliary identity codes/tables are
@@ -100,30 +134,15 @@ theorem formula {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hF : Derives Γ (ForcingRelationImages.guardFrame (k := k) w z f t c d S L R i j M D B F V K))
     (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y)) : Derives Γ (.equal v y) := by
   have hw := Derives.conjL hF
-  have hz := Derives.conjL (Derives.conjR hF)
-  have hzW := SyntaxNumerals.range hZ 0 w z hw hz
-  let E := SyntaxIdentityMapSyntax.identityCode w.castSucc z.castSucc (Fin.last m)
-  let Δ := Context.add E (Context.image Formula.raise Γ)
-  apply Derives.exE (p := E) (SyntaxIdentityCode.exists_code hZ w z hw hzW)
-  have hE : Derives Δ E := .hyp (Or.inl rfl)
-  have hZ1 := ZFContext.under hZ E
-  have hF1 := of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K Fin.castSucc) (under hF E)
-  have hP1 := of_eq (path_rename w z f t c d B F V K B0 D n u v y Fin.castSucc) (under hP E)
-  have hw1 := Derives.conjL hF1
-  have hf1 := Derives.conjL (Derives.conjR (Derives.conjR hF1))
-  have hfW := SyntaxNumerals.range hZ1 (k+2) w.castSucc f.castSucc hw1 hf1
-  let Q := SyntaxIdentityMapSyntax.identityCode w.castSucc.castSucc f.castSucc.castSucc (Fin.last (m+1))
-  let Ξ := Context.add Q (Context.image Formula.raise Δ)
-  apply Derives.exE (p := Q) (SyntaxIdentityCode.exists_code hZ1 w.castSucc f.castSucc hw1 hfW)
-  have hQ : Derives Ξ Q := .hyp (Or.inl rfl)
-  have hZ2 := ZFContext.under hZ1 Q
-  have hF2 := of_eq (ForcingRelationImages.guardFrame_rename (k := k) w.castSucc z.castSucc f.castSucc t.castSucc c.castSucc d.castSucc S.castSucc L.castSucc R.castSucc i.castSucc j.castSucc M.castSucc D.castSucc B.castSucc F.castSucc V.castSucc K.castSucc Fin.castSucc) (under hF1 Q)
-  have hI2 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w.castSucc z.castSucc (Fin.last m) Fin.castSucc) (under hE Q)
-  have hP2 := of_eq (path_rename w.castSucc z.castSucc f.castSucc t.castSucc c.castSucc d.castSucc B.castSucc F.castSucc V.castSucc K.castSucc B0.castSucc D.castSucc n.castSucc u.castSucc v.castSucc y.castSucc Fin.castSucc) (under hP1 Q)
-  exact at_codes hZ2 w.castSucc.castSucc z.castSucc.castSucc f.castSucc.castSucc t.castSucc.castSucc c.castSucc.castSucc d.castSucc.castSucc
-    S.castSucc.castSucc L.castSucc.castSucc R.castSucc.castSucc i.castSucc.castSucc j.castSucc.castSucc M.castSucc.castSucc D.castSucc.castSucc
-    B.castSucc.castSucc F.castSucc.castSucc V.castSucc.castSucc K.castSucc.castSucc B0.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))
-    n.castSucc.castSucc u.castSucc.castSucc v.castSucc.castSucc y.castSucc.castSucc hF2 hI2 hQ hP2
+  have hz := Derives.conjL (.conjR hF)
+  have hf := Derives.conjL (.conjR (.conjR hF))
+  apply compare_paths hZ w z f t c d B F V K B0 D n u v y hw hz
+    (SyntaxNumerals.range hZ (k+2) w f hw hf) hP
+  intro l Δ r hZ1 lift x p q a hPath
+  exact ForcingRelationImages.guard_term hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r S) (r L)
+    (r R) (r i) (r j) (r M) (r D) (r B) (r F) (r V) (r K) (r B0) x p q a
+    (of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K r)
+      (lift hF)) hPath
 
 def sentence {k m : Nat} (w z f t c d S L R i j M D B F V K B0 n u v y : Fin m) : Source.Sentence :=
   (((ForcingRelationImages.guardFrame (k := k) w z f t c d S L R i j M D B F V K).conj
@@ -160,6 +179,41 @@ theorem from_source {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R : Sou
     .conjI hw (.conjI hz (.conjI hf (.conjI he (.conjI hd (.conjI hV hK)))))
   exact formula hZ w z f t c d S P Q i j M D (E 2) (E 3) V K B0 X G v y hF (.conjI hNative (.conjI hGuard hCommon))
 
+/-- Turn the supplied comparison of actual term queries into the actual
+direct substitution of the same formula. The direct output is generated. -/
+theorem to_direct_from_terms {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d B F V K B0 D n u v : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (.mem f w))
+    (hB0 : Derives Γ (SyntaxMixedImageCodeSyntax.termList w z c d B0))
+    (hD : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f c d D))
+    (h0 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B F z f t f n u))
+    (h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V K t f c d u v))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ x p q a : Fin l,
+      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
+        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+    Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n v) := by
+  let out := SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n v
+  have ht := SyntaxMixedFormulaJudgmentTyping.source_type hZ w B F z f t f n u hw h0
+  have existsDirect := SyntaxMixedFormulaOutputInduction.actual_exists hZ w B0 D z f c d n hw
+    (.conjI ht (.conjI hB0 hD))
+  refine NativeProofQuotation.eliminate_objects hZ 1 (fun r q =>
+    SyntaxMixedFormulaJudgmentSyntax.substituted (r w) (r B0) (r D) (r z) (r f) (r c) (r d) (r n) (q 0))
+    existsDirect out ?_
+  intro l Δ r q hZ1 lift hCandidate
+  have h01 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B F z f t f n u r) (lift h0)
+  have h11 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w V K t f c d u v r) (lift h1)
+  have hEq := compare_paths hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r B) (r F) (r V) (r K)
+    (r B0) (r D) (r n) (r u) (r v) (q 0) (of_eq (omega_rename w r) (lift hw))
+    (of_eq (empty_rename z r) (lift hz)) (lift hf) (.conjI h01 (.conjI h11 hCandidate)) (by
+      intro l' Δ' s hZ2 lift2 x p q a hPath
+      exact compare (s ∘ r) hZ2
+        (fun h => of_eq (SourceAlgebra.rename_comp _ r s) (lift2 (lift h))) x p q a hPath)
+  exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B0 D z f c d n v r).symm
+    (SyntaxMixedFormulaJudgmentSubst.subst_q (r w) (r B0) (r D) (r z) (r f) (r c) (r d)
+      (r n) (q 0) (r v) (eq_symm hEq) hCandidate)
+
 /-- Generate the common direct query INTERNALLY and rewrite its output
 to the SAME actual guard output. No common query/output is an input. -/
 theorem to_direct {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -170,24 +224,17 @@ theorem to_direct {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V K t f c d u v)) :
     Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n v) := by
   have hw := Derives.conjL hF
-  have ht := SyntaxMixedFormulaJudgmentTyping.source_type hZ w B F z f t f n u hw h0
-  have hData := Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hF))))
+  have hz := Derives.conjL (.conjR hF)
+  have hf := Derives.conjL (.conjR (.conjR hF))
+  have hData := Derives.conjL (.conjR (.conjR (.conjR (.conjR hF))))
   have hD := ForcingRelationImages.target_type k w f c d S L R i j M D hData
-  have hex := SyntaxMixedFormulaOutputInduction.actual_exists hZ w B0 D z f c d n hw (.conjI ht (.conjI hB0 hD))
-  let E := SyntaxMixedFormulaJudgmentSyntax.substituted w.castSucc B0.castSucc D.castSucc z.castSucc f.castSucc c.castSucc d.castSucc n.castSucc (Fin.last m)
-  let Δ := Context.add E (Context.image Formula.raise Γ)
-  apply Derives.exE (p := E) hex
-  have hE : Derives Δ E := .hyp (Or.inl rfl)
-  have hZ1 := ZFContext.under hZ E
-  have hF1 := of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K Fin.castSucc) (under hF E)
-  have h01 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B F z f t f n u Fin.castSucc) (under h0 E)
-  have h11 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w V K t f c d u v Fin.castSucc) (under h1 E)
-  have hEq := formula hZ1 w.castSucc z.castSucc f.castSucc t.castSucc c.castSucc d.castSucc S.castSucc L.castSucc R.castSucc
-    i.castSucc j.castSucc M.castSucc D.castSucc B.castSucc F.castSucc V.castSucc K.castSucc B0.castSucc n.castSucc u.castSucc v.castSucc (Fin.last m)
-    hF1 (.conjI h01 (.conjI h11 hE))
-  have hout := SyntaxMixedFormulaJudgmentSubst.subst_q w.castSucc B0.castSucc D.castSucc z.castSucc f.castSucc c.castSucc d.castSucc
-    n.castSucc (Fin.last m) v.castSucc (eq_symm hEq) hE
-  exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B0 D z f c d n v Fin.castSucc).symm hout
+  apply to_direct_from_terms hZ w z f t c d B F V K B0 D n u v hw hz
+    (SyntaxNumerals.range hZ (k+2) w f hw hf) hB0 hD h0 h1
+  intro l Δ r hZ1 lift x p q a hPath
+  exact ForcingRelationImages.guard_term hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r S) (r L)
+    (r R) (r i) (r j) (r M) (r D) (r B) (r F) (r V) (r K) (r B0) x p q a
+    (of_eq (ForcingRelationImages.guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K r)
+      (lift hF)) hPath
 
 /-- Actual common-source consumer, with no supplied common-query answer. -/
 theorem from_source_to_direct {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R : Source.Formula (n+2)) (leaf : Fin 3)

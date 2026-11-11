@@ -169610,7 +169610,8 @@
       "consumers": [
         "Actual original preorder raw row for ForcingTransitiveGuardProof; subsequent mixed opening and native three-instance row remains pending",
         "ForcingDensityGuards.with_reflexive_instances",
-        "ForcingDensityGuards.reflexive_member_agrees"
+        "ForcingDensityGuards.reflexive_member_agrees",
+        "ForcingDensityGuards.reflexive_order_agrees"
       ],
       "reuse_producers": [
         "Literal existing ForcingAtomicBasic.preorder; all constructor shapes checked by rfl",
@@ -169621,7 +169622,7 @@
       ],
       "scope": "For arbitrary fixed external source relation R, internally produces all sixteen correctly scoped original raw quotation codes and all nine exact AND/ALL/IMP constructor fields. Three carrier antecedents and two relation antecedents, direction R(r,q), R(q,p) -> R(r,p), unchanged. Only omega and numeral metadata 0/1/2/3/(n+2) are inputs; no quotation output, target code/proof, preorder truth or guard truth. Original source free/bound scopes are fixed raw metadata, not restrictions on later runtime target codes. Private single-witness lemmas avoid sixteen nested context expansion. Includes an ordinary nativeZF original-kernel certificate. Actual mixed target opening, three native runtime instances, guard identification, canonical context/fresh forall assembly, uniform monotonicity/density/forcingMP, all-internal Proof/reduction/finalCon remain unproved. Append-only metadata readout of the SAME actual native roles/AST: original guard is literal R(q,p), and original preorder relation leaves are literal R(r,q),R(q,p),R(r,p). Existing Syntax.rename/substitute/old_formula are reused, with no new formula induction. Original source bytes and old public footprints are preserved; full target guard-code cancellation remains unproved. Append-only exact metadata for the three original member AST leaves is now also exposed; all original proof bodies and old footprints preserved.",
       "certificate_source_files": {
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/Internal/PureQuotationTypedFormulas.lean": "a893d1091b517f795e6bbcb1004e4a5e6c754c5a45aa9b91bb3d307292e8bd10",
@@ -169781,6 +169782,11 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingPreorderCode.reflexive_relation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -169813,7 +169819,7 @@
       "scope": "From omega, fixed raw-source numeral metadata, a legal actual free term table, target bound successor and THREE legal arbitrary internal terms, produces the actual original quotation, empty bound table, actual parent and child target substitutions, THREE native instances, FIVE IMP fields, FIVE typed local-background conjunction codes and the original internal conditional member/order proofs. Target free scope, term indices and runtime codes may be internally nonstandard; only pinned finite source quotation metadata are numerals. No source/target quotation answer, target preorder code, row, background code/proof or guard/preorder truth is supplied. Ordinary original nativeZF kernel certificate. The exact equalities with ForcingNegCondition/ForcingGuardOpening guard compiler codes, canonical local-context reordering/freshness/forall assembly, complete force_mono/force_of_dense/forcingMP, all-internal axioms/Proof/reduction/finalCon remain unproved. Existing open_target visibility promoted only for SAME raw source freshening reuse; proof body and all other source bytes identical to committed donor. No new native instance producer.",
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
@@ -170172,7 +170178,7 @@
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/Internal/SyntaxMixedFormulaEndpoints.lean": "39c182c223136e945a4dbf84113a4e6399587e036196afbeccb39b8bc747f4e7",
         "PPAC/Migration/Internal/SyntaxMixedFormulaAdvancedOutput.lean": "b25f5dba4c0a23e74abb4be8e68d58bd1b55b78c0364e93641f94a13cc8707cd",
         "PPAC/Migration/Internal/SyntaxCodedMixedBinderExistence.lean": "6e7d4833d11e437495db5afb18a1fc6389fbc161824e6b35512b2f9510f04805",
@@ -170314,7 +170320,8 @@
         "Directly consumes ForcingPreorderCode.rawData and actual ForcingGuardCode.compiled true",
         "Generates the SAME source R quotation and all FOUR actual native term-image tables, proving actual mixed queries from SAME R to the selected raw relation leaf and original guard quotation",
         "Internally handles all FOUR compiler witnesses and FIVE common-source witnesses, preserving full actual guard matrix/head and arbitrary internal guard scope",
-        "Next consumer: exact two-path pointwise target-code cancellation against ForcingPreorderPrefix and ForcingGuardOpening direct outputs"
+        "Next consumer: exact two-path pointwise target-code cancellation against ForcingPreorderPrefix and ForcingGuardOpening direct outputs",
+        "ForcingDensityGuards.reflexive_order_agrees"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingGuardCode.lean",
@@ -170327,9 +170334,9 @@
         "PPAC/Migration/Internal/HornBinderRules.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/SyntaxTransport.lean": "a55b7e59d15b59049c58e6c119e3b6bd49a8ea6353fe41c0809ace606ec3b5ee",
         "PPAC/Migration/ProjectNativeRenaming.lean": "d256b5dae396aa0c6ef969b3c3e52eaeda077e89b4b0b8d2f9a01f66b511b85f",
         "PPAC/Migration/Internal/NativeFormulaQuotationCorrespondence.lean": "79a113514a7972f4fd2f9189ec6f561aa59067ee8e4db3ca6acfdf2ccc597b85",
@@ -170472,6 +170479,15 @@
         "PPAC.Migration.ForcingRelationSource.raw_quotation": [
           "propext",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationSource.diagonalMap": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRelationSource.diagonal_source": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -170490,7 +170506,8 @@
       "consumers": [
         "ForcingRelationImages.produce generates both actual slot numerals and both replacement tables inside object existentials, retaining the original forcing table",
         "ForcingRelationImages.guard_term consumes SAME actual native guard map/query, singleton-bound guard opening and original free-p update, and actual bare-R direct query; proves output equality for ALL internal terms",
-        "Next: specialize existing full formula cancellation to this guard term comparison and exact raw preorder prefix path; whole leaf/guard identity remains pending"
+        "Next: specialize existing full formula cancellation to this guard term comparison and exact raw preorder prefix path; whole leaf/guard identity remains pending",
+        "ForcingDensityGuards.reflexive_order_agrees"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingRelationSource.lean",
@@ -170505,8 +170522,8 @@
         "PPAC/Migration/ProjectNativeRenaming.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/Internal/TermImageQuotationFields.lean": "a37d32c41ec07e2ef5d3ab901648155e21c8e7f74291aa9b593ea0414d3dbae1",
         "PPAC/Migration/Internal/OriginalQuotationVariableFields.lean": "181665171afa897c105fb0cbe90ebcf0f2abd3ef7224b7fa2b290eb6ac674169",
@@ -170664,6 +170681,11 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingRelationImages.diagonal_term": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -170683,7 +170705,8 @@
         "formula: specialize EXISTING full internal formula cancellation to actual guard two-path term comparison; four identity index/image codes internally generated/eliminated",
         "from_source: consumes SAME ForcingRelationSource.data native guard mapping/query, preserving same source R record/raw relation query",
         "from_source_to_direct: internally generates common bare-R query and proves it reaches SAME actual guard output; no independent common-query/output answer supplied",
-        "Next: raw preorder prefix path cancellation, SAME member/order leaf codes and actual negative/existential guard identities"
+        "Next: raw preorder prefix path cancellation, SAME member/order leaf codes and actual negative/existential guard identities",
+        "ForcingDensityGuards.reflexive_order_agrees"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingBinderFormula.lean",
@@ -170699,10 +170722,10 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/Internal/SyntaxIdentityCode.lean": "0fcfdf31ee781127a766773e07a255845cd8295219c7d3b4fdf311f45efb2ce9",
@@ -170778,6 +170801,11 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingRelationGuardFormula.to_direct_from_terms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -170812,8 +170840,8 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/Internal/StructuralListLengthConstruct.lean": "1ea9ba8d08af88664273dd986e1f96c9a9c25197d61eb7f36a4289a515664964",
         "PPAC/Migration/Internal/SyntaxForestSyntax.lean": "b66d174cd3d4ff97fc5cf65a87abf05b07161b349c33403df0b8770e8b403f9e",
         "PPAC/Migration/Internal/SyntaxForestFieldValues.lean": "486371f1c7f15955edab41ba94ce19f17d22795797eda9623c0ca640a31ae215",
@@ -170898,8 +170926,8 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
@@ -171003,7 +171031,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
@@ -171136,7 +171164,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingPreorderLeafTarget.lean": "c40cc8c06da3d8b91fe671384c30cd8a57c21499842ad2365ceb96cb963ac80e",
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
@@ -171255,7 +171283,7 @@
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
         "PPAC/Migration/ForcingPreorderLeafTarget.lean": "c40cc8c06da3d8b91fe671384c30cd8a57c21499842ad2365ceb96cb963ac80e",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
@@ -171365,8 +171393,8 @@
         "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",
         "PPAC/Migration/ForcingPreorderLeaves.lean": "27ee5e2cde04e58e89d437aa41e8117f0f35ab8fecdae0df422bb6031152a104",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
@@ -172259,7 +172287,7 @@
         "PPAC/Migration/ForcingExistDomainSource.lean": "9ee16ce203575caa730b61efeabd5faf9057cdd546240918f3e8e07ab799ea53",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/Internal/NativeSubstitutionEnvironment.lean": "3749c5b2225e03bca3e32a08a3edde8bf5d866a990c2af97e845d745f9f5b86f",
         "PPAC/Migration/Internal/NativeFormulaQuotationCorrespondence.lean": "79a113514a7972f4fd2f9189ec6f561aa59067ee8e4db3ca6acfdf2ccc597b85",
         "PPAC/Migration/Internal/OriginalTreeQuotationExistence.lean": "f5093291eb748b1b8a9e3e45e6d9e250d93c6380cf0a36f624ffedfd8b11d77c",
@@ -172495,7 +172523,7 @@
         "PPAC/Migration/ForcingExistDomainSource.lean": "9ee16ce203575caa730b61efeabd5faf9057cdd546240918f3e8e07ab799ea53",
         "PPAC/Migration/ForcingExistDomainImages.lean": "29828ebef9a2dcfa3ae59bca50caad9b09d698574f12ccb9472fd3be9922f485",
         "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
@@ -173816,7 +173844,7 @@
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingReindexedImages.lean": "5248436d3b24dc2bade2b256035eff3e7606535112a578f45acff86548d3c9b7",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/Internal/StructuralListCodeInduction.lean": "284406bc2b9c5f650da01bad4c70a38d74a2ade83f39274a59aabc74cd16c6fb",
         "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
         "PPAC/Migration/Internal/SyntaxMixedImageCodeUnique.lean": "31f52613f290b5432ad103e2af916df7cf7a673f55735865b587651c1db0d52b",
@@ -174311,8 +174339,8 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/ForcingMemberRows.lean": "dc038bf03f7446f39b2aa6b8485a2e63119950dff27f712c55417037f4dcb1b5",
-        "PPAC/Migration/ForcingRelationSource.lean": "5fc5f804ff84b4faa08489ce9c470b5cf9bd84b15f737fd94733e50972f521ad",
-        "PPAC/Migration/ForcingRelationImages.lean": "ff417cd361311cd744a6a49b775d4b59d42af8daa976f5c8d989a0cb82acfbf0",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
         "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
         "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
@@ -174574,7 +174602,7 @@
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "9b1c18156285041565208d67edd6ba114c0a6170eab934a963b75a385a2b7d62",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "93d7293cfe5b26c78003a8dfb2a5561ce7a213a2891652e117d112bff8a0bb6b",
@@ -175796,7 +175824,7 @@
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "818f5a1ed7921d8ec758a1d9efa4837d478b6800f066394c90fc14c50fe9dd14",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9",
         "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
         "PPAC/Migration/Internal/StructuralListFieldCons.lean": "51d8a13233519f8253070ad7deca887fa1baf6f42a1f4b3166b06e5383b76d6f",
         "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b"
@@ -176127,7 +176155,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "9b1c18156285041565208d67edd6ba114c0a6170eab934a963b75a385a2b7d62",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
@@ -176230,7 +176258,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "9b1c18156285041565208d67edd6ba114c0a6170eab934a963b75a385a2b7d62",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
@@ -176313,7 +176341,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "9b1c18156285041565208d67edd6ba114c0a6170eab934a963b75a385a2b7d62",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
@@ -177247,16 +177275,22 @@
         "ForcingMixedUnary.single_output",
         "ForcingFormulaDiagram.binary_output",
         "ForcingPreorderCode.reflexive_member_tree",
-        "ForcingRawModalBody.member_atom (visibility only)"
+        "ForcingRawModalBody.member_atom (visibility only)",
+        "ForcingPreorderCode.reflexive_relation",
+        "ForcingRelationSource.diagonal_source",
+        "ForcingRelationImages.diagonal_term",
+        "ForcingRelationGuardFormula.to_direct_from_terms"
       ],
       "consumers": [
         "Actual selected density instance, original member/order guards and existential tail",
         "ForcingDensityGuards.tail_from_row",
         "ForcingDensityGuards.with_reflexive_instances",
-        "ForcingDensityGuards.reflexive_member_agrees"
+        "ForcingDensityGuards.reflexive_member_agrees",
+        "ForcingDensityGuards.reflexive_order_agrees",
+        "ForcingDensityGuards.tail_from_compilers"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityGuards.lean": "57302255689cc1d29da3b436fba4cfe16bbc896edcd88399fb0d63f250ab5803",
+        "PPAC/Migration/ForcingDensityGuards.lean": "57010915a05a28e49cafa03f9ac4e7b0c74ebb2902ba298778754bf7edf45a98",
         "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
@@ -177266,10 +177300,13 @@
         "PPAC/Migration/ForcingAtomicMono.lean": "93d7293cfe5b26c78003a8dfb2a5561ce7a213a2891652e117d112bff8a0bb6b",
         "PPAC/Migration/ForcingPreorderGuardTables.lean": "89c91931d377c912add0689f6831cd86fcc841c46f6a457f46a3fed13cabbf09",
         "PPAC/Migration/ForcingRelationGuardProof.lean": "4718ab469fa479f75beff7c1c054f3180b2474682cc38164ca37f6a6ddbc093c",
-        "PPAC/Migration/ForcingPreorderCode.lean": "dd60472e476558910d77a96ed267b0b2793d61f40a14efb4384e94f1b477d156",
+        "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
         "PPAC/Migration/ForcingPreorderInstances.lean": "8145589b7338bdbecff43e6775caaa5f4847d4ca386b463e4131c11baba7a3ac",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
-        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8"
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
+        "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingDensityGuards.guardPair": [
@@ -177390,9 +177427,26 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.tail_from_compilers": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. The current background's membership and reflexivity premises still need to be wired into the falsum transfer. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. Order-code equality and elimination of the existential tail are still required."
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. The current background's membership and reflexivity premises still need to be wired into the falsum transfer. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The witness elimination that derives the original falsum code is still required."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",

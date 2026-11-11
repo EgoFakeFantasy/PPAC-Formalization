@@ -1,0 +1,84 @@
+{
+  "baseline_commit": "e75bf80335caeeccf036eb698e66aae502d7c30c",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.tail_from_compilers",
+  "scope": "Both actual reflexivity instances have the exact pointwise density guard codes at the selected condition. The original internally coded proof rules discharge both guards from the compiler records and produce G → Tail, where Tail is the same actual existential density code.",
+  "reflexive_member_instance_aligned_with_density_guard": true,
+  "reflexive_order_instance_aligned_with_density_guard": true,
+  "both_guards_discharged_from_actual_compiler_records": true,
+  "falsum_existential_elimination_proved": false,
+  "falsum_root_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T09:18:19.021362+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40128,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "staged_source_sha256": {
+      "PPAC/Migration/ForcingPreorderCode.lean": "ee8d2d0050e332baa211eec485f1cfd3eeea9ef2e173f529f171b97bde16bead",
+      "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
+      "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
+      "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9",
+      "PPAC/Migration/ForcingDensityGuards.lean": "57010915a05a28e49cafa03f9ac4e7b0c74ebb2902ba298778754bf7edf45a98"
+    }
+  },
+  "baseline_declarations_compared": 40121,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingPreorderCode.reflexive_relation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationSource.diagonalMap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationSource.diagonal_source": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationImages.diagonal_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRelationGuardFormula.to_direct_from_terms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.tail_from_compilers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axioms": []
+}

@@ -39925,6 +39925,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationSource.guardResult
 #print axioms PPAC.Migration.ForcingRelationSource.guardResult_rename
 #print axioms PPAC.Migration.ForcingRelationSource.guard_source
+#print axioms PPAC.Migration.ForcingRelationSource.diagonalMap
+#print axioms PPAC.Migration.ForcingRelationSource.diagonal_source
 #print axioms PPAC.Migration.ForcingRelationSource.input
 #print axioms PPAC.Migration.ForcingRelationSource.kernel_certificate
 #print axioms PPAC.Migration.ForcingRelationSource.leftIndex
@@ -39952,6 +39954,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationImages.guard_parameter_path
 #print axioms PPAC.Migration.ForcingRelationImages.guard_right_path
 #print axioms PPAC.Migration.ForcingRelationImages.guard_term
+#print axioms PPAC.Migration.ForcingRelationImages.diagonal_term
 #print axioms PPAC.Migration.ForcingRelationImages.input
 #print axioms PPAC.Migration.ForcingRelationImages.kernel_certificate
 #print axioms PPAC.Migration.ForcingRelationImages.left_field
@@ -39978,6 +39981,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.path_rename
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.sentence
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct_from_terms
 
 #print axioms PPAC.Migration.ForcingRelationRawFormula.formula
 #print axioms PPAC.Migration.ForcingRelationRawFormula.from_prefix
@@ -39998,6 +40002,7 @@ import PPAC.Auxiliary
 
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_p
 #print axioms PPAC.Migration.ForcingPreorderCode.reflexive_member_tree
+#print axioms PPAC.Migration.ForcingPreorderCode.reflexive_relation
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_q
 #print axioms PPAC.Migration.ForcingPreorderCode.atom_member_r
 #print axioms PPAC.Migration.ForcingPreorderLeafTarget.at_target
@@ -40811,6 +40816,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.with_reflexive_instances
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees
+#print axioms PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees
+#print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

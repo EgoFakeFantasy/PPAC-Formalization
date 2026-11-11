@@ -414,6 +414,42 @@ private theorem guard_index_point {k m : Nat} {Γ : Context m} (hZ : ZFContext.E
   · intro hI
     exact guard_parameter_path hZ p w z f t c d S L R i j M D B F V K B0 I x u v y hw hf he hd hK hI hx h0 h1 h2
 
+private theorem on_source_variable {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (n : Nat) (w z f x : Fin m)
+    (hz : Derives Γ (empty z)) (hf : Derives Γ (SyntaxNumeralSyntax.numeral n f))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z f x)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ (p : Fin n) (I : Fin l),
+      Derives Δ (SyntaxNumeralSyntax.numeral p.val I) →
+      Derives Δ (SyntaxVariableSyntax.code false (r w) I (r x)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  apply Derives.disjE (.conjR ht)
+  · let E := SyntaxTermSyntax.branch true w z x
+    let Q := SyntaxTermSyntax.branchWitness true w z x
+    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
+    apply SyntaxTermSyntax.eliminate_branch true w z x _ (.hyp (Or.inl rfl))
+    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
+    have hz1 := of_eq (empty_rename z Fin.castSucc) (under (add hz E) Q)
+    exact .botE (.impE (OmegaSyntax.empty_at z.castSucc (Fin.last m) hz1) (.conjL hQ))
+  · let E := SyntaxTermSyntax.branch false w f x
+    let Q := SyntaxTermSyntax.branchWitness false w f x
+    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
+    apply SyntaxTermSyntax.eliminate_branch false w f x _ (.hyp (Or.inl rfl))
+    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
+    have hZ1 := ZFContext.under (ZFContext.add hZ E) Q
+    let r := Fin.castSucc (n := m)
+    let I := Fin.last m
+    have lift {P : Formula m} (h : Derives Γ P) : Derives Δ (P.rename r) := under (add h E) Q
+    have hf1 := of_eq (SyntaxNumeralSyntax.numeral_rename n f r) (lift hf)
+    have below := Derives.impE (.conjL (SyntaxNumeralMembers.member_iff hZ1 n (r f) I hf1)) (.conjL hQ)
+    have cases := SyntaxPositionSyntax.below_imp n I (out.rename r) (fun p => by
+      apply Derives.impI
+      let A := SyntaxNumeralSyntax.numeral p.val I
+      exact use r (ZFContext.add hZ1 A) (fun h => add (lift h) A) p I
+        (.hyp (Or.inl rfl)) (add (.conjR hQ) A))
+    exact .impE cases below
+
 /-- Full INTERNAL term comparison for the original guard route versus the
 same bare-R argument table. All source terms and candidates are object
 variables. Source f is the fixed R arity; target c,d/codes remain arbitrary.
@@ -424,32 +460,137 @@ theorem guard_term {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z f t c d S L R i j M D B F V K B0 x u v y : Fin m)
     (hF : Derives Γ (guardFrame (k := k) w z f t c d S L R i j M D B F V K))
     (hP : Derives Γ (guardPath w z f t c d B F V K B0 D x u v y)) : Derives Γ (.equal v y) := by
-  have ht := SyntaxCodedMixedTermTyping.source_type w B F z f t f x u (Derives.conjL hP)
-  apply Derives.disjE (Derives.conjR ht)
-  · let E := SyntaxTermSyntax.branch true w z x
-    let Q := SyntaxTermSyntax.branchWitness true w z x
-    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
-    apply SyntaxTermSyntax.eliminate_branch true w z x _ (.hyp (Or.inl rfl))
-    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
-    have hz := Derives.conjL (Derives.conjR hF)
-    have hz1 := of_eq (SyntaxNumeralSyntax.numeral_rename 0 z Fin.castSucc) (under (add hz E) Q)
-    exact .botE (.impE (OmegaSyntax.empty_at z.castSucc (Fin.last m) hz1) (Derives.conjL hQ))
-  · let E := SyntaxTermSyntax.branch false w f x
-    let Q := SyntaxTermSyntax.branchWitness false w f x
-    let Δ := Context.add Q (Context.image Formula.raise (Context.add E Γ))
-    apply SyntaxTermSyntax.eliminate_branch false w f x _ (.hyp (Or.inl rfl))
-    have hQ : Derives Δ Q := .hyp (Or.inl rfl)
-    have hZ1 := ZFContext.under (ZFContext.add hZ E) Q
-    have hF1 := of_eq (guardFrame_rename (k := k) w z f t c d S L R i j M D B F V K Fin.castSucc) (under (add hF E) Q)
-    have hP1 := of_eq (guardPath_rename w z f t c d B F V K B0 D x u v y Fin.castSucc) (under (add hP E) Q)
-    have hf1 := Derives.conjL (Derives.conjR (Derives.conjR hF1))
-    have hBelow := Derives.impE (Derives.conjL (SyntaxNumeralMembers.member_iff hZ1 (k+2) f.castSucc (Fin.last m) hf1)) (Derives.conjL hQ)
-    have hCases := SyntaxPositionSyntax.below_imp (k+2) (Fin.last m) (.equal v.castSucc y.castSucc) (fun p => by
-      apply Derives.impI
-      exact guard_index_point (ZFContext.add hZ1 _) p w.castSucc z.castSucc f.castSucc t.castSucc c.castSucc d.castSucc
-        S.castSucc L.castSucc R.castSucc i.castSucc j.castSucc M.castSucc D.castSucc B.castSucc F.castSucc V.castSucc K.castSucc
-        B0.castSucc (Fin.last m) x.castSucc u.castSucc v.castSucc y.castSucc (add hF1 _) (add hP1 _) (.hyp (Or.inl rfl)) (add (Derives.conjR hQ) _))
-    exact Derives.impE hCases hBelow
+  have hz := Derives.conjL (.conjR hF)
+  have hf := Derives.conjL (.conjR (.conjR hF))
+  have ht := SyntaxCodedMixedTermTyping.source_type w B F z f t f x u (.conjL hP)
+  apply on_source_variable hZ (k+2) w z f x hz hf ht (.equal v y)
+  intro l Δ r hZ1 lift pos I hI hx
+  exact guard_index_point hZ1 pos (r w) (r z) (r f) (r t) (r c) (r d)
+    (r S) (r L) (r R) (r i) (r j) (r M) (r D) (r B) (r F) (r V) (r K) (r B0) I
+    (r x) (r u) (r v) (r y)
+    (of_eq (guardFrame_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hF))
+    (of_eq (guardPath_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hP)) hI hx
+
+-- In ForcingRelationImages, after existing guardPath. The two argument
+-- slots of the original R now read the same actual bound-zero field.
+private theorem diagonal_argument {k m : Nat} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (right : Bool)
+    (w z f t c d Base P i j M D B F V B0 x u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (SyntaxNumeralSyntax.numeral 0 z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.diagonalMap k) w z f t f B F))
+    (hd : Derives Γ (data k w f c d Base P P i j M D))
+    (hV : Derives Γ (field w V z P))
+    (hx : Derives Γ (SyntaxVariableSyntax.code false w (if right then j else i) x))
+    (hPath : Derives Γ (guardPath w z f t c d B F V Base B0 D x u v y)) :
+    Derives Γ (.equal v y) := by
+  let atSlot : Fin (k+2) := if right then Fin.last (k+1) else (Fin.last k).castSucc
+  let index := if right then j else i
+  have hIndex : Derives Γ (SyntaxNumeralSyntax.numeral atSlot.val index) := by
+    cases right
+    · exact .conjL hd
+    · exact .conjL (.conjR hd)
+  have hu := mapped_variable hZ (ForcingRelationSource.arguments (.bvar .here) (.bvar .here))
+    atSlot w z f t f B F index x u hw he hIndex hx (.conjL hPath)
+  have hQuote : Derives Γ (OriginalTreeQuotationSyntax.tree (.node 0 [PureSyntaxQuotation.Original.leaf 0]) w u) := by
+    apply of_eq _ hu
+    cases right <;> simp only [atSlot, ForcingRelationSource.arguments, Bool.false_eq_true, ↓reduceIte,
+      Fin.lastCases_castSucc, Fin.lastCases_last, PureQuotationSyntax.term, PureSyntaxQuotation.termTree] <;> rfl
+  have hU := OriginalQuotationVariableFields.variable_of_tree hZ true 0 w z u hw hz hQuote
+  have h1 := Derives.conjL (.conjR hPath)
+  have h2 := Derives.conjR (.conjR hPath)
+  have midLists := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V Base t f c d u v h1)
+  have dirLists := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
+  have mid := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w V Base t f c d u v z hw midLists hU)) h1
+  have direct := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y index hw dirLists hx)) h2
+  have hzW := OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz
+  have ev := StructuralListFieldValues.unique hZ w V z v P hw hzW (.conjR mid) hV
+  have ey : Derives Γ (.equal y P) := by
+    cases right
+    · exact .impE (.conjL (left_field hZ k w f c d Base P P i j M D y hf hd)) (.conjR direct)
+    · exact .impE (.conjL (right_field hZ k w f c d Base P P i j M D y hf hd)) (.conjR direct)
+  exact eq_trans ev (eq_symm ey)
+
+private theorem diagonal_parameter {k m : Nat} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (p : Fin k)
+    (w z f t c d Base P i j M D B F V B0 I x u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.diagonalMap k) w z f t f B F))
+    (hd : Derives Γ (data k w f c d Base P P i j M D))
+    (hI : Derives Γ (SyntaxNumeralSyntax.numeral p.val I))
+    (hx : Derives Γ (SyntaxVariableSyntax.code false w I x))
+    (hPath : Derives Γ (guardPath w z f t c d B F V Base B0 D x u v y)) :
+    Derives Γ (.equal v y) := by
+  have hu := mapped_variable hZ (ForcingRelationSource.arguments (.bvar .here) (.bvar .here))
+    p.castSucc.castSucc w z f t f B F I x u hw he hI hx (.conjL hPath)
+  have hIndex : (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable p.castSucc.castSucc).index = p.val :=
+    ProjectNativeRenaming.variable_index (fun _ : Fin 1 => p.castSucc.castSucc)
+      (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (0 : Fin 1))
+  have hQuote : Derives Γ (OriginalTreeQuotationSyntax.tree (.node 1 [PureSyntaxQuotation.Original.leaf p.val]) w u) :=
+    of_eq (by simp only [ForcingRelationSource.arguments, Fin.lastCases_castSucc, PureQuotationSyntax.term,
+      PureSyntaxQuotation.termTree, hIndex]) hu
+  have hU := OriginalQuotationVariableFields.variable_of_tree hZ false p.val w I u hw hI hQuote
+  have h1 := Derives.conjL (.conjR hPath)
+  have h2 := Derives.conjR (.conjR hPath)
+  have midLists := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V Base t f c d u v h1)
+  have dirLists := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
+  have mid := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V Base t f c d u v I hw midLists hU)) h1
+  have direct := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y I hw dirLists hx)) h2
+  have hy := Derives.impE (.conjL (parameter_field hZ k p w f c d Base P P i j M D I y hf hd hI)) (.conjR direct)
+  exact StructuralListFieldValues.unique hZ w Base I v y hw (SyntaxNumerals.range hZ p.val w I hw hI) (.conjR mid) hy
+
+private theorem diagonal_index {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (pos : Fin (k+2)) (w z f t c d Base P i j M D B F V B0 I x u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.diagonalMap k) w z f t f B F))
+    (hd : Derives Γ (data k w f c d Base P P i j M D))
+    (hV : Derives Γ (field w V z P))
+    (hPath : Derives Γ (guardPath w z f t c d B F V Base B0 D x u v y))
+    (hx : Derives Γ (SyntaxVariableSyntax.code false w I x))
+    (hI : Derives Γ (SyntaxNumeralSyntax.numeral pos.val I)) :
+    Derives Γ (.equal v y) := by
+  revert hI
+  refine Fin.lastCases ?_ (fun q => Fin.lastCases ?_ (fun p => ?_) q) pos
+  · intro hI
+    have e := SyntaxNumerals.unique hZ (k+1) I j hI (.conjL (.conjR hd))
+    exact diagonal_argument hZ true w z f t c d Base P i j M D B F V B0 x u v y hw hz hf he hd hV
+      (SyntaxVariableImagePoint.code_subst_index false w I x j e hx) hPath
+  · intro hI
+    have e := SyntaxNumerals.unique hZ k I i hI (.conjL hd)
+    exact diagonal_argument hZ false w z f t c d Base P i j M D B F V B0 x u v y hw hz hf he hd hV
+      (SyntaxVariableImagePoint.code_subst_index false w I x i e hx) hPath
+  · intro hI
+    exact diagonal_parameter hZ p w z f t c d Base P i j M D B F V B0 I x u v y
+      hw hf he hd hI hx hPath
+
+/-- Both arguments in the actual reflexivity path read the selected bound
+condition. Its first k parameters and the direct relation table read Base. -/
+theorem diagonal_term {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d Base P i j M D B F V B0 x u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.diagonalMap k) w z f t f B F))
+    (hd : Derives Γ (data k w f c d Base P P i j M D))
+    (hV : Derives Γ (field w V z P))
+    (hPath : Derives Γ (guardPath w z f t c d B F V Base B0 D x u v y)) :
+    Derives Γ (.equal v y) := by
+  have ht := SyntaxCodedMixedTermTyping.source_type w B F z f t f x u (.conjL hPath)
+  apply on_source_variable hZ (k+2) w z f x hz hf ht (.equal v y)
+  intro l Δ r hZ1 lift pos I hI hx
+  exact diagonal_index hZ1 pos (r w) (r z) (r f) (r t) (r c) (r d) (r Base) (r P)
+    (r i) (r j) (r M) (r D) (r B) (r F) (r V) (r B0) I (r x) (r u) (r v) (r y)
+    (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (lift hf))
+    (of_eq (NativeSubstitutionSyntax.environment_rename ForcingRelationSource.emptyMap
+      (ForcingRelationSource.diagonalMap k) w z f t f B F r) (lift he))
+    (of_eq (data_rename k w f c d Base P P i j M D r) (lift hd))
+    (of_eq (field_rename w V z P r) (lift hV))
+    (of_eq (guardPath_rename w z f t c d B F V Base B0 D x u v y r) (lift hPath)) hx hI
 
 def guardSentence {k m : Nat} (w z f t c d S L R i j M D B F V K B0 x u v y : Fin m) : Source.Sentence :=
   (((guardFrame (k := k) w z f t c d S L R i j M D B F V K).conj
