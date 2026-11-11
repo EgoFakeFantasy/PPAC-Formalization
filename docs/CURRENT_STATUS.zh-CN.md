@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingDensityInstantiation.with_negative_density_tail` 在同一个新鲜条件下打开原否定正文和原稠密性前提，证明两条实际守卫码相等，并在给定当前背景中的守卫推导时消去它们，得到同一密度存在式的内部推导。`with_fresh_witness_records` 从该存在式的实际查询生成下一层自由作用域和见证项，保留两条内层守卫、重绑定正文及其原抽象。否定分支还需用原单调性和自反性在这个见证处推出矛盾，再闭合原否定公式。[整仓验收](../verification/forcing-negative-density-opening-acceptance.json)
+
 `ForcingSourceDensity.atomic_step_from_runtime` 将成员和相等两条分支接入原 `atSource`。它从实际运行记录和原编译历史取得名字项、载体字段与现行查询，以完整前提码的等式传递同一背景下的内部推导。任意内部实际编译输出均受该归纳谓词量化，闭句由 `atomic_kernel_certificate` 在普通 nativeZF 原推导核重放。原否定与存在量化分支及最终内部 Con 仍需完成。[整仓验收](../verification/forcing-atomic-density-source-acceptance.json)
 
 `ForcingAtomicDenseTemplate.compare_opened_density` 比较原编译前提与共同表上的两份实际展开查询。原子见证体的两个名字像来自同一原绑定表，所选条件由实际内层重绑定给出。两条成员守卫、两条顺序守卫和见证体的码等式经构造器唯一性合成整个稠密性前提的码等式。运行记录现已提供这些查询，前提码等式已用于原子稠密性证书。[整仓验收](../verification/forcing-atomic-density-witness-equality-acceptance.json)

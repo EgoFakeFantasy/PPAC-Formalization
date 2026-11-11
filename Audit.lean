@@ -40831,6 +40831,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.mixedLeaves
 #print axioms PPAC.Migration.ForcingDensityInstantiation.mixedNodes
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_mixed_shell
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_fresh_instance_records
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_density_tail
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_fresh_witness_records
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point_rename
