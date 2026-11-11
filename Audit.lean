@@ -38753,6 +38753,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value_rename
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.value_at
+#print axioms PPAC.Migration.Internal.SchemaIndexQuotation.shift_value
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.separation_value
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.collection_one_value
 #print axioms PPAC.Migration.Internal.SchemaIndexQuotation.collection_two_value
@@ -39174,8 +39175,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalProofTemplates.template_type
 #print axioms PPAC.Migration.InternalProofTemplates.logical_proof
 #print axioms PPAC.Migration.InternalProofTemplates.template_axiom
+#print axioms PPAC.Migration.InternalProofTemplates.eliminate_successor
+#print axioms PPAC.Migration.InternalProofTemplates.eliminate_binder_scopes
+#print axioms PPAC.Migration.InternalProofTemplates.quotation_rename_indices
 #print axioms PPAC.Migration.InternalProofTemplates.from_logical_quotation
 #print axioms PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate
+#print axioms PPAC.Migration.NativeProofQuotation.from_derives
+#print axioms PPAC.Migration.NativeProofQuotation.atomic_monotone
+#print axioms PPAC.Migration.NativeProofQuotation.atomicMonoTemplate
+#print axioms PPAC.Migration.NativeProofQuotation.atomic_monotone_instance
+#print axioms PPAC.Migration.NativeProofQuotation.atomic_monotone_kernel_certificate
 #print axioms PPAC.Migration.InternalProofTemplates.project
 #print axioms PPAC.Migration.InternalProofTemplates.project_compiled
 #print axioms PPAC.Migration.InternalProofTemplates.compiled_iff
@@ -39293,6 +39302,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalFalseRoot.drop_scope
 #print axioms PPAC.Migration.InternalFalseRoot.closed
 #print axioms PPAC.Migration.InternalFalseRoot.closed_rename
+#print axioms PPAC.Migration.InternalFalseRoot.close_empty
 #print axioms PPAC.Migration.InternalFalseRoot.close
 #print axioms PPAC.Migration.InternalFalseRoot.inconsistent_of_closed
 #print axioms PPAC.Migration.InternalFalseRoot.inconsistent

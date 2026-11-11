@@ -20,17 +20,17 @@ jobs:
       run:
         working-directory: ppac-yesmeta-migration
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           path: ppac-yesmeta-migration
       - name: Check out pinned L proof donor
-        uses: actions/checkout@v4
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: EgoFakeFantasy/YesMetaZFC
           ref: 79793365c2145c53db37eaf8ab23a64826bd9738
           path: yesmetazfc-analytic-comprehension
       - name: Check out pinned OpenAI source
-        uses: actions/checkout@v4
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: openai/math
           ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
@@ -57,7 +57,7 @@ jobs:
           python3 -m unittest discover -s scripts -p test_original_comparator_guard.py
       - name: Build and audit
         run: python3 scripts/verify.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
           name: verification
@@ -74,11 +74,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           path: migration
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: Zouuup/landrun
           ref: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
@@ -106,7 +106,7 @@ jobs:
             /usr/bin/python3 "$GITHUB_WORKSPACE/migration/scripts/original_comparator.py" guard \
             --landrun "$GITHUB_WORKSPACE/tools/landrun/landrun" \
             --output "$GITHUB_WORKSPACE/guard-verification"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
           name: comparator-guard-preflight
@@ -123,23 +123,23 @@ jobs:
       ELAN_TOOLCHAIN: leanprover/lean4:v4.34.1
       LEAN_NUM_THREADS: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           path: migration
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: openai/math
           ref: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
           path: original-source
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: leanprover/comparator
           ref: d03acab154d269c06e60e4de7e4cc85deebff94b
           path: tools/comparator
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
           repository: Zouuup/landrun
           ref: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
@@ -190,7 +190,7 @@ jobs:
             --landrun "$GITHUB_WORKSPACE/tools/landrun/landrun" \
             --exporter "$GITHUB_WORKSPACE/tools/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export" \
             --output "$GITHUB_WORKSPACE/comparator-verification"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
           name: original-comparator

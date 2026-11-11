@@ -410,7 +410,7 @@ private abbrev disjunctionTemplate {n} := @Template.binary n 6
 private abbrev biconditionalTemplate {n} := @Template.binary n 8
 private abbrev negationTemplate {n} := @Template.unary n 4
 
-private theorem eliminate_successor {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem eliminate_successor {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w n : Fin m) (hw : Derives Γ (omega w)) (hn : Derives Γ (.mem n w)) (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (x : Fin l),
       ZFContext.Evidence Δ → (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
@@ -537,7 +537,7 @@ private theorem equality_substitution_quotation {m} {Γ : Context m} {free : Pur
 
 open YesMetaZFC.Logic.FirstOrder (VariableRenaming VariableSubstitution)
 
-private theorem quotation_rename_indices {sb sf tb tf : PureSyntaxQuotation.Ctx}
+theorem quotation_rename_indices {sb sf tb tf : PureSyntaxQuotation.Ctx}
     (br : VariableRenaming sb tb) (fr : VariableRenaming sf tf)
     (hb : ∀ {sort} (v : YesMetaZFC.Logic.FirstOrder.Variable sb sort), (br v).index = v.index)
     (hf : ∀ {sort} (v : YesMetaZFC.Logic.FirstOrder.Variable sf sort), (fr v).index = v.index)
@@ -592,7 +592,7 @@ private theorem vacuous_quotation {m} {Γ : Context m} {free : PureSyntaxQuotati
     exact of_eq (LogicalStaticQueryList.original_bundle 1 false w env).symm
       (.impE (.conjR (LogicalStaticQueries.bundle_iff hZ1 1 false w z env hw1 hn hz1)) types)
 
-private theorem eliminate_binder_scopes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem eliminate_binder_scopes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (.mem z w))
     (hb : Derives Γ (.mem b w)) (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (A B : Fin l),

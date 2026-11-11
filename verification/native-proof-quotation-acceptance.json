@@ -1,0 +1,239 @@
+{
+  "recorded_at": "2026-11-11T03:03:38.000925+00:00",
+  "baseline_commit": "b42793b106686f6516d9839539787d6621f6e4aa",
+  "original_stage": 10,
+  "stage11_started": false,
+  "native_endpoint": "PPAC.Migration.NativeProofQuotation.atomic_monotone_kernel_certificate",
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/OAI/SetTheory/PartitionConsistency/Forcing/AtomicForcing.lean",
+    "declarations": [
+      "mem_mono",
+      "eq_mono"
+    ],
+    "reused_native_proof": "PPAC.Migration.ForcingAtomicBasic.monotone_kernel_certificate",
+    "original_main_consumer": "ForcingQuotient.force_mono"
+  },
+  "rules_replayed": [
+    "logical_axiom",
+    "theory_axiom",
+    "modus_ponens",
+    "forall_generalization",
+    "free_strengthening",
+    "free_substitution"
+  ],
+  "result": "A fixed pure nativeZF Hilbert proof yields an actual original proof at its exact object quotation. The nativeZF atomic monotonicity certificate consumes an actual mixed substitution over arbitrary internal term lists and target scope, then constructs the original mode-3 proof at the same output. Its witness includes Root at empty free scope.",
+  "remaining": [
+    "Produce the exact mixed substitution instance from both actual compiled atomic outputs and the same canonical preorder row, and consume it in the all-internal source monotonicity induction.",
+    "Complete the remaining uniform forcing and internal proof reduction. The final internal Con implication is open."
+  ],
+  "baseline_declarations_compared": 39921,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.Internal.SchemaIndexQuotation.shift_value": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.InternalProofTemplates.eliminate_successor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.InternalProofTemplates.eliminate_binder_scopes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.InternalProofTemplates.quotation_rename_indices": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.NativeProofQuotation.from_derives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.NativeProofQuotation.atomic_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.NativeProofQuotation.atomicMonoTemplate": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.NativeProofQuotation.atomic_monotone_instance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.NativeProofQuotation.atomic_monotone_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.InternalFalseRoot.close_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "existing_producers_unchanged_except_visibility": 5,
+  "full_local_verification": {
+    "audited_declarations": 39931,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37665,
+    "warning_lines": 0,
+    "build_jobs": 3369,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ]
+  },
+  "ci_compatibility": {
+    "clean_pins": {
+      "YesMetaZFC": "039c8e132cc19671d73a3933c66b4799d2599dd6",
+      "L_donor": "79793365c2145c53db37eaf8ab23a64826bd9738",
+      "OpenAI": "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+    },
+    "locked_source_hashes": 75,
+    "compatibility_tests": 9,
+    "original_comparator_guard_tests": 7,
+    "actionlint_exit": 0,
+    "checkout": "actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd",
+    "upload_artifact": "actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+    "scope": "Local validation and official Node 24 manifests. The new workflow has no remote run in this receipt."
+  },
+  "frozen_staged_source_hashes": {
+    ".github/workflows/lean.yml": "9f3df784521763db48765fcb1826ca316ea4ec652b6d1729a87ccee4624e6469",
+    "Audit.lean": "6e84fa8968ebffb71e3ef6626514b5609c180f1bf6165d26a8a172147a6dac78",
+    "PPAC.lean": "b414bd2db6490fadfc00ab054d135f6c448daa5f7d6c5e3b40946f75bd211e84",
+    "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "81d748b11320bac22c938c108abd17702179bcf19887f409ce0fe032f368b516",
+    "PPAC/Migration/InternalFalseRoot.lean": "0bea102bf068d61a97def78eb65c0bf7051cc5cc742b8c14e5ea32dc19c5304d",
+    "PPAC/Migration/InternalProofTemplates.lean": "728f71c00a6ec3c28c882b70093fe46302e2ea27ee4d0b258f6c187619d34a68",
+    "PPAC/Migration/NativeProofQuotation.lean": "3b4e0d440df19d220fb11f5d274b87cd9f65fd1a8836251363dae15d34ccdb94",
+    "docs/AGENT_WORKFLOW.zh-CN.md": "4ef64e9df1471ae1b18ea1897518e80e68efde7a4bcbd800e6c2d9a33f8d9cd6",
+    "docs/CURRENT_STATUS.zh-CN.md": "741986b32f4a7de1a3a28ac785b9e998709cd6da6614b8b8e32dcb88995fb5a5",
+    "docs/SOURCE_LOCK.json": "425c27536f0d7a1773b23d03936595e317ff322a2cec30f7f736bfcd5f54936e",
+    "docs/STATUS.zh-CN.md": "057013ed2b17bf9524e5a5a2c738cf2d189d7208e1b78439df5ea89bd6eda846",
+    "scripts/verify.py": "1977868cea1f8ae7b5cecbac08e200aaceba1f5fa485e47593e8a127904edbee"
+  }
+}

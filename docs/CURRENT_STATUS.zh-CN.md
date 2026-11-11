@@ -6,13 +6,13 @@
 
 ## 最新实际验收
 
-`InternalProofTemplates.from_logical_quotation` 已将原 Hilbert 核的 27 类逻辑公理逐实例接入原逻辑证明节点。沿用同一原逻辑表、完整原语法查询与首槽变换，生成证明码、结论字段，以及空自由作用域下的原 `Root`。实际纯 ZF 原核端点为 `logical_quotation_kernel_certificate`。固定原子证明的其余规则回放、任意内部项像替换与最终 Con 仍待闭合。
+`NativeProofQuotation.from_derives` 已把固定的 nativeZF 原推导按六条 Hilbert 规则回放到原证明码。成员和相等的单调性复用 `ForcingAtomicBasic` 的既有证明。实际混合替换给出同一内部项像表与输出码时，`atomic_monotone_kernel_certificate` 在 nativeZF 中产生该输出的原证明节点，并在自由作用域为空时给出 `Root`。见[验收报告](../verification/native-proof-quotation-acceptance.json)。
 
 负式与存在式的原构造码已推出 `ForcingSourceMono.atSource`。两支调用原编译总性和 `ForcingCodeUnary.unary`，并从同一 `ForcingGlobalWeakening` 输入生成弱化布局和两份覆写记录。预序行保留其空绑定表，父式在任意内部作用域生成绑定列，两者共用原来的自由底表。源条件的两份替换判断仍是输入。见[源构造分支验收](../verification/forcing-modal-source-induction-acceptance.json)。
 
 ## 已完成，必须复用
 
-本批 `InternalAxiomProof.from_native_quotation` 将七条固定公理及任意外部索引的分离／收集实例的准确引用接入原六规则 `Root`。全部证书、作用域和原始行均在对象理论内产生。`ForcingAtomCode.member_output/equal_output` 从原分派记录取回同一字段的实际原子编译记录。成员／相等单调性的码级 `Root` 传输及最终内部 Con 仍待闭合，逐实例公理引用不能替代全内部模式码的强迫保真。验收见 `verification/atomic-quotation-root-acceptance.json`。
+`InternalAxiomProof.from_native_quotation` 已覆盖七条固定公理及每个标准外部索引的分离和收集实例。`InternalProofTemplates.from_logical_quotation` 已覆盖 27 类逻辑公理。`ForcingAtomCode.member_output/equal_output` 已从原分派记录恢复同一字段的实际原子编译记录。
 
 - 原第1–9阶段已验收资产依原阶段表保留；包括原L于ZF解释及全公理模式、实际具体系统、Assigned商与第9阶段模型应用，不重新迁移或重建。
 - 原完整negative/existential compiler、同一预序三次native实例／五IMP行、bare-R／member／domain／child查询对应、完整raw尾部两层EX及跨条件比较均已完成；ForcingExistTailComparison.from_queries/raw_kernel_certificate生成消去两次全部trace和canonical见证。
@@ -22,7 +22,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 复用 ForcingAtomicBasic 的原子单调性证书与 ForcingAtomicCode 的实际编译，完成成员与相等的统一码级 Root 传输，再闭合 ForcingSourceMono 的全部内部码归纳。后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
+1. 从两份实际原子编译输出和同一预序行构造单调性所需的混合替换，消费已验收的原证明节点，闭合 `ForcingSourceMono` 的全部内部码归纳。后续按原 `ForcingTruth.force_of_dense`、`exists_force_neg`、`forceFormula_imp` 的依赖顺序推进。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

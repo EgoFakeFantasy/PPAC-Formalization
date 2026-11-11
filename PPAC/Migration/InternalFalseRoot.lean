@@ -93,7 +93,7 @@ def closed {m} (test : Formula 1) (w F : Fin m) : Formula m := .ex
 theorem closed_rename {m l} (test : Formula 1) (w F : Fin m) (r : Fin m → Fin l) :
     (closed test w F).rename r = closed test (r w) (r F) := by
   simp only [closed, Formula.rename, ProofTreeEntryFacts.root_rename, Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]
-private theorem close_empty {m} {Γ : Context m} (test : Formula 1) (w z b F : Fin m)
+theorem close_empty {m} {Γ : Context m} (test : Formula 1) (w z b F : Fin m)
     (hb : Derives Γ (empty b)) (hp : Derives Γ (InternalProofConjunction.proved test w z b F)) : Derives Γ (closed test w F) := by
   let E := (Formula.mem (Fin.last m) w.castSucc).conj
     ((InternalMPProof.annotated test w.castSucc z.castSucc b.castSucc F.castSucc (Fin.last m)).conj

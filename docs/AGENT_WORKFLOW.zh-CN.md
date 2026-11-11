@@ -17,12 +17,12 @@
 | 7 | 源强迫前端 | 原子／公式／固定证明保真、实际作用／正规滤子、全秩 HS、七条固定公理与完整 Separation／Replacement 已验收；已接通原 forces_ZF，逐源公理／模式有原核证书 | 前端合同已闭合，保留原单子／呈现／正规滤子前提；第 8 的原核存在句现已提供实际具体构造；第 9 消费这些父输入。全部内部公式／证明码归约仍属 10；不能把此逐实例证书说成最终内部 Con |
 | 8 | 源代数／构造核心 | 同一 Base/T、完整实际饱和历史／转移／最终行、理想／基数、纤维／粘合、标签／传输、完整选择器／轨道／记录族和 Assigned 图已验收；具体商双射及完整 nonwellorderable_quotient_bijection 已验收；ForcingConcreteSystem 的无参数原核存在句实际构造全部 37 原始条件／40 内部集合，并在同一见证上消费全称商结论 | 本阶段所列全局装配门已完成；第 9 阶段消费同一具体系统，不重建原基础 |
 | 9 | 源模型应用 | 同一实际Core、ACwo、¬AC、ordinal_presentation、完整切片／候选族／assemble及presentation_reverse_injection均已接通；全集合reverse_injection_dense及实际forces_PP有普通nativeZF原核L相对化端点 | 本阶段模型应用链完成；PP前没有给定稠密性、满射或HS名字前提；保留全部内部量词 |
-| 10 | 原 Main 全局装配与对象内部化 | 原理论／模式码、quotation与Root基例、完整公式相消、raw负式／存在尾部、上下文／Curry／mode3／forall、首槽相消、项像／双覆盖、fresh预序及两侧成员／裸R比较均已完成。Extra及六个新布局码在对象层产生，四AND取得SAME canonical Global弱化，并已实际接入原guarded forall；源合取步骤已内部生成两个子编译结果并消费双查询分支；常元基例不带归纳假设；原字面嵌套双守卫已实际进入mode3／forall；新鲜三操作逆向及父ALL码Root消费已接通 | 从完整raw父查询实际产生native实例化到K及ALL记录，消去子归纳假设，完成原mono／dense全部内部公式码的Root证明生成；按源由dense导出neg，再由neg／mono导出imp；实际强迫MP、全部内部ZF/U公理与六规则Proof、reduction及最终Con |
+| 10 | 原 Main 全局装配与对象内部化 | 原公理模式码、固定 nativeZF 推导的六规则回放及原子单调性的实际混合替换实例已验收。常元、合取、负式和存在式的原编译分支已接到 `ForcingSourceMono.atSource` | 先接通成员、相等的两份实际原子编译输出与共享预序行，闭合全内部公式码的原 mono／dense。继而完成 neg／imp、实际强迫 MP、全部内部 ZF/U 公理与六规则 Proof、reduction 及最终 Con |
 | 11 | 终验与发布评审 | 现有审计工具可复用；最终验收未开始 | 核对源到目标对应、命题量词、依赖及原核主句；发布另按用户授权，不把辅助构建通过当最终通过 |
 
 ## 当前 agent 执行入口
 
-本批 `InternalAxiomProof.from_native_quotation` 将七条固定公理及任意外部索引的分离／收集实例的准确引用接入原六规则 `Root`。全部证书、作用域和原始行均在对象理论内产生。`ForcingAtomCode.member_output/equal_output` 从原分派记录取回同一字段的实际原子编译记录。成员／相等单调性的码级 `Root` 传输及最终内部 Con 仍待闭合，逐实例公理引用不能替代全内部模式码的强迫保真。验收见 `verification/atomic-quotation-root-acceptance.json`。
+`NativeProofQuotation.atomic_monotone_kernel_certificate` 已在 nativeZF 原核中将成员和相等单调性的既有证明接到实际混合替换上。对象变量覆盖项像表、目标自由作用域和输出码。下一消费者从同一原子编译记录和共享预序行提供准确替换。见[验收报告](../verification/native-proof-quotation-acceptance.json)。
 
 | 已有输入 | 当前消费者 | 真正的验收门 |
 |---|---|---|
@@ -35,10 +35,10 @@
 
 ## 工程执行约定
 
-- 权威当前状态见 STATUS，最新报告为 `verification/logical-quotation-root-acceptance.json`。
+- 权威当前状态见 STATUS，最新报告为 `verification/native-proof-quotation-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-成员和相等的统一码级 Root 传输继续复用 ForcingAtomicBasic 原子单调性证书、ForcingAtomicCode 实际编译及同一预序行。固定证明的理论公理引用和 27 类逻辑公理引用均已接入原证明节点。下一步用既有 MP、全称化、自由加强与替换操作回放其余规则，再以实际项像替换接到两份原编译输出，并闭合 ForcingSourceMono 的全部内部码归纳。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
+原子分支消费 `ForcingAtomCode.member_output/equal_output`、同一预序行及 `NativeProofQuotation.atomic_monotone_instance`。将实际编译的两份输出与单调性公式的两侧对齐后，闭合 `ForcingSourceMono` 的全部内部码归纳。后续沿原 `ForcingTruth` 的依赖顺序推进。

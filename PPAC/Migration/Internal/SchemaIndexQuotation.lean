@@ -45,7 +45,7 @@ private theorem successor {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (k :
   exact of_eq (successor_rename y x Fin.castSucc).symm
     (GodelUnpairArithmetic.successor_base_subst _ _ _ he (.conjR hB))
 
-private theorem shift_value {m n} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c r : Fin m)
+theorem shift_value {m n} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (w a c r : Fin m)
     (ha : Derives Γ (SyntaxNumeralSyntax.numeral n a)) (hr : Derives Γ (SyntaxFreeShiftSyntax.shiftMap w a c r))
     (j : Fin n) : Derives Γ (value j.val (j.val+1) r) := by
   apply Derives.allI
