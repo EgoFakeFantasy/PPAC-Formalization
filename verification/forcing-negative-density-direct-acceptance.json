@@ -1,0 +1,78 @@
+{
+  "baseline_commit": "dc18d38176f9b12f4e52566d6525d3f12151bb2b",
+  "recorded_at": "2026-11-11T16:13:29.687211+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "neg"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening",
+    "PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query",
+    "PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries",
+    "PPAC.Migration.ForcingExistOrderOpening.with_rebound_prefixed_query",
+    "PPAC.Migration.ForcingExistOrderOpening.with_successor_table"
+  ],
+  "scope": "Recover the direct query of the original negative forcing formula at the actual density witness r. Weaken the actual positive query at q onto the same original name table, with only the condition replacement differing between the two queries.",
+  "direct_negative_witness_query_proved": true,
+  "shared_actual_name_table_proved": true,
+  "negative_source_induction_step_proved": false,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40233,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "9c2ca29d6adf0af4f808403925c970fa52c14f253b7cbaef9cf359f5c686ca09",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "3bb7bca74f27911270106a2d4259e884e1cf44974b89e315bd1d14239361526e",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "059e9a9dc08143aff01255111915a9f94a2daad7bc94ebed728085f31d848f0c",
+      "PPAC/Migration/ForcingExistOrderOpening.lean": "d147ed9e17a1b065689a87c1124af0e756554d33ac0e9b59a78ebfa4767d50be",
+      "docs/CURRENT_STATUS.zh-CN.md": "e0635703528d86ec1ac1b9f52861046aa934e56a53e9276d2872ee4e78fbbc15",
+      "docs/SOURCE_LOCK.json": "3d7e32178afd30e9a85fd615e99ee03bb5b913c86a32e77be555cf3659a55060",
+      "scripts/verify.py": "5354f0fae31cdc4781539251d2d39dd1e317a6a1a1c00622d91df3af4a209ce7"
+    }
+  },
+  "baseline_declarations_compared": 40228,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistOrderOpening.with_rebound_prefixed_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistOrderOpening.with_successor_table": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

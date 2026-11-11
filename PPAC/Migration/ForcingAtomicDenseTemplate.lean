@@ -1263,20 +1263,6 @@ private theorem closed_bound_list_target {m : Nat} {Γ : Source.Context m}
     exact .exE (.hyp (Or.inl rfl)) (.botE (.impE (empty_at (r z).castSucc (Fin.last (m+2)) hZero) (.conjL hQ)))
   · exact .disjR (.hyp (Or.inl rfl))
 
-private theorem weaken_bound_value {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
-    (w a A f N W x u i I : Fin m) (v : Fin 3 → Fin m)
-    (hw : Source.Derives Γ (omega w))
-    (hwk : Source.Derives Γ (ForcingDensityCode.weakenData w a A f N W v))
-    (hi : Source.Derives Γ (.mem i a)) (hs : Source.Derives Γ (successor I i))
-    (hx : Source.Derives Γ (SyntaxVariableSyntax.code true w i x))
-    (h0 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (v 1) (v 2) a f A f x u)) :
-    Source.Derives Γ (SyntaxVariableSyntax.code true w I u) := by
-  have hl := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w (v 1) (v 2) a f A f x u h0)
-  have hField := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w
-    (v 1) (v 2) a f A f x u i hw hl hx)) h0
-  have hEdge := Source.Derives.impE (.conjR (SyntaxMixedImageCodeFields.edges w (v 0) a A f (v 1) i u (.conjL (.conjR hwk)))) hField
-  exact .impE (.conjL (SyntaxVariableTableFields.shifted_at hZ true w a A f (v 0) i I u (.conjL hwk) hi hs)) hEdge
-
 /-- The old bound field is transported through both actual lifts and read
 from the tail of the second lift at the shifted source index. -/
 private theorem twice_lifted_bound_tail {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
@@ -1303,91 +1289,6 @@ private theorem twice_lifted_bound_tail {m : Nat} {Γ : Source.Context m} (hZ : 
   have hSecond := Source.Derives.conjR (.impE (.conjR e2) (.eqRefl X))
   exact .conjI hIW (StructuralListFieldCons.successor_forward hZ w P U (t 3) I J X hw hP hU hIW hJ hCons hSecond)
 
-private theorem weaken_after_rebind_terms {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
-    (w z a f b L S P U E N W x x' y o : Fin m)
-    (u t : Fin 5 → Fin m) (v : Fin 3 → Fin m)
-    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
-    (hOuter : Source.Derives Γ (lifted w L S a f z b (u 1) (u 2) (u 3) (u 4)))
-    (hInner : Source.Derives Γ (lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4)))
-    (hP : Source.Derives Γ (.mem P w)) (hU : Source.Derives Γ (.mem U w))
-    (hCons : Source.Derives Γ (StructuralListSyntax.consCode w P U (t 3)))
-    (hWeak : Source.Derives Γ (ForcingDensityCode.weakenData w a (u 1) f N W v))
-    (hPath : Source.Derives Γ (ForcingRelationImages.guardPath w a f (u 1) (t 2) b (v 1) (v 2) U E L E x x' y o)) :
-    Source.Derives Γ (.equal y o) := by
-  apply OriginalTermScopeElimination.eliminate w a f x (.equal y o)
-    (SyntaxCodedMixedTermTyping.source_type w (v 1) (v 2) a f (u 1) f x x' (.conjL hPath))
-  intro bound
-  let i := Fin.last m
-  let r : Fin m → Fin (m+1) := Fin.castSucc
-  let B := SyntaxTermSyntax.branchWitness bound w (SyntaxTermSyntax.limit bound a f) x
-  let Δ := Source.Context.add B (Source.Context.image Source.Formula.raise Γ)
-  have hB : Source.Derives Δ B := .hyp (Or.inl rfl)
-  have lift {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Δ (G.rename r) := SourceLogic.under h B
-  have hZ1 := ZFContext.under hZ B
-  have hw1 := of_eq (omega_rename w r) (lift hw)
-  have hp := of_eq (ForcingRelationImages.guardPath_rename w a f (u 1) (t 2) b (v 1) (v 2) U E L E x x' y o r) (lift hPath)
-  have p0 := Source.Derives.conjL hp
-  have p1 := Source.Derives.conjL (.conjR hp)
-  have p2 := Source.Derives.conjR (.conjR hp)
-  have hL0 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
-    (r w) (r (v 1)) (r (v 2)) (r a) (r f) (r (u 1)) (r f) (r x) (r x') p0)
-  have hL1 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
-    (r w) (r U) (r E) (r (u 1)) (r f) (r (t 2)) (r b) (r x') (r y) p1)
-  have hL2 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
-    (r w) (r L) (r E) (r a) (r f) (r (t 2)) (r b) (r x) (r o) p2)
-  have hO := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 bound
-    (r w) (r L) (r E) (r a) (r f) (r (t 2)) (r b) (r x) (r o) i hw1 hL2 (.conjR hB))) p2
-  have hWeak1 := of_eq (ForcingDensityCode.weakenData_rename w a (u 1) f N W v r) (lift hWeak)
-  cases bound with
-  | false =>
-    have hf := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false
-      (r w) (r (v 1)) (r (v 2)) (r a) (r f) (r (u 1)) (r f) (r x) (r x') i hw1 hL0 (.conjR hB))) p0
-    have hX := ForcingMemberGuard.identity_field hZ1 (r w) (r (u 1)) (r f) (r (v 2)) i (r x')
-      (.conjL (.conjR (.conjR hWeak1))) (.conjL hf) (.conjR hf)
-    have hy := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false
-      (r w) (r U) (r E) (r (u 1)) (r f) (r (t 2)) (r b) (r x') (r y) i hw1 hL1 hX)) p1
-    have hiW := StructuralListTraceOrder.member_member hZ1 (r w) i (r f) hw1 (.conjL (.conjR hL2)) (.conjL hO)
-    exact StructuralListFieldValues.unique hZ1 (r w) (r E) i (r y) (r o) hw1 hiW (.conjR hy) (.conjR hO)
-  | true =>
-    let out := Source.Formula.equal (r y) (r o)
-    have hI := InsertExistence.exists_insert i i (ZFContext.arithmetic hZ1).base.pairing (ZFContext.arithmetic hZ1).base.union
-    refine eliminate_objects hZ1 1 (fun s vs => successor (vs 0) (s i)) hI out ?_
-    intro l Ξ s vs hZ2 move hs
-    let I := vs 0
-    have hJ := InsertExistence.exists_insert I I (ZFContext.arithmetic hZ2).base.pairing (ZFContext.arithmetic hZ2).base.union
-    refine eliminate_objects hZ2 1 (fun q vs => successor (vs 0) (q I)) hJ (out.rename s) ?_
-    intro l' Ω q js hZ3 move2 hNext
-    let p := q ∘ s ∘ r
-    let r' := q ∘ s
-    let i' := r' i
-    let I' := q I
-    let J' := js 0
-    have carry1 {G : Source.Formula (m+1)} (h : Source.Derives Δ G) : Source.Derives Ω (G.rename r') :=
-      of_eq (SourceAlgebra.rename_comp G s q) (move2 (move h))
-    have carry {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Ω (G.rename p) :=
-      of_eq (SourceAlgebra.rename_comp G r r') (carry1 (lift h))
-    have hw3 := of_eq (omega_rename w p) (carry hw)
-    have hW := of_eq (ForcingDensityCode.weakenData_rename w a (u 1) f N W v p) (carry hWeak)
-    have hI3 := of_eq (successor_rename I (s i) q) (move2 hs)
-    have ho := of_eq (field_rename (r w) (r L) i (r o) r') (carry1 (.conjR hO))
-    have hX := weaken_bound_value hZ3 (p w) (p a) (p (u 1)) (p f) (p N) (p W) (p x) (p x') i' I' (p ∘ v)
-      hw3 hW (carry1 (.conjL hO)) hI3
-      (of_eq (SyntaxVariableSyntax.code_rename true (r w) i (r x) r') (carry1 (.conjR hB)))
-      (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r (v 1)) (r (v 2))
-        (r a) (r f) (r (u 1)) (r f) (r x) (r x') r') (carry1 p0))
-    have hY := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ3 true
-      (p w) (p U) (p E) (p (u 1)) (p f) (p (t 2)) (p b) (p x') (p y) I' hw3
-      (of_eq (SyntaxMixedImageCodeSyntax.termLists_rename (r w) (r (u 1)) (r f) (r (t 2)) (r b) (r U) (r E) r')
-        (carry1 hL1)) hX))
-      (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r U) (r E) (r (u 1)) (r f) (r (t 2)) (r b)
-        (r x') (r y) r') (carry1 p1))
-    have hOld := twice_lifted_bound_tail hZ3 (p w) (p z) (p b) (p a) (p f) (p L) (p S) i' I' J' (p o) (p P) (p U)
-      (p ∘ u) (p ∘ t) hw3 (of_eq (empty_rename z p) (carry hz)) (carry1 (.conjL hO)) hI3 hNext ho
-      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S a f z b (u 1) (u 2) (u 3) (u 4) p) (carry hOuter))
-      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4) p) (carry hInner))
-      (carry hP) (carry hU) (of_eq (StructuralListSyntax.consCode_rename w P U (t 3) p) (carry hCons))
-    exact StructuralListFieldValues.unique hZ3 (p w) (p U) I' (p y) (p o) hw3 (.conjL hOld) (.conjR hY) (.conjR hOld)
-
 private theorem weakening_after_rebind {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
     (w z a f b L S P U E N W Y : Fin m) (u t : Fin 5 → Fin m) (v : Fin 3 → Fin m)
     (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
@@ -1402,16 +1303,23 @@ private theorem weakening_after_rebind {m : Nat} {Γ : Source.Context m} (hZ : Z
   have hInput := SyntaxMixedFormulaOutput.input_of_substituted hZ w U E (u 1) f (t 2) b W Y hw hDirect
   have hE := Source.Derives.conjR (.conjR hInput)
   have hL' := closed_bound_list_target w a z (t 2) b L hz (.conjL (.conjL (.conjR hE))) hL
-  apply ForcingRelationGuardFormula.to_direct_at_scope hZ w a f (u 1) (t 2) b (v 1) (v 2) U E L E N W Y
-    hw (.conjL hL) (.conjL hE) hL' hE (.conjR (.conjR (.conjR hWeak))) hDirect
-  intro l Δ r hZ1 move x x' y o hPath
-  exact weaken_after_rebind_terms hZ1 (r w) (r z) (r a) (r f) (r b) (r L) (r S) (r P) (r U) (r E)
-    (r N) (r W) x x' y o (r ∘ u) (r ∘ t) (r ∘ v)
-    (of_eq (omega_rename w r) (move hw)) (of_eq (empty_rename z r) (move hz))
-    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S a f z b (u 1) (u 2) (u 3) (u 4) r) (move hOuter))
-    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4) r) (move hInner))
-    (move hP) (move hU) (of_eq (StructuralListSyntax.consCode_rename w P U (t 3) r) (move hCons))
-    (of_eq (ForcingDensityCode.weakenData_rename w a (u 1) f N W v r) (move hWeak)) hPath
+  apply ForcingDensityInstantiation.direct_after_weakening hZ w a (u 1) f (t 2) b L U E N W Y v hw hL' hWeak hDirect
+  intro l Δ r i I o hZ1 move _ hi hs ho
+  have hJ := InsertExistence.exists_insert I I (ZFContext.arithmetic hZ1).base.pairing (ZFContext.arithmetic hZ1).base.union
+  refine eliminate_objects hZ1 1 (fun s js => successor (js 0) (s I)) hJ (field (r w) (r U) I o) ?_
+  intro l' Ξ s js hZ2 move2 hNext
+  let p := s ∘ r
+  have carry {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Ξ (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move2 (move h))
+  have hOld := twice_lifted_bound_tail hZ2 (p w) (p z) (p b) (p a) (p f) (p L) (p S)
+    (s i) (s I) (js 0) (s o) (p P) (p U) (p ∘ u) (p ∘ t)
+    (of_eq (omega_rename w p) (carry hw)) (of_eq (empty_rename z p) (carry hz)) (move2 hi)
+    (of_eq (successor_rename I i s) (move2 hs)) hNext
+    (of_eq (field_rename (r w) (r L) i o s) (move2 ho))
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S a f z b (u 1) (u 2) (u 3) (u 4) p) (carry hOuter))
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4) p) (carry hInner))
+    (carry hP) (carry hU) (of_eq (StructuralListSyntax.consCode_rename w P U (t 3) p) (carry hCons))
+  exact of_eq (field_rename (r w) (r U) I o s).symm (.conjR hOld)
 
 /-- Normalize the actual atomic witness query under both density binders.
 The selected condition is the actual bound-zero code in the lifted table.

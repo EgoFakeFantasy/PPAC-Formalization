@@ -662,6 +662,117 @@ theorem with_mixed_shell {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
 
 end MixedShell
 
+private theorem weaken_bound_value {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f N W x u i I : Fin m) (v : Fin 3 → Fin m)
+    (hw : Source.Derives Γ (omega w))
+    (hwk : Source.Derives Γ (ForcingDensityCode.weakenData w a A f N W v))
+    (hi : Source.Derives Γ (.mem i a)) (hs : Source.Derives Γ (successor I i))
+    (hx : Source.Derives Γ (SyntaxVariableSyntax.code true w i x))
+    (h0 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w (v 1) (v 2) a f A f x u)) :
+    Source.Derives Γ (SyntaxVariableSyntax.code true w I u) := by
+  have hl := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w (v 1) (v 2) a f A f x u h0)
+  have hField := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w
+    (v 1) (v 2) a f A f x u i hw hl hx)) h0
+  have hEdge := Source.Derives.impE (.conjR (SyntaxMixedImageCodeFields.edges w (v 0) a A f (v 1) i u (.conjL (.conjR hwk)))) hField
+  exact .impE (.conjL (SyntaxVariableTableFields.shifted_at hZ true w a A f (v 0) i I u (.conjL hwk) hi hs)) hEdge
+
+private theorem weakening_term_agreement {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f c b L U E N W x x' y o : Fin m) (v : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hWeak : Derives Γ (ForcingDensityCode.weakenData w a A f N W v))
+    (shift : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (i I o : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (.mem i (r w)) → Derives Δ (.mem i (r a)) → Derives Δ (successor I i) →
+      Derives Δ (field (r w) (r L) i o) → Derives Δ (field (r w) (r U) I o))
+    (hPath : Derives Γ (ForcingRelationImages.guardPath w a f A c b (v 1) (v 2) U E L E x x' y o)) :
+    Derives Γ (.equal y o) := by
+  apply OriginalTermScopeElimination.eliminate w a f x (.equal y o)
+    (SyntaxCodedMixedTermTyping.source_type w (v 1) (v 2) a f A f x x' (.conjL hPath))
+  intro bound
+  let i := Fin.last m
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  let B := SyntaxTermSyntax.branchWitness bound w (SyntaxTermSyntax.limit bound a f) x
+  let Δ := Source.Context.add B (Source.Context.image Source.Formula.raise Γ)
+  have hB : Source.Derives Δ B := .hyp (Or.inl rfl)
+  have lift {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Δ (G.rename r) := SourceLogic.under h B
+  have hZ1 := ZFContext.under hZ B
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hp := of_eq (ForcingRelationImages.guardPath_rename w a f A c b (v 1) (v 2) U E L E x x' y o r) (lift hPath)
+  have p0 := Source.Derives.conjL hp
+  have p1 := Source.Derives.conjL (.conjR hp)
+  have p2 := Source.Derives.conjR (.conjR hp)
+  have hL0 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
+    (r w) (r (v 1)) (r (v 2)) (r a) (r f) (r A) (r f) (r x) (r x') p0)
+  have hL1 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
+    (r w) (r U) (r E) (r A) (r f) (r c) (r b) (r x') (r y) p1)
+  have hL2 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted
+    (r w) (r L) (r E) (r a) (r f) (r c) (r b) (r x) (r o) p2)
+  have hO := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 bound
+    (r w) (r L) (r E) (r a) (r f) (r c) (r b) (r x) (r o) i hw1 hL2 (.conjR hB))) p2
+  have hWeak1 := of_eq (ForcingDensityCode.weakenData_rename w a A f N W v r) (lift hWeak)
+  cases bound with
+  | false =>
+    have hf := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false
+      (r w) (r (v 1)) (r (v 2)) (r a) (r f) (r A) (r f) (r x) (r x') i hw1 hL0 (.conjR hB))) p0
+    have hX := ForcingMemberGuard.identity_field hZ1 (r w) (r A) (r f) (r (v 2)) i (r x')
+      (.conjL (.conjR (.conjR hWeak1))) (.conjL hf) (.conjR hf)
+    have hy := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false
+      (r w) (r U) (r E) (r A) (r f) (r c) (r b) (r x') (r y) i hw1 hL1 hX)) p1
+    have hiW := StructuralListTraceOrder.member_member hZ1 (r w) i (r f) hw1 (.conjL (.conjR hL2)) (.conjL hO)
+    exact StructuralListFieldValues.unique hZ1 (r w) (r E) i (r y) (r o) hw1 hiW (.conjR hy) (.conjR hO)
+  | true =>
+    let out := Source.Formula.equal (r y) (r o)
+    have hI := InsertExistence.exists_insert i i (ZFContext.arithmetic hZ1).base.pairing (ZFContext.arithmetic hZ1).base.union
+    refine eliminate_objects hZ1 1 (fun s vs => successor (vs 0) (s i)) hI out ?_
+    intro l Ξ s vs hZ2 move hs
+    let I := vs 0
+    let p := s ∘ r
+    let i' := s i
+    have carry {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Ξ (G.rename p) :=
+      of_eq (SourceAlgebra.rename_comp G r s) (move (lift h))
+    have hw2 := of_eq (omega_rename w p) (carry hw)
+    have hW := of_eq (ForcingDensityCode.weakenData_rename w a A f N W v p) (carry hWeak)
+    have ho := of_eq (field_rename (r w) (r L) i (r o) s) (move (.conjR hO))
+    have hX := weaken_bound_value hZ2 (p w) (p a) (p A) (p f) (p N) (p W) (p x) (p x') i' I (p ∘ v)
+      hw2 hW (move (.conjL hO)) hs
+      (of_eq (SyntaxVariableSyntax.code_rename true (r w) i (r x) s) (move (.conjR hB)))
+      (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r (v 1)) (r (v 2))
+        (r a) (r f) (r A) (r f) (r x) (r x') s) (move p0))
+    have hY := Source.Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ2 true
+      (p w) (p U) (p E) (p A) (p f) (p c) (p b) (p x') (p y) I hw2
+      (of_eq (SyntaxMixedImageCodeSyntax.termLists_rename (r w) (r A) (r f) (r c) (r b) (r U) (r E) s)
+        (move hL1)) hX))
+      (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r U) (r E) (r A) (r f) (r c) (r b)
+        (r x') (r y) s) (move p1))
+    have hiw := SyntaxVariableDecode.index_natural true (p w) i' (p x)
+      (of_eq (SyntaxVariableSyntax.code_rename true (r w) i (r x) s) (move (.conjR hB)))
+    have hOld := shift p i' I (p o) hZ2 carry hiw (move (.conjL hO)) hs ho
+    have hIw := SyntaxVariableDecode.index_natural true (p w) I (p x') hX
+    exact StructuralListFieldValues.unique hZ2 (p w) (p U) I (p y) (p o) hw2 hIw (.conjR hY) hOld
+
+/-- Cancel the original density weakening against a table that reads each old
+bound field at its successor index. The original free images are unchanged. -/
+theorem direct_after_weakening {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f c b L U E N W Y : Fin m) (v : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hL : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a c b L))
+    (hWeak : Derives Γ (ForcingDensityCode.weakenData w a A f N W v))
+    (hRun : Derives Γ (substituted w U E A f c b W Y))
+    (shift : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (i I o : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (.mem i (r w)) → Derives Δ (.mem i (r a)) → Derives Δ (successor I i) →
+      Derives Δ (field (r w) (r L) i o) → Derives Δ (field (r w) (r U) I o)) :
+    Derives Γ (substituted w L E a f c b N Y) := by
+  have hInput := SyntaxMixedFormulaOutput.input_of_substituted hZ w U E A f c b W Y hw hRun
+  have hE := Derives.conjR (.conjR hInput)
+  apply ForcingRelationGuardFormula.to_direct_at_scope hZ w a f A c b (v 1) (v 2) U E L E N W Y
+    hw (.conjL hL) (.conjL hE) hL hE (.conjR (.conjR (.conjR hWeak))) hRun
+  intro l Δ r hZ1 move x x' y o hPath
+  exact weakening_term_agreement hZ1 (r w) (r a) (r A) (r f) (r c) (r b) (r L) (r U) (r E)
+    (r N) (r W) x x' y o (r ∘ v) (of_eq (omega_rename w r) (move hw))
+    (of_eq (ForcingDensityCode.weakenData_rename w a A f N W v r) (move hWeak))
+    (fun s i I o hZ2 move2 hiw hi hs ho =>
+      shift (s ∘ r) i I o hZ2 (fun hp => of_eq (SourceAlgebra.rename_comp _ r s) (move2 (move hp))) hiw hi hs ho)
+    hPath
+
 /-- Open the actual density proof at the same fresh term and image tables
 used to open a modal parent. The guarded existential remains its exact output. -/
 theorem with_fresh_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -967,5 +1078,187 @@ theorem with_fresh_witness_records {m} {Γ : Context m} (hZ : ZFContext.Evidence
       (of_eq (SyntaxVariableSyntax.code_rename false (p w) (p z) t q) (move3 (.conjL (.conjR hT))))
       (of_eq (SyntaxTermSyntax.term_rename (p w) (p z) (s d) t q) (move3 (.conjR (.conjR hT))))
       hOpen hWitness)
+
+/-- At the fresh witness of the actual density existential, read the
+rebound body as a direct query of the original forcing code. The bound
+table is the actual tail after removing the two inserted conditions. -/
+theorem with_direct_witness_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z a A B f j N D b c d t L S X V E Y : Fin m)
+    (density : Fin 7 → Fin m) (images : Fin 10 → Fin m) (opened : Fin 9 → Fin m)
+    (hA : Derives Γ (successor A a))
+    (hDensity : Derives Γ (ForcingDensityCode.data Reln w a A B f j N D density))
+    (hOpen : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z A f B b c d t L S X V E images opened))
+    (hY : Derives Γ (substituted w (opened 7) (images 9) B f z d (density 6) Y))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Q K F : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (SyntaxTermSyntax.term (r w) (r z) (r d) Q) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r a) (r z) (r d) K) →
+      Derives Δ (StructuralListSyntax.consCode (r w) Q K (r (images 8))) →
+      Derives Δ (ForcingReflexiveImages.replacement (r w) (r f) (r z) (r d) (r (images 9)) (r j) (r t) F) →
+      Derives Δ (substituted (r w) K F (r a) (r f) (r z) (r d) (r N) (r Y)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hIn := Derives.conjL hOpen
+  have hw := Derives.conjL hIn
+  have hz := Derives.conjL (.conjR hIn)
+  have ht := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hIn))))))
+  have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
+  have hLists := SyntaxCodedMixedBinderTyping.input_lists w (images 8) (images 9) A f z d B c (opened 2) (opened 3) hLift
+  have hU := Derives.conjL hLists
+  have hH := Derives.conjR hLists
+  have hUmem := Derives.conjL (.conjL (.conjR (.conjR hU)))
+  have htmem := SyntaxTerms.range hZ w z d t hw ht
+  have hCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))
+  have hRebound := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hDensity)))))
+  refine eliminate_objects hZ 1 (fun r ws =>
+    (ForcingDensityCode.weakened (r w) (r a) (r A) (r f) (r N) (ws 0)).conj
+      (ForcingConditionRebind.compiled (r w) (r A) (r f) (r B) (r j) (ws 0) (r (density 6)))) hRebound out ?_
+  intro l Δ r ws hZ1 move hW
+  let W := ws 0
+  refine eliminate_objects hZ1 3 (fun s xs => ForcingDensityCode.weakenData (s (r w)) (s (r a)) (s (r A)) (s (r f))
+    (s (r N)) (s W) xs) (.conjL hW) (out.rename r) ?_
+  intro l' Ξ s xs hZ2 move2 hWeak
+  let p := s ∘ r
+  have carry {G : Formula m} (h : Derives Γ G) : Derives Ξ (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move2 (move h))
+  have hw2 := of_eq (omega_rename w p) (carry hw)
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine ForcingExistOrderOpening.with_successor_table hZ2 (p w) (p a) (p A) (p z) (p d) (p (images 8))
+    hw2 (of_eq (successor_rename A a p) (carry hA))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w A z d (images 8) p) (carry hU)) (out.rename p) ?_
+  intro l'' Ω q Q K hZ3 move3 hQmem hKmem hPrefix hQtype hK
+  let u := q ∘ p
+  have carry1 {G : Formula m} (h : Derives Γ G) : Derives Ω (G.rename u) :=
+    of_eq (SourceAlgebra.rename_comp G p q) (move3 (carry h))
+  have hComp := of_eq (ForcingConditionRebind.compiled_rename (r w) (r A) (r f) (r B) (r j) W (r (density 6)) (q ∘ s))
+    (of_eq (SourceAlgebra.rename_comp _ s q) (move3 (move2 (.conjR hW))))
+  apply of_eq (SourceAlgebra.rename_comp out p q).symm
+  refine ForcingExistOrderOpening.with_rebound_prefixed_query hZ3 (u w) (u z) (u A) (u f) (u B) (u z) (u d)
+    (u (opened 7)) (u (images 9)) (u (images 8)) (u t) (u j) (q (s W)) (u (density 6)) (u Y)
+    (of_eq (omega_rename w u) (carry1 hw)) (of_eq (empty_rename z u) (carry1 hz)) (carry1 htmem) (carry1 hUmem)
+    (of_eq (StructuralListSyntax.consCode_rename w t (images 8) (opened 7) u) (carry1 hCons))
+    (of_eq (SyntaxTermSyntax.term_rename w z d t u) (carry1 ht))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w A z d (images 8) u) (carry1 hU))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f z d (images 9) u) (carry1 hH))
+    hComp (of_eq (substituted_rename w (opened 7) (images 9) B f z d (density 6) Y u) (carry1 hY)) (out.rename u) ?_
+  intro l''' Θ h F hZ4 move4 hReplacement hRun
+  let d' := h ∘ q
+  let e := h ∘ u
+  have carry0 {G : Formula m} (hp : Derives Γ G) : Derives Θ (G.rename e) :=
+    of_eq (SourceAlgebra.rename_comp G u h) (move4 (carry1 hp))
+  have hWeak' := of_eq (ForcingDensityCode.weakenData_rename (p w) (p a) (p A) (p f) (p N) (s W) xs d')
+    (of_eq (SourceAlgebra.rename_comp _ q h) (move4 (move3 hWeak)))
+  have hK' := of_eq (SyntaxMixedImageCodeSyntax.termList_rename (u w) (u a) (u z) (u d) K h) (move4 hK)
+  have hPrefix' := of_eq (StructuralListSyntax.consCode_rename (u w) Q K (u (images 8)) h) (move4 hPrefix)
+  have hDirect := direct_after_weakening hZ4 (e w) (e a) (e A) (e f) (e z) (e d) (h K) (e (images 8)) F
+    (e N) (d' (s W)) (e Y) (d' ∘ xs) (of_eq (omega_rename w e) (carry0 hw)) hK' hWeak' hRun (by
+      intro l4 Λ g i I o hZ5 move5 hiw _ hs ho
+      exact StructuralListFieldCons.successor_backward hZ5 (g (e w)) (g (h Q)) (g (h K)) (g (e (images 8))) i I o
+        (of_eq (omega_rename (e w) g) (move5 (of_eq (omega_rename w e) (carry0 hw))))
+        (move5 (move4 hQmem)) (move5 (move4 hKmem)) hiw hs
+        (of_eq (StructuralListSyntax.consCode_rename (e w) (h Q) (h K) (e (images 8)) g) (move5 hPrefix')) ho)
+  exact of_eq (SourceAlgebra.rename_comp out u h).symm
+    (use e (h Q) (h K) F hZ4 carry0
+      (of_eq (SyntaxTermSyntax.term_rename (u w) (u z) (u d) Q h) (move4 hQtype)) hK' hPrefix' hReplacement hDirect)
+
+private theorem with_weakened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a A f b d L S K Q j C Nq Yq : Fin m) (images : Fin 10 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hImages : Derives Γ (ForcingWeakenedImages.data w A f z b d L S images))
+    (hU : Derives Γ (SyntaxMixedImageCodeSyntax.termList w A z d (images 8)))
+    (hH : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z d (images 9)))
+    (hK : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z d K))
+    (hQ : Derives Γ (SyntaxTermSyntax.term w z d Q))
+    (hPrefix : Derives Γ (StructuralListSyntax.consCode w Q K (images 8)))
+    (hComp : Derives Γ (ForcingConditionRebind.compiled w a f A j C Nq))
+    (hRun : Derives Γ (substituted w L S A f z b Nq Yq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (F Y : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (ForcingReflexiveImages.replacement (r w) (r f) (r z) (r d) (r (images 9)) (r j) (r Q) F) →
+      Derives Δ (SyntaxWeakenFreeSyntax.weakened (r w) (r z) (r b) (r d) (r Yq) Y) →
+      Derives Δ (substituted (r w) (r K) F (r a) (r f) (r z) (r d) (r C) Y) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hTyped := SyntaxMixedFormulaJudgmentTyping.source_type hZ w L S A f z b Nq Yq hw hRun
+  have hExists := SyntaxMixedFormulaOutputInduction.actual_exists hZ w (images 8) (images 9) A f z d Nq hw
+    (.conjI hTyped (.conjI hU hH))
+  refine eliminate_objects hZ 1 (fun r ys => substituted (r w) (r (images 8)) (r (images 9))
+    (r A) (r f) (r z) (r d) (r Nq) (ys 0)) hExists out ?_
+  intro l Δ r ys hZ1 move hNew
+  let Y := ys 0
+  have hWeak := ForcingWeakenedImages.from_queries hZ1 (r w) (r A) (r f) (r z) (r b) (r d) (r L) (r S)
+    (r Nq) (r Yq) Y (r ∘ images)
+    (.conjI (of_eq (ForcingWeakenedImages.data_rename w A f z b d L S images r) (move hImages))
+      (.conjI (of_eq (substituted_rename w L S A f z b Nq Yq r) (move hRun)) hNew))
+  refine ForcingExistOrderOpening.with_rebound_prefixed_query hZ1 (r w) (r z) (r a) (r f) (r A) (r z) (r d)
+    (r (images 8)) (r (images 9)) (r K) (r Q) (r j) (r C) (r Nq) Y
+    (of_eq (omega_rename w r) (move hw)) (of_eq (empty_rename z r) (move hz))
+    (move (SyntaxTerms.range hZ w z d Q hw hQ)) (move (.conjL (.conjL (.conjR (.conjR hK)))))
+    (of_eq (StructuralListSyntax.consCode_rename w Q K (images 8) r) (move hPrefix))
+    (of_eq (SyntaxTermSyntax.term_rename w z d Q r) (move hQ))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w a z d K r) (move hK))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f z d (images 9) r) (move hH))
+    (of_eq (ForcingConditionRebind.compiled_rename w a f A j C Nq r) (move hComp))
+    hNew (out.rename r) ?_
+  intro l' Ξ s F hZ2 move2 hReplacement hDirect
+  let p := s ∘ r
+  have carry {G : Formula m} (hp : Derives Γ G) : Derives Ξ (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move2 (move hp))
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use p F (s Y) hZ2 carry hReplacement
+      (of_eq (SyntaxWeakenFreeSyntax.weakened_rename (r w) (r z) (r b) (r d) (r Yq) Y s) (move2 hWeak)) hDirect)
+
+/-- The weakened operand at the outer condition and the original forcing
+code at the witness condition use the very same name table. Both condition
+entries come from the two actual prefixes in the opened density record. -/
+theorem with_same_name_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z a A B f j N D b c d t L S X V E Y C Nq Yq : Fin m)
+    (density : Fin 7 → Fin m) (images : Fin 10 → Fin m) (opened : Fin 9 → Fin m)
+    (hA : Derives Γ (successor A a))
+    (hDensity : Derives Γ (ForcingDensityCode.data Reln w a A B f j N D density))
+    (hOpen : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z A f B b c d t L S X V E images opened))
+    (hY : Derives Γ (substituted w (opened 7) (images 9) B f z d (density 6) Y))
+    (hQComp : Derives Γ (ForcingConditionRebind.compiled w a f A j C Nq))
+    (hQRun : Derives Γ (substituted w L S A f z b Nq Yq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Q K Fq Fr Z : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (SyntaxTermSyntax.term (r w) (r z) (r d) Q) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r a) (r z) (r d) K) →
+      Derives Δ (StructuralListSyntax.consCode (r w) Q K (r (images 8))) →
+      Derives Δ (ForcingReflexiveImages.replacement (r w) (r f) (r z) (r d) (r (images 9)) (r j) Q Fq) →
+      Derives Δ (ForcingReflexiveImages.replacement (r w) (r f) (r z) (r d) (r (images 9)) (r j) (r t) Fr) →
+      Derives Δ (SyntaxWeakenFreeSyntax.weakened (r w) (r z) (r b) (r d) (r Yq) Z) →
+      Derives Δ (substituted (r w) K Fq (r a) (r f) (r z) (r d) (r C) Z) →
+      Derives Δ (substituted (r w) K Fr (r a) (r f) (r z) (r d) (r N) (r Y)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hIn := Derives.conjL hOpen
+  have hw := Derives.conjL hIn
+  have hz := Derives.conjL (.conjR hIn)
+  have hImages := Derives.conjL (.conjR hOpen)
+  have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
+  have hLists := SyntaxCodedMixedBinderTyping.input_lists w (images 8) (images 9) A f z d B c (opened 2) (opened 3) hLift
+  refine with_direct_witness_query hZ Reln w z a A B f j N D b c d t L S X V E Y density images opened
+    hA hDensity hOpen hY out ?_
+  intro l Δ r Q K Fr hZ1 move hQ hK hPrefix hFr hDirectR
+  refine with_weakened_operand hZ1 (r w) (r z) (r a) (r A) (r f) (r b) (r d) (r L) (r S) K Q (r j)
+    (r C) (r Nq) (r Yq) (r ∘ images) (of_eq (omega_rename w r) (move hw)) (of_eq (empty_rename z r) (move hz))
+    (of_eq (ForcingWeakenedImages.data_rename w A f z b d L S images r) (move hImages))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w A z d (images 8) r) (move (.conjL hLists)))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f z d (images 9) r) (move (.conjR hLists)))
+    hK hQ hPrefix (of_eq (ForcingConditionRebind.compiled_rename w a f A j C Nq r) (move hQComp))
+    (of_eq (substituted_rename w L S A f z b Nq Yq r) (move hQRun)) (out.rename r) ?_
+  intro l' Ξ s Fq Z hZ2 move2 hFq hWeak hDirectQ
+  let p := s ∘ r
+  have carry {G : Formula m} (hp : Derives Γ G) : Derives Ξ (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move2 (move hp))
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use p (s Q) (s K) Fq (s Fr) Z hZ2 carry
+      (of_eq (SyntaxTermSyntax.term_rename (r w) (r z) (r d) Q s) (move2 hQ))
+      (of_eq (SyntaxMixedImageCodeSyntax.termList_rename (r w) (r a) (r z) (r d) K s) (move2 hK))
+      (of_eq (StructuralListSyntax.consCode_rename (r w) Q K (r (images 8)) s) (move2 hPrefix)) hFq
+      (of_eq (ForcingReflexiveImages.replacement_rename (r w) (r f) (r z) (r d) (r (images 9)) (r j) (r t) Fr s) (move2 hFr))
+      hWeak hDirectQ
+      (of_eq (substituted_rename (r w) K Fr (r a) (r f) (r z) (r d) (r N) (r Y) s) (move2 hDirectR)))
 
 end PPAC.Migration.ForcingDensityInstantiation
