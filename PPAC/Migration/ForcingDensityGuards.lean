@@ -3297,6 +3297,65 @@ theorem negative_reflexive_contradiction {k m} {Γ : Context m} (hZ : ZFContext.
       hw1 hz1 (of_eq (formulaCode_rename _ _ _ _ r) (lift hLocal)) hTailType hTailCode
       (of_eq (implication_rename test _ _ _ _ _ r) (lift pAtR)) pTail)
 
+/-- The source existential branch instantiates the same compiled universal
+at its selected condition. Read the second witness and name binders from
+the resulting tail while retaining the proof of that exact tail. -/
+theorem with_existential_at_reflexive {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a A B C f b j L S Base K Extra A1 A2 A3 Cr Bd Refl Pre Child Parent ParentOut Local : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (I : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (cv : Fin 8 → Fin m) (sv : Fin 7 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (successor A a))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hi : Derives Γ (numeral k K)) (hf : Derives Γ (numeral (k+2) f)) (hj : Derives Γ (numeral (k+1) j))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) S))
+    (hA1 : Derives Γ (numeral 1 A1)) (hA2 : Derives Γ (numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P I Ds))
+    (hPre : Derives Γ (substituted w Bd Base z f z b (raw 0) Pre))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hc : Derives Γ (ForcingExistCode.data Reln Dom w a A B C f j Child Parent cv))
+    (hs : Derives Γ (ForcingExistCode.shellData w a A B C f (cv 2) (cv 3) (cv 4) (cv 5) (cv 6) (cv 7) Parent sv))
+    (hQuery : Derives Γ (substituted w L S a f z b Parent ParentOut))
+    (hLocal : Derives Γ (formulaCode w Local z b))
+    (pGlobal : Derives Γ (implication test w z b Local (layout 3)))
+    (pParent : Derives Γ (implication test w z b Local ParentOut))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Pfx Tail : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (consCode (r w) (r (P 1)) (r L) Pfx) →
+      Derives Δ (substituted (r w) Pfx (r S) (r A) (r f) (r z) (r b) (r (sv 4)) Tail) →
+      Derives Δ (ForcingExistTailOpening.scopeResult (r w) Pfx (r S) (r A) (r f) (r z) (r b) Tail
+        (r Base) (r j) (r (P 1)) (ForcingExistTailOpening.shellCodes (r (cv 4)) (r (cv 5))
+          (r (cv 6)) (r (cv 7)) (r ∘ sv))) →
+      Derives Δ (implication test (r w) (r z) (r b) (r Local) Tail) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hHead := Derives.conjL hc
+  have hOuter := Derives.conjR (.conjR (.conjR (.conjR (.conjR hs))))
+  have hShell : Derives Γ (ForcingRawModalBody.shell w Parent (cv 2) (cv 3) (sv 4) (sv 5) (sv 6)) :=
+    .conjI (.conjL (.conjR (.conjR hOuter)))
+      (.conjI (.conjL (.conjL (.conjR hOuter))) (.conjL (.conjL hOuter)))
+  refine with_reflexive_outer_tail hZ Reln w z a A f b j L S Base K Extra A1 A2 A3 Cr Bd Refl Pre
+    Parent ParentOut (cv 0) (cv 1) (cv 2) (cv 3) (sv 4) (sv 5) (sv 6) Local
+    raw Gb H layout U F P I Ds hw hz hA ht hi hf hj hBase hUpdate hA1 hA2 hRow hPre hExtra hLayout
+    (.conjL hHead) (.conjL (.conjR hHead)) (.conjL (.conjR hc)) (.conjL (.conjR (.conjR hc)))
+    hShell hQuery hLocal pGlobal pParent out ?_
+  intro l Δ r A' Pfx Tail hZ1 lift hA' hPfx hTail pTail
+  have eA := OmegaUniversal.successor_unique A' (r A) (r a) (ZFContext.arithmetic hZ1).base.extensionality
+    hA' (of_eq (successor_rename _ _ r) (lift hA))
+  have hTailAtA := SyntaxMixedFormulaJudgmentSubst.subst_a (r w) Pfx (r S) A' (r f) (r z) (r b)
+    (r (sv 4)) Tail (r A) eA hTail
+  have hPrepared := ForcingExistTailOpening.prepare_shell hZ1 (r w) (r a) (r A) (r B) (r C) (r f)
+    (r (cv 2)) (r (cv 3)) (r (cv 4)) (r (cv 5)) (r (cv 6)) (r (cv 7))
+    (r Parent) Pfx (r S) (r z) (r b) Tail (r Base) (r j) (r (P 1)) (r ∘ sv)
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (replacement_rename _ _ _ _ _ _ _ _ r) (lift hUpdate))
+    (of_eq (ForcingExistCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ sv r) (lift hs)) hTailAtA
+  exact use r Pfx Tail hZ1 lift hPfx hTailAtA hPrepared pTail
+
 private theorem falsum_at_instance_with_prefix {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     {Reln : Formula (k+2)} {q : ReflexiveRuntime m} {S : Fin m} (h : ReflexiveEvidence Γ Reln q S)
     (a A B L D N Pfx : Fin m) (d : Fin 7 → Fin m) (s o : Fin 5 → Fin m) (u v x : Fin 4 → Fin m)

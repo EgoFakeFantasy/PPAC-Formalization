@@ -859,15 +859,10 @@ private theorem witness_layout_from_proofs {m} {Γ : Context m} (hZ : ZFContext.
   exact ForcingProofContext.join hZ test w z b J Extra (layout 2) (layout 3)
     hw hz hJ hExtra (.conjR h2) (.conjL h3) pExtra p2
 
-/-- Generate the actual preorder runs and proof context required by the
-original monotonicity certificate at the density witness. Replay that
-certificate on the actual child compilation at q and r. The order leaf
-and member leaves of this runtime are identified with the original guards.
-Rebuild its background inside the opened density context and use it to
-transfer the positive child to r. -/
-theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (Reln : Formula (k+2)) (Dom : Formula (k+1))
-    (w z a f j b B R S T Old New A1 A2 A3 K C Extra q r n Child AtQ AtR OrderA OrderHead OrderCode OrderOut Selected Sel : Fin m)
+-- Assemble the witness preorder once for the negative and existential source clauses.
+private theorem with_witness_preorder {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2))
+    (w z a f j b B R S T Old New A1 A2 A3 K C Extra q r OrderA OrderHead OrderCode OrderOut Selected Sel : Fin m)
     (raw : Fin 16 → Fin m) (Local PriorPre : Fin m) (memberQ memberR : Fin 4 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
@@ -887,11 +882,6 @@ theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
     (hq : Derives Γ (SyntaxTermSyntax.term w z b q))
     (hr : Derives Γ (SyntaxTermSyntax.term w z b r))
     (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
-    (hSource : Derives Γ (formulaCode w n a z))
-    (hChild : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n Child))
-    (hAtQ : Derives Γ (substituted w T Old a f z b Child AtQ))
-    (hAtR : Derives Γ (substituted w T New a f z b Child AtR))
-    (hPositive : Derives Γ (implication test w z b Extra AtQ))
     (hOrder : Derives Γ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln)
       w z f b q New OrderA OrderHead OrderCode OrderOut))
     (hLocal : Derives Γ (formulaCode w Local z b))
@@ -916,10 +906,8 @@ theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
         (ρ b) (ρ B) (ρ R) (ρ S) (ρ T) (ρ Old) (ρ New) (ρ A1) (ρ A2) (ρ A3)
         (ρ K) (ρ Extra) (ρ ∘ raw) images (fun _ => ρ C) Refl Pre U0 P rows layout) →
       Derives Δ (substituted (ρ w) (ρ R) (ρ S) (ρ z) (ρ f) (ρ z) (ρ b) (ρ (raw 0)) (Pre 0)) →
-      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (layout 3) (ρ AtR)) →
       Derives Δ (.equal (ForcingMemberRows.leafFields (fun i => rows (i.castAdd 24)) 4) (ρ OrderOut)) →
       Derives Δ (implication test (ρ w) (ρ z) (ρ b) (ρ Local) (layout 3)) →
-      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (ρ Local) (ρ AtR)) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   let p : WitnessRuntimeArgs m := ⟨w,z,a,f,j,b,B,R,S,T,Old,New,A1,A2,A3,K,C,Extra,q,r,raw⟩
   have hTerms (i : Fin 3) : Derives Γ (SyntaxTermSyntax.term w z b (p.terms i)) :=
@@ -1033,33 +1021,12 @@ theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
   let images5 := v ∘ i ∘ images3
   let rows5 := v ∘ rows
   have hRuntime := Derives.conjL hResult
-  have hMono := ForcingSourceMonoInduction.at_code hZ5 Reln Dom (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' j)
-    (ρ' b) (ρ' B) (ρ' R) (ρ' S) (ρ' T) (ρ' Old) (ρ' New) (ρ' A1) (ρ' A2) (ρ' A3)
-    (ρ' K) (ρ' Extra) (ρ' n) (ρ' ∘ raw) images5 (fun _ => ρ' C) Refl5 Pre5 U5 P5 rows5 layout
-    hRuntime (of_eq (formulaCode_rename w n a z ρ') (lift' hSource))
-  have hTransfer := ForcingSourceMono.apply_atSource test Reln Dom (ρ' w) (ρ' z) (ρ' f) (ρ' j) (ρ' a)
-    (ρ' b) (layout 3) (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' n) (ρ' Child) hMono
-    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ') (lift' hChild))
   let row : Fin 24 → Fin l5 := fun k => rows5 (k.castAdd 24)
   have hGlobal := Derives.conjL hRuntime
   have hRows := Derives.conjL (.conjL hGlobal)
   have hRow := Derives.conjL (.conjR hRows)
   have h5 := h.map ρ' lift'
   have hLayout := Derives.conjR (.conjR (.conjR hGlobal))
-  have hMiddle := Derives.conjR (.conjL (.conjR (.conjR hLayout)))
-  have hG := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
-  have hProj := ForcingRelationGuardProof.project hZ5 test false (ρ' w) (ρ' z) (ρ' b)
-    (ρ' Extra) (layout 2) (layout 3) h5.omega h5.zero h5.extra hMiddle (.conjR hG) (.conjL hG)
-  have qQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtQ)
-  have rQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtR)
-  have hQType := SyntaxMixedFormulaJudgment.target_type (ρ' w) (ρ' T) (ρ' Old)
-    (ρ' a) (ρ' f) (ρ' z) (ρ' b) (ρ' Child) (ρ' AtQ) qQuery
-  have hProofQ := ForcingRelationGuardProof.chain hZ5 test (ρ' w) (ρ' z) (ρ' b) (layout 3)
-    (ρ' Extra) (ρ' AtQ) h5.omega h5.zero (.conjR hG) h5.extra hQType hProj
-    (of_eq (implication_rename test _ _ _ _ _ ρ') (lift' hPositive))
-  have hProofR := ForcingConjunctionMono.apply_transfer test (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' b) (layout 3)
-    (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' Child) (ρ' AtQ) (ρ' AtR)
-    hTransfer qQuery rQuery hProofQ
   have hOrderEq := ForcingDensityGuards.witness_order_from_row hZ5 Reln (ρ' w) (ρ' z) (ρ' A1) (ρ' A2)
     (ρ' A3) (ρ' f) (ρ' b) (ρ' C) (ρ' R) (ρ' S) (Refl5 0) (Pre5 0) (ρ' New) (ρ' OrderA) (ρ' OrderHead)
     (ρ' OrderCode) (ρ' OrderOut) (ρ' j) (ρ' ∘ raw) (ForcingMemberRows.backgroundFields row)
@@ -1112,14 +1079,111 @@ theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
     (local_output (memberR 3) (H 1) (eq_symm eR) pMemberR)
     (local_output (memberQ 3) (H 2) (eq_symm eQ) pMemberQ)
     (local_output OrderOut (H 4) (eq_symm hOrderEq) pOrder)
+  exact of_eq (SourceAlgebra.rename_comp out (i ∘ e) v).symm
+    (use ρ' Refl5 Pre5 U5 P5 images5 rows5 layout hZ5 lift' rfl rfl hRuntime hPreQuery
+      hOrderEq hLocalGlobal)
+
+/-- Generate the actual preorder runs and proof context required by the
+original monotonicity certificate at the density witness. Replay that
+certificate on the actual child compilation at q and r. The order leaf
+and member leaves of this runtime are identified with the original guards.
+Rebuild its background inside the opened density context and use it to
+transfer the positive child to r. -/
+theorem with_witness_monotonicity {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b B R S T Old New A1 A2 A3 K C Extra q r n Child AtQ AtR OrderA OrderHead OrderCode OrderOut Selected Sel : Fin m)
+    (raw : Fin 16 → Fin m) (Local PriorPre : Fin m) (memberQ memberR : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hA3 : Derives Γ (SyntaxNumeralSyntax.numeral 3 A3))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hK : Derives Γ (SyntaxNumeralSyntax.numeral k K))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hC : Derives Γ (successor C z)) (hB : Derives Γ (successor B b))
+    (hR : Derives Γ (SyntaxMixedImageCodeSyntax.termList w z z b R))
+    (hS : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b S))
+    (hT : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z b T))
+    (hOld : Derives Γ (ForcingReflexiveImages.replacement w f z b S j q Old))
+    (hNew : Derives Γ (ForcingReflexiveImages.replacement w f z b S j r New))
+    (hSelected : Derives Γ (ForcingReflexiveImages.replacement w f z b S j Sel Selected))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hq : Derives Γ (SyntaxTermSyntax.term w z b q))
+    (hr : Derives Γ (SyntaxTermSyntax.term w z b r))
+    (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
+    (hSource : Derives Γ (formulaCode w n a z))
+    (hChild : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n Child))
+    (hAtQ : Derives Γ (substituted w T Old a f z b Child AtQ))
+    (hAtR : Derives Γ (substituted w T New a f z b Child AtR))
+    (hPositive : Derives Γ (implication test w z b Extra AtQ))
+    (hOrder : Derives Γ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln)
+      w z f b q New OrderA OrderHead OrderCode OrderOut))
+    (hLocal : Derives Γ (formulaCode w Local z b))
+    (hPriorPre : Derives Γ (substituted w R S z f z b (raw 0) PriorPre))
+    (hMemberQ : Derives Γ (ForcingGuardOpening.result false Reln
+      w z f b q Selected (memberQ 0) (memberQ 1) (memberQ 2) (memberQ 3)))
+    (hMemberR : Derives Γ (ForcingGuardOpening.result false Reln
+      w z f b r Selected (memberR 0) (memberR 1) (memberR 2) (memberR 3)))
+    (pExtra : Derives Γ (implication test w z b Local Extra))
+    (pPre : Derives Γ (implication test w z b Local PriorPre))
+    (pMemberQ : Derives Γ (implication test w z b Local (memberQ 3)))
+    (pMemberR : Derives Γ (implication test w z b Local (memberR 3)))
+    (pOrder : Derives Γ (implication test w z b Local OrderOut))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l)
+      (Refl Pre U0 : Fin 2 → Fin l) (P : Fin 2 → Fin 3 → Fin l)
+      (images : Fin 10 → Fin l) (rows : Fin 48 → Fin l) (layout : Fin 6 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F}, Derives Γ F → Derives Δ (F.rename ρ)) →
+      P 0 1 = ρ r → P 0 2 = ρ q →
+      Derives Δ (ForcingRawModalBody.globalModalInput test Reln (ρ w) (ρ z) (ρ a) (ρ f) (ρ j)
+        (ρ b) (ρ B) (ρ R) (ρ S) (ρ T) (ρ Old) (ρ New) (ρ A1) (ρ A2) (ρ A3)
+        (ρ K) (ρ Extra) (ρ ∘ raw) images (fun _ => ρ C) Refl Pre U0 P rows layout) →
+      Derives Δ (substituted (ρ w) (ρ R) (ρ S) (ρ z) (ρ f) (ρ z) (ρ b) (ρ (raw 0)) (Pre 0)) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (layout 3) (ρ AtR)) →
+      Derives Δ (.equal (ForcingMemberRows.leafFields (fun i => rows (i.castAdd 24)) 4) (ρ OrderOut)) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (ρ Local) (layout 3)) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ b) (ρ Local) (ρ AtR)) →
+      Derives Δ (out.rename ρ)) : Derives Γ out := by
+  refine with_witness_preorder hZ Reln w z a f j b B R S T Old New A1 A2 A3 K C Extra q r
+    OrderA OrderHead OrderCode OrderOut Selected Sel raw Local PriorPre memberQ memberR hw hz hA1 hA2 hA3
+    hf hK hj hC hB hR hS hT hOld hNew hSelected hExtra hq hr hRaw hOrder hLocal hPriorPre hMemberQ hMemberR
+    pExtra pPre pMemberQ pMemberR pOrder out ?_
+  intro l5 Ψ ρ' Refl5 Pre5 U5 P5 images5 rows5 layout hZ5 lift' eR eQ hRuntime hPreQuery hOrderEq hLocalGlobal
+  have hMono := ForcingSourceMonoInduction.at_code hZ5 Reln Dom (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' j)
+    (ρ' b) (ρ' B) (ρ' R) (ρ' S) (ρ' T) (ρ' Old) (ρ' New) (ρ' A1) (ρ' A2) (ρ' A3)
+    (ρ' K) (ρ' Extra) (ρ' n) (ρ' ∘ raw) images5 (fun _ => ρ' C) Refl5 Pre5 U5 P5 rows5 layout
+    hRuntime (of_eq (formulaCode_rename w n a z ρ') (lift' hSource))
+  have hTransfer := ForcingSourceMono.apply_atSource test Reln Dom (ρ' w) (ρ' z) (ρ' f) (ρ' j) (ρ' a)
+    (ρ' b) (layout 3) (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' n) (ρ' Child) hMono
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ') (lift' hChild))
+  have hGlobal := Derives.conjL hRuntime
+  have hLayout := Derives.conjR (.conjR (.conjR hGlobal))
+  have hw5 := of_eq (omega_rename _ ρ') (lift' hw)
+  have hz5 := of_eq (empty_rename _ ρ') (lift' hz)
+  have hExtra5 := of_eq (formulaCode_rename _ _ _ _ ρ') (lift' hExtra)
+  have hLocalType := of_eq (formulaCode_rename _ _ _ _ ρ') (lift' hLocal)
+  have hMiddle := Derives.conjR (.conjL (.conjR (.conjR hLayout)))
+  have hG := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
+  have hProj := ForcingRelationGuardProof.project hZ5 test false (ρ' w) (ρ' z) (ρ' b)
+    (ρ' Extra) (layout 2) (layout 3) hw5 hz5 hExtra5 hMiddle (.conjR hG) (.conjL hG)
+  have qQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtQ)
+  have rQuery := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ') (lift' hAtR)
+  have hQType := SyntaxMixedFormulaJudgment.target_type (ρ' w) (ρ' T) (ρ' Old)
+    (ρ' a) (ρ' f) (ρ' z) (ρ' b) (ρ' Child) (ρ' AtQ) qQuery
+  have hProofQ := ForcingRelationGuardProof.chain hZ5 test (ρ' w) (ρ' z) (ρ' b) (layout 3)
+    (ρ' Extra) (ρ' AtQ) hw5 hz5 (.conjR hG) hExtra5 hQType hProj
+    (of_eq (implication_rename test _ _ _ _ _ ρ') (lift' hPositive))
+  have hProofR := ForcingConjunctionMono.apply_transfer test (ρ' w) (ρ' z) (ρ' a) (ρ' f) (ρ' b) (layout 3)
+    (fun _ => ρ' T) (SyntaxAtomSyntax.two (ρ' Old) (ρ' New)) (ρ' Child) (ρ' AtQ) (ρ' AtR)
+    hTransfer qQuery rQuery hProofQ
   have hRType := SyntaxMixedFormulaJudgment.target_type (ρ' w) (ρ' T) (ρ' New)
     (ρ' a) (ρ' f) (ρ' z) (ρ' b) (ρ' Child) (ρ' AtR) rQuery
   have hLocalR := ForcingRelationGuardProof.chain hZ5 test (ρ' w) (ρ' z) (ρ' b)
-    (ρ' Local) (layout 3) (ρ' AtR) h5.omega h5.zero hLocalType (.conjR hG)
+    (ρ' Local) (layout 3) (ρ' AtR) hw5 hz5 hLocalType (.conjR hG)
     hRType hLocalGlobal hProofR
-  exact of_eq (SourceAlgebra.rename_comp out (i ∘ e) v).symm
-    (use ρ' Refl5 Pre5 U5 P5 images5 rows5 layout hZ5 lift' rfl rfl hRuntime hPreQuery
-      hProofR hOrderEq hLocalGlobal hLocalR)
+  exact use ρ' Refl5 Pre5 U5 P5 images5 rows5 layout hZ5 lift' eR eQ hRuntime hPreQuery
+    hProofR hOrderEq hLocalGlobal hLocalR
 
 set_option maxHeartbeats 600000 in
 /-- Use the actual witness table to raise the two original outer proofs, then

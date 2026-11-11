@@ -2789,7 +2789,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_density_code', 'ForcingDensityCode', 37),
                                 ('forcing_source_density_constant', 'ForcingSourceDensityConstant', 10),
                                 ('forcing_density_instantiation', 'ForcingDensityInstantiation', 49),
-                                ('forcing_density_guards', 'ForcingDensityGuards', 28),
+                                ('forcing_density_guards', 'ForcingDensityGuards', 29),
                                 ('forcing_source_density', 'ForcingSourceDensity', 26),
                                 ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 40),
                                 ('forcing_atomic_mono', 'ForcingAtomicMono', 15),

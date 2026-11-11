@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingDensityGuards.with_existential_at_reflexive` 用同一偏序把 `r` 处的原存在强迫式实例化于 `r ≤ r`，保留实际存在尾式的推导及条件、名字两层绑定器的开式记录。原否定分支复用提取出的见证偏序行和局部证明背景。原 `force_of_dense.ex` 仍需将两次见证查询接到同一运行记录，证明 `s ≤ q` 并闭合原量词。[整仓验收](../verification/forcing-existential-density-reflexive-acceptance.json)
+
 `ForcingDensityInstantiation.with_existential_density_witness` 已在 nativeZF 推导中从原密度存在式取得实际见证 `r`、`r ≤ q` 和 `r` 处的原存在强迫式查询。反身实例化与见证消去复用原否定分支的证明。原 `force_of_dense.ex` 仍需在 `r ≤ r` 处取第二个见证，证明其到 `q` 的顺序并闭合原存在式。[整仓验收](../verification/forcing-existential-density-witness-acceptance.json)
 
 `ForcingSourceDensity.negative_kernel_certificate` 已在普通 nativeZF 原核关闭 OpenAI 原 `force_of_dense.neg` 的分支句。它从统一运行记录投影继承的偏序证明，保持实际选中条件和密度见证的查询，量化原编译器的全部对应输出。第 10 阶段还需接完原 `ex`，再关闭完整密度归纳。[整仓验收](../verification/forcing-negative-density-runtime-acceptance.json)
