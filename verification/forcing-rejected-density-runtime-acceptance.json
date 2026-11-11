@@ -1,0 +1,80 @@
+{
+  "baseline_commit": "be7f869eac54885c46218a75356ed2fbefc39696",
+  "recorded_at": "2026-11-11T23:39:51.834399+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.exists_force_neg"
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingSourceDensity.negative_from_rejected_density_runtime",
+    "PPAC.Migration.ForcingSourceDensity.rejected_density_runtime_kernel_certificate",
+    "PPAC.Migration.ForcingWeakenedOverwrite.with_rebased_update"
+  ],
+  "scope": "The actual rejected density tail and its original shell supply the fresh condition and the positive opening. The original selected q is renamed on the same index maps, and its free replacement and inherited bound list are computed internally. The actual negative compiler supplies its body and the negative query is opened at the same condition using those image tables. The two actual openings feed the previously verified original negative universal, replayed in nativeZF.",
+  "actual_bound_tail_matched": true,
+  "actual_member_queries_matched": true,
+  "actual_order_queries_matched": true,
+  "actual_forcing_queries_matched": true,
+  "native_rejected_density_runtime_certificate_proved": true,
+  "paired_openings_and_selected_update_generated": true,
+  "outer_exists_force_neg_condition_witness_proved": false,
+  "force_formula_imp_proved": false,
+  "forcing_modus_ponens_proved": false,
+  "final_internal_con_proved": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40297,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "dd460208de95f71ce9f51a1d2cfa623c01358628e78f603accb400b94e046019",
+      "PPAC/Migration/ForcingSourceDensity.lean": "0e4855e37600b2063fd586554a4ce6dfef9638790596a7031aa895d7fc4166c7",
+      "PPAC/Migration/ForcingWeakenedOverwrite.lean": "c1f7c641ee39089eeeb2bc5c8c3d6afad5479d13754ab9c1c7a987e3a9380957",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "56477b92aba665958ce2df2a56807c3b601888df4c41ebebf41ef383dab4a94b",
+      "docs/CURRENT_STATUS.zh-CN.md": "8ed12f59b0e617f3d959d06ea41b03000e0271ecfebf2071aa4f6902d979dfea",
+      "docs/SOURCE_LOCK.json": "cafd3d57ae976fb44fd655e1d2b1303149688f06b7efc301a00f14e05279d304",
+      "scripts/verify.py": "ad629662fe06fb31a26d622d2c65e88b79634a0a3a92e314e45231418bcc298e"
+    }
+  },
+  "baseline_declarations_compared": 40294,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingSourceDensity.negative_from_rejected_density_runtime": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.rejected_density_runtime_kernel_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingWeakenedOverwrite.with_rebased_update": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

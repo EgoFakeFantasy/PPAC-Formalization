@@ -40408,6 +40408,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.result_rename
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.produce
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_base_of_update
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_rebased_update
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_selected_existential_images
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.from_queries
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame
@@ -40966,6 +40967,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.rejected_density_openings_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_from_paired_density_openings
 #print axioms PPAC.Migration.ForcingSourceDensity.paired_density_openings_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_from_rejected_density_runtime
+#print axioms PPAC.Migration.ForcingSourceDensity.rejected_density_runtime_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
