@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingDensityCode.kernel_certificate` 在 nativeZF 原核中为任意内部强迫公式码构造原 `force_of_dense` 的稠密性前提。它插入两层条件绑定，只在见证正文中替换指定条件槽。`ForcingDensityCode.from_tables` 使用同一份实际替换表生成该前提的查询码。两项已随主入口通过 Windows 整仓验收。全内部公式码的稠密性推导尚未闭合。见[稠密性前提验收](../verification/forcing-density-code-acceptance.json)。
+
 `ForcingSourceMonoInduction.kernel_certificate` 已通过模块级 `--trust=0`。它在原运行记录下，用对象 ω 成员归纳覆盖全部内部公式码，沿用原编译器各分支和两份实际替换。`ForcingAtomicDenseTemplate.kernel_certificate` 也已通过同一检查，覆盖成员与相等的稠密性分支，在对象层生成较旧条件查询和实际稠密性码，并推出当前条件的原子结果。两项均已通过 Windows 整仓验收，共 3,375 项构建任务、40,030 项声明，零警告。见[本批验收](../verification/forcing-source-mono-and-atomic-density-acceptance.json)。
 
 `ForcingSourceMono.atomic_kernel_certificate` 在 nativeZF 原推导核中覆盖成员与相等分支。原递归编译器的同一实际输出分别在两张条件覆写表上查询。证明从原预序行读出 `Pre`、`q ∈ P`、`q ≤ p`，与两份原子查询共用一张项像表，再在 `oldCtx 3` 下消去四层蕴含。见[原子分支验收](../verification/forcing-atomic-source-induction-acceptance.json)。

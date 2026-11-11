@@ -1,0 +1,175 @@
+{
+  "baseline_commit": "4ade1e05265243386a86cc7fbc663ead5f1b4b76",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense"
+  },
+  "native_certificate": "PPAC.Migration.ForcingDensityCode.kernel_certificate",
+  "same_table_consumer": "PPAC.Migration.ForcingDensityCode.from_tables",
+  "scope": "The original two-condition density premise has an actual code for every valid internal forcing formula code, including nonstandard ones. It shifts old bound indices twice, preserves other free indices, rebinds the selected condition to r, and uses the original membership and order guards. The actual premise is also queried under the same typed mixed lists as the selected forcing condition. This constructs the premise and its query; the all-code density proof transfer and relative consistency are open.",
+  "full_source_density_induction_proved": false,
+  "final_internal_reduction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T06:49:53.413456+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3376,
+    "audited_declarations": 40059,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "all_direct_footprints_identical": true,
+    "staged_adapter_sha256": "7bfaa2f26efd3539b34e06aaf51098d62f7b69271ce277e0da76de49eb2bdc3c"
+  },
+  "baseline_declarations_compared": 40030,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityCode.weakened": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.weakened_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.weakened_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.rebound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.rebound_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.existsRebound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.existsRebound_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.rebound_total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.rebound_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.shellData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.shellData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.shell": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.shell_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.data": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.data_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.body": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.compiled": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.compiled_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.existsCompiled": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.existsCompiled_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.total": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.sentence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDensityCode.compiled_type": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.queryData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.queryData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.queried": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.queried_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.from_tables": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "new_axioms": []
+}
