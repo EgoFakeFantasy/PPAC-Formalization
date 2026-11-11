@@ -892,6 +892,110 @@ theorem with_fresh_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evide
     ((SourceAlgebra.rename_comp (out.rename r) s (h ∘ q)).trans (SourceAlgebra.rename_comp out r r'))).symm
     (use e' (r' ∘ v) (h ∘ q ∘ nodes) (h ∘ u) x hZ4 carry0 hData' hS' hU' hX hP')
 
+private theorem with_opened_density_tail {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z a A B f j N b c d t L S D E G W H body Parent
+      headZero head Member Order Tail Inner : Fin m)
+    (images : Fin 10 → Fin m) (opened : Fin 9 → Fin m) (outputs : Fin 4 → Fin m)
+    (hParent : Derives Γ (ForcingFreshParentOpening.data w z a f A b c d t L S N body Parent images opened))
+    (hZero : Derives Γ (empty headZero))
+    (hHeadCode : Derives Γ (SyntaxVariableSyntax.code true w headZero head))
+    (hMember : Derives Γ (ForcingGuardCode.compiled false Reln w A f head Member))
+    (hOrder : Derives Γ (ForcingGuardCode.compiled true Reln w A f head Order))
+    (hOpenedQueries : Derives Γ (ForcingRawModalBody.data w (opened 7) (images 9) A f z d
+      Member Order Tail Inner (opened 8) outputs))
+    (hCompiled : Derives Γ (ForcingDensityCode.compiled Reln w a A B f j N D))
+    (hQuery : Derives Γ (substituted w L S a f z b D E))
+    (hWeakG : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d G W))
+    (hProof : Derives Γ (implication test w z b G E))
+    (hH : Derives Γ (formulaCode w H z d)) (hW : Derives Γ (formulaCode w W z d))
+    (hToW : Derives Γ (implication test w z d H W))
+    (hM : Derives Γ (implication test w z d H (outputs 1)))
+    (hO : Derives Γ (implication test w z d H (outputs 2)))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (v : Fin 7 → Fin l) (s : Fin 5 → Fin l)
+      (u : Fin 9 → Fin l) (x : Fin 4 → Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (.equal (r (opened 7)) (u 7)) →
+      Derives Δ (ForcingDensityCode.data Reln (r w) (r a) (r A) (r B) (r f) (r j) (r N) (r D) v) →
+      Derives Δ (ForcingDensityCode.shellData (r w) (r a) (r A) (r B) (r f) (v 2) (v 3) (v 4) (v 5) (v 6) (r D) s) →
+      Derives Δ (ForcingFreshParentOpening.data (r w) (r z) (r a) (r f) (r A) (r b) (r c) (r d) (r t)
+        (r L) (r S) (r D) (s 4) (r E) (r ∘ images) u) →
+      Derives Δ (ForcingRawModalBody.nestedData 2 (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d)
+        (v 2) (v 3) (s 2) (s 3) (u 8) x) →
+      Derives Δ (implication test (r w) (r z) (r d) (r H) (x 3)) →
+      Derives Δ (out.rename r)) :
+    Derives Γ out := by
+  have hIn := Derives.conjL hParent
+  have hw := Derives.conjL hIn
+  have hz := Derives.conjL (.conjR hIn)
+  have hIn2 := Derives.conjR (.conjR hIn)
+  have hIn3 := Derives.conjR hIn2
+  have hIn4 := Derives.conjR hIn3
+  have hIn5 := Derives.conjR hIn4
+  have ht := Derives.conjL (.conjR hIn5)
+  refine with_fresh_instance_records hZ Reln w z a A B f j N b c d t L S D E G W images
+    hw hz (.conjL hIn2) (.conjL hIn3) (.conjL hIn4) (.conjL hIn5) ht
+    (.conjL (.conjR hParent)) hCompiled hQuery hWeakG hProof out ?_
+  intro l Δ r v s u x hZ1 move hDensity hShell hOpen hQueryOut hp
+  have hw1 := of_eq (omega_rename w r) (move hw)
+  have hz1 := of_eq (empty_rename z r) (move hz)
+  have hOld := of_eq (ForcingFreshParentOpening.data_rename w z a f A b c d t L S N body Parent images opened r) (move hParent)
+  have hOldRun := of_eq (ForcingRawModalBody.data_rename w (opened 7) (images 9) A f z d
+    Member Order Tail Inner (opened 8) outputs r) (move hOpenedQueries)
+  have hNewHead := Derives.conjL hDensity
+  have eEmpty := OmegaUniversal.empty_unique (r headZero) (v 0) (ZFContext.arithmetic hZ1).base.extensionality
+    (of_eq (empty_rename _ _) (move hZero)) (.conjL hNewHead)
+  have hHead := SyntaxVariableImagePoint.code_subst_index true (r w) (r headZero) (r head) (v 0)
+    eEmpty (of_eq (SyntaxVariableSyntax.code_rename _ _ _ _ r) (move hHeadCode))
+  have eHead := SyntaxVariables.unique hZ1 true (r w) (v 0) (r head) (v 1) hw1 hHead (.conjL (.conjR hNewHead))
+  have hOldCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOld)))))))
+  have hNewCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))
+  have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
+  have hLists := SyntaxCodedMixedBinderTyping.input_lists (r w) (r (images 8)) (r (images 9)) (r a) (r f)
+    (r z) (r d) (r A) (r c) (u 2) (u 3) hLift
+  have hList := Derives.conjL hLists
+  have ht1 := SyntaxTerms.range hZ1 (r w) (r z) (r d) (r t) hw1 (of_eq (SyntaxTermSyntax.term_rename w z d t r) (move ht))
+  have eList := StructuralConsUnique.unique hZ1 (r w) (r t) (r (images 8)) (r (opened 7)) (u 7) hw1 ht1
+    (.conjL (.conjL (.conjR (.conjR hList)))) hOldCons hNewCons
+  have compare (order : Bool) (M O Y Y' : Fin l)
+      (hm : Derives Δ (ForcingGuardCode.compiled order Reln (r w) (r A) (r f) (r head) M))
+      (ho : Derives Δ (ForcingGuardCode.compiled order Reln (r w) (r A) (r f) (v 1) O))
+      (hY : Derives Δ (substituted (r w) (r (opened 7)) (r (images 9)) (r A) (r f) (r z) (r d) M Y))
+      (hY' : Derives Δ (substituted (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) O Y')) :
+      Derives Δ (.equal Y Y') := by
+    let P := ForcingGuardCode.compiled order Reln (r w).castSucc (r A).castSucc (r f).castSucc (Fin.last l) M.castSucc
+    have inst (i : Fin l) : P.instantiate i = ForcingGuardCode.compiled order Reln (r w) (r A) (r f) i M := by
+      simp only [P, Formula.instantiate, ForcingGuardCode.compiled_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
+    have hm' := of_eq (inst (v 1)) (.eqSubst P eHead (of_eq (inst (r head)).symm hm))
+    have eq := ForcingGuardCode.unique hZ1 order Reln (r w) (r A) (r f) (v 1) M O hw1 hm' ho
+    have hY1 := SyntaxMixedFormulaJudgmentSubst.subst_r (r w) (r (opened 7)) (r (images 9))
+      (r A) (r f) (r z) (r d) M Y (u 7) eList hY
+    exact SyntaxMixedFormulaOutputInduction.unique hZ1 (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) O Y Y'
+      hw1 (SyntaxMixedFormulaJudgmentSubst.subst_n (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) M Y O eq hY1) hY'
+  have eM := compare false (r Member) (v 2) (r (outputs 1)) (x 1)
+    (of_eq (ForcingGuardCode.compiled_rename false Reln _ _ _ _ _ r) (move hMember)) (.conjL (.conjR hDensity))
+    (.conjL (.conjR (.conjL hOldRun))) (.conjL (.conjR (.conjL hQueryOut)))
+  have eO := compare true (r Order) (v 3) (r (outputs 2)) (x 2)
+    (of_eq (ForcingGuardCode.compiled_rename true Reln _ _ _ _ _ r) (move hOrder)) (.conjL (.conjR (.conjR hDensity)))
+    (.conjL (.conjR (.conjR hOldRun))) (.conjL (.conjR (.conjR hQueryOut)))
+  have hOuter := ProjectCompilerUniqueTransport.binary_left 2 (r w) (x 1) (x 0) (u 8) (r (outputs 1))
+    (eq_symm eM) (.conjL (.conjL hQueryOut))
+  have hInner := ProjectCompilerUniqueTransport.binary_left 2 (r w) (x 2) (x 3) (x 0) (r (outputs 2))
+    (eq_symm eO) (.conjL (.conjR hQueryOut))
+  have hOuterType := SyntaxMixedFormulaJudgment.target_type (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d)
+    (s 4) (u 8) (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))))
+  have hInnerType := SyntaxMixedFormulaJudgment.target_type (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d)
+    (s 3) (x 0) (.conjR (.conjR (.conjL hQueryOut)))
+  have hH1 := of_eq (formulaCode_rename w H z d r) (move hH)
+  have hY := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d) (r H) (r W) (u 8) hw1 hz1 hH1
+    (of_eq (formulaCode_rename w W z d r) (move hW)) hOuterType
+    (of_eq (implication_rename test w z d H W r) (move hToW)) hp
+  have hI := ForcingNegMemberProof.discharge hZ1 test (r w) (r z) (r d) (r H) (r (outputs 1)) (x 0) (u 8)
+    hw1 hz1 hH1 hOuterType hOuter (of_eq (implication_rename test w z d H (outputs 1) r) (move hM)) hY
+  have hTail := ForcingNegMemberProof.discharge hZ1 test (r w) (r z) (r d) (r H) (r (outputs 2)) (x 3) (x 0)
+    hw1 hz1 hH1 hInnerType hInner (of_eq (implication_rename test w z d H (outputs 2) r) (move hO)) hI
+  exact use r v s u x hZ1 move eList hDensity hShell hOpen hQueryOut hTail
+
 /-- At the actual opened negative condition, the two density guards are the
 same original guard queries. Discharge them under the current internal proof
 background and retain the density existential and its actual records. -/
@@ -925,79 +1029,13 @@ theorem with_negative_density_tail {k m} {Γ : Context m} (hZ : ZFContext.Eviden
       Derives Δ (implication test (r w) (r z) (r d) (r H) (x 3)) →
       Derives Δ (out.rename r)) :
     Derives Γ out := by
-  have hParent := Derives.conjL hNeg
-  have hIn := Derives.conjL hParent
-  have hw := Derives.conjL hIn
-  have hz := Derives.conjL (.conjR hIn)
-  have hIn2 := Derives.conjR (.conjR hIn)
-  have hIn3 := Derives.conjR hIn2
-  have hIn4 := Derives.conjR hIn3
-  have hIn5 := Derives.conjR hIn4
-  have ht := Derives.conjL (.conjR hIn5)
-  refine with_fresh_instance_records hZ Reln w z a A B f j N b c d t L S D E G W images
-    hw hz (.conjL hIn2) (.conjL hIn3) (.conjL hIn4) (.conjL hIn5) ht
-    (.conjL (.conjR hParent)) hCompiled hQuery hWeakG hProof out ?_
-  intro l Δ r v s u x hZ1 move hDensity hShell hOpen hQueryOut hp
-  have hw1 := of_eq (omega_rename w r) (move hw)
-  have hz1 := of_eq (empty_rename z r) (move hz)
-  have hOld := of_eq (ForcingFreshParentOpening.data_rename w z a f A b c d t L S N body Parent images negOpen r) (move hParent)
-  have hOldCompiler := of_eq (ForcingNegCode.data_rename Reln w a A f j C N negData r) (move (.conjL (.conjR hNeg)))
-  have hOldRun := of_eq (ForcingRawModalBody.data_rename w (negOpen 7) (images 9) A f z d
-    (negData 3) (negData 4) (negNodes 1) (negNodes 2) (negOpen 8) negOut r) (move hNegQueries)
-  have hOldHead := Derives.conjL hOldCompiler
-  have hNewHead := Derives.conjL hDensity
-  have eEmpty := OmegaUniversal.empty_unique (r (negData 0)) (v 0) (ZFContext.arithmetic hZ1).base.extensionality
-    (.conjL hOldHead) (.conjL hNewHead)
-  have hHead := SyntaxVariableImagePoint.code_subst_index true (r w) (r (negData 0)) (r (negData 1)) (v 0)
-    eEmpty (.conjL (.conjR hOldHead))
-  have eHead := SyntaxVariables.unique hZ1 true (r w) (v 0) (r (negData 1)) (v 1) hw1 hHead (.conjL (.conjR hNewHead))
-  have hOldCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOld)))))))
-  have hNewCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))
-  have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
-  have hLists := SyntaxCodedMixedBinderTyping.input_lists (r w) (r (images 8)) (r (images 9)) (r a) (r f)
-    (r z) (r d) (r A) (r c) (u 2) (u 3) hLift
-  have hList := Derives.conjL hLists
-  have ht1 := SyntaxTerms.range hZ1 (r w) (r z) (r d) (r t) hw1 (of_eq (SyntaxTermSyntax.term_rename w z d t r) (move ht))
-  have eList := StructuralConsUnique.unique hZ1 (r w) (r t) (r (images 8)) (r (negOpen 7)) (u 7) hw1 ht1
-    (.conjL (.conjL (.conjR (.conjR hList)))) hOldCons hNewCons
-  have compare (order : Bool) (M O Y Y' : Fin l)
-      (hm : Derives Δ (ForcingGuardCode.compiled order Reln (r w) (r A) (r f) (r (negData 1)) M))
-      (ho : Derives Δ (ForcingGuardCode.compiled order Reln (r w) (r A) (r f) (v 1) O))
-      (hY : Derives Δ (substituted (r w) (r (negOpen 7)) (r (images 9)) (r A) (r f) (r z) (r d) M Y))
-      (hY' : Derives Δ (substituted (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) O Y')) :
-      Derives Δ (.equal Y Y') := by
-    let P := ForcingGuardCode.compiled order Reln (r w).castSucc (r A).castSucc (r f).castSucc (Fin.last l) M.castSucc
-    have inst (i : Fin l) : P.instantiate i = ForcingGuardCode.compiled order Reln (r w) (r A) (r f) i M := by
-      simp only [P, Formula.instantiate, ForcingGuardCode.compiled_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
-    have hm' := of_eq (inst (v 1)) (.eqSubst P eHead (of_eq (inst (r (negData 1))).symm hm))
-    have eq := ForcingGuardCode.unique hZ1 order Reln (r w) (r A) (r f) (v 1) M O hw1 hm' ho
-    have hY1 := SyntaxMixedFormulaJudgmentSubst.subst_r (r w) (r (negOpen 7)) (r (images 9))
-      (r A) (r f) (r z) (r d) M Y (u 7) eList hY
-    exact SyntaxMixedFormulaOutputInduction.unique hZ1 (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) O Y Y'
-      hw1 (SyntaxMixedFormulaJudgmentSubst.subst_n (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d) M Y O eq hY1) hY'
-  have eM := compare false (r (negData 3)) (v 2) (r (negOut 1)) (x 1)
-    (.conjL (.conjR (.conjR hOldCompiler))) (.conjL (.conjR hDensity))
-    (.conjL (.conjR (.conjL hOldRun))) (.conjL (.conjR (.conjL hQueryOut)))
-  have eO := compare true (r (negData 4)) (v 3) (r (negOut 2)) (x 2)
-    (.conjL (.conjR (.conjR (.conjR hOldCompiler)))) (.conjL (.conjR (.conjR hDensity)))
-    (.conjL (.conjR (.conjR hOldRun))) (.conjL (.conjR (.conjR hQueryOut)))
-  have hOuter := ProjectCompilerUniqueTransport.binary_left 2 (r w) (x 1) (x 0) (u 8) (r (negOut 1))
-    (eq_symm eM) (.conjL (.conjL hQueryOut))
-  have hInner := ProjectCompilerUniqueTransport.binary_left 2 (r w) (x 2) (x 3) (x 0) (r (negOut 2))
-    (eq_symm eO) (.conjL (.conjR hQueryOut))
-  have hOuterType := SyntaxMixedFormulaJudgment.target_type (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d)
-    (s 4) (u 8) (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))))
-  have hInnerType := SyntaxMixedFormulaJudgment.target_type (r w) (u 7) (r (images 9)) (r A) (r f) (r z) (r d)
-    (s 3) (x 0) (.conjR (.conjR (.conjL hQueryOut)))
-  have hH1 := of_eq (formulaCode_rename w H z d r) (move hH)
-  have hY := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d) (r H) (r W) (u 8) hw1 hz1 hH1
-    (of_eq (formulaCode_rename w W z d r) (move hW)) hOuterType
-    (of_eq (implication_rename test w z d H W r) (move hToW)) hp
-  have hI := ForcingNegMemberProof.discharge hZ1 test (r w) (r z) (r d) (r H) (r (negOut 1)) (x 0) (u 8)
-    hw1 hz1 hH1 hOuterType hOuter (of_eq (implication_rename test w z d H (negOut 1) r) (move hM)) hY
-  have hTail := ForcingNegMemberProof.discharge hZ1 test (r w) (r z) (r d) (r H) (r (negOut 2)) (x 3) (x 0)
-    hw1 hz1 hH1 hInnerType hInner (of_eq (implication_rename test w z d H (negOut 2) r) (move hO)) hI
-  exact use r v s u x hZ1 move eList hDensity hShell hOpen hQueryOut hTail
+  have hCompiler := Derives.conjL (.conjR hNeg)
+  have hHead := Derives.conjL hCompiler
+  exact with_opened_density_tail hZ Reln w z a A B f j N b c d t L S D E G W H body Parent
+    (negData 0) (negData 1) (negData 3) (negData 4) (negNodes 1) (negNodes 2)
+    images negOpen negOut (.conjL hNeg) (.conjL hHead) (.conjL (.conjR hHead))
+    (.conjL (.conjR (.conjR hCompiler))) (.conjL (.conjR (.conjR (.conjR hCompiler))))
+    hNegQueries hCompiled hQuery hWeakG hProof hH hW hToW hM hO out use
 
 private theorem with_fresh_witness_at {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z a A B f b c d t L S D E M O rM rO N : Fin m) (nodes : Fin 5 → Fin m)
@@ -1789,5 +1827,136 @@ theorem with_negative_witness_queries {k m} {Γ : Context m} (hZ : ZFContext.Evi
       (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ i) (move5 hAtR))
       (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ σ) (last hNegative)) hWeakExtra hWeakMember hMemberQ hMember hOrder
       hLocal pExtra pMemberQ pMemberR pOrder pNeg)
+
+
+/-- At q in the original existential density clause, open the actual
+density witness r. The final body query is the original existential
+compiler at r on its selected condition table. -/
+theorem with_existential_density_witness {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a A B C f j N Child b c d t L S D E G W H body Parent : Fin m)
+    (images : Fin 10 → Fin m) (opened : Fin 9 → Fin m) (compiler : Fin 8 → Fin m)
+    (nodes : Fin 7 → Fin m) (outputs : Fin 4 → Fin m)
+    (hB : Derives Γ (successor B A))
+    (hExist : Derives Γ (ForcingRawModalBody.existentialRecord Reln Dom w z a f A B C b c d t L S
+      j Child N body Parent images opened compiler nodes))
+    (hQueries : Derives Γ (ForcingRawModalBody.data w (opened 7) (images 9) A f z d
+      (compiler 2) (compiler 3) (nodes 4) (nodes 5) (opened 8) outputs))
+    (hCompiled : Derives Γ (ForcingDensityCode.compiled Reln w a A B f j N D))
+    (hQuery : Derives Γ (substituted w L S a f z b D E))
+    (hWeakG : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d G W))
+    (hProof : Derives Γ (implication test w z b G E))
+    (hH : Derives Γ (formulaCode w H z d)) (hW : Derives Γ (formulaCode w W z d))
+    (hToW : Derives Γ (implication test w z d H W))
+    (pQ : Derives Γ (implication test w z d H (outputs 1)))
+    (pOrder : Derives Γ (implication test w z d H (outputs 2)))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l)
+      (B' T Q K Fr Tail Bound OrderHead OrderCode MemberQ Extra Local : Fin l)
+      (density : Fin 7 → Fin l) (shell : Fin 5 → Fin l) (v : Fin 10 → Fin l)
+      (u : Fin 9 → Fin l) (x : Fin 4 → Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename ρ)) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ d) (ρ H) Tail) →
+      Derives Δ (ForcingFreshParentOpening.quantifiedData false (ρ w) (ρ z) (ρ A) (ρ f) (ρ B)
+        (ρ d) (ρ c) B' T Bound (ρ (images 9)) (shell 2) (shell 1) Tail v u) →
+      Derives Δ (SyntaxTermSyntax.term (ρ w) (ρ z) B' Q) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (ρ w) (ρ a) (ρ z) B' K) →
+      Derives Δ (ForcingReflexiveImages.replacement (ρ w) (ρ f) (ρ z) B' (v 9) (ρ j) T Fr) →
+      Derives Δ (substituted (ρ w) K Fr (ρ a) (ρ f) (ρ z) B' (ρ N) (x 3)) →
+      Derives Δ (SyntaxWeakenFreeSyntax.weakened (ρ w) (ρ z) (ρ d) B' (ρ H) Extra) →
+      Derives Δ (ForcingGuardOpening.result false Reln (ρ w) (ρ z) (ρ f) B' Q
+        (v 9) (ρ A) (ρ (compiler 1)) (ρ (compiler 2)) MemberQ) →
+      Derives Δ (ForcingGuardOpening.result false Reln (ρ w) (ρ z) (ρ f) B' T
+        (v 9) (ρ B) (density 1) (density 4) (x 1)) →
+      Derives Δ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln) (ρ w) (ρ z)
+        (ρ f) B' Q Fr (ρ A) OrderHead OrderCode (x 2)) →
+      Derives Δ (FormulaCodeConstructSyntax.typedAt 2 5 (ρ w)
+        (SyntaxAtomSyntax.two Extra (u 8)) Local (ρ z) B') →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local Extra) →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local MemberQ) →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local (x 1)) →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local (x 2)) →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local (x 3)) →
+      Derives Δ (out.rename ρ)) : Derives Γ out := by
+  have hParent := Derives.conjL hExist
+  have hInput := Derives.conjL hParent
+  have hw := Derives.conjL hInput
+  have hz := Derives.conjL (.conjR hInput)
+  have hA := Derives.conjL (.conjR (.conjR hInput))
+  have hc := Derives.conjL (.conjR (.conjR (.conjR hInput)))
+  have hCompiler := Derives.conjL (.conjR hExist)
+  have hHead := Derives.conjL hCompiler
+  have hMember := Derives.conjL (.conjR hCompiler)
+  have hOrder := Derives.conjL (.conjR (.conjR hCompiler))
+  have eZero := OmegaUniversal.empty_unique (compiler 0) z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjL hHead) hz
+  have hVar := SyntaxVariableImagePoint.code_subst_index true w (compiler 0) (compiler 1) z eZero
+    (.conjL (.conjR hHead))
+  have hAtQ := Derives.conjL (.conjR (.conjL hQueries))
+  refine with_opened_density_tail hZ Reln w z a A B f j N b c d t L S D E G W H body Parent
+    (compiler 0) (compiler 1) (compiler 2) (compiler 3) (nodes 4) (nodes 5)
+    images opened outputs hParent (.conjL hHead) (.conjL (.conjR hHead)) hMember hOrder
+    hQueries hCompiled hQuery hWeakG hProof hH hW hToW pQ pOrder out ?_
+  intro l Δ r v s u x hZ1 lift eList hDensity hShell _ hRuns pTail
+  have hAtQ1 := SyntaxMixedFormulaJudgmentSubst.subst_r (r w) (r (opened 7)) (r (images 9))
+    (r A) (r f) (r z) (r d) (r (compiler 2)) (r (outputs 1)) (u 7) eList
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hAtQ))
+  refine with_fresh_witness_records hZ1 (r w) (r z) (r a) (r A) (r B) (r f) (r d) (r c)
+    (u 7) (r (images 9)) (r D) (x 3) (v 2) (v 3) (v 4) (v 5) (v 6) s
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (successor_rename _ _ r) (lift hB)) (of_eq (successor_rename _ _ r) (lift hc))
+    hShell (.conjR (.conjR (.conjR hRuns))) (out.rename r) ?_
+  intro l1 Δ1 σ B' T v' u' x' hZ2 move _ _ _ hOpening hWitness
+  let e := σ ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename e) :=
+    of_eq (SourceAlgebra.rename_comp F r σ) (move (lift h))
+  have hDensity1 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ v σ) (move hDensity)
+  apply of_eq (SourceAlgebra.rename_comp out r σ).symm
+  refine with_direct_witness_query hZ2 Reln (e w) (e z) (e a) (e A) (e B) (e f) (e j) (e N) (e D)
+    (e d) (e c) B' T (σ (u 7)) (e (images 9)) (σ (s 2)) (σ (s 1)) (σ (x 3)) (x' 3)
+    (σ ∘ v) v' u' (of_eq (successor_rename _ _ e) (carry hA)) hDensity1 hOpening
+    (.conjR (.conjR (.conjR hWitness))) (out.rename e) ?_
+  intro l2 Δ2 τ Q K Fr hZ3 move2 hQ hK hPrefix hFr hDirect
+  let η := τ ∘ e
+  have carry2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename η) :=
+    of_eq (SourceAlgebra.rename_comp F e τ) (move2 (carry h))
+  have cross {F : Formula l} (h : Derives Δ F) : Derives Δ2 (F.rename (τ ∘ σ)) :=
+    of_eq (SourceAlgebra.rename_comp F σ τ) (move2 (move h))
+  have hOpening2 := of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    v' u' τ) (move2 hOpening)
+  have hWitness2 := of_eq (ForcingRawModalBody.nestedData_rename 0 _ _ _ _ _ _ _ _ _ _ _ _ x' τ)
+    (move2 hWitness)
+  apply of_eq (SourceAlgebra.rename_comp out e τ).symm
+  refine with_witness_guard_results hZ3 Reln (η w) (η z) (η a) (η A) (η B) (η f) (η j) (η N) (η D)
+    (η d) (η c) (τ B') (τ T) (τ (σ (u 7))) (η (images 9)) (τ (σ (s 2))) (τ (σ (s 1))) (τ (σ (x 3)))
+    Q K Fr (τ ∘ σ ∘ v) (τ ∘ v') (τ ∘ u') (τ ∘ x')
+    (τ (σ (s 0))) (η (compiler 1)) (η (compiler 2)) (η (outputs 1)) (η H)
+    (of_eq (successor_rename _ _ η) (carry2 hA))
+    (of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ (σ ∘ v) τ) (move2 hDensity1))
+    hOpening2 hWitness2 hQ hK hPrefix hFr
+    (of_eq (SyntaxVariableSyntax.code_rename _ _ _ _ η) (carry2 hVar))
+    (of_eq (ForcingGuardCode.compiled_rename false Reln _ _ _ _ _ η) (carry2 hMember))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ (τ ∘ σ)) (cross hAtQ1))
+    (of_eq (formulaCode_rename _ _ _ _ η) (carry2 hH))
+    (of_eq (implication_rename test _ _ _ _ _ η) (carry2 pQ)) (out.rename η) ?_
+  intro l3 Δ3 κ head order Mq Extra Local hZ4 move3 hWeak _ hMQ hMR hO hLocal pExtra pMQ pMR pO pAtR
+  let ρ := κ ∘ η
+  have carry3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F η κ) (move3 (carry2 h))
+  have cross2 {F : Formula l} (h : Derives Δ F) : Derives Δ3 (F.rename (κ ∘ τ ∘ σ)) :=
+    of_eq (SourceAlgebra.rename_comp F (τ ∘ σ) κ) (move3 (cross h))
+  exact of_eq (SourceAlgebra.rename_comp out η κ).symm
+    (use ρ (κ (τ B')) (κ (τ T)) (κ Q) (κ K) (κ Fr) (κ (τ (σ (x 3)))) (κ (τ (σ (u 7))))
+      head order Mq Extra Local (κ ∘ τ ∘ σ ∘ v) (κ ∘ τ ∘ σ ∘ s) (κ ∘ τ ∘ v') (κ ∘ τ ∘ u')
+      (κ ∘ τ ∘ x') hZ4 carry3
+      (of_eq (implication_rename test _ _ _ _ _ (κ ∘ τ ∘ σ)) (cross2 pTail))
+      (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _
+        (τ ∘ v') (τ ∘ u') κ) (move3 hOpening2))
+      (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ κ) (move3 hQ))
+      (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ κ) (move3 hK))
+      (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ κ) (move3 hFr))
+      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ κ) (move3 hDirect))
+      hWeak hMQ hMR hO hLocal pExtra pMQ pMR pO pAtR)
+
 
 end PPAC.Migration.ForcingDensityInstantiation

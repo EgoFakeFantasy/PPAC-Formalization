@@ -40848,6 +40848,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_existential_density_witness
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_witness_proofs
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_preorder
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_outer_instance
@@ -40896,6 +40897,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_order_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.negative_reflexive_contradiction
 #print axioms PPAC.Migration.ForcingDensityGuards.negative_witness_discharge
+#print axioms PPAC.Migration.ForcingDensityGuards.with_reflexive_outer_tail
+#print axioms PPAC.Migration.ForcingDensityGuards.witness_discharge
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_updated_row
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
