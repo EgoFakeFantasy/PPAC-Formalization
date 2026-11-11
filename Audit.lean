@@ -40594,6 +40594,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFreshParentOpening.produce_quantified_at_images
 #print axioms PPAC.Migration.ForcingFreshParentOpening.produce_quantified
 #print axioms PPAC.Migration.ForcingRawModalBody.data
+#print axioms PPAC.Migration.ForcingRawModalBody.member_atom_at
+#print axioms PPAC.Migration.ForcingRawModalBody.member_query_at
 #print axioms PPAC.Migration.ForcingRawModalBody.data_rename
 #print axioms PPAC.Migration.ForcingRawModalBody.outputs
 #print axioms PPAC.Migration.ForcingRawModalBody.outputs_rename
@@ -40881,6 +40883,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.densityLeafTree
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

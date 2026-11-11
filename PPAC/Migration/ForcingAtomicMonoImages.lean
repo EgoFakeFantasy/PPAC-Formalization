@@ -837,6 +837,7 @@ private theorem with_canonical_table {k m} {Γ : Context m} (hZ : ZFContext.Evid
         (∀ i bound (j : Fin (width k (ForcingAtomicMonoTemplate.partAt i) bound)),
           Derives Δ (route j.val (destination k (ForcingAtomicMonoTemplate.partAt i) bound j).val
             (r w) (SyntaxIndexMapSyntax.selectMap bound (D i) (V i)) L)) →
+        (∀ i : Fin (k+2), Derives Δ (route i.val (freeIndex k .newer i).val (r w) (r S1) L)) →
         Derives Δ (out.rename r)) : Derives Γ out := by
   let a := five z A3 A3 t0 t1
   let D := five B D3 D3 D0 D1
@@ -908,7 +909,7 @@ private theorem with_canonical_table {k m} {Γ : Context m} (hZ : ZFContext.Evid
   exact use r g L hZ1 lift hg1 hm1 (fun i => r (a i)) (fun i => r (D i)) (fun i => r (V i))
     (fun i => of_eq (numeral_rename _ (a i) r) (lift (ha i)))
     (fun i => of_eq (mixed_rename w (D i) (V i) (a i) f z b (N i)
-      (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i) r) (lift (hd i))) hr
+      (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i) r) (lift (hd i))) hr newFree
 
 /-- Put the actual raw atomic and preorder queries on one common image list. -/
 theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -940,10 +941,14 @@ theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
         (ForcingAtomicMonoTemplate.nativeLeaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) (r w) (Q i))) →
       (∀ i, Derives Δ (mixed (r w) (r B) L (r z) g (r z) (r b) (Q i)
         (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
+      (∀ (i : Fin (k+2)) (fromIndex toIndex value : Fin l),
+        Derives Δ (numeral i.val fromIndex) →
+        Derives Δ (numeral (freeIndex k .newer i).val toIndex) →
+        Derives Δ (field (r w) (r S1) fromIndex value) → Derives Δ (field (r w) L toIndex value)) →
       Derives Δ (out.rename r)) : Derives Γ out := by
   apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
-  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr hNewRoute
   let parts := ForcingAtomicMonoTemplate.partAt
   let forms := fun i => ForcingAtomicMonoTemplate.nativeLeaf equality Reln (parts i)
   let trees := fun i => PureSyntaxQuotation.formulaTree (forms i)
@@ -968,7 +973,15 @@ theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
       (fun bound j => of_eq (by rw [route_rename]; cases bound <;> rfl) (move (hr i bound j)))
       (of_eq (mixed_rename (r w) (D i) (V i) (a i) (r f) (r z) (r b) (r (N i))
         (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)) s) (move (hd i)))
-  exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun)
+  have hFields (i : Fin (k+2)) (fromIndex toIndex value : Fin l2)
+      (hFrom : Derives Δ2 (numeral i.val fromIndex))
+      (hTo : Derives Δ2 (numeral (freeIndex k .newer i).val toIndex))
+      (hField : Derives Δ2 (field (ρ w) (ρ S1) fromIndex value)) :
+      Derives Δ2 (field (ρ w) (s L) toIndex value) :=
+    use_route i.val (freeIndex k .newer i).val (ρ w) (ρ S1) (s L) fromIndex toIndex value
+      (of_eq (route_rename i.val (freeIndex k .newer i).val (r w) (r S1) L s) (move (hNewRoute i)))
+      hFrom hTo hField
+  exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun hFields)
 
 /-- Use one actual base list for Pre and both guard leaves, and the original
 two condition overwrites for the two compiled atom queries. -/
@@ -999,7 +1012,7 @@ theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   let out := implication test w z b (layout 3) Fq
   apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
-  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr _
   exact of_eq (implication_rename test w z b (layout 3) Fq r).symm
     (at_shared_instance hZ1 equality Reln (r w) (r z) (r f) g (r b) (r B) L (r Extra) (r Pre) (r Fp) (r Fq)
       (fun i => r (H i)) (fun i => r (layout i)) a D V (fun i => r (N i))

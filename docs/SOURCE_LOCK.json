@@ -174625,7 +174625,7 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
@@ -174634,7 +174634,7 @@
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "exact_declaration_footprints": {
@@ -175498,7 +175498,7 @@
         "ForcingFormulaDiagram.binary_output for the requested original constructor kind"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
@@ -175522,6 +175522,8 @@
         "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRawModalBody.member_atom_at": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingRawModalBody.member_query_at": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingRawModalBody.data": [
           "propext",
           "Quot.sound"
@@ -176263,7 +176265,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "Reads the original atom compiler and its actual mixed term images, deriving the direct query and agreement between the condition overwrites. Discharges the four actual implications under the original canonical context.",
@@ -176368,7 +176370,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The unchanged runtime extraction and common-table routes serve both the paired atomic monotonicity proof and the atomic density consumer. Existing public monotonicity endpoints and their exact axiom footprints are retained.",
@@ -176451,7 +176453,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The literal preorder, q membership, q below p relation and two original atomic compiler templates are transported to one native open monotonicity derivation.",
@@ -176548,7 +176550,7 @@
         "PPAC/Migration/ForcingSourceLogicalMono.lean": "8259bfd5d37b34de82b87849b93eeeb699ef26c2cc00e42b9b3a621b72cfec7a",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70"
       },
@@ -176666,7 +176668,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33"
       },
       "exact_declaration_footprints": {
@@ -177032,7 +177034,7 @@
         "PPAC/Migration/ForcingDensityInstantiation.lean": "352cdb0f9306234ee218710bb89be70c881dbf53adc126fba59f6a738d973ae7",
         "PPAC/Migration/ForcingDensityCode.lean": "951dc21c0f7fb9a7122bc99c3534f1e466ddee0fa47b953b3bb8e56594db9a3a",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/Internal/SyntaxTopFormulaSyntax.lean": "4c80379c4314f1e486a7c3e83644f3fb2b2f5851fb1f9b95c31833adca3830aa"
       },
@@ -177455,7 +177457,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingDensityGuards.lean": "4de2afa757e7da3381d08916dae6fd39b17e33b583d54fecdd20b611585f3682",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
         "PPAC/Migration/ForcingDensityInstantiation.lean": "352cdb0f9306234ee218710bb89be70c881dbf53adc126fba59f6a738d973ae7",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
@@ -177726,16 +177728,18 @@
         "ForcingTruth.force_of_dense"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "68eb250748441741a4ba3d162f35f49042a953480612b0a0169bb286a270465a",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "86b0ea3e512fb64a4d028ed04141e6bd7784a1311d332e120795d6457296bd60",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578"
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.densityLeafTree": ["propext", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap": [
@@ -177993,7 +177997,7 @@
         "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a",
         "PPAC/Migration/ForcingPreorderInstances.lean": "7692c5cdd7e16691e3060ead105234617600e3134148fa5d6459e875fb44f6c3",
         "PPAC/Migration/ForcingMemberRows.lean": "dc038bf03f7446f39b2aa6b8485a2e63119950dff27f712c55417037f4dcb1b5",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578"
+        "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingSourceDensity.transfer": [

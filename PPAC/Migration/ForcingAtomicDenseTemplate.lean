@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingAtomicCode
 import PPAC.Migration.ForcingDensityInstantiation
+import PPAC.Migration.Internal.AtomicProgramAlignment
 import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingAtomicMonoImages
 import PPAC.Migration.ForcingAtomicMonoTemplate
@@ -305,6 +306,208 @@ theorem with_quoted_shell {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Ev
             (.conjI (binary 0 (leaf 2) (node 0) (L 2) (V 0) (V 1) (hLeaf 2) (hNode 0) (hNode 1))
               (binary 0 (leaf 3) (leaf 4) (L 3) (L 4) (V 0) (hLeaf 3) (hLeaf 4) (hNode 0)))))))
 
+section MemberGuards
+
+open NativeProofQuotation (eliminate_objects)
+open StructuralListFieldSyntax (field field_rename)
+open SyntaxCodedMixedBinderSyntax (lifted)
+open YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket (leaf)
+
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+set_option maxHeartbeats 1200000
+
+private theorem member_tree {k : Nat} (equality inner : Bool) (R : Source.Formula (k+2)) :
+    densityLeafTree equality R (if inner then 2 else 0) =
+      Tree.node 2 ([leaf 0, Tree.node 0 ([leaf 0]), Tree.node 1 ([leaf (k+5)])]) := by
+  let j := atCondition k (carrier k)
+  have hj : (fo_bound_variable j).index = k+5 := by
+    have hv := ProjectNativeRenaming.variable_index (fun _ : Fin 1 => j) (fo_bound_variable 0)
+    rw [ProjectNativeRenaming.variable_at] at hv
+    simpa [j, atCondition, carrier, ForcingAtomicMonoTemplate.freeIndex, ForcingAtomicMonoTemplate.base] using hv
+  cases inner <;>
+    simp only [densityLeafTree, Bool.false_eq_true, ↓reduceIte, Syntax.formula, Syntax.lift,
+      Fin.lastCases_last, Fin.lastCases_castSucc, Term.weakenBound_fvar, PureSyntaxQuotation.formulaTree,
+      PureSyntaxQuotation.argumentTrees, PureSyntaxQuotation.termTree] <;>
+    change Tree.node 2 ([leaf 0, Tree.node 0 ([leaf 0]), Tree.node 1 ([leaf (fo_bound_variable j).index])]) = _ <;>
+    rw [hj]
+
+private theorem member_of_quote {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality inner : Bool) (R : Source.Formula (k+2)) (w z K H a g c b i P V Q Y : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hi : Source.Derives Γ (numeral (k+5) i))
+    (hP : Source.Derives Γ (field w K z P)) (hV : Source.Derives Γ (field w H i V))
+    (hQ : Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R (if inner then 2 else 0)) w Q))
+    (hY : Source.Derives Γ (substituted w K H a g c b Q Y)) :
+    Source.Derives Γ (ForcingMemberGuardOpening.result w P V Y) := by
+  let trees : Fin 3 → Tree := Fin.cases (leaf 0)
+    (Fin.cases (.node 0 [leaf 0]) (fun _ => .node 1 [leaf (k+5)]))
+  apply ProjectCompilerQuotation.eliminate_quotations hZ 3 trees w hw
+  intro l Δ r x hZ1 move hTrees
+  have hw1 := of_eq (omega_rename w r) (move hw)
+  have hz1 := of_eq (empty_rename z r) (move hz)
+  have hi1 := of_eq (numeral_rename (k+5) i r) (move hi)
+  have hs := OriginalQuotationNodeFields.tree_to_constructor hZ1 0 [] (r w) (x 0)
+    Fin.elim0 hw1 (.eqRefl (r w)) (hTrees 0)
+  have hX := OriginalQuotationVariableFields.variable_of_tree hZ1 true 0 (r w) (r z) (x 1)
+    hw1 hz1 (hTrees 1)
+  have hW := OriginalQuotationVariableFields.variable_of_tree hZ1 false (k+5) (r w) (r i) (x 2)
+    hw1 hi1 (hTrees 2)
+  have hNode := of_eq (congrArg (fun T => OriginalTreeQuotationSyntax.tree T (r w) (r Q))
+    (member_tree equality inner R)) (of_eq (OriginalTreeQuotationSyntax.tree_rename _ _ _ _) (move hQ))
+  have hMem0 := OriginalQuotationNodeFields.tree_to_constructor hZ1 2
+    [leaf 0, Tree.node 0 ([leaf 0]), Tree.node 1 ([leaf (k+5)])] (r w) (r Q) x hw1
+    (.conjI (hTrees 0) (.conjI (hTrees 1) (.conjI (hTrees 2) (.eqRefl (r w))))) hNode
+  have hArgs : x = SyntaxAtomSyntax.three (x 0) (x 1) (x 2) := by
+    funext i
+    exact Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun j => Fin.elim0 j))) i
+  have hMem : Source.Derives Δ (SyntaxAtomSyntax.memberCode (r w) (x 0) (x 1) (x 2) (r Q)) :=
+    of_eq (congrArg (fun t => SyntaxNodeSyntax.constructor 3 2 (r w) t (r Q)) hArgs) hMem0
+  apply of_eq (ForcingMemberGuardOpening.result_rename w P V Y r).symm
+  exact ForcingRawModalBody.member_atom_at hZ1 (r w) (r z) (r K) (r H) (r a) (r g) (r c) (r b)
+    (x 1) (r P) (r i) (r V) (r Q) (r Y) (x 0) (x 2) hw1 hz1 hX
+    (of_eq (field_rename w K z P r) (move hP)) (SyntaxNumerals.range hZ1 (k+5) (r w) (r i) hw1 hi1)
+    (of_eq (field_rename w H i V r) (move hV)) (.conjI hs (.conjI hW hMem))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (move hY))
+
+private theorem member_results_eq {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (w P V X Y : Fin m) (hw : Source.Derives Γ (omega w))
+    (hX : Source.Derives Γ (ForcingMemberGuardOpening.result w P V X))
+    (hY : Source.Derives Γ (ForcingMemberGuardOpening.result w P V Y)) :
+    Source.Derives Γ (.equal X Y) := by
+  let point {l : Nat} (w P V X sym : Fin l) :=
+    (SyntaxAtomSyntax.zeroScalar w sym).conj (SyntaxAtomSyntax.memberCode w sym P V X)
+  refine eliminate_objects hZ 1 (fun r t => point (r w) (r P) (r V) (r X) (t 0)) hX (.equal X Y) ?_
+  intro l Δ r t hZ1 move hx
+  have hy := of_eq (ForcingMemberGuardOpening.result_rename w P V Y r) (move hY)
+  have hw1 := of_eq (omega_rename w r) (move hw)
+  refine eliminate_objects hZ1 1 (fun s u => point (s (r w)) (s (r P)) (s (r V)) (s (r Y)) (u 0))
+    hy (.equal (r X) (r Y)) ?_
+  intro l1 Δ1 s u hZ2 move1 hy
+  have hx1 : Source.Derives Δ1 (point (s (r w)) (s (r P)) (s (r V)) (s (r X)) (s (t 0))) :=
+    of_eq (by simp only [point, Source.Formula.rename, SyntaxAtomSyntax.zeroScalar_rename, SyntaxAtomSyntax.memberCode_rename])
+      (move1 hx)
+  have hw2 := of_eq (omega_rename (r w) s) (move1 hw1)
+  have he := SyntaxConstructors.unique hZ2 0 0 (s (r w)) Fin.elim0 (s (t 0)) (u 0) hw2
+    (.conjL hx1) (.conjL hy)
+  have hc := AtomicProgramAlignment.member_symbol_subst (s (r w)) (s (t 0)) (u 0) (s (r P)) (s (r V))
+    (s (r X)) he (.conjR hx1)
+  exact SyntaxConstructors.unique hZ2 3 2 (s (r w)) (SyntaxAtomSyntax.three (u 0) (s (r P)) (s (r V)))
+    (s (r X)) (s (r Y)) hw2 hc (.conjR hy)
+
+/-- A freshly bound condition is bound variable zero and the same closed
+carrier term is preserved in the actual lifted table. -/
+theorem member_lift_fields {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (w z D S a f c b A C K H i P V : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hP : Source.Derives Γ (SyntaxVariableSyntax.code true w z P))
+    (hV : Source.Derives Γ (SyntaxTermSyntax.term w z b V))
+    (hi : Source.Derives Γ (.mem i f)) (hv : Source.Derives Γ (field w S i V))
+    (hl : Source.Derives Γ (lifted w D S a f c b A C K H)) :
+    Source.Derives Γ ((field w K z P).conj (field w H i V)) := by
+  have hZero : Source.Derives Γ (((Source.Formula.mem z A).conj (field w K z P)).iff
+      (SyntaxVariableSyntax.code true w z P)) := ForcingExistChildOpening.zero_fields hZ w z D S a f c b A C K H P hw hz hl
+  have hClosed := InstantiateOperationFrameSyntax.intro_closedParameter w b V z hz hV
+  have hFree : Source.Derives Γ (((Source.Formula.mem i f).conj (field w H i V)).iff (.equal V V)) :=
+    ForcingExistChildOpening.closed_fields hZ false w D S a f c b A C K H i i V V hw hl hi hv
+      HornRuleSyntax.truth_proved hClosed
+  exact .conjI (.conjR (.impE (.conjR hZero) hP)) (.conjR (.impE (.conjR hFree) (.eqRefl V)))
+
+/-- The outer or inner membership guard of the actual density compiler agrees
+with the canonical guard after each path's actual binder lift. The shared
+carrier is taken from the two unlifted tables. -/
+private theorem compare_member_guard {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality inner : Bool) (R : Source.Formula (k+2))
+    (w z b P V i j D S a f c A C K H D' S' a' g c' A' C' K' H' aM M Q X Y : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hP : Source.Derives Γ (SyntaxVariableSyntax.code true w z P))
+    (hV : Source.Derives Γ (SyntaxTermSyntax.term w z b V))
+    (hi : Source.Derives Γ (numeral k i)) (hj : Source.Derives Γ (numeral (k+5) j))
+    (hif : Source.Derives Γ (.mem i f)) (hjg : Source.Derives Γ (.mem j g))
+    (hS : Source.Derives Γ (field w S i V)) (hS' : Source.Derives Γ (field w S' j V))
+    (hLift : Source.Derives Γ (lifted w D S a f c b A C K H))
+    (hLift' : Source.Derives Γ (lifted w D' S' a' g c' b A' C' K' H'))
+    (hM : Source.Derives Γ (ForcingGuardCode.compiled false R w aM f P M))
+    (hQ : Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R (if inner then 2 else 0)) w Q))
+    (hX : Source.Derives Γ (substituted w K H A f C b M X))
+    (hY : Source.Derives Γ (substituted w K' H' A' g C' b Q Y)) :
+    Source.Derives Γ (.equal X Y) := by
+  have hRaw := member_lift_fields hZ w z D S a f c b A C K H i P V hw hz hP hV hif hS hLift
+  have hQuote := member_lift_fields hZ w z D' S' a' g c' b A' C' K' H' j P V hw hz hP hV hjg hS' hLift'
+  exact member_results_eq hZ w P V X Y hw
+    (ForcingRawModalBody.member_query_at hZ R w z K H A f C b P P i V aM M X hw hz hP
+      (.conjL hRaw) hi (.conjR hRaw) hM hX)
+    (member_of_quote hZ equality inner R w z K' H' A' g C' b j P V Q Y hw hz hj
+      (.conjL hQuote) (.conjR hQuote) hQ hY)
+
+private theorem two_below {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (n : Nat) (i f : Fin m) (hi : Source.Derives Γ (numeral n i)) (hf : Source.Derives Γ (numeral (n+2) f)) :
+    Source.Derives Γ (.mem i f) := by
+  let E := (numeral (n+1) (Fin.last m)).conj (successor f.castSucc (Fin.last m))
+  let Δ := Source.Context.add E (Source.Context.image Source.Formula.raise Γ)
+  apply SyntaxNumeralSyntax.eliminate_succ (n+1) f _ hf
+  have hE : Source.Derives Δ E := .hyp (Or.inl rfl)
+  let U := (numeral n (Fin.last (m+1))).conj (successor (Fin.last m).castSucc (Fin.last (m+1)))
+  let Ξ := Source.Context.add U (Source.Context.image Source.Formula.raise Δ)
+  apply SyntaxNumeralSyntax.eliminate_succ n (Fin.last m) _ (.conjL hE)
+  have hU : Source.Derives Ξ U := .hyp (Or.inl rfl)
+  have hI : Source.Derives Ξ (numeral n i.castSucc.castSucc) := by
+    simpa only [Source.Formula.raise, numeral_rename] using SourceLogic.under (SourceLogic.under hi E) U
+  have e := SyntaxNumerals.unique (ZFContext.under (ZFContext.under hZ E) U) n
+    (Fin.last (m+1)) i.castSucc.castSucc (.conjL hU) hI
+  have hf1 := of_eq (successor_rename f.castSucc (Fin.last m) Fin.castSucc) (SourceLogic.under (.conjR hE) U)
+  exact InsertLogic.old_member f.castSucc.castSucc (Fin.last m).castSucc (Fin.last m).castSucc i.castSucc.castSucc
+    hf1 (SourceLogic.mem_subst e (InsertLogic.new_member (Fin.last m).castSucc (Fin.last (m+1))
+      (Fin.last (m+1)) (.conjR hU)))
+
+/-- Both membership leaves from the two actual density query records agree.
+Read the carrier from the original table, route it into the common table,
+then preserve it through each of the two actual binder lifts. -/
+theorem compare_shell_members {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' i I V : Fin m)
+    (v : Fin 7 → Fin m) (u t u' t' leaf' : Fin 5 → Fin m) (x y x' y' : Fin 4 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hi : Source.Derives Γ (numeral k i)) (hI : Source.Derives Γ (numeral (k+5) I))
+    (hv : Source.Derives Γ (field w S i V))
+    (route : Source.Derives Γ (field w S i V) → Source.Derives Γ (field w S' I V))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hOuter : Source.Derives Γ (lifted w L S a f z b (u 1) (u 2) (u 3) (u 4)))
+    (hInner : Source.Derives Γ (lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4)))
+    (hOuter' : Source.Derives Γ (lifted w L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4)))
+    (hInner' : Source.Derives Γ (lifted w (u' 3) (u' 4) (u' 1) g (u' 2) b (t' 1) (t' 2) (t' 3) (t' 4)))
+    (hQuotes : ∀ n, Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R n) w (leaf' n)))
+    (hQ : Source.Derives Γ (substituted w (u 3) (u 4) (u 1) f (u 2) b (v 2) (x 1)))
+    (hR : Source.Derives Γ (substituted w (t 3) (t 4) (t 1) f (t 2) b (v 4) (y 1)))
+    (hQ' : Source.Derives Γ (substituted w (u' 3) (u' 4) (u' 1) g (u' 2) b (leaf' 0) (x' 1)))
+    (hR' : Source.Derives Γ (substituted w (t' 3) (t' 4) (t' 1) g (t' 2) b (leaf' 2) (y' 1))) :
+    Source.Derives Γ ((Source.Formula.equal (x 1) (x' 1)).conj (.equal (y 1) (y' 1))) := by
+  have hHead := Source.Derives.conjL hd
+  have e := OmegaUniversal.empty_unique (v 0) z (ZFContext.arithmetic hZ).base.extensionality (.conjL hHead) hz
+  have hP := SyntaxVariableImagePoint.code_subst_index true w (v 0) (v 1) z e (.conjL (.conjR hHead))
+  have hif := two_below hZ k i f hi hf
+  have hIg := two_below hZ (k+5) I g hI hg
+  have hBase := SyntaxCodedMixedBinderTyping.input_lists w L S a f z b (u 1) (u 2) (u 3) (u 4) hOuter
+  have hV := SyntaxMixedImageCodeFields.field_type w f z b S i V (.conjR hBase) hif hv
+  have hv' := route hv
+  have hOuterFields := member_lift_fields hZ w z L S a f z b (u 1) (u 2) (u 3) (u 4) i (v 1) V
+    hw hz hP hV hif hv hOuter
+  have hOuterFields' := member_lift_fields hZ w z L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4) I (v 1) V
+    hw hz hP hV hIg hv' hOuter'
+  refine .conjI ?_ ?_
+  · exact compare_member_guard hZ equality false R w z b (v 1) V i I
+      L S a f z (u 1) (u 2) (u 3) (u 4) L' S' z g z (u' 1) (u' 2) (u' 3) (u' 4)
+      A (v 2) (leaf' 0) (x 1) (x' 1) hw hz hP hV hi hI hif hIg hv hv' hOuter hOuter'
+      (.conjL (.conjR hd)) (hQuotes 0) hQ hQ'
+  · exact compare_member_guard hZ equality true R w z b (v 1) V i I
+      (u 3) (u 4) (u 1) f (u 2) (t 1) (t 2) (t 3) (t 4)
+      (u' 3) (u' 4) (u' 1) g (u' 2) (t' 1) (t' 2) (t' 3) (t' 4)
+      B (v 4) (leaf' 2) (y 1) (y' 1) hw hz hP hV hi hI hif hIg
+      (.conjR hOuterFields) (.conjR hOuterFields') hInner hInner'
+      (.conjL (.conjR (.conjR (.conjR hd)))) (hQuotes 2) hR hR'
+
+end MemberGuards
+
 private def layoutTail {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
     Fin 5 → PureSyntaxQuotation.Fm [] (fo_bound_context (k+7)) :=
   let head := layoutHead equality R
@@ -563,7 +766,7 @@ theorem from_canonical_fields {k m : Nat} {Γ : Source.Context m} (hZ : ZFContex
   apply ForcingAtomicMonoImages.with_aligned_queries hZ equality R
     w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld hNew out
-  intro l Δ r g L Q hZ1 lift hg hm hQuote hRun
+  intro l Δ r g L Q hZ1 lift hg hm hQuote hRun _
   have hQuoted (i : Fin 4) : Source.Derives Δ (PureQuotationSyntax.formula
       (layoutHead equality R (existingLeaf i)) (r w) (Q (existingLeaf i))) :=
     of_eq (congrArg (fun F => PureQuotationSyntax.formula F (r w) (Q (existingLeaf i)))

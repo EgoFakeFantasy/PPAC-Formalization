@@ -6,7 +6,9 @@
 
 ## 最新实际验收
 
-`ForcingDensityInstantiation.with_mixed_shell` 从原密度前提的实际替换中读取两层提升表及五个子查询。`ForcingAtomicDenseTemplate.with_quoted_shell` 从原子稠密性证明的实际模板码取得同样的六个构造步骤。`raw_shell_eq` 用五个实际叶码的对象相等式推出完整前提码相等。仍须把两边的成员守卫、顺序守卫及原子见证体的替换结果逐一对齐。[本地验收](../verification/forcing-atomic-density-shell-acceptance.json)
+`ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。完整前提码还差两个顺序守卫和原子见证体的等式。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
+
+`ForcingDensityInstantiation.with_mixed_shell` 从原密度前提的实际替换中读取两层提升表及五个子查询。`ForcingAtomicDenseTemplate.with_quoted_shell` 从原子稠密性证明的实际模板码取得同样的六个构造步骤。`raw_shell_eq` 用五个实际叶码的对象相等式推出完整前提码相等。两个成员守卫的结果见上文。[本地验收](../verification/forcing-atomic-density-shell-acceptance.json)
 
 `ForcingDensityCode.with_atomic_rebound` 消费统一密度编译的实际见证体记录。在第一层绑定替换中，用实际名字项像和恒等自由项表重组原子编译。在第二层用同一运行记录的条件替换表，把最终见证体码读成对原成员／相等模板的直接查询。下一步是证明统一密度查询与已有原子稠密性证明在共同表上的完整前提码相等。[本地验收](../verification/forcing-atomic-density-rebound-acceptance.json)
 

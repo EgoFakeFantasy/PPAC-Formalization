@@ -437,32 +437,32 @@ theorem consume_matched {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) 
   exact ForcingFreshParentOpening.consume_opened hZ test w z a f alpha b A B t R S n x Parent
     G W M O Tail I J v u hp moved
 
-theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
-    (w z D S a f T head P i V q Y sym carrier : Fin m)
+theorem member_atom_at {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+    (w z D S a f c T head P i V q Y sym carrier : Fin m)
     (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
     (hhead : Derives Gamma (SyntaxVariableSyntax.code true w z head))
     (hzero : Derives Gamma (StructuralListFieldSyntax.field w D z P))
     (hi : Derives Gamma (.mem i w)) (hvalue : Derives Gamma (StructuralListFieldSyntax.field w S i V))
     (hsrc : Derives Gamma (ForcingMemberGuard.data w head q i sym carrier))
-    (hq : Derives Gamma (substituted w D S a f z T q Y)) :
+    (hq : Derives Gamma (substituted w D S a f c T q Y)) :
     Derives Gamma (ForcingMemberGuardOpening.result w P V Y) := by
-  have hl := Derives.conjR (SyntaxMixedFormulaOutput.input_of_substituted hZ w D S a f z T q Y hw hq)
-  let E := ForcingFormulaAtoms.atomBody true w sym D S a f z T head carrier Y
+  have hl := Derives.conjR (SyntaxMixedFormulaOutput.input_of_substituted hZ w D S a f c T q Y hw hq)
+  let E := ForcingFormulaAtoms.atomBody true w sym D S a f c T head carrier Y
   let Delta := Context.add E (raisedContext 2 Gamma)
   apply HornBinderRules.eliminate_many 2 E _
-    (ForcingFormulaAtoms.atom_output hZ true w sym D S a f z T q head carrier Y hw (.conjR (.conjR hsrc)) hq)
+    (ForcingFormulaAtoms.atom_output hZ true w sym D S a f c T q head carrier Y hw (.conjR (.conjR hsrc)) hq)
   have he : Derives Delta E := .hyp (Or.inl rfl)
   have hZ2 := HornBinderRules.zf_body 2 hZ E
   have hw2 := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)
   have hz2 := of_eq (empty_rename z (old 2)) (HornBinderRules.under_body 2 hz E)
-  have hl2 := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename w a f z T D S (old 2)) (HornBinderRules.under_body 2 hl E)
+  have hl2 := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename w a f c T D S (old 2)) (HornBinderRules.under_body 2 hl E)
   have hh2 := of_eq (SyntaxVariableSyntax.code_rename true w z head (old 2)) (HornBinderRules.under_body 2 hhead E)
   have hc2 := of_eq (ForcingMemberGuard.data_rename w head q i sym carrier (old 2)) (HornBinderRules.under_body 2 hsrc E)
   have fieldP := Derives.conjR (Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ2 true
-    (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 z) (old 2 T)
+    (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 c) (old 2 T)
     (old 2 head) (slot 2 0) (old 2 z) hw2 hl2 hh2)) (.conjL (.conjR he)))
   have fieldV := Derives.conjR (Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ2 false
-    (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 z) (old 2 T)
+    (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 c) (old 2 T)
     (old 2 carrier) (slot 2 1) (old 2 i) hw2 hl2 (.conjL (.conjR hc2)))) (.conjR (.conjR he)))
   have eP := StructuralListFieldValues.unique hZ2 (old 2 w) (old 2 D) (old 2 z) (slot 2 0) (old 2 P)
     hw2 (OmegaStructureAlgebra.zero_member (old 2 w) (old 2 z) (ZFContext.arithmetic hZ2).base.extensionality hw2 hz2)
@@ -478,6 +478,42 @@ theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
       SyntaxAtomSyntax.memberCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI (.conjL hc2) code)
   exact of_eq (ForcingMemberGuardOpening.result_rename w P V Y (old 2)).symm out
 
+theorem member_atom {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+    (w z D S a f T head P i V q Y sym carrier : Fin m)
+    (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
+    (hhead : Derives Gamma (SyntaxVariableSyntax.code true w z head))
+    (hzero : Derives Gamma (StructuralListFieldSyntax.field w D z P))
+    (hi : Derives Gamma (.mem i w)) (hvalue : Derives Gamma (StructuralListFieldSyntax.field w S i V))
+    (hsrc : Derives Gamma (ForcingMemberGuard.data w head q i sym carrier))
+    (hq : Derives Gamma (substituted w D S a f z T q Y)) :
+    Derives Gamma (ForcingMemberGuardOpening.result w P V Y) :=
+  member_atom_at hZ w z D S a f z T head P i V q Y sym carrier hw hz hhead hzero hi hvalue hsrc hq
+
+theorem member_query_at {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (Reln : Source.Formula (k+2))
+    (w z D S a f c T head P i V A q Y : Fin m)
+    (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
+    (hhead : Derives Gamma (SyntaxVariableSyntax.code true w z head))
+    (hzero : Derives Gamma (StructuralListFieldSyntax.field w D z P))
+    (hi : Derives Gamma (SyntaxNumeralSyntax.numeral k i)) (hvalue : Derives Gamma (StructuralListFieldSyntax.field w S i V))
+    (hc : Derives Gamma (ForcingGuardCode.compiled false Reln w A f head q))
+    (hq : Derives Gamma (substituted w D S a f c T q Y)) :
+    Derives Gamma (ForcingMemberGuardOpening.result w P V Y) := by
+  let E := ForcingMemberGuard.body w head q i
+  let Delta := Context.add E (raisedContext 2 Gamma)
+  apply HornBinderRules.eliminate_many 2 E _ (ForcingMemberGuard.from_compiled hZ Reln w z A f head q i hw hz hi hc)
+  have he : Derives Delta E := .hyp (Or.inl rfl)
+  have out := member_atom_at (HornBinderRules.zf_body 2 hZ E)
+    (old 2 w) (old 2 z) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 c) (old 2 T) (old 2 head)
+    (old 2 P) (old 2 i) (old 2 V) (old 2 q) (old 2 Y) (slot 2 0) (slot 2 1)
+    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
+    (of_eq (empty_rename z (old 2)) (HornBinderRules.under_body 2 hz E))
+    (of_eq (SyntaxVariableSyntax.code_rename true w z head (old 2)) (HornBinderRules.under_body 2 hhead E))
+    (of_eq (StructuralListFieldSyntax.field_rename w D z P (old 2)) (HornBinderRules.under_body 2 hzero E))
+    (HornBinderRules.under_body 2 (SyntaxNumerals.range hZ k w i hw hi) E)
+    (of_eq (StructuralListFieldSyntax.field_rename w S i V (old 2)) (HornBinderRules.under_body 2 hvalue E))
+    he (of_eq (substituted_rename w D S a f c T q Y (old 2)) (HornBinderRules.under_body 2 hq E))
+  exact of_eq (ForcingMemberGuardOpening.result_rename w P V Y (old 2)).symm out
+
 theorem member_query {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (Reln : Source.Formula (k+2))
     (w z D S a f T head P i V q Y : Fin m)
     (hw : Derives Gamma (omega w)) (hz : Derives Gamma (empty z))
@@ -486,22 +522,8 @@ theorem member_query {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (
     (hi : Derives Gamma (SyntaxNumeralSyntax.numeral k i)) (hvalue : Derives Gamma (StructuralListFieldSyntax.field w S i V))
     (hc : Derives Gamma (ForcingGuardCode.compiled false Reln w a f head q))
     (hq : Derives Gamma (substituted w D S a f z T q Y)) :
-    Derives Gamma (ForcingMemberGuardOpening.result w P V Y) := by
-  let E := ForcingMemberGuard.body w head q i
-  let Delta := Context.add E (raisedContext 2 Gamma)
-  apply HornBinderRules.eliminate_many 2 E _ (ForcingMemberGuard.from_compiled hZ Reln w z a f head q i hw hz hi hc)
-  have he : Derives Delta E := .hyp (Or.inl rfl)
-  have out := member_atom (HornBinderRules.zf_body 2 hZ E)
-    (old 2 w) (old 2 z) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 T) (old 2 head)
-    (old 2 P) (old 2 i) (old 2 V) (old 2 q) (old 2 Y) (slot 2 0) (slot 2 1)
-    (of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E))
-    (of_eq (empty_rename z (old 2)) (HornBinderRules.under_body 2 hz E))
-    (of_eq (SyntaxVariableSyntax.code_rename true w z head (old 2)) (HornBinderRules.under_body 2 hhead E))
-    (of_eq (StructuralListFieldSyntax.field_rename w D z P (old 2)) (HornBinderRules.under_body 2 hzero E))
-    (HornBinderRules.under_body 2 (SyntaxNumerals.range hZ k w i hw hi) E)
-    (of_eq (StructuralListFieldSyntax.field_rename w S i V (old 2)) (HornBinderRules.under_body 2 hvalue E))
-    he (of_eq (substituted_rename w D S a f z T q Y (old 2)) (HornBinderRules.under_body 2 hq E))
-  exact of_eq (ForcingMemberGuardOpening.result_rename w P V Y (old 2)).symm out
+    Derives Gamma (ForcingMemberGuardOpening.result w P V Y) :=
+  member_query_at hZ Reln w z D S a f z T head P i V a q Y hw hz hhead hzero hi hvalue hc hq
 
 /-- Read the actual carrier from the shared table. The condition overwrite
 acts at index k+1 and preserves the carrier at k. -/

@@ -2791,7 +2791,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_density_instantiation', 'ForcingDensityInstantiation', 37),
                                 ('forcing_density_guards', 'ForcingDensityGuards', 21),
                                 ('forcing_source_density', 'ForcingSourceDensity', 16),
-                                ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 27),
+                                ('forcing_atomic_dense_template', 'ForcingAtomicDenseTemplate', 29),
                                 ('forcing_atomic_mono', 'ForcingAtomicMono', 14),
                                 ('forcing_atomic_mono_images', 'ForcingAtomicMonoImages', 6),
                                 ('forcing_atomic_mono_template', 'ForcingAtomicMonoTemplate', 20),
@@ -2800,7 +2800,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 40),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 2),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 67),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 69),
                                 ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))

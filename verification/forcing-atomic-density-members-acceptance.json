@@ -1,0 +1,69 @@
+{
+  "baseline_commit": "438994005779e53cbd3175299ec433ae60ee26bc",
+  "recorded_at": "2026-11-11T13:05:03.186917+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members",
+    "PPAC.Migration.ForcingAtomicMonoImages.with_aligned_queries"
+  ],
+  "scope": "Both actual membership leaf codes agree using the route from the selected condition table to the canonical table. Each actual lift reads the fresh condition as bound zero and preserves the same closed carrier. The input carrier field and the route are available from the existing table construction. The two order guards and the atomic witness equality still require cross-table comparison.",
+  "both_membership_leaf_equalities_proved": true,
+  "two_order_and_atomic_witness_equalities_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40195,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "e0a522e69255ad461c88cc6b2b23f81e0d4de8b176e1473e0575dcc39d9f56da",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "86b0ea3e512fb64a4d028ed04141e6bd7784a1311d332e120795d6457296bd60",
+      "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+      "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
+      "docs/SOURCE_LOCK.json": "e5f06f8901b15429f59f893eb482cf437e93100ac38295452ed8f753bee6269f",
+      "scripts/verify.py": "6e97c9197534b499a6b73c79be9ba87e31bb32a54253c94e3971f16cd7f2cdad"
+    }
+  },
+  "baseline_declarations_compared": 40191,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.member_atom_at": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.member_query_at": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
