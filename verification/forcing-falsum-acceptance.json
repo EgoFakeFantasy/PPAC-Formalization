@@ -1,0 +1,58 @@
+{
+  "baseline_commit": "41aa915b5ea492a176df018693383b3c3c2128f4",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.falsum_from_density_records",
+  "scope": "The selected pointwise density records and the internal G → Tail proof produce an internal G → N proof. The actual Tail is an existential whose last conjunction field is exactly the original falsum code N. The internal proof uses native mode 3 abstraction, forall generalization, the original Hilbert rule 24 and modus ponens.",
+  "reflexive_member_instance_aligned_with_density_guard": true,
+  "reflexive_order_instance_aligned_with_density_guard": true,
+  "both_guards_discharged_from_actual_compiler_records": true,
+  "falsum_existential_elimination_proved": true,
+  "pointwise_falsum_implication_from_density_records": true,
+  "falsum_root_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T09:53:40.218165+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40130,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "staged_source_sha256": {
+      "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+      "PPAC/Migration/ForcingDensityGuards.lean": "f3fab8e4caaac5b53d17f2b40cb18dbaaed05684369d6b9567e5823cd3e95074"
+    }
+  },
+  "baseline_declarations_compared": 40128,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.InternalProofTemplates.exists_elimination_axiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.falsum_from_density_records": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axioms": []
+}

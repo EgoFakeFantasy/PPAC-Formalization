@@ -39179,6 +39179,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalProofTemplates.eliminate_binder_scopes
 #print axioms PPAC.Migration.InternalProofTemplates.quotation_rename_indices
 #print axioms PPAC.Migration.InternalProofTemplates.from_logical_quotation
+#print axioms PPAC.Migration.InternalProofTemplates.exists_elimination_axiom
 #print axioms PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate
 #print axioms PPAC.Migration.NativeProofQuotation.from_derives
 #print axioms PPAC.Migration.NativeProofQuotation.atomic_monotone
@@ -40818,6 +40819,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
+#print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

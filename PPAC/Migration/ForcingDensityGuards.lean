@@ -1,5 +1,6 @@
 import PPAC.Migration.ForcingDensityInstantiation
 import PPAC.Migration.ForcingAtomicMono
+import PPAC.Migration.ForcingFreshOpeningInverse
 
 /-! Identify the actual member/order guards of a density instance with the
 original literal guard queries at the selected condition, on the same table. -/
@@ -1025,6 +1026,502 @@ theorem tail_from_compilers {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) 
     (of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ r) (lift hLayout))
     hAll (.conjL hBody) hm ho (of_eq (discharge_rename _ _ _ _ _ _ _ r) (lift hTail))
 
+open SyntaxLogicalSyntax (singleCode singleCode_rename binaryCode_rename) in
+open SyntaxMixedFormulaRecursiveSyntax (check) in
+set_option maxHeartbeats 1200000 in
+/-- Read the witness body of the actual instantiated density existential.
+The last conjunction field is the very same falsum code as in the compiler. -/
+private theorem with_falsum_tail {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b D S A f Raw X Y M O N Tail : Fin m)
+    (hw : Derives Γ (omega w))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hcEx : Derives Γ (SyntaxLogicalSyntax.singleCode 10 w X Raw))
+    (hcBody : Derives Γ (binaryCode 0 w M Y X))
+    (hcMid : Derives Γ (binaryCode 0 w O N Y))
+    (hq : Derives Γ (substituted w D S A f z b Raw Tail))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (C X' M' Y' O' : Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (successor C (r z)) →
+      Derives Δ (SyntaxLogicalSyntax.singleCode 10 (r w) X' (r Tail)) →
+      Derives Δ (binaryCode 0 (r w) M' Y' X') →
+      Derives Δ (binaryCode 0 (r w) O' (r N) Y') →
+      Derives Δ (formulaCode (r w) M' C (r b)) →
+      Derives Δ (formulaCode (r w) O' C (r b)) →
+      Derives Δ (formulaCode (r w) (r N) C (r b)) →
+      Derives Δ (out.rename r)) :
+    Derives Γ out := by
+  refine eliminate_objects hZ 1 (fun r u =>
+    (singleCode 10 (r w) (u 0) (r Tail)).conj
+      (check true (r w) (r X) (r D) (r S) (r A) (r f) (r z) (r b) (u 0)))
+    (ForcingMixedUnary.single_output hZ 10 true (Or.inr (Or.inr ⟨rfl, rfl⟩))
+      w D S A f z b Raw X Tail hw hcEx hq) out ?_
+  intro l Δ r u hZ1 lift hEx
+  refine eliminate_objects hZ1 4 (fun s v =>
+    (SyntaxCodedMixedBinderSyntax.lifted (s (r w)) (s (r D)) (s (r S)) (s (r A))
+      (s (r f)) (s (r z)) (s (r b)) (v 0) (v 1) (v 2) (v 3)).conj
+      (substituted (s (r w)) (v 2) (v 3) (v 0) (s (r f)) (v 1) (s (r b)) (s (r X)) (s (u 0))))
+    (.conjR hEx) (out.rename r) ?_
+  intro l1 Δ1 s v hZ2 lift1 hLift
+  let t := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename t) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hw1 := of_eq (omega_rename _ _) (move hw)
+  have hBody := ForcingFormulaDiagram.binary_output hZ2 0 (t w) (v 2) (v 3) (v 0) (t f)
+    (v 1) (t b) (t X) (t M) (t Y) (s (u 0)) hw1 (of_eq (binaryCode_rename _ _ _ _ _ _) (move hcBody)) (.conjR hLift)
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine eliminate_objects hZ2 2 (fun e x =>
+    ForcingFormulaDiagram.binaryData 0 (e (t w)) (e (v 2)) (e (v 3)) (e (v 0)) (e (t f))
+      (e (v 1)) (e (t b)) (e (t M)) (e (t Y)) (e (s (u 0))) (x 0) (x 1)) hBody (out.rename t) ?_
+  intro l2 Δ2 e x hZ3 lift2 hX
+  let te := e ∘ t
+  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename te) :=
+    of_eq (SourceAlgebra.rename_comp F t e) (lift2 (move h))
+  have hw2 := of_eq (omega_rename _ _) (move2 hw)
+  have hMid := ForcingFormulaDiagram.binary_output hZ3 0 (te w) (e (v 2)) (e (v 3)) (e (v 0)) (te f)
+    (e (v 1)) (te b) (te Y) (te O) (te N) (x 1) hw2 (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hcMid))
+    (.conjR (.conjR hX))
+  refine eliminate_objects hZ3 2 (fun d y =>
+    ForcingFormulaDiagram.binaryData 0 (d (te w)) (d (e (v 2))) (d (e (v 3))) (d (e (v 0))) (d (te f))
+      (d (e (v 1))) (d (te b)) (d (te O)) (d (te N)) (d (x 1)) (y 0) (y 1)) hMid
+    ((out.rename t).rename e) ?_
+  intro l3 Δ3 d y hZ4 lift3 hY
+  let R := d ∘ te
+  have move3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F te d) (lift3 (move2 h))
+  have hw3 := of_eq (omega_rename _ _) (move3 hw)
+  have hN3 : Derives Δ3 (SyntaxNodeSyntax.constructor 0 0 (R w) Fin.elim0 (R N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (move3 hN)
+  have hM3 := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (lift3 (.conjL (.conjR hX)))
+  have hO3 := Derives.conjL (.conjR hY)
+  have hSubN := Derives.conjR (.conjR hY)
+  have heq := SyntaxMixedFormulaNullary.unique hZ4 false (R w) (d (e (v 2))) (d (e (v 3)))
+    (d (e (v 0))) (R f) (d (e (v 1))) (R b) (R N) (y 1) hw3 hN3 hSubN
+  have hMid3 := SyntaxMixedFormulaLogicalSubst.binary_y 0 (R w) (y 0) (y 1) (d (x 1)) (R N) heq (.conjL hY)
+  have hl3 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ _)
+    (of_eq (SourceAlgebra.rename_comp _ e d) (lift3 (lift2 (.conjL hLift))))
+  have hs3 := Derives.conjR (.conjR (SyntaxCodedMixedBinderTyping.input_of_lifted
+    (R w) (R D) (R S) (R A) (R f) (R z) (R b) (d (e (v 0))) (d (e (v 1))) (d (e (v 2))) (d (e (v 3))) hl3))
+  have hEx2 := of_eq (singleCode_rename _ _ _ _ _) (lift1 (.conjL hEx))
+  have hEx3 := of_eq (singleCode_rename _ _ _ _ _) (lift2 hEx2)
+  have hEx4 := of_eq (singleCode_rename _ _ _ _ _) (lift3 hEx3)
+  have hBody3 := of_eq (binaryCode_rename _ _ _ _ _ _) (lift3 (.conjL hX))
+  have hMT := SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hM3
+  have hOT := SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hO3
+  have hNT := FormulaCodeTransport.code_root (R w) (y 1) (d (e (v 1))) (R b) (R N) heq
+    (SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ hSubN)
+  exact of_eq (congrArg (fun F => F.rename d) (SourceAlgebra.rename_comp out t e)).symm
+    (of_eq (SourceAlgebra.rename_comp out te d).symm
+      (use R (d (e (v 1))) (d (e (s (u 0)))) (d (x 0)) (d (x 1)) (y 0) hZ4 move3 hs3
+        hEx4 hBody3 hMid3 hMT hOT hNT))
+
 end OrderQueries
+
+section FalsumElimination
+
+open SyntaxLogicalSyntax (singleCode singleCode_rename binaryCode_rename)
+open InternalProofConjunction (proved proved_rename)
+open FormulaCodeSyntax (formulaCode_rename)
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+set_option maxHeartbeats 1200000
+
+private theorem with_binary_formula {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (imp : Bool) (w b f X Y : Fin m) (hw : Derives Γ (omega w))
+    (hX : Derives Γ (formulaCode w X b f)) (hY : Derives Γ (formulaCode w Y b f))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (C : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode (if imp then 2 else 0) (r w) (r X) (r Y) C) →
+      Derives Δ (formulaCode (r w) C (r b) (r f)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let tag := SyntaxLogicalSyntax.binaryTag (if imp then 2 else 0)
+  let xs := SyntaxAtomSyntax.two X Y
+  have hNat := SyntaxForestSyntax.intro_inputs 2 w xs
+    (fun i => Fin.cases (.conjL (FormulaCodeProperties.guards w X b f hX))
+      (fun j => Fin.cases (.conjL (FormulaCodeProperties.guards w Y b f hY)) (fun q => Fin.elim0 q) j) i)
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards w X b f hX)
+  have hTypes : Derives Γ (FormulaCodeBranchSyntax.binaryTypes w b f X Y) :=
+    .conjI hCtx (.conjI hX hY)
+  have law : Derives Γ (FormulaCodeConstructSyntax.law 2 tag w xs b f) := by
+    cases imp
+    · exact FormulaCodeConstructors.binary0_law hZ w b f X Y hw hTypes
+    · exact FormulaCodeConstructors.binary2_law hZ w b f X Y hw hTypes
+  have he := FormulaCodeConstruct.actual_fiber hZ 2 tag w xs b f hw hNat law
+  refine eliminate_objects hZ 1 (fun r v =>
+    (Formula.mem (v 0) (r w)).conj (FormulaCodeConstructSyntax.typedAt 2 tag (r w)
+      (fun i => r (xs i)) (v 0) (r b) (r f)))
+    (FormulaCodeConstruct.exists_of_fiber 2 tag w xs b f he) out ?_
+  intro l Δ r v hZ1 lift hc
+  have hc0 := of_eq (congrArg (fun fields => SyntaxNodeSyntax.constructor 2 tag (r w) fields (v 0))
+    (SyntaxAtomSyntax.two_map X Y r)) (.conjL (.conjR hc))
+  exact use r (v 0) hZ1 lift hc0 (.conjR (.conjR hc))
+
+private theorem with_opened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B t F : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (successor A z)) (hB : Derives Γ (successor B b))
+    (hf : Derives Γ (SyntaxVariableSyntax.code false w z t))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
+    (hF : Derives Γ (formulaCode w F A b))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (V : Fin l), ZFContext.Evidence Δ →
+      (∀ {P : Formula m}, Derives Γ P → Derives Δ (P.rename r)) →
+      Derives Δ (SyntaxTopFormulaSyntax.abstracted (r w) (r z) (r b) (r A) (r B) V (r F)) →
+      Derives Δ (formulaCode (r w) V (r z) (r B)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let E := SyntaxWeakenFreeSyntax.weakened w.castSucc A.castSucc b.castSucc B.castSucc F.castSucc (Fin.last m)
+  let Δ := Context.add E (Context.image Formula.raise Γ)
+  have he : Derives Γ (.ex E) :=
+    SyntaxWeakenFreeOutput.exists_output hZ w A b B F hw (.conjI hF hB)
+  apply Derives.exE (p := E) he
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw E)
+  have hA1 := of_eq (successor_rename A z Fin.castSucc) (under hA E)
+  have ht1 := of_eq (SyntaxTermSyntax.term_rename w z B t Fin.castSucc) (under ht E)
+  have hUT := SyntaxWeakenFreeOutput.target_type w.castSucc A.castSucc b.castSucc B.castSucc F.castSucc
+    (Fin.last m) hE
+  let P := instantiated w.castSucc.castSucc z.castSucc.castSucc B.castSucc.castSucc A.castSucc.castSucc
+    t.castSucc.castSucc (Fin.last m).castSucc (Fin.last (m+1))
+  let Ξ := Context.add P (Context.image Formula.raise Δ)
+  have hp : Derives Δ (.ex P) := SyntaxTopFormulaExistence.instantiate_exists
+    (ZFContext.under hZ E) w.castSucc z.castSucc B.castSucc A.castSucc t.castSucc (Fin.last m)
+    hw1 (.conjI (.conjI ht1 hA1) hUT)
+  apply Derives.exE (p := P) hp
+  have hP : Derives Ξ P := .hyp (Or.inl rfl)
+  let R : Fin m → Fin (m+2) := fun i => i.castSucc.castSucc
+  have move {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F Fin.castSucc Fin.castSucc) (under (under h E) P)
+  have hw2 := of_eq (omega_rename w R) (move hw)
+  have hz2 := of_eq (empty_rename z R) (move hz)
+  have hA2 := of_eq (successor_rename A z R) (move hA)
+  have hf2 := of_eq (SyntaxVariableSyntax.code_rename false w z t R) (move hf)
+  have hE2 := of_eq (SyntaxWeakenFreeSyntax.weakened_rename w.castSucc A.castSucc b.castSucc B.castSucc F.castSucc
+    (Fin.last m) Fin.castSucc) (under hE P)
+  have hIn : Derives Ξ (ForcingFreshOpeningInverse.input (R w) (R z) (R b) (R A) (R B) (R t)
+      (R F) (Fin.last m).castSucc (Fin.last (m+1))) :=
+    .conjI hw2 (.conjI hz2 (.conjI hA2 (.conjI hf2 (.conjI hE2 hP))))
+  have hZ2 := ZFContext.under (ZFContext.under hZ E) P
+  have ha := ForcingFreshOpeningInverse.derive hZ2 (R w) (R z) (R b) (R A) (R B) (R t)
+    (R F) (Fin.last m).castSucc (Fin.last (m+1)) hIn
+  have hV := SyntaxTopFormulaTyping.instantiate_target_type (R w) (R z) (R B) (R A) (R t)
+    (Fin.last m).castSucc (Fin.last (m+1)) hP
+  exact of_eq (SourceAlgebra.rename_comp out Fin.castSucc Fin.castSucc).symm
+    (use R (Fin.last (m+1)) hZ2 move ha hV)
+
+private theorem falsum_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B Open X N Branch All Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
+    (hAllT : Derives Γ (formulaCode w All z b)) (hTailT : Derives Γ (formulaCode w Tail z b))
+    (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Open X))
+    (hBranch : Derives Γ (binaryCode 2 w X N Branch))
+    (hAll : Derives Γ (singleCode 9 w Branch All))
+    (hTail : Derives Γ (singleCode 10 w X Tail))
+    (hp : Derives Γ (proved test w z b All)) : Derives Γ (implication test w z b Tail N) := by
+  refine with_binary_formula hZ true w z b Tail N hw hTailT hN _ ?_
+  intro l Δ r C hZ1 lift hc hCT
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hAT := of_eq (formulaCode_rename _ _ _ _ _) (lift hAllT)
+  refine of_eq (implication_rename test w z b Tail N r).symm ?_
+  refine with_binary_formula hZ1 true (r w) (r z) (r b) (r All) C hw1 hAT hCT _ ?_
+  intro l1 Δ1 s Ax hZ2 lift1 hAx _
+  let R := s ∘ r
+  have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (lift1 (lift h))
+  have hw2 := of_eq (omega_rename _ _) (move hw)
+  have hz2 := of_eq (empty_rename _ _) (move hz)
+  have hc2 := of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hc)
+  have hProof := InternalProofTemplates.exists_elimination_axiom hZ2 test
+    (R w) (R z) (R b) (R A) (R B) (R Open) (R X) (R N) (R Branch) (R All) (R Tail) (s C) Ax
+    hw2 hz2 (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move ha))
+    (of_eq (formulaCode_rename _ _ _ _ _) (move hN)) (of_eq (formulaCode_rename _ _ _ _ _) (move hNB))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (move hBranch))
+    (of_eq (singleCode_rename _ _ _ _ _) (move hAll))
+    (of_eq (singleCode_rename _ _ _ _ _) (move hTail)) hc2 hAx
+  have hResult := InternalProofConjunction.modus_ponens hZ2 test (R w) (R z) (R b) (R All) (s C) Ax
+    hw2 hz2 (of_eq (formulaCode_rename _ _ _ _ _) (move hAllT)) (of_eq (formulaCode_rename _ _ _ _ _) (lift1 hCT))
+    hAx (of_eq (proved_rename _ _ _ _ _ _) (move hp)) hProof
+  refine of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm ?_
+  apply Derives.exI (s C)
+  exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+    SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
+    (.conjI hc2 hResult : Derives Δ1
+      ((binaryCode 2 (R w) (R Tail) (R N) (s C)).conj (proved test (R w) (R z) (R b) (s C))))
+
+private theorem falsum_from_body_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B Open X N Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
+    (hNF : Derives Γ (formulaCode w N z B))
+    (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Open X))
+    (haN : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B N N))
+    (hTail : Derives Γ (singleCode 10 w X Tail))
+    (hP : Derives Γ (implication test w z B Open N)) :
+    Derives Γ (implication test w z b Tail N) := by
+  let out := implication test w z b Tail N
+  have hEnv := SyntaxTopFormulaTyping.abstract_environment w z b A B Open X ha
+  have hA := Derives.conjL (.conjR hEnv)
+  have hX := SyntaxTopFormulaTyping.abstract_target_type w z b A B Open X ha
+  have hXT := SyntaxTopFormulaTyping.abstract_source_type hZ w z b A B Open X hw ha
+  have hTailT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false w z b X Tail A hw hTail hA))
+    (.conjI (.conjL hEnv) hX)
+  refine with_binary_formula hZ true w A b X N hw hX hNB out ?_
+  intro l Δ r Branch hZ1 lift hc hBT
+  refine of_eq (implication_rename test w z b Tail N r).symm ?_
+  refine eliminate_objects hZ1 1 (fun s u =>
+    (binaryCode 2 (s (r w)) (s (r Open)) (s (r N)) (u 0)).conj
+      (proved test (s (r w)) (s (r z)) (s (r B)) (u 0)))
+    (of_eq (implication_rename test w z B Open N r) (lift hP)) (implication test (r w) (r z) (r b) (r Tail) (r N)) ?_
+  intro l1 Δ1 s u hZ2 lift1 hU
+  let R := s ∘ r
+  have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (lift1 (lift h))
+  have hw2 := of_eq (omega_rename _ _) (move hw)
+  have hz2 := of_eq (empty_rename _ _) (move hz)
+  have hXT2 := of_eq (formulaCode_rename _ _ _ _ _) (move hXT)
+  have hN2 := of_eq (formulaCode_rename _ _ _ _ _) (move hNF)
+  have hAbs2 := of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move ha)
+  have hAbsN2 := of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move haN)
+  have hEnv2 := of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (move hEnv)
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards _ _ _ _ hXT2)
+  have hUT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ2
+    (R w) (R z) (R B) (R Open) (R N) (u 0) hw2 (.conjL hU))) (.conjI hCtx (.conjI hXT2 hN2))
+  have hc2 := of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hc)
+  have hAbs := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_binary_iff hZ2 2
+    (R w) (R z) (R b) (R A) (R B) (u 0) (s Branch) (R Open) (R N) (R X) (R N)
+    hw2 (.conjI hEnv2 hUT) (.conjL hU) hc2)) (.conjI hAbs2 hAbsN2)
+  have hForall := InternalProofUniversal.generalize hZ2 test
+    (R w) (R z) (R b) (R A) (R B) (u 0) (s Branch) hw2 hz2 hAbs (.conjR hU)
+  refine of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm ?_
+  refine eliminate_objects hZ2 1 (fun t q =>
+    (singleCode 9 (t (R w)) (t (s Branch)) (q 0)).conj
+      (proved test (t (R w)) (t (R z)) (t (R b)) (q 0))) hForall (implication test (R w) (R z) (R b) (R Tail) (R N)) ?_
+  intro l2 Δ2 t q hZ3 lift2 hAll
+  let S := t ∘ R
+  have move2 {P : Formula m} (h : Derives Γ P) : Derives Δ2 (P.rename S) :=
+    of_eq (SourceAlgebra.rename_comp P R t) (lift2 (move h))
+  have hw3 := of_eq (omega_rename _ _) (move2 hw)
+  have hz3 := of_eq (empty_rename _ _) (move2 hz)
+  have hAllT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ3 true
+    (S w) (S z) (S b) (t (s Branch)) (q 0) (S A) hw3 (.conjL hAll)
+    (of_eq (successor_rename _ _ _) (move2 hA))))
+    (.conjI (of_eq (SyntaxTermSyntax.contexts_rename _ _ _ _) (move2 (.conjL hEnv)))
+      (of_eq (formulaCode_rename _ _ _ _ _) (of_eq (SourceAlgebra.rename_comp _ s t) (lift2 (lift1 hBT)))))
+  exact of_eq (implication_rename test (R w) (R z) (R b) (R Tail) (R N) t).symm
+    (falsum_from_all hZ3 (S w) (S z) (S b) (S A) (S B) (S Open) (S X) (S N) (t (s Branch)) (q 0) (S Tail)
+      hw3 hz3 (of_eq (formulaCode_rename _ _ _ _ _) (move2 hN)) (of_eq (formulaCode_rename _ _ _ _ _) (move2 hNB))
+      hAllT (of_eq (formulaCode_rename _ _ _ _ _) (move2 hTailT))
+      (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move2 ha))
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (lift2 hc2)) (.conjL hAll)
+      (of_eq (singleCode_rename _ _ _ _ _) (move2 hTail)) (.conjR hAll))
+
+private theorem falsum_from_open_parts {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B MO OO M O N Y X Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (he : Derives Γ (SyntaxTopEnvironmentSyntax.abstractInput w z b A B))
+    (hM : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B MO M))
+    (hO : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B OO O))
+    (hMT : Derives Γ (formulaCode w MO z B)) (hOT : Derives Γ (formulaCode w OO z B))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hN0 : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
+    (hN1 : Derives Γ (formulaCode w N z B))
+    (hY : Derives Γ (binaryCode 0 w O N Y)) (hX : Derives Γ (binaryCode 0 w M Y X))
+    (hTail : Derives Γ (singleCode 10 w X Tail)) : Derives Γ (implication test w z b Tail N) := by
+  have hAbsN := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_nullary_iff hZ false
+    w z b A B N N hw (.conjI he hN1) hN)) (.eqRefl N)
+  refine with_binary_formula hZ false w z B OO N hw hOT hN1 _ ?_
+  intro l Δ r V hZ1 lift hV hVT
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have he1 := of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (lift he)
+  have hAbsN1 := of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (lift hAbsN)
+  have hAbsV := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_binary_iff hZ1 0
+    (r w) (r z) (r b) (r A) (r B) V (r Y) (r OO) (r N) (r O) (r N) hw1
+    (.conjI he1 hVT) hV (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hY))))
+    (.conjI (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (lift hO)) hAbsN1)
+  refine of_eq (implication_rename test w z b Tail N r).symm ?_
+  refine with_binary_formula hZ1 false (r w) (r z) (r B) (r MO) V hw1
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hMT)) hVT _ ?_
+  intro l1 Δ1 s U hZ2 lift1 hU hUT
+  let R := s ∘ r
+  have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (lift1 (lift h))
+  have hw2 := of_eq (omega_rename _ _) (move hw)
+  have hz2 := of_eq (empty_rename _ _) (move hz)
+  have hVT2 := of_eq (formulaCode_rename _ _ _ _ _) (lift1 hVT)
+  have hNT2 := of_eq (formulaCode_rename _ _ _ _ _) (move hN1)
+  have hAbsU := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_binary_iff hZ2 0
+    (R w) (R z) (R b) (R A) (R B) U (R X) (R MO) (s V) (R M) (R Y) hw2
+    (.conjI (of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (move he)) hUT)
+    hU (of_eq (binaryCode_rename _ _ _ _ _ _) (move hX))))
+    (.conjI (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move hM))
+      (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (lift1 hAbsV)))
+  have h1 := ForcingRelationGuardProof.project hZ2 test true (R w) (R z) (R B) (R MO) (s V) U hw2 hz2
+    (of_eq (formulaCode_rename _ _ _ _ _) (move hMT)) hVT2 hUT hU
+  have h2 := ForcingRelationGuardProof.project hZ2 test true (R w) (R z) (R B) (R OO) (R N) (s V) hw2 hz2
+    (of_eq (formulaCode_rename _ _ _ _ _) (move hOT)) hNT2 hVT2
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hV))
+  have hP := ForcingRelationGuardProof.chain hZ2 test (R w) (R z) (R B) U (s V) (R N) hw2 hz2 hUT hVT2 hNT2 h1 h2
+  exact of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm
+    (falsum_from_body_implication hZ2 (R w) (R z) (R b) (R A) (R B) U (R X) (R N) (R Tail) hw2 hz2
+      (of_eq (formulaCode_rename _ _ _ _ _) (move hN0)) (of_eq (formulaCode_rename _ _ _ _ _) (move hNB))
+      hNT2 hAbsU (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move hAbsN))
+      (of_eq (singleCode_rename _ _ _ _ _) (move hTail)) hP)
+
+private theorem falsum_at_fresh_term {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B t M O N Y X Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (he : Derives Γ (SyntaxTopEnvironmentSyntax.abstractInput w z b A B))
+    (hf : Derives Γ (SyntaxVariableSyntax.code false w z t)) (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
+    (hM : Derives Γ (formulaCode w M A b)) (hO : Derives Γ (formulaCode w O A b))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hN0 : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
+    (hY : Derives Γ (binaryCode 0 w O N Y)) (hX : Derives Γ (binaryCode 0 w M Y X))
+    (hTail : Derives Γ (singleCode 10 w X Tail)) : Derives Γ (implication test w z b Tail N) := by
+  have hA := Derives.conjL (.conjR he)
+  have hB := Derives.conjR (.conjR he)
+  refine with_opened_operand hZ w z b A B t M hw hz hA hB hf ht hM _ ?_
+  intro l Δ r MO hZ1 lift hAM hMT
+  refine of_eq (implication_rename test w z b Tail N r).symm ?_
+  refine with_opened_operand hZ1 (r w) (r z) (r b) (r A) (r B) (r t) (r O)
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (successor_rename _ _ _) (lift hA)) (of_eq (successor_rename _ _ _) (lift hB))
+    (of_eq (SyntaxVariableSyntax.code_rename false _ _ _ _) (lift hf))
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (lift ht))
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hO)) _ ?_
+  intro l1 Δ1 s OO hZ2 lift1 hAO hOT
+  let R := s ∘ r
+  have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (lift1 (lift h))
+  have hw2 := of_eq (omega_rename _ _) (move hw)
+  have hz2 := of_eq (empty_rename _ _) (move hz)
+  have hN2 : Derives Δ1 (SyntaxNodeSyntax.constructor 0 0 (R w) Fin.elim0 (R N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (move hN)
+  have ht2 := of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (move ht)
+  have hN1 := Derives.impE (.conjR (FormulaCodeKnownAtomic.nullary_iff hZ2 false
+    (R w) (R z) (R B) (R N) hw2 hN2)) (.conjL ht2)
+  exact of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm
+    (falsum_from_open_parts hZ2 (R w) (R z) (R b) (R A) (R B) (s MO) OO (R M) (R O)
+      (R N) (R Y) (R X) (R Tail) hw2 hz2
+      (of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (move he))
+      (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (lift1 hAM)) hAO
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift1 hMT)) hOT hN2
+      (of_eq (formulaCode_rename _ _ _ _ _) (move hN0)) (of_eq (formulaCode_rename _ _ _ _ _) (move hNB)) hN1
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (move hY)) (of_eq (binaryCode_rename _ _ _ _ _ _) (move hX))
+      (of_eq (singleCode_rename _ _ _ _ _) (move hTail)))
+
+private theorem falsum_from_body {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A M O N Y X Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hA : Derives Γ (successor A z))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hNB : Derives Γ (formulaCode w N A b))
+    (hM : Derives Γ (formulaCode w M A b)) (hO : Derives Γ (formulaCode w O A b))
+    (hY : Derives Γ (binaryCode 0 w O N Y)) (hX : Derives Γ (binaryCode 0 w M Y X))
+    (hTail : Derives Γ (singleCode 10 w X Tail)) : Derives Γ (implication test w z b Tail N) := by
+  let out := implication test w z b Tail N
+  have hzN := SyntaxNumerals.range hZ 0 w z hw hz
+  have hbN := Derives.conjR (.conjR (FormulaCodeProperties.guards w N A b hNB))
+  have hCtx : Derives Γ (SyntaxTermSyntax.contexts w z b) := .conjI hzN hbN
+  have hN0 := Derives.impE (.conjR (FormulaCodeKnownAtomic.nullary_iff hZ false w z b N hw hN)) hCtx
+  refine eliminate_objects hZ 1 (fun r v => (Formula.mem (v 0) (r w)).conj (successor (v 0) (r b)))
+    (.impE (OmegaSyntax.step_at w b (.conjL hw)) hbN) out ?_
+  intro l Δ r v hZ1 lift hB
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have hzB := SyntaxIndexLiftOrder.zero_member hZ1 (r w) (r b) (v 0) (r z) hw1 (lift hbN) (.conjR hB) hz1
+  have hFresh := SyntaxTerms.exists_at hZ1 false (r w) (r z) (v 0) (r z) hw1
+    (.conjI (.conjI (lift hzN) (.conjL hB)) hzB)
+  refine of_eq (implication_rename test w z b Tail N r).symm ?_
+  refine eliminate_objects hZ1 1 (fun s u => (Formula.mem (u 0) (s (r w))).conj
+    ((SyntaxVariableSyntax.code false (s (r w)) (s (r z)) (u 0)).conj
+      (SyntaxTermSyntax.term (s (r w)) (s (r z)) (s (v 0)) (u 0)))) hFresh
+    (implication test (r w) (r z) (r b) (r Tail) (r N)) ?_
+  intro l1 Δ1 s u hZ2 lift1 hTerm
+  let R := s ∘ r
+  have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (lift1 (lift h))
+  have he : Derives Δ1 (SyntaxTopEnvironmentSyntax.abstractInput (R w) (R z) (R b) (R A) (s (v 0))) :=
+    .conjI (of_eq (SyntaxTermSyntax.contexts_rename _ _ _ _) (move hCtx))
+      (.conjI (of_eq (successor_rename _ _ _) (move hA)) (of_eq (successor_rename _ _ _) (lift1 (.conjR hB))))
+  have hN2 : Derives Δ1 (SyntaxNodeSyntax.constructor 0 0 (R w) Fin.elim0 (R N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (move hN)
+  exact of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm
+    (falsum_at_fresh_term hZ2 (R w) (R z) (R b) (R A) (s (v 0)) (u 0) (R M) (R O) (R N) (R Y) (R X) (R Tail)
+      (of_eq (omega_rename _ _) (move hw)) (of_eq (empty_rename _ _) (move hz)) he (.conjL (.conjR hTerm)) (.conjR (.conjR hTerm))
+      (of_eq (formulaCode_rename _ _ _ _ _) (move hM)) (of_eq (formulaCode_rename _ _ _ _ _) (move hO))
+      hN2 (of_eq (formulaCode_rename _ _ _ _ _) (move hN0)) (of_eq (formulaCode_rename _ _ _ _ _) (move hNB))
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (move hY)) (of_eq (binaryCode_rename _ _ _ _ _ _) (move hX))
+      (of_eq (singleCode_rename _ _ _ _ _) (move hTail)))
+
+/-- The falsum case of the original density witness elimination. The same
+instantiated existential and its original falsum are used in the output. -/
+private theorem falsum_from_query {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b D S A f Raw X Y M O N Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hcEx : Derives Γ (singleCode 10 w X Raw))
+    (hcBody : Derives Γ (binaryCode 0 w M Y X))
+    (hcMid : Derives Γ (binaryCode 0 w O N Y))
+    (hq : Derives Γ (substituted w D S A f z b Raw Tail)) :
+    Derives Γ (implication test w z b Tail N) := by
+  apply with_falsum_tail hZ w z b D S A f Raw X Y M O N Tail hw hN hcEx hcBody hcMid hq
+  intro l Δ r C X' M' Y' O' hZ1 lift hs hEx hBody hMid hMT hOT hNT
+  have hN1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r w) Fin.elim0 (r N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hN)
+  exact of_eq (implication_rename test w z b Tail N r).symm
+    (falsum_from_body hZ1 (r w) (r z) (r b) C M' O' (r N) Y' X' (r Tail)
+      (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz)) hs hN1 hNT hMT hOT hMid hBody hEx)
+
+/-- Eliminate the falsum witness of the same selected density instance
+whose member and order guards have already been discharged. -/
+theorem falsum_from_density_records {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a A B C f b L S K H D p G M O rM rO N Raw I U : Fin m)
+    (shell : Fin 5 → Fin m) (u v x : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 N))
+    (hG : Derives Γ (formulaCode w G z b))
+    (hShell : Derives Γ (ForcingDensityCode.shellData w a A B f M O rM rO N Raw shell))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w L S a f z b A C K H))
+    (hD : Derives Γ (consCode w p L D))
+    (hu : Derives Γ (ForcingRawModalBody.data w K H A f C b M O (shell 2) I U u))
+    (hv : Derives Γ (ForcingDensityInstantiation.pointData w z b U p G (u 1) (u 2) (u 3) (u 0) v))
+    (hx : Derives Γ (ForcingRawModalBody.data w (v 2) (v 3) (v 0) b z b (u 1) (u 2) (u 3) (u 0) (v 1) x))
+    (hPoint : Derives Γ (implication test w z b G (x 3))) :
+    Derives Γ (implication test w z b G N) := by
+  have hInst := Derives.conjL (.conjR hv)
+  have hCoded := Derives.conjL hInst
+  have ht := Derives.conjL (SyntaxTopCodedEnvironmentTyping.instantiate_input w z b (v 0) p (v 2) (v 3) hCoded)
+  have hlIn := SyntaxCodedMixedBinderTyping.input_of_lifted w L S a f z b A C K H hl
+  have hCe := OmegaUniversal.successor_unique (v 0) C z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjL hv) (.conjR (.conjR hlIn))
+  have hU : Derives Γ (substituted w K H A f C b (shell 2) (u 3)) :=
+    .conjR (.conjR (.conjR hu))
+  have hNative := SyntaxTopFormulaSyntax.intro_instantiated w z b (v 0) p (u 3) (x 3) (v 2) (v 3)
+    hCoded (.conjR (.conjR (.conjR hx)))
+  have hY := instance_scope w z b (v 0) C p (u 3) (x 3) hCe hNative
+  have hRawType : Derives Γ (formulaCode w (shell 2) A f) := .conjR (.conjL (.conjR (.conjR hShell)))
+  have hEx : Derives Γ (singleCode 10 w (shell 1) (shell 2)) := .conjL (.conjL (.conjR (.conjR hShell)))
+  have hcBody : Derives Γ (binaryCode 0 w rM (shell 0) (shell 1)) := .conjL (.conjL (.conjR hShell))
+  have hcMid : Derives Γ (binaryCode 0 w rO N (shell 0)) := .conjL (.conjL hShell)
+  apply with_direct_query hZ w z a A C f b L S K H p D (shell 2) (u 3) (x 3)
+    hw hz ht hl hD hRawType hU hY (implication test w z b G N)
+  intro l Δ r hZ1 lift _ _ hq
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have hG1 := of_eq (formulaCode_rename _ _ _ _ _) (lift hG)
+  have hN1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r w) Fin.elim0 (r N)) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hN)
+  have hNT := Derives.impE (.conjR (FormulaCodeKnownAtomic.nullary_iff hZ1 false (r w) (r z) (r b) (r N) hw1 hN1))
+    (.conjR (FormulaCodeProperties.guards (r w) (r G) (r z) (r b) hG1))
+  have hTailT := SyntaxMixedFormulaJudgment.target_type (r w) (r D) (r S) (r A) (r f) (r z) (r b)
+    (r (shell 2)) (r (x 3)) hq
+  have hFalsum := falsum_from_query hZ1 (r w) (r z) (r b) (r D) (r S) (r A) (r f) (r (shell 2))
+    (r (shell 1)) (r (shell 0)) (r rM) (r rO) (r N) (r (x 3)) hw1 hz1 hN1
+    (of_eq (singleCode_rename _ _ _ _ _) (lift hEx)) (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hcBody))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hcMid)) hq
+  exact of_eq (implication_rename test w z b G N r).symm
+    (ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r b) (r G) (r (x 3)) (r N) hw1 hz1 hG1 hTailT hNT
+      (of_eq (implication_rename _ _ _ _ _ _ _) (lift hPoint)) hFalsum)
+
+end FalsumElimination
 
 end PPAC.Migration.ForcingDensityGuards

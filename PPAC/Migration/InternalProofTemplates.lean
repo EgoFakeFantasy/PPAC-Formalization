@@ -652,6 +652,77 @@ private theorem forall_distribution_quotation {m} {Γ : Context m} {free : PureS
   exact of_eq (LogicalTableRenaming.listBundle_rename ObjectLogicalAxiom.rule21.queries w env r).symm
     (.impE (.conjR (LogicalAbstractQueryList.original_bundle21_iff (r w) env2)) bundle)
 
+private theorem exists_elimination_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A B : Fin m) (env : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hn : Derives Γ (environmentNat 4 w env))
+    (hA : Derives Γ (successor A z)) (hB : Derives Γ (successor B (env 0)))
+    (hBody : Derives Γ (formulaCode w (env 1) z B))
+    (hConclusion : Derives Γ (formulaCode w (env 2) z (env 0)))
+    (hAbs : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z (env 0) A B (env 1) (env 3))) :
+    Derives Γ (LogicalStaticQueryList.listBundle ObjectLogicalAxiom.rule24.queries w env) := by
+  have step := LogicalAbstractSyntax.intro_atOneSpecification24 w z A B env hB
+    (.conjI hBody (.conjI hConclusion hAbs))
+  have spec := LogicalAbstractSyntax.intro_specification24 w z A env hA step
+  have bundle := Derives.impE (.conjR (LogicalAbstractAllQueries.bundle24_iff hZ w z env hw hn hz)) spec
+  exact .impE (.conjR (LogicalAbstractQueryList.original_bundle24_iff w env)) bundle
+
+open LogicalRule24Head in
+set_option maxHeartbeats 1200000 in
+/-- Original rule 24 for an actual internally coded body and its mode 3 abstraction. -/
+theorem exists_elimination_axiom {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (w z b A B Open Bound Q Branch All Ex Consequent Ax : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Open Bound))
+    (hQ : Derives Γ (formulaCode w Q z b))
+    (hQBound : Derives Γ (formulaCode w Q A b))
+    (hcBranch : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w Bound Q Branch))
+    (hcAll : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w Branch All))
+    (hcEx : Derives Γ (SyntaxLogicalSyntax.singleCode 10 w Bound Ex))
+    (hcConsequent : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w Ex Q Consequent))
+    (hcAx : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w All Consequent Ax)) :
+    Derives Γ (InternalProofConjunction.proved test w z b Ax) := by
+  let env : Fin 4 → Fin m := Fin.cases b (SetLanguage.args3 Open Q Bound)
+  have hBody := SyntaxTopFormulaTyping.abstract_source_type hZ w z b A B Open Bound hw ha
+  have hBound := SyntaxTopFormulaTyping.abstract_target_type w z b A B Open Bound ha
+  have hEnv := SyntaxTopFormulaTyping.abstract_environment w z b A B Open Bound ha
+  have hA := Derives.conjL (.conjR hEnv)
+  have hB := Derives.conjR (.conjR hEnv)
+  have hCtx := Derives.conjL hEnv
+  have hCtxBound := Derives.conjR (FormulaCodeProperties.guards w Bound A b hBound)
+  have hBranch := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ w A b Bound Q Branch hw hcBranch))
+    (.conjI hCtxBound (.conjI hBound hQBound))
+  have hAll := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ true w z b Branch All A hw hcAll hA))
+    (.conjI hCtx hBranch)
+  have hEx := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false w z b Bound Ex A hw hcEx hA))
+    (.conjI hCtx hBound)
+  have hConsequent := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ w z b Ex Q Consequent hw hcConsequent))
+    (.conjI hCtx (.conjI hEx hQ))
+  have hAx := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ w z b All Consequent Ax hw hcAx))
+    (.conjI hCtx (.conjI hAll hConsequent))
+  have hn : Derives Γ (environmentNat 4 w env) := by
+    refine .conjI (.conjR (.conjR (FormulaCodeProperties.guards w Q z b hQ))) ?_
+    exact .conjI (.conjL (FormulaCodeProperties.guards w Open z B hBody))
+      (.conjI (.conjL (FormulaCodeProperties.guards w Q z b hQ))
+        (.conjI (.conjL (FormulaCodeProperties.guards w Bound A b hBound)) HornRuleSyntax.truth_proved))
+  have h1 := Derives.impE (.conjR (node1_iff hZ w Branch env hw hn)) hcBranch
+  have hAllField : (fun _ : Fin 1 => Branch) = fields2 env Branch := by
+    funext i
+    exact Fin.cases rfl (fun j => Fin.elim0 j) i
+  have hExField : (fun _ : Fin 1 => Bound) = fields3 env := by
+    funext i
+    exact Fin.cases rfl (fun j => Fin.elim0 j) i
+  have h2 := Derives.impE (.conjR (node2_iff hZ w All Branch env hw hn h1)) (of_eq (congrArg (fun xs => SyntaxNodeSyntax.constructor 1 9 w xs All) hAllField) hcAll)
+  have h3 := Derives.impE (.conjR (node3_iff hZ w Ex env hw hn)) (of_eq (congrArg (fun xs => SyntaxNodeSyntax.constructor 1 10 w xs Ex) hExField) hcEx)
+  have h4 := Derives.impE (.conjR (node4_iff hZ w Consequent Ex env hw hn h3)) hcConsequent
+  have h5 := Derives.impE (.conjR (node5_iff hZ w Ax All Consequent env hw hn h2 h4)) hcAx
+  have hqs := exists_elimination_queries hZ w z A B env hw hz hn hA hB hBody hQ ha
+  exact logical_shape hZ test 24 0 (fun i : Fin 2 => ([1,2][i] : Fin 4)) part5
+    ObjectLogicalAxiom.rule24.queries (by
+      change ObjectLogicalAxiom.rule24 ∈ ObjectLogicalAxiom.shapes
+      simp only [ObjectLogicalAxiom.shapes, List.mem_cons, true_or, or_true])
+    w z Ax env hw hz hn h5 hqs hAx
+
 private theorem exists_elimination_quotation {m} {Γ : Context m} {free : PureSyntaxQuotation.Ctx}
     (hZ : ZFContext.Evidence Γ) (test : Formula 1) (body : PureSyntaxQuotation.Fm [] (.set :: free))
     (conclusion : PureSyntaxQuotation.Fm [] free)
@@ -692,12 +763,8 @@ private theorem exists_elimination_quotation {m} {Γ : Context m} {free : PureSy
     have hBody := SyntaxTopFormulaTyping.abstract_source_type hZ2 (r w) (r z) (r b) A B (r (fields 0)) (r (fields 2)) hw2 absBody
     have hConclusion := PureQuotationFormulaTyping.formula_type hZ2 conclusion
       (r w) (r z) (r b) (r (fields 1)) hw2 hz2 hb2 (hs 1)
-    have step := LogicalAbstractSyntax.intro_atOneSpecification24 (r w) (r z) A B env2 hB
-      (.conjI hBody (.conjI hConclusion absBody))
-    have spec := LogicalAbstractSyntax.intro_specification24 (r w) (r z) A env2 hA step
-    have bundle := Derives.impE (.conjR (LogicalAbstractAllQueries.bundle24_iff hZ2 (r w) (r z) env2 hw2 hn2 hz2)) spec
     exact of_eq (LogicalTableRenaming.listBundle_rename ObjectLogicalAxiom.rule24.queries w env r).symm
-      (.impE (.conjR (LogicalAbstractQueryList.original_bundle24_iff (r w) env2)) bundle)
+      (exists_elimination_queries hZ2 (r w) (r z) A B env2 hw2 hz2 hn2 hA hB hBody hConclusion absBody)
 
 /-- Every original Hilbert logical axiom produces its actual proof node from
 its pure-language quotation. The seven binder/equality cases use the original
