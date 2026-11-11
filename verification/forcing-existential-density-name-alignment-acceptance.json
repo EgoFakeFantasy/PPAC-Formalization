@@ -1,0 +1,81 @@
+{
+  "baseline_commit": "775ff1f66682defd358c27d2864c6641ca784c1f",
+  "recorded_at": "2026-11-11T21:38:06.463116+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingExistChildOpening.compare_prefixes",
+    "PPAC.Migration.ForcingExistDomainOpening.compare_prefixes",
+    "PPAC.Migration.ForcingExistTailOpening.scope_alignment_at_prefixes",
+    "PPAC.Migration.ForcingExistTailComparison.name_from_opened_tails",
+    "PPAC.Migration.ForcingSourceDensity.with_existential_witnesses"
+  ],
+  "scope": "Compare the original name existential under the two actual condition prefixes, then transport the code equality through the actual weakening and top-instantiation operations at the same s. Preserve the original member and transitive order guards.",
+  "target_q_tail_opened_at_same_s": true,
+  "target_member_and_transitive_order_matched": true,
+  "source_and_target_name_queries_retained": true,
+  "bound_name_existential_codes_compared": true,
+  "name_existential_codes_compared_at_same_s": true,
+  "target_q_existential_reassembled": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40272,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "750bbb96ad5db87a4e528c5380d5af7d71f310fd41cffd50ee12951c0596495d",
+      "PPAC/Migration/ForcingExistChildOpening.lean": "5cbb15925f57302ebeae2dce5e1b5501754e7690cd818e143e7c0903ee645b9b",
+      "PPAC/Migration/ForcingExistDomainOpening.lean": "883ce92611eda9f5b535ce8e4668b5794b41d654f1bf12be7412162b3503bf97",
+      "PPAC/Migration/ForcingExistTailComparison.lean": "01668d4604bb0af0df45d4be0a5928ccc0b321a1c2c609f9e0a240e241f80259",
+      "PPAC/Migration/ForcingExistTailOpening.lean": "195e7da1c360466f5333c581d70d9f2525fb4f609c0fd3819e818785ed15434b",
+      "PPAC/Migration/ForcingSourceDensity.lean": "e7fab9fe8b0ac73315e9b478e9bc8f93fd43aa385464c22dbd591ed57b3f248a",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "d06bd81677f1691b063b4219ca502e1799d9faa902cf657414669ac0524fddcc",
+      "docs/CURRENT_STATUS.zh-CN.md": "f02415f30d093146dfc524147b7ab525f15df79775a0fd4d6b57468f3c69ef4a",
+      "docs/SOURCE_LOCK.json": "106fe439d0efc49d1573893ab80fae4672c367ff6db610115d009d59f5930e72",
+      "scripts/verify.py": "af8739870ed8cffab97a394cd8251ecb4c46330ca42477e0f06d0f9188c1b351"
+    }
+  },
+  "baseline_declarations_compared": 40268,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingExistChildOpening.compare_prefixes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistDomainOpening.compare_prefixes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailComparison.name_from_opened_tails": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.scope_alignment_at_prefixes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

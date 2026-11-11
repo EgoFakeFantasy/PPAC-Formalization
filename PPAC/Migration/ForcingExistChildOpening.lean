@@ -672,6 +672,26 @@ theorem kernel_certificate {m} (w z a A B C f T c d R S D Q K H L M E V W head j
 /-- The SAME actual raw child at two outer-condition updates has the SAME
 actual output after TWO openings. Consume the existing canonical whole-formula
 independence, not a field/equality/guard-truth answer. -/
+theorem compare_prefixes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y Base p q S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 Nraw1 Y1 : Fin m)
+    (hf : Derives Γ (frame w z a A B C f T c d R S D Q K H L M E V W head j))
+    (hg : Derives Γ (frame w z a A B C f T c d R S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 head j))
+    (hc : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N Nraw))
+    (hd : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N Nraw1))
+    (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M C f d T Nraw Y))
+    (hy1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L1 M1 C f d T Nraw1 Y1))
+    (hp : Derives Γ (ForcingReflexiveImages.replacement w f c T Base j p S))
+    (hq : Derives Γ (ForcingReflexiveImages.replacement w f c T Base j q S1)) : Derives Γ (.equal Y Y1) := by
+  have hu := from_compiled hZ w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y hf hc hy
+  have hv := from_compiled hZ w z a A B C f T c d R S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 head j N Nraw1 Y1 hg hd hy1
+  have hE := Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hf)))))))))
+  have hC := Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hf)))))))))
+  have hE1 := Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hg)))))))))
+  have hC1 := Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hg)))))))))
+  exact ForcingExistChildCanonical.formula hZ w a A c d f T R Base j p q S S1 head N
+    (four E V W Y) (four E1 V1 W1 Y1) (.conjL hf) hp hq
+    (.conjI hE (.conjI hC hu)) (.conjI hE1 (.conjI hC1 hv))
+
 theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y Base p q S1 K1 H1 L1 M1 E1 V1 W1 Nraw1 Y1 : Fin m)
     (hf : Derives Γ (frame w z a A B C f T c d R S D Q K H L M E V W head j))
@@ -681,16 +701,9 @@ theorem compare {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M C f d T Nraw Y))
     (hy1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L1 M1 C f d T Nraw1 Y1))
     (hp : Derives Γ (ForcingReflexiveImages.replacement w f c T Base j p S))
-    (hq : Derives Γ (ForcingReflexiveImages.replacement w f c T Base j q S1)) : Derives Γ (.equal Y Y1) := by
-  have hu := from_compiled hZ w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y hf hc hy
-  have hv := from_compiled hZ w z a A B C f T c d R S1 D Q K1 H1 L1 M1 E1 V1 W1 head j N Nraw1 Y1 hg hd hy1
-  have hE := Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hf)))))))))
-  have hC := Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hf)))))))))
-  have hE1 := Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hg)))))))))
-  have hC1 := Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (hg)))))))))
-  exact ForcingExistChildCanonical.formula hZ w a A c d f T R Base j p q S S1 head N
-    (four E V W Y) (four E1 V1 W1 Y1) (.conjL hf) hp hq
-    (.conjI hE (.conjI hC hu)) (.conjI hE1 (.conjI hC1 hv))
+    (hq : Derives Γ (ForcingReflexiveImages.replacement w f c T Base j q S1)) : Derives Γ (.equal Y Y1) :=
+  compare_prefixes hZ w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y Base p q S1 D Q K1 H1 L1 M1 E1 V1 W1 Nraw1 Y1
+    hf hg hc hd hy hy1 hp hq
 
 def compareInput {m} (w z a A B C f T c d R S D Q K H L M E V W head j N Nraw Y Base p q S1 K1 H1 L1 M1 E1 V1 W1 Nraw1 Y1 : Fin m) : Formula m :=
   (frame w z a A B C f T c d R S D Q K H L M E V W head j).conj ((frame w z a A B C f T c d R S1 D Q K1 H1 L1 M1 E1 V1 W1 head j).conj

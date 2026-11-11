@@ -1809,6 +1809,147 @@ private theorem secondWitnessProofs_rename {m l} (w z b B Local Body M Name Orde
       secondWitnessProofs (r w) (r z) (r b) (r B) (r Local) (r Body) (r M) (r Name) (r Order) := by
   simp only [secondWitnessProofs, existsMany_rename, secondWitnessData_rename, lift_old, lift_slot]
 
+
+-- Retain the weakening and top-instance executions of the actual name field.
+-- The old body is identified by its existential constructor in both traces.
+private theorem name_through_fresh_opening {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A B f b c d t Prefix Selected Tail Body Parent M O E I Base j p : Fin m)
+    (s : Fin 9 → Fin m) (v : Fin 16 → Fin m)
+    (images : Fin 10 → Fin m) (u : Fin 9 → Fin m) (fields : Fin 4 → Fin m)
+    (hScope : Derives Γ (ForcingExistTailOpening.scopeData w Prefix Selected A f z b Parent Base j p s v))
+    (hOpen : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z A f B b c d t Prefix Selected Tail Body Parent images u))
+    (hFields : Derives Γ (ForcingRawModalBody.nestedData 0 w (u 7) (images 9) B f z d M O E I (u 8) fields))
+    (hOuter : Derives Γ (binaryCode 0 w M I Body))
+    (hInner : Derives Γ (binaryCode 0 w O E I)) :
+    Derives Γ (.ex ((SyntaxWeakenFreeSyntax.weakened w.castSucc c.castSucc b.castSucc d.castSucc (v 8).castSucc (Fin.last m)).conj
+      (SyntaxTopFormulaSyntax.instantiated w.castSucc z.castSucc d.castSucc c.castSucc t.castSucc (Fin.last m) (fields 3).castSucc))) := by
+  have hInput := Derives.conjL hOpen
+  have hw := Derives.conjL hInput
+  have hNext := Derives.conjL (.conjR (.conjR (.conjR (.conjR hInput))))
+  have hLift := Derives.conjR (.conjR (.conjR (.conjR hOpen)))
+  have hAtWeak := Derives.conjL (.conjR hLift)
+  have hEnd := Derives.conjR (.conjR (.conjR (.conjR (.conjR hLift))))
+  have hInverse := Derives.conjL (.conjR hEnd)
+  have hOps := Derives.conjR (.conjR (.conjR (.conjR hInverse)))
+  have hData := Derives.conjL hScope
+  have eqOld := SyntaxLogicalFields.single_fields hZ 10 w (u 4) (v 0) Parent hw (.conjL hEnd) (.conjL (.conjL hData))
+  let oldWeak := SyntaxWeakenFreeSyntax.weakened w.castSucc c.castSucc b.castSucc d.castSucc (Fin.last m) (u 5).castSucc
+  have hWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w c b d (v 0) (u 5)) :=
+    of_eq (by simp only [oldWeak, Formula.instantiate, SyntaxWeakenFreeSyntax.weakened_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst oldWeak eqOld (of_eq (by simp only [oldWeak, Formula.instantiate, SyntaxWeakenFreeSyntax.weakened_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjL hOps)))
+  have hInst := Derives.conjR hOps
+  have hTy := SyntaxWeakenFreeOutput.source_type hZ w c b d (v 0) (u 5) hw hWeak
+  have hNat := Derives.conjR (FormulaCodeProperties.guards w (v 0) c b hTy)
+  have hWeakFields := ForcingRawModalBody.nested_from_query hZ 0 w (u 2) (u 3) B f c d M O E I Body (u 5)
+    hw hOuter hInner hAtWeak
+  let out : Formula m := .ex ((SyntaxWeakenFreeSyntax.weakened w.castSucc c.castSucc b.castSucc d.castSucc (v 8).castSucc (Fin.last m)).conj
+    (SyntaxTopFormulaSyntax.instantiated w.castSucc z.castSucc d.castSucc c.castSucc t.castSucc (Fin.last m) (fields 3).castSucc))
+  refine eliminate_objects hZ 4 (fun r x =>
+    ForcingRawModalBody.nestedData 0 (r w) (r (u 2)) (r (u 3)) (r B) (r f) (r c) (r d)
+      (r M) (r O) (r E) (r I) (r (u 5)) x) hWeakFields out ?_
+  intro l Δ r x hZ1 lift hW
+  have hw1 := of_eq (omega_rename _ r) (lift hw)
+  have hNext1 := of_eq (successor_rename _ _ r) (lift hNext)
+  have hcn : Derives Δ (.mem (r c) (r w)) := lift (.conjL hNat)
+  have hbn : Derives Δ (.mem (r b) (r w)) := lift (.conjR hNat)
+  have hWeak1 := of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hWeak)
+  have hInst1 := of_eq (SyntaxTopFormulaSyntax.instantiated_rename _ _ _ _ _ _ _ r) (lift hInst)
+  have hF := of_eq (ForcingRawModalBody.nestedData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ fields r) (lift hFields)
+  have oldOuter := of_eq (binaryCode_rename _ _ _ _ _ r) (lift (.conjL (.conjL (.conjR hData))))
+  have oldInner := of_eq (binaryCode_rename _ _ _ _ _ r) (lift (.conjL (.conjL (.conjR (.conjR hData)))))
+  have weakRest := Derives.conjR (.impE (.conjL (SyntaxWeakenFreeLogicalInternal.binary_iff hZ1 0
+    (r w) (r c) (r b) (r d) (r (v 0)) (r (u 5)) (r (v 5)) (r (v 6)) (x 1) (x 0)
+    hw1 hcn hbn hNext1 oldOuter (.conjL (.conjL hW)))) hWeak1)
+  have weakName := Derives.conjR (.impE (.conjL (SyntaxWeakenFreeLogicalInternal.binary_iff hZ1 0
+    (r w) (r c) (r b) (r d) (r (v 6)) (x 0) (r (v 7)) (r (v 8)) (x 2) (x 3)
+    hw1 hcn hbn hNext1 oldInner (.conjL (.conjR hW)))) weakRest)
+  have hTop := SyntaxTopFormulaTyping.instantiate_input hZ1 (r w) (r z) (r d) (r c) (r t) (r (u 5)) (r (u 8)) hw1 hInst1
+  have instRest := Derives.conjR (.impE (.conjL (SyntaxTopFormulaLogicalEndpoints.instantiate_binary_iff hZ1 0
+    (r w) (r z) (r d) (r c) (r t) (r (u 5)) (r (u 8)) (x 1) (x 0) (r (fields 1)) (r (fields 0))
+    hw1 hTop (.conjL (.conjL hW)) (.conjL (.conjL hF)))) hInst1)
+  have hTopRest := SyntaxTopFormulaTyping.instantiate_input hZ1 (r w) (r z) (r d) (r c) (r t)
+    (x 0) (r (fields 0)) hw1 instRest
+  have instName := Derives.conjR (.impE (.conjL (SyntaxTopFormulaLogicalEndpoints.instantiate_binary_iff hZ1 0
+    (r w) (r z) (r d) (r c) (r t) (x 0) (r (fields 0)) (x 2) (x 3) (r (fields 2)) (r (fields 3))
+    hw1 hTopRest (.conjL (.conjR hW)) (.conjL (.conjR hF)))) instRest)
+  have result : Derives Δ (.ex ((SyntaxWeakenFreeSyntax.weakened (r w).castSucc (r c).castSucc (r b).castSucc
+      (r d).castSucc (r (v 8)).castSucc (Fin.last l)).conj
+    (SyntaxTopFormulaSyntax.instantiated (r w).castSucc (r z).castSucc (r d).castSucc (r c).castSucc
+      (r t).castSucc (Fin.last l) (r (fields 3)).castSucc))) := by
+    apply Derives.exI (x 3)
+    exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxWeakenFreeSyntax.weakened_rename,
+      SyntaxTopFormulaSyntax.instantiated_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI weakName instName)
+  exact of_eq (by simp only [out, Formula.rename, SyntaxWeakenFreeSyntax.weakened_rename,
+    SyntaxTopFormulaSyntax.instantiated_rename, Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]) result
+
+private def nameExecution {m} (w z b c d t Name Open : Fin m) (weak : Fin m) : Formula m :=
+  (SyntaxWeakenFreeSyntax.weakened w c b d Name weak).conj
+    (SyntaxTopFormulaSyntax.instantiated w z d c t weak Open)
+
+private theorem equal_fresh_name_codes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b c d t N N' Open Open' : Fin m) (hw : Derives Γ (omega w))
+    (eq : Derives Γ (.equal N N'))
+    (hN : Derives Γ (.ex (nameExecution w.castSucc z.castSucc b.castSucc c.castSucc d.castSucc
+      t.castSucc N.castSucc Open.castSucc (Fin.last m))))
+    (hN' : Derives Γ (.ex (nameExecution w.castSucc z.castSucc b.castSucc c.castSucc d.castSucc
+      t.castSucc N'.castSucc Open'.castSucc (Fin.last m)))) :
+    Derives Γ (.equal Open Open') := by
+  let out : Formula m := .equal Open Open'
+  refine eliminate_objects hZ 1 (fun r v => nameExecution (r w) (r z) (r b) (r c) (r d) (r t) (r N) (r Open) (v 0))
+    hN out ?_
+  intro l Δ r v hZ1 lift hL
+  have hR : Derives Δ (.ex (nameExecution (r w).castSucc (r z).castSucc (r b).castSucc (r c).castSucc
+      (r d).castSucc (r t).castSucc (r N').castSucc (r Open').castSucc (Fin.last l))) :=
+    of_eq (by simp only [nameExecution, Formula.rename, SyntaxWeakenFreeSyntax.weakened_rename,
+      SyntaxTopFormulaSyntax.instantiated_rename, Formula.liftRen, Fin.lastCases_last, Fin.lastCases_castSucc]) (lift hN')
+  refine eliminate_objects hZ1 1 (fun e u => nameExecution (e (r w)) (e (r z)) (e (r b)) (e (r c)) (e (r d))
+    (e (r t)) (e (r N')) (e (r Open')) (u 0)) hR (out.rename r) ?_
+  intro l' Ξ e u hZ2 move hR
+  let g := e ∘ r
+  let X := e (v 0)
+  let Y := u 0
+  have carry {F : Formula m} (hF : Derives Γ F) : Derives Ξ (F.rename g) :=
+    of_eq (SourceAlgebra.rename_comp F r e) (move (lift hF))
+  have hw2 := of_eq (omega_rename _ g) (carry hw)
+  have eq2 : Derives Ξ (.equal (g N) (g N')) := carry eq
+  have weakL := of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ e) (move (.conjL hL))
+  have instL := of_eq (SyntaxTopFormulaSyntax.instantiated_rename _ _ _ _ _ _ _ e) (move (.conjR hL))
+  let P := SyntaxWeakenFreeSyntax.weakened (g w).castSucc (g c).castSucc (g b).castSucc (g d).castSucc
+    (Fin.last l') X.castSucc
+  have weakL' : Derives Ξ (SyntaxWeakenFreeSyntax.weakened (g w) (g c) (g b) (g d) (g N') X) :=
+    of_eq (by simp only [P, Formula.instantiate, SyntaxWeakenFreeSyntax.weakened_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst P eq2 (of_eq (by simp only [P, Formula.instantiate, SyntaxWeakenFreeSyntax.weakened_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl) weakL))
+  have weakEq := SyntaxWeakenFreeUnique.unique hZ2 (g w) (g c) (g b) (g d) (g N') X Y hw2 weakL' (.conjL hR)
+  let Q := SyntaxTopFormulaSyntax.instantiated (g w).castSucc (g z).castSucc (g d).castSucc (g c).castSucc
+    (g t).castSucc (Fin.last l') (g Open).castSucc
+  have instL' : Derives Ξ (SyntaxTopFormulaSyntax.instantiated (g w) (g z) (g d) (g c) (g t) Y (g Open)) :=
+    of_eq (by simp only [Q, Formula.instantiate, SyntaxTopFormulaSyntax.instantiated_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst Q weakEq (of_eq (by simp only [Q, Formula.instantiate, SyntaxTopFormulaSyntax.instantiated_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl) instL))
+  exact SyntaxTopFormulaUnique.instantiate_unique hZ2 (g w) (g z) (g d) (g c) (g t) Y (g Open) (g Open')
+    hw2 instL' (.conjR hR)
+
+
+
+private theorem existential_child_source {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A B C f j N Nc : Fin m) (hw : Derives Γ (omega w))
+    (h : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N Nc)) :
+    Derives Γ ((successor C B).conj (formulaCode w N A f)) := by
+  refine eliminate_objects hZ 12 (fun r x =>
+    ForcingExistChildCode.data (r w) (r a) (r A) (r B) (r C) (r f) (r j) (r N) (r Nc) x) h _ ?_
+  intro l Δ r x hZ1 lift hData
+  have tail := Derives.conjR (.conjR (.conjR (.conjR hData)))
+  have shift := Derives.conjL (.conjR (.conjR (.conjR hData)))
+  have hQuery := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR tail))))))
+  have result : Derives Δ ((successor (r C) (r B)).conj (formulaCode (r w) (r N) (r A) (r f))) :=
+    .conjI (.conjL shift) (SyntaxMixedFormulaJudgmentTyping.source_type hZ1 (r w) (x 10) (x 11)
+    (r A) (r f) (r C) (r f) (r N) (r Nc) (of_eq (omega_rename _ r) (lift hw)) hQuery)
+  exact of_eq (by simp only [Formula.rename, successor_rename, formulaCode_rename]) result
+
 private def targetWitnessData {m}
     (w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s : Fin m)
     (x : Fin 25 → Fin m) : Formula m :=
@@ -1833,25 +1974,26 @@ private theorem targetWitnessData_rename {m l}
     ForcingFreshParentOpening.quantifiedData_rename, ForcingRawModalBody.nestedData_rename, Function.comp_apply]
 
 private def targetWitnessResult {m}
-    (w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf : Fin m) : Formula m :=
+    (w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf NameLeaf : Fin m) : Formula m :=
   existsMany 25 ((targetWitnessData (old 25 w) (old 25 z) (old 25 A) (old 25 B) (old 25 f) (old 25 j)
     (old 25 oldScope) (old 25 b) (old 25 d) (old 25 c) (old 25 Prefix) (old 25 Selected) (old 25 Tail) (old 25 Body) (old 25 OldTail)
     (old 25 M) (old 25 O) (old 25 Name) (old 25 Inner) (old 25 Base) (old 25 q) (old 25 s) (slot 25)).conj
       ((Formula.equal (old 25 MemberLeaf) (slot 25 22)).conj
-        (Formula.equal (old 25 OrderLeaf) (slot 25 23))))
+        ((Formula.equal (old 25 OrderLeaf) (slot 25 23)).conj
+          (.equal (old 25 NameLeaf) (slot 25 24)))))
 
 private theorem targetWitnessResult_rename {m l}
-    (w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf : Fin m) (r : Fin m → Fin l) :
-    (targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf).rename r =
+    (w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf NameLeaf : Fin m) (r : Fin m → Fin l) :
+    (targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O Name Inner Base q s MemberLeaf OrderLeaf NameLeaf).rename r =
       targetWitnessResult (r w) (r z) (r A) (r B) (r f) (r j) (r oldScope) (r b) (r d) (r c) (r Prefix) (r Selected)
         (r Tail) (r Body) (r OldTail) (r M) (r O) (r Name) (r Inner) (r Base) (r q) (r s)
-        (r MemberLeaf) (r OrderLeaf) := by
+        (r MemberLeaf) (r OrderLeaf) (r NameLeaf) := by
   simp only [targetWitnessResult, existsMany_rename, Formula.rename, targetWitnessData_rename, Function.comp_def, lift_old, lift_slot]
 
 -- Open the original q-tail at the same s as the source witness. The old
 -- selected free condition and the q prefix are weakened independently.
 private theorem open_target_existential {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z a A B f j oldScope b d c R Base Prefix Name Selected OldTail Tail Body M O E I p q q' s MemberLeaf OrderLeaf : Fin m)
+    (w z a A B f j oldScope b d c R Base Prefix Name Selected OldTail Tail Body M O E I p q q' s MemberLeaf OrderLeaf NameLeaf : Fin m)
     (images : Fin 10 → Fin m)
     (hNext : Derives Γ (ForcingWeakenedImages.data w z f z b d R Base images))
     (hOldTail : Derives Γ (ForcingDensityInstantiation.weakenedTailResult w z A f oldScope b Prefix Selected Tail OldTail))
@@ -1868,13 +2010,13 @@ private theorem open_target_existential {m} {Γ : Context m} (hZ : ZFContext.Evi
     (hBinder : Derives Γ (SyntaxLogicalSyntax.singleCode 10 w Body Tail))
     (hOuter : Derives Γ (binaryCode 0 w M I Body))
     (hInner : Derives Γ (binaryCode 0 w O E I))
-    (matchGuards : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (v : Fin 25 → Fin l),
+    (matchFields : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (v : Fin 25 → Fin l),
       ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
       Derives Δ (targetWitnessData (r w) (r z) (r A) (r B) (r f) (r j) (r oldScope) (r b) (r d) (r c)
         (r Prefix) (r Selected) (r Tail) (r Body) (r OldTail) (r M) (r O) (r E) (r I) (r (images 9)) (r q') (r s) v) →
-      Derives Δ ((Formula.equal (r MemberLeaf) (v 22)).conj (Formula.equal (r OrderLeaf) (v 23)))) :
-    Derives Γ (targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O E I (images 9) q' s MemberLeaf OrderLeaf) := by
-  let out := targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O E I (images 9) q' s MemberLeaf OrderLeaf
+      Derives Δ ((Formula.equal (r MemberLeaf) (v 22)).conj ((Formula.equal (r OrderLeaf) (v 23)).conj (.equal (r NameLeaf) (v 24))))) :
+    Derives Γ (targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O E I (images 9) q' s MemberLeaf OrderLeaf NameLeaf) := by
+  let out := targetWitnessResult w z A B f j oldScope b d c Prefix Selected Tail Body OldTail M O E I (images 9) q' s MemberLeaf OrderLeaf NameLeaf
   have hMaps := Derives.conjL (.conjR hNext)
   have hw := Derives.conjL (.conjL hNext)
   have hScope := Derives.conjL (.conjR (.conjL hNext))
@@ -1933,7 +2075,7 @@ private theorem open_target_existential {m} {Γ : Context m} (hZ : ZFContext.Evi
   have carry4 {F : Formula l1} (p0 : Derives Ξ F) : Derives Θ (F.rename (h ∘ u)) :=
     of_eq (SourceAlgebra.rename_comp F u h) (last (extend p0))
   apply of_eq (SourceAlgebra.rename_comp out g h).symm
-  apply of_eq (targetWitnessResult_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ k).symm
+  apply of_eq (targetWitnessResult_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ k).symm
   let values : Fin 25 → Fin l3 :=
     Fin.addCases (motive := fun _ => Fin l3) (SyntaxAtomSyntax.two (h (u (target 0))) (h (u (t (ps 0)))))
       (Fin.addCases (motive := fun _ => Fin l3) (h ∘ v) (Fin.addCases (motive := fun _ => Fin l3) opened fields))
@@ -1950,7 +2092,7 @@ private theorem open_target_existential {m} {Γ : Context m} (hZ : ZFContext.Evi
     rfl) hPayload
   have lift4 {F : Formula m} (p0 : Derives Γ F) : Derives Θ (F.rename k) :=
     of_eq (SourceAlgebra.rename_comp F g h) (last (move3 p0))
-  have hEq := matchGuards k values hZ4 lift4 hData
+  have hEq := matchFields k values hZ4 lift4 hData
   apply HornBinderRules.intro_many 25 _ values
   have hAssign : assign 25 values ∘ slot 25 = values := funext (assign_slot 25 values)
   exact of_eq (by simp only [Formula.rename, targetWitnessData_rename, assign_old, assign_slot, hAssign])
@@ -2036,7 +2178,7 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
         (v 8) (v 9) (ρ (sv 4)) (ρ (sv 3)) (ρ (outputs 3)) (ρ (cv 4)) (ρ (cv 5))
         (ρ (sv 1)) (ρ (sv 2)) (nextImages 9) (P 1 2) (P 1 0)
         (ForcingMemberRows.leafFields (fun i => rows (i.addNat 24)) 0)
-        (ForcingMemberRows.leafFields (fun i => rows (i.addNat 24)) 5)) →
+        (ForcingMemberRows.leafFields (fun i => rows (i.addNat 24)) 5) (secondFields 3)) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   refine ForcingDensityInstantiation.with_existential_density_witness hZ Reln Dom w z a A B C f j N Child
     b c d t L S D E G W H body Parent images opened cv sv outputs hB hExist hQueries hCompiled hQuery
@@ -2354,7 +2496,7 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     fresh (ρ c) (secondMap (δ (n Rr))) (secondMap (δ (n (g (baseV 9)))))
     (ε (v 8)) (ε Name) (ε (v 9)) (ρ (outputs 3)) (ρ (sv 4)) (ρ (sv 3)) (ρ (cv 4)) (ρ (cv 5))
     (ρ (sv 1)) (ρ (sv 2)) (secondMap (δ (n (g sel)))) (secondMap (P 0 2)) (secondMap (P 1 2))
-    (secondMap (P 1 0)) (ForcingMemberRows.leafFields openedRow 0) H5
+    (secondMap (P 1 0)) (ForcingMemberRows.leafFields openedRow 0) H5 (secondFields 3)
     (secondMap ∘ nextImages) hNext9 hQTail9
     (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ ε) (open1 hName)) hQPrefix9
     hSelected9Q hSelectedTerm9 hQTerm9
@@ -2376,7 +2518,7 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
       have hRowQ := of_eq (ForcingMemberRows.rowData_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _
         (ρ ∘ raw) (secondMap ∘ P 1) openedRow qmap)
         (qmove (.conjL (.conjR (.conjR hRows9))))
-      exact second_witness_guards hZQ Reln Dom 2 rfl (e w) (e z) (e a) (e A) (e B) (e C) (e f) (e j)
+      have hGuardsQ := second_witness_guards hZQ Reln Dom 2 rfl (e w) (e z) (e a) (e A) (e B) (e C) (e f) (e j)
         (e Child) (e N) (qmap (ε Br)) (e c) (qmap fresh) (qmap (ε (v 8))) (qmap (ε (v 9))) (data 0)
         (e A1) (e A2) (e A3) (e K) (eRow (nextImages 8)) (eRow (nextImages 9))
         (eRow (Refl 1)) (eRow (Pre 1)) (eRow (U0 1)) (data 1) (e ∘ raw) (eRow ∘ P 1)
@@ -2392,7 +2534,107 @@ theorem with_existential_witnesses {k m} {Γ : Context m} (hZ : ZFContext.Eviden
         (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ qmap) (qmove (.conjR hLists)))
         hRowQ (.conjL (.conjR (.conjR hData))) (.conjL (.conjR (.conjR (.conjR hData))))
         (of_eq (ForcingExistCode.data_rename Reln Dom _ _ _ _ _ _ _ _ _ cv e) (liftQ hCompiler))
-        (.conjL (.conjR (.conjR (.conjR (.conjR hData))))) (.conjR (.conjR (.conjR (.conjR (.conjR hData))))))
+        (.conjL (.conjR (.conjR (.conjR (.conjR hData))))) (.conjR (.conjR (.conjR (.conjR (.conjR hData)))))
+      refine .conjI (.conjL hGuardsQ) (.conjI (.conjR hGuardsQ) ?_)
+      let base := secondMap (δ (n (g (baseV 9))))
+      let sourcePrefix := secondLift Pfx
+      let sourceTail := secondLift TailS
+      let sourceBound := ε Fr
+      let targetPrefix := ε (v 8)
+      let targetBound := ε (v 9)
+      let br := ε Br
+      let rr := secondMap (P 0 1)
+      let qq := secondMap (P 0 2)
+      let selected := secondMap (δ (n (g sel)))
+      let codes := ForcingExistTailOpening.shellCodes (e (cv 4)) (e (cv 5)) (e (cv 6)) (e (cv 7)) (e ∘ sv)
+      have hwQ : Derives ΔQ (omega (e w)) :=
+        of_eq (omega_rename _ qmap) (qmove (.conjL (.conjL hSecondOpen)))
+      have hzQ : Derives ΔQ (empty (e z)) :=
+        of_eq (empty_rename _ qmap) (qmove (.conjL (.conjR (.conjL hSecondOpen))))
+      have hShellQ := of_eq (ForcingExistCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ sv e) (liftQ hShell)
+      have hTargetOld := ForcingExistTailOpening.prepare_shell hZQ (e w) (e a) (e A) (e B) (e C) (e f)
+        (e (cv 2)) (e (cv 3)) (e (cv 4)) (e (cv 5)) (e (cv 6)) (e (cv 7)) (e N)
+        (qmap targetPrefix) (qmap targetBound) (e z) (qmap br) (data 0) (qmap base) (e j) (qmap selected)
+        (e ∘ sv) hwQ hzQ (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ qmap) (qmove hSelected9Q))
+        hShellQ (.conjL (.conjR hData))
+      have hSourceOld := of_eq (ForcingExistTailOpening.scopeResult_rename _ _ _ _ _ _ _ _ _ _ _
+        (ForcingExistTailOpening.shellCodes (sMap (cv 4)) (sMap (cv 5)) (sMap (cv 6)) (sMap (cv 7)) (sMap ∘ sv))
+        (qmap ∘ secondLift))
+        (of_eq (SourceAlgebra.rename_comp _ secondLift qmap) (qmove (carrySecond hPrepared)))
+      let outQ := Formula.equal (qmap (secondFields 3)) (qf 3)
+      refine eliminate_objects hZQ 16 (fun α a =>
+        ForcingExistTailOpening.scopeData (α (e w)) (α (qmap sourcePrefix)) (α (qmap sourceBound))
+          (α (e A)) (α (e f)) (α (e z)) (α (qmap br)) (α (qmap sourceTail)) (α (qmap base))
+          (α (e j)) (α (qmap rr)) (α ∘ codes) a) hSourceOld outQ ?_
+      intro lR ΔR α ar hZR pushR hSource
+      have hTargetR := of_eq (ForcingExistTailOpening.scopeResult_rename _ _ _ _ _ _ _ _ _ _ _ codes α) (pushR hTargetOld)
+      refine eliminate_objects hZR 16 (fun β b =>
+        ForcingExistTailOpening.scopeData (β (α (e w))) (β (α (qmap targetPrefix))) (β (α (qmap targetBound)))
+          (β (α (e A))) (β (α (e f))) (β (α (e z))) (β (α (qmap br))) (β (α (data 0))) (β (α (qmap base)))
+          (β (α (e j))) (β (α (qmap selected))) (β ∘ α ∘ codes) b) hTargetR (outQ.rename α) ?_
+      intro lB ΔB β bt hZB pushB hTarget
+      let moveB := β ∘ α
+      let g := moveB ∘ e
+      let up := moveB ∘ qmap
+      have carry {F : Formula lQ} (hp : Derives ΔQ F) : Derives ΔB (F.rename moveB) :=
+        of_eq (SourceAlgebra.rename_comp F α β) (pushB (pushR hp))
+      have main {F : Formula m} (hp : Derives Γ F) : Derives ΔB (F.rename g) :=
+        of_eq (SourceAlgebra.rename_comp F e moveB) (carry (liftQ hp))
+      have fromSecond {F : Formula l8} (hp : Derives Δ8 F) : Derives ΔB (F.rename up) :=
+        of_eq (SourceAlgebra.rename_comp F qmap moveB) (carry (qmove hp))
+      have hwB := of_eq (omega_rename _ moveB) (carry hwQ)
+      have hzB := of_eq (empty_rename _ moveB) (carry hzQ)
+      have hComp := of_eq (ForcingExistCode.data_rename Reln Dom _ _ _ _ _ _ _ _ _ cv g) (main hCompiler)
+      have hHead := Derives.conjL hComp
+      have eZero := OmegaUniversal.empty_unique (g (cv 0)) (g z) (ZFContext.arithmetic hZB).base.extensionality (.conjL hHead) hzB
+      have hX := SyntaxVariableImagePoint.code_subst_index true (g w) (g (cv 0)) (g (cv 1)) (g z) eZero (.conjL (.conjR hHead))
+      have hRight := Derives.conjR (.conjR (.conjR (.conjR (.conjR hComp))))
+      have hChild := Derives.conjL (.conjR hRight)
+      have hChildSource := existential_child_source hZB (g w) (g a) (g A) (g B) (g C) (g f) (g j)
+        (g Child) (g (cv 7)) hwB hChild
+      have hSourceB := of_eq (ForcingExistTailOpening.scopeData_rename _ _ _ _ _ _ _ _ _ _ _ (α ∘ codes) ar β) (pushB hSource)
+      have hRterm := of_eq (SyntaxTermSyntax.term_rename _ _ _ _ (up ∘ secondMap))
+        (of_eq (SourceAlgebra.rename_comp _ secondMap up) (fromSecond (carryRuntime hTerm)))
+      have hQterm := of_eq (SyntaxTermSyntax.term_rename _ _ _ _ up) (fromSecond hQTerm9)
+      have hRp := of_eq (StructuralListSyntax.consCode_rename _ _ _ _ (up ∘ secondLift))
+        (of_eq (SourceAlgebra.rename_comp _ secondLift up) (fromSecond (carrySecond hPfx)))
+      have hQp := of_eq (StructuralListSyntax.consCode_rename _ _ _ _ up) (fromSecond hQPrefix9)
+      have hNameB := of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ (up ∘ ε))
+        (of_eq (SourceAlgebra.rename_comp _ ε up) (fromSecond (open1 hName)))
+      have hOldEq := ForcingExistTailComparison.name_from_opened_tails hZB Dom (g w) (g z) (g a) (g A) (g B) (g C)
+        (g f) (up br) (up (ε Name)) (up sourcePrefix) (up rr) (up targetPrefix) (up qq) (up base)
+        (g K) (g j) (up rr) (up selected) (g (cv 1)) (g Child)
+        (up sourceBound) (up sourceTail) (up targetBound) (moveB (data 0))
+        (moveB ∘ codes) (β ∘ ar) bt hwB hzB
+        (of_eq (successor_rename _ _ g) (main hA)) (of_eq (successor_rename _ _ g) (main hB))
+        (.conjL hChildSource) hNameB hRterm hQterm hRp hQp (.conjR hChildSource) hSourceB hTarget
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (main hK))
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (main hj))
+        (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (main hf))
+        hX (.conjL hRight) hChild
+      have hShellB := of_eq (ForcingExistCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ sv g) (main hShell)
+      have hBodyB := Derives.conjR (.conjR hShellB)
+      have outer := Derives.conjL (.conjL (.conjR hBodyB))
+      have inner := Derives.conjL (.conjL hBodyB)
+      have hSourceExec := name_through_fresh_opening hZB (g w) (g z) (g A) (g B) (g f) (up br) (g c) (up fresh)
+        (up (secondMap (P 1 0))) (up sourcePrefix) (up sourceBound) (g (sv 4)) (g (sv 3)) (up sourceTail)
+        (g (cv 4)) (g (cv 5)) (g (sv 1)) (g (sv 2)) (up base) (g j) (up rr)
+        (moveB ∘ codes) (β ∘ ar) (up ∘ secondImages) (up ∘ secondOpen) (up ∘ secondFields) hSourceB
+        (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ secondImages secondOpen up)
+          (fromSecond hSecondOpen))
+        (of_eq (ForcingRawModalBody.nestedData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ secondFields up) (fromSecond hSecondFields))
+        outer inner
+      have hTargetData := Derives.conjR (.conjR (.conjR (.conjR hData)))
+      have hTargetExec := name_through_fresh_opening hZB (g w) (g z) (g A) (g B) (g f) (up br) (g c) (up fresh)
+        (up (secondMap (P 1 0))) (up targetPrefix) (up targetBound) (g (sv 4)) (g (sv 3)) (moveB (data 0))
+        (g (cv 4)) (g (cv 5)) (g (sv 1)) (g (sv 2)) (up base) (g j) (up selected)
+        (moveB ∘ codes) bt (moveB ∘ qv) (moveB ∘ qo) (moveB ∘ qf) hTarget
+        (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ qv qo moveB)
+          (carry (.conjL hTargetData)))
+        (of_eq (ForcingRawModalBody.nestedData_rename _ _ _ _ _ _ _ _ _ _ _ _ _ qf moveB) (carry (.conjR hTargetData)))
+        outer inner
+      exact equal_fresh_name_codes hZB (g w) (g z) (up br) (g c) (up fresh) (up (secondMap (P 1 0)))
+        (β (ar 8)) (bt 8) (up (secondFields 3)) (moveB (qf 3)) hwB hOldEq hSourceExec hTargetExec)
   apply of_eq (SourceAlgebra.rename_comp out openMap ν).symm
   exact use ρ (ε Br) (secondMap (δ Fresh)) (secondMap (δ (n Rr))) (secondMap (δ (n (g (baseV 9))))) (ε Fr) (secondMap (δ (i (y 0))))
     (ε Name) (ε Extra) (ε Local) (ε (x 2)) (ε TailR) (ε Bound) (secondLift Pfx) (secondLift TailS)

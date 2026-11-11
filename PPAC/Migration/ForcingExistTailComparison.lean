@@ -2,6 +2,7 @@ import PPAC.Migration.ForcingExistTailOpening
 import PPAC.Migration.ForcingExistMemberOpening
 import PPAC.Migration.ForcingExistOrderOpening
 import PPAC.Migration.ForcingExistDomainOpening
+import PPAC.Migration.NativeProofQuotation
 
 /-! Consume ALL FOUR completed actual component comparisons at the SAME
 original existential-tail records, then package THREE AND and BOTH EX by
@@ -115,6 +116,39 @@ private theorem binary_equal {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
       (.eqSubst Q hy (of_eq (by simp only [Q, Formula.instantiate, binaryCode_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hn0))
   exact SyntaxLogicalFields.binary_unique hZ 0 w X Y n r hw hn1 hr
 
+private theorem compare_name {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Dom : Source.Formula (k+1))
+    (w z a A B C f T c d R D Q Base I j p q x head Name N S K H L M E V W Y S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 Y1 : Fin m) (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m)
+    (hf : Derives Γ (frame w z a A B C f T c d R S D Q K H L M E V W head j Base p Y s v))
+    (hg : Derives Γ (frame w z a A B C f T c d R S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 head j Base q Y1 s u))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k I))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hff : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hx : Derives Γ (SyntaxVariableSyntax.code true w z x))
+    (hn : Derives Γ (SyntaxMixedImageHead.head w d T z Name))
+    (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w C f x (s 5)))
+    (hc : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N (s 6))) :
+    Derives Γ (.equal (v 4) (u 4)) := by
+  have hData := Derives.conjL (Derives.conjR hf)
+  have gData := Derives.conjL (Derives.conjR hg)
+  have hD := (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hData))))
+  have gD := (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR gData))))
+  have hp := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hf)))))))
+  have hq := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hg)))))))
+  have hw := Derives.conjL (Derives.conjL hf)
+  have eD := ForcingExistDomainOpening.compare_prefixes hZ Dom
+    w z A B C f T c d D S K H L M Base I j p x Name (s 5) (v 6) D1 S1 K1 H1 L1 M1 q (s 5) (u 6)
+    (domain_frame w z a A B C f T c d R S D Q K H L M E V W head j Base p Y I x Name s v hf hi hj hff hx hn)
+    (domain_frame w z a A B C f T c d R S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 head j Base q Y1 I x Name s u hg hi hj hff hx hn)
+    hd hd (Derives.conjL (Derives.conjR hD)) (Derives.conjL (Derives.conjR gD))
+  have eC := ForcingExistChildOpening.compare_prefixes hZ
+    w z a A B C f T c d R S D Q K H L M E V W head j N (s 6) (v 7) Base p q S1 D1 Q1 K1 H1 L1 M1 E1 V1 W1 (s 6) (u 7)
+    (Derives.conjL hf) (Derives.conjL hg) hc hc
+    (Derives.conjR (Derives.conjR hD)) (Derives.conjR (Derives.conjR gD)) hp hq
+  have eBody := binary_equal hZ w (v 6) (v 7) (u 6) (u 7) (v 5) (u 5) hw eD eC (Derives.conjL hD) (Derives.conjL gD)
+  exact single_equal hZ w (v 5) (u 5) (v 4) (u 4) hw eBody
+    (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hData))))) (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR gData)))))
+
 /-- ALL FOUR complete original compilers and ACTUAL leaf queries are
 consumed. The five parent equalities follow through original constructors.
 Common canonical/head frames are explicit OPERATION hypotheses, never answers. -/
@@ -139,8 +173,6 @@ theorem compare {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have gM := (Derives.conjL (Derives.conjR gData))
   have hO := (Derives.conjL (Derives.conjR (Derives.conjR hData)))
   have gO := (Derives.conjL (Derives.conjR (Derives.conjR gData)))
-  have hD := (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hData))))
-  have gD := (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR gData))))
   have hp := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hf)))))))
   have hq := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hg)))))))
   have hw := Derives.conjL (Derives.conjL hf)
@@ -153,18 +185,8 @@ theorem compare {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     w z A f T B c D S K H j head E (s 8) (v 3) Base p q S1 K1 H1 E1 (s 8) (u 3)
     (order_frame w z a A B C f T c d R S D Q K H L M E V W head j Base p Y s v hf) (order_frame w z a A B C f T c d R S1 D Q K1 H1 L1 M1 E1 V1 W1 head j Base q Y1 s u hg)
     ho ho (Derives.conjL (Derives.conjR hO)) (Derives.conjL (Derives.conjR gO)) hp hq
-  have eD := ForcingExistDomainOpening.compare hZ Dom
-    w z A B C f T c d D S K H L M Base I j p x Name (s 5) (v 6) S1 K1 H1 L1 M1 q (s 5) (u 6)
-    (domain_frame w z a A B C f T c d R S D Q K H L M E V W head j Base p Y I x Name s v hf hi hj hff hx hn)
-    (domain_frame w z a A B C f T c d R S1 D Q K1 H1 L1 M1 E1 V1 W1 head j Base q Y1 I x Name s u hg hi hj hff hx hn)
-    hd hd (Derives.conjL (Derives.conjR hD)) (Derives.conjL (Derives.conjR gD))
-  have eC := ForcingExistChildOpening.compare hZ
-    w z a A B C f T c d R S D Q K H L M E V W head j N (s 6) (v 7) Base p q S1 K1 H1 L1 M1 E1 V1 W1 (s 6) (u 7)
-    (Derives.conjL hf) (Derives.conjL hg) hc hc
-    (Derives.conjR (Derives.conjR hD)) (Derives.conjR (Derives.conjR gD)) hp hq
-  have eBody := binary_equal hZ w (v 6) (v 7) (u 6) (u 7) (v 5) (u 5) hw eD eC (Derives.conjL hD) (Derives.conjL gD)
-  have eName := single_equal hZ w (v 5) (u 5) (v 4) (u 4) hw eBody
-    (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hData))))) (Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR gData)))))
+  have eName := compare_name hZ Dom w z a A B C f T c d R D Q Base I j p q x head Name N
+    S K H L M E V W Y S1 D Q K1 H1 L1 M1 E1 V1 W1 Y1 s v u hf hg hi hj hff hx hn hd hc
   have eRest := binary_equal hZ w (v 3) (v 4) (u 3) (u 4) (v 2) (u 2) hw eO eName (Derives.conjL hO) (Derives.conjL gO)
   have eInner := binary_equal hZ w (v 1) (v 2) (u 1) (u 2) (v 0) (u 0) hw eM eRest (Derives.conjL hM) (Derives.conjL gM)
   exact single_equal hZ w (v 0) (u 0) Y Y1 hw eInner
@@ -245,6 +267,31 @@ theorem initialInput_rename {k m l} (Reln : Source.Formula (k+2)) (Dom : Source.
     SyntaxVariableSyntax.code_rename, ForcingGuardCode.compiled_rename,
     ForcingExistGuardsCode.compiled_rename, ForcingExistChildCode.compiled_rename]
 
+private theorem canonical_from_traces {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a A B C f T c d R D D1 Base j p q N S K H L M Y S1 K1 H1 L1 M1 Y1 : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hA : Derives Γ (successor A a))
+    (hNames : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z T R))
+    (hN : Derives Γ (FormulaCodeSyntax.formulaCode w N A f))
+    (hTrace : Derives Γ (trace w D S A f z T Y Base j p B c K H C d L M s v))
+    (gTrace : Derives Γ (trace w D1 S1 A f z T Y1 Base j q B c K1 H1 C d L1 M1 s u)) :
+    Derives Γ (ForcingExistChildCanonical.result w z a A c d f T R S S1 j N) := by
+  have hFirst := (Derives.conjL (Derives.conjR hTrace))
+  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR hTrace)))
+  have hRoots := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hTrace))))
+  have hBase := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hTrace))))))
+  have gBase := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR gTrace))))))
+  have hzNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL (Derives.conjL hFirst))))
+  have hcNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
+  have hR := closed_names_scope hZ w a z c T R hw hz hcNat hNames
+  have hCan : Derives Γ (ForcingExistChildCanonical.input w z z c d a A f T R Base p q S S1 j N) :=
+    Derives.conjI hw (Derives.conjI hz (Derives.conjI hzNat
+      (Derives.conjI (Derives.conjR (Derives.conjR hFirst))
+        (Derives.conjI (Derives.conjR (Derives.conjR hSecond))
+          (Derives.conjI hA (Derives.conjI (Derives.conjI hR (Derives.conjL hBase))
+            (Derives.conjI (Derives.conjR hBase) (Derives.conjI (Derives.conjR gBase) hN))))))))
+  exact ForcingExistChildCanonical.derive hZ w z z c d a A f T R Base p q S S1 j N hCan
+
 private theorem canonical_from_initial {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z a A B C f T c d R D Q Base I j p q x N S K H L M Y S1 K1 H1 L1 M1 Y1 : Fin m) (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m)
@@ -254,21 +301,9 @@ private theorem canonical_from_initial {k m} {Γ : Context m} (hZ : ZFContext.Ev
   have hz := (Derives.conjL (Derives.conjR hi))
   have hTrace := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi))))))))
   have gTrace := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))))))
-  have hFirst := (Derives.conjL (Derives.conjR hTrace))
-  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR hTrace)))
-  have hRoots := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hTrace))))
-  have hBase := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hTrace))))))
-  have gBase := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR gTrace))))))
-  have hzNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL (Derives.conjL hFirst))))
-  have hcNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
-  have hR := closed_names_scope hZ w a z c T R hw hz hcNat (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hi))))
-  have hCan : Derives Γ (ForcingExistChildCanonical.input w z z c d a A f T R Base p q S S1 j N) :=
-    Derives.conjI hw (Derives.conjI hz (Derives.conjI hzNat
-      (Derives.conjI (Derives.conjR (Derives.conjR hFirst))
-        (Derives.conjI (Derives.conjR (Derives.conjR hSecond))
-          (Derives.conjI (Derives.conjL (Derives.conjR (Derives.conjR hi))) (Derives.conjI (Derives.conjI hR (Derives.conjL hBase))
-            (Derives.conjI (Derives.conjR hBase) (Derives.conjI (Derives.conjR gBase) (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))))))))))))
-  exact ForcingExistChildCanonical.derive hZ w z z c d a A f T R Base p q S S1 j N hCan
+  exact canonical_from_traces hZ w z a A B C f T c d R D D Base j p q N S K H L M Y S1 K1 H1 L1 M1 Y1 s v u
+    hw hz (.conjL (.conjR (.conjR hi))) (.conjL (.conjR (.conjR (.conjR hi))))
+    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hi))))))) hTrace gTrace
 
 private def canonicalBody {m} (w a A c d f T R S j head N : Fin m) : Formula (m+4) :=
   ForcingExistChildCanonical.oneData (old 4 w) (old 4 a) (old 4 A) (old 4 c) (old 4 d) (old 4 f) (old 4 T)
@@ -300,6 +335,23 @@ private theorem frame_from_generated {m} {Γ : Context m}
             (Derives.conjI hHead (Derives.conjI (Derives.conjL hl) (Derives.conjL (Derives.conjR hl))))))))))
   exact Derives.conjI hChild ht
 
+private theorem head_after_second_lift {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A B C f T c d D S Y Base j p K H L M head : Fin m)
+    (s : Fin 9 → Fin m) (v : Fin 8 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (trace w D S A f z T Y Base j p B c K H C d L M s v))
+    (hHead : Derives Γ (SyntaxMixedImageHead.head w c T z head)) :
+    Derives Γ (SyntaxMixedImageHead.head w d T z head) := by
+  have hRoots := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR ht))))
+  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR ht)))
+  have hcNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
+  have hTNat := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
+  have hCode := Derives.conjL (Derives.conjR hHead)
+  exact
+    Derives.conjI hz (Derives.conjI hCode
+      (SyntaxMixedImageHead.term_at_zero hZ w c d T z head hw hcNat hTNat
+        (Derives.conjR (Derives.conjR hSecond)) hz hCode))
+
 private theorem at_generated {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z a A B C f T c d R D Q Base I j p q x N S K H L M Y S1 K1 H1 L1 M1 Y1 head : Fin m) (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m) (l r : Fin 4 → Fin m)
@@ -317,15 +369,7 @@ private theorem at_generated {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have gt := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))))))
   have hf := frame_from_generated w z a A B C f T c d R D Q Base j p N S K H L M Y head s v l hw hz hNames hQ hCons ht hHead hl
   have hg := frame_from_generated w z a A B C f T c d R D Q Base j q N S1 K1 H1 L1 M1 Y1 head s u r hw hz hNames hQ hCons gt hHead hr
-  have hRoots := (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR ht))))
-  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR ht)))
-  have hcNat := Derives.conjL (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
-  have hTNat := Derives.conjR (Derives.conjL (Derives.conjR (Derives.conjL hRoots)))
-  have hCode := Derives.conjL (Derives.conjR hHead)
-  have hName : Derives Γ (SyntaxMixedImageHead.head w d T z head) :=
-    Derives.conjI hz (Derives.conjI hCode
-      (SyntaxMixedImageHead.term_at_zero hZ w c d T z head hw hcNat hTNat
-        (Derives.conjR (Derives.conjR hSecond)) hz hCode))
+  have hName := head_after_second_lift hZ w z A B C f T c d D S Y Base j p K H L M head s v hw hz ht hHead
   exact compare hZ Reln Dom w z a A B C f T c d R D Q Base I j p q x head head N
     S K H L M (l 0) (l 1) (l 2) Y S1 K1 H1 L1 M1 (r 0) (r 1) (r 2) Y1 s v u
     hf hg (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))))))) (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi))))))))))) (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))))))))) (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi))))))))))))) hName
@@ -387,6 +431,82 @@ theorem from_initial {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   have hi1 := of_eq (initialInput_rename Reln Dom w z a A B C f T c d R D Q Base I j p q x N S K H L M Y S1 K1 H1 L1 M1 Y1 s v u Fin.castSucc) (under hi E)
   exact after_head (ZFContext.under hZ E) Reln Dom w.castSucc z.castSucc a.castSucc A.castSucc B.castSucc C.castSucc f.castSucc T.castSucc c.castSucc d.castSucc R.castSucc D.castSucc Q.castSucc Base.castSucc I.castSucc j.castSucc p.castSucc q.castSucc x.castSucc N.castSucc S.castSucc K.castSucc H.castSucc L.castSucc M.castSucc Y.castSucc S1.castSucc K1.castSucc H1.castSucc L1.castSucc M1.castSucc Y1.castSucc (Fin.last m)
     (fun i => (s i).castSucc) (fun i => (v i).castSucc) (fun i => (u i).castSucc) hi1 hE
+
+
+/-- The name existential is independent of the two outer conditions.
+Use the original tail traces, with their actual and possibly different prefixes.
+The inner head and both canonical child computations are derived in ZF. -/
+private theorem name_from_traces {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
+    (w z a A B C f T c d R D Q D1 Q1 Base I j p q x N S K H L M Y S1 K1 H1 L1 M1 Y1 : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hA : Derives Γ (successor A a))
+    (hR : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z T R))
+    (hQ : Derives Γ (SyntaxTermSyntax.term w z T Q))
+    (hQ1 : Derives Γ (SyntaxTermSyntax.term w z T Q1))
+    (hCons : Derives Γ (StructuralListSyntax.consCode w Q R D))
+    (hCons1 : Derives Γ (StructuralListSyntax.consCode w Q1 R D1))
+    (hN : Derives Γ (FormulaCodeSyntax.formulaCode w N A f))
+    (ht : Derives Γ (trace w D S A f z T Y Base j p B c K H C d L M s v))
+    (gt : Derives Γ (trace w D1 S1 A f z T Y1 Base j q B c K1 H1 C d L1 M1 s u))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k I))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hx : Derives Γ (SyntaxVariableSyntax.code true w z x))
+    (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w C f x (s 5)))
+    (hc : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N (s 6))) :
+    Derives Γ (.equal (v 4) (u 4)) := by
+  have hex := canonical_from_traces hZ w z a A B C f T c d R D D1 Base j p q N S K H L M Y S1 K1 H1 L1 M1 Y1
+    s v u hw hz hA hR hN ht gt
+  let out : Formula m := .equal (v 4) (u 4)
+  refine NativeProofQuotation.eliminate_objects hZ 1 (fun r h =>
+    ForcingExistChildCanonical.data (r w) (r z) (r a) (r A) (r c) (r d) (r f) (r T) (r R) (r S) (r S1) (r j) (r N) (h 0))
+    hex out ?_
+  intro m1 Γ1 r h hZ1 lift hData
+  refine NativeProofQuotation.eliminate_objects hZ1 4 (fun t l =>
+    ForcingExistChildCanonical.oneData (t (r w)) (t (r a)) (t (r A)) (t (r c)) (t (r d)) (t (r f)) (t (r T))
+      (t (r R)) (t (r S)) (t (r j)) (t (h 0)) (t (r N)) l)
+    (.conjL (.conjR hData)) (out.rename r) ?_
+  intro m2 Γ2 t l hZ2 move hLeft
+  have hBoth := of_eq (ForcingExistChildCanonical.data_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ t) (move hData)
+  refine NativeProofQuotation.eliminate_objects hZ2 4 (fun e u =>
+    ForcingExistChildCanonical.oneData (e (t (r w))) (e (t (r a))) (e (t (r A))) (e (t (r c))) (e (t (r d))) (e (t (r f))) (e (t (r T)))
+      (e (t (r R))) (e (t (r S1))) (e (t (r j))) (e (t (h 0))) (e (t (r N))) u)
+    (.conjL (.conjR (.conjR hBoth))) ((out.rename r).rename t) ?_
+  intro m3 Γ3 e right hZ3 extend hRight
+  let g := e ∘ t ∘ r
+  let head := e (t (h 0))
+  have transport {F : Formula m} (p0 : Derives Γ F) : Derives Γ3 (F.rename g) :=
+    of_eq (SourceAlgebra.rename_comp F r (e ∘ t))
+      (of_eq (SourceAlgebra.rename_comp (F.rename r) t e) (extend (move (lift p0))))
+  have hw3 := of_eq (omega_rename _ g) (transport hw)
+  have hz3 := of_eq (empty_rename _ g) (transport hz)
+  have hR3 := of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ g) (transport hR)
+  have hHead3 := of_eq (SyntaxMixedImageHead.head_rename _ _ _ _ _ e) (extend (.conjL hBoth))
+  have hLeft3 := of_eq (ForcingExistChildCanonical.oneData_rename _ _ _ _ _ _ _ _ _ _ _ _ l e) (extend hLeft)
+  have ht3 := of_eq (trace_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ s v g) (transport ht)
+  have gt3 := of_eq (trace_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ s u g) (transport gt)
+  have hF := frame_from_generated (g w) (g z) (g a) (g A) (g B) (g C) (g f) (g T) (g c) (g d) (g R)
+    (g D) (g Q) (g Base) (g j) (g p) (g N) (g S) (g K) (g H) (g L) (g M) (g Y) head
+    (g ∘ s) (g ∘ v) (e ∘ l) hw3 hz3 hR3
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ g) (transport hQ))
+    (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ g) (transport hCons)) ht3 hHead3 hLeft3
+  have gF := frame_from_generated (g w) (g z) (g a) (g A) (g B) (g C) (g f) (g T) (g c) (g d) (g R)
+    (g D1) (g Q1) (g Base) (g j) (g q) (g N) (g S1) (g K1) (g H1) (g L1) (g M1) (g Y1) head
+    (g ∘ s) (g ∘ u) right hw3 hz3 hR3
+    (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ g) (transport hQ1))
+    (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ g) (transport hCons1)) gt3 hHead3 hRight
+  have hName := head_after_second_lift hZ3 (g w) (g z) (g A) (g B) (g C) (g f) (g T) (g c) (g d)
+    (g D) (g S) (g Y) (g Base) (g j) (g p) (g K) (g H) (g L) (g M) head (g ∘ s) (g ∘ v) hw3 hz3 ht3 hHead3
+  exact compare_name hZ3 Dom (g w) (g z) (g a) (g A) (g B) (g C) (g f) (g T) (g c) (g d) (g R) (g D) (g Q)
+    (g Base) (g I) (g j) (g p) (g q) (g x) head head (g N) (g S) (g K) (g H) (g L) (g M) (e (l 0)) (e (l 1)) (e (l 2))
+    (g Y) (g S1) (g D1) (g Q1) (g K1) (g H1) (g L1) (g M1) (right 0) (right 1) (right 2) (g Y1)
+    (g ∘ s) (g ∘ v) (g ∘ u) hF gF
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (transport hi))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (transport hj))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ g) (transport hf))
+    (of_eq (SyntaxVariableSyntax.code_rename _ _ _ _ g) (transport hx)) hName
+    (of_eq (ForcingGuardCode.compiled_rename _ _ _ _ _ _ _ g) (transport hd))
+    (of_eq (ForcingExistChildCode.compiled_rename _ _ _ _ _ _ _ _ _ g) (transport hc))
 
 def initialSentence {k m} (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z a A B C f T c d R D Q Base I j p q x N S K H L M Y S1 K1 H1 L1 M1 Y1 : Fin m) (s : Fin 9 → Fin m) (v u : Fin 8 → Fin m) : Source.Sentence :=
@@ -465,6 +585,67 @@ theorem rawInput_rename {k m l} (Reln : Source.Formula (k+2)) (Dom : Source.Form
     SyntaxNumeralSyntax.numeral_rename, SyntaxVariableSyntax.code_rename,
     ForcingGuardCode.compiled_rename, ForcingExistGuardsCode.compiled_rename, ForcingExistChildCode.compiled_rename]
 
+private theorem normalized_traces {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w A B C f z T D S Y D1 S1 Y1 Base j p q : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
+    (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hv : Derives Γ (ForcingExistTailOpening.scopeData w D S A f z T Y Base j p s v))
+    (hu : Derives Γ (ForcingExistTailOpening.scopeData w D1 S1 A f z T Y1 Base j q s u)) :
+    Derives Γ ((trace w D S A f z T Y Base j p B (v 2) (v 3) (v 4) C (v 11) (v 12) (v 13) s (observed v)).conj
+      (trace w D1 S1 A f z T Y1 Base j q B (v 2) (u 3) (u 4) C (v 11) (u 12) (u 13) s (observed u))) := by
+  have hFirst := (Derives.conjL (Derives.conjR hv))
+  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR hv)))
+  have hExt := (ZFContext.arithmetic hZ).base.extensionality
+  have eB := OmegaUniversal.successor_unique (v 1) B A hExt
+    (Derives.conjL (Derives.conjR hFirst)) hB
+  let P := successor (v 10).castSucc (Fin.last m)
+  have hPred : Derives Γ (successor (v 10) B) :=
+    of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (Derives.eqSubst P eB
+        (of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+          (Derives.conjL (Derives.conjR hSecond))))
+  have eC := OmegaUniversal.successor_unique (v 10) C B hExt hPred hC
+  have hAlign := ForcingExistTailOpening.scope_alignment_at_prefixes hZ w D S D1 S1 A f z T Y Y1 Base j p q s v u hv hu
+  refine .conjI ?_ ?_
+  · exact trace_scopes w D S A f z T Y Base j p (v 1) (v 2) (v 3) (v 4) (v 10) (v 11) (v 12) (v 13)
+      B (v 2) C (v 11) s (observed v) eB (Derives.eqRefl (v 2)) eC (Derives.eqRefl (v 11))
+      (actual_trace w D S A f z T Y Base j p s v hv)
+  · exact trace_scopes w D1 S1 A f z T Y1 Base j q (u 1) (u 2) (u 3) (u 4) (u 10) (u 11) (u 12) (u 13)
+      B (v 2) C (v 11) s (observed u)
+      (eq_trans (eq_symm (Derives.conjL hAlign)) eB)
+      (eq_symm (Derives.conjL (Derives.conjR hAlign)))
+      (eq_trans (eq_symm (Derives.conjL (Derives.conjR (Derives.conjR hAlign)))) eC)
+      (eq_symm (Derives.conjR (Derives.conjR (Derives.conjR hAlign))))
+      (actual_trace w D1 S1 A f z T Y1 Base j q s u hu)
+
+
+/-- Compare the name fields of two actual openings while the inner condition
+is still bound. The outer-condition prefixes and selected updates can differ. -/
+theorem name_from_opened_tails {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
+    (w z a A B C f T R D Q D1 Q1 Base I j p q x N S Y S1 Y1 : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hR : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z T R))
+    (hQ : Derives Γ (SyntaxTermSyntax.term w z T Q))
+    (hQ1 : Derives Γ (SyntaxTermSyntax.term w z T Q1))
+    (hCons : Derives Γ (StructuralListSyntax.consCode w Q R D))
+    (hCons1 : Derives Γ (StructuralListSyntax.consCode w Q1 R D1))
+    (hN : Derives Γ (FormulaCodeSyntax.formulaCode w N A f))
+    (hv : Derives Γ (ForcingExistTailOpening.scopeData w D S A f z T Y Base j p s v))
+    (hu : Derives Γ (ForcingExistTailOpening.scopeData w D1 S1 A f z T Y1 Base j q s u))
+    (hi : Derives Γ (SyntaxNumeralSyntax.numeral k I))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hx : Derives Γ (SyntaxVariableSyntax.code true w z x))
+    (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w C f x (s 5)))
+    (hc : Derives Γ (ForcingExistChildCode.compiled w a A B C f j N (s 6))) :
+    Derives Γ (.equal (v 8) (u 8)) := by
+  have h := normalized_traces hZ w A B C f z T D S Y D1 S1 Y1 Base j p q s v u hB hC hv hu
+  exact name_from_traces hZ Dom w z a A B C f T (v 2) (v 11) R D Q D1 Q1 Base I j p q x N
+    S (v 3) (v 4) (v 12) (v 13) Y S1 (u 3) (u 4) (u 12) (u 13) Y1 s (observed v) (observed u)
+    hw hz hA hR hQ hQ1 hCons hCons1 hN (.conjL h) (.conjR h) hi hj hf hx hd hc
+
 private theorem at_raw_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z a A B C f T R D Q Base I j p q x N S Y S1 Y1 : Fin m) (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
@@ -472,29 +653,10 @@ private theorem at_raw_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence �
     (hv : Derives Γ (ForcingExistTailOpening.scopeData w D S A f z T Y Base j p s v))
     (hu : Derives Γ (ForcingExistTailOpening.scopeData w D S1 A f z T Y1 Base j q s u)) :
     Derives Γ (.equal Y Y1) := by
-  have hFirst := (Derives.conjL (Derives.conjR hv))
-  have hSecond := (Derives.conjL (Derives.conjR (Derives.conjR hv)))
-  have hExt := (ZFContext.arithmetic hZ).base.extensionality
-  have eB := OmegaUniversal.successor_unique (v 1) B A hExt
-    (Derives.conjL (Derives.conjR hFirst)) (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR hi))))
-  let P := successor (v 10).castSucc (Fin.last m)
-  have hPred : Derives Γ (successor (v 10) B) :=
-    of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
-      (Derives.eqSubst P eB
-        (of_eq (by simp only [P, Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
-          (Derives.conjL (Derives.conjR hSecond))))
-  have eC := OmegaUniversal.successor_unique (v 10) C B hExt hPred (Derives.conjL (Derives.conjR (Derives.conjR (Derives.conjR (Derives.conjR hi)))))
-  have hAlign := ForcingExistTailOpening.scope_alignment hZ w D S S1 A f z T Y Y1 Base j p q s v u hv hu
-  have ht := trace_scopes w D S A f z T Y Base j p (v 1) (v 2) (v 3) (v 4) (v 10) (v 11) (v 12) (v 13)
-    B (v 2) C (v 11) s (observed v) eB (Derives.eqRefl (v 2)) eC (Derives.eqRefl (v 11))
-    (actual_trace w D S A f z T Y Base j p s v hv)
-  have gt := trace_scopes w D S1 A f z T Y1 Base j q (u 1) (u 2) (u 3) (u 4) (u 10) (u 11) (u 12) (u 13)
-    B (v 2) C (v 11) s (observed u)
-    (eq_trans (eq_symm (Derives.conjL hAlign)) eB)
-    (eq_symm (Derives.conjL (Derives.conjR hAlign)))
-    (eq_trans (eq_symm (Derives.conjL (Derives.conjR (Derives.conjR hAlign)))) eC)
-    (eq_symm (Derives.conjR (Derives.conjR (Derives.conjR hAlign))))
-    (actual_trace w D S1 A f z T Y1 Base j q s u hu)
+  have hTraces := normalized_traces hZ w A B C f z T D S Y D S1 Y1 Base j p q s v u
+    (.conjL (.conjR (.conjR (.conjR hi)))) (.conjL (.conjR (.conjR (.conjR (.conjR hi))))) hv hu
+  have ht := Derives.conjL hTraces
+  have gt := Derives.conjR hTraces
   have hInitial : Derives Γ (initialInput Reln Dom
     w z a A B C f T (v 2) (v 11) R D Q Base I j p q x N S (v 3) (v 4) (v 12) (v 13) Y
     S1 (u 3) (u 4) (u 12) (u 13) Y1 s (observed v) (observed u)) :=

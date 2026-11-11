@@ -243,21 +243,21 @@ theorem query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.
   exact of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w (s 1) D z j d T (s 0) Y Fin.castSucc).symm hOut
 
 private theorem compare_at_rows {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
-    (w z a A B f T c d R S K H L M Base I j p x Name Whole Img D Nraw Y S1 K1 H1 L1 M1 q Y1 : Fin m) (v : Fin 4 → Fin m) (s : Fin 3 → Fin m)
+    (w z a A B f T c d R S K H L M Base I j p x Name Whole Img D Nraw Y R1 S1 K1 H1 L1 M1 q Y1 : Fin m) (v : Fin 4 → Fin m) (s : Fin 3 → Fin m)
     (hf : Derives Γ (frame k w z a A B f T c d R S K H L M Base I j p x Name Whole Img D))
-    (hg : Derives Γ (frame k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name Whole Img D))
+    (hg : Derives Γ (frame k w z a A B f T c d R1 S1 K1 H1 L1 M1 Base I j q x Name Whole Img D))
     (hr : Derives Γ (rows Dom w z B f j x Nraw v s))
     (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M B f d T Nraw Y))
     (hy1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L1 M1 B f d T Nraw Y1)) : Derives Γ (.equal Y Y1) := by
   have h0 := query hZ Dom w z a A B f T c d R S K H L M Base I j p x Name Whole Img D Nraw Y v s hf hr hy
-  have h1 := query hZ Dom w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name Whole Img D Nraw Y1 v s hg hr hy1
+  have h1 := query hZ Dom w z a A B f T c d R1 S1 K1 H1 L1 M1 Base I j q x Name Whole Img D Nraw Y1 v s hg hr hy1
   exact SyntaxMixedFormulaOutputInduction.unique hZ w (s 1) D z j d T (s 0) Y Y1 (.conjL hf) h0 h1
 
 
 private theorem compare_at_images {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
-    (w z a A B f T c d R S K H L M Base I j p x Name Whole Img D Nraw Y S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m)
+    (w z a A B f T c d R S K H L M Base I j p x Name Whole Img D Nraw Y R1 S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m)
     (hf : Derives Γ (frame k w z a A B f T c d R S K H L M Base I j p x Name Whole Img D))
-    (hg : Derives Γ (frame k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name Whole Img D))
+    (hg : Derives Γ (frame k w z a A B f T c d R1 S1 K1 H1 L1 M1 Base I j q x Name Whole Img D))
     (hc : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw))
     (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw1))
     (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M B f d T Nraw Y))
@@ -283,7 +283,7 @@ private theorem compare_at_images {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
   have hg7 := of_eq (by simp only [frame_rename]; rfl) (HornBinderRules.under_body 3 (HornBinderRules.under_body 4 hg O) C)
   have hy7 := of_eq (by simp only [SyntaxMixedFormulaJudgmentSyntax.substituted_rename]; rfl) (HornBinderRules.under_body 3 (HornBinderRules.under_body 4 hy O) C)
   have hy17 := of_eq (by simp only [SyntaxMixedFormulaJudgmentSyntax.substituted_rename]; rfl) (HornBinderRules.under_body 3 (HornBinderRules.under_body 4 hy1' O) C)
-  exact compare_at_rows (HornBinderRules.zf_body 3 (HornBinderRules.zf_body 4 hZ O) C) Dom (old 7 w) (old 7 z) (old 7 a) (old 7 A) (old 7 B) (old 7 f) (old 7 T) (old 7 c) (old 7 d) (old 7 R) (old 7 S) (old 7 K) (old 7 H) (old 7 L) (old 7 M) (old 7 Base) (old 7 I) (old 7 j) (old 7 p) (old 7 x) (old 7 Name) (old 7 Whole) (old 7 Img) (old 7 D) (old 7 Nraw) (old 7 Y) (old 7 S1) (old 7 K1) (old 7 H1) (old 7 L1) (old 7 M1) (old 7 q) (old 7 Y1)
+  exact compare_at_rows (HornBinderRules.zf_body 3 (HornBinderRules.zf_body 4 hZ O) C) Dom (old 7 w) (old 7 z) (old 7 a) (old 7 A) (old 7 B) (old 7 f) (old 7 T) (old 7 c) (old 7 d) (old 7 R) (old 7 S) (old 7 K) (old 7 H) (old 7 L) (old 7 M) (old 7 Base) (old 7 I) (old 7 j) (old 7 p) (old 7 x) (old 7 Name) (old 7 Whole) (old 7 Img) (old 7 D) (old 7 Nraw) (old 7 Y) (old 7 R1) (old 7 S1) (old 7 K1) (old 7 H1) (old 7 L1) (old 7 M1) (old 7 q) (old 7 Y1)
     (fun i => old 3 (slot 4 i)) (slot 3) hf7 hg7 hr7 hy7 hy17
 
 /-- Actual TWO openings and typed base, with NO pre-supplied canonical H
@@ -306,10 +306,10 @@ private theorem frame_of_opening {k m} {Γ : Context m} (w z a A B f T c d R S K
 /-- BOTH complete original domain compilers and ACTUAL double-opened outputs
 are compared. Canonical THREE image witnesses and original FOUR compiler plus
 THREE source-H witnesses are all generated/eliminated in the OBJECT theory. -/
-theorem compare {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
-    (w z a A B f T c d R S K H L M Base I j p x Name Nraw Y S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m)
+theorem compare_prefixes {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
+    (w z a A B f T c d R S K H L M Base I j p x Name Nraw Y R1 S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m)
     (hf : Derives Γ (opening k w z a A B f T c d R S K H L M Base I j p x Name))
-    (hg : Derives Γ (opening k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name))
+    (hg : Derives Γ (opening k w z a A B f T c d R1 S1 K1 H1 L1 M1 Base I j q x Name))
     (hc : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw))
     (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw1))
     (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M B f d T Nraw Y))
@@ -322,14 +322,25 @@ theorem compare {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Sourc
   apply HornBinderRules.eliminate_many 3 E _ (ForcingExistDomainImages.produce hZ w f j d T Base I Name hImagesInput)
   have hE : Derives Δ E := .hyp (Or.inl rfl)
   have hf3 := of_eq (opening_rename k w z a A B f T c d R S K H L M Base I j p x Name (old 3)) (HornBinderRules.under_body 3 hf E)
-  have hg3 := of_eq (opening_rename k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name (old 3)) (HornBinderRules.under_body 3 hg E)
+  have hg3 := of_eq (opening_rename k w z a A B f T c d R1 S1 K1 H1 L1 M1 Base I j q x Name (old 3)) (HornBinderRules.under_body 3 hg E)
   have hFrame := frame_of_opening (old 3 w) (old 3 z) (old 3 a) (old 3 A) (old 3 B) (old 3 f) (old 3 T) (old 3 c) (old 3 d) (old 3 R) (old 3 S) (old 3 K) (old 3 H) (old 3 L) (old 3 M) (old 3 Base) (old 3 I) (old 3 j) (old 3 p) (old 3 x) (old 3 Name) (slot 3 0) (slot 3 1) (slot 3 2) hf3 hE
-  have hFrame1 := frame_of_opening (old 3 w) (old 3 z) (old 3 a) (old 3 A) (old 3 B) (old 3 f) (old 3 T) (old 3 c) (old 3 d) (old 3 R) (old 3 S1) (old 3 K1) (old 3 H1) (old 3 L1) (old 3 M1) (old 3 Base) (old 3 I) (old 3 j) (old 3 q) (old 3 x) (old 3 Name) (slot 3 0) (slot 3 1) (slot 3 2) hg3 hE
+  have hFrame1 := frame_of_opening (old 3 w) (old 3 z) (old 3 a) (old 3 A) (old 3 B) (old 3 f) (old 3 T) (old 3 c) (old 3 d) (old 3 R1) (old 3 S1) (old 3 K1) (old 3 H1) (old 3 L1) (old 3 M1) (old 3 Base) (old 3 I) (old 3 j) (old 3 q) (old 3 x) (old 3 Name) (slot 3 0) (slot 3 1) (slot 3 2) hg3 hE
   have hc3 := of_eq (ForcingGuardCode.compiled_rename true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw (old 3)) (HornBinderRules.under_body 3 hc E)
   have hd3 := of_eq (ForcingGuardCode.compiled_rename true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw1 (old 3)) (HornBinderRules.under_body 3 hd E)
   have hy3 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w L M B f d T Nraw Y (old 3)) (HornBinderRules.under_body 3 hy E)
   have hy13 := of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w L1 M1 B f d T Nraw1 Y1 (old 3)) (HornBinderRules.under_body 3 hy1 E)
-  exact compare_at_images (HornBinderRules.zf_body 3 hZ E) Dom (old 3 w) (old 3 z) (old 3 a) (old 3 A) (old 3 B) (old 3 f) (old 3 T) (old 3 c) (old 3 d) (old 3 R) (old 3 S) (old 3 K) (old 3 H) (old 3 L) (old 3 M) (old 3 Base) (old 3 I) (old 3 j) (old 3 p) (old 3 x) (old 3 Name) (slot 3 0) (slot 3 1) (slot 3 2) (old 3 Nraw) (old 3 Y) (old 3 S1) (old 3 K1) (old 3 H1) (old 3 L1) (old 3 M1) (old 3 q) (old 3 Nraw1) (old 3 Y1) hFrame hFrame1 hc3 hd3 hy3 hy13
+  exact compare_at_images (HornBinderRules.zf_body 3 hZ E) Dom (old 3 w) (old 3 z) (old 3 a) (old 3 A) (old 3 B) (old 3 f) (old 3 T) (old 3 c) (old 3 d) (old 3 R) (old 3 S) (old 3 K) (old 3 H) (old 3 L) (old 3 M) (old 3 Base) (old 3 I) (old 3 j) (old 3 p) (old 3 x) (old 3 Name) (slot 3 0) (slot 3 1) (slot 3 2) (old 3 Nraw) (old 3 Y) (old 3 R1) (old 3 S1) (old 3 K1) (old 3 H1) (old 3 L1) (old 3 M1) (old 3 q) (old 3 Nraw1) (old 3 Y1) hFrame hFrame1 hc3 hd3 hy3 hy13
+
+theorem compare {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Dom : Source.Formula (k+1))
+    (w z a A B f T c d R S K H L M Base I j p x Name Nraw Y S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m)
+    (hf : Derives Γ (opening k w z a A B f T c d R S K H L M Base I j p x Name))
+    (hg : Derives Γ (opening k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name))
+    (hc : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw))
+    (hd : Derives Γ (ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw1))
+    (hy : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L M B f d T Nraw Y))
+    (hy1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w L1 M1 B f d T Nraw1 Y1)) : Derives Γ (.equal Y Y1) :=
+  compare_prefixes hZ Dom w z a A B f T c d R S K H L M Base I j p x Name Nraw Y R S1 K1 H1 L1 M1 q Nraw1 Y1
+    hf hg hc hd hy hy1
 
 def input {k m} (Dom : Source.Formula (k+1)) (w z a A B f T c d R S K H L M Base I j p x Name Nraw Y S1 K1 H1 L1 M1 q Nraw1 Y1 : Fin m) : Formula m :=
   (opening k w z a A B f T c d R S K H L M Base I j p x Name).conj ((opening k w z a A B f T c d R S1 K1 H1 L1 M1 Base I j q x Name).conj ((ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw).conj ((ForcingGuardCode.compiled true (ForcingExistGuardsCode.domainOrder Dom) w B f x Nraw1).conj ((SyntaxMixedFormulaJudgmentSyntax.substituted w L M B f d T Nraw Y).conj (SyntaxMixedFormulaJudgmentSyntax.substituted w L1 M1 B f d T Nraw1 Y1)))))

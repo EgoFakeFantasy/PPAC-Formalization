@@ -40130,6 +40130,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistChildCanonical.sentence
 
 #print axioms PPAC.Migration.ForcingExistChildOpening.compare
+#print axioms PPAC.Migration.ForcingExistChildOpening.compare_prefixes
 #print axioms PPAC.Migration.ForcingExistChildOpening.compareInput
 #print axioms PPAC.Migration.ForcingExistChildOpening.compareSentence
 #print axioms PPAC.Migration.ForcingExistChildOpening.compare_kernel_certificate
@@ -40210,6 +40211,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistDomainImages.target_type
 
 #print axioms PPAC.Migration.ForcingExistDomainOpening.compare
+#print axioms PPAC.Migration.ForcingExistDomainOpening.compare_prefixes
 #print axioms PPAC.Migration.ForcingExistDomainOpening.formula
 #print axioms PPAC.Migration.ForcingExistDomainOpening.frame
 #print axioms PPAC.Migration.ForcingExistDomainOpening.frame_rename
@@ -40270,6 +40272,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailOpening.preparedSentence
 #print axioms PPAC.Migration.ForcingExistTailOpening.prepared_kernel_certificate
 #print axioms PPAC.Migration.ForcingExistTailOpening.scope_alignment
+#print axioms PPAC.Migration.ForcingExistTailOpening.scope_alignment_at_prefixes
 
 #print axioms PPAC.Migration.ForcingExistTailComparison.values
 #print axioms PPAC.Migration.ForcingExistTailComparison.trace
@@ -40289,6 +40292,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistTailComparison.rawInput
 #print axioms PPAC.Migration.ForcingExistTailComparison.rawInput_rename
 #print axioms PPAC.Migration.ForcingExistTailComparison.from_queries
+#print axioms PPAC.Migration.ForcingExistTailComparison.name_from_opened_tails
 #print axioms PPAC.Migration.ForcingExistTailComparison.rawSentence
 #print axioms PPAC.Migration.ForcingExistTailComparison.raw_kernel_certificate
 

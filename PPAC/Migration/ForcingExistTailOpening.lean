@@ -503,11 +503,11 @@ private theorem successor_predecessor {m} {Γ : Context m} (s i j : Fin m)
 
 /-- TWO independent actual tail executions have equal source/target
 successors. No externally standard depth or supplied scope equality. -/
-theorem scope_alignment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w R S S1 a f z T Q Q1 Base j p q : Fin m)
+theorem scope_alignment_at_prefixes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w R S R1 S1 a f z T Q Q1 Base j p q : Fin m)
     (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
     (hv : Derives Γ (scopeData w R S a f z T Q Base j p s v))
-    (hu : Derives Γ (scopeData w R S1 a f z T Q1 Base j q s u)) :
+    (hu : Derives Γ (scopeData w R1 S1 a f z T Q1 Base j q s u)) :
     Derives Γ ((Formula.equal (v 1) (u 1)).conj
       ((Formula.equal (v 2) (u 2)).conj
         ((Formula.equal (v 10) (u 10)).conj (.equal (v 11) (u 11))))) := by
@@ -523,5 +523,15 @@ theorem scope_alignment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   exact .conjI eA (.conjI ec (.conjI
     (OmegaUniversal.successor_unique (v 10) (u 10) (v 1) he (.conjL (.conjR hv1)) hA)
     (OmegaUniversal.successor_unique (v 11) (u 11) (v 2) he (.conjR (.conjR hv1)) hc)))
+
+theorem scope_alignment {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w R S S1 a f z T Q Q1 Base j p q : Fin m)
+    (s : Fin 9 → Fin m) (v u : Fin 16 → Fin m)
+    (hv : Derives Γ (scopeData w R S a f z T Q Base j p s v))
+    (hu : Derives Γ (scopeData w R S1 a f z T Q1 Base j q s u)) :
+    Derives Γ ((Formula.equal (v 1) (u 1)).conj
+      ((Formula.equal (v 2) (u 2)).conj
+        ((Formula.equal (v 10) (u 10)).conj (.equal (v 11) (u 11))))) :=
+  scope_alignment_at_prefixes hZ w R S R S1 a f z T Q Q1 Base j p q s v u hv hu
 
 end PPAC.Migration.ForcingExistTailOpening
