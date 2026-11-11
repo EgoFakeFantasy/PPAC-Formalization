@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+原 `exists_force_neg` 的内层反证已从配对的实际开式推出三项字段等式。同一条件 `r` 的成员守卫读取同一载体字段，顺序守卫归到原关系 `r ≤ q`，强迫查询通过原绑定前缀和条件替换归到同一输入。`paired_density_openings_kernel_certificate` 在普通 nativeZF 原核中从密度尾式的反面导出否定强迫全称式。外层仍需产生配对开式和所选 `q` 更新，构造并闭合反强迫见证。[整仓验收](../verification/forcing-paired-density-openings-acceptance.json)
+
 原 `exists_force_neg` 的内层反证已接到真实开式。`negative_from_density_openings` 消费同一个新鲜条件处的原密度尾式、原否定编译和三项字段等式。它把旧背景下对密度尾式的反证提升到同一开式，再闭合出否定强迫全称式。已有普通 nativeZF 原核证书。三项字段等式仍需从共同运行记录产生，外层反强迫见证仍待闭合。[整仓验收](../verification/forcing-rejected-density-openings-acceptance.json)
 
 OpenAI 原 `exists_force_neg` 所需的密度蕴含已在对象层取得。`ForcingSourceDensity.dense_implies_force` 对实际编译与替换所得的查询生成 `Dense → Force` 的 Root 证明码，使用同一偏序与替换表，并回到原共同背景。`density_implication_kernel_certificate` 给出普通 nativeZF 原核闭句。原定理的反强迫条件见证尚待接入。[整仓验收](../verification/forcing-density-implication-acceptance.json)

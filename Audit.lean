@@ -40398,6 +40398,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedImages.kernel_certificate
 #print axioms PPAC.Migration.ForcingWeakenedImages.querySentence
 #print axioms PPAC.Migration.ForcingWeakenedImages.query_kernel_certificate
+#print axioms PPAC.Migration.ForcingWeakenedImages.bound_tail_agrees
 
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.frame
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.frame_rename
@@ -40856,6 +40857,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_opened_witness_guards
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_existential_density_witness
 #print axioms PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult
@@ -40924,6 +40926,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_compiled_query
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_reflexive_query
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_rejected_instance
+#print axioms PPAC.Migration.ForcingDensityGuards.rejected_density_members_agree
+#print axioms PPAC.Migration.ForcingDensityGuards.rejected_density_orders_agree
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer_rename
 #print axioms PPAC.Migration.ForcingSourceDensity.apply_transfer
@@ -40960,6 +40964,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.density_implication_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_from_density_openings
 #print axioms PPAC.Migration.ForcingSourceDensity.rejected_density_openings_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_from_paired_density_openings
+#print axioms PPAC.Migration.ForcingSourceDensity.paired_density_openings_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate

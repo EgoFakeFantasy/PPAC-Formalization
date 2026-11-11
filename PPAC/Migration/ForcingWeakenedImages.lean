@@ -342,4 +342,159 @@ theorem rebase_bound {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     exact of_eq (by simp only [boundBody, data_rename, withBound_map, assign_old, assign_slot]; rfl) data'
   simpa only [rho, rho2, vv, rename_comp, boundRebased_rename] using out
 
+
+open StructuralListFieldSyntax (field field_rename)
+
+private theorem encoding_at_equal_code {m} {Γ : Context m}
+    (w r a c u v : Fin m) (e : Derives Γ (.equal u v))
+    (h : Derives Γ (SyntaxMapCodeSyntax.encoded w r a c u)) :
+    Derives Γ (SyntaxMapCodeSyntax.encoded w r a c v) := by
+  let P := SyntaxMapCodeSyntax.encoded w.castSucc r.castSucc a.castSucc c.castSucc (Fin.last m)
+  have eval (x : Fin m) : P.instantiate x = SyntaxMapCodeSyntax.encoded w r a c x := by
+    simp only [P, Formula.instantiate, SyntaxMapCodeSyntax.encoded_rename,
+      Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+  exact of_eq (eval v) (.eqSubst P e (of_eq (eval u).symm h))
+
+private theorem reindexed_at_equal_maps {m} {Γ : Context m}
+    (w a f z b d R S I J I' J' : Fin m) (v : Fin 6 → Fin m)
+    (eI : Derives Γ (.equal I I')) (eJ : Derives Γ (.equal J J'))
+    (h : Derives Γ (ForcingReindexedImages.data w a f z b z d R S I J v)) :
+    Derives Γ (ForcingReindexedImages.data w a f z b z d R S I' J' v) := by
+  let P := ForcingReindexedImages.data w.castSucc a.castSucc f.castSucc z.castSucc b.castSucc
+    z.castSucc d.castSucc R.castSucc S.castSucc (Fin.last m) J.castSucc (Fin.castSucc ∘ v)
+  have evalP (x : Fin m) : P.instantiate x = ForcingReindexedImages.data w a f z b z d R S x J v := by
+    simp only [P, Formula.instantiate, ForcingReindexedImages.data_rename,
+      Function.comp_apply, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+  have h' := of_eq (evalP I') (.eqSubst P eI (of_eq (evalP I).symm h))
+  let Q := ForcingReindexedImages.data w.castSucc a.castSucc f.castSucc z.castSucc b.castSucc
+    z.castSucc d.castSucc R.castSucc S.castSucc I'.castSucc (Fin.last m) (Fin.castSucc ∘ v)
+  have evalQ (x : Fin m) : Q.instantiate x = ForcingReindexedImages.data w a f z b z d R S I' x v := by
+    simp only [Q, Formula.instantiate, ForcingReindexedImages.data_rename,
+      Function.comp_apply, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+  exact of_eq (evalQ J') (.eqSubst Q eJ (of_eq (evalQ J).symm h'))
+
+private theorem compare_bound_tail_field {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f z b d R S Prefix S' I J q q' K i s y x : Fin m) (v u : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w)) (ha : Derives Γ (.mem a w))
+    (hA : Derives Γ (successor A a)) (hi : Derives Γ (.mem i a)) (hs : Derives Γ (successor s i))
+    (hq : Derives Γ (.mem q w)) (hq' : Derives Γ (.mem q' w))
+    (hR : Derives Γ (.mem R w)) (hK : Derives Γ (.mem K w))
+    (hOld : Derives Γ (StructuralListSyntax.consCode w q R Prefix))
+    (hNew : Derives Γ (StructuralListSyntax.consCode w q' K (u 4)))
+    (hv : Derives Γ (ForcingReindexedImages.data w a f z b z d R S I J v))
+    (hu : Derives Γ (ForcingReindexedImages.data w A f z b z d Prefix S' I J u))
+    (hx : Derives Γ (field w R i x)) : Derives Γ ((field w (v 4) i y).iff (field w K i y)) := by
+  have hiW := StructuralListTraceOrder.member_member hZ w i a hw ha hi
+  have hsA := Derives.impE (.conjR (AbstractBoundOrder.successor_threshold_iff hZ w a i A s hw ha hiW hA hs)) hi
+  have hOldField := StructuralListFieldCons.successor_backward hZ w q R Prefix i s x hw hq hR hiW hs hOld hx
+  have oldImage := ForcingReindexedImages.field_iff hZ true w a f z b z d R S I J i x y v hv (.conjI hi hx)
+  have prefixImage := ForcingReindexedImages.field_iff hZ true w A f z b z d Prefix S' I J s x y u hu
+    (.conjI hsA hOldField)
+  have hCons := StructuralListFieldCons.successor_iff hZ w q' K (u 4) i s y hw hq' hK hiW hs hNew
+  apply Derives.conjI
+  · apply Derives.impI
+    have hImage := Derives.impE (add (.conjL oldImage) _)
+      (.conjI (add hi _) (.hyp (Or.inl rfl)))
+    exact .impE (add (.conjL hCons) _) (.conjR (.impE (add (.conjR prefixImage) _) hImage))
+  · apply Derives.impI
+    have hField := Derives.impE (add (.conjR hCons) _) (.hyp (Or.inl rfl))
+    have hImage := Derives.impE (add (.conjL prefixImage) _) (.conjI (add hsA _) hField)
+    exact .conjR (.impE (add (.conjR oldImage) _) hImage)
+
+private theorem compare_bound_tail_at_index {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f z b d R S Prefix S' I J q q' K i y : Fin m) (v u : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w)) (ha : Derives Γ (.mem a w))
+    (hA : Derives Γ (successor A a)) (hi : Derives Γ (.mem i a))
+    (hq : Derives Γ (.mem q w)) (hq' : Derives Γ (.mem q' w))
+    (hR : Derives Γ (.mem R w)) (hK : Derives Γ (.mem K w))
+    (hOld : Derives Γ (StructuralListSyntax.consCode w q R Prefix))
+    (hNew : Derives Γ (StructuralListSyntax.consCode w q' K (u 4)))
+    (hv : Derives Γ (ForcingReindexedImages.data w a f z b z d R S I J v))
+    (hu : Derives Γ (ForcingReindexedImages.data w A f z b z d Prefix S' I J u)) :
+    Derives Γ ((field w (v 4) i y).iff (field w K i y)) := by
+  let out := (field w (v 4) i y).iff (field w K i y)
+  have hiW := StructuralListTraceOrder.member_member hZ w i a hw ha hi
+  refine NativeProofQuotation.eliminate_objects hZ 1 (fun r x => (Formula.mem (x 0) (r w)).conj
+    (successor (x 0) (r i))) (.impE (step_at w i (.conjL hw)) hiW) out ?_
+  intro l Δ r x hZ1 lift hx
+  have hiW1 := lift hiW
+  have hw1 := of_eq (omega_rename _ r) (lift hw)
+  refine NativeProofQuotation.eliminate_objects hZ1 1 (fun s v => (Formula.mem (v 0) (s (r w))).conj
+    (field (s (r w)) (s (r R)) (s (r i)) (v 0)))
+    (StructuralListFieldValues.exists_value hZ1 (r w) (r R) (r i) hw1 hiW1) (out.rename r) ?_
+  intro l' Δ' s y' hZ2 move hy
+  let ρ := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ' (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hs := of_eq (successor_rename _ _ s) (move (.conjR hx))
+  have hout : (out.rename r).rename s =
+      ((field (ρ w) (ρ (v 4)) (ρ i) (ρ y)).iff (field (ρ w) (ρ K) (ρ i) (ρ y))) := by
+    simp only [out, Formula.iff, Formula.rename, field_rename]; rfl
+  exact of_eq hout.symm
+    (compare_bound_tail_field hZ2 (ρ w) (ρ a) (ρ A) (ρ f) (ρ z) (ρ b) (ρ d)
+      (ρ R) (ρ S) (ρ Prefix) (ρ S') (ρ I) (ρ J) (ρ q) (ρ q') (ρ K) (ρ i) (s (x 0)) (ρ y) (y' 0)
+      (ρ ∘ v) (ρ ∘ u) (of_eq (omega_rename _ ρ) (carry hw)) (carry ha)
+      (of_eq (successor_rename _ _ ρ) (carry hA)) (carry hi) hs
+      (carry hq) (carry hq') (carry hR) (carry hK)
+      (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ ρ) (carry hOld))
+      (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ ρ) (carry hNew))
+      (of_eq (ForcingReindexedImages.data_rename _ _ _ _ _ _ _ _ _ _ _ v ρ) (carry hv))
+      (of_eq (ForcingReindexedImages.data_rename _ _ _ _ _ _ _ _ _ _ _ u ρ) (carry hu))
+      (.conjR hy))
+
+/-- Removing the already selected condition from the bound table commutes
+with the two actual fresh-scope image computations. This matches the direct
+operand query of the original density and negative compilers. -/
+theorem bound_tail_agrees {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f z b d R S Prefix S' q q' K : Fin m) (v u : Fin 10 → Fin m)
+    (hA : Derives Γ (successor A a))
+    (hq : Derives Γ (SyntaxTermSyntax.term w z b q))
+    (hq' : Derives Γ (SyntaxTermSyntax.term w z d q'))
+    (hK : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z d K))
+    (hOld : Derives Γ (StructuralListSyntax.consCode w q R Prefix))
+    (hNew : Derives Γ (StructuralListSyntax.consCode w q' K (u 8)))
+    (hv : Derives Γ (data w a f z b d R S v))
+    (hu : Derives Γ (data w A f z b d Prefix S' u)) : Derives Γ (.equal (v 8) K) := by
+  have hw := Derives.conjL (.conjL hv)
+  have hR := Derives.conjL (.conjR (.conjR (.conjL hv)))
+  have vOps := Derives.conjL (.conjR hv)
+  have uOps := Derives.conjL (.conjR hu)
+  have eId := SyntaxIdentityUnique.code_unique hZ w z (u 0) (v 0) hw (.conjL uOps) (.conjL vOps)
+  have eShift := SyntaxFreeShiftCode.unique hZ w b d (u 1) (v 1) hw
+    (.conjL (.conjR uOps)) (.conjL (.conjR vOps))
+  have eI := SyntaxMapCode.unique_graph hZ w (u 2) (v 2) z z (v 0)
+    (encoding_at_equal_code w (u 2) z z (u 0) (v 0) eId (.conjL (.conjR (.conjR uOps))))
+    (.conjL (.conjR (.conjR vOps)))
+  have eJ := SyntaxMapCode.unique_graph hZ w (u 3) (v 3) b d (v 1)
+    (encoding_at_equal_code w (u 3) b d (u 1) (v 1) eShift (.conjR (.conjR (.conjR uOps))))
+    (.conjR (.conjR (.conjR vOps)))
+  have hV := Derives.conjR (.conjR hv)
+  have hU := reindexed_at_equal_maps w A f z b d Prefix S' (u 2) (u 3) (v 2) (v 3)
+    (images u) eI eJ (.conjR (.conjR hu))
+  have hV8 := Derives.conjL (SyntaxMixedImageCodePairs.term_lists w (v 6) (v 7) a f z d (v 8) (v 9)
+    (.conjR (.conjR hV)))
+  have hqN := SyntaxTerms.range hZ w z b q hw hq
+  have hq'N := SyntaxTerms.range hZ w z d q' hw hq'
+  apply StructuralListCodeInduction.unique hZ w a (v 8) K hw
+    (.conjR (.conjL (.conjR (.conjR hV8)))) (.conjR (.conjL (.conjR (.conjR hK))))
+  apply Derives.allI
+  apply Derives.allI
+  apply Derives.impI
+  let H := Formula.mem (slot 2 0) (old 2 a)
+  let Δ := Context.add H (raisedContext 2 Γ)
+  let r : Fin m → Fin (m+2) := old 2
+  have hIndex : Derives Δ H := .hyp (Or.inl rfl)
+  have lift {P : Formula m} (h : Derives Γ P) : Derives Δ (P.rename r) :=
+    HornBinderRules.under_body 2 h H
+  exact compare_bound_tail_at_index (HornBinderRules.zf_body 2 hZ H) (r w) (r a) (r A) (r f) (r z)
+    (r b) (r d) (r R) (r S) (r Prefix) (r S') (r (v 2)) (r (v 3)) (r q) (r q') (r K) (slot 2 0) (slot 2 1)
+    (r ∘ images v) (r ∘ images u)
+    (of_eq (omega_rename _ r) (lift hw)) (lift (.conjL hR))
+    (of_eq (successor_rename _ _ r) (lift hA)) hIndex (lift hqN) (lift hq'N)
+    (lift (.conjL (.conjL (.conjR (.conjR hR))))) (lift (.conjL (.conjL (.conjR (.conjR hK)))))
+    (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ r) (lift hOld))
+    (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ r) (lift hNew))
+    (of_eq (ForcingReindexedImages.data_rename _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hV))
+    (of_eq (ForcingReindexedImages.data_rename _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hU))
+
 end PPAC.Migration.ForcingWeakenedImages

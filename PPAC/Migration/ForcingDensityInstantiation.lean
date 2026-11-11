@@ -1476,6 +1476,59 @@ theorem with_same_name_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence �
 
 
 set_option maxHeartbeats 600000 in
+/-- Read both actual guards at the same opened density witness. -/
+theorem with_opened_witness_guards {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Formula (k+2)) (w z a A B f j N D b c d t L S X V E Q K Fr : Fin m)
+    (density : Fin 7 → Fin m) (images : Fin 10 → Fin m) (opened : Fin 9 → Fin m) (guards : Fin 4 → Fin m)
+    (I : Fin m)
+    (hA : Derives Γ (successor A a))
+    (hDensity : Derives Γ (ForcingDensityCode.data R w a A B f j N D density))
+    (hOpen : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z A f B b c d t L S X V E images opened))
+    (hGuards : Derives Γ (ForcingRawModalBody.nestedData 0 w (opened 7) (images 9) B f z d
+      (density 4) (density 5) (density 6) I (opened 8) guards))
+    (hQ : Derives Γ (SyntaxTermSyntax.term w z d Q))
+    (hK : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z d K))
+    (hPrefix : Derives Γ (StructuralListSyntax.consCode w Q K (images 8)))
+    (hFr : Derives Γ (ForcingReflexiveImages.replacement w f z d (images 9) j t Fr))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (head O : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (ForcingGuardOpening.result false R (r w) (r z) (r f) (r d) (r t)
+        (r (images 9)) (r B) (r (density 1)) (r (density 4)) (r (guards 1))) →
+      Derives Δ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder R) (r w) (r z)
+        (r f) (r d) (r Q) (r Fr) (r A) head O (r (guards 2))) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hInput := Derives.conjL hOpen
+  have hw := Derives.conjL hInput
+  have hz := Derives.conjL (.conjR hInput)
+  have hB := Derives.conjL (.conjR (.conjR hInput))
+  have ht := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hInput))))))
+  have hRCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))
+  have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
+  have hLists := SyntaxCodedMixedBinderTyping.input_lists w (images 8) (images 9) A f z d B c
+    (opened 2) (opened 3) hLift
+  have hU := Derives.conjL hLists
+  have hzA := SyntaxIndexLiftOrder.zero_member hZ w a A z hw (.conjL hK) hA hz
+  have hzB := SyntaxIndexLiftOrder.zero_member hZ w A B z hw (.conjL hU) hB hz
+  have hTField := StructuralListFieldCons.zero_value hZ w t (images 8) (opened 7) z hw
+    (SyntaxTerms.range hZ w z d t hw ht) (.conjL (.conjL (.conjR (.conjR hU)))) hRCons hz
+  have hQField := StructuralListFieldCons.zero_value hZ w Q K (images 8) z hw
+    (SyntaxTerms.range hZ w z d Q hw hQ) (.conjL (.conjL (.conjR (.conjR hK)))) hPrefix hz
+  have hHeadData := Derives.conjL hDensity
+  have ez := OmegaUniversal.empty_unique (density 0) z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjL hHeadData) hz
+  have hHead := SyntaxVariableImagePoint.code_subst_index true w (density 0) (density 1) z ez
+    (.conjL (.conjR hHeadData))
+  have hM := ForcingGuardOpening.from_lifted_at hZ false R w z B f z d (opened 7) (images 9)
+    (density 1) t (density 4) (guards 1) hw hz hHead hzB hTField
+    (.conjL (.conjR (.conjR (.conjR hDensity)))) (.conjL (.conjR (.conjL hGuards)))
+  refine ForcingExistOrderOpening.with_prefixed_guard hZ R w z A B f j d (opened 7) (images 9)
+    (images 8) t Q Fr (density 5) (guards 2) hw hz ht hU hRCons hzA hQField hFr
+    (.conjL (.conjR (.conjR (.conjR (.conjR hDensity))))) (.conjL (.conjR (.conjR hGuards))) out ?_
+  intro l Δ r head O hZ1 lift hOrder
+  exact use r head O hZ1 lift
+    (of_eq (ForcingGuardOpening.result_rename false R _ _ _ _ _ _ _ _ _ _ r) (lift hM)) hOrder
+
 /-- Read both actual witness guards in the same scope as the operand
 queries. The order guard uses the already selected r table, and its
 old head is the q term retained in the actual prefix. The q membership
@@ -1520,32 +1573,17 @@ theorem with_witness_guard_results {k m} {Γ : Context m} (hZ : ZFContext.Eviden
   have hInput := Derives.conjL hOpen
   have hw := Derives.conjL hInput
   have hz := Derives.conjL (.conjR hInput)
-  have hB := Derives.conjL (.conjR (.conjR hInput))
-  have ht := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hInput))))))
-  have hRCons := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hOpen)))))))
   have hLift := Derives.conjL (.conjR (.conjR (.conjR hOpen)))
   have hLists := SyntaxCodedMixedBinderTyping.input_lists w (images 8) (images 9) A f z d B c
     (opened 2) (opened 3) hLift
   have hU := Derives.conjL hLists
   have hFree := Derives.conjR hLists
   have hzA := SyntaxIndexLiftOrder.zero_member hZ w a A z hw (.conjL hK) hA hz
-  have hzB := SyntaxIndexLiftOrder.zero_member hZ w A B z hw (.conjL hU) hB hz
-  have hTField := StructuralListFieldCons.zero_value hZ w t (images 8) (opened 7) z hw
-    (SyntaxTerms.range hZ w z d t hw ht) (.conjL (.conjL (.conjR (.conjR hU)))) hRCons hz
   have hQField := StructuralListFieldCons.zero_value hZ w Q K (images 8) z hw
     (SyntaxTerms.range hZ w z d Q hw hQ) (.conjL (.conjL (.conjR (.conjR hK)))) hPrefix hz
-  have hHeadData := Derives.conjL hDensity
-  have ez := OmegaUniversal.empty_unique (density 0) z (ZFContext.arithmetic hZ).base.extensionality
-    (.conjL hHeadData) hz
-  have hHead := SyntaxVariableImagePoint.code_subst_index true w (density 0) (density 1) z ez
-    (.conjL (.conjR hHeadData))
-  have hM := ForcingGuardOpening.from_lifted_at hZ false R w z B f z d (opened 7) (images 9)
-    (density 1) t (density 4) (guards 1) hw hz hHead hzB hTField
-    (.conjL (.conjR (.conjR (.conjR hDensity)))) (.conjL (.conjR (.conjL hGuards)))
-  refine ForcingExistOrderOpening.with_prefixed_guard hZ R w z A B f j d (opened 7) (images 9)
-    (images 8) t Q Fr (density 5) (guards 2) hw hz ht hU hRCons hzA hQField hFr
-    (.conjL (.conjR (.conjR (.conjR (.conjR hDensity))))) (.conjL (.conjR (.conjR hGuards))) out ?_
-  intro l Δ r head O hZ1 lift hOrder
+  refine with_opened_witness_guards hZ R w z a A B f j N D b c d t L S X V E Q K Fr
+    density images opened guards I hA hDensity hOpen hGuards hQ hK hPrefix hFr out ?_
+  intro l Δ r head O hZ1 lift hMember hOrder
   refine with_weakened_query hZ1 (r w) (r z) (r A) (r f) (r b) (r d) (r L) (r S) (r SourceQ) (r OldQ)
     (r ∘ images) (of_eq (omega_rename w r) (lift hw))
     (of_eq (ForcingWeakenedImages.data_rename w A f z b d L S images r) (lift (.conjL (.conjR hOpen))))
@@ -1661,7 +1699,8 @@ theorem with_witness_guard_results {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     (use ε (κ (τ (s head))) (κ (τ (s O))) Q' Extra Local hZ4 lift3
       (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ κ) (move3 hExtra))
       (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ κ) (move3 hWeakQ)) hMemberQ4
-      (of_eq (ForcingGuardOpening.result_rename false R _ _ _ _ _ _ _ _ _ _ ε) (lift3 hM))
+      (of_eq (ForcingGuardOpening.result_rename false R _ _ _ _ _ _ _ _ _ _ (κ ∘ τ ∘ s))
+        (of_eq (by simp only [SourceAlgebra.rename_comp]; rfl) (move3 (move2 (move hMember)))))
       hOrder4 (.conjR hLocal) pExtra pMemberQ pMemberR pOrder pNeg)
 
 set_option maxHeartbeats 800000 in
