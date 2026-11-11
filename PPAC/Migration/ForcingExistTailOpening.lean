@@ -18,35 +18,42 @@ set_option maxRecDepth 32768
 set_option maxHeartbeats 2500000
 attribute [local irreducible] NaturalRecursionSyntax.matrix
 
-def openedData {m} (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) : Formula m :=
-  (singleCode 10 w (v 0) Q).conj
+def quantifiedData {m} (universal : Bool) (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) : Formula m :=
+  (singleCode (SyntaxLogicalSyntax.quantifierTag universal) w (v 0) Q).conj
     ((lifted w R S a f c T (v 1) (v 2) (v 3) (v 4)).conj
       (substituted w (v 3) (v 4) (v 1) f (v 2) T x (v 0)))
 
-theorem openedData_rename {m l} (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) (ρ : Fin m → Fin l) :
-    (openedData w R S a f c T x Q v).rename ρ =
-      openedData (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) (fun i => ρ (v i)) := by
-  simp only [openedData, Formula.rename, singleCode_rename, lifted_rename, substituted_rename]
+theorem quantifiedData_rename {m l} (universal : Bool) (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) (ρ : Fin m → Fin l) :
+    (quantifiedData universal w R S a f c T x Q v).rename ρ =
+      quantifiedData universal (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) (fun i => ρ (v i)) := by
+  simp only [quantifiedData, Formula.rename, singleCode_rename, lifted_rename, substituted_rename]
 
-def openedBody {m} (w R S a f c T x Q : Fin m) : Formula (m+5) :=
-  openedData (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q) (slot 5)
-def opened {m} (w R S a f c T x Q : Fin m) : Formula m :=
-  existsMany 5 (openedBody w R S a f c T x Q)
+private def quantifiedBody {m} (universal : Bool) (w R S a f c T x Q : Fin m) : Formula (m+5) :=
+  quantifiedData universal (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q) (slot 5)
+def quantifiedOutput {m} (universal : Bool) (w R S a f c T x Q : Fin m) : Formula m :=
+  existsMany 5 (quantifiedBody universal w R S a f c T x Q)
 
-theorem opened_rename {m l} (w R S a f c T x Q : Fin m) (ρ : Fin m → Fin l) :
-    (opened w R S a f c T x Q).rename ρ =
-      opened (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) := by
-  simp only [opened, openedBody, existsMany_rename, openedData_rename, lift_old, lift_slot]
+theorem quantifiedOutput_rename {m l} (universal : Bool) (w R S a f c T x Q : Fin m) (ρ : Fin m → Fin l) :
+    (quantifiedOutput universal w R S a f c T x Q).rename ρ =
+      quantifiedOutput universal (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) := by
+  simp only [quantifiedOutput, quantifiedBody, existsMany_rename, quantifiedData_rename, lift_old, lift_slot]
 
 /-- The original unary reader and its original four lifted-environment
 witnesses, packed together without prescribing any of their values. -/
-theorem quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem quantified_output {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (universal : Bool)
     (w R S a f c T n x Q : Fin m) (hw : Derives Γ (omega w))
-    (hc : Derives Γ (singleCode 10 w x n))
+    (hc : Derives Γ (singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n))
     (hq : Derives Γ (substituted w R S a f c T n Q)) :
-    Derives Γ (opened w R S a f c T x Q) := by
-  have ho := ForcingMixedUnary.single_output hZ 10 true (.inr (.inr ⟨rfl, rfl⟩)) w R S a f c T n x Q hw hc hq
-  let E := (singleCode 10 w.castSucc (Fin.last m) Q.castSucc).conj
+    Derives Γ (quantifiedOutput universal w R S a f c T x Q) := by
+  have valid : (SyntaxLogicalSyntax.quantifierTag universal = 4 ∧ true = false) ∨
+      (SyntaxLogicalSyntax.quantifierTag universal = 9 ∧ true = true) ∨
+      (SyntaxLogicalSyntax.quantifierTag universal = 10 ∧ true = true) := by
+    cases universal
+    · exact .inr (.inr ⟨rfl, rfl⟩)
+    · exact .inr (.inl ⟨rfl, rfl⟩)
+  have ho := ForcingMixedUnary.single_output hZ (SyntaxLogicalSyntax.quantifierTag universal) true valid
+    w R S a f c T n x Q hw hc hq
+  let E := (singleCode (SyntaxLogicalSyntax.quantifierTag universal) w.castSucc (Fin.last m) Q.castSucc).conj
     (SyntaxMixedFormulaRecursiveSyntax.check true w.castSucc x.castSucc R.castSucc S.castSucc a.castSucc f.castSucc c.castSucc T.castSucc (Fin.last m))
   let Δ := Context.add E (Context.image Formula.raise Γ)
   apply Derives.exE (p := E) ho
@@ -60,12 +67,38 @@ theorem quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (HornBinderRules.under_body 4 hE B)
   let v : Fin 5 → Fin (m+1+4) := Fin.cases (old 4 (Fin.last m))
     (Fin.cases (slot 4 0) (Fin.cases (slot 4 1) (Fin.cases (slot 4 2) (Fin.cases (slot 4 3) Fin.elim0))))
-  have hd : Derives Ξ (openedData (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q) v) :=
+  have hd : Derives Ξ (quantifiedData universal (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q) v) :=
     .conjI (.conjL he) hB
-  have hout : Derives Ξ (opened (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q)) := by
+  have hout : Derives Ξ (quantifiedOutput universal (old 5 w) (old 5 R) (old 5 S) (old 5 a) (old 5 f) (old 5 c) (old 5 T) (old 5 x) (old 5 Q)) := by
     apply HornBinderRules.intro_many 5 _ v
-    exact of_eq (by simp only [openedBody, openedData_rename, assign_old, assign_slot]) hd
-  exact of_eq (by simp only [Formula.raise, opened_rename]; rfl) hout
+    exact of_eq (by simp only [quantifiedBody, quantifiedData_rename, assign_old, assign_slot]) hd
+  exact of_eq (by simp only [Formula.raise, quantifiedOutput_rename]; rfl) hout
+
+def openedData {m} (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) : Formula m :=
+  quantifiedData false w R S a f c T x Q v
+
+theorem openedData_rename {m l} (w R S a f c T x Q : Fin m) (v : Fin 5 → Fin m) (ρ : Fin m → Fin l) :
+    (openedData w R S a f c T x Q v).rename ρ =
+      openedData (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) (fun i => ρ (v i)) :=
+  quantifiedData_rename false w R S a f c T x Q v ρ
+
+def openedBody {m} (w R S a f c T x Q : Fin m) : Formula (m+5) :=
+  quantifiedBody false w R S a f c T x Q
+
+def opened {m} (w R S a f c T x Q : Fin m) : Formula m :=
+  quantifiedOutput false w R S a f c T x Q
+
+theorem opened_rename {m l} (w R S a f c T x Q : Fin m) (ρ : Fin m → Fin l) :
+    (opened w R S a f c T x Q).rename ρ =
+      opened (ρ w) (ρ R) (ρ S) (ρ a) (ρ f) (ρ c) (ρ T) (ρ x) (ρ Q) :=
+  quantifiedOutput_rename false w R S a f c T x Q ρ
+
+theorem quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w R S a f c T n x Q : Fin m) (hw : Derives Γ (omega w))
+    (hc : Derives Γ (singleCode 10 w x n))
+    (hq : Derives Γ (substituted w R S a f c T n Q)) :
+    Derives Γ (opened w R S a f c T x Q) :=
+  quantified_output hZ false w R S a f c T n x Q hw hc hq
 
 /-- Source codes: tail, r-body, r-rest, EX-name, name-body, domain,
 child, inner-member, inner-order. This is exactly the original shell. -/

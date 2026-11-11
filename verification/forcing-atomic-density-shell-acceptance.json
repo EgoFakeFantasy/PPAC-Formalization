@@ -1,0 +1,113 @@
+{
+  "baseline_commit": "fb9e87dc98b3c3c58271ba67efc73bcdfd9efb3b",
+  "recorded_at": "2026-11-11T12:46:38.880542+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.with_mixed_shell",
+    "PPAC.Migration.ForcingDensityInstantiation.raw_shell_eq",
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell"
+  ],
+  "scope": "Read both actual lifts and all five leaf queries from the exact mixed substitution of the density shell. Extract the same six constructors from the actual canonical quotation. Under five object-theoretic leaf-code equalities, original constructor uniqueness yields equality of the full target codes. The five cross-environment equalities are still open.",
+  "both_actual_lifts_and_leaf_queries_retained": true,
+  "literal_canonical_shell_quotation_read": true,
+  "full_output_equality_given_leaf_equalities": true,
+  "five_cross_environment_equalities_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40191,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "39ef09b583660d24e1db413b58771d994685769598e9f10c15e8f10e54e6b567",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "68eb250748441741a4ba3d162f35f49042a953480612b0a0169bb286a270465a",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "352cdb0f9306234ee218710bb89be70c881dbf53adc126fba59f6a738d973ae7",
+      "PPAC/Migration/ForcingExistTailOpening.lean": "c518b3741780f6b52571523ec9e9d96d0473ee2953693e19e4e18d6bb6a4935d",
+      "docs/SOURCE_LOCK.json": "7d677ede9d74ceb088a18feaf570c814f57bb65bc04005361471568637e39a6d",
+      "scripts/verify.py": "7f10efc70ea27cae287fce546a27bdd588ad6cc46b0d5ee43e1ca7ead96f51ef"
+    }
+  },
+  "baseline_declarations_compared": 40177,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.densityLeafTree": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.mixedLeaves": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.mixedNodes": [
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.rawShell": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.rawShell_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.raw_of_shell": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.raw_shell_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.with_mixed_shell": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.quantifiedData": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.quantifiedData_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.quantifiedOutput": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.quantifiedOutput_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistTailOpening.quantified_output": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

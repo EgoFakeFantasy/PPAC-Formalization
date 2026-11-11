@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingAtomicCode
+import PPAC.Migration.ForcingDensityInstantiation
 import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingAtomicMonoImages
 import PPAC.Migration.ForcingAtomicMonoTemplate
@@ -221,6 +222,88 @@ def layoutHead {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
     ((densePremise equality R).rename (atCondition k))
   Fin.cases (leaf .preorder) (Fin.cases (leaf .member) (Fin.cases (leaf .order)
     (Fin.cases density (fun _ => leaf .newer))))
+
+open YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket (Tree)
+
+/-- The original five leaves with the common-table free roles and the two
+density binders in their native order. -/
+def densityLeafTree {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) : Fin 5 → Tree :=
+  let env : Fin (k+4) → Syntax.Tm [] (fo_bound_context (k+7)) :=
+    fun i => .fvar (fo_bound_variable (atCondition k i))
+  let q := Fin.last (k+4)
+  let r := Fin.last (k+5)
+  let atQ := fun p => PureSyntaxQuotation.formulaTree (Syntax.formula (Syntax.lift env) p)
+  let atR := fun p => PureSyntaxQuotation.formulaTree (Syntax.formula (Syntax.lift (Syntax.lift env)) p)
+  Fin.cases (atQ (.mem q (carrier k).castSucc))
+    (Fin.cases (atQ (ReplacementPredicates.rel R (paramsUp params) q (condition k).castSucc))
+      (Fin.cases (atR (.mem r (carrier k).castSucc.castSucc))
+        (Fin.cases (atR (ReplacementPredicates.rel R (paramsUp (paramsUp params)) r q.castSucc))
+          (fun _ => atR ((ForcingAtomicCode.sourceTemplate equality R).rename (witnessMap k))))))
+
+private def densityNodes (leaf : Fin 5 → Tree) : Fin 5 → Tree :=
+  let rRest : Tree := .node 5 [leaf 3, leaf 4]
+  let rBody : Tree := .node 5 [leaf 2, rRest]
+  let tail : Tree := .node 10 [rBody]
+  let qRest : Tree := .node 7 [leaf 1, tail]
+  let qBody : Tree := .node 7 [leaf 0, qRest]
+  Fin.cases rRest (Fin.cases rBody (Fin.cases tail (Fin.cases qRest (fun _ => qBody))))
+
+private theorem density_tree {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
+    PureSyntaxQuotation.formulaTree (layoutHead equality R 3) =
+      .node 9 [densityNodes (densityLeafTree equality R) 4] := by
+  change PureSyntaxQuotation.formulaTree (Syntax.formula (fun i => .fvar (fo_bound_variable i))
+    ((densePremise equality R).rename (atCondition k))) = _
+  rw [Syntax.rename]
+  rfl
+
+/-- Open the actual quotation consumed by the canonical density proof. The
+subtrees are quoted from its literal layout and linked to that same root. -/
+theorem with_quoted_shell {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2)) (w D : Fin m)
+    (hw : Source.Derives Γ (omega w))
+    (hD : Source.Derives Γ (PureQuotationSyntax.formula (layoutHead equality R 3) w D))
+    (out : Source.Formula m)
+    (use : ∀ {l} {Δ : Source.Context l} (r : Fin m → Fin l) (leaf v : Fin 5 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Source.Formula m}, Source.Derives Γ F → Source.Derives Δ (F.rename r)) →
+      (∀ i, Source.Derives Δ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R i) (r w) (leaf i))) →
+      Source.Derives Δ (ForcingDensityInstantiation.rawShell (r w) (r D) leaf v) →
+      Source.Derives Δ (out.rename r)) : Source.Derives Γ out := by
+  let leaf := densityLeafTree equality R
+  let node := densityNodes leaf
+  let trees : Fin (5+5) → Tree := Fin.addCases (motive := fun _ => Tree) leaf node
+  apply ProjectCompilerQuotation.eliminate_quotations hZ (5+5) trees w hw out
+  intro l Δ r xs hZ1 lift hTrees
+  let L : Fin 5 → Fin l := fun i => xs (i.castAdd 5)
+  let V : Fin 5 → Fin l := fun i => xs (i.natAdd 5)
+  let quoted := fun t => OriginalTreeQuotationSyntax.tree t (r w)
+  have hLeaf (i : Fin 5) : Source.Derives Δ (quoted (leaf i) (L i)) := by
+    simpa only [trees, L, Fin.addCases_left] using hTrees (i.castAdd 5)
+  have hNode (i : Fin 5) : Source.Derives Δ (quoted (node i) (V i)) := by
+    simpa only [trees, V, Fin.addCases_right] using hTrees (i.natAdd 5)
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hRoot : Source.Derives Δ (quoted (.node 9 [node 4]) (r D)) :=
+    of_eq (congrArg (fun t => quoted t (r D)) (density_tree equality R))
+      (of_eq (PureQuotationSyntax.formula_rename (layoutHead equality R 3) w D r) (lift hD))
+  have unary (tag : Nat) (t : Tree) (x p : Fin l)
+      (hx : Source.Derives Δ (quoted t x))
+      (hp : Source.Derives Δ (quoted (.node tag [t]) p)) :
+      Source.Derives Δ (SyntaxLogicalSyntax.singleCode tag (r w) x p) :=
+    OriginalQuotationNodeFields.tree_to_constructor hZ1 tag [t] (r w) p (fun _ => x) hw1
+      (.conjI hx (.eqRefl (r w))) hp
+  have binary (kind : Fin 4) (t u : Tree) (x y p : Fin l)
+      (hx : Source.Derives Δ (quoted t x)) (hy : Source.Derives Δ (quoted u y))
+      (hp : Source.Derives Δ (quoted (.node (5+kind.val) [t,u]) p)) :
+      Source.Derives Δ (SyntaxLogicalSyntax.binaryCode kind (r w) x y p) :=
+    OriginalQuotationNodeFields.tree_to_constructor hZ1 (5+kind.val) [t,u] (r w) p
+      (SyntaxAtomSyntax.two x y) hw1 (.conjI hx (.conjI hy (.eqRefl (r w)))) hp
+  exact use r L V hZ1 lift hLeaf
+    (.conjI (unary 9 (node 4) (V 4) (r D) (hNode 4) hRoot)
+      (.conjI (binary 2 (leaf 0) (node 3) (L 0) (V 3) (V 4) (hLeaf 0) (hNode 3) (hNode 4))
+        (.conjI (binary 2 (leaf 1) (node 2) (L 1) (V 2) (V 3) (hLeaf 1) (hNode 2) (hNode 3))
+          (.conjI (unary 10 (node 1) (V 1) (V 2) (hNode 1) (hNode 2))
+            (.conjI (binary 0 (leaf 2) (node 0) (L 2) (V 0) (V 1) (hLeaf 2) (hNode 0) (hNode 1))
+              (binary 0 (leaf 3) (leaf 4) (L 3) (L 4) (V 0) (hLeaf 3) (hLeaf 4) (hNode 0)))))))
 
 private def layoutTail {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
     Fin 5 → PureSyntaxQuotation.Fm [] (fo_bound_context (k+7)) :=

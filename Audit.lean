@@ -40219,6 +40219,11 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationImages.mapped_variable_arity
 
 #print axioms PPAC.Migration.ForcingExistTailOpening.openedData
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantifiedData
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantifiedData_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantifiedOutput
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantifiedOutput_rename
+#print axioms PPAC.Migration.ForcingExistTailOpening.quantified_output
 #print axioms PPAC.Migration.ForcingExistTailOpening.openedData_rename
 #print axioms PPAC.Migration.ForcingExistTailOpening.openedBody
 #print axioms PPAC.Migration.ForcingExistTailOpening.opened
@@ -40801,6 +40806,13 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensityConstant.truthSentence
 #print axioms PPAC.Migration.ForcingSourceDensityConstant.truth_kernel_certificate
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData
+#print axioms PPAC.Migration.ForcingDensityInstantiation.rawShell
+#print axioms PPAC.Migration.ForcingDensityInstantiation.rawShell_rename
+#print axioms PPAC.Migration.ForcingDensityInstantiation.raw_of_shell
+#print axioms PPAC.Migration.ForcingDensityInstantiation.raw_shell_eq
+#print axioms PPAC.Migration.ForcingDensityInstantiation.mixedLeaves
+#print axioms PPAC.Migration.ForcingDensityInstantiation.mixedNodes
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_mixed_shell
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point_rename
@@ -40868,6 +40880,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.falsumSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.densityLeafTree
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_native

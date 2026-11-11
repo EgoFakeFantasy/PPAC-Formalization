@@ -1,4 +1,6 @@
 import PPAC.Migration.ForcingDensityCode
+import PPAC.Migration.ForcingExistTailOpening
+import PPAC.Migration.Internal.ProjectCompilerUniqueTransport
 import PPAC.Migration.ForcingRawModalBody
 import PPAC.Migration.NativeProofQuotation
 
@@ -507,5 +509,157 @@ theorem with_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
       (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ i) (lift5 hLift4))
       (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ yh i) (lift5 hRaw4))
       (of_eq (pointData_rename _ _ _ _ _ _ _ _ _ _ v i) (lift5 hv)) hx)
+
+open ForcingExistTailOpening (quantifiedData quantifiedData_rename quantified_output)
+open ForcingRawModalBody (nestedData nestedData_rename nested_from_query)
+
+section MixedShell
+
+set_option maxHeartbeats 1200000
+
+/-- The six original constructors, with the two outer guards followed by the
+two inner guards and witness body in `leaf`. -/
+def rawShell {m} (w D : Fin m) (leaf v : Fin 5 → Fin m) : Formula m :=
+  (singleCode 9 w (v 4) D).conj
+    ((binaryCode 2 w (leaf 0) (v 3) (v 4)).conj
+      ((binaryCode 2 w (leaf 1) (v 2) (v 3)).conj
+        ((singleCode 10 w (v 1) (v 2)).conj
+          ((binaryCode 0 w (leaf 2) (v 0) (v 1)).conj (binaryCode 0 w (leaf 3) (leaf 4) (v 0))))))
+
+theorem rawShell_rename {m l} (w D : Fin m) (leaf v : Fin 5 → Fin m) (ρ : Fin m → Fin l) :
+    (rawShell w D leaf v).rename ρ = rawShell (ρ w) (ρ D) (ρ ∘ leaf) (ρ ∘ v) := by
+  simp only [rawShell, Formula.rename, singleCode_rename, binaryCode_rename, Function.comp_apply]
+
+theorem raw_of_shell {m} {Γ : Context m} (w a A B f D : Fin m) (leaf v : Fin 5 → Fin m)
+    (h : Derives Γ (ForcingDensityCode.shellData w a A B f (leaf 0) (leaf 1) (leaf 2) (leaf 3) (leaf 4) D v)) :
+    Derives Γ (rawShell w D leaf v) := by
+  have h1 := Derives.conjR h
+  have h2 := Derives.conjR h1
+  have h3 := Derives.conjR h2
+  have h4 := Derives.conjR h3
+  exact .conjI (.conjL (.conjR h4)) (.conjI (.conjL (.conjL h4))
+    (.conjI (.conjL (.conjL h3)) (.conjI (.conjL (.conjL h2))
+      (.conjI (.conjL (.conjL h1)) (.conjL (.conjL h))))))
+
+/-- Once the five outputs agree, the actual two-binder codes agree. Both
+traces may use independent object witnesses for every constructor. -/
+theorem raw_shell_eq {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w D E : Fin m) (leaf leaf' v v' : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hLeaf : ∀ i, Derives Γ (.equal (leaf i) (leaf' i)))
+    (hD : Derives Γ (rawShell w D leaf v)) (hE : Derives Γ (rawShell w E leaf' v')) :
+    Derives Γ (.equal D E) := by
+  have unary (tag : Nat) (x y p q : Fin m) (hxy : Derives Γ (.equal x y))
+      (hp : Derives Γ (singleCode tag w x p)) (hq : Derives Γ (singleCode tag w y q)) :
+      Derives Γ (.equal p q) :=
+    SyntaxLogicalFields.single_unique hZ tag w y p q hw
+      (ProjectCompilerUniqueTransport.single_input tag w x p y hxy hp) hq
+  have binary (kind : Fin 4) (x y x' y' p q : Fin m)
+      (hx : Derives Γ (.equal x x')) (hy : Derives Γ (.equal y y'))
+      (hp : Derives Γ (binaryCode kind w x y p)) (hq : Derives Γ (binaryCode kind w x' y' q)) :
+      Derives Γ (.equal p q) :=
+    SyntaxLogicalFields.binary_unique hZ kind w x' y' p q hw
+      (ProjectCompilerUniqueTransport.binary_right kind w x' y p y' hy
+        (ProjectCompilerUniqueTransport.binary_left kind w x y p x' hx hp)) hq
+  have hD1 := Derives.conjR hD
+  have hE1 := Derives.conjR hE
+  have hD2 := Derives.conjR hD1
+  have hE2 := Derives.conjR hE1
+  have hD3 := Derives.conjR hD2
+  have hE3 := Derives.conjR hE2
+  have hD4 := Derives.conjR hD3
+  have hE4 := Derives.conjR hE3
+  have e0 := binary 0 _ _ _ _ _ _ (hLeaf 3) (hLeaf 4) (.conjR hD4) (.conjR hE4)
+  have e1 := binary 0 _ _ _ _ _ _ (hLeaf 2) e0 (.conjL hD4) (.conjL hE4)
+  have e2 := unary 10 _ _ _ _ e1 (.conjL hD3) (.conjL hE3)
+  have e3 := binary 2 _ _ _ _ _ _ (hLeaf 1) e2 (.conjL hD2) (.conjL hE2)
+  have e4 := binary 2 _ _ _ _ _ _ (hLeaf 0) e3 (.conjL hD1) (.conjL hE1)
+  exact unary 9 _ _ _ _ e4 (.conjL hD) (.conjL hE)
+
+def mixedLeaves {m} (x y : Fin 4 → Fin m) : Fin 5 → Fin m :=
+  Fin.cases (x 1) (Fin.cases (x 2) (Fin.cases (y 1) (Fin.cases (y 2) (fun _ => y 3))))
+
+def mixedNodes {m} (u t : Fin 5 → Fin m) (x y : Fin 4 → Fin m) : Fin 5 → Fin m :=
+  Fin.cases (y 0) (Fin.cases (t 0) (Fin.cases (x 3) (Fin.cases (x 0) (fun _ => u 0))))
+
+/-- Read the actual substituted density formula under both condition binders.
+The outer guards use one lift of the original lists, and the inner guards and
+atomic witness use the second lift of those same lists. -/
+theorem with_mixed_shell {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w L S a f c b D E : Fin m) (leaf v : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hs : Derives Γ (rawShell w D leaf v))
+    (hq : Derives Γ (substituted w L S a f c b D E)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (u t : Fin 5 → Fin l) (x y : Fin 4 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (quantifiedData true (r w) (r L) (r S) (r a) (r f) (r c) (r b) (r (v 4)) (r E) u) →
+      Derives Δ (nestedData 2 (r w) (u 3) (u 4) (u 1) (r f) (u 2) (r b)
+        (r (leaf 0)) (r (leaf 1)) (r (v 2)) (r (v 3)) (u 0) x) →
+      Derives Δ (quantifiedData false (r w) (u 3) (u 4) (u 1) (r f) (u 2) (r b) (r (v 1)) (x 3) t) →
+      Derives Δ (nestedData 0 (r w) (t 3) (t 4) (t 1) (r f) (t 2) (r b)
+        (r (leaf 2)) (r (leaf 3)) (r (leaf 4)) (r (v 0)) (t 0) y) →
+      Derives Δ (rawShell (r w) (r E) (mixedLeaves x y) (mixedNodes u t x y)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hOuter := quantified_output hZ true w L S a f c b D (v 4) E hw (.conjL hs) hq
+  refine eliminate_objects hZ 5 (fun r u => quantifiedData true
+    (r w) (r L) (r S) (r a) (r f) (r c) (r b) (r (v 4)) (r E) u) hOuter out ?_
+  intro l Δ r u hZ1 lift hu
+  have hs1 := of_eq (rawShell_rename w D leaf v r) (lift hs)
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hImps := nested_from_query hZ1 2 (r w) (u 3) (u 4) (u 1) (r f) (u 2) (r b)
+    (r (leaf 0)) (r (leaf 1)) (r (v 2)) (r (v 3)) (r (v 4)) (u 0) hw1
+    (.conjL (.conjR hs1)) (.conjL (.conjR (.conjR hs1))) (.conjR (.conjR hu))
+  refine eliminate_objects hZ1 4 (fun s x => nestedData 2 (s (r w)) (s (u 3)) (s (u 4))
+    (s (u 1)) (s (r f)) (s (u 2)) (s (r b)) (s (r (leaf 0))) (s (r (leaf 1)))
+    (s (r (v 2))) (s (r (v 3))) (s (u 0)) x) hImps (out.rename r) ?_
+  intro l1 Δ1 s x hZ2 lift1 hx
+  let R := s ∘ r
+  let U := s ∘ u
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hs2 := of_eq (rawShell_rename w D leaf v R) (carry hs)
+  have hw2 := of_eq (omega_rename w R) (carry hw)
+  have hu2 := of_eq (quantifiedData_rename true (r w) (r L) (r S) (r a) (r f) (r c) (r b)
+    (r (v 4)) (r E) u s) (lift1 hu)
+  have hInner := quantified_output hZ2 false (R w) (U 3) (U 4) (U 1) (R f) (U 2) (R b)
+    (R (v 2)) (R (v 1)) (x 3) hw2 (.conjL (.conjR (.conjR (.conjR hs2))))
+    (.conjR (.conjR (.conjR hx)))
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine eliminate_objects hZ2 5 (fun e t => quantifiedData false (e (R w)) (e (U 3)) (e (U 4))
+    (e (U 1)) (e (R f)) (e (U 2)) (e (R b)) (e (R (v 1))) (e (x 3)) t) hInner (out.rename R) ?_
+  intro l2 Δ2 e t hZ3 lift2 ht
+  let Q := e ∘ R
+  let V := e ∘ U
+  let X := e ∘ x
+  have carry2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename Q) :=
+    of_eq (SourceAlgebra.rename_comp F R e) (lift2 (carry h))
+  have hs3 := of_eq (rawShell_rename w D leaf v Q) (carry2 hs)
+  have hw3 := of_eq (omega_rename w Q) (carry2 hw)
+  have hu3 := of_eq (quantifiedData_rename true (R w) (R L) (R S) (R a) (R f) (R c) (R b)
+    (R (v 4)) (R E) U e) (lift2 hu2)
+  have hx3 := of_eq (nestedData_rename 2 (R w) (U 3) (U 4) (U 1) (R f) (U 2) (R b)
+    (R (leaf 0)) (R (leaf 1)) (R (v 2)) (R (v 3)) (U 0) x e) (lift2 hx)
+  have hAnds := nested_from_query hZ3 0 (Q w) (t 3) (t 4) (t 1) (Q f) (t 2) (Q b)
+    (Q (leaf 2)) (Q (leaf 3)) (Q (leaf 4)) (Q (v 0)) (Q (v 1)) (t 0) hw3
+    (.conjL (.conjR (.conjR (.conjR (.conjR hs3)))))
+    (.conjR (.conjR (.conjR (.conjR (.conjR hs3))))) (.conjR (.conjR ht))
+  refine of_eq (SourceAlgebra.rename_comp out R e).symm ?_
+  refine eliminate_objects hZ3 4 (fun j y => nestedData 0 (j (Q w)) (j (t 3)) (j (t 4))
+    (j (t 1)) (j (Q f)) (j (t 2)) (j (Q b)) (j (Q (leaf 2))) (j (Q (leaf 3)))
+    (j (Q (leaf 4))) (j (Q (v 0))) (j (t 0)) y) hAnds (out.rename Q) ?_
+  intro l3 Δ3 j y hZ4 lift3 hy
+  let T := j ∘ Q
+  have carry3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename T) :=
+    of_eq (SourceAlgebra.rename_comp F Q j) (lift3 (carry2 h))
+  have hU := of_eq (quantifiedData_rename true _ _ _ _ _ _ _ _ _ V j) (lift3 hu3)
+  have hX := of_eq (nestedData_rename 2 _ _ _ _ _ _ _ _ _ _ _ _ X j) (lift3 hx3)
+  have hT := of_eq (quantifiedData_rename false _ _ _ _ _ _ _ _ _ t j) (lift3 ht)
+  have target : Derives Δ3 (rawShell (T w) (T E) (mixedLeaves (j ∘ X) y)
+      (mixedNodes (j ∘ V) (j ∘ t) (j ∘ X) y)) :=
+    .conjI (.conjL hU) (.conjI (.conjL (.conjL hX)) (.conjI (.conjL (.conjR hX))
+      (.conjI (.conjL hT) (.conjI (.conjL (.conjL hy)) (.conjL (.conjR hy))))))
+  exact of_eq (SourceAlgebra.rename_comp out Q j).symm
+    (use T (j ∘ V) (j ∘ t) (j ∘ X) y hZ4 carry3 hU hX hT hy target)
+
+end MixedShell
 
 end PPAC.Migration.ForcingDensityInstantiation
