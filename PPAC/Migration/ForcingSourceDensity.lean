@@ -1244,7 +1244,8 @@ set_option maxHeartbeats 1000000 in
 /-- The original negative density witness supplies the actual q/r queries,
 the local guards and the negative proof. Raise the two outer proofs and replay
 original monotonicity there. The actual negative proof is instantiated at
-that same witness, and the original reflexive guards give falsum locally. -/
+that same witness, and the original existential elimination returns falsum
+under the original outer background. -/
 theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Formula (k+2)) (Dom : Formula (k+1))
     (w z a A B f j n N C b c d t L S D E G W H body Parent Yq Bot
@@ -1302,6 +1303,7 @@ theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Ev
       Derives Δ (implication test (ρ w) (ρ z) B' Local AtR) →
       Derives Δ (implication test (ρ w) (ρ z) B' Local NegR) →
       Derives Δ (implication test (ρ w) (ρ z) B' Local (ρ (negNodes 0))) →
+      Derives Δ (implication test (ρ w) (ρ z) (ρ d) (ρ H) (ρ (negNodes 0))) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   refine ForcingDensityInstantiation.with_negative_witness_queries hZ Reln w z a A B f j N C b c d t
     L S D E G W H body Parent Yq Bot images negOpen negData negNodes negOut hB hNeg hNegQueries
@@ -1385,14 +1387,24 @@ theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Ev
     (of_eq (ForcingNegCode.data_rename Reln _ _ _ _ _ _ _ negData ρ) (carry hCompiler))
     (of_eq (ForcingNegCode.shellData_rename _ _ _ _ _ _ _ _ negNodes ρ) (carry hShell))
     hAtR2 hNegR2 (.conjR hLocal2) pGlobal pAtR pNeg2
+  have hOpen2 := of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ t)
+    (move2 hOpen)
+  have hWeak2 := of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ t) (move2 hWeakExtra)
+  have pTail2 := of_eq (implication_rename test _ _ _ _ _ t) (move2 hTail)
+  have hOpenedBody := Derives.conjR (.conjR (.conjR (.conjR
+    (.conjR (.conjR (.conjR (.conjR hOpen2)))))))
+  have hBotCtor : Derives Ξ (SyntaxNodeSyntax.constructor 0 0 (ρ w) Fin.elim0 (ρ (negNodes 0))) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map])
+      (carry (.conjL (.conjL hShell)))
+  have pOuterBot := ForcingDensityGuards.negative_witness_discharge hZ2 (ρ w) (ρ z) (ρ d) (ρ c)
+    (t B') (ρ H) (t Extra) (t (u 8)) (t (u 4)) (t Tail) (t Local) (ρ (negNodes 0))
+    hw2 hz2 (of_eq (formulaCode_rename _ _ _ _ ρ) (carry hH)) hWeak2
+    (.conjR (.conjR (.conjR hOpenedBody))) (.conjL (.conjR hOpenedBody))
+    (.conjL hLocal2) hBotCtor pTail2 pBot
   exact of_eq (SourceAlgebra.rename_comp out s t).symm
     (use ρ (t B') (t T) (t Q) (t K') (t Fq) (t Fr) (t AtR) (t Tail) (t Bound)
       (t (shell 2)) (t (shell 1)) (t Extra) (t Local) (t (x 3)) R' B''
       (t ∘ v) (t ∘ u) Refl Pre U0 P nextImages rows layout hZ2 carry er eq
-      (of_eq (implication_rename test _ _ _ _ _ t) (move2 hTail))
-      (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ t)
-        (move2 hOpen))
-      (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ t) (move2 hWeakExtra))
-      hLocal2 hAtR2 hNegR2 hRuntime hPre pGlobal pAtR pNeg2 pBot)
+      pTail2 hOpen2 hWeak2 hLocal2 hAtR2 hNegR2 hRuntime hPre pGlobal pAtR pNeg2 pBot pOuterBot)
 
 end PPAC.Migration.ForcingSourceDensity

@@ -1,0 +1,72 @@
+{
+  "baseline_commit": "4e8bcb00e33f2872e944e5d402145c8d5feda8cc",
+  "recorded_at": "2026-11-11T18:43:58.150192+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "neg"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityGuards.negative_witness_discharge",
+    "PPAC.Migration.ForcingSourceDensity.with_negative_density_transfer"
+  ],
+  "scope": "Eliminate the exact original density existential. Curry and abstract the actual body-to-falsum implication, generalize it under the original outer background, then apply the original exists-elimination axiom and the actual density premise to prove falsum under H at its original free scope.",
+  "global_runtime_at_witness_assembled": true,
+  "positive_proof_transferred_to_r_under_global": true,
+  "preorder_row_agreement_consumed": true,
+  "local_proofs_composed_into_global": true,
+  "positive_proof_transferred_to_r_under_local": true,
+  "local_proofs_constructed_from_actual_witness": true,
+  "original_density_witness_consumed": true,
+  "supplied_outer_preorder_and_positive_proofs_raised": true,
+  "positive_and_negative_child_at_same_actual_r": true,
+  "outer_local_premises_from_canonical_runtime": false,
+  "reflexive_contradiction_under_local_witness": true,
+  "original_witness_existential_eliminated": true,
+  "original_outer_quantifier_closed": false,
+  "negative_source_induction_step_proved": false,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40248,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "a2c15aec51a0763b12008917f4a1823a036287974c3f325c82ac4224733c8aba",
+      "PPAC/Migration/ForcingDensityGuards.lean": "cf52d220e1de1007d1b5c98d31828de1ad576fc9a3a7c269c522bf68e61b2d8e",
+      "PPAC/Migration/ForcingSourceDensity.lean": "df32e4f508eee1e695f2c7d079d513ea4d5f1a2733763fec9a29c56fcd121b83",
+      "docs/CURRENT_STATUS.zh-CN.md": "ee6cff96aafd260c8462abb3255199c197288b215d371a4f622b0e57c4beaeb7",
+      "docs/SOURCE_LOCK.json": "0280c617ea2ae7916863503ce8793c80f657d4b622fe8b0d78b1a9157a83c80e",
+      "scripts/verify.py": "b7f4d7f34c8e47bc35f6615dbd37f436ee139299866749ef103b58b88693e534"
+    }
+  },
+  "baseline_declarations_compared": 40247,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityGuards.negative_witness_discharge": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

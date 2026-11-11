@@ -1538,7 +1538,7 @@ private theorem with_opened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidenc
   exact of_eq (SourceAlgebra.rename_comp out Fin.castSucc Fin.castSucc).symm
     (use R (Fin.last (m+1)) hZ2 move ha hV)
 
-private theorem eliminate_exists_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+private theorem with_exists_elimination_axiom {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b A B Open X N Branch All Tail : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
@@ -1547,13 +1547,19 @@ private theorem eliminate_exists_from_all {m} {Γ : Context m} (hZ : ZFContext.E
     (hBranch : Derives Γ (binaryCode 2 w X N Branch))
     (hAll : Derives Γ (singleCode 9 w Branch All))
     (hTail : Derives Γ (singleCode 10 w X Tail))
-    (hp : Derives Γ (proved test w z b All)) : Derives Γ (implication test w z b Tail N) := by
-  refine with_binary_formula hZ true w z b Tail N hw hTailT hN _ ?_
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (C Ax : Fin l),
+      ZFContext.Evidence Δ → (∀ {P : Formula m}, Derives Γ P → Derives Δ (P.rename r)) →
+      Derives Δ (binaryCode 2 (r w) (r Tail) (r N) C) →
+      Derives Δ (formulaCode (r w) C (r z) (r b)) →
+      Derives Δ (binaryCode 2 (r w) (r All) C Ax) →
+      Derives Δ (proved test (r w) (r z) (r b) Ax) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine with_binary_formula hZ true w z b Tail N hw hTailT hN out ?_
   intro l Δ r C hZ1 lift hc hCT
   have hw1 := of_eq (omega_rename _ _) (lift hw)
   have hAT := of_eq (formulaCode_rename _ _ _ _ _) (lift hAllT)
-  refine of_eq (implication_rename test w z b Tail N r).symm ?_
-  refine with_binary_formula hZ1 true (r w) (r z) (r b) (r All) C hw1 hAT hCT _ ?_
+  refine with_binary_formula hZ1 true (r w) (r z) (r b) (r All) C hw1 hAT hCT (out.rename r) ?_
   intro l1 Δ1 s Ax hZ2 lift1 hAx _
   let R := s ∘ r
   have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
@@ -1568,15 +1574,143 @@ private theorem eliminate_exists_from_all {m} {Γ : Context m} (hZ : ZFContext.E
     (of_eq (binaryCode_rename _ _ _ _ _ _) (move hBranch))
     (of_eq (singleCode_rename _ _ _ _ _) (move hAll))
     (of_eq (singleCode_rename _ _ _ _ _) (move hTail)) hc2 hAx
-  have hResult := InternalProofConjunction.modus_ponens hZ2 test (R w) (R z) (R b) (R All) (s C) Ax
-    hw2 hz2 (of_eq (formulaCode_rename _ _ _ _ _) (move hAllT)) (of_eq (formulaCode_rename _ _ _ _ _) (lift1 hCT))
-    hAx (of_eq (proved_rename _ _ _ _ _ _) (move hp)) hProof
-  refine of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm ?_
-  apply Derives.exI (s C)
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use R (s C) Ax hZ2 move hc2 (of_eq (formulaCode_rename _ _ _ _ _) (lift1 hCT)) hAx hProof)
+
+private theorem eliminate_exists_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B Open X N Branch All Tail : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
+    (hAllT : Derives Γ (formulaCode w All z b)) (hTailT : Derives Γ (formulaCode w Tail z b))
+    (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Open X))
+    (hBranch : Derives Γ (binaryCode 2 w X N Branch))
+    (hAll : Derives Γ (singleCode 9 w Branch All))
+    (hTail : Derives Γ (singleCode 10 w X Tail))
+    (hp : Derives Γ (proved test w z b All)) : Derives Γ (implication test w z b Tail N) := by
+  refine with_exists_elimination_axiom hZ w z b A B Open X N Branch All Tail
+    hw hz hN hNB hAllT hTailT ha hBranch hAll hTail (implication test w z b Tail N) ?_
+  intro l Δ r C Ax hZ1 lift hc hCT hAx hProof
+  have hResult := InternalProofConjunction.modus_ponens hZ1 test (r w) (r z) (r b) (r All) C Ax
+    (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hAllT)) hCT hAx
+    (of_eq (proved_rename _ _ _ _ _ _) (lift hp)) hProof
+  refine of_eq (implication_rename test _ _ _ _ _ r).symm ?_
+  apply Derives.exI C
   exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
     SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
-    (.conjI hc2 hResult : Derives Δ1
-      ((binaryCode 2 (R w) (R Tail) (R N) (s C)).conj (proved test (R w) (R z) (R b) (s C))))
+    (.conjI hc hResult)
+
+set_option maxHeartbeats 800000 in
+/-- Discharge the actual opened existential after deriving falsum from its
+body together with the weakened outer background. -/
+theorem negative_witness_discharge {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B G Extra Body Bound Tail Local Bot : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hG : Derives Γ (formulaCode w G z b))
+    (hWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b B G Extra))
+    (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Body Bound))
+    (he : Derives Γ (singleCode 10 w Bound Tail))
+    (hLocal : Derives Γ (binaryCode 0 w Extra Body Local))
+    (hBot : Derives Γ (SyntaxNodeSyntax.constructor 0 0 w Fin.elim0 Bot))
+    (pTail : Derives Γ (implication test w z b G Tail))
+    (pBot : Derives Γ (implication test w z B Local Bot)) :
+    Derives Γ (implication test w z b G Bot) := by
+  have hEnv := SyntaxTopFormulaTyping.abstract_environment w z b A B Body Bound ha
+  have hA := Derives.conjL (.conjR hEnv)
+  have hBody := SyntaxTopFormulaTyping.abstract_source_type hZ w z b A B Body Bound hw ha
+  have hBound := SyntaxTopFormulaTyping.abstract_target_type w z b A B Body Bound ha
+  have hTail := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false w z b Bound Tail A hw he hA))
+    (.conjI (.conjL hEnv) hBound)
+  have bot_type (a b : Fin m) (hc : Derives Γ (SyntaxTermSyntax.contexts w a b)) :
+      Derives Γ (formulaCode w Bot a b) :=
+    .impE (.conjR (FormulaCodeKnownAtomic.nullary_iff hZ false w a b Bot hw hBot)) hc
+  have hBotOld := bot_type z b (.conjL hEnv)
+  have hBotBound := bot_type A b (.conjR (FormulaCodeProperties.guards w Bound A b hBound))
+  have hCtxNew := Derives.conjR (FormulaCodeProperties.guards w Body z B hBody)
+  have hBotNew := bot_type z B hCtxNew
+  have hAbsBot := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_nullary_iff hZ false
+    w z b A B Bot Bot hw (.conjI hEnv hBotNew) hBot)) (.eqRefl Bot)
+  have hExtra := SyntaxWeakenFreeOutput.target_type w z b B G Extra hWeak
+  have hAbsG := ForcingFreshBackground.derive hZ w z b A B G Extra
+    (.conjI hw (.conjI hz (.conjI hA hWeak)))
+  have hCurry := InternalProofCurry.from_implication hZ test w z B Extra Body Local Bot
+    hw hz hExtra hBody hBotNew hLocal pBot
+  let out := implication test w z b G Bot
+  refine eliminate_objects hZ 1 (fun r u =>
+    (binaryCode 2 (r w) (r Body) (r Bot) (u 0)).conj (implication test (r w) (r z) (r B) (r Extra) (u 0)))
+    hCurry out ?_
+  intro l Δ r u hZ1 lift hF
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  refine with_binary_formula hZ1 true (r w) (r A) (r b) (r Bound) (r Bot) hw1
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hBound))
+    (of_eq (formulaCode_rename _ _ _ _ _) (lift hBotBound)) (out.rename r) ?_
+  intro l1 Δ1 s Branch hZ2 move hBranch hBranchT
+  let R := s ∘ r
+  let F := s (u 0)
+  have carry {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
+    of_eq (SourceAlgebra.rename_comp P r s) (move (lift h))
+  have hw2 := of_eq (omega_rename _ _) (carry hw)
+  have hz2 := of_eq (empty_rename _ _) (carry hz)
+  have hFCode := of_eq (binaryCode_rename 2 _ _ _ _ s) (move (.conjL hF))
+  have hFT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ2 (R w) (R z) (R B)
+    (R Body) (R Bot) F hw2 hFCode))
+    (.conjI (of_eq (SyntaxTermSyntax.contexts_rename _ _ _ _) (carry hCtxNew))
+      (.conjI (of_eq (formulaCode_rename _ _ _ _ _) (carry hBody))
+        (of_eq (formulaCode_rename _ _ _ _ _) (carry hBotNew))))
+  have hAbsF := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_binary_iff hZ2 2
+    (R w) (R z) (R b) (R A) (R B) F Branch (R Body) (R Bot) (R Bound) (R Bot) hw2
+    (.conjI (of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (carry hEnv)) hFT)
+    hFCode hBranch))
+    (.conjI (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (carry ha))
+      (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (carry hAbsBot)))
+  have hAll := ForcingProofUniversal.generalize_body hZ2 test (R w) (R z) (R b) (R A) (R B)
+    (R G) (R Extra) (R Body) (R Bot) F Branch hw2 hz2
+    (of_eq (formulaCode_rename _ _ _ _ _) (carry hG))
+    (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (carry hAbsG))
+    (.conjI hFCode (.conjI hFT (.conjI
+      (of_eq (implication_rename _ _ _ _ _ _ s) (move (.conjR hF))) (.conjI hAbsF hBranchT))))
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine eliminate_objects hZ2 1 (fun t x => (singleCode 9 (t (R w)) (t Branch) (x 0)).conj
+    (implication test (t (R w)) (t (R z)) (t (R b)) (t (R G)) (x 0))) hAll (out.rename R) ?_
+  intro l2 Δ2 t x hZ3 move2 hQuant
+  let S := t ∘ R
+  have carry2 {P : Formula m} (h : Derives Γ P) : Derives Δ2 (P.rename S) :=
+    of_eq (SourceAlgebra.rename_comp P R t) (move2 (carry h))
+  have hw3 := of_eq (omega_rename _ _) (carry2 hw)
+  have hz3 := of_eq (empty_rename _ _) (carry2 hz)
+  have hAllT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ3 true
+    (S w) (S z) (S b) (t Branch) (x 0) (S A) hw3 (.conjL hQuant)
+    (of_eq (successor_rename _ _ _) (carry2 hA))))
+    (.conjI (of_eq (SyntaxTermSyntax.contexts_rename _ _ _ _) (carry2 (.conjL hEnv)))
+      (of_eq (formulaCode_rename _ _ _ _ _) (move2 hBranchT)))
+  apply of_eq (SourceAlgebra.rename_comp out R t).symm
+  refine with_exists_elimination_axiom hZ3 (S w) (S z) (S b) (S A) (S B) (S Body) (S Bound) (S Bot)
+    (t Branch) (x 0) (S Tail) hw3 hz3
+    (of_eq (formulaCode_rename _ _ _ _ _) (carry2 hBotOld))
+    (of_eq (formulaCode_rename _ _ _ _ _) (carry2 hBotBound)) hAllT
+    (of_eq (formulaCode_rename _ _ _ _ _) (carry2 hTail))
+    (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (carry2 ha))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hBranch)) (.conjL hQuant)
+    (of_eq (singleCode_rename _ _ _ _ _) (carry2 he)) (out.rename S) ?_
+  intro l3 Δ3 v C Ax hZ4 move3 hC hCT hAx hpAx
+  let T := v ∘ S
+  have carry3 {P : Formula m} (h : Derives Γ P) : Derives Δ3 (P.rename T) :=
+    of_eq (SourceAlgebra.rename_comp P S v) (move3 (carry2 h))
+  have pAx : Derives Δ3 (implication test (T w) (T z) (T b) (v (x 0)) C) := by
+    apply Derives.exI Ax
+    exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+      SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
+      (.conjI hAx hpAx)
+  have hw4 := of_eq (omega_rename _ _) (carry3 hw)
+  have hz4 := of_eq (empty_rename _ _) (carry3 hz)
+  have hG4 := of_eq (formulaCode_rename _ _ _ _ _) (carry3 hG)
+  have pC := ForcingRelationGuardProof.chain hZ4 test (T w) (T z) (T b) (T G) (v (x 0)) C
+    hw4 hz4 hG4 (of_eq (formulaCode_rename _ _ _ _ _) (move3 hAllT)) hCT
+    (of_eq (implication_rename _ _ _ _ _ _ _) (move3 (.conjR hQuant))) pAx
+  exact of_eq (SourceAlgebra.rename_comp out S v).symm
+    (of_eq (implication_rename test _ _ _ _ _ T).symm
+      (ForcingNegMemberProof.discharge hZ4 test (T w) (T z) (T b) (T G) (T Tail) (T Bot) C
+        hw4 hz4 hG4 hCT hC (of_eq (implication_rename _ _ _ _ _ _ _) (carry3 pTail)) pC))
 
 private theorem eliminate_exists_from_body {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b A B Open X OpenedN N Tail : Fin m)

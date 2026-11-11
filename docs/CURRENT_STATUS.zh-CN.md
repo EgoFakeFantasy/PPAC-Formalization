@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceDensity.with_negative_density_transfer` 已消去实际见证的存在量词。由见证背景下的假式，原 Curry 和全称规则生成同一正文的全称蕴含，再用原存在消去规则及实际密度前提，在原作用域推出 `H → ⊥`。仍需从原运行记录构造 `H` 的外层前提并闭合原全称式。[整仓验收](../verification/forcing-negative-density-existential-discharge-acceptance.json)
+
 `ForcingSourceDensity.with_negative_density_transfer` 已消费同一见证处的正、负两条对象推导。它把实际全称否定在 `r` 处实例化，用同一偏序行证明成员守卫和 `r ≤ r`，再由 `ForcingRawNegTail.canonical_code` 确定否定实例中的操作数正是此前得到的 `r` 处正子式，最后以原 Root MP 得到局部背景下的假式。外层前提和量词闭合仍待完成。[整仓验收](../verification/forcing-negative-density-reflexive-contradiction-acceptance.json)
 
 `ForcingSourceDensity.with_negative_density_transfer` 已从原密度开式接通实际见证的单调性回放。它保留同一自由名字表，仅重建偏序的空绑定列，用原 Root 替换规则弱化给定的外层偏序和 `q` 处正子式推导。在实际见证的同一个局部背景下，现可推出 `r` 处原编译的正、负子式。外层局部前提仍需从原运行记录装配，否定分支还需用 `r ≤ r` 消去守卫并完成量词闭合。[整仓验收](../verification/forcing-negative-density-actual-transfer-acceptance.json)

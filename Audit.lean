@@ -40892,6 +40892,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_order_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.negative_reflexive_contradiction
+#print axioms PPAC.Migration.ForcingDensityGuards.negative_witness_discharge
 #print axioms PPAC.Migration.ForcingDensityGuards.witness_member_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
