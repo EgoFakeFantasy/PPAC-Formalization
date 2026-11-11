@@ -167669,7 +167669,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/ForcingGuardDiagram.lean": "eacc37653694c94d3d0b4fa5a81cfb746b04ceed4022f5645720a1c32eaa2436",
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
@@ -167680,6 +167680,7 @@
       },
       "scope": "Consumes ACTUAL original member OR relation guard compiler, SAME compiler head, lifted opening and native InstantiateTop result Y. All four original compiler witnesses retained/eliminated internally; direct bound forest [P] and original total direct formula output candidate are constructed internally, and candidate equality eliminated. SAME actual Y satisfies the direct mixed formula substitution of SAME original guard quotation by [P] and SAME original free table S, preserving arbitrary internal name-prefix offset and all binders. Does not assert literal R(P,P) before consuming the original selected-condition free-slot field; no guard internal proof/regularity, normalized forcing MP, uniform all-internal axiom/Proof preservation, reduction or final Con.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingGuardOpening.from_lifted_at": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingGuardOpening.from_lifted": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingGuardOpening.direct": [
           "Quot.sound",
@@ -167861,7 +167862,7 @@
         "PPAC/Migration/Internal/FormulaCodeKnownAtomic.lean": "03391cfc2e7870af22baea29e795aa56d547fb3075b2c7f1bca897fb81dd56e1",
         "PPAC/Migration/Internal/SyntaxAtomUnique.lean": "2892dc69445a6ffe93f5ae37c22c7811813f9bf5bf8c3aa301f84c34c84d5680",
         "PPAC/Migration/ForcingMemberGuardProof.lean": "0459654876c8d9fbf3195a1fd6d1166d8c97c0d36ccf308d82d981a4d466ce4e",
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/Internal/SyntaxTopFormulaTyping.lean": "b4589d18eac368e64c352fd322c607f44bb488f6a75ccb891be90cf9783c046b"
       },
@@ -168206,7 +168207,7 @@
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/ForcingReflexiveDiagram.lean": "bd181d28eb6cf4b7135912ebf1ffd96dfbd933b797e1ef5d37bfcb007a7a4ca7",
         "PPAC/Migration/ForcingGuardDiagram.lean": "eacc37653694c94d3d0b4fa5a81cfb746b04ceed4022f5645720a1c32eaa2436",
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean": "51f121505f1da4aa6ed35151b731867ff77b9ab1e6b1dbdc863cd9a16fedf572"
@@ -171423,7 +171424,7 @@
         "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingReflexiveImages.lean": "bc5fb7e215dd69990700c327f65a9cf12504a6e9fad28b7e18b5b24a3a8c9295",
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingMemberGuardOpening.lean": "c49000fdd03e9beb4f0754d0e7a3068545fe260a2060c322a013b817cae2b935",
         "PPAC/Migration/Internal/SyntaxNumerals.lean": "f4bfec6f423e7813de6c53fb0fc222859b48cc584661b0bd805df885095d7c79",
         "PPAC/Migration/Internal/StructuralListFieldValues.lean": "a5dd6f789902d3cb48d3f12a5f9e6d466f093b7affc9cfc3f08c442b562bf37e",
@@ -171950,7 +171951,7 @@
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
+        "PPAC/Migration/ForcingExistChildOpening.lean": "d8a9629853445a96dcf3d84d47ae82db83fc6b6aaef6fca026359d3c15f6657f",
         "PPAC/Migration/ForcingExistChildTerms.lean": "841f15cc00a5b70126189931d2954e98a22185e2fb9958079a5d071f9f2c4c79",
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
         "PPAC/Migration/ForcingExistChildCode.lean": "8aa7154469917b7e0ac0f3f612daf09e32ef9d61f394d0e178074034ff8fad74",
@@ -171969,6 +171970,8 @@
       },
       "scope": "ACTUAL original raw existential CHILD condition-independence, not the full raw existential TAIL. Reads the original coded binder four graph witnesses and original four shift/identity/head witnesses; no replacement map/head producer or new induction. SAME previously proved child four laws consumed in all four term cases. Internal Omega decomposition plus original successor/field existence internally generate/eliminate all old-index and closed-field witnesses. Existing full formula cancellation, identity code/environment producers and whole mixed output existence generate/erase four auxiliary identity witnesses and direct candidate; original TWELVE complete child compiler witnesses are object-eliminated by from_compiled. The result is a canonical mixed query at SAME ACTUAL raw output, not an expected equality/query answer. compare then actually consumes ForcingExistChildCanonical.formula to prove SAME actual output at TWO different outer-condition updates, preserving actual compiler, double binder openings, canonical overwrite/lift, common original parameter base and old-update judgments. Two ordinary nativeZF original-kernel closed sentence certificates. Original source a/A/B/C, free f/T, indices, lists, formulas and codes internal including nonstandard; target empty/c=succ(empty)/d=succ(c) are EXACT literal two target binder advances of closed opening, not assumptions that original forcing scopes are externally standard. No guard/preorder truth, object Choice, new kernel/checker/recursor/induction. Inner-order actual guard comparison is now separately proved by ForcingExistOrderOpening. Actual member guard comparison is now separately proved by ForcingExistMemberOpening; domain source-H query by ForcingExistDomainSource. Actual domain guard comparison is now proved by ForcingExistDomainOpening. Whole raw-tail component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistChildOpening.variable_fields": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingExistChildOpening.variableEquation": ["propext", "Quot.sound"],
         "PPAC.Migration.ForcingExistChildOpening.frame": [
           "Quot.sound",
           "propext"
@@ -172095,7 +172098,7 @@
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingExistOrderOpening.lean": "41474123469062c6f696233fa3b4805cdc50c0ee0b40cbbcd90016824bf993d7",
+        "PPAC/Migration/ForcingExistOrderOpening.lean": "9530fdef669b0a3158c93c3057fac936bb3d331989e3092041e89ef398375a34",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
@@ -172112,6 +172115,8 @@
       },
       "scope": "Actual ORIGINAL existential INNER ORDER guard R(r,q), preserving the still BOUND r and exact reverse relation. For arbitrary internal source a/A and free f/T, original SIX-witness rebind followed by ONE actual lifted opening yields the SAME canonical mixed query at the ACTUAL raw output. Existing three term actions, original field/successor existence and unchanged full internal formula cancellation are consumed; four identity witnesses and direct formula candidate are object-generated/eliminated. guard_compare consumes BOTH complete ForcingExistGuardsCode compilers, eliminates both THREE-witness outer records and SIX-witness rebind executions, internally identifies their original source guard codes by existing head/guard uniqueness, and uses original overwrite absorption plus whole mixed formula uniqueness to prove the actual opened codes equal under two outer-condition updates of SAME base. No expected source/output equality, guard truth, new compiler/checker/kernel/recursor/induction, object Choice or external standard-code restriction. Actual lifted opening and typed canonical overwrite tables remain operation hypotheses; fixed Reln is original finite source AST metadata. Ordinary nativeZF original-kernel closed sentence. Actual member guard comparison is now proved by ForcingExistMemberOpening and domain source-H query by ForcingExistDomainSource. Actual domain guard comparison is now proved by ForcingExistDomainOpening. Whole raw existential tail component consumption/two EX packaging, canonical proof contexts/fresh forall, original joint mono/dense/MP/internal axioms/six-rule Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingExistOrderOpening.with_lifted_guard": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingExistOrderOpening.with_rebound_lift_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingExistOrderOpening.formula": [
           "Classical.choice",
           "Quot.sound",
@@ -172549,7 +172554,7 @@
         "PPAC/Migration/ForcingExistDomainOpening.lean": "361e37209d974d7afba3cd72d537d03e2ae650ac7add68542e4fc5d8ddc53a53",
         "PPAC/Migration/ForcingExistDomainSource.lean": "9ee16ce203575caa730b61efeabd5faf9057cdd546240918f3e8e07ab799ea53",
         "PPAC/Migration/ForcingExistDomainImages.lean": "29828ebef9a2dcfa3ae59bca50caad9b09d698574f12ccb9472fd3be9922f485",
-        "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
+        "PPAC/Migration/ForcingExistChildOpening.lean": "d8a9629853445a96dcf3d84d47ae82db83fc6b6aaef6fca026359d3c15f6657f",
         "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
@@ -172890,9 +172895,9 @@
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingExistTailOpening.lean": "c518b3741780f6b52571523ec9e9d96d0473ee2953693e19e4e18d6bb6a4935d",
         "PPAC/Migration/ForcingExistMemberOpening.lean": "0b9a9b53d649da2bf807ae036aec469d388a7b486b64c514056193e6b7091515",
-        "PPAC/Migration/ForcingExistOrderOpening.lean": "41474123469062c6f696233fa3b4805cdc50c0ee0b40cbbcd90016824bf993d7",
+        "PPAC/Migration/ForcingExistOrderOpening.lean": "9530fdef669b0a3158c93c3057fac936bb3d331989e3092041e89ef398375a34",
         "PPAC/Migration/ForcingExistDomainOpening.lean": "361e37209d974d7afba3cd72d537d03e2ae650ac7add68542e4fc5d8ddc53a53",
-        "PPAC/Migration/ForcingExistChildOpening.lean": "a774d7ef13a0f69111611129eaab80716d231803b2676bc3a956cea49163a96b",
+        "PPAC/Migration/ForcingExistChildOpening.lean": "d8a9629853445a96dcf3d84d47ae82db83fc6b6aaef6fca026359d3c15f6657f",
         "PPAC/Migration/Internal/SyntaxLogicalFields.lean": "bf4dc4ea6aa62c67cc8f93bcb6704098a525be4e1a0bfc8c3dda745d27262a86",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e",
         "PPAC/Migration/ForcingExistChildCanonical.lean": "5755f901bb6b1119929c6262788ac2c874757034144b81e300d04ba48405c030",
@@ -175927,7 +175932,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
@@ -177736,8 +177741,8 @@
         "ForcingTruth.force_of_dense"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
-        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "ef9c0f03b4e9c04d75eae668c7f8f5d8e4396319aceede5837a7885f3c40823d",
+        "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "baf80906439c59c2c6b1bb21cc15f61458b22edc083148149346599bca55f11c",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
@@ -177747,6 +177752,7 @@
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields": ["propext", "Classical.choice", "Quot.sound"],
@@ -177972,7 +177978,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Membership and equality reuse the original atomic density law and the exact actual query at the current condition. The older query, common table, density code and original proof instance are generated internally. The certificate transfers the conditional Root proof at that generated density code to the actual atom output. The induction over arbitrary internal source codes and the final internal reduction remain open. The actual outer order code agrees with the canonical leaf, using the existing selected-condition field route through both actual lifts."
+      "scope": "Membership and equality reuse the original atomic density law and the exact actual query at the current condition. The older query, common table, density code and original proof instance are generated internally. The certificate transfers the conditional Root proof at that generated density code to the actual atom output. The induction over arbitrary internal source codes and the final internal reduction remain open. The actual outer order code agrees with the canonical leaf, using the existing selected-condition field route through both actual lifts. The actual inner order query is normalized to its reverse-order quotation with bound one and the free condition slot overwritten by bound zero. The canonical code equality is pending."
     },
     "forcing_source_density": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",

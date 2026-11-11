@@ -1,0 +1,85 @@
+{
+  "baseline_commit": "921114e62156b76d560aba7505be09692219a822",
+  "recorded_at": "2026-11-11T14:17:17.601051+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query",
+    "PPAC.Migration.ForcingExistChildOpening.variableEquation",
+    "PPAC.Migration.ForcingExistChildOpening.variable_fields",
+    "PPAC.Migration.ForcingExistOrderOpening.with_lifted_guard",
+    "PPAC.Migration.ForcingExistOrderOpening.with_rebound_lift_query",
+    "PPAC.Migration.ForcingGuardOpening.from_lifted_at"
+  ],
+  "scope": "The actual inner order query from the density compiler has a direct query of the same reverse-order quotation and output. The first bound image is read from the actual second lift's tail and has bound index one. The condition slot in the same lifted free table is overwritten by the bound-zero head, preserving the other entries. The direct query is derived through the original rebind and original mixed formula cancellation. Its equality with the canonical inner order query remains open.",
+  "actual_inner_order_direct_query_proved": true,
+  "canonical_inner_order_code_equality_proved": false,
+  "canonical_atomic_witness_code_equality_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40210,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "f8ffb7a18215a7066303a5a20371c7f2bc81deb29acd97ab6b5c865ff1c48ff4",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "baf80906439c59c2c6b1bb21cc15f61458b22edc083148149346599bca55f11c",
+      "PPAC/Migration/ForcingExistChildOpening.lean": "d8a9629853445a96dcf3d84d47ae82db83fc6b6aaef6fca026359d3c15f6657f",
+      "PPAC/Migration/ForcingExistOrderOpening.lean": "9530fdef669b0a3158c93c3057fac936bb3d331989e3092041e89ef398375a34",
+      "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
+      "docs/CURRENT_STATUS.zh-CN.md": "687f7bc5758190f54ea6620af30a41811af6761781bc8db5ded0cd0e2d93607e",
+      "docs/SOURCE_LOCK.json": "d55390dcffa7039d018dc90bb70af3e26b2f7eec2405b405a5720242251c0e94",
+      "scripts/verify.py": "ec4e2c08d623a090134353eb3f9a781d96fc7de68c3d946149503dadc2e95497"
+    }
+  },
+  "baseline_declarations_compared": 40204,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistChildOpening.variableEquation": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistChildOpening.variable_fields": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistOrderOpening.with_lifted_guard": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingExistOrderOpening.with_rebound_lift_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingGuardOpening.from_lifted_at": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

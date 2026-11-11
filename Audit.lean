@@ -39610,6 +39610,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingGuardOpening.result_rename
 #print axioms PPAC.Migration.ForcingGuardOpening.from_compiled
 #print axioms PPAC.Migration.ForcingGuardOpening.from_lifted
+#print axioms PPAC.Migration.ForcingGuardOpening.from_lifted_at
 #print axioms PPAC.Migration.ForcingGuardOpening.from_instance
 #print axioms PPAC.Migration.ForcingGuardOpening.input
 #print axioms PPAC.Migration.ForcingGuardOpening.sentence
@@ -40144,6 +40145,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingExistOrderOpening.frame
 #print axioms PPAC.Migration.ForcingExistOrderOpening.frame_rename
 #print axioms PPAC.Migration.ForcingExistOrderOpening.from_compiled
+#print axioms PPAC.Migration.ForcingExistOrderOpening.with_rebound_lift_query
+#print axioms PPAC.Migration.ForcingExistOrderOpening.with_lifted_guard
 #print axioms PPAC.Migration.ForcingExistOrderOpening.guard_compare
 #print axioms PPAC.Migration.ForcingExistOrderOpening.input
 #print axioms PPAC.Migration.ForcingExistOrderOpening.kernel_certificate
@@ -40217,6 +40220,8 @@ import PPAC.Auxiliary
 
 #print axioms PPAC.Migration.ForcingExistChildOpening.closed_fields
 #print axioms PPAC.Migration.ForcingExistChildOpening.zero_fields
+#print axioms PPAC.Migration.ForcingExistChildOpening.variableEquation
+#print axioms PPAC.Migration.ForcingExistChildOpening.variable_fields
 
 #print axioms PPAC.Migration.ForcingRelationImages.mapped_field_arity
 #print axioms PPAC.Migration.ForcingRelationImages.mapped_variable_arity
@@ -40894,6 +40899,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

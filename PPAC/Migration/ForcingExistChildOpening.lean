@@ -89,7 +89,7 @@ theorem closed_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound :
       (of_eq (ForcingOpenLift.step_rename bound i I (old 4)) (HornBinderRules.under_body 4 hs E))
       (of_eq (InstantiateOperationFrameSyntax.closedParameter_rename w d t (old 4)) (HornBinderRules.under_body 4 ht E)))
 
-private def variableEquation {m} (bound : Bool) (w A b K H i I J q : Fin m) : Formula m :=
+def variableEquation {m} (bound : Bool) (w A b K H i I J q : Fin m) : Formula m :=
   (((Formula.mem (if bound then I else i) (SyntaxTermSyntax.limit bound A b)).conj
     (field w (SyntaxIndexMapSyntax.selectMap bound K H) (if bound then I else i) q)).iff
       (SyntaxVariableSyntax.code true w J q))
@@ -124,7 +124,7 @@ private theorem variable_at_maps {m} {Γ : Context m} (hZ : ZFContext.Evidence �
       (SyntaxCodedMixedBinderFields.bound_iff hZ w R S a b c d A C K H (v 0) (v 1) (v 2) (v 3) I i t q
         hw hl (.conjL hm) (.conjL (.conjR hm)) (.conjR (.conjR hm)) hi hs hf) he
 
-private theorem variable_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound : Bool)
+theorem variable_fields {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (bound : Bool)
     (w R S a b c d A C K H i I t q k J : Fin m)
     (hw : Derives Γ (omega w)) (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w R S a b c d A C K H))
     (hi : Derives Γ (.mem i (SyntaxTermSyntax.limit bound a b)))

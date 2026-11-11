@@ -1,6 +1,7 @@
 import PPAC.Migration.ForcingAtomicCode
 import PPAC.Migration.ForcingDensityInstantiation
 import PPAC.Migration.ForcingGuardOpening
+import PPAC.Migration.ForcingExistOrderOpening
 import PPAC.Migration.Internal.AtomicProgramAlignment
 import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingAtomicMonoImages
@@ -846,6 +847,52 @@ theorem compare_shell_outer_order {k m : Nat} {Γ : Source.Context m} (hZ : ZFCo
     (.conjL hBody) (of_eq (field_rename w K z P p) (carry hK))
     (fun i => of_eq (ForcingAtomicMonoImages.route_rename _ _ w F H p) (carry (routes i)))
     (.conjR hBody) (of_eq (substituted_rename w K H A' g C b Q Y p) (carry hCommon'))
+
+/-- Read the actual inner order guard of the original density compiler.
+The compiler and the two mixed lifts share their successor scopes.
+The original reverse-order quotation is queried with bound one and with
+the selected free field overwritten by the actual bound-zero term. -/
+theorem with_inner_order_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (w z a A B f j N D b S L : Fin m)
+    (v : Fin 7 → Fin m) (u t : Fin 5 → Fin m) (y : Fin 4 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a)) (hB : Source.Derives Γ (successor B A))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hOuter : Source.Derives Γ (lifted w L S a f z b (u 1) (u 2) (u 3) (u 4)))
+    (hInner : Source.Derives Γ (lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4)))
+    (hQ : Source.Derives Γ (substituted w (t 3) (t 4) (t 1) f (t 2) b (v 5) (y 2)))
+    (out : Source.Formula m)
+    (use : ∀ {l} {Δ : Source.Context l} (r : Fin m → Fin l) (P T F head N0 : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Source.Formula m}, Source.Derives Γ G → Source.Derives Δ (G.rename r)) →
+      Source.Derives Δ (SyntaxVariableSyntax.code true (r w) (r z) P) →
+      Source.Derives Δ (SyntaxVariableSyntax.code true (r w) (r (u 2)) T) →
+      Source.Derives Δ (ForcingReflexiveImages.replacement (r w) (r f) (r (t 2)) (r b) (r (t 4)) (r j) P F) →
+      Source.Derives Δ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder R) (r w) (r (t 2))
+        (r f) (r b) T F (r (u 1)) head N0 (r (y 2))) →
+      Source.Derives Δ (out.rename r)) : Source.Derives Γ out := by
+  have hI := SyntaxCodedMixedBinderTyping.input_of_lifted w L S a f z b (u 1) (u 2) (u 3) (u 4) hOuter
+  have hJ := SyntaxCodedMixedBinderTyping.input_of_lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4) hInner
+  have ext := (ZFContext.arithmetic hZ).base.extensionality
+  have eA := OmegaUniversal.successor_unique A (u 1) a ext hA (.conjL (.conjR hI))
+  let Suc := successor B.castSucc (Fin.last m)
+  have hB' : Source.Derives Γ (successor B (u 1)) :=
+    of_eq (by simp only [Suc, Source.Formula.instantiate, successor_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst Suc eA (of_eq (by simp only [Suc, Source.Formula.instantiate, successor_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hB))
+  have eB := OmegaUniversal.successor_unique B (t 1) (u 1) ext hB' (.conjL (.conjR hJ))
+  have hc := Source.Derives.conjL (.conjR (.conjR (.conjR (.conjR hd))))
+  let T1 := ForcingExistGuardsCode.compiled R w.castSucc (Fin.last m) B.castSucc f.castSucc j.castSucc (v 5).castSucc
+  let T2 := ForcingExistGuardsCode.compiled R w.castSucc (u 1).castSucc (Fin.last m) f.castSucc j.castSucc (v 5).castSucc
+  have hc1 : Source.Derives Γ (ForcingExistGuardsCode.compiled R w (u 1) B f j (v 5)) :=
+    of_eq (by simp only [T1, Source.Formula.instantiate, ForcingExistGuardsCode.compiled_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst T1 eA (of_eq (by simp only [T1, Source.Formula.instantiate, ForcingExistGuardsCode.compiled_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hc))
+  have hc2 : Source.Derives Γ (ForcingExistGuardsCode.compiled R w (u 1) (t 1) f j (v 5)) :=
+    of_eq (by simp only [T2, Source.Formula.instantiate, ForcingExistGuardsCode.compiled_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst T2 eB (of_eq (by simp only [T2, Source.Formula.instantiate, ForcingExistGuardsCode.compiled_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hc1))
+  exact ForcingExistOrderOpening.with_lifted_guard hZ R w z a (u 1) (t 1) f j b L S (u 2) (u 3) (u 4)
+    (t 2) (t 3) (t 4) (v 5) (y 2) hw hz hOuter hInner hc2 hQ out use
 
 end MemberGuards
 

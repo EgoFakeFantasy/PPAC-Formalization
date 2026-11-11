@@ -6,9 +6,11 @@
 
 ## 最新实际验收
 
+`ForcingAtomicDenseTemplate.with_inner_order_query` 从原稠密性编译记录和两次实际提升得到内层顺序守卫的直接替换推导。外层条件对应绑定索引 1，内层条件对应绑定索引 0。共同表上的内层守卫与原子见证体仍需证明码相等。[本地验收](../verification/forcing-atomic-density-inner-order-acceptance.json)
+
 `ForcingAtomicDenseTemplate.outer_order_query` 从原稠密性编译和实际外层提升表，导出同一顺序守卫输出的直接替换推导。该推导保留外层提升后的自由项表，并从同一次提升读取绑定的零号条件项。该直接推导已用于比较共同表上的外层顺序守卫，码等式由同一个零号绑定项和两张提升表上的自由项对应推出。[外层顺序守卫码等式验收](../verification/forcing-atomic-density-outer-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-outer-order-acceptance.json)
 
-`ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。完整前提码还差两个顺序守卫和原子见证体的等式。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
+`ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。完整前提码还差内层顺序守卫和原子见证体的等式。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
 
 `ForcingDensityInstantiation.with_mixed_shell` 从原密度前提的实际替换中读取两层提升表及五个子查询。`ForcingAtomicDenseTemplate.with_quoted_shell` 从原子稠密性证明的实际模板码取得同样的六个构造步骤。`raw_shell_eq` 用五个实际叶码的对象相等式推出完整前提码相等。两个成员守卫的结果见上文。[本地验收](../verification/forcing-atomic-density-shell-acceptance.json)
 
