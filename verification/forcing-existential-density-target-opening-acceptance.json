@@ -1,0 +1,51 @@
+{
+  "baseline_commit": "a88932cbef7f6c91d61c0b21115aa5e2475d8010",
+  "recorded_at": "2026-11-11T21:14:54.178793+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingWeakenedOverwrite.with_selected_existential_images",
+    "PPAC.Migration.ForcingSourceDensity.with_existential_witnesses"
+  ],
+  "scope": "Open the original target q-tail at the same s as the source witness on the inherited preorder maps. Preserve the original selected free column and identify the actual target member and order codes with the fresh row leaves.",
+  "target_q_tail_opened_at_same_s": true,
+  "target_member_and_transitive_order_matched": true,
+  "source_and_target_name_queries_retained": true,
+  "name_existential_codes_compared": false,
+  "target_q_existential_reassembled": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40268,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "PPAC/Migration/ForcingSourceDensity.lean": "e2717e5dd5e1d15c6dd544260b2ee314335db4cea2910ca99dc249a4d4a29163",
+      "PPAC/Migration/ForcingWeakenedOverwrite.lean": "a5c34f16c64b82350a59ce9f87edfceaeb1e2a7dc8b7c8a6e15a572ff4d1f2b6",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "8ca603d4f5c052463437831561de52612dc53c493e8f853c711cf8800d770cf0",
+      "docs/CURRENT_STATUS.zh-CN.md": "142786a01a3cf6c3d742bc7e8f230b59c68707c85a597e09b5fee4623851552a",
+      "docs/SOURCE_LOCK.json": "3164249ca7ba1b5088484d8a420da583a37adb84ac184872f4b4eb77555c5267"
+    }
+  },
+  "baseline_declarations_compared": 40268,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {},
+  "new_axioms": []
+}

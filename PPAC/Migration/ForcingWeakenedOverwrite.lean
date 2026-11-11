@@ -409,9 +409,9 @@ theorem double_kernel_certificate {m} (k : Nat) (w a b c d D R S L Q Ln Qn i j M
     (.conjL h) (.conjL (.conjR h)) (.conjR (.conjR h))
 
 -- Use the existing preorder maps to open the second witness. The selected
--- column is the original replacement at the already renamed condition r.
+-- column uses p, while the old bound prefix has head r.
 theorem with_selected_existential_images {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z a A f b d R Base Pfx Name Selected j r r' : Fin m) (next : Fin 10 → Fin m)
+    (w z a A f b d R Base Pfx Name Selected j p p' r r' : Fin m) (next : Fin 10 → Fin m)
     (hNext : Derives Γ (ForcingWeakenedImages.data w z f z b d R Base next))
     (hPfx : Derives Γ (SyntaxMixedImageCodeSyntax.termList w A z b Pfx))
     (hName : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a z b Name))
@@ -419,12 +419,13 @@ theorem with_selected_existential_images {m} {Γ : Context m} (hZ : ZFContext.Ev
     (hr : Derives Γ (SyntaxTermSyntax.term w z b r))
     (hCons : Derives Γ (StructuralListSyntax.consCode w r Name Pfx))
     (hRename : Derives Γ (SyntaxRenameTermSyntax.renamed w (next 2) (next 3) z b z d r r'))
-    (hOld : Derives Γ (ForcingReflexiveImages.replacement w f z b Base j r Selected))
+    (hSelectedRename : Derives Γ (SyntaxRenameTermSyntax.renamed w (next 2) (next 3) z b z d p p'))
+    (hOld : Derives Γ (ForcingReflexiveImages.replacement w f z b Base j p Selected))
     (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l) (v : Fin 10 → Fin l), ZFContext.Evidence Δ →
       (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename ρ)) →
       Derives Δ (ForcingWeakenedImages.data (ρ w) (ρ A) (ρ f) (ρ z) (ρ b) (ρ d) (ρ Pfx) (ρ Selected) v) →
-      Derives Δ (ForcingReflexiveImages.replacement (ρ w) (ρ f) (ρ z) (ρ d) (ρ (next 9)) (ρ j) (ρ r') (v 9)) →
+      Derives Δ (ForcingReflexiveImages.replacement (ρ w) (ρ f) (ρ z) (ρ d) (ρ (next 9)) (ρ j) (ρ p') (v 9)) →
       Derives Δ (StructuralListFieldSyntax.field (ρ w) (v 8) (ρ z) (ρ r')) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   have hw := Derives.conjL (.conjL hNext)
@@ -448,21 +449,25 @@ theorem with_selected_existential_images {m} {Γ : Context m} (hZ : ZFContext.Ev
     .conjR (.impE (.conjR hBound) hRename1)
   have hFree := Derives.conjR (SyntaxMixedImageCodePairs.term_lists (ρ w) (v 6) (v 7)
     (ρ A) (ρ f) (ρ z) (ρ d) (v 8) (v 9) (.conjR (.conjR (.conjR (.conjR hBase)))))
-  have hTerm := SyntaxRenameTermTyping.target_term (ρ w) (v 2) (v 3) (ρ z) (ρ b) (ρ z) (ρ d) (ρ r) (ρ r') hRename1
+  have hSelectedRename1 : Derives Δ (SyntaxRenameTermSyntax.renamed (ρ w) (v 2) (v 3) (ρ z) (ρ b) (ρ z)
+      (ρ d) (ρ p) (ρ p')) :=
+    of_eq (SyntaxRenameTermSyntax.renamed_rename _ _ _ _ _ _ _ _ _ ρ) (lift hSelectedRename)
+  have hTerm := SyntaxRenameTermTyping.target_term (ρ w) (v 2) (v 3) (ρ z) (ρ b) (ρ z) (ρ d) (ρ p) (ρ p')
+    hSelectedRename1
   have hUpdate := ForcingReflexiveImages.exists_replacement hZ1 (ρ w) (ρ f) (ρ z) (ρ d) (v 9)
-    (ρ j) (ρ r') hw1 hFree hTerm
+    (ρ j) (ρ p') hw1 hFree hTerm
   refine NativeProofQuotation.eliminate_objects hZ1 1 (fun σ y => ForcingReflexiveImages.replacement (σ (ρ w)) (σ (ρ f))
-    (σ (ρ z)) (σ (ρ d)) (σ (v 9)) (σ (ρ j)) (σ (ρ r')) (y 0)) hUpdate (out.rename ρ) ?_
+    (σ (ρ z)) (σ (ρ d)) (σ (v 9)) (σ (ρ j)) (σ (ρ p')) (y 0)) hUpdate (out.rename ρ) ?_
   intro l1 Δ1 σ y hZ2 move hNew
   let e := σ ∘ ρ
   let base := σ ∘ v
   have carry {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename e) :=
     of_eq (SourceAlgebra.rename_comp F ρ σ) (move (lift h))
   have hSelected := produce hZ2 (e w) (e A) (e f) (e z) (e b) (e d) (e Pfx) (e Base)
-    (e j) (e r) (e r') (e Selected) (y 0) base
+    (e j) (e p) (e p') (e Selected) (y 0) base
     (.conjI (of_eq (ForcingWeakenedImages.data_rename _ _ _ _ _ _ _ _ v σ) (move hBase))
       (.conjI (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ e) (carry hOld))
-        (.conjI hNew (of_eq (SyntaxRenameTermSyntax.renamed_rename _ _ _ _ _ _ _ _ _ σ) (move hRename1)))))
+        (.conjI hNew (of_eq (SyntaxRenameTermSyntax.renamed_rename _ _ _ _ _ _ _ _ _ σ) (move hSelectedRename1)))))
   apply of_eq (SourceAlgebra.rename_comp out ρ σ).symm
   refine NativeProofQuotation.eliminate_objects hZ2 2 (fun τ g => ForcingWeakenedImages.data (τ (e w)) (τ (e A)) (τ (e f))
     (τ (e z)) (τ (e b)) (τ (e d)) (τ (e Pfx)) (τ (e Selected))

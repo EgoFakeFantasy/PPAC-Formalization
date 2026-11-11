@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceDensity.with_existential_witnesses` 已在同一个 `s` 处打开 `q` 的原目标尾式。目标成员与顺序守卫分别对齐到 `s ∈ P` 和 `s ≤ q`，保留原先选中的自由列和实际名字存在子式。原 `force_of_dense.ex` 仍需对齐两处名字存在子式并闭合原量词。[整仓验收](../verification/forcing-existential-density-target-opening-acceptance.json)
+
 `ForcingSourceDensity.with_existential_witnesses` 已在实际第二次开式的局部背景中推导 `s ≤ q`。同一背景下取得原名字存在子式的证明。`q` 处目标尾式保留原代码的弱化和同一实际替换查询。原 `force_of_dense.ex` 仍需将该名字存在子式接到 `q` 处的目标构造，并闭合原量词。[整仓验收](../verification/forcing-existential-density-local-transitive-acceptance.json)
 
 `ForcingSourceDensity.with_existential_witnesses` 已将实际第二次开式的成员守卫与 `s ≤ r` 查询对齐到同一偏序行。开式直接复用行的弱化映射和选中列，保留原名字存在子式。原 `force_of_dense.ex` 仍需将传递性推导放入实际见证背景，再保留同一名字见证闭合原量词。[整仓验收](../verification/forcing-existential-density-actual-guards-acceptance.json)
