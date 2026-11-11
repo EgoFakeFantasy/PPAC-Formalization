@@ -40920,6 +40920,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.with_witness_monotonicity
 #print axioms PPAC.Migration.ForcingSourceDensity.with_negative_density_transfer
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_opened
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_parent_opening
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate

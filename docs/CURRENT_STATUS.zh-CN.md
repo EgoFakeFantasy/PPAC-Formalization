@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceDensity.negative_step_from_parent_opening` 接收原否定编译器和实际父式开式，逐一读取三个蕴含的查询。它用同一开式构造外层背景，在对象层反向消去三个假设并全称化，得到背景到原父式码的推导。第 10 阶段还需从统一运行记录提供外层选中条件的偏序证明，再接入原密度归纳谓词。[整仓验收](../verification/forcing-negative-density-outer-closure-acceptance.json)
+
 `ForcingSourceDensity.with_negative_density_transfer` 已消去实际见证的存在量词。由见证背景下的假式，原 Curry 和全称规则生成同一正文的全称蕴含，再用原存在消去规则及实际密度前提，在原作用域推出 `H → ⊥`。仍需从原运行记录构造 `H` 的外层前提并闭合原全称式。[整仓验收](../verification/forcing-negative-density-existential-discharge-acceptance.json)
 
 `ForcingSourceDensity.with_negative_density_transfer` 已消费同一见证处的正、负两条对象推导。它把实际全称否定在 `r` 处实例化，用同一偏序行证明成员守卫和 `r ≤ r`，再由 `ForcingRawNegTail.canonical_code` 确定否定实例中的操作数正是此前得到的 `r` 处正子式，最后以原 Root MP 得到局部背景下的假式。外层前提和量词闭合仍待完成。[整仓验收](../verification/forcing-negative-density-reflexive-contradiction-acceptance.json)
