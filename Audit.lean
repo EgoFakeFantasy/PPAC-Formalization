@@ -40839,6 +40839,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells
+#print axioms PPAC.Migration.ForcingDensityGuards.conjunction_all_from_compiler_shells
+#print axioms PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

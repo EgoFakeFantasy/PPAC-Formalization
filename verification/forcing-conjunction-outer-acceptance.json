@@ -1,0 +1,65 @@
+{
+  "baseline_commit": "a868c09d27001947ece1fcea35c4ac74b2ce3101",
+  "recorded_at": "2026-11-11T11:07:07.807682+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof",
+  "scope": "Generate the selected child's original density compiler from the actual parent, substitute it under the original common table, and transport the parent's original internal conditional proof to the actual child universal. The pointwise transport preserves both original guards and uses the common existential witness. Rule 20 and the original guarded forall producer give the exact selected child code. The child induction hypotheses and complete source density induction still need assembly.",
+  "same_witness_and_same_member_and_order_guards": true,
+  "conjunction_outer_density_transfer_proved": true,
+  "actual_selected_child_compiler_query_and_conditional_root_produced": true,
+  "both_child_induction_hypotheses_consumed": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40151,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "1d4b810a5ee6dc5285a48a6cc3e3669dd9f8c7acb79dfdb7de94f0aa99a8a9de",
+      "PPAC/Migration/ForcingDensityGuards.lean": "40c5737c9925e235432a3819f1d638cdc75f9caf24f3383210d4b59125d0fbf0",
+      "docs/SOURCE_LOCK.json": "c2ead84ddaaba5d330eeb6bfe6e0b83c9fe928d4da6d22954b01d20e9e372d66",
+      "scripts/verify.py": "86e8e4b2e3e51a0f7c5b376fb6f5c8dc9d13b96bb545071d6b662aba52d1accd"
+    }
+  },
+  "baseline_declarations_compared": 40149,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityGuards.conjunction_all_from_compiler_shells": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axioms": []
+}
