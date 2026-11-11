@@ -1,4 +1,4 @@
-# 当前工作入口（2026-11-11）
+# 当前工作入口（2026-11-12）
 
 当前为原1–11规划的第10阶段；第11阶段未开始。阶段表见[AGENT_WORKFLOW](AGENT_WORKFLOW.zh-CN.md)，对象规格见[OBJECT_TARGET](OBJECT_TARGET.zh-CN.md)。历史逐批验收保存在Git和不可改写的验收报告；旧报告中的待办不代表当前缺口。
 
@@ -6,13 +6,15 @@
 
 ## 最新实际验收
 
-`ForcingAtomicDenseTemplate.with_atomic_witness_query` 从原 `force_of_dense.mem/equal` 的实际密度记录取得见证体查询。在两次作用域提升后，它消去原弱化和条件重绑定，把同一输出码还原为对原强迫原子码的直接查询，保留原名字项和实际的内层条件。该查询与共同表上见证体的码等式仍需接通。
+`ForcingAtomicDenseTemplate.compare_opened_density` 比较原编译前提与共同表上的两份实际展开查询。原子见证体的两个名字像来自同一原绑定表，所选条件由实际内层重绑定给出。两条成员守卫、两条顺序守卫和见证体的码等式经构造器唯一性合成整个稠密性前提的码等式。下一步从运行记录提供这些查询，并以该等式调用现有原子稠密性证书。[整仓验收](../verification/forcing-atomic-density-witness-equality-acceptance.json)
 
-`ForcingAtomicDenseTemplate.with_inner_order_query` 从原稠密性编译记录和两次实际提升得到内层顺序守卫的直接替换推导。外层条件对应绑定索引 1，内层条件对应绑定索引 0。内层守卫已与共同表上的实际输出得到码等式。完整前提只差原子见证体的码等式。[内层守卫码等式验收](../verification/forcing-atomic-density-inner-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-inner-order-acceptance.json)
+`ForcingAtomicDenseTemplate.with_atomic_witness_query` 从原 `force_of_dense.mem/equal` 的实际密度记录取得见证体查询。在两次作用域提升后，它消去原弱化和条件重绑定，把同一输出码还原为对原强迫原子码的直接查询，保留原名字项和实际的内层条件。该查询已用于 `compare_shell_atomic_witness`。
+
+`ForcingAtomicDenseTemplate.with_inner_order_query` 从原稠密性编译记录和两次实际提升得到内层顺序守卫的直接替换推导。外层条件对应绑定索引 1，内层条件对应绑定索引 0。内层守卫已与共同表上的实际输出得到码等式。[内层守卫码等式验收](../verification/forcing-atomic-density-inner-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-inner-order-acceptance.json)
 
 `ForcingAtomicDenseTemplate.outer_order_query` 从原稠密性编译和实际外层提升表，导出同一顺序守卫输出的直接替换推导。该推导保留外层提升后的自由项表，并从同一次提升读取绑定的零号条件项。该直接推导已用于比较共同表上的外层顺序守卫，码等式由同一个零号绑定项和两张提升表上的自由项对应推出。[外层顺序守卫码等式验收](../verification/forcing-atomic-density-outer-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-outer-order-acceptance.json)
 
-`ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。完整前提码还差原子见证体的等式。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
+`ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
 
 `ForcingDensityInstantiation.with_mixed_shell` 从原密度前提的实际替换中读取两层提升表及五个子查询。`ForcingAtomicDenseTemplate.with_quoted_shell` 从原子稠密性证明的实际模板码取得同样的六个构造步骤。`raw_shell_eq` 用五个实际叶码的对象相等式推出完整前提码相等。两个成员守卫的结果见上文。[本地验收](../verification/forcing-atomic-density-shell-acceptance.json)
 

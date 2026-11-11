@@ -838,6 +838,7 @@ private theorem with_canonical_table {k m} {Γ : Context m} (hZ : ZFContext.Evid
           Derives Δ (route j.val (destination k (ForcingAtomicMonoTemplate.partAt i) bound j).val
             (r w) (SyntaxIndexMapSyntax.selectMap bound (D i) (V i)) L)) →
         (∀ i : Fin (k+2), Derives Δ (route i.val (freeIndex k .newer i).val (r w) (r S1) L)) →
+        (∀ i : Fin 2, Derives Δ (route i.val (boundIndex k .newer i).val (r w) (r D1) L)) →
         Derives Δ (out.rename r)) : Derives Γ out := by
   let a := five z A3 A3 t0 t1
   let D := five B D3 D3 D0 D1
@@ -909,7 +910,73 @@ private theorem with_canonical_table {k m} {Γ : Context m} (hZ : ZFContext.Evid
   exact use r g L hZ1 lift hg1 hm1 (fun i => r (a i)) (fun i => r (D i)) (fun i => r (V i))
     (fun i => of_eq (numeral_rename _ (a i) r) (lift (ha i)))
     (fun i => of_eq (mixed_rename w (D i) (V i) (a i) f z b (N i)
-      (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i) r) (lift (hd i))) hr newFree
+      (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i) r) (lift (hd i))) hr newFree newBound
+
+/-- Align the raw queries and retain the routes for both arguments of the new atom. -/
+theorem with_aligned_query_routes {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2))
+    (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq : Fin m)
+    (H : Fin 6 → Fin m) (N : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
+    (hJ : Derives Γ (numeral (k+1) J))
+    (hA : Derives Γ (numeral 3 A3)) (ht0 : Derives Γ (numeral 2 t0)) (ht1 : Derives Γ (numeral 2 t1))
+    (hTerms : ∀ v, v ∈ [y,x,q,c,p] → Derives Γ (SyntaxTermSyntax.term w z b v))
+    (hD3 : Derives Γ (SyntaxForestSyntax.forest 3 w (SetLanguage.args3 p q c) D3))
+    (hD0 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D0))
+    (hD1 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D1))
+    (hS0 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J p S0))
+    (hS1 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J q S1))
+    (hQuotes : ∀ i, Derives Γ (PureQuotationSyntax.formula
+      (ForcingAtomicMonoTemplate.leaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) w (N i)))
+    (hPre : Derives Γ (mixed w B S z f z b (N 0) Pre))
+    (hMem : Derives Γ (mixed w D3 S A3 f z b (N 1) (H 1)))
+    (hOrd : Derives Γ (mixed w D3 S A3 f z b (N 2) (H 4)))
+    (hOld : Derives Γ (mixed w D0 S0 t0 f z b (N 3) Fp))
+    (hNew : Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (g L : Fin l) (Q : Fin 5 → Fin l), ZFContext.Evidence Δ →
+      (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename r)) →
+      Derives Δ (numeral (k+7) g) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termLists (r w) (r z) g (r z) (r b) (r B) L) →
+      (∀ i, Derives Δ (PureQuotationSyntax.formula
+        (ForcingAtomicMonoTemplate.nativeLeaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) (r w) (Q i))) →
+      (∀ i, Derives Δ (mixed (r w) (r B) L (r z) g (r z) (r b) (Q i)
+        (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
+      (∀ i : Fin (k+2), Derives Δ (route i.val (freeIndex k .newer i).val (r w) (r S1) L)) →
+      (∀ i : Fin 2, Derives Δ (route i.val (boundIndex k .newer i).val (r w) (r D1) L)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
+    hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr hNewRoute hNewBound
+  let parts := ForcingAtomicMonoTemplate.partAt
+  let forms := fun i => ForcingAtomicMonoTemplate.nativeLeaf equality Reln (parts i)
+  let trees := fun i => PureSyntaxQuotation.formulaTree (forms i)
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  apply ProjectCompilerQuotation.eliminate_quotations hZ1 5 trees (r w) hw1 (out.rename r)
+  intro l2 Δ2 s Q hZ2 move hTrees
+  let ρ := fun i => s (r i)
+  have carry {φ : Formula m} (hp : Derives Γ φ) : Derives Δ2 (φ.rename ρ) :=
+    of_eq (rename_comp φ r s) (move (lift hp))
+  have hw2 := of_eq (omega_rename w ρ) (carry hw)
+  have hz2 := of_eq (empty_rename z ρ) (carry hz)
+  have hf2 := of_eq (numeral_rename (k+2) f ρ) (carry hf)
+  have hg2 := of_eq (numeral_rename (k+7) g s) (move hg)
+  have hm2 := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename (r w) (r z) g (r z) (r b) (r B) L s) (move hm)
+  have hQuote (i : Fin 5) : Derives Δ2 (PureQuotationSyntax.formula (forms i) (ρ w) (Q i)) := hTrees i
+  have hRun (i : Fin 5) : Derives Δ2 (mixed (ρ w) (ρ B) (s L) (ρ z) (s g) (ρ z) (ρ b) (Q i)
+      (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))) :=
+    mixed_leaf hZ2 equality Reln (parts i) (ρ w) (s (a i)) (ρ f) (ρ z) (s g) (ρ b) (ρ B) (s L)
+      (s (D i)) (s (V i)) (ρ (N i)) (Q i) (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))
+      hw2 (of_eq (numeral_rename _ (a i) s) (move (ha i))) hf2 hz2 hg2 hm2
+      (of_eq (PureQuotationSyntax.formula_rename _ w (N i) ρ) (carry (hQuotes i))) (hQuote i)
+      (fun bound j => of_eq (by rw [route_rename]; cases bound <;> rfl) (move (hr i bound j)))
+      (of_eq (mixed_rename (r w) (D i) (V i) (a i) (r f) (r z) (r b) (r (N i))
+        (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)) s) (move (hd i)))
+  have hFields (i : Fin (k+2)) : Derives Δ2 (route i.val (freeIndex k .newer i).val (ρ w) (ρ S1) (s L)) :=
+    of_eq (route_rename i.val (freeIndex k .newer i).val (r w) (r S1) L s) (move (hNewRoute i))
+  have hNames (i : Fin 2) : Derives Δ2 (route i.val (boundIndex k .newer i).val (ρ w) (ρ D1) (s L)) :=
+    of_eq (route_rename i.val (boundIndex k .newer i).val (r w) (r D1) L s) (move (hNewBound i))
+  exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun hFields hNames)
 
 /-- Put the actual raw atomic and preorder queries on one common image list. -/
 theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -943,36 +1010,10 @@ theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
         (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
       (∀ i : Fin (k+2), Derives Δ (route i.val (freeIndex k .newer i).val (r w) (r S1) L)) →
       Derives Δ (out.rename r)) : Derives Γ out := by
-  apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
-    hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
-  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr hNewRoute
-  let parts := ForcingAtomicMonoTemplate.partAt
-  let forms := fun i => ForcingAtomicMonoTemplate.nativeLeaf equality Reln (parts i)
-  let trees := fun i => PureSyntaxQuotation.formulaTree (forms i)
-  have hw1 := of_eq (omega_rename w r) (lift hw)
-  apply ProjectCompilerQuotation.eliminate_quotations hZ1 5 trees (r w) hw1 (out.rename r)
-  intro l2 Δ2 s Q hZ2 move hTrees
-  let ρ := fun i => s (r i)
-  have carry {φ : Formula m} (hp : Derives Γ φ) : Derives Δ2 (φ.rename ρ) :=
-    of_eq (rename_comp φ r s) (move (lift hp))
-  have hw2 := of_eq (omega_rename w ρ) (carry hw)
-  have hz2 := of_eq (empty_rename z ρ) (carry hz)
-  have hf2 := of_eq (numeral_rename (k+2) f ρ) (carry hf)
-  have hg2 := of_eq (numeral_rename (k+7) g s) (move hg)
-  have hm2 := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename (r w) (r z) g (r z) (r b) (r B) L s) (move hm)
-  have hQuote (i : Fin 5) : Derives Δ2 (PureQuotationSyntax.formula (forms i) (ρ w) (Q i)) := hTrees i
-  have hRun (i : Fin 5) : Derives Δ2 (mixed (ρ w) (ρ B) (s L) (ρ z) (s g) (ρ z) (ρ b) (Q i)
-      (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))) :=
-    mixed_leaf hZ2 equality Reln (parts i) (ρ w) (s (a i)) (ρ f) (ρ z) (s g) (ρ b) (ρ B) (s L)
-      (s (D i)) (s (V i)) (ρ (N i)) (Q i) (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))
-      hw2 (of_eq (numeral_rename _ (a i) s) (move (ha i))) hf2 hz2 hg2 hm2
-      (of_eq (PureQuotationSyntax.formula_rename _ w (N i) ρ) (carry (hQuotes i))) (hQuote i)
-      (fun bound j => of_eq (by rw [route_rename]; cases bound <;> rfl) (move (hr i bound j)))
-      (of_eq (mixed_rename (r w) (D i) (V i) (a i) (r f) (r z) (r b) (r (N i))
-        (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)) s) (move (hd i)))
-  have hFields (i : Fin (k+2)) : Derives Δ2 (route i.val (freeIndex k .newer i).val (ρ w) (ρ S1) (s L)) :=
-    of_eq (route_rename i.val (freeIndex k .newer i).val (r w) (r S1) L s) (move (hNewRoute i))
-  exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun hFields)
+  apply with_aligned_query_routes hZ equality Reln w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
+    hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld hNew out
+  intro l Δ r g L Q hZ1 lift hg hm hQuote hRun hFields _
+  exact use r g L Q hZ1 lift hg hm hQuote hRun hFields
 
 /-- Use one actual base list for Pre and both guard leaves, and the original
 two condition overwrites for the two compiled atom queries. -/
@@ -1003,7 +1044,7 @@ theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
   let out := implication test w z b (layout 3) Fq
   apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
-  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr _
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr _ _
   exact of_eq (implication_rename test w z b (layout 3) Fq r).symm
     (at_shared_instance hZ1 equality Reln (r w) (r z) (r f) g (r b) (r B) L (r Extra) (r Pre) (r Fp) (r Fq)
       (fun i => r (H i)) (fun i => r (layout i)) a D V (fun i => r (N i))
@@ -1020,7 +1061,7 @@ theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
       (of_eq (implication_rename test w z b (layout 3) Fp r) (lift hFp)))
 
 
-private theorem pair_forest_subst {m} {Γ : Context m} (w D x0 y0 x1 y1 : Fin m)
+theorem pair_forest_subst {m} {Γ : Context m} (w D x0 y0 x1 y1 : Fin m)
     (hx : Derives Γ (.equal x1 x0)) (hy : Derives Γ (.equal y1 y0))
     (h : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y1 x1) D)) :
     Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y0 x0) D) := by

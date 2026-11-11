@@ -40719,6 +40719,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicMono.direct
 #print axioms PPAC.Migration.ForcingAtomicMono.direct_rename
 #print axioms PPAC.Migration.ForcingAtomicMono.direct_from_compiled
+#print axioms PPAC.Migration.ForcingAtomicMono.closed_image_agreement_at_scopes
 #print axioms PPAC.Migration.ForcingAtomicMono.closed_image_agreement
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.at_canonical_fields
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.from_runtime
@@ -40765,6 +40766,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceMonoInduction.sentence
 #print axioms PPAC.Migration.ForcingSourceMonoInduction.kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_chain
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.with_aligned_query_routes
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.pair_forest_subst
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_aligned_queries
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.route
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.route_rename
@@ -40900,6 +40903,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_atomic_witness
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_opened_density
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell

@@ -1479,6 +1479,271 @@ theorem with_atomic_witness_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFCo
       (of_eq (ForcingReflexiveImages.replacement_rename (s (r w)) (s (r f)) (s (r (t 2))) (s (r b)) (s (r (t 4))) (s (r j)) P E q)
         (move3 hReplace)) hDirect')
 
+private theorem twice_lifted_name_route {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (i : Fin 2) (w z b g L S t0 D : Fin m) (u t : Fin 5 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hg : Source.Derives Γ (numeral (k+7) g)) (ht0 : Source.Derives Γ (numeral 2 t0))
+    (hD : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termList w t0 z b D))
+    (hOuter : Source.Derives Γ (lifted w L S z g z b (u 1) (u 2) (u 3) (u 4)))
+    (hInner : Source.Derives Γ (lifted w (u 3) (u 4) (u 1) g (u 2) b (t 1) (t 2) (t 3) (t 4)))
+    (hRoute : Source.Derives Γ (ForcingAtomicMonoImages.route i.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer i).val w D S)) :
+    Source.Derives Γ (ForcingAtomicMonoImages.route i.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer i).val w D (t 4)) := by
+  let dest := ForcingAtomicMonoTemplate.boundIndex k .newer i
+  apply ForcingAtomicMonoImages.intro_route hZ
+  intro l Δ r I J Y hZ1 move hI hJ hY
+  have hw1 := of_eq (omega_rename w r) (move hw)
+  have hi := SyntaxNumeralMembers.index_member hZ1 2 i (r t0) I (of_eq (numeral_rename 2 t0 r) (move ht0)) hI
+  have hj := SyntaxNumeralMembers.index_member hZ1 (k+7) dest (r g) J (of_eq (numeral_rename (k+7) g r) (move hg)) hJ
+  have hTyped := SyntaxMixedImageCodeFields.field_type (r w) (r t0) (r z) (r b) (r D) I Y
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w t0 z b D r) (move hD)) hi hY
+  have hClosed := InstantiateOperationFrameSyntax.intro_closedParameter (r w) (r b) Y (r z)
+    (of_eq (empty_rename z r) (move hz)) hTyped
+  have hS := ForcingAtomicMonoImages.use_route i.val dest.val (r w) (r D) (r S) I J Y
+    (of_eq (ForcingAtomicMonoImages.route_rename i.val dest.val w D S r) (move hRoute)) hI hJ hY
+  have h := closed_free_twice hZ1 (r w) (r z) (r b) (r z) (r g) (r L) (r S) J Y Y (r ∘ u) (r ∘ t)
+    hw1 hj hS hClosed
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S z g z b (u 1) (u 2) (u 3) (u 4) r) (move hOuter))
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u 3) (u 4) (u 1) g (u 2) b (t 1) (t 2) (t 3) (t 4) r) (move hInner))
+  exact .conjR (.impE (.conjR h) (.eqRefl Y))
+
+private def witnessBoundImages (k : Nat) : Fin 2 → Syntax.Tm (fo_bound_context 2) (fo_bound_context (k+7)) :=
+  fun i => .fvar (fo_bound_variable (ForcingAtomicMonoTemplate.boundIndex k .newer i))
+
+private def witnessLeaf {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
+    PureSyntaxQuotation.Fm (fo_bound_context 2) (fo_bound_context (k+7)) :=
+  let env : Fin (k+4) → Syntax.Tm [] (fo_bound_context (k+7)) := fun i => .fvar (fo_bound_variable (atCondition k i))
+  Syntax.formula (Syntax.lift (Syntax.lift env)) ((ForcingAtomicCode.sourceTemplate equality R).rename (witnessMap k))
+
+private theorem witness_transport {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
+    (ForcingAtomicCode.template equality R).substituteMapped
+      (ForcingRelationSource.mapping (witnessBoundImages k))
+      (ForcingRelationSource.mapping (innerFreeImages k)) = witnessLeaf equality R := by
+  let env : Fin (k+4) → Syntax.Tm [] (fo_bound_context (k+7)) := fun i => .fvar (fo_bound_variable (atCondition k i))
+  let atR := Syntax.lift (Syntax.lift env)
+  have eB : (fun i : Fin 2 => atR (witnessMap k (nameSlot k i))) = witnessBoundImages k := by
+    funext i
+    refine Fin.cases ?_ (fun j => Fin.cases ?_ (fun j => Fin.elim0 j) j) i
+    · change atR (witnessMap k (rightName k)) = .fvar (fo_bound_variable 0)
+      simp only [atR, env, rightName, witnessMap, Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc,
+        atCondition] <;> rfl
+    · change atR (witnessMap k (leftName k)) = .fvar (fo_bound_variable 1)
+      simp only [atR, env, leftName, witnessMap, Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc,
+        atCondition] <;> rfl
+  have eF : (fun i : Fin (k+2) => atR (witnessMap k i.castSucc.castSucc)) = innerFreeImages k := by
+    funext i
+    refine Fin.lastCases ?_ (fun j => ?_) i
+    · simp only [atR, witnessMap, Syntax.lift, Fin.lastCases_last, Fin.lastCases_castSucc, innerFreeImages]
+    · simp only [atR, env, witnessMap, Syntax.lift, Fin.lastCases_castSucc,
+        innerFreeImages, atCondition, ForcingAtomicMonoTemplate.freeIndex] <;> rfl
+  rw [← eB, ← eF]
+  exact witness_native equality R atR
+
+/-- Compare the actual atomic witness with its instance on the common table.
+Both name images come from the same original bound table. The condition
+argument is read from the overwrite at the actual inner binder. -/
+theorem compare_shell_atomic_witness {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' Q x y x' y' V f2 T : Fin m)
+    (v : Fin 7 → Fin m) (u t u' t' : Fin 5 → Fin m) (X Y : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a)) (hB : Source.Derives Γ (successor B A))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hj : Source.Derives Γ (numeral (k+1) j))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality R w a x y N))
+    (hx : Source.Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Source.Derives Γ (SyntaxTermSyntax.term w a z y))
+    (hx' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b x x'))
+    (hy' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b y y'))
+    (hf2 : Source.Derives Γ (numeral 2 f2))
+    (hV : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termList w f2 z b V))
+    (hForest : Source.Derives Γ (SyntaxForestSyntax.forest 2 w (Source.SetLanguage.args2 y' x') V))
+    (hOuter : Source.Derives Γ (lifted w L S a f z b (u 1) (u 2) (u 3) (u 4)))
+    (hInner : Source.Derives Γ (lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) (t 2) (t 3) (t 4)))
+    (hOuter' : Source.Derives Γ (lifted w L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4)))
+    (hInner' : Source.Derives Γ (lifted w (u' 3) (u' 4) (u' 1) g (u' 2) b (t' 1) (t' 2) (t' 3) (t' 4)))
+    (hRoute : ∀ i : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route i.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer i).val w S S'))
+    (hNames : ∀ i : Fin 2, Source.Derives Γ (ForcingAtomicMonoImages.route i.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer i).val w V S'))
+    (hQuote : Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R 4) w Q))
+    (hRaw : Source.Derives Γ (substituted w (t 3) (t 4) (t 1) f (t 2) b (v 6) X))
+    (hCommon : Source.Derives Γ (substituted w (t' 3) (t' 4) (t' 1) g (t' 2) b Q Y)) :
+    Source.Derives Γ (.equal X Y) := by
+  let E := t 2
+  let A' := t' 1
+  let K := t' 3
+  let H := t' 4
+  let bs := witnessBoundImages k
+  let fs := innerFreeImages k
+  let F := witnessLeaf equality R
+  have hQ : Source.Derives Γ (PureQuotationSyntax.formula F w Q) := hQuote
+  have hO := SyntaxCodedMixedBinderTyping.input_of_lifted w L S a f z b (u 1) (u 2) (u 3) (u 4) hOuter
+  have hI := SyntaxCodedMixedBinderTyping.input_of_lifted w (u 3) (u 4) (u 1) f (u 2) b (t 1) E (t 3) (t 4) hInner
+  have hO' := SyntaxCodedMixedBinderTyping.input_of_lifted w L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4) hOuter'
+  have hI' := SyntaxCodedMixedBinderTyping.input_of_lifted w (u' 3) (u' 4) (u' 1) g (u' 2) b A' (t' 2) K H hInner'
+  have hAn := SyntaxNumeralSyntax.intro_succ 1 A' (u' 1)
+    (SyntaxNumeralSyntax.intro_succ 0 (u' 1) z hz (.conjL (.conjR hO'))) (.conjL (.conjR hI'))
+  have hE := SyntaxNumeralSyntax.intro_succ 1 E (u 2)
+    (SyntaxNumeralSyntax.intro_succ 0 (u 2) z hz (.conjR (.conjR hO))) (.conjR (.conjR hI))
+  have hE' := SyntaxNumeralSyntax.intro_succ 1 (t' 2) (u' 2)
+    (SyntaxNumeralSyntax.intro_succ 0 (u' 2) z hz (.conjR (.conjR hO'))) (.conjR (.conjR hI'))
+  have hCommon' := SyntaxMixedFormulaJudgmentSubst.subst_c w K H A' g (t' 2) b Q Y E
+    (SyntaxNumerals.unique hZ 2 (t' 2) E hE' hE) hCommon
+  have hNameRoute (i : Fin 2) := twice_lifted_name_route hZ i w z b g L' S' f2 V u' t'
+    hw hz hg hf2 hV hOuter' hInner' (hNames i)
+  refine with_atomic_witness_query hZ R w z a A B f j N D b S L v u t
+    (fun _ => X) hw hz hA hB hd hOuter hInner hRaw (.equal X Y) ?_
+  intro l Δ r P G hZ1 move hP hReplace hDirect
+  have hw1 := of_eq (omega_rename w r) (move hw)
+  have hz1 := of_eq (empty_rename z r) (move hz)
+  have hf1 := of_eq (numeral_rename (k+2) f r) (move hf)
+  have hg1 := of_eq (numeral_rename (k+7) g r) (move hg)
+  have hj1 := of_eq (numeral_rename (k+1) j r) (move hj)
+  have hX := of_eq (SyntaxTermSyntax.term_rename w a z x r) (move hx)
+  have hY := of_eq (SyntaxTermSyntax.term_rename w a z y r) (move hy)
+  have ho := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S a f z b (u 1) (u 2) (u 3) (u 4) r) (move hOuter)
+  have hi := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u 3) (u 4) (u 1) f (u 2) b (t 1) E (t 3) (t 4) r) (move hInner)
+  have ho' := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4) r) (move hOuter')
+  have hi' := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w (u' 3) (u' 4) (u' 1) g (u' 2) b A' (t' 2) K H r) (move hInner')
+  have hKR := Source.Derives.conjR (.impE (.conjR (ForcingExistChildOpening.zero_fields hZ1 (r w) (r z)
+    (r (u' 3)) (r (u' 4)) (r (u' 1)) (r g) (r (u' 2)) (r b)
+    (r A') (r (t' 2)) (r K) (r H) P hw1 hz1 hi')) hP)
+  have hSelected := selected_bound_route hZ1 (r w) (r z) (r f) (r E) (r b) (r (t 4)) (r j) P G (r K)
+    hz1 hf1 hj1 hReplace hKR
+  have hAway (i : Fin (k+1)) : Source.Derives Δ
+      (ForcingAtomicMonoImages.route i.val (ForcingAtomicMonoTemplate.base i.castSucc).val (r w) G (r H)) := by
+    have hRoute1 := of_eq (ForcingAtomicMonoImages.route_rename i.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer i.castSucc).val w S S' r) (move (hRoute i.castSucc))
+    exact twice_lifted_free_route hZ1 i (r w) (r z) (r b) (r a) (r f) (r L) (r S) (r g) (r L') (r S') (r j) P G
+      (r ∘ u) (r ∘ t) (r ∘ u') (r ∘ t') hw1 hz1 hf1 hg1 hj1 ho hi ho' hi' hReplace
+      (of_eq (by simp only [ForcingAtomicMonoTemplate.freeIndex, Fin.lastCases_castSucc]) hRoute1)
+  have hSrc := SyntaxMixedFormulaJudgmentTyping.source_type hZ1 (r w) (r L) G (r a) (r f) (r E) (r b) (r N) (r X) hw1 hDirect
+  have hCtx := Source.Derives.conjR (FormulaCodeProperties.guards (r w) (r N) (r a) (r f) hSrc)
+  have hD := ForcingAtomicMono.direct_from_typed_compiled hZ1 equality R (r w) (r a) (r f) (r E) (r b)
+    (r L) G (r x) (r y) (r N) (r X) hw1 hf1 (of_eq (ForcingAtomicCode.compiled_rename equality R w a x y N r) (move hAtom))
+    (ForcingAtomicCode.closed_term_target (r w) (r a) (r z) (r f) (r x) hz1 hCtx hX)
+    (ForcingAtomicCode.closed_term_target (r w) (r a) (r z) (r f) (r y) hz1 hCtx hY) hDirect
+  refine eliminate_objects hZ1 5 (fun s vs => ForcingAtomicMono.directData equality R (s (r w)) (s (r a))
+    (s (r f)) (s (r E)) (s (r b)) (s (r L)) (s G) (s (r x)) (s (r y)) (s (r X)) vs) hD (.equal (r X) (r Y)) ?_
+  intro l' Ξ s vs hZ2 move2 hData
+  let p := s ∘ r
+  have carry {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ξ (J.rename p) :=
+    of_eq (SourceAlgebra.rename_comp J r s) (move2 (move h))
+  have hw2 := of_eq (omega_rename w p) (carry hw)
+  have hz2 := of_eq (empty_rename z p) (carry hz)
+  have hMove (q q' : Fin m) (V0 : Fin l') (hTerm : Source.Derives Γ (SyntaxTermSyntax.term w a z q))
+      (hOld : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b q q'))
+      (hNew : Source.Derives Ξ (SyntaxCodedMixedTermSyntax.substituted (p w) (p L) (s G) (p a) (p f) (p E) (p b) (p q) V0)) :
+      Source.Derives Ξ (.equal V0 (p q')) :=
+    ForcingAtomicMono.closed_image_agreement_at_scopes hZ2 (p w) (p a) (p f) (p z) (p E) (p z) (p b)
+      (p L) (s G) (p T) (p q) V0 (p q') hw2 hz2 (of_eq (SyntaxTermSyntax.term_rename w a z q p) (carry hTerm))
+      hNew (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w L T a f z b q q' p) (carry hOld))
+  have eX := hMove x x' (vs 2) hx hx' (.conjL (.conjR (.conjR hData)))
+  have eY := hMove y y' (vs 3) hy hy' (.conjL (.conjR (.conjR (.conjR hData))))
+  have hForest' := ForcingAtomicMonoImages.pair_forest_subst (p w) (vs 4) (p x') (p y') (vs 2) (vs 3) eX eY
+    (.conjL (.conjR (.conjR (.conjR (.conjR hData)))))
+  have eV := SyntaxForests.unique hZ2 2 (p w) (Source.SetLanguage.args2 (p y') (p x')) (vs 4) (p V) hw2 hForest'
+    (of_eq (by rw [SyntaxForestSyntax.forest_rename, ProofTreeEntryFacts.args2_map]) (carry hForest))
+  let φ := ForcingAtomicCode.template equality R
+  have hQuery := SyntaxMixedFormulaJudgmentSubst.subst_r (p w) (vs 4) (s G) (vs 0) (p f) (p E) (p b) (vs 1) (p X)
+    (p V) eV (.conjR (.conjR (.conjR (.conjR (.conjR hData)))))
+  apply layout_eq hZ2 bs fs φ F (witness_transport equality R)
+    (p w) (vs 0) (p f) (p A') (p g) (p E) (p b) (p K) (p H) (p V) (s G) (vs 1) (p Q) (p X) (p Y)
+    hw2 (.conjL hData) (of_eq (numeral_rename 2 A' p) (carry hAn))
+    (of_eq (numeral_rename (k+2) f p) (carry hf)) (of_eq (numeral_rename (k+7) g p) (carry hg))
+    (.conjL (.conjR hData)) (of_eq (PureQuotationSyntax.formula_rename F w Q p) (carry hQ)) _
+    hQuery (of_eq (substituted_rename w K H A' g E b Q Y p) (carry hCommon'))
+  intro bound i
+  cases bound with
+  | true =>
+    have h := of_eq (ForcingAtomicMonoImages.route_rename i.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer i).val w V H p) (carry (hNameRoute i))
+    simp only [layoutPosition, bs, witnessBoundImages, termPosition, variable_index,
+      SyntaxIndexMapSyntax.selectMap, Bool.false_eq_true, if_false, if_true]
+    exact h
+  | false =>
+    refine Fin.lastCases ?_ (fun j => ?_) i
+    · have h := of_eq (ForcingAtomicMonoImages.route_rename (k+1) 0 (r w) G (r K) s) (move2 hSelected)
+      simp only [layoutPosition, fs, innerFreeImages, Fin.lastCases_last, termPosition,
+        SyntaxIndexMapSyntax.selectMap, Bool.false_eq_true, if_false, if_true]
+      exact h
+    · have h := of_eq (ForcingAtomicMonoImages.route_rename j.val
+        (ForcingAtomicMonoTemplate.base j.castSucc).val (r w) G (r H) s) (move2 (hAway j))
+      simp only [layoutPosition, fs, innerFreeImages, Fin.lastCases_castSucc, termPosition, variable_index,
+        SyntaxIndexMapSyntax.selectMap, Bool.false_eq_true, if_false]
+      exact h
+
+
+open ForcingExistTailOpening (quantifiedData)
+open ForcingRawModalBody (nestedData)
+open ForcingDensityInstantiation (rawShell mixedLeaves mixedNodes)
+
+/-- Equality of the actual density outputs after opening both mixed queries.
+Constructor uniqueness joins the five comparisons at the outer quantifier. -/
+theorem compare_opened_density {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' i I carrierImage x y xImage yImage V f2 T E E' : Fin m)
+    (v : Fin 7 → Fin m) (rawNodes quotedLeaves quotedNodes u t u' t' : Fin 5 → Fin m)
+    (q r q' r' : Fin 4 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a)) (hB : Source.Derives Γ (successor B A))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hi : Source.Derives Γ (numeral k i)) (hI : Source.Derives Γ (numeral (k+5) I))
+    (hCarrier : Source.Derives Γ (field w S i carrierImage))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hj : Source.Derives Γ (numeral (k+1) j))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality R w a x y N))
+    (hx : Source.Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Source.Derives Γ (SyntaxTermSyntax.term w a z y))
+    (hx' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b x xImage))
+    (hy' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b y yImage))
+    (hf2 : Source.Derives Γ (numeral 2 f2))
+    (hV : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termList w f2 z b V))
+    (hForest : Source.Derives Γ (SyntaxForestSyntax.forest 2 w (Source.SetLanguage.args2 yImage xImage) V))
+    (hRoute : ∀ n : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer n).val w S S'))
+    (hNames : ∀ n : Fin 2, Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer n).val w V S'))
+    (hQuotes : ∀ n, Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R n) w (quotedLeaves n)))
+    (hOuter : Source.Derives Γ (quantifiedData true w L S a f z b (rawNodes 4) E u))
+    (hQ : Source.Derives Γ (nestedData 2 w (u 3) (u 4) (u 1) f (u 2) b (v 2) (v 3) (rawNodes 2) (rawNodes 3) (u 0) q))
+    (hInner : Source.Derives Γ (quantifiedData false w (u 3) (u 4) (u 1) f (u 2) b (rawNodes 1) (q 3) t))
+    (hR : Source.Derives Γ (nestedData 0 w (t 3) (t 4) (t 1) f (t 2) b (v 4) (v 5) (v 6) (rawNodes 0) (t 0) r))
+    (hOuter' : Source.Derives Γ (quantifiedData true w L' S' z g z b (quotedNodes 4) E' u'))
+    (hQ' : Source.Derives Γ (nestedData 2 w (u' 3) (u' 4) (u' 1) g (u' 2) b
+      (quotedLeaves 0) (quotedLeaves 1) (quotedNodes 2) (quotedNodes 3) (u' 0) q'))
+    (hInner' : Source.Derives Γ (quantifiedData false w (u' 3) (u' 4) (u' 1) g (u' 2) b (quotedNodes 1) (q' 3) t'))
+    (hR' : Source.Derives Γ (nestedData 0 w (t' 3) (t' 4) (t' 1) g (t' 2) b
+      (quotedLeaves 2) (quotedLeaves 3) (quotedLeaves 4) (quotedNodes 0) (t' 0) r'))
+    (hRaw : Source.Derives Γ (rawShell w E (mixedLeaves q r) (mixedNodes u t q r)))
+    (hCommon : Source.Derives Γ (rawShell w E' (mixedLeaves q' r') (mixedNodes u' t' q' r'))) :
+    Source.Derives Γ (.equal E E') := by
+  have ho := Source.Derives.conjL (.conjR hOuter)
+  have ht := Source.Derives.conjL (.conjR hInner)
+  have ho' := Source.Derives.conjL (.conjR hOuter')
+  have ht' := Source.Derives.conjL (.conjR hInner')
+  have hCarrierRoute : Source.Derives Γ (ForcingAtomicMonoImages.route k (k+5) w S S') :=
+    of_eq (by simp only [ForcingAtomicMonoTemplate.freeIndex, Fin.lastCases_castSucc, ForcingAtomicMonoTemplate.base]; rfl)
+      (hRoute (Fin.last k).castSucc)
+  have eMembers := compare_shell_members hZ equality R w z a A B f j N D b S L g S' L' i I carrierImage
+    v u t u' t' quotedLeaves q r q' r' hw hz hf hg hi hI hCarrier
+    (ForcingAtomicMonoImages.use_route k (k+5) w S S' i I carrierImage hCarrierRoute hi hI)
+    hd ho ht ho' ht' hQuotes (.conjL (.conjR (.conjL hQ))) (.conjL (.conjR (.conjL hR)))
+    (.conjL (.conjR (.conjL hQ'))) (.conjL (.conjR (.conjL hR')))
+  have eOuter := compare_shell_outer_order hZ equality R w z a A B f j N D b S L g S' L' (quotedLeaves 1)
+    v u u' q q' hw hz hA hf hg hd ho ho' hRoute (hQuotes 1) (.conjL (.conjR (.conjR hQ))) (.conjL (.conjR (.conjR hQ')))
+  have eInner := compare_shell_inner_order hZ equality R w z a A B f j N D b S L g S' L' (quotedLeaves 3)
+    v u t u' t' r r' hw hz hA hB hf hg hd ho ht ho' ht' hRoute (hQuotes 3)
+    (.conjL (.conjR (.conjR hR))) (.conjL (.conjR (.conjR hR')))
+  have eWitness := compare_shell_atomic_witness hZ equality R w z a A B f j N D b S L g S' L' (quotedLeaves 4)
+    x y xImage yImage V f2 T v u t u' t' (r 3) (r' 3) hw hz hA hB hf hg hd hj hAtom hx hy hx' hy' hf2 hV hForest
+    ho ht ho' ht' hRoute hNames (hQuotes 4) (.conjR (.conjR (.conjR hR))) (.conjR (.conjR (.conjR hR')))
+  apply ForcingDensityInstantiation.raw_shell_eq hZ w E E' (mixedLeaves q r) (mixedLeaves q' r')
+    (mixedNodes u t q r) (mixedNodes u' t' q' r') hw _ hRaw hCommon
+  exact Fin.cases (.conjL eMembers)
+    (Fin.cases eOuter (Fin.cases (.conjR eMembers) (Fin.cases eInner (fun _ => eWitness))))
+
 end WitnessQueries
 
 private def layoutTail {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :

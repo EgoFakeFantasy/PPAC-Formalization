@@ -583,11 +583,11 @@ theorem compile_identity_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence �
 
 /-- A source atom term has empty free scope. The two actual condition
 overwrites therefore read the same bound-table field for that term. -/
-theorem closed_image_agreement {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w a f z b D S T x X Y : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+theorem closed_image_agreement_at_scopes {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a f z d e b D S T x X Y : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hx : Derives Γ (SyntaxTermSyntax.term w a z x))
-    (hX : Derives Γ (substituted w D S a f z b x X))
-    (hY : Derives Γ (substituted w D T a f z b x Y)) : Derives Γ (.equal X Y) := by
+    (hX : Derives Γ (substituted w D S a f d b x X))
+    (hY : Derives Γ (substituted w D T a f e b x Y)) : Derives Γ (.equal X Y) := by
   apply OriginalTermScopeElimination.eliminate w a z x (.equal X Y) hx
   intro bound
   cases bound with
@@ -601,17 +601,24 @@ theorem closed_image_agreement {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     let Δ := Context.add E (Context.image Formula.raise Γ)
     have hE : Derives Δ E := .hyp (Or.inl rfl)
     have hw1 := of_eq (omega_rename w Fin.castSucc) (under hw E)
-    have left := of_eq (substituted_rename w D S a f z b x X Fin.castSucc) (under hX E)
-    have right := of_eq (substituted_rename w D T a f z b x Y Fin.castSucc) (under hY E)
+    have left := of_eq (substituted_rename w D S a f d b x X Fin.castSucc) (under hX E)
+    have right := of_eq (substituted_rename w D T a f e b x Y Fin.castSucc) (under hY E)
     have hZ1 := ZFContext.under hZ E
-    have read (L U : Fin (m+1))
-        (h : Derives Δ (substituted w.castSucc D.castSucc L a.castSucc f.castSucc z.castSucc b.castSucc x.castSucc U)) :
+    have read (L scope U : Fin (m+1))
+        (h : Derives Δ (substituted w.castSucc D.castSucc L a.castSucc f.castSucc scope b.castSucc x.castSucc U)) :
         Derives Δ (StructuralListFieldSyntax.field w.castSucc D.castSucc (Fin.last m) U) :=
       .conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 true w.castSucc D.castSucc L
-        a.castSucc f.castSucc z.castSucc b.castSucc x.castSucc U (Fin.last m) hw1
+        a.castSucc f.castSucc scope b.castSucc x.castSucc U (Fin.last m) hw1
         (.conjL (SyntaxCodedMixedTermTyping.input_of_substituted _ _ _ _ _ _ _ _ _ h)) (.conjR hE))) h)
     exact StructuralListFieldValues.unique hZ1 w.castSucc D.castSucc (Fin.last m) X.castSucc Y.castSucc hw1
       (SyntaxVariableDecode.index_natural true w.castSucc (Fin.last m) x.castSucc (.conjR hE))
-      (read S.castSucc X.castSucc left) (read T.castSucc Y.castSucc right)
+      (read S.castSucc d.castSucc X.castSucc left) (read T.castSucc e.castSucc Y.castSucc right)
+
+theorem closed_image_agreement {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a f z b D S T x X Y : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a z x))
+    (hX : Derives Γ (substituted w D S a f z b x X))
+    (hY : Derives Γ (substituted w D T a f z b x Y)) : Derives Γ (.equal X Y) :=
+  closed_image_agreement_at_scopes hZ w a f z z z b D S T x X Y hw hz hx hX hY
 
 end PPAC.Migration.ForcingAtomicMono

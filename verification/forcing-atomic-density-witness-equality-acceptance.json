@@ -1,0 +1,80 @@
+{
+  "baseline_commit": "7c0988102bb32ab0eccb4ef7d6e9aad7c2b03c21",
+  "recorded_at": "2026-11-11T15:11:34.035256+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_opened_density",
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_atomic_witness",
+    "PPAC.Migration.ForcingAtomicMono.closed_image_agreement_at_scopes",
+    "PPAC.Migration.ForcingAtomicMonoImages.pair_forest_subst",
+    "PPAC.Migration.ForcingAtomicMonoImages.with_aligned_query_routes"
+  ],
+  "scope": "Compare the actual atomic witness in the two density queries. Its name images come from the same original bound table, the same closed name fields in the shared table survive both lifts, and the selected condition is exactly the second lift\u2019s bound zero. The existing four guard comparisons and constructor uniqueness give equality of the complete opened density outputs.",
+  "opened_density_output_equality_proved": true,
+  "canonical_atomic_witness_code_equality_proved": true,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40217,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "6a2ff003a7ace7a2da1c92b0b0eaa4126f1bb907b323f572b41ecb12fd715e2d",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "169b0dbd03b7aef1ba50d53de10fb02ac4b792b0057a6c7e9f27d9d74a646f97",
+      "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
+      "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+      "README.md": "7359435f2d8d74e0074c2113969b3730aedf3fd6893e56e9b89c5e81c6f9b503",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "6304612f3c5e3402a79f4ee851a77b7f27feef0460b0b2592503a42a3d2ed015",
+      "docs/CURRENT_STATUS.zh-CN.md": "ce30e5d1e390645b12cd8d1e8c9e9032f8f8cf04988834f092a58110415228d0",
+      "docs/SOURCE_LOCK.json": "77558b5d55666a11576048c326c96df4155f34f58c23f07a88f1739d0361316b",
+      "scripts/verify.py": "eabf19f471f52f5de56845be8d4f7cd545fdfa34dc36acaaf8a5d99c52f333b3"
+    }
+  },
+  "baseline_declarations_compared": 40212,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_opened_density": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_atomic_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMono.closed_image_agreement_at_scopes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.pair_forest_subst": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.with_aligned_query_routes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
