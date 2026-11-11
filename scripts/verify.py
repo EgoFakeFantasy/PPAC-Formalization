@@ -2801,7 +2801,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 2),
                                 ('forcing_raw_modal_body', 'ForcingRawModalBody', 69),
-                                ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
+                                ('forcing_old_parent_instance', 'ForcingOldParentInstance', 6)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
         if "retained_existing_producer" in adapter_lock:

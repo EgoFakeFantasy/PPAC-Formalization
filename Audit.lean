@@ -40658,6 +40658,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.negativeRootSentence
 #print axioms PPAC.Migration.ForcingRawModalBody.negative_root_kernel_certificate
 #print axioms PPAC.Migration.ForcingOldParentInstance.raise_proof
+#print axioms PPAC.Migration.ForcingOldParentInstance.raise_implication
 #print axioms PPAC.Migration.ForcingOldParentInstance.from_opened
 #print axioms PPAC.Migration.ForcingOldParentInstance.sentence
 #print axioms PPAC.Migration.ForcingOldParentInstance.kernel_certificate

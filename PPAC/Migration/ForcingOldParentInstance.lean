@@ -130,6 +130,71 @@ private theorem frame_rename {m l} (w z b B A t F Parent U G W Y I J : Fin m) (r
     SyntaxIdentityMapSyntax.identityCode_rename, SyntaxFreeShiftSyntax.shiftCode_rename, weakened_rename,
     singleCode_rename, SyntaxTopFormulaSyntax.instantiated_rename]
 
+private theorem with_raised_code {m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b B G N W U I J P : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hB : Derives Γ (successor B b))
+    (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
+    (hJ : Derives Γ (SyntaxFreeShiftSyntax.shiftCode w b B J))
+    (hWG : Derives Γ (weakened w z b B G W)) (hWN : Derives Γ (weakened w z b B N U))
+    (hP : Derives Γ (binaryCode 2 w G N P)) (hp : Derives Γ (proved test w z b P)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (X : Fin l),
+      ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode 2 (r w) (r W) (r U) X) →
+      Derives Δ (proved test (r w) (r z) (r B) X) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hW := SyntaxWeakenFreeOutput.target_type w z b B G W hWG
+  have hU := SyntaxWeakenFreeOutput.target_type w z b B N U hWN
+  refine NativeProofQuotation.eliminate_objects hZ 1 (fun r x =>
+    (Formula.mem (x 0) (r w)).conj (binaryCode 2 (r w) (r W) (r U) (x 0)))
+    (exists_imp hZ w z B W U hw hW hU) out ?_
+  intro l Δ r x hZ1 lift hE
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hB1 := of_eq (successor_rename B b r) (lift hB)
+  have hWG1 := of_eq (weakened_rename w z b B G W r) (lift hWG)
+  have hWN1 := of_eq (weakened_rename w z b B N U r) (lift hWN)
+  have hG1 := SyntaxWeakenFreeOutput.source_type hZ1 (r w) (r z) (r b) (r B) (r G) (r W) hw1 hWG1
+  have scopes := Derives.conjR (FormulaCodeProperties.guards (r w) (r G) (r z) (r b) hG1)
+  have hP1 := of_eq (binaryCode_rename 2 w G N P r) (lift hP)
+  have hWhole := Derives.impE (.conjR (SyntaxWeakenFreeLogicalInternal.binary_iff hZ1 2 (r w) (r z)
+    (r b) (r B) (r P) (x 0) (r G) (r N) (r W) (r U)
+    hw1 (.conjL scopes) (.conjR scopes) hB1 hP1 (.conjR hE))) (.conjI hWG1 hWN1)
+  have hRaised := raise_proof hZ1 test (r w) (r z) (r b) (r B) (r P) (x 0) (r I) (r J)
+    hw1 hz1 (of_eq (SyntaxIdentityMapSyntax.identityCode_rename _ _ _ r) (lift hI))
+    (of_eq (SyntaxFreeShiftSyntax.shiftCode_rename _ _ _ _ r) (lift hJ)) hWhole
+    (of_eq (proved_rename test w z b P r) (lift hp))
+  exact use r (x 0) hZ1 lift (.conjR hE) hRaised
+
+/-- Raise the original Root proof of an implication to the common next free
+scope, using the actual weakening records of both operands. -/
+theorem raise_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
+    (w z b B G N W U I J : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hB : Derives Γ (successor B b))
+    (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
+    (hJ : Derives Γ (SyntaxFreeShiftSyntax.shiftCode w b B J))
+    (hWG : Derives Γ (weakened w z b B G W)) (hWN : Derives Γ (weakened w z b B N U))
+    (hp : Derives Γ (implication test w z b G N)) : Derives Γ (implication test w z B W U) := by
+  let out := implication test w z B W U
+  refine NativeProofQuotation.eliminate_objects hZ 1 (fun r x =>
+    (binaryCode 2 (r w) (r G) (r N) (x 0)).conj (proved test (r w) (r z) (r b) (x 0)))
+    hp out ?_
+  intro l Δ r x hZ1 lift hP
+  refine of_eq (implication_rename test _ _ _ _ _ r).symm ?_
+  refine with_raised_code hZ1 test (r w) (r z) (r b) (r B) (r G) (r N) (r W) (r U) (r I) (r J)
+    (x 0) (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+    (of_eq (successor_rename B b r) (lift hB))
+    (of_eq (SyntaxIdentityMapSyntax.identityCode_rename _ _ _ r) (lift hI))
+    (of_eq (SyntaxFreeShiftSyntax.shiftCode_rename _ _ _ _ r) (lift hJ))
+    (of_eq (weakened_rename _ _ _ _ _ _ r) (lift hWG)) (of_eq (weakened_rename _ _ _ _ _ _ r) (lift hWN))
+    (.conjL hP) (.conjR hP) (implication test (r w) (r z) (r B) (r W) (r U)) ?_
+  intro l' Ξ s X _ _ hCode hProof
+  refine of_eq (implication_rename test _ _ _ _ _ s).symm ?_
+  apply Derives.exI X
+  exact of_eq (by
+    simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+      SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
+    rfl) (.conjI hCode hProof)
+
 private theorem from_implication_code {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b B A t F Parent U G W Y I J P : Fin m)
     (hf : Derives Γ (frame w z b B A t F Parent U G W Y I J))
@@ -137,37 +202,20 @@ private theorem from_implication_code {m} {Γ : Context m} (hZ : ZFContext.Evide
     Derives Γ (implication test w z B W Y) := by
   have hw := Derives.conjL hf
   have hz := Derives.conjL (.conjR hf)
-  have hWeak := Derives.conjR (.conjR (.conjR (.conjR (.conjR hf))))
-  have hWG := Derives.conjL hWeak
-  have hWU := Derives.conjL (.conjR hWeak)
-  have hW := SyntaxWeakenFreeOutput.target_type w z b B G W hWG
-  have hU := SyntaxWeakenFreeOutput.target_type w z b B Parent U hWU
-  let E := (Formula.mem (Fin.last m) w.castSucc).conj (binaryCode 2 w.castSucc W.castSucc U.castSucc (Fin.last m))
-  let Δ := Context.add E (Context.image Formula.raise Γ)
-  apply Derives.exE (p := E) (exists_imp hZ w z B W U hw hW hU)
-  have hE : Derives Δ E := .hyp (Or.inl rfl)
-  have hZ1 := ZFContext.under hZ E
-  have hf1 := of_eq (frame_rename w z b B A t F Parent U G W Y I J Fin.castSucc) (under hf E)
-  have hw1 := Derives.conjL hf1
-  have hz1 := Derives.conjL (.conjR hf1)
-  have hB1 := Derives.conjL (.conjR (.conjR hf1))
-  have maps := Derives.conjR (.conjR (.conjR hf1))
+  have next := Derives.conjR (.conjR hf)
+  have maps := Derives.conjR next
   have weak := Derives.conjR (.conjR maps)
-  have hG1 := SyntaxWeakenFreeOutput.source_type hZ1 w.castSucc z.castSucc b.castSucc B.castSucc
-    G.castSucc W.castSucc hw1 (.conjL weak)
-  have scopes := Derives.conjR (FormulaCodeProperties.guards w.castSucc G.castSucc z.castSucc b.castSucc hG1)
-  have hP1 := of_eq (binaryCode_rename 2 w G Parent P Fin.castSucc) (under hP E)
-  have hWhole := Derives.impE (.conjR (SyntaxWeakenFreeLogicalInternal.binary_iff hZ1 2 w.castSucc z.castSucc
-    b.castSucc B.castSucc P.castSucc (Fin.last m) G.castSucc Parent.castSucc W.castSucc U.castSucc
-    hw1 (.conjL scopes) (.conjR scopes) hB1 hP1 (.conjR hE))) (.conjI (.conjL weak) (.conjL (.conjR weak)))
-  have hRaised := raise_proof hZ1 test w.castSucc z.castSucc b.castSucc B.castSucc P.castSucc (Fin.last m)
-    I.castSucc J.castSucc hw1 hz1 (.conjL maps) (.conjL (.conjR maps)) hWhole
-    (of_eq (proved_rename test w z b P Fin.castSucc) (under hp E))
-  have inst := Derives.conjR (.conjR weak)
-  exact of_eq (implication_rename test w z B W Y Fin.castSucc).symm
-    (guarded_at hZ1 test w.castSucc z.castSucc B.castSucc A.castSucc t.castSucc F.castSucc U.castSucc W.castSucc
-      Y.castSucc (Fin.last m) hw1 hz1 (of_eq (formulaCode_rename w W z B Fin.castSucc) (under hW E))
-      (.conjL inst) (.conjR inst) (.conjR hE) hRaised)
+  have hW := SyntaxWeakenFreeOutput.target_type w z b B G W (.conjL weak)
+  refine with_raised_code hZ test w z b B G Parent W U I J P hw hz (.conjL next)
+    (.conjL maps) (.conjL (.conjR maps)) (.conjL weak) (.conjL (.conjR weak))
+    hP hp (implication test w z B W Y) ?_
+  intro l Δ r X hZ1 lift hCode hRaised
+  have hFrame := of_eq (frame_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hf)
+  have inst := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hFrame))))))
+  exact of_eq (implication_rename test w z B W Y r).symm
+    (guarded_at hZ1 test (r w) (r z) (r B) (r A) (r t) (r F) (r U) (r W) (r Y) X
+      (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+      (of_eq (formulaCode_rename w W z B r) (lift hW)) (.conjL inst) (.conjR inst) hCode hRaised)
 
 private theorem from_frame {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (test : Formula 1)
     (w z b B A t F Parent U G W Y I J : Fin m)

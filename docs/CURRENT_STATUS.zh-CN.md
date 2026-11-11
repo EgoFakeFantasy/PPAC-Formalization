@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingDensityInstantiation.with_negative_witness_queries` 从原否定记录取得 `q` 的成员查询，并用实际见证表的重命名弱化查询和原 Root 推导。它生成 `Extra ∧ 见证正文` 的实际对象码，在同一局部背景下推出 `Extra`、`q` 和 `r` 的成员守卫、`r ≤ q` 及 `r` 处的否定子式。接通原单调性还需传递继承偏序和 `q` 处的正子式，随后用 `r ≤ r` 得出矛盾。[整仓验收](../verification/forcing-negative-density-actual-local-acceptance.json)
+
 `ForcingSourceDensity.with_witness_monotonicity` 现在接收见证局部背景下的五条对象推导。它把同一实际偏序行的成员叶 `H1`、`H2` 和顺序叶 `H4` 对应到实际守卫，将继承的偏序查询归约为同一内部替换，并用原四个合取构造得到局部背景到单调性背景的推导。由此在局部背景下得到正子式在 `r` 处的证明。还需从实际打开的见证生成这五条推导，并以 `r ≤ r` 闭合否定分支。[整仓验收](../verification/forcing-negative-density-local-background-acceptance.json)
 
 `ForcingSourceDensity.with_witness_monotonicity` 用原偏序生成器在见证作用域内产生两组实际行，再由原证明上下文构造器生成共同背景。它实际调用原任意内部码单调性归纳，消费给定的正子式证明及其在 `q`、`r` 处的查询，在生成的共同背景下推出 `r` 处的正子式。同一偏序行的 `H4` 已与实际 `r ≤ q` 守卫接通。仍需将见证分支的局部假设接入该背景并闭合自反矛盾。[整仓验收](../verification/forcing-negative-density-witness-monotonicity-acceptance.json)
