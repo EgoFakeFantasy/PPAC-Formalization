@@ -1,6 +1,7 @@
 import PPAC.Migration.ForcingDensityInstantiation
 import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingFreshOpeningInverse
+import PPAC.Migration.Internal.StructuralConsUnique
 
 /-! Identify the actual member/order guards of a density instance with the
 original literal guard queries at the selected condition, on the same table. -/
@@ -1526,7 +1527,9 @@ end FalsumElimination
 
 section ConjunctionWitness
 
-open SyntaxLogicalSyntax (singleCode singleCode_rename)
+set_option maxHeartbeats 1600000
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+open SyntaxLogicalSyntax (singleCode singleCode_rename binaryCode_rename)
 open FormulaCodeSyntax (formulaCode_rename)
 open InternalProofConjunction (proved proved_rename)
 
@@ -1619,6 +1622,252 @@ theorem conjunction_exists_from_witness {m} {Γ : Context m} (hZ : ZFContext.Evi
   have hOpen := SyntaxWeakenFreeOutput.target_type w z b B ChildEx ChildExOpen hChildWeak
   exact eliminate_exists_from_body hZ w z b A B Parent ParentBound ChildExOpen ChildEx ParentEx hw hz
     hT hB hOpen hParentAbs ha hParentEx hp
+
+private theorem conjunction_from_shared_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z alpha f b A B t D S M O P Q Pair Mid ChildMid RawParent RawChild
+      Parent Child ChildBound ChildWeak ChildEx ParentBound ParentEx : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hMid : Derives Γ (binaryCode 0 w O Pair Mid))
+    (hRawParent : Derives Γ (binaryCode 0 w M Mid RawParent))
+    (hChildMid : Derives Γ (binaryCode 0 w O (if right then Q else P) ChildMid))
+    (hRawChild : Derives Γ (binaryCode 0 w M ChildMid RawChild))
+    (hParent : Derives Γ (substituted w D S alpha f z B RawParent Parent))
+    (hChild : Derives Γ (substituted w D S alpha f z B RawChild Child))
+    (hi : Derives Γ (instantiated w z B A t ChildBound Child))
+    (he : Derives Γ (singleCode 10 w ChildBound ChildWeak))
+    (hWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b B ChildEx ChildWeak))
+    (hAbs : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Parent ParentBound))
+    (hEx : Derives Γ (singleCode 10 w ParentBound ParentEx)) :
+    Derives Γ (implication test w z b ParentEx ChildEx) := by
+  let out := implication test w z b ParentEx ChildEx
+  have hPO := ForcingRawModalBody.nested_from_query hZ 0 w D S alpha f z B M O Pair Mid RawParent Parent
+    hw hRawParent hMid hParent
+  refine eliminate_objects hZ 4 (fun r v => ForcingRawModalBody.nestedData 0 (r w) (r D) (r S)
+    (r alpha) (r f) (r z) (r B) (r M) (r O) (r Pair) (r Mid) (r Parent) v) hPO out ?_
+  intro l Δ r v hZ1 lift hp
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hPair1 := ForcingFormulaDiagram.binary_output hZ1 0 (r w) (r D) (r S) (r alpha) (r f) (r z) (r B)
+    (r Pair) (r P) (r Q) (v 3) hw1 (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hPair)) (.conjR (.conjR (.conjR hp)))
+  refine eliminate_objects hZ1 2 (fun s x => ForcingFormulaDiagram.binaryData 0 (s (r w)) (s (r D)) (s (r S))
+    (s (r alpha)) (s (r f)) (s (r z)) (s (r B)) (s (r P)) (s (r Q)) (s (v 3)) (x 0) (x 1))
+    hPair1 (out.rename r) ?_
+  intro l1 Δ1 s x hZ2 lift1 hPair2
+  let R := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  let Selected := if right then Q else P
+  have hCO := ForcingRawModalBody.nested_from_query hZ2 0 (R w) (R D) (R S) (R alpha) (R f) (R z) (R B)
+    (R M) (R O) (R Selected) (R ChildMid) (R RawChild) (R Child)
+    (of_eq (omega_rename _ _) (move hw))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (move hRawChild))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (move hChildMid))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (move hChild))
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine eliminate_objects hZ2 4 (fun e u => ForcingRawModalBody.nestedData 0 (e (R w)) (e (R D)) (e (R S))
+    (e (R alpha)) (e (R f)) (e (R z)) (e (R B)) (e (R M)) (e (R O))
+    (e (R Selected)) (e (R ChildMid)) (e (R Child)) u) hCO (out.rename R) ?_
+  intro l2 Δ2 e u hZ3 lift2 hChild2
+  let E := e ∘ R
+  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename E) :=
+    of_eq (SourceAlgebra.rename_comp F R e) (lift2 (move h))
+  have hw2 := of_eq (omega_rename _ _) (move2 hw)
+  have hz2 := of_eq (empty_rename _ _) (move2 hz)
+  have hp2 := of_eq (ForcingRawModalBody.nestedData_rename 0 (r w) (r D) (r S) (r alpha) (r f)
+    (r z) (r B) (r M) (r O) (r Pair) (r Mid) (r Parent) v (e ∘ s))
+    (of_eq (SourceAlgebra.rename_comp _ s e) (lift2 (lift1 hp)))
+  have hPQ := of_eq (ForcingFormulaDiagram.binaryData_rename 0 (R w) (R D) (R S) (R alpha) (R f)
+    (R z) (R B) (R P) (R Q) (s (v 3)) (x 0) (x 1) e) (lift2 hPair2)
+  have hM := Derives.conjL (.conjR (.conjL hp2))
+  have hO := Derives.conjL (.conjR (.conjR hp2))
+  have hP := Derives.conjL (.conjR hPQ)
+  have hQ := Derives.conjR (.conjR hPQ)
+  let result := if right then e (x 1) else e (x 0)
+  have hSelected : Derives Δ2 (substituted (E w) (E D) (E S) (E alpha) (E f) (E z) (E B)
+      (E Selected) result) := by
+    cases right
+    · exact hP
+    · exact hQ
+  have same {F X Y : Fin l2}
+      (hX : Derives Δ2 (substituted (E w) (E D) (E S) (E alpha) (E f) (E z) (E B) F X))
+      (hY : Derives Δ2 (substituted (E w) (E D) (E S) (E alpha) (E f) (E z) (E B) F Y)) :
+      Derives Δ2 (.equal X Y) :=
+    SyntaxMixedFormulaOutputInduction.unique hZ3 (E w) (E D) (E S) (E alpha) (E f) (E z) (E B) F X Y hw2 hX hY
+  have hmEq := same (.conjL (.conjR (.conjL hChild2))) hM
+  have hoEq := same (.conjL (.conjR (.conjR hChild2))) hO
+  have hsEq := same (.conjR (.conjR (.conjR hChild2))) hSelected
+  have hChildMid2 := SyntaxMixedFormulaLogicalSubst.binary_x 0 (E w) (u 2) (u 3) (u 0) (e (s (v 2)))
+    hoEq (.conjL (.conjR hChild2))
+  have hChildMid3 := SyntaxMixedFormulaLogicalSubst.binary_y 0 (E w) (e (s (v 2))) (u 3) (u 0) result hsEq hChildMid2
+  have hChild3 := SyntaxMixedFormulaLogicalSubst.binary_x 0 (E w) (u 1) (u 0) (E Child) (e (s (v 1)))
+    hmEq (.conjL (.conjL hChild2))
+  have type_of {F X : Fin l2}
+      (h : Derives Δ2 (substituted (E w) (E D) (E S) (E alpha) (E f) (E z) (E B) F X)) :
+      Derives Δ2 (formulaCode (E w) X (E z) (E B)) :=
+    SyntaxMixedFormulaJudgment.target_type _ _ _ _ _ _ _ _ _ h
+  exact of_eq (SourceAlgebra.rename_comp out R e).symm
+    (of_eq (implication_rename test w z b ParentEx ChildEx E).symm
+      (conjunction_exists_from_witness hZ3 right (E w) (E z) (E b) (E A) (E B) (E t)
+        (e (s (v 1))) (e (s (v 2))) (e (x 0)) (e (x 1)) (e (s (v 3))) (e (s (v 0)))
+        (E Parent) (u 0) (E Child) (E ChildBound) (E ChildWeak) (E ChildEx) (E ParentBound) (E ParentEx)
+        hw2 hz2 (type_of hM) (type_of hO) (type_of hP) (type_of hQ)
+        (.conjL hPQ) (.conjL (.conjR hp2)) (.conjL (.conjL hp2)) hChildMid3 hChild3
+        (of_eq (instantiated_rename _ _ _ _ _ _ _ _) (move2 hi))
+        (of_eq (singleCode_rename _ _ _ _ _) (move2 he))
+        (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ _) (move2 hWeak))
+        (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move2 hAbs))
+        (of_eq (singleCode_rename _ _ _ _ _) (move2 hEx))))
+
+private theorem conjunction_from_opening_records {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z a f alpha b A B t R S NP NC XP XC EP EC M O P Q Pair MP MC : Fin m)
+    (v : Fin 10 → Fin m) (u c : Fin 9 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hMP : Derives Γ (binaryCode 0 w O Pair MP))
+    (hXP : Derives Γ (binaryCode 0 w M MP XP))
+    (hMC : Derives Γ (binaryCode 0 w O (if right then Q else P) MC))
+    (hXC : Derives Γ (binaryCode 0 w M MC XC))
+    (hc : Derives Γ (singleCode 10 w XC NC))
+    (hOldChild : Derives Γ (substituted w R S a f z b NC EC))
+    (hp : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z a f alpha b A B t R S NP XP EP v u))
+    (hq : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z a f alpha b A B t R S NC XC EC v c)) :
+    Derives Γ (implication test w z b EP EC) := by
+  have images := Derives.conjL (.conjR hq)
+  have c3 := Derives.conjR (.conjR (.conjR hq))
+  have hLift := Derives.conjL c3
+  have c5 := Derives.conjR (.conjR c3)
+  have hCBody := Derives.conjL c5
+  have c6 := Derives.conjR c5
+  have hCWhole := Derives.conjL c6
+  have c7 := Derives.conjR c6
+  have hCCons := Derives.conjL c7
+  have c8 := Derives.conjR c7
+  have hCOpen := Derives.conjL c8
+  have c10 := Derives.conjR (.conjR c8)
+  have hInv := Derives.conjL c10
+  have hI := Derives.conjR (.conjR (.conjR (.conjR (.conjR hInv))))
+  have p7 := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hp))))))
+  have hPCons := Derives.conjL p7
+  have p8 := Derives.conjR p7
+  have hPOpen := Derives.conjL p8
+  have p9 := Derives.conjR p8
+  have hPEx := Derives.conjL p9
+  have hPAbs := Derives.conjR (.conjR p9)
+  have hInput := SyntaxMixedFormulaOutput.input_of_substituted hZ w (v 8) (v 9) a f z B NC (c 6) hw hCWhole
+  have hL := Derives.conjL (.conjR hInput)
+  have hList := Derives.conjL (.conjL (.conjR (.conjR hL)))
+  have hTN := SyntaxTerms.range hZ w z B t hw ht
+  have heq := StructuralConsUnique.unique hZ w t (v 8) (c 7) (u 7) hw hTN hList hCCons hPCons
+  have hSame := SyntaxMixedFormulaJudgmentSubst.subst_r w (c 7) (v 9) alpha f z B XC (c 8) (u 7) heq hCOpen
+  have hWeak := ForcingWeakenedImages.from_queries hZ w a f z b B R S NC EC (c 6) v
+    (.conjI images (.conjI hOldChild hCWhole))
+  have hCEx := ForcingMixedUnary.quantified_constructor hZ false w (v 8) (v 9) a f z B NC XC (c 6) (c 5)
+    alpha A (c 2) (c 3) hw hInput hc hCWhole hLift hCBody
+  exact conjunction_from_shared_queries hZ right w z alpha f b A B t (u 7) (v 9) M O P Q Pair MP MC XP XC
+    (u 8) (c 8) (c 5) (c 6) EC (u 4) EP hw hz hPair hMP hXP hMC hXC hPOpen hSame hI hCEx hWeak hPAbs hPEx
+
+private theorem conjunction_from_exists_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z a f alpha b A B t R S NP NC XP XC EP EC M O P Q Pair MP MC : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ha : Derives Γ (successor alpha a)) (hA : Derives Γ (successor A z)) (hB : Derives Γ (successor B b))
+    (hf : Derives Γ (SyntaxVariableSyntax.code false w z t))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z B t))
+    (hp : Derives Γ (singleCode 10 w XP NP)) (hc : Derives Γ (singleCode 10 w XC NC))
+    (hPQuery : Derives Γ (substituted w R S a f z b NP EP))
+    (hCQuery : Derives Γ (substituted w R S a f z b NC EC))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hMP : Derives Γ (binaryCode 0 w O Pair MP)) (hXP : Derives Γ (binaryCode 0 w M MP XP))
+    (hMC : Derives Γ (binaryCode 0 w O (if right then Q else P) MC))
+    (hXC : Derives Γ (binaryCode 0 w M MC XC)) :
+    Derives Γ (implication test w z b EP EC) := by
+  let out := implication test w z b EP EC
+  have hIn := Derives.conjR (SyntaxMixedFormulaOutput.input_of_substituted hZ w R S a f z b NP EP hw hPQuery)
+  refine eliminate_objects hZ 10 (fun r v => ForcingWeakenedImages.data (r w) (r a) (r f)
+    (r z) (r b) (r B) (r R) (r S) v)
+    (ForcingWeakenedImages.produce hZ w a f z b B R S (.conjI hw (.conjI hB hIn))) out ?_
+  intro l Δ r v hZ1 lift hv
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have ha1 := of_eq (successor_rename _ _ _) (lift ha)
+  have hA1 := of_eq (successor_rename _ _ _) (lift hA)
+  have hB1 := of_eq (successor_rename _ _ _) (lift hB)
+  have hf1 := of_eq (SyntaxVariableSyntax.code_rename false _ _ _ _) (lift hf)
+  have ht1 := of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (lift ht)
+  have input {N X E : Fin m}
+      (hX : Derives Γ (singleCode 10 w X N)) (hE : Derives Γ (substituted w R S a f z b N E)) :
+      Derives Δ (ForcingFreshParentOpening.quantifiedInput false
+        (r w) (r z) (r a) (r f) (r alpha) (r b) (r A) (r B) (r t) (r R) (r S) (r N) (r X) (r E)) :=
+    .conjI hw1 (.conjI hz1 (.conjI ha1 (.conjI hA1 (.conjI hB1 (.conjI hf1 (.conjI ht1
+      (.conjI (of_eq (singleCode_rename _ _ _ _ _) (lift hX))
+        (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (lift hE)))))))))
+  have hPO := ForcingFreshParentOpening.produce_quantified_at_images hZ1 false
+    (r w) (r z) (r a) (r f) (r alpha) (r b) (r A) (r B) (r t) (r R) (r S) (r NP) (r XP) (r EP) v
+    (input hp hPQuery) hv
+  have hCO := ForcingFreshParentOpening.produce_quantified_at_images hZ1 false
+    (r w) (r z) (r a) (r f) (r alpha) (r b) (r A) (r B) (r t) (r R) (r S) (r NC) (r XC) (r EC) v
+    (input hc hCQuery) hv
+  let target := implication test (r w) (r z) (r b) (r EP) (r EC)
+  refine of_eq (implication_rename test w z b EP EC r).symm ?_
+  refine eliminate_objects hZ1 9 (fun s u => ForcingFreshParentOpening.quantifiedData false
+    (s (r w)) (s (r z)) (s (r a)) (s (r f)) (s (r alpha)) (s (r b)) (s (r A)) (s (r B)) (s (r t))
+    (s (r R)) (s (r S)) (s (r NP)) (s (r XP)) (s (r EP)) (s ∘ v) u) hPO target ?_
+  intro l1 Δ1 s u hZ2 lift1 hPO1
+  let R1 := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R1) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  refine of_eq (implication_rename test (r w) (r z) (r b) (r EP) (r EC) s).symm ?_
+  refine eliminate_objects hZ2 9 (fun e c => ForcingFreshParentOpening.quantifiedData false
+    (e (R1 w)) (e (R1 z)) (e (R1 a)) (e (R1 f)) (e (R1 alpha)) (e (R1 b)) (e (R1 A)) (e (R1 B)) (e (R1 t))
+    (e (R1 R)) (e (R1 S)) (e (R1 NC)) (e (R1 XC)) (e (R1 EC)) (e ∘ s ∘ v) c)
+    (of_eq (ForcingFreshParentOpening.quantifiedAtImages_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ s) (lift1 hCO))
+    (implication test (R1 w) (R1 z) (R1 b) (R1 EP) (R1 EC)) ?_
+  intro l2 Δ2 e c hZ3 lift2 hCO2
+  let E := e ∘ R1
+  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename E) :=
+    of_eq (SourceAlgebra.rename_comp F R1 e) (lift2 (move h))
+  have hPO2 := of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ e)
+    (lift2 hPO1)
+  have hMC2 : Derives Δ2 (binaryCode 0 (E w) (E O) (if right then E Q else E P) (E MC)) := by
+    cases right <;> exact of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hMC)
+  exact of_eq (implication_rename test (R1 w) (R1 z) (R1 b) (R1 EP) (R1 EC) e).symm
+    (conjunction_from_opening_records hZ3 right (E w) (E z) (E a) (E f) (E alpha) (E b) (E A) (E B)
+      (E t) (E R) (E S) (E NP) (E NC) (E XP) (E XC) (E EP) (E EC) (E M) (E O) (E P) (E Q)
+      (E Pair) (E MP) (E MC) (e ∘ s ∘ v) (e ∘ u) c
+      (of_eq (omega_rename _ _) (move2 hw)) (of_eq (empty_rename _ _) (move2 hz))
+      (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ _) (move2 ht))
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hPair)) (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hMP))
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hXP)) hMC2
+      (of_eq (binaryCode_rename _ _ _ _ _ _) (move2 hXC)) (of_eq (singleCode_rename _ _ _ _ _) (move2 hc))
+      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ _) (move2 hCQuery)) hPO2 hCO2)
+
+
+/-- Read the two original density shells and transport their existential tails
+using the same fresh witness and mixed substitution tables. -/
+theorem conjunction_exists_from_compiler_shells {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z a A B f b C D t R S qM qO rM rO P Q Pair ParentRaw ChildRaw EP EC : Fin m)
+    (u v : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hB : Derives Γ (successor B A))
+    (hC : Derives Γ (successor C z)) (hD : Derives Γ (successor D b))
+    (hf : Derives Γ (SyntaxVariableSyntax.code false w z t))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z D t))
+    (hParentShell : Derives Γ (ForcingDensityCode.shellData w a A B f qM qO rM rO Pair ParentRaw u))
+    (hChildShell : Derives Γ (ForcingDensityCode.shellData w a A B f qM qO rM rO
+      (if right then Q else P) ChildRaw v))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hParentQuery : Derives Γ (substituted w R S A f z b (u 2) EP))
+    (hChildQuery : Derives Γ (substituted w R S A f z b (v 2) EC)) :
+    Derives Γ (implication test w z b EP EC) := by
+  have hParentMid := Derives.conjL (.conjL hParentShell)
+  have hParentBody := Derives.conjL (.conjL (.conjR hParentShell))
+  have hParentEx := Derives.conjL (.conjL (.conjR (.conjR hParentShell)))
+  have hChildMid := Derives.conjL (.conjL hChildShell)
+  have hChildBody := Derives.conjL (.conjL (.conjR hChildShell))
+  have hChildEx := Derives.conjL (.conjL (.conjR (.conjR hChildShell)))
+  exact conjunction_from_exists_queries hZ right w z A f B b C D t R S (u 2) (v 2) (u 1) (v 1) EP EC rM rO
+    P Q Pair (u 0) (v 0) hw hz hB hC hD hf ht hParentEx hChildEx hParentQuery hChildQuery
+    hPair hParentMid hParentBody hChildMid hChildBody
 
 end ConjunctionWitness
 

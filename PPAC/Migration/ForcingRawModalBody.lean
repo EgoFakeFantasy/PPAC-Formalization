@@ -16,59 +16,85 @@ attribute [local irreducible] NaturalRecursionSyntax.matrix
 
 /-- Target witnesses are the member guard, inner implication, order guard
 and tail. Both target constructors and all three raw queries are retained. -/
+def nestedData {m} (kind : Fin 4) (w D S a f z T M O L I Y : Fin m) (v : Fin 4 → Fin m) : Formula m :=
+  (ForcingFormulaDiagram.binaryData kind w D S a f z T M I Y (v 1) (v 0)).conj
+    (ForcingFormulaDiagram.binaryData kind w D S a f z T O L (v 0) (v 2) (v 3))
+
+theorem nestedData_rename {m l} (kind : Fin 4) (w D S a f z T M O L I Y : Fin m) (v : Fin 4 → Fin m) (rho : Fin m → Fin l) :
+    (nestedData kind w D S a f z T M O L I Y v).rename rho =
+      nestedData kind (rho w) (rho D) (rho S) (rho a) (rho f) (rho z) (rho T)
+        (rho M) (rho O) (rho L) (rho I) (rho Y) (fun i => rho (v i)) := by
+  simp only [nestedData, Formula.rename, ForcingFormulaDiagram.binaryData_rename]
+
+def nestedOutputs {m} (kind : Fin 4) (w D S a f z T M O L I Y : Fin m) : Formula m :=
+  existsMany 4 (nestedData kind (old 4 w) (old 4 D) (old 4 S) (old 4 a) (old 4 f) (old 4 z) (old 4 T)
+    (old 4 M) (old 4 O) (old 4 L) (old 4 I) (old 4 Y) (slot 4))
+
+theorem nestedOutputs_rename {m l} (kind : Fin 4) (w D S a f z T M O L I Y : Fin m) (rho : Fin m → Fin l) :
+    (nestedOutputs kind w D S a f z T M O L I Y).rename rho =
+      nestedOutputs kind (rho w) (rho D) (rho S) (rho a) (rho f) (rho z) (rho T)
+        (rho M) (rho O) (rho L) (rho I) (rho Y) := by
+  simp only [nestedOutputs, existsMany_rename, nestedData_rename, lift_old, lift_slot]
+
+private def four {m} (a b c d : Fin m) : Fin 4 → Fin m :=
+  Fin.cases a (Fin.cases b (SyntaxAtomSyntax.two c d))
+
+theorem nested_from_query {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (kind : Fin 4)
+    (w D S a f z T M O L I X Y : Fin m) (hw : Derives Gamma (omega w))
+    (houter : Derives Gamma (binaryCode kind w M I X))
+    (hinner : Derives Gamma (binaryCode kind w O L I))
+    (hq : Derives Gamma (substituted w D S a f z T X Y)) :
+    Derives Gamma (nestedOutputs kind w D S a f z T M O L I Y) := by
+  let E := ForcingFormulaDiagram.binaryBody kind w D S a f z T M I Y
+  let Delta := Context.add E (raisedContext 2 Gamma)
+  apply HornBinderRules.eliminate_many 2 E _
+    (ForcingFormulaDiagram.binary_output hZ kind w D S a f z T X M I Y hw houter hq)
+  have he : Derives Delta E := .hyp (Or.inl rfl)
+  have hw2 := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)
+  have hinner2 := of_eq (binaryCode_rename kind w O L I (old 2)) (HornBinderRules.under_body 2 hinner E)
+  let F := ForcingFormulaDiagram.binaryBody kind (old 2 w) (old 2 D) (old 2 S)
+    (old 2 a) (old 2 f) (old 2 z) (old 2 T) (old 2 O) (old 2 L) (slot 2 1)
+  let Xi := Context.add F (raisedContext 2 Delta)
+  apply HornBinderRules.eliminate_many 2 F _
+    (ForcingFormulaDiagram.binary_output (HornBinderRules.zf_body 2 hZ E) kind
+      (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 z) (old 2 T)
+      (old 2 I) (old 2 O) (old 2 L) (slot 2 1) hw2 hinner2 (.conjR (.conjR he)))
+  have hf : Derives Xi F := .hyp (Or.inl rfl)
+  have he4 := of_eq (ForcingFormulaDiagram.binaryData_rename kind (old 2 w) (old 2 D) (old 2 S)
+    (old 2 a) (old 2 f) (old 2 z) (old 2 T) (old 2 M) (old 2 I) (old 2 Y)
+    (slot 2 0) (slot 2 1) (old 2)) (HornBinderRules.under_body 2 he F)
+  have out : Derives Xi (nestedOutputs kind (old 2 (old 2 w)) (old 2 (old 2 D)) (old 2 (old 2 S))
+      (old 2 (old 2 a)) (old 2 (old 2 f)) (old 2 (old 2 z)) (old 2 (old 2 T))
+      (old 2 (old 2 M)) (old 2 (old 2 O)) (old 2 (old 2 L)) (old 2 (old 2 I)) (old 2 (old 2 Y))) := by
+    apply HornBinderRules.intro_many 4 _ (four (old 2 (slot 2 1)) (old 2 (slot 2 0)) (slot 2 0) (slot 2 1))
+    exact of_eq (by simp only [nestedData_rename, assign_old, assign_slot]; rfl) (.conjI he4 hf)
+  exact of_eq (by simp only [nestedOutputs_rename]) out
+
 def data {m} (w D S a f z T M O L I Y : Fin m) (v : Fin 4 → Fin m) : Formula m :=
-  (ForcingFormulaDiagram.binaryData 2 w D S a f z T M I Y (v 1) (v 0)).conj
-    (ForcingFormulaDiagram.binaryData 2 w D S a f z T O L (v 0) (v 2) (v 3))
+  nestedData 2 w D S a f z T M O L I Y v
 
 theorem data_rename {m l} (w D S a f z T M O L I Y : Fin m) (v : Fin 4 → Fin m) (rho : Fin m → Fin l) :
     (data w D S a f z T M O L I Y v).rename rho =
       data (rho w) (rho D) (rho S) (rho a) (rho f) (rho z) (rho T)
-        (rho M) (rho O) (rho L) (rho I) (rho Y) (fun i => rho (v i)) := by
-  simp only [data, Formula.rename, ForcingFormulaDiagram.binaryData_rename]
+        (rho M) (rho O) (rho L) (rho I) (rho Y) (fun i => rho (v i)) :=
+  nestedData_rename 2 w D S a f z T M O L I Y v rho
 
 def outputs {m} (w D S a f z T M O L I Y : Fin m) : Formula m :=
-  existsMany 4 (data (old 4 w) (old 4 D) (old 4 S) (old 4 a) (old 4 f) (old 4 z) (old 4 T)
-    (old 4 M) (old 4 O) (old 4 L) (old 4 I) (old 4 Y) (slot 4))
+  nestedOutputs 2 w D S a f z T M O L I Y
 
 theorem outputs_rename {m l} (w D S a f z T M O L I Y : Fin m) (rho : Fin m → Fin l) :
     (outputs w D S a f z T M O L I Y).rename rho =
       outputs (rho w) (rho D) (rho S) (rho a) (rho f) (rho z) (rho T)
-        (rho M) (rho O) (rho L) (rho I) (rho Y) := by
-  simp only [outputs, existsMany_rename, data_rename, lift_old, lift_slot]
-
-private def four {m} (a b c d : Fin m) : Fin 4 → Fin m :=
-  Fin.cases a (Fin.cases b (SyntaxAtomSyntax.two c d))
+        (rho M) (rho O) (rho L) (rho I) (rho Y) :=
+  nestedOutputs_rename 2 w D S a f z T M O L I Y rho
 
 theorem from_query {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
     (w D S a f z T M O L I X Y : Fin m) (hw : Derives Gamma (omega w))
     (houter : Derives Gamma (binaryCode 2 w M I X))
     (hinner : Derives Gamma (binaryCode 2 w O L I))
     (hq : Derives Gamma (substituted w D S a f z T X Y)) :
-    Derives Gamma (outputs w D S a f z T M O L I Y) := by
-  let E := ForcingFormulaDiagram.binaryBody 2 w D S a f z T M I Y
-  let Delta := Context.add E (raisedContext 2 Gamma)
-  apply HornBinderRules.eliminate_many 2 E _
-    (ForcingFormulaDiagram.binary_output hZ 2 w D S a f z T X M I Y hw houter hq)
-  have he : Derives Delta E := .hyp (Or.inl rfl)
-  have hw2 := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 hw E)
-  have hinner2 := of_eq (binaryCode_rename 2 w O L I (old 2)) (HornBinderRules.under_body 2 hinner E)
-  let F := ForcingFormulaDiagram.binaryBody 2 (old 2 w) (old 2 D) (old 2 S)
-    (old 2 a) (old 2 f) (old 2 z) (old 2 T) (old 2 O) (old 2 L) (slot 2 1)
-  let Xi := Context.add F (raisedContext 2 Delta)
-  apply HornBinderRules.eliminate_many 2 F _
-    (ForcingFormulaDiagram.binary_output (HornBinderRules.zf_body 2 hZ E) 2
-      (old 2 w) (old 2 D) (old 2 S) (old 2 a) (old 2 f) (old 2 z) (old 2 T)
-      (old 2 I) (old 2 O) (old 2 L) (slot 2 1) hw2 hinner2 (.conjR (.conjR he)))
-  have hf : Derives Xi F := .hyp (Or.inl rfl)
-  have he4 := of_eq (ForcingFormulaDiagram.binaryData_rename 2 (old 2 w) (old 2 D) (old 2 S)
-    (old 2 a) (old 2 f) (old 2 z) (old 2 T) (old 2 M) (old 2 I) (old 2 Y)
-    (slot 2 0) (slot 2 1) (old 2)) (HornBinderRules.under_body 2 he F)
-  have out : Derives Xi (outputs (old 2 (old 2 w)) (old 2 (old 2 D)) (old 2 (old 2 S))
-      (old 2 (old 2 a)) (old 2 (old 2 f)) (old 2 (old 2 z)) (old 2 (old 2 T))
-      (old 2 (old 2 M)) (old 2 (old 2 O)) (old 2 (old 2 L)) (old 2 (old 2 I)) (old 2 (old 2 Y))) := by
-    apply HornBinderRules.intro_many 4 _ (four (old 2 (slot 2 1)) (old 2 (slot 2 0)) (slot 2 0) (slot 2 1))
-    exact of_eq (by simp only [data_rename, assign_old, assign_slot]; rfl) (.conjI he4 hf)
-  exact of_eq (by simp only [outputs_rename]) out
+    Derives Gamma (outputs w D S a f z T M O L I Y) :=
+  nested_from_query hZ 2 w D S a f z T M O L I X Y hw houter hinner hq
 
 /-- Source constructor fields read from either literal compiler shell. -/
 def shell {m} (w n M O L I X : Fin m) : Formula m :=

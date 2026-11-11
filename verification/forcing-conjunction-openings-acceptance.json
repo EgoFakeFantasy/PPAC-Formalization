@@ -1,0 +1,123 @@
+{
+  "baseline_commit": "047e2b64de8c8fbb4457c3527873237aea0dbe16",
+  "recorded_at": "2026-11-11T10:53:11.918821+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells",
+  "scope": "From the parent's and selected child's actual density compiler shells and substituted existential tails, derive the original internal proof of the implication between the tails. Both actual opens use one weakened mixed table. The bound prefix is identified by cons uniqueness and both guards and the selected projection by actual substitution uniqueness. The scope and term inputs are actual internal codes. The outer universal, full density induction and final Con remain open.",
+  "actual_parent_and_child_existential_openings_consumed": true,
+  "same_witness_and_same_member_and_order_guards": true,
+  "conjunction_outer_density_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40149,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "f201245f3f5b9df6faac62c01cf5a74d173f7c88769346f434da8d34cd69dcf3",
+      "PPAC/Migration/ForcingDensityGuards.lean": "b0b4981309c31f2653b0826969fcb7792784e894d34aecc131dc41c5ae29d504",
+      "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
+      "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+      "docs/SOURCE_LOCK.json": "863a28d18361a397b197595b702b718d53d47f4e161edbccdee4dd48f32b86f4",
+      "scripts/verify.py": "42acb3feb0323d69b546ae817bad1bf4acb49107603a1f92906c0ef894d5226e"
+    }
+  },
+  "baseline_declarations_compared": 40133,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedInput_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedProduced": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.quantifiedProduced_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.produce_quantified_at_images": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.produce_quantified": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.nestedData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.nestedData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.nestedOutputs": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.nestedOutputs_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.nested_from_query": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axioms": []
+}

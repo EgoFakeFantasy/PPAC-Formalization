@@ -5,7 +5,7 @@ import PPAC.Migration.Internal.StructuralConsCore
 import PPAC.Migration.ForcingNegCode
 import PPAC.Migration.ForcingExistCode
 
-/-! Open the ACTUAL newly queried ALL parent, with its original complete
+/-! Open the actual queried universal or existential parent, with its original complete
 mixed tables. Generate both lifted tables, both bodies, the weakened parent,
 the native fresh instance, and the direct raw-body query. No expected body,
 map equality, instance answer or external-standardness premise is supplied.
@@ -17,19 +17,19 @@ open SyntaxRenameQuerySyntax (of_eq)
 set_option maxRecDepth 32768
 attribute [local irreducible] NaturalRecursionSyntax.matrix
 
-def input {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
+def quantifiedInput {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
   (omega w).conj ((empty z).conj ((successor alpha a).conj
     ((successor A z).conj ((successor B b).conj
       ((SyntaxVariableSyntax.code false w z t).conj
         ((SyntaxTermSyntax.term w z B t).conj
-          ((SyntaxLogicalSyntax.singleCode 9 w x n).conj
+          ((SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w x n).conj
             (SyntaxMixedFormulaJudgmentSyntax.substituted w R S a f z b n Parent))))))))
 
-theorem input_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
-    (input w z a f alpha b A B t R S n x Parent).rename rho =
-      input (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
+theorem quantifiedInput_rename {m l} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
+    (quantifiedInput universal w z a f alpha b A B t R S n x Parent).rename rho =
+      quantifiedInput universal (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
         (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) := by
-  simp only [input, Formula.rename, omega_rename, empty_rename, successor_rename,
+  simp only [quantifiedInput, Formula.rename, omega_rename, empty_rename, successor_rename,
     SyntaxVariableSyntax.code_rename, SyntaxTermSyntax.term_rename,
     SyntaxLogicalSyntax.singleCode_rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
 
@@ -37,9 +37,9 @@ theorem input_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m) (rho :
 weakened target bodies, weakened whole parent, prefixed raw bound table,
 and its actual raw body output. The separate native output is eliminated
 by the EXISTING generic binder formula theorem. -/
-def data {m} (w z a f alpha b A B t R S n x Parent : Fin m)
+def quantifiedData {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m)
     (v : Fin 10 → Fin m) (u : Fin 9 → Fin m) : Formula m :=
-  (input w z a f alpha b A B t R S n x Parent).conj
+  (quantifiedInput universal w z a f alpha b A B t R S n x Parent).conj
     ((ForcingWeakenedImages.data w a f z b B R S v).conj
       ((SyntaxCodedMixedBinderSyntax.lifted w R S a f z b alpha A (u 0) (u 1)).conj
         ((SyntaxCodedMixedBinderSyntax.lifted w (v 8) (v 9) a f z B alpha A (u 2) (u 3)).conj
@@ -48,46 +48,47 @@ def data {m} (w z a f alpha b A B t R S n x Parent : Fin m)
               ((SyntaxMixedFormulaJudgmentSyntax.substituted w (v 8) (v 9) a f z B n (u 6)).conj
                 ((StructuralListSyntax.consCode w t (v 8) (u 7)).conj
                   ((SyntaxMixedFormulaJudgmentSyntax.substituted w (u 7) (v 9) alpha f z B x (u 8)).conj
-                    ((SyntaxLogicalSyntax.singleCode 9 w (u 4) Parent).conj
+                    ((SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag universal) w (u 4) Parent).conj
                       ((ForcingFreshOpeningInverse.input w z b A B t (u 4) (u 5) (u 8)).conj
                         (SyntaxTopFormulaSyntax.abstracted w z b A B (u 8) (u 4))))))))))))
 
-theorem data_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m)
+theorem quantifiedData_rename {m l} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m)
     (v : Fin 10 → Fin m) (u : Fin 9 → Fin m) (rho : Fin m → Fin l) :
-    (data w z a f alpha b A B t R S n x Parent v u).rename rho =
-      data (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
+    (quantifiedData universal w z a f alpha b A B t R S n x Parent v u).rename rho =
+      quantifiedData universal (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
         (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent)
         (fun i => rho (v i)) (fun i => rho (u i)) := by
-  simp only [data, Formula.rename, input_rename, ForcingWeakenedImages.data_rename,
+  simp only [quantifiedData, Formula.rename, quantifiedInput_rename, ForcingWeakenedImages.data_rename,
     SyntaxCodedMixedBinderSyntax.lifted_rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename,
     StructuralListSyntax.consCode_rename, SyntaxLogicalSyntax.singleCode_rename,
     ForcingFreshOpeningInverse.input_rename, SyntaxTopFormulaSyntax.abstracted_rename]
 
-def atImages {m} (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m) : Formula m :=
-  existsMany 9 (data (old 9 w) (old 9 z) (old 9 a) (old 9 f) (old 9 alpha) (old 9 b) (old 9 A) (old 9 B)
+def quantifiedAtImages {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m) : Formula m :=
+  existsMany 9 (quantifiedData universal (old 9 w) (old 9 z) (old 9 a) (old 9 f) (old 9 alpha) (old 9 b) (old 9 A) (old 9 B)
     (old 9 t) (old 9 R) (old 9 S) (old 9 n) (old 9 x) (old 9 Parent) (fun i => old 9 (v i)) (slot 9))
 
-theorem atImages_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m)
+theorem quantifiedAtImages_rename {m l} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m)
     (v : Fin 10 → Fin m) (rho : Fin m → Fin l) :
-    (atImages w z a f alpha b A B t R S n x Parent v).rename rho =
-      atImages (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
+    (quantifiedAtImages universal w z a f alpha b A B t R S n x Parent v).rename rho =
+      quantifiedAtImages universal (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
         (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) (fun i => rho (v i)) := by
-  simp only [atImages, existsMany_rename, data_rename, lift_old, lift_slot]
+  simp only [quantifiedAtImages, existsMany_rename, quantifiedData_rename, lift_old, lift_slot]
 
-def body {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula (m+10) :=
-  atImages (old 10 w) (old 10 z) (old 10 a) (old 10 f) (old 10 alpha) (old 10 b) (old 10 A) (old 10 B)
+private def quantifiedBody {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) : Formula (m+10) :=
+  quantifiedAtImages universal (old 10 w) (old 10 z) (old 10 a) (old 10 f) (old 10 alpha) (old 10 b) (old 10 A) (old 10 B)
     (old 10 t) (old 10 R) (old 10 S) (old 10 n) (old 10 x) (old 10 Parent) (slot 10)
 
-def produced {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
-  existsMany 10 (body w z a f alpha b A B t R S n x Parent)
+def quantifiedProduced {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
+  existsMany 10 (quantifiedBody universal w z a f alpha b A B t R S n x Parent)
 
-theorem produced_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
-    (produced w z a f alpha b A B t R S n x Parent).rename rho =
-      produced (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
+theorem quantifiedProduced_rename {m l} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
+    (quantifiedProduced universal w z a f alpha b A B t R S n x Parent).rename rho =
+      quantifiedProduced universal (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B)
         (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) := by
-  simp only [produced, existsMany_rename, body, atImages_rename, lift_old, lift_slot]
+  simp only [quantifiedProduced, existsMany_rename, quantifiedBody, quantifiedAtImages_rename, lift_old, lift_slot]
 
 private structure Params (m : Nat) where
+  universal : Bool
   w : Fin m
   z : Fin m
   a : Fin m
@@ -104,19 +105,19 @@ private structure Params (m : Nat) where
   Parent : Fin m
 
 private def Params.map {m l} (p : Params m) (rho : Fin m → Fin l) : Params l :=
-  ⟨rho p.w,rho p.z,rho p.a,rho p.f,rho p.alpha,rho p.b,rho p.A,rho p.B,
+  ⟨p.universal,rho p.w,rho p.z,rho p.a,rho p.f,rho p.alpha,rho p.b,rho p.A,rho p.B,
     rho p.t,rho p.R,rho p.S,rho p.n,rho p.x,rho p.Parent⟩
 
 private structure Inputs {m} (Gamma : Context m) (p : Params m) (v : Fin 10 → Fin m) : Prop where
   zf : ZFContext.Evidence Gamma
-  source : Derives Gamma (input p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent)
+  source : Derives Gamma (quantifiedInput p.universal p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent)
   images : Derives Gamma (ForcingWeakenedImages.data p.w p.a p.f p.z p.b p.B p.R p.S v)
 
 private theorem Inputs.in_body {m l} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
     (h : Inputs Gamma p v) (E : Formula (m+l)) :
     Inputs (Context.add E (raisedContext l Gamma)) (p.map (old l)) (fun i => old l (v i)) :=
   ⟨HornBinderRules.zf_body l h.zf E,
-    of_eq (input_rename p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent (old l))
+    of_eq (quantifiedInput_rename p.universal p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent (old l))
       (HornBinderRules.under_body l h.source E),
     of_eq (ForcingWeakenedImages.data_rename p.w p.a p.f p.z p.b p.B p.R p.S v (old l))
       (HornBinderRules.under_body l h.images E)⟩
@@ -138,7 +139,7 @@ private theorem Inputs.term {m} {Gamma : Context m} {p : Params m} {v : Fin 10 �
     (h : Inputs Gamma p v) : Derives Gamma (SyntaxTermSyntax.term p.w p.z p.B p.t) :=
   .conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR h.source))))))
 private theorem Inputs.ctor {m} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
-    (h : Inputs Gamma p v) : Derives Gamma (SyntaxLogicalSyntax.singleCode 9 p.w p.x p.n) :=
+    (h : Inputs Gamma p v) : Derives Gamma (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag p.universal) p.w p.x p.n) :=
   .conjL (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR h.source)))))))
 private theorem Inputs.query {m} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
     (h : Inputs Gamma p v) : Derives Gamma (SyntaxMixedFormulaJudgmentSyntax.substituted
@@ -149,7 +150,7 @@ private theorem Inputs.old_input {m} {Gamma : Context m} {p : Params m} {v : Fin
   SyntaxMixedFormulaOutput.input_of_substituted h.zf p.w p.R p.S p.a p.f p.z p.b p.n p.Parent h.hw h.query
 private theorem Inputs.child_type {m} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
     (h : Inputs Gamma p v) : Derives Gamma (FormulaCodeSyntax.formulaCode p.w p.x p.alpha p.f) :=
-  .conjR (.impE (.conjL (FormulaCodeKnownLogical.quantified_iff h.zf true p.w p.a p.f p.x p.n p.alpha
+  .conjR (.impE (.conjL (FormulaCodeKnownLogical.quantified_iff h.zf p.universal p.w p.a p.f p.x p.n p.alpha
     h.hw h.ctor h.hAlpha)) (.conjL h.old_input))
 private theorem Inputs.new_lists {m} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
     (h : Inputs Gamma p v) : Derives Gamma (SyntaxMixedImageCodeSyntax.termLists p.w p.a p.f p.z p.B (v 8) (v 9)) :=
@@ -166,20 +167,20 @@ private theorem at_outputs {m} {Gamma : Context m} {p : Params m} {v : Fin 10 �
     (hV : Derives Gamma (SyntaxTopFormulaSyntax.instantiated p.w p.z p.B p.A p.t U V))
     (hD : Derives Gamma (StructuralListSyntax.consCode p.w p.t (v 8) D))
     (hY : Derives Gamma (SyntaxMixedFormulaJudgmentSyntax.substituted p.w D (v 9) p.alpha p.f p.z p.B p.x Y)) :
-    Derives Gamma (data p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent v
+    Derives Gamma (quantifiedData p.universal p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent v
       (Fin.cases K (Fin.cases H (Fin.cases L (Fin.cases M (Fin.cases F
         (Fin.cases U (Fin.cases W (SyntaxAtomSyntax.two D Y))))))))) := by
-  have oldCtor := ForcingMixedUnary.quantified_constructor h.zf true p.w p.R p.S p.a p.f p.z p.b p.n p.x p.Parent F
+  have oldCtor := ForcingMixedUnary.quantified_constructor h.zf p.universal p.w p.R p.S p.a p.f p.z p.b p.n p.x p.Parent F
     p.alpha p.A K H h.hw h.old_input h.ctor h.query hl0 hF
   have newInput : Derives Gamma (SyntaxMixedFormulaOutputSyntax.input p.w (v 8) (v 9) p.a p.f p.z p.B p.n) :=
     .conjI (.conjL h.old_input) h.new_lists
-  have newCtor := ForcingMixedUnary.quantified_constructor h.zf true p.w (v 8) (v 9) p.a p.f p.z p.B p.n p.x W U
+  have newCtor := ForcingMixedUnary.quantified_constructor h.zf p.universal p.w (v 8) (v 9) p.a p.f p.z p.B p.n p.x W U
     p.alpha p.A L M h.hw newInput h.ctor hW hl1 hU
   have wholeWeak := ForcingWeakenedImages.from_queries h.zf p.w p.a p.f p.z p.b p.B p.R p.S p.n p.Parent W v
     (.conjI h.images (.conjI h.query hW))
   have targetType := SyntaxMixedFormulaJudgment.target_type p.w p.R p.S p.a p.f p.z p.b p.n p.Parent h.query
   have scopes := FormulaCodeProperties.guards p.w p.Parent p.z p.b targetType
-  have bodyWeak := Derives.impE (.conjL (SyntaxWeakenFreeLogicalInternal.quantified_iff h.zf true
+  have bodyWeak := Derives.impE (.conjL (SyntaxWeakenFreeLogicalInternal.quantified_iff h.zf p.universal
     p.w p.z p.b p.B p.Parent W F U p.A h.hw (.conjL (.conjR scopes)) (.conjR (.conjR scopes))
     h.hB h.hA oldCtor newCtor)) wholeWeak
   have eq := ForcingBinderFormula.native h.zf p.w p.z p.a p.f p.B p.alpha p.A (v 8) (v 9) L M p.t D p.x U V Y
@@ -200,7 +201,7 @@ private theorem at_outputs {m} {Gamma : Context m} {p : Params m} {v : Fin 10 �
 
 private theorem at_images {m} {Gamma : Context m} {p : Params m} {v : Fin 10 → Fin m}
     (h : Inputs Gamma p v) :
-    Derives Gamma (atImages p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent v) := by
+    Derives Gamma (quantifiedAtImages p.universal p.w p.z p.a p.f p.alpha p.b p.A p.B p.t p.R p.S p.n p.x p.Parent v) := by
   let E0 := SyntaxCodedMixedBinderSyntax.lifted (p.map (old 2)).w (p.map (old 2)).R (p.map (old 2)).S (p.map (old 2)).a (p.map (old 2)).f (p.map (old 2)).z
       (p.map (old 2)).b (p.map (old 2)).alpha (p.map (old 2)).A (slot 2 0) (slot 2 1)
   let Delta1 := Context.add E0 (raisedContext 2 Gamma)
@@ -367,23 +368,23 @@ private theorem at_images {m} {Gamma : Context m} {p : Params m} {v : Fin 10 →
       (old 1 (old 1 (old 1 (old 1 (old 1 (old 1 (slot 2 0))))))) (old 1 (old 1 (old 1 (old 1 (old 1 (old 1 (slot 2 1))))))) (old 1 (old 1 (old 1 (old 1 (old 1
       (slot 1 0)))))) (old 1 (old 1 (old 1 (old 1 (slot 1 0))))) (old 1 (old 1 (old 1 (slot 1 0)))) (old 1 (old 1 (slot 1 0))) (old 1 (slot 1 0)) (slot 1 0)
     hl0_8 hl1_8 hF_8 hU_8 hW_8 hV_8 hD_8 hY_8
-  have result : Derives Delta8 (atImages p8.w p8.z p8.a p8.f p8.alpha p8.b p8.A p8.B p8.t p8.R p8.S p8.n p8.x p8.Parent v8) := by
+  have result : Derives Delta8 (quantifiedAtImages p8.universal p8.w p8.z p8.a p8.f p8.alpha p8.b p8.A p8.B p8.t p8.R p8.S p8.n p8.x p8.Parent v8) := by
     apply HornBinderRules.intro_many 9 _ (Fin.cases (old 1 (old 1 (old 1 (old 1 (old 1 (old 1 (old 2 (slot 2 0)))))))) (Fin.cases (old 1 (old 1 (old 1 (old 1
         (old 1 (old 1 (old 2 (slot 2 1)))))))) (Fin.cases (old 1 (old 1 (old 1 (old 1 (old 1 (old 1 (slot 2 0))))))) (Fin.cases (old 1 (old 1 (old 1 (old 1 (old
         1 (old 1 (slot 2 1))))))) (Fin.cases (old 1 (old 1 (old 1 (old 1 (old 1 (slot 1 0)))))) (Fin.cases (old 1 (old 1 (old 1 (old 1 (slot 1 0))))) (Fin.cases
         (old 1 (old 1 (old 1 (slot 1 0)))) (SyntaxAtomSyntax.two (old 1 (slot 1 0)) (slot 1 0)))))))))
-    exact of_eq (by simp only [data_rename, assign_old, assign_slot]) hd
-  exact of_eq (by simp only [atImages_rename]; rfl) result
+    exact of_eq (by simp only [quantifiedData_rename, assign_old, assign_slot]) hd
+  exact of_eq (by simp only [quantifiedAtImages_rename]; rfl) result
 
 /-- Reuse the SAME actual weak-image record supplied by an existing source
 producer, including WeakenedOverwrite. This is the unchanged private proof,
 so canonical tables need not be regenerated or identified afterwards. -/
-theorem produce_at_images {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+theorem produce_quantified_at_images {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (universal : Bool)
     (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m)
-    (hi : Derives Gamma (input w z a f alpha b A B t R S n x Parent))
+    (hi : Derives Gamma (quantifiedInput universal w z a f alpha b A B t R S n x Parent))
     (hv : Derives Gamma (ForcingWeakenedImages.data w a f z b B R S v)) :
-    Derives Gamma (atImages w z a f alpha b A B t R S n x Parent v) :=
-  at_images (Gamma := Gamma) (p := ⟨w,z,a,f,alpha,b,A,B,t,R,S,n,x,Parent⟩) (v := v) ⟨hZ,hi,hv⟩
+    Derives Gamma (quantifiedAtImages universal w z a f alpha b A B t R S n x Parent v) :=
+  at_images (Gamma := Gamma) (p := ⟨universal,w,z,a,f,alpha,b,A,B,t,R,S,n,x,Parent⟩) (v := v) ⟨hZ,hi,hv⟩
 
 /-- ONE actual parent query suffices. Generate the ten actual weak-image
 records, both pairs of lifted tables, both actual target bodies, weakened
@@ -391,10 +392,10 @@ whole-parent output, native fresh instance, cons table and direct raw-body
 query. All twenty construction witnesses are internal; nineteen are
 retained and the independent native-instance output is eliminated by the
 existing full binder cancellation. -/
-theorem produce {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+theorem produce_quantified {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma) (universal : Bool)
     (w z a f alpha b A B t R S n x Parent : Fin m)
-    (hi : Derives Gamma (input w z a f alpha b A B t R S n x Parent)) :
-    Derives Gamma (produced w z a f alpha b A B t R S n x Parent) := by
+    (hi : Derives Gamma (quantifiedInput universal w z a f alpha b A B t R S n x Parent)) :
+    Derives Gamma (quantifiedProduced universal w z a f alpha b A B t R S n x Parent) := by
   have hw := Derives.conjL hi
   have hB := Derives.conjL (.conjR (.conjR (.conjR (.conjR hi))))
   have query := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hi)))))))
@@ -406,16 +407,65 @@ theorem produce {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
   apply HornBinderRules.eliminate_many 10 E _ he
   have hE : Derives Delta E := .hyp (Or.inl rfl)
   have h : Inputs Delta
-      ⟨old 10 w,old 10 z,old 10 a,old 10 f,old 10 alpha,old 10 b,old 10 A,old 10 B,
+      ⟨universal,old 10 w,old 10 z,old 10 a,old 10 f,old 10 alpha,old 10 b,old 10 A,old 10 B,
         old 10 t,old 10 R,old 10 S,old 10 n,old 10 x,old 10 Parent⟩ (slot 10) :=
     ⟨HornBinderRules.zf_body 10 hZ E,
-      of_eq (input_rename w z a f alpha b A B t R S n x Parent (old 10)) (HornBinderRules.under_body 10 hi E),hE⟩
+      of_eq (quantifiedInput_rename universal w z a f alpha b A B t R S n x Parent (old 10)) (HornBinderRules.under_body 10 hi E),hE⟩
   have ho := at_images h
-  have result : Derives Delta (produced (old 10 w) (old 10 z) (old 10 a) (old 10 f) (old 10 alpha)
+  have result : Derives Delta (quantifiedProduced universal (old 10 w) (old 10 z) (old 10 a) (old 10 f) (old 10 alpha)
       (old 10 b) (old 10 A) (old 10 B) (old 10 t) (old 10 R) (old 10 S) (old 10 n) (old 10 x) (old 10 Parent)) := by
     apply HornBinderRules.intro_many 10 _ (slot 10)
-    exact of_eq (by simp only [body, atImages_rename, assign_old, assign_slot]) ho
-  exact of_eq (produced_rename w z a f alpha b A B t R S n x Parent (old 10)).symm result
+    exact of_eq (by simp only [quantifiedBody, quantifiedAtImages_rename, assign_old, assign_slot]) ho
+  exact of_eq (quantifiedProduced_rename universal w z a f alpha b A B t R S n x Parent (old 10)).symm result
+
+def input {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
+  quantifiedInput true w z a f alpha b A B t R S n x Parent
+
+theorem input_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
+    (input w z a f alpha b A B t R S n x Parent).rename rho =
+      input (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) :=
+  quantifiedInput_rename true w z a f alpha b A B t R S n x Parent rho
+
+def data {m} (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m) (u : Fin 9 → Fin m) : Formula m :=
+  quantifiedData true w z a f alpha b A B t R S n x Parent v u
+
+theorem data_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m) (rho : Fin m → Fin l) :
+    (data w z a f alpha b A B t R S n x Parent v u).rename rho =
+      data (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) (fun i => rho (v i)) (fun i => rho (u i)) :=
+  quantifiedData_rename true w z a f alpha b A B t R S n x Parent v u rho
+
+def atImages {m} (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m) : Formula m :=
+  quantifiedAtImages true w z a f alpha b A B t R S n x Parent v
+
+theorem atImages_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m)
+    (v : Fin 10 → Fin m) (rho : Fin m → Fin l) :
+    (atImages w z a f alpha b A B t R S n x Parent v).rename rho =
+      atImages (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) (fun i => rho (v i)) :=
+  quantifiedAtImages_rename true w z a f alpha b A B t R S n x Parent v rho
+
+def body {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula (m+10) :=
+  quantifiedBody true w z a f alpha b A B t R S n x Parent
+
+def produced {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Formula m :=
+  quantifiedProduced true w z a f alpha b A B t R S n x Parent
+
+theorem produced_rename {m l} (w z a f alpha b A B t R S n x Parent : Fin m) (rho : Fin m → Fin l) :
+    (produced w z a f alpha b A B t R S n x Parent).rename rho =
+      produced (rho w) (rho z) (rho a) (rho f) (rho alpha) (rho b) (rho A) (rho B) (rho t) (rho R) (rho S) (rho n) (rho x) (rho Parent) :=
+  quantifiedProduced_rename true w z a f alpha b A B t R S n x Parent rho
+
+theorem produce_at_images {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+    (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m)
+    (hi : Derives Gamma (input w z a f alpha b A B t R S n x Parent))
+    (hv : Derives Gamma (ForcingWeakenedImages.data w a f z b B R S v)) :
+    Derives Gamma (atImages w z a f alpha b A B t R S n x Parent v) :=
+  produce_quantified_at_images hZ true w z a f alpha b A B t R S n x Parent v hi hv
+
+theorem produce {m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+    (w z a f alpha b A B t R S n x Parent : Fin m) (hi : Derives Gamma (input w z a f alpha b A B t R S n x Parent)) :
+    Derives Gamma (produced w z a f alpha b A B t R S n x Parent) :=
+  produce_quantified hZ true w z a f alpha b A B t R S n x Parent hi
 
 def sentence {m} (w z a f alpha b A B t R S n x Parent : Fin m) : Source.Sentence :=
   ((input w z a f alpha b A B t R S n x Parent).imp

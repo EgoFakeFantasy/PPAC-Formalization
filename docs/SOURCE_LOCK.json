@@ -174612,7 +174612,7 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
         "PPAC/Migration/Internal/OriginalUniversalBlock.lean": "6aa0af650ad2257f72857bbfe94756b3124a7a15632860b48473566a547ed089",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
         "PPAC/Migration/ForcingGlobalWeakening.lean": "0e58c98e8e054c2391a1d00bafdbe3f371f3fc2c39a89c183830817944e75910",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
@@ -175064,12 +175064,14 @@
       "source_sha256": "1bf19a823a886d05ee1fd8e25c5bec1a7786b89e9c26667fb4c260a2791bce20",
       "adapter": "PPAC/Migration/ForcingFreshParentOpening.lean",
       "source_declarations": [
-        "force_mono neg/ex: open actual newly queried ALL at fresh condition; literal three-operation reclosure of actual parent body"
+        "force_mono neg/ex: open actual newly queried ALL at fresh condition; literal three-operation reclosure of actual parent body",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
       ],
       "consumers": [
         "Existing FreshOpeningInverse.derive ACTUALLY consumes generated WEAK and native INSTANCE to SAME direct raw-query output; no abstract output or desired code equality supplied",
         "consume_opened ACTUALLY calls original FreshOpeningInverse.consume_nested; the NestedGuardProof.data must be at the SAME generated raw body. Producing canonical member/order/tail identification is STILL UNPROVED.",
-        "produce_at_images is a thin public wrapper around the unchanged private at_images proof, actually consumed by RawGuardOpening.open_overwritten on the SAME existing WeakOverwrite record. No prior proof body changed."
+        "produce_at_images is a thin public wrapper around the unchanged private at_images proof, actually consumed by RawGuardOpening.open_overwritten on the SAME existing WeakOverwrite record. No prior proof body changed.",
+        "ForcingDensityGuards.conjunction_exists_from_compiler_shells"
       ],
       "reuse_producers": [
         "PPAC/Migration/ForcingFreshOpeningInverse.lean",
@@ -175083,10 +175085,11 @@
         "PPAC/Migration/Internal/SyntaxTopFormulaExistence.lean",
         "PPAC/Migration/Internal/SyntaxWeakenFreeLogicalInternal.lean",
         "PPAC/Migration/Internal/StructuralConsCore.lean",
-        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean"
+        "PPAC/Migration/Internal/TypedArgumentListConstruction.lean",
+        "The same original quantifier-tag split and actual mixed binder opening used for universal parents"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingFreshOpeningInverse.lean": "efdbc8fc671626f729c2064383232441c3fa0d226cf138c08267eefe123b35f5",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
@@ -175265,9 +175268,55 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedInput_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedData_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedProduced": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.quantifiedProduced_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.produce_quantified_at_images": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingFreshParentOpening.produce_quantified": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives; ALL internal scopes/codes including nonstandard omega. ONE actual new-parent mixed query, source ALL constructor, runtime omega/empty/successor/fresh-term metadata. produce internally generates20 construction witnesses: existing weakened images10, both literal binder lift pairs4, original/weakened bodies2, weakened whole parent1, native fresh instance1, cons bound table1, direct raw-body query output1. Retains19; independent native output eliminated via existing generic BinderFormula.native and full formula cancellation. Existing quantified_constructor applied BOTH parents, existing WeakenedImages.from_queries gives WHOLE-parent WEAK, original quantified_iff gives BODY WEAK with SAME bound successor; no new weak/lift commutation infrastructure. Native instance to SAME actual direct raw body is derived, not given; existing FreshOpeningInverse.derive gives abstraction to SAME actual parent body. Four ordinary nativeZF endpoints: generic production, actual nested-record consumption, complete original negative compilation, complete original existential compilation. from_negative consumes existing NegCode.body_output. from_existential consumes ALL8 original compiler plus7 literal shell witnesses; correct outer guards at slots2/3, inner4/5, domain6 and child7; internally generates source body, no expected source body/parent constructor input. consume_opened requires original NestedGuardProof.data at SAME produced raw body; canonical concrete member/order/tail matching to that generated body is STILL UNPROVED. Thus complete raw-parent-to-required-canonical-NestedK, full mono/dense/axioms/six-rule Proof/reduction/final Con remain UNPROVED. No old proof change, new kernel/checker/recursor/Choice/object-standardness restriction."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives; ALL internal scopes/codes including nonstandard omega. ONE actual new-parent mixed query, source ALL constructor, runtime omega/empty/successor/fresh-term metadata. produce internally generates20 construction witnesses: existing weakened images10, both literal binder lift pairs4, original/weakened bodies2, weakened whole parent1, native fresh instance1, cons bound table1, direct raw-body query output1. Retains19; independent native output eliminated via existing generic BinderFormula.native and full formula cancellation. Existing quantified_constructor applied BOTH parents, existing WeakenedImages.from_queries gives WHOLE-parent WEAK, original quantified_iff gives BODY WEAK with SAME bound successor; no new weak/lift commutation infrastructure. Native instance to SAME actual direct raw body is derived, not given; existing FreshOpeningInverse.derive gives abstraction to SAME actual parent body. Four ordinary nativeZF endpoints: generic production, actual nested-record consumption, complete original negative compilation, complete original existential compilation. from_negative consumes existing NegCode.body_output. from_existential consumes ALL8 original compiler plus7 literal shell witnesses; correct outer guards at slots2/3, inner4/5, domain6 and child7; internally generates source body, no expected source body/parent constructor input. consume_opened requires original NestedGuardProof.data at SAME produced raw body; canonical concrete member/order/tail matching to that generated body is STILL UNPROVED. Thus complete raw-parent-to-required-canonical-NestedK, full mono/dense/axioms/six-rule Proof/reduction/final Con remain UNPROVED. No old proof change, new kernel/checker/recursor/Choice/object-standardness restriction. The same actual quantified opener also accepts the original existential constructor, preserving the original universal interface and both complete lifted substitution tables."
     },
     "forcing_old_parent_instance": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -175296,7 +175345,7 @@
         "PPAC/Migration/ForcingOldParentInstance.lean": "7a0f1d496e810690f8a2a8f2bccd312207bc7fabaeda86d55b991e02d779f1bc",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
-        "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingWeakenedImages.lean": "3182428b2d0276aa80d707a1058ade305dacfa872ee94660640a3f82ba002eec",
         "PPAC/Migration/Internal/SyntaxFreeSubstCode.lean": "a7bb9bf0f3738ce3a0985d581c1ad9e511cdaaee9b9ab8153773a03ae4319655",
@@ -175388,7 +175437,8 @@
       "adapter": "PPAC/Migration/ForcingRawModalBody.lean",
       "source_declarations": [
         "ForcingQuotient.force_mono: neg",
-        "ForcingQuotient.force_mono: ex"
+        "ForcingQuotient.force_mono: ex",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
       ],
       "consumers": [
         "ForcingRawModalBody.consume_existential_root",
@@ -175407,7 +175457,8 @@
         "ForcingRawModalBody.transfer_negative_global_kernel_certificate",
         "ForcingRawModalBody.transfer_existential_global",
         "ForcingRawModalBody.transfer_existential_global_kernel_certificate",
-        "ForcingDensityGuards.reflexive_member_agrees"
+        "ForcingDensityGuards.reflexive_member_agrees",
+        "ForcingDensityGuards.conjunction_exists_from_compiler_shells"
       ],
       "reuse_producers": [
         "ForcingFormulaDiagram.binary_output",
@@ -175430,11 +175481,12 @@
         "SyntaxMixedFormulaOutputInduction.actual_exists",
         "ForcingGlobalWeakening.produce",
         "ForcingWeakenedImages.rebase_bound",
-        "ForcingMemberRows.rowData"
+        "ForcingMemberRows.rowData",
+        "ForcingFormulaDiagram.binary_output for the requested original constructor kind"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
-        "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
@@ -175801,9 +175853,32 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.nestedData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.nestedData_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.nestedOutputs": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.nestedOutputs_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.nested_from_query": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives for the original negative and existential cases on all internal codes and scopes. The two closed endpoints take the complete original branch compiler, two actual parent queries, two overwrite frames on one weakened base, and the shared preorder row and canonical context. Each eliminates one original compiler and shell record to supply the same literal ALL body to both actual parent openings. Both use original rule 5 and guarded forall elimination to open the old proof, compare H0/H5, discharge both guards and generate the same nested proof via the existing Curry and forall operations. Existential transport aligns the actual prefixed bound lists by object Cons uniqueness and moves the actual old tail query to the new consumer. Negative transport generates the actual selected replacement and original child query at the fresh condition and identifies the literal constructor of the already-produced old tail code. Both discharge new H0/H3/tail matches with the same compiler and consume the new Root. The independent bound scope of the shared preorder row is retained. Both branches now consume the enclosing GlobalWeakening input and use its single actual weakened layout and right-hand preorder row. They build both actual weakened replacements on its original free list and reuse the original caller-supplied source replacements. The bound-only rebase keeps the global row at its independent empty scope and provides the parent bound column at arbitrary internal arity. The new endpoints conclude the shared object ForcingConjunctionMono.transfer for all pairs of actual parent outputs. Full force_mono and final internal Con remain open."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives for the original negative and existential cases on all internal codes and scopes. The two closed endpoints take the complete original branch compiler, two actual parent queries, two overwrite frames on one weakened base, and the shared preorder row and canonical context. Each eliminates one original compiler and shell record to supply the same literal ALL body to both actual parent openings. Both use original rule 5 and guarded forall elimination to open the old proof, compare H0/H5, discharge both guards and generate the same nested proof via the existing Curry and forall operations. Existential transport aligns the actual prefixed bound lists by object Cons uniqueness and moves the actual old tail query to the new consumer. Negative transport generates the actual selected replacement and original child query at the fresh condition and identifies the literal constructor of the already-produced old tail code. Both discharge new H0/H3/tail matches with the same compiler and consume the new Root. The independent bound scope of the shared preorder row is retained. Both branches now consume the enclosing GlobalWeakening input and use its single actual weakened layout and right-hand preorder row. They build both actual weakened replacements on its original free list and reuse the original caller-supplied source replacements. The bound-only rebase keeps the global row at its independent empty scope and provides the parent bound column at arbitrary internal arity. The new endpoints conclude the shared object ForcingConjunctionMono.transfer for all pairs of actual parent outputs. Full force_mono and final internal Con remain open. The same two-node reader applies to nested conjunctions as well as implications, recording the actual three child substitution queries under one table."
     },
     "forcing_raw_guard_opening": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -175832,7 +175907,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
-        "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingFormulaInduction.lean": "8544aaec517042ad663b6681e4f69b9dc6c8ccdaa927dbef5f0c7e3b705ab661",
@@ -176458,7 +176533,7 @@
         "PPAC/Migration/ForcingSourceLogicalMono.lean": "8259bfd5d37b34de82b87849b93eeeb699ef26c2cc00e42b9b3a621b72cfec7a",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
         "PPAC/Migration/ForcingConjunctionMono.lean": "fca3b0af50cd60f2033a699289010b349bdd1e5f1adcfe784c1215064b189d43",
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70"
       },
@@ -176576,7 +176651,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
         "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33"
       },
       "exact_declaration_footprints": {
@@ -176937,7 +177012,7 @@
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
         "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/Internal/SyntaxTopFormulaSyntax.lean": "4c80379c4314f1e486a7c3e83644f3fb2b2f5851fb1f9b95c31833adca3830aa"
       },
@@ -177313,7 +177388,10 @@
         "ForcingRelationGuardProof.project and chain, plus the original modus ponens",
         "ForcingProofContext.join and original conjunction projections with the same two witness guards",
         "ForcingFreshBackground.derive for the actual weakening of the child existential",
-        "InternalProofTemplates.existential_introduction_axiom and the existing actual witness elimination"
+        "InternalProofTemplates.existential_introduction_axiom and the existing actual witness elimination",
+        "ForcingFreshParentOpening.produce_quantified_at_images for both existential executions on the same weakened table",
+        "StructuralConsUnique.unique and SyntaxMixedFormulaOutputInduction.unique for the same actual bound prefix and both guards",
+        "ForcingRawModalBody.nested_from_query and the accepted original existential witness transport"
       ],
       "consumers": [
         "Actual selected density instance, original member/order guards and existential tail",
@@ -177323,11 +177401,12 @@
         "ForcingDensityGuards.reflexive_order_agrees",
         "ForcingDensityGuards.tail_from_compilers",
         "ForcingDensityGuards.falsum_from_density_records",
-        "ForcingDensityGuards.conjunction_exists_from_witness"
+        "ForcingDensityGuards.conjunction_exists_from_witness",
+        "ForcingDensityGuards.conjunction_exists_from_compiler_shells"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityGuards.lean": "8755fc0d7fa283d90b36c5cba7c846e49c1621d97afde465ba1f8ed8d75d94ee",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
+        "PPAC/Migration/ForcingDensityGuards.lean": "b0b4981309c31f2653b0826969fcb7792784e894d34aecc131dc41c5ae29d504",
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578",
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
@@ -177349,7 +177428,9 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
         "PPAC/Migration/Internal/LogicalRule24Head.lean": "af9509c85bdaae1ecc0e6059dee7a8ae37d1e092eeaa1b04d7ffb45301d4634b",
         "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
-        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3"
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3",
+        "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
+        "PPAC/Migration/Internal/StructuralConsUnique.lean": "3bcaaa6fc5c98f3a314cd8662d5b17262bd8e1e810ada3444d19e19602a52e8f"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingDensityGuards.guardPair": [
@@ -177511,9 +177592,21 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported."
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported. The original conjunction density shells now supply both existential tails. The adapter derives their internal implication from the two actual substituted tails, generates a single weakened mixed table, identifies the two prefixed bound tables by uniqueness, and transports either conjunct using the original common witness. The outer density universal is still open."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -177540,7 +177633,7 @@
         "PPAC/Migration/ForcingAtomicMonoImages.lean": "ff4937e1b3145d75c84e836e11c322fa110e0c36133961732530434f9488f24c",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
-        "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a"
+        "PPAC/Migration/ForcingRawModalBody.lean": "f633cc965e8c76c362e2b9caf3374641bc437cb03151a126ca05f8af9125c578"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap": [
