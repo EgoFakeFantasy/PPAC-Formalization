@@ -1197,6 +1197,7 @@ import PPAC.Migration.ForcingDensityCode
 import PPAC.Migration.ForcingSourceDensityConstant
 import PPAC.Migration.ForcingDensityInstantiation
 import PPAC.Migration.ForcingDensityGuards
+import PPAC.Migration.ForcingSourceDensity
 import PPAC.Migration.ForcingAtomicDenseTemplate
 import PPAC.Migration.ForcingNestedGuardProof
 import PPAC.Migration.ForcingFreshOpeningInverse
