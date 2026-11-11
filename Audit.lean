@@ -40403,6 +40403,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.result_rename
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.produce
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_base_of_update
+#print axioms PPAC.Migration.ForcingWeakenedOverwrite.with_selected_existential_images
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.from_queries
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame
 #print axioms PPAC.Migration.ForcingWeakenedOverwrite.doubleFrame_rename
@@ -40844,6 +40845,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_density_tail
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_fresh_witness_records
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body_at_images
 #print axioms PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries

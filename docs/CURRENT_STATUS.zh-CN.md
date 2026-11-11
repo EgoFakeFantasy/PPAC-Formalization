@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceDensity.with_existential_witnesses` 已将实际第二次开式的成员守卫与 `s ≤ r` 查询对齐到同一偏序行。开式直接复用行的弱化映射和选中列，保留原名字存在子式。原 `force_of_dense.ex` 仍需将传递性推导放入实际见证背景，再保留同一名字见证闭合原量词。[整仓验收](../verification/forcing-existential-density-actual-guards-acceptance.json)
+
 `ForcingSourceDensity.with_existential_witnesses` 已在同一偏序行的 `s` 处打开第二个存在式。其开式保留实际成员、顺序及名字存在子式。原核传递性从该行的背景得到 `s ≤ q` 的代码化推导。原 `force_of_dense.ex` 仍需把开式守卫对齐到该行，传回实际局部背景，再保留同一名字见证闭合原量词。[整仓验收](../verification/forcing-existential-density-second-open-acceptance.json)
 
 `ForcingSourceDensity.with_existential_witnesses` 已把原密度前提的见证 `r` 接到原存在式的反身实例。同一提升偏序提供第二次查询的实际存在尾式，以及包含 `s`、`r`、`q` 的下一层偏序行。原 `force_of_dense.ex` 仍需用开式中的顺序守卫推导 `s ≤ q`，保留同一名字见证并闭合原量词。[整仓验收](../verification/forcing-existential-density-joint-acceptance.json)

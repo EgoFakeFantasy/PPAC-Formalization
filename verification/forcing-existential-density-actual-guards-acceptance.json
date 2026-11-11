@@ -1,0 +1,66 @@
+{
+  "baseline_commit": "da9adda693bb406d8989e71855bc96665d5af0c0",
+  "recorded_at": "2026-11-11T20:41:38.195869+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body_at_images",
+    "PPAC.Migration.ForcingWeakenedOverwrite.with_selected_existential_images"
+  ],
+  "scope": "Open the actual second existential with the same preorder image maps. Rebase the original prefix and compose the actual condition updates to identify the second member and order queries with the fresh preorder leaves.",
+  "second_opening_uses_same_preorder_maps": true,
+  "shifted_selected_condition_field_proved": true,
+  "same_name_existential_retained": true,
+  "fresh_row_background_derives_transitive_order": true,
+  "actual_witness_body_guards_matched_to_fresh_row": true,
+  "transitive_order_replayed_under_actual_witness_body": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40266,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "410794575dd3fd700795f0c953752aeec7ce34db00971fe3298fa26b87fecdbf",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "269aba9bf8a431393e70b01bd10d0e1cca5a0665039d722b266d7f05ef4732b3",
+      "PPAC/Migration/ForcingSourceDensity.lean": "e69f4b05a0e97abd78f7c1df5d9570f80d23ebd4710853cd1003a9c7d1b9ef69",
+      "PPAC/Migration/ForcingWeakenedOverwrite.lean": "eaf3979cd641d5557149066274098defaf9b4b39386d61f3f59e9c1dce6030ac",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "05ec2ef8714fda3d0a1f1e6b0709cf3069bb9042d22a443eb2dac276e10bae2e",
+      "docs/CURRENT_STATUS.zh-CN.md": "16bb3dfef2ebd9a2513582ccd774d08d72568eb3433fb89db4458c21aa5176cc",
+      "docs/SOURCE_LOCK.json": "e07bd671b4ce4e09f15d01545a984ff921de3b49993bd5d6c8b401a8609cbb83",
+      "scripts/verify.py": "cd558fdd30916abd9dabbf5be496cf267a059eecd41f573d64a80edb9d1fa044"
+    }
+  },
+  "baseline_declarations_compared": 40264,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityInstantiation.with_fresh_existential_body_at_images": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingWeakenedOverwrite.with_selected_existential_images": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

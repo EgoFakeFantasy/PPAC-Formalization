@@ -35,7 +35,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见 STATUS，最新报告为 `verification/forcing-existential-density-second-open-acceptance.json`。
+- 权威当前状态见 STATUS，最新报告为 `verification/forcing-existential-density-actual-guards-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
