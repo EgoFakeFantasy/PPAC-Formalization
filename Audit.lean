@@ -38809,6 +38809,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalAxiomProof.from_native_quotation
 #print axioms PPAC.Migration.InternalAxiomProof.native_quotation_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicCode.sourceTemplate
+#print axioms PPAC.Migration.ForcingAtomicCode.intro_compiled
 #print axioms PPAC.Migration.ForcingAtomicCode.template
 #print axioms PPAC.Migration.ForcingAtomicCode.compiled
 #print axioms PPAC.Migration.ForcingAtomicCode.existsCompiled
@@ -40691,6 +40692,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.NativeProofQuotation.from_source_closure
 #print axioms PPAC.Migration.NativeProofQuotation.instantiate_derives
 #print axioms PPAC.Migration.ForcingAtomicMono.heads
+#print axioms PPAC.Migration.ForcingAtomicMono.direct_from_typed_compiled
+#print axioms PPAC.Migration.ForcingAtomicMono.compile_identity_query
 #print axioms PPAC.Migration.ForcingAtomicMono.layout_proofs
 #print axioms PPAC.Migration.ForcingAtomicMono.at_instance
 #print axioms PPAC.Migration.ForcingAtomicMono.with_identity_images
@@ -40751,6 +40754,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.CanonicalFieldsConsumer
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_runtime_fields
 #print axioms PPAC.Migration.ForcingDensityCode.weakened
+#print axioms PPAC.Migration.ForcingDensityCode.weakenData
+#print axioms PPAC.Migration.ForcingDensityCode.weakenData_rename
+#print axioms PPAC.Migration.ForcingDensityCode.with_atomic_rebound
 #print axioms PPAC.Migration.ForcingDensityCode.weakened_rename
 #print axioms PPAC.Migration.ForcingDensityCode.weakened_type
 #print axioms PPAC.Migration.ForcingDensityCode.rebound

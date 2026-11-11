@@ -8,9 +8,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-本批完成原preorder实际开口、三实例及原内部证明消费：ForcingPreorderInstances从既有ForcingPreorderCode实际生成16个raw报价，内部生成空bound表及真实父／子mixed目标输出、原三次native InstantiateTop、五个IMP字段、五个带类型局部背景码，并直接消费ForcingTransitiveGuardProof.at_background，取得同一G0→H0／G0→H5的原内部证明。公开生产器不接收目标码、实例行、背景码／证明或guard／preorder真值；只有固定源码作用域numeral、真实合法free项表、后继作用域和三个合法内部项。全部源／目标替换和三实例关系保留，普通nativeZF原核证书已验收。 原始preorder的实际目标开口、三次实例及row生成／原证明消费本批已完成，不再列为待做。精确识别这些guard码与ForcingNegCondition／ForcingGuardOpening的编译输出仍未完成；规范局部上下文整理、fresh全称化、完整force_mono／force_of_dense／forcingMP、全部内部ZF/U公理及六规则Proof保真、reduction和最终Con仍未证明。固定外部有限模式仅描述原preorder的3-ALL／5-IMP外层；目标free作用域、项索引和运行码仍允许内部非标准值。
-
-原始preorder报价、真实mixed目标替换、三次native实例、五前件码行及原内部证明消费已完成。下一项是与负／存在guard编译器输出的精确码识别，再完成源局部上下文整理和fresh全称化，继续原force_mono／force_of_dense／exists_force_neg／forceFormula_imp链、规范化强迫MP、全部内部ZF/U公理及六规则Proof、精确reduction和最终Con。原数学预序、mode3／forall、L、完整模式、递归及已验收码行不重建。 最新本地验收见`verification/forcing-preorder-instances-acceptance.json`。
+原 `force_mono` 的全部内部公式码归纳已验收。原 `force_of_dense` 的合取和常元步骤已接入同一对象归纳谓词。成员与相等分支已从统一密度编译的两次绑定替换中取出同一见证体的直接查询。下一步是把这条查询和原子稠密性证书的共同表对齐，然后完成原否定和存在量化分支。[本地验收](verification/forcing-atomic-density-rebound-acceptance.json)
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

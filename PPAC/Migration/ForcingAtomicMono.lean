@@ -480,21 +480,17 @@ private theorem with_pair_outputs {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
 
 private theorem with_source_quote {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2)) (w t a f z b D S x y C N F : Fin m)
-    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hw : Derives Γ (omega w))
     (ht : Derives Γ (SyntaxNumeralSyntax.numeral 2 t))
     (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
     (hc : Derives Γ (ForcingAtomicCode.compiled equality Reln w a x y C))
     (hn : Derives Γ (PureQuotationSyntax.formula (ForcingAtomicCode.template equality Reln) w N))
-    (hx : Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Derives Γ (SyntaxTermSyntax.term w a z y))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a f x)) (hy : Derives Γ (SyntaxTermSyntax.term w a f y))
     (hF : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w D S a f z b C F)) :
     Derives Γ (direct equality Reln w a f z b D S x y F) := by
   have lists := Derives.conjL (SyntaxMixedFormulaJudgment.legal w D S a f z b C F hF)
-  have type := SyntaxMixedFormulaJudgmentTyping.source_type hZ w D S a f z b C F hw hF
-  have contexts := Derives.conjR (FormulaCodeProperties.guards w C a f type)
-  have hxt := ForcingAtomicCode.closed_term_target w a z f x hz contexts hx
-  have hyt := ForcingAtomicCode.closed_term_target w a z f y hz contexts hy
-  have ex := SyntaxCodedMixedTermExistence.exists_output hZ w D S a f z b x hw (.conjI lists hxt)
-  have ey := SyntaxCodedMixedTermExistence.exists_output hZ w D S a f z b y hw (.conjI lists hyt)
+  have ex := SyntaxCodedMixedTermExistence.exists_output hZ w D S a f z b x hw (.conjI lists hx)
+  have ey := SyntaxCodedMixedTermExistence.exists_output hZ w D S a f z b y hw (.conjI lists hy)
   apply NativeProofQuotation.eliminate_objects hZ 1 (fun r xs =>
     substituted (r w) (r D) (r S) (r a) (r f) (r z) (r b) (r x) (xs 0)) ex
     (direct equality Reln w a f z b D S x y F)
@@ -521,6 +517,25 @@ private theorem with_source_quote {k m} {Γ : Context m} (hZ : ZFContext.Evidenc
 
 /-- Read the original atomic compiler and produce the two target term images,
 their original forest, and the direct execution to the actual query output. -/
+theorem direct_from_typed_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2)) (w a f z b D S x y C F : Fin m)
+    (hw : Derives Γ (omega w))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hc : Derives Γ (ForcingAtomicCode.compiled equality Reln w a x y C))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a f x)) (hy : Derives Γ (SyntaxTermSyntax.term w a f y))
+    (hF : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w D S a f z b C F)) :
+    Derives Γ (direct equality Reln w a f z b D S x y F) := by
+  apply ForcingAtomicCode.eliminate_compiled hZ equality Reln w a x y C hc (direct equality Reln w a f z b D S x y F)
+  intro l Δ r v hZ1 lift ht _ hn _ _ _
+  exact of_eq (direct_rename equality Reln w a f z b D S x y F r).symm
+    (with_source_quote hZ1 equality Reln (r w) (v 0) (r a) (r f) (r z) (r b) (r D) (r S)
+      (r x) (r y) (r C) (v 2) (r F) (of_eq (omega_rename w r) (lift hw)) ht
+      (of_eq (SyntaxNumeralSyntax.numeral_rename (k+2) f r) (lift hf))
+      (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a x y C r) (lift hc)) (.conjL hn)
+      (of_eq (SyntaxTermSyntax.term_rename w a f x r) (lift hx))
+      (of_eq (SyntaxTermSyntax.term_rename w a f y r) (lift hy))
+      (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w D S a f z b C F r) (lift hF)))
+
 theorem direct_from_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2)) (w a f z b D S x y C F : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
@@ -529,16 +544,42 @@ theorem direct_from_compiled {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hx : Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Derives Γ (SyntaxTermSyntax.term w a z y))
     (hF : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w D S a f z b C F)) :
     Derives Γ (direct equality Reln w a f z b D S x y F) := by
-  apply ForcingAtomicCode.eliminate_compiled hZ equality Reln w a x y C hc (direct equality Reln w a f z b D S x y F)
-  intro l Δ r v hZ1 lift ht _ hn _ _ _
-  exact of_eq (direct_rename equality Reln w a f z b D S x y F r).symm
-    (with_source_quote hZ1 equality Reln (r w) (v 0) (r a) (r f) (r z) (r b) (r D) (r S)
-      (r x) (r y) (r C) (v 2) (r F) (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz)) ht
-      (of_eq (SyntaxNumeralSyntax.numeral_rename (k+2) f r) (lift hf))
-      (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a x y C r) (lift hc)) (.conjL hn)
-      (of_eq (SyntaxTermSyntax.term_rename w a z x r) (lift hx))
-      (of_eq (SyntaxTermSyntax.term_rename w a z y r) (lift hy))
-      (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w D S a f z b C F r) (lift hF)))
+  have type := SyntaxMixedFormulaJudgmentTyping.source_type hZ w D S a f z b C F hw hF
+  have contexts := Derives.conjR (FormulaCodeProperties.guards w C a f type)
+  exact direct_from_typed_compiled hZ equality Reln w a f z b D S x y C F hw hf hc
+    (ForcingAtomicCode.closed_term_target w a z f x hz contexts hx)
+    (ForcingAtomicCode.closed_term_target w a z f y hz contexts hy) hF
+
+/-- The actual atomic query under a bound-only change is itself an atomic
+compilation at the new bound scope. The name codes are the query's actual images. -/
+theorem compile_identity_query {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2)) (w a f A D S x y F : Fin m)
+    (v : Fin 5 → Fin m) (hw : Derives Γ (omega w))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hS : Derives Γ (ForcingAtomicCode.identityImages w A f S))
+    (h : Derives Γ (directData equality Reln w a f A f D S x y F v)) :
+    Derives Γ (ForcingAtomicCode.compiled equality Reln w A (v 2) (v 3) F) := by
+  have ht := Derives.conjL h
+  have hQuote := Derives.conjL (.conjR h)
+  have hx := Derives.conjL (.conjR (.conjR h))
+  have hy := Derives.conjL (.conjR (.conjR (.conjR h)))
+  have hForest := Derives.conjL (.conjR (.conjR (.conjR (.conjR h))))
+  have hRun := Derives.conjR (.conjR (.conjR (.conjR (.conjR h))))
+  have hX := SyntaxCodedMixedTermTyping.target_type w D S a f A f x (v 2) hx
+  have hY := SyntaxCodedMixedTermTyping.target_type w D S a f A f y (v 3) hy
+  let template := ForcingAtomicCode.template equality Reln
+  have hType := PureQuotationFormulaTyping.formula_type hZ template w (v 0) f (v 1) hw
+    (by
+      change Derives Γ (SyntaxNumeralSyntax.numeral (List.replicate 2 YesMetaZFC.SetTheory.SetSort.set).length (v 0))
+      simpa only [List.length_replicate] using ht)
+    (by
+      change Derives Γ (SyntaxNumeralSyntax.numeral (List.replicate (k+2) YesMetaZFC.SetTheory.SetSort.set).length f)
+      simpa only [List.length_replicate] using hf) hQuote
+  have hBound := ForcingAtomicCode.bound_forest_typed hZ w (v 0) A f (v 4)
+    (SetLanguage.args2 (v 3) (v 2)) hw ht (.conjL hX)
+    (Fin.cases hY (Fin.cases hX (fun i => Fin.elim0 i))) hForest
+  exact ForcingAtomicCode.intro_compiled equality Reln w A (v 2) (v 3) F (v 0) f (v 1) (v 4) S
+    ht hf (.conjI hQuote hType) hForest hBound hS hRun
 
 /-- A source atom term has empty free scope. The two actual condition
 overwrites therefore read the same bound-table field for that term. -/

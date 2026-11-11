@@ -267,6 +267,24 @@ private theorem quotation_rename {n m l} (equality : Bool) (R : Source.Formula (
   simp only [PureQuotationTypedSyntax.formulaValue, Formula.rename,
     PureQuotationSyntax.formula_rename, FormulaCodeSyntax.formulaCode_rename]
 
+/-- Reassemble the compiler from its quoted template, actual argument forest,
+identity free images and exact mixed execution. -/
+theorem intro_compiled {n m} {Γ : Context m} (equality : Bool) (R : Source.Formula (n+2))
+    (w a x y q t f N U V : Fin m)
+    (ht : Derives Γ (SyntaxNumeralSyntax.numeral 2 t))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (n+2) f))
+    (hN : Derives Γ (PureQuotationTypedSyntax.formulaValue (template equality R) w t f N))
+    (hU : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) U))
+    (htU : Derives Γ (SyntaxMixedImageCodeSyntax.termList w t a f U))
+    (hV : Derives Γ (freeImages w a f V))
+    (hQ : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w U V t f a f N q)) :
+    Derives Γ (compiled equality R w a x y q) := by
+  let v : Fin 5 → Fin m := Fin.cases t (Fin.cases f (Fin.cases N (SetLanguage.args2 U V)))
+  have hm : Derives Γ (matrix equality R w a x y q v) :=
+    .conjI ht (.conjI hf (.conjI hN (.conjI hU (.conjI htU (.conjI hV hQ)))))
+  apply HornBinderRules.intro_many 5 _ v
+  exact of_eq (by simp only [body, matrix_rename, assign_old, assign_slot]) hm
+
 private theorem assemble {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (R : Source.Formula (n+2)) (w t f a x y N U V : Fin m)
     (h : Inputs n m Γ w t f a x y)
@@ -289,13 +307,8 @@ private theorem assemble {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     SyntaxForestSyntax.forest_rename 2 w (SetLanguage.args2 y x) U Fin.castSucc) (under hU B)
   have htU1 := of_eq (SyntaxMixedImageCodeSyntax.termList_rename w t a f U Fin.castSucc) (under htU B)
   have hV1 := of_eq (freeImages_rename w a f V Fin.castSucc) (under hV B)
-  let v : Fin 5 → Fin (m+1) := Fin.cases t.castSucc (Fin.cases f.castSucc
-    (Fin.cases N.castSucc (SetLanguage.args2 U.castSucc V.castSucc)))
-  have hm : Derives Δ (matrix equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m) v) :=
-    .conjI h1.ht (.conjI h1.hf (.conjI hN1 (.conjI hU1 (.conjI htU1 (.conjI hV1 hB)))))
-  have hc : Derives Δ (compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)) := by
-    apply HornBinderRules.intro_many 5 _ v
-    exact of_eq (by simp only [body, matrix_rename, assign_old, assign_slot]) hm
+  have hc := intro_compiled equality R w.castSucc a.castSucc x.castSucc y.castSucc (Fin.last m)
+    t.castSucc f.castSucc N.castSucc U.castSucc V.castSucc h1.ht h1.hf hN1 hU1 htU1 hV1 hB
   have ho : Derives Δ (existsCompiled equality R w.castSucc a.castSucc x.castSucc y.castSucc) := by
     apply Derives.exI (Fin.last m)
     exact of_eq (by simp only [Formula.instantiate, compiled_rename,

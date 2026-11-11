@@ -1,0 +1,74 @@
+{
+  "baseline_commit": "ccaad5b457fb88c7a25fd03ac530bf96173b7616",
+  "recorded_at": "2026-11-11T12:29:17.876851+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "derivation": "PPAC.Migration.ForcingDensityCode.with_atomic_rebound",
+  "scope": "Both member and equality witness bodies are read from the same actual two-binder density substitution. Reuse the existing atomic compiler and mixed-query comparison for both name images. The first query yields an atomic compilation using the unchanged free images, and the second yields the direct atomic template query under the actual selected condition table. Exact full density premise equality with the canonical replay table is still open.",
+  "same_actual_witness_body_queried": true,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40177,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "85f6c3c9daa1cce411d9d0ad9cba04b0ef08dc7befa1b4a306110579d830769c",
+      "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
+      "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
+      "PPAC/Migration/ForcingDensityCode.lean": "951dc21c0f7fb9a7122bc99c3534f1e466ddee0fa47b953b3bb8e56594db9a3a",
+      "docs/SOURCE_LOCK.json": "067f8d753469b821475bf4c9f856e64e5de2c0ba65b4b97978dd16e7c87c9130",
+      "scripts/verify.py": "bf43a30528a411a69b5b6c9d443b331423e6d328e78f80e42f6e881df46f8346"
+    }
+  },
+  "baseline_declarations_compared": 40171,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicCode.intro_compiled": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMono.compile_identity_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMono.direct_from_typed_compiled": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityCode.weakenData": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityCode.weakenData_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityCode.with_atomic_rebound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

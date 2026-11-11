@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingConditionRebind
+import PPAC.Migration.ForcingAtomicMono
 import PPAC.Migration.ForcingExistGuardsCode
 import PPAC.Migration.Internal.FormulaCodeConstructors
 import PPAC.Migration.ForcingFormulaDiagram
@@ -26,13 +27,13 @@ private theorem with_witness {m} {Γ : Context m} {P : Formula (m+1)} {out : For
     Derives Γ out :=
   Derives.exE he (use (ZFContext.under hZ P) (fun h => under h P) (.hyp (Or.inl rfl)))
 
-private def weakenData {m} (w a A f N W : Fin m) (v : Fin 3 → Fin m) : Formula m :=
+def weakenData {m} (w a A f N W : Fin m) (v : Fin 3 → Fin m) : Formula m :=
   (SyntaxVariableTableSyntax.shifted true w a A f (v 0)).conj
     ((SyntaxMixedImageCodeSyntax.encoded w (v 0) a A f (v 1)).conj
       ((ForcingAtomicCode.identityImages w A f (v 2)).conj
         (substituted w (v 1) (v 2) a f A f N W)))
 
-private theorem weakenData_rename {m l} (w a A f N W : Fin m) (v : Fin 3 → Fin m)
+theorem weakenData_rename {m l} (w a A f N W : Fin m) (v : Fin 3 → Fin m)
     (ρ : Fin m → Fin l) :
     (weakenData w a A f N W v).rename ρ =
       weakenData (ρ w) (ρ a) (ρ A) (ρ f) (ρ N) (ρ W) (fun i => ρ (v i)) := by
@@ -858,5 +859,123 @@ theorem with_conjunct_compiler {k m} {Γ : Context m} (hZ : ZFContext.Evidence �
     (use R (s YP) (s YQ) (u 0) hZ2 move hPair2 hNew')
 
 end ConjunctRebound
+
+section AtomicRebound
+
+open NativeProofQuotation (eliminate_objects)
+open SyntaxNumeralSyntax (numeral numeral_rename)
+
+set_option maxHeartbeats 1200000
+
+private theorem with_atomic_weakening {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Source.Formula (k+2)) (w a A f x y N W : Fin m)
+    (hw : Derives Γ (omega w)) (hf : Derives Γ (numeral (k+2) f))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a f x)) (hy : Derives Γ (SyntaxTermSyntax.term w a f y))
+    (hN : Derives Γ (ForcingAtomicCode.compiled equality Reln w a x y N))
+    (hW : Derives Γ (weakened w a A f N W)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (v : Fin 3 → Fin l) (u : Fin 5 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (weakenData (r w) (r a) (r A) (r f) (r N) (r W) v) →
+      Derives Δ (ForcingAtomicMono.directData equality Reln (r w) (r a) (r f) (r A) (r f)
+        (v 1) (v 2) (r x) (r y) (r W) u) →
+      Derives Δ (ForcingAtomicCode.compiled equality Reln (r w) (r A) (u 2) (u 3) (r W)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 3 (fun r v => weakenData (r w) (r a) (r A) (r f) (r N) (r W) v) hW out ?_
+  intro l Δ r v hZ1 lift hData
+  have hDirect := ForcingAtomicMono.direct_from_typed_compiled hZ1 equality Reln
+    (r w) (r a) (r f) (r A) (r f) (v 1) (v 2) (r x) (r y) (r N) (r W)
+    (of_eq (omega_rename w r) (lift hw)) (of_eq (numeral_rename _ _ _) (lift hf))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a x y N r) (lift hN))
+    (of_eq (SyntaxTermSyntax.term_rename w a f x r) (lift hx))
+    (of_eq (SyntaxTermSyntax.term_rename w a f y r) (lift hy)) (.conjR (.conjR (.conjR hData)))
+  refine eliminate_objects hZ1 5 (fun s u => ForcingAtomicMono.directData equality Reln
+    (s (r w)) (s (r a)) (s (r f)) (s (r A)) (s (r f)) (s (v 1)) (s (v 2))
+    (s (r x)) (s (r y)) (s (r W)) u) hDirect (out.rename r) ?_
+  intro l1 Δ1 s u hZ2 lift1 hRun
+  let R := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hWeak := of_eq (weakenData_rename (r w) (r a) (r A) (r f) (r N) (r W) v s) (lift1 hData)
+  have hCompiled := ForcingAtomicMono.compile_identity_query hZ2 equality Reln
+    (R w) (R a) (R f) (R A) (s (v 1)) (s (v 2)) (R x) (R y) (R W) u
+    (of_eq (omega_rename w R) (carry hw)) (of_eq (numeral_rename (k+2) f R) (carry hf))
+    (.conjL (.conjR (.conjR hWeak))) hRun
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use R (s ∘ v) u hZ2 carry hWeak hRun hCompiled)
+
+/-- Read the witness atom of the actual density compiler. Both name images at
+each binder come from the compiler's own mixed substitution. After the second
+binder the direct query uses its exact selected condition table. -/
+theorem with_atomic_rebound {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Source.Formula (k+2)) (w a A B f j x y N Q : Fin m)
+    (hw : Derives Γ (omega w)) (hf : Derives Γ (numeral (k+2) f))
+    (hx : Derives Γ (SyntaxTermSyntax.term w a f x)) (hy : Derives Γ (SyntaxTermSyntax.term w a f y))
+    (hN : Derives Γ (ForcingAtomicCode.compiled equality Reln w a x y N))
+    (hQ : Derives Γ (rebound w a A B f j N Q)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (W : Fin l)
+      (v : Fin 3 → Fin l) (u : Fin 6 → Fin l) (x0 x1 : Fin 5 → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (weakenData (r w) (r a) (r A) (r f) (r N) W v) →
+      Derives Δ (ForcingConditionRebind.data (r w) (r A) (r f) (r B) (r j) W (r Q) u) →
+      Derives Δ (ForcingAtomicMono.directData equality Reln (r w) (r a) (r f) (r A) (r f)
+        (v 1) (v 2) (r x) (r y) W x0) →
+      Derives Δ (ForcingAtomicMono.directData equality Reln (r w) (r A) (r f) (r B) (r f)
+        (u 3) (u 5) (x0 2) (x0 3) (r Q) x1) → Derives Δ (out.rename r)) : Derives Γ out := by
+  unfold rebound at hQ
+  apply with_witness hZ hQ
+  intro Δ hZ1 lift hData
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  let W := Fin.last m
+  refine with_atomic_weakening hZ1 equality Reln (r w) (r a) (r A) (r f) (r x) (r y) (r N) W
+    (of_eq (omega_rename w r) (lift hw)) (of_eq (numeral_rename (k+2) f r) (lift hf))
+    (of_eq (SyntaxTermSyntax.term_rename w a f x r) (lift hx))
+    (of_eq (SyntaxTermSyntax.term_rename w a f y r) (lift hy))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a x y N r) (lift hN))
+    (.conjL hData) (out.rename r) ?_
+  intro l Ξ s v x0 hZ2 lift1 hWeak hFirst hCompiled
+  let R := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hBound := of_eq (ForcingConditionRebind.compiled_rename (r w) (r A) (r f) (r B) (r j) W (r Q) s)
+    (lift1 (.conjR hData))
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine eliminate_objects hZ2 6 (fun t u => ForcingConditionRebind.data (t (R w)) (t (R A))
+    (t (R f)) (t (R B)) (t (R j)) (t (s W)) (t (R Q)) u) hBound (out.rename R) ?_
+  intro l1 Ξ1 t u hZ3 lift2 hBind
+  let S := t ∘ R
+  let X := t ∘ x0
+  have carry2 {F : Formula m} (h : Derives Γ F) : Derives Ξ1 (F.rename S) :=
+    of_eq (SourceAlgebra.rename_comp F R t) (lift2 (carry h))
+  have hFirst1 := of_eq (ForcingAtomicMono.directData_rename equality Reln (R w) (R a) (R f) (R A) (R f)
+    (v 1) (v 2) (R x) (R y) (s W) x0 t) (lift2 hFirst)
+  have hX := SyntaxCodedMixedTermTyping.target_type (S w) (t (v 1)) (t (v 2)) (S a) (S f)
+    (S A) (S f) (S x) (X 2) (.conjL (.conjR (.conjR hFirst1)))
+  have hY := SyntaxCodedMixedTermTyping.target_type (S w) (t (v 1)) (t (v 2)) (S a) (S f)
+    (S A) (S f) (S y) (X 3) (.conjL (.conjR (.conjR (.conjR hFirst1))))
+  have hDirect := ForcingAtomicMono.direct_from_typed_compiled hZ3 equality Reln (S w) (S A) (S f) (S B) (S f)
+    (u 3) (u 5) (X 2) (X 3) (t (s W)) (S Q)
+    (of_eq (omega_rename w S) (carry2 hw)) (of_eq (numeral_rename (k+2) f S) (carry2 hf))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln (R w) (R A) (x0 2) (x0 3) (s W) t)
+      (lift2 hCompiled)) hX hY (.conjR (.conjR (.conjR hBind)))
+  refine of_eq (SourceAlgebra.rename_comp out R t).symm ?_
+  refine eliminate_objects hZ3 5 (fun e x1 => ForcingAtomicMono.directData equality Reln
+    (e (S w)) (e (S A)) (e (S f)) (e (S B)) (e (S f)) (e (u 3)) (e (u 5))
+    (e (X 2)) (e (X 3)) (e (S Q)) x1) hDirect (out.rename S) ?_
+  intro l2 Ξ2 e x1 hZ4 lift3 hSecond
+  let T := e ∘ S
+  have carry3 {F : Formula m} (h : Derives Γ F) : Derives Ξ2 (F.rename T) :=
+    of_eq (SourceAlgebra.rename_comp F S e) (lift3 (carry2 h))
+  have hWeak2 := of_eq (weakenData_rename (R w) (R a) (R A) (R f) (R N) (s W) v (e ∘ t))
+    (of_eq (SourceAlgebra.rename_comp _ t e) (lift3 (lift2 hWeak)))
+  have hBind2 := of_eq (ForcingConditionRebind.data_rename (S w) (S A) (S f) (S B) (S j) (t (s W))
+    (S Q) u e) (lift3 hBind)
+  have hFirst2 := of_eq (ForcingAtomicMono.directData_rename equality Reln (S w) (S a) (S f) (S A) (S f)
+    (t (v 1)) (t (v 2)) (S x) (S y) (t (s W)) X e) (lift3 hFirst1)
+  exact of_eq (SourceAlgebra.rename_comp out S e).symm
+    (use T (e (t (s W))) (e ∘ t ∘ v) (e ∘ u) (e ∘ X) x1 hZ4 carry3 hWeak2 hBind2 hFirst2 hSecond)
+
+end AtomicRebound
 
 end PPAC.Migration.ForcingDensityCode
