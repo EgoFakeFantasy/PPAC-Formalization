@@ -38803,6 +38803,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalAxiomProof.from_query
 #print axioms PPAC.Migration.InternalAxiomProof.sentence
 #print axioms PPAC.Migration.InternalAxiomProof.kernel_certificate
+#print axioms PPAC.Migration.InternalAxiomProof.from_fixed_quotation
+#print axioms PPAC.Migration.InternalAxiomProof.from_native_quotation
+#print axioms PPAC.Migration.InternalAxiomProof.native_quotation_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicCode.sourceTemplate
 #print axioms PPAC.Migration.ForcingAtomicCode.template
 #print axioms PPAC.Migration.ForcingAtomicCode.compiled
@@ -38831,6 +38834,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomCode.truthNormalizationSentence
 #print axioms PPAC.Migration.ForcingAtomCode.truth_normalization_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomCode.unique
+#print axioms PPAC.Migration.ForcingAtomCode.member_output
+#print axioms PPAC.Migration.ForcingAtomCode.equal_output
 #print axioms PPAC.Migration.ForcingAtomCode.uniqueOutput
 #print axioms PPAC.Migration.ForcingAtomCode.fiber
 #print axioms PPAC.Migration.ForcingAtomCode.fiber_total

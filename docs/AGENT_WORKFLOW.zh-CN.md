@@ -22,6 +22,8 @@
 
 ## 当前 agent 执行入口
 
+本批 `InternalAxiomProof.from_native_quotation` 将七条固定公理及任意外部索引的分离／收集实例的准确引用接入原六规则 `Root`。全部证书、作用域和原始行均在对象理论内产生。`ForcingAtomCode.member_output/equal_output` 从原分派记录取回同一字段的实际原子编译记录。成员／相等单调性的码级 `Root` 传输及最终内部 Con 仍待闭合，逐实例公理引用不能替代全内部模式码的强迫保真。验收见 `verification/atomic-quotation-root-acceptance.json`。
+
 | 已有输入 | 当前消费者 | 真正的验收门 |
 |---|---|---|
 | 原完整raw模式码流水线及准确原生模式句quotation，已有原核双条件 | ZF/U统一内部公理正确性／强迫 | 覆盖任意内部／非标准正文和参数；原完整标准quotation、三个矩阵、模板、整个闭包及存在／类型／唯一性均已完成，不重做 |
@@ -33,7 +35,7 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/forcing-exist-tail-generated-acceptance.json`。
+- 权威当前状态见STATUS；最新本批报告为`verification/atomic-quotation-root-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。

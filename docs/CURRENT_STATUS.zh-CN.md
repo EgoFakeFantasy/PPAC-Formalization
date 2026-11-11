@@ -10,6 +10,8 @@
 
 ## 已完成，必须复用
 
+本批 `InternalAxiomProof.from_native_quotation` 将七条固定公理及任意外部索引的分离／收集实例的准确引用接入原六规则 `Root`。全部证书、作用域和原始行均在对象理论内产生。`ForcingAtomCode.member_output/equal_output` 从原分派记录取回同一字段的实际原子编译记录。成员／相等单调性的码级 `Root` 传输及最终内部 Con 仍待闭合，逐实例公理引用不能替代全内部模式码的强迫保真。验收见 `verification/atomic-quotation-root-acceptance.json`。
+
 - 原第1–9阶段已验收资产依原阶段表保留；包括原L于ZF解释及全公理模式、实际具体系统、Assigned商与第9阶段模型应用，不重新迁移或重建。
 - 原完整negative/existential compiler、同一预序三次native实例／五IMP行、bare-R／member／domain／child查询对应、完整raw尾部两层EX及跨条件比较均已完成；ForcingExistTailComparison.from_queries/raw_kernel_certificate生成消去两次全部trace和canonical见证。
 - ForcingProofContext生成六个实际上下文合取码，完成重排、只对r-local的Curry及实际raw尾部证明传输；ForcingProofUniversal生成同一Curry正文及实际原mode3抽象并消费guarded forall。

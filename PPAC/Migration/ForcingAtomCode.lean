@@ -304,17 +304,17 @@ private theorem constant_candidate {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     · exact .botE (constant_equal_conflict (ZFContext.add (ZFContext.add hZ D) _) w a z n q
         (add (add hw D) _) (add (add hq D) _) (equal_source R w a z n v (.hyp (Or.inl rfl))))
 
-private theorem member_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (R : Formula (k+2)) (w a z n s x y q v : Fin m) (hw : Derives Γ (omega w))
+/-- Invert the actual member compilation at the original typed term fields. -/
+theorem member_output {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Formula (k+2)) (w a z n s x y q : Fin m) (hw : Derives Γ (omega w))
     (hn : Derives Γ (SyntaxAtomSyntax.memberAt w a z s x y n))
-    (hq : Derives Γ (ForcingAtomicCode.compiled false R w a x y q))
-    (hv : Derives Γ (compiled R w a z n v)) : Derives Γ (.equal q v) := by
-  apply Derives.disjE hv
-  · exact .botE (constant_member_conflict (ZFContext.add hZ _) w a z n v (add hw _) (.hyp (Or.inl rfl))
+    (hq : Derives Γ (compiled R w a z n q)) : Derives Γ (ForcingAtomicCode.compiled false R w a x y q) := by
+  apply Derives.disjE hq
+  · exact .botE (constant_member_conflict (ZFContext.add hZ _) w a z n q (add hw _) (.hyp (Or.inl rfl))
       (SyntaxAtomLogic.intro_member w a z s x y n (add hn _)))
-  · let D := (existsMany 3 (memberBody R w a z n v)).disj (existsMany 2 (equalBody R w a z n v))
+  · let D := (existsMany 3 (memberBody R w a z n q)).disj (existsMany 2 (equalBody R w a z n q))
     apply Derives.disjE (.hyp (Or.inl rfl))
-    · let B := memberBody R w a z n v
+    · let B := memberBody R w a z n q
       let Δ := Context.add (existsMany 3 B) (Context.add D Γ)
       let Ξ := Context.add B (raisedContext 3 Δ)
       apply HornBinderRules.eliminate_many 3 B _ (.hyp (Or.inl rfl))
@@ -322,33 +322,39 @@ private theorem member_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence
       have hZ3 : ZFContext.Evidence Ξ := HornBinderRules.zf_body 3 (ZFContext.add (ZFContext.add hZ D) _) B
       have hw3 : Derives Ξ (omega (old 3 w)) := of_eq (omega_rename w (old 3)) (HornBinderRules.under_body 3 (add (add hw D) _) B)
       have hn3 : Derives Ξ (SyntaxAtomSyntax.memberAt (old 3 w) (old 3 a) (old 3 z) (old 3 s) (old 3 x) (old 3 y) (old 3 n)) := of_eq (SyntaxAtomSyntax.memberAt_rename w a z s x y n (old 3)) (HornBinderRules.under_body 3 (add (add hn D) _) B)
-      have hq3 : Derives Ξ (ForcingAtomicCode.compiled false R (old 3 w) (old 3 a) (old 3 x) (old 3 y) (old 3 q)) := of_eq (ForcingAtomicCode.compiled_rename false R w a x y q (old 3)) (HornBinderRules.under_body 3 (add (add hq D) _) B)
       have he := SyntaxAtomUnique.member_fields hZ3 (old 3 w) (old 3 s) (old 3 x) (old 3 y)
         (slot 3 0) (slot 3 1) (slot 3 2) (old 3 n) hw3 (.conjR hn3) (.conjR (.conjL hB))
-      have ha := atomic_terms_subst false R (old 3 w) (old 3 a) (old 3 x) (old 3 y)
-        (slot 3 1) (slot 3 2) (old 3 q) (.conjL (.conjR he)) (.conjR (.conjR he)) hq3
-      exact ForcingAtomicCode.unique hZ3 false R (old 3 w) (old 3 a) (slot 3 1) (slot 3 2)
-        (old 3 q) (old 3 v) hw3 ha (.conjR hB)
-    · have hn1 := add (add hn D) (existsMany 2 (equalBody R w a z n v))
+      apply of_eq (ForcingAtomicCode.compiled_rename false R w a x y q (old 3)).symm
+      exact atomic_terms_subst false R (old 3 w) (old 3 a) (slot 3 1) (slot 3 2)
+        (old 3 x) (old 3 y) (old 3 q) (eq_symm (.conjL (.conjR he))) (eq_symm (.conjR (.conjR he))) (.conjR hB)
+    · have hn1 := add (add hn D) (existsMany 2 (equalBody R w a z n q))
       exact .botE (SyntaxAtomCases.equal_conflict (ZFContext.add (ZFContext.add hZ D) _) 3 2 (by decide)
         w a z n (SyntaxAtomSyntax.three s x y) (add (add hw D) _) (.conjR hn1)
-        (equal_source R w a z n v (.hyp (Or.inl rfl))))
+        (equal_source R w a z n q (.hyp (Or.inl rfl))))
 
-private theorem equal_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (R : Formula (k+2)) (w a z n x y q v : Fin m) (hw : Derives Γ (omega w))
+private theorem member_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Formula (k+2)) (w a z n s x y q v : Fin m) (hw : Derives Γ (omega w))
+    (hn : Derives Γ (SyntaxAtomSyntax.memberAt w a z s x y n))
+    (hq : Derives Γ (ForcingAtomicCode.compiled false R w a x y q))
+    (hv : Derives Γ (compiled R w a z n v)) : Derives Γ (.equal q v) :=
+  ForcingAtomicCode.unique hZ false R w a x y q v hw hq
+    (member_output hZ R w a z n s x y v hw hn hv)
+
+/-- Invert the actual equal compilation at the original typed term fields. -/
+theorem equal_output {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Formula (k+2)) (w a z n x y q : Fin m) (hw : Derives Γ (omega w))
     (hn : Derives Γ (SyntaxAtomSyntax.equalAt w a z x y n))
-    (hq : Derives Γ (ForcingAtomicCode.compiled true R w a x y q))
-    (hv : Derives Γ (compiled R w a z n v)) : Derives Γ (.equal q v) := by
-  apply Derives.disjE hv
-  · exact .botE (constant_equal_conflict (ZFContext.add hZ _) w a z n v (add hw _) (.hyp (Or.inl rfl))
+    (hq : Derives Γ (compiled R w a z n q)) : Derives Γ (ForcingAtomicCode.compiled true R w a x y q) := by
+  apply Derives.disjE hq
+  · exact .botE (constant_equal_conflict (ZFContext.add hZ _) w a z n q (add hw _) (.hyp (Or.inl rfl))
       (SyntaxAtomLogic.intro_equality w a z x y n (add hn _)))
-  · let D := (existsMany 3 (memberBody R w a z n v)).disj (existsMany 2 (equalBody R w a z n v))
+  · let D := (existsMany 3 (memberBody R w a z n q)).disj (existsMany 2 (equalBody R w a z n q))
     apply Derives.disjE (.hyp (Or.inl rfl))
-    · have hn1 := add (add hn D) (existsMany 3 (memberBody R w a z n v))
+    · have hn1 := add (add hn D) (existsMany 3 (memberBody R w a z n q))
       exact .botE (SyntaxAtomCases.member_conflict (ZFContext.add (ZFContext.add hZ D) _) 2 3 (by decide)
         w a z n (SyntaxAtomSyntax.two x y) (add (add hw D) _) (.conjR hn1)
-        (member_source R w a z n v (.hyp (Or.inl rfl))))
-    · let B := equalBody R w a z n v
+        (member_source R w a z n q (.hyp (Or.inl rfl))))
+    · let B := equalBody R w a z n q
       let Δ := Context.add (existsMany 2 B) (Context.add D Γ)
       let Ξ := Context.add B (raisedContext 2 Δ)
       apply HornBinderRules.eliminate_many 2 B _ (.hyp (Or.inl rfl))
@@ -356,13 +362,19 @@ private theorem equal_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence 
       have hZ2 : ZFContext.Evidence Ξ := HornBinderRules.zf_body 2 (ZFContext.add (ZFContext.add hZ D) _) B
       have hw2 : Derives Ξ (omega (old 2 w)) := of_eq (omega_rename w (old 2)) (HornBinderRules.under_body 2 (add (add hw D) _) B)
       have hn2 : Derives Ξ (SyntaxAtomSyntax.equalAt (old 2 w) (old 2 a) (old 2 z) (old 2 x) (old 2 y) (old 2 n)) := of_eq (SyntaxAtomSyntax.equalAt_rename w a z x y n (old 2)) (HornBinderRules.under_body 2 (add (add hn D) _) B)
-      have hq2 : Derives Ξ (ForcingAtomicCode.compiled true R (old 2 w) (old 2 a) (old 2 x) (old 2 y) (old 2 q)) := of_eq (ForcingAtomicCode.compiled_rename true R w a x y q (old 2)) (HornBinderRules.under_body 2 (add (add hq D) _) B)
       have he := SyntaxAtomUnique.equal_fields hZ2 (old 2 w) (old 2 x) (old 2 y) (slot 2 0) (slot 2 1) (old 2 n)
         hw2 (.conjR hn2) (.conjR (.conjL hB))
-      have ha := atomic_terms_subst true R (old 2 w) (old 2 a) (old 2 x) (old 2 y)
-        (slot 2 0) (slot 2 1) (old 2 q) (.conjL he) (.conjR he) hq2
-      exact ForcingAtomicCode.unique hZ2 true R (old 2 w) (old 2 a) (slot 2 0) (slot 2 1)
-        (old 2 q) (old 2 v) hw2 ha (.conjR hB)
+      apply of_eq (ForcingAtomicCode.compiled_rename true R w a x y q (old 2)).symm
+      exact atomic_terms_subst true R (old 2 w) (old 2 a) (slot 2 0) (slot 2 1)
+        (old 2 x) (old 2 y) (old 2 q) (eq_symm (.conjL he)) (eq_symm (.conjR he)) (.conjR hB)
+
+private theorem equal_candidate {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Formula (k+2)) (w a z n x y q v : Fin m) (hw : Derives Γ (omega w))
+    (hn : Derives Γ (SyntaxAtomSyntax.equalAt w a z x y n))
+    (hq : Derives Γ (ForcingAtomicCode.compiled true R w a x y q))
+    (hv : Derives Γ (compiled R w a z n v)) : Derives Γ (.equal q v) :=
+  ForcingAtomicCode.unique hZ true R w a x y q v hw hq
+    (equal_output hZ R w a z n x y v hw hn hv)
 
 /-- Independent parsed fields, tag branches, and atomic executions agree. -/
 theorem unique {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R : Formula (k+2)) (w a z n q v : Fin m)

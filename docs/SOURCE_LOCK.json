@@ -161313,26 +161313,35 @@
       ],
       "consumers": [
         "All-internal proof-code transformation: construct the target theory-axiom leaf without a supplied proof/trace/type",
-        "InternalConsistency.reduction (remaining whole U-to-ZF contradiction reduction)"
+        "InternalConsistency.reduction (remaining whole U-to-ZF contradiction reduction)",
+        "Proof quotation for the fixed nativeZF atomic forcing laws: actual native theory leaves, including every quoted Separation/Collection instance"
       ],
       "reuse_producers": [
         "OriginalAxiomTyping.query_typed: actual accepted arbitrary schema code is closed",
         "SyntaxConstructors.exists_constructor and child_member; internal omega transitivity",
         "ProofTheoryNode/ProofAllNodes exact local-table equivalences",
         "ProofTreeNodeBackward.matrix_backward and ProofTreeRootBackward.matrix_backward: construct actual complete traces",
-        "Original 19-rule Source.Derives, TheoryTransport, nativeZF replay"
+        "Original 19-rule Source.Derives, TheoryTransport, nativeZF replay",
+        "NativeAxiomCertificateData.complete and original fixed-axiom table membership",
+        "SchemaIndexScopes.exists_state, OriginalTreeQuotationExistence.tree_exists and ProjectCompilerQuotation.construct",
+        "ProjectCompilerSourceValid.valid_input, SchemaAxiomQuotation.separation_iff/collection_iff, original schema certificate and row constructors"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalAxiomProof.lean": "b62eb209a511c9c5d4774b20fded68538183a5577342bd333105c263f8669b6f",
+        "PPAC/Migration/InternalAxiomProof.lean": "f5dd975cdf940313c1cba60d3d93baeee3a4ce06180c3a805a53b69a1c916900",
         "PPAC/Migration/OriginalAxiomTyping.lean": "59fd51fb4e435bed4fb0d5948f9594fa7cbcd656e77da7939d57c48e99928a95",
         "PPAC/Migration/OriginalAxiomCodeTest.lean": "0375f2ad69f3c49dfe00c33f0dc61fb087ede1921c88a41c9c964554fa11c0ae",
         "PPAC/Migration/Internal/ProofAllNodes.lean": "05038f31bf457fd9b13c19440e4575b0b9ba3ed72a967a7d738ecd0d34b1ca1f",
         "PPAC/Migration/Internal/ProofTheoryNode.lean": "63c503bbb8b573546ea847e64a96c39dd5215cd7d5d5020cb4709b496d5aa5b9",
         "PPAC/Migration/Internal/ProofTreeNodeBackward.lean": "9d2b72dd369d7f460391219df412ee94756b2c5a9a2231a4edb3c2c9915e70b8",
         "PPAC/Migration/Internal/ProofTreeRootBackward.lean": "3a765d347c68a18e75bad1fa7138f6d0705ae8dae073a7f44c050af038229998",
-        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofNode.lean": "48e59f29768695f0a712399dc547322971bd22062f574c7d390764516f60f066"
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofNode.lean": "48e59f29768695f0a712399dc547322971bd22062f574c7d390764516f60f066",
+        "PPAC/Migration/SchemaAxiomQuotation.lean": "2bba8cc5beb706e03898dcdc1f59498783dd5d29f07437bb40786c7884ae0983",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/Internal/ProjectCompilerSourceValid.lean": "867db67812f4a011540cca73987182ec37a03b4c843fd8f806d1537f2bb5a146",
+        "PPAC/Migration/Internal/SchemaIndexScopes.lean": "3e55adcbe9b98ccdd3ec2b65a9c6a0897f51ed2d7eb2f80a3c0b6fa3f40b11ec",
+        "PPAC/Migration/Internal/NativeAxiomCertificateData.lean": "37ce03f51458756cff3d2cea0f4e650b13c2c89461f512ff37efcadf5165e953"
       },
-      "scope": "Actual full ZF/U axiom query -> exists internal natural proof code with the exact original root and same formula. Arbitrary internal/nonstandard schema bodies/counts; no quotation, formula typing, candidate proof, intermediate local check or valid trace parent. This is the theory-axiom proof-production base case, not uniform forcing or whole U-to-ZF reduction.",
+      "scope": "Actual full ZF/U axiom query -> exists internal natural proof code with the exact original root and same formula. Arbitrary internal/nonstandard schema bodies/counts; no quotation, formula typing, candidate proof, intermediate local check or valid trace parent. This is the theory-axiom proof-production base case, not uniform forcing or whole U-to-ZF reduction. For each external nativeZF axiom instance, from_native_quotation accepts any internal code that satisfies its literal native quotation. The original fixed or schema certificate, row, and full six-rule Root are produced internally. The external schema index is quotation metadata. Forcing preservation over all internal schema body codes remains open.",
       "exact_declaration_footprints": {
         "PPAC.Migration.InternalAxiomProof.axiomQuery": [
           "Quot.sound",
@@ -161390,6 +161399,42 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.InternalAxiomProof.from_fixed_quotation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.InternalAxiomProof.from_native_quotation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.InternalAxiomProof.native_quotation_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       }
     },
@@ -161595,7 +161640,8 @@
       ],
       "consumers": [
         "Full raw formula forcing compiler: complete atomic dispatch with parsed term fields, exact target type and independent unique output",
-        "InternalConsistency.reduction, after the remaining logical/binder/Proof interpretation"
+        "InternalConsistency.reduction, after the remaining logical/binder/Proof interpretation",
+        "Actual member/equal compiler inversion and existing candidate uniqueness use the same parsed typed terms and atomic compiler record"
       ],
       "reuse_producers": [
         "Existing actual SyntaxAtomSyntax four-way grammar, SyntaxAtomLogic parsed-field elimination, SyntaxAtomCases tag rejection and SyntaxAtomUnique field injectivity",
@@ -161604,7 +161650,7 @@
         "Original Source.Derives and nativeZF TheoryTransport/ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
+        "PPAC/Migration/ForcingAtomCode.lean": "176d53e3d904578b80fdfc0a78a0b18544931b548a4a2c8e66ae8cf9edd74c56",
         "PPAC/Migration/ForcingAtomicCode.lean": "4ad5432e3006b47f871d9e3ef3503c2b06d6381e90b1eefe0eb8531cc4557371",
         "PPAC/Migration/ForcingFormula.lean": "fbde33e0225d8d413228b749daac3c583813143407d43d19ec87f82b04473340",
         "PPAC/Migration/ReverseSyntax.lean": "8fbf87804ba7d32b82b39f4b25b8508992f34033f98d1d747dc27f8eb332e4e0",
@@ -161612,7 +161658,7 @@
         "PPAC/Migration/Internal/SyntaxAtomUnique.lean": "2892dc69445a6ffe93f5ae37c22c7811813f9bf5bf8c3aa301f84c34c84d5680",
         "PPAC/Migration/Internal/FormulaCodeRecursive.lean": "4bcdae1dcb2e0927d22a76b9c7d87526bdfad7bc4dab8b906f0827690d19c09d"
       },
-      "scope": "All four actual atomic-code branches: falsum/truth retain their original code; native Reverse.formula maps truth to bottom -> bottom, whose exact original forcing-basis normalization is proved in nativeZF. Member/equal parse all actual internal fields and construct literal forcing codes without external term fields. Source bound scope and candidates may be internal/nonstandard; source-free scope is zero for totality, fixed ground-order R and parameter count remain external scheme indices. Ordinary nativeZF endpoints prove a typed unique output and independent all-candidate uniqueness. Not a full recursive formula interpreter, all-internal forcing-axiom proof compiler, Proof reduction, or final Con. Additional nullary_output exposes the actual original constant candidate equation without changing old proof bodies or asserting semantic truth normalization.",
+      "scope": "All four actual atomic-code branches: falsum/truth retain their original code; native Reverse.formula maps truth to bottom -> bottom, whose exact original forcing-basis normalization is proved in nativeZF. Member/equal parse all actual internal fields and construct literal forcing codes without external term fields. Source bound scope and candidates may be internal/nonstandard; source-free scope is zero for totality, fixed ground-order R and parameter count remain external scheme indices. Ordinary nativeZF endpoints prove a typed unique output and independent all-candidate uniqueness. Not a full recursive formula interpreter, all-internal forcing-axiom proof compiler, Proof reduction, or final Con. Additional nullary_output exposes the actual original constant candidate equation without changing old proof bodies or asserting semantic truth normalization. member_output and equal_output recover that exact atomic compiler relation from the supplied original actual dispatch, at its given typed source fields. Term-image composition and atom monotonicity in Root remain open.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingAtomCode.compiled": [
           "Quot.sound",
@@ -161707,6 +161753,16 @@
           "Classical.choice",
           "Quot.sound",
           "propext"
+        ],
+        "PPAC.Migration.ForcingAtomCode.member_output": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingAtomCode.equal_output": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -162749,7 +162805,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
-        "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
+        "PPAC/Migration/ForcingAtomCode.lean": "176d53e3d904578b80fdfc0a78a0b18544931b548a4a2c8e66ae8cf9edd74c56",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
@@ -163690,7 +163746,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
-        "PPAC/Migration/InternalAxiomProof.lean": "b62eb209a511c9c5d4774b20fded68538183a5577342bd333105c263f8669b6f",
+        "PPAC/Migration/InternalAxiomProof.lean": "f5dd975cdf940313c1cba60d3d93baeee3a4ce06180c3a805a53b69a1c916900",
         "PPAC/Migration/Internal/ProofMPNode.lean": "76cf8406105f1b89453af588a1f2358d54733ce37b01b82411dd4cf0c5fd2007",
         "PPAC/Migration/Internal/ProofMPAllQueries.lean": "474936e3c198025635e38f9a24aba3c933c64e966cf9e0f05d74f2cf01853232",
         "PPAC/Migration/Internal/ProofAllNodes.lean": "05038f31bf457fd9b13c19440e4575b0b9ba3ed72a967a7d738ecd0d34b1ca1f",
@@ -164605,7 +164661,7 @@
         "PPAC/Migration/ForcingMixedBinary.lean": "a5656070011086f9132bb44c6ebce79e2503a363961909a35973cf89192e0d0a",
         "PPAC/Migration/ForcingCodeBinary.lean": "a51c6ff26e4c7a01fa2bda93ac521f48e9b90d172d953ce69df35122fc44bb86",
         "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a",
-        "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
+        "PPAC/Migration/ForcingAtomCode.lean": "176d53e3d904578b80fdfc0a78a0b18544931b548a4a2c8e66ae8cf9edd74c56",
         "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12",
         "PPAC/Migration/Internal/PureQuotationSyntax.lean": "231f8160620d5dc97f5c1a7ed60bac5416864e7ccbfedbe7c6b20c77aa07135c",
         "PPAC/Migration/InternalConsistency.lean": "596d407547a97dbce4a2a0dd0c2051b8f6eded058817c843d1420e515c4b2efe"
@@ -165035,7 +165091,7 @@
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
-        "PPAC/Migration/ForcingAtomCode.lean": "621d03ddd3ee00ae7bee1d09ce09ff15a51e5c78ac504dcb8ad1fe5cbe11eb75",
+        "PPAC/Migration/ForcingAtomCode.lean": "176d53e3d904578b80fdfc0a78a0b18544931b548a4a2c8e66ae8cf9edd74c56",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",

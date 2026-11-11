@@ -1,0 +1,216 @@
+{
+  "recorded_at": "2026-11-11T01:33:17.296053+00:00",
+  "baseline_commit": "7d135c6523d2294792c4bcd5e159b9d08a3f9a27",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "Quoted nativeZF axioms produce actual original six-rule Root leaves. Both atomic compiler branches expose the original ForcingAtomicCode output at the actual typed source term fields.",
+  "exact_native_endpoint": "FirstOrder.Derives nativeZF [] (Translation.sentence (((omega w).conj (PureQuotationSyntax.formula phi w f)).imp (InternalAxiomProof.provable false w f)).close), for every phi with nativeZF phi",
+  "coverage": [
+    "All seven original fixed nativeZF axioms",
+    "Every external parameter count and body AST for native Separation and Collection. Their literal raw body quotations, actual source compiler, original schema row and complete Root are used.",
+    "Arbitrary internal candidate quotation values and runtime witnesses, including nonstandard internal omega",
+    "Both actual member/equal dispatch records invert to the original atomic compiler relation at the same parsed fields"
+  ],
+  "scope_limits": [
+    "Schema count/body AST index this quotation theorem externally. Uniform forcing preservation of every internal schema code remains open.",
+    "Logical leaves and remaining rules are required to reify the existing fixed native atomic proof in the original Root.",
+    "The member/equal mixed term-image composition and full internal source monotonicity induction remain open.",
+    "Dense, negation, implication, forcing MP, uniform axiom/Proof preservation, reduction and final internal Con remain open."
+  ],
+  "reused_producers": [
+    "OriginalAxiomTyping.query_typed and InternalAxiomProof.from_query",
+    "NativeAxiomCertificateData.complete and original fixed axiom table",
+    "OriginalTreeQuotationExistence, SchemaIndexScopes and SyntaxNumerals",
+    "ProjectCompilerQuotation.construct and ProjectCompilerSourceValid.valid_input",
+    "SchemaAxiomQuotation.separation_iff/collection_iff",
+    "OriginalAxiomCodeTest original row and certificate constructors",
+    "SyntaxAtomUnique field equality, existing atomic_terms_subst and ForcingAtomicCode.unique"
+  ],
+  "new_declaration_footprints": {
+    "PPAC.Migration.InternalAxiomProof.from_fixed_quotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.InternalAxiomProof.from_native_quotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.InternalAxiomProof.native_quotation_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingAtomCode.member_output": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingAtomCode.equal_output": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "all_baseline_footprints_identical": true,
+  "baseline_declarations_compared": 39913,
+  "full_local_verification": {
+    "audited_declarations": 39918,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37652,
+    "warning_lines": 0,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "summary_sha256": "c8b2c1fde2445cac372ecc53c3ed352da120ec704b3532dc884af41f6ae3c30f",
+    "build_log_sha256": "d0382db9bdecdc1cf0f591dc047f5c0ab9de820927203642657801c0649eb2b4",
+    "audit_log_sha256": "785542473a6bae598b42c714c090c73643764bb93487574a1b9057089e8113e7"
+  },
+  "compatibility": {
+    "unit_tests": 16,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75,
+    "source_hash_policy": "sha256/text-crlf-to-lf/v1"
+  },
+  "modified_modules_trust_zero": {
+    "InternalAxiomProof": 0,
+    "ForcingAtomCode": 0
+  },
+  "source_sha256": {
+    "Audit.lean": "dac608e37bdbae82f8878c59043820c123fd7aaf85218222aefa2502662ee1e2",
+    "PPAC/Migration/ForcingAtomCode.lean": "176d53e3d904578b80fdfc0a78a0b18544931b548a4a2c8e66ae8cf9edd74c56",
+    "PPAC/Migration/InternalAxiomProof.lean": "f5dd975cdf940313c1cba60d3d93baeee3a4ce06180c3a805a53b69a1c916900",
+    "docs/AGENT_WORKFLOW.zh-CN.md": "d4c6dac4704dbc82ad54c588a46afb9598fc582111bf11906715ed33d0f0ac4b",
+    "docs/CURRENT_STATUS.zh-CN.md": "858e7f3532ff8066b014777c85ead885ccb4646303e51573ded495d31dd43894",
+    "docs/SOURCE_LOCK.json": "dc5e8f173bb0bb4b163547bc71bc427a03c93e73b48acb4a573a434cc80b9e6f",
+    "scripts/verify.py": "ebd68cb8190d94c4167991454d1160bb037580a36446b3537d18882985af1e0c"
+  },
+  "temporary_cleanup_manifest": {
+    ".local/quoted-axiom-check.tmp.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".local/quoted-axiom-footprints.tmp.log": "ea3df7aaf37c005e758b6c09c0817e8ab85bc954a0bf9574907736b1820fd230",
+    ".local/atomic-quotation-baseline.tmp.json": "40def9d3949790c1d0662c2d6fa13a7696577e1b4fc58f2c4cfaeecd98674fe2",
+    ".local/atomic-quotation-full-verification.tmp.log": "761ad2d37564399c75aa5e588a3b252a8423a524b8abae6dafc3c3bb107ddf77"
+  },
+  "previous_actual_decoded_linux_acceptance": {
+    "run_id": 42924695271,
+    "job_id": 130208050287,
+    "commit": "c653cbfc184a28bce9c55f2df573b729ecacab63",
+    "conclusion": "success",
+    "audited_declarations": 39885,
+    "warning_lines": 0,
+    "actual_pass_log_timestamp": "2026-11-11T01:22:42.7586313Z"
+  },
+  "final_internal_Con_proved": false
+}
