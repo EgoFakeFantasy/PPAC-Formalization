@@ -40839,6 +40839,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point_rename

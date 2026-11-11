@@ -177055,13 +177055,13 @@
         "Original force_of_dense.bot at q=p and guarded density proof branches",
         "ForcingDensityGuards.falsum_from_compiled_query",
         "ForcingDensityInstantiation.with_negative_density_tail and with_fresh_witness_records",
-        "Original force_of_dense.neg: the positive query at q and the negative witness query at r on one actual name table"
+        "Original force_of_dense.neg: the actual positive queries at q and r and negative witness query at r on one name table"
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingExistOrderOpening.lean": "d147ed9e17a1b065689a87c1124af0e756554d33ac0e9b59a78ebfa4767d50be",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "fe7c248fff2dce39a9f477ec164e5023b1fda5bbe3ac97a5752cbfe292be655a",
         "PPAC/Migration/ForcingOldParentInstance.lean": "7a0f1d496e810690f8a2a8f2bccd312207bc7fabaeda86d55b991e02d779f1bc",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "059e9a9dc08143aff01255111915a9f94a2daad7bc94ebed728085f31d848f0c",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "31335c8816d0a84fcfb886e791424cfde245f0ebd74c0fd091a39b6377017de5",
         "PPAC/Migration/ForcingDensityCode.lean": "951dc21c0f7fb9a7122bc99c3534f1e466ddee0fa47b953b3bb8e56594db9a3a",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
@@ -177082,6 +177082,7 @@
         "PPAC.Migration.ForcingDensityInstantiation.direct_after_weakening": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingDensityInstantiation.with_direct_witness_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingDensityInstantiation.with_mixed_shell": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingDensityInstantiation.pointData": [
           "propext",
@@ -177430,7 +177431,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The original density premise can be instantiated at the selected condition or at the exact fresh condition used to open the modal parent. The fresh negative parent and density instance have equal membership and order guard codes. The proofs of those guards under the current background discharge them from the actual density implication and retain its existential tail. The inner existential is opened at a generated fresh witness, preserving the exact guards, rebound body and native abstraction. The negative witness contradiction, existential composition, full density induction and internal Con remain open."
+      "scope": "The original negative tail and density universal open on the same actual outer table. The actual density existential is then opened under the original inner membership and order guards. The old positive operand is weakened at the same condition q, identified by the actual encoded head-term rename. The actual name table is common to the positive queries at q and r and the negative query at r. The positive query at r is generated inside the object theory using the existing full mixed formula existence theorem. The common-background monotonicity proof and reflexive contradiction remain to be composed."
     },
     "forcing_density_guards": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -177495,7 +177496,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingDensityGuards.lean": "4de2afa757e7da3381d08916dae6fd39b17e33b583d54fecdd20b611585f3682",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5",
-        "PPAC/Migration/ForcingDensityInstantiation.lean": "059e9a9dc08143aff01255111915a9f94a2daad7bc94ebed728085f31d848f0c",
+        "PPAC/Migration/ForcingDensityInstantiation.lean": "31335c8816d0a84fcfb886e791424cfde245f0ebd74c0fd091a39b6377017de5",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingPreorderMember.lean": "625baeed535a5f70ce9d0cfa8ccc9f5aeb01271dae822859b423268c0082f89d",

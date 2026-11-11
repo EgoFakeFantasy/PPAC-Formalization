@@ -1,0 +1,60 @@
+{
+  "baseline_commit": "018921af810c1b6dc924dfa646ff25228831ba7d",
+  "recorded_at": "2026-11-11T16:28:57.271581+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "neg"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries"
+  ],
+  "scope": "Combine the actual opened original negative operand with the actual density witness. Retain the existential guard outputs and exact abstraction, prove the q term rename by the actual table field action, and generate the positive query at r on the same name table as the positive query at q and the negative query at r.",
+  "outer_condition_term_rename_proved": true,
+  "positive_queries_at_q_and_r_produced": true,
+  "shared_actual_name_table_proved": true,
+  "negative_source_induction_step_proved": false,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40234,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "83716f32d91eb13d6eff7ce51ab250367d777107adac183a4d106b4d32edba67",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "31335c8816d0a84fcfb886e791424cfde245f0ebd74c0fd091a39b6377017de5",
+      "docs/CURRENT_STATUS.zh-CN.md": "74521a3518a15c85e1c369c72b630fa8b073389137b22a4da4f3e3022bf0d26b",
+      "docs/SOURCE_LOCK.json": "67c8277ff296b36904db0900c717ca623a6fb13ad514b2a19a0a1b4eeaac18af",
+      "scripts/verify.py": "10f5388e7633c8aabcbad3f8c3275d910648d18838f770128388cdc7fd7b82a5"
+    }
+  },
+  "baseline_declarations_compared": 40233,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
